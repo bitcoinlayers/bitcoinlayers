@@ -1,7 +1,7 @@
 import type { Layer } from '@/components/layer/layerProps';
 
 //
-//live layers
+//layers
 import monetaJson from "../content/layers/moneta.json" assert { type: 'json' };
 const moneta: Layer = monetaJson as Layer;
 

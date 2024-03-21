@@ -1,7 +1,7 @@
 import type { Infrastructure } from '@/components/infrastructure/infrastructureProps';
 
 //
-//live infrastructures
+//infrastructures
 import monetaJson from "../content/infrastructures/moneta.json" assert { type: 'json' };
 const moneta: Infrastructure = monetaJson as Infrastructure;
 
