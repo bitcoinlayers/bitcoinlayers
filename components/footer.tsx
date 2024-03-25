@@ -14,6 +14,7 @@ export default function Footer(): ReactElement {
             className="block"
           >
             GitHub
+          </a>
           <a
             href="https://twitter.com/bitcoinlayers"
             target="_blank"
