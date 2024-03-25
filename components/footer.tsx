@@ -8,6 +8,13 @@ export default function Footer(): ReactElement {
       <div className="text-center text-offwhite p-2 my-6">
         <nav className="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-4 font-medium mt-4">
           <a
+            href="https://github.com/bitcoinlayers/bitcoinlayers"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block"
+          >
+            GitHub
+          <a
             href="https://twitter.com/bitcoinlayers"
             target="_blank"
             rel="noopener noreferrer"
