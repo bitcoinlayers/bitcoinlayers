@@ -37,8 +37,6 @@ import bsquaredJson from "../content/layers/bsquared.json" assert { type: 'json'
 const bsquared: Layer = bsquaredJson as Layer;
 import bvmJson from "../content/layers/bvm.json" assert { type: 'json' };
 const bvm: Layer = bvmJson as Layer;
-import cartesiJson from "../content/layers/cartesi.json" assert { type: 'json' };
-const cartesi: Layer = cartesiJson as Layer;
 import citreaJson from "../content/layers/citrea.json" assert { type: 'json' };
 const citrea: Layer = citreaJson as Layer;
 import flashJson from "../content/layers/flash.json" assert { type: 'json' };
@@ -67,10 +65,8 @@ import coordinateJson from "../content/layers/coordinate.json" assert { type: 'j
 const coordinate: Layer = coordinateJson as Layer;
 import alysJson from "../content/layers/alys.json" assert { type: 'json' };
 const alys: Layer = alysJson as Layer;
-import tunachainJson from "../content/layers/tunachain.json" assert { type: 'json' };
-const tunachain: Layer = tunachainJson as Layer;
 
 
 
 
-export const allLayers: Layer[] = [moneta, core, internetcomputer, lightning, liquid, mercurylayer, rootstock, stacks, citrea, alpen, barknet, bison, bnzk, bob, botanix, bsquared, bvm, cartesi, rgb, heliosphere, libre, lumibit, merlin, mirror, rif, rollux, zkcoins, zklayer, coordinate, alys, tunachain];
+export const allLayers: Layer[] = [moneta, core, internetcomputer, lightning, liquid, mercurylayer, rootstock, stacks, citrea, alpen, barknet, bison, bnzk, bob, botanix, bsquared, bvm, rgb, heliosphere, libre, lumibit, merlin, mirror, rif, rollux, zkcoins, zklayer, coordinate, alys];
