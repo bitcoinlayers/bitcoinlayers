@@ -1,0 +1,91 @@
+{
+    "slug": "fedimint",
+    "title": "Fedimint",
+    "layerType": "Fedimint",
+    "live": "no",
+"underReview": "yes",
+    "riskFactors": ["High", "High", "High", "High", "Low"],
+    "purpose": "General purpose",
+    "btcBridge": "Multi-sig",
+    "settlement": "Offchain",
+    "btcLocked": 0,
+    "executionEnv": "x",
+    "consensus": "x",
+    "nativeToken": "No",
+    "feeToken": "x",
+    "enshrinedBtc": "x",
+    "links": [
+        "ttps://fedimint.org",
+        "https://fedimint.org/docs/intro",
+        "https://twitter.com/bitcoinlayers",
+        "https://github.com/fedimint",
+        "https://twitter.com/fedimint"
+      ],
+    "sections": [
+      {
+        "id": "description",
+        "title": "Description",
+        "content": [
+          {
+            "title": "Description",
+            "content": "Fedimint are a module based system for building federated appliations. They are currently focused on building federted ecash mints, which would offer improved privacy for peer-to-peer payments. The construction of a Fedimint sees users lock their BTC into a Federation's multi-sig, and receive an Ecash IOU representing the BTC in the Federation. Fedimints are also useful for community custody, an idea that sees users trust members of their local community (e.g. family members) with the custody of their Bitcoin assets."
+          }
+        ]
+      },
+      {
+        "id": "riskanalysis",
+        "title": "Risk Analysis",
+        "content": [
+          {
+            "title": "Unilateral Exit",
+            "content": "Fedimints do not enable unilateral exits. Users explicitly trust the signers, known as guardians, of the Federation's multi-sig to not steal their funds."
+          },
+          {
+            "title": "Data Availability",
+            "content": "Guardians of the specific federation are those that ultimately come to consensus on transactions happening with the federation. These Federations can have varying level of signers dependent on the federation, but all will rely on an honest majority assumption of signers."
+          },
+          {
+            "title": "Block Production",
+            "content": "Fedimints don't produce blocks. Transactions are processed within the federation. In a federation, Bob would create an invoice asking for a payment from Alice. Alice would respond by checking the ecash notes it holds, select the notes to equal the amount of the invoice, and then send them to Bob. Bob, containing the new notes, would send them to the guardians of the federation to redeem new ecash notes. This would see the transaction settled."
+            "content": "Federations can also have a specifc user, or guardian, run a lightning node and pay lightning invoices on behalf of other users. In this model, Bob would receive an invoice from Alice. Bob would then create an equivalent invoice and broadcast that to the lightning node operator(s) in the federation. Bob would also include a service fee to incentivize the lightning node operators to pay the invoice on his behalf."
+          },
+          {
+            "title": "Settlement",
+            "content": "Settlement happens when a user redeems newly received eCash notes from the federation. This means that the federation effectively comes to settlement on transactions within the federation."
+          },
+          {
+            "title": "Self-custodial",
+            "content": "Citrea self-custodial copy"
+          }
+        ]
+      },
+      {
+        "id": "bitcoinsecurity",
+        "title": "Bitcoin Security",
+        "content": [
+          {
+            "title": "Explainer",
+            "content": "Citrea btc security 1 copy"
+          },
+          {
+            "title": "Explainer",
+            "content": "Citrea btc-sec 2 copy"
+          },
+          {
+            "title": "Explainer",
+            "content": "Citrea btc-sec 3 copy"
+          }
+        ]
+      },
+      {
+        "id": "technology",
+        "title": "Technology",
+        "content": [
+          {
+            "title": "Explainer",
+            "content": "Citrea tech explainooor copy"
+          }
+        ]
+      }
+    ]
+  }
