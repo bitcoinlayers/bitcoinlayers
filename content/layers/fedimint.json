@@ -54,8 +54,8 @@
             "content": "Settlement happens when a user redeems newly received eCash notes from the federation. This means that the federation effectively comes to settlement on transactions within the federation."
           },
           {
-            "title": "Self-custodial",
-            "content": "Citrea self-custodial copy"
+            "title": "User onboarding",
+            "content": "Fedimint users do not need to run a Layer 1 transaction to enter into the Fedimint. They can also receive lightning payments, or payments within the federation, while offline."
           }
         ]
       },
@@ -64,17 +64,9 @@
         "title": "Bitcoin Security",
         "content": [
           {
-            "title": "Explainer",
-            "content": "Citrea btc security 1 copy"
+            "title": "Fedimint guardians must be Bitcoin full nodes",
+            "content": "Guardians in a Fedimint federations need to also run Bitcoin full nodes. While this doesn't see users inherit any security directly, because they are still trusting members of a federation, it does ensure that the node operators inherit security from the Bitcoin network. This is useful because Bitcoin's consistent uptime ensures that the Fedimint node operators would also inherit Bitcoin's liveness, which is helpful for users."
           },
-          {
-            "title": "Explainer",
-            "content": "Citrea btc-sec 2 copy"
-          },
-          {
-            "title": "Explainer",
-            "content": "Citrea btc-sec 3 copy"
-          }
         ]
       },
       {
@@ -82,9 +74,13 @@
         "title": "Technology",
         "content": [
           {
-            "title": "Explainer",
-            "content": "Citrea tech explainooor copy"
-          }
+            "title": "eCash",
+            "content": "Chaumian eCash enables Fedimints to create and redeem IOU notes that represent claims on Bitcoin stored in the Federation's multi-sig. eCash in Fedimints also uses blinded signatures to protect the privacy of their users, and ensures that guardians of the Federation cannot see a user's specific balance. Guardians cannot also tell which parties in the federation are engaging in transactions."
+          },
+          {
+            "title": "Lightning Swaps",
+            "content": "Fedimints also enable lightning swaps through lightning gateways. A user, or guardian, in a federation can run a lightning node and pay and accept lightning invoices on behalf of users in the federation. This is particularly useful as Fedimint users don't need to be online to accept lightning payments. These payments are secured in both Fedimint and the lightning network using Hash Time Lock Contracts."
+          },
         ]
       }
     ]
