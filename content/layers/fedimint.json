@@ -5,7 +5,7 @@
     "live": "no",
 "underReview": "yes",
     "riskFactors": ["High", "High", "High", "High", "Low"],
-    "purpose": "General purpose",
+    "purpose": "Private payments",
     "btcBridge": "Multi-sig",
     "settlement": "Offchain",
     "btcLocked": 0,
@@ -67,6 +67,10 @@
             "title": "Fedimint guardians must be Bitcoin full nodes",
             "content": "Guardians in a Fedimint federations need to also run Bitcoin full nodes. While this doesn't see users inherit any security directly, because they are still trusting members of a federation, it does ensure that the node operators inherit security from the Bitcoin network. This is useful because Bitcoin's consistent uptime ensures that the Fedimint node operators would also inherit Bitcoin's liveness, which is helpful for users."
           },
+        {
+            "title": "Fedimints do not rely on alternative tokens",
+            "content": "Fedimints do not rely on altnerative tokens for security and/or network operation."
+          },
         ]
       },
       {
@@ -82,6 +86,54 @@
             "content": "Fedimints also enable lightning swaps through lightning gateways. A user, or guardian, in a federation can run a lightning node and pay and accept lightning invoices on behalf of users in the federation. This is particularly useful as Fedimint users don't need to be online to accept lightning payments. These payments are secured in both Fedimint and the lightning network using Hash Time Lock Contracts."
           },
         ]
-      }
+      },
+    {
+        "id": "usecases",
+        "title": "Use Cases",
+        "content": [
+          {
+            "title": "Community Custody",
+            "content": "It is argued that self-custody, in its current form, is diffucult for some users. Fedimints would enable users to trust the custody of their Bitcoin with a trusted third party (e.g. family member of community leader). Federated community custody may be preferred by some users over centralized custodians."
+          },
+          {
+            "title": "Private Payments",
+            "content": "Fedimints enable anonymous payments through blinded signatures. Users may choose to join a Fedimint because it can offer an easier path towards anonymity than the Bitcoin mainchain or lightning."
+          },
+         {
+            "title": "Lower fees",
+            "content": "Fedimints provide lower fees to users and do not require on-chain transactions to engage in the federation. To deposit funds, users can use the lightning network or the Bitcoin mainchain."
+          },
+        ]
+      },
+        {
+        "id": "operator",
+        "title": "Operator",
+        "content": [
+          {
+            "title": "Fedimints are managed by Federations",
+            "content": "Fedimints are managed by federated multi-sigs. Users give up the custody of their BTC, and trust that guardians of the multi-sig are honest, when entering into a Fedimint."
+          },
+        ]
+      },
+         {
+        "id": "withdrawals",
+        "title": "Withdrawals",
+        "content": [
+          {
+            "title": "Withdrawals from Fedimints are permissioned",
+            "content": "Withdrawals from Fedimints are permissioned. Users need to trust that the majority of guardians in a Federation are honest to withdrawal their funds from the Fedimint."
+          },
+        ]
+      },
+        {
+        "id": "sourcecode",
+        "title": "Source Code",
+        "content": [
+          {
+            "title": "Code is open-source",
+            "content": "All code related to the Fedimint project is free and open source."
+          },
+        ]
+      },
     ]
   }
