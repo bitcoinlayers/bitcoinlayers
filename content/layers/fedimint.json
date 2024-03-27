@@ -135,5 +135,15 @@
           },
         ]
       },
-    ]
-  }
+    {
+    "knowledgeBits": [
+    {
+      "url": "https://fedimint.org",
+      "displayText": "Fedimint documentation site covering technological components and use cases."
+    },
+    {
+      "url": "https://www.fedi.xyz/product",
+      "displayText": "Fedi offers a Fedimint wallet and shows how a Fedimint would work in practice."
+    },
+   ]
+  },
