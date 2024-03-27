@@ -145,5 +145,9 @@
       "url": "https://www.fedi.xyz/product",
       "displayText": "Fedi offers a Fedimint wallet and shows how a Fedimint would work in practice."
     },
+    {
+      "url": "https://fedimint.org/docs/category/frequently-asked-questions",
+      "displayText": "Fedimint's FAQs answer frequently asked questions."
+    },
    ]
   },
