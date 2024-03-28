@@ -1,153 +1,155 @@
 {
-    "slug": "fedimint",
-    "title": "Fedimint",
-    "layerType": "Fedimint",
-    "live": "no",
-"underReview": "yes",
-    "riskFactors": ["High", "High", "High", "High", "Low"],
-    "purpose": "Private payments",
-    "btcBridge": "Multi-sig",
-    "settlement": "Offchain",
-    "btcLocked": 0,
-    "executionEnv": "x",
-    "consensus": "x",
-    "nativeToken": "No",
-    "feeToken": "x",
-    "enshrinedBtc": "x",
-    "links": [
-        "ttps://fedimint.org",
-        "https://fedimint.org/docs/intro",
-        "https://twitter.com/bitcoinlayers",
-        "https://github.com/fedimint",
-        "https://twitter.com/fedimint"
-      ],
-    "sections": [
-      {
-        "id": "description",
-        "title": "Description",
-        "content": [
-          {
-            "title": "Description",
-            "content": "Fedimint are a module based system for building federated appliations. They are currently focused on building federted ecash mints, which would offer improved privacy for peer-to-peer payments. The construction of a Fedimint sees users lock their BTC into a Federation's multi-sig, and receive an Ecash IOU representing the BTC in the Federation. Fedimints are also useful for community custody, an idea that sees users trust members of their local community (e.g. family members) with the custody of their Bitcoin assets."
-          }
-        ]
-      },
-      {
-        "id": "riskanalysis",
-        "title": "Risk Analysis",
-        "content": [
-          {
-            "title": "Unilateral Exit",
-            "content": "Fedimints do not enable unilateral exits. Users explicitly trust the signers, known as guardians, of the Federation's multi-sig to not steal their funds."
-          },
-          {
-            "title": "Data Availability",
-            "content": "Guardians of the specific federation are those that ultimately come to consensus on transactions happening with the federation. These Federations can have varying level of signers dependent on the federation, but all will rely on an honest majority assumption of signers."
-          },
-          {
-            "title": "Block Production",
-            "content": "Fedimints don't produce blocks. Transactions are processed within the federation. In a federation, Bob would create an invoice asking for a payment from Alice. Alice would respond by checking the ecash notes it holds, select the notes to equal the amount of the invoice, and then send them to Bob. Bob, containing the new notes, would send them to the guardians of the federation to redeem new ecash notes. This would see the transaction settled."
-            "content": "Federations can also have a specifc user, or guardian, run a lightning node and pay lightning invoices on behalf of other users. In this model, Bob would receive an invoice from Alice. Bob would then create an equivalent invoice and broadcast that to the lightning node operator(s) in the federation. Bob would also include a service fee to incentivize the lightning node operators to pay the invoice on his behalf."
-          },
-          {
-            "title": "Settlement",
-            "content": "Settlement happens when a user redeems newly received eCash notes from the federation. This means that the federation effectively comes to settlement on transactions within the federation."
-          },
-          {
-            "title": "User onboarding",
-            "content": "Fedimint users do not need to run a Layer 1 transaction to enter into the Fedimint. They can also receive lightning payments, or payments within the federation, while offline."
-          }
-        ]
-      },
-      {
-        "id": "bitcoinsecurity",
-        "title": "Bitcoin Security",
-        "content": [
-          {
-            "title": "Fedimint guardians must be Bitcoin full nodes",
-            "content": "Guardians in a Fedimint federations need to also run Bitcoin full nodes. While this doesn't see users inherit any security directly, because they are still trusting members of a federation, it does ensure that the node operators inherit security from the Bitcoin network. This is useful because Bitcoin's consistent uptime ensures that the Fedimint node operators would also inherit Bitcoin's liveness, which is helpful for users."
-          },
-        {
-            "title": "Fedimints do not rely on alternative tokens",
-            "content": "Fedimints do not rely on altnerative tokens for security and/or network operation."
-          },
-        ]
-      },
-      {
-        "id": "technology",
-        "title": "Technology",
-        "content": [
-          {
-            "title": "eCash",
-            "content": "Chaumian eCash enables Fedimints to create and redeem IOU notes that represent claims on Bitcoin stored in the Federation's multi-sig. eCash in Fedimints also uses blinded signatures to protect the privacy of their users, and ensures that guardians of the Federation cannot see a user's specific balance. Guardians cannot also tell which parties in the federation are engaging in transactions."
-          },
-          {
-            "title": "Lightning Swaps",
-            "content": "Fedimints also enable lightning swaps through lightning gateways. A user, or guardian, in a federation can run a lightning node and pay and accept lightning invoices on behalf of users in the federation. This is particularly useful as Fedimint users don't need to be online to accept lightning payments. These payments are secured in both Fedimint and the lightning network using Hash Time Lock Contracts."
-          },
-        ]
-      },
+  "slug": "fedimint",
+  "title": "Fedimint",
+  "layerType": "Fedimint",
+  "live": "no",
+  "underReview": "yes",
+  "riskFactors": ["High", "High", "High", "High", "Low"],
+  "purpose": "Private payments",
+  "btcBridge": "Multi-sig",
+  "settlement": "Offchain",
+  "btcLocked": 0,
+  "executionEnv": "x",
+  "consensus": "x",
+  "nativeToken": "No",
+  "feeToken": "x",
+  "enshrinedBtc": "x",
+  "links": [
+    "https://fedimint.org",
+    "https://fedimint.org/docs/intro",
+    "https://twitter.com/bitcoinlayers",
+    "https://github.com/fedimint",
+    "https://twitter.com/fedimint"
+  ],
+  "sections": [
     {
-        "id": "usecases",
-        "title": "Use Cases",
-        "content": [
-          {
-            "title": "Community Custody",
-            "content": "It is argued that self-custody, in its current form, is diffucult for some users. Fedimints would enable users to trust the custody of their Bitcoin with a trusted third party (e.g. family member of community leader). Federated community custody may be preferred by some users over centralized custodians."
-          },
-          {
-            "title": "Private Payments",
-            "content": "Fedimints enable anonymous payments through blinded signatures. Users may choose to join a Fedimint because it can offer an easier path towards anonymity than the Bitcoin mainchain or lightning."
-          },
-         {
-            "title": "Lower fees",
-            "content": "Fedimints provide lower fees to users and do not require on-chain transactions to engage in the federation. To deposit funds, users can use the lightning network or the Bitcoin mainchain."
-          },
-        ]
-      },
+      "id": "description",
+      "title": "Description",
+      "content": [
         {
-        "id": "operator",
-        "title": "Operator",
-        "content": [
-          {
-            "title": "Fedimints are managed by Federations",
-            "content": "Fedimints are managed by federated multi-sigs. Users give up the custody of their BTC, and trust that guardians of the multi-sig are honest, when entering into a Fedimint."
-          },
-        ]
-      },
-         {
-        "id": "withdrawals",
-        "title": "Withdrawals",
-        "content": [
-          {
-            "title": "Withdrawals from Fedimints are permissioned",
-            "content": "Withdrawals from Fedimints are permissioned. Users need to trust that the majority of guardians in a Federation are honest to withdrawal their funds from the Fedimint."
-          },
-        ]
-      },
-        {
-        "id": "sourcecode",
-        "title": "Source Code",
-        "content": [
-          {
-            "title": "Code is open-source",
-            "content": "All code related to the Fedimint project is free and open source."
-          },
-        ]
-      },
-    {
-    "knowledgeBits": [
-    {
-      "url": "https://fedimint.org",
-      "displayText": "Fedimint documentation site covering technological components and use cases."
+          "title": "Description",
+          "content": "Fedimint are a module based system for building federated appliations. They are currently focused on building federted ecash mints, which would offer improved privacy for peer-to-peer payments. The construction of a Fedimint sees users lock their BTC into a Federation's multi-sig, and receive an Ecash IOU representing the BTC in the Federation. Fedimints are also useful for community custody, an idea that sees users trust members of their local community (e.g. family members) with the custody of their Bitcoin assets."
+        }
+      ]
     },
     {
-      "url": "https://www.fedi.xyz/product",
-      "displayText": "Fedi offers a Fedimint wallet and shows how a Fedimint would work in practice."
+      "id": "riskanalysis",
+      "title": "Risk Analysis",
+      "content": [
+        {
+          "title": "Unilateral Exit",
+          "content": "Fedimints do not enable unilateral exits. Users explicitly trust the signers, known as guardians, of the Federation's multi-sig to not steal their funds."
+        },
+        {
+          "title": "Data Availability",
+          "content": "Guardians of the specific federation are those that ultimately come to consensus on transactions happening with the federation. These Federations can have varying level of signers dependent on the federation, but all will rely on an honest majority assumption of signers."
+        },
+        {
+          "title": "Block Production",
+          "content": "Fedimints don't produce blocks. Transactions are processed within the federation. In a federation, Bob would create an invoice asking for a payment from Alice. Alice would respond by checking the ecash notes it holds, select the notes to equal the amount of the invoice, and then send them to Bob. Bob, containing the new notes, would send them to the guardians of the federation to redeem new ecash notes. This would see the transaction settled.",
+          "content": "Federations can also have a specifc user, or guardian, run a lightning node and pay lightning invoices on behalf of other users. In this model, Bob would receive an invoice from Alice. Bob would then create an equivalent invoice and broadcast that to the lightning node operator(s) in the federation. Bob would also include a service fee to incentivize the lightning node operators to pay the invoice on his behalf."
+        },
+        {
+          "title": "Settlement",
+          "content": "Settlement happens when a user redeems newly received eCash notes from the federation. This means that the federation effectively comes to settlement on transactions within the federation."
+        },
+        {
+          "title": "User onboarding",
+          "content": "Fedimint users do not need to run a Layer 1 transaction to enter into the Fedimint. They can also receive lightning payments, or payments within the federation, while offline."
+        }
+      ]
     },
     {
-      "url": "https://fedimint.org/docs/category/frequently-asked-questions",
-      "displayText": "Fedimint's FAQs answer frequently asked questions."
+      "id": "bitcoinsecurity",
+      "title": "Bitcoin Security",
+      "content": [
+        {
+          "title": "Fedimint guardians must be Bitcoin full nodes",
+          "content": "Guardians in a Fedimint federations need to also run Bitcoin full nodes. While this doesn't see users inherit any security directly, because they are still trusting members of a federation, it does ensure that the node operators inherit security from the Bitcoin network. This is useful because Bitcoin's consistent uptime ensures that the Fedimint node operators would also inherit Bitcoin's liveness, which is helpful for users."
+        },
+        {
+          "title": "Fedimints do not rely on alternative tokens",
+          "content": "Fedimints do not rely on altnerative tokens for security and/or network operation."
+        }
+      ]
     },
-   ]
-  },
+    {
+      "id": "technology",
+      "title": "Technology",
+      "content": [
+        {
+          "title": "eCash",
+          "content": "Chaumian eCash enables Fedimints to create and redeem IOU notes that represent claims on Bitcoin stored in the Federation's multi-sig. eCash in Fedimints also uses blinded signatures to protect the privacy of their users, and ensures that guardians of the Federation cannot see a user's specific balance. Guardians cannot also tell which parties in the federation are engaging in transactions."
+        },
+        {
+          "title": "Lightning Swaps",
+          "content": "Fedimints also enable lightning swaps through lightning gateways. A user, or guardian, in a federation can run a lightning node and pay and accept lightning invoices on behalf of users in the federation. This is particularly useful as Fedimint users don't need to be online to accept lightning payments. These payments are secured in both Fedimint and the lightning network using Hash Time Lock Contracts."
+        }
+      ]
+    },
+    {
+      "id": "usecases",
+      "title": "Use Cases",
+      "content": [
+        {
+          "title": "Community Custody",
+          "content": "It is argued that self-custody, in its current form, is diffucult for some users. Fedimints would enable users to trust the custody of their Bitcoin with a trusted third party (e.g. family member of community leader). Federated community custody may be preferred by some users over centralized custodians."
+        },
+        {
+          "title": "Private Payments",
+          "content": "Fedimints enable anonymous payments through blinded signatures. Users may choose to join a Fedimint because it can offer an easier path towards anonymity than the Bitcoin mainchain or lightning."
+        },
+        {
+          "title": "Lower fees",
+          "content": "Fedimints provide lower fees to users and do not require on-chain transactions to engage in the federation. To deposit funds, users can use the lightning network or the Bitcoin mainchain."
+        }
+      ]
+    },
+    {
+      "id": "operator",
+      "title": "Operator",
+      "content": [
+        {
+          "title": "Fedimints are managed by Federations",
+          "content": "Fedimints are managed by federated multi-sigs. Users give up the custody of their BTC, and trust that guardians of the multi-sig are honest, when entering into a Fedimint."
+        }
+      ]
+    },
+    {
+      "id": "withdrawals",
+      "title": "Withdrawals",
+      "content": [
+        {
+          "title": "Withdrawals from Fedimints are permissioned",
+          "content": "Withdrawals from Fedimints are permissioned. Users need to trust that the majority of guardians in a Federation are honest to withdrawal their funds from the Fedimint."
+        }
+      ]
+    },
+    {
+      "id": "sourcecode",
+      "title": "Source Code",
+      "content": [
+        {
+          "title": "Code is open-source",
+          "content": "All code related to the Fedimint project is free and open source."
+        }
+      ]
+    },
+    {
+      "knowledgeBits": [
+        {
+          "url": "https://fedimint.org",
+          "displayText": "Fedimint documentation site covering technological components and use cases."
+        },
+        {
+          "url": "https://www.fedi.xyz/product",
+          "displayText": "Fedi offers a Fedimint wallet and shows how a Fedimint would work in practice."
+        },
+        {
+          "url": "https://fedimint.org/docs/category/frequently-asked-questions",
+          "displayText": "Fedimint's FAQs answer frequently asked questions."
+        }
+      ]
+    }
+  ]
+}
