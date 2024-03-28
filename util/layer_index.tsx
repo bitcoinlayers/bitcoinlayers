@@ -65,8 +65,9 @@ import coordinateJson from "../content/layers/coordinate.json" assert { type: 'j
 const coordinate: Layer = coordinateJson as Layer;
 import alysJson from "../content/layers/alys.json" assert { type: 'json' };
 const alys: Layer = alysJson as Layer;
+import fedimintJson from "../content/layers/fedimint.json" assert { type: 'json' };
+const fedimint: Layer = fedimintJson as Layer;
 
 
 
-
-export const allLayers: Layer[] = [moneta, core, internetcomputer, lightning, liquid, mercurylayer, rootstock, stacks, citrea, alpen, barknet, bison, bnzk, bob, botanix, bsquared, bvm, rgb, heliosphere, libre, lumibit, merlin, mirror, rif, rollux, zkcoins, zklayer, coordinate, alys];
+export const allLayers: Layer[] = [moneta, core, internetcomputer, lightning, liquid, mercurylayer, rootstock, stacks, citrea, alpen, barknet, bison, bnzk, bob, botanix, bsquared, bvm, rgb, heliosphere, libre, lumibit, merlin, mirror, rif, rollux, zkcoins, zklayer, coordinate, alys, fedimint];

@@ -2,22 +2,23 @@
   "slug": "fedimint",
   "title": "Fedimint",
   "layerType": "Fedimint",
-  "live": "no",
+  "live": "yes",
   "underReview": "yes",
   "riskFactors": ["High", "High", "High", "High", "Low"],
   "purpose": "Private payments",
   "btcBridge": "Multi-sig",
   "settlement": "Offchain",
   "btcLocked": 0,
-  "executionEnv": "x",
-  "consensus": "x",
+  "executionEnv": "n/a",
+  "consensus": "-",
   "nativeToken": "No",
-  "feeToken": "x",
-  "enshrinedBtc": "x",
+  "feeToken": "BTC",
+  "enshrinedBtc": "n/a",
   "links": [
     "https://fedimint.org",
+    "https://fedimint.org",
     "https://fedimint.org/docs/intro",
-    "https://twitter.com/bitcoinlayers",
+    "https://fedimint.org",
     "https://github.com/fedimint",
     "https://twitter.com/fedimint"
   ],
@@ -28,7 +29,7 @@
       "content": [
         {
           "title": "Description",
-          "content": "Fedimint are a module based system for building federated appliations. They are currently focused on building federted ecash mints, which would offer improved privacy for peer-to-peer payments. The construction of a Fedimint sees users lock their BTC into a Federation's multi-sig, and receive an Ecash IOU representing the BTC in the Federation. Fedimints are also useful for community custody, an idea that sees users trust members of their local community (e.g. family members) with the custody of their Bitcoin assets."
+          "content": "Fedimints are a module based system for building federated appliations. They are currently focused on building federated ecash mints, which would offer improved privacy for peer-to-peer payments. The construction of a Fedimint sees users lock their BTC into a Federation's multi-sig, and receive an Ecash IOU representing the BTC in the Federation. Fedimints are also useful for community custody, an idea that sees users trust members of their local community (e.g., family members) with the custody of their Bitcoin assets."
         }
       ]
     },
@@ -134,22 +135,20 @@
           "content": "All code related to the Fedimint project is free and open source."
         }
       ]
+    }
+  ],
+  "knowledgeBits": [
+    {
+      "url": "https://fedimint.org",
+      "displayText": "Fedimint documentation site covering technological components and use cases."
     },
     {
-      "knowledgeBits": [
-        {
-          "url": "https://fedimint.org",
-          "displayText": "Fedimint documentation site covering technological components and use cases."
-        },
-        {
-          "url": "https://www.fedi.xyz/product",
-          "displayText": "Fedi offers a Fedimint wallet and shows how a Fedimint would work in practice."
-        },
-        {
-          "url": "https://fedimint.org/docs/category/frequently-asked-questions",
-          "displayText": "Fedimint's FAQs answer frequently asked questions."
-        }
-      ]
+      "url": "https://www.fedi.xyz/product",
+      "displayText": "Fedi offers a Fedimint wallet and shows how a Fedimint would work in practice."
+    },
+    {
+      "url": "https://fedimint.org/docs/category/frequently-asked-questions",
+      "displayText": "Fedimint's FAQs answer frequently asked questions."
     }
   ]
 }
