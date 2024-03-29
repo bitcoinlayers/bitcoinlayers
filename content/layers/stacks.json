@@ -13,7 +13,7 @@
   "consensus": "PoX",
   "nativeToken": "STX",
   "feeToken": "STX",
-  "enshrinedBtc": "sBTC (dev)",
+  "enshrinedBtc": "sBTC",
   "links": [
     "https://www.stacks.co/",
     "https://www.stacks.co/explore/discover-apps",
@@ -29,7 +29,7 @@
       "content": [
         {
           "title": "Stacks is a sidechain",
-          "content": "Stacks is a programmability layer with a novel execution environment, Clarity. Stacks is a sidechain, with its a distinct consensus mechanism (although integrated with Bitcoin mining) and native gas token (STX)."
+          "content": "Stacks is a programmability layer with a novel execution environment, Clarity. Stacks is a sidechain, with its a hybrid PoS mechanism called PoX and native gas token (STX)."
         }
       ]
     },
@@ -37,6 +37,10 @@
       "id": "riskanalysis",
       "title": "Risk Analysis",
       "content": [
+        {
+          "title": "No Enshrined BTC Bridge",
+          "content": "Stacks has no consensus-enshrined BTC bridge. It does have two third-party bridges, which are both custodial multisigs. Users must trust the operators of these bridges to not steal their BTC."
+        },
         {
           "title": "No Enforcement of State Validation",
           "content": "The validity of Stacks state transitions is not enforced by Bitcoin. However, Stacks has a permissionless and sufficiently decentralized validator set which enforces transaction validity, which is why this risk is Medium and not High."
@@ -47,15 +51,12 @@
         },
         {
           "title": "Decentralized Block Production",
-          "content": "Stacks has a sufficiently decentralized block production mechanism, but it does not support exits that circumvent its validator set. This is why the risk is Medium and not Low."
+          "content": "Stacks has a sufficiently decentralized block production mechanism, but it does not support exits that circumvent its validator set. This means that users must trust Stacks validators to include their transactions in blocks."
         },
+        
         {
-          "title": "No Enshrined BTC Bridge",
-          "content": "Stacks has no consensus-enshrined BTC bridge. It does have two third-party bridges, which are both custodial multisigs."
-        },
-        {
-          "title": "No Enshrined BTC Bridge",
-          "content": "Stacks has no consensus-enshrined BTC bridge. It does have two custodial multisig bridges, which are not trustless."
+          "title": "Users do not need to interact with Bitcoin to get started",
+          "content": "Users can onboard to Stacks directly without having to first transact ."
         }
       ]
     },
@@ -79,7 +80,7 @@
       "content": [
         {
           "title": "Clarity",
-          "content": ""
+          "content": "Stacks uses the novel execution environment Clarity. The Clarity language is a subset of Lisp, and is not Turing-complete as a design choice. However, it is still expressive enough to build complex smart contracts and replicate much of the functionalities from Turing-complete environments like the EVM (i.e., DeFi, NFTs, etc.). Stacks is able to read Bitcoin state, due to both Clarity and its integrated PoX consensus mechanism. This allows for events on Stacks to be triggered by Bitcoin activity, or for smart contracts to read Bitcoin state during their execution."
         },
         {
           "title": "Proof-of-Transfer",
@@ -88,20 +89,6 @@
         {
           "title": "sBTC",
           "content": ""
-        }
-      ]
-    },
-    {
-      "id": "usecases",
-      "title": "Use Cases",
-      "content": [
-        {
-          "title": "Programmability",
-          "content": "Stacks uses the novel execution environment Clarity. The Clarity language is a subset of Lisp, and is not Turing-complete as a design choice. However, it is still expressive enough to build complex smart contracts and replicate much of the functionalities from Turing-complete environments like the EVM (i.e., DeFi, NFTs, etc.)."
-        },
-        {
-          "title": "Access to Bitcoin State",
-          "content": "Stacks is able to read Bitcoin state, due to its Clarity language and its integrated PoX consensus mechanism. This allows for events on Stacks to be triggered by Bitcoin activity, or for smart contracts to read Bitcoin state during their execution."
         },
         {
           "title": "Faster block times",
@@ -110,6 +97,20 @@
         {
           "title": "Lower fees",
           "content": "Stacks fees average in the order of tens of cents."
+        }
+      ]
+    },
+    {
+      "id": "usecases",
+      "title": "Use Cases",
+      "content": [
+        {
+          "title": "DeFi",
+          "content": "The most popular use case for Stacks is DeFi. Stacks has a number of DeFi applications, including lending, borrowing, and decentralized exchanges."
+        },
+        {
+          "title": "NFTs",
+          "content": "Stacks is home to a number of NFT projects, including digital art, collectibles, and indentity."
         }
       ]
     },
@@ -129,7 +130,7 @@
       "content": [
         {
           "title": "Withdrawals from sBTC will be permissioned by the validator set",
-          "content": "Stacks does not yet have a consensus-enshrined BTC bridge. However, sBTC, which is in development, will serve this role. Withdrawals from sBTC back to BTC rely on Stacks validators, which is a permissionless 1-of-N trust assumption. Block builders can censor a transaction to withdraw, but only one honest actor is needed to push the transaction through after a period of time (i.e., the time it takes for them to win the role of building a block)."
+          "content": "Stacks does not yet have a consensus-enshrined BTC bridge. It does have two third-party bridges, which are both custodial multisigs. Users must trust the operators of these bridges to not steal their BTC."
         }
       ]
     },
