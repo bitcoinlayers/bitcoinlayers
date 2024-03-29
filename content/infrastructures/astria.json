@@ -2,7 +2,7 @@
   "slug": "astria",
   "title": "Astria",
   "infrastructureType": "Sequencing",
-  "live": "Testnet",
+  "live": "Mainnet",
   "underReview": "yes",
   "riskFactors": ["High", "High", "High", "High", "High"],
   "purpose": "-",
