@@ -2,7 +2,7 @@
   "slug": "astria",
   "title": "Astria",
   "layerType": "Sequencing",
-  "live": "Announced",
+  "live": "Testnet",
   "underReview": "yes",
   "riskFactors": ["High", "High", "High", "High", "High"],
   "purpose": "-",
