@@ -38,7 +38,7 @@
       "title": "Risk Analysis",
       "content": [
         {
-          "title": "Unilateral Exit",
+          "title": "No Unilateral Exits",
           "content": "Fedimints do not enable unilateral exits. Users explicitly trust the signers, known as guardians, of the Federation's multi-sig to not steal their funds."
         },
         {
@@ -47,8 +47,7 @@
         },
         {
           "title": "Block Production",
-          "content": "Fedimints don't produce blocks. Transactions are processed within the federation. In a federation, Bob would create an invoice asking for a payment from Alice. Alice would respond by checking the ecash notes it holds, select the notes to equal the amount of the invoice, and then send them to Bob. Bob, containing the new notes, would send them to the guardians of the federation to redeem new ecash notes. This would see the transaction settled.",
-          "content": "Federations can also have a specifc user, or guardian, run a lightning node and pay lightning invoices on behalf of other users. In this model, Bob would receive an invoice from Alice. Bob would then create an equivalent invoice and broadcast that to the lightning node operator(s) in the federation. Bob would also include a service fee to incentivize the lightning node operators to pay the invoice on his behalf."
+          "content": "Fedimints don't produce blocks. Transactions are processed within the federation. In a federation, Bob would create an invoice asking for a payment from Alice. Alice would respond by checking the ecash notes it holds, select the notes to equal the amount of the invoice, and then send them to Bob. Bob, containing the new notes, would send them to the guardians of the federation to redeem new ecash notes. This would see the transaction settled.\nFederations can also have a specifc user, or guardian, run a lightning node and pay lightning invoices on behalf of other users. In this model, Bob would receive an invoice from Alice. Bob would then create an equivalent invoice and broadcast that to the lightning node operator(s) in the federation. Bob would also include a service fee to incentivize the lightning node operators to pay the invoice on his behalf."
         },
         {
           "title": "Settlement",
