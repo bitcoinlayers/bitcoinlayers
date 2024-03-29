@@ -1,7 +1,7 @@
 {
   "slug": "espresso",
   "title": "Espresso",
-  "layerType": "Sequencing & DA",
+  "infrastructureType": "Sequencing & DA",
   "live": "Testnet",
   "underReview": "yes",
   "riskFactors": ["High", "High", "High", "High", "High"],
