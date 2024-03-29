@@ -118,8 +118,8 @@
       "title": "Operator",
       "content": [
         {
-          "title": "Stacks is operated by Bitcoin miners",
-          "content": "Block production is managed by Bitcoin miners, by combining microblocks created by Stacks validators. Users trust the majority of validators to not collude, and Bitcoin miners to not censor."
+          "title": "Stacks is operated by miners and validators",
+          "content": "Block production is managed by Stacks miner (which are typically also Bitcoin miners, similar to classic merge-mining), by combining microblocks created by Stacks validators. Users trust the majority of validators to not collude, and miners to not censor."
         }
       ]
     },
@@ -128,8 +128,8 @@
       "title": "Withdrawals",
       "content": [
         {
-          "title": "Withdrawals from sBTC will be permissioned by the validator set",
-          "content": "Stacks does not yet have a consensus-enshrined BTC bridge. It does have two third-party bridges, which are both custodial multisigs. Users must trust the operators of these bridges to not steal their BTC."
+          "title": "Withdrawals from xBTC and aBTC are permissioned by custodians",
+          "content": "Stacks does have two third-party bridges, xBTC and aBTC, which are both custodial multisigs. Users must trust the operators of these bridges to not steal their BTC. Stacks' consensus-enshrined BTC bridge for sBTC is not yet live as of March 2024."
         }
       ]
     },
