@@ -274,7 +274,9 @@ const LayerTable = ({ data }: Props) => {
               key={index}
               onClick={() =>
                 handleRowClick(
-                  item.underReview === "no" ? `/layers/${item.slug}` : item.links[0],
+                  item.underReview === "no"
+                    ? `/layers/${item.slug}`
+                    : item.links[0],
                   item.underReview
                 )
               }
@@ -283,8 +285,8 @@ const LayerTable = ({ data }: Props) => {
                 <h2>{item.title}</h2>
               </td>
               <td className="flex-1 pl-6 pr-2 py-4 flex flex-row mt-4 relative group cursor-pointer">
-                {item.live === "no" ? (
-                  <div className="font-bold">Testnet</div>
+                {item.live !== "Mainnet" ? (
+                  <div className="font-bold">Not Live</div>
                 ) : item.underReview === "yes" ? (
                   <div className="text-bitcoin font-bold">Under Review</div>
                 ) : (
@@ -318,14 +320,14 @@ const LayerTable = ({ data }: Props) => {
               <td className="flex-1 px-6 py-4">{item.layerType}</td>
               <td className="flex-1 px-6 py-4">{item.purpose}</td>
               <td className="flex-1 px-6 py-4">
-                {item.live === "no" ? (
+                {item.live !== "Mainnet" ? (
                   <div>-</div>
                 ) : (
                   <div>{item.btcBridge}</div>
                 )}
               </td>
               <td className="flex-1 px-6 py-4">
-                {item.live === "no" ? (
+                {item.live !== "Mainnet" ? (
                   <div>-</div>
                 ) : (
                   <div>{item.settlement}</div>
