@@ -2,7 +2,7 @@
   "slug": "bitcoinos",
   "title": "BitcoinOS",
   "infrastructureType": "RaaS",
-  "live": "Announced",
+  "live": "Mainnet",
   "underReview": "yes",
   "riskFactors": ["Medium", "Low", "High", "Medium", "Medium"],
   "purpose": "General",
