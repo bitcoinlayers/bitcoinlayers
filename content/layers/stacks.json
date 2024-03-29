@@ -128,8 +128,8 @@
       "title": "Withdrawals",
       "content": [
         {
-          "title": "Withdrawals from xBTC and aBTC are permissioned by custodians",
-          "content": "Stacks does have two third-party bridges, xBTC and aBTC, which are both custodial multisigs. Users must trust the operators of these bridges to not steal their BTC. Stacks' consensus-enshrined BTC bridge for sBTC is not yet live as of March 2024."
+          "title": "Users trust centralized operators to process their withdrawals",
+          "content": "Stacks users deposit BTC into Stacks through custodial bridge mechanisms. They trust that the operators of these bridges (e.g. aBTC and xBTC) will not steal their Bitcoin assets, or censor their withdrawals."
         }
       ]
     },
