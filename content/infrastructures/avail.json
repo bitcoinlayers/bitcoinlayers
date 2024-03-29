@@ -1,7 +1,7 @@
 {
   "slug": "avail",
   "title": "Avail",
-  "layerType": "Data Availability",
+  "infrastructureType": "Data Availability",
   "live": "Testnet",
   "underReview": "yes",
   "riskFactors": ["High", "High", "High", "High", "High"],
