@@ -2,7 +2,7 @@
   "slug": "sovereign",
   "title": "Sovereign",
   "infrastructureType": "Rollup SDK",
-  "live": "Mainnet",
+  "live": "Testnet",
   "underReview": "yes",
   "riskFactors": ["High", "High", "High", "High", "High"],
   "purpose": "-",
