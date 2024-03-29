@@ -25,8 +25,6 @@ import barknetJson from "../content/layers/barknet.json" assert { type: 'json' }
 const barknet: Layer = barknetJson as Layer;
 import bisonJson from "../content/layers/bison.json" assert { type: 'json' };
 const bison: Layer = bisonJson as Layer;
-import bitcoinosJson from "../content/layers/bitcoinos.json" assert { type: 'json' };
-const bitcoinos: Layer = bitcoinosJson as Layer;
 import bnzkJson from "../content/layers/bnzk.json" assert { type: 'json' };
 const bnzk: Layer = bnzkJson as Layer;
 import bobJson from "../content/layers/bob.json" assert { type: 'json' };
