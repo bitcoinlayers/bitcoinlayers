@@ -7,7 +7,7 @@ export enum RiskFactor {
 }
 
 export const RISK_FACTOR_CATEGORIES = [
-  "BTC Bridge",
+  "Unilateral Exits",
   "Data Availability",
   "Block Production",
   "Settlement",
