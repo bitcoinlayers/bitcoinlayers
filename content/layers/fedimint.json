@@ -2,7 +2,7 @@
   "slug": "fedimint",
   "title": "Fedimint",
   "layerType": "Fedimint",
-  "live": "yes",
+  "live": "Mainnet",
   "underReview": "yes",
   "riskFactors": ["High", "High", "High", "High", "Low"],
   "purpose": "Private payments",
