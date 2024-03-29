@@ -268,7 +268,7 @@ const LayerTable = ({ data }: Props) => {
         <tbody className="dark:border-primary gap-x-8">
           {filteredAndSortedData.map((item, index) => (
             <tr
-              className={`dark:border-primary h-20 cursor-pointer ${
+              className={`dark:border-primary h-12 cursor-pointer ${
                 index === filteredAndSortedData.length - 1 ? "" : "border-b-2"
               }`}
               key={index}
@@ -284,13 +284,13 @@ const LayerTable = ({ data }: Props) => {
               <td className="flex-1 px-6 py-4 font-bold whitespace-nowrap">
                 <h2>{item.title}</h2>
               </td>
-              <td className="flex-1 pl-6 pr-2 py-4 flex flex-row mt-4 relative group cursor-pointer">
+              <td className="flex-1 pl-6 pr-2 items-center flex flex-row mt-4 relative group cursor-pointer">
                 {item.live !== "Mainnet" ? (
-                  <div className="font-bold">Not Live</div>
+                  <div className="text-white font-bold">Not Live</div>
                 ) : item.underReview === "yes" ? (
-                  <div className="text-bitcoin font-bold">Under Review</div>
+                  <div className="text-bitcoin font-bold py-2.5">Under Review</div>
                 ) : (
-                  <>
+                  <div className="flex flex-row py-3">
                     {item.riskFactors.map((riskFactor, index) => (
                       <div
                         key={index}
@@ -301,7 +301,7 @@ const LayerTable = ({ data }: Props) => {
                     ))}
                     {/* Tooltip */}
                     <div className="absolute -right-12 top-10 w-64 mt-2 hidden group-hover:flex flex-col items-center before:content-[''] before:absolute before:bottom-full before:left-1/2 before:-translate-x-1/2 before:border-l-8 before:border-l-transparent before:border-r-8 before:border-r-transparent before:border-b-8 before:border-b-white z-10">
-                      <div className="bg-secondary text-white text-xs rounded py-1 px-3 border border-white">
+                      <div className="bg-secondary text-white text-xs rounded py-1 px-3">
                         <p className="text-lg font-bold">Risk Factors</p>
                         {item.riskFactors.length > 0 ? (
                           item.riskFactors.map((riskFactor, index) => (
@@ -312,7 +312,7 @@ const LayerTable = ({ data }: Props) => {
                         )}
                       </div>
                     </div>
-                  </>
+                  </div>
                 )}
               </td>
 
