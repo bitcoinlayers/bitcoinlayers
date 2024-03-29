@@ -118,8 +118,8 @@
       "title": "Operator",
       "content": [
         {
-          "title": "Stacks is operated by validators",
-          "content": "Block production is managed by a decentralized set of validators (aka Stackers). Users trust the majority of validators to not collude."
+          "title": "Stacks is operated by Bitcoin miners",
+          "content": "Block production is managed by Bitcoin miners, by combining microblocks created by Stacks validators. Users trust the majority of validators to not collude, and Bitcoin miners to not censor."
         }
       ]
     },
