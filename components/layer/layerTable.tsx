@@ -17,7 +17,7 @@ const LayerTable = ({ data }: Props) => {
   );
   const [layerTypeFilter, setLayerTypeFilter] = useState("");
   const [settlementFilter, setSettlementFilter] = useState("");
-  const [liveFilter, setLiveFilter] = useState("yes");
+  const [liveFilter, setLiveFilter] = useState("Mainnet");
 
   const filteredAndSortedData = useMemo(() => {
     return [...data]
@@ -75,8 +75,9 @@ const LayerTable = ({ data }: Props) => {
           onChange={(e) => setLiveFilter(e.target.value)}
         >
           <option value="">All Layers</option>
-          <option value="yes">Live</option>
-          <option value="no">Testnet</option>
+          <option value="Mainnet">Mainnet</option>
+          <option value="Testnet">Testnet</option>
+          <option value="Announced">Announced</option>
         </select>
         <select
           className="rounded-md  p-2 font-semibold text-xs text-bitcoin border border-gray-300 bg-secondary"
