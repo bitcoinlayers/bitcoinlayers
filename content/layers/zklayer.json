@@ -2,7 +2,7 @@
     "slug": "zklayer",
     "title": "zkLayer",
     "layerType": "Rollup",
-    "live": "no",
+    "live": "Testnet",
     "underReview": "yes",
     "riskFactors": ["High", "High", "High", "High", "High"],
     "purpose": "-",

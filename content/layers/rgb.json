@@ -2,7 +2,7 @@
     "slug": "rgb",
     "title": "RGB",
     "layerType": "CSV",
-    "live": "no",
+    "live": "Testnet",
 "underReview": "yes",
     "riskFactors": ["", "Low", "High", "Medium", "Medium"],
     "purpose": "-",

@@ -2,7 +2,7 @@
   "slug": "stacks",
   "title": "Stacks",
   "layerType": "Sidechain",
-  "live": "yes",
+  "live": "Mainnet",
   "underReview": "yes",
   "riskFactors": ["High", "Medium", "Medium", "Medium", "Low"],
   "purpose": "General",

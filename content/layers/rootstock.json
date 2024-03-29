@@ -2,7 +2,7 @@
   "slug": "rootstock",
   "title": "Rootstock",
   "layerType": "Sidechain",
-  "live": "yes",
+  "live": "Mainnet",
   "underReview": "yes",
   "riskFactors": ["", "Medium", "Medium", "Medium", "High"],
   "purpose": "General",

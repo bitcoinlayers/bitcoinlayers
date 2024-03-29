@@ -2,7 +2,7 @@
     "slug": "liquid",
     "title": "Liquid",
     "layerType": "Sidechain",
-    "live": "yes",
+    "live": "Mainnet",
     "underReview": "yes",
     "riskFactors": ["", "Low", "High", "Medium", "Medium"],
     "purpose": "Payments",

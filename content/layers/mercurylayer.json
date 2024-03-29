@@ -2,7 +2,7 @@
   "slug": "mercurylayer",
   "title": "Mercury Layer",
   "layerType": "Statechain",
-  "live": "no",
+  "live": "Testnet",
   "underReview": "yes",
   "riskFactors": ["High", "Medium", "Medium", "High", "High"],
   "purpose": "Private payments",

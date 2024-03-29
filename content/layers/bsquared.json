@@ -2,7 +2,7 @@
   "slug": "bsquared",
   "title": "Bsquared",
   "layerType": "Rollup",
-  "live": "no",
+  "live": "Testnet",
   "underReview": "yes",
   "riskFactors": ["Low", "High", "Medium", "Medium", "Low"],
   "purpose": "-",

@@ -2,7 +2,7 @@
     "slug": "core",
     "title": "Core",
     "layerType": "Sidechain",
-    "live": "yes",
+    "live": "Mainnet",
     "underReview": "yes",
     "riskFactors": ["", "Low", "High", "Medium", "Medium"],
     "purpose": "General",

@@ -2,7 +2,7 @@
     "slug": "rif",
     "title": "RIF",
     "layerType": "Layer-3",
-    "live": "no",
+    "live": "Testnet",
 "underReview": "yes",
     "riskFactors": ["High", "High", "High", "High", "High"],
     "purpose": "-",

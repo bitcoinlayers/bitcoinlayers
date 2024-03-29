@@ -2,7 +2,7 @@
   "slug": "moneta",
   "title": "Moneta (Demo)",
   "layerType": "Rollup",
-  "live": "yes",
+  "live": "Mainnet",
   "underReview": "no",
   "riskFactors": ["Medium", "Low", "High", "Medium", "Low"],
   "purpose": "General",

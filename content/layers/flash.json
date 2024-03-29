@@ -2,7 +2,7 @@
   "slug": "flash",
   "title": "Flash Protocol",
   "layerType": "x",
-  "live": "no",
+  "live": "Testnet",
   "underReview": "yes",
   "riskFactors": ["High", "High", "High", "High", "High"],
   "purpose": "-",

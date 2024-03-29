@@ -2,7 +2,7 @@
   "slug": "mirror",
   "title": "Mirror",
   "layerType": "Sidechain",
-  "live": "no",
+  "live": "Testnet",
   "underReview": "yes",
   "riskFactors": ["Low", "High", "Medium", "Medium", "Low"],
   "purpose": "-",
