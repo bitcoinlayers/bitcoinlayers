@@ -128,8 +128,8 @@
       "title": "Withdrawals",
       "content": [
         {
-          "title": "Withdrawals from sBTC will be permissioned by the validator set",
-          "content": "Stacks does not yet have a consensus-enshrined BTC bridge. It does have two third-party bridges, which are both custodial multisigs. Users must trust the operators of these bridges to not steal their BTC."
+          "title": "Users trust centralized operators to process their withdrawals",
+          "content": "Stacks users deposit BTC into Stacks through custodial bridge mechanisms. They trust that the operators of these bridges (e.g. aBTC and xBTC) will not steal their Bitcoin assets, or censor their withdrawals."
         }
       ]
     },
