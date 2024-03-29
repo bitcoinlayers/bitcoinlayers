@@ -119,7 +119,7 @@
       "content": [
         {
           "title": "Stacks is operated by miners and validators",
-          "content": "Block production is managed by Stacks miner (which are typically also Bitcoin miners, similar to classic merge-mining), by combining microblocks created by Stacks validators. Users trust the majority of validators to not collude, and miners to not censor."
+          "content": "Block production is managed by Stacks miners (which are typically also Bitcoin miners, similar to the node overlap with classic merge-mining), by combining microblocks created by Stacks validators. Users trust the majority of validators and miners to not collude or censor."
         }
       ]
     },
