@@ -4,7 +4,7 @@
   "layerType": "Sidechain",
   "live": "yes",
   "underReview": "yes",
-  "riskFactors": ["", "Medium", "Medium", "High", "High"],
+  "riskFactors": ["High", "Medium", "Medium", "Medium", "Low"],
   "purpose": "General",
   "btcBridge": "Custodial Multisig",
   "settlement": "Offchain",
@@ -29,7 +29,7 @@
       "content": [
         {
           "title": "Stacks is a sidechain",
-          "content": "Stacks is a programmability layer with a novel execution environment, Clarity. Stacks is a sidechain, with its a hybrid PoS mechanism called PoX and native gas token (STX)."
+          "content": "Stacks is a programmability layer with a novel execution environment, Clarity. Stacks is a sidechain, powered by a hybrid PoS mechanism (PoX) and a native fee token (STX)."
         }
       ]
     },
@@ -39,24 +39,23 @@
       "content": [
         {
           "title": "No Enshrined BTC Bridge",
-          "content": "Stacks has no consensus-enshrined BTC bridge. It does have two third-party bridges, which are both custodial multisigs. Users must trust the operators of these bridges to not steal their BTC."
-        },
-        {
-          "title": "No Enforcement of State Validation",
-          "content": "The validity of Stacks state transitions is not enforced by Bitcoin. However, Stacks has a permissionless and sufficiently decentralized validator set which enforces transaction validity, which is why this risk is Medium and not High."
+          "content": "Stacks has no consensus-enshrined BTC bridge. It does have two third-party bridges, which are both custodial multisigs. Users must trust the operators of these bridges to not steal their BTC, as they do not support unilateral exits."
         },
         {
           "title": "State Roots Only",
-          "content": "Stacks posts state roots to Bitcoin, but not full transaction calldata. Because of this, Stacks' state cannot be reconstructed using only data from Bitcoin."
+          "content": "Stacks posts state roots to Bitcoin, but not full transaction calldata. Because of this, Stacks' state cannot be reconstructed using only data from Bitcoin. However, Stacks has a permissionless and sufficiently decentralized validator set, which makes data availability readily available (unlike with a single centralized sequencer)."
         },
         {
           "title": "Decentralized Block Production",
           "content": "Stacks has a sufficiently decentralized block production mechanism, but it does not support exits that circumvent its validator set. This means that users must trust Stacks validators to include their transactions in blocks."
         },
-        
+        {
+          "title": "Self-Enforcement of State Validation",
+          "content": "Settlement is done offchain, on Stacks, rather than onchain, on Bitcoin. The validity of Stacks state transitions is not enforced by Bitcoin. However, Stacks has a permissionless and sufficiently decentralized validator set which enforces transaction validity, removing centralization concerns."
+        },
         {
           "title": "Users do not need to interact with Bitcoin to get started",
-          "content": "Users can onboard to Stacks directly without having to first transact ."
+          "content": "Users can onboard to Stacks directly without having to first transact on Bitcoin."
         }
       ]
     },
@@ -66,11 +65,11 @@
       "content": [
         {
           "title": "Stacks nodes are required for data availability",
-          "content": "While state roots are posted to Bitcoin, these timestamps do not include enough data to recreate the state of Stacks. To do that, users must rely on Stacks nodes to provide that data. Stacks has a decentralized and permissionless set of nodes, so getting access to this information is not a serious concern."
+          "content": "Stacks posts state roots to Bitcoin, but not full transaction calldata. Because of this, Stacks' state cannot be reconstructed using only data from Bitcoin. Stacks nodes are the sole providers of data availability. However, Stacks has a permissionless and sufficiently decentralized validator/node set, so this is not a serious concern"
         },
         {
           "title": "Stacks requires another token to function",
-          "content": "The STX token is required to pay for transaction fees and smart contract execution on the Stacks network. It is also used as a reward for miners who participate in the PoX consensus mechanism. The token is not required for the security of the network, but it is necessary for its operation."
+          "content": "The STX token is required to pay for transaction fees and smart contract execution on the Stacks network. It is also used as a reward for miners who participate in the PoX consensus mechanism. The token is indirectly required for the security of the network, as block production by miners is incentivized by STX."
         }
       ]
     },
@@ -84,19 +83,19 @@
         },
         {
           "title": "Proof-of-Transfer",
-          "content": ""
+          "content": "Proof-of-Transfer (PoX) is Stacks' novel consensus mechanism, based on Proof-of-Burn. PoX involves Bitcoin miners bidding BTC for the right to mint a Stacks block. The winning miner creates the block, and is rewarded with the STX block reward and STX transaction fees from the block. The miner's bid is paid to STX stackers (stakers). This system allows for STX stackers to earn native BTC yield, and creates an additional revenue stream for miners, similar to merge-mining."
         },
         {
           "title": "sBTC",
-          "content": ""
+          "content": "sBTC is still in development as of March 2024. It is a bridged version of BTC on Stacks. sBTC is minted by locking up BTC on Bitcoin, and is redeemable for BTC at a 1:1 ratio. sBTC is not yet permissionless, as withdrawals are permissioned by the validator set."
         },
         {
           "title": "Faster block times",
-          "content": "Stacks currently operates at the same block times as Bitcoin, roughly 10 minutes per block. However, the upcoming Nakamoto Upgrade in April 2024 will reduce block times to an order of seconds."
+          "content": "Stacks operates at the same block times as Bitcoin as of March 2024, roughly 10 minutes per block. However, the upcoming Nakamoto Upgrade in April 2024 will reduce block times to an order of seconds."
         },
         {
           "title": "Lower fees",
-          "content": "Stacks fees average in the order of tens of cents."
+          "content": "Stacks fees average in the order of tens of cents as of March 2024."
         }
       ]
     },
