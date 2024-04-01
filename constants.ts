@@ -11,5 +11,5 @@ export const RISK_FACTOR_CATEGORIES = [
   "Data Availability",
   "Block Production",
   "Settlement",
-  "User Onboarding",
+  "Bitcoin Security",
 ];

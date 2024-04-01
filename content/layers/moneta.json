@@ -53,8 +53,8 @@
           "content": "Optimistically proven zkSTARK proofs ensure state correctness. In the event of an invalid state transition, actors watching the chain can submit Fraud Proofs to prove that the state transition is incorrect."
         },
         {
-          "title": "No onchain transaction needed.",
-          "content": "Users can onboard directly onto Moneta. They do not need to complete an onchain transaction to access the protocol."
+          "title": "Security is inherited.",
+          "content": "Moneta uses hashrate to secure itself."
         }
       ]
     },
