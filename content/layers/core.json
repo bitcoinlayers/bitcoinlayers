@@ -1,136 +1,145 @@
 {
-    "slug": "core",
-    "title": "Core",
-    "layerType": "Sidechain",
-    "live": "Mainnet",
-    "underReview": "yes",
-    "riskFactors": ["", "Low", "High", "Medium", "Medium"],
-    "purpose": "General",
-    "btcBridge": "Federated Multisig",
-    "settlement": "Offchain",
-    "btcLocked": 0,
-    "executionEnv": "EVM",
-    "consensus": "Satoshi Plus",
-    "nativeToken": "-",
-    "feeToken": "cBTC",
-    "enshrinedBtc": "cBTC",
-    "links": [
-      "https://coredao.org/",
-      "https://twitter.com/bitcoinlayers",
-      "https://twitter.com/bitcoinlayers",
-      "https://twitter.com/bitcoinlayers",
-      "https://twitter.com/bitcoinlayers",
-      "https://twitter.com/bitcoinlayers"
-    ],
-    "sections": [
-      {
-        "id": "description",
-        "title": "Description",
-        "content": [
-          {
-            "title": "Description",
-            "content": "Moneta is a rollup that uses Bitcoin for data availability and consensus. It has an optimistically verified validating bridge via BitVM. It leverages STARK proofs to prove state transitions. In the event of an invalid state transition, verifiers in the BitVM bridge can submit a fraud proof to show that the state transition was invalid."
-          }
-        ]
-      },
-      {
-        "id": "riskanalysis",
-        "title": "Risk Analysis",
-        "content": [
-          {
-            "title": "State Validation",
-            "content": "Optimistically proven zkSTARK proofs ensure state correctness. In the event of an invalid state transition, actors watching the chain can submit Fraud Proofs to prove that the state transition is incorrect."
-          },
-          {
-            "title": "Data Availability",
-            "content": "All of the data needed to reconstruct the rollup's state is stored on the Bitcoin Layer 1."
-          },
-          {
-            "title": "Block Production",
-            "content": "If Moneta's sequencer, which is centralized, goes down, users are submit their transaction to the L1 for ordering. In the event of censorship, Moneta's prover is required to include transactions sequenced by the L1 in their state transition, or proof generation will fail. Regarding proposing state changes, only the whitelisted proposers can publish state roots on L1, so in the event of failure the withdrawals are frozen."
-          },
-          {
-            "title": "BTC Bridge & Exit",
-            "content": "Withdrawing BTC and/or Bitcoin assets from the rollup is not trustless. Users must trust that 1 of any number of verifiers in the validating bridge are acting honestly to process their withdrawal."
-          },
-          {
-            "title": "Self-custodial",
-            "content": "Due to relying on BitVM for its bridge, users take on the trust assumption of that bridge for the custody of their assets."
-          }
-        ]
-      },
-      {
-        "id": "bitcoinsecurity",
-        "title": "Bitcoin Security",
-        "content": [
-          {
-            "title": "The rollup relies on Bitcoin for data availability and consensus",
-            "content": "Moneta's state can be reconstructed based on the data that is stored on the Bitcoin blockchain."
-          },
-          {
-            "title": "Bitcoin Hashpower is used in securing Moneta",
-            "content": "Bitcoin hashpower used to mine blocks containing transactions that include Citrea's state transitions."
-          },
-          {
-            "title": "Moneta does not have an alternative token",
-            "content": "Moneta uses a BTC voucher to operate the rollup."
-          }
-        ]
-      },
-      {
-        "id": "technology",
-        "title": "Technology",
-        "content": [
-          {
-            "title": "Validity proofs ensure state correctness",
-            "content": "Each state transition must contain a validity proof that proves that execution was done correctly to a series of user transactions. If these a proof includes an invalid state transition, then a verifier in the BitVM set up can submit a fraud proof to challenge the state transition."
-          },
-          {
-            "title": "Zero knowledge STARK cryptography is used",
-            "content": "State transitions are proven through cryptographic proofs known as zkSTARKs. If an implementation of the cryptography was done incorrectly, user funds can be at risk. STARKs do not require a trusted set up."
-          }
-        ]
-      },
-      {
-        "id": "operator",
-        "title": "Operator",
-        "content": [
-          {
-            "title": "The system has a centralized operator",
-            "content": "Block production is managed by one entity. Users trust this entity to act in the best interests of the system."
-          }
-        ]
-      },
-      {
-        "id": "withdrawals",
-        "title": "Withdrawals",
-        "content": [
-          {
-            "title": "Withdrawals rely on 1-N trust assumptions",
-            "content": "In the event that the systems are operators are acting honestly, users trust that 1 party in the BitVM bridge set up is acting honestly and will permit their withdrawals from the L2."
-          }
-        ]
-      },
-      {
-        "id": "sourcecode",
-        "title": "Source Code",
-        "content": [
-          {
-            "title": "The node software is open-source and available",
-            "content": "The node software is open-source, and its source code can be found here. Users can run a node with their own hardware, or through a cloud service provider."
-          }
-        ]
-      },
-      {
-        "id": "knowledgebits",
-        "title": "Knowledge Bits",
-        "content": [
-          {
-            "title": "Bitcoin.org",
-            "content": "<a href='https://bitcoin.org/en/'>Visit Bitcoin.org</a>"
-          }
-        ]
-      }
-    ]
-  }
-  
+  "slug": "core",
+  "title": "Core",
+  "layerType": "Sidechain",
+  "live": "Mainnet",
+  "underReview": "no",
+  "riskFactors": ["High", "Medium", "Medium", "Medium"],
+  "purpose": "General",
+  "btcBridge": "Permissionless Multisig",
+  "settlement": "Offchain",
+  "btcLocked": 0,
+  "executionEnv": "EVM",
+  "consensus": "Satoshi Plus",
+  "nativeToken": "CORE",
+  "feeToken": "CORE",
+  "enshrinedBtc": "coreBTC",
+  "links": [
+    "https://coredao.org/",
+    "https://coredao.org/",
+    "https://docs.coredao.org/developer/introduction/quick-links",
+    "https://scan.coredao.org/",
+    "https://github.com/coredao-org",
+    "https://twitter.com/Coredao_Org"
+  ],
+  "sections": [
+    {
+      "id": "description",
+      "title": "Description",
+      "content": [
+        {
+          "title": "Core Chain is a sidechain",
+          "content": "Core is an EVM sidechain with a hybrid consensus mechanism, Satoshi Plus, that leverages both DPoW and DPoS. It uses a permissionless multisig to bridge BTC. The native token of the network is CORE, which is used for transaction fees, staking, and governance in Core DAO."
+        }
+      ]
+    },
+    {
+      "id": "riskanalysis",
+      "title": "Risk Analysis",
+      "content": [
+        {
+          "title": "No Unilateral Exits",
+          "content": "coreBTC does not support unilateral exits. Users must trust several permissionless roles on Bitcoin and Core Chain throughout the lifecycle of minting and burning coreBTC. Specifically, to exit from coreBTC back to BTC, users must trust Lockers and Bitcoin Light Clients. All roles are financially incentivized to be good actors."
+        },
+        {
+          "title": "No DA on Bitcoin",
+          "content": "Core Chain does not post any data availability on Bitcoin. Because of this, Core's state cannot be reconstructed using only data from Bitcoin. However, Core Chain has a permissionless and decentralized validator set, which makes data availability readily available (unlike with a single centralized sequencer)."
+        },
+        {
+          "title": "Decentralized Block Production",
+          "content": "Core Chain has a sufficiently decentralized block production mechanism, but it does not support exits that circumvent its validator set. This means that users must trust Core Chain validators to include their transactions in blocks. Unlike merge-mined sidechains, Core Chain’s Satoshi Plus consensus separates block production from Bitcoin miners, which removes any possible incentives for Bitcoin miners to censor Core Chain."
+        },
+        {
+          "title": "Self-Enforcement of State Validation",
+          "content": "Settlement is done offchain, on Core Chain, rather than onchain, on Bitcoin. The validity of Core Chain state transitions is not enforced by Bitcoin. However, Core Chain has a permissionless and decentralized validator set which enforces transaction validity, removing centralization concerns."
+        }
+      ]
+    },
+    {
+      "id": "bitcoinsecurity",
+      "title": "Bitcoin Security",
+      "content": [
+        {
+          "title": "Core Chain nodes are required for data availability",
+          "content": "Core Chain's state cannot be reconstructed using only data from Bitcoin. Core Chain nodes are the sole providers of data availability. However, Core Chain has a permissionless and sufficiently decentralized validator/node set, so this is not a serious concern"
+        },
+        {
+          "title": "Core Chain requires another token to function",
+          "content": "The CORE token is required to pay for transaction fees and smart contract execution on Core Chain. It is also used for staking and governance. The token is directly required for the security of the network, as the staking of it is one of the two variables used to create a weighted score for validator election and leader selection."
+        }
+      ]
+    },
+    {
+      "id": "technology",
+      "title": "Technology",
+      "content": [
+        {
+          "title": "Satoshi Plus",
+          "content": "Satoshi Plus is a hybrid model of Delegated Proof -of -Work (DPoW) and Delegated Proof -of -Stake (DPoS).\nDPoW is performed by Bitcoin miners and mining pools who delegate their existing Bitcoin hash rate to select validators on Core Chain. DPoS is performed by CORE token holders staking (or delegating) their CORE tokens to select validators on Core Chain. The DPoW hash and DPoS stake contribute to the calculation of a weighted score that determines which Validators qualify for the next round of block creation. Certain parameters of the weighting are variable and set by the Core DAO; currently, the weighting ratio is two-thirds to hash and one-third to stake.\nThis hybrid model separates block production from Bitcoin miners, which removes any possible incentives for Bitcoin miners to censor Core Chain. This is a novel approach to combating the classic issue with merge-mining (and other forms of parent-child shared security) in which the security provider network can perform MEV or censorship on the child chain with no penalties and no incentives not to, as they are theoretically more aligned with the parent chain than the child chain."
+        },
+        {
+          "title": "Ethereum Virtual Machine",
+          "content": "Core Chain uses the Ethereum Virtual Machine (EVM) for its execution environment. While this environment was initially created for Ethereum, it has been adopted by many other networks.\nThe EVM is the most robust execution environment in crypto, with the most active developers. Core Chain gains access to this pervasive ecosystem, including all developer tools and crypto infrastructure known by EVM developers. Toolings include Remix, Hardhat, Solidity, Truffle, ethers.js, and more. Infrastructure includes MetaMask, token standards (e.g., ERC721 or ERC20), blockchain scanners, smart contracts, and connections to middleware such as IPFS."
+        },
+        {
+          "title": "coreBTC",
+          "content": "coreBTC is a native bridged BTC. Several permissionless roles are involved in the burning and minting of coreBTC.\nLockers hold BTC after minting and distribute it after burning. They must be overcollateralized at risk of liquidation by Liquidators. Porters monitor Bitcoin to communicate with Core Chain smart contracts to trigger coreBTC mints, which involves sending a proof. Other roles are involved as well, such as Guardians, Bitcoin Light Clients, Slashers, Relayers, and Verifiers."
+        },
+        {
+          "title": "Faster block times",
+          "content": "Core Chain produces a block every three seconds, as of March 2024."
+        },
+        {
+          "title": "Lower fees",
+          "content": "Core Chain fees average in the order of cents as of March 2024."
+        }
+      ]
+    },
+    {
+      "id": "usecases",
+      "title": "Use Cases",
+      "content": [
+        {
+          "title": "DeFi",
+          "content": "The most popular use case for Core Chain is DeFi. Core Chain has a number of DeFi applications, including lending, borrowing, and decentralized exchanges, with a focus on bridged BTC assets."
+        }
+      ]
+    },
+    {
+      "id": "operator",
+      "title": "Operator",
+      "content": [
+        {
+          "title": "Core Chain is operated by validators",
+          "content": "Block production is managed by a decentralized set of validators. Users trust the majority of validators not to collude."
+        }
+      ]
+    },
+    {
+      "id": "withdrawals",
+      "title": "Withdrawals",
+      "content": [
+        {
+          "title": "Withdrawals from coreBTC rely on several permissionless roles.",
+          "content": "Core Chain’s consensus-enshrined bridged BTC, coreBTC, relies on several roles for withdrawals, although they are all permissionless. It also relies on the liveness of Core Chain, as one of those roles is a set of smart contracts on Core Chain."
+        }
+      ]
+    },
+    {
+      "id": "sourcecode",
+      "title": "Source Code",
+      "content": [
+        {
+          "title": "Code is open-source",
+          "content": "All code related to the Core Chain project is free and open source."
+        }
+      ]
+    }
+  ],
+  "knowledgeBits": [
+    {
+      "url": "https://github.com/coredao-org/whitepaper/blob/main/COREWhitepaper_v1.0.6.pdf",
+      "displayText": "Core Chain Whitepaper"
+    }
+  ]
+}
