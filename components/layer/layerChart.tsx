@@ -24,18 +24,18 @@ const LayerChart: React.FC<{ layer: Layer }> = ({ layer }) => {
           RISK_FACTOR_CATEGORIES[1],
           RISK_FACTOR_CATEGORIES[2],
           RISK_FACTOR_CATEGORIES[3],
-          RISK_FACTOR_CATEGORIES[4],
+          // RISK_FACTOR_CATEGORIES[4],
         ],
         datasets: [
           {
             label: "Risk Analysis",
-            data: [20, 20, 20, 20, 20],
+            data: [25, 25, 25, 25],
             backgroundColor: [
               wordToColor[layer.riskFactors[0]],
               wordToColor[layer.riskFactors[1]],
               wordToColor[layer.riskFactors[2]],
               wordToColor[layer.riskFactors[3]],
-              wordToColor[layer.riskFactors[4]],
+              // wordToColor[layer.riskFactors[4]],
             ],
             borderColor: "#fff",
             borderWidth: 5,

@@ -10,6 +10,6 @@ export const RISK_FACTOR_CATEGORIES = [
   "Unilateral Exits",
   "Data Availability",
   "Block Production",
-  "Settlement",
-  "Bitcoin Security",
+  "State Validation",
+  "Upgradability",
 ];

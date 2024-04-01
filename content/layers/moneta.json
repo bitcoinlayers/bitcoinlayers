@@ -4,7 +4,7 @@
   "layerType": "Rollup",
   "live": "Mainnet",
   "underReview": "no",
-  "riskFactors": ["Medium", "Low", "High", "Medium", "Low"],
+  "riskFactors": ["Medium", "Low", "High", "Medium"],
   "purpose": "General",
   "btcBridge": "Federated 1-of-N",
   "settlement": "Onchain",
@@ -51,10 +51,6 @@
         {
           "title": "Settlement is done offchain.",
           "content": "Optimistically proven zkSTARK proofs ensure state correctness. In the event of an invalid state transition, actors watching the chain can submit Fraud Proofs to prove that the state transition is incorrect."
-        },
-        {
-          "title": "Security is inherited.",
-          "content": "Moneta uses hashrate to secure itself."
         }
       ]
     },

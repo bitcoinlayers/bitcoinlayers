@@ -4,11 +4,11 @@
   "layerType": "Sidechain",
   "live": "Mainnet",
   "underReview": "no",
-  "riskFactors": ["High", "Medium", "Medium", "Medium", "High"],
+  "riskFactors": ["High", "Medium", "Medium", "Medium"],
   "purpose": "General",
   "btcBridge": "Custodial Multisig",
   "settlement": "Offchain",
-  "btcLocked": 155,
+  "btcLocked": 348,
   "executionEnv": "Clarity",
   "consensus": "PoX",
   "nativeToken": "STX",
@@ -52,10 +52,6 @@
         {
           "title": "Self-Enforcement of State Validation",
           "content": "Settlement is done offchain, on Stacks, rather than onchain, on Bitcoin. The validity of Stacks state transitions is not enforced by Bitcoin. However, Stacks has a permissionless and sufficiently decentralized validator set which enforces transaction validity, removing centralization concerns."
-        },
-        {
-          "title": "Independent Consensus Resources",
-          "content": "Stacks does not leverage hashrate or other security resources from Bitcoin for leader selection or other consensus processes. Stacks does, however, leverage Bitcoin for finality, as state roots are posted to Bitcoin. This means that Stacks is not subject to Bitcoin's hashrate security, but is still reliant on Bitcoin for finality."
         }
       ]
     },
