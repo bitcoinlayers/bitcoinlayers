@@ -12,14 +12,13 @@ const LayerTable = ({ data }: Props) => {
   const [sortBy, setSortBy] = useState("title");
   const [sortOrder, setSortOrder] = useState("asc");
   const router = useRouter();
-  const [filter, setFilter] = useState<{ key: string; value: string } | null>(
-    null
-  );
   const [layerTypeFilter, setLayerTypeFilter] = useState("");
   const [settlementFilter, setSettlementFilter] = useState("");
   const [liveFilter, setLiveFilter] = useState("Mainnet");
 
   const filteredAndSortedData = useMemo(() => {
+    const liveStatusOrder = ["Mainnet", "Testnet", "Announced"]; // Define the order for sorting by live status
+  
     return [...data]
       .filter(
         (item) =>
@@ -28,13 +27,23 @@ const LayerTable = ({ data }: Props) => {
           (liveFilter ? item.live === liveFilter : true)
       )
       .sort((a, b) => {
-        if (sortOrder === "asc") {
-          // @ts-ignore
-          return a[sortBy] > b[sortBy] ? 1 : -1;
-        } else {
-          // @ts-ignore
-          return a[sortBy] < b[sortBy] ? 1 : -1;
+        // First, sort by live status
+        const orderA = liveStatusOrder.indexOf(a.live);
+        const orderB = liveStatusOrder.indexOf(b.live);
+        if (orderA !== orderB) {
+          return (sortOrder === "asc" ? 1 : -1) * (orderA - orderB);
         }
+  
+        // If live statuses are the same, then sort by title
+        if (a.title.toLowerCase() < b.title.toLowerCase()) {
+          return sortOrder === "asc" ? -1 : 1;
+        }
+        if (a.title.toLowerCase() > b.title.toLowerCase()) {
+          return sortOrder === "asc" ? 1 : -1;
+        }
+  
+        // If both live status and title are the same, return 0 (no sorting)
+        return 0;
       });
   }, [data, layerTypeFilter, settlementFilter, liveFilter, sortBy, sortOrder]);
 
@@ -104,22 +113,6 @@ const LayerTable = ({ data }: Props) => {
       <table className="rounded-lg table-fixed sm:w-full text-sm text-left rtl:text-right">
         <thead className="text-xs uppercase dark:text-bitcoin">
           <tr>
-            {/* <th
-            scope="col"
-            className="flex-1 px-6 py-3 cursor-pointer"
-            onClick={() => {
-              setSortBy("live");
-              toggleSortOrder();
-            }}
-          >
-            <span className="flex items-center">
-              <span
-                className={`ml-1 ${sortBy === "live" ? "" : "text-gray-500"}`}
-              >
-                {sortOrder === "asc" && sortBy === "live" ? "▲" : "▼"}
-              </span>
-            </span>
-          </th> */}
             <th
               scope="col"
               className="flex-1 px-6 py-3 cursor-pointer w-1/3 sm:w-1/8"
@@ -141,22 +134,19 @@ const LayerTable = ({ data }: Props) => {
             </th>
             <th
               scope="col"
-              className="flex-1 px-6 py-3 w-1/3 sm:w-1/8"
-              //rm cursor-pointer from above
-              // onClick={() => {
-              //   setSortBy("riskFactors");
-              //   toggleSortOrder();
-              // }}
+              className="flex-1 px-6 py-3 cursor-pointer w-1/3 sm:w-1/8"
+              onClick={() => {
+                setSortBy("live");
+                toggleSortOrder();
+              }}
             >
               <span className="flex items-center">
                 Risks{" "}
-                {/* <span
-                  className={`ml-1 ${
-                    sortBy === "riskFactors" ? "" : "text-gray-500"
-                  }`}
+                <span
+                  className={`ml-1 ${sortBy === "live" ? "" : "text-gray-500"}`}
                 >
-                  {sortOrder === "asc" && sortBy === "riskFactors" ? "▲" : "▼"}
-                </span> */}
+                  {sortOrder === "asc" && sortBy === "live" ? "▲" : "▼"}
+                </span>
               </span>
             </th>
             <th
@@ -176,15 +166,6 @@ const LayerTable = ({ data }: Props) => {
                 >
                   {sortOrder === "asc" && sortBy === "layerType" ? "▲" : "▼"}
                 </span>
-                {/* <svg
-                  className="w-3 h-3 ms-1.5"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M8.574 11.024h6.852a2.075 2.075 0 0 0 1.847-1.086 1.9 1.9 0 0 0-.11-1.986L13.736 2.9a2.122 2.122 0 0 0-3.472 0L6.837 7.952a1.9 1.9 0 0 0-.11 1.986 2.074 2.074 0 0 0 1.847 1.086Zm6.852 1.952H8.574a2.072 2.072 0 0 0-1.847 1.087 1.9 1.9 0 0 0 .11 1.985l3.426 5.05a2.123 2.123 0 0 0 3.472 0l3.427-5.05a1.9 1.9 0 0 0 .11-1.985 2.074 2.074 0 0 0-1.846-1.087Z" />
-                </svg> */}
               </span>
             </th>
             <th
@@ -284,11 +265,15 @@ const LayerTable = ({ data }: Props) => {
               <td className="flex-1 px-6 py-4 font-bold whitespace-nowrap">
                 <h2>{item.title}</h2>
               </td>
-              <td className="flex-1 pl-6 pr-2 items-center flex flex-row mt-4 relative group cursor-pointer">
-                {item.live !== "Mainnet" ? (
-                  <div className="text-white font-bold">Not Live</div>
+              <td className="flex-1 px-6 pr-2">
+                {item.live === "Testnet" ? (
+                  <div className="text-white font-bold">Testnet</div>
+                ) : item.live === "Announced" ? (
+                  <div className="text-white font-bold">Announced</div>
                 ) : item.underReview === "yes" ? (
-                  <div className="text-bitcoin font-bold py-2.5">Under Review</div>
+                  <div className="text-bitcoin font-bold">
+                    Under Review
+                  </div>
                 ) : (
                   <div className="flex flex-row py-3">
                     {item.riskFactors.map((riskFactor, index) => (
@@ -315,8 +300,6 @@ const LayerTable = ({ data }: Props) => {
                   </div>
                 )}
               </td>
-
-              {/* <td className="flex-1 px-6 py-4"><LayerChartMini layer={item as LayerPropsFull["layer"]} /> </td> */}
               <td className="flex-1 px-6 py-4">{item.layerType}</td>
               <td className="flex-1 px-6 py-4">{item.purpose}</td>
               <td className="flex-1 px-6 py-4">
