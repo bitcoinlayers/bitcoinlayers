@@ -5,7 +5,7 @@
   "live": "Testnet",
   "underReview": "yes",
   "riskFactors": ["High", "Medium", "Medium", "High", "High"],
-  "purpose": "Private payments",
+  "purpose": "-",
   "btcBridge": "Smart Contract",
   "settlement": "Offchain",
   "btcLocked": 0,
