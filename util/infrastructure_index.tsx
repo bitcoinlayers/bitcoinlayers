@@ -22,5 +22,9 @@ import sovereignJson from "../content/infrastructures/sovereign.json" assert { t
 const sovereign: Infrastructure = sovereignJson as Infrastructure;
 import rollkitJson from "../content/infrastructures/rollkit.json" assert { type: 'json' };
 const rollkit: Infrastructure = rollkitJson as Infrastructure;
+import nubitJson from "../content/infrastructures/nubit.json" assert { type: 'json' };
+const nubit: Infrastructure = nubitJson as Infrastructure;
+import bouncebitJson from "../content/infrastructures/bouncebit.json" assert { type: 'json' };
+const bouncebit: Infrastructure = bouncebitJson as Infrastructure;
 
-export const allInfrastructures: Infrastructure[] = [moneta, astria, avail, bitcoinos, bvm, celestia, espresso, lorenzo, sovereign, rollkit];
+export const allInfrastructures: Infrastructure[] = [moneta, astria, avail, bitcoinos, bvm, celestia, espresso, lorenzo, sovereign, rollkit, nubit, bouncebit];
