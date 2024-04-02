@@ -20,5 +20,7 @@ import lorenzoJson from "../content/infrastructures/lorenzo.json" assert { type:
 const lorenzo: Infrastructure = lorenzoJson as Infrastructure;
 import sovereignJson from "../content/infrastructures/sovereign.json" assert { type: 'json' };
 const sovereign: Infrastructure = sovereignJson as Infrastructure;
+import rollkitJson from "../content/infrastructures/rollkit.json" assert { type: 'json' };
+const rollkit: Infrastructure = rollkitJson as Infrastructure;
 
-export const allInfrastructures: Infrastructure[] = [moneta, astria, avail, bitcoinos, bvm, celestia, espresso, lorenzo, sovereign];
+export const allInfrastructures: Infrastructure[] = [moneta, astria, avail, bitcoinos, bvm, celestia, espresso, lorenzo, sovereign, rollkit];
