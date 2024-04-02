@@ -61,8 +61,14 @@ import coordinateJson from "../content/layers/coordinate.json" assert { type: 'j
 const coordinate: Layer = coordinateJson as Layer;
 import alysJson from "../content/layers/alys.json" assert { type: 'json' };
 const alys: Layer = alysJson as Layer;
+import zkbitcoinJson from "../content/layers/zkbitcoin.json" assert { type: 'json' };
+const zkbitcoin: Layer = zkbitcoinJson as Layer;
+import bitlayerJson from "../content/layers/bitlayer.json" assert { type: 'json' };
+const bitlayer: Layer = bitlayerJson as Layer;
+import moleculeJson from "../content/layers/molecule.json" assert { type: 'json' };
+const molecule: Layer = moleculeJson as Layer;
 
 
 
 
-export const allLayers: Layer[] = [moneta, core, internetcomputer, lightning, liquid, mercurylayer, rootstock, stacks, citrea, alpen, barknet, bison, bnzk, bob, botanix, bsquared, rgb, heliosphere, libre, lumibit, merlin, mirror, rif, rollux, zkcoins, zklayer, coordinate, alys];
+export const allLayers: Layer[] = [moneta, core, internetcomputer, lightning, liquid, mercurylayer, rootstock, stacks, citrea, alpen, barknet, bison, bnzk, bob, botanix, bsquared, rgb, heliosphere, libre, lumibit, merlin, mirror, rif, rollux, zkcoins, zklayer, coordinate, alys, zkbitcoin, bitlayer, molecule];
