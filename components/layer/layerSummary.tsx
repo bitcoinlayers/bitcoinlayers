@@ -68,8 +68,8 @@ const LayerSummary: React.FC<{ layer: Layer }> = ({ layer }) => {
               <div className="bg-secondary text-white text-xs rounded py-1 px-2 border border-white">
                 <p className="text-lg font-bold">Fee Token</p>
                 <p>
-                  Fee tokens are used to pay for gas fees on a layer. In some
-                  cases, networks will enable multiple gas tokens: typically a
+                  Fee tokens are used to pay for transaction fees on a layer. In some
+                  cases, networks will enable multiple fee tokens: typically a
                   native token in addition to a consensus-enshrined cross-chain
                   BTC.
                 </p>
