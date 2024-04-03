@@ -1,0 +1,91 @@
+{
+  "slug": "babylon",
+  "title": "Babylin",
+  "infrastructureType": "Restaking",
+  "live": "Announced",
+  "underReview": "yes",
+  "riskFactors": ["High", "High", "High", "High", "High"],
+  "purpose": "-",
+  "btcBridge": "x",
+  "settlement": "x",
+  "btcLocked": 0,
+  "executionEnv": "-",
+  "consensus": "x",
+  "nativeToken": "x",
+  "feeToken": "x",
+  "enshrinedBtc": "x",
+  "links": [
+    "https://babylonchain.io/",
+    "https://twitter.com/bitcoinlayers",
+    "https://twitter.com/bitcoinlayers",
+    "https://twitter.com/bitcoinlayers",
+    "https://twitter.com/bitcoinlayers",
+    "https://twitter.com/bitcoinlayers"
+  ],
+  "sections": [
+    {
+      "id": "description",
+      "title": "Description",
+      "content": [
+        {
+          "title": "Description",
+          "content": "Citrea description"
+        }
+      ]
+    },
+    {
+      "id": "riskanalysis",
+      "title": "Risk Analysis",
+      "content": [
+        {
+          "title": "Unilateral Exit",
+          "content": "Citrea unilat exit copy"
+        },
+        {
+          "title": "Data Availability",
+          "content": "Citrea da copy"
+        },
+        {
+          "title": "Block Production",
+          "content": "Citrea block production copy"
+        },
+        {
+          "title": "Settlement",
+          "content": "Citrea settlement copy"
+        },
+        {
+          "title": "Self-custodial",
+          "content": "Citrea self-custodial copy"
+        }
+      ]
+    },
+    {
+      "id": "bitcoinsecurity",
+      "title": "Bitcoin Security",
+      "content": [
+        {
+          "title": "Explainer",
+          "content": "Citrea btc security 1 copy"
+        },
+        {
+          "title": "Explainer",
+          "content": "Citrea btc-sec 2 copy"
+        },
+        {
+          "title": "Explainer",
+          "content": "Citrea btc-sec 3 copy"
+        }
+      ]
+    },
+    {
+      "id": "technology",
+      "title": "Technology",
+      "content": [
+        {
+          "title": "Explainer",
+          "content": "Citrea tech explainooor copy"
+        }
+      ]
+    }
+  ]
+}
