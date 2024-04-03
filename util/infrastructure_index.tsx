@@ -26,5 +26,7 @@ import nubitJson from "../content/infrastructures/nubit.json" assert { type: 'js
 const nubit: Infrastructure = nubitJson as Infrastructure;
 import bouncebitJson from "../content/infrastructures/bouncebit.json" assert { type: 'json' };
 const bouncebit: Infrastructure = bouncebitJson as Infrastructure;
+import babylonJson from "../content/infrastructures/babylon.json" assert { type: 'json' };
+const babylon: Infrastructure = babylonJson as Infrastructure;
 
-export const allInfrastructures: Infrastructure[] = [moneta, astria, avail, bitcoinos, bvm, celestia, espresso, lorenzo, sovereign, rollkit, nubit, bouncebit];
+export const allInfrastructures: Infrastructure[] = [moneta, astria, avail, bitcoinos, bvm, celestia, espresso, lorenzo, sovereign, rollkit, nubit, bouncebit, babylon];
