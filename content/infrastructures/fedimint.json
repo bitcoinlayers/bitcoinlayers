@@ -1,10 +1,9 @@
 {
   "slug": "fedimint",
   "title": "Fedimint",
-  "layerType": "Fedimint",
+  "infrastructureType": "Federation SDK",
   "live": "Mainnet",
   "underReview": "yes",
-  "riskFactors": ["High", "High", "High", "High", "Low"],
   "purpose": "Private payments",
   "btcBridge": "Multi-sig",
   "settlement": "Offchain",
@@ -38,26 +37,16 @@
       "title": "Risk Analysis",
       "content": [
         {
-          "title": "No Unilateral Exits",
+          "title": "Users trust guardians to process withdrawals",
           "content": "Fedimints do not enable unilateral exits. Users explicitly trust the signers, known as guardians, of the Federation's multi-sig to not steal their funds."
         },
         {
-          "title": "Data Availability",
-          "content": "Guardians of the specific federation are those that ultimately come to consensus on transactions happening with the federation. These Federations can have varying level of signers dependent on the federation, but all will rely on an honest majority assumption of signers."
-        },
-        {
-          "title": "Block Production",
-          "content": "Fedimints don't produce blocks. Transactions are processed within the federation. In a federation, Bob would create an invoice asking for a payment from Alice. Alice would respond by checking the ecash notes it holds, select the notes to equal the amount of the invoice, and then send them to Bob. Bob, containing the new notes, would send them to the guardians of the federation to redeem new ecash notes. This would see the transaction settled.\nFederations can also have a specifc user, or guardian, run a lightning node and pay lightning invoices on behalf of other users. In this model, Bob would receive an invoice from Alice. Bob would then create an equivalent invoice and broadcast that to the lightning node operator(s) in the federation. Bob would also include a service fee to incentivize the lightning node operators to pay the invoice on his behalf."
+          "title": "Guardians run a permissioned consensus protocol",
+          "content": "Guardians of the specific federation are those that ultimately come to consensus on transactions happening with the federation. After transactions are submitted by clients, proposals are sent to consensus particpants who agree on the validity of the proposal. These Federations can have varying level of signers dependent on the federation, but all Federations will rely on an honest majority assumption of signers."
         },
         {
           "title": "Settlement",
-          "content": "Settlement happens when a user redeems newly received eCash notes from the federation. This means that the federation effectively comes to settlement on transactions within the federation."
-        },
-        {
-          "title": "User onboarding",
-          "content": "Fedimint users do not need to run a Layer 1 transaction to enter into the Fedimint. They can also receive lightning payments, or payments within the federation, while offline."
-        }
-      ]
+          "content": "Settlement happens when a user redeems newly received eCash notes from the federation. This means that the federation effectively comes to settlement on transactions within the federation. In this example, Bob would create an invoice asking for a payment from Alice. Alice would respond by checking the ecash notes it holds, select the notes to equal the amount of the invoice, and then send them to Bob. Bob, containing the new notes, would send them to the guardians of the federation to redeem new ecash notes. This would see the transaction settled.\nFederations can also have a specifc user, or guardian, run a lightning node and pay lightning invoices on behalf of other users. In this model, Bob would receive an invoice from Alice. Bob would then create an equivalent invoice and broadcast that to the lightning node operator(s) in the federation. Bob would also include a service fee to incentivize the lightning node operators to pay the invoice on his behalf.""
     },
     {
       "id": "bitcoinsecurity",
@@ -103,27 +92,12 @@
           "title": "Lower fees",
           "content": "Fedimints provide lower fees to users and do not require on-chain transactions to engage in the federation. To deposit funds, users can use the lightning network or the Bitcoin mainchain."
         }
-      ]
-    },
-    {
-      "id": "operator",
-      "title": "Operator",
-      "content": [
         {
-          "title": "Fedimints are managed by Federations",
-          "content": "Fedimints are managed by federated multi-sigs. Users give up the custody of their BTC, and trust that guardians of the multi-sig are honest, when entering into a Fedimint."
+          "title": "General purpose smart contracts",
+          "content": "Fedimints can also support any arbitrary computation. Federations supporting things like borrowing and lending protocols, and stablecoins, are possible."
         }
       ]
     },
-    {
-      "id": "withdrawals",
-      "title": "Withdrawals",
-      "content": [
-        {
-          "title": "Withdrawals from Fedimints are permissioned",
-          "content": "Withdrawals from Fedimints are permissioned. Users need to trust that the majority of guardians in a Federation are honest to withdrawal their funds from the Fedimint."
-        }
-      ]
     },
     {
       "id": "sourcecode",
