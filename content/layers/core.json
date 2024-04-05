@@ -138,6 +138,10 @@
   ],
   "knowledgeBits": [
     {
+      "url": "https://messari.io/report/understanding-core-chain",
+      "displayText": "Understanding Core Chain by Messari"
+    },
+    {
       "url": "https://github.com/coredao-org/whitepaper/blob/main/COREWhitepaper_v1.0.6.pdf",
       "displayText": "Core Chain Whitepaper"
     }
