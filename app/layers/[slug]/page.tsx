@@ -57,7 +57,7 @@ console.log("Open page for layer: ", params.slug);
             </div>
         </div>
         <div className="col-span-3 md:col-span-1">
-            <LayerChart layer={layer as LayerProps} />
+            {/* <LayerChart layer={layer as LayerProps} /> */}
         </div>
     </div>
       <LayerBody layer={layer as LayerProps} />
