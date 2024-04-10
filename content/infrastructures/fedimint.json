@@ -44,7 +44,8 @@
         {
           "title": "Guardians run a permissioned consensus protocol",
           "content": "Guardians of the specific federation are those that ultimately come to consensus on transactions happening with the federation. After transactions are submitted by clients, proposals are sent to consensus particpants who agree on the validity of the proposal. These Federations can have varying level of signers dependent on the federation, but all Federations will rely on an honest majority assumption of signers."
-        },
+        }
+      ]
     },
     {
       "id": "bitcoinsecurity",
@@ -96,7 +97,6 @@
         }
       ]
     },
-    },
     {
       "id": "sourcecode",
       "title": "Source Code",
@@ -107,7 +107,7 @@
         }
       ]
     }
-  ],
+  ], 
   "knowledgeBits": [
     {
       "url": "https://fedimint.org",
