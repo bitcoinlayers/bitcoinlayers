@@ -4,6 +4,7 @@
   "infrastructureType": "Federation SDK",
   "live": "Mainnet",
   "underReview": "no",
+  "riskFactors": ["High", "High", "High", "High", "High"],
   "purpose": "Private payments",
   "btcBridge": "Multi-sig",
   "settlement": "Offchain",
