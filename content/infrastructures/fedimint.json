@@ -11,7 +11,7 @@
   "executionEnv": "n/a",
   "consensus": "-",
   "nativeToken": "No",
-  "feeToken": "BTC",
+  "feeToken": "fmBTC",
   "enshrinedBtc": "n/a",
   "links": [
     "https://fedimint.org",
