@@ -4,16 +4,9 @@
   "infrastructureType": "Federation SDK",
   "live": "Mainnet",
   "underReview": "No",
-  "riskFactors": ["High", "High", "High", "High"],
+  "riskFactors": ["High", "High"],
   "purpose": "Private payments",
-  "btcBridge": "Multi-sig",
-  "settlement": "Offchain",
-  "btcLocked": 0,
   "associatedLayers": "n/a",
-  "consensus": "-",
-  "nativeToken": "No",
-  "feeToken": "fmBTC",
-  "enshrinedBtc": "n/a",
   "links": [
     "https://fedimint.org",
     "https://fedimint.org",
@@ -107,7 +100,7 @@
         }
       ]
     }
-  ], 
+  ],
   "knowledgeBits": [
     {
       "url": "https://fedimint.org",

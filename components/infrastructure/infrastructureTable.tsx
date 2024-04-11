@@ -13,7 +13,6 @@ const InfrastructureTable = ({ data }: Props) => {
   const [sortOrder, setSortOrder] = useState("asc");
   const router = useRouter();
   const [infrastructureTypeFilter, setInfrastructureTypeFilter] = useState("");
-  const [settlementFilter, setSettlementFilter] = useState("");
   const [liveFilter, setLiveFilter] = useState("Mainnet");
 
   const filteredAndSortedData = useMemo(() => {
@@ -25,7 +24,6 @@ const InfrastructureTable = ({ data }: Props) => {
           (infrastructureTypeFilter
             ? item.infrastructureType === infrastructureTypeFilter
             : true) &&
-          (settlementFilter ? item.settlement === settlementFilter : true) &&
           (liveFilter ? item.live === liveFilter : true)
       )
       .sort((a, b) => {
@@ -50,7 +48,6 @@ const InfrastructureTable = ({ data }: Props) => {
   }, [
     data,
     infrastructureTypeFilter,
-    settlementFilter,
     liveFilter,
     sortBy,
     sortOrder,
@@ -97,19 +94,12 @@ const InfrastructureTable = ({ data }: Props) => {
           onChange={(e) => setInfrastructureTypeFilter(e.target.value)}
         >
           <option value="">All Infrastructure Types</option>
-          <option value="Rollup">Rollup</option>
-          <option value="Sidechain">Sidechain</option>
-          <option value="State Channel">State Channel</option>
-          <option value="Statechain">Statechain</option>
-        </select>
-        <select
-          className="rounded-md  p-2 font-semibold text-xs text-bitcoin border border-gray-300 bg-secondary"
-          value={settlementFilter}
-          onChange={(e) => setSettlementFilter(e.target.value)}
-        >
-          <option value="">All Settlement Types</option>
-          <option value="Offchain">Offchain</option>
-          <option value="Onchain">Onchain</option>
+          <option value="Data Availability">Data Availability</option>
+          <option value="Federation SDK">Federation SDK</option>
+          <option value="RaaS">RaaS</option>
+          <option value="Restaking">Restaking</option>
+          <option value="Rollup SDK">Rollup SDK</option>
+          <option value="Sequencing">Sequencing</option>
         </select>
       </div>
       {/* Table */}
@@ -230,7 +220,7 @@ const InfrastructureTable = ({ data }: Props) => {
                       ></div>
                     ))}
                     {/* Tooltip */}
-                    <div className="absolute -right-12 top-10 w-64 mt-2 hidden group-hover:flex flex-col items-center before:content-[''] before:absolute before:bottom-full before:left-1/2 before:-translate-x-1/2 before:border-l-8 before:border-l-transparent before:border-r-8 before:border-r-transparent before:border-b-8 before:border-b-white z-10">
+                    {/* <div className="absolute -right-12 top-10 w-64 mt-2 hidden group-hover:flex flex-col items-center before:content-[''] before:absolute before:bottom-full before:left-1/2 before:-translate-x-1/2 before:border-l-8 before:border-l-transparent before:border-r-8 before:border-r-transparent before:border-b-8 before:border-b-white z-10">
                       <div className="bg-secondary text-white text-xs rounded border-2 border-white py-1 px-3">
                         <p className="text-lg font-bold">Risk Factors</p>
                         {item.riskFactors.length > 0 ? (
@@ -241,7 +231,7 @@ const InfrastructureTable = ({ data }: Props) => {
                           <p>No risk factors listed</p>
                         )}
                       </div>
-                    </div>
+                    </div> */}
                   </div>
                 )}
               </td>

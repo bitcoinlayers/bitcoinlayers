@@ -2,8 +2,6 @@ import type { Infrastructure } from '@/components/infrastructure/infrastructureP
 
 //
 //infrastructures
-import monetaJson from "../content/infrastructures/moneta.json" assert { type: 'json' };
-const moneta: Infrastructure = monetaJson as Infrastructure;
 import astriaJson from "../content/infrastructures/astria.json" assert { type: 'json' };
 const astria: Infrastructure = astriaJson as Infrastructure;
 import availJson from "../content/infrastructures/avail.json" assert { type: 'json' };
@@ -31,4 +29,4 @@ const babylon: Infrastructure = babylonJson as Infrastructure;
 import fedimintJson from "../content/infrastructures/fedimint.json" assert { type: 'json' };
 const fedimint: Infrastructure = fedimintJson as Infrastructure;
 
-export const allInfrastructures: Infrastructure[] = [moneta, astria, avail, bitcoinos, bvm, celestia, espresso, lorenzo, sovereign, rollkit, nubit, bouncebit, babylon, fedimint];
+export const allInfrastructures: Infrastructure[] = [astria, avail, bitcoinos, bvm, celestia, espresso, lorenzo, sovereign, rollkit, nubit, bouncebit, babylon, fedimint];
