@@ -1,7 +1,7 @@
 {
   "slug": "bob",
   "title": "BOB",
-  "layerType": "Rollup",
+  "layerType": "Ethereum Rollup",
   "live": "Testnet",
   "underReview": "yes",
   "riskFactors": ["High", "High", "High", "High"],
@@ -16,10 +16,9 @@
   "enshrinedBtc": "x",
   "links": [
     "https://www.gobob.xyz/",
-    "https://twitter.com/bitcoinlayers",
-    "https://twitter.com/bitcoinlayers",
-    "https://twitter.com/bitcoinlayers",
-    "https://twitter.com/bitcoinlayers",
+    "https://docs.gobob.xyz/",
+    "https://twitter.com/build_on_bob",
+    "https://github.com/bob-collective/bob",
     "https://twitter.com/build_on_bob"
   ],
   "sections": [
@@ -28,19 +27,19 @@
       "title": "Description",
       "content": [
         {
-          "content": "Moneta is a rollup that uses Bitcoin for data availability and consensus. It has an optimistically verified validating bridge via BitVM. It leverages STARK proofs to prove state transitions. In the event of an invalid state transition, verifiers in the BitVM bridge can submit a fraud proof to show that the state transition was invalid."
+          "content": "BOB is building an Ethereum rollup to serve as an application layer for Bitcoin. They will launch as a rollup on top of Ethereum, with plans to derive more security from Bitcoin miners, and full nodes, over time."
         }
       ]
     }
   ],
   "knowledgeBits": [
     {
-      "url": "https://bitcoin.org",
-      "displayText": "Bitcoin.org"
+      "url": "https://www.gobob.xyz/",
+      "displayText": "BOB Website"
     },
     {
-      "url": "https://bitcoinrollups.io",
-      "displayText": "BitcoinRollups.io"
+      "url": "https://www.youtube.com/watch?v=LD7rtWrG9NM&t=483s",
+      "displayText": "Talk on BOB's architecture"
     }
   ]
 }
