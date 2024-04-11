@@ -4,7 +4,7 @@
   "infrastructureType": "RaaS",
   "live": "Mainnet",
   "underReview": "yes",
-  "riskFactors": ["Medium", "Low", "High", "Medium", "Medium"],
+  "riskFactors": ["Medium", "Low", "High", "Medium"],
   "purpose": "General",
   "btcBridge": "Federated 1-of-N",
   "settlement": "Onchain",
