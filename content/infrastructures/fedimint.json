@@ -6,6 +6,7 @@
   "underReview": "No",
   "riskFactors": ["High", "High"],
   "bitcoinSecurity": "No",
+  "nativeToken": "None",
   "purpose": "Private payments",
   "associatedLayers": "n/a",
   "links": [

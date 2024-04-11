@@ -6,6 +6,7 @@
   "underReview": "yes",
   "riskFactors": ["High", "High"],
   "bitcoinSecurity": "No",
+  "nativeToken": "TIA",
   "purpose": "General",
   "associatedLayers": "-",
   "links": [

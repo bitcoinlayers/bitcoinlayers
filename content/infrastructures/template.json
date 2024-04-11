@@ -5,8 +5,9 @@
   "live": "Mainnet/Testnet/Announced",
   "underReview": "yes/no",
   "riskFactors": ["High", "High"],
-  "bitcoinSecurity": "No",
-  "purpose": "General",
+  "bitcoinSecurity": "Yes/No",
+  "nativeToken": "None/Ticker",
+  "purpose": "General/Other",
   "associatedLayers": "-",
   "links": [
     "https://twitter.com/bitcoinlayers",

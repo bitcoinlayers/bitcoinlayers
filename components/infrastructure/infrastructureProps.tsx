@@ -22,6 +22,7 @@ interface InfrastructureProps {
   underReview: string;
   riskFactors: string[];
   bitcoinSecurity: string;
+  nativeToken: string;
   purpose: string;
   associatedLayers: string;
   links: string[];
@@ -38,6 +39,7 @@ export type Infrastructure = {
   underReview: string;
   riskFactors: string[];
   bitcoinSecurity: string;
+  nativeToken: string;
   purpose: string;
   associatedLayers: string;
   links: string[];
