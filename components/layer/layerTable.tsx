@@ -254,11 +254,11 @@ const LayerTable = ({ data }: Props) => {
               </td>
               <td className="flex-1 px-6 pr-2">
                 {item.live === "Testnet" ? (
-                  <div className="text-white font-bold">Testnet</div>
+                  <div className="text-white">Testnet</div>
                 ) : item.live === "Announced" ? (
-                  <div className="text-white font-bold">Announced</div>
+                  <div className="text-white">Announced</div>
                 ) : item.underReview === "yes" ? (
-                  <div className="text-bitcoin font-bold">Under Review</div>
+                  <div className="text-bitcoin">Under Review</div>
                 ) : (
                   <div className="flex flex-row py-4 items-center flex flex-row relative group cursor-pointer">
                     {item.riskFactors.map((riskFactor, index) => (
