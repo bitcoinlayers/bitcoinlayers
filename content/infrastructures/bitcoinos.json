@@ -9,7 +9,7 @@
   "btcBridge": "Federated 1-of-N",
   "settlement": "Onchain",
   "btcLocked": 3555,
-  "executionEnv": "-",
+  "associatedLayers": "-",
   "consensus": "PoM",
   "nativeToken": "MTA",
   "feeToken": "mBTC",

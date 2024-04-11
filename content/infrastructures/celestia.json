@@ -9,7 +9,7 @@
   "btcBridge": "x",
   "settlement": "x",
   "btcLocked": 0,
-  "executionEnv": "-",
+  "associatedLayers": "-",
   "consensus": "x",
   "nativeToken": "x",
   "feeToken": "x",

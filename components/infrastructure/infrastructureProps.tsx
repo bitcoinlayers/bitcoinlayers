@@ -20,7 +20,7 @@ interface InfrastructureProps {
   btcBridge: string;
   settlement: string;
   btcLocked: number;
-  executionEnv: string;
+  associatedLayers: string;
   consensus: string;
   nativeToken: string;
   feeToken: string;
@@ -41,7 +41,7 @@ export type Infrastructure = {
   btcBridge: string;
   settlement: string;
   btcLocked: number;
-  executionEnv: string;
+  associatedLayers: string;
   consensus: string;
   nativeToken: string;
   feeToken: string;
