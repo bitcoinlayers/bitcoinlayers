@@ -38,7 +38,7 @@
         },
         {
           "title": "Federation guardians run a permissioned consensus protocol",
-          "content": "Guardians of the specific federation are those that ultimately come to consensus on transactions happening on the various modules supported by the federation. After transactions are submitted, proposals are sent to consensus participants who agree on the validity of the proposal. These consensus protocols can have varying numbers of signers dependent on the, but will rely on an honest majority assumption of signers. There is no mechanism for users to dispute invalid state changes."
+          "content": "Guardians of the specific federation are those that ultimately come to consensus on transactions happening on the various modules supported by the federation. After transactions are submitted, proposals are sent to consensus participants who agree on the validity of the proposal. These consensus protocols can have varying numbers of signers dependent on them, but will rely on an honest majority assumption of signers. There is no mechanism for users to dispute invalid state changes."
         }
       ]
     },
