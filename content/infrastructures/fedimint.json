@@ -61,7 +61,7 @@
           "content": "Chaumian eCash enables Fedimints to create and redeem IOU notes that represent claims on Bitcoin stored in the Federation's multi-sig. eCash in Fedimints also uses blinded signatures to protect the privacy of their users, and ensures that guardians of the Federation cannot see a user's specific balance. Guardians cannot also tell which parties in the federation are engaging in transactions."
         },
         {
-          "title": "Lower fees",
+          "title": "Lower Fees",
           "content": "Fedimints provide lower fees to users and do not require on-chain transactions to engage in the federation. To deposit funds, users can use the lightning network or the Bitcoin mainchain."
         },
         {
@@ -83,7 +83,7 @@
           "content": "Fedimints enable anonymous payments through blinded signatures. Users may choose to join a Fedimint because it can offer an easier path towards anonymity than the Bitcoin mainchain or lightning."
         },
         {
-          "title": "General purpose smart contracts",
+          "title": "General Purpose Smart Contracts",
           "content": "Fedimints can also support any arbitrary computation. Federations supporting application modules like borrowing and lending protocols, and stablecoins, are possible."
         }
       ]
