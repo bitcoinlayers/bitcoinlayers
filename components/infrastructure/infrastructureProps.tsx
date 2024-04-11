@@ -9,6 +9,11 @@ interface Subsection {
   content: string;
 }
 
+interface kbit {
+  url: string;
+  displayText: string;
+}
+
 interface InfrastructureProps {
   slug: string;
   title: string;
@@ -27,6 +32,7 @@ interface InfrastructureProps {
   enshrinedBtc: string;
   links: string[];
   sections: Section[];
+  knowledgeBits: kbit[];
 }
 
 export default InfrastructureProps;
@@ -48,6 +54,7 @@ export type Infrastructure = {
   enshrinedBtc: string;
   links: string[];
   sections: Section[];
+  knowledgeBits: kbit[];
   /** MDX file body */
   slug: string;
 };
