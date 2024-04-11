@@ -4,7 +4,7 @@
   "layerType": "Sidechain",
   "live": "Announced",
   "underReview": "yes",
-  "riskFactors": ["High", "High", "High", "High", "High"],
+  "riskFactors": ["High", "High", "High", "High"],
   "purpose": "-",
   "btcBridge": "x",
   "settlement": "x",
@@ -28,64 +28,19 @@
       "title": "Description",
       "content": [
         {
-          "title": "Description",
-          "content": "Citrea description"
+          "content": "Moneta is a rollup that uses Bitcoin for data availability and consensus. It has an optimistically verified validating bridge via BitVM. It leverages STARK proofs to prove state transitions. In the event of an invalid state transition, verifiers in the BitVM bridge can submit a fraud proof to show that the state transition was invalid."
         }
       ]
+    }
+  ],
+  "knowledgeBits": [
+    {
+      "url": "https://bitcoin.org",
+      "displayText": "Bitcoin.org"
     },
     {
-      "id": "riskanalysis",
-      "title": "Risk Analysis",
-      "content": [
-        {
-          "title": "Unilateral Exit",
-          "content": "Citrea unilat exit copy"
-        },
-        {
-          "title": "Data Availability",
-          "content": "Citrea da copy"
-        },
-        {
-          "title": "Block Production",
-          "content": "Citrea block production copy"
-        },
-        {
-          "title": "Settlement",
-          "content": "Citrea settlement copy"
-        },
-        {
-          "title": "Self-custodial",
-          "content": "Citrea self-custodial copy"
-        }
-      ]
-    },
-    {
-      "id": "bitcoinsecurity",
-      "title": "Bitcoin Security",
-      "content": [
-        {
-          "title": "Explainer",
-          "content": "Citrea btc security 1 copy"
-        },
-        {
-          "title": "Explainer",
-          "content": "Citrea btc-sec 2 copy"
-        },
-        {
-          "title": "Explainer",
-          "content": "Citrea btc-sec 3 copy"
-        }
-      ]
-    },
-    {
-      "id": "technology",
-      "title": "Technology",
-      "content": [
-        {
-          "title": "Explainer",
-          "content": "Citrea tech explainooor copy"
-        }
-      ]
+      "url": "https://bitcoinrollups.io",
+      "displayText": "BitcoinRollups.io"
     }
   ]
 }
