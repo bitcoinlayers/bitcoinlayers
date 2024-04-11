@@ -44,7 +44,7 @@ console.log("Open page for layer: ", params.slug);
   }
 
   return (
-    <article className="py-6 prose dark:prose-invert max-w-5xl mx-auto pb-12">
+    <article className="py-6 prose dark:prose-invert max-w-6xl mx-auto pb-12">
     <div className="grid grid-cols-3 gap-4">
         <div className="col-span-3">
             <h1 className="mb-2">{layer.title}</h1>

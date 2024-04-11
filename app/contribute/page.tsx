@@ -3,7 +3,7 @@ import React from "react";
 
 const ContributePage: React.FC = () => {
   return (
-    <article className="py-6 prose dark:prose-invert max-w-5xl mx-auto pb-12">
+    <article className="py-6 prose dark:prose-invert max-w-6xl mx-auto pb-12">
       <h1>Contribute</h1>
       <hr />
       <div className="pt-0 px-4 rounded-xl mr-4 mb-0 md:mb-0 dark:bg-secondary rounded-lg bg-highlight bg-opacity-20 dark:bg-opacity-100 px-4">

@@ -19,7 +19,7 @@ export default function Footer(): ReactElement {
 
   return (
     <header>
-      <div className="max-w-5xl text-bitcoin mx-auto flex items-baseline items-center pb-12 py-4">
+      <div className="max-w-6xl text-bitcoin mx-auto flex items-baseline items-center pb-12 py-4">
         <h1 className="text-3xl font-bold mt-4 flex flex-rows space-x-4 align-middle">
           {/* <Image src="/btc.svg" alt="Bitcoin" width={50} height={50} /> */}
           <Link href="/">Bitcoin Layers</Link>

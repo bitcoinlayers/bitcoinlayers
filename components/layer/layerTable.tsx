@@ -18,7 +18,7 @@ const LayerTable = ({ data }: Props) => {
 
   const filteredAndSortedData = useMemo(() => {
     const liveStatusOrder = ["Mainnet", "Testnet", "Announced"]; // Define the order for sorting by live status
-  
+
     return [...data]
       .filter(
         (item) =>
@@ -33,7 +33,7 @@ const LayerTable = ({ data }: Props) => {
         if (orderA !== orderB) {
           return (sortOrder === "asc" ? 1 : -1) * (orderA - orderB);
         }
-  
+
         // If live statuses are the same, then sort by title
         if (a.title.toLowerCase() < b.title.toLowerCase()) {
           return sortOrder === "asc" ? -1 : 1;
@@ -41,7 +41,7 @@ const LayerTable = ({ data }: Props) => {
         if (a.title.toLowerCase() > b.title.toLowerCase()) {
           return sortOrder === "asc" ? 1 : -1;
         }
-  
+
         // If both live status and title are the same, return 0 (no sorting)
         return 0;
       });
@@ -64,14 +64,8 @@ const LayerTable = ({ data }: Props) => {
     }
   };
 
-  const handleRowClick = (destination: string, underReview: string) => {
-    const shouldOpenNewTab = underReview === "yes";
-
-    if (shouldOpenNewTab) {
-      window.open(destination, "_blank");
-    } else {
-      router.push(destination);
-    }
+  const handleRowClick = (destination: string) => {
+    router.push(destination);
   };
 
   return (
@@ -170,7 +164,7 @@ const LayerTable = ({ data }: Props) => {
             </th>
             <th
               scope="col"
-              className="flex-1 px-6 py-3 cursor-pointer w-1/3 sm:w-1/8"
+              className="flex-1 px-6 py-3 cursor-pointer w-1/4 sm:w-1/8"
               onClick={() => {
                 setSortBy("purpose");
                 toggleSortOrder();
@@ -189,7 +183,7 @@ const LayerTable = ({ data }: Props) => {
             </th>
             <th
               scope="col"
-              className="flex-1 px-6 py-3 cursor-pointer w-1/3 sm:w-1/8"
+              className="flex-1 px-6 py-3 cursor-pointer w-52 sm:w-1/8"
               onClick={() => {
                 setSortBy("btcBridge");
                 toggleSortOrder();
@@ -249,20 +243,13 @@ const LayerTable = ({ data }: Props) => {
         <tbody className="dark:border-primary gap-x-8">
           {filteredAndSortedData.map((item, index) => (
             <tr
-              className={`dark:border-primary h-12 cursor-pointer ${
+              className={`dark:border-primary cursor-pointer ${
                 index === filteredAndSortedData.length - 1 ? "" : "border-b-2"
               }`}
               key={index}
-              onClick={() =>
-                handleRowClick(
-                  item.underReview === "no"
-                    ? `/layers/${item.slug}`
-                    : item.links[0],
-                  item.underReview
-                )
-              }
+              onClick={() => handleRowClick(`/layers/${item.slug}`)}
             >
-              <td className="flex-1 px-6 py-4 font-bold whitespace-nowrap">
+              <td className="flex-1 px-6 py-4 font-semibold whitespace-nowrap">
                 <h2>{item.title}</h2>
               </td>
               <td className="flex-1 px-6 pr-2">
@@ -271,11 +258,9 @@ const LayerTable = ({ data }: Props) => {
                 ) : item.live === "Announced" ? (
                   <div className="text-white font-bold">Announced</div>
                 ) : item.underReview === "yes" ? (
-                  <div className="text-bitcoin font-bold">
-                    Under Review
-                  </div>
+                  <div className="text-bitcoin font-bold">Under Review</div>
                 ) : (
-                  <div className="flex flex-row py-3 items-center flex flex-row relative group cursor-pointer">
+                  <div className="flex flex-row py-4 items-center flex flex-row relative group cursor-pointer">
                     {item.riskFactors.map((riskFactor, index) => (
                       <div
                         key={index}

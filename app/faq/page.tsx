@@ -3,7 +3,7 @@ import React from "react";
 
 const FaqPage: React.FC = () => {
   return (
-    <article className="py-6 prose dark:prose-invert max-w-5xl mx-auto pb-12">
+    <article className="py-6 prose dark:prose-invert max-w-6xl mx-auto pb-12">
       <h1>Frequently Asked Questions</h1>
         <p className="text-l dark:text-white">Can&apos;t find your answer? Reach out to us on <Link href="https://twitter.com/bitcoinlayers" target="_blank">Twitter</Link>.</p>
       <hr />

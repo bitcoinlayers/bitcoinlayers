@@ -193,7 +193,7 @@ const InfrastructureTable = ({ data }: Props) => {
         <tbody className="dark:border-primary gap-x-8">
           {filteredAndSortedData.map((item, index) => (
             <tr
-              className={`dark:border-primary h-12 cursor-pointer ${
+              className={`dark:border-primary cursor-pointer ${
                 index === filteredAndSortedData.length - 1 ? "" : "border-b-2"
               }`}
               key={index}
