@@ -5,6 +5,7 @@
   "live": "Mainnet/Testnet/Announced",
   "underReview": "yes/no",
   "riskFactors": ["High", "High"],
+  "bitcoinSecurity": "No",
   "purpose": "General",
   "associatedLayers": "-",
   "links": [

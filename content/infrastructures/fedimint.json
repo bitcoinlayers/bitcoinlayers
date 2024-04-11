@@ -5,6 +5,7 @@
   "live": "Mainnet",
   "underReview": "No",
   "riskFactors": ["High", "High"],
+  "bitcoinSecurity": "No",
   "purpose": "Private payments",
   "associatedLayers": "n/a",
   "links": [

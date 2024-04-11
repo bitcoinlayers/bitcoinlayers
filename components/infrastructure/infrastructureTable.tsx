@@ -129,16 +129,16 @@ const InfrastructureTable = ({ data }: Props) => {
               scope="col"
               className="flex-1 px-6 py-3 cursor-pointer w-1/3 sm:w-1/8"
               onClick={() => {
-                setSortBy("live");
+                setSortBy("bitcoinSecurity");
                 toggleSortOrder();
               }}
             >
               <span className="flex items-center">
-                Risks{" "}
+                Bitcoin Security{" "}
                 <span
-                  className={`ml-1 ${sortBy === "live" ? "" : "text-gray-500"}`}
+                  className={`ml-1 ${sortBy === "bitcoinSecurity" ? "" : "text-gray-500"}`}
                 >
-                  {sortOrder === "asc" && sortBy === "live" ? "▲" : "▼"}
+                  {sortOrder === "asc" && sortBy === "bitcoinSecurity" ? "▲" : "▼"}
                 </span>
               </span>
             </th>
@@ -204,35 +204,13 @@ const InfrastructureTable = ({ data }: Props) => {
               </td>
               <td className="flex-1 px-6 pr-2">
                 {item.live === "Testnet" ? (
-                  <div className="text-white font-bold">Testnet</div>
+                  <div className="text-white">Testnet</div>
                 ) : item.live === "Announced" ? (
-                  <div className="text-white font-bold">Announced</div>
+                  <div className="text-white">Announced</div>
                 ) : item.underReview === "yes" ? (
-                  <div className="text-bitcoin font-bold">Under Review</div>
+                  <div className="text-bitcoin">Under Review</div>
                 ) : (
-                  <div className="flex flex-row py-3 items-center flex flex-row relative group cursor-pointer">
-                    {item.riskFactors.map((riskFactor, index) => (
-                      <div
-                        key={index}
-                        className={`w-3 h-3 rounded-full mx-0.5 ${getRiskColorClass(
-                          riskFactor
-                        )}`}
-                      ></div>
-                    ))}
-                    {/* Tooltip */}
-                    {/* <div className="absolute -right-12 top-10 w-64 mt-2 hidden group-hover:flex flex-col items-center before:content-[''] before:absolute before:bottom-full before:left-1/2 before:-translate-x-1/2 before:border-l-8 before:border-l-transparent before:border-r-8 before:border-r-transparent before:border-b-8 before:border-b-white z-10">
-                      <div className="bg-secondary text-white text-xs rounded border-2 border-white py-1 px-3">
-                        <p className="text-lg font-bold">Risk Factors</p>
-                        {item.riskFactors.length > 0 ? (
-                          item.riskFactors.map((riskFactor, index) => (
-                            <p key={index}>{riskFactor}</p>
-                          ))
-                        ) : (
-                          <p>No risk factors listed</p>
-                        )}
-                      </div>
-                    </div> */}
-                  </div>
+                  <div className="text-white">{item.bitcoinSecurity}</div>
                 )}
               </td>
               <td className="flex-1 px-6 py-4">{item.infrastructureType}</td>
