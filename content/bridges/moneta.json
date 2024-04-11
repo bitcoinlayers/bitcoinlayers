@@ -9,7 +9,7 @@
   "btcBridge": "Stablecoins",
   "settlement": "Algorithmic",
   "btcLocked": 3555,
-  "associatedLayers": "EVM",
+  "executionEnv": "EVM",
   "consensus": "PoM",
   "nativeToken": "MTA",
   "feeToken": "mBTC",
