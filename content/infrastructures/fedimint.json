@@ -37,8 +37,8 @@
           "content": "Users deposit BTC into a multi-sig to interact with a Fedimint. Fedimints do not enable unilateral exits. Users explicitly trust the signers, known as guardians, of the Federation's multi-sig to not steal their funds."
         },
         {
-          "title": " run a permissioned consensus protocol",
-          "content": " of the specific federation are those that ultimately come to consensus on transactions happening on the various modules supported by the federation. After transactions are submitted, proposals are sent to consensus participants who agree on the validity of the proposal. These consensus protocols can have varying numbers of signers dependent on the, but will rely on an honest majority assumption of signers. There is no mechanism for users to dispute invalid state changes."
+          "title": "Federation guardians run a permissioned consensus protocol",
+          "content": "Guardians of the specific federation are those that ultimately come to consensus on transactions happening on the various modules supported by the federation. After transactions are submitted, proposals are sent to consensus participants who agree on the validity of the proposal. These consensus protocols can have varying numbers of signers dependent on the, but will rely on an honest majority assumption of signers. There is no mechanism for users to dispute invalid state changes."
         }
       ]
     },
