@@ -2,7 +2,7 @@
   "slug": "barknet",
   "title": "Barknet",
   "layerType": "Rollup",
-  "live": "Announced",
+  "live": "Testnet",
   "underReview": "yes",
   "riskFactors": ["High", "High", "High", "High"],
   "purpose": "-",
@@ -16,11 +16,10 @@
   "enshrinedBtc": "x",
   "links": [
     "https://github.com/KasarLabs/barknet",
-    "https://twitter.com/bitcoinlayers",
-    "https://twitter.com/bitcoinlayers",
-    "https://twitter.com/bitcoinlayers",
-    "https://twitter.com/bitcoinlayers",
-    "https://twitter.com/bitcoinlayers"
+    "https://github.com/KasarLabs/barknet",
+    "https://github.com/KasarLabs/barknet",
+    "https://github.com/KasarLabs/barknet",
+    "https://twitter.com/kasarlabs"
   ],
   "sections": [
     {
@@ -28,19 +27,15 @@
       "title": "Description",
       "content": [
         {
-          "content": "Moneta is a rollup that uses Bitcoin for data availability and consensus. It has an optimistically verified validating bridge via BitVM. It leverages STARK proofs to prove state transitions. In the event of an invalid state transition, verifiers in the BitVM bridge can submit a fraud proof to show that the state transition was invalid."
+          "content": "Barknet is a sovereign rollup that uses Bitcoin for data availability and the Cairo VM. It was developed by Kasar Lab in collaboration with Taproot Wizards."
         }
       ]
     }
   ],
   "knowledgeBits": [
     {
-      "url": "https://bitcoin.org",
-      "displayText": "Bitcoin.org"
-    },
-    {
-      "url": "https://bitcoinrollups.io",
-      "displayText": "BitcoinRollups.io"
+      "url": "https://github.com/KasarLabs/barknet",
+      "displayText": "Barknet code and docs"
     }
   ]
 }

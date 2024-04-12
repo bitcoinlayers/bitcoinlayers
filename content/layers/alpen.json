@@ -16,10 +16,9 @@
   "enshrinedBtc": "x",
   "links": [
     "https://alpenlabs.io/",
-    "https://twitter.com/bitcoinlayers",
-    "https://twitter.com/bitcoinlayers",
-    "https://twitter.com/bitcoinlayers",
-    "https://twitter.com/bitcoinlayers",
+    "https://www.alpenlabs.io/",
+    "https://www.alpenlabs.io/",
+    "https://www.alpenlabs.io/",
     "https://twitter.com/AlpenLabs"
   ],
   "sections": [
@@ -28,64 +27,15 @@
       "title": "Description",
       "content": [
         {
-          "title": "Description",
-          "content": "Citrea description"
+          "content": "Alpen Labs is a team developing a rollup framework on top of Bitcoin. They have recently left stealth, and are inviting developers to contribute to their testnet."
         }
       ]
-    },
+    }
+  ],
+  "knowledgeBits": [
     {
-      "id": "riskanalysis",
-      "title": "Risk Analysis",
-      "content": [
-        {
-          "title": "Unilateral Exit",
-          "content": "Citrea unilat exit copy"
-        },
-        {
-          "title": "Data Availability",
-          "content": "Citrea da copy"
-        },
-        {
-          "title": "Block Production",
-          "content": "Citrea block production copy"
-        },
-        {
-          "title": "Settlement",
-          "content": "Citrea settlement copy"
-        },
-        {
-          "title": "Self-custodial",
-          "content": "Citrea self-custodial copy"
-        }
-      ]
-    },
-    {
-      "id": "bitcoinsecurity",
-      "title": "Bitcoin Security",
-      "content": [
-        {
-          "title": "Explainer",
-          "content": "Citrea btc security 1 copy"
-        },
-        {
-          "title": "Explainer",
-          "content": "Citrea btc-sec 2 copy"
-        },
-        {
-          "title": "Explainer",
-          "content": "Citrea btc-sec 3 copy"
-        }
-      ]
-    },
-    {
-      "id": "technology",
-      "title": "Technology",
-      "content": [
-        {
-          "title": "Explainer",
-          "content": "Citrea tech explainooor copy"
-        }
-      ]
+      "url": "https://alpenlabs.io/",
+      "displayText": "Alpen Website"
     }
   ]
 }

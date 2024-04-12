@@ -16,10 +16,10 @@
   "enshrinedBtc": "x",
   "links": [
     "https://www.anduro.io/",
-    "https://twitter.com/bitcoinlayers",
-    "https://twitter.com/bitcoinlayers",
-    "https://twitter.com/bitcoinlayers",
-    "https://twitter.com/bitcoinlayers",
+    "https://www.anduro.io/",
+    "https://www.anduro.io/",
+    "https://www.anduro.io/",
+    "https://www.anduro.io/",
     "https://twitter.com/zkLayer_"
   ],
   "sections": [
@@ -28,64 +28,15 @@
       "title": "Description",
       "content": [
         {
-          "title": "Description",
-          "content": "Citrea description"
+          "content": "Alys is one of the sidechains being developed through the Anduro project. It will be an EVM sidechain with general purpose smart contracts."
         }
       ]
-    },
+    }
+  ],
+  "knowledgeBits": [
     {
-      "id": "riskanalysis",
-      "title": "Risk Analysis",
-      "content": [
-        {
-          "title": "Unilateral Exit",
-          "content": "Citrea unilat exit copy"
-        },
-        {
-          "title": "Data Availability",
-          "content": "Citrea da copy"
-        },
-        {
-          "title": "Block Production",
-          "content": "Citrea block production copy"
-        },
-        {
-          "title": "Settlement",
-          "content": "Citrea settlement copy"
-        },
-        {
-          "title": "Self-custodial",
-          "content": "Citrea self-custodial copy"
-        }
-      ]
-    },
-    {
-      "id": "bitcoinsecurity",
-      "title": "Bitcoin Security",
-      "content": [
-        {
-          "title": "Explainer",
-          "content": "Citrea btc security 1 copy"
-        },
-        {
-          "title": "Explainer",
-          "content": "Citrea btc-sec 2 copy"
-        },
-        {
-          "title": "Explainer",
-          "content": "Citrea btc-sec 3 copy"
-        }
-      ]
-    },
-    {
-      "id": "technology",
-      "title": "Technology",
-      "content": [
-        {
-          "title": "Explainer",
-          "content": "Citrea tech explainooor copy"
-        }
-      ]
+      "url": "https://assets.website-files.com/65d7ad8d6664c459f717e27d/65fc7d9bbb856302865ea302_ANDURO-Litepaper.pdf",
+      "displayText": "Anduro Litepaper"
     }
   ]
 }

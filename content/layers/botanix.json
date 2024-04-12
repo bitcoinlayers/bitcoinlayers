@@ -27,7 +27,7 @@
       "title": "Description",
       "content": [
         {
-          "content": "Botanix is an EVM-compatible sidechain that will launch along side Bitcoin. They will be using Proof-of-Stake consensus and the Spiderchain to secure BTC multi-sigs for bridged funds to the chain."
+          "content": "Botanix is an EVM-compatible sidechain that will launch along side Bitcoin. They will be using Proof-of-Stake consensus and the Spiderchain to secure BTC multi-sigs for its two way peg."
         }
       ]
     }
