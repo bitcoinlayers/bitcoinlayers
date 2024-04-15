@@ -4,14 +4,12 @@ import { notFound } from "next/navigation";
 import LayerProps from "@/components/layer/layerProps";
 import LayerHead from "@/components/layer/layerHead";
 import LayerSummary from "@/components/layer/layerSummary";
-// import LayerChart from "@/components/layer/layerChart";
+import LayerChart from "@/components/layer/layerChart";
 import LayerBody from "@/components/layer/layerBody";
 import { allLayers } from "@/util/layer_index";
 
 async function getLayerFromSlug(paramsSlug: string) {
-  const layer = allLayers.find(
-    (layer) => layer.slug === paramsSlug
-  );
+  const layer = allLayers.find((layer) => layer.slug === paramsSlug);
   if (!layer) {
     console.log("Layer not found: ", paramsSlug);
     null;
@@ -47,12 +45,10 @@ export default async function LayerPage({
           </div>
         </div>
         <div className="col-span-3 md:col-span-1">
-          {/* <LayerChart layer={layer as LayerProps} /> */}
+          <LayerChart layer={layer as LayerProps} />
         </div>
       </div>
-      <LayerBody
-        layer={layer as LayerProps}
-      />
+      <LayerBody layer={layer as LayerProps} />
     </article>
   );
 }
