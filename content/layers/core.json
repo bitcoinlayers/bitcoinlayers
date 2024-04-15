@@ -3,7 +3,7 @@
   "title": "Core",
   "layerType": "Sidechain",
   "live": "Mainnet",
-  "underReview": "yes",
+  "underReview": "no",
   "riskFactors": ["High", "Medium", "Medium", "Medium"],
   "purpose": "General",
   "btcBridge": "Permissionless Multisig",
