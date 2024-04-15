@@ -28,19 +28,15 @@
       "title": "Description",
       "content": [
         {
-          "content": "Moneta is a rollup that uses Bitcoin for data availability and consensus. It has an optimistically verified validating bridge via BitVM. It leverages STARK proofs to prove state transitions. In the event of an invalid state transition, verifiers in the BitVM bridge can submit a fraud proof to show that the state transition was invalid."
+          "content": "Heliosphere is building an optimistic rollup on top of Bitcoin."
         }
       ]
     }
   ],
   "knowledgeBits": [
     {
-      "url": "https://bitcoin.org",
-      "displayText": "Bitcoin.org"
-    },
-    {
       "url": "https://bitcoinrollups.io",
-      "displayText": "BitcoinRollups.io"
+      "displayText": "BitcoinRollups.io provides education resources on Bitcoin rollups."
     }
   ]
 }

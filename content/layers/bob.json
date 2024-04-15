@@ -38,8 +38,16 @@
       "displayText": "BOB Website"
     },
     {
+      "url": "https://docs.gobob.xyz/docs/build/getting-started/helloworld",
+      "displayText": "Access BOB's testnet here"
+    },
+    {
       "url": "https://www.youtube.com/watch?v=LD7rtWrG9NM&t=483s",
       "displayText": "Talk on BOB's architecture"
+    },
+    {
+      "url": "https://mirror.xyz/0xE4dF449bDC1ec8f7688F68F7E839f1370617Ac73/UvQH9D3RyVcozOlz091gLKnbX8aqn8goFVYtHVmin-w",
+      "displayText": "Interesting Bitcoin research areas for BOB"
     }
   ]
 }

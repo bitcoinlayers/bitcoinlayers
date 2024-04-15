@@ -34,8 +34,12 @@
   ],
   "knowledgeBits": [
     {
-      "url": "https://bnzk.io/g",
+      "url": "https://bnzk.io/",
       "displayText": "Bnzk website."
+    },
+    {
+      "url": "https://docs.bnzk.io/",
+      "displayText": "Bnzk documentations site."
     }
   ]
 }

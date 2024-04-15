@@ -38,6 +38,10 @@
       "displayText": "Botanix Website"
     },
     {
+      "url": "https://docs.botanixlabs.xyz/botanix-labs/how-to-use-botanix/getting-started-with-botanix",
+      "displayText": "Interact with the Botanix testnet"
+    },
+    {
       "url": "https://blog.lopp.net/an-introduction-to-spiderchain/",
       "displayText": "An introduction to the Spiderchain"
     }

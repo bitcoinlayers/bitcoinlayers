@@ -16,11 +16,10 @@
   "enshrinedBtc": "x",
   "links": [
     "https://www.anduro.io/",
-    "https://twitter.com/bitcoinlayers",
-    "https://twitter.com/bitcoinlayers",
-    "https://twitter.com/bitcoinlayers",
-    "https://twitter.com/bitcoinlayers",
-    "https://twitter.com/zkLayer_"
+    "https://www.anduro.io/",
+    "https://www.anduro.io/",
+    "https://www.anduro.io/",
+    "https://www.anduro.io/"
   ],
   "sections": [
     {
@@ -28,19 +27,15 @@
       "title": "Description",
       "content": [
         {
-          "content": "Moneta is a rollup that uses Bitcoin for data availability and consensus. It has an optimistically verified validating bridge via BitVM. It leverages STARK proofs to prove state transitions. In the event of an invalid state transition, verifiers in the BitVM bridge can submit a fraud proof to show that the state transition was invalid."
+          "content": "Coordinate is a UTXO-based sidechain that acts enables users to more easily use applications like Ordinals, BRC-20s and standard Bitcoin transactions. Coordinate will be a part of the Anduro ecosystem."
         }
       ]
     }
   ],
   "knowledgeBits": [
     {
-      "url": "https://bitcoin.org",
-      "displayText": "Bitcoin.org"
-    },
-    {
-      "url": "https://bitcoinrollups.io",
-      "displayText": "BitcoinRollups.io"
+      "url": "https://assets.website-files.com/65d7ad8d6664c459f717e27d/65fc7d9bbb856302865ea302_ANDURO-Litepaper.pdf",
+      "displayText": "Anduro Litepaper"
     }
   ]
 }

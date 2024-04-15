@@ -16,10 +16,9 @@
   "enshrinedBtc": "cBTC",
   "links": [
     "https://www.bsquared.network/",
-    "https://twitter.com/bitcoinlayers",
-    "https://twitter.com/bitcoinlayers",
-    "https://twitter.com/bitcoinlayers",
-    "https://twitter.com/bitcoinlayers",
+    "https://docs.bsquared.network/",
+    "https://docs.bsquared.network/",
+    "https://github.com/b2network",
     "https://twitter.com/BSquaredNetwork"
   ],
   "sections": [
@@ -28,19 +27,19 @@
       "title": "Description",
       "content": [
         {
-          "content": "Moneta is a rollup that uses Bitcoin for data availability and consensus. It has an optimistically verified validating bridge via BitVM. It leverages STARK proofs to prove state transitions. In the event of an invalid state transition, verifiers in the BitVM bridge can submit a fraud proof to show that the state transition was invalid."
+          "content": "BSquared is an upcoming project that will build a rollup and alternative DA layer on top of Bitcoin. They are currently in testnet phase."
         }
       ]
     }
   ],
   "knowledgeBits": [
     {
-      "url": "https://bitcoin.org",
-      "displayText": "Bitcoin.org"
+      "url": "https://www.bsquared.network/",
+      "displayText": "BSquare website"
     },
     {
-      "url": "https://bitcoinrollups.io",
-      "displayText": "BitcoinRollups.io"
+      "url": "https://docs.bsquared.network/",
+      "displayText": "BSquared documentation site"
     }
   ]
 }

@@ -16,10 +16,9 @@
   "enshrinedBtc": "x",
   "links": [
     "https://bisonlabs.io/#/dashboard",
-    "https://twitter.com/bitcoinlayers",
-    "https://twitter.com/bitcoinlayers",
-    "https://twitter.com/bitcoinlayers",
-    "https://twitter.com/bitcoinlayers",
+    "https://bisonlabs.io/#/dashboard",
+    "https://bisonlabs.io/#/dashboard",
+    "https://bisonlabs.io/#/dashboard",
     "https://twitter.com/Bison_Labs"
   ],
   "sections": [
@@ -28,19 +27,19 @@
       "title": "Description",
       "content": [
         {
-          "content": "Moneta is a rollup that uses Bitcoin for data availability and consensus. It has an optimistically verified validating bridge via BitVM. It leverages STARK proofs to prove state transitions. In the event of an invalid state transition, verifiers in the BitVM bridge can submit a fraud proof to show that the state transition was invalid."
+          "content": "Bison Labs are building a sovereign rollup that enables more functionality for Ordinals and BRC-20 trading. They planning on using zk-STARKs to prove state transitions. They are in the testnet stage."
         }
       ]
     }
   ],
   "knowledgeBits": [
     {
-      "url": "https://bitcoin.org",
-      "displayText": "Bitcoin.org"
+      "url": "https://bisonlabs.io/",
+      "displayText": "Bison Labs website"
     },
     {
-      "url": "https://bitcoinrollups.io",
-      "displayText": "BitcoinRollups.io"
+      "url": "https://dmaster-1.gitbook.io/bisonlabs",
+      "displayText": "Bison Labs documentation site"
     }
   ]
 }

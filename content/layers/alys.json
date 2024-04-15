@@ -19,8 +19,7 @@
     "https://www.anduro.io/",
     "https://www.anduro.io/",
     "https://www.anduro.io/",
-    "https://www.anduro.io/",
-    "https://twitter.com/zkLayer_"
+    "https://www.anduro.io/"
   ],
   "sections": [
     {
@@ -28,7 +27,7 @@
       "title": "Description",
       "content": [
         {
-          "content": "Alys is one of the sidechains being developed through the Anduro project. It will be an EVM sidechain with general purpose smart contracts."
+          "content": "Alys is one of the sidechains being developed through the Anduro project. It will be an EVM sidechain with general purpose smart contracts. Alys will be a part of the Anduro ecosystem."
         }
       ]
     }
