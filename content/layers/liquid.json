@@ -4,7 +4,7 @@
   "layerType": "Sidechain",
   "live": "Mainnet",
   "underReview": "yes",
-  "riskFactors": ["", "Low", "High", "Medium", "Medium"],
+  "riskFactors": ["", "", "", "", ""],
   "purpose": "Payments",
   "btcBridge": "Federated Multisig",
   "settlement": "Offchain",
@@ -12,14 +12,13 @@
   "executionEnv": "Bitcoin Script",
   "consensus": "PoM",
   "nativeToken": "-",
-  "feeToken": "LBTC",
-  "enshrinedBtc": "LBTC",
+  "feeToken": "L-BTC",
+  "enshrinedBtc": "L-BTC",
   "links": [
     "https://liquid.net/",
-    "https://twitter.com/bitcoinlayers",
-    "https://twitter.com/bitcoinlayers",
-    "https://twitter.com/bitcoinlayers",
-    "https://twitter.com/bitcoinlayers",
+    "https://docs.liquid.net/docs/technical-overview",
+    "https://blockstream.info/liquid",
+    "https://github.com/ElementsProject/elements",
     "https://twitter.com/bitcoinlayers"
   ],
   "sections": [
@@ -28,19 +27,19 @@
       "title": "Description",
       "content": [
         {
-          "content": "Moneta is a rollup that uses Bitcoin for data availability and consensus. It has an optimistically verified validating bridge via BitVM. It leverages STARK proofs to prove state transitions. In the event of an invalid state transition, verifiers in the BitVM bridge can submit a fraud proof to show that the state transition was invalid."
+          "content": "The Liquid Network is a sidechain that enables users to perform confidential transactions, swaps, issue tokenized assets, and more, on the sidechain. It is managed by a permissioned federation, and does not use the Bitcoin Layer 1 for security. It uses a federated bridge to custody the BTC that used to issue BTC vouchers (LBTC) on the sidechain."
         }
       ]
     }
   ],
   "knowledgeBits": [
     {
-      "url": "https://bitcoin.org",
-      "displayText": "Bitcoin.org"
+      "url": "hhttps://liquid.net/",
+      "displayText": "Liquid website"
     },
     {
-      "url": "https://bitcoinrollups.io",
-      "displayText": "BitcoinRollups.io"
+      "url": "https://help.blockstream.com/hc/en-us/articles/900001408623-How-does-Liquid-Bitcoin-L-BTC-work",
+      "displayText": "Article explaining how L-BTC works"
     }
   ]
 }
