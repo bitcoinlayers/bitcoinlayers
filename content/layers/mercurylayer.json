@@ -13,14 +13,13 @@
   "consensus": "Statechain",
   "nativeToken": "BTC",
   "feeToken": "BTC",
-  "enshrinedBtc": "sBTC",
+  "enshrinedBtc": "BTC",
   "links": [
     "https://mercurylayer.com/",
+    "https://github.com/commerceblock/mercurylayer/blob/dev/docs/README.md",
     "https://mercurylayer.com/",
-    "https://mercurylayer.com/",
-    "https://mercurylayer.com/",
-    "https://mercurylayer.com/",
-    "https://mercurylayer.com/"
+    "https://github.com/commerceblock/mercurylayer",
+    "https://twitter.com/mercurylayer"
   ],
   "sections": [
     {
@@ -28,19 +27,19 @@
       "title": "Description",
       "content": [
         {
-          "content": "Moneta is a rollup that uses Bitcoin for data availability and consensus. It has an optimistically verified validating bridge via BitVM. It leverages STARK proofs to prove state transitions. In the event of an invalid state transition, verifiers in the BitVM bridge can submit a fraud proof to show that the state transition was invalid."
+          "content": "Mercury Layer is an implementation of a Statechain protocol. It enables the offchain transfer of BTC."
         }
       ]
     }
   ],
   "knowledgeBits": [
     {
-      "url": "https://bitcoin.org",
-      "displayText": "Bitcoin.org"
+      "url": "https://github.com/commerceblock/mercurylayer/blob/dev/docs/README.md",
+      "displayText": "Mercury Layer Docs"
     },
     {
-      "url": "https://bitcoinrollups.io",
-      "displayText": "BitcoinRollups.io"
+      "url": "https://github.com/commerceblock/mercurylayer/tree/dev/clients/standalone-rust",
+      "displayText": "Users can run a Mercury Layer client locally to interact with the protocol."
     }
   ]
 }
