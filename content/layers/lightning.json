@@ -1,46 +1,46 @@
 {
-  "slug": "lightning",
-  "title": "Lightning Network",
-  "layerType": "State Channel",
-  "live": "Mainnet",
-  "underReview": "yes",
-  "riskFactors": ["", "Low", "High", "Medium", "Medium"],
-  "purpose": "Payments",
-  "btcBridge": "Smart Contract",
-  "settlement": "Onchain",
-  "btcLocked": 0,
-  "executionEnv": "NaN",
-  "consensus": "-",
-  "nativeToken": "-",
-  "feeToken": "BTC",
-  "enshrinedBtc": "BTC",
-  "links": [
-    "https://lightningnetwork.plus/",
-    "https://twitter.com/bitcoinlayers",
-    "https://twitter.com/bitcoinlayers",
-    "https://twitter.com/bitcoinlayers",
-    "https://twitter.com/bitcoinlayers",
-    "https://twitter.com/bitcoinlayers"
-  ],
-  "sections": [
+"slug": "lightning",
+"title": "Lightning Network",
+"layerType": "State Channel",
+"live": "Mainnet",
+"underReview": "yes",
+"riskFactors": ["Low", "Medium", "Low", "Low"],
+"purpose": "Payments",
+"btcBridge": "Smart Contract",
+"settlement": "Onchain",
+"btcLocked": 4473,
+"executionEnv": "None",
+"consensus": "na",
+"nativeToken": "BTC",
+"feeToken": "BTC",
+"enshrinedBtc": "BTC",
+"links": [
+  "https://lightning.network/",
+  "https://docs.corelightning.org/docs/home",
+  "https://docs.corelightning.org/docs/home",
+  "https://github.com/ACINQ/eclair",
+  "https://twitter.com/lightning"
+],
+"sections": [
+  {
+    "id": "description",
+    "title": "Description",
+    "content": [
+      {
+        "title": "Lightning Network is a state channel",
+        "content": "Lightning Network is a state-channel-based L2 for payments. It enables users to open a payment channel with a counterparty, and make an unlimited amount of payments within the channel. It also enables users to route payments across a network of these channels to users outside of their specific channel."
+      }
+    ]
+  }
+],
+"knowledgeBits": [
     {
-      "id": "description",
-      "title": "Description",
-      "content": [
-        {
-          "content": "Moneta is a rollup that uses Bitcoin for data availability and consensus. It has an optimistically verified validating bridge via BitVM. It leverages STARK proofs to prove state transitions. In the event of an invalid state transition, verifiers in the BitVM bridge can submit a fraud proof to show that the state transition was invalid."
-        }
-      ]
-    }
-  ],
-  "knowledgeBits": [
-    {
-      "url": "https://bitcoin.org",
-      "displayText": "Bitcoin.org"
+      "url": "https://lightning.network/lightning-network-paper.pdf",
+      "displayText": "Lightning Network paper"
     },
     {
-      "url": "https://bitcoinrollups.io",
-      "displayText": "BitcoinRollups.io"
+      "url": "https://bitcoiner.guide/lightning/",
+      "displayText": "Lightning Network user guide"
     }
   ]
 }

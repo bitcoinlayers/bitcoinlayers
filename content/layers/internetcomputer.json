@@ -12,15 +12,14 @@
   "executionEnv": "Bitcoin Script",
   "consensus": "PoM",
   "nativeToken": "-",
-  "feeToken": "LBTC",
-  "enshrinedBtc": "LBTC",
+  "feeToken": "ckBTC",
+  "enshrinedBtc": "ckBTC",
   "links": [
-    "https://internetcomputer.org/",
-    "https://twitter.com/bitcoinlayers",
-    "https://twitter.com/bitcoinlayers",
-    "https://twitter.com/bitcoinlayers",
-    "https://twitter.com/bitcoinlayers",
-    "https://twitter.com/bitcoinlayers"
+    "https://internetcomputer.org/bitcoin-integration",
+    "https://internetcomputer.org/docs/current/references/bitcoin-how-it-works",
+    "https://dashboard.internetcomputer.org/bitcoin",
+    "https://github.com/dfinity/bitcoin-canisteri",
+    "https://twitter.com/dfinity"
   ],
   "sections": [
     {
@@ -28,19 +27,23 @@
       "title": "Description",
       "content": [
         {
-          "content": "Moneta is a rollup that uses Bitcoin for data availability and consensus. It has an optimistically verified validating bridge via BitVM. It leverages STARK proofs to prove state transitions. In the event of an invalid state transition, verifiers in the BitVM bridge can submit a fraud proof to show that the state transition was invalid."
+          "content": "Internet Computer Protocl (ICP) is a sidechain that enables more functionality for BTC the asset. It leverages Chain-key ECDSA signatures to secure the two-way peg with Bitcoin. People might want to use the ICP sidechain for cheaper fees and more expressive onchain applications"
         }
       ]
     }
   ],
   "knowledgeBits": [
     {
-      "url": "https://bitcoin.org",
-      "displayText": "Bitcoin.org"
+      "url": "https://internetcomputer.org/bitcoin-integration",
+      "displayText": "ICP's Bitcoin homepage"
     },
     {
-      "url": "https://bitcoinrollups.io",
-      "displayText": "BitcoinRollups.io"
+      "url": "https://internetcomputer.org/docs/current/references/bitcoin-how-it-works#chain-key-ecdsa-signatures",
+      "displayText": "ICP's Bitcoin docs"
+    },
+    {
+      "url": "https://dashboard.internetcomputer.org/bitcoin",
+      "displayText": "ICP's Bitcoin explorer"
     }
   ]
 }
