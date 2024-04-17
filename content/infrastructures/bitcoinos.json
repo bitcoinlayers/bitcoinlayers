@@ -2,7 +2,7 @@
   "slug": "bitcoinos",
   "title": "BitcoinOS",
   "infrastructureType": "Rollup SDK",
-  "live": "Mainnet",
+  "live": "Announced",
   "underReview": "yes",
   "riskFactors": ["High", "High"],
   "bitcoinSecurity": "No",

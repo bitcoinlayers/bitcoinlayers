@@ -2,7 +2,7 @@
   "slug": "rollkit",
   "title": "Rollkit",
   "infrastructureType": "Rollup SDK",
-  "live": "Announced",
+  "live": "Testnet",
   "underReview": "yes",
   "riskFactors": ["High", "High"],
   "bitcoinSecurity": "No",
