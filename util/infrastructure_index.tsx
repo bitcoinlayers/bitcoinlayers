@@ -29,6 +29,6 @@ const babylon: Infrastructure = babylonJson as Infrastructure;
 import fedimintJson from "../content/infrastructures/fedimint.json" assert { type: 'json' };
 const fedimint: Infrastructure = fedimintJson as Infrastructure;
 import mirrorJson from "../content/infrastructures/mirror.json" assert { type: 'json' };
-const mirror: Layer = mirrorJson as Infrastructure;
+const mirror: Infrastructure = mirrorJson as Infrastructure;
 
 export const allInfrastructures: Infrastructure[] = [astria, avail, bitcoinos, bvm, celestia, espresso, lorenzo, sovereign, rollkit, nubit, bouncebit, babylon, fedimint, mirror];

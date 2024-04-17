@@ -1,26 +1,21 @@
 {
   "slug": "mirror",
   "title": "Mirror",
-  "infrastructureType": "Sidechain",
-  "live": "Testnet",
+  "infrastructureType": "Staking",
+  "live": "Announced",
   "underReview": "yes",
-  "riskFactors": ["Low", "High", "Medium", "Medium", "Low"],
-  "purpose": "-",
-  "btcBridge": "BitVM",
-  "settlement": "x",
-  "btcLocked": 0,
-  "executionEnv": "EVM",
-  "consensus": "z",
-  "nativeToken": "none",
-  "feeToken": "cBTC",
-  "enshrinedBtc": "cBTC",
+  "riskFactors": ["High", "High"],
+  "bitcoinSecurity": "No",
+  "nativeToken": "None",
+  "purpose": "General",
+  "associatedLayers": "-",
   "links": [
-    "https://mirrorl2.com/",
+    "https://astria.org",
     "https://twitter.com/bitcoinlayers",
     "https://twitter.com/bitcoinlayers",
     "https://twitter.com/bitcoinlayers",
     "https://twitter.com/bitcoinlayers",
-    "https://twitter.com/Mirror_L2"
+    "https://twitter.com/bitcoinlayers"
   ],
   "sections": [
     {
@@ -28,6 +23,7 @@
       "title": "Description",
       "content": [
         {
+          "title": "Description",
           "content": "Moneta is a rollup that uses Bitcoin for data availability and consensus. It has an optimistically verified validating bridge via BitVM. It leverages STARK proofs to prove state transitions. In the event of an invalid state transition, verifiers in the BitVM bridge can submit a fraud proof to show that the state transition was invalid."
         }
       ]
@@ -35,12 +31,8 @@
   ],
   "knowledgeBits": [
     {
-      "url": "https://bitcoin.org",
-      "displayText": "Bitcoin.org"
-    },
-    {
-      "url": "https://bitcoinrollups.io",
-      "displayText": "BitcoinRollups.io"
+      "url": "https://bitcoinlayers.org",
+      "displayText": "Bitcoin Layers"
     }
   ]
 }
