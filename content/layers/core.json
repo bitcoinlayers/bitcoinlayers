@@ -101,7 +101,7 @@
         {
           "title": "DeFi",
           "content": "The most popular use case for Core Chain is DeFi. Core Chain has a number of DeFi applications, including lending, borrowing, and decentralized exchanges, with a focus on bridged BTC assets."
-        }
+        },
         {
           "title": "BTC Staking",
           "content": "Core chain enables BTC holders to natively stake their BTC, as a part of DPOS in Satoshi Plus, and delegate that stake to a specific validator in the Core Chain network."
