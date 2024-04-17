@@ -43,7 +43,7 @@
         },
         {
           "title": "No DA on Bitcoin",
-          "content": "Core Chain does not post any data availability on Bitcoin. Because of this, Core's state cannot be reconstructed using only data from Bitcoin. Core Chain has a network of nodes who esnsure data is readily available."
+          "content": "Core Chain does not use Bitcoin for data availability. Because of this, Core's state cannot be reconstructed using only data from Bitcoin. Core Chain has a network of nodes who esnsure data is readily available."
         },
         {
           "title": "Decentralized Block Production",
