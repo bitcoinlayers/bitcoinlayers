@@ -47,8 +47,6 @@ import lumibitJson from "../content/layers/lumibit.json" assert { type: 'json' }
 const lumibit: Layer = lumibitJson as Layer;
 import merlinJson from "../content/layers/merlin.json" assert { type: 'json' };
 const merlin: Layer = merlinJson as Layer;
-import mirrorJson from "../content/layers/mirror.json" assert { type: 'json' };
-const mirror: Layer = mirrorJson as Layer;
 import rifJson from "../content/layers/rif.json" assert { type: 'json' };
 const rif: Layer = rifJson as Layer;
 import rolluxJson from "../content/layers/rollux.json" assert { type: 'json' };
@@ -71,4 +69,4 @@ const molecule: Layer = moleculeJson as Layer;
 
 
 
-export const allLayers: Layer[] = [moneta, core, internetcomputer, lightning, liquid, mercurylayer, rootstock, stacks, citrea, alpen, barknet, bison, bnzk, bob, botanix, bsquared, rgb, heliosphere, libre, lumibit, merlin, mirror, rif, rollux, zkcoins, zklayer, coordinate, alys, zkbitcoin, bitlayer, molecule];
+export const allLayers: Layer[] = [moneta, core, internetcomputer, lightning, liquid, mercurylayer, rootstock, stacks, citrea, alpen, barknet, bison, bnzk, bob, botanix, bsquared, rgb, heliosphere, libre, lumibit, merlin, rif, rollux, zkcoins, zklayer, coordinate, alys, zkbitcoin, bitlayer, molecule];
