@@ -28,7 +28,7 @@
       "content": [
         {
           "title": "Core Chain is a sidechain",
-          "content": "Core is an EVM sidechain with a hybrid consensus mechanism, Satoshi Plus, that leverages both DPoW and DPoS. It uses a permissionless multisig to bridge BTC. The native token of the network is CORE, which is used for transaction fees, staking, and governance in Core DAO."
+          "content": "Core (in relation to Bitcoin) is an EVM sidechain with a hybrid consensus mechanism, Satoshi Plus, that leverages both DPoW and DPoS. It uses a permissionless multisig to bridge BTC. The native token of the network is CORE, which is used for transaction fees, staking, and governance in Core DAO."
         }
       ]
     },
