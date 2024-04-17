@@ -13,7 +13,7 @@
   "consensus": "x",
   "nativeToken": "SYS",
   "feeToken": "SYS",
-  "enshrinedBtc": "x",
+  "enshrinedBtc": "None",
   "links": [
     "https://rollux.com/",
     "https://docs.rollux.com/docs/developers/",
