@@ -4,22 +4,21 @@
   "layerType": "-",
   "live": "Mainnet",
   "underReview": "yes",
-  "riskFactors": ["High", "High", "High", "High"],
-  "purpose": "-",
-  "btcBridge": "-",
-  "settlement": "-",
-  "btcLocked": 0,
+  "riskFactors": ["", "", "", ""],
+  "purpose": "General Purpose",
+  "btcBridge": "Federated Multi-sig",
+  "settlement": "Offchain",
+  "btcLocked": 10,
   "executionEnv": "-",
   "consensus": "x",
-  "nativeToken": "x",
-  "feeToken": "x",
+  "nativeToken": "SYS",
+  "feeToken": "SYS",
   "enshrinedBtc": "x",
   "links": [
     "https://rollux.com/",
-    "https://twitter.com/bitcoinlayers",
-    "https://twitter.com/bitcoinlayers",
-    "https://twitter.com/bitcoinlayers",
-    "https://twitter.com/bitcoinlayers",
+    "https://docs.rollux.com/docs/developers/",
+    "https://explorer.rollux.com/",
+    "https://github.com/SYS-Labs/rollux",
     "https://twitter.com/RolluxL2"
   ],
   "sections": [
@@ -28,19 +27,15 @@
       "title": "Description",
       "content": [
         {
-          "content": "Moneta is a rollup that uses Bitcoin for data availability and consensus. It has an optimistically verified validating bridge via BitVM. It leverages STARK proofs to prove state transitions. In the event of an invalid state transition, verifiers in the BitVM bridge can submit a fraud proof to show that the state transition was invalid."
+          "content": "Rollux is an optimistic rollup that settles on Syscoin, a Layer 1 blockchain that is merge-mined by Bitcoin miners who opt-in to additionally becoming Syscoin miners. Rollux's native token is SYS, and users can access synthetic forms of BTC via a bridge between Rollux and Syscoin's EVM chain (and other EVM chains). We are reviewing the security assumptions related to Rollux and its Bitcoin bridges."
         }
       ]
     }
   ],
   "knowledgeBits": [
     {
-      "url": "https://bitcoin.org",
-      "displayText": "Bitcoin.org"
-    },
-    {
-      "url": "https://bitcoinrollups.io",
-      "displayText": "BitcoinRollups.io"
+      "url": "https://rollux.com/",
+      "displayText": "Rollux website"
     }
   ]
 }

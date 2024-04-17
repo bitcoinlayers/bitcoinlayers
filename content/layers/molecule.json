@@ -16,11 +16,10 @@
   "enshrinedBtc": "x",
   "links": [
     "https://twitter.com/moleculebtc",
-    "https://twitter.com/bitcoinlayers",
-    "https://twitter.com/bitcoinlayers",
-    "https://twitter.com/bitcoinlayers",
-    "https://twitter.com/bitcoinlayers",
-    "https://twitter.com/AlpenLabs"
+    "https://twitter.com/moleculebtc",
+    "https://twitter.com/moleculebtc",
+    "https://twitter.com/moleculebtc",
+    "https://twitter.com/moleculebtc"
   ],
   "sections": [
     {
@@ -28,19 +27,15 @@
       "title": "Description",
       "content": [
         {
-          "content": "Moneta is a rollup that uses Bitcoin for data availability and consensus. It has an optimistically verified validating bridge via BitVM. It leverages STARK proofs to prove state transitions. In the event of an invalid state transition, verifiers in the BitVM bridge can submit a fraud proof to show that the state transition was invalid."
+          "content": "Molecule is a proposed Layer 2 design that will leverage the Solana virtal machine. They have recently announced the project, with information on the design expected to be coming soon. Little information is available on how it inherits Bitcoin security."
         }
       ]
     }
   ],
   "knowledgeBits": [
     {
-      "url": "https://bitcoin.org",
-      "displayText": "Bitcoin.org"
-    },
-    {
       "url": "https://bitcoinrollups.io",
-      "displayText": "BitcoinRollups.io"
+      "displayText": "A website with information on Bitcoin rollups"
     }
   ]
 }

@@ -1,7 +1,7 @@
 {
   "slug": "merlin",
   "title": "Merlin",
-  "layerType": "Sidechain",
+  "layerType": "Ethereum Validium",
   "live": "Mainnet",
   "underReview": "yes",
   "riskFactors": ["High", "High", "High", "High"],
@@ -16,10 +16,9 @@
   "enshrinedBtc": "x",
   "links": [
     "https://merlinchain.io/",
-    "https://twitter.com/bitcoinlayers",
-    "https://twitter.com/bitcoinlayers",
-    "https://twitter.com/bitcoinlayers",
-    "https://twitter.com/bitcoinlayers",
+    "https://docs.merlinchain.io/merlin-docs",
+    "https://docs.merlinchain.io/merlin-docs/developers",
+    "https://docs.merlinchain.io/merlin-docs/developers",
     "https://twitter.com/MerlinLayer2"
   ],
   "sections": [
@@ -28,19 +27,19 @@
       "title": "Description",
       "content": [
         {
-          "content": "Moneta is a rollup that uses Bitcoin for data availability and consensus. It has an optimistically verified validating bridge via BitVM. It leverages STARK proofs to prove state transitions. In the event of an invalid state transition, verifiers in the BitVM bridge can submit a fraud proof to show that the state transition was invalid."
+          "content": "Merlin chain is a Layer 2 chain that settles on Ethereum. Its documentation shares that it will add Bitcoin native security in the future, but no code or research has been released."
         }
       ]
     }
   ],
   "knowledgeBits": [
     {
-      "url": "https://bitcoin.org",
-      "displayText": "Bitcoin.org"
+      "url": "https://merlinchain.io/",
+      "displayText": "Merlin Chain website"
     },
     {
-      "url": "https://bitcoinrollups.io",
-      "displayText": "BitcoinRollups.io"
+      "url": "https://docs.merlinchain.io/merlin-docs/resources/merlin-contracts",
+      "displayText": "Merlin documentation"
     }
   ]
 }

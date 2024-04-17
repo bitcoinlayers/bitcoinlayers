@@ -4,11 +4,11 @@
   "layerType": "Sidechain",
   "live": "Mainnet",
   "underReview": "yes",
-  "riskFactors": ["", "Medium", "Medium", "Medium", "High"],
+  "riskFactors": ["", "", "", "", ""],
   "purpose": "General",
   "btcBridge": "Federated Multisig",
   "settlement": "Offchain",
-  "btcLocked": 0,
+  "btcLocked": 2794,
   "executionEnv": "EVM",
   "consensus": "Merge-mined",
   "nativeToken": "-",
@@ -16,10 +16,9 @@
   "enshrinedBtc": "rBTC",
   "links": [
     "https://rootstock.io/",
-    "https://twitter.com/bitcoinlayers",
-    "https://twitter.com/bitcoinlayers",
-    "https://twitter.com/bitcoinlayers",
-    "https://twitter.com/bitcoinlayers",
+    "https://dev.rootstock.io",
+    "https://explorer.rsk.co/",
+    "https://github.com/rsksmart",
     "https://twitter.com/bitcoinlayers"
   ],
   "sections": [
@@ -28,19 +27,15 @@
       "title": "Description",
       "content": [
         {
-          "content": "Moneta is a rollup that uses Bitcoin for data availability and consensus. It has an optimistically verified validating bridge via BitVM. It leverages STARK proofs to prove state transitions. In the event of an invalid state transition, verifiers in the BitVM bridge can submit a fraud proof to show that the state transition was invalid."
+          "content": "Rootstock is a merge-mined, EVM-compatible Bitcoin sidechain. As a merge-mined network, Bitcoin miners can concurrently mine for Rootstock's consensus. The network is not secured by another token. As an EVM-compatible network, developers can deploy Solidity smart contracts with arbitrary logic, creating a host of new applications for Bitcoin the asset. Rootstock has an enshrined cross-chain BTC asset called Smart Bitcoin (RBTC), which is pegged 1:1 to BTC and secured by a permissioned, 12-seat multi-sig federation.."
         }
       ]
     }
   ],
   "knowledgeBits": [
     {
-      "url": "https://bitcoin.org",
-      "displayText": "Bitcoin.org"
-    },
-    {
-      "url": "https://bitcoinrollups.io",
-      "displayText": "BitcoinRollups.io"
+      "url": "https://dev.rootstock.io/",
+      "displayText": "Rootstock documentation site"
     }
   ]
 }
