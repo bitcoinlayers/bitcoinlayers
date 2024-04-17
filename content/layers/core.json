@@ -74,7 +74,7 @@
       "content": [
         {
           "title": "Satoshi Plus",
-          "content": "Satoshi Plus is a hybrid model of Delegated Proof-of-Work (DPoW) and Delegated Proof-of-Stake (DPoS). DPOW and DPOS is used to select the validators participating in Core Chain consensus.\nDPoW is performed by Bitcoin miners and mining pools who delegate their existing Bitcoin hash rate to select validators on Core Chain. DPoS is performed by CORE token holders who delegate their CORE tokens to select validators on Core Chain. A weighted score is assigned to a validator via the amount of Bitcoin hash rate, and delegate stake, they receive. The top 21 validators per this weighted score are the ones elected to participate in Core Chain consnesus.\nValidators who are elected to participate in block production earn block rewards through newly issued CORE tokens and fees. Validators choose how much of these rewards they share with miners and delegators, if any, but are incentivized to share as much as possible to ensure that miners and delegators continue to select them for block production.\nBy separating Proof-of-Work mining from block production, Satoshi Plus is able to mitigate against MEV extraction from Bitcoin miners."
+          "content": "Satoshi Plus is a hybrid model of Delegated Proof-of-Work (DPoW) and Delegated Proof-of-Stake (DPoS). DPOW and DPOS is used to select the validators participating in Core Chain consensus.\nDPoW is performed by Bitcoin miners and mining pools who delegate their existing Bitcoin hash rate to select validators on Core Chain. DPoS is performed by those who delegate their CORE tokens, or BTC, to select validators on Core Chain. A weighted score is assigned to a validator via the amount of Bitcoin hash rate, and delegate stake, they receive. The top 21 validators per this weighted score are the ones elected to participate in Core Chain consnesus.\nValidators who are elected to participate in block production earn block rewards through newly issued CORE tokens and fees. Validators choose how much of these rewards they share with miners and delegators, if any, but are incentivized to share as much as possible to ensure that miners and delegators continue to select them for block production.\nBy separating Proof-of-Work mining from block production, Satoshi Plus is able to mitigate against MEV extraction from Bitcoin miners."
         },
         {
           "title": "Ethereum Virtual Machine",
@@ -101,6 +101,10 @@
         {
           "title": "DeFi",
           "content": "The most popular use case for Core Chain is DeFi. Core Chain has a number of DeFi applications, including lending, borrowing, and decentralized exchanges, with a focus on bridged BTC assets."
+        }
+        {
+          "title": "BTC Staking",
+          "content": "Core chain enables BTC holders to natively stake their BTC, as a part of DPOS in Satoshi Plus, and delegate that stake to a specific validator in the Core Chain network."
         }
       ]
     },
