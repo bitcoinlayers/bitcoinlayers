@@ -78,7 +78,7 @@
         },
         {
           "title": "Ethereum Virtual Machine",
-          "content": "Core Chain uses the Ethereum Virtual Machine (EVM) for its execution environment. While this environment was initially created for Ethereum, it has been adopted by many other networks.\nLike many other Bitcoin sidechains, Core Chain leverages the EVM to tap into existing developer resources and tooling.."
+          "content": "Core Chain uses the Ethereum Virtual Machine (EVM) for its execution environment. While this environment was initially created for Ethereum, it has been adopted by many other networks.\nLike many other Bitcoin sidechains, Core Chain leverages the EVM to tap into existing developer resources and tooling."
         },
         {
           "title": "coreBTC",
