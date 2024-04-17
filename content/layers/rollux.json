@@ -6,7 +6,7 @@
   "underReview": "yes",
   "riskFactors": ["", "", "", ""],
   "purpose": "General Purpose",
-  "btcBridge": "Federated Multi-sig",
+  "btcBridge": "Federated Multisig",
   "settlement": "Offchain",
   "btcLocked": 10,
   "executionEnv": "-",
