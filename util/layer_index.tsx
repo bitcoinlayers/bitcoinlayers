@@ -6,6 +6,7 @@ import monetaJson from "../content/layers/moneta.json" assert { type: 'json' };
 const moneta: Layer = monetaJson as Layer;
 
 import coreJson from "../content/layers/core.json" assert { type: 'json' };
+// @ts-ignore
 const core: Layer = coreJson as Layer;
 import internetcomputerJson from "../content/layers/internetcomputer.json" assert { type: 'json' };
 const internetcomputer: Layer = internetcomputerJson as Layer;
