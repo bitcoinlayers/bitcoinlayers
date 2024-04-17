@@ -42,15 +42,15 @@
         },
         {
           "title": "No DA on Bitcoin",
-          "content": "Core Chain does not post any data availability on Bitcoin. Because of this, Core's state cannot be reconstructed using only data from Bitcoin. However, Core Chain has a permissionless and decentralized validator set, which makes data availability readily available (unlike with a single centralized sequencer)."
+          "content": "Core Chain does not post any data availability on Bitcoin. Because of this, Core's state cannot be reconstructed using only data from Bitcoin. Core Chain has a network of nodes who esnsure data is readily available."
         },
         {
           "title": "Decentralized Block Production",
-          "content": "Core Chain has a sufficiently decentralized block production mechanism, but it does not support exits that circumvent its validator set. This means that users must trust Core Chain validators to include their transactions in blocks. Unlike merge-mined sidechains, Core Chain’s Satoshi Plus consensus separates block production from Bitcoin miners, which removes any possible incentives for Bitcoin miners to censor Core Chain."
+          "content": "Core Chain has a network of 25 validators who participate as block producers. Each day, the 21 validators with the highest hybrid score (from DPOW and DPOS) are elected to participate in block production. Any Core chain full node can register to become a part of this set. It does not support exits that circumvent its validator set. This means that users must trust Core Chain validators to include their transactions in blocks."
         },
         {
           "title": "Self-Enforcement of State Validation",
-          "content": "Settlement is done offchain, on Core Chain, rather than onchain, on Bitcoin. The validity of Core Chain state transitions is not enforced by Bitcoin. However, Core Chain has a permissionless and decentralized validator set which enforces transaction validity, removing centralization concerns."
+          "content": "Settlement is done offchain, on Core Chain, rather than onchain, on Bitcoin. The validity of Core Chain state transitions is not enforced by Bitcoin."
         }
       ]
     },
@@ -60,7 +60,7 @@
       "content": [
         {
           "title": "Core Chain nodes are required for data availability",
-          "content": "Core Chain's state cannot be reconstructed using only data from Bitcoin. Core Chain nodes are the sole providers of data availability. However, Core Chain has a permissionless and sufficiently decentralized validator/node set, so this is not a serious concern"
+          "content": "Core Chain's state cannot be reconstructed using only data from Bitcoin. Core Chain nodes are the sole providers of data availability."
         },
         {
           "title": "Core Chain requires another token to function",
@@ -74,11 +74,11 @@
       "content": [
         {
           "title": "Satoshi Plus",
-          "content": "Satoshi Plus is a hybrid model of Delegated Proof -of -Work (DPoW) and Delegated Proof -of -Stake (DPoS).\nDPoW is performed by Bitcoin miners and mining pools who delegate their existing Bitcoin hash rate to select validators on Core Chain. DPoS is performed by CORE token holders staking (or delegating) their CORE tokens to select validators on Core Chain. The DPoW hash and DPoS stake contribute to the calculation of a weighted score that determines which Validators qualify for the next round of block creation. Certain parameters of the weighting are variable and set by the Core DAO; currently, the weighting ratio is two-thirds to hash and one-third to stake.\nThis hybrid model separates block production from Bitcoin miners, which removes any possible incentives for Bitcoin miners to censor Core Chain. This is a novel approach to combating the classic issue with merge-mining (and other forms of parent-child shared security) in which the security provider network can perform MEV or censorship on the child chain with no penalties and no incentives not to, as they are theoretically more aligned with the parent chain than the child chain."
+          "content": "Satoshi Plus is a hybrid model of Delegated Proof-of-Work (DPoW) and Delegated Proof-of-Stake (DPoS). DPOW and DPOS are used to select the validators participating in Core Chain consensus.\nDPoW is performed by Bitcoin miners and mining pools who delegate their existing Bitcoin hash rate to select validators on Core Chain. DPoS is performed by those who delegate their CORE tokens, or BTC, to select validators on Core Chain. A weighted score is assigned to a validator via the amount of Bitcoin hash rate and delegate stake they receive. The top 21 validators per this weighted score are the ones elected to participate in Core Chain consnesus.\nValidators who are elected to participate in block production earn block rewards through newly issued CORE tokens and fees. Validators choose how much of these rewards they share with miners and delegators, if any, but are incentivized to share as much as possible to ensure that miners and delegators continue to select them for block production.\nBy separating Proof-of-Work mining from block production, Satoshi Plus is able to mitigate against MEV extraction from Bitcoin miners."
         },
         {
           "title": "Ethereum Virtual Machine",
-          "content": "Core Chain uses the Ethereum Virtual Machine (EVM) for its execution environment. While this environment was initially created for Ethereum, it has been adopted by many other networks.\nThe EVM is the most robust execution environment in crypto, with the most active developers. Core Chain gains access to this pervasive ecosystem, including all developer tools and crypto infrastructure known by EVM developers. Toolings include Remix, Hardhat, Solidity, Truffle, ethers.js, and more. Infrastructure includes MetaMask, token standards (e.g., ERC721 or ERC20), blockchain scanners, smart contracts, and connections to middleware such as IPFS."
+          "content": "Core Chain uses the Ethereum Virtual Machine (EVM) for its execution environment. While this environment was initially created for Ethereum, it has been adopted by many other networks.\nLike many other Bitcoin sidechains, Core Chain leverages the EVM to tap into existing developer resources and tooling."
         },
         {
           "title": "coreBTC",
@@ -102,6 +102,10 @@
           "title": "DeFi",
           "content": "The most popular use case for Core Chain is DeFi. Core Chain has a number of DeFi applications, including lending, borrowing, and decentralized exchanges, with a focus on bridged BTC assets."
         }
+        {
+          "title": "BTC Staking",
+          "content": "Core chain enables BTC holders to natively stake their BTC, as a part of DPOS in Satoshi Plus, and delegate that stake to a specific validator in the Core Chain network."
+        }
       ]
     },
     {
@@ -110,7 +114,7 @@
       "content": [
         {
           "title": "Core Chain is operated by validators",
-          "content": "Block production is managed by a decentralized set of validators. Users trust the majority of validators not to collude."
+          "content": "Block production is managed by a permissionless set of validators. Users trust the majority of validators not to collude."
         }
       ]
     },
