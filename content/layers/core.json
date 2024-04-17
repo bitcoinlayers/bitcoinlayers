@@ -8,7 +8,7 @@
   "purpose": "General",
   "btcBridge": "Permissionless Multisig",
   "settlement": "Offchain",
-  "btcLocked": 0,
+  "btcLocked": 3.06,
   "executionEnv": "EVM",
   "consensus": "Satoshi Plus",
   "nativeToken": "CORE",
