@@ -63,8 +63,12 @@ import bitlayerJson from "../content/layers/bitlayer.json" assert { type: 'json'
 const bitlayer: Layer = bitlayerJson as Layer;
 import moleculeJson from "../content/layers/molecule.json" assert { type: 'json' };
 const molecule: Layer = moleculeJson as Layer;
+import sideJson from "../content/layers/side.json" assert { type: 'json' };
+const side: Layer = sideJson as Layer;
+import mezoJson from "../content/layers/mezo.json" assert { type: 'json' };
+const mezo: Layer = mezoJson as Layer;
 
 
 
 
-export const allLayers: Layer[] = [core, internetcomputer, lightning, liquid, mercurylayer, rootstock, stacks, citrea, alpen, barknet, bison, bnzk, bob, botanix, bsquared, rgb, heliosphere, libre, lumibit, merlin, rif, rollux, zkcoins, zklayer, coordinate, alys, zkbitcoin, bitlayer, molecule];
+export const allLayers: Layer[] = [core, internetcomputer, lightning, liquid, mercurylayer, rootstock, stacks, citrea, alpen, barknet, bison, bnzk, bob, botanix, bsquared, rgb, heliosphere, libre, lumibit, merlin, rif, rollux, zkcoins, zklayer, coordinate, alys, zkbitcoin, bitlayer, molecule, side, mezo];
