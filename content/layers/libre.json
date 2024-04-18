@@ -11,9 +11,9 @@
   "btcLocked": 0,
   "executionEnv": "x",
   "consensus": "x",
-  "nativeToken": "x",
+  "nativeToken": "LIBRE",
   "feeToken": "x",
-  "enshrinedBtc": "x",
+  "enshrinedBtc": "PBTC",
   "links": [
     "https://chain.libre.org/",
     "https://twitter.com/bitcoinlayers",
@@ -28,19 +28,19 @@
       "title": "Description",
       "content": [
         {
-          "content": "Moneta is a rollup that uses Bitcoin for data availability and consensus. It has an optimistically verified validating bridge via BitVM. It leverages STARK proofs to prove state transitions. In the event of an invalid state transition, verifiers in the BitVM bridge can submit a fraud proof to show that the state transition was invalid."
+          "content": "Libre is a sidechain that looks to support cheaper and faster Ordinals trading, and stablecoin payments. It is currently runs on a Proof-of-Stake consensus mechanism across a network of 46 nodes. It has enshrined a Bitcoin bridge built by pNetwork, thus its enshined BTC token is pBTC. We are currently reviewing the trust assumptions related to Libre, but users should be aware that the network, and the bridge, derive security from their respective native tokens."
         }
       ]
     }
   ],
   "knowledgeBits": [
     {
-      "url": "https://bitcoin.org",
-      "displayText": "Bitcoin.org"
+      "url": "https://chain.libre.org/",
+      "displayText": "Libre website"
     },
     {
-      "url": "https://bitcoinrollups.io",
-      "displayText": "BitcoinRollups.io"
+      "url": "https://docs.libre.org/libre-docs",
+      "displayText": "Libre docs"
     }
   ]
 }

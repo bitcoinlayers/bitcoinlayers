@@ -2,7 +2,7 @@
   "slug": "zkcoins",
   "title": "zkCoins",
   "layerType": "zkCSV",
-  "live": "Testnet",
+  "live": "Announced",
   "underReview": "yes",
   "riskFactors": ["High", "High", "High", "High"],
   "purpose": "-",
@@ -17,9 +17,9 @@
   "links": [
     "https://zerosync.org/",
     "https://twitter.com/bitcoinlayers",
-    "https://twitter.com/bitcoinlayers",
-    "https://twitter.com/bitcoinlayers",
-    "https://twitter.com/bitcoinlayers",
+    "https://gist.github.com/RobinLinus/d036511015caea5a28514259a1bab119",
+    "https://gist.github.com/RobinLinus/d036511015caea5a28514259a1bab119",
+    "https://github.com/ZeroSync/ZeroSync",
     "https://twitter.com/ZeroSync_"
   ],
   "sections": [
@@ -28,19 +28,19 @@
       "title": "Description",
       "content": [
         {
-          "content": "Moneta is a rollup that uses Bitcoin for data availability and consensus. It has an optimistically verified validating bridge via BitVM. It leverages STARK proofs to prove state transitions. In the event of an invalid state transition, verifiers in the BitVM bridge can submit a fraud proof to show that the state transition was invalid."
+          "content": "zkCoins is a proposed zkCSV protocol that would support confidential payments for BTC and tokenized assets. The Zerosync team is developing BitVM to create improved trust assumptions for bridging between the Bitcoin mainchain and the zkCoins protocol."
         }
       ]
     }
   ],
   "knowledgeBits": [
     {
-      "url": "https://bitcoin.org",
-      "displayText": "Bitcoin.org"
+      "url": "https://zerosync.org/zerosync.pdf",
+      "displayText": "Introducing Validity Proofs to Bitcoin whitepaper"
     },
     {
-      "url": "https://bitcoinrollups.io",
-      "displayText": "BitcoinRollups.io"
+      "url": "https://bitvm.org/bitvm2.html",
+      "displayText": "BitVM2 website"
     }
   ]
 }

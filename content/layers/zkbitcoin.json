@@ -1,8 +1,8 @@
 {
   "slug": "zkbitcoin",
   "title": "zkBitcoin",
-  "layerType": "Sidechain",
-  "live": "Announced",
+  "layerType": "MPC Protocol",
+  "live": "Testnet",
   "underReview": "yes",
   "riskFactors": ["High", "High", "High", "High"],
   "purpose": "-",
@@ -17,10 +17,10 @@
   "links": [
     "https://github.com/sigma0-xyz/zkbitcoin",
     "https://twitter.com/bitcoinlayers",
-    "https://twitter.com/bitcoinlayers",
-    "https://twitter.com/bitcoinlayers",
-    "https://twitter.com/bitcoinlayers",
-    "https://twitter.com/AlpenLabs"
+    "https://github.com/sigma0-xyz/zkbitcoin/tree/main/docs",
+    "https://github.com/sigma0-xyz/zkbitcoin/tree/main/docs",
+    "https://github.com/sigma0-xyz/zkbitcoin",
+    "https://github.com/sigma0-xyz/zkbitcoin"
   ],
   "sections": [
     {
@@ -28,19 +28,19 @@
       "title": "Description",
       "content": [
         {
-          "content": "Moneta is a rollup that uses Bitcoin for data availability and consensus. It has an optimistically verified validating bridge via BitVM. It leverages STARK proofs to prove state transitions. In the event of an invalid state transition, verifiers in the BitVM bridge can submit a fraud proof to show that the state transition was invalid."
+          "content": "zkBitcoin enables the use of zero-knowledge applications on Bitcoin. User funds would be secured by a federated MPC protocol in their proposed design."
         }
       ]
     }
   ],
   "knowledgeBits": [
     {
-      "url": "https://bitcoin.org",
-      "displayText": "Bitcoin.org"
+      "url": "https://github.com/sigma0-xyz/zkbitcoin/blob/main/whitepaper.pdf",
+      "displayText": "zkBitcoin whitepaper"
     },
     {
-      "url": "https://bitcoinrollups.io",
-      "displayText": "BitcoinRollups.io"
+      "url": "https://github.com/sigma0-xyz/zkbitcoin/blob/main/DEVELOPER.md",
+      "displayText": "zkBitcoin developer documentation"
     }
   ]
 }

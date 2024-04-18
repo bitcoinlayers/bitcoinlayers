@@ -15,11 +15,11 @@
   "feeToken": "x",
   "enshrinedBtc": "x",
   "links": [
-    "https://twitter.com/zkLayer_",
+    "https://www.zklayer.co/",
     "https://twitter.com/bitcoinlayers",
-    "https://twitter.com/bitcoinlayers",
-    "https://twitter.com/bitcoinlayers",
-    "https://twitter.com/bitcoinlayers",
+    "https://app.gitbook.com/o/62jIvTYSEInKMwhtPJXC/s/fTHAEGkacQhIFNLPH9VW/",
+    "https://app.gitbook.com/o/62jIvTYSEInKMwhtPJXC/s/fTHAEGkacQhIFNLPH9VW/",
+    "https://github.com/zkLayer",
     "https://twitter.com/zkLayer_"
   ],
   "sections": [
@@ -28,19 +28,15 @@
       "title": "Description",
       "content": [
         {
-          "content": "Moneta is a rollup that uses Bitcoin for data availability and consensus. It has an optimistically verified validating bridge via BitVM. It leverages STARK proofs to prove state transitions. In the event of an invalid state transition, verifiers in the BitVM bridge can submit a fraud proof to show that the state transition was invalid."
+          "content": "zkLayer is a proposed rollup project on top of Bitcoin. It is unclear what bridging model it will use to secure its two-way peg and validate state transitions."
         }
       ]
     }
   ],
   "knowledgeBits": [
     {
-      "url": "https://bitcoin.org",
-      "displayText": "Bitcoin.org"
-    },
-    {
-      "url": "https://bitcoinrollups.io",
-      "displayText": "BitcoinRollups.io"
+      "url": "https://www.zklayer.co/",
+      "displayText": "zkLayer website"
     }
   ]
 }
