@@ -4,7 +4,7 @@
   "layerType": "Statechain",
   "live": "Testnet",
   "underReview": "yes",
-  "riskFactors": ["High", "Medium", "Medium", "High", "High"],
+  "riskFactors": ["", "", "", "", ""],
   "purpose": "-",
   "btcBridge": "Smart Contract",
   "settlement": "Offchain",
@@ -16,6 +16,7 @@
   "enshrinedBtc": "BTC",
   "links": [
     "https://mercurylayer.com/",
+    "https://github.com/commerceblock/mercurylayer/blob/dev/docs/README.md",
     "https://github.com/commerceblock/mercurylayer/blob/dev/docs/README.md",
     "https://mercurylayer.com/",
     "https://github.com/commerceblock/mercurylayer",

@@ -4,7 +4,7 @@
   "layerType": "Sidechain",
   "live": "Mainnet",
   "underReview": "yes",
-  "riskFactors": ["", "Low", "High", "Medium", "Medium"],
+  "riskFactors": ["", "", "", ""],
   "purpose": "General",
   "btcBridge": "Permissionless Multisig",
   "settlement": "Offchain",
@@ -15,6 +15,7 @@
   "feeToken": "ckBTC",
   "enshrinedBtc": "ckBTC",
   "links": [
+    "https://internetcomputer.org/bitcoin-integration",
     "https://internetcomputer.org/bitcoin-integration",
     "https://internetcomputer.org/docs/current/references/bitcoin-how-it-works",
     "https://dashboard.internetcomputer.org/bitcoin",

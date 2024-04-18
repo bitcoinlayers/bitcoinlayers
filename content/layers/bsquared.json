@@ -4,7 +4,7 @@
   "layerType": "Rollup",
   "live": "Testnet",
   "underReview": "yes",
-  "riskFactors": ["Low", "High", "Medium", "Medium", "Low"],
+  "riskFactors": ["", "", "", "", ""],
   "purpose": "-",
   "btcBridge": "BitVM",
   "settlement": "testnet",
@@ -15,6 +15,7 @@
   "feeToken": "cBTC",
   "enshrinedBtc": "cBTC",
   "links": [
+    "https://www.bsquared.network/",
     "https://www.bsquared.network/",
     "https://docs.bsquared.network/",
     "https://docs.bsquared.network/",

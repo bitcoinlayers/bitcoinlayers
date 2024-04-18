@@ -4,7 +4,7 @@
   "layerType": "Rollup",
   "live": "Testnet",
   "underReview": "yes",
-  "riskFactors": ["High", "High", "High", "High"],
+  "riskFactors": ["", "", "", ""],
   "purpose": "-",
   "btcBridge": "x",
   "settlement": "x",
@@ -15,6 +15,7 @@
   "feeToken": "x",
   "enshrinedBtc": "x",
   "links": [
+    "https://bisonlabs.io/#/dashboard",
     "https://bisonlabs.io/#/dashboard",
     "https://bisonlabs.io/#/dashboard",
     "https://bisonlabs.io/#/dashboard",

@@ -4,7 +4,7 @@
   "layerType": "Rollup",
   "live": "Testnet",
   "underReview": "yes",
-  "riskFactors": ["High", "High", "High", "High"],
+  "riskFactors": ["", "", "", ""],
   "purpose": "-",
   "btcBridge": "x",
   "settlement": "x",

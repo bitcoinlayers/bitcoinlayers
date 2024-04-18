@@ -4,7 +4,7 @@
   "layerType": "Ethereum Validium",
   "live": "Mainnet",
   "underReview": "yes",
-  "riskFactors": ["High", "High", "High", "High"],
+  "riskFactors": ["", "", "", ""],
   "purpose": "General",
   "btcBridge": "Custodial",
   "settlement": "Offchain",
@@ -16,6 +16,7 @@
   "enshrinedBtc": "x",
   "links": [
     "https://merlinchain.io/",
+    "https://docs.merlinchain.io/merlin-docs",
     "https://docs.merlinchain.io/merlin-docs",
     "https://docs.merlinchain.io/merlin-docs/developers",
     "https://docs.merlinchain.io/merlin-docs/developers",

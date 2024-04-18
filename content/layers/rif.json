@@ -4,7 +4,7 @@
   "layerType": "Sidechain rollup",
   "live": "Testnet",
   "underReview": "yes",
-  "riskFactors": ["High", "High", "High", "High"],
+  "riskFactors": ["", "", "", ""],
   "purpose": "-",
   "btcBridge": "-",
   "settlement": "-",
@@ -16,6 +16,7 @@
   "enshrinedBtc": "x",
   "links": [
     "https://rif.technology/",
+    "https://dev.rootstock.io/rif/",
     "https://dev.rootstock.io/rif/",
     "https://explorer.testnet.rollup.rif.technology/",
     "https://dev.rootstock.io/rif/rollup/dev-reference/",

@@ -4,7 +4,7 @@
   "layerType": "Rollup",
   "live": "Testnet",
   "underReview": "yes",
-  "riskFactors": ["High", "High", "High", "High"],
+  "riskFactors": ["", "", "", ""],
   "purpose": "-",
   "btcBridge": "-",
   "settlement": "x",
@@ -15,6 +15,7 @@
   "feeToken": "-",
   "enshrinedBtc": "x",
   "links": [
+    "https://github.com/KasarLabs/barknet",
     "https://github.com/KasarLabs/barknet",
     "https://github.com/KasarLabs/barknet",
     "https://github.com/KasarLabs/barknet",

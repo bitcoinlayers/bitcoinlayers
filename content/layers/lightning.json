@@ -4,7 +4,7 @@
 "layerType": "State Channel",
 "live": "Mainnet",
 "underReview": "yes",
-"riskFactors": ["Low", "Medium", "Low", "Low"],
+"riskFactors": ["", "", "", ""],
 "purpose": "Payments",
 "btcBridge": "Smart Contract",
 "settlement": "Onchain",
