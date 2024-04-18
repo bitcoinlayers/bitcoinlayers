@@ -2,9 +2,6 @@ import type { Layer } from '@/components/layer/layerProps';
 
 //
 //layers
-import monetaJson from "../content/layers/moneta.json" assert { type: 'json' };
-const moneta: Layer = monetaJson as Layer;
-
 import coreJson from "../content/layers/core.json" assert { type: 'json' };
 // @ts-ignore
 const core: Layer = coreJson as Layer;
@@ -70,4 +67,4 @@ const molecule: Layer = moleculeJson as Layer;
 
 
 
-export const allLayers: Layer[] = [moneta, core, internetcomputer, lightning, liquid, mercurylayer, rootstock, stacks, citrea, alpen, barknet, bison, bnzk, bob, botanix, bsquared, rgb, heliosphere, libre, lumibit, merlin, rif, rollux, zkcoins, zklayer, coordinate, alys, zkbitcoin, bitlayer, molecule];
+export const allLayers: Layer[] = [core, internetcomputer, lightning, liquid, mercurylayer, rootstock, stacks, citrea, alpen, barknet, bison, bnzk, bob, botanix, bsquared, rgb, heliosphere, libre, lumibit, merlin, rif, rollux, zkcoins, zklayer, coordinate, alys, zkbitcoin, bitlayer, molecule];
