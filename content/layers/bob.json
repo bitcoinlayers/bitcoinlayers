@@ -1,7 +1,7 @@
 {
   "slug": "bob",
   "title": "BOB",
-  "layerType": "Ethereum Rollup",
+  "layerType": "Ethereum \nRollup",
   "live": "Testnet",
   "underReview": "yes",
   "riskFactors": ["", "", "", ""],
