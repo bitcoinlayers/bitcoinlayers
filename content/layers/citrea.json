@@ -49,6 +49,10 @@
     {
       "url": "https://github.com/chainwayxyz/bitvm-zk-verifier",
       "displayText": "Code for Citrea's proposed BitVM ZK-Verifier"
+    },
+    {
+      "url": "https://github.com/chainwayxyz/citrea/tree/nightly/docs",
+      "displayText": "Run a Citrea sequencer and full node locally"
     }
   ]
 }
