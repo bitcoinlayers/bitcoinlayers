@@ -6,7 +6,7 @@
   "underReview": "yes",
   "riskFactors": ["", "", "", ""],
   "purpose": "General Purpose",
-  "btcBridge": "pNetwork",
+  "btcBridge": "Under Review",
   "settlement": "Offchain",
   "btcLocked": 0,
   "executionEnv": "x",
