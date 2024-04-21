@@ -43,15 +43,15 @@
         },
         {
           "title": "State Roots Only",
-          "content": "Stacks posts state roots to Bitcoin, but not full transaction calldata. Because of this, Stacks' state cannot be reconstructed using only data from Bitcoin. However, Stacks has a permissionless and sufficiently decentralized validator set, which makes data availability readily available (unlike with a single centralized sequencer)."
+          "content": "Stacks posts state roots to Bitcoin, but not full transaction calldata. Because of this, Stacks' state cannot be reconstructed using only data from Bitcoin. Stacks has a permissionless validator set which makes data availability readily available."
         },
         {
           "title": "Decentralized Block Production",
-          "content": "Stacks has a sufficiently decentralized block production mechanism, but it does not support exits that circumvent its validator set. This means that users must trust Stacks validators to include their transactions in blocks."
+          "content": "Stacks has a permissionless block production mechanism, but it does not support exits that circumvent its validator set. This means that users must trust Stacks validators to include their transactions in blocks."
         },
         {
           "title": "Self-Enforcement of State Validation",
-          "content": "Settlement is done offchain, on Stacks, rather than onchain, on Bitcoin. The validity of Stacks state transitions is not enforced by Bitcoin. However, Stacks has a permissionless and sufficiently decentralized validator set which enforces transaction validity, removing centralization concerns."
+          "content": "Settlement is done offchain, on Stacks, rather than onchain, on Bitcoin. The validity of Stacks state transitions are not enforced by Bitcoin."
         }
       ]
     },
@@ -61,7 +61,7 @@
       "content": [
         {
           "title": "Stacks nodes are required for data availability",
-          "content": "Stacks posts state roots to Bitcoin, but not full transaction calldata. Because of this, Stacks' state cannot be reconstructed using only data from Bitcoin. Stacks nodes are the sole providers of data availability. However, Stacks has a permissionless and sufficiently decentralized validator/node set, so this is not a serious concern."
+          "content": "Stacks posts state roots to Bitcoin, but not full transaction calldata. Because of this, Stacks' state cannot be reconstructed using only data from Bitcoin. Stacks nodes are the sole providers of data availability. Anyone can run a Stacks node and participate in Proof-of-Transfer consensus."
         },
         {
           "title": "Stacks requires another token to function",
