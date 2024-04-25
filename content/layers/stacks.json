@@ -43,11 +43,11 @@
         },
         {
           "title": "State Roots Only",
-          "content": "Stacks posts state roots to Bitcoin, but not full transaction calldata. Because of this, Stacks' state cannot be reconstructed using only data from Bitcoin. Stacks has a permissionless validator set which makes data availability readily available."
+          "content": "Stacks posts state roots to Bitcoin, but not full transaction calldata. Because of this, Stacks' state cannot be reconstructed using only data from Bitcoin. Stacks has a permissionless validator and node operator set which participate in making data availability readily available."
         },
         {
-          "title": "Decentralized Block Production",
-          "content": "Stacks has a permissionless block production mechanism, but it does not support exits that circumvent its validator set. This means that users must trust Stacks validators to include their transactions in blocks."
+          "title": "Permissionless Block Production",
+          "content": "Stacks has a permissionless block production mechanism, but it does not support exits that circumvent its miner/validator set. This means that users must trust Stacks validators to include their transactions in blocks. Anyone with sufficient capital and resources can participate as a Stacks miner."
         },
         {
           "title": "Self-Enforcement of State Validation",
