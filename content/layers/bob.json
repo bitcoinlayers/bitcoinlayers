@@ -5,10 +5,10 @@
   "live": "Mainnet",
   "underReview": "yes",
   "riskFactors": ["", "", "", ""],
-  "purpose": "-",
-  "btcBridge": "x",
-  "settlement": "x",
-  "btcLocked": 0,
+  "purpose": "Bitcoin Apps",
+  "btcBridge": "Under Review",
+  "settlement": "Offchain",
+  "btcLocked": "-",
   "executionEnv": "x",
   "consensus": "x",
   "nativeToken": "x",
@@ -28,7 +28,7 @@
       "title": "Description",
       "content": [
         {
-          "content": "BOB is building an Ethereum rollup to serve as an application layer for Bitcoin. They will launch as a rollup on top of Ethereum, with plans to derive more security from Bitcoin miners, and full nodes, over time."
+          "content": "BOB is an Ethereum rollup that serves as an application layer for Bitcoin. They have launched as a rollup on top of Ethereum, with plans to derive more security from Bitcoin miners, and full nodes, over time."
         }
       ]
     }
@@ -40,11 +40,11 @@
     },
     {
       "url": "https://docs.gobob.xyz/docs/build/getting-started/helloworld",
-      "displayText": "Access BOB's testnet here"
+      "displayText": "BOB's documentation"
     },
     {
       "url": "https://www.youtube.com/watch?v=LD7rtWrG9NM&t=483s",
-      "displayText": "Talk on BOB's architecture"
+      "displayText": "Talk on BOB's current and future architectures"
     },
     {
       "url": "https://mirror.xyz/0xE4dF449bDC1ec8f7688F68F7E839f1370617Ac73/UvQH9D3RyVcozOlz091gLKnbX8aqn8goFVYtHVmin-w",
