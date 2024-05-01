@@ -129,11 +129,7 @@
   ],
   "knowledgeBits": [
     {
-      "url": "hhttps://liquid.net/",
-      "displayText": "Liquid website"
-    },
-    {
-      "url": "https://www.google.com/search?q=rootstock+documentation&oq=rootstock+docu&gs_lcrp=EgZjaHJvbWUqBwgAEAAYgAQyBwgAEAAYgAQyBggBEEUYOTINCAIQABiGAxiABBiKBTINCAMQABiGAxiABBiKBTINCAQQABiGAxiABBiKBTINCAUQABiGAxiABBiKBTIKCAYQABiABBiiBDIGCAcQRRg80gEIMjYzMmowajeoAgCwAgA&sourceid=chrome&ie=UTF-8",
+      "url": "https://dev.rootstock.io/",
       "displayText": "Rootstock developer portal"
     }
   ]
