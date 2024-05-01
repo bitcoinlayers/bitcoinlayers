@@ -2,7 +2,7 @@
   "slug": "bob",
   "title": "BOB",
   "layerType": "Ethereum \nRollup",
-  "live": "Testnet",
+  "live": "Mainnet",
   "underReview": "yes",
   "riskFactors": ["", "", "", ""],
   "purpose": "-",
