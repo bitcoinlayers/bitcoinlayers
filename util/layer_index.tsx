@@ -25,7 +25,9 @@ import bisonJson from "../content/layers/bison.json" assert { type: 'json' };
 const bison: Layer = bisonJson as Layer;
 import bnzkJson from "../content/layers/bnzk.json" assert { type: 'json' };
 const bnzk: Layer = bnzkJson as Layer;
+// @ts-ignore
 import bobJson from "../content/layers/bob.json" assert { type: 'json' };
+// @ts-ignore
 const bob: Layer = bobJson as Layer;
 import botanixJson from "../content/layers/botanix.json" assert { type: 'json' };
 const botanix: Layer = botanixJson as Layer;
