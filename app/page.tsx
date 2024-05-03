@@ -30,7 +30,7 @@ export default function Home() {
     <div className="max-w-6xl mx-auto pb-16">
       <div className="flex flex-col items-center mb-12">
         <Image src="/btc.svg" alt="Bitcoin" width={120} height={120} />
-        <p className="font-bold">Bitcoin scales in layers</p>
+        <p className="font-bold pt-2">Bitcoin scales in layers</p>
         <p className="text-center max-w-[80%] sm:max-w-[40%]">
           Here's your cheat sheet for understanding Bitcoin Layer-2s,
           sidechains, and more

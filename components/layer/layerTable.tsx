@@ -73,7 +73,7 @@ const LayerTable = ({ data }: Props) => {
       {/* Filter dropdowns */}
       <div className="flex gap-4 mb-4">
         <select
-          className="rounded-md p-2 font-semibold text-xs dark:text-bitcoin border dark:border-gray-300 bg-lightsecondary dark:bg-secondary"
+          className="rounded-md p-2 font-semibold text-xs dark:text-bitcoin bg-lightsecondary dark:bg-secondary"
           value={liveFilter}
           onChange={(e) => setLiveFilter(e.target.value)}
         >
@@ -83,7 +83,7 @@ const LayerTable = ({ data }: Props) => {
           <option value="Announced">Announced</option>
         </select>
         <select
-          className="rounded-md  p-2 font-semibold text-xs dark:text-bitcoin border dark:border-gray-300 bg-lightsecondary dark:bg-secondary"
+          className="rounded-md p-2 font-semibold text-xs dark:text-bitcoin bg-lightsecondary dark:bg-secondary"
           value={layerTypeFilter}
           onChange={(e) => setLayerTypeFilter(e.target.value)}
         >
@@ -94,7 +94,7 @@ const LayerTable = ({ data }: Props) => {
           <option value="Statechain">Statechain</option>
         </select>
         <select
-          className="rounded-md  p-2 font-semibold text-xs dark:text-bitcoin border dark:border-gray-300 bg-lightsecondary dark:bg-secondary"
+          className="rounded-md p-2 font-semibold text-xs dark:text-bitcoin bg-lightsecondary dark:bg-secondary"
           value={settlementFilter}
           onChange={(e) => setSettlementFilter(e.target.value)}
         >
