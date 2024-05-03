@@ -19,9 +19,7 @@ interface RootLayoutProps {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body
-        className={`antialiased ${inter.className}`}
-      >
+      <body className={`antialiased ${inter.className}`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <div className="mx-auto py-2 px-4 bg-lightprimary dark:bg-primary min-h-screen">
             <Header />

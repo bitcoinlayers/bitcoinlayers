@@ -23,8 +23,7 @@ const InfrastructureTable = ({ data }: Props) => {
         (item) =>
           (infrastructureTypeFilter
             ? item.infrastructureType === infrastructureTypeFilter
-            : true) &&
-          (liveFilter ? item.live === liveFilter : true)
+            : true) && (liveFilter ? item.live === liveFilter : true)
       )
       .sort((a, b) => {
         // First, sort by live status
@@ -45,13 +44,7 @@ const InfrastructureTable = ({ data }: Props) => {
         // If both live status and title are the same, return 0 (no sorting)
         return 0;
       });
-  }, [
-    data,
-    infrastructureTypeFilter,
-    liveFilter,
-    sortBy,
-    sortOrder,
-  ]);
+  }, [data, infrastructureTypeFilter, liveFilter, sortBy, sortOrder]);
 
   const toggleSortOrder = () => {
     setSortOrder(sortOrder === "asc" ? "desc" : "asc");
@@ -136,9 +129,13 @@ const InfrastructureTable = ({ data }: Props) => {
               <span className="flex items-center">
                 Bitcoin Security{" "}
                 <span
-                  className={`ml-1 ${sortBy === "bitcoinSecurity" ? "" : "text-gray-500"}`}
+                  className={`ml-1 ${
+                    sortBy === "bitcoinSecurity" ? "" : "text-gray-500"
+                  }`}
                 >
-                  {sortOrder === "asc" && sortBy === "bitcoinSecurity" ? "▲" : "▼"}
+                  {sortOrder === "asc" && sortBy === "bitcoinSecurity"
+                    ? "▲"
+                    : "▼"}
                 </span>
               </span>
             </th>

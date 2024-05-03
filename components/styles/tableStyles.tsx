@@ -6,7 +6,7 @@ const withSharedStyles = <P extends object>(
   const WithSharedStyles: React.FC<P> = (props) => {
     return (
       <div className="max-w-6xl mx-auto rounged-lg">
-        <Component {...props as P} />
+        <Component {...(props as P)} />
       </div>
     );
   };
