@@ -32,7 +32,7 @@ export default function Home() {
         <Image src="/btc.svg" alt="Bitcoin" width={120} height={120} />
         <p className="font-bold pt-2">Bitcoin scales in layers</p>
         <p className="text-center max-w-[80%] sm:max-w-[40%]">
-          Here's your cheat sheet for understanding Bitcoin Layer-2s,
+          Here&apos;s your cheat sheet for understanding Bitcoin Layer-2s,
           sidechains, and more
         </p>
       </div>
