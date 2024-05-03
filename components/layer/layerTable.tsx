@@ -17,7 +17,7 @@ const LayerTable = ({ data }: Props) => {
   const [liveFilter, setLiveFilter] = useState("Mainnet");
 
   const filteredAndSortedData = useMemo(() => {
-    const liveStatusOrder = ["Mainnet", "Testnet", "Announced"]; // Define the order for sorting by live status
+    const liveStatusOrder = ["Mainnet", "Testnet", "Announced"];
 
     return [...data]
       .filter(
@@ -69,11 +69,11 @@ const LayerTable = ({ data }: Props) => {
   };
 
   return (
-    <div className="rounded-lg bg-highlight bg-opacity-20 dark:bg-secondary dark:bg-opacity-100 px-4 pt-4 overflow-x-auto">
+    <div className="overflow-x-auto px-4 py-4 bg-lightsecondary dark:bg-secondary">
       {/* Filter dropdowns */}
       <div className="flex gap-4 mb-4">
         <select
-          className="rounded-md p-2 font-semibold text-xs text-bitcoin border border-gray-300 bg-secondary"
+          className="rounded-md p-2 font-semibold text-xs dark:text-bitcoin bg-lightsecondary dark:bg-secondary border-2 border-gray-300"
           value={liveFilter}
           onChange={(e) => setLiveFilter(e.target.value)}
         >
@@ -83,7 +83,7 @@ const LayerTable = ({ data }: Props) => {
           <option value="Announced">Announced</option>
         </select>
         <select
-          className="rounded-md  p-2 font-semibold text-xs text-bitcoin border border-gray-300 bg-secondary"
+          className="rounded-md p-2 font-semibold text-xs dark:text-bitcoin bg-lightsecondary dark:bg-secondary border-2 border-gray-300"
           value={layerTypeFilter}
           onChange={(e) => setLayerTypeFilter(e.target.value)}
         >
@@ -94,7 +94,7 @@ const LayerTable = ({ data }: Props) => {
           <option value="Statechain">Statechain</option>
         </select>
         <select
-          className="rounded-md  p-2 font-semibold text-xs text-bitcoin border border-gray-300 bg-secondary"
+          className="rounded-md p-2 font-semibold text-xs dark:text-bitcoin bg-lightsecondary dark:bg-secondary border-2 border-gray-300"
           value={settlementFilter}
           onChange={(e) => setSettlementFilter(e.target.value)}
         >
@@ -104,7 +104,7 @@ const LayerTable = ({ data }: Props) => {
         </select>
       </div>
       {/* Table */}
-      <table className="rounded-lg table-fixed sm:w-full text-sm text-left rtl:text-right">
+      <table className="rounded-lg bg-lightsecondary dark:bg-secondary table-fixed sm:w-full text-sm text-left rtl:text-right">
         <thead className="text-xs uppercase dark:text-bitcoin">
           <tr>
             <th
@@ -254,11 +254,11 @@ const LayerTable = ({ data }: Props) => {
               </td>
               <td className="flex-1 px-6 pr-2">
                 {item.live === "Testnet" ? (
-                  <div className="text-white">Testnet</div>
+                  <div className="dark:text-white">Testnet</div>
                 ) : item.live === "Announced" ? (
-                  <div className="text-white">Announced</div>
+                  <div className="dark:text-white">Announced</div>
                 ) : item.underReview === "yes" ? (
-                  <div className="text-bitcoin">Under Review</div>
+                  <div className="dark:text-bitcoin">Under Review</div>
                 ) : (
                   <div className="flex flex-row py-4 items-center flex flex-row relative group cursor-pointer">
                     {item.riskFactors.map((riskFactor, index) => (

@@ -4,6 +4,7 @@ import Link from "next/link";
 import type { ReactElement } from "react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { ModeToggle } from "./mode-toggle";
 
 export default function Footer(): ReactElement {
   const router = useRouter();
@@ -19,7 +20,7 @@ export default function Footer(): ReactElement {
 
   return (
     <header>
-      <div className="max-w-6xl text-bitcoin mx-auto flex items-baseline items-center pb-12 py-4">
+      <div className="max-w-6xl dark:text-bitcoin mx-auto flex items-baseline items-center pb-12 py-4">
         <h1 className="text-3xl font-bold mt-4 flex flex-rows space-x-4 align-middle">
           {/* <Image src="/btc.svg" alt="Bitcoin" width={50} height={50} /> */}
           <Link href="/">Bitcoin Layers</Link>
@@ -34,7 +35,7 @@ export default function Footer(): ReactElement {
                 className="h-6 w-6"
                 fill="none"
                 viewBox="0 0 24 24"
-                stroke="white"
+                stroke="gray"
               >
                 <path
                   strokeLinecap="round"
@@ -46,7 +47,7 @@ export default function Footer(): ReactElement {
             </button>
           </div>
           {menuOpen && (
-            <ul className="lg:hidden rounded-xl bg-secondary absolute right-8 mt-20 top-6 p-6 space-y-2 border-2">
+            <ul className="bg-lightsecondary dark:bg-secondary lg:hidden rounded-xl absolute right-8 mt-20 top-6 p-6 space-y-2 border-2">
               <li>
                 <Link
                   href="https://bitcoin-layers.gitbook.io/bitcoin-layers"
@@ -62,6 +63,11 @@ export default function Footer(): ReactElement {
               </li>
               <li>
                 <Link href="/faq">FAQ</Link>
+              </li>
+              <li>
+                <div className="flex justify-center">
+                  <ModeToggle />
+                </div>
               </li>
             </ul>
           )}
@@ -81,6 +87,11 @@ export default function Footer(): ReactElement {
             </li>
             <li>
               <Link href="/faq">FAQ</Link>
+            </li>
+            <li>
+              <div className="flex justify-center">
+                <ModeToggle />
+              </div>
             </li>
             {/* <li><Link href="https://twitter.com/bitcoinlayers" target="_blank">Twitter</Link></li> */}
           </ul>

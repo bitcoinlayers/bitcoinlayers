@@ -1,14 +1,16 @@
 import { Bridge } from "@/components/bridge/bridgeProps";
 import { allBridges } from "@/util/bridge_index";
 import BridgeTable from "@/components/bridge/bridgeTable";
+import tableStyles from "../styles/tableStyles";
 
-const BridgeTab = () => {
+interface BridgeTabProps {
+  // none
+}
+
+const BridgeTab: React.FC<BridgeTabProps> = () => {
   return (
-    <div className="max-w-6xl mx-auto pb-16">
-      <h1 className="my-4 text-xl font-bold text-bitcoin">Coming Soon</h1>
-      <BridgeTable data={allBridges} />
-    </div>
+    <BridgeTable data={allBridges} />
   );
 };
 
-export default BridgeTab;
+export default tableStyles(BridgeTab);

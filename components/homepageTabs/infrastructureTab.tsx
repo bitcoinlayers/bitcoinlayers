@@ -1,14 +1,16 @@
 import { Infrastructure } from "@/components/infrastructure/infrastructureProps";
 import { allInfrastructures } from "@/util/infrastructure_index";
 import InfrastructureTable from "@/components/infrastructure/infrastructureTable";
+import tableStyles from "../styles/tableStyles";
 
-const InfrastructureTab = () => {
+interface InfrastructureTabProps {
+  // none
+}
+
+const InfrastructureTab: React.FC<InfrastructureTabProps> = () => {
   return (
-    <div className="max-w-6xl mx-auto pb-16">
-      {/* <h1 className="my-4 text-xl font-bold text-bitcoin">Coming Soon</h1> */}
-      <InfrastructureTable data={allInfrastructures} />
-    </div>
+    <InfrastructureTable data={allInfrastructures} />
   );
 };
 
-export default InfrastructureTab;
+export default tableStyles(InfrastructureTab);

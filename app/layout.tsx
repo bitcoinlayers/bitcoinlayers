@@ -18,12 +18,10 @@ interface RootLayoutProps {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="en">
-      <body
-        className={`antialiased min-h-screen ${inter.className}`}
-      >
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
-          <div className="mx-auto py-2 px-4 dark:bg-primary">
+    <html lang="en" suppressHydrationWarning>
+      <body className={`antialiased ${inter.className}`}>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <div className="mx-auto py-2 px-4 bg-lightprimary dark:bg-primary min-h-screen">
             <Header />
             <main>{children}</main>
             <Footer />

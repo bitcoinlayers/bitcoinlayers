@@ -32,8 +32,8 @@ const BridgeTable = ({ data }: Props) => {
   };
 
   return (
-    <div className="rounded-lg bg-highlight bg-opacity-20 dark:bg-secondary dark:bg-opacity-100 px-4 pt-4 overflow-x-auto">
-      <table className="rounded-lg table-fixed sm:w-full text-sm text-left rtl:text-right">
+    <div className="overflow-x-auto">
+      <table className="rounded-lg bg-lightsecondary dark:bg-secondary table-fixed sm:w-full text-sm text-left rtl:text-right">
         <thead className="text-xs uppercase dark:text-bitcoin">
           <tr>
             <th
@@ -55,13 +55,8 @@ const BridgeTable = ({ data }: Props) => {
                 </span>
               </span>
             </th>
-            <th
-              scope="col"
-              className="flex-1 px-6 py-3 w-1/3 sm:w-1/8"
-            >
-              <span className="flex items-center">
-                Risks{" "}
-              </span>
+            <th scope="col" className="flex-1 px-6 py-3 w-1/3 sm:w-1/8">
+              <span className="flex items-center">Risks </span>
             </th>
             <th
               scope="col"
@@ -173,7 +168,7 @@ const BridgeTable = ({ data }: Props) => {
                 <h2>{item.title}</h2>
               </td>
               <td className="flex-1 px-6 py-4">
-                <div className="text-bitcoin font-bold">Under Review</div>
+                <div className="dark:text-bitcoin">Under Review</div>
               </td>
               <td className="flex-1 px-6 py-4">{item.bridgeType}</td>
               {/* <td className="flex-1 px-6 py-4">{item.settlement}</td>

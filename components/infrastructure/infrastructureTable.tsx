@@ -23,8 +23,7 @@ const InfrastructureTable = ({ data }: Props) => {
         (item) =>
           (infrastructureTypeFilter
             ? item.infrastructureType === infrastructureTypeFilter
-            : true) &&
-          (liveFilter ? item.live === liveFilter : true)
+            : true) && (liveFilter ? item.live === liveFilter : true)
       )
       .sort((a, b) => {
         // First, sort by live status
@@ -45,13 +44,7 @@ const InfrastructureTable = ({ data }: Props) => {
         // If both live status and title are the same, return 0 (no sorting)
         return 0;
       });
-  }, [
-    data,
-    infrastructureTypeFilter,
-    liveFilter,
-    sortBy,
-    sortOrder,
-  ]);
+  }, [data, infrastructureTypeFilter, liveFilter, sortBy, sortOrder]);
 
   const toggleSortOrder = () => {
     setSortOrder(sortOrder === "asc" ? "desc" : "asc");
@@ -75,11 +68,11 @@ const InfrastructureTable = ({ data }: Props) => {
   };
 
   return (
-    <div className="rounded-lg bg-highlight bg-opacity-20 dark:bg-secondary dark:bg-opacity-100 px-4 pt-4 overflow-x-auto">
+    <div className="overflow-x-auto px-4 py-4 bg-lightsecondary dark:bg-secondary">
       {/* Filter dropdowns */}
       <div className="flex gap-4 mb-4">
         <select
-          className="rounded-md p-2 font-semibold text-xs text-bitcoin border border-gray-300 bg-secondary"
+          className="rounded-md p-2 font-semibold text-xs dark:text-bitcoin bg-lightsecondary dark:bg-secondary border-2 border-gray-300"
           value={liveFilter}
           onChange={(e) => setLiveFilter(e.target.value)}
         >
@@ -89,7 +82,7 @@ const InfrastructureTable = ({ data }: Props) => {
           <option value="Announced">Announced</option>
         </select>
         <select
-          className="rounded-md  p-2 font-semibold text-xs text-bitcoin border border-gray-300 bg-secondary"
+          className="rounded-md p-2 font-semibold text-xs dark:text-bitcoin bg-lightsecondary dark:bg-secondary border-2 border-gray-300"
           value={infrastructureTypeFilter}
           onChange={(e) => setInfrastructureTypeFilter(e.target.value)}
         >
@@ -103,7 +96,7 @@ const InfrastructureTable = ({ data }: Props) => {
         </select>
       </div>
       {/* Table */}
-      <table className="rounded-lg table-fixed sm:w-full text-sm text-left rtl:text-right">
+      <table className="rounded-lg bg-lightsecondary dark:bg-secondary table-fixed sm:w-full text-sm text-left rtl:text-right">
         <thead className="text-xs uppercase dark:text-bitcoin">
           <tr>
             <th
@@ -136,9 +129,13 @@ const InfrastructureTable = ({ data }: Props) => {
               <span className="flex items-center">
                 Bitcoin Security{" "}
                 <span
-                  className={`ml-1 ${sortBy === "bitcoinSecurity" ? "" : "text-gray-500"}`}
+                  className={`ml-1 ${
+                    sortBy === "bitcoinSecurity" ? "" : "text-gray-500"
+                  }`}
                 >
-                  {sortOrder === "asc" && sortBy === "bitcoinSecurity" ? "▲" : "▼"}
+                  {sortOrder === "asc" && sortBy === "bitcoinSecurity"
+                    ? "▲"
+                    : "▼"}
                 </span>
               </span>
             </th>
@@ -204,13 +201,13 @@ const InfrastructureTable = ({ data }: Props) => {
               </td>
               <td className="flex-1 px-6 pr-2">
                 {item.live === "Testnet" ? (
-                  <div className="text-white">Testnet</div>
+                  <div className="dark:text-white">Testnet</div>
                 ) : item.live === "Announced" ? (
-                  <div className="text-white">Announced</div>
+                  <div className="dark:text-white">Announced</div>
                 ) : item.underReview === "yes" ? (
-                  <div className="text-bitcoin">Under Review</div>
+                  <div className="dark:text-bitcoin">Under Review</div>
                 ) : (
-                  <div className="text-white">{item.bitcoinSecurity}</div>
+                  <div className="dark:text-white">{item.bitcoinSecurity}</div>
                 )}
               </td>
               <td className="flex-1 px-6 py-4">{item.infrastructureType}</td>
