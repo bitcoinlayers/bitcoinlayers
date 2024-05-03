@@ -4,7 +4,7 @@ import { ModeToggle } from "@/components/mode-toggle";
 
 export default function Footer(): ReactElement {
   return (
-    <footer className="border-t-2 border-offwhite">
+    <footer className="border-t-2 dark:border-offwhite border-lightbg">
       <div className="text-center text-offwhite p-2 my-6">
         <nav className="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-4 font-medium mt-4">
           <a
@@ -23,14 +23,14 @@ export default function Footer(): ReactElement {
           >
             Twitter
           </a>
-          <a
+          {/* <a
             href="https://warpcast.com/~/channel/bitcoinlayers"
             target="_blank"
             rel="noopener noreferrer"
             className="block"
           >
             Warpcast
-          </a>
+          </a> */}
           <Link href="/contribute" className="block">
             Contribute
           </Link>

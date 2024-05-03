@@ -4,6 +4,7 @@ import Link from "next/link";
 import type { ReactElement } from "react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { ModeToggle } from "./mode-toggle";
 
 export default function Footer(): ReactElement {
   const router = useRouter();
@@ -81,6 +82,11 @@ export default function Footer(): ReactElement {
             </li>
             <li>
               <Link href="/faq">FAQ</Link>
+            </li>
+            <li>
+              <div className="flex justify-center">
+                <ModeToggle />
+              </div>
             </li>
             {/* <li><Link href="https://twitter.com/bitcoinlayers" target="_blank">Twitter</Link></li> */}
           </ul>
