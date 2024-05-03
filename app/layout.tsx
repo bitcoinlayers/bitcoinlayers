@@ -20,10 +20,10 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`antialiased min-h-screen ${inter.className}`}
+        className={`antialiased ${inter.className}`}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <div className="mx-auto py-2 px-4 bg-lightprimary dark:bg-primary">
+          <div className="mx-auto py-2 px-4 bg-lightprimary dark:bg-primary min-h-screen">
             <Header />
             <main>{children}</main>
             <Footer />

@@ -75,11 +75,11 @@ const InfrastructureTable = ({ data }: Props) => {
   };
 
   return (
-    <div className="rounded-lg bg-highlight bg-opacity-20 dark:bg-secondary dark:bg-opacity-100 px-4 pt-4 overflow-x-auto">
+    <div className="overflow-x-auto">
       {/* Filter dropdowns */}
       <div className="flex gap-4 mb-4">
         <select
-          className="rounded-md p-2 font-semibold text-xs text-bitcoin border border-gray-300 bg-secondary"
+          className="rounded-md p-2 font-semibold text-xs dark:text-bitcoin border dark:border-gray-300 bg-lightsecondary dark:bg-secondary"
           value={liveFilter}
           onChange={(e) => setLiveFilter(e.target.value)}
         >
@@ -89,7 +89,7 @@ const InfrastructureTable = ({ data }: Props) => {
           <option value="Announced">Announced</option>
         </select>
         <select
-          className="rounded-md  p-2 font-semibold text-xs text-bitcoin border border-gray-300 bg-secondary"
+          className="rounded-md  p-2 font-semibold text-xs dark:text-bitcoin border dark:border-gray-300 bg-lightsecondary dark:bg-secondary"
           value={infrastructureTypeFilter}
           onChange={(e) => setInfrastructureTypeFilter(e.target.value)}
         >
@@ -103,7 +103,7 @@ const InfrastructureTable = ({ data }: Props) => {
         </select>
       </div>
       {/* Table */}
-      <table className="rounded-lg table-fixed sm:w-full text-sm text-left rtl:text-right">
+      <table className="rounded-lg bg-lightsecondary dark:bg-secondary table-fixed sm:w-full text-sm text-left rtl:text-right">
         <thead className="text-xs uppercase dark:text-bitcoin">
           <tr>
             <th
@@ -204,13 +204,13 @@ const InfrastructureTable = ({ data }: Props) => {
               </td>
               <td className="flex-1 px-6 pr-2">
                 {item.live === "Testnet" ? (
-                  <div className="text-white">Testnet</div>
+                  <div className="dark:text-white">Testnet</div>
                 ) : item.live === "Announced" ? (
-                  <div className="text-white">Announced</div>
+                  <div className="dark:text-white">Announced</div>
                 ) : item.underReview === "yes" ? (
-                  <div className="text-bitcoin">Under Review</div>
+                  <div className="dark:text-bitcoin">Under Review</div>
                 ) : (
-                  <div className="text-white">{item.bitcoinSecurity}</div>
+                  <div className="dark:text-white">{item.bitcoinSecurity}</div>
                 )}
               </td>
               <td className="flex-1 px-6 py-4">{item.infrastructureType}</td>

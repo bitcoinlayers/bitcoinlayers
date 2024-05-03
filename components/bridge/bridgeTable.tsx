@@ -32,8 +32,8 @@ const BridgeTable = ({ data }: Props) => {
   };
 
   return (
-    <div className="rounded-lg bg-highlight bg-opacity-20 dark:bg-secondary dark:bg-opacity-100 px-4 pt-4 overflow-x-auto">
-      <table className="rounded-lg table-fixed sm:w-full text-sm text-left rtl:text-right">
+    <div className="overflow-x-auto">
+      <table className="rounded-lg bg-lightsecondary dark:bg-secondary table-fixed sm:w-full text-sm text-left rtl:text-right">
         <thead className="text-xs uppercase dark:text-bitcoin">
           <tr>
             <th
