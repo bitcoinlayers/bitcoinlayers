@@ -3,7 +3,7 @@
   "title": "Build on Bitcoin",
   "layerType": "Ethereum\nRollup",
   "live": "Mainnet",
-  "underReview": "yes",
+  "underReview": "no",
   "riskFactors": ["High", "Medium", "Medium", "High"],
   "purpose": "Bitcoin Apps",
   "btcBridge": "Threshold & wBTC",
