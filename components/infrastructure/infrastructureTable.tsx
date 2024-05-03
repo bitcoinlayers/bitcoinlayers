@@ -68,11 +68,11 @@ const InfrastructureTable = ({ data }: Props) => {
   };
 
   return (
-    <div className="overflow-x-auto">
+    <div className="overflow-x-auto px-4 py-4 bg-lightsecondary dark:bg-secondary">
       {/* Filter dropdowns */}
       <div className="flex gap-4 mb-4">
         <select
-          className="rounded-md p-2 font-semibold text-xs dark:text-bitcoin bg-lightsecondary dark:bg-secondary"
+          className="rounded-md p-2 font-semibold text-xs dark:text-bitcoin bg-lightsecondary dark:bg-secondary border-2 border-gray-300"
           value={liveFilter}
           onChange={(e) => setLiveFilter(e.target.value)}
         >
@@ -82,7 +82,7 @@ const InfrastructureTable = ({ data }: Props) => {
           <option value="Announced">Announced</option>
         </select>
         <select
-          className="rounded-md  p-2 font-semibold text-xs dark:text-bitcoin bg-lightsecondary dark:bg-secondary"
+          className="rounded-md p-2 font-semibold text-xs dark:text-bitcoin bg-lightsecondary dark:bg-secondary border-2 border-gray-300"
           value={infrastructureTypeFilter}
           onChange={(e) => setInfrastructureTypeFilter(e.target.value)}
         >
