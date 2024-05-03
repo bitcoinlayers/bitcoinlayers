@@ -42,7 +42,7 @@ const InfrastructureBody: React.FC<{ infrastructure: Infrastructure }> = ({
         {infrastructure.sections.map((section, index) => (
           <div
             key={index}
-            className="rounded-xl dark:bg-secondary px-6 pt-0 pb-1 mb-6"
+            className="rounded-xl bg-lightsecondary dark:bg-secondary px-6 pt-0 pb-1 mb-6"
             id={section.id}
           >
             <h2 className="pt-7">{section.title}</h2>
@@ -69,7 +69,7 @@ const InfrastructureBody: React.FC<{ infrastructure: Infrastructure }> = ({
           </div>
         ))}
         <div
-          className="rounded-xl dark:bg-secondary px-6 pt-0 pb-1 mb-6"
+          className="rounded-xl bg-lightsecondary dark:bg-secondary px-6 pt-0 pb-1 mb-6"
           id="knowledgebits"
         >
           {" "}

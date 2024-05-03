@@ -1,5 +1,5 @@
 import React from "react";
-import { Layer } from "./layerProps"; 
+import { Layer } from "./layerProps";
 
 const LinkButton = ({
   href,
