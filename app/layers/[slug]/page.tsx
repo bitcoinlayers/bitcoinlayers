@@ -49,6 +49,21 @@ export default async function LayerPage({
         </div>
       </div>
       <LayerBody layer={layer as LayerProps} />
+      <style jsx global>{`
+        /* Custom scrollbar styles */
+        ::-webkit-scrollbar {
+          width: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+          background: #888; /* Dark grey */
+          border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+          background: #555; /* Black */
+        }
+      `}</style>
     </article>
   );
 }

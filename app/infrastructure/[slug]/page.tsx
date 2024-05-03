@@ -53,6 +53,21 @@ export default async function InfrastructurePage({
       <InfrastructureBody
         infrastructure={infrastructure as InfrastructureProps}
       />
+      <style jsx global>{`
+        /* Custom scrollbar styles */
+        ::-webkit-scrollbar {
+          width: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+          background: #888; /* Dark grey */
+          border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+          background: #555; /* Black */
+        }
+      `}</style>
     </article>
   );
 }
