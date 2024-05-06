@@ -2,13 +2,13 @@
   "slug": "bitlayer",
   "title": "BitLayer",
   "layerType": "Rollup",
-  "live": "Testnet",
+  "live": "Mainnet",
   "underReview": "yes",
   "riskFactors": ["", "", "", ""],
   "purpose": "-",
-  "btcBridge": "x",
+  "btcBridge": "Centralized Multi-sig",
   "settlement": "x",
-  "btcLocked": 0,
+  "btcLocked": 392,
   "executionEnv": "x",
   "consensus": "x",
   "nativeToken": "x",
@@ -16,10 +16,10 @@
   "enshrinedBtc": "x",
   "links": [
     "https://www.bitlayer.org/",
-    "https://twitter.com/bitcoinlayers",
-    "https://twitter.com/bitcoinlayers",
-    "https://twitter.com/bitcoinlayers",
-    "https://twitter.com/bitcoinlayers",
+    "https://www.bitlayer.org/",
+    "https://docs.bitlayer.org/docs/Introduction/",
+    "https://www.btrscan.com/home",
+    "https://github.com/bitlayer-org",
     "https://twitter.com/BitlayerLabs"
   ],
   "sections": [
@@ -28,7 +28,7 @@
       "title": "Description",
       "content": [
         {
-          "content": "BitLayer is building a rollup on top of Bitcoin. They plan on using a BitVM validating bridge to verify state transitions. They recently announced a $10 million dollar fundraising round. Information around the rollup is currently limited."
+          "content": "BitLayer is building towards a rollup on top of Bitcoin. It's current implementation is a MPC protocol with 21, federated validators securing the network. These validators supposedly stake BitLayer's native token, BTR, to secure the network. The Bitcoin on BitLayer is wBTC, which is a Bitcoin synthetic that is managed by a centralized operator. The bridge contract, which custodies wBTC on BitLayer, is upgradeable and is ultimately operated by a centralized admin. In its current state, BitLayer has a number of centralized points of failure. Users should be cautious when interacting with BitLayer."
         }
       ]
     }

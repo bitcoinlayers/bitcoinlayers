@@ -28,7 +28,7 @@
       "title": "Description",
       "content": [
         {
-          "content": "Merlin chain is a Polygon CDK chain. It's L1 smart contract, in its documentation, points to Ethereum. Its documentation shares that it will add Bitcoin native security in the future, but no code or research has been released."
+          "content": "Merlin chain is a Polygon CDK chain. It's L1 smart contract, in its documentation, points to Ethereum. Its documentation shares that it will add Bitcoin native security in the future, but no code or research has been released. Users should remain cautious when depositing funds into Merlin Chain. The Bitcoin bridge is essentially a centralized multi-sig that can steal user funds at any point."
         }
       ]
     }
