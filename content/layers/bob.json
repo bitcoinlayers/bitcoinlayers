@@ -6,7 +6,7 @@
   "underReview": "no",
   "riskFactors": ["High", "Medium", "Medium", "High"],
   "purpose": "Bitcoin Apps",
-  "btcBridge": "Threshold & wBTC",
+  "btcBridge": "Various Multi-sigs",
   "settlement": "Offchain",
   "btcLocked": "-",
   "executionEnv": "EVM",
