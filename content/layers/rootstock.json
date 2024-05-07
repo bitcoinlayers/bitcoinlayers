@@ -25,7 +25,7 @@
   "sections": [
     {
       "id": "description",
-      "title": "Rootstock is a merge-mined sidechain",
+      "title": "Description",
       "content": [
         {
           "content": "Rootstock is a merge-mined, EVM-compatible Bitcoin sidechain. As a merge-mined network, Bitcoin miners can concurrently mine for Rootstock's consensus. The network is not secured by another token. As an EVM-compatible network, developers can deploy Solidity smart contracts with arbitrary logic, creating a host of new applications for Bitcoin the asset. Rootstock has an enshrined cross-chain BTC asset called ''Smart Bitcoin'' (RBTC), which is pegged 1:1 to BTC and secured by a permissioned, 12-seat multi-sig federation."
