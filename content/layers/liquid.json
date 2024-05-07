@@ -5,7 +5,7 @@
   "live": "Mainnet",
   "underReview": "No",
   "riskFactors": ["High", "Medium", "High", "High"],
-  "purpose": "General Purpose",
+  "purpose": "General",
   "btcBridge": "Federated Multisig",
   "settlement": "Offchain",
   "btcLocked": 3860,

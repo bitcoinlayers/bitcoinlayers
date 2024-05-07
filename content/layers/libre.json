@@ -5,7 +5,7 @@
   "live": "Mainnet",
   "underReview": "yes",
   "riskFactors": ["", "", "", ""],
-  "purpose": "General Purpose",
+  "purpose": "General",
   "btcBridge": "Under Review",
   "settlement": "Offchain",
   "btcLocked": 0,
