@@ -10,7 +10,7 @@
   "settlement": "x",
   "btcLocked": 0,
   "executionEnv": "Bitcoin Script",
-  "consensus": "PoM",
+  "consensus": "PoW",
   "nativeToken": "-",
   "feeToken": "BTC",
   "enshrinedBtc": "BTC",
