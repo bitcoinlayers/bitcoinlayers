@@ -8,7 +8,7 @@
   "purpose": "General",
   "btcBridge": "Centralized Multi-sig(s)",
   "settlement": "Offchain",
-  "btcLocked": 392,
+  "btcLocked": 472,
   "executionEnv": "x",
   "consensus": "x",
   "nativeToken": "BTR",
