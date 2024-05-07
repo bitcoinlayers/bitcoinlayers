@@ -6,7 +6,7 @@
   "underReview": "no",
   "riskFactors": ["High", "High", "High", ""],
   "purpose": "General",
-  "btcBridge": "Centralized Multi-sig(s)",
+  "btcBridge": "Centralized Multisig(s)",
   "settlement": "Offchain",
   "btcLocked": 472,
   "executionEnv": "x",

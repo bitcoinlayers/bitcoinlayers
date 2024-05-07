@@ -6,7 +6,7 @@
   "underReview": "no",
   "riskFactors": ["High", "Medium", "Medium", "High"],
   "purpose": "Bitcoin Apps",
-  "btcBridge": "Various Multi-sigs",
+  "btcBridge": "Various Multisigs",
   "settlement": "Offchain",
   "btcLocked": "-",
   "executionEnv": "EVM",
