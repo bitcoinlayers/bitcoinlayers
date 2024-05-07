@@ -11,9 +11,9 @@
   "btcLocked": 2911,
   "executionEnv": "EVM",
   "consensus": "Merge-mined",
-  "nativeToken": "rBTC",
-  "feeToken": "rBTC",
-  "enshrinedBtc": "rBTC",
+  "nativeToken": "RBTC",
+  "feeToken": "RBTC",
+  "enshrinedBtc": "RBTC",
   "links": [
     "https://rootstock.io/",
     "https://dev.rootstock.io",
