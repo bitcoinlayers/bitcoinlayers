@@ -23,10 +23,11 @@ module.exports = {
         lightprimary: "#dbd9dc",
         lightsecondary: "#e5ebeb",
         lighttertiary: "#CECECA",
+        lighttableheader: "#736F72",
       },
       fontFamily: {
         header: ["Montserrat", "sans-serif"],
-        body: ["Inter", "sans-serif"],
+        body: ["Montserrat", "sans-serif"],
       },
     },
   },

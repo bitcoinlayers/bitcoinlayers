@@ -10,10 +10,11 @@ interface Props {
 
 const LayerTable = ({ data }: Props) => {
   const [sortBy, setSortBy] = useState("title");
-  const [sortOrder, setSortOrder] = useState("asc");
+  // const [sortOrder, setSortOrder] = useState("asc");
+  const [sortOrder, setSortOrder] = useState<"asc" | "desc">("asc");
   const router = useRouter();
   const [layerTypeFilter, setLayerTypeFilter] = useState("");
-  const [settlementFilter, setSettlementFilter] = useState("");
+  // const [settlementFilter, setSettlementFilter] = useState("");
   const [liveFilter, setLiveFilter] = useState("Mainnet");
 
   const filteredAndSortedData = useMemo(() => {
@@ -23,7 +24,7 @@ const LayerTable = ({ data }: Props) => {
       .filter(
         (item) =>
           (layerTypeFilter ? item.layerType === layerTypeFilter : true) &&
-          (settlementFilter ? item.settlement === settlementFilter : true) &&
+          // (settlementFilter ? item.settlement === settlementFilter : true) &&
           (liveFilter ? item.live === liveFilter : true)
       )
       .sort((a, b) => {
@@ -45,7 +46,7 @@ const LayerTable = ({ data }: Props) => {
         // If both live status and title are the same, return 0 (no sorting)
         return 0;
       });
-  }, [data, layerTypeFilter, settlementFilter, liveFilter, sortBy, sortOrder]);
+  }, [data, layerTypeFilter, liveFilter, sortBy, sortOrder]);
 
   const toggleSortOrder = () => {
     setSortOrder(sortOrder === "asc" ? "desc" : "asc");
@@ -67,9 +68,43 @@ const LayerTable = ({ data }: Props) => {
   const handleRowClick = (destination: string) => {
     router.push(destination);
   };
+  //TODO make note about search bar
+  //TODO remove filters? no, move them to the bottom of the table
+
+  interface SortableHeaderProps {
+    title: string;
+    sortByValue: string;
+    onSort: (value: string) => void;
+    isSortedBy: boolean;
+    sortOrder: "asc" | "desc";
+  }
+    
+//TODO make light gray font color except for title
+  const SortableHeader: React.FC<SortableHeaderProps> = ({
+    title,
+    sortByValue,
+    onSort,
+    isSortedBy,
+    sortOrder,
+  }) => {
+    return (
+      <th
+        scope="col"
+        className="flex-1 px-6 py-3 cursor-pointer w-1/3 sm:w-1/8"
+        onClick={() => onSort(sortByValue)}
+      >
+        <span className="flex items-center">
+          {title}
+          <span className={`ml-1 ${isSortedBy ? "" : "text-gray-500"}`}>
+            {sortOrder === "asc" && isSortedBy ? "▲" : "▼"}
+          </span>
+        </span>
+      </th>
+    );
+  };
 
   return (
-    <div className="overflow-x-auto px-4 py-4 bg-lightsecondary dark:bg-secondary">
+    <div className="overflow-x-auto px-4 py-4 bg-lightsecondary dark:bg-secondary rounded-lg">
       {/* Filter dropdowns */}
       <div className="flex gap-4 mb-4">
         <select
@@ -93,153 +128,78 @@ const LayerTable = ({ data }: Props) => {
           <option value="State Channel">State Channel</option>
           <option value="Statechain">Statechain</option>
         </select>
-        <select
-          className="rounded-md p-2 font-semibold text-xs dark:text-bitcoin bg-lightsecondary dark:bg-secondary border-2 border-gray-300"
-          value={settlementFilter}
-          onChange={(e) => setSettlementFilter(e.target.value)}
-        >
-          <option value="">All Settlement Types</option>
-          <option value="Offchain">Offchain</option>
-          <option value="Onchain">Onchain</option>
-        </select>
       </div>
       {/* Table */}
-      <table className="rounded-lg bg-lightsecondary dark:bg-secondary table-fixed sm:w-full text-sm text-left rtl:text-right">
+      <table className="bg-lightsecondary dark:bg-secondary table-fixed sm:w-full text-sm text-left rtl:text-right">
         <thead className="text-xs uppercase dark:text-bitcoin">
           <tr>
-            <th
-              scope="col"
-              className="flex-1 px-6 py-3 cursor-pointer w-1/3 sm:w-1/8"
-              onClick={() => {
-                setSortBy("title");
+            <SortableHeader
+              title="Name"
+              sortByValue="title"
+              onSort={(value: string) => {
+                setSortBy(value);
                 toggleSortOrder();
               }}
-            >
-              <span className="flex items-center">
-                Name{" "}
-                <span
-                  className={`ml-1 ${
-                    sortBy === "title" ? "" : "text-gray-500"
-                  }`}
-                >
-                  {sortOrder === "asc" && sortBy === "title" ? "▲" : "▼"}
-                </span>
-              </span>
-            </th>
-            <th
-              scope="col"
-              className="flex-1 px-6 py-3 cursor-pointer w-1/3 sm:w-1/8"
-              onClick={() => {
-                setSortBy("live");
+              isSortedBy={sortBy === "title"}
+              sortOrder={sortOrder}
+            />
+            <SortableHeader
+              title="Risks"
+              sortByValue="live"
+              onSort={(value: string) => {
+                setSortBy(value);
                 toggleSortOrder();
               }}
-            >
-              <span className="flex items-center">
-                Risks{" "}
-                <span
-                  className={`ml-1 ${sortBy === "live" ? "" : "text-gray-500"}`}
-                >
-                  {sortOrder === "asc" && sortBy === "live" ? "▲" : "▼"}
-                </span>
-              </span>
-            </th>
-            <th
-              scope="col"
-              className="flex-1 px-6 py-3 cursor-pointer w-1/3 sm:w-1/8"
-              onClick={() => {
-                setSortBy("layerType");
+              isSortedBy={sortBy === "live"}
+              sortOrder={sortOrder}
+            />
+            <SortableHeader
+              title="Layer Type"
+              sortByValue="layerType"
+              onSort={(value: string) => {
+                setSortBy(value);
                 toggleSortOrder();
               }}
-            >
-              <span className="flex items-center">
-                Type{" "}
-                <span
-                  className={`ml-1 ${
-                    sortBy === "layerType" ? "" : "text-gray-500"
-                  }`}
-                >
-                  {sortOrder === "asc" && sortBy === "layerType" ? "▲" : "▼"}
-                </span>
-              </span>
-            </th>
-            <th
-              scope="col"
-              className="flex-1 px-6 py-3 cursor-pointer w-1/4 sm:w-1/8"
-              onClick={() => {
-                setSortBy("purpose");
+              isSortedBy={sortBy === "layerType"}
+              sortOrder={sortOrder}
+            />
+            <SortableHeader
+              title="Purpose"
+              sortByValue="purpose"
+              onSort={(value: string) => {
+                setSortBy(value);
                 toggleSortOrder();
               }}
-            >
-              <span className="flex items-center">
-                Purpose{" "}
-                <span
-                  className={`ml-1 ${
-                    sortBy === "purpose" ? "" : "text-gray-500"
-                  }`}
-                >
-                  {sortOrder === "asc" && sortBy === "purpose" ? "▲" : "▼"}
-                </span>
-              </span>
-            </th>
-            <th
-              scope="col"
-              className="flex-1 px-6 py-3 cursor-pointer w-52 sm:w-1/8"
-              onClick={() => {
-                setSortBy("btcBridge");
+              isSortedBy={sortBy === "purpose"}
+              sortOrder={sortOrder}
+            />
+            <SortableHeader
+              title="BTC Bridge"
+              sortByValue="btcBridge"
+              onSort={(value: string) => {
+                setSortBy(value);
                 toggleSortOrder();
               }}
-            >
-              <span className="flex items-center">
-                BTC Bridge{" "}
-                <span
-                  className={`ml-1 ${
-                    sortBy === "btcBridge" ? "" : "text-gray-500"
-                  }`}
-                >
-                  {sortOrder === "asc" && sortBy === "btcBridge" ? "▲" : "▼"}
-                </span>
-              </span>
-            </th>
-            <th
-              scope="col"
-              className="flex-1 px-6 py-3 cursor-pointer w-1/3 sm:w-1/8"
-              onClick={() => {
-                setSortBy("settlement");
+              isSortedBy={sortBy === "btcBridge"}
+              sortOrder={sortOrder}
+            />
+            <SortableHeader
+              title="BTC Locked"
+              sortByValue="btcLocked"
+              onSort={(value: string) => {
+                setSortBy(value);
                 toggleSortOrder();
               }}
-            >
-              <span className="flex items-center">
-                Settlement{" "}
-                <span
-                  className={`ml-1 ${
-                    sortBy === "settlement" ? "" : "text-gray-500"
-                  }`}
-                >
-                  {sortOrder === "asc" && sortBy === "settlement" ? "▲" : "▼"}
-                </span>
-              </span>
-            </th>
-            <th
-              scope="col"
-              className="flex-1 px-6 py-3 cursor-pointer w-1/3 sm:w-1/8"
-              onClick={() => {
-                setSortBy("btcLocked");
-                toggleSortOrder();
-              }}
-            >
-              <span className="flex items-center">
-                BTC Locked{" "}
-                <span
-                  className={`ml-1 ${
-                    sortBy === "btcLocked" ? "" : "text-gray-500"
-                  }`}
-                >
-                  {sortOrder === "asc" && sortBy === "btcLocked" ? "▲" : "▼"}
-                </span>
-              </span>
-            </th>
+              isSortedBy={sortBy === "btcLocked"}
+              sortOrder={sortOrder}
+            />
           </tr>
         </thead>
+        //TODO: make them all bold, but only the first column (title ) should be
+        black. others are gray --- inspired by Christoph's cake version
+        <p></p>
+        //TODO gradient background
+        <p>//TODO grey for the background DBD9DB</p>
         <tbody className="dark:border-primary gap-x-8">
           {filteredAndSortedData.map((item, index) => (
             <tr
@@ -294,13 +254,13 @@ const LayerTable = ({ data }: Props) => {
                   <div>{item.btcBridge}</div>
                 )}
               </td>
-              <td className="flex-1 px-6 py-4">
+              {/* <td className="flex-1 px-6 py-4">
                 {item.live !== "Mainnet" ? (
                   <div>-</div>
                 ) : (
                   <div>{item.settlement}</div>
                 )}
-              </td>
+              </td> */}
               <td className="flex-1 px-6 py-4">
                 {item.underReview === "yes" ? (
                   <div>-</div>
