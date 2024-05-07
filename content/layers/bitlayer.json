@@ -4,7 +4,7 @@
   "layerType": "Sidechain",
   "live": "Mainnet",
   "underReview": "no",
-  "riskFactors": ["High", "High", "High", "High"],
+  "riskFactors": ["High", "High", "High", ""],
   "purpose": "General",
   "btcBridge": "Centralized Multi-sig(s)",
   "settlement": "Offchain",
@@ -29,7 +29,7 @@
       "content": [
         {
           "title": "BitLayer's mainnet v1 is a sidechain",
-          "content": "BitLayer is building towards a validia chain on top of Bitcoin. Its current implementation is a MPC protocol with 21, federated validators securing the network. It supports an EVM execution environment, with plans to support other VMs. In its docs, BitLayer states that it will use an offchain data availability solution. Its roadmap sees it adding support for a BitVM-style bridge, but currently, the bridge is managed by various multi-sig wallets."
+          "content": "BitLayer is building towards a validia chain on top of Bitcoin. Its current implementation is a MPC protocol with 21, federated validators securing the network. It supports an EVM execution environment with plans to support other VMs. In its docs, BitLayer states that it will use an offchain data availability solution in its future mainnet releases. Its roadmap sees it adding support for a BitVM-style bridge, but currently, the bridge is managed by various multi-sig wallets."
         }
       ]
     },
@@ -79,11 +79,11 @@
         },
         {
           "title": "Ethereum Virtual Machine",
-          "content": "BOB uses an EVM-compatible virtual machine. The Ethereum Virtual Machine is software responsible for smart contract execution for a number of blockchains, namely the Ethereum Network. It uses Solidity/Vyper as its code and is the dominant environment for smart contract execution in the cryptocurrency ecosystem. BOB is EVM-compatible, which means that a developer from Ethereum would have less difficulty deploying their applications on BOB compared to other execution environments."
+          "content": "BitLayer is built on a fork of geth, an Ethereum client. It leverges the Ethereum Virtual Machine, which is a software responsible for smart contract execution for a number of blockchains, namely the Ethereum Network. It uses Solidity/Vyper as its code and is the dominant environment for smart contract execution in the cryptocurrency ecosystem. Developer from Ethereum would have less difficulty deploying their applications on BitLayer compared to other execution environments."
         },
         {
           "title": "Faster block times",
-          "content": "BOB is currently producing blocks every two seconds which provides a better user experience than using the Bitcoin, or Ethereum, mainchains."
+          "content": "BitLayer is currently producing blocks every three seconds which provides a better user experience than using the Bitcoin, or Ethereum, mainchains."
         }
       ]
     },
@@ -102,7 +102,7 @@
       "title": "Operator",
       "content": [
         {
-          "title": "BOB has a centralized operator",
+          "title": "BitLayer has a centralized operator",
           "content": "Block production is controlled by one operator. Users trust that the operator will be honest. They also trust that the operator will not reorder transactions to extract MEV."
         }
       ]
