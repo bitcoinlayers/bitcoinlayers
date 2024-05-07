@@ -73,4 +73,4 @@ const mezo: Layer = mezoJson as Layer;
 
 
 
-export const allLayers: Layer[] = [core, internetcomputer, lightning, liquid, mercurylayer, rootstock, stacks, citrea, alpen, barknet, bison, bnzk, bob, botanix, bsquared, rgb, heliosphere, libre, lumibit, merlin, rif, rollux, zkcoins, zklayer, coordinate, alys, zkbitcoin, bitlayer, molecule, side, mezo, rgb];
+export const allLayers: Layer[] = [core, internetcomputer, lightning, liquid, mercurylayer, rootstock, stacks, citrea, alpen, barknet, bison, bnzk, bob, botanix, bsquared, rgb, heliosphere, libre, lumibit, merlin, rif, rollux, zkcoins, zklayer, coordinate, alys, zkbitcoin, bitlayer, molecule, side, mezo];
