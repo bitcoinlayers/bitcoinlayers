@@ -42,15 +42,15 @@
         },
         {
           "title": "Offchain via sidechain nodes",
-          "content": "The data for Rootstock' state updates is stored on the Rootstock blockchain. Anyone can run an RSK node and verify the state of the RSK blockchain."
+          "content": "The data for Rootstock's state updates is stored on the Rootstock blockchain. Anyone can run a Rootstock node and verify the state of the Rootstock blockchain. So long as there is at least one non-pruned Rootstock full node online, users will be able to recover the full history and state of the Rootstock blockchain."
         },
         {
           "title": "Block production is permissionless",
-          "content": "Block production is permissionless. Anyone who is willing to merge-mine can produce blocks and earn rewards. If interested parties do not possess enough capital to compete in the Bitcoin mining market, they can join a mining pool."
+          "content": "Block production is permissionless. Anyone who is willing and able to merge-mine Rootstock and bitcoin can produce Rootstock blocks and earn rewards. If interested parties do not possess enough hashpower to competitively solo mine, they can join a mining pool that supports Rootstock merged mining."
         },
         {
           "title": "Sidechain miners sign proposed blocks",
-          "content": "Sidechain miners sign proposed blocks in the sidechain. Any Bitcoin miner can opt into merge-mining the RSK blockchain."
+          "content": "Sidechain miners sign proposed blocks in the sidechain."
         }
       ]
     },
@@ -60,11 +60,7 @@
       "content": [
         {
           "title": "Merge-mining is used for consensus",
-          "content": "Rootstock is merge-mined. Currently, more than 35% of Bitcoin miners are engaged in RSK merge-mining. RSK claims to have three phases for merge-mining growth, a bootstrap phase (<30% of BTC hashrate), stable phase (60% ≥ RSK ≥ 30%), and its mature phase (≥60%). Currently, Rootstock is in its stable phase. In order to pay out miners, every block executes the Reward Manager Smart Contract (REMASC). The contract keeps record of the Reward Balance account, which exists to change value during new block production. When a block reaches maturity, the appropriate portions of rewards are distributed according to REMASC specified rules. The Full Block Reward is paid out in the following breakdown: 20% to RSK, .8% to RSK Federation, 79.2% to miners. Miners only receive rewards from transaction fees, as there is no issuance since the network native currency is RBTC. Fees dedicated to the federation and miners serve to incentivize the continued security, whereas the 20% dedicated to RSK/RSK Labs is dedicated to the future maintenance and development of the network."
-        },
-        {
-          "title": "No alternative token needed for security",
-          "content": "Rootstock does not have a custom token. The native token on the Rootstock blockchain is RBTC, which is a token 1:1 backed by BTC."
+          "content": "Rootstock is merge-mined. Currently, more than 35% of Bitcoin miners are engaged in RSK merge-mining. Rootstock Labs states to have three phases for merge-mining growth, a bootstrap phase (<30% of BTC hashrate), stable phase (60% ≥ RSK ≥ 30%), and its mature phase (≥60%). Currently, Rootstock is in its stable phase. In order to pay out miners, every block executes the Reward Manager Smart Contract (REMASC). The contract keeps record of the Reward Balance account, which exists to change value during new block production. When a block reaches maturity, the appropriate portions of rewards are distributed according to REMASC specified rules. The Full Block Reward is paid out in the following breakdown: 20% to Rootstock Labs, .8% to Powpeg Federation, 79.2% to miners. Miners only receive rewards from transaction fees, as there is no issuance since the network native currency is RBTC. Fees dedicated to the federation and miners serve to incentivize the continued security, whereas the 20% dedicated to Rootstock Labs is dedicated to the maintenance and development of the network."
         }
       ]
     },
@@ -74,7 +70,7 @@
       "content": [
         {
           "title": "Merge-mining",
-          "content": "Merge mining is a crucial part of RSK’s consensus mechanism that allows coupling between Bitcoin and Rootstock. Essentially, BTC mining pools add references to RSK blocks in mining jobs sent to mining participants. Additionally, because the Rootstock mining algorithm is similar to Bitcoin’s, there is little added energy expenditure. This combined with miners earning a portion of transaction fees from RSK block mining creates an incentive for both providing security to BTC and to Rootstock."
+          "content": "Merged mining is a crucial part of Rootstock’s consensus mechanism that allows coupling between Bitcoin and Rootstock. Essentially, BTC mining pools add references to Rootstock blocks in mining jobs sent to mining participants. Additionally, because the Rootstock mining algorithm is the same as Bitcoin’s, there is little added energy expenditure. This combined with miners earning a portion of transaction fees from Rootstock block mining creates an incentive for providing security to both BTC and to Rootstock."
         },
         {
           "title": "Ethereum Virtual Machine",
@@ -82,7 +78,7 @@
         },
         {
           "title": "Faster block times",
-          "content": "Rootstock achieves block confirmation around every 30s. However, payment systems that use Rootstock to facilitate the payment process may face delays. The average delay is recorded to be 6 minutes. The transactional throughput for the network depends on the block gas limit and block confirmation rate.The current block gas limit is 6.8M gas units per block, meaning that Rootstock using p2p transactions only can achieve 11 tps."
+          "content": "Rootstock achieves block confirmation around every 30s."
         }
       ]
     },
