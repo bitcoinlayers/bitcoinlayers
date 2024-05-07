@@ -1,7 +1,7 @@
 {
   "slug": "bitlayer",
   "title": "BitLayer",
-  "layerType": "Rollup",
+  "layerType": "Sidechain",
   "live": "Mainnet",
   "underReview": "yes",
   "riskFactors": ["", "", "", ""],
@@ -28,7 +28,7 @@
       "title": "Description",
       "content": [
         {
-          "content": "BitLayer is building towards a rollup on top of Bitcoin. It's current implementation is a MPC protocol with 21, federated validators securing the network. These validators supposedly stake BitLayer's native token, BTR, to secure the network. The Bitcoin on BitLayer is wBTC, which is a Bitcoin synthetic that is managed by a centralized operator. The bridge contract, which custodies wBTC on BitLayer, is upgradeable and is ultimately operated by a centralized admin. In its current state, BitLayer has a number of centralized points of failure. Users should be cautious when interacting with BitLayer."
+          "content": "BitLayer is building towards a valdia chain on Bitcoin. It's current implementation is a MPC protocol with 21, federated validators securing the network. These validators supposedly stake BitLayer's native token, BTR, to secure the network. The Bitcoin on BitLayer is wBTC, which is a Bitcoin synthetic that is managed by a centralized operator. The bridge contract, which custodies wBTC on BitLayer, is upgradeable and is ultimately operated by a centralized admin. In its current state, BitLayer has a number of centralized points of failure. Users should be cautious when interacting with BitLayer."
         }
       ]
     }
