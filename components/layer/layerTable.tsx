@@ -105,30 +105,7 @@ const LayerTable = ({ data }: Props) => {
 
   return (
     <div className="overflow-x-auto px-4 py-4 bg-lightsecondary dark:bg-secondary rounded-lg">
-      {/* Filter dropdowns */}
-      <div className="flex gap-4 mb-4">
-        <select
-          className="rounded-md p-2 font-semibold text-xs dark:text-bitcoin bg-lightsecondary dark:bg-secondary border-2 border-gray-300"
-          value={liveFilter}
-          onChange={(e) => setLiveFilter(e.target.value)}
-        >
-          <option value="">All Layers</option>
-          <option value="Mainnet">Mainnet</option>
-          <option value="Testnet">Testnet</option>
-          <option value="Announced">Announced</option>
-        </select>
-        <select
-          className="rounded-md p-2 font-semibold text-xs dark:text-bitcoin bg-lightsecondary dark:bg-secondary border-2 border-gray-300"
-          value={layerTypeFilter}
-          onChange={(e) => setLayerTypeFilter(e.target.value)}
-        >
-          <option value="">All Layer Types</option>
-          <option value="Rollup">Rollup</option>
-          <option value="Sidechain">Sidechain</option>
-          <option value="State Channel">State Channel</option>
-          <option value="Statechain">Statechain</option>
-        </select>
-      </div>
+     
       {/* Table */}
       <table className="bg-lightsecondary dark:bg-secondary table-fixed sm:w-full text-sm text-left rtl:text-right">
         <thead className="text-xs uppercase dark:text-bitcoin">
@@ -272,6 +249,30 @@ const LayerTable = ({ data }: Props) => {
           ))}
         </tbody>
       </table>
+       {/* Filter dropdowns */}
+       <div className="flex gap-4 mb-4">
+        <select
+          className="rounded-md p-2 font-semibold text-xs dark:text-bitcoin bg-lightsecondary dark:bg-secondary border-2 border-gray-300"
+          value={liveFilter}
+          onChange={(e) => setLiveFilter(e.target.value)}
+        >
+          <option value="">All Layers</option>
+          <option value="Mainnet">Mainnet</option>
+          <option value="Testnet">Testnet</option>
+          <option value="Announced">Announced</option>
+        </select>
+        <select
+          className="rounded-md p-2 font-semibold text-xs dark:text-bitcoin bg-lightsecondary dark:bg-secondary border-2 border-gray-300"
+          value={layerTypeFilter}
+          onChange={(e) => setLayerTypeFilter(e.target.value)}
+        >
+          <option value="">All Layer Types</option>
+          <option value="Rollup">Rollup</option>
+          <option value="Sidechain">Sidechain</option>
+          <option value="State Channel">State Channel</option>
+          <option value="Statechain">Statechain</option>
+        </select>
+      </div>
       <style jsx global>{`
         /* Custom scrollbar styles */
         ::-webkit-scrollbar {
