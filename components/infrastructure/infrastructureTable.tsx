@@ -67,34 +67,41 @@ const InfrastructureTable = ({ data }: Props) => {
     router.push(destination);
   };
 
+  interface SortableHeaderProps {
+    title: string;
+    sortByValue: string;
+    onSort: (value: string) => void;
+    isSortedBy: boolean;
+    sortOrder: "asc" | "desc";
+    className?: string;
+  }
+
+  const SortableHeader: React.FC<SortableHeaderProps> = ({
+    title,
+    sortByValue,
+    onSort,
+    isSortedBy,
+    sortOrder,
+    className,
+  }) => {
+    return (
+      <th
+        scope="col"
+        className={`flex-1 px-6 py-3 cursor-pointer w-1/3 sm:w-1/8 text-lighttableheader dark:text-bitcoin ${className}`}
+        onClick={() => onSort(sortByValue)}
+      >
+        <span className="flex items-center">
+          {title}
+          {/* <span className={`ml-1 ${isSortedBy ? "" : "text-gray-500"}`}>
+            {sortOrder === "asc" && isSortedBy ? "▲" : "▼"}
+          </span> */}
+        </span>
+      </th>
+    );
+  };
+
   return (
     <div className="overflow-x-auto px-4 py-4 bg-lightsecondary dark:bg-secondary">
-      {/* Filter dropdowns */}
-      <div className="flex gap-4 mb-4">
-        <select
-          className="rounded-md p-2 font-semibold text-xs dark:text-bitcoin bg-lightsecondary dark:bg-secondary border-2 border-gray-300"
-          value={liveFilter}
-          onChange={(e) => setLiveFilter(e.target.value)}
-        >
-          <option value="">All Infrastructures</option>
-          <option value="Mainnet">Mainnet</option>
-          <option value="Testnet">Testnet</option>
-          <option value="Announced">Announced</option>
-        </select>
-        <select
-          className="rounded-md p-2 font-semibold text-xs dark:text-bitcoin bg-lightsecondary dark:bg-secondary border-2 border-gray-300"
-          value={infrastructureTypeFilter}
-          onChange={(e) => setInfrastructureTypeFilter(e.target.value)}
-        >
-          <option value="">All Infrastructure Types</option>
-          <option value="Data Availability">Data Availability</option>
-          <option value="Federation SDK">Federation SDK</option>
-          <option value="RaaS">RaaS</option>
-          <option value="Restaking">Restaking</option>
-          <option value="Rollup SDK">Rollup SDK</option>
-          <option value="Sequencing">Sequencing</option>
-        </select>
-      </div>
       {/* Table */}
       <table className="rounded-lg bg-lightsecondary dark:bg-secondary table-fixed sm:w-full text-sm text-left rtl:text-right">
         <thead className="text-xs uppercase dark:text-bitcoin">
@@ -120,7 +127,7 @@ const InfrastructureTable = ({ data }: Props) => {
             </th>
             <th
               scope="col"
-              className="flex-1 px-6 py-3 cursor-pointer w-1/3 sm:w-1/8"
+              className="flex-1 px-6 py-3 cursor-pointer w-1/3 sm:w-1/8 text-lighttableheader dark:text-bitcoin"
               onClick={() => {
                 setSortBy("bitcoinSecurity");
                 toggleSortOrder();
@@ -128,7 +135,7 @@ const InfrastructureTable = ({ data }: Props) => {
             >
               <span className="flex items-center">
                 Bitcoin Security{" "}
-                <span
+                {/* <span
                   className={`ml-1 ${
                     sortBy === "bitcoinSecurity" ? "" : "text-gray-500"
                   }`}
@@ -136,12 +143,12 @@ const InfrastructureTable = ({ data }: Props) => {
                   {sortOrder === "asc" && sortBy === "bitcoinSecurity"
                     ? "▲"
                     : "▼"}
-                </span>
+                </span> */}
               </span>
             </th>
             <th
               scope="col"
-              className="flex-1 px-6 py-3 cursor-pointer w-1/3 sm:w-1/8"
+              className="flex-1 px-6 py-3 cursor-pointer w-1/3 sm:w-1/8 text-lighttableheader dark:text-bitcoin"
               onClick={() => {
                 setSortBy("infrastructureType");
                 toggleSortOrder();
@@ -149,7 +156,7 @@ const InfrastructureTable = ({ data }: Props) => {
             >
               <span className="flex items-center">
                 Type{" "}
-                <span
+                {/* <span
                   className={`ml-1 ${
                     sortBy === "infrastructureType" ? "" : "text-gray-500"
                   }`}
@@ -157,12 +164,12 @@ const InfrastructureTable = ({ data }: Props) => {
                   {sortOrder === "asc" && sortBy === "infrastructureType"
                     ? "▲"
                     : "▼"}
-                </span>
+                </span> */}
               </span>
             </th>
             <th
               scope="col"
-              className="flex-1 px-6 py-3 cursor-pointer w-1/3 sm:w-1/8"
+              className="flex-1 px-6 py-3 cursor-pointer w-1/3 sm:w-1/8 text-lighttableheader dark:text-bitcoin"
               onClick={() => {
                 setSortBy("purpose");
                 toggleSortOrder();
@@ -170,18 +177,18 @@ const InfrastructureTable = ({ data }: Props) => {
             >
               <span className="flex items-center">
                 Purpose{" "}
-                <span
+                {/* <span
                   className={`ml-1 ${
                     sortBy === "purpose" ? "" : "text-gray-500"
                   }`}
                 >
                   {sortOrder === "asc" && sortBy === "purpose" ? "▲" : "▼"}
-                </span>
+                </span> */}
               </span>
             </th>
             <th
               scope="col"
-              className="flex-1 px-6 py-3 cursor-pointer w-1/3 sm:w-1/8"
+              className="flex-1 px-6 py-3 cursor-pointer w-1/3 sm:w-1/8 text-lighttableheader dark:text-bitcoin"
             >
               <span className="flex items-center">Associated Layers </span>
             </th>
@@ -217,6 +224,32 @@ const InfrastructureTable = ({ data }: Props) => {
           ))}
         </tbody>
       </table>
+      {/* Filter dropdowns */}
+      <div className="flex gap-4 mt-2">
+        <select
+          className="rounded-md p-2 font-semibold text-xs dark:text-bitcoin bg-lightsecondary dark:bg-secondary border-2 border-gray-300"
+          value={liveFilter}
+          onChange={(e) => setLiveFilter(e.target.value)}
+        >
+          <option value="">All Infrastructures</option>
+          <option value="Mainnet">Mainnet</option>
+          <option value="Testnet">Testnet</option>
+          <option value="Announced">Announced</option>
+        </select>
+        <select
+          className="rounded-md p-2 font-semibold text-xs dark:text-bitcoin bg-lightsecondary dark:bg-secondary border-2 border-gray-300"
+          value={infrastructureTypeFilter}
+          onChange={(e) => setInfrastructureTypeFilter(e.target.value)}
+        >
+          <option value="">All Infrastructure Types</option>
+          <option value="Data Availability">Data Availability</option>
+          <option value="Federation SDK">Federation SDK</option>
+          <option value="RaaS">RaaS</option>
+          <option value="Restaking">Restaking</option>
+          <option value="Rollup SDK">Rollup SDK</option>
+          <option value="Sequencing">Sequencing</option>
+        </select>
+      </div>
       <style jsx global>{`
         /* Custom scrollbar styles */
         ::-webkit-scrollbar {
