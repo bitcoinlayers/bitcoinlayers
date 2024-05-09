@@ -94,9 +94,9 @@ const LayerTable = ({ data }: Props) => {
       >
         <span className="flex items-center">
           {title}
-          <span className={`ml-1 ${isSortedBy ? "" : "text-gray-500"}`}>
+          {/* <span className={`ml-1 ${isSortedBy ? "" : "text-gray-500"}`}>
             {sortOrder === "asc" && isSortedBy ? "▲" : "▼"}
-          </span>
+          </span> */}
         </span>
       </th>
     );
@@ -108,17 +108,26 @@ const LayerTable = ({ data }: Props) => {
       <table className="bg-lightsecondary dark:bg-secondary table-fixed sm:w-full text-sm text-left rtl:text-right">
         <thead className="text-xs uppercase dark:text-bitcoin">
           <tr>
-            <SortableHeader
-              title="Name"
-              sortByValue="title"
-              onSort={(value: string) => {
-                setSortBy(value);
+            <th
+              scope="col"
+              className="flex-1 px-6 py-3 cursor-pointer w-1/3 sm:w-1/8"
+              onClick={() => {
+                setSortBy("title");
                 toggleSortOrder();
               }}
-              isSortedBy={sortBy === "title"}
-              sortOrder={sortOrder}
-              className="text-black"
-            />
+            >
+              <span className="flex items-center">
+                Name{" "}
+                <span
+                  className={`ml-1 ${
+                    sortBy === "title" ? "" : "text-gray-500"
+                  }`}
+                >
+                  {sortOrder === "asc" && sortBy === "title" ? "▲" : "▼"}
+                </span>
+              </span>
+            </th>
+
             <SortableHeader
               title="Risks"
               sortByValue="live"
