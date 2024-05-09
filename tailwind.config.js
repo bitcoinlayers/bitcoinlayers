@@ -10,6 +10,7 @@ module.exports = {
     extend: {
       colors: {
         primary: "#121212",
+        primaryfade: "#1E1E1E",
         bitcoin: "#FF9900",
         secondary: "#1E1E1E",
         highlight: "#1E204b",
@@ -21,6 +22,7 @@ module.exports = {
         lightalt: "#c9c9c9",
         // lightbg: 'linear-gradient(145deg, rgba(246,245,255,1) 0%, rgba(217,217,217,1) 73%, rgba(95,101,102,1) 100%)',
         lightprimary: "#dbd9dc",
+        lightprimaryfade: "#f6f5ff",
         lightsecondary: "#e5ebeb",
         lighttertiary: "#CECECA",
         lighttableheader: "#736F72",

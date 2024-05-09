@@ -68,8 +68,6 @@ const LayerTable = ({ data }: Props) => {
   const handleRowClick = (destination: string) => {
     router.push(destination);
   };
-  //TODO make note about search bar
-  //TODO remove filters? no, move them to the bottom of the table
 
   interface SortableHeaderProps {
     title: string;
@@ -77,20 +75,21 @@ const LayerTable = ({ data }: Props) => {
     onSort: (value: string) => void;
     isSortedBy: boolean;
     sortOrder: "asc" | "desc";
+    className?: string;
   }
-    
-//TODO make light gray font color except for title
+
   const SortableHeader: React.FC<SortableHeaderProps> = ({
     title,
     sortByValue,
     onSort,
     isSortedBy,
     sortOrder,
+    className,
   }) => {
     return (
       <th
         scope="col"
-        className="flex-1 px-6 py-3 cursor-pointer w-1/3 sm:w-1/8"
+        className={`flex-1 px-6 py-3 cursor-pointer w-1/3 sm:w-1/8 text-lighttableheader dark:text-bitcoin ${className}`}
         onClick={() => onSort(sortByValue)}
       >
         <span className="flex items-center">
@@ -105,7 +104,6 @@ const LayerTable = ({ data }: Props) => {
 
   return (
     <div className="overflow-x-auto px-4 py-4 bg-lightsecondary dark:bg-secondary rounded-lg">
-     
       {/* Table */}
       <table className="bg-lightsecondary dark:bg-secondary table-fixed sm:w-full text-sm text-left rtl:text-right">
         <thead className="text-xs uppercase dark:text-bitcoin">
@@ -119,6 +117,7 @@ const LayerTable = ({ data }: Props) => {
               }}
               isSortedBy={sortBy === "title"}
               sortOrder={sortOrder}
+              className="text-black"
             />
             <SortableHeader
               title="Risks"
@@ -172,11 +171,6 @@ const LayerTable = ({ data }: Props) => {
             />
           </tr>
         </thead>
-        //TODO: make them all bold, but only the first column (title ) should be
-        black. others are gray --- inspired by Christoph's cake version
-        <p></p>
-        //TODO gradient background
-        <p>//TODO grey for the background DBD9DB</p>
         <tbody className="dark:border-primary gap-x-8">
           {filteredAndSortedData.map((item, index) => (
             <tr
@@ -249,8 +243,8 @@ const LayerTable = ({ data }: Props) => {
           ))}
         </tbody>
       </table>
-       {/* Filter dropdowns */}
-       <div className="flex gap-4 mb-4">
+      {/* Filter dropdowns */}
+      <div className="flex gap-4 mb-4">
         <select
           className="rounded-md p-2 font-semibold text-xs dark:text-bitcoin bg-lightsecondary dark:bg-secondary border-2 border-gray-300"
           value={liveFilter}

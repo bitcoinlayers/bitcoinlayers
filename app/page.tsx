@@ -20,7 +20,7 @@ export default function Home() {
   const buttonBaseStyles =
     "py-2 px-4 font-bold mr-4 bg-lightsecondary dark:bg-secondary rounded-lg";
   const buttonActiveStyles = "dark:text-bitcoin";
-  const buttonInactiveStyles = "text-gray-500";
+  const buttonInactiveStyles = "text-lighttableheader";
 
   const handleTabClick = (tab: TabKey) => {
     setActiveTab(tab);
@@ -35,6 +35,7 @@ export default function Home() {
           Bitcoin Layer-2s, sidechains, and more
         </p>
       </div>
+      {/**TODO: Add search bar here  **/}
       <div className="flex mb-4 justify-center">
         <button
           className={`${buttonBaseStyles} ${
