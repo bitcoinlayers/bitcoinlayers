@@ -6,7 +6,7 @@
     "underReview": "yes",
     "riskFactors": ["", "", "", ""],
     "purpose": "Payments",
-    "btcBridge": "x",
+    "btcBridge": "-",
     "settlement": "x",
     "btcLocked": 0,
     "executionEnv": "x",
