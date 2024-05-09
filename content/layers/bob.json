@@ -6,7 +6,7 @@
   "underReview": "no",
   "riskFactors": ["High", "Medium", "Medium", "High"],
   "purpose": "Bitcoin Apps",
-  "btcBridge": "Various Multisigs",
+  "btcBridge": "Various",
   "settlement": "Offchain",
   "btcLocked": "-",
   "executionEnv": "EVM",
@@ -39,7 +39,7 @@
       "content": [
         {
           "title": "Bitcoin users trust various consensus mechanisms for BTC custody",
-          "content": "For Bitcoin assets, there are no unilateral exits from the BOB chain. Users trust a variety of consensus participants to permit withdrawals from the BOB chain back to Bitcoin. They also trust a variety of consensus participants to secure two-way pegs custodying the BTC.\nBOB primarily uses two BTC synthetics on its chain, tBTC and wBTC. Both are ERC-20 tokens on Ethereum. tBTC’s two-way peg on BOB is managed by a ⅗ multi-sig, but in the event that the multi-sig is malicious (or signers go offline), it can be upgraded to allow Threshold governance to manage the multi-sig. Threshold governance relies on a separate token and consensus mechanism. wBTC is effectively managed by a centralized custodian, BitGo. Currently, both of these tokens are minted on BOB via its native Ethereum bridge.\nUsers trust that the bridge operators will not steal their BTC, the BOB proposer to not publish a malicious, unchallenged state transition, or BOB's proxy admin to create a malicious smart contract upgrade.\nIn the event of a malicious smart contract upgrade, there is no exit window for BOB users. This is the same across all chains built on the OP Stack."
+          "content": "For Bitcoin assets, there are no unilateral exits from the BOB chain. Users trust a variety of consensus participants to permit withdrawals from the BOB chain back to Bitcoin. They also trust a variety of consensus participants to secure two-way pegs custodying the BTC.\nBOB primarily uses two BTC synthetics on its chain, tBTC and wBTC. Both are ERC-20 tokens on Ethereum. tBTC’s two-way peg on BOB is managed by a ⅗ multi-sig, but it can be upgraded to allow Threshold governance to manage the minting and burning of tBTC on BOB. Threshold governance relies on a separate token and consensus mechanism. wBTC is effectively managed by a centralized custodian, BitGo. Currently, both of these tokens are minted on BOB via its native Ethereum bridge.\nUsers trust that the bridge operators will not steal their BTC, the BOB proposer to not publish a malicious, unchallenged state transition, or BOB’s proxy admin to create a malicious smart contract upgrade.\nIn the event of a malicious smart contract upgrade, there is no exit window for BOB users. This is the same across all chains built on the OP Stack."
         },
         {
           "title": "Offchain via Ethereum full nodes",
@@ -69,7 +69,7 @@
         },
         {
           "title": "ETH token used to pay fees",
-          "content": "BOB users pay sequencer fees in ETH. BOB operators also pay DA fees in ETH. Users can, however, elect to use a separate token (e.g. tBTC) to pay gas fees, and a specific party will take that token and pay the sequencer fees in ETH on behalf of the user for a small fee."
+          "content": "BOB users pay sequencer fees in ETH. BOB operators also pay DA fees in ETH. Users can, however, elect to pay fees with a separate token (e.g. tBTC) to a service provider that will pay sequencer fees, in ETH, on the users’ behalf."
         }
       ]
     },
@@ -79,7 +79,7 @@
       "content": [
         {
           "title": "Fraud proofs are under development",
-          "content": "OP stack chains will use interactive fraud proofs to enforce state correctness. This feature is currently in development and the system permits invalid state roots"
+          "content": "OP stack chains will use interactive fraud proofs to enforce state correctness. This feature is currently in development, meaning that BOB currently permits invalid state roots."
         },
         {
           "title": "Bitcoin Light Client",
@@ -101,7 +101,11 @@
       "content": [
         {
           "title": "Bitcoin applications",
-          "content": "BOB’s initial use case is to provide Ethereum users access to Bitcoin applications such as ordinals, BRC-20s, Bitcoin backed stablecoins, and more. It also gives Bitcoin users access to an application layer that provides faster confirmation times, lower fees and a superior user experience (albeit with additional trust assumptions). To enable this, BOB supports the BOB SDK, which is a software development kit that enables developers to build Bitcoin-centric applications on Ethereum."
+          "content": "BOB’s initial use case is to provide Ethereum users access to Bitcoin applications such as ordinals, BRC-20s, Bitcoin backed stablecoins, and more. It also gives Bitcoin users access to an application layer that provides faster confirmation times, lower fees and a superior user experience (albeit with additional trust assumptions). To enable this, BOB supports the BOB SDK, which is a software development kit that enables developers to build Bitcoin-centric applications on BOB."
+        },
+        {
+          "title": "Account abstraction",
+          "content": "BOB will support a number of Bitcoin-UX features via account abstraction. These features will enable users to access BOB via Bitcoin wallets, pay fees in their preferred token, and mint BTC on BOB directly."
         }
       ]
     },
@@ -121,7 +125,7 @@
       "content": [
         {
           "title": "BTC users must withdraw to Ethereum L1 before withdrawing to Bitcoin",
-          "content": "Users can bypass the sequencer and submit withdrawal requests directly to the L1. However, they cannot force-exit as the proposer mechanism is centralized. Users rely on the proposer to post updated state roots to Ethereum to ensure withdrawals can be processed. Withdrawals from BOB to Ethereum take 7 days to finalize.\nIn the event of censorship or liveness failures, BTC users can also bypass the BOB sequencer and send transactions to the Ethereum L1. They do trust that the proposer will publish the latest state root to permit withdrawals. Once on the Ethereum L1, users can then redeem their BTC on Bitcoin via the two-way peg mechanism that their BTC synthetic is supported by.\nUltimately, users must first trust Ethereum consensus participants to ensure that BOB’s latest state data is readily available. They must also trust a variety of operators (bridge operators, sequencers, proposers and more) to facilitate withdrawals from BOB to Ethereum, and Ethereum validators, and two-way peg operators, to facilitate withdrawals from Ethereum to Bitcoin. Please see the document for “privileged roles in BOB”, in the Knowledge Bits section, to learn more about these various parties."
+          "content": "Users can bypass the sequencer and submit withdrawal requests directly to the Ethereum L1. However, they cannot force-exit as the self-proposing is not enabled on OP Stack chains. Users rely on the proposer to post updated state roots to Ethereum to ensure withdrawals can be processed. Withdrawals from BOB to Ethereum take 7 days to finalize.\nOnce on the Ethereum L1, users can then redeem their BTC on Bitcoin via the two-way peg mechanism that their BTC synthetic is supported by.\nUsers primarily trust bridge operators to permit withdrawals back to the Bitcoin mainchain."
         }
       ]
     },
