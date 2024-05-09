@@ -1,0 +1,43 @@
+{
+    "slug": "ark",
+    "title": "Ark",
+    "layerType": "Virtual UTXOs",
+    "live": "Mainnet",
+    "underReview": "yes",
+    "riskFactors": ["", "", "", ""],
+    "purpose": "Payments",
+    "btcBridge": "x",
+    "settlement": "x",
+    "btcLocked": 0,
+    "executionEnv": "x",
+    "consensus": "x",
+    "nativeToken": "x",
+    "feeToken": "x",
+    "enshrinedBtc": "x",
+    "links": [
+      "https://ark-protocol.org/intro/vtxos/index.html",
+      "https://ark-protocol.org/intro/vtxos/index.html",
+      "https://ark-protocol.org/intro/vtxos/index.html",
+      "https://ark-protocol.org/intro/vtxos/index.html",
+      "https://ark-protocol.org/intro/vtxos/index.html",
+      "https://ark-protocol.org/intro/vtxos/index.html"
+    ],
+    "sections": [
+      {
+        "id": "description",
+        "title": "Description",
+        "content": [
+          {
+            "content": "Ark is a payments system where people can make Bitcoin transactions at very low cost and without requiring any setup. The Ark model very closely resembles the UTXO model, which is a key differentiator with Lightning."
+          }
+        ]
+      }
+    ],
+    "knowledgeBits": [
+      {
+        "url": "https://ark-protocol.org/index.html",
+        "displayText": "Ark Website"
+      }
+    ]
+  }
+  
