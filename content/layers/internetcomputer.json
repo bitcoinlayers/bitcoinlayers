@@ -8,7 +8,7 @@
   "purpose": "General",
   "btcBridge": "Permissionless Multisig",
   "settlement": "Offchain",
-  "btcLocked": 0,
+  "btcLocked": 237,
   "executionEnv": "Bitcoin Script",
   "consensus": "PoM",
   "nativeToken": "-",
