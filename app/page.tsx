@@ -20,22 +20,22 @@ export default function Home() {
   const buttonBaseStyles =
     "py-2 px-4 font-bold mr-4 bg-lightsecondary dark:bg-secondary rounded-lg";
   const buttonActiveStyles = "dark:text-bitcoin";
-  const buttonInactiveStyles = "text-gray-500";
+  const buttonInactiveStyles = "text-lighttableheader";
 
   const handleTabClick = (tab: TabKey) => {
     setActiveTab(tab);
   };
-
   return (
     <div className="max-w-6xl mx-auto pb-16">
       <div className="flex flex-col items-center mb-12">
         <Image src="/btc.svg" alt="Bitcoin" width={120} height={120} />
         <p className="font-bold pt-2">Bitcoin scales in layers</p>
         <p className="text-center max-w-[80%] sm:max-w-[40%]">
-          Here&apos;s your cheat sheet for understanding Bitcoin Layer-2s,
-          sidechains, and more
+          Here&apos;s your cheat sheet for understanding <br />
+          Bitcoin Layer-2s, sidechains, and more
         </p>
       </div>
+      {/**TODO: Add search bar here  **/}
       <div className="flex mb-4 justify-center">
         <button
           className={`${buttonBaseStyles} ${

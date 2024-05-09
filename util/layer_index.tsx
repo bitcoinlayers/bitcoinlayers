@@ -69,8 +69,8 @@ import sideJson from "../content/layers/side.json" assert { type: 'json' };
 const side: Layer = sideJson as Layer;
 import mezoJson from "../content/layers/mezo.json" assert { type: 'json' };
 const mezo: Layer = mezoJson as Layer;
+import arkJson from "../content/layers/ark.json" assert { type: 'json' };
+const ark: Layer = arkJson as Layer;
 
 
-
-
-export const allLayers: Layer[] = [core, internetcomputer, lightning, liquid, mercurylayer, rootstock, stacks, citrea, alpen, barknet, bison, bnzk, bob, botanix, bsquared, rgb, heliosphere, libre, lumibit, merlin, rif, rollux, zkcoins, zklayer, coordinate, alys, zkbitcoin, bitlayer, molecule, side, mezo];
+export const allLayers: Layer[] = [core, internetcomputer, lightning, liquid, mercurylayer, rootstock, stacks, citrea, alpen, barknet, bison, bnzk, bob, botanix, bsquared, rgb, heliosphere, libre, lumibit, merlin, rif, rollux, zkcoins, zklayer, coordinate, alys, zkbitcoin, bitlayer, molecule, side, mezo, ark];
