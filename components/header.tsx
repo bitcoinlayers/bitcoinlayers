@@ -49,6 +49,9 @@ export default function Footer(): ReactElement {
           {menuOpen && (
             <ul className="bg-lightsecondary dark:bg-secondary lg:hidden rounded-xl absolute right-8 mt-20 top-6 p-6 space-y-2 border-2">
               <li>
+                <Link href="/opcodes">Opcodes</Link>
+              </li>
+              <li>
                 <Link
                   href="https://bitcoin-layers.gitbook.io/bitcoin-layers"
                   target="_blank"
@@ -72,6 +75,9 @@ export default function Footer(): ReactElement {
             </ul>
           )}
           <ul className="hidden lg:flex flex-wrap items-center space-x-6">
+            <li>
+              <Link href="/opcodes">Opcodes</Link>
+            </li>
             <li>
               <Link
                 href="https://bitcoin-layers.gitbook.io/bitcoin-layers"
