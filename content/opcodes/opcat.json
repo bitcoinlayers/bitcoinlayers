@@ -1,0 +1,38 @@
+{
+  "slug": "opcat",
+  "title": "CAT",
+  "opcodeType": "-",
+  "live": "Mainnet/Testnet/Announced",
+  "underReview": "yes/no",
+  "riskFactors": ["High", "High"],
+  "bitcoinSecurity": "Yes/No",
+  "nativeToken": "None/Ticker",
+  "purpose": "General/Other",
+  "associatedLayers": "-",
+  "links": [
+    "https://twitter.com/bitcoinlayers",
+    "https://twitter.com/bitcoinlayers",
+    "https://twitter.com/bitcoinlayers",
+    "https://twitter.com/bitcoinlayers",
+    "https://twitter.com/bitcoinlayers",
+    "https://twitter.com/bitcoinlayers"
+  ],
+  "sections": [
+    {
+      "id": "description",
+      "title": "Description",
+      "content": [
+        {
+          "title": "Description",
+          "content": "Under review."
+        }
+      ]
+    }
+  ],
+  "knowledgeBits": [
+    {
+      "url": "https://bitcoinlayers.org",
+      "displayText": "Bitcoin Layers"
+    }
+  ]
+}

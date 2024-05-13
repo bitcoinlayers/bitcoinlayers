@@ -3,22 +3,7 @@ import { Opcode } from "./opcodeProps";
 import { RISK_FACTOR_CATEGORIES } from "@/constants";
 import Link from "next/link";
 
-const OpcodeBody: React.FC<{ opcode: Opcode }> = ({
-  opcode,
-}) => {
-  const getRiskColorClass = (riskFactor: string) => {
-    switch (riskFactor) {
-      case "Low":
-        return "text-low";
-      case "Medium":
-        return "text-medium";
-      case "High":
-        return "text-high";
-      default:
-        return ""; //not sure about default
-    }
-  };
-
+const OpcodeBody: React.FC<{ opcode: Opcode }> = ({ opcode }) => {
   return (
     <div className="container flex">
       <nav className="table-of-contents sticky top-0 h-screen w-0 sm:w-1/5 overflow-y-auto invisible sm:visible pt-6">
@@ -46,26 +31,12 @@ const OpcodeBody: React.FC<{ opcode: Opcode }> = ({
             id={section.id}
           >
             <h2 className="pt-7">{section.title}</h2>
-            {section.id === "riskanalysis"
-              ? section.content.map((content, contentIndex) => (
-                  <React.Fragment key={contentIndex}>
-                    <h3>{RISK_FACTOR_CATEGORIES[contentIndex]}</h3>
-                    <h4
-                      className={`${getRiskColorClass(
-                        opcode.riskFactors[contentIndex]
-                      )}`}
-                    >
-                      {content.title}
-                    </h4>
-                    <p>{content.content}</p>
-                  </React.Fragment>
-                ))
-              : section.content.map((content, contentIndex) => (
-                  <React.Fragment key={contentIndex}>
-                    {content.title && <h3>{content.title}</h3>}
-                    <p>{content.content}</p>
-                  </React.Fragment>
-                ))}
+            {section.content.map((content, contentIndex) => (
+              <React.Fragment key={contentIndex}>
+                {content.title && <h3>{content.title}</h3>}
+                <p>{content.content}</p>
+              </React.Fragment>
+            ))}
           </div>
         ))}
         <div
