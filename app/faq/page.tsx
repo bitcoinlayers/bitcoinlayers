@@ -6,7 +6,7 @@ const FaqPage: React.FC = () => {
     <article className="py-6 prose dark:prose-invert max-w-6xl mx-auto pb-12">
       <h1>Frequently Asked Questions</h1>
         <p className="text-l dark:text-white">Can&apos;t find your answer? Reach out to us on <Link href="https://twitter.com/bitcoinlayers" target="_blank">Twitter</Link>.</p>
-      <hr />
+      <hr/>
       <div className="pt-0 px-4 rounded-xl mr-4 mb-0 md:mb-0 dark:bg-secondary rounded-lg bg-lightsecondary px-4">
         <h2 className="pt-6 pt-6 dark:text-bitcoin dark:border-bitcoin border-b">What is the Bitcoin Layers site?</h2>
         <p className="pb-4">Bitcoin Layers is an educational tool dedicated to Bitcoin scaling. Currently, we are focusing on a module that helps users understand the risks associated with various protocols that support Bitcoin and BTC the asset. We are also planning on building modules related to bridges, scaling infrastructure and opcodes that can support new variations of L2s.</p>
