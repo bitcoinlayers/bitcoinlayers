@@ -4,9 +4,9 @@
   "layerType": "Sidechain",
   "live": "Mainnet",
   "underReview": "yes",
-  "riskFactors": ["High", "", "High", ""],
+  "riskFactors": ["", "", "", ""],
   "purpose": "General",
-  "btcBridge": "Centralized Multisig(s)",
+  "btcBridge": "Under review",
   "settlement": "Offchain",
   "btcLocked": 472,
   "executionEnv": "x",
@@ -29,7 +29,7 @@
       "content": [
         {
           "title": "BitLayer's mainnet v1 is a sidechain",
-          "content": "BitLayer is building towards a validia chain on top of Bitcoin. Its current implementation is a MPC protocol with 21, federated validators securing the network. It supports an EVM execution environment with plans to support other VMs. In its docs, BitLayer states that it will use an offchain data availability solution in its future mainnet releases. Its roadmap sees it adding support for a BitVM-style bridge, but currently, the bridge is managed by various multi-sig wallets."
+          "content": "BitLayer is building towards a validia chain on top of Bitcoin. Its current implementation is run by a network 21, federated validators securing the network. It supports an EVM execution environment with plans to support other VMs. In its docs, BitLayer states that it will use an offchain data availability solution in its future mainnet releases. Its roadmap sees it adding support for a BitVM-style bridge, but currently, the bridge is managed by various multi-sig wallets."
         }
       ]
     },
@@ -39,7 +39,7 @@
       "content": [
         {
           "title": "Users trust a federated multi-sig and upgradeable contracts with the custody of their BTC",
-          "content": "Users deposit BTC into two separate multi-sigs to interact with BitLayer. BTC users will deposit their BTC into a Bitcoin multi-sig wallet that initiates an unlock transfer from a vault on the BitLayer chain. EVM users can deposit wBTC into BitLayer from their EVM wallet. Both bridge contracts are upgradeable multi-sigs. Users trust the operators of these multi-sigs to not steal their funds."
+          "content": "We are currently reviewing the exact implementation of BitLayer's two-way peg with Bitcoin. It has been publicly acknowledge by the team that the current implementation is a federated multi-sig. BTC users will deposit their BTC into a Bitcoin multi-sig wallet that initiates an unlock transfer from a vault on the BitLayer chain. EVM users can deposit wBTC into BitLayer from their EVM wallet. Both bridge contracts, on BitLayer, are upgradeable by an admin."
         },
         {
           "title": "Data is stored offchain",
