@@ -61,7 +61,9 @@ import alysJson from "../content/layers/alys.json" assert { type: 'json' };
 const alys: Layer = alysJson as Layer;
 import zkbitcoinJson from "../content/layers/zkbitcoin.json" assert { type: 'json' };
 const zkbitcoin: Layer = zkbitcoinJson as Layer;
+// @ts-ignore
 import bitlayerJson from "../content/layers/bitlayer.json" assert { type: 'json' };
+// @ts-ignore
 const bitlayer: Layer = bitlayerJson as Layer;
 import moleculeJson from "../content/layers/molecule.json" assert { type: 'json' };
 const molecule: Layer = moleculeJson as Layer;
