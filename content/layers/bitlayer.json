@@ -79,11 +79,11 @@
       "content": [
         {
           "title": "Ethereum Virtual Machine",
-          "content": "BitLayer uses an EVM-compatible virtual machine. The Ethereum Virtual Machine is software responsible for smart contract execution for a number of blockchains, namely the Ethereum Network. It uses Solidity/Vyper as its code and is the dominant environment for smart contract execution in the cryptocurrency ecosystem. BOB is EVM-compatible, which means that a developer from Ethereum would have less difficulty deploying their applications on BOB compared to other execution environments."
+          "content": "BitLayer uses an EVM-compatible virtual machine. The Ethereum Virtual Machine is software responsible for smart contract execution for a number of blockchains, namely the Ethereum Network. It uses Solidity/Vyper as its code and is the dominant environment for smart contract execution in the cryptocurrency ecosystem. BitLayer is EVM-compatible, which means that a developer from Ethereum would have less difficulty deploying their applications on BitLayer compared to other execution environments."
         },
         {
           "title": "Faster block times",
-          "content": "BOB is currently producing blocks every two seconds which provides a better user experience than using the Bitcoin, or Ethereum, mainchains."
+          "content": "BitLayer is currently producing blocks every two seconds which provides a better user experience than using the Bitcoin mainchain."
         }
       ]
     },
