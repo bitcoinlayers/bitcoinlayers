@@ -102,7 +102,7 @@
       "title": "Operator",
       "content": [
         {
-          "title": "BOB has a centralized operator",
+          "title": "BitLayer is run by a permissioned validator set",
           "content": "BitLayer is currently run by 21 federated validators securing the network. The operators of these validators are unknown. Although these validators would presumably stake BitLayer's native token, BTR, to secure the network, none of the active validator addresses currently hold any BTR tokens. These nodes are presumably responsible for data availability, block production and finalizing the state of the sidechain."
         }
       ]
