@@ -4,7 +4,7 @@
   "layerType": "Sidechain",
   "live": "Mainnet",
   "underReview": "yes",
-  "riskFactors": ["", "", "", ""],
+  "riskFactors": ["High", "", "High", ""],
   "purpose": "General",
   "btcBridge": "Centralized Multisig(s)",
   "settlement": "Offchain",
@@ -30,6 +30,100 @@
         {
           "title": "BitLayer's mainnet v1 is a sidechain",
           "content": "BitLayer is building towards a validia chain on top of Bitcoin. Its current implementation is a MPC protocol with 21, federated validators securing the network. It supports an EVM execution environment with plans to support other VMs. In its docs, BitLayer states that it will use an offchain data availability solution in its future mainnet releases. Its roadmap sees it adding support for a BitVM-style bridge, but currently, the bridge is managed by various multi-sig wallets."
+        }
+      ]
+    },
+    {
+      "id": "riskanalysis",
+      "title": "Risk Analysis",
+      "content": [
+        {
+          "title": "Users trust a federated multi-sig and upgradeable contracts with the custody of their BTC",
+          "content": "Users deposit BTC into two separate multi-sigs to interact with BitLayer. BTC users will deposit their BTC into a Bitcoin multi-sig wallet that initiates an unlock transfer from a vault on the BitLayer chain. EVM users can deposit wBTC into BitLayer from their EVM wallet. Both bridge contracts are upgradeable multi-sigs. Users trust the operators of these multi-sigs to not steal their funds."
+        },
+        {
+          "title": "Data is stored offchain",
+          "content": "BitLayer does not currently use Bitcoin for data availability. We are currently reviewing the specific parties responsible for data availability."
+        },
+        {
+          "title": "Blocks are produced by a permissioned validator set",
+          "content": "BitLayer blocks are currently produced by a permissioned validator set. Information on how blocks are produced is limited, but it seems that BitLayer blocks are evenly distributed, and produced in order, by its validator set"
+        },
+        {
+          "title": "No onchain enforcement of BitLayer state transitions",
+          "content": "There is no onchain enforcement of BitLayer state transitions on Bitcoin."
+        }
+      ]
+    },
+    {
+      "id": "bitcoinsecurity",
+      "title": "Bitcoin Security",
+      "content": [
+        {
+          "title": "BitVM being researched",
+          "content": "BitLayer is currently researching how BitVM can improve trust assumptions related to its two-way peg with Bitcoin. The BitLayer team has an open repository of research related to BitVM. BitLayer’s documentation site states that the BitVM implementation will be federated."
+        },
+        {
+          "title": "BTR token issued, but validators are not required to stake BTR",
+          "content": "None of the validators in BitLayer’s validator set are staking its native token, BTR. Currently the BTR supply is 1B and is dispersed across 6 addresses. It is unknown if BitLayer will use this token to incentivize its current set of validators, or other future operators."
+        },
+        {
+          "title": "Offchain DA on roadmap",
+          "content": "BitLayer will not use Bitcoin for data availability long-term. This means that it will be a validia chain."
+        }
+      ]
+    },
+    {
+      "id": "technology",
+      "title": "Technology",
+      "content": [
+        {
+          "title": "Ethereum Virtual Machine",
+          "content": "BitLayer uses an EVM-compatible virtual machine. The Ethereum Virtual Machine is software responsible for smart contract execution for a number of blockchains, namely the Ethereum Network. It uses Solidity/Vyper as its code and is the dominant environment for smart contract execution in the cryptocurrency ecosystem. BOB is EVM-compatible, which means that a developer from Ethereum would have less difficulty deploying their applications on BOB compared to other execution environments."
+        },
+        {
+          "title": "Faster block times",
+          "content": "BOB is currently producing blocks every two seconds which provides a better user experience than using the Bitcoin, or Ethereum, mainchains."
+        }
+      ]
+    },
+    {
+      "id": "usecases",
+      "title": "Use Cases",
+      "content": [
+        {
+          "title": "EVM-based applications",
+          "content": "The potential use cases for BitLayer are similar to that of other EVM-based sidechains. Developers can deploy smart contracts that enable applications like borrowing and lending protocols, stablecoins, NFTs, and more. The primary, proposed use case for BitLayer is to act as an application layer for Bitcoin."
+        }
+      ]
+    },
+    {
+      "id": "operator",
+      "title": "Operator",
+      "content": [
+        {
+          "title": "BOB has a centralized operator",
+          "content": "BitLayer is currently run by 21 federated validators securing the network. The operators of these validators are unknown. Although these validators would presumably stake BitLayer's native token, BTR, to secure the network, none of the active validator addresses currently hold any BTR tokens. These nodes are presumably responsible for data availability, block production and finalizing the state of the sidechain."
+        }
+      ]
+    },
+    {
+      "id": "withdrawals",
+      "title": "Withdrawals",
+      "content": [
+        {
+          "title": "BTC users must withdraw to Ethereum L1 before withdrawing to Bitcoin",
+          "content": "Withdrawals from BitLayer to Bitcoin are permitted by a centralized operator and take 3-7 days to process."
+        }
+      ]
+    },
+    {
+      "id": "sourcecode",
+      "title": "Source Code",
+      "content": [
+        {
+          "title": "Portions of code is open-source",
+          "content": "Some of the code related to the BitLayer project is open-source."
         }
       ]
     }
