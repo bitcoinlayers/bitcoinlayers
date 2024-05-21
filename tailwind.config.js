@@ -20,18 +20,23 @@ module.exports = {
         copycolor: "#FFFFFF",
         offwhite: "#D1D5DB",
 
-        lprimary: "#FDFDFD",
+        
         lprimaryfade: "#f6f5ff",
         lightsecondary: "#e5ebeb",
         lighttertiary: "#CECECA",
         lighttableheader: "#736F72",
 
-        text_secondary: "#767B8F"
+        lprimary: "#FDFDFD",
+        text_secondary: "#767B8F",
+        main: "#FE4F18"
       },
       fontFamily: {
         header: ["Montserrat", "sans-serif"],
         body: ["Public Sans", "sans-serif"],
-        script: ["Playfair Display", "serif"]
+        playfair: ["Playfair Display", "serif"],
+      },
+      fontSize: {
+        'hero': '14vw',
       },
     },
   },
