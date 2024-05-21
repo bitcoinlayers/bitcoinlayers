@@ -5,6 +5,7 @@ import LayerTab from "@/components/homepageTabs/layerTab";
 import BridgeTab from "@/components/homepageTabs/bridgeTab";
 import InfrastructureTab from "@/components/homepageTabs/infrastructureTab";
 import Image from "next/image";
+import Hero from "@/components/hero";
 
 type TabKey = "layers" | "infrastructure" | "bridges";
 
@@ -26,16 +27,8 @@ export default function Home() {
     setActiveTab(tab);
   };
   return (
-    <div className="max-w-6xl mx-auto pb-16">
-      <div className="flex flex-col items-center mb-12">
-        <Image src="/btc.svg" alt="Bitcoin" width={120} height={120} />
-        <p className="font-bold pt-2">Bitcoin scales in layers</p>
-        <p className="text-center max-w-[80%] sm:max-w-[40%]">
-          Here&apos;s your cheat sheet for understanding <br />
-          Bitcoin Layer-2s, sidechains, and more
-        </p>
-      </div>
-      {/**TODO: Add search bar here  **/}
+    <div className="mx-auto">
+      <Hero />
       <div className="flex mb-4 justify-center">
         <button
           className={`${buttonBaseStyles} ${
@@ -43,7 +36,7 @@ export default function Home() {
           }`}
           onClick={() => handleTabClick("layers")}
         >
-          Layers
+          Overview
         </button>
         <button
           className={`${buttonBaseStyles} ${
@@ -53,18 +46,9 @@ export default function Home() {
           }`}
           onClick={() => handleTabClick("infrastructure")}
         >
-          Infrastructure
-        </button>
-        <button
-          className={`${buttonBaseStyles} ${
-            activeTab === "bridges" ? buttonActiveStyles : buttonInactiveStyles
-          }`}
-          onClick={() => handleTabClick("bridges")}
-        >
-          Bridges
+          Risks
         </button>
       </div>
-
       {tabComponents[activeTab]}
     </div>
   );

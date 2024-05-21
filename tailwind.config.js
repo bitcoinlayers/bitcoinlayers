@@ -19,17 +19,19 @@ module.exports = {
         high: "#EC0B43",
         copycolor: "#FFFFFF",
         offwhite: "#D1D5DB",
-        lightalt: "#c9c9c9",
-        // lightbg: 'linear-gradient(145deg, rgba(246,245,255,1) 0%, rgba(217,217,217,1) 73%, rgba(95,101,102,1) 100%)',
-        lightprimary: "#dbd9dc",
-        lightprimaryfade: "#f6f5ff",
+
+        lprimary: "#FDFDFD",
+        lprimaryfade: "#f6f5ff",
         lightsecondary: "#e5ebeb",
         lighttertiary: "#CECECA",
         lighttableheader: "#736F72",
+
+        text_secondary: "#767B8F"
       },
       fontFamily: {
         header: ["Montserrat", "sans-serif"],
-        body: ["Montserrat", "sans-serif"],
+        body: ["Public Sans", "sans-serif"],
+        script: ["Playfair Display", "serif"]
       },
     },
   },
