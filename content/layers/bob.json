@@ -152,6 +152,10 @@
    {
       "url": "https://mirror.xyz/0xE4dF449bDC1ec8f7688F68F7E839f1370617Ac73/UvQH9D3RyVcozOlz091gLKnbX8aqn8goFVYtHVmin-w",
       "displayText": "A blog covering R&D areas related to Bitcoin security on BOB."
+    },
+    {
+      "url": "https://l2beat.com/scaling/projects/bob/tvl-breakdown",
+      "displayText": "BOB's TVL breakdown, including total BTC locked."
     }
   ]
 }
