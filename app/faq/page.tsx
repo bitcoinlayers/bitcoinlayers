@@ -9,19 +9,15 @@ const FaqPage: React.FC = () => {
       <hr/>
       <div className="pt-0 px-4 rounded-xl mr-4 mb-0 md:mb-0 dark:bg-secondary rounded-lg bg-lightsecondary px-4">
         <h2 className="pt-6 pt-6 dark:text-bitcoin dark:border-bitcoin border-b">What is the Bitcoin Layers site?</h2>
-        <p className="pb-4">Bitcoin Layers is an educational tool dedicated to Bitcoin scaling. Currently, we are focusing on a module that helps users understand the risks associated with various protocols that support Bitcoin and BTC the asset. We are also planning on building modules related to bridges, scaling infrastructure and opcodes that can support new variations of L2s.</p>
+        <p className="pb-4">Bitcoin Layers is an educational tool dedicated to Bitcoin scaling. Currently, we are focusing on a module that outlines the risks associated with various scaling protocols that support Bitcoin and BTC the asset. We are also planning on building modules related to bridges, scaling infrastructure and opcodes that can support new variations of L2s.</p>
       </div>
       <div className="pt-0 px-4 rounded-xl mr-4 mb-0 md:mb-0 dark:bg-secondary rounded-lg bg-lightsecondary px-4">
         <h2 className="pt-6 pt-6 dark:text-bitcoin dark:border-bitcoin border-b">What is a Bitcoin Layer?</h2>
-        <p className="pb-4">We use the term &quot;Bitcoin Layer&quot; to describle protocols that claim to be Bitcoin Layer 2s. It&apos;s our opinion that none of the protocols in production, aside from lightning, are Layer 2s. This is because these protocols typically do not enable unilateral exit. Additionally, most of these protocols have their own consensus mechanism that does not inherit security from Bitcoin consensus participants. It is our view that the majority of protocols coming to market are sidechains. These protocols have range of different security assumptions, which propose different sets of risks to the users. We have a perform a general risk assessment on each protocol, and also outline some specific nuances related to each protocol.</p>
+        <p className="pb-4">We use the term "Bitcoin Layer" to describle protocols that claim to be Bitcoin Layer 2s. There are many definitions that exist for the term "Layer 2", but the two primary ones are protocols that enable unilateral exit, and/or protocols that add more functionality to BTC the asset and inherit security from Bitcoin. We use the term &quot;Bitcoin Layer&quot; as an agnostic term to describe Layer 2s, sidechains and more. We do not define protcols as Layer 2s, as any offchain scaling protocol presents a different set of trust assumptions to users. We analyze these protocols against a generalized, opinionated framework that we developed to show users the relevant trust assumptions for each system.</p>
       </div>
       <div className="pt-0 px-4 rounded-xl mr-4 mb-0 md:mb-0 dark:bg-secondary rounded-lg bg-lightsecondary px-4">
         <h2 className="pt-6 pt-6 dark:text-bitcoin dark:border-bitcoin border-b">Are all Bitcoin Layers &quot;L2s&quot;?</h2>
-        <p className="pb-4">As mentioned above, no. The overwhelming majority of these protocols are not Layer 2s. Bitcoin Layers is a broad term we use to cover offchain scaling protocols. L2s are offchain protocols where users deposit their BTC into the protocol to leverage features that are not available on the Bitcoin layer 1. We consider unilateral exit as a primary criteria for being a “true L2”, which means that users retain self-custody of their BTC and can exit the L2 whenever they choose.</p>
-      </div>
-      <div className="pt-0 px-4 rounded-xl mr-4 mb-0 md:mb-0 dark:bg-secondary rounded-lg bg-lightsecondary px-4">
-        <h2 className="pt-6 pt-6 dark:text-bitcoin dark:border-bitcoin border-b">Are there any Bitcoin L2s in production?</h2>
-        <p className="pb-4">Lightning is in production today. Other proposed scaling designs, like BitVM rollups, would rely on a 1-N trust assumption for the custody of user funds.</p>
+        <p className="pb-4">The overwhelming majority of newer Bitcoin "Layer 2s" are not Layer 2s in the classical defition. Bitcoin Layers is a broad term we use to cover offchain scaling protocols. People typically define L2s as protocols that take transaction execution offchain, but inherit security from its parent blockchain. Most consider unilateral exit as a primary criteria for being a “true L2”, which means that users retain self-custody of their BTC and can exit the L2 unilaterally whenever they choose.</p>
       </div>
       <div className="pt-0 px-4 rounded-xl mr-4 mb-0 md:mb-0 dark:bg-secondary rounded-lg bg-lightsecondary px-4">
         <h2 className="pt-6 pt-6 dark:text-bitcoin dark:border-bitcoin border-b">Why are newer Bitcoin &quot;L2s&quot; receiving so much attention?</h2>
@@ -29,11 +25,11 @@ const FaqPage: React.FC = () => {
       </div>
       <div className="pt-0 px-4 rounded-xl mr-4 mb-0 md:mb-0 dark:bg-secondary rounded-lg bg-lightsecondary px-4">
         <h2 className="pt-6 pt-6 dark:text-bitcoin dark:border-bitcoin border-b">What are modular Bitcoin &quot;L2s&quot;?</h2>
-        <p className="pb-4">A number of new projects are launching with modular scaling designs in mind. This means that each aspect of the transaction lifecycle would be managed by an indepedent actor. Roles such as transaction ordering, data availability and settlement would be distributed across a number of actors. These parties can range from single servers, federated commmittees and permissionless consensus protocols, varying in trust assumptions.</p>
+        <p className="pb-4">A number of new projects are launching with modular scaling designs in mind. This means that each aspect of the transaction lifecycle would be managed by an indepedent actor. Roles such as transaction ordering, data availability and settlement would be distributed across a number of systems. These parties can range from single servers, federated commmittees and permissionless consensus protocols, varying in trust assumptions.</p>
       </div>
       <div className="pt-0 px-4 rounded-xl mr-4 mb-0 md:mb-0 dark:bg-secondary rounded-lg bg-lightsecondary px-4">
         <h2 className="pt-6 pt-6 dark:text-bitcoin dark:border-bitcoin border-b">Are these newer &quot;L2s&quot; similar to projects in Ethereum?</h2>
-        <p className="pb-4">A large percentage of these projects are launching forks of popular Ethereum scaling SDKs. The difference between Bitcoin sidechains, and L2s on Ethereum, is the trust assumptions related to the two-way peg and security inherited from the base layer. Current Bitcoin &quot;L2s&quot; implementations largely do not inherit any security from the Bitcoin network.</p>
+        <p className="pb-4">A large percentage of these projects are forking popular Ethereum L2s and try to inherit similar designs. The difference between these Bitcoin chains, and L2s on Ethereum, is the trust assumptions related to the two-way peg and security inherited from the base layer. Current Bitcoin "L2" implementations largely do not inherit any security from the Bitcoin network or have a trust-minimized two-way peg.</p>
       </div>
     </article>
   );
