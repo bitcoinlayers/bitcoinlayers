@@ -5,6 +5,7 @@ import type { ReactElement } from "react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { ModeToggle } from "./mode-toggle";
+import Image from "next/image";
 
 export default function Footer(): ReactElement {
   const router = useRouter();
@@ -17,87 +18,118 @@ export default function Footer(): ReactElement {
   const closeMenu = () => {
     setMenuOpen(false);
   };
-
   return (
-    <header className="max-w-6xl dark:text-bitcoin mx-auto flex items-baseline items-center pb-12 py-4">
-      <nav className="ml-auto text-lg font-medium space-x-6 px-4 flex items-center"> 
-
-        <div className="block lg:hidden">
-          <button
-            className="text-gray-800 focus:outline-none"
-            onClick={toggleMenu}
+    <nav className="flex flex-row justify-between items-center w-full fixed min-h-[3rem]">
+      <div className="w-8 h-8">
+        <Image src="/logo_white.png" alt="Logo" width={32} height={32} />
+      </div>
+      <ul className="flex flex-row items-center space-x-8 pr-8 text-public text-text_secondary">
+        <li>
+          <Link href="/opcodes">Analysis</Link>
+        </li>
+        <li>
+          <Link href="/opcodes">Glossary</Link>
+        </li>
+        <li>
+          <Link href="/faq">FAQ</Link>
+        </li>
+        <li>
+          <Link
+            href="https://bitcoin-layers.gitbook.io/bitcoin-layers"
+            target="_blank"
           >
-            <svg
-              className="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="gray"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 6h16M4 12h16m-7 6h7"
-              />
-            </svg>
-          </button>
-        </div>
-        {menuOpen && (
-          <ul className="bg-lightsecondary dark:bg-secondary lg:hidden rounded-xl absolute right-8 mt-20 top-6 p-6 space-y-2 border-2">
-            <li>
-              <Link href="/opcodes">Opcodes</Link>
-            </li>
-            <li>
-              <Link
-                href="https://bitcoin-layers.gitbook.io/bitcoin-layers"
-                target="_blank"
-              >
-                Docs
-              </Link>
-            </li>
-            <li>
-              <Link href="https://medium.com/@bitcoinlayers" target="_blank">
-                Blog
-              </Link>
-            </li>
-            <li>
-              <Link href="/faq">FAQ</Link>
-            </li>
-            <li>
-              <div className="flex justify-center">
-                <ModeToggle />
-              </div>
-            </li>
-          </ul>
-        )}
-        <ul className="hidden lg:flex flex-wrap items-center space-x-6">
-          <li>
-            <Link href="/opcodes">Opcodes</Link>
-          </li>
-          <li>
-            <Link
-              href="https://bitcoin-layers.gitbook.io/bitcoin-layers"
-              target="_blank"
-            >
-              Docs
-            </Link>
-          </li>
-          <li>
-            <Link href="https://medium.com/@bitcoinlayers" target="_blank">
-              Blog
-            </Link>
-          </li>
-          <li>
-            <Link href="/faq">FAQ</Link>
-          </li>
-          <li>
-            <div className="flex justify-center">
-              <ModeToggle />
-            </div>
-          </li>
-          {/* <li><Link href="https://twitter.com/bitcoinlayers" target="_blank">Twitter</Link></li> */}
-        </ul>
-      </nav>
-    </header>
+            Methodology
+          </Link>
+        </li>
+        <li>
+          <Link href="https://medium.com/@bitcoinlayers" target="_blank">
+            Blog
+          </Link>
+        </li>
+      </ul>
+    </nav>
   );
+
+  // return (
+  //   <header className="max-w-6xl dark:text-bitcoin mx-auto flex items-baseline items-center pb-12 py-4">
+  //     <nav className="ml-auto text-lg font-medium space-x-6 px-4 flex items-center">
+
+  //       <div className="block lg:hidden">
+  //         <button
+  //           className="text-gray-800 focus:outline-none"
+  //           onClick={toggleMenu}
+  //         >
+  //           <svg
+  //             className="h-6 w-6"
+  //             fill="none"
+  //             viewBox="0 0 24 24"
+  //             stroke="gray"
+  //           >
+  //             <path
+  //               strokeLinecap="round"
+  //               strokeLinejoin="round"
+  //               strokeWidth={2}
+  //               d="M4 6h16M4 12h16m-7 6h7"
+  //             />
+  //           </svg>
+  //         </button>
+  //       </div>
+  //       {menuOpen && (
+  //         <ul className="bg-lightsecondary dark:bg-secondary lg:hidden rounded-xl absolute right-8 mt-20 top-6 p-6 space-y-2 border-2">
+  //           <li>
+  //             <Link href="/opcodes">Opcodes</Link>
+  //           </li>
+  //           <li>
+  //             <Link
+  //               href="https://bitcoin-layers.gitbook.io/bitcoin-layers"
+  //               target="_blank"
+  //             >
+  //               Docs
+  //             </Link>
+  //           </li>
+  //           <li>
+  //             <Link href="https://medium.com/@bitcoinlayers" target="_blank">
+  //               Blog
+  //             </Link>
+  //           </li>
+  //           <li>
+  //             <Link href="/faq">FAQ</Link>
+  //           </li>
+  //           <li>
+  //             <div className="flex justify-center">
+  //               <ModeToggle />
+  //             </div>
+  //           </li>
+  //         </ul>
+  //       )}
+  //       <ul className="hidden lg:flex flex-wrap items-center space-x-6">
+  //         <li>
+  //           <Link href="/opcodes">Opcodes</Link>
+  //         </li>
+  //         <li>
+  //           <Link
+  //             href="https://bitcoin-layers.gitbook.io/bitcoin-layers"
+  //             target="_blank"
+  //           >
+  //             Docs
+  //           </Link>
+  //         </li>
+  //         <li>
+  //           <Link href="https://medium.com/@bitcoinlayers" target="_blank">
+  //             Blog
+  //           </Link>
+  //         </li>
+  //         <li>
+  //           <Link href="/faq">FAQ</Link>
+  //         </li>
+  //         <li>
+  //           <div className="flex justify-center">
+  //             <ModeToggle />
+  //           </div>
+  //         </li>
+  //         {/* <li><Link href="https://twitter.com/bitcoinlayers" target="_blank">Twitter</Link></li> */}
+  //       </ul>
+  //     </nav>
+  //   </header>
+  // );
 }

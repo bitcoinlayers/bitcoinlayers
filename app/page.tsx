@@ -2,20 +2,21 @@
 
 import React, { useState } from "react";
 import LayerTab from "@/components/homepageTabs/layerTab";
-import BridgeTab from "@/components/homepageTabs/bridgeTab";
-import InfrastructureTab from "@/components/homepageTabs/infrastructureTab";
+import LayerTabNew from "@/components/homepageTabs/layerTabNew";
 import Image from "next/image";
 import Hero from "@/components/hero";
 
-type TabKey = "layers" | "infrastructure" | "bridges";
+import { allLayers } from "@/util/layer_index";
+import LayerTable2 from "@/components/layer/layerTable2";
+
+type TabKey = "overview" | "risks";
 
 export default function Home() {
-  const [activeTab, setActiveTab] = useState<TabKey>("layers");
+  const [activeTab, setActiveTab] = useState<TabKey>("overview");
 
   const tabComponents = {
-    layers: <LayerTab />,
-    infrastructure: <InfrastructureTab />,
-    bridges: <BridgeTab />,
+    overview: <LayerTab />,
+    risks: <LayerTabNew />,
   };
 
   const buttonBaseStyles =
@@ -32,24 +33,25 @@ export default function Home() {
       <div className="flex mb-4 justify-center">
         <button
           className={`${buttonBaseStyles} ${
-            activeTab === "layers" ? buttonActiveStyles : buttonInactiveStyles
+            activeTab === "overview" ? buttonActiveStyles : buttonInactiveStyles
           }`}
-          onClick={() => handleTabClick("layers")}
+          onClick={() => handleTabClick("overview")}
         >
           Overview
         </button>
         <button
           className={`${buttonBaseStyles} ${
-            activeTab === "infrastructure"
+            activeTab === "risks"
               ? buttonActiveStyles
               : buttonInactiveStyles
           }`}
-          onClick={() => handleTabClick("infrastructure")}
+          onClick={() => handleTabClick("risks")}
         >
           Risks
         </button>
       </div>
       {tabComponents[activeTab]}
+      
     </div>
   );
 }

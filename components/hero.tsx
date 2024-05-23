@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const Hero: React.FC = () => {
   return (
-    <div className="relative w-screen overflow-hidden">
+    <div className="relative w-full overflow-hidden">
       <div
         style={{ position: "relative", width: "100%", paddingTop: "26.25%" }}
       >
@@ -14,7 +14,7 @@ const Hero: React.FC = () => {
           style={{ objectFit: "cover" }}
         />
         <div className="absolute inset-0 flex flex-col justify-center items-center">
-          <h1 className="font-playfair italic font-bold text-main text-hero -mb-4">
+          <h1 className="font-playfair italic font-black text-main text-hero -mb-4">
             Layers
           </h1>
           <p className="flex items-center text-center text-text_secondary">

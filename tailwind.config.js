@@ -25,18 +25,22 @@ module.exports = {
         lightsecondary: "#e5ebeb",
         lighttertiary: "#CECECA",
         lighttableheader: "#736F72",
-
+//new UI
         lprimary: "#FDFDFD",
         text_secondary: "#767B8F",
-        main: "#FE4F18"
+        main: "#FE4F18",
+
+        text_table_row: "#363534",
+        text_table_header: "#0A0D12",
+        table_header: "#F5F8FD",
+
+        
       },
       fontFamily: {
-        header: ["Montserrat", "sans-serif"],
-        body: ["Public Sans", "sans-serif"],
-        playfair: ["Playfair Display", "serif"],
-      },
-      fontSize: {
-        'hero': '14vw',
+        header: ['Montserrat', 'sans-serif'],
+        body: ['Public Sans', 'sans-serif'],
+        playfair: ['Playfair Display', 'serif'],
+        public: ['Public Sans', 'sans-serif'],
       },
     },
   },

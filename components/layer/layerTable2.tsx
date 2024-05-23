@@ -8,45 +8,22 @@ interface Props {
   data: Layer[];
 }
 
-const LayerTable = ({ data }: Props) => {
+const LayerTable2 = ({ data }: Props) => {
   const [sortBy, setSortBy] = useState("title");
-  // const [sortOrder, setSortOrder] = useState("asc");
   const [sortOrder, setSortOrder] = useState<"asc" | "desc">("asc");
   const router = useRouter();
-  const [layerTypeFilter, setLayerTypeFilter] = useState("");
-  // const [settlementFilter, setSettlementFilter] = useState("");
-  const [liveFilter, setLiveFilter] = useState("Mainnet");
 
-  const filteredAndSortedData = useMemo(() => {
-    const liveStatusOrder = ["Mainnet", "Testnet", "Announced"];
-
-    return [...data]
-      .filter(
-        (item) =>
-          (layerTypeFilter ? item.layerType === layerTypeFilter : true) &&
-          // (settlementFilter ? item.settlement === settlementFilter : true) &&
-          (liveFilter ? item.live === liveFilter : true)
-      )
-      .sort((a, b) => {
-        // First, sort by live status
-        const orderA = liveStatusOrder.indexOf(a.live);
-        const orderB = liveStatusOrder.indexOf(b.live);
-        if (orderA !== orderB) {
-          return (sortOrder === "asc" ? 1 : -1) * (orderA - orderB);
-        }
-
-        // If live statuses are the same, then sort by title
-        if (a.title.toLowerCase() < b.title.toLowerCase()) {
-          return sortOrder === "asc" ? -1 : 1;
-        }
-        if (a.title.toLowerCase() > b.title.toLowerCase()) {
-          return sortOrder === "asc" ? 1 : -1;
-        }
-
-        // If both live status and title are the same, return 0 (no sorting)
-        return 0;
-      });
-  }, [data, layerTypeFilter, liveFilter, sortBy, sortOrder]);
+  const sortedData = useMemo(() => {
+    return [...data].sort((a, b) => {
+      if (a.title.toLowerCase() < b.title.toLowerCase()) {
+        return sortOrder === "asc" ? -1 : 1;
+      }
+      if (a.title.toLowerCase() > b.title.toLowerCase()) {
+        return sortOrder === "asc" ? 1 : -1;
+      }
+      return 0;
+    });
+  }, [data, sortBy, sortOrder]);
 
   const toggleSortOrder = () => {
     setSortOrder(sortOrder === "asc" ? "desc" : "asc");
@@ -89,15 +66,10 @@ const LayerTable = ({ data }: Props) => {
     return (
       <th
         scope="col"
-        className={`flex-1 px-6 py-3 cursor-pointer w-1/3 sm:w-1/8 font-public text-text_table_header text-sm font-medium leading-tight text-left ${className}`}
+        className={`flex-1 px-6 py-3 cursor-pointer w-1/3 sm:w-1/8 text-lighttableheader dark:text-bitcoin ${className}`}
         onClick={() => onSort(sortByValue)}
       >
-        <span className="flex items-center">
-          {title}
-          {/* <span className={`ml-1 ${isSortedBy ? "" : "text-gray-500"}`}>
-            {sortOrder === "asc" && isSortedBy ? "▲" : "▼"}
-          </span> */}
-        </span>
+        <span className="flex items-center">{title}</span>
       </th>
     );
   };
@@ -106,18 +78,28 @@ const LayerTable = ({ data }: Props) => {
     <div className="overflow-x-auto px-4 py-4 bg-lightsecondary dark:bg-secondary rounded-lg max-w-screen-lg mx-auto">
       {/* Table */}
       <table className="bg-lightsecondary dark:bg-secondary table-fixed sm:w-full text-sm text-left rtl:text-right">
-        <thead className="bg-table_header">
+        <thead className="text-xs uppercase dark:text-bitcoin">
           <tr>
-            <SortableHeader
-              title="Name"
-              sortByValue="title"
-              onSort={(value: string) => {
-                setSortBy(value);
+            <th
+              scope="col"
+              className="flex-1 px-6 py-3 cursor-pointer w-1/3 sm:w-1/8"
+              onClick={() => {
+                setSortBy("title");
                 toggleSortOrder();
               }}
-              isSortedBy={sortBy === "title"}
-              sortOrder={sortOrder}
-            />
+            >
+              <span className="flex items-center">
+                Name{" "}
+                <span
+                  className={`ml-1 ${
+                    sortBy === "title" ? "" : "text-gray-500"
+                  }`}
+                >
+                  {sortOrder === "asc" && sortBy === "title" ? "▲" : "▼"}
+                </span>
+              </span>
+            </th>
+
             <SortableHeader
               title="Risks"
               sortByValue="live"
@@ -129,7 +111,7 @@ const LayerTable = ({ data }: Props) => {
               sortOrder={sortOrder}
             />
             <SortableHeader
-              title="Type"
+              title="Layer Type"
               sortByValue="layerType"
               onSort={(value: string) => {
                 setSortBy(value);
@@ -139,7 +121,7 @@ const LayerTable = ({ data }: Props) => {
               sortOrder={sortOrder}
             />
             <SortableHeader
-              title="Status"
+              title="Purpose"
               sortByValue="purpose"
               onSort={(value: string) => {
                 setSortBy(value);
@@ -149,7 +131,7 @@ const LayerTable = ({ data }: Props) => {
               sortOrder={sortOrder}
             />
             <SortableHeader
-              title="Unit of Account"
+              title="BTC Bridge"
               sortByValue="btcBridge"
               onSort={(value: string) => {
                 setSortBy(value);
@@ -171,10 +153,10 @@ const LayerTable = ({ data }: Props) => {
           </tr>
         </thead>
         <tbody className="dark:border-primary gap-x-8">
-          {filteredAndSortedData.map((item, index) => (
+          {sortedData.map((item, index) => (
             <tr
               className={`dark:border-primary cursor-pointer ${
-                index === filteredAndSortedData.length - 1 ? "" : "border-b-2"
+                index === sortedData.length - 1 ? "" : "border-b-2"
               }`}
               key={index}
               onClick={() => handleRowClick(`/layers/${item.slug}`)}
@@ -224,13 +206,6 @@ const LayerTable = ({ data }: Props) => {
                   <div>{item.btcBridge}</div>
                 )}
               </td>
-              {/* <td className="flex-1 px-6 py-4">
-                {item.live !== "Mainnet" ? (
-                  <div>-</div>
-                ) : (
-                  <div>{item.settlement}</div>
-                )}
-              </td> */}
               <td className="flex-1 px-6 py-4">
                 {item.underReview === "yes" ? (
                   <div>-</div>
@@ -242,47 +217,8 @@ const LayerTable = ({ data }: Props) => {
           ))}
         </tbody>
       </table>
-      {/* Filter dropdowns */}
-      <div className="flex gap-4 mt-2">
-        <select
-          className="rounded-md p-2 font-semibold text-xs dark:text-bitcoin bg-lightsecondary dark:bg-secondary border-2 border-gray-300"
-          value={liveFilter}
-          onChange={(e) => setLiveFilter(e.target.value)}
-        >
-          <option value="">All Layers</option>
-          <option value="Mainnet">Mainnet</option>
-          <option value="Testnet">Testnet</option>
-          <option value="Announced">Announced</option>
-        </select>
-        <select
-          className="rounded-md p-2 font-semibold text-xs dark:text-bitcoin bg-lightsecondary dark:bg-secondary border-2 border-gray-300"
-          value={layerTypeFilter}
-          onChange={(e) => setLayerTypeFilter(e.target.value)}
-        >
-          <option value="">All Layer Types</option>
-          <option value="Rollup">Rollup</option>
-          <option value="Sidechain">Sidechain</option>
-          <option value="State Channel">State Channel</option>
-          <option value="Statechain">Statechain</option>
-        </select>
-      </div>
-      <style jsx global>{`
-        /* Custom scrollbar styles */
-        ::-webkit-scrollbar {
-          width: 4px;
-        }
-
-        ::-webkit-scrollbar-thumb {
-          background: #888; /* Dark grey */
-          border-radius: 10px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-          background: #555; /* Black */
-        }
-      `}</style>
     </div>
   );
 };
 
-export default LayerTable;
+export default LayerTable2;
