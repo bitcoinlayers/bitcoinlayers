@@ -3,13 +3,15 @@ People are requesting that we create definitions for various L2s and sidechains.
 - Layer 2 (a): A protocol that supports unilateral and ensures network operators cannot commit fraud
 - Layer 2 (b): A protocol that supports unilateral exit
 - Layer 2 (c): A protocol where anyone can ensure the honesty of a two-way peg and corresponding withdrawals
-- Sidechain:
-- Appchain:
-- Payment channel:
-- State channel:
+- Sidechain: An alternative consensus protocol that is built to scale Bitcoin and/or add functionality to BTC the asset.
+- Stakechain:
+- Merge-mined Sidechain: A sidechain protocol that has a separate security budget, but sees Bitcoin miners participate in securing the sidechain. Merged mining enables Bitcoin miners to secure sidechains, and earn additional revenue, via the same mining infrastructure.
+- Anchored Sidechain:
+- Spiderchain: 
+- Appchain: A sidechain protocol that inherits no security from Bitcoin, but is purpose built to support applications that add functionality to BTC and Bitcoin assets.
 - Rollup: A blockchain that posts its latest state root, and enough transaction data to reconstruct its state from genesis, to Bitcoin
 - Sovereign rollup: A rollup that does not have a validating bridge (a.k.a enshrined two-way peg) with Bitcoin
-- Validity rollup: A rollup where a prover submit a validity proof to a verifier contract on the L1 proving that the state transition was executed correctly
+- Validity rollup: A rollup where a prover submits a validity proof to a verifier contract on the L1 proving that the state transition was executed correctly
 - Optimistic rollup: A rollup where challengers can submit a fault proof to challenge malicious state transitions
 - Bit-rollup: A rollup with where the sequencer executes state transitions a has prover submit a validity proof to a group of verifiers on the L1 optimistically prove the state transition was executed correctly
 - Validium: A blockchain that uses an offchain system for data availability and has a prover submits a validity proof to a verifier contract on the L1 proving that the state transition was executed correctly
@@ -21,5 +23,5 @@ People are requesting that we create definitions for various L2s and sidechains.
 - Spacechain:
 - Ecash:
 - Fedimint:
-- Stakechain:
-- Merge-mined Sidechain:
+- Payment channel:
+- State channel:
