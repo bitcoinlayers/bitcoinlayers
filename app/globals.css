@@ -19,7 +19,7 @@
     @apply text-zinc-800 text-base font-medium leading-normal mb-2 text-text_primary;
   }
   .body_paragraph {
-    @apply text-slate-600 text-base font-medium leading-normal mb-2 text-text_secondary
+    @apply mb-2 text-text_secondary
   }
   .body_risksection {
     @apply text-zinc-800 text-2xl font-medium leading-normal mb-2 text-text_primary;

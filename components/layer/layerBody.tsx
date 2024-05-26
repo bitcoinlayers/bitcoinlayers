@@ -12,17 +12,21 @@ const LayerBody: React.FC<{ layer: Layer }> = ({ layer }) => {
           className="self-stretch px-8 pt-6 pb-8 mb-6 bg-white rounded-xl border border-slate-300 flex-col justify-center items-end gap-4"
           id={section.id}
         >
-          <div className="self-stretch justify-start items-start gap-4 inline-flex">
+          <div className="self-stretch justify-start items-start gap-4">
             <div className="body_section">{section.title}</div>
           </div>
           {section.content.map((content, contentIndex) => (
             <React.Fragment key={contentIndex}>
               {content.title && (
-                <div className={`self-stretch justify-between items-center inline-flex ${contentIndex !== 0 ? 'mt-24' : ''}`}>
-                  <div className="body_subsection mt-12">{content.title}</div>
+                <div
+                  className={`self-stretch justify-between items-center inline-flex mt-6`}
+                >
+                  <div className="body_subsection">{content.title}</div>
                 </div>
               )}
-              <div className="mt-3">{parseTextWithLinks(content.content)}</div>
+              <div className="body_paragraph mt-3">
+                {parseTextWithLinks(content.content)}
+              </div>
             </React.Fragment>
           ))}
         </div>
@@ -32,12 +36,16 @@ const LayerBody: React.FC<{ layer: Layer }> = ({ layer }) => {
         id="knowledgebits"
       >
         <div className="self-stretch justify-start items-start gap-4 inline-flex">
-          <div className="text-zinc-800 text-3xl font-light font-['Public Sans'] leading-9">Knowledge Bits</div>
+          <div className="text-zinc-800 text-3xl font-light font-['Public Sans'] leading-9">
+            Knowledge Bits
+          </div>
         </div>
         {layer.knowledgeBits.map((link) => (
           <p key={link.url}>
             <Link href={link.url} rel="noopener noreferrer" target="_blank">
-              <span className="text-orange-600 text-base font-medium font-['Public Sans'] underline leading-normal">{link.displayText}</span>
+              <span className="text-orange-600 text-base font-medium font-['Public Sans'] underline leading-normal">
+                {link.displayText}
+              </span>
             </Link>
           </p>
         ))}

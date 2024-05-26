@@ -1,13 +1,16 @@
 import React from "react";
 import { parseTextWithLinks } from "@/util/parseTextWithLinks";
 
-interface Subsection {
+interface Risksection {
+  category: string;
+  score: number;
+  tier: string;
   title: string;
   content: string;
 }
 
 interface RiskAnalysisProps {
-  riskAnalysis: Subsection[];
+  riskAnalysis: Risksection[];
   riskFactors: string[];
 }
 
@@ -41,15 +44,14 @@ const RiskAnalysis: React.FC<RiskAnalysisProps> = ({
         id="riskanalysis"
       >
         <div className="self-stretch justify-start items-start gap-4 inline-flex">
-                <div className="body_section">Risk Analysis</div>
-              </div>
+          <div className="body_section">Risk Analysis</div>
+        </div>
         {riskAnalysis.map((content, contentIndex) => (
           <React.Fragment key={contentIndex}>
             <div>
-              
               <div className="flex flex-col justify-start items-start gap-2">
                 <div className="self-stretch justify-between items-center inline-flex">
-                  <div className="body_risksection">{content.title}</div>
+                  <div className="body_risksection">{content.category}</div>
                   <div className="h-8 justify-end items-center gap-2 flex">
                     <div
                       className={`${getRiskColorClass(
@@ -80,7 +82,7 @@ const RiskAnalysis: React.FC<RiskAnalysisProps> = ({
                       {content.title}
                     </div>
                   </div>
-                  <div className="self-stretch mt-3">
+                  <div className="body_paragraph self-stretch mt-3">
                     {parseTextWithLinks(content.content)}
                   </div>
                 </div>
