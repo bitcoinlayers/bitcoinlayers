@@ -13,13 +13,13 @@
     @apply font-playfair-display text-[100px] italic font-normal leading-[80px] tracking-[-1.6px];
   }
   .body_title {
-    @apply text-zinc-800 text-3xl font-light leading-9;
+    @apply text-zinc-800 text-3xl font-light leading-9 mb-4;
   }
   .body_section {
-    @apply text-zinc-800 text-2xl font-medium leading-normal;
+    @apply text-zinc-800 text-2xl font-medium leading-normal mb-2;
   }
   .body_subsection {
-    @apply text-slate-600 text-base font-medium leading-normal;
+    @apply text-slate-600 text-base font-medium leading-normal mb-2;
   }
   .body_paragraph {
   }
