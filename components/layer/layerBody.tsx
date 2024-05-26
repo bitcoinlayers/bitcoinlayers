@@ -5,7 +5,7 @@ import { parseTextWithLinks } from "@/util/parseTextWithLinks";
 
 const LayerBody: React.FC<{ layer: Layer }> = ({ layer }) => {
   return (
-    <main className="content flex-grow p-4 sm:mt-0 pt-0">
+    <main className="content flex-grow sm:mt-0 pt-0">
       {layer.sections.map((section, index) => (
         <div
           key={index}
