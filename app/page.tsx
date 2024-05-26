@@ -50,8 +50,9 @@ export default function Home() {
           Risks
         </button>
       </div>
+      <div className="flex mb-4 justify-center">
       {tabComponents[activeTab]}
-      
+      </div>
     </div>
   );
 }

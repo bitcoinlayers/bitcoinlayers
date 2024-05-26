@@ -103,9 +103,9 @@ const LayerTable = ({ data }: Props) => {
   };
 
   return (
-    <div className="overflow-x-auto px-4 py-4 bg-lightsecondary dark:bg-secondary rounded-lg max-w-screen-lg mx-auto">
+    <div className="overflow-x-auto">
       {/* Table */}
-      <table className="bg-lightsecondary dark:bg-secondary table-fixed sm:w-full text-sm text-left rtl:text-right">
+      <table className="bg-lightsecondary dark:bg-secondary table-fixed text-sm max-w-screen-lg text-left rtl:text-right">
         <thead className="bg-table_header">
           <tr>
             <SortableHeader
@@ -170,10 +170,10 @@ const LayerTable = ({ data }: Props) => {
             />
           </tr>
         </thead>
-        <tbody className="dark:border-primary gap-x-8">
+        <tbody className="gap-x-8">
           {filteredAndSortedData.map((item, index) => (
             <tr
-              className={`dark:border-primary cursor-pointer ${
+              className={`cursor-pointer ${
                 index === filteredAndSortedData.length - 1 ? "" : "border-b-2"
               }`}
               key={index}
