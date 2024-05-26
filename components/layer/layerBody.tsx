@@ -25,6 +25,7 @@ const LayerBody: React.FC<{ layer: Layer }> = ({ layer }) => {
                 </div>
               )}
               <div className="body_paragraph mt-3">
+                {/** TODO glossary hover tips */}
                 {parseTextWithLinks(content.content)}
               </div>
             </React.Fragment>

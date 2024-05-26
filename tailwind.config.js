@@ -27,6 +27,7 @@ module.exports = {
         //figma
         brand: "#FE4F18",
         brand_fill: "#F4F7FA",
+        brand_neutral: "3C3D41",
 
         bg_primary: "#FDFDFD",
         bg_secondary: "F5F8FD",
