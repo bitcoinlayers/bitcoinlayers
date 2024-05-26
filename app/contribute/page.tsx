@@ -58,7 +58,7 @@ const ContributePage: React.FC = () => {
       >
         Twitter
       </Link>{" "}
-      if you'd like to get involved.
+      if you`&apos;`d like to get involved.
     </span>
   );
 
