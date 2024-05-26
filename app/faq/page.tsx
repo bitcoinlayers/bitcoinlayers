@@ -10,7 +10,7 @@ const FaqPage: React.FC = () => {
     answer?: string;
   }) {
     return (
-      <div className="bg-white rounded-xl border border-slate-300 flex flex-col justify-center items-end gap-4 p-8">
+      <div className="bg-white rounded-xl border border-slate-300 flex flex-col justify-center items-start gap-4 p-8">
         <div className="flex items-center gap-3">
           <div className="rotate-180 flex items-center justify-center w-6 h-6">
             <div className="relative w-6 h-6 rotate-180" />
@@ -33,12 +33,9 @@ const FaqPage: React.FC = () => {
   }
 
   return (
-    <article className="max-w-5xl mx-auto pt-16">
-      <div
-        className="flex flex-col justify-start items-start gap-4"
-        style={{ left: "204.5px", top: "102px" }}
-      >
-        <div className="flex justify-start items-center gap-8 w-[1024px]">
+    <article className="flex flex-col min-h-screen max-w-5xl mx-auto pt-16">
+      <div className="flex flex-col justify-start items-start gap-4">
+        <div className="flex justify-start items-center gap-8 w-full">
           <div className="flex-grow flex items-center gap-[30px] h-[156px]">
             <div className="special_header flex-grow h-20">
               Frequently Asked Questions
@@ -47,7 +44,7 @@ const FaqPage: React.FC = () => {
         </div>
         <div className="flex flex-col gap-8 w-full">
           <div className="flex flex-col gap-12 w-full rounded-md">
-            <div className="flex flex-col gap-8 h-[652px] w-full">
+            <div className="flex flex-col gap-8 w-full">
               <FAQItem
                 question="What is Bitcoin Layers?"
                 answer="Bitcoin Layers is an educational tool that helps users understand the risks associated with various protocols that support Bitcoin and BTC the asset. We analyze risk primarily for protocols that claim to be a Bitcoin L2."
