@@ -31,7 +31,7 @@ export default function Navbar(): ReactElement {
           <Link href="/opcodes">Analysis</Link>
         </li>
         <li>
-          <Link href="/opcodes">Glossary</Link>
+          <Link href="glossary">Glossary</Link>
         </li>
         <li>
           <Link href="/faq">FAQ</Link>
