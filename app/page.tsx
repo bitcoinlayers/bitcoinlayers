@@ -1,11 +1,11 @@
 "use client";
 
 import React, { useState } from "react";
+// import { allLayers } from "@/util/layer_index";
+// import LayerTable from "@/components/tables/layerTablefromtemplate";
 import LayerTable from "@/components/tables/layerTable";
 import LayerTableRisks from "@/components/tables/layerTableRisks";
-// import Image from "next/image";
 import Hero from "@/components/hero";
-// import { allLayers } from "@/util/layer_index";
 
 type TabKey = "overview" | "risks";
 
@@ -13,6 +13,8 @@ export default function Home() {
   const [activeTab, setActiveTab] = useState<TabKey>("overview");
 
   const tabComponents = {
+    // overview: <LayerTable data={allLayers} />,
+    // data={allLayers.filter(layer => layer.live === "Mainnet")} />,
     overview: <LayerTable />,
     risks: <LayerTableRisks />,
   };
