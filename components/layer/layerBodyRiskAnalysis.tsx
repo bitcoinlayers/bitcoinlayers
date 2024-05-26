@@ -38,7 +38,7 @@ const RiskAnalysis: React.FC<RiskAnalysisProps> = ({
   }
 
   return (
-    <div className="content flex-grow p-4 sm:mt-0 pt-0">
+    <div className="content flex-grow p-4 mt-12 pt-0">
       <div
         className="self-stretch px-8 pt-6 pb-8 mb-6 bg-white rounded-xl border border-slate-300 flex-col justify-center items-end gap-4"
         id="riskanalysis"
