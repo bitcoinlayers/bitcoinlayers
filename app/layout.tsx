@@ -3,7 +3,7 @@ import { Inter } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Analytics } from "@/components/analytics";
 import Footer from "@/components/footer";
-import Header from "@/components/header";
+import Navbar from "@/components/navbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,7 +22,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <body className={`antialiased ${inter.className}`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <div className="mx-auto min-h-screen bg-bg_primary">
-            <Header />
+            <Navbar />
             <main>{children}</main>
             <Footer />
           </div>

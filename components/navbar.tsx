@@ -7,7 +7,7 @@ import { useState } from "react";
 import { ModeToggle } from "./mode-toggle";
 import Image from "next/image";
 
-export default function Header(): ReactElement {
+export default function Navbar(): ReactElement {
   const router = useRouter();
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -20,8 +20,8 @@ export default function Header(): ReactElement {
   };
 
   return (
-    <nav className="flex flex-row justify-between items-center w-full fixed min-h-[3rem] px-8">
-       <Link href="/" onClick={closeMenu}>
+    <nav className="flex flex-row justify-between items-center w-full fixed min-h-[3rem] px-8 bg-bg_primary bg-opacity-80 backdrop-blur-sm">
+      <Link href="/" onClick={closeMenu}>
         <div className="w-8 h-8">
           <Image src="/logo_noborder.png" alt="Logo" width={32} height={32} />
         </div>
