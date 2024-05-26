@@ -7,27 +7,25 @@ const FaqPage: React.FC = () => {
     answer,
   }: {
     question: string;
-    answer?: string;
+    answer: string;
   }) {
     return (
       <div className="bg-white rounded-xl border border-slate-300 flex flex-col justify-center items-start gap-4 p-8">
         <div className="flex items-center gap-3">
           <div className="rotate-180 flex items-center justify-center w-6 h-6">
-            <div className="relative w-6 h-6 rotate-180" />
+            <div className="relative w-6 h-6 rotate-180" />{ /** TODO add toggle for open/close */}
           </div>
           <div className="text-3xl font-light text-zinc-800 leading-9">
             {question}
           </div>
         </div>
-        {answer && (
-          <div className="flex flex-col justify-center items-start gap-8 w-full">
-            <div className="flex flex-col justify-start items-start gap-2 w-full">
-              <div className="text-base font-normal text-slate-500 leading-normal">
-                {answer}
-              </div>
+        <div className="flex flex-col justify-center items-start gap-8 w-full">
+          <div className="flex flex-col justify-start items-start gap-2 w-full">
+            <div className="text-base font-normal text-slate-500 leading-normal">
+              {answer}
             </div>
           </div>
-        )}
+        </div>
       </div>
     );
   }
