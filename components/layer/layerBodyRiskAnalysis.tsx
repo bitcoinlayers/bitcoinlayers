@@ -27,7 +27,7 @@ const RiskAnalysis: React.FC<{ section: any; riskFactors: string[] }> = ({
         <React.Fragment key={contentIndex}>
           <div className="flex flex-col justify-start items-start gap-2">
             <div className="self-stretch justify-between items-center inline-flex">
-              <div className="body_section">
+              <div className="body_risksection">
                 {RISK_FACTOR_CATEGORIES[contentIndex]}
               </div>
               <div className="h-8 justify-end items-center gap-2 flex">
@@ -44,7 +44,7 @@ const RiskAnalysis: React.FC<{ section: any; riskFactors: string[] }> = ({
                       contentIndex
                     ].toLowerCase()}-100 rounded-full`}
                   ></div>
-                  {/**TODO bg circles for numbers */}
+                  {/**TODO bg circles for numbers bg_low bg_midlow bg_midhigh bg_high*/}
                   <div
                     className={`text-center text-${riskFactors[
                       contentIndex

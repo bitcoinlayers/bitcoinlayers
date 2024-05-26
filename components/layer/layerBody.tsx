@@ -2,7 +2,6 @@ import React from "react";
 import { Layer } from "./layerProps";
 import Link from "next/link";
 import { parseTextWithLinks } from "@/util/parseTextWithLinks";
-import RiskAnalysis from "./layerBodyRiskAnalysis";
 
 const LayerBody: React.FC<{ layer: Layer }> = ({ layer }) => {
   return (
@@ -10,26 +9,22 @@ const LayerBody: React.FC<{ layer: Layer }> = ({ layer }) => {
       {layer.sections.map((section, index) => (
         <div
           key={index}
-          className="self-stretch px-8 pt-6 pb-8 bg-white rounded-xl border border-slate-300 flex-col justify-center items-end gap-4 mb-6"
+          className="self-stretch px-8 pt-6 pb-8 mb-6 bg-white rounded-xl border border-slate-300 flex-col justify-center items-end gap-4"
           id={section.id}
         >
           <div className="self-stretch justify-start items-start gap-4 inline-flex">
-            <div className="body_title">{section.title}</div>
+            <div className="body_section">{section.title}</div>
           </div>
-          {section.id === "riskanalysis" ? (
-            <RiskAnalysis section={section} riskFactors={layer.riskFactors} />
-          ) : (
-            section.content.map((content, contentIndex) => (
-              <div key={contentIndex} className="flex-col justify-start items-start gap-2 flex">
-                {content.title && (
-                  <div className="self-stretch justify-between items-center inline-flex">
-                    <div className="body_section">{content.title}</div>
-                  </div>
-                )}
-                <div className="">{parseTextWithLinks(content.content)}</div>
-              </div>
-            ))
-          )}
+          {section.content.map((content, contentIndex) => (
+            <React.Fragment key={contentIndex}>
+              {content.title && (
+                <div className={`self-stretch justify-between items-center inline-flex ${contentIndex !== 0 ? 'mt-24' : ''}`}>
+                  <div className="body_subsection mt-12">{content.title}</div>
+                </div>
+              )}
+              <div className="mt-3">{parseTextWithLinks(content.content)}</div>
+            </React.Fragment>
+          ))}
         </div>
       ))}
       <div

@@ -7,6 +7,7 @@ import Image from "next/image";
 import { useState } from "react";
 import LayerMenu from "@/components/layer/layerMenu";
 import LayerBody from "@/components/layer/layerBody";
+import RiskAnalysis from "@/components/layer/layerBodyRiskAnalysis";
 
 async function getLayerFromSlug(slug: string) {
   const layer = allLayers.find((layer) => layer.slug === slug);
@@ -48,6 +49,7 @@ export default async function LayerPage({
         </div>
         <div className="w-4/5 flex flex-col">
           {/* <LayerHead layer={layer} /> */}
+          <RiskAnalysis section={layer.sections[1]} riskFactors={layer.riskFactors} />
           <LayerBody layer={layer} />
         </div>
       </div>
