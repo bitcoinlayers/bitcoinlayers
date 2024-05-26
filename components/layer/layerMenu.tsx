@@ -29,7 +29,8 @@ const LayerMenu: React.FC<{ layer: Layer }> = ({ layer }) => {
 
   return (
     <nav className="sticky top-0 h-screen w-full overflow-y-auto pt-6">
-      <div className="flex flex-col justify-start items-start gap-4">
+      <div className="flex flex-col justify-start items-start gap-4"> 
+      {/**TODO menu is not updating with coloring to match the live section */}
         {[
           { id: "overview", title: "Overview" },
           { id: "riskanalysis", title: "Risk Analysis" },
