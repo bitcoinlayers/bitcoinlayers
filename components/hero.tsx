@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const Hero: React.FC = () => {
   return (
-    <div className="relative w-full overflow-hidden">
+    <div className="relative w-full overflow-hidden pt-[3rem]">
       <div
         style={{ position: "relative", width: "100%", paddingTop: "26.25%" }}
       >

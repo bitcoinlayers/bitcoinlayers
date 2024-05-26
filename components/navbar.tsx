@@ -20,7 +20,7 @@ export default function Navbar(): ReactElement {
   };
 
   return (
-    <nav className="flex flex-row justify-between items-center w-full fixed min-h-[3rem] px-8 bg-bg_primary bg-opacity-80 backdrop-blur-sm">
+    <nav className="flex flex-row justify-between items-center w-full fixed min-h-[3rem] px-8 bg-bg_primary bg-opacity-80 backdrop-blur-sm z-50 pointer-events-auto">
       <Link href="/" onClick={closeMenu}>
         <div className="w-8 h-8">
           <Image src="/logo_noborder.png" alt="Logo" width={32} height={32} />
