@@ -103,7 +103,7 @@ const OpcodeTable = ({ data }: Props) => {
   return (
     <div className="overflow-x-auto px-4 py-4 bg-lightsecondary dark:bg-secondary">
       {/* Table */}
-      <table className="rounded-lg bg-lightsecondary dark:bg-secondary table-fixed sm:w-full text-sm text-left rtl:text-right">
+      <table className="rounded-lg bg-lightsecondary table-fixed sm:w-full text-sm text-left rtl:text-right">
         <thead className="text-xs uppercase dark:text-bitcoin">
           <tr>
             <th

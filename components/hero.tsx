@@ -14,7 +14,7 @@ const Hero: React.FC = () => {
           style={{ objectFit: "cover" }}
         />
         <div className="absolute inset-0 flex flex-col justify-center items-center">
-          <h1 className="font-playfair italic font-black text-main text-hero text-14xl mb-4">
+          <h1 className="font-playfair italic font-black text-brand text-hero text-14xl mb-4">
             Layers
           </h1>
           <p className="flex items-center text-center text-base font-normal text-text_secondary">

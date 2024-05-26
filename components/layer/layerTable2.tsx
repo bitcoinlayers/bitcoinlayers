@@ -75,9 +75,9 @@ const LayerTable2 = ({ data }: Props) => {
   };
 
   return (
-    <div className="overflow-x-auto px-4 py-4 bg-lightsecondary dark:bg-secondary rounded-lg max-w-screen-lg mx-auto">
+    <div className="overflow-x-auto px-4 py-4 bg-lightsecondary rounded-lg max-w-screen-lg mx-auto">
       {/* Table */}
-      <table className="bg-lightsecondary dark:bg-secondary table-fixed sm:w-full text-sm text-left rtl:text-right">
+      <table className="bg-lightsecondary table-fixed sm:w-full text-sm text-left rtl:text-right">
         <thead className="text-xs uppercase dark:text-bitcoin">
           <tr>
             <th
@@ -183,7 +183,7 @@ const LayerTable2 = ({ data }: Props) => {
                     ))}
                     {/* Tooltip */}
                     <div className="absolute -right-12 top-10 w-64 mt-2 hidden group-hover:flex flex-col items-center before:content-[''] before:absolute before:bottom-full before:left-1/2 before:-translate-x-1/2 before:border-l-8 before:border-l-transparent before:border-r-8 before:border-r-transparent before:border-b-8 before:border-b-white z-10">
-                      <div className="bg-secondary text-white text-xs rounded border-2 border-white py-1 px-3">
+                      <div className="text-white text-xs rounded border-2 border-white py-1 px-3">
                         <p className="text-lg font-bold">Risk Factors</p>
                         {item.riskFactors.length > 0 ? (
                           item.riskFactors.map((riskFactor, index) => (

@@ -20,7 +20,7 @@ export default function Home() {
   };
 
   const buttonBaseStyles =
-    "py-2 px-4 font-bold mr-4 bg-lightsecondary dark:bg-secondary rounded-lg";
+    "py-2 px-4 font-bold mr-4 bg-lightsecondary rounded-lg";
   const buttonActiveStyles = "dark:text-bitcoin";
   const buttonInactiveStyles = "text-lighttableheader";
 

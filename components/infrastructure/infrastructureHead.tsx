@@ -11,7 +11,7 @@ const LinkButton = ({
   <a
     href={href}
     target="_blank"
-    className="inline-block sm:m-1 sm:px-4 px-3 py-2 rounded transition duration-300 ease-in-out bg-lightsecondary dark:bg-secondary no-underline font-header font-bold text-center"
+    className="inline-block sm:m-1 sm:px-4 px-3 py-2 rounded transition duration-300 ease-in-out bg-lightsecondary no-underline font-header font-bold text-center"
   >
     {children}
   </a>

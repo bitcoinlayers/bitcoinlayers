@@ -27,7 +27,7 @@ const OpcodeBody: React.FC<{ opcode: Opcode }> = ({ opcode }) => {
         {opcode.sections.map((section, index) => (
           <div
             key={index}
-            className="rounded-xl bg-lightsecondary dark:bg-secondary px-6 pt-0 pb-1 mb-6"
+            className="rounded-xl bg-lightsecondary px-6 pt-0 pb-1 mb-6"
             id={section.id}
           >
             <h2 className="pt-7">{section.title}</h2>
@@ -40,7 +40,7 @@ const OpcodeBody: React.FC<{ opcode: Opcode }> = ({ opcode }) => {
           </div>
         ))}
         <div
-          className="rounded-xl bg-lightsecondary dark:bg-secondary px-6 pt-0 pb-1 mb-6"
+          className="rounded-xl bg-lightsecondary px-6 pt-0 pb-1 mb-6"
           id="knowledgebits"
         >
           {" "}

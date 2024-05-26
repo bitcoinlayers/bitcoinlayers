@@ -21,7 +21,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
     <html lang="en" suppressHydrationWarning>
       <body className={`antialiased ${inter.className}`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <div className="mx-auto min-h-screen bg-lprimary">
+          <div className="mx-auto min-h-screen bg-bg_primary">
             <Header />
             <main>{children}</main>
             <Footer />
