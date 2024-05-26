@@ -28,7 +28,7 @@ export default function Navbar(): ReactElement {
       </Link>
       <ul className="flex flex-row items-center space-x-8 pr-8 text-public text-text_secondary">
         <li>
-          <Link href="/opcodes">Analysis</Link>
+          <Link href="/opcode">Analysis</Link>
         </li>
         <li>
           <Link href="glossary">Glossary</Link>

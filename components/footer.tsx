@@ -90,7 +90,7 @@ export default function Footer(): ReactElement {
                     <SectionItem href="/infrastructure">
                       Infrastructure
                     </SectionItem>
-                    <SectionItem href="/opcodes">Opcodes</SectionItem>
+                    <SectionItem href="/opcode">Opcodes</SectionItem>
                   </div>
                 </div>
                 <div className="grow flex flex-col justify-start items-start gap-4">

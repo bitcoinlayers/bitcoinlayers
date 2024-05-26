@@ -8,7 +8,7 @@
   "bitcoinSecurity": "No",
   "nativeToken": "None",
   "purpose": "Private payments",
-  "associatedLayers": "n/a",
+  "associatedLayers": "-",
   "links": [
     "https://fedimint.org",
     "https://fedimint.org",
