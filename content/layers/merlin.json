@@ -7,11 +7,11 @@
   "riskFactors": ["", "", "", ""],
   "purpose": "General",
   "btcBridge": "Custodial",
-  "settlement": "Offchain",
+  "settlement": "External",
   "btcLocked": 0,
   "executionEnv": "x",
   "consensus": "x",
-  "nativeToken": "x",
+  "nativeToken": "-",
   "feeToken": "x",
   "enshrinedBtc": "x",
   "links": [

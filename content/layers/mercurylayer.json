@@ -7,7 +7,7 @@
   "riskFactors": ["", "", "", "", ""],
   "purpose": "-",
   "btcBridge": "Smart Contract",
-  "settlement": "Offchain",
+  "settlement": "External",
   "btcLocked": 0,
   "executionEnv": "Statechain",
   "consensus": "Statechain",

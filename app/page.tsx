@@ -1,13 +1,11 @@
 "use client";
 
 import React, { useState } from "react";
-import LayerTab from "@/components/homepageTabs/layerTab";
-import LayerTabNew from "@/components/homepageTabs/layerTabNew";
-import Image from "next/image";
+import LayerTable from "@/components/tables/layerTable";
+import LayerTableRisks from "@/components/tables/layerTableRisks";
+// import Image from "next/image";
 import Hero from "@/components/hero";
-
-import { allLayers } from "@/util/layer_index";
-import LayerTable2 from "@/components/layer/layerTable2";
+// import { allLayers } from "@/util/layer_index";
 
 type TabKey = "overview" | "risks";
 
@@ -15,43 +13,57 @@ export default function Home() {
   const [activeTab, setActiveTab] = useState<TabKey>("overview");
 
   const tabComponents = {
-    overview: <LayerTab />,
-    risks: <LayerTabNew />,
+    overview: <LayerTable />,
+    risks: <LayerTableRisks />,
   };
-
-  const buttonBaseStyles =
-    "py-2 px-4 font-bold mr-4 bg-lightsecondary rounded-lg";
-  const buttonActiveStyles = "dark:text-bitcoin";
-  const buttonInactiveStyles = "text-lighttableheader";
 
   const handleTabClick = (tab: TabKey) => {
     setActiveTab(tab);
   };
+
   return (
     <div className="mx-auto">
       <Hero />
-      <div className="flex mb-4 justify-center">
-        <button
-          className={`${buttonBaseStyles} ${
-            activeTab === "overview" ? buttonActiveStyles : buttonInactiveStyles
-          }`}
-          onClick={() => handleTabClick("overview")}
-        >
-          Overview
-        </button>
-        <button
-          className={`${buttonBaseStyles} ${
-            activeTab === "risks"
-              ? buttonActiveStyles
-              : buttonInactiveStyles
-          }`}
-          onClick={() => handleTabClick("risks")}
-        >
-          Risks
-        </button>
+      <div className="flex mb-4 justify-center mt-16">
+        <div className="w-[196px] h-[30px] justify-start items-start gap-4 inline-flex">
+          <div
+            className={`h-[30px] px-4 py-[5px] rounded-full border-2 justify-center items-center gap-1.5 flex cursor-pointer ${
+              activeTab === "overview"
+                ? "bg-white border-orange-600"
+                : "border-slate-300"
+            }`}
+            onClick={() => handleTabClick("overview")}
+          >
+            <div
+              className={`text-center text-sm font-medium leading-tight ${
+                activeTab === "overview" ? "text-orange-600" : "text-slate-600"
+              }`}
+            >
+              Overview
+            </div>
+          </div>
+          <div
+            className={`h-[30px] rounded-full border-2 justify-center items-center gap-1 flex cursor-pointer ${
+              activeTab === "risks"
+                ? "bg-white border-orange-600"
+                : "border-slate-300"
+            }`}
+            onClick={() => handleTabClick("risks")}
+          >
+            <div className="grow shrink basis-0 h-[30px] px-4 py-[5px] justify-center items-center gap-1.5 flex">
+              <div
+                className={`text-center text-sm font-medium leading-tight ${
+                  activeTab === "risks" ? "text-orange-600" : "text-slate-600"
+                }`}
+              >
+                Risks
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       <div className="flex mb-4 justify-center">
-      {tabComponents[activeTab]}
+        {tabComponents[activeTab]}
       </div>
     </div>
   );

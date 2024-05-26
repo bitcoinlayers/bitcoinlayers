@@ -7,7 +7,7 @@
   "riskFactors": ["High", "Medium", "Medium", "Medium"],
   "purpose": "General",
   "btcBridge": "Permissionless Multisig",
-  "settlement": "Offchain",
+  "settlement": "External",
   "btcLocked": "-",
   "executionEnv": "EVM",
   "consensus": "Satoshi Plus",

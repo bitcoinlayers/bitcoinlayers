@@ -7,7 +7,7 @@
   "riskFactors": ["High", "Medium", "Medium", "High"],
   "purpose": "Bitcoin Apps",
   "btcBridge": "Various",
-  "settlement": "Offchain",
+  "settlement": "External",
   "btcLocked": "-",
   "executionEnv": "EVM",
   "consensus": "Ethereum",

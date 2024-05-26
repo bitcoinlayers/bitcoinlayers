@@ -7,7 +7,7 @@
   "riskFactors": ["", "", "", ""],
   "purpose": "General",
   "btcBridge": "Federated Multisig",
-  "settlement": "Offchain",
+  "settlement": "External",
   "btcLocked": 10,
   "executionEnv": "-",
   "consensus": "x",

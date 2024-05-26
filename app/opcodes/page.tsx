@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import OpcodeTab from "@/components/homepageTabs/opcodeTab";
+import OpcodeTab from "@/components/tables/opcodeTab";
 import Image from "next/image";
 
 type TabKey = "layers" | "infrastructure" | "bridges";

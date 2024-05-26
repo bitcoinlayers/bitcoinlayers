@@ -7,7 +7,7 @@
   "riskFactors": ["High", "Medium", "Medium", "Medium"],
   "purpose": "General",
   "btcBridge": "Centralized Multisig(s)",
-  "settlement": "Offchain",
+  "settlement": "External",
   "btcLocked": 348,
   "executionEnv": "Clarity",
   "consensus": "PoX",

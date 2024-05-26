@@ -7,7 +7,7 @@
   "riskFactors": ["", "", "", ""],
   "purpose": "General",
   "btcBridge": "Under Review",
-  "settlement": "Offchain",
+  "settlement": "External",
   "btcLocked": 0,
   "executionEnv": "x",
   "consensus": "x",

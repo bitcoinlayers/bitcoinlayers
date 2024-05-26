@@ -24,4 +24,7 @@
   .body_risksection {
     @apply text-zinc-800 text-2xl font-medium leading-normal mb-2 text-text_primary;
   }
+  .table_header {
+    @apply text-zinc-800 text-sm font-medium leading-tight mb-2 text-text_primary;
+  }
 }
