@@ -9,6 +9,15 @@ interface Subsection {
   content: string;
 }
 
+interface Risksection {
+  category: string,
+  score: number,
+  tier: string,
+  title: string;
+  content: string;
+}
+
+
 interface kbit {
   url: string;
   displayText: string;
@@ -31,8 +40,8 @@ interface LayerProps {
   feeToken: string;
   enshrinedBtc: string;
   links: string[];
-  description: Subsection;
-  riskAnalysis: Subsection[];
+  description: string;
+  riskAnalysis: Risksection[];
   sections: Section[];
   knowledgeBits: kbit[];
 }
@@ -55,8 +64,8 @@ export type Layer = {
   feeToken: string;
   enshrinedBtc: string;
   links: string[];
-  description: Subsection;
-  riskAnalysis: Subsection[];
+  description: string;
+  riskAnalysis: Risksection[];
   sections: Section[];
   knowledgeBits: kbit[];
   /** MDX file body */

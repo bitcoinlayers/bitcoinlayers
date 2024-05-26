@@ -22,6 +22,37 @@
     "https://www.anduro.io/",
     "https://www.anduro.io/"
   ],
+  "description": "Coordinate is a UTXO-based sidechain that acts enables users to more easily use applications like Ordinals, BRC-20s and standard Bitcoin transactions. Coordinate will be a part of the Anduro ecosystem.",
+  "riskAnalysis": [
+    {
+      "category": "Unilateral Exits",
+      "score": 0,
+      "tier": "",
+      "title": "",
+      "content": ""
+    },
+    {
+      "category": "Data Availability",
+      "score": 0,
+      "tier": "",
+      "title": "",
+      "content": ""
+    },
+    {
+      "category": "Block Production",
+      "score": 0,
+      "tier": "",
+      "title": "",
+      "content": ""
+    },
+    {
+      "category": "State Validation",
+      "score": 0,
+      "tier": "",
+      "title": "",
+      "content": ""
+    }
+  ],
   "sections": [
     {
       "id": "description",

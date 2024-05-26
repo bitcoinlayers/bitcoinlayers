@@ -22,6 +22,37 @@
     "https://www.anduro.io/",
     "https://www.anduro.io/"
   ],
+  "description": "Alys is one of the sidechains being developed through the Anduro project. It will be an EVM sidechain with general purpose smart contracts. Alys will be a part of the Anduro ecosystem.",
+  "riskAnalysis": [
+    {
+      "category": "Unilateral Exits",
+      "score": 0,
+      "tier": "",
+      "title": "",
+      "content": ""
+    },
+    {
+      "category": "Data Availability",
+      "score": 0,
+      "tier": "",
+      "title": "",
+      "content": ""
+    },
+    {
+      "category": "Block Production",
+      "score": 0,
+      "tier": "",
+      "title": "",
+      "content": ""
+    },
+    {
+      "category": "State Validation",
+      "score": 0,
+      "tier": "",
+      "title": "",
+      "content": ""
+    }
+  ],
   "sections": [
     {
       "id": "description",

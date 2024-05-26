@@ -22,6 +22,37 @@
     "https://github.com/ZeroSync/ZeroSync",
     "https://twitter.com/ZeroSync_"
   ],
+  "description": "zkCoins is a proposed zkCSV protocol that would support confidential payments for BTC and tokenized assets. The Zerosync team is developing BitVM to create improved trust assumptions for bridging between the Bitcoin mainchain and the zkCoins protocol.",
+  "riskAnalysis": [
+    {
+      "category": "Unilateral Exits",
+      "score": 0,
+      "tier": "",
+      "title": "",
+      "content": ""
+    },
+    {
+      "category": "Data Availability",
+      "score": 0,
+      "tier": "",
+      "title": "",
+      "content": ""
+    },
+    {
+      "category": "Block Production",
+      "score": 0,
+      "tier": "",
+      "title": "",
+      "content": ""
+    },
+    {
+      "category": "State Validation",
+      "score": 0,
+      "tier": "",
+      "title": "",
+      "content": ""
+    }
+  ],
   "sections": [
     {
       "id": "description",

@@ -26,6 +26,7 @@ interface BridgeProps {
   feeToken: string;
   enshrinedBtc: string;
   links: string[];
+  description: string;
   sections: Section[];
 }
 
@@ -47,6 +48,7 @@ export type Bridge = {
   feeToken: string;
   enshrinedBtc: string;
   links: string[];
+  description: string;
   sections: Section[];
   /** MDX file body */
   slug: string;

@@ -17,17 +17,8 @@
     "https://github.com/fedimint",
     "https://twitter.com/fedimint"
   ],
-   "sections": [
-    {
-      "id": "description",
-      "title": "Description",
-      "content": [
-        {
-          "title": "Description",
-          "content": "Fedimints are a module based system for building federated applications. They are currently focused on building federated ecash mints, which would offer improved privacy for peer-to-peer payments. The construction of a Fedimint sees users lock their BTC into a Federation's multi-sig, and receive an Ecash IOU representing the BTC in the Federation. Fedimints are also useful for community custody, an idea that sees users trust members of their local community (e.g., family members) with the custody of their Bitcoin assets."
-        }
-      ]
-    },
+  "description": "Fedimints are a module based system for building federated applications. They are currently focused on building federated ecash mints, which would offer improved privacy for peer-to-peer payments. The construction of a Fedimint sees users lock their BTC into a Federation's multi-sig, and receive an Ecash IOU representing the BTC in the Federation. Fedimints are also useful for community custody, an idea that sees users trust members of their local community (e.g., family members) with the custody of their Bitcoin assets.",
+  "sections": [
     {
       "id": "technology",
       "title": "Risk Bits",
@@ -98,7 +89,7 @@
         }
       ]
     }
-  ], 
+  ],
   "knowledgeBits": [
     {
       "url": "https://fedimint.org",
@@ -114,4 +105,3 @@
     }
   ]
 }
-

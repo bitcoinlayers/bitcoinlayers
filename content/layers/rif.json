@@ -22,6 +22,37 @@
     "https://dev.rootstock.io/rif/rollup/dev-reference/",
     "https://twitter.com/RIFtechnology"
   ],
+  "description": "Rif is a proposed rollup design that would settle on the Rootstock sidechain. It is a fork of the zkSync codebase.",
+  "riskAnalysis": [
+    {
+      "category": "Unilateral Exits",
+      "score": 0,
+      "tier": "",
+      "title": "",
+      "content": ""
+    },
+    {
+      "category": "Data Availability",
+      "score": 0,
+      "tier": "",
+      "title": "",
+      "content": ""
+    },
+    {
+      "category": "Block Production",
+      "score": 0,
+      "tier": "",
+      "title": "",
+      "content": ""
+    },
+    {
+      "category": "State Validation",
+      "score": 0,
+      "tier": "",
+      "title": "",
+      "content": ""
+    }
+  ],
   "sections": [
     {
       "id": "description",

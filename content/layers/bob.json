@@ -22,6 +22,37 @@
     "https://github.com/bob-collective/bob",
     "https://twitter.com/build_on_bob"
   ],
+  "description": "BOB is an optimistic rollup that serves as an application layer for Bitcoin. They have launched as a rollup on top of Ethereum, with plans to derive more security from Bitcoin miners, and full nodes, over time. Its relation to Bitcoin, currently, is similar to that of a sidechain as it is an alternative consensus protocol with a two-way peg(s) between it and the Bitcoin mainchain.",
+  "riskAnalysis": [
+    {
+      "category": "Unilateral Exits",
+      "score": 0,
+      "tier": "High",
+      "title": "Bitcoin users trust various consensus mechanisms for BTC custody",
+      "content": "For Bitcoin assets, there are no unilateral exits from the BOB chain. Users trust a variety of consensus participants to permit withdrawals from the BOB chain back to Bitcoin. They also trust a variety of consensus participants to secure two-way pegs custodying the BTC.\nBOB primarily uses two BTC synthetics on its chain, tBTC and wBTC. Both are ERC-20 tokens on Ethereum. tBTC’s two-way peg on BOB is managed by a ⅗ multi-sig, but it can be upgraded to allow Threshold governance to manage the minting and burning of tBTC on BOB. Threshold governance relies on a separate token and consensus mechanism. wBTC is effectively managed by a centralized custodian, BitGo. Currently, both of these tokens are minted on BOB via its native Ethereum bridge.\nUsers trust that the bridge operators will not steal their BTC, the BOB proposer to not publish a malicious, unchallenged state transition, or BOB’s proxy admin to create a malicious smart contract upgrade.\nIn the event of a malicious smart contract upgrade, there is no exit window for BOB users. This is the same across all chains built on the OP Stack."
+    },
+    {
+      "category": "Data Availability",
+      "score": 0,
+      "tier": "Medium",
+      "title": "Offchain via Ethereum full nodes",
+      "content": "The data for BOB’s state is stored on the Ethereum blockchain. Anyone can run an Ethereum node and verify the state of BOB."
+    },
+    {
+      "category": "Block Production",
+      "score": 0,
+      "tier": "Medium",
+      "title": "Block production is managed by a centralized operator, but forced inclusion to Ethereum L1 possible",
+      "content": "Currently, BOB’s sequencer is managed by one entity. The BOB sequencer can censor transactions and would also cause liveness failures in the rollup if it went down. Users can, however, bypass the sequencer and send their transactions directly to the Ethereum L1 contract. Users do, however, trust that a permissioned proposer will publish the latest state root on the Ethereum L1, permitting withdrawals."
+    },
+    {
+      "category": "State Validation",
+      "score": 0,
+      "tier": "High",
+      "title": "State validation mechanism in development",
+      "content": "Since BOB is built on the OP Stack, it currently does not have active fraud proofs. This means that the BOB sequencer can post malicious state transitions that could result in users losing their funds. Users trust that a challenger, which is currently run by a 4/6 multi-sig, will be online and challenge proposed malicious state transitions."
+    }
+  ],
   "sections": [
     {
       "id": "description",
@@ -30,28 +61,6 @@
         {
           "title": "BOB is an Ethereum rollup",
           "content": "BOB is an optimistic rollup that serves as an application layer for Bitcoin. They have launched as a rollup on top of Ethereum, with plans to derive more security from Bitcoin miners, and full nodes, over time. Its relation to Bitcoin, currently, is similar to that of a sidechain as it is an alternative consensus protocol with a two-way peg(s) between it and the Bitcoin mainchain."
-        }
-      ]
-    },
-    {
-      "id": "riskanalysis",
-      "title": "Risk Analysis",
-      "content": [
-        {
-          "title": "Bitcoin users trust various consensus mechanisms for BTC custody",
-          "content": "For Bitcoin assets, there are no unilateral exits from the BOB chain. Users trust a variety of consensus participants to permit withdrawals from the BOB chain back to Bitcoin. They also trust a variety of consensus participants to secure two-way pegs custodying the BTC.\nBOB primarily uses two BTC synthetics on its chain, tBTC and wBTC. Both are ERC-20 tokens on Ethereum. tBTC’s two-way peg on BOB is managed by a ⅗ multi-sig, but it can be upgraded to allow Threshold governance to manage the minting and burning of tBTC on BOB. Threshold governance relies on a separate token and consensus mechanism. wBTC is effectively managed by a centralized custodian, BitGo. Currently, both of these tokens are minted on BOB via its native Ethereum bridge.\nUsers trust that the bridge operators will not steal their BTC, the BOB proposer to not publish a malicious, unchallenged state transition, or BOB’s proxy admin to create a malicious smart contract upgrade.\nIn the event of a malicious smart contract upgrade, there is no exit window for BOB users. This is the same across all chains built on the OP Stack."
-        },
-        {
-          "title": "Offchain via Ethereum full nodes",
-          "content": "The data for BOB’s state is stored on the Ethereum blockchain. Anyone can run an Ethereum node and verify the state of BOB."
-        },
-        {
-          "title": "Block production is managed by a centralized operator, but forced inclusion to Ethereum L1 possible",
-          "content": "Currently, BOB’s sequencer is managed by one entity. The BOB sequencer can censor transactions and would also cause liveness failures in the rollup if it went down. Users can, however, bypass the sequencer and send their transactions directly to the Ethereum L1 contract. Users do, however, trust that a permissioned proposer will publish the latest state root on the Ethereum L1, permitting withdrawals."
-        },
-        {
-          "title": "State validation mechanism in development",
-          "content": "Since BOB is built on the OP Stack, it currently does not have active fraud proofs. This means that the BOB sequencer can post malicious state transitions that could result in users losing their funds. Users trust that a challenger, which is currently run by a 4/6 multi-sig, will be online and challenge proposed malicious state transitions."
         }
       ]
     },
@@ -149,7 +158,7 @@
       "url": "https://l2beat.com/scaling/projects/optimism",
       "displayText": "A risk review of the OP Mainnet chain on Ethereum, which has similar trust assumptions as the BOB chain as BOB is built on the OP Stack"
     },
-   {
+    {
       "url": "https://mirror.xyz/0xE4dF449bDC1ec8f7688F68F7E839f1370617Ac73/UvQH9D3RyVcozOlz091gLKnbX8aqn8goFVYtHVmin-w",
       "displayText": "A blog covering R&D areas related to Bitcoin security on BOB."
     }

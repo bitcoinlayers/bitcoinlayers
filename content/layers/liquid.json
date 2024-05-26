@@ -22,6 +22,37 @@
     "https://github.com/ElementsProject/elements",
     "https://twitter.com/bitcoinlayers"
   ],
+  "description": "The Liquid Network is a sidechain that enables users to perform confidential transactions, swaps, issue tokenized assets, and more, on the sidechain. It is managed by a permissioned federation, and does not use the Bitcoin Layer 1 for security. It uses a federated multi-sig to custody the BTC that is used to issue BTC IOUs (L-BTC) on the sidechain.",
+  "riskAnalysis": [
+    {
+      "category": "Unilateral Exits",
+      "score": 0,
+      "tier": "High",
+      "title": "Users trust Federation with permitting exits",
+      "content": "BTC withdrawals are currently permissioned by the Liquid federation. Users must trust that when they deposit BTC into the Liquid blockchain, the signers will not collude and steal their BTC. Most users typically acquire L-BTC on secondary marketplaces, not through bridge deposits. Supported marketplaces for L-BTC are also members of the Liquid federation. Users trust that the federation will not steal the BTC, which would leave their newly acquired L-BTC worthless. The BTC that backs L-BTC is held in a 11-15 multi-sig wallet where 11 (⅔ + 1) of the signers would need to be compromised in order to steal the BTC."
+    },
+    {
+      "category": "Data Availability",
+      "score": 0,
+      "tier": "Medium",
+      "title": "Stored offchain (with node software open-source)",
+      "content": "The data for Liquid sidechain is stored on the Liquid blockchain. A federation is responsible for publishing and validating transactions that are stored on the blockchain. Node software is open-source and anyone can run a node and verify the state of Liquid. However, node operators connect to the network through “bridge nodes” that are run by permissioned actors. Access to bridge nodes can presumably be cut off should these (roughly 65) actors collude."
+    },
+    {
+      "category": "Block Production",
+      "score": 0,
+      "tier": "High",
+      "title": "Functionaries propose blocks",
+      "content": "Liquid blocks are proposed and finalized by the Liquid federation. The role of block production is permissioned, meaning that it is not possible for anyone with sufficient resources to join the network as a block producer. Users trust that the federation will not censor them and include their transactions in Liquid blocks."
+    },
+    {
+      "category": "State Validation",
+      "score": 0,
+      "tier": "High",
+      "title": "Functionaires sign proposed sidechain blocks",
+      "content": "The Liquid Federation's functionaries sign blocks (proposed by another functionary member) for the sidechain. A block must be signed by 2/3 + 1 of the functionaries to be included in the Liquid chain."
+    }
+  ],
   "sections": [
     {
       "id": "description",
@@ -29,28 +60,6 @@
       "content": [
         {
           "content": "The Liquid Network is a sidechain that enables users to perform confidential transactions, swaps, issue tokenized assets, and more, on the sidechain. It is managed by a permissioned federation, and does not use the Bitcoin Layer 1 for security. It uses a federated multi-sig to custody the BTC that is used to issue BTC IOUs (L-BTC) on the sidechain."
-        }
-      ]
-    },
-    {
-      "id": "riskanalysis",
-      "title": "Risk Analysis",
-      "content": [
-        {
-          "title": "Users trust Federation with permitting exits",
-          "content": "BTC withdrawals are currently permissioned by the Liquid federation. Users must trust that when they deposit BTC into the Liquid blockchain, the signers will not collude and steal their BTC. Most users typically acquire L-BTC on secondary marketplaces, not through bridge deposits. Supported marketplaces for L-BTC are also members of the Liquid federation. Users trust that the federation will not steal the BTC, which would leave their newly acquired L-BTC worthless. The BTC that backs L-BTC is held in a 11-15 multi-sig wallet where 11 (⅔ + 1) of the signers would need to be compromised in order to steal the BTC."
-        },
-        {
-          "title": "Stored offchain (with node software open-source)",
-          "content": "The data for Liquid sidechain is stored on the Liquid blockchain. A federation is responsible for publishing and validating transactions that are stored on the blockchain. Node software is open-source and anyone can run a node and verify the state of Liquid. However, node operators connect to the network through “bridge nodes” that are run by permissioned actors. Access to bridge nodes can presumably be cut off should these (roughly 65) actors collude."
-        },
-        {
-          "title": "Functionaries propose blocks",
-          "content": "Liquid blocks are proposed and finalized by the Liquid federation. The role of block production is permissioned, meaning that it is not possible for anyone with sufficient resources to join the network as a block producer. Users trust that the federation will not censor them and include their transactions in Liquid blocks."
-        },
-        {
-          "title": "Functionaires sign proposed sidechain blocks",
-          "content": "The Liquid Federation's functionaries sign blocks (proposed by another functionary member) for the sidechain. A block must be signed by 2/3 + 1 of the functionaries to be included in the Liquid chain."
         }
       ]
     },

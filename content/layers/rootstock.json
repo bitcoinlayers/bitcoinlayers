@@ -22,6 +22,37 @@
     "https://github.com/rsksmart",
     "https://twitter.com/rootstock_io"
   ],
+  "description": "Rootstock is a merge-mined, EVM-compatible bitcoin sidechain. As a merge-mined network, bitcoin miners can concurrently mine for Rootstock's consensus. The network is not secured by another token. As an EVM-compatible network, developers can deploy Solidity and other EVM-compatible smart contracts with arbitrary logic, creating a host of new applications for BTC. Rootstock has an enshrined cross-chain BTC asset called ''Smart Bitcoin'' (RBTC), which is pegged 1:1 to BTC and secured by a permissioned multisig federation.",
+  "riskAnalysis": [
+    {
+      "category": "Unilateral Exits",
+      "score": 0,
+      "tier": "High",
+      "title": "No unilateral exits permitted",
+      "content": "The bridge between bitcoin and Rootstock is secured by a 5-of-9 federated multisig, referred to as the Powpeg (Proof of Work Peg). Users trust this mechanism to not steal their BTC and to also permit withdrawals. Learn more about the Powpeg in the technology section below."
+    },
+    {
+      "category": "Data Availability",
+      "score": 0,
+      "tier": "Medium",
+      "title": "Offchain via sidechain nodes",
+      "content": "The data for Rootstock's state updates is stored on the Rootstock blockchain. Anyone can run a Rootstock node and verify the state of the Rootstock blockchain. So long as there is at least one non-pruned Rootstock full node online, users will be able to recover the full history and state of the Rootstock blockchain."
+    },
+    {
+      "category": "Block Production",
+      "score": 0,
+      "tier": "Medium",
+      "title": "Block production is permissionless",
+      "content": "Block production is permissionless. Anyone who is willing and able to merge-mine Rootstock and bitcoin can produce Rootstock blocks and earn rewards. If interested parties do not possess enough hashpower to competitively solo mine, they can join a mining pool that supports Rootstock merged mining."
+    },
+    {
+      "category": "State Validation",
+      "score": 0,
+      "tier": "Medium",
+      "title": "Sidechain miners sign proposed blocks",
+      "content": "Sidechain miners sign proposed blocks in the sidechain."
+    }
+  ],
   "sections": [
     {
       "id": "description",
@@ -29,28 +60,6 @@
       "content": [
         {
           "content": "Rootstock is a merge-mined, EVM-compatible bitcoin sidechain. As a merge-mined network, bitcoin miners can concurrently mine for Rootstock's consensus. The network is not secured by another token. As an EVM-compatible network, developers can deploy Solidity and other EVM-compatible smart contracts with arbitrary logic, creating a host of new applications for BTC. Rootstock has an enshrined cross-chain BTC asset called ''Smart Bitcoin'' (RBTC), which is pegged 1:1 to BTC and secured by a permissioned multisig federation."
-        }
-      ]
-    },
-    {
-      "id": "riskanalysis",
-      "title": "Risk Analysis",
-      "content": [
-        {
-          "title": "No unilateral exits permitted",
-          "content": "The bridge between bitcoin and Rootstock is secured by a 5-of-9 federated multisig, referred to as the Powpeg (Proof of Work Peg). Users trust this mechanism to not steal their BTC and to also permit withdrawals. Learn more about the Powpeg in the technology section below."
-        },
-        {
-          "title": "Offchain via sidechain nodes",
-          "content": "The data for Rootstock's state updates is stored on the Rootstock blockchain. Anyone can run a Rootstock node and verify the state of the Rootstock blockchain. So long as there is at least one non-pruned Rootstock full node online, users will be able to recover the full history and state of the Rootstock blockchain."
-        },
-        {
-          "title": "Block production is permissionless",
-          "content": "Block production is permissionless. Anyone who is willing and able to merge-mine Rootstock and bitcoin can produce Rootstock blocks and earn rewards. If interested parties do not possess enough hashpower to competitively solo mine, they can join a mining pool that supports Rootstock merged mining."
-        },
-        {
-          "title": "Sidechain miners sign proposed blocks",
-          "content": "Sidechain miners sign proposed blocks in the sidechain."
         }
       ]
     },
@@ -73,8 +82,8 @@
           "content": "Merged mining is a crucial part of Rootstock’s consensus mechanism that allows coupling between bitcoin and Rootstock. Essentially, BTC mining pools add references to Rootstock blocks in mining jobs sent to mining participants. Additionally, because the Rootstock mining algorithm is the same as bitcoin’s, there is little added energy expenditure. This combined with miners earning a portion of transaction fees from Rootstock block mining creates an incentive for providing security to both BTC and to Rootstock."
         },
         {
-        "title": "Powpeg",
-        "content": "The Powpeg is operated by special nodes referred to as Powpeg functionaries. The Powpeg functionaries are: BlockVenture, Collider, Constata, Luxor, MyCointainer, pNetwork, Rootstock Labs, Sovryn, and Xapo.\nEach functionary operates a Powpeg node. A Powpeg node combines a specialized Rootstock full node with a Proof of Work Hardware Security Module (PowHSM). A PowHSM is a hardware device designed to remove human control over the bitcoin private keys used to sign Powpeg multisig transactions. PowHSM operators cannot manually sign transactions, extract private keys, or perform any other functions with the private keys. The PowHSM firmware is open source and available in the Rootstock GitHub repo. PowHSM operators are publicly verifiable using remote attestation.\nRequests by users to withdraw BTC from the Powpeg bridge must be approved by a majority of Powpeg functionaries. If a functionary's PowHSM is online, then it will automatically sign a withdrawal transaction after the withdrawal request reaches a sufficient number of confirmations on the Rootstock blockchain.\nBTC held in the Powpeg bridge can be stolen if a majority of PowHSM devices are compromised.\nAdditionally, the Powpeg uses a time-locked emergency 3-of-4 federated multisig as a safeguard against PowHSM device failures or possible external intervention. The emergency multisig automatically gains spending authority over the funds in the Powpeg bridge if a majority of PowHSM devices are unresponsive for a period of one year. The emergency multisig signers are: Rootstock Labs, MoneyOnChain, Jameson Lopp, and Adrian Eidelman. In the event of an emergency, these signatories will evaluate the situation and coordinate for the recovery of funds.\nBTC held in the emergency multisig can be lost or stolen if a majority of the emergency multisig signers are compromised.\nIf BTC held in the Powpeg bridge (or emergency multisig, if the emergency multisig procedure has been activated) is lost or stolen, then users will not be able to convert RBTC to BTC and exit the bridge.\nTo potentially improve the trust assumptions of the Rootstock bitcoin bridge, Rootstock Labs is funding research into BitVMX, a protocol that can be used to develop a trust-minimized 1-of-N federated bitcoin bridge."
+          "title": "Powpeg",
+          "content": "The Powpeg is operated by special nodes referred to as Powpeg functionaries. The Powpeg functionaries are: BlockVenture, Collider, Constata, Luxor, MyCointainer, pNetwork, Rootstock Labs, Sovryn, and Xapo.\nEach functionary operates a Powpeg node. A Powpeg node combines a specialized Rootstock full node with a Proof of Work Hardware Security Module (PowHSM). A PowHSM is a hardware device designed to remove human control over the bitcoin private keys used to sign Powpeg multisig transactions. PowHSM operators cannot manually sign transactions, extract private keys, or perform any other functions with the private keys. The PowHSM firmware is open source and available in the Rootstock GitHub repo. PowHSM operators are publicly verifiable using remote attestation.\nRequests by users to withdraw BTC from the Powpeg bridge must be approved by a majority of Powpeg functionaries. If a functionary's PowHSM is online, then it will automatically sign a withdrawal transaction after the withdrawal request reaches a sufficient number of confirmations on the Rootstock blockchain.\nBTC held in the Powpeg bridge can be stolen if a majority of PowHSM devices are compromised.\nAdditionally, the Powpeg uses a time-locked emergency 3-of-4 federated multisig as a safeguard against PowHSM device failures or possible external intervention. The emergency multisig automatically gains spending authority over the funds in the Powpeg bridge if a majority of PowHSM devices are unresponsive for a period of one year. The emergency multisig signers are: Rootstock Labs, MoneyOnChain, Jameson Lopp, and Adrian Eidelman. In the event of an emergency, these signatories will evaluate the situation and coordinate for the recovery of funds.\nBTC held in the emergency multisig can be lost or stolen if a majority of the emergency multisig signers are compromised.\nIf BTC held in the Powpeg bridge (or emergency multisig, if the emergency multisig procedure has been activated) is lost or stolen, then users will not be able to convert RBTC to BTC and exit the bridge.\nTo potentially improve the trust assumptions of the Rootstock bitcoin bridge, Rootstock Labs is funding research into BitVMX, a protocol that can be used to develop a trust-minimized 1-of-N federated bitcoin bridge."
         },
         {
           "title": "Ethereum Virtual Machine",

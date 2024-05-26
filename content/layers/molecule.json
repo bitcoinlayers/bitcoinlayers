@@ -22,6 +22,39 @@
     "https://twitter.com/moleculebtc",
     "https://twitter.com/moleculebtc"
   ],
+  "description":
+   "Molecule is a proposed Layer 2 design that will leverage the Solana virtal machine. They have recently announced the project, with information on the design expected to be coming soon. Little information is available on how it inherits Bitcoin security."
+  ,
+  "riskAnalysis": [
+    {
+      "category": "Unilateral Exits",
+      "score": 0,
+      "tier": "",
+      "title": "",
+      "content": ""
+    },
+    {
+      "category": "Data Availability",
+      "score": 0,
+      "tier": "",
+      "title": "",
+      "content": ""
+    },
+    {
+      "category": "Block Production",
+      "score": 0,
+      "tier": "",
+      "title": "",
+      "content": ""
+    },
+    {
+      "category": "State Validation",
+      "score": 0,
+      "tier": "",
+      "title": "",
+      "content": ""
+    }
+  ],
   "sections": [
     {
       "id": "description",
