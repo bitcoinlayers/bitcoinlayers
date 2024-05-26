@@ -2,10 +2,11 @@
 import { notFound } from "next/navigation";
 import LayerHead from "@/components/layer/layerHead";
 import LayerSummary from "@/components/layer/layerSummary";
-import LayerBody from "@/components/layer/layerBody";
 import { allLayers, allLayerSlugs } from "@/util/layer_index";
 import Image from "next/image";
 import { useState } from "react";
+import LayerMenu from "@/components/layer/layerMenu";
+import LayerBody from "@/components/layer/layerBody";
 
 async function getLayerFromSlug(slug: string) {
   const layer = allLayers.find((layer) => layer.slug === slug);
@@ -33,7 +34,7 @@ export default async function LayerPage({
 
   return (
     <article className="flex flex-col min-h-screen max-w-5xl mx-auto pt-24">
-      <div className="flex justify-start items-center gap-8">
+      <div className="flex justify-start items-center gap-8 my-12">
         <div className="flex justify-center items-center">
           <LayerImage title={layer.title} src={`/logos/${layer.slug}.png`} /> {/**TODO fix img sizes. they're blurry here */}
         </div>
@@ -41,19 +42,15 @@ export default async function LayerPage({
           <h1 className="layer_header flex-grow">{layer.title}</h1>
         </div>
       </div>
-      {/* <div className="grid grid-cols-3 gap-4">
-        <div className="col-span-3 md:col-span-2 pr-4">
-          <LayerHead layer={layer} />
-          <div className="mt-8">
-            <LayerSummary layer={layer} />
-          </div>
+      <div className="container flex">
+        <div className="w-1/5">
+          <LayerMenu layer={layer} />
         </div>
-        <div className="col-span-3 md:col-span-1">
-          <LayerChart layer={layer} />
+        <div className="w-4/5 flex flex-col">
+          {/* <LayerHead layer={layer} /> */}
+          <LayerBody layer={layer} />
         </div>
       </div>
-      <LayerBody layer={layer} />
-      */}
     </article>
   );
 }
