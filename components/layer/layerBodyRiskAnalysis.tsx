@@ -9,21 +9,17 @@ const RiskAnalysis: React.FC<{ section: any; riskFactors: string[] }> = ({
   const getRiskColorClass = (riskFactor: string) => {
     switch (riskFactor) {
       case "Low":
-        return "text-[#52C41A]";
+        return "text-text_risk_low";
       case "Medium":
-        return "text-[#F4CD00]"; //TODO change to medium Low
+        return "text-text_risk_midlow"; //TODO change to midlow
       case "Medium-High":
-        return "text-[#F99107]";
+        return "text-text_risk_midhigh";
       case "High":
-        return "text-[#FF4D4F]";
+        return "text-text_risk_high";
       default:
-        return "text-[#C9D0D8]";
+        return "text-text_secondary";
     }
   };
-  //bg high FFDFDF
-  //bg medium-high #fff1c6
-  //bg medium-low  #FEFFC1
-  //bg low #dffbcc
 
   return (
     <>
