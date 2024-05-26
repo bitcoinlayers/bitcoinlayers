@@ -1,7 +1,5 @@
 "use client";
 import { notFound } from "next/navigation";
-import LayerHead from "@/components/layer/layerHead";
-import LayerSummary from "@/components/layer/layerSummary";
 import { allLayers, allLayerSlugs } from "@/util/layer_index";
 import Image from "next/image";
 import { useState } from "react";
@@ -51,7 +49,6 @@ export default async function LayerPage({
         <div className="w-4/5 flex flex-col">
           <LayerOverview layer={layer} />
           <RiskAnalysis riskAnalysis={layer.riskAnalysis} riskFactors={layer.riskFactors} />
-
           <LayerBody layer={layer} />
         </div>
       </div>

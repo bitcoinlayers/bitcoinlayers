@@ -24,6 +24,22 @@ const SectionItem = ({
   </div>
 );
 
+const SectionItemExternal = ({
+  children,
+  href,
+}: {
+  children: React.ReactNode;
+  href: string;
+}) => (
+  <div className="flex justify-start items-center gap-2">
+    <Link href={href} target="_blank" className="flex justify-center items-center gap-2">
+      <div className="text-slate-500 text-sm font-normal leading-tight">
+        {children}
+      </div>
+    </Link>
+  </div>
+);
+
 const FooterBottom = () => (
   <div className="w-full h-[120px] px-16 py-12 bg-slate-50 flex flex-col justify-start items-center gap-16">
     <div className="h-6 px-8 flex flex-col justify-start items-start gap-16">
@@ -82,7 +98,7 @@ export default function Footer(): ReactElement {
                   <div className="self-stretch h-48 flex flex-col justify-start items-start gap-3">
                     <SectionItem href="/glossary">Glossary</SectionItem>
                     <SectionItem href="/faq">FAQ</SectionItem>
-                    <SectionItem href="/methodology">Methodology</SectionItem>
+                    <SectionItemExternal href="https://bitcoin-layers.gitbook.io/bitcoin-layers">Methodology</SectionItemExternal>
                   </div>
                 </div>
                 <div className="grow flex flex-col justify-start items-start gap-4">
@@ -90,7 +106,7 @@ export default function Footer(): ReactElement {
                   <div className="self-stretch h-[116px] flex flex-col justify-start items-start gap-3">
                     <SectionItem href="/about">About</SectionItem>
                     <SectionItem href="/contribute">Contribute</SectionItem>
-                    <SectionItem href="/blog">Blog</SectionItem>
+                    <SectionItemExternal href="https://medium.com/@bitcoinlayers">Blog</SectionItemExternal>
                   </div>
                 </div>
               </div>
