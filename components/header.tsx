@@ -7,7 +7,7 @@ import { useState } from "react";
 import { ModeToggle } from "./mode-toggle";
 import Image from "next/image";
 
-export default function Footer(): ReactElement {
+export default function Header(): ReactElement {
   const router = useRouter();
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -21,7 +21,7 @@ export default function Footer(): ReactElement {
   return (
     <nav className="flex flex-row justify-between items-center w-full fixed min-h-[3rem]">
       <div className="w-8 h-8">
-        <Image src="/logo_white.png" alt="Logo" width={32} height={32} />
+        <Image src="/logo_noborder.png" alt="Logo" width={32} height={32} />
       </div>
       <ul className="flex flex-row items-center space-x-8 pr-8 text-public text-text_secondary">
         <li>
