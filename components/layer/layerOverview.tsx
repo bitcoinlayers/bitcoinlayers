@@ -188,6 +188,7 @@ const LayerOverview: React.FC<{ layer: Layer }> = ({ layer }) => {
       <div className="flex flex-col w-13/20 space-y-10">
         <Categories layer={layer} />
         <Description layer={layer} />
+        <div className="border-t border-stroke_secondary"></div>
         <Links layer={layer} />
       </div>
       <div className="w-6/20">
