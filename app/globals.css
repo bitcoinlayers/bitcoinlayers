@@ -9,4 +9,7 @@
     .special_header {
       @apply font-playfair-display text-[80px] italic font-normal leading-[80px] tracking-[-1.6px];
     }
+    .layer_header {
+        @apply font-playfair-display text-[100px] italic font-normal leading-[80px] tracking-[-1.6px];
+      }
   }

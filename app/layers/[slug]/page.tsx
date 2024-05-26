@@ -1,10 +1,11 @@
+"use client";
 import { notFound } from "next/navigation";
-// import LayerProps from '@/components/layer/layerProps';
 import LayerHead from "@/components/layer/layerHead";
 import LayerSummary from "@/components/layer/layerSummary";
-// import LayerChart from '@/components/layer/layerChart';
 import LayerBody from "@/components/layer/layerBody";
 import { allLayers, allLayerSlugs } from "@/util/layer_index";
+import Image from "next/image";
+import { useState } from "react";
 
 async function getLayerFromSlug(slug: string) {
   const layer = allLayers.find((layer) => layer.slug === slug);
@@ -31,21 +32,16 @@ export default async function LayerPage({
   console.log("Fetched layer:", layer);
 
   return (
-    <article className="flex flex-col min-h-screen max-w-5xl mx-auto pt-16">
-      <div className="flex flex-col justify-start items-start gap-4">
-        <div className="flex justify-start items-center gap-8 w-full">
-          <div className="flex-grow flex items-center gap-[30px] h-[156px]">
-            <div className="special_header flex-grow h-20">
-            {layer.title}
-            </div>
-          </div>
+    <article className="flex flex-col min-h-screen max-w-5xl mx-auto pt-24">
+      <div className="flex justify-start items-center gap-8">
+        <div className="flex justify-center items-center">
+          <LayerImage title={layer.title} src={`/logos/${layer.slug}.png`} /> {/**TODO fix img sizes. they're blurry here */}
+        </div>
+        <div className="flex-grow flex items-center">
+          <h1 className="layer_header flex-grow">{layer.title}</h1>
         </div>
       </div>
       {/* <div className="grid grid-cols-3 gap-4">
-        <div className="col-span-3">
-          <h1 className="mb-2">{layer.title}</h1>
-          <hr className="my-4 border-white border-2" />
-        </div>
         <div className="col-span-3 md:col-span-2 pr-4">
           <LayerHead layer={layer} />
           <div className="mt-8">
@@ -57,8 +53,26 @@ export default async function LayerPage({
         </div>
       </div>
       <LayerBody layer={layer} />
-    </article> */}
+      */}
     </article>
+  );
+}
+
+function LayerImage({ src, title }: { src: string; title: string }) { //TODO lazy loading
+  const [imageSrc, setImageSrc] = useState(src);
+
+  const handleError = () => {
+    setImageSrc("/bitcoinlayers-logo.png");
+  };
+
+  return (
+    <Image
+      src={imageSrc}
+      alt={`${title} logo`}
+      width={100}
+      height={100}
+      onError={handleError}
+    />
   );
 }
 
