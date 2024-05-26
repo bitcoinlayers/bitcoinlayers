@@ -1,8 +1,22 @@
+"use client"
 import Link from "next/link";
 import React from "react";
 import Image from "next/image";
 
 const ContributePage: React.FC = () => {
+  const address = "36raB4921Au5Kck4uT521nbfL1ktTwLNSY";
+
+  const copyToClipboard = () => {
+    navigator.clipboard
+      .writeText(address)
+      .then(() => {
+        alert("Address copied to clipboard!");
+      })
+      .catch((err) => {
+        console.error("Failed to copy text: ", err);
+      });
+  };
+
   function InfoBox({
     question,
     answer,
@@ -95,31 +109,32 @@ const ContributePage: React.FC = () => {
             </div>
           </div>
           <div className="text-center text-zinc-950 text-sm font-medium leading-normal">
-            bc1p<span className="text-zinc-500"> 73rv</span> kvrs
-            <span className="text-zinc-500"> z5nu </span>p2p8
-            <span className="text-zinc-500"> zrfg </span>433h
-            <span className="text-zinc-500"> k5y0 </span>ng5u
-            <span className="text-zinc-500"> rd5u</span> 4zvd
-            <span className="text-zinc-500"> hpvj </span>zml0
-            <span className="text-zinc-500"> hzys </span>s7fa
-            <span className="text-zinc-500"> ky</span>
+            36ra<span className="text-zinc-500">B492</span>1Au5
+            <span className="text-zinc-500">Kck4</span>uT52
+            <span className="text-zinc-500">1nbf</span>L1kt
+            <span className="text-zinc-500">TwLN</span>SY
           </div>
+          {/**TODO add Ordinals address in addition to standard BTC address */}
+          {/* <div className="text-center text-zinc-950 text-sm font-medium leading-normal">
+            bc1p<span className="text-zinc-500">59km</span>vn88
+            <span className="text-zinc-500">qfgl</span>qp38
+            <span className="text-zinc-500">tchd</span>k2yd
+            <span className="text-zinc-500">2huz</span>vedp
+            <span className="text-zinc-500">kq5q</span>7f50
+            <span className="text-zinc-500">my3z</span>2eem
+            <span className="text-zinc-500">rfcq</span>e3m3
+            <span className="text-zinc-500">9m</span>
+          </div> */}
         </div>
         <div className="rounded-full border-2 border-slate-300 justify-center items-center gap-2 inline-flex">
-          <div className="px-4 py-[5px] bg-white justify-center items-center gap-1.5 flex">
-            <div className="bg-white/opacity-0 flex flex-col justify-center items-center inline-flex">
-              <div className="w-3.5 h-3.5 relative">
-                <img
-                  className="w-[11px] h-3.5 left-[1.50px] top-0 absolute"
-                  src="https://via.placeholder.com/11x14"//TODO
-                  alt="Copy Icon"
-                />
-              </div>
-            </div>
+          <button
+            onClick={copyToClipboard}
+            className="px-4 py-[5px] bg-white border border-slate-300 rounded-full justify-center items-center gap-1.5 flex"
+          >
             <div className="text-center text-slate-600 text-sm font-medium leading-tight">
               Copy Address
             </div>
-          </div>
+          </button>
         </div>
       </div>
     </div>
