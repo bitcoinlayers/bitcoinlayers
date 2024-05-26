@@ -49,7 +49,8 @@ export default async function LayerPage({
         </div>
         <div className="w-4/5 flex flex-col">
           {/* <LayerHead layer={layer} /> */}
-          <RiskAnalysis section={layer.sections[1]} riskFactors={layer.riskFactors} />
+          <RiskAnalysis riskAnalysis={layer.riskAnalysis} riskFactors={layer.riskFactors} />
+
           <LayerBody layer={layer} />
         </div>
       </div>

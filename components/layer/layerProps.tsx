@@ -31,6 +31,8 @@ interface LayerProps {
   feeToken: string;
   enshrinedBtc: string;
   links: string[];
+  description: Subsection;
+  riskAnalysis: Subsection[];
   sections: Section[];
   knowledgeBits: kbit[];
 }
@@ -53,6 +55,8 @@ export type Layer = {
   feeToken: string;
   enshrinedBtc: string;
   links: string[];
+  description: Subsection;
+  riskAnalysis: Subsection[];
   sections: Section[];
   knowledgeBits: kbit[];
   /** MDX file body */

@@ -1,9 +1,18 @@
 import React from "react";
-import { RISK_FACTOR_CATEGORIES } from "@/constants";
 import { parseTextWithLinks } from "@/util/parseTextWithLinks";
 
-const RiskAnalysis: React.FC<{ section: any; riskFactors: string[] }> = ({
-  section,
+interface Subsection {
+  title: string;
+  content: string;
+}
+
+interface RiskAnalysisProps {
+  riskAnalysis: Subsection[];
+  riskFactors: string[];
+}
+
+const RiskAnalysis: React.FC<RiskAnalysisProps> = ({
+  riskAnalysis,
   riskFactors,
 }) => {
   const getRiskColorClass = (riskFactor: string) => {
@@ -11,7 +20,7 @@ const RiskAnalysis: React.FC<{ section: any; riskFactors: string[] }> = ({
       case "Low":
         return "text-text_risk_low";
       case "Medium":
-        return "text-text_risk_midlow"; //TODO change to midlow
+        return "text-text_risk_midlow";
       case "Medium-High":
         return "text-text_risk_midhigh";
       case "High":
@@ -21,57 +30,69 @@ const RiskAnalysis: React.FC<{ section: any; riskFactors: string[] }> = ({
     }
   };
 
+  if (!riskAnalysis) {
+    return null;
+  }
+
   return (
-    <>
-      {section.content.map((content: any, contentIndex: number) => (
-        <React.Fragment key={contentIndex}>
-          <div className="flex flex-col justify-start items-start gap-2">
-            <div className="self-stretch justify-between items-center inline-flex">
-              <div className="body_risksection">
-                {RISK_FACTOR_CATEGORIES[contentIndex]}
+    <div className="content flex-grow p-4 sm:mt-0 pt-0">
+      <div
+        className="self-stretch px-8 pt-6 pb-8 mb-6 bg-white rounded-xl border border-slate-300 flex-col justify-center items-end gap-4"
+        id="riskanalysis"
+      >
+        <div className="self-stretch justify-start items-start gap-4 inline-flex">
+                <div className="body_section">Risk Analysis</div>
               </div>
-              <div className="h-8 justify-end items-center gap-2 flex">
-                <div
-                  className={`${getRiskColorClass(
-                    riskFactors[contentIndex]
-                  )} text-sm font-medium leading-tight`}
-                >
-                  {riskFactors[contentIndex]} risk
+        {riskAnalysis.map((content, contentIndex) => (
+          <React.Fragment key={contentIndex}>
+            <div>
+              
+              <div className="flex flex-col justify-start items-start gap-2">
+                <div className="self-stretch justify-between items-center inline-flex">
+                  <div className="body_risksection">{content.title}</div>
+                  <div className="h-8 justify-end items-center gap-2 flex">
+                    <div
+                      className={`${getRiskColorClass(
+                        riskFactors[contentIndex]
+                      )} text-sm font-medium leading-tight`}
+                    >
+                      {riskFactors[contentIndex]} risk
+                    </div>
+                    <div className="w-8 h-8 justify-center items-center flex">
+                      <div
+                        className={`w-8 h-8 bg-${riskFactors[
+                          contentIndex
+                        ].toLowerCase()}-100 rounded-full`}
+                      ></div>
+                      <div
+                        className={`text-center text-${riskFactors[
+                          contentIndex
+                        ].toLowerCase()}-600 text-base font-bold font-['Hack']`}
+                      >
+                        {contentIndex + 1}
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div className="w-8 h-8 justify-center items-center flex">
-                  <div
-                    className={`w-8 h-8 bg-${riskFactors[
-                      contentIndex
-                    ].toLowerCase()}-100 rounded-full`}
-                  ></div>
-                  {/**TODO bg circles for numbers bg_low bg_midlow bg_midhigh bg_high*/}
-                  <div
-                    className={`text-center text-${riskFactors[
-                      contentIndex
-                    ].toLowerCase()}-600 text-base font-bold font-['Hack']`}
-                  >
-                    {contentIndex + 1}
+                <div className="self-stretch flex-col justify-start items-start flex">
+                  <div className="self-stretch justify-between items-end inline-flex">
+                    <div className="grow shrink basis-0 body_subsection">
+                      {content.title}
+                    </div>
+                  </div>
+                  <div className="self-stretch mt-3">
+                    {parseTextWithLinks(content.content)}
                   </div>
                 </div>
               </div>
             </div>
-            <div className="self-stretch flex-col justify-start items-start gap-2 flex">
-              <div className="self-stretch justify-between items-end inline-flex">
-                <div className="grow shrink basis-0 body_subsection">
-                  {content.title}
-                </div>
-              </div>
-              <div className="self-stretch">
-                {parseTextWithLinks(content.content)}
-              </div>
-            </div>
-          </div>
-          {contentIndex < section.content.length - 1 && (
-            <div className="border-b border-slate-300 my-12"></div>
-          )}
-        </React.Fragment>
-      ))}
-    </>
+            {contentIndex < riskAnalysis.length - 1 && (
+              <div className="border-b border-slate-300 my-12"></div>
+            )}
+          </React.Fragment>
+        ))}
+      </div>
+    </div>
   );
 };
 

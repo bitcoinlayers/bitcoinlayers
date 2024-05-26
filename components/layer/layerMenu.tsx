@@ -6,6 +6,8 @@ const LayerMenu: React.FC<{ layer: Layer }> = ({ layer }) => {
     <nav className="sticky top-0 h-screen w-full overflow-y-auto pt-6">
       <div className="flex flex-col justify-start items-start gap-4">
         {[
+          { id: "overview", title: "Overview" },
+          { id: "riskanalysis", title: "Risk Analysis" },
           ...layer.sections,
           { id: "knowledgebits", title: "Knowledge Bits" },
         ].map((section, index) => (
