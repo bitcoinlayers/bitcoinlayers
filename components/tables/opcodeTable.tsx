@@ -2,30 +2,11 @@
 
 import { useRouter } from "next/navigation";
 import { Opcode } from "@/components/opcode/opcodeProps";
-import { useState } from "react";
-import Image from "next/image";
+import LogoImage from "../logoImage";
 
 interface Props {
   data: Opcode[];
 }
-
-const OpcodeImage = ({ src, title }: { src: string; title: string }) => {
-  const [imageSrc, setImageSrc] = useState(src);
-
-  const handleError = () => {
-    setImageSrc("/bitcoinlayers-logo.png");
-  };
-
-  return (
-    <Image
-      src={imageSrc}
-      alt={`${title} logo`}
-      width={20}
-      height={20}
-      onError={handleError}
-    />
-  );
-};
 
 const OpcodeTable = ({ data }: Props) => {
   const router = useRouter();
@@ -65,7 +46,7 @@ const OpcodeTable = ({ data }: Props) => {
               onClick={() => handleRowClick(`/opcode/${item.slug}`)}
             >
               <td className="flex items-center px-6 py-4 font-semibold whitespace-nowrap border-l border-stroke_tertiary">
-                <OpcodeImage
+                <LogoImage
                   src={`/logos/${item.slug}.png`}
                   title={item.title}
                 />
