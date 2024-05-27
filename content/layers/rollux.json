@@ -8,7 +8,7 @@
   "purpose": "General",
   "btcBridge": "Federated Multisig",
   "settlement": "External",
-  "btcLocked": 10,
+  "btcLocked": 0,
   "executionEnv": "-",
   "consensus": "x",
   "nativeToken": "SYS",

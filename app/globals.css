@@ -27,4 +27,12 @@
   .table_header {
     @apply text-zinc-800 text-sm font-medium leading-tight mb-2 text-text_primary;
   }
+  .table-container {
+    overflow: visible;
+    position: relative;
+  }
+  .table-header-dropdown {
+    overflow: visible;
+    position: relative;
+  }
 }

@@ -1,8 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-// import { allLayers } from "@/util/layer_index";
-// import LayerTable from "@/components/tables/layerTablefromtemplate";
+import { allLayers } from "@/util/layer_index";
 import LayerTable from "@/components/tables/layerTable";
 import LayerTableRisks from "@/components/tables/layerTableRisks";
 import Hero from "@/components/hero";
@@ -12,10 +11,20 @@ type TabKey = "overview" | "risks";
 export default function Home() {
   const [activeTab, setActiveTab] = useState<TabKey>("overview");
 
+  const sortedLayers = allLayers
+    .sort((a, b) => a.title.localeCompare(b.title));
+
+  const layerHeaders = [
+    { name: "Name" },
+    { name: "Risks" },
+    { name: "Type", filterOptions: ["Sidechain", "State Channel", "Rollup"] },
+    { name: "Status", filterOptions: ["Mainnet", "Testnet", "Announced"] },
+    { name: "Unit of Account" },
+    { name: "BTC Locked" },
+  ];
+
   const tabComponents = {
-    // overview: <LayerTable data={allLayers} />,
-    // data={allLayers.filter(layer => layer.live === "Mainnet")} />,
-    overview: <LayerTable />,
+    overview: <LayerTable data={sortedLayers} headers={layerHeaders} />,
     risks: <LayerTableRisks />,
   };
 
