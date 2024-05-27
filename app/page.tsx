@@ -1,71 +1,81 @@
 "use client";
 
 import React, { useState } from "react";
-import LayerTab from "@/components/homepageTabs/layerTab";
-import BridgeTab from "@/components/homepageTabs/bridgeTab";
-import InfrastructureTab from "@/components/homepageTabs/infrastructureTab";
-import Image from "next/image";
+import { allLayers } from "@/util/layer_index";
+import LayerTable from "@/components/tables/layerTable";
+import LayerTableRisks from "@/components/tables/layerTableRisks";
+import Hero from "@/components/hero";
 
-type TabKey = "layers" | "infrastructure" | "bridges";
+type TabKey = "overview" | "risks";
 
 export default function Home() {
-  const [activeTab, setActiveTab] = useState<TabKey>("layers");
+  const [activeTab, setActiveTab] = useState<TabKey>("overview");
+
+  const sortedLayers = allLayers
+    .sort((a, b) => a.title.localeCompare(b.title));
+
+  const layerHeaders = [
+    { name: "Name" },
+    { name: "Risks" },
+    { name: "Type", filterOptions: ["Sidechain", "State Channel", "Rollup"] },
+    { name: "Status", filterOptions: ["Mainnet", "Testnet", "Announced"] },
+    { name: "Unit of Account" },
+    { name: "BTC Locked" },
+  ];
 
   const tabComponents = {
-    layers: <LayerTab />,
-    infrastructure: <InfrastructureTab />,
-    bridges: <BridgeTab />,
+    overview: <LayerTable data={sortedLayers} headers={layerHeaders} />,
+    risks: <LayerTableRisks />,
   };
-
-  const buttonBaseStyles =
-    "py-2 px-4 font-bold mr-4 bg-lightsecondary dark:bg-secondary rounded-lg";
-  const buttonActiveStyles = "dark:text-bitcoin";
-  const buttonInactiveStyles = "text-lighttableheader";
 
   const handleTabClick = (tab: TabKey) => {
     setActiveTab(tab);
   };
-  return (
-    <div className="max-w-6xl mx-auto pb-16">
-      <div className="flex flex-col items-center mb-12">
-        <Image src="/btc.svg" alt="Bitcoin" width={120} height={120} />
-        <p className="font-bold pt-2">Bitcoin scales in layers</p>
-        <p className="text-center max-w-[80%] sm:max-w-[40%]">
-          Here&apos;s your cheat sheet for understanding <br />
-          Bitcoin Layer-2s, sidechains, and more
-        </p>
-      </div>
-      {/**TODO: Add search bar here  **/}
-      <div className="flex mb-4 justify-center">
-        <button
-          className={`${buttonBaseStyles} ${
-            activeTab === "layers" ? buttonActiveStyles : buttonInactiveStyles
-          }`}
-          onClick={() => handleTabClick("layers")}
-        >
-          Layers
-        </button>
-        <button
-          className={`${buttonBaseStyles} ${
-            activeTab === "infrastructure"
-              ? buttonActiveStyles
-              : buttonInactiveStyles
-          }`}
-          onClick={() => handleTabClick("infrastructure")}
-        >
-          Infrastructure
-        </button>
-        <button
-          className={`${buttonBaseStyles} ${
-            activeTab === "bridges" ? buttonActiveStyles : buttonInactiveStyles
-          }`}
-          onClick={() => handleTabClick("bridges")}
-        >
-          Bridges
-        </button>
-      </div>
 
-      {tabComponents[activeTab]}
+  return (
+    <div className="mx-auto">
+      <Hero />
+      <div className="flex mb-4 justify-center mt-16">
+        <div className="justify-start items-start gap-4 inline-flex">
+          <div
+            className={`h-[30px] px-4 py-[5px] rounded-full border-2 justify-center items-center gap-1.5 flex cursor-pointer ${
+              activeTab === "overview"
+                ? "bg-white border-orange-600"
+                : "border-slate-300"
+            }`}
+            onClick={() => handleTabClick("overview")}
+          >
+            <div
+              className={`text-center text-sm font-medium leading-tight ${
+                activeTab === "overview" ? "text-orange-600" : "text-slate-600"
+              }`}
+            >
+              Overview
+            </div>
+          </div>
+          <div
+            className={`h-[30px] rounded-full border-2 justify-center items-center gap-1 flex cursor-pointer ${
+              activeTab === "risks"
+                ? "bg-white border-orange-600"
+                : "border-slate-300"
+            }`}
+            onClick={() => handleTabClick("risks")}
+          >
+            <div className="grow shrink basis-0 h-[30px] px-4 py-[5px] justify-center items-center gap-1.5 flex">
+              <div
+                className={`text-center text-sm font-medium leading-tight ${
+                  activeTab === "risks" ? "text-orange-600" : "text-slate-600"
+                }`}
+              >
+                Risks
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="flex mb-4 justify-center max-w-5xl mx-auto">
+        {tabComponents[activeTab]}
+      </div>
     </div>
   );
 }

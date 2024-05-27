@@ -7,7 +7,7 @@
   "riskFactors": ["", "", "", ""],
   "purpose": "General",
   "btcBridge": "Under Review",
-  "settlement": "Offchain",
+  "settlement": "External",
   "btcLocked": 0,
   "executionEnv": "x",
   "consensus": "x",
@@ -21,6 +21,37 @@
     "https://twitter.com/bitcoinlayers",
     "https://twitter.com/bitcoinlayers",
     "https://twitter.com/libreblockchain"
+  ],
+  "description": "Libre is a sidechain that looks to support cheaper and faster Ordinals trading, and stablecoin payments. It is currently runs on a Proof-of-Stake consensus mechanism across a network of 46 nodes. It has enshrined a Bitcoin bridge built by pNetwork, thus its enshined BTC token is pBTC. We are currently reviewing the trust assumptions related to Libre, but users should be aware that the network, and the bridge, derive security from their respective native tokens.",
+  "riskAnalysis": [
+    {
+      "category": "Unilateral Exits",
+      "score": 0,
+      "tier": "",
+      "title": "",
+      "content": ""
+    },
+    {
+      "category": "Data Availability",
+      "score": 0,
+      "tier": "",
+      "title": "",
+      "content": ""
+    },
+    {
+      "category": "Block Production",
+      "score": 0,
+      "tier": "",
+      "title": "",
+      "content": ""
+    },
+    {
+      "category": "State Validation",
+      "score": 0,
+      "tier": "",
+      "title": "",
+      "content": ""
+    }
   ],
   "sections": [
     {

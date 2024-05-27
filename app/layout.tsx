@@ -3,7 +3,7 @@ import { Inter } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Analytics } from "@/components/analytics";
 import Footer from "@/components/footer";
-import Header from "@/components/header";
+import Navbar from "@/components/navbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,8 +21,8 @@ export default function RootLayout({ children }: RootLayoutProps) {
     <html lang="en" suppressHydrationWarning>
       <body className={`antialiased ${inter.className}`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <div className="mx-auto py-2 px-4 min-h-screen bg-gradient-to-br from-lightprimary to-lightprimaryfade dark:from-primary dark:to-primaryfade">
-            <Header />
+          <div className="mx-auto min-h-screen bg-bg_primary">
+            <Navbar />
             <main>{children}</main>
             <Footer />
           </div>

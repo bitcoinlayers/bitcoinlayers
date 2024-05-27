@@ -8,22 +8,23 @@
   "bitcoinSecurity": "BIP 420",
   "nativeToken": "Proposed",
   "purpose": "Other",
-  "associatedLayers": "-",
+  "associatedLayers": "Draft",
   "links": [
     "https://twitter.com/bitcoinlayers",
     "https://twitter.com/bitcoinlayers",
     "https://twitter.com/bitcoinlayers",
     "https://twitter.com/bitcoinlayers",
-    "https://twitter.com/bitcoinlayers",
+    "https://github.com/EthanHeilman/op_cat_draft/blob/main/cat.mediawiki",
     "https://twitter.com/bitcoinlayers"
   ],
+  "description": "Under review.",
   "sections": [
     {
       "id": "description",
       "title": "Description",
       "content": [
         {
-          "title": "Description",
+          "title": "Technical Background  ",
           "content": "Under review."
         }
       ]

@@ -7,7 +7,7 @@
   "riskFactors": ["High", "Medium", "Medium", "Medium"],
   "purpose": "General",
   "btcBridge": "Permissionless Multisig",
-  "settlement": "Offchain",
+  "settlement": "External",
   "btcLocked": "-",
   "executionEnv": "EVM",
   "consensus": "Satoshi Plus",
@@ -22,39 +22,38 @@
     "https://github.com/coredao-org",
     "https://twitter.com/Coredao_Org"
   ],
+  "description": "Core (in relation to Bitcoin) is an EVM sidechain with a hybrid consensus mechanism, Satoshi Plus, that leverages both DPoW and DPoS. It uses a permissionless multisig to bridge BTC. The native token of the network is CORE, which is used for transaction fees, staking, and governance in Core DAO.",
+  "riskAnalysis": [
+    {
+      "category": "Unilateral Exits",
+      "score": 0,
+      "tier": "High",
+      "title": "No Unilateral Exits",
+      "content": "coreBTC does not support unilateral exits. Users must trust several permissionless roles on Bitcoin and Core Chain throughout the lifecycle of minting and burning coreBTC. Specifically, to exit from coreBTC back to BTC, users must trust Lockers and Bitcoin Light Clients. All roles are financially incentivized to be good actors."
+    },
+    {
+      "category": "Data Availability",
+      "score": 0,
+      "tier": "Medium",
+      "title": "No DA on Bitcoin",
+      "content": "Core Chain does not use Bitcoin for data availability. Because of this, Core's state cannot be reconstructed using only data from Bitcoin. Core Chain has a network of nodes who esnsure data is readily available."
+    },
+    {
+      "category": "Block Production",
+      "score": 0,
+      "tier": "Medium",
+      "title": "Decentralized Block Production",
+      "content": "Core Chain has a network of 25 validators who participate as block producers. Each day, the 21 validators with the highest hybrid score (from DPOW and DPOS) are elected to participate in block production. Any Core chain full node can register to become a part of this set. It does not support exits that circumvent its validator set. This means that users must trust Core Chain validators to include their transactions in blocks."
+    },
+    {
+      "category": "State Validation",
+      "score": 0,
+      "tier": "Medium",
+      "title": "Self-Enforcement of State Validation",
+      "content": "Settlement is done offchain, on Core Chain, rather than onchain, on Bitcoin. The validity of Core Chain state transitions is not enforced by Bitcoin."
+    }
+  ],
   "sections": [
-    {
-      "id": "description",
-      "title": "Description",
-      "content": [
-        {
-          "title": "Core Chain is a sidechain",
-          "content": "Core (in relation to Bitcoin) is an EVM sidechain with a hybrid consensus mechanism, Satoshi Plus, that leverages both DPoW and DPoS. It uses a permissionless multisig to bridge BTC. The native token of the network is CORE, which is used for transaction fees, staking, and governance in Core DAO."
-        }
-      ]
-    },
-    {
-      "id": "riskanalysis",
-      "title": "Risk Analysis",
-      "content": [
-        {
-          "title": "No Unilateral Exits",
-          "content": "coreBTC does not support unilateral exits. Users must trust several permissionless roles on Bitcoin and Core Chain throughout the lifecycle of minting and burning coreBTC. Specifically, to exit from coreBTC back to BTC, users must trust Lockers and Bitcoin Light Clients. All roles are financially incentivized to be good actors."
-        },
-        {
-          "title": "No DA on Bitcoin",
-          "content": "Core Chain does not use Bitcoin for data availability. Because of this, Core's state cannot be reconstructed using only data from Bitcoin. Core Chain has a network of nodes who esnsure data is readily available."
-        },
-        {
-          "title": "Decentralized Block Production",
-          "content": "Core Chain has a network of 25 validators who participate as block producers. Each day, the 21 validators with the highest hybrid score (from DPOW and DPOS) are elected to participate in block production. Any Core chain full node can register to become a part of this set. It does not support exits that circumvent its validator set. This means that users must trust Core Chain validators to include their transactions in blocks."
-        },
-        {
-          "title": "Self-Enforcement of State Validation",
-          "content": "Settlement is done offchain, on Core Chain, rather than onchain, on Bitcoin. The validity of Core Chain state transitions is not enforced by Bitcoin."
-        }
-      ]
-    },
     {
       "id": "bitcoinsecurity",
       "title": "Bitcoin Security",

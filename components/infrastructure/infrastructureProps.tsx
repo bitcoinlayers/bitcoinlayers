@@ -26,6 +26,7 @@ interface InfrastructureProps {
   purpose: string;
   associatedLayers: string;
   links: string[];
+  description: string;
   sections: Section[];
   knowledgeBits: kbit[];
 }
@@ -43,6 +44,7 @@ export type Infrastructure = {
   purpose: string;
   associatedLayers: string;
   links: string[];
+  description: string;
   sections: Section[];
   knowledgeBits: kbit[];
   /** MDX file body */

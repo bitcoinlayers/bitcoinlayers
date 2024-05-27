@@ -1,8 +1,6 @@
 import type { Infrastructure } from '@/components/infrastructure/infrastructureProps';
-
-//
-//infrastructures
 import astriaJson from "../content/infrastructures/astria.json" assert { type: 'json' };
+
 const astria: Infrastructure = astriaJson as Infrastructure;
 import availJson from "../content/infrastructures/avail.json" assert { type: 'json' };
 const avail: Infrastructure = availJson as Infrastructure;
@@ -32,3 +30,4 @@ import mirrorJson from "../content/infrastructures/mirror.json" assert { type: '
 const mirror: Infrastructure = mirrorJson as Infrastructure;
 
 export const allInfrastructures: Infrastructure[] = [astria, avail, bitcoinos, bvm, celestia, espresso, lorenzo, sovereign, rollkit, nubit, bouncebit, babylon, fedimint, mirror];
+export const allInfrastructureSlugs: string[] = allInfrastructures.map((infrastructure) => infrastructure.slug);

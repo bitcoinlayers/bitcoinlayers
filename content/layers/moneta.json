@@ -22,6 +22,37 @@
     "https://twitter.com/bitcoinlayers",
     "https://twitter.com/bitcoinlayers"
   ],
+  "description": "Moneta is a rollup that uses Bitcoin for data availability and consensus. It has an optimistically verified validating bridge via BitVM. It leverages STARK proofs to prove state transitions. In the event of an invalid state transition, verifiers in the BitVM bridge can submit a fraud proof to show that the state transition was invalid.",
+  "riskAnalysis": [
+    {
+      "category": "Unilateral Exits",
+      "score": 0,
+      "tier": "Medium",
+      "title": "Withdrawals rely on 1-N trust assumptions.",
+      "content": "Withdrawing BTC and/or Bitcoin assets from the rollup is not trustless. Users must trust that 1 of any number of BitVM verifiers in the validating bridge are acting honestly to process their withdrawal."
+    },
+    {
+      "category": "Data Availability",
+      "score": 0,
+      "tier": "Low",
+      "title": "State Differences are stored on Bitcoin.",
+      "content": "All of the data needed to reconstruct the rollup's state is stored on the Bitcoin Layer 1."
+    },
+    {
+      "category": "Block Production",
+      "score": 0,
+      "tier": "High",
+      "title": "Users can self-sequencer, but not self-propose.",
+      "content": "If Moneta's sequencer, which is centralized, goes down, users are submit their transaction to the L1 for ordering. In the event of censorship, Moneta's prover is required to include transactions sequenced by the L1 in their state transition, or proof generation will fail. Regarding proposing state changes, only the whitelisted proposers can publish state roots on L1, so in the event of failure the withdrawals are frozen."
+    },
+    {
+      "category": "State Validation",
+      "score": 0,
+      "tier": "Medium",
+      "title": "Settlement is done offchain.",
+      "content": "Optimistically proven zkSTARK proofs ensure state correctness. In the event of an invalid state transition, actors watching the chain can submit Fraud Proofs to prove that the state transition is incorrect."
+    }
+  ],
   "sections": [
     {
       "id": "description",
@@ -29,28 +60,6 @@
       "content": [
         {
           "content": "Moneta is a rollup that uses Bitcoin for data availability and consensus. It has an optimistically verified validating bridge via BitVM. It leverages STARK proofs to prove state transitions. In the event of an invalid state transition, verifiers in the BitVM bridge can submit a fraud proof to show that the state transition was invalid."
-        }
-      ]
-    },
-    {
-      "id": "riskanalysis",
-      "title": "Risk Analysis",
-      "content": [
-        {
-          "title": "Withdrawals rely on 1-N trust assumptions.",
-          "content": "Withdrawing BTC and/or Bitcoin assets from the rollup is not trustless. Users must trust that 1 of any number of BitVM verifiers in the validating bridge are acting honestly to process their withdrawal."
-        },
-        {
-          "title": "State Differences are stored on Bitcoin.",
-          "content": "All of the data needed to reconstruct the rollup's state is stored on the Bitcoin Layer 1."
-        },
-        {
-          "title": "Users can self-sequencer, but not self-propose.",
-          "content": "If Moneta's sequencer, which is centralized, goes down, users are submit their transaction to the L1 for ordering. In the event of censorship, Moneta's prover is required to include transactions sequenced by the L1 in their state transition, or proof generation will fail. Regarding proposing state changes, only the whitelisted proposers can publish state roots on L1, so in the event of failure the withdrawals are frozen."
-        },
-        {
-          "title": "Settlement is done offchain.",
-          "content": "Optimistically proven zkSTARK proofs ensure state correctness. In the event of an invalid state transition, actors watching the chain can submit Fraud Proofs to prove that the state transition is incorrect."
         }
       ]
     },

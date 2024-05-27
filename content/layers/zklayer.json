@@ -11,7 +11,7 @@
   "btcLocked": 0,
   "executionEnv": "x",
   "consensus": "x",
-  "nativeToken": "x",
+  "nativeToken": "-",
   "feeToken": "x",
   "enshrinedBtc": "x",
   "links": [
@@ -21,6 +21,37 @@
     "https://app.gitbook.com/o/62jIvTYSEInKMwhtPJXC/s/fTHAEGkacQhIFNLPH9VW/",
     "https://github.com/zkLayer",
     "https://twitter.com/zkLayer_"
+  ],
+  "description": "zkLayer is a proposed rollup project on top of Bitcoin. It is unclear what bridging model it will use to secure its two-way peg and validate state transitions.",
+  "riskAnalysis": [
+    {
+      "category": "Unilateral Exits",
+      "score": 0,
+      "tier": "",
+      "title": "",
+      "content": ""
+    },
+    {
+      "category": "Data Availability",
+      "score": 0,
+      "tier": "",
+      "title": "",
+      "content": ""
+    },
+    {
+      "category": "Block Production",
+      "score": 0,
+      "tier": "",
+      "title": "",
+      "content": ""
+    },
+    {
+      "category": "State Validation",
+      "score": 0,
+      "tier": "",
+      "title": "",
+      "content": ""
+    }
   ],
   "sections": [
     {

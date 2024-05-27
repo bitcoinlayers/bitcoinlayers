@@ -7,7 +7,7 @@
   "riskFactors": ["High", "Medium", "Medium", "Medium"],
   "purpose": "General",
   "btcBridge": "Centralized Multisig(s)",
-  "settlement": "Offchain",
+  "settlement": "External",
   "btcLocked": 348,
   "executionEnv": "Clarity",
   "consensus": "PoX",
@@ -22,6 +22,37 @@
     "https://github.com/stacks-network",
     "https://twitter.com/Stacks"
   ],
+  "description": "Stacks is a programmability layer with a novel execution environment, Clarity. Stacks is a sidechain, powered by a hybrid PoS mechanism (PoX) and a native fee token (STX).",
+  "riskAnalysis": [
+    {
+      "category": "Unilateral Exits",
+      "score": 0,
+      "tier": "High",
+      "title": "No Enshrined BTC Bridge",
+      "content": "Stacks has no consensus-enshrined BTC bridge. It does have two third-party bridges, which are both custodial multisigs. Users must trust the operators of these bridges to not steal their BTC, as they do not support unilateral exits."
+    },
+    {
+      "category": "Data Availability",
+      "score": 0,
+      "tier": "Medium",
+      "title": "State Roots Only",
+      "content": "Stacks posts state roots to Bitcoin, but not full transaction calldata. Because of this, Stacks' state cannot be reconstructed using only data from Bitcoin. Stacks has a permissionless validator and node operator set which participate in making data availability readily available."
+    },
+    {
+      "category": "Block Production",
+      "score": 0,
+      "tier": "Medium",
+      "title": "Permissionless Block Production",
+      "content": "Stacks has a permissionless block production mechanism, but it does not support exits that circumvent its miner/validator set. This means that users must trust Stacks validators to include their transactions in blocks. Anyone with sufficient capital and resources can participate as a Stacks miner."
+    },
+    {
+      "category": "State Validation",
+      "score": 0,
+      "tier": "Medium",
+      "title": "Self-Enforcement of State Validation",
+      "content": "Settlement is done offchain, on Stacks, rather than onchain, on Bitcoin. The validity of Stacks state transitions are not enforced by Bitcoin."
+    }
+  ],
   "sections": [
     {
       "id": "description",
@@ -30,28 +61,6 @@
         {
           "title": "Stacks is a sidechain",
           "content": "Stacks is a programmability layer with a novel execution environment, Clarity. Stacks is a sidechain, powered by a hybrid PoS mechanism (PoX) and a native fee token (STX)."
-        }
-      ]
-    },
-    {
-      "id": "riskanalysis",
-      "title": "Risk Analysis",
-      "content": [
-        {
-          "title": "No Enshrined BTC Bridge",
-          "content": "Stacks has no consensus-enshrined BTC bridge. It does have two third-party bridges, which are both custodial multisigs. Users must trust the operators of these bridges to not steal their BTC, as they do not support unilateral exits."
-        },
-        {
-          "title": "State Roots Only",
-          "content": "Stacks posts state roots to Bitcoin, but not full transaction calldata. Because of this, Stacks' state cannot be reconstructed using only data from Bitcoin. Stacks has a permissionless validator and node operator set which participate in making data availability readily available."
-        },
-        {
-          "title": "Permissionless Block Production",
-          "content": "Stacks has a permissionless block production mechanism, but it does not support exits that circumvent its miner/validator set. This means that users must trust Stacks validators to include their transactions in blocks. Anyone with sufficient capital and resources can participate as a Stacks miner."
-        },
-        {
-          "title": "Self-Enforcement of State Validation",
-          "content": "Settlement is done offchain, on Stacks, rather than onchain, on Bitcoin. The validity of Stacks state transitions are not enforced by Bitcoin."
         }
       ]
     },

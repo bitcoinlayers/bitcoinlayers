@@ -1,3 +1,38 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,900&display=swap");
+
+@layer components {
+  .special_header {
+    @apply font-playfair-display text-[80px] italic font-normal leading-[80px] tracking-[-1.6px];
+  }
+  .layer_header {
+    @apply font-playfair-display text-[100px] italic font-normal leading-[80px] tracking-[-1.6px];
+  }
+  .body_section {
+    @apply text-zinc-800 text-3xl font-light leading-9 mb-4 text-text_header;
+  }
+  .body_subsection {
+    @apply text-zinc-800 text-base font-medium leading-normal mb-2 text-text_primary;
+  }
+  .body_paragraph {
+    @apply mb-2 text-text_secondary
+  }
+  .body_risksection {
+    @apply text-zinc-800 text-2xl font-medium leading-normal mb-2 text-text_primary;
+  }
+  .table_header {
+    @apply text-zinc-800 text-sm font-medium leading-tight mb-2 text-text_primary;
+  }
+  .table-container {
+    overflow: visible;
+    position: relative;
+  }
+  .table-header-dropdown {
+    overflow: visible;
+    position: relative;
+  }
+}

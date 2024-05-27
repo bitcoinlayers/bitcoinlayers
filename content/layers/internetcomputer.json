@@ -7,7 +7,7 @@
   "riskFactors": ["", "", "", ""],
   "purpose": "General",
   "btcBridge": "Permissionless Multisig",
-  "settlement": "Offchain",
+  "settlement": "External",
   "btcLocked": 0,
   "executionEnv": "Bitcoin Script",
   "consensus": "PoM",
@@ -21,6 +21,37 @@
     "https://dashboard.internetcomputer.org/bitcoin",
     "https://github.com/dfinity/bitcoin-canisteri",
     "https://twitter.com/dfinity"
+  ],
+  "description": "Internet Computer Protocl (ICP) is a sidechain that enables more functionality for BTC the asset. It leverages Chain-key ECDSA signatures to secure the two-way peg with Bitcoin. People might want to use the ICP sidechain for cheaper fees and more expressive onchain applications.",
+  "riskAnalysis": [
+    {
+      "category": "Unilateral Exits",
+      "score": 0,
+      "tier": "",
+      "title": "",
+      "content": ""
+    },
+    {
+      "category": "Data Availability",
+      "score": 0,
+      "tier": "",
+      "title": "",
+      "content": ""
+    },
+    {
+      "category": "Block Production",
+      "score": 0,
+      "tier": "",
+      "title": "",
+      "content": ""
+    },
+    {
+      "category": "State Validation",
+      "score": 0,
+      "tier": "",
+      "title": "",
+      "content": ""
+    }
   ],
   "sections": [
     {

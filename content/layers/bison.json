@@ -11,7 +11,7 @@
   "btcLocked": 0,
   "executionEnv": "x",
   "consensus": "x",
-  "nativeToken": "x",
+  "nativeToken": "-",
   "feeToken": "x",
   "enshrinedBtc": "x",
   "links": [
@@ -21,6 +21,37 @@
     "https://bisonlabs.io/#/dashboard",
     "https://bisonlabs.io/#/dashboard",
     "https://twitter.com/Bison_Labs"
+  ],
+  "description": "Bison Labs are building a sovereign rollup that enables more functionality for Ordinals and BRC-20 trading. They planning on using zk-STARKs to prove state transitions. They are in the testnet stage.",
+  "riskAnalysis": [
+    {
+      "category": "Unilateral Exits",
+      "score": 0,
+      "tier": "",
+      "title": "",
+      "content": ""
+    },
+    {
+      "category": "Data Availability",
+      "score": 0,
+      "tier": "",
+      "title": "",
+      "content": ""
+    },
+    {
+      "category": "Block Production",
+      "score": 0,
+      "tier": "",
+      "title": "",
+      "content": ""
+    },
+    {
+      "category": "State Validation",
+      "score": 0,
+      "tier": "",
+      "title": "",
+      "content": ""
+    }
   ],
   "sections": [
     {
