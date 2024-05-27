@@ -2,14 +2,12 @@
 
 import Link from "next/link";
 import type { ReactElement } from "react";
-import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { ModeToggle } from "./mode-toggle";
 import Image from "next/image";
 
 export default function Navbar(): ReactElement {
-  const router = useRouter();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [submenuOpen, setSubmenuOpen] = useState(false);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -17,6 +15,14 @@ export default function Navbar(): ReactElement {
 
   const closeMenu = () => {
     setMenuOpen(false);
+  };
+
+  const toggleSubmenu = () => {
+    setSubmenuOpen(!submenuOpen);
+  };
+
+  const closeSubmenu = () => {
+    setSubmenuOpen(false);
   };
 
   return (
@@ -27,20 +33,56 @@ export default function Navbar(): ReactElement {
         </div>
       </Link>
       <ul className="flex flex-row items-center space-x-8 pr-8 text-public text-text_secondary">
-        <li>
-          <Link href="/opcode">Analysis</Link>
+        <li className="relative">
+          <button onClick={toggleSubmenu} className="flex items-center">
+            Analysis
+            <Image
+              src="/icons/vector.svg"
+              alt="Submenu Indicator"
+              width={8}
+              height={8}
+              className={`ml-2 transition-transform ${
+                submenuOpen ? "rotate-180" : ""
+              }`}
+            />
+          </button>
+          {submenuOpen && (
+            <div className="absolute top-full left-0 mt-2 w-[282px] bg-white rounded-xl shadow flex-col justify-start items-start gap-2 inline-flex z-50 p-4">
+              <div className="h-[88px] p-3 rounded-md flex-col justify-start items-start flex hover:bg-blue-100">
+                <Link href="/" onClick={closeSubmenu}>
+                  <div className="text-zinc-800 text-base font-medium leading-normal">Layers</div>
+                  <div className="self-stretch text-slate-500 text-sm font-normal leading-tight">Overview and risk analysis of bitcoin layers.</div>
+                </Link>
+              </div>
+              <div className="h-[88px] p-3 rounded-md flex-col justify-start items-start flex hover:bg-blue-100">
+                <Link href="/bridge" onClick={closeSubmenu}>
+                  <div className="text-zinc-800 text-base font-medium leading-normal">Bridges</div>
+                  <div className="self-stretch text-slate-500 text-sm font-normal leading-tight">Overview and risk analysis of bitcoin bridges between layers.</div>
+                </Link>
+              </div>
+              <div className="h-[88px] p-3 rounded-md flex-col justify-start items-start flex hover:bg-blue-100">
+                <Link href="/infrastructure" onClick={closeSubmenu}>
+                  <div className="text-zinc-800 text-base font-medium leading-normal">Infrastructure</div>
+                  <div className="self-stretch text-slate-500 text-sm font-normal leading-tight">Overview and risk analysis of layers infrastructure.</div>
+                </Link>
+              </div>
+              <div className="h-[88px] p-3 rounded-md flex-col justify-start items-start flex hover:bg-blue-100">
+                <Link href="/opcode" onClick={closeSubmenu}>
+                  <div className="text-zinc-800 text-base font-medium leading-normal">Opcodes</div>
+                  <div className="self-stretch text-slate-500 text-sm font-normal leading-tight">List and summary of active and proposed opcodes.</div>
+                </Link>
+              </div>
+            </div>
+          )}
         </li>
         <li>
-          <Link href="glossary">Glossary</Link>
+          <Link href="/glossary" onClick={closeMenu}>Glossary</Link>
         </li>
         <li>
-          <Link href="/faq">FAQ</Link>
+          <Link href="/faq" onClick={closeMenu}>FAQ</Link>
         </li>
         <li>
-          <Link
-            href="https://bitcoin-layers.gitbook.io/bitcoin-layers"
-            target="_blank"
-          >
+          <Link href="https://bitcoin-layers.gitbook.io/bitcoin-layers" target="_blank">
             Methodology
           </Link>
         </li>
