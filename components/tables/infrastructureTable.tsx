@@ -67,7 +67,7 @@ const InfrastructureTable = ({ data }: Props) => {
               key={index}
               onClick={() => handleRowClick(`/infrastructure/${item.slug}`)}
             >
-              <td className="flex items-center px-6 py-4 font-semibold whitespace-nowrap border-l border-stroke_tertiary">
+              <td className="flex items-center px-6 py-4 font-semibold whitespace-nowrap border-l border-stroke_tertiary text_table_important">
                 <InfrastructureImage
                   src={`/logos/${item.slug}.png`}
                   title={item.title}

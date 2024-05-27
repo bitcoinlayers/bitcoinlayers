@@ -37,7 +37,7 @@ const GenericTable = ({ data, columns }: GenericTableProps) => {
             ))}
           </tr>
         </thead>
-        <tbody className="bg-white gap-x-8 border-t border-stroke_tertiary">
+        <tbody className="bg-white gap-x-8 border-t border-stroke_tertiary text_table_important">
           {data.map((item, index) => (
             <tr
               key={index}

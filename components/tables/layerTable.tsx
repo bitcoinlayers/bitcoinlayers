@@ -126,21 +126,21 @@ const LayerTable = ({ data, headers }: Props) => {
               key={item.slug}  // Use item.slug as the unique key
               onClick={() => handleRowClick(`/layers/${item.slug}`)}
             >
-              <td className="flex items-center px-6 py-4 font-semibold whitespace-nowrap border-l border-stroke_tertiary">
+              <td className="flex items-center px-6 py-4 font-semibold whitespace-nowrap border-l border-stroke_tertiary text-text_table_important">
                 <LayerImage src={`/logos/${item.slug}.png`} title={item.title} />
                 <span className="ml-2">{item.title}</span>
               </td>
-              <td className="px-2 border-stroke_tertiary">
+              <td className="px-2 border-stroke_tertiary text_table_important">
                 <Risk layer={item} />
               </td>
-              <td className="px-6 py-4 border-stroke_tertiary">
+              <td className="px-6 py-4 border-stroke_tertiary text_table_important">
                 {item.layerType}
               </td>
-              <td className="px-6 py-4 border-stroke_tertiary">{item.live}</td>
-              <td className="px-6 py-4 border-stroke_tertiary">
+              <td className="px-6 py-4 border-stroke_tertiary text_table_important">{item.live}</td>
+              <td className="px-6 py-4 border-stroke_tertiary text_table_important">
                 {item.nativeToken}
               </td>
-              <td className="px-6 py-4 border-r border-stroke_tertiary">
+              <td className="px-6 py-4 border-r border-stroke_tertiary text_table_important">
                 {item.underReview === "yes" ? (
                   <div>-</div>
                 ) : (
