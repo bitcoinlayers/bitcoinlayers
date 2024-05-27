@@ -1,20 +1,16 @@
 "use client";
-import React from "react";
 import { notFound } from "next/navigation";
-import InfrastructureProps from "@/components/infrastructure/infrastructureProps";
-import InfrastructureHead from "@/components/infrastructure/infrastructureHead";
-import InfrastructureSummary from "@/components/infrastructure/infrastructureSummary";
-// import InfrastructureChart from "@/components/infrastructure/infrastructureChart";
+import { allInfrastructures, allInfrastructureSlugs } from "@/util/infrastructure_index";
+import Image from "next/image";
+import { useState } from "react";
+import InfrastructureMenu from "@/components/infrastructure/infrastructureMenu";
 import InfrastructureBody from "@/components/infrastructure/infrastructureBody";
-import { allInfrastructures } from "@/util/infrastructure_index";
+import InfrastructureOverview from "@/components/infrastructure/infrastructureOverview";
 
-async function getInfrastructureFromSlug(paramsSlug: string) {
-  const infrastructure = allInfrastructures.find(
-    (infrastructure) => infrastructure.slug === paramsSlug
-  );
+async function getInfrastructureFromSlug(slug: string) {
+  const infrastructure = allInfrastructures.find((infrastructure) => infrastructure.slug === slug);
   if (!infrastructure) {
-    console.log("Infrastructure not found: ", paramsSlug);
-    null;
+    return null;
   }
   return infrastructure;
 }
@@ -24,35 +20,61 @@ export default async function InfrastructurePage({
 }: {
   params: { slug: string };
 }) {
-  if (!params) {
-    return <div>Params is undefined</div>;
-  }
-  console.log("Open page for infrastructure: ", params.slug);
-  const infrastructure = await getInfrastructureFromSlug(params.slug);
+  const { slug } = params;
+  console.log("Fetching data for slug:", slug);
+  const infrastructure = await getInfrastructureFromSlug(slug);
+
   if (!infrastructure) {
-    notFound();
+    console.log("Infrastructure not found:", slug);
+    return notFound();
   }
 
+  console.log("Fetched infrastructure:", infrastructure);
+
   return (
-    <article className="py-6 prose dark:prose-invert max-w-6xl mx-auto pb-12">
-      <div className="">
-        <div className="col-span-3">
-          <h1 className="mb-2">{infrastructure.title}</h1>
-          <hr className="my-4 border-white border-2" />
+    <article className="flex flex-col min-h-screen max-w-5xl mx-auto pt-24">
+      <div className="flex justify-start items-center gap-8 my-12">
+        <div className="flex justify-center items-center">
+          <InfrastructureImage title={infrastructure.title} src={`/logos/${infrastructure.slug}.png`} /> {/**TODO fix img sizes. they're blurry here */}
         </div>
-        <div className="">
-          <InfrastructureHead infrastructure={infrastructure as InfrastructureProps} />
-          {/* <div className="mt-8">
-            <InfrastructureSummary infrastructure={infrastructure as InfrastructureProps} />
-          </div> */}
+        <div className="flex-grow flex items-center">
+          <h1 className="layer_header flex-grow">{infrastructure.title}</h1>
         </div>
-        {/* <div className="col-span-3 md:col-span-1">
-          <InfrastructureChart infrastructure={infrastructure as InfrastructureProps} />
-        </div> */}
       </div>
-      <InfrastructureBody
-        infrastructure={infrastructure as InfrastructureProps}
-      />
+      <div className="container flex">
+        <div className="w-1/5">
+          <InfrastructureMenu infrastructure={infrastructure} />
+        </div>
+        <div className="w-4/5 flex flex-col">
+          <InfrastructureOverview infrastructure={infrastructure} />
+          <InfrastructureBody infrastructure={infrastructure} />
+        </div>
+      </div>
     </article>
   );
+}
+
+function InfrastructureImage({ src, title }: { src: string; title: string }) { //TODO lazy loading
+  const [imageSrc, setImageSrc] = useState(src);
+
+  const handleError = () => {
+    setImageSrc("/bitcoinlayers-logo.png");
+  };
+
+  return (
+    <Image
+      src={imageSrc}
+      alt={`${title} logo`}
+      width={100}
+      height={100}
+      onError={handleError}
+    />
+  );
+}
+
+export async function generateStaticParams() {
+  console.log("Generating paths for infrastructures:", allInfrastructureSlugs);
+  return allInfrastructureSlugs.map((slug) => ({
+    slug,
+  }));
 }

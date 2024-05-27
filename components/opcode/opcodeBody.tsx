@@ -1,60 +1,38 @@
 import React from "react";
 import { Opcode } from "./opcodeProps";
-import { RISK_FACTOR_CATEGORIES } from "@/constants";
 import Link from "next/link";
+import { parseTextWithLinks } from "@/util/parseTextWithLinks";
 
 const OpcodeBody: React.FC<{ opcode: Opcode }> = ({ opcode }) => {
   return (
-    <div className="container flex">
-      <nav className="table-of-contents sticky top-0 h-screen w-0 sm:w-1/5 overflow-y-auto invisible sm:visible pt-6">
-        <ol className="marker:font-extrabold marker:dark:text-bitcoin">
-          {[
-            ...opcode.sections,
-            { id: "knowledgebits", title: "Knowledge Bits" },
-          ].map((section, index) => (
-            <li key={index}>
-              <h3>
-                <a className="no-underline" href={`#${section.id}`}>
-                  {section.title}
-                </a>
-              </h3>
-            </li>
-          ))}
-        </ol>
-      </nav>
-
-      <main className="content flex-grow p-4 -mt-6 sm:mt-0 pt-0 w-4/5">
-        {opcode.sections.map((section, index) => (
-          <div
-            key={index}
-            className="rounded-xl bg-lightsecondary px-6 pt-0 pb-1 mb-6"
-            id={section.id}
-          >
-            <h2 className="pt-7">{section.title}</h2>
-            {section.content.map((content, contentIndex) => (
-              <React.Fragment key={contentIndex}>
-                {content.title && <h3>{content.title}</h3>}
-                <p>{content.content}</p>
-              </React.Fragment>
-            ))}
-          </div>
-        ))}
+    <main className="content flex-grow sm:mt-0 pt-0">
+      {opcode.sections.map((section, index) => (
         <div
-          className="rounded-xl bg-lightsecondary px-6 pt-0 pb-1 mb-6"
-          id="knowledgebits"
+          key={index}
+          className="self-stretch px-8 pt-6 pb-8 mb-6 bg-white rounded-xl border border-slate-300 flex-col justify-center items-end gap-4"
+          id={section.id}
         >
-          {" "}
-          <h2 className="pt-7">Knowledge Bits</h2>
-          {opcode.knowledgeBits.map((link, index) => (
-            <p key={link.url}>
-              <Link href={link.url} rel="noopener noreferrer" target="_blank">
-                {link.displayText}
-              </Link>
-            </p>
+          <div className="self-stretch justify-start items-start gap-4">
+            <div className="body_section">{section.title}</div>
+          </div>
+          {section.content.map((content, contentIndex) => (
+            <React.Fragment key={contentIndex}>
+              {content.title && (
+                <div
+                  className={`self-stretch justify-between items-center inline-flex mt-6`}
+                >
+                  <div className="body_subsection">{content.title}</div>
+                </div>
+              )}
+              <div className="body_paragraph mt-3">
+                {/** TODO glossary hover tips */}
+                {parseTextWithLinks(content.content)}
+              </div>
+            </React.Fragment>
           ))}
         </div>
-      </main>
-    </div>
+      ))}
+    </main>
   );
 };
 
