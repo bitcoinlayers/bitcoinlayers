@@ -184,7 +184,7 @@ const Radar: React.FC = () => {
 
 const LayerOverview: React.FC<{ layer: Layer }> = ({ layer }) => {
   return (
-    <div className="flex justify-between pt-6 gap-4">
+    <div className="flex justify-between pt-6 gap-4 mb-12">
       <div className="flex flex-col w-13/20 space-y-10">
         <Categories layer={layer} />
         <Description layer={layer} />

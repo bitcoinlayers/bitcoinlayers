@@ -48,7 +48,9 @@ export default async function LayerPage({
         </div>
         <div className="w-4/5 flex flex-col">
           <LayerOverview layer={layer} />
-          <RiskAnalysis riskAnalysis={layer.riskAnalysis} riskFactors={layer.riskFactors} />
+          {layer.underReview === "no" && (
+            <RiskAnalysis riskAnalysis={layer.riskAnalysis} riskFactors={layer.riskFactors} />
+          )}
           <LayerBody layer={layer} />
         </div>
       </div>
