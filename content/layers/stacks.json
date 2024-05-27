@@ -10,7 +10,7 @@
   "settlement": "External",
   "btcLocked": 348,
   "executionEnv": "Clarity",
-  "consensus": "PoX",
+  "consensus": "PoS+PoW Network",
   "nativeToken": "STX",
   "feeToken": "STX",
   "enshrinedBtc": "sBTC",

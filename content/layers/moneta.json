@@ -10,7 +10,7 @@
   "settlement": "Onchain",
   "btcLocked": 3555,
   "executionEnv": "EVM",
-  "consensus": "PoM",
+  "consensus": "PoS Network",
   "nativeToken": "MTA",
   "feeToken": "mBTC",
   "enshrinedBtc": "mBTC",

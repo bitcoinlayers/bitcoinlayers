@@ -10,7 +10,7 @@
   "settlement": "External",
   "btcLocked": 0,
   "executionEnv": "Bitcoin Script",
-  "consensus": "PoM",
+  "consensus": "PoS Network",
   "nativeToken": "-",
   "feeToken": "ckBTC",
   "enshrinedBtc": "ckBTC",

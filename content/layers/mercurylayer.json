@@ -10,7 +10,7 @@
   "settlement": "External",
   "btcLocked": 0,
   "executionEnv": "Statechain",
-  "consensus": "Statechain",
+  "consensus": "-",
   "nativeToken": "BTC",
   "feeToken": "BTC",
   "enshrinedBtc": "BTC",

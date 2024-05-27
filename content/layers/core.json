@@ -10,7 +10,7 @@
   "settlement": "External",
   "btcLocked": "-",
   "executionEnv": "EVM",
-  "consensus": "Satoshi Plus",
+  "consensus": "PoS+PoW Network",
   "nativeToken": "CORE",
   "feeToken": "CORE",
   "enshrinedBtc": "coreBTC",

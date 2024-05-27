@@ -10,7 +10,7 @@
   "settlement": "External",
   "btcLocked": 2911,
   "executionEnv": "EVM",
-  "consensus": "Merge-mined",
+  "consensus": "Merge-mining",
   "nativeToken": "RBTC",
   "feeToken": "RBTC",
   "enshrinedBtc": "RBTC",

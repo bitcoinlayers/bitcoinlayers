@@ -109,7 +109,7 @@ const LayerTableRisks = ({ data }: Props) => {
                 {item.settlement}
               </td>
               <td className="px-6 py-4 border-stroke_tertiary">
-                OP XXXX
+                {item.consensus}
               </td>
               <td className="px-6 py-4 border-stroke_tertiary">
                 {item.settlement}

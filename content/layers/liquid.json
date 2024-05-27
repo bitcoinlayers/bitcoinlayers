@@ -10,7 +10,7 @@
   "settlement": "External",
   "btcLocked": 3860,
   "executionEnv": "Elements",
-  "consensus": "PoA",
+  "consensus": "Federation",
   "nativeToken": "L-BTC",
   "feeToken": "L-BTC",
   "enshrinedBtc": "L-BTC",

@@ -10,7 +10,7 @@
   "settlement": "External",
   "btcLocked": 0,
   "executionEnv": "-",
-  "consensus": "x",
+  "consensus": "-",
   "nativeToken": "SYS",
   "feeToken": "SYS",
   "enshrinedBtc": "None",

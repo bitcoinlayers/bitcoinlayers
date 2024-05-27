@@ -10,7 +10,7 @@
   "settlement": "-",
   "btcLocked": 0,
   "executionEnv": "-",
-  "consensus": "-",
+  "consensus": "CSV",
   "nativeToken": "-",
   "feeToken": "-",
   "enshrinedBtc": "-",

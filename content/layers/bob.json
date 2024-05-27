@@ -10,7 +10,7 @@
   "settlement": "External",
   "btcLocked": "1041",
   "executionEnv": "EVM",
-  "consensus": "Ethereum",
+  "consensus": "Centralized Sequencer",
   "nativeToken": "ETH",
   "feeToken": "ETH",
   "enshrinedBtc": "None",

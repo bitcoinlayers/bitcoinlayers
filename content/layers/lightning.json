@@ -10,7 +10,7 @@
   "settlement": "Onchain",
   "btcLocked": 4473,
   "executionEnv": "None",
-  "consensus": "na",
+  "consensus": "Self-sequencing",
   "nativeToken": "BTC",
   "feeToken": "BTC",
   "enshrinedBtc": "BTC",
