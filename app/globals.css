@@ -10,7 +10,7 @@
     @apply font-playfair-display text-[80px] italic font-normal leading-[80px] tracking-[-1.6px];
   }
   .layer_header {
-    @apply font-playfair-display text-[100px] italic font-normal leading-[80px] tracking-[-1.6px];
+    @apply font-playfair-display text-[100px] italic font-normal leading-[80px] tracking-[-1.6px] text-[#1a202c];
   }
   .body_section {
     @apply text-zinc-800 text-3xl font-light leading-9 mb-4 text-text_header;
