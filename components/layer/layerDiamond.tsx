@@ -49,7 +49,7 @@ const LayerDiamond: React.FC<{ layer: Layer }> = ({ layer }) => {
         Network Operator
       </div>
 
-      <div className={`absolute bottom-[255px] left-[90px] ${svgDimensions}`}>
+      <div className={`absolute top-[13px] left-[90px] ${svgDimensions}`}>
         <svg
           viewBox="0 0 97 97"
           className="w-full h-full relative flex-col justify-start items-start flex"
@@ -75,7 +75,7 @@ const LayerDiamond: React.FC<{ layer: Layer }> = ({ layer }) => {
         </svg>
       </div>
 
-      <div className={`absolute bottom-[185px] right-[85px] ${svgDimensions}`}>
+      <div className={`absolute top-[85px] right-[85px] ${svgDimensions}`}>
         <svg
           viewBox="0 0 97 97"
           className="w-full h-full relative flex-col justify-start items-start flex"
@@ -101,7 +101,7 @@ const LayerDiamond: React.FC<{ layer: Layer }> = ({ layer }) => {
         </svg>
       </div>
 
-      <div className={`absolute bottom-[113px] left-[90px] ${svgDimensions}`}>
+      <div className={`absolute top-[155px] left-[90px] ${svgDimensions}`}>
         <svg
           viewBox="0 0 97 97"
           className="w-full h-full relative flex-col justify-start items-start flex"
@@ -127,7 +127,7 @@ const LayerDiamond: React.FC<{ layer: Layer }> = ({ layer }) => {
         </svg>
       </div>
 
-      <div className={`absolute bottom-[185px] left-[23px] ${svgDimensions}`}>
+      <div className={`absolute top-[85px] left-[23px] ${svgDimensions}`}>
         <svg
           viewBox="0 0 97 97"
           className="w-full h-full relative flex-col justify-start items-start flex"
