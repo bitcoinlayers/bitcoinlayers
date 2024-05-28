@@ -6,7 +6,7 @@ People are requesting that we create definitions for various L2s and sidechains.
 - Sidechain: An alternative consensus protocol that is built to scale Bitcoin and/or add functionality to BTC the asset
 - Stakechain: A sidechain protocol that uses a Proof-of-Stake consensus mechanism, leveraging BTC the asset, to secure the chain
 - Merge-mined Sidechain: A sidechain protocol that has a separate security budget, but sees Bitcoin miners opt-in to participate in securing the sidechain. Merged mining enables Bitcoin miners to secure sidechains, and earn additional revenue, via the same mining infrastructure.
-- Anchored Sidechain: 
+- Anchored Sidechain: A sidechain that inherits Bitcoin finality and does not reorg unless the Bitcoin mainchain reorgs.
 - Spiderchain: A sidechain protocol that leverages a variety of rotating multi-sigs to secure the BTC that is deposited into the sidechain. 
 - Appchain: A sidechain protocol that inherits no security from Bitcoin, but is purpose-built to support applications that add functionality to BTC and Bitcoin assets.
 - Rollup: A blockchain that posts its latest state root, and enough transaction data to reconstruct its state from genesis, to Bitcoin
