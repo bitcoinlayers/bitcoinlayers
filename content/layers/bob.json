@@ -9,7 +9,7 @@
   "btcBridge": "Various",
   "settlement": "External",
   "btcLocked": "1041",
-  "executionEnv": "EVM",
+  "executionEnv": "state validation",
   "consensus": "Centralized Sequencer",
   "nativeToken": "ETH",
   "feeToken": "ETH",

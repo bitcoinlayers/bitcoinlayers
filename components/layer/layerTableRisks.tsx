@@ -96,23 +96,22 @@ const LayerTableRisks = ({ data }: Props) => {
               >
                 {item.btcBridge}
               </td>
-
               <td
-                className={`px-6 py-4 border-stroke_tertiary ${
-                  item.settlement === "External"
-                    ? "text-text_risk_high"
-                    : item.settlement === "Onchain"
-                    ? "text-text_risk_low"
-                    : ""
-                }`}
+                className={`px-6 py-4 border-stroke_tertiary ${getRiskColorClass(
+                  item.riskAnalysis[1]?.tier || ""
+                )}`}
               >
                 {item.settlement}
               </td>
               <td className="px-6 py-4 border-stroke_tertiary">
                 {item.consensus}
               </td>
-              <td className="px-6 py-4 border-stroke_tertiary">
-                {item.settlement}
+              <td
+                className={`px-6 py-4 border-stroke_tertiary ${getRiskColorClass(
+                  item.riskAnalysis[3]?.tier || ""
+                )}`}
+              >
+                {item.executionEnv}
               </td>
             </tr>
           ))}
