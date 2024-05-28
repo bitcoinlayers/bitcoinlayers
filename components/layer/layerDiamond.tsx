@@ -40,13 +40,13 @@ const LayerDiamond: React.FC<{ layer: Layer }> = ({ layer }) => {
         Data Availability
       </div>
       <div className="left-0 top-[136.87px] absolute origin-top-left -rotate-45 text-center text-slate-600 text-xs font-medium leading-none">
-        Settlement
+        Settlement Assurance
       </div>
       <div className="left-[165.14px] top-0 absolute origin-top-left rotate-45 text-center text-slate-600 text-xs font-medium leading-none">
         Bridge
       </div>
       <div className="left-[75.14px] top-[212px] absolute origin-top-left rotate-45 text-center text-slate-600 text-xs font-medium leading-none">
-        Network Operators
+        Network Operator
       </div>
 
       <div className={`absolute bottom-[255px] left-[90px] ${svgDimensions}`}>
