@@ -55,15 +55,6 @@
   ],
   "sections": [
     {
-      "id": "description",
-      "title": "Description",
-      "content": [
-        {
-          "content": "The Liquid Network is a sidechain that enables users to perform confidential transactions, swaps, issue tokenized assets, and more, on the sidechain. It is managed by a permissioned federation, and does not use the Bitcoin Layer 1 for security. It uses a federated multi-sig to custody the BTC that is used to issue BTC IOUs (L-BTC) on the sidechain."
-        }
-      ]
-    },
-    {
       "id": "bitcoinsecurity",
       "title": "Bitcoin Security",
       "content": [
