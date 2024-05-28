@@ -9,7 +9,7 @@
   "btcBridge": "Various Multisig(s)",
   "settlement": "Offchain",
   "btcLocked": "1041",
-  "executionEnv": "Under",
+  "executionEnv": "Under Development",
   "consensus": "Centralized Sequencer",
   "nativeToken": "ETH",
   "feeToken": "ETH",
