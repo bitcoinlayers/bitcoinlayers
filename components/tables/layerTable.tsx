@@ -9,7 +9,7 @@ import TableHeader from "@/components/tables/tableHeader";
 
 interface Props {
   data: Layer[];
-  headers: { name: string; showHeader: boolean, filterOptions?: string[] }[];
+  headers: { name: string; showSorting: boolean, filterOptions?: string[] }[];
 }
 
 const LayerImage = ({ src, title }: { src: string; title: string }) => {
