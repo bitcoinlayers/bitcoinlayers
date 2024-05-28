@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 
 interface TableHeaderProps {
-  headers: { name: string; filterOptions?: string[] }[];
+  headers: { name: string; filterOptions?: string[]; showSorting?: boolean }[];
   onSort: (header: string, ascending: boolean) => void;
   onFilter: (header: string, value: string) => void;
 }
@@ -84,20 +84,22 @@ const TableHeader: React.FC<TableHeaderProps> = ({ headers, onSort, onFilter }) 
                     )}
                   </div>
                 )}
-                <div className="relative w-[11px] h-[22px] ml-2 flex flex-col items-center">
-                  <div
-                    className={`cursor-pointer ${sortOrder[header.name] === true ? "text-brand" : "text-gray-400"}`}
-                    onClick={() => handleSort(header.name, true)}
-                  >
-                    <Image src="/icons/carrot_up.svg" alt="Sort Ascending" width={11} height={11} />
+                {header.showSorting && (
+                  <div className="relative w-[11px] h-[22px] ml-2 flex flex-col items-center">
+                    <div
+                      className={`cursor-pointer ${sortOrder[header.name] === true ? "text-brand" : "text-gray-400"}`}
+                      onClick={() => handleSort(header.name, true)}
+                    >
+                      <Image src="/icons/carrot_up.svg" alt="Sort Ascending" width={11} height={11} />
+                    </div>
+                    <div
+                      className={`cursor-pointer ${sortOrder[header.name] === false ? "text-brand" : "text-gray-400"}`}
+                      onClick={() => handleSort(header.name, false)}
+                    >
+                      <Image src="/icons/carrot_up.svg" alt="Sort Descending" width={11} height={11} className="rotate-180" />
+                    </div>
                   </div>
-                  <div
-                    className={`cursor-pointer ${sortOrder[header.name] === false ? "text-brand" : "text-gray-400"}`}
-                    onClick={() => handleSort(header.name, false)}
-                  >
-                    <Image src="/icons/carrot_up.svg" alt="Sort Descending" width={11} height={11} className="rotate-180" />
-                  </div>
-                </div>
+                )}
               </div>
             </div>
             {index < headers.length - 1 && (

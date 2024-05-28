@@ -15,14 +15,14 @@ export default function Home() {
     .sort((a, b) => a.title.localeCompare(b.title));
 
   const layerHeaders = [
-    { name: "Name" },
-    { name: "Risks" },
-    { name: "Type" },
-    { name: "Status" },
+    { name: "Name", showSorting: true },
+    { name: "Risk", showSorting: false },
+    { name: "Type", showSorting: true },
+    { name: "Status", showSorting: true },
     // { name: "Type", filterOptions: ["Sidechain", "State Channel", "Rollup"] },
     // { name: "Status", filterOptions: ["Mainnet", "Testnet", "Announced"] },
-    { name: "Unit of Account" },
-    { name: "BTC Locked" },
+    { name: "Unit of Account", showSorting: true },
+    { name: "BTC Locked", showSorting: true }
   ];
 
   const tabComponents = {
