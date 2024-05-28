@@ -64,7 +64,7 @@ const LayerTableRisks = ({ data }: Props) => {
               Data Availability
             </th>
             <th className="px-6 py-6 font-medium text-text_table_header table_header border-t border-stroke_tertiary">
-              Network Operators
+              Network Operator
             </th>
             <th className="px-6 py-6 font-medium text-text_table_header table_header border-t border-r border-stroke_tertiary first:rounded-tr-xl">
               Settlement Assurance
