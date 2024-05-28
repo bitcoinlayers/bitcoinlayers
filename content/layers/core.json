@@ -10,7 +10,7 @@
   "settlement": "External",
   "btcLocked": "-",
   "executionEnv": "EVM",
-  "consensus": "PoS+PoW Network",
+  "consensus": "Hybrid Consensus",
   "nativeToken": "CORE",
   "feeToken": "CORE",
   "enshrinedBtc": "coreBTC",
