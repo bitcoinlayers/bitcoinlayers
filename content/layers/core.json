@@ -6,7 +6,7 @@
   "underReview": "no",
   "riskFactors": ["High", "Medium", "Medium", "Medium"],
   "purpose": "General",
-  "btcBridge": "Permissionless Multisig",
+  "btcBridge": "Federated Multisig",
   "settlement": "External",
   "btcLocked": "-",
   "executionEnv": "EVM",

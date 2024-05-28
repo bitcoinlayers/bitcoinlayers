@@ -6,7 +6,7 @@
   "underReview": "yes",
   "riskFactors": ["", "", "", ""],
   "purpose": "General",
-  "btcBridge": "Permissionless Multisig",
+  "btcBridge": "Federated Multisig",
   "settlement": "External",
   "btcLocked": 0,
   "executionEnv": "Bitcoin Script",
