@@ -4,7 +4,7 @@
   "layerType": "Federated Sidechain",
   "live": "Mainnet",
   "underReview": "no",
-  "riskFactors": ["", "", "", ""],
+  "riskFactors": ["High", "", "", ""],
   "purpose": "General",
   "btcBridge": "Federated Multisig",
   "settlement": "External",
