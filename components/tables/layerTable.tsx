@@ -36,9 +36,13 @@ const LayerImage = ({ src, title }: { src: string; title: string }) => {
 
 const LayerTable = ({ data, headers }: Props) => {
   const router = useRouter();
-  const [filters, setFilters] = useState<{ [key: string]: string[] }>({ Status: ["Mainnet"] });
+  const [filters, setFilters] = useState<{ [key: string]: string[] }>({
+    Status: ["Mainnet"],
+  });
   const [sortedData, setSortedData] = useState(data);
-  const [sortOrder, setSortOrder] = useState<{ [key: string]: boolean | null }>({});
+  const [sortOrder, setSortOrder] = useState<{ [key: string]: boolean | null }>(
+    {}
+  );
 
   useEffect(() => {
     // Default sorting by Name alphabetically on first load
@@ -116,27 +120,42 @@ const LayerTable = ({ data, headers }: Props) => {
   return (
     <div className="overflow-x-auto bg-lightsecondary rounded-xl mx-auto border border-stroke_tertiary relative">
       <table className="bg-lightsecondary table-fixed sm:w-full text-sm text-left rtl:text-right">
-        <TableHeader headers={headers} onSort={handleSort} onFilter={handleFilter} />
+        <TableHeader
+          headers={headers}
+          onSort={handleSort}
+          onFilter={handleFilter}
+        />
         <tbody className="bg-white gap-x-8 border-t border-stroke_tertiary text_table_important">
           {filteredData.map((item, index) => (
             <tr
               className={`cursor-pointer ${
-                index === filteredData.length - 1 ? "" : "border-b border-stroke_tertiary text_table_important"
+                index === filteredData.length - 1
+                  ? ""
+                  : "border-b border-stroke_tertiary text_table_important"
               }`}
-              key={item.slug}  // Use item.slug as the unique key
+              key={item.slug} // Use item.slug as the unique key
               onClick={() => handleRowClick(`/layers/${item.slug}`)}
             >
               <td className="flex items-center px-6 py-4 font-semibold whitespace-nowrap border-l border-stroke_tertiary text_table_important">
-                <LayerImage src={`/logos/${item.slug}.png`} title={item.title} />
+                <LayerImage
+                  src={`/logos/${item.slug}.png`}
+                  title={item.title}
+                />
                 <span className="ml-2">{item.title}</span>
               </td>
               <td className="px-2 border-stroke_tertiary text_table_important">
-                <Risk layer={item} />
+                {item.underReview === "no" ? (
+                  <Risk layer={item} />
+                ) : (
+                  <div className="px-5 text_table_important">Under review</div>
+                )}
               </td>
               <td className="px-6 py-4 border-stroke_tertiary text_table_important">
                 {item.layerType}
               </td>
-              <td className="px-6 py-4 border-stroke_tertiary text_table_important">{item.live}</td>
+              <td className="px-6 py-4 border-stroke_tertiary text_table_important">
+                {item.live}
+              </td>
               <td className="px-6 py-4 border-stroke_tertiary text_table_important">
                 {item.nativeToken}
               </td>

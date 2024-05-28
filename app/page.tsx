@@ -17,8 +17,10 @@ export default function Home() {
   const layerHeaders = [
     { name: "Name" },
     { name: "Risks" },
-    { name: "Type", filterOptions: ["Sidechain", "State Channel", "Rollup"] },
-    { name: "Status", filterOptions: ["Mainnet", "Testnet", "Announced"] },
+    { name: "Type" },
+    { name: "Status" },
+    // { name: "Type", filterOptions: ["Sidechain", "State Channel", "Rollup"] },
+    // { name: "Status", filterOptions: ["Mainnet", "Testnet", "Announced"] },
     { name: "Unit of Account" },
     { name: "BTC Locked" },
   ];
