@@ -106,7 +106,7 @@ const LayerTableRisks = ({ data }: Props) => {
                     : ""
                 }`}
               >
-                {item.dataavailability}
+                {item.settlement}
               </td>
               <td className="px-6 py-4 border-stroke_tertiary">
                 {item.consensus}
