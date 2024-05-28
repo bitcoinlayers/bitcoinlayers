@@ -23,7 +23,7 @@
     "https://twitter.com/MerlinLayer2"
   ],
   "description":
-   "Merlin chain is a Polygon CDK chain. It's L1 smart contract, in its documentation, points to Ethereum. Its documentation shares that it will add Bitcoin native security in the future, but no code or research has been released. Users should remain cautious when depositing funds into Merlin Chain. The Bitcoin bridge is essentially a centralized multi-sig that can steal user funds at any point."
+   "Merlin chain is a Polygon CDK chain. It's L1 smart contract, in its documentation, points to Ethereum. Its documentation shares that it will add Bitcoin native security in the future, but no code or research has been released. The Bitcoin bridge is essentially a centralized multi-sig that can steal user funds at any point."
   ,
   "riskAnalysis": [
     {
@@ -56,15 +56,6 @@
     }
   ],
   "sections": [
-    {
-      "id": "description",
-      "title": "Description",
-      "content": [
-        {
-          "content": "Merlin is an implementation of Polygon CDK chain. It looks to build a validia chain using an alternative system for data availability. Its documentation shares that it will add Bitcoin native security in the future, but no code or research has been released."
-        }
-      ]
-    },
 {
   "id": "bitcoinsecurity",
   "title": "Additional risk information",

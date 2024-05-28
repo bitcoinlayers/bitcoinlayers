@@ -9,7 +9,7 @@
   "btcBridge": "Various Multisig(s)",
   "settlement": "Offchain",
   "btcLocked": "1041",
-  "executionEnv": "Under Development",
+  "executionEnv": "Under",
   "consensus": "Centralized Sequencer",
   "nativeToken": "ETH",
   "feeToken": "ETH",
@@ -54,16 +54,6 @@
     }
   ],
   "sections": [
-    {
-      "id": "description",
-      "title": "Description",
-      "content": [
-        {
-          "title": "BOB is an Ethereum rollup",
-          "content": "BOB is an optimistic rollup that serves as an application layer for Bitcoin. They have launched as a rollup on top of Ethereum, with plans to derive more security from Bitcoin miners, and full nodes, over time. Its relation to Bitcoin, currently, is similar to that of a sidechain as it is an alternative consensus protocol with a two-way peg(s) between it and the Bitcoin mainchain."
-        }
-      ]
-    },
     {
       "id": "bitcoinsecurity",
       "title": "Bitcoin Security",
