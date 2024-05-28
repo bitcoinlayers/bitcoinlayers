@@ -1,7 +1,7 @@
 {
   "slug": "bitlayer",
   "title": "BitLayer",
-  "layerType": "Federated Sidechain",
+  "layerType": "Sidechain",
   "live": "Mainnet",
   "underReview": "no",
   "riskFactors": ["High", "High", "High", "High"],
