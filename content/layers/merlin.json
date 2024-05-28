@@ -12,8 +12,8 @@
   "executionEnv": "Offchain",
   "consensus": "Centralized Sequencer",
   "nativeToken": "-",
-  "feeToken": "x",
-  "enshrinedBtc": "x",
+  "feeToken": "-",
+  "enshrinedBtc": "-",
   "links": [
     "https://merlinchain.io/",
     "https://docs.merlinchain.io/merlin-docs",
