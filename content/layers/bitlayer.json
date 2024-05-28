@@ -4,12 +4,12 @@
   "layerType": "Federated Sidechain",
   "live": "Mainnet",
   "underReview": "no",
-  "riskFactors": ["High", "", "", ""],
+  "riskFactors": ["High", "High", "High", "High"],
   "purpose": "General",
   "btcBridge": "Federated Multisig",
-  "settlement": "External",
+  "settlement": "Offchain",
   "btcLocked": "-",
-  "executionEnv": "Under review",
+  "executionEnv": "Offchain",
   "consensus": "Federated Sidechain",
   "nativeToken": "BTR",
   "feeToken": "BTC",
@@ -28,29 +28,29 @@
       "category": "Unilateral Exits",
       "score": 0,
       "tier": "High",
-      "title": "",
-      "content": ""
+      "title": "Users trust a federated multi-sig and upgradeable contracts with the custody of their BTC",
+      "content": "We are currently reviewing the exact implementation of BitLayer's two-way peg with Bitcoin. It has been publicly acknowledge by the team that the current implementation is a federated multi-sig. BTC users will deposit their BTC into a Bitcoin multi-sig wallet that initiates an unlock transfer from a vault on the BitLayer chain. EVM users can deposit wBTC into BitLayer from their EVM wallet. Both bridge contracts, on BitLayer, are upgradeable by an admin."
     },
     {
       "category": "Data Availability",
       "score": 0,
-      "tier": "",
-      "title": "",
-      "content": ""
+      "tier": "High",
+      "title": "Data is stored offchain",
+      "content": "BitLayer does not currently use Bitcoin for data availability. We are currently reviewing the specific parties responsible for data availability."
     },
     {
       "category": "Block Production",
       "score": 0,
-      "tier": "",
-      "title": "",
-      "content": ""
+      "tier": "High",
+      "title": "Blocks are produced by a permissioned validator set",
+      "content": "BitLayer blocks are currently produced by a permissioned validator set. Information on how blocks are produced is limited, but it seems that BitLayer blocks are evenly distributed, and produced in order, by its validator set"
     },
     {
       "category": "State Validation",
       "score": 0,
-      "tier": "",
-      "title": "",
-      "content": ""
+      "tier": "High",
+      "title": "No onchain enforcement of BitLayer state transitions",
+      "content": "There is no onchain enforcement of BitLayer state transitions on Bitcoin."
     }
   ],
   "sections": [
@@ -61,28 +61,6 @@
         {
           "title": "BitLayer's mainnet v1 is a sidechain",
           "content": "BitLayer is building towards a validia chain on top of Bitcoin. Its current implementation is run by a network of 21, federated validators securing the network. It supports an EVM execution environment with plans to support other VMs. In its docs, BitLayer states that it will use an offchain data availability solution in its future mainnet releases. Its roadmap sees it adding support for a BitVM-style bridge, but currently, the bridge is managed by various multi-sig wallets."
-        }
-      ]
-    },
-    {
-      "id": "riskanalysis",
-      "title": "Risk Analysis",
-      "content": [
-        {
-          "title": "Users trust a federated multi-sig and upgradeable contracts with the custody of their BTC",
-          "content": "We are currently reviewing the exact implementation of BitLayer's two-way peg with Bitcoin. It has been publicly acknowledge by the team that the current implementation is a federated multi-sig. BTC users will deposit their BTC into a Bitcoin multi-sig wallet that initiates an unlock transfer from a vault on the BitLayer chain. EVM users can deposit wBTC into BitLayer from their EVM wallet. Both bridge contracts, on BitLayer, are upgradeable by an admin."
-        },
-        {
-          "title": "Data is stored offchain",
-          "content": "BitLayer does not currently use Bitcoin for data availability. We are currently reviewing the specific parties responsible for data availability."
-        },
-        {
-          "title": "Blocks are produced by a permissioned validator set",
-          "content": "BitLayer blocks are currently produced by a permissioned validator set. Information on how blocks are produced is limited, but it seems that BitLayer blocks are evenly distributed, and produced in order, by its validator set"
-        },
-        {
-          "title": "No onchain enforcement of BitLayer state transitions",
-          "content": "There is no onchain enforcement of BitLayer state transitions on Bitcoin."
         }
       ]
     },
