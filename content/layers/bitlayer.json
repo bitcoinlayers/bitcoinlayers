@@ -1,7 +1,7 @@
 {
   "slug": "bitlayer",
   "title": "BitLayer",
-  "layerType": "Sidechain",
+  "layerType": "Federated Sidechain",
   "live": "Mainnet",
   "underReview": "yes",
   "riskFactors": ["", "", "", ""],
@@ -10,7 +10,7 @@
   "settlement": "External",
   "btcLocked": "-",
   "executionEnv": "x",
-  "consensus": "-",
+  "consensus": "Federated Sidechain",
   "nativeToken": "BTR",
   "feeToken": "BTC",
   "enshrinedBtc": "x",
