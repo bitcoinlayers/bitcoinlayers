@@ -3,7 +3,7 @@
   "title": "Liquid",
   "layerType": "Sidechain",
   "live": "Mainnet",
-  "underReview": "No",
+  "underReview": "no",
   "riskFactors": ["High", "Medium", "High", "High"],
   "purpose": "General",
   "btcBridge": "Federated Multisig",

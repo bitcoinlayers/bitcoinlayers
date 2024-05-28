@@ -3,7 +3,7 @@
   "title": "Fedimint",
   "infrastructureType": "Federation SDK",
   "live": "Mainnet",
-  "underReview": "No",
+  "underReview": "no",
   "riskFactors": ["High", "High"],
   "bitcoinSecurity": "No",
   "nativeToken": "None",
