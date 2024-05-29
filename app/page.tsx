@@ -5,16 +5,13 @@ import { allLayers } from "@/util/layer_index";
 import LayerTable from "@/components/tables/layerTable";
 import LayerTableRisks from "@/components/tables/layerTableRisks";
 import Hero from "@/components/hero";
-import LayerTableUpcoming from "@/components/tables/layerUpcoming";
 
-type TabKey = "overview" | "risks" | "upcoming";
+type TabKey = "overview" | "risks";
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState<TabKey>("overview");
 
   const sortedLayers = allLayers.sort((a, b) => a.title.localeCompare(b.title));
-
-  const upcomingLayers = allLayers.sort((a, b) => a.title.localeCompare(b.title));
 
   const layerHeaders = [
     { name: "Name", showSorting: true },
@@ -30,7 +27,6 @@ export default function Home() {
   const tabComponents = {
     overview: <LayerTable data={sortedLayers} headers={layerHeaders} />,
     risks: <LayerTableRisks />,
-    upcoming: <LayerTableUpcoming data={upcomingLayers} headers={layerHeaders} />,
   };
 
   const handleTabClick = (tab: TabKey) => {
@@ -73,24 +69,6 @@ export default function Home() {
                 }`}
               >
                 Risks
-              </div>
-            </div>
-          </div>
-          <div
-            className={`h-[30px] rounded-full border-2 justify-center items-center gap-1 flex cursor-pointer ${
-              activeTab === "upcoming"
-                ? "bg-white border-orange-600"
-                : "border-slate-300"
-            }`}
-            onClick={() => handleTabClick("upcoming")}
-          >
-            <div className="grow shrink basis-0 h-[30px] px-4 py-[5px] justify-center items-center gap-1.5 flex">
-              <div
-                className={`text-center text-sm font-medium leading-tight ${
-                  activeTab === "upcoming" ? "text-orange-600" : "text-slate-600"
-                }`}
-              >
-                Upcoming Layers
               </div>
             </div>
           </div>
