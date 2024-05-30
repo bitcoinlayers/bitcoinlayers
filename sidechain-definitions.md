@@ -13,15 +13,15 @@ People are requesting that we create definitions for various L2s and sidechains.
 - Sovereign rollup: A rollup that does not have a validating bridge (a.k.a enshrined two-way peg) with Bitcoin
 - Validity rollup: A rollup where a prover submits a validity proof to a verifier contract on the L1 proving that the state transition was executed correctly
 - Optimistic rollup: A rollup where challengers can submit a fault proof to challenge malicious state transitions
-- Bitvium Rollup: A rollup with where the sequencer executes state transitions and has prover submit a validity proof to a group of verifiers on the L1 optimistically prove the state transition was executed correctly
+- Bitvium Rollup: A rollup with where the sequencer executes state transitions and sees a prover submit a validity proof, for an associated state transition, to Bitcoin. A group of verifiers on optimistically prove the state transition was executed correctly
 - Validium: A blockchain that uses an offchain system for data availability and has a prover submits a validity proof to a verifier contract on the L1 proving that the state transition was executed correctly
 - Optimium: A blockchain that uses an offchain system for data availability and has challengers can submit a fault proof to challenge malicious state transitions
 - Bitvimium: A blockchain that uses an offchain system for data availability and has a prover submit a validity proof to a group of verifiers on the L1 optimistically prove the state transition was executed correctly
-- Client-side validation: A system where the validation of a specific state transition is only performed by the parties involved in that state transition.
-- zkCSV: A CSV protocol that compresses the history associated with a specific token into a validity proof.
-- Statechain: A protocol where users enter a 2-2 multisig with a federated entity and transfer ownership of a UTXO to an intended recipient by providing them a statechain private key for that specific UTXO.
-- Spacechain: A sidechain design where users can burn their BTC to redeem tokenized assets on the sidechain.
+- Client-side validation: A system where the validation of a specific state transition is only performed by the parties involved in that state transition
+- zkCSV: A CSV protocol that compresses the history associated with a specific token into a validity proof. Senders update a token's history by geneterating a state trasition within the associated validity proof and see the recepient verify the validity proof
+- Statechain: A protocol where users enter a 2-2 multisig with a federated entity and transfer ownership of a UTXO to an intended recipient by providing them a statechain private key for that specific UTXO
+- Spacechain: A sidechain design where users can burn their BTC to redeem tokenized assets on the sidechain
 - Ecash: Ecash are digital bearer tokens, representing satoshis, that can be used in a variety of financial applications. Custodians are responsible for minting and burning Ecash tokens.
-- Fedimint: Fedimints support the minting of Satoshi-backed Ecash tokens through a federated multi-sig. Fedimints can also be used to support various federated financial application modules.
-- State channel: A system where part of the blockchain's state is locked into a multi-signature contract between a number of counterparties. These counterparties engage in transactions, related to this state, amongst themselves and keep a record of state transitions locally.
-- Payment channel: A state channel implementation where two counterparties create a multi-signature contract that allows to open an offchain payment channel, between themselves, to facilitate offchain payments. These channels can support an (near) unlimited amount of transactions between the two parties.
+- Fedimint: Fedimints support the minting of Satoshi-backed Ecash tokens through a federated multi-sig. Fedimints can also be used to support various federated financial application modules
+- State channel: A system where part of the blockchain's state is locked into a multi-signature contract between a number of counterparties. These counterparties engage in transactions, related to this state, amongst themselves and keep a record of state transitions locally
+- Payment channel: A state channel implementation where two counterparties create a multi-signature contract that allows to open an offchain payment channel, between themselves, to facilitate offchain payments. These channels can support an (near) unlimited amount of transactions between the two parties
