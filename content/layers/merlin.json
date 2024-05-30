@@ -3,8 +3,8 @@
   "title": "Merlin",
   "layerType": "Sidechain",
   "live": "Mainnet",
-  "underReview": "no",
-  "riskFactors": ["High", "High", "High", "Medium"],
+  "underReview": "yes",
+  "riskFactors": ["", "High", "High", "Medium"],
   "purpose": "General",
   "btcBridge": "Federated Multisig",
   "settlement": "Offchain DAC",
@@ -50,7 +50,7 @@
       "score": 0,
       "tier": "Medium",
       "title": "No mechanism to enforce state validation on Bitcoin",
-      "content": "Merlin uses zkSNARKS to ensure state correctness. The Merlin prover supposedly posts validity proofs of execution to its L1 contract to finalize state transitions. It is unknown which chain Merlin settles to, but its documentation previously pointed to Ethereum."
+      "content": "Merlin uses zkSNARKS to ensure state correctness. The Merlin prover posts validity proofs of execution to its L1 contract to finalize state transitions. It is unknown which chain Merlin settles to, but its documentation previously pointed to Ethereum."
     }
   ],
   "sections": [
