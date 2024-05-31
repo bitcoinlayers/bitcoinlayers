@@ -98,7 +98,7 @@ const LayerTableRisks = ({ data }: Props) => {
                 <table className="bg-lightsecondary table-fixed w-full text-sm text-left rtl:text-right rounded-xl">
                     <thead className="bg-table_header rounded-t-xl">
                         <tr className="border-b border-stroke_tertiary rounded-t-xl">
-                            <th className="lg:px-6 px-4 lg:py-6 py-2 font-medium text-text_table_header table_header border-r border-stroke_tertiary rounded-tl-xl">
+                            <th className="lg:px-6 px-4 lg:py-6 py-2 font-medium text-text_table_header table_header border-r lg:border-r-0 border-stroke_tertiary rounded-tl-xl">
                                 Name
                             </th>
                             {(!isMobile || mobileRiskTab === "Bridge") && (
@@ -134,7 +134,7 @@ const LayerTableRisks = ({ data }: Props) => {
                                 key={index}
                                 onClick={() => handleRowClick(`/layers/${item.slug}`)}
                             >
-                                <td className="flex items-center lg:px-6 px-4 lg:py-4 py-3 font-semibold whitespace-nowrap border-stroke_tertiary border-r text-table_body">
+                                <td className="flex items-center lg:px-6 px-4 lg:py-4 py-3 font-semibold whitespace-nowrap border-stroke_tertiary border-r lg:border-r-0 text-table_body">
                                     <LayerImage
                                         src={`/logos/${item.slug}.png`}
                                         title={item.title}

@@ -1,64 +1,80 @@
 import React, { useState, useEffect } from "react";
 import { Layer } from "./layerProps";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 const LayerMenu: React.FC<{ layer: Layer }> = ({ layer }) => {
-  const [activeSection, setActiveSection] = useState("overview");
+    const [activeSection, setActiveSection] = useState("overview");
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const sections = document.querySelectorAll("section[id]");
-      let currentSection = "overview";
-      sections.forEach((section) => {
-        const sectionTop = section.getBoundingClientRect().top;
-        if (sectionTop <= 80) {
-          currentSection = section.getAttribute("id") || "overview";
+    useEffect(() => {
+        const handleScroll = () => {
+            const sections = document.querySelectorAll("section[id]");
+            let currentSection = "overview";
+            sections.forEach((section) => {
+                const sectionTop = section.getBoundingClientRect().top;
+                if (sectionTop <= 140) {
+                    currentSection = section.getAttribute("id") || "overview";
+                }
+            });
+
+            setActiveSection(currentSection);
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
+
+    const handleClick = (id: string) => {
+        setActiveSection(id);
+        scrollToSectionWithOffset(id);
+    };
+
+    // mobile view offset of 48px needed
+    function scrollToSectionWithOffset(elementId: string) {
+        const element = document.getElementById(elementId);
+        if (element) {
+            const yCoordinate = element.getBoundingClientRect().top + window.scrollY - 48;
+            console.log(yCoordinate, "yCoordinate");
+            window.scrollTo({ top: yCoordinate, behavior: "smooth" });
         }
-      });
-      setActiveSection(currentSection);
-    };
+    }
 
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+    return (
+        <nav className="">
+            <div className="flex lg:flex-col justify-start items-start lg:gap-4 gap-2">
+                {/*  menu is updating with coloring to match the live section */}
 
-  const handleClick = (id: string) => {
-    setActiveSection(id);
-  };
-
-  return (
-    <nav className="sticky top-0 h-screen w-full overflow-y-auto pt-6">
-      <div className="flex flex-col justify-start items-start gap-4"> 
-      {/**TODO menu is not updating with coloring to match the live section */}
-        {[
-          { id: "overview", title: "Overview" },
-          { id: "riskanalysis", title: "Risk Analysis" },
-          ...layer.sections,
-          { id: "knowledgebits", title: "Knowledge Bits" },
-        ].map((section, index) => (
-          <div key={index} className="flex justify-start items-center gap-4">
-            <div
-              className={`w-[3px] h-10 ${
-                activeSection === section.id ? "bg-brand" : "opacity-0 bg-brand_neutral"
-              }`}
-            ></div>
-            <a
-              className={`no-underline text-sm ${
-                activeSection === section.id
-                  ? 'text-orange-600 font-semibold font-["Inter"] leading-tight'
-                  : "text-neutral-700 font-light leading-tight"
-              }`}
-              href={`#${section.id}`}
-              onClick={() => handleClick(section.id)}
-            >
-              {section.title}
-            </a>
-          </div>
-        ))}
-      </div>
-    </nav>
-  );
+                {[
+                    { id: "overview", title: "Overview" },
+                    { id: "riskanalysis", title: "Risk Analysis" },
+                    ...layer.sections,
+                    { id: "knowledgebits", title: "Knowledge Bits" }
+                ].map((section, index) => (
+                    <div
+                        key={index}
+                        className={`flex lg:flex-row flex-col-reverse justify-start items-center lg:gap-4 gap-2 p-3 ${
+                            activeSection === section.id
+                                ? " border-b-[3px] lg:border-l-[3px] lg:border-0 border-brand"
+                                : " border-b-[3px] border-transparent lg:border-l-[3px]"
+                        } `}
+                    >
+                        <a
+                            className={`no-underline text-sm whitespace-pre ${
+                                activeSection === section.id
+                                    ? "text-orange-600 font-semibold font-inter leading-tight"
+                                    : "text-neutral-700 font-light leading-tight"
+                            }`}
+                            onClick={() => handleClick(section.id)}
+                            href={`#${section.id}`}
+                        >
+                            {section.title}
+                        </a>
+                    </div>
+                ))}
+            </div>
+        </nav>
+    );
 };
 
 export default LayerMenu;

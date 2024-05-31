@@ -51,7 +51,7 @@ module.exports = {
         icon_secondary: "#434D65",
         icon_tertiary: "#C9D0D8",
         icon_quaternary: "#F4F7FA",
-        
+
         state_default: "#FDFDFD",
         state_hover: "#F5F8FD",
         state_brand: "#FFF4ED",
@@ -60,7 +60,7 @@ module.exports = {
         stroke_primary: "#767B8F",
         stroke_secondary: "#D3DDE8",
         stroke_tertiary: "#E1EAF8",
-        
+
         text_header: "#292929",
         text_primary: "#434D65",
         text_secondary: "#767B8F",
@@ -75,7 +75,7 @@ module.exports = {
         "playfair-display": "Playfair Display",
         hack: "Hack",
         "public-sans": "Public Sans",
-        inter: "Inter",
+        inter: ["Inter", "sans-serif"],
       },
       fontSize: {
         xs: "0.75rem",
