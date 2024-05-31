@@ -3,8 +3,8 @@
   "title": "Merlin",
   "layerType": "Sidechain",
   "live": "Mainnet",
-  "underReview": "yes",
-  "riskFactors": ["", "High", "High", "Medium"],
+  "underReview": "no",
+  "riskFactors": ["", "High", "High", "High"],
   "purpose": "General",
   "btcBridge": "Under review",
   "settlement": "Under review",
@@ -27,28 +27,28 @@
     {
       "category": "Unilateral Exits",
       "score": 0,
-      "tier": "",
+      "tier": "Under review",
       "title": "Bridge program under review",
       "content": "We are currently reviewing the bridge program related to Merlin. The vault that mints BTC on Merlin is an upgradeable contract."
     },
     {
       "category": "Data Availability",
       "score": 0,
-      "tier": "",
+      "tier": "High",
       "title": "Uses a DAC for offchain data availability. Members under review",
       "content": "Merlin chain is built on the Polygon CDK stack. In its Github, it has a copy of the Polygon CDK Committee contract. In the contract, it states that the admin has the control to set up the committee, so it is likely that the members of this committee are permissioned and selected by the Merlin Chain operator."
     },
     {
       "category": "Block Production",
       "score": 0,
-      "tier": "",
+      "tier": "High",
       "title": "Blocks are produced by a centralized sequencer",
       "content": "Merlin chain blocks are currently produced by a centralized sequencer."
     },
     {
       "category": "State Validation",
       "score": 0,
-      "tier": "",
+      "tier": "High",
       "title": "No mechanism to enforce state validation on Bitcoin",
       "content": "Merlin uses zkSNARKS to ensure state correctness. The Merlin prover posts validity proofs of execution to its L1 contract to finalize state transitions. It is unknown which chain Merlin settles to, but its documentation previously pointed to Ethereum."
     }
