@@ -9,78 +9,74 @@ import Hero from "@/components/hero";
 type TabKey = "overview" | "risks";
 
 export default function Home() {
-    const [activeTab, setActiveTab] = useState<TabKey>("overview");
+  const [activeTab, setActiveTab] = useState<TabKey>("overview");
 
-    const sortedLayers = allLayers.sort((a, b) => a.title.localeCompare(b.title));
+  const sortedLayers = allLayers.sort((a, b) => a.title.localeCompare(b.title));
 
-    const layerHeaders = [
-        { name: "Name", showSorting: true, mobileLabel: "Name" },
-        { name: "Risk", showSorting: false, mobileLabel: "Risk" },
-        { name: "Type", showSorting: true, mobileLabel: "Type" },
-        { name: "Status", showSorting: true, mobileLabel: "Status" },
-        // { name: "Type", filterOptions: ["Sidechain", "State Channel", "Rollup"] },
-        // { name: "Status", filterOptions: ["Mainnet", "Testnet", "Announced"] },
-        { name: "Unit of Account", showSorting: true, mobileLabel: "Unit" },
-        { name: "BTC Locked", showSorting: true, mobileLabel: "TVL" }
-    ];
+  const layerHeaders = [
+    { name: "Name", showSorting: true, mobileLabel: "Name" },
+    { name: "Risk", showSorting: false, mobileLabel: "Risk" },
+    { name: "Type", showSorting: true, mobileLabel: "Type" },
+    { name: "Status", showSorting: true, mobileLabel: "Status" },
+    // { name: "Type", filterOptions: ["Sidechain", "State Channel", "Rollup"] },
+    // { name: "Status", filterOptions: ["Mainnet", "Testnet", "Announced"] },
+    { name: "Unit of Account", showSorting: true, mobileLabel: "Unit" },
+    { name: "BTC Locked", showSorting: true, mobileLabel: "TVL" }
+  ];
 
-    const tabComponents = {
-        overview: <LayerTable data={sortedLayers} headers={layerHeaders} />,
-        risks: <LayerTableRisks />
-    };
+  const tabComponents = {
+    overview: <LayerTable data={sortedLayers} headers={layerHeaders} />,
+    risks: <LayerTableRisks />
+  };
 
-    const handleTabClick = (tab: TabKey) => {
-        setActiveTab(tab);
-    };
+  const handleTabClick = (tab: TabKey) => {
+    setActiveTab(tab);
+  };
 
-    return (
-        <div className="mx-auto">
-            <Hero />
-            <div className="flex mb-4 justify-center mt-16">
-                <div className="justify-start items-start gap-4 inline-flex">
-                    <div
-                        className={`h-[30px] px-4 py-[5px] rounded-full border-2 justify-center items-center gap-1.5 flex cursor-pointer ${
-                            activeTab === "overview"
-                                ? "bg-white border-orange-600"
-                                : "border-slate-300"
-                        }`}
-                        onClick={() => handleTabClick("overview")}
-                    >
-                        <div
-                            className={`text-center text-sm font-medium leading-tight ${
-                                activeTab === "overview"
-                                    ? "text-orange-600"
-                                    : "text-slate-600"
-                            }`}
-                        >
-                            Overview
-                        </div>
-                    </div>
-                    <div
-                        className={`h-[30px] rounded-full border-2 justify-center items-center gap-1 flex cursor-pointer ${
-                            activeTab === "risks"
-                                ? "bg-white border-orange-600"
-                                : "border-slate-300"
-                        }`}
-                        onClick={() => handleTabClick("risks")}
-                    >
-                        <div className="grow shrink basis-0 h-[30px] px-4 py-[5px] justify-center items-center gap-1.5 flex">
-                            <div
-                                className={`text-center text-sm font-medium leading-tight ${
-                                    activeTab === "risks"
-                                        ? "text-orange-600"
-                                        : "text-slate-600"
-                                }`}
-                            >
-                                Risks
-                            </div>
-                        </div>
-                    </div>
-                </div>
+  return (
+    <div className="mx-auto">
+      <Hero />
+      <div className="flex mb-12 justify-center -mt-14">
+        <div className="justify-start items-start gap-4 inline-flex">
+          <div
+            className={`h-[30px] px-4 py-[5px] rounded-full border-2 justify-center items-center gap-1.5 flex cursor-pointer ${
+              activeTab === "overview"
+                ? "bg-white border-orange-600"
+                : "border-slate-300"
+            }`}
+            onClick={() => handleTabClick("overview")}
+          >
+            <div
+              className={`text-center text-sm font-medium leading-tight ${
+                activeTab === "overview" ? "text-orange-600" : "text-slate-600"
+              }`}
+            >
+              Overview
             </div>
-            <div className="lg:flex mb-4 justify-center w-full lg:max-w-5xl mx-auto">
-                {tabComponents[activeTab]}
+          </div>
+          <div
+            className={`h-[30px] rounded-full border-2 justify-center items-center gap-1 flex cursor-pointer ${
+              activeTab === "risks"
+                ? "bg-white border-orange-600"
+                : "border-slate-300"
+            }`}
+            onClick={() => handleTabClick("risks")}
+          >
+            <div className="grow shrink basis-0 h-[30px] px-4 py-[5px] justify-center items-center gap-1.5 flex">
+              <div
+                className={`text-center text-sm font-medium leading-tight ${
+                  activeTab === "risks" ? "text-orange-600" : "text-slate-600"
+                }`}
+              >
+                Risks
+              </div>
             </div>
+          </div>
         </div>
-    );
+      </div>
+      <div className="lg:flex mb-4 justify-center w-full lg:max-w-5xl mx-auto">
+        {tabComponents[activeTab]}
+      </div>
+    </div>
+  );
 }
