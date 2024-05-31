@@ -20,7 +20,11 @@ export default function Home() {
     { name: "Status", showSorting: true, mobileLabel: "Status" },
     // { name: "Type", filterOptions: ["Sidechain", "State Channel", "Rollup"] },
     // { name: "Status", filterOptions: ["Mainnet", "Testnet", "Announced"] },
-    { name: "Unit of Account", showSorting: true, mobileLabel: "Unit" },
+    {
+      name: "Unit of Account",
+      showSorting: true,
+      mobileLabel: "Unit"
+    },
     { name: "BTC Locked", showSorting: true, mobileLabel: "TVL" }
   ];
 
