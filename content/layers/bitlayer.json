@@ -2,7 +2,7 @@
   "slug": "bitlayer",
   "title": "BitLayer",
   "layerType": "Sidechain",
-  "live": "Announced",
+  "live": "Mainnet",
   "underReview": "yes",
   "riskFactors": ["", "", "", ""],
   "purpose": "General",
