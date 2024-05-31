@@ -36,7 +36,7 @@ const TableHeader: React.FC<TableHeaderProps> = ({
         {headers.map((header, index) => (
           <th
             key={index}
-            className={`lg:pl-6 lg:py-6 py-2 font-medium text-text_table_header table_header border-t border-stroke_tertiary last:pr-4`}
+            className={`lg:pl-6 lg:py-6 pl-4 py-2 font-medium text-text_table_header table_header border-t border-stroke_tertiary last:pr-4 first:border-l first:rounded-tl-xl last:border-r last:rounded-tr-xl`}
           >
             <div className="flex items-center justify-between">
               <div className="flex items-center grow">
