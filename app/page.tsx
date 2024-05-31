@@ -25,7 +25,7 @@ export default function Home() {
             showSorting: true,
             mobileLabel: "Unit"
         },
-        { name: "BTC Locked", showSorting: true, mobileLabel: "TVL" }
+        { name: "BTC Locked", showSorting: true, mobileLabel: "BTC" }
     ];
 
     const tabComponents = {
