@@ -3,7 +3,7 @@
   "title": "BitLayer",
   "layerType": "Sidechain",
   "live": "Mainnet",
-  "underReview": "Yes",
+  "underReview": "yes",
   "riskFactors": ["", "", "", ""],
   "purpose": "General",
   "btcBridge": "Federated Multisig",
