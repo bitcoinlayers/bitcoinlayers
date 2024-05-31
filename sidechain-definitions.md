@@ -1,7 +1,7 @@
 People are requesting that we create definitions for various L2s and sidechains. We'll use this document as a community resource to label, define, and document the various types of scaling protocols that are aiming to support Bitcoin scaling. This document will be a part of a glossary we are preparing for the Bitcoin Layers site.
 
 - Layer 2 (a): A protocol that supports unilateral and ensures network operators cannot commit fraud
-- Layer 2 (b): A protocol that supports unilateral exit
+- Layer 2 (b): Any protocol that supports unilateral exit
 - Layer 2 (c): A protocol where anyone can ensure the honesty of a two-way peg and corresponding withdrawals
 - Sidechain: An alternative consensus protocol that is built to scale Bitcoin and/or add functionality to BTC the asset
 - Stakechain: A sidechain protocol that uses a Proof-of-Stake consensus mechanism, leveraging BTC the asset, to secure the chain
@@ -16,7 +16,7 @@ People are requesting that we create definitions for various L2s and sidechains.
 - Bitvium Rollup: A rollup with where the sequencer executes state transitions and sees a prover submit a validity proof, for an associated state transition, to Bitcoin. A group of verifiers on optimistically prove the state transition was executed correctly
 - Validium: A blockchain that uses an offchain system for data availability and has a prover submits a validity proof to a verifier contract on the L1 proving that the state transition was executed correctly
 - Optimium: A blockchain that uses an offchain system for data availability and has challengers can submit a fault proof to challenge malicious state transitions
-- Bitvimium: A blockchain that uses an offchain system for data availability and has a prover submit a validity proof to a group of verifiers on the L1 optimistically prove the state transition was executed correctly
+- Bitvimium: A blockchain that uses an offchain system for data availability and has a prover submit a validity proof to the Bitcoin L1 and group of verifiers optimistically prove the state transition was executed correctly
 - Client-side validation: A system where the validation of a specific state transition is only performed by the parties involved in that state transition
 - zkCSV: A CSV protocol that compresses the history associated with a specific token into a validity proof. Senders update a token's history by geneterating a state trasition within the associated validity proof and see the recepient verify the validity proof
 - Statechain: A protocol where users enter a 2-2 multisig with a federated entity and transfer ownership of a UTXO to an intended recipient by providing them a statechain private key for that specific UTXO
