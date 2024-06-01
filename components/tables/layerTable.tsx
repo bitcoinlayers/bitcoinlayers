@@ -231,7 +231,7 @@ const LayerTable = ({ data, headers }: Props) => {
                 )}
                 {(!isMobile || mobileActiveTab === "BTC Locked") && (
                   <td className="lg:px-6 px-4 py-3 lg:py-4 border-r border-stroke_tertiary text_table_important text_table_body">
-                    {item.underReview === "yes" ? (
+                    {item.underReview === "yes" || !Number(item.btcLocked) ? (
                       <div>-</div>
                     ) : (
                       <div>₿ {Number(item.btcLocked).toLocaleString()}</div>

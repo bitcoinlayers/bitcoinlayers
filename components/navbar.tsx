@@ -49,7 +49,7 @@ export default function Navbar(): ReactElement {
                 width={8}
                 height={8}
                 className={`ml-2 transition-transform ${
-                  submenuOpen ? "rotate-180" : ""
+                  submenuOpen ? "" : "rotate-180"
                 }`}
               />
             </button>
