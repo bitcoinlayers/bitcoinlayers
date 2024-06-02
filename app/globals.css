@@ -6,11 +6,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,900&display=swap");
 
 @layer components {
+  html,
+  body {
+    scroll-behavior: smooth;
+  }
+
   .special_header {
     @apply font-playfair-display text-[80px] italic font-normal leading-[80px] tracking-[-1.6px];
   }
   .layer_header {
-    @apply font-playfair-display text-[100px] italic font-normal leading-[80px] tracking-[-1.6px] text-[#1a202c];
+    @apply font-playfair-display lg:text-[100px] text-[32px] italic font-normal lg:leading-[80px] leading-10 tracking-[-1.6px] text-[#1a202c];
   }
   .body_section {
     @apply text-zinc-800 text-3xl font-light leading-9 mb-4 text-text_header;
@@ -19,7 +24,7 @@
     @apply text-zinc-800 text-base font-medium leading-normal mb-2 text-text_primary;
   }
   .body_paragraph {
-    @apply mb-2 text-text_secondary
+    @apply mb-2 text-text_secondary;
   }
   .body_risksection {
     @apply text-zinc-800 text-2xl font-medium leading-normal mb-2 text-text_primary;
@@ -30,6 +35,21 @@
   .text_table_important {
     color: #1a202c !important;
   }
+  .text_table_body {
+    @apply text-text_primary text-xs lg:text-base font-normal leading-tight;
+  }
+  .font_playfair {
+    @apply font-playfair-display italic font-normal;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
   /* .table-container {
     overflow: visible;
     position: relative;
@@ -38,4 +58,20 @@
     overflow: visible;
     position: relative;
   } */
+}
+
+section {
+  scroll-margin-top: 80px; /* Adjust the value as needed */
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  border-radius: 9999px;
+  background: #ececec;
+}
+::-webkit-scrollbar-thumb {
+  background: #d9d9d9;
+  border-radius: 9999px;
 }

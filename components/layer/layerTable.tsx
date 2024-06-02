@@ -53,7 +53,7 @@ const LayerTable = ({ data }: Props) => {
               Status
             </th>
             <th className="px-6 py-6 font-medium text-text_table_header table_header border-t border-stroke_tertiary">
-              Unit of Account
+            Unit of Account
             </th>
             <th className="px-6 py-6 font-medium text-text_table_header table_header border-t border-r border-stroke_tertiary first:rounded-tr-xl">
               BTC Locked

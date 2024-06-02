@@ -6,10 +6,23 @@ import Image from "next/image";
 import { Layer } from "@/components/layer/layerProps";
 import Risk from "@/components/layer/layerTableItemRisk";
 import TableHeader from "@/components/tables/tableHeader";
+import { BrowserView, MobileView, isMobile } from "react-device-detect";
+
+type TableTabKey =
+  | "Risk"
+  | "Type"
+  | "Status"
+  | "Unit of Account"
+  | "BTC Locked";
 
 interface Props {
   data: Layer[];
-  headers: { name: string; showSorting: boolean, filterOptions?: string[] }[];
+  headers: {
+    name: string;
+    showSorting: boolean;
+    filterOptions?: string[];
+    mobileLabel: string;
+  }[];
 }
 
 const LayerImage = ({ src, title }: { src: string; title: string }) => {
@@ -37,12 +50,13 @@ const LayerImage = ({ src, title }: { src: string; title: string }) => {
 const LayerTable = ({ data, headers }: Props) => {
   const router = useRouter();
   const [filters, setFilters] = useState<{ [key: string]: string[] }>({
-    Status: ["Mainnet"],
+    Status: ["Mainnet"]
   });
   const [sortedData, setSortedData] = useState(data);
   const [sortOrder, setSortOrder] = useState<{ [key: string]: boolean | null }>(
     {}
   );
+  const [mobileActiveTab, setMobileActiveTab] = useState<TableTabKey>("Type");
 
   useEffect(() => {
     // Default sorting by Name alphabetically on first load
@@ -117,59 +131,118 @@ const LayerTable = ({ data, headers }: Props) => {
     });
   });
 
+  const handleMobileTabClick = (tab: TableTabKey) => {
+    setMobileActiveTab(tab);
+  };
+  const mobileTableHeaders = headers.filter(
+    (_item) => _item.name === mobileActiveTab || _item.name === "Name"
+  );
+
   return (
-    <div className="overflow-x-auto bg-lightsecondary rounded-xl mx-auto border border-stroke_tertiary relative">
-      <table className="bg-lightsecondary table-fixed sm:w-full text-sm text-left rtl:text-right">
-        <TableHeader
-          headers={headers}
-          onSort={handleSort}
-          onFilter={handleFilter}
-        />
-        <tbody className="bg-white gap-x-8 border-t border-stroke_tertiary text_table_important">
-          {filteredData.map((item, index) => (
-            <tr
-              className={`cursor-pointer ${
-                index === filteredData.length - 1
-                  ? ""
-                  : "border-b border-stroke_tertiary text_table_important"
-              }`}
-              key={item.slug} // Use item.slug as the unique key
-              onClick={() => handleRowClick(`/layers/${item.slug}`)}
-            >
-              <td className="flex items-center px-6 py-4 font-semibold whitespace-nowrap border-l border-stroke_tertiary text_table_important">
-                <LayerImage
-                  src={`/logos/${item.slug}.png`}
-                  title={item.title}
-                />
-                <span className="ml-2">{item.title}</span>
-              </td>
-              <td className="px-2 border-stroke_tertiary text_table_important">
-                {item.underReview === "no" ? (
-                  <Risk layer={item} />
-                ) : (
-                  <div className="px-5 text_table_important">Under review</div>
+    <div className="px-6">
+      <MobileView className="flex justify-center">
+        <div className="justify-center lg:items-start gap-4 inline-flex py-3">
+          {headers.slice(2).map((_item, ind) => {
+            const isAllowedTab = [
+              "Risk",
+              "Type",
+              "Status",
+              "Unit of Account",
+              "BTC Locked"
+            ].includes(_item.name);
+            return (
+              <div
+                className={`h-[30px] px-4 py-[5px] rounded-full border-2 justify-center items-center gap-1.5 flex cursor-pointer ${
+                  mobileActiveTab === _item.name
+                    ? "bg-white border-orange-600"
+                    : "border-slate-300"
+                }`}
+                onClick={() =>
+                  isAllowedTab &&
+                  handleMobileTabClick(_item.name as TableTabKey)
+                }
+                key={ind}
+              >
+                <div
+                  className={`text-center text-sm font-medium leading-tight ${
+                    mobileActiveTab === _item.name
+                      ? "text-orange-600"
+                      : "text-slate-600"
+                  }`}
+                >
+                  {_item.mobileLabel}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </MobileView>
+
+      <div className="overflow-x-auto bg-lightsecondary rounded-xl mx-auto relative">
+        <table className="bg-lightsecondary table-fixed w-full text-sm text-left rtl:text-right  rounded-xl ">
+          <TableHeader
+            headers={isMobile ? mobileTableHeaders : headers}
+            onSort={handleSort}
+            onFilter={handleFilter}
+          />
+          <tbody className="bg-white gap-x-8 border-t border-stroke_tertiary text_table_important">
+            {filteredData.map((item, index) => (
+              <tr
+                className={`cursor-pointer border-b border-stroke_tertiary text_table_important ${
+                  index === filteredData.length - 1 ? "" : ""
+                }`}
+                key={item.slug} // Use item.slug as the unique key
+                onClick={() => handleRowClick(`/layers/${item.slug}`)}
+              >
+                <td className="flex items-center lg:px-6 px-4 py-4 font-semibold whitespace-nowrap border-r lg:border-r-0  border-stroke_tertiary text_table_important text-table_body">
+                  <LayerImage
+                    src={`/logos/${item.slug}.png`}
+                    title={item.title}
+                  />
+                  <span className="ml-2 truncate lg:word-break-none">
+                    {item.title}
+                  </span>
+                </td>
+                {!isMobile && (
+                  <td className="px-2 border-stroke_tertiary text_table_important">
+                    {item.underReview === "no" ? (
+                      <Risk layer={item} />
+                    ) : (
+                      <div className="px-5 text_table_important">
+                        Under review
+                      </div>
+                    )}
+                  </td>
                 )}
-              </td>
-              <td className="px-6 py-4 border-stroke_tertiary text_table_important">
-                {item.layerType}
-              </td>
-              <td className="px-6 py-4 border-stroke_tertiary text_table_important">
-                {item.live}
-              </td>
-              <td className="px-6 py-4 border-stroke_tertiary text_table_important">
-                {item.nativeToken}
-              </td>
-              <td className="px-6 py-4 border-r border-stroke_tertiary text_table_important">
-                {item.underReview === "yes" ? (
-                  <div>-</div>
-                ) : (
-                  <div>₿ {Number(item.btcLocked).toLocaleString()}</div>
+                {(!isMobile || mobileActiveTab === "Type") && (
+                  <td className="lg:px-6 px-4 py-3 lg:py-4 border-stroke_tertiary text_table_important text_table_body">
+                    {item.layerType}
+                  </td>
                 )}
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+                {(!isMobile || mobileActiveTab === "Status") && (
+                  <td className="lg:px-6 px-4 py-3 lg:py-4 border-stroke_tertiary text_table_important text_table_body">
+                    {item.live}
+                  </td>
+                )}
+                {(!isMobile || mobileActiveTab === "Unit of Account") && (
+                  <td className="lg:px-6 px-4 py-3 lg:py-4 border-stroke_tertiary text_table_important text_table_body">
+                    {item.nativeToken}
+                  </td>
+                )}
+                {(!isMobile || mobileActiveTab === "BTC Locked") && (
+                  <td className="lg:px-6 px-4 py-3 lg:py-4 border-r border-stroke_tertiary text_table_important text_table_body">
+                    {item.underReview === "yes" || !Number(item.btcLocked) ? (
+                      <div>-</div>
+                    ) : (
+                      <div>₿ {Number(item.btcLocked).toLocaleString()}</div>
+                    )}
+                  </td>
+                )}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };

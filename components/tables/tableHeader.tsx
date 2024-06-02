@@ -7,9 +7,15 @@ interface TableHeaderProps {
   onFilter: (header: string, value: string) => void;
 }
 
-const TableHeader: React.FC<TableHeaderProps> = ({ headers, onSort, onFilter }) => {
+const TableHeader: React.FC<TableHeaderProps> = ({
+  headers,
+  onSort,
+  onFilter
+}) => {
   const [filterOpen, setFilterOpen] = useState<string | null>(null);
-  const [sortOrder, setSortOrder] = useState<{ [key: string]: boolean | null }>({});
+  const [sortOrder, setSortOrder] = useState<{ [key: string]: boolean | null }>(
+    {}
+  );
 
   const toggleFilterDropdown = (header: string) => {
     if (filterOpen === header) {
@@ -30,11 +36,7 @@ const TableHeader: React.FC<TableHeaderProps> = ({ headers, onSort, onFilter }) 
         {headers.map((header, index) => (
           <th
             key={index}
-            className={`px-6 py-6 font-medium text-text_table_header table_header border-t border-stroke_tertiary ${
-              index === 0 ? "border-l first:rounded-tl-xl" : ""
-            } ${
-              index === headers.length - 1 ? "border-r first:rounded-tr-xl" : ""
-            }`}
+            className={`lg:pl-6 lg:py-6 pl-4 py-2 font-medium text-text_table_header table_header border-t border-stroke_tertiary last:pr-4 first:border-l first:rounded-tl-xl last:border-r last:rounded-tr-xl`}
           >
             <div className="flex items-center justify-between">
               <div className="flex items-center grow">
@@ -54,7 +56,7 @@ const TableHeader: React.FC<TableHeaderProps> = ({ headers, onSort, onFilter }) 
                       onClick={() => toggleFilterDropdown(header.name)}
                     />
                     {filterOpen === header.name && (
-                      <div className="absolute top-full left-0 mt-2 w-[218px] bg-white rounded-xl shadow-lg z-50 p-4">
+                      <div className="absolute top-full left-0 mt-2 w-[] bg-white rounded-xl shadow-lg z-50 p-4">
                         <div className="h-[204px] flex-col justify-start items-start flex overflow-y-auto">
                           {header.filterOptions.map((option, idx) => (
                             <div
@@ -85,26 +87,57 @@ const TableHeader: React.FC<TableHeaderProps> = ({ headers, onSort, onFilter }) 
                   </div>
                 )}
                 {header.showSorting && (
-                  <div className="relative w-[11px] h-[22px] ml-2 flex flex-col items-center">
+                  <div className="relative lg:w-[11px] lg:h-[22px] w-[8px] h-[18px] ml-2 flex flex-col items-center justify-center">
                     <div
-                      className={`cursor-pointer ${sortOrder[header.name] === true ? "text-brand" : "text-gray-400"}`}
-                      onClick={() => handleSort(header.name, true)}
-                    >
-                      <Image src="/icons/carrot_up.svg" alt="Sort Ascending" width={11} height={11} />
-                    </div>
-                    <div
-                      className={`cursor-pointer ${sortOrder[header.name] === false ? "text-brand" : "text-gray-400"}`}
+                      className="cursor-pointer"
                       onClick={() => handleSort(header.name, false)}
                     >
-                      <Image src="/icons/carrot_up.svg" alt="Sort Descending" width={11} height={11} className="rotate-180" />
+                      <svg
+                        width="11"
+                        height="11"
+                        viewBox="0 0 11 11"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="rotate-180"
+                      >
+                        <path
+                          d="M9.46854 2.93848H1.53146C1.2934 2.93848 1.16047 3.18983 1.3079 3.36143L5.27644 7.9632C5.39003 8.09492 5.60876 8.09492 5.72356 7.9632L9.6921 3.36143C9.83953 3.18983 9.7066 2.93848 9.46854 2.93848Z"
+                          fill={
+                            sortOrder[header.name] === false
+                              ? "#FE4F18"
+                              : "#C9D0D8"
+                          }
+                        />
+                      </svg>
+                    </div>
+                    <div
+                      className="cursor-pointer"
+                      onClick={() => handleSort(header.name, true)}
+                    >
+                      <svg
+                        width="11"
+                        height="11"
+                        viewBox="0 0 11 11"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M9.46854 2.93848H1.53146C1.2934 2.93848 1.16047 3.18983 1.3079 3.36143L5.27644 7.9632C5.39003 8.09492 5.60876 8.09492 5.72356 7.9632L9.6921 3.36143C9.83953 3.18983 9.7066 2.93848 9.46854 2.93848Z"
+                          fill={
+                            sortOrder[header.name] === true
+                              ? "#FE4F18"
+                              : "#C9D0D8"
+                          }
+                        />
+                      </svg>
                     </div>
                   </div>
                 )}
               </div>
+              {index < headers.length - 1 && (
+                <span className="w-px h-7 bg-[#E1EAF8] ml-5"></span>
+              )}
             </div>
-            {index < headers.length - 1 && (
-              <div className="absolute top-1/8 bottom-1/8 right-0 w-px bg-stroke_tertiary"></div>
-            )}
           </th>
         ))}
       </tr>
