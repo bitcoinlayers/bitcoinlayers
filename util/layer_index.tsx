@@ -49,6 +49,7 @@ const bnzk: Layer = bnzkJson as Layer;
 // @ts-ignore
 const bob: Layer = bobJson as Layer;
 const botanix: Layer = botanixJson as Layer;
+// @ts-ignore
 const bsquared: Layer = bsquaredJson as Layer;
 const citrea: Layer = citreaJson as Layer;
 const flash: Layer = flashJson as Layer;
