@@ -9,7 +9,7 @@
   "btcBridge": "Federated Multi-sig",
   "settlement": "Offchain",
   "btcLocked": "-",
-  "executionEnv": "EVM",
+  "executionEnv": "Offchain",
   "consensus": "Proof-of-Stake",
   "nativeToken": "BSQ",
   "feeToken": "BSQ",
