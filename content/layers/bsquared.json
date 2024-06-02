@@ -53,17 +53,6 @@
       "content": ""
     }
   ],
-  "sections": [
-    {
-      "id": "description",
-      "title": "Description",
-      "content": [
-        {
-          "content": "BSquared is an upcoming project that will build a rollup and alternative DA layer on top of Bitcoin. They are currently in testnet phase."
-        }
-      ]
-    }
-  ],
   "knowledgeBits": [
     {
       "url": "https://www.bsquared.network/",
