@@ -33,7 +33,8 @@ const OpcodeMenu: React.FC<{ opcode: Opcode }> = ({ opcode }) => {
     function scrollToSectionWithOffset(elementId: string) {
         const element = document.getElementById(elementId);
         if (element) {
-            const yCoordinate = element.getBoundingClientRect().top + window.scrollY - 48;
+            const yCoordinate =
+                element.getBoundingClientRect().top + window.scrollY - 48;
             console.log(yCoordinate, "yCoordinate");
             window.scrollTo({ top: yCoordinate, behavior: "smooth" });
         }
@@ -44,33 +45,34 @@ const OpcodeMenu: React.FC<{ opcode: Opcode }> = ({ opcode }) => {
             <div className="flex flex-col justify-start items-start gap-4">
                 {/*  menu is updating with coloring to match the live section */}
 
-                {[{ id: "overview", title: "Overview" }, ...opcode.sections].map(
-                    (section, index) => (
+                {[
+                    { id: "overview", title: "Overview" },
+                    ...opcode.sections,
+                ].map((section, index) => (
+                    <div
+                        key={index}
+                        className="flex justify-start items-center gap-4"
+                    >
                         <div
-                            key={index}
-                            className="flex justify-start items-center gap-4"
+                            className={`w-[3px] h-10 ${
+                                activeSection === section.id
+                                    ? "bg-brand"
+                                    : "opacity-0 bg-brand_neutral"
+                            }`}
+                        ></div>
+                        <a
+                            className={`no-underline text-sm ${
+                                activeSection === section.id
+                                    ? "text-orange-600 font-semibold font-inter leading-tight"
+                                    : "text-neutral-700 font-light leading-tight"
+                            }`}
+                            href={`#${section.id}`}
+                            onClick={() => handleClick(section.id)}
                         >
-                            <div
-                                className={`w-[3px] h-10 ${
-                                    activeSection === section.id
-                                        ? "bg-brand"
-                                        : "opacity-0 bg-brand_neutral"
-                                }`}
-                            ></div>
-                            <a
-                                className={`no-underline text-sm ${
-                                    activeSection === section.id
-                                        ? "text-orange-600 font-semibold font-inter leading-tight"
-                                        : "text-neutral-700 font-light leading-tight"
-                                }`}
-                                href={`#${section.id}`}
-                                onClick={() => handleClick(section.id)}
-                            >
-                                {section.title}
-                            </a>
-                        </div>
-                    )
-                )}
+                            {section.title}
+                        </a>
+                    </div>
+                ))}
             </div>
         </nav>
     );

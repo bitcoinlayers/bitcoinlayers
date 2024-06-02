@@ -3,7 +3,13 @@ import { Layer } from "./layerProps";
 import Image from "next/image";
 import LayerDiamond from "./layerDiamond";
 
-const LinkButton = ({ href, children }: { href: string; children: React.ReactNode }) => (
+const LinkButton = ({
+    href,
+    children,
+}: {
+    href: string;
+    children: React.ReactNode;
+}) => (
     <a
         href={href}
         target="_blank"
@@ -39,19 +45,27 @@ const Categories: React.FC<{ layer: Layer }> = ({ layer }) => {
     return (
         <div className="lg:flex lg:justify-between w-full grid grid-cols-2 gap-4">
             <div className="flex-col lg:justify-center lg:items-start pl-4 lg:pl-0">
-                <div className="text-text_primary text-sm leading-tight">Status</div>
+                <div className="text-text_primary text-sm leading-tight">
+                    Status
+                </div>
                 <div className="text-text_header">{layer.live}</div>
             </div>
             <div className="flex-col justify-center items-start pl-4 lg:pl-0">
-                <div className="text-text_primary text-sm leading-tight">Type</div>
+                <div className="text-text_primary text-sm leading-tight">
+                    Type
+                </div>
                 <div className="text-text_header">{layer.layerType}</div>
             </div>
             <div className="flex-col justify-center items-start pl-4 lg:pl-0">
-                <div className="text-text_primary text-sm leading-tight">Fee Token</div>
+                <div className="text-text_primary text-sm leading-tight">
+                    Fee Token
+                </div>
                 <div className="text-text_header">{layer.feeToken}</div>
             </div>
             <div className="flex-col justify-center items-start pl-4 lg:pl-0">
-                <div className="text-text_primary text-sm leading-tight">TVL</div>
+                <div className="text-text_primary text-sm leading-tight">
+                    TVL
+                </div>
                 <div className="text-zinc-800 text-base font-normal leading-normal">
                     ₿ {layer.btcLocked}
                 </div>
@@ -61,7 +75,11 @@ const Categories: React.FC<{ layer: Layer }> = ({ layer }) => {
 };
 
 const Description: React.FC<{ layer: Layer }> = ({ layer }) => {
-    return <div className="self-stretch text-text_secondary">{layer.description}</div>;
+    return (
+        <div className="self-stretch text-text_secondary">
+            {layer.description}
+        </div>
+    );
 };
 
 const Links: React.FC<{ layer: Layer }> = ({ layer }) => {

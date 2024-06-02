@@ -1,77 +1,77 @@
 {
-  "slug": "bison",
-  "title": "Bison",
-  "layerType": "Rollup",
-  "live": "Testnet",
-  "underReview": "yes",
-  "riskFactors": ["", "", "", ""],
-  "purpose": "-",
-  "btcBridge": "x",
-  "settlement": "x",
-  "btcLocked": 0,
-  "executionEnv": "x",
-  "consensus": "-",
-  "nativeToken": "-",
-  "feeToken": "x",
-  "enshrinedBtc": "x",
-  "links": [
-    "https://bisonlabs.io/#/dashboard",
-    "https://bisonlabs.io/#/dashboard",
-    "https://bisonlabs.io/#/dashboard",
-    "https://bisonlabs.io/#/dashboard",
-    "https://bisonlabs.io/#/dashboard",
-    "https://twitter.com/Bison_Labs"
-  ],
-  "description": "Bison Labs are building a sovereign rollup that enables more functionality for Ordinals and BRC-20 trading. They planning on using zk-STARKs to prove state transitions. They are in the testnet stage.",
-  "riskAnalysis": [
-    {
-      "category": "Unilateral Exits",
-      "score": 0,
-      "tier": "",
-      "title": "",
-      "content": ""
-    },
-    {
-      "category": "Data Availability",
-      "score": 0,
-      "tier": "",
-      "title": "",
-      "content": ""
-    },
-    {
-      "category": "Block Production",
-      "score": 0,
-      "tier": "",
-      "title": "",
-      "content": ""
-    },
-    {
-      "category": "State Validation",
-      "score": 0,
-      "tier": "",
-      "title": "",
-      "content": ""
-    }
-  ],
-  "sections": [
-    {
-      "id": "description",
-      "title": "Description",
-      "content": [
+    "slug": "bison",
+    "title": "Bison",
+    "layerType": "Rollup",
+    "live": "Testnet",
+    "underReview": "yes",
+    "riskFactors": ["", "", "", ""],
+    "purpose": "-",
+    "btcBridge": "x",
+    "settlement": "x",
+    "btcLocked": 0,
+    "executionEnv": "x",
+    "consensus": "-",
+    "nativeToken": "-",
+    "feeToken": "x",
+    "enshrinedBtc": "x",
+    "links": [
+        "https://bisonlabs.io/#/dashboard",
+        "https://bisonlabs.io/#/dashboard",
+        "https://bisonlabs.io/#/dashboard",
+        "https://bisonlabs.io/#/dashboard",
+        "https://bisonlabs.io/#/dashboard",
+        "https://twitter.com/Bison_Labs"
+    ],
+    "description": "Bison Labs are building a sovereign rollup that enables more functionality for Ordinals and BRC-20 trading. They planning on using zk-STARKs to prove state transitions. They are in the testnet stage.",
+    "riskAnalysis": [
         {
-          "content": "Bison Labs are building a sovereign rollup that enables more functionality for Ordinals and BRC-20 trading. They planning on using zk-STARKs to prove state transitions. They are in the testnet stage."
+            "category": "Unilateral Exits",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "Data Availability",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "Block Production",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "State Validation",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
         }
-      ]
-    }
-  ],
-  "knowledgeBits": [
-    {
-      "url": "https://bisonlabs.io/",
-      "displayText": "Bison Labs website"
-    },
-    {
-      "url": "https://dmaster-1.gitbook.io/bisonlabs",
-      "displayText": "Bison Labs documentation site"
-    }
-  ]
+    ],
+    "sections": [
+        {
+            "id": "description",
+            "title": "Description",
+            "content": [
+                {
+                    "content": "Bison Labs are building a sovereign rollup that enables more functionality for Ordinals and BRC-20 trading. They planning on using zk-STARKs to prove state transitions. They are in the testnet stage."
+                }
+            ]
+        }
+    ],
+    "knowledgeBits": [
+        {
+            "url": "https://bisonlabs.io/",
+            "displayText": "Bison Labs website"
+        },
+        {
+            "url": "https://dmaster-1.gitbook.io/bisonlabs",
+            "displayText": "Bison Labs documentation site"
+        }
+    ]
 }

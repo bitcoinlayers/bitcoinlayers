@@ -1,77 +1,77 @@
 {
-  "slug": "mercurylayer",
-  "title": "Mercury Layer",
-  "layerType": "Statechain",
-  "live": "Testnet",
-  "underReview": "yes",
-  "riskFactors": ["", "", "", "", ""],
-  "purpose": "-",
-  "btcBridge": "Smart Contract",
-  "settlement": "External",
-  "btcLocked": 0,
-  "executionEnv": "Statechain",
-  "consensus": "-",
-  "nativeToken": "BTC",
-  "feeToken": "BTC",
-  "enshrinedBtc": "BTC",
-  "links": [
-    "https://mercurylayer.com/",
-    "https://github.com/commerceblock/mercurylayer/blob/dev/docs/README.md",
-    "https://github.com/commerceblock/mercurylayer/blob/dev/docs/README.md",
-    "https://mercurylayer.com/",
-    "https://github.com/commerceblock/mercurylayer",
-    "https://twitter.com/mercurylayer"
-  ],
-  "description": "Mercury Layer is an implementation of a Statechain protocol. It enables the offchain transfer of BTC.",
-  "riskAnalysis": [
-    {
-      "category": "Unilateral Exits",
-      "score": 0,
-      "tier": "",
-      "title": "",
-      "content": ""
-    },
-    {
-      "category": "Data Availability",
-      "score": 0,
-      "tier": "",
-      "title": "",
-      "content": ""
-    },
-    {
-      "category": "Block Production",
-      "score": 0,
-      "tier": "",
-      "title": "",
-      "content": ""
-    },
-    {
-      "category": "State Validation",
-      "score": 0,
-      "tier": "",
-      "title": "",
-      "content": ""
-    }
-  ],
-  "sections": [
-    {
-      "id": "description",
-      "title": "Description",
-      "content": [
+    "slug": "mercurylayer",
+    "title": "Mercury Layer",
+    "layerType": "Statechain",
+    "live": "Testnet",
+    "underReview": "yes",
+    "riskFactors": ["", "", "", "", ""],
+    "purpose": "-",
+    "btcBridge": "Smart Contract",
+    "settlement": "External",
+    "btcLocked": 0,
+    "executionEnv": "Statechain",
+    "consensus": "-",
+    "nativeToken": "BTC",
+    "feeToken": "BTC",
+    "enshrinedBtc": "BTC",
+    "links": [
+        "https://mercurylayer.com/",
+        "https://github.com/commerceblock/mercurylayer/blob/dev/docs/README.md",
+        "https://github.com/commerceblock/mercurylayer/blob/dev/docs/README.md",
+        "https://mercurylayer.com/",
+        "https://github.com/commerceblock/mercurylayer",
+        "https://twitter.com/mercurylayer"
+    ],
+    "description": "Mercury Layer is an implementation of a Statechain protocol. It enables the offchain transfer of BTC.",
+    "riskAnalysis": [
         {
-          "content": "Mercury Layer is an implementation of a Statechain protocol. It enables the offchain transfer of BTC."
+            "category": "Unilateral Exits",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "Data Availability",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "Block Production",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "State Validation",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
         }
-      ]
-    }
-  ],
-  "knowledgeBits": [
-    {
-      "url": "https://github.com/commerceblock/mercurylayer/blob/dev/docs/README.md",
-      "displayText": "Mercury Layer Docs"
-    },
-    {
-      "url": "https://github.com/commerceblock/mercurylayer/tree/dev/clients/standalone-rust",
-      "displayText": "Users can run a Mercury Layer client locally to interact with the protocol."
-    }
-  ]
+    ],
+    "sections": [
+        {
+            "id": "description",
+            "title": "Description",
+            "content": [
+                {
+                    "content": "Mercury Layer is an implementation of a Statechain protocol. It enables the offchain transfer of BTC."
+                }
+            ]
+        }
+    ],
+    "knowledgeBits": [
+        {
+            "url": "https://github.com/commerceblock/mercurylayer/blob/dev/docs/README.md",
+            "displayText": "Mercury Layer Docs"
+        },
+        {
+            "url": "https://github.com/commerceblock/mercurylayer/tree/dev/clients/standalone-rust",
+            "displayText": "Users can run a Mercury Layer client locally to interact with the protocol."
+        }
+    ]
 }

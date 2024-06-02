@@ -2,19 +2,19 @@ interface Section {
     id: string;
     title: string;
     content: Subsection[];
-  }
-  
-  interface Subsection {
+}
+
+interface Subsection {
     title: string;
     content: string;
-  }
-  
-  interface kbit {
+}
+
+interface kbit {
     url: string;
     displayText: string;
-  }
-  
-  interface OpcodeProps {
+}
+
+interface OpcodeProps {
     slug: string;
     title: string;
     opcodeType: string;
@@ -29,11 +29,11 @@ interface Section {
     description: string;
     sections: Section[];
     knowledgeBits: kbit[];
-  }
-  
-  export default OpcodeProps;
-  
-  export type Opcode = {
+}
+
+export default OpcodeProps;
+
+export type Opcode = {
     title: string;
     opcodeType: string;
     live: string;
@@ -49,5 +49,4 @@ interface Section {
     knowledgeBits: kbit[];
     /** MDX file body */
     slug: string;
-  };
-  
+};

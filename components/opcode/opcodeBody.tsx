@@ -21,7 +21,9 @@ const OpcodeBody: React.FC<{ opcode: Opcode }> = ({ opcode }) => {
                                 <div
                                     className={`self-stretch justify-between items-center inline-flex mt-6`}
                                 >
-                                    <div className="body_subsection">{content.title}</div>
+                                    <div className="body_subsection">
+                                        {content.title}
+                                    </div>
                                 </div>
                             )}
                             <div className="body_paragraph mt-3">

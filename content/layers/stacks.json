@@ -1,166 +1,166 @@
 {
-  "slug": "stacks",
-  "title": "Stacks",
-  "layerType": "Sidechain",
-  "live": "Mainnet",
-  "underReview": "no",
-  "riskFactors": ["High", "Medium", "Medium", "Medium"],
-  "purpose": "General",
-  "btcBridge": "Centralized Multisig(s)",
-  "settlement": "Offchain",
-  "btcLocked": 348,
-  "executionEnv": "Offchain",
-  "consensus": "Proof-of-Transfer",
-  "nativeToken": "STX",
-  "feeToken": "STX",
-  "enshrinedBtc": "sBTC",
-  "links": [
-    "https://www.stacks.co/",
-    "https://www.stacks.co/explore/discover-apps",
-    "https://docs.stacks.co/docs/intro",
-    "https://explorer.hiro.so/transactions?chain=mainnet",
-    "https://github.com/stacks-network",
-    "https://twitter.com/Stacks"
-  ],
-  "description": "Stacks is a programmability layer with a novel execution environment, Clarity. Stacks is a sidechain, powered by a hybrid PoS mechanism (PoX) and a native fee token (STX).",
-  "riskAnalysis": [
-    {
-      "category": "Unilateral Exits",
-      "score": 0,
-      "tier": "High",
-      "title": "No Enshrined BTC Bridge",
-      "content": "Stacks has no consensus-enshrined BTC bridge. It does have two third-party bridges, which are both custodial multisigs. Users must trust the operators of these bridges to not steal their BTC, as they do not support unilateral exits."
-    },
-    {
-      "category": "Data Availability",
-      "score": 0,
-      "tier": "Medium",
-      "title": "State Roots Only",
-      "content": "Stacks posts state roots to Bitcoin, but not full transaction calldata. Because of this, Stacks' state cannot be reconstructed using only data from Bitcoin. Stacks has a permissionless validator and node operator set which participate in making data availability readily available."
-    },
-    {
-      "category": "Block Production",
-      "score": 0,
-      "tier": "Medium",
-      "title": "Permissionless Block Production",
-      "content": "Stacks has a permissionless block production mechanism, but it does not support exits that circumvent its miner/validator set. This means that users must trust Stacks validators to include their transactions in blocks. Anyone with sufficient capital and resources can participate as a Stacks miner."
-    },
-    {
-      "category": "State Validation",
-      "score": 0,
-      "tier": "Medium",
-      "title": "Self-Enforcement of State Validation",
-      "content": "Settlement is done offchain, on Stacks, rather than onchain, on Bitcoin. The validity of Stacks state transitions are not enforced by Bitcoin."
-    }
-  ],
-  "sections": [
-    {
-      "id": "description",
-      "title": "Description",
-      "content": [
+    "slug": "stacks",
+    "title": "Stacks",
+    "layerType": "Sidechain",
+    "live": "Mainnet",
+    "underReview": "no",
+    "riskFactors": ["High", "Medium", "Medium", "Medium"],
+    "purpose": "General",
+    "btcBridge": "Centralized Multisig(s)",
+    "settlement": "Offchain",
+    "btcLocked": 348,
+    "executionEnv": "Offchain",
+    "consensus": "Proof-of-Transfer",
+    "nativeToken": "STX",
+    "feeToken": "STX",
+    "enshrinedBtc": "sBTC",
+    "links": [
+        "https://www.stacks.co/",
+        "https://www.stacks.co/explore/discover-apps",
+        "https://docs.stacks.co/docs/intro",
+        "https://explorer.hiro.so/transactions?chain=mainnet",
+        "https://github.com/stacks-network",
+        "https://twitter.com/Stacks"
+    ],
+    "description": "Stacks is a programmability layer with a novel execution environment, Clarity. Stacks is a sidechain, powered by a hybrid PoS mechanism (PoX) and a native fee token (STX).",
+    "riskAnalysis": [
         {
-          "title": "Stacks is a sidechain",
-          "content": "Stacks is a programmability layer with a novel execution environment, Clarity. Stacks is a sidechain, powered by a hybrid PoS mechanism (PoX) and a native fee token (STX)."
-        }
-      ]
-    },
-    {
-      "id": "bitcoinsecurity",
-      "title": "Bitcoin Security",
-      "content": [
-        {
-          "title": "Stacks nodes are required for data availability",
-          "content": "Stacks posts state roots to Bitcoin, but not full transaction calldata. Because of this, Stacks' state cannot be reconstructed using only data from Bitcoin. Stacks nodes are the sole providers of data availability. Anyone can run a Stacks node and participate in Proof-of-Transfer consensus."
+            "category": "Unilateral Exits",
+            "score": 0,
+            "tier": "High",
+            "title": "No Enshrined BTC Bridge",
+            "content": "Stacks has no consensus-enshrined BTC bridge. It does have two third-party bridges, which are both custodial multisigs. Users must trust the operators of these bridges to not steal their BTC, as they do not support unilateral exits."
         },
         {
-          "title": "Stacks requires another token to function",
-          "content": "The STX token is required to pay for transaction fees and smart contract execution on the Stacks network. It is also used as a reward for miners who participate in the PoX consensus mechanism. The token is indirectly required for the security of the network, as block production by miners is incentivized by STX."
-        }
-      ]
-    },
-    {
-      "id": "technology",
-      "title": "Technology",
-      "content": [
-        {
-          "title": "Clarity",
-          "content": "Stacks uses the novel execution environment Clarity. The Clarity language is a subset of Lisp, and is not Turing-complete as a design choice. However, it is still expressive enough to build complex smart contracts and replicate much of the functionalities from Turing-complete environments like the EVM (i.e., DeFi, NFTs, etc.). Stacks is able to read Bitcoin state, due to both Clarity and its integrated PoX consensus mechanism. This allows for events on Stacks to be triggered by Bitcoin activity, or for smart contracts to read Bitcoin state during their execution."
+            "category": "Data Availability",
+            "score": 0,
+            "tier": "Medium",
+            "title": "State Roots Only",
+            "content": "Stacks posts state roots to Bitcoin, but not full transaction calldata. Because of this, Stacks' state cannot be reconstructed using only data from Bitcoin. Stacks has a permissionless validator and node operator set which participate in making data availability readily available."
         },
         {
-          "title": "Proof-of-Transfer",
-          "content": "Proof-of-Transfer (PoX) is Stacks' novel consensus mechanism, based on Proof-of-Burn. PoX involves Bitcoin miners bidding BTC for the right to mint a Stacks block. The winning miner creates the block, and is rewarded with the STX block reward and STX transaction fees from the block. The miner's bid is paid to STX stackers (stakers). This system allows for STX stackers to earn native BTC yield, and creates an additional revenue stream for miners, similar to merge-mining."
+            "category": "Block Production",
+            "score": 0,
+            "tier": "Medium",
+            "title": "Permissionless Block Production",
+            "content": "Stacks has a permissionless block production mechanism, but it does not support exits that circumvent its miner/validator set. This means that users must trust Stacks validators to include their transactions in blocks. Anyone with sufficient capital and resources can participate as a Stacks miner."
         },
         {
-          "title": "sBTC",
-          "content": "sBTC is still in development as of March 2024. It is a bridged version of BTC on Stacks. sBTC is minted by locking up BTC on Bitcoin, and is redeemable for BTC at a 1:1 ratio. sBTC is not yet permissionless, as withdrawals are permissioned by the validator set."
+            "category": "State Validation",
+            "score": 0,
+            "tier": "Medium",
+            "title": "Self-Enforcement of State Validation",
+            "content": "Settlement is done offchain, on Stacks, rather than onchain, on Bitcoin. The validity of Stacks state transitions are not enforced by Bitcoin."
+        }
+    ],
+    "sections": [
+        {
+            "id": "description",
+            "title": "Description",
+            "content": [
+                {
+                    "title": "Stacks is a sidechain",
+                    "content": "Stacks is a programmability layer with a novel execution environment, Clarity. Stacks is a sidechain, powered by a hybrid PoS mechanism (PoX) and a native fee token (STX)."
+                }
+            ]
         },
         {
-          "title": "Faster block times",
-          "content": "Stacks operates at the same block times as Bitcoin as of March 2024, roughly 10 minutes per block. However, the upcoming Nakamoto Upgrade in April 2024 will reduce block times to an order of seconds."
+            "id": "bitcoinsecurity",
+            "title": "Bitcoin Security",
+            "content": [
+                {
+                    "title": "Stacks nodes are required for data availability",
+                    "content": "Stacks posts state roots to Bitcoin, but not full transaction calldata. Because of this, Stacks' state cannot be reconstructed using only data from Bitcoin. Stacks nodes are the sole providers of data availability. Anyone can run a Stacks node and participate in Proof-of-Transfer consensus."
+                },
+                {
+                    "title": "Stacks requires another token to function",
+                    "content": "The STX token is required to pay for transaction fees and smart contract execution on the Stacks network. It is also used as a reward for miners who participate in the PoX consensus mechanism. The token is indirectly required for the security of the network, as block production by miners is incentivized by STX."
+                }
+            ]
         },
         {
-          "title": "Lower fees",
-          "content": "Stacks fees average in the order of tens of cents as of March 2024."
-        }
-      ]
-    },
-    {
-      "id": "usecases",
-      "title": "Use Cases",
-      "content": [
-        {
-          "title": "DeFi",
-          "content": "The most popular use case for Stacks is DeFi. Stacks has a number of DeFi applications, including lending, borrowing, and decentralized exchanges."
+            "id": "technology",
+            "title": "Technology",
+            "content": [
+                {
+                    "title": "Clarity",
+                    "content": "Stacks uses the novel execution environment Clarity. The Clarity language is a subset of Lisp, and is not Turing-complete as a design choice. However, it is still expressive enough to build complex smart contracts and replicate much of the functionalities from Turing-complete environments like the EVM (i.e., DeFi, NFTs, etc.). Stacks is able to read Bitcoin state, due to both Clarity and its integrated PoX consensus mechanism. This allows for events on Stacks to be triggered by Bitcoin activity, or for smart contracts to read Bitcoin state during their execution."
+                },
+                {
+                    "title": "Proof-of-Transfer",
+                    "content": "Proof-of-Transfer (PoX) is Stacks' novel consensus mechanism, based on Proof-of-Burn. PoX involves Bitcoin miners bidding BTC for the right to mint a Stacks block. The winning miner creates the block, and is rewarded with the STX block reward and STX transaction fees from the block. The miner's bid is paid to STX stackers (stakers). This system allows for STX stackers to earn native BTC yield, and creates an additional revenue stream for miners, similar to merge-mining."
+                },
+                {
+                    "title": "sBTC",
+                    "content": "sBTC is still in development as of March 2024. It is a bridged version of BTC on Stacks. sBTC is minted by locking up BTC on Bitcoin, and is redeemable for BTC at a 1:1 ratio. sBTC is not yet permissionless, as withdrawals are permissioned by the validator set."
+                },
+                {
+                    "title": "Faster block times",
+                    "content": "Stacks operates at the same block times as Bitcoin as of March 2024, roughly 10 minutes per block. However, the upcoming Nakamoto Upgrade in April 2024 will reduce block times to an order of seconds."
+                },
+                {
+                    "title": "Lower fees",
+                    "content": "Stacks fees average in the order of tens of cents as of March 2024."
+                }
+            ]
         },
         {
-          "title": "NFTs",
-          "content": "Stacks is home to a number of NFT projects, including digital art, collectibles, and indentity."
-        }
-      ]
-    },
-    {
-      "id": "operator",
-      "title": "Operator",
-      "content": [
+            "id": "usecases",
+            "title": "Use Cases",
+            "content": [
+                {
+                    "title": "DeFi",
+                    "content": "The most popular use case for Stacks is DeFi. Stacks has a number of DeFi applications, including lending, borrowing, and decentralized exchanges."
+                },
+                {
+                    "title": "NFTs",
+                    "content": "Stacks is home to a number of NFT projects, including digital art, collectibles, and indentity."
+                }
+            ]
+        },
         {
-          "title": "Stacks is operated by miners and validators",
-          "content": "Block production is managed by Stacks miners (which are typically also Bitcoin miners, similar to the node overlap with classic merge-mining), by combining microblocks created by Stacks validators. Users trust the majority of validators and miners to not collude or censor."
-        }
-      ]
-    },
-    {
-      "id": "withdrawals",
-      "title": "Withdrawals",
-      "content": [
+            "id": "operator",
+            "title": "Operator",
+            "content": [
+                {
+                    "title": "Stacks is operated by miners and validators",
+                    "content": "Block production is managed by Stacks miners (which are typically also Bitcoin miners, similar to the node overlap with classic merge-mining), by combining microblocks created by Stacks validators. Users trust the majority of validators and miners to not collude or censor."
+                }
+            ]
+        },
         {
-          "title": "Users trust centralized operators to process their withdrawals",
-          "content": "Stacks users deposit BTC into Stacks through custodial bridge mechanisms. They trust that the operators of these bridges (e.g. aBTC and xBTC) will not steal their Bitcoin assets, or censor their withdrawals."
-        }
-      ]
-    },
-    {
-      "id": "sourcecode",
-      "title": "Source Code",
-      "content": [
+            "id": "withdrawals",
+            "title": "Withdrawals",
+            "content": [
+                {
+                    "title": "Users trust centralized operators to process their withdrawals",
+                    "content": "Stacks users deposit BTC into Stacks through custodial bridge mechanisms. They trust that the operators of these bridges (e.g. aBTC and xBTC) will not steal their Bitcoin assets, or censor their withdrawals."
+                }
+            ]
+        },
         {
-          "title": "Code is open-source",
-          "content": "All code related to the Stacks project is free and open source."
+            "id": "sourcecode",
+            "title": "Source Code",
+            "content": [
+                {
+                    "title": "Code is open-source",
+                    "content": "All code related to the Stacks project is free and open source."
+                }
+            ]
         }
-      ]
-    }
-  ],
-  "knowledgeBits": [
-    {
-      "url": "https://messari.io/report/state-of-stacks-q4-2023",
-      "displayText": "State of Stacks Q4 2023 from Messari"
-    },
-    {
-      "url": "https://docs.stacks.co/stacks-101/bitcoin-connection",
-      "displayText": "Bitcoin Connection from Stacks Docs"
-    },
-    {
-      "url": "https://docs.stacks.co/stacks-101/proof-of-transfer",
-      "displayText": "Proof of Transfer from Stacks Docs"
-    }
-  ]
+    ],
+    "knowledgeBits": [
+        {
+            "url": "https://messari.io/report/state-of-stacks-q4-2023",
+            "displayText": "State of Stacks Q4 2023 from Messari"
+        },
+        {
+            "url": "https://docs.stacks.co/stacks-101/bitcoin-connection",
+            "displayText": "Bitcoin Connection from Stacks Docs"
+        },
+        {
+            "url": "https://docs.stacks.co/stacks-101/proof-of-transfer",
+            "displayText": "Proof of Transfer from Stacks Docs"
+        }
+    ]
 }

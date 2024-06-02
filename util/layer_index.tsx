@@ -1,4 +1,4 @@
-import type { Layer } from '@/components/layer/layerProps';
+import type { Layer } from "@/components/layer/layerProps";
 
 import coreJson from "../content/layers/core.json";
 import internetcomputerJson from "../content/layers/internetcomputer.json";
@@ -73,7 +73,39 @@ const mezo: Layer = mezoJson as Layer;
 const ark: Layer = arkJson as Layer;
 
 export const allLayers: Layer[] = [
-  core, internetcomputer, lightning, liquid, mercurylayer, rootstock, stacks, alpen, barknet, bison, bnzk, bob, botanix, bsquared, citrea, flash, rgb, heliosphere, libre, lumibit, merlin, rif, rollux, zkcoins, zklayer, coordinate, alys, zkbitcoin, bitlayer, molecule, side, mezo, ark
+    core,
+    internetcomputer,
+    lightning,
+    liquid,
+    mercurylayer,
+    rootstock,
+    stacks,
+    alpen,
+    barknet,
+    bison,
+    bnzk,
+    bob,
+    botanix,
+    bsquared,
+    citrea,
+    flash,
+    rgb,
+    heliosphere,
+    libre,
+    lumibit,
+    merlin,
+    rif,
+    rollux,
+    zkcoins,
+    zklayer,
+    coordinate,
+    alys,
+    zkbitcoin,
+    bitlayer,
+    molecule,
+    side,
+    mezo,
+    ark,
 ];
 
-export const allLayerSlugs: string[] = allLayers.map(layer => layer.slug);
+export const allLayerSlugs: string[] = allLayers.map((layer) => layer.slug);

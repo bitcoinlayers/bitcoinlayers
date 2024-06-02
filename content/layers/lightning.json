@@ -1,77 +1,77 @@
 {
-  "slug": "lightning",
-  "title": "Lightning Network",
-  "layerType": "State Channel",
-  "live": "Mainnet",
-  "underReview": "yes",
-  "riskFactors": ["", "", "", ""],
-  "purpose": "Payments",
-  "btcBridge": "Under Review",
-  "settlement": "Under Review",
-  "btcLocked": 4473,
-  "executionEnv": "Under Review",
-  "consensus": "Under Review",
-  "nativeToken": "BTC",
-  "feeToken": "BTC",
-  "enshrinedBtc": "BTC",
-  "links": [
-    "https://lightning.network/",
-    "https://docs.corelightning.org/docs/home",
-    "https://docs.corelightning.org/docs/home",
-    "https://github.com/ACINQ/eclair",
-    "https://twitter.com/lightning"
-  ],
-  "description": "Lightning Network is a state-channel-based L2 for payments. It enables users to open a payment channel with a counterparty, and make an unlimited amount of payments within the channel. It also enables users to route payments across a network of these channels to users outside of their specific channel.",
-  "riskAnalysis": [
-    {
-      "category": "Unilateral Exits",
-      "score": 0,
-      "tier": "",
-      "title": "",
-      "content": ""
-    },
-    {
-      "category": "Data Availability",
-      "score": 0,
-      "tier": "",
-      "title": "",
-      "content": ""
-    },
-    {
-      "category": "Block Production",
-      "score": 0,
-      "tier": "",
-      "title": "",
-      "content": ""
-    },
-    {
-      "category": "State Validation",
-      "score": 0,
-      "tier": "",
-      "title": "",
-      "content": ""
-    }
-  ],
-  "sections": [
-    {
-      "id": "description",
-      "title": "Description",
-      "content": [
+    "slug": "lightning",
+    "title": "Lightning Network",
+    "layerType": "State Channel",
+    "live": "Mainnet",
+    "underReview": "yes",
+    "riskFactors": ["", "", "", ""],
+    "purpose": "Payments",
+    "btcBridge": "Under Review",
+    "settlement": "Under Review",
+    "btcLocked": 4473,
+    "executionEnv": "Under Review",
+    "consensus": "Under Review",
+    "nativeToken": "BTC",
+    "feeToken": "BTC",
+    "enshrinedBtc": "BTC",
+    "links": [
+        "https://lightning.network/",
+        "https://docs.corelightning.org/docs/home",
+        "https://docs.corelightning.org/docs/home",
+        "https://github.com/ACINQ/eclair",
+        "https://twitter.com/lightning"
+    ],
+    "description": "Lightning Network is a state-channel-based L2 for payments. It enables users to open a payment channel with a counterparty, and make an unlimited amount of payments within the channel. It also enables users to route payments across a network of these channels to users outside of their specific channel.",
+    "riskAnalysis": [
         {
-          "title": "Lightning Network is a state channel",
-          "content": "Lightning Network is a state-channel-based L2 for payments. It enables users to open a payment channel with a counterparty, and make an unlimited amount of payments within the channel. It also enables users to route payments across a network of these channels to users outside of their specific channel."
+            "category": "Unilateral Exits",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "Data Availability",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "Block Production",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "State Validation",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
         }
-      ]
-    }
-  ],
-  "knowledgeBits": [
-    {
-      "url": "https://lightning.network/lightning-network-paper.pdf",
-      "displayText": "Lightning Network paper"
-    },
-    {
-      "url": "https://bitcoiner.guide/lightning/",
-      "displayText": "Lightning Network user guide"
-    }
-  ]
+    ],
+    "sections": [
+        {
+            "id": "description",
+            "title": "Description",
+            "content": [
+                {
+                    "title": "Lightning Network is a state channel",
+                    "content": "Lightning Network is a state-channel-based L2 for payments. It enables users to open a payment channel with a counterparty, and make an unlimited amount of payments within the channel. It also enables users to route payments across a network of these channels to users outside of their specific channel."
+                }
+            ]
+        }
+    ],
+    "knowledgeBits": [
+        {
+            "url": "https://lightning.network/lightning-network-paper.pdf",
+            "displayText": "Lightning Network paper"
+        },
+        {
+            "url": "https://bitcoiner.guide/lightning/",
+            "displayText": "Lightning Network user guide"
+        }
+    ]
 }

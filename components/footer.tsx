@@ -8,7 +8,13 @@ const SectionHeader = ({ children }: { children: React.ReactNode }) => (
     </div>
 );
 
-const SectionItem = ({ children, href }: { children: React.ReactNode; href: string }) => (
+const SectionItem = ({
+    children,
+    href,
+}: {
+    children: React.ReactNode;
+    href: string;
+}) => (
     <div className="flex justify-start items-center gap-2">
         <Link href={href} className="flex justify-center items-center gap-2">
             <div className="text-slate-500 text-sm font-normal leading-tight">
@@ -20,7 +26,7 @@ const SectionItem = ({ children, href }: { children: React.ReactNode; href: stri
 
 const SectionItemExternal = ({
     children,
-    href
+    href,
 }: {
     children: React.ReactNode;
     href: string;
@@ -108,12 +114,18 @@ export default function Footer(): ReactElement {
                                 <div className="grow flex flex-col justify-start items-start gap-4">
                                     <SectionHeader>Risk Analysis</SectionHeader>
                                     <div className="self-stretch lg:h-[188px] flex flex-col justify-start items-start gap-3">
-                                        <SectionItem href="/">Layers</SectionItem>
-                                        <SectionItem href="/bridges">Bridges</SectionItem>
+                                        <SectionItem href="/">
+                                            Layers
+                                        </SectionItem>
+                                        <SectionItem href="/bridges">
+                                            Bridges
+                                        </SectionItem>
                                         <SectionItem href="/infrastructure">
                                             Infrastructure
                                         </SectionItem>
-                                        <SectionItem href="/opcode">Opcodes</SectionItem>
+                                        <SectionItem href="/opcode">
+                                            Opcodes
+                                        </SectionItem>
                                         <SectionItem href="/upcominglayers">
                                             Upcoming Layers
                                         </SectionItem>
@@ -125,7 +137,9 @@ export default function Footer(): ReactElement {
                                         <SectionItem href="/glossary">
                                             Glossary
                                         </SectionItem>
-                                        <SectionItem href="/faq">FAQ</SectionItem>
+                                        <SectionItem href="/faq">
+                                            FAQ
+                                        </SectionItem>
                                         <SectionItemExternal href="https://bitcoin-layers.gitbook.io/bitcoin-layers">
                                             Methodology
                                         </SectionItemExternal>
@@ -134,7 +148,9 @@ export default function Footer(): ReactElement {
                                 <div className="grow flex flex-col justify-start items-start gap-4">
                                     <SectionHeader>Resources</SectionHeader>
                                     <div className="self-stretch h-[116px] flex flex-col justify-start items-start gap-3">
-                                        <SectionItem href="/about">About</SectionItem>
+                                        <SectionItem href="/about">
+                                            About
+                                        </SectionItem>
                                         <SectionItem href="/contribute">
                                             Contribute
                                         </SectionItem>

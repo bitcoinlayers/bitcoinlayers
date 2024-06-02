@@ -4,7 +4,7 @@ import Link from "next/link";
 import { parseTextWithLinks } from "@/util/parseTextWithLinks";
 
 const InfrastructureBody: React.FC<{ infrastructure: Infrastructure }> = ({
-    infrastructure
+    infrastructure,
 }) => {
     return (
         <main className="content flex-grow sm:mt-0 pt-0">
@@ -23,7 +23,9 @@ const InfrastructureBody: React.FC<{ infrastructure: Infrastructure }> = ({
                                 <div
                                     className={`self-stretch justify-between items-center inline-flex mt-6`}
                                 >
-                                    <div className="body_subsection">{content.title}</div>
+                                    <div className="body_subsection">
+                                        {content.title}
+                                    </div>
                                 </div>
                             )}
                             <div className="body_paragraph mt-3">
@@ -45,7 +47,11 @@ const InfrastructureBody: React.FC<{ infrastructure: Infrastructure }> = ({
                 </div>
                 {infrastructure.knowledgeBits.map((link) => (
                     <p key={link.url}>
-                        <Link href={link.url} rel="noopener noreferrer" target="_blank">
+                        <Link
+                            href={link.url}
+                            rel="noopener noreferrer"
+                            target="_blank"
+                        >
                             <span className="text-orange-600 text-base font-medium font-['Public Sans'] underline leading-normal">
                                 {link.displayText}
                             </span>

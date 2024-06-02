@@ -14,7 +14,10 @@ interface RiskAnalysisProps {
     riskFactors: string[];
 }
 
-const RiskAnalysis: React.FC<RiskAnalysisProps> = ({ riskAnalysis, riskFactors }) => {
+const RiskAnalysis: React.FC<RiskAnalysisProps> = ({
+    riskAnalysis,
+    riskFactors,
+}) => {
     const getRiskColorClass = (riskFactor: string) => {
         switch (riskFactor) {
             case "Low":
@@ -68,7 +71,7 @@ const RiskAnalysis: React.FC<RiskAnalysisProps> = ({ riskAnalysis, riskFactors }
                                     <div className="h-8 justify-end items-center gap-2 flex lg:flex-row flex-row-reverse">
                                         <div
                                             className={`${getRiskColorClass(
-                                                riskFactors[contentIndex]
+                                                riskFactors[contentIndex],
                                             )} text-sm font-medium leading-tight`}
                                         >
                                             {riskFactors[contentIndex]} risk
@@ -76,12 +79,14 @@ const RiskAnalysis: React.FC<RiskAnalysisProps> = ({ riskAnalysis, riskFactors }
                                         <div className="w-8 h-8 justify-center items-center flex">
                                             <div
                                                 className={`w-8 h-8 bg-${getRiskBgClass(
-                                                    riskFactors[contentIndex]
+                                                    riskFactors[contentIndex],
                                                 )} rounded-full flex items-center justify-center`}
                                             >
                                                 <div
                                                     className={`text-center ${getRiskColorClass(
-                                                        riskFactors[contentIndex]
+                                                        riskFactors[
+                                                            contentIndex
+                                                        ],
                                                     )} text-base font-bold font-Hack`}
                                                 >
                                                     {contentIndex + 1}

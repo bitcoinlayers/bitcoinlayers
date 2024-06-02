@@ -16,7 +16,11 @@ async function getLayerFromSlug(slug: string) {
     return layer;
 }
 
-export default async function LayerPage({ params }: { params: { slug: string } }) {
+export default async function LayerPage({
+    params,
+}: {
+    params: { slug: string };
+}) {
     const { slug } = params;
     console.log("Fetching data for slug:", slug);
     const layer = await getLayerFromSlug(slug);
@@ -32,7 +36,10 @@ export default async function LayerPage({ params }: { params: { slug: string } }
         <article className="flex flex-col lg:min-h-screen max-w-5xl mx-auto lg:pt-24 pt-12">
             <div className="flex justify-start items-center lg:gap-8 gap-2 lg:my-12 my-6 px-4 lg:px-0">
                 <div className="flex justify-center items-center">
-                    <LayerImage title={layer.title} src={`/logos/${layer.slug}.png`} />{" "}
+                    <LayerImage
+                        title={layer.title}
+                        src={`/logos/${layer.slug}.png`}
+                    />{" "}
                     {/**TODO fix img sizes. they're blurry here */}
                 </div>
                 <div className="flex-grow flex items-center">
@@ -81,6 +88,6 @@ function LayerImage({ src, title }: { src: string; title: string }) {
 export async function generateStaticParams() {
     console.log("Generating paths for layers:", allLayerSlugs);
     return allLayerSlugs.map((slug) => ({
-        slug
+        slug,
     }));
 }

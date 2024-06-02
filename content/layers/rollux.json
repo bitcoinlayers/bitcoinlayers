@@ -1,73 +1,73 @@
 {
-  "slug": "rollux",
-  "title": "Rollux",
-  "layerType": "Sidechain Rollup",
-  "live": "Mainnet",
-  "underReview": "yes",
-  "riskFactors": ["", "", "", ""],
-  "purpose": "General",
-  "btcBridge": "Under Review",
-  "settlement": "Under Review",
-  "btcLocked": 0,
-  "executionEnv": "Under Review",
-  "consensus": "Under Review",
-  "nativeToken": "SYS",
-  "feeToken": "SYS",
-  "enshrinedBtc": "None",
-  "links": [
-    "https://rollux.com/",
-    "https://docs.rollux.com/docs/developers/",
-    "https://docs.rollux.com/docs/developers/",
-    "https://explorer.rollux.com/",
-    "https://github.com/SYS-Labs/rollux",
-    "https://twitter.com/RolluxL2"
-  ],
-  "description": "Rollux is an optimistic rollup that settles on Syscoin, a Layer 1 blockchain that is merge-mined by Bitcoin miners who opt-in to additionally becoming Syscoin miners. Rollux's native token is SYS, and users can access synthetic forms of BTC via a bridge between Rollux and Syscoin's EVM chain (and other EVM chains). We are reviewing the security assumptions related to Rollux and its Bitcoin bridges.",
-  "riskAnalysis": [
-    {
-      "category": "Unilateral Exits",
-      "score": 0,
-      "tier": "",
-      "title": "",
-      "content": ""
-    },
-    {
-      "category": "Data Availability",
-      "score": 0,
-      "tier": "",
-      "title": "",
-      "content": ""
-    },
-    {
-      "category": "Block Production",
-      "score": 0,
-      "tier": "",
-      "title": "",
-      "content": ""
-    },
-    {
-      "category": "State Validation",
-      "score": 0,
-      "tier": "",
-      "title": "",
-      "content": ""
-    }
-  ],
-  "sections": [
-    {
-      "id": "description",
-      "title": "Description",
-      "content": [
+    "slug": "rollux",
+    "title": "Rollux",
+    "layerType": "Sidechain Rollup",
+    "live": "Mainnet",
+    "underReview": "yes",
+    "riskFactors": ["", "", "", ""],
+    "purpose": "General",
+    "btcBridge": "Under Review",
+    "settlement": "Under Review",
+    "btcLocked": 0,
+    "executionEnv": "Under Review",
+    "consensus": "Under Review",
+    "nativeToken": "SYS",
+    "feeToken": "SYS",
+    "enshrinedBtc": "None",
+    "links": [
+        "https://rollux.com/",
+        "https://docs.rollux.com/docs/developers/",
+        "https://docs.rollux.com/docs/developers/",
+        "https://explorer.rollux.com/",
+        "https://github.com/SYS-Labs/rollux",
+        "https://twitter.com/RolluxL2"
+    ],
+    "description": "Rollux is an optimistic rollup that settles on Syscoin, a Layer 1 blockchain that is merge-mined by Bitcoin miners who opt-in to additionally becoming Syscoin miners. Rollux's native token is SYS, and users can access synthetic forms of BTC via a bridge between Rollux and Syscoin's EVM chain (and other EVM chains). We are reviewing the security assumptions related to Rollux and its Bitcoin bridges.",
+    "riskAnalysis": [
         {
-          "content": "Rollux is an optimistic rollup that settles on Syscoin, a Layer 1 blockchain that is merge-mined by Bitcoin miners who opt-in to additionally becoming Syscoin miners. Rollux's native token is SYS, and users can access synthetic forms of BTC via a bridge between Rollux and Syscoin's EVM chain (and other EVM chains). We are reviewing the security assumptions related to Rollux and its Bitcoin bridges."
+            "category": "Unilateral Exits",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "Data Availability",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "Block Production",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "State Validation",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
         }
-      ]
-    }
-  ],
-  "knowledgeBits": [
-    {
-      "url": "https://rollux.com/",
-      "displayText": "Rollux website"
-    }
-  ]
+    ],
+    "sections": [
+        {
+            "id": "description",
+            "title": "Description",
+            "content": [
+                {
+                    "content": "Rollux is an optimistic rollup that settles on Syscoin, a Layer 1 blockchain that is merge-mined by Bitcoin miners who opt-in to additionally becoming Syscoin miners. Rollux's native token is SYS, and users can access synthetic forms of BTC via a bridge between Rollux and Syscoin's EVM chain (and other EVM chains). We are reviewing the security assumptions related to Rollux and its Bitcoin bridges."
+                }
+            ]
+        }
+    ],
+    "knowledgeBits": [
+        {
+            "url": "https://rollux.com/",
+            "displayText": "Rollux website"
+        }
+    ]
 }

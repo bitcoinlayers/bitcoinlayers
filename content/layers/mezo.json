@@ -1,77 +1,77 @@
 {
-  "slug": "mezo",
-  "title": "Mezo",
-  "layerType": "Sidechain",
-  "live": "Announced",
-  "underReview": "yes",
-  "riskFactors": ["", "", "", ""],
-  "purpose": "General purpose",
-  "btcBridge": "Threshold",
-  "settlement": "External",
-  "btcLocked": 0,
-  "executionEnv": "x",
-  "consensus": "-",
-  "nativeToken": "MEZO",
-  "feeToken": "x",
-  "enshrinedBtc": "tBTC",
-  "links": [
-    "https://mezo.org/",
-    "https://mezo.org/",
-    "https://info.mezo.org/proof-of-hodl?ref=blog.mezo.org",
-    "https://info.mezo.org/proof-of-hodl?ref=blog.mezo.org",
-    "https://info.mezo.org/proof-of-hodl?ref=blog.mezo.org",
-    "https://twitter.com/mezonetwork"
-  ],
-  "description": "Mezo is building a general purpose sidechain protocol that will support general purpose applications. It will run a CometBFT consensus protocol that is secured by staking BTC and the Mezo token. It will use tBTC for its Bitcoin bridge.",
-  "riskAnalysis": [
-    {
-      "category": "Unilateral Exits",
-      "score": 0,
-      "tier": "",
-      "title": "",
-      "content": ""
-    },
-    {
-      "category": "Data Availability",
-      "score": 0,
-      "tier": "",
-      "title": "",
-      "content": ""
-    },
-    {
-      "category": "Block Production",
-      "score": 0,
-      "tier": "",
-      "title": "",
-      "content": ""
-    },
-    {
-      "category": "State Validation",
-      "score": 0,
-      "tier": "",
-      "title": "",
-      "content": ""
-    }
-  ],
-  "sections": [
-    {
-      "id": "description",
-      "title": "Description",
-      "content": [
+    "slug": "mezo",
+    "title": "Mezo",
+    "layerType": "Sidechain",
+    "live": "Announced",
+    "underReview": "yes",
+    "riskFactors": ["", "", "", ""],
+    "purpose": "General purpose",
+    "btcBridge": "Threshold",
+    "settlement": "External",
+    "btcLocked": 0,
+    "executionEnv": "x",
+    "consensus": "-",
+    "nativeToken": "MEZO",
+    "feeToken": "x",
+    "enshrinedBtc": "tBTC",
+    "links": [
+        "https://mezo.org/",
+        "https://mezo.org/",
+        "https://info.mezo.org/proof-of-hodl?ref=blog.mezo.org",
+        "https://info.mezo.org/proof-of-hodl?ref=blog.mezo.org",
+        "https://info.mezo.org/proof-of-hodl?ref=blog.mezo.org",
+        "https://twitter.com/mezonetwork"
+    ],
+    "description": "Mezo is building a general purpose sidechain protocol that will support general purpose applications. It will run a CometBFT consensus protocol that is secured by staking BTC and the Mezo token. It will use tBTC for its Bitcoin bridge.",
+    "riskAnalysis": [
         {
-          "content": "Mezo is building a general purpose sidechain protocol that will support general purpose applications. It will run a CometBFT consensus protocol that is secured by staking BTC and the Mezo token. It will use tBTC for its Bitcoin bridge."
+            "category": "Unilateral Exits",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "Data Availability",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "Block Production",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "State Validation",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
         }
-      ]
-    }
-  ],
-  "knowledgeBits": [
-    {
-      "url": "https://mezo.org/",
-      "displayText": "Mezo website"
-    },
-    {
-      "url": "https://blog.mezo.org/welcome-to-proof-of-hodl-2/",
-      "displayText": "Introductory blog post"
-    }
-  ]
+    ],
+    "sections": [
+        {
+            "id": "description",
+            "title": "Description",
+            "content": [
+                {
+                    "content": "Mezo is building a general purpose sidechain protocol that will support general purpose applications. It will run a CometBFT consensus protocol that is secured by staking BTC and the Mezo token. It will use tBTC for its Bitcoin bridge."
+                }
+            ]
+        }
+    ],
+    "knowledgeBits": [
+        {
+            "url": "https://mezo.org/",
+            "displayText": "Mezo website"
+        },
+        {
+            "url": "https://blog.mezo.org/welcome-to-proof-of-hodl-2/",
+            "displayText": "Introductory blog post"
+        }
+    ]
 }

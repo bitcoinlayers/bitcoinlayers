@@ -1,156 +1,156 @@
 {
-  "slug": "liquid",
-  "title": "Liquid",
-  "layerType": "Sidechain",
-  "live": "Mainnet",
-  "underReview": "no",
-  "riskFactors": ["High", "Medium", "High", "High"],
-  "purpose": "General",
-  "btcBridge": "Federated Multisig",
-  "settlement": "External",
-  "btcLocked": 3860,
-  "executionEnv": "Offchain",
-  "consensus": "Federated Sidechain",
-  "nativeToken": "L-BTC",
-  "feeToken": "L-BTC",
-  "enshrinedBtc": "L-BTC",
-  "links": [
-    "https://liquid.net/",
-    "https://docs.liquid.net/docs/technical-overview",
-    "https://docs.liquid.net/docs/technical-overview",
-    "https://blockstream.info/liquid",
-    "https://github.com/ElementsProject/elements",
-    "https://twitter.com/bitcoinlayers"
-  ],
-  "description": "The Liquid Network is a sidechain that enables users to perform confidential transactions, swaps, issue tokenized assets, and more, on the sidechain. It is managed by a permissioned federation, and does not use the Bitcoin Layer 1 for security. It uses a federated multi-sig to custody the BTC that is used to issue BTC IOUs (L-BTC) on the sidechain.",
-  "riskAnalysis": [
-    {
-      "category": "Unilateral Exits",
-      "score": 0,
-      "tier": "High",
-      "title": "Users trust Federation with permitting exits",
-      "content": "BTC withdrawals are currently permissioned by the Liquid federation. Users must trust that when they deposit BTC into the Liquid blockchain, the signers will not collude and steal their BTC. Most users typically acquire L-BTC on secondary marketplaces, not through bridge deposits. Supported marketplaces for L-BTC are also members of the Liquid federation. Users trust that the federation will not steal the BTC, which would leave their newly acquired L-BTC worthless. The BTC that backs L-BTC is held in a 11-15 multi-sig wallet where 11 (⅔ + 1) of the signers would need to be compromised in order to steal the BTC."
-    },
-    {
-      "category": "Data Availability",
-      "score": 0,
-      "tier": "Medium",
-      "title": "Stored offchain (with node software open-source)",
-      "content": "The data for Liquid sidechain is stored on the Liquid blockchain. A federation is responsible for publishing and validating transactions that are stored on the blockchain. Node software is open-source and anyone can run a node and verify the state of Liquid. However, node operators connect to the network through “bridge nodes” that are run by permissioned actors. Access to bridge nodes can presumably be cut off should these (roughly 65) actors collude."
-    },
-    {
-      "category": "Block Production",
-      "score": 0,
-      "tier": "High",
-      "title": "Functionaries propose blocks",
-      "content": "Liquid blocks are proposed and finalized by the Liquid federation. The role of block production is permissioned, meaning that it is not possible for anyone with sufficient resources to join the network as a block producer. Users trust that the federation will not censor them and include their transactions in Liquid blocks."
-    },
-    {
-      "category": "State Validation",
-      "score": 0,
-      "tier": "High",
-      "title": "Functionaires sign proposed sidechain blocks",
-      "content": "The Liquid Federation's functionaries sign blocks (proposed by another functionary member) for the sidechain. A block must be signed by 2/3 + 1 of the functionaries to be included in the Liquid chain."
-    }
-  ],
-  "sections": [
-    {
-      "id": "bitcoinsecurity",
-      "title": "Bitcoin Security",
-      "content": [
+    "slug": "liquid",
+    "title": "Liquid",
+    "layerType": "Sidechain",
+    "live": "Mainnet",
+    "underReview": "no",
+    "riskFactors": ["High", "Medium", "High", "High"],
+    "purpose": "General",
+    "btcBridge": "Federated Multisig",
+    "settlement": "External",
+    "btcLocked": 3860,
+    "executionEnv": "Offchain",
+    "consensus": "Federated Sidechain",
+    "nativeToken": "L-BTC",
+    "feeToken": "L-BTC",
+    "enshrinedBtc": "L-BTC",
+    "links": [
+        "https://liquid.net/",
+        "https://docs.liquid.net/docs/technical-overview",
+        "https://docs.liquid.net/docs/technical-overview",
+        "https://blockstream.info/liquid",
+        "https://github.com/ElementsProject/elements",
+        "https://twitter.com/bitcoinlayers"
+    ],
+    "description": "The Liquid Network is a sidechain that enables users to perform confidential transactions, swaps, issue tokenized assets, and more, on the sidechain. It is managed by a permissioned federation, and does not use the Bitcoin Layer 1 for security. It uses a federated multi-sig to custody the BTC that is used to issue BTC IOUs (L-BTC) on the sidechain.",
+    "riskAnalysis": [
         {
-          "title": "No other token required",
-          "content": "Liquid does not have a native token that plays a role in network security."
-        }
-      ]
-    },
-    {
-      "id": "technology",
-      "title": "Technology",
-      "content": [
-        {
-          "title": "Elements",
-          "content": "Liquid is built with the Elements technology stack. Elements is an open-source technology stack built on top of the Bitcoin code base. Since it is built on the Bitcoin code base, Elements enables Liquid to be a testing ground for potential changes to the Bitcoin protocol."
+            "category": "Unilateral Exits",
+            "score": 0,
+            "tier": "High",
+            "title": "Users trust Federation with permitting exits",
+            "content": "BTC withdrawals are currently permissioned by the Liquid federation. Users must trust that when they deposit BTC into the Liquid blockchain, the signers will not collude and steal their BTC. Most users typically acquire L-BTC on secondary marketplaces, not through bridge deposits. Supported marketplaces for L-BTC are also members of the Liquid federation. Users trust that the federation will not steal the BTC, which would leave their newly acquired L-BTC worthless. The BTC that backs L-BTC is held in a 11-15 multi-sig wallet where 11 (⅔ + 1) of the signers would need to be compromised in order to steal the BTC."
         },
         {
-          "title": "More Expressive Smart Contracts",
-          "content": "Liquid has a number of additional opcodes that enable developers to build more expressive smart contracting applications on top of it. These applications can include limit orders, options contracts and atomic swaps protocols."
+            "category": "Data Availability",
+            "score": 0,
+            "tier": "Medium",
+            "title": "Stored offchain (with node software open-source)",
+            "content": "The data for Liquid sidechain is stored on the Liquid blockchain. A federation is responsible for publishing and validating transactions that are stored on the blockchain. Node software is open-source and anyone can run a node and verify the state of Liquid. However, node operators connect to the network through “bridge nodes” that are run by permissioned actors. Access to bridge nodes can presumably be cut off should these (roughly 65) actors collude."
         },
         {
-          "title": "Faster blocks",
-          "content": "Liquid has a fixed block time and produces a block every minute."
+            "category": "Block Production",
+            "score": 0,
+            "tier": "High",
+            "title": "Functionaries propose blocks",
+            "content": "Liquid blocks are proposed and finalized by the Liquid federation. The role of block production is permissioned, meaning that it is not possible for anyone with sufficient resources to join the network as a block producer. Users trust that the federation will not censor them and include their transactions in Liquid blocks."
         },
         {
-          "title": "Lower fees",
-          "content": "As of April 23, 2024, fees on the Liquid network are much lower than that of the Bitcoin mainchain."
+            "category": "State Validation",
+            "score": 0,
+            "tier": "High",
+            "title": "Functionaires sign proposed sidechain blocks",
+            "content": "The Liquid Federation's functionaries sign blocks (proposed by another functionary member) for the sidechain. A block must be signed by 2/3 + 1 of the functionaries to be included in the Liquid chain."
         }
-      ]
-    },
-    {
-      "id": "usecases",
-      "title": "Use Cases",
-      "content": [
+    ],
+    "sections": [
         {
-          "title": "Confidential Transactions",
-          "content": "Liquid enables Confidential Transactions which can provide users a higher level of privacy. This feature ensures that anyone, other than the participants in a transaction, cannot see the tokens, and the amount of, transferred between them."
+            "id": "bitcoinsecurity",
+            "title": "Bitcoin Security",
+            "content": [
+                {
+                    "title": "No other token required",
+                    "content": "Liquid does not have a native token that plays a role in network security."
+                }
+            ]
         },
         {
-          "title": "Tokenized assets",
-          "content": "Liquid enables developers and users alike to issue tokenized securities, stablecoins, and synthetic forms of cryptocurrencies."
+            "id": "technology",
+            "title": "Technology",
+            "content": [
+                {
+                    "title": "Elements",
+                    "content": "Liquid is built with the Elements technology stack. Elements is an open-source technology stack built on top of the Bitcoin code base. Since it is built on the Bitcoin code base, Elements enables Liquid to be a testing ground for potential changes to the Bitcoin protocol."
+                },
+                {
+                    "title": "More Expressive Smart Contracts",
+                    "content": "Liquid has a number of additional opcodes that enable developers to build more expressive smart contracting applications on top of it. These applications can include limit orders, options contracts and atomic swaps protocols."
+                },
+                {
+                    "title": "Faster blocks",
+                    "content": "Liquid has a fixed block time and produces a block every minute."
+                },
+                {
+                    "title": "Lower fees",
+                    "content": "As of April 23, 2024, fees on the Liquid network are much lower than that of the Bitcoin mainchain."
+                }
+            ]
         },
         {
-          "title": "Atomic swaps",
-          "content": "All tokens issued on Liquid, including L-BTC, are under the same token standard. This ensures that swaps between any token on Liquid can happen atomically."
-        }
-      ]
-    },
-    {
-      "id": "operator",
-      "title": "Operator",
-      "content": [
+            "id": "usecases",
+            "title": "Use Cases",
+            "content": [
+                {
+                    "title": "Confidential Transactions",
+                    "content": "Liquid enables Confidential Transactions which can provide users a higher level of privacy. This feature ensures that anyone, other than the participants in a transaction, cannot see the tokens, and the amount of, transferred between them."
+                },
+                {
+                    "title": "Tokenized assets",
+                    "content": "Liquid enables developers and users alike to issue tokenized securities, stablecoins, and synthetic forms of cryptocurrencies."
+                },
+                {
+                    "title": "Atomic swaps",
+                    "content": "All tokens issued on Liquid, including L-BTC, are under the same token standard. This ensures that swaps between any token on Liquid can happen atomically."
+                }
+            ]
+        },
         {
-          "title": "Liquid is operated by a federation",
-          "content": "Liquid is primarily operated by a predetermined, permissioned group of operators, known as “Functionaries”, who are a part of its Federation. A larger group of “Members” participate in the federation by determining upgrades to the network, and also vote on board elections. Users may trust these operators due to the reputational risk they would take on in the Bitcoin ecosystem if they acted maliciously."
-        }
-      ]
-    },
-    {
-      "id": "withdrawals",
-      "title": "Withdrawals",
-      "content": [
+            "id": "operator",
+            "title": "Operator",
+            "content": [
+                {
+                    "title": "Liquid is operated by a federation",
+                    "content": "Liquid is primarily operated by a predetermined, permissioned group of operators, known as “Functionaries”, who are a part of its Federation. A larger group of “Members” participate in the federation by determining upgrades to the network, and also vote on board elections. Users may trust these operators due to the reputational risk they would take on in the Bitcoin ecosystem if they acted maliciously."
+                }
+            ]
+        },
         {
-          "title": "Users trust permissioned operators to process their withdrawals",
-          "content": "Withdrawals are permitted by the Liquid Federation. There is no way for users to withdraw their funds if the federation censors them. Users can also use a secondary marketplace to swap BTC for LBTC, but also must trust the federation to include, propose and validate their swap transaction within a Liquid block."
-        }
-      ]
-    },
-    {
-      "id": "sourcecode",
-      "title": "Source Code",
-      "content": [
+            "id": "withdrawals",
+            "title": "Withdrawals",
+            "content": [
+                {
+                    "title": "Users trust permissioned operators to process their withdrawals",
+                    "content": "Withdrawals are permitted by the Liquid Federation. There is no way for users to withdraw their funds if the federation censors them. Users can also use a secondary marketplace to swap BTC for LBTC, but also must trust the federation to include, propose and validate their swap transaction within a Liquid block."
+                }
+            ]
+        },
         {
-          "title": "Code is open-source",
-          "content": "All code related to the Liquid Network project is open source."
+            "id": "sourcecode",
+            "title": "Source Code",
+            "content": [
+                {
+                    "title": "Code is open-source",
+                    "content": "All code related to the Liquid Network project is open source."
+                }
+            ]
         }
-      ]
-    }
-  ],
-  "knowledgeBits": [
-    {
-      "url": "hhttps://liquid.net/",
-      "displayText": "Liquid website"
-    },
-    {
-      "url": "https://help.blockstream.com/hc/en-us/articles/900001408623-How-does-Liquid-Bitcoin-L-BTC-work",
-      "displayText": "Article explaining how L-BTC works"
-    },
-    {
-      "url": "https://docs.liquid.net/docs/technical-overview",
-      "displayText": "Liquid documentation"
-    },
-    {
-      "url": "https://blog.liquid.net/the-truth-about-liquid/",
-      "displayText": "Article covering the nuance around Liquid's security model"
-    }
-  ]
+    ],
+    "knowledgeBits": [
+        {
+            "url": "hhttps://liquid.net/",
+            "displayText": "Liquid website"
+        },
+        {
+            "url": "https://help.blockstream.com/hc/en-us/articles/900001408623-How-does-Liquid-Bitcoin-L-BTC-work",
+            "displayText": "Article explaining how L-BTC works"
+        },
+        {
+            "url": "https://docs.liquid.net/docs/technical-overview",
+            "displayText": "Liquid documentation"
+        },
+        {
+            "url": "https://blog.liquid.net/the-truth-about-liquid/",
+            "displayText": "Article covering the nuance around Liquid's security model"
+        }
+    ]
 }

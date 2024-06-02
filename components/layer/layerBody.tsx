@@ -21,7 +21,9 @@ const LayerBody: React.FC<{ layer: Layer }> = ({ layer }) => {
                                 <div
                                     className={`self-stretch justify-between items-center inline-flex mt-6`}
                                 >
-                                    <div className="body_subsection">{content.title}</div>
+                                    <div className="body_subsection">
+                                        {content.title}
+                                    </div>
                                 </div>
                             )}
                             <div className="body_paragraph mt-3">
@@ -43,7 +45,11 @@ const LayerBody: React.FC<{ layer: Layer }> = ({ layer }) => {
                 </div>
                 {layer.knowledgeBits.map((link) => (
                     <p key={link.url}>
-                        <Link href={link.url} rel="noopener noreferrer" target="_blank">
+                        <Link
+                            href={link.url}
+                            rel="noopener noreferrer"
+                            target="_blank"
+                        >
                             <span className="text-orange-600 text-base font-medium font-['Public Sans'] underline leading-normal">
                                 {link.displayText}
                             </span>

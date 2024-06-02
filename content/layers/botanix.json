@@ -1,81 +1,81 @@
 {
-  "slug": "botanix",
-  "title": "Botanix",
-  "layerType": "Sidechain",
-  "live": "Testnet",
-  "underReview": "yes",
-  "riskFactors": ["", "", "", ""],
-  "purpose": "-",
-  "btcBridge": "x",
-  "settlement": "x",
-  "btcLocked": 0,
-  "executionEnv": "x",
-  "consensus": "-",
-  "nativeToken": "-",
-  "feeToken": "x",
-  "enshrinedBtc": "x",
-  "links": [
-    "https://www.botanixlabs.xyz/en/home",
-    "https://www.botanixlabs.xyz/en/home",
-    "https://docs.botanixlabs.xyz/botanix-labs",
-    "https://blockscout.botanixlabs.dev/",
-    "https://github.com/botanix-labs",
-    "https://twitter.com/BotanixLabs"
-  ],
-  "description": "Botanix is an EVM-compatible sidechain that will launch along side Bitcoin. They will be using Proof-of-Stake consensus and the Spiderchain to secure BTC multi-sigs for its two way peg.",
-  "riskAnalysis": [
-    {
-      "category": "Unilateral Exits",
-      "score": 0,
-      "tier": "",
-      "title": "",
-      "content": ""
-    },
-    {
-      "category": "Data Availability",
-      "score": 0,
-      "tier": "",
-      "title": "",
-      "content": ""
-    },
-    {
-      "category": "Block Production",
-      "score": 0,
-      "tier": "",
-      "title": "",
-      "content": ""
-    },
-    {
-      "category": "State Validation",
-      "score": 0,
-      "tier": "",
-      "title": "",
-      "content": ""
-    }
-  ],
-  "sections": [
-    {
-      "id": "description",
-      "title": "Description",
-      "content": [
+    "slug": "botanix",
+    "title": "Botanix",
+    "layerType": "Sidechain",
+    "live": "Testnet",
+    "underReview": "yes",
+    "riskFactors": ["", "", "", ""],
+    "purpose": "-",
+    "btcBridge": "x",
+    "settlement": "x",
+    "btcLocked": 0,
+    "executionEnv": "x",
+    "consensus": "-",
+    "nativeToken": "-",
+    "feeToken": "x",
+    "enshrinedBtc": "x",
+    "links": [
+        "https://www.botanixlabs.xyz/en/home",
+        "https://www.botanixlabs.xyz/en/home",
+        "https://docs.botanixlabs.xyz/botanix-labs",
+        "https://blockscout.botanixlabs.dev/",
+        "https://github.com/botanix-labs",
+        "https://twitter.com/BotanixLabs"
+    ],
+    "description": "Botanix is an EVM-compatible sidechain that will launch along side Bitcoin. They will be using Proof-of-Stake consensus and the Spiderchain to secure BTC multi-sigs for its two way peg.",
+    "riskAnalysis": [
         {
-          "content": "Botanix is an EVM-compatible sidechain that will launch along side Bitcoin. They will be using Proof-of-Stake consensus and the Spiderchain to secure BTC multi-sigs for its two way peg."
+            "category": "Unilateral Exits",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "Data Availability",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "Block Production",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "State Validation",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
         }
-      ]
-    }
-  ],
-  "knowledgeBits": [
-    {
-      "url": "https://www.botanixlabs.xyz/en/home",
-      "displayText": "Botanix Website"
-    },
-    {
-      "url": "https://docs.botanixlabs.xyz/botanix-labs/how-to-use-botanix/getting-started-with-botanix",
-      "displayText": "Interact with the Botanix testnet"
-    },
-    {
-      "url": "https://blog.lopp.net/an-introduction-to-spiderchain/",
-      "displayText": "An introduction to the Spiderchain"
-    }
-  ]
+    ],
+    "sections": [
+        {
+            "id": "description",
+            "title": "Description",
+            "content": [
+                {
+                    "content": "Botanix is an EVM-compatible sidechain that will launch along side Bitcoin. They will be using Proof-of-Stake consensus and the Spiderchain to secure BTC multi-sigs for its two way peg."
+                }
+            ]
+        }
+    ],
+    "knowledgeBits": [
+        {
+            "url": "https://www.botanixlabs.xyz/en/home",
+            "displayText": "Botanix Website"
+        },
+        {
+            "url": "https://docs.botanixlabs.xyz/botanix-labs/how-to-use-botanix/getting-started-with-botanix",
+            "displayText": "Interact with the Botanix testnet"
+        },
+        {
+            "url": "https://blog.lopp.net/an-introduction-to-spiderchain/",
+            "displayText": "An introduction to the Spiderchain"
+        }
+    ]
 }

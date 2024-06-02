@@ -34,7 +34,8 @@ const LayerMenu: React.FC<{ layer: Layer }> = ({ layer }) => {
     function scrollToSectionWithOffset(elementId: string) {
         const element = document.getElementById(elementId);
         if (element) {
-            const yCoordinate = element.getBoundingClientRect().top + window.scrollY - 48;
+            const yCoordinate =
+                element.getBoundingClientRect().top + window.scrollY - 48;
             console.log(yCoordinate, "yCoordinate");
             window.scrollTo({ top: yCoordinate, behavior: "smooth" });
         }
@@ -49,7 +50,7 @@ const LayerMenu: React.FC<{ layer: Layer }> = ({ layer }) => {
                     { id: "overview", title: "Overview" },
                     { id: "riskanalysis", title: "Risk Analysis" },
                     ...layer.sections,
-                    { id: "knowledgebits", title: "Knowledge Bits" }
+                    { id: "knowledgebits", title: "Knowledge Bits" },
                 ].map((section, index) => (
                     <div
                         key={index}

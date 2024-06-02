@@ -37,7 +37,12 @@ const Sheet: React.FC<SheetProps> = ({ isOpen, onClose, children }) => {
                     className="absolute top-4 right-4 text-gray-500 hover:text-gray-800"
                     onClick={onClose}
                 >
-                    <Image src="/icons/close.svg" alt="close" width={20} height={20} />
+                    <Image
+                        src="/icons/close.svg"
+                        alt="close"
+                        width={20}
+                        height={20}
+                    />
                 </button>
                 {children}
             </div>

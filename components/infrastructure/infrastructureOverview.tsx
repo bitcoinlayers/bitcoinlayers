@@ -2,7 +2,13 @@ import React from "react";
 import { Infrastructure } from "./infrastructureProps";
 import Image from "next/image";
 
-const LinkButton = ({ href, children }: { href: string; children: React.ReactNode }) => (
+const LinkButton = ({
+    href,
+    children,
+}: {
+    href: string;
+    children: React.ReactNode;
+}) => (
     <a
         href={href}
         target="_blank"
@@ -12,31 +18,39 @@ const LinkButton = ({ href, children }: { href: string; children: React.ReactNod
     </a>
 );
 
-const Categories: React.FC<{ infrastructure: Infrastructure }> = ({ infrastructure }) => {
+const Categories: React.FC<{ infrastructure: Infrastructure }> = ({
+    infrastructure,
+}) => {
     return (
         <div className="flex gap-12 w-full">
             <div className="flex-col justify-center items-start">
-                <div className="text-text_primary text-sm leading-tight">Type</div>
+                <div className="text-text_primary text-sm leading-tight">
+                    Type
+                </div>
                 <div className="text-text_header">
                     {infrastructure.infrastructureType}
                 </div>
             </div>
             <div className="flex-col justify-center items-start">
-                <div className="text-text_primary text-sm leading-tight">Purpose</div>
+                <div className="text-text_primary text-sm leading-tight">
+                    Purpose
+                </div>
                 <div className="text-text_header">{infrastructure.purpose}</div>
             </div>
             <div className="flex-col justify-center items-start">
                 <div className="text-text_primary text-sm leading-tight">
                     Associated Layers
                 </div>
-                <div className="text-text_header">{infrastructure.associatedLayers}</div>
+                <div className="text-text_header">
+                    {infrastructure.associatedLayers}
+                </div>
             </div>
         </div>
     );
 };
 
 const Description: React.FC<{ infrastructure: Infrastructure }> = ({
-    infrastructure
+    infrastructure,
 }) => {
     return (
         <div className="self-stretch text-text_secondary">
@@ -45,7 +59,9 @@ const Description: React.FC<{ infrastructure: Infrastructure }> = ({
     );
 };
 
-const Links: React.FC<{ infrastructure: Infrastructure }> = ({ infrastructure }) => {
+const Links: React.FC<{ infrastructure: Infrastructure }> = ({
+    infrastructure,
+}) => {
     return (
         <div className="self-stretch flex justify-start items-start gap-4 flex-wrap">
             <LinkButton href={String(infrastructure.links[0])}>
@@ -123,7 +139,7 @@ const Links: React.FC<{ infrastructure: Infrastructure }> = ({ infrastructure })
 };
 
 const InfrastructureOverview: React.FC<{ infrastructure: Infrastructure }> = ({
-    infrastructure
+    infrastructure,
 }) => {
     return (
         <div className="flex justify-between pt-6 gap-4">

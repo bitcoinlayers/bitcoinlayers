@@ -4,15 +4,15 @@ import LayerTableRisks from "@/components/layer/layerTableRisks";
 import tableStyles from "../styles/tableStyles";
 
 interface LayerTabProps {
-  // none
+    // none
 }
 
 const LayerTabRisks: React.FC<LayerTabProps> = () => {
-  const mainnetLayers = allLayers
-    .filter((layer) => layer.live === "Mainnet")
-    .sort((a, b) => a.title.localeCompare(b.title));
+    const mainnetLayers = allLayers
+        .filter((layer) => layer.live === "Mainnet")
+        .sort((a, b) => a.title.localeCompare(b.title));
 
-  return <LayerTableRisks data={mainnetLayers} />;
+    return <LayerTableRisks data={mainnetLayers} />;
 };
 
 export default tableStyles(LayerTabRisks);

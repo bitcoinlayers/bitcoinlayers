@@ -13,6 +13,6 @@ If you'd like to see your project added to Bitcoin Layers, please see the sectio
 
 ## Our other properties
 
-- [Website](https://bitcoinlayers.org)
-- [Social Media](https://twitter.com/bitcoinlayers)
-- [Documentation](https://bitcoin-layers.gitbook.io/bitcoin-layers)
+-   [Website](https://bitcoinlayers.org)
+-   [Social Media](https://twitter.com/bitcoinlayers)
+-   [Documentation](https://bitcoin-layers.gitbook.io/bitcoin-layers)

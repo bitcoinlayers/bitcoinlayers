@@ -1,66 +1,66 @@
 {
-  "slug": "bsquared",
-  "title": "Bsquared",
-  "layerType": "Sidechain Rollup",
-  "live": "Mainnet",
-  "underReview": "yes",
-  "riskFactors": ["", "", "", ""],
-  "purpose": "General",
-  "btcBridge": "Federated Multi-sig",
-  "settlement": "Offchain",
-  "btcLocked": "-",
-  "executionEnv": "Offchain",
-  "consensus": "Proof-of-Stake",
-  "nativeToken": "BSQ",
-  "feeToken": "BSQ",
-  "enshrinedBtc": "wBTC",
-  "links": [
-    "https://www.bsquared.network/",
-    "https://www.bsquared.network/",
-    "https://docs.bsquared.network/",
-    "https://docs.bsquared.network/",
-    "https://github.com/b2network",
-    "https://twitter.com/BSquaredNetwork"
-  ],
-  "description": "BSquared is an upcoming project that will build a rollup and alternative DA layer on top of Bitcoin. They are currently in testnet phase.",
-  "riskAnalysis": [
-    {
-      "category": "Unilateral Exits",
-      "score": 0,
-      "tier": "",
-      "title": "",
-      "content": ""
-    },
-    {
-      "category": "Data Availability",
-      "score": 0,
-      "tier": "",
-      "title": "",
-      "content": ""
-    },
-    {
-      "category": "Block Production",
-      "score": 0,
-      "tier": "",
-      "title": "",
-      "content": ""
-    },
-    {
-      "category": "State Validation",
-      "score": 0,
-      "tier": "",
-      "title": "",
-      "content": ""
-    }
-  ],
-  "knowledgeBits": [
-    {
-      "url": "https://www.bsquared.network/",
-      "displayText": "BSquare website"
-    },
-    {
-      "url": "https://docs.bsquared.network/",
-      "displayText": "BSquared documentation site"
-    }
-  ]
+    "slug": "bsquared",
+    "title": "Bsquared",
+    "layerType": "Sidechain Rollup",
+    "live": "Mainnet",
+    "underReview": "yes",
+    "riskFactors": ["", "", "", ""],
+    "purpose": "General",
+    "btcBridge": "Federated Multi-sig",
+    "settlement": "Offchain",
+    "btcLocked": "-",
+    "executionEnv": "Offchain",
+    "consensus": "Proof-of-Stake",
+    "nativeToken": "BSQ",
+    "feeToken": "BSQ",
+    "enshrinedBtc": "wBTC",
+    "links": [
+        "https://www.bsquared.network/",
+        "https://www.bsquared.network/",
+        "https://docs.bsquared.network/",
+        "https://docs.bsquared.network/",
+        "https://github.com/b2network",
+        "https://twitter.com/BSquaredNetwork"
+    ],
+    "description": "BSquared is an upcoming project that will build a rollup and alternative DA layer on top of Bitcoin. They are currently in testnet phase.",
+    "riskAnalysis": [
+        {
+            "category": "Unilateral Exits",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "Data Availability",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "Block Production",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "State Validation",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        }
+    ],
+    "knowledgeBits": [
+        {
+            "url": "https://www.bsquared.network/",
+            "displayText": "BSquare website"
+        },
+        {
+            "url": "https://docs.bsquared.network/",
+            "displayText": "BSquared documentation site"
+        }
+    ]
 }

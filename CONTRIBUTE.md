@@ -16,12 +16,16 @@ We host weekly community calls and are considering expanding to more community-c
 
 ## Writing risk assessments
 
-A lot of the new “L2s” that are popping up are similar to Ethereum rollups / validiums / optimiums. If you have a technical understanding of these protocols, and would like to review some of their implementations in the Bitcoin space, [please join our telegram](https://t.me/+8rv-1I2gkmQ4ZmJh) so we can coordinate which reviews you can take on :) 
+A lot of the new “L2s” that are popping up are similar to Ethereum rollups / validiums / optimiums. If you have a technical understanding of these protocols, and would like to review some of their implementations in the Bitcoin space, [please join our telegram](https://t.me/+8rv-1I2gkmQ4ZmJh) so we can coordinate which reviews you can take on :)
 
 ## Opinion blog pieces
 
-We’re going to start hosting opinion pieces on our blog. If you’d like to write a blog related to Bitcoin scaling infrastructure, and have it featured on our site, [let us know](https://t.me/+8rv-1I2gkmQ4ZmJh)! 
+We’re going to start hosting opinion pieces on our blog. If you’d like to write a blog related to Bitcoin scaling infrastructure, and have it featured on our site, [let us know](https://t.me/+8rv-1I2gkmQ4ZmJh)!
 
 ## Just join the conversation
 
-Not every contribution can be measured by GitHub commits. Simply jumping [into our chat](https://t.me/+8rv-1I2gkmQ4ZmJh) and being a part of the discussion is super valuable and appreciated. You may also be able to contribute to a project in a capacity that is not listed here. If that's the case, [let us know](https://t.me/+8rv-1I2gkmQ4ZmJh). :) 
+Not every contribution can be measured by GitHub commits. Simply jumping [into our chat](https://t.me/+8rv-1I2gkmQ4ZmJh) and being a part of the discussion is super valuable and appreciated. You may also be able to contribute to a project in a capacity that is not listed here. If that's the case, [let us know](https://t.me/+8rv-1I2gkmQ4ZmJh). :)
+
+## Website maintaininace for bitcoinlayers.org
+
+Follow existing variable and file naming standards, and make sure to run `npm run format` to format with prettier.

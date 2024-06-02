@@ -8,27 +8,31 @@ import Navbar from "@/components/navbar";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Bitcoin Layers",
-  description: "Documenting Bitcoin Layers",
+    title: "Bitcoin Layers",
+    description: "Documenting Bitcoin Layers",
 };
 
 interface RootLayoutProps {
-  children: React.ReactNode;
+    children: React.ReactNode;
 }
 
 export default function RootLayout({ children }: RootLayoutProps) {
-  return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={`antialiased ${inter.className}`}>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <div className="mx-auto min-h-screen bg-bg_primary">
-            <Navbar />
-            <main>{children}</main>
-            <Footer />
-          </div>
-          <Analytics />
-        </ThemeProvider>
-      </body>
-    </html>
-  );
+    return (
+        <html lang="en" suppressHydrationWarning>
+            <body className={`antialiased ${inter.className}`}>
+                <ThemeProvider
+                    attribute="class"
+                    defaultTheme="system"
+                    enableSystem
+                >
+                    <div className="mx-auto min-h-screen bg-bg_primary">
+                        <Navbar />
+                        <main>{children}</main>
+                        <Footer />
+                    </div>
+                    <Analytics />
+                </ThemeProvider>
+            </body>
+        </html>
+    );
 }

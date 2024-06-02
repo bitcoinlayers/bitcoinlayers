@@ -1,73 +1,73 @@
 {
-  "slug": "ark",
-  "title": "Ark",
-  "layerType": "Virtual UTXOs",
-  "live": "Mainnet",
-  "underReview": "yes",
-  "riskFactors": ["", "", "", ""],
-  "purpose": "Payments",
-  "btcBridge": "Under review",
-  "settlement": "Under review",
-  "btcLocked": 0,
-  "executionEnv": "Under review",
-  "consensus": "Under review",
-  "nativeToken": "-",
-  "feeToken": "-",
-  "enshrinedBtc": "-",
-  "links": [
-    "https://ark-protocol.org/intro/vtxos/index.html",
-    "https://ark-protocol.org/intro/vtxos/index.html",
-    "https://ark-protocol.org/intro/vtxos/index.html",
-    "https://ark-protocol.org/intro/vtxos/index.html",
-    "https://ark-protocol.org/intro/vtxos/index.html",
-    "https://ark-protocol.org/intro/vtxos/index.html"
-  ],
-  "description": "Ark is a payments system where people can make Bitcoin transactions at very low cost and without requiring any setup. The Ark model very closely resembles the UTXO model, which is a key differentiator with Lightning.",
-  "riskAnalysis": [
-    {
-      "category": "Unilateral Exits",
-      "score": 0,
-      "tier": "",
-      "title": "",
-      "content": ""
-    },
-    {
-      "category": "Data Availability",
-      "score": 0,
-      "tier": "",
-      "title": "",
-      "content": ""
-    },
-    {
-      "category": "Block Production",
-      "score": 0,
-      "tier": "",
-      "title": "",
-      "content": ""
-    },
-    {
-      "category": "State Validation",
-      "score": 0,
-      "tier": "",
-      "title": "",
-      "content": ""
-    }
-  ],
-  "sections": [
-    {
-      "id": "description",
-      "title": "Description",
-      "content": [
+    "slug": "ark",
+    "title": "Ark",
+    "layerType": "Virtual UTXOs",
+    "live": "Mainnet",
+    "underReview": "yes",
+    "riskFactors": ["", "", "", ""],
+    "purpose": "Payments",
+    "btcBridge": "Under review",
+    "settlement": "Under review",
+    "btcLocked": 0,
+    "executionEnv": "Under review",
+    "consensus": "Under review",
+    "nativeToken": "-",
+    "feeToken": "-",
+    "enshrinedBtc": "-",
+    "links": [
+        "https://ark-protocol.org/intro/vtxos/index.html",
+        "https://ark-protocol.org/intro/vtxos/index.html",
+        "https://ark-protocol.org/intro/vtxos/index.html",
+        "https://ark-protocol.org/intro/vtxos/index.html",
+        "https://ark-protocol.org/intro/vtxos/index.html",
+        "https://ark-protocol.org/intro/vtxos/index.html"
+    ],
+    "description": "Ark is a payments system where people can make Bitcoin transactions at very low cost and without requiring any setup. The Ark model very closely resembles the UTXO model, which is a key differentiator with Lightning.",
+    "riskAnalysis": [
         {
-          "content": "Ark is a payments system where people can make Bitcoin transactions at very low cost and without requiring any setup. The Ark model very closely resembles the UTXO model, which is a key differentiator with Lightning."
+            "category": "Unilateral Exits",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "Data Availability",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "Block Production",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "State Validation",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
         }
-      ]
-    }
-  ],
-  "knowledgeBits": [
-    {
-      "url": "https://ark-protocol.org/index.html",
-      "displayText": "Ark Website"
-    }
-  ]
+    ],
+    "sections": [
+        {
+            "id": "description",
+            "title": "Description",
+            "content": [
+                {
+                    "content": "Ark is a payments system where people can make Bitcoin transactions at very low cost and without requiring any setup. The Ark model very closely resembles the UTXO model, which is a key differentiator with Lightning."
+                }
+            ]
+        }
+    ],
+    "knowledgeBits": [
+        {
+            "url": "https://ark-protocol.org/index.html",
+            "displayText": "Ark Website"
+        }
+    ]
 }

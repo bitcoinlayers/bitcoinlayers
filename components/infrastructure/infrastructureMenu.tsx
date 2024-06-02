@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Infrastructure } from "./infrastructureProps";
 
 const InfrastructureMenu: React.FC<{ infrastructure: Infrastructure }> = ({
-    infrastructure
+    infrastructure,
 }) => {
     const [activeSection, setActiveSection] = useState("overview");
 
@@ -35,7 +35,8 @@ const InfrastructureMenu: React.FC<{ infrastructure: Infrastructure }> = ({
     function scrollToSectionWithOffset(elementId: string) {
         const element = document.getElementById(elementId);
         if (element) {
-            const yCoordinate = element.getBoundingClientRect().top + window.scrollY - 48;
+            const yCoordinate =
+                element.getBoundingClientRect().top + window.scrollY - 48;
             console.log(yCoordinate, "yCoordinate");
             window.scrollTo({ top: yCoordinate, behavior: "smooth" });
         }
@@ -47,9 +48,12 @@ const InfrastructureMenu: React.FC<{ infrastructure: Infrastructure }> = ({
                 {[
                     { id: "overview", title: "Overview" },
                     ...infrastructure.sections,
-                    { id: "knowledgebits", title: "Knowledge Bits" }
+                    { id: "knowledgebits", title: "Knowledge Bits" },
                 ].map((section, index) => (
-                    <div key={index} className="flex justify-start items-center gap-4">
+                    <div
+                        key={index}
+                        className="flex justify-start items-center gap-4"
+                    >
                         <div
                             className={`w-[3px] h-10 ${
                                 activeSection === section.id

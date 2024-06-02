@@ -1,77 +1,77 @@
 {
-  "slug": "rgb",
-  "title": "RGB",
-  "layerType": "CSV",
-  "live": "Testnet",
-  "underReview": "yes",
-  "riskFactors": ["", "", "", ""],
-  "purpose": "-",
-  "btcBridge": "-",
-  "settlement": "-",
-  "btcLocked": 0,
-  "executionEnv": "-",
-  "consensus": "CSV",
-  "nativeToken": "-",
-  "feeToken": "-",
-  "enshrinedBtc": "-",
-  "links": [
-    "https://rgb.tech/",
-    "https://www.rgbfaq.com/",
-    "https://twitter.com/bitcoinlayers",
-    "https://twitter.com/bitcoinlayers",
-    "https://twitter.com/bitcoinlayers",
-    "https://twitter.com/bitcoinlayers"
-  ],
-  "description": "Under review.",
-  "riskAnalysis": [
-    {
-      "category": "Unilateral Exits",
-      "score": 0,
-      "tier": "",
-      "title": "",
-      "content": ""
-    },
-    {
-      "category": "Data Availability",
-      "score": 0,
-      "tier": "",
-      "title": "",
-      "content": ""
-    },
-    {
-      "category": "Block Production",
-      "score": 0,
-      "tier": "",
-      "title": "",
-      "content": ""
-    },
-    {
-      "category": "State Validation",
-      "score": 0,
-      "tier": "",
-      "title": "",
-      "content": ""
-    }
-  ],
-  "sections": [
-    {
-      "id": "description",
-      "title": "Description",
-      "content": [
+    "slug": "rgb",
+    "title": "RGB",
+    "layerType": "CSV",
+    "live": "Testnet",
+    "underReview": "yes",
+    "riskFactors": ["", "", "", ""],
+    "purpose": "-",
+    "btcBridge": "-",
+    "settlement": "-",
+    "btcLocked": 0,
+    "executionEnv": "-",
+    "consensus": "CSV",
+    "nativeToken": "-",
+    "feeToken": "-",
+    "enshrinedBtc": "-",
+    "links": [
+        "https://rgb.tech/",
+        "https://www.rgbfaq.com/",
+        "https://twitter.com/bitcoinlayers",
+        "https://twitter.com/bitcoinlayers",
+        "https://twitter.com/bitcoinlayers",
+        "https://twitter.com/bitcoinlayers"
+    ],
+    "description": "Under review.",
+    "riskAnalysis": [
         {
-          "content": "Under review."
+            "category": "Unilateral Exits",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "Data Availability",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "Block Production",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "State Validation",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
         }
-      ]
-    }
-  ],
-  "knowledgeBits": [
-    {
-      "url": "https://bitcoin.org",
-      "displayText": "Bitcoin.org"
-    },
-    {
-      "url": "https://bitcoinrollups.io",
-      "displayText": "BitcoinRollups.io"
-    }
-  ]
+    ],
+    "sections": [
+        {
+            "id": "description",
+            "title": "Description",
+            "content": [
+                {
+                    "content": "Under review."
+                }
+            ]
+        }
+    ],
+    "knowledgeBits": [
+        {
+            "url": "https://bitcoin.org",
+            "displayText": "Bitcoin.org"
+        },
+        {
+            "url": "https://bitcoinrollups.io",
+            "displayText": "BitcoinRollups.io"
+        }
+    ]
 }

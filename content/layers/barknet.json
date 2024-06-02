@@ -1,73 +1,73 @@
 {
-  "slug": "barknet",
-  "title": "Barknet",
-  "layerType": "Rollup",
-  "live": "Testnet",
-  "underReview": "yes",
-  "riskFactors": ["", "", "", ""],
-  "purpose": "-",
-  "btcBridge": "-",
-  "settlement": "x",
-  "btcLocked": 0,
-  "executionEnv": "x",
-  "consensus": "-",
-  "nativeToken": "-",
-  "feeToken": "-",
-  "enshrinedBtc": "x",
-  "links": [
-    "https://github.com/KasarLabs/barknet",
-    "https://github.com/KasarLabs/barknet",
-    "https://github.com/KasarLabs/barknet",
-    "https://github.com/KasarLabs/barknet",
-    "https://github.com/KasarLabs/barknet",
-    "https://twitter.com/kasarlabs"
-  ],
-  "description": "Barknet is a sovereign rollup that uses Bitcoin for data availability and the Cairo VM. It was developed by Kasar Lab in collaboration with Taproot Wizards.",
-  "riskAnalysis": [
-    {
-      "category": "Unilateral Exits",
-      "score": 0,
-      "tier": "",
-      "title": "",
-      "content": ""
-    },
-    {
-      "category": "Data Availability",
-      "score": 0,
-      "tier": "",
-      "title": "",
-      "content": ""
-    },
-    {
-      "category": "Block Production",
-      "score": 0,
-      "tier": "",
-      "title": "",
-      "content": ""
-    },
-    {
-      "category": "State Validation",
-      "score": 0,
-      "tier": "",
-      "title": "",
-      "content": ""
-    }
-  ],
-  "sections": [
-    {
-      "id": "description",
-      "title": "Description",
-      "content": [
+    "slug": "barknet",
+    "title": "Barknet",
+    "layerType": "Rollup",
+    "live": "Testnet",
+    "underReview": "yes",
+    "riskFactors": ["", "", "", ""],
+    "purpose": "-",
+    "btcBridge": "-",
+    "settlement": "x",
+    "btcLocked": 0,
+    "executionEnv": "x",
+    "consensus": "-",
+    "nativeToken": "-",
+    "feeToken": "-",
+    "enshrinedBtc": "x",
+    "links": [
+        "https://github.com/KasarLabs/barknet",
+        "https://github.com/KasarLabs/barknet",
+        "https://github.com/KasarLabs/barknet",
+        "https://github.com/KasarLabs/barknet",
+        "https://github.com/KasarLabs/barknet",
+        "https://twitter.com/kasarlabs"
+    ],
+    "description": "Barknet is a sovereign rollup that uses Bitcoin for data availability and the Cairo VM. It was developed by Kasar Lab in collaboration with Taproot Wizards.",
+    "riskAnalysis": [
         {
-          "content": "Barknet is a sovereign rollup that uses Bitcoin for data availability and the Cairo VM. It was developed by Kasar Lab in collaboration with Taproot Wizards."
+            "category": "Unilateral Exits",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "Data Availability",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "Block Production",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "State Validation",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
         }
-      ]
-    }
-  ],
-  "knowledgeBits": [
-    {
-      "url": "https://github.com/KasarLabs/barknet",
-      "displayText": "Barknet code and docs"
-    }
-  ]
+    ],
+    "sections": [
+        {
+            "id": "description",
+            "title": "Description",
+            "content": [
+                {
+                    "content": "Barknet is a sovereign rollup that uses Bitcoin for data availability and the Cairo VM. It was developed by Kasar Lab in collaboration with Taproot Wizards."
+                }
+            ]
+        }
+    ],
+    "knowledgeBits": [
+        {
+            "url": "https://github.com/KasarLabs/barknet",
+            "displayText": "Barknet code and docs"
+        }
+    ]
 }

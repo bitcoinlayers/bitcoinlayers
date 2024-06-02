@@ -1,81 +1,81 @@
 {
-  "slug": "internetcomputer",
-  "title": "Internet Computer",
-  "layerType": "Sidechain",
-  "live": "Mainnet",
-  "underReview": "yes",
-  "riskFactors": ["", "", "", ""],
-  "purpose": "General",
-  "btcBridge": "Under review",
-  "settlement": "Under Review",
-  "btcLocked": 253,
-  "executionEnv": "Under Review",
-  "consensus": "Under Review",
-  "nativeToken": "ICP",
-  "feeToken": "ckBTC",
-  "enshrinedBtc": "ckBTC",
-  "links": [
-    "https://internetcomputer.org/bitcoin-integration",
-    "https://internetcomputer.org/bitcoin-integration",
-    "https://internetcomputer.org/docs/current/references/bitcoin-how-it-works",
-    "https://dashboard.internetcomputer.org/bitcoin",
-    "https://github.com/dfinity/bitcoin-canisteri",
-    "https://twitter.com/dfinity"
-  ],
-  "description": "Internet Computer Protocl (ICP) is a sidechain that enables more functionality for BTC the asset. It leverages Chain-key ECDSA signatures to secure the two-way peg with Bitcoin. People might want to use the ICP sidechain for cheaper fees and more expressive onchain applications.",
-  "riskAnalysis": [
-    {
-      "category": "Unilateral Exits",
-      "score": 0,
-      "tier": "",
-      "title": "",
-      "content": ""
-    },
-    {
-      "category": "Data Availability",
-      "score": 0,
-      "tier": "",
-      "title": "",
-      "content": ""
-    },
-    {
-      "category": "Block Production",
-      "score": 0,
-      "tier": "",
-      "title": "",
-      "content": ""
-    },
-    {
-      "category": "State Validation",
-      "score": 0,
-      "tier": "",
-      "title": "",
-      "content": ""
-    }
-  ],
-  "sections": [
-    {
-      "id": "description",
-      "title": "Description",
-      "content": [
+    "slug": "internetcomputer",
+    "title": "Internet Computer",
+    "layerType": "Sidechain",
+    "live": "Mainnet",
+    "underReview": "yes",
+    "riskFactors": ["", "", "", ""],
+    "purpose": "General",
+    "btcBridge": "Under review",
+    "settlement": "Under Review",
+    "btcLocked": 253,
+    "executionEnv": "Under Review",
+    "consensus": "Under Review",
+    "nativeToken": "ICP",
+    "feeToken": "ckBTC",
+    "enshrinedBtc": "ckBTC",
+    "links": [
+        "https://internetcomputer.org/bitcoin-integration",
+        "https://internetcomputer.org/bitcoin-integration",
+        "https://internetcomputer.org/docs/current/references/bitcoin-how-it-works",
+        "https://dashboard.internetcomputer.org/bitcoin",
+        "https://github.com/dfinity/bitcoin-canisteri",
+        "https://twitter.com/dfinity"
+    ],
+    "description": "Internet Computer Protocl (ICP) is a sidechain that enables more functionality for BTC the asset. It leverages Chain-key ECDSA signatures to secure the two-way peg with Bitcoin. People might want to use the ICP sidechain for cheaper fees and more expressive onchain applications.",
+    "riskAnalysis": [
         {
-          "content": "Internet Computer Protocl (ICP) is a sidechain that enables more functionality for BTC the asset. It leverages Chain-key ECDSA signatures to secure the two-way peg with Bitcoin. People might want to use the ICP sidechain for cheaper fees and more expressive onchain applications"
+            "category": "Unilateral Exits",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "Data Availability",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "Block Production",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "State Validation",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
         }
-      ]
-    }
-  ],
-  "knowledgeBits": [
-    {
-      "url": "https://internetcomputer.org/bitcoin-integration",
-      "displayText": "ICP's Bitcoin homepage"
-    },
-    {
-      "url": "https://internetcomputer.org/docs/current/references/bitcoin-how-it-works#chain-key-ecdsa-signatures",
-      "displayText": "ICP's Bitcoin docs"
-    },
-    {
-      "url": "https://dashboard.internetcomputer.org/bitcoin",
-      "displayText": "ICP's Bitcoin explorer"
-    }
-  ]
+    ],
+    "sections": [
+        {
+            "id": "description",
+            "title": "Description",
+            "content": [
+                {
+                    "content": "Internet Computer Protocl (ICP) is a sidechain that enables more functionality for BTC the asset. It leverages Chain-key ECDSA signatures to secure the two-way peg with Bitcoin. People might want to use the ICP sidechain for cheaper fees and more expressive onchain applications"
+                }
+            ]
+        }
+    ],
+    "knowledgeBits": [
+        {
+            "url": "https://internetcomputer.org/bitcoin-integration",
+            "displayText": "ICP's Bitcoin homepage"
+        },
+        {
+            "url": "https://internetcomputer.org/docs/current/references/bitcoin-how-it-works#chain-key-ecdsa-signatures",
+            "displayText": "ICP's Bitcoin docs"
+        },
+        {
+            "url": "https://dashboard.internetcomputer.org/bitcoin",
+            "displayText": "ICP's Bitcoin explorer"
+        }
+    ]
 }

@@ -1,73 +1,73 @@
 {
-  "slug": "zklayer",
-  "title": "zkLayer",
-  "layerType": "Rollup",
-  "live": "Testnet",
-  "underReview": "yes",
-  "riskFactors": ["", "", "", ""],
-  "purpose": "-",
-  "btcBridge": "x",
-  "settlement": "x",
-  "btcLocked": 0,
-  "executionEnv": "x",
-  "consensus": "-",
-  "nativeToken": "-",
-  "feeToken": "x",
-  "enshrinedBtc": "x",
-  "links": [
-    "https://www.zklayer.co/",
-    "https://twitter.com/bitcoinlayers",
-    "https://app.gitbook.com/o/62jIvTYSEInKMwhtPJXC/s/fTHAEGkacQhIFNLPH9VW/",
-    "https://app.gitbook.com/o/62jIvTYSEInKMwhtPJXC/s/fTHAEGkacQhIFNLPH9VW/",
-    "https://github.com/zkLayer",
-    "https://twitter.com/zkLayer_"
-  ],
-  "description": "zkLayer is a proposed rollup project on top of Bitcoin. It is unclear what bridging model it will use to secure its two-way peg and validate state transitions.",
-  "riskAnalysis": [
-    {
-      "category": "Unilateral Exits",
-      "score": 0,
-      "tier": "",
-      "title": "",
-      "content": ""
-    },
-    {
-      "category": "Data Availability",
-      "score": 0,
-      "tier": "",
-      "title": "",
-      "content": ""
-    },
-    {
-      "category": "Block Production",
-      "score": 0,
-      "tier": "",
-      "title": "",
-      "content": ""
-    },
-    {
-      "category": "State Validation",
-      "score": 0,
-      "tier": "",
-      "title": "",
-      "content": ""
-    }
-  ],
-  "sections": [
-    {
-      "id": "description",
-      "title": "Description",
-      "content": [
+    "slug": "zklayer",
+    "title": "zkLayer",
+    "layerType": "Rollup",
+    "live": "Testnet",
+    "underReview": "yes",
+    "riskFactors": ["", "", "", ""],
+    "purpose": "-",
+    "btcBridge": "x",
+    "settlement": "x",
+    "btcLocked": 0,
+    "executionEnv": "x",
+    "consensus": "-",
+    "nativeToken": "-",
+    "feeToken": "x",
+    "enshrinedBtc": "x",
+    "links": [
+        "https://www.zklayer.co/",
+        "https://twitter.com/bitcoinlayers",
+        "https://app.gitbook.com/o/62jIvTYSEInKMwhtPJXC/s/fTHAEGkacQhIFNLPH9VW/",
+        "https://app.gitbook.com/o/62jIvTYSEInKMwhtPJXC/s/fTHAEGkacQhIFNLPH9VW/",
+        "https://github.com/zkLayer",
+        "https://twitter.com/zkLayer_"
+    ],
+    "description": "zkLayer is a proposed rollup project on top of Bitcoin. It is unclear what bridging model it will use to secure its two-way peg and validate state transitions.",
+    "riskAnalysis": [
         {
-          "content": "zkLayer is a proposed rollup project on top of Bitcoin. It is unclear what bridging model it will use to secure its two-way peg and validate state transitions."
+            "category": "Unilateral Exits",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "Data Availability",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "Block Production",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "State Validation",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
         }
-      ]
-    }
-  ],
-  "knowledgeBits": [
-    {
-      "url": "https://www.zklayer.co/",
-      "displayText": "zkLayer website"
-    }
-  ]
+    ],
+    "sections": [
+        {
+            "id": "description",
+            "title": "Description",
+            "content": [
+                {
+                    "content": "zkLayer is a proposed rollup project on top of Bitcoin. It is unclear what bridging model it will use to secure its two-way peg and validate state transitions."
+                }
+            ]
+        }
+    ],
+    "knowledgeBits": [
+        {
+            "url": "https://www.zklayer.co/",
+            "displayText": "zkLayer website"
+        }
+    ]
 }

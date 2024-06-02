@@ -6,27 +6,27 @@ const getRiskColorClass = (riskFactor: string) => {
         case "Low":
             return {
                 bg: "bg-low",
-                fill: "#48E55F"
+                fill: "#48E55F",
             };
         case "Medium":
             return {
                 bg: "bg-medium",
-                fill: "#FFC21B"
+                fill: "#FFC21B",
             };
         case "Medium-High":
             return {
                 bg: "bg-medium-high",
-                fill: "#FF9900"
+                fill: "#FF9900",
             };
         case "High":
             return {
                 bg: "bg-high",
-                fill: "#EC0B43"
+                fill: "#EC0B43",
             };
         default:
             return {
                 bg: "bg-secondary",
-                fill: "#CCCCCC"
+                fill: "#CCCCCC",
             };
     }
 };
@@ -53,7 +53,10 @@ const LayerDiamond: React.FC<{ layer: Layer }> = ({ layer }) => {
                 <svg
                     viewBox="0 0 97 97"
                     className="w-full h-full relative flex-col justify-start items-start flex"
-                    style={{ fill: getRiskColorClass(layer.riskAnalysis[0].tier).fill }}
+                    style={{
+                        fill: getRiskColorClass(layer.riskAnalysis[0].tier)
+                            .fill,
+                    }}
                 >
                     <g id="risk-square">
                         <g clipPath="url(#clip0_207_52485)">
@@ -81,7 +84,10 @@ const LayerDiamond: React.FC<{ layer: Layer }> = ({ layer }) => {
                 <svg
                     viewBox="0 0 97 97"
                     className="w-full h-full relative flex-col justify-start items-start flex"
-                    style={{ fill: getRiskColorClass(layer.riskAnalysis[1].tier).fill }}
+                    style={{
+                        fill: getRiskColorClass(layer.riskAnalysis[1].tier)
+                            .fill,
+                    }}
                 >
                     <g id="risk-square">
                         <g clipPath="url(#clip0_207_52485)">
@@ -103,11 +109,16 @@ const LayerDiamond: React.FC<{ layer: Layer }> = ({ layer }) => {
                 </svg>
             </div>
 
-            <div className={`absolute top-[155px] left-[90px] ${svgDimensions}`}>
+            <div
+                className={`absolute top-[155px] left-[90px] ${svgDimensions}`}
+            >
                 <svg
                     viewBox="0 0 97 97"
                     className="w-full h-full relative flex-col justify-start items-start flex"
-                    style={{ fill: getRiskColorClass(layer.riskAnalysis[2].tier).fill }}
+                    style={{
+                        fill: getRiskColorClass(layer.riskAnalysis[2].tier)
+                            .fill,
+                    }}
                 >
                     <g id="risk-square">
                         <g clipPath="url(#clip0_207_52485)">
@@ -133,7 +144,10 @@ const LayerDiamond: React.FC<{ layer: Layer }> = ({ layer }) => {
                 <svg
                     viewBox="0 0 97 97"
                     className="w-full h-full relative flex-col justify-start items-start flex"
-                    style={{ fill: getRiskColorClass(layer.riskAnalysis[3].tier).fill }}
+                    style={{
+                        fill: getRiskColorClass(layer.riskAnalysis[3].tier)
+                            .fill,
+                    }}
                 >
                     <g id="risk-square">
                         <g clipPath="url(#clip0_207_52485)">

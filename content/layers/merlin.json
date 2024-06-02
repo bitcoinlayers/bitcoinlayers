@@ -1,82 +1,82 @@
 {
-  "slug": "merlin",
-  "title": "Merlin",
-  "layerType": "Sidechain",
-  "live": "Mainnet",
-  "underReview": "no",
-  "riskFactors": ["", "High", "High", "High"],
-  "purpose": "General",
-  "btcBridge": "Under review",
-  "settlement": "Under review",
-  "btcLocked": 0,
-  "executionEnv": "Under review",
-  "consensus": "Under review",
-  "nativeToken": "-",
-  "feeToken": "-",
-  "enshrinedBtc": "-",
-  "links": [
-    "https://merlinchain.io/",
-    "https://docs.merlinchain.io/merlin-docs",
-    "https://docs.merlinchain.io/merlin-docs",
-    "https://docs.merlinchain.io/merlin-docs/developers",
-    "https://docs.merlinchain.io/merlin-docs/developers",
-    "https://twitter.com/MerlinLayer2"
-  ],
-  "description": "Merlin is an implementation of Polygon CDK chain. It looks to build a validia chain using an alternative system for data availability. Its documentation shares that it will add Bitcoin native security in the future, but no code or research has been released.",
-  "riskAnalysis": [
-    {
-      "category": "Unilateral Exits",
-      "score": 0,
-      "tier": "Under review",
-      "title": "Bridge program under review",
-      "content": "We are currently reviewing the bridge program related to Merlin. The vault that mints BTC on Merlin is an upgradeable contract."
-    },
-    {
-      "category": "Data Availability",
-      "score": 0,
-      "tier": "High",
-      "title": "Uses a DAC for offchain data availability. Members under review",
-      "content": "Merlin chain is built on the Polygon CDK stack. In its Github, it has a copy of the Polygon CDK Committee contract. In the contract, it states that the admin has the control to set up the committee, so it is likely that the members of this committee are permissioned and selected by the Merlin Chain operator."
-    },
-    {
-      "category": "Block Production",
-      "score": 0,
-      "tier": "High",
-      "title": "Blocks are produced by a centralized sequencer",
-      "content": "Merlin chain blocks are currently produced by a centralized sequencer."
-    },
-    {
-      "category": "State Validation",
-      "score": 0,
-      "tier": "High",
-      "title": "No mechanism to enforce state validation on Bitcoin",
-      "content": "Merlin uses zkSNARKS to ensure state correctness. The Merlin prover posts validity proofs of execution to its L1 contract to finalize state transitions. It is unknown which chain Merlin settles to, but its documentation previously pointed to Ethereum."
-    }
-  ],
-  "sections": [
-    {
-      "id": "bitcoinsecurity",
-      "title": "Additional risk information",
-      "content": [
+    "slug": "merlin",
+    "title": "Merlin",
+    "layerType": "Sidechain",
+    "live": "Mainnet",
+    "underReview": "no",
+    "riskFactors": ["", "High", "High", "High"],
+    "purpose": "General",
+    "btcBridge": "Under review",
+    "settlement": "Under review",
+    "btcLocked": 0,
+    "executionEnv": "Under review",
+    "consensus": "Under review",
+    "nativeToken": "-",
+    "feeToken": "-",
+    "enshrinedBtc": "-",
+    "links": [
+        "https://merlinchain.io/",
+        "https://docs.merlinchain.io/merlin-docs",
+        "https://docs.merlinchain.io/merlin-docs",
+        "https://docs.merlinchain.io/merlin-docs/developers",
+        "https://docs.merlinchain.io/merlin-docs/developers",
+        "https://twitter.com/MerlinLayer2"
+    ],
+    "description": "Merlin is an implementation of Polygon CDK chain. It looks to build a validia chain using an alternative system for data availability. Its documentation shares that it will add Bitcoin native security in the future, but no code or research has been released.",
+    "riskAnalysis": [
         {
-          "title": "Github page to verify L1 contracts not available",
-          "content": "We are currenly unable to verify if the smart contracts listed in Merlin's Github are in fact the contracts used on its mainnet. The main contract for Polygoin CDKValidium on Ethereum was previously listed as the Merlin L1 contract in its documentation, but that contract was removed and no longer listed. We are currently reviewing the Merlin's implementation of Polygon CDKValidium to verify its contracts."
+            "category": "Unilateral Exits",
+            "score": 0,
+            "tier": "Under review",
+            "title": "Bridge program under review",
+            "content": "We are currently reviewing the bridge program related to Merlin. The vault that mints BTC on Merlin is an upgradeable contract."
+        },
+        {
+            "category": "Data Availability",
+            "score": 0,
+            "tier": "High",
+            "title": "Uses a DAC for offchain data availability. Members under review",
+            "content": "Merlin chain is built on the Polygon CDK stack. In its Github, it has a copy of the Polygon CDK Committee contract. In the contract, it states that the admin has the control to set up the committee, so it is likely that the members of this committee are permissioned and selected by the Merlin Chain operator."
+        },
+        {
+            "category": "Block Production",
+            "score": 0,
+            "tier": "High",
+            "title": "Blocks are produced by a centralized sequencer",
+            "content": "Merlin chain blocks are currently produced by a centralized sequencer."
+        },
+        {
+            "category": "State Validation",
+            "score": 0,
+            "tier": "High",
+            "title": "No mechanism to enforce state validation on Bitcoin",
+            "content": "Merlin uses zkSNARKS to ensure state correctness. The Merlin prover posts validity proofs of execution to its L1 contract to finalize state transitions. It is unknown which chain Merlin settles to, but its documentation previously pointed to Ethereum."
         }
-      ]
-    }
-  ],
-  "knowledgeBits": [
-    {
-      "url": "https://merlinchain.io/",
-      "displayText": "Merlin Chain website"
-    },
-    {
-      "url": "https://docs.merlinchain.io/merlin-docs/resources/merlin-contracts",
-      "displayText": "Merlin documentation"
-    },
-    {
-      "url": "https://github.com/MerlinLayer2/BTCLayer2BridgeContract/tree/main/contracts",
-      "displayText": "Merlin's various contracts"
-    }
-  ]
+    ],
+    "sections": [
+        {
+            "id": "bitcoinsecurity",
+            "title": "Additional risk information",
+            "content": [
+                {
+                    "title": "Github page to verify L1 contracts not available",
+                    "content": "We are currenly unable to verify if the smart contracts listed in Merlin's Github are in fact the contracts used on its mainnet. The main contract for Polygoin CDKValidium on Ethereum was previously listed as the Merlin L1 contract in its documentation, but that contract was removed and no longer listed. We are currently reviewing the Merlin's implementation of Polygon CDKValidium to verify its contracts."
+                }
+            ]
+        }
+    ],
+    "knowledgeBits": [
+        {
+            "url": "https://merlinchain.io/",
+            "displayText": "Merlin Chain website"
+        },
+        {
+            "url": "https://docs.merlinchain.io/merlin-docs/resources/merlin-contracts",
+            "displayText": "Merlin documentation"
+        },
+        {
+            "url": "https://github.com/MerlinLayer2/BTCLayer2BridgeContract/tree/main/contracts",
+            "displayText": "Merlin's various contracts"
+        }
+    ]
 }

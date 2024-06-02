@@ -11,7 +11,9 @@ type TabKey = "overview" | "risks";
 export default function Home() {
     const [activeTab, setActiveTab] = useState<TabKey>("overview");
 
-    const sortedLayers = allLayers.sort((a, b) => a.title.localeCompare(b.title));
+    const sortedLayers = allLayers.sort((a, b) =>
+        a.title.localeCompare(b.title),
+    );
 
     const layerHeaders = [
         { name: "Name", showSorting: true, mobileLabel: "Name" },
@@ -23,14 +25,14 @@ export default function Home() {
         {
             name: "Unit of Account",
             showSorting: true,
-            mobileLabel: "Unit"
+            mobileLabel: "Unit",
         },
-        { name: "BTC Locked", showSorting: true, mobileLabel: "BTC" }
+        { name: "BTC Locked", showSorting: true, mobileLabel: "BTC" },
     ];
 
     const tabComponents = {
         overview: <LayerTable data={sortedLayers} headers={layerHeaders} />,
-        risks: <LayerTableRisks />
+        risks: <LayerTableRisks />,
     };
 
     const handleTabClick = (tab: TabKey) => {

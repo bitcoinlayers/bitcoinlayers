@@ -1,89 +1,89 @@
 {
-  "slug": "citrea",
-  "title": "Citrea",
-  "layerType": "Rollup",
-  "live": "Announced",
-  "underReview": "yes",
-  "riskFactors": ["", "", "", ""],
-  "purpose": "-",
-  "btcBridge": "x",
-  "settlement": "x",
-  "btcLocked": 0,
-  "executionEnv": "x",
-  "consensus": "-",
-  "nativeToken": "-",
-  "feeToken": "x",
-  "enshrinedBtc": "x",
-  "links": [
-    "https://citrea.xyz",
-    "https://citrea.xyz",
-    "https://docs.citrea.xyz/",
-    "https://docs.citrea.xyz/",
-    "https://github.com/chainwayxyz/citrea",
-    "https://twitter.com/citrea_xyz"
-  ],
-  "description": "Citrea is building a rollup on top of Bitcoin. They are using implementations of BitVM for their Bitcoin two-way peg and SNARK verifier. They are using zkSTARKs to provide rollup state transitions. Citrea is being developed by Chainway Labs.",
-  "riskAnalysis": [
-    {
-      "category": "Unilateral Exits",
-      "score": 0,
-      "tier": "",
-      "title": "",
-      "content": ""
-    },
-    {
-      "category": "Data Availability",
-      "score": 0,
-      "tier": "",
-      "title": "",
-      "content": ""
-    },
-    {
-      "category": "Block Production",
-      "score": 0,
-      "tier": "",
-      "title": "",
-      "content": ""
-    },
-    {
-      "category": "State Validation",
-      "score": 0,
-      "tier": "",
-      "title": "",
-      "content": ""
-    }
-  ],
-  "sections": [
-    {
-      "id": "description",
-      "title": "Description",
-      "content": [
+    "slug": "citrea",
+    "title": "Citrea",
+    "layerType": "Rollup",
+    "live": "Announced",
+    "underReview": "yes",
+    "riskFactors": ["", "", "", ""],
+    "purpose": "-",
+    "btcBridge": "x",
+    "settlement": "x",
+    "btcLocked": 0,
+    "executionEnv": "x",
+    "consensus": "-",
+    "nativeToken": "-",
+    "feeToken": "x",
+    "enshrinedBtc": "x",
+    "links": [
+        "https://citrea.xyz",
+        "https://citrea.xyz",
+        "https://docs.citrea.xyz/",
+        "https://docs.citrea.xyz/",
+        "https://github.com/chainwayxyz/citrea",
+        "https://twitter.com/citrea_xyz"
+    ],
+    "description": "Citrea is building a rollup on top of Bitcoin. They are using implementations of BitVM for their Bitcoin two-way peg and SNARK verifier. They are using zkSTARKs to provide rollup state transitions. Citrea is being developed by Chainway Labs.",
+    "riskAnalysis": [
         {
-          "content": "Citrea is building a rollup on top of Bitcoin. They are using implementations of BitVM for their Bitcoin two-way peg and SNARK verifier. They are using zkSTARKs to provide rollup state transitions. Citrea is being developed by Chainway Labs."
+            "category": "Unilateral Exits",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "Data Availability",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "Block Production",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "State Validation",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
         }
-      ]
-    }
-  ],
-  "knowledgeBits": [
-    {
-      "url": "https://citrea.xyz",
-      "displayText": "Citrea website and blog"
-    },
-    {
-      "url": "https://docs.citrea.xyz/",
-      "displayText": "Citrea documentation site"
-    },
-    {
-      "url": "https://github.com/chainwayxyz/clementine",
-      "displayText": "Code for Citrea's proposed two-way peg, Clementine"
-    },
-    {
-      "url": "https://github.com/chainwayxyz/bitvm-zk-verifier",
-      "displayText": "Code for Citrea's proposed BitVM ZK-Verifier"
-    },
-    {
-      "url": "https://github.com/chainwayxyz/citrea/tree/nightly/docs",
-      "displayText": "Run a Citrea sequencer and full node locally"
-    }
-  ]
+    ],
+    "sections": [
+        {
+            "id": "description",
+            "title": "Description",
+            "content": [
+                {
+                    "content": "Citrea is building a rollup on top of Bitcoin. They are using implementations of BitVM for their Bitcoin two-way peg and SNARK verifier. They are using zkSTARKs to provide rollup state transitions. Citrea is being developed by Chainway Labs."
+                }
+            ]
+        }
+    ],
+    "knowledgeBits": [
+        {
+            "url": "https://citrea.xyz",
+            "displayText": "Citrea website and blog"
+        },
+        {
+            "url": "https://docs.citrea.xyz/",
+            "displayText": "Citrea documentation site"
+        },
+        {
+            "url": "https://github.com/chainwayxyz/clementine",
+            "displayText": "Code for Citrea's proposed two-way peg, Clementine"
+        },
+        {
+            "url": "https://github.com/chainwayxyz/bitvm-zk-verifier",
+            "displayText": "Code for Citrea's proposed BitVM ZK-Verifier"
+        },
+        {
+            "url": "https://github.com/chainwayxyz/citrea/tree/nightly/docs",
+            "displayText": "Run a Citrea sequencer and full node locally"
+        }
+    ]
 }

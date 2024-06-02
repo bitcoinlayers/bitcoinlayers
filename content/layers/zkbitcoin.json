@@ -1,77 +1,77 @@
 {
-  "slug": "zkbitcoin",
-  "title": "zkBitcoin",
-  "layerType": "MPC Protocol",
-  "live": "Testnet",
-  "underReview": "yes",
-  "riskFactors": ["", "", "", ""],
-  "purpose": "-",
-  "btcBridge": "x",
-  "settlement": "x",
-  "btcLocked": 0,
-  "executionEnv": "x",
-  "consensus": "-",
-  "nativeToken": "-",
-  "feeToken": "x",
-  "enshrinedBtc": "x",
-  "links": [
-    "https://github.com/sigma0-xyz/zkbitcoin",
-    "https://twitter.com/bitcoinlayers",
-    "https://github.com/sigma0-xyz/zkbitcoin/tree/main/docs",
-    "https://github.com/sigma0-xyz/zkbitcoin/tree/main/docs",
-    "https://github.com/sigma0-xyz/zkbitcoin",
-    "https://github.com/sigma0-xyz/zkbitcoin"
-  ],
-  "description": "zkBitcoin enables the use of zero-knowledge applications on Bitcoin. User funds would be secured by a federated MPC protocol in their proposed design.",
-  "riskAnalysis": [
-    {
-      "category": "Unilateral Exits",
-      "score": 0,
-      "tier": "",
-      "title": "",
-      "content": ""
-    },
-    {
-      "category": "Data Availability",
-      "score": 0,
-      "tier": "",
-      "title": "",
-      "content": ""
-    },
-    {
-      "category": "Block Production",
-      "score": 0,
-      "tier": "",
-      "title": "",
-      "content": ""
-    },
-    {
-      "category": "State Validation",
-      "score": 0,
-      "tier": "",
-      "title": "",
-      "content": ""
-    }
-  ],
-  "sections": [
-    {
-      "id": "description",
-      "title": "Description",
-      "content": [
+    "slug": "zkbitcoin",
+    "title": "zkBitcoin",
+    "layerType": "MPC Protocol",
+    "live": "Testnet",
+    "underReview": "yes",
+    "riskFactors": ["", "", "", ""],
+    "purpose": "-",
+    "btcBridge": "x",
+    "settlement": "x",
+    "btcLocked": 0,
+    "executionEnv": "x",
+    "consensus": "-",
+    "nativeToken": "-",
+    "feeToken": "x",
+    "enshrinedBtc": "x",
+    "links": [
+        "https://github.com/sigma0-xyz/zkbitcoin",
+        "https://twitter.com/bitcoinlayers",
+        "https://github.com/sigma0-xyz/zkbitcoin/tree/main/docs",
+        "https://github.com/sigma0-xyz/zkbitcoin/tree/main/docs",
+        "https://github.com/sigma0-xyz/zkbitcoin",
+        "https://github.com/sigma0-xyz/zkbitcoin"
+    ],
+    "description": "zkBitcoin enables the use of zero-knowledge applications on Bitcoin. User funds would be secured by a federated MPC protocol in their proposed design.",
+    "riskAnalysis": [
         {
-          "content": "zkBitcoin enables the use of zero-knowledge applications on Bitcoin. User funds would be secured by a federated MPC protocol in their proposed design."
+            "category": "Unilateral Exits",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "Data Availability",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "Block Production",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "State Validation",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
         }
-      ]
-    }
-  ],
-  "knowledgeBits": [
-    {
-      "url": "https://github.com/sigma0-xyz/zkbitcoin/blob/main/whitepaper.pdf",
-      "displayText": "zkBitcoin whitepaper"
-    },
-    {
-      "url": "https://github.com/sigma0-xyz/zkbitcoin/blob/main/DEVELOPER.md",
-      "displayText": "zkBitcoin developer documentation"
-    }
-  ]
+    ],
+    "sections": [
+        {
+            "id": "description",
+            "title": "Description",
+            "content": [
+                {
+                    "content": "zkBitcoin enables the use of zero-knowledge applications on Bitcoin. User funds would be secured by a federated MPC protocol in their proposed design."
+                }
+            ]
+        }
+    ],
+    "knowledgeBits": [
+        {
+            "url": "https://github.com/sigma0-xyz/zkbitcoin/blob/main/whitepaper.pdf",
+            "displayText": "zkBitcoin whitepaper"
+        },
+        {
+            "url": "https://github.com/sigma0-xyz/zkbitcoin/blob/main/DEVELOPER.md",
+            "displayText": "zkBitcoin developer documentation"
+        }
+    ]
 }
