@@ -4,7 +4,7 @@
   "layerType": "Sidechain Rollup",
   "live": "Mainnet",
   "underReview": "yes",
-  "riskFactors": ["High", "High", "High", "High"],
+  "riskFactors": ["", "", "", ""],
   "purpose": "General",
   "btcBridge": "Federated Multi-sig",
   "settlement": "Offchain",
