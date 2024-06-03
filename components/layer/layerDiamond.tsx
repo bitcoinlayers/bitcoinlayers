@@ -35,7 +35,7 @@ const LayerDiamond: React.FC<{ layer: Layer }> = ({ layer }) => {
     const svgDimensions = "w-32 h-32"; // Consistent dimensions for all SVGs
 
     return (
-        <div className="lg:w-[370px] h-[300px] lg:h-full flex justify-center items-center relative ml-6 lg:ml-0">
+        <div className="lg:w-[370px] h-[300px] lg:h-full flex justify-center items-center relative ml-6 lg:ml-0 z-30">
             <div className="left-[243px] top-[195.55px] absolute origin-top-left -rotate-45 text-center text-slate-600 text-xs font-medium leading-none">
                 Data Availability
             </div>
