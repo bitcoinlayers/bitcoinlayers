@@ -41,11 +41,11 @@ const AboutPage: React.FC = () => {
                         <div className="flex flex-col gap-8 w-full">
                             <InfoBox
                                 question="The Project"
-                                answer="Bitcoin Layers is an educational tool that helps users understand the risks associated with various protocols that support Bitcoin and BTC the asset. We analyze risk primarily for protocols that claim to be a Bitcoin L2. The project is free and open-source under an MIT license. Anyone is welcome to use our code and risk framework for their own project." //TODO update
+                                answer="To be added soon." //TODO update
                             />
                             <InfoBox
                                 question="The Team"
-                                answer="Bitcoin Layers is currently managed on a volunteer basis by Januszg (a pseudonymous contributor) and Red Sheehan from Messari. Januszg has experience leading marketing functions at well-known projects in the privacy and scaling space. Red is a crypto research analyst specializing in base layer network architectures."
+                                answer="To be added soon."
                             />
                         </div>
                     </div>
