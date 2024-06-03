@@ -10,7 +10,7 @@ interface LayerTabProps {
 const LayerTabRisks: React.FC<LayerTabProps> = () => {
     const mainnetLayers = allLayers
         .filter((layer) => layer.live === "Mainnet")
-        .sort((a, b) => a.title.localeCompare(b.title));
+        .sort((a, b) => a.slug.localeCompare(b.slug));
 
     return <LayerTableRisks data={mainnetLayers} />;
 };

@@ -11,9 +11,7 @@ type TabKey = "overview" | "risks";
 export default function Home() {
     const [activeTab, setActiveTab] = useState<TabKey>("overview");
 
-    const sortedLayers = allLayers.sort((a, b) =>
-        a.title.localeCompare(b.title),
-    );
+    const sortedLayers = allLayers.sort((a, b) => a.slug.localeCompare(b.slug));
 
     const layerHeaders = [
         { name: "Name", showSorting: true, mobileLabel: "Name" },
