@@ -17,7 +17,7 @@ const Hero: React.FC = () => {
                         Layers
                     </h1>
                     <p className="flex items-center text-center text-base font-normal text-text_secondary -mt-2">
-                        Not every bitcoin layer is equal.
+                        Not every bitcoin layer is an L2.
                         <br />
                         Learn the difference.
                     </p>
