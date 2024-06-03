@@ -164,7 +164,7 @@ export default function Footer(): ReactElement {
                     </div>
                 </div>
             </div>
-            <FooterBottom /> {/**TODO add links for twitter and github */}
+            <FooterBottom />
         </footer>
     );
 }
