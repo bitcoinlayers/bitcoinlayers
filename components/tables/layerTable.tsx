@@ -183,7 +183,7 @@ const LayerTable = ({ data, headers }: Props) => {
             </MobileView>
 
             <div className="overflow-x-auto bg-lightsecondary rounded-xl mx-auto relative">
-                <table className="bg-lightsecondary table-fixed w-full text-sm text-left rtl:text-right  rounded-xl ">
+                <table className="bg-lightsecondary table-fixed w-full text-sm text-left rtl:text-right rounded-xl ">
                     <TableHeader
                         headers={isMobile ? mobileTableHeaders : headers}
                         onSort={handleSort}
@@ -200,7 +200,7 @@ const LayerTable = ({ data, headers }: Props) => {
                                     handleRowClick(`/layers/${item.slug}`)
                                 }
                             >
-                                <td className="flex items-center lg:px-6 px-4 py-4 font-semibold whitespace-nowrap border-r lg:border-r-0  border-stroke_tertiary text_table_important text-table_body">
+                                <td className="w-64 flex items-center lg:px-6 px-4 py-4 font-semibold whitespace-nowrap border-r lg:border-r-0 border-stroke_tertiary text_table_important text-table_body">
                                     <LayerImage
                                         src={`/logos/${item.slug}.png`}
                                         title={item.title}
@@ -210,7 +210,7 @@ const LayerTable = ({ data, headers }: Props) => {
                                     </span>
                                 </td>
                                 {!isMobile && (
-                                    <td className="px-2 border-stroke_tertiary text_table_important">
+                                    <td className="w-[176px] px-2 border-stroke_tertiary text_table_important">
                                         {item.underReview === "no" ? (
                                             <Risk layer={item} />
                                         ) : (
@@ -221,25 +221,25 @@ const LayerTable = ({ data, headers }: Props) => {
                                     </td>
                                 )}
                                 {(!isMobile || mobileActiveTab === "Type") && (
-                                    <td className="lg:px-6 px-4 py-3 lg:py-4 border-stroke_tertiary text_table_important">
+                                    <td className="w-[196px] lg:px-6 px-4 py-3 lg:py-4 border-stroke_tertiary text_table_important">
                                         {item.layerType}
                                     </td>
                                 )}
                                 {(!isMobile ||
                                     mobileActiveTab === "Status") && (
-                                    <td className="lg:px-6 px-4 py-3 lg:py-4 border-stroke_tertiary text_table_important">
+                                    <td className="w-[140px] lg:px-6 px-4 py-3 lg:py-4 border-stroke_tertiary text_table_important">
                                         {item.live}
                                     </td>
                                 )}
                                 {(!isMobile ||
                                     mobileActiveTab === "Unit of Account") && (
-                                    <td className="lg:px-6 px-4 py-3 lg:py-4 border-stroke_tertiary text_table_important">
+                                    <td className="w-[120px] lg:px-6 px-4 py-3 lg:py-4 border-stroke_tertiary text_table_important">
                                         {item.nativeToken}
                                     </td>
                                 )}
                                 {(!isMobile ||
                                     mobileActiveTab === "BTC Locked") && (
-                                    <td className="lg:px-6 px-4 py-3 lg:py-4 border-r border-stroke_tertiary text_table_important">
+                                    <td className="w-[136px] lg:px-6 px-4 py-3 lg:py-4 border-r border-stroke_tertiary text_table_important">
                                         {item.underReview === "yes" ||
                                         !Number(item.btcLocked) ? (
                                             <div>-</div>
