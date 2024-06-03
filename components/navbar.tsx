@@ -32,7 +32,7 @@ export default function Navbar(): ReactElement {
     };
 
     return (
-        <nav className="flex flex-row justify-between items-center w-full fixed min-h-[3rem] lg:px-8 px-4 bg-bg_primary bg-opacity-80 backdrop-blur-sm z-50 pointer-events-auto">
+        <nav className="flex flex-row justify-between items-center w-full fixed min-h-[3rem] lg:px-8 px-4 bg-bg_primary lg:bg-opacity-80 backdrop-blur-sm z-50 pointer-events-auto">
             <Link href="/" onClick={closeMenu}>
                 <div className="w-8 h-8">
                     <Image
