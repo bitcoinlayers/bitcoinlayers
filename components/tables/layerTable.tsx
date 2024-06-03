@@ -221,25 +221,25 @@ const LayerTable = ({ data, headers }: Props) => {
                                     </td>
                                 )}
                                 {(!isMobile || mobileActiveTab === "Type") && (
-                                    <td className="lg:px-6 px-4 py-3 lg:py-4 border-stroke_tertiary text_table_important text_table_body">
+                                    <td className="lg:px-6 px-4 py-3 lg:py-4 border-stroke_tertiary text_table_important">
                                         {item.layerType}
                                     </td>
                                 )}
                                 {(!isMobile ||
                                     mobileActiveTab === "Status") && (
-                                    <td className="lg:px-6 px-4 py-3 lg:py-4 border-stroke_tertiary text_table_important text_table_body">
+                                    <td className="lg:px-6 px-4 py-3 lg:py-4 border-stroke_tertiary text_table_important">
                                         {item.live}
                                     </td>
                                 )}
                                 {(!isMobile ||
                                     mobileActiveTab === "Unit of Account") && (
-                                    <td className="lg:px-6 px-4 py-3 lg:py-4 border-stroke_tertiary text_table_important text_table_body">
+                                    <td className="lg:px-6 px-4 py-3 lg:py-4 border-stroke_tertiary text_table_important">
                                         {item.nativeToken}
                                     </td>
                                 )}
                                 {(!isMobile ||
                                     mobileActiveTab === "BTC Locked") && (
-                                    <td className="lg:px-6 px-4 py-3 lg:py-4 border-r border-stroke_tertiary text_table_important text_table_body">
+                                    <td className="lg:px-6 px-4 py-3 lg:py-4 border-r border-stroke_tertiary text_table_important">
                                         {item.underReview === "yes" ||
                                         !Number(item.btcLocked) ? (
                                             <div>-</div>
