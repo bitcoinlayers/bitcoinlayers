@@ -43,7 +43,7 @@ const LayerMenu: React.FC<{ layer: Layer }> = ({ layer }) => {
 
     return (
         <nav className="">
-            <div className="flex lg:flex-col justify-start items-start lg:gap-4 gap-2">
+            <div className="flex lg:flex-col justify-start items-start lg:gap-4 gap-2 z-40">
                 {/*  menu is updating with coloring to match the live section */}
 
                 {[
