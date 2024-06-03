@@ -79,7 +79,7 @@ const LayerDiamond: React.FC<{ layer: Layer }> = ({ layer }) => {
             </div>
 
             <div
-                className={`absolute top-[85px] right-[46px] lg:right-[85px] ${svgDimensions}`}
+                className={`absolute top-[85px] left-[157px] ${svgDimensions}`}
             >
                 <svg
                     viewBox="0 0 97 97"
