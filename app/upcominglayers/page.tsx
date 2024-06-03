@@ -8,7 +8,7 @@ import LayerTableUpcoming from "@/components/tables/layerUpcoming";
 
 export default function Home() {
     const upcomingLayers = allLayers.sort((a, b) =>
-        a.slug.localeCompare(b.slug),
+        a.title.toLowerCase().localeCompare(b.title.toLowerCase()),
     );
 
     const layerHeaders = [

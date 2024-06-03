@@ -56,8 +56,8 @@ const LayerTableUpcoming = ({ data, headers }: Props) => {
             let valueA, valueB;
             switch (header) {
                 case "Name":
-                    valueA = a.title;
-                    valueB = b.title;
+                    valueA = a.title.toLowerCase();
+                    valueB = b.title.toLowerCase();
                     break;
                 case "Type":
                     valueA = a.layerType;
