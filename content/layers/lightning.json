@@ -1,7 +1,7 @@
 {
     "slug": "lightning",
     "title": "Lightning Network",
-    "layerType": "State Channel",
+    "layerType": "L2, State Channel",
     "live": "Mainnet",
     "underReview": "yes",
     "riskFactors": ["", "", "", ""],
