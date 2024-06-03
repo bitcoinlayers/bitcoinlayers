@@ -4,7 +4,7 @@
     "layerType": "Sidechain",
     "live": "Mainnet",
     "underReview": "no",
-    "riskFactors": ["", "", "High", "High"],
+    "riskFactors": ["High", "", "High", "High"],
     "purpose": "General",
     "btcBridge": "Under review",
     "settlement": "Under review",
@@ -25,7 +25,7 @@
     "description": "BitLayer is building towards a validia chain on top of Bitcoin. Its current implementation is run by a network of 21, federated validators securing the network. It supports an EVM execution environment with plans to support other VMs. In its docs, BitLayer states that it will use an offchain data availability solution in its future mainnet releases. Its roadmap sees it adding support for a BitVM-style bridge, but currently, the bridge is managed by various multi-sig wallets.",
     "riskAnalysis": [
         {
-            "category": "Unilateral Exits",
+            "category": "Bridge Custody",
             "score": 0,
             "tier": "Under review",
             "title": "Users trust a federated multi-sig and upgradeable contracts with the custody of their BTC",
@@ -39,14 +39,14 @@
             "content": "BitLayer does not currently use Bitcoin for data availability. We are currently reviewing the specific parties responsible for data availability."
         },
         {
-            "category": "Block Production",
+            "category": "Network Operators",
             "score": 0,
             "tier": "High",
-            "title": "Blocks are produced by a permissioned validator set",
-            "content": "BitLayer blocks are currently produced by a permissioned validator set. Information on how blocks are produced is limited, but it seems that BitLayer blocks are evenly distributed, and produced in order, by its validator set"
+            "title": "BitLayer is operated by a permissioned validator set",
+            "content": "BitLayer blocks are currently produced by a permissioned validator set. Information on how blocks are produced is limited, but it seems that BitLayer blocks are evenly distributed, and produced in order, by its validator set. There are currently 21 validators participating in BitLayer consensus. Users cannot force include transactions if they are censored by the validator set."
         },
         {
-            "category": "State Validation",
+            "category": "Settlement Assurance",
             "score": 0,
             "tier": "High",
             "title": "No onchain enforcement of BitLayer state transitions",
@@ -54,16 +54,6 @@
         }
     ],
     "sections": [
-        {
-            "id": "description",
-            "title": "Description",
-            "content": [
-                {
-                    "title": "BitLayer's mainnet v1 is a sidechain",
-                    "content": "BitLayer is building towards a validia chain on top of Bitcoin. Its current implementation is run by a network of 21, federated validators securing the network. It supports an EVM execution environment with plans to support other VMs. In its docs, BitLayer states that it will use an offchain data availability solution in its future mainnet releases. Its roadmap sees it adding support for a BitVM-style bridge, but currently, the bridge is managed by various multi-sig wallets."
-                }
-            ]
-        },
         {
             "id": "bitcoinsecurity",
             "title": "Bitcoin Security",
@@ -78,7 +68,7 @@
                 },
                 {
                     "title": "Offchain DA on roadmap",
-                    "content": "BitLayer will not use Bitcoin for data availability long-term. This means that it will be a validia chain."
+                    "content": "BitLayer will not use Bitcoin for data availability long-term. This means that it will be a Bitvimium once it integrates with an data availability layer and has implemented a bridge program where operators must produce a validity proof to process withdrawals."
                 }
             ]
         },
