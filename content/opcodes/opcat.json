@@ -5,7 +5,7 @@
     "live": "Mainnet",
     "underReview": "yes",
     "riskFactors": ["High", "High"],
-    "bitcoinSecurity": "BIP 420",
+    "bitcoinSecurity": "BIP 347",
     "nativeToken": "Proposed",
     "purpose": "Other",
     "associatedLayers": "Draft",
