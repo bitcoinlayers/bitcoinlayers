@@ -50,15 +50,11 @@ const FaqPage: React.FC = () => {
                             />
                             <FAQItem
                                 question="What is a Bitcoin Layer?"
-                                answer='We use the term "Bitcoin Layer" to describle protocols that claim to be Bitcoin Layer 2s. There are many definitions that exist for the term "Layer 2", but the two primary ones are protocols that enable unilateral exit, and/or protocols that add more functionality to BTC the asset and inherit security from Bitcoin. We use the term "Bitcoin Layer" as an agnostic term to describe Layer 2s, sidechains and more. We do not define protcols as Layer 2s, as any offchain scaling protocol presents a different set of trust assumptions to users. We analyze these protocols against a generalized, opinionated framework that we developed to show users the relevant trust assumptions for each system.'
+                                answer='We use the term "Bitcoin Layer" to describle Bitcoin Layer 2s, sidechains and other scaling protocols. There are many definitions that exist for the term "Layer 2". We view Layer 2s as protocols that enable unilateral exit. Others extend this definition to a system where any online party can participate in the security of a two-way peg. We use the term "Bitcoin Layer" as an agnostic term to describe a variety of scaling protocols, including Layer 2s. We analyze all of these protocols against a generalized, opinionated framework that we developed to show users the relevant trust assumptions for each system.'
                             />
                             <FAQItem
                                 question='Are all Bitcoin Layers "L2s"?'
-                                answer='The overwhelming majority of newer Bitcoin "Layer 2s" are not Layer 2s in the classical defition. Bitcoin Layers is a broad term we use to cover offchain scaling protocols. People typically define L2s as protocols that take transaction execution offchain, but inherit security from its parent blockchain. Most consider unilateral exit as a primary criteria for being a “true L2”, which means that users retain self-custody of their BTC and can exit the L2 unilaterally whenever they choose.'
-                            />
-                            <FAQItem
-                                question='Why are newer Bitcoin "L2s" receiving so much attention?'
-                                answer="Lightning is in production today. Other proposed scaling designs, like BitVM rollups, would rely on a 1-N trust assumption for the custody of user funds."
+                                answer='The overwhelming majority of newer Bitcoin "Layer 2s" are not Layer 2s. Bitcoin Layers is a broad term we use to cover offchain scaling protocols. People typically define L2s as protocols that take transaction execution offchain, but inherit security from its parent blockchain. Most consider unilateral exit as a primary criteria for being a “true L2”, which means that users retain self-custody of their BTC and can exit the L2, with an L1 transaction, whenever they choose.'
                             />
                             <FAQItem
                                 question='Why are newer Bitcoin "L2s" receiving so much attention?'
