@@ -4,7 +4,7 @@
     "layerType": "Sidechain",
     "live": "Mainnet",
     "underReview": "no",
-    "riskFactors": ["High", "", "High", "High"],
+    "riskFactors": ["High", "High", "High", "High"],
     "purpose": "General",
     "btcBridge": "Under review",
     "settlement": "Under review",
@@ -22,19 +22,19 @@
         "https://github.com/bitlayer-org",
         "https://twitter.com/BitlayerLabs"
     ],
-    "description": "BitLayer is building towards a validia chain on top of Bitcoin. Its current implementation is run by a network of 21, federated validators securing the network. It supports an EVM execution environment with plans to support other VMs. In its docs, BitLayer states that it will use an offchain data availability solution in its future mainnet releases. Its roadmap sees it adding support for a BitVM-style bridge, but currently, the bridge is managed by various multi-sig wallets.",
+    "description": "BitLayer is building towards a validia chain on top of Bitcoin. Its current implementation is run by a network of federated validators. It supports an EVM execution environment with plans to support other VMs. In its docs, BitLayer states that it will use an offchain data availability solution in its future mainnet releases. Its roadmap sees it adding support for a BitVM-style bridge, but currently, the bridge is managed by various multi-sig wallets.",
     "riskAnalysis": [
         {
             "category": "Bridge Custody",
             "score": 0,
             "tier": "Under review",
             "title": "Users trust a federated multi-sig and upgradeable contracts with the custody of their BTC",
-            "content": "We are currently reviewing the exact implementation of BitLayer's two-way peg with Bitcoin. It has been publicly acknowledge by the team that the current implementation is a federated multi-sig. BTC users will deposit their BTC into a Bitcoin multi-sig wallet that initiates an unlock transfer from a vault on the BitLayer chain. EVM users can deposit wBTC into BitLayer from their EVM wallet. Both bridge contracts, on BitLayer, are upgradeable by an admin."
+            "content": "We are currently reviewing the exact implementation of BitLayer's two-way peg with Bitcoin. It has been publicly acknowledge by the team that the current implementation is a federated multi-sig. BTC users will deposit their BTC into a Bitcoin multi-sig wallet that initiates an unlock transfer from a vault on the BitLayer chain. EVM users can deposit wBTC into BitLayer from their EVM wallet. Both bridge contracts, on BitLayer, are upgradeable."
         },
         {
             "category": "Data Availability",
             "score": 0,
-            "tier": "Under review",
+            "tier": "High",
             "title": "Data is stored offchain",
             "content": "BitLayer does not currently use Bitcoin for data availability. We are currently reviewing the specific parties responsible for data availability."
         },
@@ -102,7 +102,7 @@
             "content": [
                 {
                     "title": "BitLayer is run by a permissioned validator set",
-                    "content": "BitLayer is currently run by 21 federated validators securing the network. The operators of these validators are unknown. Although these validators would presumably stake BitLayer's native token, BTR, to secure the network, none of the active validator addresses currently hold any BTR tokens. These nodes are presumably responsible for data availability, block production and finalizing the state of the sidechain."
+                    "content": "BitLayer is currently run by 21 federated validators securing the network. The operators of these validating nodes are unknown. Although there are claims that these validators would stake BitLayer's native token, BTR, to secure the network, none of the active validator addresses currently hold any BTR tokens. These nodes are presumably responsible for data availability, block production and finalizing the state of the sidechain."
                 }
             ]
         },
