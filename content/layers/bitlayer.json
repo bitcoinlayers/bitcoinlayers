@@ -27,14 +27,14 @@
         {
             "category": "Bridge Custody",
             "score": 0,
-            "tier": "Under review",
+            "tier": "",
             "title": "Users trust a federated multi-sig and upgradeable contracts with the custody of their BTC",
             "content": "We are currently reviewing the exact implementation of BitLayer's two-way peg with Bitcoin. It has been publicly acknowledge by the team that the current implementation is a federated multi-sig. BTC users will deposit their BTC into a Bitcoin multi-sig wallet that initiates an unlock transfer from a vault on the BitLayer chain. EVM users can deposit wBTC into BitLayer from their EVM wallet. Both bridge contracts, on BitLayer, are upgradeable."
         },
         {
             "category": "Data Availability",
             "score": 0,
-            "tier": "Under review",
+            "tier": "",
             "title": "Data is stored offchain",
             "content": "BitLayer does not currently use Bitcoin for data availability. We are currently reviewing the specific parties responsible for data availability."
         },
