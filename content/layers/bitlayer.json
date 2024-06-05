@@ -34,7 +34,7 @@
         {
             "category": "Data Availability",
             "score": 0,
-            "tier": "High",
+            "tier": "Under review",
             "title": "Data is stored offchain",
             "content": "BitLayer does not currently use Bitcoin for data availability. We are currently reviewing the specific parties responsible for data availability."
         },
