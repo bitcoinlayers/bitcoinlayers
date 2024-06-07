@@ -89,7 +89,7 @@ const RiskAnalysis: React.FC<RiskAnalysisProps> = ({
                                                         ],
                                                     )} text-base font-bold font-Hack`}
                                                 >
-                                                    {contentIndex + 1}
+                                                    {/* {contentIndex + 1} TODO: add quantitative risk scores when we add this level of depth on reviews */}
                                                 </div>
                                             </div>
                                         </div>
