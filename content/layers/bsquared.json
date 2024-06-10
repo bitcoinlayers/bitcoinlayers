@@ -22,7 +22,7 @@
         "https://github.com/b2network",
         "https://twitter.com/BSquaredNetwork"
     ],
-    "description": "The current Bsquared Network mainnet consists of two different chains. The parent chain is a fork of Go Ethereum and has three permissioned validators validating state transitions. The rollup chain is a fork of Polygon zkEVM that settles on the Bsquared parent chain.",
+    "description": "The current Bsquared Network mainnet consists of two different chains. The parent chain is a fork of an EVM implementation of Tendermint and has three permissioned validators validating state transitions. The rollup chain is a fork of Polygon zkEVM that settles on the Bsquared parent chain.",
     "riskAnalysis": [
         {
             "category": "Bridge Custody",
@@ -134,7 +134,7 @@
             "content": [
                 {
                     "title": "Node software code is open-source",
-                    "content": "The node software and Polygon zkEVM contracts are open-source. Its our understanding that these implementations of Polygon zkEVM and Go Ethereum have not been audited."
+                    "content": "The node software and Polygon zkEVM contracts are open-source. Its our understanding that these implementations of Polygon zkEVM and Ethermint have not been audited."
                   }
           
             ]
