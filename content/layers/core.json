@@ -8,7 +8,7 @@
     "purpose": "General",
     "btcBridge": "Federated Multisig",
     "settlement": "Offchain",
-    "btcLocked": "-",
+    "btcLocked": "694",
     "executionEnv": "Offchain",
     "consensus": "Hybrid Consensus",
     "nativeToken": "CORE",
@@ -58,7 +58,6 @@
             "id": "bitcoinsecurity",
             "title": "Bitcoin Security",
             "content": [
-
                 {
                     "title": "Core Chain requires another token to function",
                     "content": "The CORE token is required to pay for transaction fees and smart contract execution on Core Chain. It is also used for staking and governance. The token is directly required for the security of the network, as the staking of it is one of the two variables used to create a weighted score for validator election and leader selection."
