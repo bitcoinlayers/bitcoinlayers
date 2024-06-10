@@ -3,14 +3,14 @@
     "title": "Bsquared",
     "layerType": "Sidechain Rollup",
     "live": "Mainnet",
-    "underReview": "yes",
-    "riskFactors": ["", "", "", ""],
+    "underReview": "no",
+    "riskFactors": ["High", "High", "High", "High"],
     "purpose": "General",
     "btcBridge": "Federated Multi-sig",
     "settlement": "Offchain",
-    "btcLocked": "-",
+    "btcLocked": "14",
     "executionEnv": "Offchain",
-    "consensus": "Proof-of-Stake",
+    "consensus": "Federated Proof-of-Stake",
     "nativeToken": "BSQ",
     "feeToken": "BSQ",
     "enshrinedBtc": "wBTC",
@@ -22,45 +22,122 @@
         "https://github.com/b2network",
         "https://twitter.com/BSquaredNetwork"
     ],
-    "description": "BSquared is an upcoming project that will build a rollup and alternative DA layer on top of Bitcoin. They are currently in testnet phase.",
+    "description": "The current Bsquared Network mainnet consists of two different chains. The parent chain is a fork of Go Ethereum and has three permissioned validators validating state transitions. The rollup chain is a fork of Polygon zkEVM that settles on the Bsquared parent chain.",
     "riskAnalysis": [
         {
-            "category": "Unilateral Exits",
+            "category": "Bridge Custody",
             "score": 0,
-            "tier": "",
-            "title": "",
-            "content": ""
+            "tier": "High",
+            "title": "Funds custodied by respective counterparties",
+            "content": "The EVM bridge contracts and addresses for the operator(s) of the Bitcoin multi-sig are currently not available. Users should remain cautious when depositing BTC into Bsquared Network."
         },
         {
             "category": "Data Availability",
             "score": 0,
-            "tier": "",
-            "title": "",
-            "content": ""
+            "tier": "High",
+            "title": "DA requirement is fulfilled by permissioned validators",
+            "content": "Sequencer batches are posted to the Bsquared Network L1. This network consists of three, permissioned validators who are responsible for making the data readily available."
         },
         {
-            "category": "Block Production",
+            "category": "Network Operators",
             "score": 0,
-            "tier": "",
-            "title": "",
-            "content": ""
+            "tier": "High",
+            "title": "Both the rollup chain and parent chain are run by federated, centralized parties",
+            "content": "Bsquared Network’s Polygon zkEVM implementation has a single sequencer that posts sequencer batches to its network of three L1 validators. In the event of censorship, users cannot force an exit to Bitcoin."
         },
         {
-            "category": "State Validation",
+            "category": "Settlement Assurance",
             "score": 0,
-            "tier": "",
-            "title": "",
-            "content": ""
+            "tier": "High",
+            "title": "No settlement assurances inherited from Bitcoin",
+            "content": "Bsquared receives no settlement assurances from Bitcoin. Settlement is finalized by a group of three, federated validators who verify a validity proof submitted by the Bsquared Network zkEVM prover."
+        }
+    ],
+    "sections": [
+        {
+            "id": "bitcoinsecurity",
+            "title": "Bitcoin Security",
+            "content": [
+                {
+                "title": "Unilateral exits not possible",
+                "content": "Users cannot unilaterally exit from Bsquared Network. Users trust a centralized bridge program with the custody of their Bitcoin."
+                },
+            {
+                "title": "The protocol does not enable MEV on Bitcoin. Users trust a centralized operator to not reorder their transactions.",
+                "content": "Since Bsquared has no relationship with Bitcoin miners, it does not introduce MEV on the Bitcoin base layer. Users trust that the Bsquared Network zkEVM sequencer will not reorder transactions to extract MEV."
+              },
+            {
+                "title": "An alternative token exists, but is not being used for network security",
+                "content": "Bsquared Network has issued a token with the ticker BSQ on its L1 protocol. It has a supply of 210,000,000. One address owns the majority of this supply. Bsquared Network L1 validators do not currently stake this token."
+              },
+            {
+                "title": "Bsquared Network does not contribute to the security budget",
+                "content": "Bsquared Network’s current mainnet does not pay any fees to Bitcoin miners."
+              }
+            ]
+        },
+        {
+            "id": "withdrawals",
+            "title": "Withdrawals",
+            "content": [
+                {
+                    "title": "Users can withdraw funds if permitted by centralized operators",
+                    "content": "Users can withdraw their funds from Bsquared Network back to Bitcoin via two, centralized bridge providers. Information on the signers of these bridges is unavailable."
+                  }
+            ]
+        },
+        {
+            "id": "technology",
+            "title": "Technology",
+            "content": [
+                {
+                    "title": "Currently testing further integrations with Bitcoin",
+                    "content": "Bsquared Network is currently testing an OP Stack rollup on the Ethereum Sepolia testnet. In this implementation, they are running their “committer” that sees the OP Stack rollup post the rollup’s latest state root to Bitcoin."
+                  }
+          
+            ]
+        },   
+        {
+            "id": "usecases",
+            "title": "Use Cases",
+            "content": [
+                {
+                    "title": "EVM-based applications",
+                    "content": "The potential use cases for Bsquared Network are similar to that of other EVM-based sidechains. Developers can deploy smart contracts that enable applications like borrowing and lending protocols, stablecoins, NFTs, and more. The primary, proposed use case for Bsquared Network is to act as an application layer for Bitcoin."
+                  }
+          
+            ]
+        },
+        {
+            "id": "operator",
+            "title": "Operator",
+            "content": [
+                {
+                    "title": "Bsquared Network is operated by centralized parties",
+                    "content": "Users have transactions sequenced by a centralized rollup sequencer."
+                  }
+            ]
+        },
+        {
+            "id": "sourcecode",
+            "title": "Source Code",
+            "content": [
+                {
+                    "title": "Node software code is open-source",
+                    "content": "The node software and Polygon zkEVM contracts are open-source. Its our understanding that these implementations of Polygon zkEVM and Go Ethereum have not been audited."
+                  }
+          
+            ]
         }
     ],
     "knowledgeBits": [
         {
-            "url": "https://www.bsquared.network/",
-            "displayText": "BSquare website"
+            "url": "https://github.com/b2network",
+            "displayText": "Bsquared Network Github"
         },
         {
-            "url": "https://docs.bsquared.network/",
-            "displayText": "BSquared documentation site"
+            "url": "https://hub-explorer.bsquared.network",
+            "displayText": "Bsquared Network's L1 explorer"
         }
-    ]
-}
+        ]
+    }
