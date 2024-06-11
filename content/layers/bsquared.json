@@ -22,7 +22,7 @@
         "https://github.com/b2network",
         "https://twitter.com/BSquaredNetwork"
     ],
-    "description": "The current Bsquared Network mainnet consists of two different chains. The parent chain is a fork of an EVM implementation of Tendermint and has three permissioned validators validating state transitions. The rollup chain is a fork of Polygon zkEVM that settles on the Bsquared parent chain.",
+    "description": "The current Bsquared Network mainnet consists of two different chains. The parent chain is a fork of an EVM implementation on Tendermint, and has three permissioned validators operating the network. The rollup chain is a fork of Polygon zkEVM that settles on the Bsquared parent chain.",
     "riskAnalysis": [
         {
             "category": "Bridge Custody",
