@@ -1,7 +1,7 @@
 {
     "slug": "zulu",
     "title": "Zulu",
-    "layerType": "Rollup",  
+    "layerType": "Bitvimium",  
     "live": "Testnet", 
     "underReview": "yes",
     "riskFactors": ["", "", "", ""],
@@ -17,13 +17,11 @@
     "links": [
         "https://zulunetwork.io/",
         "https://docs.zulunetwork.io/",
+        "https://docs.zulunetwork.io/",
         "https://testnet.zuluscan.io/",
         "https://github.com/zulu-network",
-        "https://x.com/zulu_network",
-        "https://medium.com/@zulu_network",
-        "https://zulunetwork.io/whitepaper.pdf",
-        "https://discord.gg/ZVaQPjhxTG"
-    ],
+        "https://x.com/zulu_network"
+        ],
     "description": "Zulu Network is an innovative fraud proof-based Bitcoin Layer 2 rollup building towards becoming a full validium rollup on Bitcoin that enables developers to seamlessly deploy dApps on both EVM (ZKSync ZK Stack L2) & UTXO layers (Customized ZKVM L3). Zulu network is working on a trust-minimzed decentralized bridge program and will leverage a unique hybrid PoS / PoW mining mechanism.",
     "sections": [
         {
