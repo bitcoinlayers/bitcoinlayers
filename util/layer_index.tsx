@@ -28,6 +28,7 @@ import zklayerJson from "../content/layers/zklayer.json";
 import coordinateJson from "../content/layers/coordinate.json";
 import alysJson from "../content/layers/alys.json";
 import zkbitcoinJson from "../content/layers/zkbitcoin.json";
+import zuluJson from "../content/layers/zulu.json";
 import bitlayerJson from "../content/layers/bitlayer.json";
 import moleculeJson from "../content/layers/molecule.json";
 import sideJson from "../content/layers/side.json";
@@ -66,6 +67,8 @@ const coordinate: Layer = coordinateJson as Layer;
 const alys: Layer = alysJson as Layer;
 const zkbitcoin: Layer = zkbitcoinJson as Layer;
 // @ts-ignore
+const zulu: Layer = zuluJson as Layer;
+// @ts-ignore
 const bitlayer: Layer = bitlayerJson as Layer;
 const molecule: Layer = moleculeJson as Layer;
 const side: Layer = sideJson as Layer;
@@ -101,6 +104,7 @@ export const allLayers: Layer[] = [
     coordinate,
     alys,
     zkbitcoin,
+    zulu,
     bitlayer,
     molecule,
     side,
