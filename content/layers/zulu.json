@@ -3,7 +3,7 @@
     "title": "Zulu",
     "layerType": "Rollup",  
     "live": "Testnet", 
-    "underReview": "Yes",
+    "underReview": "yes",
     "riskFactors": ["", "", "", ""],
     "purpose": "General",
     "btcBridge": "-",
