@@ -6,10 +6,10 @@
     "underReview": "Yes",
     "riskFactors": ["", "", "", ""],
     "purpose": "General",
-    "btcBridge": "1-of-N BitVM2",
-    "settlement": "Onchain",
+    "btcBridge": "-",
+    "settlement": "-",
     "btcLocked": "-",
-    "executionEnv": "EVM L2 (ZKSync ZK Stack), Customized ZKVM L3",
+    "executionEnv": "-",
     "consensus": "-",
     "nativeToken": "-",
     "feeToken": "-",
@@ -24,85 +24,27 @@
         "https://zulunetwork.io/whitepaper.pdf",
         "https://discord.gg/ZVaQPjhxTG"
     ],
-    "description": "Zulu Network is an innovative fraud proof based Bitcoin Layer 2 rollup building towards becoming a full validium rollup on Bitcoin that enables developers to seamlessly deploy dApps on both EVM (ZKSync ZK Stack L2) & UTXO layers (Customized ZKVM L3), unlocking native yield and innovation. Zulu network includes its trust-minimzed decentralized bridge and its unique hybrid PoS / PoW mining design to catalyze the next evolution of Bitcoin.",
-    "riskAnalysis": [
-        {
-            "category": "Unilateral Exits",
-            "score": "-",
-            "tier": "-",
-            "title": "Withdrawals rely on 1-N trust assumptions.",
-            "content": "Users withdraw their money through atomic swaps from entities referred to as liqudidity providers (LPs) that has bridged assets into the rollup through utilizing a two-way peg BitVM implementation. LPs withdrawing BTC and/or Bitcoin assets from the rollup is not trustless. LPs must trust that 1 of any number of BitVM verifiers in the validating bridge are acting honestly to process their withdrawal"
-        },
-        {
-            "category": "Data Availability",
-            "score": "-",
-            "tier": "-",
-            "title": "Offchain DA Layer",
-            "content": "All of the data needed to reconstruct the rollup's state is stored on a separate DA Layer, state root hash is inscribed on L1 Bitcoin."
-        },
-        {
-            "category": "State Validation",
-            "score": "-",
-            "tier": "-",
-            "title": "Settlement is done onchain.",
-            "content": "Optimistically proven ZK proofs ensure state correctness. In the event of an invalid state transition, actors watching the chain can submit Fraud Proofs to prove that the state transition is incorrect."
-        }
-    ],
+    "description": "Zulu Network is an innovative fraud proof-based Bitcoin Layer 2 rollup building towards becoming a full validium rollup on Bitcoin that enables developers to seamlessly deploy dApps on both EVM (ZKSync ZK Stack L2) & UTXO layers (Customized ZKVM L3). Zulu network is working on a trust-minimzed decentralized bridge program and will leverage a unique hybrid PoS / PoW mining mechanism.",
     "sections": [
         {
-            "id": "description",
-            "title": "Description",
-            "content": [
-                {
-                    "content": "Zulu is a rollup that uses Bitcoin for consensus and a separate DA Layer for data availability. It has an optimistically verified validating bridge via its BitVM implementation. It leverages ZK proofs to prove state transitions. In the event of an invalid state transition, anyone can submit a fraud proof to show that the state transition was invalid."
-                }
-            ]
-        },
-        {
-            "id": "bitcoinsecurity",
-            "title": "Bitcoin Security",
-            "content": [
-                {
-                    "title": "The rollup relies on a separate DA Layer for data availability",
-                    "content": "Zulu's state can be reconstructed based on the data that is stored on a separate DA Layer, the state root is inscribed on the Bitcoin blockchain."
-                },
-                {
-                    "title": "Bitcoin Hashpower is used in securing Zulu",
-                    "content": "Bitcoin hashpower used to mine blocks containing transactions that include Zulu's state transitions."
-                }
-            ]
-        },
-        {
             "id": "technology",
-            "title": "Technology",
+            "title": "Proposed Technologies",
             "content": [
                 {
-                    "title": "Validity proofs ensure state correctness",
-                    "content": "Each state transition must contain a validity proof that proves that execution was done correctly to a series of user transactions. If these a proof includes an invalid state transition, then anyone can submit a fraud proof to challenge the state transition. Validity proofs are sent through a decentralized network of verifiers economically secured through Babylon before submitted to the BitVM ZK verifier"
+                    "title": "Validity proofs will be used to ensure state correctness",
+                    "content": "Each state transition must contain a validity proof that proves that execution was done correctly to a series of user transactions. If these a proof includes an invalid state transition, then anyone can submit a fraud proof to challenge the state transition. Validity proofs will be sent through a decentralized network of verifiers economically secured through Babylon before submitted to the BitVM ZK verifier."
                 },
                 {
                     "title": "Zero knowledge cryptography is used",
                     "content": "State transitions are proven through cryptographic proofs known as zk proofs. If an implementation of the cryptography was done incorrectly, user funds can be at risk."
-                }
-            ]
-        },
-        {
-            "id": "operator",
-            "title": "Operator",
-            "content": [
+                },
                 {
-                    "title": "The system currently has a centralized sequencer/prover with plans of decentralization",
-                    "content": "Block production is managed by one entity. Users trust this entity to act in the best interests of the system. However, A decentralized network of verifiers that provides soft finality before the proofs are sent to L1 Bitcoin is currently being developed, econmically secured through Babylon."
-                }
-            ]
-        },
-        {
-            "id": "withdrawals",
-            "title": "Withdrawals",
-            "content": [
+                    "title": "The chain will rely on a separate DA Layer for data availability",
+                    "content": "Zulu's state can be reconstructed based on the data that is stored on a separate DA Layer. The chain's latest state root will be inscribed on the Bitcoin blockchain."
+                },
                 {
-                    "title": "LP Withdrawals rely on 1-N trust assumptions",
-                    "content": "In the event that the systems operators are acting dishonestly, anyone can submit a challenge."
+                    "title": "Zulu Network is working on a BitVM-style bridge program",
+                    "content": "Zulu Network is currently working on a trust-minimized bridge design. In their design, users will withdraw their money through atomic swaps from entities referred to as liqudidity providers (LPs) that has bridged assets into the rollup through utilizing a two-way peg BitVM implementation. LPs withdrawing BTC and/or Bitcoin assets from the rollup is not trustless. LPs must trust that 1 of any number of BitVM verifiers in the validating bridge are acting honestly to process their withdrawal."
                 }
             ]
         },
