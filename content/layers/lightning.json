@@ -101,7 +101,6 @@
                     "title": "Hashed Timelock Contracts (HTLCs)",
                     "content": "HTLCs are smart contracts that ensure conditional and atomic payments. HTLCs are used in Lightning to enable transaction routing across multiple nodes. These contracts are designed in a way that sees routed payments happen atomically; meaning the payment either succeeds or fails entirely. Routing nodes are unable to misappropriate funds as they are unable to reveal a secret preimage which is conditional to the transaction being finalized. Only the intended receiver has access to the secret preimage which was created when they generated the transaction’s invoice."
                   }
-          
             ]
         },   
         {
