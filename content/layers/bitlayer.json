@@ -143,6 +143,10 @@
         {
             "url": "https://www.btrscan.com/home",
             "displayText": "BitLayer block explorer"
+        },
+        {
+            "url": "https://www.btrscan.com/leaderboard",
+            "displayText": "BitLayer's validator set"
         }
     ]
 }
