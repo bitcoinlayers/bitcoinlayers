@@ -4,13 +4,13 @@
     "layerType": "Sidechain",
     "live": "Mainnet",
     "underReview": "no",
-    "riskFactors": ["", "", "High", "High"],
+    "riskFactors": ["High", "High", "High", "High"],
     "purpose": "General",
-    "btcBridge": "Under review",
-    "settlement": "Under review",
+    "btcBridge": "Federated Multisig",
+    "settlement": "Offchain",
     "btcLocked": "-",
-    "executionEnv": "Under review",
-    "consensus": "Under review",
+    "executionEnv": "Offchain",
+    "consensus": "Federated",
     "nativeToken": "BTR",
     "feeToken": "BTC",
     "enshrinedBtc": "x",
@@ -27,16 +27,16 @@
         {
             "category": "Bridge Custody",
             "score": 0,
-            "tier": "",
-            "title": "Users trust a federated multi-sig and upgradeable contracts with the custody of their BTC",
-            "content": "We are currently reviewing the exact implementation of BitLayer's two-way peg with Bitcoin. It has been publicly acknowledge by the team that the current implementation is a federated multi-sig. BTC users will deposit their BTC into a Bitcoin multi-sig wallet that initiates an unlock transfer from a vault on the BitLayer chain. EVM users can deposit wBTC into BitLayer from their EVM wallet. Both bridge contracts, on BitLayer, are upgradeable."
+            "tier": "High",
+            "title": "Users trust a federated multi-sig to custody users' BTC",
+            "content": "BitLayer's current Bitcoin bridge is a federated two-way peg with institutional signers. BTC users will deposit their BTC into a Bitcoin multi-sig wallet that initiates an unlock transfer from a vault on the BitLayer chain. EVM users can deposit wBTC into BitLayer from their EVM wallet. Both bridge contracts, on BitLayer, are upgradeable."
         },
         {
             "category": "Data Availability",
             "score": 0,
             "tier": "",
             "title": "Data is stored offchain",
-            "content": "BitLayer does not currently use Bitcoin for data availability. We are currently reviewing the specific parties responsible for data availability."
+            "content": "BitLayer does not currently use Bitcoin for data availability."
         },
         {
             "category": "Network Operators",
@@ -50,7 +50,7 @@
             "score": 0,
             "tier": "High",
             "title": "No onchain enforcement of BitLayer state transitions",
-            "content": "There is no onchain enforcement of BitLayer state transitions on Bitcoin."
+            "content": "There is no onchain enforcement of BitLayer state transitions on Bitcoin. Settlement is finalized by permissioned set of validators."
         }
     ],
     "sections": [
@@ -59,17 +59,31 @@
             "title": "Bitcoin Security",
             "content": [
                 {
-                    "title": "BitVM being researched",
-                    "content": "BitLayer is currently researching how BitVM can improve trust assumptions related to its two-way peg with Bitcoin. The BitLayer team has an open repository of research related to BitVM. BitLayer’s documentation site states that the BitVM implementation will be federated."
+                    "title": "BitLayer does not currently inherit any security from Bitcoin consensus participants",
+                    "content": "The BitLayer sidechain is a federated sidechain, and Bitcoin consensus participants do not participate in securing BitLayer."
                 },
                 {
                     "title": "BTR token issued, but validators are not required to stake BTR",
                     "content": "None of the validators in BitLayer’s validator set are staking its native token, BTR. Currently the BTR supply is 1B and is dispersed across 6 addresses. It is unknown if BitLayer will use this token to incentivize its current set of validators, or other future operators."
                 },
                 {
-                    "title": "Offchain DA on roadmap",
-                    "content": "BitLayer will not use Bitcoin for data availability long-term. This means that it will be a Bitvimium once it integrates with an data availability layer and has implemented a bridge program where operators must produce a validity proof to process withdrawals."
+                    "title": "No MEV introduced to Bitcoin",
+                    "content": "BitLayer, due to a lack of current relationship with Bitcoin, does not introduce MEV on the Bitcoin blockchain. Users trust that BitLayer's permissioned  validator set will not extract MEV."
+                },
+                {
+                    "title": "BitLayer does not contribute to the security budget",
+                    "content": "BitLayer does not currently contribute to the Bitcoin security budget."
                 }
+            ]
+        },
+        {
+            "id": "withdrawals",
+            "title": "Withdrawals",
+            "content": [
+                {
+                    "title": "Users cannot unilaterally withdraw from the BitLayer sidechain",
+                    "content": "Users of BitLayer's primary bridge program, or third party bridges, cannot unilaterally withdraw their assets from BitLayer. They trust that BitLayer validators will include withdrawal transactions in BitLayer blocks, and that multi-sig signers will process their withdrawal back to the Bitcoin mainchain."
+                  }
             ]
         },
         {
@@ -83,6 +97,14 @@
                 {
                     "title": "Faster block times",
                     "content": "BitLayer is currently producing blocks every two seconds which provides a better user experience than using the Bitcoin mainchain."
+                },
+                {
+                    "title": "BitVM being researched",
+                    "content": "BitLayer is currently researching how BitVM can improve trust assumptions related to its two-way peg with Bitcoin. The BitLayer team has an open repository of research related to BitVM. BitLayer’s documentation site states that the BitVM implementation will be federated."
+                },
+                {
+                    "title": "Offchain DA on roadmap",
+                    "content": "BitLayer will not use Bitcoin for data availability long-term. This means that it will be a Bitvimium once it integrates with an data availability layer and has implemented a bridge program where operators must produce a validity proof to process withdrawals."
                 }
             ]
         },
@@ -103,16 +125,6 @@
                 {
                     "title": "BitLayer is run by a permissioned validator set",
                     "content": "BitLayer is currently run by 21 federated validators securing the network. The operators of these validating nodes are unknown. Although there are claims that these validators would stake BitLayer's native token, BTR, to secure the network, none of the active validator addresses currently hold any BTR tokens. These nodes are presumably responsible for data availability, block production and finalizing the state of the sidechain."
-                }
-            ]
-        },
-        {
-            "id": "withdrawals",
-            "title": "Withdrawals",
-            "content": [
-                {
-                    "title": "BTC users must withdraw to Ethereum L1 before withdrawing to Bitcoin",
-                    "content": "Withdrawals from BitLayer to Bitcoin are permitted by a centralized operator and take 3-7 days to process."
                 }
             ]
         },
