@@ -3,7 +3,7 @@
     "title": "Merlin",
     "layerType": "Sidechain",
     "live": "Mainnet",
-    "underReview": "yes",
+    "underReview": "no",
     "riskFactors": ["High", "High", "High", "High"],
     "purpose": "General",
     "btcBridge": "Under review",
