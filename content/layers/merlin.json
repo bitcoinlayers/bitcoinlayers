@@ -54,16 +54,6 @@
         }
     ],
     "sections": [
-        {
-            "id": "bitcoinsecurity",
-            "title": "Additional risk information",
-            "content": [
-                {
-                    "title": "Merlin L1 smart contract not verified",
-                    "content": "We are currenly unable to verify if the smart contracts listed in Merlin's Github are in fact the contracts used on its mainnet. The main contract for Polygoin CDKValidium on Ethereum was previously listed as the Merlin L1 contract in its documentation, but that contract was removed and no longer listed. Merlin chain have announced they will deploy their chain on Bsquared Network's L1 blockchain, which is a permissioned fork of Ethermint. New contracts have been listed in its Github, but their L1 RPC points to a different chain that is not Bsquared Network."
-                }
-            ]
-        },
     {
         "id": "risksummary",
         "title": "Critical Risk Items",
@@ -71,7 +61,11 @@
             {
                 "title": "All facets of Merlin chain are managed by a centralized operator. Some code is not open-source.",
                 "content": "Merlin Chain contracts are all currently upgradeable by an admin. The contracts it has listed on its CDKValdidium can not be verified. It is likely that Merlin Chain is running their own permissioned fork for their L1 blockchain. Because we cannot verify the L1 blockchain Merlin Chain is currently settling to, we have listed it as a testnet implementation and a high risk chain for depositing funds."
-              }
+              },
+              {
+                "title": "Merlin L1 smart contract not verified",
+                "content": "We are currenly unable to verify if the smart contracts listed in Merlin's Github are in fact the contracts used on its mainnet. The main contract for Polygoin CDKValidium on Ethereum was previously listed as the Merlin L1 contract in its documentation, but that contract was removed and no longer listed. Merlin chain have announced they will deploy their chain on Bsquared Network's L1 blockchain, which is a permissioned fork of Ethermint. New contracts have been listed in its Github, but their L1 RPC points to a different chain that is not Bsquared Network."
+            }
         ]
     }
 ],
