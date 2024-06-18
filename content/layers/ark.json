@@ -68,6 +68,10 @@
         {
             "url": "https://arkdev.info",
             "displayText": "Ark Developer Hub"
+        }, 
+        {
+            "url": "https://ark-protocol.org",
+            "displayText": "Ark Protocol Deep Dive" 
         }
     ]
 }
