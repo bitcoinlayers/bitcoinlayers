@@ -22,14 +22,14 @@
         "https://github.com/bitlayer-org",
         "https://twitter.com/BitlayerLabs"
     ],
-    "description": "BitLayer is building towards a validia chain on top of Bitcoin. Its current implementation is run by a network of federated validators. It supports an EVM execution environment with plans to support other VMs. In its docs, BitLayer states that it will use an offchain data availability solution in its future mainnet releases. Its roadmap sees it adding support for a BitVM-style bridge, but currently, the bridge is managed by various multi-sig wallets.",
+    "description": "BitLayer's mainnet v1 is a federated sidechain. It is building towards a validia chain on top of Bitcoin. It supports an EVM execution environment with plans to support other VMs. In its docs, BitLayer states that it will use an offchain data availability solution in its future mainnet releases. Its roadmap sees it adding support for a BitVM-style bridge, but currently, the bridge is managed by a federation.",
     "riskAnalysis": [
         {
             "category": "Bridge Custody",
             "score": 0,
             "tier": "High",
             "title": "Users trust a federated multi-sig to custody users' BTC",
-            "content": "BitLayer's current Bitcoin bridge is a federated two-way peg with institutional signers. BTC users will deposit their BTC into a Bitcoin multi-sig wallet that initiates an unlock transfer from a vault on the BitLayer chain. EVM users can deposit wBTC into BitLayer from their EVM wallet. Both bridge contracts, on BitLayer, are upgradeable."
+            "content": "BitLayer's current Bitcoin bridge is a federated two-way peg with institutional signers. Coinbase and Sinohope are the two institutions that have been said to be participating in securing the two-way peg. Limited information around the current two-way peg construction is available."
         },
         {
             "category": "Data Availability",
@@ -43,7 +43,7 @@
             "score": 0,
             "tier": "High",
             "title": "BitLayer is operated by a permissioned validator set",
-            "content": "BitLayer blocks are currently produced by a permissioned validator set. Information on how blocks are produced is limited, but it seems that BitLayer blocks are evenly distributed, and produced in order, by its validator set. There are currently 21 validators participating in BitLayer consensus. Users cannot force include transactions if they are censored by the validator set."
+            "content": "BitLayer blocks are currently produced by a permissioned validator set. There are currently 21 validators participating in BitLayer consensus. Users cannot force include transactions if they are censored by the validator set."
         },
         {
             "category": "Settlement Assurance",
