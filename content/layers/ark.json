@@ -15,14 +15,14 @@
     "feeToken": "-",
     "enshrinedBtc": "-",
     "links": [
-        "https://ark-protocol.org/intro/vtxos/index.html",
-        "https://ark-protocol.org/intro/vtxos/index.html",
-        "https://ark-protocol.org/intro/vtxos/index.html",
-        "https://ark-protocol.org/intro/vtxos/index.html",
-        "https://ark-protocol.org/intro/vtxos/index.html",
-        "https://ark-protocol.org/intro/vtxos/index.html"
+        "https://arklabs.to",
+        "https://arkdev.info",
+        "https://arkdev.info/docs/",
+        "https://arkdev.info/docs/developers/get-started",
+        "https://github.com/ark-network",
+        "https://x.com/ArkLabsHQ"
     ],
-    "description": "Ark is a payments system where people can make Bitcoin transactions at very low cost and without requiring any setup. The Ark model very closely resembles the UTXO model, which is a key differentiator with Lightning.",
+    "description": "Ark is a decentralized network of trustless servers issuing VTXOs, basically checks with expiration. Users can make payments to each other within the system swapping these checks and withdraw funds at any time, even if the server goes offline or ceases to exist.",
     "riskAnalysis": [
         {
             "category": "Unilateral Exits",
@@ -59,15 +59,15 @@
             "title": "Description",
             "content": [
                 {
-                    "content": "Ark is a payments system where people can make Bitcoin transactions at very low cost and without requiring any setup. The Ark model very closely resembles the UTXO model, which is a key differentiator with Lightning."
+                    "content": "Ark is a decentralized network of trustless servers issuing VTXOs, basically checks with expiration. Users can make payments to each other within the system swapping these checks and withdraw funds at any time, even if the server goes offline or ceases to exist."
                 }
             ]
         }
     ],
     "knowledgeBits": [
         {
-            "url": "https://ark-protocol.org/index.html",
-            "displayText": "Ark Website"
+            "url": "https://arkdev.info",
+            "displayText": "Ark Developer Hub"
         }
     ]
 }
