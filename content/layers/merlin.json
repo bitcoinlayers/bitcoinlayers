@@ -22,7 +22,23 @@
         "https://docs.merlinchain.io/merlin-docs/developers",
         "https://twitter.com/MerlinLayer2"
     ],
-    "description": "Merlin is an implementation of Polygon CDK chain. It looks to build a validia chain using an alternative system for data availability. It will be leveraging the Bsquared Network parent blockchain for settlement. Its documentation shares that it will add Bitcoin native security in the future, but no code or research has been released.",
+    "sections": [
+        {
+            "id": "risksummary",
+            "title": "Critical Risk Items",
+            "content": [
+                {
+                    "title": "All facets of Merlin chain are managed by a centralized operator. Some code is not open-source.",
+                    "content": "Merlin Chain contracts are all currently upgradeable by an admin. The contracts it has listed on its CDKValdidium can not be verified. It is likely that Merlin Chain is running their own permissioned fork of an EVM chain for their L1 blockchain. Because we cannot verify the L1 blockchain Merlin Chain is currently settling to, we have listed it as a high risk chain for depositing funds."
+                  },
+                  {
+                    "title": "Merlin L1 smart contract not verified",
+                    "content": "We are currenly unable to verify if the smart contracts listed in Merlin's Github are in fact the contracts used on its mainnet. The main contract for Polygoin CDKValidium on Ethereum was previously listed as the Merlin L1 contract in its documentation, but that was removed and no longer listed. Merlin chain have announced they will deploy their chain on Bsquared Network's L1 blockchain, which is a permissioned fork of Ethermint. New contracts have been listed in its Github, but their L1 RPC points to a different chain that is not Bsquared Network."
+                }
+            ]
+        }
+    ],
+    "description": "Merlin is an implementation of Polygon CDK chain. It likely is running a Polygon chain on top of a permissioned fork of the EVM. Its documentation shares that it will add Bitcoin native security in the future, but no code or research has been released on this topic.",
     "riskAnalysis": [
         {
             "category": "Bridge Custody",
@@ -53,22 +69,6 @@
             "content": "Merlin uses zkSNARKS to ensure state correctness. The Merlin prover posts validity proofs of execution to its L1 contract to finalize state transitions. It is unknown which chain Merlin settles to. Its documentation previously pointed to Ethereum, but recent contracts cannot be verified on Ethereum."
         }
     ],
-    "sections": [
-    {
-        "id": "risksummary",
-        "title": "Critical Risk Items",
-        "content": [
-            {
-                "title": "All facets of Merlin chain are managed by a centralized operator. Some code is not open-source.",
-                "content": "Merlin Chain contracts are all currently upgradeable by an admin. The contracts it has listed on its CDKValdidium can not be verified. It is likely that Merlin Chain is running their own permissioned fork for their L1 blockchain. Because we cannot verify the L1 blockchain Merlin Chain is currently settling to, we have listed it as a testnet implementation and a high risk chain for depositing funds."
-              },
-              {
-                "title": "Merlin L1 smart contract not verified",
-                "content": "We are currenly unable to verify if the smart contracts listed in Merlin's Github are in fact the contracts used on its mainnet. The main contract for Polygoin CDKValidium on Ethereum was previously listed as the Merlin L1 contract in its documentation, but that contract was removed and no longer listed. Merlin chain have announced they will deploy their chain on Bsquared Network's L1 blockchain, which is a permissioned fork of Ethermint. New contracts have been listed in its Github, but their L1 RPC points to a different chain that is not Bsquared Network."
-            }
-        ]
-    }
-],
     "knowledgeBits": [
         {
             "url": "https://merlinchain.io/",
