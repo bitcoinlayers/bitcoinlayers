@@ -10,7 +10,7 @@
     "settlement": "Offchain",
     "btcLocked": "-",
     "executionEnv": "Offchain",
-    "consensus": "Federated Proof-of-Stake",
+    "consensus": "Federateded Sidechain",
     "nativeToken": "BSQ",
     "feeToken": "BSQ",
     "enshrinedBtc": "wBTC",

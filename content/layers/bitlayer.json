@@ -10,7 +10,7 @@
     "settlement": "Offchain",
     "btcLocked": "-",
     "executionEnv": "Offchain",
-    "consensus": "Federated",
+    "consensus": "Federated Sidechain",
     "nativeToken": "BTR",
     "feeToken": "BTC",
     "enshrinedBtc": "x",
