@@ -11,8 +11,8 @@
     "btcLocked": 0,
     "executionEnv": "Under review",
     "consensus": "Under review",
-    "nativeToken": "-",
-    "feeToken": "-",
+    "nativeToken": "BTC",
+    "feeToken": "BTC",
     "enshrinedBtc": "-",
     "links": [
         "https://ark-protocol.org/intro/vtxos/index.html",
