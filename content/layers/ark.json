@@ -22,7 +22,7 @@
         "https://github.com/ark-network",
         "https://x.com/ArkLabsHQ"
     ],
-    "description": "Ark is a decentralized network of trustless servers issuing VTXOs, basically checks with expiration. Users can make payments to each other within the system swapping these checks and withdraw funds at any time, even if the server goes offline or ceases to exist.",
+    "description": "Ark is a decentralized network of servers issuing VTXOs, basically checks with expiration. Users can make payments to each other within the system swapping these checks and withdraw funds at any time, even if the server goes offline or ceases to exist.",
     "riskAnalysis": [
         {
             "category": "Unilateral Exits",
