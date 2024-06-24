@@ -4,6 +4,10 @@ Bitcoin Layers is an open-source, risk analysis platform focusing on Bitcoin sca
 
 If you'd like to see your project added to Bitcoin Layers, please see the section below.
 
+## Using our research
+
+If you're building a #Bitcoin L2 and sidechain focused data platform, you're welcome to use Bitcoin Layers research. Everything we release is free and open-source under an MIT license. We ask that you reference this project with a link to the domain bitcoinlayers.org.
+
 ## How to add a Project
 
 1. Create a new [layername].json file by copying the moneta.json template. Please include as much information around the project as you can.
