@@ -6,7 +6,7 @@ If you'd like to see your project added to Bitcoin Layers, please see the sectio
 
 ## Using our research
 
-If you're building a #Bitcoin L2 and sidechain focused data platform, you're welcome to use Bitcoin Layers research. Everything we release is free and open-source under an MIT license. We ask that you reference this project with a link to the domain bitcoinlayers.org.
+If you're building any materials, platforms or websites related to #Bitcoin L2s and sidechains, you're welcome to use Bitcoin Layers research. Everything we release is free and open-source under an MIT license. We kindly ask that you reference this project with a link to the domain bitcoinlayers.org.
 
 ## How to add a Project
 
