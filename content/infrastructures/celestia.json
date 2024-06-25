@@ -2,7 +2,7 @@
     "slug": "celestia",
     "title": "Celestia",
     "infrastructureType": "Data Availability",
-    "live": "Mainnet",
+    "live": "Testnet",
     "underReview": "yes",
     "riskFactors": ["High", "High"],
     "bitcoinSecurity": "No",

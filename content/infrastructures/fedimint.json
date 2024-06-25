@@ -1,9 +1,9 @@
 {
     "slug": "fedimint",
     "title": "Fedimint",
-    "infrastructureType": "Federation SDK",
+    "infrastructureType": "Federated Applications",
     "live": "Mainnet",
-    "underReview": "no",
+    "underReview": "yes",
     "riskFactors": ["High", "High"],
     "bitcoinSecurity": "No",
     "nativeToken": "None",
@@ -18,78 +18,6 @@
         "https://twitter.com/fedimint"
     ],
     "description": "Fedimints are a module based system for building federated applications. They are currently focused on building federated ecash mints, which would offer improved privacy for peer-to-peer payments. The construction of a Fedimint sees users lock their BTC into a Federation's multi-sig, and receive an Ecash IOU representing the BTC in the Federation. Fedimints are also useful for community custody, an idea that sees users trust members of their local community (e.g., family members) with the custody of their Bitcoin assets.",
-    "sections": [
-        {
-            "id": "technology",
-            "title": "Risk Bits",
-            "content": [
-                {
-                    "title": "Users do not have custody of their BTC and trust guardians to process withdrawals",
-                    "content": "Users deposit BTC into a multi-sig to interact with a Fedimint. Fedimints do not enable unilateral exits. Users explicitly trust the signers, known as guardians, of the Federation's multi-sig to not steal their funds."
-                },
-                {
-                    "title": "Federation guardians run a permissioned consensus protocol",
-                    "content": "Guardians of the specific federation are those that ultimately come to consensus on transactions happening on the various modules supported by the federation. After transactions are submitted, proposals are sent to consensus participants who agree on the validity of the proposal. These consensus protocols can have varying numbers of signers dependent on them, but will rely on an honest majority assumption of signers. There is no mechanism for users to dispute invalid state changes."
-                }
-            ]
-        },
-        {
-            "id": "bitcoinsecurity",
-            "title": "Bitcoin Security",
-            "content": [
-                {
-                    "title": "Fedimints do not rely on alternative tokens",
-                    "content": "Fedimints do not rely on altnerative tokens for security and/or network operation."
-                }
-            ]
-        },
-        {
-            "id": "technology",
-            "title": "Technology",
-            "content": [
-                {
-                    "title": "Federated Chaumian eCash",
-                    "content": "Chaumian eCash enables Fedimints to create and redeem IOU notes that represent claims on Bitcoin stored in the Federation's multi-sig. eCash in Fedimints also uses blinded signatures to protect the privacy of their users, and ensures that guardians of the Federation cannot see a user's specific balance. Guardians cannot also tell which parties in the federation are engaging in transactions."
-                },
-                {
-                    "title": "Lower Fees",
-                    "content": "Fedimints provide lower fees to users and do not require on-chain transactions to engage in the federation. To deposit funds, users can use the lightning network or the Bitcoin mainchain."
-                },
-                {
-                    "title": "Lightning Swaps",
-                    "content": "Fedimints also enable lightning swaps through lightning gateways. A user, or guardian, in a federation can run a lightning node and pay and accept lightning invoices on behalf of users in the federation. This is particularly useful as Fedimint users don't need to be online to accept lightning payments."
-                }
-            ]
-        },
-        {
-            "id": "usecases",
-            "title": "Use Cases",
-            "content": [
-                {
-                    "title": "Community Custody",
-                    "content": "It is argued that self-custody, in its current form, is diffucult for some users. Fedimints would enable users to trust the custody of their Bitcoin with a trusted third party (e.g. family member or community leader). Federated community custody may be preferred by some users over centralized custodians."
-                },
-                {
-                    "title": "Private Payments",
-                    "content": "Fedimints enable anonymous payments through blinded signatures. Users may choose to join a Fedimint because it can offer an easier path towards anonymity than the Bitcoin mainchain or lightning."
-                },
-                {
-                    "title": "General Purpose Smart Contracts",
-                    "content": "Fedimints can also support any arbitrary computation. Federations supporting application modules like borrowing and lending protocols, and stablecoins, are possible."
-                }
-            ]
-        },
-        {
-            "id": "sourcecode",
-            "title": "Source Code",
-            "content": [
-                {
-                    "title": "Code is open-source",
-                    "content": "All code related to the Fedimint project is free and open source."
-                }
-            ]
-        }
-    ],
     "knowledgeBits": [
         {
             "url": "https://fedimint.org",
