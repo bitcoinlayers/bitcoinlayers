@@ -8,7 +8,7 @@
     "purpose": "Bitcoin Apps",
     "btcBridge": "Various Multisig(s)",
     "settlement": "Offchain",
-    "btcLocked": "1041",
+    "btcLocked": "944",
     "executionEnv": "Under Development",
     "consensus": "Centralized Sequencer",
     "nativeToken": "ETH",
