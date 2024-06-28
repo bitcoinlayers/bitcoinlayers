@@ -74,7 +74,7 @@ export default function Navbar(): ReactElement {
                                         </div>
                                     </Link>
                                 </div>
-                                <div className="h-[88px] p-3 rounded-md flex-col justify-start items-start flex hover:bg-blue-100">
+                                {/* <div className="h-[88px] p-3 rounded-md flex-col justify-start items-start flex hover:bg-blue-100">
                                     <Link href="/bridge" onClick={closeSubmenu}>
                                         <div className="text-zinc-800 text-base font-medium leading-normal">
                                             Bridges
@@ -84,7 +84,7 @@ export default function Navbar(): ReactElement {
                                             bitcoin bridges between layers.
                                         </div>
                                     </Link>
-                                </div>
+                                </div> */}
                                 <div className="h-[88px] p-3 rounded-md flex-col justify-start items-start flex hover:bg-blue-100">
                                     <Link
                                         href="/infrastructure"
@@ -99,7 +99,7 @@ export default function Navbar(): ReactElement {
                                         </div>
                                     </Link>
                                 </div>
-                                <div className="h-[88px] p-3 rounded-md flex-col justify-start items-start flex hover:bg-blue-100">
+                                {/* <div className="h-[88px] p-3 rounded-md flex-col justify-start items-start flex hover:bg-blue-100">
                                     <Link href="/opcode" onClick={closeSubmenu}>
                                         <div className="text-zinc-800 text-base font-medium leading-normal">
                                             Opcodes
@@ -109,7 +109,7 @@ export default function Navbar(): ReactElement {
                                             proposed opcodes.
                                         </div>
                                     </Link>
-                                </div>
+                                </div> */}
                                 <div className="h-[88px] p-3 rounded-md flex-col justify-start items-start flex hover:bg-blue-100">
                                     <Link
                                         href="/upcominglayers"
