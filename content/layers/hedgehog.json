@@ -1,7 +1,7 @@
 {
     "slug": "hedgehog",
     "title": "Hedgehog",
-    "layerType": "Payment Channels",
+    "layerType": "State Channel",
     "live": "Testnet",
     "underReview": "yes",
     "riskFactors": ["", "", "", ""],
@@ -11,8 +11,8 @@
     "btcLocked": 0,
     "executionEnv": "x",
     "consensus": "-",
-    "nativeToken": "-",
-    "feeToken": "x",
+    "nativeToken": "BTC",
+    "feeToken": "BTC",
     "enshrinedBtc": "x",
     "links": [
         "https://github.com/supertestnet/hedgehog",
@@ -54,21 +54,21 @@
         }
     ],
     "sections": [
-    {
-        "id": "technology",
-        "title": "Proposed Technologies",
-        "content": [
-            {
-                "title": "Payment channels",
-                "content": "Payment channels are 2-2 multi-signature addresses that enable two counterparties to lock funds into an address, and process an unlimited number of payments between each other. Payments are considered final when the parties withdraw their funds back onchain and close their channel. Creating and managing one or more payment channels lis how a user interacts with Lightning."
-            },
-            {
-                "title": "Revocable connectors",
-                "content": "Revocable connectors are built on components called revocable scripts and connector outputs. Revocable scripts allow either party to revoke a transaction after a certain period. Connector outputs allow you to construct a pre-signed transaction spending a separate UTXO alongside the connector output, allowing the transaction to be invalidated by spending the connector output by itself."
-            }
-        ]
-    }
-],
+        {
+            "id": "technology",
+            "title": "Proposed Technologies",
+            "content": [
+                {
+                    "title": "Payment channels",
+                    "content": "Payment channels are 2-2 multi-signature addresses that enable two counterparties to lock funds into an address, and process an unlimited number of payments between each other. Payments are considered final when the parties withdraw their funds back onchain and close their channel. Creating and managing one or more payment channels lis how a user interacts with Lightning."
+                },
+                {
+                    "title": "Revocable connectors",
+                    "content": "Revocable connectors are built on components called revocable scripts and connector outputs. Revocable scripts allow either party to revoke a transaction after a certain period. Connector outputs allow you to construct a pre-signed transaction spending a separate UTXO alongside the connector output, allowing the transaction to be invalidated by spending the connector output by itself."
+                }
+            ]
+        }
+    ],
     "knowledgeBits": [
         {
             "url": "https://github.com/supertestnet/hedgehog",
