@@ -1,0 +1,62 @@
+{
+    "slug": "bevm",
+    "title": "BEVM",
+    "layerType": "Sidechain",
+    "live": "Mainnet",
+    "underReview": "yes",
+    "riskFactors": ["", "", "", ""],
+    "purpose": "-",
+    "btcBridge": "x",
+    "settlement": "x",
+    "btcLocked": 0,
+    "executionEnv": "x",
+    "consensus": "-",
+    "nativeToken": "-",
+    "feeToken": "x",
+    "enshrinedBtc": "x",
+    "links": [
+        "https://www.bevm.io/",
+        "https://www.bevm.io/",
+        "https://documents.bevm.io/",
+        "https://scan.bevm.io/",
+        "https://github.com/btclayer2/BEVM",
+        "https://twitter.com/BTCLayer2"
+    ],
+    "description": "BEVM is a sidechain being developed by the developers of ChainX, a Bitcoin sidechain built on Substrate consensus. We are currently reviewing BEVM's implementation.",
+    "riskAnalysis": [
+        {
+            "category": "Unilateral Exits",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "Data Availability",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "Block Production",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "State Validation",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        }
+    ],
+    "knowledgeBits": [
+        {
+            "url": "https://www.bevm.io/",
+            "displayText": "BEVM Website"
+        }
+    ]
+}
