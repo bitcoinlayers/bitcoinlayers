@@ -53,6 +53,17 @@
             "content": ""
         }
     ],
+    "sections": [
+        {
+            "id": "description",
+            "title": "Description",
+            "content": [
+                {
+                    "content": "BEVM is a sidechain being developed by the developers of ChainX, a Bitcoin sidechain built on Substrate consensus. We are currently reviewing BEVM's implementation."
+                }
+            ]
+        }
+    ],
     "knowledgeBits": [
         {
             "url": "https://www.bevm.io/",
