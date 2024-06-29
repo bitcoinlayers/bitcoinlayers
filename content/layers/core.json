@@ -8,7 +8,7 @@
     "purpose": "General",
     "btcBridge": "Federated Multisig",
     "settlement": "Offchain",
-    "btcLocked": "825",
+    "btcLocked": "1003",
     "executionEnv": "Offchain",
     "consensus": "Hybrid Consensus",
     "nativeToken": "CORE",
