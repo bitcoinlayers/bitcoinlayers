@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Layer } from "./layerProps";
 
 const getRiskColorClass = (riskFactor: string) => {
@@ -31,8 +31,44 @@ const getRiskColorClass = (riskFactor: string) => {
     }
 };
 
+const Tooltip: React.FC<{ title: string; style: React.CSSProperties }> = ({
+    title,
+    style,
+}) => (
+    <div
+        className="absolute z-50 p-2 bg-white border border-gray-400 rounded shadow-lg text-xs"
+        style={style}
+    >
+        {title}
+    </div>
+);
+
 const LayerDiamond: React.FC<{ layer: Layer }> = ({ layer }) => {
     const svgDimensions = "w-32 h-32"; // Consistent dimensions for all SVGs
+
+    const [tooltip, setTooltip] = useState<{
+        title: string;
+        style: React.CSSProperties;
+    } | null>(null);
+
+    const handleMouseEnter = (
+        event: React.MouseEvent<SVGSVGElement>,
+        title: string,
+    ) => {
+        const { top, left, width } =
+            event.currentTarget.getBoundingClientRect();
+        setTooltip({
+            title,
+            style: {
+                top: top - 240,
+                left: left - 900,
+            },
+        });
+    };
+
+    const handleMouseLeave = () => {
+        setTooltip(null);
+    };
 
     return (
         <div className="lg:w-[370px] h-[300px] lg:h-full flex justify-center items-center relative ml-6 lg:ml-0 z-30">
@@ -49,6 +85,8 @@ const LayerDiamond: React.FC<{ layer: Layer }> = ({ layer }) => {
                 Network Operator
             </div>
 
+            {tooltip && <Tooltip title={tooltip.title} style={tooltip.style} />}
+
             <div className={`absolute top-[13px] left-[90px] ${svgDimensions}`}>
                 <svg
                     viewBox="0 0 97 97"
@@ -57,6 +95,10 @@ const LayerDiamond: React.FC<{ layer: Layer }> = ({ layer }) => {
                         fill: getRiskColorClass(layer.riskAnalysis[0].tier)
                             .fill,
                     }}
+                    onMouseEnter={(e) =>
+                        handleMouseEnter(e, layer.riskAnalysis[0].title)
+                    }
+                    onMouseLeave={handleMouseLeave}
                 >
                     <g id="risk-square">
                         <g clipPath="url(#clip0_207_52485)">
@@ -88,6 +130,10 @@ const LayerDiamond: React.FC<{ layer: Layer }> = ({ layer }) => {
                         fill: getRiskColorClass(layer.riskAnalysis[1].tier)
                             .fill,
                     }}
+                    onMouseEnter={(e) =>
+                        handleMouseEnter(e, layer.riskAnalysis[1].title)
+                    }
+                    onMouseLeave={handleMouseLeave}
                 >
                     <g id="risk-square">
                         <g clipPath="url(#clip0_207_52485)">
@@ -119,6 +165,10 @@ const LayerDiamond: React.FC<{ layer: Layer }> = ({ layer }) => {
                         fill: getRiskColorClass(layer.riskAnalysis[2].tier)
                             .fill,
                     }}
+                    onMouseEnter={(e) =>
+                        handleMouseEnter(e, layer.riskAnalysis[2].title)
+                    }
+                    onMouseLeave={handleMouseLeave}
                 >
                     <g id="risk-square">
                         <g clipPath="url(#clip0_207_52485)">
@@ -148,6 +198,10 @@ const LayerDiamond: React.FC<{ layer: Layer }> = ({ layer }) => {
                         fill: getRiskColorClass(layer.riskAnalysis[3].tier)
                             .fill,
                     }}
+                    onMouseEnter={(e) =>
+                        handleMouseEnter(e, layer.riskAnalysis[3].title)
+                    }
+                    onMouseLeave={handleMouseLeave}
                 >
                     <g id="risk-square">
                         <g clipPath="url(#clip0_207_52485)">
