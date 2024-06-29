@@ -2,13 +2,14 @@
 
 import Link from "next/link";
 import type { ReactElement } from "react";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Sheet from "./Sheet";
 
 export default function Navbar(): ReactElement {
     const [menuOpen, setMenuOpen] = useState(false);
     const [submenuOpen, setSubmenuOpen] = useState(false);
+    const submenuRef = useRef<HTMLDivElement>(null);
 
     const [isSheetOpen, setIsSheetOpen] = useState(false);
 
@@ -30,6 +31,23 @@ export default function Navbar(): ReactElement {
     const closeSubmenu = () => {
         setSubmenuOpen(false);
     };
+
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+            if (
+                submenuRef.current &&
+                !submenuRef.current.contains(event.target as Node)
+            ) {
+                setSubmenuOpen(false);
+            }
+        };
+
+        document.addEventListener("mousedown", handleClickOutside);
+
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, []);
 
     return (
         <nav className="flex flex-row justify-between items-center w-full fixed min-h-[3rem] lg:px-8 px-4 bg-bg_primary lg:bg-opacity-80 backdrop-blur-sm z-50 pointer-events-auto">
@@ -62,7 +80,10 @@ export default function Navbar(): ReactElement {
                             />
                         </button>
                         {submenuOpen && (
-                            <div className="absolute top-full lg:left-0 right-0 mt-2 w-[282px] bg-white rounded-xl shadow flex-col justify-start items-start gap-2 inline-flex z-50 p-4">
+                            <div
+                                ref={submenuRef}
+                                className="absolute top-full lg:left-0 right-0 mt-2 w-[282px] bg-white rounded-xl shadow flex-col justify-start items-start gap-2 inline-flex z-50 p-4"
+                            >
                                 <div className="h-[88px] p-3 rounded-md flex-col justify-start items-start flex hover:bg-blue-100">
                                     <Link href="/" onClick={closeSubmenu}>
                                         <div className="text-zinc-800 text-base font-medium leading-normal">
