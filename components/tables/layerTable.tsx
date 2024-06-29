@@ -25,6 +25,21 @@ interface Props {
     }[];
 }
 
+const getRiskColorClass = (riskFactor: string) => {
+    switch (riskFactor) {
+        case "Low":
+            return "text-text_risk_low";
+        case "Medium":
+            return "text-text_risk_midlow";
+        case "Medium-High":
+            return "text-text_risk_midhigh";
+        case "High":
+            return "text-text_risk_high";
+        default:
+            return "text-text_secondary";
+    }
+};
+
 const LayerImage = ({ src, title }: { src: string; title: string }) => {
     const [imageSrc, setImageSrc] = useState(src);
 
@@ -210,9 +225,61 @@ const LayerTable = ({ data, headers }: Props) => {
                                     </span>
                                 </td>
                                 {!isMobile && (
-                                    <td className="w-[176px] px-2 border-stroke_tertiary text_table_important">
+                                    <td className="relative w-[176px] px-2 border-stroke_tertiary text_table_important">
                                         {item.underReview === "no" ? (
-                                            <Risk layer={item} />
+                                            <div className="relative group">
+                                                <Risk layer={item} />
+                                                <div
+                                                    className="absolute left-0 top-full mt-2 hidden bg-white p-4 shadow-lg border border-stroke_tertiary rounded-lg group-hover:block z-50"
+                                                    style={{ width: "500px" }}
+                                                >
+                                                    <div className="mb-4 font-bold border-b border-stroke_tertiary">
+                                                        Risk Snapshot
+                                                    </div>
+                                                    {item.riskAnalysis
+                                                        .slice(0, 4)
+                                                        .map(
+                                                            (
+                                                                content,
+                                                                contentIndex,
+                                                            ) => (
+                                                                <div
+                                                                    key={
+                                                                        contentIndex
+                                                                    }
+                                                                    className="mb-2"
+                                                                >
+                                                                    <div className="mb-2 font-semibold">
+                                                                        {
+                                                                            content.category
+                                                                        }
+                                                                        :{" "}
+                                                                        <span
+                                                                            className={getRiskColorClass(
+                                                                                item
+                                                                                    .riskFactors[
+                                                                                    contentIndex
+                                                                                ],
+                                                                            )}
+                                                                        >
+                                                                            {
+                                                                                item
+                                                                                    .riskFactors[
+                                                                                    contentIndex
+                                                                                ]
+                                                                            }
+                                                                        </span>
+                                                                    </div>
+                                                                    <div className="mb-4">
+                                                                        {
+                                                                            content.title
+                                                                        }
+                                                                    </div>
+                                                                </div>
+                                                            ),
+                                                        )}
+                                                </div>
+                                            </div>
                                         ) : (
                                             <div className="px-5 text_table_important">
                                                 Under review
