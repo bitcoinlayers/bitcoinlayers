@@ -72,6 +72,7 @@ const LayerTable = ({ data, headers }: Props) => {
         [key: string]: boolean | null;
     }>({});
     const [mobileActiveTab, setMobileActiveTab] = useState<TableTabKey>("Type");
+    const [hoverPosition, setHoverPosition] = useState({ top: 0, left: 0 });
 
     useEffect(() => {
         // Default sorting by Name alphabetically on first load
@@ -151,6 +152,15 @@ const LayerTable = ({ data, headers }: Props) => {
     const handleMobileTabClick = (tab: TableTabKey) => {
         setMobileActiveTab(tab);
     };
+
+    const handleMouseEnter = (
+        event: React.MouseEvent<HTMLTableCellElement>,
+    ) => {
+        const { top, left, width } =
+            event.currentTarget.getBoundingClientRect();
+        setHoverPosition({ top, left: left + width });
+    };
+
     const mobileTableHeaders = headers.filter(
         (_item) => _item.name === mobileActiveTab || _item.name === "Name",
     );
@@ -198,7 +208,7 @@ const LayerTable = ({ data, headers }: Props) => {
             </MobileView>
 
             <div className="overflow-x-auto bg-lightsecondary rounded-xl mx-auto relative">
-                <table className="bg-lightsecondary table-fixed w-full text-sm text-left rtl:text-right rounded-xl ">
+                <table className="bg-lightsecondary table-fixed w-full text-sm text-left rtl:text-right rounded-xl">
                     <TableHeader
                         headers={isMobile ? mobileTableHeaders : headers}
                         onSort={handleSort}
@@ -225,13 +235,20 @@ const LayerTable = ({ data, headers }: Props) => {
                                     </span>
                                 </td>
                                 {!isMobile && (
-                                    <td className="relative w-[176px] px-2 border-stroke_tertiary text_table_important">
+                                    <td
+                                        className="relative w-[176px] px-2 border-stroke_tertiary text_table_important"
+                                        onMouseEnter={handleMouseEnter}
+                                    >
                                         {item.underReview === "no" ? (
                                             <div className="relative group">
                                                 <Risk layer={item} />
                                                 <div
-                                                    className="absolute left-0 top-full mt-2 hidden bg-white p-4 shadow-lg border border-stroke_tertiary rounded-lg group-hover:block z-50"
-                                                    style={{ width: "500px" }}
+                                                    className="fixed mt-2 hidden bg-white p-4 shadow-lg border border-stroke_tertiary rounded-lg group-hover:block z-50"
+                                                    style={{
+                                                        width: "500px",
+                                                        top: `${hoverPosition.top}px`,
+                                                        left: `${hoverPosition.left}px`,
+                                                    }}
                                                 >
                                                     <div className="mb-4 font-bold border-b border-stroke_tertiary">
                                                         Risk Snapshot
