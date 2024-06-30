@@ -17,7 +17,6 @@ import rgbJson from "../content/layers/rgb.json";
 import heliosphereJson from "../content/layers/heliosphere.json";
 import libreJson from "../content/layers/libre.json";
 import merlinJson from "../content/layers/merlin.json";
-import rifJson from "../content/layers/rif.json";
 import rolluxJson from "../content/layers/rollux.json";
 import zkcoinsJson from "../content/layers/zkcoins.json";
 import zklayerJson from "../content/layers/zklayer.json";
@@ -53,7 +52,6 @@ const rgb: Layer = rgbJson as Layer;
 const heliosphere: Layer = heliosphereJson as Layer;
 const libre: Layer = libreJson as Layer;
 const merlin: Layer = merlinJson as Layer;
-const rif: Layer = rifJson as Layer;
 const rollux: Layer = rolluxJson as Layer;
 const zkcoins: Layer = zkcoinsJson as Layer;
 const zklayer: Layer = zklayerJson as Layer;
@@ -89,7 +87,6 @@ export const allLayers: Layer[] = [
     heliosphere,
     libre,
     merlin,
-    rif,
     rollux,
     zkcoins,
     zklayer,
