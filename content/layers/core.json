@@ -28,7 +28,7 @@
             "category": "Bridge Custody",
             "score": 0,
             "tier": "High",
-            "title": "No Unilateral Exits",
+            "title": "No unilateral exits",
             "content": "coreBTC does not support unilateral exits. Users must trust several roles on Bitcoin and Core Chain for the minting and burning of coreBTC. Specifically, to exit from coreBTC back to BTC, users must trust Lockers and Bitcoin Light Clients. All roles are financially incentivized to be good actors."
         },
         {
@@ -42,7 +42,7 @@
             "category": "Network Operators",
             "score": 0,
             "tier": "Medium",
-            "title": "Permissionless Block Production",
+            "title": "Permissionless block production",
             "content": "Core Chain has a network of 25 validators who participate as block producers. Each day, the 21 validators with the highest hybrid score (from DPOW and DPOS) are elected to participate in block production. Any Core chain full node can register to become a part of this set. Core Chain does not support exits that circumvent its validator set. This means that users must trust Core Chain validators to include their transactions in blocks."
         },
         {

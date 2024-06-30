@@ -160,7 +160,18 @@ const LayerTableUpcoming = ({ data, headers }: Props) => {
                             <td className="w-[140px] px-6 py-4 border-stroke_tertiary text_table_important">
                                 {item.live}
                             </td>
-                            <td className="w-[120px] px-6 py-4 border-stroke_tertiary text_table_important">
+                            <td className="w-[120px] lg:px-6 px-4 py-3 lg:py-4 border-stroke_tertiary text_table_important flex items-center">
+                                {item.nativeToken
+                                    .toLowerCase()
+                                    .includes("btc") && (
+                                    <Image
+                                        src="/btc.svg"
+                                        alt="BTC logo"
+                                        width={20}
+                                        height={20}
+                                        className="mr-2"
+                                    />
+                                )}
                                 {item.nativeToken}
                             </td>
                             <td className="w-[136px] px-6 py-4 border-r border-stroke_tertiary text_table_important">

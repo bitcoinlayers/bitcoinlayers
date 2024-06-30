@@ -46,6 +46,20 @@ const RiskAnalysis: React.FC<RiskAnalysisProps> = ({
                 return "text-text_secondary";
         }
     };
+    const getRiskEmoji = (riskFactor: string) => {
+        switch (riskFactor) {
+            case "Low":
+                return "✅";
+            case "Medium":
+                return "🔔";
+            case "Medium-High":
+                return "⚠️";
+            case "High":
+                return "🚨";
+            default:
+                return "text-text_secondary";
+        }
+    };
 
     if (!riskAnalysis) {
         return null;
@@ -89,6 +103,11 @@ const RiskAnalysis: React.FC<RiskAnalysisProps> = ({
                                                         ],
                                                     )} text-base font-bold font-Hack`}
                                                 >
+                                                    {getRiskEmoji(
+                                                        riskFactors[
+                                                            contentIndex
+                                                        ],
+                                                    )}
                                                     {/* {contentIndex + 1} TODO: add quantitative risk scores when we add this level of depth on reviews */}
                                                 </div>
                                             </div>

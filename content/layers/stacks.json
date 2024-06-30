@@ -42,14 +42,14 @@
             "category": "Block Production",
             "score": 0,
             "tier": "High",
-            "title": "Permissionless Block Production",
+            "title": "Permissionless block production",
             "content": "Stacks has a permissionless block production mechanism, but it does not support exits that circumvent its miner/validator set. This means that users must trust Stacks validators to include their transactions in blocks. Anyone with sufficient capital and resources can participate as a Stacks miner. Only 11 miners are participating in Stacks consensus."
         },
         {
             "category": "Settlement Assurance",
             "score": 0,
             "tier": "Medium",
-            "title": "Self-Enforcement of State Validation",
+            "title": "Self-enforcement of state validation",
             "content": "Settlement is done offchain, on Stacks, rather than onchain, on Bitcoin. The validity of Stacks state transitions are not enforced by Bitcoin."
         }
     ],

@@ -6,11 +6,11 @@
     "underReview": "yes",
     "riskFactors": ["", "", "", ""],
     "purpose": "-",
-    "btcBridge": "x",
-    "settlement": "x",
+    "btcBridge": "Under review",
+    "settlement": "Under review",
     "btcLocked": 0,
-    "executionEnv": "x",
-    "consensus": "-",
+    "executionEnv": "Under review",
+    "consensus": "Under review",
     "nativeToken": "BEVM",
     "feeToken": "x",
     "enshrinedBtc": "x",
@@ -51,6 +51,17 @@
             "tier": "",
             "title": "",
             "content": ""
+        }
+    ],
+    "sections": [
+        {
+            "id": "description",
+            "title": "Description",
+            "content": [
+                {
+                    "content": "BEVM is a sidechain being developed by the developers of ChainX, a Bitcoin sidechain built on Substrate consensus. We are currently reviewing BEVM's implementation."
+                }
+            ]
         }
     ],
     "knowledgeBits": [

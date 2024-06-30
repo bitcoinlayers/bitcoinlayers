@@ -25,6 +25,21 @@ interface Props {
     }[];
 }
 
+const getRiskColorClass = (riskFactor: string) => {
+    switch (riskFactor) {
+        case "Low":
+            return "text-text_risk_low";
+        case "Medium":
+            return "text-text_risk_midlow";
+        case "Medium-High":
+            return "text-text_risk_midhigh";
+        case "High":
+            return "text-text_risk_high";
+        default:
+            return "text-text_secondary";
+    }
+};
+
 const LayerImage = ({ src, title }: { src: string; title: string }) => {
     const [imageSrc, setImageSrc] = useState(src);
 
@@ -57,6 +72,7 @@ const LayerTable = ({ data, headers }: Props) => {
         [key: string]: boolean | null;
     }>({});
     const [mobileActiveTab, setMobileActiveTab] = useState<TableTabKey>("Type");
+    const [hoverPosition, setHoverPosition] = useState({ top: 0, left: 0 });
 
     useEffect(() => {
         // Default sorting by Name alphabetically on first load
@@ -136,6 +152,15 @@ const LayerTable = ({ data, headers }: Props) => {
     const handleMobileTabClick = (tab: TableTabKey) => {
         setMobileActiveTab(tab);
     };
+
+    const handleMouseEnter = (
+        event: React.MouseEvent<HTMLTableCellElement>,
+    ) => {
+        const { top, left, width } =
+            event.currentTarget.getBoundingClientRect();
+        setHoverPosition({ top, left: left + width });
+    };
+
     const mobileTableHeaders = headers.filter(
         (_item) => _item.name === mobileActiveTab || _item.name === "Name",
     );
@@ -183,7 +208,7 @@ const LayerTable = ({ data, headers }: Props) => {
             </MobileView>
 
             <div className="overflow-x-auto bg-lightsecondary rounded-xl mx-auto relative">
-                <table className="bg-lightsecondary table-fixed w-full text-sm text-left rtl:text-right rounded-xl ">
+                <table className="bg-lightsecondary table-fixed w-full text-sm text-left rtl:text-right rounded-xl">
                     <TableHeader
                         headers={isMobile ? mobileTableHeaders : headers}
                         onSort={handleSort}
@@ -210,9 +235,68 @@ const LayerTable = ({ data, headers }: Props) => {
                                     </span>
                                 </td>
                                 {!isMobile && (
-                                    <td className="w-[176px] px-2 border-stroke_tertiary text_table_important">
+                                    <td
+                                        className="relative w-[176px] px-2 border-stroke_tertiary text_table_important"
+                                        onMouseEnter={handleMouseEnter}
+                                    >
                                         {item.underReview === "no" ? (
-                                            <Risk layer={item} />
+                                            <div className="relative group">
+                                                <Risk layer={item} />
+                                                <div
+                                                    className="fixed mt-2 hidden bg-white p-4 shadow-lg border border-stroke_tertiary rounded-lg group-hover:block z-50"
+                                                    style={{
+                                                        width: "500px",
+                                                        top: `${hoverPosition.top}px`,
+                                                        left: `${hoverPosition.left}px`,
+                                                    }}
+                                                >
+                                                    <div className="mb-4 font-bold border-b border-stroke_tertiary">
+                                                        Risk Snapshot
+                                                    </div>
+                                                    {item.riskAnalysis
+                                                        .slice(0, 4)
+                                                        .map(
+                                                            (
+                                                                content,
+                                                                contentIndex,
+                                                            ) => (
+                                                                <div
+                                                                    key={
+                                                                        contentIndex
+                                                                    }
+                                                                    className="mb-2"
+                                                                >
+                                                                    <div className="mb-2 font-semibold">
+                                                                        {
+                                                                            content.category
+                                                                        }
+                                                                        :{" "}
+                                                                        <span
+                                                                            className={getRiskColorClass(
+                                                                                item
+                                                                                    .riskFactors[
+                                                                                    contentIndex
+                                                                                ],
+                                                                            )}
+                                                                        >
+                                                                            {
+                                                                                item
+                                                                                    .riskFactors[
+                                                                                    contentIndex
+                                                                                ]
+                                                                            }
+                                                                        </span>
+                                                                    </div>
+                                                                    <div className="mb-4">
+                                                                        {
+                                                                            content.title
+                                                                        }
+                                                                    </div>
+                                                                </div>
+                                                            ),
+                                                        )}
+                                                </div>
+                                            </div>
                                         ) : (
                                             <div className="px-5 text_table_important">
                                                 Under review
@@ -233,7 +317,18 @@ const LayerTable = ({ data, headers }: Props) => {
                                 )}
                                 {(!isMobile ||
                                     mobileActiveTab === "Unit of Account") && (
-                                    <td className="w-[120px] lg:px-6 px-4 py-3 lg:py-4 border-stroke_tertiary text_table_important">
+                                    <td className="w-[120px] lg:px-6 px-4 py-3 lg:py-4 border-stroke_tertiary text_table_important flex items-center">
+                                        {item.nativeToken
+                                            .toLowerCase()
+                                            .includes("btc") && (
+                                            <Image
+                                                src="/btc.svg"
+                                                alt="BTC logo"
+                                                width={20}
+                                                height={20}
+                                                className="mr-2"
+                                            />
+                                        )}
                                         {item.nativeToken}
                                     </td>
                                 )}

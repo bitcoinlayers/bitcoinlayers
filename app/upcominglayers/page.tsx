@@ -3,7 +3,6 @@
 import React, { useState } from "react";
 import { allLayers } from "@/util/layer_index";
 import Hero from "@/components/hero";
-// import LayerTable from "@/components/tables/layerTable";
 import LayerTableUpcoming from "@/components/tables/layerUpcoming";
 
 export default function Home() {

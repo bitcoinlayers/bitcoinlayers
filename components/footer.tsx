@@ -117,15 +117,15 @@ export default function Footer(): ReactElement {
                                         <SectionItem href="/">
                                             Layers
                                         </SectionItem>
-                                        <SectionItem href="/bridges">
+                                        {/* <SectionItem href="/bridges">
                                             Bridges
-                                        </SectionItem>
+                                        </SectionItem> */}
                                         <SectionItem href="/infrastructure">
                                             Infrastructure
                                         </SectionItem>
-                                        <SectionItem href="/opcode">
+                                        {/* <SectionItem href="/opcode">
                                             Opcodes
-                                        </SectionItem>
+                                        </SectionItem> */}
                                         <SectionItem href="/upcominglayers">
                                             Upcoming Layers
                                         </SectionItem>
