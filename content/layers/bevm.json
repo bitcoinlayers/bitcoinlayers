@@ -12,8 +12,8 @@
     "executionEnv": "Under review",
     "consensus": "Under review",
     "nativeToken": "BEVM",
-    "feeToken": "x",
-    "enshrinedBtc": "x",
+    "feeToken": "-",
+    "enshrinedBtc": "-",
     "links": [
         "https://www.bevm.io/",
         "https://www.bevm.io/",
