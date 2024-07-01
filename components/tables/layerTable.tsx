@@ -1,5 +1,3 @@
-"use client";
-
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
@@ -72,7 +70,6 @@ const LayerTable = ({ data, headers }: Props) => {
         [key: string]: boolean | null;
     }>({});
     const [mobileActiveTab, setMobileActiveTab] = useState<TableTabKey>("Type");
-    const [hoverPosition, setHoverPosition] = useState({ top: 0, left: 0 });
 
     useEffect(() => {
         // Default sorting by Name alphabetically on first load
@@ -153,14 +150,6 @@ const LayerTable = ({ data, headers }: Props) => {
         setMobileActiveTab(tab);
     };
 
-    const handleMouseEnter = (
-        event: React.MouseEvent<HTMLTableCellElement>,
-    ) => {
-        const { top, left, width } =
-            event.currentTarget.getBoundingClientRect();
-        setHoverPosition({ top, left: left + width });
-    };
-
     const mobileTableHeaders = headers.filter(
         (_item) => _item.name === mobileActiveTab || _item.name === "Name",
     );
@@ -235,68 +224,9 @@ const LayerTable = ({ data, headers }: Props) => {
                                     </span>
                                 </td>
                                 {!isMobile && (
-                                    <td
-                                        className="relative w-[176px] px-2 border-stroke_tertiary text_table_important"
-                                        onMouseEnter={handleMouseEnter}
-                                    >
+                                    <td className="relative w-[176px] px-2 border-stroke_tertiary text_table_important">
                                         {item.underReview === "no" ? (
-                                            <div className="relative group">
-                                                <Risk layer={item} />
-                                                <div
-                                                    className="fixed mt-2 hidden bg-white p-4 shadow-lg border border-stroke_tertiary rounded-lg group-hover:block z-50"
-                                                    style={{
-                                                        width: "500px",
-                                                        top: `${hoverPosition.top}px`,
-                                                        left: `${hoverPosition.left}px`,
-                                                    }}
-                                                >
-                                                    <div className="mb-4 font-bold border-b border-stroke_tertiary">
-                                                        Risk Snapshot
-                                                    </div>
-                                                    {item.riskAnalysis
-                                                        .slice(0, 4)
-                                                        .map(
-                                                            (
-                                                                content,
-                                                                contentIndex,
-                                                            ) => (
-                                                                <div
-                                                                    key={
-                                                                        contentIndex
-                                                                    }
-                                                                    className="mb-2"
-                                                                >
-                                                                    <div className="mb-2 font-semibold">
-                                                                        {
-                                                                            content.category
-                                                                        }
-                                                                        :{" "}
-                                                                        <span
-                                                                            className={getRiskColorClass(
-                                                                                item
-                                                                                    .riskFactors[
-                                                                                    contentIndex
-                                                                                ],
-                                                                            )}
-                                                                        >
-                                                                            {
-                                                                                item
-                                                                                    .riskFactors[
-                                                                                    contentIndex
-                                                                                ]
-                                                                            }
-                                                                        </span>
-                                                                    </div>
-                                                                    <div className="mb-4">
-                                                                        {
-                                                                            content.title
-                                                                        }
-                                                                    </div>
-                                                                </div>
-                                                            ),
-                                                        )}
-                                                </div>
-                                            </div>
+                                            <Risk layer={item} />
                                         ) : (
                                             <div className="px-5 text_table_important">
                                                 Under review
