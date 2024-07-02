@@ -67,43 +67,37 @@ const ContributePage: React.FC = () => {
     );
 
     const supportContent = (
-        <div className="w-[960px] h-[460px] flex flex-col justify-center items-center gap-6">
-            <div className="self-stretch h-[72px] flex flex-col justify-center items-end gap-8">
-                <div className="self-stretch h-[72px] flex flex-col justify-start items-start gap-2">
-                    <div className="self-stretch text-slate-500 text-base font-normal leading-normal">
-                        A great way to support the Bitcoin Layers project is by
-                        following us on social media. We are active on{" "}
-                        <Link
-                            href="https://twitter.com/januszg_"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-orange-600 text-base font-normal leading-normal"
-                        >
-                            Twitter
-                        </Link>{" "}
-                        ,{" "}
-                        <Link
-                            href="https://twitter.com/redvelvetzip"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-orange-600 text-base font-normal leading-normal"
-                        >
-                            Nostr
-                        </Link>{" "}
-                        , and{" "}
-                        <Link
-                            href="https://twitter.com/redvelvetzip"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-orange-600 text-base font-normal leading-normal"
-                        >
-                            Farcaster
-                        </Link>{" "}
-                        .
-                    </div>
-                </div>
-            </div>
-        </div>
+        <span className="text-slate-500 text-base font-normal leading-normal">
+            A great way to support the Bitcoin Layers project is by following us
+            on social media. We are active on{" "}
+            <Link
+                href="https://twitter.com/januszg_"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-orange-600 text-base font-normal leading-normal"
+            >
+                Twitter
+            </Link>{" "}
+            ,{" "}
+            <Link
+                href="https://twitter.com/redvelvetzip"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-orange-600 text-base font-normal leading-normal"
+            >
+                Nostr
+            </Link>{" "}
+            , and{" "}
+            <Link
+                href="https://twitter.com/redvelvetzip"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-orange-600 text-base font-normal leading-normal"
+            >
+                Farcaster
+            </Link>{" "}
+            .
+        </span>
     );
 
     return (
