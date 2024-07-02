@@ -58,7 +58,11 @@ const ContributePage: React.FC = () => {
             >
                 Twitter
             </Link>{" "}
-            if you&apos;d like to get involved.
+            if you&apos;d like to get involved. We welcome anyone to contribute
+            to the website by submitting pull requests, creating and commenting
+            on active issues in our GitHub. Anyone is welcome to submit a
+            project to be reviewed on the website. And, anyone is welcome to
+            fork the website for their own personal or commercial use.
         </span>
     );
 
@@ -67,76 +71,47 @@ const ContributePage: React.FC = () => {
             <div className="self-stretch h-[72px] flex flex-col justify-center items-end gap-8">
                 <div className="self-stretch h-[72px] flex flex-col justify-start items-start gap-2">
                     <div className="self-stretch text-slate-500 text-base font-normal leading-normal">
-                        Bitcoin Layers is currently managed on a volunteer basis
-                        by{" "}
+                        A great way to support the Bitcoin Layers project is by
+                        following us on social media. We are active on{" "}
                         <Link
                             href="https://twitter.com/januszg_"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-orange-600 text-base font-normal leading-normal"
                         >
-                            Januszg
+                            Twitter
                         </Link>{" "}
-                        (a pseudonymous contributor) and{" "}
+                        ,{" "}
                         <Link
                             href="https://twitter.com/redvelvetzip"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-orange-600 text-base font-normal leading-normal"
                         >
-                            Red Sheehan
+                            Nostr
                         </Link>{" "}
-                        from Messari. Both have experience working in the
-                        Bitcoin space, and have conducted research on Bitcoin
-                        scaling protocols. If you would like to support their
-                        work, consider donating at the Bitcoin address below.
+                        , and{" "}
+                        <Link
+                            href="https://twitter.com/redvelvetzip"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-orange-600 text-base font-normal leading-normal"
+                        >
+                            Farcaster
+                        </Link>{" "}
+                        .
                     </div>
                 </div>
             </div>
-            <div className="flex flex-col justify-center items-center gap-6">
-                <div className="flex flex-col justify-center items-center gap-3">
-                    <div className="w-[250px] h-[250px] pl-[10.20px] pr-[10.21px] py-[10.20px] bg-white justify-center items-center inline-flex">
-                        <div className="w-[229.59px] h-[229.59px] relative flex flex-col justify-start items-start">
-                            <div className="w-14 h-14 justify-center items-center inline-flex">
-                                <div className="w-full">
-                                    <Image
-                                        src="/donation_qr.png"
-                                        alt="Donation"
-                                        fill
-                                        style={{ objectFit: "cover" }}
-                                    />
-                                </div>
-                            </div>
-                        </div>
+            <div className="rounded-full border-2 border-slate-300 justify-center items-center gap-2 inline-flex">
+                <button
+                    onClick={copyToClipboard}
+                    className="px-4 py-[5px] bg-white border border-slate-300 rounded-full justify-center items-center gap-1.5 flex"
+                >
+                    <div className="text-center text-slate-600 text-sm font-medium leading-tight">
+                        Copy Address
                     </div>
-                    <div className="text-center text-zinc-950 text-sm font-medium leading-normal">
-                        36ra<span className="text-zinc-500">B492</span>1Au5
-                        <span className="text-zinc-500">Kck4</span>uT52
-                        <span className="text-zinc-500">1nbf</span>L1kt
-                        <span className="text-zinc-500">TwLN</span>SY
-                    </div>
-                    {/**TODO add Ordinals address in addition to standard BTC address */}
-                    {/* <div className="text-center text-zinc-950 text-sm font-medium leading-normal">
-            bc1p<span className="text-zinc-500">59km</span>vn88
-            <span className="text-zinc-500">qfgl</span>qp38
-            <span className="text-zinc-500">tchd</span>k2yd
-            <span className="text-zinc-500">2huz</span>vedp
-            <span className="text-zinc-500">kq5q</span>7f50
-            <span className="text-zinc-500">my3z</span>2eem
-            <span className="text-zinc-500">rfcq</span>e3m3
-            <span className="text-zinc-500">9m</span>
-          </div> */}
-                </div>
-                <div className="rounded-full border-2 border-slate-300 justify-center items-center gap-2 inline-flex">
-                    <button
-                        onClick={copyToClipboard}
-                        className="px-4 py-[5px] bg-white border border-slate-300 rounded-full justify-center items-center gap-1.5 flex"
-                    >
-                        <div className="text-center text-slate-600 text-sm font-medium leading-tight">
-                            Copy Address
-                        </div>
-                    </button>
-                </div>
+                </button>
             </div>
         </div>
     );
