@@ -58,7 +58,11 @@ const ContributePage: React.FC = () => {
             >
                 Twitter
             </Link>{" "}
-            if you&apos;d like to get involved. We welcome anyone to contribute to the website by submitting pull requests, creating and commenting on active issues in our GitHub. Anyone is welcome to submit a project to be reviewed on the website. And, anyone is welcome to fork the website for their own personal or commercial use.
+            if you&apos;d like to get involved. We welcome anyone to contribute
+            to the website by submitting pull requests, creating and commenting
+            on active issues in our GitHub. Anyone is welcome to submit a
+            project to be reviewed on the website. And, anyone is welcome to
+            fork the website for their own personal or commercial use.
         </span>
     );
 
@@ -67,8 +71,8 @@ const ContributePage: React.FC = () => {
             <div className="self-stretch h-[72px] flex flex-col justify-center items-end gap-8">
                 <div className="self-stretch h-[72px] flex flex-col justify-start items-start gap-2">
                     <div className="self-stretch text-slate-500 text-base font-normal leading-normal">
-                        A great way to support the Bitcoin Layers project is by following us on social media. We are active on
-                        {" "}
+                        A great way to support the Bitcoin Layers project is by
+                        following us on social media. We are active on{" "}
                         <Link
                             href="https://twitter.com/januszg_"
                             target="_blank"
@@ -99,16 +103,15 @@ const ContributePage: React.FC = () => {
                     </div>
                 </div>
             </div>
-                <div className="rounded-full border-2 border-slate-300 justify-center items-center gap-2 inline-flex">
-                    <button
-                        onClick={copyToClipboard}
-                        className="px-4 py-[5px] bg-white border border-slate-300 rounded-full justify-center items-center gap-1.5 flex"
-                    >
-                        <div className="text-center text-slate-600 text-sm font-medium leading-tight">
-                            Copy Address
-                        </div>
-                    </button>
-                </div>
+            <div className="rounded-full border-2 border-slate-300 justify-center items-center gap-2 inline-flex">
+                <button
+                    onClick={copyToClipboard}
+                    className="px-4 py-[5px] bg-white border border-slate-300 rounded-full justify-center items-center gap-1.5 flex"
+                >
+                    <div className="text-center text-slate-600 text-sm font-medium leading-tight">
+                        Copy Address
+                    </div>
+                </button>
             </div>
         </div>
     );
