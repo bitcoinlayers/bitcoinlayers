@@ -103,16 +103,6 @@ const ContributePage: React.FC = () => {
                     </div>
                 </div>
             </div>
-            <div className="rounded-full border-2 border-slate-300 justify-center items-center gap-2 inline-flex">
-                <button
-                    onClick={copyToClipboard}
-                    className="px-4 py-[5px] bg-white border border-slate-300 rounded-full justify-center items-center gap-1.5 flex"
-                >
-                    <div className="text-center text-slate-600 text-sm font-medium leading-tight">
-                        Copy Address
-                    </div>
-                </button>
-            </div>
         </div>
     );
 
