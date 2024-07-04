@@ -30,7 +30,6 @@ import sideJson from "../content/layers/side.json";
 import mezoJson from "../content/layers/mezo.json";
 import arkJson from "../content/layers/ark.json";
 import hedgehogJson from "../content/layers/hedgehog.json";
-import bevmJson from "../content/layers/bevm.json";
 
 // @ts-ignore
 const core: Layer = coreJson as Layer;
@@ -67,7 +66,6 @@ const side: Layer = sideJson as Layer;
 const mezo: Layer = mezoJson as Layer;
 const ark: Layer = arkJson as Layer;
 const hedgehog: Layer = hedgehogJson as Layer;
-const bevm: Layer = bevmJson as Layer;
 
 export const allLayers: Layer[] = [
     core,
@@ -100,7 +98,6 @@ export const allLayers: Layer[] = [
     mezo,
     ark,
     hedgehog,
-    bevm,
 ];
 
 export const allLayerSlugs: string[] = allLayers.map((layer) => layer.slug);
