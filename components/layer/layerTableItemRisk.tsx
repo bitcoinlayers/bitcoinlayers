@@ -11,11 +11,11 @@ const getRiskColorFont = (riskFactor: string) => {
         case "Low":
             return "text-text_risk_low";
         case "Medium":
-            return "text-text_risk_midlow";
-        case "Medium-High":
-            return "text-text_risk_midhigh";
+            return "text-text_risk_medium";
         case "High":
             return "text-text_risk_high";
+        case "Critical":
+            return "text-text_risk_critical";
         default:
             return "text-text_secondary";
     }
@@ -30,17 +30,17 @@ const getRiskColorClass = (riskFactor: string) => {
             };
         case "Medium":
             return {
-                bg: "bg-bg_midlow",
+                bg: "bg-bg_medium",
                 fill: "#F4CD00",
-            };
-        case "Medium-High":
-            return {
-                bg: "bg-bg_midhigh",
-                fill: "#F99107",
             };
         case "High":
             return {
                 bg: "bg-bg_high",
+                fill: "#FF4D4F",
+            };
+        case "Critical":
+            return {
+                bg: "bg-bg_critical",
                 fill: "#FF4D4F",
             };
         default:
