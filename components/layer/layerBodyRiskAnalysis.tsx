@@ -39,7 +39,7 @@ const RiskAnalysis: React.FC<RiskAnalysisProps> = ({
             case "Medium":
                 return "bg_medium";
             case "High":
-                return "bg_midhigh";
+                return "bg_high";
             case "Critical":
                 return "bg_critical";
             default:
