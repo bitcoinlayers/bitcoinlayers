@@ -3,7 +3,7 @@
     "title": "Internet Computer",
     "layerType": "Sidechain",
     "live": "Mainnet",
-    "underReview": "yes",
+    "underReview": "no",
     "riskFactors": ["High", "Medium", "High", "Medium"],
     "purpose": "General",
     "btcBridge": "Consensus-level Multi-sig",
