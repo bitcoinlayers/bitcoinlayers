@@ -22,7 +22,7 @@
         "https://github.com/bitlayer-org",
         "https://twitter.com/BitlayerLabs"
     ],
-    "description": "BitLayer's mainnet v1 is a federated sidechain. It is building towards a validia chain on top of Bitcoin. It supports an EVM execution environment with plans to support other VMs. In its docs, BitLayer states that it will use an offchain data availability solution in its future mainnet releases. Its roadmap sees it adding support for a BitVM-style bridge, but currently, the bridge is managed by a federation.",
+    "description": "BitLayer's mainnet v1 is a federated sidechain. It is building towards a rollup-style chain on top of Bitcoin. It supports an EVM execution environment with plans to support other VMs. Its roadmap sees it adding support for a BitVM-style bridge, but currently, the bridge is managed by a federation.",
     "riskAnalysis": [
         {
             "category": "Bridge Custody",
@@ -36,7 +36,7 @@
             "score": 0,
             "tier": "High",
             "title": "Data is stored offchain",
-            "content": "BitLayer does not currently use Bitcoin for data availability."
+            "content": "BitLayer does not currently use Bitcoin for data availability. The data availability requirement is currently fulfilled via a federated network of nodes."
         },
         {
             "category": "Network Operators",
@@ -101,10 +101,6 @@
                 {
                     "title": "BitVM being researched",
                     "content": "BitLayer is currently researching how BitVM can improve trust assumptions related to its two-way peg with Bitcoin. The BitLayer team has an open repository of research related to BitVM. BitLayer’s documentation site states that the BitVM implementation will be federated."
-                },
-                {
-                    "title": "Offchain DA on roadmap",
-                    "content": "BitLayer will not use Bitcoin for data availability long-term. This means that it will be a Bitvimium once it integrates with an data availability layer and has implemented a bridge program where operators must produce a validity proof to process withdrawals."
                 }
             ]
         },
