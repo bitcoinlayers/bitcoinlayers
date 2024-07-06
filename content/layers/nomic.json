@@ -1,0 +1,62 @@
+{
+    "slug": "nomic",
+    "title": "Nomic",
+    "layerType": "Sidechain",
+    "live": "Mainnet",
+    "underReview": "yes",
+    "riskFactors": ["", "", "", ""],
+    "purpose": "-",
+    "btcBridge": "x",
+    "settlement": "x",
+    "btcLocked": 0,
+    "executionEnv": "x",
+    "consensus": "-",
+    "nativeToken": "-",
+    "feeToken": "x",
+    "enshrinedBtc": "x",
+    "links": [
+        "https://www.nomic.io/",
+        "https://www.nomic.io/",
+        "https://docs.sequentia.io/",
+        "https://bigdipper.live/nomic",
+        "https://github.com/nomic-io/docs",
+        "https://x.com/nomicbtc"
+    ],
+    "description": "Nomic is a Cosmos SDK Chain that enables users to leverage bitcoin in the Cosmos ecosystem.",
+    "riskAnalysis": [
+        {
+            "category": "Unilateral Exits",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "Data Availability",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "Block Production",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "State Validation",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        }
+    ],
+    "knowledgeBits": [
+        {
+            "url": "https://www.nomic.io/",
+            "displayText": "Nomic Website"
+        }
+    ]
+}

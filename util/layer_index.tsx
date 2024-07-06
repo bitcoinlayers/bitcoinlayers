@@ -31,6 +31,10 @@ import mezoJson from "../content/layers/mezo.json";
 import arkJson from "../content/layers/ark.json";
 import hedgehogJson from "../content/layers/hedgehog.json";
 import roochJson from "../content/layers/rooch.json";
+import bit2Json from "../content/layers/bit2.json";
+import sequentiaJson from "../content/layers/sequentia.json";
+import brollupJson from "../content/layers/brollup.json";
+import nomicJson from "../content/layers/nomic.json";
 
 // @ts-ignore
 const core: Layer = coreJson as Layer;
@@ -68,6 +72,10 @@ const mezo: Layer = mezoJson as Layer;
 const ark: Layer = arkJson as Layer;
 const hedgehog: Layer = hedgehogJson as Layer;
 const rooch: Layer = roochJson as Layer;
+const bit2: Layer = bit2Json as Layer;
+const sequentia: Layer = sequentiaJson as Layer;
+const brollup: Layer = brollupJson as Layer;
+const nomic: Layer = nomicJson as Layer;
 
 export const allLayers: Layer[] = [
     core,
@@ -101,6 +109,10 @@ export const allLayers: Layer[] = [
     ark,
     hedgehog,
     rooch,
+    bit2,
+    sequentia,
+    brollup,
+    nomic,
 ];
 
 export const allLayerSlugs: string[] = allLayers.map((layer) => layer.slug);

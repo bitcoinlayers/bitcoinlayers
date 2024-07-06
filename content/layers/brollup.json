@@ -1,0 +1,62 @@
+{
+    "slug": "brollup",
+    "title": "Brollup",
+    "layerType": "Rollup",
+    "live": "Announced",
+    "underReview": "yes",
+    "riskFactors": ["", "", "", ""],
+    "purpose": "-",
+    "btcBridge": "x",
+    "settlement": "x",
+    "btcLocked": 0,
+    "executionEnv": "x",
+    "consensus": "-",
+    "nativeToken": "-",
+    "feeToken": "x",
+    "enshrinedBtc": "x",
+    "links": [
+        "https://brqgoo.medium.com/introducing-brollups-18ec4081f6e7",
+        "https://brqgoo.medium.com/introducing-brollups-18ec4081f6e7",
+        "https://brqgoo.medium.com/introducing-brollups-18ec4081f6e7",
+        "https://brqgoo.medium.com/introducing-brollups-18ec4081f6e7",
+        "https://brqgoo.medium.com/introducing-brollups-18ec4081f6e7",
+        "https://brqgoo.medium.com/introducing-brollups-18ec4081f6e7"
+    ],
+    "description": "Brollups are a proposed rollup design that use the Bitcoin block space as their data availability layer. Brollups work natively with Bitcoin as a payable construct",
+    "riskAnalysis": [
+        {
+            "category": "Unilateral Exits",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "Data Availability",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "Block Production",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "State Validation",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        }
+    ],
+    "knowledgeBits": [
+        {
+            "url": "https://brqgoo.medium.com/introducing-brollups-18ec4081f6e7",
+            "displayText": "Introductory Blog Post"
+        }
+    ]
+}

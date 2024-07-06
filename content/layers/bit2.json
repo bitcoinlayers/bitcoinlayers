@@ -1,0 +1,62 @@
+{
+    "slug": "bit2",
+    "title": "Bit2",
+    "layerType": "Ethereum Rollup",
+    "live": "Testnet",
+    "underReview": "yes",
+    "riskFactors": ["", "", "", ""],
+    "purpose": "-",
+    "btcBridge": "x",
+    "settlement": "x",
+    "btcLocked": 0,
+    "executionEnv": "x",
+    "consensus": "-",
+    "nativeToken": "-",
+    "feeToken": "x",
+    "enshrinedBtc": "x",
+    "links": [
+        "https://bit2.network/",
+        "https://bit2.network/",
+        "https://bit2.network/coming-soon",
+        "https://explorer.bit2.network",
+        "https://bit2.network/coming-soon",
+        "https://twitter.com/bit2net"
+    ],
+    "description": "Bit2 is an Ethereum rollup that uses wBTC for gas and shares sequencer revenue with wBTC holders.",
+    "riskAnalysis": [
+        {
+            "category": "Unilateral Exits",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "Data Availability",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "Block Production",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "State Validation",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        }
+    ],
+    "knowledgeBits": [
+        {
+            "url": "https://bit2.network/",
+            "displayText": "Bit2 Network Website"
+        }
+    ]
+}
