@@ -1,0 +1,62 @@
+{
+    "slug": "rooch",
+    "title": "Rooch Network",
+    "layerType": "Sovereign Rollup",
+    "live": "Testnet",
+    "underReview": "yes",
+    "riskFactors": ["", "", "", ""],
+    "purpose": "-",
+    "btcBridge": "x",
+    "settlement": "x",
+    "btcLocked": 0,
+    "executionEnv": "x",
+    "consensus": "-",
+    "nativeToken": "-",
+    "feeToken": "x",
+    "enshrinedBtc": "x",
+    "links": [
+        "https://rooch.network/",
+        "https://rooch.network/",
+        "https://rooch.network/learn/welcome",
+        "https://blockscout.botanixlabs.dev/",
+        "https://github.com/rooch-network",
+        "https://twitter.com/roochnetwork"
+    ],
+    "description": "Rooch Network is building a MoveVM scaling solution to support new types of Bitcoin applications.",
+    "riskAnalysis": [
+        {
+            "category": "Unilateral Exits",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "Data Availability",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "Block Production",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "State Validation",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        }
+    ],
+    "knowledgeBits": [
+        {
+            "url": "https://rooch.network/",
+            "displayText": "Rooch Network Website"
+        }
+    ]
+}
