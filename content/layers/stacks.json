@@ -3,7 +3,7 @@
     "title": "Stacks",
     "layerType": "Sidechain",
     "live": "Mainnet",
-    "underReview": "no",
+    "underReview": "yes",
     "riskFactors": ["High", "Medium", "High", "Medium"],
     "purpose": "General",
     "btcBridge": "Centralized Multisig(s)",
