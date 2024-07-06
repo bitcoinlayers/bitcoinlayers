@@ -35,6 +35,7 @@ import bit2Json from "../content/layers/bit2.json";
 import sequentiaJson from "../content/layers/sequentia.json";
 import brollupJson from "../content/layers/brollup.json";
 import nomicJson from "../content/layers/nomic.json";
+import bouncebitJson from "../content/layers/bouncebit.json";
 
 // @ts-ignore
 const core: Layer = coreJson as Layer;
@@ -76,6 +77,7 @@ const bit2: Layer = bit2Json as Layer;
 const sequentia: Layer = sequentiaJson as Layer;
 const brollup: Layer = brollupJson as Layer;
 const nomic: Layer = nomicJson as Layer;
+const bouncebit: Layer = bouncebitJson as Layer;
 
 export const allLayers: Layer[] = [
     core,
@@ -113,6 +115,7 @@ export const allLayers: Layer[] = [
     sequentia,
     brollup,
     nomic,
+    bouncebit,
 ];
 
 export const allLayerSlugs: string[] = allLayers.map((layer) => layer.slug);

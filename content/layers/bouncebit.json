@@ -1,8 +1,8 @@
 {
-    "slug": "rooch",
-    "title": "Rooch Network",
-    "layerType": "Sovereign Rollup",
-    "live": "Testnet",
+    "slug": "bounebit",
+    "title": "BounceBit",
+    "layerType": "Sidechain",
+    "live": "Mainnet",
     "underReview": "yes",
     "riskFactors": ["", "", "", ""],
     "purpose": "-",
@@ -15,14 +15,14 @@
     "feeToken": "x",
     "enshrinedBtc": "x",
     "links": [
-        "https://rooch.network/",
-        "https://rooch.network/",
-        "https://rooch.network/learn/welcome",
-        "https://rooch.network/learn/welcome",
-        "https://github.com/rooch-network",
-        "https://twitter.com/roochnetwork"
+        "https://bouncebit.io/",
+        "https://bouncebit.io/",
+        "https://docs.bouncebit.io/",
+        "https://bbscan.io/",
+        "https://github.com/BounceBit-Labs",
+        "https://x.com/bounce_bit"
     ],
-    "description": "Rooch Network is building a MoveVM scaling solution to support new types of Bitcoin applications.",
+    "description": "BouneBit is a Proof-of-Stake blockchain that leverages bitcoin for staking and supports an EVM execution environment.",
     "riskAnalysis": [
         {
             "category": "Unilateral Exits",
@@ -55,8 +55,8 @@
     ],
     "knowledgeBits": [
         {
-            "url": "https://rooch.network/",
-            "displayText": "Rooch Network Website"
+            "url": "https://bouncebit.io/",
+            "displayText": "BounceBit Website"
         }
     ]
 }
