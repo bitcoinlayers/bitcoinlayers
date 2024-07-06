@@ -27,21 +27,21 @@
             "category": "Bridge Custody",
             "score": 0,
             "tier": "Low",
-            "title": "Funds custodied by respective counterparties",
+            "title": "Users custody their funds with their counterparty",
             "content": "When a user opens a payment channel, they deposit their funds into a 2-2 multi-signature address with their counterparty via an onchain Bitcoin transaction. This address holds the funds that are transferred within the channel, and users can collaboratively exit a channel by agreeing on a final state before signing off on withdrawals. If a channel counterparty is unresponsive to a cooperative channel closure attempt, then users can unilaterally exit the channel by spending an uncooperative channel closure transaction onchain. There is a challenge-response mechanism to settle potential disputes between channel counterparties over the final state of a channel closure transaction."
         },
         {
             "category": "Data Availability",
             "score": 0,
             "tier": "Low",
-            "title": "DA is self-hosted by default",
+            "title": "Users are responsible for fulfilling the data availability requirement. State data is self-hosted by default",
             "content": "Lightning users must be responsible for their own data availability, rather than relying on a network of nodes to complete this function. If users irrecoverably lose their channel state data, then they will lose all of the funds they had in the channel."
         },
         {
             "category": "Network Operators",
             "score": 0,
             "tier": "Low",
-            "title": "L2 transactions are peer-to-peer",
+            "title": "L2 transactions are done via a peer-to-peer network",
             "content": "In a payment channel, users interact in a peer-to-peer fashion, meaning no sequencer or block builder is needed. If a user wants to transfer funds to someone who is not in their specific channel, they can route their payment across a network of nodes to reach the receiver. If a channel counterparty fails to route the payment, the user will have to go through another channel (if they have another open, and there is a route to the recipient) or back onchain to transfer funds to the intended recipient."
         },
         {

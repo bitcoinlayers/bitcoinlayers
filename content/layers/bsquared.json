@@ -35,7 +35,7 @@
             "category": "Data Availability",
             "score": 0,
             "tier": "High",
-            "title": "DA requirement is fulfilled by permissioned validators",
+            "title": "DA requirement is fulfilled by three permissioned validators",
             "content": "Sequencer batches are posted to the Bsquared Network L1. This network consists of three, permissioned validators who are responsible for making the data readily available."
         },
         {

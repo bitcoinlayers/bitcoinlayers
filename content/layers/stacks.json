@@ -28,28 +28,28 @@
             "category": "Bridge Custody",
             "score": 0,
             "tier": "High",
-            "title": "Users trust centralized companies with custody of BTC",
+            "title": "Users must trust centralized companies with custody of their BTC",
             "content": "Stacks has no consensus-enshrined BTC bridge. It does have two third-party bridges, which are both custodial multisigs. Users must trust the operators of these bridges to not steal their BTC, as they do not support unilateral exits."
         },
         {
             "category": "Data Availability",
             "score": 0,
             "tier": "Medium",
-            "title": "Only Stacks' state roots posted to Bitcoin",
+            "title": "Only Stacks' state roots posted to Bitcoin. Data availability requirement is fulfilled through Stacks' full nodes",
             "content": "Stacks posts state roots to Bitcoin, but not full transaction calldata. Because of this, Stacks' state cannot be reconstructed using only data from Bitcoin. Stacks has a permissionless validator and node operator set which participate in making data availability readily available."
         },
         {
             "category": "Block Production",
             "score": 0,
             "tier": "High",
-            "title": "Permissionless block production",
+            "title": "Leverages a permissionless consensus mechanism, but has less than 21 operators",
             "content": "Stacks has a permissionless block production mechanism, but it does not support exits that circumvent its miner/validator set. This means that users must trust Stacks validators to include their transactions in blocks. Anyone with sufficient capital and resources can participate as a Stacks miner. Only 11 miners are participating in Stacks consensus."
         },
         {
             "category": "Settlement Assurance",
             "score": 0,
-            "tier": "Medium",
-            "title": "Self-enforcement of state validation",
+            "tier": "High",
+            "title": "State transitions finalized by alternative consensus mechanism with less than 21 participants",
             "content": "Settlement is done offchain, on Stacks, rather than onchain, on Bitcoin. The validity of Stacks state transitions are not enforced by Bitcoin."
         }
     ],

@@ -51,21 +51,21 @@
             "category": "Data Availability",
             "score": 0,
             "tier": "High",
-            "title": "Uses a DAC for offchain data availability. Members under review",
+            "title": "State data is stored and made available by a permissioned data availability committee. The identities of its members are under review",
             "content": "Merlin chain is built on the Polygon CDK stack. In its Github, it has a copy of the Polygon CDK Committee contract. In the contract, it states that the admin has the control to set up the committee, so it is likely that the members of this committee are permissioned and selected by the Merlin Chain operator."
         },
         {
             "category": "Network Operator",
             "score": 0,
             "tier": "High",
-            "title": "Blocks are produced by a centralized sequencer",
+            "title": "Blocks are produced by a centralized sequencer and users cannot propose their own state transitions",
             "content": "Merlin chain blocks are currently produced by a centralized sequencer."
         },
         {
             "category": "Settlement Assurance",
             "score": 0,
             "tier": "High",
-            "title": "zkSNARKs ensure state correctness, but no settlement guarantees inherited from Bitcoin",
+            "title": "zkSNARKs are used to ensure state correctness, but state validation occurs offchain and inherits no settlement guarantees from Bitcoin",
             "content": "Merlin uses zkSNARKS to ensure state correctness. The Merlin prover posts validity proofs of execution to its L1 contract to finalize state transitions. It is unknown which chain Merlin settles to. Its documentation previously pointed to Ethereum, but recent contracts cannot be verified on Ethereum."
         }
     ],

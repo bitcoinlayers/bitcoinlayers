@@ -28,14 +28,14 @@
             "category": "Bridge Custody",
             "score": 0,
             "tier": "High",
-            "title": "Bitcoin users trust various consensus mechanisms for BTC custody",
+            "title": "Bitcoin users trust operators of various multi-sigs for custody of their BTC",
             "content": "For Bitcoin assets, there are no unilateral exits from the BOB chain. Users trust a variety of consensus participants to permit withdrawals from the BOB chain back to Bitcoin. They also trust a variety of consensus participants to secure two-way pegs custodying the BTC.\n\nBOB primarily uses two BTC synthetics on its chain, tBTC and wBTC. Both are ERC-20 tokens on Ethereum. tBTC’s two-way peg on BOB is managed by a ⅗ multi-sig, but it can be upgraded to allow Threshold governance to manage the minting and burning of tBTC on BOB. Threshold governance relies on a separate token and consensus mechanism. wBTC is effectively managed by a centralized custodian, BitGo. Currently, both of these tokens are minted on BOB via its native Ethereum bridge.\n\nUsers trust that the bridge operators will not steal their BTC, the BOB proposer to not publish a malicious, unchallenged state transition, or BOB’s proxy admin to create a malicious smart contract upgrade.\n\nIn the event of a malicious smart contract upgrade, there is no exit window for BOB users. This is the same across all chains built on the OP Stack."
         },
         {
             "category": "Data Availability",
             "score": 0,
             "tier": "Medium",
-            "title": "Offchain via Ethereum full nodes",
+            "title": "Data is stored and made available by Ethereum full nodes",
             "content": "The data for BOB’s state is stored on the Ethereum blockchain. Anyone can run an Ethereum node and verify the state of BOB."
         },
         {
@@ -49,7 +49,7 @@
             "category": "Settlement Assurance",
             "score": 0,
             "tier": "High",
-            "title": "State validation mechanism, on Ethereum, is in development",
+            "title": "State validation mechanism, on Ethereum, is under development",
             "content": "BOB inherits no settlement assurances from Bitcoin. Since BOB is built on the OP Stack, it currently does not have active fraud proofs. This means that the BOB sequencer can post malicious state transitions that could result in users losing their funds. Users trust that a challenger, which is currently run by a 4/6 multi-sig, will be online and challenge proposed malicious state transitions."
         }
     ],

@@ -28,28 +28,28 @@
             "category": "Bridge Custody",
             "score": 0,
             "tier": "High",
-            "title": "No unilateral exits",
+            "title": "Funds are custodied in a federated multi-sig, with a number of parties ensuring the honesty of the bridge",
             "content": "coreBTC does not support unilateral exits. Users must trust several roles on Bitcoin and Core Chain for the minting and burning of coreBTC. Specifically, to exit from coreBTC back to BTC, users must trust Lockers and Bitcoin Light Clients. All roles are financially incentivized to be good actors."
         },
         {
             "category": "Data Availability",
             "score": 0,
             "tier": "Medium",
-            "title": "No DA on Bitcoin",
+            "title": "Data availability requirement fulfilled by Core chain full nodes",
             "content": "Core Chain does not use Bitcoin for data availability. Because of this, Core's state cannot be reconstructed using only data from Bitcoin. Core Chain has a network of nodes who esnsure data is readily available."
         },
         {
             "category": "Network Operators",
             "score": 0,
             "tier": "Medium",
-            "title": "Permissionless block production",
-            "content": "Core Chain has a network of 25 validators who participate as block producers. Each day, the 21 validators with the highest hybrid score (from DPOW and DPOS) are elected to participate in block production. Any Core chain full node can register to become a part of this set. Core Chain does not support exits that circumvent its validator set. This means that users must trust Core Chain validators to include their transactions in blocks."
+            "title": "Core's hybrid consensus mechanism operates the network",
+            "content": "Core Chain has a network of validators who participate as block producers. Each day, the 23 validators with the highest hybrid score (from DPOW and DPOS) are elected to participate in block production. Any Core chain full node can register to become a part of this set. Core Chain does not support exits that circumvent its validator set. This means that users must trust Core Chain validators to include their transactions in blocks."
         },
         {
             "category": "Settlement Assurance",
             "score": 0,
             "tier": "Medium",
-            "title": "No settlement assurances inherited from Bitcoin",
+            "title": "Transaction finality is provided by Core Chain consensus and has no assurances inherited from Bitcoin",
             "content": "Settlement is done offchain, on Core Chain, rather than onchain, on Bitcoin. The validity of Core Chain state transitions is not enforced by Bitcoin."
         }
     ],
