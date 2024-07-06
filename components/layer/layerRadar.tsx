@@ -7,6 +7,7 @@ const wordToColor: { [key: string]: string } = {
     Low: "#48E55F", //TODO new colors
     Medium: "#FFC21B",
     High: "#EC0B43",
+    Critical: "#A50F11",
 };
 
 const LayerRisks: React.FC<{ layer: Layer }> = ({ layer }) => {
