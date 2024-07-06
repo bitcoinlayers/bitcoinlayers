@@ -3,7 +3,7 @@
     "title": "Stacks",
     "layerType": "Sidechain",
     "live": "Mainnet",
-    "underReview": "yes",
+    "underReview": "no",
     "riskFactors": ["High", "Medium", "High", "Medium"],
     "purpose": "General",
     "btcBridge": "Centralized Multisig(s)",
@@ -39,7 +39,7 @@
             "content": "Stacks posts state roots to Bitcoin, but not full transaction calldata. Because of this, Stacks' state cannot be reconstructed using only data from Bitcoin. Stacks has a permissionless validator and node operator set which participate in making data availability readily available."
         },
         {
-            "category": "Block Production",
+            "category": "Network Operator",
             "score": 0,
             "tier": "High",
             "title": "Leverages a permissionless consensus mechanism, but has less than 21 operators",
