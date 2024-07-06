@@ -14,7 +14,6 @@ import botanixJson from "../content/layers/botanix.json";
 import bsquaredJson from "../content/layers/bsquared.json";
 import citreaJson from "../content/layers/citrea.json";
 import rgbJson from "../content/layers/rgb.json";
-import heliosphereJson from "../content/layers/heliosphere.json";
 import libreJson from "../content/layers/libre.json";
 import merlinJson from "../content/layers/merlin.json";
 import rolluxJson from "../content/layers/rollux.json";
@@ -22,7 +21,6 @@ import zkcoinsJson from "../content/layers/zkcoins.json";
 import zklayerJson from "../content/layers/zklayer.json";
 import coordinateJson from "../content/layers/coordinate.json";
 import alysJson from "../content/layers/alys.json";
-import zkbitcoinJson from "../content/layers/zkbitcoin.json";
 import zuluJson from "../content/layers/zulu.json";
 import bitlayerJson from "../content/layers/bitlayer.json";
 import moleculeJson from "../content/layers/molecule.json";
@@ -54,7 +52,6 @@ const botanix: Layer = botanixJson as Layer;
 const bsquared: Layer = bsquaredJson as Layer;
 const citrea: Layer = citreaJson as Layer;
 const rgb: Layer = rgbJson as Layer;
-const heliosphere: Layer = heliosphereJson as Layer;
 const libre: Layer = libreJson as Layer;
 const merlin: Layer = merlinJson as Layer;
 const rollux: Layer = rolluxJson as Layer;
@@ -62,7 +59,6 @@ const zkcoins: Layer = zkcoinsJson as Layer;
 const zklayer: Layer = zklayerJson as Layer;
 const coordinate: Layer = coordinateJson as Layer;
 const alys: Layer = alysJson as Layer;
-const zkbitcoin: Layer = zkbitcoinJson as Layer;
 // @ts-ignore
 const zulu: Layer = zuluJson as Layer;
 // @ts-ignore
@@ -94,7 +90,6 @@ export const allLayers: Layer[] = [
     bsquared,
     citrea,
     rgb,
-    heliosphere,
     libre,
     merlin,
     rollux,
@@ -102,7 +97,6 @@ export const allLayers: Layer[] = [
     zklayer,
     coordinate,
     alys,
-    zkbitcoin,
     zulu,
     bitlayer,
     molecule,
