@@ -11,9 +11,9 @@
     "btcLocked": 3873,
     "executionEnv": "Offchain",
     "consensus": "Federated Sidechain",
-    "nativeToken": "L-BTC",
-    "feeToken": "L-BTC",
-    "enshrinedBtc": "L-BTC",
+    "nativeToken": "LBTC",
+    "feeToken": "LBTC",
+    "enshrinedBtc": "LBTC",
     "links": [
         "https://liquid.net/",
         "https://docs.liquid.net/docs/technical-overview",
