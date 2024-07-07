@@ -4,7 +4,7 @@
     "layerType": "Sidechain",
     "live": "Mainnet",
     "underReview": "no",
-    "riskFactors": ["High", "Medium", "High", "Medium"],
+    "riskFactors": ["High", "Medium", "High", "High"],
     "purpose": "General",
     "btcBridge": "Centralized Multisig(s)",
     "settlement": "Offchain",
