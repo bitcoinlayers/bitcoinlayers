@@ -22,7 +22,7 @@
         "https://github.com/bitlayer-org",
         "https://twitter.com/BitlayerLabs"
     ],
-    "description": "BitLayer's mainnet v1 is a federated sidechain. It is building towards a rollup-style chain on top of Bitcoin. It supports an EVM execution environment with plans to support other VMs. Its roadmap sees it adding support for a BitVM-style bridge, but currently, the bridge is managed by a federation.",
+    "description": "BitLayer's mainnet v1 is a federated sidechain. It is building towards a blockchain that uses an alternative system for data availability. It supports an EVM execution environment with plans to support other VMs. Its roadmap sees it adding support for a BitVM-style bridge, but currently, the bridge is managed by a federation.",
     "riskAnalysis": [
         {
             "category": "Bridge Custody",
