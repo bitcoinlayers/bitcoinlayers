@@ -28,7 +28,7 @@
             "category": "Bridge Custody",
             "score": 0,
             "tier": "High",
-            "title": "Users trust a federated multi-sig to custody users' BTC",
+            "title": "Users trust a federated multi-sig to custody their BTC",
             "content": "BitLayer's current Bitcoin bridge is a federated two-way peg with institutional signers. Coinbase and Sinohope are the two institutions that have been said to be participating in securing the two-way peg. Limited information around the current two-way peg construction is available."
         },
         {
