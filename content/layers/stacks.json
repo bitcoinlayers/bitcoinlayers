@@ -48,8 +48,8 @@
         {
             "category": "Settlement Assurance",
             "score": 0,
-            "tier": "High",
-            "title": "State transitions finalized by alternative consensus mechanism with less than 21 participants",
+            "tier": "Medium",
+            "title": "State transitions finalized by permissionless, alternative consensus mechanism",
             "content": "Settlement is done offchain, on Stacks, rather than onchain, on Bitcoin. The validity of Stacks state transitions are not enforced by Bitcoin."
         }
     ],
