@@ -11,11 +11,11 @@ const getRiskColorFont = (riskFactor: string) => {
         case "Low":
             return "text-text_risk_low";
         case "Medium":
-            return "text-text_risk_midlow";
-        case "Medium-High":
-            return "text-text_risk_midhigh";
+            return "text-text_risk_medium";
         case "High":
             return "text-text_risk_high";
+        case "Critical":
+            return "text-text_risk_critical";
         default:
             return "text-text_secondary";
     }
@@ -30,18 +30,18 @@ const getRiskColorClass = (riskFactor: string) => {
             };
         case "Medium":
             return {
-                bg: "bg-bg_midlow",
+                bg: "bg-bg_medium",
                 fill: "#F4CD00",
-            };
-        case "Medium-High":
-            return {
-                bg: "bg-bg_midhigh",
-                fill: "#F99107",
             };
         case "High":
             return {
                 bg: "bg-bg_high",
-                fill: "#FF4D4F",
+                fill: "#ED1517",
+            };
+        case "Critical":
+            return {
+                bg: "bg-bg_critical",
+                fill: "#C80D0F",
             };
         default:
             return {
@@ -73,8 +73,8 @@ const Risk: React.FC<RiskProps> = ({ layer }) => {
                 className={`w-6 h-6 p-[4px] ${riskColor.bg} rounded-full justify-center items-center flex`}
             >
                 <svg
-                    viewBox="0 0 24 24"
-                    className="w-3.5 h-3.5 relative"
+                    viewBox="0 0 22 22"
+                    className="w-4 h-4 relative"
                     style={{
                         fill: riskColor.fill,
                     }}

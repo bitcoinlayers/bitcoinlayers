@@ -42,11 +42,11 @@ const getRiskColorClass = (riskFactor: string) => {
         case "Low":
             return "text-text_risk_low";
         case "Medium":
-            return "text-text_risk_midlow";
-        case "Medium-High":
-            return "text-text_risk_midhigh";
+            return "text-text_risk_medium";
         case "High":
             return "text-text_risk_high";
+        case "Critical":
+            return "text-text_risk_critical";
         default:
             return "text-text_secondary";
     }

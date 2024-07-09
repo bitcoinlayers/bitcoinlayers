@@ -13,15 +13,15 @@ const getRiskColorClass = (riskFactor: string) => {
                 bg: "bg-medium",
                 fill: "#FFC21B",
             };
-        case "Medium-High":
-            return {
-                bg: "bg-medium-high",
-                fill: "#FF9900",
-            };
         case "High":
             return {
                 bg: "bg-high",
                 fill: "#EC0B43",
+            };
+        case "Critical":
+            return {
+                bg: "bg-critical",
+                fill: "#A50F11",
             };
         default:
             return {

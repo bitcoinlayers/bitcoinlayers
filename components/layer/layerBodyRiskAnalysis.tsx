@@ -23,11 +23,11 @@ const RiskAnalysis: React.FC<RiskAnalysisProps> = ({
             case "Low":
                 return "text-text_risk_low";
             case "Medium":
-                return "text-text_risk_midlow";
-            case "Medium-High":
-                return "text-text_risk_midhigh";
+                return "text-text_risk_medium";
             case "High":
                 return "text-text_risk_high";
+            case "Critical":
+                return "text-text_risk_critical";
             default:
                 return "text-text_secondary";
         }
@@ -37,11 +37,11 @@ const RiskAnalysis: React.FC<RiskAnalysisProps> = ({
             case "Low":
                 return "bg_low";
             case "Medium":
-                return "bg_midlow";
-            case "Medium-High":
-                return "bg_midhigh";
+                return "bg_medium";
             case "High":
                 return "bg_high";
+            case "Critical":
+                return "bg_critical";
             default:
                 return "text-text_secondary";
         }
@@ -51,11 +51,11 @@ const RiskAnalysis: React.FC<RiskAnalysisProps> = ({
             case "Low":
                 return "✅";
             case "Medium":
-                return "🔔";
-            case "Medium-High":
                 return "⚠️";
             case "High":
                 return "🚨";
+            case "Critical":
+                return "🛑";
             default:
                 return "text-text_secondary";
         }
