@@ -6,14 +6,14 @@
     "underReview": "yes",
     "riskFactors": ["", "", "", ""],
     "purpose": "-",
-    "btcBridge": "x",
-    "settlement": "x",
+    "btcBridge": "-",
+    "settlement": "-",
     "btcLocked": 0,
-    "executionEnv": "x",
+    "executionEnv": "-",
     "consensus": "-",
     "nativeToken": "-",
-    "feeToken": "x",
-    "enshrinedBtc": "x",
+    "feeToken": "-",
+    "enshrinedBtc": "-",
     "links": [
         "https://www.nomic.io/",
         "https://www.nomic.io/",
@@ -51,6 +51,17 @@
             "tier": "",
             "title": "",
             "content": ""
+        }
+    ],
+    "sections": [
+        {
+            "id": "description",
+            "title": "Description",
+            "content": [
+                {
+                    "content": "Nomic is a Cosmos SDK Chain that enables users to leverage bitcoin in the Cosmos ecosystem."
+                }
+            ]
         }
     ],
     "knowledgeBits": [

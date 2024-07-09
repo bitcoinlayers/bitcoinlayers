@@ -6,14 +6,14 @@
     "underReview": "yes",
     "riskFactors": ["", "", "", ""],
     "purpose": "-",
-    "btcBridge": "x",
-    "settlement": "x",
+    "btcBridge": "-",
+    "settlement": "-",
     "btcLocked": 0,
-    "executionEnv": "x",
+    "executionEnv": "-",
     "consensus": "-",
     "nativeToken": "-",
-    "feeToken": "x",
-    "enshrinedBtc": "x",
+    "feeToken": "-",
+    "enshrinedBtc": "-",
     "links": [
         "https://www.botanixlabs.xyz/en/home",
         "https://www.botanixlabs.xyz/en/home",
@@ -54,25 +54,25 @@
         }
     ],
     "sections": [
-    {
-        "id": "technology",
-        "title": "Proposed Technologies",
-        "content": [
-            {
-                "title": "Spiderchain will be used to decentralize two-way peg participants",
-                "content": "Botanix will be implementing a technology called the Spidechain to decentralize the participants in the two-way peg custodying users' bitcoin. The Spiderchain consists of a distributed network of multisigs, which are secured by a subset of stakers in the network."
-            },
-            {
-                "title": "Rust implementation of the EVM",
-                "content": "Botanix will be leveraging a fork of the rust implementation of the EVM known as Reth. Reth is built to be a highly modular, performant and user-friendly version of the EVM. Solidity (a common language in Ethereum) developers will be able to easily port of their applications to the Spiderchain EVM implementation."
-            },
-            {
-            "title": "Bitcoin Staking",
-            "content": "Botanix will be implement a version of Bitcoin staking to secure the network. Presumably, any Bitcoin holder with sufficient capital could paricipate in staking on Botanix and earn rewards for securing the network."
-            }
-        ]
-    }
-],
+        {
+            "id": "technology",
+            "title": "Proposed Technologies",
+            "content": [
+                {
+                    "title": "Spiderchain will be used to decentralize two-way peg participants",
+                    "content": "Botanix will be implementing a technology called the Spidechain to decentralize the participants in the two-way peg custodying users' bitcoin. The Spiderchain consists of a distributed network of multisigs, which are secured by a subset of stakers in the network."
+                },
+                {
+                    "title": "Rust implementation of the EVM",
+                    "content": "Botanix will be leveraging a fork of the rust implementation of the EVM known as Reth. Reth is built to be a highly modular, performant and user-friendly version of the EVM. Solidity (a common language in Ethereum) developers will be able to easily port of their applications to the Spiderchain EVM implementation."
+                },
+                {
+                    "title": "Bitcoin Staking",
+                    "content": "Botanix will be implement a version of Bitcoin staking to secure the network. Presumably, any Bitcoin holder with sufficient capital could paricipate in staking on Botanix and earn rewards for securing the network."
+                }
+            ]
+        }
+    ],
     "knowledgeBits": [
         {
             "url": "https://www.botanixlabs.xyz/en/home",

@@ -9,10 +9,10 @@
     "btcBridge": "Threshold",
     "settlement": "External",
     "btcLocked": 0,
-    "executionEnv": "x",
+    "executionEnv": "-",
     "consensus": "-",
     "nativeToken": "MEZO",
-    "feeToken": "x",
+    "feeToken": "-",
     "enshrinedBtc": "tBTC",
     "links": [
         "https://mezo.org/",

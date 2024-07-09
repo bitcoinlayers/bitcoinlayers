@@ -13,7 +13,7 @@
     "consensus": "Federated Sidechain",
     "nativeToken": "BTR",
     "feeToken": "BTC",
-    "enshrinedBtc": "x",
+    "enshrinedBtc": "-",
     "links": [
         "https://www.bitlayer.org/",
         "https://www.bitlayer.org/",
@@ -83,7 +83,7 @@
                 {
                     "title": "Users cannot unilaterally withdraw from the BitLayer sidechain",
                     "content": "Users of BitLayer's primary bridge program, or third party bridges, cannot unilaterally withdraw their assets from BitLayer. They trust that BitLayer validators will include withdrawal transactions in BitLayer blocks, and that multi-sig signers will process their withdrawal back to the Bitcoin mainchain."
-                  }
+                }
             ]
         },
         {

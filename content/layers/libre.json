@@ -12,7 +12,7 @@
     "executionEnv": "Under Review",
     "consensus": "Under Review",
     "nativeToken": "LIBRE",
-    "feeToken": "x",
+    "feeToken": "-",
     "enshrinedBtc": "PBTC",
     "links": [
         "https://chain.libre.org/",
