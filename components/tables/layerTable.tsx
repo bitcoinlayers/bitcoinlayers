@@ -140,7 +140,7 @@ const LayerTable = ({ data, headers }: Props) => {
     );
 
     return (
-        <div className="px-6">
+        <div className="px-6 lg:px-0 w-full">
             <MobileView className="flex justify-center">
                 <div className="justify-center lg:items-start gap-4 inline-flex py-3">
                     {headers.slice(2).map((_item, ind) => {
@@ -180,9 +180,8 @@ const LayerTable = ({ data, headers }: Props) => {
                     })}
                 </div>
             </MobileView>
-
-            <div className="overflow-x-auto bg-lightsecondary rounded-xl mx-auto relative">
-                <table className="bg-lightsecondary table-fixed w-full text-sm text-left rtl:text-right rounded-xl">
+            <div className="overflow-x-auto bg-lightsecondary rounded-xl mx-auto border border-stroke_tertiary">
+                <table className="bg-lightsecondary w-full text-sm text-left rtl:text-right rounded-xl">
                     <TableHeader
                         headers={isMobile ? mobileTableHeaders : headers}
                         onSort={handleSort}
@@ -199,7 +198,7 @@ const LayerTable = ({ data, headers }: Props) => {
                                     handleRowClick(`/layers/${item.slug}`)
                                 }
                             >
-                                <td className="w-64 lg:px-6 px-4 py-4 font-semibold whitespace-nowrap border-r lg:border-r-0 border-stroke_tertiary text_table_important text-table_body">
+                                <td className="lg:px-6 px-4 py-4 font-semibold whitespace-nowrap border-r lg:border-r-0 border-stroke_tertiary text_table_important text-table_body">
                                     <div className="flex items-center">
                                         <LayerImage
                                             src={`/logos/${item.slug}.png`}
@@ -211,7 +210,7 @@ const LayerTable = ({ data, headers }: Props) => {
                                     </div>
                                 </td>
                                 {!isMobile && (
-                                    <td className="relative w-[176px] px-2 border-stroke_tertiary text_table_important">
+                                    <td className="relative px-2 border-stroke_tertiary text_table_important">
                                         {item.underReview === "no" ? (
                                             <Risk layer={item} />
                                         ) : (
@@ -222,19 +221,19 @@ const LayerTable = ({ data, headers }: Props) => {
                                     </td>
                                 )}
                                 {(!isMobile || mobileActiveTab === "Type") && (
-                                    <td className="w-[196px] lg:px-6 px-4 py-3 lg:py-4 border-stroke_tertiary text_table_important">
+                                    <td className="lg:px-6 px-4 py-3 lg:py-4 border-stroke_tertiary text_table_important">
                                         {item.layerType}
                                     </td>
                                 )}
                                 {(!isMobile ||
                                     mobileActiveTab === "Status") && (
-                                    <td className="w-[140px] lg:px-6 px-4 py-3 lg:py-4 border-stroke_tertiary text_table_important">
+                                    <td className="lg:px-6 px-4 py-3 lg:py-4 border-stroke_tertiary text_table_important">
                                         {item.live}
                                     </td>
                                 )}
                                 {(!isMobile ||
                                     mobileActiveTab === "Unit of Account") && (
-                                    <td className="w-[120px] lg:px-6 px-4 py-3 lg:py-4 border-stroke_tertiary text_table_important">
+                                    <td className="lg:px-6 px-4 py-3 lg:py-4 border-stroke_tertiary text_table_important">
                                         <div className="flex items-center">
                                             {item.nativeToken
                                                 .toLowerCase()
@@ -253,7 +252,7 @@ const LayerTable = ({ data, headers }: Props) => {
                                 )}
                                 {(!isMobile ||
                                     mobileActiveTab === "BTC Locked") && (
-                                    <td className="w-[136px] lg:px-6 px-4 py-3 lg:py-4 border-r border-stroke_tertiary text_table_important">
+                                    <td className="lg:px-6 px-4 py-3 lg:py-4 border-r border-stroke_tertiary text_table_important">
                                         {item.underReview === "yes" ||
                                         !Number(item.btcLocked) ? (
                                             <div>-</div>

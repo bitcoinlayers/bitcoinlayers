@@ -82,6 +82,7 @@ const LayerTableRisks = ({ data }: Props) => {
                     })}
                 </div>
             </MobileView>
+
             <div className="overflow-x-auto bg-lightsecondary rounded-xl mx-auto border border-stroke_tertiary">
                 <table className="bg-lightsecondary table-fixed w-full text-sm text-left rtl:text-right rounded-xl">
                     <thead className="bg-table_header rounded-t-xl">
