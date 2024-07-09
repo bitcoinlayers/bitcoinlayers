@@ -43,7 +43,7 @@
         {
             "category": "Bridge Custody",
             "score": 0,
-            "tier": "High",
+            "tier": "Critical",
             "title": "Information on multi-sig signers not available",
             "content": "We are currently reviewing the bridge program related to Merlin. Due to there being no information signers of the multi-sig custodying users' funds, we classify the bridge program as high risk. The vault that mints BTC on Merlin is an upgradeable contract."
         },
@@ -64,9 +64,9 @@
         {
             "category": "Settlement Assurance",
             "score": 0,
-            "tier": "High",
-            "title": "zkSNARKs are used to ensure state correctness, but state validation occurs offchain and inherits no settlement guarantees from Bitcoin",
-            "content": "Merlin uses zkSNARKS to ensure state correctness. The Merlin prover posts validity proofs of execution to its L1 contract to finalize state transitions. It is unknown which chain Merlin settles to. Its documentation previously pointed to Ethereum, but recent contracts cannot be verified on Ethereum."
+            "tier": "Critical",
+            "title": "zkSNARKs are proposedly used to ensure state correctness, but state validation occurs offchain and inherits no settlement guarantees from Bitcoin",
+            "content": "Merlin propsedly uses zkSNARKS to ensure state correctness. The Merlin prover posts validity proofs of execution to its L1 contract to finalize state transitions. It is unknown which chain Merlin settles to. Its documentation previously pointed to Ethereum, but recent contracts cannot be verified on Ethereum."
         }
     ],
     "knowledgeBits": [
