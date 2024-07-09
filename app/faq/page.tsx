@@ -65,11 +65,11 @@ const FaqPage: React.FC = () => {
                             />
                             <FAQItem
                                 question="What is a Bitcoin Layer?"
-                                answer='We use the term "Bitcoin Layer" to describle Bitcoin Layer 2s, sidechains and other scaling protocols. There are many definitions that exist for the term "Layer 2". We view Layer 2s as protocols that enable unilateral exit. Others extend this definition to a system where any online party can participate in the security of a two-way peg. We use the term "Bitcoin Layer" as an agnostic term to describe a variety of scaling protocols, including Layer 2s. We analyze all of these protocols against a generalized, opinionated framework that we developed to show users the relevant trust assumptions for each system.'
+                                answer='We use the term "Bitcoin Layer" to describe Bitcoin Layer 2s, sidechains, and other scaling protocols. There are many definitions that exist for the term "Layer 2". We view Layer 2s as protocols that take transaction execution offchain, ensure users retain full custody of their assets, and additionally enable unilateral exit from the system via an L1 transaction. Another definition sees this extended to a system where any party can participate in the security of the protocol and its two-way peg with Bitcoin. We use the term "Bitcoin Layer" as an agnostic term to describe a variety of scaling protocols, including Layer 2s. We analyze all of these protocols against a generalized, opinionated framework that we developed to show users the relevant trust assumptions for each system.'
                             />
                             <FAQItem
                                 question='Are all Bitcoin Layers "L2s"?'
-                                answer='The overwhelming majority of newer Bitcoin "Layer 2s" are not Layer 2s. Bitcoin Layers is a broad term we use to cover offchain scaling protocols. People typically define L2s as protocols that take transaction execution offchain, but inherit security from its parent blockchain. Most consider unilateral exit as a primary criteria for being a “true L2”, which means that users retain self-custody of their BTC and can exit the L2, with an L1 transaction, whenever they choose.'
+                                answer='The overwhelming majority of newer Bitcoin "Layer 2s" are not Layer 2s. Bitcoin Layers is a broad term we use to cover offchain scaling protocols. People typically define L2s as protocols that take transaction execution offchain, but inherit security from its parent blockchain. Most consider unilateral exit as a primary criterion for being a “true L2”, which means that users retain self-custody of their BTC and can exit the L2, with an L1 transaction, whenever they choose.'
                             />
                             <FAQItem
                                 question='Why are newer Bitcoin "L2s" receiving so much attention?'
@@ -77,11 +77,19 @@ const FaqPage: React.FC = () => {
                             />
                             <FAQItem
                                 question='What are modular Bitcoin "L2s"?'
-                                answer="A number of new projects are launching with modular scaling designs in mind. This means that each aspect of the transaction lifecycle would be managed by an indepedent actor. Roles such as transaction ordering, data availability and settlement would be distributed across a number of systems. These parties can range from single servers, federated commmittees and permissionless consensus protocols, varying in trust assumptions."
+                                answer="A number of new projects are launching with modular scaling designs. This means that each aspect of the transaction lifecycle would be managed by an independent actor. Roles such as transaction ordering, data availability, and settlement would be distributed across several systems. These parties can range from single servers to federated committees to permissionless consensus protocols, varying in trust assumptions."
                             />
                             <FAQItem
                                 question='Are these newer "L2s" similar to projects in Ethereum?'
-                                answer='A large percentage of these projects are forking popular Ethereum L2s and try to inherit similar designs. The difference between these Bitcoin chains, and L2s on Ethereum, is the trust assumptions related to the two-way peg and security inherited from the base layer. Current Bitcoin "L2" implementations largely do not inherit any security from the Bitcoin network or have a trust-minimized two-way peg.'
+                                answer='A large percentage of these projects are forking popular Ethereum L2s and trying to inherit similar designs. The difference between these Bitcoin chains, and L2s on Ethereum, is the trust assumptions related to the two-way peg and security inherited from the base layer. Current Bitcoin "L2" implementations largely do not inherit any security from the Bitcoin network or do not have a trust-minimized two-way peg.'
+                            />
+                            <FAQItem
+                                question="What is Bitcoin's scaling roadmap focused on?"
+                                answer="Bitcoin, unlike other ecosystems, does not have a unified scaling roadmap. This means that a number of different approaches are being implemented to support the scaling of Bitcoin's throughput and transaction capacity. These range from custodial solutions, decentralized peer-to-peer networks and alternative blockchains. All of these solutions come with specific tradeoffs."
+                            />
+                            <FAQItem
+                                question="How does Bitcoin Layers analyze risk related to sidechain protocols?"
+                                answer="We analyze protocols against a general framework that covers four key aspects. We review who is maintaining custody of the funds used on the scaling protocol, who is storing the data related to the protocol's state, who is operating the network, and who is providing finality assurances. Each of these categories receives a score given the current state of the protocol. Users can use these scores as a part of their research related to Bitcoin scaling protocols."
                             />
                         </div>
                     </div>
