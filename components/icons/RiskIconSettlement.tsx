@@ -2,11 +2,23 @@ import React from "react";
 
 interface IconProps {
     fill: string;
+    width?: string;
+    height?: string;
 }
 
-const RiskIconSettlement: React.FC<IconProps> = ({ fill }) => {
+const RiskIconSettlement: React.FC<IconProps> = ({
+    fill,
+    width = "24px",
+    height = "24px",
+}) => {
     return (
-        <svg viewBox="0 0 24 24" className="w-4 h-4 relative" style={{ fill }}>
+        <svg
+            viewBox="0 0 24 24"
+            width={width}
+            height={height}
+            className="relative"
+            style={{ fill }}
+        >
             <g id="Group">
                 <path
                     id="Vector"

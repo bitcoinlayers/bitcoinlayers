@@ -2,11 +2,17 @@ import React from "react";
 
 interface IconProps {
     fill: string;
+    width?: string;
+    height?: string;
 }
 
-const RiskIconBridge: React.FC<IconProps> = ({ fill }) => {
+const RiskIconBridge: React.FC<IconProps> = ({
+    fill,
+    width = "22px",
+    height = "22px",
+}) => {
     return (
-        <svg viewBox="0 0 22 22" className="w-4 h-4 relative" style={{ fill }}>
+        <svg viewBox="0 0 22 22" width={width} height={height} style={{ fill }}>
             <g id="Group">
                 <g id="Group_2">
                     <g id="XMLID_1_">

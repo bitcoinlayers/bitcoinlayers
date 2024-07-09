@@ -87,12 +87,16 @@ const LayerDiamond: React.FC<{ layer: Layer }> = ({ layer }) => {
                     <foreignObject
                         x="35"
                         y="35"
-                        width="175"
-                        height="175"
+                        width="145"
+                        height="145"
                         className="flex justify-center items-center"
                     >
-                        <div className="w-50px h-50px flex justify-center items-center">
-                            <IconComponent fill={fillColor} />
+                        <div className="w-full h-full flex justify-center items-center">
+                            <IconComponent
+                                fill={fillColor}
+                                width="100%"
+                                height="100%"
+                            />
                         </div>
                     </foreignObject>
                 </svg>

@@ -2,13 +2,21 @@ import React from "react";
 
 interface IconProps {
     fill: string;
+    width?: string;
+    height?: string;
 }
 
-const RiskIconOperators: React.FC<IconProps> = ({ fill }) => {
+const RiskIconOperators: React.FC<IconProps> = ({
+    fill,
+    width = "24px",
+    height = "24px",
+}) => {
     return (
         <svg
             viewBox="0 0 24 24"
-            className="w-4 h-4 relative flex-col justify-start items-start flex"
+            width={width}
+            height={height}
+            className="relative flex-col justify-start items-start flex"
             style={{ fill }}
         >
             <path
