@@ -34,21 +34,7 @@ module.exports = {
                 bg_secondary: "F5F8FD",
                 bg_tertiary: "FFFFFF",
 
-                bg_low: "#DFFBCC",
-                bg_medium: "#FEFFC1",
-                bg_high: "#FFDFDF",
-                bg_critical: "#FF9D9E",
-
-                text_risk_low: "#3D9F11",
-                text_risk_medium: "#D19D00",
-                text_risk_high: "#ED1517",
-                text_risk_critical: "#A50F11",
-
-                icon_low: "#52C41A",
-                icon_medium: "#F4CD00",
-                icon_high: "#ED1517",
-                icon_critical: "#C80D0F",
-
+                //general colors
                 icon_primary: "#292929",
                 icon_secondary: "#434D65",
                 icon_tertiary: "#C9D0D8",

@@ -50,18 +50,10 @@
         -ms-overflow-style: none; /* IE and Edge */
         scrollbar-width: none; /* Firefox */
     }
-    /* .table-container {
-    overflow: visible;
-    position: relative;
-  }
-  .table-header-dropdown {
-    overflow: visible;
-    position: relative;
-  } */
 }
 
 section {
-    scroll-margin-top: 80px; /* Adjust the value as needed */
+    scroll-margin-top: 80px;
 }
 
 ::-webkit-scrollbar {
@@ -74,4 +66,19 @@ section {
 ::-webkit-scrollbar-thumb {
     background: #d9d9d9;
     border-radius: 9999px;
+}
+
+:root {
+    --color-risk-low-bg: #dffbcc;
+    --color-risk-low-text: #3d9f11;
+    --color-risk-low-icon: #52c41a;
+    --color-risk-medium-bg: #feffc1;
+    --color-risk-medium-text: #d19d00;
+    --color-risk-medium-icon: #f4cd00;
+    --color-risk-high-bg: #ffdfdf;
+    --color-risk-high-text: #ed1517;
+    --color-risk-high-icon: #ed1517;
+    --color-risk-critical-bg: #ff9d9e;
+    --color-risk-critical-text: #a50f11;
+    --color-risk-critical-icon: #c80d0f;
 }

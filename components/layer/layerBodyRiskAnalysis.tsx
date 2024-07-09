@@ -1,5 +1,10 @@
 import React from "react";
 import { parseTextWithLinks } from "@/util/parseTextWithLinks";
+import {
+    getRiskColorText,
+    getRiskColorBackground,
+    getRiskEmoji,
+} from "@/util/riskColors";
 
 interface Risksection {
     category: string;
@@ -18,49 +23,6 @@ const RiskAnalysis: React.FC<RiskAnalysisProps> = ({
     riskAnalysis,
     riskFactors,
 }) => {
-    const getRiskColorClass = (riskFactor: string) => {
-        switch (riskFactor) {
-            case "Low":
-                return "text-text_risk_low";
-            case "Medium":
-                return "text-text_risk_medium";
-            case "High":
-                return "text-text_risk_high";
-            case "Critical":
-                return "text-text_risk_critical";
-            default:
-                return "text-text_secondary";
-        }
-    };
-    const getRiskBgClass = (riskFactor: string) => {
-        switch (riskFactor) {
-            case "Low":
-                return "bg_low";
-            case "Medium":
-                return "bg_medium";
-            case "High":
-                return "bg_high";
-            case "Critical":
-                return "bg_critical";
-            default:
-                return "text-text_secondary";
-        }
-    };
-    const getRiskEmoji = (riskFactor: string) => {
-        switch (riskFactor) {
-            case "Low":
-                return "✅";
-            case "Medium":
-                return "⚠️";
-            case "High":
-                return "🚨";
-            case "Critical":
-                return "🛑";
-            default:
-                return "text-text_secondary";
-        }
-    };
-
     if (!riskAnalysis) {
         return null;
     }
@@ -84,31 +46,42 @@ const RiskAnalysis: React.FC<RiskAnalysisProps> = ({
                                     </div>
                                     <div className="h-8 justify-end items-center gap-2 flex lg:flex-row flex-row-reverse">
                                         <div
-                                            className={`${getRiskColorClass(
-                                                riskFactors[contentIndex],
-                                            )} text-sm font-medium leading-tight`}
+                                            className="text-sm font-medium leading-tight"
+                                            style={{
+                                                color: getRiskColorText(
+                                                    riskFactors[contentIndex],
+                                                ),
+                                            }}
                                         >
                                             {riskFactors[contentIndex]} risk
                                         </div>
                                         <div className="w-8 h-8 justify-center items-center flex">
                                             <div
-                                                className={`w-8 h-8 bg-${getRiskBgClass(
-                                                    riskFactors[contentIndex],
-                                                )} rounded-full flex items-center justify-center`}
+                                                className="w-8 h-8 rounded-full flex items-center justify-center"
+                                                style={{
+                                                    backgroundColor:
+                                                        getRiskColorBackground(
+                                                            riskFactors[
+                                                                contentIndex
+                                                            ],
+                                                        ),
+                                                }}
                                             >
                                                 <div
-                                                    className={`text-center ${getRiskColorClass(
-                                                        riskFactors[
-                                                            contentIndex
-                                                        ],
-                                                    )} text-base font-bold font-Hack`}
+                                                    className="text-center text-base font-bold font-Hack"
+                                                    style={{
+                                                        color: getRiskColorText(
+                                                            riskFactors[
+                                                                contentIndex
+                                                            ],
+                                                        ),
+                                                    }}
                                                 >
                                                     {getRiskEmoji(
                                                         riskFactors[
                                                             contentIndex
                                                         ],
                                                     )}
-                                                    {/* {contentIndex + 1} TODO: add quantitative risk scores when we add this level of depth on reviews */}
                                                 </div>
                                             </div>
                                         </div>
