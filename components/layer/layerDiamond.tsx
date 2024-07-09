@@ -103,6 +103,15 @@ const LayerDiamond: React.FC<{ layer: Layer }> = ({ layer }) => {
                             />
                         </div>
                     </foreignObject>
+                    {/* <text
+                        x="33%"
+                        y="55%"
+                        textAnchor="middle"
+                        fill={fillColor}
+                        className="font-bold text-3xl"
+                    >
+                        {riskFactor} Risk
+                    </text> */}
                 </svg>
             </div>
         );
@@ -117,13 +126,13 @@ const LayerDiamond: React.FC<{ layer: Layer }> = ({ layer }) => {
             <div className="left-[10px] top-[155px] -rotate-45 absolute origin-top-left text-left text-slate-600 text-xs font-medium leading-none">
                 BRIDGE
             </div>
-            <div className="left-[52%] translate-x-[-50%] top-[5px] absolute origin-top-left text-center text-slate-600 text-xs font-medium leading-none">
+            <div className="left-[51%] translate-x-[-50%] top-[0px] absolute origin-top-left text-center text-slate-600 text-xs font-medium leading-none w-[80px]">
                 DATA AVAILABILITY
             </div>
             <div className="right-[10px] top-[155px] rotate-45 absolute origin-top-right text-right text-slate-600 text-xs font-medium leading-none">
                 OPERATORS
             </div>
-            <div className="left-[52%] translate-x-[-50%] top-[350px] absolute origin-top-left text-center text-slate-600 text-xs font-medium leading-none">
+            <div className="left-[51%] translate-x-[-50%] top-[350px] absolute origin-top-left text-center text-slate-600 text-xs font-medium leading-none w-[80px]">
                 SETTLEMENT ASSURANCE
             </div>
 
