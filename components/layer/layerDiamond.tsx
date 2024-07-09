@@ -45,7 +45,7 @@ const LayerDiamond: React.FC<{ layer: Layer }> = ({ layer }) => {
 
     const containerSize = 350;
     const svgDivSize = containerSize / 2;
-    const svgSize = 155;
+    const svgSize = 215;
 
     const renderDiamond = (
         riskFactor: string,
@@ -58,7 +58,7 @@ const LayerDiamond: React.FC<{ layer: Layer }> = ({ layer }) => {
         const fillColor = getRiskColorIcon(riskFactor);
         return (
             <div
-                className="absolute border-2"
+                className="absolute"
                 style={{
                     width: svgDivSize,
                     height: svgDivSize,
@@ -67,44 +67,55 @@ const LayerDiamond: React.FC<{ layer: Layer }> = ({ layer }) => {
                 }}
             >
                 <svg
-                    viewBox={`0 0 ${svgSize * 2} ${svgSize * 2}`}
-                    width={svgDivSize}
-                    height={svgDivSize}
+                    viewBox={`0 0 ${svgSize * 1} ${svgSize * 2}`}
+                    width={svgSize}
+                    height={svgSize}
                     className="relative flex-col justify-start items-start flex"
                     onMouseEnter={(e) => handleMouseEnter(e, title)}
                     onMouseLeave={handleMouseLeave}
                 >
                     <rect
-                        x={svgSize / 2}
-                        y={svgSize / 2}
+                        x={70}
+                        y={40}
                         width={svgSize}
                         height={svgSize}
-                        transform={`rotate(45 ${svgSize / 2} ${svgSize / 2})`}
+                        transform={`rotate(45 70 40)`}
                         style={{ fill: bgColor }}
                         rx={svgSize / 10}
                         ry={svgDivSize / 10}
                     />
+                    <foreignObject
+                        x="35"
+                        y="35"
+                        width="175"
+                        height="175"
+                        className="flex justify-center items-center"
+                    >
+                        <div className="w-50px h-50px flex justify-center items-center">
+                            <IconComponent fill={fillColor} />
+                        </div>
+                    </foreignObject>
                 </svg>
             </div>
         );
     };
 
-    const containerClassName = `lg:w-[${containerSize}px] h-[${containerSize}px] bg-black lg:h-full flex justify-center items-center relative ml-6 lg:ml-0 z-30`;
+    const containerClassName = `lg:w-[${containerSize}px] h-[${containerSize}px] lg:h-full flex justify-center items-center relative ml-6 lg:ml-0 z-30`;
 
     return (
         <div className={containerClassName}>
             {tooltip && <Tooltip title={tooltip.title} style={tooltip.style} />}
 
-            <div className="left-[10px] top-[140px] absolute origin-top-left text-left text-slate-600 text-xs font-medium leading-none">
+            <div className="left-[10px] top-[155px] -rotate-45 absolute origin-top-left text-left text-slate-600 text-xs font-medium leading-none">
                 BRIDGE
             </div>
-            <div className="left-[50%] translate-x-[-50%] top-[10px] absolute origin-top-left text-center text-slate-600 text-xs font-medium leading-none w-[80px]">
+            <div className="left-[52%] translate-x-[-50%] top-[5px] absolute origin-top-left text-center text-slate-600 text-xs font-medium leading-none">
                 DATA AVAILABILITY
             </div>
-            <div className="right-[10px] top-[140px] absolute origin-top-right text-right text-slate-600 text-xs font-medium leading-none">
+            <div className="right-[10px] top-[155px] rotate-45 absolute origin-top-right text-right text-slate-600 text-xs font-medium leading-none">
                 OPERATORS
             </div>
-            <div className="left-[50%] translate-x-[-50%] top-[290px] absolute origin-top-left text-center text-slate-600 text-xs font-medium leading-none w-[80px]">
+            <div className="left-[52%] translate-x-[-50%] top-[350px] absolute origin-top-left text-center text-slate-600 text-xs font-medium leading-none">
                 SETTLEMENT ASSURANCE
             </div>
 
