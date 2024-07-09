@@ -12,13 +12,7 @@ const RiskIconDA: React.FC<IconProps> = ({
     height = "24px",
 }) => {
     return (
-        <svg
-            viewBox="0 0 24 24"
-            width={width}
-            height={height}
-            // className="relative flex-col justify-start items-start flex"
-            style={{ fill }}
-        >
+        <svg viewBox="0 0 24 24" width={width} height={height} style={{ fill }}>
             <g id="Type=Data Avaiability" clipPath="url(#clip0_465_103978)">
                 <g id="Vector">
                     <path d="M17.1431 10.2305H6.85735C6.73949 10.2305 6.64306 10.3269 6.64306 10.4448V21.2127C6.64306 21.3305 6.73949 21.4269 6.85735 21.4269H17.1431C17.2609 21.4269 17.3573 21.3305 17.3573 21.2127V10.4448C17.3573 10.3269 17.2609 10.2305 17.1431 10.2305ZM8.35735 11.9448H15.6431V15.0787H8.35735V11.9448ZM15.6431 19.7127H8.35735V16.5787H15.6431V19.7127Z" />

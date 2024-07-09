@@ -12,13 +12,7 @@ const RiskIconSettlement: React.FC<IconProps> = ({
     height = "24px",
 }) => {
     return (
-        <svg
-            viewBox="0 0 24 24"
-            width={width}
-            height={height}
-            // className="relative"
-            style={{ fill }}
-        >
+        <svg viewBox="0 0 24 24" width={width} height={height} style={{ fill }}>
             <g id="Group">
                 <path
                     id="Vector"
