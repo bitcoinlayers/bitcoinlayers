@@ -16,7 +16,7 @@ const RiskIconDA: React.FC<IconProps> = ({
             viewBox="0 0 24 24"
             width={width}
             height={height}
-            className="relative flex-col justify-start items-start flex"
+            // className="relative flex-col justify-start items-start flex"
             style={{ fill }}
         >
             <g id="Type=Data Avaiability" clipPath="url(#clip0_465_103978)">

@@ -16,7 +16,7 @@ const RiskIconSettlement: React.FC<IconProps> = ({
             viewBox="0 0 24 24"
             width={width}
             height={height}
-            className="relative"
+            // className="relative"
             style={{ fill }}
         >
             <g id="Group">
