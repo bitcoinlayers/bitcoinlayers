@@ -1,46 +1,25 @@
 import React, { useState } from "react";
 import { Layer } from "./layerProps";
 import { getRiskColorBackground, getRiskColorIcon } from "@/util/riskColors";
+import RiskSnapshot from "./riskSnapshot";
 import RiskIconBridge from "@/components/icons/RiskIconBridge";
 import RiskIconDA from "@/components/icons/RiskIconDA";
 import RiskIconOperators from "@/components/icons/RiskIconOperators";
 import RiskIconSettlement from "@/components/icons/RiskIconSettlement";
 
-const Tooltip: React.FC<{ title: string; style: React.CSSProperties }> = ({
-    title,
-    style,
-}) => (
-    <div
-        className="absolute z-50 p-2 bg-white border border-gray-400 rounded shadow-lg text-xs"
-        style={style}
-    >
-        {title}
-    </div>
-);
-
 const LayerDiamond: React.FC<{ layer: Layer }> = ({ layer }) => {
-    const [tooltip, setTooltip] = useState<{
-        title: string;
-        style: React.CSSProperties;
-    } | null>(null);
+    const [hovered, setHovered] = useState(false);
+    const [hoverPosition, setHoverPosition] = useState({ top: 0, left: 0 });
 
-    const handleMouseEnter = (
-        event: React.MouseEvent<SVGSVGElement>,
-        title: string,
-    ) => {
+    const handleMouseEnter = (event: React.MouseEvent<HTMLDivElement>) => {
         const { top, left, width } =
             event.currentTarget.getBoundingClientRect();
-        setTooltip({
-            title,
-            style: {
-                top: top - 240,
-                left: left - 900,
-            },
-        });
+        setHoverPosition({ top: top - 20, left });
+        setHovered(true);
     };
 
     const handleMouseLeave = () => {
-        setTooltip(null);
+        setHovered(false);
     };
 
     const containerSize = 350;
@@ -49,7 +28,6 @@ const LayerDiamond: React.FC<{ layer: Layer }> = ({ layer }) => {
 
     const renderDiamond = (
         riskFactor: string,
-        title: string,
         positionTop: number,
         positionLeft: number,
         IconComponent: React.FC<{
@@ -75,8 +53,6 @@ const LayerDiamond: React.FC<{ layer: Layer }> = ({ layer }) => {
                     width={svgSize}
                     height={svgSize}
                     className="relative flex-col justify-start items-start flex"
-                    onMouseEnter={(e) => handleMouseEnter(e, title)}
-                    onMouseLeave={handleMouseLeave}
                 >
                     <rect
                         x={70}
@@ -120,8 +96,12 @@ const LayerDiamond: React.FC<{ layer: Layer }> = ({ layer }) => {
     const containerClassName = `lg:w-[${containerSize}px] h-[${containerSize}px] lg:h-full flex justify-center items-center relative ml-0 z-30`;
 
     return (
-        <div className={containerClassName}>
-            {tooltip && <Tooltip title={tooltip.title} style={tooltip.style} />}
+        <div
+            className={containerClassName}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+        >
+            {/* {tooltip && <Tooltip title={tooltip.title} style={tooltip.style} />} */}
 
             <div className="left-[10px] top-[155px] -rotate-45 absolute origin-top-left text-left text-slate-600 text-xs font-medium leading-none">
                 BRIDGE
@@ -138,31 +118,30 @@ const LayerDiamond: React.FC<{ layer: Layer }> = ({ layer }) => {
 
             {renderDiamond(
                 layer.riskAnalysis[0].tier,
-                layer.riskAnalysis[0].title,
                 svgDivSize * 0.5,
                 svgDivSize * 0.0,
                 RiskIconBridge,
             )}
             {renderDiamond(
                 layer.riskAnalysis[1].tier,
-                layer.riskAnalysis[1].title,
                 svgDivSize * 0.0,
                 svgDivSize * 0.5,
                 RiskIconDA,
             )}
             {renderDiamond(
                 layer.riskAnalysis[2].tier,
-                layer.riskAnalysis[2].title,
                 svgDivSize * 0.5,
                 svgDivSize * 1.0,
                 RiskIconOperators,
             )}
             {renderDiamond(
                 layer.riskAnalysis[3].tier,
-                layer.riskAnalysis[3].title,
                 svgDivSize * 1.0,
                 svgDivSize * 0.5,
                 RiskIconSettlement,
+            )}
+            {hovered && (
+                <RiskSnapshot layer={layer} hoverPosition={hoverPosition} />
             )}
         </div>
     );

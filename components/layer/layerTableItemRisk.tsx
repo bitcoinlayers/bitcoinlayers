@@ -1,10 +1,7 @@
 import React, { useState } from "react";
 import { Layer } from "@/components/layer/layerProps";
-import {
-    getRiskColorText,
-    getRiskColorIcon,
-    getRiskColorBackground,
-} from "@/util/riskColors";
+import { getRiskColorBackground, getRiskColorIcon } from "@/util/riskColors";
+import RiskSnapshot from "./riskSnapshot";
 import RiskIconBridge from "@/components/icons/RiskIconBridge";
 import RiskIconDA from "@/components/icons/RiskIconDA";
 import RiskIconOperators from "@/components/icons/RiskIconOperators";
@@ -17,12 +14,12 @@ interface RiskProps {
 const Risk: React.FC<RiskProps> = ({ layer }) => {
     const riskLevels = layer.riskAnalysis;
     const [hovered, setHovered] = useState(false);
-    const [hoverPosition, setHoverPosition] = useState({ top: 0, left: 0 });
+    const [hoverPosition, setHoverPosition] = useState({ top: 80, left: 0 });
 
     const handleMouseEnter = (event: React.MouseEvent<HTMLDivElement>) => {
         const { top, left, width } =
             event.currentTarget.getBoundingClientRect();
-        setHoverPosition({ top, left: left + width });
+        setHoverPosition({ top, left: left + width + 20 });
         setHovered(true);
     };
 
@@ -74,122 +71,7 @@ const Risk: React.FC<RiskProps> = ({ layer }) => {
                 />
             </div>
             {hovered && (
-                <div
-                    className="fixed mt-2 bg-white p-4 shadow-lg border border-stroke_tertiary rounded-lg z-50"
-                    style={{
-                        width: "500px",
-                        top: `${hoverPosition.top}px`,
-                        left: `${hoverPosition.left}px`,
-                    }}
-                >
-                    <div className="mb-6 mt-2 font-bold border-b border-stroke_tertiary">
-                        Risk Snapshot
-                    </div>
-                    <div className="mb-2 flex items-start">
-                        <div className="flex items-start justify-center">
-                            <RiskIcon
-                                riskFactor={layer.riskFactors[0]}
-                                IconComponent={RiskIconBridge}
-                            />
-                        </div>
-                        <div className="ml-4">
-                            <div className="mb-2 font-semibold">
-                                {layer.riskAnalysis[0].category}:{" "}
-                                <span
-                                    className="font-semibold"
-                                    style={{
-                                        color: getRiskColorText(
-                                            layer.riskFactors[0],
-                                        ),
-                                    }}
-                                >
-                                    {layer.riskFactors[0]}
-                                </span>
-                            </div>
-                            <div className="mb-4">
-                                {layer.riskAnalysis[0].title}
-                            </div>
-                        </div>
-                    </div>
-                    <div className="mb-2 flex items-start">
-                        <div className="flex items-start justify-center">
-                            <RiskIcon
-                                riskFactor={layer.riskFactors[1]}
-                                IconComponent={RiskIconDA}
-                            />
-                        </div>
-                        <div className="ml-4">
-                            <div className="mb-2 font-semibold">
-                                {layer.riskAnalysis[1].category}:{" "}
-                                <span
-                                    className="font-semibold"
-                                    style={{
-                                        color: getRiskColorText(
-                                            layer.riskFactors[1],
-                                        ),
-                                    }}
-                                >
-                                    {layer.riskFactors[1]}
-                                </span>
-                            </div>
-                            <div className="mb-4">
-                                {layer.riskAnalysis[1].title}
-                            </div>
-                        </div>
-                    </div>
-                    <div className="mb-2 flex items-start">
-                        <div className="flex items-start justify-center">
-                            <RiskIcon
-                                riskFactor={layer.riskFactors[2]}
-                                IconComponent={RiskIconOperators}
-                            />
-                        </div>
-                        <div className="ml-4">
-                            <div className="mb-2 font-semibold">
-                                {layer.riskAnalysis[2].category}:{" "}
-                                <span
-                                    className="font-semibold"
-                                    style={{
-                                        color: getRiskColorText(
-                                            layer.riskFactors[2],
-                                        ),
-                                    }}
-                                >
-                                    {layer.riskFactors[2]}
-                                </span>
-                            </div>
-                            <div className="mb-4">
-                                {layer.riskAnalysis[2].title}
-                            </div>
-                        </div>
-                    </div>
-                    <div className="mb-0 flex items-start">
-                        <div className="flex items-start justify-center">
-                            <RiskIcon
-                                riskFactor={layer.riskFactors[3]}
-                                IconComponent={RiskIconSettlement}
-                            />
-                        </div>
-                        <div className="ml-4">
-                            <div className="mb-2 font-semibold">
-                                {layer.riskAnalysis[3].category}:{" "}
-                                <span
-                                    className="font-semibold"
-                                    style={{
-                                        color: getRiskColorText(
-                                            layer.riskFactors[3],
-                                        ),
-                                    }}
-                                >
-                                    {layer.riskFactors[3]}
-                                </span>
-                            </div>
-                            <div className="mb-2">
-                                {layer.riskAnalysis[3].title}
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <RiskSnapshot layer={layer} hoverPosition={hoverPosition} />
             )}
         </div>
     );
