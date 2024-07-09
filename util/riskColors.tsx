@@ -40,7 +40,7 @@ export const getRiskColorBackground = (riskFactor: string) => {
         case "Critical":
             return "var(--color-risk-critical-bg)";
         default:
-            return "var(--color-bg-secondary)";
+            return "#abadb1";
     }
 };
 
