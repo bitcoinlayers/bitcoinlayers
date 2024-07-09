@@ -34,21 +34,21 @@ module.exports = {
                 bg_secondary: "F5F8FD",
                 bg_tertiary: "FFFFFF",
 
-                bg_low: "#DFFBCC",
-                bg_medium: "#FEFFC1",
-                bg_high: "#FFDFDF",
-                bg_critical: "#FF9D9E",
+                //risk colors
+                bg_low: "var(--color-risk-low-bg)",
+                bg_medium: "var(--color-risk-medium-bg)",
+                bg_high: "var(--color-risk-high-bg)",
+                bg_critical: "var(--color-risk-critical-bg)",
+                text_risk_low: "var(--color-risk-low-text)",
+                text_risk_medium: "var(--color-risk-medium-text)",
+                text_risk_high: "var(--color-risk-high-text)",
+                text_risk_critical: "var(--color-risk-critical-text)",
+                icon_low: "var(--color-risk-low-icon)",
+                icon_medium: "var(--color-risk-medium-icon)",
+                icon_high: "var(--color-risk-high-icon)",
+                icon_critical: "var(--color-risk-critical-icon)",
 
-                text_risk_low: "#3D9F11",
-                text_risk_medium: "#D19D00",
-                text_risk_high: "#ED1517",
-                text_risk_critical: "#A50F11",
-
-                icon_low: "#52C41A",
-                icon_medium: "#F4CD00",
-                icon_high: "#ED1517",
-                icon_critical: "#C80D0F",
-
+                //general colors
                 icon_primary: "#292929",
                 icon_secondary: "#434D65",
                 icon_tertiary: "#C9D0D8",

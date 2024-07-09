@@ -1,45 +1,60 @@
 // riskColors.tsx
-export const getRiskColorFont = (riskFactor: string) => {
+export const getRiskColorText = (riskFactor: string) => {
     switch (riskFactor) {
         case "Low":
-            return "text-text_risk_low";
+            return "var(--color-risk-low-text)";
         case "Medium":
-            return "text-text_risk_medium";
+            return "var(--color-risk-medium-text)";
         case "High":
-            return "text-text_risk_high";
+            return "var(--color-risk-high-text)";
         case "Critical":
-            return "text-text_risk_critical";
+            return "var(--color-risk-critical-text)";
         default:
-            return "text-text_secondary";
+            return "var(--color-text-secondary)";
     }
 };
 
-export const getRiskColorClass = (riskFactor: string) => {
+export const getRiskColorIcon = (riskFactor: string) => {
     switch (riskFactor) {
         case "Low":
-            return {
-                bg: "bg-bg_low",
-                fill: "#52C41A",
-            };
+            return "var(--color-risk-low-icon)";
         case "Medium":
-            return {
-                bg: "bg-bg_medium",
-                fill: "#F4CD00",
-            };
+            return "var(--color-risk-medium-icon)";
         case "High":
-            return {
-                bg: "bg-bg_high",
-                fill: "#ED1517",
-            };
+            return "var(--color-risk-high-icon)";
         case "Critical":
-            return {
-                bg: "bg-bg_critical",
-                fill: "#C80D0F",
-            };
+            return "var(--color-risk-critical-icon)";
         default:
-            return {
-                bg: "bg-lightsecondary",
-                fill: "icon_tertiary",
-            };
+            return "var(--color-icon-secondary)";
+    }
+};
+
+export const getRiskColorBackground = (riskFactor: string) => {
+    switch (riskFactor) {
+        case "Low":
+            return "var(--color-risk-low-bg)";
+        case "Medium":
+            return "var(--color-risk-medium-bg)";
+        case "High":
+            return "var(--color-risk-high-bg)";
+        case "Critical":
+            return "var(--color-risk-critical-bg)";
+        default:
+            return "var(--color-bg-secondary)";
+    }
+};
+
+export const getRiskEmoji = (riskFactor: string) => {
+    switch (riskFactor) {
+        case "Low":
+            return "✅";
+        case "Medium":
+            return "⚠️";
+        case "High":
+            return "🚨";
+        case "Critical":
+            return "🛑";
+        default:
+            return "ℹ️";
     }
 };
