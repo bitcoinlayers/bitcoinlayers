@@ -52,7 +52,11 @@ const LayerDiamond: React.FC<{ layer: Layer }> = ({ layer }) => {
         title: string,
         positionTop: number,
         positionLeft: number,
-        IconComponent: React.FC<{ fill: string }>,
+        IconComponent: React.FC<{
+            fill: string;
+            width?: string;
+            height?: string;
+        }>,
     ) => {
         const bgColor = getRiskColorBackground(riskFactor);
         const fillColor = getRiskColorIcon(riskFactor);
@@ -94,8 +98,8 @@ const LayerDiamond: React.FC<{ layer: Layer }> = ({ layer }) => {
                         <div className="w-full h-full flex justify-center items-center">
                             <IconComponent
                                 fill={fillColor}
-                                width="100%"
-                                height="100%"
+                                width="50px"
+                                height="50px"
                             />
                         </div>
                     </foreignObject>
