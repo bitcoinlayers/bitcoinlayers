@@ -126,13 +126,13 @@ const LayerDiamond: React.FC<{ layer: Layer }> = ({ layer }) => {
             <div className="left-[10px] top-[155px] -rotate-45 absolute origin-top-left text-left text-slate-600 text-xs font-medium leading-none">
                 BRIDGE
             </div>
-            <div className="left-[51%] translate-x-[-50%] top-[0px] absolute origin-top-left text-center text-slate-600 text-xs font-medium leading-none w-[80px]">
+            <div className="left-[51%] translate-x-[-50%] top-[-8px] absolute origin-top-left text-center text-slate-600 text-xs font-medium leading-none w-[80px]">
                 DATA AVAILABILITY
             </div>
             <div className="right-[10px] top-[155px] rotate-45 absolute origin-top-right text-right text-slate-600 text-xs font-medium leading-none">
                 OPERATORS
             </div>
-            <div className="left-[51%] translate-x-[-50%] top-[350px] absolute origin-top-left text-center text-slate-600 text-xs font-medium leading-none w-[80px]">
+            <div className="left-[51%] translate-x-[-50%] top-[355px] absolute origin-top-left text-center text-slate-600 text-xs font-medium leading-none w-[80px]">
                 SETTLEMENT ASSURANCE
             </div>
 
