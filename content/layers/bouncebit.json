@@ -53,6 +53,17 @@
             "content": ""
         }
     ],
+    "sections": [
+        {
+            "id": "description",
+            "title": "Description",
+            "content": [
+                {
+                    "content": "BouneBit is a Proof-of-Stake blockchain that leverages bitcoin for staking and supports an EVM execution environment."
+                }
+            ]
+        }
+    ],
     "knowledgeBits": [
         {
             "url": "https://bouncebit.io/",
