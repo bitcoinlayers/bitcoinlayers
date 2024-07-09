@@ -23,21 +23,6 @@ interface Props {
     }[];
 }
 
-const getRiskColorClass = (riskFactor: string) => {
-    switch (riskFactor) {
-        case "Low":
-            return "text-text_risk_low";
-        case "Medium":
-            return "text-text_risk_medium";
-        case "Medium-High":
-            return "text-text_risk_high";
-        case "High":
-            return "text-text_risk_critical";
-        default:
-            return "text-text_secondary";
-    }
-};
-
 const LayerImage = ({ src, title }: { src: string; title: string }) => {
     const [imageSrc, setImageSrc] = useState(src);
 

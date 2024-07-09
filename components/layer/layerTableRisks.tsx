@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { Layer } from "@/components/layer/layerProps";
 import { MobileView, isMobile } from "react-device-detect";
+import { getRiskColorText } from "@/util/riskColors";
 
 interface Props {
     data: Layer[];
@@ -35,21 +36,6 @@ const LayerImage = ({ src, title }: { src: string; title: string }) => {
             onError={handleError}
         />
     );
-};
-
-const getRiskColorClass = (riskFactor: string) => {
-    switch (riskFactor) {
-        case "Low":
-            return "text-text_risk_low";
-        case "Medium":
-            return "text-text_risk_medium";
-        case "High":
-            return "text-text_risk_high";
-        case "Critical":
-            return "text-text_risk_critical";
-        default:
-            return "text-text_secondary";
-    }
 };
 
 const LayerTableRisks = ({ data }: Props) => {
@@ -150,18 +136,30 @@ const LayerTableRisks = ({ data }: Props) => {
 
                                 {(!isMobile || mobileRiskTab === "Bridge") && (
                                     <td
-                                        className={`lg:px-6 px-4 lg:py-4 py-3 border-stroke_tertiary text_table_body ${getRiskColorClass(
-                                            item.riskAnalysis[0]?.tier || "",
-                                        )}`}
+                                        className={
+                                            "lg:px-6 px-4 lg:py-4 py-3 border-stroke_tertiary text_table_body"
+                                        }
+                                        style={{
+                                            color: getRiskColorText(
+                                                item.riskAnalysis[0]?.tier ||
+                                                    "",
+                                            ),
+                                        }}
                                     >
                                         {item.btcBridge}
                                     </td>
                                 )}
                                 {(!isMobile || mobileRiskTab === "DA") && (
                                     <td
-                                        className={`lg:px-6 px-4 lg:py-4 py-3 border-stroke_tertiary text_table_body ${getRiskColorClass(
-                                            item.riskAnalysis[1]?.tier || "",
-                                        )}`}
+                                        className={
+                                            "lg:px-6 px-4 lg:py-4 py-3 border-stroke_tertiary text_table_body"
+                                        }
+                                        style={{
+                                            color: getRiskColorText(
+                                                item.riskAnalysis[1]?.tier ||
+                                                    "",
+                                            ),
+                                        }}
                                     >
                                         {item.settlement}
                                     </td>
@@ -175,9 +173,15 @@ const LayerTableRisks = ({ data }: Props) => {
                                 {(!isMobile ||
                                     mobileRiskTab === "Settlement") && (
                                     <td
-                                        className={`lg:px-6 px-4 lg:py-4 py-3 border-stroke_tertiary text_table_body ${getRiskColorClass(
-                                            item.riskAnalysis[3]?.tier || "",
-                                        )}`}
+                                        className={
+                                            "lg:px-6 px-4 lg:py-4 py-3 border-stroke_tertiary text_table_body"
+                                        }
+                                        style={{
+                                            color: getRiskColorText(
+                                                item.riskAnalysis[3]?.tier ||
+                                                    "",
+                                            ),
+                                        }}
                                     >
                                         {item.executionEnv}
                                     </td>
