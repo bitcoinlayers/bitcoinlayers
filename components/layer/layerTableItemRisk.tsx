@@ -41,7 +41,7 @@ const getRiskColorClass = (riskFactor: string) => {
         case "Critical":
             return {
                 bg: "bg-bg_critical",
-                fill: "#A50F11",
+                fill: "#C80D0F",
             };
         default:
             return {
@@ -73,8 +73,8 @@ const Risk: React.FC<RiskProps> = ({ layer }) => {
                 className={`w-6 h-6 p-[4px] ${riskColor.bg} rounded-full justify-center items-center flex`}
             >
                 <svg
-                    viewBox="0 0 24 24"
-                    className="w-3.5 h-3.5 relative"
+                    viewBox="0 0 22 22"
+                    className="w-4 h-4 relative"
                     style={{
                         fill: riskColor.fill,
                     }}
