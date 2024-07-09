@@ -73,13 +73,16 @@ const LayerTable = ({ data }: Props) => {
                                 handleRowClick(`/layers/${item.slug}`)
                             }
                         >
-                            <td className="flex items-center px-6 py-4 font-semibold whitespace-nowrap border-l border-stroke_tertiary">
-                                <LayerImage
-                                    src={`/logos/${item.slug}.png`}
-                                    title={item.title}
-                                />
-                                <span className="ml-2">{item.title}</span>
+                            <td className="px-6 py-4 font-semibold whitespace-nowrap border-l border-stroke_tertiary">
+                                <div className="flex items-center">
+                                    <LayerImage
+                                        src={`/logos/${item.slug}.png`}
+                                        title={item.title}
+                                    />
+                                    <span className="ml-2">{item.title}</span>
+                                </div>
                             </td>
+
                             <td className="px-2 border-stroke_tertiary">
                                 <Risk layer={item} />
                             </td>

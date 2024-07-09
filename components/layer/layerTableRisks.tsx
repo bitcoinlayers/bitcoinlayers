@@ -124,14 +124,16 @@ const LayerTableRisks = ({ data }: Props) => {
                                     handleRowClick(`/layers/${item.slug}`)
                                 }
                             >
-                                <td className="flex items-center lg:px-6 px-4 lg:py-4 py-3 font-semibold whitespace-nowrap border-stroke_tertiary border-r lg:border-r-0 text-table_body">
-                                    <LayerImage
-                                        src={`/logos/${item.slug}.png`}
-                                        title={item.title}
-                                    />
-                                    <span className="ml-2 truncate">
-                                        {item.title}
-                                    </span>
+                                <td className="lg:px-6 px-4 lg:py-4 py-3 font-semibold whitespace-nowrap border-stroke_tertiary border-r lg:border-r-0 text-table_body">
+                                    <div className="flex items-center">
+                                        <LayerImage
+                                            src={`/logos/${item.slug}.png`}
+                                            title={item.title}
+                                        />
+                                        <span className="ml-2 truncate">
+                                            {item.title}
+                                        </span>
+                                    </div>
                                 </td>
 
                                 {(!isMobile || mobileRiskTab === "Bridge") && (

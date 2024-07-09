@@ -75,12 +75,14 @@ const InfrastructureTable = ({ data }: Props) => {
                                 handleRowClick(`/infrastructure/${item.slug}`)
                             }
                         >
-                            <td className="flex items-center px-6 py-4 font-semibold whitespace-nowrap border-l border-stroke_tertiary text_table_important">
-                                <InfrastructureImage
-                                    src={`/logos/${item.slug}.png`}
-                                    title={item.title}
-                                />
-                                <span className="ml-2">{item.title}</span>
+                            <td className="px-6 py-4 font-semibold whitespace-nowrap border-l border-stroke_tertiary text_table_important">
+                                <div className="flex items-center">
+                                    <InfrastructureImage
+                                        src={`/logos/${item.slug}.png`}
+                                        title={item.title}
+                                    />
+                                    <span className="ml-2">{item.title}</span>
+                                </div>
                             </td>
                             <td className="px-6 py-4 border-stroke_tertiary">
                                 {item.bitcoinSecurity}

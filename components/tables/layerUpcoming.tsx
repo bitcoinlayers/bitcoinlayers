@@ -138,12 +138,14 @@ const LayerTableUpcoming = ({ data, headers }: Props) => {
                                 handleRowClick(`/layers/${item.slug}`)
                             }
                         >
-                            <td className="w-64 flex items-center px-6 py-4 font-semibold whitespace-nowrap border-l border-stroke_tertiary text_table_important">
-                                <LayerImage
-                                    src={`/logos/${item.slug}.png`}
-                                    title={item.title}
-                                />
-                                <span className="ml-2">{item.title}</span>
+                            <td className="w-64 px-6 py-4 font-semibold whitespace-nowrap border-l border-stroke_tertiary text_table_important">
+                                <div className="flex items-center">
+                                    <LayerImage
+                                        src={`/logos/${item.slug}.png`}
+                                        title={item.title}
+                                    />
+                                    <span className="ml-2">{item.title}</span>
+                                </div>
                             </td>
                             <td className="w-[176px] px-2 border-stroke_tertiary text_table_important">
                                 {item.underReview === "no" ? (

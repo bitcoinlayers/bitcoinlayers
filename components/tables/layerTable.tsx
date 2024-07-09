@@ -199,14 +199,16 @@ const LayerTable = ({ data, headers }: Props) => {
                                     handleRowClick(`/layers/${item.slug}`)
                                 }
                             >
-                                <td className="w-64 flex items-center lg:px-6 px-4 py-4 font-semibold whitespace-nowrap border-r lg:border-r-0 border-stroke_tertiary text_table_important text-table_body">
-                                    <LayerImage
-                                        src={`/logos/${item.slug}.png`}
-                                        title={item.title}
-                                    />
-                                    <span className="ml-2 truncate lg:word-break-none">
-                                        {item.title}
-                                    </span>
+                                <td className="w-64 lg:px-6 px-4 py-4 font-semibold whitespace-nowrap border-r lg:border-r-0 border-stroke_tertiary text_table_important text-table_body">
+                                    <div className="flex items-center">
+                                        <LayerImage
+                                            src={`/logos/${item.slug}.png`}
+                                            title={item.title}
+                                        />
+                                        <span className="ml-2 truncate lg:word-break-none">
+                                            {item.title}
+                                        </span>
+                                    </div>
                                 </td>
                                 {!isMobile && (
                                     <td className="relative w-[176px] px-2 border-stroke_tertiary text_table_important">
