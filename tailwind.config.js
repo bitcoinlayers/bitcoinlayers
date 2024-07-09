@@ -39,16 +39,12 @@ module.exports = {
                 bg_high: "#FFDFDF",
                 bg_critical: "#FF9D9E",
 
-                risk_low: "#52C41A",
-                risk_medium: "#F4CD00",
-                risk_midhigh: "#F99107",
-                risk_high: "#FF4D4F",
-
                 text_risk_low: "#3D9F11",
                 text_risk_medium: "#D19D00",
                 text_risk_midhigh: "#DD6B02",
                 text_risk_high: "#ED1517",
                 text_risk_critical: "#A50F11",
+                // text_risk_critical: "#3D9F11",
 
                 icon_primary: "#292929",
                 icon_secondary: "#434D65",
