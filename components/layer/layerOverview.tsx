@@ -25,16 +25,13 @@ const LayerOverview: React.FC<{ layer: Layer }> = ({ layer }) => {
             id="overview"
             className="flex lg:flex-row flex-col justify-between pt-6 gap-4 mb-12"
         >
-            <div
-                className="flex flex-col space-y-10 px-4 flex-grow"
-                style={{ width: "25%" }}
-            >
+            <div className="flex flex-col space-y-10 px-4 flex-grow w-full lg:w-1/4">
                 <Categories layer={layer} />
                 <Description layer={layer} />
                 <div className="border-t border-stroke_secondary"></div>
                 <Links layer={layer} />
             </div>
-            <div className="mt-4 lg:mt-0" style={{ width: "350px" }}>
+            <div className="mt-4 lg:mt-0 w-[350px] h-[350px] lg:h-[350px] lg:ml-0 ml-24">
                 <LayerDiamond layer={layer} />
             </div>
         </section>

@@ -108,7 +108,7 @@ const LayerDiamond: React.FC<{ layer: Layer }> = ({ layer }) => {
         );
     };
 
-    const containerClassName = `lg:w-[${containerSize}px] h-[${containerSize}px] lg:h-full flex justify-center items-center relative ml-6 lg:ml-0 z-30`;
+    const containerClassName = `lg:w-[${containerSize}px] h-[${containerSize}px] lg:h-full flex justify-center items-center relative ml-0 z-30`;
 
     return (
         <div className={containerClassName}>
