@@ -19,7 +19,7 @@ const Tooltip: React.FC<{ title: string; style: React.CSSProperties }> = ({
 );
 
 const LayerDiamond: React.FC<{ layer: Layer }> = ({ layer }) => {
-    const svgDimensions = "w-24 h-24"; // Adjust dimensions as needed
+    const svgDimensions = "w-36 h-36";
 
     const [tooltip, setTooltip] = useState<{
         title: string;
@@ -56,7 +56,7 @@ const LayerDiamond: React.FC<{ layer: Layer }> = ({ layer }) => {
         return (
             <div className={`absolute ${positionStyle} ${svgDimensions}`}>
                 <svg
-                    viewBox="0 0 97 97"
+                    viewBox="0 0 106 106"
                     className="w-full h-full relative flex-col justify-start items-start flex"
                     onMouseEnter={(e) => handleMouseEnter(e, title)}
                     onMouseLeave={handleMouseLeave}
@@ -68,6 +68,8 @@ const LayerDiamond: React.FC<{ layer: Layer }> = ({ layer }) => {
                         height="68.215"
                         transform="rotate(45 48.2646 0.264648)"
                         style={{ fill: bgColor }}
+                        rx="10"
+                        ry="10"
                     />
                     <foreignObject
                         x="14"
@@ -86,30 +88,44 @@ const LayerDiamond: React.FC<{ layer: Layer }> = ({ layer }) => {
     };
 
     return (
-        <div className="lg:w-[370px] h-[300px] lg:h-full flex justify-center items-center relative ml-6 lg:ml-0 z-30">
+        <div className="lg:w-[350px] h-[350px] bg-black lg:h-full flex justify-center items-center relative ml-6 lg:ml-0 z-30">
             {tooltip && <Tooltip title={tooltip.title} style={tooltip.style} />}
+
+            <div className="left-[10px] top-[140px] absolute origin-top-left -rotate-45 text-left text-slate-600 text-xs font-medium leading-none">
+                BRIDGE
+            </div>
+            <div className="left-[50%] translate-x-[-50%] top-[10px] absolute origin-top-left text-center text-slate-600 text-xs font-medium leading-none w-[80px]">
+                DATA AVAILABILITY
+            </div>
+            <div className="right-[10px] top-[140px] absolute origin-top-right rotate-45 text-right text-slate-600 text-xs font-medium leading-none">
+                OPERATORS
+            </div>
+            <div className="left-[50%] translate-x-[-50%] top-[290px] absolute origin-top-left text-center text-slate-600 text-xs font-medium leading-none w-[80px]">
+                SETTLEMENT ASSURANCE
+            </div>
+
             {renderDiamond(
                 layer.riskAnalysis[0].tier,
                 layer.riskAnalysis[0].title,
-                "top-[13px] left-[90px]",
+                "top-[136.87px] left-[0px]",
                 RiskIconBridge,
             )}
             {renderDiamond(
                 layer.riskAnalysis[1].tier,
                 layer.riskAnalysis[1].title,
-                "top-[85px] left-[157px]",
+                "top-[64px] left-[75px]",
                 RiskIconDA,
             )}
             {renderDiamond(
                 layer.riskAnalysis[2].tier,
                 layer.riskAnalysis[2].title,
-                "top-[155px] left-[90px]",
+                "top-[136.87px] left-[150px]",
                 RiskIconOperators,
             )}
             {renderDiamond(
                 layer.riskAnalysis[3].tier,
                 layer.riskAnalysis[3].title,
-                "top-[85px] left-[23px]",
+                "top-[210px] left-[75px]",
                 RiskIconSettlement,
             )}
         </div>
