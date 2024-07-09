@@ -31,7 +31,7 @@ const LayerOverview: React.FC<{ layer: Layer }> = ({ layer }) => {
                 <div className="border-t border-stroke_secondary"></div>
                 <Links layer={layer} />
             </div>
-            <div className="mt-4 lg:mt-0 w-[350px] h-[350px] lg:h-[350px] lg:ml-0 ml-6">
+            <div className="mt-4 lg:mt-0 w-[350px] h-[350px] lg:h-[350px] lg:ml-0 ml-0">
                 <LayerDiamond layer={layer} />
             </div>
         </section>
