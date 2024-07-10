@@ -44,7 +44,7 @@ const RiskSnapshot: React.FC<RiskSnapshotProps> = ({
                 left: `${hoverPosition.left}px`,
             }}
         >
-            <div className="mb-6 mt-2 font-bold border-b border-stroke_tertiary">
+            <div className="mb-6 mt-2 font-bold border-b border-stroke_tertiary text_table_important">
                 Risk Snapshot
             </div>
             {layer.riskAnalysis.map((risk, index) => (
@@ -63,7 +63,7 @@ const RiskSnapshot: React.FC<RiskSnapshotProps> = ({
                         />
                     </div>
                     <div className="ml-4">
-                        <div className="mb-2 font-semibold">
+                        <div className="mb-2 font-semibold text_table_important">
                             {risk.category}:{" "}
                             <span
                                 className="font-semibold"
@@ -76,7 +76,9 @@ const RiskSnapshot: React.FC<RiskSnapshotProps> = ({
                                 {layer.riskFactors[index]}
                             </span>
                         </div>
-                        <div className="mb-4">{risk.title}</div>
+                        <div className="mb-4 text_table_important">
+                            {risk.title}
+                        </div>
                     </div>
                 </div>
             ))}
