@@ -28,7 +28,7 @@
             "category": "Bridge Custody",
             "score": 0,
             "tier": "Critical",
-            "title": "Users likely interact with federated multi-sig. No information on two-way peg is available.",
+            "title": "Users likely interact with federated multi-sig. No information on two-way peg is available",
             "content": "The EVM bridge contracts and addresses for the operator(s) of the Bitcoin multi-sig are currently not available. Users should remain cautious when depositing BTC into Bsquared Network."
         },
         {

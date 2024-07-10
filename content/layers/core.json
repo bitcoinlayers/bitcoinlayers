@@ -29,28 +29,28 @@
             "score": 0,
             "tier": "High",
             "title": "Funds are custodied in a federated multi-sig, with a number of parties ensuring the honesty of the bridge",
-            "content": "coreBTC does not support unilateral exits. Users must trust several roles on Bitcoin and Core Chain for the minting and burning of coreBTC. Specifically, to exit from coreBTC back to BTC, users must trust Lockers and Bitcoin Light Clients. All roles are financially incentivized to be good actors."
+            "content": "Users trust various parties in maintaining the honesty of Core’s two-way peg with Bitcoin. Lockers are the party responsible for securing the bitcoin that backs coreBTC on Core Chain. These actors stake collateral, in the form of Core tokens, in order to participate as a Locker. In the event of maliciousing moving bitcoin from the multi-sig, or being unable to fulfill withdrawals, Lockers would be slashed and lose the collateral they posted.\n\nOther parties in the bridge set up are responsible for monitoring the Locker’s activity and initiating the slashing process."
         },
         {
             "category": "Data Availability",
             "score": 0,
             "tier": "Medium",
             "title": "Data availability requirement fulfilled by Core chain full nodes",
-            "content": "Core Chain does not use Bitcoin for data availability. Because of this, Core's state cannot be reconstructed using only data from Bitcoin. Core Chain has a network of nodes who esnsure data is readily available."
+            "content": "Core Chain's data availability requirement is fulfilled by its own network of full nodes. Anyone with enough computational resources can run a Core Chain full node."
         },
         {
             "category": "Network Operators",
             "score": 0,
             "tier": "Medium",
             "title": "Core's hybrid consensus mechanism operates the network",
-            "content": "Core Chain has a network of validators who participate as block producers. Each day, the 23 validators with the highest hybrid score (from DPOW and DPOS) are elected to participate in block production. Any Core chain full node can register to become a part of this set. Core Chain does not support exits that circumvent its validator set. This means that users must trust Core Chain validators to include their transactions in blocks."
+            "content": "Core Chain has a network of validators who participate as block producers. Each day, the 23 validators with the highest hybrid score (from DPOW and DPOS) are elected to participate in block production. Any Core chain full node can register to become a part of this set. Core Chain does not support exits that circumvent its validator set. This means that users must trust Core Chain validators to include their transactions in blocks.\n\nThere is a minimium stake to run a Core Chain validator node."
         },
         {
             "category": "Settlement Assurance",
             "score": 0,
             "tier": "Medium",
             "title": "Transaction finality is provided by Core Chain consensus and has no assurances inherited from Bitcoin",
-            "content": "Settlement is done offchain, on Core Chain, rather than onchain, on Bitcoin. The validity of Core Chain state transitions is not enforced by Bitcoin."
+            "content": "Settlement is finalized by Core Chain's alternative consensus mechanism rather than on Bitcoin."
         }
     ],
     "sections": [
@@ -78,7 +78,7 @@
                 },
                 {
                     "title": "coreBTC",
-                    "content": "coreBTC is a native bridged BTC. Several permissionless roles are involved in the burning and minting of coreBTC.\n\nLockers hold BTC after minting and distribute it after burning. They must be overcollateralized at risk of liquidation by Liquidators. Porters monitor Bitcoin to communicate with Core Chain smart contracts to trigger coreBTC mints, which involves sending a proof. Other roles are involved as well, such as Guardians, Bitcoin Light Clients, Slashers, Relayers, and Verifiers."
+                    "content": "coreBTC is a native bridged BTC. Several roles are involved in the burning and minting of coreBTC.\n\nLockers hold BTC after minting and distribute it after burning. They must be overcollateralized at risk of liquidation by Liquidators. Other roles are involved as well, such as Guardians, Bitcoin Light Clients, Slashers, Relayers, and Verifiers."
                 },
                 {
                     "title": "Faster block times",
