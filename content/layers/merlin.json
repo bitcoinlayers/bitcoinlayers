@@ -4,7 +4,7 @@
     "layerType": "Sidechain",
     "live": "Mainnet",
     "underReview": "no",
-    "riskFactors": ["Critical", "High", "High", "Critical"],
+    "riskFactors": ["Critical", "Critical", "High", "Critical"],
     "purpose": "General",
     "btcBridge": "Limited information",
     "settlement": "External",
@@ -50,9 +50,9 @@
         {
             "category": "Data Availability",
             "score": 0,
-            "tier": "High",
+            "tier": "Critical",
             "title": "State data is stored and made available by a permissioned data availability committee. The identities of its members are under review",
-            "content": "Merlin chain is built on the Polygon CDK stack. In its Github, it has a copy of the Polygon CDK Committee contract. In the contract, it states that the admin has the control to set up the committee, so it is likely that the members of this committee are permissioned and selected by the Merlin Chain operator."
+            "content": "Merlin chain is built on the Polygon CDK stack. In its Github, it has a copy of the Polygon CDK Committee contract. In the contract, it states that the admin has the control to set up the committee, so it is likely that the members of this committee are permissioned and selected by the Merlin Chain operator. We are unable to verify the members of this committee."
         },
         {
             "category": "Network Operator",
