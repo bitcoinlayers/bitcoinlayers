@@ -49,7 +49,7 @@
             "category": "Settlement Assurance",
             "score": 0,
             "tier": "High",
-            "title": "State validation mechanism, on Ethereum, is under development",
+            "title": "BOB uses fraud proofs to optimistically settle on Ethereum, but inherits no settlement assurances from Bitcoin",
             "content": "BOB inherits no settlement assurances from Bitcoin. BOB has recently added fraud proofs to improve the security of its native bridge with Ethereum. Anyone is able to challenge invalid state transitions submitted by the proposer.\n\nThe risk score related to settlement assurances will be updated shortly."
         }
     ],
