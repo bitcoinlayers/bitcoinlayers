@@ -41,9 +41,9 @@
         {
             "category": "Network Operator",
             "score": 0,
-            "tier": "High",
+            "tier": "Medium",
             "title": "Leverages a permissionless consensus mechanism, but has less than 21 operators",
-            "content": "Stacks has a permissionless block production mechanism, but it does not support exits that circumvent its miner/validator set. This means that users must trust Stacks validators to include their transactions in blocks. Anyone with sufficient capital and resources can participate as a Stacks miner. Only 11 miners are participating in Stacks consensus."
+            "content": "Stacks has a permissionless block production mechanism, but it does not support exits that circumvent its miner/validator set. This means that users must trust Stacks validators to include their transactions in blocks. Anyone with sufficient capital and resources can participate as a Stacks miner. The large majority of Stacks blocks are built by Bitcoin miners additionally mining Stacks."
         },
         {
             "category": "Settlement Assurance",
