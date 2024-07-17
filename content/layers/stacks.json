@@ -41,9 +41,9 @@
         {
             "category": "Network Operator",
             "score": 0,
-            "tier": "High",
+            "tier": "Medium",
             "title": "Leverages a permissionless consensus mechanism, but has less than 21 operators",
-            "content": "Stacks has a permissionless block production mechanism, but it does not support exits that circumvent its miner/validator set. This means that users must trust Stacks validators to include their transactions in blocks. Anyone with sufficient capital and resources can participate as a Stacks miner. Only 11 miners are participating in Stacks consensus."
+            "content": "Stacks has a permissionless block production mechanism, but it does not support exits that circumvent its miner/validator set. This means that users must trust Stacks validators to include their transactions in blocks. Anyone with sufficient capital and resources can participate as a Stacks miner. The large majority of Stacks blocks are built by Bitcoin miners additionally mining Stacks."
         },
         {
             "category": "Settlement Assurance",
@@ -59,12 +59,30 @@
             "title": "Bitcoin Security",
             "content": [
                 {
-                    "title": "Stacks nodes are required for data availability",
-                    "content": "Stacks posts state roots to Bitcoin, but not full transaction calldata. Because of this, Stacks' state cannot be reconstructed using only data from Bitcoin. Stacks nodes are the sole providers of data availability. Anyone can run a Stacks node and participate in Proof-of-Transfer consensus."
+                "title": "Unilateral exits to Bitcoin not possible",
+                "content": "Users cannot unilaterally exit from the Stacks sidechain with an L1 Bitcoin transaction. They currently trust centralized operators to process their withdrawals."
                 },
+            {
+                "title": "The protocol does not enable MEV on Bitcoin, but Bitcoin miners can extract MEV from Stacks.",
+                "content": "Stacks' mining process requires a Bitcoin miner to submit a block commit as a bid to build a Stacks block. It is possible for a Bitcoin miner to censor all bids to build Stacks' blocks when building a Bitcoin block. Since the active Bitcoin miner would be the only entity with the ability to win a Stacks block, they could submit a minimal amount of funds to win the block and receive all STX rewards. This MEV-extraction scenario looks to be solved in the upcoming Nakamoto upgrade."
+              },
+            {
+                "title": "An alternative token plays a role in network security",
+                "content": "The STX token is required to pay for transaction fees and smart contract execution on the Stacks network. It is also used as a reward for miners who participate in the PoX consensus mechanism. The token is indirectly required for the security of the network, as block production by miners is incentivized by STX."
+              },
+            {
+                "title": "Stacks indirectly contributes to the security budget",
+                "content": "Stacks sees Bitcoin miners bid on the opportunity to win Stacks blocks and earn fees for doing so. However, miners rewards are paid out in STX tokens via a distinct mining set up."
+              }
+            ]
+        },
+        {
+            "id": "withdrawals",
+            "title": "Withdrawals",
+            "content": [
                 {
-                    "title": "Stacks requires another token to function",
-                    "content": "The STX token is required to pay for transaction fees and smart contract execution on the Stacks network. It is also used as a reward for miners who participate in the PoX consensus mechanism. The token is indirectly required for the security of the network, as block production by miners is incentivized by STX."
+                    "title": "Users trust centralized operators to process their withdrawals",
+                    "content": "Stacks users deposit BTC into Stacks through custodial bridge mechanisms. They trust that the operators of these bridges (e.g. aBTC and xBTC) will not steal their Bitcoin assets, or censor their withdrawals."
                 }
             ]
         },
@@ -115,16 +133,6 @@
                 {
                     "title": "Stacks is operated by miners and validators",
                     "content": "Block production is managed by Stacks miners (which are typically also Bitcoin miners, similar to the node overlap with classic merge-mining), by combining microblocks created by Stacks validators. Users trust the majority of validators and miners to not collude or censor."
-                }
-            ]
-        },
-        {
-            "id": "withdrawals",
-            "title": "Withdrawals",
-            "content": [
-                {
-                    "title": "Users trust centralized operators to process their withdrawals",
-                    "content": "Stacks users deposit BTC into Stacks through custodial bridge mechanisms. They trust that the operators of these bridges (e.g. aBTC and xBTC) will not steal their Bitcoin assets, or censor their withdrawals."
                 }
             ]
         },
