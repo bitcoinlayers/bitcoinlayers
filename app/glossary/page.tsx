@@ -26,13 +26,13 @@ type GlossaryData = {
 };
 
 const glossaryData: GlossaryData = {
-    A: [
-        {
-            term: "Anchored Sidechain",
-            definition:
-                "A sidechain that inherits Bitcoin finality and does not reorg unless the Bitcoin mainchain reorgs.",
-        },
-    ],
+    // A: [
+    //     {
+    //         term: "Anchored Sidechain",
+    //         definition:
+    //             "A sidechain that inherits Bitcoin finality and does not reorg unless the Bitcoin mainchain reorgs.",
+    //     },
+    // ],
     // B: [{ term: "xx", definition: "yy" }],
     // C: [],
     // D: [],
@@ -49,44 +49,44 @@ const glossaryData: GlossaryData = {
     // O: [],
     // P: [],
     // Q: [],
-    R: [
-        {
-            term: "Rollup",
-            definition:
-                "A blockchain that posts its latest state root, and enough transaction data to reconstruct its state from genesis, to Bitcoin",
-        },
-    ],
-    S: [
-        {
-            term: "Sidechain",
-            definition:
-                "A blockchain with sovereign execution, consensus, data availability, and security (i.e., an L1) that is in some way aligned with Bitcoin",
-        },
-        {
-            term: "Spiderchain",
-            definition:
-                "A sidechain protocol that leverages a variety of rotating multi-sigs to secure the BTC that is deposited into the sidechain",
-        },
-        {
-            term: "State channel",
-            definition:
-                "A system where part of the blockchain's state is locked into a multi-signature contract between a number of counterparties. These counterparties engage in transactions, related to this state, amongst themselves and keep a record of state transitions locally",
-        },
-        {
-            term: "Statechain",
-            definition:
-                "A protocol where users enter a 2-2 multisig with a federated entity and transfer ownership of a UTXO to an intended recipient by providing them a statechain private key for that specific UTXO",
-        },
-    ],
+    // R: [
+    //     {
+    //         term: "Rollup",
+    //         definition:
+    //             "A blockchain that posts its latest state root, and enough transaction data to reconstruct its state from genesis, to Bitcoin",
+    //     },
+    // ],
+    // S: [
+    //     {
+    //         term: "Sidechain",
+    //         definition:
+    //             "A blockchain with sovereign execution, consensus, data availability, and security (i.e., an L1) that is in some way aligned with Bitcoin",
+    //     },
+    //     {
+    //         term: "Spiderchain",
+    //         definition:
+    //             "A sidechain protocol that leverages a variety of rotating multi-sigs to secure the BTC that is deposited into the sidechain",
+    //     },
+    //     {
+    //         term: "State channel",
+    //         definition:
+    //             "A system where part of the blockchain's state is locked into a multi-signature contract between a number of counterparties. These counterparties engage in transactions, related to this state, amongst themselves and keep a record of state transitions locally",
+    //     },
+    //     {
+    //         term: "Statechain",
+    //         definition:
+    //             "A protocol where users enter a 2-2 multisig with a federated entity and transfer ownership of a UTXO to an intended recipient by providing them a statechain private key for that specific UTXO",
+    //     },
+    // ],
     // T: [],
     // U: [],
-    V: [
-        {
-            term: "Validity rollup",
-            definition:
-                "A rollup where a prover submits a validity proof to a verifier contract on the L1 proving that the state transition was executed correctly",
-        },
-    ],
+    // V: [
+    //     {
+    //         term: "Validity rollup",
+    //         definition:
+    //             "A rollup where a prover submits a validity proof to a verifier contract on the L1 proving that the state transition was executed correctly",
+    //     },
+    // ],
     // W: [],
     // X: [],
     // Y: [],
@@ -184,6 +184,8 @@ const GlossaryPage: React.FC = () => {
                         </div>
                     </nav>
                     <div className="w-full">
+                        Coming Soon.{" "}
+                        {/*TODO remove after adding in term defitions */}
                         {Object.keys(glossaryData).map((letter) =>
                             renderGlossarySection(letter),
                         )}
