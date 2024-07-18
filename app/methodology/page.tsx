@@ -224,7 +224,7 @@ Insert how"
                                 body="If a protocol has a critical risk item, even if not directly covered in our risk assessment, it should be clarified at the beginning of the review. An example of a critical risk, that is out of scope for our assessment, is a rollup settling on an EVM sidechain with immediately upgrade-able contracts. This does not fit into our risk assessment directly, but should be acknowledged at the top of the overall review."
                             />
                             <InfoBox
-                                title=""
+                                title="Summary"
                                 body="This framework can be easier to customize and provide more nuance given the number of scaling solutions that are present in Bitcoin today. For example, related to block production/network operators, we can add even more scoring mechanisms based on how decentralized the network is. E.g. A network with 200 validators is better than a network with 10, and we can customize the assessment to highlight this.
 
 This risk assessment is an initial starting point to analyze Bitcoin scaling protocols. It is a living document and is subject to change.
