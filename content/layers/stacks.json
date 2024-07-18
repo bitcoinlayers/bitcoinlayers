@@ -63,7 +63,7 @@
                 "content": "Users cannot unilaterally exit from the Stacks sidechain with an L1 Bitcoin transaction. They currently trust centralized operators to process their withdrawals."
                 },
             {
-                "title": "The protocol does not enable MEV on Bitcoin, but Bitcoin miners can extract MEV from Stacks.",
+                "title": "The protocol does not enable MEV on Bitcoin, but Bitcoin miners can extract MEV from Stacks",
                 "content": "Stacks' mining process requires a Bitcoin miner to submit a block commit as a bid to build a Stacks block. It is possible for a Bitcoin miner to censor all bids to build Stacks' blocks when building a Bitcoin block. Since the active Bitcoin miner would be the only entity with the ability to win a Stacks block, they could submit a minimal amount of funds to win the block and receive all STX rewards. This MEV-extraction scenario looks to be solved in the upcoming Nakamoto upgrade."
               },
             {
