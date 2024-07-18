@@ -101,7 +101,7 @@ const ContributePage: React.FC = () => {
     );
 
     return (
-        <article className="flex flex-col min-h-screen max-w-5xl mx-auto pt-16">
+        <article className="flex flex-col min-h-screen max-w-5xl mx-auto pt-16 px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col justify-start items-start gap-4">
                 <div className="flex justify-start items-center gap-8 w-full">
                     <div className="flex-grow flex items-center gap-[30px] h-[156px]">
