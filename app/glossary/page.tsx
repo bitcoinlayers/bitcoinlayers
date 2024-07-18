@@ -1,6 +1,21 @@
 "use client";
 import React from "react";
 
+import { useEffect } from "react";
+
+const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+    e.preventDefault();
+    const element =
+        document.getElementById(id) ||
+        document.getElementById(id.toLowerCase().replace(/\s+/g, "-"));
+    if (element) {
+        const yOffset = -60;
+        const y =
+            element.getBoundingClientRect().top + window.scrollY + yOffset;
+        window.scrollTo({ top: y, behavior: "smooth" });
+    }
+};
+
 type GlossaryItem = {
     term: string;
     definition: string;
@@ -52,7 +67,6 @@ const glossaryData: GlossaryData = {
             definition:
                 "A sidechain protocol that leverages a variety of rotating multi-sigs to secure the BTC that is deposited into the sidechain",
         },
-
         {
             term: "State channel",
             definition:
@@ -80,18 +94,34 @@ const glossaryData: GlossaryData = {
     // template: [{ term: "XXX", definition: "YYY" },],
 };
 
-const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
-    e.preventDefault();
-    const element = document.getElementById(id);
-    if (element) {
-        const yOffset = -60;
-        const y =
-            element.getBoundingClientRect().top + window.scrollY + yOffset;
-        window.scrollTo({ top: y, behavior: "smooth" });
-    }
-};
-
 const GlossaryPage: React.FC = () => {
+    useEffect(() => {
+        const handleHashChange = () => {
+            const hash = window.location.hash.substring(1);
+            if (hash) {
+                const element = document.getElementById(
+                    hash.toLowerCase().replace(/\s+/g, "-"),
+                );
+                if (element) {
+                    const yOffset = -60;
+                    const y =
+                        element.getBoundingClientRect().top +
+                        window.scrollY +
+                        yOffset;
+                    window.scrollTo({ top: y, behavior: "smooth" });
+                }
+            }
+        };
+
+        handleHashChange();
+
+        window.addEventListener("hashchange", handleHashChange);
+
+        return () => {
+            window.removeEventListener("hashchange", handleHashChange);
+        };
+    }, []);
+
     const renderGlossarySection = (letter: string) => (
         <div id={letter} className="mb-8 flex flex-col lg:flex-row items-start">
             <div className="font-black text-text_tertiary font-playfair-display text-10xl flex-shrink-0 w-24 leading-none">
@@ -99,11 +129,27 @@ const GlossaryPage: React.FC = () => {
             </div>
             <div className="flex-grow bg-white rounded-xl border border-slate-300 p-4">
                 {glossaryData[letter].map((item, index) => (
-                    <div key={index} className="m-2 gap-4">
-                        <div className="special_header text-3xl font-light text-brand leading-9 mb-4">
-                            {item.term}
+                    <div
+                        id={item.term.toLowerCase().replace(/\s+/g, "-")}
+                        key={index}
+                        className="m-2 gap-4 group"
+                    >
+                        <div className="flex items-center mb-4">
+                            <div className="special_header text-3xl font-light text-brand leading-9">
+                                {item.term}
+                            </div>
+                            <button
+                                className="ml-2 text-blue-500 hover:text-blue-700 opacity-0 group-hover:opacity-100 transition-opacity"
+                                onClick={() => {
+                                    const link = `${window.location.origin}${window.location.pathname}#${item.term.toLowerCase().replace(/\s+/g, "-")}`;
+                                    navigator.clipboard.writeText(link);
+                                    alert("Link copied to clipboard!");
+                                }}
+                            >
+                                🔗
+                            </button>
                         </div>
-                        <div className="text-base font-normal text-slate-500 leading-normal mb-4">
+                        <div className="text-base font-normal text-slate-500 leading-normal">
                             {item.definition}
                         </div>
                     </div>
