@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 
 type GlossaryItem = {
@@ -79,6 +80,17 @@ const glossaryData: GlossaryData = {
     // template: [{ term: "XXX", definition: "YYY" },],
 };
 
+const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+    e.preventDefault();
+    const element = document.getElementById(id);
+    if (element) {
+        const yOffset = -60;
+        const y =
+            element.getBoundingClientRect().top + window.scrollY + yOffset;
+        window.scrollTo({ top: y, behavior: "smooth" });
+    }
+};
+
 const GlossaryPage: React.FC = () => {
     const renderGlossarySection = (letter: string) => (
         <div id={letter} className="mb-8 flex flex-col lg:flex-row items-start">
@@ -101,7 +113,7 @@ const GlossaryPage: React.FC = () => {
     );
 
     return (
-        <article className="flex flex-col min-h-screen max-w-5xl mx-auto pt-16">
+        <article className="flex flex-col min-h-screen max-w-5xl mx-auto pt-16 px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col justify-start items-start gap-4">
                 <div className="flex justify-start items-center gap-8 w-full">
                     <div className="flex-grow flex items-center gap-[30px] h-[156px]">
@@ -117,6 +129,7 @@ const GlossaryPage: React.FC = () => {
                                 <a
                                     key={letter}
                                     href={`#${letter}`}
+                                    onClick={(e) => handleScroll(e, letter)}
                                     className="text-lg font-medium text-text_primary hover:text-brand"
                                 >
                                     {letter}
