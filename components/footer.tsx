@@ -140,9 +140,9 @@ export default function Footer(): ReactElement {
                                         <SectionItem href="/faq">
                                             FAQ
                                         </SectionItem>
-                                        <SectionItemExternal href="https://bitcoin-layers.gitbook.io/bitcoin-layers">
+                                        <SectionItem href="/methodology">
                                             Methodology
-                                        </SectionItemExternal>
+                                        </SectionItem>
                                     </div>
                                 </div>
                                 <div className="grow flex flex-col justify-start items-start gap-4">

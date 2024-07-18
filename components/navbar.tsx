@@ -160,10 +160,7 @@ export default function Navbar(): ReactElement {
                         </Link>
                     </li>
                     <li className="hidden lg:block">
-                        <Link
-                            href="https://bitcoin-layers.gitbook.io/bitcoin-layers"
-                            target="_blank"
-                        >
+                        <Link href="/methodology" onClick={closeMenu}>
                             Methodology
                         </Link>
                     </li>

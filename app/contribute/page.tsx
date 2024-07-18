@@ -71,30 +71,30 @@ const ContributePage: React.FC = () => {
             A great way to support the Bitcoin Layers project is by following us
             on social media. We are active on{" "}
             <Link
-                href="https://twitter.com/januszg_"
+                href="https://twitter.com/bitcoinlayers"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-orange-600 text-base font-normal leading-normal"
             >
                 Twitter
             </Link>{" "}
-            ,{" "}
+            {/* ,{" "}
             <Link
-                href="https://twitter.com/redvelvetzip"
+                href="https://snort.social/nprofile1qqswq22rw7f34s4us866f8twrght0p5vlmvhpxcfz780t4kpmtgyq7gpr9mhxue69uhkummnw3ezuer0de4hjtnnda3kjctv9uq32amnwvaz7tmjv4kxz7fwv3sk6atn9e5k7tcprpmhxue69uhhyetvv9uju6rpwa6xjetn9eu8j730rfdn4f"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-orange-600 text-base font-normal leading-normal"
             >
                 Nostr
             </Link>{" "}
-            , and{" "}
+            , and{" "} */}
             <Link
-                href="https://twitter.com/redvelvetzip"
+                href="https://warpcast.com/~/channel/bitcoinlayers"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-orange-600 text-base font-normal leading-normal"
             >
-                Farcaster
+                Warpcast
             </Link>{" "}
             .
         </span>

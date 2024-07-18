@@ -91,7 +91,7 @@ const glossaryData: GlossaryData = {
     // X: [],
     // Y: [],
     // Z: [],
-    // template: [{ term: "XXX", definition: "YYY" },],
+    // template: [{ term: "XXX", definition: "YYY" }],
 };
 
 const GlossaryPage: React.FC = () => {
