@@ -1,66 +1,92 @@
-import React from "react";
+"use client";
+
+import Image from "next/image";
+import React, { useState } from "react";
 
 const Methodology: React.FC = () => {
-    function InfoBox({ title, body }: { title: string; body: string }) {
+    const InfoBox: React.FC<{ title: string; body: string }> = ({
+        title,
+        body,
+    }) => {
+        const [isOpen, setIsOpen] = useState(false);
+
+        const toggleOpen = () => setIsOpen(!isOpen);
         return (
             <div className="bg-white rounded-xl border border-slate-300 flex flex-col justify-center items-start gap-4 p-8">
-                <div className="flex items-center gap-3">
+                <div
+                    className="flex items-center gap-3 cursor-pointer"
+                    onClick={toggleOpen}
+                >
+                    <div
+                        className={`flex items-center justify-center w-6 h-6 transform ${isOpen ? "" : "rotate-180"}`}
+                    >
+                        <Image
+                            src="/icons/vector.svg"
+                            alt="Toggle Arrow"
+                            width={20}
+                            height={20}
+                        />
+                    </div>
+
+                    <div className="text-2xl font-light text-zinc-800 leading-9">
+                        {title}
+                    </div>
+                </div>
+
+                {isOpen && (
+                    <div className="flex flex-col justify-center items-start gap-8 w-full">
+                        <div className="flex flex-col justify-start items-start gap-2 w-full">
+                            <div className="text-base font-normal text-slate-500 leading-normal">
+                                {body}
+                            </div>
+                        </div>
+                    </div>
+                )}
+            </div>
+        );
+    };
+
+    const FAQItem: React.FC<{ title: string; body: string }> = ({
+        title,
+        body,
+    }) => {
+        const [isOpen, setIsOpen] = useState(false);
+
+        const toggleOpen = () => setIsOpen(!isOpen);
+
+        return (
+            <div className="bg-white rounded-xl border border-slate-300 flex flex-col justify-center items-start gap-4 p-8">
+                <div
+                    className="flex items-center gap-3 cursor-pointer"
+                    onClick={toggleOpen}
+                >
+                    <div
+                        className={`flex items-center justify-center w-6 h-6 transform ${isOpen ? "" : "rotate-180"}`}
+                    >
+                        <Image
+                            src="/icons/vector.svg"
+                            alt="Toggle Arrow"
+                            width={20}
+                            height={20}
+                        />
+                    </div>
+
                     <div className="text-3xl font-light text-zinc-800 leading-9">
                         {title}
                     </div>
                 </div>
-                <div className="flex flex-col justify-center items-start gap-8 w-full">
-                    <div className="flex flex-col justify-start items-start gap-2 w-full">
-                        <div className="text-base font-normal text-slate-500 leading-normal">
-                            {body}
+                {isOpen && (
+                    <div className="flex flex-col justify-center items-start gap-8 w-full">
+                        <div className="flex flex-col justify-start items-start gap-2 w-full">
+                            <div className="text-base font-normal text-slate-500 leading-normal">
+                                {body}
+                            </div>
                         </div>
                     </div>
-                </div>
+                )}
             </div>
         );
-    }
-
-    // const FAQItem: React.FC<{ title: string; body: string }> = ({
-    //     title,
-    //     body,
-    // }) => {
-    //     const [isOpen, setIsOpen] = useState(false);
-
-    //     const toggleOpen = () => setIsOpen(!isOpen);
-
-    //     return (
-    //         <div className="bg-white rounded-xl border border-slate-300 flex flex-col justify-center items-start gap-4 p-8">
-    //             <div
-    //                 className="flex items-center gap-3 cursor-pointer"
-    //                 onClick={toggleOpen}
-    //             >
-    //                 <div
-    //                     className={`flex items-center justify-center w-6 h-6 transform ${isOpen ? "" : "rotate-180"}`}
-    //                 >
-    //                     <Image
-    //                         src="/icons/vector.svg"
-    //                         alt="Toggle Arrow"
-    //                         width={20}
-    //                         height={20}
-    //                     />
-    //                 </div>
-
-    //                 <div className="text-3xl font-light text-zinc-800 leading-9">
-    //                     {title}
-    //                 </div>
-    //             </div>
-    //             {isOpen && (
-    //                 <div className="flex flex-col justify-center items-start gap-8 w-full">
-    //                     <div className="flex flex-col justify-start items-start gap-2 w-full">
-    //                         <div className="text-base font-normal text-slate-500 leading-normal">
-    //                             {body}
-    //                         </div>
-    //                     </div>
-    //                 </div>
-    //             )}
-    //         </div>
-    //     );
-    // };
+    };
 
     return (
         <article className="flex flex-col min-h-screen max-w-5xl mx-auto pt-16 px-4 sm:px-6 lg:px-8">
@@ -77,16 +103,38 @@ const Methodology: React.FC = () => {
                         {" "}
                         {/**https://bitcoin-layers.gitbook.io/bitcoin-layers/approach-to-analyzing-risk */}
                         <div className="flex flex-col gap-8 w-full">
-                            <InfoBox
-                                title="This is the framework we use to analyze sidechains, L2s and other scaling protocols"
-                                body="We analyze protocols on four categories: Data availability, network operators, settlement assurance (a.k.a finality), and the bridge custody (or two-way peg).
-
-Protocols do not receive an overall score, but a risk summary is added at the beginning of every assessment to highlight risk areas that can be critical.
-
-For example, if an optimium uses an offchain data availability solution that is a single server, then it only takes collusion between a sequencer and the operator of the DA server to steal everyone’s funds. This is a critical and should be noted in the summary.
-
-Let’s review how protocols can potentially be assessed."
-                            />
+                            <div className="bg-white rounded-xl border border-slate-300 flex flex-col justify-center items-start gap-4 p-8">
+                                <div className="flex flex-col gap-3 cursor-pointer">
+                                    <div className="text-xl font-light text-zinc-800 leading-9">
+                                        This is the framework we use to analyze
+                                        sidechains, L2s and other scaling
+                                        protocols
+                                    </div>
+                                    <div className="text-base font-normal text-slate-500 leading-normal">
+                                        We analyze protocols on four categories:
+                                        Data availability, network operators,
+                                        settlement assurance (a.k.a finality),
+                                        and the bridge custody (or two-way peg).
+                                        <br />
+                                        <br /> Protocols do not receive an
+                                        overall score, but a risk summary is
+                                        added at the beginning of every
+                                        assessment to highlight risk areas that
+                                        can be critical. <br />
+                                        <br />
+                                        For example, if an optimium uses an
+                                        offchain data availability solution that
+                                        is a single server, then it only takes
+                                        collusion between a sequencer and the
+                                        operator of the DA server to steal
+                                        everyone’s funds. This is a critical and
+                                        should be noted in the summary. <br />
+                                        <br />
+                                        Let’s review how protocols can
+                                        potentially be assessed.
+                                    </div>
+                                </div>
+                            </div>
                             <InfoBox
                                 title="Data Availability"
                                 body="Self-hosted: User can store data related to scaling protocol transactions locally - low risk
