@@ -8,7 +8,7 @@
     "purpose": "General",
     "btcBridge": "Third Party Multi-sig",
     "settlement": "Under review",
-    "btcLocked": 0,
+    "btcLocked": 15,
     "executionEnv": "Under review",
     "consensus": "Under review",
     "nativeToken": "LIBRE",
@@ -35,21 +35,21 @@
             "category": "Data Availability",
             "score": 0,
             "tier": "Critical",
-            "title": "Data availability requirement is satisfied by Libre's permissioned validator set",
+            "title": "Data availability requirement is satisfied by Libre's permissioned validator set. ⚠️ Critical risk as node software is not currently open source",
             "content": "The data availability and storage requirement is satisfied by Libre validators. Proposedly, anyone will be able to participate as a validator once the mainnet node implementation is open-source.\n\n⚠️ Critical risk as node software is not currently open source."
         },
         {
             "category": "Block Production",
             "score": 0,
             "tier": "Critical",
-            "title": "The Libre network is operated by a permissioned validator set",
+            "title": "The Libre network is operated by a permissioned validator set. ⚠️ Critical risk as node software is not currently open source",
             "content": "Libre validators are responsible for proposing and signing blocks to finalize Libre transactions. There are 21 validators that participate in block production. They are selected for a round based on their voting power. Validators that are not selected as a part of this round must wait in a candidate pool. Rounds last 126 seconds. If there are not a minimum of 10 active validators, block production would fail.\n\nWhen selected, validators win the right to propose blocks for 6 seconds during a specific round. During this time frame they must produce 12 blocks.\n\n⚠️Critical risk as node software is not currently open source."
         },
         {
             "category": "State Validation",
             "score": 0,
             "tier": "Critical",
-            "title": "No settlement guarantees provided by Bitcoin",
+            "title": "No settlement guarantees provided by Bitcoin. ⚠️ Critical risk as node software is not currently open source",
             "content": "Settlement guarantees are finalized by Libre’s validator set and not by Bitcoin consensus participants.\n\n⚠️ Critical risk as node software is not currently open source."
         }
     ],
