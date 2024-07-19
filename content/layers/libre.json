@@ -35,22 +35,22 @@
             "category": "Data Availability",
             "score": 0,
             "tier": "Critical",
-            "title": "Data availability requirement is satisfied by Libre's permissioned validator set. 🛑 Critical risk as node software is not currently open source",
-            "content": "The data availability and storage requirement is satisfied by Libre validators. Proposedly, anyone will be able to participate as a validator once the mainnet node implementation is open-source.\n\n🛑 Critical risk as node software is not currently open source."
+            "title": "Data availability requirement is satisfied by Libre's permissioned validator set.  🛑 Critical risk as node software is not currently open source",
+            "content": "The data availability and storage requirement is satisfied by Libre validators. Anyone can participate as a validator once the mainnet node implementation is open-source."
         },
         {
             "category": "Block Production",
             "score": 0,
             "tier": "Critical",
-            "title": "The Libre network is operated by a permissioned validator set. 🛑 Critical risk as node software is not currently open source",
-            "content": "Libre validators are responsible for proposing and signing blocks to finalize Libre transactions. There are 21 validators that participate in block production. They are selected for a round based on their voting power. Validators that are not selected as a part of this round must wait in a candidate pool. Rounds last 126 seconds. If there are not a minimum of 10 active validators, block production would fail.\n\nWhen selected, validators win the right to propose blocks for 6 seconds during a specific round. During this time frame they must produce 12 blocks.\n\n🛑 Critical risk as node software is not currently open source."
+            "title": "The Libre network is operated by its validator set. 🛑 Critical risk as node software is not currently open source",
+            "content": "Libre validators are responsible for proposing and signing blocks to finalize Libre transactions. There are 21 validators that participate in block production. They are selected for a round based on their voting power. Validators that are not selected as a part of this round must wait in a candidate pool. Rounds last 126 seconds. If there are not a minimum of 10 active validators, block production would fail.\n\nWhen selected, validators win the right to propose blocks for 6 seconds during a specific round. During this time frame they must produce 12 blocks."
         },
         {
             "category": "State Validation",
             "score": 0,
             "tier": "Critical",
-            "title": "No settlement guarantees provided by Bitcoin. 🛑 Critical risk as node software is not currently open source",
-            "content": "Settlement guarantees are finalized by Libre’s validator set and not by Bitcoin consensus participants.\n\n🛑 Critical risk as node software is not currently open source."
+            "title": "Finality is No settlement guarantees provided by Bitcoin. 🛑 Critical risk as node software is not currently open source",
+            "content": "Settlement guarantees are finalized by Libre’s validator set and not by Bitcoin consensus participants.\n\n A block is considered final after a supermajority of network participants have validated a block. ."
         }
     ],
     "sections": [
@@ -58,10 +58,6 @@
             "id": "additionalconsiderations",
             "title": "Additional Considerations",
             "content": [
-                {
-                    "title": "Node software not open source",
-                    "content": "Due to Libre’s mainnet node software not being open source, we have given critical risk scores. These will be updated when Libre’s node software is open source."
-                },
                 {
                     "title": "Token delegating used to select validators",
                     "content": "LIBRE token holders can use their voting power to select validators. Voting power is based on the amount of tokens someone has, and how long they’ve been staked. Currently, four accounts hold over 50% of the voting power."
@@ -78,7 +74,7 @@
                 },
             {
                 "title": "Libre does not leak MEV to Bitcoin",
-                "content": "Libre does not leak MEV to the Bitcoin base layer. Users trust that Libre validators will not reorder their transactions to extract MEV."
+                "content": "Libre does not leak MEV to the Bitcoin base layer."
               },
             {
                 "title": "An alternative token plays a role in network security",
@@ -106,7 +102,11 @@
             "content": [
                 {
                     "title": "EOSIO technology stack",
-                    "content": "The Libre Chain is built on the EOSIO (commonly known as EOS) is a blockchain framework in the EOS ecosystem. These chains run on a delegated proof-of-stake consensus mechanism. Validators are required to acquire and stake tokens, or have tokens be delegated towards them by ecosystem participants.\n\nIn Libre, token holders delegate their tokens and validators’ probability on winning blocks is based on their delegated tokens’ weighted voting power. This power is determined by the amount of tokens and how long they’ve been staked.\n\nIn EOS blockchain designs, only the top 21 block producers by staking power are able to produce blocks.\n\n⚠️ Our assumption is that Libre mainnet is running on the EOSIO framework. Only the testnet implementation is open-source."
+                    "content": "The Libre Chain is built on the EOSIO (commonly known as EOS) blockchain framework. It runs on a delegated proof-of-stake consensus mechanism. Validators are required to acquire and stake tokens, or have tokens be delegated towards them by ecosystem participants.\n\nIn Libre, token holders delegate their tokens and validators’ probability on winning blocks is based on their delegated tokens’ weighted voting power. This power is determined by the amount of tokens and how long they’ve been staked.\n\nIn EOS blockchain designs, only the top 21 block producers by staking power are include in a block production round. After producers are included in a round, they propose blocks in alphabetical order. In their slot, they must produce 12 blocks within 6 seconds or risk slashing penalities."
+                },
+                {
+                    "title": "Delegated Proof-of-Stake",
+                    "content": "Validator inclusion in producer rounds is based on their voting power. Voting power is derived from the amount of tokens they have staked and the amount of time they have been staked. The validators will the highest voting power are included in producer rounds.\n\nToken holders can delegate tokens to their preferred validators in Libre's DPOS consensus mechanism, which are distributed to holders from the validators."
                 }
             ]
         },
