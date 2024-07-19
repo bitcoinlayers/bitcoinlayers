@@ -53,7 +53,8 @@ const LayerTableAll = ({ data, headers }: Props) => {
         [key: string]: boolean | null;
     }>({});
     const [mobileActiveTab, setMobileActiveTab] = useState<TableTabKey>("Type");
-    const [showMainnet, setShowMainnet] = useState(false);
+    const [showMainnet, setShowMainnet] = useState(true);
+    const [showBitcoinonly, setShowBitcoinonly] = useState(true);
 
     useEffect(() => {
         // Default sorting by Name alphabetically on first load
@@ -130,14 +131,13 @@ const LayerTableAll = ({ data, headers }: Props) => {
                 }
             });
         })
-        .filter((item) => (showMainnet ? item.live === "Mainnet" : true));
+        .filter((item) => (showMainnet ? item.live === "Mainnet" : true))
+        .filter((item) =>
+            showBitcoinonly ? item.nativeToken.toLowerCase() === "btc" : true,
+        );
 
     const handleMobileTabClick = (tab: TableTabKey) => {
         setMobileActiveTab(tab);
-    };
-
-    const toggleMainnetFilter = () => {
-        setShowMainnet(!showMainnet);
     };
 
     const mobileTableHeaders = headers.filter(
@@ -185,7 +185,7 @@ const LayerTableAll = ({ data, headers }: Props) => {
                     })}
                 </div>
             </MobileView>
-            <div className="flex lg:mb-12 justify-center -mt-12 lg:mt-0 relative z-20">
+            <div className="flex lg:mb-6 justify-center -mt-12 lg:mt-0 relative z-20">
                 <div className="justify-start items-start gap-4 inline-flex">
                     <div
                         className={`h-[30px] px-4 py-[5px] rounded-full border-2 justify-center items-center gap-1.5 flex cursor-pointer ${
@@ -222,6 +222,30 @@ const LayerTableAll = ({ data, headers }: Props) => {
                                 }`}
                             >
                                 All Layers
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className="flex lg:mb-6 justify-center -mt-12 lg:mt-0 relative z-20">
+                <div className="justify-start items-start gap-4 inline-flex">
+                    <div
+                        className={`h-[30px] rounded-full border-2 justify-center items-center gap-1 flex cursor-pointer ${
+                            showBitcoinonly
+                                ? "bg-green-500 border-green-600"
+                                : "bg-gray-300 border-gray-400"
+                        }`}
+                        onClick={() => setShowBitcoinonly(!showBitcoinonly)}
+                    >
+                        <div className="grow shrink basis-0 h-[30px] px-4 py-[5px] justify-center items-center gap-1.5 flex">
+                            <div
+                                className={`text-center text-sm font-medium leading-tight ${
+                                    showBitcoinonly
+                                        ? "text-white"
+                                        : "text-gray-700"
+                                }`}
+                            >
+                                BTC Only
                             </div>
                         </div>
                     </div>
