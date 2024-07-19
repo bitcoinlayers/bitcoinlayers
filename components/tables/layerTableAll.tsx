@@ -146,46 +146,7 @@ const LayerTableAll = ({ data, headers }: Props) => {
 
     return (
         <div className="px-6 lg:px-0 w-full">
-            <MobileView className="flex justify-center">
-                <div className="justify-center lg:items-start gap-4 inline-flex py-3">
-                    {headers.slice(2).map((_item, ind) => {
-                        const isAllowedTab = [
-                            "Risk",
-                            "Type",
-                            "Status",
-                            "Unit of Account",
-                            "BTC Locked",
-                        ].includes(_item.name);
-                        return (
-                            <div
-                                className={`h-[30px] px-4 py-[5px] rounded-full border-2 justify-center items-center gap-1.5 flex cursor-pointer ${
-                                    mobileActiveTab === _item.name
-                                        ? "bg-white border-orange-600"
-                                        : "border-slate-300"
-                                }`}
-                                onClick={() =>
-                                    isAllowedTab &&
-                                    handleMobileTabClick(
-                                        _item.name as TableTabKey,
-                                    )
-                                }
-                                key={ind}
-                            >
-                                <div
-                                    className={`text-center text-sm font-medium leading-tight ${
-                                        mobileActiveTab === _item.name
-                                            ? "text-orange-600"
-                                            : "text-slate-600"
-                                    }`}
-                                >
-                                    {_item.mobileLabel}
-                                </div>
-                            </div>
-                        );
-                    })}
-                </div>
-            </MobileView>
-            <div className="flex lg:mb-6 justify-center -mt-18 lg:mt-0 relative z-20">
+            <div className="flex lg:mb-6 justify-center -mt-12 lg:mt-0 relative z-20">
                 <div className="justify-start items-start gap-4 inline-flex">
                     <div
                         className={`h-[30px] px-4 py-[5px] rounded-full border-2 justify-center items-center gap-1.5 flex cursor-pointer ${
@@ -227,7 +188,7 @@ const LayerTableAll = ({ data, headers }: Props) => {
                     </div>
                 </div>
             </div>
-            <div className="flex lg:mb-6 justify-center mt-12 mb-12 lg:mt-0 relative z-20">
+            <div className="flex lg:mb-6 justify-center mt-6 mb-6 lg:mt-0 relative z-20">
                 <div className="justify-start items-start gap-4 inline-flex">
                     <div
                         className={`h-[30px] rounded-full border-2 justify-center items-center gap-1 flex cursor-pointer ${
@@ -251,6 +212,46 @@ const LayerTableAll = ({ data, headers }: Props) => {
                     </div>
                 </div>
             </div>
+            <MobileView className="flex justify-center">
+                <div className="justify-center lg:items-start gap-4 inline-flex py-3">
+                    {headers.slice(2).map((_item, ind) => {
+                        const isAllowedTab = [
+                            "Risk",
+                            "Type",
+                            "Status",
+                            "Unit of Account",
+                            "BTC Locked",
+                        ].includes(_item.name);
+                        return (
+                            <div
+                                className={`h-[30px] px-4 py-[5px] rounded-full border-2 justify-center items-center gap-1.5 flex cursor-pointer ${
+                                    mobileActiveTab === _item.name
+                                        ? "bg-white border-orange-600"
+                                        : "border-slate-300"
+                                }`}
+                                onClick={() =>
+                                    isAllowedTab &&
+                                    handleMobileTabClick(
+                                        _item.name as TableTabKey,
+                                    )
+                                }
+                                key={ind}
+                            >
+                                <div
+                                    className={`text-center text-sm font-medium leading-tight ${
+                                        mobileActiveTab === _item.name
+                                            ? "text-orange-600"
+                                            : "text-slate-600"
+                                    }`}
+                                >
+                                    {_item.mobileLabel}
+                                </div>
+                            </div>
+                        );
+                    })}
+                </div>
+            </MobileView>
+
             <div className="overflow-x-auto bg-lightsecondary rounded-xl mx-auto border border-stroke_tertiary">
                 <table className="bg-lightsecondary w-full text-sm text-left rtl:text-right rounded-xl">
                     <TableHeader
@@ -264,7 +265,7 @@ const LayerTableAll = ({ data, headers }: Props) => {
                                 className={`cursor-pointer border-b border-stroke_tertiary text_table_important ${
                                     index === filteredData.length - 1 ? "" : ""
                                 }`}
-                                key={item.slug} // Use item.slug as the unique key
+                                key={item.slug}
                                 onClick={() =>
                                     handleRowClick(`/layers/${item.slug}`)
                                 }
