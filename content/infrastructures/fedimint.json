@@ -9,6 +9,7 @@
     "nativeToken": "None",
     "purpose": "Private payments",
     "associatedLayers": "-",
+    "bitcoinOnly": true,
     "links": [
         "https://fedimint.org",
         "https://fedimint.org",

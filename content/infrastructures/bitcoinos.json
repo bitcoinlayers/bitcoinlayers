@@ -9,6 +9,7 @@
     "nativeToken": "None",
     "purpose": "General",
     "associatedLayers": "-",
+    "bitcoinOnly": true,
     "links": [
         "https://sovryn.com",
         "https://twitter.com/bitcoinlayers",

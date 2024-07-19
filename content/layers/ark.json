@@ -14,6 +14,7 @@
     "nativeToken": "BTC",
     "feeToken": "BTC",
     "enshrinedBtc": "-",
+    "bitcoinOnly": true,
     "links": [
         "https://arklabs.to",
         "https://arkdev.info",
@@ -68,10 +69,10 @@
         {
             "url": "https://arkdev.info",
             "displayText": "Ark Developer Hub"
-        }, 
+        },
         {
             "url": "https://ark-protocol.org",
-            "displayText": "Ark Protocol Deep Dive" 
+            "displayText": "Ark Protocol Deep Dive"
         }
     ]
 }

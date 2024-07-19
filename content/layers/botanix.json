@@ -14,6 +14,7 @@
     "nativeToken": "-",
     "feeToken": "-",
     "enshrinedBtc": "-",
+    "bitcoinOnly": true,
     "links": [
         "https://www.botanixlabs.xyz/en/home",
         "https://www.botanixlabs.xyz/en/home",

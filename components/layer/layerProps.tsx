@@ -38,6 +38,7 @@ interface LayerProps {
     nativeToken: string;
     feeToken: string;
     enshrinedBtc: string;
+    bitcoinOnly: boolean;
     links: string[];
     description: string;
     riskAnalysis: Risksection[];
@@ -62,6 +63,7 @@ export type Layer = {
     nativeToken: string;
     feeToken: string;
     enshrinedBtc: string;
+    bitcoinOnly: boolean;
     links: string[];
     description: string;
     riskAnalysis: Risksection[];

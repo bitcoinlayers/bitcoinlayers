@@ -132,9 +132,7 @@ const LayerTableAll = ({ data, headers }: Props) => {
             });
         })
         .filter((item) => (showMainnet ? item.live === "Mainnet" : true))
-        .filter((item) =>
-            showBitcoinonly ? item.nativeToken.toLowerCase() === "btc" : true,
-        );
+        .filter((item) => (showBitcoinonly ? item.bitcoinOnly == true : true));
 
     const handleMobileTabClick = (tab: TableTabKey) => {
         setMobileActiveTab(tab);

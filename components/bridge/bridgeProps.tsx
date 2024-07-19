@@ -25,6 +25,7 @@ interface BridgeProps {
     nativeToken: string;
     feeToken: string;
     enshrinedBtc: string;
+    bitcoinOnly: boolean;
     links: string[];
     description: string;
     sections: Section[];
@@ -47,6 +48,7 @@ export type Bridge = {
     nativeToken: string;
     feeToken: string;
     enshrinedBtc: string;
+    bitcoinOnly: boolean;
     links: string[];
     description: string;
     sections: Section[];

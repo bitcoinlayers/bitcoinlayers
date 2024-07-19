@@ -25,6 +25,7 @@ interface OpcodeProps {
     nativeToken: string;
     purpose: string;
     associatedLayers: string;
+    bitcoinOnly: boolean;
     links: string[];
     description: string;
     sections: Section[];
@@ -43,6 +44,7 @@ export type Opcode = {
     nativeToken: string;
     purpose: string;
     associatedLayers: string;
+    bitcoinOnly: boolean;
     links: string[];
     description: string;
     sections: Section[];

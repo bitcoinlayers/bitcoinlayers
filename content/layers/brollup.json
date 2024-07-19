@@ -14,6 +14,7 @@
     "nativeToken": "-",
     "feeToken": "-",
     "enshrinedBtc": "-",
+    "bitcoinOnly": false,
     "links": [
         "https://brqgoo.medium.com/introducing-brollups-18ec4081f6e7",
         "https://brqgoo.medium.com/introducing-brollups-18ec4081f6e7",

@@ -9,6 +9,7 @@
     "nativeToken": "TIA",
     "purpose": "General",
     "associatedLayers": "-",
+    "bitcoinOnly": false,
     "links": [
         "https://celestia.org",
         "https://twitter.com/bitcoinlayers",

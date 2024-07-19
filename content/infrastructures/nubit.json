@@ -9,6 +9,7 @@
     "nativeToken": "None",
     "purpose": "General",
     "associatedLayers": "-",
+    "bitcoinOnly": false,
     "links": [
         "https://nubit.org",
         "https://twitter.com/bitcoinlayers",
