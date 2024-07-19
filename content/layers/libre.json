@@ -4,7 +4,7 @@
     "layerType": "Sidechain",
     "live": "Mainnet",
     "underReview": "no",
-    "riskFactors": ["High", "Critical", "Critical", "Critical"],
+    "riskFactors": ["High", "High", "High", "High"],
     "purpose": "General",
     "btcBridge": "Third Party Multi-sig",
     "settlement": "Offchain",
@@ -16,10 +16,10 @@
     "enshrinedBtc": "PBTC",
     "links": [
         "https://chain.libre.org/",
-        "https://twitter.com/bitcoinlayers",
-        "https://twitter.com/bitcoinlayers",
-        "https://twitter.com/bitcoinlayers",
-        "https://twitter.com/bitcoinlayers",
+        "https://chain.libre.org/",
+        "https://docs.libre.org/libre-docs",
+        "https://libre.antelope.tools/",
+        "https://gitlab.com/libre-chain",
         "https://twitter.com/libreblockchain"
     ],
     "description": "Libre is a sidechain that leverages a Delegated Proof of Stake (DPoS) consensus mechanism. It currently features three tokens: PBTC, PUSDT, and LIBRE. BTC live on the Libre network is managed by an alternative consensus mechanism that is not directly affiliated with Libre.",
@@ -34,22 +34,22 @@
         {
             "category": "Data Availability",
             "score": 0,
-            "tier": "Critical",
-            "title": "Data availability requirement is satisfied by Libre's permissioned validator set.  🛑 Critical risk as node software is not currently open source",
+            "tier": "High",
+            "title": "Data availability requirement is satisfied by Libre's permissioned validator set",
             "content": "The data availability and storage requirement is satisfied by Libre validators. Anyone can participate as a validator once the mainnet node implementation is open-source."
         },
         {
             "category": "Block Production",
             "score": 0,
-            "tier": "Critical",
-            "title": "The Libre network is operated by a permissioned validator set. 🛑 Critical risk as node software is not currently open source",
+            "tier": "High",
+            "title": "The Libre network is operated by a permissioned validator set",
             "content": "Libre validators are responsible for proposing and signing blocks to finalize Libre transactions. There are 21 validators that participate in block production. They are selected for a round based on their voting power. Validators that are not selected as a part of this round must wait in a candidate pool. Rounds last 126 seconds. If there are not a minimum of 10 active validators, block production would fail.\n\nWhen selected, validators win the right to propose blocks for 6 seconds during a specific round. During this time frame they must produce 12 blocks.\n\nTo register as a Libre validator, operators must run a node on testnet for two weeks and request permission to run a mainnet validator after these two weeks have passed."
         },
         {
             "category": "State Validation",
             "score": 0,
-            "tier": "Critical",
-            "title": "No settlement guarantees provided by Bitcoin. 🛑 Critical risk as node software is not currently open source",
+            "tier": "High",
+            "title": "No settlement guarantees provided by Bitcoin",
             "content": "Settlement guarantees are finalized by Libre’s validator set and not by Bitcoin consensus participants.\n\n A block is considered final after a supermajority of network participants have validated a block. Once a block is considered final, it cannot be reorged."
         }
     ],
