@@ -54,23 +54,23 @@ const LayerTableAll = ({ data, headers }: Props) => {
     }>({});
     const [mobileActiveTab, setMobileActiveTab] = useState<TableTabKey>("Type");
     const [showMainnet, setShowMainnet] = useState(true);
-    const [showBitcoinonly, setShowBitcoinonly] = useState(false);
+    // const [showBitcoinonly, setShowBitcoinonly] = useState(false);
 
     useEffect(() => {
         // Default sorting by Name alphabetically on first load
         handleSort("Name", true);
 
         // Check the URL to set the BTC filter
-        const urlParams = new URLSearchParams(window.location.search);
+        // const urlParams = new URLSearchParams(window.location.search);
 
-        if (
-            urlParams.has("btc") ||
-            urlParams.has("btc-only") ||
-            urlParams.has("maxi") ||
-            urlParams.has("laser-eyes")
-        ) {
-            setShowBitcoinonly(true);
-        }
+        // if (
+        //     urlParams.has("btc") ||
+        //     urlParams.has("btc-only") ||
+        //     urlParams.has("maxi") ||
+        //     urlParams.has("laser-eyes")
+        // ) {
+        //     setShowBitcoinonly(true);
+        // }
     }, []);
 
     const handleRowClick = (destination: string) => {
@@ -143,8 +143,8 @@ const LayerTableAll = ({ data, headers }: Props) => {
                 }
             });
         })
-        .filter((item) => (showMainnet ? item.live === "Mainnet" : true))
-        .filter((item) => (showBitcoinonly ? item.bitcoinOnly == true : true));
+        .filter((item) => (showMainnet ? item.live === "Mainnet" : true));
+    // .filter((item) => (showBitcoinonly ? item.bitcoinOnly == true : true));
 
     const handleMobileTabClick = (tab: TableTabKey) => {
         setMobileActiveTab(tab);
@@ -173,7 +173,7 @@ const LayerTableAll = ({ data, headers }: Props) => {
                                     : "text-slate-600"
                             }`}
                         >
-                            Mainnet Only
+                            Mainnet
                         </div>
                     </div>
                     <div
@@ -192,13 +192,33 @@ const LayerTableAll = ({ data, headers }: Props) => {
                                         : "text-slate-600"
                                 }`}
                             >
-                                All Layers
+                                Testnet
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        className={`h-[30px] rounded-full border-2 justify-center items-center gap-1 flex cursor-pointer ${
+                            !showMainnet
+                                ? "bg-white border-orange-600"
+                                : "border-slate-300"
+                        }`}
+                        onClick={() => setShowMainnet(false)}
+                    >
+                        <div className="grow shrink basis-0 h-[30px] px-4 py-[5px] justify-center items-center gap-1.5 flex">
+                            <div
+                                className={`text-center text-sm font-medium leading-tight ${
+                                    !showMainnet
+                                        ? "text-orange-600"
+                                        : "text-slate-600"
+                                }`}
+                            >
+                                All
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div className="flex lg:mb-6 justify-center mt-6 mb-6 lg:mt-0 relative z-20">
+            {/* <div className="flex lg:mb-6 justify-center mt-6 mb-6 lg:mt-0 relative z-20">
                 <div className="justify-start items-start gap-4 inline-flex">
                     <div
                         className={`h-[30px] rounded-full border-2 justify-center items-center gap-1 flex cursor-pointer ${
@@ -221,7 +241,7 @@ const LayerTableAll = ({ data, headers }: Props) => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> */}
             <MobileView className="flex justify-center">
                 <div className="justify-center lg:items-start gap-4 inline-flex py-3">
                     {headers.slice(2).map((_item, ind) => {
@@ -261,7 +281,6 @@ const LayerTableAll = ({ data, headers }: Props) => {
                     })}
                 </div>
             </MobileView>
-
             <div className="overflow-x-auto bg-lightsecondary rounded-xl mx-auto border border-stroke_tertiary">
                 <table className="bg-lightsecondary w-full text-sm text-left rtl:text-right rounded-xl">
                     <TableHeader
