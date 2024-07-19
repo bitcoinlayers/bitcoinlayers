@@ -9,6 +9,8 @@ export const getRiskColorText = (riskFactor: string) => {
             return "var(--color-risk-high-text)";
         case "Critical":
             return "var(--color-risk-critical-text)";
+        case "Unverified":
+            return "var(--color-risk-unverified-text)";
         default:
             return "var(--color-text-secondary)";
     }
@@ -24,6 +26,8 @@ export const getRiskColorIcon = (riskFactor: string) => {
             return "var(--color-risk-high-icon)";
         case "Critical":
             return "var(--color-risk-critical-icon)";
+        case "Unverified":
+            return "var(--color-risk-unverified-icon)";
         default:
             return "var(--color-icon-secondary)";
     }
@@ -39,6 +43,8 @@ export const getRiskColorBackground = (riskFactor: string) => {
             return "var(--color-risk-high-bg)";
         case "Critical":
             return "var(--color-risk-critical-bg)";
+        case "Unverified":
+            return "var(--color-risk-unverified-bg)";
         default:
             return "#abadb1";
     }
@@ -54,6 +60,8 @@ export const getRiskEmoji = (riskFactor: string) => {
             return "🚨";
         case "Critical":
             return "🛑";
+        case "Unverified":
+            return "❓";
         default:
             return "ℹ️";
     }

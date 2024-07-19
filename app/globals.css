@@ -81,4 +81,7 @@ section {
     --color-risk-critical-bg: #ff9d9e;
     --color-risk-critical-text: #a50f11;
     --color-risk-critical-icon: #c80d0f;
+    --color-risk-unverified-bg: #ff9d9e;
+    --color-risk-unverified-text: #a50f11;
+    --color-risk-unverified-icon: #c80d0f;
 }
