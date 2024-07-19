@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { allLayers } from "@/util/layer_index";
-import LayerTable from "@/components/tables/layerTable";
+// import LayerTable from "@/components/tables/layerTable";
 import LayerTableAll from "@/components/tables/layerTableAll";
 // import LayerTableRiskView from "@/components/tables/layerTableRiskView"; //risks: <LayerTableRiskView />,
 import Hero from "@/components/hero";
