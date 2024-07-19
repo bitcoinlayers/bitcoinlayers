@@ -59,6 +59,18 @@ const LayerTableAll = ({ data, headers }: Props) => {
     useEffect(() => {
         // Default sorting by Name alphabetically on first load
         handleSort("Name", true);
+
+        // Check the URL to set the BTC filter
+        const urlParams = new URLSearchParams(window.location.search);
+
+        if (
+            urlParams.has("btc") ||
+            urlParams.has("btc-only") ||
+            urlParams.has("maxi") ||
+            urlParams.has("laser-eyes")
+        ) {
+            setShowBitcoinonly(true);
+        }
     }, []);
 
     const handleRowClick = (destination: string) => {
