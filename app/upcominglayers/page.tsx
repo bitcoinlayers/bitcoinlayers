@@ -3,10 +3,10 @@
 import React, { useState } from "react";
 import { allLayers } from "@/util/layer_index";
 import Hero from "@/components/hero";
-import LayerTableUpcoming from "@/components/tables/layerUpcoming";
+import LayerTableAll from "@/components/tables/layerTableAll";
 
 export default function Home() {
-    const upcomingLayers = allLayers.sort((a, b) =>
+    const layersAll = allLayers.sort((a, b) =>
         a.title.toLowerCase().localeCompare(b.title.toLowerCase()),
     );
 
@@ -25,11 +25,7 @@ export default function Home() {
             <Hero />
             <div className="flex mb-4 justify-center mt-16"></div>
             <div className="flex mb-4 justify-center max-w-5xl mx-auto">
-                <LayerTableUpcoming
-                    data={upcomingLayers}
-                    headers={layerHeaders}
-                />
-                ,
+                <LayerTableAll data={layersAll} headers={layerHeaders} />,
             </div>
         </div>
     );

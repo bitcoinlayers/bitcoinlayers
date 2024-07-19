@@ -34,7 +34,7 @@ const LayerImage = ({ src, title }: { src: string; title: string }) => {
     );
 };
 
-const LayerTableUpcoming = ({ data, headers }: Props) => {
+const LayerTableAll = ({ data, headers }: Props) => {
     const router = useRouter();
     const [filters, setFilters] = useState<{ [key: string]: string[] }>({});
     const [sortedData, setSortedData] = useState(data);
@@ -196,4 +196,4 @@ const LayerTableUpcoming = ({ data, headers }: Props) => {
     );
 };
 
-export default LayerTableUpcoming;
+export default LayerTableAll;

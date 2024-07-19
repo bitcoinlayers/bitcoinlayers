@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { allLayers } from "@/util/layer_index";
 import LayerTable from "@/components/tables/layerTable";
-import LayerTableRisks from "@/components/tables/layerTableRisks";
+import LayerTableRiskView from "@/components/tables/layerTableRiskView";
 import Hero from "@/components/hero";
 
 type TabKey = "overview" | "risks";
@@ -32,7 +32,7 @@ export default function Home() {
 
     const tabComponents = {
         overview: <LayerTable data={sortedLayers} headers={layerHeaders} />,
-        risks: <LayerTableRisks />,
+        risks: <LayerTableRiskView />,
     };
 
     const handleTabClick = (tab: TabKey) => {
