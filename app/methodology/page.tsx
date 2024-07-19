@@ -235,7 +235,6 @@ const Methodology: React.FC = () => {
                 <div className="flex flex-col gap-8 w-full">
                     <div className="flex flex-col gap-12 w-full rounded-md">
                         {" "}
-                        {/**https://bitcoin-layers.gitbook.io/bitcoin-layers/approach-to-analyzing-risk */}
                         <div className="flex flex-col gap-8 w-full">
                             <div className="bg-white rounded-xl border border-slate-300 flex flex-col justify-center items-start gap-4 p-8">
                                 <div className="flex flex-col gap-3 cursor-pointer">

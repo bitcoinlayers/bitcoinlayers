@@ -5,8 +5,10 @@
 
 .custom-ul ul {
     list-style-type: circle;
+    padding-left: 2.5rem;
 }
 
 .custom-ul ul ul {
     list-style-type: square;
+    padding-left: 3.5rem;
 }
