@@ -28,28 +28,28 @@
             "category": "Unilateral Exits",
             "score": 0,
             "tier": "",
-            "title": "",
+            "title": "Under Review",
             "content": ""
         },
         {
             "category": "Data Availability",
             "score": 0,
             "tier": "",
-            "title": "",
+            "title": "Under Review",
             "content": ""
         },
         {
             "category": "Block Production",
             "score": 0,
             "tier": "",
-            "title": "",
+            "title": "Under Review",
             "content": ""
         },
         {
             "category": "State Validation",
             "score": 0,
             "tier": "",
-            "title": "",
+            "title": "Under Review",
             "content": ""
         }
     ],
@@ -60,6 +60,15 @@
             "content": [
                 {
                     "content": "Nomic is a Cosmos SDK Chain that enables users to leverage bitcoin in the Cosmos ecosystem."
+                }
+            ]
+        },
+        {
+            "id": "underreview",
+            "title": "Under Review",
+            "content": [
+                {
+                    "content": "We are currently reviewing trust assumptions related to this protocol against our framework. After the review is complete, we will publish the review on this site and make an announcement via our social media properties."
                 }
             ]
         }
