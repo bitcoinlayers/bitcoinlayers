@@ -55,11 +55,11 @@
     ],
     "sections": [
         {
-            "id": "description",
-            "title": "Description",
+            "id": "underreview",
+            "title": "Under Review",
             "content": [
                 {
-                    "content": "Ark is a decentralized network of trustless servers issuing VTXOs, basically checks with expiration. Users can make payments to each other within the system swapping these checks and withdraw funds at any time, even if the server goes offline or ceases to exist."
+                    "content": "📝 We are currently reviewing trust assumptions related to this protocol against our framework. After the review is complete, we will publish the review on this site and make an announcement via our social media properties."
                 }
             ]
         }
