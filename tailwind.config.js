@@ -52,7 +52,7 @@ module.exports = {
                 text_header: "#292929",
                 text_primary: "#434D65",
                 text_secondary: "#767B8F",
-                text_teriary: "#D3DDE8",
+                text_tertiary: "#D3DDE8",
                 text_quaternary: "#F5F7F8",
             },
             fontFamily: {
