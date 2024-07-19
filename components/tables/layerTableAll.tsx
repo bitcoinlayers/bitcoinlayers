@@ -185,7 +185,7 @@ const LayerTableAll = ({ data, headers }: Props) => {
                     })}
                 </div>
             </MobileView>
-            <div className="flex lg:mb-6 justify-center -mt-12 lg:mt-0 relative z-20">
+            <div className="flex lg:mb-6 justify-center -mt-18 lg:mt-0 relative z-20">
                 <div className="justify-start items-start gap-4 inline-flex">
                     <div
                         className={`h-[30px] px-4 py-[5px] rounded-full border-2 justify-center items-center gap-1.5 flex cursor-pointer ${
