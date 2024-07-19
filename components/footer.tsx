@@ -123,6 +123,9 @@ export default function Footer(): ReactElement {
                                         <SectionItem href="/infrastructure">
                                             Infrastructure
                                         </SectionItem>
+                                        <SectionItem href="/bitcoinonly">
+                                            BTC Only
+                                        </SectionItem>
                                         {/* <SectionItem href="/opcode">
                                             Opcodes
                                         </SectionItem> */}

@@ -55,7 +55,7 @@ const BitcoinonlyTable = ({ data, headers }: Props) => {
     }>({});
     const [mobileActiveTab, setMobileActiveTab] = useState<TableTabKey>("Type");
     const [showMainnet, setShowMainnet] = useState(true);
-    // const [showBitcoinonly, setShowBitcoinonly] = useState(false);
+    const [showBitcoinonly, setShowBitcoinonly] = useState(true);
 
     useEffect(() => {
         // Default sorting by Name alphabetically on first load
