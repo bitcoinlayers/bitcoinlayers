@@ -34,6 +34,12 @@ import sequentiaJson from "../content/layers/sequentia.json";
 import brollupJson from "../content/layers/brollup.json";
 import nomicJson from "../content/layers/nomic.json";
 import bouncebitJson from "../content/layers/bouncebit.json";
+import fractalJson from "../content/layers/fractal.json";
+import yonaJson from "../content/layers/yona.json";
+import nexioJson from "../content/layers/nexio.json";
+import highlayerJson from "../content/layers/highlayer.json";
+import qedJson from "../content/layers/qed.json";
+import bitfinityJson from "../content/layers/bitfinity.json";
 
 // @ts-ignore
 const core: Layer = coreJson as Layer;
@@ -74,6 +80,12 @@ const sequentia: Layer = sequentiaJson as Layer;
 const brollup: Layer = brollupJson as Layer;
 const nomic: Layer = nomicJson as Layer;
 const bouncebit: Layer = bouncebitJson as Layer;
+const fractal: Layer = fractalJson as Layer;
+const yona: Layer = yonaJson as Layer;
+const nexio: Layer = nexioJson as Layer;
+const highlayer: Layer = highlayerJson as Layer;
+const qed: Layer = qedJson as Layer;
+const bitfinity: Layer = bitfinityJson as Layer;
 
 export const allLayers: Layer[] = [
     core,
@@ -110,6 +122,12 @@ export const allLayers: Layer[] = [
     brollup,
     nomic,
     bouncebit,
+    fractal,
+    yona,
+    nexio,
+    highlayer,
+    qed,
+    bitfinity,
 ];
 
 export const allLayerSlugs: string[] = allLayers.map((layer) => layer.slug);
