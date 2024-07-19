@@ -53,6 +53,7 @@ const LayerTableAll = ({ data, headers }: Props) => {
         [key: string]: boolean | null;
     }>({});
     const [mobileActiveTab, setMobileActiveTab] = useState<TableTabKey>("Type");
+    const [showMainnet, setShowMainnet] = useState(false);
 
     useEffect(() => {
         // Default sorting by Name alphabetically on first load
@@ -115,22 +116,28 @@ const LayerTableAll = ({ data, headers }: Props) => {
         });
     };
 
-    const filteredData = sortedData.filter((item) => {
-        return Object.keys(filters).every((header) => {
-            if (!filters[header].length) return true;
-            switch (header) {
-                case "Type":
-                    return filters[header].includes(item.layerType);
-                case "Status":
-                    return filters[header].includes(item.live);
-                default:
-                    return true;
-            }
-        });
-    });
+    const filteredData = sortedData
+        .filter((item) => {
+            return Object.keys(filters).every((header) => {
+                if (!filters[header].length) return true;
+                switch (header) {
+                    case "Type":
+                        return filters[header].includes(item.layerType);
+                    case "Status":
+                        return filters[header].includes(item.live);
+                    default:
+                        return true;
+                }
+            });
+        })
+        .filter((item) => (showMainnet ? item.live === "Mainnet" : true));
 
     const handleMobileTabClick = (tab: TableTabKey) => {
         setMobileActiveTab(tab);
+    };
+
+    const toggleMainnetFilter = () => {
+        setShowMainnet(!showMainnet);
     };
 
     const mobileTableHeaders = headers.filter(
@@ -178,6 +185,48 @@ const LayerTableAll = ({ data, headers }: Props) => {
                     })}
                 </div>
             </MobileView>
+            <div className="flex lg:mb-12 justify-center -mt-12 lg:mt-0 relative z-20">
+                <div className="justify-start items-start gap-4 inline-flex">
+                    <div
+                        className={`h-[30px] px-4 py-[5px] rounded-full border-2 justify-center items-center gap-1.5 flex cursor-pointer ${
+                            showMainnet
+                                ? "bg-white border-orange-600"
+                                : "border-slate-300"
+                        }`}
+                        onClick={() => setShowMainnet(true)}
+                    >
+                        <div
+                            className={`text-center text-sm font-medium leading-tight ${
+                                showMainnet
+                                    ? "text-orange-600"
+                                    : "text-slate-600"
+                            }`}
+                        >
+                            Mainnet Only
+                        </div>
+                    </div>
+                    <div
+                        className={`h-[30px] rounded-full border-2 justify-center items-center gap-1 flex cursor-pointer ${
+                            !showMainnet
+                                ? "bg-white border-orange-600"
+                                : "border-slate-300"
+                        }`}
+                        onClick={() => setShowMainnet(false)}
+                    >
+                        <div className="grow shrink basis-0 h-[30px] px-4 py-[5px] justify-center items-center gap-1.5 flex">
+                            <div
+                                className={`text-center text-sm font-medium leading-tight ${
+                                    !showMainnet
+                                        ? "text-orange-600"
+                                        : "text-slate-600"
+                                }`}
+                            >
+                                All Layers
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div className="overflow-x-auto bg-lightsecondary rounded-xl mx-auto border border-stroke_tertiary">
                 <table className="bg-lightsecondary w-full text-sm text-left rtl:text-right rounded-xl">
                     <TableHeader
