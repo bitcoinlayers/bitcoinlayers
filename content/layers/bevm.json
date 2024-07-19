@@ -22,7 +22,7 @@
         "https://github.com/btclayer2/BEVM",
         "https://twitter.com/BTCLayer2"
     ],
-    "description": "BEVM is a sidechain being developed by the developers of ChainX, a Bitcoin sidechain built on Substrate consensus. We are currently reviewing BEVM's implementation.",
+    "description": "BEVM is a sidechain being developed by the developers of ChainX, a Bitcoin sidechain built on a Proof-of-Stake consensus mechanism.",
     "riskAnalysis": [
         {
             "category": "Unilateral Exits",
@@ -55,11 +55,11 @@
     ],
     "sections": [
         {
-            "id": "description",
-            "title": "Description",
+            "id": "underreview",
+            "title": "Under Review",
             "content": [
                 {
-                    "content": "BEVM is a sidechain being developed by the developers of ChainX, a Bitcoin sidechain built on Substrate consensus. We are currently reviewing BEVM's implementation."
+                    "content": "📝 We are currently reviewing trust assumptions related to this protocol against our framework. After the review is complete, we will publish the review on this site and make an announcement via our social media properties."
                 }
             ]
         }
