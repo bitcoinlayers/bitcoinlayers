@@ -131,7 +131,7 @@ export default function Navbar(): ReactElement {
                                         </div>
                                     </Link>
                                 </div> */}
-                                <div className="h-[88px] p-3 rounded-md flex-col justify-start items-start flex hover:bg-blue-100">
+                                {/* <div className="h-[88px] p-3 rounded-md flex-col justify-start items-start flex hover:bg-blue-100">
                                     <Link
                                         href="/upcominglayers"
                                         onClick={closeSubmenu}
@@ -145,7 +145,7 @@ export default function Navbar(): ReactElement {
                                             layers.
                                         </div>
                                     </Link>
-                                </div>
+                                </div> */}
                             </div>
                         )}
                     </li>

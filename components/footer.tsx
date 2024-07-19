@@ -126,9 +126,9 @@ export default function Footer(): ReactElement {
                                         {/* <SectionItem href="/opcode">
                                             Opcodes
                                         </SectionItem> */}
-                                        <SectionItem href="/upcominglayers">
+                                        {/* <SectionItem href="/upcominglayers">
                                             Upcoming Layers
-                                        </SectionItem>
+                                        </SectionItem> */}
                                     </div>
                                 </div>
                                 <div className="grow flex flex-col justify-start items-start gap-4">
