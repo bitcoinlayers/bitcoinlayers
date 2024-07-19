@@ -62,6 +62,15 @@
                     "content": "Nomic is a Cosmos SDK Chain that enables users to leverage bitcoin in the Cosmos ecosystem."
                 }
             ]
+        },
+        {
+            "id": "underreview",
+            "title": "Under Review",
+            "content": [
+                {
+                    "content": "We are currently reviewing trust assumptions related to this protocol against our framework. After the review is complete, we will publish the review on this site and make an announcement via our social media properties."
+                }
+            ]
         }
     ],
     "knowledgeBits": [
