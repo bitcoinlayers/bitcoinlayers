@@ -42,15 +42,15 @@
             "category": "Block Production",
             "score": 0,
             "tier": "Critical",
-            "title": "The Libre network is operated by its validator set. 🛑 Critical risk as node software is not currently open source",
-            "content": "Libre validators are responsible for proposing and signing blocks to finalize Libre transactions. There are 21 validators that participate in block production. They are selected for a round based on their voting power. Validators that are not selected as a part of this round must wait in a candidate pool. Rounds last 126 seconds. If there are not a minimum of 10 active validators, block production would fail.\n\nWhen selected, validators win the right to propose blocks for 6 seconds during a specific round. During this time frame they must produce 12 blocks."
+            "title": "The Libre network is operated by a permissioned validator set. 🛑 Critical risk as node software is not currently open source",
+            "content": "Libre validators are responsible for proposing and signing blocks to finalize Libre transactions. There are 21 validators that participate in block production. They are selected for a round based on their voting power. Validators that are not selected as a part of this round must wait in a candidate pool. Rounds last 126 seconds. If there are not a minimum of 10 active validators, block production would fail.\n\nWhen selected, validators win the right to propose blocks for 6 seconds during a specific round. During this time frame they must produce 12 blocks.\n\nTo register as a Libre validator, operators must run a node on testnet for two weeks and request permission to run a mainnet validator after these two weeks have passed."
         },
         {
             "category": "State Validation",
             "score": 0,
             "tier": "Critical",
-            "title": "Finality is No settlement guarantees provided by Bitcoin. 🛑 Critical risk as node software is not currently open source",
-            "content": "Settlement guarantees are finalized by Libre’s validator set and not by Bitcoin consensus participants.\n\n A block is considered final after a supermajority of network participants have validated a block. ."
+            "title": "No settlement guarantees provided by Bitcoin. 🛑 Critical risk as node software is not currently open source",
+            "content": "Settlement guarantees are finalized by Libre’s validator set and not by Bitcoin consensus participants.\n\n A block is considered final after a supermajority of network participants have validated a block. Once a block is considered final, it cannot be reorged."
         }
     ],
     "sections": [
