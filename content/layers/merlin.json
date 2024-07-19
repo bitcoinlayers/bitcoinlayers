@@ -22,37 +22,21 @@
         "https://docs.merlinchain.io/merlin-docs/developers",
         "https://twitter.com/MerlinLayer2"
     ],
-    "sections": [
-        {
-            "id": "risksummary",
-            "title": "Critical Risk Items",
-            "content": [
-                {
-                    "title": "All facets of Merlin chain are managed by a centralized operator. Some code is not open-source.",
-                    "content": "Merlin Chain contracts are all currently upgradeable by an admin. The contracts it has listed on its CDKValdidium can not be verified. It is likely that Merlin Chain is running their own permissioned fork of an EVM chain for their L1 blockchain. Because we cannot verify the L1 blockchain Merlin Chain is currently settling to, we have listed it as a high risk chain for depositing funds."
-                },
-                {
-                    "title": "Merlin L1 smart contract not verified",
-                    "content": "We are currenly unable to verify if the smart contracts listed in Merlin's Github are in fact the contracts used on its mainnet. The main contract for Polygoin CDKValidium on Ethereum was previously listed as the Merlin L1 contract in its documentation, but that was removed and no longer listed. Merlin chain have announced they will deploy their chain on Bsquared Network's L1 blockchain, which is a permissioned fork of Ethermint. New contracts have been listed in its Github, but their L1 RPC points to a different chain that is not Bsquared Network."
-                }
-            ]
-        }
-    ],
     "description": "Merlin is an implementation of Polygon CDK chain. It likely is running a Polygon chain on top of a permissioned fork of the EVM. Its documentation shares that it will add Bitcoin native security in the future, but no code or research has been released on this topic.",
     "riskAnalysis": [
         {
             "category": "Bridge Custody",
             "score": 0,
             "tier": "Critical",
-            "title": "Information on multi-sig signers not available",
+            "title": "🛑 Critical risk as no information on multi-sig signers not available",
             "content": "We are currently reviewing the bridge program related to Merlin. Due to there being no information signers of the multi-sig custodying users' funds, we classify the bridge program as high risk. The vault that mints BTC on Merlin is an upgradeable contract."
         },
         {
             "category": "Data Availability",
             "score": 0,
-            "tier": "Critical",
+            "tier": "High",
             "title": "State data is stored and made available by a permissioned data availability committee. The identities of its members are under review",
-            "content": "Merlin chain is built on the Polygon CDK stack. In its Github, it has a copy of the Polygon CDK Committee contract. In the contract, it states that the admin has the control to set up the committee, so it is likely that the members of this committee are permissioned and selected by the Merlin Chain operator. We are unable to verify the members of this committee."
+            "content": "Merlin chain is built on the Polygon CDK stack. In its Github, it has a copy of the Polygon CDK Committee contract. In the contract, it states that the admin has the control to set up the committee, so it is likely that the members of this committee are permissioned and selected by the Merlin Chain operator. We have not been able to verify the members of this committee."
         },
         {
             "category": "Network Operator",
@@ -65,8 +49,24 @@
             "category": "Settlement Assurance",
             "score": 0,
             "tier": "Critical",
-            "title": "zkSNARKs are proposedly used to ensure state correctness, but state validation occurs offchain and inherits no settlement guarantees from Bitcoin",
+            "title": "zkSNARKs are proposedly used to ensure state correctness, but state validation occurs offchain and inherits no settlement guarantees from Bitcoin. 🛑 Critical risk as we cannot verify Merlin's L1 chain",
             "content": "Merlin propsedly uses zkSNARKS to ensure state correctness. The Merlin prover posts validity proofs of execution to its L1 contract to finalize state transitions. It is unknown which chain Merlin settles to. Its documentation previously pointed to Ethereum, but recent contracts cannot be verified on Ethereum."
+        }
+    ],
+    "sections": [
+        {
+            "id": "additionalconsiderations",
+            "title": "Additional Considerations",
+            "content": [
+                {
+                    "title": "All facets of Merlin chain are managed by a centralized operator. Some code is not open-source",
+                    "content": "Merlin Chain contracts are all currently upgradeable by an admin. The contracts it has listed on its CDKValdidium can not be verified. It is likely that Merlin Chain is running their own permissioned fork of an EVM chain for their L1 blockchain. Because we cannot verify the L1 blockchain Merlin Chain is currently settling to, we have listed it as a high risk chain for depositing funds."
+                },
+                {
+                    "title": "Merlin L1 smart contract not verified",
+                    "content": "We are currenly unable to verify if the smart contracts listed in Merlin's Github are in fact the contracts used on its mainnet. The main contract for Polygoin CDKValidium on Ethereum was previously listed as the Merlin L1 contract in its documentation, but that was removed and no longer listed. Merlin chain have announced they will deploy their chain on Bsquared Network's L1 blockchain, which is a permissioned fork of Ethermint. New contracts have been listed in its Github, but their L1 RPC points to a different chain that is not Bsquared Network."
+                }
+            ]
         }
     ],
     "knowledgeBits": [
