@@ -227,7 +227,7 @@ const LayerTableAll = ({ data, headers }: Props) => {
                     </div>
                 </div>
             </div>
-            <div className="flex lg:mb-6 justify-center -mt-12 lg:mt-0 relative z-20">
+            <div className="flex lg:mb-6 justify-center mt-12 mb-12 lg:mt-0 relative z-20">
                 <div className="justify-start items-start gap-4 inline-flex">
                     <div
                         className={`h-[30px] rounded-full border-2 justify-center items-center gap-1 flex cursor-pointer ${
