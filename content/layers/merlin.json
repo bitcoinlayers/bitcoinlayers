@@ -4,7 +4,7 @@
     "layerType": "Sidechain",
     "live": "Mainnet",
     "underReview": "no",
-    "riskFactors": ["Critical", "Critical", "High", "Critical"],
+    "riskFactors": ["Critical", "High", "High", "Critical"],
     "purpose": "General",
     "btcBridge": "Limited information",
     "settlement": "External",
