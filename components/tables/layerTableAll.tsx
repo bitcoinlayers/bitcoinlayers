@@ -54,7 +54,7 @@ const LayerTableAll = ({ data, headers }: Props) => {
     }>({});
     const [mobileActiveTab, setMobileActiveTab] = useState<TableTabKey>("Type");
     const [showMainnet, setShowMainnet] = useState(true);
-    const [showBitcoinonly, setShowBitcoinonly] = useState(true);
+    const [showBitcoinonly, setShowBitcoinonly] = useState(false);
 
     useEffect(() => {
         // Default sorting by Name alphabetically on first load
