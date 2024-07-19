@@ -10,7 +10,8 @@ import Hero from "@/components/hero";
 type TabKey = "liveLayersOnly" | "allLayers";
 
 export default function Home() {
-    const [activeTab, setActiveTab] = useState<TabKey>("liveLayersOnly");
+    // const [activeTab, setActiveTab] = useState<TabKey>("liveLayersOnly");
+    // const [btcFilter, setBtcFilter] = useState(false);
 
     const sortedLayers = allLayers.sort((a, b) =>
         a.title.toLowerCase().localeCompare(b.title.toLowerCase()),
@@ -21,8 +22,6 @@ export default function Home() {
         { name: "Risk", showSorting: false, mobileLabel: "Risk" },
         { name: "Type", showSorting: true, mobileLabel: "Type" },
         { name: "Status", showSorting: true, mobileLabel: "Status" },
-        // { name: "Type", filterOptions: ["Sidechain", "State Channel", "Rollup"] },
-        // { name: "Status", filterOptions: ["Mainnet", "Testnet", "Announced"] },
         {
             name: "Unit of Account",
             showSorting: true,
@@ -31,21 +30,38 @@ export default function Home() {
         { name: "BTC Locked", showSorting: true, mobileLabel: "BTC" },
     ];
 
-    const tabComponents = {
-        liveLayersOnly: (
-            <LayerTable data={sortedLayers} headers={layerHeaders} />
-        ),
-        allLayers: <LayerTableAll data={sortedLayers} headers={layerHeaders} />,
-    };
+    // const filteredLayers = btcFilter
+    //     ? sortedLayers.filter(
+    //           (layer) => layer.nativeToken.toLowerCase() === "btc",
+    //       )
+    //     : sortedLayers;
 
-    const handleTabClick = (tab: TabKey) => {
-        setActiveTab(tab);
-    };
+    // const tabComponents = {
+    //     liveLayersOnly: (
+    //         <LayerTable
+    //             data={filteredLayers.filter(
+    //                 (layer) => layer.live === "Mainnet",
+    //             )}
+    //             headers={layerHeaders}
+    //         />
+    //     ),
+    //     allLayers: (
+    //         <LayerTableAll data={filteredLayers} headers={layerHeaders} />
+    //     ),
+    // };
+
+    // const handleTabClick = (tab: TabKey) => {
+    //     setActiveTab(tab);
+    // };
+
+    // const toggleBtcFilter = () => {
+    //     setBtcFilter((prev) => !prev);
+    // };
 
     return (
         <div className="mx-auto">
             <Hero />
-            <div className="flex lg:mb-12 justify-center -mt-12 lg:mt-0 relative z-20">
+            {/* <div className="flex lg:mb-12 justify-center -mt-12 lg:mt-0 relative z-20">
                 <div className="justify-start items-start gap-4 inline-flex">
                     <div
                         className={`h-[30px] px-4 py-[5px] rounded-full border-2 justify-center items-center gap-1.5 flex cursor-pointer ${
@@ -86,9 +102,18 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> */}
+            {/* <div className="flex justify-center my-4">
+                <button
+                    className="px-4 py-2 bg-blue-600 text-white rounded-lg"
+                    onClick={toggleBtcFilter}
+                >
+                    {btcFilter ? "Show All Layers" : "Show Only BTC Layers"}
+                </button>
+            </div> */}
             <div className="lg:flex mb-4 justify-center w-full lg:max-w-5xl mx-auto">
-                {tabComponents[activeTab]}
+                {/* {tabComponents[activeTab]} */}
+                <LayerTableAll data={sortedLayers} headers={layerHeaders} />
             </div>
         </div>
     );

@@ -47,7 +47,7 @@ const LayerImage = ({ src, title }: { src: string; title: string }) => {
 
 const LayerTableAll = ({ data, headers }: Props) => {
     const router = useRouter();
-    const [filters, setFilters] = useState<{ [key: string]: string[] }>({}); //no filters here, take all of layers
+    const [filters, setFilters] = useState<{ [key: string]: string[] }>({});
     const [sortedData, setSortedData] = useState(data);
     const [sortOrder, setSortOrder] = useState<{
         [key: string]: boolean | null;
