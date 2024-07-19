@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import React, { useState } from "react";
+import styles from "../../components/styles/methodology.module.css";
 
 const Methodology: React.FC = () => {
     const InfoBox: React.FC<{ title: string; body: string }> = ({
@@ -29,7 +30,7 @@ const Methodology: React.FC = () => {
                         />
                     </div>
 
-                    <div className="text-3xl font-light text-zinc-800 leading-9">
+                    <div className="text-2xl font-light text-zinc-800 leading-9">
                         {title}
                     </div>
                 </div>
@@ -38,7 +39,7 @@ const Methodology: React.FC = () => {
                     <div className="flex flex-col justify-center items-start gap-8 w-full">
                         <div className="flex flex-col justify-start items-start gap-2 w-full">
                             <div
-                                className="text-base font-normal text-slate-500 leading-normal"
+                                className={`text-base font-normal text-slate-500 leading-normal ${styles["custom-ul"]}`}
                                 dangerouslySetInnerHTML={{ __html: body }}
                             />
                         </div>

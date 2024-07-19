@@ -1,0 +1,12 @@
+.custom-ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+}
+
+.custom-ul ul {
+    list-style-type: circle;
+}
+
+.custom-ul ul ul {
+    list-style-type: square;
+}
