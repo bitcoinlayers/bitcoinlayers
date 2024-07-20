@@ -8,8 +8,6 @@ import TableHeader from "@/components/tables/tableHeader";
 import { BrowserView, MobileView, isMobile } from "react-device-detect";
 
 type TableTabKey = "Risk" | "Category" | "Type" | "Status";
-// | "Unit of Account"
-// | "BTC Locked";
 
 type TableItem = Layer | Infrastructure;
 
@@ -81,7 +79,7 @@ const BitcoinonlyTable = ({ data, headers }: Props) => {
                     break;
                 case "Category":
                     valueA = isLayer(a) ? "Layer" : "Infrastructure";
-                    valueB = isLayer(a) ? "Layer" : "Infrastructure";
+                    valueB = isLayer(b) ? "Layer" : "Infrastructure";
                     break;
                 case "Type":
                     valueA = isLayer(a)
@@ -99,14 +97,6 @@ const BitcoinonlyTable = ({ data, headers }: Props) => {
                     valueA = a.live;
                     valueB = b.live;
                     break;
-                // case "Unit of Account":
-                //     valueA = a.nativeToken;
-                //     valueB = b.nativeToken;
-                //     break;
-                // case "BTC Locked":
-                //     valueA = isLayer(a) ? a.btcLocked : "";
-                //     valueB = isLayer(b) ? b.btcLocked : "";
-                //     break;
                 default:
                     return 0;
             }
@@ -241,44 +231,6 @@ const BitcoinonlyTable = ({ data, headers }: Props) => {
                                         {item.live}
                                     </td>
                                 )}
-                                {/* {(!isMobile ||
-                                    mobileActiveTab === "Unit of Account") && (
-                                    <td className="lg:px-6 px-4 py-3 lg:py-4 border-stroke_tertiary text_table_important">
-                                        <div className="flex items-center">
-                                            {item.nativeToken
-                                                .toLowerCase()
-                                                .includes("btc") && (
-                                                <Image
-                                                    src="/btc.svg"
-                                                    alt="BTC logo"
-                                                    width={20}
-                                                    height={20}
-                                                    className="mr-2"
-                                                />
-                                            )}
-                                            {item.nativeToken}
-                                        </div>
-                                    </td>
-                                )}
-                                {(!isMobile ||
-                                    mobileActiveTab === "BTC Locked") && (
-                                    <td className="lg:px-6 px-4 py-3 lg:py-4 border-r border-stroke_tertiary text_table_important">
-                                        {isLayer(item) &&
-                                        (item.underReview === "yes" ||
-                                            !Number(item.btcLocked)) ? (
-                                            <div>-</div>
-                                        ) : (
-                                            <div>
-                                                ₿{" "}
-                                                {Number(
-                                                    isLayer(item)
-                                                        ? item.btcLocked
-                                                        : 0,
-                                                ).toLocaleString()}
-                                            </div>
-                                        )}
-                                    </td>
-                                )} */}
                             </tr>
                         ))}
                     </tbody>
