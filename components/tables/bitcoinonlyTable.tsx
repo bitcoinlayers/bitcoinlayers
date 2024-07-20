@@ -53,7 +53,9 @@ const LayerImage = ({ src, title }: { src: string; title: string }) => {
 
 const BitcoinonlyTable = ({ data, headers }: Props) => {
     const router = useRouter();
-    const [filter, setFilter] = useState<"Mainnet" | "Testnet" | "All">("All");
+    const [filter, setFilter] = useState<"Mainnet" | "Testnet" | "All">(
+        "Mainnet",
+    );
     const [sortedData, setSortedData] = useState(data);
     const [sortOrder, setSortOrder] = useState<{
         [key: string]: boolean | null;
@@ -129,6 +131,68 @@ const BitcoinonlyTable = ({ data, headers }: Props) => {
 
     return (
         <div className="px-6 lg:px-0 w-full">
+            <div className="flex lg:mb-6 justify-center -mt-12 lg:mt-0 relative z-20">
+                <div className="justify-start items-start gap-4 inline-flex">
+                    <div
+                        className={`h-[30px] px-4 py-[5px] rounded-full border-2 justify-center items-center gap-1.5 flex cursor-pointer ${
+                            filter === "Mainnet"
+                                ? "bg-white border-orange-600"
+                                : "border-slate-300"
+                        }`}
+                        onClick={() => setFilter("Mainnet")}
+                    >
+                        <div
+                            className={`text-center text-sm font-medium leading-tight ${
+                                filter === "Mainnet"
+                                    ? "text-orange-600"
+                                    : "text-slate-600"
+                            }`}
+                        >
+                            Mainnet
+                        </div>
+                    </div>
+                    <div
+                        className={`h-[30px] rounded-full border-2 justify-center items-center gap-1 flex cursor-pointer ${
+                            filter === "Testnet"
+                                ? "bg-white border-orange-600"
+                                : "border-slate-300"
+                        }`}
+                        onClick={() => setFilter("Testnet")}
+                    >
+                        <div className="grow shrink basis-0 h-[30px] px-4 py-[5px] justify-center items-center gap-1.5 flex">
+                            <div
+                                className={`text-center text-sm font-medium leading-tight ${
+                                    filter === "Testnet"
+                                        ? "text-orange-600"
+                                        : "text-slate-600"
+                                }`}
+                            >
+                                Testnet
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        className={`h-[30px] rounded-full border-2 justify-center items-center gap-1 flex cursor-pointer ${
+                            filter === "All"
+                                ? "bg-white border-orange-600"
+                                : "border-slate-300"
+                        }`}
+                        onClick={() => setFilter("All")}
+                    >
+                        <div className="grow shrink basis-0 h-[30px] px-4 py-[5px] justify-center items-center gap-1.5 flex">
+                            <div
+                                className={`text-center text-sm font-medium leading-tight ${
+                                    filter === "All"
+                                        ? "text-orange-600"
+                                        : "text-slate-600"
+                                }`}
+                            >
+                                All
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <MobileView className="flex justify-center">
                 <div className="justify-center lg:items-start gap-4 inline-flex py-3">
                     {headers.slice(2).map((_item, ind) => {
