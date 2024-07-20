@@ -23,7 +23,7 @@
         "https://github.com/chainwayxyz/citrea",
         "https://twitter.com/citrea_xyz"
     ],
-    "description": "Citrea is building a rollup on top of Bitcoin. They are using implementations of BitVM for their Bitcoin two-way peg and SNARK verifier. They are using zkSTARKs to provide rollup state transitions. Citrea is being developed by Chainway Labs.",
+    "description": "Citrea is building a rollup on top of Bitcoin. They are using implementations of BitVM for their Bitcoin two-way peg and SNARK verifier. They are using zkSTARKs to prove rollup state transitions and will use Bitcoin for data availability. Citrea is being developed by Chainway Labs.",
     "riskAnalysis": [
         {
             "category": "Unilateral Exits",
@@ -56,28 +56,52 @@
     ],
     "sections": [
         {
-            "id": "description",
-            "title": "Description",
+            "id": "proposedtechnologies",
+            "title": "Proposed Technologies",
             "content": [
                 {
-                    "content": "Citrea is building a rollup on top of Bitcoin. They are using implementations of BitVM for their Bitcoin two-way peg and SNARK verifier. They are using zkSTARKs to provide rollup state transitions. Citrea is being developed by Chainway Labs."
+                    "title": "Clementine",
+                    "content": "Clementine is a proposed bridge (two-way peg) design that is based on BitVM1. The design sees a fixed operator set maintain the integrity of its two-way peg.\n\nOne operator at a single time manages the withdrawals and deposits from the bridge program. In the event that this operator is dishonest, verifiers (who are from the federated operator set) can initiate a challenge transaction and dispute the malicious operator's withdrawal transactions.\n\nOperatos in this set front liquidity for user withdrawals and are able to redeem funds used for processed withdawals from the bridge program after a specific time period.\n\nClementime improves the trust assumption of bridge programs from trusting a majority of operators to trusting a single operator."
+                },
+                {
+                    "title": "Multiple Virtual Machines",
+                    "content": "Citrea will be initially implementing its own zkEVM, a fully EVM-compatible execution environment, with the support of RISC Zero. It's long-term roadmap sees it support multiple virtual machines, providing developers an opportunity to build their apps"
+                },
+                {
+                    "title": "Data availability on Bitcoin",
+                    "content": "Citrea's sequencer will post state differences to Bitcoin. These state differences will include the rollup's latest state root, and enough transaction data to recreate the rollup from genisis.\n\nThis sees the Bitcoin L1 satisy Citrea's data availability requirement, meaning any Bitcoin full node can validate the state of Citrea."
                 }
             ]
         },
         {
-            "id": "selfsubmit",
-            "title": "Process to self-submit information",
+            "id": "additionalconsiderations",
+            "title": "Additional Considerations",
             "content": [
                 {
-                    "content": "The Bitcoin Layers project prioritizes risk reviews on projects that are in production and accepting users' BTC deposits. Projects on testnet are welcome to submit information about their project. We do not publish risk assessments for projects that are not in production.\n\nInformation on how to submit information on a project can be found in the Knowledge Bits section."
+                    "title": "Long-term research",
+                    "content": "The Citrea team is researching decentralized sequencing protocols, integrations with the Lightning Network and offering ."
+                },
+                {
+                    "title": "Atomic Swaps will be used onboard the majority of users",
+                    "content": "Due to fixed deposits and withdrawals, most users will likely deposit funds into Citrea by way of a service provider facilitating atomic swaps."
+                }
+            ]
+        },
+        {
+            "id": "testnetinformation",
+            "title": "Testnet Information",
+            "content": [
+                {
+                    "title": "Devnet is live. Developers can interact with Citrea by following the links in our Knowledge Bits section.",
+                    "content": "."
                 }
             ]
         }
     ],
     "knowledgeBits": [
         {
-            "url": "https://github.com/bitcoinlayers/bitcoinlayers/blob/main/self-submit.md",
-            "displayText": "Instructions on self-submitting a project."
+            "url": "https://docs.citrea.xyz/developer-documentation/deployment-guide",
+            "displayText": "Build on Citrea's devnet"
         },
         {
             "url": "https://citrea.xyz",
