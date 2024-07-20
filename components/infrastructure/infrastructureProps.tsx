@@ -25,6 +25,7 @@ interface InfrastructureProps {
     nativeToken: string;
     purpose: string;
     associatedLayers: string;
+    bitcoinOnly: boolean;
     links: string[];
     description: string;
     sections: Section[];
@@ -43,6 +44,7 @@ export type Infrastructure = {
     nativeToken: string;
     purpose: string;
     associatedLayers: string;
+    bitcoinOnly: boolean;
     links: string[];
     description: string;
     sections: Section[];

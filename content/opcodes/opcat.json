@@ -9,6 +9,7 @@
     "nativeToken": "Proposed",
     "purpose": "Other",
     "associatedLayers": "Draft",
+    "bitcoinOnly": true,
     "links": [
         "https://twitter.com/bitcoinlayers",
         "https://twitter.com/bitcoinlayers",

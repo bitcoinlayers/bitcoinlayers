@@ -14,6 +14,7 @@
     "nativeToken": "SYS",
     "feeToken": "SYS",
     "enshrinedBtc": "None",
+    "bitcoinOnly": false,
     "links": [
         "https://rollux.com/",
         "https://docs.rollux.com/docs/developers/",

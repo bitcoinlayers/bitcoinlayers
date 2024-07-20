@@ -14,6 +14,7 @@
     "nativeToken": "LBTC",
     "feeToken": "LBTC",
     "enshrinedBtc": "LBTC",
+    "bitcoinOnly": true,
     "links": [
         "https://liquid.net/",
         "https://docs.liquid.net/docs/technical-overview",

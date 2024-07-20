@@ -14,6 +14,7 @@
     "nativeToken": "-",
     "feeToken": "-",
     "enshrinedBtc": "-",
+    "bitcoinOnly": false,
     "links": [
         "https://github.com/KasarLabs/barknet",
         "https://github.com/KasarLabs/barknet",

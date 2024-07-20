@@ -120,6 +120,20 @@ export default function Navbar(): ReactElement {
                                         </div>
                                     </Link>
                                 </div>
+                                <div className="h-[88px] p-3 rounded-md flex-col justify-start items-start flex hover:bg-blue-100">
+                                    <Link
+                                        href="/bitcoinonly"
+                                        onClick={closeSubmenu}
+                                    >
+                                        <div className="text-zinc-800 text-base font-medium leading-normal">
+                                            BTC Only
+                                        </div>
+                                        <div className="self-stretch text-slate-500 text-sm font-normal leading-tight">
+                                            Layers and infrastructure that only
+                                            use BTC.
+                                        </div>
+                                    </Link>
+                                </div>
                                 {/* <div className="h-[88px] p-3 rounded-md flex-col justify-start items-start flex hover:bg-blue-100">
                                     <Link href="/opcode" onClick={closeSubmenu}>
                                         <div className="text-zinc-800 text-base font-medium leading-normal">
@@ -131,7 +145,7 @@ export default function Navbar(): ReactElement {
                                         </div>
                                     </Link>
                                 </div> */}
-                                <div className="h-[88px] p-3 rounded-md flex-col justify-start items-start flex hover:bg-blue-100">
+                                {/* <div className="h-[88px] p-3 rounded-md flex-col justify-start items-start flex hover:bg-blue-100">
                                     <Link
                                         href="/upcominglayers"
                                         onClick={closeSubmenu}
@@ -145,7 +159,7 @@ export default function Navbar(): ReactElement {
                                             layers.
                                         </div>
                                     </Link>
-                                </div>
+                                </div> */}
                             </div>
                         )}
                     </li>
@@ -160,10 +174,7 @@ export default function Navbar(): ReactElement {
                         </Link>
                     </li>
                     <li className="hidden lg:block">
-                        <Link
-                            href="https://bitcoin-layers.gitbook.io/bitcoin-layers"
-                            target="_blank"
-                        >
+                        <Link href="/methodology" onClick={closeMenu}>
                             Methodology
                         </Link>
                     </li>

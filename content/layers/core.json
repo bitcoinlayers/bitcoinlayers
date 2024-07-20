@@ -14,6 +14,7 @@
     "nativeToken": "CORE",
     "feeToken": "CORE",
     "enshrinedBtc": "coreBTC",
+    "bitcoinOnly": false,
     "links": [
         "https://coredao.org/",
         "https://www.stacks.co/explore/discover-apps",

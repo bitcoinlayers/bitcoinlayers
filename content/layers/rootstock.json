@@ -14,6 +14,7 @@
     "nativeToken": "RBTC",
     "feeToken": "RBTC",
     "enshrinedBtc": "RBTC",
+    "bitcoinOnly": true,
     "links": [
         "https://rootstock.io/",
         "https://dev.rootstock.io",
