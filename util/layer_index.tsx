@@ -41,6 +41,7 @@ import highlayerJson from "../content/layers/highlayer.json";
 import qedJson from "../content/layers/qed.json";
 import bitfinityJson from "../content/layers/bitfinity.json";
 import bevmJson from "../content/layers/bevm.json";
+import starknetJson from "../content/layers/starknet.json";
 
 // @ts-ignore
 const core: Layer = coreJson as Layer;
@@ -88,6 +89,8 @@ const highlayer: Layer = highlayerJson as Layer;
 const qed: Layer = qedJson as Layer;
 const bitfinity: Layer = bitfinityJson as Layer;
 const bevm: Layer = bevmJson as Layer;
+const starknet: Layer = starknetJson as Layer;
+
 
 export const allLayers: Layer[] = [
     core,
@@ -131,6 +134,7 @@ export const allLayers: Layer[] = [
     qed,
     bitfinity,
     bevm,
+    starknet,
 ];
 
 export const allLayerSlugs: string[] = allLayers.map((layer) => layer.slug);

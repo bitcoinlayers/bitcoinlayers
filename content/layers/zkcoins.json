@@ -14,7 +14,7 @@
     "nativeToken": "-",
     "feeToken": "-",
     "enshrinedBtc": "-",
-    "bitcoinOnly": false,
+    "bitcoinOnly": true,
     "links": [
         "https://zerosync.org/",
         "https://twitter.com/bitcoinlayers",

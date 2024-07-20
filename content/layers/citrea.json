@@ -14,7 +14,7 @@
     "nativeToken": "-",
     "feeToken": "-",
     "enshrinedBtc": "-",
-    "bitcoinOnly": false,
+    "bitcoinOnly": true,
     "links": [
         "https://citrea.xyz",
         "https://citrea.xyz",
