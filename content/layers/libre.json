@@ -4,23 +4,23 @@
     "layerType": "Sidechain",
     "live": "Mainnet",
     "underReview": "no",
-    "riskFactors": ["High", "Critical", "Critical", "Critical"],
+    "riskFactors": ["High", "High", "High", "High"],
     "purpose": "General",
     "btcBridge": "Third Party Multi-sig",
-    "settlement": "Under review",
+    "settlement": "Offchain",
     "btcLocked": 15,
-    "executionEnv": "Under review",
-    "consensus": "Under review",
+    "executionEnv": "Offchain",
+    "consensus": "Delegated Proof-of-Stake",
     "nativeToken": "LIBRE",
-    "feeToken": "-",
+    "feeToken": "LIBRE",
     "enshrinedBtc": "PBTC",
     "bitcoinOnly": false,
     "links": [
         "https://chain.libre.org/",
-        "https://twitter.com/bitcoinlayers",
-        "https://twitter.com/bitcoinlayers",
-        "https://twitter.com/bitcoinlayers",
-        "https://twitter.com/bitcoinlayers",
+        "https://chain.libre.org/",
+        "https://docs.libre.org/libre-docs",
+        "https://libre.antelope.tools/",
+        "https://gitlab.com/libre-chain",
         "https://twitter.com/libreblockchain"
     ],
     "description": "Libre is a sidechain that leverages a Delegated Proof of Stake (DPoS) consensus mechanism. It currently features three tokens: PBTC, PUSDT, and LIBRE. BTC live on the Libre network is managed by an alternative consensus mechanism that is not directly affiliated with Libre.",
@@ -35,23 +35,23 @@
         {
             "category": "Data Availability",
             "score": 0,
-            "tier": "Critical",
-            "title": "Data availability requirement is satisfied by Libre's permissioned validator set. ⚠️ Critical risk as node software is not currently open source",
-            "content": "The data availability and storage requirement is satisfied by Libre validators. Proposedly, anyone will be able to participate as a validator once the mainnet node implementation is open-source.\n\n⚠️ Critical risk as node software is not currently open source."
+            "tier": "High",
+            "title": "Data availability requirement is satisfied by Libre's permissioned validator set",
+            "content": "The data availability and storage requirement is satisfied by Libre validators. Anyone can participate as a validator once the mainnet node implementation is open-source."
         },
         {
             "category": "Block Production",
             "score": 0,
-            "tier": "Critical",
-            "title": "The Libre network is operated by a permissioned validator set. ⚠️ Critical risk as node software is not currently open source",
-            "content": "Libre validators are responsible for proposing and signing blocks to finalize Libre transactions. There are 21 validators that participate in block production. They are selected for a round based on their voting power. Validators that are not selected as a part of this round must wait in a candidate pool. Rounds last 126 seconds. If there are not a minimum of 10 active validators, block production would fail.\n\nWhen selected, validators win the right to propose blocks for 6 seconds during a specific round. During this time frame they must produce 12 blocks.\n\n⚠️Critical risk as node software is not currently open source."
+            "tier": "High",
+            "title": "The Libre network is operated by a permissioned validator set",
+            "content": "Libre validators are responsible for proposing and signing blocks to finalize Libre transactions. There are 21 validators that participate in block production. They are selected for a round based on their voting power. Validators that are not selected as a part of this round must wait in a candidate pool. Rounds last 126 seconds. If there are not a minimum of 10 active validators, block production would fail.\n\nWhen selected, validators win the right to propose blocks for 6 seconds during a specific round. During this time frame they must produce 12 blocks.\n\nTo register as a Libre validator, operators must run a node on testnet for two weeks and request permission to run a mainnet validator after these two weeks have passed."
         },
         {
             "category": "State Validation",
             "score": 0,
-            "tier": "Critical",
-            "title": "No settlement guarantees provided by Bitcoin. ⚠️ Critical risk as node software is not currently open source",
-            "content": "Settlement guarantees are finalized by Libre’s validator set and not by Bitcoin consensus participants.\n\n⚠️ Critical risk as node software is not currently open source."
+            "tier": "High",
+            "title": "No settlement guarantees provided by Bitcoin",
+            "content": "Settlement guarantees are finalized by Libre’s validator set and not by Bitcoin consensus participants.\n\n A block is considered final after a supermajority of network participants have validated a block. Once a block is considered final, it cannot be reorged."
         }
     ],
     "sections": [
@@ -59,10 +59,6 @@
             "id": "additionalconsiderations",
             "title": "Additional Considerations",
             "content": [
-                {
-                    "title": "Node software not open source",
-                    "content": "Due to Libre’s mainnet node software not being open source, we have given critical risk scores. These will be updated when Libre’s node software is open source."
-                },
                 {
                     "title": "Token delegating used to select validators",
                     "content": "LIBRE token holders can use their voting power to select validators. Voting power is based on the amount of tokens someone has, and how long they’ve been staked. Currently, four accounts hold over 50% of the voting power."
@@ -77,18 +73,18 @@
                     "title": "Unilateral exits to Bitcoin not possible",
                     "content": "Users cannot unilaterally from Libre. Users must trust alternative consensus mechanisms to withdrawal funds."
                 },
-                {
-                    "title": "Libre does not leak MEV to Bitcoin",
-                    "content": "Libre does not leak MEV to the Bitcoin base layer. Users trust that Libre validators will not reorder their transactions to extract MEV."
-                },
-                {
-                    "title": "An alternative token plays a role in network security",
-                    "content": "Libre relies on the LIBRE token for network security and operation."
-                },
-                {
-                    "title": "No fees paid to Bitcoin miners",
-                    "content": "Libre does not contribute to Bitcoin’s security budget."
-                }
+            {
+                "title": "Libre does not leak MEV to Bitcoin",
+                "content": "Libre does not leak MEV to the Bitcoin base layer."
+              },
+            {
+                "title": "An alternative token plays a role in network security",
+                "content": "Libre relies on the LIBRE token for network security and operation."
+              },
+            {
+                "title": "No fees paid to Bitcoin miners",
+                "content": "Libre does not contribute to Bitcoin’s security budget."
+              }
             ]
         },
         {
@@ -107,7 +103,11 @@
             "content": [
                 {
                     "title": "EOSIO technology stack",
-                    "content": "The Libre Chain is built on the EOSIO (commonly known as EOS) is a blockchain framework in the EOS ecosystem. These chains run on a delegated proof-of-stake consensus mechanism. Validators are required to acquire and stake tokens, or have tokens be delegated towards them by ecosystem participants.\n\nIn Libre, token holders delegate their tokens and validators’ probability on winning blocks is based on their delegated tokens’ weighted voting power. This power is determined by the amount of tokens and how long they’ve been staked.\n\nIn EOS blockchain designs, only the top 21 block producers by staking power are able to produce blocks.\n\n⚠️ Our assumption is that Libre mainnet is running on the EOSIO framework. Only the testnet implementation is open-source."
+                    "content": "The Libre Chain is built on the EOSIO (commonly known as EOS) blockchain framework. It runs on a delegated proof-of-stake consensus mechanism. Validators are required to acquire and stake tokens, or have tokens be delegated towards them by ecosystem participants.\n\nIn Libre, token holders delegate their tokens and validators’ probability on winning blocks is based on their delegated tokens’ weighted voting power. This power is determined by the amount of tokens and how long they’ve been staked.\n\nIn EOS blockchain designs, only the top 21 block producers by staking power are include in a block production round. After producers are included in a round, they propose blocks in alphabetical order. In their slot, they must produce 12 blocks within 6 seconds or risk slashing penalities."
+                },
+                {
+                    "title": "Delegated Proof-of-Stake",
+                    "content": "Validator inclusion in producer rounds is based on their voting power. Voting power is derived from the amount of tokens they have staked and the amount of time they have been staked. The validators will the highest voting power are included in producer rounds.\n\nToken holders can delegate tokens to their preferred validators in Libre's DPOS consensus mechanism, which are distributed to holders from the validators."
                 }
             ]
         },

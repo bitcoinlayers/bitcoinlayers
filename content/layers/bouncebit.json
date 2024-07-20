@@ -23,7 +23,7 @@
         "https://github.com/BounceBit-Labs",
         "https://x.com/bounce_bit"
     ],
-    "description": "BouneBit is a Proof-of-Stake blockchain that leverages bitcoin for staking and supports an EVM execution environment.",
+    "description": "BounceBit is a Proof-of-Stake blockchain that leverages bitcoin for staking and supports an EVM execution environment.",
     "riskAnalysis": [
         {
             "category": "Unilateral Exits",
@@ -56,11 +56,11 @@
     ],
     "sections": [
         {
-            "id": "description",
-            "title": "Description",
+            "id": "underreview",
+            "title": "Under Review",
             "content": [
                 {
-                    "content": "BouneBit is a Proof-of-Stake blockchain that leverages bitcoin for staking and supports an EVM execution environment."
+                    "content": "📝 We are currently reviewing trust assumptions related to this protocol against our framework. After the review is complete, we will publish the review on this site and make an announcement via our social media properties."
                 }
             ]
         }

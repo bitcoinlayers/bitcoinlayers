@@ -19,7 +19,7 @@
         "https://www.bsquared.network/",
         "https://www.bsquared.network/",
         "https://docs.bsquared.network/",
-        "https://docs.bsquared.network/",
+        "https://explorer.bsquared.network/",
         "https://github.com/b2network",
         "https://twitter.com/BSquaredNetwork"
     ],
@@ -29,7 +29,7 @@
             "category": "Bridge Custody",
             "score": 0,
             "tier": "Critical",
-            "title": "Users likely interact with federated multi-sig. No information on two-way peg is available",
+            "title": "Users likely interact with federated multi-sig. 🛑 Critical risk as no information on two-way peg is available",
             "content": "The EVM bridge contracts and addresses for the operator(s) of the Bitcoin multi-sig are currently not available. Users should remain cautious when depositing BTC into Bsquared Network."
         },
         {
