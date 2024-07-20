@@ -60,8 +60,30 @@
             "title": "Bitcoin Security",
             "content": [
                 {
+                    "title": "Liquid does not inherit any security from Bitcoin consensus participants",
+                    "content": "Due to network operators being a closed set up, the Liquid sidechain does not inherit security from Bitcoin consensus participants."
+                },
+                {
                     "title": "No other token required",
-                    "content": "Liquid does not have a native token that plays a role in network security."
+                    "content": "Liquid does not have a native token that plays a role in network security. Users trust the reputation of Liquid functionaries and federation members, whom have also KYC'd to the Blockstream development company, to operate the network honestly."
+                },
+                {
+                    "title": "No MEV introduced on Bitcoin",
+                    "content": "Liquid does not leak MEV to the Bitcoin base layer."
+                },
+                {
+                    "title": "Does not directly contribute to the security budget",
+                    "content": "Liquid pays transaction fees to miners when facilitating withdrawals and deposits for its two-way peg."
+                }
+            ]
+        },
+        {
+            "id": "withdrawals",
+            "title": "Withdrawals",
+            "content": [
+                {
+                    "title": "Users trust permissioned operators to process their withdrawals",
+                    "content": "Withdrawals are permitted by the Liquid Federation. There is no way for users to withdraw their funds if the federation censors them. Users can also use a secondary marketplace to swap BTC for LBTC, but also must trust the federation to include, propose and validate their swap transaction within a Liquid block."
                 }
             ]
         },

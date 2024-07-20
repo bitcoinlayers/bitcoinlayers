@@ -69,8 +69,20 @@
             "title": "Bitcoin Security",
             "content": [
                 {
-                    "title": "Merge-mining is used for consensus",
-                    "content": "Rootstock is merge-mined. Currently, more than 50% of the bitcoin hashrate is participating in Rootstock merged mining. Rootstock Labs states to have three phases for merged mining growth, a bootstrap phase (<30% of BTC hashrate), stable phase (60% ≥ Rootstock ≥ 30%), and its mature phase (≥60%). Currently, Rootstock is in its stable phase. In order to pay out miners, every block executes the Reward Manager Smart Contract (REMASC). The contract keeps record of the Reward Balance account, which exists to change value during new block production. When a block reaches maturity, the appropriate portions of rewards are distributed according to REMASC specified rules. The Full Block Reward is paid out in the following breakdown: 20% to Rootstock Labs, 0.8% to Powpeg Federation, 79.2% to miners. Miners only receive rewards from transaction fees, as there is no issuance since the network native currency is RBTC. Fees dedicated to the federation and miners serve to incentivize the continued security, whereas the 20% dedicated to Rootstock Labs is dedicated to the maintenance and development of the network."
+                    "title": "Rootstock enables Bitcoin miners to merge-mine Rootstock",
+                    "content": "Rootstock indirectly inherits security from Bitcoin's consensus participants. Bitcoin miners can permissionlessly opt-in to merge-mining Rootstock and secure the network."
+                },
+                {
+                    "title": "Another token is not used for network security",
+                    "content": "The Full Block Reward is paid out in RBTC. Its distribution is : 20% to Rootstock Labs, 0.8% to Powpeg Federation, 79.2% to miners. Miners only receive rewards from transaction fees. Fees dedicated to the federation and miners serve to incentivize the continued security, whereas the 20% dedicated to Rootstock Labs is dedicated to the maintenance and development of the network."
+                },
+                {
+                    "title": "No MEV introduced to Bitcoin, but Bitcoin miners can extract sidechain MEV",
+                    "content": "Rootstock does not leak MEV to Bitcoin directly. Due to the nature of Rootstocks execution environment, Bitcoin miners may take advantage of opportunies to extract MEV if the network is experiencing high activity."
+                },
+                {
+                    "title": "Merge-mining enables Bitcoin miners to earn more fees",
+                    "content": "Rootstock contributes to Bitcoin's security budget indirectly by providing Bitcoin miners an exclusive opportunity to earn fee revenue via merge-mining."
                 }
             ]
         },
@@ -80,7 +92,7 @@
             "content": [
                 {
                     "title": "Merge-mining",
-                    "content": "Merged mining is a crucial part of Rootstock’s consensus mechanism that allows coupling between bitcoin and Rootstock. Essentially, BTC mining pools add references to Rootstock blocks in mining jobs sent to mining participants. Additionally, because the Rootstock mining algorithm is the same as bitcoin’s, there is little added energy expenditure. This combined with miners earning a portion of transaction fees from Rootstock block mining creates an incentive for providing security to both BTC and to Rootstock."
+                    "content": "Merged mining is a crucial part of Rootstock’s consensus mechanism that allows coupling between bitcoin and Rootstock. Essentially, BTC mining pools add references to Rootstock blocks in mining jobs sent to mining participants. Additionally, because the Rootstock mining algorithm is the same as bitcoin’s, there is little added energy expenditure. This combined with miners earning a portion of transaction fees from Rootstock block mining creates an incentive for providing security to both BTC and to Rootstock.\n\nCurrently, more than 50% of the bitcoin hashrate is participating in Rootstock merged mining. Rootstock Labs states to have three phases for merged mining growth, a bootstrap phase (<30% of BTC hashrate), stable phase (60% ≥ Rootstock ≥ 30%), and its mature phase (≥60%). Currently, Rootstock is in its stable phase.\n\nIn order to pay out miners, every block executes the Reward Manager Smart Contract (REMASC). The contract keeps record of the Reward Balance account, which exists to change value during new block production. When a block reaches maturity, the appropriate portions of rewards are distributed according to REMASC specified rules."
                 },
                 {
                     "title": "Powpeg",

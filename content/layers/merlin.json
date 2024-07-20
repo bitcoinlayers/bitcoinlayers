@@ -68,6 +68,49 @@
                     "content": "We are currenly unable to verify if the smart contracts listed in Merlin's Github are in fact the contracts used on its mainnet. The main contract for Polygoin CDKValidium on Ethereum was previously listed as the Merlin L1 contract in its documentation, but that was removed and no longer listed. Merlin chain have announced they will deploy their chain on Bsquared Network's L1 blockchain, which is a permissioned fork of Ethermint. New contracts have been listed in its Github, but their L1 RPC points to a different chain that is not Bsquared Network."
                 }
             ]
+        },
+        {
+            "id": "bitcoinsecurity",
+            "title": "Bitcoin Security",
+            "content": [
+                {
+                    "title": "Merlin currently inherits no security from Bitcoin",
+                    "content": "Merlin's L1 contracts and data availability mechanism point to participants in an alternative consensus protocol that is not Bitcoin."
+                },
+                {
+                    "title": "MERL token is live, but not currently used to pay transaction fees",
+                    "content": "Gas on the Merlin chain is currently paid in a BTC-synthetic. It is unknown if Merlin will use the MERL token for network security in the future.\n\nWhen Merlin integrates with Bsquared Network, it will rely on the BSQ token for security."
+                },
+                {
+                    "title": "No MEV introduced to Bitcoin, but a centralized sequencer can reorder transactions",
+                    "content": "Merlin does not introduce any MEV on the Bitcoin L1. Users trust the Merlin sequencer to not reorder their transactions to extract MEV."
+                },
+                {
+                    "title": "Merlin does not contribute to the security budget",
+                    "content": "Merlin does not currently contribute to the Bitcoin security budget."
+                }
+            ]
+        },
+        {
+            "id": "technology",
+            "title": "Technology",
+            "content": [
+                {
+                    "title": "Leveraging the Polygon zkEVM stack",
+                    "content": "Merlin was deployed by Lumoz, a Rollup-as-a-Service provider that supports the Polygon zkEVM stack. This sees the Merlin chain be EVM-compatible and proposedly mimic a similar architecture to Polygon Validiums on Ethereum, albeit the security of its host chain is unknown."
+                  }
+          
+            ]
+        },   
+        {
+            "id": "usecases",
+            "title": "Use Cases",
+            "content": [
+                {
+                    "title": "EVM-based applications",
+                    "content": "The potential use cases for Bsquared Network are similar to that of other EVM-based sidechains. Developers can deploy smart contracts that enable applications like borrowing and lending protocols, stablecoins, NFTs, and more. The primary, proposed use case for Bsquared Network is to act as an application layer for Bitcoin."
+                  }
+            ]
         }
     ],
     "knowledgeBits": [

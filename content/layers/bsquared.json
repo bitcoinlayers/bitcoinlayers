@@ -56,6 +56,16 @@
     ],
     "sections": [
         {
+            "id": "additionalconsiderations",
+            "title": "Additional Considerations",
+            "content": [
+                {
+                    "title": "All facets of Bsquared Network are managed by a centralized operator. Some code is not open-source.",
+                    "content": "Bsquared Network is operated by permissioned validators on its L1 chain and its L2 chain. These validators are likely managed by the company building Bsquared Network. Code, and documentation, related to Bsquared Network's two-way pegs is not open-source, and no information on the signers is publicly available. Users are trusting centralized parties to not steal their funds, extract MEV, or censor their transactions. Bsquared Network's current mainnet has no integration with the Bitcoin mainchain."
+                  }
+            ]
+        },
+        {
             "id": "bitcoinsecurity",
             "title": "Bitcoin Security",
             "content": [
@@ -74,16 +84,6 @@
                 {
                     "title": "Bsquared Network does not contribute to the security budget",
                     "content": "Bsquared Network’s current mainnet does not pay any fees to Bitcoin miners."
-                }
-            ]
-        },
-        {
-            "id": "risksummary",
-            "title": "Critical Risk Items",
-            "content": [
-                {
-                    "title": "All facets of Bsquared Network are managed by a centralized operator. Some code is not open-source.",
-                    "content": "Bsquared Network is operated by permissioned validators on its L1 chain and its L2 chain. These validators are likely managed by the company building Bsquared Network. Code, and documentation, related to Bsquared Network's two-way pegs is not open-source, and no information on the signers is publicly available. Users are trusting centralized parties to not steal their funds, extract MEV, or censor their transactions. Bsquared Network's current mainnet has no integration with the Bitcoin mainchain."
                 }
             ]
         },
@@ -114,7 +114,7 @@
                 {
                     "title": "EVM-based applications",
                     "content": "The potential use cases for Bsquared Network are similar to that of other EVM-based sidechains. Developers can deploy smart contracts that enable applications like borrowing and lending protocols, stablecoins, NFTs, and more. The primary, proposed use case for Bsquared Network is to act as an application layer for Bitcoin."
-                }
+                  }
             ]
         },
         {
