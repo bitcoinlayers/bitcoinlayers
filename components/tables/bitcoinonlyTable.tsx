@@ -7,12 +7,9 @@ import Risk from "@/components/layer/layerTableItemRisk";
 import TableHeader from "@/components/tables/tableHeader";
 import { BrowserView, MobileView, isMobile } from "react-device-detect";
 
-type TableTabKey =
-    | "Risk"
-    | "Type"
-    | "Status"
-    | "Unit of Account"
-    | "BTC Locked";
+type TableTabKey = "Risk" | "Category" | "Type" | "Status";
+// | "Unit of Account"
+// | "BTC Locked";
 
 type TableItem = Layer | Infrastructure;
 
@@ -26,7 +23,6 @@ interface Props {
     }[];
 }
 
-// Type guards to check if an object is a Layer or an Infrastructure
 const isLayer = (item: TableItem): item is Layer => {
     return (item as Layer).layerType !== undefined;
 };
@@ -83,6 +79,10 @@ const BitcoinonlyTable = ({ data, headers }: Props) => {
                     valueA = a.title.toLowerCase();
                     valueB = b.title.toLowerCase();
                     break;
+                case "Category":
+                    valueA = isLayer(a) ? "Layer" : "Infrastructure";
+                    valueB = isLayer(a) ? "Layer" : "Infrastructure";
+                    break;
                 case "Type":
                     valueA = isLayer(a)
                         ? a.layerType
@@ -99,14 +99,14 @@ const BitcoinonlyTable = ({ data, headers }: Props) => {
                     valueA = a.live;
                     valueB = b.live;
                     break;
-                case "Unit of Account":
-                    valueA = a.nativeToken;
-                    valueB = b.nativeToken;
-                    break;
-                case "BTC Locked":
-                    valueA = isLayer(a) ? a.btcLocked : "";
-                    valueB = isLayer(b) ? b.btcLocked : "";
-                    break;
+                // case "Unit of Account":
+                //     valueA = a.nativeToken;
+                //     valueB = b.nativeToken;
+                //     break;
+                // case "BTC Locked":
+                //     valueA = isLayer(a) ? a.btcLocked : "";
+                //     valueB = isLayer(b) ? b.btcLocked : "";
+                //     break;
                 default:
                     return 0;
             }
@@ -144,10 +144,9 @@ const BitcoinonlyTable = ({ data, headers }: Props) => {
                     {headers.slice(2).map((_item, ind) => {
                         const isAllowedTab = [
                             "Risk",
+                            "Category",
                             "Type",
                             "Status",
-                            "Unit of Account",
-                            "BTC Locked",
                         ].includes(_item.name);
                         return (
                             <div
@@ -219,6 +218,14 @@ const BitcoinonlyTable = ({ data, headers }: Props) => {
                                         )}
                                     </td>
                                 )}
+                                {(!isMobile ||
+                                    mobileActiveTab === "Category") && (
+                                    <td className="lg:px-6 px-4 py-3 lg:py-4 border-stroke_tertiary text_table_important">
+                                        {isLayer(item)
+                                            ? "Layer"
+                                            : "Infrastructure"}
+                                    </td>
+                                )}
                                 {(!isMobile || mobileActiveTab === "Type") && (
                                     <td className="lg:px-6 px-4 py-3 lg:py-4 border-stroke_tertiary text_table_important">
                                         {isLayer(item)
@@ -234,7 +241,7 @@ const BitcoinonlyTable = ({ data, headers }: Props) => {
                                         {item.live}
                                     </td>
                                 )}
-                                {(!isMobile ||
+                                {/* {(!isMobile ||
                                     mobileActiveTab === "Unit of Account") && (
                                     <td className="lg:px-6 px-4 py-3 lg:py-4 border-stroke_tertiary text_table_important">
                                         <div className="flex items-center">
@@ -271,7 +278,7 @@ const BitcoinonlyTable = ({ data, headers }: Props) => {
                                             </div>
                                         )}
                                     </td>
-                                )}
+                                )} */}
                             </tr>
                         ))}
                     </tbody>

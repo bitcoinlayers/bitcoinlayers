@@ -9,7 +9,7 @@
     "nativeToken": "None/Ticker",
     "purpose": "General/Other",
     "associatedLayers": "-",
-    "bitcoinOnly": false,
+    "bitcoinOnly": true,
     "links": [
         "https://twitter.com/bitcoinlayers",
         "https://twitter.com/bitcoinlayers",
