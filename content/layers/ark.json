@@ -57,9 +57,10 @@
     "sections": [
         {
             "id": "underreview",
-            "title": "📝 Under Review",
+            "title": "Under Review",
             "content": [
                 {
+                    "title": "📝 Project is currently under review",
                     "content": "We are currently reviewing trust assumptions related to this protocol against our framework. After the review is complete, we will publish the review on this site and make an announcement via our social media properties."
                 }
             ]
