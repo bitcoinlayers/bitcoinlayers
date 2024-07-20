@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { Layer } from "@/components/layer/layerProps";
+import { Infrastructure } from "@/components/infrastructure/infrastructureProps";
 import Risk from "@/components/layer/layerTableItemRisk";
 import TableHeader from "@/components/tables/tableHeader";
 import { BrowserView, MobileView, isMobile } from "react-device-detect";
@@ -13,8 +14,10 @@ type TableTabKey =
     | "Unit of Account"
     | "BTC Locked";
 
+type TableItem = Layer | Infrastructure;
+
 interface Props {
-    data: Layer[];
+    data: TableItem[];
     headers: {
         name: string;
         showSorting: boolean;
@@ -22,6 +25,15 @@ interface Props {
         mobileLabel: string;
     }[];
 }
+
+// Type guards to check if an object is a Layer or an Infrastructure
+const isLayer = (item: TableItem): item is Layer => {
+    return (item as Layer).layerType !== undefined;
+};
+
+const isInfrastructure = (item: TableItem): item is Infrastructure => {
+    return (item as Infrastructure).infrastructureType !== undefined;
+};
 
 const LayerImage = ({ src, title }: { src: string; title: string }) => {
     const [imageSrc, setImageSrc] = useState(src);
@@ -48,30 +60,15 @@ const LayerImage = ({ src, title }: { src: string; title: string }) => {
 const BitcoinonlyTable = ({ data, headers }: Props) => {
     const router = useRouter();
     const [filter, setFilter] = useState<"Mainnet" | "Testnet" | "All">("All");
-    // const [filters, setFilters] = useState<{ [key: string]: string[] }>({});
     const [sortedData, setSortedData] = useState(data);
     const [sortOrder, setSortOrder] = useState<{
         [key: string]: boolean | null;
     }>({});
     const [mobileActiveTab, setMobileActiveTab] = useState<TableTabKey>("Type");
-    const [showMainnet, setShowMainnet] = useState(true);
-    const [showBitcoinonly, setShowBitcoinonly] = useState(true);
 
     useEffect(() => {
         // Default sorting by Name alphabetically on first load
         handleSort("Name", true);
-
-        // Check the URL to set the BTC filter
-        // const urlParams = new URLSearchParams(window.location.search);
-
-        // if (
-        //     urlParams.has("btc") ||
-        //     urlParams.has("btc-only") ||
-        //     urlParams.has("maxi") ||
-        //     urlParams.has("laser-eyes")
-        // ) {
-        //     setShowBitcoinonly(true);
-        // }
     }, []);
 
     const handleRowClick = (destination: string) => {
@@ -87,8 +84,16 @@ const BitcoinonlyTable = ({ data, headers }: Props) => {
                     valueB = b.title.toLowerCase();
                     break;
                 case "Type":
-                    valueA = a.layerType;
-                    valueB = b.layerType;
+                    valueA = isLayer(a)
+                        ? a.layerType
+                        : isInfrastructure(a)
+                          ? a.infrastructureType
+                          : "";
+                    valueB = isLayer(b)
+                        ? b.layerType
+                        : isInfrastructure(b)
+                          ? b.infrastructureType
+                          : "";
                     break;
                 case "Status":
                     valueA = a.live;
@@ -99,8 +104,8 @@ const BitcoinonlyTable = ({ data, headers }: Props) => {
                     valueB = b.nativeToken;
                     break;
                 case "BTC Locked":
-                    valueA = a.btcLocked;
-                    valueB = b.btcLocked;
+                    valueA = isLayer(a) ? a.btcLocked : "";
+                    valueB = isLayer(b) ? b.btcLocked : "";
                     break;
                 default:
                     return 0;
@@ -117,45 +122,12 @@ const BitcoinonlyTable = ({ data, headers }: Props) => {
         setFilter(value as "Mainnet" | "Testnet" | "All");
     };
 
-    // const handleFilter = (header: string, value: string) => {
-    //     setFilter((prevFilters) => {
-    //         const newFilters = { ...prevFilters };
-    //         if (!newFilters[header]) {
-    //             newFilters[header] = [];
-    //         }
-    //         if (newFilters[header].includes(value)) {
-    //             newFilters[header] = newFilters[header].filter(
-    //                 (v) => v !== value,
-    //             );
-    //         } else {
-    //             newFilters[header].push(value);
-    //         }
-    //         return newFilters;
-    //     });
-    // };
-
     const filteredData = sortedData.filter((item) => {
+        if (!item.bitcoinOnly) return false;
         if (filter === "Mainnet") return item.live === "Mainnet";
         if (filter === "Testnet") return item.live !== "Mainnet";
-        return true;
+        return true; // All
     });
-
-    // const filteredData = sortedData
-    //     .filter((item) => {
-    //         return Object.keys(filters).every((header) => {
-    //             if (!filters[header].length) return true;
-    //             switch (header) {
-    //                 case "Type":
-    //                     return filters[header].includes(item.layerType);
-    //                 case "Status":
-    //                     return filters[header].includes(item.live);
-    //                 default:
-    //                     return true;
-    //             }
-    //         });
-    //     })
-    //     .filter((item) => (showMainnet ? item.live === "Mainnet" : true));
-    // .filter((item) => (showBitcoinonly ? item.bitcoinOnly == true : true));
 
     const handleMobileTabClick = (tab: TableTabKey) => {
         setMobileActiveTab(tab);
@@ -237,7 +209,8 @@ const BitcoinonlyTable = ({ data, headers }: Props) => {
                                 </td>
                                 {!isMobile && (
                                     <td className="relative px-2 border-stroke_tertiary text_table_important">
-                                        {item.underReview === "no" ? (
+                                        {isLayer(item) &&
+                                        item.underReview === "no" ? (
                                             <Risk layer={item} />
                                         ) : (
                                             <div className="px-5 text_table_important">
@@ -248,7 +221,11 @@ const BitcoinonlyTable = ({ data, headers }: Props) => {
                                 )}
                                 {(!isMobile || mobileActiveTab === "Type") && (
                                     <td className="lg:px-6 px-4 py-3 lg:py-4 border-stroke_tertiary text_table_important">
-                                        {item.layerType}
+                                        {isLayer(item)
+                                            ? item.layerType
+                                            : isInfrastructure(item)
+                                              ? item.infrastructureType
+                                              : ""}
                                     </td>
                                 )}
                                 {(!isMobile ||
@@ -279,14 +256,17 @@ const BitcoinonlyTable = ({ data, headers }: Props) => {
                                 {(!isMobile ||
                                     mobileActiveTab === "BTC Locked") && (
                                     <td className="lg:px-6 px-4 py-3 lg:py-4 border-r border-stroke_tertiary text_table_important">
-                                        {item.underReview === "yes" ||
-                                        !Number(item.btcLocked) ? (
+                                        {isLayer(item) &&
+                                        (item.underReview === "yes" ||
+                                            !Number(item.btcLocked)) ? (
                                             <div>-</div>
                                         ) : (
                                             <div>
                                                 ₿{" "}
                                                 {Number(
-                                                    item.btcLocked,
+                                                    isLayer(item)
+                                                        ? item.btcLocked
+                                                        : 0,
                                                 ).toLocaleString()}
                                             </div>
                                         )}

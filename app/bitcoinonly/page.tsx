@@ -11,6 +11,10 @@ export default function Home() {
         a.title.toLowerCase().localeCompare(b.title.toLowerCase()),
     );
 
+    const sortedEverything = [...allLayers, ...allInfrastructures].sort(
+        (a, b) => a.title.toLowerCase().localeCompare(b.title.toLowerCase()),
+    );
+
     const layerHeaders = [
         { name: "Name", showSorting: true, mobileLabel: "Name" },
         { name: "Risk", showSorting: false, mobileLabel: "Risk" },
@@ -28,7 +32,10 @@ export default function Home() {
         <div className="mx-auto">
             <Hero />
             <div className="lg:flex mb-4 justify-center w-full lg:max-w-5xl mx-auto">
-                <BitcoinonlyTable data={sortedLayers} headers={layerHeaders} />
+                <BitcoinonlyTable
+                    data={sortedEverything}
+                    headers={layerHeaders}
+                />
             </div>
         </div>
     );
