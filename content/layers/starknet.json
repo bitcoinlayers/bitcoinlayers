@@ -57,9 +57,10 @@
     "sections": [
         {
             "id": "dislclaimer",
-            "title": "This page did not undergo a formal review process",
+            "title": "😇 Disclaimer",
             "content": [
                 {
+                    "title": "This page did not undergo a formal review process",
                     "content": "This project provides a very high level assessment on a proposed Layer 2 design which requires a soft fork. This page should not be considered a risk assessment."
                 }
             ]
