@@ -10,6 +10,8 @@ When submitting a review, please follow the process below:
 - Add project logo to public/logos. Please ensure that the file's name matches the "slug" in the [layername]json file and is in png format
 - Submit a PR and prosper :sunglasses:
 
+Please include any relevant documentation, and source viewable code, with your submission.
+
 ## Self-submit information on your project that requires a soft-fork
 
 When submitting a review, please follow the process below:
@@ -19,5 +21,9 @@ When submitting a review, please follow the process below:
 - Add to the array of all layers
 - Add project logo to public/logos. Please ensure that the file's name matches the "slug" in the [layername]json file and is in png format
 - Submit a PR and prosper :sunglasses:
+
+Please include any relevant documentation, and source viewable code, with your submission.
+
+## Get in touch
 
 After following this process and submitting your PR, feel free to additionally notify our team in our [community telegram](https://t.me/+8rv-1I2gkmQ4ZmJh).
