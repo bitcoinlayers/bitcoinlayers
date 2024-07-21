@@ -23,7 +23,7 @@
         "https://github.com/Bitcoin-Wildlife-Sanctuary/bitcoin-circle-stark",
         "https://twitter.com/starknet"
     ],
-    "description": "Starknet is a validity rollup on Ethereum. They are proposing that their rollup also settles on Bitcoin if the OP_CAT opcode is activated. The proposed design would see the rollup have two validating bridges: one on Ethereum, the other on Bitcoin. They are currently developing a STARK verifier directly in Script with OP_CAT on signet.",
+    "description": "Starknet is a validity rollup on Ethereum. They are proposing a multi-settlement rollup that will settle on Bitcoin and Ethereum should OP_CAT be activated. They are currently developing a STARK verifier directly in Script with OP_CAT on signet.",
     "riskAnalysis": [
         {
             "category": "Unilateral Exits",
@@ -61,7 +61,7 @@
             "content": [
                 {
                     "title": "😇 This page did not undergo a formal review process",
-                    "content": "This project provides a very high level assessment on a proposed Layer 2 design which requires a soft fork. This page should not be considered a risk assessment."
+                    "content": "This page provides a high level assessment on a proposed Layer 2 design which requires a soft fork. This page should not be considered a risk assessment."
                 }
             ]
         },
