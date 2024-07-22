@@ -97,7 +97,7 @@
                 },
                 {
                     "title": "More Expressive Smart Contracts",
-                    "content": "Liquid has a number of additional opcodes that enable developers to build more expressive smart contracting applications on top of it. These applications can include limit orders, options contracts and atomic swaps protocols."
+                    "content": "Liquid has a number of additional opcodes that enable developers to build more expressive smart contracting applications on top of it. These applications can include limit orders, options contracts and atomic swaps protocols. However, Liquid's execution environment is still not Turing-complete."
                 },
                 {
                     "title": "Faster blocks",
