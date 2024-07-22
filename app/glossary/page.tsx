@@ -384,7 +384,7 @@ const GlossaryPage: React.FC = () => {
             <div className="flex flex-col justify-start items-start gap-4">
                 <div className="flex justify-start items-center gap-8 w-full">
                     <div className="flex-grow flex items-center gap-[30px] h-[156px]">
-                        <div className="special_header flex-grow h-20">
+                        <div className="special_header flex-grow h-20 text_table_important">
                             Glossary
                         </div>
                     </div>
