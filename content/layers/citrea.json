@@ -56,6 +56,16 @@
     ],
     "sections": [
         {
+            "id": "dislclaimer",
+            "title": "Disclaimer",
+            "content": [
+                {
+                    "title": "😇 This page did not undergo a formal review process",
+                    "content": "This page provides a high level assessment for a proposed rollup design on testnet. This page should not be considered a risk assessment."
+                }
+            ]
+        },
+        {
             "id": "proposedtechnologies",
             "title": "Proposed Technologies",
             "content": [
@@ -79,7 +89,7 @@
             "content": [
                 {
                     "title": "Long-term research",
-                    "content": "The Citrea team is researching decentralized sequencing protocols, integrations with the Lightning Network and offering ."
+                    "content": "The Citrea team is researching decentralized sequencing protocols, integrations with the Lightning Network and volition models."
                 },
                 {
                     "title": "Atomic Swaps will be used onboard the majority of users",

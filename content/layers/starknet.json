@@ -23,7 +23,7 @@
         "https://github.com/Bitcoin-Wildlife-Sanctuary/bitcoin-circle-stark",
         "https://twitter.com/starknet"
     ],
-    "description": "Starknet is a validity rollup on Ethereum. They are proposing that their rollup also settles on Bitcoin if the OP_CAT opcode is activated. The proposed design would see the rollup have two validating bridges: one on Ethereum, the other on Bitcoin. They are currently developing a STARK verifier directly in Script with OP_CAT on signet.",
+    "description": "Starknet is a validity rollup on Ethereum. They are proposing a multi-settlement rollup that will settle on Bitcoin and Ethereum should OP_CAT be activated. They are currently developing a STARK verifier directly in Script with OP_CAT on signet.",
     "riskAnalysis": [
         {
             "category": "Unilateral Exits",
@@ -61,7 +61,7 @@
             "content": [
                 {
                     "title": "😇 This page did not undergo a formal review process",
-                    "content": "This project provides a very high level assessment on a proposed Layer 2 design which requires a soft fork. This page should not be considered a risk assessment."
+                    "content": "This page provides a high level assessment on a proposed Layer 2 design which requires a soft fork. This page should not be considered a risk assessment."
                 }
             ]
         },
@@ -71,7 +71,7 @@
             "content": [
                 {
                     "title": "Recursive Covenants",
-                    "content": "OP_CAT is a proposed opcode that could enable two primitives that would support improved bridging protocols for projects like Starknet. The first enables users to predefine spending conditions for individual UTXOs. The second primitive is the verification of merkle tree branches. This would enable you to continuously add hashes of data to a merkle tree that continuously builds upon restrictions placed by previous transactions.\n\nBy building a continuous chain of restrictions over a number of transactions, you enable recursive covenants. Recursive covenants enable users to lock funds into a group UTXO that can continuously add more restrictions based on new user deposits, and additionally enforce that change from partial withdrawals must go back into the rollup script."
+                    "content": "OP_CAT is a proposed opcode that could enable two primitives that would support improved bridging protocols for projects like Starknet. The first enables users to predefine spending conditions for individual UTXOs. The second primitive is the verification of merkle tree branches. This would enable you to continuously add hashes of data to a merkle tree that continuously builds upon restrictions placed by previous transactions.\n\nBy building a continuous chain of restrictions over a number of transactions, you enable recursive covenants. Recursive covenants enable users to lock funds into a group UTXO that can continuously add more restrictions based on new user deposits, and additionally enforce changes for partial withdrawals which must go back into the rollup script."
                 },
                 {
                     "title": "STARK Verifier with OP_CAT",
@@ -102,6 +102,10 @@
                 {
                     "title": "Starknet is a Stage 0 rollup on Ethereum",
                     "content": "The Starknet rollup on Ethereum, which would be additionally settled on Bitcoin should OP_CAT be activated, is a Stage 0 rollup based on the L2Beat Stages Framework.\n\nThe main issues with the Starknet rollup, on Ethereum, are:\n\n1️⃣ If the centralized sequencer (Starknet validator) goes down or censors users, they can not force-include a transaction to the L1.\n\n2️⃣ If the centralized proposer goes down or censors users, they can not force a withdrawal from Starknet to the Layer 1.\n\n3️⃣ Starknet’s L1 smart contract is immediately upgradeable, and users cannot withdraw their funds if a malicious upgrade is implemented. Funds can be stolen if a malicious contract upgrade is implemented."
+                },
+                {
+                    "title": "Starknet will likely use an external sequencer thus mitigating MEV leakage to the L1",
+                    "content": "A concern with rollups on Bitcoin is the potential introduction of MEV. If Bitcoin miners have exclusive rights in ordering rollup transactions, especially those with more expressive execution environments, miners have opportunities to extract MEV through a variety of mechanisms. This is known as based sequencing. If Bitcoin rollups implemented based sequencing, miners could invest into more sophisticated block building infrastructure to extract more harmful MEV for increased profits. This could raise the barrier to entry for mining, and potentially introduce centralizing pressures.\n\nStarknet is currently sequenced (ordered) by a centralized sequencer. The Starknet community has additionally researched decentralized sequencer, but have focused on alternative consensus protocols taking on this role (CometBFT as an example).\n\nIf an alternative consensus mechanism is used to decentralize the sequencer, versus based sequencing, then MEV is unlikely to leak to Bitcoin miners."
                 }
             ]
         }
