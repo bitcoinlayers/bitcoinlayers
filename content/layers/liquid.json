@@ -8,7 +8,7 @@
     "purpose": "General",
     "btcBridge": "Federated Multisig",
     "settlement": "External",
-    "btcLocked": 3873,
+    "btcLocked": 3863,
     "executionEnv": "Offchain",
     "consensus": "Federated Sidechain",
     "nativeToken": "LBTC",
