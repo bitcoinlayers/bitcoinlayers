@@ -37,7 +37,7 @@
             "score": 0,
             "tier": "Medium",
             "title": "Data is stored and made available by Liquid full nodes. Anyone can run a Liquid full node",
-            "content": "The data for Liquid sidechain is stored on the Liquid blockchain. A federation is responsible for publishing and validating transactions that are stored on the blockchain. Node software is open-source and anyone can run a node and verify the state of Liquid. However, node operators connect to the network through “bridge nodes” that are run by permissioned actors. Access to bridge nodes can presumably be cut off should these (roughly 65) actors collude."
+            "content": "The data for Liquid sidechain is stored on the Liquid blockchain. A federation is responsible for publishing and validating transactions that are published to Liquid Network nodes. Node software is open-source and anyone can run a node and verify the state of Liquid. However, node operators connect to the network through “bridge nodes” that are run by permissioned actors. Access to bridge nodes can presumably be cut off should these (roughly 65) actors collude."
         },
         {
             "category": "Network Operators",
