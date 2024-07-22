@@ -18,7 +18,23 @@
         "https://github.com/fedimint",
         "https://twitter.com/fedimint"
     ],
-    "description": "Fedimints are a module based system for building federated applications. They are currently focused on building federated ecash mints, which would offer improved privacy for peer-to-peer payments. The construction of a Fedimint sees users lock their BTC into a Federation's multi-sig, and receive an Ecash IOU representing the BTC in the Federation. Fedimints are also useful for community custody, an idea that sees users trust members of their local community (e.g., family members) with the custody of their Bitcoin assets.",
+    "description": "Fedimint is a module-based open source framework for building federated applications, which can be collaboratively managed by a group of trusted entities.\n\nThe main application that is in production today is an open source federated Ecash mint. The construction of a Fedimint sees users lock their BTC into a federation's multi-sig, and receive a bearer Ecash IOU in return. The concept improves on the currently predominant form of third party custody, as the user has a socially known and trusted entity guarding their BTC; a concept that is termed “second party custody”.",
+    "sections": [
+        {
+            "id": "riskbits",
+            "title": "Risk Bits",
+            "content": [
+                {
+                    "title": "Users do not have custody of their BTC and trust guardians to process withdrawals.",
+                    "content": "Users deposit BTC into a multisig to interact with a Fedimint. Fedimints do not enable unilateral exits. Users explicitly trust the signers, known as guardians, of the federations’ multisig to not steal their funds. Stealing users’ funds needs a majority (e.g. 3/5 or 7/13) of guardians to collude. This is why “knowing your federation” is a key requirement when choosing second party custody."
+                },
+                {
+                    "title": "More information coming soon.",
+                    "content": "Our review of Fedimint will be available soon."
+                }
+            ]
+        }
+    ],
     "knowledgeBits": [
         {
             "url": "https://fedimint.org",
