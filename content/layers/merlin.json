@@ -49,7 +49,7 @@
         {
             "category": "Settlement Assurance",
             "score": 0,
-            "tier": "Unvreified",
+            "tier": "Unverified",
             "title": "zkSNARKs are proposedly used to ensure state correctness, but state validation occurs offchain and inherits no settlement guarantees from Bitcoin. ❓ We are unable to verify Merlin Chain's L1 contracts",
             "content": "Merlin propsedly uses zkSNARKS to ensure state correctness. The Merlin prover posts validity proofs of execution to its L1 contract to finalize state transitions. It is unknown which chain Merlin settles to. Its documentation previously pointed to Ethereum, but recent contracts cannot be verified on Ethereum."
         }
@@ -98,10 +98,9 @@
                 {
                     "title": "Leveraging the Polygon zkEVM stack",
                     "content": "Merlin was deployed by Lumoz, a Rollup-as-a-Service provider that supports the Polygon zkEVM stack. This sees the Merlin chain be EVM-compatible and proposedly mimic a similar architecture to Polygon Validiums on Ethereum, albeit the security of its host chain is unknown."
-                  }
-          
+                }
             ]
-        },   
+        },
         {
             "id": "usecases",
             "title": "Use Cases",
@@ -109,7 +108,7 @@
                 {
                     "title": "EVM-based applications",
                     "content": "The potential use cases for Bsquared Network are similar to that of other EVM-based sidechains. Developers can deploy smart contracts that enable applications like borrowing and lending protocols, stablecoins, NFTs, and more. The primary, proposed use case for Bsquared Network is to act as an application layer for Bitcoin."
-                  }
+                }
             ]
         }
     ],
