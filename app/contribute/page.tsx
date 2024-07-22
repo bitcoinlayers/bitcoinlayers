@@ -78,6 +78,7 @@ const ContributePage: React.FC = () => {
             >
                 Twitter
             </Link>{" "}
+            and{" "}
             {/* ,{" "}
             <Link
                 href="https://snort.social/nprofile1qqswq22rw7f34s4us866f8twrght0p5vlmvhpxcfz780t4kpmtgyq7gpr9mhxue69uhkummnw3ezuer0de4hjtnnda3kjctv9uq32amnwvaz7tmjv4kxz7fwv3sk6atn9e5k7tcprpmhxue69uhhyetvv9uju6rpwa6xjetn9eu8j730rfdn4f"
@@ -95,7 +96,7 @@ const ContributePage: React.FC = () => {
                 className="text-orange-600 text-base font-normal leading-normal"
             >
                 Warpcast
-            </Link>{" "}
+            </Link>
             .
         </span>
     );
@@ -105,7 +106,7 @@ const ContributePage: React.FC = () => {
             <div className="flex flex-col justify-start items-start gap-4">
                 <div className="flex justify-start items-center gap-8 w-full">
                     <div className="flex-grow flex items-center gap-[30px] h-[156px]">
-                        <div className="special_header flex-grow h-20">
+                        <div className="special_header flex-grow h-20 text_table_important">
                             Contribute
                         </div>
                     </div>
