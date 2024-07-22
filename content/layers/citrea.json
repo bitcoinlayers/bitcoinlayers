@@ -71,11 +71,11 @@
             "content": [
                 {
                     "title": "Clementine",
-                    "content": "Clementine is a proposed bridge (two-way peg) design that is based on BitVM1. The design sees a fixed operator set maintain the integrity of its two-way peg.\n\nOne operator at a single time manages the withdrawals and deposits from the bridge program. In the event that this operator is dishonest, verifiers (who are from the federated operator set) can initiate a challenge transaction and dispute the malicious operator's withdrawal transactions.\n\nOperatos in this set front liquidity for user withdrawals and are able to redeem funds used for processed withdawals from the bridge program after a specific time period.\n\nClementime improves the trust assumption of bridge programs from trusting a majority of operators to trusting a single operator."
+                    "content": "Clementine is a proposed bridge (two-way peg) design that is based on BitVM2. The design sees a fixed operator and verifier set maintain the integrity of its two-way peg.\n\nMultiple operators at the same time manage the withdrawals and deposits from the bridge program. In the event that one of the operators is dishonest, verifiers (who are from the federated verifier set) can initiate a challenge transaction and dispute the malicious operator's withdrawal transactions.\n\nOperators in this set front liquidity for user withdrawals and are able to redeem funds used for processed withdawals from the bridge program after a specific time period.\n\nClementime improves the trust assumption of bridge programs from trusting a majority of operators to trusting a single operator for its liveness and single verifier for its safety."
                 },
                 {
                     "title": "Multiple Virtual Machines",
-                    "content": "Citrea will be initially implementing its own zkEVM, a fully EVM-compatible execution environment, with the support of RISC Zero. It's long-term roadmap sees it support multiple virtual machines, providing developers an opportunity to build their apps"
+                    "content": "Citrea will be initially implementing its own zkEVM, a fully EVM-compatible execution environment, utilizing RISC Zero zkVM. It's long-term roadmap sees it support multiple virtual machines, providing developers different options to build their apps"
                 },
                 {
                     "title": "Data availability on Bitcoin",
