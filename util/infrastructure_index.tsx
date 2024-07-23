@@ -38,7 +38,7 @@ import boolJson from "../content/infrastructures/bool.json" assert { type:
 const bool: Infrastructure = boolJson as Infrastructure;
 import tbtcJson from "../content/infrastructures/tbtc.json" assert { type:
     "json" };
-const tbtclink: Infrastructure = tbtcJson as Infrastructure;
+const tbtc: Infrastructure = tbtcJson as Infrastructure;
 
 export const allInfrastructures: Infrastructure[] = [
     astria,
