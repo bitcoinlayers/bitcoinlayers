@@ -12,7 +12,7 @@
     "executionEnv": "Offchain",
     "consensus": "Federated Sidechain",
     "nativeToken": "BTR",
-    "feeToken": "BTC",
+    "feeToken": "WBTC",
     "enshrinedBtc": "-",
     "bitcoinOnly": false,
     "links": [

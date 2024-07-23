@@ -12,8 +12,8 @@
     "executionEnv": "Offchain",
     "consensus": "Centralized Sequencer",
     "nativeToken": "MERL",
-    "feeToken": "-",
-    "enshrinedBtc": "-",
+    "feeToken": "WBTC",
+    "enshrinedBtc": "WBTC",
     "bitcoinOnly": false,
     "links": [
         "https://merlinchain.io/",
