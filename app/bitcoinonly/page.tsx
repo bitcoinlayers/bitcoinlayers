@@ -18,9 +18,9 @@ export default function Home() {
     const layerHeaders = [
         { name: "Name", showSorting: true, mobileLabel: "Name" },
         { name: "Risk", showSorting: false, mobileLabel: "Risk" },
-        { name: "Category", showSorting: true, mobileLabel: "Category" },
         { name: "Type", showSorting: true, mobileLabel: "Type" },
         { name: "Status", showSorting: true, mobileLabel: "Status" },
+        { name: "Category", showSorting: true, mobileLabel: "Category" },
         // {
         //     name: "Unit of Account",
         //     showSorting: true,
