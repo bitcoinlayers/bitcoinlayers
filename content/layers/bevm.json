@@ -3,7 +3,7 @@
     "title": "BEVM",
     "layerType": "Sidechain",
     "live": "Mainnet",
-    "underReview": "yes",
+    "underReview": "no",
     "riskFactors": ["High", "Medium", "High", "High"],
     "purpose": "General",
     "btcBridge": "Federated Multisig",
