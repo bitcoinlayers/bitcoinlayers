@@ -42,6 +42,7 @@ import qedJson from "../content/layers/qed.json";
 import bitfinityJson from "../content/layers/bitfinity.json";
 import bevmJson from "../content/layers/bevm.json";
 import starknetJson from "../content/layers/starknet.json";
+import bitcoinosJson from "../content/layers/bitcoinos.json";
 
 // @ts-ignore
 const core: Layer = coreJson as Layer;
@@ -90,6 +91,7 @@ const qed: Layer = qedJson as Layer;
 const bitfinity: Layer = bitfinityJson as Layer;
 const bevm: Layer = bevmJson as Layer;
 const starknet: Layer = starknetJson as Layer;
+const bitcoinos: Layer = bitcoinosJson as Layer;
 
 
 export const allLayers: Layer[] = [
@@ -135,6 +137,7 @@ export const allLayers: Layer[] = [
     bitfinity,
     bevm,
     starknet,
+    bitcoinos,
 ];
 
 export const allLayerSlugs: string[] = allLayers.map((layer) => layer.slug);
