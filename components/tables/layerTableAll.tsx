@@ -56,7 +56,7 @@ const LayerTableAll = ({ data, headers }: Props) => {
         [key: string]: boolean | null;
     }>({});
     const [mobileActiveTab, setMobileActiveTab] = useState<TableTabKey>("Type");
-    const [showMainnet, setShowMainnet] = useState(true);
+    // const [showMainnet, setShowMainnet] = useState(true);
     // const [showBitcoinonly, setShowBitcoinonly] = useState(false);
 
     useEffect(() => {
@@ -140,8 +140,8 @@ const LayerTableAll = ({ data, headers }: Props) => {
     // };
 
     const filteredData = sortedData.filter((item) => {
-        if (filter === "Mainnet") return item.live === "Mainnet";
-        if (filter === "Testnet") return item.live !== "Mainnet";
+        if (filter === "Mainnet") return item.live.includes("Mainnet");
+        if (filter === "Testnet") return !item.live.includes("Mainnet");
         return true;
     });
 
@@ -353,7 +353,7 @@ const LayerTableAll = ({ data, headers }: Props) => {
                                     mobileActiveTab === "Unit of Account") && (
                                     <td className="lg:px-6 px-4 py-3 lg:py-4 border-stroke_tertiary text_table_important">
                                         <div className="flex items-center">
-                                            {item.nativeToken
+                                            {item.feeToken
                                                 .toLowerCase()
                                                 .includes("btc") && (
                                                 <Image
@@ -364,7 +364,7 @@ const LayerTableAll = ({ data, headers }: Props) => {
                                                     className="mr-2"
                                                 />
                                             )}
-                                            {item.nativeToken}
+                                            {item.feeToken}
                                         </div>
                                     </td>
                                 )}
