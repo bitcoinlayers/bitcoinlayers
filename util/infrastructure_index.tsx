@@ -6,9 +6,6 @@ const astria: Infrastructure = astriaJson as Infrastructure;
 import availJson from "../content/infrastructures/avail.json" assert { type:
     "json" };
 const avail: Infrastructure = availJson as Infrastructure;
-import bitcoinosJson from "../content/infrastructures/bitcoinos.json" assert { type:
-    "json" };
-const bitcoinos: Infrastructure = bitcoinosJson as Infrastructure;
 import bvmJson from "../content/infrastructures/bvm.json" assert { type:
     "json" };
 const bvm: Infrastructure = bvmJson as Infrastructure;
@@ -43,7 +40,6 @@ const mirror: Infrastructure = mirrorJson as Infrastructure;
 export const allInfrastructures: Infrastructure[] = [
     astria,
     avail,
-    bitcoinos,
     bvm,
     celestia,
     espresso,
