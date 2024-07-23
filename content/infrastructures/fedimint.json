@@ -58,7 +58,7 @@
                     "content": "Fedimints enable Lightning interoperability through LN gateways. A guardian or even any user of a federation can run a lightning node and pay and accept lightning invoices on behalf of users in the federation. This is particularly useful as Fedimint users don't need to be online to accept lightning payments."
                 }
             ]
-        }
+        },
         {
             "id": "usecases",
             "title": "Use Cases",
