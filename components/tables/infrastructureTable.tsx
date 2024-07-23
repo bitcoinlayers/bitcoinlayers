@@ -1,8 +1,8 @@
-import { Infrastructure } from "@/components/infrastructure/infrastructureProps";
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import TableHeader from "@/components/tables/tableHeader";
+import { Infrastructure } from "@/components/infrastructure/infrastructureProps";
 import { BrowserView, MobileView, isMobile } from "react-device-detect";
 
 type TableTabKey =
@@ -11,10 +11,6 @@ type TableTabKey =
     | "Status"
     | "Unit of Account"
     | "Associated Layers";
-
-// interface Props {
-//     data: Infrastructure[];
-// }
 
 interface Props {
     data: Infrastructure[];
@@ -258,10 +254,9 @@ const InfrastructureTable = ({ data, headers }: Props) => {
 
             <MobileView className="flex justify-center">
                 <div className="justify-center lg:items-start gap-4 inline-flex py-3">
-                    {headers.slice(2).map((_item, ind) => {
+                    {headers.slice(1).map((_item, ind) => {
                         const isAllowedTab = [
                             "Type",
-                            "Purpose",
                             "Status",
                             "Unit of Account",
                             "Associated Layers",
