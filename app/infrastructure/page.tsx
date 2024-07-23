@@ -14,7 +14,7 @@ export default function Home() {
         { name: "Name", showSorting: true, mobileLabel: "Name" },
         {
             name: "Bitcoin Security",
-            showSorting: false,
+            showSorting: true,
             mobileLabel: "BTC Security",
         },
         { name: "Type", showSorting: true, mobileLabel: "Type" },
