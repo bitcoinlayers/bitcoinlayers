@@ -2,7 +2,7 @@
     "slug": "astria",
     "title": "Astria",
     "infrastructureType": "Sequencing",
-    "live": "Testnet",
+    "live": "Proposed",
     "underReview": "yes",
     "riskFactors": ["High", "High"],
     "bitcoinSecurity": "No",
@@ -15,7 +15,7 @@
         "https://astria.org",
         "https://docs.astria.org/",
         "https://github.com/astriaorg",
-        "hhttps://x.com/AstriaOrg"
+        "https://x.com/AstriaOrg"
         ],
     "description": "Astria is a shared sequencer built on CometBFT consensus. It supports scaling protocols with decentralization, interoperability and more secure preconfirmations.",
     "sections": [

@@ -1,23 +1,23 @@
 {
-    "slug": "espresso",
-    "title": "Espresso",
-    "infrastructureType": "Sequencing & DA",
-    "live": "Proposed",
+    "slug": "tbtc",
+    "title": "tBTC",
+    "infrastructureType": "Bitcoin Wrapper",
+    "live": "Mainnet",
     "underReview": "yes",
     "riskFactors": ["", ""],
     "bitcoinSecurity": "No",
-    "nativeToken": "TBD",
+    "nativeToken": "T",
     "purpose": "General",
     "associatedLayers": "-",
     "bitcoinOnly": false,
     "links": [
-        "https://espressosys.com/",
-        "https://espressosys.com/",
-        "https://docs.espressosys.com/",
-        "https://github.com/EspressoSystems",
-        "https://twitter.com/espressosys"
-    ],
-    "description": "Espresso is a shared sequencer marketplace. It enables rollup-style blockchains to sell their sequencing rights to a marketplace of sequencers who bid on the rights to build rollup blocks. It additionally runs a consensus protocol that provides rollups, participating in Espresso, with more secure preconfirmations.",
+        "https://threshold.network/",
+        "https://threshold.network/",
+        "https://docs.threshold.network/",
+        "https://github.com/threshold-network",
+        "https://x.com/thetnetwork"
+        ],
+    "description": "tBTC is a wrapped version of BTC that lives as an ERC-20 token on Ethereum. It is secured by a distributed signer set and decentralized governance mechanism.",
     "sections": [
         {
             "id": "selfsubmit",

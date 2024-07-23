@@ -33,6 +33,12 @@ const fedimint: Infrastructure = fedimintJson as Infrastructure;
 import dlclinkJson from "../content/infrastructures/dlclink.json" assert { type:
     "json" };
 const dlclink: Infrastructure = dlclinkJson as Infrastructure;
+import boolJson from "../content/infrastructures/bool.json" assert { type:
+    "json" };
+const bool: Infrastructure = boolJson as Infrastructure;
+import tbtcJson from "../content/infrastructures/tbtc.json" assert { type:
+    "json" };
+const tbtclink: Infrastructure = tbtcJson as Infrastructure;
 
 export const allInfrastructures: Infrastructure[] = [
     astria,
@@ -46,6 +52,8 @@ export const allInfrastructures: Infrastructure[] = [
     babylon,
     fedimint,
     dlclink,
+    bool,
+    tbtc,
 ];
 export const allInfrastructureSlugs: string[] = allInfrastructures.map(
     (infrastructure) => infrastructure.slug,
