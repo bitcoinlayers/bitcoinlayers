@@ -266,7 +266,7 @@ const BitcoinonlyTable = ({ data, headers }: Props) => {
                                             item.underReview === "no" ? (
                                                 <Risk layer={item} />
                                             ) : (
-                                                <div className="px-5 text_table_important">
+                                                <div className="px-5 text_table_important font-light">
                                                     Under review
                                                 </div>
                                             )
