@@ -7,8 +7,6 @@ import LayerTableAll from "@/components/tables/layerTableAll";
 // import LayerTableRiskView from "@/components/tables/layerTableRiskView"; //risks: <LayerTableRiskView />,
 import Hero from "@/components/hero";
 
-type TabKey = "liveLayersOnly" | "allLayers";
-
 export default function Home() {
     // const [activeTab, setActiveTab] = useState<TabKey>("liveLayersOnly");
     // const [btcFilter, setBtcFilter] = useState(false);

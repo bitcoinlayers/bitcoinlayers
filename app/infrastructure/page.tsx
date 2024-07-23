@@ -6,16 +6,34 @@ import Hero from "@/components/hero";
 import InfrastructureTable from "@/components/tables/infrastructureTable";
 
 export default function Home() {
-    const mainnetInfrastructures = allInfrastructures.filter(
-        (infrastructure) => infrastructure.live === "Mainnet",
+    const sortedInfrastructures = allInfrastructures.sort((a, b) =>
+        a.title.toLowerCase().localeCompare(b.title.toLowerCase()),
     );
-    //TODO after filters and sorting are working, increase scope to all Infra. rn it's hardcoded to only Mainnet
+
+    const infrastructureHeaders = [
+        { name: "Name", showSorting: true, mobileLabel: "Name" },
+        {
+            name: "Bitcoin Security",
+            showSorting: false,
+            mobileLabel: "BTC Security",
+        },
+        { name: "Type", showSorting: true, mobileLabel: "Type" },
+        { name: "Purpose", showSorting: true, mobileLabel: "Purpose" },
+        { name: "Associated Layers", showSorting: true, mobileLabel: "Layers" },
+    ];
+
     return (
         <div className="mx-auto">
             <Hero />
-            <div className="flex mb-4 justify-center mt-16"></div>
+            {/* <div className="flex mb-4 justify-center mt-16"></div>
             <div className="flex mb-4 justify-center max-w-5xl mx-auto">
                 <InfrastructureTable data={mainnetInfrastructures} />
+            </div> */}
+            <div className="lg:flex mb-4 justify-center w-full lg:max-w-5xl mx-auto">
+                <InfrastructureTable
+                    data={sortedInfrastructures}
+                    headers={infrastructureHeaders}
+                />
             </div>
         </div>
     );
