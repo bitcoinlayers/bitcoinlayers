@@ -12,8 +12,8 @@
     "executionEnv": "Offchain",
     "consensus": "Federateded Sidechain",
     "nativeToken": "BSQ",
-    "feeToken": "BSQ",
-    "enshrinedBtc": "wBTC",
+    "feeToken": "WBTC",
+    "enshrinedBtc": "WBTC",
     "bitcoinOnly": false,
     "links": [
         "https://www.bsquared.network/",
