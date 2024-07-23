@@ -11,9 +11,10 @@
     "btcLocked": 0,
     "executionEnv": "Under review",
     "consensus": "Under review",
-    "nativeToken": "-",
+    "nativeToken": "NOM",
     "feeToken": "-",
     "enshrinedBtc": "-",
+    "bitcoinOnly": false,
     "links": [
         "https://www.nomic.io/",
         "https://www.nomic.io/",
@@ -55,19 +56,11 @@
     ],
     "sections": [
         {
-            "id": "description",
-            "title": "Description",
-            "content": [
-                {
-                    "content": "Nomic is a Cosmos SDK Chain that enables users to leverage bitcoin in the Cosmos ecosystem."
-                }
-            ]
-        },
-        {
             "id": "underreview",
             "title": "Under Review",
             "content": [
                 {
+                    "title": "📝 Project is currently under review",
                     "content": "We are currently reviewing trust assumptions related to this protocol against our framework. After the review is complete, we will publish the review on this site and make an announcement via our social media properties."
                 }
             ]

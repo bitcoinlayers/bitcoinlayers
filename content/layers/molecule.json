@@ -14,6 +14,7 @@
     "nativeToken": "-",
     "feeToken": "-",
     "enshrinedBtc": "-",
+    "bitcoinOnly": false,
     "links": [
         "https://twitter.com/moleculebtc",
         "https://twitter.com/moleculebtc",
@@ -55,19 +56,19 @@
     ],
     "sections": [
         {
-            "id": "description",
-            "title": "Description",
+            "id": "selfsubmit",
+            "title": "Process to self-submit information",
             "content": [
                 {
-                    "content": "Molecule is a proposed Layer 2 design that will leverage the Solana virtal machine. They have recently announced the project, with information on the design expected to be coming soon. Little information is available on how it inherits Bitcoin security."
+                    "content": "The Bitcoin Layers project prioritizes risk reviews on projects that are in production and accepting users' BTC deposits. Projects on testnet are welcome to submit information about their project. We do not publish risk assessments for projects that are not in production.\n\nInformation on how to submit information on a project can be found in the Knowledge Bits section."
                 }
             ]
         }
     ],
     "knowledgeBits": [
         {
-            "url": "https://bitcoinrollups.io",
-            "displayText": "A website with information on Bitcoin rollups"
+            "url": "https://github.com/bitcoinlayers/bitcoinlayers/blob/main/self-submit.md",
+            "displayText": "Instructions on self-submitting a project."
         }
     ]
 }

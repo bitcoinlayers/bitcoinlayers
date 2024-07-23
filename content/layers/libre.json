@@ -8,12 +8,13 @@
     "purpose": "General",
     "btcBridge": "Third Party Multi-sig",
     "settlement": "Offchain",
-    "btcLocked": 15,
+    "btcLocked": 14,
     "executionEnv": "Offchain",
     "consensus": "Delegated Proof-of-Stake",
     "nativeToken": "LIBRE",
     "feeToken": "LIBRE",
     "enshrinedBtc": "PBTC",
+    "bitcoinOnly": false,
     "links": [
         "https://chain.libre.org/",
         "https://chain.libre.org/",
@@ -69,8 +70,8 @@
             "title": "Bitcoin Security",
             "content": [
                 {
-                "title": "Unilateral exits to Bitcoin not possible",
-                "content": "Users cannot unilaterally from Libre. Users must trust alternative consensus mechanisms to withdrawal funds."
+                    "title": "Unilateral exits to Bitcoin not possible",
+                    "content": "Users cannot unilaterally from Libre. Users must trust alternative consensus mechanisms to withdrawal funds."
                 },
             {
                 "title": "Libre does not leak MEV to Bitcoin",

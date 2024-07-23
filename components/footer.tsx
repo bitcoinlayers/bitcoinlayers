@@ -123,12 +123,15 @@ export default function Footer(): ReactElement {
                                         <SectionItem href="/infrastructure">
                                             Infrastructure
                                         </SectionItem>
+                                        <SectionItem href="/bitcoinonly">
+                                            BTC Only
+                                        </SectionItem>
                                         {/* <SectionItem href="/opcode">
                                             Opcodes
                                         </SectionItem> */}
-                                        <SectionItem href="/upcominglayers">
+                                        {/* <SectionItem href="/upcominglayers">
                                             Upcoming Layers
-                                        </SectionItem>
+                                        </SectionItem> */}
                                     </div>
                                 </div>
                                 <div className="grow flex flex-col justify-start items-start gap-4">
@@ -140,9 +143,9 @@ export default function Footer(): ReactElement {
                                         <SectionItem href="/faq">
                                             FAQ
                                         </SectionItem>
-                                        <SectionItemExternal href="https://bitcoin-layers.gitbook.io/bitcoin-layers">
+                                        <SectionItem href="/methodology">
                                             Methodology
-                                        </SectionItemExternal>
+                                        </SectionItem>
                                     </div>
                                 </div>
                                 <div className="grow flex flex-col justify-start items-start gap-4">

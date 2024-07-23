@@ -14,6 +14,7 @@
     "nativeToken": "-",
     "feeToken": "-",
     "enshrinedBtc": "-",
+    "bitcoinOnly": false,
     "links": [
         "https://alpenlabs.io/",
         "https://alpenlabs.io/",
@@ -55,19 +56,19 @@
     ],
     "sections": [
         {
-            "id": "description",
-            "title": "Description",
+            "id": "selfsubmit",
+            "title": "Process to self-submit information",
             "content": [
                 {
-                    "content": "Alpen Labs is a team developing a rollup framework on top of Bitcoin. They have recently left stealth, and are inviting developers to contribute to their testnet."
+                    "content": "The Bitcoin Layers project prioritizes risk reviews on projects that are in production and accepting users' BTC deposits. Projects on testnet are welcome to submit information about their project. We do not publish risk assessments for projects that are not in production.\n\nInformation on how to submit information on a project can be found in the Knowledge Bits section."
                 }
             ]
         }
     ],
     "knowledgeBits": [
         {
-            "url": "https://alpenlabs.io/",
-            "displayText": "Alpen Website"
+            "url": "https://github.com/bitcoinlayers/bitcoinlayers/blob/main/self-submit.md",
+            "displayText": "Instructions on self-submitting a project."
         }
     ]
 }

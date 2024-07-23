@@ -14,6 +14,7 @@
     "nativeToken": "-",
     "feeToken": "-",
     "enshrinedBtc": "-",
+    "bitcoinOnly": true,
     "links": [
         "https://www.botanixlabs.xyz/en/home",
         "https://www.botanixlabs.xyz/en/home",
@@ -71,9 +72,27 @@
                     "content": "Botanix will be implement a version of Bitcoin staking to secure the network. Presumably, any Bitcoin holder with sufficient capital could paricipate in staking on Botanix and earn rewards for securing the network."
                 }
             ]
+        },
+        {
+            "id": "selfsubmit",
+            "title": "Process to self-submit information",
+            "content": [
+                {
+                    "content": "The Bitcoin Layers project prioritizes risk reviews on projects that are in production and accepting users' BTC deposits. Projects on testnet are welcome to submit information about their project. We do not publish risk assessments for projects that are not in production.\n\nInformation on how to submit information on a project can be found in the Knowledge Bits section."
+                }
+            ]
         }
     ],
     "knowledgeBits": [
+        {
+            "id": "selfsubmit",
+            "title": "Process to self-submit information",
+            "content": [
+                {
+                    "content": "The Bitcoin Layers project prioritizes risk reviews on projects that are in production and accepting users' BTC deposits. Projects on testnet are welcome to submit information about their project. We do not publish risk assessments for projects that are not in production.\n\nInformation on how to submit information on a project can be found in the Knowledge Bits section."
+                }
+            ]
+        },
         {
             "url": "https://www.botanixlabs.xyz/en/home",
             "displayText": "Botanix Website"

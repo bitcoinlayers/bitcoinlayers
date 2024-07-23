@@ -14,6 +14,7 @@
     "nativeToken": "-",
     "feeToken": "-",
     "enshrinedBtc": "-",
+    "bitcoinOnly": false,
     "links": [
         "https://bisonlabs.io/#/dashboard",
         "https://bisonlabs.io/#/dashboard",
@@ -55,23 +56,19 @@
     ],
     "sections": [
         {
-            "id": "description",
-            "title": "Description",
+            "id": "selfsubmit",
+            "title": "Process to self-submit information",
             "content": [
                 {
-                    "content": "Bison Labs are building a sovereign rollup that enables more functionality for Ordinals and BRC-20 trading. They planning on using zk-STARKs to prove state transitions. They are in the testnet stage."
+                    "content": "The Bitcoin Layers project prioritizes risk reviews on projects that are in production and accepting users' BTC deposits. Projects on testnet are welcome to submit information about their project. We do not publish risk assessments for projects that are not in production.\n\nInformation on how to submit information on a project can be found in the Knowledge Bits section."
                 }
             ]
         }
     ],
     "knowledgeBits": [
         {
-            "url": "https://bisonlabs.io/",
-            "displayText": "Bison Labs website"
-        },
-        {
-            "url": "https://dmaster-1.gitbook.io/bisonlabs",
-            "displayText": "Bison Labs documentation site"
+            "url": "https://github.com/bitcoinlayers/bitcoinlayers/blob/main/self-submit.md",
+            "displayText": "Instructions on self-submitting a project."
         }
     ]
 }

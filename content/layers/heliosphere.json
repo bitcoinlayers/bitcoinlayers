@@ -14,6 +14,7 @@
     "nativeToken": "-",
     "feeToken": "-",
     "enshrinedBtc": "-",
+    "bitcoinOnly": false,
     "links": [
         "https://twitter.com/HeliosphereOne",
         "https://twitter.com/bitcoinlayers",

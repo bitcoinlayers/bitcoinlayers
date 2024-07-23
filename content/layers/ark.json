@@ -14,6 +14,7 @@
     "nativeToken": "BTC",
     "feeToken": "BTC",
     "enshrinedBtc": "-",
+    "bitcoinOnly": true,
     "links": [
         "https://arklabs.to",
         "https://arkdev.info",
@@ -55,11 +56,12 @@
     ],
     "sections": [
         {
-            "id": "description",
-            "title": "Description",
+            "id": "underreview",
+            "title": "Under Review",
             "content": [
                 {
-                    "content": "Ark is a decentralized network of trustless servers issuing VTXOs, basically checks with expiration. Users can make payments to each other within the system swapping these checks and withdraw funds at any time, even if the server goes offline or ceases to exist."
+                    "title": "📝 Project is currently under review",
+                    "content": "We are currently reviewing trust assumptions related to this protocol against our framework. After the review is complete, we will publish the review on this site and make an announcement via our social media properties."
                 }
             ]
         }
@@ -68,10 +70,10 @@
         {
             "url": "https://arkdev.info",
             "displayText": "Ark Developer Hub"
-        }, 
+        },
         {
             "url": "https://ark-protocol.org",
-            "displayText": "Ark Protocol Deep Dive" 
+            "displayText": "Ark Protocol Deep Dive"
         }
     ]
 }

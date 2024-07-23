@@ -1,8 +1,8 @@
 {
     "slug": "zulu",
     "title": "Zulu",
-    "layerType": "Bitvimium",  
-    "live": "Testnet", 
+    "layerType": "Bitvimium",
+    "live": "Testnet",
     "underReview": "yes",
     "riskFactors": ["", "", "", ""],
     "purpose": "General",
@@ -14,6 +14,7 @@
     "nativeToken": "-",
     "feeToken": "-",
     "enshrinedBtc": "-",
+    "bitcoinOnly": false,
     "links": [
         "https://zulunetwork.io/",
         "https://docs.zulunetwork.io/",
@@ -21,7 +22,7 @@
         "https://testnet.zuluscan.io/",
         "https://github.com/zulu-network",
         "https://x.com/zulu_network"
-        ],
+    ],
     "description": "Zulu Network is building towards becoming a Bitvimium on Bitcoin that enables developers to deploy dApps on both EVM (ZKSync ZK Stack L2) & UTXO layers (Customized ZKVM L3). Zulu network is working on a trust-minimzed decentralized bridge program and will leverage a unique hybrid PoS / PoW mining mechanism.",
     "riskAnalysis": [
         {

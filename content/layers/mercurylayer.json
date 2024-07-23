@@ -14,6 +14,7 @@
     "nativeToken": "BTC",
     "feeToken": "BTC",
     "enshrinedBtc": "BTC",
+    "bitcoinOnly": false,
     "links": [
         "https://mercurylayer.com/",
         "https://github.com/commerceblock/mercurylayer/blob/dev/docs/README.md",
@@ -55,23 +56,19 @@
     ],
     "sections": [
         {
-            "id": "description",
-            "title": "Description",
+            "id": "selfsubmit",
+            "title": "Process to self-submit information",
             "content": [
                 {
-                    "content": "Mercury Layer is an implementation of a Statechain protocol. It enables the offchain transfer of BTC."
+                    "content": "The Bitcoin Layers project prioritizes risk reviews on projects that are in production and accepting users' BTC deposits. Projects on testnet are welcome to submit information about their project. We do not publish risk assessments for projects that are not in production.\n\nInformation on how to submit information on a project can be found in the Knowledge Bits section."
                 }
             ]
         }
     ],
     "knowledgeBits": [
         {
-            "url": "https://github.com/commerceblock/mercurylayer/blob/dev/docs/README.md",
-            "displayText": "Mercury Layer Docs"
-        },
-        {
-            "url": "https://github.com/commerceblock/mercurylayer/tree/dev/clients/standalone-rust",
-            "displayText": "Users can run a Mercury Layer client locally to interact with the protocol."
+            "url": "https://github.com/bitcoinlayers/bitcoinlayers/blob/main/self-submit.md",
+            "displayText": "Instructions on self-submitting a project."
         }
     ]
 }

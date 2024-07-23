@@ -1,19 +1,20 @@
 {
     "slug": "bob",
     "title": "BOB",
-    "layerType": "Ethereum\nRollup",
+    "layerType": "Ethereum Rollup",
     "live": "Mainnet",
     "underReview": "no",
     "riskFactors": ["High", "Medium", "Medium", "High"],
     "purpose": "Bitcoin Apps",
     "btcBridge": "Various Multisig(s)",
     "settlement": "Offchain",
-    "btcLocked": "944",
+    "btcLocked": "1148",
     "executionEnv": "Under Development",
     "consensus": "Centralized Sequencer",
     "nativeToken": "ETH",
     "feeToken": "ETH",
     "enshrinedBtc": "None",
+    "bitcoinOnly": false,
     "links": [
         "https://www.gobob.xyz/",
         "https://www.gobob.xyz/",
@@ -52,23 +53,38 @@
             "title": "State validation mechanism, on Ethereum, is under development",
             "content": "BOB inherits no settlement assurances from Bitcoin. BOB is an optimistic rollup, but currently does not have fraud proofs. This means that the BOB sequencer can post malicious state transitions that could result in users losing their funds. Users trust that a challenger, which is currently run by a 4/6 multi-sig, will be online and challenge proposed malicious state transitions."
         }
-    ],
+    ],   
     "sections": [
         {
             "id": "bitcoinsecurity",
             "title": "Bitcoin Security",
             "content": [
                 {
-                    "title": "Optimine under development",
+                    "title": "BOB does not inherit any security from Bitcoin consensus participants. Optimine is under development",
                     "content": "BOB is currently developing Optimine: a mechanism that will see Bitcoin miners merge-mine the BOB sequencer. In this design, the BOB sequencer would create rollup blocks, and the miners would validate that the blocks were created correctly. Miners would then give the blocks “Proof-of-Work” validation so they can be executed. This Proof-of-Work validation would take minutes, so it can also act as a soft finalization mechanism as OP Stack chains typically take 7 days for the challenge period to finalize."
                 },
-                {
-                    "title": "BitVM bridge being researched",
-                    "content": "BOB are actively researching BitVM and how it can support an improved bridge program for Bitcoin assets on the chain."
-                },
+                
                 {
                     "title": "ETH token used to pay fees",
                     "content": "BOB users pay sequencer fees in ETH. BOB operators also pay DA fees in ETH. Users can, however, elect to pay fees with a separate token (e.g. tBTC) to a service provider that will pay sequencer fees, in ETH, on the users’ behalf."
+                },
+                {
+                    "title": "No MEV introduced to Bitcoin",
+                    "content": "BOB does not introduce any MEV on the Bitcoin L1. Users trust the BOB sequencer to not reorder their transactions to extract MEV."
+                },
+                {
+                    "title": "BOB does not contribute to the security budget",
+                    "content": "BOB does not currently contribute to the Bitcoin security budget."
+                }
+            ]
+        },
+        {
+            "id": "withdrawals",
+            "title": "Withdrawals",
+            "content": [
+                {
+                    "title": "Proposer role centralized and permissioned. BTC users must withdraw to Ethereum L1 before withdrawing to Bitcoin",
+                    "content": "Users can bypass the sequencer and submit withdrawal requests directly to the Ethereum L1. However, they cannot force-exit as the self-proposing is not enabled on OP Stack chains. Users rely on the proposer to post updated state roots to Ethereum to ensure withdrawals can be processed. Withdrawals from BOB to Ethereum take 7 days to finalize.\n\nOnce on the Ethereum L1, users can then redeem their BTC on Bitcoin via the two-way peg mechanism that their BTC synthetic is supported by.\n\nUsers primarily trust bridge operators to permit withdrawals back to the Bitcoin mainchain."
                 }
             ]
         },
@@ -91,6 +107,10 @@
                 {
                     "title": "Faster block times",
                     "content": "BOB is currently producing blocks every two seconds which provides a better user experience than using the Bitcoin, or Ethereum, mainchains."
+                },
+                {
+                    "title": "BitVM bridge being researched",
+                    "content": "BOB are actively researching BitVM and how it can support an improved bridge program for Bitcoin assets on the chain."
                 }
             ]
         },
@@ -115,16 +135,6 @@
                 {
                     "title": "BOB has a centralized operator",
                     "content": "Block production is controlled by one operator. Users trust that the operator will be honest. They also trust that the operator will not reorder transactions to extract MEV."
-                }
-            ]
-        },
-        {
-            "id": "withdrawals",
-            "title": "Withdrawals",
-            "content": [
-                {
-                    "title": "Proposer role centralized and permissioned. BTC users must withdraw to Ethereum L1 before withdrawing to Bitcoin",
-                    "content": "Users can bypass the sequencer and submit withdrawal requests directly to the Ethereum L1. However, they cannot force-exit as the self-proposing is not enabled on OP Stack chains. Users rely on the proposer to post updated state roots to Ethereum to ensure withdrawals can be processed. Withdrawals from BOB to Ethereum take 7 days to finalize.\n\nOnce on the Ethereum L1, users can then redeem their BTC on Bitcoin via the two-way peg mechanism that their BTC synthetic is supported by.\n\nUsers primarily trust bridge operators to permit withdrawals back to the Bitcoin mainchain."
                 }
             ]
         },

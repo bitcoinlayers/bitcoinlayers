@@ -8,12 +8,13 @@
     "purpose": "General",
     "btcBridge": "Federated Multisig",
     "settlement": "Offchain",
-    "btcLocked": "1003",
+    "btcLocked": "2296",
     "executionEnv": "Offchain",
     "consensus": "Hybrid Consensus",
     "nativeToken": "CORE",
     "feeToken": "CORE",
     "enshrinedBtc": "coreBTC",
+    "bitcoinOnly": false,
     "links": [
         "https://coredao.org/",
         "https://www.stacks.co/explore/discover-apps",
@@ -59,8 +60,30 @@
             "title": "Bitcoin Security",
             "content": [
                 {
+                    "title": "Core indirectly inherits security from Bitcoin consensus participants",
+                    "content": "As a part of its hybrid consensus mechanism, Bitcoin miners can delegate hashrate to Core validators to improve their overall voting power."
+                },
+                {
                     "title": "Core Chain requires another token to function",
                     "content": "The CORE token is required to pay for transaction fees and smart contract execution on Core Chain. It is also used for staking and governance. The token is directly required for the security of the network, as the staking of it is one of the two variables used to create a weighted score for validator election and leader selection."
+                },
+                {
+                    "title": "No MEV introduced on Bitcoin",
+                    "content": "Core Chain does not introduce any MEV on Bitcoin. Users trust Core Chain validators to not extract MEV."
+                },
+                {
+                    "title": "Core Chain indirectly contributes to the security budget.",
+                    "content": "Core validators will reward miners who delegated their hashrate to them with newly issued CORE tokens."
+                }
+            ]
+        },
+        {
+            "id": "withdrawals",
+            "title": "Withdrawals",
+            "content": [
+                {
+                    "title": "Withdrawals from coreBTC rely on several permissionless roles.",
+                    "content": "Core Chain’s consensus-enshrined bridged BTC, coreBTC, relies on several roles for withdrawals, although they are all permissionless. It also relies on the liveness of Core Chain, as one of those roles is a set of smart contracts on Core Chain."
                 }
             ]
         },
@@ -111,16 +134,6 @@
                 {
                     "title": "Core Chain is operated by validators",
                     "content": "Block production is managed by a permissionless set of validators. Users trust the majority of validators not to collude."
-                }
-            ]
-        },
-        {
-            "id": "withdrawals",
-            "title": "Withdrawals",
-            "content": [
-                {
-                    "title": "Withdrawals from coreBTC rely on several permissionless roles.",
-                    "content": "Core Chain’s consensus-enshrined bridged BTC, coreBTC, relies on several roles for withdrawals, although they are all permissionless. It also relies on the liveness of Core Chain, as one of those roles is a set of smart contracts on Core Chain."
                 }
             ]
         },

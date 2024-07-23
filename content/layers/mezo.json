@@ -14,6 +14,7 @@
     "nativeToken": "MEZO",
     "feeToken": "-",
     "enshrinedBtc": "tBTC",
+    "bitcoinOnly": false,
     "links": [
         "https://mezo.org/",
         "https://mezo.org/",
@@ -55,23 +56,19 @@
     ],
     "sections": [
         {
-            "id": "description",
-            "title": "Description",
+            "id": "selfsubmit",
+            "title": "Process to self-submit information",
             "content": [
                 {
-                    "content": "Mezo is building a general purpose sidechain protocol that will support general purpose applications. It will run a CometBFT consensus protocol that is secured by staking BTC and the Mezo token. It will use tBTC for its Bitcoin bridge."
+                    "content": "The Bitcoin Layers project prioritizes risk reviews on projects that are in production and accepting users' BTC deposits. Projects on testnet are welcome to submit information about their project. We do not publish risk assessments for projects that are not in production.\n\nInformation on how to submit information on a project can be found in the Knowledge Bits section."
                 }
             ]
         }
     ],
     "knowledgeBits": [
         {
-            "url": "https://mezo.org/",
-            "displayText": "Mezo website"
-        },
-        {
-            "url": "https://blog.mezo.org/welcome-to-proof-of-hodl-2/",
-            "displayText": "Introductory blog post"
+            "url": "https://github.com/bitcoinlayers/bitcoinlayers/blob/main/self-submit.md",
+            "displayText": "Instructions on self-submitting a project."
         }
     ]
 }
