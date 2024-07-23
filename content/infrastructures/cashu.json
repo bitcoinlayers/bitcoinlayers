@@ -3,7 +3,7 @@
     "title": "Cashu",
     "infrastructureType": "Chaumian Ecash Protocol",
     "live": "Mainnet",
-    "underReview": "yes",
+    "underReview": "no",
     "riskFactors": ["", ""],
     "bitcoinSecurity": "No",
     "nativeToken": "BTC",
@@ -13,7 +13,7 @@
     "links": [
         "https://cashu.space/",
         "https://cashu.space/",
-        "hhttps://docs.cashu.space/",
+        "hhttps://docs.cashu.space/", 
         "https://github.com/cashubtc",
         "https://x.com/CashuBTC"
     ],
@@ -86,15 +86,15 @@
                 {
                     "title": "Submarine nuts? (Submarine Swap equivalent)",
                     "content": "Ecash-based HTLCs can be atomically linked to Ecash HTLCs (Calle). This might enable a submarine swap-equivalent (BTC-LN), called “submarine nuts” (Cashu <--> LN), meaning LN nodes can assist one another in receiving funds even if they lack any channels or inbound liquidity."
-                },
+                }, 
                 {
                     "title": "Cashu via nostr",
                     "content": "Cashu tokens can be sent via nostr, an open protocol that enables a truly censorship-resistant and global social network. The message is an encrypted NIP-04 DM. Nostr Wallet Connect (NWC) will further enable users to zap other users with Cashu tokens. A new zap protocol for nostr based on Cashu ecash was recently proposed."
-                },
+                }, 
                 {
                     "title": "Stablenuts: USD Ecash, backed by BTC (Stablesats equivalent)",
                     "content": "Stablenuts was tested as a Cashu USD mint supported by a Strike Lightning BTC wallet. It enables the conversion of Lightning BTC to Ecash USD and back to Lightning BTC, potentially running on DLCs, USDT, LNMarkets, Stablesats, or any fiat-stable Bitcoin rails. A non-Strike-based version was introduced in March 2024, with its first tests in April 2024. Boardwalk introduced the first dollar-based Cashu wallet built on Bitcoin and connected to nostr shortly after."
-                },
+                }, 
                 {
                     "title": "Free City monetary unit",
                     "content": "Seemingly there has already been an attempt in the 1990s to use a form of Chaumian Ecash, called “DMT” in Costa Rica. Current tests are aiming at the (much) smaller version of a Free City, which is a private event, like a conference or a festival."
@@ -130,15 +130,15 @@
         {
             "url": "https://docs.cashu.space/resources/learn",
             "displayText": "Curated resource section"
-        },
+        }, 
         {
             "url": "https://chaum.com/wp-content/uploads/2022/01/Chaum-blind-signatures.pdf",
             "displayText": "David Chaum - Blind signatures for untraceable payments"
-        },
+        }, 
         {
             "url": "https://gist.github.com/callebtc/ed5228d1d8cbaade0104db5d1cf63939",
             "displayText": "Proof of Liabilities scheme"
-        },
+        }, 
         {
             "url": "https://github.com/cashubtc/nuts",
             "displayText": "Cashu NUTs (Notation, Usage, and Terminology) specification"
