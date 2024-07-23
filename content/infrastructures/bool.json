@@ -1,8 +1,8 @@
 {
-    "slug": "espresso",
-    "title": "Espresso",
-    "infrastructureType": "Sequencing & DA",
-    "live": "Proposed",
+    "slug": "babylon",
+    "title": "Babylon",
+    "infrastructureType": "Bridge",
+    "live": "Announced",
     "underReview": "yes",
     "riskFactors": ["", ""],
     "bitcoinSecurity": "No",
@@ -11,13 +11,13 @@
     "associatedLayers": "-",
     "bitcoinOnly": false,
     "links": [
-        "https://espressosys.com/",
-        "https://espressosys.com/",
-        "https://docs.espressosys.com/",
-        "https://github.com/EspressoSystems",
-        "https://twitter.com/espressosys"
+        "https://bool.network/",
+        "https://bool.network/",
+        "https://docs.bool.network/",
+        "https://github.com/boolnetwork",
+        "https://x.com/bool_official"
     ],
-    "description": "Espresso is a shared sequencer marketplace. It enables rollup-style blockchains to sell their sequencing rights to a marketplace of sequencers who bid on the rights to build rollup blocks. It additionally runs a consensus protocol that provides rollups, participating in Espresso, with more secure preconfirmations.",
+    "description": "Bool Network is an infrastructure provider currently managing bridges for a number of Bitcoin scaling protocols. The Bitcoin wallets it manages are secured by an MPC Protocol.",
     "sections": [
         {
             "id": "selfsubmit",
