@@ -140,9 +140,9 @@ const LayerTableAll = ({ data, headers }: Props) => {
     // };
 
     const filteredData = sortedData.filter((item) => {
-        if (filter === "Mainnet") return item.live.includes("Mainnet");
-        if (filter === "Testnet") return !item.live.includes("Mainnet");
-        return true;
+        if (filter === "Mainnet") return item.live === "Mainnet";
+        if (filter === "Testnet") return item.live !== "Mainnet";
+        return true; // All
     });
 
     // const filteredData = sortedData
