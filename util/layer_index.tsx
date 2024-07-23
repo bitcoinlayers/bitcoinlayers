@@ -131,7 +131,6 @@ export const allLayers: Layer[] = [
     sequentia,
     brollup,
     nomic,
-    bouncebit,
     fractal,
     yona,
     nexio,
