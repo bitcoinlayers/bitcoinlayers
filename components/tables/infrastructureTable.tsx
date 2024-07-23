@@ -349,7 +349,20 @@ const InfrastructureTable = ({ data, headers }: Props) => {
                                 {(!isMobile ||
                                     mobileActiveTab === "Unit of Account") && (
                                     <td className="lg:px-6 px-4 py-3 lg:py-4 border-stroke_tertiary text_table_important">
-                                        {item.nativeToken}
+                                        <div className="flex items-center">
+                                            {item.nativeToken
+                                                .toLowerCase()
+                                                .includes("btc") && (
+                                                <Image
+                                                    src="/btc.svg"
+                                                    alt="BTC logo"
+                                                    width={20}
+                                                    height={20}
+                                                    className="mr-2"
+                                                />
+                                            )}
+                                            {item.nativeToken}
+                                        </div>
                                     </td>
                                 )}
                                 {(!isMobile ||
