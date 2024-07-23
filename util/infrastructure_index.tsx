@@ -39,6 +39,9 @@ const bool: Infrastructure = boolJson as Infrastructure;
 import tbtcJson from "../content/infrastructures/tbtc.json" assert { type:
     "json" };
 const tbtc: Infrastructure = tbtcJson as Infrastructure;
+import cashuJson from "../content/infrastructures/cashu.json" assert { type:
+    "json" };
+const cashu: Infrastructure = cashuJson as Infrastructure;
 
 export const allInfrastructures: Infrastructure[] = [
     astria,
@@ -54,6 +57,7 @@ export const allInfrastructures: Infrastructure[] = [
     dlclink,
     bool,
     tbtc,
+    cashu,
 ];
 export const allInfrastructureSlugs: string[] = allInfrastructures.map(
     (infrastructure) => infrastructure.slug,
