@@ -6,9 +6,10 @@ import TableHeader from "@/components/tables/tableHeader";
 import { BrowserView, MobileView, isMobile } from "react-device-detect";
 
 type TableTabKey =
-    | "Bitcoin Security"
     | "Type"
     | "Purpose"
+    | "Status"
+    | "Unit of Account"
     | "Associated Layers";
 
 // interface Props {
@@ -78,10 +79,6 @@ const InfrastructureTable = ({ data, headers }: Props) => {
                     valueA = a.title.toLowerCase();
                     valueB = b.title.toLowerCase();
                     break;
-                case "Bitcoin Security":
-                    valueA = a.bitcoinSecurity;
-                    valueB = b.bitcoinSecurity;
-                    break;
                 case "Type":
                     valueA = a.infrastructureType;
                     valueB = b.infrastructureType;
@@ -89,6 +86,14 @@ const InfrastructureTable = ({ data, headers }: Props) => {
                 case "Purpose":
                     valueA = a.purpose;
                     valueB = b.purpose;
+                    break;
+                case "Status":
+                    valueA = a.live;
+                    valueB = b.live;
+                    break;
+                case "Unit of Account":
+                    valueA = a.nativeToken;
+                    valueB = b.nativeToken;
                     break;
                 case "Associated Layers":
                     valueA = a.associatedLayers;
@@ -255,11 +260,11 @@ const InfrastructureTable = ({ data, headers }: Props) => {
                 <div className="justify-center lg:items-start gap-4 inline-flex py-3">
                     {headers.slice(2).map((_item, ind) => {
                         const isAllowedTab = [
-                            "Risk",
                             "Type",
+                            "Purpose",
                             "Status",
                             "Unit of Account",
-                            "BTC Locked",
+                            "Associated Layers",
                         ].includes(_item.name);
                         return (
                             <div
@@ -316,29 +321,35 @@ const InfrastructureTable = ({ data, headers }: Props) => {
                                             src={`/logos/${item.slug}.png`}
                                             title={item.title}
                                         />
-                                        <span className="ml-2 truncate lg:word-break-none">
+                                        <span className="ml-2 lg:word-break-none">
                                             {item.title}
                                         </span>
                                     </div>
                                 </td>
-                                {(!isMobile ||
-                                    mobileActiveTab === "Bitcoin Security") && (
-                                    <td className="lg:px-6 px-4 py-3 lg:py-4 border-stroke_tertiary text_table_important">
-                                        {item.bitcoinSecurity}
-                                    </td>
-                                )}
+
                                 {(!isMobile || mobileActiveTab === "Type") && (
                                     <td className="lg:px-6 px-4 py-3 lg:py-4 border-stroke_tertiary text_table_important">
                                         {item.infrastructureType}
                                     </td>
                                 )}
-
-                                {(!isMobile ||
+                                {/* {(!isMobile ||
                                     mobileActiveTab === "Purpose") && (
                                     <td className="lg:px-6 px-4 py-3 lg:py-4 border-stroke_tertiary text_table_important">
                                         <div className="flex items-center">
                                             {item.purpose}
                                         </div>
+                                    </td>
+                                )} */}
+                                {(!isMobile ||
+                                    mobileActiveTab === "Status") && (
+                                    <td className="lg:px-6 px-4 py-3 lg:py-4 border-stroke_tertiary text_table_important">
+                                        {item.live}
+                                    </td>
+                                )}
+                                {(!isMobile ||
+                                    mobileActiveTab === "Unit of Account") && (
+                                    <td className="lg:px-6 px-4 py-3 lg:py-4 border-stroke_tertiary text_table_important">
+                                        {item.nativeToken}
                                     </td>
                                 )}
                                 {(!isMobile ||

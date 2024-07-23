@@ -6,7 +6,7 @@
     "underReview": "yes",
     "riskFactors": ["", ""],
     "bitcoinSecurity": "No",
-    "nativeToken": "TBD",
+    "nativeToken": "-",
     "purpose": "General",
     "associatedLayers": "-",
     "bitcoinOnly": false,

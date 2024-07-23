@@ -6,7 +6,7 @@
     "underReview": "yes",
     "riskFactors": ["High", "High"],
     "bitcoinSecurity": "No",
-    "nativeToken": "TBD",
+    "nativeToken": "-",
     "purpose": "General",
     "associatedLayers": "-",
     "bitcoinOnly": false,
@@ -16,7 +16,7 @@
         "https://docs.astria.org/",
         "https://github.com/astriaorg",
         "https://x.com/AstriaOrg"
-        ],
+    ],
     "description": "Astria is a shared sequencer built on CometBFT consensus. It supports scaling protocols with decentralization, interoperability and more secure preconfirmations.",
     "sections": [
         {

@@ -6,7 +6,7 @@
     "underReview": "yes",
     "riskFactors": ["", ""],
     "bitcoinSecurity": "No",
-    "nativeToken": "None",
+    "nativeToken": "BTC",
     "purpose": "Federated Ecash mint",
     "associatedLayers": "-",
     "bitcoinOnly": true,

@@ -12,13 +12,14 @@ export default function Home() {
 
     const infrastructureHeaders = [
         { name: "Name", showSorting: true, mobileLabel: "Name" },
-        {
-            name: "Bitcoin Security",
-            showSorting: true,
-            mobileLabel: "BTC Security",
-        },
         { name: "Type", showSorting: true, mobileLabel: "Type" },
-        { name: "Purpose", showSorting: true, mobileLabel: "Purpose" },
+        // { name: "Purpose", showSorting: true, mobileLabel: "Purpose" },
+        { name: "Status", showSorting: true, mobileLabel: "Status" },
+        {
+            name: "Unit of Account",
+            showSorting: true,
+            mobileLabel: "Unit of Account",
+        },
         { name: "Associated Layers", showSorting: true, mobileLabel: "Layers" },
     ];
 

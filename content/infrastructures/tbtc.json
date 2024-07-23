@@ -1,7 +1,7 @@
 {
     "slug": "tbtc",
     "title": "tBTC",
-    "infrastructureType": "Bitcoin Wrapper",
+    "infrastructureType": "BTC Wrapper",
     "live": "Mainnet",
     "underReview": "yes",
     "riskFactors": ["", ""],
@@ -16,7 +16,7 @@
         "https://docs.threshold.network/",
         "https://github.com/threshold-network",
         "https://x.com/thetnetwork"
-        ],
+    ],
     "description": "tBTC is a wrapped version of BTC that lives as an ERC-20 token on Ethereum. It is secured by a distributed signer set and decentralized governance mechanism.",
     "sections": [
         {
