@@ -6,7 +6,7 @@
     "underReview": "no",
     "riskFactors": ["", ""],
     "bitcoinSecurity": "No",
-    "nativeToken": "-",
+    "nativeToken": "BTC",
     "purpose": "Federated Ecash mint",
     "associatedLayers": "Lightning Network, nostr",
     "bitcoinOnly": true,
