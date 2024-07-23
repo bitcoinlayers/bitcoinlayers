@@ -92,6 +92,23 @@
             "title": "Technology",
             "content": [
                 {
+                    "title": "BitVM exploration",
+                    "content": "The BitLayer team has an open repository of research related to BitVM. They are looking to build a trust-minimized bridge between BitLayer and Bitcoin. BitLayer’s documentation site states that the BitVM implementation will be federated."
+                },
+                {
+                    "title": "Alternative DA exploration",
+                    "content": "According to BitLayer’s docs, the team plans on using an alternative solution for data availability. Users would trust the consensus mechanism behind this solution instead of Bitcoin full nodes for the availability of data."
+                },
+                {
+                    "title": "Bitcoin-friendly FRI exploration",
+                    "content": "Fast Reed-Solomon Interactive Oracle of Proximity (FRI) is a cryptographic proof system. Most notably, FRI is used to construct STARKs. BitLayer is exploring the verification of FRI and considers its solution to be ‘Bitcoin-friendly’ – as it does not require OP_CAT or any tools that don’t already exist on Bitcoin today. BitLayer’s system leverages Taptrees for the required Merkle commitments in the proving scheme and BitVM-style BitCommitments for state propagation. BitLayer has not yet open-sourced code or released documentation for this FRI verification system."
+                },
+                {
+                    "title": "OP-DLC exploration",
+                    "content": "Discrete log contract (DLC) is a contract execution framework allowing for two parties to make conditional payments, mediated by an oracle. In the OP-DLC model that BitLayer is developing, the oracle is set up as a federation with fraud proof-style ‘slashing’ conditions on required collateral. BitLayer has not yet open-sourced code or released documentation for this OP-DLC contract execution system."
+                },
+
+                {
                     "title": "Ethereum Virtual Machine",
                     "content": "BitLayer uses an EVM-compatible virtual machine. The Ethereum Virtual Machine is software responsible for smart contract execution for a number of blockchains, namely the Ethereum Network. It uses Solidity/Vyper as its code and is the dominant environment for smart contract execution in the cryptocurrency ecosystem. BitLayer is EVM-compatible, which means that a developer from Ethereum would have less difficulty deploying their applications on BitLayer compared to other execution environments."
                 },
