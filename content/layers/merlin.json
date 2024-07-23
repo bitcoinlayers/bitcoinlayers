@@ -23,7 +23,7 @@
         "https://docs.merlinchain.io/merlin-docs/developers",
         "https://twitter.com/MerlinLayer2"
     ],
-    "description": "Merlin is an implementation of Polygon CDK chain. It likely is running a Polygon chain on top of a permissioned fork of the EVM. Its documentation shares that it will add Bitcoin native security in the future, but no code or research has been released on this topic.",
+    "description": "Merlin is an implementation of Polygon CDK chain. It likely is running a Polygon chain on top of a permissioned fork of the EVM. It plans to integrate with the Bsquared Hub L1 in the future.",
     "riskAnalysis": [
         {
             "category": "Bridge Custody",
