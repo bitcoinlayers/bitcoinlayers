@@ -21,9 +21,6 @@ const lorenzo: Infrastructure = lorenzoJson as Infrastructure;
 import sovereignJson from "../content/infrastructures/sovereign.json" assert { type:
     "json" };
 const sovereign: Infrastructure = sovereignJson as Infrastructure;
-import rollkitJson from "../content/infrastructures/rollkit.json" assert { type:
-    "json" };
-const rollkit: Infrastructure = rollkitJson as Infrastructure;
 import nubitJson from "../content/infrastructures/nubit.json" assert { type:
     "json" };
 const nubit: Infrastructure = nubitJson as Infrastructure;
@@ -33,9 +30,9 @@ const babylon: Infrastructure = babylonJson as Infrastructure;
 import fedimintJson from "../content/infrastructures/fedimint.json" assert { type:
     "json" };
 const fedimint: Infrastructure = fedimintJson as Infrastructure;
-import mirrorJson from "../content/infrastructures/mirror.json" assert { type:
+import dlclinkJson from "../content/infrastructures/dlclink.json" assert { type:
     "json" };
-const mirror: Infrastructure = mirrorJson as Infrastructure;
+const dlclink: Infrastructure = dlclinkJson as Infrastructure;
 
 export const allInfrastructures: Infrastructure[] = [
     astria,
@@ -45,11 +42,10 @@ export const allInfrastructures: Infrastructure[] = [
     espresso,
     lorenzo,
     sovereign,
-    rollkit,
     nubit,
     babylon,
     fedimint,
-    mirror,
+    dlclink,
 ];
 export const allInfrastructureSlugs: string[] = allInfrastructures.map(
     (infrastructure) => infrastructure.slug,

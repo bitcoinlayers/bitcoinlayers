@@ -1,40 +1,38 @@
 {
     "slug": "lorenzo",
     "title": "Lorenzo",
-    "infrastructureType": "Restaking",
+    "infrastructureType": "Liquid Staking",
     "live": "Announced",
     "underReview": "yes",
-    "riskFactors": ["High", "High"],
+    "riskFactors": ["", ""],
     "bitcoinSecurity": "No",
-    "nativeToken": "None",
+    "nativeToken": "TBD",
     "purpose": "General",
     "associatedLayers": "-",
     "bitcoinOnly": false,
     "links": [
-        "https://lorenzo-protocol.xyz/home",
-        "https://twitter.com/bitcoinlayers",
-        "https://twitter.com/bitcoinlayers",
-        "https://twitter.com/bitcoinlayers",
-        "https://twitter.com/bitcoinlayers",
-        "https://twitter.com/bitcoinlayers"
+        "https://lorenzo-protocol.xyz",
+        "https://lorenzo-protocol.xyz",
+        "https://docs.lorenzo-protocol.xyz/",
+        "https://github.com/Lorenzo-Protocol",
+        "https://x.com/LorenzoProtocol"
     ],
     "description": "Under review.",
     "sections": [
         {
-            "id": "description",
-            "title": "Description",
+            "id": "selfsubmit",
+            "title": "Process to self-submit information",
             "content": [
                 {
-                    "title": "Description",
-                    "content": ""
+                    "content": "The Bitcoin Layers project prioritizes risk reviews on projects that are in production and accepting users' BTC deposits. Projects on testnet are welcome to submit information about their project. We do not publish risk assessments for projects that are not in production.\n\nInformation on how to submit information on a project can be found in the Knowledge Bits section."
                 }
             ]
         }
     ],
     "knowledgeBits": [
         {
-            "url": "https://bitcoinlayers.org",
-            "displayText": "Bitcoin Layers"
+            "url": "https://github.com/bitcoinlayers/bitcoinlayers/blob/main/self-submit.md",
+            "displayText": "Instructions on self-submitting a project."
         }
     ]
 }
