@@ -101,8 +101,11 @@ const LayerTableAll = ({ data, headers }: Props) => {
                     valueB = b.nativeToken;
                     break;
                 case "BTC Locked":
-                    valueA = a.btcLocked;
-                    valueB = b.btcLocked;
+                    valueA = parseFloat(a.btcLocked.toString());
+                    valueB = parseFloat(b.btcLocked.toString());
+
+                    if (isNaN(valueA)) valueA = -Infinity;
+                    if (isNaN(valueB)) valueB = -Infinity;
                     break;
                 default:
                     return 0;
@@ -329,7 +332,7 @@ const LayerTableAll = ({ data, headers }: Props) => {
                                         {item.underReview === "no" ? (
                                             <Risk layer={item} />
                                         ) : (
-                                            <div className="px-5 text_table_important">
+                                            <div className="px-5 text_table_important font-light">
                                                 Under review
                                             </div>
                                         )}
@@ -370,7 +373,9 @@ const LayerTableAll = ({ data, headers }: Props) => {
                                     <td className="lg:px-6 px-4 py-3 lg:py-4 border-r border-stroke_tertiary text_table_important">
                                         {item.underReview === "yes" ||
                                         !Number(item.btcLocked) ? (
-                                            <div>-</div>
+                                            <div className="font-light">
+                                                Under review
+                                            </div>
                                         ) : (
                                             <div>
                                                 ₿{" "}
