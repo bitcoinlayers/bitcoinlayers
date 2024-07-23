@@ -12,7 +12,7 @@
     "executionEnv": "Offchain",
     "consensus": "Proof-of-Stake",
     "nativeToken": "BEVM",
-    "feeToken": "BEVM",
+    "feeToken": "WBTC",
     "enshrinedBtc": "XBTC",
     "links": [
         "https://www.bevm.io/",
