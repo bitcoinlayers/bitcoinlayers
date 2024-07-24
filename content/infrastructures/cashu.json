@@ -6,13 +6,8 @@
     "underReview": "no",
     "riskFactors": ["", ""],
     "bitcoinSecurity": "No",
-<<<<<<< Fedimint-Update
     "nativeToken": "BTC",
     "purpose": "Ecash mint",
-=======
-    "nativeToken": "BTC",
-    "purpose": "Federated Ecash mint",
->>>>>>> main
     "associatedLayers": "Lightning Network, nostr",
     "bitcoinOnly": true,
     "links": [
