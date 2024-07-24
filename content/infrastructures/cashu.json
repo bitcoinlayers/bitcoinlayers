@@ -7,7 +7,7 @@
     "riskFactors": ["", ""],
     "bitcoinSecurity": "No",
     "nativeToken": "None",
-    "purpose": "Federated Ecash mint",
+    "purpose": "Ecash mint",
     "associatedLayers": "Lightning Network, nostr",
     "bitcoinOnly": true,
     "links": [
