@@ -7,7 +7,7 @@ import Risk from "@/components/layer/layerTableItemRisk";
 import TableHeader from "@/components/tables/tableHeader";
 import { BrowserView, MobileView, isMobile } from "react-device-detect";
 
-type TableTabKey = "Risk" | "Category" | "Type" | "Status";
+type TableTabKey = "Risk" | "Type" | "Status" | "Category";
 
 type TableItem = Layer | Infrastructure;
 
@@ -262,22 +262,19 @@ const BitcoinonlyTable = ({ data, headers }: Props) => {
                                 </td>
                                 {!isMobile && (
                                     <td className="relative px-2 border-stroke_tertiary text_table_important">
-                                        {isLayer(item) &&
-                                        item.underReview === "no" ? (
-                                            <Risk layer={item} />
+                                        {isLayer(item) ? (
+                                            item.underReview === "no" ? (
+                                                <Risk layer={item} />
+                                            ) : (
+                                                <div className="px-5 text_table_important font-light">
+                                                    Under review
+                                                </div>
+                                            )
                                         ) : (
                                             <div className="px-5 text_table_important">
-                                                Under review
+                                                Not applicable
                                             </div>
                                         )}
-                                    </td>
-                                )}
-                                {(!isMobile ||
-                                    mobileActiveTab === "Category") && (
-                                    <td className="lg:px-6 px-4 py-3 lg:py-4 border-stroke_tertiary text_table_important">
-                                        {isLayer(item)
-                                            ? "Layer"
-                                            : "Infrastructure"}
                                     </td>
                                 )}
                                 {(!isMobile || mobileActiveTab === "Type") && (
@@ -293,6 +290,14 @@ const BitcoinonlyTable = ({ data, headers }: Props) => {
                                     mobileActiveTab === "Status") && (
                                     <td className="lg:px-6 px-4 py-3 lg:py-4 border-stroke_tertiary text_table_important">
                                         {item.live}
+                                    </td>
+                                )}
+                                {(!isMobile ||
+                                    mobileActiveTab === "Category") && (
+                                    <td className="lg:px-6 px-4 py-3 lg:py-4 border-stroke_tertiary text_table_important">
+                                        {isLayer(item)
+                                            ? "Layer"
+                                            : "Infrastructure"}
                                     </td>
                                 )}
                             </tr>

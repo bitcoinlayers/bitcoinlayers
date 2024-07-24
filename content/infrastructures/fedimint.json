@@ -6,14 +6,14 @@
     "underReview": "yes",
     "riskFactors": ["", ""],
     "bitcoinSecurity": "No",
-    "nativeToken": "None",
+    "nativeToken": "BTC",
     "purpose": "Federated Ecash mint",
     "associatedLayers": "-",
     "bitcoinOnly": true,
     "links": [
         "https://fedimint.org",
         "https://fedimint.org",
-        "https://fedimint.org/docs/intro", 
+        "https://fedimint.org/docs/intro",
         "https://github.com/fedimint",
         "https://x.com/fedimint"
     ],
@@ -65,7 +65,7 @@
             "content": [
                 {
                     "title": "Private Payments",
-                    "content": "Fedimints enable anonymous payments through the use of blinded signatures. The mint is unaware of transactions made by the users or their respective account balance. The mint can only establish a link to a users’ on-chain address when pegging in and out of the mint."
+                    "content": "Fedimints enable anonymous payments through the use of blinded signatures. The mint is unaware of transactions made by the users or their respective account balance. The mint can only establish a link to a users’ onchain address when pegging in and out of the mint."
                 },
                 {
                     "title": "Second Party Custody",
@@ -73,7 +73,7 @@
                 },
                 {
                     "title": "Cheap and fast transactions",
-                    "content": "Fedimints provide low transaction fees for users, as a mint is a central entity and transactions do not require Bitcoin blockspace. Fund deposits can either be done via an on-chain deposit or via the Lightning Network."
+                    "content": "Fedimints provide low transaction fees for users, as a mint is a central entity and transactions do not require Bitcoin blockspace. Fund deposits can either be done via an onchain deposit or via the Lightning Network."
                 },
                 {
                     "title": "General Purpose Smart Contracts",

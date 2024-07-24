@@ -2,9 +2,9 @@
     "slug": "celestia",
     "title": "Celestia",
     "infrastructureType": "Data Availability",
-    "live": "Testnet",
+    "live": "Mainnet",
     "underReview": "yes",
-    "riskFactors": ["High", "High"],
+    "riskFactors": ["", ""],
     "bitcoinSecurity": "No",
     "nativeToken": "TIA",
     "purpose": "General",
@@ -12,29 +12,27 @@
     "bitcoinOnly": false,
     "links": [
         "https://celestia.org",
-        "https://twitter.com/bitcoinlayers",
-        "https://twitter.com/bitcoinlayers",
-        "https://twitter.com/bitcoinlayers",
-        "https://twitter.com/bitcoinlayers",
-        "https://twitter.com/bitcoinlayers"
+        "https://celestia.org",
+        "https://docs.celestia.org/",
+        "https://github.com/celestiaorg",
+        "https://x.com/CelestiaOrg/"
     ],
-    "description": "Under review.",
+    "description": "Celestia is a data availability layer. Scaling protocols that want to save costs on data availability can integrate with Celestia for improved performance with some additional tradeoffs. Celestia is based on CometBFT and additionally supports Data Availablity Sampling (DAS), a mechanism by which anyone running a light client can verify that the Celestia network is making rollup state data available.",
     "sections": [
         {
-            "id": "description",
-            "title": "Description",
+            "id": "selfsubmit",
+            "title": "Process to self-submit information",
             "content": [
                 {
-                    "title": "Description",
-                    "content": "Under review."
+                    "content": "The Bitcoin Layers project prioritizes risk reviews on projects that are in production and accepting users' BTC deposits. Projects on testnet are welcome to submit information about their project. We do not publish risk assessments for projects that are not in production.\n\nInformation on how to submit information on a project can be found in the Knowledge Bits section."
                 }
             ]
         }
     ],
     "knowledgeBits": [
         {
-            "url": "https://bitcoinlayers.org",
-            "displayText": "Bitcoin Layers"
+            "url": "https://github.com/bitcoinlayers/bitcoinlayers/blob/main/SELFSUBMIT.md",
+            "displayText": "Instructions on self-submitting a project."
         }
     ]
 }

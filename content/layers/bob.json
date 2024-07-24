@@ -8,7 +8,7 @@
     "purpose": "Bitcoin Apps",
     "btcBridge": "Various Multisig(s)",
     "settlement": "Offchain",
-    "btcLocked": "1148",
+    "btcLocked": 1142,
     "executionEnv": "Under Development",
     "consensus": "Centralized Sequencer",
     "nativeToken": "ETH",
@@ -53,7 +53,7 @@
             "title": "State validation mechanism, on Ethereum, is under development",
             "content": "BOB inherits no settlement assurances from Bitcoin. BOB is an optimistic rollup, but currently does not have fraud proofs. This means that the BOB sequencer can post malicious state transitions that could result in users losing their funds. Users trust that a challenger, which is currently run by a 4/6 multi-sig, will be online and challenge proposed malicious state transitions."
         }
-    ],   
+    ],
     "sections": [
         {
             "id": "bitcoinsecurity",
@@ -63,7 +63,7 @@
                     "title": "BOB does not inherit any security from Bitcoin consensus participants. Optimine is under development",
                     "content": "BOB is currently developing Optimine: a mechanism that will see Bitcoin miners merge-mine the BOB sequencer. In this design, the BOB sequencer would create rollup blocks, and the miners would validate that the blocks were created correctly. Miners would then give the blocks “Proof-of-Work” validation so they can be executed. This Proof-of-Work validation would take minutes, so it can also act as a soft finalization mechanism as OP Stack chains typically take 7 days for the challenge period to finalize."
                 },
-                
+
                 {
                     "title": "ETH token used to pay fees",
                     "content": "BOB users pay sequencer fees in ETH. BOB operators also pay DA fees in ETH. Users can, however, elect to pay fees with a separate token (e.g. tBTC) to a service provider that will pay sequencer fees, in ETH, on the users’ behalf."

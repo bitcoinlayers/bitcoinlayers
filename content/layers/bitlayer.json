@@ -12,7 +12,7 @@
     "executionEnv": "Offchain",
     "consensus": "Federated Sidechain",
     "nativeToken": "BTR",
-    "feeToken": "BTC",
+    "feeToken": "WBTC",
     "enshrinedBtc": "-",
     "bitcoinOnly": false,
     "links": [
@@ -30,7 +30,7 @@
             "score": 0,
             "tier": "High",
             "title": "Users trust a federated multi-sig to custody their BTC",
-            "content": "BitLayer's current Bitcoin bridge is a federated two-way peg with institutional signers. Coinbase and Sinohope are the two institutions that have been said to be participating in securing the two-way peg. Limited information around the current two-way peg construction is available."
+            "content": "BitLayer's current BTC bridge is a federated two-way peg with institutional signers. BitLayer is working with multiple MPC custody platforms. Coinbase and Sinohope are the two institutions that have been said to be participating in securing the two-way peg. Limited information around the current two-way peg construction is available."
         },
         {
             "category": "Data Availability",
@@ -51,7 +51,7 @@
             "score": 0,
             "tier": "High",
             "title": "No onchain enforcement of BitLayer state transitions",
-            "content": "There is no onchain enforcement of BitLayer state transitions on Bitcoin. Settlement is finalized by permissioned set of validators."
+            "content": "There is no onchain enforcement of BitLayer state transitions on Bitcoin. Settlement is finalized by a permissioned set of validators. The consensus mechanism used by the validators is similar to the Clique consensus protocol found in go-ethereum, but it also includes system contracts that handle staking and the management of validators."
         }
     ],
     "sections": [
@@ -91,6 +91,23 @@
             "id": "technology",
             "title": "Technology",
             "content": [
+                {
+                    "title": "BitVM exploration",
+                    "content": "The BitLayer team has an open repository of research related to BitVM. They are looking to build a trust-minimized bridge between BitLayer and Bitcoin. BitLayer’s documentation site states that the BitVM implementation will be federated."
+                },
+                {
+                    "title": "Alternative DA exploration",
+                    "content": "According to BitLayer’s docs, the team plans on using an alternative solution for data availability. Users would trust the consensus mechanism behind this solution instead of Bitcoin full nodes for the availability of data."
+                },
+                {
+                    "title": "Bitcoin-friendly FRI exploration",
+                    "content": "Fast Reed-Solomon Interactive Oracle of Proximity (FRI) is a cryptographic proof system. Most notably, FRI is used to construct STARKs. BitLayer is exploring the verification of FRI and considers its solution to be ‘Bitcoin-friendly’ – as it does not require OP_CAT or any tools that don’t already exist on Bitcoin today. BitLayer’s system leverages Taptrees for the required Merkle commitments in the proving scheme and BitVM-style BitCommitments for state propagation. BitLayer has not yet open-sourced code or released documentation for this FRI verification system."
+                },
+                {
+                    "title": "OP-DLC exploration",
+                    "content": "Discrete log contract (DLC) is a contract execution framework allowing for two parties to make conditional payments, mediated by an oracle. In the OP-DLC model that BitLayer is developing, the oracle is set up as a federation with fraud proof-style ‘slashing’ conditions on required collateral. BitLayer has not yet open-sourced code or released documentation for this OP-DLC contract execution system."
+                },
+
                 {
                     "title": "Ethereum Virtual Machine",
                     "content": "BitLayer uses an EVM-compatible virtual machine. The Ethereum Virtual Machine is software responsible for smart contract execution for a number of blockchains, namely the Ethereum Network. It uses Solidity/Vyper as its code and is the dominant environment for smart contract execution in the cryptocurrency ecosystem. BitLayer is EVM-compatible, which means that a developer from Ethereum would have less difficulty deploying their applications on BitLayer compared to other execution environments."

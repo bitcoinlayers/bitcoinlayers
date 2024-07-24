@@ -2,39 +2,37 @@
     "slug": "bvm",
     "title": "BVM",
     "infrastructureType": "RaaS",
-    "live": "Announced",
+    "live": "Mainnet",
     "underReview": "yes",
-    "riskFactors": ["High", "High"],
+    "riskFactors": ["", ""],
     "bitcoinSecurity": "No",
-    "nativeToken": "None",
+    "nativeToken": "BVM",
     "purpose": "General",
     "associatedLayers": "-",
     "bitcoinOnly": false,
     "links": [
-        "https://bitcoinvm.network",
-        "https://twitter.com/bitcoinlayers",
-        "https://twitter.com/bitcoinlayers",
-        "https://twitter.com/bitcoinlayers",
-        "https://twitter.com/bitcoinlayers",
-        "https://twitter.com/bitcoinlayers"
+        "https://bvm.network",
+        "https://bvm.network",
+        "https://docs.bvm.network",
+        "https://github.com/trustlesscomputer",
+        "https://x.com/BVMnetwork"
     ],
-    "description": "Under review.",
+    "description": "BVM is a Rollup-as-a-Service provider. It supports the deployment of zkSync Era blockchains on top Supersonic, a blockchain the BVM team manages.",
     "sections": [
         {
-            "id": "description",
-            "title": "Description",
+            "id": "selfsubmit",
+            "title": "Process to self-submit information",
             "content": [
                 {
-                    "title": "Description",
-                    "content": "Under review."
+                    "content": "The Bitcoin Layers project prioritizes risk reviews on projects that are in production and accepting users' BTC deposits. Projects on testnet are welcome to submit information about their project. We do not publish risk assessments for projects that are not in production.\n\nInformation on how to submit information on a project can be found in the Knowledge Bits section."
                 }
             ]
         }
     ],
     "knowledgeBits": [
         {
-            "url": "https://bitcoinlayers.org",
-            "displayText": "Bitcoin Layers"
+            "url": "https://github.com/bitcoinlayers/bitcoinlayers/blob/main/SELFSUBMIT.md",
+            "displayText": "Instructions on self-submitting a project."
         }
     ]
 }

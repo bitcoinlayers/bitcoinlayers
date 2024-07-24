@@ -21,9 +21,6 @@ const lorenzo: Infrastructure = lorenzoJson as Infrastructure;
 import sovereignJson from "../content/infrastructures/sovereign.json" assert { type:
     "json" };
 const sovereign: Infrastructure = sovereignJson as Infrastructure;
-import rollkitJson from "../content/infrastructures/rollkit.json" assert { type:
-    "json" };
-const rollkit: Infrastructure = rollkitJson as Infrastructure;
 import nubitJson from "../content/infrastructures/nubit.json" assert { type:
     "json" };
 const nubit: Infrastructure = nubitJson as Infrastructure;
@@ -33,9 +30,18 @@ const babylon: Infrastructure = babylonJson as Infrastructure;
 import fedimintJson from "../content/infrastructures/fedimint.json" assert { type:
     "json" };
 const fedimint: Infrastructure = fedimintJson as Infrastructure;
-import mirrorJson from "../content/infrastructures/mirror.json" assert { type:
+import dlclinkJson from "../content/infrastructures/dlclink.json" assert { type:
     "json" };
-const mirror: Infrastructure = mirrorJson as Infrastructure;
+const dlclink: Infrastructure = dlclinkJson as Infrastructure;
+import boolJson from "../content/infrastructures/bool.json" assert { type:
+    "json" };
+const bool: Infrastructure = boolJson as Infrastructure;
+import tbtcJson from "../content/infrastructures/tbtc.json" assert { type:
+    "json" };
+const tbtc: Infrastructure = tbtcJson as Infrastructure;
+import cashuJson from "../content/infrastructures/cashu.json" assert { type:
+    "json" };
+const cashu: Infrastructure = cashuJson as Infrastructure;
 
 export const allInfrastructures: Infrastructure[] = [
     astria,
@@ -45,11 +51,13 @@ export const allInfrastructures: Infrastructure[] = [
     espresso,
     lorenzo,
     sovereign,
-    rollkit,
     nubit,
     babylon,
     fedimint,
-    mirror,
+    dlclink,
+    bool,
+    tbtc,
+    cashu,
 ];
 export const allInfrastructureSlugs: string[] = allInfrastructures.map(
     (infrastructure) => infrastructure.slug,

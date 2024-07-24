@@ -1,0 +1,38 @@
+{
+    "slug": "dlclink",
+    "title": "DLC Link",
+    "infrastructureType": "BTC Wrapper",
+    "live": "Mainnet",
+    "underReview": "yes",
+    "riskFactors": ["", ""],
+    "bitcoinSecurity": "yes",
+    "nativeToken": "-",
+    "purpose": "General",
+    "associatedLayers": "-",
+    "bitcoinOnly": false,
+    "links": [
+        "https://www.dlc.link/",
+        "https://www.dlc.link/",
+        "https://github.com/DLC-link/gitbook-docs",
+        "https://github.com/dlc-link",
+        "https://x.com/dlc_link"
+    ],
+    "description": "DLC Link supports the development of dlcBTC, a Bitcoin wrapper that leverages discrete log contracts.",
+    "sections": [
+        {
+            "id": "selfsubmit",
+            "title": "Process to self-submit information",
+            "content": [
+                {
+                    "content": "The Bitcoin Layers project prioritizes risk reviews on projects that are in production and accepting users' BTC deposits. Projects on testnet are welcome to submit information about their project. We do not publish risk assessments for projects that are not in production.\n\nInformation on how to submit information on a project can be found in the Knowledge Bits section."
+                }
+            ]
+        }
+    ],
+    "knowledgeBits": [
+        {
+            "url": "https://github.com/bitcoinlayers/bitcoinlayers/blob/main/SELFSUBMIT.md",
+            "displayText": "Instructions on self-submitting a project."
+        }
+    ]
+}

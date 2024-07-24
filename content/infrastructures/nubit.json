@@ -4,37 +4,35 @@
     "infrastructureType": "Data Availability",
     "live": "Announced",
     "underReview": "yes",
-    "riskFactors": ["High", "High"],
+    "riskFactors": ["", ""],
     "bitcoinSecurity": "No",
-    "nativeToken": "None",
+    "nativeToken": "-",
     "purpose": "General",
     "associatedLayers": "-",
     "bitcoinOnly": false,
     "links": [
         "https://nubit.org",
-        "https://twitter.com/bitcoinlayers",
-        "https://twitter.com/bitcoinlayers",
-        "https://twitter.com/bitcoinlayers",
-        "https://twitter.com/bitcoinlayers",
-        "https://twitter.com/bitcoinlayers"
+        "https://nubit.org",
+        "https://docs.nubit.org/developer-guides/introduction",
+        "https://github.com/RiemaLabs",
+        "https://x.com/Nubit_org"
     ],
-    "description": "Under review.",
+    "description": "Nubit is building a data availability layer that uses BTC within its staking protocol. Nubit aims to provide rollup-style blockchains with more throughput in exchange for some additional tradeoffs.",
     "sections": [
         {
-            "id": "description",
-            "title": "Description",
+            "id": "selfsubmit",
+            "title": "Process to self-submit information",
             "content": [
                 {
-                    "title": "Description",
-                    "content": "Under review."
+                    "content": "The Bitcoin Layers project prioritizes risk reviews on projects that are in production and accepting users' BTC deposits. Projects on testnet are welcome to submit information about their project. We do not publish risk assessments for projects that are not in production.\n\nInformation on how to submit information on a project can be found in the Knowledge Bits section."
                 }
             ]
         }
     ],
     "knowledgeBits": [
         {
-            "url": "https://bitcoinlayers.org",
-            "displayText": "Bitcoin Layers"
+            "url": "https://github.com/bitcoinlayers/bitcoinlayers/blob/main/SELFSUBMIT.md",
+            "displayText": "Instructions on self-submitting a project."
         }
     ]
 }

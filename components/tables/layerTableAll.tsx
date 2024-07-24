@@ -56,7 +56,7 @@ const LayerTableAll = ({ data, headers }: Props) => {
         [key: string]: boolean | null;
     }>({});
     const [mobileActiveTab, setMobileActiveTab] = useState<TableTabKey>("Type");
-    const [showMainnet, setShowMainnet] = useState(true);
+    // const [showMainnet, setShowMainnet] = useState(true);
     // const [showBitcoinonly, setShowBitcoinonly] = useState(false);
 
     useEffect(() => {
@@ -101,8 +101,11 @@ const LayerTableAll = ({ data, headers }: Props) => {
                     valueB = b.nativeToken;
                     break;
                 case "BTC Locked":
-                    valueA = a.btcLocked;
-                    valueB = b.btcLocked;
+                    valueA = parseFloat(a.btcLocked.toString());
+                    valueB = parseFloat(b.btcLocked.toString());
+
+                    if (isNaN(valueA)) valueA = -Infinity;
+                    if (isNaN(valueB)) valueB = -Infinity;
                     break;
                 default:
                     return 0;
@@ -139,7 +142,7 @@ const LayerTableAll = ({ data, headers }: Props) => {
     const filteredData = sortedData.filter((item) => {
         if (filter === "Mainnet") return item.live === "Mainnet";
         if (filter === "Testnet") return item.live !== "Mainnet";
-        return true;
+        return true; // All
     });
 
     // const filteredData = sortedData
@@ -329,7 +332,7 @@ const LayerTableAll = ({ data, headers }: Props) => {
                                         {item.underReview === "no" ? (
                                             <Risk layer={item} />
                                         ) : (
-                                            <div className="px-5 text_table_important">
+                                            <div className="px-5 text_table_important font-light">
                                                 Under review
                                             </div>
                                         )}
@@ -350,7 +353,7 @@ const LayerTableAll = ({ data, headers }: Props) => {
                                     mobileActiveTab === "Unit of Account") && (
                                     <td className="lg:px-6 px-4 py-3 lg:py-4 border-stroke_tertiary text_table_important">
                                         <div className="flex items-center">
-                                            {item.nativeToken
+                                            {item.feeToken
                                                 .toLowerCase()
                                                 .includes("btc") && (
                                                 <Image
@@ -361,7 +364,7 @@ const LayerTableAll = ({ data, headers }: Props) => {
                                                     className="mr-2"
                                                 />
                                             )}
-                                            {item.nativeToken}
+                                            {item.feeToken}
                                         </div>
                                     </td>
                                 )}
@@ -370,7 +373,9 @@ const LayerTableAll = ({ data, headers }: Props) => {
                                     <td className="lg:px-6 px-4 py-3 lg:py-4 border-r border-stroke_tertiary text_table_important">
                                         {item.underReview === "yes" ||
                                         !Number(item.btcLocked) ? (
-                                            <div>-</div>
+                                            <div className="font-light">
+                                                Under review
+                                            </div>
                                         ) : (
                                             <div>
                                                 ₿{" "}

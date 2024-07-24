@@ -1,7 +1,7 @@
 {
     "slug": "zulu",
     "title": "Zulu",
-    "layerType": "Bitvimium",
+    "layerType": "Sovereign Rollup",
     "live": "Testnet",
     "underReview": "yes",
     "riskFactors": ["", "", "", ""],

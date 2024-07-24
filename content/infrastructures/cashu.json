@@ -3,11 +3,16 @@
     "title": "Cashu",
     "infrastructureType": "Chaumian Ecash Protocol",
     "live": "Mainnet",
-    "underReview": "yes",
+    "underReview": "no",
     "riskFactors": ["", ""],
     "bitcoinSecurity": "No",
-    "nativeToken": "None",
+<<<<<<< Fedimint-Update
+    "nativeToken": "BTC",
     "purpose": "Ecash mint",
+=======
+    "nativeToken": "BTC",
+    "purpose": "Federated Ecash mint",
+>>>>>>> main
     "associatedLayers": "Lightning Network, nostr",
     "bitcoinOnly": true,
     "links": [

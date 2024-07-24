@@ -56,19 +56,19 @@
     ],
     "sections": [
         {
-        "id": "selfsubmit",
-        "title": "Process to self-submit information",
-        "content": [
-            {
-                "content": "The Bitcoin Layers project prioritizes risk reviews on projects that are in production and accepting users' BTC deposits. Projects on testnet are welcome to submit information about their project. We do not publish risk assessments for projects that are not in production.\n\nInformation on how to submit information on a project can be found in the Knowledge Bits section."
-            }
-        ]
-    }
-],
-"knowledgeBits": [
-    {
-        "url": "https://github.com/bitcoinlayers/bitcoinlayers/blob/main/self-submit.md",
-        "displayText": "Instructions on self-submitting a project."
-    }
-]
+            "id": "selfsubmit",
+            "title": "Process to self-submit information",
+            "content": [
+                {
+                    "content": "The Bitcoin Layers project prioritizes risk reviews on projects that are in production and accepting users' BTC deposits. Projects on testnet are welcome to submit information about their project. We do not publish risk assessments for projects that are not in production.\n\nInformation on how to submit information on a project can be found in the Knowledge Bits section."
+                }
+            ]
+        }
+    ],
+    "knowledgeBits": [
+        {
+            "url": "https://github.com/bitcoinlayers/bitcoinlayers/blob/main/SELFSUBMIT.md",
+            "displayText": "Instructions on self-submitting a project."
+        }
+    ]
 }

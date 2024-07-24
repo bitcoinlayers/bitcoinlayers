@@ -12,8 +12,8 @@
     "executionEnv": "Offchain",
     "consensus": "Centralized Sequencer",
     "nativeToken": "MERL",
-    "feeToken": "-",
-    "enshrinedBtc": "-",
+    "feeToken": "WBTC",
+    "enshrinedBtc": "WBTC",
     "bitcoinOnly": false,
     "links": [
         "https://merlinchain.io/",
@@ -23,7 +23,7 @@
         "https://docs.merlinchain.io/merlin-docs/developers",
         "https://twitter.com/MerlinLayer2"
     ],
-    "description": "Merlin is an implementation of Polygon CDK chain. It likely is running a Polygon chain on top of a permissioned fork of the EVM. Its documentation shares that it will add Bitcoin native security in the future, but no code or research has been released on this topic.",
+    "description": "Merlin is an implementation of Polygon CDK chain. It likely is running a Polygon chain on top of a permissioned fork of the EVM. It plans to integrate with the Bsquared Hub L1 in the future.",
     "riskAnalysis": [
         {
             "category": "Bridge Custody",
@@ -43,8 +43,8 @@
             "category": "Network Operator",
             "score": 0,
             "tier": "High",
-            "title": "Blocks are produced by a centralized sequencer and users cannot propose their own state transitions",
-            "content": "Merlin chain blocks are currently produced by a centralized sequencer."
+            "title": "Blocks are produced by a centralized sequencer and forced inclusion mechanism is unverified",
+            "content": "Merlin chain blocks are currently produced by a centralized sequencer. If the sequencer were to go down, or censor users, users would force include transactions to an L1 that is not Bitcoin. We have not verified if Merlin's forced inclusion mechanism is currently live."
         },
         {
             "category": "Settlement Assurance",
@@ -60,12 +60,12 @@
             "title": "Additional Considerations",
             "content": [
                 {
-                    "title": "All facets of Merlin chain are managed by a centralized operator. Some code is not open-source",
-                    "content": "Merlin Chain contracts are all currently upgradeable by an admin. The contracts it has listed on its CDKValdidium can not be verified. It is likely that Merlin Chain is running their own permissioned fork of an EVM chain for their L1 blockchain. Because we cannot verify the L1 blockchain Merlin Chain is currently settling to, we have listed it as a high risk chain for depositing funds."
+                    "title": "Some code is not open-source",
+                    "content": "Merlin Chain contracts are all currently upgradeable by an admin. The contracts it has listed on its CDKValdidium can not be verified on its respective L1 blockchain."
                 },
                 {
                     "title": "Merlin L1 smart contract not verified",
-                    "content": "We are currenly unable to verify if the smart contracts listed in Merlin's Github are in fact the contracts used on its mainnet. The main contract for Polygoin CDKValidium on Ethereum was previously listed as the Merlin L1 contract in its documentation, but that was removed and no longer listed. Merlin chain have announced they will deploy their chain on Bsquared Network's L1 blockchain, which is a permissioned fork of Ethermint. New contracts have been listed in its Github, but their L1 RPC points to a different chain that is not Bsquared Network."
+                    "content": "We are currenly unable to verify if the smart contracts listed in Merlin's Github are in fact the contracts used on its mainnet. The main contract for Polygoin CDKValidium on Ethereum was previously listed as the Merlin L1 contract in its documentation, but that was removed and no longer listed. Merlin chain have announced they will deploy their chain on Bsquared Network's L1 blockchain, which is a permissioned network. New contracts have been listed in its Github, but their L1 RPC points to a different chain that is not Bsquared Network."
                 }
             ]
         },

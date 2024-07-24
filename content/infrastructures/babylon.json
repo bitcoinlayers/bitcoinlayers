@@ -1,40 +1,38 @@
 {
     "slug": "babylon",
     "title": "Babylon",
-    "infrastructureType": "Restaking",
+    "infrastructureType": "Staking",
     "live": "Announced",
     "underReview": "yes",
-    "riskFactors": ["High", "High"],
+    "riskFactors": ["", ""],
     "bitcoinSecurity": "No",
-    "nativeToken": "None",
+    "nativeToken": "-",
     "purpose": "General",
     "associatedLayers": "-",
     "bitcoinOnly": false,
     "links": [
         "https://babylonchain.io",
-        "https://twitter.com/bitcoinlayers",
-        "https://twitter.com/bitcoinlayers",
-        "https://twitter.com/bitcoinlayers",
-        "https://twitter.com/bitcoinlayers",
-        "https://twitter.com/bitcoinlayers"
+        "https://babylonchain.io",
+        "https://docs.babylonchain.io/",
+        "https://github.com/babylonchain",
+        "https://x.com/babylon_chain"
     ],
-    "description": "Under review.",
+    "description": "Babylon namely supports BTC staking that improves security for Proof-of-Stake (PoS) sidechains. The staking protocol enables participants to stake BTC to secure their preferred sidechain. Babylon also acts as a timestamping protocol to improve PoS sidechain's resistance to long-range attacks.",
     "sections": [
         {
-            "id": "description",
-            "title": "Description",
+            "id": "selfsubmit",
+            "title": "Process to self-submit information",
             "content": [
                 {
-                    "title": "Description",
-                    "content": "Under review."
+                    "content": "The Bitcoin Layers project prioritizes risk reviews on projects that are in production and accepting users' BTC deposits. Projects on testnet are welcome to submit information about their project. We do not publish risk assessments for projects that are not in production.\n\nInformation on how to submit information on a project can be found in the Knowledge Bits section."
                 }
             ]
         }
     ],
     "knowledgeBits": [
         {
-            "url": "https://bitcoinlayers.org",
-            "displayText": "Bitcoin Layers"
+            "url": "https://github.com/bitcoinlayers/bitcoinlayers/blob/main/SELFSUBMIT.md",
+            "displayText": "Instructions on self-submitting a project."
         }
     ]
 }

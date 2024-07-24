@@ -8,7 +8,7 @@
     "purpose": "Payments",
     "btcBridge": "2-2 Multi-sig",
     "settlement": "Onchain",
-    "btcLocked": 5304,
+    "btcLocked": 5320,
     "executionEnv": "Optimistic",
     "consensus": "Peer-to-Peer",
     "nativeToken": "BTC",
@@ -73,6 +73,20 @@
                 {
                     "title": "Opening and closing channels contributes to the security budget",
                     "content": "Lightning does not directly contribute to Bitcoin’s security budget, but users do pay onchain transaction fees to miners when they open, and close, Lightning channels. ."
+                }
+            ]
+        },
+        {
+            "id": "additionalconsiderations",
+            "title": "Additional Considerations",
+            "content": [
+                {
+                    "title": "Self-hosted DA friction leading users to centralized solutions",
+                    "content": "Non-technical users may find it difficult to self-host their own Lightning node, which can lead them to use custodial solutions. This can lead to a centralization of the network, as users are not interacting directly. A 2024 report from River found that 80% of Lightning Network liquidity is in channels hosted by centralized service providers."
+                },
+                {
+                    "title": "Replacement cycling attacks",
+                    "content": "A vulnerability was disclosed in 2023, referred to as a replacement cycling attack. This attack requires two open channels with a user which are used together to cycle transactions a user for the duration of their challenge period"
                 }
             ]
         },
