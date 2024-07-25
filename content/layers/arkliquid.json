@@ -142,16 +142,12 @@
     ],
     "knowledgeBits": [
         {
-            "url": "https://ark-protocol.org/",
-            "displayText": "Ark Protocol Website"
-        },
-        {
             "url": "https://arkdev.info",
             "displayText": "Ark Developer Hub"
         },
         {
-            "url": "https://ark-protocol.org",
-            "displayText": "Ark Protocol Deep Dive"
+            "url": "https://gist.github.com/RubenSomsen/a394beb1dea9e47e981216768e007454?permalink_comment_id=4633382#simplest-ark-explanation",
+            "displayText": "Simplest Ark Explanation"
         }
     ]
 }
