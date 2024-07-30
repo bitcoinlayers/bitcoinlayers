@@ -253,7 +253,7 @@ const LayerTableAll = ({ data, headers }: Props) => {
                                         : "text-gray-700"
                                 }`}
                             >
-                                BTC Only
+                                Bitcoin Only
                             </div>
                         </div>
                     </div>

@@ -126,7 +126,7 @@ export default function Navbar(): ReactElement {
                                         onClick={closeSubmenu}
                                     >
                                         <div className="text-zinc-800 text-base font-medium leading-normal">
-                                            BTC Only
+                                            Bitcoin Only
                                         </div>
                                         <div className="self-stretch text-slate-500 text-sm font-normal leading-tight">
                                             Layers and infrastructure that only

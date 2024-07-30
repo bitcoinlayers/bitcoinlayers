@@ -124,7 +124,7 @@ export default function Footer(): ReactElement {
                                             Infrastructure
                                         </SectionItem>
                                         <SectionItem href="/bitcoinonly">
-                                            BTC Only
+                                            Bitcoin Only
                                         </SectionItem>
                                         {/* <SectionItem href="/opcode">
                                             Opcodes

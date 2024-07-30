@@ -1,7 +1,7 @@
 {
     "slug": "bridgeta",
     "title": "Bridgeta (Demo)",
-    "bridgeType": "BTC only",
+    "bridgeType": "Bitcoin only",
     "live": "Mainnet",
     "underReview": "yes",
     "riskFactors": ["Medium", "Low", "High", "Medium", "Medium"],
