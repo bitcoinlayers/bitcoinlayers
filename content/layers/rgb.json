@@ -14,7 +14,7 @@
     "nativeToken": "-",
     "feeToken": "-",
     "enshrinedBtc": "-",
-    "bitcoinOnly": false,
+    "bitcoinOnly": true,
     "links": [
         "https://rgb.tech/",
         "https://www.rgbfaq.com/",

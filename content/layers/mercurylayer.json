@@ -14,7 +14,7 @@
     "nativeToken": "BTC",
     "feeToken": "BTC",
     "enshrinedBtc": "BTC",
-    "bitcoinOnly": false,
+    "bitcoinOnly": true,
     "links": [
         "https://mercurylayer.com/",
         "https://github.com/commerceblock/mercurylayer/blob/dev/docs/README.md",
