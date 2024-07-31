@@ -28,9 +28,9 @@
         {
             "category": "Bridge Custody",
             "score": 0,
-            "tier": "Unverified",
-            "title": "❓ We have not verified the signers behind the two-way peg",
-            "content": "We are currently reviewing the bridge program related to Merlin. Due to there being no information signers of the multi-sig custodying users' funds, we classify the bridge program as high risk. The vault that mints BTC on Merlin is an upgradeable contract."
+            "tier": "High",
+            "title": "Users deposit funds into a wallet managed by Cobo",
+            "content": "When users deposit funds into Merlin, they deposit funds into a MPC wallet managed by Cobo, a institutional custodian. Information on how many signers participate in this MPC scheme is not available."
         },
         {
             "category": "Data Availability",
