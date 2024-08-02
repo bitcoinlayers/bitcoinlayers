@@ -246,7 +246,9 @@ const BitcoinonlyTable = ({ data, headers }: Props) => {
                                 }`}
                                 key={item.slug}
                                 onClick={() =>
-                                    handleRowClick(`/layers/${item.slug}`)
+                                    handleRowClick(`/${isLayer(item)
+                                        ? "layers"
+                                        : "infrastructure"}/${item.slug}`)
                                 }
                             >
                                 <td className="lg:px-6 px-4 py-4 font-semibold whitespace-nowrap border-r lg:border-r-0 border-stroke_tertiary text_table_important text-table_body">
