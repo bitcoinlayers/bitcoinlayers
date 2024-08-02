@@ -18,9 +18,9 @@
     "links": [
         "https://mezo.org/",
         "https://mezo.org/",
-        "https://info.mezo.org/proof-of-hodl?ref=blog.mezo.org",
-        "https://info.mezo.org/proof-of-hodl?ref=blog.mezo.org",
-        "https://info.mezo.org/proof-of-hodl?ref=blog.mezo.org",
+        "https://info.mezo.org/proof-of-hodl",
+        "https://info.mezo.org/proof-of-hodl",
+        "https://info.mezo.org/proof-of-hodl",
         "https://twitter.com/mezonetwork"
     ],
     "description": "Mezo is building a general purpose sidechain protocol that will support general purpose applications. It will run a CometBFT consensus protocol that is secured by staking BTC and the Mezo token. It will use tBTC for its Bitcoin bridge.",
