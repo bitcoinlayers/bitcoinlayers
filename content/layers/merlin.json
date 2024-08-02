@@ -29,8 +29,8 @@
             "category": "Bridge Custody",
             "score": 0,
             "tier": "High",
-            "title": "Users deposit funds into a wallet managed by Cobo",
-            "content": "When users deposit funds into Merlin, they deposit funds into a MPC wallet managed by Cobo, a institutional custodian. Information on how many signers participate in this MPC scheme is not available."
+            "title": "Users deposit funds into a MPC wallet managed by a custodian",
+            "content": "When users deposit funds into Merlin, they deposit funds into a MPC wallet managed by Cobo, a institutional custodian. Information on how many signers participate in this MPC scheme is not available. Merlin has stated that more players are being added into this custody scheme."
         },
         {
             "category": "Data Availability",
@@ -56,20 +56,6 @@
     ],
     "sections": [
         {
-            "id": "additionalconsiderations",
-            "title": "Additional Considerations",
-            "content": [
-                {
-                    "title": "Some code is not open-source",
-                    "content": "Merlin Chain contracts are all currently upgradeable by an admin. The contracts it has listed on its CDKValdidium can not be verified on its respective L1 blockchain."
-                },
-                {
-                    "title": "Merlin L1 smart contract not verified",
-                    "content": "We are currenly unable to verify if the smart contracts listed in Merlin's Github are in fact the contracts used on its mainnet. The main contract for Polygoin CDKValidium on Ethereum was previously listed as the Merlin L1 contract in its documentation, but that was removed and no longer listed. Merlin chain have announced they will deploy their chain on Bsquared Network's L1 blockchain, which is a permissioned network. New contracts have been listed in its Github, but their L1 RPC points to a different chain that is not Bsquared Network."
-                }
-            ]
-        },
-        {
             "id": "bitcoinsecurity",
             "title": "Bitcoin Security",
             "content": [
@@ -88,6 +74,30 @@
                 {
                     "title": "Merlin does not contribute to the security budget",
                     "content": "Merlin does not currently contribute to the Bitcoin security budget."
+                }
+            ]
+        },
+        {
+            "id": "withdrawals",
+            "title": "Additional Considerations",
+            "content": [
+                {
+                    "title": "Some code is not open-source",
+                    "content": "Merlin Chain contracts are all currently upgradeable by an admin. The contracts it has listed on its CDKValdidium can not be verified on its respective L1 blockchain."
+                }
+            ]
+        },
+        {
+            "id": "additionalconsiderations",
+            "title": "Additional Considerations",
+            "content": [
+                {
+                    "title": "Some code is not open-source",
+                    "content": "Merlin Chain contracts are all currently upgradeable by an admin. The contracts it has listed on its CDKValdidium can not be verified on its respective L1 blockchain."
+                },
+                {
+                    "title": "Merlin L1 smart contract not verified",
+                    "content": "We are currenly unable to verify if the smart contracts listed in Merlin's Github are in fact the contracts used on its mainnet. The main contract for Polygoin CDKValidium on Ethereum was previously listed as the Merlin L1 contract in its documentation, but that was removed and no longer listed. Merlin chain have announced they will deploy their chain on Bsquared Network's L1 blockchain, which is a permissioned network. New contracts have been listed in its Github, but their L1 RPC points to a different chain that is not Bsquared Network."
                 }
             ]
         },

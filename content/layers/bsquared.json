@@ -28,16 +28,16 @@
         {
             "category": "Bridge Custody",
             "score": 0,
-            "tier": "Unverified",
-            "title": "Users likely interact with federated multi-sig. ❓ We have not verified the signers behind the two-way peg",
-            "content": "The EVM bridge contracts and addresses for the operator(s) of the Bitcoin multi-sig are currently not available. Users should remain cautious when depositing BTC into Bsquared Network."
+            "tier": "High",
+            "title": "Users deposit funds into a MPC protocl managed by Bsquared Network and a custodian",
+            "content": "When users deposit funds into Bsquared, they deposit funds into a MPC wallet managed by the Bsquared Network team and Cobo, a institutional custodian. Information on how many signers participate in this MPC scheme is not available. Bsquared has stated that more players are being added into this custody scheme."
         },
         {
             "category": "Data Availability",
             "score": 0,
             "tier": "High",
             "title": "DA requirement is fulfilled by three permissioned validators",
-            "content": "Sequencer batches are posted to the Bsquared Network L1. This network consists of three, permissioned validators who are responsible for making the data readily available."
+            "content": "Sequencer batches are posted to the Bsquared Network L1. This network consists of a permissioned validator set who is responsible for making the data readily available."
         },
         {
             "category": "Network Operators",
@@ -61,7 +61,7 @@
             "content": [
                 {
                     "title": "All facets of Bsquared Network are managed by a centralized operator. Some code is not open-source.",
-                    "content": "Bsquared Network is operated by permissioned validators on its L1 chain and its L2 chain. These validators are likely managed by the company building Bsquared Network. Code, and documentation, related to Bsquared Network's two-way pegs is not open-source, and no information on the signers is publicly available. Users are trusting centralized parties to not steal their funds, extract MEV, or censor their transactions. Bsquared Network's current mainnet has no integration with the Bitcoin mainchain."
+                    "content": "Bsquared Network is operated by permissioned validators on its L1 chain and its L2 chain. These validators are likely managed by the company building Bsquared Network. Code, and documentation, related to Bsquared Network's two-way pegs is not open-source. Users are trusting centralized parties to not steal their funds, extract MEV, or censor their transactions."
                 }
             ]
         },
