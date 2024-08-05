@@ -42,8 +42,8 @@ const InfrastructureMenu: React.FC<{ infrastructure: Infrastructure }> = ({
         }
     }
     return (
-        <nav className="sticky top-0 h-screen w-full overflow-y-auto pt-6">
-            <div className="flex flex-col justify-start items-start gap-4">
+        <nav className="">
+            <div className="flex lg:flex-col justify-start items-start lg:gap-4 gap-2 z-40">
                 {/*  menu is updating with coloring to match the live section */}
                 {[
                     { id: "overview", title: "Overview" },
