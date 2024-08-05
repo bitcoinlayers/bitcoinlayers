@@ -55,7 +55,7 @@ const LayerTableAll = ({ data, headers }: Props) => {
     const [sortOrder, setSortOrder] = useState<{
         [key: string]: boolean | null;
     }>({});
-    const [mobileActiveTab, setMobileActiveTab] = useState<TableTabKey>("Type");
+    const [mobileActiveTab, setMobileActiveTab] = useState<TableTabKey>("Risk");
     // const [showMainnet, setShowMainnet] = useState(true);
     // const [showBitcoinonly, setShowBitcoinonly] = useState(false);
 
@@ -234,7 +234,6 @@ const LayerTableAll = ({ data, headers }: Props) => {
                     </div>
                 </div>
             </div>
-
             {/* <div className="flex lg:mb-6 justify-center mt-6 mb-6 lg:mt-0 relative z-20">
                 <div className="justify-start items-start gap-4 inline-flex">
                     <div
@@ -260,8 +259,8 @@ const LayerTableAll = ({ data, headers }: Props) => {
                 </div>
             </div> */}
             <MobileView className="flex justify-center">
-                <div className="justify-center lg:items-start gap-4 inline-flex py-3">
-                    {headers.slice(2).map((_item, ind) => {
+                <div className="justify-center lg:items-start gap-1 inline-flex py-3">
+                    {headers.slice(1).map((_item, ind) => {
                         const isAllowedTab = [
                             "Risk",
                             "Type",
@@ -327,12 +326,12 @@ const LayerTableAll = ({ data, headers }: Props) => {
                                         </span>
                                     </div>
                                 </td>
-                                {!isMobile && (
+                                {(!isMobile || mobileActiveTab === "Risk") && (
                                     <td className="relative px-2 border-stroke_tertiary text_table_important">
                                         {item.underReview === "no" ? (
                                             <Risk layer={item} />
                                         ) : (
-                                            <div className="px-5 text_table_important font-light">
+                                            <div className="lg:px-5 px-1 text_table_important font-light">
                                                 Under review
                                             </div>
                                         )}
