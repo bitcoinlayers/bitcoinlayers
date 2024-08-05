@@ -52,7 +52,7 @@ const Risk: React.FC<RiskProps> = ({ layer }) => {
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
         >
-            <div className="w-44 p-4 justify-start items-center gap-4 inline-flex">
+            <div className="lg:w-44 w-34 lg:p-4 p-2 justify-start items-center gap-4 inline-flex lg:gap-4 gap-1">
                 <RiskIcon
                     riskFactor={riskLevels[0]?.tier}
                     IconComponent={RiskIconBridge}

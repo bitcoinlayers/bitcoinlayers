@@ -40,7 +40,6 @@ export default async function LayerPage({
                         title={layer.title}
                         src={`/logos/${layer.slug}.png`}
                     />{" "}
-                    {/**TODO fix img sizes. they're blurry here */}
                 </div>
                 <div className="flex-grow flex items-center">
                     <h1 className="layer_header flex-grow">{layer.title}</h1>
