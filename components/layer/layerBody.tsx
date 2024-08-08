@@ -22,7 +22,7 @@ const LayerBody: React.FC<{ layer: Layer }> = ({ layer }) => {
                                     className={`self-stretch justify-between items-center inline-flex mt-6`}
                                 >
                                     <div className="body_subsection">
-                                        {content.title}
+                                        {parseTextWithLinks(content.title)}
                                     </div>
                                 </div>
                             )}
