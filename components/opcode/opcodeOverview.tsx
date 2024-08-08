@@ -1,6 +1,7 @@
 import React from "react";
 import { Opcode } from "./opcodeProps";
 import Image from "next/image";
+import { parseTextWithLinks } from "@/util/parseTextWithLinks";
 
 const LinkButton = ({
     href,
@@ -48,7 +49,7 @@ const Categories: React.FC<{ opcode: Opcode }> = ({ opcode }) => {
 const Description: React.FC<{ opcode: Opcode }> = ({ opcode }) => {
     return (
         <div className="self-stretch text-text_secondary">
-            {opcode.description}
+            {parseTextWithLinks(opcode.description)}
         </div>
     );
 };

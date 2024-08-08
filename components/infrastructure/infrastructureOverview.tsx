@@ -1,6 +1,7 @@
 import React from "react";
 import { Infrastructure } from "./infrastructureProps";
 import Image from "next/image";
+import { parseTextWithLinks } from "@/util/parseTextWithLinks";
 
 const LinkButton = ({
     href,
@@ -54,7 +55,7 @@ const Description: React.FC<{ infrastructure: Infrastructure }> = ({
 }) => {
     return (
         <div className="self-stretch text-text_secondary">
-            {infrastructure.description}
+            {parseTextWithLinks(infrastructure.description)}
         </div>
     );
 };

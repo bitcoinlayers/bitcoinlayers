@@ -2,6 +2,7 @@ import React from "react";
 import { Layer } from "./layerProps";
 import Image from "next/image";
 import LayerDiamond from "./layerDiamond";
+import { parseTextWithLinks } from "@/util/parseTextWithLinks";
 
 const LinkButton = ({
     href,
@@ -76,7 +77,7 @@ const Categories: React.FC<{ layer: Layer }> = ({ layer }) => {
 const Description: React.FC<{ layer: Layer }> = ({ layer }) => {
     return (
         <div className="self-stretch text-text_secondary">
-            {layer.description}
+            {parseTextWithLinks(layer.description)}
         </div>
     );
 };
