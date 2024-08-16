@@ -56,12 +56,7 @@ const Methodology: React.FC = () => {
         <li>Onchain: Protocol uses Bitcoin for data availability - low risk</li>
         <br />
         <li>
-            Offchain via alternative consensus protocol: Data is primarily stored on another publicly available, decentralized network and there is a mechanism to verify that the data is made available - medium risk
-            <ul>
-                <li>If the network sees N < 21 operators participating in the network, then it is high risk</li>
-                <li>If the network sees N > 100 operators participating in the network, then it is low risk</li>
-                <li>If no mechanism to detect fraud (e.g. DA withholding attack), then high risk</li>
-            </ul>
+            Offchain via alternative consensus protocol: Data is primarily stored on another publicly available network and anyone can participate in running a full node, and there is a mechanism to verify that the data is made available - medium risk
         </li>
         <br />
         <li>Offchain DAC: State updates are stored via a centralized (or permissioned) committee and Bitcoin full nodes, and users, cannot access that data - high risk</li>
