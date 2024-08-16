@@ -37,7 +37,7 @@
             "score": 0,
             "tier": "High",
             "title": "Data availability requirement is satisfied by Libre's permissioned validator set",
-            "content": "The data availability and storage requirement is satisfied by Libre validators. Anyone can participate as a validator after receiving permission from the current validator."
+            "content": "The data availability and storage requirement is satisfied by Libre validators. Anyone can participate as a validator after receiving permission from the current validator set to join the candidate pool."
         },
         {
             "category": "Block Production",
