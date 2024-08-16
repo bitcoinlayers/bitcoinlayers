@@ -35,8 +35,8 @@
             "category": "Data Availability",
             "score": 0,
             "tier": "Medium",
-            "title": "Data is stored on BEVM archive nodes. Anyone can run BEVM archive node",
-            "content": "An archive node is responsible for preserving the historical blockchain data. Users can run their own archive node and access the data at any time by utilizing the node as an RPC. Public endpoints deploy archival nodes to facilitate blockchain data to the users."
+            "title": "Data is made available via validator nodes and additionally stored on archive nodes. Anyone can run BEVM node",
+            "content": "BEVM full nodes are responsible for satisying BEVM's data availability requirement. Archive nodes are additionally responsible for preserving the historical blockchain data. Users can run their own archive node and access the data at any time by utilizing the node as an RPC. Public endpoints deploy archival nodes to facilitate blockchain data to the users. As long as there is one archive node online, users can recover the full history of the BEVM blockchain."
         },
         {
             "category": "Network operators",
