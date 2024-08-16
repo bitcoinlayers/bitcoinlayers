@@ -37,7 +37,7 @@
             "score": 0,
             "tier": "High",
             "title": "Data availability requirement is satisfied by Libre's permissioned validator set",
-            "content": "The data availability and storage requirement is satisfied by Libre validators. Anyone can participate as a validator after receiving permission from the current validator.\n\nWe are currently reviewing State History nodes impact on the data availability requirement."
+            "content": "The data availability and storage requirement is satisfied by Libre validators. Anyone can participate as a validator after receiving permission from the current validator."
         },
         {
             "category": "Block Production",
