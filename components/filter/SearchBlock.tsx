@@ -3,20 +3,22 @@
 import { useRef, useState } from "react";
 import { useOnClickOutside } from "@/hooks/useOnClickOutside";
 import { allLayers } from "@/util/layer_index";
+import { allInfrastructures } from "@/util/infrastructure_index";
 import Image from "next/image";
 import { Layer } from "../layer/layerProps";
+import { Infrastructure } from "../infrastructure/infrastructureProps";
 import { SearchResult } from "./SearchResult";
+
+type SearchableItem = Layer | Infrastructure;
 
 const SearchBlock = () => {
     const [inputValue, setInputValue] = useState("");
     const [isInputFocused, setInputFocused] = useState(false);
     const ref = useRef<HTMLDivElement>(null);
     const inputRef = useRef<HTMLInputElement>(null);
-    const [filteredLayers, setFilteredLayers] = useState<Layer[]>([]);
+    const [filteredItems, setFilteredItems] = useState<SearchableItem[]>([]);
 
-    useOnClickOutside(ref, () => {
-        setInputFocused(false);
-    });
+    useOnClickOutside(ref, () => setInputFocused(false));
 
     const shouldRenderSearchResult = () => {
         return isInputFocused && inputValue;
@@ -26,27 +28,19 @@ const SearchBlock = () => {
         const input = evt.target.value;
         const sanitizedValue = input.replace(/"/g, "");
         setInputValue(sanitizedValue);
-        // Filter layer by title
         if (!input) return [];
-        const filteredLayers = allLayers.filter((layer) =>
-            layer.title
-                .toLowerCase()
-                .slice(0, input.length)
-                .includes(input.toLowerCase()),
+        // const filteredLayers = allLayers.filter((layer) =>
+        const filtered = [...allLayers, ...allInfrastructures].filter(item =>
+            item.title.toLowerCase().slice(0, input.length).includes(input.toLowerCase())
         );
-        setFilteredLayers(filteredLayers || []);
+        setFilteredItems(filtered || []);
     };
 
     return (
-        <div
-            className="w-[22rem] relative mt-5"
-            ref={ref}
-            role="presentation"
-            onClick={() => {
-                inputRef.current?.focus();
-                setInputFocused(true);
-            }}
-        >
+        <div className="w-[22rem] relative mt-5" ref={ref} role="presentation" onClick={() => {
+            inputRef.current?.focus();
+            setInputFocused(true);
+        }}>
             <input
                 type="text"
                 placeholder="Find Layer"
@@ -57,11 +51,7 @@ const SearchBlock = () => {
             />
 
             <Image
-                src={
-                    isInputFocused
-                        ? "/icons/search-red.svg"
-                        : "/icons/search.svg"
-                }
+                src={isInputFocused ? "/icons/search-red.svg" : "/icons/search.svg"}
                 alt="Search icon"
                 className="absolute outline bottom-3 right-6 cursor-pointer"
                 width={21}
@@ -69,7 +59,7 @@ const SearchBlock = () => {
             />
 
             {shouldRenderSearchResult() && (
-                <SearchResult searchResult={filteredLayers} />
+                <SearchResult searchResult={filteredItems} />
             )}
         </div>
     );

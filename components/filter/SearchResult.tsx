@@ -1,31 +1,41 @@
+import React, { useState } from "react";
 import Image from "next/image";
-import { Layer } from "../layer/layerProps";
 import Link from "next/link";
-import { useState } from "react";
+import { Layer } from "../layer/layerProps";
+import { Infrastructure } from "../infrastructure/infrastructureProps";
 
-export const SearchResult = ({ searchResult }: { searchResult: Layer[] }) => {
+type SearchableItem = Layer | Infrastructure;
+
+export const SearchResult = ({ searchResult }: { searchResult: SearchableItem[] }) => {
+    const getItemLink = (item: SearchableItem) => {
+        return isLayer(item) ? `/layers/${item.slug}` : `/infrastructure/${item.slug}`;
+    };
+
     return (
         <>
             {searchResult.length > 0 ? (
                 <div className="absolute z-30 w-full rounded-xl border-2 border-[#fe4e18] bg-white px-1 shadow-md text-black mt-2">
-                    <div className=" max-h-[15rem] overflow-auto">
-                        {searchResult?.map((layer) => (
-                            <Link
-                                href={`/layers/${layer.slug}`}
-                                key={layer.slug}
-                            >
+
+
+                <div className=" max-h-[15rem] overflow-auto">
+                {searchResult?.map((item) => (
+                             <Link href={getItemLink(item)} key={item.slug}>
                                 <div
-                                    key={layer.title}
+                                    key={item.title}
                                     className="flex items-center gap-3 text-[1rem] py-3 hover:bg-[#f2f6fd] px-4 rounded my-1"
                                 >
-                                    {layer.slug ? (
-                                        <InfrastructureImage
-                                            src={`/logos/${layer.slug}.png`}
-                                            title={layer.title}
+                                    {item.slug ? (
+                                        <SearchItemImage
+                                            src={`/logos/${item.slug}.png`}
+                                            title={item.title}
                                         />
                                     ) : null}
-                                    {layer.title}
+                                    {item.title}
                                 </div>
+
+
+
+                                
                             </Link>
                         ))}
                     </div>
@@ -35,7 +45,7 @@ export const SearchResult = ({ searchResult }: { searchResult: Layer[] }) => {
     );
 };
 
-function InfrastructureImage({ src, title }: { src: string; title: string }) {
+const SearchItemImage = ({ src, title }: { src: string; title: string }) => {
     const [imageSrc, setImageSrc] = useState(src);
 
     const handleError = () => {
@@ -51,4 +61,12 @@ function InfrastructureImage({ src, title }: { src: string; title: string }) {
             onError={handleError}
         />
     );
+};
+
+function isLayer(item: SearchableItem): item is Layer {
+    return (item as Layer).layerType !== undefined;
+}
+
+function isInfrastructure(item: SearchableItem): item is Infrastructure {
+    return (item as Infrastructure).infrastructureType !== undefined;
 }
