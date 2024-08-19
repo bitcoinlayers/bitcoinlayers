@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import externalIcon from '/public/icons/external.png';
 import type { ReactElement } from "react";
 
 const SectionHeader = ({ children }: { children: React.ReactNode }) => (
@@ -40,6 +41,13 @@ const SectionItemExternal = ({
             <div className="text-slate-500 text-sm font-normal leading-tight">
                 {children}
             </div>
+            <Image
+                src={externalIcon}
+                alt="External Link"
+                width={10}
+                height={10}
+                className="ml-1"
+            />
         </Link>
     </div>
 );
@@ -157,7 +165,7 @@ export default function Footer(): ReactElement {
                                         <SectionItem href="/contribute">
                                             Contribute
                                         </SectionItem>
-                                        <SectionItemExternal href="https://medium.com/@bitcoinlayers">
+                                        <SectionItemExternal href="https://www.lxresearch.co/">
                                             Blog
                                         </SectionItemExternal>
                                     </div>

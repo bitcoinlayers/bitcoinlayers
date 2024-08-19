@@ -72,9 +72,9 @@ export default function Navbar(): ReactElement {
                             <Image
                                 src="/icons/vector.svg"
                                 alt="Submenu Indicator"
-                                width={8}
-                                height={8}
-                                className={`ml-2 transition-transform ${
+                                width={10}
+                                height={10}
+                                className={`ml-1 transition-transform ${
                                     submenuOpen ? "" : "rotate-180"
                                 }`}
                             />
@@ -180,10 +180,17 @@ export default function Navbar(): ReactElement {
                     </li>
                     <li className="hidden lg:block">
                         <Link
-                            href="https://medium.com/@bitcoinlayers"
+                            href="https://www.lxresearch.co/"
                             target="_blank"
+                            className="flex items-center gap-1"
                         >
                             Blog
+                            <Image
+                                src="/icons/external.png"
+                                alt="External Link"
+                                width={10}
+                                height={10}
+                            />
                         </Link>
                     </li>
                 </ul>
@@ -226,20 +233,27 @@ export default function Navbar(): ReactElement {
                     </li>
                     <li className="">
                         <Link
-                            href="https://bitcoin-layers.gitbook.io/bitcoin-layers"
-                            target="_blank"
+                            href="/methodology"
                             className="text-black"
+                            onClick={closeSheet}
                         >
                             Methodology
                         </Link>
                     </li>
                     <li className="">
                         <Link
-                            className="text-black"
-                            href="https://medium.com/@bitcoinlayers"
+                            className="text-black flex items-center gap-1"
+                            href="https://www.lxresearch.co/"
                             target="_blank"
+                            onClick={closeSheet}
                         >
                             Blog
+                            <Image
+                                src="/icons/external.png"
+                                alt="External Link"
+                                width={10}
+                                height={10}
+                            />
                         </Link>
                     </li>
                 </ul>
