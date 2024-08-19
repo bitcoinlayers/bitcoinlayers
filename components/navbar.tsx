@@ -72,9 +72,9 @@ export default function Navbar(): ReactElement {
                             <Image
                                 src="/icons/vector.svg"
                                 alt="Submenu Indicator"
-                                width={10}
-                                height={10}
-                                className={`ml-1 transition-transform ${
+                                width={9}
+                                height={9}
+                                className={`ml-2 transition-transform ${
                                     submenuOpen ? "" : "rotate-180"
                                 }`}
                             />
@@ -182,7 +182,7 @@ export default function Navbar(): ReactElement {
                         <Link
                             href="https://www.lxresearch.co/"
                             target="_blank"
-                            className="flex items-center gap-1"
+                            className="flex items-center gap-2"
                         >
                             Blog
                             <Image
