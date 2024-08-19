@@ -25,8 +25,8 @@ const Methodology: React.FC = () => {
                         <Image
                             src="/icons/vector.svg"
                             alt="Toggle Arrow"
-                            width={20}
-                            height={20}
+                            width={16}
+                            height={16}
                         />
                     </div>
 
