@@ -4,6 +4,7 @@ import Image from "next/image";
 import TableHeader from "@/components/tables/tableHeader";
 import { Infrastructure } from "@/components/infrastructure/infrastructureProps";
 import { BrowserView, MobileView, isMobile } from "react-device-detect";
+import Link from "next/link";
 
 type TableTabKey =
     | "Type"
@@ -53,19 +54,11 @@ const InfrastructureTable = ({ data, headers }: Props) => {
     );
 
     const [sortedData, setSortedData] = useState(data);
-    const [sortOrder, setSortOrder] = useState<{
-        [key: string]: boolean | null;
-    }>({});
     const [mobileActiveTab, setMobileActiveTab] = useState<TableTabKey>("Type");
-    const [showMainnet, setShowMainnet] = useState(true);
 
     useEffect(() => {
         handleSort("Name", true);
     }, []);
-
-    const handleRowClick = (destination: string) => {
-        router.push(destination);
-    };
 
     const handleSort = (header: string, ascending: boolean) => {
         const sorted = [...sortedData].sort((a, b) => {
@@ -103,7 +96,6 @@ const InfrastructureTable = ({ data, headers }: Props) => {
             return 0;
         });
         setSortedData(sorted);
-        setSortOrder({ [header]: ascending });
     };
 
     const handleFilter = (header: string, value: string) => {
@@ -123,69 +115,6 @@ const InfrastructureTable = ({ data, headers }: Props) => {
     const mobileTableHeaders = headers.filter(
         (_item) => _item.name === mobileActiveTab || _item.name === "Name",
     );
-
-    // return (
-    //     <div className="overflow-x-auto bg-lightsecondary rounded-xl mx-auto border border-stroke_tertiary">
-    //         <table className="bg-lightsecondary table-fixed sm:w-full text-sm text-left rtl:text-right">
-    //             <thead className="bg-table_header">
-    //                 <tr className="border-b border-stroke_tertiary">
-    //                     <th className="px-6 py-6 font-medium text-text_table_header table_header border-l border-t border-stroke_tertiary first:rounded-tl-xl">
-    //                         Name
-    //                     </th>
-    //                     <th className="px-6 py-6 font-medium text-text_table_header table_header border-t border-stroke_tertiary">
-    //                         Bitcoin Security
-    //                     </th>
-    //                     <th className="px-6 py-6 font-medium text-text_table_header table_header border-t border-stroke_tertiary">
-    //                         Type
-    //                     </th>
-    //                     <th className="px-6 py-6 font-medium text-text_table_header table_header border-t border-stroke_tertiary">
-    //                         Purpose
-    //                     </th>
-    //                     <th className="px-6 py-6 font-medium text-text_table_header table_header border-t border-r border-stroke_tertiary first:rounded-tr-xl">
-    //                         Associated Layers
-    //                     </th>
-    //                 </tr>
-    //             </thead>
-    //             <tbody className="bg-white gap-x-8 border-t border-stroke_tertiary text_table_important">
-    //                 {data.map((item, index) => (
-    //                     <tr
-    //                         className={`cursor-pointer ${
-    //                             index === data.length - 1
-    //                                 ? ""
-    //                                 : "border-b border-stroke_tertiary"
-    //                         }`}
-    //                         key={index}
-    //                         onClick={() =>
-    //                             handleRowClick(`/infrastructure/${item.slug}`)
-    //                         }
-    //                     >
-    //                         <td className="px-6 py-4 font-semibold whitespace-nowrap border-l border-stroke_tertiary text_table_important">
-    //                             <div className="flex items-center">
-    //                                 <InfrastructureImage
-    //                                     src={`/logos/${item.slug}.png`}
-    //                                     title={item.title}
-    //                                 />
-    //                                 <span className="ml-2">{item.title}</span>
-    //                             </div>
-    //                         </td>
-    //                         <td className="px-6 py-4 border-stroke_tertiary">
-    //                             {item.bitcoinSecurity}
-    //                         </td>
-    //                         <td className="px-6 py-4 border-stroke_tertiary">
-    //                             {item.infrastructureType}
-    //                         </td>
-    //                         <td className="px-6 py-4 border-stroke_tertiary">
-    //                             {item.purpose}
-    //                         </td>
-    //                         <td className="px-6 py-4 border-r border-stroke_tertiary">
-    //                             {item.associatedLayers}
-    //                         </td>
-    //                     </tr>
-    //                 ))}
-    //             </tbody>
-    //         </table>
-    //     </div>
-    // );
 
     return (
         <div className="px-6 lg:px-0 w-full">
@@ -251,7 +180,6 @@ const InfrastructureTable = ({ data, headers }: Props) => {
                     </div>
                 </div>
             </div>
-
             <MobileView className="flex justify-center">
                 <div className="justify-center lg:items-start gap-4 inline-flex py-3">
                     {headers.slice(1).map((_item, ind) => {
@@ -304,14 +232,12 @@ const InfrastructureTable = ({ data, headers }: Props) => {
                                     index === filteredData.length - 1 ? "" : ""
                                 }`}
                                 key={item.slug}
-                                onClick={() =>
-                                    handleRowClick(
-                                        `/infrastructure/${item.slug}`,
-                                    )
-                                }
                             >
                                 <td className="lg:px-6 px-4 py-4 font-semibold whitespace-nowrap border-r lg:border-r-0 border-stroke_tertiary text_table_important text-table_body">
-                                    <div className="flex items-center">
+                                    <Link
+                                        href={`/infrastructure/${item.slug}`}
+                                        className="flex items-center"
+                                    >
                                         <InfrastructureImage
                                             src={`/logos/${item.slug}.png`}
                                             title={item.title}
@@ -319,52 +245,62 @@ const InfrastructureTable = ({ data, headers }: Props) => {
                                         <span className="ml-2 lg:word-break-none">
                                             {item.title}
                                         </span>
-                                    </div>
+                                    </Link>
                                 </td>
 
                                 {(!isMobile || mobileActiveTab === "Type") && (
                                     <td className="lg:px-6 px-4 py-3 lg:py-4 border-stroke_tertiary text_table_important">
-                                        {item.infrastructureType}
+                                        <Link
+                                            href={`/infrastructure/${item.slug}`}
+                                        >
+                                            {" "}
+                                            {item.infrastructureType}
+                                        </Link>
                                     </td>
                                 )}
-                                {/* {(!isMobile ||
-                                    mobileActiveTab === "Purpose") && (
-                                    <td className="lg:px-6 px-4 py-3 lg:py-4 border-stroke_tertiary text_table_important">
-                                        <div className="flex items-center">
-                                            {item.purpose}
-                                        </div>
-                                    </td>
-                                )} */}
                                 {(!isMobile ||
                                     mobileActiveTab === "Status") && (
                                     <td className="lg:px-6 px-4 py-3 lg:py-4 border-stroke_tertiary text_table_important">
-                                        {item.live}
+                                        <Link
+                                            href={`/infrastructure/${item.slug}`}
+                                        >
+                                            {" "}
+                                            {item.live}
+                                        </Link>
                                     </td>
                                 )}
                                 {(!isMobile ||
                                     mobileActiveTab === "Unit of Account") && (
                                     <td className="lg:px-6 px-4 py-3 lg:py-4 border-stroke_tertiary text_table_important">
-                                        <div className="flex items-center">
-                                            {item.nativeToken
-                                                .toLowerCase()
-                                                .includes("btc") && (
-                                                <Image
-                                                    src="/btc.svg"
-                                                    alt="BTC logo"
-                                                    width={20}
-                                                    height={20}
-                                                    className="mr-2"
-                                                />
-                                            )}
-                                            {item.nativeToken}
-                                        </div>
+                                        <Link
+                                            href={`/infrastructure/${item.slug}`}
+                                        >
+                                            <div className="flex items-center">
+                                                {item.nativeToken
+                                                    .toLowerCase()
+                                                    .includes("btc") && (
+                                                    <Image
+                                                        src="/btc.svg"
+                                                        alt="BTC logo"
+                                                        width={20}
+                                                        height={20}
+                                                        className="mr-2"
+                                                    />
+                                                )}
+                                                {item.nativeToken}
+                                            </div>
+                                        </Link>
                                     </td>
                                 )}
                                 {(!isMobile ||
                                     mobileActiveTab ===
                                         "Associated Layers") && (
                                     <td className="lg:px-6 px-4 py-3 lg:py-4 border-r border-stroke_tertiary text_table_important">
-                                        {item.associatedLayers}
+                                        <Link
+                                            href={`/infrastructure/${item.slug}`}
+                                        >
+                                            {item.associatedLayers}
+                                        </Link>
                                     </td>
                                 )}
                             </tr>

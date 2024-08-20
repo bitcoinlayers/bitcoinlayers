@@ -6,6 +6,7 @@ import { Infrastructure } from "@/components/infrastructure/infrastructureProps"
 import Risk from "@/components/layer/layerTableItemRisk";
 import TableHeader from "@/components/tables/tableHeader";
 import { BrowserView, MobileView, isMobile } from "react-device-detect";
+import Link from "next/link";
 
 type TableTabKey = "Risk" | "Type" | "Status" | "Category";
 
@@ -57,19 +58,11 @@ const BitcoinonlyTable = ({ data, headers }: Props) => {
         "Mainnet",
     );
     const [sortedData, setSortedData] = useState(data);
-    const [sortOrder, setSortOrder] = useState<{
-        [key: string]: boolean | null;
-    }>({});
     const [mobileActiveTab, setMobileActiveTab] = useState<TableTabKey>("Risk");
 
     useEffect(() => {
-        // Default sorting by Name alphabetically on first load
         handleSort("Name", true);
     }, []);
-
-    const handleRowClick = (destination: string) => {
-        router.push(destination);
-    };
 
     const handleSort = (header: string, ascending: boolean) => {
         const sorted = [...sortedData].sort((a, b) => {
@@ -107,7 +100,6 @@ const BitcoinonlyTable = ({ data, headers }: Props) => {
             return 0;
         });
         setSortedData(sorted);
-        setSortOrder({ [header]: ascending });
     };
 
     const handleFilter = (header: string, value: string) => {
@@ -118,7 +110,7 @@ const BitcoinonlyTable = ({ data, headers }: Props) => {
         if (!item.bitcoinOnly) return false;
         if (filter === "Mainnet") return item.live === "Mainnet";
         if (filter === "Testnet") return item.live !== "Mainnet";
-        return true; // All
+        return true;
     });
 
     const handleMobileTabClick = (tab: TableTabKey) => {
@@ -245,14 +237,16 @@ const BitcoinonlyTable = ({ data, headers }: Props) => {
                                     index === filteredData.length - 1 ? "" : ""
                                 }`}
                                 key={item.slug}
-                                onClick={() =>
-                                    handleRowClick(`/${isLayer(item)
-                                        ? "layers"
-                                        : "infrastructure"}/${item.slug}`)
-                                }
                             >
                                 <td className="lg:px-6 px-4 py-4 font-semibold whitespace-nowrap border-r lg:border-r-0 border-stroke_tertiary text_table_important text-table_body">
-                                    <div className="flex items-center">
+                                    <Link
+                                        href={`/${
+                                            isLayer(item)
+                                                ? "layers"
+                                                : "infrastructure"
+                                        }/${item.slug}`}
+                                        className="flex items-center"
+                                    >
                                         <LayerImage
                                             src={`/logos/${item.slug}.png`}
                                             title={item.title}
@@ -260,46 +254,78 @@ const BitcoinonlyTable = ({ data, headers }: Props) => {
                                         <span className="ml-2 truncate lg:word-break-none">
                                             {item.title}
                                         </span>
-                                    </div>
+                                    </Link>
                                 </td>
                                 {(!isMobile || mobileActiveTab === "Risk") && (
-                                     <td className="relative px-2 border-stroke_tertiary text_table_important">
-                                     {isLayer(item) ? (
-                                         item.underReview === "no" ? (
-                                             <Risk layer={item} />
-                                         ) : (
-                                            <div className="lg:px-5 px-1 text_table_important font-light">
-                                            Under review
-                                        </div>
-                                         )
-                                     ) : (
-                                         <div className="lg:px-5 px-1 text_table_important">
-                                             Not applicable
-                                         </div>
-                                     )}
-                                 </td>
+                                    <td className="relative px-2 border-stroke_tertiary text_table_important">
+                                        <Link
+                                            href={`/${
+                                                isLayer(item)
+                                                    ? "layers"
+                                                    : "infrastructure"
+                                            }/${item.slug}`}
+                                        >
+                                            {isLayer(item) ? (
+                                                item.underReview === "no" ? (
+                                                    <Risk layer={item} />
+                                                ) : (
+                                                    <div className="lg:px-5 px-1 text_table_important font-light">
+                                                        Under review
+                                                    </div>
+                                                )
+                                            ) : (
+                                                <div className="lg:px-5 px-1 text_table_important">
+                                                    Not applicable
+                                                </div>
+                                            )}
+                                        </Link>
+                                    </td>
                                 )}
                                 {(!isMobile || mobileActiveTab === "Type") && (
                                     <td className="lg:px-6 px-4 py-3 lg:py-4 border-stroke_tertiary text_table_important">
-                                        {isLayer(item)
-                                            ? item.layerType
-                                            : isInfrastructure(item)
-                                              ? item.infrastructureType
-                                              : ""}
+                                        <Link
+                                            href={`/${
+                                                isLayer(item)
+                                                    ? "layers"
+                                                    : "infrastructure"
+                                            }/${item.slug}`}
+                                        >
+                                            {isLayer(item)
+                                                ? item.layerType
+                                                : isInfrastructure(item)
+                                                  ? item.infrastructureType
+                                                  : ""}
+                                        </Link>
                                     </td>
                                 )}
                                 {(!isMobile ||
                                     mobileActiveTab === "Status") && (
                                     <td className="lg:px-6 px-4 py-3 lg:py-4 border-stroke_tertiary text_table_important">
-                                        {item.live}
+                                        <Link
+                                            href={`/${
+                                                isLayer(item)
+                                                    ? "layers"
+                                                    : "infrastructure"
+                                            }/${item.slug}`}
+                                        >
+                                            {item.live}
+                                        </Link>
                                     </td>
                                 )}
                                 {(!isMobile ||
                                     mobileActiveTab === "Category") && (
                                     <td className="lg:px-6 px-4 py-3 lg:py-4 border-stroke_tertiary text_table_important">
-                                        {isLayer(item)
-                                            ? "Layer"
-                                            : "Infrastructure"}
+                                        <Link
+                                            href={`/${
+                                                isLayer(item)
+                                                    ? "layers"
+                                                    : "infrastructure"
+                                            }/${item.slug}`}
+                                        >
+                                            {isLayer(item)
+                                                ? "Layer"
+                                                : "Infrastructure"}
+                                        </Link>
                                     </td>
                                 )}
                             </tr>

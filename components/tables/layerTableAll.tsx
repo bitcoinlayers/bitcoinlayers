@@ -5,6 +5,7 @@ import { Layer } from "@/components/layer/layerProps";
 import Risk from "@/components/layer/layerTableItemRisk";
 import TableHeader from "@/components/tables/tableHeader";
 import { BrowserView, MobileView, isMobile } from "react-device-detect";
+import Link from "next/link";
 
 type TableTabKey =
     | "Risk"
@@ -50,35 +51,13 @@ const LayerTableAll = ({ data, headers }: Props) => {
     const [filter, setFilter] = useState<"Mainnet" | "Testnet" | "All">(
         "Mainnet",
     );
-    // const [filters, setFilters] = useState<{ [key: string]: string[] }>({});
+
     const [sortedData, setSortedData] = useState(data);
-    const [sortOrder, setSortOrder] = useState<{
-        [key: string]: boolean | null;
-    }>({});
     const [mobileActiveTab, setMobileActiveTab] = useState<TableTabKey>("Risk");
-    // const [showMainnet, setShowMainnet] = useState(true);
-    // const [showBitcoinonly, setShowBitcoinonly] = useState(false);
 
     useEffect(() => {
-        // Default sorting by Name alphabetically on first load
         handleSort("Name", true);
-
-        // Check the URL to set the BTC filter
-        // const urlParams = new URLSearchParams(window.location.search);
-
-        // if (
-        //     urlParams.has("btc") ||
-        //     urlParams.has("btc-only") ||
-        //     urlParams.has("maxi") ||
-        //     urlParams.has("laser-eyes")
-        // ) {
-        //     setShowBitcoinonly(true);
-        // }
     }, []);
-
-    const handleRowClick = (destination: string) => {
-        router.push(destination);
-    };
 
     const handleSort = (header: string, ascending: boolean) => {
         const sorted = [...sortedData].sort((a, b) => {
@@ -115,52 +94,17 @@ const LayerTableAll = ({ data, headers }: Props) => {
             return 0;
         });
         setSortedData(sorted);
-        setSortOrder({ [header]: ascending });
     };
 
     const handleFilter = (header: string, value: string) => {
         setFilter(value as "Mainnet" | "Testnet" | "All");
     };
 
-    // const handleFilter = (header: string, value: string) => {
-    //     setFilter((prevFilters) => {
-    //         const newFilters = { ...prevFilters };
-    //         if (!newFilters[header]) {
-    //             newFilters[header] = [];
-    //         }
-    //         if (newFilters[header].includes(value)) {
-    //             newFilters[header] = newFilters[header].filter(
-    //                 (v) => v !== value,
-    //             );
-    //         } else {
-    //             newFilters[header].push(value);
-    //         }
-    //         return newFilters;
-    //     });
-    // };
-
     const filteredData = sortedData.filter((item) => {
         if (filter === "Mainnet") return item.live === "Mainnet";
         if (filter === "Testnet") return item.live !== "Mainnet";
-        return true; // All
+        return true;
     });
-
-    // const filteredData = sortedData
-    //     .filter((item) => {
-    //         return Object.keys(filters).every((header) => {
-    //             if (!filters[header].length) return true;
-    //             switch (header) {
-    //                 case "Type":
-    //                     return filters[header].includes(item.layerType);
-    //                 case "Status":
-    //                     return filters[header].includes(item.live);
-    //                 default:
-    //                     return true;
-    //             }
-    //         });
-    //     })
-    //     .filter((item) => (showMainnet ? item.live === "Mainnet" : true));
-    // .filter((item) => (showBitcoinonly ? item.bitcoinOnly == true : true));
 
     const handleMobileTabClick = (tab: TableTabKey) => {
         setMobileActiveTab(tab);
@@ -234,30 +178,6 @@ const LayerTableAll = ({ data, headers }: Props) => {
                     </div>
                 </div>
             </div>
-            {/* <div className="flex lg:mb-6 justify-center mt-6 mb-6 lg:mt-0 relative z-20">
-                <div className="justify-start items-start gap-4 inline-flex">
-                    <div
-                        className={`h-[30px] rounded-full border-2 justify-center items-center gap-1 flex cursor-pointer ${
-                            showBitcoinonly
-                                ? "bg-green-500 border-green-600"
-                                : "bg-gray-300 border-gray-400"
-                        }`}
-                        onClick={() => setShowBitcoinonly(!showBitcoinonly)}
-                    >
-                        <div className="grow shrink basis-0 h-[30px] px-4 py-[5px] justify-center items-center gap-1.5 flex">
-                            <div
-                                className={`text-center text-sm font-medium leading-tight ${
-                                    showBitcoinonly
-                                        ? "text-white"
-                                        : "text-gray-700"
-                                }`}
-                            >
-                                Bitcoin Only
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> */}
             <MobileView className="flex justify-center">
                 <div className="justify-center lg:items-start gap-1 inline-flex py-3">
                     {headers.slice(1).map((_item, ind) => {
@@ -304,6 +224,7 @@ const LayerTableAll = ({ data, headers }: Props) => {
                         onSort={handleSort}
                         onFilter={handleFilter}
                     />
+
                     <tbody className="bg-white gap-x-8 border-t border-stroke_tertiary text_table_important">
                         {filteredData.map((item, index) => (
                             <tr
@@ -311,12 +232,12 @@ const LayerTableAll = ({ data, headers }: Props) => {
                                     index === filteredData.length - 1 ? "" : ""
                                 }`}
                                 key={item.slug}
-                                onClick={() =>
-                                    handleRowClick(`/layers/${item.slug}`)
-                                }
                             >
                                 <td className="lg:px-6 px-4 py-4 font-semibold whitespace-nowrap border-r lg:border-r-0 border-stroke_tertiary text_table_important text-table_body">
-                                    <div className="flex items-center">
+                                    <Link
+                                        href={`/layers/${item.slug}`}
+                                        className="flex items-center"
+                                    >
                                         <LayerImage
                                             src={`/logos/${item.slug}.png`}
                                             title={item.title}
@@ -324,34 +245,43 @@ const LayerTableAll = ({ data, headers }: Props) => {
                                         <span className="ml-2 truncate lg:word-break-none">
                                             {item.title}
                                         </span>
-                                    </div>
+                                    </Link>
                                 </td>
                                 {(!isMobile || mobileActiveTab === "Risk") && (
                                     <td className="relative px-2 border-stroke_tertiary text_table_important">
-                                        {item.underReview === "no" ? (
-                                            <Risk layer={item} />
-                                        ) : (
-                                            <div className="lg:px-5 px-1 text_table_important font-light">
-                                                Under review
-                                            </div>
-                                        )}
+                                        <Link href={`/layers/${item.slug}`}>
+                                            {item.underReview === "no" ? (
+                                                <Risk layer={item} />
+                                            ) : (
+                                                <div className="lg:px-5 px-1 text_table_important font-light">
+                                                    Under review
+                                                </div>
+                                            )}
+                                        </Link>
                                     </td>
                                 )}
                                 {(!isMobile || mobileActiveTab === "Type") && (
                                     <td className="lg:px-6 px-4 py-3 lg:py-4 border-stroke_tertiary text_table_important">
-                                        {item.layerType}
+                                        <Link href={`/layers/${item.slug}`}>
+                                            {item.layerType}
+                                        </Link>
                                     </td>
                                 )}
                                 {(!isMobile ||
                                     mobileActiveTab === "Status") && (
                                     <td className="lg:px-6 px-4 py-3 lg:py-4 border-stroke_tertiary text_table_important">
-                                        {item.live}
+                                        <Link href={`/layers/${item.slug}`}>
+                                            {item.live}
+                                        </Link>
                                     </td>
                                 )}
                                 {(!isMobile ||
                                     mobileActiveTab === "Unit of Account") && (
                                     <td className="lg:px-6 px-4 py-3 lg:py-4 border-stroke_tertiary text_table_important">
-                                        <div className="flex items-center">
+                                        <Link
+                                            href={`/layers/${item.slug}`}
+                                            className="flex items-center"
+                                        >
                                             {item.feeToken
                                                 .toLowerCase()
                                                 .includes("btc") && (
@@ -364,25 +294,27 @@ const LayerTableAll = ({ data, headers }: Props) => {
                                                 />
                                             )}
                                             {item.feeToken}
-                                        </div>
+                                        </Link>
                                     </td>
                                 )}
                                 {(!isMobile ||
                                     mobileActiveTab === "BTC Locked") && (
                                     <td className="lg:px-6 px-4 py-3 lg:py-4 border-r border-stroke_tertiary text_table_important">
-                                        {item.underReview === "yes" ||
-                                        !Number(item.btcLocked) ? (
-                                            <div className="font-light">
-                                                Under review
-                                            </div>
-                                        ) : (
-                                            <div>
-                                                ₿{" "}
-                                                {Number(
-                                                    item.btcLocked,
-                                                ).toLocaleString()}
-                                            </div>
-                                        )}
+                                        <Link href={`/layers/${item.slug}`}>
+                                            {item.underReview === "yes" ||
+                                            !Number(item.btcLocked) ? (
+                                                <div className="font-light">
+                                                    Under review
+                                                </div>
+                                            ) : (
+                                                <div>
+                                                    ₿{" "}
+                                                    {Number(
+                                                        item.btcLocked,
+                                                    ).toLocaleString()}
+                                                </div>
+                                            )}
+                                        </Link>
                                     </td>
                                 )}
                             </tr>
