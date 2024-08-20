@@ -8,7 +8,7 @@
     "purpose": "BTC Applications",
     "btcBridge": "Third Party Bridge",
     "settlement": "Offchain",
-    "btcLocked": 5432,
+    "btcLocked": 3901,
     "executionEnv": "Offchain",
     "consensus": "Delegated Proof-of-Stake",
     "nativeToken": "BB",
