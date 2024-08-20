@@ -115,10 +115,6 @@
                 {
                     "title": "Faster block times",
                     "content": "BitLayer is currently producing blocks every two seconds which provides a better user experience than using the Bitcoin mainchain."
-                },
-                {
-                    "title": "BitVM being researched",
-                    "content": "BitLayer is currently researching how BitVM can improve trust assumptions related to its two-way peg with Bitcoin. The BitLayer team has an open repository of research related to BitVM. BitLayer’s documentation site states that the BitVM implementation will be federated."
                 }
             ]
         },
