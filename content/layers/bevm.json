@@ -8,7 +8,7 @@
     "purpose": "General",
     "btcBridge": "Federated Multisig",
     "settlement": "Offchain",
-    "btcLocked": 114,
+    "btcLocked": 84,
     "executionEnv": "Offchain",
     "consensus": "Proof-of-Stake",
     "nativeToken": "BEVM",
@@ -59,21 +59,21 @@
             "title": "Bitcoin Security",
             "content": [
                 {
-                "title": "Users cannot unilaterally exit",
-                "content": "Users cannot unilaterally exit from the BEVM chain with an L1 Bitcoin transaction."
+                    "title": "Users cannot unilaterally exit",
+                    "content": "Users cannot unilaterally exit from the BEVM chain with an L1 Bitcoin transaction."
                 },
-            {
-                "title": "No base layer MEV, but users trust validators to not reorder their transactions",
-                "content": "Base layer MEV does not exist. Users, on the BEVM chain, trust that the validators don’t reorder their transactions. Additionally, Validator elections take place every 1 hour."
-              },
-            {
-                "title": "The BEVM token is used to incentivize network participants",
-                "content": "BEVM token has been issued. BEVM tokens will potentially be used to incentivize the active and honest validators."
-              },
-            {
-                "title": "The BEVM network does not pay fees to Bitcoin miners",
-                "content": "BEVM does not pay fees to Bitcoin miners."
-              }
+                {
+                    "title": "No base layer MEV, but users trust validators to not reorder their transactions",
+                    "content": "Base layer MEV does not exist. Users, on the BEVM chain, trust that the validators don’t reorder their transactions. Additionally, Validator elections take place every 1 hour."
+                },
+                {
+                    "title": "The BEVM token is used to incentivize network participants",
+                    "content": "BEVM token has been issued. BEVM tokens will potentially be used to incentivize the active and honest validators."
+                },
+                {
+                    "title": "The BEVM network does not pay fees to Bitcoin miners",
+                    "content": "BEVM does not pay fees to Bitcoin miners."
+                }
             ]
         },
         {
