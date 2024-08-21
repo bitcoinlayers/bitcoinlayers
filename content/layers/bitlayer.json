@@ -1,6 +1,6 @@
 {
     "slug": "bitlayer",
-    "title": "BitLayer",
+    "title": "Bitlayer",
     "layerType": "Sidechain",
     "live": "Mainnet",
     "underReview": "no",
@@ -23,35 +23,35 @@
         "https://github.com/bitlayer-org",
         "https://twitter.com/BitlayerLabs"
     ],
-    "description": "BitLayer's mainnet v1 is a federated sidechain. It is building towards a blockchain that uses an alternative system for data availability. It supports an EVM execution environment with plans to support other VMs. Its roadmap sees it adding support for a BitVM-style bridge, but currently, the bridge is managed by a federation.",
+    "description": "Bitlayer's mainnet v1 is a federated sidechain. It is building towards a blockchain that uses an alternative system for data availability. It supports an EVM execution environment with plans to support other VMs. Its roadmap sees it adding support for a BitVM-style bridge, but currently, the bridge is managed by a federation.",
     "riskAnalysis": [
         {
             "category": "Bridge Custody",
             "score": 0,
             "tier": "High",
             "title": "Users trust a federated multi-sig to custody their BTC",
-            "content": "BitLayer's current BTC bridge is a federated two-way peg with institutional signers. BitLayer is working with multiple MPC custody platforms. Coinbase and Sinohope are the two institutions that have been said to be participating in securing the two-way peg. Limited information around the current two-way peg construction is available."
+            "content": "Bitlayer's current BTC bridge is a federated two-way peg with institutional signers. Bitlayer is working with multiple MPC custody platforms. Coinbase and Sinohope are the two institutions that have been said to be participating in securing the two-way peg. Limited information around the current two-way peg construction is available."
         },
         {
             "category": "Data Availability",
             "score": 0,
             "tier": "Medium",
             "title": "Data is stored offchain with node software open-source",
-            "content": "BitLayer does not currently use Bitcoin for data availability. The data availability requirement is currently fufilled by BitLayer full nodes. The BitLayer node software is open source and anyone can run a node and validate the state of BitLayer."
+            "content": "Bitlayer does not currently use Bitcoin for data availability. The data availability requirement is currently fufilled by Bitlayer full nodes. The Bitlayer node software is open source and anyone can run a node and validate the state of Bitlayer."
         },
         {
             "category": "Network Operators",
             "score": 0,
             "tier": "High",
-            "title": "BitLayer is operated by a permissioned validator set",
-            "content": "BitLayer blocks are currently produced by a permissioned validator set. There are currently 21 validators participating in BitLayer consensus. Users cannot force include transactions if they are censored by the validator set."
+            "title": "Bitlayer is operated by a permissioned validator set",
+            "content": "Bitlayer blocks are currently produced by a permissioned validator set. There are currently 21 validators participating in Bitlayer consensus. Users cannot force include transactions if they are censored by the validator set."
         },
         {
             "category": "Settlement Assurance",
             "score": 0,
             "tier": "High",
-            "title": "No onchain enforcement of BitLayer state transitions",
-            "content": "There is no onchain enforcement of BitLayer state transitions on Bitcoin. Settlement is finalized by a permissioned set of validators. The consensus mechanism used by the validators is similar to the Clique consensus protocol found in go-ethereum, but it also includes system contracts that handle staking and the management of validators."
+            "title": "No onchain enforcement of Bitlayer state transitions",
+            "content": "There is no onchain enforcement of Bitlayer state transitions on Bitcoin. Settlement is finalized by a permissioned set of validators. The consensus mechanism used by the validators is similar to the Clique consensus protocol found in go-ethereum, but it also includes system contracts that handle staking and the management of validators."
         }
     ],
     "sections": [
@@ -60,20 +60,20 @@
             "title": "Bitcoin Security",
             "content": [
                 {
-                    "title": "BitLayer does not currently inherit any security from Bitcoin consensus participants",
-                    "content": "The BitLayer sidechain is a federated sidechain, and Bitcoin consensus participants do not participate in securing BitLayer."
+                    "title": "Bitlayer does not currently inherit any security from Bitcoin consensus participants",
+                    "content": "The Bitlayer sidechain is a federated sidechain, and Bitcoin consensus participants do not participate in securing Bitlayer."
                 },
                 {
                     "title": "BTR token issued, but validators are not required to stake BTR",
-                    "content": "None of the validators in BitLayer’s validator set are staking its native token, BTR. Currently the BTR supply is 1B and is dispersed across 6 addresses. It is unknown if BitLayer will use this token to incentivize its current set of validators, or other future operators."
+                    "content": "None of the validators in Bitlayer’s validator set are staking its native token, BTR. Currently the BTR supply is 1B and is dispersed across 6 addresses. It is unknown if Bitlayer will use this token to incentivize its current set of validators, or other future operators."
                 },
                 {
                     "title": "No MEV introduced to Bitcoin",
-                    "content": "BitLayer, due to a lack of current relationship with Bitcoin, does not introduce MEV on the Bitcoin blockchain. Users trust that BitLayer's permissioned  validator set will not extract MEV."
+                    "content": "Bitlayer, due to a lack of current relationship with Bitcoin, does not introduce MEV on the Bitcoin blockchain. Users trust that Bitlayer's permissioned  validator set will not extract MEV."
                 },
                 {
-                    "title": "BitLayer does not contribute to the security budget",
-                    "content": "BitLayer does not currently contribute to the Bitcoin security budget."
+                    "title": "Bitlayer does not contribute to the security budget",
+                    "content": "Bitlayer does not currently contribute to the Bitcoin security budget."
                 }
             ]
         },
@@ -82,8 +82,8 @@
             "title": "Withdrawals",
             "content": [
                 {
-                    "title": "Users cannot unilaterally withdraw from the BitLayer sidechain",
-                    "content": "Users of BitLayer's primary bridge program, or third party bridges, cannot unilaterally withdraw their assets from BitLayer. They trust that BitLayer validators will include withdrawal transactions in BitLayer blocks, and that multi-sig signers will process their withdrawal back to the Bitcoin mainchain."
+                    "title": "Users cannot unilaterally withdraw from the Bitlayer sidechain",
+                    "content": "Users of Bitlayer's primary bridge program, or third party bridges, cannot unilaterally withdraw their assets from Bitlayer. They trust that Bitlayer validators will include withdrawal transactions in Bitlayer blocks, and that multi-sig signers will process their withdrawal back to the Bitcoin mainchain."
                 }
             ]
         },
@@ -93,28 +93,28 @@
             "content": [
                 {
                     "title": "BitVM exploration",
-                    "content": "The BitLayer team has an open repository of research related to BitVM. They are looking to build a trust-minimized bridge between BitLayer and Bitcoin. BitLayer’s documentation site states that the BitVM implementation will be federated."
+                    "content": "The Bitlayer team has an open repository of research related to BitVM. They are looking to build a trust-minimized bridge between Bitlayer and Bitcoin. Bitlayer’s documentation site states that the BitVM implementation will be federated."
                 },
                 {
                     "title": "Alternative DA exploration",
-                    "content": "According to BitLayer’s docs, the team plans on using an alternative solution for data availability. Users would trust the consensus mechanism behind this solution instead of Bitcoin full nodes for the availability of data."
+                    "content": "According to Bitlayer’s docs, the team plans on using an alternative solution for data availability. Users would trust the consensus mechanism behind this solution instead of Bitcoin full nodes for the availability of data."
                 },
                 {
                     "title": "Bitcoin-friendly FRI exploration",
-                    "content": "Fast Reed-Solomon Interactive Oracle of Proximity (FRI) is a cryptographic proof system. Most notably, FRI is used to construct STARKs. BitLayer is exploring the verification of FRI and considers its solution to be ‘Bitcoin-friendly’ – as it does not require OP_CAT or any tools that don’t already exist on Bitcoin today. BitLayer’s system leverages Taptrees for the required Merkle commitments in the proving scheme and BitVM-style BitCommitments for state propagation. BitLayer has not yet open-sourced code or released documentation for this FRI verification system."
+                    "content": "Fast Reed-Solomon Interactive Oracle of Proximity (FRI) is a cryptographic proof system. Most notably, FRI is used to construct STARKs. Bitlayer is exploring the verification of FRI and considers its solution to be ‘Bitcoin-friendly’ – as it does not require OP_CAT or any tools that don’t already exist on Bitcoin today. Bitlayer’s system leverages Taptrees for the required Merkle commitments in the proving scheme and BitVM-style BitCommitments for state propagation. Bitlayer has not yet open-sourced code or released documentation for this FRI verification system."
                 },
                 {
                     "title": "OP-DLC exploration",
-                    "content": "Discrete log contract (DLC) is a contract execution framework allowing for two parties to make conditional payments, mediated by an oracle. In the OP-DLC model that BitLayer is developing, the oracle is set up as a federation with fraud proof-style ‘slashing’ conditions on required collateral. BitLayer has not yet open-sourced code or released documentation for this OP-DLC contract execution system."
+                    "content": "Discrete log contract (DLC) is a contract execution framework allowing for two parties to make conditional payments, mediated by an oracle. In the OP-DLC model that Bitlayer is developing, the oracle is set up as a federation with fraud proof-style ‘slashing’ conditions on required collateral. Bitlayer has not yet open-sourced code or released documentation for this OP-DLC contract execution system."
                 },
 
                 {
                     "title": "Ethereum Virtual Machine",
-                    "content": "BitLayer uses an EVM-compatible virtual machine. The Ethereum Virtual Machine is software responsible for smart contract execution for a number of blockchains, namely the Ethereum Network. It uses Solidity/Vyper as its code and is the dominant environment for smart contract execution in the cryptocurrency ecosystem. BitLayer is EVM-compatible, which means that a developer from Ethereum would have less difficulty deploying their applications on BitLayer compared to other execution environments."
+                    "content": "Bitlayer uses an EVM-compatible virtual machine. The Ethereum Virtual Machine is software responsible for smart contract execution for a number of blockchains, namely the Ethereum Network. It uses Solidity/Vyper as its code and is the dominant environment for smart contract execution in the cryptocurrency ecosystem. Bitlayer is EVM-compatible, which means that a developer from Ethereum would have less difficulty deploying their applications on Bitlayer compared to other execution environments."
                 },
                 {
                     "title": "Faster block times",
-                    "content": "BitLayer is currently producing blocks every two seconds which provides a better user experience than using the Bitcoin mainchain."
+                    "content": "Bitlayer is currently producing blocks every two seconds which provides a better user experience than using the Bitcoin mainchain."
                 }
             ]
         },
@@ -124,7 +124,7 @@
             "content": [
                 {
                     "title": "EVM-based applications",
-                    "content": "The potential use cases for BitLayer are similar to that of other EVM-based sidechains. Developers can deploy smart contracts that enable applications like borrowing and lending protocols, stablecoins, NFTs, and more. The primary, proposed use case for BitLayer is to act as an application layer for Bitcoin."
+                    "content": "The potential use cases for Bitlayer are similar to that of other EVM-based sidechains. Developers can deploy smart contracts that enable applications like borrowing and lending protocols, stablecoins, NFTs, and more. The primary, proposed use case for Bitlayer is to act as an application layer for Bitcoin."
                 }
             ]
         },
@@ -133,8 +133,8 @@
             "title": "Operator",
             "content": [
                 {
-                    "title": "BitLayer is run by a permissioned validator set",
-                    "content": "BitLayer is currently run by 21 federated validators securing the network. The operators of these validating nodes are unknown. Although there are claims that these validators would stake BitLayer's native token, BTR, to secure the network, none of the active validator addresses currently hold any BTR tokens. These nodes are presumably responsible for data availability, block production and finalizing the state of the sidechain."
+                    "title": "Bitlayer is run by a permissioned validator set",
+                    "content": "Bitlayer is currently run by 21 federated validators securing the network. The operators of these validating nodes are unknown. Although there are claims that these validators would stake Bitlayer's native token, BTR, to secure the network, none of the active validator addresses currently hold any BTR tokens. These nodes are presumably responsible for data availability, block production and finalizing the state of the sidechain."
                 }
             ]
         },
@@ -144,7 +144,7 @@
             "content": [
                 {
                     "title": "Portions of code is open-source",
-                    "content": "Some of the code related to the BitLayer project is open-source."
+                    "content": "Some of the code related to the Bitlayer project is open-source."
                 }
             ]
         }
@@ -152,11 +152,11 @@
     "knowledgeBits": [
         {
             "url": "https://www.btrscan.com/home",
-            "displayText": "BitLayer block explorer"
+            "displayText": "Bitlayer block explorer"
         },
         {
             "url": "https://www.btrscan.com/leaderboard",
-            "displayText": "BitLayer's validator set"
+            "displayText": "Bitlayer's validator set"
         }
     ]
 }
