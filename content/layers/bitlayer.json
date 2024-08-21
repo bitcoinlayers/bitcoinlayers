@@ -35,9 +35,9 @@
         {
             "category": "Data Availability",
             "score": 0,
-            "tier": "High",
-            "title": "Data is stored offchain",
-            "content": "BitLayer does not currently use Bitcoin for data availability. The data availability requirement is currently fulfilled via a federated network of nodes."
+            "tier": "Medium",
+            "title": "Data is stored offchain with node software open-source",
+            "content": "BitLayer does not currently use Bitcoin for data availability. The data availability requirement is currently fufilled by BitLayer full nodes. The BitLayer node software is open source and anyone can run a node and validate the state of BitLayer."
         },
         {
             "category": "Network Operators",
