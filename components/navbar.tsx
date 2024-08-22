@@ -5,6 +5,7 @@ import type { ReactElement } from "react";
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Sheet from "./Sheet";
+import SearchBlock from "./filter/SearchBlock";
 
 export default function Navbar(): ReactElement {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -50,7 +51,7 @@ export default function Navbar(): ReactElement {
     }, []);
 
     return (
-        <nav className="flex flex-row justify-between items-center w-full fixed min-h-[3rem] lg:px-8 px-4 bg-bg_primary lg:bg-opacity-80 backdrop-blur-sm z-50 pointer-events-auto">
+        <nav className="flex flex-row justify-between items-center w-full fixed min-h-[3rem] lg:px-8 px-4 py-2 bg-bg_primary lg:bg-opacity-80 backdrop-blur-sm z-50 pointer-events-auto">
             <Link href="/" onClick={closeMenu}>
                 <div className="w-8 h-8">
                     <Image
@@ -63,6 +64,7 @@ export default function Navbar(): ReactElement {
             </Link>
             <div className="flex items-center">
                 <ul className="flex flex-row items-center space-x-8 lg:pr-8 pr-4 text-public text-text_secondary">
+                    <li className='-mt-14'><SearchBlock /></li>
                     <li className="relative">
                         <button
                             onClick={toggleSubmenu}
