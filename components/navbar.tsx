@@ -10,7 +10,9 @@ import SearchBlock from "./filter/SearchBlock";
 export default function Navbar(): ReactElement {
     const [menuOpen, setMenuOpen] = useState(false);
     const [submenuOpen, setSubmenuOpen] = useState(false);
+    const [searchOpen, setSearchOpen] = useState(false);
     const submenuRef = useRef<HTMLDivElement>(null);
+    const searchRef = useRef<HTMLDivElement>(null);
 
     const [isSheetOpen, setIsSheetOpen] = useState(false);
 
@@ -63,8 +65,19 @@ export default function Navbar(): ReactElement {
                 </div>
             </Link>
             <div className="flex items-center">
-                <ul className="flex flex-row items-center space-x-8 lg:pr-8 pr-4 text-public text-text_secondary">
-                    <li className='-mt-14'><SearchBlock /></li>
+                <ul className="flex flex-row items-center space-x-4 lg:space-x-8 lg:pr-8 pr-4 text-public text-text_secondary">
+                    <li className="md:hidden">
+                        <button onClick={() => setSearchOpen((searchOpen) => !searchOpen)}>
+                            <Image
+                                src="/icons/search.svg"
+                                alt="Search"
+                                width={20}
+                                height={20}
+                                className="mt-1"
+                            />
+                        </button>
+                    </li>
+                    <li className="hidden md:block"><SearchBlock /></li>
                     <li className="relative">
                         <button
                             onClick={toggleSubmenu}
@@ -92,47 +105,27 @@ export default function Navbar(): ReactElement {
                                             Layers
                                         </div>
                                         <div className="self-stretch text-slate-500 text-sm font-normal leading-tight">
-                                            Overview and risk analysis of
-                                            bitcoin layers.
+                                            Overview and risk analysis of bitcoin layers.
                                         </div>
                                     </Link>
                                 </div>
-                                {/* <div className="h-[88px] p-3 rounded-md flex-col justify-start items-start flex hover:bg-blue-100">
-                                    <Link href="/bridge" onClick={closeSubmenu}>
-                                        <div className="text-zinc-800 text-base font-medium leading-normal">
-                                            Bridges
-                                        </div>
-                                        <div className="self-stretch text-slate-500 text-sm font-normal leading-tight">
-                                            Overview and risk analysis of
-                                            bitcoin bridges between layers.
-                                        </div>
-                                    </Link>
-                                </div> */}
                                 <div className="h-[88px] p-3 rounded-md flex-col justify-start items-start flex hover:bg-blue-100">
-                                    <Link
-                                        href="/infrastructure"
-                                        onClick={closeSubmenu}
-                                    >
+                                    <Link href="/infrastructure" onClick={closeSubmenu}>
                                         <div className="text-zinc-800 text-base font-medium leading-normal">
                                             Infrastructure
                                         </div>
                                         <div className="self-stretch text-slate-500 text-sm font-normal leading-tight">
-                                            Overview and risk analysis of layers
-                                            infrastructure.
+                                            Overview and risk analysis of layers infrastructure.
                                         </div>
                                     </Link>
                                 </div>
                                 <div className="h-[88px] p-3 rounded-md flex-col justify-start items-start flex hover:bg-blue-100">
-                                    <Link
-                                        href="/bitcoinonly"
-                                        onClick={closeSubmenu}
-                                    >
+                                    <Link href="/bitcoinonly" onClick={closeSubmenu}>
                                         <div className="text-zinc-800 text-base font-medium leading-normal">
                                             Bitcoin Only
                                         </div>
                                         <div className="self-stretch text-slate-500 text-sm font-normal leading-tight">
-                                            Layers and infrastructure that only
-                                            use BTC.
+                                            Layers and infrastructure that only use BTC.
                                         </div>
                                     </Link>
                                 </div>
@@ -205,6 +198,14 @@ export default function Navbar(): ReactElement {
                     />
                 </button>
             </div>
+            {searchOpen && (
+                <div 
+                    ref={searchRef}
+                    className="absolute top-full left-0 right-0 bg-bg_primary p-4 shadow-md md:hidden"
+                >
+                    <SearchBlock />
+                </div>
+            )}
             <Sheet isOpen={isSheetOpen} onClose={closeSheet}>
                 <MenuSidebarContent />
             </Sheet>
@@ -215,7 +216,7 @@ export default function Navbar(): ReactElement {
         return (
             <div className="pt-8 px-4">
                 <ul className="flex flex-col gap-y-6">
-                    <li className="">
+                    <li>
                         <Link
                             href="/glossary"
                             className="text-black"
@@ -224,7 +225,7 @@ export default function Navbar(): ReactElement {
                             Glossary
                         </Link>
                     </li>
-                    <li className="">
+                    <li>
                         <Link
                             href="/faq"
                             className="text-black"
@@ -233,7 +234,7 @@ export default function Navbar(): ReactElement {
                             FAQ
                         </Link>
                     </li>
-                    <li className="">
+                    <li>
                         <Link
                             href="/methodology"
                             className="text-black"
@@ -242,7 +243,7 @@ export default function Navbar(): ReactElement {
                             Methodology
                         </Link>
                     </li>
-                    <li className="">
+                    <li>
                         <Link
                             className="text-black flex items-center gap-1"
                             href="https://www.lxresearch.co/"
