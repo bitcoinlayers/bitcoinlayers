@@ -92,7 +92,7 @@
             "title": "Withdrawals",
             "content": [
                 {
-                    "title": "Users can unilaterally withdraw their funds with optimistic settlement guarantees",
+                    "title": "Users trust a third party bridge provider to process withdrawals",
                     "content": "Withdrawals are ultimately processed by the participants in the MPC Protocol operated by the Polyhedra Network. Users trust that BounceBit validators will include their withdrawal transaction in a block and that Polyhedra Network operators will process their withdrawal and release funds on the Bitcoin mainchain."
                 }
             ]
@@ -148,7 +148,7 @@
             "title": "Source Code",
             "content": [
                 {
-                    "title": "Code is open-source",
+                    "title": "Code is not open-source",
                     "content": "BounceBit’s mainnet node implementation is not currently open-source."
                 }
             ]
