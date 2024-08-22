@@ -48,7 +48,7 @@ const InfrastructureImage = ({
 };
 
 const InfrastructureTable = ({ data, headers }: Props) => {
-    const [filter, setFilter] = useQueryState("filter");
+    const [filter, setFilter] = useQueryState("filter", { defaultValue : "Mainnet" });
 
     const [sortedData, setSortedData] = useState(data);
     const [mobileActiveTab, setMobileActiveTab] = useState<TableTabKey>("Type");

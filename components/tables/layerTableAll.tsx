@@ -47,7 +47,7 @@ const LayerImage = ({ src, title }: { src: string; title: string }) => {
 };
 
 const LayerTableAll = ({ data, headers }: Props) => {
-    const [filter, setFilter] = useQueryState("filter");
+    const [filter, setFilter] = useQueryState("filter", { defaultValue : "Mainnet" });
 
     const [sortedData, setSortedData] = useState(data);
     const [mobileActiveTab, setMobileActiveTab] = useState<TableTabKey>("Risk");
