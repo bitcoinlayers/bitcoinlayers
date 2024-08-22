@@ -95,7 +95,6 @@ const bevm: Layer = bevmJson as Layer;
 const starknet: Layer = starknetJson as Layer;
 const bitcoinos: Layer = bitcoinosJson as Layer;
 
-
 export const allLayers: Layer[] = [
     core,
     internetcomputer,

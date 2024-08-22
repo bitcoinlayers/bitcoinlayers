@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import externalIcon from '/public/icons/external.png';
+import externalIcon from "/public/icons/external.png";
 import type { ReactElement } from "react";
 
 const SectionHeader = ({ children }: { children: React.ReactNode }) => (
