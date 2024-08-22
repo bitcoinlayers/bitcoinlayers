@@ -1,7 +1,7 @@
 {
     "slug": "satoshivm",
     "title": "SatoshiVM",
-    "layerType": "Sidechain",
+    "layerType": "Permissioned chain",
     "live": "Mainnet",
     "underReview": "no",
     "riskFactors": ["Unverified", "Unverified", "Unverified", "Unverified"],
@@ -10,7 +10,7 @@
     "settlement": "Offchain",
     "btcLocked": 0,
     "executionEnv": "Offchain",
-    "consensus": "Federated Sidechain",
+    "consensus": "Permissioned chain",
     "nativeToken": "SAVM",
     "feeToken": "WBTC",
     "enshrinedBtc": "WBTC",
@@ -23,7 +23,7 @@
         "https://github.com/SatoshiVM",
         "https://x.com/SatoshiVM"
     ],
-    "description": "SatoshiVM is a premissioned sidechain built on the Frontier client software. Its native token is an ERC-20 on Ethereum",
+    "description": "SatoshiVM is a premissioned chain built on the Frontier client software. Its native token is an ERC-20 on Ethereum",
     "riskAnalysis": [
         {
             "category": "Bridge Custody",
