@@ -30,7 +30,7 @@
             "score": 0,
             "tier": "Unverified",
             "title": "Two-way peg is managed by a third party",
-            "content": "SatoshiVM's bridge to Bitcoin is managed by the Bool Network. Both the Bool Network and SatoshiVM bridge UIs deposit funds into the same Bitcoin address."
+            "content": "SatoshiVM's bitcoin wallet for bridge deposits is managed by the Bool Network. Both the Bool Network and SatoshiVM bridge UIs deposit funds into the same Bitcoin address. The bitcoin bridge contract on SatoshiVM is upgradeable by a single EOA account."
         },
         {
             "category": "Data Availability",
