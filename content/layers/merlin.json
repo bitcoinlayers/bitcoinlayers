@@ -8,7 +8,7 @@
     "purpose": "General",
     "btcBridge": "Limited information",
     "settlement": "External",
-    "btcLocked": 0,
+    "btcLocked": 14503,
     "executionEnv": "Offchain",
     "consensus": "Centralized Sequencer",
     "nativeToken": "MERL",

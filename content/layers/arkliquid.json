@@ -23,7 +23,7 @@
         "https://github.com/ark-network",
         "https://x.com/ArkLabsHQ"
     ],
-    "description": "This review covers the Ark implementation written in Go [GitHub](https://github.com/ark-network/ark), running on the Liquid network. A separate review for the covenant-less version of Ark (clArk) which operates on Bitcoin, will follow. Ark is a proposed payments protocol designed to shift liquidity requirements to a central operator, which is an always-on server, known as the Ark Service Provider (ASP). There are currently no ASPs supporting Ark on Liquid.",
+    "description": "This review covers the Ark implementation written in [Go](https://github.com/ark-network/ark), running on the Liquid network. A separate review for the covenant-less version of Ark (clArk) which operates on Bitcoin, will follow. Ark is a proposed payments protocol designed to shift liquidity requirements to a central operator, which is an always-on server, known as the Ark Service Provider (ASP). There are currently no ASPs supporting Ark on Liquid.",
     "riskAnalysis": [
         {
             "category": "Bridge Custody",

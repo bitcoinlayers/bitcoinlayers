@@ -8,7 +8,7 @@
     "purpose": "General",
     "btcBridge": "Centralized Multisig(s)",
     "settlement": "Offchain",
-    "btcLocked": 867,
+    "btcLocked": 851,
     "executionEnv": "Offchain",
     "consensus": "Proof-of-Transfer",
     "nativeToken": "STX",
