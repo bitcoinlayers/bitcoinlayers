@@ -6,20 +6,24 @@ import { Infrastructure } from "../infrastructure/infrastructureProps";
 
 type SearchableItem = Layer | Infrastructure;
 
-export const SearchResult = ({ searchResult }: { searchResult: SearchableItem[] }) => {
+export const SearchResult = ({
+    searchResult,
+}: {
+    searchResult: SearchableItem[];
+}) => {
     const getItemLink = (item: SearchableItem) => {
-        return isLayer(item) ? `/layers/${item.slug}` : `/infrastructure/${item.slug}`;
+        return isLayer(item)
+            ? `/layers/${item.slug}`
+            : `/infrastructure/${item.slug}`;
     };
 
     return (
         <>
             {searchResult.length > 0 ? (
                 <div className="absolute z-30 w-full rounded-xl border-2 border-[#fe4e18] bg-white px-1 shadow-md text-black mt-2">
-
-
-                <div className=" max-h-[15rem] overflow-auto">
-                {searchResult?.map((item) => (
-                             <Link href={getItemLink(item)} key={item.slug}>
+                    <div className=" max-h-[15rem] overflow-auto">
+                        {searchResult?.map((item) => (
+                            <Link href={getItemLink(item)} key={item.slug}>
                                 <div
                                     key={item.title}
                                     className="flex items-center gap-3 text-[1rem] py-3 hover:bg-[#f2f6fd] px-4 rounded my-1"
@@ -32,10 +36,6 @@ export const SearchResult = ({ searchResult }: { searchResult: SearchableItem[] 
                                     ) : null}
                                     {item.title}
                                 </div>
-
-
-
-                                
                             </Link>
                         ))}
                     </div>

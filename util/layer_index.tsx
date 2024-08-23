@@ -98,7 +98,6 @@ const bitcoinos: Layer = bitcoinosJson as Layer;
 const satoshivm: Layer = satoshivmJson as Layer;
 const bouncebit: Layer = bouncebitJson as Layer;
 
-
 export const allLayers: Layer[] = [
     core,
     internetcomputer,

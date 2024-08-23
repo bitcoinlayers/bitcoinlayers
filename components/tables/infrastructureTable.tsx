@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
 import Image from "next/image";
 import TableHeader from "@/components/tables/tableHeader";
 import { Infrastructure } from "@/components/infrastructure/infrastructureProps";
-import { BrowserView, MobileView, isMobile } from "react-device-detect";
+import { MobileView, isMobile } from "react-device-detect";
 import Link from "next/link";
+import { useQueryState } from "nuqs";
 
 type TableTabKey =
     | "Type"
@@ -48,10 +48,7 @@ const InfrastructureImage = ({
 };
 
 const InfrastructureTable = ({ data, headers }: Props) => {
-    const router = useRouter();
-    const [filter, setFilter] = useState<"Mainnet" | "Testnet" | "All">(
-        "Mainnet",
-    );
+    const [filter, setFilter] = useQueryState("filter", { defaultValue : "Mainnet" });
 
     const [sortedData, setSortedData] = useState(data);
     const [mobileActiveTab, setMobileActiveTab] = useState<TableTabKey>("Type");

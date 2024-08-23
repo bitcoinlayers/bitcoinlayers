@@ -13,7 +13,7 @@
     "links": [
         "https://cashu.space/",
         "https://cashu.space/",
-        "https://docs.cashu.space/", 
+        "https://docs.cashu.space/",
         "https://github.com/cashubtc",
         "https://x.com/CashuBTC"
     ],
@@ -86,15 +86,15 @@
                 {
                     "title": "Submarine nuts? (Submarine Swap equivalent)",
                     "content": "Ecash-based HTLCs can be atomically linked to Ecash HTLCs ([Calle](https://x.com/callebtc/status/1742948259050500561)). This might enable a submarine swap-equivalent (BTC-LN), called “[submarine nuts](https://x.com/callebtc/status/1704915759808303542)” (Cashu <--> LN), meaning LN nodes can assist one another in receiving funds even if they lack any channels or inbound liquidity."
-                }, 
+                },
                 {
                     "title": "Cashu via nostr",
                     "content": "Cashu tokens can be [sent](https://x.com/CashuBTC/status/1616063616150634498) via [nostr](https://nostr.com/), an open protocol that enables a truly censorship-resistant and global social network. The [message is an encrypted NIP-04 DM](https://x.com/CashuBTC/status/1607423255681318914). Nostr Wallet Connect (NWC) will further [enable users to zap other users with Cashu tokens](https://x.com/callebtc/status/1787519215051715016). A new zap protocol for nostr based on Cashu ecash was recently [proposed](https://github.com/nostr-protocol/nips/pull/1369)."
-                }, 
+                },
                 {
                     "title": "Stablenuts: USD Ecash, backed by BTC (Stablesats equivalent)",
                     "content": "Stablenuts [was tested](https://x.com/CashuBTC/status/1711676159639929135) as a Cashu USD mint supported by a Strike Lightning BTC wallet. It enables the conversion of Lightning BTC to Ecash USD and back to Lightning BTC, potentially running on DLCs, USDT, LNMarkets, Stablesats, or any fiat-stable Bitcoin rails. A non-Strike-based version was [introduced](https://x.com/callebtc/status/1770097016686645642) in March 2024, with its [first tests](https://x.com/callebtc/status/1777598819355496587) in April 2024. [Boardwalk introduced](https://x.com/makeprisms/status/1790423585888280756) the first dollar-based Cashu wallet built on Bitcoin and connected to nostr shortly after."
-                }, 
+                },
                 {
                     "title": "Free City monetary unit",
                     "content": "[Seemingly](https://x0f.org/@waxwing/108459745605989567) there has already been an attempt in the 1990s to use a form of Chaumian Ecash, called “DMT” in Costa Rica. Current tests are aiming at the (much) smaller version of a Free City, which is a [private event](https://x.com/SovereignProtoc/status/1777561415379042582), like a conference or a festival."
@@ -130,15 +130,15 @@
         {
             "url": "https://docs.cashu.space/resources/learn",
             "displayText": "Curated resource section"
-        }, 
+        },
         {
             "url": "https://chaum.com/wp-content/uploads/2022/01/Chaum-blind-signatures.pdf",
             "displayText": "David Chaum - Blind signatures for untraceable payments"
-        }, 
+        },
         {
             "url": "https://gist.github.com/callebtc/ed5228d1d8cbaade0104db5d1cf63939",
             "displayText": "Proof of Liabilities scheme"
-        }, 
+        },
         {
             "url": "https://github.com/cashubtc/nuts",
             "displayText": "Cashu NUTs (Notation, Usage, and Terminology) specification"
