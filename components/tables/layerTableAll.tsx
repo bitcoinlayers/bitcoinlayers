@@ -47,7 +47,9 @@ const LayerImage = ({ src, title }: { src: string; title: string }) => {
 };
 
 const LayerTableAll = ({ data, headers }: Props) => {
-    const [filter, setFilter] = useQueryState("filter", { defaultValue : "Mainnet" });
+    const [filter, setFilter] = useQueryState("filter", {
+        defaultValue: "Mainnet",
+    });
 
     const [sortedData, setSortedData] = useState(data);
     const [mobileActiveTab, setMobileActiveTab] = useState<TableTabKey>("Risk");
@@ -299,7 +301,8 @@ const LayerTableAll = ({ data, headers }: Props) => {
                                     <td className="lg:px-6 px-4 py-3 lg:py-4 border-r border-stroke_tertiary text_table_important">
                                         <Link href={`/layers/${item.slug}`}>
                                             {item.underReview === "yes" ||
-                                            !Number(item.btcLocked) ? (
+                                            item.btcLocked === null ||
+                                            isNaN(item.btcLocked) ? (
                                                 <div className="font-light">
                                                     Under review
                                                 </div>
