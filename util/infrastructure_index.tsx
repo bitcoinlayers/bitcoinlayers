@@ -46,7 +46,6 @@ const cashu: Infrastructure = cashuJson as Infrastructure;
 export const allInfrastructures: Infrastructure[] = [
     astria,
     avail,
-    bvm,
     celestia,
     espresso,
     lorenzo,
