@@ -6,6 +6,7 @@ import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Sheet from "./Sheet";
 import SearchBlock from "./filter/SearchBlock";
+import { usePathname } from "next/navigation";
 
 export default function Navbar(): ReactElement {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -13,6 +14,9 @@ export default function Navbar(): ReactElement {
     const [searchOpen, setSearchOpen] = useState(false);
     const submenuRef = useRef<HTMLDivElement>(null);
     const searchRef = useRef<HTMLDivElement>(null);
+
+    const pathname = usePathname()
+    const searchHiddenRoutes = ["/", "/infrastructure", "/bitcoinonly"]
 
     const [isSheetOpen, setIsSheetOpen] = useState(false);
 
@@ -52,6 +56,10 @@ export default function Navbar(): ReactElement {
         };
     }, []);
 
+    useEffect(() => {
+        setSearchOpen(false)
+    }, [pathname])
+
     return (
         <nav className="flex flex-row justify-between items-center w-full fixed min-h-[3rem] lg:px-8 px-4 py-2 bg-bg_primary lg:bg-opacity-80 backdrop-blur-sm z-50 pointer-events-auto">
             <Link href="/" onClick={closeMenu}>
@@ -66,18 +74,22 @@ export default function Navbar(): ReactElement {
             </Link>
             <div className="flex items-center">
                 <ul className="flex flex-row items-center space-x-4 lg:space-x-8 lg:pr-8 pr-4 text-public text-text_secondary">
-                    <li className="md:hidden">
-                        <button onClick={() => setSearchOpen((searchOpen) => !searchOpen)}>
-                            <Image
-                                src="/icons/search.svg"
-                                alt="Search"
-                                width={20}
-                                height={20}
-                                className="mt-1"
-                            />
-                        </button>
-                    </li>
-                    <li className="hidden md:block"><SearchBlock /></li>
+                    {!searchHiddenRoutes.includes(pathname) && (
+                        <>
+                            <li className="md:hidden">
+                                <button onClick={() => setSearchOpen((searchOpen) => !searchOpen)}>
+                                    <Image
+                                        src="/icons/search.svg"
+                                        alt="Search"
+                                        width={20}
+                                        height={20}
+                                        className="mt-1"
+                                    />
+                                </button>
+                            </li>
+                            <li className="hidden md:block"><SearchBlock /></li>
+                        </>
+                    )}
                     <li className="relative">
                         <button
                             onClick={toggleSubmenu}
@@ -198,7 +210,7 @@ export default function Navbar(): ReactElement {
                     />
                 </button>
             </div>
-            {searchOpen && (
+            {(searchOpen && !searchHiddenRoutes.includes(pathname)) && (
                 <div 
                     ref={searchRef}
                     className="absolute top-full left-0 right-0 bg-bg_primary p-4 shadow-md md:hidden"
