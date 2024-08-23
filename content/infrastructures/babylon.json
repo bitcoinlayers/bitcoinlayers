@@ -2,7 +2,7 @@
     "slug": "babylon",
     "title": "Babylon",
     "infrastructureType": "Staking",
-    "live": "Announced",
+    "live": "Mainnet",
     "underReview": "yes",
     "riskFactors": ["", ""],
     "bitcoinSecurity": "No",

@@ -6,7 +6,7 @@ export const parseTextWithLinks = (text: string) => {
     const parts: (JSX.Element | string)[] = [];
     let keyCounter = 0;
 
-    const textLines = text.split('\n');
+    const textLines = text.split("\n");
     textLines.forEach((line, lineIndex) => {
         let lastIndex = 0;
         let match;
@@ -24,10 +24,13 @@ export const parseTextWithLinks = (text: string) => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-brand"
-                    style={{ textDecoration: 'underline', textDecorationStyle: 'dotted' }}
+                    style={{
+                        textDecoration: "underline",
+                        textDecorationStyle: "dotted",
+                    }}
                 >
                     {displayText}
-                </Link>
+                </Link>,
             );
 
             lastIndex = linkRegex.lastIndex;

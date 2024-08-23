@@ -73,18 +73,18 @@
                     "title": "Unilateral exits to Bitcoin not possible",
                     "content": "Users cannot unilaterally from Libre. Users must trust alternative consensus mechanisms to withdrawal funds."
                 },
-            {
-                "title": "Libre does not leak MEV to Bitcoin",
-                "content": "Libre does not leak MEV to the Bitcoin base layer."
-              },
-            {
-                "title": "An alternative token plays a role in network security",
-                "content": "Libre relies on the LIBRE token for network security and operation."
-              },
-            {
-                "title": "No fees paid to Bitcoin miners",
-                "content": "Libre does not contribute to Bitcoin’s security budget."
-              }
+                {
+                    "title": "Libre does not leak MEV to Bitcoin",
+                    "content": "Libre does not leak MEV to the Bitcoin base layer."
+                },
+                {
+                    "title": "An alternative token plays a role in network security",
+                    "content": "Libre relies on the LIBRE token for network security and operation."
+                },
+                {
+                    "title": "No fees paid to Bitcoin miners",
+                    "content": "Libre does not contribute to Bitcoin’s security budget."
+                }
             ]
         },
         {

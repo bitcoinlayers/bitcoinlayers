@@ -30,8 +30,11 @@ const SearchBlock = () => {
         setInputValue(sanitizedValue);
         if (!input) return [];
         // const filteredLayers = allLayers.filter((layer) =>
-        const filtered = [...allLayers, ...allInfrastructures].filter(item =>
-            item.title.toLowerCase().slice(0, input.length).includes(input.toLowerCase())
+        const filtered = [...allLayers, ...allInfrastructures].filter((item) =>
+            item.title
+                .toLowerCase()
+                .slice(0, input.length)
+                .includes(input.toLowerCase()),
         );
         setFilteredItems(filtered || []);
     };
@@ -51,7 +54,11 @@ const SearchBlock = () => {
             />
 
             <Image
-                src={isInputFocused ? "/icons/search-red.svg" : "/icons/search.svg"}
+                src={
+                    isInputFocused
+                        ? "/icons/search-red.svg"
+                        : "/icons/search.svg"
+                }
                 alt="Search icon"
                 className="absolute outline bottom-3 right-6 cursor-pointer"
                 width={21}

@@ -34,7 +34,6 @@ import bit2Json from "../content/layers/bit2.json";
 import sequentiaJson from "../content/layers/sequentia.json";
 import brollupJson from "../content/layers/brollup.json";
 import nomicJson from "../content/layers/nomic.json";
-import bouncebitJson from "../content/layers/bouncebit.json";
 import fractalJson from "../content/layers/fractal.json";
 import yonaJson from "../content/layers/yona.json";
 import nexioJson from "../content/layers/nexio.json";
@@ -44,6 +43,9 @@ import bitfinityJson from "../content/layers/bitfinity.json";
 import bevmJson from "../content/layers/bevm.json";
 import starknetJson from "../content/layers/starknet.json";
 import bitcoinosJson from "../content/layers/bitcoinos.json";
+import satoshivmJson from "../content/layers/satoshivm.json";
+import bouncebitJson from "../content/layers/bouncebit.json";
+
 
 // @ts-ignore
 const core: Layer = coreJson as Layer;
@@ -84,7 +86,6 @@ const bit2: Layer = bit2Json as Layer;
 const sequentia: Layer = sequentiaJson as Layer;
 const brollup: Layer = brollupJson as Layer;
 const nomic: Layer = nomicJson as Layer;
-const bouncebit: Layer = bouncebitJson as Layer;
 const fractal: Layer = fractalJson as Layer;
 const yona: Layer = yonaJson as Layer;
 const nexio: Layer = nexioJson as Layer;
@@ -94,7 +95,8 @@ const bitfinity: Layer = bitfinityJson as Layer;
 const bevm: Layer = bevmJson as Layer;
 const starknet: Layer = starknetJson as Layer;
 const bitcoinos: Layer = bitcoinosJson as Layer;
-
+const satoshivm: Layer = satoshivmJson as Layer;
+const bouncebit: Layer = bouncebitJson as Layer;
 
 export const allLayers: Layer[] = [
     core,
@@ -131,7 +133,6 @@ export const allLayers: Layer[] = [
     sequentia,
     brollup,
     nomic,
-    bouncebit,
     fractal,
     yona,
     nexio,

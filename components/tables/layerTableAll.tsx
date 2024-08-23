@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { Layer } from "@/components/layer/layerProps";
 import Risk from "@/components/layer/layerTableItemRisk";
 import TableHeader from "@/components/tables/tableHeader";
-import { BrowserView, MobileView, isMobile } from "react-device-detect";
+import { MobileView, isMobile } from "react-device-detect";
 import Link from "next/link";
+import { useQueryState } from "nuqs";
 
 type TableTabKey =
     | "Risk"
@@ -47,10 +47,7 @@ const LayerImage = ({ src, title }: { src: string; title: string }) => {
 };
 
 const LayerTableAll = ({ data, headers }: Props) => {
-    const router = useRouter();
-    const [filter, setFilter] = useState<"Mainnet" | "Testnet" | "All">(
-        "Mainnet",
-    );
+    const [filter, setFilter] = useQueryState("filter", { defaultValue : "Mainnet" });
 
     const [sortedData, setSortedData] = useState(data);
     const [mobileActiveTab, setMobileActiveTab] = useState<TableTabKey>("Risk");
