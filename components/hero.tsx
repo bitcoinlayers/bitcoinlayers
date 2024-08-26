@@ -16,7 +16,7 @@ const Hero: React.FC = () => {
                     <h1 className="font-playfair italic font-black text-brand text-hero lg:text-14xl text-7xl lg:mb-4">
                         Layers
                     </h1>
-                    <p className="flex items-center text-center text-base font-normal text-text_secondary -mt-2">
+                    <p className="flex items-center text-center text-base font-normal text-text_secondary -mt-2 mb-14">
                         Not every bitcoin layer is made equal.
                         <br />
                         Learn the difference.

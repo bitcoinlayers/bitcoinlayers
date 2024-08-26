@@ -5,11 +5,18 @@ import type { ReactElement } from "react";
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Sheet from "./Sheet";
+import SearchBlock from "./filter/SearchBlock";
+import { usePathname } from "next/navigation";
 
 export default function Navbar(): ReactElement {
     const [menuOpen, setMenuOpen] = useState(false);
     const [submenuOpen, setSubmenuOpen] = useState(false);
+    const [searchOpen, setSearchOpen] = useState(false);
     const submenuRef = useRef<HTMLDivElement>(null);
+    const searchRef = useRef<HTMLDivElement>(null);
+
+    const pathname = usePathname();
+    const searchHiddenRoutes = ["/", "/infrastructure", "/bitcoinonly"];
 
     const [isSheetOpen, setIsSheetOpen] = useState(false);
 
@@ -49,8 +56,12 @@ export default function Navbar(): ReactElement {
         };
     }, []);
 
+    useEffect(() => {
+        setSearchOpen(false);
+    }, [pathname]);
+
     return (
-        <nav className="flex flex-row justify-between items-center w-full fixed min-h-[3rem] lg:px-8 px-4 bg-bg_primary lg:bg-opacity-80 backdrop-blur-sm z-50 pointer-events-auto">
+        <nav className="flex flex-row justify-between items-center w-full fixed min-h-[3rem] lg:px-8 px-4 py-2 bg-bg_primary lg:bg-opacity-80 backdrop-blur-sm z-50 pointer-events-auto">
             <Link href="/" onClick={closeMenu}>
                 <div className="w-8 h-8">
                     <Image
@@ -62,7 +73,31 @@ export default function Navbar(): ReactElement {
                 </div>
             </Link>
             <div className="flex items-center">
-                <ul className="flex flex-row items-center space-x-8 lg:pr-8 pr-4 text-public text-text_secondary">
+                <ul className="flex flex-row items-center space-x-4 lg:space-x-8 lg:pr-8 pr-4 text-public text-text_secondary">
+                    {!searchHiddenRoutes.includes(pathname) && (
+                        <>
+                            <li className="md:hidden">
+                                <button
+                                    onClick={() =>
+                                        setSearchOpen(
+                                            (searchOpen) => !searchOpen,
+                                        )
+                                    }
+                                >
+                                    <Image
+                                        src="/icons/search.svg"
+                                        alt="Search"
+                                        width={20}
+                                        height={20}
+                                        className="mt-1"
+                                    />
+                                </button>
+                            </li>
+                            <li className="hidden md:block">
+                                <SearchBlock />
+                            </li>
+                        </>
+                    )}
                     <li className="relative">
                         <button
                             onClick={toggleSubmenu}
@@ -95,17 +130,6 @@ export default function Navbar(): ReactElement {
                                         </div>
                                     </Link>
                                 </div>
-                                {/* <div className="h-[88px] p-3 rounded-md flex-col justify-start items-start flex hover:bg-blue-100">
-                                    <Link href="/bridge" onClick={closeSubmenu}>
-                                        <div className="text-zinc-800 text-base font-medium leading-normal">
-                                            Bridges
-                                        </div>
-                                        <div className="self-stretch text-slate-500 text-sm font-normal leading-tight">
-                                            Overview and risk analysis of
-                                            bitcoin bridges between layers.
-                                        </div>
-                                    </Link>
-                                </div> */}
                                 <div className="h-[88px] p-3 rounded-md flex-col justify-start items-start flex hover:bg-blue-100">
                                     <Link
                                         href="/infrastructure"
@@ -203,6 +227,14 @@ export default function Navbar(): ReactElement {
                     />
                 </button>
             </div>
+            {searchOpen && !searchHiddenRoutes.includes(pathname) && (
+                <div
+                    ref={searchRef}
+                    className="absolute top-full left-0 right-0 bg-bg_primary p-4 shadow-md md:hidden"
+                >
+                    <SearchBlock />
+                </div>
+            )}
             <Sheet isOpen={isSheetOpen} onClose={closeSheet}>
                 <MenuSidebarContent />
             </Sheet>
@@ -213,7 +245,7 @@ export default function Navbar(): ReactElement {
         return (
             <div className="pt-8 px-4">
                 <ul className="flex flex-col gap-y-6">
-                    <li className="">
+                    <li>
                         <Link
                             href="/glossary"
                             className="text-black"
@@ -222,7 +254,7 @@ export default function Navbar(): ReactElement {
                             Glossary
                         </Link>
                     </li>
-                    <li className="">
+                    <li>
                         <Link
                             href="/faq"
                             className="text-black"
@@ -231,7 +263,7 @@ export default function Navbar(): ReactElement {
                             FAQ
                         </Link>
                     </li>
-                    <li className="">
+                    <li>
                         <Link
                             href="/methodology"
                             className="text-black"
@@ -240,7 +272,7 @@ export default function Navbar(): ReactElement {
                             Methodology
                         </Link>
                     </li>
-                    <li className="">
+                    <li>
                         <Link
                             className="text-black flex items-center gap-1"
                             href="https://www.lxresearch.co/"

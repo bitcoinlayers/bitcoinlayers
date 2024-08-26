@@ -41,7 +41,7 @@ const SearchBlock = () => {
 
     return (
         <div
-            className="w-[22rem] relative mt-5"
+            className="w-[22rem] relative"
             ref={ref}
             role="presentation"
             onClick={() => {
@@ -55,7 +55,7 @@ const SearchBlock = () => {
                 onChange={handleInputSearch}
                 onFocus={() => setInputFocused(true)}
                 ref={inputRef}
-                className="bg-white border-2 border-slate-300 rounded-full p-2 mt-9 w-full text-black pl-6 pr-12 outline-none h-11 font_playfair cursor-pointer hover:placeholder:text-slate-600 active:border-[#fe4e18] focus:border-[#fe4e18] text-xl"
+                className="bg-white border-2 border-slate-300 rounded-full p-2 w-full text-black pl-6 pr-12 outline-none h-11 font_playfair cursor-pointer hover:placeholder:text-slate-600 active:border-[#fe4e18] focus:border-[#fe4e18] text-xl"
             />
 
             <Image
