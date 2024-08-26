@@ -15,8 +15,6 @@ export default function Home() {
         a.title.toLowerCase().localeCompare(b.title.toLowerCase()),
     );
 
-    console.log(allLayers);
-
     const typeFilters = [
         ...new Set(sortedLayers.map((layer) => layer.layerType)),
     ];
