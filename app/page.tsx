@@ -15,10 +15,25 @@ export default function Home() {
         a.title.toLowerCase().localeCompare(b.title.toLowerCase()),
     );
 
+    console.log(allLayers);
+
+    const typeFilters = [
+        ...new Set(sortedLayers.map((layer) => layer.layerType)),
+    ];
+
     const layerHeaders = [
-        { name: "Name", showSorting: true, mobileLabel: "Name" },
+        {
+            name: "Name",
+            showSorting: true,
+            mobileLabel: "Name",
+        },
         { name: "Risk", showSorting: false, mobileLabel: "Risk" },
-        { name: "Type", showSorting: true, mobileLabel: "Type" },
+        {
+            name: "Type",
+            showSorting: true,
+            mobileLabel: "Type",
+            filterOptions: typeFilters,
+        },
         { name: "Status", showSorting: true, mobileLabel: "Status" },
         {
             name: "Unit of Account",

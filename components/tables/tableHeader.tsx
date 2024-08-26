@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
+import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
+import FilterPopover from "./filter-popover";
 
 interface TableHeaderProps {
     headers: {
@@ -51,59 +53,9 @@ const TableHeader: React.FC<TableHeaderProps> = ({
                             <div className="relative flex items-center">
                                 {header.filterOptions && (
                                     <div className="relative mr-2">
-                                        <Image
-                                            src="/icons/filter.svg"
-                                            alt="Filter"
-                                            width={12}
-                                            height={12}
-                                            className="cursor-pointer"
-                                            onClick={() =>
-                                                toggleFilterDropdown(
-                                                    header.name,
-                                                )
-                                            }
+                                        <FilterPopover
+                                            filters={header.filterOptions}
                                         />
-                                        {filterOpen === header.name && (
-                                            <div className="absolute top-full left-0 mt-2 w-[] bg-white rounded-xl shadow-lg z-50 p-4">
-                                                <div className="h-[204px] flex-col justify-start items-start flex overflow-y-auto">
-                                                    {header.filterOptions.map(
-                                                        (option, idx) => (
-                                                            <div
-                                                                key={idx}
-                                                                className="h-8 px-3 py-[5px] flex items-center gap-2 cursor-pointer hover:bg-gray-100"
-                                                                onClick={() =>
-                                                                    onFilter(
-                                                                        header.name,
-                                                                        option,
-                                                                    )
-                                                                }
-                                                            >
-                                                                <div className="w-4 h-4 bg-white rounded-sm border border-slate-300"></div>
-                                                                <div className="text-slate-600 text-sm font-normal leading-tight">
-                                                                    {option}
-                                                                </div>
-                                                            </div>
-                                                        ),
-                                                    )}
-                                                </div>
-                                                <div className="flex justify-between items-center p-2 border-t border-indigo-100">
-                                                    <button
-                                                        className="text-orange-600 text-sm font-normal"
-                                                        onClick={() =>
-                                                            onFilter(
-                                                                header.name,
-                                                                "",
-                                                            )
-                                                        }
-                                                    >
-                                                        Reset
-                                                    </button>
-                                                    <button className="bg-orange-600 text-neutral-100 text-sm font-medium rounded-full px-3 py-1">
-                                                        Save
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        )}
                                     </div>
                                 )}
                                 {header.showSorting && (
