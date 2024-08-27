@@ -2,7 +2,7 @@
     "slug": "mercurylayer",
     "title": "Mercury Layer",
     "layerType": "Statechain",
-    "live": "Testnet",
+    "live": "Mainnet",
     "underReview": "yes",
     "riskFactors": ["", "", "", "", ""],
     "purpose": "-",
