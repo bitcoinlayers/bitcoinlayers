@@ -48,7 +48,14 @@ const InfrastructureImage = ({
 };
 
 const InfrastructureTable = ({ data, headers }: Props) => {
-    const [filter, setFilter] = useQueryState("filter", { defaultValue : "Mainnet" });
+    const [status, setStatus] = useQueryState("status", {
+        defaultValue: "Mainnet",
+    });
+    const [types] = useQueryState<string[]>("type", {
+        defaultValue: [],
+        parse: (value) => value.split(",").filter(Boolean),
+        serialize: (value) => value.join(","),
+    });
 
     const [sortedData, setSortedData] = useState(data);
     const [mobileActiveTab, setMobileActiveTab] = useState<TableTabKey>("Type");
@@ -56,6 +63,16 @@ const InfrastructureTable = ({ data, headers }: Props) => {
     useEffect(() => {
         handleSort("Name", true);
     }, []);
+
+    useEffect(() => {
+        if (types.length > 0) {
+            setSortedData(
+                data.filter((item) => types.includes(item.infrastructureType)),
+            );
+        } else {
+            setSortedData(data);
+        }
+    }, [types, data]);
 
     const handleSort = (header: string, ascending: boolean) => {
         const sorted = [...sortedData].sort((a, b) => {
@@ -96,12 +113,12 @@ const InfrastructureTable = ({ data, headers }: Props) => {
     };
 
     const handleFilter = (header: string, value: string) => {
-        setFilter(value as "Mainnet" | "Testnet" | "All");
+        setStatus(value as "Mainnet" | "Testnet" | "All");
     };
 
     const filteredData = sortedData.filter((item) => {
-        if (filter === "Mainnet") return item.live === "Mainnet";
-        if (filter === "Testnet") return item.live !== "Mainnet";
+        if (status === "Mainnet") return item.live === "Mainnet";
+        if (status === "Testnet") return item.live !== "Mainnet";
         return true;
     });
 
@@ -119,15 +136,15 @@ const InfrastructureTable = ({ data, headers }: Props) => {
                 <div className="justify-start items-start gap-4 inline-flex">
                     <div
                         className={`h-[30px] px-4 py-[5px] rounded-full border-2 justify-center items-center gap-1.5 flex cursor-pointer ${
-                            filter === "Mainnet"
+                            status === "Mainnet"
                                 ? "bg-white border-orange-600"
                                 : "border-slate-300"
                         }`}
-                        onClick={() => setFilter("Mainnet")}
+                        onClick={() => setStatus("Mainnet")}
                     >
                         <div
                             className={`text-center text-sm font-medium leading-tight ${
-                                filter === "Mainnet"
+                                status === "Mainnet"
                                     ? "text-orange-600"
                                     : "text-slate-600"
                             }`}
@@ -137,16 +154,16 @@ const InfrastructureTable = ({ data, headers }: Props) => {
                     </div>
                     <div
                         className={`h-[30px] rounded-full border-2 justify-center items-center gap-1 flex cursor-pointer ${
-                            filter === "Testnet"
+                            status === "Testnet"
                                 ? "bg-white border-orange-600"
                                 : "border-slate-300"
                         }`}
-                        onClick={() => setFilter("Testnet")}
+                        onClick={() => setStatus("Testnet")}
                     >
                         <div className="grow shrink basis-0 h-[30px] px-4 py-[5px] justify-center items-center gap-1.5 flex">
                             <div
                                 className={`text-center text-sm font-medium leading-tight ${
-                                    filter === "Testnet"
+                                    status === "Testnet"
                                         ? "text-orange-600"
                                         : "text-slate-600"
                                 }`}
@@ -157,16 +174,16 @@ const InfrastructureTable = ({ data, headers }: Props) => {
                     </div>
                     <div
                         className={`h-[30px] rounded-full border-2 justify-center items-center gap-1 flex cursor-pointer ${
-                            filter === "All"
+                            status === "All"
                                 ? "bg-white border-orange-600"
                                 : "border-slate-300"
                         }`}
-                        onClick={() => setFilter("All")}
+                        onClick={() => setStatus("All")}
                     >
                         <div className="grow shrink basis-0 h-[30px] px-4 py-[5px] justify-center items-center gap-1.5 flex">
                             <div
                                 className={`text-center text-sm font-medium leading-tight ${
-                                    filter === "All"
+                                    status === "All"
                                         ? "text-orange-600"
                                         : "text-slate-600"
                                 }`}

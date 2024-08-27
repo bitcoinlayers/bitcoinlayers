@@ -40,10 +40,15 @@ const SearchBlock = () => {
     };
 
     return (
-        <div className="w-[22rem] relative" ref={ref} role="presentation" onClick={() => {
-            inputRef.current?.focus();
-            setInputFocused(true);
-        }}>
+        <div
+            className="w-[22rem] relative"
+            ref={ref}
+            role="presentation"
+            onClick={() => {
+                inputRef.current?.focus();
+                setInputFocused(true);
+            }}
+        >
             <input
                 type="text"
                 placeholder="Find Layer"

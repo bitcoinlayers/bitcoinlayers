@@ -1,54 +1,88 @@
-/** @type {import('tailwindcss').Config} */
+import type { Config } from "tailwindcss";
 
-module.exports = {
+const config = {
+    darkMode: ["class"],
     content: [
-        "./app/**/*.{ts,tsx}",
+        "./pages/**/*.{ts,tsx}",
         "./components/**/*.{ts,tsx}",
+        "./app/**/*.{ts,tsx}",
+        "./src/**/*.{ts,tsx}",
         "./content/**/*.{md,mdx}",
     ],
-    darkMode: ["class"],
+    prefix: "",
     theme: {
+        container: {
+            center: true,
+            padding: "2rem",
+            screens: {
+                "2xl": "1400px",
+            },
+        },
         extend: {
             colors: {
+                border: "hsl(var(--border))",
+                input: "hsl(var(--input))",
+                ring: "hsl(var(--ring))",
+                background: "hsl(var(--background))",
+                foreground: "hsl(var(--foreground))",
+                // primary: {
+                //   DEFAULT: "hsl(var(--primary))",
+                //   foreground: "hsl(var(--primary-foreground))",
+                // },
+                secondary: {
+                    DEFAULT: "hsl(var(--secondary))",
+                    foreground: "hsl(var(--secondary-foreground))",
+                },
+                destructive: {
+                    DEFAULT: "hsl(var(--destructive))",
+                    foreground: "hsl(var(--destructive-foreground))",
+                },
+                muted: {
+                    DEFAULT: "hsl(var(--muted))",
+                    foreground: "hsl(var(--muted-foreground))",
+                },
+                accent: {
+                    DEFAULT: "hsl(var(--accent))",
+                    foreground: "hsl(var(--accent-foreground))",
+                },
+                popover: {
+                    DEFAULT: "hsl(var(--popover))",
+                    foreground: "hsl(var(--popover-foreground))",
+                },
+                card: {
+                    DEFAULT: "hsl(var(--card))",
+                    foreground: "hsl(var(--card-foreground))",
+                },
+                // Colors from the JavaScript file
                 primary: "#121212",
                 bitcoin: "#FF9900",
                 low: "#7EFF00",
                 medium: "#FFC21B",
                 high: "#EC0B43",
                 critical: "#A50F11",
-
                 lightsecondary: "#e5ebeb",
                 lighttertiary: "#CECECA",
                 lighttableheader: "#736F72",
-
                 text_table_row: "#363534",
                 text_table_header: "#0A0D12",
                 table_header: "#F5F8FD",
-
-                //figma
                 brand: "#FE4F18",
                 brand_fill: "#F4F7FA",
                 brand_neutral: "3C3D41",
-
                 bg_primary: "#FDFDFD",
                 bg_secondary: "F5F8FD",
                 bg_tertiary: "FFFFFF",
-
-                //general colors
                 icon_primary: "#292929",
                 icon_secondary: "#434D65",
                 icon_tertiary: "#C9D0D8",
                 icon_quaternary: "#F4F7FA",
-
                 state_default: "#FDFDFD",
                 state_hover: "#F5F8FD",
                 state_brand: "#FFF4ED",
-
                 stroke_brand: "#FE4F18",
                 stroke_primary: "#767B8F",
                 stroke_secondary: "#D3DDE8",
                 stroke_tertiary: "#E1EAF8",
-
                 text_header: "#292929",
                 text_primary: "#434D65",
                 text_secondary: "#767B8F",
@@ -116,6 +150,9 @@ module.exports = {
                 "Backdrop Blur/backdrop-blur-3xl": "",
             },
             borderRadius: {
+                lg: "var(--radius)",
+                md: "calc(var(--radius) - 2px)",
+                sm: "calc(var(--radius) - 4px)",
                 "rounded-0": "0rem",
                 "rounded-1": "0.046875rem",
                 "rounded-2": "0.05181884765625rem",
@@ -145,7 +182,26 @@ module.exports = {
                 "rounded-26": "4rem",
                 "rounded-27": "62.4375rem",
             },
+            keyframes: {
+                "accordion-down": {
+                    from: { height: "0" },
+                    to: { height: "var(--radix-accordion-content-height)" },
+                },
+                "accordion-up": {
+                    from: { height: "var(--radix-accordion-content-height)" },
+                    to: { height: "0" },
+                },
+            },
+            animation: {
+                "accordion-down": "accordion-down 0.2s ease-out",
+                "accordion-up": "accordion-up 0.2s ease-out",
+            },
         },
     },
-    plugins: [require("@tailwindcss/typography")],
-};
+    plugins: [
+        require("tailwindcss-animate"),
+        require("@tailwindcss/typography"),
+    ],
+} satisfies Config;
+
+export default config;

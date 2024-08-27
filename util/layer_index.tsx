@@ -46,7 +46,6 @@ import bitcoinosJson from "../content/layers/bitcoinos.json";
 import satoshivmJson from "../content/layers/satoshivm.json";
 import bouncebitJson from "../content/layers/bouncebit.json";
 
-
 // @ts-ignore
 const core: Layer = coreJson as Layer;
 const internetcomputer: Layer = internetcomputerJson as Layer;

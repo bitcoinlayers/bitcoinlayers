@@ -1,6 +1,3 @@
-"use client";
-
-import React, { useState } from "react";
 import { allLayers } from "@/util/layer_index";
 import { allInfrastructures } from "@/util/infrastructure_index";
 import BitcoinonlyTable from "@/components/tables/bitcoinonlyTable";
@@ -11,14 +8,29 @@ export default function Home() {
         a.title.toLowerCase().localeCompare(b.title.toLowerCase()),
     );
 
-    const sortedEverything = [...allLayers, ...allInfrastructures].sort(
-        (a, b) => a.title.toLowerCase().localeCompare(b.title.toLowerCase()),
-    );
+    const sortedEverything = [...allLayers, ...allInfrastructures]
+        .filter((item) => item.bitcoinOnly)
+        .sort((a, b) =>
+            a.title.toLowerCase().localeCompare(b.title.toLowerCase()),
+        );
+
+    const typeFilters = [
+        ...new Set(
+            sortedEverything.map((item) =>
+                "layerType" in item ? item.layerType : item.infrastructureType,
+            ),
+        ),
+    ];
 
     const layerHeaders = [
         { name: "Name", showSorting: true, mobileLabel: "Name" },
         { name: "Risk", showSorting: false, mobileLabel: "Risk" },
-        { name: "Type", showSorting: true, mobileLabel: "Type" },
+        {
+            name: "Type",
+            showSorting: true,
+            mobileLabel: "Type",
+            filterOptions: typeFilters,
+        },
         { name: "Status", showSorting: true, mobileLabel: "Status" },
         { name: "Category", showSorting: true, mobileLabel: "Category" },
         // {
