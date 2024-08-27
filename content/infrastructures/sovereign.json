@@ -9,7 +9,7 @@
     "nativeToken": "-",
     "purpose": "General",
     "associatedLayers": "-",
-    "bitcoinOnly": false,
+    "bitcoinOnly": true,
     "links": [
         "https://www.sovereign.xyz/",
         "https://www.sovereign.xyz/",

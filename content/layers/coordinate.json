@@ -14,7 +14,7 @@
     "nativeToken": "-",
     "feeToken": "-",
     "enshrinedBtc": "-",
-    "bitcoinOnly": false,
+    "bitcoinOnly": true,
     "links": [
         "https://www.anduro.io/",
         "https://www.anduro.io/",
