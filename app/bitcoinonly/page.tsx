@@ -1,6 +1,3 @@
-"use client";
-
-import React, { useState } from "react";
 import { allLayers } from "@/util/layer_index";
 import { allInfrastructures } from "@/util/infrastructure_index";
 import BitcoinonlyTable from "@/components/tables/bitcoinonlyTable";
@@ -11,9 +8,11 @@ export default function Home() {
         a.title.toLowerCase().localeCompare(b.title.toLowerCase()),
     );
 
-    const sortedEverything = [...allLayers, ...allInfrastructures].sort(
-        (a, b) => a.title.toLowerCase().localeCompare(b.title.toLowerCase()),
-    );
+    const sortedEverything = [...allLayers, ...allInfrastructures]
+        .filter((item) => item.bitcoinOnly)
+        .sort((a, b) =>
+            a.title.toLowerCase().localeCompare(b.title.toLowerCase()),
+        );
 
     const typeFilters = [
         ...new Set(

@@ -15,7 +15,7 @@ interface Props {
 }
 
 const FilterPopover = ({ filters }: Props) => {
-    const filterOptions = filters.length > 0 ? filters : [];
+    const filterOptions = filters.length > 0 ? filters.sort() : [];
     const [queryFilters, setQueryFilters] = useQueryState<string[]>("type", {
         defaultValue: [],
         parse: (value) => value.split(",").filter(Boolean),

@@ -24,6 +24,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
                     attribute="class"
                     defaultTheme="system"
                     enableSystem
+                    forcedTheme="light"
                 >
                     <div className="mx-auto min-h-screen bg-bg_primary">
                         <Navbar />
