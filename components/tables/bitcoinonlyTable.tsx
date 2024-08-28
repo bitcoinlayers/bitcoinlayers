@@ -85,7 +85,7 @@ const BitcoinonlyTable = ({ data, headers }: Props) => {
         } else {
             setSortedData(data);
         }
-    }, [types, data]);
+    }, [types.length]);
 
     const handleSort = (header: string, ascending: boolean) => {
         const sorted = [...sortedData].sort((a, b) => {
