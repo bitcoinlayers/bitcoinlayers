@@ -214,7 +214,7 @@ const glossaryData: GlossaryData = {
         {
             term: "Rollup",
             definition:
-                "A modular blockchain that uses a parent blockchain for data availability. The blockchain stores its state root and enough transaction data to reconstruct the state of the blockchain from genesis in the parent blockchain. Rollups are L2s.",
+                "A modular blockchain that uses a parent blockchain for data availability. The blockchain stores its state root and enough transaction data to reconstruct the state of the blockchain from genesis in the parent blockchain.",
         },
     ],
     S: [
