@@ -109,6 +109,11 @@ const glossaryData: GlossaryData = {
                 "A two-way peg (bridge) controlled by a federation (a permissioned group of overseers). A group of trusted and permissioned parties (the federation) oversees the transfer process, ensuring the security and integrity of the assets being moved.",
         },
         {
+            term: "Forced inclusion",
+            definition:
+                "A mechanism for increasing censorship resistance in a Bitcoin layer. It enables a single participant to circumvent sequencer censorship by submitting their transaction directly to the L1 inbox contract. This forces the sequencer to include the transaction in the upcoming batch.",
+        },
+        {
             term: "Fraud proof",
             definition:
                 "A cryptographic proof that enables challengers to contest a proposed state transition that contains invalid or fraudulent transactions. Networks that use fraud proofs (e.g., optmistic rollups or optimiums) initially assume that new blocks are valid, then rely on users or watchtowers to challenge blocks if they include invalid state transitions, which are then resolved on the L1.",
@@ -279,6 +284,11 @@ const glossaryData: GlossaryData = {
         },
     ],
     U: [
+        {
+            term: "Unilateral exit",
+            definition:
+                "The ability of a single participant to withdraw funds from a bridge without permission from any other network participant. In practice, unilateral exit often describes the ability to exit a bridge using an L1 transaction, providing a safeguard against bridge liveness and security failures.",
+        },
         {
             term: "Unspent Transaction Output (UTXO)",
             definition:
