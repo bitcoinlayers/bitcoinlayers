@@ -1,0 +1,1514 @@
+[
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-04-25",
+        "amount": 0.00207
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-04-26",
+        "amount": 0.00207
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-04-27",
+        "amount": 0.00207
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-04-28",
+        "amount": 0.00207
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-04-29",
+        "amount": 0.90379485
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-04-30",
+        "amount": 2.40460963
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-05-01",
+        "amount": 318.3695267
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-05-02",
+        "amount": 455.5366585
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-05-03",
+        "amount": 493.63912844
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-05-04",
+        "amount": 525.33898945
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-05-05",
+        "amount": 529.63178165
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-05-06",
+        "amount": 643.43348579
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-05-07",
+        "amount": 664.59466417
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-05-08",
+        "amount": 659.69232576
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-05-09",
+        "amount": 713.38095832
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-05-10",
+        "amount": 716.1814337
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-05-11",
+        "amount": 719.81641491
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-05-12",
+        "amount": 721.85149654
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-05-13",
+        "amount": 746.11738266
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-05-14",
+        "amount": 749.63714917
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-05-15",
+        "amount": 749.79578686
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-05-16",
+        "amount": 754.12218184
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-05-17",
+        "amount": 694.60964547
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-05-18",
+        "amount": 696.44939328
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-05-19",
+        "amount": 698.07945315
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-05-20",
+        "amount": 696.67465411
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-05-21",
+        "amount": 698.03671881
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-05-22",
+        "amount": 738.81123062
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-05-23",
+        "amount": 732.08181944
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-05-24",
+        "amount": 761.22188088
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-05-25",
+        "amount": 753.15414804
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-05-26",
+        "amount": 749.62334932
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-05-27",
+        "amount": 752.25984872
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-05-28",
+        "amount": 752.92995432
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-05-29",
+        "amount": 744.90406474
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-05-30",
+        "amount": 754.51688219
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-05-31",
+        "amount": 791.10247695
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-06-01",
+        "amount": 763.29410225
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-06-02",
+        "amount": 757.24675696
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-06-03",
+        "amount": 754.03025897
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-06-04",
+        "amount": 753.96212863
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-06-05",
+        "amount": 752.94071115
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-06-06",
+        "amount": 748.40316233
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-06-07",
+        "amount": 748.08052758
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-06-08",
+        "amount": 747.76185817
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-06-09",
+        "amount": 743.96664511
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-06-10",
+        "amount": 742.83710111
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-06-11",
+        "amount": 696.99708865
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-06-12",
+        "amount": 696.62664468
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-06-13",
+        "amount": 686.67218749
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-06-14",
+        "amount": 686.97500115
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-06-15",
+        "amount": 686.30188379
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-06-16",
+        "amount": 686.54194482
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-06-17",
+        "amount": 686.62370144
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-06-18",
+        "amount": 686.54034908
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-06-19",
+        "amount": 676.15973545
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-06-20",
+        "amount": 676.05585901
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-06-21",
+        "amount": 676.22286091
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-06-22",
+        "amount": 692.80687733
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-06-23",
+        "amount": 696.12127834
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-06-24",
+        "amount": 695.50967558
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-06-25",
+        "amount": 693.60076153
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-06-26",
+        "amount": 692.53329339
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-06-27",
+        "amount": 691.53108432
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-06-28",
+        "amount": 737.351382
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-06-29",
+        "amount": 737.29996118
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-06-30",
+        "amount": 737.06728454
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-07-01",
+        "amount": 725.83301527
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-07-02",
+        "amount": 906.05621438
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-07-03",
+        "amount": 905.88016245
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-07-04",
+        "amount": 903.22607521
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-07-05",
+        "amount": 901.39956707
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-07-06",
+        "amount": 899.20642164
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-07-07",
+        "amount": 898.95944034
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-07-08",
+        "amount": 898.77234635
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-07-09",
+        "amount": 898.60302284
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-07-10",
+        "amount": 898.64390824
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-07-11",
+        "amount": 896.99254069
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-07-12",
+        "amount": 898.89335114
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-07-13",
+        "amount": 898.84684853
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-07-14",
+        "amount": 899.58932552
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-07-15",
+        "amount": 895.52411833
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-07-16",
+        "amount": 882.83549679
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-07-17",
+        "amount": 881.63268412
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-07-18",
+        "amount": 881.45810741
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-07-19",
+        "amount": 866.43366733
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-07-20",
+        "amount": 866.24201161
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-07-21",
+        "amount": 866.14643005
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-07-22",
+        "amount": 861.54587037
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-07-23",
+        "amount": 861.46421417
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-07-24",
+        "amount": 861.47957875
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-07-25",
+        "amount": 860.86201404
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-07-26",
+        "amount": 860.6492976
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-07-27",
+        "amount": 860.48404685
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-07-28",
+        "amount": 855.98059401
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-07-29",
+        "amount": 855.52927675
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-07-30",
+        "amount": 854.7306353
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-07-31",
+        "amount": 854.7306353
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-08-01",
+        "amount": 854.40835686
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-08-02",
+        "amount": 844.42262192
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-08-03",
+        "amount": 842.99650817
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-08-04",
+        "amount": 841.13150179
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-08-05",
+        "amount": 810.08811556
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-08-06",
+        "amount": 809.54502049
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-08-07",
+        "amount": 805.54693478
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-08-08",
+        "amount": 805.54534472
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-08-09",
+        "amount": 805.04882889
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-08-10",
+        "amount": 804.61153817
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-08-11",
+        "amount": 801.78435969
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-08-12",
+        "amount": 800.90540235
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-08-13",
+        "amount": 799.40792388
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-08-14",
+        "amount": 792.64061517
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-08-15",
+        "amount": 785.72361585
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-08-16",
+        "amount": 780.09690035
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-08-17",
+        "amount": 777.78673816
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-08-18",
+        "amount": 777.44507797
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-08-19",
+        "amount": 774.80481662
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-08-20",
+        "amount": 774.36604807
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-08-21",
+        "amount": 773.37938433
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-08-22",
+        "amount": 753.74854943
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-08-23",
+        "amount": 753.07497555
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-08-24",
+        "amount": 751.81357417
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-08-25",
+        "amount": 751.49024103
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-08-26",
+        "amount": 751.37325425
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-08-27",
+        "amount": 752.35358825
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_wbtc",
+        "date": "2024-08-28",
+        "amount": 746.83823305
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-04-25",
+        "amount": 0.011571
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-04-26",
+        "amount": 0.011571
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-04-27",
+        "amount": 0.011571
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-04-28",
+        "amount": 0.011571
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-04-29",
+        "amount": 0.0368338077327169
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-04-30",
+        "amount": 0.0368338077327169
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-05-01",
+        "amount": 139.085742716778
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-05-02",
+        "amount": 143.958329899215
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-05-03",
+        "amount": 144.555230531508
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-05-04",
+        "amount": 203.292245551089
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-05-05",
+        "amount": 203.425860115373
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-05-06",
+        "amount": 202.903427006455
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-05-07",
+        "amount": 203.404326006455
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-05-08",
+        "amount": 203.492461778767
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-05-09",
+        "amount": 203.46838949922
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-05-10",
+        "amount": 203.373620726612
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-05-11",
+        "amount": 203.373620726612
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-05-12",
+        "amount": 203.425930805425
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-05-13",
+        "amount": 203.415800805425
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-05-14",
+        "amount": 203.633126000767
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-05-15",
+        "amount": 204.83441101377
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-05-16",
+        "amount": 204.880972096592
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-05-17",
+        "amount": 204.987730146946
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-05-18",
+        "amount": 205.271147260985
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-05-19",
+        "amount": 205.478858196272
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-05-20",
+        "amount": 205.488858196272
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-05-21",
+        "amount": 205.488858196272
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-05-22",
+        "amount": 204.511735841469
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-05-23",
+        "amount": 203.072143144583
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-05-24",
+        "amount": 203.072143144583
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-05-25",
+        "amount": 203.122143144583
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-05-26",
+        "amount": 203.12405049089
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-05-27",
+        "amount": 203.34905049089
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-05-28",
+        "amount": 201.323797972151
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-05-29",
+        "amount": 201.323797972151
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-05-30",
+        "amount": 201.556393524259
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-05-31",
+        "amount": 201.556393524259
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-06-01",
+        "amount": 201.556393524259
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-06-02",
+        "amount": 201.482635105215
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-06-03",
+        "amount": 201.51276061712
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-06-04",
+        "amount": 201.654360168069
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-06-05",
+        "amount": 201.654360168069
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-06-06",
+        "amount": 227.760382878135
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-06-07",
+        "amount": 227.760382878135
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-06-08",
+        "amount": 227.760382878135
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-06-09",
+        "amount": 227.760382878135
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-06-10",
+        "amount": 227.760382878135
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-06-11",
+        "amount": 227.771232878135
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-06-12",
+        "amount": 227.803167719493
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-06-13",
+        "amount": 227.803167719493
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-06-14",
+        "amount": 227.803167719493
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-06-15",
+        "amount": 227.803167719493
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-06-16",
+        "amount": 227.553167719493
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-06-17",
+        "amount": 227.555167719493
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-06-18",
+        "amount": 226.537238249493
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-06-19",
+        "amount": 226.537238249493
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-06-20",
+        "amount": 226.537238249493
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-06-21",
+        "amount": 226.536435729493
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-06-22",
+        "amount": 226.536435729493
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-06-23",
+        "amount": 226.536435729493
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-06-24",
+        "amount": 226.536435729493
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-06-25",
+        "amount": 226.536367129493
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-06-26",
+        "amount": 226.534792269493
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-06-27",
+        "amount": 226.112038677974
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-06-28",
+        "amount": 226.103020247974
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-06-29",
+        "amount": 226.098477247974
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-06-30",
+        "amount": 226.077191220177
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-07-01",
+        "amount": 226.075021384353
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-07-02",
+        "amount": 226.009351286385
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-07-03",
+        "amount": 226.009351286385
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-07-04",
+        "amount": 227.008861286385
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-07-05",
+        "amount": 227.877111676385
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-07-06",
+        "amount": 227.876719676385
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-07-07",
+        "amount": 227.874504852535
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-07-08",
+        "amount": 227.867252817109
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-07-09",
+        "amount": 227.866841217109
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-07-10",
+        "amount": 227.789446153062
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-07-11",
+        "amount": 227.783956153062
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-07-12",
+        "amount": 227.783956153062
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-07-13",
+        "amount": 227.783956153062
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-07-14",
+        "amount": 227.783956153062
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-07-15",
+        "amount": 227.799891733062
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-07-16",
+        "amount": 227.800791733062
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-07-17",
+        "amount": 227.715829661476
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-07-18",
+        "amount": 227.715829661476
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-07-19",
+        "amount": 227.078815736132
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-07-20",
+        "amount": 226.990600015915
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-07-21",
+        "amount": 226.990600015915
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-07-22",
+        "amount": 226.990110405915
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-07-23",
+        "amount": 226.990110405915
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-07-24",
+        "amount": 226.990110405915
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-07-25",
+        "amount": 226.983888371765
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-07-26",
+        "amount": 226.983888371765
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-07-27",
+        "amount": 226.885461078356
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-07-28",
+        "amount": 226.869594789274
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-07-29",
+        "amount": 226.869594789274
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-07-30",
+        "amount": 226.869594789274
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-07-31",
+        "amount": 226.869594789274
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-08-01",
+        "amount": 226.851267291145
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-08-02",
+        "amount": 226.851267291145
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-08-03",
+        "amount": 226.851267291145
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-08-04",
+        "amount": 226.858214361057
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-08-05",
+        "amount": 226.856756501057
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-08-06",
+        "amount": 226.856756501057
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-08-07",
+        "amount": 226.856756501057
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-08-08",
+        "amount": 226.832452501057
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-08-09",
+        "amount": 226.850779999186
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-08-10",
+        "amount": 228.118807999186
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-08-11",
+        "amount": 228.118807999186
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-08-12",
+        "amount": 228.118807999186
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-08-13",
+        "amount": 228.117632199186
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-08-14",
+        "amount": 228.117632199186
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-08-15",
+        "amount": 228.117632199186
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-08-16",
+        "amount": 228.118929919186
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-08-17",
+        "amount": 228.118929919186
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-08-18",
+        "amount": 228.118299749186
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-08-19",
+        "amount": 228.118299749186
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-08-20",
+        "amount": 228.118299749186
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-08-21",
+        "amount": 228.118299749186
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-08-22",
+        "amount": 228.118299749186
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-08-23",
+        "amount": 228.118299749186
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-08-24",
+        "amount": 228.117858749186
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-08-25",
+        "amount": 228.117858749186
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-08-26",
+        "amount": 228.117858749186
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-08-27",
+        "amount": 230.617858749186
+    },
+    {
+        "layer_name": "bob",
+        "identifier": "bob_tbtc",
+        "date": "2024-08-28",
+        "amount": 230.617858749186
+    }
+]
