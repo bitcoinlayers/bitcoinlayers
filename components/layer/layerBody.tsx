@@ -2,7 +2,7 @@ import React from "react";
 import { Layer } from "./layerProps";
 import Link from "next/link";
 import { parseTextWithLinks } from "@/util/parseTextWithLinks";
-import TVLChart from "./tvl-chart";
+import DailyTotalSupplyChart from "./daily-total-supply-chart";
 
 const LayerBody: React.FC<{ layer: Layer }> = ({ layer }) => {
     return (
@@ -33,7 +33,7 @@ const LayerBody: React.FC<{ layer: Layer }> = ({ layer }) => {
                             </div>
                         </React.Fragment>
                     ))}
-                    {section.id === "data" && <TVLChart layer={layer} />}
+                    {section.id === "data" && <DailyTotalSupplyChart layer={layer} />}
                 </section>
             ))}
             <div
