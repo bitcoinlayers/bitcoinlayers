@@ -33,7 +33,9 @@ const LayerBody: React.FC<{ layer: Layer }> = ({ layer }) => {
                             </div>
                         </React.Fragment>
                     ))}
-                    {section.id === "data" && <DailyTotalSupplyChart layer={layer} />}
+                    {section.id === "data" && (
+                        <DailyTotalSupplyChart layer={layer} />
+                    )}
                 </section>
             ))}
             <div
