@@ -1,7 +1,5 @@
-import React, { useState } from "react";
-import Image from "next/image";
-import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
 import FilterPopover from "./filter-popover";
+import { useQueryState } from "nuqs";
 
 interface TableHeaderProps {
     headers: {
@@ -9,32 +7,16 @@ interface TableHeaderProps {
         filterOptions?: string[];
         showSorting?: boolean;
     }[];
-    onSort: (header: string, ascending: boolean) => void;
-    onFilter: (header: string, value: string) => void;
+    onSort: (header: string) => void;
 }
 
-const TableHeader: React.FC<TableHeaderProps> = ({
-    headers,
-    onSort,
-    onFilter,
-}) => {
-    const [filterOpen, setFilterOpen] = useState<string | null>(null);
-    const [sortOrder, setSortOrder] = useState<{
-        [key: string]: boolean | null;
-    }>({});
-
-    const toggleFilterDropdown = (header: string) => {
-        if (filterOpen === header) {
-            setFilterOpen(null);
-        } else {
-            setFilterOpen(header);
-        }
+const TableHeader: React.FC<TableHeaderProps> = ({ headers, onSort }) => {
+    const handleSort = (header: string) => {
+        onSort(header);
     };
 
-    const handleSort = (header: string, ascending: boolean) => {
-        setSortOrder({ [header]: ascending });
-        onSort(header, ascending);
-    };
+    const [sortBy] = useQueryState("sortBy", { defaultValue: "Name" });
+    const [sortOrder] = useQueryState("sortOrder", { defaultValue: "asc" });
 
     return (
         <thead className="bg-table_header">
@@ -63,7 +45,7 @@ const TableHeader: React.FC<TableHeaderProps> = ({
                                         <div
                                             className="cursor-pointer"
                                             onClick={() =>
-                                                handleSort(header.name, false)
+                                                handleSort(header.name)
                                             }
                                         >
                                             <svg
@@ -77,9 +59,9 @@ const TableHeader: React.FC<TableHeaderProps> = ({
                                                 <path
                                                     d="M9.46854 2.93848H1.53146C1.2934 2.93848 1.16047 3.18983 1.3079 3.36143L5.27644 7.9632C5.39003 8.09492 5.60876 8.09492 5.72356 7.9632L9.6921 3.36143C9.83953 3.18983 9.7066 2.93848 9.46854 2.93848Z"
                                                     fill={
-                                                        sortOrder[
-                                                            header.name
-                                                        ] === false
+                                                        sortBy ===
+                                                            header.name &&
+                                                        sortOrder === "desc"
                                                             ? "#FE4F18"
                                                             : "#C9D0D8"
                                                     }
@@ -89,7 +71,7 @@ const TableHeader: React.FC<TableHeaderProps> = ({
                                         <div
                                             className="cursor-pointer"
                                             onClick={() =>
-                                                handleSort(header.name, true)
+                                                handleSort(header.name)
                                             }
                                         >
                                             <svg
@@ -102,9 +84,9 @@ const TableHeader: React.FC<TableHeaderProps> = ({
                                                 <path
                                                     d="M9.46854 2.93848H1.53146C1.2934 2.93848 1.16047 3.18983 1.3079 3.36143L5.27644 7.9632C5.39003 8.09492 5.60876 8.09492 5.72356 7.9632L9.6921 3.36143C9.83953 3.18983 9.7066 2.93848 9.46854 2.93848Z"
                                                     fill={
-                                                        sortOrder[
-                                                            header.name
-                                                        ] === true
+                                                        sortBy ===
+                                                            header.name &&
+                                                        sortOrder === "asc"
                                                             ? "#FE4F18"
                                                             : "#C9D0D8"
                                                     }
