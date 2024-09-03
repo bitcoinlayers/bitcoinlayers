@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useMemo } from "react";
 import Image from "next/image";
 import TableHeader from "@/components/tables/tableHeader";
 import { Infrastructure } from "@/components/infrastructure/infrastructureProps";
@@ -56,28 +56,19 @@ const InfrastructureTable = ({ data, headers }: Props) => {
         parse: (value) => value.split(",").filter(Boolean),
         serialize: (value) => value.join(","),
     });
+    const [sortBy, setSortBy] = useQueryState("sortBy", {
+        defaultValue: "Name",
+    });
+    const [sortOrder, setSortOrder] = useQueryState("sortOrder", {
+        defaultValue: "asc",
+    });
 
-    const [sortedData, setSortedData] = useState(data);
     const [mobileActiveTab, setMobileActiveTab] = useState<TableTabKey>("Type");
 
-    useEffect(() => {
-        handleSort("Name", true);
-    }, []);
-
-    useEffect(() => {
-        if (types.length > 0) {
-            setSortedData(
-                data.filter((item) => types.includes(item.infrastructureType)),
-            );
-        } else {
-            setSortedData(data);
-        }
-    }, [types.length]);
-
-    const handleSort = (header: string, ascending: boolean) => {
-        const sorted = [...sortedData].sort((a, b) => {
+    const sortAndFilterData = useMemo(() => {
+        const sorted = [...data].sort((a, b) => {
             let valueA, valueB;
-            switch (header) {
+            switch (sortBy) {
                 case "Name":
                     valueA = a.title.toLowerCase();
                     valueB = b.title.toLowerCase();
@@ -105,22 +96,35 @@ const InfrastructureTable = ({ data, headers }: Props) => {
                 default:
                     return 0;
             }
-            if (valueA < valueB) return ascending ? -1 : 1;
-            if (valueA > valueB) return ascending ? 1 : -1;
+            if (valueA < valueB) return sortOrder === "asc" ? -1 : 1;
+            if (valueA > valueB) return sortOrder === "asc" ? 1 : -1;
             return 0;
         });
-        setSortedData(sorted);
-    };
 
-    const handleFilter = (header: string, value: string) => {
-        setStatus(value as "Mainnet" | "Testnet" | "All");
-    };
+        let filtered = sorted;
+        if (types.length > 0) {
+            filtered = filtered.filter((item) =>
+                types.includes(item.infrastructureType),
+            );
+        }
 
-    const filteredData = sortedData.filter((item) => {
-        if (status === "Mainnet") return item.live === "Mainnet";
-        if (status === "Testnet") return item.live !== "Mainnet";
-        return true;
-    });
+        filtered = filtered.filter((item) => {
+            if (status === "Mainnet") return item.live === "Mainnet";
+            if (status === "Testnet") return item.live !== "Mainnet";
+            return true;
+        });
+
+        return filtered;
+    }, [data, sortBy, sortOrder, types, status]);
+
+    const handleSort = (header: string) => {
+        if (sortBy === header) {
+            setSortOrder(sortOrder === "asc" ? "desc" : "asc");
+        } else {
+            setSortBy(header);
+            setSortOrder("asc");
+        }
+    };
 
     const handleMobileTabClick = (tab: TableTabKey) => {
         setMobileActiveTab(tab);
@@ -237,13 +241,14 @@ const InfrastructureTable = ({ data, headers }: Props) => {
                     <TableHeader
                         headers={isMobile ? mobileTableHeaders : headers}
                         onSort={handleSort}
-                        onFilter={handleFilter}
                     />
                     <tbody className="bg-white gap-x-8 border-t border-stroke_tertiary text_table_important">
-                        {filteredData.map((item, index) => (
+                        {sortAndFilterData.map((item, index) => (
                             <tr
                                 className={`cursor-pointer border-b border-stroke_tertiary text_table_important ${
-                                    index === filteredData.length - 1 ? "" : ""
+                                    index === sortAndFilterData.length - 1
+                                        ? ""
+                                        : ""
                                 }`}
                                 key={item.slug}
                             >
