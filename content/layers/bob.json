@@ -147,11 +147,6 @@
                     "content": "We are reviewing if BOB's node software is open-source."
                 }
             ]
-        },
-        {
-            "id": "data",
-            "title": "Data",
-            "content": []
         }
     ],
     "knowledgeBits": [
