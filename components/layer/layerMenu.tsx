@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState, useEffect } from "react";
 import { Layer } from "./layerProps";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";

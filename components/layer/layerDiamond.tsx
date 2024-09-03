@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from "react";
 import { Layer } from "./layerProps";
 import { getRiskColorBackground, getRiskColorIcon } from "@/util/riskColors";

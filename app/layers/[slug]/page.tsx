@@ -1,12 +1,10 @@
-"use client";
 import { notFound } from "next/navigation";
 import { allLayers, allLayerSlugs } from "@/util/layer_index";
-import Image from "next/image";
-import { useState } from "react";
 import LayerMenu from "@/components/layer/layerMenu";
 import LayerBody from "@/components/layer/layerBody";
 import RiskAnalysis from "@/components/layer/layerBodyRiskAnalysis";
 import LayerOverview from "@/components/layer/layerOverview";
+import LayerImage from "@/components/layer/layer-image";
 
 async function getLayerFromSlug(slug: string) {
     const layer = allLayers.find((layer) => layer.slug === slug);
@@ -61,26 +59,6 @@ export default async function LayerPage({
                 </div>
             </div>
         </article>
-    );
-}
-
-function LayerImage({ src, title }: { src: string; title: string }) {
-    //TODO lazy loading
-    const [imageSrc, setImageSrc] = useState(src);
-
-    const handleError = () => {
-        setImageSrc("/bitcoinlayers-logo.png");
-    };
-
-    return (
-        <Image
-            src={imageSrc}
-            alt={`${title} logo`}
-            width={100}
-            height={100}
-            onError={handleError}
-            className="lg:w-[100px] lg:h-[100px] w-[32px] h-[32px]"
-        />
     );
 }
 
