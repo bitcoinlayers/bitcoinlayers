@@ -61,7 +61,7 @@
             "content": [
                 {
                     "title": "Unilateral exits to Bitcoin not possible",
-                    "content": "Users cannot unilaterally exit from the Stacks sidechain with an L1 Bitcoin transaction. They currently trust centralized operators to process their withdrawals."
+                    "content": "Users cannot exit from Rollux to Bitcoin at all, as there is no bridge; they must instead withdraw to Syscoin and then to Bitcoin. Users cannot unilaterally exit from the Syscoin with an L1 Bitcoin transaction. They currently trust centralized operators to process their withdrawals."
                 },
                 {
                     "title": "The protocol does not enable MEV on Bitcoin",
@@ -93,7 +93,7 @@
             "content": [
                 {
                     "title": "Fraud proofs are under development",
-                    "content": "OP stack chains will use interactive fraud proofs to enforce state correctness. This feature is currently in development, meaning that Rollux currently permits invalid state roots."
+                    "content": "[OP Stack](https://github.com/SYS-Labs/rollux/tree/develop/op-node) chains will use interactive fraud proofs to enforce state correctness. This feature is currently in development, meaning that Rollux currently permits invalid state roots."
                 },
                 {
                     "title": "Merge-mining",
@@ -129,7 +129,7 @@
             "content": [
                 {
                     "title": "Rollux is operated by a centralized sequencer",
-                    "content": "The Rollux blockchain is operated by a centralized validator. If the validator censors users, or goes offline, users can self-sequence thei own transactions.."
+                    "content": "The Rollux blockchain is operated by a centralized validator. If the validator censors users, or goes offline, users can self-sequence their own transactions.."
                 }
             ]
         },
@@ -139,7 +139,7 @@
             "content": [
                 {
                     "title": "Code is open-source",
-                    "content": "Rollux’s node implementation is open-source."
+                    "content": "Rollux’s [node implementation](https://github.com/sys-labs/rollux) is open-source."
                 }
             ]
         }
