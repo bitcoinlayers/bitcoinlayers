@@ -4,7 +4,7 @@
     "layerType": "Sidechain Rollup",
     "live": "Mainnet",
     "underReview": "no",
-    "riskFactors": ["High", "Medium", "High", "High"],
+    "riskFactors": ["High", "Medium", "Medium", "High"],
     "purpose": "General",
     "btcBridge": "Federated",
     "settlement": "Offchain",
@@ -26,7 +26,7 @@
     "description": "Rollux is an optimistic rollup that uses Syscoin, two blockchains that are simultaneously merge-mined by bitcoin miners, as its base layer for data availability and state validation respectively. It has an EVM-compatible execution environment.",
     "riskAnalysis": [
         {
-            "category": "Unilateral Exits",
+            "category": "Bridge Custody",
             "score": 0,
             "tier": "High",
             "title": "Rollux does not have a consensus-level bridge with bitcoin",
@@ -42,7 +42,7 @@
         {
             "category": "Block Production",
             "score": 0,
-            "tier": "High",
+            "tier": "Medium",
             "title": "Rollux is operated by a centralized sequencer with forced inclusion to the Syscoin L1 possible",
             "content": "The Rollux chain is operated by a centralized sequencer. Users can be censored by the centralized sequencer and the chain can have liveness failures if the sequencer goes offline.\n\nForced inclusion to the Syscoin L1 is possible. Users are able to have their transaction included in a sequence by submitting it to the L1 smart contract."
         },
