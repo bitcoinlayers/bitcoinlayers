@@ -247,8 +247,6 @@ const Methodology: React.FC = () => {
                             <InfoBox
                                 title="Bridge Custody"
                                 body={bridgeCustodyBody}
-                                title="Data Availability"
-                                body={dataAvailabilityBody}
                             />
                             <InfoBox
                                 title="Data Availability"
