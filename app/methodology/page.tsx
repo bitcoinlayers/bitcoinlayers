@@ -6,48 +6,27 @@ import styles from "../../components/styles/methodology.module.css";
 
 const Methodology: React.FC = () => {
     const InfoBox: React.FC<{ title: string; body: string }> = ({
-        title,
-        body,
-    }) => {
-        const [isOpen, setIsOpen] = useState(false);
-
-        const toggleOpen = () => setIsOpen(!isOpen);
-
-        return (
-            <div className="bg-white rounded-xl border border-slate-300 flex flex-col justify-center items-start gap-4 p-8">
-                <div
-                    className="flex items-center gap-3 cursor-pointer"
-                    onClick={toggleOpen}
-                >
-                    <div
-                        className={`flex items-center justify-center w-6 h-6 transform ${isOpen ? "" : "rotate-180"}`}
-                    >
-                        <Image
-                            src="/icons/vector.svg"
-                            alt="Toggle Arrow"
-                            width={16}
-                            height={16}
-                        />
-                    </div>
-
-                    <div className="text-2xl font-light text-zinc-800 leading-9">
-                        {title}
-                    </div>
+    title,
+    body,
+}) => {
+    return (
+        <div className="bg-white rounded-xl border border-slate-300 flex flex-col justify-center items-start gap-4 p-8">
+            <div className="flex items-center gap-3">
+                <div className="text-2xl font-light text-zinc-800 leading-9">
+                    {title}
                 </div>
-
-                {isOpen && (
-                    <div className="flex flex-col justify-center items-start gap-8 w-full">
-                        <div className="flex flex-col justify-start items-start gap-2 w-full">
-                            <div
-                                className={`text-base font-normal text-slate-500 leading-normal ${styles["custom-ul"]}`}
-                                dangerouslySetInnerHTML={{ __html: body }}
-                            />
-                        </div>
-                    </div>
-                )}
             </div>
-        );
-    };
+            <div className="flex flex-col justify-center items-start gap-8 w-full">
+                <div className="flex flex-col justify-start items-start gap-2 w-full">
+                    <div
+                        className={`text-base font-normal text-slate-500 leading-normal ${styles["custom-ul"]}`}
+                        dangerouslySetInnerHTML={{ __html: body }}
+                    />
+                </div>
+            </div>
+        </div>
+    );
+};
 
     const dataAvailabilityBody = `
     <ul>
