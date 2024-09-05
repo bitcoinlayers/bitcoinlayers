@@ -256,7 +256,7 @@ const FederationTable = ({ data, headers }: Props) => {
                             >
                                 <td className="lg:px-6 px-4 py-4 font-semibold whitespace-nowrap border-r lg:border-r-0 border-stroke_tertiary text_table_important text-table_body">
                                     <Link
-                                        href={`/layers/${item.slug}`}
+                                        href={`/layers/${item.slug}?open=federation#riskanalysis`}
                                         className="flex items-center"
                                     >
                                         <LayerImage
@@ -270,7 +270,9 @@ const FederationTable = ({ data, headers }: Props) => {
                                 </td>
                                 {(!isMobile || mobileActiveTab === "Risk") && (
                                     <td className="relative px-2 border-stroke_tertiary text_table_important">
-                                        <Link href={`/layers/${item.slug}`}>
+                                        <Link
+                                            href={`/layers/${item.slug}?open=federation#riskanalysis`}
+                                        >
                                             {item.underReview === "no" ? (
                                                 <Risk layer={item} />
                                             ) : (
@@ -283,7 +285,9 @@ const FederationTable = ({ data, headers }: Props) => {
                                 )}
                                 {(!isMobile || mobileActiveTab === "Type") && (
                                     <td className="lg:px-6 px-4 py-3 lg:py-4 border-stroke_tertiary text_table_important">
-                                        <Link href={`/layers/${item.slug}`}>
+                                        <Link
+                                            href={`/layers/${item.slug}?open=federation#riskanalysis`}
+                                        >
                                             {item.layerType}
                                         </Link>
                                     </td>
@@ -291,7 +295,9 @@ const FederationTable = ({ data, headers }: Props) => {
                                 {(!isMobile ||
                                     mobileActiveTab === "Status") && (
                                     <td className="lg:px-6 px-4 py-3 lg:py-4 border-stroke_tertiary text_table_important">
-                                        <Link href={`/layers/${item.slug}`}>
+                                        <Link
+                                            href={`/layers/${item.slug}?open=federation#riskanalysis`}
+                                        >
                                             {item.live}
                                         </Link>
                                     </td>
@@ -300,7 +306,7 @@ const FederationTable = ({ data, headers }: Props) => {
                                     mobileActiveTab === "Unit of Account") && (
                                     <td className="lg:px-6 px-4 py-3 lg:py-4 border-stroke_tertiary text_table_important">
                                         <Link
-                                            href={`/layers/${item.slug}`}
+                                            href={`/layers/${item.slug}?open=federation#riskanalysis`}
                                             className="flex items-center"
                                         >
                                             {item.feeToken
@@ -321,7 +327,9 @@ const FederationTable = ({ data, headers }: Props) => {
                                 {(!isMobile ||
                                     mobileActiveTab === "BTC Locked") && (
                                     <td className="lg:px-6 px-4 py-3 lg:py-4 border-r border-stroke_tertiary text_table_important">
-                                        <Link href={`/layers/${item.slug}`}>
+                                        <Link
+                                            href={`/layers/${item.slug}?open=federation#riskanalysis`}
+                                        >
                                             {item.underReview === "yes" ||
                                             item.btcLocked === null ||
                                             isNaN(item.btcLocked) ? (

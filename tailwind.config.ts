@@ -53,7 +53,6 @@ const config = {
                     DEFAULT: "hsl(var(--card))",
                     foreground: "hsl(var(--card-foreground))",
                 },
-                // Colors from the JavaScript file
                 primary: "#121212",
                 bitcoin: "#FF9900",
                 low: "#7EFF00",
@@ -184,12 +183,20 @@ const config = {
             },
             keyframes: {
                 "accordion-down": {
-                    from: { height: "0" },
-                    to: { height: "var(--radix-accordion-content-height)" },
+                    from: {
+                        height: "0",
+                    },
+                    to: {
+                        height: "var(--radix-accordion-content-height)",
+                    },
                 },
                 "accordion-up": {
-                    from: { height: "var(--radix-accordion-content-height)" },
-                    to: { height: "0" },
+                    from: {
+                        height: "var(--radix-accordion-content-height)",
+                    },
+                    to: {
+                        height: "0",
+                    },
                 },
             },
             animation: {

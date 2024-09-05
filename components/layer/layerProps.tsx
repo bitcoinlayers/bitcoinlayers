@@ -23,6 +23,7 @@ interface Federationsection {
         | "Participation"
         | "Signing Mechanism"
         | "Key Storage";
+    score?: number;
     tier: "Low" | "Medium" | "High" | "Critical" | "Unverified";
     title: string;
     content: string;

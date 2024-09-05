@@ -55,6 +55,22 @@
             "content": "Sidechain miners sign proposed blocks in the sidechain. Rootstock does not directly receive settlement assurances from Bitcoin consensus participants."
         }
     ],
+    "federationAnalysis": [
+        {
+            "category": "Test Category",
+            "score": 0,
+            "tier": "High",
+            "title": "Lorem ipsum dolor sit amet",
+            "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget sapien. Sed ut purus eget sapien. Sed ut purus eget sapien."
+        },
+        {
+            "category": "Test Category",
+            "score": 0,
+            "tier": "Medium",
+            "title": "Lorem ipsum dolor sit amet",
+            "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget sapien. Sed ut purus eget sapien. Sed ut purus eget sapien."
+        }
+    ],
     "sections": [
         {
             "id": "bitcoinsecurity",

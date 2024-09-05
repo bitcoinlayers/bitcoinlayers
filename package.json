@@ -11,6 +11,7 @@
         "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,css,scss,md}\""
     },
     "dependencies": {
+        "@radix-ui/react-accordion": "^1.2.0",
         "@radix-ui/react-checkbox": "^1.1.1",
         "@radix-ui/react-popover": "^1.1.1",
         "@radix-ui/react-select": "^2.1.1",
