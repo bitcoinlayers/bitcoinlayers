@@ -37,18 +37,29 @@ const Methodology: React.FC = () => {
             </ul>
             </li>
         <br />
-        <li>Onchain: Protocol uses Bitcoin for data availability - low risk</li>
+        <li>🟡 Green must match one of the following conditions:</li>
+        <ul>
+                <li>Users can unilaterally exit with an L1 transaction and have the ability to challenge a faulty operator</li>
+                <li>Anyone can ensure the integrity of a bridge with a fault proof</li>
+            </ul>
+            </li>
         <br />
-        <li>
-            Offchain via alternative consensus protocol: Data is primarily stored on another publicly available network and anyone can participate in running a full node, and there is a mechanism to verify that the data is made available - medium risk
-        </li>
+        <li>🔴 Green must match one of the following conditions:</li>
+        <ul>
+                <li>Users can unilaterally exit with an L1 transaction and have the ability to challenge a faulty operator</li>
+                <li>Anyone can ensure the integrity of a bridge with a fault proof</li>
+            </ul>
+            </li>
         <br />
-        <li>Offchain DAC: State updates are stored via a centralized (or permissioned) committee and Bitcoin full nodes, and users, cannot access that data - high risk</li>
         <br />
-        <li>Offchain Single Server: State updates are stored via a centralized server and Bitcoin full nodes, and users, cannot access that data - high risk</li>
+        <li>🛑 Stop!</li>
+        <ul>
+                <li>Users can unilaterally exit with an L1 transaction and have the ability to challenge a faulty operator</li>
+                <li>Anyone can ensure the integrity of a bridge with a fault proof</li>
+            </ul>
+            </li>
         <br />
-        <li>Not disclosed: Code and/or documentation relevant to this category has not been disclosed and we cannot assign a risk score - critical risk</li>
-    </ul>
+        </ul>
 `;
 
     const networkOperatorsBody = `
