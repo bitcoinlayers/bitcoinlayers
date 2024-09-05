@@ -4,7 +4,7 @@
     "layerType": "Sidechain",
     "live": "Mainnet",
     "underReview": "no",
-    "riskFactors": ["High", "Medium", "High", "High"],
+    "riskFactors": ["Unverified", "Medium", "High", "High"],
     "purpose": "General",
     "btcBridge": "Federated Multisig",
     "settlement": "Offchain",
@@ -28,9 +28,9 @@
         {
             "category": "Bridge Custody",
             "score": 0,
-            "tier": "High",
-            "title": "Users trust a federated multi-sig to custody their BTC",
-            "content": "Bitlayer's current BTC bridge is a federated two-way peg with institutional signers. Bitlayer is working with multiple MPC custody platforms. Coinbase and Sinohope are the two institutions that have been said to be participating in securing the two-way peg. Limited information around the current two-way peg construction is available."
+            "tier": "Unverified",
+            "title": "Users trust a federated multi-sig to custody their BTC. Signers under review",
+            "content": "Bitlayer's current BTC bridge is a federated two-way peg with institutional signers. Bitlayer is working with multiple MPC custody platforms. Coinbase and Sinohope are the two institutions that have been said to be participating in securing the two-way peg. Limited information around the current two-way peg construction is available.\n\n🔬We are currently reviewing the signers for the BitLayer two-way peg."
         },
         {
             "category": "Data Availability",

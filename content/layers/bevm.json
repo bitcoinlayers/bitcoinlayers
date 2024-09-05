@@ -4,7 +4,7 @@
     "layerType": "Sidechain",
     "live": "Mainnet",
     "underReview": "no",
-    "riskFactors": ["High", "Medium", "High", "High"],
+    "riskFactors": ["Unverified", "Medium", "High", "High"],
     "purpose": "General",
     "btcBridge": "Federated Multisig",
     "settlement": "Offchain",
@@ -27,9 +27,9 @@
         {
             "category": "Bridge Custody",
             "score": 0,
-            "tier": "High",
-            "title": "Users trust a federation with the custody of their BTC",
-            "content": "On the BEVM chain, BTC is locked in a multi signature address federated by up to 15 trustees. These trustees are the real custodians of BTC as they hold the multi-signature private keys.\n\nAt present, there are 17 validators on the BEVM chain who are responsible for verifying transactions. These validators are selected based on specific criteria defined by the BEVM governance model. These permissioned validators are responsible for selecting the trustees who will custody Bitcoin assets. Users trust that the trustees will not steal their BTC."
+            "tier": "Unverified",
+            "title": "Users trust a federation with the custody of their BTC. Signers under review",
+            "content": "On the BEVM chain, BTC is locked in a multi signature address federated by up to 15 trustees. These trustees are the real custodians of BTC as they hold the multi-signature private keys.\n\nAt present, there are 17 validators on the BEVM chain who are responsible for verifying transactions. These validators are selected based on specific criteria defined by the BEVM governance model. These permissioned validators are responsible for selecting the trustees who will custody Bitcoin assets. Users trust that the trustees will not steal their BTC.\n\n🔬We are currently reviewing a the signers for the BEVM two-way peg"
         },
         {
             "category": "Data Availability",

@@ -4,7 +4,7 @@
     "layerType": "Sidechain",
     "live": "Mainnet",
     "underReview": "no",
-    "riskFactors": ["High", "Medium", "Medium", "Medium"],
+    "riskFactors": ["Unverified", "Medium", "Medium", "Medium"],
     "purpose": "General",
     "btcBridge": "Centralized Multisig(s)",
     "settlement": "Offchain",
@@ -28,9 +28,9 @@
         {
             "category": "Bridge Custody",
             "score": 0,
-            "tier": "High",
-            "title": "Users must trust centralized companies with custody of their BTC",
-            "content": "Stacks has no consensus-enshrined BTC bridge. It does have two third-party bridges, which are both custodial multisigs. Users must trust the operators of these bridges to not steal their BTC, as they do not support unilateral exits."
+            "tier": "Unverified",
+            "title": "Users must trust centralized companies with custody of their BTC. Signers under review",
+            "content": "Stacks has no consensus-enshrined BTC bridge. It does have two third-party bridges, which are both custodial multisigs. Users must trust the operators of these bridges to not steal their BTC, as they do not support unilateral exits.\n\n🔬We are currently reviewing a score for the Stacks two-way peg."
         },
         {
             "category": "Data Availability",

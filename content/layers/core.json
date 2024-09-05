@@ -4,7 +4,7 @@
     "layerType": "Sidechain",
     "live": "Mainnet",
     "underReview": "no",
-    "riskFactors": ["High", "Medium", "Medium", "Medium"],
+    "riskFactors": ["Unverified", "Medium", "Medium", "Medium"],
     "purpose": "General",
     "btcBridge": "Federated Multisig",
     "settlement": "Offchain",
@@ -28,7 +28,7 @@
         {
             "category": "Bridge Custody",
             "score": 0,
-            "tier": "High",
+            "tier": "Unverified",
             "title": "Funds are custodied in a federated multi-sig, with a number of parties ensuring the honesty of the bridge",
             "content": "Users trust various parties in maintaining the honesty of Core’s two-way peg with Bitcoin. Lockers are the party responsible for securing the bitcoin that backs coreBTC on Core Chain. These actors stake collateral, in the form of Core tokens, in order to participate as a Locker. In the event of maliciousing moving bitcoin from the multi-sig, or being unable to fulfill withdrawals, Lockers would be slashed and lose the collateral they posted.\n\nOther parties in the bridge set up are responsible for monitoring the Locker’s activity and initiating the slashing process."
         },

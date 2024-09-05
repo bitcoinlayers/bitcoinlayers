@@ -4,7 +4,7 @@
     "layerType": "Sidechain",
     "live": "Mainnet",
     "underReview": "no",
-    "riskFactors": ["High", "Medium", "High", "Medium"],
+    "riskFactors": ["High", "Medium", "Medium", "Medium"],
     "purpose": "General",
     "btcBridge": "Consensus-level Multi-sig",
     "settlement": "Offchain",
@@ -42,9 +42,9 @@
         {
             "category": "Network Operators",
             "score": 0,
-            "tier": "High",
+            "tier": "Medium",
             "title": "Liveness guarantees vary between subnets and users cannot self-sequence",
-            "content": "Users can leverage their ckBTC on any ICP subnet per the applications they interact with. Users would initiate a “call” to a specific application on any given subnet and a boundary node would route that call accordingly. The contract would then receive the call, initiate the transaction, and see the transaction confirmed should 2 ⁄ 3 of node operators on the given subnet accept it. This sees liveness trust assumptions vary from subnet to subnet. Bitcoin-specific applications would additionally be dependent on the Bitcoin Canister which is on the ‘w4rem…’ subnet, operated by 13 nodes. The 22 Boundary Nodes are managed by a centralized development organization, the DFINITY Foundation.\n\nThe key risk related to liveness is if the Bitcoin Canister were to go offline, the ckBTC smart contract would be unable to issue withdrawals for users looking to burn ckBTC and redeem native bitcoin. Withdrawals would be paused until the Bitcoin Canister's subnet came back online."
+            "content": "Users can leverage their ckBTC on any ICP subnet per the applications they interact with. Users would initiate a “call” to a specific application on any given subnet and a boundary node would route that call accordingly. The contract would then receive the call, initiate the transaction, and see the transaction confirmed should 2 ⁄ 3 of node operators on the given subnet accept it. This sees liveness trust assumptions vary from subnet to subnet. Bitcoin-specific applications would additionally be dependent on the Bitcoin Canister which is on the ‘w4rem…’ subnet, operated by 13 nodes. The 22 Boundary Nodes are managed by a centralized development organization, the DFINITY Foundation."
         },
         {
             "category": "Settlement Assurance",
@@ -83,7 +83,7 @@
             "content": [
                 {
                     "title": "Withdrawals are permitted by a specific ICP subnet",
-                    "content": "Withdrawals are ultimately processed by the operators of the ‘pzp6e’ subnet which manages the ckBTC smart contract. Users trust that at least 10 of the 28 signers will remain honest, not steal their funds, and process their withdrawals."
+                    "content": "Withdrawals are ultimately processed by the operators of the ‘pzp6e’ subnet which manages the ckBTC smart contract. Users trust that at least 10 of the 28 signers will remain honest, not steal their funds, and process their withdrawals. If the Bitcoin Canister were to go offline, the ckBTC smart contract would be unable to issue withdrawals for users looking to burn ckBTC and redeem native bitcoin. Withdrawals would be paused until the Bitcoin Canister's subnet came back online."
                 }
             ]
         },
