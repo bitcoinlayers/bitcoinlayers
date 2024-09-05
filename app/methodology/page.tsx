@@ -30,7 +30,12 @@ const Methodology: React.FC = () => {
 
     const dataAvailabilityBody = `
     <ul>
-        <li>Self-hosted: User can store data related to scaling protocol transactions locally - low risk</li>
+        <li>🟢 Green must match one of the following conditions:</li>
+        <ul>
+                <li>Users can unilaterally exit with an L1 transaction and have the ability to challenge a faulty operator</li>
+                <li>Anyone can ensure the integrity of a bridge with a fault proof</li>
+            </ul>
+            </li>
         <br />
         <li>Onchain: Protocol uses Bitcoin for data availability - low risk</li>
         <br />
