@@ -8,7 +8,7 @@
     "purpose": "General",
     "btcBridge": "Third Party Multi-sig",
     "settlement": "Offchain",
-    "btcLocked": 14,
+    "btcLocked": 3,
     "executionEnv": "Offchain",
     "consensus": "Delegated Proof-of-Stake",
     "nativeToken": "LIBRE",

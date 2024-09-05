@@ -8,7 +8,7 @@
     "purpose": "General",
     "btcBridge": "Federated Multisig",
     "settlement": "Offchain",
-    "btcLocked": 2794,
+    "btcLocked": 2764,
     "executionEnv": "Offchain",
     "consensus": "Merge-Mining",
     "nativeToken": "RBTC",
