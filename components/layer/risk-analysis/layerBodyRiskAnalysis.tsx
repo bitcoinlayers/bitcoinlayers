@@ -96,7 +96,7 @@ const RiskAnalysis: React.FC<RiskAnalysisProps> = ({
                                             <AccordionItem value="item-1">
                                                 <AccordionTrigger>
                                                     Read more about{" "}
-                                                    {layer.title}'s bridge
+                                                    {layer.title}&apos;s bridge
                                                     federation
                                                 </AccordionTrigger>
                                                 <AccordionContent>
