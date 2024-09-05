@@ -204,7 +204,7 @@ const Methodology: React.FC = () => {
                 <div className="flex justify-start items-center gap-8 w-full">
                     <div className="flex-grow flex items-center gap-[30px] h-[156px]">
                         <div className="special_header flex-grow sm:h-20 text-6xl lg:text-10xl text_table_important">
-                            Approach to analyzing bitcoin layers
+                            Approach to analyzing layers
                         </div>
                     </div>
                 </div>
