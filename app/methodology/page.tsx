@@ -220,27 +220,9 @@ const Methodology: React.FC = () => {
                                         protocols
                                     </div>
                                     <div className="text-base font-normal text-slate-500 leading-normal">
-                                        We analyze protocols on four categories:
-                                        Data availability, network operators,
-                                        settlement assurance (a.k.a finality),
-                                        and the bridge custody (or two-way peg).
+                                        The Bitcoin Layers risk assessment is broken down into four sections. They cover Bridge Custody, Data Availability, Network Operators, and Settlement Assurance (finality guarantees). The assessments also include more granular reviews of specific areas. For example, if the chain uses a federated two-way peg, an additional assessment on the security related to that peg can be performed.
                                         <br />
-                                        <br /> Protocols do not receive an
-                                        overall score, but a risk summary is
-                                        added at the beginning of every
-                                        assessment to highlight risk areas that
-                                        can be critical. <br />
-                                        <br />
-                                        For example, if an optimium uses an
-                                        offchain data availability solution that
-                                        is a single server, then it only takes
-                                        collusion between a sequencer and the
-                                        operator of the DA server to steal
-                                        everyone’s funds. This is a critical and
-                                        should be noted in the summary. <br />
-                                        <br />
-                                        Let’s review how protocols can
-                                        potentially be assessed.
+                                        <br /> This assessment is not reflective of L2 or sidesystem security. It is not a security audit. It is an assessment that outlines the varying degree of trust assumptions that users have to take on when interacting with a bitcoin sidesystem. <br />
                                     </div>
                                 </div>
                             </div>
