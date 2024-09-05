@@ -46,7 +46,7 @@ const Methodology: React.FC = () => {
         <br />
         <li>🔴 Red:</li>
         <ul>
-                <li>The two-way peg is managed by a (likely federated) group of signers whose identities are known to the public and/or core development organizations. There need to be at least 9 signers, where 66.67% are publicly known, independent signers, participating in securing the two-way peg.</li>
+                <liThe two-way peg is managed by a (likely federated) group of signers whose identities are known to the public and/or core development organizations. There need to be at least 8 publicly known signers participating in securing the two-way peg. The signing mechanism for the bitcoin wallet must also be publicly acknowledged.</li>
             </ul>
             </li>
         <br />
@@ -77,7 +77,7 @@ const Methodology: React.FC = () => {
         <br />
         <li>🟡 Yellow must match one of the following conditions:</li>
         <ul>
-                <li>Data is stored on an alternative consensus protocol (that is not bitcoin) nodes are operated by at least 5 publicly known, independent actors, and the full node software is open-source</li>
+                <li>Data is made available by an alternative consensus protocol (that is not bitcoin) node operate set and the full node software is open-source</li>
                 <li>Data is stored via an offchain committee or consensus protocol, where validators stake slashable collateral greater than value locked in the layer and DA attestations are backed by this economic security</li>
             </ul>
             </li>
@@ -151,15 +151,14 @@ const Methodology: React.FC = () => {
         <br />
         <li>🛑 Stop!</li>
         <ul>
-                <li>Not specified</li>
+                <li>Layer does not have an active state validation mechanism in place. Namely rollups that do not have fault proofs in place.</li>
             </ul>
             </li>
         <br />
         <li>Additional considerations:</li>
         <ul>
                 <li>If all transactions are finalized offchain, and the sidesystem’s initiation and closure transactions are finalized by the bitcoin L1, but there is no challenge mechanism to dispute an operator, then it is likely a yellow score.</li>
-                <li>A consideration on where merge-mined chains would fit into this mechanism is needed. You could likely say if X% of hashrate is actively mining the sidesystem, then it receives a yellow score.</li>
-            </ul>
+                </ul>
         </li>
         </ul>
 `;
