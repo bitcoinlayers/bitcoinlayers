@@ -1,32 +1,32 @@
 "use client";
 
-import Image from "next/image";
+// import Image from "next/image";
 import React, { useState } from "react";
 import styles from "../../components/styles/methodology.module.css";
 
 const Methodology: React.FC = () => {
     const InfoBox: React.FC<{ title: string; body: string }> = ({
-    title,
-    body,
-}) => {
-    return (
-        <div className="bg-white rounded-xl border border-slate-300 flex flex-col justify-center items-start gap-4 p-8">
-            <div className="flex items-center gap-3">
-                <div className="text-2xl font-light text-zinc-800 leading-9">
-                    {title}
+        title,
+        body,
+    }) => {
+        return (
+            <div className="bg-white rounded-xl border border-slate-300 flex flex-col justify-center items-start gap-4 p-8">
+                <div className="flex items-center gap-3">
+                    <div className="text-2xl font-light text-zinc-800 leading-9">
+                        {title}
+                    </div>
+                </div>
+                <div className="flex flex-col justify-center items-start gap-8 w-full">
+                    <div className="flex flex-col justify-start items-start gap-2 w-full">
+                        <div
+                            className={`text-base font-normal text-slate-500 leading-normal ${styles["custom-ul"]}`}
+                            dangerouslySetInnerHTML={{ __html: body }}
+                        />
+                    </div>
                 </div>
             </div>
-            <div className="flex flex-col justify-center items-start gap-8 w-full">
-                <div className="flex flex-col justify-start items-start gap-2 w-full">
-                    <div
-                        className={`text-base font-normal text-slate-500 leading-normal ${styles["custom-ul"]}`}
-                        dangerouslySetInnerHTML={{ __html: body }}
-                    />
-                </div>
-            </div>
-        </div>
-    );
-};
+        );
+    };
 
     const bridgeCustodyBody = `
     <ul>
@@ -194,7 +194,7 @@ const Methodology: React.FC = () => {
     <br />
     <p>Bitcoin does not have a unified scaling roadmap. There are tradeoffs with every protocol being implemented to support Bitcoin scaling. This framework hopes to capture some of the nuance related to the various designs being proposed.</p>
     <br />
-    <p>If you have comments on this framework, please consider joining our <a href="https://t.me/+8rv-1I2gkmQ4ZmJh" style="color: blue; text-decoration: underline;" target="_blank" rel="noopener noreferrer">community chat</a> to discuss. You can also add comments or feedback <a href="https://bitcoinlayers.discourse.group/t/updating-the-bitcoin-layers-framework/11" style="color: blue; text-decoration: underline;" target="_blank" rel="noopener noreferrer">here</a></p>.
+    <p>If you have comments on this framework, please consider joining our <a href="https://t.me/+8rv-1I2gkmQ4ZmJh" style="color: blue; text-decoration: underline;" target="_blank" rel="noopener noreferrer">community chat</a> to discuss. You can also add comments or feedback <a href="https://bitcoinlayers.discourse.group/t/updating-the-bitcoin-layers-framework/11" style="color: blue; text-decoration: underline;" target="_blank" rel="noopener noreferrer">here</a>.</p>
 `;
 
     return (
@@ -219,9 +219,25 @@ const Methodology: React.FC = () => {
                                         protocols
                                     </div>
                                     <div className="text-base font-normal text-slate-500 leading-normal">
-                                        The Bitcoin Layers risk assessment is broken down into four sections. They cover Bridge Custody, Data Availability, Network Operators, and Settlement Assurance (finality guarantees). The assessments also include more granular reviews of specific areas. For example, if the chain uses a federated two-way peg, an additional assessment on the security related to that peg can be performed.
+                                        The Bitcoin Layers risk assessment is
+                                        broken down into four sections. They
+                                        cover Bridge Custody, Data Availability,
+                                        Network Operators, and Settlement
+                                        Assurance (finality guarantees). The
+                                        assessments also include more granular
+                                        reviews of specific areas. For example,
+                                        if the chain uses a federated two-way
+                                        peg, an additional assessment on the
+                                        security related to that peg can be
+                                        performed.
                                         <br />
-                                        <br /> This assessment is not reflective of L2 or sidesystem security. It is not a security audit. It is an assessment that outlines the varying degree of trust assumptions that users have to take on when interacting with a bitcoin sidesystem. <br />
+                                        <br /> This assessment is not reflective
+                                        of L2 or sidesystem security. It is not
+                                        a security audit. It is an assessment
+                                        that outlines the varying degree of
+                                        trust assumptions that users have to
+                                        take on when interacting with a bitcoin
+                                        sidesystem. <br />
                                     </div>
                                 </div>
                             </div>
