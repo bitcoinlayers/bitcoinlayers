@@ -3,6 +3,7 @@
     "title": "Rooch Network",
     "layerType": "Sovereign Rollup",
     "live": "Testnet",
+    "federation": false,
     "underReview": "yes",
     "riskFactors": ["", "", "", ""],
     "purpose": "-",

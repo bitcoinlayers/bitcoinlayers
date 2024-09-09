@@ -3,6 +3,7 @@
     "title": "Mezo",
     "layerType": "Sidechain",
     "live": "Announced",
+    "federation": false,
     "underReview": "yes",
     "riskFactors": ["", "", "", ""],
     "purpose": "General purpose",

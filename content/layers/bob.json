@@ -3,6 +3,7 @@
     "title": "BOB",
     "layerType": "Ethereum Rollup",
     "live": "Mainnet",
+    "federation": false,
     "underReview": "no",
     "riskFactors": ["High", "Medium", "Medium", "High"],
     "purpose": "Bitcoin Apps",

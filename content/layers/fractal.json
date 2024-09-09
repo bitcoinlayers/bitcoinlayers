@@ -3,6 +3,7 @@
     "title": "Fractal",
     "layerType": "Sidechain",
     "live": "Announced",
+    "federation": false,
     "underReview": "yes",
     "riskFactors": ["", "", "", ""],
     "purpose": "-",

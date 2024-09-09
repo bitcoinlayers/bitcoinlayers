@@ -3,6 +3,7 @@
     "title": "Side Protocol",
     "layerType": "Sidechain",
     "live": "Testnet",
+    "federation": false,
     "underReview": "yes",
     "riskFactors": ["", "", "", ""],
     "purpose": "Settlement Layer",

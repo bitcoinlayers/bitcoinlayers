@@ -3,6 +3,7 @@
     "title": "Flash Protocol",
     "layerType": "-",
     "live": "Testnet",
+    "federation": false,
     "underReview": "yes",
     "riskFactors": ["High", "High", "High", "High"],
     "purpose": "-",

@@ -3,6 +3,7 @@
     "title": "Nomic",
     "layerType": "Sidechain",
     "live": "Mainnet",
+    "federation": false,
     "underReview": "yes",
     "riskFactors": ["", "", "", ""],
     "purpose": "-",

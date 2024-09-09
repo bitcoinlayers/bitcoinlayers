@@ -3,6 +3,7 @@
     "title": "Yona",
     "layerType": "Sovereign Rollup",
     "live": "Testnet",
+    "federation": false,
     "underReview": "yes",
     "riskFactors": ["", "", "", ""],
     "purpose": "-",
