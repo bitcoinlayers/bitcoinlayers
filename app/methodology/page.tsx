@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+// import Image from "next/image";
 import React, { useState } from "react";
 import styles from "../../components/styles/methodology.module.css";
 
@@ -9,189 +9,173 @@ const Methodology: React.FC = () => {
         title,
         body,
     }) => {
-        const [isOpen, setIsOpen] = useState(false);
-
-        const toggleOpen = () => setIsOpen(!isOpen);
-
         return (
             <div className="bg-white rounded-xl border border-slate-300 flex flex-col justify-center items-start gap-4 p-8">
-                <div
-                    className="flex items-center gap-3 cursor-pointer"
-                    onClick={toggleOpen}
-                >
-                    <div
-                        className={`flex items-center justify-center w-6 h-6 transform ${isOpen ? "" : "rotate-180"}`}
-                    >
-                        <Image
-                            src="/icons/vector.svg"
-                            alt="Toggle Arrow"
-                            width={16}
-                            height={16}
-                        />
-                    </div>
-
+                <div className="flex items-center gap-3">
                     <div className="text-2xl font-light text-zinc-800 leading-9">
                         {title}
                     </div>
                 </div>
-
-                {isOpen && (
-                    <div className="flex flex-col justify-center items-start gap-8 w-full">
-                        <div className="flex flex-col justify-start items-start gap-2 w-full">
-                            <div
-                                className={`text-base font-normal text-slate-500 leading-normal ${styles["custom-ul"]}`}
-                                dangerouslySetInnerHTML={{ __html: body }}
-                            />
-                        </div>
+                <div className="flex flex-col justify-center items-start gap-8 w-full">
+                    <div className="flex flex-col justify-start items-start gap-2 w-full">
+                        <div
+                            className={`text-base font-normal text-slate-500 leading-normal ${styles["custom-ul"]}`}
+                            dangerouslySetInnerHTML={{ __html: body }}
+                        />
                     </div>
-                )}
+                </div>
             </div>
         );
     };
 
-    const dataAvailabilityBody = `
+    const bridgeCustodyBody = `
     <ul>
-        <li>Self-hosted: User can store data related to scaling protocol transactions locally - low risk</li>
+        <li>🟢 Green must match one of the following conditions:</li>
+        <ul>
+                <li>Users can unilaterally exit with an L1 transaction and have the ability to challenge a faulty operator</li>
+                <li>Anyone can ensure the integrity of a bridge with a fault proof</li>
+            </ul>
+            </li>
         <br />
-        <li>Onchain: Protocol uses Bitcoin for data availability - low risk</li>
+        <li>🟡 Yellow must match one of the following conditions:</li>
+        <ul>
+                <li>The two-way peg is overcollateralized with a minimum of 150% of value locked in the form of a slashable asset</li>
+                <li>The layer relies on a federated operator and verifier set, where one entity needs to remain honest to ensure the integrity of the bridge. There needs to be at least 6 signers who are publicly known entities.</li>
+            </ul>
+            </li>
         <br />
-        <li>
-            Offchain via alternative consensus protocol: Data is primarily stored on another publicly available network and anyone can participate in running a full node, and there is a mechanism to verify that the data is made available - medium risk
+        <li>🔴 Red:</li>
+            <ul>
+                <li>The two-way peg is managed by a (likely federated) group of signers whose identities are known to the public and/or core development organizations. There need to be at least 8 publicly known signers participating in securing the two-way peg. The signing mechanism for the bitcoin wallet must also be publicly acknowledged.</li>
+            </ul>
+            </li>
+        <br />
+        <li>🛑 Stop!</li>
+        <ul>
+                <li>The two-way peg does not meet the requirements for Red.</li>
+            </ul>
         </li>
         <br />
-        <li>Offchain DAC: State updates are stored via a centralized (or permissioned) committee and Bitcoin full nodes, and users, cannot access that data - high risk</li>
+        <li>Additional considerations:</li>
+        <ul>
+                <li>layers that settle to a parent blockchain must consider their exit window. For rollups, we follow L2Beat’s suggestions on exit windows. These exit window scores overrule any other score related to the two-way peg. For example: If a rollup-style layer leverages tBTC (a yellow or red score) to natively mint bitcoin-backed tokens, but has an immediately upgradeable contract, then the layer will receive a “Stop!” score in the assessment.</li>
+                <li>Due to complexities related to federated set ups, we will additionally highlight more granular trust assumptions for federated two-way pegs in a subsection of the review. In this upcoming framework, we will outline how a federated peg can be upgraded to yellow if it meets a certain threshold of requirements.</li>
+                <li>Additional situations can be added to this framework for edge cases. For example, users of Statechains can unilaterally exit with a Bitcoin L1 transaction, but an operator can steal funds by colluding with the past owner, and users cannot submit a challenge transaction.</li>
+            </ul>
+        </li>
+        </ul>
+`;
+
+    const dataAvailabilityBody = `
+<ul>
+        <li>🟢 Green must match one of the following conditions:</li>
+        <ul>
+                <li>All data needed to reconstruct the layer’s state lives on the Bitcoin L1 and is accessible via full nodes</li>
+                <li>Data is self hosted by default and users are required to store data relative to their own state</li>
+            </ul>
+            </li>
         <br />
-        <li>Offchain Single Server: State updates are stored via a centralized server and Bitcoin full nodes, and users, cannot access that data - high risk</li>
+        <li>🟡 Yellow must match one of the following conditions:</li>
+        <ul>
+                <li>Data is made available by an alternative consensus protocol (that is not bitcoin) node operate set and the full node software is open-source</li>
+                <li>Data is stored via an offchain committee or consensus protocol, where validators stake slashable collateral greater than value locked in the layer and DA attestations are backed by this economic security</li>
+            </ul>
+            </li>
         <br />
-        <li>Not disclosed: Code and/or documentation relevant to this category has not been disclosed and we cannot assign a risk score - critical risk</li>
-    </ul>
+        <li>🔴 Red:</li>
+        <ul>
+                <li>Data is stored via an offchain committee with at least 5 actors attesting that the data is available.</li>
+            </ul>
+            </li>
+        <br />
+        <li>🛑 Stop!</li>
+        <ul>
+                <li>None of the requirements for Red are met.</li>
+            </ul>
+            </li>
+        <br />
+        </ul>
 `;
 
     const networkOperatorsBody = `
-    <ul>
-        <li>Network is operated peer-to-peer Protocol doesn’t rely on third party operators - low risk</li>
-        <br />
-        <li>
-            Network operator set is N > 21 and users can self sequence - low risk
-            <ul>
-                <li>Sequencer designs can include Federated, Auction, PoS, DPoS, PoW</li>
-                 <li>If network operator is N < 21, then moved to medium risk</li>
+<ul>
+        <li>🟢 Green must match one of the following conditions:</li>
+        <ul>
+                <li>Users can self-sequence their own transactions and the network fails if the sequencer does not publish blocks that include forced included transactions. Sequencer cannot selectively censor.</li>
             </ul>
-        </li>
+            </li>
         <br />
-        <li>User can’t self sequence, but operator set is N > 21 - medium risk
-            <ul>
-                <li>If operator set is N > 100 then move to low risk</li>
-                <li>Designs include: Auction, PoS, DPoS, PoW</li>
+        <li>🟡 Yellow must match one of the following conditions:</li>
+        <ul>
+                <li>The validator node software is open-source, anyone can become a validator in a permissionless or minimally permissioned (e.g. proof of stake) way, and 21 or more validators participate in proposing and signing blocks</li>
+                <li>The layer is merge-mined with Bitcoin and secured by greater than 50% of hashrate</li>
             </ul>
-        </li>
+            </li>
         <br />
-        <li>Federated operator set: Transactions are sequenced by an honest majority of participants in a permissioned, offchain consensus protocol/network - high risk</li>
+        <li>🔴 Red:</li>
+        <ul>
+                <li>The layer is operated by a validator set of at least 5 publicly known, independent operators</li>
+                <li>Anyone can ensure the integrity of a bridge with a fault proof</li>
+            </ul>
+            </li>
         <br />
-        <li>Centralized operator with no self-sequencing - high risk</li>
+        <li>🛑 Stop!</li>
+        <ul>
+                <li>Doesn’t meet the criteria for any other rating in this section</li>
+            </ul>
+            </li>
         <br />
-        <li>Not disclosed: Code and/or documentation relevant to this category has not been disclosed and we cannot assign a risk score - critical risk</li>
-    </ul>
+        </ul>
 `;
 
     const settlementAssuranceBody = `
     <ul>
-        <li>Bitcoin-equivalent: Settlement happens on, or is enforced by, Bitcoin script and/or consensus participants - low risk</li>
-        <br />
-        <li>
-            Onchain, optimistic settlement: Settlement happens through an onchain challenge response protocol - low risk
-            <ul>
-                <li>Note: BitVM2 sees challenger/verifier role be permissionless</li>
-                <li>If permissioned, medium risk</li>
+        <li>🟢 Green must match one of the following conditions:</li>
+        <ul>
+                <li>Settlement happens onchain and is immediately enforced by Bitcoin Script</li>
+                <li>Settlement happens onchain optimistically where anyone can challenge invalid state transitions during a given time period with a Bitcoin L1 transaction</li>
             </ul>
+            </li>
+        <br />
+        <li>🟡 Yellow must match one of the following conditions:</li>
+        <ul>
+                <li>Settlement guarantees come from a permissionless, alternative consensus network, and the layer inherits reorg resistance from Bitcoin</li>
+            </ul>
+            </li>
+        <br />
+        <li>🔴 Red:</li>
+        <ul>
+                <li>Requirements for yellow are not met</li>
+            </ul>
+            </li>
+        <br />
+        <li>🛑 Stop!</li>
+        <ul>
+                <li>Layer does not have an active state validation mechanism in place. Namely rollups that do not have fault proofs in place.</li>
+            </ul>
+            </li>
+        <br />
+        <li>Additional considerations:</li>
+        <ul>
+                <li>If all transactions are finalized offchain, and the sidesystem’s initiation and closure transactions are finalized by the bitcoin L1, but there is no challenge mechanism to dispute an operator, then it is likely a yellow score.</li>
+                </ul>
         </li>
-        <br />
-        <li>
-            Offchain via alternative, permissionless consensus mechanism: Settlement is managed offchain by a permissionless consensus protocol and/or network of nodes - medium risk
-        </li>
-        <br />
-        <li>Federated: Settlement for the layer is finalized by an honest majority of participants in a permissioned, offchain consensus protocol/network - high risk</li>
-        <br />
-        <li>Offchain via single server: Settlement for the layer is finalized by one party - high risk</li>
-        <br />
-        <li>Not disclosed: Code and/or documentation relevant to this category has not been disclosed and we cannot assign a risk score - critical risk</li>
-        <br />
-        <li>
-            Edge case:
-            <ul>
-                <li>If the protocol has no fraud proofs, then it is high risk</li>
-            </ul>
-        </li>
-        <br />
-    </ul>
-`;
-
-    const bridgeCustodyBody = `
-    <ul>
-        <li>No custody with unilateral exit enforced by an L1 transaction - low risk</li>
-            <ul>
-            <li>If users can not bypass centralized operator for withdrawals, move to medium and note critical risk that withdrawals can be paused indefinitely, but not stolen</li>
-            <li>If no state validation mechanism in place, and network operator(s) can collude and post fraudulent state roots to steal funds, then move to high risk</li>
-            </ul>
-            <br />
-        <li>No custody with optimistic settlement - low risk</li>
-        <br />
-        <li>The two-way peg is federated, but anyone can participate as a watchtower/challenger and challenge malicious withdrawals - low risk</li>
-            <ul>
-            <li>If watchtower role is federated, move to medium risk. If N < 21 watchtowers, move to high risk</li>
-            </ul>
-            <br />
-        <li>The two-way peg is governed by an alternative, consensus mechanism - medium risk</li>
-            <ul>
-            <li>If operators do not post collateral, and there is no mechanism to slash this collateral, then high risk</li>
-            <li>If collateral posted by bridge operators does not exceed the amount of BTC, and there is no 'liveness ratio' in place, then high risk</li>
-            <li>If outsourced to an alternative consensus mechanism, that is not the same consensus mechanism as the chain, then high risk</li>
-            </ul>
-            <br />
-        <li>The protocol has an honest-majority federation securing its two way peg - high risk</li>
-        <br />
-        <li>The protocol doesn’t enable unilateral exit, and its two way peg is managed by centralized parties - high risk</li>
-        <br />
-        <li>Not disclosed: Code and/or documentation relevant to this category has not been disclosed and we cannot assign a risk score - critical risk</li>
-        <br />
-        <li>Edge case:</li>
-            <ul>
-            <li>Users can unilaterally exit, but network operators can collude with other network participants to steal funds, and there is no way to challenge fraud - medium risk</li>
-            </ul>
-    </ul>
+        </ul>
 `;
 
     const additionalQuestionsBody = `
     <ul>
-        <li>Can users unilaterally exit the L2 and/or bridge that is custodying their funds?</li>
-            <ul>
-            <li>Yes/no</li>
-            <li>Insert how</li>
+    <ul>
+        <li>In addition to performing this assessment, we additionally have a “Bitcoin security” section where we cover:</li>
+        <ul>
+                <li>If the protocol inherits security from bitcoin</li>
+                <li>If the protocol needs an alternative token to function</li>
+                <li>If the protocol introduces MEV to bitcoin</li>
+                <li>If the protocol contributes to bitcoin’s security budget</li>
             </ul>
-        <br />
-        <li>Does the protocol inherit security from Bitcoin miners, full nodes or BTC the asset?</li>
-            <ul>
-            <li>Yes/no</li>
-            <li>Insert how</li>
-            </ul>
-        <br />
-        <li>Does an alternative token play a role in network security/permitting withdrawals?</li>
-            <ul>
-            <li>Yes/no</li>
-            <li>Insert how</li>
-            </ul>
-        <br />
-        <li>Does the protocol create risks for MEV at the protocol, and base layer, level?</li>
-            <ul>
-            <li>Yes/no</li>
-            <li>Insert how</li>
-            </ul>
-        <br />
-        <li>Does the protocol pay fees to Bitcoin miners?</li>
-            <ul>
-            <li>Yes/no</li>
-            <li>Insert how</li>
-            </ul>
+            </li>
+        </ul>
+        <li>We also cover areas related to various technologies used, and potential use cases.</li>
     </ul>
 `;
 
@@ -200,7 +184,7 @@ const Methodology: React.FC = () => {
 `;
 
     const criticalRiskAcknowledgementBody = `
-    <p>If a protocol has a critical risk item, even if not directly covered in our risk assessment, it should be clarified at the beginning of the review. An example of a critical risk, that is out of scope for our assessment, is a rollup settling on an EVM sidechain with immediately upgradeable contracts. This does not fit into our risk assessment directly, but should be acknowledged at the top of the overall review.</p>
+    <p>If we cannot verify a specific category in this assessment (e.g. some aspect of the code is not source-viewable), then we automatically assign it a "Stop" score. If the mainnet node implementation is not source-viewable, we do not include the project on the site.</p>
 `;
 
     const summaryBody = `
@@ -210,11 +194,7 @@ const Methodology: React.FC = () => {
     <br />
     <p>Bitcoin does not have a unified scaling roadmap. There are tradeoffs with every protocol being implemented to support Bitcoin scaling. This framework hopes to capture some of the nuance related to the various designs being proposed.</p>
     <br />
-    <p>If you have comments on this framework, please consider joining our <a href="https://t.me/+8rv-1I2gkmQ4ZmJh" style="color: blue; text-decoration: underline;" target="_blank" rel="noopener noreferrer">community chat</a> to discuss.</p>
-`;
-
-    const clarifyingPointsBody = `
-    <p>We define permissionless as meaning anyone with sufficient capital and resources can participate in consensus, operating a node, block production, etc.</p>
+    <p>If you have comments on this framework, please consider joining our <a href="https://t.me/+8rv-1I2gkmQ4ZmJh" style="color: blue; text-decoration: underline;" target="_blank" rel="noopener noreferrer">community chat</a> to discuss. You can also add comments or feedback <a href="https://bitcoinlayers.discourse.group/t/updating-the-bitcoin-layers-framework/11" style="color: blue; text-decoration: underline;" target="_blank" rel="noopener noreferrer">here</a>.</p>
 `;
 
     return (
@@ -223,7 +203,7 @@ const Methodology: React.FC = () => {
                 <div className="flex justify-start items-center gap-8 w-full">
                     <div className="flex-grow flex items-center gap-[30px] h-[156px]">
                         <div className="special_header flex-grow sm:h-20 text-6xl lg:text-10xl text_table_important">
-                            Approach to analyzing risk
+                            Approach to analyzing layers
                         </div>
                     </div>
                 </div>
@@ -239,30 +219,32 @@ const Methodology: React.FC = () => {
                                         protocols
                                     </div>
                                     <div className="text-base font-normal text-slate-500 leading-normal">
-                                        We analyze protocols on four categories:
-                                        Data availability, network operators,
-                                        settlement assurance (a.k.a finality),
-                                        and the bridge custody (or two-way peg).
+                                        The Bitcoin Layers risk assessment is
+                                        broken down into four sections. They
+                                        cover Bridge Custody, Data Availability,
+                                        Network Operators, and Settlement
+                                        Assurance (finality guarantees). The
+                                        assessments also include more granular
+                                        reviews of specific areas. For example,
+                                        if the chain uses a federated two-way
+                                        peg, an additional assessment on the
+                                        security related to that peg can be
+                                        performed.
                                         <br />
-                                        <br /> Protocols do not receive an
-                                        overall score, but a risk summary is
-                                        added at the beginning of every
-                                        assessment to highlight risk areas that
-                                        can be critical. <br />
-                                        <br />
-                                        For example, if an optimium uses an
-                                        offchain data availability solution that
-                                        is a single server, then it only takes
-                                        collusion between a sequencer and the
-                                        operator of the DA server to steal
-                                        everyone’s funds. This is a critical and
-                                        should be noted in the summary. <br />
-                                        <br />
-                                        Let’s review how protocols can
-                                        potentially be assessed.
+                                        <br /> This assessment is not reflective
+                                        of L2 or sidesystem security. It is not
+                                        a security audit. It is an assessment
+                                        that outlines the varying degree of
+                                        trust assumptions that users have to
+                                        take on when interacting with a bitcoin
+                                        sidesystem. <br />
                                     </div>
                                 </div>
                             </div>
+                            <InfoBox
+                                title="Bridge Custody"
+                                body={bridgeCustodyBody}
+                            />
                             <InfoBox
                                 title="Data Availability"
                                 body={dataAvailabilityBody}
@@ -274,10 +256,6 @@ const Methodology: React.FC = () => {
                             <InfoBox
                                 title="Settlement Assurance"
                                 body={settlementAssuranceBody}
-                            />
-                            <InfoBox
-                                title="Bridge Custody"
-                                body={bridgeCustodyBody}
                             />
                             <InfoBox
                                 title="Additional Questions"
@@ -292,10 +270,6 @@ const Methodology: React.FC = () => {
                                 body={criticalRiskAcknowledgementBody}
                             />
                             <InfoBox title="Summary" body={summaryBody} />
-                            <InfoBox
-                                title="Clarifying Points"
-                                body={clarifyingPointsBody}
-                            />
                         </div>
                     </div>
                 </div>

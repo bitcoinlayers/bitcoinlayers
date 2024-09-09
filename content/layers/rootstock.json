@@ -9,7 +9,7 @@
     "purpose": "General",
     "btcBridge": "Federated Multisig",
     "settlement": "Offchain",
-    "btcLocked": 2794,
+    "btcLocked": 2764,
     "executionEnv": "Offchain",
     "consensus": "Merge-Mining",
     "nativeToken": "RBTC",
@@ -70,7 +70,7 @@
                 },
                 {
                     "title": "No MEV introduced to Bitcoin, but Bitcoin miners can extract sidechain MEV",
-                    "content": "Rootstock does not leak MEV to Bitcoin directly. Due to the nature of Rootstocks execution environment, Bitcoin miners may take advantage of opportunies to extract MEV if the network is experiencing high activity."
+                    "content": "Rootstock does not leak MEV to Bitcoin directly. Due to the nature of Rootstocks execution environment, Bitcoin miners may take advantage of opportunities to extract MEV if the network is experiencing high activity."
                 },
                 {
                     "title": "Merge-mining enables Bitcoin miners to earn more fees",

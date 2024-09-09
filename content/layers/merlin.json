@@ -5,11 +5,11 @@
     "live": "Mainnet",
     "federation": true,
     "underReview": "no",
-    "riskFactors": ["High", "High", "High", "Unverified"],
+    "riskFactors": ["Unverified", "High", "High", "Unverified"],
     "purpose": "General",
     "btcBridge": "Limited information",
     "settlement": "External",
-    "btcLocked": 14423,
+    "btcLocked": 9303,
     "executionEnv": "Offchain",
     "consensus": "Centralized Sequencer",
     "nativeToken": "MERL",
@@ -29,9 +29,9 @@
         {
             "category": "Bridge Custody",
             "score": 0,
-            "tier": "High",
+            "tier": "Unverified",
             "title": "Users deposit funds into a MPC wallet managed by a custodian",
-            "content": "When users deposit funds into Merlin, they deposit funds into a MPC wallet managed by Cobo, a institutional custodian. Information on how many signers participate in this MPC scheme is not available. Merlin has stated that more players are being added into this custody scheme."
+            "content": "When users deposit funds into Merlin, they deposit funds into a MPC wallet managed by Cobo, a institutional custodian. Information on how many signers participate in this MPC scheme is not available. Merlin has stated that more players are being added into this custody scheme.\n\n🔬We are currently reviewing the signers for the Merlin two-way peg."
         },
         {
             "category": "Data Availability",

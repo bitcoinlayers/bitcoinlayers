@@ -5,11 +5,11 @@
     "live": "Mainnet",
     "federation": false,
     "underReview": "no",
-    "riskFactors": ["High", "High", "High", "High"],
+    "riskFactors": ["Unverified", "High", "High", "High"],
     "purpose": "General",
     "btcBridge": "Third Party Multi-sig",
     "settlement": "Offchain",
-    "btcLocked": 14,
+    "btcLocked": 3,
     "executionEnv": "Offchain",
     "consensus": "Delegated Proof-of-Stake",
     "nativeToken": "LIBRE",
@@ -29,9 +29,9 @@
         {
             "category": "Bridge Custody",
             "score": 0,
-            "tier": "High",
+            "tier": "Unverified",
             "title": "Libre's two-way peg relies on a third party provider",
-            "content": "BTC users who deposit funds onto Libre do so via the pNetwork chain. This is an alternative consensus mechanism that is governed by the pNetwork token and governance. The signers for the pNetwork bitcoin multi-sig, custodying the funds backing pBTC, participate in a MPC protocol.\n\n⚠️ The pNetwork bridge has historically seen two exploits occur. One of those exploits involved BTC-backed tokens."
+            "content": "BTC users who deposit funds onto Libre do so via the pNetwork chain. This is an alternative consensus mechanism that is governed by the pNetwork token and governance. The signers for the pNetwork bitcoin multi-sig, custodying the funds backing pBTC, participate in a MPC protocol.\n\n⚠️ The pNetwork bridge has historically seen two exploits occur. One of those exploits involved BTC-backed tokens.\n\n🔬We are currently reviewing a score for the Libre two-way peg"
         },
         {
             "category": "Data Availability",
