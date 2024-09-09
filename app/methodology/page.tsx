@@ -45,8 +45,8 @@ const Methodology: React.FC = () => {
             </li>
         <br />
         <li>🔴 Red:</li>
-        <ul>
-                <liThe two-way peg is managed by a (likely federated) group of signers whose identities are known to the public and/or core development organizations. There need to be at least 8 publicly known signers participating in securing the two-way peg. The signing mechanism for the bitcoin wallet must also be publicly acknowledged.</li>
+            <ul>
+                <li>The two-way peg is managed by a (likely federated) group of signers whose identities are known to the public and/or core development organizations. There need to be at least 8 publicly known signers participating in securing the two-way peg. The signing mechanism for the bitcoin wallet must also be publicly acknowledged.</li>
             </ul>
             </li>
         <br />
