@@ -18,6 +18,7 @@ export default function Navbar(): ReactElement {
     const pathname = usePathname();
     const searchHiddenRoutes = [
         "/",
+        "/staking",
         "/federations",
         "/infrastructure",
         "/bitcoinonly",
@@ -132,6 +133,19 @@ export default function Navbar(): ReactElement {
                                         <div className="self-stretch text-slate-500 text-sm font-normal leading-tight">
                                             Overview and risk analysis of
                                             bitcoin layers.
+                                        </div>
+                                    </Link>
+                                </div>
+                                <div className="h-[88px] p-3 rounded-md flex-col justify-start items-start flex hover:bg-blue-100">
+                                    <Link
+                                        href="/staking"
+                                        onClick={closeSubmenu}
+                                    >
+                                        <div className="text-zinc-800 text-base font-medium leading-normal">
+                                            Staking
+                                        </div>
+                                        <div className="self-stretch text-slate-500 text-sm font-normal leading-tight">
+                                            Overview and risk analysis of staking mechanisms.
                                         </div>
                                     </Link>
                                 </div>
