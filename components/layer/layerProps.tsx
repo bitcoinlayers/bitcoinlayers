@@ -17,6 +17,18 @@ interface Risksection {
     content: string;
 }
 
+interface Federationsection {
+    category:
+        | "Reputation"
+        | "Participation"
+        | "Signing Mechanism"
+        | "Key Storage";
+    score?: number;
+    tier: "Low" | "Medium" | "High" | "Critical" | "Unverified";
+    title: string;
+    content: string;
+}
+
 interface kbit {
     url: string;
     displayText: string;
@@ -27,6 +39,7 @@ interface LayerProps {
     title: string;
     layerType: string;
     live: string;
+    federation: boolean;
     underReview: string;
     riskFactors: string[];
     purpose: string;
@@ -42,6 +55,7 @@ interface LayerProps {
     links: string[];
     description: string;
     riskAnalysis: Risksection[];
+    federationAnalysis?: Federationsection[];
     sections: Section[];
     knowledgeBits: kbit[];
 }
@@ -52,6 +66,7 @@ export type Layer = {
     title: string;
     layerType: string;
     live: string;
+    federation: boolean;
     underReview: string;
     riskFactors: string[];
     purpose: string;
@@ -67,6 +82,7 @@ export type Layer = {
     links: string[];
     description: string;
     riskAnalysis: Risksection[];
+    federationAnalysis?: Federationsection[];
     sections: Section[];
     knowledgeBits: kbit[];
     /** MDX file body */

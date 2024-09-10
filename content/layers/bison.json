@@ -3,6 +3,7 @@
     "title": "Bison",
     "layerType": "Rollup",
     "live": "Testnet",
+    "federation": false,
     "underReview": "yes",
     "riskFactors": ["", "", "", ""],
     "purpose": "-",

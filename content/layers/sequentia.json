@@ -3,6 +3,7 @@
     "title": "Sequentia",
     "layerType": "Sidechain",
     "live": "Testnet",
+    "federation": false,
     "underReview": "yes",
     "riskFactors": ["", "", "", ""],
     "purpose": "-",

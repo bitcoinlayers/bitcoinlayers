@@ -3,6 +3,7 @@
     "title": "Core",
     "layerType": "Sidechain",
     "live": "Mainnet",
+    "federation": true,
     "underReview": "no",
     "riskFactors": ["Unverified", "Medium", "Medium", "Medium"],
     "purpose": "General",

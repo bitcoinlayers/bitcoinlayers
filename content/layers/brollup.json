@@ -3,6 +3,7 @@
     "title": "Brollup",
     "layerType": "Rollup",
     "live": "Announced",
+    "federation": false,
     "underReview": "yes",
     "riskFactors": ["", "", "", ""],
     "purpose": "-",

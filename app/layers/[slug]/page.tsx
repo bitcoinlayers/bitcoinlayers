@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import { allLayers, allLayerSlugs } from "@/util/layer_index";
 import LayerMenu from "@/components/layer/layerMenu";
 import LayerBody from "@/components/layer/layerBody";
-import RiskAnalysis from "@/components/layer/layerBodyRiskAnalysis";
+import RiskAnalysis from "@/components/layer/risk-analysis/layerBodyRiskAnalysis";
 import LayerOverview from "@/components/layer/layerOverview";
 import LayerImage from "@/components/layer/layer-image";
 
@@ -53,6 +53,7 @@ export default async function LayerPage({
                         <RiskAnalysis
                             riskAnalysis={layer.riskAnalysis}
                             riskFactors={layer.riskFactors}
+                            layer={layer}
                         />
                     )}
                     <LayerBody layer={layer} />

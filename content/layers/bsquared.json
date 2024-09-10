@@ -3,6 +3,7 @@
     "title": "Bsquared Network",
     "layerType": "Sidechain Rollup",
     "live": "Mainnet",
+    "federation": true,
     "underReview": "no",
     "riskFactors": ["Unverified", "Unverified", "Critical", "High"],
     "purpose": "General",

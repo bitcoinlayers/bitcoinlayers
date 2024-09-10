@@ -3,6 +3,7 @@
     "title": "Nexio",
     "layerType": "Sovereign Rollup",
     "live": "Announced",
+    "federation": false,
     "underReview": "yes",
     "riskFactors": ["", "", "", ""],
     "purpose": "-",

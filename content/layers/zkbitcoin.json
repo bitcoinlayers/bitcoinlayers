@@ -3,6 +3,7 @@
     "title": "zkBitcoin",
     "layerType": "MPC Protocol",
     "live": "Testnet",
+    "federation": false,
     "underReview": "yes",
     "riskFactors": ["", "", "", ""],
     "purpose": "-",

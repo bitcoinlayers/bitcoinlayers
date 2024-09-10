@@ -3,6 +3,7 @@
     "title": "RGB",
     "layerType": "CSV",
     "live": "Testnet",
+    "federation": false,
     "underReview": "yes",
     "riskFactors": ["", "", "", ""],
     "purpose": "-",

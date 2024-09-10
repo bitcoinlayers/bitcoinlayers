@@ -3,6 +3,7 @@
     "title": "Rollux",
     "layerType": "Sidechain Rollup",
     "live": "Mainnet",
+    "federation": false,
     "underReview": "no",
     "riskFactors": ["Unverified", "Medium", "Medium", "Critical"],
     "purpose": "General",
