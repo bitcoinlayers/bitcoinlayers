@@ -4,6 +4,7 @@
     "layerType": "Permissioned chain",
     "live": "Mainnet",
     "federation": false,
+    "staking": false,
     "underReview": "no",
     "riskFactors": ["Unverified", "Unverified", "Unverified", "Unverified"],
     "purpose": "BTC Applications",

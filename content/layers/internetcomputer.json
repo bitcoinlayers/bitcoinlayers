@@ -4,6 +4,7 @@
     "layerType": "Sidechain",
     "live": "Mainnet",
     "federation": true,
+    "staking": false,
     "underReview": "no",
     "riskFactors": ["High", "Medium", "Medium", "Medium"],
     "purpose": "General",

@@ -4,6 +4,7 @@
     "layerType": "Virtual UTXOs",
     "live": "Mainnet",
     "federation": false,
+    "staking": false,
     "underReview": "no",
     "riskFactors": ["Unverified", "Medium", "High", "High"],
     "purpose": "Payments",

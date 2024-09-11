@@ -4,6 +4,7 @@
     "layerType": "Sidechain",
     "live": "Testnet",
     "federation": false,
+    "staking": false,
     "underReview": "yes",
     "riskFactors": ["High", "High", "High", "High"],
     "purpose": "-",

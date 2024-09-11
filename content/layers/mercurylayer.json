@@ -4,6 +4,7 @@
     "layerType": "Statechain",
     "live": "Mainnet",
     "federation": false,
+    "staking": false,
     "underReview": "yes",
     "riskFactors": ["", "", "", "", ""],
     "purpose": "-",

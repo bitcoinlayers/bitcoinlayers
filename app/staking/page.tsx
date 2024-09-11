@@ -1,10 +1,10 @@
 import { allLayers } from "@/util/layer_index";
-import FederationTable from "@/components/tables/federation-table";
+import StakingTable from "@/components/tables/staking-table";
 import Hero from "@/components/hero";
 
 export default function StakingPage() {
     const sortedLayers = allLayers
-        .filter((item) => item.federation)
+        .filter((item) => item.staking)
         .sort((a, b) =>
             a.title.toLowerCase().localeCompare(b.title.toLowerCase()),
         );
@@ -40,7 +40,7 @@ export default function StakingPage() {
             <Hero />
             <div className="lg:flex mb-4 justify-center w-full lg:max-w-5xl mx-auto">
                 {/* {tabComponents[activeTab]} */}
-                <FederationTable data={sortedLayers} headers={layerHeaders} />
+                <StakingTable data={sortedLayers} headers={layerHeaders} />
             </div>
         </div>
     );

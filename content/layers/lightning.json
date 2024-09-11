@@ -4,6 +4,7 @@
     "layerType": "State Channel",
     "live": "Mainnet",
     "federation": false,
+    "staking": false,
     "underReview": "no",
     "riskFactors": ["Low", "Low", "Low", "Low"],
     "purpose": "Payments",

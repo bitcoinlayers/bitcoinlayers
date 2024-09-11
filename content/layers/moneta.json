@@ -4,6 +4,7 @@
     "layerType": "Rollup",
     "live": "Mainnet",
     "federation": false,
+    "staking": false,
     "underReview": "no",
     "riskFactors": ["Medium", "Low", "High", "Medium"],
     "purpose": "General",

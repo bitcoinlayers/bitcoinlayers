@@ -4,6 +4,7 @@
     "layerType": "Virtual UTXOs",
     "live": "Testnet",
     "federation": false,
+    "staking": false,
     "underReview": "yes",
     "riskFactors": ["", "", "", ""],
     "purpose": "Payments",

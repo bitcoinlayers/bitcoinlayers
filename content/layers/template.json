@@ -4,6 +4,7 @@
     "layerType": "Rollup/Sidechain/State Channel/State Chain",
     "live": "Mainnet/Testnet/Announced",
     "federation": false,
+    "staking": false,
     "underReview": "yes/no",
     "riskFactors": ["High", "High", "High", "High"],
     "purpose": "General",

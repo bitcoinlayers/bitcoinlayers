@@ -4,6 +4,7 @@
     "layerType": "Ethereum Rollup",
     "live": "Mainnet",
     "federation": false,
+    "staking": false,
     "underReview": "no",
     "riskFactors": ["Unverified", "Medium", "Medium", "Critical"],
     "purpose": "Bitcoin Apps",

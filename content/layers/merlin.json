@@ -4,6 +4,7 @@
     "layerType": "Sidechain",
     "live": "Mainnet",
     "federation": true,
+    "staking": true,
     "underReview": "no",
     "riskFactors": ["Unverified", "High", "High", "Unverified"],
     "purpose": "General",
@@ -75,16 +76,6 @@
                 {
                     "title": "Merlin does not contribute to the security budget",
                     "content": "Merlin does not currently contribute to the Bitcoin security budget."
-                }
-            ]
-        },
-        {
-            "id": "withdrawals",
-            "title": "Additional Considerations",
-            "content": [
-                {
-                    "title": "Some code is not open-source",
-                    "content": "Merlin Chain contracts are all currently upgradeable by an admin. The contracts it has listed on its CDKValdidium can not be verified on its respective L1 blockchain."
                 }
             ]
         },

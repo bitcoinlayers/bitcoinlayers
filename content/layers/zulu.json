@@ -4,6 +4,7 @@
     "layerType": "Sovereign Rollup",
     "live": "Testnet",
     "federation": false,
+    "staking": false,
     "underReview": "yes",
     "riskFactors": ["", "", "", ""],
     "purpose": "General",

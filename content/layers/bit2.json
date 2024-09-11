@@ -4,6 +4,7 @@
     "layerType": "Ethereum Rollup",
     "live": "Testnet",
     "federation": false,
+    "staking": false,
     "underReview": "yes",
     "riskFactors": ["", "", "", ""],
     "purpose": "-",

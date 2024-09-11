@@ -145,7 +145,8 @@ export default function Navbar(): ReactElement {
                                             Staking
                                         </div>
                                         <div className="self-stretch text-slate-500 text-sm font-normal leading-tight">
-                                            Overview and risk analysis of staking mechanisms.
+                                            Overview and risk analysis of
+                                            staking mechanisms.
                                         </div>
                                     </Link>
                                 </div>

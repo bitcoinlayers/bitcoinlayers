@@ -4,6 +4,7 @@
     "layerType": "MPC Protocol",
     "live": "Testnet",
     "federation": false,
+    "staking": false,
     "underReview": "yes",
     "riskFactors": ["", "", "", ""],
     "purpose": "-",
