@@ -3,6 +3,7 @@
     "title": "Cashu",
     "infrastructureType": "Chaumian Ecash Protocol",
     "live": "Mainnet",
+    "staking": false,
     "underReview": "no",
     "riskFactors": ["", ""],
     "bitcoinSecurity": "No",

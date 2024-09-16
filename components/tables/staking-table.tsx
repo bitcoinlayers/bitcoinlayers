@@ -1,24 +1,21 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import Image from "next/image";
 import { Layer } from "@/components/layer/layerProps";
+import { Infrastructure } from "@/components/infrastructure/infrastructureProps";
 import Risk from "@/components/layer/layerTableItemRisk";
 import TableHeader from "@/components/tables/tableHeader";
 import { MobileView, isMobile } from "react-device-detect";
 import Link from "next/link";
 import { useQueryState } from "nuqs";
-import { useMemo } from "react";
 
-type TableTabKey =
-    | "Risk"
-    | "Type"
-    | "Status"
-    | "Unit of Account"
-    | "BTC Locked";
+type TableTabKey = "Risk" | "Type" | "Status" | "Category";
+
+type TableItem = Layer | Infrastructure;
 
 interface Props {
-    data: Layer[];
+    data: TableItem[];
     headers: {
         name: string;
         showSorting: boolean;
@@ -26,6 +23,14 @@ interface Props {
         mobileLabel: string;
     }[];
 }
+
+const isLayer = (item: TableItem): item is Layer => {
+    return (item as Layer).layerType !== undefined;
+};
+
+const isInfrastructure = (item: TableItem): item is Infrastructure => {
+    return (item as Infrastructure).infrastructureType !== undefined;
+};
 
 const LayerImage = ({ src, title }: { src: string; title: string }) => {
     const [imageSrc, setImageSrc] = useState(src);
@@ -75,23 +80,25 @@ const StakingTable = ({ data, headers }: Props) => {
                     valueA = a.title.toLowerCase();
                     valueB = b.title.toLowerCase();
                     break;
+                case "Category":
+                    valueA = isLayer(a) ? "Layer" : "Infrastructure";
+                    valueB = isLayer(b) ? "Layer" : "Infrastructure";
+                    break;
                 case "Type":
-                    valueA = a.layerType;
-                    valueB = b.layerType;
+                    valueA = isLayer(a)
+                        ? a.layerType
+                        : isInfrastructure(a)
+                          ? a.infrastructureType
+                          : "";
+                    valueB = isLayer(b)
+                        ? b.layerType
+                        : isInfrastructure(b)
+                          ? b.infrastructureType
+                          : "";
                     break;
                 case "Status":
                     valueA = a.live;
                     valueB = b.live;
-                    break;
-                case "Unit of Account":
-                    valueA = a.nativeToken;
-                    valueB = b.nativeToken;
-                    break;
-                case "BTC Locked":
-                    valueA = parseFloat(a.btcLocked.toString());
-                    valueB = parseFloat(b.btcLocked.toString());
-                    if (isNaN(valueA)) valueA = -Infinity;
-                    if (isNaN(valueB)) valueB = -Infinity;
                     break;
                 default:
                     return 0;
@@ -104,11 +111,14 @@ const StakingTable = ({ data, headers }: Props) => {
         let filtered = sorted;
         if (types.length > 0) {
             filtered = filtered.filter((item) =>
-                types.includes(item.layerType),
+                types.includes(
+                    isLayer(item) ? item.layerType : item.infrastructureType,
+                ),
             );
         }
 
         filtered = filtered.filter((item) => {
+            if (!item.staking) return false;
             if (status === "Mainnet") return item.live === "Mainnet";
             if (status === "Testnet") return item.live !== "Mainnet";
             return true;
@@ -125,8 +135,6 @@ const StakingTable = ({ data, headers }: Props) => {
             setSortOrder("asc");
         }
     };
-
-    const filteredData = sortAndFilterData;
 
     const handleMobileTabClick = (tab: TableTabKey) => {
         setMobileActiveTab(tab);
@@ -201,14 +209,13 @@ const StakingTable = ({ data, headers }: Props) => {
                 </div>
             </div>
             <MobileView className="flex justify-center">
-                <div className="justify-center lg:items-start gap-1 inline-flex py-3">
+                <div className="justify-center lg:items-start gap-3 inline-flex py-3">
                     {headers.slice(1).map((_item, ind) => {
                         const isAllowedTab = [
                             "Risk",
+                            "Category",
                             "Type",
                             "Status",
-                            "Unit of Account",
-                            "BTC Locked",
                         ].includes(_item.name);
                         return (
                             <div
@@ -245,18 +252,23 @@ const StakingTable = ({ data, headers }: Props) => {
                         headers={isMobile ? mobileTableHeaders : headers}
                         onSort={handleSort}
                     />
-
                     <tbody className="bg-white gap-x-8 border-t border-stroke_tertiary text_table_important">
-                        {filteredData.map((item, index) => (
+                        {sortAndFilterData.map((item, index) => (
                             <tr
                                 className={`cursor-pointer border-b border-stroke_tertiary text_table_important ${
-                                    index === filteredData.length - 1 ? "" : ""
+                                    index === sortAndFilterData.length - 1
+                                        ? ""
+                                        : ""
                                 }`}
                                 key={item.slug}
                             >
                                 <td className="lg:px-6 px-4 py-4 font-semibold whitespace-nowrap border-r lg:border-r-0 border-stroke_tertiary text_table_important text-table_body">
                                     <Link
-                                        href={`/layers/${item.slug}#riskanalysis`}
+                                        href={`/${
+                                            isLayer(item)
+                                                ? "layers"
+                                                : "infrastructure"
+                                        }/${item.slug}`}
                                         className="flex items-center"
                                     >
                                         <LayerImage
@@ -271,13 +283,23 @@ const StakingTable = ({ data, headers }: Props) => {
                                 {(!isMobile || mobileActiveTab === "Risk") && (
                                     <td className="relative px-2 border-stroke_tertiary text_table_important">
                                         <Link
-                                            href={`/layers/${item.slug}#riskanalysis`}
+                                            href={`/${
+                                                isLayer(item)
+                                                    ? "layers"
+                                                    : "infrastructure"
+                                            }/${item.slug}#riskanalysis`}
                                         >
-                                            {item.underReview === "no" ? (
-                                                <Risk layer={item} />
+                                            {isLayer(item) ? (
+                                                item.underReview === "no" ? (
+                                                    <Risk layer={item} />
+                                                ) : (
+                                                    <div className="lg:px-5 px-1 text_table_important font-light">
+                                                        Under review
+                                                    </div>
+                                                )
                                             ) : (
-                                                <div className="lg:px-5 px-1 text_table_important font-light">
-                                                    Under review
+                                                <div className="lg:px-5 px-1 text_table_important">
+                                                    Not applicable
                                                 </div>
                                             )}
                                         </Link>
@@ -286,9 +308,17 @@ const StakingTable = ({ data, headers }: Props) => {
                                 {(!isMobile || mobileActiveTab === "Type") && (
                                     <td className="lg:px-6 px-4 py-3 lg:py-4 border-stroke_tertiary text_table_important">
                                         <Link
-                                            href={`/layers/${item.slug}#riskanalysis`}
+                                            href={`/${
+                                                isLayer(item)
+                                                    ? "layers"
+                                                    : "infrastructure"
+                                            }/${item.slug}`}
                                         >
-                                            {item.layerType}
+                                            {isLayer(item)
+                                                ? item.layerType
+                                                : isInfrastructure(item)
+                                                  ? item.infrastructureType
+                                                  : ""}
                                         </Link>
                                     </td>
                                 )}
@@ -296,54 +326,29 @@ const StakingTable = ({ data, headers }: Props) => {
                                     mobileActiveTab === "Status") && (
                                     <td className="lg:px-6 px-4 py-3 lg:py-4 border-stroke_tertiary text_table_important">
                                         <Link
-                                            href={`/layers/${item.slug}#riskanalysis`}
+                                            href={`/${
+                                                isLayer(item)
+                                                    ? "layers"
+                                                    : "infrastructure"
+                                            }/${item.slug}`}
                                         >
                                             {item.live}
                                         </Link>
                                     </td>
                                 )}
                                 {(!isMobile ||
-                                    mobileActiveTab === "Unit of Account") && (
+                                    mobileActiveTab === "Category") && (
                                     <td className="lg:px-6 px-4 py-3 lg:py-4 border-stroke_tertiary text_table_important">
                                         <Link
-                                            href={`/layers/${item.slug}#riskanalysis`}
-                                            className="flex items-center"
+                                            href={`/${
+                                                isLayer(item)
+                                                    ? "layers"
+                                                    : "infrastructure"
+                                            }/${item.slug}`}
                                         >
-                                            {item.feeToken
-                                                .toLowerCase()
-                                                .includes("btc") && (
-                                                <Image
-                                                    src="/btc.svg"
-                                                    alt="BTC logo"
-                                                    width={20}
-                                                    height={20}
-                                                    className="mr-2"
-                                                />
-                                            )}
-                                            {item.feeToken}
-                                        </Link>
-                                    </td>
-                                )}
-                                {(!isMobile ||
-                                    mobileActiveTab === "BTC Locked") && (
-                                    <td className="lg:px-6 px-4 py-3 lg:py-4 border-r border-stroke_tertiary text_table_important">
-                                        <Link
-                                            href={`/layers/${item.slug}#riskanalysis`}
-                                        >
-                                            {item.underReview === "yes" ||
-                                            item.btcLocked === null ||
-                                            isNaN(item.btcLocked) ? (
-                                                <div className="font-light">
-                                                    Under review
-                                                </div>
-                                            ) : (
-                                                <div>
-                                                    ₿{" "}
-                                                    {Number(
-                                                        item.btcLocked,
-                                                    ).toLocaleString()}
-                                                </div>
-                                            )}
+                                            {isLayer(item)
+                                                ? "Layer"
+                                                : "Infrastructure"}
                                         </Link>
                                     </td>
                                 )}

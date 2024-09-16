@@ -1,16 +1,22 @@
 import { allLayers } from "@/util/layer_index";
+import { allInfrastructures } from "@/util/infrastructure_index";
+
 import StakingTable from "@/components/tables/staking-table";
 import Hero from "@/components/hero";
 
 export default function StakingPage() {
-    const sortedLayers = allLayers
+    const sortedEverything = [...allLayers, ...allInfrastructures]
         .filter((item) => item.staking)
         .sort((a, b) =>
             a.title.toLowerCase().localeCompare(b.title.toLowerCase()),
         );
 
     const typeFilters = [
-        ...new Set(sortedLayers.map((layer) => layer.layerType)),
+        ...new Set(
+            sortedEverything.map((item) =>
+                "layerType" in item ? item.layerType : item.infrastructureType,
+            ),
+        ),
     ];
 
     const layerHeaders = [
@@ -27,20 +33,14 @@ export default function StakingPage() {
             filterOptions: typeFilters,
         },
         { name: "Status", showSorting: true, mobileLabel: "Status" },
-        {
-            name: "Unit of Account",
-            showSorting: true,
-            mobileLabel: "Unit",
-        },
-        { name: "BTC Locked", showSorting: true, mobileLabel: "BTC" },
+        { name: "Category", showSorting: true, mobileLabel: "Category" },
     ];
 
     return (
         <div className="mx-auto">
             <Hero />
             <div className="lg:flex mb-4 justify-center w-full lg:max-w-5xl mx-auto">
-                {/* {tabComponents[activeTab]} */}
-                <StakingTable data={sortedLayers} headers={layerHeaders} />
+                <StakingTable data={sortedEverything} headers={layerHeaders} />
             </div>
         </div>
     );

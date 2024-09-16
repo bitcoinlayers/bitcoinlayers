@@ -3,6 +3,7 @@
     "title": "DLC Link",
     "infrastructureType": "BTC Wrapper",
     "live": "Mainnet",
+    "staking": false,
     "underReview": "yes",
     "riskFactors": ["", ""],
     "bitcoinSecurity": "yes",
