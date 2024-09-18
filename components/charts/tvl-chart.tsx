@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import { CartesianGrid, XAxis, AreaChart, Area } from "recharts";
 import { CombinedTVLChart } from "./combined-tvl-chart";
 import {

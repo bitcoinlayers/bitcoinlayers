@@ -1,9 +1,7 @@
-"use client";
-
-import React from "react";
 import { allLayers } from "@/util/layer_index";
 import Hero from "@/components/hero";
 import TVLChart from "@/components/charts/tvl-chart";
+import { Suspense } from "react";
 
 export default function Home() {
     const sortedLayers = allLayers.sort((a, b) =>
@@ -37,11 +35,13 @@ export default function Home() {
     ];
 
     return (
-        <div className="mx-6">
-            <Hero />
-            <div className="mb-4 w-full max-w-5xl mx-auto">
-                <TVLChart />
+        <Suspense>
+            <div className="mx-6">
+                <Hero />
+                <div className="mb-4 w-full max-w-5xl mx-auto">
+                    <TVLChart />
+                </div>
             </div>
-        </div>
+        </Suspense>
     );
 }

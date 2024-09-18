@@ -1,5 +1,6 @@
 import { useMemo } from "react";
 import { Area, AreaChart, CartesianGrid, XAxis } from "recharts";
+import { useQueryState } from "nuqs";
 import {
     ChartConfig,
     ChartContainer,
@@ -15,16 +16,35 @@ interface CombinedTVLChartProps {
 }
 
 export function CombinedTVLChart({ data, chartConfig }: CombinedTVLChartProps) {
-    const sortedChartData = useMemo(
-        () =>
-            Object.entries(data)
-                .map(([date, amount]) => ({ date, BTC: amount }))
-                .sort(
-                    (a, b) =>
-                        new Date(a.date).getTime() - new Date(b.date).getTime(),
-                ),
-        [data],
-    );
+    const [range] = useQueryState("range");
+
+    const sortedChartData = useMemo(() => {
+        const currentDate = new Date();
+        let startDate = new Date();
+
+        switch (range) {
+            case "1mo":
+                startDate.setMonth(currentDate.getMonth() - 1);
+                break;
+            case "3mo":
+                startDate.setMonth(currentDate.getMonth() - 3);
+                break;
+            case "1y":
+                startDate.setFullYear(currentDate.getFullYear() - 1);
+                break;
+            default:
+                // If no valid range is specified, show all data
+                startDate = new Date(0);
+        }
+
+        return Object.entries(data)
+            .map(([date, amount]) => ({ date, BTC: amount }))
+            .filter((item) => new Date(item.date) >= startDate)
+            .sort(
+                (a, b) =>
+                    new Date(a.date).getTime() - new Date(b.date).getTime(),
+            );
+    }, [data, range]);
 
     return (
         <ChartContainer
