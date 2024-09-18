@@ -21,6 +21,14 @@ import {
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { useQuery } from "@tanstack/react-query";
 import { fetcher } from "@/util/fetcher";
+import {
+    Select,
+    SelectContent,
+    SelectItem,
+    SelectTrigger,
+    SelectValue,
+} from "@/components/ui/select";
+import { useQueryState } from "nuqs";
 
 interface Balance {
     amount: number;
@@ -37,7 +45,13 @@ interface ProcessedData {
 }
 
 export default function TotalValueLockedChart() {
-    const [chartType, setChartType] = useState("separate");
+    const [chartType, setChartType] = useQueryState("chart", {
+        defaultValue: "separate",
+    });
+    const [dateRange, setDateRange] = useQueryState("range", {
+        defaultValue: "3mo",
+    });
+
     const { data } = useQuery<Balance[]>({
         queryKey: ["get_balances"],
         queryFn: () =>
@@ -87,8 +101,29 @@ export default function TotalValueLockedChart() {
                   ([date, layerData]) => ({ date, ...layerData }),
               );
 
-    const sortedChartData = finalChartData?.sort(
-        (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime(),
+    const filterDataByDateRange = (data: any[]) => {
+        const now = new Date();
+        let startDate = new Date();
+
+        switch (dateRange) {
+            case "1mo":
+                startDate.setMonth(now.getMonth() - 1);
+                break;
+            case "3mo":
+                startDate.setMonth(now.getMonth() - 3);
+                break;
+            case "1y":
+                startDate.setFullYear(now.getFullYear() - 1);
+                break;
+        }
+
+        return data.filter((item) => new Date(item.date) >= startDate);
+    };
+
+    const sortedChartData = filterDataByDateRange(
+        finalChartData?.sort(
+            (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime(),
+        ),
     );
 
     const chartConfig = Object.fromEntries(
@@ -108,40 +143,52 @@ export default function TotalValueLockedChart() {
                     <CardTitle className="flex font-normal items-center gap-2">
                         Bitcoin in Layers
                     </CardTitle>
-                    <CardDescription className="mt-1 text-xs">
+                    <CardDescription className="mt-1 text-xs flex flex-wrap">
                         Average total value of BTC locked per day in bitcoin
                         second layers
                     </CardDescription>
                 </div>
-                <ToggleGroup
-                    className="pt-2 xl:pt-0 space-x-1 self-start"
-                    type="single"
-                    value={chartType}
-                    onValueChange={setChartType}
-                >
-                    <ToggleGroupItem
-                        value="combined"
-                        className="border font-normal rounded-full px-4"
-                        size="sm"
+                <div className="flex flex-col lg:flex-row items-start lg:items-center justify-center lg:space-x-2 space-y-2 lg:space-y-0 pt-2 lg:pt-0">
+                    <ToggleGroup
+                        className="space-x-1"
+                        type="single"
+                        value={chartType}
+                        onValueChange={(value) => {
+                            if (value && value !== chartType) {
+                                setChartType(value);
+                            }
+                        }}
                     >
-                        Combined
-                    </ToggleGroupItem>
-                    <ToggleGroupItem
-                        value="separate"
-                        className="border rounded-full px-4 font-normal"
-                        size="sm"
-                    >
-                        Separate
-                    </ToggleGroupItem>
-                    <ToggleGroupItem
-                        value="yearly"
-                        className="border rounded-full px-4 font-normal"
-                        size="sm"
-                    >
-                        <span className="hidden sm:block">Last 3 months</span>
-                        <span className="sm:hidden">M</span>
-                    </ToggleGroupItem>
-                </ToggleGroup>
+                        <ToggleGroupItem
+                            value="combined"
+                            className="border font-normal rounded-full px-3 lg:px-4 text-xs lg:text-sm"
+                            size="sm"
+                        >
+                            Combined
+                        </ToggleGroupItem>
+                        <ToggleGroupItem
+                            value="separate"
+                            className="border rounded-full px-3 lg:px-4 text-xs lg:text-sm font-normal"
+                            size="sm"
+                        >
+                            Separate
+                        </ToggleGroupItem>
+                    </ToggleGroup>
+                    <div className="block">
+                        <Select value={dateRange} onValueChange={setDateRange}>
+                            <SelectTrigger className="w-[140px] lg:w-[160px] rounded-full px-3 lg:px-4 text-xs lg:text-sm">
+                                <SelectValue placeholder="Select date range" />
+                            </SelectTrigger>
+                            <SelectContent>
+                                <SelectItem value="1mo">Last month</SelectItem>
+                                <SelectItem value="3mo">
+                                    Last 3 months
+                                </SelectItem>
+                                <SelectItem value="1y">Last year</SelectItem>
+                            </SelectContent>
+                        </Select>
+                    </div>
+                </div>
             </CardHeader>
             <CardContent>
                 {chartType === "combined" ? (
@@ -194,42 +241,25 @@ export default function TotalValueLockedChart() {
                                     />
                                 }
                             />
-                            {uniqueLayers
-                                // .sort((a, b) => {
-                                //     const aTotal = sortedChartData.reduce(
-                                //         (sum, item) =>
-                                //             sum +
-                                //             (Number(
-                                //                 item[a as keyof typeof item],
-                                //             ) || 0),
-                                //         0,
-                                //     );
-                                //     const bTotal = sortedChartData.reduce(
-                                //         (sum, item) =>
-                                //             sum +
-                                //             (Number(
-                                //                 item[b as keyof typeof item],
-                                //             ) || 0),
-                                //         0,
-                                //     );
-                                //     return bTotal - aTotal;
-                                // })
-                                .sort()
-                                .map((layer) => (
-                                    <Area
-                                        key={layer}
-                                        name={layer}
-                                        dataKey={layer}
-                                        type="linear"
-                                        stroke={chartConfig[layer]?.color}
-                                        fill={chartConfig[layer]?.color}
-                                        strokeWidth={1}
-                                        dot={false}
-                                        fillOpacity={0.5}
-                                        stackId="1"
-                                    />
-                                ))}
-                            <ChartLegend content={<ChartLegendContent />} />
+                            {uniqueLayers.sort().map((layer) => (
+                                <Area
+                                    key={layer}
+                                    name={layer}
+                                    dataKey={layer}
+                                    type="linear"
+                                    stroke={chartConfig[layer]?.color}
+                                    fill={chartConfig[layer]?.color}
+                                    strokeWidth={1}
+                                    dot={false}
+                                    fillOpacity={0.5}
+                                    stackId="1"
+                                />
+                            ))}
+                            <ChartLegend
+                                content={
+                                    <ChartLegendContent className="flex flex-wrap" />
+                                }
+                            />
                         </AreaChart>
                     </ChartContainer>
                 )}
