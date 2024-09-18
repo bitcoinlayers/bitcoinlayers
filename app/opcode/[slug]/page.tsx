@@ -1,11 +1,9 @@
-"use client";
 import { notFound } from "next/navigation";
 import { allOpcodes, allOpcodeSlugs } from "@/util/opcode_index";
-import Image from "next/image";
-import { useState } from "react";
 import OpcodeMenu from "@/components/opcode/opcodeMenu";
 import OpcodeBody from "@/components/opcode/opcodeBody";
 import OpcodeOverview from "@/components/opcode/opcodeOverview";
+import OpcodeImage from "@/components/opcode/opcode-image";
 
 async function getOpcodeFromSlug(slug: string) {
     const opcode = allOpcodes.find((opcode) => opcode.slug === slug);
@@ -55,25 +53,6 @@ export default async function OpcodePage({
                 </div>
             </div>
         </article>
-    );
-}
-
-function OpcodeImage({ src, title }: { src: string; title: string }) {
-    //TODO lazy loading
-    const [imageSrc, setImageSrc] = useState(src);
-
-    const handleError = () => {
-        setImageSrc("/bitcoinlayers-logo.png");
-    };
-
-    return (
-        <Image
-            src={imageSrc}
-            alt={`${title} logo`}
-            width={100}
-            height={100}
-            onError={handleError}
-        />
     );
 }
 

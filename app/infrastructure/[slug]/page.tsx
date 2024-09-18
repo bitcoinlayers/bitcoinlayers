@@ -1,14 +1,12 @@
-"use client";
 import { notFound } from "next/navigation";
 import {
     allInfrastructures,
     allInfrastructureSlugs,
 } from "@/util/infrastructure_index";
-import Image from "next/image";
-import { useState } from "react";
 import InfrastructureMenu from "@/components/infrastructure/infrastructureMenu";
 import InfrastructureBody from "@/components/infrastructure/infrastructureBody";
 import InfrastructureOverview from "@/components/infrastructure/infrastructureOverview";
+import InfrastructureImage from "@/components/infrastructure/infrastructure-image";
 
 async function getInfrastructureFromSlug(slug: string) {
     const infrastructure = allInfrastructures.find(
@@ -61,25 +59,6 @@ export default async function InfrastructurePage({
                 </div>
             </div>
         </article>
-    );
-}
-
-function InfrastructureImage({ src, title }: { src: string; title: string }) {
-    //TODO lazy loading
-    const [imageSrc, setImageSrc] = useState(src);
-
-    const handleError = () => {
-        setImageSrc("/bitcoinlayers-logo.png");
-    };
-
-    return (
-        <Image
-            src={imageSrc}
-            alt={`${title} logo`}
-            width={100}
-            height={100}
-            onError={handleError}
-        />
     );
 }
 

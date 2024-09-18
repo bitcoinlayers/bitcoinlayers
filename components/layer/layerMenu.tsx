@@ -1,8 +1,7 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Layer } from "./layerProps";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 const LayerMenu: React.FC<{ layer: Layer }> = ({ layer }) => {
     const [activeSection, setActiveSection] = useState("overview");
