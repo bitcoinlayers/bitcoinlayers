@@ -1,7 +1,6 @@
 import { allLayers } from "@/util/layer_index";
 import FederationTable from "@/components/tables/federation-table";
 import Hero from "@/components/hero";
-import { Suspense } from "react";
 
 export default function FederationsPage() {
     const sortedLayers = allLayers
@@ -37,16 +36,11 @@ export default function FederationsPage() {
     ];
 
     return (
-        <Suspense>
-            <div className="mx-auto">
-                <Hero />
-                <div className="lg:flex mb-4 justify-center w-full lg:max-w-5xl mx-auto">
-                    <FederationTable
-                        data={sortedLayers}
-                        headers={layerHeaders}
-                    />
-                </div>
+        <div className="mx-auto">
+            <Hero />
+            <div className="lg:flex mb-4 justify-center w-full lg:max-w-5xl mx-auto">
+                <FederationTable data={sortedLayers} headers={layerHeaders} />
             </div>
-        </Suspense>
+        </div>
     );
 }

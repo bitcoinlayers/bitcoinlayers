@@ -37,7 +37,6 @@ const OpcodeMenu: React.FC<{ opcode: Opcode }> = ({ opcode }) => {
         if (element) {
             const yCoordinate =
                 element.getBoundingClientRect().top + window.scrollY - 48;
-            console.log(yCoordinate, "yCoordinate");
             window.scrollTo({ top: yCoordinate, behavior: "smooth" });
         }
     }

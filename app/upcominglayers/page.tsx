@@ -1,7 +1,6 @@
 import { allLayers } from "@/util/layer_index";
 import Hero from "@/components/hero";
 import LayerTableAll from "@/components/tables/layerTableAll";
-import { Suspense } from "react";
 
 export default function Home() {
     const layersAll = allLayers.sort((a, b) =>
@@ -22,14 +21,12 @@ export default function Home() {
     ];
 
     return (
-        <Suspense>
-            <div className="mx-auto">
-                <Hero />
-                <div className="flex mb-4 justify-center mt-16"></div>
-                <div className="flex mb-4 justify-center max-w-5xl mx-auto">
-                    <LayerTableAll data={layersAll} headers={layerHeaders} />,
-                </div>
+        <div className="mx-auto">
+            <Hero />
+            <div className="flex mb-4 justify-center mt-16"></div>
+            <div className="flex mb-4 justify-center max-w-5xl mx-auto">
+                <LayerTableAll data={layersAll} headers={layerHeaders} />,
             </div>
-        </Suspense>
+        </div>
     );
 }

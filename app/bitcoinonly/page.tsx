@@ -2,7 +2,6 @@ import { allLayers } from "@/util/layer_index";
 import { allInfrastructures } from "@/util/infrastructure_index";
 import BitcoinonlyTable from "@/components/tables/bitcoinonlyTable";
 import Hero from "@/components/hero";
-import { Suspense } from "react";
 
 export default function Home() {
     const sortedEverything = [...allLayers, ...allInfrastructures]
@@ -33,16 +32,14 @@ export default function Home() {
     ];
 
     return (
-        <Suspense>
-            <div className="mx-auto">
-                <Hero />
-                <div className="lg:flex mb-4 justify-center w-full lg:max-w-5xl mx-auto">
-                    <BitcoinonlyTable
-                        data={sortedEverything}
-                        headers={layerHeaders}
-                    />
-                </div>
+        <div className="mx-auto">
+            <Hero />
+            <div className="lg:flex mb-4 justify-center w-full lg:max-w-5xl mx-auto">
+                <BitcoinonlyTable
+                    data={sortedEverything}
+                    headers={layerHeaders}
+                />
             </div>
-        </Suspense>
+        </div>
     );
 }

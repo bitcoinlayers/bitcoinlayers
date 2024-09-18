@@ -24,15 +24,11 @@ export default async function InfrastructurePage({
     params: { slug: string };
 }) {
     const { slug } = params;
-    console.log("Fetching data for slug:", slug);
     const infrastructure = await getInfrastructureFromSlug(slug);
 
     if (!infrastructure) {
-        console.log("Infrastructure not found:", slug);
         return notFound();
     }
-
-    console.log("Fetched infrastructure:", infrastructure);
 
     return (
         <article className="flex flex-col lg:min-h-screen max-w-5xl mx-auto lg:pt-24 pt-12">
@@ -63,10 +59,6 @@ export default async function InfrastructurePage({
 }
 
 export async function generateStaticParams() {
-    console.log(
-        "Generating paths for infrastructures:",
-        allInfrastructureSlugs,
-    );
     return allInfrastructureSlugs.map((slug) => ({
         slug,
     }));

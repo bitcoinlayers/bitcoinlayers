@@ -19,15 +19,11 @@ export default async function OpcodePage({
     params: { slug: string };
 }) {
     const { slug } = params;
-    console.log("Fetching data for slug:", slug);
     const opcode = await getOpcodeFromSlug(slug);
 
     if (!opcode) {
-        console.log("Opcode not found:", slug);
         return notFound();
     }
-
-    console.log("Fetched opcode:", opcode);
 
     return (
         <article className="flex flex-col min-h-screen max-w-5xl mx-auto pt-24">
@@ -57,7 +53,6 @@ export default async function OpcodePage({
 }
 
 export async function generateStaticParams() {
-    console.log("Generating paths for opcodes:", allOpcodeSlugs);
     return allOpcodeSlugs.map((slug) => ({
         slug,
     }));
