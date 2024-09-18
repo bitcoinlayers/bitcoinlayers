@@ -225,6 +225,7 @@ export default function TotalValueLockedChart() {
                                         strokeWidth={1}
                                         dot={false}
                                         fillOpacity={0.5}
+                                        stackId="1"
                                     />
                                 ))}
                             <ChartLegend content={<ChartLegendContent />} />
