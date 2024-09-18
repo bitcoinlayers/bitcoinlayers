@@ -195,25 +195,26 @@ export default function TotalValueLockedChart() {
                                 }
                             />
                             {uniqueLayers
-                                .sort((a, b) => {
-                                    const aTotal = sortedChartData.reduce(
-                                        (sum, item) =>
-                                            sum +
-                                            (Number(
-                                                item[a as keyof typeof item],
-                                            ) || 0),
-                                        0,
-                                    );
-                                    const bTotal = sortedChartData.reduce(
-                                        (sum, item) =>
-                                            sum +
-                                            (Number(
-                                                item[b as keyof typeof item],
-                                            ) || 0),
-                                        0,
-                                    );
-                                    return bTotal - aTotal;
-                                })
+                                // .sort((a, b) => {
+                                //     const aTotal = sortedChartData.reduce(
+                                //         (sum, item) =>
+                                //             sum +
+                                //             (Number(
+                                //                 item[a as keyof typeof item],
+                                //             ) || 0),
+                                //         0,
+                                //     );
+                                //     const bTotal = sortedChartData.reduce(
+                                //         (sum, item) =>
+                                //             sum +
+                                //             (Number(
+                                //                 item[b as keyof typeof item],
+                                //             ) || 0),
+                                //         0,
+                                //     );
+                                //     return bTotal - aTotal;
+                                // })
+                                .sort()
                                 .map((layer) => (
                                     <Area
                                         key={layer}
