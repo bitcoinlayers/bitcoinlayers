@@ -140,11 +140,10 @@ export default function TotalValueLockedChart() {
             <CardHeader className="flex flex-col lg:flex-row flex-wrap lg:items-center justify-between border-b mb-4">
                 <div>
                     <CardTitle className="flex font-normal items-center gap-2">
-                        Bitcoin in Layers
+                        BTC in Layers
                     </CardTitle>
                     <CardDescription className="mt-1 text-xs flex flex-wrap">
-                        Average total value of BTC locked per day in bitcoin
-                        second layers
+                        BTC locked in bitcoin layers
                     </CardDescription>
                 </div>
                 <div className="flex flex-col lg:flex-row items-start lg:items-center justify-center lg:space-x-2 space-y-2 lg:space-y-0 pt-2 lg:pt-0">
