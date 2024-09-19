@@ -9,7 +9,7 @@
     "purpose": "General",
     "btcBridge": "Consensus-level Multi-sig",
     "settlement": "Offchain",
-    "btcLocked": 274,
+    "btcLocked": 277,
     "executionEnv": "Offchain",
     "consensus": "Sidechain",
     "nativeToken": "ICP",

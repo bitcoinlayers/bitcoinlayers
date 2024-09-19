@@ -9,7 +9,7 @@
     "purpose": "Payments",
     "btcBridge": "2-2 Multi-sig",
     "settlement": "Onchain",
-    "btcLocked": 5096,
+    "btcLocked": 5208,
     "executionEnv": "Optimistic",
     "consensus": "Peer-to-Peer",
     "nativeToken": "BTC",
