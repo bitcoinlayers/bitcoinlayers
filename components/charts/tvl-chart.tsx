@@ -197,13 +197,13 @@ export default function TotalValueLockedChart() {
                 ) : (
                     <ChartContainer
                         config={chartConfig}
-                        className="h-64 w-full"
+                        className="h-96 w-full"
                     >
                         <AreaChart
                             data={sortedChartData}
                             margin={{
-                                left: 20,
-                                right: 20,
+                                left: 0,
+                                right: 0,
                                 top: 20,
                                 bottom: 20,
                             }}
@@ -236,7 +236,6 @@ export default function TotalValueLockedChart() {
                                             )
                                         }
                                         className="w-60"
-                                        toFixed={3}
                                     />
                                 }
                             />
