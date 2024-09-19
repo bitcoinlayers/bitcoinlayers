@@ -237,6 +237,7 @@ export default function TotalValueLockedChart() {
                                             )
                                         }
                                         className="w-60"
+                                        toFixed={3}
                                     />
                                 }
                             />

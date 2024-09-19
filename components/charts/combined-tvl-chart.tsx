@@ -16,7 +16,9 @@ interface CombinedTVLChartProps {
 }
 
 export function CombinedTVLChart({ data, chartConfig }: CombinedTVLChartProps) {
-    const [range] = useQueryState("range");
+    const [range] = useQueryState("range", {
+        defaultValue: "3mo",
+    });
 
     const sortedChartData = useMemo(() => {
         const currentDate = new Date();
@@ -94,6 +96,7 @@ export function CombinedTVLChart({ data, chartConfig }: CombinedTVLChartProps) {
                                 })
                             }
                             className="w-48"
+                            toFixed={3}
                         />
                     }
                 />
