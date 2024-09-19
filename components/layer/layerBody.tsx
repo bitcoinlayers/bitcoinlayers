@@ -1,4 +1,4 @@
-import React from "react";
+import { Fragment } from "react";
 import { Layer } from "./layerProps";
 import Link from "next/link";
 import { parseTextWithLinks } from "@/util/parseTextWithLinks";
@@ -17,7 +17,7 @@ const LayerBody: React.FC<{ layer: Layer }> = ({ layer }) => {
                         <div className="body_section">{section.title}</div>
                     </div>
                     {section.content.map((content, contentIndex) => (
-                        <React.Fragment key={contentIndex}>
+                        <Fragment key={contentIndex}>
                             {content.title && (
                                 <div
                                     className={`self-stretch justify-between items-center inline-flex mt-6`}
@@ -31,7 +31,7 @@ const LayerBody: React.FC<{ layer: Layer }> = ({ layer }) => {
                                 {/** TODO glossary hover tips */}
                                 {parseTextWithLinks(content.content)}
                             </div>
-                        </React.Fragment>
+                        </Fragment>
                     ))}
                     {section.id === "data" && (
                         <DailyTotalSupplyChart layer={layer} />

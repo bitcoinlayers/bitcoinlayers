@@ -1,4 +1,3 @@
-import React from "react";
 import { Layer } from "./layerProps";
 import Image from "next/image";
 import LayerDiamond from "./layerDiamond";

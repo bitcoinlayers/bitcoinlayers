@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { Layer } from "@/components/layer/layerProps";
@@ -23,6 +25,7 @@ interface Props {
         filterOptions?: string[];
         mobileLabel: string;
     }[];
+    showToggleGroup?: boolean;
 }
 
 const LayerImage = ({ src, title }: { src: string; title: string }) => {
@@ -47,7 +50,7 @@ const LayerImage = ({ src, title }: { src: string; title: string }) => {
     );
 };
 
-const LayerTableAll = ({ data, headers }: Props) => {
+const LayerTableAll = ({ data, headers, showToggleGroup = true }: Props) => {
     const [status, setStatus] = useQueryState("status", {
         defaultValue: "Mainnet",
     });
@@ -136,68 +139,70 @@ const LayerTableAll = ({ data, headers }: Props) => {
 
     return (
         <div className="px-6 lg:px-0 w-full">
-            <div className="flex lg:mb-6 justify-center -mt-12 lg:mt-0 relative z-20">
-                <div className="justify-start items-start gap-4 inline-flex">
-                    <div
-                        className={`h-[30px] px-4 py-[5px] rounded-full border-2 justify-center items-center gap-1.5 flex cursor-pointer ${
-                            status === "Mainnet"
-                                ? "bg-white border-orange-600"
-                                : "border-slate-300"
-                        }`}
-                        onClick={() => setStatus("Mainnet")}
-                    >
+            {showToggleGroup && (
+                <div className="flex lg:mb-6 justify-center -mt-12 lg:mt-0 relative z-20">
+                    <div className="justify-start items-start gap-4 inline-flex">
                         <div
-                            className={`text-center text-sm font-medium leading-tight ${
+                            className={`h-[30px] px-4 py-[5px] rounded-full border-2 justify-center items-center gap-1.5 flex cursor-pointer ${
                                 status === "Mainnet"
-                                    ? "text-orange-600"
-                                    : "text-slate-600"
+                                    ? "bg-white border-orange-600"
+                                    : "border-slate-300"
                             }`}
+                            onClick={() => setStatus("Mainnet")}
                         >
-                            Mainnet
-                        </div>
-                    </div>
-                    <div
-                        className={`h-[30px] rounded-full border-2 justify-center items-center gap-1 flex cursor-pointer ${
-                            status === "Testnet"
-                                ? "bg-white border-orange-600"
-                                : "border-slate-300"
-                        }`}
-                        onClick={() => setStatus("Testnet")}
-                    >
-                        <div className="grow shrink basis-0 h-[30px] px-4 py-[5px] justify-center items-center gap-1.5 flex">
                             <div
                                 className={`text-center text-sm font-medium leading-tight ${
-                                    status === "Testnet"
+                                    status === "Mainnet"
                                         ? "text-orange-600"
                                         : "text-slate-600"
                                 }`}
                             >
-                                Testnet
+                                Mainnet
                             </div>
                         </div>
-                    </div>
-                    <div
-                        className={`h-[30px] rounded-full border-2 justify-center items-center gap-1 flex cursor-pointer ${
-                            status === "All"
-                                ? "bg-white border-orange-600"
-                                : "border-slate-300"
-                        }`}
-                        onClick={() => setStatus("All")}
-                    >
-                        <div className="grow shrink basis-0 h-[30px] px-4 py-[5px] justify-center items-center gap-1.5 flex">
-                            <div
-                                className={`text-center text-sm font-medium leading-tight ${
-                                    status === "All"
-                                        ? "text-orange-600"
-                                        : "text-slate-600"
-                                }`}
-                            >
-                                All
+                        <div
+                            className={`h-[30px] rounded-full border-2 justify-center items-center gap-1 flex cursor-pointer ${
+                                status === "Testnet"
+                                    ? "bg-white border-orange-600"
+                                    : "border-slate-300"
+                            }`}
+                            onClick={() => setStatus("Testnet")}
+                        >
+                            <div className="grow shrink basis-0 h-[30px] px-4 py-[5px] justify-center items-center gap-1.5 flex">
+                                <div
+                                    className={`text-center text-sm font-medium leading-tight ${
+                                        status === "Testnet"
+                                            ? "text-orange-600"
+                                            : "text-slate-600"
+                                    }`}
+                                >
+                                    Testnet
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            className={`h-[30px] rounded-full border-2 justify-center items-center gap-1 flex cursor-pointer ${
+                                status === "All"
+                                    ? "bg-white border-orange-600"
+                                    : "border-slate-300"
+                            }`}
+                            onClick={() => setStatus("All")}
+                        >
+                            <div className="grow shrink basis-0 h-[30px] px-4 py-[5px] justify-center items-center gap-1.5 flex">
+                                <div
+                                    className={`text-center text-sm font-medium leading-tight ${
+                                        status === "All"
+                                            ? "text-orange-600"
+                                            : "text-slate-600"
+                                    }`}
+                                >
+                                    All
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            )}
             <MobileView className="flex justify-center">
                 <div className="justify-center lg:items-start gap-1 inline-flex py-3">
                     {headers.slice(1).map((_item, ind) => {

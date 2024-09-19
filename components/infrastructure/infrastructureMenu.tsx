@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState, useEffect } from "react";
 import { Infrastructure } from "./infrastructureProps";
 
@@ -37,7 +39,6 @@ const InfrastructureMenu: React.FC<{ infrastructure: Infrastructure }> = ({
         if (element) {
             const yCoordinate =
                 element.getBoundingClientRect().top + window.scrollY - 48;
-            console.log(yCoordinate, "yCoordinate");
             window.scrollTo({ top: yCoordinate, behavior: "smooth" });
         }
     }

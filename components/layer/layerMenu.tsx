@@ -1,8 +1,7 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Layer } from "./layerProps";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 const LayerMenu: React.FC<{ layer: Layer }> = ({ layer }) => {
     const [activeSection, setActiveSection] = useState("overview");
@@ -38,7 +37,6 @@ const LayerMenu: React.FC<{ layer: Layer }> = ({ layer }) => {
         if (element) {
             const yCoordinate =
                 element.getBoundingClientRect().top + window.scrollY - 48;
-            console.log(yCoordinate, "yCoordinate");
             window.scrollTo({ top: yCoordinate, behavior: "smooth" });
         }
     }

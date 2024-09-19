@@ -111,6 +111,7 @@ const ChartTooltipContent = React.forwardRef<
             indicator?: "line" | "dot" | "dashed";
             nameKey?: string;
             labelKey?: string;
+            toFixed?: number;
         }
 >(
     (
@@ -128,6 +129,7 @@ const ChartTooltipContent = React.forwardRef<
             color,
             nameKey,
             labelKey,
+            toFixed,
         },
         ref,
     ) => {
@@ -270,7 +272,11 @@ const ChartTooltipContent = React.forwardRef<
                                             </div>
                                             {item.value && (
                                                 <span className="font-mono font-medium tabular-nums text-foreground">
-                                                    {item.value.toLocaleString()}
+                                                    {toFixed !== undefined
+                                                        ? Number(item.value)
+                                                              .toFixed(toFixed)
+                                                              .toLocaleString()
+                                                        : item.value.toLocaleString()}
                                                 </span>
                                             )}
                                         </div>

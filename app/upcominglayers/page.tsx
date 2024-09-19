@@ -1,6 +1,3 @@
-"use client";
-
-import React, { useState } from "react";
 import { allLayers } from "@/util/layer_index";
 import Hero from "@/components/hero";
 import LayerTableAll from "@/components/tables/layerTableAll";

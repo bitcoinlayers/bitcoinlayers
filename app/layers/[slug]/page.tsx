@@ -6,7 +6,7 @@ import RiskAnalysis from "@/components/layer/risk-analysis/layerBodyRiskAnalysis
 import LayerOverview from "@/components/layer/layerOverview";
 import LayerImage from "@/components/layer/layer-image";
 
-async function getLayerFromSlug(slug: string) {
+function getLayerFromSlug(slug: string) {
     const layer = allLayers.find((layer) => layer.slug === slug);
     if (!layer) {
         return null;
@@ -14,21 +14,13 @@ async function getLayerFromSlug(slug: string) {
     return layer;
 }
 
-export default async function LayerPage({
-    params,
-}: {
-    params: { slug: string };
-}) {
+export default function LayerPage({ params }: { params: { slug: string } }) {
     const { slug } = params;
-    console.log("Fetching data for slug:", slug);
-    const layer = await getLayerFromSlug(slug);
+    const layer = getLayerFromSlug(slug);
 
     if (!layer) {
-        console.log("Layer not found:", slug);
         return notFound();
     }
-
-    console.log("Fetched layer:", layer);
 
     return (
         <article className="flex flex-col lg:min-h-screen max-w-5xl mx-auto lg:pt-24 pt-12">
@@ -63,8 +55,7 @@ export default async function LayerPage({
     );
 }
 
-export async function generateStaticParams() {
-    console.log("Generating paths for layers:", allLayerSlugs);
+export function generateStaticParams() {
     return allLayerSlugs.map((slug) => ({
         slug,
     }));
