@@ -51,11 +51,11 @@ export function CombinedTVLChart({ data, chartConfig }: CombinedTVLChartProps) {
     return (
         <ChartContainer
             config={{ BTC: { label: "BTC", color: "hsl(var(--chart-btc))" } }}
-            className="h-64 w-full"
+            className="h-96 w-full"
         >
             <AreaChart
                 data={sortedChartData}
-                margin={{ left: 20, right: 20, top: 20, bottom: 20 }}
+                margin={{ left: 0, right: 0, top: 20, bottom: 20 }}
             >
                 <defs>
                     <linearGradient id="colorValue" x1="0" y1="0" x2="0" y2="1">
@@ -96,7 +96,6 @@ export function CombinedTVLChart({ data, chartConfig }: CombinedTVLChartProps) {
                                 })
                             }
                             className="w-48"
-                            toFixed={3}
                         />
                     }
                 />
