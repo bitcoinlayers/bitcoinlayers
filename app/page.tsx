@@ -1,6 +1,7 @@
 import { allLayers } from "@/util/layer_index";
 import Hero from "@/components/hero";
 import TVLChart from "@/components/charts/tvl-chart";
+import ViewToggleGroup from "@/components/layer/view-toggle-group";
 
 export default function Home() {
     const sortedLayers = allLayers.sort((a, b) =>
@@ -34,10 +35,10 @@ export default function Home() {
     ];
 
     return (
-        <div className="mx-6">
+        <div className="mx-auto">
             <Hero />
             <div className="mb-4 w-full max-w-5xl mx-auto">
-                <TVLChart />
+                <ViewToggleGroup data={allLayers} headers={layerHeaders} />
             </div>
         </div>
     );
