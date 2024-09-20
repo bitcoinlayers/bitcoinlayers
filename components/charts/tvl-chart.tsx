@@ -143,7 +143,8 @@ export default function TotalValueLockedChart() {
                         BTC Locked
                     </CardTitle>
                     <CardDescription className="mt-1 text-xs flex flex-wrap">
-                        Total amount of BTC locked in protocols listed on Bitcoin Layers
+                        Total amount of BTC locked in protocols listed on
+                        Bitcoin Layers
                     </CardDescription>
                 </div>
                 <div className="flex flex-col lg:flex-row items-start lg:items-center justify-center lg:space-x-2 space-y-2 lg:space-y-0 pt-2 lg:pt-0">
@@ -236,6 +237,7 @@ export default function TotalValueLockedChart() {
                                             )
                                         }
                                         className="w-60"
+                                        sort="desc"
                                     />
                                 }
                             />
