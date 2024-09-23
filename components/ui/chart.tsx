@@ -112,6 +112,8 @@ const ChartTooltipContent = React.forwardRef<
             nameKey?: string;
             labelKey?: string;
             sort?: string;
+            minimumFractionDigits?: number;
+            maximumFractionDigits?: number;
         }
 >(
     (
@@ -130,6 +132,8 @@ const ChartTooltipContent = React.forwardRef<
             nameKey,
             labelKey,
             sort,
+            minimumFractionDigits = 3,
+            maximumFractionDigits = 3,
         },
         ref,
     ) => {
@@ -304,8 +308,8 @@ const ChartTooltipContent = React.forwardRef<
                                                     {item.value.toLocaleString(
                                                         "en-US",
                                                         {
-                                                            minimumFractionDigits: 3,
-                                                            maximumFractionDigits: 3,
+                                                            minimumFractionDigits,
+                                                            maximumFractionDigits,
                                                         },
                                                     )}
                                                 </span>
