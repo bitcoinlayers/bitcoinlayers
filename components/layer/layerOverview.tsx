@@ -2,6 +2,7 @@ import { Layer } from "./layerProps";
 import Image from "next/image";
 import LayerDiamond from "./layerDiamond";
 import { parseTextWithLinks } from "@/util/parseTextWithLinks";
+import RiskRadarChart from "../charts/risk-radar-chart";
 
 const LinkButton = ({
     href,
@@ -23,7 +24,7 @@ const LayerOverview: React.FC<{ layer: Layer }> = ({ layer }) => {
     return (
         <section
             id="overview"
-            className="flex lg:flex-row flex-col justify-between pt-6 gap-4 mb-12"
+            className="flex lg:flex-row flex-col justify-between items-center pt-6 gap-4 mb-12"
         >
             <div className="flex flex-col space-y-10 px-4 flex-grow w-full lg:w-1/4">
                 <Categories layer={layer} />
@@ -31,8 +32,8 @@ const LayerOverview: React.FC<{ layer: Layer }> = ({ layer }) => {
                 <div className="border-t border-stroke_secondary"></div>
                 <Links layer={layer} />
             </div>
-            <div className="mt-4 lg:mt-0 w-[350px] h-[350px] lg:h-[350px] lg:ml-0 ml-0">
-                <LayerDiamond layer={layer} />
+            <div className="mt-4 lg:mt-0 w-[350px] h-[350px] lg:h-[350px] mx-auto">
+                <RiskRadarChart layer={layer} />
             </div>
         </section>
     );
