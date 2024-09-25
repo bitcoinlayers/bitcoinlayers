@@ -5,6 +5,7 @@ import LayerBody from "@/components/layer/layerBody";
 import RiskAnalysis from "@/components/layer/risk-analysis/layerBodyRiskAnalysis";
 import LayerOverview from "@/components/layer/layerOverview";
 import LayerImage from "@/components/layer/layer-image";
+import ProjectTVLChart from "@/components/charts/project-tvl-chart";
 
 function getLayerFromSlug(slug: string) {
     const layer = allLayers.find((layer) => layer.slug === slug);
@@ -35,12 +36,13 @@ export default function LayerPage({ params }: { params: { slug: string } }) {
                     <h1 className="layer_header flex-grow">{layer.title}</h1>
                 </div>
             </div>
-            <div className="container flex lg:flex-row flex-col">
-                <div className="lg:w-1/5 sticky top-[48px] lg:h-screen w-full overflow-y-auto lg:pt-6 px-4 lg:px-0 no-scrollbar py-0 bg-white">
+            <div className="lg:container px-4 flex lg:flex-row flex-col">
+                <div className="lg:w-1/5 z-40 sticky top-[48px] lg:h-screen w-full overflow-y-auto lg:pt-6 lg:px-0 no-scrollbar py-0 bg-white">
                     <LayerMenu layer={layer} />
                 </div>
-                <div className="lg:w-4/5 flex flex-col px-4 lg:px-0">
+                <div className="lg:w-4/5 flex flex-col">
                     <LayerOverview layer={layer} />
+                    <ProjectTVLChart />
                     {layer.underReview === "no" && (
                         <RiskAnalysis
                             riskAnalysis={layer.riskAnalysis}
