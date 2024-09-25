@@ -4,9 +4,16 @@ import Link from "next/link";
 import type { ReactElement } from "react";
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
-import Sheet from "./Sheet";
 import SearchBlock from "./filter/SearchBlock";
 import { usePathname } from "next/navigation";
+import {
+    Sheet,
+    SheetContent,
+    SheetDescription,
+    SheetHeader,
+    SheetTitle,
+    SheetTrigger,
+} from "./ui/sheet";
 
 export default function Navbar(): ReactElement {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -66,7 +73,7 @@ export default function Navbar(): ReactElement {
     }, [pathname]);
 
     return (
-        <nav className="flex flex-row justify-between items-center w-full fixed min-h-[3rem] lg:px-8 px-4 py-2 bg-bg_primary lg:bg-opacity-80 backdrop-blur-sm z-50 pointer-events-auto">
+        <nav className="flex flex-row justify-between items-center w-full fixed min-h-[3rem] lg:px-8 px-4 py-3.5 bg-bg_primary lg:bg-opacity-80 backdrop-blur-sm z-50 pointer-events-auto">
             <Link href="/" onClick={closeMenu}>
                 <div className="w-8 h-8">
                     <Image
@@ -99,7 +106,10 @@ export default function Navbar(): ReactElement {
                                 </button>
                             </li>
                             <li className="hidden md:block">
-                                <SearchBlock />
+                                <SearchBlock
+                                    inputClassName="h-8 text-base"
+                                    imageClassName="bottom-[6px]"
+                                />
                             </li>
                         </>
                     )}
@@ -237,14 +247,72 @@ export default function Navbar(): ReactElement {
                         </Link>
                     </li>
                 </ul>
-                <button className="lg:hidden" onClick={openSheet}>
-                    <Image
-                        src="/icons/menu.svg"
-                        alt="menu"
-                        width={20}
-                        height={20}
-                    />
-                </button>
+                <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
+                    <SheetTrigger asChild>
+                        <button className="lg:hidden" onClick={openSheet}>
+                            <Image
+                                src="/icons/menu.svg"
+                                alt="menu"
+                                width={20}
+                                height={20}
+                            />
+                        </button>
+                    </SheetTrigger>
+                    <SheetContent className="w-64">
+                        <SheetHeader>
+                            <SheetTitle></SheetTitle>
+                            <SheetDescription className="text-base">
+                                <div className="pt-4 px-2">
+                                    <ul className="flex flex-col items-start gap-y-6">
+                                        <li>
+                                            <Link
+                                                href="/glossary"
+                                                className="text-black"
+                                                onClick={closeSheet}
+                                            >
+                                                Glossary
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <Link
+                                                href="/faq"
+                                                className="text-black"
+                                                onClick={closeSheet}
+                                            >
+                                                FAQ
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <Link
+                                                href="/methodology"
+                                                className="text-black"
+                                                onClick={closeSheet}
+                                            >
+                                                Methodology
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <Link
+                                                className="text-black flex items-center gap-1"
+                                                href="https://www.lxresearch.co/"
+                                                target="_blank"
+                                                onClick={closeSheet}
+                                            >
+                                                Blog
+                                                <Image
+                                                    src="/icons/external.png"
+                                                    alt="External Link"
+                                                    width={10}
+                                                    height={10}
+                                                />
+                                            </Link>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </SheetDescription>
+                        </SheetHeader>
+                    </SheetContent>
+                </Sheet>
             </div>
             {searchOpen && !searchHiddenRoutes.includes(pathname) && (
                 <div
@@ -254,61 +322,6 @@ export default function Navbar(): ReactElement {
                     <SearchBlock />
                 </div>
             )}
-            <Sheet isOpen={isSheetOpen} onClose={closeSheet}>
-                <MenuSidebarContent />
-            </Sheet>
         </nav>
     );
-
-    function MenuSidebarContent() {
-        return (
-            <div className="pt-8 px-4">
-                <ul className="flex flex-col gap-y-6">
-                    <li>
-                        <Link
-                            href="/glossary"
-                            className="text-black"
-                            onClick={closeSheet}
-                        >
-                            Glossary
-                        </Link>
-                    </li>
-                    <li>
-                        <Link
-                            href="/faq"
-                            className="text-black"
-                            onClick={closeSheet}
-                        >
-                            FAQ
-                        </Link>
-                    </li>
-                    <li>
-                        <Link
-                            href="/methodology"
-                            className="text-black"
-                            onClick={closeSheet}
-                        >
-                            Methodology
-                        </Link>
-                    </li>
-                    <li>
-                        <Link
-                            className="text-black flex items-center gap-1"
-                            href="https://www.lxresearch.co/"
-                            target="_blank"
-                            onClick={closeSheet}
-                        >
-                            Blog
-                            <Image
-                                src="/icons/external.png"
-                                alt="External Link"
-                                width={10}
-                                height={10}
-                            />
-                        </Link>
-                    </li>
-                </ul>
-            </div>
-        );
-    }
 }

@@ -2,7 +2,6 @@ import { Fragment } from "react";
 import { Layer } from "./layerProps";
 import Link from "next/link";
 import { parseTextWithLinks } from "@/util/parseTextWithLinks";
-import DailyTotalSupplyChart from "./daily-total-supply-chart";
 
 const LayerBody: React.FC<{ layer: Layer }> = ({ layer }) => {
     return (
@@ -33,9 +32,6 @@ const LayerBody: React.FC<{ layer: Layer }> = ({ layer }) => {
                             </div>
                         </Fragment>
                     ))}
-                    {section.id === "data" && (
-                        <DailyTotalSupplyChart layer={layer} />
-                    )}
                 </section>
             ))}
             <div

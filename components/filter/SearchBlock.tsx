@@ -8,10 +8,17 @@ import Image from "next/image";
 import { Layer } from "../layer/layerProps";
 import { Infrastructure } from "../infrastructure/infrastructureProps";
 import { SearchResult } from "./SearchResult";
+import { cn } from "@/lib/utils";
 
 type SearchableItem = Layer | Infrastructure;
 
-const SearchBlock = () => {
+const SearchBlock = ({
+    inputClassName,
+    imageClassName,
+}: {
+    inputClassName?: string;
+    imageClassName?: string;
+}) => {
     const [inputValue, setInputValue] = useState("");
     const [isInputFocused, setInputFocused] = useState(false);
     const ref = useRef<HTMLDivElement>(null);
@@ -55,7 +62,10 @@ const SearchBlock = () => {
                 onChange={handleInputSearch}
                 onFocus={() => setInputFocused(true)}
                 ref={inputRef}
-                className="bg-white border-2 border-slate-300 rounded-full p-2 w-full text-black pl-6 pr-12 outline-none h-11 font_playfair cursor-pointer hover:placeholder:text-slate-600 active:border-[#fe4e18] focus:border-[#fe4e18] text-xl"
+                className={cn(
+                    "bg-white border-2 border-slate-300 rounded-full p-2 w-full text-black pl-6 pr-12 outline-none h-11 font_playfair cursor-pointer hover:placeholder:text-slate-600 active:border-[#fe4e18] focus:border-[#fe4e18] text-xl",
+                    inputClassName,
+                )}
             />
 
             <Image
@@ -65,7 +75,10 @@ const SearchBlock = () => {
                         : "/icons/search.svg"
                 }
                 alt="Search icon"
-                className="absolute outline bottom-3 right-6 cursor-pointer"
+                className={cn(
+                    "absolute outline bottom-3 right-6 cursor-pointer",
+                    imageClassName,
+                )}
                 width={21}
                 height={21}
             />

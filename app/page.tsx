@@ -1,6 +1,5 @@
 import { allLayers } from "@/util/layer_index";
 import Hero from "@/components/hero";
-import TVLChart from "@/components/charts/tvl-chart";
 import ViewToggleGroup from "@/components/layer/view-toggle-group";
 
 export default function Home() {

@@ -113,6 +113,11 @@ section {
         --chart-3: 197 37% 24%;
         --chart-4: 43 74% 66%;
         --chart-5: 27 87% 67%;
+        --chart-6: 180 100% 35%; /* Deep Teal */
+        --chart-7: 30 90% 55%; /* Pumpkin Orange */
+        --chart-8: 270 70% 75%; /* Lavender */
+        --chart-9: 150 100% 35%; /* Lime Green */
+        --chart-10: 330 90% 45%; /* Deep Pink */
         --chart-ark: 14 100% 57%;
         --chart-bevm: 187 100% 42%;
         --chart-bitlayer: 48 100% 50%;
@@ -157,6 +162,11 @@ section {
         --chart-3: 30 80% 55%;
         --chart-4: 280 65% 60%;
         --chart-5: 340 75% 55%;
+        --chart-6: 180 100% 35%; /* Deep Teal */
+        --chart-7: 30 90% 55%; /* Pumpkin Orange */
+        --chart-8: 270 70% 75%; /* Lavender */
+        --chart-9: 150 100% 35%; /* Lime Green */
+        --chart-10: 330 90% 45%; /* Deep Pink */
         --chart-ark: 14 100% 67%;
         --chart-bevm: 187 100% 52%;
         --chart-bitlayer: 48 100% 60%;

@@ -23,7 +23,7 @@ const LayerOverview: React.FC<{ layer: Layer }> = ({ layer }) => {
     return (
         <section
             id="overview"
-            className="flex lg:flex-row flex-col justify-between pt-6 gap-4 mb-12"
+            className="flex lg:flex-row flex-col justify-between items-center lg:items-start pt-6 gap-4 mb-12"
         >
             <div className="flex flex-col space-y-10 px-4 flex-grow w-full lg:w-1/4">
                 <Categories layer={layer} />
