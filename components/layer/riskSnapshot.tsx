@@ -12,7 +12,6 @@ import RiskIconSettlement from "@/components/icons/RiskIconSettlement";
 
 interface RiskSnapshotProps {
     layer: Layer;
-    hoverPosition: { top: number; left: number };
 }
 
 const RiskIcon: React.FC<{
@@ -23,7 +22,7 @@ const RiskIcon: React.FC<{
     const fillColor = getRiskColorIcon(riskFactor);
     return (
         <div
-            className="w-6 h-6 p-1 rounded-full justify-center items-center flex"
+            className="w-5 h-5 sm:w-6 sm:h-6 p-1 rounded-full justify-center items-center flex"
             style={{ backgroundColor: bgColor }}
         >
             <IconComponent fill={fillColor} />
@@ -31,57 +30,49 @@ const RiskIcon: React.FC<{
     );
 };
 
-const RiskSnapshot: React.FC<RiskSnapshotProps> = ({
-    layer,
-    hoverPosition,
-}) => {
+const RiskSnapshot: React.FC<RiskSnapshotProps> = ({ layer }) => {
     return (
-        <div
-            className="fixed mt-2 bg-white p-4 pb-0 shadow-lg border border-stroke_tertiary rounded-lg z-50"
-            style={{
-                width: "500px",
-                top: `${hoverPosition.top}px`,
-                left: `${hoverPosition.left}px`,
-            }}
-        >
-            <div className="mb-6 mt-2 font-bold border-b border-stroke_tertiary text_table_important">
+        <div className="max-w-screen-lg mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="mb-4 sm:mb-6 pb-2 font-bold border-b border-stroke_tertiary text_table_important text-lg sm:text-xl">
                 Risk Snapshot
             </div>
-            {layer.riskAnalysis.map((risk, index) => (
-                <div key={index} className="mb-2 flex items-start">
-                    <div className="flex items-start justify-center">
-                        <RiskIcon
-                            riskFactor={layer.riskFactors[index]}
-                            IconComponent={
-                                [
-                                    RiskIconBridge,
-                                    RiskIconDA,
-                                    RiskIconOperators,
-                                    RiskIconSettlement,
-                                ][index]
-                            }
-                        />
-                    </div>
-                    <div className="ml-4">
-                        <div className="mb-2 font-semibold text_table_important">
-                            {risk.category}:{" "}
-                            <span
-                                className="font-semibold"
-                                style={{
-                                    color: getRiskColorText(
-                                        layer.riskFactors[index],
-                                    ),
-                                }}
-                            >
-                                {layer.riskFactors[index]}
-                            </span>
+            <div className="grid grid-cols-1 gap-4 sm:gap-6">
+                {layer.riskAnalysis.map((risk, index) => (
+                    <div key={index} className="flex items-start">
+                        <div className="flex-shrink-0">
+                            <RiskIcon
+                                riskFactor={layer.riskFactors[index]}
+                                IconComponent={
+                                    [
+                                        RiskIconBridge,
+                                        RiskIconDA,
+                                        RiskIconOperators,
+                                        RiskIconSettlement,
+                                    ][index]
+                                }
+                            />
                         </div>
-                        <div className="mb-4 text_table_important">
-                            {risk.title}
+                        <div className="ml-3 sm:ml-4">
+                            <div className="mb-1 sm:mb-2 font-semibold text_table_important text-sm sm:text-base">
+                                {risk.category}:{" "}
+                                <span
+                                    className="font-semibold"
+                                    style={{
+                                        color: getRiskColorText(
+                                            layer.riskFactors[index],
+                                        ),
+                                    }}
+                                >
+                                    {layer.riskFactors[index]}
+                                </span>
+                            </div>
+                            <div className="text_table_important text-xs sm:text-sm">
+                                {risk.title}
+                            </div>
                         </div>
                     </div>
-                </div>
-            ))}
+                ))}
+            </div>
         </div>
     );
 };

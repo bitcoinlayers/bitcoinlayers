@@ -8,21 +8,16 @@ import RiskIconBridge from "@/components/icons/RiskIconBridge";
 import RiskIconDA from "@/components/icons/RiskIconDA";
 import RiskIconOperators from "@/components/icons/RiskIconOperators";
 import RiskIconSettlement from "@/components/icons/RiskIconSettlement";
+import {
+    HoverCard,
+    HoverCardContent,
+    HoverCardTrigger,
+} from "@/components/ui/hover-card";
+import { isMobile } from "react-device-detect";
 
 const LayerDiamond: React.FC<{ layer: Layer }> = ({ layer }) => {
-    const [hovered, setHovered] = useState(false);
-    const [hoverPosition, setHoverPosition] = useState({ top: 0, left: 0 });
-
-    const handleMouseEnter = (event: React.MouseEvent<HTMLDivElement>) => {
-        const { top, left, width } =
-            event.currentTarget.getBoundingClientRect();
-        setHoverPosition({ top: top - 20, left });
-        setHovered(true);
-    };
-
-    const handleMouseLeave = () => {
-        setHovered(false);
-    };
+    const [isOpen, setIsOpen] = useState(false);
+    const toggleCard = () => setIsOpen(!isOpen);
 
     const containerSize = 350;
     const svgDivSize = containerSize / 2;
@@ -95,57 +90,58 @@ const LayerDiamond: React.FC<{ layer: Layer }> = ({ layer }) => {
         );
     };
 
-    const containerClassName = `lg:w-[${containerSize}px] h-[${containerSize}px] lg:h-full flex justify-center items-center relative ml-0 z-30`;
+    const containerClassName = `lg:w-[${containerSize}px] h-[${containerSize}px] lg:h-full flex justify-center items-center relative ml-0 z-30 cursor-pointer`;
 
     return (
-        <div
-            className={containerClassName}
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-        >
-            {/* {tooltip && <Tooltip title={tooltip.title} style={tooltip.style} />} */}
+        <HoverCard openDelay={300}>
+            <HoverCardTrigger
+                className={containerClassName}
+                // onClick={isMobile ? toggleCard : undefined}
+            >
+                <>
+                    <div className="left-[10px] top-[155px] -rotate-45 absolute origin-top-left text-left text-slate-600 text-xs font-medium leading-none">
+                        BRIDGE
+                    </div>
+                    <div className="left-[51%] translate-x-[-50%] top-[-8px] absolute origin-top-left text-center text-slate-600 text-xs font-medium leading-none w-[80px]">
+                        DATA AVAILABILITY
+                    </div>
+                    <div className="right-[10px] top-[155px] rotate-45 absolute origin-top-right text-right text-slate-600 text-xs font-medium leading-none">
+                        OPERATORS
+                    </div>
+                    <div className="left-[51%] translate-x-[-50%] top-[355px] absolute origin-top-left text-center text-slate-600 text-xs font-medium leading-none w-[80px]">
+                        SETTLEMENT ASSURANCE
+                    </div>
 
-            <div className="left-[10px] top-[155px] -rotate-45 absolute origin-top-left text-left text-slate-600 text-xs font-medium leading-none">
-                BRIDGE
-            </div>
-            <div className="left-[51%] translate-x-[-50%] top-[-8px] absolute origin-top-left text-center text-slate-600 text-xs font-medium leading-none w-[80px]">
-                DATA AVAILABILITY
-            </div>
-            <div className="right-[10px] top-[155px] rotate-45 absolute origin-top-right text-right text-slate-600 text-xs font-medium leading-none">
-                OPERATORS
-            </div>
-            <div className="left-[51%] translate-x-[-50%] top-[355px] absolute origin-top-left text-center text-slate-600 text-xs font-medium leading-none w-[80px]">
-                SETTLEMENT ASSURANCE
-            </div>
-
-            {renderDiamond(
-                layer.riskAnalysis[0].tier,
-                svgDivSize * 0.5,
-                svgDivSize * 0.0,
-                RiskIconBridge,
-            )}
-            {renderDiamond(
-                layer.riskAnalysis[1].tier,
-                svgDivSize * 0.0,
-                svgDivSize * 0.5,
-                RiskIconDA,
-            )}
-            {renderDiamond(
-                layer.riskAnalysis[2].tier,
-                svgDivSize * 0.5,
-                svgDivSize * 1.0,
-                RiskIconOperators,
-            )}
-            {renderDiamond(
-                layer.riskAnalysis[3].tier,
-                svgDivSize * 1.0,
-                svgDivSize * 0.5,
-                RiskIconSettlement,
-            )}
-            {hovered && (
-                <RiskSnapshot layer={layer} hoverPosition={hoverPosition} />
-            )}
-        </div>
+                    {renderDiamond(
+                        layer.riskAnalysis[0].tier,
+                        svgDivSize * 0.5,
+                        svgDivSize * 0.0,
+                        RiskIconBridge,
+                    )}
+                    {renderDiamond(
+                        layer.riskAnalysis[1].tier,
+                        svgDivSize * 0.0,
+                        svgDivSize * 0.5,
+                        RiskIconDA,
+                    )}
+                    {renderDiamond(
+                        layer.riskAnalysis[2].tier,
+                        svgDivSize * 0.5,
+                        svgDivSize * 1.0,
+                        RiskIconOperators,
+                    )}
+                    {renderDiamond(
+                        layer.riskAnalysis[3].tier,
+                        svgDivSize * 1.0,
+                        svgDivSize * 0.5,
+                        RiskIconSettlement,
+                    )}
+                </>
+            </HoverCardTrigger>
+            <HoverCardContent className="w-auto mx-auto max-w-[500px]">
+                <RiskSnapshot layer={layer} />
+            </HoverCardContent>
+        </HoverCard>
     );
 };
 
