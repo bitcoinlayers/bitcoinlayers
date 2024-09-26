@@ -12,12 +12,6 @@ import {
     HoverCardContent,
     HoverCardTrigger,
 } from "@/components/ui/hover-card";
-import {
-    Popover,
-    PopoverContent,
-    PopoverTrigger,
-} from "@/components/ui/popover";
-import { isMobile } from "react-device-detect";
 
 const LayerDiamond: React.FC<{ layer: Layer }> = ({ layer }) => {
     const containerSize = 350;
@@ -153,16 +147,7 @@ const LayerDiamond: React.FC<{ layer: Layer }> = ({ layer }) => {
         </>
     );
 
-    return isMobile ? (
-        <Popover>
-            <PopoverTrigger className={containerClassName}>
-                {renderContent()}
-            </PopoverTrigger>
-            <PopoverContent className="w-[calc(100vw-16px)] mx-auto max-w-[500px]">
-                <RiskSnapshot layer={layer} />
-            </PopoverContent>
-        </Popover>
-    ) : (
+    return (
         <HoverCard openDelay={300}>
             <HoverCardTrigger className={containerClassName}>
                 {renderContent()}
