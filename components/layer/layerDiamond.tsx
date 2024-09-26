@@ -12,8 +12,10 @@ import {
     HoverCardContent,
     HoverCardTrigger,
 } from "@/components/ui/hover-card";
+import { useState } from 'react';
 
 const LayerDiamond: React.FC<{ layer: Layer }> = ({ layer }) => {
+    const [isOpen, setIsOpen] = useState(false);
     const containerSize = 350;
     const svgDivSize = containerSize / 2;
     const svgSize = 215;
@@ -147,9 +149,16 @@ const LayerDiamond: React.FC<{ layer: Layer }> = ({ layer }) => {
         </>
     );
 
+    const toggleHoverCard = () => {
+        setIsOpen(!isOpen);
+    };
+
     return (
-        <HoverCard openDelay={300}>
-            <HoverCardTrigger className={containerClassName}>
+        <HoverCard open={isOpen} onOpenChange={setIsOpen}>
+            <HoverCardTrigger 
+                className={containerClassName} 
+                onClick={toggleHoverCard}
+            >
                 {renderContent()}
             </HoverCardTrigger>
             <HoverCardContent className="w-[calc(100vw-16px)] mx-auto max-w-[500px]">
