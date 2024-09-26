@@ -39,10 +39,7 @@ const Risk: React.FC<RiskProps> = ({ layer }) => {
 
     return (
         <HoverCard openDelay={300}>
-            <HoverCardTrigger
-            // onClick={isMobile ? toggleCard : undefined}
-            >
-                {" "}
+            <HoverCardTrigger>
                 <div className="lg:w-44 w-34 lg:p-4 p-2 justify-start items-center gap-4 inline-flex lg:gap-4 gap-1">
                     <RiskIcon
                         riskFactor={riskLevels[0]?.tier}
