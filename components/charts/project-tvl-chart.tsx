@@ -203,9 +203,9 @@ export default function ProjectTVLChart() {
             </CardHeader>
             <div className="w-full flex flex-col sm:flex-row border-y">
                 <div className="flex flex-col justify-center items-start py-4 sm:py-8 border-b sm:border-b-0 px-6 sm:w-1/2">
-                    <div className="text-lg sm:text-xl">Total Value Locked</div>
+                    <div className="text-lg sm:text-xl">BTC Locked</div>
                     <div className="text-xs sm:text-sm text-muted-foreground">
-                        Average total value of{" "}
+                        Total amount of{" "}
                         {tokens.length > 1
                             ? tokens.slice(0, -1).join(", ") +
                               (tokens.length > 2 ? "," : "") +
