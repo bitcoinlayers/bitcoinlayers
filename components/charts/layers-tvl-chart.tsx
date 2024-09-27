@@ -63,13 +63,16 @@ export default function LayersTVLChart() {
     const processedData = useMemo(() => {
         if (!data) return [];
         return data.reduce((acc: ProcessedData[], item: Balance) => {
-            const existingEntry = acc.find((entry) => entry.date === item.date);
+            const itemDateUTC = item.date;
+            const existingEntry = acc.find(
+                (entry) => entry.date === itemDateUTC,
+            );
             const key = chartType === "combined" ? "BTC" : item.layer_name;
             if (existingEntry) {
                 existingEntry[key] =
                     ((existingEntry[key] as number) || 0) + item.amount;
             } else {
-                acc.push({ date: item.date, [key]: item.amount });
+                acc.push({ date: itemDateUTC, [key]: item.amount });
             }
             return acc;
         }, []);
@@ -183,6 +186,7 @@ export default function LayersTVLChart() {
                                 new Date(value).toLocaleDateString("en-US", {
                                     month: "short",
                                     day: "numeric",
+                                    timeZone: "UTC",
                                 })
                             }
                         />
@@ -197,6 +201,7 @@ export default function LayersTVLChart() {
                                                 month: "short",
                                                 day: "numeric",
                                                 year: "numeric",
+                                                timeZone: "UTC",
                                             },
                                         )
                                     }

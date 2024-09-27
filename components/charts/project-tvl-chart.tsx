@@ -67,14 +67,17 @@ export default function ProjectTVLChart() {
     const processedData = useMemo(() => {
         if (!data) return [];
         return data.reduce((acc: ProcessedData[], item: Balance) => {
-            const existingEntry = acc.find((entry) => entry.date === item.date);
+            const itemDateUTC = item.date;
+            const existingEntry = acc.find(
+                (entry) => entry.date === itemDateUTC,
+            );
             const tokenKey = chartType === "combined" ? "BTC" : item.token_name;
 
             if (existingEntry) {
                 existingEntry[tokenKey] =
                     ((existingEntry[tokenKey] as number) || 0) + item.amount;
             } else {
-                acc.push({ date: item.date, [tokenKey]: item.amount });
+                acc.push({ date: itemDateUTC, [tokenKey]: item.amount });
             }
             return acc;
         }, []);
@@ -231,8 +234,8 @@ export default function ProjectTVLChart() {
                                             {total[
                                                 key as keyof typeof total
                                             ].toLocaleString("en-US", {
-                                                minimumFractionDigits: 3,
-                                                maximumFractionDigits: 3,
+                                                minimumFractionDigits: 2,
+                                                maximumFractionDigits: 2,
                                             })}
                                         </span>
                                     ) : (
@@ -262,6 +265,7 @@ export default function ProjectTVLChart() {
                                 new Date(value).toLocaleDateString("en-US", {
                                     month: "short",
                                     day: "numeric",
+                                    timeZone: "UTC",
                                 })
                             }
                         />
@@ -276,6 +280,7 @@ export default function ProjectTVLChart() {
                                                 month: "short",
                                                 day: "numeric",
                                                 year: "numeric",
+                                                timeZone: "UTC",
                                             },
                                         )
                                     }
