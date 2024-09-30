@@ -40,18 +40,18 @@
             "content": "Lightning users must be responsible for their own data availability, rather than relying on a network of nodes to complete this function. If users irrecoverably lose their channel state data, then they will lose all of the funds they had in the channel."
         },
         {
-            "category": "Network Operators",
+            "category": "Liveness & Reorg Resistance",
             "score": 0,
             "tier": "Low",
-            "title": "L2 transactions are done via a peer-to-peer network",
-            "content": "In a payment channel, users interact in a peer-to-peer fashion, meaning no sequencer or block builder is needed. If a user wants to transfer funds to someone who is not in their specific channel, they can route their payment across a network of nodes to reach the receiver. If a channel counterparty fails to route the payment, the user will have to go through another channel (if they have another open, and there is a route to the recipient) or back onchain to transfer funds to the intended recipient."
+            "title": "Lightning transactions are done via a peer-to-peer network",
+            "content": "In a payment channel, users interact in a peer-to-peer fashion, meaning no sequencer or block builder is needed. If a user wants to transfer funds to someone who is not in their specific channel, they can route their payment across a network of nodes to reach the receiver. If a channel counterparty fails to route the payment, the user will have to go through another channel (if they have another open, and there is a route to the recipient) or back onchain to transfer funds to the intended recipient.\n\nRouted payments are atomic, meaning that if either fully succeed or fail.\n\nLightning Network transactions are only considered final when a channel is closed. Bitcoin consensus enforces this closure as it would any other transaction. When closing a channel, users can collaboratively sign off on a final state, have this state validated by Bitcoin consensus, and then proceed to withdraw their funds."
         },
         {
-            "category": "Settlement Assurance",
+            "category": "State Validation",
             "score": 0,
             "tier": "Low",
-            "title": "Onchain settlement is optimistic",
-            "content": "Lightning Network transactions are only considered final when a channel is closed. Bitcoin consensus enforces this closure as it would any other transaction. When closing a channel, users can collaboratively sign off on a final state, have this state validated by Bitcoin consensus, and then proceed to withdraw their funds. If a user disagrees on a final state proposed by their counterparty, they have a fixed-duration period of time to challenge it, and if the challenge is successful, then the challenger receives the entire balance of the channel that was closed. This challenge-response mechanism, which can end in the challenger receiving all of the channel funds, incentivizes channel counterparties to only close channels using the correct final state."
+            "title": "Users can challenge a malicious counterparty",
+            "content": "If a user disagrees on a final state proposed by their counterparty, they have a fixed-duration period of time to challenge it, and if the challenge is successful, then the challenger receives the entire balance of the channel that was closed. This challenge-response mechanism, which can end in the challenger receiving all of the channel funds, incentivizes channel counterparties to only close channels using the correct final state."
         }
     ],
     "sections": [

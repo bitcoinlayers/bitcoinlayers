@@ -23,14 +23,14 @@
         "https://github.com/btclayer2/BEVM",
         "https://twitter.com/BTCLayer2"
     ],
-    "description": "BEVM is an EVM-compatible sidechain, built on substrate, designed for Bitcoin. On the BEVM chain, the BTC is held in custody by a federated multi-signature address. Its goal is to make it easier for Bitcoin to be seamlessly integrated into the Ethereum ecosystem.",
+    "description": "BEVM is an EVM-compatible sidechainmbuilt on substrate. On the BEVM chain, the BTC is held in custody by a federated signer set.",
     "riskAnalysis": [
         {
             "category": "Bridge Custody",
             "score": 0,
             "tier": "Unverified",
             "title": "Users trust a federation with the custody of their BTC. Signers under review",
-            "content": "On the BEVM chain, BTC is locked in a multi signature address federated by up to 15 trustees. These trustees are the real custodians of BTC as they hold the multi-signature private keys.\n\nAt present, there are 17 validators on the BEVM chain who are responsible for verifying transactions. These validators are selected based on specific criteria defined by the BEVM governance model. These permissioned validators are responsible for selecting the trustees who will custody Bitcoin assets. Users trust that the trustees will not steal their BTC.\n\n🔬We are currently reviewing a the signers for the BEVM two-way peg"
+            "content": "On the BEVM chain, BTC is locked in a bitcoin address controlled by up to 15 trustees. These trustees custody the BTC that backs wBTC on BEVM.\n\nTrustees are selected by BEVM's validator set. Users trust that the trustees will not steal their BTC.\n\n🔬We are currently reviewing a the signers for the BEVM two-way peg"
         },
         {
             "category": "Data Availability",
@@ -40,17 +40,17 @@
             "content": "BEVM full nodes are responsible for satisying BEVM's data availability requirement. Archive nodes are additionally responsible for preserving the historical blockchain data. Users can run their own archive node and access the data at any time by utilizing the node as an RPC. Public endpoints deploy archival nodes to facilitate blockchain data to the users. As long as there is one archive node online, users can recover the full history of the BEVM blockchain."
         },
         {
-            "category": "Network operators",
+            "category": "Liveness & Reorg Resistance",
             "score": 0,
             "tier": "High",
             "title": "BEVM network is operated by permissioned validators",
-            "content": "On a BEVM chain, a block is produced every 6s and is finalized by achieving consensus among permissioned validators. Only the permissioned validators have the rights to produce the block and include the transactions in the block. Consequently, users trust the permissioned validators that they will include their transactions in the block without censoring them.\n\nBEVM governance, determined delegating tokens to validators, is currently not live. This sees a permissioned validator set operate the network."
+            "content": "On a BEVM chain, a block is produced every 6s and is finalized by achieving consensus among permissioned validators. Only the permissioned validators have the rights to produce the block and include the transactions in the block. Consequently, users trust the permissioned validators that they will include their transactions in the block without censoring them.\n\nBEVM governance, which is done by delegating tokens to validators, is currently not live. This sees a permissioned validator set operate the network."
         },
         {
-            "category": "Settlement assurance",
+            "category": "State Validation",
             "score": 0,
             "tier": "High",
-            "title": "Transactions on BEVM chain are finalized by the permissioned validators",
+            "title": "Transactions on BEVM chain are finalized offchain by its permissioned validators",
             "content": "Permissioned validators on BEVM chain verify and include the transactions in BEVM block. Validators participate in a proof of stake consensus mechanism and see blocks produced, and finalized, every six seconds.\n\n2/3 of the validators need to agree on a state transition prior to it being finalized. This process sees no guarantees provided via Bitcoin consensus."
         }
     ],
@@ -60,8 +60,8 @@
             "title": "Bitcoin Security",
             "content": [
                 {
-                    "title": "Users cannot unilaterally exit",
-                    "content": "Users cannot unilaterally exit from the BEVM chain with an L1 Bitcoin transaction."
+                    "title": "No security inherited from bitcoin consensus",
+                    "content": "BEVM currently has no relationship with bitcoin consensus participants."
                 },
                 {
                     "title": "No base layer MEV, but users trust validators to not reorder their transactions",
@@ -83,7 +83,7 @@
             "content": [
                 {
                     "title": "Users trust the trustees on BEVM chain to process their withdrawals",
-                    "content": "Upon the initiation of a withdrawal transaction,  trustees sign the withdrawal and if the number of signatures reaches the multi-signature requirement, the transaction will be broadcast to the Bitcoin Network."
+                    "content": "Upon the initiation of a withdrawal transaction on the BEVM chain, trustees will be notified of the withdrawal request, sign the withdrawal, and if the number of signatures reaches the multi-signature requirement, the transaction will be broadcasted to the bitcoin Network."
                 }
             ]
         },

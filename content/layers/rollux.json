@@ -41,7 +41,7 @@
             "content": "The Rollux chain posts transaction data to Syscoin’s UTXO chain’s data availability solution, [PoDA](https://docs.syscoin.org/docs/tech/poda/). The Syscoin L1 is a merge-mined chain with Bitcoin.\n\nData availability is satisfied by blobs, meaning that Syscoin nodes only store data related to Rollux for at least six hours after finality is reached. After this period, it is deleted. PoDA does not shard data and requires full nodes to store the entire contents of a blob for a given time period. At least one archive node needs to archive the full contents of the blob to ensure Rollux’s historical state is intact.\n\nAfter receiving a blob from Rollux, the UTXO chain attests to the availability of data to the NEVM chain.\n\nOnly one non-pruned online node is needed to reconstruct the entire state of Syscoin and Rollux."
         },
         {
-            "category": "Block Production",
+            "category": "Liveness & Reorg Resistance",
             "score": 0,
             "tier": "Medium",
             "title": "Rollux is operated by a centralized sequencer with forced inclusion to the Syscoin L1 possible",
@@ -52,7 +52,7 @@
             "score": 0,
             "tier": "Critical",
             "title": "State validation mechanism is under development",
-            "content": "Fault proofs are not currently live on Rollux. The Rollux proposer can propose invalid state roots to the L1 smart contract. Funds can be stolen if an invalid state root is committed."
+            "content": "Fault proofs are not currently live on Rollux. The Rollux proposer can propose invalid state roots to the L1 smart contract. Funds can be stolen if an invalid state root is committed.\n\nThe operator of the bitcoin wallets backing wBTC tokens on Rollux can additionally process fradulent withdrawals and steal user funds."
         }
     ],
     "sections": [

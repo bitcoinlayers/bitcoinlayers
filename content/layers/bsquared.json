@@ -41,31 +41,21 @@
             "content": "Sequencer batches are posted to the Bsquared Network L1. This network consists of a permissioned validator set who is responsible for making the data readily available.\n\n🔬We are currently reviewing the operators satisfying the Bsquared DA requirement."
         },
         {
-            "category": "Network Operators",
+            "category": "Liveness & Reorg Resistance",
             "score": 0,
             "tier": "Critical",
             "title": "Both the rollup chain and parent chain are run by federated, centralized parties",
-            "content": "Bsquared Network’s Polygon zkEVM implementation has a single sequencer that posts sequencer batches to its network of three L1 validators. In the event of censorship, users cannot force an exit to Bitcoin."
+            "content": "Bsquared Network’s Polygon zkEVM implementation has a single sequencer that posts sequencer batches to its network of three L1 validators. In the event of censorship, users cannot force include their transaction in a sequence."
         },
         {
-            "category": "Settlement Assurance",
+            "category": "State Validation",
             "score": 0,
-            "tier": "High",
+            "tier": "Critical",
             "title": "SNARKs ensure state correctness, but no settlement assurances inherited from Bitcoin",
-            "content": "Bsquared receives no settlement assurances from Bitcoin. Settlement is finalized by a group of three, federated validators who verify a validity proof submitted by the Bsquared Network zkEVM prover."
+            "content": "Bsquared receives no settlement assurances from Bitcoin. Bsquared settlement is finalized by a group of three, federated validators who verify a validity proof submitted by the Bsquared Network zkEVM prover.\n\nThese settlement assurances provide no security for bitcoin assets.\n\n⚠️If bridge operators process a fradulent withdrawal request, they could steal user funds."
         }
     ],
     "sections": [
-        {
-            "id": "additionalconsiderations",
-            "title": "Additional Considerations",
-            "content": [
-                {
-                    "title": "All facets of Bsquared Network are managed by a centralized operator. Some code is not open-source.",
-                    "content": "Bsquared Network is operated by permissioned validators on its L1 chain and its L2 chain. These validators are likely managed by the company building Bsquared Network. Code, and documentation, related to Bsquared Network's two-way pegs is not open-source. Users are trusting centralized parties to not steal their funds, extract MEV, or censor their transactions."
-                }
-            ]
-        },
         {
             "id": "bitcoinsecurity",
             "title": "Bitcoin Security",

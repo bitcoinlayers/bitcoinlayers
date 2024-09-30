@@ -29,9 +29,9 @@
         {
             "category": "Bridge Custody",
             "score": 0,
-            "tier": "High",
+            "tier": "Medium",
             "title": "A federated multi-sig known as the Powpeg is used to custody users' BTC",
-            "content": "The bridge between bitcoin and Rootstock is secured by a 5-of-9 federated multisig, referred to as the Powpeg (Proof of Work Peg). Users trust this mechanism to not steal their BTC and to also permit withdrawals. Learn more about the Powpeg in the technology section below."
+            "content": "The bridge between bitcoin and Rootstock is secured by a 5-of-9 federated multisig, referred to as the Powpeg (Proof of Work Peg). The identities of entities participating in the Powpeg are publicly known. Users trust the operators of the Powpeg to custody their funds. Learn more about the Powpeg in the technology section below."
         },
         {
             "category": "Data Availability",
@@ -41,18 +41,18 @@
             "content": "The data for Rootstock's state updates is stored on the Rootstock blockchain. Anyone can run a Rootstock node and verify the state of the Rootstock blockchain. So long as there is at least one non-pruned Rootstock full node online, users will be able to recover the full history and state of the Rootstock blockchain."
         },
         {
-            "category": "Network Operators",
+            "category": "Liveness & Reorg Resistance",
             "score": 0,
             "tier": "Medium",
             "title": "Any Bitcoin miner can participate in merge-mining Rootstock",
             "content": "Block production is permissionless. Anyone who is willing and able to merge-mine Rootstock and bitcoin can produce Rootstock blocks and earn rewards. If interested parties do not possess enough hashpower to competitively solo mine, they can join a mining pool that supports Rootstock merged mining."
         },
         {
-            "category": "Settlement Assurances",
+            "category": "State Validaton",
             "score": 0,
-            "tier": "Medium",
+            "tier": "High",
             "title": "Settlement assurances are provided by Rootstock's consensus mechanism",
-            "content": "Sidechain miners sign proposed blocks in the sidechain. Rootstock does not directly receive settlement assurances from Bitcoin consensus participants."
+            "content": "There is no bitcoin enforcement of Rootstock state transitions. A federated operator set (members of the Powpeg) can process fradulent withdrawals and steal user funds."
         }
     ],
     "sections": [

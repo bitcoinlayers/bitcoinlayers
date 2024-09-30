@@ -41,7 +41,7 @@
             "content": "SatoshiVM's validating nodes additionally satisfy the data availability requirement. The node software is not open source, so users are unable to run a full node and validate the state of SatoshiVM."
         },
         {
-            "category": "Block Production",
+            "category": "Liveness & Reorg Resistance",
             "score": 0,
             "tier": "Unverified",
             "title": "Network managed by a permissioned set of operators",
