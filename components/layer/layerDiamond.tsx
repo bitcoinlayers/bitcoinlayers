@@ -1,6 +1,3 @@
-"use client";
-
-import React, { useState } from "react";
 import { Layer } from "./layerProps";
 import { getRiskColorBackground, getRiskColorIcon } from "@/util/riskColors";
 import RiskSnapshot from "./riskSnapshot";
@@ -8,22 +5,9 @@ import RiskIconBridge from "@/components/icons/RiskIconBridge";
 import RiskIconDA from "@/components/icons/RiskIconDA";
 import RiskIconOperators from "@/components/icons/RiskIconOperators";
 import RiskIconSettlement from "@/components/icons/RiskIconSettlement";
+import { Dialog, DialogContent, DialogTrigger } from "../ui/dialog";
 
 const LayerDiamond: React.FC<{ layer: Layer }> = ({ layer }) => {
-    const [hovered, setHovered] = useState(false);
-    const [hoverPosition, setHoverPosition] = useState({ top: 0, left: 0 });
-
-    const handleMouseEnter = (event: React.MouseEvent<HTMLDivElement>) => {
-        const { top, left, width } =
-            event.currentTarget.getBoundingClientRect();
-        setHoverPosition({ top: top - 20, left });
-        setHovered(true);
-    };
-
-    const handleMouseLeave = () => {
-        setHovered(false);
-    };
-
     const containerSize = 350;
     const svgDivSize = containerSize / 2;
     const svgSize = 215;
@@ -42,6 +26,7 @@ const LayerDiamond: React.FC<{ layer: Layer }> = ({ layer }) => {
         const fillColor = getRiskColorIcon(riskFactor);
         return (
             <div
+                key={riskFactor}
                 className="absolute"
                 style={{
                     width: svgDivSize,
@@ -95,56 +80,77 @@ const LayerDiamond: React.FC<{ layer: Layer }> = ({ layer }) => {
         );
     };
 
-    const containerClassName = `lg:w-[${containerSize}px] h-[${containerSize}px] lg:h-full flex justify-center items-center relative ml-0 z-30`;
+    const containerClassName = `lg:w-[${containerSize}px] h-[${containerSize}px] lg:h-full flex justify-center items-center relative ml-0 z-30 cursor-pointer`;
+
+    const riskLabels = [
+        {
+            text: "BRIDGE",
+            className:
+                "left-[10px] top-[155px] -rotate-45 origin-top-left text-left",
+        },
+        {
+            text: "DATA AVAILABILITY",
+            className:
+                "left-[51%] translate-x-[-50%] top-[-8px] origin-top-left text-center w-[80px]",
+        },
+        {
+            text: "OPERATORS",
+            className:
+                "right-[10px] top-[155px] rotate-45 origin-top-right text-right",
+        },
+        {
+            text: "SETTLEMENT ASSURANCE",
+            className:
+                "left-[51%] translate-x-[-50%] top-[355px] origin-top-left text-center w-[80px]",
+        },
+    ];
+
+    const diamondPositions = [
+        { top: svgDivSize * 0.5, left: svgDivSize * 0.0, Icon: RiskIconBridge },
+        { top: svgDivSize * 0.0, left: svgDivSize * 0.5, Icon: RiskIconDA },
+        {
+            top: svgDivSize * 0.5,
+            left: svgDivSize * 1.0,
+            Icon: RiskIconOperators,
+        },
+        {
+            top: svgDivSize * 1.0,
+            left: svgDivSize * 0.5,
+            Icon: RiskIconSettlement,
+        },
+    ];
+
+    const renderContent = () => (
+        <>
+            {diamondPositions.map((position, index) =>
+                renderDiamond(
+                    layer.riskAnalysis[index].tier,
+                    position.top,
+                    position.left,
+                    position.Icon,
+                ),
+            )}
+        </>
+    );
 
     return (
-        <div
-            className={containerClassName}
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-        >
-            {/* {tooltip && <Tooltip title={tooltip.title} style={tooltip.style} />} */}
-
-            <div className="left-[10px] top-[155px] -rotate-45 absolute origin-top-left text-left text-slate-600 text-xs font-medium leading-none">
-                BRIDGE
-            </div>
-            <div className="left-[51%] translate-x-[-50%] top-[-8px] absolute origin-top-left text-center text-slate-600 text-xs font-medium leading-none w-[80px]">
-                DATA AVAILABILITY
-            </div>
-            <div className="right-[10px] top-[155px] rotate-45 absolute origin-top-right text-right text-slate-600 text-xs font-medium leading-none">
-                OPERATORS
-            </div>
-            <div className="left-[51%] translate-x-[-50%] top-[355px] absolute origin-top-left text-center text-slate-600 text-xs font-medium leading-none w-[80px]">
-                SETTLEMENT ASSURANCE
-            </div>
-
-            {renderDiamond(
-                layer.riskAnalysis[0].tier,
-                svgDivSize * 0.5,
-                svgDivSize * 0.0,
-                RiskIconBridge,
-            )}
-            {renderDiamond(
-                layer.riskAnalysis[1].tier,
-                svgDivSize * 0.0,
-                svgDivSize * 0.5,
-                RiskIconDA,
-            )}
-            {renderDiamond(
-                layer.riskAnalysis[2].tier,
-                svgDivSize * 0.5,
-                svgDivSize * 1.0,
-                RiskIconOperators,
-            )}
-            {renderDiamond(
-                layer.riskAnalysis[3].tier,
-                svgDivSize * 1.0,
-                svgDivSize * 0.5,
-                RiskIconSettlement,
-            )}
-            {hovered && (
-                <RiskSnapshot layer={layer} hoverPosition={hoverPosition} />
-            )}
+        <div className="relative">
+            {riskLabels.map((label) => (
+                <div
+                    key={label.text}
+                    className={`absolute text-slate-600 text-xs font-medium leading-none ${label.className}`}
+                >
+                    {label.text}
+                </div>
+            ))}
+            <Dialog>
+                <DialogTrigger className={containerClassName}>
+                    {renderContent()}
+                </DialogTrigger>
+                <DialogContent className="w-[calc(100vw-16px)] mx-auto max-w-[500px] rounded-lg">
+                    <RiskSnapshot layer={layer} />
+                </DialogContent>
+            </Dialog>
         </div>
     );
 };

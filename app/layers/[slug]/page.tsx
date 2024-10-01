@@ -36,7 +36,7 @@ export default function LayerPage({ params }: { params: { slug: string } }) {
                     <h1 className="layer_header flex-grow">{layer.title}</h1>
                 </div>
             </div>
-            <div className="lg:container px-4 flex lg:flex-row flex-col">
+            <div className="lg:container mx-4 lg:px-4 flex lg:flex-row flex-col">
                 <div className="lg:w-1/5 z-40 sticky top-[48px] lg:h-screen w-full overflow-y-auto lg:pt-6 lg:px-0 no-scrollbar py-0 bg-white">
                     <LayerMenu layer={layer} />
                 </div>
