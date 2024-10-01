@@ -273,15 +273,13 @@ const LayerTableAll = ({ data, headers, showToggleGroup = true }: Props) => {
                                 </td>
                                 {(!isMobile || mobileActiveTab === "Risk") && (
                                     <td className="relative px-2 border-stroke_tertiary text_table_important">
-                                        <Link href={`/layers/${item.slug}`}>
-                                            {item.underReview === "no" ? (
-                                                <Risk layer={item} />
-                                            ) : (
-                                                <div className="lg:px-5 px-1 text_table_important font-light">
-                                                    Under review
-                                                </div>
-                                            )}
-                                        </Link>
+                                        {item.underReview === "no" ? (
+                                            <Risk layer={item} />
+                                        ) : (
+                                            <div className="lg:px-5 px-1 text_table_important font-light">
+                                                Under review
+                                            </div>
+                                        )}
                                     </td>
                                 )}
                                 {(!isMobile || mobileActiveTab === "Type") && (

@@ -1,5 +1,3 @@
-"use client";
-
 import { Layer } from "./layerProps";
 import { getRiskColorBackground, getRiskColorIcon } from "@/util/riskColors";
 import RiskSnapshot from "./riskSnapshot";
@@ -7,17 +5,9 @@ import RiskIconBridge from "@/components/icons/RiskIconBridge";
 import RiskIconDA from "@/components/icons/RiskIconDA";
 import RiskIconOperators from "@/components/icons/RiskIconOperators";
 import RiskIconSettlement from "@/components/icons/RiskIconSettlement";
-import {
-    HoverCard,
-    HoverCardContent,
-    HoverCardTrigger,
-} from "@/components/ui/hover-card";
-import { useState } from "react";
+import { Dialog, DialogContent, DialogTrigger } from "../ui/dialog";
 
 const LayerDiamond: React.FC<{ layer: Layer }> = ({ layer }) => {
-    const [isOpen, setIsOpen] = useState(false);
-    const toggleHoverCard = () => setIsOpen(!isOpen);
-
     const containerSize = 350;
     const svgDivSize = containerSize / 2;
     const svgSize = 215;
@@ -36,6 +26,7 @@ const LayerDiamond: React.FC<{ layer: Layer }> = ({ layer }) => {
         const fillColor = getRiskColorIcon(riskFactor);
         return (
             <div
+                key={riskFactor}
                 className="absolute"
                 style={{
                     width: svgDivSize,
@@ -131,15 +122,6 @@ const LayerDiamond: React.FC<{ layer: Layer }> = ({ layer }) => {
 
     const renderContent = () => (
         <>
-            {riskLabels.map((label, index) => (
-                <div
-                    key={index}
-                    className={`absolute text-slate-600 text-xs font-medium leading-none ${label.className}`}
-                >
-                    {label.text}
-                </div>
-            ))}
-
             {diamondPositions.map((position, index) =>
                 renderDiamond(
                     layer.riskAnalysis[index].tier,
@@ -152,17 +134,24 @@ const LayerDiamond: React.FC<{ layer: Layer }> = ({ layer }) => {
     );
 
     return (
-        <HoverCard open={isOpen} onOpenChange={setIsOpen}>
-            <HoverCardTrigger
-                className={containerClassName}
-                onClick={toggleHoverCard}
-            >
-                {renderContent()}
-            </HoverCardTrigger>
-            <HoverCardContent className="w-[calc(100vw-16px)] mx-auto max-w-[500px]">
-                <RiskSnapshot layer={layer} />
-            </HoverCardContent>
-        </HoverCard>
+        <div className="relative">
+            {riskLabels.map((label) => (
+                <div
+                    key={label.text}
+                    className={`absolute text-slate-600 text-xs font-medium leading-none ${label.className}`}
+                >
+                    {label.text}
+                </div>
+            ))}
+            <Dialog>
+                <DialogTrigger className={containerClassName}>
+                    {renderContent()}
+                </DialogTrigger>
+                <DialogContent className="w-[calc(100vw-16px)] mx-auto max-w-[500px] rounded-lg">
+                    <RiskSnapshot layer={layer} />
+                </DialogContent>
+            </Dialog>
+        </div>
     );
 };
 

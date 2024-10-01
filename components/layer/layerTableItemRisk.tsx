@@ -5,11 +5,7 @@ import RiskIconBridge from "@/components/icons/RiskIconBridge";
 import RiskIconDA from "@/components/icons/RiskIconDA";
 import RiskIconOperators from "@/components/icons/RiskIconOperators";
 import RiskIconSettlement from "@/components/icons/RiskIconSettlement";
-import {
-    HoverCard,
-    HoverCardContent,
-    HoverCardTrigger,
-} from "../ui/hover-card";
+import { Dialog, DialogContent, DialogTrigger } from "../ui/dialog";
 
 interface RiskProps {
     layer: Layer;
@@ -38,8 +34,8 @@ const Risk: React.FC<RiskProps> = ({ layer }) => {
     };
 
     return (
-        <HoverCard openDelay={300}>
-            <HoverCardTrigger>
+        <Dialog>
+            <DialogTrigger>
                 <div className="lg:w-44 w-34 lg:p-4 p-2 justify-start items-center gap-4 inline-flex lg:gap-4 gap-1">
                     <RiskIcon
                         riskFactor={riskLevels[0]?.tier}
@@ -58,11 +54,14 @@ const Risk: React.FC<RiskProps> = ({ layer }) => {
                         IconComponent={RiskIconSettlement}
                     />
                 </div>
-            </HoverCardTrigger>
-            <HoverCardContent className="w-auto mx-auto max-w-[500px]">
-                <RiskSnapshot layer={layer} />
-            </HoverCardContent>
-        </HoverCard>
+            </DialogTrigger>
+            <DialogContent className="w-[calc(100vw-16px)] mx-auto max-w-[500px] rounded-lg">
+                <RiskSnapshot
+                    layer={layer}
+                    title={`${layer.title} Risk Snapshot`}
+                />
+            </DialogContent>
+        </Dialog>
     );
 };
 
