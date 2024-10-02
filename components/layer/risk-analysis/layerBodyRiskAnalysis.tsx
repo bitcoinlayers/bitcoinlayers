@@ -69,7 +69,7 @@ const RiskAnalysis: React.FC<RiskAnalysisProps> = ({
                                     content={content.content}
                                 />
                                 {content.category === "Bridge Custody" &&
-                                    layer.federation &&
+                                    layer.bridge &&
                                     !!layer?.bridgeAnalysis &&
                                     layer?.bridgeAnalysis?.length > 0 && (
                                         <Accordion
