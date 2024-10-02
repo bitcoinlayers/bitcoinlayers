@@ -2,7 +2,7 @@ import { allLayers } from "@/util/layer_index";
 import FederationTable from "@/components/tables/federation-table";
 import Hero from "@/components/hero";
 
-export default function FederationsPage() {
+export default function BridgesPage() {
     const sortedLayers = allLayers
         .filter((item) => item.federation)
         .sort((a, b) =>

@@ -17,7 +17,7 @@ interface Risksection {
     content: string;
 }
 
-interface Federationsection {
+interface BridgeSection {
     category:
         | "Reputation"
         | "Participation"
@@ -55,7 +55,7 @@ interface LayerProps {
     links: string[];
     description: string;
     riskAnalysis: Risksection[];
-    federationAnalysis?: Federationsection[];
+    bridgeAnalysis?: BridgeSection[];
     sections: Section[];
     knowledgeBits: kbit[];
 }
@@ -82,7 +82,7 @@ export type Layer = {
     links: string[];
     description: string;
     riskAnalysis: Risksection[];
-    federationAnalysis?: Federationsection[];
+    bridgeAnalysis?: BridgeSection[];
     sections: Section[];
     knowledgeBits: kbit[];
     /** MDX file body */

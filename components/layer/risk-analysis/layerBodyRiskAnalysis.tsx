@@ -70,8 +70,8 @@ const RiskAnalysis: React.FC<RiskAnalysisProps> = ({
                                 />
                                 {content.category === "Bridge Custody" &&
                                     layer.federation &&
-                                    !!layer?.federationAnalysis &&
-                                    layer?.federationAnalysis?.length > 0 && (
+                                    !!layer?.bridgeAnalysis &&
+                                    layer?.bridgeAnalysis?.length > 0 && (
                                         <Accordion
                                             type="single"
                                             collapsible
@@ -102,7 +102,7 @@ const RiskAnalysis: React.FC<RiskAnalysisProps> = ({
                                                     federation
                                                 </AccordionTrigger>
                                                 <AccordionContent>
-                                                    {layer.federationAnalysis?.map(
+                                                    {layer.bridgeAnalysis?.map(
                                                         (
                                                             fedContent,
                                                             fedIndex,
