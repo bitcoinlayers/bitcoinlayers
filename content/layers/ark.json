@@ -3,7 +3,7 @@
     "title": "clArk",
     "layerType": "Virtual UTXOs",
     "live": "Testnet",
-    "federation": false,
+    "bridge": false,
     "underReview": "yes",
     "riskFactors": ["", "", "", ""],
     "purpose": "Payments",

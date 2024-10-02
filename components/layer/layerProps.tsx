@@ -39,7 +39,7 @@ interface LayerProps {
     title: string;
     layerType: string;
     live: string;
-    federation: boolean;
+    bridge: boolean;
     underReview: string;
     riskFactors: string[];
     purpose: string;
@@ -66,7 +66,7 @@ export type Layer = {
     title: string;
     layerType: string;
     live: string;
-    federation: boolean;
+    bridge: boolean;
     underReview: string;
     riskFactors: string[];
     purpose: string;

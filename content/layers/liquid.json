@@ -3,7 +3,7 @@
     "title": "Liquid",
     "layerType": "Sidechain",
     "live": "Mainnet",
-    "federation": true,
+    "bridge": true,
     "underReview": "no",
     "riskFactors": ["Unverified", "Medium", "High", "High"],
     "purpose": "General",
