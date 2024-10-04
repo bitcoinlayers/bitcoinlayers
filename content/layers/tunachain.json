@@ -3,7 +3,7 @@
     "title": "Tunachain",
     "layerType": "Sidechain",
     "live": "Testnet",
-    "federation": false,
+    "bridge": false,
     "underReview": "yes",
     "riskFactors": ["High", "High", "High", "High"],
     "purpose": "-",

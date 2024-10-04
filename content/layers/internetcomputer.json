@@ -3,7 +3,7 @@
     "title": "Internet Computer",
     "layerType": "Sidechain",
     "live": "Mainnet",
-    "federation": true,
+    "bridge": true,
     "underReview": "no",
     "riskFactors": ["High", "Medium", "Medium", "Medium"],
     "purpose": "General",

@@ -3,7 +3,7 @@
     "title": "Molecule",
     "layerType": "Rollup",
     "live": "Announced",
-    "federation": false,
+    "bridge": false,
     "underReview": "yes",
     "riskFactors": ["", "", "", ""],
     "purpose": "-",

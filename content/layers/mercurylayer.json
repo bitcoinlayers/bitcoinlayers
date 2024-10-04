@@ -3,7 +3,7 @@
     "title": "Mercury Layer",
     "layerType": "Statechain",
     "live": "Mainnet",
-    "federation": false,
+    "bridge": false,
     "underReview": "yes",
     "riskFactors": ["", "", "", "", ""],
     "purpose": "-",

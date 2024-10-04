@@ -3,7 +3,7 @@
     "title": "Libre",
     "layerType": "Sidechain",
     "live": "Mainnet",
-    "federation": false,
+    "bridge": false,
     "underReview": "no",
     "riskFactors": ["Unverified", "High", "High", "High"],
     "purpose": "General",

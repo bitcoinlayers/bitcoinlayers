@@ -25,7 +25,7 @@ export default function Navbar(): ReactElement {
     const pathname = usePathname();
     const searchHiddenRoutes = [
         "/",
-        "/federations",
+        "/bridges",
         "/infrastructure",
         "/bitcoinonly",
     ];
@@ -147,15 +147,15 @@ export default function Navbar(): ReactElement {
                                 </div>
                                 <div className="h-[88px] p-3 rounded-md flex-col justify-start items-start flex hover:bg-blue-100">
                                     <Link
-                                        href="/federations"
+                                        href="/bridges"
                                         onClick={closeSubmenu}
                                     >
                                         <div className="text-zinc-800 text-base font-medium leading-normal">
-                                            Federations
+                                            Bridges
                                         </div>
                                         <div className="self-stretch text-slate-500 text-sm font-normal leading-tight">
                                             Overview and risk analysis of
-                                            bitcoin federations.
+                                            bitcoin bridges.
                                         </div>
                                     </Link>
                                 </div>

@@ -3,7 +3,7 @@
     "title": "Bit2",
     "layerType": "Ethereum Rollup",
     "live": "Testnet",
-    "federation": false,
+    "bridge": false,
     "underReview": "yes",
     "riskFactors": ["", "", "", ""],
     "purpose": "-",

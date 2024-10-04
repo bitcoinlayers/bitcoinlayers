@@ -3,7 +3,7 @@
     "title": "Alys",
     "layerType": "Sidechain",
     "live": "Announced",
-    "federation": false,
+    "bridge": false,
     "underReview": "yes",
     "riskFactors": ["", "", "", ""],
     "purpose": "-",

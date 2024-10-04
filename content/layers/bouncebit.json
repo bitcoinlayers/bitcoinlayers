@@ -3,7 +3,7 @@
     "title": "BounceBit",
     "layerType": "Sidechain",
     "live": "Mainnet",
-    "federation": false,
+    "bridge": false,
     "underReview": "no",
     "riskFactors": ["Unverified", "Unverified", "Unverified", "Unverified"],
     "purpose": "BTC Applications",
