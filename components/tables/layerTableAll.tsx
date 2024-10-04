@@ -334,7 +334,7 @@ const LayerTableAll = ({ data, headers, showToggleGroup = true }: Props) => {
                                                     ₿{" "}
                                                     {Number(
                                                         item.btcLocked,
-                                                    ).toLocaleString()}
+                                                    ).toLocaleString("en")}
                                                 </div>
                                             )}
                                         </Link>

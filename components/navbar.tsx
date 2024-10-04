@@ -14,6 +14,7 @@ import {
     SheetTitle,
     SheetTrigger,
 } from "./ui/sheet";
+import { LocaleButton } from "./ui/locale-button";
 
 export default function Navbar(): ReactElement {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -86,6 +87,7 @@ export default function Navbar(): ReactElement {
             </Link>
             <div className="flex items-center">
                 <ul className="flex flex-row items-center space-x-4 lg:space-x-8 lg:pr-8 pr-4 text-public text-text_secondary">
+                    <LocaleButton />
                     {!searchHiddenRoutes.includes(pathname) && (
                         <>
                             <li className="md:hidden">
