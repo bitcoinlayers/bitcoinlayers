@@ -31,14 +31,14 @@
             "score": 0,
             "tier": "High",
             "title": "Funds are custodied by signer set selected by ICP consensus",
-            "content": "Users who deposit funds into ckBTC trust a set of operators, who are elected via ICP governance, with the custody of their bitcoin. The operators of the ‘pzp6e…’ subnet manage the “ckBTC” smart contract module, which is responsible for minting, custodying and burning bitcoin-backed tokens on the ICP sidechain.\n\nThis smart contract is a part of a subnet with 28 node operators. These operators have undergone a KYB process to ICP governance and are publicly known."
+            "content": "Users who deposit funds into ckBTC trust a set of operators, who are elected via ICP governance, with the custody of their bitcoin. The operators of the ‘pzp6e…’ subnet manage the “ckBTC” smart contract module, which is responsible for minting, custodying and burning bitcoin-backed tokens on the ICP sidechain.\n\nThis smart contract is a part of a subnet with 34 node operators. These operators have undergone a KYB process to ICP governance and are publicly known."
         },
         {
             "category": "Data Availability",
             "score": 0,
             "tier": "Medium",
             "title": "DA requirement is fulfilled by an alternative consensus mechanism",
-            "content": "Data regarding the state of the ‘pzp6e…’ is made available, and stored, by the 28 individual node operators running the subnet. Should nodes for this subnet go offline, and a backup of the state is not regularly made, then users would lose access to their ckBTC balance and would be unable to burn ckBTC tokens for Bitcoin locked in the respective multi-sig on the mainchain."
+            "content": "Data regarding the state of the ‘pzp6e…’ is made available, and stored, by the 34 individual node operators running the subnet. Should nodes for this subnet go offline, and a backup of the state is not regularly made, then users would lose access to their ckBTC balance and would be unable to burn ckBTC tokens for Bitcoin locked in the respective multi-sig on the mainchain."
         },
         {
             "category": "Network Operators",
@@ -84,7 +84,7 @@
             "content": [
                 {
                     "title": "Withdrawals are permitted by a specific ICP subnet",
-                    "content": "Withdrawals are ultimately processed by the operators of the ‘pzp6e’ subnet which manages the ckBTC smart contract. Users trust that at least 10 of the 28 signers will remain honest, not steal their funds, and process their withdrawals. If the Bitcoin Canister were to go offline, the ckBTC smart contract would be unable to issue withdrawals for users looking to burn ckBTC and redeem native bitcoin. Withdrawals would be paused until the Bitcoin Canister's subnet came back online."
+                    "content": "Withdrawals are ultimately processed by the operators of the ‘pzp6e’ subnet which manages the ckBTC smart contract. Users trust that at least 12 of the 34 signers will remain honest, not steal their funds, and process their withdrawals. If the Bitcoin Canister were to go offline, the ckBTC smart contract would be unable to issue withdrawals for users looking to burn ckBTC and redeem native bitcoin. Withdrawals would be paused until the Bitcoin Canister's subnet came back online."
                 }
             ]
         },
@@ -94,7 +94,7 @@
             "content": [
                 {
                     "title": "Threshold ECDSA Signatures",
-                    "content": "The ICP network uses tECSDA signatures for ckBTC’s two-way peg with Bitcoin. This sees the private key for the Bitcoin address custodying funds split up, and shared, amongst the 28 nodes operating the relevant subnet."
+                    "content": "The ICP network uses tECSDA signatures for ckBTC’s two-way peg with Bitcoin. This sees the private key for the Bitcoin address custodying funds split up, and shared, amongst the 34 nodes operating the relevant subnet."
                 },
                 {
                     "title": "Bitcoin Canister & Adapter",
