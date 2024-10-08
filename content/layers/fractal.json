@@ -9,7 +9,7 @@
     "purpose": "General",
     "btcBridge": "Third-party Bridge",
     "settlement": "Offchain",
-    "btcLocked": null,
+    "btcLocked": "Under review",
     "executionEnv": "Offchain",
     "consensus": "Sidechain",
     "nativeToken": "FB",

@@ -83,6 +83,7 @@ const bit2: Layer = bit2Json as Layer;
 const sequentia: Layer = sequentiaJson as Layer;
 const brollup: Layer = brollupJson as Layer;
 const nomic: Layer = nomicJson as Layer;
+// @ts-ignore
 const fractal: Layer = fractalJson as Layer;
 const yona: Layer = yonaJson as Layer;
 const nexio: Layer = nexioJson as Layer;
