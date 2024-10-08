@@ -32,7 +32,7 @@ const Methodology: React.FC = () => {
     <ul>
         <li>🟢 Green must match one of the following conditions:</li>
         <ul>
-                <li>Users can contest a dispute in the final state with a counterparty and claim their assets on the L1/li>
+                <li>Users can contest a dispute in the final state with a counterparty and claim their assets on the L1</li>
                 <li>Bitcoin can verify changes to the layer’s state directly in Script when users’ offchain balances are updated, permitting withdrawals when users want to leave the system</li>
                 <li>The bridge is managed by an alternative consensus mechanism where anyone can challenge malicious withdrawal requests. Operators can be rotated in the event of liveness failures.</li>
             </ul>
@@ -41,7 +41,7 @@ const Methodology: React.FC = () => {
         <li>🟡 Yellow must match one of the following conditions:</li>
         <ul>
                 <li>The bridge is managed by an alternative consensus mechanism that is financially incentivized not to steal</li>
-                <li>TThe bridge is managed by an alternative consensus mechanism where anyone can challenge malicious withdrawal requests</li>
+                <li>The bridge is managed by an alternative consensus mechanism where anyone can challenge malicious withdrawal requests</li>
                 <li>We are currently considering a score where systems like the Spiderchain and tBTC v2 would be considered yellow</li>
             </ul>
             </li>
@@ -60,7 +60,7 @@ const Methodology: React.FC = () => {
         <br />
         <li>Additional considerations:</li>
         <ul>
-                <li>layers that settle to a parent blockchain must consider their exit window. For rollups, we follow L2Beat’s suggestions on exit windows. These exit window scores overrule any other score related to the two-way peg. For example: If a rollup-style layer leverages tBTC (a yellow or red score) to natively mint bitcoin-backed tokens, but has an immediately upgradeable contract, then the layer will receive a “Stop!” score in the assessment.</li>
+                <li>Layers that settle to a parent blockchain must consider their exit window. For rollups, we follow L2Beat’s suggestions on exit windows. These exit window scores overrule any other score related to the two-way peg. For example: If a rollup-style layer leverages tBTC (a yellow or red score) to natively mint bitcoin-backed tokens, but has an immediately upgradeable contract, then the layer will receive a “Stop!” score in the assessment.</li>
                 <li>Due to complexities related to federated set ups, we will additionally highlight more granular trust assumptions for federated two-way pegs in a subsection of the review. In this upcoming framework, we will outline how a federated peg can be upgraded to yellow if it meets a certain threshold of requirements.</li>
                 <li>Additional situations can be added to this framework for edge cases. For example, users of Statechains can unilaterally exit with a Bitcoin L1 transaction, but an operator can steal funds by colluding with the past owner, and users cannot submit a challenge transaction.</li>
             </ul>
