@@ -52,7 +52,7 @@
             "score": 0,
             "tier": "Unverified",
             "title": "BitLayer full nodes accept and validate blocks from the proposer",
-            "content": "There is no onchain enforcement of Bitlayer state transitions on bitcoin. Blocks in BitLayer are broadcasted by a member of the validator set and finalized by BitLayer's full nodes.\n\n🔬We are currently reviewing BitLayer's state validation mechanism."
+            "content": "There is no onchain enforcement of Bitlayer state transitions on bitcoin. Presumably, blocks in BitLayer are broadcasted by a member of the validator set and finalized by BitLayer's full nodes.\n\n🔬We are currently reviewing BitLayer's state validation mechanism."
         }
     ],
     "sections": [
