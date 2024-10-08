@@ -5,7 +5,7 @@
     "live": "Mainnet",
     "bridge": true,
     "underReview": "no",
-    "riskFactors": ["Unverified", "Unverified", "Critical", "High"],
+    "riskFactors": ["Unverified", "Unverified", "Critical", "Critical"],
     "purpose": "General",
     "btcBridge": "Federated Multi-sig",
     "settlement": "Offchain",
