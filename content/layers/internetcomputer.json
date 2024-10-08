@@ -52,7 +52,7 @@
             "score": 0,
             "tier": "Medium",
             "title": "Finality assurances are provided by an alternative consensus mechanism",
-            "content": "After transactions are accepted into a block by a subnet's valdiator set, it cannot be reversed."
+            "content": "After transactions are accepted into a block by a subnet's valdiator set, they cannot be reversed."
         }
     ],
     "sections": [
