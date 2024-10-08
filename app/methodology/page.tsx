@@ -32,21 +32,23 @@ const Methodology: React.FC = () => {
     <ul>
         <li>🟢 Green must match one of the following conditions:</li>
         <ul>
-                <li>Users can unilaterally exit with an L1 transaction and have the ability to challenge a faulty operator</li>
-                <li>Anyone can ensure the integrity of a bridge with a fault proof</li>
+                <li>Users can contest a dispute in the final state with a counterparty and claim their assets on the L1/li>
+                <li>Bitcoin can verify changes to the layer’s state directly in Script when users’ offchain balances are updated, permitting withdrawals when users want to leave the system</li>
+                <li>The bridge is managed by an alternative consensus mechanism where anyone can challenge malicious withdrawal requests. Operators can be rotated in the event of liveness failures.</li>
             </ul>
             </li>
         <br />
         <li>🟡 Yellow must match one of the following conditions:</li>
         <ul>
-                <li>The two-way peg is overcollateralized with a minimum of 150% of value locked in the form of a slashable asset</li>
-                <li>The layer relies on a federated operator and verifier set, where one entity needs to remain honest to ensure the integrity of the bridge. There needs to be at least 6 signers who are publicly known entities.</li>
+                <li>The bridge is managed by an alternative consensus mechanism that is financially incentivized not to steal</li>
+                <li>TThe bridge is managed by an alternative consensus mechanism where anyone can challenge malicious withdrawal requests</li>
+                <li>We are currently considering a score where systems like the Spiderchain and tBTC v2 would be considered yellow</li>
             </ul>
             </li>
         <br />
         <li>🔴 Red:</li>
             <ul>
-                <li>The two-way peg is managed by a (likely federated) group of signers whose identities are known to the public and/or core development organizations. There need to be at least 8 publicly known signers participating in securing the two-way peg. The signing mechanism for the bitcoin wallet must also be publicly acknowledged.</li>
+                <li>The bridge is managed by at least 5 publicly known signers, who are external to the organization building the layer.</li>
             </ul>
             </li>
         <br />
@@ -84,7 +86,7 @@ const Methodology: React.FC = () => {
         <br />
         <li>🔴 Red:</li>
         <ul>
-                <li>Data is stored via an offchain committee with at least 5 actors attesting that the data is available.</li>
+                <li>Data is stored via an offchain committee with at least 5 external, publicly known actors attesting that the data is available.</li>
             </ul>
             </li>
         <br />
@@ -101,21 +103,20 @@ const Methodology: React.FC = () => {
 <ul>
         <li>🟢 Green must match one of the following conditions:</li>
         <ul>
-                <li>Users can self-sequence their own transactions and the network fails if the sequencer does not publish blocks that include forced included transactions. Sequencer cannot selectively censor.</li>
+                <li>Users can self-sequence their own transactions by including it on bitcoin and the centralized validator cannot selectively censor. In layers with centralized block producers, they cannot selectively censor, the validator(s) would need to halt the entire system to censor users.</li>
             </ul>
             </li>
         <br />
         <li>🟡 Yellow must match one of the following conditions:</li>
         <ul>
-                <li>The validator node software is open-source, anyone can become a validator in a permissionless or minimally permissioned (e.g. proof of stake) way, and 21 or more validators participate in proposing and signing blocks</li>
+                <li>The validator (aka network operator) node software is open-source, anyone can become a validator in a (at least) minimally permissioned (e.g. proof of stake) way, and at least 5 externally, publicly known validators participate in proposing and signing blocks</li>
                 <li>The layer is merge-mined with Bitcoin and secured by greater than 50% of hashrate</li>
             </ul>
             </li>
         <br />
         <li>🔴 Red:</li>
         <ul>
-                <li>The layer is operated by a validator set of at least 5 publicly known, independent operators</li>
-                <li>Anyone can ensure the integrity of a bridge with a fault proof</li>
+                <li>The layer is operated by a validator set of at least 5 externally, publicly known operators</li>
             </ul>
             </li>
         <br />
@@ -132,26 +133,26 @@ const Methodology: React.FC = () => {
     <ul>
         <li>🟢 Green must match one of the following conditions:</li>
         <ul>
-                <li>Settlement happens onchain and is immediately enforced by Bitcoin Script</li>
-                <li>Settlement happens onchain optimistically where anyone can challenge invalid state transitions during a given time period with a Bitcoin L1 transaction</li>
+                <li>Layer's consensus is constructed in a way that operators (including users in P2P network) must build on a state root, or state commitment, posted to bitcoin</li>
+                <li>Layer transactions happen atomically and cannot reorg</li>
             </ul>
             </li>
         <br />
         <li>🟡 Yellow must match one of the following conditions:</li>
         <ul>
-                <li>Settlement guarantees come from a permissionless, alternative consensus network, and the layer inherits reorg resistance from Bitcoin</li>
+                <li>- Settlement guarantees come from a permissionless, alternative consensus network operated by at least 5 externally, publicly known operators</li>
             </ul>
             </li>
         <br />
         <li>🔴 Red:</li>
         <ul>
-                <li>Requirements for yellow are not met</li>
+                <li>Layer finality guarantees come from a federated system</li>
             </ul>
             </li>
         <br />
         <li>🛑 Stop!</li>
         <ul>
-                <li>Layer does not have an active state validation mechanism in place. Namely rollups that do not have fault proofs in place.</li>
+                <li>None of the requirements for Red are met.</li>
             </ul>
             </li>
         <br />
@@ -242,7 +243,7 @@ const Methodology: React.FC = () => {
                                 </div>
                             </div>
                             <InfoBox
-                                title="Bridge Custody"
+                                title="Bridge Security"
                                 body={bridgeCustodyBody}
                             />
                             <InfoBox
@@ -254,7 +255,7 @@ const Methodology: React.FC = () => {
                                 body={networkOperatorsBody}
                             />
                             <InfoBox
-                                title="Settlement Assurance"
+                                title="Finality Guarantees"
                                 body={settlementAssuranceBody}
                             />
                             <InfoBox
