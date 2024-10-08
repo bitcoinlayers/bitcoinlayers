@@ -27,7 +27,7 @@
     "description": "The current Bsquared Network mainnet consists of two different chains. The parent chain is a fork of an EVM implementation on Tendermint, and has three permissioned validators operating the network. The rollup chain is a fork of Polygon zkEVM that settles on the Bsquared parent chain.",
     "riskAnalysis": [
         {
-            "category": "Bridge Custody",
+            "category": "Bridge Security",
             "score": 0,
             "tier": "Unverified",
             "title": "Users deposit funds into a MPC protocl managed by Bsquared Network and a custodian. Signers under revieww",
@@ -36,23 +36,23 @@
         {
             "category": "Data Availability",
             "score": 0,
-            "tier": "Unverified",
+            "tier": "Critical",
             "title": "DA requirement is fulfilled by three permissioned validators",
             "content": "Sequencer batches are posted to the Bsquared Network L1. This network consists of a permissioned validator set who is responsible for making the data readily available.\n\n🔬We are currently reviewing the operators satisfying the Bsquared DA requirement."
         },
         {
-            "category": "Liveness & Reorg Resistance",
+            "category": "Network Operator",
             "score": 0,
             "tier": "Critical",
             "title": "Both the rollup chain and parent chain are run by federated, centralized parties",
             "content": "Bsquared Network’s Polygon zkEVM implementation has a single sequencer that posts sequencer batches to its network of three L1 validators. In the event of censorship, users cannot force include their transaction in a sequence."
         },
         {
-            "category": "State Validation",
+            "category": "Finality Guarantees",
             "score": 0,
             "tier": "Critical",
-            "title": "SNARKs ensure state correctness, but no settlement assurances inherited from Bitcoin",
-            "content": "Bsquared receives no settlement assurances from Bitcoin. Bsquared settlement is finalized by a group of three, federated validators who verify a validity proof submitted by the Bsquared Network zkEVM prover.\n\nThese settlement assurances provide no security for bitcoin assets.\n\n⚠️If bridge operators process a fradulent withdrawal request, they could steal user funds."
+            "title": "SNARKs ensure state correctness, but finality is guaranted by a permissioned validator set",
+            "content": "Bsquared receives no settlement assurances from Bitcoin. Bsquared settlement is finalized by a group of three, federated validators who verify a validity proof submitted by the Bsquared Network zkEVM prover."
         }
     ],
     "sections": [

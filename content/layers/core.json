@@ -27,7 +27,7 @@
     "description": "Core (in relation to Bitcoin) is an EVM sidechain with a hybrid consensus mechanism, Satoshi Plus, that leverages both DPoW and DPoS. It uses a federated multisig to bridge BTC with multiple parties ensuring the honesty of the two-way peg. The native token of the network is CORE, which is used for transaction fees, staking, and governance in Core DAO.",
     "riskAnalysis": [
         {
-            "category": "Bridge Custody",
+            "category": "Bridge Security",
             "score": 0,
             "tier": "Unverified",
             "title": "Funds are custodied by a federated signer set, with a number of parties ensuring the honesty of the bridge",
@@ -41,18 +41,18 @@
             "content": "Core Chain's data availability requirement is fulfilled by its own network of full nodes. Anyone with enough computational resources can run a Core Chain full node."
         },
         {
-            "category": "Liveness & Reorg Resistance",
+            "category": "Network Operator",
             "score": 0,
             "tier": "Medium",
             "title": "Core's hybrid consensus mechanism operates the network",
             "content": "Core Chain has a network of validators who participate as block producers. Each day, the 23 validators with the highest hybrid score (from DPOW and DPOS) are elected to participate in block production. Any Core chain full node can register to become a part of this set. Core Chain does not support exits that circumvent its validator set. This means that users must trust Core Chain validators to propose and finalize blocks.\n\nThere is a minimium stake to run a Core Chain validator node."
         },
         {
-            "category": "State Validation",
+            "category": "Finality Guarantees",
             "score": 0,
             "tier": "High",
             "title": "Transaction finality is provided by Core Chain consensus and has no assurances inherited from Bitcoin",
-            "content": "Bitcoin does not have a permissionless mechanism to validate Core state transitions to ensure the integrity of withdraw requests.\n\nCore's bridge protocol can process fradulent withdrawal requests and steal user funds."
+            "content": "State transitions are finalized by Core Chain's consensus mechanism. All roles in this mechanism are minimally permissionless."
         }
     ],
     "sections": [

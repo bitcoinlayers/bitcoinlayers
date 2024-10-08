@@ -27,7 +27,7 @@
     "description": "BOB is an optimistic rollup that serves as an application layer for Bitcoin. They have launched as a rollup on top of Ethereum, with plans to derive more security from Bitcoin miners, and full nodes, over time. Its relation to Bitcoin, currently, is similar to that of a sidechain as it is an alternative consensus protocol with a two-way peg(s) between it and the Bitcoin mainchain.",
     "riskAnalysis": [
         {
-            "category": "Bridge Custody",
+            "category": "Bridge Security",
             "score": 0,
             "tier": "Critical",
             "title": "Bitcoin users trust operators of various multi-sigs for custody of their BTC",
@@ -41,18 +41,18 @@
             "content": "The data for BOB’s state is stored on the Ethereum blockchain. Anyone can run an Ethereum node and verify the state of BOB."
         },
         {
-            "category": "Liveness & Reorg Resistance",
+            "category": "Network Operators",
             "score": 0,
             "tier": "Medium",
             "title": "BOB blocks are produced and proposed by a centralized operator, but forced inclusion to Ethereum L1 possible",
             "content": "Currently, BOB’s sequencer is managed by one entity. The BOB sequencer can censor transactions and would also cause liveness failures in the rollup if it went down. Users can, however, bypass the sequencer and send their transactions directly to the Ethereum L1 contract. Users do, however, trust that a permissioned proposer will publish the latest state root on the Ethereum L1, permitting withdrawals."
         },
         {
-            "category": "State Validation",
+            "category": "Finality Guarantees",
             "score": 0,
-            "tier": "Critical",
-            "title": "State validation mechanism, on Ethereum, is under development",
-            "content": "BOB inherits no settlement assurances from Bitcoin. BOB is an optimistic rollup, but currently does not have fraud proofs. This means that the BOB sequencer can post malicious state transitions that could result in users losing their funds.\n\nBob additionally has no mechanism to verify state transitions on bitcoin, meaning bridge operators can process fradulent withdrawals.\n\n⚠️User funds can be stolen if bridge operators process fradulent withdrawals."
+            "tier": "Medium",
+            "title": "BOB state transitions finalize on Ethereum",
+            "content": "BOB inherits finality guarantees from Ethereum. The BOB sequencer provides a soft confirmation of transactions which are eventually summarized and sent to Ethereum.\n\nBOB's sequencer can reorg prior to a transaction batch being accepted on Ethereum."
         }
     ],
     "sections": [

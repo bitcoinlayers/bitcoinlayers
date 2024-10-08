@@ -27,7 +27,7 @@
     "description": "Stacks is a sidechain that aims to be programmability layer for Bitcoin. It uses a novel execution environment, Clarity. Stacks uses a hybrid PoS mechanism (PoX) and derives economic security from its native token (STX).",
     "riskAnalysis": [
         {
-            "category": "Bridge Custody",
+            "category": "Bridge Security",
             "score": 0,
             "tier": "Unverified",
             "title": "Users must trust centralized companies with custody of their BTC. Signers under review",
@@ -41,18 +41,18 @@
             "content": "Stacks posts state roots to Bitcoin, but not full transaction calldata. Because of this, Stacks' state cannot be reconstructed using only data from Bitcoin. Stacks has a permissionless validator and node operator set which participate in making data availability readily available."
         },
         {
-            "category": "Liveness & Reorg Resistance",
+            "category": "Network Operators",
             "score": 0,
             "tier": "Medium",
             "title": "Leverages a permissionless consensus mechanism",
-            "content": "Stacks has a permissionless block production mechanism, but it does not support exits that circumvent its miner/validator set. This means that users must trust Stacks validators to include their transactions in blocks. Anyone with sufficient capital and resources can participate as a Stacks miner. The large majority of Stacks blocks are built by Bitcoin miners additionally mining Stacks.\n\nSettlement is done offchain, on Stacks, rather than onchain, on Bitcoin. The validity of Stacks state transitions are not enforced by Bitcoin."
+            "content": "Stacks has a permissionless block production mechanism, but it does not support exits that circumvent its miner/validator set. This means that users must trust Stacks validators to include their transactions in blocks. Anyone with sufficient capital and resources can participate as a Stacks miner. The large majority of Stacks blocks are built by Bitcoin miners additionally mining Stacks."
         },
         {
-            "category": "State Validation",
+            "category": "Finality Guarantees",
             "score": 0,
-            "tier": "Critical",
+            "tier": "Medium",
             "title": "State transitions finalized by permissionless, alternative consensus mechanism",
-            "content": "Since Bitcoin cannot enforce the validity of a Stacks' state transition, bridge operators can process fradulent withdrawal requests and steal user funds."
+            "content": "Settlement is done offchain, on Stacks, rather than onchain, on Bitcoin. The validity of Stacks state transitions are not enforced by Bitcoin"
         }
     ],
     "sections": [

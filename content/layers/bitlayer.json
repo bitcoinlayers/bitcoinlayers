@@ -27,7 +27,7 @@
     "description": "Bitlayer's mainnet v1 is a federated sidechain. It supports an EVM execution environment with plans to support other VMs.",
     "riskAnalysis": [
         {
-            "category": "Bridge Custody",
+            "category": "Bridge Security",
             "score": 0,
             "tier": "Unverified",
             "title": "Users trust a federated signer set to custody their BTC. Signers under review",
@@ -41,18 +41,18 @@
             "content": "Bitlayer does not currently use Bitcoin for data availability. The data availability requirement is currently fufilled by Bitlayer full nodes. The Bitlayer node software is open source and anyone can run a node and validate the state of Bitlayer."
         },
         {
-            "category": "Liveness & Reorg Resistance",
+            "category": "Network Operators",
             "score": 0,
             "tier": "High",
             "title": "Bitlayer is operated by a permissioned validator set",
-            "content": "Bitlayer blocks are currently produced by a permissioned validator set. There are currently 21 validators participating in Bitlayer consensus. Users cannot force include transactions if they are censored by the validator set."
+            "content": "Bitlayer blocks are currently produced by a permissioned validator set. There are currently 21 validators participating in Bitlayer consensus. Users cannot bypass this operator set if they are censored by the validator set."
         },
         {
-            "category": "State Validation",
+            "category": "Finality Guarantees",
             "score": 0,
-            "tier": "High",
-            "title": "No onchain enforcement of Bitlayer state transitions",
-            "content": "There is no onchain enforcement of Bitlayer state transitions on bitcoin. State transitions are finalized offchain, and bitcoin has no way to enforce the integrity of state transitions related to L1 assets.\n\n⚠️ If a malicious state transition was proposed, and validated offchain, user funds could be stolen."
+            "tier": "Unverified",
+            "title": "BitLayer full nodes accept and validate blocks from the proposer",
+            "content": "There is no onchain enforcement of Bitlayer state transitions on bitcoin. Blocks in BitLayer are broadcasted by a member of the validator set and finalized by BitLayer's full nodes.\n\n🔬We are currently reviewing BitLayer's state validation mechanism."
         }
     ],
     "sections": [

@@ -26,7 +26,7 @@
     "description": "BEVM is an EVM-compatible sidechainmbuilt on substrate. On the BEVM chain, the BTC is held in custody by a federated signer set.",
     "riskAnalysis": [
         {
-            "category": "Bridge Custody",
+            "category": "Bridge Security",
             "score": 0,
             "tier": "Unverified",
             "title": "Users trust a federation with the custody of their BTC. Signers under review",
@@ -40,14 +40,14 @@
             "content": "BEVM full nodes are responsible for satisying BEVM's data availability requirement. Archive nodes are additionally responsible for preserving the historical blockchain data. Users can run their own archive node and access the data at any time by utilizing the node as an RPC. Public endpoints deploy archival nodes to facilitate blockchain data to the users. As long as there is one archive node online, users can recover the full history of the BEVM blockchain."
         },
         {
-            "category": "Liveness & Reorg Resistance",
+            "category": "Network Operators",
             "score": 0,
             "tier": "High",
             "title": "BEVM network is operated by permissioned validators",
             "content": "On a BEVM chain, a block is produced every 6s and is finalized by achieving consensus among permissioned validators. Only the permissioned validators have the rights to produce the block and include the transactions in the block. Consequently, users trust the permissioned validators that they will include their transactions in the block without censoring them.\n\nBEVM governance, which is done by delegating tokens to validators, is currently not live. This sees a permissioned validator set operate the network."
         },
         {
-            "category": "State Validation",
+            "category": "Finality Guarantees",
             "score": 0,
             "tier": "High",
             "title": "Transactions on BEVM chain are finalized offchain by its permissioned validators",

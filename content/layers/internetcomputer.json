@@ -27,7 +27,7 @@
     "description": "The Internet Computer Protocol (ICP) is a network of connected subnet blockchains. It has a smart contract module, known as the Bitcoin Canister, that enables ICP smart contracts to have a view into Bitcoin state and conduct Bitcoin transactions. It additionally has a bitcoin-backed synthetic, known as ckBTC, which sees signers of a multi-sig scheme custody BTC and mint and burn synthetic ckBTC tokens on ICP. Developers can deploy a variety of applications leveraging the Bitcoin canister and ckBTC.",
     "riskAnalysis": [
         {
-            "category": "Bridge Custody",
+            "category": "Bridge Security",
             "score": 0,
             "tier": "Medium",
             "title": "Funds are custodied by signer set selected by ICP consensus",
@@ -41,18 +41,18 @@
             "content": "Data regarding the state of the ‘pzp6e…’ is made available, and stored, by the 28 individual node operators running the subnet. Should nodes for this subnet go offline, and a backup of the state is not regularly made, then users would lose access to their ckBTC balance and would be unable to burn ckBTC tokens for Bitcoin locked in the respective multi-sig on the mainchain."
         },
         {
-            "category": "Liveness & Reorg Resistance",
+            "category": "Network Operators",
             "score": 0,
             "tier": "Medium",
             "title": "Numerous roles involved in block building and ckBTC transaction settlement",
             "content": "Settlement for ckBTC transfers is a result of consensus for the ‘pzp6e…’ subnet operators. Once a transaction is finalized, it cannot be reorged. Users can leverage their ckBTC on any ICP subnet per the applications they interact with. Users would initiate a “call” to a specific application on any given subnet and a boundary node would route that call accordingly. The contract would then receive the call, initiate the transaction, and see the transaction confirmed should 2 ⁄ 3 of node operators on the given subnet accept it. This sees liveness trust assumptions vary from subnet to subnet. Bitcoin-specific applications would additionally be dependent on the Bitcoin Canister which is on the ‘w4rem…’ subnet, operated by 13 nodes. The 22 Boundary Nodes are managed by a centralized development organization, the DFINITY Foundation."
         },
         {
-            "category": "State Validation",
+            "category": "Finality Guarantees",
             "score": 0,
             "tier": "Medium",
-            "title": "State pertaining to bitcoin assets is validated by an alternative consensus mechanism",
-            "content": "Bitcoin cannot enforce the validity of state transitions and withdrawal requests from ICP. Operators who manage the ‘pzp6e…’ subnet are responsible for participating as signers within a tECSDA scheme that validates withdrawal requests. It would take 10/28 operators to collude and process a fraudulent withdrawal request to steal user funds."
+            "title": "Finality assurances are provided by an alternative consensus mechanism",
+            "content": "After transactions are accepted into a block by a subnet's valdiator set, it cannot be reversed."
         }
     ],
     "sections": [
