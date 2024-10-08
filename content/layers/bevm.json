@@ -23,7 +23,7 @@
         "https://github.com/btclayer2/BEVM",
         "https://twitter.com/BTCLayer2"
     ],
-    "description": "BEVM is an EVM-compatible sidechainmbuilt on substrate. On the BEVM chain, the BTC is held in custody by a federated signer set.",
+    "description": "BEVM is an EVM-compatible sidechain built on substrate. On the BEVM chain, the BTC is held in custody by a federated signer set.",
     "riskAnalysis": [
         {
             "category": "Bridge Security",
@@ -83,7 +83,7 @@
             "content": [
                 {
                     "title": "Users trust the trustees on BEVM chain to process their withdrawals",
-                    "content": "Upon the initiation of a withdrawal transaction on the BEVM chain, trustees will be notified of the withdrawal request, sign the withdrawal, and if the number of signatures reaches the multi-signature requirement, the transaction will be broadcasted to the bitcoin Network."
+                    "content": "Upon the initiation of a withdrawal transaction on the BEVM chain, trustees will be notified of the withdrawal request, sign the withdrawal, and if the number of signatures reaches the multi-signature requirement, the transaction will be broadcasted to the bitcoin network."
                 }
             ]
         },
@@ -107,7 +107,7 @@
             "content": [
                 {
                     "title": "EVM compatibility",
-                    "content": "BEVM facilitates the creation of smart contracts and dApps on the Bitcoin Network while integrating with EVM and using BTC as gas to enhance interoperability between the two networks."
+                    "content": "BEVM facilitates the creation of smart contracts and dApps on the bitcoin network while integrating with EVM and using BTC as gas to enhance interoperability between the two networks."
                 },
                 {
                     "title": "Cross-chain processing",

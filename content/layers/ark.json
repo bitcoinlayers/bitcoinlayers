@@ -61,7 +61,7 @@
             "title": "Bitcoin Security",
             "content": [
                 {
-                    "title": "Ark on Liquid inherits no security from Bitcoin network",
+                    "title": "Ark on Liquid inherits no security from bitcoin network",
                     "content": "Ark on Liquid does not inherit any security from Bitcoin, as Liquid is a federated sidechain independent of Bitcoin. For more information, visit our [Liquid Risk Review](https://www.bitcoinlayers.org/layers/liquid)."
                 },
                 {

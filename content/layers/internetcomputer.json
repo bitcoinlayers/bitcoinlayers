@@ -98,7 +98,7 @@
                 },
                 {
                     "title": "Bitcoin Canister & Adapter",
-                    "content": "The ICP network maintains an integration with Bitcoin. The ICP network has a subnet dedicated to the Bitcoin Canister and Adapter. The Bitcoin Canister enables subnets on the ICP blockchain to interact with the Bitcoin network. They can have Bitcoin addresses, sign transactions and submit transactions to the Bitcoin network. The Bitcoin Adapter enables the Bitcoin Canister to access Bitcoin state by querying a randomly selected set of Bitcoin nodes periodically."
+                    "content": "The ICP network maintains an integration with Bitcoin. The ICP network has a subnet dedicated to the Bitcoin Canister and Adapter. The Bitcoin Canister enables subnets on the ICP blockchain to interact with the bitcoin network. They can have Bitcoin addresses, sign transactions and submit transactions to the bitcoin network. The Bitcoin Adapter enables the Bitcoin Canister to access Bitcoin state by querying a randomly selected set of Bitcoin nodes periodically."
                 },
                 {
                     "title": "Various programming languages and modules supported",
