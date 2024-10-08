@@ -42,7 +42,7 @@ const Methodology: React.FC = () => {
         <ul>
                 <li>The bridge is managed by an alternative consensus mechanism that is financially incentivized not to steal</li>
                 <li>The bridge is managed by an alternative consensus mechanism where anyone can challenge malicious withdrawal requests</li>
-                <li>We are currently considering a score where systems like the Spiderchain and tBTC v2 would be considered yellow</li>
+                <ul><li><i>We are currently considering a score where systems like the Spiderchain and tBTC v2 would be considered yellow</i></li></ul>
             </ul>
             </li>
         <br />
