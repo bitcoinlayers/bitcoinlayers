@@ -5,7 +5,7 @@
     "live": "Mainnet",
     "bridge": true,
     "underReview": "no",
-    "riskFactors": ["Unverified", "Medium", "High", "High"],
+    "riskFactors": ["Unverified", "Medium", "Unverified", "High"],
     "purpose": "General",
     "btcBridge": "Federated Multisig",
     "settlement": "Offchain",
@@ -43,16 +43,16 @@
         {
             "category": "Network Operators",
             "score": 0,
-            "tier": "High",
+            "tier": "Unverified",
             "title": "Bitlayer is operated by a permissioned validator set",
-            "content": "Bitlayer blocks are currently produced by a permissioned validator set. There are currently 21 validators participating in Bitlayer consensus. Users cannot bypass this operator set if they are censored by the validator set."
+            "content": "Bitlayer blocks are currently produced by a permissioned validator set. There are currently 21 validators participating in Bitlayer consensus. Users cannot bypass this operator set if they are censored by the validator set.\n\n🔬We are currently reviewing who operates BitLayer validators."
         },
         {
             "category": "Finality Guarantees",
             "score": 0,
-            "tier": "Unverified",
+            "tier": "High",
             "title": "BitLayer full nodes accept and validate blocks from the proposer",
-            "content": "There is no onchain enforcement of Bitlayer state transitions on bitcoin. Presumably, blocks in BitLayer are broadcasted by a member of the validator set and finalized by BitLayer's full nodes.\n\n🔬We are currently reviewing BitLayer's state validation mechanism."
+            "content": "There is no onchain enforcement of Bitlayer state transitions on bitcoin. BitLayer's state transitions are finalized by a permissioned validator set. Validators sign off on proposed blocks and finalize them in the chain."
         }
     ],
     "sections": [
