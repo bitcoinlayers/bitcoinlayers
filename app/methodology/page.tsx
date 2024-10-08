@@ -165,9 +165,7 @@ const Methodology: React.FC = () => {
 `;
 
     const additionalQuestionsBody = `
-    <ul>
-    <ul>
-        <li>In addition to performing this assessment, we additionally have a “Bitcoin security” section where we cover:</li>
+        <p>In addition to performing this assessment, we additionally have a “Bitcoin security” section where we cover:</p>
         <ul>
                 <li>If the protocol inherits security from bitcoin</li>
                 <li>If the protocol needs an alternative token to function</li>
@@ -175,9 +173,7 @@ const Methodology: React.FC = () => {
                 <li>If the protocol contributes to bitcoin’s security budget</li>
             </ul>
             </li>
-        </ul>
-        <li>We also cover areas related to various technologies used, and potential use cases.</li>
-    </ul>
+        <p>We also cover areas related to various technologies used, and potential use cases.</p>
 `;
 
     const additionalContextBody = `
