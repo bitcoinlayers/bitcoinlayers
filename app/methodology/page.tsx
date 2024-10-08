@@ -172,7 +172,6 @@ const Methodology: React.FC = () => {
                 <li>If the protocol introduces MEV to bitcoin</li>
                 <li>If the protocol contributes to bitcoin’s security budget</li>
             </ul>
-            </li>
         <p>We also cover areas related to various technologies used, and potential use cases.</p>
 `;
 
