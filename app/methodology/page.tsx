@@ -140,7 +140,7 @@ const Methodology: React.FC = () => {
         <br />
         <li>🟡 Yellow must match one of the following conditions:</li>
         <ul>
-                <li>- Settlement guarantees come from a permissionless, alternative consensus network operated by at least 5 externally, publicly known operators</li>
+                <li>Settlement guarantees come from a permissionless, alternative consensus network operated by at least 5 externally, publicly known operators</li>
             </ul>
             </li>
         <br />
