@@ -50,7 +50,7 @@
         {
             "category": "Finality Guarantees",
             "score": 0,
-            "tier": "High",
+            "tier": "Medium",
             "title": "Transaction finality is provided by Core Chain consensus and has no assurances inherited from Bitcoin",
             "content": "State transitions are finalized by Core Chain's consensus mechanism. All roles in this mechanism are minimally permissionless."
         }
