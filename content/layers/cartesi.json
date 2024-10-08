@@ -3,7 +3,7 @@
     "title": "Cartesi",
     "layerType": "Rollup",
     "live": "Testnet",
-    "federation": false,
+    "bridge": false,
     "underReview": "yes",
     "riskFactors": ["High", "High", "High", "High"],
     "purpose": "-",

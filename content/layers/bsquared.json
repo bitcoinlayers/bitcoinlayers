@@ -3,9 +3,9 @@
     "title": "Bsquared Network",
     "layerType": "Sidechain Rollup",
     "live": "Mainnet",
-    "federation": true,
+    "bridge": true,
     "underReview": "no",
-    "riskFactors": ["Unverified", "Unverified", "Critical", "High"],
+    "riskFactors": ["Unverified", "Unverified", "Critical", "Critical"],
     "purpose": "General",
     "btcBridge": "Federated Multi-sig",
     "settlement": "Offchain",
@@ -27,7 +27,7 @@
     "description": "The current Bsquared Network mainnet consists of two different chains. The parent chain is a fork of an EVM implementation on Tendermint, and has three permissioned validators operating the network. The rollup chain is a fork of Polygon zkEVM that settles on the Bsquared parent chain.",
     "riskAnalysis": [
         {
-            "category": "Bridge Custody",
+            "category": "Bridge Security",
             "score": 0,
             "tier": "Unverified",
             "title": "Users deposit funds into a MPC protocl managed by Bsquared Network and a custodian. Signers under revieww",
@@ -36,36 +36,26 @@
         {
             "category": "Data Availability",
             "score": 0,
-            "tier": "Unverified",
+            "tier": "Critical",
             "title": "DA requirement is fulfilled by three permissioned validators",
             "content": "Sequencer batches are posted to the Bsquared Network L1. This network consists of a permissioned validator set who is responsible for making the data readily available.\n\n🔬We are currently reviewing the operators satisfying the Bsquared DA requirement."
         },
         {
-            "category": "Network Operators",
+            "category": "Network Operator",
             "score": 0,
             "tier": "Critical",
             "title": "Both the rollup chain and parent chain are run by federated, centralized parties",
-            "content": "Bsquared Network’s Polygon zkEVM implementation has a single sequencer that posts sequencer batches to its network of three L1 validators. In the event of censorship, users cannot force an exit to Bitcoin."
+            "content": "Bsquared Network’s Polygon zkEVM implementation has a single sequencer that posts sequencer batches to its network of three L1 validators. In the event of censorship, users cannot force include their transaction in a sequence."
         },
         {
-            "category": "Settlement Assurance",
+            "category": "Finality Guarantees",
             "score": 0,
-            "tier": "High",
-            "title": "SNARKs ensure state correctness, but no settlement assurances inherited from Bitcoin",
-            "content": "Bsquared receives no settlement assurances from Bitcoin. Settlement is finalized by a group of three, federated validators who verify a validity proof submitted by the Bsquared Network zkEVM prover."
+            "tier": "Critical",
+            "title": "SNARKs ensure state correctness, but finality is guaranted by a permissioned validator set",
+            "content": "Bsquared receives no settlement assurances from Bitcoin. Bsquared settlement is finalized by a group of three, federated validators who verify a validity proof submitted by the Bsquared Network zkEVM prover."
         }
     ],
     "sections": [
-        {
-            "id": "additionalconsiderations",
-            "title": "Additional Considerations",
-            "content": [
-                {
-                    "title": "All facets of Bsquared Network are managed by a centralized operator. Some code is not open-source.",
-                    "content": "Bsquared Network is operated by permissioned validators on its L1 chain and its L2 chain. These validators are likely managed by the company building Bsquared Network. Code, and documentation, related to Bsquared Network's two-way pegs is not open-source. Users are trusting centralized parties to not steal their funds, extract MEV, or censor their transactions."
-                }
-            ]
-        },
         {
             "id": "bitcoinsecurity",
             "title": "Bitcoin Security",

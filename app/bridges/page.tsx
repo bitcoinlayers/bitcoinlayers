@@ -2,9 +2,9 @@ import { allLayers } from "@/util/layer_index";
 import FederationTable from "@/components/tables/federation-table";
 import Hero from "@/components/hero";
 
-export default function FederationsPage() {
+export default function BridgesPage() {
     const sortedLayers = allLayers
-        .filter((item) => item.federation)
+        .filter((item) => item.bridge)
         .sort((a, b) =>
             a.title.toLowerCase().localeCompare(b.title.toLowerCase()),
         );

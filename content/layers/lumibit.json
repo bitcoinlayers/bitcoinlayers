@@ -3,7 +3,7 @@
     "title": "Lumibit",
     "layerType": "Rollup",
     "live": "Testnet",
-    "federation": false,
+    "bridge": false,
     "underReview": "yes",
     "riskFactors": ["", "", "", ""],
     "purpose": "-",

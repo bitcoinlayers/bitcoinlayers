@@ -3,7 +3,7 @@
     "title": "Moneta (Demo)",
     "layerType": "Rollup",
     "live": "Mainnet",
-    "federation": false,
+    "bridge": false,
     "underReview": "no",
     "riskFactors": ["Medium", "Low", "High", "Medium"],
     "purpose": "General",

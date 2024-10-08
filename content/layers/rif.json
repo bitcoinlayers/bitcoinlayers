@@ -3,7 +3,7 @@
     "title": "RIF",
     "layerType": "Sidechain Rollup",
     "live": "Testnet",
-    "federation": false,
+    "bridge": false,
     "underReview": "yes",
     "riskFactors": ["", "", "", ""],
     "purpose": "-",
