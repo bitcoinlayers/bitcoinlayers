@@ -51,7 +51,7 @@
             "category": "Finality Guarantees",
             "score": 0,
             "tier": "High",
-            "title": "BitLayer full nodes accept and validate blocks from the proposer",
+            "title": "BitLayer validators finalize blocks",
             "content": "There is no onchain enforcement of Bitlayer state transitions on bitcoin. BitLayer's state transitions are finalized by a permissioned validator set. Validators sign off on proposed blocks and finalize them in the chain."
         }
     ],
