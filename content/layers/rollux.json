@@ -27,11 +27,11 @@
     "description": "Rollux is an optimistic rollup that uses Syscoin, two blockchains that are simultaneously merge-mined by bitcoin miners, as its base layer for data availability and state validation respectively. It has an EVM-compatible execution environment.",
     "riskAnalysis": [
         {
-            "category": "Bridge Custody",
+            "category": "Bridge Security",
             "score": 0,
-            "tier": "Unverified",
+            "tier": "Critical",
             "title": "Rollux does not have a consensus-level bridge with bitcoin",
-            "content": "The Rollux L2 does not currently have a direct bridge with the Bitcoin mainchain. The only Bitcoin synthetic on Rollux is a wBTC contract. The contract is an upgradeable contract managed by a specific address, the controller, on the Syscoin L1, the blockchain that Rollux settles to. wBTC can be deposited onto Rollux by way of Ethereum, Polygon PoS, and Binance Smart Chain. The controller of this address is responsible for minting and burning tokens related to the wBTC contract.\n\nRollux’s L1 bridge contract, which facilitates the transfer of wBTC from Syscoin to Rollux, is immediately upgradeable by a multi-sig wallet with anonymous signers.\n\nThe Rollux L1 contract lives on the Syscoin NEVM chain.\n\n🔬We are currently reviewing a score for the Rollux two-way peg."
+            "content": "The Rollux L2 does not currently have a direct bridge with the Bitcoin mainchain. The only Bitcoin synthetic on Rollux is a wBTC contract. The contract is an upgradeable contract managed by a specific address, the controller, on the Syscoin L1, the blockchain that Rollux settles to. wBTC can be deposited onto Rollux by way of Ethereum, Polygon PoS, and Binance Smart Chain. The controller of this address is responsible for minting and burning tokens related to the wBTC contract.\n\nRollux’s L1 bridge contract, which facilitates the transfer of wBTC from Syscoin to Rollux, is immediately upgradeable by a multi-sig wallet with anonymous signers.\n\nThe Rollux L1 contract lives on the Syscoin NEVM chain."
         },
         {
             "category": "Data Availability",
@@ -41,18 +41,18 @@
             "content": "The Rollux chain posts transaction data to Syscoin’s UTXO chain’s data availability solution, [PoDA](https://docs.syscoin.org/docs/tech/poda/). The Syscoin L1 is a merge-mined chain with Bitcoin.\n\nData availability is satisfied by blobs, meaning that Syscoin nodes only store data related to Rollux for at least six hours after finality is reached. After this period, it is deleted. PoDA does not shard data and requires full nodes to store the entire contents of a blob for a given time period. At least one archive node needs to archive the full contents of the blob to ensure Rollux’s historical state is intact.\n\nAfter receiving a blob from Rollux, the UTXO chain attests to the availability of data to the NEVM chain.\n\nOnly one non-pruned online node is needed to reconstruct the entire state of Syscoin and Rollux."
         },
         {
-            "category": "Block Production",
+            "category": "Network Operators",
             "score": 0,
             "tier": "Medium",
             "title": "Rollux is operated by a centralized sequencer with forced inclusion to the Syscoin L1 possible",
             "content": "The Rollux chain is operated by a centralized sequencer. Users can be censored by the centralized sequencer and the chain can have liveness failures if the sequencer goes offline.\n\nForced inclusion to the Syscoin L1 is possible. Users are able to have their transaction included in a sequence by submitting it to the L1 smart contract."
         },
         {
-            "category": "State Validation",
+            "category": "Finality Guarantees",
             "score": 0,
-            "tier": "Critical",
-            "title": "State validation mechanism is under development",
-            "content": "Fault proofs are not currently live on Rollux. The Rollux proposer can propose invalid state roots to the L1 smart contract. Funds can be stolen if an invalid state root is committed."
+            "tier": "Medium",
+            "title": "Rollux inherits finality guarantees from Syscoin",
+            "content": "The Rollux sequencer provides a soft confirmation of transactions which are eventually summarized and sent to Syscoin.\n\nRollux's sequencer can reorg prior to a transaction batch being accepted on Syscoin."
         }
     ],
     "sections": [

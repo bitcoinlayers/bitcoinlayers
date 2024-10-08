@@ -27,11 +27,11 @@
     "description": "Core (in relation to Bitcoin) is an EVM sidechain with a hybrid consensus mechanism, Satoshi Plus, that leverages both DPoW and DPoS. It uses a federated multisig to bridge BTC with multiple parties ensuring the honesty of the two-way peg. The native token of the network is CORE, which is used for transaction fees, staking, and governance in Core DAO.",
     "riskAnalysis": [
         {
-            "category": "Bridge Custody",
+            "category": "Bridge Security",
             "score": 0,
             "tier": "Unverified",
-            "title": "Funds are custodied in a federated multi-sig, with a number of parties ensuring the honesty of the bridge",
-            "content": "Users trust various parties in maintaining the honesty of Core’s two-way peg with Bitcoin. Lockers are the party responsible for securing the bitcoin that backs coreBTC on Core Chain. These actors stake collateral, in the form of Core tokens, in order to participate as a Locker. In the event of maliciousing moving bitcoin from the multi-sig, or being unable to fulfill withdrawals, Lockers would be slashed and lose the collateral they posted.\n\nOther parties in the bridge set up are responsible for monitoring the Locker’s activity and initiating the slashing process."
+            "title": "Funds are custodied by a federated signer set, with a number of parties ensuring the honesty of the bridge",
+            "content": "Users trust various parties in maintaining the honesty of Core’s bridge with Bitcoin. Lockers are the party responsible for securing the bitcoin that backs coreBTC on Core Chain. These actors stake collateral, in the form of Core tokens, in order to participate as a Locker. In the event of maliciousing moving bitcoin from the multi-sig, or being unable to fulfill withdrawals, Lockers would be slashed and lose the collateral they posted.\n\nOther parties in the bridge set up are responsible for monitoring the Locker’s activity and initiating the slashing process."
         },
         {
             "category": "Data Availability",
@@ -41,18 +41,18 @@
             "content": "Core Chain's data availability requirement is fulfilled by its own network of full nodes. Anyone with enough computational resources can run a Core Chain full node."
         },
         {
-            "category": "Network Operators",
+            "category": "Network Operator",
             "score": 0,
             "tier": "Medium",
             "title": "Core's hybrid consensus mechanism operates the network",
-            "content": "Core Chain has a network of validators who participate as block producers. Each day, the 23 validators with the highest hybrid score (from DPOW and DPOS) are elected to participate in block production. Any Core chain full node can register to become a part of this set. Core Chain does not support exits that circumvent its validator set. This means that users must trust Core Chain validators to include their transactions in blocks.\n\nThere is a minimium stake to run a Core Chain validator node."
+            "content": "Core Chain has a network of validators who participate as block producers. Each day, the 23 validators with the highest hybrid score (from DPOW and DPOS) are elected to participate in block production. Any Core chain full node can register to become a part of this set. Core Chain does not support exits that circumvent its validator set. This means that users must trust Core Chain validators to propose and finalize blocks.\n\nThere is a minimium stake to run a Core Chain validator node."
         },
         {
-            "category": "Settlement Assurance",
+            "category": "Finality Guarantees",
             "score": 0,
-            "tier": "Medium",
+            "tier": "High",
             "title": "Transaction finality is provided by Core Chain consensus and has no assurances inherited from Bitcoin",
-            "content": "Settlement is finalized by Core Chain's alternative consensus mechanism rather than on Bitcoin."
+            "content": "State transitions are finalized by Core Chain's consensus mechanism. All roles in this mechanism are minimally permissionless."
         }
     ],
     "sections": [
@@ -133,8 +133,8 @@
             "title": "Operator",
             "content": [
                 {
-                    "title": "Core Chain is operated by validators",
-                    "content": "Block production is managed by a permissionless set of validators. Users trust the majority of validators not to collude."
+                    "title": "Core Chain is operated by Satoshi Plus validators",
+                    "content": "Block production is managed by validators paticipating in the chain's hybrid consensus mechanism."
                 }
             ]
         },
@@ -144,7 +144,7 @@
             "content": [
                 {
                     "title": "Code is open-source",
-                    "content": "All code related to the Core Chain project is free and open source."
+                    "content": "Core's node implementation is open-source."
                 }
             ]
         }

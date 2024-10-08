@@ -24,14 +24,14 @@
         "https://github.com/BounceBit-Labs",
         "https://x.com/bounce_bit"
     ],
-    "description": "BounceBit is a Layer 1 blockchain that provides utility for BTC the asset. Its relationship with Bitcoin is similar to that of a sidechain. It leverages a delegated proof-of-stake consensus mechanism and uses the BB and BBTC (BTC-synthetic on BounceBit) tokens for staking. It is EVM-compatible and can support an ecosystem of onchain applications.",
+    "description": "BounceBit is a bitcoin sidechain. It leverages a delegated proof-of-stake consensus mechanism and uses the BB and BBTC (BTC-synthetic on BounceBit) tokens for staking. It is EVM-compatible and can support an ecosystem of onchain applications.",
     "riskAnalysis": [
         {
             "category": "Bridge Custody",
             "score": 0,
             "tier": "Unverified",
-            "title": "Two-way peg is managed by a third party",
-            "content": "The BounceBit two-way peg is proposedly managed by the Polyhedra Network. The two-way peg is currently an MPC protocol, where a selected number of signers are responsible for securing the two-way peg and custodying users’ BTC.\n\n🛑  We cannot currently verify claims related to BounceBit’s two-way peg. Polyhedra has not disclosed any information related to its operation of the BounceBit two-way peg."
+            "title": "Bridge is managed by a third party",
+            "content": "The official BounceBit bitcoin bridge is proposedly managed by the Polyhedra Network. The two-way peg is currently an MPC protocol, where a selected number of signers are responsible for securing the bridge and custodying users’ BTC.\n\n🛑  We cannot currently verify claims related to BounceBit’s two-way peg. Polyhedra has not disclosed any information related to its operation of the BounceBit two-way peg."
         },
         {
             "category": "Data Availability",
@@ -41,7 +41,7 @@
             "content": "Currently, BounceBit’s validator set is responsible for keeping a record of the chain’s latest state. There are currently 25 active validators.\n\nThe mainnet node implementation is not open-source, so users are unable to run BounceBit nodes and maintain a record of BounceBit’s state."
         },
         {
-            "category": "Block Production",
+            "category": "Liveness & Reorg Resistance",
             "score": 0,
             "tier": "Unverified",
             "title": "Network managed by a permissioned set of operators participating in a delegated proof-of-stake mechanism",
@@ -52,7 +52,7 @@
             "score": 0,
             "tier": "Unverified",
             "title": "Settlement assurances are provided by BounceBit consensus",
-            "content": "Settlement assurances are provided by BounceBit’s validator set, not Bitcoin. More than 2/3 of BounceBit’s validators’ voting power is needed to sign a proposed block to finalize it onchain.\n\nBounceBit has single-slot finality, meaning that blocks cannot be re-organized once they are part of the canonical blockchain."
+            "content": "Settlement assurances are provided by BounceBit’s validator set, not Bitcoin. More than 2/3 of BounceBit’s validators’ voting power is needed to sign a proposed block to finalize it onchain.\n\nBounceBit has single-slot finality, meaning that blocks cannot be re-organized once they are part of the canonical blockchain.\n\nBitcoin can not validate Bouncebit state transitions. Bridge operators can process fradulent withdrawals and steal user funds."
         }
     ],
     "sections": [

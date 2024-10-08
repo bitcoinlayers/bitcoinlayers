@@ -5,7 +5,7 @@
     "live": "Mainnet",
     "bridge": true,
     "underReview": "no",
-    "riskFactors": ["Unverified", "High", "High", "Unverified"],
+    "riskFactors": ["Unverified", "Unverified", "Unverified", "Unverified"],
     "purpose": "General",
     "btcBridge": "Limited information",
     "settlement": "External",
@@ -24,10 +24,10 @@
         "https://docs.merlinchain.io/merlin-docs/developers",
         "https://twitter.com/MerlinLayer2"
     ],
-    "description": "Merlin is an implementation of Polygon CDK chain. It likely is running a Polygon chain on top of a permissioned fork of the EVM. It plans to integrate with the Bsquared Hub L1 in the future.",
+    "description": "Merlin is an implementation of Polygon CDK chain. It likely is running a Polygon chain on top of a permissioned fork of the EVM.",
     "riskAnalysis": [
         {
-            "category": "Bridge Custody",
+            "category": "Bridge Security",
             "score": 0,
             "tier": "Unverified",
             "title": "Users deposit funds into a MPC wallet managed by a custodian",
@@ -36,23 +36,23 @@
         {
             "category": "Data Availability",
             "score": 0,
-            "tier": "High",
+            "tier": "Unverified",
             "title": "State data is stored and made available by a permissioned data availability committee. The identities of its members are under review",
             "content": "Merlin chain is built on the Polygon CDK stack. In its Github, it has a copy of the Polygon CDK Committee contract. In the contract, it states that the admin has the control to set up the committee, so it is likely that the members of this committee are permissioned and selected by the Merlin Chain operator. We have not been able to verify the members of this committee."
         },
         {
-            "category": "Network Operator",
-            "score": 0,
-            "tier": "High",
-            "title": "Blocks are produced by a centralized sequencer and forced inclusion mechanism is unverified",
-            "content": "Merlin chain blocks are currently produced by a centralized sequencer. If the sequencer were to go down, or censor users, users would force include transactions to an L1 that is not Bitcoin. We have not verified if Merlin's forced inclusion mechanism is currently live."
-        },
-        {
-            "category": "Settlement Assurance",
+            "category": "Network Operators",
             "score": 0,
             "tier": "Unverified",
-            "title": "zkSNARKs are proposedly used to ensure state correctness, but state validation occurs offchain and inherits no settlement guarantees from Bitcoin. ❓ We are unable to verify Merlin Chain's L1 contracts",
-            "content": "Merlin propsedly uses zkSNARKS to ensure state correctness. The Merlin prover posts validity proofs of execution to its L1 contract to finalize state transitions. It is unknown which chain Merlin settles to. Its documentation previously pointed to Ethereum, but recent contracts cannot be verified on Ethereum."
+            "title": "Blocks are produced by a centralized sequencer and forced inclusion mechanism is unverified",
+            "content": "Merlin chain blocks are currently produced by a centralized sequencer. If the sequencer were to go down, or censor users, users would force include transactions to an L1 that is not Bitcoin. We have not verified if Merlin's forced inclusion mechanism is currently live.\n\nAdditionally, Merlin transactions are not finalized until its parent chain accepts the Merlin state transition."
+        },
+        {
+            "category": "Finality guarantees",
+            "score": 0,
+            "tier": "Unverified",
+            "title": "Sequencer batches and validity proofs posted offchain. ❓ We are unable to verify Merlin Chain's L1 contracts",
+            "content": "Merlin propsedly uses zkSNARKS to ensure state correctness. The Merlin prover posts validity proofs of execution to its L1 contract to finalize state transitions. It is unknown which chain Merlin posts its latest state root to."
         }
     ],
     "sections": [
@@ -80,11 +80,11 @@
         },
         {
             "id": "withdrawals",
-            "title": "Additional Considerations",
+            "title": "Withdrawals",
             "content": [
                 {
-                    "title": "Some code is not open-source",
-                    "content": "Merlin Chain contracts are all currently upgradeable by an admin. The contracts it has listed on its CDKValdidium can not be verified on its respective L1 blockchain."
+                    "title": "Withdrawals are processed by a custodian",
+                    "content": "Withdrawals from Merlin chain are processed by a custodial operator. Users trust that the Merlin sequencer will include their withdrawal request in a block, and that the custodial operators of the bridge will facilitate an exit from the system."
                 }
             ]
         },

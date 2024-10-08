@@ -27,11 +27,11 @@
     "description": "BOB is an optimistic rollup that serves as an application layer for Bitcoin. They have launched as a rollup on top of Ethereum, with plans to derive more security from Bitcoin miners, and full nodes, over time. Its relation to Bitcoin, currently, is similar to that of a sidechain as it is an alternative consensus protocol with a two-way peg(s) between it and the Bitcoin mainchain.",
     "riskAnalysis": [
         {
-            "category": "Bridge Custody",
+            "category": "Bridge Security",
             "score": 0,
-            "tier": "Unverified",
+            "tier": "Critical",
             "title": "Bitcoin users trust operators of various multi-sigs for custody of their BTC",
-            "content": "For Bitcoin assets, there are no unilateral exits from the BOB chain. Users trust a variety of consensus participants to permit withdrawals from the BOB chain back to Bitcoin. They also trust a variety of consensus participants to secure two-way pegs custodying the BTC.\n\nBOB primarily uses two BTC synthetics on its chain, tBTC and wBTC. Both are ERC-20 tokens on Ethereum. tBTC’s two-way peg on BOB is managed by a ⅗ multi-sig, but it can be upgraded to allow Threshold governance to manage the minting and burning of tBTC on BOB. Threshold governance relies on a separate token and consensus mechanism. wBTC is effectively managed by a centralized custodian, BitGo. Currently, both of these tokens are minted on BOB via its native Ethereum bridge.\n\nUsers trust that the bridge operators will not steal their BTC, the BOB proposer to not publish a malicious, unchallenged state transition, or BOB’s proxy admin to create a malicious smart contract upgrade.\n\nIn the event of a malicious smart contract upgrade, there is no exit window for BOB users. This is the same across all chains built on the OP Stack.\n\n🔬We are currently reviewing a score for the BOB two-way peg"
+            "content": "BOB primarily uses two BTC synthetics on its chain, tBTC and wBTC. Both are ERC-20 tokens on Ethereum. tBTC’s two-way peg on BOB is managed by a ⅗ multi-sig, but it can be upgraded to allow Threshold governance to manage the minting and burning of tBTC on BOB. Threshold governance relies on a separate token and consensus mechanism. wBTC is effectively managed by a centralized custodian, BitGo. Currently, both of these tokens are minted on BOB via its native Ethereum bridge.\n\nUsers trust that the bridge operators will not steal their BTC, the BOB proposer to not publish a malicious, unchallenged state transition, or BOB’s proxy admin to create a malicious smart contract upgrade.\n\nIn the event of a malicious smart contract upgrade, there is no exit window for BOB users."
         },
         {
             "category": "Data Availability",
@@ -41,18 +41,18 @@
             "content": "The data for BOB’s state is stored on the Ethereum blockchain. Anyone can run an Ethereum node and verify the state of BOB."
         },
         {
-            "category": "Network Operator",
+            "category": "Network Operators",
             "score": 0,
             "tier": "Medium",
             "title": "BOB blocks are produced and proposed by a centralized operator, but forced inclusion to Ethereum L1 possible",
             "content": "Currently, BOB’s sequencer is managed by one entity. The BOB sequencer can censor transactions and would also cause liveness failures in the rollup if it went down. Users can, however, bypass the sequencer and send their transactions directly to the Ethereum L1 contract. Users do, however, trust that a permissioned proposer will publish the latest state root on the Ethereum L1, permitting withdrawals."
         },
         {
-            "category": "Settlement Assurance",
+            "category": "Finality Guarantees",
             "score": 0,
-            "tier": "Critical",
-            "title": "State validation mechanism, on Ethereum, is under development",
-            "content": "BOB inherits no settlement assurances from Bitcoin. BOB is an optimistic rollup, but currently does not have fraud proofs. This means that the BOB sequencer can post malicious state transitions that could result in users losing their funds. Users trust that a challenger, which is currently run by a 4/6 multi-sig, will be online and challenge proposed malicious state transitions."
+            "tier": "Medium",
+            "title": "BOB state transitions finalize on Ethereum",
+            "content": "BOB inherits finality guarantees from Ethereum. The BOB sequencer provides a soft confirmation of transactions which are eventually summarized and sent to Ethereum.\n\nBOB's sequencer can reorg prior to a transaction batch being accepted on Ethereum."
         }
     ],
     "sections": [
@@ -120,7 +120,7 @@
             "title": "Use Cases",
             "content": [
                 {
-                    "title": "Bitcoin applications",
+                    "title": "Onchain applications",
                     "content": "BOB’s initial use case is to provide Ethereum users access to Bitcoin applications such as ordinals, BRC-20s, Bitcoin backed stablecoins, and more. It also gives Bitcoin users access to an application layer that provides faster confirmation times, lower fees and a superior user experience (albeit with additional trust assumptions). To enable this, BOB supports the BOB SDK, which is a software development kit that enables developers to build Bitcoin-centric applications on BOB."
                 },
                 {
