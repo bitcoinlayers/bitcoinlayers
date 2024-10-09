@@ -3,6 +3,7 @@
     "title": "zkCoins",
     "layerType": "zkCSV",
     "live": "Announced",
+    "staking": false,
     "bridge": false,
     "underReview": "yes",
     "riskFactors": ["", "", "", ""],

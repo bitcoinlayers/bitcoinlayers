@@ -3,6 +3,7 @@
     "title": "Botanix",
     "layerType": "Sidechain",
     "live": "Testnet",
+    "staking": true,
     "bridge": false,
     "underReview": "yes",
     "riskFactors": ["", "", "", ""],

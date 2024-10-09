@@ -3,6 +3,7 @@
     "title": "Merlin",
     "layerType": "Sidechain",
     "live": "Mainnet",
+    "staking": true,
     "bridge": true,
     "underReview": "no",
     "riskFactors": ["Unverified", "Unverified", "Unverified", "Unverified"],

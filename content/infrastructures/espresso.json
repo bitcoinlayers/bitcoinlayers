@@ -3,6 +3,7 @@
     "title": "Espresso",
     "infrastructureType": "Sequencing & DA",
     "live": "Proposed",
+    "staking": false,
     "underReview": "yes",
     "riskFactors": ["", ""],
     "bitcoinSecurity": "No",

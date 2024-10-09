@@ -2,6 +2,7 @@
     "slug": "ark",
     "title": "Ark",
     "layerType": "Virtual UTXOs",
+    "staking": false,
     "live": "Mainnet",
     "bridge": false,
     "underReview": "yes",

@@ -3,6 +3,7 @@
     "title": "SatoshiVM",
     "layerType": "Permissioned chain",
     "live": "Mainnet",
+    "staking": false,
     "bridge": false,
     "underReview": "no",
     "riskFactors": ["Unverified", "Unverified", "Unverified", "Unverified"],

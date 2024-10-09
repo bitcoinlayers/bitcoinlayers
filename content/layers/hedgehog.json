@@ -3,6 +3,7 @@
     "title": "Hedgehog",
     "layerType": "State Channel",
     "live": "Testnet",
+    "staking": false,
     "bridge": false,
     "underReview": "yes",
     "riskFactors": ["", "", "", ""],

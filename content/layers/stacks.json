@@ -3,6 +3,7 @@
     "title": "Stacks",
     "layerType": "Sidechain",
     "live": "Mainnet",
+    "staking": false,
     "bridge": false,
     "underReview": "no",
     "riskFactors": ["Unverified", "Medium", "Medium", "Medium"],

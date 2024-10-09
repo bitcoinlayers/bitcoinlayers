@@ -3,6 +3,7 @@
     "title": "Side Protocol",
     "layerType": "Sidechain",
     "live": "Testnet",
+    "staking": false,
     "bridge": false,
     "underReview": "yes",
     "riskFactors": ["", "", "", ""],

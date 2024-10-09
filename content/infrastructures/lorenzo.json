@@ -3,6 +3,7 @@
     "title": "Lorenzo",
     "infrastructureType": "Liquid Staking",
     "live": "Announced",
+    "staking": true,
     "underReview": "yes",
     "riskFactors": ["", ""],
     "bitcoinSecurity": "No",

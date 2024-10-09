@@ -3,6 +3,7 @@
     "title": "Nomic",
     "layerType": "Sidechain",
     "live": "Mainnet",
+    "staking": false,
     "bridge": false,
     "underReview": "yes",
     "riskFactors": ["", "", "", ""],

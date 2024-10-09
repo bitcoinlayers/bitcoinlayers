@@ -34,38 +34,11 @@ interface kbit {
     displayText: string;
 }
 
-interface LayerProps {
-    slug: string;
-    title: string;
-    layerType: string;
-    live: string;
-    bridge: boolean;
-    underReview: string;
-    riskFactors: string[];
-    purpose: string;
-    btcBridge: string;
-    settlement: string;
-    btcLocked: number;
-    executionEnv: string;
-    consensus: string;
-    nativeToken: string;
-    feeToken: string;
-    enshrinedBtc: string;
-    bitcoinOnly: boolean;
-    links: string[];
-    description: string;
-    riskAnalysis: Risksection[];
-    bridgeAnalysis?: BridgeSection[];
-    sections: Section[];
-    knowledgeBits: kbit[];
-}
-
-export default LayerProps;
-
 export type Layer = {
     title: string;
     layerType: string;
     live: string;
+    staking: boolean;
     bridge: boolean;
     underReview: string;
     riskFactors: string[];

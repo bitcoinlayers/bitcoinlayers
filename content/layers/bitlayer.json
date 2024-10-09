@@ -3,6 +3,7 @@
     "title": "Bitlayer",
     "layerType": "Sidechain",
     "live": "Mainnet",
+    "staking": false,
     "bridge": true,
     "underReview": "no",
     "riskFactors": ["Unverified", "Medium", "Unverified", "High"],

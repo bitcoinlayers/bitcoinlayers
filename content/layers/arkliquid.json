@@ -3,6 +3,7 @@
     "title": "Ark (on Liquid)",
     "layerType": "Virtual UTXOs",
     "live": "Mainnet",
+    "staking": false,
     "bridge": false,
     "underReview": "no",
     "riskFactors": ["Unverified", "Medium", "High", "High"],

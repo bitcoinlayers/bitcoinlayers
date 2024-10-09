@@ -3,6 +3,7 @@
     "title": "QED",
     "layerType": "Rollup",
     "live": "Announced",
+    "staking": false,
     "bridge": false,
     "underReview": "yes",
     "riskFactors": ["", "", "", ""],

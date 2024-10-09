@@ -3,6 +3,7 @@
     "title": "Starknet",
     "layerType": "Rollup",
     "live": "Proposed",
+    "staking": false,
     "bridge": false,
     "underReview": "yes",
     "riskFactors": ["", "", "", ""],

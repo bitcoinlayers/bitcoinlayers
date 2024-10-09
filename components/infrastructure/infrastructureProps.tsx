@@ -14,30 +14,32 @@ interface kbit {
     displayText: string;
 }
 
-interface InfrastructureProps {
-    slug: string;
-    title: string;
-    infrastructureType: string;
-    live: string;
-    underReview: string;
-    riskFactors: string[];
-    bitcoinSecurity: string;
-    nativeToken: string;
-    purpose: string;
-    associatedLayers: string;
-    bitcoinOnly: boolean;
-    links: string[];
-    description: string;
-    sections: Section[];
-    knowledgeBits: kbit[];
-}
+// interface InfrastructureProps {
+//     slug: string;
+//     title: string;
+//     infrastructureType: string;
+//     live: string;
+//     staking: boolean;
+//     underReview: string;
+//     riskFactors: string[];
+//     bitcoinSecurity: string;
+//     nativeToken: string;
+//     purpose: string;
+//     associatedLayers: string;
+//     bitcoinOnly: boolean;
+//     links: string[];
+//     description: string;
+//     sections: Section[];
+//     knowledgeBits: kbit[];
+// }
 
-export default InfrastructureProps;
+// export default InfrastructureProps;
 
 export type Infrastructure = {
     title: string;
     infrastructureType: string;
     live: string;
+    staking: boolean;
     underReview: string;
     riskFactors: string[];
     bitcoinSecurity: string;

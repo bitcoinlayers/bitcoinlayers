@@ -3,6 +3,7 @@
     "title": "Heliosphere",
     "layerType": "Rollup",
     "live": "Testnet",
+    "staking": false,
     "bridge": false,
     "underReview": "yes",
     "riskFactors": ["", "", "", ""],

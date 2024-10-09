@@ -3,6 +3,7 @@
     "title": "Title",
     "layerType": "Rollup/Sidechain/State Channel/State Chain",
     "live": "Mainnet/Testnet/Announced",
+    "staking": false,
     "bridge": false,
     "underReview": "yes/no",
     "riskFactors": ["High", "High", "High", "High"],
