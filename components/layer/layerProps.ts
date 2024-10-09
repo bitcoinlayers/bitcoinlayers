@@ -17,7 +17,7 @@ interface Risksection {
     content: string;
 }
 
-interface Federationsection {
+interface BridgeSection {
     category:
         | "Reputation"
         | "Participation"
@@ -34,40 +34,12 @@ interface kbit {
     displayText: string;
 }
 
-// interface LayerProps {
-//     slug: string;
-//     title: string;
-//     layerType: string;
-//     live: string;
-//     federation: boolean;
-//     underReview: string;
-//     riskFactors: string[];
-//     purpose: string;
-//     btcBridge: string;
-//     settlement: string;
-//     btcLocked: number;
-//     executionEnv: string;
-//     consensus: string;
-//     nativeToken: string;
-//     feeToken: string;
-//     enshrinedBtc: string;
-//     bitcoinOnly: boolean;
-//     links: string[];
-//     description: string;
-//     riskAnalysis: Risksection[];
-//     federationAnalysis?: Federationsection[];
-//     sections: Section[];
-//     knowledgeBits: kbit[];
-// }
-
-// export default LayerProps;
-
 export type Layer = {
     title: string;
     layerType: string;
     live: string;
-    federation: boolean;
     staking: boolean;
+    bridge: boolean;
     underReview: string;
     riskFactors: string[];
     purpose: string;
@@ -83,7 +55,7 @@ export type Layer = {
     links: string[];
     description: string;
     riskAnalysis: Risksection[];
-    federationAnalysis?: Federationsection[];
+    bridgeAnalysis?: BridgeSection[];
     sections: Section[];
     knowledgeBits: kbit[];
     /** MDX file body */

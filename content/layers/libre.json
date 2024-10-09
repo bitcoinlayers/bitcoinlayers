@@ -3,8 +3,8 @@
     "title": "Libre",
     "layerType": "Sidechain",
     "live": "Mainnet",
-    "federation": false,
     "staking": false,
+    "bridge": false,
     "underReview": "no",
     "riskFactors": ["Unverified", "High", "High", "High"],
     "purpose": "General",
@@ -28,11 +28,11 @@
     "description": "Libre is a sidechain that leverages a Delegated Proof of Stake (DPoS) consensus mechanism. It currently features three tokens: PBTC, PUSDT, and LIBRE. BTC live on the Libre network is managed by an alternative consensus mechanism that is not directly affiliated with Libre.",
     "riskAnalysis": [
         {
-            "category": "Bridge Custody",
+            "category": "Bridge Security",
             "score": 0,
             "tier": "Unverified",
-            "title": "Libre's two-way peg relies on a third party provider",
-            "content": "BTC users who deposit funds onto Libre do so via the pNetwork chain. This is an alternative consensus mechanism that is governed by the pNetwork token and governance. The signers for the pNetwork bitcoin multi-sig, custodying the funds backing pBTC, participate in a MPC protocol.\n\n⚠️ The pNetwork bridge has historically seen two exploits occur. One of those exploits involved BTC-backed tokens.\n\n🔬We are currently reviewing a score for the Libre two-way peg"
+            "title": "Libre's bridge relies on a third party provider",
+            "content": "BTC users who deposit funds onto Libre do so via the pNetwork chain. This is an alternative consensus mechanism that is governed by the pNetwork token and governance. The signers for the pNetwork bitcoin multi-sig, custodying the funds backing pBTC, participate in a MPC protocol.\n\n⚠️ The pNetwork bridge has historically seen two exploits occur. One of those exploits involved BTC-backed tokens.\n\n🔬We are currently reviewing a score for the Libre bridge"
         },
         {
             "category": "Data Availability",
@@ -42,18 +42,18 @@
             "content": "The data availability and storage requirement is satisfied by Libre validators. Anyone can participate as a validator after receiving permission from the current validator set to join the candidate pool."
         },
         {
-            "category": "Block Production",
+            "category": "Network Operators",
             "score": 0,
             "tier": "High",
             "title": "The Libre network is operated by a permissioned validator set",
             "content": "Libre validators are responsible for proposing and signing blocks to finalize Libre transactions. There are 21 validators that participate in block production. They are selected for a round based on their voting power. Validators that are not selected as a part of this round must wait in a candidate pool. Rounds last 126 seconds. If there are not a minimum of 10 active validators, block production would fail.\n\nWhen selected, validators win the right to propose blocks for 6 seconds during a specific round. During this time frame they must produce 12 blocks.\n\nTo register as a Libre validator, operators must run a node on testnet for two weeks and request permission to run a mainnet validator after these two weeks have passed."
         },
         {
-            "category": "State Validation",
+            "category": "Finality Guarantees",
             "score": 0,
             "tier": "High",
-            "title": "No settlement guarantees provided by Bitcoin",
-            "content": "Settlement guarantees are finalized by Libre’s validator set and not by Bitcoin consensus participants.\n\n A block is considered final after a supermajority of network participants have validated a block. Once a block is considered final, it cannot be reorged."
+            "title": "Finality assurances are provided by a federated operator set.",
+            "content": "Finality guarantees are finalized by Libre’s validator set and not by Bitcoin consensus participants.\n\n A block is considered final after a supermajority of network participants have validated a block. Once a block is considered final, it cannot be reorged."
         }
     ],
     "sections": [

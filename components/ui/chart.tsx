@@ -111,6 +111,7 @@ const ChartTooltipContent = React.forwardRef<
             indicator?: "line" | "dot" | "dashed";
             nameKey?: string;
             labelKey?: string;
+            sort?: string;
         }
 >(
     (
@@ -128,6 +129,7 @@ const ChartTooltipContent = React.forwardRef<
             color,
             nameKey,
             labelKey,
+            sort,
         },
         ref,
     ) => {
@@ -177,6 +179,35 @@ const ChartTooltipContent = React.forwardRef<
 
         const nestLabel = payload.length === 1 && indicator !== "dot";
 
+        const sortFunction = sort
+            ? (a: any, b: any) => {
+                  const valueA = a.value;
+                  const valueB = b.value;
+
+                  if (
+                      typeof valueA === "number" &&
+                      typeof valueB === "number"
+                  ) {
+                      return sort === "desc"
+                          ? valueB - valueA
+                          : valueA - valueB;
+                  }
+
+                  const dateA = new Date(valueA);
+                  const dateB = new Date(valueB);
+
+                  if (!isNaN(dateA.getTime()) && !isNaN(dateB.getTime())) {
+                      return sort === "desc"
+                          ? dateB.getTime() - dateA.getTime()
+                          : dateA.getTime() - dateB.getTime();
+                  }
+
+                  return sort === "desc"
+                      ? String(valueB).localeCompare(String(valueA))
+                      : String(valueA).localeCompare(String(valueB));
+              }
+            : undefined;
+
         return (
             <div
                 ref={ref}
@@ -187,7 +218,7 @@ const ChartTooltipContent = React.forwardRef<
             >
                 {!nestLabel ? tooltipLabel : null}
                 <div className="grid gap-1.5">
-                    {payload.map((item, index) => {
+                    {payload.sort(sortFunction).map((item, index) => {
                         const key = `${nameKey || item.name || item.dataKey || "value"}`;
                         const itemConfig = getPayloadConfigFromPayload(
                             config,
@@ -270,7 +301,13 @@ const ChartTooltipContent = React.forwardRef<
                                             </div>
                                             {item.value && (
                                                 <span className="font-mono font-medium tabular-nums text-foreground">
-                                                    {item.value.toLocaleString()}
+                                                    {item.value.toLocaleString(
+                                                        "en-US",
+                                                        {
+                                                            minimumFractionDigits: 2,
+                                                            maximumFractionDigits: 2,
+                                                        },
+                                                    )}
                                                 </span>
                                             )}
                                         </div>

@@ -3,14 +3,14 @@
     "title": "Stacks",
     "layerType": "Sidechain",
     "live": "Mainnet",
-    "federation": false,
     "staking": false,
+    "bridge": false,
     "underReview": "no",
     "riskFactors": ["Unverified", "Medium", "Medium", "Medium"],
     "purpose": "General",
     "btcBridge": "Centralized Multisig(s)",
     "settlement": "Offchain",
-    "btcLocked": 1056,
+    "btcLocked": 1054,
     "executionEnv": "Offchain",
     "consensus": "Proof-of-Transfer",
     "nativeToken": "STX",
@@ -28,32 +28,32 @@
     "description": "Stacks is a sidechain that aims to be programmability layer for Bitcoin. It uses a novel execution environment, Clarity. Stacks uses a hybrid PoS mechanism (PoX) and derives economic security from its native token (STX).",
     "riskAnalysis": [
         {
-            "category": "Bridge Custody",
+            "category": "Bridge Security",
             "score": 0,
             "tier": "Unverified",
             "title": "Users must trust centralized companies with custody of their BTC. Signers under review",
-            "content": "Stacks has no consensus-enshrined BTC bridge. It does have two third-party bridges, which are both custodial multisigs. Users must trust the operators of these bridges to not steal their BTC, as they do not support unilateral exits.\n\n🔬We are currently reviewing a score for the Stacks two-way peg."
+            "content": "Stacks has no consensus-enshrined BTC bridge. It does have two third-party bridges, which are both custodial multisigs. Users must trust the operators of these bridges to custody their BTC and back bitcoin-backed tokens on the Stacks network.\n\n🔬We are currently reviewing a score for the Stacks two-way peg."
         },
         {
             "category": "Data Availability",
             "score": 0,
             "tier": "Medium",
-            "title": "Only Stacks' state roots posted to Bitcoin. Data availability requirement is fulfilled through Stacks' full nodes",
+            "title": "Data availability requirement is fulfilled through Stacks' full nodes",
             "content": "Stacks posts state roots to Bitcoin, but not full transaction calldata. Because of this, Stacks' state cannot be reconstructed using only data from Bitcoin. Stacks has a permissionless validator and node operator set which participate in making data availability readily available."
         },
         {
-            "category": "Network Operator",
+            "category": "Network Operators",
             "score": 0,
             "tier": "Medium",
             "title": "Leverages a permissionless consensus mechanism",
             "content": "Stacks has a permissionless block production mechanism, but it does not support exits that circumvent its miner/validator set. This means that users must trust Stacks validators to include their transactions in blocks. Anyone with sufficient capital and resources can participate as a Stacks miner. The large majority of Stacks blocks are built by Bitcoin miners additionally mining Stacks."
         },
         {
-            "category": "Settlement Assurance",
+            "category": "Finality Guarantees",
             "score": 0,
             "tier": "Medium",
             "title": "State transitions finalized by permissionless, alternative consensus mechanism",
-            "content": "Settlement is done offchain, on Stacks, rather than onchain, on Bitcoin. The validity of Stacks state transitions are not enforced by Bitcoin."
+            "content": "Settlement is done offchain, on Stacks, rather than onchain, on Bitcoin. The validity of Stacks state transitions are not enforced by Bitcoin"
         }
     ],
     "sections": [

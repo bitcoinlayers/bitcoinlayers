@@ -3,14 +3,14 @@
     "title": "Liquid",
     "layerType": "Sidechain",
     "live": "Mainnet",
-    "federation": true,
     "staking": false,
+    "bridge": true,
     "underReview": "no",
-    "riskFactors": ["Unverified", "Medium", "High", "High"],
+    "riskFactors": ["Unverified", "Medium", "High", "Medium"],
     "purpose": "General",
     "btcBridge": "Federated Multisig",
     "settlement": "External",
-    "btcLocked": 3852,
+    "btcLocked": 3834,
     "executionEnv": "Offchain",
     "consensus": "Federated Sidechain",
     "nativeToken": "LBTC",
@@ -28,7 +28,7 @@
     "description": "The Liquid Network is a sidechain that enables users to perform confidential transactions, swaps, issue tokenized assets, and more, on the sidechain. It is managed by a permissioned federation, and does not use the Bitcoin Layer 1 for security. It uses a federated multi-sig to custody the BTC that is used to issue BTC IOUs (L-BTC) on the sidechain.",
     "riskAnalysis": [
         {
-            "category": "Bridge Custody",
+            "category": "Bridge Security",
             "score": 0,
             "tier": "Unverified",
             "title": "Users trust a federation with custody of their BTC. Signers under review",
@@ -42,18 +42,18 @@
             "content": "The data for Liquid sidechain is stored on the Liquid blockchain. A federation is responsible for publishing and validating transactions that are published to Liquid Network nodes. Node software is open-source and anyone can run a node and verify the state of Liquid. However, node operators connect to the network through “bridge nodes” that are run by permissioned actors. Access to bridge nodes can be cut off should these actors (roughly 65) not provide access."
         },
         {
-            "category": "Network Operators",
+            "category": "Network Operator",
             "score": 0,
             "tier": "High",
-            "title": "The Liquid Network is operated by a permissioned validator set",
+            "title": "Blocks are produced by a federation",
             "content": "Liquid blocks are proposed and finalized by the Liquid federation. The role of block production is permissioned, meaning that it is not possible for anyone with sufficient resources to join the network as a block producer. Users trust that the federation will not censor them and include their transactions in Liquid blocks."
         },
         {
-            "category": "Settlement Assurance",
+            "category": "Finality Guarantees",
             "score": 0,
-            "tier": "High",
-            "title": "Liquid transactions are finalized via a permissioned consensus mechanism, and inherit no settlement guarantees from Bitcoin",
-            "content": "The Liquid Federation's functionaries sign blocks (proposed by another functionary member) for the sidechain. A block must be signed by 2/3 + 1 of the functionaries to be included in the Liquid chain."
+            "tier": "Medium",
+            "title": "Liquid blocks are finalized via Liquid full nodes",
+            "content": "After blocks are proposed by a functionaries, 11/15 functionaries are needed to sign off on the block to propogate it to the network. After this is done, Liquid full nodes accept the block and include it in the chain."
         }
     ],
     "sections": [

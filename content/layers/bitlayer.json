@@ -3,14 +3,14 @@
     "title": "Bitlayer",
     "layerType": "Sidechain",
     "live": "Mainnet",
-    "federation": true,
     "staking": false,
+    "bridge": true,
     "underReview": "no",
-    "riskFactors": ["Unverified", "Medium", "High", "High"],
+    "riskFactors": ["Unverified", "Medium", "Unverified", "High"],
     "purpose": "General",
     "btcBridge": "Federated Multisig",
     "settlement": "Offchain",
-    "btcLocked": 4461,
+    "btcLocked": 5397,
     "executionEnv": "Offchain",
     "consensus": "Federated Sidechain",
     "nativeToken": "BTR",
@@ -25,14 +25,14 @@
         "https://github.com/bitlayer-org",
         "https://twitter.com/BitlayerLabs"
     ],
-    "description": "Bitlayer's mainnet v1 is a federated sidechain. It is building towards a blockchain that uses an alternative system for data availability. It supports an EVM execution environment with plans to support other VMs. Its roadmap sees it adding support for a BitVM-style bridge, but currently, the bridge is managed by a federation.",
+    "description": "Bitlayer's mainnet v1 is a federated sidechain. It supports an EVM execution environment with plans to support other VMs.",
     "riskAnalysis": [
         {
-            "category": "Bridge Custody",
+            "category": "Bridge Security",
             "score": 0,
             "tier": "Unverified",
-            "title": "Users trust a federated multi-sig to custody their BTC. Signers under review",
-            "content": "Bitlayer's current BTC bridge is a federated two-way peg with institutional signers. Bitlayer is working with multiple MPC custody platforms. Coinbase and Sinohope are the two institutions that have been said to be participating in securing the two-way peg. Limited information around the current two-way peg construction is available.\n\n🔬We are currently reviewing the signers for the BitLayer two-way peg."
+            "title": "Users trust a federated signer set to custody their BTC. Signers under review",
+            "content": "Bitlayer's current BTC bridge is a federated two-way peg with institutional signers. Bitlayer is working with multiple MPC custody platforms.\n\nUsers do not custody bitcoin assets backing tokens on BitLayer.\n\n🔬We are currently reviewing the signers for the BitLayer two-way peg."
         },
         {
             "category": "Data Availability",
@@ -44,16 +44,16 @@
         {
             "category": "Network Operators",
             "score": 0,
-            "tier": "High",
+            "tier": "Unverified",
             "title": "Bitlayer is operated by a permissioned validator set",
-            "content": "Bitlayer blocks are currently produced by a permissioned validator set. There are currently 21 validators participating in Bitlayer consensus. Users cannot force include transactions if they are censored by the validator set."
+            "content": "Bitlayer blocks are currently produced by a permissioned validator set. There are currently 21 validators participating in Bitlayer consensus. Users cannot bypass this operator set if they are censored by the validator set.\n\n🔬We are currently reviewing who operates BitLayer validators."
         },
         {
-            "category": "Settlement Assurance",
+            "category": "Finality Guarantees",
             "score": 0,
             "tier": "High",
-            "title": "No onchain enforcement of Bitlayer state transitions",
-            "content": "There is no onchain enforcement of Bitlayer state transitions on Bitcoin. Settlement is finalized by a permissioned set of validators. The consensus mechanism used by the validators is similar to the Clique consensus protocol found in go-ethereum, but it also includes system contracts that handle staking and the management of validators."
+            "title": "BitLayer validators finalize blocks",
+            "content": "There is no onchain enforcement of Bitlayer state transitions on bitcoin. BitLayer's state transitions are finalized by a permissioned validator set. Validators sign off on proposed blocks and finalize them in the chain."
         }
     ],
     "sections": [
@@ -63,7 +63,7 @@
             "content": [
                 {
                     "title": "Bitlayer does not currently inherit any security from Bitcoin consensus participants",
-                    "content": "The Bitlayer sidechain is a federated sidechain, and Bitcoin consensus participants do not participate in securing Bitlayer."
+                    "content": "Bitlayer is a federated sidechain, and Bitcoin consensus participants do not participate in securing Bitlayer."
                 },
                 {
                     "title": "BTR token issued, but validators are not required to stake BTR",
@@ -93,6 +93,11 @@
             "id": "technology",
             "title": "Technology",
             "content": [
+                {
+                    "title": "Bridge participants",
+                    "content": "Coinbase and Sinohope are the two institutions that have been said to be participating in securing BitLayer's official bridge. Limited information around the current two-way peg construction is available."
+                    
+                },
                 {
                     "title": "BitVM exploration",
                     "content": "The Bitlayer team has an open repository of research related to BitVM. They are looking to build a trust-minimized bridge between Bitlayer and Bitcoin. Bitlayer’s documentation site states that the BitVM implementation will be federated."

@@ -5,8 +5,9 @@ import LayerBody from "@/components/layer/layerBody";
 import RiskAnalysis from "@/components/layer/risk-analysis/layerBodyRiskAnalysis";
 import LayerOverview from "@/components/layer/layerOverview";
 import LayerImage from "@/components/layer/layer-image";
+import ProjectTVLChart from "@/components/charts/project-tvl-chart";
 
-async function getLayerFromSlug(slug: string) {
+function getLayerFromSlug(slug: string) {
     const layer = allLayers.find((layer) => layer.slug === slug);
     if (!layer) {
         return null;
@@ -14,21 +15,13 @@ async function getLayerFromSlug(slug: string) {
     return layer;
 }
 
-export default async function LayerPage({
-    params,
-}: {
-    params: { slug: string };
-}) {
+export default function LayerPage({ params }: { params: { slug: string } }) {
     const { slug } = params;
-    console.log("Fetching data for slug:", slug);
-    const layer = await getLayerFromSlug(slug);
+    const layer = getLayerFromSlug(slug);
 
     if (!layer) {
-        console.log("Layer not found:", slug);
         return notFound();
     }
-
-    console.log("Fetched layer:", layer);
 
     return (
         <article className="flex flex-col lg:min-h-screen max-w-5xl mx-auto lg:pt-24 pt-12">
@@ -43,12 +36,13 @@ export default async function LayerPage({
                     <h1 className="layer_header flex-grow">{layer.title}</h1>
                 </div>
             </div>
-            <div className="container flex lg:flex-row flex-col">
-                <div className="lg:w-1/5 sticky top-[48px] lg:h-screen w-full overflow-y-auto lg:pt-6 px-4 lg:px-0 no-scrollbar py-0 bg-white">
+            <div className="lg:container mx-4 lg:px-4 flex lg:flex-row flex-col">
+                <div className="lg:w-1/5 z-40 sticky top-[48px] lg:h-screen w-full overflow-y-auto lg:pt-6 lg:px-0 no-scrollbar py-0 bg-white">
                     <LayerMenu layer={layer} />
                 </div>
-                <div className="lg:w-4/5 flex flex-col px-4 lg:px-0">
+                <div className="lg:w-4/5 flex flex-col">
                     <LayerOverview layer={layer} />
+                    <ProjectTVLChart />
                     {layer.underReview === "no" && (
                         <RiskAnalysis
                             riskAnalysis={layer.riskAnalysis}
@@ -63,8 +57,7 @@ export default async function LayerPage({
     );
 }
 
-export async function generateStaticParams() {
-    console.log("Generating paths for layers:", allLayerSlugs);
+export function generateStaticParams() {
     return allLayerSlugs.map((slug) => ({
         slug,
     }));

@@ -113,6 +113,28 @@ section {
         --chart-3: 197 37% 24%;
         --chart-4: 43 74% 66%;
         --chart-5: 27 87% 67%;
+        --chart-6: 180 100% 35%; /* Deep Teal */
+        --chart-7: 30 90% 55%; /* Pumpkin Orange */
+        --chart-8: 270 70% 75%; /* Lavender */
+        --chart-9: 150 100% 35%; /* Lime Green */
+        --chart-10: 330 90% 45%; /* Deep Pink */
+        --chart-ark: 14 100% 57%;
+        --chart-bevm: 187 100% 42%;
+        --chart-bitlayer: 48 100% 50%;
+        --chart-bob: 174 100% 29%;
+        --chart-bsquared: 302 59% 65%;
+        --chart-btc: 14 99% 55%;
+        --chart-core: 20 100% 67%;
+        --chart-internet-computer: 0 100% 60%;
+        --chart-libre: 88 50% 63%;
+        --chart-lightning-network: 0 59% 51%;
+        --chart-liquid: 271 100% 81%;
+        --chart-mercury: 0 59% 61%;
+        --chart-merlin: 120 61% 44%;
+        --chart-nomic: 45 100% 61%;
+        --chart-rollux: 24 100% 73%;
+        --chart-rootstock: 229 71% 67%;
+        --chart-stacks: 271 100% 71%;
     }
 
     .dark {
@@ -140,6 +162,28 @@ section {
         --chart-3: 30 80% 55%;
         --chart-4: 280 65% 60%;
         --chart-5: 340 75% 55%;
+        --chart-6: 180 100% 35%; /* Deep Teal */
+        --chart-7: 30 90% 55%; /* Pumpkin Orange */
+        --chart-8: 270 70% 75%; /* Lavender */
+        --chart-9: 150 100% 35%; /* Lime Green */
+        --chart-10: 330 90% 45%; /* Deep Pink */
+        --chart-ark: 14 100% 67%;
+        --chart-bevm: 187 100% 52%;
+        --chart-bitlayer: 48 100% 60%;
+        --chart-bob: 174 100% 39%;
+        --chart-bsquared: 302 59% 75%;
+        --chart-btc: 14 99% 55%;
+        --chart-core: 20 100% 77%;
+        --chart-internet-computer: 0 100% 60%;
+        --chart-libre: 88 50% 63%;
+        --chart-lightning-network: 0 59% 51%;
+        --chart-liquid: 271 100% 81%;
+        --chart-mercury: 0 59% 61%;
+        --chart-merlin: 120 61% 44%;
+        --chart-nomic: 45 100% 61%;
+        --chart-rollux: 24 100% 73%;
+        --chart-rootstock: 229 71% 67%;
+        --chart-stacks: 271 100% 81%;
     }
 }
 

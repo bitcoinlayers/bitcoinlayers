@@ -1,14 +1,12 @@
-"use client";
 import { notFound } from "next/navigation";
 import {
     allInfrastructures,
     allInfrastructureSlugs,
 } from "@/util/infrastructure_index";
-import Image from "next/image";
-import { useState } from "react";
 import InfrastructureMenu from "@/components/infrastructure/infrastructureMenu";
 import InfrastructureBody from "@/components/infrastructure/infrastructureBody";
 import InfrastructureOverview from "@/components/infrastructure/infrastructureOverview";
+import InfrastructureImage from "@/components/infrastructure/infrastructure-image";
 
 async function getInfrastructureFromSlug(slug: string) {
     const infrastructure = allInfrastructures.find(
@@ -26,15 +24,11 @@ export default async function InfrastructurePage({
     params: { slug: string };
 }) {
     const { slug } = params;
-    console.log("Fetching data for slug:", slug);
     const infrastructure = await getInfrastructureFromSlug(slug);
 
     if (!infrastructure) {
-        console.log("Infrastructure not found:", slug);
         return notFound();
     }
-
-    console.log("Fetched infrastructure:", infrastructure);
 
     return (
         <article className="flex flex-col lg:min-h-screen max-w-5xl mx-auto lg:pt-24 pt-12">
@@ -64,30 +58,7 @@ export default async function InfrastructurePage({
     );
 }
 
-function InfrastructureImage({ src, title }: { src: string; title: string }) {
-    //TODO lazy loading
-    const [imageSrc, setImageSrc] = useState(src);
-
-    const handleError = () => {
-        setImageSrc("/bitcoinlayers-logo.png");
-    };
-
-    return (
-        <Image
-            src={imageSrc}
-            alt={`${title} logo`}
-            width={100}
-            height={100}
-            onError={handleError}
-        />
-    );
-}
-
 export async function generateStaticParams() {
-    console.log(
-        "Generating paths for infrastructures:",
-        allInfrastructureSlugs,
-    );
     return allInfrastructureSlugs.map((slug) => ({
         slug,
     }));
