@@ -1,7 +1,7 @@
 "use client";
 
 import { LOCALES } from "@/enums/locale.enums";
-import { useTransition } from "react";
+import { useEffect, useState, useTransition } from "react";
 import { setUserLocale } from "@/services/locale";
 import {
     Select,
@@ -12,7 +12,7 @@ import {
     SelectValue,
 } from "@/components/ui/select";
 import clsx from "clsx";
-import { useTranslations } from "next-intl";
+import { Spinner } from "./spinner";
 
 type Props = {
     items: { label: string; value: LOCALES }[];
@@ -21,7 +21,11 @@ type Props = {
 
 export const LocaleButtonSelect = ({ defaultValue, items }: Props) => {
     const [isPending, startTransition] = useTransition();
-    const t = useTranslations("locale-button");
+    const [isInit, setIsInit] = useState(true);
+
+    useEffect(() => {
+        setIsInit(false);
+    }, []);
 
     const handleLanguageSelect = (value: LOCALES) => {
         startTransition(() => {
@@ -35,7 +39,7 @@ export const LocaleButtonSelect = ({ defaultValue, items }: Props) => {
             onValueChange={handleLanguageSelect}
         >
             <SelectTrigger>
-                <SelectValue />
+                {isInit ? <Spinner /> : <SelectValue />}
             </SelectTrigger>
             <SelectContent>
                 <SelectGroup>

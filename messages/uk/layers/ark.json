@@ -1,0 +1,83 @@
+{
+    "slug": "clark",
+    "title": "clArk",
+    "layerType": "Virtual UTXOs",
+    "live": "Testnet",
+    "federation": false,
+    "underReview": "yes",
+    "riskFactors": ["", "", "", ""],
+    "purpose": "Payments",
+    "btcBridge": "Under review",
+    "settlement": "Under review",
+    "btcLocked": 0,
+    "executionEnv": "Under review",
+    "consensus": "Under review",
+    "nativeToken": "BTC",
+    "feeToken": "BTC",
+    "enshrinedBtc": "-",
+    "bitcoinOnly": true,
+    "links": [
+        "https://arklabs.to",
+        "https://arkdev.info",
+        "https://arkdev.info/docs/",
+        "https://arkdev.info/docs/developers/get-started",
+        "https://github.com/ark-network",
+        "https://x.com/ArkLabsHQ"
+    ],
+    "description": "Ark is a decentralized network of servers issuing VTXOs, basically checks with expiration. Users can make payments to each other within the system swapping these checks and withdraw funds at any time, even if the server goes offline or ceases to exist.",
+    "riskAnalysis": [
+        {
+            "category": "Unilateral Exits",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "Data Availability",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "Block Production",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "State Validation",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        }
+    ],
+    "sections": [
+        {
+            "id": "selfsubmit",
+            "title": "Process to self-submit information",
+            "content": [
+                {
+                    "content": "The Bitcoin Layers project prioritizes risk reviews on projects that are in production and accepting users' BTC deposits. Projects on testnet are welcome to submit information about their project. We do not publish risk assessments for projects that are not in production.\n\nInformation on how to submit information on a project can be found in the Knowledge Bits section."
+                }
+            ]
+        }
+    ],
+    "knowledgeBits": [
+        {
+            "url": "https://github.com/bitcoinlayers/bitcoinlayers/blob/main/SELFSUBMIT.md",
+            "displayText": "Instructions on self-submitting a project."
+        },
+        {
+            "url": "https://arkdev.info",
+            "displayText": "Ark Developer Hub"
+        },
+        {
+            "url": "https://ark-protocol.org",
+            "displayText": "Ark Protocol Deep Dive"
+        }
+    ]
+}

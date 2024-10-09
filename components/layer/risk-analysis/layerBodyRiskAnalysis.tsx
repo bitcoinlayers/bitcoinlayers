@@ -11,6 +11,7 @@ import { Layer } from "../layerProps";
 import { useQueryState } from "nuqs";
 import RiskHeader from "./risk-header";
 import RiskContent from "./risk-content";
+import { useTranslations } from "next-intl";
 
 interface Risksection {
     category: string;
@@ -31,6 +32,7 @@ const RiskAnalysis: React.FC<RiskAnalysisProps> = ({
     riskFactors,
     layer,
 }) => {
+    const t = useTranslations("layer");
     const [open, setOpen] = useQueryState<string[]>("open", {
         defaultValue: [],
         parse: (value) => value.split(",").filter(Boolean),
@@ -54,7 +56,7 @@ const RiskAnalysis: React.FC<RiskAnalysisProps> = ({
                 id="riskanalysis"
             >
                 <div className="self-stretch justify-start items-start gap-4 inline-flex">
-                    <div className="body_section">Risk Analysis</div>
+                    <div className="body_section">{t("risk-analysis")}</div>
                 </div>
                 {riskAnalysis.map((content, contentIndex) => (
                     <React.Fragment key={contentIndex}>
@@ -97,7 +99,7 @@ const RiskAnalysis: React.FC<RiskAnalysisProps> = ({
                                         >
                                             <AccordionItem value="item-1">
                                                 <AccordionTrigger>
-                                                    Read more about{" "}
+                                                    {t("read-more-about")}
                                                     {layer.title}&apos;s bridge
                                                     federation
                                                 </AccordionTrigger>

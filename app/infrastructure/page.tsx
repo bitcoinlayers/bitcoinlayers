@@ -1,11 +1,23 @@
-import { allInfrastructures } from "@/util/infrastructure_index";
 import Hero from "@/components/hero";
 import InfrastructureTable from "@/components/tables/infrastructureTable";
+import { LOCALES } from "@/enums/locale.enums";
+import { getUserLocale } from "@/services/locale";
+import { getTranslations } from "next-intl/server";
 
-export default function Home() {
+export async function getAllInfrastructure() {
+    const locale = await getUserLocale();
+
+    return locale === LOCALES.en
+        ? await import("@/util/infrastructure_index_en")
+        : await import("@/util/infrastructure_index_uk");
+}
+
+export default async function Home() {
+    const { allInfrastructures } = await getAllInfrastructure();
     const sortedInfrastructures = allInfrastructures.sort((a, b) =>
         a.title.toLowerCase().localeCompare(b.title.toLowerCase()),
     );
+    const t = await getTranslations("infrastructure-table");
 
     const typeFilters = [
         ...new Set(
@@ -16,20 +28,32 @@ export default function Home() {
     ];
 
     const infrastructureHeaders = [
-        { name: "Name", showSorting: true, mobileLabel: "Name" },
         {
-            name: "Type",
+            name: t("name-label"),
             showSorting: true,
-            mobileLabel: "Type",
+            mobileLabel: t("name-label--mobile"),
+        },
+        {
+            name: t("type-label"),
+            showSorting: true,
+            mobileLabel: t("type-label--mobile"),
             filterOptions: typeFilters,
         },
-        { name: "Status", showSorting: true, mobileLabel: "Status" },
         {
-            name: "Unit of Account",
+            name: t("status-label"),
             showSorting: true,
-            mobileLabel: "Unit",
+            mobileLabel: t("status-label--mobile"),
         },
-        { name: "Associated Layers", showSorting: true, mobileLabel: "Layers" },
+        {
+            name: t("unit-label"),
+            showSorting: true,
+            mobileLabel: t("unit-label--mobile"),
+        },
+        {
+            name: t("associated-label"),
+            showSorting: true,
+            mobileLabel: t("associated-label--mobile"),
+        },
     ];
 
     return (

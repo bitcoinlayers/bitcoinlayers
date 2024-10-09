@@ -1,0 +1,75 @@
+{
+    "slug": "heliosphere",
+    "title": "Heliosphere",
+    "layerType": "Rollup",
+    "live": "Testnet",
+    "federation": false,
+    "underReview": "yes",
+    "riskFactors": ["", "", "", ""],
+    "purpose": "-",
+    "btcBridge": "-",
+    "settlement": "-",
+    "btcLocked": 0,
+    "executionEnv": "-",
+    "consensus": "-",
+    "nativeToken": "-",
+    "feeToken": "-",
+    "enshrinedBtc": "-",
+    "bitcoinOnly": false,
+    "links": [
+        "https://twitter.com/HeliosphereOne",
+        "https://twitter.com/bitcoinlayers",
+        "https://twitter.com/bitcoinlayers",
+        "https://twitter.com/bitcoinlayers",
+        "https://twitter.com/bitcoinlayers",
+        "https://twitter.com/HeliosphereOne"
+    ],
+    "description": "Heliosphere is building an optimistic rollup on top of Bitcoin.",
+    "riskAnalysis": [
+        {
+            "category": "Unilateral Exits",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "Data Availability",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "Block Production",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "State Validation",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        }
+    ],
+    "sections": [
+        {
+            "id": "description",
+            "title": "Description",
+            "content": [
+                {
+                    "content": "Heliosphere is building an optimistic rollup on top of Bitcoin."
+                }
+            ]
+        }
+    ],
+    "knowledgeBits": [
+        {
+            "url": "https://bitcoinrollups.io",
+            "displayText": "BitcoinRollups.io provides education resources on Bitcoin rollups. Heliosphere has not released any documentation specific to the project."
+        }
+    ]
+}

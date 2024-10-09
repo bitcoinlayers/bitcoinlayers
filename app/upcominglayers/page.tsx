@@ -1,23 +1,46 @@
-import { allLayers } from "@/util/layer_index";
 import Hero from "@/components/hero";
 import LayerTableAll from "@/components/tables/layerTableAll";
+import { useTranslations } from "next-intl";
+import { getAllLayersWithSlugs } from "../layers/[slug]/page";
 
-export default function Home() {
+export default async function Home() {
+    const { allLayers } = await getAllLayersWithSlugs();
     const layersAll = allLayers.sort((a, b) =>
         a.title.toLowerCase().localeCompare(b.title.toLowerCase()),
     );
+    const t = useTranslations("upcoming-layers-table");
 
     const layerHeaders = [
-        { name: "Name", showSorting: true, mobileLabel: "Name" },
-        { name: "Risk", showSorting: false, mobileLabel: "Risk" },
-        { name: "Type", showSorting: true, mobileLabel: "Type" },
-        { name: "Status", showSorting: true, mobileLabel: "Status" },
         {
-            name: "Unit of Account",
+            name: t("name-label"),
             showSorting: true,
-            mobileLabel: "Unit",
+            mobileLabel: t("name-label--mobile"),
         },
-        { name: "BTC Locked", showSorting: true, mobileLabel: "BTC" },
+        {
+            name: t("risk-label"),
+            showSorting: false,
+            mobileLabel: t("risk-label--mobile"),
+        },
+        {
+            name: t("type-label"),
+            showSorting: true,
+            mobileLabel: t("type-label--mobile"),
+        },
+        {
+            name: t("status-label"),
+            showSorting: true,
+            mobileLabel: t("status-label--mobile"),
+        },
+        {
+            name: t("unit-label"),
+            showSorting: true,
+            mobileLabel: t("unit-label--mobile"),
+        },
+        {
+            name: t("btc-locked-label"),
+            showSorting: true,
+            mobileLabel: t("btc-locked-label--mobile"),
+        },
     ];
 
     return (

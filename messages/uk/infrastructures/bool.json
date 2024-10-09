@@ -1,0 +1,38 @@
+{
+    "slug": "bool",
+    "title": "Bool",
+    "infrastructureType": "Bridge",
+    "live": "Announced",
+    "underReview": "yes",
+    "riskFactors": ["", ""],
+    "bitcoinSecurity": "No",
+    "nativeToken": "-",
+    "purpose": "General",
+    "associatedLayers": "-",
+    "bitcoinOnly": false,
+    "links": [
+        "https://bool.network/",
+        "https://bool.network/",
+        "https://docs.bool.network/",
+        "https://github.com/boolnetwork",
+        "https://x.com/bool_official"
+    ],
+    "description": "Bool Network is an infrastructure provider currently managing bridges for a number of Bitcoin scaling protocols. The Bitcoin wallets it manages are secured by an MPC Protocol.",
+    "sections": [
+        {
+            "id": "selfsubmit",
+            "title": "Process to self-submit information",
+            "content": [
+                {
+                    "content": "The Bitcoin Layers project prioritizes risk reviews on projects that are in production and accepting users' BTC deposits. Projects on testnet are welcome to submit information about their project. We do not publish risk assessments for projects that are not in production.\n\nInformation on how to submit information on a project can be found in the Knowledge Bits section."
+                }
+            ]
+        }
+    ],
+    "knowledgeBits": [
+        {
+            "url": "https://github.com/bitcoinlayers/bitcoinlayers/blob/main/SELFSUBMIT.md",
+            "displayText": "Instructions on self-submitting a project."
+        }
+    ]
+}

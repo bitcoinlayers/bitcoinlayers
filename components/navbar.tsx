@@ -15,14 +15,23 @@ import {
     SheetTrigger,
 } from "./ui/sheet";
 import { LocaleButton } from "./ui/locale-button";
+import { useTranslations } from "next-intl";
+import { getAllLayersWithSlugs } from "@/app/layers/[slug]/page";
+import { getAllInfrastructure } from "@/app/infrastructure/page";
+import { Layer } from "./layer/layerProps";
+import { Infrastructure } from "./infrastructure/infrastructureProps";
 
 export default function Navbar(): ReactElement {
     const [menuOpen, setMenuOpen] = useState(false);
     const [submenuOpen, setSubmenuOpen] = useState(false);
     const [searchOpen, setSearchOpen] = useState(false);
+    const [allLayers, setAllLayers] = useState<Layer[]>([]);
+    const [allInfrastructures, setAllInfrastructures] = useState<
+        Infrastructure[]
+    >([]);
     const submenuRef = useRef<HTMLDivElement>(null);
     const searchRef = useRef<HTMLDivElement>(null);
-
+    const t = useTranslations("navbar");
     const pathname = usePathname();
     const searchHiddenRoutes = [
         "/",
@@ -73,13 +82,25 @@ export default function Navbar(): ReactElement {
         setSearchOpen(false);
     }, [pathname]);
 
+    useEffect(() => {
+        const clear = async () => {
+            const { allLayers } = await getAllLayersWithSlugs();
+            const { allInfrastructures } = await getAllInfrastructure();
+
+            setAllLayers(allLayers);
+            setAllInfrastructures(allInfrastructures);
+        };
+
+        clear();
+    }, []);
+
     return (
         <nav className="flex flex-row justify-between items-center w-full fixed min-h-[3rem] lg:px-8 px-4 py-3.5 bg-bg_primary lg:bg-opacity-80 backdrop-blur-sm z-50 pointer-events-auto">
             <Link href="/" onClick={closeMenu}>
                 <div className="w-8 h-8">
                     <Image
                         src="/logo_noborder.png"
-                        alt="Logo"
+                        alt={t("logo-alt")}
                         width={32}
                         height={32}
                     />
@@ -100,7 +121,7 @@ export default function Navbar(): ReactElement {
                                 >
                                     <Image
                                         src="/icons/search.svg"
-                                        alt="Search"
+                                        alt={t("search-alt")}
                                         width={20}
                                         height={20}
                                         className="mt-1"
@@ -109,6 +130,8 @@ export default function Navbar(): ReactElement {
                             </li>
                             <li className="hidden md:block">
                                 <SearchBlock
+                                    allLayers={allLayers}
+                                    allInfrastructures={allInfrastructures}
                                     inputClassName="h-8 text-base"
                                     imageClassName="bottom-[6px]"
                                 />
@@ -120,10 +143,10 @@ export default function Navbar(): ReactElement {
                             onClick={toggleSubmenu}
                             className="flex items-center"
                         >
-                            Analysis
+                            {t("analysis")}
                             <Image
                                 src="/icons/vector.svg"
-                                alt="Submenu Indicator"
+                                alt={t("analysis-alt")}
                                 width={9}
                                 height={9}
                                 className={`ml-2 transition-transform ${
@@ -139,11 +162,10 @@ export default function Navbar(): ReactElement {
                                 <div className="h-[88px] p-3 rounded-md flex-col justify-start items-start flex hover:bg-blue-100">
                                     <Link href="/" onClick={closeSubmenu}>
                                         <div className="text-zinc-800 text-base font-medium leading-normal">
-                                            Layers
+                                            {t("layers")}
                                         </div>
                                         <div className="self-stretch text-slate-500 text-sm font-normal leading-tight">
-                                            Overview and risk analysis of
-                                            bitcoin layers.
+                                            {t("layers-overview")}
                                         </div>
                                     </Link>
                                 </div>
@@ -153,11 +175,10 @@ export default function Navbar(): ReactElement {
                                         onClick={closeSubmenu}
                                     >
                                         <div className="text-zinc-800 text-base font-medium leading-normal">
-                                            Federations
+                                            {t("federations")}
                                         </div>
                                         <div className="self-stretch text-slate-500 text-sm font-normal leading-tight">
-                                            Overview and risk analysis of
-                                            bitcoin federations.
+                                            {t("federations-overview")}
                                         </div>
                                     </Link>
                                 </div>
@@ -167,11 +188,10 @@ export default function Navbar(): ReactElement {
                                         onClick={closeSubmenu}
                                     >
                                         <div className="text-zinc-800 text-base font-medium leading-normal">
-                                            Infrastructure
+                                            {t("infrastructure")}
                                         </div>
                                         <div className="self-stretch text-slate-500 text-sm font-normal leading-tight">
-                                            Overview and risk analysis of layers
-                                            infrastructure.
+                                            {t("infrastructure-overview")}
                                         </div>
                                     </Link>
                                 </div>
@@ -181,11 +201,10 @@ export default function Navbar(): ReactElement {
                                         onClick={closeSubmenu}
                                     >
                                         <div className="text-zinc-800 text-base font-medium leading-normal">
-                                            Bitcoin Only
+                                            {t("bitcoin-only")}
                                         </div>
                                         <div className="self-stretch text-slate-500 text-sm font-normal leading-tight">
-                                            Layers and infrastructure that only
-                                            use BTC.
+                                            {t("bitcoin-only-overview")}
                                         </div>
                                     </Link>
                                 </div>
@@ -220,17 +239,17 @@ export default function Navbar(): ReactElement {
                     </li>
                     <li className="hidden lg:block">
                         <Link href="/glossary" onClick={closeMenu}>
-                            Glossary
+                            {t("glossary")}
                         </Link>
                     </li>
                     <li className="hidden lg:block">
                         <Link href="/faq" onClick={closeMenu}>
-                            FAQ
+                            {t("faq")}
                         </Link>
                     </li>
                     <li className="hidden lg:block">
                         <Link href="/methodology" onClick={closeMenu}>
-                            Methodology
+                            {t("methodology")}
                         </Link>
                     </li>
                     <li className="hidden lg:block">
@@ -239,10 +258,10 @@ export default function Navbar(): ReactElement {
                             target="_blank"
                             className="flex items-center gap-2"
                         >
-                            Blog
+                            {t("blog")}
                             <Image
                                 src="/icons/external.png"
-                                alt="External Link"
+                                alt={t("external-link-alt")}
                                 width={10}
                                 height={10}
                             />
@@ -254,7 +273,7 @@ export default function Navbar(): ReactElement {
                         <button className="lg:hidden" onClick={openSheet}>
                             <Image
                                 src="/icons/menu.svg"
-                                alt="menu"
+                                alt={t("menu-alt")}
                                 width={20}
                                 height={20}
                             />
@@ -272,7 +291,7 @@ export default function Navbar(): ReactElement {
                                                 className="text-black"
                                                 onClick={closeSheet}
                                             >
-                                                Glossary
+                                                {t("glossary")}
                                             </Link>
                                         </li>
                                         <li>
@@ -281,7 +300,7 @@ export default function Navbar(): ReactElement {
                                                 className="text-black"
                                                 onClick={closeSheet}
                                             >
-                                                FAQ
+                                                {t("faq")}
                                             </Link>
                                         </li>
                                         <li>
@@ -290,7 +309,7 @@ export default function Navbar(): ReactElement {
                                                 className="text-black"
                                                 onClick={closeSheet}
                                             >
-                                                Methodology
+                                                {t("methodology")}
                                             </Link>
                                         </li>
                                         <li>
@@ -300,10 +319,10 @@ export default function Navbar(): ReactElement {
                                                 target="_blank"
                                                 onClick={closeSheet}
                                             >
-                                                Blog
+                                                {t("blog")}
                                                 <Image
                                                     src="/icons/external.png"
-                                                    alt="External Link"
+                                                    alt={t("external-link-alt")}
                                                     width={10}
                                                     height={10}
                                                 />
@@ -321,7 +340,10 @@ export default function Navbar(): ReactElement {
                     ref={searchRef}
                     className="absolute top-full left-0 right-0 bg-bg_primary p-4 shadow-md md:hidden"
                 >
-                    <SearchBlock />
+                    <SearchBlock
+                        allInfrastructures={allInfrastructures}
+                        allLayers={allLayers}
+                    />
                 </div>
             )}
         </nav>

@@ -1,0 +1,75 @@
+{
+    "slug": "fractal",
+    "title": "Fractal",
+    "layerType": "Sidechain",
+    "live": "Mainnet",
+    "federation": false,
+    "underReview": "yes",
+    "riskFactors": ["", "", "", ""],
+    "purpose": "-",
+    "btcBridge": "-",
+    "settlement": "-",
+    "btcLocked": 0,
+    "executionEnv": "-",
+    "consensus": "-",
+    "nativeToken": "FB",
+    "feeToken": "-",
+    "enshrinedBtc": "-",
+    "bitcoinOnly": false,
+    "links": [
+        "https://www.fractalbitcoin.io/",
+        "https://www.fractalbitcoin.io/",
+        "https://docs.fractalbitcoin.io/",
+        "https://docs.fractalbitcoin.io/",
+        "https://github.com/fractal-bitcoin/fractald-release",
+        "https://x.com/fractal_bitcoin"
+    ],
+    "description": "Fractal is a Bitcoin sidechain purpose built to scale bitcoin-native applications like Runes and BRC-20s. It leverages a novel consensus mechanism similar to merge-mining.",
+    "riskAnalysis": [
+        {
+            "category": "Unilateral Exits",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "Data Availability",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "Block Production",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "State Validation",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        }
+    ],
+    "sections": [
+        {
+            "id": "selfsubmit",
+            "title": "Process to self-submit information",
+            "content": [
+                {
+                    "content": "This project is currently under review."
+                }
+            ]
+        }
+    ],
+    "knowledgeBits": [
+        {
+            "url": "https://github.com/bitcoinlayers/bitcoinlayers/blob/main/SELFSUBMIT.md",
+            "displayText": "Instructions on self-submitting a project."
+        }
+    ]
+}

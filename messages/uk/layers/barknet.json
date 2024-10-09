@@ -1,0 +1,75 @@
+{
+    "slug": "barknet",
+    "title": "Barknet",
+    "layerType": "Rollup",
+    "live": "Testnet",
+    "federation": false,
+    "underReview": "yes",
+    "riskFactors": ["", "", "", ""],
+    "purpose": "-",
+    "btcBridge": "-",
+    "settlement": "-",
+    "btcLocked": 0,
+    "executionEnv": "-",
+    "consensus": "-",
+    "nativeToken": "-",
+    "feeToken": "-",
+    "enshrinedBtc": "-",
+    "bitcoinOnly": false,
+    "links": [
+        "https://github.com/KasarLabs/barknet",
+        "https://github.com/KasarLabs/barknet",
+        "https://github.com/KasarLabs/barknet",
+        "https://github.com/KasarLabs/barknet",
+        "https://github.com/KasarLabs/barknet",
+        "https://twitter.com/kasarlabs"
+    ],
+    "description": "Barknet is a sovereign rollup that uses Bitcoin for data availability and the Cairo VM. It was developed by Kasar Lab in collaboration with Taproot Wizards.",
+    "riskAnalysis": [
+        {
+            "category": "Unilateral Exits",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "Data Availability",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "Block Production",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "State Validation",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        }
+    ],
+    "sections": [
+        {
+            "id": "description",
+            "title": "Description",
+            "content": [
+                {
+                    "content": "Barknet is a sovereign rollup that uses Bitcoin for data availability and the Cairo VM. It was developed by Kasar Lab in collaboration with Taproot Wizards."
+                }
+            ]
+        }
+    ],
+    "knowledgeBits": [
+        {
+            "url": "https://github.com/KasarLabs/barknet",
+            "displayText": "Barknet code and docs"
+        }
+    ]
+}

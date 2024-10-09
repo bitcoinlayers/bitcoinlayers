@@ -21,6 +21,7 @@ import {
 import { useQueryState } from "nuqs";
 import { useCallback, useMemo, useState } from "react";
 import { useParams } from "next/navigation";
+import { useTranslations } from "next-intl";
 
 interface Balance {
     amount: number;
@@ -38,6 +39,7 @@ interface ProcessedData {
 }
 
 export default function ProjectTVLChart() {
+    const t = useTranslations("project-tvl-chart");
     const { slug } = useParams();
     const [activeChart, setActiveChart] =
         useState<keyof typeof chartConfig>("TVL");
@@ -174,7 +176,7 @@ export default function ProjectTVLChart() {
             <CardHeader className="flex flex-col space-y-4">
                 <div className="flex flex-col sm:flex-row justify-between w-full">
                     <CardTitle className="flex font-normal items-center text-2xl sm:text-3xl mb-2 sm:mb-0">
-                        Layer Metrics
+                        {t("layer-metrics")}
                     </CardTitle>
                     <div className="flex flex-col sm:flex-row items-start sm:items-center justify-center sm:space-x-2 space-y-2 sm:space-y-0">
                         <div className="block w-full sm:w-auto">
@@ -187,13 +189,13 @@ export default function ProjectTVLChart() {
                                 </SelectTrigger>
                                 <SelectContent>
                                     <SelectItem value="1mo">
-                                        Last month
+                                        {t("last-month")}
                                     </SelectItem>
                                     <SelectItem value="3mo">
-                                        Last 3 months
+                                        {t("last-3-months")}
                                     </SelectItem>
                                     <SelectItem value="1y">
-                                        Last year
+                                        {t("last-year")}
                                     </SelectItem>
                                 </SelectContent>
                             </Select>
@@ -205,14 +207,14 @@ export default function ProjectTVLChart() {
                 <div className="flex flex-col justify-center items-start py-4 sm:py-8 border-b sm:border-b-0 px-6 sm:w-1/2">
                     <div className="text-lg sm:text-xl">BTC Locked</div>
                     <div className="text-xs sm:text-sm text-muted-foreground">
-                        Total amount of{" "}
+                        {t("total-amount-of")}
                         {tokens.length > 1
                             ? tokens.slice(0, -1).join(", ") +
                               (tokens.length > 2 ? "," : "") +
-                              " and " +
+                              ` ${t("and")} ` +
                               tokens[tokens.length - 1]
-                            : tokens[0]}{" "}
-                        locked per day
+                            : tokens[0]}
+                        {t("locked-per-day")}
                     </div>
                 </div>
                 <div className="flex flex-row sm:w-1/2">
@@ -240,7 +242,7 @@ export default function ProjectTVLChart() {
                                         </span>
                                     ) : (
                                         <span className="text-[10px] italic">
-                                            coming soon
+                                            {t("coming-soon")}
                                         </span>
                                     )}
                                 </span>

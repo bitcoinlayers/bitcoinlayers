@@ -1,9 +1,11 @@
-import { allLayers } from "@/util/layer_index";
-import { allInfrastructures } from "@/util/infrastructure_index";
+import { allLayers } from "@/util/layer_index_en";
+import { allInfrastructures } from "@/util/infrastructure_index_en";
 import BitcoinonlyTable from "@/components/tables/bitcoinonlyTable";
 import Hero from "@/components/hero";
+import { useTranslations } from "next-intl";
 
 export default function Home() {
+    const t = useTranslations("bitcoin-only-table");
     const sortedEverything = [...allLayers, ...allInfrastructures]
         .filter((item) => item.bitcoinOnly)
         .sort((a, b) =>
@@ -19,16 +21,32 @@ export default function Home() {
     ];
 
     const layerHeaders = [
-        { name: "Name", showSorting: true, mobileLabel: "Name" },
-        { name: "Risk", showSorting: false, mobileLabel: "Risk" },
         {
-            name: "Type",
+            name: t("name-label"),
             showSorting: true,
-            mobileLabel: "Type",
+            mobileLabel: t("name-label--mobile"),
+        },
+        {
+            name: t("risk-label"),
+            showSorting: false,
+            mobileLabel: t("risk-label--mobile"),
+        },
+        {
+            name: t("type-label"),
+            showSorting: true,
+            mobileLabel: t("type-label--mobile"),
             filterOptions: typeFilters,
         },
-        { name: "Status", showSorting: true, mobileLabel: "Status" },
-        { name: "Category", showSorting: true, mobileLabel: "Category" },
+        {
+            name: t("status-label"),
+            showSorting: true,
+            mobileLabel: t("status-label--mobile"),
+        },
+        {
+            name: t("category-label"),
+            showSorting: true,
+            mobileLabel: t("category-label--mobile"),
+        },
     ];
 
     return (

@@ -9,6 +9,7 @@ import { MobileView, isMobile } from "react-device-detect";
 import Link from "next/link";
 import { useQueryState } from "nuqs";
 import { useMemo } from "react";
+import { useTranslations } from "next-intl";
 
 type TableTabKey =
     | "Risk"
@@ -50,6 +51,7 @@ const LayerImage = ({ src, title }: { src: string; title: string }) => {
 };
 
 const FederationTable = ({ data, headers }: Props) => {
+    const t = useTranslations("federation-table");
     const [status, setStatus] = useQueryState("status", {
         defaultValue: "Mainnet",
     });
@@ -155,7 +157,7 @@ const FederationTable = ({ data, headers }: Props) => {
                                     : "text-slate-600"
                             }`}
                         >
-                            Mainnet
+                            {t("mainnet")}
                         </div>
                     </div>
                     <div
@@ -174,7 +176,7 @@ const FederationTable = ({ data, headers }: Props) => {
                                         : "text-slate-600"
                                 }`}
                             >
-                                Testnet
+                                {t("testnet")}
                             </div>
                         </div>
                     </div>
@@ -194,7 +196,7 @@ const FederationTable = ({ data, headers }: Props) => {
                                         : "text-slate-600"
                                 }`}
                             >
-                                All
+                                {t("all")}
                             </div>
                         </div>
                     </div>
@@ -274,7 +276,7 @@ const FederationTable = ({ data, headers }: Props) => {
                                             <Risk layer={item} />
                                         ) : (
                                             <div className="lg:px-5 px-1 text_table_important font-light">
-                                                Under review
+                                                {t("under-review")}
                                             </div>
                                         )}
                                     </td>
@@ -330,7 +332,7 @@ const FederationTable = ({ data, headers }: Props) => {
                                             item.btcLocked === null ||
                                             isNaN(item.btcLocked) ? (
                                                 <div className="font-light">
-                                                    Under review
+                                                    {t("under-review")}
                                                 </div>
                                             ) : (
                                                 <div>

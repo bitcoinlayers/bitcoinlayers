@@ -1,5 +1,6 @@
 import type { Opcode } from "@/components/opcode/opcodeProps";
-import opcatJson from "../content/opcodes/opcat.json" assert { type: "json" };
+import opcatJson from "../messages/en/opcodes/opcat.json" assert { type:
+    "json" };
 
 const opcat: Opcode = opcatJson as Opcode;
 

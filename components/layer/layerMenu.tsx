@@ -2,9 +2,11 @@
 
 import { useState, useEffect } from "react";
 import { Layer } from "./layerProps";
+import { useTranslations } from "next-intl";
 
 const LayerMenu: React.FC<{ layer: Layer }> = ({ layer }) => {
     const [activeSection, setActiveSection] = useState("overview");
+    const t = useTranslations("layer");
 
     useEffect(() => {
         const handleScroll = () => {
@@ -47,10 +49,10 @@ const LayerMenu: React.FC<{ layer: Layer }> = ({ layer }) => {
                 {/*  menu is updating with coloring to match the live section */}
 
                 {[
-                    { id: "overview", title: "Overview" },
-                    { id: "riskanalysis", title: "Risk Analysis" },
+                    { id: "overview", title: t("overview") },
+                    { id: "riskanalysis", title: t("risk-analysis") },
                     ...layer.sections,
-                    { id: "knowledgebits", title: "Knowledge Bits" },
+                    { id: "knowledgebits", title: t("knowledge-bits") },
                 ].map((section, index) => (
                     <div
                         key={index}

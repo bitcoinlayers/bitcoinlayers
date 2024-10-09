@@ -1,8 +1,11 @@
-import { allLayers } from "@/util/layer_index";
 import FederationTable from "@/components/tables/federation-table";
 import Hero from "@/components/hero";
+import { getTranslations } from "next-intl/server";
+import { getAllLayersWithSlugs } from "../layers/[slug]/page";
 
-export default function FederationsPage() {
+export default async function FederationsPage() {
+    const t = await getTranslations("federation-table");
+    const { allLayers } = await getAllLayersWithSlugs();
     const sortedLayers = allLayers
         .filter((item) => item.federation)
         .sort((a, b) =>
@@ -15,24 +18,36 @@ export default function FederationsPage() {
 
     const layerHeaders = [
         {
-            name: "Name",
+            name: t("name-label"),
             showSorting: true,
-            mobileLabel: "Name",
+            mobileLabel: t("name-label--mobile"),
         },
-        { name: "Risk", showSorting: false, mobileLabel: "Risk" },
         {
-            name: "Type",
+            name: t("risk-label"),
+            showSorting: false,
+            mobileLabel: t("risk-label--mobile"),
+        },
+        {
+            name: t("type-label"),
             showSorting: true,
-            mobileLabel: "Type",
+            mobileLabel: t("type-label--mobile"),
             filterOptions: typeFilters,
         },
-        { name: "Status", showSorting: true, mobileLabel: "Status" },
         {
-            name: "Unit of Account",
+            name: t("status-label"),
             showSorting: true,
-            mobileLabel: "Unit",
+            mobileLabel: t("status-label--mobile"),
         },
-        { name: "BTC Locked", showSorting: true, mobileLabel: "BTC" },
+        {
+            name: t("unit-label"),
+            showSorting: true,
+            mobileLabel: t("unit-label--mobile"),
+        },
+        {
+            name: t("btc-locked-label"),
+            showSorting: true,
+            mobileLabel: t("btc-locked-label--mobile"),
+        },
     ];
 
     return (

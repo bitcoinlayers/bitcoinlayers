@@ -1,5 +1,4 @@
-import { Layer } from "@/components/layer/layerProps";
-import { allLayers } from "@/util/layer_index";
+import { allLayers } from "@/util/layer_index_en";
 import LayerTableRisks from "@/components/layer/layerTableRisks";
 import tableStyles from "../styles/tableStyles";
 

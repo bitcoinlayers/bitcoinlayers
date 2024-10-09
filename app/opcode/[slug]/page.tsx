@@ -1,11 +1,12 @@
 import { notFound } from "next/navigation";
-import { allOpcodes, allOpcodeSlugs } from "@/util/opcode_index";
 import OpcodeMenu from "@/components/opcode/opcodeMenu";
 import OpcodeBody from "@/components/opcode/opcodeBody";
 import OpcodeOverview from "@/components/opcode/opcodeOverview";
 import OpcodeImage from "@/components/opcode/opcode-image";
+import { getAllOpcodesWithSlug } from "../page";
 
 async function getOpcodeFromSlug(slug: string) {
+    const { allOpcodes } = await getAllOpcodesWithSlug();
     const opcode = allOpcodes.find((opcode) => opcode.slug === slug);
     if (!opcode) {
         return null;
@@ -32,7 +33,7 @@ export default async function OpcodePage({
                     <OpcodeImage
                         title={opcode.title}
                         src={`/logos/${opcode.slug}.png`}
-                    />{" "}
+                    />
                     {/**TODO fix img sizes. they're blurry here */}
                 </div>
                 <div className="flex-grow flex items-center">
@@ -50,10 +51,4 @@ export default async function OpcodePage({
             </div>
         </article>
     );
-}
-
-export async function generateStaticParams() {
-    return allOpcodeSlugs.map((slug) => ({
-        slug,
-    }));
 }

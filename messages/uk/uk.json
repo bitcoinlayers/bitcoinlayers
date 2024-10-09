@@ -1,0 +1,34 @@
+{
+    "locale-button": {
+        "en-label": "English",
+        "uk-label": "Українська"
+    },
+    "navbar": {
+        "analysis": "Аналіз",
+        "analysis-alt": "Індикатор підменю",
+        "layers": "Шари",
+        "layers-overview": "Огляд та аналіз ризиків шарів біткоїну.",
+        "federations": "Федерації",
+        "federations-overview": "Огляд та аналіз ризиків біткоїн-федерацій.",
+        "infrastructure": "Інфраструктура",
+        "infrastructure-overview": "Огляд та аналіз ризиків інфраструктури шарів.",
+        "bitcoin-only": "Тільки Біткоїн",
+        "bitcoin-only-overview": "Шари та інфраструктура, що використовують лише BTC.",
+        "glossary": "Глосарій",
+        "faq": "FAQ",
+        "methodology": "Методологія",
+        "blog": "Блог",
+        "external-link-alt": "Зовнішнє посилання",
+        "menu-alt": "Меню",
+        "logo-alt": "Логотип",
+        "search-alt": "Пошук"
+    },
+    "hero": {
+        "title": "Layers",
+        "description--1": "Не всі шари біткоїна є однаковими.",
+        "description--2": "Дізнайтесь різницю."
+    },
+    "search-block": {
+        "placeholder": "Знайти шар"
+    }
+}
