@@ -266,9 +266,9 @@ const StakingTable = ({ data, headers }: Props) => {
                                     <Link
                                         href={`/${
                                             isLayer(item)
-                                                ? "layers"
-                                                : "infrastructure"
-                                        }/${item.slug}`}
+                                                ? `layers/${item.slug}/#usecases`
+                                                : `infrastructure/${item.slug}`
+                                        }`}
                                         className="flex items-center"
                                     >
                                         <LayerImage
@@ -302,9 +302,9 @@ const StakingTable = ({ data, headers }: Props) => {
                                         <Link
                                             href={`/${
                                                 isLayer(item)
-                                                    ? "layers"
-                                                    : "infrastructure"
-                                            }/${item.slug}`}
+                                                    ? `layers/${item.slug}/#usecases`
+                                                    : `infrastructure/${item.slug}`
+                                            }`}
                                         >
                                             {isLayer(item)
                                                 ? item.layerType
@@ -320,9 +320,9 @@ const StakingTable = ({ data, headers }: Props) => {
                                         <Link
                                             href={`/${
                                                 isLayer(item)
-                                                    ? "layers"
-                                                    : "infrastructure"
-                                            }/${item.slug}`}
+                                                    ? `layers/${item.slug}/#usecases`
+                                                    : `infrastructure/${item.slug}`
+                                            }`}
                                         >
                                             {item.live}
                                         </Link>
@@ -334,9 +334,9 @@ const StakingTable = ({ data, headers }: Props) => {
                                         <Link
                                             href={`/${
                                                 isLayer(item)
-                                                    ? "layers"
-                                                    : "infrastructure"
-                                            }/${item.slug}`}
+                                                    ? `layers/${item.slug}/#usecases`
+                                                    : `infrastructure/${item.slug}`
+                                            }`}
                                         >
                                             {isLayer(item)
                                                 ? "Layer"
