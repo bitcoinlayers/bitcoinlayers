@@ -1,14 +1,6 @@
 import Hero from "@/components/hero";
 import OpcodeTable from "@/components/tables/opcodeTable";
-import { getUserLocale } from "@/services/locale";
-import { LOCALES } from "@/enums/locale.enums";
-
-export async function getAllOpcodesWithSlug() {
-    const locale = await getUserLocale();
-    return locale === LOCALES.en
-        ? await import("@/util/opcode_index_en")
-        : await import("@/util/opcode_index_uk");
-}
+import { getAllOpcodesWithSlug } from "@/helpers/locale.helpers";
 
 export default async function Home() {
     const { allOpcodes } = await getAllOpcodesWithSlug();

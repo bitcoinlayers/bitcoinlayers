@@ -3,7 +3,7 @@ import InfrastructureMenu from "@/components/infrastructure/infrastructureMenu";
 import InfrastructureBody from "@/components/infrastructure/infrastructureBody";
 import InfrastructureOverview from "@/components/infrastructure/infrastructureOverview";
 import InfrastructureImage from "@/components/infrastructure/infrastructure-image";
-import { getAllInfrastructure } from "../page";
+import { getAllInfrastructure } from "@/helpers/locale.helpers";
 
 async function getInfrastructureFromSlug(slug: string) {
     const { allInfrastructures } = await getAllInfrastructure();

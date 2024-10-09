@@ -17,9 +17,9 @@ import {
 import { LocaleButton } from "./ui/locale-button";
 import { useTranslations } from "next-intl";
 import { getAllLayersWithSlugs } from "@/app/layers/[slug]/page";
-import { getAllInfrastructure } from "@/app/infrastructure/page";
 import { Layer } from "./layer/layerProps";
 import { Infrastructure } from "./infrastructure/infrastructureProps";
+import { getAllInfrastructure } from "@/helpers/locale.helpers";
 
 export default function Navbar(): ReactElement {
     const [menuOpen, setMenuOpen] = useState(false);

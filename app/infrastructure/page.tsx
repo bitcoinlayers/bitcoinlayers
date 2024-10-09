@@ -1,16 +1,7 @@
 import Hero from "@/components/hero";
 import InfrastructureTable from "@/components/tables/infrastructureTable";
-import { LOCALES } from "@/enums/locale.enums";
-import { getUserLocale } from "@/services/locale";
+import { getAllInfrastructure } from "@/helpers/locale.helpers";
 import { getTranslations } from "next-intl/server";
-
-export async function getAllInfrastructure() {
-    const locale = await getUserLocale();
-
-    return locale === LOCALES.en
-        ? await import("@/util/infrastructure_index_en")
-        : await import("@/util/infrastructure_index_uk");
-}
 
 export default async function Home() {
     const { allInfrastructures } = await getAllInfrastructure();
