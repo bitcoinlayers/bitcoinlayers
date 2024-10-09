@@ -282,27 +282,19 @@ const StakingTable = ({ data, headers }: Props) => {
                                 </td>
                                 {(!isMobile || mobileActiveTab === "Risk") && (
                                     <td className="relative px-2 border-stroke_tertiary text_table_important">
-                                        <Link
-                                            href={`/${
-                                                isLayer(item)
-                                                    ? "layers"
-                                                    : "infrastructure"
-                                            }/${item.slug}#riskanalysis`}
-                                        >
-                                            {isLayer(item) ? (
-                                                item.underReview === "no" ? (
-                                                    <Risk layer={item} />
-                                                ) : (
-                                                    <div className="lg:px-5 px-1 text_table_important font-light">
-                                                        Under review
-                                                    </div>
-                                                )
+                                        {isLayer(item) ? (
+                                            item.underReview === "no" ? (
+                                                <Risk layer={item} />
                                             ) : (
-                                                <div className="lg:px-5 px-1 text_table_important">
-                                                    Not applicable
+                                                <div className="lg:px-5 px-1 text_table_important font-light">
+                                                    Under review
                                                 </div>
-                                            )}
-                                        </Link>
+                                            )
+                                        ) : (
+                                            <div className="lg:px-5 px-1 text_table_important">
+                                                Not applicable
+                                            </div>
+                                        )}
                                     </td>
                                 )}
                                 {(!isMobile || mobileActiveTab === "Type") && (
