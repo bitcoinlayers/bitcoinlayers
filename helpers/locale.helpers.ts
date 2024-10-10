@@ -1,27 +1,27 @@
 import { getUserLocale } from "@/services/locale";
 
-type LayersType = typeof import("@/i18n/en/layer_index");
+type LayersType = typeof import("@/messages/en/layers");
 type ChartDataType =
     typeof import("@/messages/en/layers/bob_total_supply.json");
-type InfrastructureType = typeof import("@/i18n/en/infrastructure_index");
-type OpcodeTypes = typeof import("@/i18n/en/opcode_index");
+type InfrastructureType = typeof import("@/messages/en/infrastructures");
+type OpcodeTypes = typeof import("@/messages/en/opcodes");
 
 export async function getAllInfrastructure(): Promise<InfrastructureType> {
     const locale = await getUserLocale();
-    return import(`@/i18n/${locale}/infrastructure_index`);
+    return import(`@/messages/${locale}/infrastructures`);
 }
 
 export async function getAllOpcodesWithSlug(): Promise<OpcodeTypes> {
     const locale = await getUserLocale();
-    return import(`@/i18n/${locale}/opcode_index`);
+    return import(`@/messages/${locale}/opcodes`);
 }
 
 export async function getAllLayersWithSlugs(): Promise<LayersType> {
     const locale = await getUserLocale();
-    return import(`@/i18n/${locale}/layer_index`);
+    return import(`@/messages/${locale}/layers`);
 }
 
 export async function getChartData(): Promise<ChartDataType> {
     const locale = await getUserLocale();
-    return import(`@/i18n/${locale}/layers/bob_total_supply.json`);
+    return import(`@/messages/${locale}/layers/bob_total_supply.json`);
 }

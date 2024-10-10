@@ -5,7 +5,7 @@ The Bitcoin Layers team prioritizes reviews on projects that are in production a
 When submitting a review, please follow the process below:
 
 -   Create a new [layername].json file by copying the citrea.json file. Please use the format used in citrea.json. Please include as much information around the project as you can.
--   Add the project to /util/layer_index.tsx by copy+pasting the import and declaration, using new name format from Step 1
+-   Add the project to /messages/[locale]/[layer]/index.ts by copy+pasting the import and declaration, using new name format from Step 1
 -   Add to the array of all layers
 -   Add project logo to public/logos. Please ensure that the file's name matches the "slug" in the [layername]json file and is in png format
 -   Submit a PR and prosper :sunglasses:
@@ -17,7 +17,7 @@ Please include any relevant documentation, and source viewable code, with your s
 When submitting a review, please follow the process below:
 
 -   Create a new [layername].json file by copying the starknet.json file. Please use the format used in starknet.json. Please include as much information around the project as you can.
--   Add the project to /util/layer_index.tsx by copy+pasting the import and declaration, using new name format from Step 1
+-   Add the project to /messages/[locale]/[layer]/index.ts by copy+pasting the import and declaration, using new name format from Step 1
 -   Add to the array of all layers
 -   Add project logo to public/logos. Please ensure that the file's name matches the "slug" in the [layername]json file and is in png format
 -   Submit a PR and prosper :sunglasses:
