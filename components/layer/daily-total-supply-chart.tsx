@@ -24,7 +24,7 @@ import {
     SelectValue,
 } from "@/components/ui/select";
 
-import { getChartData } from "@/helpers/locale.helpers";
+import { getChartData } from "@/i18n/helpers";
 
 interface MonthlyData {
     [key: string]: {

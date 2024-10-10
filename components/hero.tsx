@@ -7,10 +7,7 @@ import { useTranslations } from "next-intl";
 import { useEffect } from "react";
 import { Layer } from "./layer/layerProps";
 import { Infrastructure } from "./infrastructure/infrastructureProps";
-import {
-    getAllInfrastructure,
-    getAllLayersWithSlugs,
-} from "@/helpers/locale.helpers";
+import { getAllInfrastructure, getAllLayersWithSlugs } from "@/i18n/helpers";
 
 const Hero = () => {
     const t = useTranslations("hero");

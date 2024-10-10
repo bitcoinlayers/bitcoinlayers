@@ -1,10 +1,7 @@
 import BitcoinonlyTable from "@/components/tables/bitcoinonlyTable";
 import Hero from "@/components/hero";
 import { useTranslations } from "next-intl";
-import {
-    getAllInfrastructure,
-    getAllLayersWithSlugs,
-} from "@/helpers/locale.helpers";
+import { getAllInfrastructure, getAllLayersWithSlugs } from "@/i18n/helpers";
 
 export default async function Home() {
     const { allInfrastructures } = await getAllInfrastructure();

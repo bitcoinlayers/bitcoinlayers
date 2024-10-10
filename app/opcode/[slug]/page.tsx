@@ -3,7 +3,7 @@ import OpcodeMenu from "@/components/opcode/opcodeMenu";
 import OpcodeBody from "@/components/opcode/opcodeBody";
 import OpcodeOverview from "@/components/opcode/opcodeOverview";
 import OpcodeImage from "@/components/opcode/opcode-image";
-import { getAllOpcodesWithSlug } from "@/helpers/locale.helpers";
+import { getAllOpcodesWithSlug } from "@/i18n/helpers";
 
 async function getOpcodeFromSlug(slug: string) {
     const { allOpcodes } = await getAllOpcodesWithSlug();

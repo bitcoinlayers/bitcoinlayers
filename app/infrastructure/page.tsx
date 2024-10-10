@@ -1,6 +1,6 @@
 import Hero from "@/components/hero";
 import InfrastructureTable from "@/components/tables/infrastructureTable";
-import { getAllInfrastructure } from "@/helpers/locale.helpers";
+import { getAllInfrastructure } from "@/i18n/helpers";
 import { getTranslations } from "next-intl/server";
 
 export default async function Home() {

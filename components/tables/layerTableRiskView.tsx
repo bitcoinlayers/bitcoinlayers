@@ -1,4 +1,4 @@
-import { allLayers } from "@/messages/en/layers";
+import { allLayers } from "@/i18n/messages/en/layers";
 import LayerTableRisks from "@/components/layer/layerTableRisks";
 import tableStyles from "../styles/tableStyles";
 

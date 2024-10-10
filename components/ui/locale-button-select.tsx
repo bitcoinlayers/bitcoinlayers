@@ -2,7 +2,7 @@
 
 import { LOCALES } from "@/enums/locale.enums";
 import { useEffect, useState, useTransition } from "react";
-import { setUserLocale } from "@/services/locale";
+import { setUserLocale } from "@/i18n/service";
 import {
     Select,
     SelectContent,

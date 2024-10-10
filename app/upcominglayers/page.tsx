@@ -1,6 +1,6 @@
 import Hero from "@/components/hero";
 import LayerTableAll from "@/components/tables/layerTableAll";
-import { getAllLayersWithSlugs } from "@/helpers/locale.helpers";
+import { getAllLayersWithSlugs } from "@/i18n/helpers";
 import { useTranslations } from "next-intl";
 
 export default async function Home() {

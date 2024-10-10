@@ -5,7 +5,7 @@ import RiskAnalysis from "@/components/layer/risk-analysis/layerBodyRiskAnalysis
 import LayerOverview from "@/components/layer/layerOverview";
 import LayerImage from "@/components/layer/layer-image";
 import ProjectTVLChart from "@/components/charts/project-tvl-chart";
-import { getAllLayersWithSlugs } from "@/helpers/locale.helpers";
+import { getAllLayersWithSlugs } from "@/i18n/helpers";
 
 async function getLayerFromSlug(slug: string) {
     const { allLayers } = await getAllLayersWithSlugs();
