@@ -1,10 +1,14 @@
-import { allLayers } from "@/i18n/en/layer_index_en";
-import { allInfrastructures } from "@/util/infrastructure_index_en";
 import BitcoinonlyTable from "@/components/tables/bitcoinonlyTable";
 import Hero from "@/components/hero";
 import { useTranslations } from "next-intl";
+import {
+    getAllInfrastructure,
+    getAllLayersWithSlugs,
+} from "@/helpers/locale.helpers";
 
-export default function Home() {
+export default async function Home() {
+    const { allInfrastructures } = await getAllInfrastructure();
+    const { allLayers } = await getAllLayersWithSlugs();
     const t = useTranslations("bitcoin-only-table");
     const sortedEverything = [...allLayers, ...allInfrastructures]
         .filter((item) => item.bitcoinOnly)

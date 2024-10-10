@@ -1,7 +1,7 @@
 import FederationTable from "@/components/tables/federation-table";
 import Hero from "@/components/hero";
 import { getTranslations } from "next-intl/server";
-import { getAllLayersWithSlugs } from "../layers/[slug]/page";
+import { getAllLayersWithSlugs } from "@/helpers/locale.helpers";
 
 export default async function FederationsPage() {
     const t = await getTranslations("federation-table");

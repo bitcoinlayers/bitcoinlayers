@@ -11,7 +11,7 @@ export async function getAllInfrastructure(): Promise<InfrastructureType> {
     return import(`@/i18n/${locale}/infrastructure_index_${locale}`);
 }
 
-export async function getAllOpcodesWithSlug() {
+export async function getAllOpcodesWithSlug(): Promise<OpcodeTypes> {
     const locale = await getUserLocale();
     return import(`@/i18n/${locale}/opcode_index_${locale}`);
 }
