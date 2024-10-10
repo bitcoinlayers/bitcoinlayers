@@ -24,8 +24,7 @@ import {
     SelectValue,
 } from "@/components/ui/select";
 
-import { getUserLocale } from "@/services/locale";
-import { LOCALES } from "@/enums/locale.enums";
+import { getChartData } from "@/helpers/locale.helpers";
 
 interface MonthlyData {
     [key: string]: {
@@ -48,13 +47,6 @@ const chartConfig = {
         color: "hsl(var(--chart-2))",
     },
 } satisfies ChartConfig;
-
-async function getChartData() {
-    const locale = await getUserLocale();
-    return locale === LOCALES.en
-        ? await import("@/messages/en/layers/bob_total_supply.json")
-        : await import("@/messages/uk/layers/bob_total_supply.json");
-}
 
 export default async function DailyTotalSupplyChart() {
     const [timeframe, setTimeframe] = useState("daily");

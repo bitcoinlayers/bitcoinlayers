@@ -5,15 +5,7 @@ import RiskAnalysis from "@/components/layer/risk-analysis/layerBodyRiskAnalysis
 import LayerOverview from "@/components/layer/layerOverview";
 import LayerImage from "@/components/layer/layer-image";
 import ProjectTVLChart from "@/components/charts/project-tvl-chart";
-import { LOCALES } from "@/enums/locale.enums";
-import { getUserLocale } from "@/services/locale";
-
-export async function getAllLayersWithSlugs() {
-    const locale = await getUserLocale();
-    return locale === LOCALES.en
-        ? await import("@/util/layer_index_en")
-        : await import("@/util/layer_index_uk");
-}
+import { getAllLayersWithSlugs } from "@/helpers/locale.helpers";
 
 async function getLayerFromSlug(slug: string) {
     const { allLayers } = await getAllLayersWithSlugs();

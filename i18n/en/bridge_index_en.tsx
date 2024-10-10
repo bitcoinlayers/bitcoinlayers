@@ -1,5 +1,5 @@
 import type { Bridge } from "@/components/bridge/bridgeProps";
-import monetaJson from "../messages/en/bridges/moneta.json" assert { type:
+import monetaJson from "@/messages/en/bridges/moneta.json" assert { type:
     "json" };
 
 const moneta: Bridge = monetaJson as Bridge;

@@ -18,9 +18,11 @@ interface RootLayoutProps {
 }
 
 export default async function RootLayout({ children }: RootLayoutProps) {
-    const locale = await getLocale();
-    const messages = await getMessages();
-    const timeZone = await getTimeZone();
+    const [locale, messages, timeZone] = await Promise.all([
+        getLocale(),
+        getMessages(),
+        getTimeZone(),
+    ]);
 
     return (
         <html lang={locale} suppressHydrationWarning>

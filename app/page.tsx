@@ -1,6 +1,6 @@
 import Hero from "@/components/hero";
 import ViewToggleGroup from "@/components/layer/view-toggle-group";
-import { getAllLayersWithSlugs } from "./layers/[slug]/page";
+import { getAllLayersWithSlugs } from "@/helpers/locale.helpers";
 import { getTranslations } from "next-intl/server";
 
 export default async function Home() {

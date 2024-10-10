@@ -16,10 +16,12 @@ import {
 } from "./ui/sheet";
 import { LocaleButton } from "./ui/locale-button";
 import { useTranslations } from "next-intl";
-import { getAllLayersWithSlugs } from "@/app/layers/[slug]/page";
 import { Layer } from "./layer/layerProps";
 import { Infrastructure } from "./infrastructure/infrastructureProps";
-import { getAllInfrastructure } from "@/helpers/locale.helpers";
+import {
+    getAllInfrastructure,
+    getAllLayersWithSlugs,
+} from "@/helpers/locale.helpers";
 
 export default function Navbar(): ReactElement {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -83,7 +85,7 @@ export default function Navbar(): ReactElement {
     }, [pathname]);
 
     useEffect(() => {
-        const clear = async () => {
+        const load = async () => {
             const { allLayers } = await getAllLayersWithSlugs();
             const { allInfrastructures } = await getAllInfrastructure();
 
@@ -91,7 +93,7 @@ export default function Navbar(): ReactElement {
             setAllInfrastructures(allInfrastructures);
         };
 
-        clear();
+        load();
     }, []);
 
     return (

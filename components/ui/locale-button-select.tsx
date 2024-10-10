@@ -21,10 +21,10 @@ type Props = {
 
 export const LocaleButtonSelect = ({ defaultValue, items }: Props) => {
     const [isPending, startTransition] = useTransition();
-    const [isInit, setIsInit] = useState(true);
+    const [isMounted, setIsMounted] = useState(false);
 
     useEffect(() => {
-        setIsInit(false);
+        setIsMounted(true);
     }, []);
 
     const handleLanguageSelect = (value: LOCALES) => {
@@ -39,7 +39,7 @@ export const LocaleButtonSelect = ({ defaultValue, items }: Props) => {
             onValueChange={handleLanguageSelect}
         >
             <SelectTrigger>
-                {isInit ? <Spinner /> : <SelectValue />}
+                {isMounted ? <SelectValue /> : <Spinner />}
             </SelectTrigger>
             <SelectContent>
                 <SelectGroup>

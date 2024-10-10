@@ -1,4 +1,4 @@
-import { allLayers } from "@/util/layer_index_en";
+import { allLayers } from "@/i18n/en/layer_index_en";
 import { allInfrastructures } from "@/util/infrastructure_index_en";
 import BitcoinonlyTable from "@/components/tables/bitcoinonlyTable";
 import Hero from "@/components/hero";

@@ -3,12 +3,14 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import SearchBlock from "./filter/SearchBlock";
-import { getAllLayersWithSlugs } from "@/app/layers/[slug]/page";
 import { useTranslations } from "next-intl";
 import { useEffect } from "react";
 import { Layer } from "./layer/layerProps";
 import { Infrastructure } from "./infrastructure/infrastructureProps";
-import { getAllInfrastructure } from "@/helpers/locale.helpers";
+import {
+    getAllInfrastructure,
+    getAllLayersWithSlugs,
+} from "@/helpers/locale.helpers";
 
 const Hero = () => {
     const t = useTranslations("hero");
@@ -18,7 +20,7 @@ const Hero = () => {
     >([]);
 
     useEffect(() => {
-        const clear = async () => {
+        const load = async () => {
             const { allLayers } = await getAllLayersWithSlugs();
             const { allInfrastructures } = await getAllInfrastructure();
 
@@ -26,7 +28,7 @@ const Hero = () => {
             setAllInfrastructures(allInfrastructures);
         };
 
-        clear();
+        load();
     }, []);
 
     return (
