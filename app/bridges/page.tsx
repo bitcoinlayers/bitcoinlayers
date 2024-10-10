@@ -3,11 +3,11 @@ import Hero from "@/components/hero";
 import { getTranslations } from "next-intl/server";
 import { getAllLayersWithSlugs } from "@/i18n/helpers";
 
-export default async function FederationsPage() {
+export default async function BridgesPage() {
     const t = await getTranslations("federation-table");
     const { allLayers } = await getAllLayersWithSlugs();
     const sortedLayers = allLayers
-        .filter((item) => item.federation)
+        .filter((item) => item.bridge)
         .sort((a, b) =>
             a.title.toLowerCase().localeCompare(b.title.toLowerCase()),
         );

@@ -3,6 +3,7 @@
     "title": "Sovereign",
     "infrastructureType": "Rollup SDK",
     "live": "Testnet",
+    "staking": false,
     "underReview": "yes",
     "riskFactors": ["", ""],
     "bitcoinSecurity": "No",

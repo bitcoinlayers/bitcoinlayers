@@ -3,6 +3,7 @@
     "title": "Bool",
     "infrastructureType": "Bridge",
     "live": "Announced",
+    "staking": false,
     "underReview": "yes",
     "riskFactors": ["", ""],
     "bitcoinSecurity": "No",

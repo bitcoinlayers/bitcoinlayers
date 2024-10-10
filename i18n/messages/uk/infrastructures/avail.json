@@ -3,6 +3,7 @@
     "title": "Avail",
     "infrastructureType": "Data Availability",
     "live": "Testnet",
+    "staking": false,
     "underReview": "yes",
     "riskFactors": ["", ""],
     "bitcoinSecurity": "No",

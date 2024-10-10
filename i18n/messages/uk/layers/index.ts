@@ -27,7 +27,6 @@ import moleculeJson from "@/i18n/messages/uk/layers/molecule.json";
 import sideJson from "@/i18n/messages/uk/layers/side.json";
 import mezoJson from "@/i18n/messages/uk/layers/mezo.json";
 import arkJson from "@/i18n/messages/uk/layers/ark.json";
-import arkliquidJson from "@/i18n/messages/uk/layers/arkliquid.json";
 import hedgehogJson from "@/i18n/messages/uk/layers/hedgehog.json";
 import roochJson from "@/i18n/messages/uk/layers/rooch.json";
 import bit2Json from "@/i18n/messages/uk/layers/bit2.json";
@@ -78,13 +77,13 @@ const molecule: Layer = moleculeJson as Layer;
 const side: Layer = sideJson as Layer;
 const mezo: Layer = mezoJson as Layer;
 const ark: Layer = arkJson as Layer;
-const arkliquid: Layer = arkliquidJson as Layer;
 const hedgehog: Layer = hedgehogJson as Layer;
 const rooch: Layer = roochJson as Layer;
 const bit2: Layer = bit2Json as Layer;
 const sequentia: Layer = sequentiaJson as Layer;
 const brollup: Layer = brollupJson as Layer;
 const nomic: Layer = nomicJson as Layer;
+//@ts-ignore
 const fractal: Layer = fractalJson as Layer;
 const yona: Layer = yonaJson as Layer;
 const nexio: Layer = nexioJson as Layer;
@@ -125,7 +124,6 @@ export const allLayers: Layer[] = [
     side,
     mezo,
     ark,
-    arkliquid,
     hedgehog,
     rooch,
     bit2,

@@ -3,6 +3,7 @@
     "title": "BVM",
     "infrastructureType": "RaaS",
     "live": "Mainnet",
+    "staking": false,
     "underReview": "yes",
     "riskFactors": ["", ""],
     "bitcoinSecurity": "No",

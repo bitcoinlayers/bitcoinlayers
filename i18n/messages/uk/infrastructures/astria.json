@@ -3,6 +3,7 @@
     "title": "Astria",
     "infrastructureType": "Sequencing",
     "live": "Proposed",
+    "staking": false,
     "underReview": "yes",
     "riskFactors": ["High", "High"],
     "bitcoinSecurity": "No",

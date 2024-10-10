@@ -34,7 +34,8 @@ export default function Navbar(): ReactElement {
     const pathname = usePathname();
     const searchHiddenRoutes = [
         "/",
-        "/federations",
+        "/staking",
+        "/bridges",
         "/infrastructure",
         "/bitcoinonly",
     ];
@@ -170,14 +171,31 @@ export default function Navbar(): ReactElement {
                                 </div>
                                 <div className="h-[88px] p-3 rounded-md flex-col justify-start items-start flex hover:bg-blue-100">
                                     <Link
-                                        href="/federations"
+                                        href="/staking"
                                         onClick={closeSubmenu}
                                     >
                                         <div className="text-zinc-800 text-base font-medium leading-normal">
-                                            {t("federations")}
+                                            {t("staking")}
                                         </div>
                                         <div className="self-stretch text-slate-500 text-sm font-normal leading-tight">
-                                            {t("federations-overview")}
+                                            {t(
+                                                "overview-and-risk-analysis-of-staking-mechanisms",
+                                            )}
+                                        </div>
+                                    </Link>
+                                </div>
+                                <div className="h-[88px] p-3 rounded-md flex-col justify-start items-start flex hover:bg-blue-100">
+                                    <Link
+                                        href="/bridges"
+                                        onClick={closeSubmenu}
+                                    >
+                                        <div className="text-zinc-800 text-base font-medium leading-normal">
+                                            {t("bridges")}
+                                        </div>
+                                        <div className="self-stretch text-slate-500 text-sm font-normal leading-tight">
+                                            {t(
+                                                "overview-and-risk-analysis-of-bitcoin-bridges",
+                                            )}
                                         </div>
                                     </Link>
                                 </div>

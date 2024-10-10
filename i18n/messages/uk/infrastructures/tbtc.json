@@ -3,6 +3,7 @@
     "title": "tBTC",
     "infrastructureType": "BTC Wrapper",
     "live": "Mainnet",
+    "staking": false,
     "underReview": "yes",
     "riskFactors": ["", ""],
     "bitcoinSecurity": "No",
