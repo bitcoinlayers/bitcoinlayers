@@ -1,5 +1,7 @@
 import { getUserLocale } from "@/i18n/service";
 
+// HACK: despite of all of the types below has ".../en..."
+// they're still suitable for any locales
 type LayersType = typeof import("@/i18n/messages/en/layers");
 type ChartDataType =
     typeof import("@/i18n/messages/en/layers/bob_total_supply.json");
