@@ -6,19 +6,12 @@ import { useState } from "react";
 import { Layer } from "@/components/layer/layerProps";
 import { MobileView, isMobile } from "react-device-detect";
 import { getRiskColorText } from "@/util/riskColors";
+import { useTranslations } from "next-intl";
 
 interface Props {
     data: Layer[];
 }
 type MobileRiskKey = "Bridge" | "DA" | "Operators" | "Settlement";
-
-const layerHeaders = [
-    { name: "Name", mobileLabel: "Name" },
-    { name: "Bridge", mobileLabel: "Bridge" },
-    { name: "DA", mobileLabel: "DA" },
-    { name: "Operators", mobileLabel: "Operators" },
-    { name: "Settlement", mobileLabel: "Settlement" },
-];
 
 const LayerImage = ({ src, title }: { src: string; title: string }) => {
     const [imageSrc, setImageSrc] = useState(src);
@@ -39,6 +32,7 @@ const LayerImage = ({ src, title }: { src: string; title: string }) => {
 };
 
 const LayerTableRisks = ({ data }: Props) => {
+    const t = useTranslations("layer");
     const [mobileRiskTab, setMobileRiskTab] = useState<MobileRiskKey>("Bridge");
     const router = useRouter();
 
@@ -48,6 +42,14 @@ const LayerTableRisks = ({ data }: Props) => {
     const handleMobileTabClick = (tab: MobileRiskKey) => {
         setMobileRiskTab(tab);
     };
+
+    const layerHeaders = [
+        { name: t("name"), mobileLabel: t("name") },
+        { name: t("bridge-label"), mobileLabel: t("bridge-label") },
+        { name: t("da"), mobileLabel: t("da") },
+        { name: t("operators-label"), mobileLabel: t("operators-label") },
+        { name: t("settlement-0"), mobileLabel: t("settlement-0") },
+    ];
 
     return (
         <div className="px-6 lg:px-0">
@@ -88,26 +90,26 @@ const LayerTableRisks = ({ data }: Props) => {
                     <thead className="bg-table_header rounded-t-xl">
                         <tr className="border-b border-stroke_tertiary rounded-t-xl">
                             <th className="lg:px-6 px-4 lg:py-6 py-2 font-medium text-text_table_header table_header border-r lg:border-r-0 border-stroke_tertiary rounded-tl-xl">
-                                Name
+                                {t("name")}
                             </th>
                             {(!isMobile || mobileRiskTab === "Bridge") && (
                                 <th className="lg:px-6 px-4 lg:py-6 py-2 font-medium text-text_table_header table_header border-stroke_tertiary">
-                                    Bridge
+                                    {t("bridge-label")}
                                 </th>
                             )}
                             {(!isMobile || mobileRiskTab === "DA") && (
                                 <th className="lg:px-6 px-4 lg:py-6 py-2 font-medium text-text_table_header table_header border-stroke_tertiary">
-                                    Data Availability
+                                    {t("data-availability-label")}
                                 </th>
                             )}
                             {(!isMobile || mobileRiskTab === "Operators") && (
                                 <th className="lg:px-6 px-4 lg:py-6 py-2 font-medium text-text_table_header table_header border-stroke_tertiary">
-                                    Network Operator
+                                    {t("network-operator")}
                                 </th>
                             )}
                             {(!isMobile || mobileRiskTab === "Settlement") && (
                                 <th className="lg:px-6 px-4 lg:py-6 py-2 font-medium text-text_table_header table_header border-r border-stroke_tertiary first:rounded-tr-xl">
-                                    Settlement Assurance
+                                    {t("settlement-assurance-label")}
                                 </th>
                             )}
                         </tr>

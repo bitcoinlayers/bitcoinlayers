@@ -1,18 +1,17 @@
 "use client";
 
-import React, { useState } from "react";
-// import { allBridges } from "@/util/bridge_index";
+import React from "react";
 import Hero from "@/components/hero";
-// import BridgeTable from "@/components/tables/bridgeTable";
+import { useTranslations } from "next-intl";
 
 export default function Home() {
+    const t = useTranslations("bridge");
     return (
         <div className="mx-auto">
             <Hero />
             <div className="flex mb-4 justify-center mt-16"></div>
             <div className="flex mb-4 justify-center max-w-5xl mx-auto">
-                {/* <BridgeTable data={allBridges} /> */}
-                Bridge analyses coming soon.
+                {t("bridge-analyses-coming-soon")}
             </div>
         </div>
     );

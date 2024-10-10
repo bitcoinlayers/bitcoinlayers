@@ -2,8 +2,10 @@
 
 import Image from "next/image";
 import React, { useState } from "react";
+import { useTranslations } from "next-intl";
 
 const FaqPage: React.FC = () => {
+    const t = useTranslations("faq");
     const FAQItem: React.FC<{ question: string; answer: string }> = ({
         question,
         answer,
@@ -52,7 +54,7 @@ const FaqPage: React.FC = () => {
                 <div className="flex justify-start items-center gap-8 w-full">
                     <div className="flex-grow flex items-center gap-[30px] h-[156px]">
                         <div className="special_header flex-grow sm:h-20 text-6xl lg:text-10xl text_table_important">
-                            Frequently Asked Questions
+                            {t("frequently-asked-questions")}
                         </div>
                     </div>
                 </div>
@@ -60,36 +62,46 @@ const FaqPage: React.FC = () => {
                     <div className="flex flex-col gap-12 w-full rounded-md">
                         <div className="flex flex-col gap-8 w-full">
                             <FAQItem
-                                question="What is the Bitcoin Layers site?"
-                                answer="Bitcoin Layers is an educational tool dedicated to Bitcoin scaling. Currently, we are focusing on a module that outlines the risks associated with various scaling protocols that support Bitcoin and BTC the asset. We are also planning on building modules related to bridges, scaling infrastructure and opcodes that can support new variations of L2s."
+                                question={t("what-is-the-bitcoin-layers-site")}
+                                answer={t("bitcoin-layers")}
                             />
                             <FAQItem
-                                question="What is a Bitcoin Layer?"
-                                answer='We use the term "Bitcoin Layer" to describe Bitcoin Layer 2s, sidechains, and other scaling protocols. There are many definitions that exist for the term "Layer 2". We view Layer 2s as protocols that take transaction execution offchain, ensure users retain full custody of their assets, and additionally enable unilateral exit from the system via an L1 transaction. Another definition sees this extended to a system where any party can participate in the security of the protocol and its two-way peg with Bitcoin. We use the term "Bitcoin Layer" as an agnostic term to describe a variety of scaling protocols, including Layer 2s. We analyze all of these protocols against a generalized, opinionated framework that we developed to show users the relevant trust assumptions for each system.'
+                                question={t("what-is-a-bitcoin-layer")}
+                                answer={t(
+                                    "we-use-the-term-bitcoin-layer-to-describe",
+                                )}
                             />
                             <FAQItem
-                                question='Are all Bitcoin Layers "L2s"?'
-                                answer='The overwhelming majority of newer Bitcoin "Layer 2s" are not Layer 2s. Bitcoin Layers is a broad term we use to cover offchain scaling protocols. People typically define L2s as protocols that take transaction execution offchain, but inherit security from its parent blockchain. Most consider unilateral exit as a primary criterion for being a “true L2”, which means that users retain self-custody of their BTC and can exit the L2, with an L1 transaction, whenever they choose.'
+                                question={t("are-all-bitcoin-layers-l2s")}
+                                answer={t("the-overwhelming-majority")}
                             />
                             <FAQItem
-                                question='Why are newer Bitcoin "L2s" receiving so much attention?'
-                                answer='Bitcoin L2s are receiving attention for a number of reasons. Ordinals brought in a new wave of Bitcoin users, BitVM opened up a new design space for scaling protocols, and numerous stakeholders in the Bitcoin community believe that new types of scaling protocols should be implemented and experimented with. However, the majority of these protocols are launching with "progressive decentralization" on their roadmap. This means that the protocols will launch as a federated sidechain, with hopes of adding Bitcoin-native security over time. Our site analyzes protocols against their current implementation, versus future roadmaps.'
+                                question={t(
+                                    "why-are-newer-bitcoin-l2s-receiving-so-much-attention",
+                                )}
+                                answer={t(
+                                    "bitcoin-l2s-are-receiving-attention-for-a-number",
+                                )}
                             />
                             <FAQItem
-                                question='What are modular Bitcoin "L2s"?'
-                                answer="A number of new projects are launching with modular scaling designs. This means that each aspect of the transaction lifecycle would be managed by an independent actor. Roles such as transaction ordering, data availability, and settlement would be distributed across several systems. These parties can range from single servers to federated committees to permissionless consensus protocols, varying in trust assumptions."
+                                question={t("what-are-modular-bitcoin-l2s")}
+                                answer={t(
+                                    "number-of-new-projects-are-launching",
+                                )}
                             />
                             <FAQItem
-                                question='Are these newer "L2s" similar to projects in Ethereum?'
-                                answer='A large percentage of these projects are forking popular Ethereum L2s and trying to inherit similar designs. The difference between these Bitcoin chains, and L2s on Ethereum, is the trust assumptions related to the two-way peg and security inherited from the base layer. Current Bitcoin "L2" implementations largely do not inherit any security from the Bitcoin network or do not have a trust-minimized two-way peg.'
+                                question={t("are-these-newer-l2s-similar")}
+                                answer={t("large-percentage-of-these-projects")}
                             />
                             <FAQItem
-                                question="What is Bitcoin's scaling roadmap focused on?"
-                                answer="Bitcoin, unlike other ecosystems, does not have a unified scaling roadmap. This means that a number of different approaches are being implemented to support the scaling of Bitcoin's throughput and transaction capacity. These range from custodial solutions, decentralized peer-to-peer networks and alternative blockchains. All of these solutions come with specific tradeoffs."
+                                question={t(
+                                    "what-is-bitcoins-scaling-roadmap-focused-on",
+                                )}
+                                answer={t("bitcoin-unlike-other-ecosystems")}
                             />
                             <FAQItem
-                                question="How does Bitcoin Layers analyze risk related to sidechain protocols?"
-                                answer="We analyze protocols against a general framework that covers four key aspects. We review who is maintaining custody of the funds used on the scaling protocol, who is storing the data related to the protocol's state, who is operating the network, and who is providing finality assurances. Each of these categories receives a score given the current state of the protocol. Users can use these scores as a part of their research related to Bitcoin scaling protocols."
+                                question={t("how-does-bitcoin-layers")}
+                                answer={t("we-analyze-protocols-against")}
                             />
                         </div>
                     </div>

@@ -1,14 +1,10 @@
-"use client";
-
 import { useState } from "react";
-import { TrendingUp } from "lucide-react";
-import { Area, AreaChart, CartesianGrid, XAxis, YAxis } from "recharts";
+import { Area, AreaChart, CartesianGrid, XAxis } from "recharts";
 
 import {
     Card,
     CardContent,
     CardDescription,
-    CardFooter,
     CardHeader,
     CardTitle,
 } from "@/components/ui/card";
@@ -28,8 +24,7 @@ import {
     SelectValue,
 } from "@/components/ui/select";
 
-import chartData from "@/content/layers/bob_total_supply.json";
-import { Layer } from "./layerProps";
+import { getChartData } from "@/i18n/helpers";
 
 interface MonthlyData {
     [key: string]: {
@@ -53,9 +48,9 @@ const chartConfig = {
     },
 } satisfies ChartConfig;
 
-export default function DailyTotalSupplyChart({ layer }: { layer: Layer }) {
+export default async function DailyTotalSupplyChart() {
     const [timeframe, setTimeframe] = useState("daily");
-
+    const chartData = await getChartData();
     const processedData = chartData.reduce(
         (
             acc: {

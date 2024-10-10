@@ -6,6 +6,7 @@ import RiskIconDA from "@/components/icons/RiskIconDA";
 import RiskIconOperators from "@/components/icons/RiskIconOperators";
 import RiskIconSettlement from "@/components/icons/RiskIconSettlement";
 import { Dialog, DialogContent, DialogTrigger } from "../ui/dialog";
+import { useTranslations } from "next-intl";
 
 interface RiskProps {
     layer: Layer;
@@ -13,6 +14,7 @@ interface RiskProps {
 
 const Risk: React.FC<RiskProps> = ({ layer }) => {
     const riskLevels = layer.riskAnalysis;
+    const t = useTranslations("layer");
 
     const RiskIcon = ({
         riskFactor,
@@ -36,7 +38,7 @@ const Risk: React.FC<RiskProps> = ({ layer }) => {
     return (
         <Dialog>
             <DialogTrigger>
-                <div className="lg:w-44 w-34 lg:p-4 p-2 justify-start items-center gap-4 inline-flex lg:gap-4 gap-1">
+                <div className="lg:w-44 w-34 lg:p-4 p-2 justify-start items-center inline-flex lg:gap-4 gap-1">
                     <RiskIcon
                         riskFactor={riskLevels[0]?.tier}
                         IconComponent={RiskIconBridge}
@@ -58,7 +60,7 @@ const Risk: React.FC<RiskProps> = ({ layer }) => {
             <DialogContent className="w-[calc(100vw-16px)] mx-auto max-w-[500px] rounded-lg">
                 <RiskSnapshot
                     layer={layer}
-                    title={`${layer.title} Risk Snapshot`}
+                    title={`${layer.title} ${t("risk-snapshot")}`}
                 />
             </DialogContent>
         </Dialog>

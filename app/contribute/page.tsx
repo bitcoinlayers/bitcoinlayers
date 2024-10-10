@@ -1,21 +1,9 @@
-"use client";
 import Link from "next/link";
 import React from "react";
-import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 const ContributePage: React.FC = () => {
-    const address = "36raB4921Au5Kck4uT521nbfL1ktTwLNSY";
-
-    const copyToClipboard = () => {
-        navigator.clipboard
-            .writeText(address)
-            .then(() => {
-                alert("Address copied to clipboard!");
-            })
-            .catch((err) => {
-                console.error("Failed to copy text: ", err);
-            });
-    };
+    const t = useTranslations("contribute");
 
     function InfoBox({
         question,
@@ -40,62 +28,47 @@ const ContributePage: React.FC = () => {
 
     const contributeContent = (
         <span className="text-slate-500 text-base font-normal leading-normal">
-            For now, please join our{" "}
+            {t("for-now-please-join-our")}
             <Link
                 href="https://t.me/+8rv-1I2gkmQ4ZmJh"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-orange-600 text-base font-normal leading-normal"
             >
-                Telegram
+                {t("telegram")}
             </Link>{" "}
-            group or reach out on{" "}
+            {t("group-or-reach-out-on")}
             <Link
                 href="https://twitter.com/bitcoinlayers"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-orange-600 text-base font-normal leading-normal"
             >
-                Twitter
+                {t("twitter")}
             </Link>{" "}
-            if you&apos;d like to get involved. We welcome anyone to contribute
-            to the website by submitting pull requests, creating and commenting
-            on active issues in our GitHub. Anyone is welcome to submit a
-            project to be reviewed on the website. And, anyone is welcome to
-            fork the website for their own personal or commercial use.
+            {t("if-you-like")}
         </span>
     );
 
     const supportContent = (
         <span className="text-slate-500 text-base font-normal leading-normal">
-            A great way to support the Bitcoin Layers project is by following us
-            on social media. We are active on{" "}
+            {t("great-way-to-support")}
             <Link
                 href="https://twitter.com/bitcoinlayers"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-orange-600 text-base font-normal leading-normal"
             >
-                Twitter
-            </Link>{" "}
-            and{" "}
-            {/* ,{" "}
-            <Link
-                href="https://snort.social/nprofile1qqswq22rw7f34s4us866f8twrght0p5vlmvhpxcfz780t4kpmtgyq7gpr9mhxue69uhkummnw3ezuer0de4hjtnnda3kjctv9uq32amnwvaz7tmjv4kxz7fwv3sk6atn9e5k7tcprpmhxue69uhhyetvv9uju6rpwa6xjetn9eu8j730rfdn4f"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-orange-600 text-base font-normal leading-normal"
-            >
-                Nostr
-            </Link>{" "}
-            , and{" "} */}
+                {t("twitter")}
+            </Link>
+            {t("and")}
             <Link
                 href="https://warpcast.com/~/channel/bitcoinlayers"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-orange-600 text-base font-normal leading-normal"
             >
-                Warpcast
+                {t("warpcast")}
             </Link>
             .
         </span>
@@ -107,7 +80,7 @@ const ContributePage: React.FC = () => {
                 <div className="flex justify-start items-center gap-8 w-full">
                     <div className="flex-grow flex items-center gap-[30px] h-[156px]">
                         <div className="special_header flex-grow h-20 text_table_important">
-                            Contribute
+                            {t("contribute")}
                         </div>
                     </div>
                 </div>

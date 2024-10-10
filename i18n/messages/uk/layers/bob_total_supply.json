@@ -1,0 +1,632 @@
+[
+    {
+        "date": "2024-04-25",
+        "wbtc_total_supply": 0.00207,
+        "tbtc_total_supply": 0.01157100000000001
+    },
+    {
+        "date": "2024-04-26",
+        "wbtc_total_supply": 0.00207,
+        "tbtc_total_supply": 0.01157100000000001
+    },
+    {
+        "date": "2024-04-27",
+        "wbtc_total_supply": 0.00207,
+        "tbtc_total_supply": 0.01157100000000001
+    },
+    {
+        "date": "2024-04-28",
+        "wbtc_total_supply": 0.00207,
+        "tbtc_total_supply": 0.01157100000000001
+    },
+    {
+        "date": "2024-04-29",
+        "wbtc_total_supply": 0.90379485,
+        "tbtc_total_supply": 0.03683380773271693
+    },
+    {
+        "date": "2024-04-30",
+        "wbtc_total_supply": 2.40460963,
+        "tbtc_total_supply": 0.03683380773271693
+    },
+    {
+        "date": "2024-05-01",
+        "wbtc_total_supply": 318.3695267,
+        "tbtc_total_supply": 139.08574271677753
+    },
+    {
+        "date": "2024-05-02",
+        "wbtc_total_supply": 455.5366585,
+        "tbtc_total_supply": 143.95832989921547
+    },
+    {
+        "date": "2024-05-03",
+        "wbtc_total_supply": 493.63912844,
+        "tbtc_total_supply": 144.55523053150804
+    },
+    {
+        "date": "2024-05-04",
+        "wbtc_total_supply": 525.33898945,
+        "tbtc_total_supply": 203.29224555108922
+    },
+    {
+        "date": "2024-05-05",
+        "wbtc_total_supply": 529.63178165,
+        "tbtc_total_supply": 203.4258601153732
+    },
+    {
+        "date": "2024-05-06",
+        "wbtc_total_supply": 643.43348579,
+        "tbtc_total_supply": 202.90342700645465
+    },
+    {
+        "date": "2024-05-07",
+        "wbtc_total_supply": 664.59466417,
+        "tbtc_total_supply": 203.40432600645465
+    },
+    {
+        "date": "2024-05-08",
+        "wbtc_total_supply": 659.69232576,
+        "tbtc_total_supply": 203.49246177876654
+    },
+    {
+        "date": "2024-05-09",
+        "wbtc_total_supply": 713.38095832,
+        "tbtc_total_supply": 203.46838949921982
+    },
+    {
+        "date": "2024-05-10",
+        "wbtc_total_supply": 716.1814337,
+        "tbtc_total_supply": 203.37362072661165
+    },
+    {
+        "date": "2024-05-11",
+        "wbtc_total_supply": 719.81641491,
+        "tbtc_total_supply": 203.37362072661165
+    },
+    {
+        "date": "2024-05-12",
+        "wbtc_total_supply": 721.85149654,
+        "tbtc_total_supply": 203.42593080542497
+    },
+    {
+        "date": "2024-05-13",
+        "wbtc_total_supply": 746.11738266,
+        "tbtc_total_supply": 203.41580080542496
+    },
+    {
+        "date": "2024-05-14",
+        "wbtc_total_supply": 749.63714917,
+        "tbtc_total_supply": 203.63312600076662
+    },
+    {
+        "date": "2024-05-15",
+        "wbtc_total_supply": 749.79578686,
+        "tbtc_total_supply": 204.83441101376988
+    },
+    {
+        "date": "2024-05-16",
+        "wbtc_total_supply": 754.12218184,
+        "tbtc_total_supply": 204.88097209659205
+    },
+    {
+        "date": "2024-05-17",
+        "wbtc_total_supply": 694.60964547,
+        "tbtc_total_supply": 204.98773014694572
+    },
+    {
+        "date": "2024-05-18",
+        "wbtc_total_supply": 696.44939328,
+        "tbtc_total_supply": 205.2711472609854
+    },
+    {
+        "date": "2024-05-19",
+        "wbtc_total_supply": 698.07945315,
+        "tbtc_total_supply": 205.47885819627243
+    },
+    {
+        "date": "2024-05-20",
+        "wbtc_total_supply": 696.67465411,
+        "tbtc_total_supply": 205.48885819627242
+    },
+    {
+        "date": "2024-05-21",
+        "wbtc_total_supply": 698.03671881,
+        "tbtc_total_supply": 205.48885819627242
+    },
+    {
+        "date": "2024-05-22",
+        "wbtc_total_supply": 738.81123062,
+        "tbtc_total_supply": 204.51173584146895
+    },
+    {
+        "date": "2024-05-23",
+        "wbtc_total_supply": 732.08181944,
+        "tbtc_total_supply": 203.07214314458275
+    },
+    {
+        "date": "2024-05-24",
+        "wbtc_total_supply": 761.22188088,
+        "tbtc_total_supply": 203.07214314458275
+    },
+    {
+        "date": "2024-05-25",
+        "wbtc_total_supply": 753.15414804,
+        "tbtc_total_supply": 203.12214314458276
+    },
+    {
+        "date": "2024-05-26",
+        "wbtc_total_supply": 749.62334932,
+        "tbtc_total_supply": 203.1240504908899
+    },
+    {
+        "date": "2024-05-27",
+        "wbtc_total_supply": 752.25984872,
+        "tbtc_total_supply": 203.3490504908899
+    },
+    {
+        "date": "2024-05-28",
+        "wbtc_total_supply": 752.92995432,
+        "tbtc_total_supply": 201.32379797215137
+    },
+    {
+        "date": "2024-05-29",
+        "wbtc_total_supply": 744.90406474,
+        "tbtc_total_supply": 201.32379797215137
+    },
+    {
+        "date": "2024-05-30",
+        "wbtc_total_supply": 754.51688219,
+        "tbtc_total_supply": 201.55639352425865
+    },
+    {
+        "date": "2024-05-31",
+        "wbtc_total_supply": 791.10247695,
+        "tbtc_total_supply": 201.55639352425865
+    },
+    {
+        "date": "2024-06-01",
+        "wbtc_total_supply": 763.29410225,
+        "tbtc_total_supply": 201.55639352425865
+    },
+    {
+        "date": "2024-06-02",
+        "wbtc_total_supply": 757.24675696,
+        "tbtc_total_supply": 201.48263510521457
+    },
+    {
+        "date": "2024-06-03",
+        "wbtc_total_supply": 754.03025897,
+        "tbtc_total_supply": 201.51276061712042
+    },
+    {
+        "date": "2024-06-04",
+        "wbtc_total_supply": 753.96212863,
+        "tbtc_total_supply": 201.65436016806947
+    },
+    {
+        "date": "2024-06-05",
+        "wbtc_total_supply": 752.94071115,
+        "tbtc_total_supply": 201.65436016806947
+    },
+    {
+        "date": "2024-06-06",
+        "wbtc_total_supply": 748.40316233,
+        "tbtc_total_supply": 227.76038287813523
+    },
+    {
+        "date": "2024-06-07",
+        "wbtc_total_supply": 748.08052758,
+        "tbtc_total_supply": 227.76038287813523
+    },
+    {
+        "date": "2024-06-08",
+        "wbtc_total_supply": 747.76185817,
+        "tbtc_total_supply": 227.76038287813523
+    },
+    {
+        "date": "2024-06-09",
+        "wbtc_total_supply": 743.96664511,
+        "tbtc_total_supply": 227.76038287813523
+    },
+    {
+        "date": "2024-06-10",
+        "wbtc_total_supply": 742.83710111,
+        "tbtc_total_supply": 227.76038287813523
+    },
+    {
+        "date": "2024-06-11",
+        "wbtc_total_supply": 696.99708865,
+        "tbtc_total_supply": 227.7712328781352
+    },
+    {
+        "date": "2024-06-12",
+        "wbtc_total_supply": 696.62664468,
+        "tbtc_total_supply": 227.80316771949268
+    },
+    {
+        "date": "2024-06-13",
+        "wbtc_total_supply": 686.67218749,
+        "tbtc_total_supply": 227.80316771949268
+    },
+    {
+        "date": "2024-06-14",
+        "wbtc_total_supply": 686.97500115,
+        "tbtc_total_supply": 227.80316771949268
+    },
+    {
+        "date": "2024-06-15",
+        "wbtc_total_supply": 686.30188379,
+        "tbtc_total_supply": 227.80316771949268
+    },
+    {
+        "date": "2024-06-16",
+        "wbtc_total_supply": 686.54194482,
+        "tbtc_total_supply": 227.55316771949268
+    },
+    {
+        "date": "2024-06-17",
+        "wbtc_total_supply": 686.62370144,
+        "tbtc_total_supply": 227.5551677194927
+    },
+    {
+        "date": "2024-06-18",
+        "wbtc_total_supply": 686.54034908,
+        "tbtc_total_supply": 226.53723824949267
+    },
+    {
+        "date": "2024-06-19",
+        "wbtc_total_supply": 676.15973545,
+        "tbtc_total_supply": 226.53723824949267
+    },
+    {
+        "date": "2024-06-20",
+        "wbtc_total_supply": 676.05585901,
+        "tbtc_total_supply": 226.53723824949267
+    },
+    {
+        "date": "2024-06-21",
+        "wbtc_total_supply": 676.22286091,
+        "tbtc_total_supply": 226.53643572949267
+    },
+    {
+        "date": "2024-06-22",
+        "wbtc_total_supply": 692.80687733,
+        "tbtc_total_supply": 226.53643572949267
+    },
+    {
+        "date": "2024-06-23",
+        "wbtc_total_supply": 696.12127834,
+        "tbtc_total_supply": 226.53643572949267
+    },
+    {
+        "date": "2024-06-24",
+        "wbtc_total_supply": 695.50967558,
+        "tbtc_total_supply": 226.53643572949267
+    },
+    {
+        "date": "2024-06-25",
+        "wbtc_total_supply": 693.60076153,
+        "tbtc_total_supply": 226.53636712949267
+    },
+    {
+        "date": "2024-06-26",
+        "wbtc_total_supply": 692.53329339,
+        "tbtc_total_supply": 226.53479226949267
+    },
+    {
+        "date": "2024-06-27",
+        "wbtc_total_supply": 691.53108432,
+        "tbtc_total_supply": 226.11203867797425
+    },
+    {
+        "date": "2024-06-28",
+        "wbtc_total_supply": 737.351382,
+        "tbtc_total_supply": 226.10302024797426
+    },
+    {
+        "date": "2024-06-29",
+        "wbtc_total_supply": 737.29996118,
+        "tbtc_total_supply": 226.09847724797424
+    },
+    {
+        "date": "2024-06-30",
+        "wbtc_total_supply": 737.06728454,
+        "tbtc_total_supply": 226.0771912201768
+    },
+    {
+        "date": "2024-07-01",
+        "wbtc_total_supply": 725.83301527,
+        "tbtc_total_supply": 226.0750213843528
+    },
+    {
+        "date": "2024-07-02",
+        "wbtc_total_supply": 906.05621438,
+        "tbtc_total_supply": 226.0093512863853
+    },
+    {
+        "date": "2024-07-03",
+        "wbtc_total_supply": 905.88016245,
+        "tbtc_total_supply": 226.0093512863853
+    },
+    {
+        "date": "2024-07-04",
+        "wbtc_total_supply": 903.22607521,
+        "tbtc_total_supply": 227.00886128638533
+    },
+    {
+        "date": "2024-07-05",
+        "wbtc_total_supply": 901.39956707,
+        "tbtc_total_supply": 227.8771116763853
+    },
+    {
+        "date": "2024-07-06",
+        "wbtc_total_supply": 899.20642164,
+        "tbtc_total_supply": 227.8767196763853
+    },
+    {
+        "date": "2024-07-07",
+        "wbtc_total_supply": 898.95944034,
+        "tbtc_total_supply": 227.87450485253498
+    },
+    {
+        "date": "2024-07-08",
+        "wbtc_total_supply": 898.77234635,
+        "tbtc_total_supply": 227.86725281710866
+    },
+    {
+        "date": "2024-07-09",
+        "wbtc_total_supply": 898.60302284,
+        "tbtc_total_supply": 227.86684121710869
+    },
+    {
+        "date": "2024-07-10",
+        "wbtc_total_supply": 898.64390824,
+        "tbtc_total_supply": 227.78944615306236
+    },
+    {
+        "date": "2024-07-11",
+        "wbtc_total_supply": 896.99254069,
+        "tbtc_total_supply": 227.78395615306235
+    },
+    {
+        "date": "2024-07-12",
+        "wbtc_total_supply": 898.89335114,
+        "tbtc_total_supply": 227.78395615306235
+    },
+    {
+        "date": "2024-07-13",
+        "wbtc_total_supply": 898.84684853,
+        "tbtc_total_supply": 227.78395615306235
+    },
+    {
+        "date": "2024-07-14",
+        "wbtc_total_supply": 899.58932552,
+        "tbtc_total_supply": 227.78395615306235
+    },
+    {
+        "date": "2024-07-15",
+        "wbtc_total_supply": 895.52411833,
+        "tbtc_total_supply": 227.79989173306237
+    },
+    {
+        "date": "2024-07-16",
+        "wbtc_total_supply": 882.83549679,
+        "tbtc_total_supply": 227.80079173306237
+    },
+    {
+        "date": "2024-07-17",
+        "wbtc_total_supply": 881.63268412,
+        "tbtc_total_supply": 227.7158296614762
+    },
+    {
+        "date": "2024-07-18",
+        "wbtc_total_supply": 881.45810741,
+        "tbtc_total_supply": 227.7158296614762
+    },
+    {
+        "date": "2024-07-19",
+        "wbtc_total_supply": 866.43366733,
+        "tbtc_total_supply": 227.07881573613196
+    },
+    {
+        "date": "2024-07-20",
+        "wbtc_total_supply": 866.24201161,
+        "tbtc_total_supply": 226.9906000159146
+    },
+    {
+        "date": "2024-07-21",
+        "wbtc_total_supply": 866.14643005,
+        "tbtc_total_supply": 226.9906000159146
+    },
+    {
+        "date": "2024-07-22",
+        "wbtc_total_supply": 861.54587037,
+        "tbtc_total_supply": 226.99011040591458
+    },
+    {
+        "date": "2024-07-23",
+        "wbtc_total_supply": 861.46421417,
+        "tbtc_total_supply": 226.99011040591458
+    },
+    {
+        "date": "2024-07-24",
+        "wbtc_total_supply": 861.47957875,
+        "tbtc_total_supply": 226.99011040591458
+    },
+    {
+        "date": "2024-07-25",
+        "wbtc_total_supply": 860.86201404,
+        "tbtc_total_supply": 226.98388837176526
+    },
+    {
+        "date": "2024-07-26",
+        "wbtc_total_supply": 860.6492976,
+        "tbtc_total_supply": 226.98388837176526
+    },
+    {
+        "date": "2024-07-27",
+        "wbtc_total_supply": 860.48404685,
+        "tbtc_total_supply": 226.88546107835597
+    },
+    {
+        "date": "2024-07-28",
+        "wbtc_total_supply": 855.98059401,
+        "tbtc_total_supply": 226.86959478927378
+    },
+    {
+        "date": "2024-07-29",
+        "wbtc_total_supply": 855.52927675,
+        "tbtc_total_supply": 226.86959478927378
+    },
+    {
+        "date": "2024-07-30",
+        "wbtc_total_supply": 854.7306353,
+        "tbtc_total_supply": 226.86959478927378
+    },
+    {
+        "date": "2024-07-31",
+        "wbtc_total_supply": 854.7306353,
+        "tbtc_total_supply": 226.86959478927378
+    },
+    {
+        "date": "2024-08-01",
+        "wbtc_total_supply": 854.40835686,
+        "tbtc_total_supply": 226.8512672911447
+    },
+    {
+        "date": "2024-08-02",
+        "wbtc_total_supply": 844.42262192,
+        "tbtc_total_supply": 226.8512672911447
+    },
+    {
+        "date": "2024-08-03",
+        "wbtc_total_supply": 842.99650817,
+        "tbtc_total_supply": 226.8512672911447
+    },
+    {
+        "date": "2024-08-04",
+        "wbtc_total_supply": 841.13150179,
+        "tbtc_total_supply": 226.85821436105698
+    },
+    {
+        "date": "2024-08-05",
+        "wbtc_total_supply": 810.08811556,
+        "tbtc_total_supply": 226.85675650105696
+    },
+    {
+        "date": "2024-08-06",
+        "wbtc_total_supply": 809.54502049,
+        "tbtc_total_supply": 226.85675650105696
+    },
+    {
+        "date": "2024-08-07",
+        "wbtc_total_supply": 805.54693478,
+        "tbtc_total_supply": 226.85675650105696
+    },
+    {
+        "date": "2024-08-08",
+        "wbtc_total_supply": 805.54534472,
+        "tbtc_total_supply": 226.83245250105696
+    },
+    {
+        "date": "2024-08-09",
+        "wbtc_total_supply": 805.04882889,
+        "tbtc_total_supply": 226.85077999918605
+    },
+    {
+        "date": "2024-08-10",
+        "wbtc_total_supply": 804.61153817,
+        "tbtc_total_supply": 228.11880799918603
+    },
+    {
+        "date": "2024-08-11",
+        "wbtc_total_supply": 801.78435969,
+        "tbtc_total_supply": 228.11880799918603
+    },
+    {
+        "date": "2024-08-12",
+        "wbtc_total_supply": 800.90540235,
+        "tbtc_total_supply": 228.11880799918603
+    },
+    {
+        "date": "2024-08-13",
+        "wbtc_total_supply": 799.40792388,
+        "tbtc_total_supply": 228.11763219918603
+    },
+    {
+        "date": "2024-08-14",
+        "wbtc_total_supply": 792.64061517,
+        "tbtc_total_supply": 228.11763219918603
+    },
+    {
+        "date": "2024-08-15",
+        "wbtc_total_supply": 785.72361585,
+        "tbtc_total_supply": 228.11763219918603
+    },
+    {
+        "date": "2024-08-16",
+        "wbtc_total_supply": 780.09690035,
+        "tbtc_total_supply": 228.11892991918603
+    },
+    {
+        "date": "2024-08-17",
+        "wbtc_total_supply": 777.78673816,
+        "tbtc_total_supply": 228.11892991918603
+    },
+    {
+        "date": "2024-08-18",
+        "wbtc_total_supply": 777.44507797,
+        "tbtc_total_supply": 228.11829974918604
+    },
+    {
+        "date": "2024-08-19",
+        "wbtc_total_supply": 774.80481662,
+        "tbtc_total_supply": 228.11829974918604
+    },
+    {
+        "date": "2024-08-20",
+        "wbtc_total_supply": 774.36604807,
+        "tbtc_total_supply": 228.11829974918604
+    },
+    {
+        "date": "2024-08-21",
+        "wbtc_total_supply": 773.37938433,
+        "tbtc_total_supply": 228.11829974918604
+    },
+    {
+        "date": "2024-08-22",
+        "wbtc_total_supply": 753.74854943,
+        "tbtc_total_supply": 228.11829974918604
+    },
+    {
+        "date": "2024-08-23",
+        "wbtc_total_supply": 753.07497555,
+        "tbtc_total_supply": 228.11829974918604
+    },
+    {
+        "date": "2024-08-24",
+        "wbtc_total_supply": 751.81357417,
+        "tbtc_total_supply": 228.11785874918604
+    },
+    {
+        "date": "2024-08-25",
+        "wbtc_total_supply": 751.49024103,
+        "tbtc_total_supply": 228.11785874918604
+    },
+    {
+        "date": "2024-08-26",
+        "wbtc_total_supply": 751.37325425,
+        "tbtc_total_supply": 228.11785874918604
+    },
+    {
+        "date": "2024-08-27",
+        "wbtc_total_supply": 752.35358825,
+        "tbtc_total_supply": 230.61785874918604
+    },
+    {
+        "date": "2024-08-28",
+        "wbtc_total_supply": 746.83823305,
+        "tbtc_total_supply": 230.61785874918604
+    }
+]

@@ -2,9 +2,11 @@
 
 import React, { useState, useEffect } from "react";
 import { Opcode } from "./opcodeProps";
+import { useTranslations } from "next-intl";
 
 const OpcodeMenu: React.FC<{ opcode: Opcode }> = ({ opcode }) => {
     const [activeSection, setActiveSection] = useState("overview");
+    const t = useTranslations("opcode");
 
     useEffect(() => {
         const handleScroll = () => {
@@ -47,7 +49,7 @@ const OpcodeMenu: React.FC<{ opcode: Opcode }> = ({ opcode }) => {
                 {/*  menu is updating with coloring to match the live section */}
 
                 {[
-                    { id: "overview", title: "Overview" },
+                    { id: "overview", title: t("overview") },
                     ...opcode.sections,
                 ].map((section, index) => (
                     <div

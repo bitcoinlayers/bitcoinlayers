@@ -2,10 +2,12 @@ import React from "react";
 import { Infrastructure } from "./infrastructureProps";
 import Link from "next/link";
 import { parseTextWithLinks } from "@/util/parseTextWithLinks";
+import { useTranslations } from "next-intl";
 
 const InfrastructureBody: React.FC<{ infrastructure: Infrastructure }> = ({
     infrastructure,
 }) => {
+    const t = useTranslations("infrastructure");
     return (
         <main className="content flex-grow sm:mt-0 pt-0">
             {infrastructure.sections.map((section, index) => (
@@ -42,7 +44,7 @@ const InfrastructureBody: React.FC<{ infrastructure: Infrastructure }> = ({
             >
                 <div className="self-stretch justify-start items-start gap-4 inline-flex">
                     <div className="text-zinc-800 text-3xl font-light font-['Public Sans'] leading-9">
-                        Knowledge Bits
+                        {t("knowledge-bits")}
                     </div>
                 </div>
                 {infrastructure.knowledgeBits.map((link) => (
