@@ -1,14 +1,14 @@
 {
     "slug": "lombard",
     "title": "Lombard",
-    "infrastructureType": "Application",
+    "infrastructureType": "Liquid Staking",
     "live": "Mainnet",
     "staking": true,
     "bridge": false,
     "underReview": "no",
     "riskFactors": ["", ""],
     "bitcoinSecurity": "No",
-    "nativeToken": "BTC",
+    "nativeToken": "LBTC",
     "purpose": "Staking",
     "associatedLayers": "Ethereum",
     "bitcoinOnly": true,
@@ -20,7 +20,7 @@
         "https://github.com/lombard-finance",
         "https://x.com/Lombard_Finance"
     ],
-    "description": "Lombard is a staking protocol on Etherem.",
+    "description": "Lombard is a liquid staking protocol where a security consortium network stakes assets on users' behalf.",
     "sections": [
         {
             "id": "assessment",
@@ -49,6 +49,16 @@
                 {
                     "title": "Smart contracts & audits",
                     "content": "Lombard has published audit reports on its smart contracts here.\n\nThe code behind Lombard’s is also source viewable here.\n\n⚠️ Audits of smart contracts do not mean exploits are not possible. Users should not deposit more funds than they’re willing to lose."
+                }
+            ]
+        },
+        {
+            "id": "knowledgeBits",
+            "title": "Knowledge Bits",
+            "content": [
+                {
+                    "title": "Learn more",
+                    "content": "[Lombard's documentation site](https://docs.gobob.xyz/docs/learn/security/privileged-roles)"
                 }
             ]
         }
