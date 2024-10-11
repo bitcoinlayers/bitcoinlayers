@@ -45,12 +45,20 @@ const tbtc: Infrastructure = tbtcJson as Infrastructure;
 import lombardJson from "../content/infrastructures/lombard.json" assert { type:
     "json" };
 const lombard: Infrastructure = lombardJson as Infrastructure;
+import wbtcJson from "../content/infrastructures/wbtc.json" assert { type:
+    "json" };
+const wbtc: Infrastructure = wbtcJson as Infrastructure;
+import cbbtcJson from "../content/infrastructures/cbbtc.json" assert { type:
+    "json" };
+const cbbtc: Infrastructure = cbbtcJson as Infrastructure;
 
 export const allInfrastructures: Infrastructure[] = [
     cashu,
     fedimint,
     lombard,
     tbtc,
+    wbtc,
+    cbbtc,
     dlclink,
     bool,
     nubit,
