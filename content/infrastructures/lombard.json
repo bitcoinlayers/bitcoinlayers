@@ -1,7 +1,7 @@
 {
     "slug": "lombard",
     "title": "Lombard",
-    "infrastructureType": "Staking",
+    "infrastructureType": "Application",
     "live": "Mainnet",
     "staking": true,
     "underReview": "no",
@@ -9,7 +9,7 @@
     "bitcoinSecurity": "No",
     "nativeToken": "BTC",
     "purpose": "Staking",
-    "associatedLayers": "-",
+    "associatedLayers": "Ethereum",
     "bitcoinOnly": true,
     "links": [
         "https://www.lombard.finance/app/",
@@ -19,7 +19,7 @@
         "https://github.com/lombard-finance",
         "https://x.com/Lombard_Finance"
     ],
-    "description": "Lombard...",
+    "description": "Lombard is a staking protocol on Etheruem.",
     "sections": [
         {
             "id": "assessment",
