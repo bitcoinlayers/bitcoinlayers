@@ -6,6 +6,7 @@ export interface Balance {
     date: string;
     identifier: string;
     layer_name: string;
+    layer_slug: string;
     token_name: string;
 }
 
