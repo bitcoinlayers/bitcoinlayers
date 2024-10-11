@@ -75,27 +75,27 @@ const LayerTableAll = ({ data, headers, showToggleGroup = true }: Props) => {
 
         return balances.reduce(
             (acc, balance) => {
-                const { layer_name, token_name, amount, date } = balance;
+                const { layer_slug, token_name, amount, date } = balance;
 
-                if (!acc[layer_name]) {
-                    acc[layer_name] = { totalAmount: 0, tokens: {} };
+                if (!acc[layer_slug]) {
+                    acc[layer_slug] = { totalAmount: 0, tokens: {} };
                 }
 
                 if (
-                    !acc[layer_name].tokens[token_name] ||
+                    !acc[layer_slug].tokens[token_name] ||
                     new Date(date) >
-                        new Date(acc[layer_name].tokens[token_name].date)
+                        new Date(acc[layer_slug].tokens[token_name].date)
                 ) {
                     // If token doesn't exist or current date is newer, update the token data
-                    if (acc[layer_name].tokens[token_name]) {
+                    if (acc[layer_slug].tokens[token_name]) {
                         // Subtract old amount from total if token already existed
-                        acc[layer_name].totalAmount -=
-                            acc[layer_name].tokens[token_name].amount;
+                        acc[layer_slug].totalAmount -=
+                            acc[layer_slug].tokens[token_name].amount;
                     }
 
                     // Update token data and add new amount to total
-                    acc[layer_name].tokens[token_name] = { amount, date };
-                    acc[layer_name].totalAmount += amount;
+                    acc[layer_slug].tokens[token_name] = { amount, date };
+                    acc[layer_slug].totalAmount += amount;
                 }
 
                 return acc;
@@ -382,15 +382,9 @@ const LayerTableAll = ({ data, headers, showToggleGroup = true }: Props) => {
                                                 <div>
                                                     ₿{" "}
                                                     {Number(
-                                                        Object.entries(
-                                                            totaledBalances,
-                                                        ).find(([key]) =>
-                                                            key
-                                                                .toLowerCase()
-                                                                .includes(
-                                                                    item.title.toLowerCase(),
-                                                                ),
-                                                        )?.[1]?.totalAmount ??
+                                                        totaledBalances[
+                                                            item.slug
+                                                        ]?.totalAmount ??
                                                             item.btcLocked,
                                                     ).toLocaleString("en-US", {
                                                         minimumFractionDigits: 0,
