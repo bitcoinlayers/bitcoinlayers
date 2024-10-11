@@ -36,27 +36,21 @@ const dlclink: Infrastructure = dlclinkJson as Infrastructure;
 import boolJson from "../content/infrastructures/bool.json" assert { type:
     "json" };
 const bool: Infrastructure = boolJson as Infrastructure;
-import tbtcJson from "../content/infrastructures/tbtc.json" assert { type:
-    "json" };
-const tbtc: Infrastructure = tbtcJson as Infrastructure;
 import cashuJson from "../content/infrastructures/cashu.json" assert { type:
     "json" };
 const cashu: Infrastructure = cashuJson as Infrastructure;
+import tbtcJson from "../content/infrastructures/tbtc.json" assert { type:
+    "json" };
+const tbtc: Infrastructure = cashuJson as Infrastructure;
 
 export const allInfrastructures: Infrastructure[] = [
-    astria,
-    avail,
-    celestia,
-    espresso,
-    lorenzo,
-    sovereign,
     nubit,
     babylon,
     fedimint,
     dlclink,
     bool,
-    tbtc,
     cashu,
+    tbtc,
 ];
 export const allInfrastructureSlugs: string[] = allInfrastructures.map(
     (infrastructure) => infrastructure.slug,
