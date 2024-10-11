@@ -6,7 +6,6 @@ export interface Balance {
     date: string;
     identifier: string;
     layer_name: string;
-    layer_slug: string;
     token_name: string;
 }
 
@@ -14,12 +13,16 @@ interface Props {
     queryString?: string;
 }
 
-export default function useGetBalances({ queryString }: Props = {}) {
+export default function useGetBalancesAlt({ queryString }: Props = {}) {
     const response = useQuery<Balance[]>({
-        queryKey: [queryString ? `get_balances${queryString}` : "get_balances"],
+        queryKey: [
+            queryString
+                ? `get_all_balances_alt_individual${queryString}`
+                : "get_all_balances_alt_individual",
+        ],
         queryFn: () => {
             return fetcher(
-                `${process.env.NEXT_PUBLIC_API_URL}/get_balances${queryString ?? ""}`,
+                `${process.env.NEXT_PUBLIC_API_URL}/get_all_balances_alt_individual${queryString ?? ""}`,
             );
         },
     });

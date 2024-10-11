@@ -25,7 +25,7 @@ import {
 } from "@/components/ui/select";
 import { useQueryState } from "nuqs";
 import { useMemo, useCallback } from "react";
-import useGetBalances from "@/hooks/use-get-balances";
+import useGetBalances from "@/hooks/use-get-all-balances-individual";
 
 interface ProcessedData {
     date: string;

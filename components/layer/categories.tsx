@@ -1,6 +1,8 @@
 "use client";
 
-import useGetBalances, { Balance } from "@/hooks/use-get-balances";
+import useGetBalances, {
+    Balance,
+} from "@/hooks/use-get-all-balances-individual";
 import { Layer } from "./layerProps";
 import { useParams } from "next/navigation";
 import { useMemo } from "react";
@@ -21,12 +23,23 @@ const Categories: React.FC<{ layer: Layer }> = ({ layer }) => {
         data.forEach((balance) => {
             const { token_name, amount, date } = balance;
 
-            if (!latestTokenAmounts[token_name] || new Date(date) > new Date((latestTokenAmounts[token_name])?.date || 0)) {
-                (latestTokenAmounts[token_name] as Balance) = { ...balance, amount, date };
+            if (
+                !latestTokenAmounts[token_name] ||
+                new Date(date) >
+                    new Date(latestTokenAmounts[token_name]?.date || 0)
+            ) {
+                (latestTokenAmounts[token_name] as Balance) = {
+                    ...balance,
+                    amount,
+                    date,
+                };
             }
         });
 
-        return Object.values(latestTokenAmounts).reduce((sum, amount) => sum + Number(amount.amount), 0);
+        return Object.values(latestTokenAmounts).reduce(
+            (sum, amount) => sum + Number(amount.amount),
+            0,
+        );
     }, [data]);
 
     return (
@@ -54,12 +67,13 @@ const Categories: React.FC<{ layer: Layer }> = ({ layer }) => {
                     TVL
                 </div>
                 <div className="text-zinc-800 text-base font-normal leading-normal">
-                    ₿{" "}
-                    {/* Fallback to layer.btcLocked */}
-                    {totalAmount ? totalAmount.toLocaleString("en-US", {
-                        minimumFractionDigits: 0,
-                        maximumFractionDigits: 0,
-                    }) : layer.btcLocked}
+                    ₿ {/* Fallback to layer.btcLocked */}
+                    {totalAmount
+                        ? totalAmount.toLocaleString("en-US", {
+                              minimumFractionDigits: 0,
+                              maximumFractionDigits: 0,
+                          })
+                        : layer.btcLocked}
                 </div>
             </div>
         </div>

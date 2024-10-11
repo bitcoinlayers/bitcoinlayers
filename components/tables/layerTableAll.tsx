@@ -8,7 +8,7 @@ import TableHeader from "@/components/tables/tableHeader";
 import { MobileView, isMobile } from "react-device-detect";
 import Link from "next/link";
 import { useQueryState } from "nuqs";
-import useGetBalances from "@/hooks/use-get-balances";
+import useGetBalances from "@/hooks/use-get-all-balances-individual";
 
 type TableTabKey =
     | "Risk"

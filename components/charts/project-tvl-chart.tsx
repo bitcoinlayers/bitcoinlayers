@@ -19,7 +19,7 @@ import {
 import { useQueryState } from "nuqs";
 import { useCallback, useMemo, useState } from "react";
 import { useParams } from "next/navigation";
-import useGetBalances from "@/hooks/use-get-balances";
+import useGetBalances from "@/hooks/use-get-all-balances-individual";
 
 interface ProcessedData {
     date: string;
