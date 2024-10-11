@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import Image from "next/image";
 import { Layer } from "@/components/layer/layerProps";
 import Risk from "@/components/layer/layerTableItemRisk";
@@ -8,7 +8,7 @@ import TableHeader from "@/components/tables/tableHeader";
 import { MobileView, isMobile } from "react-device-detect";
 import Link from "next/link";
 import { useQueryState } from "nuqs";
-import { useMemo } from "react";
+import useGetBalances from "@/hooks/use-get-balances";
 
 type TableTabKey =
     | "Risk"
@@ -65,6 +65,50 @@ const LayerTableAll = ({ data, headers, showToggleGroup = true }: Props) => {
     const [sortOrder, setSortOrder] = useQueryState("sortOrder", {
         defaultValue: "asc",
     });
+
+    const { data: balances } = useGetBalances({
+        queryString: `?date=gte.${new Date(Date.now() - 86400000).toDateString()}`,
+    });
+
+    const totaledBalances = useMemo(() => {
+        if (!balances) return {};
+
+        return balances.reduce(
+            (acc, balance) => {
+                const { layer_name, token_name, amount, date } = balance;
+
+                if (!acc[layer_name]) {
+                    acc[layer_name] = { totalAmount: 0, tokens: {} };
+                }
+
+                if (
+                    !acc[layer_name].tokens[token_name] ||
+                    new Date(date) >
+                        new Date(acc[layer_name].tokens[token_name].date)
+                ) {
+                    // If token doesn't exist or current date is newer, update the token data
+                    if (acc[layer_name].tokens[token_name]) {
+                        // Subtract old amount from total if token already existed
+                        acc[layer_name].totalAmount -=
+                            acc[layer_name].tokens[token_name].amount;
+                    }
+
+                    // Update token data and add new amount to total
+                    acc[layer_name].tokens[token_name] = { amount, date };
+                    acc[layer_name].totalAmount += amount;
+                }
+
+                return acc;
+            },
+            {} as Record<
+                string,
+                {
+                    totalAmount: number;
+                    tokens: Record<string, { amount: number; date: string }>;
+                }
+            >,
+        );
+    }, [balances]);
 
     const [mobileActiveTab, setMobileActiveTab] = useState<TableTabKey>("Risk");
 
@@ -324,8 +368,13 @@ const LayerTableAll = ({ data, headers, showToggleGroup = true }: Props) => {
                                     <td className="lg:px-6 px-4 py-3 lg:py-4 border-r border-stroke_tertiary text_table_important">
                                         <Link href={`/layers/${item.slug}`}>
                                             {item.underReview === "yes" ||
-                                            item.btcLocked === null ||
-                                            isNaN(item.btcLocked) ? (
+                                            (Object.keys(totaledBalances).find(
+                                                (key) =>
+                                                    key.toLowerCase() ===
+                                                    item.title.toLowerCase(),
+                                            ) === undefined &&
+                                                (item.btcLocked === null ||
+                                                    isNaN(item.btcLocked))) ? (
                                                 <div className="font-light">
                                                     Under review
                                                 </div>
@@ -333,8 +382,20 @@ const LayerTableAll = ({ data, headers, showToggleGroup = true }: Props) => {
                                                 <div>
                                                     ₿{" "}
                                                     {Number(
-                                                        item.btcLocked,
-                                                    ).toLocaleString()}
+                                                        Object.entries(
+                                                            totaledBalances,
+                                                        ).find(([key]) =>
+                                                            key
+                                                                .toLowerCase()
+                                                                .includes(
+                                                                    item.title.toLowerCase(),
+                                                                ),
+                                                        )?.[1]?.totalAmount ??
+                                                            item.btcLocked,
+                                                    ).toLocaleString("en-US", {
+                                                        minimumFractionDigits: 0,
+                                                        maximumFractionDigits: 0,
+                                                    })}
                                                 </div>
                                             )}
                                         </Link>
