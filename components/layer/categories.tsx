@@ -12,6 +12,11 @@ const Categories: React.FC<{ layer: Layer }> = ({ layer }) => {
 
     const { data: balances } = useGetCurrentBalancesPerLayer();
 
+    const matchingBalance = useMemo(() => {
+        if (!balances) return null;
+        return balances.find((balance) => balance.layer_slug === layer.slug);
+    }, [balances, layer.slug]);
+
     return (
         <div className="lg:flex lg:justify-between w-full grid grid-cols-2 gap-4">
             <div className="flex-col lg:justify-center lg:items-start pl-4 lg:pl-0">
@@ -38,8 +43,8 @@ const Categories: React.FC<{ layer: Layer }> = ({ layer }) => {
                 </div>
                 <div className="text-zinc-800 text-base font-normal leading-normal">
                     ₿ {/* Fallback to layer.btcLocked */}
-                    {balances
-                        ? balances.toLocaleString("en-US", {
+                    {matchingBalance
+                        ? matchingBalance.total_amount.toLocaleString("en-US", {
                               minimumFractionDigits: 0,
                               maximumFractionDigits: 0,
                           })

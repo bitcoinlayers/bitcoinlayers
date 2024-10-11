@@ -12,16 +12,18 @@ interface Props {
     queryString?: string;
 }
 
-export default function useGetCombinedBalances({ queryString }: Props = {}) {
+export default function useGetCurrentBalancesPerLayer({
+    queryString,
+}: Props = {}) {
     const response = useQuery<Balance[]>({
         queryKey: [
             queryString
-                ? `get-current-balances-perlayer${queryString}`
-                : "get-current-balances-perlayer",
+                ? `get_current_balances_perlayer${queryString}`
+                : "get_current_balances_perlayer",
         ],
         queryFn: () => {
             return fetcher(
-                `${process.env.NEXT_PUBLIC_API_URL}/get-current-balances-perlayer${queryString ?? ""}`,
+                `${process.env.NEXT_PUBLIC_API_URL}/get_current_balances_perlayer${queryString ?? ""}`,
             );
         },
     });
