@@ -12,11 +12,12 @@
     "associatedLayers": "-",
     "bitcoinOnly": true,
     "links": [
-        "https://fedimint.org",
-        "https://fedimint.org",
-        "https://fedimint.org/docs/intro",
-        "https://github.com/fedimint",
-        "https://x.com/fedimint"
+        "https://www.lombard.finance/app/",
+        "https://docs.lombard.finance/",
+        "https://docs.lombard.finance/",
+        "https://docs.lombard.finance/",
+        "https://github.com/lombard-finance",
+        "https://x.com/Lombard_Finance"
     ],
     "description": "Lombard...",
     "sections": [
