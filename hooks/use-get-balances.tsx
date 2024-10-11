@@ -10,16 +10,18 @@ export interface Balance {
 }
 
 interface Props {
-    queryString?: string
+    queryString?: string;
 }
 
 export default function useGetBalances({ queryString }: Props = {}) {
     const response = useQuery<Balance[]>({
-        queryKey: [queryString ? `get_balances${queryString}` : 'get_balances'],
+        queryKey: [queryString ? `get_balances${queryString}` : "get_balances"],
         queryFn: () => {
-            return fetcher(`${process.env.NEXT_PUBLIC_API_URL}/get_balances${queryString ?? ''}`);
-        }
-    })
+            return fetcher(
+                `${process.env.NEXT_PUBLIC_API_URL}/get_balances${queryString ?? ""}`,
+            );
+        },
+    });
 
-    return response
+    return response;
 }

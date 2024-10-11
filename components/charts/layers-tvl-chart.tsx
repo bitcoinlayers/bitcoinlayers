@@ -40,7 +40,7 @@ export default function LayersTVLChart() {
         defaultValue: "3mo",
     });
 
-    const { data } = useGetBalances()
+    const { data } = useGetBalances();
 
     const layers =
         chartType === "combined"

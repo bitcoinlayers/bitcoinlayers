@@ -67,21 +67,28 @@ const LayerTableAll = ({ data, headers, showToggleGroup = true }: Props) => {
     });
 
     const { data: balances } = useGetBalances({
-        queryString: `?date=gte.${new Date(Date.now() - 86400000).toDateString()}`
-    })
+        queryString: `?date=gte.${new Date(Date.now() - 86400000).toDateString()}`,
+    });
 
     const organizedBalances = useMemo(() => {
         if (!balances) return {};
 
-        return balances.reduce((acc, balance) => {
-            if (!acc[balance.layer_name] || new Date(balance.date) > new Date(acc[balance.layer_name].date)) {
-                acc[balance.layer_name] = {
-                    amount: balance.amount,
-                    date: balance.date
-                };
-            }
-            return acc;
-        }, {} as Record<string, { amount: number; date: string }>);
+        return balances.reduce(
+            (acc, balance) => {
+                if (
+                    !acc[balance.layer_name] ||
+                    new Date(balance.date) >
+                        new Date(acc[balance.layer_name].date)
+                ) {
+                    acc[balance.layer_name] = {
+                        amount: balance.amount,
+                        date: balance.date,
+                    };
+                }
+                return acc;
+            },
+            {} as Record<string, { amount: number; date: string }>,
+        );
     }, [balances]);
 
     const [mobileActiveTab, setMobileActiveTab] = useState<TableTabKey>("Risk");
@@ -342,8 +349,15 @@ const LayerTableAll = ({ data, headers, showToggleGroup = true }: Props) => {
                                     <td className="lg:px-6 px-4 py-3 lg:py-4 border-r border-stroke_tertiary text_table_important">
                                         <Link href={`/layers/${item.slug}`}>
                                             {item.underReview === "yes" ||
-                                            (Object.keys(organizedBalances).find(key => key.toLowerCase() === item.title.toLowerCase()) === undefined && 
-                                             (item.btcLocked === null || isNaN(item.btcLocked))) ? (
+                                            (Object.keys(
+                                                organizedBalances,
+                                            ).find(
+                                                (key) =>
+                                                    key.toLowerCase() ===
+                                                    item.title.toLowerCase(),
+                                            ) === undefined &&
+                                                (item.btcLocked === null ||
+                                                    isNaN(item.btcLocked))) ? (
                                                 <div className="font-light">
                                                     Under review
                                                 </div>
@@ -351,8 +365,17 @@ const LayerTableAll = ({ data, headers, showToggleGroup = true }: Props) => {
                                                 <div>
                                                     ₿{" "}
                                                     {Number(
-                                                        Object.entries(organizedBalances).find(([key]) => key.toLowerCase().includes(item.title.toLowerCase()))?.[1]?.amount ?? item.btcLocked
-                                                    ).toLocaleString('en-US', {
+                                                        Object.entries(
+                                                            organizedBalances,
+                                                        ).find(([key]) =>
+                                                            key
+                                                                .toLowerCase()
+                                                                .includes(
+                                                                    item.title.toLowerCase(),
+                                                                ),
+                                                        )?.[1]?.amount ??
+                                                            item.btcLocked,
+                                                    ).toLocaleString("en-US", {
                                                         minimumFractionDigits: 0,
                                                         maximumFractionDigits: 0,
                                                     })}

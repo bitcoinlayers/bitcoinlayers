@@ -38,8 +38,8 @@ export default function ProjectTVLChart() {
     });
 
     const { data } = useGetBalances({
-        queryString: `?layer_name=ilike.${slug}`
-     })
+        queryString: `?layer_name=ilike.${slug}`,
+    });
 
     const tokens = useMemo(
         () =>
@@ -143,7 +143,7 @@ export default function ProjectTVLChart() {
         }, 0);
 
         return {
-            TVL: tvl
+            TVL: tvl,
         };
     }, [data, dateRange, tokens]);
 
