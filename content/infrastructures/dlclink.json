@@ -4,6 +4,7 @@
     "infrastructureType": "BTC Wrapper",
     "live": "Mainnet",
     "staking": false,
+    "bridge": true,
     "underReview": "yes",
     "riskFactors": ["", ""],
     "bitcoinSecurity": "yes",

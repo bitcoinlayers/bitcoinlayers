@@ -4,6 +4,7 @@
     "infrastructureType": "Bridge",
     "live": "Announced",
     "staking": false,
+    "bridge": false,
     "underReview": "yes",
     "riskFactors": ["", ""],
     "bitcoinSecurity": "No",

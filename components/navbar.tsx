@@ -27,7 +27,7 @@ export default function Navbar(): ReactElement {
         "/",
         "/staking",
         "/bridges",
-        "/infrastructure",
+        "/ecash",
         "/bitcoinonly",
     ];
 
@@ -175,15 +175,12 @@ export default function Navbar(): ReactElement {
                                     </Link>
                                 </div>
                                 <div className="h-[88px] p-3 rounded-md flex-col justify-start items-start flex hover:bg-blue-100">
-                                    <Link
-                                        href="/infrastructure"
-                                        onClick={closeSubmenu}
-                                    >
+                                    <Link href="/ecash" onClick={closeSubmenu}>
                                         <div className="text-zinc-800 text-base font-medium leading-normal">
-                                            Infrastructure
+                                            Ecash
                                         </div>
                                         <div className="self-stretch text-slate-500 text-sm font-normal leading-tight">
-                                            Overview and risk analysis of layers
+                                            Overview and risk analysis of ecash
                                             infrastructure.
                                         </div>
                                     </Link>

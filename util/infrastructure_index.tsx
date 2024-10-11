@@ -46,7 +46,23 @@ import lombardJson from "../content/infrastructures/lombard.json" assert { type:
     "json" };
 const lombard: Infrastructure = lombardJson as Infrastructure;
 
-export const allInfrastructures: Infrastructure[] = [cashu, fedimint, lombard];
+export const allInfrastructures: Infrastructure[] = [
+    cashu,
+    fedimint,
+    lombard,
+    tbtc,
+    dlclink,
+    bool,
+    nubit,
+    sovereign,
+    lorenzo,
+    espresso,
+    celestia,
+    bvm,
+    avail,
+    astria,
+    babylon,
+];
 
 export const allInfrastructureSlugs: string[] = allInfrastructures.map(
     (infrastructure) => infrastructure.slug,

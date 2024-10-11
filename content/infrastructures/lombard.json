@@ -4,6 +4,7 @@
     "infrastructureType": "Application",
     "live": "Mainnet",
     "staking": true,
+    "bridge": false,
     "underReview": "no",
     "riskFactors": ["", ""],
     "bitcoinSecurity": "No",

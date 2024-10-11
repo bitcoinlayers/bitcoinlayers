@@ -4,6 +4,7 @@
     "infrastructureType": "Chaumian Ecash Protocol",
     "live": "Mainnet",
     "staking": false,
+    "bridge": false,
     "underReview": "no",
     "riskFactors": ["", ""],
     "bitcoinSecurity": "No",

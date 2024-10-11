@@ -4,6 +4,7 @@
     "infrastructureType": "Sequencing",
     "live": "Proposed",
     "staking": false,
+    "bridge": false,
     "underReview": "yes",
     "riskFactors": ["High", "High"],
     "bitcoinSecurity": "No",

@@ -1,7 +1,11 @@
-import type { Bridge } from "@/components/bridge/bridgeProps";
-import monetaJson from "../content/bridges/moneta.json" assert { type: "json" };
+import type { Infrastructure } from "@/components/infrastructure/infrastructureProps";
 
-const moneta: Bridge = monetaJson as Bridge;
+import tbtcJson from "../content/infrastructures/tbtc.json" assert { type:
+    "json" };
+const tbtc: Infrastructure = tbtcJson as Infrastructure;
 
-export const allBridges: Bridge[] = [moneta];
-export const allBridgeSlugs: string[] = allBridges.map((bridge) => bridge.slug);
+export const allBridges: Infrastructure[] = [tbtc];
+
+export const allBridgesSlugs: string[] = allBridges.map(
+    (infrastructure) => infrastructure.slug,
+);

@@ -4,6 +4,7 @@
     "infrastructureType": "Federation SDK",
     "live": "Mainnet",
     "staking": false,
+    "bridge": false,
     "underReview": "yes",
     "riskFactors": ["", ""],
     "bitcoinSecurity": "No",
