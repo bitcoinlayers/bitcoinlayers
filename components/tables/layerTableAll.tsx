@@ -70,24 +70,43 @@ const LayerTableAll = ({ data, headers, showToggleGroup = true }: Props) => {
         queryString: `?date=gte.${new Date(Date.now() - 86400000).toDateString()}`,
     });
 
-    const organizedBalances = useMemo(() => {
+    const totaledBalances = useMemo(() => {
         if (!balances) return {};
 
         return balances.reduce(
             (acc, balance) => {
-                if (
-                    !acc[balance.layer_name] ||
-                    new Date(balance.date) >
-                        new Date(acc[balance.layer_name].date)
-                ) {
-                    acc[balance.layer_name] = {
-                        amount: balance.amount,
-                        date: balance.date,
-                    };
+                const { layer_name, token_name, amount, date } = balance;
+
+                if (!acc[layer_name]) {
+                    acc[layer_name] = { totalAmount: 0, tokens: {} };
                 }
+
+                if (
+                    !acc[layer_name].tokens[token_name] ||
+                    new Date(date) >
+                        new Date(acc[layer_name].tokens[token_name].date)
+                ) {
+                    // If token doesn't exist or current date is newer, update the token data
+                    if (acc[layer_name].tokens[token_name]) {
+                        // Subtract old amount from total if token already existed
+                        acc[layer_name].totalAmount -=
+                            acc[layer_name].tokens[token_name].amount;
+                    }
+
+                    // Update token data and add new amount to total
+                    acc[layer_name].tokens[token_name] = { amount, date };
+                    acc[layer_name].totalAmount += amount;
+                }
+
                 return acc;
             },
-            {} as Record<string, { amount: number; date: string }>,
+            {} as Record<
+                string,
+                {
+                    totalAmount: number;
+                    tokens: Record<string, { amount: number; date: string }>;
+                }
+            >,
         );
     }, [balances]);
 
@@ -349,9 +368,7 @@ const LayerTableAll = ({ data, headers, showToggleGroup = true }: Props) => {
                                     <td className="lg:px-6 px-4 py-3 lg:py-4 border-r border-stroke_tertiary text_table_important">
                                         <Link href={`/layers/${item.slug}`}>
                                             {item.underReview === "yes" ||
-                                            (Object.keys(
-                                                organizedBalances,
-                                            ).find(
+                                            (Object.keys(totaledBalances).find(
                                                 (key) =>
                                                     key.toLowerCase() ===
                                                     item.title.toLowerCase(),
@@ -366,14 +383,14 @@ const LayerTableAll = ({ data, headers, showToggleGroup = true }: Props) => {
                                                     ₿{" "}
                                                     {Number(
                                                         Object.entries(
-                                                            organizedBalances,
+                                                            totaledBalances,
                                                         ).find(([key]) =>
                                                             key
                                                                 .toLowerCase()
                                                                 .includes(
                                                                     item.title.toLowerCase(),
                                                                 ),
-                                                        )?.[1]?.amount ??
+                                                        )?.[1]?.totalAmount ??
                                                             item.btcLocked,
                                                     ).toLocaleString("en-US", {
                                                         minimumFractionDigits: 0,
