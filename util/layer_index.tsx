@@ -133,7 +133,6 @@ export const allLayers: Layer[] = [
     fractal,
     yona,
     nexio,
-    highlayer,
     qed,
     bitfinity,
     bevm,
