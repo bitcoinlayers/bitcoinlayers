@@ -232,6 +232,11 @@ export default function Navbar(): ReactElement {
                         )}
                     </li>
                     <li className="hidden lg:block">
+                        <Link href="/?status=Charts" onClick={closeMenu}>
+                            Charts
+                        </Link>
+                    </li>
+                    <li className="hidden lg:block">
                         <Link href="/glossary" onClick={closeMenu}>
                             Glossary
                         </Link>
@@ -279,6 +284,15 @@ export default function Navbar(): ReactElement {
                             <SheetDescription className="text-base">
                                 <div className="pt-4 px-2">
                                     <ul className="flex flex-col items-start gap-y-6">
+                                        <li>
+                                            <Link
+                                                href="/?status=Charts"
+                                                className="text-black"
+                                                onClick={closeSheet}
+                                            >
+                                                Charts
+                                            </Link>
+                                        </li>
                                         <li>
                                             <Link
                                                 href="/glossary"
