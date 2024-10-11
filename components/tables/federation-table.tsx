@@ -271,7 +271,11 @@ const FederationTable = ({ data, headers }: Props) => {
                             >
                                 <td className="lg:px-6 px-4 py-4 font-semibold whitespace-nowrap border-r lg:border-r-0 border-stroke_tertiary text_table_important text-table_body">
                                     <Link
-                                        href={`/layers/${item.slug}?open=federation#riskanalysis`}
+                                        href={`/${
+                                            isLayer(item)
+                                                ? `layers/${item.slug}?open=federation#riskanalysis`
+                                                : `infrastructure/${item.slug}`
+                                        }`}
                                         className="flex items-center"
                                     >
                                         <LayerImage
