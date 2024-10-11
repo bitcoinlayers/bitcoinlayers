@@ -89,27 +89,5 @@
                 }
             ]
         }
-    ],
-    "knowledgeBits": [
-        {
-            "url": "https://docs.zulunetwork.io/",
-            "displayText": "Documentation"
-        },
-        {
-            "url": "https://testnet.zuluscan.io/",
-            "displayText": "Explorer"
-        },
-        {
-            "url": "https://github.com/zulu-network",
-            "displayText": "GitHub"
-        },
-        {
-            "url": "https://zulunetwork.io/",
-            "displayText": "Website"
-        },
-        {
-            "url": "https://zulunetwork.io/whitepaper.pdf",
-            "displayText": "Whitepaper"
-        }
     ]
 }

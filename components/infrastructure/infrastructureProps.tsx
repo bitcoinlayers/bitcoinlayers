@@ -30,7 +30,6 @@ interface kbit {
 //     links: string[];
 //     description: string;
 //     sections: Section[];
-//     knowledgeBits: kbit[];
 // }
 
 // export default InfrastructureProps;
@@ -50,7 +49,6 @@ export type Infrastructure = {
     links: string[];
     description: string;
     sections: Section[];
-    knowledgeBits: kbit[];
     /** MDX file body */
     slug: string;
 };

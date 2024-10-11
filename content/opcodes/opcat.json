@@ -30,11 +30,5 @@
                 }
             ]
         }
-    ],
-    "knowledgeBits": [
-        {
-            "url": "https://bitcoinlayers.org",
-            "displayText": "Bitcoin Layers"
-        }
     ]
 }

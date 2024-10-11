@@ -50,7 +50,6 @@ const LayerMenu: React.FC<{ layer: Layer }> = ({ layer }) => {
                     { id: "overview", title: "Overview" },
                     { id: "riskanalysis", title: "Risk Analysis" },
                     ...layer.sections,
-                    { id: "knowledgebits", title: "Knowledge Bits" },
                 ].map((section, index) => (
                     <div
                         key={index}

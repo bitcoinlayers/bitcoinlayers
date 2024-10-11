@@ -140,20 +140,16 @@
                     "content": "The code is open source on [GitHub](https://github.com/ark-network/ark), available under an MIT license."
                 }
             ]
-        }
-    ],
-    "knowledgeBits": [
-        {
-            "url": "https://arkdev.info",
-            "displayText": "Ark Developer Hub"
         },
         {
-            "url": "https://gist.github.com/RubenSomsen/a394beb1dea9e47e981216768e007454?permalink_comment_id=4633382#simplest-ark-explanation",
-            "displayText": "Simplest Ark Explanation"
-        },
-        {
-            "url": "https://stephanlivera.com/episode/584/",
-            "displayText": "Updates on Ark with Tiero"
+            "id": "knowledgeBits",
+            "title": "Knowledge Bits",
+            "content": [
+                {
+                    "title": "Learn more",
+                    "content": "[Ark Developer Hub](https://arkdev.info)\n[Simplest Ark Explanation](https://gist.github.com/RubenSomsen/a394beb1dea9e47e981216768e007454?permalink_comment_id=4633382#simplest-ark-explanation)\n[Updates on Ark with Tiero](https://stephanlivera.com/episode/584/)"
+                }
+            ]
         }
     ]
 }

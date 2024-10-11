@@ -140,16 +140,16 @@
                     "content": "Modules relevant to ICP’s integration with Bitcoin are open source."
                 }
             ]
-        }
-    ],
-    "knowledgeBits": [
-        {
-            "url": "https://internetcomputer.org/docs/current/developer-docs/getting-started/overview-of-icp",
-            "displayText": "ICP Developer Docs"
         },
         {
-            "url": "https://wiki.internetcomputer.org/wiki/Chain-key_Bitcoin",
-            "displayText": "Overview on ckBTC"
+            "id": "knowledgeBits",
+            "title": "Knowledge Bits",
+            "content": [
+                {
+                    "title": "Learn more",
+                    "content": "[ICP Developer Docs](https://internetcomputer.org/docs/current/developer-docs/getting-started/overview-of-icp)\n[Overview on ckBTC](https://wiki.internetcomputer.org/wiki/Chain-key_Bitcoin)"
+                }
+            ]
         }
     ]
 }

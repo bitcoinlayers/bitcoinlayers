@@ -161,16 +161,16 @@
                     "content": "There are multiple free and open-source implementations of the Lightning Network protocol."
                 }
             ]
-        }
-    ],
-    "knowledgeBits": [
-        {
-            "url": "https://lightning.network/lightning-network-paper.pdf",
-            "displayText": "Lightning Network paper"
         },
         {
-            "url": "https://bitcoiner.guide/lightning/",
-            "displayText": "Lightning Network user guide"
+            "id": "knowledgeBits",
+            "title": "Knowledge Bits",
+            "content": [
+                {
+                    "title": "Learn more",
+                    "content": "[Lightning Network paper](https://lightning.network/lightning-network-paper.pdf)\n[Lightning Network user guide](https://bitcoiner.guide/lightning/)"
+                }
+            ]
         }
     ]
 }

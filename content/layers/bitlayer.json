@@ -153,16 +153,16 @@
                     "content": "Some of the code related to the Bitlayer project is open-source."
                 }
             ]
-        }
-    ],
-    "knowledgeBits": [
-        {
-            "url": "https://www.btrscan.com/home",
-            "displayText": "Bitlayer block explorer"
         },
         {
-            "url": "https://www.btrscan.com/leaderboard",
-            "displayText": "Bitlayer's validator set"
+            "id": "knowledgeBits",
+            "title": "Knowledge Bits",
+            "content": [
+                {
+                    "title": "Learn more",
+                    "content": "[Bitlayer block explorer](https://www.btrscan.com/home)\n[Bitlayer's validator set](https://www.btrscan.com/leaderboard)"
+                }
+            ]
         }
     ]
 }

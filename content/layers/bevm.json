@@ -125,12 +125,16 @@
                     "content": "BEVM’s node software is open source."
                 }
             ]
-        }
-    ],
-    "knowledgeBits": [
+        },
         {
-            "url": "https://www.bevm.io/",
-            "displayText": "BEVM Website"
+            "id": "knowledgeBits",
+            "title": "Knowledge Bits",
+            "content": [
+                {
+                    "title": "Learn more",
+                    "content": "[BEVM Website](https://www.bevm.io/)"
+                }
+            ]
         }
     ]
 }

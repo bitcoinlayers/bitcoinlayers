@@ -41,14 +41,12 @@ import cashuJson from "../content/infrastructures/cashu.json" assert { type:
 const cashu: Infrastructure = cashuJson as Infrastructure;
 import tbtcJson from "../content/infrastructures/tbtc.json" assert { type:
     "json" };
-const tbtc: Infrastructure = cashuJson as Infrastructure;
+const tbtc: Infrastructure = tbtcJson as Infrastructure;
+import lombardJson from "../content/infrastructures/lombard.json" assert { type:
+    "json" };
+const lombard: Infrastructure = lombardJson as Infrastructure;
 
-export const allInfrastructures: Infrastructure[] = [
-
-
-cashu,
-fedimint,
-];
+export const allInfrastructures: Infrastructure[] = [cashu, fedimint, lombard];
 
 export const allInfrastructureSlugs: string[] = allInfrastructures.map(
     (infrastructure) => infrastructure.slug,

@@ -91,20 +91,16 @@
                     "content": "All code related to the Fedimint project is free and open source."
                 }
             ]
-        }
-    ],
-    "knowledgeBits": [
-        {
-            "url": "https://fedimint.org",
-            "displayText": "Fedimint documentation site covering technological components and use cases."
         },
         {
-            "url": "https://www.fedi.xyz/product",
-            "displayText": "Fedi offers a Fedimint wallet and shows how a Fedimint would work in practice."
-        },
-        {
-            "url": "https://fedimint.org/docs/category/frequently-asked-questions",
-            "displayText": "Fedimint's FAQs answer frequently asked questions."
+            "id": "knowledgeBits",
+            "title": "Knowledge Bits",
+            "content": [
+                {
+                    "title": "Learn more",
+                    "content": "[Fedimint documentation site covering technological components and use cases.](https://fedimint.org)\n[Fedi offers a Fedimint wallet and shows how a Fedimint would work in practice.](https://www.fedi.xyz/product)\n[Fedimint's FAQs answer frequently asked questions.](https://fedimint.org/docs/category/frequently-asked-questions)"
+                }
+            ]
         }
     ]
 }

@@ -136,16 +136,16 @@
                     "content": "The node implementation for Libre is not open source.\n\nInformation related to the pNetwork bridge is open source."
                 }
             ]
-        }
-    ],
-    "knowledgeBits": [
-        {
-            "url": "https://chain.libre.org/",
-            "displayText": "Libre website"
         },
         {
-            "url": "https://docs.libre.org/libre-docs",
-            "displayText": "Libre docs"
+            "id": "knowledgeBits",
+            "title": "Knowledge Bits",
+            "content": [
+                {
+                    "title": "Learn more",
+                    "content": "[Libre website](https://chain.libre.org/)\n[Libre docs](https://docs.libre.org/libre-docs)"
+                }
+            ]
         }
     ]
 }

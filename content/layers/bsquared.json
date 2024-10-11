@@ -128,16 +128,16 @@
                     "content": "The node software and Polygon zkEVM contracts are open-source. Its our understanding that these implementations of Polygon zkEVM and Ethermint have not been audited."
                 }
             ]
-        }
-    ],
-    "knowledgeBits": [
-        {
-            "url": "https://github.com/b2network",
-            "displayText": "Bsquared Network Github"
         },
         {
-            "url": "https://hub-explorer.bsquared.network",
-            "displayText": "Bsquared Network's L1 explorer"
+            "id": "knowledgeBits",
+            "title": "Knowledge Bits",
+            "content": [
+                {
+                    "title": "Learn more",
+                    "content": "[Bsquared Network's L1 explorer](https://hub-explorer.bsquared.network)\n[Bsquared Network Github](https://github.com/b2network)"
+                }
+            ]
         }
     ]
 }

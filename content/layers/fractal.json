@@ -153,12 +153,16 @@
                     "content": "The source code for Fractal's node implementation is open-source."
                 }
             ]
-        }
-    ],
-    "knowledgeBits": [
+        },
         {
-            "url": "https://fractal.unisat.io/explorer",
-            "displayText": "Fractal block explorer."
+            "id": "knowledgeBits",
+            "title": "Knowledge Bits",
+            "content": [
+                {
+                    "title": "Learn more",
+                    "content": "[Fractal block explorer.](https://fractal.unisat.io/explorer)"
+                }
+            ]
         }
     ]
 }

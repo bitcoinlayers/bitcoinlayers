@@ -148,16 +148,16 @@
                     "content": "Core's node implementation is open-source."
                 }
             ]
-        }
-    ],
-    "knowledgeBits": [
-        {
-            "url": "https://messari.io/report/understanding-core-chain",
-            "displayText": "Understanding Core Chain by Messari"
         },
         {
-            "url": "https://github.com/coredao-org/whitepaper/blob/main/COREWhitepaper_v1.0.6.pdf",
-            "displayText": "Core Chain Whitepaper"
+            "id": "knowledgeBits",
+            "title": "Knowledge Bits",
+            "content": [
+                {
+                    "title": "Learn more",
+                    "content": "[Understanding Core Chain by Messari](https://messari.io/report/understanding-core-chain)\n[Core Chain Whitepaper](https://github.com/coredao-org/whitepaper/blob/main/COREWhitepaper_v1.0.6.pdf)"
+                }
+            ]
         }
     ]
 }

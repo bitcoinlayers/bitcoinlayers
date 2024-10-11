@@ -34,29 +34,6 @@ const LayerBody: React.FC<{ layer: Layer }> = ({ layer }) => {
                     ))}
                 </section>
             ))}
-            <div
-                className="self-stretch lg:px-8 px-4 pt-6 pb-8 bg-white rounded-xl border border-slate-300 flex-col justify-center items-end gap-4 mb-6"
-                id="knowledgebits"
-            >
-                <div className="self-stretch justify-start items-start gap-4 inline-flex">
-                    <div className="text-zinc-800 text-3xl font-light font-['Public Sans'] leading-9">
-                        Knowledge Bits
-                    </div>
-                </div>
-                {layer.knowledgeBits.map((link) => (
-                    <p key={link.url}>
-                        <Link
-                            href={link.url}
-                            rel="noopener noreferrer"
-                            target="_blank"
-                        >
-                            <span className="text-orange-600 text-base font-medium font-['Public Sans'] underline leading-normal">
-                                {link.displayText}
-                            </span>
-                        </Link>
-                    </p>
-                ))}
-            </div>
         </main>
     );
 };

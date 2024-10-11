@@ -83,20 +83,16 @@
                     "content": "The Bitcoin Layers project prioritizes risk reviews on projects that are in production and accepting users' BTC deposits. Projects on testnet are welcome to submit information about their project. We do not publish risk assessments for projects that are not in production.\n\nInformation on how to submit information on a project can be found in the Knowledge Bits section."
                 }
             ]
-        }
-    ],
-    "knowledgeBits": [
-        {
-            "url": "https://www.botanixlabs.xyz/en/home",
-            "displayText": "Botanix Website"
         },
         {
-            "url": "https://docs.botanixlabs.xyz/botanix-labs/how-to-use-botanix/getting-started-with-botanix",
-            "displayText": "Interact with the Botanix testnet"
-        },
-        {
-            "url": "https://blog.lopp.net/an-introduction-to-spiderchain/",
-            "displayText": "An introduction to the Spiderchain"
+            "id": "knowledgeBits",
+            "title": "Knowledge Bits",
+            "content": [
+                {
+                    "title": "Learn more",
+                    "content": "[Botanix Website](https://www.botanixlabs.xyz/en/home)\n[Interact with the Botanix testnet](https://docs.botanixlabs.xyz/botanix-labs/how-to-use-botanix/getting-started-with-botanix)\n[An introduction to the Spiderchain](https://blog.lopp.net/an-introduction-to-spiderchain/)"
+                }
+            ]
         }
     ]
 }

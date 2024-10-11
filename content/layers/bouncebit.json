@@ -155,11 +155,5 @@
                 }
             ]
         }
-    ],
-    "knowledgeBits": [
-        {
-            "url": "https://bouncebit.io/",
-            "displayText": "BounceBit Website"
-        }
     ]
 }

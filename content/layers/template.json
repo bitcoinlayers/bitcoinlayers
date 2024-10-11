@@ -59,15 +59,5 @@
                 }
             ]
         }
-    ],
-    "knowledgeBits": [
-        {
-            "url": "https://bitcoin.org",
-            "displayText": "Bitcoin.org"
-        },
-        {
-            "url": "https://bitcoinrollups.io",
-            "displayText": "BitcoinRollups.io"
-        }
     ]
 }

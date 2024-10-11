@@ -149,24 +149,16 @@
                     "content": "We are reviewing if BOB's node software is open-source."
                 }
             ]
-        }
-    ],
-    "knowledgeBits": [
-        {
-            "url": "https://docs.gobob.xyz/docs/learn/security/privileged-roles",
-            "displayText": "This document outlines the privileged roles who play a role in managing various components of the BOB chain"
         },
         {
-            "url": "https://l2beat.com/scaling/projects/optimism",
-            "displayText": "A risk review of the OP Mainnet chain on Ethereum, which has similar trust assumptions as the BOB chain as BOB is built on the OP Stack"
-        },
-        {
-            "url": "https://mirror.xyz/0xE4dF449bDC1ec8f7688F68F7E839f1370617Ac73/UvQH9D3RyVcozOlz091gLKnbX8aqn8goFVYtHVmin-w",
-            "displayText": "A blog covering R&D areas related to Bitcoin security on BOB."
-        },
-        {
-            "url": "https://l2beat.com/scaling/projects/bob/tvl-breakdown",
-            "displayText": "BOB's TVL breakdown, including total BTC locked."
+            "id": "knowledgeBits",
+            "title": "Knowledge Bits",
+            "content": [
+                {
+                    "title": "Learn more",
+                    "content": "[This document outlines the privileged roles who play a role in managing various components of the BOB chain](https://docs.gobob.xyz/docs/learn/security/privileged-roles)\n[A risk review of the OP Mainnet chain on Ethereum, which has similar trust assumptions as the BOB chain as BOB is built on the OP Stack](https://l2beat.com/scaling/projects/optimism)\n[A blog covering R&D areas related to Bitcoin security on BOB.](https://mirror.xyz/0xE4dF449bDC1ec8f7688F68F7E839f1370617Ac73/UvQH9D3RyVcozOlz091gLKnbX8aqn8goFVYtHVmin-w)\n[BOB's TVL breakdown, including total BTC locked.](https://l2beat.com/scaling/projects/bob/tvl-breakdown)"
+                }
+            ]
         }
     ]
 }
