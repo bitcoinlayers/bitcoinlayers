@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import Image from "next/image";
 import { Layer } from "@/components/layer/layerProps";
 import Risk from "@/components/layer/layerTableItemRisk";
@@ -8,7 +8,7 @@ import TableHeader from "@/components/tables/tableHeader";
 import { MobileView, isMobile } from "react-device-detect";
 import Link from "next/link";
 import { useQueryState } from "nuqs";
-import { useMemo } from "react";
+import useGetBalances from "@/hooks/use-get-balances";
 
 type TableTabKey =
     | "Risk"
@@ -65,6 +65,24 @@ const LayerTableAll = ({ data, headers, showToggleGroup = true }: Props) => {
     const [sortOrder, setSortOrder] = useQueryState("sortOrder", {
         defaultValue: "asc",
     });
+
+    const { data: balances } = useGetBalances({
+        queryString: `?date=gte.${new Date(Date.now() - 86400000).toDateString()}`
+    })
+
+    const organizedBalances = useMemo(() => {
+        if (!balances) return {};
+
+        return balances.reduce((acc, balance) => {
+            if (!acc[balance.layer_name] || new Date(balance.date) > new Date(acc[balance.layer_name].date)) {
+                acc[balance.layer_name] = {
+                    amount: balance.amount,
+                    date: balance.date
+                };
+            }
+            return acc;
+        }, {} as Record<string, { amount: number; date: string }>);
+    }, [balances]);
 
     const [mobileActiveTab, setMobileActiveTab] = useState<TableTabKey>("Risk");
 
@@ -324,8 +342,8 @@ const LayerTableAll = ({ data, headers, showToggleGroup = true }: Props) => {
                                     <td className="lg:px-6 px-4 py-3 lg:py-4 border-r border-stroke_tertiary text_table_important">
                                         <Link href={`/layers/${item.slug}`}>
                                             {item.underReview === "yes" ||
-                                            item.btcLocked === null ||
-                                            isNaN(item.btcLocked) ? (
+                                            (Object.keys(organizedBalances).find(key => key.toLowerCase() === item.title.toLowerCase()) === undefined && 
+                                             (item.btcLocked === null || isNaN(item.btcLocked))) ? (
                                                 <div className="font-light">
                                                     Under review
                                                 </div>
@@ -333,8 +351,11 @@ const LayerTableAll = ({ data, headers, showToggleGroup = true }: Props) => {
                                                 <div>
                                                     ₿{" "}
                                                     {Number(
-                                                        item.btcLocked,
-                                                    ).toLocaleString()}
+                                                        Object.entries(organizedBalances).find(([key]) => key.toLowerCase().includes(item.title.toLowerCase()))?.[1]?.amount ?? item.btcLocked
+                                                    ).toLocaleString('en-US', {
+                                                        minimumFractionDigits: 0,
+                                                        maximumFractionDigits: 0,
+                                                    })}
                                                 </div>
                                             )}
                                         </Link>

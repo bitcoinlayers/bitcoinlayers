@@ -9,8 +9,6 @@ import {
     ChartTooltip,
     ChartTooltipContent,
 } from "@/components/ui/chart";
-import { useQuery } from "@tanstack/react-query";
-import { fetcher } from "@/util/fetcher";
 import {
     Select,
     SelectContent,
@@ -21,16 +19,7 @@ import {
 import { useQueryState } from "nuqs";
 import { useCallback, useMemo, useState } from "react";
 import { useParams } from "next/navigation";
-
-interface Balance {
-    amount: number;
-    date: string;
-    identifier: string;
-    layer_name: string;
-    token_name: string;
-    TPS: number;
-    "Fee Revenue": number;
-}
+import useGetBalances from "@/hooks/use-get-balances";
 
 interface ProcessedData {
     date: string;
@@ -48,13 +37,9 @@ export default function ProjectTVLChart() {
         defaultValue: "3mo",
     });
 
-    const { data } = useQuery<Balance[]>({
-        queryKey: [`get_balances?layer_name=ilike.${slug}`],
-        queryFn: () =>
-            fetcher(
-                `${process.env.NEXT_PUBLIC_API_URL}/get_balances?layer_name=ilike.${slug}`,
-            ),
-    });
+    const { data } = useGetBalances({
+        queryString: `?layer_name=ilike.${slug}`
+     })
 
     const tokens = useMemo(
         () =>
@@ -66,7 +51,7 @@ export default function ProjectTVLChart() {
 
     const processedData = useMemo(() => {
         if (!data) return [];
-        return data.reduce((acc: ProcessedData[], item: Balance) => {
+        return data.reduce((acc: ProcessedData[], item) => {
             const itemDateUTC = item.date;
             const existingEntry = acc.find(
                 (entry) => entry.date === itemDateUTC,
@@ -158,12 +143,7 @@ export default function ProjectTVLChart() {
         }, 0);
 
         return {
-            TVL: tvl,
-            TPS: filteredData.reduce((acc, curr) => acc + (curr.TPS || 0), 0),
-            "Fee Rev.": filteredData.reduce(
-                (acc, curr) => acc + (curr["Fee Revenue"] || 0),
-                0,
-            ),
+            TVL: tvl
         };
     }, [data, dateRange, tokens]);
 
