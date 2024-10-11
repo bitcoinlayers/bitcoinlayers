@@ -7,6 +7,7 @@ import InfrastructureMenu from "@/components/infrastructure/infrastructureMenu";
 import InfrastructureBody from "@/components/infrastructure/infrastructureBody";
 import InfrastructureOverview from "@/components/infrastructure/infrastructureOverview";
 import InfrastructureImage from "@/components/infrastructure/infrastructure-image";
+import AltTVLChart from "@/components/charts/alt-tvl-chart";
 
 async function getInfrastructureFromSlug(slug: string) {
     const infrastructure = allInfrastructures.find(
@@ -51,6 +52,7 @@ export default async function InfrastructurePage({
                 </div>
                 <div className="lg:w-4/5 flex flex-col px-4 lg:px-0">
                     <InfrastructureOverview infrastructure={infrastructure} />
+                    <AltTVLChart />
                     <InfrastructureBody infrastructure={infrastructure} />
                 </div>
             </div>
