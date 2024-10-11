@@ -44,7 +44,12 @@ import tbtcJson from "../content/infrastructures/tbtc.json" assert { type:
 const tbtc: Infrastructure = cashuJson as Infrastructure;
 
 export const allInfrastructures: Infrastructure[] = [
+
+
+cashu,
+fedimint,
 ];
+
 export const allInfrastructureSlugs: string[] = allInfrastructures.map(
     (infrastructure) => infrastructure.slug,
 );
