@@ -1,8 +1,6 @@
 "use client";
 
-import useGetBalances, {
-    Balance,
-} from "@/hooks/use-get-all-balances-individual";
+import useGetBalances, { Balance } from "@/hooks/use-get-all-balances-pertoken";
 import { Layer } from "./layerProps";
 import { useParams } from "next/navigation";
 import { useMemo } from "react";

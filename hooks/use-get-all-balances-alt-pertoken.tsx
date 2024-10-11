@@ -17,12 +17,12 @@ export default function useGetBalancesAlt({ queryString }: Props = {}) {
     const response = useQuery<Balance[]>({
         queryKey: [
             queryString
-                ? `get_all_balances_alt_individual${queryString}`
-                : "get_all_balances_alt_individual",
+                ? `get_all_balances_alt_pertoken${queryString}`
+                : "get_all_balances_alt_pertoken",
         ],
         queryFn: () => {
             return fetcher(
-                `${process.env.NEXT_PUBLIC_API_URL}/get_all_balances_alt_individual${queryString ?? ""}`,
+                `${process.env.NEXT_PUBLIC_API_URL}/get_all_balances_alt_pertoken${queryString ?? ""}`,
             );
         },
     });

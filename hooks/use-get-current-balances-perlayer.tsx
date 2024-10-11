@@ -16,12 +16,12 @@ export default function useGetCombinedBalances({ queryString }: Props = {}) {
     const response = useQuery<CombinedBalance[]>({
         queryKey: [
             queryString
-                ? `get-current-balances-combined${queryString}`
-                : "get-current-balances-combined",
+                ? `get-current-balances-perlayer${queryString}`
+                : "get-current-balances-perlayer",
         ],
         queryFn: () => {
             return fetcher(
-                `${process.env.NEXT_PUBLIC_API_URL}/get-current-balances-combined${queryString ?? ""}`,
+                `${process.env.NEXT_PUBLIC_API_URL}/get-current-balances-perlayer${queryString ?? ""}`,
             );
         },
     });
