@@ -4,7 +4,7 @@
     "layerType": "Sidechain",
     "live": "Mainnet",
     "staking": false,
-    "bridge": true,
+    "bridge": false,
     "underReview": "no",
     "riskFactors": ["High", "Medium", "Medium", "Medium"],
     "purpose": "General",

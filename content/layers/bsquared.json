@@ -4,7 +4,7 @@
     "layerType": "Sidechain Rollup",
     "live": "Mainnet",
     "staking": false,
-    "bridge": true,
+    "bridge": false,
     "underReview": "no",
     "riskFactors": ["Unverified", "Unverified", "Critical", "Critical"],
     "purpose": "General",
