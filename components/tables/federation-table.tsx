@@ -10,7 +10,7 @@ import { MobileView, isMobile } from "react-device-detect";
 import Link from "next/link";
 import { useQueryState } from "nuqs";
 
-type TableTabKey = "Risk" | "Type" | "Status" | "BTC Locked";
+type TableTabKey = "Snapshot" | "Type" | "Status" | "TVL";
 
 type TableItem = Layer | Infrastructure;
 
@@ -70,7 +70,8 @@ const FederationTable = ({ data, headers }: Props) => {
         defaultValue: "asc",
     });
 
-    const [mobileActiveTab, setMobileActiveTab] = useState<TableTabKey>("Risk");
+    const [mobileActiveTab, setMobileActiveTab] =
+        useState<TableTabKey>("Snapshot");
 
     const sortAndFilterData = useMemo(() => {
         const sorted = [...data].sort((a, b) => {
@@ -96,7 +97,7 @@ const FederationTable = ({ data, headers }: Props) => {
                     valueA = a.live;
                     valueB = b.live;
                     break;
-                case "BTC Locked":
+                case "TVL":
                     valueA = isLayer(a)
                         ? parseFloat(a.btcLocked.toString())
                         : -Infinity;
@@ -219,10 +220,10 @@ const FederationTable = ({ data, headers }: Props) => {
                 <div className="justify-center lg:items-start gap-1 inline-flex py-3">
                     {headers.slice(1).map((_item, ind) => {
                         const isAllowedTab = [
-                            "Risk",
+                            "Snapshot",
                             "Type",
                             "Status",
-                            "BTC Locked",
+                            "TVL",
                         ].includes(_item.name);
                         return (
                             <div
@@ -282,9 +283,11 @@ const FederationTable = ({ data, headers }: Props) => {
                                         </span>
                                     </Link>
                                 </td>
-                                {(!isMobile || mobileActiveTab === "Risk") && (
+                                {(!isMobile ||
+                                    mobileActiveTab === "Snapshot") && (
                                     <td className="relative px-2 border-stroke_tertiary text_table_important">
-                                        {isLayer(item) ? (
+                                        Coming Soon
+                                        {/* {isLayer(item) ? (
                                             item.underReview === "no" ? (
                                                 <Risk layer={item} />
                                             ) : (
@@ -296,7 +299,7 @@ const FederationTable = ({ data, headers }: Props) => {
                                             <div className="lg:px-5 px-1 text_table_important">
                                                 Not applicable
                                             </div>
-                                        )}
+                                        )} */}
                                     </td>
                                 )}
                                 {(!isMobile || mobileActiveTab === "Type") && (
@@ -330,8 +333,7 @@ const FederationTable = ({ data, headers }: Props) => {
                                         </Link>
                                     </td>
                                 )}
-                                {(!isMobile ||
-                                    mobileActiveTab === "BTC Locked") && (
+                                {(!isMobile || mobileActiveTab === "TVL") && (
                                     <td className="lg:px-6 px-4 py-3 lg:py-4 border-r border-stroke_tertiary text_table_important">
                                         <Link
                                             href={`/${
@@ -340,23 +342,8 @@ const FederationTable = ({ data, headers }: Props) => {
                                                     : `infrastructure/${item.slug}`
                                             }`}
                                         >
-                                            -{/* TODO */}
+                                            Coming Soon{/* TODO */}
                                         </Link>
-                                        {/* {item.underReview === "yes" ||
-                                            item.btcLocked === null ||
-                                            isNaN(item.btcLocked) ? (
-                                                <div className="font-light">
-                                                    Under review
-                                                </div>
-                                            ) : (
-                                                <div>
-                                                    ₿{" "}
-                                                    {Number(
-                                                        item.btcLocked,
-                                                    ).toLocaleString()}
-                                                </div>
-                                            )} */}
-                                        \
                                     </td>
                                 )}
                             </tr>

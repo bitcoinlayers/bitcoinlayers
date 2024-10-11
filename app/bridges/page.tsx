@@ -27,7 +27,7 @@ export default function BridgesPage() {
             showSorting: true,
             mobileLabel: "Name",
         },
-        { name: "Risk", showSorting: false, mobileLabel: "Risk" },
+        { name: "Snapshot", showSorting: false, mobileLabel: "Snapshot" },
         {
             name: "Type",
             showSorting: true,
@@ -35,7 +35,7 @@ export default function BridgesPage() {
             filterOptions: typeFilters,
         },
         { name: "Status", showSorting: true, mobileLabel: "Status" },
-        { name: "BTC Locked", showSorting: true, mobileLabel: "BTC" },
+        { name: "TVL", showSorting: true, mobileLabel: "TVL" },
     ];
 
     return (

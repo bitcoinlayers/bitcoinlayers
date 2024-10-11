@@ -25,7 +25,7 @@ export default function StakingPage() {
             showSorting: true,
             mobileLabel: "Name",
         },
-        { name: "Risk", showSorting: false, mobileLabel: "Risk" },
+        { name: "Snapshot", showSorting: false, mobileLabel: "Snapshot" },
         {
             name: "Type",
             showSorting: true,
