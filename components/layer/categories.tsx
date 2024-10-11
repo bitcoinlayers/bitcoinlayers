@@ -1,6 +1,8 @@
 "use client";
 
-import useGetBalances, { Balance } from "@/hooks/use-get-all-balances-pertoken";
+import useGetCurrentBalancesPerLayer, {
+    Balance,
+} from "@/hooks/use-get-current-balances-perlayer";
 import { Layer } from "./layerProps";
 import { useParams } from "next/navigation";
 import { useMemo } from "react";
@@ -8,37 +10,7 @@ import { useMemo } from "react";
 const Categories: React.FC<{ layer: Layer }> = ({ layer }) => {
     const { slug } = useParams();
 
-    const { data } = useGetBalances({
-        queryString: `?layer_slug=ilike.${slug}&date=gte.${new Date(Date.now() - 86400000).toDateString()}`,
-    });
-
-    // Calculate total amount for the single layer
-    const totalAmount = useMemo(() => {
-        if (!data) return undefined;
-
-        const latestTokenAmounts: Record<string, Balance> = {};
-
-        data.forEach((balance) => {
-            const { token_name, amount, date } = balance;
-
-            if (
-                !latestTokenAmounts[token_name] ||
-                new Date(date) >
-                    new Date(latestTokenAmounts[token_name]?.date || 0)
-            ) {
-                (latestTokenAmounts[token_name] as Balance) = {
-                    ...balance,
-                    amount,
-                    date,
-                };
-            }
-        });
-
-        return Object.values(latestTokenAmounts).reduce(
-            (sum, amount) => sum + Number(amount.amount),
-            0,
-        );
-    }, [data]);
+    const { data: balances } = useGetCurrentBalancesPerLayer();
 
     return (
         <div className="lg:flex lg:justify-between w-full grid grid-cols-2 gap-4">
@@ -66,8 +38,8 @@ const Categories: React.FC<{ layer: Layer }> = ({ layer }) => {
                 </div>
                 <div className="text-zinc-800 text-base font-normal leading-normal">
                     ₿ {/* Fallback to layer.btcLocked */}
-                    {totalAmount
-                        ? totalAmount.toLocaleString("en-US", {
+                    {balances
+                        ? balances.toLocaleString("en-US", {
                               minimumFractionDigits: 0,
                               maximumFractionDigits: 0,
                           })

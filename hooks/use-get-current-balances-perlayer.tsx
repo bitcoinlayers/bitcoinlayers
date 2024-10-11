@@ -1,7 +1,7 @@
 import { fetcher } from "@/util/fetcher";
 import { useQuery } from "@tanstack/react-query";
 
-export interface CombinedBalance {
+export interface Balance {
     total_amount: number;
     most_recent_date: string;
     layer_name: string;
@@ -13,7 +13,7 @@ interface Props {
 }
 
 export default function useGetCombinedBalances({ queryString }: Props = {}) {
-    const response = useQuery<CombinedBalance[]>({
+    const response = useQuery<Balance[]>({
         queryKey: [
             queryString
                 ? `get-current-balances-perlayer${queryString}`

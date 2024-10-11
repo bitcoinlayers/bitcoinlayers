@@ -9,7 +9,7 @@ import { MobileView, isMobile } from "react-device-detect";
 import Link from "next/link";
 import { useQueryState } from "nuqs";
 import useGetBalances from "@/hooks/use-get-all-balances-pertoken";
-import useGetCurrentBalances from "@/hooks/use-get-current-balances-perlayer";
+import useGetCurrentBalancesPerLayer from "@/hooks/use-get-current-balances-perlayer";
 
 type TableTabKey =
     | "Risk"
@@ -67,47 +67,24 @@ const LayerTableAll = ({ data, headers, showToggleGroup = true }: Props) => {
         defaultValue: "asc",
     });
 
-    const { data: balances } = useGetBalances({
-        queryString: `?date=gte.${new Date(Date.now() - 86400000).toDateString()}`,
-    });
+    const { data: balances } = useGetCurrentBalancesPerLayer();
 
     const totaledBalances = useMemo(() => {
         if (!balances) return {};
 
         return balances.reduce(
             (acc, balance) => {
-                const { layer_slug, token_name, amount, date } = balance;
+                const { layer_slug, total_amount } = balance;
 
                 if (!acc[layer_slug]) {
-                    acc[layer_slug] = { totalAmount: 0, tokens: {} };
+                    acc[layer_slug] = { totalAmount: 0 };
                 }
 
-                if (
-                    !acc[layer_slug].tokens[token_name] ||
-                    new Date(date) >
-                        new Date(acc[layer_slug].tokens[token_name].date)
-                ) {
-                    // If token doesn't exist or current date is newer, update the token data
-                    if (acc[layer_slug].tokens[token_name]) {
-                        // Subtract old amount from total if token already existed
-                        acc[layer_slug].totalAmount -=
-                            acc[layer_slug].tokens[token_name].amount;
-                    }
-
-                    // Update token data and add new amount to total
-                    acc[layer_slug].tokens[token_name] = { amount, date };
-                    acc[layer_slug].totalAmount += amount;
-                }
+                acc[layer_slug].totalAmount += total_amount;
 
                 return acc;
             },
-            {} as Record<
-                string,
-                {
-                    totalAmount: number;
-                    tokens: Record<string, { amount: number; date: string }>;
-                }
-            >,
+            {} as Record<string, { totalAmount: number }>,
         );
     }, [balances]);
 
