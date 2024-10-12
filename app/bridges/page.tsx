@@ -2,7 +2,7 @@ import { allLayers } from "@/util/layer_index";
 import { allInfrastructures } from "@/util/infrastructure_index";
 
 import FederationTable from "@/components/tables/federation-table";
-import Hero from "@/components/hero";
+import Hero from "@/components/hero-bridges";
 
 export default function BridgesPage() {
     const sortedEverything = [...allLayers, ...allInfrastructures]

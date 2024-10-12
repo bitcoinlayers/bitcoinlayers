@@ -2,7 +2,7 @@ import { allLayers } from "@/util/layer_index";
 import { allInfrastructures } from "@/util/infrastructure_index";
 
 import StakingTable from "@/components/tables/staking-table";
-import Hero from "@/components/hero";
+import Hero from "@/components/hero-staking";
 
 export default function StakingPage() {
     const sortedEverything = [...allLayers, ...allInfrastructures]

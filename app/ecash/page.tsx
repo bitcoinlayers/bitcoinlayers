@@ -1,5 +1,5 @@
 import { allEcash } from "@/util/ecash_index";
-import Hero from "@/components/hero";
+import Hero from "@/components/hero-ecash";
 import InfrastructureTable from "@/components/tables/infrastructureTable";
 
 export default function Home() {
