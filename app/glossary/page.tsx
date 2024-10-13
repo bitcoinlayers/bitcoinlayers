@@ -164,7 +164,7 @@ const glossaryData: GlossaryData = {
                 "A specialized blockchains that focuses on only one core function of a blockchain: consensus, security, data availability, or execution. This is similar to the microservices approach in software engineering, where each service is specialized in one function and can be swapped out for another service that performs the same function.",
         },
         {
-            term: "MPC (multi-marty computation) bridge",
+            term: "MPC (multi-party computation) bridge",
             definition:
                 "A cryptographic technique that enables a group of participants (a federation) to collectively manage and control the movement of BTC between Bitcoin and a given destination chain.",
         },

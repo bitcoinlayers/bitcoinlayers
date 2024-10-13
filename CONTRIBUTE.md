@@ -26,6 +26,6 @@ We’re going to start hosting opinion pieces on our blog. If you’d like to wr
 
 Not every contribution can be measured by GitHub commits. Simply jumping [into our chat](https://t.me/+8rv-1I2gkmQ4ZmJh) and being a part of the discussion is super valuable and appreciated. You may also be able to contribute to a project in a capacity that is not listed here. If that's the case, [let us know](https://t.me/+8rv-1I2gkmQ4ZmJh). :)
 
-## Website maintaininace for bitcoinlayers.org
+## Website maintenance for bitcoinlayers.org
 
 Follow existing variable and file naming standards, and make sure to run `npm run format` to format with prettier.
