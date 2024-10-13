@@ -81,7 +81,7 @@
                 },
                 {
                     "title": "Data availability on Bitcoin",
-                    "content": "Citrea's sequencer will post state differences to Bitcoin. These state differences will include the rollup's latest state root, and enough transaction data to recreate the rollup from genesis.\n\nThis sees the Bitcoin L1 satisy Citrea's data availability requirement, meaning any Bitcoin full node can validate the state of Citrea."
+                    "content": "Citrea's sequencer will post state differences to Bitcoin. These state differences will include the rollup's latest state root, and enough transaction data to recreate the rollup from genesis.\n\nThis means Citrea's data availability requirement is satisfied by the Bitcoin L1, allowing any Bitcoin full node to validate Citrea's state."
                 }
             ]
         },
