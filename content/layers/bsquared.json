@@ -52,7 +52,7 @@
             "category": "Finality Guarantees",
             "score": 0,
             "tier": "Critical",
-            "title": "SNARKs ensure state correctness, but finality is guaranted by a permissioned validator set",
+            "title": "SNARKs ensure state correctness, but finality is guaranteed by a permissioned validator set",
             "content": "Bsquared receives no settlement assurances from Bitcoin. Bsquared settlement is finalized by a group of three, federated validators who verify a validity proof submitted by the Bsquared Network zkEVM prover."
         }
     ],

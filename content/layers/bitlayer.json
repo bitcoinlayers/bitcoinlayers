@@ -39,7 +39,7 @@
             "score": 0,
             "tier": "Medium",
             "title": "Data is stored offchain with node software open-source",
-            "content": "Bitlayer does not currently use Bitcoin for data availability. The data availability requirement is currently fufilled by Bitlayer full nodes. The Bitlayer node software is open source and anyone can run a node and validate the state of Bitlayer."
+            "content": "Bitlayer does not currently use Bitcoin for data availability. The data availability requirement is currently fulfilled by Bitlayer full nodes. The Bitlayer node software is open source and anyone can run a node and validate the state of Bitlayer."
         },
         {
             "category": "Network Operators",

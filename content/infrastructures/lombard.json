@@ -32,7 +32,7 @@
                 },
                 {
                     "title": "Staking type (delegated or direct staking)",
-                    "content": "Users delegate their BTC to the Lombard Security Consortium to stake BTC on their behalf. Users select which protocol they want to stake through (e.g. Babylon) andor the destination chain their LBTC token is minted on (e.g. Ethereum).\n\nShould a user mint LBTC on a destination chain, they can use this token in various onchain protocols. These protocols may pay out rewards based on varying levels of parameters."
+                    "content": "Users delegate their BTC to the Lombard Security Consortium to stake BTC on their behalf. Users select which protocol they want to stake through (e.g. Babylon) and/or the destination chain their LBTC token is minted on (e.g. Ethereum).\n\nShould a user mint LBTC on a destination chain, they can use this token in various onchain protocols. These protocols may pay out rewards based on varying levels of parameters."
                 },
                 {
                     "title": "Slashing risk",

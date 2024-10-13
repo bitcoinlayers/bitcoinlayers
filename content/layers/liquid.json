@@ -53,7 +53,7 @@
             "score": 0,
             "tier": "Medium",
             "title": "Liquid blocks are finalized via Liquid full nodes",
-            "content": "After blocks are proposed by a functionaries, 11/15 functionaries are needed to sign off on the block to propogate it to the network. After this is done, Liquid full nodes accept the block and include it in the chain."
+            "content": "After blocks are proposed by a functionaries, 11/15 functionaries are needed to sign off on the block to propagate it to the network. After this is done, Liquid full nodes accept the block and include it in the chain."
         }
     ],
     "sections": [
