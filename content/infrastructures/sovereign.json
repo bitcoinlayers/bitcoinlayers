@@ -19,7 +19,7 @@
         "https://github.com/Sovereign-Labs/sovereign-sdk",
         "https://x.com/sovereign_labs"
     ],
-    "description": "Sovereign is a framework for building sovereign rollups. Their infrastrucure is being used to support the deployment of multiple rollups in the Bitcoin ecosystem.",
+    "description": "Sovereign is a framework for building sovereign rollups. Their infrastructure is being used to support the deployment of multiple rollups in the Bitcoin ecosystem.",
     "sections": [
         {
             "id": "selfsubmit",

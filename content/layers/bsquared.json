@@ -31,7 +31,7 @@
             "category": "Bridge Security",
             "score": 0,
             "tier": "Unverified",
-            "title": "Users deposit funds into a MPC protocol managed by Bsquared Network and a custodian. Signers under revieww",
+            "title": "Users deposit funds into a MPC protocol managed by Bsquared Network and a custodian. Signers under review.",
             "content": "Previous blog posts have stated that when users deposit funds into Bsquared, they deposit funds into a MPC wallet managed by the Bsquared Network team and Cobo, a institutional custodian. Information on how many signers participate in this MPC scheme is not available. Bsquared has stated that more players are being added into this custody scheme.\n\n🔬We are currently reviewing the signers for the Bsquared two-way peg."
         },
         {
@@ -52,7 +52,7 @@
             "category": "Finality Guarantees",
             "score": 0,
             "tier": "Critical",
-            "title": "SNARKs ensure state correctness, but finality is guaranted by a permissioned validator set",
+            "title": "SNARKs ensure state correctness, but finality is guaranteed by a permissioned validator set",
             "content": "Bsquared receives no settlement assurances from Bitcoin. Bsquared settlement is finalized by a group of three, federated validators who verify a validity proof submitted by the Bsquared Network zkEVM prover."
         }
     ],
