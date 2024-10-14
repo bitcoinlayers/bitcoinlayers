@@ -45,7 +45,7 @@ export default function ProjectTVLChart() {
         () =>
             chartType === "combined"
                 ? ["BTC"]
-                : [...new Set(data?.map((item) => item.token_name) || [])],
+                : [...new Set(data?.map((item) => item.layer_name) || [])],
         [data, chartType],
     );
 
@@ -56,7 +56,7 @@ export default function ProjectTVLChart() {
             const existingEntry = acc.find(
                 (entry) => entry.date === itemDateUTC,
             );
-            const tokenKey = chartType === "combined" ? "BTC" : item.token_name;
+            const tokenKey = chartType === "combined" ? "BTC" : item.layer_name;
 
             if (existingEntry) {
                 existingEntry[tokenKey] =
@@ -131,10 +131,10 @@ export default function ProjectTVLChart() {
 
         // Calculate TVL as the sum of the last amounts for each token_name
         const tvl = [
-            ...new Set(data?.map((item) => item.token_name) || []),
+            ...new Set(data?.map((item) => item.identifier) || []),
         ].reduce((acc, token) => {
             const lastEntry = filteredData
-                .filter((item) => item.token_name === token)
+                .filter((item) => item.identifier === token)
                 .sort(
                     (a, b) =>
                         new Date(b.date).getTime() - new Date(a.date).getTime(),
@@ -185,15 +185,7 @@ export default function ProjectTVLChart() {
                 <div className="flex flex-col justify-center items-start py-4 sm:py-8 border-b sm:border-b-0 px-6 sm:w-1/2">
                     <div className="text-lg sm:text-xl">BTC Locked</div>
                     <div className="text-xs sm:text-sm text-muted-foreground">
-                        Total amount of BTC locked per day
-                        {/* TODO: breakdown by network eg Ethereum, Arbitrum, etc */}
-                        {/* {" "}{tokens.length > 1
-                            ? tokens.slice(0, -1).join(", ") +
-                              (tokens.length > 2 ? "," : "") +
-                              " and " +
-                              tokens[tokens.length - 1]
-                            : tokens[0]}{" "}
-                        locked per day */}
+                        Total amount of BTC locked per day by network.
                     </div>
                 </div>
                 <div className="flex flex-row sm:w-1/2">
