@@ -20,6 +20,8 @@ import { useQueryState } from "nuqs";
 import { useCallback, useMemo, useState } from "react";
 import { useParams } from "next/navigation";
 import useGetBalances from "@/hooks/use-get-all-balances-pertoken";
+import useGetCurrentPrices from "@/hooks/use-get-current-prices";
+import { formatCurrency } from "@/util/formatCurrency";
 
 interface ProcessedData {
     date: string;
@@ -40,6 +42,13 @@ export default function ProjectTVLChart() {
     const { data } = useGetBalances({
         queryString: `?layer_name=ilike.${slug}`,
     });
+
+    const { data: pricesData, isLoading, error } = useGetCurrentPrices();
+
+    const btcPriceData = pricesData?.find(
+        (price) => price.token_slug === "btc",
+    );
+    const currentBTCPrice = btcPriceData ? btcPriceData.price_usd : 0;
 
     const tokens = useMemo(
         () =>
@@ -205,19 +214,26 @@ export default function ProjectTVLChart() {
                                 className="flex flex-1 flex-col justify-center gap-1 px-3 py-2 sm:px-6 sm:py-4 text-left even:border-x sm:even:border-x-0 sm:odd:border-l sm:first:border-r data-[active=true]:bg-muted/50"
                                 onClick={() => setActiveChart(chart)}
                             >
-                                <span className="text-xs text-muted-foreground w-12 md:w-20">
+                                <span className="text-xs text-muted-foreground w-8 md:w-16">
                                     {key}
                                 </span>
                                 <span className="text-xs sm:text-base leading-none">
                                     {key === "TVL" ? (
-                                        <span className="font-bold">
-                                            {total[
-                                                key as keyof typeof total
-                                            ].toLocaleString("en-US", {
-                                                minimumFractionDigits: 2,
-                                                maximumFractionDigits: 2,
-                                            })}
-                                        </span>
+                                        <div>
+                                            <span className="font-bold">
+                                                {`${total[
+                                                    key as keyof typeof total
+                                                ].toLocaleString("en-US", {
+                                                    minimumFractionDigits: 0,
+                                                    maximumFractionDigits: 0,
+                                                })} BTC`}
+                                            </span>
+                                            <div className="text-xs sm:text-sm py-2 text-muted-foreground">
+                                                {formatCurrency(
+                                                    total.TVL * currentBTCPrice,
+                                                )}
+                                            </div>
+                                        </div>
                                     ) : (
                                         <span className="text-[10px] italic">
                                             coming soon

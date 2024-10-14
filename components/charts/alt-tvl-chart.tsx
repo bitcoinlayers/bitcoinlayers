@@ -20,6 +20,8 @@ import { useQueryState } from "nuqs";
 import { useCallback, useMemo, useState } from "react";
 import { useParams } from "next/navigation";
 import useGetBalancesAlt from "@/hooks/use-get-all-balances-alt-pertoken";
+import useGetCurrentPrices from "@/hooks/use-get-current-prices";
+import { formatCurrency } from "@/util/formatCurrency";
 
 interface ProcessedData {
     date: string;
@@ -40,6 +42,12 @@ export default function ProjectTVLChart() {
     const { data } = useGetBalancesAlt({
         queryString: `?project_slug=ilike.${slug}`,
     });
+    const { data: pricesData, isLoading, error } = useGetCurrentPrices();
+
+    const btcPriceData = pricesData?.find(
+        (price) => price.token_slug === "btc",
+    );
+    const currentBTCPrice = btcPriceData ? btcPriceData.price_usd : 0;
 
     const tokens = useMemo(
         () =>
@@ -203,14 +211,21 @@ export default function ProjectTVLChart() {
                                 </span>
                                 <span className="text-xs sm:text-base leading-none">
                                     {key === "TVL" ? (
-                                        <span className="font-bold">
-                                            {total[
-                                                key as keyof typeof total
-                                            ].toLocaleString("en-US", {
-                                                minimumFractionDigits: 2,
-                                                maximumFractionDigits: 2,
-                                            })}
-                                        </span>
+                                        <div>
+                                            <span className="font-bold">
+                                                {`${total[
+                                                    key as keyof typeof total
+                                                ].toLocaleString("en-US", {
+                                                    minimumFractionDigits: 2,
+                                                    maximumFractionDigits: 2,
+                                                })} BTC`}
+                                            </span>
+                                            <div className="text-xs sm:text-sm py-2 text-muted-foreground">
+                                                {formatCurrency(
+                                                    total.TVL * currentBTCPrice,
+                                                )}
+                                            </div>
+                                        </div>
                                     ) : (
                                         <span className="text-[10px] italic">
                                             coming soon
