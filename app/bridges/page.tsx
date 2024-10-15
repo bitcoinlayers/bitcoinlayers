@@ -2,7 +2,7 @@ import { allLayers } from "@/util/layer_index";
 import { allInfrastructures } from "@/util/infrastructure_index";
 
 import FederationTable from "@/components/tables/federation-table";
-import Hero from "@/components/hero-bridges";
+import Hero from "@/components/hero";
 
 export default function BridgesPage() {
     const sortedEverything = [...allLayers, ...allInfrastructures]
@@ -40,7 +40,10 @@ export default function BridgesPage() {
 
     return (
         <div className="mx-auto">
-            <Hero />
+            <Hero
+                title="Bridges"
+                description="Not every bitcoin bridge is made equal."
+            />
             <div className="lg:flex mb-4 justify-center w-full lg:max-w-5xl mx-auto">
                 <FederationTable
                     data={sortedEverything}

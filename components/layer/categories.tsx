@@ -1,8 +1,6 @@
 "use client";
 
-import useGetCurrentBalancesPerLayer, {
-    Balance,
-} from "@/hooks/use-get-current-balances-perlayer";
+import useGetCurrentBalancesPerLayer from "@/hooks/use-get-current-balances-perlayer";
 import { Layer } from "./layerProps";
 import { useParams } from "next/navigation";
 import { useMemo } from "react";
