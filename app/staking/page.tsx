@@ -2,7 +2,7 @@ import { allLayers } from "@/util/layer_index";
 import { allInfrastructures } from "@/util/infrastructure_index";
 
 import StakingTable from "@/components/tables/staking-table";
-import Hero from "@/components/hero-staking";
+import Hero from "@/components/hero";
 
 export default function StakingPage() {
     const sortedEverything = [...allLayers, ...allInfrastructures]
@@ -38,7 +38,10 @@ export default function StakingPage() {
 
     return (
         <div className="mx-auto">
-            <Hero />
+            <Hero
+                title="Staking"
+                description="Not every bitcoin staking protocol is equal."
+            />
             <div className="lg:flex mb-4 justify-center w-full lg:max-w-5xl mx-auto">
                 <StakingTable data={sortedEverything} headers={layerHeaders} />
             </div>
