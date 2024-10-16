@@ -94,7 +94,7 @@ const FaqPage: React.FC = () => {
                             />
                             <FAQItem
                                 question="Where does Bitcoin Layers get its data?"
-                                answer="Bitcoin Layers has it's own internal data ingestion from various sources, including our own nodes, public APIs, and providers such as Alchemy. We update data on the site at midnight UTC every day. If data is not matching your favorite block explorer or Dune dashboard, it might be because the data is not live, but rather updated daily. It might also be because of heuristics. Please feel free to reach out with questions or learn more [here](https://github.com/bitcoinlayers/docs)."
+                                answer="Bitcoin Layers has its own internal data ingestion from various sources, including our own nodes, public APIs, and providers such as Alchemy. We update data on the site at midnight UTC every day. If data is not matching your favorite block explorer or Dune dashboard, it might be because the data is not live, but rather updated daily. It might also be because of heuristics. Please feel free to reach out with questions or learn more [here](https://github.com/bitcoinlayers/docs)."
                             />
                         </div>
                     </div>
