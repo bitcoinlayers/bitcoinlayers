@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import React, { useState } from "react";
+import { parseTextWithLinks } from "@/util/parseTextWithLinks";
 
 const FaqPage: React.FC = () => {
     const FAQItem: React.FC<{ question: string; answer: string }> = ({
@@ -37,7 +38,7 @@ const FaqPage: React.FC = () => {
                     <div className="flex flex-col justify-center items-start gap-8 w-full">
                         <div className="flex flex-col justify-start items-start gap-2 w-full">
                             <div className="text-base font-normal text-slate-500 leading-normal">
-                                {answer}
+                                {parseTextWithLinks(answer)}
                             </div>
                         </div>
                     </div>
@@ -90,6 +91,10 @@ const FaqPage: React.FC = () => {
                             <FAQItem
                                 question="How does Bitcoin Layers analyze risk related to sidechain protocols?"
                                 answer="We analyze protocols against a general framework that covers four key aspects. We review who is maintaining custody of the funds used on the scaling protocol, who is storing the data related to the protocol's state, who is operating the network, and who is providing finality assurances. Each of these categories receives a score given the current state of the protocol. Users can use these scores as a part of their research related to Bitcoin scaling protocols."
+                            />
+                            <FAQItem
+                                question="Where does Bitcoin Layers get its data?"
+                                answer="Bitcoin Layers has its own internal data ingestion from various sources, including our own nodes, public APIs, and providers such as Alchemy. We update data on the site at midnight UTC every day. If data is not matching your favorite block explorer or Dune dashboard, it might be because the data is not live, but rather updated daily. It might also be because of heuristics. Please feel free to reach out with questions or learn more [here](https://github.com/bitcoinlayers/docs)."
                             />
                         </div>
                     </div>
