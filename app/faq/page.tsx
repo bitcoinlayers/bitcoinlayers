@@ -105,8 +105,8 @@ const FaqPage: React.FC = () => {
                                 answer={t("we-analyze-protocols-against")}
                             />
                             <FAQItem
-                                question={t('faqwhere-does-bitcoin-layers-get-its-data')}
-                                answer={t('bitcoin-layers-has-its-own-internal-data-ingestion-from-various-sources-including-our-own-nodes-public-apis-and-providers-such-as-alchemy-we-update-data-on-the-site-at-midnight-utc-every-day-if-data-is-not-matching-your-favorite-block-explorer-or-dune-dashboard-it-might-be-because-the-data-is-not-live-but-rather-updated-daily-it-might-also-be-because-of-heuristics-please-feel-free-to-reach-out-with-questions-or-learn-more-here-https-github-com-bitcoinlayers-docs')}
+                                question={t('where-does-bitcoin-layers-get-its-data')}
+                                answer={t('bitcoin-layers-has-its-own-internal-data-ingestion')}
                             />
                         </div>
                     </div>
