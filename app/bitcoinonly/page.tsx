@@ -1,12 +1,12 @@
 import BitcoinonlyTable from "@/components/tables/bitcoinonlyTable";
 import Hero from "@/components/hero";
-import { useTranslations } from "next-intl";
 import { getAllInfrastructure, getAllLayersWithSlugs } from "@/i18n/helpers";
+import { getTranslations } from "next-intl/server";
 
 export default async function Home() {
     const { allInfrastructures } = await getAllInfrastructure();
     const { allLayers } = await getAllLayersWithSlugs();
-    const t = useTranslations("bitcoin-only-table");
+    const t = await getTranslations("bitcoin-only-table");
     const sortedEverything = [...allLayers, ...allInfrastructures]
         .filter((item) => item.bitcoinOnly)
         .sort((a, b) =>
@@ -52,7 +52,10 @@ export default async function Home() {
 
     return (
         <div className="mx-auto">
-            <Hero />
+            <Hero
+                title="Layers"
+                description="Not every bitcoin layer is made equal."
+            />
             <div className="lg:flex mb-4 justify-center w-full lg:max-w-5xl mx-auto">
                 <BitcoinonlyTable
                     data={sortedEverything}

@@ -145,11 +145,5 @@
                 }
             ]
         }
-    ],
-    "knowledgeBits": [
-        {
-            "url": "https://rollux.com/",
-            "displayText": "Rollux website"
-        }
     ]
 }

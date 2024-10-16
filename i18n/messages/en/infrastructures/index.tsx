@@ -42,22 +42,36 @@ const tbtc: Infrastructure = tbtcJson as Infrastructure;
 import cashuJson from "@/i18n/messages/en/infrastructures/cashu.json" assert { type:
     "json" };
 const cashu: Infrastructure = cashuJson as Infrastructure;
+import lombardJson from "@/i18n/messages/en/infrastructures/lombard.json" assert { type:
+    "json" };
+const lombard: Infrastructure = lombardJson as Infrastructure;
+import wbtcJson from "@/i18n/messages/en/infrastructures/wbtc.json" assert { type:
+    "json" };
+const wbtc: Infrastructure = wbtcJson as Infrastructure;
+import cbbtcJson from "@/i18n/messages/en/infrastructures/cbbtc.json" assert { type:
+    "json" };
+const cbbtc: Infrastructure = cbbtcJson as Infrastructure;
 
 export const allInfrastructures: Infrastructure[] = [
-    astria,
-    avail,
-    celestia,
-    espresso,
-    lorenzo,
-    sovereign,
-    nubit,
-    babylon,
+    cashu,
     fedimint,
+    lombard,
+    tbtc,
+    wbtc,
+    cbbtc,
     dlclink,
     bool,
-    tbtc,
-    cashu,
+    nubit,
+    sovereign,
+    lorenzo,
+    espresso,
+    celestia,
+    bvm,
+    avail,
+    astria,
+    babylon,
 ];
+
 export const allInfrastructureSlugs: string[] = allInfrastructures.map(
     (infrastructure) => infrastructure.slug,
 );

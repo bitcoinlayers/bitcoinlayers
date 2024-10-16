@@ -140,7 +140,7 @@ const InfrastructureTable = ({ data, headers }: Props) => {
 
     return (
         <div className="px-6 lg:px-0 w-full">
-            <div className="flex lg:mb-6 justify-center -mt-12 lg:mt-0 relative z-20">
+            {/* <div className="flex lg:mb-6 justify-center -mt-12 lg:mt-0 relative z-20">
                 <div className="justify-start items-start gap-4 inline-flex">
                     <div
                         className={`h-[30px] px-4 py-[5px] rounded-full border-2 justify-center items-center gap-1.5 flex cursor-pointer ${
@@ -201,7 +201,7 @@ const InfrastructureTable = ({ data, headers }: Props) => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> */}
             <MobileView className="flex justify-center">
                 <div className="justify-center lg:items-start gap-4 inline-flex py-3">
                     {headers.slice(1).map((_item, ind) => {

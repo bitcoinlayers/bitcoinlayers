@@ -1,60 +1,53 @@
 import FederationTable from "@/components/tables/federation-table";
 import Hero from "@/components/hero";
 import { getTranslations } from "next-intl/server";
-import { getAllLayersWithSlugs } from "@/i18n/helpers";
+import { getAllInfrastructure, getAllLayersWithSlugs } from "@/i18n/helpers";
 
 export default async function BridgesPage() {
     const t = await getTranslations("federation-table");
     const { allLayers } = await getAllLayersWithSlugs();
-    const sortedLayers = allLayers
+    const { allInfrastructures } = await getAllInfrastructure();
+
+    const sortedEverything = [...allLayers, ...allInfrastructures]
         .filter((item) => item.bridge)
         .sort((a, b) =>
             a.title.toLowerCase().localeCompare(b.title.toLowerCase()),
         );
+    console.log("allInfrastructures", allInfrastructures);
+    console.log("everything     ", sortedEverything);
 
     const typeFilters = [
-        ...new Set(sortedLayers.map((layer) => layer.layerType)),
+        ...new Set(
+            sortedEverything.map((item) =>
+                "layerType" in item ? item.layerType : item.infrastructureType,
+            ),
+        ),
     ];
 
     const layerHeaders = [
+        { name: t("name"), showSorting: false, mobileLabel: t("name") },
+        { name: t("snapshot"), showSorting: false, mobileLabel: t("snapshot") },
         {
-            name: t("name-label"),
-            showSorting: true,
-            mobileLabel: t("name-label--mobile"),
-        },
-        {
-            name: t("risk-label"),
+            name: t("type"),
             showSorting: false,
-            mobileLabel: t("risk-label--mobile"),
-        },
-        {
-            name: t("type-label"),
-            showSorting: true,
-            mobileLabel: t("type-label--mobile"),
+            mobileLabel: t("type"),
             filterOptions: typeFilters,
         },
-        {
-            name: t("status-label"),
-            showSorting: true,
-            mobileLabel: t("status-label--mobile"),
-        },
-        {
-            name: t("unit-label"),
-            showSorting: true,
-            mobileLabel: t("unit-label--mobile"),
-        },
-        {
-            name: t("btc-locked-label"),
-            showSorting: true,
-            mobileLabel: t("btc-locked-label--mobile"),
-        },
+        { name: t("status"), showSorting: true, mobileLabel: t("status") },
+        { name: t("tvl"), showSorting: true, mobileLabel: t("tvl") },
     ];
 
     return (
         <div className="mx-auto">
-            <Hero />
+            <Hero
+                title={t("bridges")}
+                description="Not every bitcoin bridge is made equal."
+            />
             <div className="lg:flex mb-4 justify-center w-full lg:max-w-5xl mx-auto">
-                <FederationTable data={sortedLayers} headers={layerHeaders} />
+                <FederationTable
+                    data={sortedEverything}
+                    headers={layerHeaders}
+                />
             </div>
         </div>
     );

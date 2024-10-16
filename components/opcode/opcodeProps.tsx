@@ -29,7 +29,6 @@ interface OpcodeProps {
     links: string[];
     description: string;
     sections: Section[];
-    knowledgeBits: kbit[];
 }
 
 export default OpcodeProps;
@@ -48,7 +47,6 @@ export type Opcode = {
     links: string[];
     description: string;
     sections: Section[];
-    knowledgeBits: kbit[];
     /** MDX file body */
     slug: string;
 };

@@ -65,16 +65,16 @@
                     "content": "Bznk is working on using zk technology to improve Ordinals and BRC-20 trading."
                 }
             ]
-        }
-    ],
-    "knowledgeBits": [
-        {
-            "url": "https://bnzk.io/",
-            "displayText": "Bnzk website."
         },
         {
-            "url": "https://docs.bnzk.io/",
-            "displayText": "Bnzk documentations site."
+            "id": "knowledgeBits",
+            "title": "Knowledge Bits",
+            "content": [
+                {
+                    "title": "Learn more",
+                    "content": "[Bnzk website.](https://bnzk.io/)\n[Bnzk documentations site.](https://docs.bnzk.io/)"
+                }
+            ]
         }
     ]
 }

@@ -65,12 +65,16 @@
                     "content": "Barknet is a sovereign rollup that uses Bitcoin for data availability and the Cairo VM. It was developed by Kasar Lab in collaboration with Taproot Wizards."
                 }
             ]
-        }
-    ],
-    "knowledgeBits": [
+        },
         {
-            "url": "https://github.com/KasarLabs/barknet",
-            "displayText": "Barknet code and docs"
+            "id": "knowledgeBits",
+            "title": "Knowledge Bits",
+            "content": [
+                {
+                    "title": "Learn more",
+                    "content": "[Barknet code and docs](https://github.com/KasarLabs/barknet)"
+                }
+            ]
         }
     ]
 }

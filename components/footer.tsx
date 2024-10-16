@@ -132,11 +132,14 @@ export default function Footer(): ReactElement {
                                         <SectionItem href="/">
                                             {t("layers")}
                                         </SectionItem>
-                                        {/* <SectionItem href="/bridges">
-                                            Bridges
-                                        </SectionItem> */}
-                                        <SectionItem href="/infrastructure">
-                                            {t("infrastructure")}
+                                        <SectionItem href="/staking">
+                                            {t('staking')}
+                                        </SectionItem>
+                                        <SectionItem href="/bridges">
+                                            {t('bridges')}
+                                        </SectionItem>
+                                        <SectionItem href="/ecash">
+                                            {t('ecash')}
                                         </SectionItem>
                                         <SectionItem href="/bitcoinonly">
                                             {t("bitcoin-only")}

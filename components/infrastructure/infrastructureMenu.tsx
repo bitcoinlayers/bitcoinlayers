@@ -51,7 +51,6 @@ const InfrastructureMenu: React.FC<{ infrastructure: Infrastructure }> = ({
                 {[
                     { id: "overview", title: t("overview") },
                     ...infrastructure.sections,
-                    { id: "knowledgebits", title: t("knowledge-bits") },
                 ].map((section, index) => (
                     <div
                         key={index}

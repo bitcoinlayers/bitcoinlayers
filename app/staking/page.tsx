@@ -28,7 +28,7 @@ export default async function StakingPage() {
             showSorting: true,
             mobileLabel: t("name"),
         },
-        { name: t("risk"), showSorting: false, mobileLabel: t("risk") },
+        { name: t("snapshot"), showSorting: false, mobileLabel: t("snapshot") },
         {
             name: t("type"),
             showSorting: true,
@@ -41,7 +41,10 @@ export default async function StakingPage() {
 
     return (
         <div className="mx-auto">
-            <Hero />
+            <Hero
+                title={t("staking")}
+                description={t("not-every-bitcoin-staking-protocol-is-equal")}
+            />
             <div className="lg:flex mb-4 justify-center w-full lg:max-w-5xl mx-auto">
                 <StakingTable data={sortedEverything} headers={layerHeaders} />
             </div>

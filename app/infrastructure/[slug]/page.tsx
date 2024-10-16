@@ -4,6 +4,7 @@ import InfrastructureBody from "@/components/infrastructure/infrastructureBody";
 import InfrastructureOverview from "@/components/infrastructure/infrastructureOverview";
 import InfrastructureImage from "@/components/infrastructure/infrastructure-image";
 import { getAllInfrastructure } from "@/i18n/helpers";
+import AltTVLChart from "@/components/charts/alt-tvl-chart";
 
 async function getInfrastructureFromSlug(slug: string) {
     const { allInfrastructures } = await getAllInfrastructure();
@@ -49,6 +50,7 @@ export default async function InfrastructurePage({
                 </div>
                 <div className="lg:w-4/5 flex flex-col px-4 lg:px-0">
                     <InfrastructureOverview infrastructure={infrastructure} />
+                    <AltTVLChart />
                     <InfrastructureBody infrastructure={infrastructure} />
                 </div>
             </div>

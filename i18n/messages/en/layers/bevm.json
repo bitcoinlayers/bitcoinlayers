@@ -4,7 +4,7 @@
     "layerType": "Sidechain",
     "live": "Mainnet",
     "staking": false,
-    "bridge": true,
+    "bridge": false,
     "underReview": "no",
     "riskFactors": ["Unverified", "Medium", "High", "High"],
     "purpose": "General",
@@ -38,7 +38,7 @@
             "score": 0,
             "tier": "Medium",
             "title": "Data is made available via validator nodes and additionally stored on archive nodes. Anyone can run BEVM node",
-            "content": "BEVM full nodes are responsible for satisying BEVM's data availability requirement. Archive nodes are additionally responsible for preserving the historical blockchain data. Users can run their own archive node and access the data at any time by utilizing the node as an RPC. Public endpoints deploy archival nodes to facilitate blockchain data to the users. As long as there is one archive node online, users can recover the full history of the BEVM blockchain."
+            "content": "BEVM full nodes are responsible for satisfying BEVM's data availability requirement. Archive nodes are additionally responsible for preserving the historical blockchain data. Users can run their own archive node and access the data at any time by utilizing the node as an RPC. Public endpoints deploy archival nodes to facilitate blockchain data to the users. As long as there is one archive node online, users can recover the full history of the BEVM blockchain."
         },
         {
             "category": "Network Operators",
@@ -125,12 +125,16 @@
                     "content": "BEVM’s node software is open source."
                 }
             ]
-        }
-    ],
-    "knowledgeBits": [
+        },
         {
-            "url": "https://www.bevm.io/",
-            "displayText": "BEVM Website"
+            "id": "knowledgeBits",
+            "title": "Knowledge Bits",
+            "content": [
+                {
+                    "title": "Learn more",
+                    "content": "[BEVM Website](https://www.bevm.io/)"
+                }
+            ]
         }
     ]
 }

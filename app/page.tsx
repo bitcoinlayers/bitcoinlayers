@@ -50,7 +50,10 @@ export default async function Home() {
 
     return (
         <div className="mx-auto">
-            <Hero />
+            <Hero
+                title="Layers"
+                description="Not every bitcoin layer is made equal."
+            />
             <div className="mb-4 w-full max-w-5xl mx-auto">
                 <ViewToggleGroup data={allLayers} headers={layerHeaders} />
             </div>

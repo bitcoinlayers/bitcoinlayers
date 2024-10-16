@@ -3,8 +3,8 @@
     "title": "Merlin",
     "layerType": "Sidechain",
     "live": "Mainnet",
-    "staking": true,
-    "bridge": true,
+    "staking": false,
+    "bridge": false,
     "underReview": "no",
     "riskFactors": ["Unverified", "Unverified", "Unverified", "Unverified"],
     "purpose": "General",
@@ -95,11 +95,11 @@
             "content": [
                 {
                     "title": "Some code is not open-source",
-                    "content": "Merlin Chain contracts are all currently upgradeable by an admin. The contracts it has listed on its CDKValdidium can not be verified on its respective L1 blockchain."
+                    "content": "Merlin Chain contracts are all currently upgradeable by an admin. The contracts it has listed on its CDKValidium can not be verified on its respective L1 blockchain."
                 },
                 {
                     "title": "Merlin L1 smart contract not verified",
-                    "content": "We are currenly unable to verify if the smart contracts listed in Merlin's Github are in fact the contracts used on its mainnet. The main contract for Polygoin CDKValidium on Ethereum was previously listed as the Merlin L1 contract in its documentation, but that was removed and no longer listed. Merlin chain have announced they will deploy their chain on Bsquared Network's L1 blockchain, which is a permissioned network. New contracts have been listed in its Github, but their L1 RPC points to a different chain that is not Bsquared Network."
+                    "content": "We are currently unable to verify if the smart contracts listed in Merlin's Github are in fact the contracts used on its mainnet. The main contract for Polygon CDKValidium on Ethereum was previously listed as the Merlin L1 contract in its documentation, but that was removed and no longer listed. Merlin chain have announced they will deploy their chain on Bsquared Network's L1 blockchain, which is a permissioned network. New contracts have been listed in its Github, but their L1 RPC points to a different chain that is not Bsquared Network."
                 }
             ]
         },
@@ -122,20 +122,16 @@
                     "content": "The potential use cases for Bsquared Network are similar to that of other EVM-based sidechains. Developers can deploy smart contracts that enable applications like borrowing and lending protocols, stablecoins, NFTs, and more. The primary, proposed use case for Bsquared Network is to act as an application layer for Bitcoin."
                 }
             ]
-        }
-    ],
-    "knowledgeBits": [
-        {
-            "url": "https://merlinchain.io/",
-            "displayText": "Merlin Chain website"
         },
         {
-            "url": "https://docs.merlinchain.io/merlin-docs/resources/merlin-contracts",
-            "displayText": "Merlin documentation"
-        },
-        {
-            "url": "https://github.com/MerlinLayer2/",
-            "displayText": "Merlin Chain's Github"
+            "id": "knowledgeBits",
+            "title": "Knowledge Bits",
+            "content": [
+                {
+                    "title": "Learn more",
+                    "content": "[Merlin Chain website](https://merlinchain.io/)\n[Merlin documentation](https://docs.merlinchain.io/merlin-docs/resources/merlin-contracts)\n[Merlin Chain's Github](https://github.com/MerlinLayer2/)"
+                }
+            ]
         }
     ]
 }

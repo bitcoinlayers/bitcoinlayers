@@ -36,7 +36,7 @@ export default function Navbar(): ReactElement {
         "/",
         "/staking",
         "/bridges",
-        "/infrastructure",
+        "/ecash",
         "/bitcoinonly",
     ];
 
@@ -200,15 +200,12 @@ export default function Navbar(): ReactElement {
                                     </Link>
                                 </div>
                                 <div className="h-[88px] p-3 rounded-md flex-col justify-start items-start flex hover:bg-blue-100">
-                                    <Link
-                                        href="/infrastructure"
-                                        onClick={closeSubmenu}
-                                    >
+                                    <Link href="/ecash" onClick={closeSubmenu}>
                                         <div className="text-zinc-800 text-base font-medium leading-normal">
-                                            {t("infrastructure")}
+                                            {t('ecash')}
                                         </div>
                                         <div className="self-stretch text-slate-500 text-sm font-normal leading-tight">
-                                            {t("infrastructure-overview")}
+                                            {t('overview-and-risk-analysis-of-ecash-infrastructure')}
                                         </div>
                                     </Link>
                                 </div>
@@ -253,6 +250,11 @@ export default function Navbar(): ReactElement {
                                 </div> */}
                             </div>
                         )}
+                    </li>
+                    <li className="hidden lg:block">
+                        <Link href="/?status=Charts" onClick={closeMenu}>
+                            {t('charts')}
+                        </Link>
                     </li>
                     <li className="hidden lg:block">
                         <Link href="/glossary" onClick={closeMenu}>
@@ -302,6 +304,15 @@ export default function Navbar(): ReactElement {
                             <SheetDescription className="text-base">
                                 <div className="pt-4 px-2">
                                     <ul className="flex flex-col items-start gap-y-6">
+                                        <li>
+                                            <Link
+                                                href="/?status=Charts"
+                                                className="text-black"
+                                                onClick={closeSheet}
+                                            >
+                                                {t('charts')}
+                                            </Link>
+                                        </li>
                                         <li>
                                             <Link
                                                 href="/glossary"

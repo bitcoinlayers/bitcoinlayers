@@ -23,7 +23,10 @@
         "staking": "Staking",
         "overview-and-risk-analysis-of-staking-mechanisms": "Overview and risk analysis of staking mechanisms.",
         "bridges": "Bridges",
-        "overview-and-risk-analysis-of-bitcoin-bridges": "Overview and risk analysis of bitcoin bridges."
+        "overview-and-risk-analysis-of-bitcoin-bridges": "Overview and risk analysis of bitcoin bridges.",
+        "ecash": "Ecash",
+        "overview-and-risk-analysis-of-ecash-infrastructure": "Overview and risk analysis of ecash infrastructure.",
+        "charts": "Charts"
     },
     "hero": {
         "title": "Layers",
@@ -50,7 +53,8 @@
         "not-applicable": "Not applicable",
         "testnet": "Testnet",
         "mainnet": "Mainnet",
-        "charts": "Charts"
+        "charts": "Charts",
+        "all": "All"
     },
     "upcoming-layers-table": {
         "name-label": "Name",
@@ -107,23 +111,22 @@
         "all": "All"
     },
     "federation-table": {
-        "name-label": "Name",
-        "name-label--mobile": "Name",
-        "risk-label": "Risk",
-        "risk-label--mobile": "Risk",
-        "type-label": "Type",
-        "type-label--mobile": "Type",
+        "name": "Name",
+        "type": "Type",
         "unit-label": "Unit of Account",
         "unit-label--mobile": "Unit",
-        "status-label": "Status",
-        "status-label--mobile": "Status",
+        "status": "Status",
         "btc-locked-label": "BTC Locked",
         "btc-locked-label--mobile": "BTC",
         "under-review": "Under review",
         "not-applicable": "Not applicable",
         "testnet": "Testnet",
         "mainnet": "Mainnet",
-        "all": "All"
+        "all": "All",
+        "snapshot": "Snapshot",
+        "tvl": "TVL",
+        "bridges": "Bridges",
+        "coming-soon": "Coming Soon"
     },
     "layers-tvl-chart": {
         "btc-locked": "BTC Locked",
@@ -149,7 +152,10 @@
         "resources": "Resources",
         "about": "About",
         "contribute": "Contribute",
-        "blog": "Blog"
+        "blog": "Blog",
+        "staking": "Staking",
+        "bridges": "Bridges",
+        "ecash": "Ecash"
     },
     "bridge": {
         "bridge-analyses-coming-soon": "Bridge analyses coming soon."
@@ -363,7 +369,10 @@
         "risk": "Risk",
         "type": "Type",
         "status": "Status",
-        "category": "Category"
+        "category": "Category",
+        "snapshot": "Snapshot",
+        "staking": "Staking",
+        "not-every-bitcoin-staking-protocol-is-equal": "Not every bitcoin staking protocol is equal."
     },
     "staking-table": {
         "mainnet": "Mainnet",
@@ -429,5 +438,14 @@
         "additional-context": "Additional Context",
         "critical-risk-acknowledgement": "Critical Risk Acknowledgement",
         "summary": "Summary"
+    },
+    "escash": {
+        "name": "Name",
+        "type": "Type",
+        "status": "Status",
+        "unit-of-account": "Unit of Account",
+        "unit": "Unit",
+        "associated-layers": "Associated Layers",
+        "layers": "Layers"
     }
 }

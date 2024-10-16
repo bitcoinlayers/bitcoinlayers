@@ -25,7 +25,7 @@
         "https://github.com/zulu-network",
         "https://x.com/zulu_network"
     ],
-    "description": "Zulu Network is building towards becoming a Bitvimium on Bitcoin that enables developers to deploy dApps on both EVM (ZKSync ZK Stack L2) & UTXO layers (Customized ZKVM L3). Zulu network is working on a trust-minimzed decentralized bridge program and will leverage a unique hybrid PoS / PoW mining mechanism.",
+    "description": "Zulu Network is building towards becoming a Bitvimium on Bitcoin that enables developers to deploy dApps on both EVM (ZKSync ZK Stack L2) & UTXO layers (Customized ZKVM L3). Zulu network is working on a trust-minimized decentralized bridge program and will leverage a unique hybrid PoS / PoW mining mechanism.",
     "riskAnalysis": [
         {
             "category": "Unilateral Exits",
@@ -63,7 +63,7 @@
             "content": [
                 {
                     "title": "Validity proofs will be used to ensure state correctness",
-                    "content": "Each state transition must contain a validity proof that proves that execution was done correctly to a series of user transactions. If these a proof includes an invalid state transition, then anyone can submit a fraud proof to challenge the state transition. Validity proofs will be sent through a decentralized network of verifiers economically secured through Babylon before submitted to the BitVM ZK verifier."
+                    "content": "Each state transition must contain a validity proof that proves that execution was done correctly to a series of user transactions. If a proof includes an invalid state transition, then anyone can submit a fraud proof to challenge the state transition. Validity proofs will be sent through a decentralized network of verifiers economically secured through Babylon before submitted to the BitVM ZK verifier."
                 },
                 {
                     "title": "Zero knowledge cryptography is used",
@@ -75,7 +75,7 @@
                 },
                 {
                     "title": "Zulu Network is working on a BitVM-style bridge program",
-                    "content": "Zulu Network is currently working on a trust-minimized bridge design. In their design, users will withdraw their money through atomic swaps from entities referred to as liqudidity providers (LPs) that has bridged assets into the rollup through utilizing a two-way peg BitVM implementation. LPs withdrawing BTC and/or Bitcoin assets from the rollup is not trustless. LPs must trust that 1 of any number of BitVM verifiers in the validating bridge are acting honestly to process their withdrawal."
+                    "content": "Zulu Network is currently working on a trust-minimized bridge design. In their design, users will withdraw their money through atomic swaps from entities referred to as liquidity providers (LPs) that has bridged assets into the rollup through utilizing a two-way peg BitVM implementation. LPs withdrawing BTC and/or Bitcoin assets from the rollup is not trustless. LPs must trust that 1 of any number of BitVM verifiers in the validating bridge are acting honestly to process their withdrawal."
                 }
             ]
         },
@@ -88,28 +88,6 @@
                     "content": "Part of the software is currently open-source and available and the rest will gradually be opensourced as well."
                 }
             ]
-        }
-    ],
-    "knowledgeBits": [
-        {
-            "url": "https://docs.zulunetwork.io/",
-            "displayText": "Documentation"
-        },
-        {
-            "url": "https://testnet.zuluscan.io/",
-            "displayText": "Explorer"
-        },
-        {
-            "url": "https://github.com/zulu-network",
-            "displayText": "GitHub"
-        },
-        {
-            "url": "https://zulunetwork.io/",
-            "displayText": "Website"
-        },
-        {
-            "url": "https://zulunetwork.io/whitepaper.pdf",
-            "displayText": "Whitepaper"
         }
     ]
 }

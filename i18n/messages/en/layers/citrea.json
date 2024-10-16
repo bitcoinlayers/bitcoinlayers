@@ -58,7 +58,7 @@
     ],
     "sections": [
         {
-            "id": "dislclaimer",
+            "id": "disclaimer",
             "title": "Disclaimer",
             "content": [
                 {
@@ -81,7 +81,7 @@
                 },
                 {
                     "title": "Data availability on Bitcoin",
-                    "content": "Citrea's sequencer will post state differences to Bitcoin. These state differences will include the rollup's latest state root, and enough transaction data to recreate the rollup from genisis.\n\nThis sees the Bitcoin L1 satisy Citrea's data availability requirement, meaning any Bitcoin full node can validate the state of Citrea."
+                    "content": "Citrea's sequencer will post state differences to Bitcoin. These state differences will include the rollup's latest state root, and enough transaction data to recreate the rollup from genesis.\n\nThis means Citrea's data availability requirement is satisfied by the Bitcoin L1, allowing any Bitcoin full node to validate Citrea's state."
                 }
             ]
         },
@@ -108,32 +108,16 @@
                     "content": "."
                 }
             ]
-        }
-    ],
-    "knowledgeBits": [
-        {
-            "url": "https://docs.citrea.xyz/developer-documentation/deployment-guide",
-            "displayText": "Build on Citrea's devnet"
         },
         {
-            "url": "https://citrea.xyz",
-            "displayText": "Citrea website and blog"
-        },
-        {
-            "url": "https://docs.citrea.xyz/",
-            "displayText": "Citrea documentation site"
-        },
-        {
-            "url": "https://github.com/chainwayxyz/clementine",
-            "displayText": "Code for Citrea's proposed two-way peg, Clementine"
-        },
-        {
-            "url": "https://github.com/chainwayxyz/bitvm-zk-verifier",
-            "displayText": "Code for Citrea's proposed BitVM ZK-Verifier"
-        },
-        {
-            "url": "https://github.com/chainwayxyz/citrea/tree/nightly/docs",
-            "displayText": "Run a Citrea sequencer and full node locally"
+            "id": "knowledgeBits",
+            "title": "Knowledge Bits",
+            "content": [
+                {
+                    "title": "Learn more",
+                    "content": "[Build on Citrea's devnet](https://docs.citrea.xyz/developer-documentation/deployment-guide)\n[Citrea website and blog](https://citrea.xyz)\n[Citrea documentation site](https://docs.citrea.xyz/)\n[Code for Citrea's proposed two-way peg, Clementine](https://github.com/chainwayxyz/clementine)\n[Code for Citrea's proposed BitVM ZK-Verifier](https://github.com/chainwayxyz/bitvm-zk-verifier)\n[Run a Citrea sequencer and full node locally](https://github.com/chainwayxyz/citrea/tree/nightly/docs)"
+                }
+            ]
         }
     ]
 }

@@ -4,6 +4,7 @@
     "infrastructureType": "Chaumian Ecash Protocol",
     "live": "Mainnet",
     "staking": false,
+    "bridge": false,
     "underReview": "no",
     "riskFactors": ["", ""],
     "bitcoinSecurity": "No",
@@ -108,7 +109,7 @@
             "content": [
                 {
                     "title": "Privacy chokepoints (user-inflicted) ([Cashu FAQ](https://docs.cashu.space/faq#general-safety-and-privacy-questions))",
-                    "content": "While Cashu token transfers provide the transacting entity with an incomparable degree of privacy, there’s some chokepoints to bear in mind: not using a VPN/Tor/mixnet, etc, when interacting with the mint, may leak netowrk metadata. The mint might collect network data such as access time, IP addresses and or other metadata users might leak information when melting their tokens with the mint and receiving Bitcoin via LN in return. The privacy characteristics of a recipient on LN apply in this case."
+                    "content": "While Cashu token transfers provide the transacting entity with an incomparable degree of privacy, there’s some chokepoints to bear in mind: not using a VPN/Tor/mixnet, etc, when interacting with the mint, may leak network metadata. The mint might collect network data such as access time, IP addresses and or other metadata users might leak information when melting their tokens with the mint and receiving Bitcoin via LN in return. The privacy characteristics of a recipient on LN apply in this case."
                 }
             ]
         },
@@ -121,28 +122,16 @@
                     "content": "All code related to the Cashu project is free and open source."
                 }
             ]
-        }
-    ],
-    "knowledgeBits": [
-        {
-            "url": "https://cashu.space/",
-            "displayText": "Main Cashu website"
         },
         {
-            "url": "https://docs.cashu.space/resources/learn",
-            "displayText": "Curated resource section"
-        },
-        {
-            "url": "https://chaum.com/wp-content/uploads/2022/01/Chaum-blind-signatures.pdf",
-            "displayText": "David Chaum - Blind signatures for untraceable payments"
-        },
-        {
-            "url": "https://gist.github.com/callebtc/ed5228d1d8cbaade0104db5d1cf63939",
-            "displayText": "Proof of Liabilities scheme"
-        },
-        {
-            "url": "https://github.com/cashubtc/nuts",
-            "displayText": "Cashu NUTs (Notation, Usage, and Terminology) specification"
+            "id": "knowledgeBits",
+            "title": "Knowledge Bits",
+            "content": [
+                {
+                    "title": "Learn more",
+                    "content": "[Main Cashu website](https://cashu.space/)\n[Curated resource section](https://docs.cashu.space/resources/learn)\n[David Chaum - Blind signatures for untraceable payments](https://chaum.com/wp-content/uploads/2022/01/Chaum-blind-signatures.pdf)\n[Proof of Liabilities scheme](https://gist.github.com/callebtc/ed5228d1d8cbaade0104db5d1cf63939)\n[Cashu NUTs (Notation, Usage, and Terminology) specification](https://github.com/cashubtc/nuts)"
+                }
+            ]
         }
     ]
 }

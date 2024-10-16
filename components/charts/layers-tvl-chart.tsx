@@ -16,8 +16,6 @@ import {
     ChartTooltipContent,
 } from "@/components/ui/chart";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
-import { useQuery } from "@tanstack/react-query";
-import { fetcher } from "@/util/fetcher";
 import {
     Select,
     SelectContent,
@@ -29,13 +27,7 @@ import { useQueryState } from "nuqs";
 import { useMemo, useCallback } from "react";
 import { useTranslations } from "next-intl";
 
-interface Balance {
-    amount: number;
-    date: string;
-    identifier: string;
-    layer_name: string;
-    token_name: string;
-}
+import useGetBalances from "@/hooks/use-get-all-balances-pertoken";
 
 interface ProcessedData {
     date: string;
@@ -51,11 +43,7 @@ export default function LayersTVLChart() {
         defaultValue: "3mo",
     });
 
-    const { data } = useQuery<Balance[]>({
-        queryKey: ["get_balances"],
-        queryFn: () =>
-            fetcher(`${process.env.NEXT_PUBLIC_API_URL}/get_balances`),
-    });
+    const { data } = useGetBalances();
 
     const layers =
         chartType === "combined"
@@ -64,7 +52,7 @@ export default function LayersTVLChart() {
 
     const processedData = useMemo(() => {
         if (!data) return [];
-        return data.reduce((acc: ProcessedData[], item: Balance) => {
+        return data.reduce((acc: ProcessedData[], item) => {
             const itemDateUTC = item.date;
             const existingEntry = acc.find(
                 (entry) => entry.date === itemDateUTC,

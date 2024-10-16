@@ -4,7 +4,7 @@
     "layerType": "Sidechain",
     "live": "Mainnet",
     "staking": false,
-    "bridge": true,
+    "bridge": false,
     "underReview": "no",
     "riskFactors": ["High", "Medium", "Medium", "Medium"],
     "purpose": "General",
@@ -140,24 +140,16 @@
                     "content": "All code related to the Rootstock project is open source."
                 }
             ]
-        }
-    ],
-    "knowledgeBits": [
-        {
-            "url": "https://dev.rootstock.io/",
-            "displayText": "Rootstock developer portal"
         },
         {
-            "url": "https://rootstock.io/static/a79b27d4889409602174df4710102056/RS-whitepaper.pdf",
-            "displayText": "Rootstock Whitepaper"
-        },
-        {
-            "url": "https://dev.rootstock.io/rsk/architecture/powpeg/",
-            "displayText": "Powpeg documentation"
-        },
-        {
-            "url": "https://rootstock.io/powpeg/",
-            "displayText": "Powpeg remote attestation"
+            "id": "knowledgeBits",
+            "title": "Knowledge Bits",
+            "content": [
+                {
+                    "title": "Learn more",
+                    "content": "[Rootstock developer portal](https://dev.rootstock.io/)\n[Rootstock Whitepaper](https://rootstock.io/static/a79b27d4889409602174df4710102056/RS-whitepaper.pdf)\n[Powpeg documentation](https://dev.rootstock.io/rsk/architecture/powpeg/)\n[Powpeg remote attestation](https://rootstock.io/powpeg/)"
+                }
+            ]
         }
     ]
 }

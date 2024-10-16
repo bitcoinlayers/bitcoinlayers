@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import Image from "next/image";
 import { Layer } from "@/components/layer/layerProps";
 import Risk from "@/components/layer/layerTableItemRisk";
@@ -8,8 +8,8 @@ import TableHeader from "@/components/tables/tableHeader";
 import { MobileView, isMobile } from "react-device-detect";
 import Link from "next/link";
 import { useQueryState } from "nuqs";
-import { useMemo } from "react";
 import { useTranslations } from "next-intl";
+import useGetCurrentBalancesPerLayer from "@/hooks/use-get-current-balances-perlayer";
 
 type TableTabKey =
     | "Risk"
@@ -67,6 +67,27 @@ const LayerTableAll = ({ data, headers, showToggleGroup = true }: Props) => {
     const [sortOrder, setSortOrder] = useQueryState("sortOrder", {
         defaultValue: "asc",
     });
+
+    const { data: balances } = useGetCurrentBalancesPerLayer();
+
+    const totaledBalances = useMemo(() => {
+        if (!balances) return {};
+
+        return balances.reduce(
+            (acc, balance) => {
+                const { layer_slug, total_amount } = balance;
+
+                if (!acc[layer_slug]) {
+                    acc[layer_slug] = { totalAmount: 0 };
+                }
+
+                acc[layer_slug].totalAmount += total_amount;
+
+                return acc;
+            },
+            {} as Record<string, { totalAmount: number }>,
+        );
+    }, [balances]);
 
     const [mobileActiveTab, setMobileActiveTab] = useState<TableTabKey>("Risk");
 
@@ -198,7 +219,7 @@ const LayerTableAll = ({ data, headers, showToggleGroup = true }: Props) => {
                                             : "text-slate-600"
                                     }`}
                                 >
-                                    All
+                                    {t('all')}
                                 </div>
                             </div>
                         </div>
@@ -325,8 +346,13 @@ const LayerTableAll = ({ data, headers, showToggleGroup = true }: Props) => {
                                     <td className="lg:px-6 px-4 py-3 lg:py-4 border-r border-stroke_tertiary text_table_important">
                                         <Link href={`/layers/${item.slug}`}>
                                             {item.underReview === "yes" ||
-                                            item.btcLocked === null ||
-                                            isNaN(item.btcLocked) ? (
+                                            (Object.keys(totaledBalances).find(
+                                                (key) =>
+                                                    key.toLowerCase() ===
+                                                    item.title.toLowerCase(),
+                                            ) === undefined &&
+                                                (item.btcLocked === null ||
+                                                    isNaN(item.btcLocked))) ? (
                                                 <div className="font-light">
                                                     {t("under-review")}
                                                 </div>
@@ -334,8 +360,14 @@ const LayerTableAll = ({ data, headers, showToggleGroup = true }: Props) => {
                                                 <div>
                                                     ₿{" "}
                                                     {Number(
-                                                        item.btcLocked,
-                                                    ).toLocaleString("en")}
+                                                        totaledBalances[
+                                                            item.slug
+                                                        ]?.totalAmount ??
+                                                            item.btcLocked,
+                                                    ).toLocaleString("en-US", {
+                                                        minimumFractionDigits: 0,
+                                                        maximumFractionDigits: 0,
+                                                    })}
                                                 </div>
                                             )}
                                         </Link>

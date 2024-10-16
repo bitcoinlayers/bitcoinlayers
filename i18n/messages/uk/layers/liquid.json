@@ -4,7 +4,7 @@
     "layerType": "Sidechain",
     "live": "Mainnet",
     "staking": false,
-    "bridge": true,
+    "bridge": false,
     "underReview": "no",
     "riskFactors": ["Unverified", "Medium", "High", "Medium"],
     "purpose": "General",
@@ -53,7 +53,7 @@
             "score": 0,
             "tier": "Medium",
             "title": "Liquid blocks are finalized via Liquid full nodes",
-            "content": "After blocks are proposed by a functionaries, 11/15 functionaries are needed to sign off on the block to propogate it to the network. After this is done, Liquid full nodes accept the block and include it in the chain."
+            "content": "After blocks are proposed by a functionaries, 11/15 functionaries are needed to sign off on the block to propagate it to the network. After this is done, Liquid full nodes accept the block and include it in the chain."
         }
     ],
     "sections": [
@@ -158,24 +158,16 @@
                     "content": "All code related to the Liquid Network project is open source."
                 }
             ]
-        }
-    ],
-    "knowledgeBits": [
-        {
-            "url": "https://liquid.net/",
-            "displayText": "Liquid website"
         },
         {
-            "url": "https://help.blockstream.com/hc/en-us/articles/900001408623-How-does-Liquid-Bitcoin-L-BTC-work",
-            "displayText": "Article explaining how L-BTC works"
-        },
-        {
-            "url": "https://docs.liquid.net/docs/technical-overview",
-            "displayText": "Liquid documentation"
-        },
-        {
-            "url": "https://blog.liquid.net/the-truth-about-liquid/",
-            "displayText": "Article covering the nuance around Liquid's security model"
+            "id": "knowledgeBits",
+            "title": "Knowledge Bits",
+            "content": [
+                {
+                    "title": "Learn more",
+                    "content": "[Liquid website](https://liquid.net/)\n[Article explaining how L-BTC works](https://help.blockstream.com/hc/en-us/articles/900001408623-How-does-Liquid-Bitcoin-L-BTC-work)\n[Liquid documentation](https://docs.liquid.net/docs/technical-overview)\n[Article covering the nuance around Liquid's security model](https://blog.liquid.net/the-truth-about-liquid/)"
+                }
+            ]
         }
     ]
 }

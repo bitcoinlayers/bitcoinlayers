@@ -125,7 +125,7 @@
                 },
                 {
                     "title": "NFTs",
-                    "content": "Stacks is home to a number of NFT projects, including digital art, collectibles, and indentity."
+                    "content": "Stacks is home to a number of NFT projects, including digital art, collectibles, and identity."
                 }
             ]
         },
@@ -148,20 +148,16 @@
                     "content": "All code related to the Stacks project is free and open source."
                 }
             ]
-        }
-    ],
-    "knowledgeBits": [
-        {
-            "url": "https://messari.io/report/state-of-stacks-q4-2023",
-            "displayText": "State of Stacks Q4 2023 from Messari"
         },
         {
-            "url": "https://docs.stacks.co/stacks-101/bitcoin-connection",
-            "displayText": "Bitcoin Connection from Stacks Docs"
-        },
-        {
-            "url": "https://docs.stacks.co/stacks-101/proof-of-transfer",
-            "displayText": "Proof of Transfer from Stacks Docs"
+            "id": "knowledgeBits",
+            "title": "Knowledge Bits",
+            "content": [
+                {
+                    "title": "Learn more",
+                    "content": "[State of Stacks Q4 2023 from Messari](https://messari.io/report/state-of-stacks-q4-2023)\n[Bitcoin Connection from Stacks Docs](https://docs.stacks.co/stacks-101/bitcoin-connection)\n[Proof of Transfer from Stacks Docs](https://docs.stacks.co/stacks-101/proof-of-transfer)"
+                }
+            ]
         }
     ]
 }

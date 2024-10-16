@@ -57,7 +57,6 @@ export type Layer = {
     riskAnalysis: Risksection[];
     bridgeAnalysis?: BridgeSection[];
     sections: Section[];
-    knowledgeBits: kbit[];
     /** MDX file body */
     slug: string;
 };

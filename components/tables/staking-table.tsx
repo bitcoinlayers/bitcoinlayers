@@ -11,7 +11,7 @@ import Link from "next/link";
 import { useQueryState } from "nuqs";
 import { useTranslations } from "next-intl";
 
-type TableTabKey = "Risk" | "Type" | "Status" | "Category";
+type TableTabKey = "Snapshot" | "Type" | "Status" | "Category";
 
 type TableItem = Layer | Infrastructure;
 
@@ -72,7 +72,8 @@ const StakingTable = ({ data, headers }: Props) => {
         defaultValue: "asc",
     });
 
-    const [mobileActiveTab, setMobileActiveTab] = useState<TableTabKey>("Risk");
+    const [mobileActiveTab, setMobileActiveTab] =
+        useState<TableTabKey>("Snapshot");
 
     const sortAndFilterData = useMemo(() => {
         const sorted = [...data].sort((a, b) => {
@@ -214,7 +215,7 @@ const StakingTable = ({ data, headers }: Props) => {
                 <div className="justify-center lg:items-start gap-3 inline-flex py-3">
                     {headers.slice(1).map((_item, ind) => {
                         const isAllowedTab = [
-                            "Risk",
+                            "Snapshot",
                             "Category",
                             "Type",
                             "Status",
@@ -282,9 +283,11 @@ const StakingTable = ({ data, headers }: Props) => {
                                         </span>
                                     </Link>
                                 </td>
-                                {(!isMobile || mobileActiveTab === "Risk") && (
+                                {(!isMobile ||
+                                    mobileActiveTab === "Snapshot") && (
                                     <td className="relative px-2 border-stroke_tertiary text_table_important">
-                                        {isLayer(item) ? (
+                                        Coming Soon
+                                        {/* {isLayer(item) ? (
                                             item.underReview === "no" ? (
                                                 <Risk layer={item} />
                                             ) : (
@@ -296,7 +299,7 @@ const StakingTable = ({ data, headers }: Props) => {
                                             <div className="lg:px-5 px-1 text_table_important">
                                                 {t("not-applicable")}
                                             </div>
-                                        )}
+                                        )} */}
                                     </td>
                                 )}
                                 {(!isMobile || mobileActiveTab === "Type") && (

@@ -30,7 +30,6 @@ interface kbit {
 //     links: string[];
 //     description: string;
 //     sections: Section[];
-//     knowledgeBits: kbit[];
 // }
 
 // export default InfrastructureProps;
@@ -40,6 +39,7 @@ export type Infrastructure = {
     infrastructureType: string;
     live: string;
     staking: boolean;
+    bridge?: boolean;
     underReview: string;
     riskFactors: string[];
     bitcoinSecurity: string;
@@ -50,7 +50,6 @@ export type Infrastructure = {
     links: string[];
     description: string;
     sections: Section[];
-    knowledgeBits: kbit[];
     /** MDX file body */
     slug: string;
 };

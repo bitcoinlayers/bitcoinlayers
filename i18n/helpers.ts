@@ -1,10 +1,9 @@
+import { Infrastructure } from "@/components/infrastructure/infrastructureProps";
 import { getUserLocale } from "@/i18n/service";
 
 // HACK: despite of all of the types below has ".../en..."
 // they're still suitable for any locales
 type LayersType = typeof import("@/i18n/messages/en/layers");
-type ChartDataType =
-    typeof import("@/i18n/messages/en/layers/bob_total_supply.json");
 type InfrastructureType = typeof import("@/i18n/messages/en/infrastructures");
 type OpcodeTypes = typeof import("@/i18n/messages/en/opcodes");
 
@@ -23,7 +22,23 @@ export async function getAllLayersWithSlugs(): Promise<LayersType> {
     return import(`@/i18n/messages/${locale}/layers`);
 }
 
-export async function getChartData(): Promise<ChartDataType> {
+export async function getAllEcash(): Promise<Infrastructure[]> {
     const locale = await getUserLocale();
-    return import(`@/i18n/messages/${locale}/layers/bob_total_supply.json`);
+    const cashu: Infrastructure = await import(
+        `@/i18n/messages/${locale}/infrastructures/cashu.json`
+    );
+    const fedimint: Infrastructure = await import(
+        `@/i18n/messages/${locale}/infrastructures/fedimint.json`
+    );
+    return [cashu, fedimint];
 }
+
+export const getallEcashSlugs = async (): Promise<string[]> => {
+    const allEcash: Infrastructure[] = await getAllEcash();
+    return allEcash.map((infrastructure) => {
+        if (!infrastructure.slug) {
+            throw new Error("No slugs!");
+        }
+        return infrastructure.slug;
+    });
+};

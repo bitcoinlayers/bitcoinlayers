@@ -9,8 +9,6 @@ import {
     ChartTooltip,
     ChartTooltipContent,
 } from "@/components/ui/chart";
-import { useQuery } from "@tanstack/react-query";
-import { fetcher } from "@/util/fetcher";
 import {
     Select,
     SelectContent,
@@ -32,6 +30,9 @@ interface Balance {
     TPS: number;
     "Fee Revenue": number;
 }
+import useGetBalances from "@/hooks/use-get-all-balances-pertoken";
+import useGetCurrentPrices from "@/hooks/use-get-current-prices";
+import { formatCurrency } from "@/util/formatCurrency";
 
 interface ProcessedData {
     date: string;
@@ -50,13 +51,16 @@ export default function ProjectTVLChart() {
         defaultValue: "3mo",
     });
 
-    const { data } = useQuery<Balance[]>({
-        queryKey: [`get_balances?layer_name=ilike.${slug}`],
-        queryFn: () =>
-            fetcher(
-                `${process.env.NEXT_PUBLIC_API_URL}/get_balances?layer_name=ilike.${slug}`,
-            ),
+    const { data } = useGetBalances({
+        queryString: `?layer_name=ilike.${slug}`,
     });
+
+    const { data: pricesData, isLoading, error } = useGetCurrentPrices();
+
+    const btcPriceData = pricesData?.find(
+        (price) => price.token_slug === "btc",
+    );
+    const currentBTCPrice = btcPriceData ? btcPriceData.price_usd : 0;
 
     const tokens = useMemo(
         () =>
@@ -68,7 +72,7 @@ export default function ProjectTVLChart() {
 
     const processedData = useMemo(() => {
         if (!data) return [];
-        return data.reduce((acc: ProcessedData[], item: Balance) => {
+        return data.reduce((acc: ProcessedData[], item) => {
             const itemDateUTC = item.date;
             const existingEntry = acc.find(
                 (entry) => entry.date === itemDateUTC,
@@ -161,13 +165,8 @@ export default function ProjectTVLChart() {
 
         return {
             TVL: tvl,
-            TPS: filteredData.reduce((acc, curr) => acc + (curr.TPS || 0), 0),
-            "Fee Rev.": filteredData.reduce(
-                (acc, curr) => acc + (curr["Fee Revenue"] || 0),
-                0,
-            ),
         };
-    }, [data, dateRange, tokens]);
+    }, [data, dateRange]);
 
     if (data?.length === 0) return null;
 
@@ -227,19 +226,26 @@ export default function ProjectTVLChart() {
                                 className="flex flex-1 flex-col justify-center gap-1 px-3 py-2 sm:px-6 sm:py-4 text-left even:border-x sm:even:border-x-0 sm:odd:border-l sm:first:border-r data-[active=true]:bg-muted/50"
                                 onClick={() => setActiveChart(chart)}
                             >
-                                <span className="text-xs text-muted-foreground w-12 md:w-20">
+                                <span className="text-xs text-muted-foreground w-8 md:w-16">
                                     {key}
                                 </span>
                                 <span className="text-xs sm:text-base leading-none">
                                     {key === "TVL" ? (
-                                        <span className="font-bold">
-                                            {total[
-                                                key as keyof typeof total
-                                            ].toLocaleString("en-US", {
-                                                minimumFractionDigits: 2,
-                                                maximumFractionDigits: 2,
-                                            })}
-                                        </span>
+                                        <div>
+                                            <span className="font-bold">
+                                                {`${total[
+                                                    key as keyof typeof total
+                                                ].toLocaleString("en-US", {
+                                                    minimumFractionDigits: 0,
+                                                    maximumFractionDigits: 0,
+                                                })} BTC`}
+                                            </span>
+                                            <div className="text-xs sm:text-sm py-2 text-muted-foreground">
+                                                {formatCurrency(
+                                                    total.TVL * currentBTCPrice,
+                                                )}
+                                            </div>
+                                        </div>
                                     ) : (
                                         <span className="text-[10px] italic">
                                             {t("coming-soon")}

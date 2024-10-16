@@ -25,7 +25,7 @@
         "https://github.com/SatoshiVM",
         "https://x.com/SatoshiVM"
     ],
-    "description": "SatoshiVM is a premissioned chain built on the Frontier client software. Its native token is an ERC-20 on Ethereum",
+    "description": "SatoshiVM is a permissioned chain built on the Frontier client software. Its native token is an ERC-20 on Ethereum",
     "riskAnalysis": [
         {
             "category": "Bridge Custody",
@@ -46,7 +46,7 @@
             "score": 0,
             "tier": "Unverified",
             "title": "Network managed by a permissioned set of operators",
-            "content": "SatoshiVM's explorer currently shows 4 active validators proposing blocks. The identities of these validators is unkown."
+            "content": "SatoshiVM's explorer currently shows 4 active validators proposing blocks. The identities of these validators is unknown."
         },
         {
             "category": "State Validation",
