@@ -99,7 +99,7 @@ const LayerDiamond: React.FC<{ layer: Layer }> = ({ layer }) => {
                 "right-[10px] top-[155px] rotate-45 origin-top-right text-right",
         },
         {
-            text: "SETTLEMENT ASSURANCE",
+            text: "FINALITY ASSURANCE",
             className:
                 "left-[51%] translate-x-[-50%] top-[355px] origin-top-left text-center w-[80px]",
         },
