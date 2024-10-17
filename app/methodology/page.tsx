@@ -61,7 +61,7 @@ const Methodology: React.FC = () => {
         <br />
         <li>${t("additional-considerations")}</li>
         <ul>
-                <li>${t("layers-that-settle-to-a-parent-blockchain-must-consider")}</li>
+                <li>${t.raw("layers-that-settle-to-a-parent-blockchain-must-consider")}</li>
                 <li>${t("due-to-complexities-related-to-federated-set-ups-we-will-additionally")}</li>
                 <li>${t("additional-situations-can-be-added-to-this-framework-for-edge-cases-for-example-users-of-statechains-can-unilaterally-exit-with-a-bitcoin-l1-transaction-but-an-operator-can-steal-funds-by-colluding-with-the-past-owner-and-users-cannot-submit-a-challenge-transaction")}</li>
             </ul>
@@ -191,8 +191,7 @@ const Methodology: React.FC = () => {
     <br />
     <p>${t("bitcoin-does-not-have-a-unified-scaling-roadmap-there")}</p>
     <br />
-    <p>${t("if-you-have-comments-on-this-framework-please")}</p>
-`;
+    <p>${t.raw("if-you-have-comments-on-this-framework-please")}</p>`;
 
     return (
         <article className="flex flex-col min-h-screen max-w-5xl mx-auto pt-16 px-4 sm:px-6 lg:px-8">
