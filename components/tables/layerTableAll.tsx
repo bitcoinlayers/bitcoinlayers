@@ -8,7 +8,7 @@ import TableHeader from "@/components/tables/tableHeader";
 import { MobileView, isMobile } from "react-device-detect";
 import Link from "next/link";
 import { useQueryState } from "nuqs";
-import useGetBalances from "@/hooks/use-get-all-balances-pertoken";
+import { useTranslations } from "next-intl";
 import useGetCurrentBalancesPerLayer from "@/hooks/use-get-current-balances-perlayer";
 
 type TableTabKey =
@@ -52,6 +52,7 @@ const LayerImage = ({ src, title }: { src: string; title: string }) => {
 };
 
 const LayerTableAll = ({ data, headers, showToggleGroup = true }: Props) => {
+    const t = useTranslations("home-table");
     const [status, setStatus] = useQueryState("status", {
         defaultValue: "Mainnet",
     });
@@ -179,7 +180,7 @@ const LayerTableAll = ({ data, headers, showToggleGroup = true }: Props) => {
                                         : "text-slate-600"
                                 }`}
                             >
-                                Mainnet
+                                {t("mainnet")}
                             </div>
                         </div>
                         <div
@@ -198,7 +199,7 @@ const LayerTableAll = ({ data, headers, showToggleGroup = true }: Props) => {
                                             : "text-slate-600"
                                     }`}
                                 >
-                                    Testnet
+                                    {t("testnet")}
                                 </div>
                             </div>
                         </div>
@@ -218,7 +219,7 @@ const LayerTableAll = ({ data, headers, showToggleGroup = true }: Props) => {
                                             : "text-slate-600"
                                     }`}
                                 >
-                                    All
+                                    {t('all')}
                                 </div>
                             </div>
                         </div>
@@ -270,7 +271,6 @@ const LayerTableAll = ({ data, headers, showToggleGroup = true }: Props) => {
                         headers={isMobile ? mobileTableHeaders : headers}
                         onSort={handleSort}
                     />
-
                     <tbody className="bg-white gap-x-8 border-t border-stroke_tertiary text_table_important">
                         {filteredData.map((item, index) => (
                             <tr
@@ -299,7 +299,7 @@ const LayerTableAll = ({ data, headers, showToggleGroup = true }: Props) => {
                                             <Risk layer={item} />
                                         ) : (
                                             <div className="lg:px-5 px-1 text_table_important font-light">
-                                                Under review
+                                                {t("under-review")}
                                             </div>
                                         )}
                                     </td>
@@ -354,7 +354,7 @@ const LayerTableAll = ({ data, headers, showToggleGroup = true }: Props) => {
                                                 (item.btcLocked === null ||
                                                     isNaN(item.btcLocked))) ? (
                                                 <div className="font-light">
-                                                    Under review
+                                                    {t("under-review")}
                                                 </div>
                                             ) : (
                                                 <div>

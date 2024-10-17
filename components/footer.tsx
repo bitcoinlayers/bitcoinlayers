@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import externalIcon from "/public/icons/external.png";
 import type { ReactElement } from "react";
+import { useTranslations } from "next-intl";
 
 const SectionHeader = ({ children }: { children: React.ReactNode }) => (
     <div className="self-stretch text-slate-600 text-sm font-medium leading-tight">
@@ -52,47 +53,51 @@ const SectionItemExternal = ({
     </div>
 );
 
-const FooterBottom = () => (
-    <div className="w-full lg:h-[120px] h-[144px] lg:px-16 lg:py-12 bg-slate-50 flex flex-col lg:justify-start justify-center items-center lg:gap-16">
-        <div className="lg:h-6 px-8 flex flex-col justify-start items-start gap-16 w-full">
-            <div className="w-full flex lg:flex-row flex-col-reverse lg:justify-between items-center gap-y-3">
-                <div className="text-slate-500 text-base font-normal leading-normal">
-                    Bitcoin Layers 2024 • MIT license
-                </div>
-                <div className="flex justify-start items-center gap-6">
-                    <Link
-                        href={"https://github.com/bitcoinlayers"}
-                        target="_blank"
-                        className="w-6 h-6 relative"
-                    >
-                        <Image
-                            className="w-6 h-6"
-                            src="/icons/github.svg"
-                            alt="GitHub"
-                            width={24}
-                            height={24}
-                        />
-                    </Link>
-                    <Link
-                        href={"https://twitter.com/bitcoinlayers"}
-                        target="_blank"
-                        className="w-6 h-6 relative"
-                    >
-                        <Image
-                            className="w-6 h-6"
-                            src="/icons/twitter.svg"
-                            alt="GitHub"
-                            width={24}
-                            height={24}
-                        />
-                    </Link>
+const FooterBottom = () => {
+    const t = useTranslations("footer");
+    return (
+        <div className="w-full lg:h-[120px] h-[144px] lg:px-16 lg:py-12 bg-slate-50 flex flex-col lg:justify-start justify-center items-center lg:gap-16">
+            <div className="lg:h-6 px-8 flex flex-col justify-start items-start gap-16 w-full">
+                <div className="w-full flex lg:flex-row flex-col-reverse lg:justify-between items-center gap-y-3">
+                    <div className="text-slate-500 text-base font-normal leading-normal">
+                        {t("bitcoin-layers-2024-mit-license")}
+                    </div>
+                    <div className="flex justify-start items-center gap-6">
+                        <Link
+                            href={"https://github.com/bitcoinlayers"}
+                            target="_blank"
+                            className="w-6 h-6 relative"
+                        >
+                            <Image
+                                className="w-6 h-6"
+                                src="/icons/github.svg"
+                                alt="GitHub"
+                                width={24}
+                                height={24}
+                            />
+                        </Link>
+                        <Link
+                            href={"https://twitter.com/bitcoinlayers"}
+                            target="_blank"
+                            className="w-6 h-6 relative"
+                        >
+                            <Image
+                                className="w-6 h-6"
+                                src="/icons/twitter.svg"
+                                alt="GitHub"
+                                width={24}
+                                height={24}
+                            />
+                        </Link>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-);
+    );
+};
 
 export default function Footer(): ReactElement {
+    const t = useTranslations("footer");
     return (
         <footer className="w-full">
             <div className="max-w-6xl mx-auto flex flex-col justify-start items-start">
@@ -113,29 +118,31 @@ export default function Footer(): ReactElement {
                                         />
                                     </div>
                                     <div className="self-stretch text-slate-500 text-xs lg:text-center text-left">
-                                        Not every bitcoin layer is equal.
-                                        <br /> Learn the difference.
+                                        {t("not-every-bitcoin-layer-is-equal")}
+                                        <br /> {t("learn-the-difference")}
                                     </div>
                                 </div>
                             </div>
                             <div className="grow lg:flex lg:h-[228px] justify-start items-start gap-8 grid grid-cols-2">
                                 <div className="grow flex flex-col justify-start items-start gap-4">
-                                    <SectionHeader>Risk Analysis</SectionHeader>
+                                    <SectionHeader>
+                                        {t("risk-analysis")}
+                                    </SectionHeader>
                                     <div className="self-stretch lg:h-[188px] flex flex-col justify-start items-start gap-3">
                                         <SectionItem href="/">
-                                            Layers
+                                            {t("layers")}
                                         </SectionItem>
                                         <SectionItem href="/staking">
-                                            Staking
+                                            {t('staking')}
                                         </SectionItem>
                                         <SectionItem href="/bridges">
-                                            Bridges
+                                            {t('bridges')}
                                         </SectionItem>
                                         <SectionItem href="/ecash">
-                                            Ecash
+                                            {t('ecash')}
                                         </SectionItem>
                                         <SectionItem href="/bitcoinonly">
-                                            Bitcoin Only
+                                            {t("bitcoin-only")}
                                         </SectionItem>
                                         {/* <SectionItem href="/opcode">
                                             Opcodes
@@ -146,30 +153,32 @@ export default function Footer(): ReactElement {
                                     </div>
                                 </div>
                                 <div className="grow flex flex-col justify-start items-start gap-4">
-                                    <SectionHeader>Learn</SectionHeader>
+                                    <SectionHeader>{t("learn")}</SectionHeader>
                                     <div className="self-stretch lg:h-48 flex flex-col justify-start items-start gap-3">
                                         <SectionItem href="/glossary">
-                                            Glossary
+                                            {t("glossary")}
                                         </SectionItem>
                                         <SectionItem href="/faq">
-                                            FAQ
+                                            {t("faq")}
                                         </SectionItem>
                                         <SectionItem href="/methodology">
-                                            Methodology
+                                            {t("methodology")}
                                         </SectionItem>
                                     </div>
                                 </div>
                                 <div className="grow flex flex-col justify-start items-start gap-4">
-                                    <SectionHeader>Resources</SectionHeader>
+                                    <SectionHeader>
+                                        {t("resources")}
+                                    </SectionHeader>
                                     <div className="self-stretch h-[116px] flex flex-col justify-start items-start gap-3">
                                         <SectionItem href="/about">
-                                            About
+                                            {t("about")}
                                         </SectionItem>
                                         <SectionItem href="/contribute">
-                                            Contribute
+                                            {t("contribute")}
                                         </SectionItem>
                                         <SectionItemExternal href="https://www.lxresearch.co/">
-                                            Blog
+                                            {t("blog")}
                                         </SectionItemExternal>
                                     </div>
                                 </div>

@@ -9,6 +9,7 @@ import TableHeader from "@/components/tables/tableHeader";
 import { MobileView, isMobile } from "react-device-detect";
 import Link from "next/link";
 import { useQueryState } from "nuqs";
+import { useTranslations } from "next-intl";
 
 type TableTabKey = "Risk" | "Type" | "Status" | "Category";
 
@@ -58,6 +59,8 @@ const BitcoinonlyTable = ({ data, headers }: Props) => {
     const [status, setStatus] = useQueryState("status", {
         defaultValue: "Mainnet",
     });
+    const t = useTranslations("bitcoin-only-table");
+
     const [types] = useQueryState<string[]>("type", {
         defaultValue: [],
         parse: (value) => value.split(",").filter(Boolean),
@@ -163,7 +166,7 @@ const BitcoinonlyTable = ({ data, headers }: Props) => {
                                     : "text-slate-600"
                             }`}
                         >
-                            Mainnet
+                            {t("mainnet")}
                         </div>
                     </div>
                     <div
@@ -182,7 +185,7 @@ const BitcoinonlyTable = ({ data, headers }: Props) => {
                                         : "text-slate-600"
                                 }`}
                             >
-                                Testnet
+                                {t("testnet")}
                             </div>
                         </div>
                     </div>
@@ -202,7 +205,7 @@ const BitcoinonlyTable = ({ data, headers }: Props) => {
                                         : "text-slate-600"
                                 }`}
                             >
-                                All
+                                {t("all")}
                             </div>
                         </div>
                     </div>
@@ -287,12 +290,12 @@ const BitcoinonlyTable = ({ data, headers }: Props) => {
                                                 <Risk layer={item} />
                                             ) : (
                                                 <div className="lg:px-5 px-1 text_table_important font-light">
-                                                    Under review
+                                                    {t("under-review")}
                                                 </div>
                                             )
                                         ) : (
                                             <div className="lg:px-5 px-1 text_table_important">
-                                                Not applicable
+                                                {t("not-applicable")}
                                             </div>
                                         )}
                                     </td>
@@ -339,8 +342,8 @@ const BitcoinonlyTable = ({ data, headers }: Props) => {
                                             }/${item.slug}`}
                                         >
                                             {isLayer(item)
-                                                ? "Layer"
-                                                : "Infrastructure"}
+                                                ? t("layer")
+                                                : t("infrastructure")}
                                         </Link>
                                     </td>
                                 )}

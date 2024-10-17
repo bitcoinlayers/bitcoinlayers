@@ -1,8 +1,25 @@
-import { allEcash } from "@/util/ecash_index";
+"use client";
+
+import { getAllEcash } from "@/i18n/helpers";
 import Hero from "@/components/hero";
 import InfrastructureTable from "@/components/tables/infrastructureTable";
+import { useEffect, useState } from "react";
+import { useTranslations } from "next-intl";
+import { Infrastructure } from "@/components/infrastructure/infrastructureProps";
 
 export default function Home() {
+    const [allEcash, setAllEscash] = useState<Infrastructure[]>([]);
+    const t = useTranslations("escash");
+
+    useEffect(() => {
+        const load = async () => {
+            const allEcash = await getAllEcash();
+            setAllEscash(allEcash);
+        };
+
+        load();
+    }, []);
+
     const sortedInfrastructures = allEcash.sort((a, b) =>
         a.title.toLowerCase().localeCompare(b.title.toLowerCase()),
     );
@@ -16,20 +33,24 @@ export default function Home() {
     ];
 
     const infrastructureHeaders = [
-        { name: "Name", showSorting: true, mobileLabel: "Name" },
+        { name: t("name"), showSorting: true, mobileLabel: t("name") },
         {
-            name: "Type",
+            name: t("type"),
             showSorting: true,
-            mobileLabel: "Type",
+            mobileLabel: t("type"),
             filterOptions: typeFilters,
         },
-        { name: "Status", showSorting: true, mobileLabel: "Status" },
+        { name: t("status"), showSorting: true, mobileLabel: t("status") },
         {
-            name: "Unit of Account",
+            name: t("unit-of-account"),
             showSorting: true,
-            mobileLabel: "Unit",
+            mobileLabel: t("unit"),
         },
-        { name: "Associated Layers", showSorting: true, mobileLabel: "Layers" },
+        {
+            name: t("associated-layers"),
+            showSorting: true,
+            mobileLabel: t("layers"),
+        },
     ];
 
     return (

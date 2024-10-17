@@ -1,15 +1,13 @@
 import { notFound } from "next/navigation";
-import {
-    allInfrastructures,
-    allInfrastructureSlugs,
-} from "@/util/infrastructure_index";
 import InfrastructureMenu from "@/components/infrastructure/infrastructureMenu";
 import InfrastructureBody from "@/components/infrastructure/infrastructureBody";
 import InfrastructureOverview from "@/components/infrastructure/infrastructureOverview";
 import InfrastructureImage from "@/components/infrastructure/infrastructure-image";
+import { getAllInfrastructure } from "@/i18n/helpers";
 import AltTVLChart from "@/components/charts/alt-tvl-chart";
 
 async function getInfrastructureFromSlug(slug: string) {
+    const { allInfrastructures } = await getAllInfrastructure();
     const infrastructure = allInfrastructures.find(
         (infrastructure) => infrastructure.slug === slug,
     );
@@ -38,7 +36,7 @@ export default async function InfrastructurePage({
                     <InfrastructureImage
                         title={infrastructure.title}
                         src={`/logos/${infrastructure.slug}.png`}
-                    />{" "}
+                    />
                 </div>
                 <div className="flex-grow flex items-center">
                     <h1 className="layer_header flex-grow">
@@ -58,10 +56,4 @@ export default async function InfrastructurePage({
             </div>
         </article>
     );
-}
-
-export async function generateStaticParams() {
-    return allInfrastructureSlugs.map((slug) => ({
-        slug,
-    }));
 }

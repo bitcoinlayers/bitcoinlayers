@@ -25,6 +25,8 @@ import {
 } from "@/components/ui/select";
 import { useQueryState } from "nuqs";
 import { useMemo, useCallback } from "react";
+import { useTranslations } from "next-intl";
+
 import useGetBalances from "@/hooks/use-get-all-balances-pertoken";
 
 interface ProcessedData {
@@ -33,6 +35,7 @@ interface ProcessedData {
 }
 
 export default function LayersTVLChart() {
+    const t = useTranslations("layers-tvl-chart");
     const [chartType, setChartType] = useQueryState("chart", {
         defaultValue: "separate",
     });
@@ -103,11 +106,10 @@ export default function LayersTVLChart() {
             <CardHeader className="flex flex-col lg:flex-row flex-wrap lg:items-center justify-between border-b mb-4">
                 <div>
                     <CardTitle className="flex font-normal items-center gap-2">
-                        BTC Locked
+                        {t("btc-locked")}
                     </CardTitle>
                     <CardDescription className="mt-1 text-xs flex flex-wrap">
-                        Total amount of BTC locked in protocols listed on
-                        Bitcoin Layers
+                        {t("total-amount")}
                     </CardDescription>
                 </div>
                 <div className="flex flex-col lg:flex-row items-start lg:items-center justify-center lg:space-x-2 space-y-2 lg:space-y-0 pt-2 lg:pt-0">
@@ -126,14 +128,14 @@ export default function LayersTVLChart() {
                             className="border font-normal rounded-full px-3 lg:px-4 text-xs lg:text-sm"
                             size="sm"
                         >
-                            Combined
+                            {t("combined")}
                         </ToggleGroupItem>
                         <ToggleGroupItem
                             value="separate"
                             className="border rounded-full px-3 lg:px-4 text-xs lg:text-sm font-normal"
                             size="sm"
                         >
-                            Separate
+                            {t("separate")}
                         </ToggleGroupItem>
                     </ToggleGroup>
                     <div className="block">
@@ -142,11 +144,15 @@ export default function LayersTVLChart() {
                                 <SelectValue placeholder="Select date range" />
                             </SelectTrigger>
                             <SelectContent>
-                                <SelectItem value="1mo">Last month</SelectItem>
-                                <SelectItem value="3mo">
-                                    Last 3 months
+                                <SelectItem value="1mo">
+                                    {t("last-month")}
                                 </SelectItem>
-                                <SelectItem value="1y">Last year</SelectItem>
+                                <SelectItem value="3mo">
+                                    {t("last-3-months")}
+                                </SelectItem>
+                                <SelectItem value="1y">
+                                    {t("last-year")}
+                                </SelectItem>
                             </SelectContent>
                         </Select>
                     </div>

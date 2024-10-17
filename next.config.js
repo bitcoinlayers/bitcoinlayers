@@ -1,10 +1,9 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-    reactStrictMode: true,
-    swcMinify: true,
-};
+const createNextIntlPlugin = require("next-intl/plugin");
 
-module.exports = {
+const withNextIntl = createNextIntlPlugin();
+
+module.exports = withNextIntl({
     webpack: (config) => {
         config.module.rules.push({
             test: /\.json$/,
@@ -12,4 +11,4 @@ module.exports = {
         });
         return config;
     },
-};
+});

@@ -1,10 +1,11 @@
 "use client";
 
-// import Image from "next/image";
-import React, { useState } from "react";
+import React from "react";
 import styles from "../../components/styles/methodology.module.css";
+import { useTranslations } from "next-intl";
 
 const Methodology: React.FC = () => {
+    const t = useTranslations("methodology");
     const InfoBox: React.FC<{ title: string; body: string }> = ({
         title,
         body,
@@ -30,39 +31,39 @@ const Methodology: React.FC = () => {
 
     const bridgeCustodyBody = `
     <ul>
-        <li>🟢 Green must match one of the following conditions:</li>
+        <li>${t("green-must-match-one-of-the-following-conditions")}</li>
         <ul>
-                <li>Users can contest a dispute in the final state with a counterparty and claim their assets on the L1</li>
-                <li>Bitcoin can verify changes to the layer’s state directly in Script when users’ offchain balances are updated, permitting withdrawals when users want to leave the system</li>
-                <li>The bridge is managed by an alternative consensus mechanism where anyone can challenge malicious withdrawal requests. Operators can be rotated in the event of liveness failures.</li>
+                <li>${t("users-can-contest-a-dispute-in-the-final-state-with-a-counterparty-and-claim-their-assets-on-the-l1")}</li>
+                <li>${t("bitcoin-can-verify-changes-to-the-layers-state")}</li>
+                <li>${t("the-bridge-is-managed-by-an-alternative-consensus")}</li>
             </ul>
             </li>
         <br />
-        <li>🟡 Yellow must match one of the following conditions:</li>
+        <li>${t("yellow-must-match-one-of-the-following-conditions")}</li>
         <ul>
-                <li>The bridge is managed by an alternative consensus mechanism that is financially incentivized not to steal</li>
-                <li>The bridge is managed by an alternative consensus mechanism where anyone can challenge malicious withdrawal requests</li>
-                <ul><li><i>We are currently considering a score where systems like the Spiderchain and tBTC v2 would be considered yellow</i></li></ul>
+                <li>${t("the-bridge-is-managed-by-an-alternative-consensus-mechanism-that-is-financially-incentivized")}</li>
+                <li>${t("the-bridge-is-managed-by-an-alternative-consensus-mechanism")}</li>
+                <ul><li><i>${t("we-are-currently-considering-a-score-where-systems")}</i></li></ul>
             </ul>
             </li>
         <br />
-        <li>🔴 Red:</li>
+        <li>${t("red")}</li>
             <ul>
-                <li>The bridge is managed by at least 5 publicly known signers, who are external to the organization building the layer.</li>
+                <li>${t("the-bridge-is-managed-by-at-least-5-publicly-known")}</li>
             </ul>
             </li>
         <br />
-        <li>🛑 Stop!</li>
+        <li>${t("stop")}</li>
         <ul>
-                <li>The two-way peg does not meet the requirements for Red.</li>
+                <li>${t("the-two-way-peg-does-not-meet-the-requirements-for-red")}</li>
             </ul>
         </li>
         <br />
-        <li>Additional considerations:</li>
+        <li>${t("additional-considerations")}</li>
         <ul>
-                <li>Layers that settle to a parent blockchain must consider their exit window. For rollups, we follow <a href="https://forum.l2beat.com/t/the-risk-rosette-framework/292" style="color: blue; text-decoration: underline;" target="_blank" rel="noopener noreferrer">L2Beat’s suggestions on exit windows</a>. These exit window scores overrule any other score related to the two-way peg. For example: If a rollup-style layer leverages tBTC (a yellow or red score) to natively mint bitcoin-backed tokens, but has an immediately upgradeable contract, then the layer will receive a “Stop!” score in the assessment.</li>
-                <li>Due to complexities related to federated set ups, we will additionally highlight more granular trust assumptions for federated two-way pegs in a subsection of the review. In this upcoming framework, we will outline how a federated peg can be upgraded to yellow if it meets a certain threshold of requirements.</li>
-                <li>Additional situations can be added to this framework for edge cases. For example, users of Statechains can unilaterally exit with a Bitcoin L1 transaction, but an operator can steal funds by colluding with the past owner, and users cannot submit a challenge transaction.</li>
+                <li>${t.raw("layers-that-settle-to-a-parent-blockchain-must-consider")}</li>
+                <li>${t("due-to-complexities-related-to-federated-set-ups-we-will-additionally")}</li>
+                <li>${t("additional-situations-can-be-added-to-this-framework-for-edge-cases-for-example-users-of-statechains-can-unilaterally-exit-with-a-bitcoin-l1-transaction-but-an-operator-can-steal-funds-by-colluding-with-the-past-owner-and-users-cannot-submit-a-challenge-transaction")}</li>
             </ul>
         </li>
         </ul>
@@ -70,29 +71,29 @@ const Methodology: React.FC = () => {
 
     const dataAvailabilityBody = `
 <ul>
-        <li>🟢 Green must match one of the following conditions:</li>
+        <li>${t("green-must-match-one-of-the-following-conditions")}</li>
         <ul>
-                <li>All data needed to reconstruct the layer’s state lives on the Bitcoin L1 and is accessible via full nodes</li>
-                <li>Data is self hosted by default and users are required to store data relative to their own state</li>
+                <li>${t("all-data-needed-to-reconstruct-the-layers-state-lives")}</li>
+                <li>${t("data-is-self-hosted-by-default-and-users-are-required")}/li>
             </ul>
             </li>
         <br />
-        <li>🟡 Yellow must match one of the following conditions:</li>
+        <li>${t("yellow-must-match-one-of-the-following-conditions")}</li>
         <ul>
-                <li>Data is made available by an alternative consensus protocol (that is not bitcoin) node operate set and the full node software is open-source</li>
-                <li>Data is stored via an offchain committee or consensus protocol, where validators stake slashable collateral greater than value locked in the layer and DA attestations are backed by this economic security</li>
+                <li>${t("data-is-made-available-by-an-alternative-consensus-protocol-")}</li>
+                <li>${t("data-is-stored-via-an-offchain-committee-or-consensus")}</li>
             </ul>
             </li>
         <br />
-        <li>🔴 Red:</li>
+        <li>${t("red")}</li>
         <ul>
-                <li>Data is stored via an offchain committee with at least 5 external, publicly known actors attesting that the data is available.</li>
+                <li>${t("data-is-stored-via-an-offchain-committee-with-at-least-5")}</li>
             </ul>
             </li>
         <br />
-        <li>🛑 Stop!</li>
+        <li>${t("stop")}</li>
         <ul>
-                <li>None of the requirements for Red are met.</li>
+                <li>${t("none-of-the-requirements-for-red-are-met")}</li>
             </ul>
             </li>
         <br />
@@ -101,28 +102,28 @@ const Methodology: React.FC = () => {
 
     const networkOperatorsBody = `
 <ul>
-        <li>🟢 Green must match one of the following conditions:</li>
+        <li>${t("green-must-match-one-of-the-following-conditions")}</li>
         <ul>
-                <li>Users can self-sequence their own transactions by including it on bitcoin and the centralized validator cannot selectively censor. In layers with centralized block producers, they cannot selectively censor, the validator(s) would need to halt the entire system to censor users.</li>
+                <li>${t("users-can-self-sequence-their-own-transactions")}</li>
             </ul>
             </li>
         <br />
-        <li>🟡 Yellow must match one of the following conditions:</li>
+        <li>${t("yellow-must-match-one-of-the-following-conditions")}</li>
         <ul>
-                <li>The validator (aka network operator) node software is open-source, anyone can become a validator in a (at least) minimally permissioned (e.g. proof of stake) way, and at least 5 externally, publicly known validators participate in proposing and signing blocks</li>
-                <li>The layer is merge-mined with Bitcoin and secured by greater than 50% of hashrate</li>
+                <li>${t("the-validator-aka-network-operator-node-software")}</li>
+                <li>${t("the-layer-is-merge-mined-with-bitcoin-and-secured")}</li>
             </ul>
             </li>
         <br />
-        <li>🔴 Red:</li>
+        <li>${t("red")}</li>
         <ul>
-                <li>The layer is operated by a validator set of at least 5 externally, publicly known operators</li>
+                <li>${t("the-layer-is-operated-by-a-validator-set-of-at-least")}</li>
             </ul>
             </li>
         <br />
-        <li>🛑 Stop!</li>
+        <li>${t("stop")}</li>
         <ul>
-                <li>Doesn’t meet the criteria for any other rating in this section</li>
+                <li>${t("doesnt-meet-the-criteria-for-any-other-rating-in-this-section")}</li>
             </ul>
             </li>
         <br />
@@ -131,67 +132,66 @@ const Methodology: React.FC = () => {
 
     const settlementAssuranceBody = `
     <ul>
-        <li>🟢 Green must match one of the following conditions:</li>
+        <li>${t("green-must-match-one-of-the-following-conditions")}</li>
         <ul>
-                <li>Layer's consensus is constructed in a way that operators (including users in P2P network) must build on a state root, or state commitment, posted to bitcoin</li>
-                <li>Layer transactions happen atomically and cannot reorg</li>
+                <li>${t("layers-consensus-is-constructed-in-a-way-that-operators-including-users-in-p2p-network-must-build-on-a-state-root-or-state-commitment-posted-to-bitcoin")}</li>
+                <li>${t("layer-transactions-happen-atomically-and-cannot-reorg")}</li>
             </ul>
             </li>
         <br />
-        <li>🟡 Yellow must match one of the following conditions:</li>
+        <li>${t("yellow-must-match-one-of-the-following-conditions")}</li>
         <ul>
-                <li>Settlement guarantees come from a permissionless, alternative consensus network operated by at least 5 externally, publicly known operators</li>
+                <li>${t("settlement-guarantees-come-from-a-permissionless-alternative-consensus-network-operated-by-at-least-5-externally-publicly-known-operators")}</li>
             </ul>
             </li>
         <br />
-        <li>🔴 Red:</li>
+        <li>${t("red")}</li>
         <ul>
-                <li>Layer finality guarantees come from a federated system</li>
+                <li>${t("layer-finality-guarantees-come-from-a-federated-system")}</li>
             </ul>
             </li>
         <br />
-        <li>🛑 Stop!</li>
+        <li>${t("stop")}</li>
         <ul>
-                <li>None of the requirements for Red are met.</li>
+                <li>${t("none-of-the-requirements-for-red-are-met")}</li>
             </ul>
             </li>
         <br />
-        <li>Additional considerations:</li>
+        <li>${t("additional-considerations")}</li>
         <ul>
-                <li>If all transactions are finalized offchain, and the sidesystem’s initiation and closure transactions are finalized by the bitcoin L1, but there is no challenge mechanism to dispute an operator, then it is likely a yellow score.</li>
+                <li>${t("if-all-transactions-are-finalized-offchain-and-the-sidesystems")}</li>
                 </ul>
         </li>
         </ul>
 `;
 
     const additionalQuestionsBody = `
-        <p>In addition to performing this assessment, we additionally have a “Bitcoin security” section where we cover:</p>
+        <p>${t("in-addition-to-performing-this-assessment-we")}</p>
         <ul>
-                <li>If the protocol inherits security from bitcoin</li>
-                <li>If the protocol needs an alternative token to function</li>
-                <li>If the protocol introduces MEV to bitcoin</li>
-                <li>If the protocol contributes to bitcoin’s security budget</li>
+                <li>${t("if-the-protocol-inherits-security-from-bitcoin")}</li>
+                <li>${t("if-the-protocol-needs-an-alternative-token-to-function")}</li>
+                <li>${t("if-the-protocol-introduces-mev-to-bitcoin")}</li>
+                <li>${t("if-the-protocol-contributes-to-bitcoins-security-budget")}</li>
             </ul>
-        <p>We also cover areas related to various technologies used, and potential use cases.</p>
+        <p>${t("we-also-cover-areas-related-to-various-technologies-used-and-potential-use-cases")}</p>
 `;
 
     const additionalContextBody = `
-    <p>Some context related to risks with certain protocols may not be covered directly in our risk assessment. This can be covered in an 'additional considerations' section that outlines relevant information. An example of this could be acknowledging that the majority of Lightning Network adoption is by way of custodial providers.</p>
+    <p>${t("some-context-related-to-risks-with-certain-protocols-")}</p>
 `;
 
     const criticalRiskAcknowledgementBody = `
-    <p>If we cannot verify a specific category in this assessment (e.g. some aspect of the code is not source-viewable), then we automatically assign it a "Stop" score. If the mainnet node implementation is not source-viewable, we do not include the project on the site.</p>
+    <p>${t("if-we-cannot-verify-a-specific-category")}</p>
 `;
 
     const summaryBody = `
-    <p>This framework can be easier to customize and provide more nuance given the number of scaling solutions that are present in Bitcoin today. For example, related to block production/network operators, we can add even more scoring mechanisms based on how decentralized the network is. E.g. A network with 200 validators is better than a network with 10, and we can customize the assessment to highlight this.</p>
+    <p>${t("this-framework-can-be-easier-to-customize-and-provide")}</p>
     <br />
-    <p>This risk assessment is an initial starting point to analyze Bitcoin scaling protocols. It is a living document and is subject to change.</p>
+    <p>${t("this-risk-assessment-is-an-initial-starting-point-to")}</p>
     <br />
-    <p>Bitcoin does not have a unified scaling roadmap. There are tradeoffs with every protocol being implemented to support Bitcoin scaling. This framework hopes to capture some of the nuance related to the various designs being proposed.</p>
+    <p>${t("bitcoin-does-not-have-a-unified-scaling-roadmap-there")}</p>
     <br />
-    <p>If you have comments on this framework, please consider joining our <a href="https://t.me/+8rv-1I2gkmQ4ZmJh" style="color: blue; text-decoration: underline;" target="_blank" rel="noopener noreferrer">community chat</a> to discuss. You can also add comments or feedback <a href="https://bitcoinlayers.discourse.group/t/updating-the-bitcoin-layers-framework/11" style="color: blue; text-decoration: underline;" target="_blank" rel="noopener noreferrer">here</a>.</p>
-`;
+    <p>${t.raw("if-you-have-comments-on-this-framework-please")}</p>`;
 
     return (
         <article className="flex flex-col min-h-screen max-w-5xl mx-auto pt-16 px-4 sm:px-6 lg:px-8">
@@ -199,73 +199,62 @@ const Methodology: React.FC = () => {
                 <div className="flex justify-start items-center gap-8 w-full">
                     <div className="flex-grow flex items-center gap-[30px] h-[156px]">
                         <div className="special_header flex-grow sm:h-20 text-6xl lg:text-10xl text_table_important">
-                            Approach to analyzing layers
+                            {t("approach-to-analyzing-layers")}
                         </div>
                     </div>
                 </div>
                 <div className="flex flex-col gap-8 w-full">
                     <div className="flex flex-col gap-12 w-full rounded-md">
-                        {" "}
                         <div className="flex flex-col gap-8 w-full">
                             <div className="bg-white rounded-xl border border-slate-300 flex flex-col justify-center items-start gap-4 p-8">
                                 <div className="flex flex-col gap-3 cursor-pointer">
                                     <div className="text-xl font-light text-zinc-800 leading-9">
-                                        This is the framework we use to analyze
-                                        sidechains, L2s and other scaling
-                                        protocols
+                                        {t(
+                                            "this-is-the-framework-we-use-to-analyze-sidechains-l2s-and-other-scaling-protocols",
+                                        )}
                                     </div>
                                     <div className="text-base font-normal text-slate-500 leading-normal">
-                                        The Bitcoin Layers risk assessment is
-                                        broken down into four sections. They
-                                        cover Bridge Security, Data
-                                        Availability, Network Operators, and
-                                        Settlement Assurance (Finality
-                                        Guarantees). The assessments also
-                                        include more granular reviews of
-                                        specific areas. For example, if the
-                                        chain uses a federated two-way peg, an
-                                        additional assessment on the security
-                                        related to that peg can be performed.
+                                        {t(
+                                            "the-bitcoin-layers-risk-assessment-is-broken-down-into-four-sections-they-cover-bridge-security-data-availability-network-operators-and-settlement-assurance-finality-guarantees-the-assessments-also-include-more-granular-reviews-of-specific-areas-for-example-if-the-chain-uses-a-federated-two-way-peg-an-additional-assessment-on-the-security-related-to-that-peg-can-be-performed",
+                                        )}
                                         <br />
-                                        <br /> This assessment is not reflective
-                                        of L2 or sidesystem security. It is not
-                                        a security audit. It is an assessment
-                                        that outlines the varying degree of
-                                        trust assumptions that users have to
-                                        take on when interacting with a bitcoin
-                                        sidesystem. <br />
+                                        <br />{" "}
+                                        {t(
+                                            "this-assessment-is-not-reflective-of-l2-or-sidesystem",
+                                        )}{" "}
+                                        <br />
                                     </div>
                                 </div>
                             </div>
                             <InfoBox
-                                title="Bridge Security"
+                                title={t("bridge-security")}
                                 body={bridgeCustodyBody}
                             />
                             <InfoBox
-                                title="Data Availability"
+                                title={t("data-availability")}
                                 body={dataAvailabilityBody}
                             />
                             <InfoBox
-                                title="Network Operators"
+                                title={t("network-operators")}
                                 body={networkOperatorsBody}
                             />
                             <InfoBox
-                                title="Finality Guarantees"
+                                title={t("finality-guarantees")}
                                 body={settlementAssuranceBody}
                             />
                             <InfoBox
-                                title="Additional Questions"
+                                title={t("additional-questions")}
                                 body={additionalQuestionsBody}
                             />
                             <InfoBox
-                                title="Additional Context"
+                                title={t("additional-context")}
                                 body={additionalContextBody}
                             />
                             <InfoBox
-                                title="Critical Risk Acknowledgement"
+                                title={t("critical-risk-acknowledgement")}
                                 body={criticalRiskAcknowledgementBody}
                             />
-                            <InfoBox title="Summary" body={summaryBody} />
+                            <InfoBox title={t("summary")} body={summaryBody} />
                         </div>
                     </div>
                 </div>

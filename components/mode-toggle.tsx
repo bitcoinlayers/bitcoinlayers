@@ -1,16 +1,16 @@
 "use client";
 
 import { useTheme } from "next-themes";
-
+import { useTranslations } from "next-intl";
 export function ModeToggle() {
     const { setTheme, theme } = useTheme();
-
+    const t = useTranslations("mode-toggle");
     return (
         <button
             onClick={() => setTheme(theme === "light" ? "dark" : "light")}
             className="border rounded-md w-6 h-6 flex items-center justify-center"
         >
-            <span className="sr-only">Toggle mode</span>
+            <span className="sr-only">{t("toggle-mode")}</span>
             {theme !== "dark" ? (
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
