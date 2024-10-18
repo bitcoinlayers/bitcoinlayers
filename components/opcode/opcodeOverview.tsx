@@ -2,6 +2,7 @@ import React from "react";
 import { Opcode } from "./opcodeProps";
 import Image from "next/image";
 import { parseTextWithLinks } from "@/util/parseTextWithLinks";
+import { useTranslations } from "next-intl";
 
 const LinkButton = ({
     href,
@@ -13,24 +14,25 @@ const LinkButton = ({
     <a
         href={href}
         target="_blank"
-        className="inline-block px-3 py-0.5 bg-white rounded-full border border-slate-300 justify-center items-center gap-2 flex transition duration-300 ease-in-out hover:bg-lightsecondary no-underline text-slate-600 text-sm font-normal leading-tight"
+        className="px-3 py-0.5 bg-white rounded-full border border-slate-300 justify-center items-center gap-2 flex transition duration-300 ease-in-out hover:bg-lightsecondary no-underline text-slate-600 text-sm font-normal leading-tight"
     >
         {children}
     </a>
 );
 
 const Categories: React.FC<{ opcode: Opcode }> = ({ opcode }) => {
+    const t = useTranslations("opcode");
     return (
         <div className="flex gap-12 w-full">
             <div className="flex-col justify-center items-start">
                 <div className="text-text_primary text-sm leading-tight">
-                    BIP Number
+                    {t("bip-number")}
                 </div>
                 <div className="text-text_header">{opcode.bitcoinSecurity}</div>
             </div>
             <div className="flex-col justify-center items-start">
                 <div className="text-text_primary text-sm leading-tight">
-                    Status
+                    {t("status")}
                 </div>
                 <div className="text-text_header">
                     {opcode.associatedLayers}
@@ -38,7 +40,7 @@ const Categories: React.FC<{ opcode: Opcode }> = ({ opcode }) => {
             </div>
             <div className="flex-col justify-center items-start">
                 <div className="text-text_primary text-sm leading-tight">
-                    Purpose
+                    {t("purpose-0")}
                 </div>
                 <div className="text-text_header">{opcode.opcodeType}</div>
             </div>
@@ -55,6 +57,7 @@ const Description: React.FC<{ opcode: Opcode }> = ({ opcode }) => {
 };
 
 const Links: React.FC<{ opcode: Opcode }> = ({ opcode }) => {
+    const t = useTranslations("opcode");
     return (
         <div className="self-stretch flex justify-start items-start gap-4 flex-wrap">
             {/* <LinkButton href={String(opcode.links[0])}>
@@ -111,7 +114,7 @@ const Links: React.FC<{ opcode: Opcode }> = ({ opcode }) => {
                         />
                     </div>
                 </div>
-                BIP
+                {t("bip")}
             </LinkButton>
             {/* <LinkButton href={String(opcode.links[5])}>
         <div className="bg-white/opacity-0 flex-col justify-center items-center inline-flex">

@@ -5,6 +5,7 @@ import { useQueryState } from "nuqs";
 import LayerTableAll from "../tables/layerTableAll";
 import { Layer } from "./layerProps";
 import LayersTVLChart from "../charts/layers-tvl-chart";
+import { useTranslations } from "next-intl";
 
 interface Props {
     data: Layer[];
@@ -25,6 +26,7 @@ interface Props {
 }
 
 const ViewToggleGroup = ({ data, headers }: Props) => {
+    const t = useTranslations("home-table");
     const [status, setStatus] = useQueryState("status", {
         defaultValue: "Mainnet",
     });
@@ -48,7 +50,7 @@ const ViewToggleGroup = ({ data, headers }: Props) => {
                                     : "text-slate-600"
                             }`}
                         >
-                            Mainnet
+                            {t("mainnet")}
                         </div>
                     </div>
                     <div
@@ -67,7 +69,7 @@ const ViewToggleGroup = ({ data, headers }: Props) => {
                                         : "text-slate-600"
                                 }`}
                             >
-                                Testnet
+                                {t("testnet")}
                             </div>
                         </div>
                     </div>
@@ -87,7 +89,7 @@ const ViewToggleGroup = ({ data, headers }: Props) => {
                                         : "text-slate-600"
                                 }`}
                             >
-                                Charts
+                                {t("charts")}
                             </div>
                         </div>
                     </div>

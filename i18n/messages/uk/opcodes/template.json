@@ -1,0 +1,34 @@
+{
+    "slug": "slug",
+    "title": "Назва",
+    "infrastructureType": "-",
+    "live": "Основна мережа/Тестова мережа/Оголошено",
+    "underReview": "так/ні",
+    "riskFactors": ["Високий", "Високий"],
+    "bitcoinSecurity": "Так/Ні",
+    "nativeToken": "Відсутній/Тікер",
+    "purpose": "Загальний/Інше",
+    "associatedLayers": "-",
+    "bitcoinOnly": true,
+    "links": [
+        "https://twitter.com/bitcoinlayers",
+        "https://twitter.com/bitcoinlayers",
+        "https://twitter.com/bitcoinlayers",
+        "https://twitter.com/bitcoinlayers",
+        "https://twitter.com/bitcoinlayers",
+        "https://twitter.com/bitcoinlayers"
+    ],
+    "description": "На розгляді.",
+    "sections": [
+        {
+            "id": "description",
+            "title": "Опис",
+            "content": [
+                {
+                    "title": "Опис",
+                    "content": "На розгляді."
+                }
+            ]
+        }
+    ]
+}

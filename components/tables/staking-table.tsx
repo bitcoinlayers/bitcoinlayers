@@ -9,6 +9,7 @@ import TableHeader from "@/components/tables/tableHeader";
 import { MobileView, isMobile } from "react-device-detect";
 import Link from "next/link";
 import { useQueryState } from "nuqs";
+import { useTranslations } from "next-intl";
 
 type TableTabKey = "Snapshot" | "Type" | "Status" | "Category";
 
@@ -55,6 +56,7 @@ const LayerImage = ({ src, title }: { src: string; title: string }) => {
 };
 
 const StakingTable = ({ data, headers }: Props) => {
+    const t = useTranslations("staking-table");
     const [status, setStatus] = useQueryState("status", {
         defaultValue: "Mainnet",
     });
@@ -164,7 +166,7 @@ const StakingTable = ({ data, headers }: Props) => {
                                     : "text-slate-600"
                             }`}
                         >
-                            Mainnet
+                            {t("mainnet")}
                         </div>
                     </div>
                     <div
@@ -183,7 +185,7 @@ const StakingTable = ({ data, headers }: Props) => {
                                         : "text-slate-600"
                                 }`}
                             >
-                                Testnet
+                                {t("testnet")}
                             </div>
                         </div>
                     </div>
@@ -203,7 +205,7 @@ const StakingTable = ({ data, headers }: Props) => {
                                         : "text-slate-600"
                                 }`}
                             >
-                                All
+                                {t("all")}
                             </div>
                         </div>
                     </div>
@@ -290,12 +292,12 @@ const StakingTable = ({ data, headers }: Props) => {
                                                 <Risk layer={item} />
                                             ) : (
                                                 <div className="lg:px-5 px-1 text_table_important font-light">
-                                                    Under review
+                                                    {t("under-review")}
                                                 </div>
                                             )
                                         ) : (
                                             <div className="lg:px-5 px-1 text_table_important">
-                                                Not applicable
+                                                {t("not-applicable")}
                                             </div>
                                         )} */}
                                     </td>

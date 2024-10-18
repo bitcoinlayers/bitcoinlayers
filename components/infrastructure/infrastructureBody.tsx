@@ -1,11 +1,12 @@
 import React from "react";
 import { Infrastructure } from "./infrastructureProps";
-import Link from "next/link";
 import { parseTextWithLinks } from "@/util/parseTextWithLinks";
+import { useTranslations } from "next-intl";
 
 const InfrastructureBody: React.FC<{ infrastructure: Infrastructure }> = ({
     infrastructure,
 }) => {
+    const t = useTranslations("infrastructure");
     return (
         <main className="content flex-grow sm:mt-0 pt-0">
             {infrastructure.sections.map((section, index) => (

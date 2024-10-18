@@ -1,0 +1,80 @@
+{
+    "slug": "nomic",
+    "title": "Nomic",
+    "layerType": "Сайдчейн",
+    "live": "Mainnet",
+    "staking": false,
+    "bridge": false,
+    "underReview": "так",
+    "riskFactors": ["", "", "", ""],
+    "purpose": "-",
+    "btcBridge": "На розгляді",
+    "settlement": "На розгляді",
+    "btcLocked": 4.95,
+    "executionEnv": "На розгляді",
+    "consensus": "На розгляді",
+    "nativeToken": "NOM",
+    "feeToken": "NOM",
+    "enshrinedBtc": "nBTC",
+    "bitcoinOnly": false,
+    "links": [
+        "https://www.nomic.io/",
+        "https://www.nomic.io/",
+        "https://github.com/nomic-io/docs",
+        "https://bigdipper.live/nomic",
+        "https://github.com/nomic-io",
+        "https://x.com/nomicbtc"
+    ],
+    "description": "Nomic — це ланцюг Cosmos SDK, який дозволяє користувачам використовувати біткоїн в екосистемі Cosmos.",
+    "riskAnalysis": [
+        {
+            "category": "Односторонні виходи",
+            "score": 0,
+            "tier": "",
+            "title": "На розгляді",
+            "content": ""
+        },
+        {
+            "category": "Доступність даних",
+            "score": 0,
+            "tier": "",
+            "title": "На розгляді",
+            "content": ""
+        },
+        {
+            "category": "Виробництво блоків",
+            "score": 0,
+            "tier": "",
+            "title": "На розгляді",
+            "content": ""
+        },
+        {
+            "category": "Перевірка стану",
+            "score": 0,
+            "tier": "",
+            "title": "На розгляді",
+            "content": ""
+        }
+    ],
+    "sections": [
+        {
+            "id": "underreview",
+            "title": "На розгляді",
+            "content": [
+                {
+                    "title": "📝 Проект зараз на розгляді",
+                    "content": "Ми наразі розглядаємо припущення довіри, пов'язані з цим протоколом, у відповідності до нашої системи. Після завершення огляду ми опублікуємо результати на цьому сайті та зробимо оголошення через наші соціальні медіа."
+                }
+            ]
+        },
+        {
+            "id": "selfsubmit",
+            "title": "Процес самостійної подачі інформації",
+            "content": [
+                {
+                    "content": "Проект Bitcoin Layers надає пріоритет оглядам ризиків для проектів, які вже в продуктивному використанні та приймають BTC-депозити користувачів. Проекти на тестовій мережі можуть подавати інформацію про свій проект. Ми не публікуємо оцінки ризиків для проектів, які не в продуктивному використанні.\n\nОсь [інструкції](https://github.com/bitcoinlayers/bitcoinlayers/blob/main/SELFSUBMIT.md) щодо самостійної подачі проекту."
+                }
+            ]
+        }
+    ]
+}

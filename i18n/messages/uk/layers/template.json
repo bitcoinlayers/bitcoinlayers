@@ -1,0 +1,63 @@
+{
+    "slug": "slug",
+    "title": "Назва",
+    "layerType": "Роллап/Бічна ланцюг/Канал стану/Станова ланцюг",
+    "live": "Mainnet/Тестова мережа/Оголошено",
+    "staking": false,
+    "bridge": false,
+    "underReview": "так/ні",
+    "riskFactors": ["Високий", "Високий", "Високий", "Високий"],
+    "purpose": "Загальний",
+    "btcBridge": "На розгляді",
+    "settlement": "На розгляді",
+    "btcLocked": 0,
+    "executionEnv": "На розгляді",
+    "consensus": "На розгляді",
+    "nativeToken": "-",
+    "feeToken": "[x]BTC",
+    "enshrinedBtc": "[x]BTC",
+    "bitcoinOnly": false,
+    "links": ["вебсайт", "екосистема", "документація", "експлорер", "github", "соціальні мережі"],
+    "description": "",
+    "riskAnalysis": [
+        {
+            "category": "Односторонні виходи",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "Доступність даних",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "Виробництво блоків",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "Валідація стану",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        }
+    ],
+    "sections": [
+        {
+            "id": "description",
+            "title": "Опис",
+            "content": [
+                {
+                    "content": "На розгляді."
+                }
+            ]
+        }
+    ]
+}

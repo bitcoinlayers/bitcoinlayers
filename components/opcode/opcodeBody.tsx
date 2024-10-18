@@ -1,6 +1,5 @@
 import React from "react";
 import { Opcode } from "./opcodeProps";
-import Link from "next/link";
 import { parseTextWithLinks } from "@/util/parseTextWithLinks";
 
 const OpcodeBody: React.FC<{ opcode: Opcode }> = ({ opcode }) => {

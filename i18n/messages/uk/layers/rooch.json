@@ -1,0 +1,70 @@
+{
+    "slug": "rooch",
+    "title": "Rooch Network",
+    "layerType": "Суверенний Ролап",
+    "live": "Тестова мережа",
+    "staking": false,
+    "bridge": false,
+    "underReview": "так",
+    "riskFactors": ["", "", "", ""],
+    "purpose": "-",
+    "btcBridge": "-",
+    "settlement": "-",
+    "btcLocked": 0,
+    "executionEnv": "-",
+    "consensus": "-",
+    "nativeToken": "-",
+    "feeToken": "-",
+    "enshrinedBtc": "-",
+    "bitcoinOnly": false,
+    "links": [
+        "https://rooch.network/",
+        "https://rooch.network/",
+        "https://rooch.network/learn/welcome",
+        "https://rooch.network/learn/welcome",
+        "https://github.com/rooch-network",
+        "https://twitter.com/roochnetwork"
+    ],
+    "description": "Rooch Network розробляє рішення для масштабування MoveVM, щоб підтримати нові типи додатків на Bitcoin.",
+    "riskAnalysis": [
+        {
+            "category": "Односторонні виходи",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "Доступність даних",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "Виробництво блоків",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "Валідація стану",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        }
+    ],
+    "sections": [
+        {
+            "id": "selfsubmit",
+            "title": "Процес самостійної подачі інформації",
+            "content": [
+                {
+                    "content": "Проект Bitcoin Layers надає пріоритет оглядам ризиків для проектів, які знаходяться в продукції та приймають депозити BTC від користувачів. Проекти на тестовій мережі можуть подавати інформацію про свій проект. Ми не публікуємо оцінки ризиків для проектів, які не знаходяться в продукції.\n\nОсь [інструкції](https://github.com/bitcoinlayers/bitcoinlayers/blob/main/SELFSUBMIT.md) щодо самостійної подачі проекту."
+                }
+            ]
+        }
+    ]
+}

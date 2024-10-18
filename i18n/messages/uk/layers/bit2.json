@@ -1,0 +1,70 @@
+{
+    "slug": "bit2",
+    "title": "Bit2",
+    "layerType": "Роллап Ethereum",
+    "live": "Тестова мережа",
+    "staking": false,
+    "bridge": false,
+    "underReview": "так",
+    "riskFactors": ["", "", "", ""],
+    "purpose": "-",
+    "btcBridge": "-",
+    "settlement": "-",
+    "btcLocked": 0,
+    "executionEnv": "-",
+    "consensus": "-",
+    "nativeToken": "-",
+    "feeToken": "-",
+    "enshrinedBtc": "-",
+    "bitcoinOnly": false,
+    "links": [
+        "https://bit2.network/",
+        "https://bit2.network/",
+        "https://bit2.network/coming-soon",
+        "https://explorer.bit2.network",
+        "https://bit2.network/coming-soon",
+        "https://twitter.com/bit2net"
+    ],
+    "description": "Bit2 — це роллап Ethereum, який використовує wBTC для оплати комісій і ділить доходи від послідовників з тримачами wBTC.",
+    "riskAnalysis": [
+        {
+            "category": "Односторонні виходи",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "Доступність даних",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "Виробництво блоків",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "Перевірка стану",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        }
+    ],
+    "sections": [
+        {
+            "id": "selfsubmit",
+            "title": "Процес самостійного подання інформації",
+            "content": [
+                {
+                    "content": "Проект Bitcoin Layers пріоритезує огляди ризиків на проектах, які перебувають у виробництві та приймають депозити BTC від користувачів. Проекти на тестовій мережі можуть подавати інформацію про свої проекти. Ми не публікуємо оцінки ризиків для проектів, які не в виробництві.\n\nОсь [інструкції](https://github.com/bitcoinlayers/bitcoinlayers/blob/main/SELFSUBMIT.md) щодо самостійного подання проекту."
+                }
+            ]
+        }
+    ]
+}

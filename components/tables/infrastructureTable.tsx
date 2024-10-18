@@ -7,6 +7,7 @@ import { Infrastructure } from "@/components/infrastructure/infrastructureProps"
 import { MobileView, isMobile } from "react-device-detect";
 import Link from "next/link";
 import { useQueryState } from "nuqs";
+import { useTranslations } from "next-intl";
 
 type TableTabKey =
     | "Type"
@@ -50,6 +51,7 @@ const InfrastructureImage = ({
 };
 
 const InfrastructureTable = ({ data, headers }: Props) => {
+    const t = useTranslations("infrastructure-table");
     const [status, setStatus] = useQueryState("status", {
         defaultValue: "Mainnet",
     });
@@ -155,7 +157,7 @@ const InfrastructureTable = ({ data, headers }: Props) => {
                                     : "text-slate-600"
                             }`}
                         >
-                            Mainnet
+                            {t("mainnet")}
                         </div>
                     </div>
                     <div
@@ -174,7 +176,7 @@ const InfrastructureTable = ({ data, headers }: Props) => {
                                         : "text-slate-600"
                                 }`}
                             >
-                                Testnet
+                                {t("testnet")}
                             </div>
                         </div>
                     </div>
@@ -194,7 +196,7 @@ const InfrastructureTable = ({ data, headers }: Props) => {
                                         : "text-slate-600"
                                 }`}
                             >
-                                All
+                                {t("all")}
                             </div>
                         </div>
                     </div>

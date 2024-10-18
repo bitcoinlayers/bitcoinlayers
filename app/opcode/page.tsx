@@ -1,11 +1,9 @@
-"use client";
-
-import React, { useState } from "react";
-import { allOpcodes } from "@/util/opcode_index";
 import Hero from "@/components/hero";
 import OpcodeTable from "@/components/tables/opcodeTable";
+import { getAllOpcodesWithSlug } from "@/i18n/helpers";
 
-export default function Home() {
+export default async function Home() {
+    const { allOpcodes } = await getAllOpcodesWithSlug();
     return (
         <div className="mx-auto">
             <Hero

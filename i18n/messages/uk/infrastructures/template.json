@@ -1,0 +1,45 @@
+{
+    "slug": "slug",
+    "title": "Назва",
+    "infrastructureType": "-",
+    "live": "Mainnet/Тестова мережа/Оголошено",
+    "staking": false,
+    "bridge": false,
+    "underReview": "так/ні",
+    "riskFactors": ["Високий", "Високий"],
+    "bitcoinSecurity": "Так/Ні",
+    "nativeToken": "Відсутній/Тикер",
+    "purpose": "Загальний/Інше",
+    "associatedLayers": "-",
+    "bitcoinOnly": false,
+    "links": [
+        "https://twitter.com/bitcoinlayers",
+        "https://twitter.com/bitcoinlayers",
+        "https://twitter.com/bitcoinlayers",
+        "https://twitter.com/bitcoinlayers",
+        "https://twitter.com/bitcoinlayers",
+        "https://twitter.com/bitcoinlayers"
+    ],
+    "description": "На розгляді.",
+    "sections": [
+        {
+            "id": "description",
+            "title": "Опис",
+            "content": [
+                {
+                    "title": "Опис",
+                    "content": "На розгляді."
+                }
+            ]
+        },
+        {
+            "id": "selfsubmit",
+            "title": "Процес самостійної подачі інформації",
+            "content": [
+                {
+                    "content": "Проект Bitcoin Layers надає пріоритет ризиковим оцінкам проектів, які знаходяться в експлуатації та приймають BTC-депозити користувачів. Проекти на тестовій мережі можуть подавати інформацію про свій проект. Ми не публікуємо оцінки ризиків для проектів, які не знаходяться в експлуатації.\n\nОсь [інструкції](https://github.com/bitcoinlayers/bitcoinlayers/blob/main/SELFSUBMIT.md) щодо самостійної подачі проекту."
+                }
+            ]
+        }
+    ]
+}

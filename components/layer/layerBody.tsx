@@ -2,8 +2,10 @@ import { Fragment } from "react";
 import { Layer } from "./layerProps";
 import Link from "next/link";
 import { parseTextWithLinks } from "@/util/parseTextWithLinks";
+import { useTranslations } from "next-intl";
 
 const LayerBody: React.FC<{ layer: Layer }> = ({ layer }) => {
+    const t = useTranslations("layer");
     return (
         <main className="content flex-grow sm:mt-0 pt-0 lg:px-0">
             {layer.sections.map((section, index) => (

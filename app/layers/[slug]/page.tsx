@@ -1,13 +1,14 @@
 import { notFound } from "next/navigation";
-import { allLayers, allLayerSlugs } from "@/util/layer_index";
 import LayerMenu from "@/components/layer/layerMenu";
 import LayerBody from "@/components/layer/layerBody";
 import RiskAnalysis from "@/components/layer/risk-analysis/layerBodyRiskAnalysis";
 import LayerOverview from "@/components/layer/layerOverview";
 import LayerImage from "@/components/layer/layer-image";
 import ProjectTVLChart from "@/components/charts/project-tvl-chart";
+import { getAllLayersWithSlugs } from "@/i18n/helpers";
 
-function getLayerFromSlug(slug: string) {
+async function getLayerFromSlug(slug: string) {
+    const { allLayers } = await getAllLayersWithSlugs();
     const layer = allLayers.find((layer) => layer.slug === slug);
     if (!layer) {
         return null;
@@ -15,9 +16,13 @@ function getLayerFromSlug(slug: string) {
     return layer;
 }
 
-export default function LayerPage({ params }: { params: { slug: string } }) {
+export default async function LayerPage({
+    params,
+}: {
+    params: { slug: string };
+}) {
     const { slug } = params;
-    const layer = getLayerFromSlug(slug);
+    const layer = await getLayerFromSlug(slug);
 
     if (!layer) {
         return notFound();
@@ -30,7 +35,7 @@ export default function LayerPage({ params }: { params: { slug: string } }) {
                     <LayerImage
                         title={layer.title}
                         src={`/logos/${layer.slug}.png`}
-                    />{" "}
+                    />
                 </div>
                 <div className="flex-grow flex items-center">
                     <h1 className="layer_header flex-grow">{layer.title}</h1>
@@ -55,10 +60,4 @@ export default function LayerPage({ params }: { params: { slug: string } }) {
             </div>
         </article>
     );
-}
-
-export function generateStaticParams() {
-    return allLayerSlugs.map((slug) => ({
-        slug,
-    }));
 }
