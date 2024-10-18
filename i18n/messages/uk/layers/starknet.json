@@ -1,11 +1,11 @@
 {
     "slug": "starknet",
     "title": "Starknet",
-    "layerType": "Rollup",
-    "live": "Proposed",
+    "layerType": "Роллап",
+    "live": "Запропоновано",
     "staking": false,
     "bridge": false,
-    "underReview": "yes",
+    "underReview": "так",
     "riskFactors": ["", "", "", ""],
     "purpose": "-",
     "btcBridge": "-",
@@ -25,31 +25,31 @@
         "https://github.com/Bitcoin-Wildlife-Sanctuary/bitcoin-circle-stark",
         "https://twitter.com/starknet"
     ],
-    "description": "Starknet is a validity rollup on Ethereum. They are proposing a multi-settlement rollup that will settle on Bitcoin and Ethereum should OP_CAT be activated. They are currently developing a STARK verifier directly in Script with OP_CAT on signet.",
+    "description": "Starknet — це валідний роллап на Ethereum. Вони пропонують мульти-розрахунковий роллап, який буде проводити розрахунки на Bitcoin та Ethereum, якщо OP_CAT буде активовано. Наразі вони розробляють STARK верифікатор безпосередньо в Script з OP_CAT на signet.",
     "riskAnalysis": [
         {
-            "category": "Unilateral Exits",
+            "category": "Односторонні виходи",
             "score": 0,
             "tier": "",
             "title": "",
             "content": ""
         },
         {
-            "category": "Data Availability",
+            "category": "Доступність даних",
             "score": 0,
             "tier": "",
             "title": "",
             "content": ""
         },
         {
-            "category": "Block Production",
+            "category": "Виробництво блоків",
             "score": 0,
             "tier": "",
             "title": "",
             "content": ""
         },
         {
-            "category": "State Validation",
+            "category": "Валідація стану",
             "score": 0,
             "tier": "",
             "title": "",
@@ -59,65 +59,65 @@
     "sections": [
         {
             "id": "disclaimer",
-            "title": "Disclaimer",
+            "title": "Відмова від відповідальності",
             "content": [
                 {
-                    "title": "😇 This page did not undergo a formal review process",
-                    "content": "This page provides a high level assessment on a proposed Layer 2 design which requires a soft fork. This page should not be considered a risk assessment."
+                    "title": "😇 Ця сторінка не пройшла формальний процес перевірки",
+                    "content": "Ця сторінка надає загальну оцінку запропонованого дизайну Layer 2, що потребує м'якого хардфорку. Цю сторінку не слід розглядати як оцінку ризиків."
                 }
             ]
         },
         {
             "id": "technology",
-            "title": "Technology",
+            "title": "Технології",
             "content": [
                 {
-                    "title": "Recursive Covenants",
-                    "content": "OP_CAT is a proposed opcode that could enable two primitives that would support improved bridging protocols for projects like Starknet. The first enables users to predefine spending conditions for individual UTXOs. The second primitive is the verification of merkle tree branches. This would enable you to continuously add hashes of data to a merkle tree that continuously builds upon restrictions placed by previous transactions.\n\nBy building a continuous chain of restrictions over a number of transactions, you enable recursive covenants. Recursive covenants enable users to lock funds into a group UTXO that can continuously add more restrictions based on new user deposits, and additionally enforce changes for partial withdrawals which must go back into the rollup script."
+                    "title": "Рекурсивні угоди",
+                    "content": "OP_CAT — це запропонований опкод, який може активувати два примітиви, що підтримують покращені протоколи мостів для проектів, таких як Starknet. Перший дозволяє користувачам попередньо визначити умови витрат для окремих UTXO. Другий примітив — це верифікація гілок Меркле-дерева. Це дозволить постійно додавати хеші даних до Меркле-дерева, яке безперервно базується на обмеженнях, встановлених попередніми транзакціями.\n\nСтворюючи безперервний ланцюг обмежень для ряду транзакцій, ви дозволяєте рекурсивні угоди. Рекурсивні угоди дозволяють користувачам блокувати кошти в груповому UTXO, який може постійно додавати нові обмеження на основі нових депозитів користувачів і додатково впроваджувати зміни для часткових виведень, які повинні повертатися до скрипта роллапу."
                 },
                 {
-                    "title": "STARK Verifier with OP_CAT",
-                    "content": "An issue that arises from shared UTXOs, specifically for L2s, is that you need a trusted party to verify offchain state transitions to enable users to withdraw funds relative to their updated balance. The StarkWare team (lead developers of Starknet) are working with L2 Iterative Ventures on developing a STARK verifier directly in Bitcoin Script with OP_CAT.\n\nIn rollups, state differences are compressed together and sent to the Bitcoin L1 with a corresponding validity proof proving that the state transition was executed correctly. Starknet are proposing a mechanism that would verify these STARK proofs proving the validity of L2 state transitions. By verifying offchain state transitions directly in Script, shared UTXOs would be able to process user withdrawals based on their updated balances. Recursive covenants and onchain STARK verification would create trust-minimized bridge programs for L2s."
+                    "title": "STARK верифікатор з OP_CAT",
+                    "content": "Проблема, що виникає через спільні UTXO, особливо для L2, полягає в тому, що вам потрібна надійна сторона для перевірки оффчейн переходів стану, щоб дозволити користувачам виводити кошти відносно їх оновленого балансу. Команда StarkWare (основні розробники Starknet) працює з L2 Iterative Ventures над розробкою STARK верифікатора безпосередньо в Bitcoin Script з OP_CAT.\n\nУ роллапах, різниці стану стискаються разом і надсилаються на Bitcoin L1 з відповідним доказом дійсності, яке підтверджує, що перехід стану було виконано правильно. Starknet пропонує механізм, який буде верифікувати ці STARK докази, підтверджуючи дійсність переходів стану L2. Верифікація оффчейн переходів стану безпосередньо в Script дозволила б спільним UTXO обробляти виведення користувачів на основі їх оновлених балансів. Рекурсивні угоди та ончейн STARK верифікація створили б програми мостів з мінімізацією довіри для L2."
                 },
                 {
-                    "title": "Cairo Virtual Machine",
-                    "content": "Cairo is a virtual machine with zk-provable function executions by default. The Cairo virtual machine uses three languages: Cairo, an ergonomic, Rust-based language for users to interface; SIERRA, a safe intermediary representation for Cairo to compile down to that avoids potentially unprovable situations such as assertions or division by zero, making function executions deterministic; and finally CASM, low-level provable code which SIERRA compiles to.\n\nThe Cairo virtual machine ensures that all function executions can be proved while still offering a fully expressive and Turing-complete environment. Cairo’s Turing-completeness allows it to emulate other VMs, which can then inherit provable characteristics on Starknet. The Ethereum Virtual Machine (EVM) is one such example with Kakarot ZK-EVM, allowing EVM native transactions to be executed and proven on Starknet."
+                    "title": "Cairo Віртуальна Машина",
+                    "content": "Cairo — це віртуальна машина з zk-доказовими виконаннями функцій за замовчуванням. Віртуальна машина Cairo використовує три мови: Cairo, ергономічну, основану на Rust мову для взаємодії з користувачами; SIERRA, безпечне проміжне подання, на яке Cairo компілюється, що уникає потенційно непідтверджуваних ситуацій, таких як твердження або ділення на нуль, що робить виконання функцій детермінованими; і нарешті CASM, низькорівневий доказовий код, до якого компілюється SIERRA.\n\nВіртуальна машина Cairo забезпечує, що всі виконання функцій можуть бути підтверджені, при цьому пропонуючи повністю виразне середовище, що відповідає принципам Turing-complete. Turing-completeness Cairo дозволяє йому емуляцію інших віртуальних машин, які можуть успадковувати доказові характеристики на Starknet. Ethereum Virtual Machine (EVM) є одним з таких прикладів з Kakarot ZK-EVM, що дозволяє виконувати та підтверджувати транзакції EVM на Starknet."
                 },
                 {
-                    "title": "SHARP and Stwo",
-                    "content": "Starknet, as well as the various StarkEx-built rollups, use a shared proving system for proof generation, called SHARP. The benefit of shared proving is saving on costs. Specifically, SHARP uses the StarkWare-built Stwo prover, an iteration of the STONE prover."
+                    "title": "SHARP і Stwo",
+                    "content": "Starknet, а також різні роллапи, побудовані на StarkEx, використовують спільну систему доказування для генерації доказів, звану SHARP. Перевага спільного доказування полягає в економії витрат. Конкретно, SHARP використовує побудований StarkWare провідник Stwo, ітерацію провідника STONE."
                 },
                 {
-                    "title": "Madara sequencer",
-                    "content": "Madara is a sequencer built for L3s on top of Starknet. Madara allows L3s to leverage the SHARP system, with proofs verified on Starknet/Ethereum, while also offering DA flexibility, as L3s can choose alternative DA layers, e.g., Celestia."
+                    "title": "Послідовник Madara",
+                    "content": "Madara — це послідовник, побудований для L3 на базі Starknet. Madara дозволяє L3 використовувати систему SHARP, з перевіреними доказами на Starknet/Ethereum, пропонуючи при цьому гнучкість DA, оскільки L3 можуть вибирати альтернативні шари DA, наприклад, Celestia."
                 },
                 {
-                    "title": "Volition DA model",
-                    "content": "Starknet is exploring a hybrid DA solution, known as a volition. The volition model offers multiple DA options, such as Ethereum blobspace, Starknet DA, or third-party solutions such as Celestia. Importantly, this model would allow for users to choose their preferred DA solution per transaction. High value per byte transactions would favor Ethereum DA, while low value per byte transactions would logically use alternative DA. This is particularly relevant for the move to Bitcoin, as Bitcoin DA is considerably more scarce than Ethereum blobspace."
+                    "title": "Модель DA Volition",
+                    "content": "Starknet досліджує гібридне рішення DA, відоме як volition. Модель volition пропонує кілька варіантів DA, таких як Ethereum blobspace, Starknet DA або сторонні рішення, такі як Celestia. Важливо, що ця модель дозволить користувачам вибирати їх переважне рішення DA для кожної транзакції. Транзакції з високою цінністю за байт віддаватимуть перевагу Ethereum DA, тоді як транзакції з низькою цінністю за байт логічно використовуватимуть альтернативну DA. Це особливо важливо для переходу до Bitcoin, оскільки DA Bitcoin значно більш обмежена, ніж Ethereum blobspace."
                 }
             ]
         },
         {
             "id": "additionalconsiderations",
-            "title": "Additional considerations",
+            "title": "Додаткові міркування",
             "content": [
                 {
-                    "title": "Starknet is a Stage 0 rollup on Ethereum",
-                    "content": "The Starknet rollup on Ethereum, which would be additionally settled on Bitcoin should OP_CAT be activated, is a Stage 0 rollup based on the L2Beat Stages Framework.\n\nThe main issues with the Starknet rollup, on Ethereum, are:\n\n1️⃣ If the centralized sequencer (Starknet validator) goes down or censors users, they can not force-include a transaction to the L1.\n\n2️⃣ If the centralized proposer goes down or censors users, they can not force a withdrawal from Starknet to the Layer 1.\n\n3️⃣ Starknet’s L1 smart contract is immediately upgradeable, and users cannot withdraw their funds if a malicious upgrade is implemented. Funds can be stolen if a malicious contract upgrade is implemented."
+                    "title": "Starknet є Роллапом Stage 0 на Ethereum",
+                    "content": "Роллап Starknet на Ethereum, який додатково буде проводити розрахунки на Bitcoin, якщо OP_CAT буде активовано, є Роллапом Stage 0 згідно з фреймворком етапів L2Beat.\n\nОсновні проблеми з роллапом Starknet на Ethereum полягають у наступному:\n\n1️⃣ Якщо централізований послідовник (валидатор Starknet) зникне або буде цензурити користувачів, він не зможе примусово включити транзакцію в L1.\n\n2️⃣ Якщо централізований пропонент зникне або буде цензурити користувачів, він не зможе примусово здійснити виведення з Starknet до Layer 1.\n\n3️⃣ Смарт-контракт Starknet на L1 є відразу ж оновлювальним, і користувачі не можуть вивести свої кошти, якщо буде здійснено злочинне оновлення. Кошти можуть бути вкрадені, якщо буде впроваджено злочинне оновлення контракту."
                 },
                 {
-                    "title": "Starknet will likely use an external sequencer thus mitigating MEV leakage to the L1",
-                    "content": "A concern with rollups on Bitcoin is the potential introduction of MEV. If Bitcoin miners have exclusive rights in ordering rollup transactions, especially those with more expressive execution environments, miners have opportunities to extract MEV through a variety of mechanisms. This is known as based sequencing. If Bitcoin rollups implemented based sequencing, miners could invest into more sophisticated block building infrastructure to extract more harmful MEV for increased profits. This could raise the barrier to entry for mining, and potentially introduce centralizing pressures.\n\nStarknet is currently sequenced (ordered) by a centralized sequencer. The Starknet community has additionally researched decentralized sequencer, but have focused on alternative consensus protocols taking on this role (CometBFT as an example).\n\nIf an alternative consensus mechanism is used to decentralize the sequencer, versus based sequencing, then MEV is unlikely to leak to Bitcoin miners."
+                    "title": "Starknet, ймовірно, використовуватиме зовнішній послідовник, таким чином зменшуючи витік MEV до L1",
+                    "content": "Занепокоєння щодо роллапів на Bitcoin полягає в потенційній появі MEV. Якщо майнери Bitcoin матимуть ексклюзивні права на порядок транзакцій роллапу, особливо тих, що мають більш виразні середовища виконання, майнери матимуть можливості витягувати MEV через різні механізми. Це відомо як засноване на послідовності. Якщо роллапи Bitcoin впровадять засноване на послідовності, майнери можуть інвестувати в більш складну інфраструктуру будування блоків, щоб витягувати більш шкідливий MEV за більший прибуток. Це може підвищити бар'єр входу для майнінгу і потенційно ввести централізуючі тиски.\n\nStarknet наразі послідовно (упорядковано) ведеться централізованим послідовником. Спільнота Starknet також досліджувала децентралізований послідовник, але зосередилася на альтернативних консенсусних протоколах, що виконують цю роль (наприклад, CometBFT).\n\nЯкщо буде використано альтернативний консенсусний механізм для децентралізації послідовника, порівняно з заснованим на послідовності, тоді MEV малоймовірно витече до майнерів Bitcoin."
                 }
             ]
         },
         {
             "id": "knowledgeBits",
-            "title": "Knowledge Bits",
+            "title": "Знання",
             "content": [
                 {
-                    "title": "Learn more",
-                    "content": "[Learn more about OP_CAT](https://opcat.wtf/)\n[L2Beat's review on Ethereum Starknet](https://l2beat.com/scaling/projects/starknet)"
+                    "title": "Дізнайтеся більше",
+                    "content": "[Дізнайтеся більше про OP_CAT](https://opcat.wtf/)\n[Огляд L2Beat про Ethereum Starknet](https://l2beat.com/scaling/projects/starknet)"
                 }
             ]
         }

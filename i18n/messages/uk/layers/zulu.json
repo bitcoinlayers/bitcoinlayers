@@ -1,13 +1,13 @@
 {
     "slug": "zulu",
     "title": "Zulu",
-    "layerType": "Sovereign Rollup",
-    "live": "Testnet",
+    "layerType": "Суверенний ролап",
+    "live": "Тестова мережа",
     "staking": false,
     "bridge": false,
-    "underReview": "yes",
+    "underReview": "так",
     "riskFactors": ["", "", "", ""],
-    "purpose": "General",
+    "purpose": "Загальний",
     "btcBridge": "-",
     "settlement": "-",
     "btcLocked": 0,
@@ -25,31 +25,31 @@
         "https://github.com/zulu-network",
         "https://x.com/zulu_network"
     ],
-    "description": "Zulu Network is building towards becoming a Bitvimium on Bitcoin that enables developers to deploy dApps on both EVM (ZKSync ZK Stack L2) & UTXO layers (Customized ZKVM L3). Zulu network is working on a trust-minimized decentralized bridge program and will leverage a unique hybrid PoS / PoW mining mechanism.",
+    "description": "Zulu Network прагне стати Bitvimium на Bitcoin, що дозволяє розробникам запускати dApps на обох шарах: EVM (ZKSync ZK Stack L2) та UTXO (кастомізований ZKVM L3). Мережа Zulu працює над програмою мосту з мінімізацією довіри і використовуватиме унікальний гібридний механізм видобутку PoS / PoW.",
     "riskAnalysis": [
         {
-            "category": "Unilateral Exits",
+            "category": "Односторонні виходи",
             "score": 0,
             "tier": "",
             "title": "",
             "content": ""
         },
         {
-            "category": "Data Availability",
+            "category": "Доступність даних",
             "score": 0,
             "tier": "",
             "title": "",
             "content": ""
         },
         {
-            "category": "Block Production",
+            "category": "Виробництво блоків",
             "score": 0,
             "tier": "",
             "title": "",
             "content": ""
         },
         {
-            "category": "State Validation",
+            "category": "Валідація стану",
             "score": 0,
             "tier": "",
             "title": "",
@@ -59,33 +59,33 @@
     "sections": [
         {
             "id": "technology",
-            "title": "Proposed Technologies",
+            "title": "Запропоновані технології",
             "content": [
                 {
-                    "title": "Validity proofs will be used to ensure state correctness",
-                    "content": "Each state transition must contain a validity proof that proves that execution was done correctly to a series of user transactions. If a proof includes an invalid state transition, then anyone can submit a fraud proof to challenge the state transition. Validity proofs will be sent through a decentralized network of verifiers economically secured through Babylon before submitted to the BitVM ZK verifier."
+                    "title": "Для забезпечення правильності стану використовуватимуться докази дійсності",
+                    "content": "Кожен перехід стану повинен містити доказ дійсності, який підтверджує, що виконання було виконано правильно для серії транзакцій користувачів. Якщо доказ містить недійсний перехід стану, будь-хто може подати доказ шахрайства, щоб оскаржити перехід стану. Докази дійсності будуть надсилатися через децентралізовану мережу перевіряючих, економічно захищених через Babylon, перед поданням до ZK перевіряча BitVM."
                 },
                 {
-                    "title": "Zero knowledge cryptography is used",
-                    "content": "State transitions are proven through cryptographic proofs known as zk proofs. If an implementation of the cryptography was done incorrectly, user funds can be at risk."
+                    "title": "Використовується криптографія з нульовими знаннями",
+                    "content": "Перехід станів доводиться через криптографічні докази, відомі як zk-докази. Якщо реалізація криптографії була виконана неправильно, кошти користувачів можуть бути під загрозою."
                 },
                 {
-                    "title": "The chain will rely on a separate DA Layer for data availability",
-                    "content": "Zulu's state can be reconstructed based on the data that is stored on a separate DA Layer. The chain's latest state root will be inscribed on the Bitcoin blockchain."
+                    "title": "Мережа покладеться на окремий DA Layer для доступності даних",
+                    "content": "Стан Zulu може бути реконструйований на основі даних, які зберігаються на окремому DA Layer. Останній корінь стану ланцюга буде записано в блокчейн Bitcoin."
                 },
                 {
-                    "title": "Zulu Network is working on a BitVM-style bridge program",
-                    "content": "Zulu Network is currently working on a trust-minimized bridge design. In their design, users will withdraw their money through atomic swaps from entities referred to as liquidity providers (LPs) that has bridged assets into the rollup through utilizing a two-way peg BitVM implementation. LPs withdrawing BTC and/or Bitcoin assets from the rollup is not trustless. LPs must trust that 1 of any number of BitVM verifiers in the validating bridge are acting honestly to process their withdrawal."
+                    "title": "Zulu Network працює над програмою мосту в стилі BitVM",
+                    "content": "Zulu Network наразі працює над дизайном мосту з мінімізацією довіри. У їхньому дизайні користувачі будуть знімати свої кошти через атомарні свопи з суб'єктів, відомих як постачальники ліквідності (LP), які перенесли активи до ролапу, використовуючи реалізацію двостороннього зв’язку BitVM. Зняття BTC та/або біткойн-активів LP з ролапу не є бездостатнім. LP повинні довіряти, що один з будь-якої кількості перевіряючих BitVM у валідаційному мосту діє чесно, щоб обробити їхнє зняття."
                 }
             ]
         },
         {
             "id": "sourcecode",
-            "title": "Source Code",
+            "title": "Джерельний код",
             "content": [
                 {
-                    "title": "Codebase & Opensource",
-                    "content": "Part of the software is currently open-source and available and the rest will gradually be opensourced as well."
+                    "title": "Базовий код та відкритий вихідний код",
+                    "content": "Частина програмного забезпечення наразі є відкритим вихідним кодом і доступна, а решта буде поступово відкриватися."
                 }
             ]
         }

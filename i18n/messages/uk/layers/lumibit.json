@@ -1,14 +1,14 @@
 {
     "slug": "lumibit",
     "title": "Lumibit",
-    "layerType": "Rollup",
-    "live": "Testnet",
+    "layerType": "Роллап",
+    "live": "Тестова мережа",
     "staking": false,
     "bridge": false,
-    "underReview": "yes",
+    "underReview": "так",
     "riskFactors": ["", "", "", ""],
     "purpose": "-",
-    "btcBridge": "TBD",
+    "btcBridge": "ТБД",
     "settlement": "-",
     "btcLocked": 0,
     "executionEnv": "-",
@@ -25,31 +25,31 @@
         "https://lumibit.gitbook.io/lumibit-gitbook/development-guide/typescript-sdk",
         "https://twitter.com/LumiBitL2"
     ],
-    "description": "Lumibit is building a sovereign rollup leveraging Scoll's technology stack. Information on the rollup's design is limited, but a private testnet has been released.",
+    "description": "Lumibit розробляє суверенний роллап, використовуючи технологічний стек Scoll. Інформація про дизайн роллапу обмежена, але була випущена приватна тестова мережа.",
     "riskAnalysis": [
         {
-            "category": "Unilateral Exits",
+            "category": "Односторонні виходи",
             "score": 0,
             "tier": "",
             "title": "",
             "content": ""
         },
         {
-            "category": "Data Availability",
+            "category": "Доступність даних",
             "score": 0,
             "tier": "",
             "title": "",
             "content": ""
         },
         {
-            "category": "Block Production",
+            "category": "Виробництво блоків",
             "score": 0,
             "tier": "",
             "title": "",
             "content": ""
         },
         {
-            "category": "State Validation",
+            "category": "Валідація стану",
             "score": 0,
             "tier": "",
             "title": "",
@@ -59,10 +59,10 @@
     "sections": [
         {
             "id": "selfsubmit",
-            "title": "Process to self-submit information",
+            "title": "Процес самостійної подачі інформації",
             "content": [
                 {
-                    "content": "The Bitcoin Layers project prioritizes risk reviews on projects that are in production and accepting users' BTC deposits. Projects on testnet are welcome to submit information about their project. We do not publish risk assessments for projects that are not in production.\n\nHere are the [instructions](https://github.com/bitcoinlayers/bitcoinlayers/blob/main/SELFSUBMIT.md) on self-submitting a project."
+                    "content": "Проект Bitcoin Layers пріоритетно розглядає ризики проектів, які вже запущені та приймають депозити BTC від користувачів. Проекти на тестовій мережі можуть подавати інформацію про свої проекти. Ми не публікуємо оцінки ризиків для проектів, які не в виробництві.\n\nОсь [інструкції](https://github.com/bitcoinlayers/bitcoinlayers/blob/main/SELFSUBMIT.md) щодо самостійної подачі проекту."
                 }
             ]
         }

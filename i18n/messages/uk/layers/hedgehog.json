@@ -1,11 +1,11 @@
 {
     "slug": "hedgehog",
     "title": "Hedgehog",
-    "layerType": "State Channel",
-    "live": "Testnet",
+    "layerType": "Канал стану",
+    "live": "Тестова мережа",
     "staking": false,
     "bridge": false,
-    "underReview": "yes",
+    "underReview": "так",
     "riskFactors": ["", "", "", ""],
     "purpose": "-",
     "btcBridge": "-",
@@ -23,33 +23,33 @@
         "https://github.com/supertestnet/hedgehog",
         "https://supertestnet.github.io/hedgehog/",
         "https://github.com/supertestnet/hedgehog",
-        "https://github.com/supertestnet/hedgehog,"
+        "https://github.com/supertestnet/hedgehog"
     ],
-    "description": "Hedgehog is a payment channel protocol, similar to Lightning, but counterparties within the channel do not need to be online to receive funds. The payment experience is similar to that of Ecash or Fedimint, but with users retaining full custody of the coins and having optimistic settlement assurances. To make a payment, you propose a payment (a state change) and send this proposed payment to your counterparty via a preferred communication channel. When your party comes online, they can accept that payment and the state of the channel will consequently update.",
+    "description": "Hedgehog — це протокол платіжних каналів, схожий на Lightning, але контрагенти в каналі не повинні бути онлайн для отримання коштів. Досвід платежів подібний до Ecash або Fedimint, але користувачі зберігають повну власність на монети та мають оптимістичні гарантії розрахунків. Щоб здійснити платіж, ви пропонуєте платіж (зміна стану) і надсилаєте цей запропонований платіж своєму контрагенту через обраний канал зв'язку. Коли ваша сторона виходить онлайн, вона може прийняти цей платіж, і стан каналу відповідно оновиться.",
     "riskAnalysis": [
         {
-            "category": "Unilateral Exits",
+            "category": "Односторонні виходи",
             "score": 0,
             "tier": "",
             "title": "",
             "content": ""
         },
         {
-            "category": "Data Availability",
+            "category": "Доступність даних",
             "score": 0,
             "tier": "",
             "title": "",
             "content": ""
         },
         {
-            "category": "Block Production",
+            "category": "Виробництво блоків",
             "score": 0,
             "tier": "",
             "title": "",
             "content": ""
         },
         {
-            "category": "State Validation",
+            "category": "Перевірка стану",
             "score": 0,
             "tier": "",
             "title": "",
@@ -59,34 +59,34 @@
     "sections": [
         {
             "id": "technology",
-            "title": "Proposed Technologies",
+            "title": "Пропоновані технології",
             "content": [
                 {
-                    "title": "Payment channels",
-                    "content": "Payment channels are 2-2 multi-signature addresses that enable two counterparties to lock funds into an address, and process an unlimited number of payments between each other. Payments are considered final when the parties withdraw their funds back onchain and close their channel. Creating and managing one or more payment channels lis how a user interacts with Lightning."
+                    "title": "Платіжні канали",
+                    "content": "Платіжні канали — це мультипідписні адреси 2-2, які дозволяють двом контрагентам заблокувати кошти в адресі і обробляти необмежену кількість платежів між собою. Платежі вважаються остаточними, коли сторони забирають свої кошти назад в ончейн і закривають свій канал. Створення та управління одним або кількома платіжними каналами є способом взаємодії користувача з Lightning."
                 },
                 {
-                    "title": "Revocable connectors",
-                    "content": "Revocable connectors are built on components called revocable scripts and connector outputs. Revocable scripts allow either party to revoke a transaction after a certain period. Connector outputs allow you to construct a pre-signed transaction spending a separate UTXO alongside the connector output, allowing the transaction to be invalidated by spending the connector output by itself."
+                    "title": "Відкличувані з'єднувачі",
+                    "content": "Відкличувані з'єднувачі засновані на компонентах, званих відкличуваними скриптами та виходами з'єднувачів. Відкличувані скрипти дозволяють будь-якій стороні відкликати транзакцію після певного періоду. Виходи з'єднувачів дозволяють вам створювати попередньо підписану транзакцію, яка витрачає окремий UTXO разом із виходом з'єднувача, що дозволяє недійснити транзакцію, витрачаючи вихід з'єднувача самостійно."
                 }
             ]
         },
         {
             "id": "selfsubmit",
-            "title": "Process to self-submit information",
+            "title": "Процес самостійного подання інформації",
             "content": [
                 {
-                    "content": "The Bitcoin Layers project prioritizes risk reviews on projects that are in production and accepting users' BTC deposits. Projects on testnet are welcome to submit information about their project. We do not publish risk assessments for projects that are not in production.\n\nInformation on how to submit information on a project can be found in the Knowledge Bits section."
+                    "content": "Проект Bitcoin Layers надає пріоритет ризиковим оглядам на проекти, які вже працюють та приймають депозити BTC від користувачів. Проекти на тестовій мережі можуть подавати інформацію про свій проект. Ми не публікуємо оцінки ризиків для проектів, які не працюють.\n\nІнформацію про те, як подати інформацію про проект, можна знайти в розділі Knowledge Bits."
                 }
             ]
         },
         {
             "id": "knowledgeBits",
-            "title": "Knowledge Bits",
+            "title": "Знання",
             "content": [
                 {
-                    "title": "Learn more",
-                    "content": "[Instructions on self-submitting a project.](https://github.com/bitcoinlayers/bitcoinlayers/blob/main/SELFSUBMIT.md)\n[Hedgehog Github](https://github.com/supertestnet/hedgehog)\n[Bitcoin Magazine explainer on Hedgehog](https://bitcoinmagazine.com/technical/super-testnet-introduces-hedgehog-a-protocol-for-asynchronous-layer-2-bitcoin-payments)"
+                    "title": "Дізнайтеся більше",
+                    "content": "[Інструкції з самостійного подання проекту.](https://github.com/bitcoinlayers/bitcoinlayers/blob/main/SELFSUBMIT.md)\n[Hedgehog Github](https://github.com/supertestnet/hedgehog)\n[Роз'яснення Hedgehog від Bitcoin Magazine](https://bitcoinmagazine.com/technical/super-testnet-introduces-hedgehog-a-protocol-for-asynchronous-layer-2-bitcoin-payments)"
                 }
             ]
         }

@@ -1,18 +1,18 @@
 {
     "slug": "core",
     "title": "Core",
-    "layerType": "Sidechain",
+    "layerType": "Сайдчейн",
     "live": "Mainnet",
     "staking": false,
     "bridge": false,
-    "underReview": "no",
-    "riskFactors": ["Unverified", "Medium", "Medium", "Medium"],
-    "purpose": "General",
-    "btcBridge": "Federated Multisig",
-    "settlement": "Offchain",
+    "underReview": "ні",
+    "riskFactors": ["Непідтверджений", "Середній", "Середній", "Середній"],
+    "purpose": "Загальний",
+    "btcBridge": "Федеративний мультипідпис",
+    "settlement": "Позамережевий",
     "btcLocked": 6705,
-    "executionEnv": "Offchain",
-    "consensus": "Hybrid Consensus",
+    "executionEnv": "Позамережевий",
+    "consensus": "Гібридний консенсус",
     "nativeToken": "CORE",
     "feeToken": "CORE",
     "enshrinedBtc": "coreBTC",
@@ -25,137 +25,137 @@
         "https://github.com/coredao-org",
         "https://twitter.com/Coredao_Org"
     ],
-    "description": "Core (in relation to Bitcoin) is an EVM sidechain with a hybrid consensus mechanism, Satoshi Plus, that leverages both DPoW and DPoS. It uses a federated multisig to bridge BTC with multiple parties ensuring the honesty of the two-way peg. The native token of the network is CORE, which is used for transaction fees, staking, and governance in Core DAO.",
+    "description": "Core (в контексті Bitcoin) — це EVM сайдчейн з гібридним механізмом консенсусу, Satoshi Plus, який використовує як DPoW, так і DPoS. Він використовує федеративний мультипідпис для зв'язку BTC з кількома сторонами, що забезпечують чесність двостороннього зв'язку. Нативним токеном мережі є CORE, який використовується для комісій за транзакції, стекингу та управління в Core DAO.",
     "riskAnalysis": [
         {
-            "category": "Bridge Security",
+            "category": "Безпека моста",
             "score": 0,
-            "tier": "Unverified",
-            "title": "Funds are custodied by a federated signer set, with a number of parties ensuring the honesty of the bridge",
-            "content": "Users trust various parties in maintaining the honesty of Core’s bridge with Bitcoin. Lockers are the party responsible for securing the bitcoin that backs coreBTC on Core Chain. These actors stake collateral, in the form of Core tokens, in order to participate as a Locker. In the event of maliciously moving bitcoin from the multi-sig, or being unable to fulfill withdrawals, Lockers would be slashed and lose the collateral they posted.\n\nOther parties in the bridge set up are responsible for monitoring the Locker’s activity and initiating the slashing process."
+            "tier": "Непідтверджений",
+            "title": "Фонди зберігаються федеративним набором підписувачів, кілька сторін забезпечують чесність моста",
+            "content": "Користувачі довіряють різним сторонам у підтримці чесності мосту Core з Bitcoin. Локери відповідають за безпеку біткоїнів, які забезпечують coreBTC на Core Chain. Ці учасники ставлять заставу у вигляді токенів Core, щоб взяти участь як Локер. У разі зловмисного переміщення біткоїнів з мультипідпису або неможливості виконати виведення, Локери будуть оштрафовані та втратять заставу.\n\nІнші учасники мосту відповідають за моніторинг активності Локерів та ініціювання процесу штрафування."
         },
         {
-            "category": "Data Availability",
+            "category": "Доступність даних",
             "score": 0,
-            "tier": "Medium",
-            "title": "Data availability requirement fulfilled by Core chain full nodes",
-            "content": "Core Chain's data availability requirement is fulfilled by its own network of full nodes. Anyone with enough computational resources can run a Core Chain full node."
+            "tier": "Середній",
+            "title": "Вимога щодо доступності даних виконана повними вузлами мережі Core",
+            "content": "Вимога щодо доступності даних мережі Core виконується її власною мережею повних вузлів. Будь-хто з достатніми обчислювальними ресурсами може запустити повний вузол Core."
         },
         {
-            "category": "Network Operator",
+            "category": "Оператор мережі",
             "score": 0,
-            "tier": "Medium",
-            "title": "Core's hybrid consensus mechanism operates the network",
-            "content": "Core Chain has a network of validators who participate as block producers. Each day, the 23 validators with the highest hybrid score (from DPOW and DPOS) are elected to participate in block production. Any Core chain full node can register to become a part of this set. Core Chain does not support exits that circumvent its validator set. This means that users must trust Core Chain validators to propose and finalize blocks.\n\nThere is a minimum stake to run a Core Chain validator node."
+            "tier": "Середній",
+            "title": "Гібридний механізм консенсусу Core керує мережею",
+            "content": "На мережі Core Chain є група валідаторів, які беруть участь як виробники блоків. Щодня 23 валідатори з найвищим гібридним балом (з DPOW та DPOS) обираються для участі у виробництві блоків. Будь-який повний вузол мережі Core може зареєструватися, щоб стати частиною цього набору. Core Chain не підтримує виходи, які обходять його набір валідаторів, що означає, що користувачі повинні довіряти валідаторам мережі Core для пропозиції та фіналізації блоків.\n\nІснує мінімальна застава для роботи вузла валідатора мережі Core."
         },
         {
-            "category": "Finality Guarantees",
+            "category": "Гарантії фіналізації",
             "score": 0,
-            "tier": "Medium",
-            "title": "Transaction finality is provided by Core Chain consensus and has no assurances inherited from Bitcoin",
-            "content": "State transitions are finalized by Core Chain's consensus mechanism. All roles in this mechanism are minimally permissionless."
+            "tier": "Середній",
+            "title": "Фіналізація транзакцій забезпечується консенсусом мережі Core і не має жодних запевнень, успадкованих від Bitcoin",
+            "content": "Перехід станів фіналізується механізмом консенсусу мережі Core. Усі ролі в цьому механізмі є мінімально дозволеними."
         }
     ],
     "sections": [
         {
             "id": "bitcoinsecurity",
-            "title": "Bitcoin Security",
+            "title": "Безпека Bitcoin",
             "content": [
                 {
-                    "title": "Core indirectly inherits security from Bitcoin consensus participants",
-                    "content": "As a part of its hybrid consensus mechanism, Bitcoin miners can delegate hashrate to Core validators to improve their overall voting power."
+                    "title": "Core непрямо успадковує безпеку від учасників консенсусу Bitcoin",
+                    "content": "Як частина свого гібридного механізму консенсусу, біткоїн-майнери можуть делегувати хешрейт валідаторам Core для покращення їх загальної voting power."
                 },
                 {
-                    "title": "Core Chain requires another token to function",
-                    "content": "The CORE token is required to pay for transaction fees and smart contract execution on Core Chain. It is also used for staking and governance. The token is directly required for the security of the network, as the staking of it is one of the two variables used to create a weighted score for validator election and leader selection."
+                    "title": "Core Chain вимагає ще один токен для функціонування",
+                    "content": "Токен CORE необхідний для оплати комісій за транзакції та виконання смарт-контрактів на Core Chain. Він також використовується для стекингу та управління. Токен безпосередньо потрібен для безпеки мережі, оскільки ставлення його є одним з двох змінних, що використовуються для створення зваженого балу для вибору валідаторів та вибору лідера."
                 },
                 {
-                    "title": "No MEV introduced on Bitcoin",
-                    "content": "Core Chain does not introduce any MEV on Bitcoin. Users trust Core Chain validators to not extract MEV."
+                    "title": "Не вводиться MEV на Bitcoin",
+                    "content": "Core Chain не вводить жодного MEV на Bitcoin. Користувачі довіряють валідаторам мережі Core, щоб вони не витягували MEV."
                 },
                 {
-                    "title": "Core Chain indirectly contributes to the security budget.",
-                    "content": "Core validators will reward miners who delegated their hashrate to them with newly issued CORE tokens."
+                    "title": "Core Chain непрямо вносить внесок до бюджету безпеки.",
+                    "content": "Валідатори Core винагороджують майнерів, які делегували свій хешрейт, новими токенами CORE."
                 }
             ]
         },
         {
             "id": "withdrawals",
-            "title": "Withdrawals",
+            "title": "Виведення",
             "content": [
                 {
-                    "title": "Withdrawals from coreBTC rely on several permissionless roles.",
-                    "content": "Core Chain’s consensus-enshrined bridged BTC, coreBTC, relies on several roles for withdrawals, although they are all permissionless. It also relies on the liveness of Core Chain, as one of those roles is a set of smart contracts on Core Chain."
+                    "title": "Виведення з coreBTC покладається на кілька дозволених ролей.",
+                    "content": "Консенсус мережі Core, який закріплює біткоїни, coreBTC, покладається на кілька ролей для виведення, хоча всі вони є дозволеними. Він також залежить від життєздатності мережі Core, оскільки одна з цих ролей є набором смарт-контрактів на мережі Core."
                 }
             ]
         },
         {
             "id": "technology",
-            "title": "Technology",
+            "title": "Технології",
             "content": [
                 {
                     "title": "Satoshi Plus",
-                    "content": "Satoshi Plus is a hybrid model of Delegated Proof-of-Work (DPoW) and Delegated Proof-of-Stake (DPoS). DPOW and DPOS are used to select the validators participating in Core Chain consensus.\n\nDPoW is performed by Bitcoin miners and mining pools who delegate their existing Bitcoin hash rate to select validators on Core Chain. DPoS is performed by those who delegate their CORE tokens, or BTC, to select validators on Core Chain. A weighted score is assigned to a validator via the amount of Bitcoin hash rate and delegate stake they receive. The top 21 validators per this weighted score are the ones elected to participate in Core Chain consensus.\n\nValidators who are elected to participate in block production earn block rewards through newly issued CORE tokens and fees. Validators choose how much of these rewards they share with miners and delegators, if any, but are incentivized to share as much as possible to ensure that miners and delegators continue to select them for block production.\n\nBy separating Proof-of-Work mining from block production, Satoshi Plus is able to mitigate against MEV extraction from Bitcoin miners."
+                    "content": "Satoshi Plus — це гібридна модель Делегованого Доказу Работи (DPoW) і Делегованого Доказу Ставки (DPoS). DPoW і DPoS використовуються для вибору валідаторів, які беруть участь у консенсусі мережі Core.\n\nDPoW виконується біткоїн-майнерами та майнінговими пулами, які делегують свій існуючий хешрейт для вибору валідаторів на мережі Core. DPoS виконується тими, хто делегує свої токени CORE або BTC для вибору валідаторів на мережі Core. Валідатору присвоюється зважений бал в залежності від кількості хешрейту Bitcoin і делегованої ставки, яку вони отримують. Топ-21 валідатор за цим зваженим балом є тими, хто обирається для участі в консенсусі мережі Core.\n\nВалідатори, які обираються для участі у виробництві блоків, отримують винагороди за блоки у вигляді нових токенів CORE та комісій. Валідатори обирають, скільки з цих винагород вони ділять з майнерами та делегаторами, якщо взагалі, але зацікавлені ділитися якомога більше, щоб забезпечити, що майнери та делегатори продовжують вибирати їх для виробництва блоків.\n\nШляхом розділення майнінгу Доказу Работи від виробництва блоків, Satoshi Plus здатен пом'якшити витрати MEV від біткоїн-майнерів."
                 },
                 {
-                    "title": "Ethereum Virtual Machine",
-                    "content": "Core Chain uses the Ethereum Virtual Machine (EVM) for its execution environment. While this environment was initially created for Ethereum, it has been adopted by many other networks.\n\nLike many other Bitcoin sidechains, Core Chain leverages the EVM to tap into existing developer resources and tooling."
+                    "title": "Віртуальна машина Ethereum",
+                    "content": "Core Chain використовує Віртуальну машину Ethereum (EVM) для свого середовища виконання. Хоча це середовище було спочатку створене для Ethereum, його було прийнято багатьма іншими мережами.\n\nЯк і багато інших сайдчейнів Bitcoin, Core Chain використовує EVM для доступу до існуючих ресурсів розробників і інструментів."
                 },
                 {
                     "title": "coreBTC",
-                    "content": "coreBTC is a native bridged BTC. Several roles are involved in the burning and minting of coreBTC.\n\nLockers hold BTC after minting and distribute it after burning. They must be overcollateralized at risk of liquidation by Liquidators. Other roles are involved as well, such as Guardians, Bitcoin Light Clients, Slashers, Relayers, and Verifiers."
+                    "content": "coreBTC — це нативний зв'язаний BTC. У кількох ролях беруть участь в спалюванні та випуску coreBTC.\n\nЛокери зберігають BTC після випуску та розподіляють його після спалювання. Вони повинні бути надмірно забезпеченими під загрозою ліквідації з боку ліквідаторів. Інші ролі також беруть участь, такі як Охоронці, Легкі клієнти Bitcoin, Штрафники, Пересилачі та Перевіряльники."
                 },
                 {
-                    "title": "Faster block times",
-                    "content": "Core Chain produces a block every three seconds, as of March 2024."
+                    "title": "Швидші часи блокування",
+                    "content": "Core Chain виробляє блок кожні три секунди, станом на березень 2024 року."
                 },
                 {
-                    "title": "Lower fees",
-                    "content": "Core Chain fees average in the order of cents as of March 2024."
+                    "title": "Нижчі комісії",
+                    "content": "Комісії на Core Chain в середньому становлять кілька центів, станом на березень 2024 року."
                 }
             ]
         },
         {
             "id": "usecases",
-            "title": "Use Cases",
+            "title": "Варіанти використання",
             "content": [
                 {
                     "title": "DeFi",
-                    "content": "The most popular use case for Core Chain is DeFi. Core Chain has a number of DeFi applications, including lending, borrowing, and decentralized exchanges, with a focus on bridged BTC assets."
+                    "content": "Найпопулярнішим варіантом використання Core Chain є DeFi. У Core Chain є кілька DeFi-додатків, включаючи кредитування, запозичення та децентралізовані біржі, з акцентом на зв'язані активи BTC."
                 },
                 {
-                    "title": "BTC Staking",
-                    "content": "Core chain enables BTC holders to natively stake their BTC, as a part of DPOS in Satoshi Plus, and delegate that stake to a specific validator in the Core Chain network."
+                    "title": "Стекинг BTC",
+                    "content": "Core Chain дозволяє власникам BTC нативно ставити свої BTC, як частину DPOS у Satoshi Plus, і делегувати цю ставку конкретному валідатору в мережі Core Chain."
                 }
             ]
         },
         {
             "id": "operator",
-            "title": "Operator",
+            "title": "Оператор",
             "content": [
                 {
-                    "title": "Core Chain is operated by Satoshi Plus validators",
-                    "content": "Block production is managed by validators participating in the chain's hybrid consensus mechanism."
+                    "title": "Core Chain управляється валідаторами Satoshi Plus",
+                    "content": "Виробництво блоків управляється валідаторами, які беруть участь у гібридному механізмі консенсусу мережі."
                 }
             ]
         },
         {
             "id": "sourcecode",
-            "title": "Source Code",
+            "title": "Вихідний код",
             "content": [
                 {
-                    "title": "Code is open-source",
-                    "content": "Core's node implementation is open-source."
+                    "title": "Код є відкритим",
+                    "content": "Імплементація вузлів Core є відкритим кодом."
                 }
             ]
         },
         {
             "id": "knowledgeBits",
-            "title": "Knowledge Bits",
+            "title": "Знання",
             "content": [
                 {
-                    "title": "Learn more",
-                    "content": "[Understanding Core Chain by Messari](https://messari.io/report/understanding-core-chain)\n[Core Chain Whitepaper](https://github.com/coredao-org/whitepaper/blob/main/COREWhitepaper_v1.0.6.pdf)"
+                    "title": "Дізнайтеся більше",
+                    "content": "[Розуміння Core Chain від Messari](https://messari.io/report/understanding-core-chain)\n[Біла книга Core Chain](https://github.com/coredao-org/whitepaper/blob/main/COREWhitepaper_v1.0.6.pdf)"
                 }
             ]
         }

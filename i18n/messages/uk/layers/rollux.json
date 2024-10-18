@@ -1,18 +1,18 @@
 {
     "slug": "rollux",
     "title": "Rollux",
-    "layerType": "Sidechain Rollup",
+    "layerType": "Сайдчейн Ролап",
     "live": "Mainnet",
     "staking": false,
     "bridge": false,
-    "underReview": "no",
-    "riskFactors": ["Unverified", "Medium", "Medium", "Medium"],
-    "purpose": "General",
-    "btcBridge": "Federated",
-    "settlement": "Offchain",
+    "underReview": "ні",
+    "riskFactors": ["Не перевірено", "Середній", "Середній", "Середній"],
+    "purpose": "Загальний",
+    "btcBridge": "Федеративний",
+    "settlement": "Оффчейн",
     "btcLocked": 10,
-    "executionEnv": "Offchain",
-    "consensus": "Hybrid Consensus",
+    "executionEnv": "Оффчейн",
+    "consensus": "Гібридний консенсус",
     "nativeToken": "SYS",
     "feeToken": "SYS",
     "enshrinedBtc": "wBTC",
@@ -25,123 +25,123 @@
         "https://github.com/SYS-Labs/rollux",
         "https://twitter.com/RolluxL2"
     ],
-    "description": "Rollux is an optimistic rollup that uses Syscoin, two blockchains that are simultaneously merge-mined by bitcoin miners, as its base layer for data availability and state validation respectively. It has an EVM-compatible execution environment.",
+    "description": "Rollux — це оптимістичний ролап, який використовує Syscoin, дві блокчейн-системи, які одночасно мердж-майнять біткоїн-майнери, як свою базову платформу для доступності даних та валідації стану відповідно. Він має середовище виконання, сумісне з EVM.",
     "riskAnalysis": [
         {
-            "category": "Bridge Security",
+            "category": "Безпека мосту",
             "score": 0,
-            "tier": "Critical",
-            "title": "Rollux does not have a consensus-level bridge with bitcoin",
-            "content": "The Rollux L2 does not currently have a direct bridge with the Bitcoin mainchain. The only Bitcoin synthetic on Rollux is a wBTC contract. The contract is an upgradeable contract managed by a specific address, the controller, on the Syscoin L1, the blockchain that Rollux settles to. wBTC can be deposited onto Rollux by way of Ethereum, Polygon PoS, and Binance Smart Chain. The controller of this address is responsible for minting and burning tokens related to the wBTC contract.\n\nRollux’s L1 bridge contract, which facilitates the transfer of wBTC from Syscoin to Rollux, is immediately upgradeable by a multi-sig wallet with anonymous signers.\n\nThe Rollux L1 contract lives on the Syscoin NEVM chain."
+            "tier": "Критично",
+            "title": "Rollux не має мосту на рівні консенсусу з біткоїном",
+            "content": "Rollux L2 наразі не має прямого мосту з головною ланцюгом Bitcoin. Єдиний синтетичний біткоїн на Rollux — це контракт wBTC. Контракт є оновлювальним і управляється певною адресою, контролером, на Syscoin L1, блокчейн, до якого розраховується Rollux. wBTC можна депонувати на Rollux через Ethereum, Polygon PoS та Binance Smart Chain. Контролер цієї адреси відповідає за випуск і спалювання токенів, пов'язаних з контрактом wBTC.\n\nКонтракт мосту Rollux L1, який полегшує передачу wBTC з Syscoin на Rollux, може бути оновлений миттєво багатопідписною гаманцем з анонімними підписантами.\n\nКонтракт Rollux L1 розташований на ланцюзі Syscoin NEVM."
         },
         {
-            "category": "Data Availability",
+            "category": "Доступність даних",
             "score": 0,
-            "tier": "Medium",
-            "title": "The Syscoin blockchain satisfies Rollux's data availability requirement",
-            "content": "The Rollux chain posts transaction data to Syscoin’s UTXO chain’s data availability solution, [PoDA](https://docs.syscoin.org/docs/tech/poda/). The Syscoin L1 is a merge-mined chain with Bitcoin.\n\nData availability is satisfied by blobs, meaning that Syscoin nodes only store data related to Rollux for at least six hours after finality is reached. After this period, it is deleted. PoDA does not shard data and requires full nodes to store the entire contents of a blob for a given time period. At least one archive node needs to archive the full contents of the blob to ensure Rollux’s historical state is intact.\n\nAfter receiving a blob from Rollux, the UTXO chain attests to the availability of data to the NEVM chain.\n\nOnly one non-pruned online node is needed to reconstruct the entire state of Syscoin and Rollux."
+            "tier": "Середній",
+            "title": "Блокчейн Syscoin задовольняє вимоги до доступності даних Rollux",
+            "content": "Ланцюг Rollux публікує дані транзакцій у рішеннях доступності даних UTXO-ланцюга Syscoin, [PoDA](https://docs.syscoin.org/docs/tech/poda/). L1 Syscoin є мердж-майнінговим ланцюгом з Bitcoin.\n\nДоступність даних задовольняється за допомогою блобів, що означає, що вузли Syscoin зберігають дані, пов'язані з Rollux, принаймні шість годин після досягнення фінальності. Після цього періоду вони видаляються. PoDA не шардить дані і вимагає, щоб повні вузли зберігали весь вміст блобу протягом певного періоду часу. Принаймні один архівний вузол повинен архівувати повний вміст блобу, щоб забезпечити цілісність історичного стану Rollux.\n\nПісля отримання блобу з Rollux, UTXO-ланцюг підтверджує доступність даних для NEVM-ланцюга.\n\nТільки один непросіяний онлайн-вузол потрібен, щоб відновити весь стан Syscoin та Rollux."
         },
         {
-            "category": "Network Operators",
+            "category": "Оператори мережі",
             "score": 0,
-            "tier": "Medium",
-            "title": "Rollux is operated by a centralized sequencer with forced inclusion to the Syscoin L1 possible",
-            "content": "The Rollux chain is operated by a centralized sequencer. Users can be censored by the centralized sequencer and the chain can have liveness failures if the sequencer goes offline.\n\nForced inclusion to the Syscoin L1 is possible. Users are able to have their transaction included in a sequence by submitting it to the L1 smart contract."
+            "tier": "Середній",
+            "title": "Rollux експлуатується централізованим секвенсором з можливістю примусового включення до Syscoin L1",
+            "content": "Ланцюг Rollux експлуатується централізованим секвенсором. Користувачів можуть цензурувати централізований секвенсор, і ланцюг може зазнати збоїв у доступності, якщо секвенсор зникне."
         },
         {
-            "category": "Finality Guarantees",
+            "category": "Гарантії фінальності",
             "score": 0,
-            "tier": "Medium",
-            "title": "Rollux inherits finality guarantees from Syscoin",
-            "content": "The Rollux sequencer provides a soft confirmation of transactions which are eventually summarized and sent to Syscoin.\n\nRollux's sequencer can reorg prior to a transaction batch being accepted on Syscoin."
+            "tier": "Середній",
+            "title": "Rollux успадковує гарантії фінальності від Syscoin",
+            "content": "Секвенсор Rollux забезпечує м'яке підтвердження транзакцій, які врешті-решт підсумовуються та відправляються до Syscoin."
         }
     ],
     "sections": [
         {
             "id": "bitcoinsecurity",
-            "title": "Bitcoin Security",
+            "title": "Безпека Bitcoin",
             "content": [
                 {
-                    "title": "Unilateral exits to Bitcoin not possible",
-                    "content": "Users cannot exit from Rollux to Bitcoin at all, as there is no bridge; they must instead withdraw to Syscoin and then to Bitcoin. Users cannot unilaterally exit from the Syscoin with an L1 Bitcoin transaction. They currently trust centralized operators to process their withdrawals."
+                    "title": "Односторонні виходи до Bitcoin не можливі",
+                    "content": "Користувачі не можуть вийти з Rollux до Bitcoin взагалі, оскільки немає мосту; вони повинні спочатку вивести до Syscoin, а потім до Bitcoin. Користувачі не можуть односторонньо вийти з Syscoin за допомогою L1 транзакції Bitcoin. Вони наразі довіряють централізованим операторам для обробки своїх виведень."
                 },
                 {
-                    "title": "The protocol does not enable MEV on Bitcoin",
-                    "content": "Rollux does not leak MEV to the Bitcoin L1. Users trust the centralized sequencer to not extract MEV from their transactions."
+                    "title": "Протокол не дозволяє MEV на Bitcoin",
+                    "content": "Rollux не передає MEV на L1 Bitcoin. Користувачі довіряють централізованому секвенсору, що він не витягуватиме MEV з їхніх транзакцій."
                 },
                 {
-                    "title": "An alternative token plays a role in network security",
-                    "content": "Rollux’s gas fees and data availability fees are paid in [SYS](https://www.coingecko.com/en/coins/syscoin)."
+                    "title": "Альтернативний токен грає роль у безпеці мережі",
+                    "content": "Плата за газ і плата за доступність даних Rollux сплачуються в [SYS](https://www.coingecko.com/en/coins/syscoin)."
                 },
                 {
-                    "title": "Fees and issuance are paid to miners who merge-mine Syscoin",
-                    "content": "Fees associated with Rollux’s data availability are paid to Bitcoin miners who optionally merge-mine Rollux’s data availability layer, Syscoin."
+                    "title": "Платежі та емісія сплачуються майнерам, які мердж-майнять Syscoin",
+                    "content": "Плати, пов'язані з доступністю даних Rollux, сплачуються біткоїн-майнерам, які за бажанням мердж-майнять шар доступності даних Rollux, Syscoin."
                 }
             ]
         },
         {
             "id": "withdrawals",
-            "title": "Withdrawals",
+            "title": "Виведення",
             "content": [
                 {
-                    "title": "Users trust numerous operators to process their withdrawals",
-                    "content": "Users trust that the centralized proposer will include their withdrawal request in the latest state root published to the Syscoin L1. They also trust that the controller of the wBTC contract will process their withdrawal request and that Syscoin miners will mine the burn transaction on the Syscoin chain."
+                    "title": "Користувачі довіряють численним операторам для обробки своїх виведень",
+                    "content": "Користувачі довіряють, що централізований пропонент включить їх запит на виведення в останній корінь стану, опублікований на Syscoin L1. Вони також довіряють, що контролер контракту wBTC обробить їх запит на виведення, а майнери Syscoin видобудуть транзакцію спалення на ланцюзі Syscoin."
                 }
             ]
         },
         {
             "id": "technology",
-            "title": "Technology",
+            "title": "Технології",
             "content": [
                 {
-                    "title": "Fraud proofs are under development",
-                    "content": "[OP Stack](https://github.com/SYS-Labs/rollux/tree/develop/op-node) chains will use interactive fraud proofs to enforce state correctness. This feature is currently in development, meaning that Rollux currently permits invalid state roots."
+                    "title": "Докази шахрайства в процесі розробки",
+                    "content": "[OP Stack](https://github.com/SYS-Labs/rollux/tree/develop/op-node) ланцюги використовуватимуть інтерактивні докази шахрайства для забезпечення правильності стану. Ця функція наразі в процесі розробки, що означає, що Rollux наразі дозволяє недійсні корені стану."
                 },
                 {
-                    "title": "Merge-mining",
-                    "content": "Merged mining is a crucial part of Syscoin’s consensus mechanism that allows coupling between Bitcoin and Syscoin. Essentially, BTC mining pools add references to Syscoin blocks in mining jobs sent to mining participants. Additionally, because the Syscoin mining algorithm is the same as bitcoin’s, there is little added energy expenditure. This combined with miners earning a portion of transaction fees and newly issued SYS tokens from Syscoin block mining creates an incentive for providing security to both BTC and to Syscoin."
+                    "title": "Мердж-майнінг",
+                    "content": "Змішане майнінг є критично важливою частиною механізму консенсусу Syscoin, що дозволяє зв'язок між Bitcoin і Syscoin. По суті, пули BTC-майнінгу додають посилання на блоки Syscoin у завданнях майнінгу, надісланих учасникам. Крім того, оскільки алгоритм майнінгу Syscoin такий же, як і у Bitcoin, витрати енергії мінімальні. Це, у поєднанні з тим, що майнери отримують частину транзакційних зборів та нововиданих токенів SYS від майнінгу блоків Syscoin, створює стимул для забезпечення безпеки як BTC, так і Syscoin."
                 },
                 {
-                    "title": "EVM-compatible",
-                    "content": "Rollux uses an EVM-compatible virtual machine. The Ethereum Virtual Machine is software responsible for smart contract execution for a number of blockchains, namely the Ethereum Network. It uses Solidity/Vyper as its coding language, which is the dominant environment for smart contract execution in the cryptocurrency ecosystem. Rollux is EVM-compatible, which means that a developer from Ethereum would have less difficulty deploying their applications on Rollux compared to other execution environments."
+                    "title": "Сумісний з EVM",
+                    "content": "Rollux використовує віртуальну машину, сумісну з EVM. Ethereum Virtual Machine — це програмне забезпечення, відповідальне за виконання смарт-контрактів для ряду блокчейн-систем, а саме мережі Ethereum. Вона використовує Solidity/Vyper як свою мову програмування, яка є домінуючим середовищем для виконання смарт-контрактів у криптовалютній екосистемі. Rollux є сумісним з EVM, що означає, що розробнику з Ethereum буде легше розгорнути свої додатки на Rollux порівняно з іншими середовищами виконання."
                 },
                 {
-                    "title": "Faster block times",
-                    "content": "Rollux is currently producing blocks every two seconds which provides a better user experience than using the Bitcoin mainchain."
+                    "title": "Швидші часи блокування",
+                    "content": "Rollux наразі виробляє блоки кожні дві секунди, що забезпечує кращий користувацький досвід, ніж використання головної ланцюга Bitcoin."
                 },
                 {
-                    "title": "BitVM exploration",
-                    "content": "The Rollux team has [announced](https://x.com/rolluxl2/status/1808176959618228551) their intention to develop a BitVM-style bridge. They are looking to build a trust-minimized bridge between Syscoin and Bitcoin which could also support the Rollux chain."
+                    "title": "Дослідження BitVM",
+                    "content": "Команда Rollux оголосила про своє намір [розробити](https://x.com/rolluxl2/status/1808176959618228551) міст стилю BitVM. Вони прагнуть побудувати міст з мінімальним рівнем довіри між Syscoin та Bitcoin, який також може підтримувати ланцюг Rollux."
                 }
             ]
         },
         {
             "id": "usecases",
-            "title": "Use Cases",
+            "title": "Випадки використання",
             "content": [
                 {
-                    "title": "EVM applications",
-                    "content": "The potential use cases for Rollux are similar to that of other EVM-based sidechains. Developers can deploy smart contracts that enable applications like borrowing and lending protocols, stablecoins, NFTs, and more. The primary, proposed use case for Rollux is to act as an application layer for Bitcoin."
+                    "title": "Додатки EVM",
+                    "content": "Потенційні випадки використання Rollux подібні до інших EVM-базованих сайдчейнів. Розробники можуть розгортати смарт-контракти, які дозволяють такі програми, як протоколи позик і кредитування, стейблкоїни, NFT та інше. Основний, запропонований випадок використання Rollux — діяти як прикладний шар для Bitcoin."
                 }
             ]
         },
         {
             "id": "operator",
-            "title": "Operator",
+            "title": "Оператор",
             "content": [
                 {
-                    "title": "Rollux is operated by a centralized sequencer",
-                    "content": "The Rollux blockchain is operated by a centralized validator. If the validator censors users, or goes offline, users can self-sequence their own transactions."
+                    "title": "Rollux експлуатується централізованим секвенсором",
+                    "content": "Блокчейн Rollux експлуатується централізованим валідатором. Якщо валідатор цензурує користувачів або зникає, користувачі можуть самостійно послідовно виконувати свої транзакції."
                 }
             ]
         },
         {
             "id": "sourcecode",
-            "title": "Source Code",
+            "title": "Джерело коду",
             "content": [
                 {
-                    "title": "Code is open-source",
-                    "content": "Rollux’s [node implementation](https://github.com/sys-labs/rollux) is open-source."
+                    "title": "Код є відкритим",
+                    "content": "Імплементація [вузла Rollux](https://github.com/sys-labs/rollux) є відкритою."
                 }
             ]
         }

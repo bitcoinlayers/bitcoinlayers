@@ -1,15 +1,15 @@
 {
     "slug": "mezo",
     "title": "Mezo",
-    "layerType": "Sidechain",
-    "live": "Announced",
+    "layerType": "Сайдчейн",
+    "live": "Оголошено",
     "staking": false,
     "bridge": false,
-    "underReview": "yes",
+    "underReview": "так",
     "riskFactors": ["", "", "", ""],
-    "purpose": "General purpose",
-    "btcBridge": "Threshold",
-    "settlement": "External",
+    "purpose": "Загального призначення",
+    "btcBridge": "Пороговий",
+    "settlement": "Зовнішнє",
     "btcLocked": 0,
     "executionEnv": "-",
     "consensus": "-",
@@ -25,31 +25,31 @@
         "https://info.mezo.org/proof-of-hodl",
         "https://twitter.com/mezonetwork"
     ],
-    "description": "Mezo is building a general purpose sidechain protocol that will support general purpose applications. It will run a CometBFT consensus protocol that is secured by staking BTC and the Mezo token. It will use tBTC for its Bitcoin bridge.",
+    "description": "Mezo розробляє протокол сайдчейну загального призначення, який підтримуватиме загальносистемні додатки. Він працюватиме на протоколі консенсусу CometBFT, який забезпечується ставками BTC і токена Mezo. Для моста Bitcoin буде використовуватись tBTC.",
     "riskAnalysis": [
         {
-            "category": "Unilateral Exits",
+            "category": "Односторонні виходи",
             "score": 0,
             "tier": "",
             "title": "",
             "content": ""
         },
         {
-            "category": "Data Availability",
+            "category": "Доступність даних",
             "score": 0,
             "tier": "",
             "title": "",
             "content": ""
         },
         {
-            "category": "Block Production",
+            "category": "Виробництво блоків",
             "score": 0,
             "tier": "",
             "title": "",
             "content": ""
         },
         {
-            "category": "State Validation",
+            "category": "Перевірка стану",
             "score": 0,
             "tier": "",
             "title": "",
@@ -59,10 +59,10 @@
     "sections": [
         {
             "id": "selfsubmit",
-            "title": "Process to self-submit information",
+            "title": "Процес самостійної подачі інформації",
             "content": [
                 {
-                    "content": "The Bitcoin Layers project prioritizes risk reviews on projects that are in production and accepting users' BTC deposits. Projects on testnet are welcome to submit information about their project. We do not publish risk assessments for projects that are not in production.\n\nHere are the [instructions](https://github.com/bitcoinlayers/bitcoinlayers/blob/main/SELFSUBMIT.md) on self-submitting a project."
+                    "content": "Проект Bitcoin Layers надає пріоритет оглядам ризиків для проектів, які знаходяться в стадії виробництва та приймають депозити BTC від користувачів. Проекти на тестовій мережі можуть подавати інформацію про свій проект. Ми не публікуємо оцінки ризиків для проектів, які не перебувають у виробництві.\n\nОсь [інструкції](https://github.com/bitcoinlayers/bitcoinlayers/blob/main/SELFSUBMIT.md) щодо самостійної подачі проекту."
                 }
             ]
         }

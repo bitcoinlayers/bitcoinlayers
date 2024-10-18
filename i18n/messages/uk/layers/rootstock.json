@@ -1,18 +1,18 @@
 {
     "slug": "rootstock",
     "title": "Rootstock",
-    "layerType": "Sidechain",
+    "layerType": "Бокова ланцюг",
     "live": "Mainnet",
     "staking": false,
     "bridge": false,
-    "underReview": "no",
-    "riskFactors": ["High", "Medium", "Medium", "Medium"],
-    "purpose": "General",
-    "btcBridge": "Federated Multisig",
-    "settlement": "Offchain",
+    "underReview": "ні",
+    "riskFactors": ["Високий", "Середній", "Середній", "Середній"],
+    "purpose": "Загальний",
+    "btcBridge": "Федеративний Мульти- підпис",
+    "settlement": "Зовнішній",
     "btcLocked": 2757,
-    "executionEnv": "Offchain",
-    "consensus": "Merge-Mining",
+    "executionEnv": "Зовнішній",
+    "consensus": "Об'єднана майнінг",
     "nativeToken": "RBTC",
     "feeToken": "RBTC",
     "enshrinedBtc": "RBTC",
@@ -25,129 +25,129 @@
         "https://github.com/rsksmart",
         "https://twitter.com/rootstock_io"
     ],
-    "description": "Rootstock is a merge-mined, EVM-compatible bitcoin sidechain. As a merge-mined network, bitcoin miners can concurrently mine for Rootstock's consensus. The network is not secured by another token. As an EVM-compatible network, developers can deploy Solidity and other EVM-compatible smart contracts with arbitrary logic, creating a host of new applications for BTC. Rootstock has an enshrined cross-chain BTC asset called ''Smart Bitcoin'' (RBTC), which is pegged 1:1 to BTC and secured by a permissioned multisig federation.",
+    "description": "Rootstock — це об'єднана майнінгова, EVM-сумісна бокова ланцюг Bitcoin. Як об'єднана мережа, майнери Bitcoin можуть одночасно майнити консенсус Rootstock. Мережа не забезпечується іншим токеном. Як EVM-сумісна мережа, розробники можуть розгортати контракти Solidity та інші EVM-сумісні смарт-контракти з довільною логікою, створюючи нові додатки для BTC. Rootstock має вбудований крос-ланцюговий актив BTC під назвою ''Smart Bitcoin'' (RBTC), який прив'язаний 1:1 до BTC і забезпечується дозволеною федерацією мульти-підписів.",
     "riskAnalysis": [
         {
-            "category": "Bridge Security",
+            "category": "Безпека моста",
             "score": 0,
-            "tier": "High",
-            "title": "A federated multi-sig known as the Powpeg is used to custody users' BTC",
-            "content": "The bridge between bitcoin and Rootstock is secured by a 5-of-9 federated multisig, referred to as the Powpeg (Proof of Work Peg). The identities of entities participating in the Powpeg are publicly known. Users trust the operators of the Powpeg to custody their funds. Learn more about the Powpeg in the technology section below."
+            "tier": "Високий",
+            "title": "Для зберігання BTC користувачів використовується федеративний мульти-підпис, відомий як Powpeg",
+            "content": "Міст між Bitcoin і Rootstock забезпечується федеративним мульти-підписом 5 з 9, відомим як Powpeg (Proof of Work Peg). Ідентичності суб'єктів, які беруть участь у Powpeg, відомі публічно. Користувачі довіряють операторам Powpeg зберігати свої кошти. Дізнайтеся більше про Powpeg у розділі технологій нижче."
         },
         {
-            "category": "Data Availability",
+            "category": "Доступність даних",
             "score": 0,
-            "tier": "Medium",
-            "title": "Data is stored and made available via Rootstock nodes. Running a node is permissionless",
-            "content": "The data for Rootstock's state updates is stored on the Rootstock blockchain. Anyone can run a Rootstock node and verify the state of the Rootstock blockchain. So long as there is at least one non-pruned Rootstock full node online, users will be able to recover the full history and state of the Rootstock blockchain."
+            "tier": "Середній",
+            "title": "Дані зберігаються і надаються через вузли Rootstock. Запуск вузла є бездозвільним",
+            "content": "Дані для оновлень стану Rootstock зберігаються на блокчейні Rootstock. Кожен може запустити вузол Rootstock і перевірити стан блокчейну Rootstock. Якщо хоча б один повний вузол Rootstock не буде очищено, користувачі зможуть відновити всю історію та стан блокчейну Rootstock."
         },
         {
-            "category": "Network Operators",
+            "category": "Оператори мережі",
             "score": 0,
-            "tier": "Medium",
-            "title": "Any Bitcoin miner can participate in merge-mining Rootstock",
-            "content": "Block production is permissionless. Anyone who is willing and able to merge-mine Rootstock and bitcoin can produce Rootstock blocks and earn rewards. If interested parties do not possess enough hashpower to competitively solo mine, they can join a mining pool that supports Rootstock merged mining."
+            "tier": "Середній",
+            "title": "Будь-який майнер Bitcoin може брати участь в об'єднаному майнінгу Rootstock",
+            "content": "Виробництво блоків є бездозвільним. Будь-хто, хто готовий і має можливість об'єднаного майнінгу Rootstock і Bitcoin, може виробляти блоки Rootstock і отримувати винагороди. Якщо зацікавлені сторони не мають достатньої потужності для конкурентоспроможного сольного майнінгу, вони можуть приєднатися до майнінгового пулу, що підтримує об'єднаний майнінг Rootstock."
         },
         {
-            "category": "Finality Guarantees",
+            "category": "Гарантії фіналізації",
             "score": 0,
-            "tier": "Medium",
-            "title": "Finality assurances are provided by Rootstock's consensus mechanism",
-            "content": "There is no bitcoin enforcement of Rootstock state transitions. Rootsock full nodes accept blocks proposed by Roostock miners."
+            "tier": "Середній",
+            "title": "Гарантії фіналізації надаються механізмом консенсусу Rootstock",
+            "content": "Не існує примусу Bitcoin для переходів стану Rootstock. Повні вузли Rootstock приймають блоки, запропоновані майнерами Rootstock."
         }
     ],
     "sections": [
         {
             "id": "bitcoinsecurity",
-            "title": "Bitcoin Security",
+            "title": "Безпека Bitcoin",
             "content": [
                 {
-                    "title": "Rootstock enables Bitcoin miners to merge-mine Rootstock",
-                    "content": "Rootstock indirectly inherits security from Bitcoin's consensus participants. Bitcoin miners can permissionlessly opt-in to merge-mining Rootstock and secure the network."
+                    "title": "Rootstock дозволяє майнерам Bitcoin об'єднано майнити Rootstock",
+                    "content": "Rootstock непрямо успадковує безпеку від учасників консенсусу Bitcoin. Майнери Bitcoin можуть бездозвільно приєднуватися до об'єднаного майнінгу Rootstock і забезпечувати мережу."
                 },
                 {
-                    "title": "Another token is not used for network security",
-                    "content": "The Full Block Reward is paid out in RBTC. Its distribution is : 20% to Rootstock Labs, 0.8% to Powpeg Federation, 79.2% to miners. Miners only receive rewards from transaction fees. Fees dedicated to the federation and miners serve to incentivize the continued security, whereas the 20% dedicated to Rootstock Labs is dedicated to the maintenance and development of the network."
+                    "title": "Інший токен не використовується для забезпечення мережі",
+                    "content": "Повна винагорода за блок виплачується в RBTC. Її розподіл: 20% до Rootstock Labs, 0.8% до федерації Powpeg, 79.2% до майнерів. Майнери отримують винагороди лише з комісій за транзакції. Комісії, призначені для федерації і майнерів, слугують для стимулювання подальшої безпеки, тоді як 20%, призначені для Rootstock Labs, використовуються для обслуговування та розвитку мережі."
                 },
                 {
-                    "title": "No MEV introduced to Bitcoin, but Bitcoin miners can extract sidechain MEV",
-                    "content": "Rootstock does not leak MEV to Bitcoin directly. Due to the nature of Rootstocks execution environment, Bitcoin miners may take advantage of opportunities to extract MEV if the network is experiencing high activity."
+                    "title": "MEV не впроваджується в Bitcoin, але майнери Bitcoin можуть витягувати MEV бокової ланцюги",
+                    "content": "Rootstock не витікає MEV безпосередньо в Bitcoin. Через особливості середовища виконання Rootstock, майнери Bitcoin можуть скористатися можливостями для витягнення MEV, якщо мережа зазнає високої активності."
                 },
                 {
-                    "title": "Merge-mining enables Bitcoin miners to earn more fees",
-                    "content": "Rootstock contributes to Bitcoin's security budget indirectly by providing Bitcoin miners an exclusive opportunity to earn fee revenue via merge-mining."
+                    "title": "Об'єднаний майнінг дозволяє майнерам Bitcoin заробляти більше комісій",
+                    "content": "Rootstock непрямо сприяє бюджету безпеки Bitcoin, надаючи майнерам Bitcoin ексклюзивну можливість заробляти доходи від комісій через об'єднаний майнінг."
                 }
             ]
         },
         {
             "id": "technology",
-            "title": "Technology",
+            "title": "Технологія",
             "content": [
                 {
-                    "title": "Merge-mining",
-                    "content": "Merged mining is a crucial part of Rootstock’s consensus mechanism that allows coupling between bitcoin and Rootstock. Essentially, BTC mining pools add references to Rootstock blocks in mining jobs sent to mining participants. Additionally, because the Rootstock mining algorithm is the same as bitcoin’s, there is little added energy expenditure. This combined with miners earning a portion of transaction fees from Rootstock block mining creates an incentive for providing security to both BTC and to Rootstock.\n\nCurrently, more than 50% of the bitcoin hashrate is participating in Rootstock merged mining. Rootstock Labs states to have three phases for merged mining growth, a bootstrap phase (<30% of BTC hashrate), stable phase (60% ≥ Rootstock ≥ 30%), and its mature phase (≥60%). Currently, Rootstock is in its stable phase.\n\nIn order to pay out miners, every block executes the Reward Manager Smart Contract (REMASC). The contract keeps record of the Reward Balance account, which exists to change value during new block production. When a block reaches maturity, the appropriate portions of rewards are distributed according to REMASC specified rules."
+                    "title": "Об'єднаний майнінг",
+                    "content": "Об'єднаний майнінг є важливою частиною механізму консенсусу Rootstock, що дозволяє з'єднання між Bitcoin і Rootstock. По суті, майнінгові пулу BTC додають посилання на блоки Rootstock в робочі завдання, надіслані учасникам майнінгу. Крім того, оскільки алгоритм майнінгу Rootstock є таким же, як у Bitcoin, енергетичні витрати практично не збільшуються. Це разом з тим, що майнери отримують частину комісій за транзакції від майнінгу блоків Rootstock, створює інcentiv для забезпечення безпеки як BTC, так і Rootstock.\n\nВ даний час більше 50% хешрейту Bitcoin бере участь в об'єднаному майнінгу Rootstock. Rootstock Labs вказує на три фази росту об'єднаного майнінгу: початкова фаза (<30% хешрейту BTC), стабільна фаза (60% ≥ Rootstock ≥ 30%), та зріла фаза (≥60%). В даний час Rootstock перебуває у своїй стабільній фазі.\n\nЩоб виплатити майнерам, кожен блок виконує Смарт-контракт Менеджера Винагороди (REMASC). Контракт веде облік балансу винагороди, який змінює свою вартість під час виробництва нових блоків. Коли блок досягає зрілості, відповідні частини винагороди розподіляються згідно з правилами, визначеними REMASC."
                 },
                 {
                     "title": "Powpeg",
-                    "content": "The Powpeg is operated by special nodes referred to as Powpeg functionaries. The Powpeg functionaries are: BlockVenture, Collider, Constata, Luxor, MyCointainer, pNetwork, Rootstock Labs, Sovryn, and Xapo.\n\nEach functionary operates a Powpeg node. A Powpeg node combines a specialized Rootstock full node with a Proof of Work Hardware Security Module (PowHSM). A PowHSM is a hardware device designed to remove human control over the bitcoin private keys used to sign Powpeg multisig transactions. PowHSM operators cannot manually sign transactions, extract private keys, or perform any other functions with the private keys. The PowHSM firmware is open source and available in the Rootstock GitHub repo. PowHSM operators are publicly verifiable using remote attestation.\n\nRequests by users to withdraw BTC from the Powpeg bridge must be approved by a majority of Powpeg functionaries. If a functionary's PowHSM is online, then it will automatically sign a withdrawal transaction after the withdrawal request reaches a sufficient number of confirmations on the Rootstock blockchain.\n\nBTC held in the Powpeg bridge can be stolen if a majority of PowHSM devices are compromised.\n\nAdditionally, the Powpeg uses a time-locked emergency 3-of-4 federated multisig as a safeguard against PowHSM device failures or possible external intervention. The emergency multisig automatically gains spending authority over the funds in the Powpeg bridge if a majority of PowHSM devices are unresponsive for a period of one year. The emergency multisig signers are: Rootstock Labs, MoneyOnChain, Jameson Lopp, and Adrian Eidelman. In the event of an emergency, these signatories will evaluate the situation and coordinate for the recovery of funds.\n\nBTC held in the emergency multisig can be lost or stolen if a majority of the emergency multisig signers are compromised.\n\nIf BTC held in the Powpeg bridge (or emergency multisig, if the emergency multisig procedure has been activated) is lost or stolen, then users will not be able to convert RBTC to BTC and exit the bridge.\n\nTo potentially improve the trust assumptions of the Rootstock bitcoin bridge, Rootstock Labs is funding research into BitVMX, a protocol that can be used to develop a trust-minimized 1-of-N federated bitcoin bridge."
+                    "content": "Powpeg працює завдяки спеціальним вузлам, відомим як функціонери Powpeg. Функціонери Powpeg: BlockVenture, Collider, Constata, Luxor, MyCointainer, pNetwork, Rootstock Labs, Sovryn та Xapo.\n\nКожен функціонер експлуатує вузол Powpeg. Вузол Powpeg поєднує спеціалізований повний вузол Rootstock з модулем апаратної безпеки (PowHSM) для Proof of Work. PowHSM - це апаратний пристрій, призначений для усунення людського контролю над приватними ключами Bitcoin, які використовуються для підписання транзакцій Powpeg. Оператори PowHSM не можуть вручну підписувати транзакції, витягувати приватні ключі або виконувати будь-які інші функції з приватними ключами. Прошивка PowHSM є відкритим кодом і доступна в репозиторії Rootstock на GitHub. Оператори PowHSM можуть бути публічно перевірені за допомогою віддаленої атестації.\n\nЗапити користувачів на зняття BTC з моста Powpeg повинні бути схвалені більшістю функціонерів Powpeg. Якщо PowHSM функціонера працює, то він автоматично підпише транзакцію на зняття після того, як запит на зняття досягне достатньої кількості підтверджень на блокчейні Rootstock.\n\nBTC, утримуваний на мосту Powpeg, може бути вкрадений, якщо більшість пристроїв PowHSM зламані.\n\nКрім того, Powpeg використовує механізм надзвичайного часу з мульти-підписом 3 з 4 як запобіжний захід проти можливих збоїв пристроїв PowHSM або зовнішнього втручання. Надзвичайний мульти-підпис автоматично отримує право витрачати кошти на мосту Powpeg, якщо більшість пристроїв PowHSM не відповідають протягом року. Підписанти надзвичайного мульти-підпису: Rootstock Labs, MoneyOnChain, Jameson Lopp та Adrian Eidelman. У разі надзвичайної ситуації ці підписанти оцінять ситуацію та координуватимуть повернення коштів.\n\nBTC, утримуваний у надзвичайному мульти-підпису, може бути втраченим або вкраденим, якщо більшість підписантів надзвичайного мульти-підпису зламані.\n\nЯкщо BTC, утримуваний на мосту Powpeg (або у надзвичайному мульти-підпису, якщо процедура надзвичайного мульти-підпису була активована), буде втрачено або вкрадено, користувачі не зможуть конвертувати RBTC у BTC та вийти з моста.\n\nЩоб потенційно покращити довіру до моста Bitcoin Rootstock, Rootstock Labs фінансує дослідження BitVMX, протоколу, який може бути використаний для розробки довірчо мінімізованого федеративного моста Bitcoin 1 з N."
                 },
                 {
-                    "title": "Ethereum Virtual Machine",
-                    "content": "Rootstock uses a forked version of the Ethereum Virtual Machine (EVM), which it calls the Rootstock Virtual Machine (RVM). The EVM is a Turing-complete execution environment developed for Ethereum and adopted by various other networks. Solidity is the primary coding language used for smart contract development on the EVM. Solidity and the EVM are the dominant language and environment for smart contracts in the broader cryptocurrency ecosystem, respectively. Smart contracts created for the EVM are directly compatible with the RVM. The RVM is EVM-compatible at both the bytecode and opcode level, and can interact with Ethereum developer tooling. The RVM uses RBTC as its gas cost for smart contract execution."
+                    "title": "Віртуальна машина Ethereum",
+                    "content": "Rootstock використовує модифіковану версію Віртуальної машини Ethereum (EVM), яку називає Віртуальною машиною Rootstock (RVM). EVM — це виконувальне середовище з повною потужністю Тюрінга, розроблене для Ethereum та прийняте різними іншими мережами. Solidity є основною мовою програмування, що використовується для розробки смарт-контрактів в EVM. Solidity та EVM є домінуючими мовою та середовищем для смарт-контрактів в більш широкій криптовалютній екосистемі відповідно. Смарт-контракти, створені для EVM, безпосередньо сумісні з RVM. RVM є EVM-сумісною як на рівні байт-коду, так і на рівні операційного коду, і може взаємодіяти з інструментами для розробників Ethereum. RVM використовує RBTC як витрати на газ для виконання смарт-контрактів."
                 },
                 {
-                    "title": "Faster block times",
-                    "content": "Rootstock achieves block confirmation around every 30s."
+                    "title": "Швидші часи блокування",
+                    "content": "Rootstock досягає підтвердження блоку приблизно кожні 30 секунд."
                 }
             ]
         },
         {
             "id": "usecases",
-            "title": "Use Cases",
+            "title": "Випадки використання",
             "content": [
                 {
-                    "title": "Decentralized finance",
-                    "content": "With its low fees and smart contract execution environment, Rootstock is designed to be an application-friendly ecosystem. It hosts a few apps fundamental to the development of a healthy DeFi sector: Sovryn (Lending), Uniswap (DEX), and MoneyOnChain (Stablecoins)."
+                    "title": "Децентралізовані фінанси",
+                    "content": "Завдяки низьким комісіям та середовищу виконання смарт-контрактів Rootstock розроблено як дружнє до застосувань екосистему. Вона містить кілька додатків, які є фундаментальними для розвитку здорового сектора DeFi: Sovryn (кредитування), Uniswap (DEX) та MoneyOnChain (стейблкоїни)."
                 }
             ]
         },
         {
             "id": "operator",
-            "title": "Operator",
+            "title": "Оператор",
             "content": [
                 {
-                    "title": "Any bitcoin miner can merge-mine Rootstock",
-                    "content": "Block production is permissionless. Anyone who is willing to merge-mine can produce blocks and earn rewards. If interested parties do not possess enough capital to competitively solo mine, they can join a mining pool that supports Rootstock merged mining."
+                    "title": "Будь-який майнер Bitcoin може об'єднано майнити Rootstock",
+                    "content": "Виробництво блоків є бездозвільним. Будь-хто, хто готовий до об'єднаного майнінгу, може виробляти блоки і отримувати винагороди. Якщо зацікавлені сторони не мають достатнього капіталу для конкурентоспроможного сольного майнінгу, вони можуть приєднатися до майнінгового пулу, що підтримує об'єднаний майнінг."
                 }
             ]
         },
         {
             "id": "withdrawals",
-            "title": "Withdrawals",
+            "title": "Виведення",
             "content": [
                 {
-                    "title": "Users trust permissioned operators to process their withdrawals",
-                    "content": "Withdrawals are currently permissioned by a federated group of signers. Users must trust that when they deposit BTC into the Rootstock blockchain, the signers will not collude and steal their BTC. Learn more about the Powpeg multisig in the Knowledge Bits section."
+                    "title": "Користувачі довіряють дозволеним операторам обробляти свої зняття",
+                    "content": "Виведення наразі контролюється федеративною групою підписантів. Користувачі повинні довіряти, що коли вони вносять BTC на блокчейн Rootstock, підписанти не зговоряться і не вкрадуть їх BTC. Дізнайтеся більше про мульти-підпис Powpeg у розділі Знання."
                 }
             ]
         },
         {
             "id": "sourcecode",
-            "title": "Source Code",
+            "title": "Джерельний код",
             "content": [
                 {
-                    "title": "Code is open-source",
-                    "content": "All code related to the Rootstock project is open source."
+                    "title": "Код є відкритим",
+                    "content": "Весь код, пов'язаний з проектом Rootstock, є відкритим."
                 }
             ]
         },
         {
             "id": "knowledgeBits",
-            "title": "Knowledge Bits",
+            "title": "Знання",
             "content": [
                 {
-                    "title": "Learn more",
-                    "content": "[Rootstock developer portal](https://dev.rootstock.io/)\n[Rootstock Whitepaper](https://rootstock.io/static/a79b27d4889409602174df4710102056/RS-whitepaper.pdf)\n[Powpeg documentation](https://dev.rootstock.io/rsk/architecture/powpeg/)\n[Powpeg remote attestation](https://rootstock.io/powpeg/)"
+                    "title": "Дізнайтеся більше",
+                    "content": "[Портал розробника Rootstock](https://dev.rootstock.io/)\n[Білий папір Rootstock](https://rootstock.io/static/a79b27d4889409602174df4710102056/RS-whitepaper.pdf)\n[Документація Powpeg](https://dev.rootstock.io/rsk/architecture/powpeg/)\n[Віддалена атестація Powpeg](https://rootstock.io/powpeg/)"
                 }
             ]
         }

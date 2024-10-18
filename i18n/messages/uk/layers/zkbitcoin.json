@@ -1,11 +1,11 @@
 {
     "slug": "zkbitcoin",
     "title": "zkBitcoin",
-    "layerType": "MPC Protocol",
-    "live": "Testnet",
+    "layerType": "Протокол MPC",
+    "live": "Тестова мережа",
     "staking": false,
     "bridge": false,
-    "underReview": "yes",
+    "underReview": "так",
     "riskFactors": ["", "", "", ""],
     "purpose": "-",
     "btcBridge": "-",
@@ -25,31 +25,31 @@
         "https://github.com/sigma0-xyz/zkbitcoin",
         "https://github.com/sigma0-xyz/zkbitcoin"
     ],
-    "description": "zkBitcoin enables the use of zero-knowledge applications on Bitcoin. User funds would be secured by a federated MPC protocol in their proposed design.",
+    "description": "zkBitcoin дозволяє використання застосунків з нульовими знаннями на Bitcoin. Кошти користувачів будуть захищені федеративним протоколом MPC у їхньому запропонованому дизайні.",
     "riskAnalysis": [
         {
-            "category": "Unilateral Exits",
+            "category": "Односторонні виходи",
             "score": 0,
             "tier": "",
             "title": "",
             "content": ""
         },
         {
-            "category": "Data Availability",
+            "category": "Доступність даних",
             "score": 0,
             "tier": "",
             "title": "",
             "content": ""
         },
         {
-            "category": "Block Production",
+            "category": "Виробництво блоків",
             "score": 0,
             "tier": "",
             "title": "",
             "content": ""
         },
         {
-            "category": "State Validation",
+            "category": "Валідація стану",
             "score": 0,
             "tier": "",
             "title": "",
@@ -59,20 +59,20 @@
     "sections": [
         {
             "id": "description",
-            "title": "Description",
+            "title": "Опис",
             "content": [
                 {
-                    "content": "zkBitcoin enables the use of zero-knowledge applications on Bitcoin. User funds would be secured by a federated MPC protocol in their proposed design."
+                    "content": "zkBitcoin дозволяє використання застосунків з нульовими знаннями на Bitcoin. Кошти користувачів будуть захищені федеративним протоколом MPC у їхньому запропонованому дизайні."
                 }
             ]
         },
         {
             "id": "knowledgeBits",
-            "title": "Knowledge Bits",
+            "title": "Знання",
             "content": [
                 {
-                    "title": "Learn more",
-                    "content": "[zkBitcoin whitepaper](https://github.com/sigma0-xyz/zkbitcoin/blob/main/whitepaper.pdf)\n[zkBitcoin developer documentation](https://github.com/sigma0-xyz/zkbitcoin/blob/main/DEVELOPER.md)"
+                    "title": "Дізнатися більше",
+                    "content": "[Біла книга zkBitcoin](https://github.com/sigma0-xyz/zkbitcoin/blob/main/whitepaper.pdf)\n[Документація для розробників zkBitcoin](https://github.com/sigma0-xyz/zkbitcoin/blob/main/DEVELOPER.md)"
                 }
             ]
         }

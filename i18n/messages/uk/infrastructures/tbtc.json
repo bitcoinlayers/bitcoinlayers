@@ -1,16 +1,16 @@
 {
     "slug": "tbtc",
-    "title": "tBTC Protocol",
-    "infrastructureType": "Bitcoin Bridge",
+    "title": "tBTC Протокол",
+    "infrastructureType": "Брідж для Bitcoin",
     "live": "Mainnet",
     "staking": false,
     "bridge": true,
-    "underReview": "yes",
+    "underReview": "так",
     "riskFactors": ["", ""],
-    "bitcoinSecurity": "No",
+    "bitcoinSecurity": "Ні",
     "nativeToken": "T",
-    "purpose": "General",
-    "associatedLayers": "EVM-based chains",
+    "purpose": "Загальний",
+    "associatedLayers": "EVM-базовані блокчейни",
     "bitcoinOnly": false,
     "links": [
         "https://threshold.network/",
@@ -19,47 +19,47 @@
         "https://github.com/threshold-network",
         "https://x.com/thetnetwork"
     ],
-    "description": "tBTC is a wrapped version of BTC that lives as an ERC-20 token on EVM-based blockchains. Its accounting ledger is Ethereum. The bitcoin backing tBTC is secured by a distributed signer set and staking mechanism.",
+    "description": "tBTC — це обгорнута версія BTC, яка існує як токен ERC-20 на EVM-базованих блокчейнах. Його обліковий регістр — Ethereum. Bitcoin, що підкріплює tBTC, захищений розподіленим набором підписувачів і механізмом стейкінгу.",
     "sections": [
         {
             "id": "riskbits",
-            "title": "Risk Bits",
+            "title": "Ризики",
             "content": [
                 {
-                    "title": "Custody of bitcoin backing tBTC is managed by permissioned entities",
-                    "content": "The bitcoin wallets that store the bitcoin backing tBTC are managed by a permissioned signer set. The signers of the wallets participate as stakers in an Ethereum staking contract to become eligible for signing privileges. When a new wallet is created, a randomized process, known as the sortition pool, will select signers who will be responsible for custodying funds and signing transactions for respective bitcoin wallets.\n\nIf signers colluded, and had sufficient amount of signing power for a bitcoin wallet, they could steal funds from a wallet they managed."
+                    "title": "Кустодія біткоїнів, що підкріплює tBTC, управляється уповноваженими особами",
+                    "content": "Біткоїн-гаманці, що зберігають біткоїни, які підкріплюють tBTC, управляються уповноваженим набором підписувачів. Підписувачі гаманців беруть участь як стейкери в контракті стейкінгу Ethereum, щоб отримати право підпису. Коли створюється новий гаманець, випадковий процес, відомий як пул відбору, вибирає підписувачів, які будуть відповідальні за зберігання коштів і підписування транзакцій для відповідних біткоїн-гаманців.\n\nЯкщо підписувачі змовляться і отримають достатню кількість підписувацької влади для біткоїн-гаманця, вони можуть вкрасти кошти з гаманця, який вони управляють."
                 },
                 {
-                    "title": "Signers selection process influenced by stake of T token",
-                    "content": "Signers of bitcoin wallets backing tBTC are selected by a randomized process known as the sortitiion pool. While random, the overall value of a prospective signer's stake does impact the amount of key shares they receive in the threshold signing scheme. If a propsective signer hold a significant amount of stake (e.g. > 51%), there is a chance they could effectively gain unilateral control of a single bitcoin wallet.\n\nThis is currently mitigated by the fact that tBTC signing privileges are currently permissioned and signers must be approved by the Threshold DAO in its current set up. If tBTC signing privileges became permissionless, the mechanism could be vulernable to malicious parties acquiring a large amount of stake."
+                    "title": "Процес вибору підписувачів вплине на ставку токена T",
+                    "content": "Підписувачі біткоїн-гаманців, що підкріплюють tBTC, вибираються випадковим процесом, відомим як пул відбору. Хоча це випадково, загальна вартість стейка потенційного підписувача вплине на кількість часток ключа, які вони отримують у схемі підпису з порогом. Якщо потенційний підписувач має значну частку (наприклад, > 51%), існує ймовірність, що вони можуть фактично отримати односторонній контроль над окремим біткоїн-гаманцем.\n\nЦе наразі пом'якшується тим, що права підпису tBTC наразі є уповноваженими, і підписувачі повинні бути затверджені DAO Threshold у його поточному налаштуванні. Якщо права підпису tBTC стануть бездозволеними, механізм може бути вразливим до злочинних осіб, які придбають велику частку."
                 }
             ]
         },
         {
             "id": "technology",
-            "title": "Technology",
+            "title": "Технології",
             "content": [
                 {
-                    "title": "tECDSA Scheme",
-                    "content": "Signers who participate in securing the bitcoin wallets in tBTC's protocol leverage a tECDSA scheme to shard the wallet's private key across a number of parties. In tBTC, the tECDSA scheme has a 51% threshold. It requires 51% of the threshold of signers to produce a valid signature for a bitcoin transaction.\n\nSigners of bitcoin wallets are selected through a randomized process known as the sortition pool. When a new wallet is created, a signer submits a sortition transaction to kick off a distributed key generation ceremony. The sortition pool then selects a number of signers to participate in the ceremony, generate a new wallet, and then distribute the private key shards across the group of signers.\n\nOnce the signers are distributed their individual key shares, they then participate is signing events via an offchain communication protocol."
+                    "title": "Схема tECDSA",
+                    "content": "Підписувачі, які беруть участь у захисті біткоїн-гаманців у протоколі tBTC, використовують схему tECDSA, щоб розподілити приватний ключ гаманця між кількома сторонами. У tBTC схема tECDSA має поріг 51%. Потрібно 51% підписувачів, щоб створити дійсний підпис для біткоїн-транзакції.\n\nПідписувачі біткоїн-гаманців вибираються через випадковий процес, відомий як пул відбору. Коли створюється новий гаманець, підписувач подає транзакцію відбору, щоб запустити церемонію розподіленого генерування ключа. Потім пул відбору вибирає кількість підписувачів для участі в церемонії, генерує новий гаманець і розподіляє частки приватного ключа серед групи підписувачів.\n\nПісля того, як підписувачі отримують свої індивідуальні частки ключа, вони беруть участь у подіях підпису через протокол комунікації поза ланцюгом."
                 },
                 {
-                    "title": "Ethereum Staking Contracts",
-                    "content": "Participation in the tBTC protocol requires a propspective signer to participate as a staker. tBTC's staking contracts live on Ethereum. A signer would need to acquire the necessary amount of T tokens to participate as a staker, stake them via the T staking contract, and then apply to become a signer through Threshold governance."
+                    "title": "Контракти стейкінгу Ethereum",
+                    "content": "Участь у протоколі tBTC вимагає, щоб потенційний підписувач брав участь як стейкер. Контракти стейкінгу tBTC живуть на Ethereum. Підписувачу потрібно отримати необхідну кількість токенів T, щоб взяти участь як стейкер, стейкувати їх через контракт стейкінгу T і потім подати заявку на отримання статусу підписувача через управління Threshold."
                 },
                 {
-                    "title": "Multiple Bitcoin Wallets",
-                    "content": "tBTC creates new wallets periodically to store the bitcoin backing tBTC. Every wallet undergoes its own distributed key generation ceremony and has a unique signer setup. This distributes the risk of collusion and theft across a number of wallets and signer groups."
+                    "title": "Кілька біткоїн-гаманців",
+                    "content": "tBTC періодично створює нові гаманці для зберігання біткоїнів, які підкріплюють tBTC. Кожен гаманець проходить свою власну церемонію розподіленого генерування ключа і має унікальну настройку підписувачів. Це розподіляє ризик змови та крадіжки між кількома гаманцями та групами підписувачів."
                 }
             ]
         },
         {
             "id": "knowledgeBits",
-            "title": "Knowledge Bits",
+            "title": "Знання",
             "content": [
                 {
-                    "title": "Learn more",
-                    "content": "[Bitcoin Layers' comparison of tBTC, wBTC, and cbBTC](https://mirror.xyz/0x715823F52163575f023b9090a775522249887619/3gaFbT7qQBKEbsjN3Gp_SQe6-QvdZNHuszoasNnvSUo)"
+                    "title": "Дізнайтеся більше",
+                    "content": "[Порівняння tBTC, wBTC та cbBTC від Bitcoin Layers](https://mirror.xyz/0x715823F52163575f023b9090a775522249887619/3gaFbT7qQBKEbsjN3Gp_SQe6-QvdZNHuszoasNnvSUo)"
                 }
             ]
         }

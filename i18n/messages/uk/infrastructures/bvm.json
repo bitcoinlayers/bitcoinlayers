@@ -5,11 +5,11 @@
     "live": "Mainnet",
     "staking": false,
     "bridge": false,
-    "underReview": "yes",
+    "underReview": "так",
     "riskFactors": ["", ""],
-    "bitcoinSecurity": "No",
+    "bitcoinSecurity": "Ні",
     "nativeToken": "BVM",
-    "purpose": "General",
+    "purpose": "Загальний",
     "associatedLayers": "-",
     "bitcoinOnly": false,
     "links": [
@@ -20,14 +20,14 @@
         "https://github.com/trustlesscomputer",
         "https://x.com/BVMnetwork"
     ],
-    "description": "BVM is a Rollup-as-a-Service provider. It supports the deployment of zkSync Era blockchains on top Supersonic, a blockchain the BVM team manages.",
+    "description": "BVM є постачальником Rollup-as-a-Service. Він підтримує розгортання блокчейнів zkSync Era на базі Supersonic, блокчейну, яким управляє команда BVM.",
     "sections": [
         {
             "id": "selfsubmit",
-            "title": "Process to self-submit information",
+            "title": "Процес самостійного подання інформації",
             "content": [
                 {
-                    "content": "The Bitcoin Layers project prioritizes risk reviews on projects that are in production and accepting users' BTC deposits. Projects on testnet are welcome to submit information about their project. We do not publish risk assessments for projects that are not in production.\n\nHere are the [instructions](https://github.com/bitcoinlayers/bitcoinlayers/blob/main/SELFSUBMIT.md) on self-submitting a project."
+                    "content": "Проект Bitcoin Layers пріоритетно розглядає ризики для проектів, які вже в роботі та приймають BTC-депозити від користувачів. Проекти на тестовій мережі можуть подавати інформацію про свій проект. Ми не публікуємо оцінки ризиків для проектів, які не в роботі.\n\nОсь [інструкції](https://github.com/bitcoinlayers/bitcoinlayers/blob/main/SELFSUBMIT.md) щодо самостійного подання проекту."
                 }
             ]
         }

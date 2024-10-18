@@ -1,15 +1,15 @@
 {
     "slug": "slug",
-    "title": "Title",
+    "title": "Назва",
     "infrastructureType": "-",
-    "live": "Mainnet/Testnet/Announced",
+    "live": "Mainnet/Тестова мережа/Оголошено",
     "staking": false,
     "bridge": false,
-    "underReview": "yes/no",
-    "riskFactors": ["High", "High"],
-    "bitcoinSecurity": "Yes/No",
-    "nativeToken": "None/Ticker",
-    "purpose": "General/Other",
+    "underReview": "так/ні",
+    "riskFactors": ["Високий", "Високий"],
+    "bitcoinSecurity": "Так/Ні",
+    "nativeToken": "Відсутній/Тикер",
+    "purpose": "Загальний/Інше",
     "associatedLayers": "-",
     "bitcoinOnly": false,
     "links": [
@@ -20,24 +20,24 @@
         "https://twitter.com/bitcoinlayers",
         "https://twitter.com/bitcoinlayers"
     ],
-    "description": "Under review.",
+    "description": "На розгляді.",
     "sections": [
         {
             "id": "description",
-            "title": "Description",
+            "title": "Опис",
             "content": [
                 {
-                    "title": "Description",
-                    "content": "Under review."
+                    "title": "Опис",
+                    "content": "На розгляді."
                 }
             ]
         },
         {
             "id": "selfsubmit",
-            "title": "Process to self-submit information",
+            "title": "Процес самостійної подачі інформації",
             "content": [
                 {
-                    "content": "The Bitcoin Layers project prioritizes risk reviews on projects that are in production and accepting users' BTC deposits. Projects on testnet are welcome to submit information about their project. We do not publish risk assessments for projects that are not in production.\n\nHere are the [instructions](https://github.com/bitcoinlayers/bitcoinlayers/blob/main/SELFSUBMIT.md) on self-submitting a project."
+                    "content": "Проект Bitcoin Layers надає пріоритет ризиковим оцінкам проектів, які знаходяться в експлуатації та приймають BTC-депозити користувачів. Проекти на тестовій мережі можуть подавати інформацію про свій проект. Ми не публікуємо оцінки ризиків для проектів, які не знаходяться в експлуатації.\n\nОсь [інструкції](https://github.com/bitcoinlayers/bitcoinlayers/blob/main/SELFSUBMIT.md) щодо самостійної подачі проекту."
                 }
             ]
         }

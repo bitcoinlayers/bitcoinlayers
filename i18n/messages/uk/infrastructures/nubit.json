@@ -1,15 +1,15 @@
 {
     "slug": "nubit",
     "title": "Nubit",
-    "infrastructureType": "Data Availability",
-    "live": "Announced",
+    "infrastructureType": "Доступність Даних",
+    "live": "Оголошено",
     "staking": false,
     "bridge": false,
-    "underReview": "yes",
+    "underReview": "так",
     "riskFactors": ["", ""],
-    "bitcoinSecurity": "No",
+    "bitcoinSecurity": "Ні",
     "nativeToken": "-",
-    "purpose": "General",
+    "purpose": "Загальний",
     "associatedLayers": "-",
     "bitcoinOnly": false,
     "links": [
@@ -19,14 +19,14 @@
         "https://github.com/RiemaLabs",
         "https://x.com/Nubit_org"
     ],
-    "description": "Nubit is building a data availability layer that uses BTC within its staking protocol. Nubit aims to provide rollup-style blockchains with more throughput in exchange for some additional tradeoffs.",
+    "description": "Nubit створює шар доступності даних, який використовує BTC у своєму стейкінговому протоколі. Nubit має на меті надати блокчейнам у стилі роллап більше пропускної здатності в обмін на певні додаткові компроміси.",
     "sections": [
         {
             "id": "selfsubmit",
-            "title": "Process to self-submit information",
+            "title": "Процес самостійної подачі інформації",
             "content": [
                 {
-                    "content": "The Bitcoin Layers project prioritizes risk reviews on projects that are in production and accepting users' BTC deposits. Projects on testnet are welcome to submit information about their project. We do not publish risk assessments for projects that are not in production.\n\nHere are the [instructions](https://github.com/bitcoinlayers/bitcoinlayers/blob/main/SELFSUBMIT.md) on self-submitting a project."
+                    "content": "Проект Bitcoin Layers надає пріоритет оцінці ризиків для проектів, які знаходяться в експлуатації та приймають депозити BTC від користувачів. Проекти на тестовій мережі можуть подавати інформацію про свій проект. Ми не публікуємо оцінки ризиків для проектів, які не знаходяться в експлуатації.\n\nОсь [інструкції](https://github.com/bitcoinlayers/bitcoinlayers/blob/main/SELFSUBMIT.md) щодо самостійної подачі проекту."
                 }
             ]
         }

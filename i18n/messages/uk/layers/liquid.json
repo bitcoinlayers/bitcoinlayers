@@ -1,18 +1,18 @@
 {
     "slug": "liquid",
     "title": "Liquid",
-    "layerType": "Sidechain",
+    "layerType": "Сайдчейн",
     "live": "Mainnet",
     "staking": false,
     "bridge": false,
-    "underReview": "no",
-    "riskFactors": ["Unverified", "Medium", "High", "Medium"],
-    "purpose": "General",
-    "btcBridge": "Federated Multisig",
-    "settlement": "External",
+    "underReview": "ні",
+    "riskFactors": ["Непідтверджено", "Середній", "Високий", "Середній"],
+    "purpose": "Загальний",
+    "btcBridge": "Федеративний мультипідпис",
+    "settlement": "Зовнішній",
     "btcLocked": 3834,
-    "executionEnv": "Offchain",
-    "consensus": "Federated Sidechain",
+    "executionEnv": "Позанесений",
+    "consensus": "Федеративний сайдчейн",
     "nativeToken": "LBTC",
     "feeToken": "LBTC",
     "enshrinedBtc": "LBTC",
@@ -25,147 +25,137 @@
         "https://github.com/ElementsProject/elements",
         "https://twitter.com/bitcoinlayers"
     ],
-    "description": "The Liquid Network is a sidechain that enables users to perform confidential transactions, swaps, issue tokenized assets, and more, on the sidechain. It is managed by a permissioned federation, and does not use the Bitcoin Layer 1 for security. It uses a federated multi-sig to custody the BTC that is used to issue BTC IOUs (L-BTC) on the sidechain.",
+    "description": "Liquid Network — це сайдчейн, який дозволяє користувачам здійснювати конфіденційні транзакції, обміни, випуск токенізованих активів тощо на сайдчейні. Він управляється дозволеною федерацією і не використовує основний шар Bitcoin для забезпечення безпеки. BTC, що використовується для випуску BTC IOU (L-BTC) на сайдчейні, зберігається в мультипідписному гаманці.",
     "riskAnalysis": [
         {
-            "category": "Bridge Security",
+            "category": "Безпека моста",
             "score": 0,
-            "tier": "Unverified",
-            "title": "Users trust a federation with custody of their BTC. Signers under review",
-            "content": "BTC withdrawals are currently permissioned by the Liquid federation. Users must trust that when they deposit BTC into the Liquid blockchain, the signers will not collude and steal their BTC. Most users typically acquire L-BTC on secondary marketplaces, not through bridge deposits. Supported marketplaces for L-BTC are also members of the Liquid federation. Users trust that the federation will not steal the BTC, which would leave their newly acquired L-BTC worthless. The BTC that backs L-BTC is held in a 11-15 multi-sig wallet where 11 (⅔ + 1) of the signers would need to be compromised in order to steal the BTC.\n\n🔬We are currently reviewing the signers for the Liquid two-way peg"
+            "tier": "Непідтверджено",
+            "title": "Користувачі довіряють федерації з утриманням їх BTC. Підписанти підлягають перевірці",
+            "content": "Виведення BTC наразі контролюється федерацією Liquid. Користувачі повинні довіряти, що підписанти не зможуть зговоритися і вкрасти їх BTC. Більшість користувачів зазвичай отримують L-BTC на вторинних ринках, а не через мости. Підтримувані ринки для L-BTC також є членами федерації Liquid. Користувачі довіряють, що федерація не вкраде BTC, що зробить їх новостворений L-BTC безвартісним. BTC, що підтримує L-BTC, зберігається в мультипідписному гаманці 11-15, де для крадіжки BTC потрібно скомпрометувати 11 (⅔ + 1) підписантів.\n\n🔬Ми наразі перевіряємо підписантів для двостороннього з'єднання Liquid."
         },
         {
-            "category": "Data Availability",
+            "category": "Доступність даних",
             "score": 0,
-            "tier": "Medium",
-            "title": "Data is stored and made available by Liquid full nodes. Anyone can run a Liquid full node",
-            "content": "The data for Liquid sidechain is stored on the Liquid blockchain. A federation is responsible for publishing and validating transactions that are published to Liquid Network nodes. Node software is open-source and anyone can run a node and verify the state of Liquid. However, node operators connect to the network through “bridge nodes” that are run by permissioned actors. Access to bridge nodes can be cut off should these actors (roughly 65) not provide access."
+            "tier": "Середній",
+            "title": "Дані зберігаються та надаються вузлами Liquid. Кожен може запустити вузол Liquid",
+            "content": "Дані для сайдчейну Liquid зберігаються на блокчейні Liquid. Федерація відповідальна за публікацію та валідацію транзакцій, які публікуються на вузлах Liquid Network. Програмне забезпечення вузлів є відкритим, і будь-хто може запустити вузол і перевірити стан Liquid. Однак оператори вузлів підключаються до мережі через \"містові вузли\", які управляються дозволеними учасниками. Доступ до містових вузлів може бути заблокований, якщо ці учасники (близько 65) не нададуть доступ."
         },
         {
-            "category": "Network Operator",
+            "category": "Оператор мережі",
             "score": 0,
-            "tier": "High",
-            "title": "Blocks are produced by a federation",
-            "content": "Liquid blocks are proposed and finalized by the Liquid federation. The role of block production is permissioned, meaning that it is not possible for anyone with sufficient resources to join the network as a block producer. Users trust that the federation will not censor them and include their transactions in Liquid blocks."
+            "tier": "Високий",
+            "title": "Блоки виробляються федерацією",
+            "content": "Блоки Liquid пропонуються та фіналізуються федерацією Liquid. Роль виробництва блоків є дозволеною, що означає, що будь-хто з достатніми ресурсами не може приєднатися до мережі як виробник блоків. Користувачі довіряють, що федерація не буде цензурувати їх і включати їх транзакції в блоки Liquid."
         },
         {
-            "category": "Finality Guarantees",
+            "category": "Гарантії остаточності",
             "score": 0,
-            "tier": "Medium",
-            "title": "Liquid blocks are finalized via Liquid full nodes",
-            "content": "After blocks are proposed by a functionaries, 11/15 functionaries are needed to sign off on the block to propagate it to the network. After this is done, Liquid full nodes accept the block and include it in the chain."
+            "tier": "Середній",
+            "title": "Блоки Liquid фіналізуються через повні вузли Liquid",
+            "content": "Після того, як блоки запропоновані функціонерами, 11 з 15 функціонерів мають підписати блок, щоб поширити його в мережі. Після цього повні вузли Liquid приймають блок і включають його в ланцюг."
         }
     ],
     "sections": [
         {
             "id": "bitcoinsecurity",
-            "title": "Bitcoin Security",
+            "title": "Безпека Bitcoin",
             "content": [
                 {
-                    "title": "Liquid does not inherit any security from Bitcoin consensus participants",
-                    "content": "Due to network operators being a closed set up, the Liquid sidechain does not inherit security from Bitcoin consensus participants."
+                    "title": "Liquid не успадковує жодної безпеки від учасників консенсусу Bitcoin",
+                    "content": "Оскільки оператори мережі є закритим набором, сайдчейн Liquid не успадковує безпеку від учасників консенсусу Bitcoin."
                 },
                 {
-                    "title": "No other token required",
-                    "content": "Liquid does not have a native token that plays a role in network security. Users trust the reputation of Liquid functionaries and federation members, whom have also KYC'd to the Blockstream development company, to operate the network honestly."
+                    "title": "Інший токен не потрібен",
+                    "content": "Liquid не має нативного токена, який відіграє роль у безпеці мережі. Користувачі довіряють репутації функціонерів Liquid і членів федерації, які також пройшли KYC у компанії Blockstream, щоб чесно управляти мережею."
                 },
                 {
-                    "title": "No MEV introduced on Bitcoin",
-                    "content": "Liquid does not leak MEV to the Bitcoin base layer."
+                    "title": "Не вводить MEV на Bitcoin",
+                    "content": "Liquid не впускає MEV в базовий шар Bitcoin."
                 },
                 {
-                    "title": "Does not directly contribute to the security budget",
-                    "content": "Liquid pays transaction fees to miners when facilitating withdrawals and deposits for its two-way peg."
+                    "title": "Не робить прямого внеску в бюджет безпеки",
+                    "content": "Liquid сплачує комісії за транзакції майнерам під час проведення виведень і депозитів для свого двостороннього з'єднання."
                 }
             ]
         },
         {
             "id": "withdrawals",
-            "title": "Withdrawals",
+            "title": "Виведення",
             "content": [
                 {
-                    "title": "Users trust permissioned operators to process their withdrawals",
-                    "content": "Withdrawals are permitted by the Liquid Federation. There is no way for users to withdraw their funds if the federation censors them. Users can also use a secondary marketplace to swap BTC for LBTC, but also must trust the federation to include, propose and validate their swap transaction within a Liquid block."
+                    "title": "Користувачі довіряють дозволеним операторам обробляти свої виведення",
+                    "content": "Виведення дозволяються федерацією Liquid. Користувачі не можуть вивести свої кошти, якщо федерація цензурує їх. Користувачі також можуть використовувати вторинний ринок, щоб обміняти BTC на LBTC, але також повинні довіряти федерації, щоб включити, запропонувати і валідувати їхню обмінну транзакцію в рамках Liquid."
                 }
             ]
         },
         {
             "id": "technology",
-            "title": "Technology",
+            "title": "Технології",
             "content": [
                 {
                     "title": "Elements",
-                    "content": "Liquid is built with the Elements technology stack. Elements is an open-source technology stack built on top of the Bitcoin code base. Since it is built on the Bitcoin code base, Elements enables Liquid to be a testing ground for potential changes to the Bitcoin protocol."
+                    "content": "Liquid побудований на технологічному стеку Elements. Elements — це відкритий технологічний стек, побудований на основі коду Bitcoin. Оскільки він побудований на основі коду Bitcoin, Elements дозволяє Liquid бути майданчиком для тестування потенційних змін до протоколу Bitcoin."
                 },
                 {
-                    "title": "More Expressive Smart Contracts",
-                    "content": "Liquid has a number of additional opcodes that enable developers to build more expressive smart contracting applications on top of it. These applications can include limit orders, options contracts and atomic swaps protocols. However, Liquid's execution environment is still not Turing-complete."
+                    "title": "Більш виразні смарт-контракти",
+                    "content": "Liquid має ряд додаткових опкодів, які дозволяють розробникам створювати більш виразні додатки смарт-контрактів. Ці додатки можуть включати лімітні ордери, контракти опціонів і протоколи атомарних обмінів. Однак середовище виконання Liquid все ще не є Turing-complete."
                 },
                 {
-                    "title": "Faster blocks",
-                    "content": "Liquid has a fixed block time and produces a block every minute."
+                    "title": "Швидші блоки",
+                    "content": "Liquid має фіксований час блоків і виробляє блок кожну хвилину."
                 },
                 {
-                    "title": "Lower fees",
-                    "content": "As of April 23, 2024, fees on the Liquid network are much lower than that of the Bitcoin mainchain."
+                    "title": "Нижчі комісії",
+                    "content": "Станом на 23 квітня 2024 року комісії в мережі Liquid значно нижчі, ніж у основному ланцюзі Bitcoin."
                 }
             ]
         },
         {
             "id": "usecases",
-            "title": "Use Cases",
+            "title": "Варіанти використання",
             "content": [
                 {
-                    "title": "Confidential Transactions",
-                    "content": "Liquid enables Confidential Transactions which can provide users a higher level of privacy. This feature ensures that anyone, other than the participants in a transaction, cannot see the tokens, and the amount of, transferred between them."
+                    "title": "Конфіденційні транзакції",
+                    "content": "Liquid дозволяє здійснювати конфіденційні транзакції, що забезпечує користувачам вищий рівень конфіденційності. Ця функція гарантує, що ніхто, крім учасників транзакції, не може бачити токени та їх кількість, що передаються між ними."
                 },
                 {
-                    "title": "Tokenized assets",
-                    "content": "Liquid enables developers and users alike to issue tokenized securities, stablecoins, and synthetic forms of cryptocurrencies."
+                    "title": "Токенізовані активи",
+                    "content": "Liquid дозволяє розробникам і користувачам випускати токенізовані цінні папери, стейблкоїни та синтетичні форми криптовалют."
                 },
                 {
-                    "title": "Atomic swaps",
-                    "content": "All tokens issued on Liquid, including L-BTC, are under the same token standard. This ensures that swaps between any token on Liquid can happen atomically."
+                    "title": "Атомарні обміни",
+                    "content": "Усі токени, випущені на Liquid, включаючи L-BTC, підпорядковуються одному стандарту токенів. Це забезпечує атомарний обмін між будь-якими токенами на Liquid."
                 }
             ]
         },
         {
             "id": "operator",
-            "title": "Operator",
+            "title": "Оператор",
             "content": [
                 {
-                    "title": "Liquid is operated by a federation",
-                    "content": "Liquid is primarily operated by a predetermined, permissioned group of operators, known as “Functionaries”, who are a part of its Federation. A larger group of “Members” participate in the federation by determining upgrades to the network, and also vote on board elections. Users may trust these operators due to the reputational risk they would take on in the Bitcoin ecosystem if they acted maliciously."
-                }
-            ]
-        },
-        {
-            "id": "withdrawals",
-            "title": "Withdrawals",
-            "content": [
-                {
-                    "title": "Users trust permissioned operators to process their withdrawals",
-                    "content": "Withdrawals are permitted by the Liquid Federation. There is no way for users to withdraw their funds if the federation censors them. Users can also use a secondary marketplace to swap BTC for LBTC, but also must trust the federation to include, propose and validate their swap transaction within a Liquid block."
+                    "title": "Liquid управляється федерацією",
+                    "content": "Liquid в основному управляється заздалегідь визначеною, дозволеною групою операторів, відомою як \"Функціонери\", які є частиною її федерації. Більша група \"Членів\" бере участь у федерації, визначаючи оновлення мережі та голосуючи на виборах до правління. Користувачі можуть довіряти цим операторам через репутаційний ризик, який вони беруть на себе в екосистемі Bitcoin, якщо вони діють зловмисно."
                 }
             ]
         },
         {
             "id": "sourcecode",
-            "title": "Source Code",
+            "title": "Код джерела",
             "content": [
                 {
-                    "title": "Code is open-source",
-                    "content": "All code related to the Liquid Network project is open source."
+                    "title": "Код є відкритим",
+                    "content": "Весь код, пов'язаний з проектом Liquid Network, є відкритим."
                 }
             ]
         },
         {
             "id": "knowledgeBits",
-            "title": "Knowledge Bits",
+            "title": "Корисна інформація",
             "content": [
                 {
-                    "title": "Learn more",
-                    "content": "[Liquid website](https://liquid.net/)\n[Article explaining how L-BTC works](https://help.blockstream.com/hc/en-us/articles/900001408623-How-does-Liquid-Bitcoin-L-BTC-work)\n[Liquid documentation](https://docs.liquid.net/docs/technical-overview)\n[Article covering the nuance around Liquid's security model](https://blog.liquid.net/the-truth-about-liquid/)"
+                    "title": "Дізнайтеся більше",
+                    "content": "[Сайт Liquid](https://liquid.net/)\n[Стаття, що пояснює, як працює L-BTC](https://help.blockstream.com/hc/en-us/articles/900001408623-How-does-Liquid-Bitcoin-L-BTC-work)\n[Документація Liquid](https://docs.liquid.net/docs/technical-overview)\n[Стаття, що висвітлює нюанси моделі безпеки Liquid](https://blog.liquid.net/the-truth-about-liquid/)"
                 }
             ]
         }

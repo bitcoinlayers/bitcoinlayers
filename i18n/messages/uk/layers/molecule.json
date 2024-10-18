@@ -1,11 +1,11 @@
 {
     "slug": "molecule",
     "title": "Molecule",
-    "layerType": "Rollup",
-    "live": "Announced",
+    "layerType": "Роллап",
+    "live": "Оголошено",
     "staking": false,
     "bridge": false,
-    "underReview": "yes",
+    "underReview": "так",
     "riskFactors": ["", "", "", ""],
     "purpose": "-",
     "btcBridge": "-",
@@ -25,31 +25,31 @@
         "https://twitter.com/moleculebtc",
         "https://twitter.com/moleculebtc"
     ],
-    "description": "Molecule is a proposed Layer 2 design that will leverage the Solana virtal machine. They have recently announced the project, with information on the design expected to be coming soon. Little information is available on how it inherits Bitcoin security.",
+    "description": "Molecule — це запропонований дизайн другого рівня, який використовуватиме віртуальну машину Solana. Нещодавно проект був оголошений, очікується, що інформація про дизайн з'явиться незабаром. Наразі доступно мало інформації про те, як він успадковує безпеку Bitcoin.",
     "riskAnalysis": [
         {
-            "category": "Unilateral Exits",
+            "category": "Односторонні виходи",
             "score": 0,
             "tier": "",
             "title": "",
             "content": ""
         },
         {
-            "category": "Data Availability",
+            "category": "Доступність даних",
             "score": 0,
             "tier": "",
             "title": "",
             "content": ""
         },
         {
-            "category": "Block Production",
+            "category": "Виробництво блоків",
             "score": 0,
             "tier": "",
             "title": "",
             "content": ""
         },
         {
-            "category": "State Validation",
+            "category": "Перевірка стану",
             "score": 0,
             "tier": "",
             "title": "",
@@ -59,10 +59,10 @@
     "sections": [
         {
             "id": "selfsubmit",
-            "title": "Process to self-submit information",
+            "title": "Процес самостійної подачі інформації",
             "content": [
                 {
-                    "content": "The Bitcoin Layers project prioritizes risk reviews on projects that are in production and accepting users' BTC deposits. Projects on testnet are welcome to submit information about their project. We do not publish risk assessments for projects that are not in production.\n\nHere are the [instructions](https://github.com/bitcoinlayers/bitcoinlayers/blob/main/SELFSUBMIT.md) on self-submitting a project."
+                    "content": "Проект Bitcoin Layers надає пріоритет оглядам ризиків для проектів, які знаходяться в стадії виробництва та приймають депозити BTC від користувачів. Проекти на тестовій мережі можуть подавати інформацію про свій проект. Ми не публікуємо оцінки ризиків для проектів, які не перебувають у виробництві.\n\nОсь [інструкції](https://github.com/bitcoinlayers/bitcoinlayers/blob/main/SELFSUBMIT.md) щодо самостійної подачі проекту."
                 }
             ]
         }

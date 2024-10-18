@@ -1,13 +1,13 @@
 {
     "slug": "side",
     "title": "Side Protocol",
-    "layerType": "Sidechain",
-    "live": "Testnet",
+    "layerType": "Бічна ланка",
+    "live": "Тестова мережа",
     "staking": false,
     "bridge": false,
-    "underReview": "yes",
+    "underReview": "так",
     "riskFactors": ["", "", "", ""],
-    "purpose": "Settlement Layer",
+    "purpose": "Шар розрахунків",
     "btcBridge": "-",
     "settlement": "-",
     "btcLocked": 0,
@@ -25,31 +25,31 @@
         "https://github.com/sideprotocol",
         "https://twitter.com/SideProtocol"
     ],
-    "description": "Side Protocol is building a settlement layer for modular blockchains. It will run a Proof-of-Stake consensus mechanism. Its relationship with Bitcoin would be that of a sidechain, and rollups settling on Side can leverage its BTC bridge contract.",
+    "description": "Side Protocol створює шар розрахунків для модульних блокчейнів. Він буде працювати на механізмі консенсусу Proof-of-Stake. Його відношення до Bitcoin буде як до бічної ланки, а роллапи, що розраховуються на Side, можуть використовувати його контракт мосту BTC.",
     "riskAnalysis": [
         {
-            "category": "Unilateral Exits",
+            "category": "Односторонні виходи",
             "score": 0,
             "tier": "",
             "title": "",
             "content": ""
         },
         {
-            "category": "Data Availability",
+            "category": "Доступність даних",
             "score": 0,
             "tier": "",
             "title": "",
             "content": ""
         },
         {
-            "category": "Block Production",
+            "category": "Виробництво блоків",
             "score": 0,
             "tier": "",
             "title": "",
             "content": ""
         },
         {
-            "category": "State Validation",
+            "category": "Перевірка стану",
             "score": 0,
             "tier": "",
             "title": "",
@@ -59,10 +59,10 @@
     "sections": [
         {
             "id": "selfsubmit",
-            "title": "Process to self-submit information",
+            "title": "Процес самостійного подання інформації",
             "content": [
                 {
-                    "content": "The Bitcoin Layers project prioritizes risk reviews on projects that are in production and accepting users' BTC deposits. Projects on testnet are welcome to submit information about their project. We do not publish risk assessments for projects that are not in production.\n\nHere are the [instructions](https://github.com/bitcoinlayers/bitcoinlayers/blob/main/SELFSUBMIT.md) on self-submitting a project."
+                    "content": "Проект Bitcoin Layers надає пріоритет ризиковим оглядам проектів, які вже в продуктивному стані та приймають BTC депозити користувачів. Проекти на тестовій мережі можуть подавати інформацію про свої проекти. Ми не публікуємо оцінки ризику для проектів, які не в продуктивному стані.\n\nОсь [інструкції](https://github.com/bitcoinlayers/bitcoinlayers/blob/main/SELFSUBMIT.md) щодо самостійного подання проекту."
                 }
             ]
         }

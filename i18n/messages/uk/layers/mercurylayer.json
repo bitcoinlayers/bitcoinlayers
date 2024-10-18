@@ -1,17 +1,17 @@
 {
     "slug": "mercurylayer",
     "title": "Mercury Layer",
-    "layerType": "Statechain",
+    "layerType": "Стейтчейн",
     "live": "Mainnet",
     "staking": false,
     "bridge": false,
-    "underReview": "yes",
+    "underReview": "так",
     "riskFactors": ["", "", "", "", ""],
     "purpose": "-",
-    "btcBridge": "Smart Contract",
-    "settlement": "External",
+    "btcBridge": "Смарт-контракт",
+    "settlement": "Зовнішнє",
     "btcLocked": 0,
-    "executionEnv": "Statechain",
+    "executionEnv": "Стейтчейн",
     "consensus": "-",
     "nativeToken": "BTC",
     "feeToken": "BTC",
@@ -25,31 +25,31 @@
         "https://github.com/commerceblock/mercurylayer",
         "https://twitter.com/mercurylayer"
     ],
-    "description": "Mercury Layer is an implementation of a Statechain protocol. It enables the offchain transfer of BTC.",
+    "description": "Mercury Layer — це реалізація протоколу Statechain. Він дозволяє офчейн-передачу BTC.",
     "riskAnalysis": [
         {
-            "category": "Unilateral Exits",
+            "category": "Односторонні виходи",
             "score": 0,
             "tier": "",
             "title": "",
             "content": ""
         },
         {
-            "category": "Data Availability",
+            "category": "Доступність даних",
             "score": 0,
             "tier": "",
             "title": "",
             "content": ""
         },
         {
-            "category": "Block Production",
+            "category": "Виробництво блоків",
             "score": 0,
             "tier": "",
             "title": "",
             "content": ""
         },
         {
-            "category": "State Validation",
+            "category": "Валідація стану",
             "score": 0,
             "tier": "",
             "title": "",
@@ -59,10 +59,10 @@
     "sections": [
         {
             "id": "selfsubmit",
-            "title": "Process to self-submit information",
+            "title": "Процес самостійної подачі інформації",
             "content": [
                 {
-                    "content": "The Bitcoin Layers project prioritizes risk reviews on projects that are in production and accepting users' BTC deposits. Projects on testnet are welcome to submit information about their project. We do not publish risk assessments for projects that are not in production.\n\nHere are the [instructions](https://github.com/bitcoinlayers/bitcoinlayers/blob/main/SELFSUBMIT.md) on self-submitting a project."
+                    "content": "Проект Bitcoin Layers пріоритетно розглядає ризики проектів, які вже запущені та приймають депозити BTC від користувачів. Проекти на тестовій мережі можуть подавати інформацію про свої проекти. Ми не публікуємо оцінки ризиків для проектів, які не в виробництві.\n\nОсь [інструкції](https://github.com/bitcoinlayers/bitcoinlayers/blob/main/SELFSUBMIT.md) щодо самостійної подачі проекту."
                 }
             ]
         }

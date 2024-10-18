@@ -1,18 +1,18 @@
 {
     "slug": "lightning",
     "title": "Lightning Network",
-    "layerType": "State Channel",
+    "layerType": "Канал стану",
     "live": "Mainnet",
     "staking": false,
     "bridge": false,
-    "underReview": "no",
-    "riskFactors": ["Low", "Low", "Low", "Low"],
-    "purpose": "Payments",
-    "btcBridge": "2-2 Multi-sig",
-    "settlement": "Onchain",
+    "underReview": "ні",
+    "riskFactors": ["Низький", "Низький", "Низький", "Низький"],
+    "purpose": "Платежі",
+    "btcBridge": "2-2 Мультипідпис",
+    "settlement": "Ончейн",
     "btcLocked": 5208,
-    "executionEnv": "Optimistic",
-    "consensus": "Peer-to-Peer",
+    "executionEnv": "Оптимістичний",
+    "consensus": "Рівноправний",
     "nativeToken": "BTC",
     "feeToken": "BTC",
     "enshrinedBtc": "BTC",
@@ -24,151 +24,151 @@
         "https://github.com/ACINQ/eclair",
         "https://twitter.com/lightning"
     ],
-    "description": "The Lightning Network (sometimes known as Lightning) is a payment-channel-based Layer 2 for payments. It enables users to open a payment channel with a counterparty and make an unlimited number of payments within the channel. It also enables users to route payments across a network of these channels to users outside of their specific channel.",
+    "description": "Lightning Network (іноді відомий як Lightning) — це базова платіжна мережа другого рівня, що використовує канали платежів. Вона дозволяє користувачам відкривати платіжний канал з контрагентом і здійснювати необмежену кількість платежів у межах каналу. Вона також дозволяє користувачам маршрутизувати платежі через мережу цих каналів до користувачів поза їхнім конкретним каналом.",
     "riskAnalysis": [
         {
-            "category": "Bridge Security",
+            "category": "Безпека моста",
             "score": 0,
-            "tier": "Low",
-            "title": "Users custody their funds with their counterparty",
-            "content": "When a user opens a payment channel, they deposit their funds into a 2-2 multi-signature address with their counterparty via an onchain Bitcoin transaction. This address holds the funds that are transferred within the channel, and users can collaboratively exit a channel by agreeing on a final state before signing off on withdrawals.\n\nIf a channel counterparty is unresponsive to a cooperative channel closure attempt, then users can unilaterally exit the channel by spending an uncooperative channel closure transaction onchain. There is a challenge-response mechanism to settle potential disputes between channel counterparties over the final state of a channel closure transaction."
+            "tier": "Низький",
+            "title": "Користувачі зберігають свої кошти у контрагента",
+            "content": "Коли користувач відкриває платіжний канал, він вносить свої кошти у 2-2 мультипідписний адрес з контрагентом через ончейн-транзакцію Bitcoin. Цей адрес зберігає кошти, що переносяться в каналі, і користувачі можуть спільно вийти з каналу, погодившись на остаточний стан перед підписанням зняття коштів.\n\nЯкщо контрагент каналу не реагує на спробу кооперативного закриття каналу, користувачі можуть одноосібно вийти з каналу, витративши некоректну транзакцію закриття каналу на ончейні. Існує механізм викликів-відповідей для вирішення потенційних суперечок між контрагентами каналу щодо остаточного стану транзакції закриття каналу."
         },
         {
-            "category": "Data Availability",
+            "category": "Доступність даних",
             "score": 0,
-            "tier": "Low",
-            "title": "Users are responsible for fulfilling the data availability requirement. State data is self-hosted by default",
-            "content": "Lightning users must be responsible for their own data availability, rather than relying on a network of nodes to complete this function. If users irrecoverably lose their channel state data, then they will lose all of the funds they had in the channel."
+            "tier": "Низький",
+            "title": "Користувачі несуть відповідальність за виконання вимог до доступності даних. Дані стану за замовчуванням самостійно хостяться",
+            "content": "Користувачі Lightning повинні відповідати за свою доступність даних, а не покладатися на мережу вузлів для виконання цієї функції. Якщо користувачі незворотно втрачають свої дані стану каналу, вони втрачають усі кошти, які мали в каналі."
         },
         {
-            "category": "Network Operators",
+            "category": "Оператори мережі",
             "score": 0,
-            "tier": "Low",
-            "title": "Lightning transactions are done via a peer-to-peer network",
-            "content": "In a payment channel, users interact in a peer-to-peer fashion, meaning no sequencer or block builder is needed. If a user wants to transfer funds to someone who is not in their specific channel, they can route their payment across a network of nodes to reach the receiver. If a channel counterparty fails to route the payment, the user will have to go through another channel (if they have another open, and there is a route to the recipient) or back onchain to transfer funds to the intended recipient.\n\nRouted payments are atomic, meaning all components of the transaction either fully succeed or fail together.\n\nLightning Network transactions are only considered final when a channel is closed. Bitcoin consensus enforces this closure as it would any other transaction. When closing a channel, users can collaboratively sign off on a final state, have this state validated by Bitcoin consensus, and then proceed to withdraw their funds."
+            "tier": "Низький",
+            "title": "Транзакції Lightning здійснюються через рівноправну мережу",
+            "content": "У платіжному каналі користувачі взаємодіють у рівноправний спосіб, що означає, що немає потреби в секвенсорах або побудовниках блоків. Якщо користувач хоче передати кошти комусь, хто не є в їхньому конкретному каналі, він може маршрутизувати свій платіж через мережу вузлів, щоб дістатися отримувача. Якщо контрагент каналу не вдається маршрутизувати платіж, користувачу доведеться пройти через інший канал (якщо у нього є інший відкритий канал і є маршрут до отримувача) або повернутися на ончейн для передачі коштів отримувачу.\n\nМаршрутовані платежі є атомарними, тобто всі компоненти транзакції або успішні, або зазнають невдачі.\n\nТранзакції Lightning Network вважаються остаточними лише тоді, коли канал закритий. Консенсус Bitcoin забезпечує це закриття, як і будь-яку іншу транзакцію. При закритті каналу користувачі можуть спільно підписати остаточний стан, перевірити цей стан через консенсус Bitcoin і потім продовжити знімати свої кошти."
         },
         {
-            "category": "Finality Guarantees",
+            "category": "Гарантії остаточності",
             "score": 0,
-            "tier": "Low",
-            "title": "Users can challenge a malicious counterparty",
-            "content": "Transactions on the Lightning Network happen atomically via HTLCs. Once confirmed, they cannot be reversed. Users can also ensure finality when closing a channel with their counterparty."
+            "tier": "Низький",
+            "title": "Користувачі можуть оскаржити злочинного контрагента",
+            "content": "Транзакції в Lightning Network відбуваються атомарно через HTLC. Після підтвердження їх неможливо скасувати. Користувачі також можуть забезпечити остаточність при закритті каналу з контрагентом."
         }
     ],
     "sections": [
         {
             "id": "bitcoinsecurity",
-            "title": "Bitcoin Security",
+            "title": "Безпека Bitcoin",
             "content": [
                 {
-                    "title": "Settlement is finalized by Bitcoin consensus",
-                    "content": "As mentioned in the risk analysis, settlement is optimistically finalized by Bitcoin consensus."
+                    "title": "Розрахунок остаточний за консенсусом Bitcoin",
+                    "content": "Як зазначено в аналізі ризиків, розрахунок оптимістично завершується за консенсусом Bitcoin."
                 },
                 {
-                    "title": "The protocol does not enable MEV on Bitcoin",
-                    "content": "Lightning does not enable malicious forms of MEV on Bitcoin. Since all transactions are done offchain within a payment channel, miners are unable to influence the ordering of transactions done via Lightning."
+                    "title": "Протокол не дозволяє MEV на Bitcoin",
+                    "content": "Lightning не дозволяє злочинні форми MEV на Bitcoin. Оскільки всі транзакції здійснюються поза мережею в межах платіжного каналу, майнери не можуть впливати на порядок транзакцій, виконаних через Lightning."
                 },
                 {
-                    "title": "No alternative token needed for network security",
-                    "content": "Lightning does not use another token for network security."
+                    "title": "Інший токен не потрібен для безпеки мережі",
+                    "content": "Lightning не використовує інший токен для забезпечення безпеки мережі."
                 },
                 {
-                    "title": "Opening and closing channels contributes to the security budget",
-                    "content": "Lightning does not directly contribute to Bitcoin’s security budget, but users do pay onchain transaction fees to miners when they open, and close, Lightning channels. ."
+                    "title": "Відкриття та закриття каналів сприяє безпековому бюджету",
+                    "content": "Lightning безпосередньо не робить внесок у безпековий бюджет Bitcoin, але користувачі платять ончейн-комісії майнерам, коли відкривають та закривають канали Lightning."
                 }
             ]
         },
         {
             "id": "additionalconsiderations",
-            "title": "Additional Considerations",
+            "title": "Додаткові міркування",
             "content": [
                 {
-                    "title": "Self-hosted DA friction leading users to centralized solutions",
-                    "content": "Non-technical users may find it difficult to self-host their own Lightning node, which can lead them to use custodial solutions. This can lead to a centralization of the network, as users are not interacting directly. A 2024 report from River found that 80% of Lightning Network liquidity is in channels hosted by centralized service providers."
+                    "title": "Фрикції самостійного хостингу даних призводять користувачів до централізованих рішень",
+                    "content": "Нетехнічним користувачам може бути важко самостійно хостити свій вузол Lightning, що може призвести до використання кастодіальних рішень. Це може призвести до централізації мережі, оскільки користувачі не взаємодіють безпосередньо. Звіт River 2024 року виявив, що 80% ліквідності Lightning Network знаходиться в каналах, які хостять централізовані постачальники послуг."
                 },
                 {
-                    "title": "Replacement cycling attacks",
-                    "content": "A vulnerability was disclosed in 2023, referred to as a replacement cycling attack. This attack requires two open channels with a user which are used together to cycle transactions a user for the duration of their challenge period"
+                    "title": "Атаки заміщення циклів",
+                    "content": "У 2023 році було виявлено вразливість, відому як атака заміщення циклів. Ця атака вимагає наявності двох відкритих каналів з користувачем, які використовуються разом для циклічних транзакцій користувача протягом їхнього періоду виклику."
                 }
             ]
         },
         {
             "id": "withdrawals",
-            "title": "Withdrawals",
+            "title": "Виведення коштів",
             "content": [
                 {
-                    "title": "Users can unilaterally withdraw their funds with optimistic settlement guarantees",
-                    "content": "Users can close a channel and withdraw their funds at any time. They can close a channel collaboratively with their counterparty by agreeing on the final state of the channel and withdrawing their balances to their respective addresses. In the event of a dispute over the final state, the Lightning Network’s model is optimistic. A malicious user can attempt to steal channel funds by submitting a channel closure transaction with an old state. If their counterparty is offline with no watchtower for the entire duration of the challenge period then the old state will be finalized, allowing the theft to succeed. If the counterparty, or their watchtower, is online during the challenge period, then they can submit a challenge transaction onchain that will stop the theft attempt and sweep the full balance of the channel that was incorrectly closed. Users should be aware that the cost of challenging an incorrect channel closure attempt could eat significantly into the channel balance, to the point of being uneconomical, if bitcoin fee rates are prohibitively expensive. Users should also be aware that if they are unable to confirm their challenge transaction before the end of the challenge period, for example because their transaction is being withheld by bitcoin miners, then they risk losing the full balance of their channel to their counterparty."
+                    "title": "Користувачі можуть одноосібно знімати свої кошти з оптимістичними гарантіями розрахунку",
+                    "content": "Користувачі можуть закрити канал і зняти свої кошти в будь-який час. Вони можуть закрити канал спільно з контрагентом, погодившись на остаточний стан каналу і знявши свої баланси на відповідні адреси. У разі суперечки щодо остаточного стану модель Lightning Network є оптимістичною. Злочинний користувач може спробувати вкрасти кошти каналу, подавши транзакцію закриття каналу зі старим станом. Якщо їхній контрагент офлайн і не має вежі спостереження протягом усього періоду виклику, старий стан буде остаточним, що дозволить крадіжці відбутися. Якщо контрагент або їхня вежа спостереження онлайн під час періоду виклику, вони можуть подати викликову транзакцію на ончейн, що зупинить спробу крадіжки та забере повний баланс каналу, який було неправильно закрито. Користувачі повинні усвідомлювати, що вартість оскарження неправильного закриття каналу може значно зменшити баланс каналу до точки, коли це може стати економічно невигідним, якщо тарифи на Bitcoin занадто високі. Користувачі також повинні бути обережними, що якщо вони не зможуть підтвердити свою викликову транзакцію до закінчення періоду виклику, наприклад, через те, що їхня транзакція затримується майнерами Bitcoin, вони ризикують втратити повний баланс свого каналу контрагенту."
                 }
             ]
         },
         {
             "id": "technology",
-            "title": "Technology",
+            "title": "Технології",
             "content": [
                 {
-                    "title": "Payment channels",
-                    "content": "Payment channels are 2-2 multi-signature addresses that enable two counterparties to lock funds into an address, and process an unlimited number of payments between each other. Payments are considered final when the parties withdraw their funds back onchain and close their channel. Creating and managing one or more payment channels lis how a user interacts with Lightning."
+                    "title": "Платіжні канали",
+                    "content": "Платіжні канали — це 2-2 мультипідписні адреси, які дозволяють двом контрагентам заблокувати кошти в адресі та обробити необмежену кількість платежів між собою. Платежі вважаються остаточними, коли сторони знімають свої кошти назад на ончейн і закривають свій канал. Створення та управління одним або кількома платіжними каналами — це спосіб, яким користувач взаємодіє з Lightning."
                 },
                 {
-                    "title": "Network routing",
-                    "content": "Lightning is a network of various two-party payment channels. Users can route their payments across a variety of channels to reach a final destination (the recipient). Atomicity is enforced via a script that ensures that the transaction either reaches its intended recipient, or it fails entirely."
+                    "title": "Маршрутизація мережі",
+                    "content": "Lightning — це мережа різних двосторонніх платіжних каналів. Користувачі можуть маршрутизувати свої платежі через різноманітні канали, щоб досягти кінцевого призначення (отримувача). Атомарність забезпечується за допомогою скрипта, що гарантує, що транзакція або досягає свого призначення, або повністю зазнає невдачі."
                 },
                 {
-                    "title": "Hashed Timelock Contracts (HTLCs)",
-                    "content": "HTLCs are smart contracts that ensure conditional and atomic payments. HTLCs are used in Lightning to enable transaction routing across multiple nodes. These contracts are designed in a way that sees routed payments happen atomically; meaning the payment either succeeds or fails entirely. Routing nodes are unable to misappropriate funds as they are unable to reveal a secret preimage which is conditional to the transaction being finalized. Only the intended receiver has access to the secret preimage which was created when they generated the transaction’s invoice."
+                    "title": "Контракти з хешованим таймлоком (HTLC)",
+                    "content": "HTLC — це смарт-контракти, які забезпечують умовні та атомарні платежі. HTLC використовуються в Lightning для дозволу маршрутизації транзакцій через кілька вузлів. Ці контракти спроектовані так, щоб маршрутизовані платежі проходили атомарно, тобто платіж або успішний, або повністю зазнає невдачі. Вузли маршрутизації не можуть неправомірно привласнити кошти, оскільки вони не можуть розкрити секретний преобразувач, який є умовою для завершення транзакції. Тільки призначений отримувач має доступ до секретного преобразувача, створеного під час генерації рахунку транзакції."
                 }
             ]
         },
         {
             "id": "usecases",
-            "title": "Use Cases",
+            "title": "Варіанти використання",
             "content": [
                 {
-                    "title": "Micro-transactions",
-                    "content": "With its low fees, Lightning is well-suited for small or high frequency transactions."
+                    "title": "Мікроплатежі",
+                    "content": "Завдяки низьким комісіям, Lightning добре підходить для невеликих або частих транзакцій."
                 },
                 {
-                    "title": "Faster transactions",
-                    "content": "With its near-immediate confirmations due to being offchain and using P2P consensus, Lightning is well-suited for fast transactions."
+                    "title": "Швидші транзакції",
+                    "content": "Завдяки майже миттєвим підтвердженням завдяки позанесеній мережі та використанню P2P-консенсусу, Lightning добре підходить для швидких транзакцій."
                 },
                 {
-                    "title": "Interoperability",
-                    "content": "Lightning can act as an interoperability layer between blockchain protocols and bridge operators."
+                    "title": "Інтероперабельність",
+                    "content": "Lightning може виступати як шар інтероперабельності між блокчейн-протоколами та операторами мостів."
                 },
                 {
-                    "title": "Lightning Service Providers (LSP)",
-                    "content": "A LSP deploys liquidity in Lightning on behalf of others. LSPs improve Lightning’sUX for users by essentially supplying liquidity and managing payment channels on their behalf. Managing a payment channel can come with a number of UX hurdles, so LSPs remove the majority of the complexity and charge fees to be compensated. These providers ideally interact with users in a way that ensures that users retain custody of their funds. However, even when using a self-custodial wallet supported by an LSP, users still have to initiate mainchain transactions to deposit funds into their wallet."
+                    "title": "Провайдери послуг Lightning (LSP)",
+                    "content": "Провайдер LSP розгортає ліквідність у Lightning від імені інших. LSP покращують UX Lightning для користувачів, постачаючи ліквідність і управляючи платіжними каналами від їхнього імені. Управління платіжним каналом може супроводжуватися низкою труднощів UX, тому LSP усувають більшість складнощів та стягують комісії за свою роботу. Ці провайдери зазвичай взаємодіють з користувачами так, щоб забезпечити збереження контролю над їхніми коштами. Однак навіть використовуючи самостійний гаманець, що підтримується LSP, користувачі все ще повинні ініціювати основні транзакції, щоб внести кошти в свій гаманець."
                 }
             ]
         },
         {
             "id": "operator",
-            "title": "Operator",
+            "title": "Оператор",
             "content": [
                 {
-                    "title": "The Lightning Network is peer-to-peer",
-                    "content": "The only operators involved are the user and the counterparty with whom they open the payment channel. Users can transitively interact with others who have open channels with their counterparty(ies). The Lightning Network operators have to run their own node and must have near-perfect uptime to ensure their channels are not being force-closed or closed with an old channel state. Leveraging a self-custodial wallet supported by an LSP ensures users retain the custody of their funds, but the LSP operator can choose to stop servicing users at any point, meaning that users must withdraw their funds to an onchain address and find a new LSP."
+                    "title": "Lightning Network є рівноправною",
+                    "content": "Єдиними операторами є користувач і контрагент, з яким вони відкривають платіжний канал. Користувачі можуть транзитивно взаємодіяти з іншими, у кого відкриті канали з їхніми контрагентами. Оператори Lightning Network повинні запускати свої власні вузли та мати майже ідеальний час роботи, щоб забезпечити, що їхні канали не примусово закриваються або закриваються зі старим станом каналу. Використання самостійного гаманця, що підтримується LSP, гарантує, що користувачі зберігають контроль над своїми коштами, але оператор LSP може в будь-який момент припинити обслуговування користувачів, що означає, що користувачі повинні зняти свої кошти на ончейн-адресу та знайти нового LSP."
                 }
             ]
         },
         {
             "id": "sourcecode",
-            "title": "Source Code",
+            "title": "Код джерела",
             "content": [
                 {
-                    "title": "Code is open-source",
-                    "content": "There are multiple free and open-source implementations of the Lightning Network protocol."
+                    "title": "Код є відкритим",
+                    "content": "Існує кілька безкоштовних та відкритих реалізацій протоколу Lightning Network."
                 }
             ]
         },
         {
             "id": "knowledgeBits",
-            "title": "Knowledge Bits",
+            "title": "Корисна інформація",
             "content": [
                 {
-                    "title": "Learn more",
-                    "content": "[Lightning Network paper](https://lightning.network/lightning-network-paper.pdf)\n[Lightning Network user guide](https://bitcoiner.guide/lightning/)"
+                    "title": "Дізнайтеся більше",
+                    "content": "[Доклад про Lightning Network](https://lightning.network/lightning-network-paper.pdf)\n[Посібник користувача Lightning Network](https://bitcoiner.guide/lightning/)"
                 }
             ]
         }

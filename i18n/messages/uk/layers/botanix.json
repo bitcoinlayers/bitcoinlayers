@@ -1,11 +1,11 @@
 {
     "slug": "botanix",
     "title": "Botanix",
-    "layerType": "Sidechain",
-    "live": "Testnet",
+    "layerType": "Бічний ланцюг",
+    "live": "Тестова мережа",
     "staking": true,
     "bridge": false,
-    "underReview": "yes",
+    "underReview": "так",
     "riskFactors": ["", "", "", ""],
     "purpose": "-",
     "btcBridge": "-",
@@ -25,31 +25,31 @@
         "https://github.com/botanix-labs",
         "https://twitter.com/BotanixLabs"
     ],
-    "description": "Botanix is an EVM-compatible sidechain that will launch along side Bitcoin. They will be using Proof-of-Stake consensus and the Spiderchain to secure BTC multi-sigs for its two way peg.",
+    "description": "Botanix — це сумісний з EVM бічний ланцюг, який буде запущено разом із Bitcoin. Він використовуватиме консенсус Proof-of-Stake та Spiderchain для забезпечення мультипідписів BTC для двостороннього зв'язку.",
     "riskAnalysis": [
         {
-            "category": "Unilateral Exits",
+            "category": "Односторонні виходи",
             "score": 0,
             "tier": "",
             "title": "",
             "content": ""
         },
         {
-            "category": "Data Availability",
+            "category": "Доступність даних",
             "score": 0,
             "tier": "",
             "title": "",
             "content": ""
         },
         {
-            "category": "Block Production",
+            "category": "Виробництво блоків",
             "score": 0,
             "tier": "",
             "title": "",
             "content": ""
         },
         {
-            "category": "State Validation",
+            "category": "Перевірка стану",
             "score": 0,
             "tier": "",
             "title": "",
@@ -59,38 +59,38 @@
     "sections": [
         {
             "id": "technology",
-            "title": "Proposed Technologies",
+            "title": "Запропоновані технології",
             "content": [
                 {
-                    "title": "Spiderchain will be used to decentralize two-way peg participants",
-                    "content": "Botanix will be implementing a technology called the Spidechain to decentralize the participants in the two-way peg custodying users' bitcoin. The Spiderchain consists of a distributed network of multisigs, which are secured by a subset of stakers in the network."
+                    "title": "Spiderchain буде використовуватись для децентралізації учасників двостороннього зв'язку",
+                    "content": "Botanix реалізує технологію під назвою Spiderchain для децентралізації учасників, які відповідають за зберігання біткоїнів користувачів у двосторонньому зв'язку. Spiderchain складається з розподіленої мережі мультипідписів, які забезпечуються підмножиною стейкерів у мережі."
                 },
                 {
-                    "title": "Rust implementation of the EVM",
-                    "content": "Botanix will be leveraging a fork of the rust implementation of the EVM known as Reth. Reth is built to be a highly modular, performant and user-friendly version of the EVM. Solidity (a common language in Ethereum) developers will be able to easily port of their applications to the Spiderchain EVM implementation."
+                    "title": "Rust-реалізація EVM",
+                    "content": "Botanix використовуватиме форк Rust-реалізації EVM, відомий як Reth. Reth розроблено як високо модульна, продуктивна та зручна версія EVM. Розробники на Solidity (поширена мова в Ethereum) зможуть легко переносити свої програми на реалізацію EVM Spiderchain."
                 },
                 {
-                    "title": "Bitcoin Staking",
-                    "content": "Botanix will be implement a version of Bitcoin staking to secure the network. Presumably, any Bitcoin holder with sufficient capital could paricipate in staking on Botanix and earn rewards for securing the network."
+                    "title": "Стейкінг Bitcoin",
+                    "content": "Botanix впровадить версію стейкінгу Bitcoin для забезпечення мережі. Ймовірно, що будь-який власник Bitcoin з достатнім капіталом зможе брати участь у стейкінгу на Botanix і отримувати винагороди за забезпечення мережі."
                 }
             ]
         },
         {
             "id": "selfsubmit",
-            "title": "Process to self-submit information",
+            "title": "Процес самостійної подачі інформації",
             "content": [
                 {
-                    "content": "The Bitcoin Layers project prioritizes risk reviews on projects that are in production and accepting users' BTC deposits. Projects on testnet are welcome to submit information about their project. We do not publish risk assessments for projects that are not in production.\n\nInformation on how to submit information on a project can be found in the Knowledge Bits section."
+                    "content": "Проект Bitcoin Layers надає пріоритет оглядам ризиків проектів, які працюють і приймають депозити BTC від користувачів. Проекти на тестовій мережі можуть подавати інформацію про свої проекти. Ми не публікуємо оцінки ризиків для проектів, які не працюють.\n\nІнформацію про те, як подати інформацію про проект, можна знайти в розділі Knowledge Bits."
                 }
             ]
         },
         {
             "id": "knowledgeBits",
-            "title": "Knowledge Bits",
+            "title": "Знання",
             "content": [
                 {
-                    "title": "Learn more",
-                    "content": "[Botanix Website](https://www.botanixlabs.xyz/en/home)\n[Interact with the Botanix testnet](https://docs.botanixlabs.xyz/botanix-labs/how-to-use-botanix/getting-started-with-botanix)\n[An introduction to the Spiderchain](https://blog.lopp.net/an-introduction-to-spiderchain/)"
+                    "title": "Дізнайтеся більше",
+                    "content": "[Вебсайт Botanix](https://www.botanixlabs.xyz/en/home)\n[Взаємодія з тестовою мережею Botanix](https://docs.botanixlabs.xyz/botanix-labs/how-to-use-botanix/getting-started-with-botanix)\n[Вступ до Spiderchain](https://blog.lopp.net/an-introduction-to-spiderchain/)"
                 }
             ]
         }

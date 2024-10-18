@@ -1,15 +1,15 @@
 {
     "slug": "babylon",
     "title": "Babylon",
-    "infrastructureType": "Staking",
+    "infrastructureType": "Ставки",
     "live": "Mainnet",
     "staking": true,
     "bridge": false,
-    "underReview": "yes",
+    "underReview": "так",
     "riskFactors": ["", ""],
-    "bitcoinSecurity": "No",
+    "bitcoinSecurity": "Ні",
     "nativeToken": "-",
-    "purpose": "General",
+    "purpose": "Загальний",
     "associatedLayers": "-",
     "bitcoinOnly": true,
     "links": [
@@ -19,14 +19,14 @@
         "https://github.com/babylonchain",
         "https://x.com/babylon_chain"
     ],
-    "description": "Babylon namely supports BTC staking that improves security for Proof-of-Stake (PoS) sidechains. The staking protocol enables participants to stake BTC to secure their preferred sidechain. Babylon also acts as a timestamping protocol to improve PoS sidechain's resistance to long-range attacks.",
+    "description": "Babylon підтримує стейкінг BTC, що покращує безпеку для сайдчейн з доказом частки (PoS). Протокол стейкінгу дозволяє учасникам стейкати BTC для захисту їхнього обраного сайдчейну. Babylon також виконує роль протоколу для штампування часу, щоб покращити стійкість PoS сайдчейнів до атак з тривалим діапазоном.",
     "sections": [
         {
             "id": "selfsubmit",
-            "title": "Process to self-submit information",
+            "title": "Процес самостійного подання інформації",
             "content": [
                 {
-                    "content": "The Bitcoin Layers project prioritizes risk reviews on projects that are in production and accepting users' BTC deposits. Projects on testnet are welcome to submit information about their project. We do not publish risk assessments for projects that are not in production.\n\nHere are the [instructions](https://github.com/bitcoinlayers/bitcoinlayers/blob/main/SELFSUBMIT.md) on self-submitting a project."
+                    "content": "Проект Bitcoin Layers пріоритетно розглядає ризики для проектів, які вже в роботі та приймають BTC-депозити від користувачів. Проекти на тестовій мережі можуть подавати інформацію про свій проект. Ми не публікуємо оцінки ризиків для проектів, які не в роботі.\n\nОсь [інструкції](https://github.com/bitcoinlayers/bitcoinlayers/blob/main/SELFSUBMIT.md) щодо самостійного подання проекту."
                 }
             ]
         }

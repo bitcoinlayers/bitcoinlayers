@@ -1,18 +1,18 @@
 {
     "slug": "satoshivm",
     "title": "SatoshiVM",
-    "layerType": "Permissioned chain",
+    "layerType": "Дозволена мережа",
     "live": "Mainnet",
     "staking": false,
     "bridge": false,
-    "underReview": "no",
-    "riskFactors": ["Unverified", "Unverified", "Unverified", "Unverified"],
-    "purpose": "BTC Applications",
-    "btcBridge": "Third Party Bridge",
-    "settlement": "Offchain",
+    "underReview": "ні",
+    "riskFactors": ["Не перевірено", "Не перевірено", "Не перевірено", "Не перевірено"],
+    "purpose": "BTC додатки",
+    "btcBridge": "Міст третіх сторін",
+    "settlement": "Позамережеве",
     "btcLocked": 0,
-    "executionEnv": "Offchain",
-    "consensus": "Permissioned chain",
+    "executionEnv": "Позамережеве",
+    "consensus": "Дозволена мережа",
     "nativeToken": "SAVM",
     "feeToken": "WBTC",
     "enshrinedBtc": "WBTC",
@@ -25,97 +25,97 @@
         "https://github.com/SatoshiVM",
         "https://x.com/SatoshiVM"
     ],
-    "description": "SatoshiVM is a permissioned chain built on the Frontier client software. Its native token is an ERC-20 on Ethereum",
+    "description": "SatoshiVM — це дозволена мережа, побудована на програмному забезпеченні Frontier. Її рідний токен є ERC-20 на Ethereum.",
     "riskAnalysis": [
         {
-            "category": "Bridge Custody",
+            "category": "Кустодія мосту",
             "score": 0,
-            "tier": "Unverified",
-            "title": "Two-way peg is managed by a third party",
-            "content": "SatoshiVM's bitcoin wallet for bridge deposits is managed by the Bool Network. Both the Bool Network and SatoshiVM bridge UIs deposit funds into the same Bitcoin address. The bitcoin bridge contract on SatoshiVM is upgradeable by a single EOA account."
+            "tier": "Не перевірено",
+            "title": "Двосторонній пег управляється третьою стороною",
+            "content": "Біткоїн-гаманець SatoshiVM для депозитів мосту управляється мережею Bool. Як мережа Bool, так і інтерфейси SatoshiVM для мосту вносять кошти на ту ж адресу Bitcoin. Контракт мосту Bitcoin на SatoshiVM може бути оновлений єдиним EOA акаунтом."
         },
         {
-            "category": "Data Availability",
+            "category": "Доступність даних",
             "score": 0,
-            "tier": "Unverified",
-            "title": "A permissioned validator set satisfies the data availability requirement",
-            "content": "SatoshiVM's validating nodes additionally satisfy the data availability requirement. The node software is not open source, so users are unable to run a full node and validate the state of SatoshiVM."
+            "tier": "Не перевірено",
+            "title": "Набір дозволених валідаторів задовольняє вимогу доступності даних",
+            "content": "Валідуючі вузли SatoshiVM також задовольняють вимогу доступності даних. Програмне забезпечення вузла не є відкритим, тому користувачі не можуть запустити повний вузол і перевірити стан SatoshiVM."
         },
         {
-            "category": "Liveness & Reorg Resistance",
+            "category": "Живучість і опір перезапису",
             "score": 0,
-            "tier": "Unverified",
-            "title": "Network managed by a permissioned set of operators",
-            "content": "SatoshiVM's explorer currently shows 4 active validators proposing blocks. The identities of these validators is unknown."
+            "tier": "Не перевірено",
+            "title": "Мережа управляється набором дозволених операторів",
+            "content": "Експлорер SatoshiVM в даний час показує 4 активних валідатора, які пропонують блоки. Ідентичності цих валідаторів невідомі."
         },
         {
-            "category": "State Validation",
+            "category": "Перевірка стану",
             "score": 0,
-            "tier": "Unverified",
-            "title": "Settlement assurances are provided by SatoshiVM consensus",
-            "content": "Finality is guaranteed by SatoshiVM's validator set. It does not have live fraud proofs that can be submitted on Bitcoin."
+            "tier": "Не перевірено",
+            "title": "Гарантії розрахунку надаються консенсусом SatoshiVM",
+            "content": "Фіналізація гарантується набором валідаторів SatoshiVM. У нього немає живих доказів шахрайства, які можна подати на Bitcoin."
         }
     ],
     "sections": [
         {
             "id": "bitcoinsecurity",
-            "title": "Bitcoin Security",
+            "title": "Безпека Bitcoin",
             "content": [
                 {
-                    "title": "SatoshiVM inherits no security from Bitcoin",
-                    "content": "SatoshiVM has no relationship with the Bitcoin mainchain."
+                    "title": "SatoshiVM не успадковує безпеки від Bitcoin",
+                    "content": "SatoshiVM не має відношення до основної мережі Bitcoin."
                 },
                 {
-                    "title": "SatoshiVM does not leak MEV to Bitcoin",
-                    "content": "SatoshiVM does not leak MEV to the Bitcoin mainchain. Users trust validators to not reorder their transactions to extract MEV."
+                    "title": "SatoshiVM не витікає MEV до Bitcoin",
+                    "content": "SatoshiVM не витікає MEV до основної мережі Bitcoin. Користувачі довіряють валідаторам, щоб не перетасовувати їх транзакції для витягування MEV."
                 },
                 {
-                    "title": "An alternative token is not currently needed for network security",
-                    "content": "Gas fees are paid in wrapped BTC. SatoshiVM has released a token on Ethereum that currently plays no role in the network."
+                    "title": "Альтернативний токен наразі не потрібен для безпеки мережі",
+                    "content": "Комісії за газ оплачуються в обгорнутому BTC. SatoshiVM випустила токен на Ethereum, який наразі не відіграє жодної ролі в мережі."
                 },
                 {
-                    "title": "Bridge deposit and withdrawals pay fees to miners",
-                    "content": "Transaction fees are paid to Bitcoin miners when users deposit and withdraw funds from the BounceBit bridge. Block rewards on BounceBit are distributed to BounceBit validators."
+                    "title": "Депозити мосту та зняття коштів сплачують комісії майнерам",
+                    "content": "Комісії за транзакції сплачуються майнерам Bitcoin, коли користувачі вносять та знімають кошти з мосту BounceBit. Нагороди за блоки на BounceBit розподіляються валідаторам BounceBit."
                 }
             ]
         },
         {
             "id": "additionalconsiderations",
-            "title": "Mainnet node software not open-source",
+            "title": "Програмне забезпечення вузлів основної мережі не є відкритим",
             "content": [
                 {
-                    "title": "📝 Project is currently ineligible for review",
-                    "content": "The mainnet node software is not open-source. Users trust the information within SatoshiVM's documentation, as they cannot run a node and verify the network’s current state and its participants."
+                    "title": "📝 Проект наразі не підлягає перегляду",
+                    "content": "Програмне забезпечення вузлів основної мережі не є відкритим. Користувачі довіряють інформації в документації SatoshiVM, оскільки не можуть запустити вузол і перевірити поточний стан мережі та її учасників."
                 }
             ]
         },
         {
             "id": "withdrawals",
-            "title": "Withdrawals",
+            "title": "Виведення",
             "content": [
                 {
-                    "title": "Users trust a third party bridge provider to process withdrawals",
-                    "content": "Users trust the Bool Network to release their funds on the Bitcoin mainchain for withdrawals."
+                    "title": "Користувачі довіряють сторонньому постачальнику мосту для обробки виведень",
+                    "content": "Користувачі довіряють мережі Bool, щоб звільнити їхні кошти на основній мережі Bitcoin для виведень."
                 }
             ]
         },
         {
             "id": "operator",
-            "title": "Operator",
+            "title": "Оператор",
             "content": [
                 {
-                    "title": "SatoshiVM is currently operated by a closed validator set",
-                    "content": "SatoshiVM's explorer shows it is operated by a small number of validators."
+                    "title": "SatoshiVM наразі управляється закритим набором валідаторів",
+                    "content": "Експлорер SatoshiVM показує, що він управляється невеликою кількістю валідаторів."
                 }
             ]
         },
         {
             "id": "sourcecode",
-            "title": "Source Code",
+            "title": "Вихідний код",
             "content": [
                 {
-                    "title": "Code is not open-source",
-                    "content": "BounceBit’s mainnet node implementation is not currently open-source."
+                    "title": "Код не є відкритим",
+                    "content": "Основна реалізація вузла BounceBit наразі не є відкритою."
                 }
             ]
         }

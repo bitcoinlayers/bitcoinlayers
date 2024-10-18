@@ -1,15 +1,15 @@
 {
     "slug": "celestia",
     "title": "Celestia",
-    "infrastructureType": "Data Availability",
+    "infrastructureType": "Доступність даних",
     "live": "Mainnet",
     "staking": false,
     "bridge": false,
-    "underReview": "yes",
+    "underReview": "так",
     "riskFactors": ["", ""],
-    "bitcoinSecurity": "No",
+    "bitcoinSecurity": "Ні",
     "nativeToken": "TIA",
-    "purpose": "General",
+    "purpose": "Загальний",
     "associatedLayers": "-",
     "bitcoinOnly": false,
     "links": [
@@ -19,14 +19,14 @@
         "https://github.com/celestiaorg",
         "https://x.com/CelestiaOrg/"
     ],
-    "description": "Celestia is a data availability layer. Scaling protocols that want to save costs on data availability can integrate with Celestia for improved performance with some additional tradeoffs. Celestia is based on CometBFT and additionally supports Data Availability Sampling (DAS), a mechanism by which anyone running a light client can verify that the Celestia network is making rollup state data available.",
+    "description": "Celestia — це шар доступності даних. Протоколи масштабування, які хочуть зекономити на витратах на доступність даних, можуть інтегруватися з Celestia для покращення продуктивності з деякими додатковими компромісами. Celestia основана на CometBFT і додатково підтримує вибіркову доступність даних (DAS), механізм, за допомогою якого будь-хто, хто запускає легкий клієнт, може перевірити, що мережа Celestia забезпечує доступність даних стану ролапів.",
     "sections": [
         {
             "id": "selfsubmit",
-            "title": "Process to self-submit information",
+            "title": "Процес самостійної подачі інформації",
             "content": [
                 {
-                    "content": "The Bitcoin Layers project prioritizes risk reviews on projects that are in production and accepting users' BTC deposits. Projects on testnet are welcome to submit information about their project. We do not publish risk assessments for projects that are not in production.\n\nHere are the [instructions](https://github.com/bitcoinlayers/bitcoinlayers/blob/main/SELFSUBMIT.md) on self-submitting a project."
+                    "content": "Проект Bitcoin Layers надає пріоритет оглядам ризиків проектів, які знаходяться в експлуатації та приймають BTC депозити користувачів. Проекти на тестовій мережі можуть подавати інформацію про свій проект. Ми не публікуємо оцінки ризиків для проектів, які не перебувають в експлуатації.\n\nОсь [інструкції](https://github.com/bitcoinlayers/bitcoinlayers/blob/main/SELFSUBMIT.md) щодо самостійної подачі проекту."
                 }
             ]
         }

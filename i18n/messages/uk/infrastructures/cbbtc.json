@@ -1,15 +1,15 @@
 {
     "slug": "cbbtc",
     "title": "cbBTC",
-    "infrastructureType": "BTC Wrapper",
+    "infrastructureType": "BTC Обгортка",
     "live": "Mainnet",
     "staking": false,
     "bridge": true,
-    "underReview": "yes",
+    "underReview": "так",
     "riskFactors": ["", ""],
-    "bitcoinSecurity": "No",
+    "bitcoinSecurity": "Ні",
     "nativeToken": "-",
-    "purpose": "General",
+    "purpose": "Загальний",
     "associatedLayers": "-",
     "bitcoinOnly": false,
     "links": [
@@ -19,24 +19,24 @@
         "https://github.com/threshold-network",
         "https://x.com/thetnetwork"
     ],
-    "description": "Under Review",
+    "description": "На розгляді",
     "sections": [
         {
             "id": "selfsubmit",
-            "title": "Process to self-submit information",
+            "title": "Процес самостійної подачі інформації",
             "content": [
                 {
-                    "content": "The Bitcoin Layers project prioritizes risk reviews on projects that are in production and accepting users' BTC deposits. Projects on testnet are welcome to submit information about their project. We do not publish risk assessments for projects that are not in production.\n\nHere are the [instructions](https://github.com/bitcoinlayers/bitcoinlayers/blob/main/SELFSUBMIT.md) on self-submitting a project."
+                    "content": "Проект Bitcoin Layers надає пріоритет оглядам ризиків проектів, які знаходяться в експлуатації та приймають BTC депозити користувачів. Проекти на тестовій мережі можуть подавати інформацію про свій проект. Ми не публікуємо оцінки ризиків для проектів, які не перебувають в експлуатації.\n\nОсь [інструкції](https://github.com/bitcoinlayers/bitcoinlayers/blob/main/SELFSUBMIT.md) щодо самостійної подачі проекту."
                 }
             ]
         },
         {
             "id": "knowledgeBits",
-            "title": "Knowledge Bits",
+            "title": "Знання",
             "content": [
                 {
-                    "title": "Learn more",
-                    "content": "[Bitcoin Layers comparison of tBTC, wBTC, and cbBTC](https://mirror.xyz/0x715823F52163575f023b9090a775522249887619/3gaFbT7qQBKEbsjN3Gp_SQe6-QvdZNHuszoasNnvSUo)"
+                    "title": "Дізнатися більше",
+                    "content": "[Порівняння Bitcoin Layers tBTC, wBTC та cbBTC](https://mirror.xyz/0x715823F52163575f023b9090a775522249887619/3gaFbT7qQBKEbsjN3Gp_SQe6-QvdZNHuszoasNnvSUo)"
                 }
             ]
         }

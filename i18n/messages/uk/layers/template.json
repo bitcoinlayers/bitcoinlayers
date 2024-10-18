@@ -1,48 +1,48 @@
 {
     "slug": "slug",
-    "title": "Title",
-    "layerType": "Rollup/Sidechain/State Channel/State Chain",
-    "live": "Mainnet/Testnet/Announced",
+    "title": "Назва",
+    "layerType": "Роллап/Бічна ланцюг/Канал стану/Станова ланцюг",
+    "live": "Mainnet/Тестова мережа/Оголошено",
     "staking": false,
     "bridge": false,
-    "underReview": "yes/no",
-    "riskFactors": ["High", "High", "High", "High"],
-    "purpose": "General",
-    "btcBridge": "Under review",
-    "settlement": "Under review",
+    "underReview": "так/ні",
+    "riskFactors": ["Високий", "Високий", "Високий", "Високий"],
+    "purpose": "Загальний",
+    "btcBridge": "На розгляді",
+    "settlement": "На розгляді",
     "btcLocked": 0,
-    "executionEnv": "Under review",
-    "consensus": "Under review",
+    "executionEnv": "На розгляді",
+    "consensus": "На розгляді",
     "nativeToken": "-",
     "feeToken": "[x]BTC",
     "enshrinedBtc": "[x]BTC",
     "bitcoinOnly": false,
-    "links": ["website", "ecosystem", "docs", "explorer", "github", "socials"],
+    "links": ["вебсайт", "екосистема", "документація", "експлорер", "github", "соціальні мережі"],
     "description": "",
     "riskAnalysis": [
         {
-            "category": "Unilateral Exits",
+            "category": "Односторонні виходи",
             "score": 0,
             "tier": "",
             "title": "",
             "content": ""
         },
         {
-            "category": "Data Availability",
+            "category": "Доступність даних",
             "score": 0,
             "tier": "",
             "title": "",
             "content": ""
         },
         {
-            "category": "Block Production",
+            "category": "Виробництво блоків",
             "score": 0,
             "tier": "",
             "title": "",
             "content": ""
         },
         {
-            "category": "State Validation",
+            "category": "Валідація стану",
             "score": 0,
             "tier": "",
             "title": "",
@@ -52,10 +52,10 @@
     "sections": [
         {
             "id": "description",
-            "title": "Description",
+            "title": "Опис",
             "content": [
                 {
-                    "content": "Under review."
+                    "content": "На розгляді."
                 }
             ]
         }

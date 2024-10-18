@@ -1,15 +1,15 @@
 {
     "slug": "astria",
     "title": "Astria",
-    "infrastructureType": "Sequencing",
-    "live": "Proposed",
+    "infrastructureType": "Послідовність",
+    "live": "Запропоновано",
     "staking": false,
     "bridge": false,
-    "underReview": "yes",
-    "riskFactors": ["High", "High"],
-    "bitcoinSecurity": "No",
+    "underReview": "так",
+    "riskFactors": ["Високий", "Високий"],
+    "bitcoinSecurity": "Ні",
     "nativeToken": "-",
-    "purpose": "General",
+    "purpose": "Загальний",
     "associatedLayers": "-",
     "bitcoinOnly": false,
     "links": [
@@ -19,14 +19,14 @@
         "https://github.com/astriaorg",
         "https://x.com/AstriaOrg"
     ],
-    "description": "Astria is a shared sequencer built on CometBFT consensus. It supports scaling protocols with decentralization, interoperability and more secure preconfirmations.",
+    "description": "Astria — це розподілений упорядковувач, побудований на основі консенсусу CometBFT. Він підтримує масштабовані протоколи з децентралізацією, міжоперабельністю та більш безпечними попередніми підтвердженнями.",
     "sections": [
         {
             "id": "selfsubmit",
-            "title": "Process to self-submit information",
+            "title": "Процес самостійного подання інформації",
             "content": [
                 {
-                    "content": "The Bitcoin Layers project prioritizes risk reviews on projects that are in production and accepting users' BTC deposits. Projects on testnet are welcome to submit information about their project. We do not publish risk assessments for projects that are not in production.\n\nHere are the [instructions](https://github.com/bitcoinlayers/bitcoinlayers/blob/main/SELFSUBMIT.md) on self-submitting a project."
+                    "content": "Проект Bitcoin Layers пріоритетно розглядає ризики для проектів, які вже в роботі та приймають BTC-депозити від користувачів. Проекти на тестовій мережі можуть подавати інформацію про свій проект. Ми не публікуємо оцінки ризиків для проектів, які не в роботі.\n\nОсь [інструкції](https://github.com/bitcoinlayers/bitcoinlayers/blob/main/SELFSUBMIT.md) щодо самостійного подання проекту."
                 }
             ]
         }

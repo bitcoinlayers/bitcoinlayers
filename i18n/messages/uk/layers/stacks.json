@@ -1,17 +1,17 @@
 {
     "slug": "stacks",
     "title": "Stacks",
-    "layerType": "Sidechain",
+    "layerType": "Бічна ланка",
     "live": "Mainnet",
     "staking": false,
     "bridge": false,
-    "underReview": "no",
-    "riskFactors": ["Unverified", "Medium", "Medium", "Medium"],
-    "purpose": "General",
-    "btcBridge": "Centralized Multisig(s)",
-    "settlement": "Offchain",
+    "underReview": "ні",
+    "riskFactors": ["Не підтверджено", "Середній", "Середній", "Середній"],
+    "purpose": "Загальний",
+    "btcBridge": "Централізовані мультигі",
+    "settlement": "Позамежний",
     "btcLocked": 1054,
-    "executionEnv": "Offchain",
+    "executionEnv": "Позамежний",
     "consensus": "Proof-of-Transfer",
     "nativeToken": "STX",
     "feeToken": "STX",
@@ -25,137 +25,137 @@
         "https://github.com/stacks-network",
         "https://twitter.com/Stacks"
     ],
-    "description": "Stacks is a sidechain that aims to be programmability layer for Bitcoin. It uses a novel execution environment, Clarity. Stacks uses a hybrid PoS mechanism (PoX) and derives economic security from its native token (STX).",
+    "description": "Stacks — це бічна ланка, яка прагне стати шаром програмування для Bitcoin. Вона використовує нову середу виконання, Clarity. Stacks використовує гібридний механізм PoS (PoX) і отримує економічну безпеку від свого рідного токена (STX).",
     "riskAnalysis": [
         {
-            "category": "Bridge Security",
+            "category": "Безпека мосту",
             "score": 0,
-            "tier": "Unverified",
-            "title": "Users must trust centralized companies with custody of their BTC. Signers under review",
-            "content": "Stacks has no consensus-enshrined BTC bridge. It does have two third-party bridges, which are both custodial multisigs. Users must trust the operators of these bridges to custody their BTC and back bitcoin-backed tokens on the Stacks network.\n\n🔬We are currently reviewing a score for the Stacks two-way peg."
+            "tier": "Не підтверджено",
+            "title": "Користувачі повинні довіряти централізованим компаніям з управлінням їх BTC. Підписанти під контролем",
+            "content": "Stacks не має мосту BTC, закріпленого консенсусом. У нього є два мости третьої сторони, які є кастодіальними мультигі. Користувачі повинні довіряти операторам цих мостів, щоб вони зберігали їх BTC та підтримували токени, забезпечені Bitcoin, в мережі Stacks.\n\n🔬 Ми наразі переглядаємо оцінку для двостороннього пегу Stacks."
         },
         {
-            "category": "Data Availability",
+            "category": "Доступність даних",
             "score": 0,
-            "tier": "Medium",
-            "title": "Data availability requirement is fulfilled through Stacks' full nodes",
-            "content": "Stacks posts state roots to Bitcoin, but not full transaction calldata. Because of this, Stacks' state cannot be reconstructed using only data from Bitcoin. Stacks has a permissionless validator and node operator set which participate in making data availability readily available."
+            "tier": "Середній",
+            "title": "Вимога доступності даних виконана через повні вузли Stacks",
+            "content": "Stacks публікує корені стану в Bitcoin, але не повні дані транзакцій. Через це стан Stacks не може бути відновлений, використовуючи лише дані з Bitcoin. Stacks має бездозвольний набір валідаторів і операторів вузлів, які беруть участь у забезпеченні доступності даних."
         },
         {
-            "category": "Network Operators",
+            "category": "Оператори мережі",
             "score": 0,
-            "tier": "Medium",
-            "title": "Leverages a permissionless consensus mechanism",
-            "content": "Stacks has a permissionless block production mechanism, but it does not support exits that circumvent its miner/validator set. This means that users must trust Stacks validators to include their transactions in blocks. Anyone with sufficient capital and resources can participate as a Stacks miner. The large majority of Stacks blocks are built by Bitcoin miners additionally mining Stacks."
+            "tier": "Середній",
+            "title": "Використовує бездозвольний механізм консенсусу",
+            "content": "Stacks має бездозвольний механізм виробництва блоків, але не підтримує виходи, які обходять його набір майнерів/валідаторів. Це означає, що користувачі повинні довіряти валідаторам Stacks, щоб включити їх транзакції в блоки. Будь-хто з достатнім капіталом і ресурсами може брати участь як майнер Stacks. Велика більшість блоків Stacks створюються майнерами Bitcoin, які також майнять Stacks."
         },
         {
-            "category": "Finality Guarantees",
+            "category": "Гарантії фінальності",
             "score": 0,
-            "tier": "Medium",
-            "title": "State transitions finalized by permissionless, alternative consensus mechanism",
-            "content": "Settlement is done offchain, on Stacks, rather than onchain, on Bitcoin. The validity of Stacks state transitions are not enforced by Bitcoin"
+            "tier": "Середній",
+            "title": "Перехід станів завершено бездозвольним альтернативним механізмом консенсусу",
+            "content": "Розрахунки виконуються поза мережею, на Stacks, а не в мережі Bitcoin. Дійсність переходів станів Stacks не контролюється Bitcoin."
         }
     ],
     "sections": [
         {
             "id": "bitcoinsecurity",
-            "title": "Bitcoin Security",
+            "title": "Безпека Bitcoin",
             "content": [
                 {
-                    "title": "Unilateral exits to Bitcoin not possible",
-                    "content": "Users cannot unilaterally exit from the Stacks sidechain with an L1 Bitcoin transaction. They currently trust centralized operators to process their withdrawals."
+                    "title": "Односторонні виходи до Bitcoin неможливі",
+                    "content": "Користувачі не можуть односторонньо вийти з бічної ланки Stacks з транзакцією L1 Bitcoin. Вони наразі довіряють централізованим операторам обробляти свої виведення."
                 },
                 {
-                    "title": "The protocol does not enable MEV on Bitcoin, but Bitcoin miners can extract MEV from Stacks",
-                    "content": "Stacks' mining process requires a Bitcoin miner to submit a block commit as a bid to build a Stacks block. It is possible for a Bitcoin miner to censor all bids to build Stacks' blocks when building a Bitcoin block. Since the active Bitcoin miner would be the only entity with the ability to win a Stacks block, they could submit a minimal amount of funds to win the block and receive all STX rewards. This MEV-extraction scenario looks to be solved in the upcoming Nakamoto upgrade."
+                    "title": "Протокол не дозволяє MEV на Bitcoin, але майнери Bitcoin можуть отримувати MEV з Stacks",
+                    "content": "Процес майнінгу Stacks вимагає, щоб майнер Bitcoin подав коміт до блоку як ставку на створення блоку Stacks. Можливо, що майнер Bitcoin може цензурувати всі ставки на створення блоків Stacks під час створення блоку Bitcoin. Оскільки активний майнер Bitcoin буде єдиною особою, яка має можливість виграти блок Stacks, він міг би подати мінімальну суму коштів, щоб виграти блок і отримати всі винагороди STX. Сценарій витягання MEV, здається, буде вирішено в майбутньому оновленні Nakamoto."
                 },
                 {
-                    "title": "An alternative token plays a role in network security",
-                    "content": "The STX token is required to pay for transaction fees and smart contract execution on the Stacks network. It is also used as a reward for miners who participate in the PoX consensus mechanism. The token is indirectly required for the security of the network, as block production by miners is incentivized by STX."
+                    "title": "Альтернативний токен відіграє роль у безпеці мережі",
+                    "content": "Токен STX потрібен для оплати комісій за транзакції та виконання смарт-контрактів у мережі Stacks. Він також використовується як винагорода для майнерів, які беруть участь у механізмі консенсусу PoX. Токен непрямо потрібен для безпеки мережі, оскільки виробництво блоків майнерами стимулюється STX."
                 },
                 {
-                    "title": "Stacks indirectly contributes to the security budget",
-                    "content": "Stacks sees Bitcoin miners bid on the opportunity to win Stacks blocks and earn fees for doing so. However, miners rewards are paid out in STX tokens via a distinct mining set up."
+                    "title": "Stacks непрямо сприяє бюджету безпеки",
+                    "content": "Stacks бачить, як майнери Bitcoin роблять ставки на можливість виграти блоки Stacks і заробити комісії за це. Однак винагороди для майнерів виплачуються у токенах STX через окрему систему майнінгу."
                 }
             ]
         },
         {
             "id": "withdrawals",
-            "title": "Withdrawals",
+            "title": "Виведення",
             "content": [
                 {
-                    "title": "Users trust centralized operators to process their withdrawals",
-                    "content": "Stacks users deposit BTC into Stacks through custodial bridge mechanisms. They trust that the operators of these bridges (e.g. aBTC and xBTC) will not steal their Bitcoin assets, or censor their withdrawals."
+                    "title": "Користувачі довіряють централізованим операторам обробляти свої виведення",
+                    "content": "Користувачі Stacks депонують BTC у Stacks через механізми мосту кастоді. Вони довіряють, що оператори цих мостів (наприклад, aBTC та xBTC) не вкрадуть їх Bitcoin активи або не цензурують їх виведення."
                 }
             ]
         },
         {
             "id": "technology",
-            "title": "Technology",
+            "title": "Технології",
             "content": [
                 {
                     "title": "Clarity",
-                    "content": "Stacks leveraages the Clarity execution environment. The Clarity language is a subset of Lisp, and is not Turing-complete as a design choice. However, it is still expressive enough to build complex smart contracts and replicate much of the functionalities from Turing-complete environments like the EVM (i.e., DeFi, NFTs, etc.). Stacks is able to read Bitcoin state, due to both Clarity and its integrated PoX consensus mechanism. This allows for events on Stacks to be triggered by Bitcoin activity, or for smart contracts to read Bitcoin state during their execution."
+                    "content": "Stacks використовує середу виконання Clarity. Мова Clarity є підмножиною Lisp і не є Turing-complete через вибір дизайну. Проте вона досить виразна, щоб створювати складні смарт-контракти і відтворювати багато функцій з Turing-complete середовищ, таких як EVM (тобто, DeFi, NFT тощо). Stacks може читати стан Bitcoin завдяки як Clarity, так і інтегрованому механізму консенсусу PoX. Це дозволяє події на Stacks бути активованими активністю Bitcoin або смарт-контрактах читати стан Bitcoin під час їх виконання."
                 },
                 {
                     "title": "Proof-of-Transfer",
-                    "content": "Proof-of-Transfer (PoX) is Stacks' consensus mechanism, based on Proof-of-Burn. PoX involves Bitcoin miners bidding BTC for the right to mint a Stacks block. The winning miner creates the block, and is rewarded with the STX block reward and STX transaction fees from the block. The miner's bid is paid to STX stackers (stakers). This system allows for STX stackers to earn native BTC yield, and creates an additional revenue stream for miners, similar to merge-mining."
+                    "content": "Proof-of-Transfer (PoX) є механізмом консенсусу Stacks, заснованим на Proof-of-Burn. PoX передбачає, що майнери Bitcoin роблять ставки BTC за право створити блок Stacks. Переможний майнер створює блок і отримує винагороду у вигляді винагороди STX за блок та комісії STX з блоку. Ставка майнера виплачується стейкерам STX. Ця система дозволяє стейкерам STX отримувати рідкий прибуток BTC і створює додатковий потік доходу для майнерів, подібно до мережевого майнінгу."
                 },
                 {
                     "title": "sBTC",
-                    "content": "sBTC is still in development as of March 2024. It is a bridged version of BTC on Stacks. sBTC is minted by locking up BTC on Bitcoin, and is redeemable for BTC at a 1:1 ratio. sBTC is not yet permissionless, as withdrawals are permissioned by the validator set."
+                    "content": "sBTC все ще розробляється станом на березень 2024 року. Це версія BTC на Stacks. sBTC випускається шляхом блокування BTC на Bitcoin і підлягає викупу за 1:1. sBTC ще не є бездозвольним, оскільки виведення контролюється набором валідаторів."
                 },
                 {
-                    "title": "Faster block times",
-                    "content": "Stacks operates at the same block times as Bitcoin as of March 2024, roughly 10 minutes per block. However, the upcoming Nakamoto Upgrade in April 2024 will reduce block times to an order of seconds."
+                    "title": "Швидші часи блоків",
+                    "content": "Stacks працює з тими ж часами блоків, що й Bitcoin станом на березень 2024 року, приблизно 10 хвилин на блок. Однак майбутнє оновлення Nakamoto у квітні 2024 року зменшить часи блоків до кількох секунд."
                 },
                 {
-                    "title": "Lower fees",
-                    "content": "Stacks fees average in the order of tens of cents as of March 2024."
+                    "title": "Нижчі комісії",
+                    "content": "Комісії Stacks в середньому складають десятки центів станом на березень 2024 року."
                 }
             ]
         },
         {
             "id": "usecases",
-            "title": "Use Cases",
+            "title": "Випадки використання",
             "content": [
                 {
                     "title": "DeFi",
-                    "content": "The most popular use case for Stacks is DeFi. Stacks has a number of DeFi applications, including lending, borrowing, and decentralized exchanges."
+                    "content": "Найпопулярніший випадок використання Stacks — це DeFi. Stacks має низку додатків DeFi, включаючи кредитування, запозичення та децентралізовані біржі."
                 },
                 {
-                    "title": "NFTs",
-                    "content": "Stacks is home to a number of NFT projects, including digital art, collectibles, and identity."
+                    "title": "NFT",
+                    "content": "Stacks є домом для кількох проектів NFT, включаючи цифрове мистецтво, колекційні предмети та ідентичність."
                 }
             ]
         },
         {
             "id": "operator",
-            "title": "Operator",
+            "title": "Оператор",
             "content": [
                 {
-                    "title": "Stacks is operated by miners and validators",
-                    "content": "Block production is managed by Stacks miners (which are typically also Bitcoin miners, similar to the node overlap with classic merge-mining), by combining microblocks created by Stacks validators. Users trust the majority of validators and miners to not collude or censor."
+                    "title": "Stacks управляється майнерами та валідаторами",
+                    "content": "Виробництво блоків управляється майнерами Stacks (які зазвичай також є майнерами Bitcoin, подібно до накладення вузлів класичного мережевого майнінгу), поєднуючи мікроблоки, створені валідаторами Stacks. Користувачі довіряють більшості валідаторів та майнерів, щоб вони не змовлялися або не цензурували."
                 }
             ]
         },
         {
             "id": "sourcecode",
-            "title": "Source Code",
+            "title": "Вихідний код",
             "content": [
                 {
-                    "title": "Code is open-source",
-                    "content": "All code related to the Stacks project is free and open source."
+                    "title": "Код є відкритим",
+                    "content": "Весь код, пов'язаний з проектом Stacks, є безкоштовним та відкритим."
                 }
             ]
         },
         {
             "id": "knowledgeBits",
-            "title": "Knowledge Bits",
+            "title": "Знання",
             "content": [
                 {
-                    "title": "Learn more",
-                    "content": "[State of Stacks Q4 2023 from Messari](https://messari.io/report/state-of-stacks-q4-2023)\n[Bitcoin Connection from Stacks Docs](https://docs.stacks.co/stacks-101/bitcoin-connection)\n[Proof of Transfer from Stacks Docs](https://docs.stacks.co/stacks-101/proof-of-transfer)"
+                    "title": "Дізнайтеся більше",
+                    "content": "[Стан Stacks Q4 2023 від Messari](https://messari.io/report/state-of-stacks-q4-2023)\n[Зв'язок Bitcoin з документацією Stacks](https://docs.stacks.co/stacks-101/bitcoin-connection)\n[Proof of Transfer з документації Stacks](https://docs.stacks.co/stacks-101/proof-of-transfer)"
                 }
             ]
         }

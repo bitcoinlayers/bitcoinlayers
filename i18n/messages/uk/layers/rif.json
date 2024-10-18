@@ -1,11 +1,11 @@
 {
     "slug": "rif",
     "title": "RIF",
-    "layerType": "Sidechain Rollup",
-    "live": "Testnet",
+    "layerType": "Сайдчейн Ролап",
+    "live": "Тестова мережа",
     "staking": false,
     "bridge": false,
-    "underReview": "yes",
+    "underReview": "так",
     "riskFactors": ["", "", "", ""],
     "purpose": "-",
     "btcBridge": "-",
@@ -25,31 +25,31 @@
         "https://dev.rootstock.io/rif/rollup/dev-reference/",
         "https://twitter.com/RIFtechnology"
     ],
-    "description": "Rif is a proposed rollup design that would settle on the Rootstock sidechain. It is a fork of the zkSync codebase.",
+    "description": "Rif — це запропонований дизайн ролапу, який буде здійснювати розрахунки на сайдчейні Rootstock. Це форк коду zkSync.",
     "riskAnalysis": [
         {
-            "category": "Unilateral Exits",
+            "category": "Односторонні виходи",
             "score": 0,
             "tier": "",
             "title": "",
             "content": ""
         },
         {
-            "category": "Data Availability",
+            "category": "Доступність даних",
             "score": 0,
             "tier": "",
             "title": "",
             "content": ""
         },
         {
-            "category": "Block Production",
+            "category": "Виробництво блоків",
             "score": 0,
             "tier": "",
             "title": "",
             "content": ""
         },
         {
-            "category": "State Validation",
+            "category": "Перевірка стану",
             "score": 0,
             "tier": "",
             "title": "",
@@ -59,20 +59,20 @@
     "sections": [
         {
             "id": "description",
-            "title": "Description",
+            "title": "Опис",
             "content": [
                 {
-                    "content": "Rif is a proposed rollup design that would settle on the Rootstock sidechain. It is a fork of the zkSync codebase."
+                    "content": "Rif — це запропонований дизайн ролапу, який буде здійснювати розрахунки на сайдчейні Rootstock. Це форк коду zkSync."
                 }
             ]
         },
         {
             "id": "knowledgeBits",
-            "title": "Knowledge Bits",
+            "title": "Знання",
             "content": [
                 {
-                    "title": "Learn more",
-                    "content": "[RIF documentation site](https://dev.rootstock.io/rif/)\n[Access the RIF testnet as a developer](https://dev.rootstock.io/rif/rollup/dev-reference/)"
+                    "title": "Дізнайтеся більше",
+                    "content": "[Документація RIF](https://dev.rootstock.io/rif/)\n[Доступ до тестової мережі RIF як розробник](https://dev.rootstock.io/rif/rollup/dev-reference/)"
                 }
             ]
         }

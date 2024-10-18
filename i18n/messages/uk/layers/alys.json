@@ -1,11 +1,11 @@
 {
     "slug": "alys",
     "title": "Alys",
-    "layerType": "Sidechain",
-    "live": "Announced",
+    "layerType": "Сайдчейн",
+    "live": "Оголошено",
     "staking": false,
     "bridge": false,
-    "underReview": "yes",
+    "underReview": "так",
     "riskFactors": ["", "", "", ""],
     "purpose": "-",
     "btcBridge": "-",
@@ -25,31 +25,31 @@
         "https://www.anduro.io/",
         "https://www.anduro.io/"
     ],
-    "description": "Alys is one of the sidechains being developed through the Anduro project. It will be an EVM sidechain with general purpose smart contracts. Alys will be a part of the Anduro ecosystem.",
+    "description": "Alys — це один з сайдчейнів, що розробляється в рамках проекту Anduro. Це буде EVM сайдчейн з універсальними смарт-контрактами. Alys стане частиною екосистеми Anduro.",
     "riskAnalysis": [
         {
-            "category": "Unilateral Exits",
+            "category": "Односторонні виходи",
             "score": 0,
             "tier": "",
             "title": "",
             "content": ""
         },
         {
-            "category": "Data Availability",
+            "category": "Доступність даних",
             "score": 0,
             "tier": "",
             "title": "",
             "content": ""
         },
         {
-            "category": "Block Production",
+            "category": "Виробництво блоків",
             "score": 0,
             "tier": "",
             "title": "",
             "content": ""
         },
         {
-            "category": "State Validation",
+            "category": "Валідація стану",
             "score": 0,
             "tier": "",
             "title": "",
@@ -59,10 +59,10 @@
     "sections": [
         {
             "id": "selfsubmit",
-            "title": "Process to self-submit information",
+            "title": "Процес самостійної подачі інформації",
             "content": [
                 {
-                    "content": "The Bitcoin Layers project prioritizes risk reviews on projects that are in production and accepting users' BTC deposits. Projects on testnet are welcome to submit information about their project. We do not publish risk assessments for projects that are not in production.\n\nHere are the [instructions](https://github.com/bitcoinlayers/bitcoinlayers/blob/main/SELFSUBMIT.md) on self-submitting a project."
+                    "content": "Проект Bitcoin Layers пріоритезує оцінку ризиків для проектів, які перебувають у виробництві та приймають BTC-депозити від користувачів. Проекти на тестовій мережі можуть подавати інформацію про свої проекти. Ми не публікуємо оцінки ризиків для проектів, які не перебувають у виробництві.\n\nОсь [інструкції](https://github.com/bitcoinlayers/bitcoinlayers/blob/main/SELFSUBMIT.md) щодо самостійної подачі проекту."
                 }
             ]
         }

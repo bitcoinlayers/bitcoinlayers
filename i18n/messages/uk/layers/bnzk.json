@@ -1,11 +1,11 @@
 {
     "slug": "bnzk",
     "title": "Bnzk",
-    "layerType": "Rollup",
-    "live": "Announced",
+    "layerType": "Роллап",
+    "live": "Оголошено",
     "staking": false,
     "bridge": false,
-    "underReview": "yes",
+    "underReview": "так",
     "riskFactors": ["", "", "", ""],
     "purpose": "-",
     "btcBridge": "-",
@@ -25,31 +25,31 @@
         "https://docs.bnzk.io/",
         "https://twitter.com/BnzkLabs"
     ],
-    "description": "Bznk is working on using zk technology to improve Ordinals and BRC-20 trading.",
+    "description": "Bnzk працює над використанням технології zk для покращення торгівлі Ordinals і BRC-20.",
     "riskAnalysis": [
         {
-            "category": "Unilateral Exits",
+            "category": "Односторонні виходи",
             "score": 0,
             "tier": "",
             "title": "",
             "content": ""
         },
         {
-            "category": "Data Availability",
+            "category": "Доступність даних",
             "score": 0,
             "tier": "",
             "title": "",
             "content": ""
         },
         {
-            "category": "Block Production",
+            "category": "Виробництво блоків",
             "score": 0,
             "tier": "",
             "title": "",
             "content": ""
         },
         {
-            "category": "State Validation",
+            "category": "Верифікація стану",
             "score": 0,
             "tier": "",
             "title": "",
@@ -59,20 +59,20 @@
     "sections": [
         {
             "id": "description",
-            "title": "Description",
+            "title": "Опис",
             "content": [
                 {
-                    "content": "Bznk is working on using zk technology to improve Ordinals and BRC-20 trading."
+                    "content": "Bnzk працює над використанням технології zk для покращення торгівлі Ordinals і BRC-20."
                 }
             ]
         },
         {
             "id": "knowledgeBits",
-            "title": "Knowledge Bits",
+            "title": "Знання",
             "content": [
                 {
-                    "title": "Learn more",
-                    "content": "[Bnzk website.](https://bnzk.io/)\n[Bnzk documentations site.](https://docs.bnzk.io/)"
+                    "title": "Дізнайтеся більше",
+                    "content": "[Сайт Bnzk.](https://bnzk.io/)\n[Документаційний сайт Bnzk.](https://docs.bnzk.io/)"
                 }
             ]
         }

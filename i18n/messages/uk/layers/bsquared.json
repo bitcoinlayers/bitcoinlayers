@@ -1,18 +1,18 @@
 {
     "slug": "bsquared",
     "title": "Bsquared Network",
-    "layerType": "Sidechain Rollup",
+    "layerType": "Сайдчейн Ролап",
     "live": "Mainnet",
     "staking": false,
     "bridge": false,
-    "underReview": "no",
-    "riskFactors": ["Unverified", "Unverified", "Critical", "Critical"],
-    "purpose": "General",
-    "btcBridge": "Federated Multi-sig",
-    "settlement": "Offchain",
-    "btcLocked": "Under review",
-    "executionEnv": "Offchain",
-    "consensus": "Federateded Sidechain",
+    "underReview": "ні",
+    "riskFactors": ["Не перевірено", "Не перевірено", "Критично", "Критично"],
+    "purpose": "Загальні",
+    "btcBridge": "Федеративний Мультипідпис",
+    "settlement": "Позачасовий",
+    "btcLocked": "На розгляді",
+    "executionEnv": "Позачасовий",
+    "consensus": "Федеративний сайдчейн",
     "nativeToken": "BSQ",
     "feeToken": "WBTC",
     "enshrinedBtc": "WBTC",
@@ -25,117 +25,117 @@
         "https://github.com/b2network",
         "https://twitter.com/BSquaredNetwork"
     ],
-    "description": "The current Bsquared Network mainnet consists of two different chains. The parent chain is a fork of an EVM implementation on Tendermint, and has three permissioned validators operating the network. The rollup chain is a fork of Polygon zkEVM that settles on the Bsquared parent chain.",
+    "description": "Основна мережа Bsquared Network складається з двох різних ланцюгів. Батьківський ланцюг є форком EVM-реалізації на Tendermint і має три дозволені валідатори, які керують мережею. Ланцюг ролапу є форком Polygon zkEVM, який здійснює розрахунки на батьківському ланцюзі Bsquared.",
     "riskAnalysis": [
         {
-            "category": "Bridge Security",
+            "category": "Безпека мосту",
             "score": 0,
-            "tier": "Unverified",
-            "title": "Users deposit funds into a MPC protocol managed by Bsquared Network and a custodian. Signers under review.",
-            "content": "Previous blog posts have stated that when users deposit funds into Bsquared, they deposit funds into a MPC wallet managed by the Bsquared Network team and Cobo, a institutional custodian. Information on how many signers participate in this MPC scheme is not available. Bsquared has stated that more players are being added into this custody scheme.\n\n🔬We are currently reviewing the signers for the Bsquared two-way peg."
+            "tier": "Не перевірено",
+            "title": "Користувачі вносять кошти в MPC-протокол, керований Bsquared Network і кастодіаном. Підписанти на розгляді.",
+            "content": "Попередні блоги зазначали, що коли користувачі вносять кошти в Bsquared, вони вносять кошти в MPC-гаманець, керований командою Bsquared Network та Cobo, інституційним кастодіаном. Інформація про те, скільки підписантів бере участь у цій схемі MPC, наразі недоступна. Bsquared заявив, що в цю схему зберігання будуть додані нові учасники.\n\n🔬Ми наразі переглядаємо підписантів для двостороннього моста Bsquared."
         },
         {
-            "category": "Data Availability",
+            "category": "Доступність даних",
             "score": 0,
-            "tier": "Critical",
-            "title": "DA requirement is fulfilled by three permissioned validators",
-            "content": "Sequencer batches are posted to the Bsquared Network L1. This network consists of a permissioned validator set who is responsible for making the data readily available.\n\n🔬We are currently reviewing the operators satisfying the Bsquared DA requirement."
+            "tier": "Критично",
+            "title": "Вимога DA виконується трьома дозволеними валідаторами",
+            "content": "Пакети послідовника публікуються на L1 мережі Bsquared. Ця мережа складається з дозволеного набору валідаторів, відповідальних за забезпечення доступності даних.\n\n🔬Ми наразі переглядаємо операторів, які задовольняють вимогу DA Bsquared."
         },
         {
-            "category": "Network Operator",
+            "category": "Оператор мережі",
             "score": 0,
-            "tier": "Critical",
-            "title": "Both the rollup chain and parent chain are run by federated, centralized parties",
-            "content": "Bsquared Network’s Polygon zkEVM implementation has a single sequencer that posts sequencer batches to its network of three L1 validators. In the event of censorship, users cannot force include their transaction in a sequence."
+            "tier": "Критично",
+            "title": "Як ланцюг ролапу, так і батьківський ланцюг управляються федеративними, централізованими сторонами",
+            "content": "Імплементація Polygon zkEVM в Bsquared Network має єдиного послідовника, який публікує пакети послідовника на своїй мережі з трьома валідаторами L1. У разі цензури користувачі не можуть змусити включити свою транзакцію в послідовність."
         },
         {
-            "category": "Finality Guarantees",
+            "category": "Гарантії фіналізації",
             "score": 0,
-            "tier": "Critical",
-            "title": "SNARKs ensure state correctness, but finality is guaranteed by a permissioned validator set",
-            "content": "Bsquared receives no settlement assurances from Bitcoin. Bsquared settlement is finalized by a group of three, federated validators who verify a validity proof submitted by the Bsquared Network zkEVM prover."
+            "tier": "Критично",
+            "title": "SNARK забезпечує правильність стану, але фіналізація гарантується дозволеним набором валідаторів",
+            "content": "Bsquared не отримує жодних гарантій розрахунків від Bitcoin. Фіналізація розрахунків Bsquared здійснюється групою з трьох федеративних валідаторів, які перевіряють дійсність доказу, поданого провайдером zkEVM мережі Bsquared."
         }
     ],
     "sections": [
         {
             "id": "bitcoinsecurity",
-            "title": "Bitcoin Security",
+            "title": "Безпека Bitcoin",
             "content": [
                 {
-                    "title": "Unilateral exits not possible",
-                    "content": "Users cannot unilaterally exit from Bsquared Network. Users trust a centralized bridge program with the custody of their Bitcoin."
+                    "title": "Односторонні виходи неможливі",
+                    "content": "Користувачі не можуть односторонньо вийти з Bsquared Network. Користувачі довіряють централізованій програмі мосту з управлінням своїм Bitcoin."
                 },
                 {
-                    "title": "The protocol does not enable MEV on Bitcoin. Users trust a centralized operator to not reorder their transactions.",
-                    "content": "Since Bsquared has no relationship with Bitcoin miners, it does not introduce MEV on the Bitcoin base layer. Users trust that the Bsquared Network zkEVM sequencer will not reorder transactions to extract MEV."
+                    "title": "Протокол не дозволяє MEV на Bitcoin. Користувачі довіряють централізованому оператору, щоб той не змінював порядок їх транзакцій.",
+                    "content": "Оскільки Bsquared не має стосунків з майнерами Bitcoin, він не вводить MEV на основному шарі Bitcoin. Користувачі довіряють, що послідовник zkEVM мережі Bsquared не змінить порядок транзакцій для отримання MEV."
                 },
                 {
-                    "title": "An alternative token exists, but is not being used for network security",
-                    "content": "Bsquared Network has issued a token with the ticker BSQ on its L1 protocol. It has a supply of 210,000,000. One address owns the majority of this supply. Bsquared Network L1 validators do not currently stake this token."
+                    "title": "Альтернативний токен існує, але не використовується для безпеки мережі",
+                    "content": "Bsquared Network випустив токен зTicker BSQ на своєму L1-протоколі. Його запас складає 210 000 000. Одна адреса володіє більшістю цього запасу. Валідатори L1 мережі Bsquared наразі не ставлять цей токен."
                 },
                 {
-                    "title": "Bsquared Network does not contribute to the security budget",
-                    "content": "Bsquared Network’s current mainnet does not pay any fees to Bitcoin miners."
+                    "title": "Bsquared Network не сприяє бюджету безпеки",
+                    "content": "Поточна основна мережа Bsquared Network не сплачує жодних зборів майнерам Bitcoin."
                 }
             ]
         },
         {
             "id": "withdrawals",
-            "title": "Withdrawals",
+            "title": "Виведення коштів",
             "content": [
                 {
-                    "title": "Users can withdraw funds if permitted by centralized operators",
-                    "content": "Users can withdraw their funds from Bsquared Network back to Bitcoin via two, centralized bridge providers. Information on the signers of these bridges is unavailable."
+                    "title": "Користувачі можуть вивести кошти, якщо це дозволено централізованими операторами",
+                    "content": "Користувачі можуть вивести свої кошти з Bsquared Network назад до Bitcoin через двох централізованих постачальників мостів. Інформація про підписантів цих мостів недоступна."
                 }
             ]
         },
         {
             "id": "technology",
-            "title": "Technology",
+            "title": "Технології",
             "content": [
                 {
-                    "title": "Currently testing further integrations with Bitcoin",
-                    "content": "Bsquared Network is currently testing an OP Stack rollup on the Ethereum Sepolia testnet. In this implementation, they are running their “committer” that sees the OP Stack rollup post the rollup’s latest state root to Bitcoin."
+                    "title": "Наразі тестуються подальші інтеграції з Bitcoin",
+                    "content": "Bsquared Network наразі тестує OP Stack ролап на тестнеті Ethereum Sepolia. У цій реалізації вони запускають свій «коммітер», який дозволяє OP Stack ролапу публікувати останній корінь стану ролапу в Bitcoin."
                 }
             ]
         },
         {
             "id": "usecases",
-            "title": "Use Cases",
+            "title": "Використання",
             "content": [
                 {
-                    "title": "EVM-based applications",
-                    "content": "The potential use cases for Bsquared Network are similar to that of other EVM-based sidechains. Developers can deploy smart contracts that enable applications like borrowing and lending protocols, stablecoins, NFTs, and more. The primary, proposed use case for Bsquared Network is to act as an application layer for Bitcoin."
+                    "title": "EVM-орієнтовані програми",
+                    "content": "Потенційні випадки використання Bsquared Network подібні до інших EVM-орієнтованих сайдчейнів. Розробники можуть розгортати смарт-контракти, які дозволяють такі програми, як протоколи позики та кредитування, стейблкоїни, NFT та інше. Основний, запропонований випадок використання для Bsquared Network - це діяти як прикладний шар для Bitcoin."
                 }
             ]
         },
         {
             "id": "operator",
-            "title": "Operator",
+            "title": "Оператор",
             "content": [
                 {
-                    "title": "Bsquared Network is operated by centralized parties",
-                    "content": "Users have transactions sequenced by a centralized rollup sequencer."
+                    "title": "Bsquared Network управляється централізованими сторонами",
+                    "content": "Користувачі мають транзакції, упорядковані централізованим послідовником ролапу."
                 }
             ]
         },
         {
             "id": "sourcecode",
-            "title": "Source Code",
+            "title": "Вихідний код",
             "content": [
                 {
-                    "title": "Node software code is open-source",
-                    "content": "The node software and Polygon zkEVM contracts are open-source. Its our understanding that these implementations of Polygon zkEVM and Ethermint have not been audited."
+                    "title": "Код програмного забезпечення вузлів є відкритим",
+                    "content": "Програмне забезпечення вузлів та контракти Polygon zkEVM є відкритими. На нашу думку, ці реалізації Polygon zkEVM та Ethermint наразі не були перевірені."
                 }
             ]
         },
         {
             "id": "knowledgeBits",
-            "title": "Knowledge Bits",
+            "title": "Знання",
             "content": [
                 {
-                    "title": "Learn more",
-                    "content": "[Bsquared Network's L1 explorer](https://hub-explorer.bsquared.network)\n[Bsquared Network Github](https://github.com/b2network)"
+                    "title": "Дізнайтеся більше",
+                    "content": "[Експлорер L1 Bsquared Network](https://hub-explorer.bsquared.network)\n[Github Bsquared Network](https://github.com/b2network)"
                 }
             ]
         }

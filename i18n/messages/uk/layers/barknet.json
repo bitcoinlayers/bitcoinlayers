@@ -1,11 +1,11 @@
 {
     "slug": "barknet",
     "title": "Barknet",
-    "layerType": "Rollup",
-    "live": "Testnet",
+    "layerType": "Роллап",
+    "live": "Тестова мережа",
     "staking": false,
     "bridge": false,
-    "underReview": "yes",
+    "underReview": "так",
     "riskFactors": ["", "", "", ""],
     "purpose": "-",
     "btcBridge": "-",
@@ -25,31 +25,31 @@
         "https://github.com/KasarLabs/barknet",
         "https://twitter.com/kasarlabs"
     ],
-    "description": "Barknet is a sovereign rollup that uses Bitcoin for data availability and the Cairo VM. It was developed by Kasar Lab in collaboration with Taproot Wizards.",
+    "description": "Barknet — це суверенний роллап, який використовує Bitcoin для доступності даних і віртуальної машини Cairo. Він був розроблений Kasar Lab у співпраці з Taproot Wizards.",
     "riskAnalysis": [
         {
-            "category": "Unilateral Exits",
+            "category": "Односторонні виходи",
             "score": 0,
             "tier": "",
             "title": "",
             "content": ""
         },
         {
-            "category": "Data Availability",
+            "category": "Доступність даних",
             "score": 0,
             "tier": "",
             "title": "",
             "content": ""
         },
         {
-            "category": "Block Production",
+            "category": "Виробництво блоків",
             "score": 0,
             "tier": "",
             "title": "",
             "content": ""
         },
         {
-            "category": "State Validation",
+            "category": "Валідність стану",
             "score": 0,
             "tier": "",
             "title": "",
@@ -59,20 +59,20 @@
     "sections": [
         {
             "id": "description",
-            "title": "Description",
+            "title": "Опис",
             "content": [
                 {
-                    "content": "Barknet is a sovereign rollup that uses Bitcoin for data availability and the Cairo VM. It was developed by Kasar Lab in collaboration with Taproot Wizards."
+                    "content": "Barknet — це суверенний роллап, який використовує Bitcoin для доступності даних і віртуальної машини Cairo. Він був розроблений Kasar Lab у співпраці з Taproot Wizards."
                 }
             ]
         },
         {
             "id": "knowledgeBits",
-            "title": "Knowledge Bits",
+            "title": "Знання",
             "content": [
                 {
-                    "title": "Learn more",
-                    "content": "[Barknet code and docs](https://github.com/KasarLabs/barknet)"
+                    "title": "Дізнайтеся більше",
+                    "content": "[Код і документація Barknet](https://github.com/KasarLabs/barknet)"
                 }
             ]
         }

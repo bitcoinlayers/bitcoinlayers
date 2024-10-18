@@ -1,18 +1,18 @@
 {
     "slug": "ark",
-    "title": "Ark (on Liquid)",
-    "layerType": "Virtual UTXOs",
-    "live": "Mainnet",
+    "title": "Ark (на Liquid)",
+    "layerType": "Віртуальні UTXO",
+    "live": "Основна мережа",
     "staking": false,
     "bridge": false,
-    "underReview": "no",
-    "riskFactors": ["Unverified", "Medium", "High", "High"],
-    "purpose": "Payments",
+    "underReview": "ні",
+    "riskFactors": ["Не перевірено", "Середній", "Високий", "Високий"],
+    "purpose": "Платежі",
     "btcBridge": "LBTC",
-    "settlement": "Offchain",
+    "settlement": "Позамежний",
     "btcLocked": 0,
-    "executionEnv": "Offchain",
-    "consensus": "Under review",
+    "executionEnv": "Позамежний",
+    "consensus": "На розгляді",
     "nativeToken": "LBTC",
     "feeToken": "LBTC",
     "enshrinedBtc": "LBTC",
@@ -25,129 +25,129 @@
         "https://github.com/ark-network",
         "https://x.com/ArkLabsHQ"
     ],
-    "description": "This review covers the Ark implementation written in [Go](https://github.com/ark-network/ark), running on the Liquid network. A separate review for the covenant-less version of Ark (clArk) which operates on Bitcoin, will follow. Ark is a proposed payments protocol designed to shift liquidity requirements to a central operator, which is an always-on server, known as the Ark Service Provider (ASP). There are currently no ASPs supporting Ark on Liquid.",
+    "description": "Цей огляд охоплює реалізацію Ark, написану на [Go](https://github.com/ark-network/ark), яка працює в мережі Liquid. Окремий огляд для версії Ark без ковенантів (clArk), яка працює на Bitcoin, буде надано пізніше. Ark — це запропонований протокол платежів, розроблений для переміщення вимог до ліквідності до центрального оператора, що є завжди активним сервером, відомим як Ark Service Provider (ASP). Наразі немає жодних ASP, що підтримують Ark на Liquid.",
     "riskAnalysis": [
         {
-            "category": "Bridge Custody",
+            "category": "Кустодія мосту",
             "score": 0,
-            "tier": "High",
-            "title": "Users enter a 2-of-2 multisig with the ASP that guarantees unilateral exit to L-BTC, but not to BTC",
-            "content": "The user deposits their L-BTC into a 2-of-2 multisig with the ASP, getting an off-chain VTXO in return. The setup allows the user to unilaterally exit back to the Liquid blockchain, ensuring self-custody of the funds, provided they exceed the minimum relay fee on the Liquid blockchain. However, the funds become custodial if the user fails to refresh their coins during the designated timeout period, enabling the ASP to sweep them. It is important to note that L-BTC cannot be exited unilaterally to BTC due to the federated nature of Liquid.\n\n🔬We are currently reviewing the signers for the Liquid two-way peg, which would affect this implementation of Ark."
+            "tier": "Високий",
+            "title": "Користувачі входять у 2-зі 2 мультипідпис з ASP, що гарантує односторонній вихід на L-BTC, але не на BTC",
+            "content": "Користувач вносить свої L-BTC у 2-зі 2 мультипідпис з ASP, отримуючи натомість позамежний VTXO. Налаштування дозволяє користувачу односторонньо вийти назад на Liquid blockchain, забезпечуючи самостійне зберігання коштів, якщо вони перевищують мінімальну плату за пересилку в мережі Liquid. Однак, кошти стають кастодіальними, якщо користувач не оновить свої монети протягом визначеного періоду очікування, що дозволяє ASP їх забрати. Важливо зазначити, що L-BTC не може бути односторонньо виведено на BTC через федеративну природу Liquid.\n\n🔬Ми наразі перевіряємо підписантів для двостороннього пегу Liquid, що вплине на цю реалізацію Ark."
         },
         {
-            "category": "Data Availability",
+            "category": "Доступність даних",
             "score": 0,
-            "tier": "Medium",
-            "title": "Data is stored on-chain (Liquid) in a shared transaction output",
-            "content": "The VTXOs are batched in a binary tree, with the VTXOs serving as the leaves of the tree. This binary tree is then included in a Liquid block as a shared output. In cases of dispute resolution, VTXOs can be revealed. When conducting transactions, the user receives the tree data along with an index indicating the position of their respective VTXO within the tree. It's important to note that Liquid data is stored off the Bitcoin blockchain. Users can run archive nodes on Liquid, which keep a complete history of the Liquid blockchain."
+            "tier": "Середній",
+            "title": "Дані зберігаються в мережі (Liquid) у спільному виході транзакції",
+            "content": "VTXO згруповані в бінарне дерево, причому VTXO є листям дерева. Це бінарне дерево потім включається в блок Liquid як спільний вихід. У випадках розв'язання суперечок VTXO можуть бути виявлені. Під час проведення транзакцій користувач отримує дані дерева разом з індексом, що вказує на позицію їх відповідного VTXO в дереві. Важно зазначити, що дані Liquid зберігаються поза блокчейном Bitcoin. Користувачі можуть запускати архівні вузли в Liquid, які зберігають повну історію блокчейну Liquid."
         },
         {
-            "category": "Network Operators",
+            "category": "Оператори мережі",
             "score": 0,
-            "tier": "High",
-            "title": "Operated by a service provider, the ASP, and relies on the liveness of the Liquid blockchain to enable unilateral exit ",
-            "content": "The Ark network is operated by a central entity, the ASP, an always-on server that provides liquidity and is responsible for issuing VTXOs after an L-BTC deposit on the Liquid blockchain. The ASP is trust-minimized. Only through colluding with Liquid functionaries, it can fraud users: The ASP can generally claim VTXOs if the user does not refresh them or unilaterally exit in time. One way the ASP could abuse this is to collude with parent chain block producers to delay the unilateral exit, so that the ASP can eventually claim users’ funds. Without the ASP colluding with the Liquid functionaries, a unilateral exit to Liquid is possible. Furthermore, as this implementation of Ark is running on Liquid, users trust that the respective functionaries operating the Liquid blockchain will include their on-chain withdrawals in a Liquid block."
+            "tier": "Високий",
+            "title": "Оперативність надається постачальником послуг, ASP, та залежить від активності блокчейну Liquid для забезпечення одностороннього виходу",
+            "content": "Мережа Ark управляється центральною сутністю, ASP, завжди активним сервером, який забезпечує ліквідність і відповідає за випуск VTXO після депозиту L-BTC у блокчейн Liquid. ASP є мінімізованим за довірою. Тільки шляхом змови з функціонерами Liquid, він може обманути користувачів: ASP загалом може вимагати VTXO, якщо користувач не оновлює їх або не виконує односторонній вихід вчасно. Один зі способів, як ASP може зловживати цим, — змова з виробниками блоків батьківського ланцюга для затримки одностороннього виходу, щоб ASP в кінцевому підсумку міг вимагати кошти користувачів. Без змови ASP з функціонерами Liquid можливий односторонній вихід на Liquid. Крім того, оскільки ця реалізація Ark працює на Liquid, користувачі довіряють відповідним функціонерам, які управляють блокчейном Liquid, включити їх ончейн-виведення в блок Liquid."
         },
         {
-            "category": "Settlement Assurance",
+            "category": "Гарантія розрахунків",
             "score": 0,
-            "tier": "High",
-            "title": "Funds are available immediately for further VTXO transfers, while finality is only reached with a block confirmation on Liquid",
-            "content": "Ark transactions operate under the principle of [delayed finality, but immediate availability](https://x.com/brqgoo/status/1661396945653448708). While finality is only reached once the shared output is confirmed in a block on the Liquid blockchain, funds are immediately available to the user for use in an LN transaction or another Ark transaction."
+            "tier": "Високий",
+            "title": "Кошти доступні одразу для подальших VTXO-трансферів, тоді як фіналізація досягається лише після підтвердження блоку в Liquid",
+            "content": "Транзакції Ark функціонують за принципом [затриманої фіналізації, але негайної доступності](https://x.com/brqgoo/status/1661396945653448708). Хоча фіналізація досягається лише після підтвердження спільного виходу в блоці на блокчейні Liquid, кошти негайно доступні для користувача для використання в транзакції LN або іншій транзакції Ark."
         }
     ],
     "sections": [
         {
             "id": "bitcoinsecurity",
-            "title": "Bitcoin Security",
+            "title": "Безпека Bitcoin",
             "content": [
                 {
-                    "title": "Ark on Liquid inherits no security from Bitcoin network",
-                    "content": "Ark on Liquid does not inherit any security from Bitcoin, as Liquid is a federated sidechain independent of Bitcoin. For more information, visit our [Liquid Risk Review](https://www.bitcoinlayers.org/layers/liquid)."
+                    "title": "Ark на Liquid не успадковує безпеки від мережі Bitcoin",
+                    "content": "Ark на Liquid не успадковує жодної безпеки від Bitcoin, оскільки Liquid є федеративним сайдчейном, незалежним від Bitcoin. Для отримання додаткової інформації відвідайте наш [Огляд ризиків Liquid](https://www.bitcoinlayers.org/layers/liquid)."
                 },
                 {
-                    "title": "The protocol does not enable MEV on Bitcoin",
-                    "content": "Ark on Liquid introduces no MEV to Bitcoin."
+                    "title": "Протокол не дозволяє MEV на Bitcoin",
+                    "content": "Ark на Liquid не вводить MEV до Bitcoin."
                 },
                 {
-                    "title": "No alternative token needed for network security",
-                    "content": "No alternative token is needed for network security. VTXOs are being issued by the ASP. Those live off the Liquid blockchain and are backed by L-BTC. L-BTC itself is pegged via a federated multisig to BTC."
+                    "title": "Альтернативний токен не потрібен для безпеки мережі",
+                    "content": "Альтернативний токен не потрібен для безпеки мережі. VTXO випускаються ASP. Вони живуть поза блокчейном Liquid і забезпечуються L-BTC. L-BTC сам по собі є прив'язаним через федеративний мультипідпис до BTC."
                 },
                 {
-                    "title": "Ark on Liquid does not contribute to the security budget",
-                    "content": "Ark on Liquid does not pay any fees to Bitcoin miners."
+                    "title": "Ark на Liquid не сприяє бюджету безпеки",
+                    "content": "Ark на Liquid не сплачує жодних зборів майнерам Bitcoin."
                 }
             ]
         },
         {
             "id": "additionalconsiderations",
-            "title": "Additional Considerations",
+            "title": "Додаткові міркування",
             "content": [
                 {
-                    "title": "There are currently no ASPs live on Ark on Liquids",
-                    "content": "There are currently no ASPs supporting Ark on Liquid. This means that users cannot interact with the network, unless they run their own ASP. A demo application was created for Bitcoin++ for testing and showcase purposes, but support is currently deprecated."
+                    "title": "Наразі немає активних ASP на Ark на Liquid",
+                    "content": "Наразі немає ASP, що підтримують Ark на Liquid. Це означає, що користувачі не можуть взаємодіяти з мережею, якщо не запустять свій власний ASP. Демонстраційний додаток був створений для Bitcoin++ для тестування та демонстраційних цілей, але підтримка наразі знята."
                 }
             ]
         },
         {
             "id": "withdrawals",
-            "title": "Withdrawals",
+            "title": "Виведення коштів",
             "content": [
                 {
-                    "title": "Users can unilaterally withdraw their funds with optimistic settlement guarantees",
-                    "content": "In case of a [cooperative exit](https://arkdev.info/docs/learn/leaving#cooperative-exit), a user trades their VTXO for an on-chain UTXO. This trade is facilitated by the ASP using a round transaction. Steps are: the ASP creates a round transaction with an additional output, locked by Alice (connector output). Then, the user signs a forfeit transaction which spends from the old VTXO and adds the connector output from the previously created round transaction. The ASP then broadcasts the round transaction, providing the user with a new UTXO. During a period of four weeks, the user could double spend their VTXO. Trying to do so results in the ASP gaining the ability to claim the users’ funds within a 24h window, using the forfeit transaction signed by the user.\n\nIn case of a non-cooperative exit, due to an unresponsive or malicious ASP, an Ark VTXO can be redeemed as a UTXO on the Liquid blockchain provided the ASP doesn’t collude with Liquid functionaries. A unilateral exit is triggered by the user through revealing the branch of the shared output that locks their funds. This ensures self-custody of Ark funds in relation to L-BTC, even though a third party is involved in transaction processing.\n\nTo process withdrawals from L-BTC back to BTC, users must either trust Liquid functionaries to process their withdrawals or perform a swap between BTC and L-BTC with a third party."
+                    "title": "Користувачі можуть односторонньо виводити свої кошти з оптимістичними гарантіями розрахунків",
+                    "content": "У випадку [кооперативного виходу](https://arkdev.info/docs/learn/leaving#cooperative-exit) користувач обмінює свій VTXO на ончейн UTXO. Цей обмін здійснюється ASP за допомогою раундної транзакції. Кроки такі: ASP створює раундну транзакцію з додатковим виходом, заблокованим Алісою (вихід конектора). Потім користувач підписує транзакцію зазнання, яка витрачає з старого VTXO і додає вихід конектора з раніше створеної раундної транзакції. ASP потім транслює раундну транзакцію, надаючи користувачу новий UTXO. Протягом чотирьох тижнів користувач може подвоїти витрату свого VTXO. Спроба зробити це призведе до того, що ASP отримає можливість вимагати кошти користувачів протягом 24 годин, використовуючи транзакцію зазнання, підписану користувачем.\n\nУ випадку некооперативного виходу, через неактивний або зловмисний ASP, Ark VTXO може бути обміняно на UTXO в блокчейні Liquid, за умови, що ASP не змовляється з функціонерами Liquid. Односторонній вихід ініціюється користувачем через виявлення гілки спільного виходу, що блокує їх кошти. Це забезпечує самостійне зберігання коштів Ark щодо L-BTC, навіть якщо третя сторона бере участь у процесінгу транзакцій.\n\nЩоб обробити виведення з L-BTC назад до BTC, користувачі повинні або довірити функціонерам Liquid обробку своїх виведень, або здійснити обмін між BTC та L-BTC з третьою стороною."
                 }
             ]
         },
         {
             "id": "technology",
-            "title": "Technology",
+            "title": "Технології",
             "content": [
                 {
-                    "title": "VTXOs and transferring them",
-                    "content": "Transacting VTXOs off-chain happens via so-called “Ark rounds”, which are facilitated by the ASP. A round occurs periodically by including the VTXOs in a shared output on the Liquid blockchain as part of a covenant tree. The VTXO transfers happen atomically by adding so-called connector outputs. Connector outputs ensure that the ASP can only claim the users’ old VTXO if a new one has been created by the ASP as part of a new shared output. Importantly, the user can redeem those checks on the Liquid blockchain without interacting with the ASP."
+                    "title": "VTXO та їх передача",
+                    "content": "Транзакції VTXO поза ланцюгом відбуваються через так звані \"Ark-раунди\", які здійснюються ASP. Раунд відбувається періодично, включаючи VTXO у спільний вихід у блокчейні Liquid як частину дерева ковенантів. Передача VTXO відбувається атомарно, додаючи так звані виходи конектора. Виходи конектора забезпечують, що ASP може вимагати старі VTXO користувачів лише якщо нові були створені ASP як частина нового спільного виходу. Важливо, що користувач може викупити ці чеки в блокчейні Liquid без взаємодії з ASP."
                 },
                 {
-                    "title": "VTXO refreshing with period liveness requirement for the user",
-                    "content": "With the introduction of Ark rounds, the user is required to refresh their VTXOs by opening their Ark wallet before the shared output expiration (current default timeout period is set at a four week period, but this is ASP-specific). Failing to do so results in the ASP being able to sweep users’ funds. Those [funds will then be held custodially by the operator](https://x.com/brqgoo/status/1806875774265241781) and can be claimed back by the user to be held again in a non-custodial fashion should the operator process their claim. To mitigate this, a watchtower-like solution is being proposed where a user can delegate VTXO refreshment."
+                    "title": "Оновлення VTXO з періодичними вимогами активності для користувача",
+                    "content": "З введенням Ark-раундів користувач зобов'язаний оновлювати свої VTXO, відкриваючи свій Ark-гаманець до закінчення терміну дії спільного виходу (поточний стандартний період очікування встановлений на чотири тижні, але це специфічно для ASP). Якщо цього не зробити, ASP зможе забрати кошти користувачів. Ці [кошти потім будуть утримуватися кастодіально оператором](https://x.com/brqgoo/status/1806875774265241781) і можуть бути повернені користувачу для повторного утримання у некостодіальному вигляді, якщо оператор обробить їхній запит. Щоб зменшити це, пропонується рішення, подібне до вежі спостереження, де користувач може делегувати оновлення VTXO."
                 }
             ]
         },
         {
             "id": "usecases",
-            "title": "Use Cases",
+            "title": "Випадки використання",
             "content": [
                 {
-                    "title": "Improved self-custodial UX for end users",
-                    "content": "Ark will serve as a complementary protocol to the Lightning Network. Self-custodial usage of funds on LN remains a challenge for non-technical end users, first and foremost due to inbound liquidity issues. Ark as a stand-alone option can circumvent those issues, as liquidity requirements are shifted to the ASP.\n\nFurthermore, Ark can be run as a complementary service by exchanges or brokerages to facilitate self-custody of users’ funds. In case of the user missing to refresh funds, those turn back to the traditional custodial model facilitated by exchanges."
+                    "title": "Покращений UX для самостійного зберігання для кінцевих користувачів",
+                    "content": "Ark слугуватиме як доповнюючий протокол до Lightning Network. Використання коштів у самостійному зберіганні в LN залишається викликом для не технічних кінцевих користувачів, перш за все через проблеми з вхідною ліквідністю. Ark як самостійна опція може обійти ці проблеми, оскільки вимоги до ліквідності перекладаються на ASP.\n\nКрім того, Ark може бути запущений як доповнююча служба обмінниками або брокерами для полегшення самостійного зберігання коштів користувачів. У випадку, якщо користувач не оновить кошти, вони повертаються до традиційної кастодіальної моделі, яку забезпечують обмінники."
                 },
                 {
-                    "title": "Scaling L-BTC for end users",
-                    "content": "The shared output model of Ark serves as a scaling method, as UTXOs are being shared among a multitude of users, potentially up to tens or hundreds of thousands of users. Ark will function as a complementary protocol to Lightning. While Lightning scales vertically, [Ark scales horizontally](https://x.com/tierotiero/status/1798301214905606227). In other words, Ark can be seen as the [clearing layer](https://x.com/RyanTheGentry/status/1663322538443698177) (facilitating transactions between two entities within the same ASP), Lightning will serve as the settlement layer (transactions between two ASPs), while Liquid serves as the ultimate court through confirming the shared output in a block."
+                    "title": "Масштабування L-BTC для кінцевих користувачів",
+                    "content": "Модель спільного виходу Ark слугує як метод масштабування, оскільки UTXO діляться між багатьма користувачами, потенційно до десятків або сотень тисяч користувачів. Ark функціонуватиме як доповнюючий протокол до Lightning. Поки Lightning масштабується вертикально, [Ark масштабується горизонтально](https://x.com/tierotiero/status/1798301214905606227). Іншими словами, Ark можна вважати [платформою для клірінгу](https://x.com/RyanTheGentry/status/1663322538443698177) (яка полегшує транзакції між двома сутностями в рамках одного ASP), Lightning служитиме як шар розрахунків (транзакції між двома ASP), тоді як Liquid слугує остаточним судом, підтверджуючи спільний вихід у блоці."
                 },
                 {
-                    "title": "Offline payments",
-                    "content": "The Ark protocol on Liquid ensures (self-custodial) offline transactions by making use of covenants, specifically [introspection opcodes](https://glossary.blockstream.com/introspection-opcodes/). This is a strong improvement over the current state of async payments on LN."
+                    "title": "Офлайн-платежі",
+                    "content": "Протокол Ark на Liquid забезпечує (самостійні) офлайн-транзакції, використовуючи ковенанти, зокрема [опкодів інтроспекції](https://glossary.blockstream.com/introspection-opcodes/). Це є значним покращенням порівняно з поточним станом асинхронних платежів у LN."
                 }
             ]
         },
         {
             "id": "sourcecode",
-            "title": "Source Code",
+            "title": "Джерельний код",
             "content": [
                 {
-                    "title": "Code is open-source",
-                    "content": "The code is open source on [GitHub](https://github.com/ark-network/ark), available under an MIT license."
+                    "title": "Код є відкритим",
+                    "content": "Код є відкритим на [GitHub](https://github.com/ark-network/ark), доступний під ліцензією MIT."
                 }
             ]
         },
         {
             "id": "knowledgeBits",
-            "title": "Knowledge Bits",
+            "title": "Знання",
             "content": [
                 {
-                    "title": "Learn more",
-                    "content": "[Ark Developer Hub](https://arkdev.info)\n[Simplest Ark Explanation](https://gist.github.com/RubenSomsen/a394beb1dea9e47e981216768e007454?permalink_comment_id=4633382#simplest-ark-explanation)\n[Updates on Ark with Tiero](https://stephanlivera.com/episode/584/)"
+                    "title": "Дізнайтеся більше",
+                    "content": "[Ark Developer Hub](https://arkdev.info)\n[Найпростішим поясненням Ark](https://gist.github.com/RubenSomsen/a394beb1dea9e47e981216768e007454?permalink_comment_id=4633382#simplest-ark-explanation)\n[Оновлення щодо Ark з Tiero](https://stephanlivera.com/episode/584/)"
                 }
             ]
         }

@@ -1,14 +1,14 @@
 {
     "slug": "opcat",
     "title": "CAT",
-    "opcodeType": "Covenants",
-    "live": "Mainnet",
-    "underReview": "yes",
-    "riskFactors": ["High", "High"],
+    "opcodeType": "Ковенанти",
+    "live": "Основна мережа",
+    "underReview": "так",
+    "riskFactors": ["Високий", "Високий"],
     "bitcoinSecurity": "BIP 347",
-    "nativeToken": "Proposed",
-    "purpose": "Other",
-    "associatedLayers": "Draft",
+    "nativeToken": "Запропоновано",
+    "purpose": "Інше",
+    "associatedLayers": "Чернетка",
     "bitcoinOnly": true,
     "links": [
         "https://twitter.com/bitcoinlayers",
@@ -18,15 +18,15 @@
         "https://github.com/EthanHeilman/op_cat_draft/blob/main/cat.mediawiki",
         "https://twitter.com/bitcoinlayers"
     ],
-    "description": "Under review.",
+    "description": "На розгляді.",
     "sections": [
         {
             "id": "description",
-            "title": "Description",
+            "title": "Опис",
             "content": [
                 {
-                    "title": "Technical Background  ",
-                    "content": "Under review."
+                    "title": "Технічний фон",
+                    "content": "На розгляді."
                 }
             ]
         }

@@ -1,12 +1,12 @@
 {
     "slug": "tunachain",
     "title": "Tunachain",
-    "layerType": "Sidechain",
-    "live": "Testnet",
+    "layerType": "Сайдчейн",
+    "live": "Тестова мережа",
     "staking": false,
     "bridge": false,
-    "underReview": "yes",
-    "riskFactors": ["High", "High", "High", "High"],
+    "underReview": "так",
+    "riskFactors": ["Високий", "Високий", "Високий", "Високий"],
     "purpose": "-",
     "btcBridge": "-",
     "settlement": "-",
@@ -25,31 +25,31 @@
         "https://twitter.com/bitcoinlayers",
         "https://twitter.com/zkLayer_"
     ],
-    "description": "Under Review.",
+    "description": "На розгляді.",
     "riskAnalysis": [
         {
-            "category": "Unilateral Exits",
+            "category": "Односторонні виходи",
             "score": 0,
             "tier": "",
             "title": "",
             "content": ""
         },
         {
-            "category": "Data Availability",
+            "category": "Доступність даних",
             "score": 0,
             "tier": "",
             "title": "",
             "content": ""
         },
         {
-            "category": "Block Production",
+            "category": "Виробництво блоків",
             "score": 0,
             "tier": "",
             "title": "",
             "content": ""
         },
         {
-            "category": "State Validation",
+            "category": "Валідація стану",
             "score": 0,
             "tier": "",
             "title": "",
@@ -59,10 +59,10 @@
     "sections": [
         {
             "id": "description",
-            "title": "Description",
+            "title": "Опис",
             "content": [
                 {
-                    "content": "Under review."
+                    "content": "На розгляді."
                 }
             ]
         }

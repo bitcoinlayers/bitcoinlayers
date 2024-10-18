@@ -1,12 +1,12 @@
 {
     "slug": "cartesi",
     "title": "Cartesi",
-    "layerType": "Rollup",
-    "live": "Testnet",
+    "layerType": "Ролап",
+    "live": "Тестова мережа",
     "staking": false,
     "bridge": false,
-    "underReview": "yes",
-    "riskFactors": ["High", "High", "High", "High"],
+    "underReview": "так",
+    "riskFactors": ["Високий", "Високий", "Високий", "Високий"],
     "purpose": "-",
     "btcBridge": "-",
     "settlement": "-",
@@ -25,31 +25,31 @@
         "https://twitter.com/bitcoinlayers",
         "https://twitter.com/cartesiproject"
     ],
-    "description": "Under review.",
+    "description": "На розгляді.",
     "riskAnalysis": [
         {
-            "category": "Unilateral Exits",
+            "category": "Односторонні виходи",
             "score": 0,
             "tier": "",
             "title": "",
             "content": ""
         },
         {
-            "category": "Data Availability",
+            "category": "Доступність даних",
             "score": 0,
             "tier": "",
             "title": "",
             "content": ""
         },
         {
-            "category": "Block Production",
+            "category": "Виробництво блоків",
             "score": 0,
             "tier": "",
             "title": "",
             "content": ""
         },
         {
-            "category": "State Validation",
+            "category": "Перевірка стану",
             "score": 0,
             "tier": "",
             "title": "",
@@ -59,19 +59,19 @@
     "sections": [
         {
             "id": "description",
-            "title": "Description",
+            "title": "Опис",
             "content": [
                 {
-                    "content": "Under review."
+                    "content": "На розгляді."
                 }
             ]
         },
         {
             "id": "selfsubmit",
-            "title": "Process to self-submit information",
+            "title": "Процес самостійного подання інформації",
             "content": [
                 {
-                    "content": "The Bitcoin Layers project prioritizes risk reviews on projects that are in production and accepting users' BTC deposits. Projects on testnet are welcome to submit information about their project. We do not publish risk assessments for projects that are not in production.\n\nHere are the [instructions](https://github.com/bitcoinlayers/bitcoinlayers/blob/main/SELFSUBMIT.md) on self-submitting a project."
+                    "content": "Проект Bitcoin Layers надає пріоритет перевіркам ризиків для проектів, які знаходяться в експлуатації та приймають депозити BTC від користувачів. Проекти на тестовій мережі можуть подавати інформацію про свій проект. Ми не публікуємо оцінки ризиків для проектів, які не знаходяться в експлуатації.\n\nОсь [інструкції](https://github.com/bitcoinlayers/bitcoinlayers/blob/main/SELFSUBMIT.md) щодо самостійного подання проекту."
                 }
             ]
         }

@@ -1,21 +1,21 @@
 {
     "slug": "bob",
     "title": "BOB",
-    "layerType": "Ethereum Rollup",
+    "layerType": "Роллап на Ethereum",
     "live": "Mainnet",
     "staking": false,
     "bridge": false,
-    "underReview": "no",
-    "riskFactors": ["Unverified", "Medium", "Medium", "Medium"],
-    "purpose": "Bitcoin Apps",
-    "btcBridge": "Various Multisig(s)",
-    "settlement": "Offchain",
+    "underReview": "ні",
+    "riskFactors": ["Неперевірений", "Середній", "Середній", "Середній"],
+    "purpose": "Bitcoin додатки",
+    "btcBridge": "Різні мультипідписи",
+    "settlement": "Позасітеве",
     "btcLocked": 974,
-    "executionEnv": "Under Development",
-    "consensus": "Centralized Sequencer",
+    "executionEnv": "В процесі розробки",
+    "consensus": "Централізований секвенсер",
     "nativeToken": "ETH",
     "feeToken": "ETH",
-    "enshrinedBtc": "None",
+    "enshrinedBtc": "Немає",
     "bitcoinOnly": false,
     "links": [
         "https://www.gobob.xyz/",
@@ -25,138 +25,137 @@
         "https://github.com/bob-collective/bob",
         "https://twitter.com/build_on_bob"
     ],
-    "description": "BOB is an optimistic rollup that serves as an application layer for Bitcoin. They have launched as a rollup on top of Ethereum, with plans to derive more security from Bitcoin miners, and full nodes, over time. Its relation to Bitcoin, currently, is similar to that of a sidechain as it is an alternative consensus protocol with a two-way peg(s) between it and the Bitcoin mainchain.",
+    "description": "BOB — це оптимістичний роллап, що слугує як прикладний шар для Bitcoin. Він був запущений як роллап на базі Ethereum, з планами отримати більше безпеки від майнерів Bitcoin і повних вузлів з часом. Його відношення до Bitcoin наразі подібне до бічної ланцюга, оскільки це альтернативний консенсусний протокол з двостороннім зв'язком між ним і основним ланцюгом Bitcoin.",
     "riskAnalysis": [
         {
-            "category": "Bridge Security",
+            "category": "Безпека мосту",
             "score": 0,
-            "tier": "Critical",
-            "title": "Bitcoin users trust operators of various multi-sigs for custody of their BTC",
-            "content": "BOB primarily uses two BTC synthetics on its chain, tBTC and wBTC. Both are ERC-20 tokens on Ethereum. tBTC’s two-way peg on BOB is managed by a ⅗ multi-sig, but it can be upgraded to allow Threshold governance to manage the minting and burning of tBTC on BOB. Threshold governance relies on a separate token and consensus mechanism. wBTC is effectively managed by a centralized custodian, BitGo. Currently, both of these tokens are minted on BOB via its native Ethereum bridge.\n\nUsers trust that the bridge operators will not steal their BTC, the BOB proposer to not publish a malicious, unchallenged state transition, or BOB’s proxy admin to create a malicious smart contract upgrade.\n\nIn the event of a malicious smart contract upgrade, there is no exit window for BOB users."
+            "tier": "Критично",
+            "title": "Користувачі Bitcoin довіряють операторам різних мультипідписів для зберігання своїх BTC",
+            "content": "BOB переважно використовує два BTC синтетики на своїй ланцюгу: tBTC і wBTC. Обидва є токенами ERC-20 на Ethereum. Двосторонній зв'язок tBTC на BOB керується ⅗ мультипідписом, але його можна оновити, щоб дозволити управлінню Threshold керувати карбуванням і знищенням tBTC на BOB. Управління Threshold покладається на окремий токен і механізм консенсусу. wBTC фактично управляється централізованим кастодієм, BitGo. Наразі обидва ці токени карбуються на BOB через його рідний Ethereum міст.\n\nКористувачі довіряють, що оператори мосту не вкрадуть їх BTC, що пропонент BOB не опублікує шкідливу, неперевірену трансакцію або що проксі-адміністратор BOB не створить шкідливе оновлення смарт-контракту.\n\nУ разі шкідливого оновлення смарт-контракту немає вікна виходу для користувачів BOB."
         },
         {
-            "category": "Data Availability",
+            "category": "Доступність даних",
             "score": 0,
-            "tier": "Medium",
-            "title": "Data is stored and made available by Ethereum full nodes",
-            "content": "The data for BOB’s state is stored on the Ethereum blockchain. Anyone can run an Ethereum node and verify the state of BOB."
+            "tier": "Середній",
+            "title": "Дані зберігаються та доступні через повні вузли Ethereum",
+            "content": "Дані про стан BOB зберігаються на блокчейні Ethereum. Будь-хто може запустити вузол Ethereum і перевірити стан BOB."
         },
         {
-            "category": "Network Operators",
+            "category": "Оператори мережі",
             "score": 0,
-            "tier": "Medium",
-            "title": "BOB blocks are produced and proposed by a centralized operator, but forced inclusion to Ethereum L1 possible",
-            "content": "Currently, BOB’s sequencer is managed by one entity. The BOB sequencer can censor transactions and would also cause liveness failures in the rollup if it went down. Users can, however, bypass the sequencer and send their transactions directly to the Ethereum L1 contract. Users do, however, trust that a permissioned proposer will publish the latest state root on the Ethereum L1, permitting withdrawals."
+            "tier": "Середній",
+            "title": "Блоки BOB створюються та пропонуються централізованим оператором, але можлива примусова включеність до Ethereum L1",
+            "content": "Наразі секвенсер BOB керується однією сутністю. Секвенсер BOB може цензурувати транзакції і також викликати збої в життєздатності в роллапі, якщо він вийде з ладу. Однак користувачі можуть обійти секвенсер і надіслати свої транзакції безпосередньо до контракту Ethereum L1. Користувачі, однак, довіряють, що дозволений пропонент опублікує останній корінь стану на Ethereum L1, дозволяючи виведення."
         },
         {
-            "category": "Finality Guarantees",
+            "category": "Гарантії остаточності",
             "score": 0,
-            "tier": "Medium",
-            "title": "BOB state transitions finalize on Ethereum",
-            "content": "BOB inherits finality guarantees from Ethereum. The BOB sequencer provides a soft confirmation of transactions which are eventually summarized and sent to Ethereum.\n\nBOB's sequencer can reorg prior to a transaction batch being accepted on Ethereum."
+            "tier": "Середній",
+            "title": "Стан BOB переходить в остаточність на Ethereum",
+            "content": "BOB успадковує гарантії остаточності від Ethereum. Секвенсер BOB надає м'яке підтвердження транзакцій, які в кінцевому підсумку підсумовуються та надсилаються на Ethereum.\n\nСеквенсер BOB може провести реорганізацію перед прийняттям партії транзакцій на Ethereum."
         }
     ],
     "sections": [
         {
             "id": "bitcoinsecurity",
-            "title": "Bitcoin Security",
+            "title": "Безпека Bitcoin",
             "content": [
                 {
-                    "title": "BOB does not inherit any security from Bitcoin consensus participants. Optimine is under development",
-                    "content": "BOB is currently developing Optimine: a mechanism that will see Bitcoin miners merge-mine the BOB sequencer. In this design, the BOB sequencer would create rollup blocks, and the miners would validate that the blocks were created correctly. Miners would then give the blocks “Proof-of-Work” validation so they can be executed. This Proof-of-Work validation would take minutes, so it can also act as a soft finalization mechanism as OP Stack chains typically take 7 days for the challenge period to finalize."
-                },
-
-                {
-                    "title": "ETH token used to pay fees",
-                    "content": "BOB users pay sequencer fees in ETH. BOB operators also pay DA fees in ETH. Users can, however, elect to pay fees with a separate token (e.g. tBTC) to a service provider that will pay sequencer fees, in ETH, on the users’ behalf."
+                    "title": "BOB не успадковує жодної безпеки від учасників консенсусу Bitcoin. Optimine в розробці",
+                    "content": "BOB наразі розробляє Optimine: механізм, що дозволить майнерам Bitcoin об'єднувати видобуток з секвенсером BOB. У цьому дизайні секвенсер BOB створюватиме блоки роллапу, а майнери перевірятимуть, що блоки створені правильно. Майнери потім надаватимуть блокам «Proof-of-Work» валідацію, щоб їх можна було виконати. Ця валідація Proof-of-Work займе кілька хвилин, тому вона також може слугувати як м'який механізм остаточності, оскільки ланцюги OP Stack зазвичай потребують 7 днів для завершення періоду оскарження."
                 },
                 {
-                    "title": "No MEV introduced to Bitcoin",
-                    "content": "BOB does not introduce any MEV on the Bitcoin L1. Users trust the BOB sequencer to not reorder their transactions to extract MEV."
+                    "title": "Токен ETH використовується для сплати комісій",
+                    "content": "Користувачі BOB сплачують комісії секвенсера в ETH. Оператори BOB також сплачують комісії DA в ETH. Однак користувачі можуть вибрати сплату комісій іншим токеном (наприклад, tBTC) постачальнику послуг, який сплатить комісії секвенсера в ETH від імені користувачів."
                 },
                 {
-                    "title": "BOB does not contribute to the security budget",
-                    "content": "BOB does not currently contribute to the Bitcoin security budget."
+                    "title": "Немає MEV, впровадженого в Bitcoin",
+                    "content": "BOB не впроваджує жодного MEV на Bitcoin L1. Користувачі довіряють секвенсеру BOB, що той не перепорядкує їхні транзакції для отримання MEV."
+                },
+                {
+                    "title": "BOB не вносить внесок до бюджету безпеки",
+                    "content": "BOB наразі не вносить внесок до бюджету безпеки Bitcoin."
                 }
             ]
         },
         {
             "id": "withdrawals",
-            "title": "Withdrawals",
+            "title": "Виведення",
             "content": [
                 {
-                    "title": "Proposer role centralized and permissioned. BTC users must withdraw to Ethereum L1 before withdrawing to Bitcoin",
-                    "content": "Users can bypass the sequencer and submit withdrawal requests directly to the Ethereum L1. However, they cannot force-exit as the self-proposing is not enabled on OP Stack chains. Users rely on the proposer to post updated state roots to Ethereum to ensure withdrawals can be processed. Withdrawals from BOB to Ethereum take 7 days to finalize.\n\nOnce on the Ethereum L1, users can then redeem their BTC on Bitcoin via the two-way peg mechanism that their BTC synthetic is supported by.\n\nUsers primarily trust bridge operators to permit withdrawals back to the Bitcoin mainchain."
+                    "title": "Роль пропонента централізована та дозволена. Користувачі BTC повинні виводити на Ethereum L1 перед виведенням до Bitcoin",
+                    "content": "Користувачі можуть обійти секвенсер і подати запити на виведення безпосередньо на Ethereum L1. Проте вони не можуть змусити виведення, оскільки самопропозиція не увімкнена на ланцюгах OP Stack. Користувачі покладаються на пропонента, щоб він публікував оновлені корені стану на Ethereum для забезпечення обробки виведень. Виведення з BOB на Ethereum займає 7 днів для остаточного завершення.\n\nПісля того, як користувачі потраплять на Ethereum L1, вони можуть обміняти свої BTC на Bitcoin через механізм двостороннього зв'язку, підтримуваний їхнім BTC синтетиком.\n\nКористувачі в основному довіряють операторам мосту, щоб дозволити виведення назад на основний ланцюг Bitcoin."
                 }
             ]
         },
         {
             "id": "technology",
-            "title": "Technology",
+            "title": "Технологія",
             "content": [
                 {
-                    "title": "Fraud proofs are under development",
-                    "content": "OP stack chains will use interactive fraud proofs to enforce state correctness. This feature is currently in development, meaning that BOB currently permits invalid state roots."
+                    "title": "Докази шахрайства в розробці",
+                    "content": "Ланцюги OP Stack використовуватимуть інтерактивні докази шахрайства для забезпечення коректності стану. Ця функція наразі в розробці, що означає, що BOB наразі дозволяє недійсні корені стану."
                 },
                 {
-                    "title": "Bitcoin Light Client",
-                    "content": "BOB’s Bitcoin light client verifies past transactions on the Bitcoin main chain, and also allows a smart contract on BOB to verify Bitcoin block headers. This gives BOB a view into Bitcoin state, and will be useful for future bridge programs."
+                    "title": "Легкий клієнт Bitcoin",
+                    "content": "Легкий клієнт Bitcoin BOB перевіряє минулі транзакції на основному ланцюгу Bitcoin, а також дозволяє смарт-контракту на BOB перевіряти заголовки блоків Bitcoin. Це дає BOB можливість бачити стан Bitcoin, і буде корисним для майбутніх програм мостів."
                 },
                 {
-                    "title": "Ethereum Virtual Machine",
-                    "content": "BOB uses an EVM-compatible virtual machine. The Ethereum Virtual Machine is software responsible for smart contract execution for a number of blockchains, namely the Ethereum Network. It uses Solidity/Vyper as its code and is the dominant environment for smart contract execution in the cryptocurrency ecosystem. BOB is EVM-compatible, which means that a developer from Ethereum would have less difficulty deploying their applications on BOB compared to other execution environments."
+                    "title": "Віртуальна машина Ethereum",
+                    "content": "BOB використовує віртуальну машину, сумісну з EVM. Віртуальна машина Ethereum — це програмне забезпечення, відповідальне за виконання смарт-контрактів для ряду блокчейнів, зокрема мережі Ethereum. Вона використовує Solidity/Vyper як свій код і є домінуючим середовищем для виконання смарт-контрактів в екосистемі криптовалют. BOB сумісний з EVM, що означає, що розробнику з Ethereum буде легше розгортати свої додатки на BOB порівняно з іншими середовищами виконання."
                 },
                 {
-                    "title": "Faster block times",
-                    "content": "BOB is currently producing blocks every two seconds which provides a better user experience than using the Bitcoin, or Ethereum, mainchains."
+                    "title": "Швидші часи блоків",
+                    "content": "BOB наразі виробляє блоки кожні дві секунди, що забезпечує кращий досвід для користувачів, ніж використання основних ланцюгів Bitcoin або Ethereum."
                 },
                 {
-                    "title": "BitVM bridge being researched",
-                    "content": "BOB are actively researching BitVM and how it can support an improved bridge program for Bitcoin assets on the chain."
+                    "title": "Досліджується міст BitVM",
+                    "content": "BOB активно досліджує BitVM і як він може підтримати покращену програму мосту для активів Bitcoin на ланцюзі."
                 }
             ]
         },
         {
             "id": "usecases",
-            "title": "Use Cases",
+            "title": "Випадки використання",
             "content": [
                 {
-                    "title": "Onchain applications",
-                    "content": "BOB’s initial use case is to provide Ethereum users access to Bitcoin applications such as ordinals, BRC-20s, Bitcoin backed stablecoins, and more. It also gives Bitcoin users access to an application layer that provides faster confirmation times, lower fees and a superior user experience (albeit with additional trust assumptions). To enable this, BOB supports the BOB SDK, which is a software development kit that enables developers to build Bitcoin-centric applications on BOB."
+                    "title": "Ончейн додатки",
+                    "content": "Первісний випадок використання BOB полягає в наданні користувачам Ethereum доступу до Bitcoin додатків, таких як ординали, BRC-20, стейблкоїни, забезпечені Bitcoin, та інші. Він також дає користувачам Bitcoin доступ до прикладного шару, що забезпечує швидші часи підтвердження, нижчі комісії та кращий досвід користувачів (хоча з додатковими припущеннями довіри). Для цього BOB підтримує BOB SDK, набір інструментів для розробників, що дозволяє створювати додатки, орієнтовані на Bitcoin, на BOB."
                 },
                 {
-                    "title": "Account abstraction",
-                    "content": "BOB will support a number of Bitcoin-UX features via account abstraction. These features will enable users to access BOB via Bitcoin wallets, pay fees in their preferred token, and mint BTC on BOB directly."
+                    "title": "Абстракція облікового запису",
+                    "content": "BOB підтримуватиме ряд функцій Bitcoin UX через абстракцію облікового запису. Ці функції дозволять користувачам отримувати доступ до BOB через гаманці Bitcoin, сплачувати комісії у своїх улюблених токенах та карбувати BTC безпосередньо на BOB."
                 }
             ]
         },
         {
             "id": "operator",
-            "title": "Operator",
+            "title": "Оператор",
             "content": [
                 {
-                    "title": "BOB has a centralized operator",
-                    "content": "Block production is controlled by one operator. Users trust that the operator will be honest. They also trust that the operator will not reorder transactions to extract MEV."
+                    "title": "BOB має централізованого оператора",
+                    "content": "Виробництво блоків контролюється одним оператором. Користувачі довіряють, що оператор буде чесним. Вони також довіряють, що оператор не буде перепорядковувати транзакції для отримання MEV."
                 }
             ]
         },
         {
             "id": "sourcecode",
-            "title": "Source Code",
+            "title": "Джерельний код",
             "content": [
                 {
-                    "title": "Under review",
-                    "content": "We are reviewing if BOB's node software is open-source."
+                    "title": "На перегляді",
+                    "content": "Ми переглядаємо, чи є програмне забезпечення вузлів BOB відкритим вихідним кодом."
                 }
             ]
         },
         {
             "id": "knowledgeBits",
-            "title": "Knowledge Bits",
+            "title": "Знання",
             "content": [
                 {
-                    "title": "Learn more",
-                    "content": "[This document outlines the privileged roles who play a role in managing various components of the BOB chain](https://docs.gobob.xyz/docs/learn/security/privileged-roles)\n[A risk review of the OP Mainnet chain on Ethereum, which has similar trust assumptions as the BOB chain as BOB is built on the OP Stack](https://l2beat.com/scaling/projects/optimism)\n[A blog covering R&D areas related to Bitcoin security on BOB.](https://mirror.xyz/0xE4dF449bDC1ec8f7688F68F7E839f1370617Ac73/UvQH9D3RyVcozOlz091gLKnbX8aqn8goFVYtHVmin-w)\n[BOB's TVL breakdown, including total BTC locked.](https://l2beat.com/scaling/projects/bob/tvl-breakdown)"
+                    "title": "Дізнайтеся більше",
+                    "content": "[Цей документ описує привілейовані ролі, які беруть участь в управлінні різними компонентами ланцюга BOB](https://docs.gobob.xyz/docs/learn/security/privileged-roles)\n[Огляд ризиків ланцюга OP Mainnet на Ethereum, який має подібні припущення довіри, як і ланцюг BOB, оскільки BOB побудований на OP Stack](https://l2beat.com/scaling/projects/optimism)\n[Блог, що охоплює області НДР, пов'язані з безпекою Bitcoin на BOB.](https://mirror.xyz/0xE4dF449bDC1ec8f7688F68F7E839f1370617Ac73/UvQH9D3RyVcozOlz091gLKnbX8aqn8goFVYtHVmin-w)\n[Розподіл TVL BOB, включаючи загальну кількість BTC, заблокованих на ньому.](https://l2beat.com/scaling/projects/bob/tvl-breakdown)"
                 }
             ]
         }

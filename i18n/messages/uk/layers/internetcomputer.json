@@ -1,18 +1,18 @@
 {
     "slug": "internetcomputer",
     "title": "Internet Computer",
-    "layerType": "Sidechain",
+    "layerType": "Сайдчейн",
     "live": "Mainnet",
     "staking": false,
     "bridge": false,
-    "underReview": "no",
-    "riskFactors": ["High", "Medium", "Medium", "Medium"],
-    "purpose": "General",
-    "btcBridge": "Consensus-level Multi-sig",
-    "settlement": "Offchain",
+    "underReview": "ні",
+    "riskFactors": ["Високий", "Середній", "Середній", "Середній"],
+    "purpose": "Загальний",
+    "btcBridge": "Мультипідпис на рівні консенсусу",
+    "settlement": "Зовнішня",
     "btcLocked": 277,
-    "executionEnv": "Offchain",
-    "consensus": "Sidechain",
+    "executionEnv": "Зовнішня",
+    "consensus": "Сайдчейн",
     "nativeToken": "ICP",
     "feeToken": "ckBTC",
     "enshrinedBtc": "ckBTC",
@@ -25,129 +25,129 @@
         "https://github.com/dfinity/bitcoin-canisteri",
         "https://twitter.com/dfinity"
     ],
-    "description": "The Internet Computer Protocol (ICP) is a network of connected subnet blockchains. It has a smart contract module, known as the Bitcoin Canister, that enables ICP smart contracts to have a view into Bitcoin state and conduct Bitcoin transactions. It additionally has a bitcoin-backed synthetic, known as ckBTC, which sees signers of a multi-sig scheme custody BTC and mint and burn synthetic ckBTC tokens on ICP. Developers can deploy a variety of applications leveraging the Bitcoin canister and ckBTC.",
+    "description": "Протокол Internet Computer (ICP) — це мережа з'єднаних підмереж блокчейнів. Він має модуль смарт-контрактів, відомий як Bitcoin Canister, який дозволяє смарт-контрактам ICP отримувати інформацію про стан Bitcoin та здійснювати транзакції Bitcoin. Додатково має синтетичний токен, відомий як ckBTC, який забезпечує мультипідписну схему для зберігання BTC та випуску і знищення синтетичних токенів ckBTC на ICP. Розробники можуть розгортати різноманітні програми, використовуючи Bitcoin Canister та ckBTC.",
     "riskAnalysis": [
         {
-            "category": "Bridge Security",
+            "category": "Безпека моста",
             "score": 0,
-            "tier": "High",
-            "title": "Funds are custodied by signer set selected by ICP consensus",
-            "content": "Users who deposit funds into ckBTC trust a set of operators, who are elected via ICP governance, with the custody of their bitcoin. The operators of the ‘pzp6e…’ subnet manage the “ckBTC” smart contract module, which is responsible for minting, custodying and burning bitcoin-backed tokens on the ICP sidechain.\n\nThis smart contract is a part of a subnet with 34 node operators. These operators have undergone a KYB process to ICP governance and are publicly known."
+            "tier": "Високий",
+            "title": "Кошти зберігаються набором підписувачів, обраних консенсусом ICP",
+            "content": "Користувачі, які вносять кошти в ckBTC, довіряють групі операторів, які обираються через управління ICP, відповідальність за зберігання своїх біткойнів. Оператори підмережі ‘pzp6e…’ управляють модулем смарт-контракту “ckBTC”, який відповідає за випуск, зберігання та знищення токенів, забезпечених біткойном, на сайдчейні ICP.\n\nЦей смарт-контракт є частиною підмережі з 34 операторів вузлів. Ці оператори пройшли процес перевірки для управління ICP і є публічно відомими."
         },
         {
-            "category": "Data Availability",
+            "category": "Доступність даних",
             "score": 0,
-            "tier": "High",
-            "title": "DA requirement is fulfilled by an alternative consensus mechanism, but node operation is not permissionless",
-            "content": "Data regarding the state of the ‘pzp6e…’ is made available, and stored, by the 34 individual node operators running the subnet. Should nodes for this subnet go offline, and a backup of the state is not regularly made, then users would lose access to their ckBTC balance and would be unable to burn ckBTC tokens for Bitcoin locked in the respective multi-sig on the mainchain."
+            "tier": "Високий",
+            "title": "Вимога до доступності даних виконана альтернативним механізмом консенсусу, але експлуатація вузлів не є бездозвільною",
+            "content": "Дані щодо стану ‘pzp6e…’ надаються та зберігаються 34 індивідуальними операторами вузлів, які працюють у підмережі. Якщо вузли для цієї підмережі вийдуть з ладу, і резервна копія стану не буде регулярно створена, користувачі втратять доступ до свого балансу ckBTC і не зможуть знищити токени ckBTC для біткойнів, заблокованих у відповідній мультипідписній схемі на головній ланцюзі."
         },
         {
-            "category": "Network Operators",
+            "category": "Оператори мережі",
             "score": 0,
-            "tier": "Medium",
-            "title": "Numerous roles involved in block building and ckBTC transaction settlement",
-            "content": "Settlement for ckBTC transfers is a result of consensus for the ‘pzp6e…’ subnet operators. Once a transaction is finalized, it cannot be reorged. Users can leverage their ckBTC on any ICP subnet per the applications they interact with. Users would initiate a “call” to a specific application on any given subnet and a boundary node would route that call accordingly. The contract would then receive the call, initiate the transaction, and see the transaction confirmed should 2 ⁄ 3 of node operators on the given subnet accept it. This sees liveness trust assumptions vary from subnet to subnet. Bitcoin-specific applications would additionally be dependent on the Bitcoin Canister which is on the ‘w4rem…’ subnet, operated by 13 nodes. The 22 Boundary Nodes are managed by a centralized development organization, the DFINITY Foundation."
+            "tier": "Середній",
+            "title": "Безліч ролей, залучених до створення блоків та врегулювання транзакцій ckBTC",
+            "content": "Врегулювання передач ckBTC є результатом консенсусу операторів підмережі ‘pzp6e…’. Після того, як транзакція буде завершена, її неможливо переписати. Користувачі можуть використовувати свої ckBTC на будь-якій підмережі ICP залежно від програм, з якими вони взаємодіють. Користувачі ініціюють “виклик” до конкретної програми на будь-якій підмережі, і граничний вузол маршрутизує цей виклик відповідно. Контракт потім приймає виклик, ініціює транзакцію та підтверджує її, якщо 2/3 операторів вузлів на даній підмережі приймуть її. Це змушує припущення довіри до активності варіюватися від підмережі до підмережі. Специфічні для Bitcoin додатки також залежать від Bitcoin Canister, який знаходиться на підмережі ‘w4rem…’, що управляється 13 вузлами. 22 Граничні Вузли управляються централізованою розробницькою організацією, Фондом DFINITY."
         },
         {
-            "category": "Finality Guarantees",
+            "category": "Гарантії остаточності",
             "score": 0,
-            "tier": "Medium",
-            "title": "Finality assurances are provided by an alternative consensus mechanism",
-            "content": "After transactions are accepted into a block by a subnet's validator set, they cannot be reversed."
+            "tier": "Середній",
+            "title": "Гарантії остаточності забезпечуються альтернативним механізмом консенсусу",
+            "content": "Після того, як транзакції прийняті в блок валідаторами підмережі, їх неможливо скасувати."
         }
     ],
     "sections": [
         {
             "id": "bitcoinsecurity",
-            "title": "Bitcoin Security",
+            "title": "Безпека Bitcoin",
             "content": [
                 {
-                    "title": "ICP does not inherit security from bitcoin consensus",
-                    "content": "ICP has no relationship with bitcoin consensus participants."
+                    "title": "ICP не успадковує безпеку від консенсусу біткойн",
+                    "content": "ICP не має відносин з учасниками консенсусу біткойн."
                 },
                 {
-                    "title": "The protocol does not enable MEV on Bitcoin.",
-                    "content": "ICP’s Bitcoin module is a separate consensus network and has no direct relationship with Bitcoin, and thus does not introduce MEV at the base layer."
+                    "title": "Протокол не дозволяє MEV на Bitcoin.",
+                    "content": "Модуль Bitcoin ICP є окремою мережею консенсусу і не має прямого відношення до Bitcoin, отже, не вводить MEV на базовому рівні."
                 },
                 {
-                    "title": "An alternative token plays a role in network security",
-                    "content": "ICP’s network security depends on a governance model that leverages the ICP token for voting. Validators are incentivized with newly issued ICP tokens to run validators. Users do not pay any fees for transactions on ICP subnets."
+                    "title": "Альтернативний токен відіграє роль у безпеці мережі",
+                    "content": "Безпека мережі ICP залежить від моделі управління, яка використовує токен ICP для голосування. Валідатори отримують винагороду новими токенами ICP за ведення валідаторів. Користувачі не сплачують жодних зборів за транзакції на підмережах ICP."
                 },
                 {
-                    "title": "ICP does not directly contribute to the security budget",
-                    "content": "ICP does not currently pay fees to Bitcoin miners."
+                    "title": "ICP не робить прямого внеску в бюджет безпеки",
+                    "content": "ICP наразі не сплачує зборів біткойн-майнерам."
                 }
             ]
         },
         {
             "id": "withdrawals",
-            "title": "Withdrawals",
+            "title": "Виведення коштів",
             "content": [
                 {
-                    "title": "Withdrawals are permitted by a specific ICP subnet",
-                    "content": "Withdrawals are ultimately processed by the operators of the ‘pzp6e’ subnet which manages the ckBTC smart contract. Users trust that at least 12 of the 34 signers will remain honest, not steal their funds, and process their withdrawals. If the Bitcoin Canister were to go offline, the ckBTC smart contract would be unable to issue withdrawals for users looking to burn ckBTC and redeem native bitcoin. Withdrawals would be paused until the Bitcoin Canister's subnet came back online."
+                    "title": "Виведення дозволені конкретною підмережею ICP",
+                    "content": "Виведення врешті-решт обробляються операторами підмережі ‘pzp6e’, яка управляє смарт-контрактом ckBTC. Користувачі довіряють, що принаймні 12 з 34 підписувачів залишаться чесними, не вкрадуть їхні кошти та оброблять їхні виведення. Якщо Bitcoin Canister вийде з ладу, смарт-контракт ckBTC не зможе видати виведення для користувачів, які хочуть знищити ckBTC та отримати біткойн. Виведення будуть призупинені, поки підмережа Bitcoin Canister не повернеться в онлайн."
                 }
             ]
         },
         {
             "id": "technology",
-            "title": "Technology",
+            "title": "Технології",
             "content": [
                 {
-                    "title": "Threshold ECDSA Signatures",
-                    "content": "The ICP network uses tECSDA signatures for ckBTC’s two-way peg with Bitcoin. This sees the private key for the Bitcoin address custodying funds split up, and shared, amongst the 34 nodes operating the relevant subnet."
+                    "title": "Підписи ECDSA з порогом",
+                    "content": "Мережа ICP використовує tECSDA підписи для двостороннього з'єднання ckBTC з Bitcoin. Це означає, що приватний ключ для біткойн-адреси, що зберігає кошти, ділиться між 34 вузлами, що управляють відповідною підмережею."
                 },
                 {
-                    "title": "Bitcoin Canister & Adapter",
-                    "content": "The ICP network maintains an integration with Bitcoin. The ICP network has a subnet dedicated to the Bitcoin Canister and Adapter. The Bitcoin Canister enables subnets on the ICP blockchain to interact with the bitcoin network. They can have Bitcoin addresses, sign transactions and submit transactions to the bitcoin network. The Bitcoin Adapter enables the Bitcoin Canister to access Bitcoin state by querying a randomly selected set of Bitcoin nodes periodically."
+                    "title": "Bitcoin Canister & Адаптер",
+                    "content": "Мережа ICP підтримує інтеграцію з Bitcoin. Мережа ICP має підмережу, присвячену Bitcoin Canister та Адаптеру. Bitcoin Canister дозволяє підмережам блокчейну ICP взаємодіяти з мережею Bitcoin. Вони можуть мати біткойн-адреси, підписувати транзакції та подавати транзакції до мережі Bitcoin. Bitcoin Адаптер дозволяє Bitcoin Canister отримувати стан Bitcoin, періодично запитуючи випадково обрану групу біткойн-вузлів."
                 },
                 {
-                    "title": "Various programming languages and modules supported",
-                    "content": "The ICP network supports a variety of programming languages and modules. Due to the multi-subnet architecture of ICP, there is no enshrined programming language. Developers can build on top of the subnet that best supports their individual use case. The two primary languages used for developing in ICP are Rust and Mokoto. ICP modules can also support more expressive smart contracts than the Bitcoin mainchain."
+                    "title": "Підтримуються різні мови програмування та модулі",
+                    "content": "Мережа ICP підтримує різноманітні мови програмування та модулі. Завдяки архітектурі багатьох підмереж ICP немає закріпленої мови програмування. Розробники можуть будувати на підмережі, яка найкраще підтримує їхні індивідуальні випадки використання. Дві основні мови, що використовуються для розробки в ICP, це Rust і Mokoto. Модулі ICP також можуть підтримувати більш виразні смарт-контракти, ніж основна ланцюг Bitcoin."
                 }
             ]
         },
         {
             "id": "usecases",
-            "title": "Use Cases",
+            "title": "Варіанти використання",
             "content": [
                 {
-                    "title": "Lower fees",
-                    "content": "ckBTC transactions on ICP are a fraction of a cent as of July, 2024."
+                    "title": "Низькі збори",
+                    "content": "Транзакції ckBTC в ICP коштують частку цента станом на липень 2024 року."
                 },
                 {
-                    "title": "Ordinals and Runes trading",
-                    "content": "ICP supports the creation of Runes, BRC-20 and Ordinals marketplaces. Application developers can deploy on ICP for improved performance of their applications. These application modules are supported by the Bitcoin Canister and Bitcoin Adapter."
+                    "title": "Торгівля Ordinals та Runes",
+                    "content": "ICP підтримує створення Runes, BRC-20 та ринків Ordinals. Розробники додатків можуть розгортати на ICP для покращення продуктивності своїх додатків. Ці модулі додатків підтримуються Bitcoin Canister та Bitcoin Adapter."
                 }
             ]
         },
         {
             "id": "operator",
-            "title": "Operator",
+            "title": "Оператор",
             "content": [
                 {
-                    "title": "ICP node operators are selected by NNS governance system",
-                    "content": "The ICP network is operated by a number of permissioned parties who are selected by the NNS governance process. NNS is a tokenized governance mechanism where token holders lock their tokens into a governance contract and are able to vote on proposals and upgrades to the network, including adding and removing node operators from specific subnets. Votes are weighted via the amount of tokens staked in the system and the amount of time tokens have been locked. Voters can delegate their vote if they are unable to individually vote on specific proposals.\n\nNode operators for ICP subnet’s are selected by the ICP NNS governance mechanism. Node operators do not stake any capital and are not subject to slashing, but if they were to misbehave, they would be voted out via ICP’s governance mechanism and lose out on future rewards."
+                    "title": "Оператори вузлів ICP обираються системою управління NNS",
+                    "content": "Мережа ICP управляється кількома уповноваженими сторонами, які обираються через процес управління NNS. NNS — це токенізований механізм управління, в якому тримачі токенів блокують свої токени в контракті управління та можуть голосувати за пропозиції та оновлення мережі, включаючи додавання та видалення операторів вузлів з конкретних підмереж. Голоси зважуються залежно від кількості токенів, що ставляться в системі, та часу, протягом якого токени були заблоковані. Голосуючі можуть делегувати свій голос, якщо не можуть особисто голосувати за конкретні пропозиції.\n\nОператори вузлів підмережі ICP обираються механізмом управління NNS ICP. Оператори вузлів не ставлять жодного капіталу і не підлягають штрафам, але якщо вони поводитимуться неналежно, їх буде виключено через механізм управління ICP, і вони втратять можливість отримувати винагороди в майбутньому."
                 }
             ]
         },
         {
             "id": "sourcecode",
-            "title": "Source Code",
+            "title": "Код джерела",
             "content": [
                 {
-                    "title": "Code related to bitcoin modules are open source",
-                    "content": "Modules relevant to ICP’s integration with Bitcoin are open source."
+                    "title": "Код, пов'язаний з модулями біткойна, є відкритим",
+                    "content": "Модулі, що стосуються інтеграції ICP з Bitcoin, є відкритими."
                 }
             ]
         },
         {
             "id": "knowledgeBits",
-            "title": "Knowledge Bits",
+            "title": "Знання",
             "content": [
                 {
-                    "title": "Learn more",
-                    "content": "[ICP Developer Docs](https://internetcomputer.org/docs/current/developer-docs/getting-started/overview-of-icp)\n[Overview on ckBTC](https://wiki.internetcomputer.org/wiki/Chain-key_Bitcoin)"
+                    "title": "Дізнайтеся більше",
+                    "content": "[Документація для розробників ICP](https://internetcomputer.org/docs/current/developer-docs/getting-started/overview-of-icp)\n[Огляд ckBTC](https://wiki.internetcomputer.org/wiki/Chain-key_Bitcoin)"
                 }
             ]
         }

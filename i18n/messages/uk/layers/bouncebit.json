@@ -1,18 +1,18 @@
 {
     "slug": "bouncebit",
     "title": "BounceBit",
-    "layerType": "Sidechain",
+    "layerType": "Бічний ланцюг",
     "live": "Mainnet",
     "staking": false,
     "bridge": false,
-    "underReview": "no",
-    "riskFactors": ["Unverified", "Unverified", "Unverified", "Unverified"],
-    "purpose": "BTC Applications",
-    "btcBridge": "Third Party Bridge",
-    "settlement": "Offchain",
+    "underReview": "ні",
+    "riskFactors": ["Не перевірено", "Не перевірено", "Не перевірено", "Не перевірено"],
+    "purpose": "BTC додатки",
+    "btcBridge": "Міст третьої сторони",
+    "settlement": "Позамежний",
     "btcLocked": 3901,
-    "executionEnv": "Offchain",
-    "consensus": "Delegated Proof-of-Stake",
+    "executionEnv": "Позамежний",
+    "consensus": "Делегований Proof-of-Stake",
     "nativeToken": "BB",
     "feeToken": "BB",
     "enshrinedBtc": "BBTC",
@@ -25,133 +25,133 @@
         "https://github.com/BounceBit-Labs",
         "https://x.com/bounce_bit"
     ],
-    "description": "BounceBit is a bitcoin sidechain. It leverages a delegated proof-of-stake consensus mechanism and uses the BB and BBTC (BTC-synthetic on BounceBit) tokens for staking. It is EVM-compatible and can support an ecosystem of onchain applications.",
+    "description": "BounceBit — це бічний ланцюг для біткоїна. Він використовує механізм консенсусу делегованого proof-of-stake та токени BB і BBTC (синтетичний BTC на BounceBit) для стейкінгу. Він сумісний з EVM і може підтримувати екосистему ончейн-додатків.",
     "riskAnalysis": [
         {
-            "category": "Bridge Custody",
+            "category": "Догляд за мостом",
             "score": 0,
-            "tier": "Unverified",
-            "title": "Bridge is managed by a third party",
-            "content": "The official BounceBit bitcoin bridge is proposedly managed by the Polyhedra Network. The two-way peg is currently an MPC protocol, where a selected number of signers are responsible for securing the bridge and custodying users’ BTC.\n\n🛑  We cannot currently verify claims related to BounceBit’s two-way peg. Polyhedra has not disclosed any information related to its operation of the BounceBit two-way peg."
+            "tier": "Не перевірено",
+            "title": "Міст керується третьою стороною",
+            "content": "Офіційний біткоїн-міст BounceBit, ймовірно, управляється мережею Polyhedra. Двосторонній зв'язок в даний час є протоколом MPC, де обране число підписантів відповідає за забезпечення мосту та зберігання BTC користувачів.\n\n🛑 Ми наразі не можемо перевірити інформацію, пов'язану з двостороннім зв'язком BounceBit. Polyhedra не розкрила жодної інформації щодо його роботи."
         },
         {
-            "category": "Data Availability",
+            "category": "Доступність даних",
             "score": 0,
-            "tier": "Unverified",
-            "title": "A permissioned validator set, participating in a delegated proof-of-stake mechanism, satisfies the data availability requirement",
-            "content": "Currently, BounceBit’s validator set is responsible for keeping a record of the chain’s latest state. There are currently 25 active validators.\n\nThe mainnet node implementation is not open-source, so users are unable to run BounceBit nodes and maintain a record of BounceBit’s state."
+            "tier": "Не перевірено",
+            "title": "Набір валідаторів з дозволами, що бере участь у механізмі делегованого proof-of-stake, задовольняє вимоги до доступності даних",
+            "content": "Наразі набір валідаторів BounceBit відповідає за збереження запису останнього стану мережі. В даний час є 25 активних валідаторів.\n\nРеалізація вузлів головної мережі не є відкритим кодом, тому користувачі не можуть запускати вузли BounceBit і підтримувати запис його стану."
         },
         {
-            "category": "Liveness & Reorg Resistance",
+            "category": "Живучість та опір перепідключенням",
             "score": 0,
-            "tier": "Unverified",
-            "title": "Network managed by a permissioned set of operators participating in a delegated proof-of-stake mechanism",
-            "content": "BounceBit blocks are currently signed and proposed by 25 validators participating in its proof-of-stake network. These operators are currently permissioned.\n\nOperators stake the BB token to participate in the network. Users can delegate BBTC (wrapped bitcoin) and BB tokens to validators to increase their voting power, which improves their chances of winning blocks."
+            "tier": "Не перевірено",
+            "title": "Мережа управляється дозволеним набором операторів, що беруть участь у механізмі делегованого proof-of-stake",
+            "content": "Блоки BounceBit наразі підписуються та пропонуються 25 валідаторами, що беруть участь у мережі proof-of-stake. Ці оператори наразі мають дозволи.\n\nОператори ставлять токени BB для участі в мережі. Користувачі можуть делегувати BBTC (упакований біткоїн) та токени BB валідаторам, щоб збільшити їхню голосуючу силу, що підвищує шанси на виграш блоків."
         },
         {
-            "category": "State Validation",
+            "category": "Перевірка стану",
             "score": 0,
-            "tier": "Unverified",
-            "title": "Settlement assurances are provided by BounceBit consensus",
-            "content": "Settlement assurances are provided by BounceBit’s validator set, not Bitcoin. More than 2/3 of BounceBit’s validators’ voting power is needed to sign a proposed block to finalize it onchain.\n\nBounceBit has single-slot finality, meaning that blocks cannot be re-organized once they are part of the canonical blockchain.\n\nBitcoin can not validate Bouncebit state transitions. Bridge operators can process fraudulent withdrawals and steal user funds."
+            "tier": "Не перевірено",
+            "title": "Гарантії розрахунків надаються консенсусом BounceBit",
+            "content": "Гарантії розрахунків надаються набором валідаторів BounceBit, а не Bitcoin. Понад 2/3 голосуючої сили валідаторів BounceBit необхідно для підписання запропонованого блоку, щоб завершити його в ончейні.\n\nBounceBit має односекундну фіналізацію, що означає, що блоки не можуть бути перепідключені, як тільки вони стають частиною канонічного блокчейну.\n\nBitcoin не може перевірити переходи стану BounceBit. Оператори мосту можуть обробляти шахрайські виведення та красти кошти користувачів."
         }
     ],
     "sections": [
         {
             "id": "bitcoinsecurity",
-            "title": "Bitcoin Security",
+            "title": "Безпека Bitcoin",
             "content": [
                 {
-                    "title": "BounceBit’s economic security can depend on wrapped BTC assets",
-                    "content": "Due to its dual-token staking architecture, BounceBit can rely on wrapped forms of BTC for economic security. This reliance increases as more BTC is staked to secure the network."
+                    "title": "Економічна безпека BounceBit може залежати від упакованих BTC активів",
+                    "content": "Через свою архітектуру стейкінгу з двома токенами BounceBit може покладатися на упаковані форми BTC для економічної безпеки. Це залежність зростає з кількістю BTC, які ставляться для забезпечення мережі."
                 },
                 {
-                    "title": "BounceBit does not leak MEV to Bitcoin",
-                    "content": "BounceBit does not leak MEV to the Bitcoin mainchain. Users trust BounceBit validators to not reorder their transactions to extract MEV."
+                    "title": "BounceBit не витікає MEV до Bitcoin",
+                    "content": "BounceBit не витікає MEV до основного ланцюга Bitcoin. Користувачі довіряють валідаторам BounceBit, що вони не перебудовують їхні транзакції для витягування MEV."
                 },
                 {
-                    "title": "An alternative token is needed for network security",
-                    "content": "BB is one of the token's required for staking and is used to issue rewards to validators."
+                    "title": "Необхідний альтернативний токен для безпеки мережі",
+                    "content": "BB є одним з токенів, необхідних для стейкінгу та використовується для виплати винагород валідаторам."
                 },
                 {
-                    "title": "Bridge deposit and withdrawals pay fees to miners",
-                    "content": "Transaction fees are paid to Bitcoin miners when users deposit and withdraw funds from the BounceBit bridge. Block rewards on BounceBit are distributed to BounceBit validators."
+                    "title": "Внески та виведення мосту сплачують збори шахтарям",
+                    "content": "Комісії за транзакції сплачуються шахтарям Bitcoin, коли користувачі вносять та виводять кошти з мосту BounceBit. Нагороди за блоки на BounceBit розподіляються валідаторам BounceBit."
                 }
             ]
         },
         {
             "id": "additionalconsiderations",
-            "title": "Mainnet node software not open-source",
+            "title": "Програмне забезпечення вузлів головної мережі не є відкритим кодом",
             "content": [
                 {
-                    "title": "📝 Project is currently under review",
-                    "content": "The mainnet node software is not open-source. Users trust the information within dashboards provided by the BounceBit, as they cannot run a node and verify the network’s current state and its participants."
+                    "title": "📝 Проект наразі перебуває на етапі перевірки",
+                    "content": "Програмне забезпечення вузлів головної мережі не є відкритим кодом. Користувачі довіряють інформації в панелях, наданих BounceBit, оскільки вони не можуть запустити вузол і перевірити поточний стан мережі та її учасників."
                 }
             ]
         },
         {
             "id": "withdrawals",
-            "title": "Withdrawals",
+            "title": "Виведення",
             "content": [
                 {
-                    "title": "Users trust a third party bridge provider to process withdrawals",
-                    "content": "Withdrawals are ultimately processed by the participants in the MPC Protocol operated by the Polyhedra Network. Users trust that BounceBit validators will include their withdrawal transaction in a block and that Polyhedra Network operators will process their withdrawal and release funds on the Bitcoin mainchain."
+                    "title": "Користувачі довіряють третьосторонньому постачальнику мосту для обробки виведень",
+                    "content": "Виведення в кінцевому підсумку обробляються учасниками протоколу MPC, що управляється мережею Polyhedra. Користувачі довіряють, що валідатори BounceBit включать їхню транзакцію на виведення в блок, а оператори мережі Polyhedra оброблять їхнє виведення та випустять кошти в основному ланцюзі Bitcoin."
                 }
             ]
         },
         {
             "id": "technology",
-            "title": "Technology",
+            "title": "Технологія",
             "content": [
                 {
                     "title": "Evmos & CometBFT",
-                    "content": "BounceBit’s L1 blockchain is a fork of Evmos, an EVM-compatible chain built using the Cosmos SDK. The Cosmos SDK is built on top of CometBFT, a consensus protocol that enables high throughput and fast finality (~2-second blocks).\n\nThis architecture enables users to process transitions in both the Cosmos and EVM formats, while also ensuring BounceBit is compatible with various Cosmos SDK modules. Additionally, chains built with CometBFT are compatible with the IBC bridging standard, widely used in the Cosmos ecosystem."
+                    "content": "L1 блокчейн BounceBit є форком Evmos, сумісного з EVM ланцюга, побудованого за допомогою Cosmos SDK. Cosmos SDK побудовано на CometBFT, протоколі консенсусу, що забезпечує високу пропускну здатність та швидку фіналізацію (~2-секундні блоки).\n\nЦя архітектура дозволяє користувачам обробляти переходи як в форматах Cosmos, так і EVM, а також забезпечує сумісність BounceBit з різними модулями Cosmos SDK. Крім того, ланцюги, побудовані з CometBFT, сумісні зі стандартом IBC, який широко використовується в екосистемі Cosmos."
                 },
                 {
-                    "title": "EVM Compatibility",
-                    "content": "Due to BounceBit being based on Evmos’ architecture, developers are able to deploy EMV-compatible applications on BounceBit. BounceBit can leverage EVM-supported libraries and port over EVM-based applications to BounceBit."
+                    "title": "Сумісність з EVM",
+                    "content": "Оскільки BounceBit заснований на архітектурі Evmos, розробники можуть розгортати EMV-сумісні додатки на BounceBit. BounceBit може використовувати бібліотеки, підтримувані EVM, та переносити додатки на основі EVM на BounceBit."
                 },
                 {
-                    "title": "Delegated Proof-of-Stake",
-                    "content": "BounceBit consensus relies on a delegated proof-of-stake (DPoS) model. Token holders delegate their BB and BBTC tokens to their favored validators. Validators with the highest amounts of delegated and staked tokens have a higher probability of winning the right to propose blocks.\n\nThe delegation process sees users transfer a token to a BounceBit validator and receive a synthetic token representing their delegated tokens. BounceBit validators can determine how much rewards they distribute to those who have delegated tokens towards them, and are incentivized to distribute a fair amount to ensure users continually delegate their tokens towards them."
+                    "title": "Делегований Proof-of-Stake",
+                    "content": "Консенсус BounceBit покладається на модель делегованого proof-of-stake (DPoS). Тримачі токенів делегують свої токени BB та BBTC своїм улюбленим валідаторам. Валідатори з найбільшими сумами делегованих та стейкованих токенів мають вищу ймовірність виграшу права на пропозицію блоків.\n\nПроцес делегування передбачає передачу токена валідатору BounceBit і отримання синтетичного токена, що представляє їх делеговані токени. Валідатори BounceBit можуть визначати, скільки винагород вони розподіляють тим, хто делегував їм токени, і зацікавлені у розподілі справедливої кількості, щоб користувачі постійно делегували свої токени."
                 }
             ]
         },
         {
             "id": "usecases",
-            "title": "Use Cases",
+            "title": "Випадки використання",
             "content": [
                 {
-                    "title": "Onchain applications",
-                    "content": "Due to BounceBit being EMV-compatible, it can support a range of on-chain applications. This may include borrowing and lending protocols, decentralized exchanges and NFT marketplace."
+                    "title": "Ончейн-додатки",
+                    "content": "Оскільки BounceBit сумісний з EMV, він може підтримувати ряд ончейн-додатків. Це може включати протоколи кредитування та позичання, децентралізовані біржі та ринок NFT."
                 },
                 {
-                    "title": "Institutional finance",
-                    "content": "BounceBit is integrated with institutional financial applications, providing users an opportunity to deposit their funds with a custodian for the custodian to leverage their tokens in investment strategies on their behalf.\n\n⚠️ If you deposit funds with a custodian, you are trusting this custodian to not steal or misappropriate your funds."
+                    "title": "Інституційні фінанси",
+                    "content": "BounceBit інтегрований з інституційними фінансовими додатками, надаючи користувачам можливість вносити свої кошти у кастодіана, щоб кастодіан міг використовувати їхні токени в інвестиційних стратегіях від їхнього імені.\n\n⚠️ Якщо ви вносите кошти у кастодіана, ви довіряєте цьому кастодіану не красти або неправильно використовувати ваші кошти."
                 },
                 {
-                    "title": "BTC Staking",
-                    "content": "BounceBit enables BTC holders to delegate their BTC, as a part of DPoS in BounceBit, and delegate that stake to a specific validator in the BounceBit network.\n\nIn exchange for delegating their BTC, users may receive rewards in the form of BB tokens."
+                    "title": "BTC Стейкінг",
+                    "content": "BounceBit дозволяє тримачам BTC делегувати свої BTC у рамках DPoS в BounceBit і делегувати цей стейк конкретному валідатору в мережі BounceBit.\n\nВ обмін на делегування своїх BTC користувачі можуть отримувати винагороди у вигляді токенів BB."
                 }
             ]
         },
         {
             "id": "operator",
-            "title": "Operator",
+            "title": "Оператор",
             "content": [
                 {
-                    "title": "BounceBit is currently operated by a closed validator set",
-                    "content": "The operators of the BounceBit chain are a federated operator set. Prospective validators may be able to attempt and join the operator set after the mainnet node implementation is made open source."
+                    "title": "BounceBit наразі управляється закритим набором валідаторів",
+                    "content": "Оператори ланцюга BounceBit є федеративним набором операторів. Перспективні валідатори можуть спробувати приєднатися до набору операторів після того, як реалізація вузлів головної мережі стане відкритим кодом."
                 }
             ]
         },
         {
             "id": "sourcecode",
-            "title": "Source Code",
+            "title": "Вихідний код",
             "content": [
                 {
-                    "title": "Code is not open-source",
-                    "content": "BounceBit’s mainnet node implementation is not currently open-source."
+                    "title": "Код не є відкритим",
+                    "content": "Реалізація вузлів головної мережі BounceBit наразі не є відкритим кодом."
                 }
             ]
         }

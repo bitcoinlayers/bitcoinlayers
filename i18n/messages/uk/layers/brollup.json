@@ -1,11 +1,11 @@
 {
     "slug": "brollup",
     "title": "Brollup",
-    "layerType": "Rollup",
-    "live": "Announced",
+    "layerType": "Ролап",
+    "live": "Оголошено",
     "staking": false,
     "bridge": false,
-    "underReview": "yes",
+    "underReview": "так",
     "riskFactors": ["", "", "", ""],
     "purpose": "-",
     "btcBridge": "-",
@@ -25,31 +25,31 @@
         "https://brqgoo.medium.com/introducing-brollups-18ec4081f6e7",
         "https://brqgoo.medium.com/introducing-brollups-18ec4081f6e7"
     ],
-    "description": "Brollups are a proposed rollup design that use the Bitcoin block space as their data availability layer. Brollups work natively with Bitcoin as a payable construct",
+    "description": "Brollups — це запропонований дизайн ролапу, який використовує блокчейн Bitcoin як свій шар доступності даних. Brollups працюють нативно з Bitcoin як платіжною конструкцією.",
     "riskAnalysis": [
         {
-            "category": "Unilateral Exits",
+            "category": "Односторонні виходи",
             "score": 0,
             "tier": "",
             "title": "",
             "content": ""
         },
         {
-            "category": "Data Availability",
+            "category": "Доступність даних",
             "score": 0,
             "tier": "",
             "title": "",
             "content": ""
         },
         {
-            "category": "Block Production",
+            "category": "Виробництво блоків",
             "score": 0,
             "tier": "",
             "title": "",
             "content": ""
         },
         {
-            "category": "State Validation",
+            "category": "Перевірка стану",
             "score": 0,
             "tier": "",
             "title": "",
@@ -59,10 +59,10 @@
     "sections": [
         {
             "id": "selfsubmit",
-            "title": "Process to self-submit information",
+            "title": "Процес самостійної подачі інформації",
             "content": [
                 {
-                    "content": "The Bitcoin Layers project prioritizes risk reviews on projects that are in production and accepting users' BTC deposits. Projects on testnet are welcome to submit information about their project. We do not publish risk assessments for projects that are not in production.\n\nHere are the [instructions](https://github.com/bitcoinlayers/bitcoinlayers/blob/main/SELFSUBMIT.md) on self-submitting a project."
+                    "content": "Проект Bitcoin Layers пріоритизує огляди ризиків для проектів, які вже в роботі та приймають депозити BTC від користувачів. Проекти на тестнеті можуть подавати інформацію про свої проекти. Ми не публікуємо оцінки ризиків для проектів, які не в роботі.\n\nОсь [інструкції](https://github.com/bitcoinlayers/bitcoinlayers/blob/main/SELFSUBMIT.md) щодо самостійної подачі проекту."
                 }
             ]
         }
