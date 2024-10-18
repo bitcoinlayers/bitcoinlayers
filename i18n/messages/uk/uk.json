@@ -13,7 +13,7 @@
         "bitcoin-only": "Тільки Bitcoin",
         "bitcoin-only-overview": "Шари та інфраструктура, які використовують лише BTC.",
         "glossary": "Глосарій",
-        "faq": "Часті питання",
+        "faq": "F.A.Q.",
         "methodology": "Методологія",
         "blog": "Блог",
         "external-link-alt": "Зовнішнє посилання",
@@ -145,7 +145,7 @@
         "infrastructure": "Інфраструктура",
         "bitcoin-only": "Тільки Bitcoin",
         "glossary": "Глосарій",
-        "faq": "Часті питання",
+        "faq": "F.A.Q.",
         "methodology": "Методологія",
         "risk-analysis": "Ризиковий аналіз",
         "learn": "Дізнатися",
@@ -177,7 +177,7 @@
         "open-source-instructions-coming-soon": "Інструкції з відкритим кодом незабаром"
     },
     "faq": {
-        "frequently-asked-questions": "Часті питання",
+        "frequently-asked-questions": "F.A.Q.",
         "what-is-the-bitcoin-layers-site": "Що таке сайт Bitcoin Layers?",
         "bitcoin-layers": "Bitcoin Layers — це освітній інструмент, присвячений масштабуванню Bitcoin. Наразі ми зосереджені на модулі, який висвітлює ризики, пов’язані з різними протоколами масштабування, які підтримують Bitcoin та актив BTC. Ми також плануємо створити модулі, пов’язані з мостами, інфраструктурою масштабування та операційними кодами, які можуть підтримувати нові варіації L2.",
         "what-is-a-bitcoin-layer": "Що таке шар Bitcoin?",
