@@ -14,29 +14,6 @@ const LayerDiamond: React.FC<{ layer: Layer }> = ({ layer }) => {
     const svgDivSize = containerSize / 2;
     const svgSize = 215;
 
-    const riskLabels = [
-        {
-            text: t("bridge"),
-            className:
-                "left-[10px] top-[155px] -rotate-45 origin-top-left text-left",
-        },
-        {
-            text: t("data-availability"),
-            className:
-                "left-[51%] translate-x-[-50%] top-[-8px] origin-top-left text-center w-[80px]",
-        },
-        {
-            text: t("operators"),
-            className:
-                "right-[10px] top-[155px] rotate-45 origin-top-right text-right",
-        },
-        {
-            text: t("settlement-assurance"),
-            className:
-                "left-[51%] translate-x-[-50%] top-[355px] origin-top-left text-center w-[80px]",
-        },
-    ];
-
     const renderDiamond = (
         riskFactor: string,
         positionTop: number,
@@ -106,6 +83,29 @@ const LayerDiamond: React.FC<{ layer: Layer }> = ({ layer }) => {
     };
 
     const containerClassName = `lg:w-[${containerSize}px] h-[${containerSize}px] lg:h-full flex justify-center items-center relative ml-0 z-30 cursor-pointer`;
+
+    const riskLabels = [
+        {
+            text: t("bridge"),
+            className:
+                "left-[10px] top-[155px] -rotate-45 origin-top-left text-left",
+        },
+        {
+            text: t("data-availability"),
+            className:
+                "left-[51%] translate-x-[-50%] top-[-8px] origin-top-left text-center w-[80px]",
+        },
+        {
+            text: t("operators"),
+            className:
+                "right-[10px] top-[155px] rotate-45 origin-top-right text-right",
+        },
+        {
+            text: t("settlement-assurance"),
+            className:
+                "left-[51%] translate-x-[-50%] top-[355px] origin-top-left text-center w-[80px]",
+        },
+    ];
 
     const diamondPositions = [
         { top: svgDivSize * 0.5, left: svgDivSize * 0.0, Icon: RiskIconBridge },

@@ -31,8 +31,8 @@
             "category": "Bridge Security",
             "score": 0,
             "tier": "Critical",
-            "title": "Bitcoin users trust operators of various multi-sigs for custody of their BTC",
-            "content": "BOB primarily uses two BTC synthetics on its chain, tBTC and wBTC. Both are ERC-20 tokens on Ethereum. tBTC’s two-way peg on BOB is managed by a ⅗ multi-sig, but it can be upgraded to allow Threshold governance to manage the minting and burning of tBTC on BOB. Threshold governance relies on a separate token and consensus mechanism. wBTC is effectively managed by a centralized custodian, BitGo. Currently, both of these tokens are minted on BOB via its native Ethereum bridge.\n\nUsers trust that the bridge operators will not steal their BTC, the BOB proposer to not publish a malicious, unchallenged state transition, or BOB’s proxy admin to create a malicious smart contract upgrade.\n\nIn the event of a malicious smart contract upgrade, there is no exit window for BOB users."
+            "title": "Bitcoin users trust that bitcoin synthetics will remain backed, and that the BOB bridge will not steal their funds",
+            "content": "BOB primarily uses two BTC synthetics on its chain, tBTC and wBTC. Both are ERC-20 tokens on Ethereum. Currently, both of these tokens are minted on BOB via its official Ethereum bridge.\n\nUsers trust that the bridge operators will not steal their BTC, the BOB proposer to not publish a malicious, unchallenged state transition, or the admin controlling the bridge to create a malicious smart contract upgrade.\n\nIn the event of a malicious smart contract upgrade, there is no exit window for BOB users. This means that the admin behind the bridge can steal all funds in the official bridge."
         },
         {
             "category": "Data Availability",

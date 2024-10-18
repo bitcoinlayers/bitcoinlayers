@@ -305,9 +305,9 @@
         "last-3-months": "Last 3 months",
         "last-year": "Last year",
         "total-amount-of": "Total amount of",
-        "locked-per-day": "locked per day",
         "and": "and",
-        "coming-soon": "coming soon"
+        "coming-soon": "coming soon",
+        "locked-on-per-day": "locked on {layerName} per day"
     },
     "infrastructure": {
         "knowledge-bits": "Knowledge Bits",

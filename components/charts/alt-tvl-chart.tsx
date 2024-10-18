@@ -57,6 +57,11 @@ export default function ProjectTVLChart() {
         [data, chartType],
     );
 
+    const getTokenName = useCallback(() => {
+        if (!data || data.length === 0) return null;
+        return data[0].token_name;
+    }, [data]);
+
     const processedData = useMemo(() => {
         if (!data) return [];
         return data.reduce((acc: ProcessedData[], item) => {
@@ -193,7 +198,14 @@ export default function ProjectTVLChart() {
                 <div className="flex flex-col justify-center items-start py-4 sm:py-8 border-b sm:border-b-0 px-6 sm:w-1/2">
                     <div className="text-lg sm:text-xl">BTC Locked</div>
                     <div className="text-xs sm:text-sm text-muted-foreground">
-                        Total amount of BTC locked per day by network.
+                        Total amount of {getTokenName()} locked on{" "}
+                        {tokens.length > 1
+                            ? tokens.slice(0, -1).join(", ") +
+                              (tokens.length > 2 ? "," : "") +
+                              " and " +
+                              tokens[tokens.length - 1]
+                            : tokens[0]}{" "}
+                        per day.
                     </div>
                 </div>
                 <div className="flex flex-row sm:w-1/2">

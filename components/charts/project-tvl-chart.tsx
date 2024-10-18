@@ -89,6 +89,11 @@ export default function ProjectTVLChart() {
         }, []);
     }, [data, chartType]);
 
+    const getLayerName = useCallback(() => {
+        if (!data || data.length === 0) return null;
+        return data[0].layer_name;
+    }, [data]);
+
     const chartConfig = useMemo(
         () =>
             chartType === "combined"
@@ -212,8 +217,10 @@ export default function ProjectTVLChart() {
                               (tokens.length > 2 ? "," : "") +
                               ` ${t("and")} ` +
                               tokens[tokens.length - 1]
-                            : tokens[0]}
-                        {t("locked-per-day")}
+                            : tokens[0]}{" "}
+                        {t("locked-on-per-day", {
+                            layerName: getLayerName(),
+                        })}
                     </div>
                 </div>
                 <div className="flex flex-row sm:w-1/2">

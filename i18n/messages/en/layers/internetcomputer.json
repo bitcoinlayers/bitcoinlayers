@@ -6,7 +6,7 @@
     "staking": false,
     "bridge": false,
     "underReview": "no",
-    "riskFactors": ["High", "Medium", "Medium", "Medium"],
+    "riskFactors": ["High", "High", "Medium", "Medium"],
     "purpose": "General",
     "btcBridge": "Consensus-level Multi-sig",
     "settlement": "Offchain",

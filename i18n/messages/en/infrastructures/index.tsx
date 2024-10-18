@@ -51,6 +51,9 @@ const wbtc: Infrastructure = wbtcJson as Infrastructure;
 import cbbtcJson from "@/i18n/messages/en/infrastructures/cbbtc.json" assert { type:
     "json" };
 const cbbtc: Infrastructure = cbbtcJson as Infrastructure;
+import kbtcJson from "@/i18n/messages/en/infrastructures/kbtc.json" assert { type:
+    "json" };
+const kbtc: Infrastructure = kbtcJson as Infrastructure;
 
 export const allInfrastructures: Infrastructure[] = [
     cashu,
@@ -59,6 +62,7 @@ export const allInfrastructures: Infrastructure[] = [
     tbtc,
     wbtc,
     cbbtc,
+    kbtc,
     dlclink,
     bool,
     nubit,
