@@ -1,11 +1,11 @@
 {
     "slug": "alpen",
     "title": "Alpen",
-    "layerType": "Роллап",
-    "live": "Оголошено",
+    "layerType": "Rollup",
+    "live": "Announced",
     "staking": false,
     "bridge": false,
-    "underReview": "так",
+    "underReview": "yes",
     "riskFactors": ["", "", "", ""],
     "purpose": "-",
     "btcBridge": "-",
@@ -28,28 +28,28 @@
     "description": "Alpen Labs — це команда, яка розробляє фреймворк роллапів на базі Bitcoin. Вони нещодавно вийшли з режиму прихованості та запрошують розробників долучитися до їх тестової мережі.",
     "riskAnalysis": [
         {
-            "category": "Односторонні виходи",
+            "category": "Unilateral Exits",
             "score": 0,
             "tier": "",
             "title": "",
             "content": ""
         },
         {
-            "category": "Доступність даних",
+            "category": "Data Availability",
             "score": 0,
             "tier": "",
             "title": "",
             "content": ""
         },
         {
-            "category": "Виробництво блоків",
+            "category": "Block Production",
             "score": 0,
             "tier": "",
             "title": "",
             "content": ""
         },
         {
-            "category": "Валідація стану",
+            "category": "State Validation",
             "score": 0,
             "tier": "",
             "title": "",

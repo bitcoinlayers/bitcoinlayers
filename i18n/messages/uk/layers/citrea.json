@@ -1,11 +1,11 @@
 {
     "slug": "citrea",
     "title": "Citrea",
-    "layerType": "Ролап",
-    "live": "Тестова мережа",
+    "layerType": "Rollup",
+    "live": "Testnet",
     "staking": false,
     "bridge": false,
-    "underReview": "так",
+    "underReview": "yes",
     "riskFactors": ["", "", "", ""],
     "purpose": "-",
     "btcBridge": "-",
@@ -28,28 +28,28 @@
     "description": "Citrea створює ролап на основі Bitcoin. Вони використовують реалізації BitVM для двостороннього пега Bitcoin і SNARK верифікатора. Вони використовують zkSTARKs для доведення стану переходів ролапу та використовуватимуть Bitcoin для доступності даних. Citrea розробляється компанією Chainway Labs.",
     "riskAnalysis": [
         {
-            "category": "Односторонні виходи",
+            "category": "Unilateral Exits",
             "score": 0,
             "tier": "",
             "title": "",
             "content": ""
         },
         {
-            "category": "Доступність даних",
+            "category": "Data Availability",
             "score": 0,
             "tier": "",
             "title": "",
             "content": ""
         },
         {
-            "category": "Виробництво блоків",
+            "category": "Block Production",
             "score": 0,
             "tier": "",
             "title": "",
             "content": ""
         },
         {
-            "category": "Перевірка стану",
+            "category": "State Validation",
             "score": 0,
             "tier": "",
             "title": "",

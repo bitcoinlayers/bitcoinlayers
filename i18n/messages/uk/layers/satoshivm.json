@@ -1,18 +1,18 @@
 {
     "slug": "satoshivm",
     "title": "SatoshiVM",
-    "layerType": "Дозволена мережа",
+    "layerType": "Permissioned chain",
     "live": "Mainnet",
     "staking": false,
     "bridge": false,
-    "underReview": "ні",
-    "riskFactors": ["Не перевірено", "Не перевірено", "Не перевірено", "Не перевірено"],
-    "purpose": "BTC додатки",
-    "btcBridge": "Міст третіх сторін",
-    "settlement": "Позамережеве",
+    "underReview": "no",
+    "riskFactors": ["Unverified", "Unverified", "Unverified", "Unverified"],
+    "purpose": "BTC Applications",
+    "btcBridge": "Third Party Bridge",
+    "settlement": "Offchain",
     "btcLocked": 0,
-    "executionEnv": "Позамережеве",
-    "consensus": "Дозволена мережа",
+    "executionEnv": "Offchain",
+    "consensus": "Permissioned chain",
     "nativeToken": "SAVM",
     "feeToken": "WBTC",
     "enshrinedBtc": "WBTC",
@@ -28,30 +28,30 @@
     "description": "SatoshiVM — це дозволена мережа, побудована на програмному забезпеченні Frontier. Її рідний токен є ERC-20 на Ethereum.",
     "riskAnalysis": [
         {
-            "category": "Кустодія мосту",
+            "category": "Bridge Custody",
             "score": 0,
-            "tier": "Не перевірено",
+            "tier": "Unverified",
             "title": "Двосторонній пег управляється третьою стороною",
             "content": "Біткоїн-гаманець SatoshiVM для депозитів мосту управляється мережею Bool. Як мережа Bool, так і інтерфейси SatoshiVM для мосту вносять кошти на ту ж адресу Bitcoin. Контракт мосту Bitcoin на SatoshiVM може бути оновлений єдиним EOA акаунтом."
         },
         {
-            "category": "Доступність даних",
+            "category": "Data Availability",
             "score": 0,
-            "tier": "Не перевірено",
+            "tier": "Unverified",
             "title": "Набір дозволених валідаторів задовольняє вимогу доступності даних",
             "content": "Валідуючі вузли SatoshiVM також задовольняють вимогу доступності даних. Програмне забезпечення вузла не є відкритим, тому користувачі не можуть запустити повний вузол і перевірити стан SatoshiVM."
         },
         {
             "category": "Живучість і опір перезапису",
             "score": 0,
-            "tier": "Не перевірено",
+            "tier": "Unverified",
             "title": "Мережа управляється набором дозволених операторів",
             "content": "Експлорер SatoshiVM в даний час показує 4 активних валідатора, які пропонують блоки. Ідентичності цих валідаторів невідомі."
         },
         {
-            "category": "Перевірка стану",
+            "category": "State Validation",
             "score": 0,
-            "tier": "Не перевірено",
+            "tier": "Unverified",
             "title": "Гарантії розрахунку надаються консенсусом SatoshiVM",
             "content": "Фіналізація гарантується набором валідаторів SatoshiVM. У нього немає живих доказів шахрайства, які можна подати на Bitcoin."
         }

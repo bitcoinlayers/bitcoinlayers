@@ -1,18 +1,18 @@
 {
     "slug": "nomic",
     "title": "Nomic",
-    "layerType": "Сайдчейн",
+    "layerType": "Sidechain",
     "live": "Mainnet",
     "staking": false,
     "bridge": false,
-    "underReview": "так",
+    "underReview": "yes",
     "riskFactors": ["", "", "", ""],
     "purpose": "-",
-    "btcBridge": "На розгляді",
-    "settlement": "На розгляді",
+    "btcBridge": "Under review",
+    "settlement": "Under review",
     "btcLocked": 4.95,
-    "executionEnv": "На розгляді",
-    "consensus": "На розгляді",
+    "executionEnv": "Under review",
+    "consensus": "Under review",
     "nativeToken": "NOM",
     "feeToken": "NOM",
     "enshrinedBtc": "nBTC",
@@ -28,28 +28,28 @@
     "description": "Nomic — це ланцюг Cosmos SDK, який дозволяє користувачам використовувати біткоїн в екосистемі Cosmos.",
     "riskAnalysis": [
         {
-            "category": "Односторонні виходи",
+            "category": "Unilateral Exits",
             "score": 0,
             "tier": "",
             "title": "На розгляді",
             "content": ""
         },
         {
-            "category": "Доступність даних",
+            "category": "Data Availability",
             "score": 0,
             "tier": "",
             "title": "На розгляді",
             "content": ""
         },
         {
-            "category": "Виробництво блоків",
+            "category": "Block Production",
             "score": 0,
             "tier": "",
             "title": "На розгляді",
             "content": ""
         },
         {
-            "category": "Перевірка стану",
+            "category": "State Validation",
             "score": 0,
             "tier": "",
             "title": "На розгляді",

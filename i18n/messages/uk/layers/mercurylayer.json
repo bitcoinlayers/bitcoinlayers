@@ -1,17 +1,17 @@
 {
     "slug": "mercurylayer",
     "title": "Mercury Layer",
-    "layerType": "Стейтчейн",
+    "layerType": "Statechain",
     "live": "Mainnet",
     "staking": false,
     "bridge": false,
-    "underReview": "так",
+    "underReview": "yes",
     "riskFactors": ["", "", "", "", ""],
     "purpose": "-",
-    "btcBridge": "Смарт-контракт",
-    "settlement": "Зовнішнє",
+    "btcBridge": "Smart Contract",
+    "settlement": "External",
     "btcLocked": 0,
-    "executionEnv": "Стейтчейн",
+    "executionEnv": "Statechain",
     "consensus": "-",
     "nativeToken": "BTC",
     "feeToken": "BTC",
@@ -28,28 +28,28 @@
     "description": "Mercury Layer — це реалізація протоколу Statechain. Він дозволяє офчейн-передачу BTC.",
     "riskAnalysis": [
         {
-            "category": "Односторонні виходи",
+            "category": "Unilateral Exits",
             "score": 0,
             "tier": "",
             "title": "",
             "content": ""
         },
         {
-            "category": "Доступність даних",
+            "category": "Data Availability",
             "score": 0,
             "tier": "",
             "title": "",
             "content": ""
         },
         {
-            "category": "Виробництво блоків",
+            "category": "Block Production",
             "score": 0,
             "tier": "",
             "title": "",
             "content": ""
         },
         {
-            "category": "Валідація стану",
+            "category": "State Validation",
             "score": 0,
             "tier": "",
             "title": "",

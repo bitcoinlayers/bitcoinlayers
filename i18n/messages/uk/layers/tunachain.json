@@ -1,12 +1,12 @@
 {
     "slug": "tunachain",
     "title": "Tunachain",
-    "layerType": "Сайдчейн",
-    "live": "Тестова мережа",
+    "layerType": "Sidechain",
+    "live": "Testnet",
     "staking": false,
     "bridge": false,
-    "underReview": "так",
-    "riskFactors": ["Високий", "Високий", "Високий", "Високий"],
+    "underReview": "yes",
+    "riskFactors": ["High", "High", "High", "High"],
     "purpose": "-",
     "btcBridge": "-",
     "settlement": "-",
@@ -28,28 +28,28 @@
     "description": "На розгляді.",
     "riskAnalysis": [
         {
-            "category": "Односторонні виходи",
+            "category": "Unilateral Exits",
             "score": 0,
             "tier": "",
             "title": "",
             "content": ""
         },
         {
-            "category": "Доступність даних",
+            "category": "Data Availability",
             "score": 0,
             "tier": "",
             "title": "",
             "content": ""
         },
         {
-            "category": "Виробництво блоків",
+            "category": "Block Production",
             "score": 0,
             "tier": "",
             "title": "",
             "content": ""
         },
         {
-            "category": "Валідація стану",
+            "category": "State Validation",
             "score": 0,
             "tier": "",
             "title": "",

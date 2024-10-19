@@ -1,11 +1,11 @@
 {
     "slug": "yona",
     "title": "Yona",
-    "layerType": "Суверенний ролап",
-    "live": "Тестова мережа",
+    "layerType": "Sovereign Rollup",
+    "live": "Testnet",
     "staking": false,
     "bridge": false,
-    "underReview": "так",
+    "underReview": "yes",
     "riskFactors": ["", "", "", ""],
     "purpose": "-",
     "btcBridge": "-",
@@ -28,28 +28,28 @@
     "description": "Yona Network розробляє блокчейн у стилі ролап, який використовує віртуальну машину Solana. Вони наразі мають активну devnet, де розробники можуть розгортати свої додатки.",
     "riskAnalysis": [
         {
-            "category": "Односторонні виходи",
+            "category": "Unilateral Exits",
             "score": 0,
             "tier": "",
             "title": "",
             "content": ""
         },
         {
-            "category": "Доступність даних",
+            "category": "Data Availability",
             "score": 0,
             "tier": "",
             "title": "",
             "content": ""
         },
         {
-            "category": "Виробництво блоків",
+            "category": "Block Production",
             "score": 0,
             "tier": "",
             "title": "",
             "content": ""
         },
         {
-            "category": "Валідація стану",
+            "category": "State Validation",
             "score": 0,
             "tier": "",
             "title": "",

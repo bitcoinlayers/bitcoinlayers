@@ -1,11 +1,11 @@
 {
     "slug": "bitfinity",
     "title": "Bitfinity",
-    "layerType": "Сайдчейн",
-    "live": "Тестова мережа",
+    "layerType": "Sidechain",
+    "live": "Testnet",
     "staking": false,
     "bridge": false,
-    "underReview": "так",
+    "underReview": "yes",
     "riskFactors": ["", "", "", ""],
     "purpose": "-",
     "btcBridge": "-",
@@ -28,28 +28,28 @@
     "description": "Bitfinity — це сайдчейн на основі EVM з механізмом підтвердження частки. Наразі він працює на тестовій мережі.",
     "riskAnalysis": [
         {
-            "category": "Односторонні виходи",
+            "category": "Unilateral Exits",
             "score": 0,
             "tier": "",
             "title": "",
             "content": ""
         },
         {
-            "category": "Доступність даних",
+            "category": "Data Availability",
             "score": 0,
             "tier": "",
             "title": "",
             "content": ""
         },
         {
-            "category": "Виробництво блоків",
+            "category": "Block Production",
             "score": 0,
             "tier": "",
             "title": "",
             "content": ""
         },
         {
-            "category": "Перевірка стану",
+            "category": "State Validation",
             "score": 0,
             "tier": "",
             "title": "",

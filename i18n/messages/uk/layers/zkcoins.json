@@ -2,10 +2,10 @@
     "slug": "zkcoins",
     "title": "zkCoins",
     "layerType": "zkCSV",
-    "live": "Оголошено",
+    "live": "Announced",
     "staking": false,
     "bridge": false,
-    "underReview": "так",
+    "underReview": "yes",
     "riskFactors": ["", "", "", ""],
     "purpose": "-",
     "btcBridge": "-",
@@ -28,28 +28,28 @@
     "description": "zkCoins — це запропонований протокол zkCSV, який підтримуватиме конфіденційні платежі для BTC та токенізованих активів. Команда Zerosync розробляє BitVM для створення покращених довірчих припущень для моста між основним ланцюгом Bitcoin і протоколом zkCoins.",
     "riskAnalysis": [
         {
-            "category": "Односторонні виходи",
+            "category": "Unilateral Exits",
             "score": 0,
             "tier": "",
             "title": "",
             "content": ""
         },
         {
-            "category": "Доступність даних",
+            "category": "Data Availability",
             "score": 0,
             "tier": "",
             "title": "",
             "content": ""
         },
         {
-            "category": "Виробництво блоків",
+            "category": "Block Production",
             "score": 0,
             "tier": "",
             "title": "",
             "content": ""
         },
         {
-            "category": "Валідація стану",
+            "category": "State Validation",
             "score": 0,
             "tier": "",
             "title": "",

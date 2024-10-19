@@ -57,7 +57,7 @@ export default function Home() {
         <div className="mx-auto">
             <Hero
                 title="Ecash"
-                description="Not every ecash system is equal."
+                description={t("not-every-ecash-system-is-equal")}
             />
             <div className="lg:flex mb-4 justify-center w-full lg:max-w-5xl mx-auto">
                 <InfrastructureTable

@@ -41,7 +41,7 @@ export default async function BridgesPage() {
         <div className="mx-auto">
             <Hero
                 title={t("bridges")}
-                description="Not every bitcoin bridge is made equal."
+                description={t("not-every-bitcoin-bridge-is-made-equal")}
             />
             <div className="lg:flex mb-4 justify-center w-full lg:max-w-5xl mx-auto">
                 <FederationTable

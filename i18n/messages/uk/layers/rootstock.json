@@ -1,18 +1,18 @@
 {
     "slug": "rootstock",
     "title": "Rootstock",
-    "layerType": "Бокова ланцюг",
+    "layerType": "Sidechain",
     "live": "Mainnet",
     "staking": false,
     "bridge": false,
-    "underReview": "ні",
-    "riskFactors": ["Високий", "Середній", "Середній", "Середній"],
-    "purpose": "Загальний",
-    "btcBridge": "Федеративний Мульти- підпис",
-    "settlement": "Зовнішній",
+    "underReview": "no",
+    "riskFactors": ["High", "Medium", "Medium", "Medium"],
+    "purpose": "General",
+    "btcBridge": "Federated Multisig",
+    "settlement": "Offchain",
     "btcLocked": 2757,
-    "executionEnv": "Зовнішній",
-    "consensus": "Об'єднана майнінг",
+    "executionEnv": "Offchain",
+    "consensus": "Merge-Mining",
     "nativeToken": "RBTC",
     "feeToken": "RBTC",
     "enshrinedBtc": "RBTC",
@@ -28,30 +28,30 @@
     "description": "Rootstock — це об'єднана майнінгова, EVM-сумісна бокова ланцюг Bitcoin. Як об'єднана мережа, майнери Bitcoin можуть одночасно майнити консенсус Rootstock. Мережа не забезпечується іншим токеном. Як EVM-сумісна мережа, розробники можуть розгортати контракти Solidity та інші EVM-сумісні смарт-контракти з довільною логікою, створюючи нові додатки для BTC. Rootstock має вбудований крос-ланцюговий актив BTC під назвою ''Smart Bitcoin'' (RBTC), який прив'язаний 1:1 до BTC і забезпечується дозволеною федерацією мульти-підписів.",
     "riskAnalysis": [
         {
-            "category": "Безпека моста",
+            "category": "Bridge Security",
             "score": 0,
-            "tier": "Високий",
+            "tier": "High",
             "title": "Для зберігання BTC користувачів використовується федеративний мульти-підпис, відомий як Powpeg",
             "content": "Міст між Bitcoin і Rootstock забезпечується федеративним мульти-підписом 5 з 9, відомим як Powpeg (Proof of Work Peg). Ідентичності суб'єктів, які беруть участь у Powpeg, відомі публічно. Користувачі довіряють операторам Powpeg зберігати свої кошти. Дізнайтеся більше про Powpeg у розділі технологій нижче."
         },
         {
-            "category": "Доступність даних",
+            "category": "Data Availability",
             "score": 0,
-            "tier": "Середній",
+            "tier": "Medium",
             "title": "Дані зберігаються і надаються через вузли Rootstock. Запуск вузла є бездозвільним",
             "content": "Дані для оновлень стану Rootstock зберігаються на блокчейні Rootstock. Кожен може запустити вузол Rootstock і перевірити стан блокчейну Rootstock. Якщо хоча б один повний вузол Rootstock не буде очищено, користувачі зможуть відновити всю історію та стан блокчейну Rootstock."
         },
         {
-            "category": "Оператори мережі",
+            "category": "Network Operators",
             "score": 0,
-            "tier": "Середній",
+            "tier": "Medium",
             "title": "Будь-який майнер Bitcoin може брати участь в об'єднаному майнінгу Rootstock",
             "content": "Виробництво блоків є бездозвільним. Будь-хто, хто готовий і має можливість об'єднаного майнінгу Rootstock і Bitcoin, може виробляти блоки Rootstock і отримувати винагороди. Якщо зацікавлені сторони не мають достатньої потужності для конкурентоспроможного сольного майнінгу, вони можуть приєднатися до майнінгового пулу, що підтримує об'єднаний майнінг Rootstock."
         },
         {
-            "category": "Гарантії фіналізації",
+            "category": "Finality Guarantees",
             "score": 0,
-            "tier": "Середній",
+            "tier": "Medium",
             "title": "Гарантії фіналізації надаються механізмом консенсусу Rootstock",
             "content": "Не існує примусу Bitcoin для переходів стану Rootstock. Повні вузли Rootstock приймають блоки, запропоновані майнерами Rootstock."
         }

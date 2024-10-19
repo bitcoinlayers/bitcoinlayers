@@ -53,8 +53,8 @@ export default async function Home() {
     return (
         <div className="mx-auto">
             <Hero
-                title="Layers"
-                description="Not every bitcoin layer is made equal."
+                title={t("layers")}
+                description={t("not-every-bitcoin-layer-is-made-equal")}
             />
             <div className="lg:flex mb-4 justify-center w-full lg:max-w-5xl mx-auto">
                 <BitcoinonlyTable

@@ -1,11 +1,11 @@
 {
     "slug": "bit2",
     "title": "Bit2",
-    "layerType": "Роллап Ethereum",
-    "live": "Тестова мережа",
+    "layerType": "Ethereum Rollup",
+    "live": "Testnet",
     "staking": false,
     "bridge": false,
-    "underReview": "так",
+    "underReview": "yes",
     "riskFactors": ["", "", "", ""],
     "purpose": "-",
     "btcBridge": "-",
@@ -28,28 +28,28 @@
     "description": "Bit2 — це роллап Ethereum, який використовує wBTC для оплати комісій і ділить доходи від послідовників з тримачами wBTC.",
     "riskAnalysis": [
         {
-            "category": "Односторонні виходи",
+            "category": "Unilateral Exits",
             "score": 0,
             "tier": "",
             "title": "",
             "content": ""
         },
         {
-            "category": "Доступність даних",
+            "category": "Data Availability",
             "score": 0,
             "tier": "",
             "title": "",
             "content": ""
         },
         {
-            "category": "Виробництво блоків",
+            "category": "Block Production",
             "score": 0,
             "tier": "",
             "title": "",
             "content": ""
         },
         {
-            "category": "Перевірка стану",
+            "category": "State Validation",
             "score": 0,
             "tier": "",
             "title": "",

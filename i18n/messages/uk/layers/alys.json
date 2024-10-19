@@ -1,11 +1,11 @@
 {
     "slug": "alys",
     "title": "Alys",
-    "layerType": "Сайдчейн",
-    "live": "Оголошено",
+    "layerType": "Sidechain",
+    "live": "Announced",
     "staking": false,
     "bridge": false,
-    "underReview": "так",
+    "underReview": "yes",
     "riskFactors": ["", "", "", ""],
     "purpose": "-",
     "btcBridge": "-",
@@ -28,28 +28,28 @@
     "description": "Alys — це один з сайдчейнів, що розробляється в рамках проекту Anduro. Це буде EVM сайдчейн з універсальними смарт-контрактами. Alys стане частиною екосистеми Anduro.",
     "riskAnalysis": [
         {
-            "category": "Односторонні виходи",
+            "category": "Unilateral Exits",
             "score": 0,
             "tier": "",
             "title": "",
             "content": ""
         },
         {
-            "category": "Доступність даних",
+            "category": "Data Availability",
             "score": 0,
             "tier": "",
             "title": "",
             "content": ""
         },
         {
-            "category": "Виробництво блоків",
+            "category": "Block Production",
             "score": 0,
             "tier": "",
             "title": "",
             "content": ""
         },
         {
-            "category": "Валідація стану",
+            "category": "State Validation",
             "score": 0,
             "tier": "",
             "title": "",

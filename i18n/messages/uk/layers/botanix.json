@@ -1,11 +1,11 @@
 {
     "slug": "botanix",
     "title": "Botanix",
-    "layerType": "Бічний ланцюг",
-    "live": "Тестова мережа",
+    "layerType": "Sidechain",
+    "live": "Testnet",
     "staking": true,
     "bridge": false,
-    "underReview": "так",
+    "underReview": "yes",
     "riskFactors": ["", "", "", ""],
     "purpose": "-",
     "btcBridge": "-",
@@ -28,28 +28,28 @@
     "description": "Botanix — це сумісний з EVM бічний ланцюг, який буде запущено разом із Bitcoin. Він використовуватиме консенсус Proof-of-Stake та Spiderchain для забезпечення мультипідписів BTC для двостороннього зв'язку.",
     "riskAnalysis": [
         {
-            "category": "Односторонні виходи",
+            "category": "Unilateral Exits",
             "score": 0,
             "tier": "",
             "title": "",
             "content": ""
         },
         {
-            "category": "Доступність даних",
+            "category": "Data Availability",
             "score": 0,
             "tier": "",
             "title": "",
             "content": ""
         },
         {
-            "category": "Виробництво блоків",
+            "category": "Block Production",
             "score": 0,
             "tier": "",
             "title": "",
             "content": ""
         },
         {
-            "category": "Перевірка стану",
+            "category": "State Validation",
             "score": 0,
             "tier": "",
             "title": "",

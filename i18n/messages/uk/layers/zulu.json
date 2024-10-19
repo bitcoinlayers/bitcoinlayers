@@ -1,13 +1,13 @@
 {
     "slug": "zulu",
     "title": "Zulu",
-    "layerType": "Суверенний ролап",
-    "live": "Тестова мережа",
+    "layerType": "Sovereign Rollup",
+    "live": "Testnet",
     "staking": false,
     "bridge": false,
-    "underReview": "так",
+    "underReview": "yes",
     "riskFactors": ["", "", "", ""],
-    "purpose": "Загальний",
+    "purpose": "General",
     "btcBridge": "-",
     "settlement": "-",
     "btcLocked": 0,
@@ -28,28 +28,28 @@
     "description": "Zulu Network прагне стати Bitvimium на Bitcoin, що дозволяє розробникам запускати dApps на обох шарах: EVM (ZKSync ZK Stack L2) та UTXO (кастомізований ZKVM L3). Мережа Zulu працює над програмою мосту з мінімізацією довіри і використовуватиме унікальний гібридний механізм видобутку PoS / PoW.",
     "riskAnalysis": [
         {
-            "category": "Односторонні виходи",
+            "category": "Unilateral Exits",
             "score": 0,
             "tier": "",
             "title": "",
             "content": ""
         },
         {
-            "category": "Доступність даних",
+            "category": "Data Availability",
             "score": 0,
             "tier": "",
             "title": "",
             "content": ""
         },
         {
-            "category": "Виробництво блоків",
+            "category": "Block Production",
             "score": 0,
             "tier": "",
             "title": "",
             "content": ""
         },
         {
-            "category": "Валідація стану",
+            "category": "State Validation",
             "score": 0,
             "tier": "",
             "title": "",

@@ -1,11 +1,11 @@
 {
     "slug": "starknet",
     "title": "Starknet",
-    "layerType": "Роллап",
-    "live": "Запропоновано",
+    "layerType": "Rollup",
+    "live": "Proposed",
     "staking": false,
     "bridge": false,
-    "underReview": "так",
+    "underReview": "yes",
     "riskFactors": ["", "", "", ""],
     "purpose": "-",
     "btcBridge": "-",
@@ -28,28 +28,28 @@
     "description": "Starknet — це валідний роллап на Ethereum. Вони пропонують мульти-розрахунковий роллап, який буде проводити розрахунки на Bitcoin та Ethereum, якщо OP_CAT буде активовано. Наразі вони розробляють STARK верифікатор безпосередньо в Script з OP_CAT на signet.",
     "riskAnalysis": [
         {
-            "category": "Односторонні виходи",
+            "category": "Unilateral Exits",
             "score": 0,
             "tier": "",
             "title": "",
             "content": ""
         },
         {
-            "category": "Доступність даних",
+            "category": "Data Availability",
             "score": 0,
             "tier": "",
             "title": "",
             "content": ""
         },
         {
-            "category": "Виробництво блоків",
+            "category": "Block Production",
             "score": 0,
             "tier": "",
             "title": "",
             "content": ""
         },
         {
-            "category": "Валідація стану",
+            "category": "State Validation",
             "score": 0,
             "tier": "",
             "title": "",

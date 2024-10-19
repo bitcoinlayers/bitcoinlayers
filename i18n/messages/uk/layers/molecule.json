@@ -1,11 +1,11 @@
 {
     "slug": "molecule",
     "title": "Molecule",
-    "layerType": "Роллап",
-    "live": "Оголошено",
+    "layerType": "Rollup",
+    "live": "Announced",
     "staking": false,
     "bridge": false,
-    "underReview": "так",
+    "underReview": "yes",
     "riskFactors": ["", "", "", ""],
     "purpose": "-",
     "btcBridge": "-",
@@ -28,28 +28,28 @@
     "description": "Molecule — це запропонований дизайн другого рівня, який використовуватиме віртуальну машину Solana. Нещодавно проект був оголошений, очікується, що інформація про дизайн з'явиться незабаром. Наразі доступно мало інформації про те, як він успадковує безпеку Bitcoin.",
     "riskAnalysis": [
         {
-            "category": "Односторонні виходи",
+            "category": "Unilateral Exits",
             "score": 0,
             "tier": "",
             "title": "",
             "content": ""
         },
         {
-            "category": "Доступність даних",
+            "category": "Data Availability",
             "score": 0,
             "tier": "",
             "title": "",
             "content": ""
         },
         {
-            "category": "Виробництво блоків",
+            "category": "Block Production",
             "score": 0,
             "tier": "",
             "title": "",
             "content": ""
         },
         {
-            "category": "Перевірка стану",
+            "category": "State Validation",
             "score": 0,
             "tier": "",
             "title": "",

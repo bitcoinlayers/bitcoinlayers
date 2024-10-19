@@ -1,15 +1,15 @@
 {
     "slug": "mezo",
     "title": "Mezo",
-    "layerType": "Сайдчейн",
-    "live": "Оголошено",
+    "layerType": "Sidechain",
+    "live": "Announced",
     "staking": false,
     "bridge": false,
-    "underReview": "так",
+    "underReview": "yes",
     "riskFactors": ["", "", "", ""],
-    "purpose": "Загального призначення",
-    "btcBridge": "Пороговий",
-    "settlement": "Зовнішнє",
+    "purpose": "General purpose",
+    "btcBridge": "Threshold",
+    "settlement": "External",
     "btcLocked": 0,
     "executionEnv": "-",
     "consensus": "-",
@@ -28,28 +28,28 @@
     "description": "Mezo розробляє протокол сайдчейну загального призначення, який підтримуватиме загальносистемні додатки. Він працюватиме на протоколі консенсусу CometBFT, який забезпечується ставками BTC і токена Mezo. Для моста Bitcoin буде використовуватись tBTC.",
     "riskAnalysis": [
         {
-            "category": "Односторонні виходи",
+            "category": "Unilateral Exits",
             "score": 0,
             "tier": "",
             "title": "",
             "content": ""
         },
         {
-            "category": "Доступність даних",
+            "category": "Data Availability",
             "score": 0,
             "tier": "",
             "title": "",
             "content": ""
         },
         {
-            "category": "Виробництво блоків",
+            "category": "Block Production",
             "score": 0,
             "tier": "",
             "title": "",
             "content": ""
         },
         {
-            "category": "Перевірка стану",
+            "category": "State Validation",
             "score": 0,
             "tier": "",
             "title": "",
