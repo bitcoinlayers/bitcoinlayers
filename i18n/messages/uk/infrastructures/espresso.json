@@ -1,0 +1,34 @@
+{
+    "slug": "espresso",
+    "title": "Espresso",
+    "infrastructureType": "Sequencing & DA",
+    "live": "Proposed",
+    "staking": false,
+    "bridge": false,
+    "underReview": "yes",
+    "riskFactors": ["", ""],
+    "bitcoinSecurity": "No",
+    "nativeToken": "-",
+    "purpose": "General",
+    "associatedLayers": "-",
+    "bitcoinOnly": false,
+    "links": [
+        "https://espressosys.com/",
+        "https://espressosys.com/",
+        "https://docs.espressosys.com/",
+        "https://github.com/EspressoSystems",
+        "https://twitter.com/espressosys"
+    ],
+    "description": "Espresso — це спільний ринок послідовників. Він дозволяє блокчейнам стилю ролапу продавати свої права на послідовність на ринку послідовників, які роблять ставки на права на побудову ролап-блоків. Додатково він запускає протокол консенсусу, який надає ролапам, що беруть участь в Espresso, більш безпечні попередні підтвердження.",
+    "sections": [
+        {
+            "id": "selfsubmit",
+            "title": "Процес самостійної подачі інформації",
+            "content": [
+                {
+                    "content": "Проект Bitcoin Layers надає пріоритет оглядам ризиків проектів, які знаходяться в експлуатації та приймають BTC депозити користувачів. Проекти на тестовій мережі можуть подавати інформацію про свій проект. Ми не публікуємо оцінки ризиків для проектів, які не перебувають в експлуатації.\n\nОсь [інструкції](https://github.com/bitcoinlayers/bitcoinlayers/blob/main/SELFSUBMIT.md) щодо самостійної подачі проекту."
+                }
+            ]
+        }
+    ]
+}

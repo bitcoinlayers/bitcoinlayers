@@ -2,11 +2,13 @@
 
 import React, { useState, useEffect } from "react";
 import { Infrastructure } from "./infrastructureProps";
+import { useTranslations } from "next-intl";
 
 const InfrastructureMenu: React.FC<{ infrastructure: Infrastructure }> = ({
     infrastructure,
 }) => {
     const [activeSection, setActiveSection] = useState("overview");
+    const t = useTranslations("infrastructure");
 
     useEffect(() => {
         const handleScroll = () => {
@@ -47,7 +49,7 @@ const InfrastructureMenu: React.FC<{ infrastructure: Infrastructure }> = ({
             <div className="flex lg:flex-col justify-start items-start lg:gap-4 gap-2 z-40">
                 {/*  menu is updating with coloring to match the live section */}
                 {[
-                    { id: "overview", title: "Overview" },
+                    { id: "overview", title: t("overview") },
                     ...infrastructure.sections,
                 ].map((section, index) => (
                     <div

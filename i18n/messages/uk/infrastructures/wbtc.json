@@ -1,0 +1,44 @@
+{
+    "slug": "wbtc",
+    "title": "wBTC",
+    "infrastructureType": "BTC Wrapper",
+    "live": "Mainnet",
+    "staking": false,
+    "bridge": true,
+    "underReview": "yes",
+    "riskFactors": ["", ""],
+    "bitcoinSecurity": "No",
+    "nativeToken": "-",
+    "purpose": "General",
+    "associatedLayers": "-",
+    "bitcoinOnly": false,
+    "links": [
+        "https://threshold.network/",
+        "https://threshold.network/",
+        "https://docs.threshold.network/",
+        "https://github.com/threshold-network",
+        "https://x.com/thetnetwork"
+    ],
+    "description": "На розгляді",
+    "sections": [
+        {
+            "id": "selfsubmit",
+            "title": "Процес самостійної подачі інформації",
+            "content": [
+                {
+                    "content": "Проект Bitcoin Layers надає пріоритет ризиковим оцінкам проектів, які знаходяться в експлуатації та приймають BTC-депозити користувачів. Проекти на тестовій мережі можуть подавати інформацію про свій проект. Ми не публікуємо оцінки ризиків для проектів, які не знаходяться в експлуатації.\n\nОсь [інструкції](https://github.com/bitcoinlayers/bitcoinlayers/blob/main/SELFSUBMIT.md) щодо самостійної подачі проекту."
+                }
+            ]
+        },
+        {
+            "id": "knowledgeBits",
+            "title": "Знання",
+            "content": [
+                {
+                    "title": "Дізнайтеся більше",
+                    "content": "[Порівняння Bitcoin Layers tBTC, wBTC та cbBTC](https://mirror.xyz/0x715823F52163575f023b9090a775522249887619/3gaFbT7qQBKEbsjN3Gp_SQe6-QvdZNHuszoasNnvSUo)"
+                }
+            ]
+        }
+    ]
+}

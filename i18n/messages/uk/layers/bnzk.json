@@ -1,0 +1,80 @@
+{
+    "slug": "bnzk",
+    "title": "Bnzk",
+    "layerType": "Rollup",
+    "live": "Announced",
+    "staking": false,
+    "bridge": false,
+    "underReview": "yes",
+    "riskFactors": ["", "", "", ""],
+    "purpose": "-",
+    "btcBridge": "-",
+    "settlement": "-",
+    "btcLocked": 0,
+    "executionEnv": "-",
+    "consensus": "-",
+    "nativeToken": "-",
+    "feeToken": "-",
+    "enshrinedBtc": "-",
+    "bitcoinOnly": false,
+    "links": [
+        "https://bnzk.io/",
+        "https://bnzk.io/",
+        "https://docs.bnzk.io/",
+        "https://bnzk.io/",
+        "https://docs.bnzk.io/",
+        "https://twitter.com/BnzkLabs"
+    ],
+    "description": "Bnzk працює над використанням технології zk для покращення торгівлі Ordinals і BRC-20.",
+    "riskAnalysis": [
+        {
+            "category": "Unilateral Exits",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "Data Availability",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "Block Production",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "State Validation",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        }
+    ],
+    "sections": [
+        {
+            "id": "description",
+            "title": "Опис",
+            "content": [
+                {
+                    "content": "Bnzk працює над використанням технології zk для покращення торгівлі Ordinals і BRC-20."
+                }
+            ]
+        },
+        {
+            "id": "knowledgeBits",
+            "title": "Знання",
+            "content": [
+                {
+                    "title": "Дізнайтеся більше",
+                    "content": "[Сайт Bnzk.](https://bnzk.io/)\n[Документаційний сайт Bnzk.](https://docs.bnzk.io/)"
+                }
+            ]
+        }
+    ]
+}

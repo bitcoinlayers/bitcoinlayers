@@ -1,0 +1,98 @@
+{
+    "slug": "botanix",
+    "title": "Botanix",
+    "layerType": "Sidechain",
+    "live": "Testnet",
+    "staking": true,
+    "bridge": false,
+    "underReview": "yes",
+    "riskFactors": ["", "", "", ""],
+    "purpose": "-",
+    "btcBridge": "-",
+    "settlement": "-",
+    "btcLocked": 0,
+    "executionEnv": "-",
+    "consensus": "-",
+    "nativeToken": "-",
+    "feeToken": "-",
+    "enshrinedBtc": "-",
+    "bitcoinOnly": true,
+    "links": [
+        "https://www.botanixlabs.xyz/en/home",
+        "https://www.botanixlabs.xyz/en/home",
+        "https://docs.botanixlabs.xyz/botanix-labs",
+        "https://blockscout.botanixlabs.dev/",
+        "https://github.com/botanix-labs",
+        "https://twitter.com/BotanixLabs"
+    ],
+    "description": "Botanix — це сумісний з EVM бічний ланцюг, який буде запущено разом із Bitcoin. Він використовуватиме консенсус Proof-of-Stake та Spiderchain для забезпечення мультипідписів BTC для двостороннього зв'язку.",
+    "riskAnalysis": [
+        {
+            "category": "Unilateral Exits",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "Data Availability",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "Block Production",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "State Validation",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        }
+    ],
+    "sections": [
+        {
+            "id": "technology",
+            "title": "Запропоновані технології",
+            "content": [
+                {
+                    "title": "Spiderchain буде використовуватись для децентралізації учасників двостороннього зв'язку",
+                    "content": "Botanix реалізує технологію під назвою Spiderchain для децентралізації учасників, які відповідають за зберігання біткоїнів користувачів у двосторонньому зв'язку. Spiderchain складається з розподіленої мережі мультипідписів, які забезпечуються підмножиною стейкерів у мережі."
+                },
+                {
+                    "title": "Rust-реалізація EVM",
+                    "content": "Botanix використовуватиме форк Rust-реалізації EVM, відомий як Reth. Reth розроблено як високо модульна, продуктивна та зручна версія EVM. Розробники на Solidity (поширена мова в Ethereum) зможуть легко переносити свої програми на реалізацію EVM Spiderchain."
+                },
+                {
+                    "title": "Стейкінг Bitcoin",
+                    "content": "Botanix впровадить версію стейкінгу Bitcoin для забезпечення мережі. Ймовірно, що будь-який власник Bitcoin з достатнім капіталом зможе брати участь у стейкінгу на Botanix і отримувати винагороди за забезпечення мережі."
+                }
+            ]
+        },
+        {
+            "id": "selfsubmit",
+            "title": "Процес самостійної подачі інформації",
+            "content": [
+                {
+                    "content": "Проект Bitcoin Layers надає пріоритет оглядам ризиків проектів, які працюють і приймають депозити BTC від користувачів. Проекти на тестовій мережі можуть подавати інформацію про свої проекти. Ми не публікуємо оцінки ризиків для проектів, які не працюють.\n\nІнформацію про те, як подати інформацію про проект, можна знайти в розділі Knowledge Bits."
+                }
+            ]
+        },
+        {
+            "id": "knowledgeBits",
+            "title": "Знання",
+            "content": [
+                {
+                    "title": "Дізнайтеся більше",
+                    "content": "[Вебсайт Botanix](https://www.botanixlabs.xyz/en/home)\n[Взаємодія з тестовою мережею Botanix](https://docs.botanixlabs.xyz/botanix-labs/how-to-use-botanix/getting-started-with-botanix)\n[Вступ до Spiderchain](https://blog.lopp.net/an-introduction-to-spiderchain/)"
+                }
+            ]
+        }
+    ]
+}

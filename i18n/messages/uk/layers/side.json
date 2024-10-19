@@ -1,0 +1,70 @@
+{
+    "slug": "side",
+    "title": "Side Protocol",
+    "layerType": "Sidechain",
+    "live": "Testnet",
+    "staking": false,
+    "bridge": false,
+    "underReview": "yes",
+    "riskFactors": ["", "", "", ""],
+    "purpose": "Settlement Layer",
+    "btcBridge": "-",
+    "settlement": "-",
+    "btcLocked": 0,
+    "executionEnv": "-",
+    "consensus": "-",
+    "nativeToken": "-",
+    "feeToken": "-",
+    "enshrinedBtc": "-",
+    "bitcoinOnly": false,
+    "links": [
+        "https://side.one/",
+        "https://side.one/",
+        "https://docs.side.one/",
+        "https://explorer.side.exchange/",
+        "https://github.com/sideprotocol",
+        "https://twitter.com/SideProtocol"
+    ],
+    "description": "Side Protocol створює шар розрахунків для модульних блокчейнів. Він буде працювати на механізмі консенсусу Proof-of-Stake. Його відношення до Bitcoin буде як до бічної ланки, а роллапи, що розраховуються на Side, можуть використовувати його контракт мосту BTC.",
+    "riskAnalysis": [
+        {
+            "category": "Unilateral Exits",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "Data Availability",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "Block Production",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "State Validation",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        }
+    ],
+    "sections": [
+        {
+            "id": "selfsubmit",
+            "title": "Процес самостійного подання інформації",
+            "content": [
+                {
+                    "content": "Проект Bitcoin Layers надає пріоритет ризиковим оглядам проектів, які вже в продуктивному стані та приймають BTC депозити користувачів. Проекти на тестовій мережі можуть подавати інформацію про свої проекти. Ми не публікуємо оцінки ризику для проектів, які не в продуктивному стані.\n\nОсь [інструкції](https://github.com/bitcoinlayers/bitcoinlayers/blob/main/SELFSUBMIT.md) щодо самостійного подання проекту."
+                }
+            ]
+        }
+    ]
+}

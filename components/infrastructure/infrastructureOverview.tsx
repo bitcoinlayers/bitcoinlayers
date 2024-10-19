@@ -2,6 +2,7 @@ import React from "react";
 import { Infrastructure } from "./infrastructureProps";
 import Image from "next/image";
 import { parseTextWithLinks } from "@/util/parseTextWithLinks";
+import { useTranslations } from "next-intl";
 
 const LinkButton = ({
     href,
@@ -13,7 +14,7 @@ const LinkButton = ({
     <a
         href={href}
         target="_blank"
-        className="inline-block px-3 py-0.5 bg-white rounded-full border border-slate-300 justify-center items-center gap-2 flex transition duration-300 ease-in-out hover:bg-lightsecondary no-underline text-slate-600 text-sm font-normal leading-tight"
+        className="px-3 py-0.5 bg-white rounded-full border border-slate-300 justify-center items-center gap-2 flex transition duration-300 ease-in-out hover:bg-lightsecondary no-underline text-slate-600 text-sm font-normal leading-tight"
     >
         {children}
     </a>
@@ -22,11 +23,12 @@ const LinkButton = ({
 const Categories: React.FC<{ infrastructure: Infrastructure }> = ({
     infrastructure,
 }) => {
+    const t = useTranslations("infrastructure");
     return (
         <div className="flex gap-12 w-full">
             <div className="flex-col justify-center items-start">
                 <div className="text-text_primary text-sm leading-tight">
-                    Type
+                    {t("type")}
                 </div>
                 <div className="text-text_header">
                     {infrastructure.infrastructureType}
@@ -34,13 +36,13 @@ const Categories: React.FC<{ infrastructure: Infrastructure }> = ({
             </div>
             <div className="flex-col justify-center items-start">
                 <div className="text-text_primary text-sm leading-tight">
-                    Purpose
+                    {t("purpose")}
                 </div>
                 <div className="text-text_header">{infrastructure.purpose}</div>
             </div>
             <div className="flex-col justify-center items-start">
                 <div className="text-text_primary text-sm leading-tight">
-                    Associated Layers
+                    {t("associated-layers")}
                 </div>
                 <div className="text-text_header">
                     {infrastructure.associatedLayers}
@@ -63,6 +65,8 @@ const Description: React.FC<{ infrastructure: Infrastructure }> = ({
 const Links: React.FC<{ infrastructure: Infrastructure }> = ({
     infrastructure,
 }) => {
+    const t = useTranslations("infrastructure");
+
     return (
         <div className="self-stretch flex justify-start items-start gap-4 flex-wrap">
             <LinkButton href={String(infrastructure.links[0])}>
@@ -77,7 +81,7 @@ const Links: React.FC<{ infrastructure: Infrastructure }> = ({
                         />
                     </div>
                 </div>
-                Website
+                {t("website")}
             </LinkButton>
             <LinkButton href={String(infrastructure.links[3])}>
                 <div className="bg-white/opacity-0 flex-col justify-center items-center inline-flex">
@@ -91,7 +95,7 @@ const Links: React.FC<{ infrastructure: Infrastructure }> = ({
                         />
                     </div>
                 </div>
-                Docs
+                {t("docs")}
             </LinkButton>
             {/* <LinkButton href={String(infrastructure.links[3])}>
         <div className="bg-white/opacity-0 flex-col justify-center items-center inline-flex">
@@ -119,7 +123,7 @@ const Links: React.FC<{ infrastructure: Infrastructure }> = ({
                         />
                     </div>
                 </div>
-                GitHub
+                {t("github")}
             </LinkButton>
             <LinkButton href={String(infrastructure.links[5])}>
                 <div className="bg-white/opacity-0 flex-col justify-center items-center inline-flex">
@@ -133,7 +137,7 @@ const Links: React.FC<{ infrastructure: Infrastructure }> = ({
                         />
                     </div>
                 </div>
-                Twitter
+                {t("twitter")}
             </LinkButton>
         </div>
     );

@@ -1,10 +1,13 @@
-import { allLayers } from "@/util/layer_index";
-import { allInfrastructures } from "@/util/infrastructure_index";
-
 import FederationTable from "@/components/tables/federation-table";
 import Hero from "@/components/hero";
+import { getTranslations } from "next-intl/server";
+import { getAllInfrastructure, getAllLayersWithSlugs } from "@/i18n/helpers";
 
-export default function BridgesPage() {
+export default async function BridgesPage() {
+    const t = await getTranslations("federation-table");
+    const { allLayers } = await getAllLayersWithSlugs();
+    const { allInfrastructures } = await getAllInfrastructure();
+
     const sortedEverything = [...allLayers, ...allInfrastructures]
         .filter((item) => item.bridge)
         .sort((a, b) =>
@@ -22,27 +25,23 @@ export default function BridgesPage() {
     ];
 
     const layerHeaders = [
+        { name: t("name"), showSorting: false, mobileLabel: t("name") },
+        { name: t("snapshot"), showSorting: false, mobileLabel: t("snapshot") },
         {
-            name: "Name",
-            showSorting: true,
-            mobileLabel: "Name",
-        },
-        { name: "Snapshot", showSorting: false, mobileLabel: "Snapshot" },
-        {
-            name: "Type",
-            showSorting: true,
-            mobileLabel: "Type",
+            name: t("type"),
+            showSorting: false,
+            mobileLabel: t("type"),
             filterOptions: typeFilters,
         },
-        { name: "Status", showSorting: true, mobileLabel: "Status" },
-        { name: "TVL", showSorting: true, mobileLabel: "TVL" },
+        { name: t("status"), showSorting: true, mobileLabel: t("status") },
+        { name: t("tvl"), showSorting: true, mobileLabel: t("tvl") },
     ];
 
     return (
         <div className="mx-auto">
             <Hero
-                title="Bridges"
-                description="Not every bitcoin bridge is made equal."
+                title={t("bridges")}
+                description={t("not-every-bitcoin-bridge-is-made-equal")}
             />
             <div className="lg:flex mb-4 justify-center w-full lg:max-w-5xl mx-auto">
                 <FederationTable

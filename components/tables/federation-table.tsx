@@ -9,6 +9,7 @@ import TableHeader from "@/components/tables/tableHeader";
 import { MobileView, isMobile } from "react-device-detect";
 import Link from "next/link";
 import { useQueryState } from "nuqs";
+import { useTranslations } from "next-intl";
 
 type TableTabKey = "Snapshot" | "Type" | "Status" | "TVL";
 
@@ -55,6 +56,7 @@ const LayerImage = ({ src, title }: { src: string; title: string }) => {
 };
 
 const FederationTable = ({ data, headers }: Props) => {
+    const t = useTranslations("federation-table");
     const [status, setStatus] = useQueryState("status", {
         defaultValue: "Mainnet",
     });
@@ -171,7 +173,7 @@ const FederationTable = ({ data, headers }: Props) => {
                                     : "text-slate-600"
                             }`}
                         >
-                            Mainnet
+                            {t("mainnet")}
                         </div>
                     </div>
                     <div
@@ -190,7 +192,7 @@ const FederationTable = ({ data, headers }: Props) => {
                                         : "text-slate-600"
                                 }`}
                             >
-                                Testnet
+                                {t("testnet")}
                             </div>
                         </div>
                     </div>
@@ -210,7 +212,7 @@ const FederationTable = ({ data, headers }: Props) => {
                                         : "text-slate-600"
                                 }`}
                             >
-                                All
+                                {t("all")}
                             </div>
                         </div>
                     </div>
@@ -346,7 +348,7 @@ const FederationTable = ({ data, headers }: Props) => {
                                                     : `infrastructure/${item.slug}`
                                             }`}
                                         >
-                                            Coming Soon{/* TODO */}
+                                            {t('coming-soon')}{/* TODO */}
                                         </Link>
                                     </td>
                                 )}

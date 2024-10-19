@@ -1,0 +1,44 @@
+{
+    "slug": "kbtc",
+    "title": "kBTC",
+    "infrastructureType": "BTC Wrapper",
+    "live": "Mainnet",
+    "staking": false,
+    "bridge": true,
+    "underReview": "yes",
+    "riskFactors": ["", ""],
+    "bitcoinSecurity": "No",
+    "nativeToken": "-",
+    "purpose": "General",
+    "associatedLayers": "Ethereum, Optimism",
+    "bitcoinOnly": false,
+    "links": [
+        "https://www.kraken.com/",
+        "https://www.kraken.com/",
+        "https://www.kraken.com/kbtc",
+        "https://www.kraken.com/kbtc",
+        "https://www.kraken.com/",
+        "https://x.com/krakenfx"
+    ],
+    "description": "На розгляді",
+    "sections": [
+        {
+            "id": "contracts",
+            "title": "Адреси контрактів",
+            "content": [
+                {
+                    "content": "[kBTC OP Mainnet смарт-контракт](https://optimistic.etherscan.io/token/0x73E0C0d45E048D25Fc26Fa3159b0aA04BfA4Db98)\n\n[kBTC ETH смарт-контракт](https://etherscan.io/token/0x73e0c0d45e048d25fc26fa3159b0aa04bfa4db98)\n\n[Адреса зберігання BTC](https://mempool.space/address/bc1qqwf6hexnnswmj6yuhz5xyj20frtp8exv7mclck)"
+                }
+            ]
+        },
+        {
+            "id": "selfsubmit",
+            "title": "Процес самостійного подання інформації",
+            "content": [
+                {
+                    "content": "Проект Bitcoin Layers надає пріоритет оцінкам ризиків для проектів, які перебувають у виробництві та приймають депозити BTC від користувачів. Проекти на тестовій мережі можуть подавати інформацію про свої проекти. Ми не публікуємо оцінки ризиків для проектів, які не перебувають у виробництві.\n\nОсь [інструкції](https://github.com/bitcoinlayers/bitcoinlayers/blob/main/SELFSUBMIT.md) щодо самостійного подання проекту."
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,70 @@
+{
+    "slug": "mercurylayer",
+    "title": "Mercury Layer",
+    "layerType": "Statechain",
+    "live": "Mainnet",
+    "staking": false,
+    "bridge": false,
+    "underReview": "yes",
+    "riskFactors": ["", "", "", "", ""],
+    "purpose": "-",
+    "btcBridge": "Smart Contract",
+    "settlement": "External",
+    "btcLocked": 0,
+    "executionEnv": "Statechain",
+    "consensus": "-",
+    "nativeToken": "BTC",
+    "feeToken": "BTC",
+    "enshrinedBtc": "BTC",
+    "bitcoinOnly": true,
+    "links": [
+        "https://mercurylayer.com/",
+        "https://github.com/commerceblock/mercurylayer/blob/dev/docs/README.md",
+        "https://github.com/commerceblock/mercurylayer/blob/dev/docs/README.md",
+        "https://mercurylayer.com/",
+        "https://github.com/commerceblock/mercurylayer",
+        "https://twitter.com/mercurylayer"
+    ],
+    "description": "Mercury Layer — це реалізація протоколу Statechain. Він дозволяє офчейн-передачу BTC.",
+    "riskAnalysis": [
+        {
+            "category": "Unilateral Exits",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "Data Availability",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "Block Production",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "State Validation",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        }
+    ],
+    "sections": [
+        {
+            "id": "selfsubmit",
+            "title": "Процес самостійної подачі інформації",
+            "content": [
+                {
+                    "content": "Проект Bitcoin Layers пріоритетно розглядає ризики проектів, які вже запущені та приймають депозити BTC від користувачів. Проекти на тестовій мережі можуть подавати інформацію про свої проекти. Ми не публікуємо оцінки ризиків для проектів, які не в виробництві.\n\nОсь [інструкції](https://github.com/bitcoinlayers/bitcoinlayers/blob/main/SELFSUBMIT.md) щодо самостійної подачі проекту."
+                }
+            ]
+        }
+    ]
+}

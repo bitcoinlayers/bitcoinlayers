@@ -1,0 +1,34 @@
+{
+    "slug": "sovereign",
+    "title": "Sovereign",
+    "infrastructureType": "Rollup SDK",
+    "live": "Testnet",
+    "staking": false,
+    "bridge": false,
+    "underReview": "yes",
+    "riskFactors": ["", ""],
+    "bitcoinSecurity": "No",
+    "nativeToken": "-",
+    "purpose": "General",
+    "associatedLayers": "-",
+    "bitcoinOnly": true,
+    "links": [
+        "https://www.sovereign.xyz/",
+        "https://www.sovereign.xyz/",
+        "https://github.com/Sovereign-Labs/sovereign-sdk",
+        "https://github.com/Sovereign-Labs/sovereign-sdk",
+        "https://x.com/sovereign_labs"
+    ],
+    "description": "Sovereign — це фреймворк для створення суверенних роллапів. Їхня інфраструктура використовується для підтримки розгортання кількох роллапів в екосистемі Bitcoin.",
+    "sections": [
+        {
+            "id": "selfsubmit",
+            "title": "Процес самостійної подачі інформації",
+            "content": [
+                {
+                    "content": "Проект Bitcoin Layers надає пріоритет оцінці ризиків для проектів, які знаходяться в експлуатації та приймають депозити BTC від користувачів. Проекти на тестовій мережі можуть подавати інформацію про свій проект. Ми не публікуємо оцінки ризиків для проектів, які не знаходяться в експлуатації.\n\nОсь [інструкції](https://github.com/bitcoinlayers/bitcoinlayers/blob/main/SELFSUBMIT.md) щодо самостійної подачі проекту."
+                }
+            ]
+        }
+    ]
+}

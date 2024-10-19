@@ -1,0 +1,80 @@
+{
+    "slug": "rif",
+    "title": "RIF",
+    "layerType": "Sidechain Rollup",
+    "live": "Testnet",
+    "staking": false,
+    "bridge": false,
+    "underReview": "yes",
+    "riskFactors": ["", "", "", ""],
+    "purpose": "-",
+    "btcBridge": "-",
+    "settlement": "-",
+    "btcLocked": 0,
+    "executionEnv": "-",
+    "consensus": "-",
+    "nativeToken": "-",
+    "feeToken": "-",
+    "enshrinedBtc": "-",
+    "bitcoinOnly": false,
+    "links": [
+        "https://rif.technology/",
+        "https://dev.rootstock.io/rif/",
+        "https://dev.rootstock.io/rif/",
+        "https://explorer.testnet.rollup.rif.technology/",
+        "https://dev.rootstock.io/rif/rollup/dev-reference/",
+        "https://twitter.com/RIFtechnology"
+    ],
+    "description": "Rif — це запропонований дизайн ролапу, який буде здійснювати розрахунки на сайдчейні Rootstock. Це форк коду zkSync.",
+    "riskAnalysis": [
+        {
+            "category": "Unilateral Exits",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "Data Availability",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "Block Production",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "State Validation",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        }
+    ],
+    "sections": [
+        {
+            "id": "description",
+            "title": "Опис",
+            "content": [
+                {
+                    "content": "Rif — це запропонований дизайн ролапу, який буде здійснювати розрахунки на сайдчейні Rootstock. Це форк коду zkSync."
+                }
+            ]
+        },
+        {
+            "id": "knowledgeBits",
+            "title": "Знання",
+            "content": [
+                {
+                    "title": "Дізнайтеся більше",
+                    "content": "[Документація RIF](https://dev.rootstock.io/rif/)\n[Доступ до тестової мережі RIF як розробник](https://dev.rootstock.io/rif/rollup/dev-reference/)"
+                }
+            ]
+        }
+    ]
+}

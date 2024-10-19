@@ -1,11 +1,9 @@
 import "./globals.css";
+import { getLocale, getMessages, getTimeZone } from "next-intl/server";
 import { Inter } from "next/font/google";
-import { ThemeProvider } from "@/components/theme-provider";
 import { Analytics } from "@/components/analytics";
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
-import { QueryClientProvider } from "@tanstack/react-query";
-import { queryClient } from "@/util/tanstack";
 import Providers from "@/components/providers";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -19,11 +17,21 @@ interface RootLayoutProps {
     children: React.ReactNode;
 }
 
-export default function RootLayout({ children }: RootLayoutProps) {
+export default async function RootLayout({ children }: RootLayoutProps) {
+    const [locale, messages, timeZone] = await Promise.all([
+        getLocale(),
+        getMessages(),
+        getTimeZone(),
+    ]);
+
     return (
-        <html lang="en" suppressHydrationWarning>
+        <html lang={locale} suppressHydrationWarning>
             <body className={`antialiased ${inter.className}`}>
-                <Providers>
+                <Providers
+                    messages={messages}
+                    locale={locale}
+                    timeZone={timeZone}
+                >
                     <div className="mx-auto min-h-screen bg-bg_primary">
                         <Navbar />
                         <main>{children}</main>

@@ -1,0 +1,70 @@
+{
+    "slug": "lumibit",
+    "title": "Lumibit",
+    "layerType": "Rollup",
+    "live": "Testnet",
+    "staking": false,
+    "bridge": false,
+    "underReview": "yes",
+    "riskFactors": ["", "", "", ""],
+    "purpose": "-",
+    "btcBridge": "TBD",
+    "settlement": "-",
+    "btcLocked": 0,
+    "executionEnv": "-",
+    "consensus": "-",
+    "nativeToken": "-",
+    "feeToken": "LBIT",
+    "enshrinedBtc": "-",
+    "bitcoinOnly": false,
+    "links": [
+        "https://lumibit.xyz/",
+        "https://lumibit.gitbook.io/lumibit-gitbook",
+        "https://lumibit.gitbook.io/lumibit-gitbook",
+        "https://test-scan.lumibit.xyz/",
+        "https://lumibit.gitbook.io/lumibit-gitbook/development-guide/typescript-sdk",
+        "https://twitter.com/LumiBitL2"
+    ],
+    "description": "Lumibit розробляє суверенний роллап, використовуючи технологічний стек Scoll. Інформація про дизайн роллапу обмежена, але була випущена приватна тестова мережа.",
+    "riskAnalysis": [
+        {
+            "category": "Unilateral Exits",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "Data Availability",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "Block Production",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "State Validation",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        }
+    ],
+    "sections": [
+        {
+            "id": "selfsubmit",
+            "title": "Процес самостійної подачі інформації",
+            "content": [
+                {
+                    "content": "Проект Bitcoin Layers пріоритетно розглядає ризики проектів, які вже запущені та приймають депозити BTC від користувачів. Проекти на тестовій мережі можуть подавати інформацію про свої проекти. Ми не публікуємо оцінки ризиків для проектів, які не в виробництві.\n\nОсь [інструкції](https://github.com/bitcoinlayers/bitcoinlayers/blob/main/SELFSUBMIT.md) щодо самостійної подачі проекту."
+                }
+            ]
+        }
+    ]
+}

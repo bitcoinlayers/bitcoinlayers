@@ -1,0 +1,70 @@
+{
+    "slug": "zkcoins",
+    "title": "zkCoins",
+    "layerType": "zkCSV",
+    "live": "Announced",
+    "staking": false,
+    "bridge": false,
+    "underReview": "yes",
+    "riskFactors": ["", "", "", ""],
+    "purpose": "-",
+    "btcBridge": "-",
+    "settlement": "-",
+    "btcLocked": 0,
+    "executionEnv": "-",
+    "consensus": "-",
+    "nativeToken": "-",
+    "feeToken": "-",
+    "enshrinedBtc": "-",
+    "bitcoinOnly": true,
+    "links": [
+        "https://zerosync.org/",
+        "https://twitter.com/bitcoinlayers",
+        "https://gist.github.com/RobinLinus/d036511015caea5a28514259a1bab119",
+        "https://gist.github.com/RobinLinus/d036511015caea5a28514259a1bab119",
+        "https://github.com/ZeroSync/ZeroSync",
+        "https://twitter.com/ZeroSync_"
+    ],
+    "description": "zkCoins — це запропонований протокол zkCSV, який підтримуватиме конфіденційні платежі для BTC та токенізованих активів. Команда Zerosync розробляє BitVM для створення покращених довірчих припущень для моста між основним ланцюгом Bitcoin і протоколом zkCoins.",
+    "riskAnalysis": [
+        {
+            "category": "Unilateral Exits",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "Data Availability",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "Block Production",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "State Validation",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        }
+    ],
+    "sections": [
+        {
+            "id": "selfsubmit",
+            "title": "Процес самостійної подачі інформації",
+            "content": [
+                {
+                    "content": "Проект Bitcoin Layers надає пріоритет оцінкам ризику для проектів, які знаходяться в продукції та приймають BTC депозити користувачів. Проекти на тестовій мережі можуть подавати інформацію про свій проект. Ми не публікуємо оцінки ризиків для проектів, які не знаходяться в продукції.\n\nОсь [інструкції](https://github.com/bitcoinlayers/bitcoinlayers/blob/main/SELFSUBMIT.md) щодо самостійної подачі проекту."
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,34 @@
+{
+    "slug": "dlclink",
+    "title": "DLC Link",
+    "infrastructureType": "BTC Wrapper",
+    "live": "Mainnet",
+    "staking": false,
+    "bridge": true,
+    "underReview": "yes",
+    "riskFactors": ["", ""],
+    "bitcoinSecurity": "yes",
+    "nativeToken": "-",
+    "purpose": "General",
+    "associatedLayers": "-",
+    "bitcoinOnly": false,
+    "links": [
+        "https://www.dlc.link/",
+        "https://www.dlc.link/",
+        "https://github.com/DLC-link/gitbook-docs",
+        "https://github.com/dlc-link",
+        "https://x.com/dlc_link"
+    ],
+    "description": "DLC Link підтримує розробку dlcBTC, обгортки для Bitcoin, яка використовує контракти з дискретними логами.",
+    "sections": [
+        {
+            "id": "selfsubmit",
+            "title": "Процес самостійної подачі інформації",
+            "content": [
+                {
+                    "content": "Проект Bitcoin Layers надає пріоритет оглядам ризиків проектів, які знаходяться в експлуатації та приймають BTC депозити користувачів. Проекти на тестовій мережі можуть подавати інформацію про свій проект. Ми не публікуємо оцінки ризиків для проектів, які не перебувають в експлуатації.\n\nОсь [інструкції](https://github.com/bitcoinlayers/bitcoinlayers/blob/main/SELFSUBMIT.md) щодо самостійної подачі проекту."
+                }
+            ]
+        }
+    ]
+}

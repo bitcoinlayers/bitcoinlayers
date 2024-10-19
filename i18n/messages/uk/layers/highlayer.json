@@ -1,0 +1,70 @@
+{
+    "slug": "highlayer",
+    "title": "Highlayer",
+    "layerType": "Sovereign Rollup",
+    "live": "Testnet",
+    "staking": false,
+    "bridge": false,
+    "underReview": "yes",
+    "riskFactors": ["", "", "", ""],
+    "purpose": "-",
+    "btcBridge": "-",
+    "settlement": "-",
+    "btcLocked": 0,
+    "executionEnv": "-",
+    "consensus": "-",
+    "nativeToken": "-",
+    "feeToken": "-",
+    "enshrinedBtc": "-",
+    "bitcoinOnly": false,
+    "links": [
+        "https://highlayer.io/",
+        "https://highlayer.io/",
+        "https://docs.highlayer.io/",
+        "https://docs.highlayer.io/",
+        "https://docs.highlayer.io/",
+        "https://x.com/highlayer_io"
+    ],
+    "description": "HighLayer — це блокчейн у стилі роллап, що розробляє власну віртуальну машину, названу Highlayer Virtual Machine. Наразі працює на тестовій мережі.",
+    "riskAnalysis": [
+        {
+            "category": "Unilateral Exits",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "Data Availability",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "Block Production",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "State Validation",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        }
+    ],
+    "sections": [
+        {
+            "id": "selfsubmit",
+            "title": "Процес самостійного подання інформації",
+            "content": [
+                {
+                    "content": "Проект Bitcoin Layers надає пріоритет ризиковим оглядам на проекти, які вже працюють та приймають депозити BTC від користувачів. Проекти на тестовій мережі можуть подавати інформацію про свій проект. Ми не публікуємо оцінки ризиків для проектів, які не працюють.\n\nОсь [інструкції](https://github.com/bitcoinlayers/bitcoinlayers/blob/main/SELFSUBMIT.md) щодо самостійного подання проекту."
+                }
+            ]
+        }
+    ]
+}

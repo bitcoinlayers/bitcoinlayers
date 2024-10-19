@@ -1,0 +1,70 @@
+{
+    "slug": "alys",
+    "title": "Alys",
+    "layerType": "Sidechain",
+    "live": "Announced",
+    "staking": false,
+    "bridge": false,
+    "underReview": "yes",
+    "riskFactors": ["", "", "", ""],
+    "purpose": "-",
+    "btcBridge": "-",
+    "settlement": "-",
+    "btcLocked": 0,
+    "executionEnv": "-",
+    "consensus": "-",
+    "nativeToken": "-",
+    "feeToken": "-",
+    "enshrinedBtc": "-",
+    "bitcoinOnly": true,
+    "links": [
+        "https://www.anduro.io/",
+        "https://www.anduro.io/",
+        "https://www.anduro.io/",
+        "https://www.anduro.io/",
+        "https://www.anduro.io/",
+        "https://www.anduro.io/"
+    ],
+    "description": "Alys — це один з сайдчейнів, що розробляється в рамках проекту Anduro. Це буде EVM сайдчейн з універсальними смарт-контрактами. Alys стане частиною екосистеми Anduro.",
+    "riskAnalysis": [
+        {
+            "category": "Unilateral Exits",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "Data Availability",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "Block Production",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "State Validation",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        }
+    ],
+    "sections": [
+        {
+            "id": "selfsubmit",
+            "title": "Процес самостійної подачі інформації",
+            "content": [
+                {
+                    "content": "Проект Bitcoin Layers пріоритезує оцінку ризиків для проектів, які перебувають у виробництві та приймають BTC-депозити від користувачів. Проекти на тестовій мережі можуть подавати інформацію про свої проекти. Ми не публікуємо оцінки ризиків для проектів, які не перебувають у виробництві.\n\nОсь [інструкції](https://github.com/bitcoinlayers/bitcoinlayers/blob/main/SELFSUBMIT.md) щодо самостійної подачі проекту."
+                }
+            ]
+        }
+    ]
+}

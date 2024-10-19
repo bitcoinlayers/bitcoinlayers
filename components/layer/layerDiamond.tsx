@@ -6,8 +6,10 @@ import RiskIconDA from "@/components/icons/RiskIconDA";
 import RiskIconOperators from "@/components/icons/RiskIconOperators";
 import RiskIconSettlement from "@/components/icons/RiskIconSettlement";
 import { Dialog, DialogContent, DialogTrigger } from "../ui/dialog";
+import { useTranslations } from "next-intl";
 
 const LayerDiamond: React.FC<{ layer: Layer }> = ({ layer }) => {
+    const t = useTranslations("layer");
     const containerSize = 350;
     const svgDivSize = containerSize / 2;
     const svgSize = 215;
@@ -84,22 +86,22 @@ const LayerDiamond: React.FC<{ layer: Layer }> = ({ layer }) => {
 
     const riskLabels = [
         {
-            text: "BRIDGE",
+            text: t("bridge"),
             className:
                 "left-[10px] top-[155px] -rotate-45 origin-top-left text-left",
         },
         {
-            text: "DATA AVAILABILITY",
+            text: t("data-availability"),
             className:
                 "left-[51%] translate-x-[-50%] top-[-8px] origin-top-left text-center w-[80px]",
         },
         {
-            text: "OPERATORS",
+            text: t("operators"),
             className:
                 "right-[10px] top-[155px] rotate-45 origin-top-right text-right",
         },
         {
-            text: "FINALITY ASSURANCE",
+            text: t("settlement-assurance"),
             className:
                 "left-[51%] translate-x-[-50%] top-[355px] origin-top-left text-center w-[80px]",
         },

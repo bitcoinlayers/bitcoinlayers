@@ -1,0 +1,34 @@
+{
+    "slug": "nubit",
+    "title": "Nubit",
+    "infrastructureType": "Data Availability",
+    "live": "Announced",
+    "staking": false,
+    "bridge": false,
+    "underReview": "yes",
+    "riskFactors": ["", ""],
+    "bitcoinSecurity": "No",
+    "nativeToken": "-",
+    "purpose": "General",
+    "associatedLayers": "-",
+    "bitcoinOnly": false,
+    "links": [
+        "https://nubit.org",
+        "https://nubit.org",
+        "https://docs.nubit.org/developer-guides/introduction",
+        "https://github.com/RiemaLabs",
+        "https://x.com/Nubit_org"
+    ],
+    "description": "Nubit створює шар доступності даних, який використовує BTC у своєму стейкінговому протоколі. Nubit має на меті надати блокчейнам у стилі роллап більше пропускної здатності в обмін на певні додаткові компроміси.",
+    "sections": [
+        {
+            "id": "selfsubmit",
+            "title": "Процес самостійної подачі інформації",
+            "content": [
+                {
+                    "content": "Проект Bitcoin Layers надає пріоритет оцінці ризиків для проектів, які знаходяться в експлуатації та приймають депозити BTC від користувачів. Проекти на тестовій мережі можуть подавати інформацію про свій проект. Ми не публікуємо оцінки ризиків для проектів, які не знаходяться в експлуатації.\n\nОсь [інструкції](https://github.com/bitcoinlayers/bitcoinlayers/blob/main/SELFSUBMIT.md) щодо самостійної подачі проекту."
+                }
+            ]
+        }
+    ]
+}

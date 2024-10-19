@@ -1,0 +1,34 @@
+{
+    "slug": "astria",
+    "title": "Astria",
+    "infrastructureType": "Sequencing",
+    "live": "Proposed",
+    "staking": false,
+    "bridge": false,
+    "underReview": "yes",
+    "riskFactors": ["High", "High"],
+    "bitcoinSecurity": "No",
+    "nativeToken": "-",
+    "purpose": "General",
+    "associatedLayers": "-",
+    "bitcoinOnly": false,
+    "links": [
+        "https://astria.org",
+        "https://astria.org",
+        "https://docs.astria.org/",
+        "https://github.com/astriaorg",
+        "https://x.com/AstriaOrg"
+    ],
+    "description": "Astria — це розподілений упорядковувач, побудований на основі консенсусу CometBFT. Він підтримує масштабовані протоколи з децентралізацією, міжоперабельністю та більш безпечними попередніми підтвердженнями.",
+    "sections": [
+        {
+            "id": "selfsubmit",
+            "title": "Процес самостійного подання інформації",
+            "content": [
+                {
+                    "content": "Проект Bitcoin Layers пріоритетно розглядає ризики для проектів, які вже в роботі та приймають BTC-депозити від користувачів. Проекти на тестовій мережі можуть подавати інформацію про свій проект. Ми не публікуємо оцінки ризиків для проектів, які не в роботі.\n\nОсь [інструкції](https://github.com/bitcoinlayers/bitcoinlayers/blob/main/SELFSUBMIT.md) щодо самостійного подання проекту."
+                }
+            ]
+        }
+    ]
+}

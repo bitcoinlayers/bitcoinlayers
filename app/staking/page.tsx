@@ -1,10 +1,13 @@
-import { allLayers } from "@/util/layer_index";
-import { allInfrastructures } from "@/util/infrastructure_index";
-
+import { getAllInfrastructure, getAllLayersWithSlugs } from "@/i18n/helpers";
 import StakingTable from "@/components/tables/staking-table";
 import Hero from "@/components/hero";
+import { getTranslations } from "next-intl/server";
 
-export default function StakingPage() {
+export default async function StakingPage() {
+    const { allInfrastructures } = await getAllInfrastructure();
+    const { allLayers } = await getAllLayersWithSlugs();
+    const t = await getTranslations("staking");
+
     const sortedEverything = [...allLayers, ...allInfrastructures]
         .filter((item) => item.staking)
         .sort((a, b) =>
@@ -21,26 +24,26 @@ export default function StakingPage() {
 
     const layerHeaders = [
         {
-            name: "Name",
+            name: t("name"),
             showSorting: true,
-            mobileLabel: "Name",
+            mobileLabel: t("name"),
         },
-        { name: "Snapshot", showSorting: false, mobileLabel: "Snapshot" },
+        { name: t("snapshot"), showSorting: false, mobileLabel: t("snapshot") },
         {
-            name: "Type",
+            name: t("type"),
             showSorting: true,
-            mobileLabel: "Type",
+            mobileLabel: t("type"),
             filterOptions: typeFilters,
         },
-        { name: "Status", showSorting: true, mobileLabel: "Status" },
-        { name: "Category", showSorting: true, mobileLabel: "Category" },
+        { name: t("status"), showSorting: true, mobileLabel: t("status") },
+        { name: t("category"), showSorting: true, mobileLabel: t("category") },
     ];
 
     return (
         <div className="mx-auto">
             <Hero
-                title="Staking"
-                description="Not every bitcoin staking protocol is equal."
+                title={t("staking")}
+                description={t("not-every-bitcoin-staking-protocol-is-equal")}
             />
             <div className="lg:flex mb-4 justify-center w-full lg:max-w-5xl mx-auto">
                 <StakingTable data={sortedEverything} headers={layerHeaders} />

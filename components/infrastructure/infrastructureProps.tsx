@@ -39,7 +39,7 @@ export type Infrastructure = {
     infrastructureType: string;
     live: string;
     staking: boolean;
-    bridge: boolean;
+    bridge?: boolean;
     underReview: string;
     riskFactors: string[];
     bitcoinSecurity: string;

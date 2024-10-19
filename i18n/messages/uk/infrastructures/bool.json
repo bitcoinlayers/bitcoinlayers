@@ -1,0 +1,34 @@
+{
+    "slug": "bool",
+    "title": "Bool",
+    "infrastructureType": "Bridge",
+    "live": "Announced",
+    "staking": false,
+    "bridge": false,
+    "underReview": "yes",
+    "riskFactors": ["", ""],
+    "bitcoinSecurity": "No",
+    "nativeToken": "-",
+    "purpose": "General",
+    "associatedLayers": "-",
+    "bitcoinOnly": false,
+    "links": [
+        "https://bool.network/",
+        "https://bool.network/",
+        "https://docs.bool.network/",
+        "https://github.com/boolnetwork",
+        "https://x.com/bool_official"
+    ],
+    "description": "Bool Network є провайдером інфраструктури, який наразі управляє мостами для кількох протоколів масштабування Bitcoin. Bitcoin-гаманці, якими він управляє, захищені протоколом MPC.",
+    "sections": [
+        {
+            "id": "selfsubmit",
+            "title": "Процес самостійного подання інформації",
+            "content": [
+                {
+                    "content": "Проект Bitcoin Layers пріоритетно розглядає ризики для проектів, які вже в роботі та приймають BTC-депозити від користувачів. Проекти на тестовій мережі можуть подавати інформацію про свій проект. Ми не публікуємо оцінки ризиків для проектів, які не в роботі.\n\nОсь [інструкції](https://github.com/bitcoinlayers/bitcoinlayers/blob/main/SELFSUBMIT.md) щодо самостійного подання проекту."
+                }
+            ]
+        }
+    ]
+}

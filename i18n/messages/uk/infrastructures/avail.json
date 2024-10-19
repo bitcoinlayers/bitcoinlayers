@@ -1,0 +1,34 @@
+{
+    "slug": "avail",
+    "title": "Avail",
+    "infrastructureType": "Data Availability",
+    "live": "Testnet",
+    "staking": false,
+    "bridge": false,
+    "underReview": "yes",
+    "riskFactors": ["", ""],
+    "bitcoinSecurity": "No",
+    "nativeToken": "AVAIL",
+    "purpose": "General",
+    "associatedLayers": "-",
+    "bitcoinOnly": false,
+    "links": [
+        "https://availproject.org",
+        "https://availproject.org",
+        "https://www.availproject.org/developer",
+        "https://github.com/availproject",
+        "https://x.com/AvailProject"
+    ],
+    "description": "Avail — це шар доступності даних. Протоколи масштабування, які хочуть зекономити на витратах на доступність даних, можуть інтегруватися з Avail для покращення продуктивності з деякими додатковими компромісами. Avail також розробляє інфраструктуру для підтримки поліпшеної міжоперабельності.",
+    "sections": [
+        {
+            "id": "selfsubmit",
+            "title": "Процес самостійного подання інформації",
+            "content": [
+                {
+                    "content": "Проект Bitcoin Layers пріоритетно розглядає ризики для проектів, які вже в роботі та приймають BTC-депозити від користувачів. Проекти на тестовій мережі можуть подавати інформацію про свій проект. Ми не публікуємо оцінки ризиків для проектів, які не в роботі.\n\nОсь [інструкції](https://github.com/bitcoinlayers/bitcoinlayers/blob/main/SELFSUBMIT.md) щодо самостійного подання проекту."
+                }
+            ]
+        }
+    ]
+}

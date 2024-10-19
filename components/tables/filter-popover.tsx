@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { useQueryState } from "nuqs";
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 
 interface Props {
     filters: string[];
@@ -24,6 +25,7 @@ const FilterPopover = ({ filters }: Props) => {
         ...queryFilters,
     ]);
     const [open, setOpen] = useState(false);
+    const t = useTranslations("filter-popover");
 
     const handleFilterChange = (filter: string) => {
         setSelectedFilters((prev) =>
@@ -95,7 +97,7 @@ const FilterPopover = ({ filters }: Props) => {
                 </div>
                 <div className="flex justify-between px-2 py-2 border-t">
                     <Button variant="ghost" size="sm" onClick={handleReset}>
-                        Reset
+                        {t("reset-btn")}
                     </Button>
                     <Button
                         variant="secondary"
@@ -103,7 +105,7 @@ const FilterPopover = ({ filters }: Props) => {
                         className="bg-brand text-white hover:bg-brand/80"
                         onClick={handleSave}
                     >
-                        Save
+                        {t("save-btn")}
                     </Button>
                 </div>
             </PopoverContent>

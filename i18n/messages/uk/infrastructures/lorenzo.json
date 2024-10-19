@@ -1,0 +1,34 @@
+{
+    "slug": "lorenzo",
+    "title": "Lorenzo",
+    "infrastructureType": "Liquid Staking",
+    "live": "Announced",
+    "staking": true,
+    "bridge": false,
+    "underReview": "yes",
+    "riskFactors": ["", ""],
+    "bitcoinSecurity": "No",
+    "nativeToken": "-",
+    "purpose": "General",
+    "associatedLayers": "-",
+    "bitcoinOnly": false,
+    "links": [
+        "https://lorenzo-protocol.xyz",
+        "https://lorenzo-protocol.xyz",
+        "https://docs.lorenzo-protocol.xyz/",
+        "https://github.com/Lorenzo-Protocol",
+        "https://x.com/LorenzoProtocol"
+    ],
+    "description": "На етапі перегляду.",
+    "sections": [
+        {
+            "id": "selfsubmit",
+            "title": "Процес самостійної подачі інформації",
+            "content": [
+                {
+                    "content": "Проект Bitcoin Layers надає пріоритет оцінці ризиків для проектів, які знаходяться в експлуатації та приймають депозити BTC від користувачів. Проекти на тестовій мережі можуть подавати інформацію про свій проект. Ми не публікуємо оцінки ризиків для проектів, які не знаходяться в експлуатації.\n\nОсь [інструкції](https://github.com/bitcoinlayers/bitcoinlayers/blob/main/SELFSUBMIT.md) щодо самостійної подачі проекту."
+                }
+            ]
+        }
+    ]
+}

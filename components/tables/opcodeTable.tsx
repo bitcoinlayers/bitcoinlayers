@@ -1,11 +1,10 @@
 "use client";
 
-import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { useState } from "react";
 import { Opcode } from "@/components/opcode/opcodeProps";
-import TableHeader from "@/components/tables/tableHeader";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 interface Props {
     data: Opcode[];
@@ -30,9 +29,7 @@ const OpcodeImage = ({ src, title }: { src: string; title: string }) => {
 };
 
 const OpcodeTable = ({ data }: Props) => {
-    const router = useRouter();
-
-    const headers = ["Name", "Opcode", "Purpose", "Status"];
+    const t = useTranslations("opcode");
 
     return (
         <div className="overflow-x-auto bg-lightsecondary rounded-xl mx-auto border border-stroke_tertiary">
@@ -40,16 +37,16 @@ const OpcodeTable = ({ data }: Props) => {
                 <thead className="bg-table_header">
                     <tr className="border-b border-stroke_tertiary">
                         <th className="px-6 py-6 font-medium text-text_table_header table_header border-l border-t border-stroke_tertiary first:rounded-tl-xl">
-                            Name
+                            {t("name")}
                         </th>
                         <th className="px-6 py-6 font-medium text-text_table_header table_header border-t border-stroke_tertiary">
-                            Opcode
+                            {t("opcode")}
                         </th>
                         <th className="px-6 py-6 font-medium text-text_table_header table_header border-t border-stroke_tertiary">
-                            Purpose
+                            {t("purpose-0")}
                         </th>
                         <th className="px-6 py-6 font-medium text-text_table_header table_header border-t border-r border-stroke_tertiary first:rounded-tr-xl">
-                            Status
+                            {t("status")}
                         </th>
                     </tr>
                 </thead>
@@ -82,13 +79,11 @@ const OpcodeTable = ({ data }: Props) => {
                             </td>
                             <td className="px-6 py-4 border-stroke_tertiary">
                                 <Link href={`/opcode/${item.slug}`}>
-                                    {" "}
                                     {item.opcodeType}
                                 </Link>
                             </td>
                             <td className="px-6 py-4 border-r border-stroke_tertiary">
                                 <Link href={`/opcode/${item.slug}`}>
-                                    {" "}
                                     {item.purpose}
                                 </Link>
                             </td>

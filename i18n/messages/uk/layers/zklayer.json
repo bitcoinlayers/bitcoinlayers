@@ -1,0 +1,70 @@
+{
+    "slug": "zklayer",
+    "title": "zkLayer",
+    "layerType": "Rollup",
+    "live": "Testnet",
+    "staking": false,
+    "bridge": false,
+    "underReview": "yes",
+    "riskFactors": ["", "", "", ""],
+    "purpose": "-",
+    "btcBridge": "-",
+    "settlement": "-",
+    "btcLocked": 0,
+    "executionEnv": "-",
+    "consensus": "-",
+    "nativeToken": "-",
+    "feeToken": "-",
+    "enshrinedBtc": "-",
+    "bitcoinOnly": false,
+    "links": [
+        "https://www.zklayer.co/",
+        "https://twitter.com/bitcoinlayers",
+        "https://app.gitbook.com/o/62jIvTYSEInKMwhtPJXC/s/fTHAEGkacQhIFNLPH9VW/",
+        "https://app.gitbook.com/o/62jIvTYSEInKMwhtPJXC/s/fTHAEGkacQhIFNLPH9VW/",
+        "https://github.com/zkLayer",
+        "https://twitter.com/zkLayer_"
+    ],
+    "description": "zkLayer — це запропонований проект ролапу на базі Bitcoin. Невідомо, яку модель моста він використовуватиме для забезпечення двостороннього зв’язку та валідації переходів стану.",
+    "riskAnalysis": [
+        {
+            "category": "Unilateral Exits",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "Data Availability",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "Block Production",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "State Validation",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        }
+    ],
+    "sections": [
+        {
+            "id": "selfsubmit",
+            "title": "Процес самостійної подачі інформації",
+            "content": [
+                {
+                    "content": "Проект Bitcoin Layers надає пріоритет оцінкам ризику для проектів, які знаходяться в продукції та приймають BTC депозити користувачів. Проекти на тестовій мережі можуть подавати інформацію про свій проект. Ми не публікуємо оцінки ризиків для проектів, які не знаходяться в продукції.\n\nОсь [інструкції](https://github.com/bitcoinlayers/bitcoinlayers/blob/main/SELFSUBMIT.md) щодо самостійної подачі проекту."
+                }
+            ]
+        }
+    ]
+}

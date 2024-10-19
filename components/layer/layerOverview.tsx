@@ -2,6 +2,7 @@ import { Layer } from "./layerProps";
 import Image from "next/image";
 import LayerDiamond from "./layerDiamond";
 import { parseTextWithLinks } from "@/util/parseTextWithLinks";
+import { useTranslations } from "next-intl";
 import Categories from "./categories";
 
 const LinkButton = ({
@@ -14,7 +15,7 @@ const LinkButton = ({
     <a
         href={href}
         target="_blank"
-        className="inline-block px-3 py-0.5 bg-white rounded-full border border-slate-300 justify-center items-center gap-2 flex transition duration-300 ease-in-out hover:bg-lightsecondary no-underline text-slate-600 text-sm font-normal leading-tight"
+        className="px-3 py-0.5 bg-white rounded-full border border-slate-300 justify-center items-center gap-2 flex transition duration-300 ease-in-out hover:bg-lightsecondary no-underline text-slate-600 text-sm font-normal leading-tight"
     >
         {children}
     </a>
@@ -50,6 +51,7 @@ const Description: React.FC<{ layer: Layer }> = ({ layer }) => {
 };
 
 const Links: React.FC<{ layer: Layer }> = ({ layer }) => {
+    const t = useTranslations("layer");
     return (
         <div className="self-stretch flex lg:justify-start justify-center items-start gap-2 flex-wrap">
             <LinkButton href={String(layer.links[0])}>
@@ -64,7 +66,7 @@ const Links: React.FC<{ layer: Layer }> = ({ layer }) => {
                         />
                     </div>
                 </div>
-                Website
+                {t("website")}
             </LinkButton>
             <LinkButton href={String(layer.links[2])}>
                 <div className="bg-white/opacity-0 flex-col justify-center items-center inline-flex">
@@ -78,7 +80,7 @@ const Links: React.FC<{ layer: Layer }> = ({ layer }) => {
                         />
                     </div>
                 </div>
-                Docs
+                {t("docs")}
             </LinkButton>
             <LinkButton href={String(layer.links[3])}>
                 <div className="bg-white/opacity-0 flex-col justify-center items-center inline-flex">
@@ -92,7 +94,7 @@ const Links: React.FC<{ layer: Layer }> = ({ layer }) => {
                         />
                     </div>
                 </div>
-                Explorer
+                {t("explorer")}
             </LinkButton>
             <LinkButton href={String(layer.links[4])}>
                 <div className="bg-white/opacity-0 flex-col justify-center items-center inline-flex">
@@ -106,7 +108,7 @@ const Links: React.FC<{ layer: Layer }> = ({ layer }) => {
                         />
                     </div>
                 </div>
-                GitHub
+                {t("github")}
             </LinkButton>
             <LinkButton href={String(layer.links[5])}>
                 <div className="bg-white/opacity-0 flex-col justify-center items-center inline-flex">
@@ -120,7 +122,7 @@ const Links: React.FC<{ layer: Layer }> = ({ layer }) => {
                         />
                     </div>
                 </div>
-                Twitter
+                {t("twitter")}
             </LinkButton>
         </div>
     );

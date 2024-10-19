@@ -1,6 +1,13 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import Image from "next/image";
 import SearchBlock from "./filter/SearchBlock";
+import { useTranslations } from "next-intl";
+import { useEffect } from "react";
+import { Layer } from "./layer/layerProps";
+import { Infrastructure } from "./infrastructure/infrastructureProps";
+import { getAllInfrastructure, getAllLayersWithSlugs } from "@/i18n/helpers";
 
 interface Props {
     title: string;
@@ -8,6 +15,24 @@ interface Props {
 }
 
 const Hero: React.FC<Props> = ({ title, description }: Props) => {
+    const t = useTranslations("hero");
+    const [allLayers, setAllLayers] = useState<Layer[]>([]);
+    const [allInfrastructures, setAllInfrastructures] = useState<
+        Infrastructure[]
+    >([]);
+
+    useEffect(() => {
+        const load = async () => {
+            const { allLayers } = await getAllLayersWithSlugs();
+            const { allInfrastructures } = await getAllInfrastructure();
+
+            setAllLayers(allLayers);
+            setAllInfrastructures(allInfrastructures);
+        };
+
+        load();
+    }, []);
+
     return (
         <div className="relative w-full lg:pt-[3rem]">
             <div className="lg:pt-[30rem] pt-[26rem] relative w-full">
@@ -24,9 +49,12 @@ const Hero: React.FC<Props> = ({ title, description }: Props) => {
                     <p className="flex items-center text-center text-base font-normal text-text_secondary -mt-2 mb-14">
                         {description}
                         <br />
-                        Learn the difference.
+                        {t("description--2")}
                     </p>
-                    <SearchBlock />
+                    <SearchBlock
+                        allLayers={allLayers}
+                        allInfrastructures={allInfrastructures}
+                    />
                 </div>
             </div>
         </div>

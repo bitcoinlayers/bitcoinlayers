@@ -1,0 +1,34 @@
+{
+    "slug": "babylon",
+    "title": "Babylon",
+    "infrastructureType": "Staking",
+    "live": "Mainnet",
+    "staking": true,
+    "bridge": false,
+    "underReview": "yes",
+    "riskFactors": ["", ""],
+    "bitcoinSecurity": "No",
+    "nativeToken": "-",
+    "purpose": "General",
+    "associatedLayers": "-",
+    "bitcoinOnly": true,
+    "links": [
+        "https://babylonchain.io",
+        "https://babylonchain.io",
+        "https://docs.babylonchain.io/",
+        "https://github.com/babylonchain",
+        "https://x.com/babylon_chain"
+    ],
+    "description": "Babylon підтримує стейкінг BTC, що покращує безпеку для сайдчейн з доказом частки (PoS). Протокол стейкінгу дозволяє учасникам стейкати BTC для захисту їхнього обраного сайдчейну. Babylon також виконує роль протоколу для штампування часу, щоб покращити стійкість PoS сайдчейнів до атак з тривалим діапазоном.",
+    "sections": [
+        {
+            "id": "selfsubmit",
+            "title": "Процес самостійного подання інформації",
+            "content": [
+                {
+                    "content": "Проект Bitcoin Layers пріоритетно розглядає ризики для проектів, які вже в роботі та приймають BTC-депозити від користувачів. Проекти на тестовій мережі можуть подавати інформацію про свій проект. Ми не публікуємо оцінки ризиків для проектів, які не в роботі.\n\nОсь [інструкції](https://github.com/bitcoinlayers/bitcoinlayers/blob/main/SELFSUBMIT.md) щодо самостійного подання проекту."
+                }
+            ]
+        }
+    ]
+}

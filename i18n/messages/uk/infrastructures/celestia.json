@@ -1,0 +1,34 @@
+{
+    "slug": "celestia",
+    "title": "Celestia",
+    "infrastructureType": "Data Availability",
+    "live": "Mainnet",
+    "staking": false,
+    "bridge": false,
+    "underReview": "yes",
+    "riskFactors": ["", ""],
+    "bitcoinSecurity": "No",
+    "nativeToken": "TIA",
+    "purpose": "General",
+    "associatedLayers": "-",
+    "bitcoinOnly": false,
+    "links": [
+        "https://celestia.org",
+        "https://celestia.org",
+        "https://docs.celestia.org/",
+        "https://github.com/celestiaorg",
+        "https://x.com/CelestiaOrg/"
+    ],
+    "description": "Celestia — це шар доступності даних. Протоколи масштабування, які хочуть зекономити на витратах на доступність даних, можуть інтегруватися з Celestia для покращення продуктивності з деякими додатковими компромісами. Celestia основана на CometBFT і додатково підтримує вибіркову доступність даних (DAS), механізм, за допомогою якого будь-хто, хто запускає легкий клієнт, може перевірити, що мережа Celestia забезпечує доступність даних стану ролапів.",
+    "sections": [
+        {
+            "id": "selfsubmit",
+            "title": "Процес самостійної подачі інформації",
+            "content": [
+                {
+                    "content": "Проект Bitcoin Layers надає пріоритет оглядам ризиків проектів, які знаходяться в експлуатації та приймають BTC депозити користувачів. Проекти на тестовій мережі можуть подавати інформацію про свій проект. Ми не публікуємо оцінки ризиків для проектів, які не перебувають в експлуатації.\n\nОсь [інструкції](https://github.com/bitcoinlayers/bitcoinlayers/blob/main/SELFSUBMIT.md) щодо самостійної подачі проекту."
+                }
+            ]
+        }
+    ]
+}

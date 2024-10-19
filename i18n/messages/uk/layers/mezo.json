@@ -1,0 +1,70 @@
+{
+    "slug": "mezo",
+    "title": "Mezo",
+    "layerType": "Sidechain",
+    "live": "Announced",
+    "staking": false,
+    "bridge": false,
+    "underReview": "yes",
+    "riskFactors": ["", "", "", ""],
+    "purpose": "General purpose",
+    "btcBridge": "Threshold",
+    "settlement": "External",
+    "btcLocked": 0,
+    "executionEnv": "-",
+    "consensus": "-",
+    "nativeToken": "MEZO",
+    "feeToken": "-",
+    "enshrinedBtc": "tBTC",
+    "bitcoinOnly": false,
+    "links": [
+        "https://mezo.org/",
+        "https://mezo.org/",
+        "https://info.mezo.org/proof-of-hodl",
+        "https://info.mezo.org/proof-of-hodl",
+        "https://info.mezo.org/proof-of-hodl",
+        "https://twitter.com/mezonetwork"
+    ],
+    "description": "Mezo розробляє протокол сайдчейну загального призначення, який підтримуватиме загальносистемні додатки. Він працюватиме на протоколі консенсусу CometBFT, який забезпечується ставками BTC і токена Mezo. Для моста Bitcoin буде використовуватись tBTC.",
+    "riskAnalysis": [
+        {
+            "category": "Unilateral Exits",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "Data Availability",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "Block Production",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        },
+        {
+            "category": "State Validation",
+            "score": 0,
+            "tier": "",
+            "title": "",
+            "content": ""
+        }
+    ],
+    "sections": [
+        {
+            "id": "selfsubmit",
+            "title": "Процес самостійної подачі інформації",
+            "content": [
+                {
+                    "content": "Проект Bitcoin Layers надає пріоритет оглядам ризиків для проектів, які знаходяться в стадії виробництва та приймають депозити BTC від користувачів. Проекти на тестовій мережі можуть подавати інформацію про свій проект. Ми не публікуємо оцінки ризиків для проектів, які не перебувають у виробництві.\n\nОсь [інструкції](https://github.com/bitcoinlayers/bitcoinlayers/blob/main/SELFSUBMIT.md) щодо самостійної подачі проекту."
+                }
+            ]
+        }
+    ]
+}
