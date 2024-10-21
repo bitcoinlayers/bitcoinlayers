@@ -51,10 +51,6 @@
                 {
                     "title": "Dependant on the various application parameters",
                     "content": "Potential yield opportunities are dependent on the various onchain applications parameters, and the delegation model in the PoS chains LBTC might be used via Babylon."
-                },
-                {
-                    "title": "Smart contracts & audits",
-                    "content": "Lombard has published audit reports on its smart contracts here.\n\nThe code behind Lombard’s is also source viewable here.\n\n⚠️ Audits of smart contracts do not mean exploits are not possible. Users should not deposit more funds than they’re willing to lose."
                 }
             ]
         },
