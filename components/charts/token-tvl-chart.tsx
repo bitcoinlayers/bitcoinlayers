@@ -19,7 +19,7 @@ import {
 import { useQueryState } from "nuqs";
 import { useCallback, useMemo, useState } from "react";
 import { useParams } from "next/navigation";
-import useGetBalancesAlt from "@/hooks/use-get-all-balances-alt-pertoken";
+import useGetTokentvlHistoricalAll from "@/hooks/use-get-layertvl-historical-all";
 import useGetCurrentPrices from "@/hooks/use-get-current-prices";
 import { formatCurrency } from "@/util/formatCurrency";
 
@@ -39,7 +39,7 @@ export default function ProjectTVLChart() {
         defaultValue: "3mo",
     });
 
-    const { data } = useGetBalancesAlt({
+    const { data } = useGetTokentvlHistoricalAll({
         queryString: `?project_slug=ilike.${slug}`,
     });
     const { data: pricesData, isLoading, error } = useGetCurrentPrices();

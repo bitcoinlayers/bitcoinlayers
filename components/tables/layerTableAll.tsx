@@ -8,8 +8,7 @@ import TableHeader from "@/components/tables/tableHeader";
 import { MobileView, isMobile } from "react-device-detect";
 import Link from "next/link";
 import { useQueryState } from "nuqs";
-import useGetBalances from "@/hooks/use-get-all-balances-pertoken";
-import useGetCurrentBalancesPerLayer from "@/hooks/use-get-current-balances-perlayer";
+import useGetLayertvlHistoricalAll from "@/hooks/use-get-layertvl-current-all";
 
 type TableTabKey =
     | "Risk"
@@ -67,7 +66,7 @@ const LayerTableAll = ({ data, headers, showToggleGroup = true }: Props) => {
         defaultValue: "asc",
     });
 
-    const { data: balances } = useGetCurrentBalancesPerLayer();
+    const { data: balances } = useGetLayertvlHistoricalAll();
 
     const totaledBalances = useMemo(() => {
         if (!balances) return {};

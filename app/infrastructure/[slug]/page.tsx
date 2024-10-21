@@ -7,7 +7,7 @@ import InfrastructureMenu from "@/components/infrastructure/infrastructureMenu";
 import InfrastructureBody from "@/components/infrastructure/infrastructureBody";
 import InfrastructureOverview from "@/components/infrastructure/infrastructureOverview";
 import InfrastructureImage from "@/components/infrastructure/infrastructure-image";
-import AltTVLChart from "@/components/charts/alt-tvl-chart";
+import ProjectTVLChart from "@/components/charts/token-tvl-chart";
 import RiskAnalysis from "@/components/layer/risk-analysis/layerBodyAssessment";
 
 async function getInfrastructureFromSlug(slug: string) {
@@ -53,7 +53,7 @@ export default async function InfrastructurePage({
                 </div>
                 <div className="lg:w-4/5 flex flex-col px-4 lg:px-0">
                     <InfrastructureOverview infrastructure={infrastructure} />
-                    <AltTVLChart />
+                    <ProjectTVLChart />
                     {infrastructure.assessment && (
                         <RiskAnalysis
                             riskAnalysis={infrastructure.assessment.map(

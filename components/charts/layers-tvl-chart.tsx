@@ -25,7 +25,7 @@ import {
 } from "@/components/ui/select";
 import { useQueryState } from "nuqs";
 import { useMemo, useCallback } from "react";
-import useGetBalancesHistoricalBylayerBitcoinonly from "@/hooks/use-get-tvl-historical-bylayer-bitcoinonly";
+import useGetBalancesHistoricalBylayerBitcoinonly from "@/hooks/use-get-layertvl-historical-bitcoinonly";
 
 interface ProcessedData {
     date: string;

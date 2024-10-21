@@ -12,18 +12,16 @@ interface Props {
     queryString?: string;
 }
 
-export default function useGetCurrentBalancesPerLayer({
-    queryString,
-}: Props = {}) {
+export default function useGetLayertvlCurrentAll({ queryString }: Props = {}) {
     const response = useQuery<Balance[]>({
         queryKey: [
             queryString
-                ? `get_current_balances_perlayer${queryString}`
-                : "get_current_balances_perlayer",
+                ? `get_layertvl_current_all${queryString}`
+                : "get_layertvl_current_all",
         ],
         queryFn: () => {
             return fetcher(
-                `${process.env.NEXT_PUBLIC_API_URL}/get_current_balances_perlayer${queryString ?? ""}`,
+                `${process.env.NEXT_PUBLIC_API_URL}/get_layertvl_current_all${queryString ?? ""}`,
             );
         },
     });

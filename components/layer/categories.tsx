@@ -1,6 +1,6 @@
 "use client";
 
-import useGetCurrentBalancesPerLayer from "@/hooks/use-get-current-balances-perlayer";
+import useGetLayertvlHistoricalAll from "@/hooks/use-get-layertvl-current-all";
 import { Layer } from "./layerProps";
 import { useParams } from "next/navigation";
 import { useMemo } from "react";
@@ -8,7 +8,7 @@ import { useMemo } from "react";
 const Categories: React.FC<{ layer: Layer }> = ({ layer }) => {
     const { slug } = useParams();
 
-    const { data: balances } = useGetCurrentBalancesPerLayer();
+    const { data: balances } = useGetLayertvlHistoricalAll();
 
     const matchingBalance = useMemo(() => {
         if (!balances) return null;

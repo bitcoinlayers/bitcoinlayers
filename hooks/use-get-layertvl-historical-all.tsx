@@ -15,18 +15,18 @@ interface Props {
     queryString?: string;
 }
 
-export default function useGetBalancesHistoricalBylayerBitcoinonly({
+export default function useGetLayertvlHistoricalAll({
     queryString,
 }: Props = {}) {
     const response = useQuery<Balance[]>({
         queryKey: [
             queryString
-                ? `get_tvl_historical_bylayer_bitcoinonly${queryString}`
-                : "get_tvl_historical_bylayer_bitcoinonly",
+                ? `get_layertvl_historical_all${queryString}`
+                : "get_layertvl_historical_all",
         ],
         queryFn: () => {
             return fetcher(
-                `${process.env.NEXT_PUBLIC_API_URL}/get_tvl_historical_bylayer_bitcoinonly${queryString ?? ""}`,
+                `${process.env.NEXT_PUBLIC_API_URL}/get_layertvl_historical_all${queryString ?? ""}`,
             );
         },
     });

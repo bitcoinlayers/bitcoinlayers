@@ -19,7 +19,7 @@ import {
 import { useQueryState } from "nuqs";
 import { useCallback, useMemo, useState } from "react";
 import { useParams } from "next/navigation";
-import useGetBalances from "@/hooks/use-get-all-balances-pertoken";
+import useGetTokentvlHistoricalAll from "@/hooks/use-get-tokentvl-historical-all";
 import useGetCurrentPrices from "@/hooks/use-get-current-prices";
 import { formatCurrency } from "@/util/formatCurrency";
 
@@ -39,7 +39,7 @@ export default function ProjectTVLChart() {
         defaultValue: "3mo",
     });
 
-    const { data } = useGetBalances({
+    const { data } = useGetTokentvlHistoricalAll({
         queryString: `?layer_name=ilike.${slug}`,
     });
 
@@ -69,9 +69,10 @@ export default function ProjectTVLChart() {
 
             if (existingEntry) {
                 existingEntry[tokenKey] =
-                    ((existingEntry[tokenKey] as number) || 0) + item.amount;
+                    ((existingEntry[tokenKey] as number) || 0) +
+                    item.total_amount; // Use total_amount
             } else {
-                acc.push({ date: itemDateUTC, [tokenKey]: item.amount });
+                acc.push({ date: itemDateUTC, [tokenKey]: item.total_amount }); // Use total_amount
             }
             return acc;
         }, []);
@@ -153,7 +154,7 @@ export default function ProjectTVLChart() {
                     (a, b) =>
                         new Date(b.date).getTime() - new Date(a.date).getTime(),
                 )[0];
-            return acc + (lastEntry?.amount || 0);
+            return acc + (lastEntry?.total_amount || 0);
         }, 0);
 
         return {
@@ -162,6 +163,8 @@ export default function ProjectTVLChart() {
     }, [data, dateRange, tokens]);
 
     if (data?.length === 0) return null;
+
+    console.log(data);
 
     return (
         <Card className="bg-background mb-6">
