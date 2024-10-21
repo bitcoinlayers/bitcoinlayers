@@ -5,7 +5,7 @@
     "live": "Mainnet",
     "staking": false,
     "bridge": false,
-    "underReview": "yes",
+    "underReview": "no",
     "riskFactors": ["High", "Low", "Medium", "Critical"],
     "purpose": "-",
     "btcBridge": "Smart Contract",
@@ -114,17 +114,17 @@
                 {
                     "title": "Lightning Latch assists interoperability between statechains and the Lightning Network",
                     "content": "Since statechains inherently manage UTXOs offchain, they provide an ideal platform for opening and closing lightning channels at minimal cost. Any UTXO that exists on a statechain can be turned into an LN channel while this process stays hidden from the statechain entity, even in case of a force-closure ([Somsen, 2019](https://medium.com/@RubenSomsen/statechains-non-custodial-off-chain-bitcoin-transfer-1ae4845a4a39)). Mercury Layer recently developed an [atomic swap protocol](https://github.com/commerceblock/mercurylayer/blob/dev/docs/atomic_transfer.md#lightning-latch-transfer) called Lightning Latch that enables the atomic exchange of two statechains, which facilitates coinjoin-like exchange of assets as well as better interaction between statechains and the Lightning Network. Users can rebalance their channels using the swap protocol to have lower fees. Lightning Latch opens up new possibilities for a more integrated ecosystem."
-                }, 
+                },
                 {
                     "title": "Enabling betting and oracle protocols",
                     "content": "Mercury Layer can enable betting and oracle protocols by allowing the transfer of ownership of a private key share. This capability means that a DLC counterparty position can be transferred without requiring the cooperation of the other party."
-                }, 
+                },
                 {
                     "title": "Enhanced privacy with blind statechains",
                     "content": "The blinding feature of MuSig2 prevents the statechain entity from learning about transaction details, such as the TxID, the full shared public key, the final signature it co-generates, or any information about statechain closure transactions."
                 }
             ]
-        }, 
+        },
         {
             "id": "additionalconsiderations",
             "title": "Additional Considerations",
@@ -132,22 +132,22 @@
                 {
                     "title": "Statechains only allow for fixed-value transfers",
                     "content": "Mercury Layer facilitates the offline transfer of UTXO ownership through the transfer of private key shares. Ownership transfer and not involving Bitcoin L1 interaction implies that UTXOs cannot be split and must always be transferred as a whole."
-                }, 
+                },
                 {
                     "title": "Decrementing timelock limits number of statechain transfers",
                     "content": "As the nlocktime is reduced with every statechain transfer, the number of transfers that can occur before a statechain needs to be closed out on bitcoin L1 is limited."
-                }, 
+                },
                 {
                     "title": "Security enhancements by upgrading to a federated operator",
-                    "content": "The current statechain entity operates in a [non-federated](https://x.com/SomsenRuben/status/1779043366027604321) setup, which means users need to trust that the operator will delete old key shares and does not collude with the latest statecoin owner to seize control of the current owner's UTXO. \n However, upgrading to a non-federated server setup would imply the service to no longer be blinded which would thus be less private and decrease censorship resistance." 
-                }, 
+                    "content": "The current statechain entity operates in a [non-federated](https://x.com/SomsenRuben/status/1779043366027604321) setup, which means users need to trust that the operator will delete old key shares and does not collude with the latest statecoin owner to seize control of the current owner's UTXO. \n However, upgrading to a non-federated server setup would imply the service to no longer be blinded which would thus be less private and decrease censorship resistance."
+                },
                 {
                     "title": "Confiscation- and freezing-resistance despite including a trusted service provider",
-                    "content": "Statechains facilitate the transfer of UTXO ownership by sharing the private key of the onchain address between the operator and the statecoin owner. As a result, even if state-level actors demand asset confiscation, the operator cannot comply because it lacks individual access to the onchain funds, given the HSM works as advertised and old key shares got deleted to prevent the operator from acting maliciously. Additionally, this setup prevents the operator from freezing user funds. The use of blind signing further ensures that the server remains unaware of transactional data, making it impossible to provide such data to authorities." 
-                }, 
+                    "content": "Statechains facilitate the transfer of UTXO ownership by sharing the private key of the onchain address between the operator and the statecoin owner. As a result, even if state-level actors demand asset confiscation, the operator cannot comply because it lacks individual access to the onchain funds, given the HSM works as advertised and old key shares got deleted to prevent the operator from acting maliciously. Additionally, this setup prevents the operator from freezing user funds. The use of blind signing further ensures that the server remains unaware of transactional data, making it impossible to provide such data to authorities."
+                },
                 {
                     "title": "Malicious collusion can be proven cryptographically",
-                    "content": "While the Mercury Layer setup involves trust in the statechain entity to not collude with a previous owner, malicious collusion can be proven cryptographically. Furthermore, as each statecoin is handled independently between the statechain entity and a user, the statechain entity can only steal from one user at a time." 
+                    "content": "While the Mercury Layer setup involves trust in the statechain entity to not collude with a previous owner, malicious collusion can be proven cryptographically. Furthermore, as each statecoin is handled independently between the statechain entity and a user, the statechain entity can only steal from one user at a time."
                 }
             ]
         },
