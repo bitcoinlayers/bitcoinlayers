@@ -60,6 +60,9 @@ const solv: Infrastructure = solvJson as Infrastructure;
 import solvlstJson from "../content/infrastructures/solvlst.json" assert { type:
     "json" };
 const solvlst: Infrastructure = solvlstJson as Infrastructure;
+import bedrockJson from "../content/infrastructures/bedrock.json" assert { type:
+    "json" };
+const bedrock: Infrastructure = bedrockJson as Infrastructure;
 
 export const allInfrastructures: Infrastructure[] = [
     cashu,
@@ -82,6 +85,7 @@ export const allInfrastructures: Infrastructure[] = [
     babylon,
     solv,
     solvlst,
+    bedrock,
 ];
 
 export const allInfrastructureSlugs: string[] = allInfrastructures.map(
