@@ -13,12 +13,12 @@
     "associatedLayers": "Ethereum, BNB, Arbitrum, Avalanche, Merlin, BOB, Base",
     "bitcoinOnly": false,
     "links": [
-        "https://threshold.network/",
-        "https://threshold.network/",
-        "https://threshold.network/",
-        "https://docs.threshold.network/",
-        "https://github.com/threshold-network",
-        "https://x.com/thetnetwork"
+        "https://solv.finance/",
+        "https://solv.finance/",
+        "https://solv.finance/",
+        "https://docs.solv.finance/",
+        "https://github.com/solv-finance",
+        "https://x.com/SolvProtocol"
     ],
     "description": "Solv offers several LSTs: BBN, ENA, CORE, and JUP",
     "sections": [
