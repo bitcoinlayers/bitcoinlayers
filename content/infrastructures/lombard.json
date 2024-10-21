@@ -21,6 +21,36 @@
         "https://x.com/Lombard_Finance"
     ],
     "description": "Lombard is a liquid staking protocol where a security consortium network stakes assets on users' behalf.",
+    "riskAnalysis": [
+        {
+            "category": "Bridge Custody",
+            "score": 0,
+            "tier": "High",
+            "title": "Users enter a 2-of-2 multisig with the ASP that guarantees unilateral exit to L-BTC, but not to BTC",
+            "content": "The user deposits their L-BTC into a 2-of-2 multisig with the ASP, getting an off-chain VTXO in return. The setup allows the user to unilaterally exit back to the Liquid blockchain, ensuring self-custody of the funds, provided they exceed the minimum relay fee on the Liquid blockchain. However, the funds become custodial if the user fails to refresh their coins during the designated timeout period, enabling the ASP to sweep them. It is important to note that L-BTC cannot be exited unilaterally to BTC due to the federated nature of Liquid.\n\n🔬We are currently reviewing the signers for the Liquid two-way peg, which would affect this implementation of Ark."
+        },
+        {
+            "category": "Data Availability",
+            "score": 0,
+            "tier": "Medium",
+            "title": "Data is stored on-chain (Liquid) in a shared transaction output",
+            "content": "The VTXOs are batched in a binary tree, with the VTXOs serving as the leaves of the tree. This binary tree is then included in a Liquid block as a shared output. In cases of dispute resolution, VTXOs can be revealed. When conducting transactions, the user receives the tree data along with an index indicating the position of their respective VTXO within the tree. It's important to note that Liquid data is stored off the Bitcoin blockchain. Users can run archive nodes on Liquid, which keep a complete history of the Liquid blockchain."
+        },
+        {
+            "category": "Network Operators",
+            "score": 0,
+            "tier": "High",
+            "title": "Operated by a service provider, the ASP, and relies on the liveness of the Liquid blockchain to enable unilateral exit ",
+            "content": "The Ark network is operated by a central entity, the ASP, an always-on server that provides liquidity and is responsible for issuing VTXOs after an L-BTC deposit on the Liquid blockchain. The ASP is trust-minimized. Only through colluding with Liquid functionaries, it can fraud users: The ASP can generally claim VTXOs if the user does not refresh them or unilaterally exit in time. One way the ASP could abuse this is to collude with parent chain block producers to delay the unilateral exit, so that the ASP can eventually claim users’ funds. Without the ASP colluding with the Liquid functionaries, a unilateral exit to Liquid is possible. Furthermore, as this implementation of Ark is running on Liquid, users trust that the respective functionaries operating the Liquid blockchain will include their on-chain withdrawals in a Liquid block."
+        },
+        {
+            "category": "Settlement Assurance",
+            "score": 0,
+            "tier": "High",
+            "title": "Funds are available immediately for further VTXO transfers, while finality is only reached with a block confirmation on Liquid",
+            "content": "Ark transactions operate under the principle of [delayed finality, but immediate availability](https://x.com/brqgoo/status/1661396945653448708). While finality is only reached once the shared output is confirmed in a block on the Liquid blockchain, funds are immediately available to the user for use in an LN transaction or another Ark transaction."
+        }
+    ],
     "sections": [
         {
             "id": "assessment",
@@ -32,7 +62,7 @@
                 },
                 {
                     "title": "Staking type (delegated or direct staking)",
-                    "content": "Users delegate their BTC to the Lombard Security Consortium to stake BTC on their behalf. Users select which protocol they want to stake through (e.g. Babylon) andor the destination chain their LBTC token is minted on (e.g. Ethereum).\n\nShould a user mint LBTC on a destination chain, they can use this token in various onchain protocols. These protocols may pay out rewards based on varying levels of parameters."
+                    "content": "Users delegate their BTC to the Lombard Security Consortium to stake BTC on their behalf. Users select which protocol they want to stake through (e.g. Babylon) and/or the destination chain their LBTC token is minted on (e.g. Ethereum).\n\nShould a user mint LBTC on a destination chain, they can use this token in various onchain protocols. These protocols may pay out rewards based on varying levels of parameters."
                 },
                 {
                     "title": "Slashing risk",
@@ -49,6 +79,30 @@
                 {
                     "title": "Smart contracts & audits",
                     "content": "Lombard has published audit reports on its smart contracts here.\n\nThe code behind Lombard’s is also source viewable here.\n\n⚠️ Audits of smart contracts do not mean exploits are not possible. Users should not deposit more funds than they’re willing to lose."
+                }
+            ]
+        },
+        {
+            "id": "apy",
+            "title": "How APY is determined",
+            "content": [
+                {
+                    "title": "Dependant on the various application parameters",
+                    "content": "Potential yield opportunities are dependent on the various onchain applications parameters, and the delegation model in the PoS chains LBTC might be used via Babylon."
+                },
+                {
+                    "title": "Smart contracts & audits",
+                    "content": "Lombard has published audit reports on its smart contracts here.\n\nThe code behind Lombard’s is also source viewable here.\n\n⚠️ Audits of smart contracts do not mean exploits are not possible. Users should not deposit more funds than they’re willing to lose."
+                }
+            ]
+        },
+        {
+            "id": "audits",
+            "title": "Smart Contracts & Audits",
+            "content": [
+                {
+                    "title": "Lombard's smart contracts have been audited.",
+                    "content": "Lombard has published audit reports on its smart contracts here.\n\nThe code behind Lombard’s is also source viewable here.\n\n⚠️ Audits of smart contracts do not mean exploits are not possible. Users should not deposit more funds than they’re willing to lose.\n\nLombard's audits can be found [here](https://github.com/lombard-finance/evm-smart-contracts/tree/main/docs/audit)."
                 }
             ]
         },
