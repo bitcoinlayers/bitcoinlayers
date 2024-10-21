@@ -9,6 +9,14 @@ interface Subsection {
     content: string;
 }
 
+interface AssessmentSection {
+    category: string;
+    score: number;
+    tier: string | null;
+    title: string;
+    content: string;
+}
+
 interface kbit {
     url: string;
     displayText: string;
@@ -49,6 +57,7 @@ export type Infrastructure = {
     bitcoinOnly: boolean;
     links: string[];
     description: string;
+    assessment: AssessmentSection[];
     sections: Section[];
     /** MDX file body */
     slug: string;
