@@ -1,12 +1,12 @@
 {
-    "slug": "ark",
-    "title": "Ark",
-    "layerType": "Virtual UTXOs",
+    "slug": "arkonliquid",
+    "title": "Ark on Liquid",
+    "layerType": "Ark on Sidechain",
     "staking": false,
     "live": "Mainnet",
     "bridge": false,
-    "underReview": "yes",
-    "riskFactors": ["Unverified", "Unverified", "Unverified", "Unverified"],
+    "underReview": "no",
+    "riskFactors": ["Unverified", "Medium", "High", "High"],
     "purpose": "Payments",
     "btcBridge": "LBTC",
     "settlement": "Offchain",
@@ -30,7 +30,7 @@
         {
             "category": "Bridge Security",
             "score": 0,
-            "tier": "High",
+            "tier": "Unverified",
             "title": "Users enter a 2-of-2 multisig with the ASP that guarantees unilateral exit to L-BTC, but not to BTC",
             "content": "The user deposits their L-BTC into a 2-of-2 multisig with the ASP, getting an off-chain VTXO in return. The setup allows the user to unilaterally exit back to the Liquid blockchain, ensuring self-custody of the funds, provided they exceed the minimum relay fee on the Liquid blockchain. However, the funds become custodial if the user fails to refresh their coins during the designated timeout period, enabling the ASP to sweep them. It is important to note that L-BTC cannot be exited unilaterally to BTC due to the federated nature of Liquid.\n\n🔬We are currently reviewing the signers for the Liquid two-way peg, which would affect this implementation of Ark."
         },
@@ -51,7 +51,7 @@
         {
             "category": "Settlement Assurance",
             "score": 0,
-            "tier": "High",
+            "tier": "Medium",
             "title": "Funds are available immediately for further VTXO transfers, while finality is only reached with a block confirmation on Liquid",
             "content": "Ark transactions operate under the principle of [delayed finality, but immediate availability](https://x.com/brqgoo/status/1661396945653448708). While finality is only reached once the shared output is confirmed in a block on the Liquid blockchain, funds are immediately available to the user for use in an LN transaction or another Ark transaction."
         }
