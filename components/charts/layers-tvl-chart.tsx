@@ -25,7 +25,7 @@ import {
 } from "@/components/ui/select";
 import { useQueryState } from "nuqs";
 import { useMemo, useCallback } from "react";
-import useGetBalances from "@/hooks/use-get-all-balances-pertoken";
+import useGetBalancesHistoricalBylayerBitcoinonly from "@/hooks/use-get-tvl-historical-bylayer-bitcoinonly";
 
 interface ProcessedData {
     date: string;
@@ -40,7 +40,7 @@ export default function LayersTVLChart() {
         defaultValue: "3mo",
     });
 
-    const { data } = useGetBalances();
+    const { data } = useGetBalancesHistoricalBylayerBitcoinonly();
 
     const layers =
         chartType === "combined"

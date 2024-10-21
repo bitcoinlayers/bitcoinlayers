@@ -1,0 +1,35 @@
+{
+    "slug": "solvlst",
+    "title": "Solv LSTs",
+    "infrastructureType": "Liquid Staking",
+    "live": "Mainnet",
+    "staking": true,
+    "bridge": false,
+    "underReview": "yes",
+    "riskFactors": ["", ""],
+    "bitcoinSecurity": "",
+    "nativeToken": "",
+    "purpose": "Liquid Staking",
+    "associatedLayers": "Ethereum, BNB, Arbitrum, Avalanche, Merlin, BOB, Base",
+    "bitcoinOnly": false,
+    "links": [
+        "https://threshold.network/",
+        "https://threshold.network/",
+        "https://docs.threshold.network/",
+        "https://github.com/threshold-network",
+        "https://x.com/thetnetwork"
+    ],
+    "description": "Solv offers several LSTs: BBN, ENA, CORE, and JUP",
+    "sections": [
+        {
+            "id": "knowledgeBits",
+            "title": "Knowledge Bits",
+            "content": [
+                {
+                    "title": "Learn more",
+                    "content": "[Solv docs](https://docs.solv.finance/)"
+                }
+            ]
+        }
+    ]
+}
