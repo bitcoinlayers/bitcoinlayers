@@ -54,6 +54,12 @@ const cbbtc: Infrastructure = cbbtcJson as Infrastructure;
 import kbtcJson from "../content/infrastructures/kbtc.json" assert { type:
     "json" };
 const kbtc: Infrastructure = kbtcJson as Infrastructure;
+import solvJson from "../content/infrastructures/solv.json" assert { type:
+    "json" };
+const solv: Infrastructure = solvJson as Infrastructure;
+import solvlstJson from "../content/infrastructures/solvlst.json" assert { type:
+    "json" };
+const solvlst: Infrastructure = solvlstJson as Infrastructure;
 
 export const allInfrastructures: Infrastructure[] = [
     cashu,
@@ -74,6 +80,8 @@ export const allInfrastructures: Infrastructure[] = [
     avail,
     astria,
     babylon,
+    solv,
+    solvlst,
 ];
 
 export const allInfrastructureSlugs: string[] = allInfrastructures.map(
