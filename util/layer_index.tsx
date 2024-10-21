@@ -50,6 +50,7 @@ const core: Layer = coreJson as Layer;
 const internetcomputer: Layer = internetcomputerJson as Layer;
 const lightning: Layer = lightningJson as Layer;
 const liquid: Layer = liquidJson as Layer;
+// @ts-ignore
 const mercurylayer: Layer = mercurylayerJson as Layer;
 const rootstock: Layer = rootstockJson as Layer;
 const stacks: Layer = stacksJson as Layer;
