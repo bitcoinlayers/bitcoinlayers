@@ -54,7 +54,7 @@ export default async function InfrastructurePage({
                 <div className="lg:w-4/5 flex flex-col px-4 lg:px-0">
                     <InfrastructureOverview infrastructure={infrastructure} />
                     <AltTVLChart />
-                    {infrastructure.underReview === "no" && (
+                    {infrastructure.assessment && (
                         <RiskAnalysis
                             riskAnalysis={infrastructure.assessment.map(
                                 (section) => ({
