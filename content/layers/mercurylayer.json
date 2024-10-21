@@ -10,7 +10,7 @@
     "purpose": "-",
     "btcBridge": "Smart Contract",
     "settlement": "External",
-    "btcLocked": 0,
+    "btcLocked": null,
     "executionEnv": "Statechain",
     "consensus": "-",
     "nativeToken": "BTC",
