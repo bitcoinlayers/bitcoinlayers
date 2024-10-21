@@ -41,14 +41,6 @@
                 {
                     "title": "Incentive model",
                     "content": "Users receive points for staking in the Lombard protocol. They additionally have an opportunity to deposit funds into the Lombard “DeFi Vault”.\n\nWhen users deposit their LBTC tokens into the vault, they give up the custody of their LBTC token to the vault. The operators of the vault take this liquidity and apply it to a trading strategy, which can potentially earn users profits.\n\nOver time, should the trading strategy be profitable, users would earn returns based on the amount of LBTC they deposited into the DeFi vault.\n\n⚠️ If a trading strategy was executed poorly, user funds could be at risk for liquidation and loss."
-                },
-                {
-                    "title": "How APY is determined",
-                    "content": "Potential yield opportunities are dependent on the various onchain applications parameters, and the delegation model in the PoS chains LBTC might be used via Babylon."
-                },
-                {
-                    "title": "Smart contracts & audits",
-                    "content": "Lombard has published audit reports on its smart contracts here.\n\nThe code behind Lombard’s is also source viewable here.\n\n⚠️ Audits of smart contracts do not mean exploits are not possible. Users should not deposit more funds than they’re willing to lose."
                 }
             ]
         },
