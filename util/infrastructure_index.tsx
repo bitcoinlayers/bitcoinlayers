@@ -66,6 +66,9 @@ const bedrock: Infrastructure = bedrockJson as Infrastructure;
 import pumpJson from "../content/infrastructures/pump.json" assert { type:
     "json" };
 const pump: Infrastructure = pumpJson as Infrastructure;
+import fireJson from "../content/infrastructures/fire.json" assert { type:
+    "json" };
+const fire: Infrastructure = fireJson as Infrastructure;
 
 export const allInfrastructures: Infrastructure[] = [
     cashu,
@@ -90,6 +93,7 @@ export const allInfrastructures: Infrastructure[] = [
     solvlst,
     bedrock,
     pump,
+    fire,
 ];
 
 export const allInfrastructureSlugs: string[] = allInfrastructures.map(

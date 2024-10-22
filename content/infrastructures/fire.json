@@ -1,0 +1,36 @@
+{
+    "slug": "fire",
+    "title": "Fire Bitcoin",
+    "infrastructureType": "Bitcoin Wrapper",
+    "live": "Mainnet",
+    "staking": false,
+    "bridge": true,
+    "underReview": "yes",
+    "riskFactors": ["", ""],
+    "bitcoinSecurity": "No",
+    "nativeToken": "",
+    "purpose": "General",
+    "associatedLayers": "EVM-based chains",
+    "bitcoinOnly": false,
+    "links": [
+        "https://fbtc.com/",
+        "https://fbtc.com/",
+        "https://fbtc.com/",
+        "https://docs.fbtc.com/",
+        "https://github.com/fbtc-xyz",
+        "https://x.com/IgnitionFBTC"
+    ],
+    "description": "Fire Bitcoin's FBTC is a wrapped version of BTC.",
+    "sections": [
+        {
+            "id": "knowledgeBits",
+            "title": "Knowledge Bits",
+            "content": [
+                {
+                    "title": "Learn more",
+                    "content": "[Fire Bitcoin docs](https://docs.fbtc.com/)"
+                }
+            ]
+        }
+    ]
+}
