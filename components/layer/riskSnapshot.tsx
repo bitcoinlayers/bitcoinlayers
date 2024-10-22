@@ -9,10 +9,10 @@ import RiskIconDA from "@/components/icons/RiskIconDA";
 import RiskIconOperators from "@/components/icons/RiskIconOperators";
 import RiskIconSettlement from "@/components/icons/RiskIconSettlement";
 import { DialogHeader, DialogTitle } from "../ui/dialog";
-import { LayerProject } from "@/content/props";
+import { LayerProject, Project } from "@/content/props";
 
 interface RiskSnapshotProps {
-    layer: LayerProject;
+    layer: Project;
     title?: string;
 }
 
@@ -41,7 +41,7 @@ const RiskSnapshot: React.FC<RiskSnapshotProps> = ({ layer, title }) => {
                 </DialogTitle>
             </DialogHeader>
             <div className="grid grid-cols-1 gap-4 sm:gap-6">
-                {layer.riskAnalysis.map((risk, index) => (
+                {(layer as LayerProject).riskAnalysis.map((risk, index) => (
                     <div key={index} className="flex items-start">
                         <div className="flex-shrink-0">
                             <RiskIcon
