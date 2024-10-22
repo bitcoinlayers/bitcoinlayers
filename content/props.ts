@@ -1,16 +1,21 @@
-enum Type {
+export enum Type {
     Infrastructure = "Infrastructure",
     Layer = "Layer"
 }
 
-enum LiveStatus {
+export enum LiveStatus {
     Mainnet = "Mainnet",
     Testnet = "Testnet",
     Announced = "Announced",
     Proposed = "Proposed"
 }
 
-enum RiskFactor {
+enum Purpose {
+    General = "General",
+    Payments = "Payments"
+}
+
+export enum RiskFactor {
     Low = "Low",
     Medium = "Medium",
     High = "High",
@@ -20,26 +25,19 @@ enum RiskFactor {
     NotApplicable = "Not Applicable"
 }
 
-// enum Purpose {
-//     General = "General",
-//     Payments = "Payments"
-// }
-
-enum RiskCategory {
+export enum RiskCategory {
     BridgeSecurity = "Bridge Security",
     DataAvailability = "Data Availability",
     NetworkOperators = "Network Operators",
-    SettlementAssurance = "Settlement Assurance"
+    SettlementAssurance = "Settlement Assurance",
+    UnilateralExits = "Unilateral Exits",
+    BlockProduction = "Block Production",
+    StateValidation = "State Validation",
+    FinalityGuarantees = "Finality Guarantees",
+    LivenessReorgResistance = "Liveness & Reorg Resistance"
 }
 
-enum SettlementType {
-    Offchain = "Offchain",
-    External = "External",
-    None = "-",
-    UnderReview = "Under review"
-}
-
-enum EntityType {
+export enum EntityType {
     CSV = "CSV",
     EthereumRollup = "Ethereum Rollup",
     Rollup = "Rollup",
@@ -54,18 +52,20 @@ enum EntityType {
     FederationSDK = "Federation SDK",
     LiquidStaking = "Liquid Staking",
     RollupSDK = "Rollup SDK",
-    Staking = "Staking"
+    Staking = "Staking",
+    PermissionedChain = "Permissioned Chain",
+    ArkSidechain = "Ark on Sidechain"
 }
 
-enum Site {
+export enum Site {
     Website = "Website",
     Docs = "Docs",
     Explorer = "Explorer",
-    Github = "GitHub",
+    GitHub = "GitHub",
     Twitter = "Twitter"
 }
 
-interface RiskSection {
+export interface RiskSection {
     category: RiskCategory;
     score: number;
     tier: RiskFactor | "";
@@ -73,13 +73,13 @@ interface RiskSection {
     content: string;
 }
 
-interface ContentSection {
+export interface ContentSection {
     id: string;
     title: string;
-    content: { title: string; content: string }[];
+    content: { title?: string; content: string }[];
 }
 
-interface Project {
+export interface BaseProject {
     type: Type;
     slug: string;
     title: string;
@@ -87,29 +87,32 @@ interface Project {
     live: LiveStatus;
     staking: boolean;
     bridge: boolean;
-    underReview: boolean; // Heads up, this is a boolean now
+    underReview: boolean;
     riskFactors: (RiskFactor | '')[];
     nativeToken: string;
     bitcoinOnly: boolean;
     links: { text: Site | string; url: string | URL }[];
     description: string;
     sections: ContentSection[];
-    // purpose?: Purpose | "-";
-    // btcBridge?: string;
-    // settlement?: SettlementType;
     btcLocked: number;
-    // executionEnv?: string;
-    // consensus?: string;
     feeToken: string;
-    // enshrinedBtc?: string;
     riskAnalysis: RiskSection[];
-    // Infrastructure-specific properties
-    // bitcoinSecurity?: string;
     associatedLayers?: string;
 }
 
+export interface InfrastructureProject extends BaseProject {
+    type: Type.Infrastructure;
+    purpose: Purpose;
+}
+
+export interface LayerProject extends BaseProject {
+    type: Type.Layer;
+}
+
+export type Project = InfrastructureProject | LayerProject;
+
 const exampleProject: Project = {
-    type: Type.Layer,
+    type: Type.Infrastructure,
     slug: "example-rollup",
     title: "Example Rollup",
     entityType: EntityType.Rollup,
@@ -120,11 +123,12 @@ const exampleProject: Project = {
     riskFactors: [RiskFactor.Medium, RiskFactor.Low, RiskFactor.Low, RiskFactor.High],
     nativeToken: "EXR",
     bitcoinOnly: false,
+    purpose: Purpose.General,
     links: [
         { text: Site.Website, url: "https://example-rollup.com" },
         { text: Site.Docs, url: "https://docs.example-rollup.com" },
         { text: Site.Explorer, url: "https://example-explorer.com"},
-        { text: Site.Github, url: "https://github.com/example-rollup" },
+        { text: Site.GitHub, url: "https://github.com/example-rollup" },
         { text: Site.Twitter, url: "https://twitter.com/example_rollup" },
         { text: 'Nostr', url: 'https://example-nostr.com'}
     ],

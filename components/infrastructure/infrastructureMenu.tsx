@@ -1,9 +1,9 @@
 "use client";
 
+import { Project } from "@/content/props";
 import React, { useState, useEffect } from "react";
-import { Infrastructure } from "./infrastructureProps";
 
-const InfrastructureMenu: React.FC<{ infrastructure: Infrastructure }> = ({
+const InfrastructureMenu: React.FC<{ infrastructure: Project }> = ({
     infrastructure,
 }) => {
     const [activeSection, setActiveSection] = useState("overview");

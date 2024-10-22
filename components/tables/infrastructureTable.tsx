@@ -3,10 +3,10 @@
 import React, { useState, useMemo } from "react";
 import Image from "next/image";
 import TableHeader from "@/components/tables/tableHeader";
-import { Infrastructure } from "@/components/infrastructure/infrastructureProps";
 import { MobileView, isMobile } from "react-device-detect";
 import Link from "next/link";
 import { useQueryState } from "nuqs";
+import { InfrastructureProject, Project } from "@/content/props";
 
 type TableTabKey =
     | "Type"
@@ -16,7 +16,7 @@ type TableTabKey =
     | "Associated Layers";
 
 interface Props {
-    data: Infrastructure[];
+    data: InfrastructureProject[];
     headers: {
         name: string;
         showSorting: boolean;
@@ -76,8 +76,8 @@ const InfrastructureTable = ({ data, headers }: Props) => {
                     valueB = b.title.toLowerCase();
                     break;
                 case "Type":
-                    valueA = a.infrastructureType;
-                    valueB = b.infrastructureType;
+                    valueA = a.entityType;
+                    valueB = b.entityType;
                     break;
                 case "Purpose":
                     valueA = a.purpose;
@@ -98,6 +98,8 @@ const InfrastructureTable = ({ data, headers }: Props) => {
                 default:
                     return 0;
             }
+
+            if (valueA === undefined || valueB === undefined) return 0;
             if (valueA < valueB) return sortOrder === "asc" ? -1 : 1;
             if (valueA > valueB) return sortOrder === "asc" ? 1 : -1;
             return 0;
@@ -106,7 +108,7 @@ const InfrastructureTable = ({ data, headers }: Props) => {
         let filtered = sorted;
         if (types.length > 0) {
             filtered = filtered.filter((item) =>
-                types.includes(item.infrastructureType),
+                types.includes(item.entityType),
             );
         }
 
@@ -275,7 +277,7 @@ const InfrastructureTable = ({ data, headers }: Props) => {
                                             href={`/infrastructure/${item.slug}`}
                                         >
                                             {" "}
-                                            {item.infrastructureType}
+                                            {item.entityType}
                                         </Link>
                                     </td>
                                 )}

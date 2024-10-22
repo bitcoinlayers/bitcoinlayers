@@ -1,9 +1,8 @@
 import React from "react";
-import { Infrastructure } from "./infrastructureProps";
-import Link from "next/link";
 import { parseTextWithLinks } from "@/util/parseTextWithLinks";
+import { Project } from "@/content/props";
 
-const InfrastructureBody: React.FC<{ infrastructure: Infrastructure }> = ({
+const InfrastructureBody: React.FC<{ infrastructure: Project }> = ({
     infrastructure,
 }) => {
     return (

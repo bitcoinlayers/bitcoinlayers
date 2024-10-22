@@ -1,4 +1,3 @@
-import { Layer } from "./layerProps";
 import { getRiskColorBackground, getRiskColorIcon } from "@/util/riskColors";
 import RiskSnapshot from "./riskSnapshot";
 import RiskIconBridge from "@/components/icons/RiskIconBridge";
@@ -6,8 +5,9 @@ import RiskIconDA from "@/components/icons/RiskIconDA";
 import RiskIconOperators from "@/components/icons/RiskIconOperators";
 import RiskIconSettlement from "@/components/icons/RiskIconSettlement";
 import { Dialog, DialogContent, DialogTrigger } from "../ui/dialog";
+import { Project } from "@/content/props";
 
-const LayerDiamond: React.FC<{ layer: Layer }> = ({ layer }) => {
+const LayerDiamond: React.FC<{ layer: Project }> = ({ layer }) => {
     const containerSize = 350;
     const svgDivSize = containerSize / 2;
     const svgSize = 215;

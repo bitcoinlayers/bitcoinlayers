@@ -1,9 +1,8 @@
 import { Fragment } from "react";
-import { Layer } from "./layerProps";
-import Link from "next/link";
 import { parseTextWithLinks } from "@/util/parseTextWithLinks";
+import { Project } from "@/content/props";
 
-const LayerBody: React.FC<{ layer: Layer }> = ({ layer }) => {
+const LayerBody: React.FC<{ layer: Project }> = ({ layer }) => {
     return (
         <main className="content flex-grow sm:mt-0 pt-0 lg:px-0">
             {layer.sections.map((section, index) => (

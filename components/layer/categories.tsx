@@ -1,19 +1,18 @@
 "use client";
 
 import useGetLayertvlHistoricalAll from "@/hooks/use-get-layertvl-current-all";
-import { Layer } from "./layerProps";
-import { useParams } from "next/navigation";
 import { useMemo } from "react";
+import { Project } from "@/content/props";
 
-const Categories: React.FC<{ layer: Layer }> = ({ layer }) => {
-    const { slug } = useParams();
-
+const Categories: React.FC<{ layer: Project }> = ({ layer }) => {
     const { data: balances } = useGetLayertvlHistoricalAll();
 
     const matchingBalance = useMemo(() => {
         if (!balances) return null;
         return balances.find((balance) => balance.layer_slug === layer.slug);
     }, [balances, layer.slug]);
+
+    console.log(layer)
 
     return (
         <div className="lg:flex lg:justify-between w-full grid grid-cols-2 gap-4">
@@ -27,7 +26,7 @@ const Categories: React.FC<{ layer: Layer }> = ({ layer }) => {
                 <div className="text-text_primary text-sm leading-tight">
                     Type
                 </div>
-                <div className="text-text_header">{layer.layerType}</div>
+                <div className="text-text_header">{layer.entityType}</div>
             </div>
             <div className="flex-col justify-center items-start pl-4 lg:pl-0">
                 <div className="text-text_primary text-sm leading-tight">

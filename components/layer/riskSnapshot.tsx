@@ -1,5 +1,4 @@
 import React from "react";
-import { Layer } from "@/components/layer/layerProps";
 import {
     getRiskColorText,
     getRiskColorIcon,
@@ -10,9 +9,10 @@ import RiskIconDA from "@/components/icons/RiskIconDA";
 import RiskIconOperators from "@/components/icons/RiskIconOperators";
 import RiskIconSettlement from "@/components/icons/RiskIconSettlement";
 import { DialogHeader, DialogTitle } from "../ui/dialog";
+import { Project } from "@/content/props";
 
 interface RiskSnapshotProps {
-    layer: Layer;
+    layer: Project;
     title?: string;
 }
 

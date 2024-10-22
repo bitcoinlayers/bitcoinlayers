@@ -1,4 +1,3 @@
-import type { Infrastructure } from "@/components/infrastructure/infrastructureProps";
 import astriaJson from "../content/infrastructures/astria.json" assert { type:
     "json" };
 
