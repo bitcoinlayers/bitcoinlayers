@@ -1,7 +1,7 @@
 {
     "slug": "fire",
     "title": "Fire Bitcoin",
-    "infrastructureType": "Bitcoin Wrapper",
+    "infrastructureType": "BTC Wrapper",
     "live": "Mainnet",
     "staking": false,
     "bridge": true,
