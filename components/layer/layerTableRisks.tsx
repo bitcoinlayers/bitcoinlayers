@@ -5,10 +5,10 @@ import Image from "next/image";
 import { useState } from "react";
 import { MobileView, isMobile } from "react-device-detect";
 import { getRiskColorText } from "@/util/riskColors";
-import { Project } from "@/content/props";
+import { LayerProject } from "@/content/props";
 
 interface Props {
-    data: Project[];
+    data: LayerProject[];
 }
 type MobileRiskKey = "Bridge" | "DA" | "Operators" | "Settlement";
 

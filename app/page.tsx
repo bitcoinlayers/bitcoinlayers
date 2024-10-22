@@ -1,6 +1,7 @@
 import { allLayers } from "@/util/layer_index";
 import Hero from "@/components/hero";
 import ViewToggleGroup from "@/components/layer/view-toggle-group";
+import { Type } from "@/content/props";
 
 export default function Home() {
     const sortedLayers = allLayers.sort((a, b) =>
@@ -8,7 +9,7 @@ export default function Home() {
     );
 
     const typeFilters = [
-        ...new Set(sortedLayers.map((layer) => layer.layerType)),
+        ...new Set(sortedLayers.map((layer) => layer.entityType)),
     ];
 
     const layerHeaders = [

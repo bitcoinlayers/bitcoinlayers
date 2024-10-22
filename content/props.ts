@@ -1,13 +1,13 @@
 export enum Type {
     Infrastructure = "Infrastructure",
-    Layer = "Layer"
+    Layer = "Layer",
 }
 
 export enum LiveStatus {
     Mainnet = "Mainnet",
     Testnet = "Testnet",
     Announced = "Announced",
-    Proposed = "Proposed"
+    Proposed = "Proposed",
 }
 
 export enum Purpose {
@@ -16,7 +16,7 @@ export enum Purpose {
     LiquidStaking = "Liquid Staking",
     EcashMint = "Ecash Mint",
     FederatedEcashMint = "Federated Ecash Mint",
-    Staking = "Staking"
+    Staking = "Staking",
 }
 
 export enum RiskFactor {
@@ -26,7 +26,7 @@ export enum RiskFactor {
     Critical = "Critical",
     Unverified = "Unverified",
     UnderReview = "Under Review",
-    NotApplicable = "Not Applicable"
+    NotApplicable = "Not Applicable",
 }
 
 export enum RiskCategory {
@@ -38,7 +38,7 @@ export enum RiskCategory {
     BlockProduction = "Block Production",
     StateValidation = "State Validation",
     FinalityGuarantees = "Finality Guarantees",
-    LivenessReorgResistance = "Liveness & Reorg Resistance"
+    LivenessReorgResistance = "Liveness & Reorg Resistance",
 }
 
 export enum EntityType {
@@ -65,7 +65,9 @@ export enum EntityType {
     RaaS = "RaaS",
     BTCWrapper = "BTC Wrapper",
     SequencingDA = "Sequencing & DA",
-    BitcoinBridge = "Bitcoin Bridge"
+    BitcoinBridge = "Bitcoin Bridge",
+    MPCProtocol = "MPC Protocol",
+    "-" = "-",
 }
 
 export enum Site {
@@ -73,7 +75,7 @@ export enum Site {
     Docs = "Docs",
     Explorer = "Explorer",
     GitHub = "GitHub",
-    Twitter = "Twitter"
+    Twitter = "Twitter",
 }
 
 export interface RiskSection {
@@ -90,6 +92,21 @@ export interface ContentSection {
     content: { title?: string; content: string }[];
 }
 
+export enum AssessmentCategory {
+    AssetCustody = "Asset Custody",
+    StakingType = "Staking Type",
+    SlashingRisk = "Slashing Risk",
+    IncentiveModel = "Incentive Model",
+}
+
+export interface AssessmentSection {
+    category: AssessmentCategory;
+    score: number;
+    tier: RiskFactor | null;
+    title: string;
+    content: string;
+}
+
 export interface BaseProject {
     type: Type;
     slug: string;
@@ -99,7 +116,7 @@ export interface BaseProject {
     staking: boolean;
     bridge: boolean;
     underReview: boolean;
-    riskFactors: (RiskFactor | '')[];
+    riskFactors: (RiskFactor | "")[];
     nativeToken: string;
     bitcoinOnly: boolean;
     links: { text: Site | string; url: string | URL }[];
@@ -111,6 +128,7 @@ export interface BaseProject {
 export interface InfrastructureProject extends BaseProject {
     type: Type.Infrastructure;
     purpose: Purpose;
+    assessment?: AssessmentSection[];
 }
 
 export interface LayerProject extends BaseProject {

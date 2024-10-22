@@ -25,7 +25,7 @@ const isLayer = (item: Project) => {
 };
 
 const isInfrastructure = (item: Project) => {
-    return item.type === Type.Infrastructure
+    return item.type === Type.Infrastructure;
 };
 
 const LayerImage = ({ src, title }: { src: string; title: string }) => {

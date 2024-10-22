@@ -4,10 +4,10 @@ import React from "react";
 import { useQueryState } from "nuqs";
 import LayerTableAll from "../tables/layerTableAll";
 import LayersTVLChart from "../charts/layers-tvl-chart";
-import { Project } from "@/content/props";
+import { LayerProject } from "@/content/props";
 
 interface Props {
-    data: Project[];
+    data: LayerProject[];
     headers: (
         | {
               name: string;

@@ -139,9 +139,9 @@ const Links: React.FC<{ infrastructure: InfrastructureProject }> = ({
     );
 };
 
-const InfrastructureOverview: React.FC<{ infrastructure: InfrastructureProject }> = ({
-    infrastructure,
-}) => {
+const InfrastructureOverview: React.FC<{
+    infrastructure: InfrastructureProject;
+}> = ({ infrastructure }) => {
     return (
         <div className="flex justify-between pt-6 gap-4">
             <div className="flex flex-col space-y-10 mb-12 w-full">

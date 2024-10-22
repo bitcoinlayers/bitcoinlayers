@@ -5,14 +5,14 @@ import RiskIconDA from "@/components/icons/RiskIconDA";
 import RiskIconOperators from "@/components/icons/RiskIconOperators";
 import RiskIconSettlement from "@/components/icons/RiskIconSettlement";
 import { Dialog, DialogContent, DialogTrigger } from "../ui/dialog";
-import { Project } from "@/content/props";
+import { LayerProject } from "@/content/props";
 
 interface RiskProps {
-    layer: Project;
+    layer: LayerProject;
 }
 
 const Risk: React.FC<RiskProps> = ({ layer }) => {
-    const riskLevels = layer.riskAnalysis;
+    const riskLevels = (layer as LayerProject).riskAnalysis;
 
     const RiskIcon = ({
         riskFactor,

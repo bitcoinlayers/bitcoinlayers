@@ -108,9 +108,7 @@ const StakingTable = ({ data, headers }: Props) => {
         let filtered = sorted;
         if (types.length > 0) {
             filtered = filtered.filter((item) =>
-                types.includes(
-                    isLayer(item) ? item.type : item.type,
-                ),
+                types.includes(isLayer(item) ? item.type : item.type),
             );
         }
 

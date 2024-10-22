@@ -2,7 +2,7 @@ import Image from "next/image";
 import LayerDiamond from "./layerDiamond";
 import { parseTextWithLinks } from "@/util/parseTextWithLinks";
 import Categories from "./categories";
-import { Project, Site } from "@/content/props";
+import { LayerProject, Site } from "@/content/props";
 
 const LinkButton = ({
     href,
@@ -20,7 +20,7 @@ const LinkButton = ({
     </a>
 );
 
-const LayerOverview: React.FC<{ layer: Project }> = ({ layer }) => {
+const LayerOverview: React.FC<{ layer: LayerProject }> = ({ layer }) => {
     return (
         <section
             id="overview"
@@ -41,7 +41,7 @@ const LayerOverview: React.FC<{ layer: Project }> = ({ layer }) => {
 
 export default LayerOverview;
 
-const Description: React.FC<{ layer: Project }> = ({ layer }) => {
+const Description: React.FC<{ layer: LayerProject }> = ({ layer }) => {
     return (
         <div className="self-stretch text-text_secondary">
             {parseTextWithLinks(layer.description)}
@@ -49,11 +49,16 @@ const Description: React.FC<{ layer: Project }> = ({ layer }) => {
     );
 };
 
-const Links: React.FC<{ layer: Project }> = ({ layer }) => {
+const Links: React.FC<{ layer: LayerProject }> = ({ layer }) => {
     return (
         <div className="self-stretch flex lg:justify-start justify-center items-start gap-2 flex-wrap">
-            {layer.links.find(link => link.text === Site.Website) && (
-                <LinkButton href={String(layer.links.find(link => link.text === Site.Website)?.url)}>
+            {layer.links.find((link) => link.text === Site.Website) && (
+                <LinkButton
+                    href={String(
+                        layer.links.find((link) => link.text === Site.Website)
+                            ?.url,
+                    )}
+                >
                     <div className="bg-white/opacity-0 flex-col justify-center items-center inline-flex">
                         <div className="w-3.5 h-3.5 relative">
                             <Image
@@ -68,8 +73,13 @@ const Links: React.FC<{ layer: Project }> = ({ layer }) => {
                     Website
                 </LinkButton>
             )}
-            {layer.links.find(link => link.text === Site.Docs) && (
-                <LinkButton href={String(layer.links.find(link => link.text === Site.Docs)?.url)}>
+            {layer.links.find((link) => link.text === Site.Docs) && (
+                <LinkButton
+                    href={String(
+                        layer.links.find((link) => link.text === Site.Docs)
+                            ?.url,
+                    )}
+                >
                     <div className="bg-white/opacity-0 flex-col justify-center items-center inline-flex">
                         <div className="w-3.5 h-3.5 relative">
                             <Image
@@ -84,8 +94,13 @@ const Links: React.FC<{ layer: Project }> = ({ layer }) => {
                     Docs
                 </LinkButton>
             )}
-            {layer.links.find(link => link.text === Site.Explorer) && (
-                <LinkButton href={String(layer.links.find(link => link.text === Site.Explorer)?.url)}>
+            {layer.links.find((link) => link.text === Site.Explorer) && (
+                <LinkButton
+                    href={String(
+                        layer.links.find((link) => link.text === Site.Explorer)
+                            ?.url,
+                    )}
+                >
                     <div className="bg-white/opacity-0 flex-col justify-center items-center inline-flex">
                         <div className="w-3.5 h-3.5 relative">
                             <Image
@@ -100,8 +115,13 @@ const Links: React.FC<{ layer: Project }> = ({ layer }) => {
                     Explorer
                 </LinkButton>
             )}
-            {layer.links.find(link => link.text === Site.GitHub) && (
-                <LinkButton href={String(layer.links.find(link => link.text === Site.GitHub)?.url)}>
+            {layer.links.find((link) => link.text === Site.GitHub) && (
+                <LinkButton
+                    href={String(
+                        layer.links.find((link) => link.text === Site.GitHub)
+                            ?.url,
+                    )}
+                >
                     <div className="bg-white/opacity-0 flex-col justify-center items-center inline-flex">
                         <div className="w-3.5 h-3.5 relative">
                             <Image
@@ -116,8 +136,13 @@ const Links: React.FC<{ layer: Project }> = ({ layer }) => {
                     GitHub
                 </LinkButton>
             )}
-            {layer.links.find(link => link.text === Site.Twitter) && (
-                <LinkButton href={String(layer.links.find(link => link.text === Site.Twitter)?.url)}>
+            {layer.links.find((link) => link.text === Site.Twitter) && (
+                <LinkButton
+                    href={String(
+                        layer.links.find((link) => link.text === Site.Twitter)
+                            ?.url,
+                    )}
+                >
                     <div className="bg-white/opacity-0 flex-col justify-center items-center inline-flex">
                         <div className="w-3.5 h-3.5 relative">
                             <Image

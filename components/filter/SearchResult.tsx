@@ -3,11 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Project, Type } from "@/content/props";
 
-export const SearchResult = ({
-    searchResult,
-}: {
-    searchResult: Project[];
-}) => {
+export const SearchResult = ({ searchResult }: { searchResult: Project[] }) => {
     const getItemLink = (item: Project) => {
         return item.type === Type.Layer
             ? `/layers/${item.slug}`

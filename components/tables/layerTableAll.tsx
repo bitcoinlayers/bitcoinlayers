@@ -8,7 +8,7 @@ import { MobileView, isMobile } from "react-device-detect";
 import Link from "next/link";
 import { useQueryState } from "nuqs";
 import useGetLayertvlHistoricalAll from "@/hooks/use-get-layertvl-current-all";
-import { Project } from "@/content/props";
+import { LayerProject } from "@/content/props";
 
 type TableTabKey =
     | "Risk"
@@ -18,7 +18,7 @@ type TableTabKey =
     | "BTC Locked";
 
 interface Props {
-    data: Project[];
+    data: LayerProject[];
     headers: {
         name: string;
         showSorting: boolean;

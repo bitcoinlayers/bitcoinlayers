@@ -2,7 +2,7 @@
 
 import useGetLayertvlHistoricalAll from "@/hooks/use-get-layertvl-current-all";
 import { useMemo } from "react";
-import { Project } from "@/content/props";
+import { LayerProject, Project } from "@/content/props";
 
 const Categories: React.FC<{ layer: Project }> = ({ layer }) => {
     const { data: balances } = useGetLayertvlHistoricalAll();
@@ -11,8 +11,6 @@ const Categories: React.FC<{ layer: Project }> = ({ layer }) => {
         if (!balances) return null;
         return balances.find((balance) => balance.layer_slug === layer.slug);
     }, [balances, layer.slug]);
-
-    console.log(layer)
 
     return (
         <div className="lg:flex lg:justify-between w-full grid grid-cols-2 gap-4">
@@ -32,7 +30,9 @@ const Categories: React.FC<{ layer: Project }> = ({ layer }) => {
                 <div className="text-text_primary text-sm leading-tight">
                     Fee Token
                 </div>
-                <div className="text-text_header">{layer.feeToken}</div>
+                <div className="text-text_header">
+                    {(layer as LayerProject).feeToken}
+                </div>
             </div>
             <div className="flex-col justify-center items-start pl-4 lg:pl-0">
                 <div className="text-text_primary text-sm leading-tight">
@@ -45,7 +45,7 @@ const Categories: React.FC<{ layer: Project }> = ({ layer }) => {
                               minimumFractionDigits: 0,
                               maximumFractionDigits: 0,
                           })
-                        : layer.btcLocked}
+                        : (layer as LayerProject).btcLocked}
                 </div>
             </div>
         </div>

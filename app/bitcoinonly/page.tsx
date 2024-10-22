@@ -13,7 +13,7 @@ export default function Home() {
     const typeFilters = [
         ...new Set(
             sortedEverything.map((item) =>
-                "layerType" in item ? item.layerType : item.infrastructureType,
+                "layerType" in item ? item.entityType : item.entityType,
             ),
         ),
     ];
