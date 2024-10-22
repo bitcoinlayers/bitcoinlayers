@@ -58,7 +58,7 @@ const SearchBlock = ({
         >
             <input
                 type="text"
-                placeholder="Find Layer"
+                placeholder="Find Protocol"
                 onChange={handleInputSearch}
                 onFocus={() => setInputFocused(true)}
                 ref={inputRef}
