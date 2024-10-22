@@ -10,9 +10,13 @@ export enum LiveStatus {
     Proposed = "Proposed"
 }
 
-enum Purpose {
+export enum Purpose {
     General = "General",
-    Payments = "Payments"
+    Payments = "Payments",
+    LiquidStaking = "Liquid Staking",
+    EcashMint = "Ecash Mint",
+    FederatedEcashMint = "Federated Ecash Mint",
+    Staking = "Staking"
 }
 
 export enum RiskFactor {
@@ -54,7 +58,14 @@ export enum EntityType {
     RollupSDK = "Rollup SDK",
     Staking = "Staking",
     PermissionedChain = "Permissioned Chain",
-    ArkSidechain = "Ark on Sidechain"
+    ArkSidechain = "Ark on Sidechain",
+    Sequencing = "Sequencing",
+    DataAvailability = "Data Availability",
+    Bridge = "Bridge",
+    RaaS = "RaaS",
+    BTCWrapper = "BTC Wrapper",
+    SequencingDA = "Sequencing & DA",
+    BitcoinBridge = "Bitcoin Bridge"
 }
 
 export enum Site {
@@ -94,9 +105,6 @@ export interface BaseProject {
     links: { text: Site | string; url: string | URL }[];
     description: string;
     sections: ContentSection[];
-    btcLocked: number;
-    feeToken: string;
-    riskAnalysis: RiskSection[];
     associatedLayers?: string;
 }
 
@@ -107,65 +115,9 @@ export interface InfrastructureProject extends BaseProject {
 
 export interface LayerProject extends BaseProject {
     type: Type.Layer;
+    btcLocked: number;
+    feeToken: string;
+    riskAnalysis: RiskSection[];
 }
 
 export type Project = InfrastructureProject | LayerProject;
-
-const exampleProject: Project = {
-    type: Type.Infrastructure,
-    slug: "example-rollup",
-    title: "Example Rollup",
-    entityType: EntityType.Rollup,
-    live: LiveStatus.Testnet,
-    staking: true,
-    bridge: true,
-    underReview: false,
-    riskFactors: [RiskFactor.Medium, RiskFactor.Low, RiskFactor.Low, RiskFactor.High],
-    nativeToken: "EXR",
-    bitcoinOnly: false,
-    purpose: Purpose.General,
-    links: [
-        { text: Site.Website, url: "https://example-rollup.com" },
-        { text: Site.Docs, url: "https://docs.example-rollup.com" },
-        { text: Site.Explorer, url: "https://example-explorer.com"},
-        { text: Site.GitHub, url: "https://github.com/example-rollup" },
-        { text: Site.Twitter, url: "https://twitter.com/example_rollup" },
-        { text: 'Nostr', url: 'https://example-nostr.com'}
-    ],
-    description: "Example Rollup is a Layer 2 scaling solution for Bitcoin, offering fast and low-cost transactions.",
-    sections: [
-        {
-            id: "overview",
-            title: "Overview",
-            content: [
-                {
-                    title: "What is Example Rollup?",
-                    content: "Example Rollup is a Layer 2 scaling solution that uses optimistic rollup technology to increase transaction throughput and reduce fees for Bitcoin users."
-                },
-                {
-                    title: "How does it work?",
-                    content: "Example Rollup batches multiple transactions off-chain and then submits them as a single transaction to the Bitcoin network, reducing congestion and fees."
-                }
-            ]
-        }
-    ],
-    btcLocked: 1000,
-    feeToken: "EXR",
-    riskAnalysis: [
-        {
-            category: RiskCategory.BridgeSecurity,
-            score: 7,
-            tier: RiskFactor.Medium,
-            title: "Bridge Security",
-            content: "The bridge uses a multi-signature scheme with 7 validators, providing a good balance between security and decentralization."
-        },
-        {
-            category: RiskCategory.DataAvailability,
-            score: 8,
-            tier: RiskFactor.Low,
-            title: "Data Availability",
-            content: "All transaction data is published on-chain, ensuring high availability and resistance to censorship."
-        }
-    ],
-    associatedLayers: "Bitcoin"
-};

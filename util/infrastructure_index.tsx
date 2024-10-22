@@ -1,75 +1,54 @@
-import astriaJson from "../content/infrastructures/astria.json" assert { type:
-    "json" };
+import { InfrastructureProject } from "../content/props";
 
-const astria: Infrastructure = astriaJson as Infrastructure;
-import availJson from "../content/infrastructures/avail.json" assert { type:
-    "json" };
-const avail: Infrastructure = availJson as Infrastructure;
-import bvmJson from "../content/infrastructures/bvm.json" assert { type:
-    "json" };
-const bvm: Infrastructure = bvmJson as Infrastructure;
-import celestiaJson from "../content/infrastructures/celestia.json" assert { type:
-    "json" };
-const celestia: Infrastructure = celestiaJson as Infrastructure;
-import espressoJson from "../content/infrastructures/espresso.json" assert { type:
-    "json" };
-const espresso: Infrastructure = espressoJson as Infrastructure;
-import lorenzoJson from "../content/infrastructures/lorenzo.json" assert { type:
-    "json" };
-const lorenzo: Infrastructure = lorenzoJson as Infrastructure;
-import sovereignJson from "../content/infrastructures/sovereign.json" assert { type:
-    "json" };
-const sovereign: Infrastructure = sovereignJson as Infrastructure;
-import nubitJson from "../content/infrastructures/nubit.json" assert { type:
-    "json" };
-const nubit: Infrastructure = nubitJson as Infrastructure;
-import babylonJson from "../content/infrastructures/babylon.json" assert { type:
-    "json" };
-const babylon: Infrastructure = babylonJson as Infrastructure;
-import fedimintJson from "../content/infrastructures/fedimint.json" assert { type:
-    "json" };
-const fedimint: Infrastructure = fedimintJson as Infrastructure;
-import dlclinkJson from "../content/infrastructures/dlclink.json" assert { type:
-    "json" };
-const dlclink: Infrastructure = dlclinkJson as Infrastructure;
-import boolJson from "../content/infrastructures/bool.json" assert { type:
-    "json" };
-const bool: Infrastructure = boolJson as Infrastructure;
-import cashuJson from "../content/infrastructures/cashu.json" assert { type:
-    "json" };
-const cashu: Infrastructure = cashuJson as Infrastructure;
-import tbtcJson from "../content/infrastructures/tbtc.json" assert { type:
-    "json" };
-const tbtc: Infrastructure = tbtcJson as Infrastructure;
-import lombardJson from "../content/infrastructures/lombard.json" assert { type:
-    "json" };
-const lombard: Infrastructure = lombardJson as Infrastructure;
-import wbtcJson from "../content/infrastructures/wbtc.json" assert { type:
-    "json" };
-const wbtc: Infrastructure = wbtcJson as Infrastructure;
-import cbbtcJson from "../content/infrastructures/cbbtc.json" assert { type:
-    "json" };
-const cbbtc: Infrastructure = cbbtcJson as Infrastructure;
-import kbtcJson from "../content/infrastructures/kbtc.json" assert { type:
-    "json" };
-const kbtc: Infrastructure = kbtcJson as Infrastructure;
-import solvJson from "../content/infrastructures/solv.json" assert { type:
-    "json" };
-const solv: Infrastructure = solvJson as Infrastructure;
-import solvlstJson from "../content/infrastructures/solvlst.json" assert { type:
-    "json" };
-const solvlst: Infrastructure = solvlstJson as Infrastructure;
-import bedrockJson from "../content/infrastructures/bedrock.json" assert { type:
-    "json" };
-const bedrock: Infrastructure = bedrockJson as Infrastructure;
-import pumpJson from "../content/infrastructures/pump.json" assert { type:
-    "json" };
-const pump: Infrastructure = pumpJson as Infrastructure;
-import fireJson from "../content/infrastructures/fire.json" assert { type:
-    "json" };
-const fire: Infrastructure = fireJson as Infrastructure;
+import astriaProject from "../content/infrastructures/astria";
+import availProject from "../content/infrastructures/avail";
+import bvmProject from "../content/infrastructures/bvm";
+import celestiaProject from "../content/infrastructures/celestia";
+import espressoProject from "../content/infrastructures/espresso";
+import lorenzoProject from "../content/infrastructures/lorenzo";
+import sovereignProject from "../content/infrastructures/sovereign";
+import nubitProject from "../content/infrastructures/nubit";
+import babylonProject from "../content/infrastructures/babylon";
+import fedimintProject from "../content/infrastructures/fedimint";
+import dlclinkProject from "../content/infrastructures/dlclink";
+import boolProject from "../content/infrastructures/bool";
+import cashuProject from "../content/infrastructures/cashu";
+import tbtcProject from "../content/infrastructures/tbtc";
+import lombardProject from "../content/infrastructures/lombard";
+import wbtcProject from "../content/infrastructures/wbtc";
+import cbbtcProject from "../content/infrastructures/cbbtc";
+import kbtcProject from "../content/infrastructures/kbtc";
+import solvProject from "../content/infrastructures/solv";
+import solvlstProject from "../content/infrastructures/solvlst";
+import bedrockProject from "../content/infrastructures/bedrock";
+import pumpProject from "../content/infrastructures/pump";
+import fireProject from "../content/infrastructures/fire";
 
-export const allInfrastructures: Infrastructure[] = [
+const astria: InfrastructureProject = astriaProject;
+const avail: InfrastructureProject = availProject;
+const bvm: InfrastructureProject = bvmProject;
+const celestia: InfrastructureProject = celestiaProject;
+const espresso: InfrastructureProject = espressoProject;
+const lorenzo: InfrastructureProject = lorenzoProject;
+const sovereign: InfrastructureProject = sovereignProject;
+const nubit: InfrastructureProject = nubitProject;
+const babylon: InfrastructureProject = babylonProject;
+const fedimint: InfrastructureProject = fedimintProject;
+const dlclink: InfrastructureProject = dlclinkProject;
+const bool: InfrastructureProject = boolProject;
+const cashu: InfrastructureProject = cashuProject;
+const tbtc: InfrastructureProject = tbtcProject;
+const lombard: InfrastructureProject = lombardProject;
+const wbtc: InfrastructureProject = wbtcProject;
+const cbbtc: InfrastructureProject = cbbtcProject;
+const kbtc: InfrastructureProject = kbtcProject;
+const solv: InfrastructureProject = solvProject;
+const solvlst: InfrastructureProject = solvlstProject;
+const bedrock: InfrastructureProject = bedrockProject;
+const pump: InfrastructureProject = pumpProject;
+const fire: InfrastructureProject = fireProject;
+
+export const allInfrastructures: InfrastructureProject[] = [
     cashu,
     fedimint,
     lombard,

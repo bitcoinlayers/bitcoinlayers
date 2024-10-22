@@ -1,13 +1,13 @@
 const fs = require('fs').promises;
 const path = require('path');
 
-const LAYERS_DIR = './content/infrastructure';
+const LAYERS_DIR = './content/infrastructures';
 const PROPS_IMPORT = "import { Project, Purpose, Type, LiveStatus, RiskFactor, EntityType, Site, RiskSection, ContentSection, RiskCategory } from '../props';\n\n";
 
 const PROJECT_KEYS = [
-  'slug', 'title', 'layerType', 'live', 'staking', 'bridge', 'underReview',
+  'slug', 'title', 'infrastructureType', 'live', 'staking', 'bridge', 'underReview',
   'riskFactors', 'nativeToken', 'bitcoinOnly', 'links', 'description', 'sections',
-  'btcLocked', 'feeToken', 'riskAnalysis', 'associatedLayers'
+  'btcLocked', 'feeToken', 'riskAnalysis', 'associatedLayers', 'purpose'
 ];
 
 function convertToValidIdentifier(key) {
@@ -63,15 +63,15 @@ function convertObjectKeys(obj) {
     return obj.map(convertObjectKeys);
   }
 
-  const result = { type: 'Type.Layer' };  // Add type property
+  const result = { type: 'Type.Infrastructure' };
 
   Object.entries(obj).forEach(([key, value]) => {
-    if (!PROJECT_KEYS.includes(key) && key !== 'layerType') {
+    if (!PROJECT_KEYS.includes(key) && key !== 'infrastructureType') {
       return; // Skip properties not in the Project interface
     }
 
     let newKey = convertToValidIdentifier(key);
-    if (key === 'layerType') {
+    if (key === 'infrastructureType') {
       newKey = 'entityType';
       result[newKey] = `EntityType.${value.replace(/\s/g, '')}`;
     } else if (key === 'underReview') {
@@ -94,6 +94,8 @@ function convertObjectKeys(obj) {
     } else if (key === 'sections') {
       // Preserve original data for sections
       result[newKey] = value;
+    } else if (key === 'purpose') {
+      result[newKey] = `Purpose.${value}`;
     } else {
       result[newKey] = convertObjectKeys(value);
     }
@@ -112,7 +114,7 @@ async function convertJsonToTs(filePath) {
   tsContent += `export default ${path.basename(filePath, '.json')};\n`;
 
   // Add type assertions and remove quotes from enum values
-  tsContent = tsContent.replace(/"type": "Type\.Layer"/g, 'type: Type.Layer');
+  tsContent = tsContent.replace(/"type": "Type\.Infrastructure"/g, 'type: Type.Infrastructure');
   tsContent = tsContent.replace(/"entityType": "EntityType\.([^"]+)"/g, 'entityType: EntityType.$1');
   tsContent = tsContent.replace(/"live": "([^"]+)"/g, 'live: LiveStatus.$1');
   tsContent = tsContent.replace(/"riskFactors": \[/g, 'riskFactors: [');
@@ -123,6 +125,7 @@ async function convertJsonToTs(filePath) {
   tsContent = tsContent.replace(/"category": "RiskCategory\.([^"]+)"/g, 'category: RiskCategory.$1');
   tsContent = tsContent.replace(/"tier": "RiskFactor\.([^"]+)"/g, 'tier: RiskFactor.$1');
   tsContent = tsContent.replace(/"sections": \[/g, 'sections: [');
+  tsContent = tsContent.replace(/"purpose": "Purpose\.([^"]+)"/g, 'purpose: Purpose.$1');
 
   // Remove quotes from property names
   tsContent = tsContent.replace(/"([a-zA-Z_$][a-zA-Z0-9_$]*)"\s*:/g, '$1:');
