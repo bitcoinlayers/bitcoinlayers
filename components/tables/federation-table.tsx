@@ -6,7 +6,7 @@ import TableHeader from "@/components/tables/tableHeader";
 import { MobileView, isMobile } from "react-device-detect";
 import Link from "next/link";
 import { useQueryState } from "nuqs";
-import { Project, Type } from "@/content/props";
+import { LayerProject, Project, Type } from "@/content/props";
 
 type TableTabKey = "Snapshot" | "Type" | "Status" | "TVL";
 
@@ -95,10 +95,10 @@ const FederationTable = ({ data, headers }: Props) => {
                     break;
                 case "TVL":
                     valueA = isLayer(a)
-                        ? parseFloat(a.btcLocked.toString())
+                        ? parseFloat((a as LayerProject).btcLocked.toString())
                         : -Infinity;
                     valueB = isLayer(b)
-                        ? parseFloat(b.btcLocked.toString())
+                        ? parseFloat((b as LayerProject).btcLocked.toString())
                         : -Infinity;
                     if (isNaN(valueA)) valueA = -Infinity;
                     if (isNaN(valueB)) valueB = -Infinity;
