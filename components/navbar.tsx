@@ -199,32 +199,6 @@ export default function Navbar(): ReactElement {
                                         </div>
                                     </Link>
                                 </div>
-                                {/* <div className="h-[88px] p-3 rounded-md flex-col justify-start items-start flex hover:bg-blue-100">
-                                    <Link href="/opcode" onClick={closeSubmenu}>
-                                        <div className="text-zinc-800 text-base font-medium leading-normal">
-                                            Opcodes
-                                        </div>
-                                        <div className="self-stretch text-slate-500 text-sm font-normal leading-tight">
-                                            List and summary of active and
-                                            proposed opcodes.
-                                        </div>
-                                    </Link>
-                                </div> */}
-                                {/* <div className="h-[88px] p-3 rounded-md flex-col justify-start items-start flex hover:bg-blue-100">
-                                    <Link
-                                        href="/upcominglayers"
-                                        onClick={closeSubmenu}
-                                    >
-                                        <div className="text-zinc-800 text-base font-medium leading-normal">
-                                            Upcoming Layers
-                                        </div>
-                                        <div className="self-stretch text-slate-500 text-sm font-normal leading-tight">
-                                            List and summary of production,
-                                            testnet, and announced bitcoin
-                                            layers.
-                                        </div>
-                                    </Link>
-                                </div> */}
                             </div>
                         )}
                     </li>
