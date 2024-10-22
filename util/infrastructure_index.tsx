@@ -54,6 +54,21 @@ const cbbtc: Infrastructure = cbbtcJson as Infrastructure;
 import kbtcJson from "../content/infrastructures/kbtc.json" assert { type:
     "json" };
 const kbtc: Infrastructure = kbtcJson as Infrastructure;
+import solvJson from "../content/infrastructures/solv.json" assert { type:
+    "json" };
+const solv: Infrastructure = solvJson as Infrastructure;
+import solvlstJson from "../content/infrastructures/solvlst.json" assert { type:
+    "json" };
+const solvlst: Infrastructure = solvlstJson as Infrastructure;
+import bedrockJson from "../content/infrastructures/bedrock.json" assert { type:
+    "json" };
+const bedrock: Infrastructure = bedrockJson as Infrastructure;
+import pumpJson from "../content/infrastructures/pump.json" assert { type:
+    "json" };
+const pump: Infrastructure = pumpJson as Infrastructure;
+import fireJson from "../content/infrastructures/fire.json" assert { type:
+    "json" };
+const fire: Infrastructure = fireJson as Infrastructure;
 
 export const allInfrastructures: Infrastructure[] = [
     cashu,
@@ -74,6 +89,11 @@ export const allInfrastructures: Infrastructure[] = [
     avail,
     astria,
     babylon,
+    solv,
+    solvlst,
+    bedrock,
+    pump,
+    fire,
 ];
 
 export const allInfrastructureSlugs: string[] = allInfrastructures.map(
