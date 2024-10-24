@@ -99,6 +99,14 @@ export enum AssessmentCategory {
     IncentiveModel = "Incentive Model",
 }
 
+export enum BridgeRiskCategory {
+    Reputation = "Reputation & Participation",
+    Signing = "Signing Mechanism",
+    KeyStorage = "Key Storage",
+    CensorshipResistance = "Censorship Resistance",
+    UserRisk = "User Risk",
+}
+
 export interface AssessmentSection {
     category: AssessmentCategory;
     score: number;
