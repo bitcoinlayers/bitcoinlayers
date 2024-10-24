@@ -3,12 +3,12 @@
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { useState } from "react";
-import { Layer } from "@/components/layer/layerProps";
 import { MobileView, isMobile } from "react-device-detect";
 import { getRiskColorText } from "@/util/riskColors";
+import { LayerProject } from "@/content/props";
 
 interface Props {
-    data: Layer[];
+    data: LayerProject[];
 }
 type MobileRiskKey = "Bridge" | "DA" | "Operators" | "Settlement";
 
@@ -149,7 +149,7 @@ const LayerTableRisks = ({ data }: Props) => {
                                             ),
                                         }}
                                     >
-                                        {item.btcBridge}
+                                        {/* {item.btcBridge} */}
                                     </td>
                                 )}
                                 {(!isMobile || mobileRiskTab === "DA") && (
@@ -164,13 +164,13 @@ const LayerTableRisks = ({ data }: Props) => {
                                             ),
                                         }}
                                     >
-                                        {item.settlement}
+                                        {/* {item.settlement} */}
                                     </td>
                                 )}
                                 {(!isMobile ||
                                     mobileRiskTab === "Operators") && (
                                     <td className="lg:px-6 px-4 lg:py-4 py-3 border-stroke_tertiary text_table_body">
-                                        {item.consensus}
+                                        {/* {item.consensus} */}
                                     </td>
                                 )}
                                 {(!isMobile ||
@@ -186,7 +186,7 @@ const LayerTableRisks = ({ data }: Props) => {
                                             ),
                                         }}
                                     >
-                                        {item.executionEnv}
+                                        {/* {item.executionEnv} */}
                                     </td>
                                 )}
                             </tr>

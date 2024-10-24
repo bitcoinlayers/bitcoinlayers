@@ -2,13 +2,13 @@
 
 import React, { useState, useEffect, useMemo } from "react";
 import Image from "next/image";
-import { Layer } from "@/components/layer/layerProps";
 import Risk from "@/components/layer/layerTableItemRisk";
 import TableHeader from "@/components/tables/tableHeader";
 import { MobileView, isMobile } from "react-device-detect";
 import Link from "next/link";
 import { useQueryState } from "nuqs";
 import useGetLayertvlHistoricalAll from "@/hooks/use-get-layertvl-current-all";
+import { LayerProject } from "@/content/props";
 
 type TableTabKey =
     | "Risk"
@@ -18,7 +18,7 @@ type TableTabKey =
     | "BTC Locked";
 
 interface Props {
-    data: Layer[];
+    data: LayerProject[];
     headers: {
         name: string;
         showSorting: boolean;
@@ -98,8 +98,8 @@ const LayerTableAll = ({ data, headers, showToggleGroup = true }: Props) => {
                     valueB = b.title.toLowerCase();
                     break;
                 case "Type":
-                    valueA = a.layerType;
-                    valueB = b.layerType;
+                    valueA = a.entityType;
+                    valueB = b.entityType;
                     break;
                 case "Status":
                     valueA = a.live;
@@ -126,7 +126,7 @@ const LayerTableAll = ({ data, headers, showToggleGroup = true }: Props) => {
         let filtered = sorted;
         if (types.length > 0) {
             filtered = filtered.filter((item) =>
-                types.includes(item.layerType),
+                types.includes(item.entityType),
             );
         }
 
@@ -294,7 +294,7 @@ const LayerTableAll = ({ data, headers, showToggleGroup = true }: Props) => {
                                 </td>
                                 {(!isMobile || mobileActiveTab === "Risk") && (
                                     <td className="relative px-2 border-stroke_tertiary text_table_important">
-                                        {item.underReview === "no" ? (
+                                        {!item.underReview ? (
                                             <Risk layer={item} />
                                         ) : (
                                             <div className="lg:px-5 px-1 text_table_important font-light">
@@ -306,7 +306,7 @@ const LayerTableAll = ({ data, headers, showToggleGroup = true }: Props) => {
                                 {(!isMobile || mobileActiveTab === "Type") && (
                                     <td className="lg:px-6 px-4 py-3 lg:py-4 border-stroke_tertiary text_table_important">
                                         <Link href={`/layers/${item.slug}`}>
-                                            {item.layerType}
+                                            {item.entityType}
                                         </Link>
                                     </td>
                                 )}
@@ -344,7 +344,7 @@ const LayerTableAll = ({ data, headers, showToggleGroup = true }: Props) => {
                                     mobileActiveTab === "BTC Locked") && (
                                     <td className="lg:px-6 px-4 py-3 lg:py-4 border-r border-stroke_tertiary text_table_important">
                                         <Link href={`/layers/${item.slug}`}>
-                                            {item.underReview === "yes" ||
+                                            {item.underReview ||
                                             (Object.keys(totaledBalances).find(
                                                 (key) =>
                                                     key.toLowerCase() ===

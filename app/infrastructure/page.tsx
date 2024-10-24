@@ -10,7 +10,7 @@ export default function Home() {
     const typeFilters = [
         ...new Set(
             sortedInfrastructures.map(
-                (infrastructure) => infrastructure.infrastructureType,
+                (infrastructure) => infrastructure.entityType,
             ),
         ),
     ];

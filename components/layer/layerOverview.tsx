@@ -1,8 +1,8 @@
-import { Layer } from "./layerProps";
 import Image from "next/image";
 import LayerDiamond from "./layerDiamond";
 import { parseTextWithLinks } from "@/util/parseTextWithLinks";
 import Categories from "./categories";
+import { LayerProject, Site } from "@/content/props";
 
 const LinkButton = ({
     href,
@@ -20,7 +20,7 @@ const LinkButton = ({
     </a>
 );
 
-const LayerOverview: React.FC<{ layer: Layer }> = ({ layer }) => {
+const LayerOverview: React.FC<{ layer: LayerProject }> = ({ layer }) => {
     return (
         <section
             id="overview"
@@ -41,7 +41,7 @@ const LayerOverview: React.FC<{ layer: Layer }> = ({ layer }) => {
 
 export default LayerOverview;
 
-const Description: React.FC<{ layer: Layer }> = ({ layer }) => {
+const Description: React.FC<{ layer: LayerProject }> = ({ layer }) => {
     return (
         <div className="self-stretch text-text_secondary">
             {parseTextWithLinks(layer.description)}
@@ -49,79 +49,114 @@ const Description: React.FC<{ layer: Layer }> = ({ layer }) => {
     );
 };
 
-const Links: React.FC<{ layer: Layer }> = ({ layer }) => {
+const Links: React.FC<{ layer: LayerProject }> = ({ layer }) => {
     return (
         <div className="self-stretch flex lg:justify-start justify-center items-start gap-2 flex-wrap">
-            <LinkButton href={String(layer.links[0])}>
-                <div className="bg-white/opacity-0 flex-col justify-center items-center inline-flex">
-                    <div className="w-3.5 h-3.5 relative">
-                        <Image
-                            className="w-3.5 h-3.5"
-                            src="/icons/homepage.svg"
-                            alt="Website"
-                            width={14}
-                            height={14}
-                        />
+            {layer.links.find((link) => link.text === Site.Website) && (
+                <LinkButton
+                    href={String(
+                        layer.links.find((link) => link.text === Site.Website)
+                            ?.url,
+                    )}
+                >
+                    <div className="bg-white/opacity-0 flex-col justify-center items-center inline-flex">
+                        <div className="w-3.5 h-3.5 relative">
+                            <Image
+                                className="w-3.5 h-3.5"
+                                src="/icons/homepage.svg"
+                                alt="Website"
+                                width={14}
+                                height={14}
+                            />
+                        </div>
                     </div>
-                </div>
-                Website
-            </LinkButton>
-            <LinkButton href={String(layer.links[2])}>
-                <div className="bg-white/opacity-0 flex-col justify-center items-center inline-flex">
-                    <div className="w-3.5 h-3.5 relative">
-                        <Image
-                            className="w-3.5 h-3.5"
-                            src="/icons/docs.svg"
-                            alt="Docs"
-                            width={14}
-                            height={14}
-                        />
+                    Website
+                </LinkButton>
+            )}
+            {layer.links.find((link) => link.text === Site.Docs) && (
+                <LinkButton
+                    href={String(
+                        layer.links.find((link) => link.text === Site.Docs)
+                            ?.url,
+                    )}
+                >
+                    <div className="bg-white/opacity-0 flex-col justify-center items-center inline-flex">
+                        <div className="w-3.5 h-3.5 relative">
+                            <Image
+                                className="w-3.5 h-3.5"
+                                src="/icons/docs.svg"
+                                alt="Docs"
+                                width={14}
+                                height={14}
+                            />
+                        </div>
                     </div>
-                </div>
-                Docs
-            </LinkButton>
-            <LinkButton href={String(layer.links[3])}>
-                <div className="bg-white/opacity-0 flex-col justify-center items-center inline-flex">
-                    <div className="w-3.5 h-3.5 relative">
-                        <Image
-                            className="w-3.5 h-3.5"
-                            src="/icons/explorer.svg"
-                            alt="Explorer"
-                            width={14}
-                            height={14}
-                        />
+                    Docs
+                </LinkButton>
+            )}
+            {layer.links.find((link) => link.text === Site.Explorer) && (
+                <LinkButton
+                    href={String(
+                        layer.links.find((link) => link.text === Site.Explorer)
+                            ?.url,
+                    )}
+                >
+                    <div className="bg-white/opacity-0 flex-col justify-center items-center inline-flex">
+                        <div className="w-3.5 h-3.5 relative">
+                            <Image
+                                className="w-3.5 h-3.5"
+                                src="/icons/explorer.svg"
+                                alt="Explorer"
+                                width={14}
+                                height={14}
+                            />
+                        </div>
                     </div>
-                </div>
-                Explorer
-            </LinkButton>
-            <LinkButton href={String(layer.links[4])}>
-                <div className="bg-white/opacity-0 flex-col justify-center items-center inline-flex">
-                    <div className="w-3.5 h-3.5 relative">
-                        <Image
-                            className="w-3.5 h-3.5"
-                            src="/icons/github.svg"
-                            alt="GitHub"
-                            width={14}
-                            height={14}
-                        />
+                    Explorer
+                </LinkButton>
+            )}
+            {layer.links.find((link) => link.text === Site.GitHub) && (
+                <LinkButton
+                    href={String(
+                        layer.links.find((link) => link.text === Site.GitHub)
+                            ?.url,
+                    )}
+                >
+                    <div className="bg-white/opacity-0 flex-col justify-center items-center inline-flex">
+                        <div className="w-3.5 h-3.5 relative">
+                            <Image
+                                className="w-3.5 h-3.5"
+                                src="/icons/github.svg"
+                                alt="GitHub"
+                                width={14}
+                                height={14}
+                            />
+                        </div>
                     </div>
-                </div>
-                GitHub
-            </LinkButton>
-            <LinkButton href={String(layer.links[5])}>
-                <div className="bg-white/opacity-0 flex-col justify-center items-center inline-flex">
-                    <div className="w-3.5 h-3.5 relative">
-                        <Image
-                            className="w-3.5 h-3.5"
-                            src="/icons/twitter.svg"
-                            alt="Social"
-                            width={14}
-                            height={14}
-                        />
+                    GitHub
+                </LinkButton>
+            )}
+            {layer.links.find((link) => link.text === Site.Twitter) && (
+                <LinkButton
+                    href={String(
+                        layer.links.find((link) => link.text === Site.Twitter)
+                            ?.url,
+                    )}
+                >
+                    <div className="bg-white/opacity-0 flex-col justify-center items-center inline-flex">
+                        <div className="w-3.5 h-3.5 relative">
+                            <Image
+                                className="w-3.5 h-3.5"
+                                src="/icons/twitter.svg"
+                                alt="X"
+                                width={14}
+                                height={14}
+                            />
+                        </div>
                     </div>
-                </div>
-                Twitter
-            </LinkButton>
+                    Twitter
+                </LinkButton>
+            )}
         </div>
     );
 };

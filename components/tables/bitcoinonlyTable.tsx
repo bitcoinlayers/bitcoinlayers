@@ -2,20 +2,17 @@
 
 import React, { useState, useMemo, useEffect } from "react";
 import Image from "next/image";
-import { Layer } from "@/components/layer/layerProps";
-import { Infrastructure } from "@/components/infrastructure/infrastructureProps";
 import Risk from "@/components/layer/layerTableItemRisk";
 import TableHeader from "@/components/tables/tableHeader";
 import { MobileView, isMobile } from "react-device-detect";
 import Link from "next/link";
 import { useQueryState } from "nuqs";
+import { Project, Type } from "@/content/props";
 
 type TableTabKey = "Risk" | "Type" | "Status" | "Category";
 
-type TableItem = Layer | Infrastructure;
-
 interface Props {
-    data: TableItem[];
+    data: Project[];
     headers: {
         name: string;
         showSorting: boolean;
@@ -24,12 +21,12 @@ interface Props {
     }[];
 }
 
-const isLayer = (item: TableItem): item is Layer => {
-    return (item as Layer).layerType !== undefined;
+const isLayer = (item: Project) => {
+    return item.type === Type.Layer;
 };
 
-const isInfrastructure = (item: TableItem): item is Infrastructure => {
-    return (item as Infrastructure).infrastructureType !== undefined;
+const isInfrastructure = (item: Project) => {
+    return item.type === Type.Infrastructure;
 };
 
 const LayerImage = ({ src, title }: { src: string; title: string }) => {
@@ -86,14 +83,14 @@ const BitcoinonlyTable = ({ data, headers }: Props) => {
                     break;
                 case "Type":
                     valueA = isLayer(a)
-                        ? a.layerType
+                        ? a.entityType
                         : isInfrastructure(a)
-                          ? a.infrastructureType
+                          ? a.entityType
                           : "";
                     valueB = isLayer(b)
-                        ? b.layerType
+                        ? b.entityType
                         : isInfrastructure(b)
-                          ? b.infrastructureType
+                          ? b.entityType
                           : "";
                     break;
                 case "Status":
@@ -112,7 +109,7 @@ const BitcoinonlyTable = ({ data, headers }: Props) => {
         if (types.length > 0) {
             filtered = filtered.filter((item) =>
                 types.includes(
-                    isLayer(item) ? item.layerType : item.infrastructureType,
+                    isLayer(item) ? item.entityType : item.entityType,
                 ),
             );
         }
@@ -283,7 +280,7 @@ const BitcoinonlyTable = ({ data, headers }: Props) => {
                                 {(!isMobile || mobileActiveTab === "Risk") && (
                                     <td className="relative px-2 border-stroke_tertiary text_table_important">
                                         {isLayer(item) ? (
-                                            item.underReview === "no" ? (
+                                            !item.underReview ? (
                                                 <Risk layer={item} />
                                             ) : (
                                                 <div className="lg:px-5 px-1 text_table_important font-light">
@@ -307,9 +304,9 @@ const BitcoinonlyTable = ({ data, headers }: Props) => {
                                             }/${item.slug}`}
                                         >
                                             {isLayer(item)
-                                                ? item.layerType
+                                                ? item.entityType
                                                 : isInfrastructure(item)
-                                                  ? item.infrastructureType
+                                                  ? item.entityType
                                                   : ""}
                                         </Link>
                                     </td>

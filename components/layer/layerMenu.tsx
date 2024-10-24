@@ -1,9 +1,9 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Layer } from "./layerProps";
+import { Project } from "@/content/props";
 
-const LayerMenu: React.FC<{ layer: Layer }> = ({ layer }) => {
+const LayerMenu: React.FC<{ layer: Project }> = ({ layer }) => {
     const [activeSection, setActiveSection] = useState("overview");
 
     useEffect(() => {

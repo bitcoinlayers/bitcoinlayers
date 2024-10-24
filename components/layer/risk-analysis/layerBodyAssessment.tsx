@@ -1,16 +1,10 @@
 "use client";
 
 import React from "react";
-import {
-    Accordion,
-    AccordionContent,
-    AccordionItem,
-    AccordionTrigger,
-} from "../../ui/accordion";
-import { Infrastructure } from "../../infrastructure/infrastructureProps";
 import { useQueryState } from "nuqs";
 import RiskHeader from "./assessment-header";
 import RiskContent from "./risk-content";
+import { Project } from "@/content/props";
 
 interface Risksection {
     category: string;
@@ -23,7 +17,7 @@ interface Risksection {
 interface RiskAnalysisProps {
     riskAnalysis: Risksection[];
     riskFactors: string[];
-    infrastructure: Infrastructure;
+    infrastructure: Project;
 }
 
 const RiskAnalysis: React.FC<RiskAnalysisProps> = ({

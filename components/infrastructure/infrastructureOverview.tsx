@@ -1,7 +1,7 @@
 import React from "react";
-import { Infrastructure } from "./infrastructureProps";
 import Image from "next/image";
 import { parseTextWithLinks } from "@/util/parseTextWithLinks";
+import { InfrastructureProject, Project } from "@/content/props";
 
 const LinkButton = ({
     href,
@@ -19,7 +19,7 @@ const LinkButton = ({
     </a>
 );
 
-const Categories: React.FC<{ infrastructure: Infrastructure }> = ({
+const Categories: React.FC<{ infrastructure: InfrastructureProject }> = ({
     infrastructure,
 }) => {
     return (
@@ -29,7 +29,7 @@ const Categories: React.FC<{ infrastructure: Infrastructure }> = ({
                     Type
                 </div>
                 <div className="text-text_header">
-                    {infrastructure.infrastructureType}
+                    {infrastructure.entityType}
                 </div>
             </div>
             <div className="flex-col justify-center items-start">
@@ -50,7 +50,7 @@ const Categories: React.FC<{ infrastructure: Infrastructure }> = ({
     );
 };
 
-const Description: React.FC<{ infrastructure: Infrastructure }> = ({
+const Description: React.FC<{ infrastructure: InfrastructureProject }> = ({
     infrastructure,
 }) => {
     return (
@@ -60,7 +60,7 @@ const Description: React.FC<{ infrastructure: Infrastructure }> = ({
     );
 };
 
-const Links: React.FC<{ infrastructure: Infrastructure }> = ({
+const Links: React.FC<{ infrastructure: InfrastructureProject }> = ({
     infrastructure,
 }) => {
     return (
@@ -139,9 +139,9 @@ const Links: React.FC<{ infrastructure: Infrastructure }> = ({
     );
 };
 
-const InfrastructureOverview: React.FC<{ infrastructure: Infrastructure }> = ({
-    infrastructure,
-}) => {
+const InfrastructureOverview: React.FC<{
+    infrastructure: InfrastructureProject;
+}> = ({ infrastructure }) => {
     return (
         <div className="flex justify-between pt-6 gap-4">
             <div className="flex flex-col space-y-10 mb-12 w-full">

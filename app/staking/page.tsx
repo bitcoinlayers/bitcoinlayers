@@ -12,11 +12,7 @@ export default function StakingPage() {
         );
 
     const typeFilters = [
-        ...new Set(
-            sortedEverything.map((item) =>
-                "layerType" in item ? item.layerType : item.infrastructureType,
-            ),
-        ),
+        ...new Set(sortedEverything.map((item) => item.entityType)),
     ];
 
     const layerHeaders = [

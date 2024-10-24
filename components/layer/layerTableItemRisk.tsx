@@ -1,4 +1,3 @@
-import { Layer } from "@/components/layer/layerProps";
 import { getRiskColorBackground, getRiskColorIcon } from "@/util/riskColors";
 import RiskSnapshot from "./riskSnapshot";
 import RiskIconBridge from "@/components/icons/RiskIconBridge";
@@ -6,13 +5,14 @@ import RiskIconDA from "@/components/icons/RiskIconDA";
 import RiskIconOperators from "@/components/icons/RiskIconOperators";
 import RiskIconSettlement from "@/components/icons/RiskIconSettlement";
 import { Dialog, DialogContent, DialogTrigger } from "../ui/dialog";
+import { LayerProject, Project } from "@/content/props";
 
 interface RiskProps {
-    layer: Layer;
+    layer: Project;
 }
 
 const Risk: React.FC<RiskProps> = ({ layer }) => {
-    const riskLevels = layer.riskAnalysis;
+    const riskLevels = (layer as LayerProject).riskAnalysis;
 
     const RiskIcon = ({
         riskFactor,

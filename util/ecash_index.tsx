@@ -1,14 +1,12 @@
-import type { Infrastructure } from "@/components/infrastructure/infrastructureProps";
+import { InfrastructureProject } from "../content/props";
 
-import fedimintJson from "../content/infrastructures/fedimint.json" assert { type:
-    "json" };
-const fedimint: Infrastructure = fedimintJson as Infrastructure;
+import fedimintProject from "../content/infrastructures/fedimint";
+import cashuProject from "../content/infrastructures/cashu";
 
-import cashuJson from "../content/infrastructures/cashu.json" assert { type:
-    "json" };
-const cashu: Infrastructure = cashuJson as Infrastructure;
+const fedimint: InfrastructureProject = fedimintProject;
+const cashu: InfrastructureProject = cashuProject;
 
-export const allEcash: Infrastructure[] = [cashu, fedimint];
+export const allEcash: InfrastructureProject[] = [cashu, fedimint];
 
 export const allEcashSlugs: string[] = allEcash.map(
     (infrastructure) => infrastructure.slug,

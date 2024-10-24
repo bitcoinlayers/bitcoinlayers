@@ -1,13 +1,10 @@
 "use client";
 
 import useGetLayertvlHistoricalAll from "@/hooks/use-get-layertvl-current-all";
-import { Layer } from "./layerProps";
-import { useParams } from "next/navigation";
 import { useMemo } from "react";
+import { LayerProject, Project } from "@/content/props";
 
-const Categories: React.FC<{ layer: Layer }> = ({ layer }) => {
-    const { slug } = useParams();
-
+const Categories: React.FC<{ layer: Project }> = ({ layer }) => {
     const { data: balances } = useGetLayertvlHistoricalAll();
 
     const matchingBalance = useMemo(() => {
@@ -27,13 +24,15 @@ const Categories: React.FC<{ layer: Layer }> = ({ layer }) => {
                 <div className="text-text_primary text-sm leading-tight">
                     Type
                 </div>
-                <div className="text-text_header">{layer.layerType}</div>
+                <div className="text-text_header">{layer.entityType}</div>
             </div>
             <div className="flex-col justify-center items-start pl-4 lg:pl-0">
                 <div className="text-text_primary text-sm leading-tight">
                     Fee Token
                 </div>
-                <div className="text-text_header">{layer.feeToken}</div>
+                <div className="text-text_header">
+                    {(layer as LayerProject).feeToken}
+                </div>
             </div>
             <div className="flex-col justify-center items-start pl-4 lg:pl-0">
                 <div className="text-text_primary text-sm leading-tight">
@@ -46,7 +45,7 @@ const Categories: React.FC<{ layer: Layer }> = ({ layer }) => {
                               minimumFractionDigits: 0,
                               maximumFractionDigits: 0,
                           })
-                        : layer.btcLocked}
+                        : (layer as LayerProject).btcLocked}
                 </div>
             </div>
         </div>

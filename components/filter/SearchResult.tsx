@@ -1,18 +1,11 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Layer } from "../layer/layerProps";
-import { Infrastructure } from "../infrastructure/infrastructureProps";
+import { Project, Type } from "@/content/props";
 
-type SearchableItem = Layer | Infrastructure;
-
-export const SearchResult = ({
-    searchResult,
-}: {
-    searchResult: SearchableItem[];
-}) => {
-    const getItemLink = (item: SearchableItem) => {
-        return isLayer(item)
+export const SearchResult = ({ searchResult }: { searchResult: Project[] }) => {
+    const getItemLink = (item: Project) => {
+        return item.type === Type.Layer
             ? `/layers/${item.slug}`
             : `/infrastructure/${item.slug}`;
     };
@@ -62,11 +55,3 @@ const SearchItemImage = ({ src, title }: { src: string; title: string }) => {
         />
     );
 };
-
-function isLayer(item: SearchableItem): item is Layer {
-    return (item as Layer).layerType !== undefined;
-}
-
-function isInfrastructure(item: SearchableItem): item is Infrastructure {
-    return (item as Infrastructure).infrastructureType !== undefined;
-}

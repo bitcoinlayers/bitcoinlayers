@@ -5,12 +5,9 @@ import { useOnClickOutside } from "@/hooks/useOnClickOutside";
 import { allLayers } from "@/util/layer_index";
 import { allInfrastructures } from "@/util/infrastructure_index";
 import Image from "next/image";
-import { Layer } from "../layer/layerProps";
-import { Infrastructure } from "../infrastructure/infrastructureProps";
 import { SearchResult } from "./SearchResult";
 import { cn } from "@/lib/utils";
-
-type SearchableItem = Layer | Infrastructure;
+import { Project } from "@/content/props";
 
 const SearchBlock = ({
     inputClassName,
@@ -23,7 +20,7 @@ const SearchBlock = ({
     const [isInputFocused, setInputFocused] = useState(false);
     const ref = useRef<HTMLDivElement>(null);
     const inputRef = useRef<HTMLInputElement>(null);
-    const [filteredItems, setFilteredItems] = useState<SearchableItem[]>([]);
+    const [filteredItems, setFilteredItems] = useState<Project[]>([]);
 
     useOnClickOutside(ref, () => setInputFocused(false));
 

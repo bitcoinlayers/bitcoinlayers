@@ -3,11 +3,11 @@
 import React from "react";
 import { useQueryState } from "nuqs";
 import LayerTableAll from "../tables/layerTableAll";
-import { Layer } from "./layerProps";
 import LayersTVLChart from "../charts/layers-tvl-chart";
+import { LayerProject } from "@/content/props";
 
 interface Props {
-    data: Layer[];
+    data: LayerProject[];
     headers: (
         | {
               name: string;

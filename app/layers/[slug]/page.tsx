@@ -43,7 +43,7 @@ export default function LayerPage({ params }: { params: { slug: string } }) {
                 <div className="lg:w-4/5 flex flex-col">
                     <LayerOverview layer={layer} />
                     <ProjectTVLChart />
-                    {layer.underReview === "no" && (
+                    {!layer.underReview && (
                         <RiskAnalysis
                             riskAnalysis={layer.riskAnalysis}
                             riskFactors={layer.riskFactors}

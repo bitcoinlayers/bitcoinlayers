@@ -2,20 +2,16 @@
 
 import React, { useState, useMemo, useEffect } from "react";
 import Image from "next/image";
-import { Layer } from "@/components/layer/layerProps";
-import { Infrastructure } from "@/components/infrastructure/infrastructureProps";
-import Risk from "@/components/layer/layerTableItemRisk";
 import TableHeader from "@/components/tables/tableHeader";
 import { MobileView, isMobile } from "react-device-detect";
 import Link from "next/link";
 import { useQueryState } from "nuqs";
+import { Project, Type } from "@/content/props";
 
 type TableTabKey = "Snapshot" | "Type" | "Status" | "Category";
 
-type TableItem = Layer | Infrastructure;
-
 interface Props {
-    data: TableItem[];
+    data: Project[];
     headers: {
         name: string;
         showSorting: boolean;
@@ -24,12 +20,12 @@ interface Props {
     }[];
 }
 
-const isLayer = (item: TableItem): item is Layer => {
-    return (item as Layer).layerType !== undefined;
+const isLayer = (item: Project) => {
+    return item.type === Type.Layer;
 };
 
-const isInfrastructure = (item: TableItem): item is Infrastructure => {
-    return (item as Infrastructure).infrastructureType !== undefined;
+const isInfrastructure = (item: Project) => {
+    return item.type === Type.Infrastructure;
 };
 
 const LayerImage = ({ src, title }: { src: string; title: string }) => {
@@ -87,14 +83,14 @@ const StakingTable = ({ data, headers }: Props) => {
                     break;
                 case "Type":
                     valueA = isLayer(a)
-                        ? a.layerType
+                        ? a.type
                         : isInfrastructure(a)
-                          ? a.infrastructureType
+                          ? a.type
                           : "";
                     valueB = isLayer(b)
-                        ? b.layerType
+                        ? b.type
                         : isInfrastructure(b)
-                          ? b.infrastructureType
+                          ? b.type
                           : "";
                     break;
                 case "Status":
@@ -112,9 +108,7 @@ const StakingTable = ({ data, headers }: Props) => {
         let filtered = sorted;
         if (types.length > 0) {
             filtered = filtered.filter((item) =>
-                types.includes(
-                    isLayer(item) ? item.layerType : item.infrastructureType,
-                ),
+                types.includes(isLayer(item) ? item.type : item.type),
             );
         }
 
@@ -310,9 +304,9 @@ const StakingTable = ({ data, headers }: Props) => {
                                             }`}
                                         >
                                             {isLayer(item)
-                                                ? item.layerType
+                                                ? item.entityType
                                                 : isInfrastructure(item)
-                                                  ? item.infrastructureType
+                                                  ? item.entityType
                                                   : ""}
                                         </Link>
                                     </td>
