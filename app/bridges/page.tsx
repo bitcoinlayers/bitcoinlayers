@@ -42,7 +42,7 @@ export default function BridgesPage() {
         <div className="mx-auto">
             <Hero
                 title="Bridges"
-                description="Not every bitcoin bridge is made equal."
+                description="Not all wrapped versions of bitcoin are made equal."
             />
             <div className="lg:flex mb-4 justify-center w-full lg:max-w-5xl mx-auto">
                 <FederationTable
