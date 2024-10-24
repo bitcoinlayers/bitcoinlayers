@@ -97,9 +97,6 @@ export enum AssessmentCategory {
     StakingType = "Staking Type",
     SlashingRisk = "Slashing Risk",
     IncentiveModel = "Incentive Model",
-}
-
-export enum BridgeRiskCategory {
     Reputation = "Reputation & Participation",
     Signing = "Signing Mechanism",
     KeyStorage = "Key Storage",
