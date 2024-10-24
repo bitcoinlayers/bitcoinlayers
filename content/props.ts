@@ -97,6 +97,11 @@ export enum AssessmentCategory {
     StakingType = "Staking Type",
     SlashingRisk = "Slashing Risk",
     IncentiveModel = "Incentive Model",
+    Reputation = "Reputation & Participation",
+    Signing = "Signing Mechanism",
+    KeyStorage = "Key Storage",
+    CensorshipResistance = "Censorship Resistance",
+    UserRisk = "User Risk",
 }
 
 export interface AssessmentSection {
