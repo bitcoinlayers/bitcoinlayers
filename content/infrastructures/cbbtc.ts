@@ -52,7 +52,7 @@ const cbbtc: InfrastructureProject = {
             content: [
                 {
                     content:
-                        "[cbBTC Base smart contract](https://basescan.org/token/0xcbb7c0000ab88b473b1f5afd9ef808440eed33bf)\n\n[cbBTC ETH smart contract](https://etherscan.io/token/0xcbb7c0000ab88b473b1f5afd9ef808440eed33bf)",
+                        "The relevant smart contracts for cbBTC are linked below:\n\n[cbBTC Base smart contract](https://basescan.org/token/0xcbb7c0000ab88b473b1f5afd9ef808440eed33bf)\n\n[cbBTC ETH smart contract](https://etherscan.io/token/0xcbb7c0000ab88b473b1f5afd9ef808440eed33bf)",
                 },
             ],
         },
