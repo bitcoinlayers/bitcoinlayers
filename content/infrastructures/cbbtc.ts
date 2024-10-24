@@ -28,16 +28,12 @@ const cbbtc: InfrastructureProject = {
             url: "https://www.base.org/",
         },
         {
-            text: Site.Website,
-            url: "https://www.base.org/",
-        },
-        {
             text: Site.Docs,
-            url: "https://github.com/base-org/",
+            url: "https://coinbase.bynder.com/m/1303c2f4d78fc966/original/cbBTC-White-Paper.pdf",
         },
         {
             text: Site.Explorer,
-            url: "https://github.com/base-org/",
+            url: "https://basescan.org/token/0xcbB7C0000aB88B473b1f5aFd9ef808440eed33Bf",
         },
         {
             text: Site.GitHub,
@@ -48,7 +44,7 @@ const cbbtc: InfrastructureProject = {
             url: "https://x.com/base",
         },
     ],
-    description: "Under Review",
+    description: "cbBTC is a tokenized form of BTC. It is an ERC-20 token that is available on Ethereum and Base. It is backed 1:1 by BTC. The BTC backing cbBTC is custodied by Coinbase, a centralized custodian. Coinbase also has unilateral control of the token contracts related to cbBTC.",
     sections: [
         {
             id: "contracts",
