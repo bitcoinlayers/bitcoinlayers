@@ -44,7 +44,8 @@ const cbbtc: InfrastructureProject = {
             url: "https://x.com/base",
         },
     ],
-    description: "cbBTC is a tokenized form of BTC. It is an ERC-20 token that is available on Ethereum and Base. It is backed 1:1 by BTC. The BTC backing cbBTC is custodied by Coinbase, a centralized custodian. Coinbase also has unilateral control of the token contracts related to cbBTC.",
+    description:
+        "cbBTC is a tokenized form of BTC. It is an ERC-20 token that is available on Ethereum and Base. It is backed 1:1 by BTC. The BTC backing cbBTC is custodied by Coinbase, a centralized custodian. Coinbase also has unilateral control of the token contracts related to cbBTC.",
     sections: [
         {
             id: "contracts",
