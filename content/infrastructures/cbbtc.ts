@@ -76,7 +76,7 @@ const cbbtc: InfrastructureProject = {
         {
             category: AssessmentCategory.Reputation,
             score: 0,
-            tier: null,
+            tier: "",
             title: "Users trust Coinbase with managing the BTC backing cbBTC",
             content:
                 "When interacting with cbBTC, users trust that Coinbase, a centralized custodian, will safely custody the BTC backing cbBTC. When interacting with a centralized custodian, users trust that the custodian will not steal the funds backing their cbBTC tokens. They also trust that Coinbase will effectively manage the BTC and not lose access to it. If the BTC backing cbBTC was stolen or inaccessible, cbBTC tokens could become effectively worthless.\n\nUsers trust Coinbase's reputation as an institutional provider when interacting with cbBTC.",
@@ -84,7 +84,7 @@ const cbbtc: InfrastructureProject = {
         {
             category: AssessmentCategory.Signing,
             score: 0,
-            tier: null,
+            tier: "",
             title: "Exact signing mechanism unverifiable",
             content:
                 "Coinbase has not disclosed the exact signing mechanism for bitcoin wallets holding and storing BTC backing cbBTC. In the [cbBTC whitepaper](https://coinbase.bynder.com/m/1303c2f4d78fc966/original/cbBTC-White-Paper.pdf), they share that a single person is unable to access any wallet's private key in plain text, meaning that a group of Coinbase employees must work together to decrypt relevant private keys for wallets associated with cbBTC.\n\nWhile unlikely, a group of Coinbase employees could collude to sign malicious transactions related to bitcoin wallets storing cbBTC.",
@@ -92,7 +92,7 @@ const cbbtc: InfrastructureProject = {
         {
             category: AssessmentCategory.KeyStorage,
             score: 0,
-            tier: null,
+            tier: "",
             title: "Follows Coinbase's key management practices",
             content:
                 "In Coinbase's [user agreement](https://www.coinbase.com/legal/user_agreement/united_states) mentions that they securely store private keys associated to users' assets on their behalf. In the [cbBTC whitepaper](https://coinbase.bynder.com/m/1303c2f4d78fc966/original/cbBTC-White-Paper.pdf), they state that these same custodial practices are used to secure BTC backing cbBTC.\n\nIn the whitepaper, they also mention that private keys are stored across facilities in the United States and Europe.\n\nWhile Coinbase is a reputable custodian, users do not hold the keys associated to BTC backing cbBTC, and trust Coinbase to follow sound custody practices.",
@@ -100,7 +100,7 @@ const cbbtc: InfrastructureProject = {
         {
             category: AssessmentCategory.CensorshipResistance,
             score: 0,
-            tier: null,
+            tier: "",
             title: "The system is completely centralized and not resistant to censorship",
             content:
                 "Both cbBTC smart contracts (on Base and Ethereum) are instantly upgradeable by Coinbase. Coinbase is a US public company. Coinbase has the authority to can censor specific users from transacting with cbBTC. They can also pause the token entirely, effectively shutting down any user who wishes to transact with cbBTC.\n\nUsers trust that Coinbase will not censor their use of cbBTC. You can find the relevant token contracts",
@@ -108,7 +108,7 @@ const cbbtc: InfrastructureProject = {
         {
             category: AssessmentCategory.UserRisk,
             score: 0,
-            tier: null,
+            tier: "",
             title: "cbBTC is a custodial solution. Users trust the custodian to not misappropriate funds backing the cbBTC token",
             content:
                 "Both aspects of cbBTC, the ERC-20 token contracts and the BTC backing these tokens, is controlled by a single entity, Coinbase. When using cbBTC, users trust that Coinbase will not censor them individually, pause the entire system, upgrade the token contract maliciously, or misappropriate funds backing cbBTC. Coinbase also has the authority to restrict users from redeeming BTC for the cbBTC.\n\nUsers effectively have no ownership of BTC the asset when using cbBTC. The own an alternative token that they trust will remain backed 1:1 with, and redeemable for, BTC.",

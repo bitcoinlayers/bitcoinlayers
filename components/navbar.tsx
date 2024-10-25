@@ -74,7 +74,7 @@ export default function Navbar(): ReactElement {
     }, [pathname]);
 
     return (
-        <nav className="flex flex-row justify-between items-center w-full fixed min-h-[3rem] lg:px-8 px-4 py-3.5 bg-bg_primary lg:bg-opacity-80 backdrop-blur-sm z-50 pointer-events-auto">
+        <nav className="flex flex-row justify-between items-center w-full sticky top-0 min-h-[3rem] lg:px-8 px-4 py-3.5 bg-bg_primary lg:bg-opacity-80 backdrop-blur-sm z-50 pointer-events-auto">
             <Link href="/" onClick={closeMenu}>
                 <div className="w-8 h-8">
                     <Image

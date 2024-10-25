@@ -107,7 +107,7 @@ export enum AssessmentCategory {
 export interface AssessmentSection {
     category: AssessmentCategory;
     score: number;
-    tier: RiskFactor | null;
+    tier: RiskFactor | "";
     title: string;
     content: string;
 }
