@@ -56,12 +56,7 @@ export default async function InfrastructurePage({
                     <ProjectTVLChart />
                     {infrastructure.assessment && (
                         <RiskAnalysis
-                            riskAnalysis={infrastructure.assessment.map(
-                                (section) => ({
-                                    ...section,
-                                    tier: section.tier || "",
-                                }),
-                            )}
+                            riskAnalysis={infrastructure.assessment}
                             riskFactors={infrastructure.riskFactors}
                             infrastructure={infrastructure}
                         />
