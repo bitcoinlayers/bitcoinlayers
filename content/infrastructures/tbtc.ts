@@ -120,7 +120,7 @@ const tbtc: InfrastructureProject = {
         {
             category: AssessmentCategory.Reputation,
             score: 0,
-            tier: null,
+            tier: "",
             title: "Users trust permissioned entities with the custody of their BTC. tBTC Beta Stakers must apply to Threshold DAO for signing privileges",
             content:
                 "The bitcoin wallets that store the bitcoin backing tBTC are managed by a permissioned signer set. The signers of the wallets participate as stakers in an Ethereum staking contract to become eligible for signing privileges. When a new wallet is created, a randomized process, known as the sortition pool, will select signers who will be responsible for custodying funds and signing transactions for respective bitcoin wallets.\n\nIf signers colluded, and had sufficient amount of signing power for a bitcoin wallet, they could steal funds from a wallet they managed.",
@@ -128,7 +128,7 @@ const tbtc: InfrastructureProject = {
         {
             category: AssessmentCategory.Signing,
             score: 0,
-            tier: null,
+            tier: "",
             title: "Threshold ECDSA scheme used for signing transactions",
             content:
                 "Each bitcoin wallet that manages BTC backing tBTC is controlled by participants in a tECDSA scheme. The tECDSA scheme sees a specific bitcoin wallet's private key sharded into a 100 key shares which are distributed to a randomly selected group of signers. In tBTC, there is a 51% signing threshold meaning that 51% of the signers are needed to create a valid signature to authorize bitcoin transactions.",
@@ -136,7 +136,7 @@ const tbtc: InfrastructureProject = {
         {
             category: AssessmentCategory.KeyStorage,
             score: 0,
-            tier: null,
+            tier: "",
             title: "No specific key storage requirements",
             content:
                 "There is no specific hardware requirement associated with running a tBTC v2 signing node. Nodes can also be run via a number of VPS providers.",
@@ -144,7 +144,7 @@ const tbtc: InfrastructureProject = {
         {
             category: AssessmentCategory.CensorshipResistance,
             score: 0,
-            tier: null,
+            tier: "",
             title: "No blacklist or pause function on tBTC smart contracts",
             content:
                 "tBTC's [token contract](https://etherscan.io/address/0x9C070027cdC9dc8F82416B2e5314E11DFb4FE3CD#code) does not have functions that can censor individual users. It is upgradeable via the Threshold DAO and a controller elected by the DAO. If an upgrade to the tBTC token contract was malicious, then users would have 1 day to exit.\n\nA malicious upgrade could result in the loss of user funds.",
@@ -152,7 +152,7 @@ const tbtc: InfrastructureProject = {
         {
             category: AssessmentCategory.UserRisk,
             score: 0,
-            tier: null,
+            tier: "",
             title: "tBTC is a distributed, but permissioned system",
             content:
                 "While trust is distributed across a number of parties, tBTC is not a fully trustless system. Users trust that Beta Stakers won't collude and steal BTC backing tBTC. They also trust the tBTC protocol to ensure that signing responsibilities are sufficiently distributed so a single entity cannot gain control over 51% of signing power for a specific wallet.",
