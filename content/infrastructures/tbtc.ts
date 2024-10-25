@@ -11,7 +11,7 @@ import {
 const tbtc: InfrastructureProject = {
     type: Type.Infrastructure,
     slug: "tbtc",
-    title: "tBTC Protocol",
+    title: "tBTC",
     entityType: EntityType.BitcoinBridge,
     live: LiveStatus.Mainnet,
     staking: false,
