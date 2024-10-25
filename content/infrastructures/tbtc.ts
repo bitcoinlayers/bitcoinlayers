@@ -52,10 +52,11 @@ const tbtc: InfrastructureProject = {
         "tBTC is a wrapped version of BTC that lives as an ERC-20 token on EVM-based blockchains. Its accounting ledger is Ethereum. The BTC backing tBTC is secured by a distributed signer set and staking mechanism.",
     sections: [
         {
-            id: "contracts",
-            title: "Contract addresses",
+            id: "additionalconsiderations",
+            title: "Additional Considerations",
             content: [
                 {
+                    title: "Trust assumptions related to tBTC change per the chain it is deployed on. Ethereum is the accounting layer",
                     content:
                         "Trust assumptions related to tBTC change across each system it is deployed on. For example, the tBTC gateway between Ethereum and Base is managed by a 6/9 multisig. This is a stronger trust assumption when compared to using tBTC on Ethereum. When interacting with tBTC across various chains, users should be aware that there may be additional trust assumptions.\n\n🔬 We are currently researching tBTC trust assumptions across the chains its deployed on.",
                 },
