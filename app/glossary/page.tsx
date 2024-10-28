@@ -82,7 +82,7 @@ const glossaryData: GlossaryData = {
         {
             term: "Data availability",
             definition:
-                "The publishing of transaction data which is required to verify transactions, satisfy proving schemes, or otherwise progress the chain. Specifically, a node will verify data availability when it receives a new block that is getting added to the chain. The node will attempt to download all the transaction data for the new block to verify availability. If the node can download all the transaction data, then it successfully verified data availability, proving that the block data was actually published to the network.",
+                "The publishing of transaction data is required to verify transactions, satisfy proving schemes, or otherwise progress the chain. Data availability is where a specific party makes a layer's protocol available for a specific period of time. In Bitcoin, a layer's protocol data is made available by bitcoin full nodes. A layer would publish transaction data to bitcoin via an inscription-like envelope and any bitcoin full node would be able to verify that the data has indeed been published.",
         },
         {
             term: "Discrete Log Contract (DLC)",
