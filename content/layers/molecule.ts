@@ -14,7 +14,7 @@ const molecule: LayerProject = {
     type: Type.Layer,
     slug: "molecule",
     title: "Molecule",
-    entityType: EntityType.Rollup,
+    entityType: EntityType.TBD,
     live: LiveStatus.Announced,
     staking: false,
     bridge: false,

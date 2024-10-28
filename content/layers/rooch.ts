@@ -14,7 +14,7 @@ const rooch: LayerProject = {
     type: Type.Layer,
     slug: "rooch",
     title: "Rooch Network",
-    entityType: EntityType.SovereignRollup,
+    entityType: EntityType.TBD,
     live: LiveStatus.Testnet,
     staking: false,
     bridge: false,

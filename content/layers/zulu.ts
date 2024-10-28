@@ -14,7 +14,7 @@ const zulu: LayerProject = {
     type: Type.Layer,
     slug: "zulu",
     title: "Zulu",
-    entityType: EntityType.SovereignRollup,
+    entityType: EntityType.TBD,
     live: LiveStatus.Testnet,
     staking: false,
     bridge: false,

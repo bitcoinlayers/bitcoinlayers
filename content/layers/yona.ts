@@ -14,7 +14,7 @@ const yona: LayerProject = {
     type: Type.Layer,
     slug: "yona",
     title: "Yona",
-    entityType: EntityType.SovereignRollup,
+    entityType: EntityType.TBD,
     live: LiveStatus.Testnet,
     staking: false,
     bridge: false,

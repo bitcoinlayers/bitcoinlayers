@@ -14,7 +14,7 @@ const nexio: LayerProject = {
     type: Type.Layer,
     slug: "nexio",
     title: "Nexio",
-    entityType: EntityType.SovereignRollup,
+    entityType: EntityType.TBD,
     live: LiveStatus.Announced,
     staking: false,
     bridge: false,
