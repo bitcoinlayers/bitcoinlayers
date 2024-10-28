@@ -43,6 +43,10 @@ import bevmProject from "../content/layers/bevm";
 import starknetProject from "../content/layers/starknet";
 import satoshivmProject from "../content/layers/satoshivm";
 import bouncebitProject from "../content/layers/bouncebit";
+import hemiProject from "../content/layers/hemi";
+import goatProject from "../content/layers/goat";
+import encifherProject from "../content/layers/encifher";
+import sparkProject from "../content/layers/spark";
 
 const core: LayerProject = coreProject;
 const internetcomputer: LayerProject = internetcomputerProject;
@@ -87,6 +91,10 @@ const bevm: LayerProject = bevmProject;
 const starknet: LayerProject = starknetProject;
 const satoshivm: LayerProject = satoshivmProject;
 const bouncebit: LayerProject = bouncebitProject;
+const hemi: LayerProject = hemiProject;
+const goat: LayerProject = goatProject;
+const encifher: LayerProject = encifherProject;
+const spark: LayerProject = sparkProject;
 
 export const allLayers: LayerProject[] = [
     core,
@@ -127,6 +135,10 @@ export const allLayers: LayerProject[] = [
     bitfinity,
     bevm,
     starknet,
+    hemi,
+    goat,
+    encifher,
+    spark,
 ];
 
 export const allLayerSlugs: string[] = allLayers.map((layer) => layer.slug);
