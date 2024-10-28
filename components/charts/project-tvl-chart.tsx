@@ -40,7 +40,7 @@ export default function ProjectTVLChart() {
     });
 
     const { data } = useGetTokentvlHistoricalAll({
-        queryString: `?layer_name=ilike.${slug}`,
+        queryString: `?layer_slug=ilike.${slug}`,
     });
 
     const { data: pricesData, isLoading, error } = useGetCurrentPrices();
@@ -163,8 +163,6 @@ export default function ProjectTVLChart() {
     }, [data, dateRange, tokens]);
 
     if (data?.length === 0) return null;
-
-    console.log(data);
 
     return (
         <Card className="bg-background mb-6">

@@ -1,38 +1,8 @@
 import React from "react";
 import { parseTextWithLinks } from "@/util/parseTextWithLinks";
 import { InfrastructureProject } from "@/content/props";
-import ProjectLinks from "../project-links";
-
-const Categories: React.FC<{ infrastructure: InfrastructureProject }> = ({
-    infrastructure,
-}) => {
-    return (
-        <div className="flex gap-12 w-full">
-            <div className="flex-col justify-center items-start">
-                <div className="text-text_primary text-sm leading-tight">
-                    Type
-                </div>
-                <div className="text-text_header">
-                    {infrastructure.entityType}
-                </div>
-            </div>
-            <div className="flex-col justify-center items-start">
-                <div className="text-text_primary text-sm leading-tight">
-                    Purpose
-                </div>
-                <div className="text-text_header">{infrastructure.purpose}</div>
-            </div>
-            <div className="flex-col justify-center items-start">
-                <div className="text-text_primary text-sm leading-tight">
-                    Associated Layers
-                </div>
-                <div className="text-text_header">
-                    {infrastructure.associatedLayers}
-                </div>
-            </div>
-        </div>
-    );
-};
+import ProjectLinks from "@/components/project-links";
+import Categories from "@/components/infrastructure/categories";
 
 const Description: React.FC<{ infrastructure: InfrastructureProject }> = ({
     infrastructure,

@@ -1,14 +1,17 @@
 "use client";
 
-import useGetLayertvlHistoricalAll from "@/hooks/use-get-layertvl-current-all";
 import { useMemo } from "react";
-import { LayerProject, Project } from "@/content/props";
+import { LayerProject } from "@/content/props";
+import useGetLayertvlCurrentAll from "@/hooks/use-get-layertvl-current-all";
 
-const Categories: React.FC<{ layer: Project }> = ({ layer }) => {
-    const { data: balances } = useGetLayertvlHistoricalAll();
+const Categories: React.FC<{ layer: LayerProject }> = ({ layer }) => {
+    const { data: balances } = useGetLayertvlCurrentAll({
+        queryString: `?layer_slug=ilike.${layer.slug}`,
+    });
 
     const matchingBalance = useMemo(() => {
         if (!balances) return null;
+
         return balances.find((balance) => balance.layer_slug === layer.slug);
     }, [balances, layer.slug]);
 
@@ -45,7 +48,7 @@ const Categories: React.FC<{ layer: Project }> = ({ layer }) => {
                               minimumFractionDigits: 0,
                               maximumFractionDigits: 0,
                           })
-                        : (layer as LayerProject).btcLocked}
+                        : layer.btcLocked}
                 </div>
             </div>
         </div>
