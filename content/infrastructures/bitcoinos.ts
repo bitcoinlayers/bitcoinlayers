@@ -1,25 +1,26 @@
 import {
-    LayerProject,
+    InfrastructureProject,
+    Purpose,
     Type,
     LiveStatus,
     EntityType,
     Site,
-    RiskCategory,
+    AssessmentCategory,
 } from "../props";
 
-const bitcoinos: LayerProject = {
-    type: Type.Layer,
+const bitcoinos: InfrastructureProject = {
+    type: Type.Infrastructure,
     slug: "bitcoinos",
     title: "BitcoinOS",
-    entityType: EntityType.SovereignRollup,
-    live: LiveStatus.Announced,
+    entityType: EntityType.BTCWrapper,
+    live: LiveStatus.Mainnet,
     staking: false,
-    bridge: false,
+    bridge: true,
     underReview: true,
-    riskFactors: ["", "", "", ""],
-    btcLocked: 0,
+    riskFactors: ["", ""],
     nativeToken: "-",
-    feeToken: "-",
+    purpose: Purpose.General,
+    associatedLayers: "Merlin, Cardano, and more",
     bitcoinOnly: false,
     links: [
         {
@@ -49,30 +50,30 @@ const bitcoinos: LayerProject = {
     ],
     description:
         "BitcoinOS is building a network of rollup-style blockchains on top of BitSNARK and Grail, mechanisms to verify validity proofs and construct a two-way peg with Bitcoin.",
-    riskAnalysis: [
+    assessment: [
         {
-            category: RiskCategory.UnilateralExits,
+            category: AssessmentCategory.Reputation,
             score: 0,
             tier: "",
             title: "",
             content: "",
         },
         {
-            category: RiskCategory.DataAvailability,
+            category: AssessmentCategory.Signing,
             score: 0,
             tier: "",
             title: "",
             content: "",
         },
         {
-            category: RiskCategory.BlockProduction,
+            category: AssessmentCategory.KeyStorage,
             score: 0,
             tier: "",
             title: "",
             content: "",
         },
         {
-            category: RiskCategory.StateValidation,
+            category: AssessmentCategory.CensorshipResistance,
             score: 0,
             tier: "",
             title: "",

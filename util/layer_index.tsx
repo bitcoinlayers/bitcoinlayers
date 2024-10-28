@@ -41,7 +41,6 @@ import qedProject from "../content/layers/qed";
 import bitfinityProject from "../content/layers/bitfinity";
 import bevmProject from "../content/layers/bevm";
 import starknetProject from "../content/layers/starknet";
-import bitcoinosProject from "../content/layers/bitcoinos";
 import satoshivmProject from "../content/layers/satoshivm";
 import bouncebitProject from "../content/layers/bouncebit";
 
@@ -86,7 +85,6 @@ const qed: LayerProject = qedProject;
 const bitfinity: LayerProject = bitfinityProject;
 const bevm: LayerProject = bevmProject;
 const starknet: LayerProject = starknetProject;
-const bitcoinos: LayerProject = bitcoinosProject;
 const satoshivm: LayerProject = satoshivmProject;
 const bouncebit: LayerProject = bouncebitProject;
 
@@ -118,9 +116,7 @@ export const allLayers: LayerProject[] = [
     side,
     mezo,
     arkonliquid,
-    hedgehog,
     rooch,
-    bit2,
     sequentia,
     brollup,
     nomic,
@@ -131,7 +127,6 @@ export const allLayers: LayerProject[] = [
     bitfinity,
     bevm,
     starknet,
-    bitcoinos,
 ];
 
 export const allLayerSlugs: string[] = allLayers.map((layer) => layer.slug);
