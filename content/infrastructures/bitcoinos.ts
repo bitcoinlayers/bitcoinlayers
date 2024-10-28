@@ -12,7 +12,7 @@ const bitcoinos: InfrastructureProject = {
     type: Type.Infrastructure,
     slug: "bitcoinos",
     title: "BitcoinOS",
-    entityType: EntityType.BTCWrapper,
+    entityType: EntityType.BitcoinBridge,
     live: LiveStatus.Mainnet,
     staking: false,
     bridge: true,
