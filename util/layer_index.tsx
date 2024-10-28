@@ -7,7 +7,7 @@ import liquidProject from "../content/layers/liquid";
 import mercurylayerProject from "../content/layers/mercurylayer";
 import rootstockProject from "../content/layers/rootstock";
 import stacksProject from "../content/layers/stacks";
-import alpenProject from "../content/layers/alpen";
+import strataProject from "../content/layers/strata";
 import bisonProject from "../content/layers/bison";
 import bobProject from "../content/layers/bob";
 import botanixProject from "../content/layers/botanix";
@@ -52,7 +52,7 @@ const liquid: LayerProject = liquidProject;
 const mercurylayer: LayerProject = mercurylayerProject;
 const rootstock: LayerProject = rootstockProject;
 const stacks: LayerProject = stacksProject;
-const alpen: LayerProject = alpenProject;
+const strata: LayerProject = strataProject;
 const bison: LayerProject = bisonProject;
 const bob: LayerProject = bobProject;
 const botanix: LayerProject = botanixProject;
@@ -98,7 +98,7 @@ export const allLayers: LayerProject[] = [
     mercurylayer,
     rootstock,
     stacks,
-    alpen,
+    strata,
     bison,
     bob,
     botanix,

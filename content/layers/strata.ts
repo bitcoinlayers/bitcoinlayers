@@ -9,10 +9,10 @@ import {
 
 const alpen: LayerProject = {
     type: Type.Layer,
-    slug: "alpen",
-    title: "Alpen",
+    slug: "strata",
+    title: "Strata",
     entityType: EntityType.Rollup,
-    live: LiveStatus.Announced,
+    live: LiveStatus.Testnet,
     staking: false,
     bridge: false,
     underReview: true,
@@ -48,7 +48,7 @@ const alpen: LayerProject = {
         },
     ],
     description:
-        "Alpen Labs is a team developing a rollup framework on top of Bitcoin. They have recently left stealth, and are inviting developers to contribute to their testnet.",
+        "Alpen Labs is a team developing Strata, a rollup on top of Bitcoin. They have recently left stealth, and are inviting developers to contribute to their testnet.",
     riskAnalysis: [
         {
             category: RiskCategory.UnilateralExits,
