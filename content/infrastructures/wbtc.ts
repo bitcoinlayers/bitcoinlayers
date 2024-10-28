@@ -20,7 +20,7 @@ const wbtc: InfrastructureProject = {
     riskFactors: ["", ""],
     nativeToken: "-",
     purpose: Purpose.General,
-    associatedLayers: "-",
+    associatedLayers: "Ethereum, Base, and more",
     bitcoinOnly: false,
     links: [
         {
