@@ -114,7 +114,6 @@ export const allLayers: LayerProject[] = [
     libre,
     merlin,
     rollux,
-    zkcoins,
     zklayer,
     coordinate,
     alys,
