@@ -27,27 +27,15 @@ const brollup: LayerProject = {
     links: [
         {
             text: Site.Website,
-            url: "https://brqgoo.medium.com/introducing-brollups-18ec4081f6e7",
-        },
-        {
-            text: Site.Website,
-            url: "https://brqgoo.medium.com/introducing-brollups-18ec4081f6e7",
+            url: "https://github.com/brollup/brollup",
         },
         {
             text: Site.Docs,
-            url: "https://brqgoo.medium.com/introducing-brollups-18ec4081f6e7",
-        },
-        {
-            text: Site.Explorer,
-            url: "https://brqgoo.medium.com/introducing-brollups-18ec4081f6e7",
+            url: "https://github.com/brollup/brollup",
         },
         {
             text: Site.GitHub,
-            url: "https://brqgoo.medium.com/introducing-brollups-18ec4081f6e7",
-        },
-        {
-            text: Site.Twitter,
-            url: "https://brqgoo.medium.com/introducing-brollups-18ec4081f6e7",
+            url: "https://github.com/brollup/brollup",
         },
     ],
     description:
