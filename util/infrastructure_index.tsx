@@ -50,7 +50,6 @@ const pump: InfrastructureProject = pumpProject;
 const fire: InfrastructureProject = fireProject;
 const bitcoinos: InfrastructureProject = bitcoinosProject;
 
-
 export const allInfrastructures: InfrastructureProject[] = [
     cashu,
     fedimint,
