@@ -3,6 +3,7 @@ import { parseTextWithLinks } from "@/util/parseTextWithLinks";
 import { InfrastructureProject } from "@/content/props";
 import ProjectLinks from "@/components/project-links";
 import Categories from "@/components/infrastructure/categories";
+import AssessmentSnapshotDialog from "./assessment-snapshot/assessment-snapshot-dialog";
 
 const Description: React.FC<{ infrastructure: InfrastructureProject }> = ({
     infrastructure,
@@ -24,6 +25,9 @@ const InfrastructureOverview: React.FC<{
                 <Description infrastructure={infrastructure} />
                 <div className="border-t border-stroke_secondary"></div>
                 <ProjectLinks links={infrastructure.links} />
+            </div>
+            <div className="mt-4 lg:mt-0 w-[350px] h-[350px] lg:h-[350px] lg:ml-0 ml-0">
+                <AssessmentSnapshotDialog infrastructure={infrastructure} />
             </div>
         </div>
     );
