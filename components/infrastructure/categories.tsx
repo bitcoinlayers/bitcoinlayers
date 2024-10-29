@@ -21,7 +21,7 @@ const Categories: React.FC<{ infrastructure: InfrastructureProject }> = ({
     }, [balances, infrastructure.slug]);
 
     return (
-        <div className="flex gap-12 w-full">
+        <div className="flex flex-wrap gap-6 lg:gap-12 w-full">
             <div className="flex-col justify-center items-start">
                 <div className="text-text_primary text-sm leading-tight">
                     Status
@@ -36,12 +36,12 @@ const Categories: React.FC<{ infrastructure: InfrastructureProject }> = ({
                     {infrastructure.entityType}
                 </div>
             </div>
-            <div className="flex-col justify-center items-start">
+            {/* <div className="flex-col justify-center items-start">
                 <div className="text-text_primary text-sm leading-tight">
                     Purpose
                 </div>
                 <div className="text-text_header">{infrastructure.purpose}</div>
-            </div>
+            </div> */}
             <div className="flex-col justify-center items-start">
                 <div className="text-text_primary text-sm leading-tight">
                     TVL
