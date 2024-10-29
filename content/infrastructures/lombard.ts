@@ -21,7 +21,7 @@ const lombard: InfrastructureProject = {
     nativeToken: "LBTC",
     purpose: Purpose.Staking,
     associatedLayers: "Ethereum",
-    bitcoinOnly: true,
+    bitcoinOnly: false,
     links: [
         {
             text: Site.Website,
