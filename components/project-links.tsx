@@ -32,24 +32,38 @@ const ProjectLinks: React.FC<{ links: Project["links"] }> = ({ links }) => {
 
     return (
         <div className="self-stretch flex lg:justify-start justify-center items-start gap-2 flex-wrap">
-            {linkConfig.map(({ type, icon, alt }) => {
-                const link = links.find((link) => link.text === type);
-                if (!link) return null;
+            {links.map((link) => {
+                // Check if it's a predefined link type
+                const configItem = linkConfig.find(
+                    ({ type }) => type === link.text,
+                );
 
-                return (
-                    <LinkButton key={type} href={String(link.url)}>
-                        <div className="flex items-center">
-                            <div className="bg-white/opacity-0">
-                                <Image
-                                    className="w-3.5 h-3.5 mr-1.5"
-                                    src={icon}
-                                    alt={alt}
-                                    width={14}
-                                    height={14}
-                                />
+                if (configItem) {
+                    return (
+                        <LinkButton
+                            key={String(link.text)}
+                            href={String(link.url)}
+                        >
+                            <div className="flex items-center">
+                                <div className="bg-white/opacity-0">
+                                    <Image
+                                        className="w-3.5 h-3.5 mr-1.5"
+                                        src={configItem.icon}
+                                        alt={configItem.alt}
+                                        width={14}
+                                        height={14}
+                                    />
+                                </div>
+                                {link.text}
                             </div>
-                            {type}
-                        </div>
+                        </LinkButton>
+                    );
+                }
+
+                // Handle custom link text
+                return (
+                    <LinkButton key={String(link.text)} href={String(link.url)}>
+                        <div className="flex items-center">{link.text}</div>
                     </LinkButton>
                 );
             })}

@@ -12,7 +12,9 @@ interface Props {
     queryString?: string;
 }
 
-export default function useGetProjecttvlCurrentAll({ queryString }: Props = {}) {
+export default function useGetProjecttvlCurrentAll({
+    queryString,
+}: Props = {}) {
     const response = useQuery<Balance[]>({
         queryKey: [
             queryString

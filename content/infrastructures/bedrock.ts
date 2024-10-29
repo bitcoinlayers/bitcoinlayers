@@ -27,10 +27,6 @@ const bedrock: InfrastructureProject = {
             url: "https://www.bedrock.technology/",
         },
         {
-            text: Site.Website,
-            url: "https://www.bedrock.technology/",
-        },
-        {
             text: Site.Docs,
             url: "https://www.bedrock.technology/",
         },
