@@ -3,6 +3,7 @@ import { allInfrastructures } from "@/util/infrastructure_index";
 
 import FederationTable from "@/components/tables/federation-table";
 import Hero from "@/components/hero";
+import UnderDevelopmentBanner from "@/components/under-development-banner";
 
 export default function BridgesPage() {
     const sortedEverything = [...allLayers, ...allInfrastructures]
@@ -40,6 +41,7 @@ export default function BridgesPage() {
 
     return (
         <div className="mx-auto">
+            <UnderDevelopmentBanner />
             <Hero
                 title="Bridges"
                 description="Not all wrapped versions of bitcoin are made equal."
