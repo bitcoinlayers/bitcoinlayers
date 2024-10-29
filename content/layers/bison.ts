@@ -27,10 +27,6 @@ const bison: LayerProject = {
             url: "https://bisonlabs.io/#/dashboard",
         },
         {
-            text: Site.Website,
-            url: "https://bisonlabs.io/#/dashboard",
-        },
-        {
             text: Site.Docs,
             url: "https://bisonlabs.io/#/dashboard",
         },

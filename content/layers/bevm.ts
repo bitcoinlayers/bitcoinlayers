@@ -33,10 +33,6 @@ const bevm: LayerProject = {
             url: "https://www.bevm.io/",
         },
         {
-            text: Site.Website,
-            url: "https://www.bevm.io/",
-        },
-        {
             text: Site.Docs,
             url: "https://documents.bevm.io/",
         },

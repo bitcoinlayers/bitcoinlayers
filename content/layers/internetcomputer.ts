@@ -35,10 +35,6 @@ const internetcomputer: LayerProject = {
             url: "https://internetcomputer.org/bitcoin-integration",
         },
         {
-            text: Site.Website,
-            url: "https://internetcomputer.org/bitcoin-integration",
-        },
-        {
             text: Site.Docs,
             url: "https://internetcomputer.org/docs/current/references/bitcoin-how-it-works",
         },

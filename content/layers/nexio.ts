@@ -30,10 +30,6 @@ const nexio: LayerProject = {
             url: "https://x.com/buildnexio/status/1811057118625079800",
         },
         {
-            text: Site.Website,
-            url: "https://x.com/buildnexio/status/1811057118625079800",
-        },
-        {
             text: Site.Docs,
             url: "https://x.com/buildnexio/status/1811057118625079800",
         },

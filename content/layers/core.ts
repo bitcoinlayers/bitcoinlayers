@@ -35,10 +35,6 @@ const core: LayerProject = {
             url: "https://coredao.org/",
         },
         {
-            text: Site.Website,
-            url: "https://www.stacks.co/explore/discover-apps",
-        },
-        {
             text: Site.Docs,
             url: "https://docs.coredao.org/developer/introduction/quick-links",
         },

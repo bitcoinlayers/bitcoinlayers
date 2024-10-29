@@ -30,10 +30,6 @@ const qed: LayerProject = {
             url: "https://qedprotocol.com/",
         },
         {
-            text: Site.Website,
-            url: "https://qedprotocol.com/",
-        },
-        {
             text: Site.Docs,
             url: "https://qedprotocol.com/",
         },

@@ -35,10 +35,6 @@ const satoshivm: LayerProject = {
             url: "https://satoshivm.io/",
         },
         {
-            text: Site.Website,
-            url: "https://satoshivm.io/",
-        },
-        {
             text: Site.Docs,
             url: "https://docs.satoshivm.io/",
         },

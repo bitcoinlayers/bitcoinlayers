@@ -27,10 +27,6 @@ const alys: LayerProject = {
             url: "https://www.anduro.io/",
         },
         {
-            text: Site.Website,
-            url: "https://www.anduro.io/",
-        },
-        {
             text: Site.Docs,
             url: "https://www.anduro.io/",
         },

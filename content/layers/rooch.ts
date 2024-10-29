@@ -30,10 +30,6 @@ const rooch: LayerProject = {
             url: "https://rooch.network/",
         },
         {
-            text: Site.Website,
-            url: "https://rooch.network/",
-        },
-        {
             text: Site.Docs,
             url: "https://rooch.network/learn/welcome",
         },

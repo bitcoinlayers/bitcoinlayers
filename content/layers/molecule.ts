@@ -30,10 +30,6 @@ const molecule: LayerProject = {
             url: "https://twitter.com/moleculebtc",
         },
         {
-            text: Site.Website,
-            url: "https://twitter.com/moleculebtc",
-        },
-        {
             text: Site.Docs,
             url: "https://twitter.com/moleculebtc",
         },

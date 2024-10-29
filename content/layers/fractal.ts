@@ -35,10 +35,6 @@ const fractal: LayerProject = {
             url: "https://www.fractalbitcoin.io/",
         },
         {
-            text: Site.Website,
-            url: "https://www.fractalbitcoin.io/",
-        },
-        {
             text: Site.Docs,
             url: "https://docs.fractalbitcoin.io/",
         },

@@ -30,10 +30,6 @@ const zulu: LayerProject = {
             url: "https://zulunetwork.io/",
         },
         {
-            text: Site.Website,
-            url: "https://docs.zulunetwork.io/",
-        },
-        {
             text: Site.Docs,
             url: "https://docs.zulunetwork.io/",
         },

@@ -30,10 +30,6 @@ const zkbitcoin: LayerProject = {
             url: "https://github.com/sigma0-xyz/zkbitcoin",
         },
         {
-            text: Site.Website,
-            url: "https://twitter.com/bitcoinlayers",
-        },
-        {
             text: Site.Docs,
             url: "https://github.com/sigma0-xyz/zkbitcoin/tree/main/docs",
         },

@@ -30,10 +30,6 @@ const mezo: LayerProject = {
             url: "https://mezo.org/",
         },
         {
-            text: Site.Website,
-            url: "https://mezo.org/",
-        },
-        {
             text: Site.Docs,
             url: "https://info.mezo.org/proof-of-hodl",
         },

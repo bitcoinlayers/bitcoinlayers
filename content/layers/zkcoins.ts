@@ -30,10 +30,6 @@ const zkcoins: LayerProject = {
             url: "https://zerosync.org/",
         },
         {
-            text: Site.Website,
-            url: "https://twitter.com/bitcoinlayers",
-        },
-        {
             text: Site.Docs,
             url: "https://gist.github.com/RobinLinus/d036511015caea5a28514259a1bab119",
         },

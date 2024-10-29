@@ -35,10 +35,6 @@ const bsquared: LayerProject = {
             url: "https://www.bsquared.network/",
         },
         {
-            text: Site.Website,
-            url: "https://www.bsquared.network/",
-        },
-        {
             text: Site.Docs,
             url: "https://docs.bsquared.network/",
         },

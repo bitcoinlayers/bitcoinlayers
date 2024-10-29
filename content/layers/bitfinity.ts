@@ -30,10 +30,6 @@ const bitfinity: LayerProject = {
             url: "https://bitfinity.network/",
         },
         {
-            text: Site.Website,
-            url: "https://bitfinity.network/",
-        },
-        {
             text: Site.Docs,
             url: "https://docs.bitfinity.network/",
         },

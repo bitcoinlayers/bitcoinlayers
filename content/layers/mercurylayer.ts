@@ -35,10 +35,6 @@ const mercurylayer: LayerProject = {
             url: "https://mercurylayer.com/",
         },
         {
-            text: Site.Website,
-            url: "https://github.com/commerceblock/mercurylayer/blob/dev/docs/README.md",
-        },
-        {
             text: Site.Docs,
             url: "https://github.com/commerceblock/mercurylayer/blob/dev/docs/README.md",
         },

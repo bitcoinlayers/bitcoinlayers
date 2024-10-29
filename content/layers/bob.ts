@@ -35,10 +35,6 @@ const bob: LayerProject = {
             url: "https://www.gobob.xyz/",
         },
         {
-            text: Site.Website,
-            url: "https://www.gobob.xyz/",
-        },
-        {
             text: Site.Docs,
             url: "https://docs.gobob.xyz/",
         },

@@ -30,10 +30,6 @@ const zklayer: LayerProject = {
             url: "https://www.zklayer.co/",
         },
         {
-            text: Site.Website,
-            url: "https://twitter.com/bitcoinlayers",
-        },
-        {
             text: Site.Docs,
             url: "https://app.gitbook.com/o/62jIvTYSEInKMwhtPJXC/s/fTHAEGkacQhIFNLPH9VW/",
         },

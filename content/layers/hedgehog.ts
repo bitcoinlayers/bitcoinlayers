@@ -30,10 +30,6 @@ const hedgehog: LayerProject = {
             url: "https://github.com/supertestnet/hedgehog",
         },
         {
-            text: Site.Website,
-            url: "https://github.com/supertestnet/hedgehog",
-        },
-        {
             text: Site.Docs,
             url: "https://github.com/supertestnet/hedgehog",
         },

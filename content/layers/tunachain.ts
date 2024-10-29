@@ -35,10 +35,6 @@ const tunachain: LayerProject = {
             url: "https://tunachain.io/",
         },
         {
-            text: Site.Website,
-            url: "https://twitter.com/bitcoinlayers",
-        },
-        {
             text: Site.Docs,
             url: "https://twitter.com/bitcoinlayers",
         },

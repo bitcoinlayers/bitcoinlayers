@@ -30,10 +30,6 @@ const sequentia: LayerProject = {
             url: "https://sequentia.io/",
         },
         {
-            text: Site.Website,
-            url: "https://sequentia.io/",
-        },
-        {
             text: Site.Docs,
             url: "https://docs.sequentia.io/",
         },

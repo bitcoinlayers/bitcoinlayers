@@ -30,10 +30,6 @@ const rif: LayerProject = {
             url: "https://rif.technology/",
         },
         {
-            text: Site.Website,
-            url: "https://dev.rootstock.io/rif/",
-        },
-        {
             text: Site.Docs,
             url: "https://dev.rootstock.io/rif/",
         },

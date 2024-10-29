@@ -35,10 +35,6 @@ const bouncebit: LayerProject = {
             url: "https://bouncebit.io/",
         },
         {
-            text: Site.Website,
-            url: "https://bouncebit.io/",
-        },
-        {
             text: Site.Docs,
             url: "https://docs.bouncebit.io/",
         },

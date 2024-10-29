@@ -30,10 +30,6 @@ const citrea: LayerProject = {
             url: "https://citrea.xyz",
         },
         {
-            text: Site.Website,
-            url: "https://citrea.xyz",
-        },
-        {
             text: Site.Docs,
             url: "https://docs.citrea.xyz/",
         },

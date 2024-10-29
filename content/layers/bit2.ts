@@ -27,10 +27,6 @@ const bit2: LayerProject = {
             url: "https://bit2.network/",
         },
         {
-            text: Site.Website,
-            url: "https://bit2.network/",
-        },
-        {
             text: Site.Docs,
             url: "https://bit2.network/coming-soon",
         },

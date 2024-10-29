@@ -35,10 +35,6 @@ const rollux: LayerProject = {
             url: "https://rollux.com/",
         },
         {
-            text: Site.Website,
-            url: "https://docs.rollux.com/docs/developers/",
-        },
-        {
             text: Site.Docs,
             url: "https://docs.rollux.com/docs/developers/",
         },

@@ -35,10 +35,6 @@ const merlin: LayerProject = {
             url: "https://merlinchain.io/",
         },
         {
-            text: Site.Website,
-            url: "https://docs.merlinchain.io/merlin-docs",
-        },
-        {
             text: Site.Docs,
             url: "https://docs.merlinchain.io/merlin-docs",
         },

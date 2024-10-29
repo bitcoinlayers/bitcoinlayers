@@ -35,10 +35,6 @@ const liquid: LayerProject = {
             url: "https://liquid.net/",
         },
         {
-            text: Site.Website,
-            url: "https://docs.liquid.net/docs/technical-overview",
-        },
-        {
             text: Site.Docs,
             url: "https://docs.liquid.net/docs/technical-overview",
         },

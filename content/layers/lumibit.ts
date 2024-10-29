@@ -30,10 +30,6 @@ const lumibit: LayerProject = {
             url: "https://lumibit.xyz/",
         },
         {
-            text: Site.Website,
-            url: "https://lumibit.gitbook.io/lumibit-gitbook",
-        },
-        {
             text: Site.Docs,
             url: "https://lumibit.gitbook.io/lumibit-gitbook",
         },

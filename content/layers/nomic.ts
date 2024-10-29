@@ -30,10 +30,6 @@ const nomic: LayerProject = {
             url: "https://www.nomic.io/",
         },
         {
-            text: Site.Website,
-            url: "https://www.nomic.io/",
-        },
-        {
             text: Site.Docs,
             url: "https://github.com/nomic-io/docs",
         },

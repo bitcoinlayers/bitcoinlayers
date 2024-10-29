@@ -35,10 +35,6 @@ const bitlayer: LayerProject = {
             url: "https://www.bitlayer.org/",
         },
         {
-            text: Site.Website,
-            url: "https://www.bitlayer.org/",
-        },
-        {
             text: Site.Docs,
             url: "https://docs.bitlayer.org/docs/Learn/Introduction",
         },

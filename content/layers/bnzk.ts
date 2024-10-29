@@ -30,10 +30,6 @@ const bnzk: LayerProject = {
             url: "https://bnzk.io/",
         },
         {
-            text: Site.Website,
-            url: "https://bnzk.io/",
-        },
-        {
             text: Site.Docs,
             url: "https://docs.bnzk.io/",
         },

@@ -30,10 +30,6 @@ const highlayer: LayerProject = {
             url: "https://highlayer.io/",
         },
         {
-            text: Site.Website,
-            url: "https://highlayer.io/",
-        },
-        {
             text: Site.Docs,
             url: "https://docs.highlayer.io/",
         },

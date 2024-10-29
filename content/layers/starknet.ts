@@ -30,10 +30,6 @@ const starknet: LayerProject = {
             url: "https://www.starknet.io/",
         },
         {
-            text: Site.Website,
-            url: "https://www.starknet.io/",
-        },
-        {
             text: Site.Docs,
             url: "https://docs.btcwild.life/",
         },

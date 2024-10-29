@@ -35,10 +35,6 @@ const lightning: LayerProject = {
             url: "https://lightning.network/",
         },
         {
-            text: Site.Website,
-            url: "https://docs.corelightning.org/docs/home",
-        },
-        {
             text: Site.Docs,
             url: "https://docs.corelightning.org/docs/home",
         },

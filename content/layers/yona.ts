@@ -30,10 +30,6 @@ const yona: LayerProject = {
             url: "https://yona.network/",
         },
         {
-            text: Site.Website,
-            url: "https://yona.network/",
-        },
-        {
             text: Site.Docs,
             url: "https://docs.yona.network/yona-network",
         },

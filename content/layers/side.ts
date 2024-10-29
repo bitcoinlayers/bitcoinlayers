@@ -30,10 +30,6 @@ const side: LayerProject = {
             url: "https://side.one/",
         },
         {
-            text: Site.Website,
-            url: "https://side.one/",
-        },
-        {
             text: Site.Docs,
             url: "https://docs.side.one/",
         },

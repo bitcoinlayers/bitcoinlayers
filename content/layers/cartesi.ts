@@ -35,10 +35,6 @@ const cartesi: LayerProject = {
             url: "https://cartesi.io/",
         },
         {
-            text: Site.Website,
-            url: "https://twitter.com/bitcoinlayers",
-        },
-        {
             text: Site.Docs,
             url: "https://twitter.com/bitcoinlayers",
         },

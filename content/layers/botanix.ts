@@ -30,10 +30,6 @@ const botanix: LayerProject = {
             url: "https://www.botanixlabs.xyz/en/home",
         },
         {
-            text: Site.Website,
-            url: "https://www.botanixlabs.xyz/en/home",
-        },
-        {
             text: Site.Docs,
             url: "https://docs.botanixlabs.xyz/botanix-labs",
         },

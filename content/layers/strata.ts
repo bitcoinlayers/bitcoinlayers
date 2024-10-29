@@ -27,10 +27,6 @@ const alpen: LayerProject = {
             url: "https://alpenlabs.io/",
         },
         {
-            text: Site.Website,
-            url: "https://alpenlabs.io/",
-        },
-        {
             text: Site.Docs,
             url: "https://www.alpenlabs.io/",
         },

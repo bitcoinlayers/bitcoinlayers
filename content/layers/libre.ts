@@ -35,10 +35,6 @@ const libre: LayerProject = {
             url: "https://chain.libre.org/",
         },
         {
-            text: Site.Website,
-            url: "https://chain.libre.org/",
-        },
-        {
             text: Site.Docs,
             url: "https://docs.libre.org/libre-docs",
         },

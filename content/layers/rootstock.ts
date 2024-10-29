@@ -35,10 +35,6 @@ const rootstock: LayerProject = {
             url: "https://rootstock.io/",
         },
         {
-            text: Site.Website,
-            url: "https://dev.rootstock.io",
-        },
-        {
             text: Site.Docs,
             url: "https://dev.rootstock.io",
         },

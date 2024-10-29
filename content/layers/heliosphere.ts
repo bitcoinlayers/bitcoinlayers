@@ -30,10 +30,6 @@ const heliosphere: LayerProject = {
             url: "https://twitter.com/HeliosphereOne",
         },
         {
-            text: Site.Website,
-            url: "https://twitter.com/bitcoinlayers",
-        },
-        {
             text: Site.Docs,
             url: "https://twitter.com/bitcoinlayers",
         },
