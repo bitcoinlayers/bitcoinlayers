@@ -2,21 +2,21 @@
 
 import { useMemo } from "react";
 import { InfrastructureProject } from "@/content/props";
-import useGetLayertvlCurrentAll from "@/hooks/use-get-layertvl-current-all";
+import useGetInfratvlCurrentAll from "@/hooks/use-get-infratvl-current-all";
 
 const Categories: React.FC<{ infrastructure: InfrastructureProject }> = ({
     infrastructure,
 }) => {
     // TODO: Come back and use the right hook
-    const { data: balances } = useGetLayertvlCurrentAll({
-        queryString: `?layer_slug=ilike.${infrastructure.slug}`,
+    const { data: balances } = useGetInfratvlCurrentAll({
+        queryString: `?infra_slug=ilike.${infrastructure.slug}`,
     });
 
     const matchingBalance = useMemo(() => {
         if (!balances) return null;
 
         return balances.find(
-            (balance) => balance.layer_slug === infrastructure.slug,
+            (balance) => balance.infra_slug === infrastructure.slug,
         );
     }, [balances, infrastructure.slug]);
 

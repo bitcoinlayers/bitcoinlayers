@@ -40,7 +40,7 @@ export default function ProjectTVLChart() {
     });
 
     const { data } = useGetTokentvlHistoricalAll({
-        queryString: `?project_slug=ilike.${slug}`,
+        queryString: `?infra_slug=ilike.${slug}`,
     });
     const { data: pricesData, isLoading, error } = useGetCurrentPrices();
 
