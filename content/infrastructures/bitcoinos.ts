@@ -28,10 +28,6 @@ const bitcoinos: InfrastructureProject = {
             url: "https://www.bitcoinos.build/",
         },
         {
-            text: Site.Website,
-            url: "https://www.bitcoinos.build/",
-        },
-        {
             text: Site.Docs,
             url: "https://cdn.prod.website-files.com/661e3b1622f7c56970b07a4c/662a7a89ce097389c876db57_BitSNARK__Grail.pdf",
         },

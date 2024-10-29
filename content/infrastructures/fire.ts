@@ -27,10 +27,6 @@ const fire: InfrastructureProject = {
             url: "https://fbtc.com/",
         },
         {
-            text: Site.Website,
-            url: "https://fbtc.com/",
-        },
-        {
             text: Site.Docs,
             url: "https://fbtc.com/",
         },

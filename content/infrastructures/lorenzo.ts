@@ -27,10 +27,6 @@ const lorenzo: InfrastructureProject = {
             url: "https://lorenzo-protocol.xyz",
         },
         {
-            text: Site.Website,
-            url: "https://lorenzo-protocol.xyz",
-        },
-        {
             text: Site.Docs,
             url: "https://docs.lorenzo-protocol.xyz/",
         },

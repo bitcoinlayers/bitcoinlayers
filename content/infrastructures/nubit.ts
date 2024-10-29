@@ -27,10 +27,6 @@ const nubit: InfrastructureProject = {
             url: "https://nubit.org",
         },
         {
-            text: Site.Website,
-            url: "https://nubit.org",
-        },
-        {
             text: Site.Docs,
             url: "https://docs.nubit.org/developer-guides/introduction",
         },

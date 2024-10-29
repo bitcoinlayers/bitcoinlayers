@@ -27,10 +27,6 @@ const sovereign: InfrastructureProject = {
             url: "https://www.sovereign.xyz/",
         },
         {
-            text: Site.Website,
-            url: "https://www.sovereign.xyz/",
-        },
-        {
             text: Site.Docs,
             url: "https://github.com/Sovereign-Labs/sovereign-sdk",
         },

@@ -27,10 +27,6 @@ const cashu: InfrastructureProject = {
             url: "https://cashu.space/",
         },
         {
-            text: Site.Website,
-            url: "https://cashu.space/",
-        },
-        {
             text: Site.Docs,
             url: "https://docs.cashu.space/",
         },

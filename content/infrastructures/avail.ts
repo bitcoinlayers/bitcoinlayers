@@ -27,10 +27,6 @@ const avail: InfrastructureProject = {
             url: "https://availproject.org",
         },
         {
-            text: Site.Website,
-            url: "https://availproject.org",
-        },
-        {
             text: Site.Docs,
             url: "https://www.availproject.org/developer",
         },

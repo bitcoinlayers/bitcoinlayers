@@ -27,10 +27,6 @@ const dlclink: InfrastructureProject = {
             url: "https://www.dlc.link/",
         },
         {
-            text: Site.Website,
-            url: "https://www.dlc.link/",
-        },
-        {
             text: Site.Docs,
             url: "https://github.com/DLC-link/gitbook-docs",
         },

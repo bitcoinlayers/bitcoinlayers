@@ -27,10 +27,6 @@ const bool: InfrastructureProject = {
             url: "https://bool.network/",
         },
         {
-            text: Site.Website,
-            url: "https://bool.network/",
-        },
-        {
             text: Site.Docs,
             url: "https://docs.bool.network/",
         },

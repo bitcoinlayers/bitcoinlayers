@@ -27,10 +27,6 @@ const kbtc: InfrastructureProject = {
             url: "https://www.kraken.com/",
         },
         {
-            text: Site.Website,
-            url: "https://www.kraken.com/",
-        },
-        {
             text: Site.Docs,
             url: "https://www.kraken.com/kbtc",
         },

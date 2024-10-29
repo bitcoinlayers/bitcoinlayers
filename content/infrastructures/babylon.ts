@@ -27,10 +27,6 @@ const babylon: InfrastructureProject = {
             url: "https://babylonchain.io",
         },
         {
-            text: Site.Website,
-            url: "https://babylonchain.io",
-        },
-        {
             text: Site.Docs,
             url: "https://docs.babylonchain.io/",
         },

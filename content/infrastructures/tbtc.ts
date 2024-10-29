@@ -28,10 +28,6 @@ const tbtc: InfrastructureProject = {
             url: "https://threshold.network/",
         },
         {
-            text: Site.Website,
-            url: "https://threshold.network/",
-        },
-        {
             text: Site.Docs,
             url: "https://threshold.network/",
         },

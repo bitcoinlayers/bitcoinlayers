@@ -25,11 +25,7 @@ const lombard: InfrastructureProject = {
     links: [
         {
             text: Site.Website,
-            url: "https://www.lombard.finance/app/",
-        },
-        {
-            text: Site.Website,
-            url: "https://docs.lombard.finance/",
+            url: "https://www.lombard.finance/",
         },
         {
             text: Site.Docs,

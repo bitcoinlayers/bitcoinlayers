@@ -27,10 +27,6 @@ const pump: InfrastructureProject = {
             url: "https://mainnet.pumpbtc.xyz/",
         },
         {
-            text: Site.Website,
-            url: "https://mainnet.pumpbtc.xyz/",
-        },
-        {
             text: Site.Docs,
             url: "https://mainnet.pumpbtc.xyz/",
         },

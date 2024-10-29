@@ -27,10 +27,6 @@ const solv: InfrastructureProject = {
             url: "https://solv.finance/",
         },
         {
-            text: Site.Website,
-            url: "https://solv.finance/",
-        },
-        {
             text: Site.Docs,
             url: "https://solv.finance/",
         },

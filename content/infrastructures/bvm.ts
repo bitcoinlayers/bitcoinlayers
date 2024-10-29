@@ -27,10 +27,6 @@ const bvm: InfrastructureProject = {
             url: "https://bvm.network",
         },
         {
-            text: Site.Website,
-            url: "https://bvm.network",
-        },
-        {
             text: Site.Docs,
             url: "https://bvm.network",
         },

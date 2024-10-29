@@ -28,10 +28,6 @@ const astria: InfrastructureProject = {
             url: "https://astria.org",
         },
         {
-            text: Site.Website,
-            url: "https://astria.org",
-        },
-        {
             text: Site.Docs,
             url: "https://docs.astria.org/",
         },

@@ -27,10 +27,6 @@ const espresso: InfrastructureProject = {
             url: "https://espressosys.com/",
         },
         {
-            text: Site.Website,
-            url: "https://espressosys.com/",
-        },
-        {
             text: Site.Docs,
             url: "https://docs.espressosys.com/",
         },

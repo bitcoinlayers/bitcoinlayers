@@ -27,10 +27,6 @@ const fedimint: InfrastructureProject = {
             url: "https://fedimint.org",
         },
         {
-            text: Site.Website,
-            url: "https://fedimint.org",
-        },
-        {
             text: Site.Docs,
             url: "https://fedimint.org/docs/intro",
         },

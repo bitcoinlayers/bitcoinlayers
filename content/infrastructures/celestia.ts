@@ -27,10 +27,6 @@ const celestia: InfrastructureProject = {
             url: "https://celestia.org",
         },
         {
-            text: Site.Website,
-            url: "https://celestia.org",
-        },
-        {
             text: Site.Docs,
             url: "https://docs.celestia.org/",
         },
