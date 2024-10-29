@@ -38,18 +38,18 @@ const ProjectLinks: React.FC<{ links: Project["links"] }> = ({ links }) => {
 
                 return (
                     <LinkButton key={type} href={String(link.url)}>
-                        <div className="bg-white/opacity-0 flex-col justify-center items-center inline-flex">
-                            <div className="w-3.5 h-3.5 relative">
+                        <div className="flex items-center">
+                            <div className="bg-white/opacity-0">
                                 <Image
-                                    className="w-3.5 h-3.5"
+                                    className="w-3.5 h-3.5 mr-1.5"
                                     src={icon}
                                     alt={alt}
                                     width={14}
                                     height={14}
                                 />
                             </div>
+                            {type}
                         </div>
-                        {type}
                     </LinkButton>
                 );
             })}
