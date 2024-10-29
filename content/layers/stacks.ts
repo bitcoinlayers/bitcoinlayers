@@ -18,12 +18,12 @@ const stacks: LayerProject = {
     live: LiveStatus.Mainnet,
     staking: false,
     bridge: false,
-    underReview: false,
+    underReview: true,
     riskFactors: [
         RiskFactor.Unverified,
         RiskFactor.Medium,
         RiskFactor.Medium,
-        RiskFactor.Medium,
+        RiskFactor.Unverified,
     ],
     btcLocked: 1054,
     nativeToken: "STX",
@@ -92,6 +92,17 @@ const stacks: LayerProject = {
         },
     ],
     sections: [
+        {
+            id: "underreivew",
+            title: "Under review",
+            content: [
+                {
+                    title: "Stacks is under review",
+                    content:
+                        "Stacks is currently being reviewed by the Bitcoin Layers team. It recently underwent the Nakamoto upgrade which may potentially affect the contents of this review.",
+                },
+            ],
+        },
         {
             id: "bitcoinsecurity",
             title: "Bitcoin Security",
@@ -165,9 +176,9 @@ const stacks: LayerProject = {
             title: "Use Cases",
             content: [
                 {
-                    title: "DeFi",
+                    title: "Onchain applications",
                     content:
-                        "The most popular use case for Stacks is DeFi. Stacks has a number of DeFi applications, including lending, borrowing, and decentralized exchanges.",
+                        "The most popular use case for Stacks is onchain applications. Stacks has a number of applications, including lending, borrowing, and decentralized exchanges.",
                 },
                 {
                     title: "NFTs",
