@@ -3,6 +3,7 @@ import { allInfrastructures } from "@/util/infrastructure_index";
 
 import StakingTable from "@/components/tables/staking-table";
 import Hero from "@/components/hero";
+import UnderDevelopmentBanner from "@/components/under-development-banner";
 
 export default function StakingPage() {
     const sortedEverything = [...allLayers, ...allInfrastructures]
@@ -34,6 +35,7 @@ export default function StakingPage() {
 
     return (
         <div className="mx-auto">
+            <UnderDevelopmentBanner title="The Staking module of Bitcoin Layers is under development." />
             <Hero
                 title="Staking"
                 description="Not every bitcoin staking protocol is equal."

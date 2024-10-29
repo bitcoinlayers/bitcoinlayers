@@ -34,8 +34,7 @@ const spark: LayerProject = {
             url: "https://x.com/buildonspark",
         },
     ],
-    description:
-        "Spark is building a statechain protocol.",
+    description: "Spark is building a statechain protocol.",
     riskAnalysis: [
         {
             category: RiskCategory.UnilateralExits,
