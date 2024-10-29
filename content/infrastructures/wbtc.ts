@@ -61,7 +61,7 @@ const wbtc: InfrastructureProject = {
             content: [
                 {
                     content:
-                        "The relevant smart contracts for tBTC are linked below:\n\n[wBTC Ethereum smart contract](https://etherscan.io/token/0x2260fac5e5542a773aa44fbcfedf7c193bc2c599)\n\n[wBTC Base smart contract](https://basescan.org/address/0x1ceA84203673764244E05693e42E6Ace62bE9BA5)\n\nOther chains, including Tron and Osmosis, [listed here](https://wbtc.network/dashboard/order-book/wbtc),",
+                        "The relevant smart contracts for wBTC are linked below:\n\n[wBTC Ethereum smart contract](https://etherscan.io/token/0x2260fac5e5542a773aa44fbcfedf7c193bc2c599)\n\n[wBTC Base smart contract](https://basescan.org/address/0x1ceA84203673764244E05693e42E6Ace62bE9BA5)\n\nOther chains, including Tron and Osmosis, [listed here](https://wbtc.network/dashboard/order-book/wbtc),",
                 },
             ],
         },
