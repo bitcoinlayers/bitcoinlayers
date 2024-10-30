@@ -25,27 +25,40 @@ import {
 } from "@/components/ui/select";
 import { useQueryState } from "nuqs";
 import { useMemo, useCallback } from "react";
-import useGetInfratvlHistoricalStaked from "@/hooks/use-get-infratvl-historical-staked";
 
 interface ProcessedData {
     date: string;
     [key: string]: string | number;
 }
 
-export default function StakingAggregatedTVLChart() {
-    const [chartType, setChartType] = useQueryState("chart", {
+interface ChartProps {
+    title: string;
+    description: string;
+    data: any[] | undefined;
+    itemNameKey: string; // 'infra_name' or 'layer_name'
+    chartQueryParam?: string;
+    rangeQueryParam?: string;
+}
+
+export default function AggregatedTVLChart({
+    title,
+    description,
+    data,
+    itemNameKey,
+    chartQueryParam = "chart",
+    rangeQueryParam = "range",
+}: ChartProps) {
+    const [chartType, setChartType] = useQueryState(chartQueryParam, {
         defaultValue: "separate",
     });
-    const [dateRange, setDateRange] = useQueryState("range", {
+    const [dateRange, setDateRange] = useQueryState(rangeQueryParam, {
         defaultValue: "3mo",
     });
 
-    const { data } = useGetInfratvlHistoricalStaked();
-
-    const stakers =
+    const items =
         chartType === "combined"
             ? ["BTC"]
-            : [...new Set(data?.map((item) => item.infra_name) || [])];
+            : [...new Set(data?.map((item) => item[itemNameKey]) || [])];
 
     const processedData = useMemo(() => {
         if (!data) return [];
@@ -54,7 +67,7 @@ export default function StakingAggregatedTVLChart() {
             const existingEntry = acc.find(
                 (entry) => entry.date === itemDateUTC,
             );
-            const key = chartType === "combined" ? "BTC" : item.infra_name;
+            const key = chartType === "combined" ? "BTC" : item[itemNameKey];
             if (existingEntry) {
                 existingEntry[key] =
                     ((existingEntry[key] as number) || 0) + item.amount;
@@ -63,7 +76,7 @@ export default function StakingAggregatedTVLChart() {
             }
             return acc;
         }, []);
-    }, [data, chartType]);
+    }, [data, chartType, itemNameKey]);
 
     const filterDataByDateRange = useCallback(
         (data: ProcessedData[]) => {
@@ -88,25 +101,25 @@ export default function StakingAggregatedTVLChart() {
         return chartType === "combined"
             ? { BTC: { label: "BTC", color: "hsl(var(--chart-btc))" } }
             : Object.fromEntries(
-                  stakers.map((staker) => [
-                      staker,
+                  items.map((item) => [
+                      item,
                       {
-                          label: staker,
-                          color: `hsl(var(--chart-${staker.toLowerCase().replace(/\s+/g, "-")}))`,
+                          label: item,
+                          color: `hsl(var(--chart-${item.toLowerCase().replace(/\s+/g, "-")}))`,
                       },
                   ]),
               );
-    }, [chartType, stakers]);
+    }, [chartType, items]);
 
     return (
         <Card className="bg-background mx-6">
             <CardHeader className="flex flex-col lg:flex-row flex-wrap lg:items-center justify-between border-b mb-4">
                 <div>
                     <CardTitle className="flex font-normal items-center gap-2">
-                        Staking TVL
+                        {title}
                     </CardTitle>
                     <CardDescription className="mt-1 text-xs flex flex-wrap">
-                        Total amount of value locked in staking protocols
+                        {description}
                     </CardDescription>
                 </div>
                 <div className="flex flex-col lg:flex-row items-start lg:items-center justify-center lg:space-x-2 space-y-2 lg:space-y-0 pt-2 lg:pt-0">
@@ -196,14 +209,14 @@ export default function StakingAggregatedTVLChart() {
                                 />
                             }
                         />
-                        {stakers.sort().map((staker) => (
+                        {items.sort().map((item: string) => (
                             <Area
-                                key={staker}
-                                name={staker}
-                                dataKey={staker}
+                                key={item}
+                                name={item}
+                                dataKey={item}
                                 type="linear"
-                                stroke={chartConfig[staker]?.color}
-                                fill={chartConfig[staker]?.color}
+                                stroke={chartConfig[item]?.color}
+                                fill={chartConfig[item]?.color}
                                 strokeWidth={1}
                                 dot={false}
                                 fillOpacity={0.5}
