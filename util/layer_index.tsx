@@ -126,7 +126,6 @@ export const allLayers: LayerProject[] = [
     molecule,
     side,
     mezo,
-    arkonliquid,
     rooch,
     sequentia,
     brollup,
