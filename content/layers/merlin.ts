@@ -55,7 +55,7 @@ const merlin: LayerProject = {
         "Merlin is an implementation of Polygon CDK chain. It likely is running a Polygon chain on top of a permissioned fork of the EVM.",
     riskAnalysis: [
         {
-            category: RiskCategory.BridgeSecurity,
+            category: RiskCategory.BtcCustody,
             score: 0,
             tier: RiskFactor.Unverified,
             title: "Users deposit funds into a MPC wallet managed by a custodian",

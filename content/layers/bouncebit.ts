@@ -55,7 +55,7 @@ const bouncebit: LayerProject = {
         "BounceBit is a bitcoin sidechain. It leverages a delegated proof-of-stake consensus mechanism and uses the BB and BBTC (BTC-synthetic on BounceBit) tokens for staking. It is EVM-compatible and can support an ecosystem of onchain applications.",
     riskAnalysis: [
         {
-            category: RiskCategory.BridgeSecurity,
+            category: RiskCategory.BtcCustody,
             score: 0,
             tier: RiskFactor.Unverified,
             title: "Bridge is managed by a third party",

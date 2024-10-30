@@ -55,7 +55,7 @@ const satoshivm: LayerProject = {
         "SatoshiVM is a permissioned chain built on the Frontier client software. Its native token is an ERC-20 on Ethereum",
     riskAnalysis: [
         {
-            category: RiskCategory.BridgeSecurity,
+            category: RiskCategory.BtcCustody,
             score: 0,
             tier: RiskFactor.Unverified,
             title: "Two-way peg is managed by a third party",

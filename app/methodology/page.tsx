@@ -28,7 +28,7 @@ const Methodology: React.FC = () => {
         );
     };
 
-    const bridgeCustodyBody = `
+    const btcCustodyBody = `
     <ul>
         <li>🟢 Green must match one of the following conditions:</li>
         <ul>
@@ -218,15 +218,15 @@ const Methodology: React.FC = () => {
                                     <div className="text-base font-normal text-slate-500 leading-normal">
                                         The Bitcoin Layers risk assessment is
                                         broken down into four sections. They
-                                        cover Bridge Security, Data
-                                        Availability, Network Operators, and
-                                        Settlement Assurance (Finality
-                                        Guarantees). The assessments also
-                                        include more granular reviews of
-                                        specific areas. For example, if the
-                                        chain uses a federated two-way peg, an
-                                        additional assessment on the security
-                                        related to that peg can be performed.
+                                        cover BTC Custody, Data Availability,
+                                        Network Operators, and Settlement
+                                        Assurance (Finality Guarantees). The
+                                        assessments also include more granular
+                                        reviews of specific areas. For example,
+                                        if the chain uses a federated two-way
+                                        peg, an additional assessment on the
+                                        security related to that peg can be
+                                        performed.
                                         <br />
                                         <br /> This assessment is not reflective
                                         of L2 or sidesystem security. It is not
@@ -239,8 +239,8 @@ const Methodology: React.FC = () => {
                                 </div>
                             </div>
                             <InfoBox
-                                title="Bridge Security"
-                                body={bridgeCustodyBody}
+                                title="BTC Custody"
+                                body={btcCustodyBody}
                             />
                             <InfoBox
                                 title="Data Availability"

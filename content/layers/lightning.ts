@@ -51,7 +51,7 @@ const lightning: LayerProject = {
         "The Lightning Network (sometimes known as Lightning) is a payment-channel-based Layer 2 for payments. It enables users to open a payment channel with a counterparty and make an unlimited number of payments within the channel. It also enables users to route payments across a network of these channels to users outside of their specific channel.",
     riskAnalysis: [
         {
-            category: RiskCategory.BridgeSecurity,
+            category: RiskCategory.BtcCustody,
             score: 0,
             tier: RiskFactor.Low,
             title: "Users custody their funds with their counterparty",

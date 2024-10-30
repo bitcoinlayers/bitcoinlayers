@@ -55,7 +55,7 @@ const fractal: LayerProject = {
         "Fractal is a Bitcoin sidechain purpose built to scale bitcoin-native applications like Runes and BRC-20s. It leverages a novel consensus mechanism similar to merge-mining.",
     riskAnalysis: [
         {
-            category: RiskCategory.BridgeSecurity,
+            category: RiskCategory.BtcCustody,
             score: 0,
             tier: RiskFactor.Unverified,
             title: "Fractal relies on a third party for bridge infrastructure",

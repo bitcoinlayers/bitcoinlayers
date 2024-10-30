@@ -30,7 +30,7 @@ export enum RiskFactor {
 }
 
 export enum RiskCategory {
-    BridgeSecurity = "Bridge Security",
+    BtcCustody = "BTC Custody",
     DataAvailability = "Data Availability",
     NetworkOperators = "Network Operators",
     SettlementAssurance = "Settlement Assurance",

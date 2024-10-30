@@ -55,7 +55,7 @@ const rootstock: LayerProject = {
         "Rootstock is a merge-mined, EVM-compatible bitcoin sidechain. As a merge-mined network, bitcoin miners can concurrently mine for Rootstock's consensus. The network is not secured by another token. As an EVM-compatible network, developers can deploy Solidity and other EVM-compatible smart contracts with arbitrary logic, creating a host of new applications for BTC. Rootstock has an enshrined cross-chain BTC asset called ''Smart Bitcoin'' (RBTC), which is pegged 1:1 to BTC and secured by a permissioned multisig federation.",
     riskAnalysis: [
         {
-            category: RiskCategory.BridgeSecurity,
+            category: RiskCategory.BtcCustody,
             score: 0,
             tier: RiskFactor.High,
             title: "A federated multi-sig known as the Powpeg is used to custody users' BTC",

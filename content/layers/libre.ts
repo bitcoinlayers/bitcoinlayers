@@ -55,7 +55,7 @@ const libre: LayerProject = {
         "Libre is a sidechain that leverages a Delegated Proof of Stake (DPoS) consensus mechanism. It currently features three tokens: PBTC, PUSDT, and LIBRE. BTC live on the Libre network is managed by an alternative consensus mechanism that is not directly affiliated with Libre.",
     riskAnalysis: [
         {
-            category: RiskCategory.BridgeSecurity,
+            category: RiskCategory.BtcCustody,
             score: 0,
             tier: RiskFactor.Unverified,
             title: "Libre's bridge relies on a third party provider",

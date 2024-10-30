@@ -10,11 +10,11 @@ import { LayerProject } from "@/content/props";
 interface Props {
     data: LayerProject[];
 }
-type MobileRiskKey = "Bridge" | "DA" | "Operators" | "Settlement";
+type MobileRiskKey = "BTC Custody" | "DA" | "Operators" | "Settlement";
 
 const layerHeaders = [
     { name: "Name", mobileLabel: "Name" },
-    { name: "Bridge", mobileLabel: "Bridge" },
+    { name: "BTC Custody", mobileLabel: "BTC Custody" },
     { name: "DA", mobileLabel: "DA" },
     { name: "Operators", mobileLabel: "Operators" },
     { name: "Settlement", mobileLabel: "Settlement" },
@@ -39,7 +39,8 @@ const LayerImage = ({ src, title }: { src: string; title: string }) => {
 };
 
 const LayerTableRisks = ({ data }: Props) => {
-    const [mobileRiskTab, setMobileRiskTab] = useState<MobileRiskKey>("Bridge");
+    const [mobileRiskTab, setMobileRiskTab] =
+        useState<MobileRiskKey>("BTC Custody");
     const router = useRouter();
 
     const handleRowClick = (destination: string) => {
@@ -90,9 +91,9 @@ const LayerTableRisks = ({ data }: Props) => {
                             <th className="lg:px-6 px-4 lg:py-6 py-2 font-medium text-text_table_header table_header border-r lg:border-r-0 border-stroke_tertiary rounded-tl-xl">
                                 Name
                             </th>
-                            {(!isMobile || mobileRiskTab === "Bridge") && (
+                            {(!isMobile || mobileRiskTab === "BTC Custody") && (
                                 <th className="lg:px-6 px-4 lg:py-6 py-2 font-medium text-text_table_header table_header border-stroke_tertiary">
-                                    Bridge
+                                    BTC Custody
                                 </th>
                             )}
                             {(!isMobile || mobileRiskTab === "DA") && (
@@ -137,7 +138,8 @@ const LayerTableRisks = ({ data }: Props) => {
                                     </div>
                                 </td>
 
-                                {(!isMobile || mobileRiskTab === "Bridge") && (
+                                {(!isMobile ||
+                                    mobileRiskTab === "BTC Custody") && (
                                     <td
                                         className={
                                             "lg:px-6 px-4 lg:py-4 py-3 border-stroke_tertiary text_table_body"

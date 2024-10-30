@@ -62,7 +62,7 @@ const FaqPage: React.FC = () => {
                         <div className="flex flex-col gap-8 w-full">
                             <FAQItem
                                 question="What is the Bitcoin Layers site?"
-                                answer="Bitcoin Layers is an educational tool dedicated to Bitcoin scaling. Currently, we are focusing on a module that outlines the risks associated with various scaling protocols that support Bitcoin and BTC the asset. We are also planning on building modules related to bridges, scaling infrastructure and opcodes that can support new variations of L2s."
+                                answer="Bitcoin Layers is an educational tool dedicated to Bitcoin scaling. Currently, we are focusing on a module that outlines the risks associated with various scaling protocols that support Bitcoin and BTC the asset. We are also planning on building modules related to BTC wrappers, scaling infrastructure, and opcodes that can support new variations of L2s."
                             />
                             <FAQItem
                                 question="What is a Bitcoin Layer?"

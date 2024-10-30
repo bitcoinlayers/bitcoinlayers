@@ -45,7 +45,7 @@ function getSiteEnum(index) {
 
 function getRiskCategory(category) {
     const categoryMap = {
-        "Bridge Security": "BridgeSecurity",
+        "BTC Custody": "BtcCustody",
         "Data Availability": "DataAvailability",
         "Network Operators": "NetworkOperators",
         "Settlement Assurance": "SettlementAssurance",

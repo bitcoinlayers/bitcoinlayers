@@ -84,7 +84,7 @@ const LayerDiamond: React.FC<{ layer: LayerProject }> = ({ layer }) => {
 
     const riskLabels = [
         {
-            text: "BRIDGE",
+            text: "CUSTODY",
             className:
                 "left-[10px] top-[155px] -rotate-45 origin-top-left text-left",
         },

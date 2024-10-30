@@ -55,7 +55,7 @@ const internetcomputer: LayerProject = {
         "The Internet Computer Protocol (ICP) is a network of connected subnet blockchains. It has a smart contract module, known as the Bitcoin Canister, that enables ICP smart contracts to have a view into Bitcoin state and conduct Bitcoin transactions. It additionally has a bitcoin-backed synthetic, known as ckBTC, which sees signers of a multi-sig scheme custody BTC and mint and burn synthetic ckBTC tokens on ICP. Developers can deploy a variety of applications leveraging the Bitcoin canister and ckBTC.",
     riskAnalysis: [
         {
-            category: RiskCategory.BridgeSecurity,
+            category: RiskCategory.BtcCustody,
             score: 0,
             tier: RiskFactor.High,
             title: "Funds are custodied by signer set selected by ICP consensus",

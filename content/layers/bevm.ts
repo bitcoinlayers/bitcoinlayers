@@ -53,7 +53,7 @@ const bevm: LayerProject = {
         "BEVM is an EVM-compatible sidechain built on substrate. On the BEVM chain, the BTC is held in custody by a federated signer set.",
     riskAnalysis: [
         {
-            category: RiskCategory.BridgeSecurity,
+            category: RiskCategory.BtcCustody,
             score: 0,
             tier: RiskFactor.Unverified,
             title: "Users trust a federation with the custody of their BTC. Signers under review",

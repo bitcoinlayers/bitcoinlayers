@@ -53,7 +53,7 @@ const arkonliquid: LayerProject = {
         "This review covers the Ark implementation written in [Go](https://github.com/ark-network/ark), running on the Liquid network. A separate review for the covenant-less version of Ark (clArk) which operates on Bitcoin, will follow. Ark is a proposed payments protocol designed to shift liquidity requirements to a central operator, which is an always-on server, known as the Ark Service Provider (ASP). There are currently no ASPs supporting Ark on Liquid.",
     riskAnalysis: [
         {
-            category: RiskCategory.BridgeSecurity,
+            category: RiskCategory.BtcCustody,
             score: 0,
             tier: RiskFactor.Unverified,
             title: "Users enter a 2-of-2 multisig with the ASP that guarantees unilateral exit to L-BTC, but not to BTC",
