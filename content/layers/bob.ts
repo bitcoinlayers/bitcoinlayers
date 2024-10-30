@@ -5,8 +5,6 @@ import {
     RiskFactor,
     EntityType,
     Site,
-    RiskSection,
-    ContentSection,
     RiskCategory,
 } from "../props";
 
