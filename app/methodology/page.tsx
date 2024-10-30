@@ -30,7 +30,7 @@ const Methodology: React.FC = () => {
 
     const bridgeCustodyBody = `
     <ul>
-    <ul> We refer to two-way pegs, lightning channels, and other mechanisms to lock bitcoin into a sidesystem as a "bridge" for uniformity. We are currently determining a better term to use for this section of the review</ul>
+    <ul>We refer to two-way pegs, lightning channels, and other mechanisms to lock bitcoin into a sidesystem as a "bridge" for uniformity. We are currently determining a better term to use for this section of the review</ul>
         <li>🟢 Green must match one of the following conditions:</li>
         <ul>
                 <li>Users can contest a dispute in the final state with a counterparty and claim their assets on the L1</li>
