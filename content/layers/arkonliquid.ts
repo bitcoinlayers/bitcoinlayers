@@ -33,10 +33,6 @@ const arkonliquid: LayerProject = {
             url: "https://arklabs.to",
         },
         {
-            text: Site.Website,
-            url: "https://arkdev.info",
-        },
-        {
             text: Site.Docs,
             url: "https://arkdev.info/docs/",
         },
