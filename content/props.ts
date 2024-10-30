@@ -68,6 +68,7 @@ export enum EntityType {
     BitcoinBridge = "Bitcoin Bridge",
     MPCProtocol = "MPC Protocol",
     TBD = "To Be Determined",
+    Ark = "Ark",
     "-" = "-",
 }
 
