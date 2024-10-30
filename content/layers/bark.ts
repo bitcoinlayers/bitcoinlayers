@@ -23,7 +23,7 @@ const bark: LayerProject = {
     btcLocked: 0,
     nativeToken: "-",
     feeToken: "-",
-    bitcoinOnly: false,
+    bitcoinOnly: true,
     links: [
         {
             text: Site.Website,
