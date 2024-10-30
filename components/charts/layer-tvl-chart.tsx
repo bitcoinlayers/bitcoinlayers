@@ -19,7 +19,7 @@ import {
 import { useQueryState } from "nuqs";
 import { useCallback, useMemo, useState } from "react";
 import { useParams } from "next/navigation";
-import useGetTokentvlHistoricalAll from "@/hooks/use-get-layertvl-historical-all";
+import useGetTokentvlHistoricalAll from "@/hooks/use-get-tokentvl-historical-all";
 import useGetCurrentPrices from "@/hooks/use-get-current-prices";
 import { formatCurrency } from "@/util/formatCurrency";
 
@@ -28,7 +28,7 @@ interface ProcessedData {
     [key: string]: string | number;
 }
 
-export default function ProjectTVLChart() {
+export default function LayerTVLChart() {
     const { slug } = useParams();
     const [activeChart, setActiveChart] =
         useState<keyof typeof chartConfig>("TVL");
@@ -40,8 +40,9 @@ export default function ProjectTVLChart() {
     });
 
     const { data } = useGetTokentvlHistoricalAll({
-        queryString: `?infra_slug=ilike.${slug}`,
+        queryString: `?layer_slug=ilike.${slug}`,
     });
+
     const { data: pricesData, isLoading, error } = useGetCurrentPrices();
 
     const btcPriceData = pricesData?.find(
@@ -53,14 +54,9 @@ export default function ProjectTVLChart() {
         () =>
             chartType === "combined"
                 ? ["BTC"]
-                : [...new Set(data?.map((item) => item.layer_name) || [])],
+                : [...new Set(data?.map((item) => item.token_name) || [])],
         [data, chartType],
     );
-
-    const getTokenName = useCallback(() => {
-        if (!data || data.length === 0) return null;
-        return data[0].token_name;
-    }, [data]);
 
     const processedData = useMemo(() => {
         if (!data) return [];
@@ -69,17 +65,23 @@ export default function ProjectTVLChart() {
             const existingEntry = acc.find(
                 (entry) => entry.date === itemDateUTC,
             );
-            const tokenKey = chartType === "combined" ? "BTC" : item.layer_name;
+            const tokenKey = chartType === "combined" ? "BTC" : item.token_name;
 
             if (existingEntry) {
                 existingEntry[tokenKey] =
-                    ((existingEntry[tokenKey] as number) || 0) + item.amount;
+                    ((existingEntry[tokenKey] as number) || 0) +
+                    item.total_amount; // Use total_amount
             } else {
-                acc.push({ date: itemDateUTC, [tokenKey]: item.amount });
+                acc.push({ date: itemDateUTC, [tokenKey]: item.total_amount }); // Use total_amount
             }
             return acc;
         }, []);
     }, [data, chartType]);
+
+    const getLayerName = useCallback(() => {
+        if (!data || data.length === 0) return null;
+        return data[0].layer_name;
+    }, [data]);
 
     const chartConfig = useMemo(
         () =>
@@ -144,15 +146,15 @@ export default function ProjectTVLChart() {
 
         // Calculate TVL as the sum of the last amounts for each token_name
         const tvl = [
-            ...new Set(data?.map((item) => item.identifier) || []),
+            ...new Set(data?.map((item) => item.token_name) || []),
         ].reduce((acc, token) => {
             const lastEntry = filteredData
-                .filter((item) => item.identifier === token)
+                .filter((item) => item.token_name === token)
                 .sort(
                     (a, b) =>
                         new Date(b.date).getTime() - new Date(a.date).getTime(),
                 )[0];
-            return acc + (lastEntry?.amount || 0);
+            return acc + (lastEntry?.total_amount || 0);
         }, 0);
 
         return {
@@ -167,7 +169,7 @@ export default function ProjectTVLChart() {
             <CardHeader className="flex flex-col space-y-4">
                 <div className="flex flex-col sm:flex-row justify-between w-full">
                     <CardTitle className="flex font-normal items-center text-2xl sm:text-3xl mb-2 sm:mb-0">
-                        Metrics
+                        Layer Metrics
                     </CardTitle>
                     <div className="flex flex-col sm:flex-row items-start sm:items-center justify-center sm:space-x-2 space-y-2 sm:space-y-0">
                         <div className="block w-full sm:w-auto">
@@ -198,18 +200,18 @@ export default function ProjectTVLChart() {
                 <div className="flex flex-col justify-center items-start py-4 sm:py-8 border-b sm:border-b-0 px-6 sm:w-1/2">
                     <div className="text-lg sm:text-xl">BTC Locked</div>
                     <div className="text-xs sm:text-sm text-muted-foreground">
-                        Total amount of {getTokenName()} locked on{" "}
+                        Total amount of{" "}
                         {tokens.length > 1
                             ? tokens.slice(0, -1).join(", ") +
                               (tokens.length > 2 ? "," : "") +
                               " and " +
                               tokens[tokens.length - 1]
                             : tokens[0]}{" "}
-                        per day.
+                        locked on {getLayerName()} per day
                     </div>
                 </div>
                 <div className="flex flex-row sm:w-1/2">
-                    {["TVL"].map((key) => {
+                    {["TVL", "TPS", "Fee Rev."].map((key) => {
                         const chart = key as keyof typeof chartConfig;
                         return (
                             <button
@@ -218,7 +220,7 @@ export default function ProjectTVLChart() {
                                 className="flex flex-1 flex-col justify-center gap-1 px-3 py-2 sm:px-6 sm:py-4 text-left even:border-x sm:even:border-x-0 sm:odd:border-l sm:first:border-r data-[active=true]:bg-muted/50"
                                 onClick={() => setActiveChart(chart)}
                             >
-                                <span className="text-xs text-muted-foreground w-12 md:w-20">
+                                <span className="text-xs text-muted-foreground w-8 md:w-16">
                                     {key}
                                 </span>
                                 <span className="text-xs sm:text-base leading-none">
@@ -228,8 +230,8 @@ export default function ProjectTVLChart() {
                                                 {`${total[
                                                     key as keyof typeof total
                                                 ].toLocaleString("en-US", {
-                                                    minimumFractionDigits: 2,
-                                                    maximumFractionDigits: 2,
+                                                    minimumFractionDigits: 0,
+                                                    maximumFractionDigits: 0,
                                                 })} BTC`}
                                             </span>
                                             <div className="text-xs sm:text-sm py-2 text-muted-foreground">

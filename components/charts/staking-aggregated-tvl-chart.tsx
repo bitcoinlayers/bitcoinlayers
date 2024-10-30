@@ -25,14 +25,14 @@ import {
 } from "@/components/ui/select";
 import { useQueryState } from "nuqs";
 import { useMemo, useCallback } from "react";
-import useGetBalancesHistoricalBylayerBitcoinonly from "@/hooks/use-get-layertvl-historical-bitcoinonly";
+import useGetInfratvlHistoricalStaked from "@/hooks/use-get-infratvl-historical-staked";
 
 interface ProcessedData {
     date: string;
     [key: string]: string | number;
 }
 
-export default function LayersTVLChart() {
+export default function StakingAggregatedTVLChart() {
     const [chartType, setChartType] = useQueryState("chart", {
         defaultValue: "separate",
     });
@@ -40,12 +40,14 @@ export default function LayersTVLChart() {
         defaultValue: "3mo",
     });
 
-    const { data } = useGetBalancesHistoricalBylayerBitcoinonly();
+    const { data } = useGetInfratvlHistoricalStaked();
+    
+    console.log(data)
 
     const layers =
         chartType === "combined"
             ? ["BTC"]
-            : [...new Set(data?.map((item) => item.layer_name) || [])];
+            : [...new Set(data?.map((item) => item.infra_name) || [])];
 
     const processedData = useMemo(() => {
         if (!data) return [];
@@ -54,7 +56,7 @@ export default function LayersTVLChart() {
             const existingEntry = acc.find(
                 (entry) => entry.date === itemDateUTC,
             );
-            const key = chartType === "combined" ? "BTC" : item.layer_name;
+            const key = chartType === "combined" ? "BTC" : item.infra_name;
             if (existingEntry) {
                 existingEntry[key] =
                     ((existingEntry[key] as number) || 0) + item.amount;
@@ -103,11 +105,10 @@ export default function LayersTVLChart() {
             <CardHeader className="flex flex-col lg:flex-row flex-wrap lg:items-center justify-between border-b mb-4">
                 <div>
                     <CardTitle className="flex font-normal items-center gap-2">
-                        BTC Locked
+                        Staking TVL
                     </CardTitle>
                     <CardDescription className="mt-1 text-xs flex flex-wrap">
-                        Total amount of BTC locked in protocols listed on
-                        Bitcoin Layers
+                        Total amount of value locked in protocols listed in staking protocols
                     </CardDescription>
                 </div>
                 <div className="flex flex-col lg:flex-row items-start lg:items-center justify-center lg:space-x-2 space-y-2 lg:space-y-0 pt-2 lg:pt-0">

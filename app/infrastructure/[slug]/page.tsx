@@ -7,7 +7,7 @@ import InfrastructureMenu from "@/components/infrastructure/infrastructureMenu";
 import InfrastructureBody from "@/components/infrastructure/infrastructureBody";
 import InfrastructureOverview from "@/components/infrastructure/infrastructureOverview";
 import InfrastructureImage from "@/components/infrastructure/infrastructure-image";
-import ProjectTVLChart from "@/components/charts/token-tvl-chart";
+import InfraTVLChart from "@/components/charts/infra-tvl-chart";
 import RiskAnalysis from "@/components/layer/risk-analysis/layerBodyAssessment";
 import UnderDevelopmentBanner from "@/components/under-development-banner";
 
@@ -60,7 +60,7 @@ export default async function InfrastructurePage({
                         <InfrastructureOverview
                             infrastructure={infrastructure}
                         />
-                        <ProjectTVLChart />
+                        <InfraTVLChart />
                         {infrastructure.assessment && (
                             <RiskAnalysis
                                 riskAnalysis={infrastructure.assessment}
