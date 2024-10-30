@@ -3,8 +3,8 @@
 import React from "react";
 import { useQueryState } from "nuqs";
 import LayerTableAll from "../tables/layerTableAll";
-import LayersTVLChart from "../charts/layers-tvl-chart";
 import { LayerProject } from "@/content/props";
+import LayersAggregatedTVLChart from "../charts/aggregated-tvl/layers";
 
 interface Props {
     data: LayerProject[];
@@ -100,7 +100,7 @@ const ViewToggleGroup = ({ data, headers }: Props) => {
                     showToggleGroup={false}
                 />
             ) : (
-                <LayersTVLChart />
+                <LayersAggregatedTVLChart />
             )}
         </>
     );

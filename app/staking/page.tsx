@@ -4,6 +4,7 @@ import { allInfrastructures } from "@/util/infrastructure_index";
 import StakingTable from "@/components/tables/staking-table";
 import Hero from "@/components/hero";
 import UnderDevelopmentBanner from "@/components/under-development-banner";
+import StakingAggregatedTVLChart from "@/components/charts/aggregated-tvl/staking";
 
 export default function StakingPage() {
     const sortedEverything = [...allLayers, ...allInfrastructures]
@@ -40,6 +41,9 @@ export default function StakingPage() {
                 title="Staking"
                 description="Not every bitcoin staking protocol is equal."
             />
+            <div className="mb-24 lg:mb-12 w-full lg:max-w-5xl mx-auto">
+                <StakingAggregatedTVLChart />
+            </div>
             <div className="lg:flex mb-4 justify-center w-full lg:max-w-5xl mx-auto">
                 <StakingTable data={sortedEverything} headers={layerHeaders} />
             </div>

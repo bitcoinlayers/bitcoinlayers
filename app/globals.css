@@ -118,11 +118,12 @@ section {
         --chart-8: 270 70% 75%; /* Lavender */
         --chart-9: 150 100% 35%; /* Lime Green */
         --chart-10: 330 90% 45%; /* Deep Pink */
+        /* Layers */
         --chart-ark: 14 100% 57%;
         --chart-bevm: 187 100% 42%;
         --chart-bitlayer: 48 100% 50%;
         --chart-bob: 174 100% 29%;
-        --chart-bsquared: 302 59% 65%;
+        --chart-bsquared-network: 302 59% 65%;
         --chart-btc: 14 99% 55%;
         --chart-core: 20 100% 67%;
         --chart-internet-computer: 0 100% 60%;
@@ -135,6 +136,20 @@ section {
         --chart-rollux: 24 100% 73%;
         --chart-rootstock: 229 71% 67%;
         --chart-stacks: 271 100% 71%;
+        /* Staking */
+        --chart-lombard: 172 62% 51%;
+        --chart-lorenzo: 205 29% 41%;
+        --chart-solvbtc-lsts: 263 99% 65%;
+        --chart-pump: 216 75% 51%;
+        --chart-bedrock: 299 36% 56%;
+        /* Bridges */
+        --chart-dlc-link: 284 84% 35%;
+        --chart-fire-fbtc: 238 100% 67%;
+        --chart-solvbtc: 263 99% 65%;
+        --chart-coinbase-cbbtc: 221 100% 52%;
+        --chart-kraken-kbtc: 257 83% 60%;
+        --chart-threshold-tbtc: 286 99% 56%;
+        --chart-wbtc: 262 5% 52%;
     }
 
     .dark {
