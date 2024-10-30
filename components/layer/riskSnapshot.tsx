@@ -8,8 +8,9 @@ import RiskIconBridge from "@/components/icons/RiskIconBridge";
 import RiskIconDA from "@/components/icons/RiskIconDA";
 import RiskIconOperators from "@/components/icons/RiskIconOperators";
 import RiskIconSettlement from "@/components/icons/RiskIconSettlement";
-import { DialogHeader, DialogTitle } from "../ui/dialog";
+import { DialogFooter, DialogHeader, DialogTitle } from "../ui/dialog";
 import { LayerProject, Project } from "@/content/props";
+import Link from "next/link";
 
 interface RiskSnapshotProps {
     layer: Project;
@@ -30,6 +31,31 @@ const RiskIcon: React.FC<{
             <IconComponent fill={fillColor} />
         </div>
     );
+};
+
+const riskEmojiMap: Record<string, string> = {
+    Low: "😍",
+    Medium: "🙃",
+    High: "😖",
+    Critical: "🛑",
+    Unverified: "❓",
+};
+
+const getRiskEmoji = (risk: string): string => {
+    switch (risk) {
+        case "Low":
+            return "😍";
+        case "Medium":
+            return "🙃";
+        case "High":
+            return "😖";
+        case "Critical":
+            return "🛑";
+        case "Unverified":
+            return "❓";
+        default:
+            return "❓";
+    }
 };
 
 const RiskSnapshot: React.FC<RiskSnapshotProps> = ({ layer, title }) => {
@@ -67,7 +93,8 @@ const RiskSnapshot: React.FC<RiskSnapshotProps> = ({ layer, title }) => {
                                         ),
                                     }}
                                 >
-                                    {layer.riskFactors[index]}
+                                    {layer.riskFactors[index]} Risk{" "}
+                                    {getRiskEmoji(layer.riskFactors[index])}
                                 </span>
                             </div>
                             <div className="text_table_important text-xs sm:text-sm">
@@ -77,6 +104,12 @@ const RiskSnapshot: React.FC<RiskSnapshotProps> = ({ layer, title }) => {
                     </div>
                 ))}
             </div>
+            <DialogFooter className="mt-4 sm:mb-t pt-4 pb-2 border-t">
+                <Link href="/methodology" className="underline text-sm">
+                    Learn more about how we analyze trust assumptions past the
+                    L1.
+                </Link>
+            </DialogFooter>
         </div>
     );
 };
