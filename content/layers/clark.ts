@@ -21,8 +21,8 @@ const clark: LayerProject = {
     underReview: true,
     riskFactors: ["", "", "", ""],
     btcLocked: 0,
-    nativeToken: "-",
-    feeToken: "-",
+    nativeToken: "BTC",
+    feeToken: "BTC",
     bitcoinOnly: true,
     links: [
         {
