@@ -25,14 +25,14 @@ import {
 } from "@/components/ui/select";
 import { useQueryState } from "nuqs";
 import { useMemo, useCallback } from "react";
-import useGetInfratvlHistoricalStaked from "@/hooks/use-get-infratvl-historical-staked";
+import useGetInfratvlHistoricalBridge from "@/hooks/use-get-infratvl-historical-bridge";
 
 interface ProcessedData {
     date: string;
     [key: string]: string | number;
 }
 
-export default function StakingAggregatedTVLChart() {
+export default function BridgeAggregatedTVLChart() {
     const [chartType, setChartType] = useQueryState("chart", {
         defaultValue: "separate",
     });
@@ -40,9 +40,9 @@ export default function StakingAggregatedTVLChart() {
         defaultValue: "3mo",
     });
 
-    const { data } = useGetInfratvlHistoricalStaked();
+    const { data } = useGetInfratvlHistoricalBridge();
 
-    const stakers =
+    const bridges =
         chartType === "combined"
             ? ["BTC"]
             : [...new Set(data?.map((item) => item.infra_name) || [])];
@@ -88,25 +88,25 @@ export default function StakingAggregatedTVLChart() {
         return chartType === "combined"
             ? { BTC: { label: "BTC", color: "hsl(var(--chart-btc))" } }
             : Object.fromEntries(
-                  stakers.map((staker) => [
-                      staker,
+                  bridges.map((bridge) => [
+                      bridge,
                       {
-                          label: staker,
-                          color: `hsl(var(--chart-${staker.toLowerCase().replace(/\s+/g, "-")}))`,
+                          label: bridge,
+                          color: `hsl(var(--chart-${bridge.toLowerCase().replace(/\s+/g, "-")}))`,
                       },
                   ]),
               );
-    }, [chartType, stakers]);
+    }, [chartType, bridges]);
 
     return (
         <Card className="bg-background mx-6">
             <CardHeader className="flex flex-col lg:flex-row flex-wrap lg:items-center justify-between border-b mb-4">
                 <div>
                     <CardTitle className="flex font-normal items-center gap-2">
-                        Staking TVL
+                        Bridge TVL
                     </CardTitle>
                     <CardDescription className="mt-1 text-xs flex flex-wrap">
-                        Total amount of value locked in staking protocols
+                        Total amount of value locked in bridging protocols
                     </CardDescription>
                 </div>
                 <div className="flex flex-col lg:flex-row items-start lg:items-center justify-center lg:space-x-2 space-y-2 lg:space-y-0 pt-2 lg:pt-0">
@@ -196,14 +196,14 @@ export default function StakingAggregatedTVLChart() {
                                 />
                             }
                         />
-                        {stakers.sort().map((staker) => (
+                        {bridges.sort().map((bridge) => (
                             <Area
-                                key={staker}
-                                name={staker}
-                                dataKey={staker}
+                                key={bridge}
+                                name={bridge}
+                                dataKey={bridge}
                                 type="linear"
-                                stroke={chartConfig[staker]?.color}
-                                fill={chartConfig[staker]?.color}
+                                stroke={chartConfig[bridge]?.color}
+                                fill={chartConfig[bridge]?.color}
                                 strokeWidth={1}
                                 dot={false}
                                 fillOpacity={0.5}
