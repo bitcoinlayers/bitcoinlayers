@@ -106,7 +106,7 @@ const solv: InfrastructureProject = {
             category: AssessmentCategory.IncentiveModel,
             score: 0,
             tier: "",
-            title: "Profits are earned from users being distributed rewards from third parties",
+            title: "Rewards are distributed to users via third parties",
             content:
                 "Users can earn rewards through yield (in the form of alternative token issuance) through staking on a PoS chain or earn profits via the vault they supply liquidity for.\n\n⚠️ Users do not earn yield directly in the LST model. They supply tokens for other parties to leverage on their behalf.",
         },
