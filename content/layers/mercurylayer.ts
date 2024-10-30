@@ -20,7 +20,7 @@ const mercurylayer: LayerProject = {
     bridge: false,
     underReview: false,
     riskFactors: [
-        RiskFactor.High,
+        RiskFactor.Unverified,
         RiskFactor.Low,
         RiskFactor.Medium,
         RiskFactor.Critical,
@@ -57,10 +57,10 @@ const mercurylayer: LayerProject = {
         {
             category: RiskCategory.BridgeSecurity,
             score: 0,
-            tier: RiskFactor.High,
+            tier: RiskFactor.Unverified,
             title: "A locked UTXO is collaboratively managed between a trusted server and the statecoin owner, with full L1 UTXO ownership enforceable after a timelock expiry",
             content:
-                "the operator and the current statecoin owner. Although the Mercury Layer server acts as a trusted entity, users are safeguarded against potential unresponsiveness by having the ability to unilaterally exit and enforce their UTXO ownership onchain as each transfer is secured by a decrementing timelock mechanism and a series of backup transactions. \n\n⚠️ The statechain entity can collude with the past owner of the UTXO, create a withdrawal transaction and steal the current owner’s funds. However, the statechain entity can only steal from one user at a time; not funds in the entire system.",
+                "the operator and the current statecoin owner. Although the Mercury Layer server acts as a trusted entity, users are safeguarded against potential unresponsiveness by having the ability to unilaterally exit and enforce their UTXO ownership onchain as each transfer is secured by a decrementing timelock mechanism and a series of backup transactions. \n\n⚠️ The statechain entity can collude with the past owner of the UTXO, create a withdrawal transaction and steal the current owner’s funds. However, the statechain entity can only steal from one user at a time; not funds in the entire system. \n\n🔬 No bridge custody score has been determined yet for Statechain protocols.",
         },
         {
             category: RiskCategory.DataAvailability,
