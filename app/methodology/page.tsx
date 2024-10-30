@@ -30,7 +30,6 @@ const Methodology: React.FC = () => {
 
     const bridgeCustodyBody = `
     <ul>
-    <ul>We refer to two-way pegs, lightning channels, and other mechanisms to lock bitcoin into a sidesystem as a "bridge" for uniformity. We are currently determining a better term to use for this section of the review</ul>
         <li>🟢 Green must match one of the following conditions:</li>
         <ul>
                 <li>Users can contest a dispute in the final state with a counterparty and claim their assets on the L1</li>
@@ -64,6 +63,7 @@ const Methodology: React.FC = () => {
                 <li>Layers that settle to a parent blockchain must consider their exit window. For rollups, we follow <a href="https://forum.l2beat.com/t/the-risk-rosette-framework/292" style="color: blue; text-decoration: underline;" target="_blank" rel="noopener noreferrer">L2Beat’s suggestions on exit windows</a>. These exit window scores overrule any other score related to the two-way peg. For example: If a rollup-style layer leverages tBTC (a yellow or red score) to natively mint bitcoin-backed tokens, but has an immediately upgradeable contract, then the layer will receive a “Stop!” score in the assessment.</li>
                 <li>Due to complexities related to federated set ups, we will additionally highlight more granular trust assumptions for federated two-way pegs in a subsection of the review. In this upcoming framework, we will outline how a federated peg can be upgraded to yellow if it meets a certain threshold of requirements.</li>
                 <li>Additional situations can be added to this framework for edge cases. For example, users of Statechains can unilaterally exit with a Bitcoin L1 transaction, but an operator can steal funds by colluding with the past owner, and users cannot submit a challenge transaction.</li>
+                <li>We refer to two-way pegs, lightning channels, and other mechanisms to lock bitcoin into a sidesystem as a "bridge" for uniformity. We are currently determining a better term to use for this section of the review</li>
             </ul>
         </li>
         </ul>
