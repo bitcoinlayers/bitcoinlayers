@@ -48,6 +48,7 @@ import goatProject from "../content/layers/goat";
 import encifherProject from "../content/layers/encifher";
 import sparkProject from "../content/layers/spark";
 import barkProject from "../content/layers/bark";
+import clarkProject from "../content/layers/clark";
 
 const core: LayerProject = coreProject;
 const internetcomputer: LayerProject = internetcomputerProject;
@@ -97,6 +98,7 @@ const goat: LayerProject = goatProject;
 const encifher: LayerProject = encifherProject;
 const spark: LayerProject = sparkProject;
 const bark: LayerProject = barkProject;
+const clark: LayerProject = clarkProject;
 
 export const allLayers: LayerProject[] = [
     core,
@@ -141,6 +143,7 @@ export const allLayers: LayerProject[] = [
     encifher,
     spark,
     bark,
+    clark,
 ];
 
 export const allLayerSlugs: string[] = allLayers.map((layer) => layer.slug);
