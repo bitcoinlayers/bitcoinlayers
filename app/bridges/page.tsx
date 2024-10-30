@@ -1,10 +1,9 @@
 import { allLayers } from "@/util/layer_index";
 import { allInfrastructures } from "@/util/infrastructure_index";
-
 import FederationTable from "@/components/tables/federation-table";
 import Hero from "@/components/hero";
 import UnderDevelopmentBanner from "@/components/under-development-banner";
-import BridgeAggregatedTVLChart from "@/components/charts/bridge-aggregated-tvl-chart";
+import BridgesAggregatedTVLChart from "@/components/charts/aggregated-tvl/bridges";
 
 export default function BridgesPage() {
     const sortedEverything = [...allLayers, ...allInfrastructures]
@@ -12,8 +11,6 @@ export default function BridgesPage() {
         .sort((a, b) =>
             a.title.toLowerCase().localeCompare(b.title.toLowerCase()),
         );
-    console.log("allInfrastructures", allInfrastructures);
-    console.log("everything     ", sortedEverything);
 
     const typeFilters = [
         ...new Set(
@@ -48,7 +45,7 @@ export default function BridgesPage() {
                 description="Not all wrapped versions of bitcoin are made equal."
             />
             <div className="mb-12 w-full lg:max-w-5xl mx-auto">
-                <BridgeAggregatedTVLChart />
+                <BridgesAggregatedTVLChart />
             </div>
             <div className="lg:flex mb-4 justify-center w-full lg:max-w-5xl mx-auto">
                 <FederationTable

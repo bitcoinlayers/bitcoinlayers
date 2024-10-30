@@ -3,8 +3,8 @@
 import React from "react";
 import { useQueryState } from "nuqs";
 import LayerTableAll from "../tables/layerTableAll";
-import LayersAggregatedTVLChart from "@/components/charts/layers-aggregated-tvl-chart";
 import { LayerProject } from "@/content/props";
+import LayersAggregatedTVLChart from "../charts/aggregated-tvl/layers";
 
 interface Props {
     data: LayerProject[];

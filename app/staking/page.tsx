@@ -4,7 +4,7 @@ import { allInfrastructures } from "@/util/infrastructure_index";
 import StakingTable from "@/components/tables/staking-table";
 import Hero from "@/components/hero";
 import UnderDevelopmentBanner from "@/components/under-development-banner";
-import StakingAggregatedTVLChart from "@/components/charts/staking-aggregated-tvl-chart";
+import StakingAggregatedTVLChart from "@/components/charts/aggregated-tvl/staking";
 
 export default function StakingPage() {
     const sortedEverything = [...allLayers, ...allInfrastructures]
