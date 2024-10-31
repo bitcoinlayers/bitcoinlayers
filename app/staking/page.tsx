@@ -31,7 +31,7 @@ export default function StakingPage() {
             filterOptions: typeFilters,
         },
         { name: "Status", showSorting: true, mobileLabel: "Status" },
-        { name: "Category", showSorting: true, mobileLabel: "Category" },
+        { name: "TVL", showSorting: true, mobileLabel: "TVL" },
     ];
 
     return (

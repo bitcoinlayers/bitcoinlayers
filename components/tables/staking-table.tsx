@@ -7,8 +7,9 @@ import { MobileView, isMobile } from "react-device-detect";
 import Link from "next/link";
 import { useQueryState } from "nuqs";
 import { Project, Type } from "@/content/props";
+import useGetInfratvlCurrentAll from "@/hooks/use-get-infratvl-current-all";
 
-type TableTabKey = "Snapshot" | "Type" | "Status" | "Category";
+type TableTabKey = "Snapshot" | "Type" | "Status" | "TVL";
 
 interface Props {
     data: Project[];
@@ -66,6 +67,27 @@ const StakingTable = ({ data, headers }: Props) => {
         defaultValue: "asc",
     });
 
+    const { data: balances } = useGetInfratvlCurrentAll();
+
+    const totaledBalances = useMemo(() => {
+        if (!balances) return {};
+
+        return balances.reduce(
+            (acc, balance) => {
+                const { infra_slug, total_amount } = balance;
+
+                if (!acc[infra_slug]) {
+                    acc[infra_slug] = { totalAmount: 0 };
+                }
+
+                acc[infra_slug].totalAmount += total_amount;
+
+                return acc;
+            },
+            {} as Record<string, { totalAmount: number }>,
+        );
+    }, [balances]);
+
     const [mobileActiveTab, setMobileActiveTab] =
         useState<TableTabKey>("Snapshot");
 
@@ -77,7 +99,7 @@ const StakingTable = ({ data, headers }: Props) => {
                     valueA = a.title.toLowerCase();
                     valueB = b.title.toLowerCase();
                     break;
-                case "Category":
+                case "TVL":
                     valueA = isLayer(a) ? "Layer" : "Infrastructure";
                     valueB = isLayer(b) ? "Layer" : "Infrastructure";
                     break;
@@ -141,76 +163,14 @@ const StakingTable = ({ data, headers }: Props) => {
 
     return (
         <div className="px-6 lg:px-0 w-full">
-            <div className="flex lg:mb-6 justify-center -mt-12 lg:mt-0 relative z-20">
-                <div className="justify-start items-start gap-4 inline-flex">
-                    <div
-                        className={`h-[30px] px-4 py-[5px] rounded-full border-2 justify-center items-center gap-1.5 flex cursor-pointer ${
-                            status === "Mainnet"
-                                ? "bg-white border-orange-600"
-                                : "border-slate-300"
-                        }`}
-                        onClick={() => setStatus("Mainnet")}
-                    >
-                        <div
-                            className={`text-center text-sm font-medium leading-tight ${
-                                status === "Mainnet"
-                                    ? "text-orange-600"
-                                    : "text-slate-600"
-                            }`}
-                        >
-                            Mainnet
-                        </div>
-                    </div>
-                    <div
-                        className={`h-[30px] rounded-full border-2 justify-center items-center gap-1 flex cursor-pointer ${
-                            status === "Testnet"
-                                ? "bg-white border-orange-600"
-                                : "border-slate-300"
-                        }`}
-                        onClick={() => setStatus("Testnet")}
-                    >
-                        <div className="grow shrink basis-0 h-[30px] px-4 py-[5px] justify-center items-center gap-1.5 flex">
-                            <div
-                                className={`text-center text-sm font-medium leading-tight ${
-                                    status === "Testnet"
-                                        ? "text-orange-600"
-                                        : "text-slate-600"
-                                }`}
-                            >
-                                Testnet
-                            </div>
-                        </div>
-                    </div>
-                    <div
-                        className={`h-[30px] rounded-full border-2 justify-center items-center gap-1 flex cursor-pointer ${
-                            status === "All"
-                                ? "bg-white border-orange-600"
-                                : "border-slate-300"
-                        }`}
-                        onClick={() => setStatus("All")}
-                    >
-                        <div className="grow shrink basis-0 h-[30px] px-4 py-[5px] justify-center items-center gap-1.5 flex">
-                            <div
-                                className={`text-center text-sm font-medium leading-tight ${
-                                    status === "All"
-                                        ? "text-orange-600"
-                                        : "text-slate-600"
-                                }`}
-                            >
-                                All
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
             <MobileView className="flex justify-center">
                 <div className="justify-center lg:items-start gap-3 inline-flex py-3">
                     {headers.slice(1).map((_item, ind) => {
                         const isAllowedTab = [
                             "Snapshot",
-                            "Category",
                             "Type",
                             "Status",
+                            "TVL",
                         ].includes(_item.name);
                         return (
                             <div
@@ -325,9 +285,8 @@ const StakingTable = ({ data, headers }: Props) => {
                                         </Link>
                                     </td>
                                 )}
-                                {(!isMobile ||
-                                    mobileActiveTab === "Category") && (
-                                    <td className="lg:px-6 px-4 py-3 lg:py-4 border-stroke_tertiary text_table_important">
+                                {(!isMobile || mobileActiveTab === "TVL") && (
+                                    <td className="lg:px-6 px-4 py-3 lg:py-4 border-r border-stroke_tertiary text_table_important">
                                         <Link
                                             href={`/${
                                                 isLayer(item)
@@ -335,9 +294,34 @@ const StakingTable = ({ data, headers }: Props) => {
                                                     : `infrastructure/${item.slug}`
                                             }`}
                                         >
-                                            {isLayer(item)
-                                                ? "Layer"
-                                                : "Infrastructure"}
+                                            {/* {item.underReview ||
+                                            Object.keys(totaledBalances).find(
+                                                (key) =>
+                                                    key.toLowerCase() ===
+                                                    item.title.toLowerCase(),
+                                            ) === undefined ? (
+                                                <div className="font-light">
+                                                    Under review
+                                                </div>
+                                            ) : ( */}
+                                            {totaledBalances[item.slug]
+                                                ?.totalAmount == null ? (
+                                                <div className="font-light">
+                                                    Under review
+                                                </div>
+                                            ) : (
+                                                <div>
+                                                    ₿{" "}
+                                                    {Number(
+                                                        totaledBalances[
+                                                            item.slug
+                                                        ]?.totalAmount ?? 0,
+                                                    ).toLocaleString("en-US", {
+                                                        minimumFractionDigits: 0,
+                                                        maximumFractionDigits: 0,
+                                                    })}
+                                                </div>
+                                            )}
                                         </Link>
                                     </td>
                                 )}

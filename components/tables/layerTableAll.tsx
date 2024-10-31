@@ -7,7 +7,7 @@ import TableHeader from "@/components/tables/tableHeader";
 import { MobileView, isMobile } from "react-device-detect";
 import Link from "next/link";
 import { useQueryState } from "nuqs";
-import useGetLayertvlHistoricalAll from "@/hooks/use-get-layertvl-current-all";
+import useGetLayertvlCurrentAll from "@/hooks/use-get-layertvl-current-all";
 import { LayerProject } from "@/content/props";
 
 type TableTabKey =
@@ -66,7 +66,7 @@ const LayerTableAll = ({ data, headers, showToggleGroup = true }: Props) => {
         defaultValue: "asc",
     });
 
-    const { data: balances } = useGetLayertvlHistoricalAll();
+    const { data: balances } = useGetLayertvlCurrentAll();
 
     const totaledBalances = useMemo(() => {
         if (!balances) return {};
