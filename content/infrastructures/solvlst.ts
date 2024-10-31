@@ -48,7 +48,7 @@ const solvlst: InfrastructureProject = {
             title: "How APY is determined",
             content: [
                 {
-                    title: "Yield from Bitcoin staking is determined by the Bitcoin Finality Provider in the Babylon protocol",
+                    title: "Rewards from Bitcoin staking is determined by the Bitcoin Finality Provider in the Babylon protocol",
                     content:
                         "The custodians who delegate stake on users’ behalf may also determine a rate at which they redistribute rewards back to users.",
                 },
