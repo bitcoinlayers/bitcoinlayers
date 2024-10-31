@@ -8,7 +8,7 @@ import Link from "next/link";
 import { useQueryState } from "nuqs";
 import { InfrastructureProject, Project, Type } from "@/content/props";
 import useGetInfratvlCurrentAll from "@/hooks/use-get-infratvl-current-all";
-import AssessmentSnapshotDialog from "../infrastructure/assessment-snapshot/assessment-snapshot-dialog";
+import AssessmentSnapshotDialog from "../infrastructure/assessment-snapshot/assessment-snapshot-dialog-table";
 
 type TableTabKey = "Snapshot" | "Type" | "Status" | "TVL";
 
@@ -254,7 +254,9 @@ const StakingTable = ({ data, headers }: Props) => {
                                                 infrastructure={item}
                                             />
                                         ) : (
-                                            <div>Coming Soon</div>
+                                            <div className="px-4">
+                                                Coming Soon
+                                            </div>
                                         )}
                                     </td>
                                 )}

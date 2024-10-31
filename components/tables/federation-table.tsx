@@ -13,7 +13,7 @@ import {
     Type,
 } from "@/content/props";
 import useGetInfratvlCurrentAll from "@/hooks/use-get-infratvl-current-all";
-import AssessmentSnapshotDialog from "../infrastructure/assessment-snapshot/assessment-snapshot-dialog";
+import AssessmentSnapshotDialog from "../infrastructure/assessment-snapshot/assessment-snapshot-dialog-table";
 
 type TableTabKey = "Snapshot" | "Type" | "Status" | "TVL";
 
@@ -262,7 +262,9 @@ const FederationTable = ({ data, headers }: Props) => {
                                                 infrastructure={item}
                                             />
                                         ) : (
-                                            <div>Coming Soon</div>
+                                            <div className="px-4">
+                                                Coming Soon
+                                            </div>
                                         )}
                                     </td>
                                 )}
