@@ -240,4 +240,11 @@ section {
     .watermark-agg::after {
         transform: translate(-50%, -80%);
     }
+
+    @media (max-width: 1000px) {
+        .watermark::after,
+        .watermark-agg::after {
+            top: 50%;
+        }
+    }
 }
