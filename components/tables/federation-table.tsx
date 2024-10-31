@@ -6,8 +6,14 @@ import TableHeader from "@/components/tables/tableHeader";
 import { MobileView, isMobile } from "react-device-detect";
 import Link from "next/link";
 import { useQueryState } from "nuqs";
-import { LayerProject, Project, Type } from "@/content/props";
+import {
+    InfrastructureProject,
+    LayerProject,
+    Project,
+    Type,
+} from "@/content/props";
 import useGetInfratvlCurrentAll from "@/hooks/use-get-infratvl-current-all";
+import AssessmentSnapshotDialog from "../infrastructure/assessment-snapshot/assessment-snapshot-dialog";
 
 type TableTabKey = "Snapshot" | "Type" | "Status" | "TVL";
 
@@ -165,6 +171,16 @@ const FederationTable = ({ data, headers }: Props) => {
         (_item) => _item.name === mobileActiveTab || _item.name === "Name",
     );
 
+    const hasAssessment = (
+        project: Project,
+    ): project is InfrastructureProject => {
+        return (
+            project.type === Type.Infrastructure &&
+            !!project.assessment &&
+            project.assessment.length > 0
+        );
+    };
+
     return (
         <div className="px-6 lg:px-0 w-full">
             <MobileView className="flex justify-center">
@@ -241,20 +257,13 @@ const FederationTable = ({ data, headers }: Props) => {
                                 {(!isMobile ||
                                     mobileActiveTab === "Snapshot") && (
                                     <td className="relative px-2 border-stroke_tertiary text_table_important">
-                                        Coming Soon
-                                        {/* {isLayer(item) ? (
-                                            item.underReview === "no" ? (
-                                                <Risk layer={item} />
-                                            ) : (
-                                                <div className="lg:px-5 px-1 text_table_important font-light">
-                                                    Under review
-                                                </div>
-                                            )
+                                        {hasAssessment(item) ? (
+                                            <AssessmentSnapshotDialog
+                                                infrastructure={item}
+                                            />
                                         ) : (
-                                            <div className="lg:px-5 px-1 text_table_important">
-                                                Not applicable
-                                            </div>
-                                        )} */}
+                                            <div>Coming Soon</div>
+                                        )}
                                     </td>
                                 )}
                                 {(!isMobile || mobileActiveTab === "Type") && (
