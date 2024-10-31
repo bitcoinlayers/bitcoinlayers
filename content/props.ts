@@ -55,6 +55,7 @@ export enum EntityType {
     ChaumianEcashProtocol = "Chaumian Ecash Protocol",
     FederationSDK = "Federation SDK",
     LiquidStaking = "Liquid Staking",
+    Restaking = "Restaking",
     RollupSDK = "Rollup SDK",
     Staking = "Staking",
     PermissionedChain = "Permissioned Chain",
