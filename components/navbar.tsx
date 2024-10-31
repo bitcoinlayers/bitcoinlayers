@@ -29,6 +29,7 @@ export default function Navbar(): ReactElement {
         "/crosschainbtc",
         "/ecash",
         "/bitcoinonly",
+        "/metrics",
     ];
 
     const [isSheetOpen, setIsSheetOpen] = useState(false);
