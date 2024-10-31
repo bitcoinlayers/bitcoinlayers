@@ -100,8 +100,8 @@ const StakingTable = ({ data, headers }: Props) => {
                     valueB = b.title.toLowerCase();
                     break;
                 case "TVL":
-                    valueA = isLayer(a) ? "Layer" : "Infrastructure";
-                    valueB = isLayer(b) ? "Layer" : "Infrastructure";
+                    valueA = totaledBalances[a.slug]?.totalAmount ?? -Infinity; // Use -Infinity for null values
+                    valueB = totaledBalances[b.slug]?.totalAmount ?? -Infinity;
                     break;
                 case "Type":
                     valueA = isLayer(a)
@@ -142,7 +142,7 @@ const StakingTable = ({ data, headers }: Props) => {
         });
 
         return filtered;
-    }, [data, sortBy, sortOrder, types, status]);
+    }, [data, sortBy, sortOrder, types, status, totaledBalances]);
 
     const handleSort = (header: string) => {
         if (sortBy === header) {

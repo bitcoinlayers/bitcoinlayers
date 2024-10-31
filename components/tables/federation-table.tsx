@@ -116,14 +116,9 @@ const FederationTable = ({ data, headers }: Props) => {
                     valueB = b.live;
                     break;
                 case "TVL":
-                    valueA = isLayer(a)
-                        ? parseFloat((a as LayerProject).btcLocked.toString())
-                        : -Infinity;
-                    valueB = isLayer(b)
-                        ? parseFloat((b as LayerProject).btcLocked.toString())
-                        : -Infinity;
-                    if (isNaN(valueA)) valueA = -Infinity;
-                    if (isNaN(valueB)) valueB = -Infinity;
+                    // Use `totaledBalances` for TVL sorting, defaulting to -Infinity if null
+                    valueA = totaledBalances[a.slug]?.totalAmount ?? -Infinity;
+                    valueB = totaledBalances[b.slug]?.totalAmount ?? -Infinity;
                     break;
                 default:
                     return 0;
@@ -149,7 +144,7 @@ const FederationTable = ({ data, headers }: Props) => {
         });
 
         return filtered;
-    }, [data, sortBy, sortOrder, types, status]);
+    }, [data, sortBy, sortOrder, types, status, totaledBalances]);
 
     const handleSort = (header: string) => {
         if (sortBy === header) {
