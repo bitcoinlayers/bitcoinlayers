@@ -51,7 +51,7 @@ const TableHeader: React.FC<TableHeaderProps> = ({ headers, onSort }) => {
                                                 filterType={getFilterType(
                                                     header.name,
                                                 )}
-                                                filters={header.filterOptions}
+                                                filterOptions={header.filterOptions}
                                             />
                                         </div>
                                     )}
