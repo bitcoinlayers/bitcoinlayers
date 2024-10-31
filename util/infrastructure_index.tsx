@@ -24,6 +24,7 @@ import bedrockProject from "../content/infrastructures/bedrock";
 import pumpProject from "../content/infrastructures/pump";
 import fireProject from "../content/infrastructures/fire";
 import bitcoinosProject from "../content/infrastructures/bitcoinos";
+import binancebtcbProject from "../content/infrastructures/binancebtcb";
 
 const astria: InfrastructureProject = astriaProject;
 const avail: InfrastructureProject = availProject;
@@ -49,6 +50,7 @@ const bedrock: InfrastructureProject = bedrockProject;
 const pump: InfrastructureProject = pumpProject;
 const fire: InfrastructureProject = fireProject;
 const bitcoinos: InfrastructureProject = bitcoinosProject;
+const binancebtcb: InfrastructureProject = binancebtcbProject;
 
 export const allInfrastructures: InfrastructureProject[] = [
     cashu,
@@ -75,6 +77,7 @@ export const allInfrastructures: InfrastructureProject[] = [
     pump,
     fire,
     bitcoinos,
+    binancebtcb,
 ];
 
 export const allInfrastructureSlugs: string[] = allInfrastructures.map(

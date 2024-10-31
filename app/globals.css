@@ -150,6 +150,7 @@ section {
         --chart-kraken-kbtc: 257 83% 60%;
         --chart-threshold-tbtc: 286 99% 56%;
         --chart-wbtc: 262 5% 52%;
+        --chart-binance-btcb: 51 89% 58%;
     }
 
     .dark {
