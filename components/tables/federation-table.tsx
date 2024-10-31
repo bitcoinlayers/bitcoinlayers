@@ -122,7 +122,6 @@ const FederationTable = ({ data, headers }: Props) => {
                     valueB = b.live;
                     break;
                 case "TVL":
-                    // Use `totaledBalances` for TVL sorting, defaulting to -Infinity if null
                     valueA = totaledBalances[a.slug]?.totalAmount ?? -Infinity;
                     valueB = totaledBalances[b.slug]?.totalAmount ?? -Infinity;
                     break;

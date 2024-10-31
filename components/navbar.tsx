@@ -29,6 +29,7 @@ export default function Navbar(): ReactElement {
         "/crosschainbtc",
         "/ecash",
         "/bitcoinonly",
+        "/metrics",
     ];
 
     const [isSheetOpen, setIsSheetOpen] = useState(false);
@@ -203,8 +204,8 @@ export default function Navbar(): ReactElement {
                         )}
                     </li>
                     <li className="hidden lg:block">
-                        <Link href="/?status=Charts" onClick={closeMenu}>
-                            Charts
+                        <Link href="/metrics" onClick={closeMenu}>
+                            Metrics
                         </Link>
                     </li>
                     <li className="hidden lg:block">
@@ -257,11 +258,11 @@ export default function Navbar(): ReactElement {
                                     <ul className="flex flex-col items-start gap-y-6">
                                         <li>
                                             <Link
-                                                href="/?status=Charts"
+                                                href="/metrics"
                                                 className="text-black"
                                                 onClick={closeSheet}
                                             >
-                                                Charts
+                                                Metrics
                                             </Link>
                                         </li>
                                         <li>

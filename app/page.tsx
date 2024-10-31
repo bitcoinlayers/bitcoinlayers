@@ -1,7 +1,9 @@
 import { allLayers } from "@/util/layer_index";
 import Hero from "@/components/hero";
-import ViewToggleGroup from "@/components/layer/view-toggle-group";
 import { Type } from "@/content/props";
+import LayerTable from "@/components/tables/layer-table";
+import { LayerProject } from "@/content/props";
+import LayersAggregatedTVLChart from "@/components/charts/aggregated-tvl/layers";
 
 export default function Home() {
     const sortedLayers = allLayers.sort((a, b) =>
@@ -11,6 +13,8 @@ export default function Home() {
     const typeFilters = [
         ...new Set(sortedLayers.map((layer) => layer.entityType)),
     ];
+
+    const statusFilters = [...new Set(sortedLayers.map((layer) => layer.live))];
 
     const layerHeaders = [
         {
@@ -25,7 +29,12 @@ export default function Home() {
             mobileLabel: "Type",
             filterOptions: typeFilters,
         },
-        { name: "Status", showSorting: true, mobileLabel: "Status" },
+        {
+            name: "Status",
+            showSorting: true,
+            mobileLabel: "Status",
+            filterOptions: statusFilters,
+        },
         {
             name: "Unit of Account",
             showSorting: true,
@@ -40,8 +49,14 @@ export default function Home() {
                 title="Layers"
                 description="Not every bitcoin layer is made equal."
             />
-            <div className="mb-4 w-full max-w-5xl mx-auto">
+            {/* <div className="mb-4 w-full max-w-5xl mx-auto">
                 <ViewToggleGroup data={allLayers} headers={layerHeaders} />
+            </div> */}
+            <div className="mb-12 w-full lg:max-w-5xl mx-auto">
+                <LayersAggregatedTVLChart />
+            </div>
+            <div className="lg:flex mb-4 justify-center w-full lg:max-w-5xl mx-auto">
+                <LayerTable data={allLayers} headers={layerHeaders} />
             </div>
         </div>
     );

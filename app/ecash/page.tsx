@@ -1,6 +1,6 @@
 import { allEcash } from "@/util/ecash_index";
 import Hero from "@/components/hero";
-import InfrastructureTable from "@/components/tables/infrastructureTable";
+import InfrastructureTable from "@/components/tables/infrastructure-table";
 
 export default function Home() {
     const sortedInfrastructures = allEcash.sort((a, b) =>
