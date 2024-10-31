@@ -6,7 +6,10 @@ import BridgesAggregatedTVLChart from "@/components/charts/aggregated-tvl/bridge
 export default function ChartsPage() {
     return (
         <div className="mx-auto">
-            <Hero title="Data" description="Not all metrics are made equal." />
+            <Hero
+                title="Metrics"
+                description="Not all metrics are made equal."
+            />
             <div className="mb-12 w-full lg:max-w-5xl mx-auto">
                 <LayersAggregatedTVLChart />
             </div>

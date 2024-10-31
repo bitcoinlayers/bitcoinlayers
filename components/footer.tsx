@@ -142,8 +142,8 @@ export default function Footer(): ReactElement {
                                 <div className="grow flex flex-col justify-start items-start gap-4">
                                     <SectionHeader>Learn</SectionHeader>
                                     <div className="self-stretch lg:h-48 flex flex-col justify-start items-start gap-3">
-                                        <SectionItem href="/charts">
-                                            Charts
+                                        <SectionItem href="/metrics">
+                                            Metrics
                                         </SectionItem>
                                         <SectionItem href="/glossary">
                                             Glossary
