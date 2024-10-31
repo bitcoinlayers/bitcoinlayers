@@ -10,34 +10,34 @@ import FilterIcon from "./filter-icon";
 import FilterItem from "./filter-item";
 
 interface Props {
-    filters: string[];
+    filterOptions: string[];
     filterType: "type" | "status";
 }
 
-const FilterPopover = ({ filters, filterType }: Props) => {
-    const [filter, setFilter] = useQueryState<string[]>(filterType, {
+const FilterPopover = ({ filterOptions, filterType }: Props) => {
+    const [filters, setFilters] = useQueryState<string[]>(filterType, {
         defaultValue: [],
         parse: (value) => value.split(",").filter(Boolean),
         serialize: (value) => value.join(","),
     });
 
-    const [selectedFilters, setSelectedFilters] = useState<string[]>(filter);
+    const [selectedFilters, setSelectedFilters] = useState<string[]>(filters);
     const [open, setOpen] = useState(false);
 
     return (
         <Popover open={open} onOpenChange={setOpen}>
             <PopoverTrigger>
-                <FilterIcon filters={filter} />
+                <FilterIcon filters={filters} />
             </PopoverTrigger>
             <PopoverContent
                 className="w-56 pt-0 pb-0 px-0 rounded-xl"
                 side="bottom"
             >
                 <div className="max-h-56 overflow-y-auto">
-                    {filters.sort().map((filter) => (
+                    {filterOptions.sort().map((option: string) => (
                         <FilterItem 
-                            key={filter} 
-                            value={filter}
+                            key={option} 
+                            value={option}
                             filterType={filterType}
                             selectedFilters={selectedFilters}
                             setSelectedFilters={setSelectedFilters}
@@ -57,7 +57,7 @@ const FilterPopover = ({ filters, filterType }: Props) => {
                         size="sm"
                         className="bg-brand text-white hover:bg-brand/80"
                         onClick={() => {
-                            setFilter(selectedFilters);
+                            setFilters(selectedFilters);
                             setOpen(false);
                         }}
                     >
