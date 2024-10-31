@@ -92,32 +92,58 @@ const LayerTableAll = ({ data, headers, showToggleGroup = true }: Props) => {
     const sortAndFilterData = useMemo(() => {
         const sorted = [...data].sort((a, b) => {
             let valueA, valueB;
-            switch (sortBy) {
-                case "Name":
-                    valueA = a.title.toLowerCase();
-                    valueB = b.title.toLowerCase();
-                    break;
-                case "Type":
-                    valueA = a.entityType;
-                    valueB = b.entityType;
-                    break;
-                case "Status":
-                    valueA = a.live;
-                    valueB = b.live;
-                    break;
-                case "Unit of Account":
-                    valueA = a.nativeToken;
-                    valueB = b.nativeToken;
-                    break;
-                case "BTC Locked":
-                    valueA = parseFloat(a.btcLocked.toString());
-                    valueB = parseFloat(b.btcLocked.toString());
-                    if (isNaN(valueA)) valueA = -Infinity;
-                    if (isNaN(valueB)) valueB = -Infinity;
-                    break;
-                default:
-                    return 0;
+
+            // Special handling for BTC Locked column
+            if (sortBy === "BTC Locked") {
+                const isUnderReviewA =
+                    a.underReview ||
+                    (totaledBalances[a.slug] === undefined &&
+                        (a.btcLocked === null || isNaN(a.btcLocked)));
+                const isUnderReviewB =
+                    b.underReview ||
+                    (totaledBalances[b.slug] === undefined &&
+                        (b.btcLocked === null || isNaN(b.btcLocked)));
+
+                // If both are under review, maintain original order
+                if (isUnderReviewA && isUnderReviewB) return 0;
+
+                // Place "under review" at top for ascending, bottom for descending
+                if (isUnderReviewA) return sortOrder === "asc" ? -1 : 1;
+                if (isUnderReviewB) return sortOrder === "asc" ? 1 : -1;
+
+                // Normal numeric comparison for non-review items
+                valueA =
+                    totaledBalances[a.slug]?.totalAmount ??
+                    parseFloat(a.btcLocked.toString());
+                valueB =
+                    totaledBalances[b.slug]?.totalAmount ??
+                    parseFloat(b.btcLocked.toString());
+                if (isNaN(valueA)) valueA = -Infinity;
+                if (isNaN(valueB)) valueB = -Infinity;
+            } else {
+                // Original switch case for other columns
+                switch (sortBy) {
+                    case "Name":
+                        valueA = a.title.toLowerCase();
+                        valueB = b.title.toLowerCase();
+                        break;
+                    case "Type":
+                        valueA = a.entityType;
+                        valueB = b.entityType;
+                        break;
+                    case "Status":
+                        valueA = a.live;
+                        valueB = b.live;
+                        break;
+                    case "Unit of Account":
+                        valueA = a.nativeToken;
+                        valueB = b.nativeToken;
+                        break;
+                    default:
+                        return 0;
+                }
             }
+
             if (valueA < valueB) return sortOrder === "asc" ? -1 : 1;
             if (valueA > valueB) return sortOrder === "asc" ? 1 : -1;
             return 0;
@@ -137,7 +163,7 @@ const LayerTableAll = ({ data, headers, showToggleGroup = true }: Props) => {
         });
 
         return filtered;
-    }, [data, sortBy, sortOrder, types, status]);
+    }, [data, sortBy, sortOrder, types, status, totaledBalances]);
 
     const handleSort = (header: string) => {
         if (sortBy === header) {
