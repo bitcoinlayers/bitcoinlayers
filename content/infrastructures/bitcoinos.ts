@@ -46,36 +46,6 @@ const bitcoinos: InfrastructureProject = {
     ],
     description:
         "BitcoinOS is building a network of rollup-style blockchains on top of BitSNARK and Grail, mechanisms to verify validity proofs and construct a two-way peg with Bitcoin.",
-    assessment: [
-        {
-            category: AssessmentCategory.Reputation,
-            score: 0,
-            tier: "",
-            title: "",
-            content: "",
-        },
-        {
-            category: AssessmentCategory.Signing,
-            score: 0,
-            tier: "",
-            title: "",
-            content: "",
-        },
-        {
-            category: AssessmentCategory.KeyStorage,
-            score: 0,
-            tier: "",
-            title: "",
-            content: "",
-        },
-        {
-            category: AssessmentCategory.CensorshipResistance,
-            score: 0,
-            tier: "",
-            title: "",
-            content: "",
-        },
-    ],
     sections: [
         {
             id: "selfsubmit",
