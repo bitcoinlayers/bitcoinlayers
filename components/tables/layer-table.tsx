@@ -56,7 +56,7 @@ const LayerTable = ({ data, headers }: Props) => {
         parse: (value) => value.split(",").filter(Boolean),
         serialize: (value) => value.join(","),
     });
-    const [status, setStatus] = useQueryState<string[]>("status", {
+    const [status] = useQueryState<string[]>("status", {
         defaultValue: ["Mainnet", "Beta"],
         parse: (value) => value.split(",").filter(Boolean),
         serialize: (value) => value.join(","),
@@ -202,7 +202,6 @@ const LayerTable = ({ data, headers }: Props) => {
                         headers={isMobile ? mobileTableHeaders : headers}
                         onSort={handleSort}
                     />
-
                     <tbody className="bg-white gap-x-8 border-t border-stroke_tertiary text_table_important">
                         {filteredData.map((item, index) => (
                             <tr
