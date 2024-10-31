@@ -10,8 +10,8 @@ import {
 
 const solvlst: InfrastructureProject = {
     type: Type.Infrastructure,
-    slug: "solv",
-    title: "Solv",
+    slug: "solvlst",
+    title: "Solv LSTs",
     entityType: EntityType.LiquidStaking,
     live: LiveStatus.Mainnet,
     staking: true,
@@ -29,10 +29,6 @@ const solvlst: InfrastructureProject = {
         },
         {
             text: Site.Docs,
-            url: "https://solv.finance/",
-        },
-        {
-            text: Site.Explorer,
             url: "https://docs.solv.finance/",
         },
         {
@@ -44,7 +40,8 @@ const solvlst: InfrastructureProject = {
             url: "https://x.com/SolvProtocol",
         },
     ],
-    description: "Solv offers a liquid staking protocol that enables users to deposit SolvBTC into smart contracts on EVM-base chains. A staking provider will then delegate this stake on their behalf to a Babylon Finality Provider.",
+    description:
+        "Solv offers a liquid staking protocol that enables users to deposit SolvBTC into smart contracts on EVM-base chains. A staking provider will then delegate this stake on their behalf to a Babylon Finality Provider.",
     sections: [
         {
             id: "apy",
@@ -52,7 +49,8 @@ const solvlst: InfrastructureProject = {
             content: [
                 {
                     title: "Yield from Bitcoin staking is determined by the Bitcoin Finality Provider in the Babylon protocol",
-                    content: "The custodians who delegate stake on users’ behalf may also determine a rate at which they redistribute rewards back to users.",
+                    content:
+                        "The custodians who delegate stake on users’ behalf may also determine a rate at which they redistribute rewards back to users.",
                 },
             ],
         },
@@ -62,7 +60,8 @@ const solvlst: InfrastructureProject = {
             content: [
                 {
                     title: "Dozens of token contracts live",
-                    content: "There are numerous Solv BTC token contracts deployed across many chains. You can find them [here](https://github.com/solv-finance/SolvBTC/tree/main/deployments).\n\n🔬 We are currently reviewing the implementations of these smart contracts.",
+                    content:
+                        "There are numerous Solv BTC token contracts deployed across many chains. You can find them [here](https://github.com/solv-finance/SolvBTC/tree/main/deployments).\n\n🔬 We are currently reviewing the implementations of these smart contracts.",
                 },
             ],
         },
