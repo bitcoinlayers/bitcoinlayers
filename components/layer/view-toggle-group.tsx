@@ -30,8 +30,11 @@ const ViewToggleGroup = ({ data, headers }: Props) => {
     });
 
     return (
-        <>
-            <div className="flex mb-6 justify-center -mt-12 lg:mt-0 relative z-20">
+        <div className="mx-auto">
+            <div className="mb-24 lg:mb-12 w-full lg:max-w-5xl mx-auto">
+                <LayersAggregatedTVLChart />
+            </div>
+            {/* <div className="flex mb-6 justify-center -mt-12 lg:mt-0 relative z-20">
                 <div className="justify-start items-start gap-4 inline-flex">
                     <div
                         className={`h-[30px] px-4 py-[5px] rounded-full border-2 justify-center items-center gap-1.5 flex cursor-pointer ${
@@ -71,38 +74,16 @@ const ViewToggleGroup = ({ data, headers }: Props) => {
                             </div>
                         </div>
                     </div>
-                    <div
-                        className={`h-[30px] rounded-full border-2 justify-center items-center gap-1 flex cursor-pointer ${
-                            status === "Charts"
-                                ? "bg-white border-orange-600"
-                                : "border-slate-300"
-                        }`}
-                        onClick={() => setStatus("Charts")}
-                    >
-                        <div className="grow shrink basis-0 h-[30px] px-4 py-[5px] justify-center items-center gap-1.5 flex">
-                            <div
-                                className={`text-center text-sm font-medium leading-tight ${
-                                    status === "Charts"
-                                        ? "text-orange-600"
-                                        : "text-slate-600"
-                                }`}
-                            >
-                                Charts
-                            </div>
-                        </div>
-                    </div>
                 </div>
-            </div>
-            {status !== "Charts" ? (
+            </div> */}
+            <div className="lg:flex mb-4 justify-center w-full lg:max-w-5xl mx-auto">
                 <LayerTableAll
                     data={data}
                     headers={headers}
                     showToggleGroup={false}
                 />
-            ) : (
-                <LayersAggregatedTVLChart />
-            )}
-        </>
+            </div>
+        </div>
     );
 };
 

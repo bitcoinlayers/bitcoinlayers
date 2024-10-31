@@ -36,7 +36,7 @@ export default function LayerTVLChart() {
         defaultValue: "separate",
     });
     const [dateRange, setDateRange] = useQueryState("range", {
-        defaultValue: "3mo",
+        defaultValue: "year",
     });
 
     const { data } = useGetTokentvlHistoricalAll({

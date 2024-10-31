@@ -203,7 +203,7 @@ export default function Navbar(): ReactElement {
                         )}
                     </li>
                     <li className="hidden lg:block">
-                        <Link href="/?status=Charts" onClick={closeMenu}>
+                        <Link href="/charts" onClick={closeMenu}>
                             Charts
                         </Link>
                     </li>
@@ -257,7 +257,7 @@ export default function Navbar(): ReactElement {
                                     <ul className="flex flex-col items-start gap-y-6">
                                         <li>
                                             <Link
-                                                href="/?status=Charts"
+                                                href="/charts"
                                                 className="text-black"
                                                 onClick={closeSheet}
                                             >

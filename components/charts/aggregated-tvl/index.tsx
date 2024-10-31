@@ -52,7 +52,7 @@ export default function AggregatedTVLChart({
         defaultValue: "separate",
     });
     const [dateRange, setDateRange] = useQueryState(rangeQueryParam, {
-        defaultValue: "3mo",
+        defaultValue: "year",
     });
 
     const items =
