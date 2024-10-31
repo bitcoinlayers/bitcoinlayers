@@ -90,7 +90,7 @@ const wbtc: InfrastructureProject = {
             category: AssessmentCategory.Signing,
             score: 0,
             tier: "",
-            title: "Threshold ECDSA scheme used for signing transactions",
+            title: "Transactions signed via multi-signature wallets",
             content:
                 "wBTC signing is done via multi-signature wallets. The signing privileges for these wallets are distributed between BitGo and BiT Global.",
         },
@@ -106,7 +106,7 @@ const wbtc: InfrastructureProject = {
             category: AssessmentCategory.CensorshipResistance,
             score: 0,
             tier: "",
-            title: "No blacklist or pause function on tBTC smart contracts",
+            title: "Smart contracts upgradeable by wBTC DAO",
             content:
                 "wBTC's Ethereum ERC-20 contract has no blacklist functionality, meaning that the contract cannot censor individual users from transferring wBTC. The contract is upgradeable by the wBTC DAO. The DAO can also freeze the contract entirely.\n\nThe wBTC DAO is made up of 13 organizations. It takes 8 of them to upgrade or freeze the contract.",
         },

@@ -118,6 +118,7 @@ const LayerTable = ({ data, headers }: Props) => {
                 default:
                     return 0;
             }
+
             if (valueA < valueB) return sortOrder === "asc" ? -1 : 1;
             if (valueA > valueB) return sortOrder === "asc" ? 1 : -1;
             return 0;

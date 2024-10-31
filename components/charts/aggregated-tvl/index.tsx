@@ -112,7 +112,7 @@ export default function AggregatedTVLChart({
     }, [chartType, items]);
 
     return (
-        <Card className="bg-background mx-6">
+        <Card className="bg-background mx-6 watermark-agg">
             <CardHeader className="flex flex-col lg:flex-row flex-wrap lg:items-center justify-between border-b mb-4">
                 <div>
                     <CardTitle className="flex font-normal items-center gap-2">
