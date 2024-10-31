@@ -8,7 +8,7 @@ import {
     AssessmentCategory,
 } from "../props";
 
-const solv: InfrastructureProject = {
+const solvlst: InfrastructureProject = {
     type: Type.Infrastructure,
     slug: "solv",
     title: "Solv",
@@ -92,7 +92,7 @@ const solv: InfrastructureProject = {
             tier: "",
             title: "Stake is delegated to Babylon Finality Providers via Ceffu and Cobo",
             content:
-                "When a user exchanges SolvBTC for an LST token, this token is locked in a SolvBTC.LST smart contract on its respective chain. After this token deposit is confirmed, one of the guardians will deposit bitcoin into Babylon on the users behalf. This role is also fulfilled by the Staking Validators.\n\nFor staking on Bitcoin, the custodians who delegate user funds are Ceffu and Cobo. Both Cobo and the Solv Protocol\n\nLearn more about delegated staking here.",
+                "When a user exchanges SolvBTC for an LST token, this token is locked in a SolvBTC.LST smart contract on its respective chain. After this token deposit is confirmed, one of the guardians will deposit bitcoin into Babylon on the users behalf. This role is also fulfilled by the Staking Validators.\n\nFor staking on Bitcoin, the custodians who delegate user funds are Ceffu and Cobo. The majority of BTC is delegated to Solv Protocol's Babylon Finality Provider, but there has been delegation to other [operators](https://x.com/SolvProtocol/status/1843768604011143590).\n\nLearn more about delegated staking here.",
         },
         {
             category: AssessmentCategory.SlashingRisk,
@@ -113,4 +113,4 @@ const solv: InfrastructureProject = {
     ],
 };
 
-export default solv;
+export default solvlst;
