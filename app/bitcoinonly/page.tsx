@@ -1,6 +1,6 @@
 import { allLayers } from "@/util/layer_index";
 import { allInfrastructures } from "@/util/infrastructure_index";
-import BitcoinonlyTable from "@/components/tables/bitcoinonlyTable";
+import BitcoinonlyTable from "@/components/tables/bitcoinonly-table";
 import Hero from "@/components/hero";
 
 export default function Home() {
