@@ -66,7 +66,7 @@ const pump: InfrastructureProject = {
                 {
                     title: "Contracts are permissioned",
                     content:
-                        "Both contracts associated with PumpBTC are permissioned.\n\nThe staking contract can be:\n\n- Paused entirely.\n\n- A cap can be set, limiting the amount of assets that can be staked.\n\n- Have specific fees be set for unstaking, including extremely high fees (up to 100%).\n\n-Paused for unstaking and only allow staking.\n\nFor a full look into the staking contract, you can read it here.\n\nFor a full look into the staking contract, you can read it [here](https://etherscan.io/address/0x9e9dc47335ed4dc80051170d8101a70f689c4365#code).",
+                        "Both contracts associated with PumpBTC are permissioned.\n\nThe staking contract can be:\n\n- Paused entirely.\n\n- A cap can be set, limiting the amount of assets that can be staked.\n\n- Have specific fees be set for unstaking, including extremely high fees (up to 100%).\n\n- Paused for unstaking and only allow staking.\n\nFor a full look into the staking contract, you can read it [here](https://etherscan.io/address/0x9e9dc47335ed4dc80051170d8101a70f689c4365#code).",
                 },
             ],
         },
@@ -103,7 +103,7 @@ const pump: InfrastructureProject = {
             category: AssessmentCategory.SlashingRisk,
             score: 0,
             tier: "",
-            title: "Slashing is done via babylon, but is not currently live",
+            title: "Slashing is done via Babylon, but is not currently live",
             content:
                 "If the delegated stake is with a validator who is slashed, users can be penalized and lose some of their funds.",
         },
