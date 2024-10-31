@@ -13,7 +13,7 @@ interface Props {
 }
 
 export default function UnderDevelopmentBanner({
-    title = "The Bridges module of Bitcoin Layers is under development.",
+    title = "The Crosschain BTC module of Bitcoin Layers is under development.",
     description = "There may be incomplete or outdated research.",
     linkText = "Join our telegram",
     linkHref = "https://t.me/+8rv-1I2gkmQ4ZmJh",

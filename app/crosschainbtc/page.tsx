@@ -41,8 +41,8 @@ export default function BridgesPage() {
         <div className="mx-auto">
             <UnderDevelopmentBanner />
             <Hero
-                title="Bridges"
-                description="Not all wrapped versions of bitcoin are made equal."
+                title="Crosschain BTC"
+                description="Not all crosschain BTC is made equal."
             />
             <div className="mb-12 w-full lg:max-w-5xl mx-auto">
                 <BridgesAggregatedTVLChart />

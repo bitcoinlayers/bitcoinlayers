@@ -128,8 +128,8 @@ export default function Footer(): ReactElement {
                                         <SectionItem href="/staking">
                                             Staking
                                         </SectionItem>
-                                        <SectionItem href="/bridges">
-                                            Bridges
+                                        <SectionItem href="/crosschainbtc">
+                                            Crosschain BTC
                                         </SectionItem>
                                         <SectionItem href="/ecash">
                                             Ecash

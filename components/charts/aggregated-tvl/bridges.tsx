@@ -7,8 +7,8 @@ export default function BridgesAggregatedTVLChart() {
     const { data } = useGetInfratvlHistoricalBridge();
     return (
         <AggregatedTVLChart
-            title="Bridge TVL"
-            description="Total amount of value locked in bridging protocols"
+            title="Crosschain BTC TVL"
+            description="Total amount of value locked in crosschain BTC protocols"
             data={data}
             itemNameKey="infra_name"
             chartQueryParam="bridge-chart"

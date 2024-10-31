@@ -18,7 +18,7 @@ const Hero: React.FC<Props> = ({ title, description }: Props) => {
                     style={{ objectFit: "contain" }}
                 />
                 <div className="absolute inset-6 flex flex-col justify-center items-center">
-                    <h1 className="font-playfair italic font-black text-brand text-hero lg:text-14xl text-7xl lg:mb-4">
+                    <h1 className="font-playfair italic font-black text-brand text-hero lg:text-14xl text-7xl lg:mb-4 text-center">
                         {title}
                     </h1>
                     <p className="flex items-center text-center text-base font-normal text-text_secondary -mt-2 mb-14">
