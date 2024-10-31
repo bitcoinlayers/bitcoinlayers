@@ -212,3 +212,32 @@ section {
         @apply bg-background text-foreground;
     }
 }
+
+@layer utilities {
+    .watermark,
+    .watermark-agg {
+        position: relative;
+        overflow: visible;
+    }
+
+    .watermark::after,
+    .watermark-agg::after {
+        content: "";
+        display: block;
+        pointer-events: none;
+        width: 100px;
+        height: 80px;
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, 20%);
+        background-image: url("/watermark.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+        opacity: 0.1;
+    }
+
+    .watermark-agg::after {
+        transform: translate(-50%, -80%);
+    }
+}
