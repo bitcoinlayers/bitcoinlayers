@@ -101,7 +101,7 @@ const StakingTable = ({ data, headers }: Props) => {
                     valueB = b.title.toLowerCase();
                     break;
                 case "TVL":
-                    valueA = totaledBalances[a.slug]?.totalAmount ?? -Infinity; // Use -Infinity for null values
+                    valueA = totaledBalances[a.slug]?.totalAmount ?? -Infinity;
                     valueB = totaledBalances[b.slug]?.totalAmount ?? -Infinity;
                     break;
                 case "Type":

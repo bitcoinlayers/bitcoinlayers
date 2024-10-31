@@ -50,12 +50,14 @@ const LayerImage = ({ src, title }: { src: string; title: string }) => {
     );
 };
 
-const LayerTable = ({ data, headers, showToggleGroup = true }: Props) => {
-    const [status, setStatus] = useQueryState("status", {
-        defaultValue: "Mainnet",
-    });
+const LayerTable = ({ data, headers }: Props) => {
     const [types] = useQueryState<string[]>("type", {
         defaultValue: [],
+        parse: (value) => value.split(",").filter(Boolean),
+        serialize: (value) => value.join(","),
+    });
+    const [status, setStatus] = useQueryState<string[]>("status", {
+        defaultValue: ["Mainnet", "Beta"],
         parse: (value) => value.split(",").filter(Boolean),
         serialize: (value) => value.join(","),
     });
@@ -110,7 +112,7 @@ const LayerTable = ({ data, headers, showToggleGroup = true }: Props) => {
                     valueB = b.nativeToken;
                     break;
                 case "BTC Locked":
-                    valueA = totaledBalances[a.slug]?.totalAmount ?? -Infinity; // Use -Infinity for null values
+                    valueA = totaledBalances[a.slug]?.totalAmount ?? -Infinity;
                     valueB = totaledBalances[b.slug]?.totalAmount ?? -Infinity;
                     break;
                 default:
@@ -127,12 +129,9 @@ const LayerTable = ({ data, headers, showToggleGroup = true }: Props) => {
                 types.includes(item.entityType),
             );
         }
-
-        filtered = filtered.filter((item) => {
-            if (status === "Mainnet") return item.live === "Mainnet";
-            if (status === "Testnet") return item.live !== "Mainnet";
-            return true;
-        });
+        if (status.length > 0) {
+            filtered = filtered.filter((item) => status.includes(item.live));
+        }
 
         return filtered;
     }, [data, sortBy, sortOrder, types, status, totaledBalances]);
@@ -158,70 +157,6 @@ const LayerTable = ({ data, headers, showToggleGroup = true }: Props) => {
 
     return (
         <div className="px-6 lg:px-0 w-full">
-            {showToggleGroup && (
-                <div className="flex lg:mb-6 justify-center -mt-12 lg:mt-0 relative z-20">
-                    <div className="justify-start items-start gap-4 inline-flex">
-                        <div
-                            className={`h-[30px] px-4 py-[5px] rounded-full border-2 justify-center items-center gap-1.5 flex cursor-pointer ${
-                                status === "Mainnet"
-                                    ? "bg-white border-orange-600"
-                                    : "border-slate-300"
-                            }`}
-                            onClick={() => setStatus("Mainnet")}
-                        >
-                            <div
-                                className={`text-center text-sm font-medium leading-tight ${
-                                    status === "Mainnet"
-                                        ? "text-orange-600"
-                                        : "text-slate-600"
-                                }`}
-                            >
-                                Mainnet
-                            </div>
-                        </div>
-                        <div
-                            className={`h-[30px] rounded-full border-2 justify-center items-center gap-1 flex cursor-pointer ${
-                                status === "Testnet"
-                                    ? "bg-white border-orange-600"
-                                    : "border-slate-300"
-                            }`}
-                            onClick={() => setStatus("Testnet")}
-                        >
-                            <div className="grow shrink basis-0 h-[30px] px-4 py-[5px] justify-center items-center gap-1.5 flex">
-                                <div
-                                    className={`text-center text-sm font-medium leading-tight ${
-                                        status === "Testnet"
-                                            ? "text-orange-600"
-                                            : "text-slate-600"
-                                    }`}
-                                >
-                                    Testnet
-                                </div>
-                            </div>
-                        </div>
-                        <div
-                            className={`h-[30px] rounded-full border-2 justify-center items-center gap-1 flex cursor-pointer ${
-                                status === "All"
-                                    ? "bg-white border-orange-600"
-                                    : "border-slate-300"
-                            }`}
-                            onClick={() => setStatus("All")}
-                        >
-                            <div className="grow shrink basis-0 h-[30px] px-4 py-[5px] justify-center items-center gap-1.5 flex">
-                                <div
-                                    className={`text-center text-sm font-medium leading-tight ${
-                                        status === "All"
-                                            ? "text-orange-600"
-                                            : "text-slate-600"
-                                    }`}
-                                >
-                                    All
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            )}
             <MobileView className="flex justify-center">
                 <div className="justify-center lg:items-start gap-1 inline-flex py-3">
                     {headers.slice(1).map((_item, ind) => {
