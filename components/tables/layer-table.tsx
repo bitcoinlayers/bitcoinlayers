@@ -130,7 +130,9 @@ const LayerTable = ({ data, headers }: Props) => {
             );
         }
         if (status.length > 0) {
-            filtered = filtered.filter((item) => status.includes(item.live));
+            filtered = filtered.filter((item) =>
+                status.some((s) => s.toLowerCase() === item.live.toLowerCase()),
+            );
         }
 
         return filtered;
