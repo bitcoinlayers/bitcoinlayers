@@ -10,7 +10,7 @@ import {
 const dlclink: InfrastructureProject = {
     type: Type.Infrastructure,
     slug: "dlclink",
-    title: "DLC Link",
+    title: "DLC Link dlcBTC",
     entityType: EntityType.BTCWrapper,
     live: LiveStatus.Mainnet,
     staking: false,

@@ -11,7 +11,7 @@ import {
 const wbtc: InfrastructureProject = {
     type: Type.Infrastructure,
     slug: "wbtc",
-    title: "wBTC",
+    title: "BitGo wBTC",
     entityType: EntityType.BTCWrapper,
     live: LiveStatus.Mainnet,
     staking: false,

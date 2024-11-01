@@ -10,7 +10,7 @@ import {
 const kbtc: InfrastructureProject = {
     type: Type.Infrastructure,
     slug: "kbtc",
-    title: "kBTC",
+    title: "Kraken kBTC",
     entityType: EntityType.BTCWrapper,
     live: LiveStatus.Mainnet,
     staking: false,
