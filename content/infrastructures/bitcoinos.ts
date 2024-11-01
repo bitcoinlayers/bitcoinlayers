@@ -13,7 +13,7 @@ const bitcoinos: InfrastructureProject = {
     slug: "bitcoinos",
     title: "BitcoinOS",
     entityType: EntityType.BitcoinBridge,
-    live: LiveStatus.Mainnet,
+    live: LiveStatus.Announced,
     staking: false,
     bridge: true,
     underReview: true,
