@@ -156,6 +156,7 @@ section {
         --chart-liquid-l-btc: 165 54% 57%;
         --chart-core-chain-corebtc: 262 5% 52%;
         --chart-bitgo-wbtc: 252 26% 18%;
+        --chart-lightning-btc: 267 100% 49%;
     }
 
     .dark {
