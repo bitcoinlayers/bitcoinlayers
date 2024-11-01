@@ -56,11 +56,14 @@ const LayerTable = ({ data, headers }: Props) => {
         parse: (value) => value.split(",").filter(Boolean),
         serialize: (value) => value.join(","),
     });
-    const [status] = useQueryState<string[]>("status", {
-        defaultValue: ["Mainnet", "Beta"],
-        parse: (value) => value.split(",").filter(Boolean),
-        serialize: (value) => value.join(","),
-    });
+    // const [status] = useQueryState<string[]>("status", {
+    //     defaultValue: ["Mainnet", "Beta"],
+    //     parse: (value) => value.split(",").filter(Boolean),
+    //     serialize: (value) => value.join(","),
+    // });
+    const [status, setStatus] = useQueryState("status", {
+        defaultValue: "Mainnet",
+    }); //rm when adding back in status table filter
     const [sortBy, setSortBy] = useQueryState("sortBy", {
         defaultValue: "Name",
     });
@@ -130,11 +133,16 @@ const LayerTable = ({ data, headers }: Props) => {
                 types.includes(item.entityType),
             );
         }
-        if (status.length > 0) {
-            filtered = filtered.filter((item) =>
-                status.some((s) => s.toLowerCase() === item.live.toLowerCase()),
-            );
-        }
+        // if (status.length > 0) {
+        //     filtered = filtered.filter((item) =>
+        //         status.some((s) => s.toLowerCase() === item.live.toLowerCase()),
+        //     );
+        // }
+        filtered = filtered.filter((item) => {
+            if (status === "Mainnet") return item.live === "Mainnet";
+            if (status === "Testnet") return item.live !== "Mainnet";
+            return true;
+        }); //rm when adding back in status table filter
 
         return filtered;
     }, [data, sortBy, sortOrder, types, status, totaledBalances]);
