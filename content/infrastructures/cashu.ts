@@ -104,11 +104,6 @@ const cashu: InfrastructureProject = {
                         "Cashu aims at providing a better custodial experience by [enhancing privacy](https://maxmoney.substack.com/p/ecash-for-better-bitcoin-privacy) and therefore protecting users’ data: the custodian would not - in contrast to the current state - learn about users’ account balances, nor about their transaction history or spending habits.",
                 },
                 {
-                    title: "Censorship resistance against a particular user",
-                    content:
-                        "The custodian can deny a peg-out to BTC, but cannot do so against a specific user, as the mint doesn’t know who redeems the Cashu token for BTC, making Ecash custodial, but censorship-resistant. Moreover, users benefit from the ability to easily choose between different mints, without going through a cumbersome registration process. Mints will be able to limit access to their mint through an [optional authentication protocol](https://github.com/cashubtc/nuts/pull/106).",
-                },
-                {
                     title: "Cashu as credit tokens to unlock toll gates",
                     content:
                         "Cashu tokens carry voucher-like properties. Those tokens can be used to get (privacy-preserving) and accountless access to online services through toll gates: be it an internet connection, [anonymous API access](https://github.com/cashubtc/xcashu), a VPN service, [pay-per-request for LLM prompts](https://chatnut.sparkpay.pt/).",
@@ -144,6 +139,11 @@ const cashu: InfrastructureProject = {
             id: "additionalconsiderations",
             title: "Additional Considerations",
             content: [
+                {
+                    title: "Censorship",
+                    content:
+                        "Mints can limit access to their mint through an [optional authentication protocol](https://github.com/cashubtc/nuts/pull/106). Specific users can also be censored by mints by implementing KYC.",
+                },
                 {
                     title: "Privacy chokepoints (user-inflicted) ([Cashu FAQ](https://docs.cashu.space/faq#general-safety-and-privacy-questions))",
                     content:
