@@ -73,7 +73,7 @@ const rollux: LayerProject = {
         {
             category: RiskCategory.NetworkOperators,
             score: 0,
-            tier: RiskFactor.Medium,
+            tier: RiskFactor.High,
             title: "Rollux is operated by a centralized sequencer with forced inclusion to the Syscoin L1 possible",
             content:
                 "The Rollux chain is operated by a centralized sequencer. Users can be censored by the centralized sequencer and the chain can have liveness failures if the sequencer goes offline.\n\nForced inclusion to the Syscoin L1 is possible. Users are able to have their transaction included in a sequence by submitting it to the L1 smart contract.",
@@ -129,11 +129,6 @@ const rollux: LayerProject = {
             id: "technology",
             title: "Technology",
             content: [
-                {
-                    title: "Fraud proofs are under development",
-                    content:
-                        "[OP Stack](https://github.com/SYS-Labs/rollux/tree/develop/op-node) chains will use interactive fraud proofs to enforce state correctness. This feature is currently in development, meaning that Rollux currently permits invalid state roots.",
-                },
                 {
                     title: "Merge-mining",
                     content:
