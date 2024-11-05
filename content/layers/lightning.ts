@@ -78,7 +78,7 @@ const lightning: LayerProject = {
             category: RiskCategory.FinalityGuarantees,
             score: 0,
             tier: RiskFactor.Low,
-            title: "Users can challenge a malicious counterparty",
+            title: "Transactions settle instantly. Routed transactions are atomic",
             content:
                 "Transactions on the Lightning Network happen atomically via HTLCs. Once confirmed, they cannot be reversed. Users can also ensure finality when closing a channel with their counterparty.",
         },
@@ -128,7 +128,7 @@ const lightning: LayerProject = {
                 {
                     title: "Users can unilaterally withdraw their funds with optimistic settlement guarantees",
                     content:
-                        "Users can close a channel and withdraw their funds at any time. They can close a channel collaboratively with their counterparty by agreeing on the final state of the channel and withdrawing their balances to their respective addresses. In the event of a dispute over the final state, the Lightning Network’s model is optimistic. A malicious user can attempt to steal channel funds by submitting a channel closure transaction with an old state. If their counterparty is offline with no watchtower for the entire duration of the challenge period then the old state will be finalized, allowing the theft to succeed. If the counterparty, or their watchtower, is online during the challenge period, then they can submit a challenge transaction onchain that will stop the theft attempt and sweep the full balance of the channel that was incorrectly closed. Users should be aware that the cost of challenging an incorrect channel closure attempt could eat significantly into the channel balance, to the point of being uneconomical, if bitcoin fee rates are prohibitively expensive. Users should also be aware that if they are unable to confirm their challenge transaction before the end of the challenge period, for example because their transaction is being withheld by bitcoin miners, then they risk losing the full balance of their channel to their counterparty.",
+                        "Users can close a channel and withdraw their funds at any time. They can close a channel collaboratively with their counterparty by agreeing on the final state of the channel and withdrawing their balances to their respective addresses. A malicious user can attempt to steal channel funds by submitting a channel closure transaction with an old state.\n\nIf the counterparty, or their watchtower, is online during the challenge period, then they can submit a challenge transaction onchain that will stop the theft attempt and sweep the full balance of the channel that was incorrectly closed.",
                 },
             ],
         },

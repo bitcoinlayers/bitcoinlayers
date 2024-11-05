@@ -76,15 +76,15 @@ const bsquared: LayerProject = {
             tier: RiskFactor.Critical,
             title: "Both the rollup chain and parent chain are run by federated, centralized parties",
             content:
-                "Bsquared Network’s Polygon zkEVM implementation has a single sequencer that posts sequencer batches to its network of three L1 validators. In the event of censorship, users cannot force include their transaction in a sequence.",
+                "Bsquared Network’s Polygon zkEVM implementation has a single sequencer that posts sequencer batches to its network of three L1 validators.",
         },
         {
             category: RiskCategory.FinalityGuarantees,
             score: 0,
             tier: RiskFactor.Critical,
-            title: "SNARKs ensure state correctness, but finality is guaranteed by a permissioned validator set",
+            title: "Finality is guaranteed by a permissioned validator set",
             content:
-                "Bsquared receives no settlement assurances from Bitcoin. Bsquared settlement is finalized by a group of three, federated validators who verify a validity proof submitted by the Bsquared Network zkEVM prover.",
+                "Bsquared receives no settlement assurances from Bitcoin. Bsquared settlement is finalized by a group of three, federated validators who verify state transitions submitted by the Bsquared Network zkEVM operator.",
         },
     ],
     sections: [
@@ -130,9 +130,9 @@ const bsquared: LayerProject = {
             title: "Technology",
             content: [
                 {
-                    title: "Currently testing further integrations with Bitcoin",
+                    title: "EVM-Compatible",
                     content:
-                        "Bsquared Network is currently testing an OP Stack rollup on the Ethereum Sepolia testnet. In this implementation, they are running their “committer” that sees the OP Stack rollup post the rollup’s latest state root to Bitcoin.",
+                        "Bsquared Network is EVM-compatible. The Ethereum Virtual Machine is software responsible for smart contract execution for a number of blockchains, namely the Ethereum Network. It uses Solidity/Vyper as its code and is the dominant environment for smart contract execution in the cryptocurrency ecosystem.",
                 },
             ],
         },

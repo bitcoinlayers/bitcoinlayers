@@ -58,7 +58,7 @@ const bob: LayerProject = {
             tier: RiskFactor.Critical,
             title: "Bitcoin users trust that bitcoin synthetics will remain backed, and that the BOB bridge will not steal their funds",
             content:
-                "BOB primarily uses two BTC synthetics on its chain, tBTC and wBTC. Both are ERC-20 tokens on Ethereum. Currently, both of these tokens are minted on BOB via its official Ethereum bridge.\n\nUsers trust that the bridge operators will not steal their BTC, the BOB proposer to not publish a malicious, unchallenged state transition, or the admin controlling the bridge to create a malicious smart contract upgrade.\n\nIn the event of a malicious smart contract upgrade, there is no exit window for BOB users. This means that the admin behind the bridge can steal all funds in the official bridge.",
+                "tBTC and wBTC are minted on BOB via its official Ethereum bridge.\n\nUsers trust that the bridge operators will not steal their BTC, the BOB proposer to not publish a malicious, unchallenged state transition, or the admin controlling the bridge to create a malicious smart contract upgrade.\n\nIn the event of a malicious smart contract upgrade, there is no exit window for BOB users. This means that the admin behind the bridge can steal all funds in the official bridge.\n\n🔬We are currently reviewing other bitcoin synthetics minted on BOB.",
         },
         {
             category: RiskCategory.DataAvailability,
@@ -71,10 +71,10 @@ const bob: LayerProject = {
         {
             category: RiskCategory.NetworkOperators,
             score: 0,
-            tier: RiskFactor.Medium,
+            tier: RiskFactor.High,
             title: "BOB blocks are produced and proposed by a centralized operator, but forced inclusion to Ethereum L1 possible",
             content:
-                "Currently, BOB’s sequencer is managed by one entity. The BOB sequencer can censor transactions and would also cause liveness failures in the rollup if it went down. Users can, however, bypass the sequencer and send their transactions directly to the Ethereum L1 contract. Users do, however, trust that a permissioned proposer will publish the latest state root on the Ethereum L1, permitting withdrawals.",
+                "Currently, BOB’s sequencer is managed by one entity. The BOB sequencer can censor transactions and would also cause liveness failures if it went down. Users can bypass the sequencer and send their transactions directly to the Ethereum L1. Users do, however, trust that a permissioned proposer will publish the latest state root on the Ethereum L1, permitting withdrawals.",
         },
         {
             category: RiskCategory.FinalityGuarantees,
@@ -82,7 +82,7 @@ const bob: LayerProject = {
             tier: RiskFactor.Medium,
             title: "BOB state transitions finalize on Ethereum",
             content:
-                "BOB inherits finality guarantees from Ethereum. The BOB sequencer provides a soft confirmation of transactions which are eventually summarized and sent to Ethereum.\n\nBOB's sequencer can reorg prior to a transaction batch being accepted on Ethereum.",
+                "BOB inherits finality guarantees from Ethereum. The BOB sequencer provides a soft confirmation of transactions which are eventually summarized and sent to Ethereum.\n\n⚠️BOB's sequencer can reorg prior to a transaction batch being accepted on Ethereum.",
         },
     ],
     sections: [
@@ -91,14 +91,14 @@ const bob: LayerProject = {
             title: "Bitcoin Security",
             content: [
                 {
-                    title: "BOB does not inherit any security from Bitcoin consensus participants. Optimine is under development",
+                    title: "BOB does not inherit any security from Bitcoin",
                     content:
-                        "BOB is currently developing Optimine: a mechanism that will see Bitcoin miners merge-mine the BOB sequencer. In this design, the BOB sequencer would create rollup blocks, and the miners would validate that the blocks were created correctly. Miners would then give the blocks “Proof-of-Work” validation so they can be executed. This Proof-of-Work validation would take minutes, so it can also act as a soft finalization mechanism as OP Stack chains typically take 7 days for the challenge period to finalize.",
+                        "In its current state, BOB does not inherit security from Bitcoin.",
                 },
                 {
                     title: "ETH token used to pay fees",
                     content:
-                        "BOB users pay sequencer fees in ETH. BOB operators also pay DA fees in ETH. Users can, however, elect to pay fees with a separate token (e.g. tBTC) to a service provider that will pay sequencer fees, in ETH, on the users’ behalf.",
+                        "BOB users pay sequencer fees in ETH. BOB operators also pay DA fees in ETH.",
                 },
                 {
                     title: "No MEV introduced to Bitcoin",
@@ -119,7 +119,7 @@ const bob: LayerProject = {
                 {
                     title: "Proposer role centralized and permissioned. BTC users must withdraw to Ethereum L1 before withdrawing to Bitcoin",
                     content:
-                        "Users can bypass the sequencer and submit withdrawal requests directly to the Ethereum L1. However, they cannot force-exit as the self-proposing is not enabled on OP Stack chains. Users rely on the proposer to post updated state roots to Ethereum to ensure withdrawals can be processed. Withdrawals from BOB to Ethereum take 7 days to finalize.\n\nOnce on the Ethereum L1, users can then redeem their BTC on Bitcoin via the two-way peg mechanism that their BTC synthetic is supported by.\n\nUsers primarily trust bridge operators to permit withdrawals back to the Bitcoin mainchain.",
+                        "Users can bypass the sequencer and submit withdrawal requests directly to the Ethereum L1. However, they cannot force-exit as the self-proposing is not enabled. Users rely on the proposer to post updated state roots to Ethereum to ensure withdrawals can be processed. Withdrawals from BOB's official bridge to Ethereum take 7 days to finalize.\n\nOnce on the Ethereum L1, users can then redeem their BTC on Bitcoin via the two-way peg mechanism that their BTC synthetic is supported by.\n\nUsers primarily trust bridge operators to permit withdrawals back to the Bitcoin mainchain.",
                 },
             ],
         },
@@ -128,19 +128,9 @@ const bob: LayerProject = {
             title: "Technology",
             content: [
                 {
-                    title: "Fraud proofs are under development",
-                    content:
-                        "OP stack chains will use interactive fraud proofs to enforce state correctness. This feature is currently in development, meaning that BOB currently permits invalid state roots.",
-                },
-                {
                     title: "Ethereum Virtual Machine",
                     content:
                         "BOB uses an EVM-compatible virtual machine. The Ethereum Virtual Machine is software responsible for smart contract execution for a number of blockchains, namely the Ethereum Network. It uses Solidity/Vyper as its code and is the dominant environment for smart contract execution in the cryptocurrency ecosystem. BOB is EVM-compatible, which means that a developer from Ethereum would have less difficulty deploying their applications on BOB compared to other execution environments.",
-                },
-                {
-                    title: "Faster block times",
-                    content:
-                        "BOB is currently producing blocks every two seconds which provides a better user experience than using the Bitcoin, or Ethereum, mainchains.",
                 },
             ],
         },
