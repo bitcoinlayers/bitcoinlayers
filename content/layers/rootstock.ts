@@ -124,9 +124,14 @@ const rootstock: LayerProject = {
                         "Merged mining is a feature of Rootstock’s consensus mechanism that allows coupling between bitcoin and Rootstock. Essentially, BTC mining pools add references to Rootstock blocks in mining jobs sent to mining participants. Additionally, because the Rootstock mining algorithm is the same as bitcoin’s, there is little added energy expenditure. This sees bitcoin miners have an ability to additionally mine a percentage of Rootstock blocks. Miners are incentivized through earning a portion of transaction fees to mine Rootstock",
                 },
                 {
-                    title: "Ethereum Virtual Machine",
+                    title: "REMASC",
                     content:
-                        "Rootstock uses a forked version of the Ethereum Virtual Machine (EVM), which it calls the Rootstock Virtual Machine (RVM). The EVM is a Turing-complete execution environment developed for Ethereum and adopted by various other networks. Solidity is the primary coding language used for smart contract development on the EVM. Solidity and the EVM are the dominant language and environment for smart contracts in the broader cryptocurrency ecosystem, respectively. Smart contracts created for the EVM are directly compatible with the RVM. The RVM is EVM-compatible at both the bytecode and opcode level, and can interact with Ethereum developer tooling. The RVM uses RBTC as its gas cost for smart contract execution.",
+                        "In order to pay out miners, every block executes the Reward Manager Smart Contract (REMASC). The contract keeps record of the Reward Balance account, which exists to change value during new block production. When a block reaches maturity, the appropriate portions of rewards are distributed according to REMASC specified rules.",
+                },
+                {
+                    title: "EVM-Compatible",
+                    content:
+                        "Rootstock uses a forked version of the Ethereum Virtual Machine (EVM), which it calls the Rootstock Virtual Machine (RVM). The Ethereum Virtual Machine is software responsible for smart contract execution for a number of blockchains, namely the Ethereum Network. It uses Solidity/Vyper as its code and is the dominant environment for smart contract execution in the cryptocurrency ecosystem. Smart contracts created for the EVM are directly compatible with the RVM.",
                 },
                 {
                     title: "Faster block times",
