@@ -55,8 +55,6 @@ const binancebtcb: InfrastructureProject = binancebtcbProject;
 const unirouter: InfrastructureProject = unirouterProject;
 
 export const allInfrastructures: InfrastructureProject[] = [
-    cashu,
-    fedimint,
     lombard,
     tbtc,
     wbtc,
