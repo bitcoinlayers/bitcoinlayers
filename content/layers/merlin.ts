@@ -115,17 +115,6 @@ const merlin: LayerProject = {
             ],
         },
         {
-            id: "withdrawals",
-            title: "Withdrawals",
-            content: [
-                {
-                    title: "Withdrawals are processed by a custodian",
-                    content:
-                        "Withdrawals from Merlin chain are processed by a custodial operator. Users trust that the Merlin sequencer will include their withdrawal request in a block, and that the custodial operators of the bridge will facilitate an exit from the system.",
-                },
-            ],
-        },
-        {
             id: "additionalconsiderations",
             title: "Additional Considerations",
             content: [
@@ -138,6 +127,17 @@ const merlin: LayerProject = {
                     title: "Merlin L1 smart contract not verified",
                     content:
                         "We are currently unable to verify if the smart contracts listed in Merlin's Github are in fact the contracts used on its mainnet. The main contract for Polygon CDKValidium on Ethereum was previously listed as the Merlin L1 contract in its documentation, but that was removed and no longer listed. Merlin chain have announced they will deploy their chain on Bsquared Network's L1 blockchain, which is a permissioned network. New contracts have been listed in its Github, but their L1 RPC points to a different chain that is not Bsquared Network.",
+                },
+            ],
+        },
+        {
+            id: "withdrawals",
+            title: "Withdrawals",
+            content: [
+                {
+                    title: "Withdrawals are processed by a custodian",
+                    content:
+                        "Withdrawals from Merlin chain are processed by a custodial operator. Users trust that the Merlin sequencer will include their withdrawal request in a block, and that the custodial operators of the bridge will facilitate an exit from the system.",
                 },
             ],
         },

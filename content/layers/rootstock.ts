@@ -115,6 +115,17 @@ const rootstock: LayerProject = {
             ],
         },
         {
+            id: "withdrawals",
+            title: "Withdrawals",
+            content: [
+                {
+                    title: "Users trust permissioned operators to process their withdrawals",
+                    content:
+                        "Withdrawals are currently permissioned by a federated group of signers. Users must trust that when they deposit BTC into the Rootstock blockchain, the signers will not collude and steal their BTC. Learn more about the Powpeg multisig in the Knowledge Bits section.",
+                },
+            ],
+        },
+        {
             id: "technology",
             title: "Technology",
             content: [
@@ -148,17 +159,6 @@ const rootstock: LayerProject = {
                     title: "Onchain applications",
                     content:
                         "Onchain applications are supported. Onchain applications including borrowing and lending protocols, onchain exchanges (commonly referred to as decentralized exchanges), and more. These applications are supported with more expressive smart contract environments.",
-                },
-            ],
-        },
-        {
-            id: "withdrawals",
-            title: "Withdrawals",
-            content: [
-                {
-                    title: "Users trust permissioned operators to process their withdrawals",
-                    content:
-                        "Withdrawals are currently permissioned by a federated group of signers. Users must trust that when they deposit BTC into the Rootstock blockchain, the signers will not collude and steal their BTC. Learn more about the Powpeg multisig in the Knowledge Bits section.",
                 },
             ],
         },
