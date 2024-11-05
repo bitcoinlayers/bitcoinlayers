@@ -127,14 +127,9 @@ const bevm: LayerProject = {
             title: "Technology",
             content: [
                 {
-                    title: "Taproot-related technologies",
-                    content:
-                        "Proposedly, every trustee in the BEVM system has a Bitcoin private key for the Schnorr signature, allowing for effective signature aggregation. The Musig2 multi-signature system generates an aggregated public key that joins to construct a huge MAST (Merkle Abstract Syntax Tree).\n\nFollowing the generation of the MAST tree's root hash value, the trustee carries out Bitcoin transfer and inscription operations to the threshold signature address produced by the MAST tree, fulfilling the purpose of the BTC mainnet's data submission to the BEVM network.",
-                },
-                {
                     title: "BFT PoS consensus network",
                     content:
-                        "In BEVM, validators participate in a hybrid consensus mechanism. Hybrid consensus separates block production mechanism from block finalization. For block authoring, BABE consensus is run between the validators and it selects the block producers. In parallel, validators execute GRANDPA BFT consensus to finalize the block. Once more than ⅔ of validators agree on the new block, the chain containing a new block is finalized.",
+                        "In BEVM, validators participate in a hybrid consensus mechanism. Their consensus mechanism separates block production mechanism from block finalization. For block authoring, BABE consensus is run between the validators and it selects the block producers. In parallel, validators execute GRANDPA BFT consensus to finalize the block. Once more than ⅔ of validators agree on the new block, the chain containing a new block is finalized.",
                 },
             ],
         },
@@ -143,15 +138,10 @@ const bevm: LayerProject = {
             title: "Use Cases",
             content: [
                 {
-                    title: "EVM compatibility",
+                    title: "Onchain applications",
                     content:
-                        "BEVM facilitates the creation of smart contracts and dApps on the bitcoin network while integrating with EVM and using BTC as gas to enhance interoperability between the two networks.",
-                },
-                {
-                    title: "Cross-chain processing",
-                    content:
-                        "BEVM employs Taproot technology and PoS consensus nodes to securely manage cross-chain transactions between BEVM and the Bitcoin mainnet.",
-                },
+                        "Onchain applications are supported. Onchain applications including borrowing and lending protocols, onchain exchanges (commonly referred to as decentralized exchanges), and more. These applications are supported with more expressive smart contract environments.",
+                }
             ],
         },
         {

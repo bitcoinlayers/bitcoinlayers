@@ -84,7 +84,7 @@ const merlin: LayerProject = {
             tier: RiskFactor.Unverified,
             title: "Sequencer batches and validity proofs posted offchain. ❓ We are unable to verify Merlin Chain's L1 contracts",
             content:
-                "Merlin propsedly uses zkSNARKS to ensure state correctness. The Merlin prover posts validity proofs of execution to its L1 contract to finalize state transitions. It is unknown which chain Merlin posts its latest state root to.",
+                "Merlin uses zkSNARKS to ensure state correctness. The Merlin prover posts validity proofs of execution to its L1 contract to finalize state transitions. It is unknown which chain Merlin posts its latest state root to.",
         },
     ],
     sections: [
@@ -148,7 +148,12 @@ const merlin: LayerProject = {
                 {
                     title: "Leveraging the Polygon zkEVM stack",
                     content:
-                        "Merlin was deployed by Lumoz, a Rollup-as-a-Service provider that supports the Polygon zkEVM stack. This sees the Merlin chain be EVM-compatible and proposedly mimic a similar architecture to Polygon Validiums on Ethereum, albeit the security of its host chain is unknown.",
+                        "Merlin was deployed by Lumoz, a Rollup-as-a-Service provider that supports the Polygon zkEVM stack. This sees the Merlin chain be EVM-compatible and mimic a similar architecture to Polygon Validiums on Ethereum, albeit the security of its host chain is unknown.",
+                },
+                {
+                    title: "EVM-compatible",
+                    content:
+                        "Rollux uses an EVM-compatible virtual machine. The Ethereum Virtual Machine is software responsible for smart contract execution for a number of blockchains, namely the Ethereum Network. It uses Solidity/Vyper as its coding language, which is the dominant environment for smart contract execution in the cryptocurrency ecosystem. Rollux is EVM-compatible, which means that a developer from Ethereum would have less difficulty deploying their applications on Rollux compared to other execution environments.",
                 },
             ],
         },
@@ -157,9 +162,9 @@ const merlin: LayerProject = {
             title: "Use Cases",
             content: [
                 {
-                    title: "EVM-based applications",
+                    title: "Onchain applications",
                     content:
-                        "The potential use cases for Bsquared Network are similar to that of other EVM-based sidechains. Developers can deploy smart contracts that enable applications like borrowing and lending protocols, stablecoins, NFTs, and more. The primary, proposed use case for Bsquared Network is to act as an application layer for Bitcoin.",
+                        "Onchain applications are supported. Onchain applications including borrowing and lending protocols, onchain exchanges (commonly referred to as decentralized exchanges), and more. These applications are supported with more expressive smart contract environments.",
                 },
             ],
         },

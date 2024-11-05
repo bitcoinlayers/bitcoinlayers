@@ -141,9 +141,9 @@ const bsquared: LayerProject = {
             title: "Use Cases",
             content: [
                 {
-                    title: "EVM-based applications",
+                    title: "Onchain applications",
                     content:
-                        "The potential use cases for Bsquared Network are similar to that of other EVM-based sidechains. Developers can deploy smart contracts that enable applications like borrowing and lending protocols, stablecoins, NFTs, and more. The primary, proposed use case for Bsquared Network is to act as an application layer for Bitcoin.",
+                        "Onchain applications are supported. Onchain applications including borrowing and lending protocols, onchain exchanges (commonly referred to as decentralized exchanges), and more. These applications are supported with more expressive smart contract environments.",
                 },
             ],
         },

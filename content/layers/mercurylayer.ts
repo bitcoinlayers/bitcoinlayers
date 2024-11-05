@@ -129,37 +129,13 @@ const mercurylayer: LayerProject = {
             id: "technology",
             title: "Technology",
             content: [
-                {
-                    title: "Blind signing server generates partial blind signatures and updates key shares",
-                    content:
-                        "Mercury Layer employs a blind signing server that has two functions. One, it can create partial blind signatures to co-sign statechain transfers together with the user using a [variant of MuSig2](https://github.com/commerceblock/mercurylayer/blob/dev/docs/blind_musig.md). Second, the Mercury Layer server can update the key shares needed for co-signing. In the honest case, the server securely deletes previous key shares to not be able to collude with previous statecoin owners and steal the current owner's funds. \n In the Mercury Layer implementation, the operator uses an HSM for key handling and key deletion after cosigning each new holder's withdrawal transaction. This provides a stronger assurance (relative to not using an HSM) that the operator will not collude with a prior statecoin owner to sign a transaction transferring the statecoin. This is because the HSM deletes the key share needed to sign transactions after each use, and is otherwise inaccessible to the operator (assuming the HSM itself remains uncompromised).",
-                },
-                {
-                    title: "Statechain initialisation and transfer mechanism using key share updates and a client-side validation model",
-                    content:
-                        "A statechain is initialised by depositing bitcoin to a statechain address where the private key is shared between the user and the statechain entity. The statechain entity is responsible for creating partial signatures, which can be used either to spend the coin or to initiate a backup transaction. When a statechain is transferred, the server updates its key share, and the previous owner collaborates with the server to generate a new backup transaction for the recipient. \n Due to the blinding of server signatures, the statechain entity remains unaware of the transaction history, knowing only the number of signatures it has generated. Therefore, all statechain verification processes need to be performed entirely by client-side software. During a statechain transfer, the number of server signatures is passed on to the recipient, who also learns about the full transfer history of the statechain from the previous owner. This data is timestamped by the server using the [mainstay](https://mainstay.xyz/about) protocol. The client reviews the data, verifies the transaction history, and if all checks out, approves the statechain transfer. ",
-                },
-                {
-                    title: "Adding a decrementing timelock to the backup transaction to prevent against server failure or misbehaviour",
-                    content:
-                        "In the absence of covenants, which could invalidate old transactions, Mercury Layer employs [nLocktime](https://github.com/bitcoin/bips/blob/master/bip-0068.mediawiki) with decrementing timelocks to ensure users can reclaim their bitcoin L1 funds in case of server failure or attempted misbehaviour of previous owners. Each time a statechain is transferred to a new owner, the timelock on the backup transaction is reduced. By progressively decreasing the timelock, Mercury Layer enables the current owner to claim the L1 funds before a previous owner can do so by publishing an old backup transaction.",
-                },
+                
             ],
         },
         {
             id: "usecases",
             title: "Use Cases",
             content: [
-                {
-                    title: "Lightning Latch assists interoperability between statechains and the Lightning Network",
-                    content:
-                        "Since statechains inherently manage UTXOs offchain, they provide an ideal platform for opening and closing lightning channels at minimal cost. Any UTXO that exists on a statechain can be turned into an LN channel while this process stays hidden from the statechain entity, even in case of a force-closure ([Somsen, 2019](https://medium.com/@RubenSomsen/statechains-non-custodial-off-chain-bitcoin-transfer-1ae4845a4a39)). Mercury Layer recently developed an [atomic swap protocol](https://github.com/commerceblock/mercurylayer/blob/dev/docs/atomic_transfer.md#lightning-latch-transfer) called Lightning Latch that enables the atomic exchange of two statechains, which facilitates coinjoin-like exchange of assets as well as better interaction between statechains and the Lightning Network. Users can rebalance their channels using the swap protocol to have lower fees. Lightning Latch opens up new possibilities for a more integrated ecosystem.",
-                },
-                {
-                    title: "Enabling betting and oracle protocols",
-                    content:
-                        "Mercury Layer can enable betting and oracle protocols by allowing the transfer of ownership of a private key share. This capability means that a DLC counterparty position can be transferred without requiring the cooperation of the other party.",
-                },
                 {
                     title: "Enhanced privacy with blind statechains",
                     content:
@@ -175,21 +151,6 @@ const mercurylayer: LayerProject = {
                     title: "Statechains only allow for fixed-value transfers",
                     content:
                         "Mercury Layer facilitates the offline transfer of UTXO ownership through the transfer of private key shares. Ownership transfer and not involving Bitcoin L1 interaction implies that UTXOs cannot be split and must always be transferred as a whole.",
-                },
-                {
-                    title: "Decrementing timelock limits number of statechain transfers",
-                    content:
-                        "As the nlocktime is reduced with every statechain transfer, the number of transfers that can occur before a statechain needs to be closed out on bitcoin L1 is limited.",
-                },
-                {
-                    title: "Security enhancements by upgrading to a federated operator",
-                    content:
-                        "The current statechain entity operates in a [non-federated](https://x.com/SomsenRuben/status/1779043366027604321) setup, which means users need to trust that the operator will delete old key shares and does not collude with the latest statecoin owner to seize control of the current owner's UTXO.\n\nHowever, upgrading to a non-federated server setup would imply the service to no longer be blinded which would thus be less private and decrease censorship resistance.",
-                },
-                {
-                    title: "Malicious collusion can be proven cryptographically",
-                    content:
-                        "While the Mercury Layer setup involves trust in the statechain entity to not collude with a previous owner, malicious collusion can be proven cryptographically. Furthermore, as each statecoin is handled independently between the statechain entity and a user, the statechain entity can only steal from one user at a time.",
                 },
             ],
         },

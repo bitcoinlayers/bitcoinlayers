@@ -130,11 +130,6 @@ const core: LayerProject = {
             title: "Technology",
             content: [
                 {
-                    title: "Satoshi Plus",
-                    content:
-                        "Satoshi Plus is a hybrid model of Delegated Proof-of-Work (DPoW) and Delegated Proof-of-Stake (DPoS). DPOW and DPOS are used to select the validators participating in Core Chain consensus.\n\nDPoW is performed by Bitcoin miners and mining pools who delegate their existing Bitcoin hash rate to select validators on Core Chain. DPoS is performed by those who delegate their CORE tokens, or BTC, to select validators on Core Chain. A weighted score is assigned to a validator via the amount of Bitcoin hash rate and delegate stake they receive. The top 21 validators per this weighted score are the ones elected to participate in Core Chain consensus.\n\nValidators who are elected to participate in block production earn block rewards through newly issued CORE tokens and fees. Validators choose how much of these rewards they share with miners and delegators, if any, but are incentivized to share as much as possible to ensure that miners and delegators continue to select them for block production.\n\nBy separating Proof-of-Work mining from block production, Satoshi Plus is able to mitigate against MEV extraction from Bitcoin miners.",
-                },
-                {
                     title: "Ethereum Virtual Machine",
                     content:
                         "Core Chain uses the Ethereum Virtual Machine (EVM) for its execution environment. While this environment was initially created for Ethereum, it has been adopted by many other networks.\n\nLike many other Bitcoin sidechains, Core Chain leverages the EVM to tap into existing developer resources and tooling.",
@@ -144,16 +139,6 @@ const core: LayerProject = {
                     content:
                         "coreBTC is a native bridged BTC. Several roles are involved in the burning and minting of coreBTC.\n\nLockers hold BTC after minting and distribute it after burning. They must be overcollateralized at risk of liquidation by Liquidators. Other roles are involved as well, such as Guardians, Bitcoin Light Clients, Slashers, Relayers, and Verifiers.",
                 },
-                {
-                    title: "Faster block times",
-                    content:
-                        "Core Chain produces a block every three seconds, as of March 2024.",
-                },
-                {
-                    title: "Lower fees",
-                    content:
-                        "Core Chain fees average in the order of cents as of March 2024.",
-                },
             ],
         },
         {
@@ -161,14 +146,9 @@ const core: LayerProject = {
             title: "Use Cases",
             content: [
                 {
-                    title: "DeFi",
+                    title: "Onchain applications",
                     content:
-                        "The most popular use case for Core Chain is DeFi. Core Chain has a number of DeFi applications, including lending, borrowing, and decentralized exchanges, with a focus on bridged BTC assets.",
-                },
-                {
-                    title: "BTC Staking",
-                    content:
-                        "Core chain enables BTC holders to natively stake their BTC, as a part of DPOS in Satoshi Plus, and delegate that stake to a specific validator in the Core Chain network.",
+                        "Onchain applications are supported. Onchain applications including borrowing and lending protocols, onchain exchanges (commonly referred to as decentralized exchanges), and more. These applications are supported with more expressive smart contract environments.",
                 },
             ],
         },

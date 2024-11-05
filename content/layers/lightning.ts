@@ -115,14 +115,9 @@ const lightning: LayerProject = {
             title: "Additional Considerations",
             content: [
                 {
-                    title: "Self-hosted DA friction leading users to centralized solutions",
+                    title: "UX friction leading users to centralized solutions",
                     content:
                         "Non-technical users may find it difficult to self-host their own Lightning node, which can lead them to use custodial solutions. This can lead to a centralization of the network, as users are not interacting directly. A 2024 report from River found that 80% of Lightning Network liquidity is in channels hosted by centralized service providers.",
-                },
-                {
-                    title: "Replacement cycling attacks",
-                    content:
-                        "A vulnerability was disclosed in 2023, referred to as a replacement cycling attack. This attack requires two open channels with a user which are used together to cycle transactions a user for the duration of their challenge period",
                 },
             ],
         },
@@ -171,16 +166,6 @@ const lightning: LayerProject = {
                     title: "Faster transactions",
                     content:
                         "With its near-immediate confirmations due to being offchain and using P2P consensus, Lightning is well-suited for fast transactions.",
-                },
-                {
-                    title: "Interoperability",
-                    content:
-                        "Lightning can act as an interoperability layer between blockchain protocols and bridge operators.",
-                },
-                {
-                    title: "Lightning Service Providers (LSP)",
-                    content:
-                        "A LSP deploys liquidity in Lightning on behalf of others. LSPs improve Lightning’sUX for users by essentially supplying liquidity and managing payment channels on their behalf. Managing a payment channel can come with a number of UX hurdles, so LSPs remove the majority of the complexity and charge fees to be compensated. These providers ideally interact with users in a way that ensures that users retain custody of their funds. However, even when using a self-custodial wallet supported by an LSP, users still have to initiate mainchain transactions to deposit funds into their wallet.",
                 },
             ],
         },

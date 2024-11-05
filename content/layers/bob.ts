@@ -133,11 +133,6 @@ const bob: LayerProject = {
                         "OP stack chains will use interactive fraud proofs to enforce state correctness. This feature is currently in development, meaning that BOB currently permits invalid state roots.",
                 },
                 {
-                    title: "Bitcoin Light Client",
-                    content:
-                        "BOB’s Bitcoin light client verifies past transactions on the Bitcoin main chain, and also allows a smart contract on BOB to verify Bitcoin block headers. This gives BOB a view into Bitcoin state, and will be useful for future bridge programs.",
-                },
-                {
                     title: "Ethereum Virtual Machine",
                     content:
                         "BOB uses an EVM-compatible virtual machine. The Ethereum Virtual Machine is software responsible for smart contract execution for a number of blockchains, namely the Ethereum Network. It uses Solidity/Vyper as its code and is the dominant environment for smart contract execution in the cryptocurrency ecosystem. BOB is EVM-compatible, which means that a developer from Ethereum would have less difficulty deploying their applications on BOB compared to other execution environments.",
@@ -146,11 +141,6 @@ const bob: LayerProject = {
                     title: "Faster block times",
                     content:
                         "BOB is currently producing blocks every two seconds which provides a better user experience than using the Bitcoin, or Ethereum, mainchains.",
-                },
-                {
-                    title: "BitVM bridge being researched",
-                    content:
-                        "BOB are actively researching BitVM and how it can support an improved bridge program for Bitcoin assets on the chain.",
                 },
             ],
         },
@@ -161,12 +151,7 @@ const bob: LayerProject = {
                 {
                     title: "Onchain applications",
                     content:
-                        "BOB’s initial use case is to provide Ethereum users access to Bitcoin applications such as ordinals, BRC-20s, Bitcoin backed stablecoins, and more. It also gives Bitcoin users access to an application layer that provides faster confirmation times, lower fees and a superior user experience (albeit with additional trust assumptions). To enable this, BOB supports the BOB SDK, which is a software development kit that enables developers to build Bitcoin-centric applications on BOB.",
-                },
-                {
-                    title: "Account abstraction",
-                    content:
-                        "BOB will support a number of Bitcoin-UX features via account abstraction. These features will enable users to access BOB via Bitcoin wallets, pay fees in their preferred token, and mint BTC on BOB directly.",
+                        "Onchain applications are supported. Onchain applications including borrowing and lending protocols, onchain exchanges (commonly referred to as decentralized exchanges), and more. These applications are supported with more expressive smart contract environments.",
                 },
             ],
         },
