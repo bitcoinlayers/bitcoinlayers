@@ -16,7 +16,7 @@ const tbtc: InfrastructureProject = {
     live: LiveStatus.Mainnet,
     staking: false,
     bridge: true,
-    underReview: true,
+    underReview: false,
     riskFactors: ["", ""],
     nativeToken: "T",
     purpose: Purpose.General,
