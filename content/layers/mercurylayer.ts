@@ -18,7 +18,7 @@ const mercurylayer: LayerProject = {
     live: LiveStatus.Mainnet,
     staking: false,
     bridge: false,
-    underReview: false,
+    underReview: true,
     riskFactors: [
         RiskFactor.Unverified,
         RiskFactor.Low,
