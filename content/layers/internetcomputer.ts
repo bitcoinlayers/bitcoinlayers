@@ -18,7 +18,7 @@ const internetcomputer: LayerProject = {
     live: LiveStatus.Mainnet,
     staking: false,
     bridge: false,
-    underReview: false,
+    underReview: true,
     riskFactors: [
         RiskFactor.High,
         RiskFactor.High,
