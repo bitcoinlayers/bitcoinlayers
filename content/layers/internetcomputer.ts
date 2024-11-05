@@ -153,17 +153,6 @@ const internetcomputer: LayerProject = {
             ],
         },
         {
-            id: "operator",
-            title: "Operator",
-            content: [
-                {
-                    title: "ICP node operators are selected by NNS governance system",
-                    content:
-                        "The ICP network is operated by a number of permissioned parties who are selected by the NNS governance process. NNS is a tokenized governance mechanism where token holders lock their tokens into a governance contract and are able to vote on proposals and upgrades to the network, including adding and removing node operators from specific subnets. Votes are weighted via the amount of tokens staked in the system and the amount of time tokens have been locked. Voters can delegate their vote if they are unable to individually vote on specific proposals.\n\nNode operators for ICP subnet’s are selected by the ICP NNS governance mechanism. Node operators do not stake any capital and are not subject to slashing, but if they were to misbehave, they would be voted out via ICP’s governance mechanism and lose out on future rewards.",
-                },
-            ],
-        },
-        {
             id: "sourcecode",
             title: "Source Code",
             content: [

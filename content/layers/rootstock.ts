@@ -152,17 +152,6 @@ const rootstock: LayerProject = {
             ],
         },
         {
-            id: "operator",
-            title: "Operator",
-            content: [
-                {
-                    title: "Any bitcoin miner can merge-mine Rootstock",
-                    content:
-                        "Block production is permissionless. Anyone who is willing to merge-mine can produce blocks and earn rewards. If interested parties do not possess enough capital to competitively solo mine, they can join a mining pool that supports Rootstock merged mining.",
-                },
-            ],
-        },
-        {
             id: "withdrawals",
             title: "Withdrawals",
             content: [

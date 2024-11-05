@@ -170,17 +170,6 @@ const lightning: LayerProject = {
             ],
         },
         {
-            id: "operator",
-            title: "Operator",
-            content: [
-                {
-                    title: "The Lightning Network is peer-to-peer",
-                    content:
-                        "The only operators involved are the user and the counterparty with whom they open the payment channel. Users can transitively interact with others who have open channels with their counterparty(ies). The Lightning Network operators have to run their own node and must have near-perfect uptime to ensure their channels are not being force-closed or closed with an old channel state. Leveraging a self-custodial wallet supported by an LSP ensures users retain the custody of their funds, but the LSP operator can choose to stop servicing users at any point, meaning that users must withdraw their funds to an onchain address and find a new LSP.",
-                },
-            ],
-        },
-        {
             id: "sourcecode",
             title: "Source Code",
             content: [

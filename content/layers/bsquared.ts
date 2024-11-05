@@ -148,17 +148,6 @@ const bsquared: LayerProject = {
             ],
         },
         {
-            id: "operator",
-            title: "Operator",
-            content: [
-                {
-                    title: "Bsquared Network is operated by centralized parties",
-                    content:
-                        "Users have transactions sequenced by a centralized rollup sequencer.",
-                },
-            ],
-        },
-        {
             id: "sourcecode",
             title: "Source Code",
             content: [

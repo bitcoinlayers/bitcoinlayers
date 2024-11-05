@@ -153,17 +153,6 @@ const core: LayerProject = {
             ],
         },
         {
-            id: "operator",
-            title: "Operator",
-            content: [
-                {
-                    title: "Core Chain is operated by Satoshi Plus validators",
-                    content:
-                        "Block production is managed by validators participating in the chain's hybrid consensus mechanism.",
-                },
-            ],
-        },
-        {
             id: "sourcecode",
             title: "Source Code",
             content: [

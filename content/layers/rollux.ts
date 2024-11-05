@@ -153,17 +153,6 @@ const rollux: LayerProject = {
             ],
         },
         {
-            id: "operator",
-            title: "Operator",
-            content: [
-                {
-                    title: "Rollux is operated by a centralized sequencer",
-                    content:
-                        "The Rollux blockchain is operated by a centralized validator. If the validator censors users, or goes offline, users can self-sequence their own transactions.",
-                },
-            ],
-        },
-        {
             id: "sourcecode",
             title: "Source Code",
             content: [

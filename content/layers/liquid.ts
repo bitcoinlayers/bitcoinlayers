@@ -158,17 +158,6 @@ const liquid: LayerProject = {
             ],
         },
         {
-            id: "operator",
-            title: "Operator",
-            content: [
-                {
-                    title: "Liquid is operated by a federation",
-                    content:
-                        "Liquid is primarily operated by a predetermined, permissioned group of operators, known as “Functionaries”, who are a part of its Federation. A larger group of “Members” participate in the federation by determining upgrades to the network, and also vote on board elections. Users may trust these operators due to the reputational risk they would take on in the Bitcoin ecosystem if they acted maliciously.",
-                },
-            ],
-        },
-        {
             id: "withdrawals",
             title: "Withdrawals",
             content: [

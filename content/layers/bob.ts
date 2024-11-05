@@ -146,17 +146,6 @@ const bob: LayerProject = {
             ],
         },
         {
-            id: "operator",
-            title: "Operator",
-            content: [
-                {
-                    title: "BOB has a centralized operator",
-                    content:
-                        "Block production is controlled by one operator. Users trust that the operator will be honest. They also trust that the operator will not reorder transactions to extract MEV.",
-                },
-            ],
-        },
-        {
             id: "sourcecode",
             title: "Source Code",
             content: [

@@ -148,17 +148,6 @@ const bitlayer: LayerProject = {
             ],
         },
         {
-            id: "operator",
-            title: "Operator",
-            content: [
-                {
-                    title: "Bitlayer is run by a permissioned validator set",
-                    content:
-                        "Bitlayer is currently run by 21 federated validators securing the network. The operators of these validating nodes are unknown. Although there are claims that these validators would stake Bitlayer's native token, BTR, to secure the network, none of the active validator addresses currently hold any BTR tokens. These nodes are presumably responsible for data availability, block production and finalizing the state of the sidechain.",
-                },
-            ],
-        },
-        {
             id: "sourcecode",
             title: "Source Code",
             content: [
