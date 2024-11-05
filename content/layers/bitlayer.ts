@@ -76,7 +76,7 @@ const bitlayer: LayerProject = {
             tier: RiskFactor.Unverified,
             title: "Bitlayer is operated by a permissioned validator set",
             content:
-                "Bitlayer blocks are currently produced by a permissioned validator set. There are currently 21 validators participating in Bitlayer consensus. Users cannot bypass this operator set if they are censored by the validator set.\n\n🔬We are currently reviewing who operates BitLayer validators.",
+                "Bitlayer blocks are currently produced by a permissioned validator set. There are currently 21 validators participating in Bitlayer consensus. Users cannot bypass this operator set if they are censored by the validator set.\n\n🔬We are currently reviewing BitLayer's validators.",
         },
         {
             category: RiskCategory.FinalityGuarantees,
