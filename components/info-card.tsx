@@ -22,7 +22,9 @@ export default function InfoCard({
                     <div className="flex justify-between items-start">
                         <div className="space-y-1.5">
                             <div>
-                                <p className="text-sm">{subtitle}</p>
+                                <p className="text-base font-medium">
+                                    {subtitle}
+                                </p>
                                 <p className="text-sm text-muted-foreground">
                                     {description}
                                 </p>
