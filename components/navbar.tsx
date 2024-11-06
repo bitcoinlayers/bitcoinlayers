@@ -75,20 +75,23 @@ export default function Navbar(): ReactElement {
     }, [pathname]);
 
     return (
-        <nav className="flex flex-row justify-between items-center w-full fixed min-h-[3rem] lg:px-8 px-4 py-3.5 bg-bg_primary lg:bg-opacity-80 backdrop-blur-sm z-50 pointer-events-auto">
+        <nav className="flex flex-row justify-between items-center w-full sticky top-0 min-h-[3rem] px-4 py-3.5 bg-bg_primary lg:bg-opacity-80 backdrop-blur-sm z-50 pointer-events-auto max-w-5xl mx-auto">
             <Link href="/" onClick={closeMenu}>
-                <div className="w-8 h-8">
+                {/* <div className="w-8 h-8">
                     <Image
                         src="/logo_noborder.png"
                         alt="Logo"
                         width={32}
                         height={32}
                     />
-                </div>
+                </div> */}
+                <h1 className="font-playfair italic font-black text-brand text-5xl text-center">
+                    Bitcoin Layers
+                </h1>
             </Link>
             <div className="flex items-center">
                 <ul className="flex flex-row items-center space-x-4 lg:space-x-8 lg:pr-8 pr-4 text-public text-text_secondary">
-                    {!searchHiddenRoutes.includes(pathname) && (
+                    {/* {!searchHiddenRoutes.includes(pathname) && (
                         <>
                             <li className="md:hidden">
                                 <button
@@ -114,128 +117,25 @@ export default function Navbar(): ReactElement {
                                 />
                             </li>
                         </>
-                    )}
-                    <li className="relative">
-                        <button
-                            onClick={toggleSubmenu}
-                            className="flex items-center"
-                        >
-                            Analysis
-                            <Image
-                                src="/icons/vector.svg"
-                                alt="Submenu Indicator"
-                                width={9}
-                                height={9}
-                                className={`ml-2 transition-transform ${
-                                    submenuOpen ? "" : "rotate-180"
-                                }`}
-                            />
-                        </button>
-                        {submenuOpen && (
-                            <div
-                                ref={submenuRef}
-                                className="absolute top-full lg:left-0 right-0 mt-2 w-[282px] bg-white rounded-xl shadow flex-col justify-start items-start gap-2 inline-flex z-50 p-4"
-                            >
-                                <div className="h-[88px] p-3 rounded-md flex-col justify-start items-start flex hover:bg-blue-100">
-                                    <Link href="/" onClick={closeSubmenu}>
-                                        <div className="text-zinc-800 text-base font-medium leading-normal">
-                                            Layers
-                                        </div>
-                                        <div className="self-stretch text-slate-500 text-sm font-normal leading-tight">
-                                            Overview and risk analysis of
-                                            bitcoin layers.
-                                        </div>
-                                    </Link>
-                                </div>
-                                <div className="h-[88px] p-3 rounded-md flex-col justify-start items-start flex hover:bg-blue-100">
-                                    <Link
-                                        href="/staking"
-                                        onClick={closeSubmenu}
-                                    >
-                                        <div className="text-zinc-800 text-base font-medium leading-normal">
-                                            Staking
-                                        </div>
-                                        <div className="self-stretch text-slate-500 text-sm font-normal leading-tight">
-                                            Overview and risk analysis of
-                                            staking mechanisms.
-                                        </div>
-                                    </Link>
-                                </div>
-                                <div className="h-[88px] p-3 rounded-md flex-col justify-start items-start flex hover:bg-blue-100">
-                                    <Link
-                                        href="/crosschainbtc"
-                                        onClick={closeSubmenu}
-                                    >
-                                        <div className="text-zinc-800 text-base font-medium leading-normal">
-                                            Crosschain BTC
-                                        </div>
-                                        <div className="self-stretch text-slate-500 text-sm font-normal leading-tight">
-                                            Overview and risk analysis of
-                                            crosschain BTC.
-                                        </div>
-                                    </Link>
-                                </div>
-                                <div className="h-[88px] p-3 rounded-md flex-col justify-start items-start flex hover:bg-blue-100">
-                                    <Link href="/ecash" onClick={closeSubmenu}>
-                                        <div className="text-zinc-800 text-base font-medium leading-normal">
-                                            Ecash
-                                        </div>
-                                        <div className="self-stretch text-slate-500 text-sm font-normal leading-tight">
-                                            Overview and risk analysis of ecash
-                                            infrastructure.
-                                        </div>
-                                    </Link>
-                                </div>
-                                <div className="h-[88px] p-3 rounded-md flex-col justify-start items-start flex hover:bg-blue-100">
-                                    <Link
-                                        href="/bitcoinonly"
-                                        onClick={closeSubmenu}
-                                    >
-                                        <div className="text-zinc-800 text-base font-medium leading-normal">
-                                            Bitcoin Only
-                                        </div>
-                                        <div className="self-stretch text-slate-500 text-sm font-normal leading-tight">
-                                            Layers and infrastructure that only
-                                            use BTC.
-                                        </div>
-                                    </Link>
-                                </div>
-                            </div>
-                        )}
-                    </li>
+                    )} */}
                     <li className="hidden lg:block">
-                        <Link href="/metrics" onClick={closeMenu}>
-                            Metrics
+                        <Link href="/assessments" onClick={closeMenu}>
+                            Assessments
                         </Link>
                     </li>
                     <li className="hidden lg:block">
-                        <Link href="/glossary" onClick={closeMenu}>
-                            Glossary
+                        <Link href="/analytics" onClick={closeMenu}>
+                            Analytics
                         </Link>
                     </li>
                     <li className="hidden lg:block">
-                        <Link href="/faq" onClick={closeMenu}>
-                            FAQ
+                        <Link href="/research" onClick={closeMenu}>
+                            Research
                         </Link>
                     </li>
                     <li className="hidden lg:block">
-                        <Link href="/methodology" onClick={closeMenu}>
-                            Methodology
-                        </Link>
-                    </li>
-                    <li className="hidden lg:block">
-                        <Link
-                            href="https://www.lxresearch.co/"
-                            target="_blank"
-                            className="flex items-center gap-2"
-                        >
-                            Blog
-                            <Image
-                                src="/icons/external.png"
-                                alt="External Link"
-                                width={10}
-                                height={10}
-                            />
+                        <Link href="/dev-center" onClick={closeMenu}>
+                            Dev Center
                         </Link>
                     </li>
                 </ul>
@@ -258,54 +158,38 @@ export default function Navbar(): ReactElement {
                                     <ul className="flex flex-col items-start gap-y-6">
                                         <li>
                                             <Link
-                                                href="/metrics"
+                                                href="/assessments"
                                                 className="text-black"
                                                 onClick={closeSheet}
                                             >
-                                                Metrics
+                                                Assessments
                                             </Link>
                                         </li>
                                         <li>
                                             <Link
-                                                href="/glossary"
+                                                href="/analytics"
                                                 className="text-black"
                                                 onClick={closeSheet}
                                             >
-                                                Glossary
+                                                Analytics
                                             </Link>
                                         </li>
                                         <li>
                                             <Link
-                                                href="/faq"
+                                                href="/research"
                                                 className="text-black"
                                                 onClick={closeSheet}
                                             >
-                                                FAQ
+                                                Research
                                             </Link>
                                         </li>
                                         <li>
                                             <Link
-                                                href="/methodology"
+                                                href="/dev-center"
                                                 className="text-black"
                                                 onClick={closeSheet}
                                             >
-                                                Methodology
-                                            </Link>
-                                        </li>
-                                        <li>
-                                            <Link
-                                                className="text-black flex items-center gap-1"
-                                                href="https://www.lxresearch.co/"
-                                                target="_blank"
-                                                onClick={closeSheet}
-                                            >
-                                                Blog
-                                                <Image
-                                                    src="/icons/external.png"
-                                                    alt="External Link"
-                                                    width={10}
-                                                    height={10}
-                                                />
+                                                Dev Center
                                             </Link>
                                         </li>
                                     </ul>
@@ -315,14 +199,14 @@ export default function Navbar(): ReactElement {
                     </SheetContent>
                 </Sheet>
             </div>
-            {searchOpen && !searchHiddenRoutes.includes(pathname) && (
+            {/* {searchOpen && !searchHiddenRoutes.includes(pathname) && (
                 <div
                     ref={searchRef}
                     className="absolute top-full left-0 right-0 bg-bg_primary p-4 shadow-md md:hidden"
                 >
                     <SearchBlock />
                 </div>
-            )}
+            )} */}
         </nav>
     );
 }

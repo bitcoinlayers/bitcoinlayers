@@ -7,12 +7,14 @@ export default function LayersAggregatedTVLChart() {
     const { data } = useGetBalancesHistoricalBylayerBitcoinonly();
     return (
         <AggregatedTVLChart
-            title="BTC Locked"
-            description="Total amount of BTC locked in protocols listed on Bitcoin Layers"
+            title="Total Value Locked"
+            description="Total amount of BTC locked on bitcoin layers"
             data={data}
             itemNameKey="layer_name"
             chartQueryParam="layer-chart"
             rangeQueryParam="layer-range"
+            showDivisionButtons={false}
+            showLegend={false}
         />
     );
 }

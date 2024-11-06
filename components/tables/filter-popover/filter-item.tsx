@@ -3,16 +3,16 @@ import { cn } from "@/lib/utils";
 
 interface FilterItemProps {
     value: string;
-    filterType: 'type' | 'status';
+    filterType: "type" | "status";
     selectedFilters: string[];
     setSelectedFilters: React.Dispatch<React.SetStateAction<string[]>>;
 }
 
-const FilterItem = ({ 
-    value, 
-    filterType, 
-    selectedFilters, 
-    setSelectedFilters 
+const FilterItem = ({
+    value,
+    filterType,
+    selectedFilters,
+    setSelectedFilters,
 }: FilterItemProps) => (
     <div
         className={cn(

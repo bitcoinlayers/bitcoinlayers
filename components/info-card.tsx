@@ -1,0 +1,38 @@
+import Link from "next/link";
+import { Card, CardContent } from "@/components/ui/card";
+import { BitcoinIcon } from "lucide-react";
+
+interface Props {
+    title: string;
+    subtitle: string;
+    description: string;
+    href: string;
+}
+
+export default function InfoCard({
+    title,
+    subtitle,
+    description,
+    href,
+}: Props) {
+    return (
+        <Link href={href}>
+            <Card className="h-full hover:shadow-md transition-shadow">
+                <CardContent className="p-4">
+                    <div className="flex justify-between items-start">
+                        <div className="space-y-1.5">
+                            <div>
+                                <p className="text-sm">{subtitle}</p>
+                                <p className="text-sm text-muted-foreground">
+                                    {description}
+                                </p>
+                            </div>
+                            <h3 className="text-xl font-semibold">{title}</h3>
+                        </div>
+                        <BitcoinIcon className="h-4" />
+                    </div>
+                </CardContent>
+            </Card>
+        </Link>
+    );
+}

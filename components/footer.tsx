@@ -53,8 +53,8 @@ const SectionItemExternal = ({
 );
 
 const FooterBottom = () => (
-    <div className="w-full lg:h-[120px] h-[144px] lg:px-16 lg:py-12 bg-slate-50 flex flex-col lg:justify-start justify-center items-center lg:gap-16">
-        <div className="lg:h-6 px-8 flex flex-col justify-start items-start gap-16 w-full">
+    <div className="w-full lg:h-[120px] h-[144px] lg:py-12 bg-slate-50 flex flex-col lg:justify-start justify-center items-center lg:gap-16">
+        <div className="lg:h-6 px-4 flex flex-col justify-start items-start gap-16 w-full max-w-5xl">
             <div className="w-full flex lg:flex-row flex-col-reverse lg:justify-between items-center gap-y-3">
                 <div className="text-slate-500 text-base font-normal leading-normal">
                     Bitcoin Layers 2024 • MIT license
@@ -95,16 +95,16 @@ const FooterBottom = () => (
 export default function Footer(): ReactElement {
     return (
         <footer className="w-full">
-            <div className="max-w-6xl mx-auto flex flex-col justify-start items-start">
-                <div className="self-stretch lg:h-[404px] lg:px-16 px-6 lg:pt-16 pt-6 lg:pb-12 flex flex-col justify-start items-center gap-16">
+            <div className="max-w-5xl mx-auto flex flex-col justify-start items-start">
+                <div className="self-stretch lg:h-[404px] px-4 lg:pt-16 pt-6 lg:pb-12 flex flex-col justify-start items-center gap-16">
                     <div className="flex flex-col w-full justify-start items-center lg:gap-16 gap-8">
                         <div className="self-stretch h-[0px] bg-slate-100 flex flex-col justify-start items-center gap-2">
                             <div className="self-stretch h-[0px] border border-slate-300"></div>
                         </div>
-                        <div className="self-stretch lg:flex justify-between lg:items-start">
+                        <div className="self-stretch lg:flex justify-between lg:items-start space-y-8">
                             <div className="grow flex flex-col justify-start items-start gap-8">
                                 <div className="self-stretch h-20 flex flex-col lg:justify-start items-start gap-4 justify-center pb-6 lg:pb-0">
-                                    <div className="w-8 h-8 rounded-[21.33px] flex justify-center items-center lg:self-center">
+                                    <div className="w-8 h-8 rounded-[21.33px] flex">
                                         <Image
                                             src="/logo_noborder.png"
                                             alt="Logo"
@@ -112,7 +112,7 @@ export default function Footer(): ReactElement {
                                             height={32}
                                         />
                                     </div>
-                                    <div className="self-stretch text-slate-500 text-xs lg:text-center text-left">
+                                    <div className="self-stretch text-slate-500 text-xs text-left">
                                         Not every bitcoin layer is equal.
                                         <br /> Learn the difference.
                                     </div>

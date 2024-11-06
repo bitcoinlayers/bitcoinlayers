@@ -1,10 +1,10 @@
 import { allLayers } from "@/util/layer_index";
-import Hero from "@/components/hero";
-import { Type } from "@/content/props";
 import LayerTable from "@/components/tables/layer-table";
-import { LayerProject } from "@/content/props";
 import LayersAggregatedTVLChart from "@/components/charts/aggregated-tvl/layers";
 import ViewToggleGroup from "@/components/layer/view-toggle-group";
+import StatCardGrid from "@/components/stat-card-grid";
+import CtaCard from "@/components/cta-card";
+import InfoCardGrid from "@/components/info-card-grid";
 
 export default function Home() {
     const sortedLayers = allLayers.sort((a, b) =>
@@ -14,8 +14,6 @@ export default function Home() {
     const typeFilters = [
         ...new Set(sortedLayers.map((layer) => layer.entityType)),
     ];
-
-    const statusFilters = [...new Set(sortedLayers.map((layer) => layer.live))];
 
     const layerHeaders = [
         {
@@ -45,20 +43,20 @@ export default function Home() {
     ];
 
     return (
-        <div className="mx-auto">
-            <Hero
-                title="Layers"
-                description="Not every bitcoin layer is made equal."
-            />
-            <div className="mb-4 w-full max-w-5xl mx-auto">
-                <ViewToggleGroup data={allLayers} headers={layerHeaders} />
-            </div>
-            {/* <div className="mb-12 w-full lg:max-w-5xl mx-auto">
-                <LayersAggregatedTVLChart />
-            </div>
+        <div className="mx-auto space-y-8">
+            <ViewToggleGroup />
+            <LayersAggregatedTVLChart />
+            <StatCardGrid />
             <div className="lg:flex mb-4 justify-center w-full lg:max-w-5xl mx-auto">
                 <LayerTable data={allLayers} headers={layerHeaders} />
-            </div> */}
+            </div>
+            <CtaCard
+                title="Looking to build on Bitcoin?"
+                description="Get in touch with our team to learn where to deploy"
+                ctaText="Contact us"
+                url="/#"
+            />
+            <InfoCardGrid />
         </div>
     );
 }

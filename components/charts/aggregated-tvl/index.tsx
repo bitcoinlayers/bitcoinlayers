@@ -38,6 +38,8 @@ interface ChartProps {
     itemNameKey: string; // 'infra_name' or 'layer_name'
     chartQueryParam?: string;
     rangeQueryParam?: string;
+    showDivisionButtons?: boolean;
+    showLegend?: boolean;
 }
 
 export default function AggregatedTVLChart({
@@ -47,9 +49,11 @@ export default function AggregatedTVLChart({
     itemNameKey,
     chartQueryParam = "chart",
     rangeQueryParam = "range",
+    showDivisionButtons = true,
+    showLegend = true,
 }: ChartProps) {
     const [chartType, setChartType] = useQueryState(chartQueryParam, {
-        defaultValue: "separate",
+        defaultValue: "combined",
     });
     const [dateRange, setDateRange] = useQueryState(rangeQueryParam, {
         defaultValue: "1y",
@@ -112,7 +116,7 @@ export default function AggregatedTVLChart({
     }, [chartType, items]);
 
     return (
-        <Card className="bg-background mx-6 watermark-agg">
+        <Card className="bg-background">
             <CardHeader className="flex flex-col lg:flex-row flex-wrap lg:items-center justify-between border-b mb-4">
                 <div>
                     <CardTitle className="flex font-normal items-center gap-2">
@@ -123,31 +127,33 @@ export default function AggregatedTVLChart({
                     </CardDescription>
                 </div>
                 <div className="flex flex-col lg:flex-row items-start lg:items-center justify-center lg:space-x-2 space-y-2 lg:space-y-0 pt-2 lg:pt-0">
-                    <ToggleGroup
-                        className="space-x-1"
-                        type="single"
-                        value={chartType}
-                        onValueChange={(value) => {
-                            if (value && value !== chartType) {
-                                setChartType(value);
-                            }
-                        }}
-                    >
-                        <ToggleGroupItem
-                            value="combined"
-                            className="border font-normal rounded-full px-3 lg:px-4 text-xs lg:text-sm"
-                            size="sm"
+                    {showDivisionButtons && (
+                        <ToggleGroup
+                            className="space-x-1"
+                            type="single"
+                            value={chartType}
+                            onValueChange={(value) => {
+                                if (value && value !== chartType) {
+                                    setChartType(value);
+                                }
+                            }}
                         >
-                            Combined
-                        </ToggleGroupItem>
-                        <ToggleGroupItem
-                            value="separate"
-                            className="border rounded-full px-3 lg:px-4 text-xs lg:text-sm font-normal"
-                            size="sm"
-                        >
-                            Separate
-                        </ToggleGroupItem>
-                    </ToggleGroup>
+                            <ToggleGroupItem
+                                value="combined"
+                                className="border font-normal rounded-full px-3 lg:px-4 text-xs lg:text-sm"
+                                size="sm"
+                            >
+                                Combined
+                            </ToggleGroupItem>
+                            <ToggleGroupItem
+                                value="separate"
+                                className="border rounded-full px-3 lg:px-4 text-xs lg:text-sm font-normal"
+                                size="sm"
+                            >
+                                Separate
+                            </ToggleGroupItem>
+                        </ToggleGroup>
+                    )}
                     <div className="block">
                         <Select value={dateRange} onValueChange={setDateRange}>
                             <SelectTrigger className="w-[140px] lg:w-[160px] rounded-full px-3 lg:px-4 text-xs lg:text-sm">
@@ -165,7 +171,7 @@ export default function AggregatedTVLChart({
                 </div>
             </CardHeader>
             <CardContent>
-                <ChartContainer config={chartConfig} className="h-96 w-full">
+                <ChartContainer config={chartConfig} className="h-80 w-full">
                     <AreaChart
                         data={filterDataByDateRange(processedData)}
                         margin={{
@@ -223,11 +229,13 @@ export default function AggregatedTVLChart({
                                 stackId="1"
                             />
                         ))}
-                        <ChartLegend
-                            content={
-                                <ChartLegendContent className="flex flex-wrap" />
-                            }
-                        />
+                        {showLegend && (
+                            <ChartLegend
+                                content={
+                                    <ChartLegendContent className="flex flex-wrap" />
+                                }
+                            />
+                        )}
                     </AreaChart>
                 </ChartContainer>
             </CardContent>
