@@ -7,6 +7,7 @@ interface Props {
     subtitle: string;
     description: string;
     href: string;
+    isExternal?: boolean;
 }
 
 export default function InfoCard({
@@ -14,9 +15,10 @@ export default function InfoCard({
     subtitle,
     description,
     href,
+    isExternal,
 }: Props) {
     return (
-        <Link href={href}>
+        <Link href={href} target={isExternal ? "_blank" : undefined}>
             <Card className="h-full hover:shadow-md transition-shadow">
                 <CardContent className="p-4">
                     <div className="flex justify-between items-start">

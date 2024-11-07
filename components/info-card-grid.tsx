@@ -7,19 +7,21 @@ export default function InfoCardGrid() {
                 title="Methodology"
                 subtitle="Review the standards"
                 description="we set for layered protocols"
-                href="#methodology"
+                href="/methodology"
             />
             <InfoCard
                 title="Community chats"
                 subtitle="Join the discussion"
                 description="with other layer enjoyers"
-                href="#community"
+                href="https://t.me/+8rv-1I2gkmQ4ZmJh"
+                isExternal
             />
             <InfoCard
                 title="Research & media"
                 subtitle="Read the latest"
                 description="from our R&D team"
-                href="#research"
+                href="https://www.lxresearch.co"
+                isExternal
             />
         </div>
     );

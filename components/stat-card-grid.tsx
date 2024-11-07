@@ -2,10 +2,11 @@
 
 import { BitcoinIcon, ArrowLeftRightIcon } from "lucide-react";
 import StatCard from "@/components/stat-card";
-import useGetBalancesHistoricalBylayerBitcoinonly from "@/hooks/use-get-layertvl-historical-bitcoinonly";
 import useGetLayertvlCurrentAll from "@/hooks/use-get-layertvl-current-all";
+import { useQueryState } from "nuqs";
 
 export default function StatCardGrid() {
+    const [view] = useQueryState("view");
     const { data } = useGetLayertvlCurrentAll();
 
     const totalTVL =
@@ -15,32 +16,61 @@ export default function StatCardGrid() {
         maximumFractionDigits: 2,
     }).format(totalTVL);
 
+    const sharedTitles = {
+        tvlTitle: "Total Value Locked",
+        txTitle: "Total transactions",
+        feeTitle: "Avg Transaction Fee",
+        addrTitle: "Active addressess",
+    };
+
+    const content = (() => {
+        switch (view) {
+            case "wrappers":
+                return {
+                    ...sharedTitles,
+                    tvlSubtitle: "in wrapped BTC tokens",
+                    txSubtitle: "using wrapped BTC tokens",
+                    feeSubtitle: "paid for wrapped BTC tx's",
+                    addrSubtitle: "holding wrapped BTC tokens",
+                };
+            case "layers":
+            default:
+                return {
+                    ...sharedTitles,
+                    tvlSubtitle: "in sidechain & L2 protocols",
+                    txSubtitle: "on layered protocols",
+                    feeSubtitle: "paid for layer transactions",
+                    addrSubtitle: "on layered protocols",
+                };
+        }
+    })();
+
     return (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             <StatCard
-                title="Total Value Locked"
-                subtitle="in sidechain & L2 protocols"
-                value={formattedTVL}
+                title={content.tvlTitle}
+                subtitle={content.tvlSubtitle}
+                isComingSoon
                 change={0}
                 symbol={<BitcoinIcon className="h-4" />}
             />
             <StatCard
-                title="Total transactions"
-                subtitle="on layered protocols"
+                title={content.txTitle}
+                subtitle={content.txSubtitle}
                 isComingSoon
                 change={0}
                 symbol={<ArrowLeftRightIcon className="h-4" />}
             />
             <StatCard
-                title="Avg Transaction Fee"
-                subtitle="paid for layer transactions"
+                title={content.feeTitle}
+                subtitle={content.feeSubtitle}
                 isComingSoon
                 change={0}
                 symbol={<BitcoinIcon className="h-4" />}
             />
             <StatCard
-                title="Active addressess"
-                subtitle="on layered protocols"
+                title={content.addrTitle}
+                subtitle={content.addrSubtitle}
                 isComingSoon
                 change={0}
                 symbol={<BitcoinIcon className="h-4" />}

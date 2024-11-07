@@ -12,7 +12,8 @@ export default function BridgesAggregatedTVLChart() {
             data={data}
             itemNameKey="infra_name"
             chartQueryParam="bridge-chart"
-            rangeQueryParam="bridge-range"
+            showDivisionButtons={false}
+            showLegend={false}
         />
     );
 }

@@ -171,14 +171,14 @@ export default function AggregatedTVLChart({
                 </div>
             </CardHeader>
             <CardContent>
-                <ChartContainer config={chartConfig} className="h-80 w-full">
+                <ChartContainer config={chartConfig} className="h-64 w-full">
                     <AreaChart
                         data={filterDataByDateRange(processedData)}
                         margin={{
                             left: 0,
                             right: 0,
-                            top: 20,
-                            bottom: 20,
+                            top: 16,
+                            bottom: 0,
                         }}
                     >
                         <CartesianGrid vertical={false} />

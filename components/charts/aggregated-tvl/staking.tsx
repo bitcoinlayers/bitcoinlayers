@@ -13,7 +13,8 @@ export default function StakingAggregatedTVLChart() {
             data={data}
             itemNameKey="infra_name"
             chartQueryParam="staking-chart"
-            rangeQueryParam="staking-range"
+            showDivisionButtons={false}
+            showLegend={false}
         />
     );
 }

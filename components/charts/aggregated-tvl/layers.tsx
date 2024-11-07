@@ -12,7 +12,6 @@ export default function LayersAggregatedTVLChart() {
             data={data}
             itemNameKey="layer_name"
             chartQueryParam="layer-chart"
-            rangeQueryParam="layer-range"
             showDivisionButtons={false}
             showLegend={false}
         />

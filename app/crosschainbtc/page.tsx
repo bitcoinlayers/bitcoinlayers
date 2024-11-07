@@ -39,7 +39,7 @@ export default function BridgesPage() {
 
     return (
         <div className="mx-auto">
-            <UnderDevelopmentBanner />
+            {/* <UnderDevelopmentBanner /> */}
             <Hero
                 title="Crosschain"
                 description="Not all crosschain BTC is made equal."

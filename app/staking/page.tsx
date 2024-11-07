@@ -36,7 +36,7 @@ export default function StakingPage() {
 
     return (
         <div className="mx-auto">
-            <UnderDevelopmentBanner title="The Staking module of Bitcoin Layers is under development." />
+            {/* <UnderDevelopmentBanner title="The Staking module of Bitcoin Layers is under development." /> */}
             <Hero
                 title="Staking"
                 description="Not every bitcoin staking protocol is equal."

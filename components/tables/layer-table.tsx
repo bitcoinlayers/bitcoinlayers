@@ -220,7 +220,7 @@ const LayerTable = ({ data, headers }: Props) => {
             <CardHeader className="flex flex-col items-stretch space-y-0 border-b p-0 sm:flex-row border-none">
                 <div className="flex flex-1 flex-col justify-center gap-1 px-6 py-5 sm:py-6">
                     <CardTitle className="flex">
-                        <LayersIcon className="mr-3 !font-normal" /> Layers
+                        <LayersIcon className="mr-3" /> Layers
                     </CardTitle>
                     <CardDescription>
                         Learn the tradeoffs for different bitcoin layers
