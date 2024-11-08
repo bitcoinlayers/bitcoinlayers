@@ -20,7 +20,7 @@ const bob: LayerProject = {
     riskFactors: [
         RiskFactor.Unverified,
         RiskFactor.Medium,
-        RiskFactor.Medium,
+        RiskFactor.High,
         RiskFactor.Medium,
     ],
     btcLocked: 974,
