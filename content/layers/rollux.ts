@@ -22,7 +22,7 @@ const rollux: LayerProject = {
     riskFactors: [
         RiskFactor.Unverified,
         RiskFactor.Medium,
-        RiskFactor.Medium,
+        RiskFactor.High,
         RiskFactor.Medium,
     ],
     btcLocked: 10,
