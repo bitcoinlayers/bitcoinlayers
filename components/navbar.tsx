@@ -75,7 +75,7 @@ export default function Navbar(): ReactElement {
     }, [pathname]);
 
     return (
-        <nav className="flex flex-row justify-between items-center w-full sticky top-0 min-h-[3rem] px-4 py-3.5 bg-bg_primary lg:bg-opacity-80 backdrop-blur-sm z-50 pointer-events-auto max-w-5xl mx-auto">
+        <nav className="flex flex-row justify-between items-center w-full sticky top-0 min-h-[3rem] px-4 py-3.5 bg-background/70 bg-opacity-80 backdrop-blur-sm z-50 pointer-events-auto max-w-5xl mx-auto">
             <Link href="/" onClick={closeMenu}>
                 {/* <div className="w-8 h-8">
                     <Image
@@ -129,7 +129,11 @@ export default function Navbar(): ReactElement {
                         </Link>
                     </li>
                     <li className="hidden lg:block">
-                        <Link href="/research" onClick={closeMenu}>
+                        <Link
+                            href="https://lxresearch.co"
+                            target="_blank"
+                            onClick={closeMenu}
+                        >
                             Research
                         </Link>
                     </li>
@@ -145,8 +149,8 @@ export default function Navbar(): ReactElement {
                             <Image
                                 src="/icons/menu.svg"
                                 alt="menu"
-                                width={20}
-                                height={20}
+                                width={28}
+                                height={28}
                             />
                         </button>
                     </SheetTrigger>
@@ -176,7 +180,8 @@ export default function Navbar(): ReactElement {
                                         </li>
                                         <li>
                                             <Link
-                                                href="/research"
+                                                href="https://lxresearch.co"
+                                                target="_blank"
                                                 className="text-black"
                                                 onClick={closeSheet}
                                             >

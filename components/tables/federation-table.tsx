@@ -19,6 +19,7 @@ import {
 import {
     AlignHorizontalSpaceAroundIcon,
     AlignVerticalSpaceAroundIcon,
+    Layers2Icon,
     LayersIcon,
 } from "lucide-react";
 
@@ -192,8 +193,7 @@ const FederationTable = ({ data, headers }: Props) => {
             <CardHeader className="flex flex-col items-stretch space-y-0 border-b p-0 sm:flex-row border-none">
                 <div className="flex flex-1 flex-col justify-center gap-1 px-6 py-5 sm:py-6">
                     <CardTitle className="flex">
-                        <AlignHorizontalSpaceAroundIcon className="mr-3" />{" "}
-                        Wrappers
+                        <Layers2Icon className="mr-3" /> Wrappers
                     </CardTitle>
                     <CardDescription>
                         Learn the tradeoffs for different wrapper projects

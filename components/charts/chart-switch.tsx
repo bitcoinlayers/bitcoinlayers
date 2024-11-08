@@ -1,20 +1,57 @@
 "use client";
 
 import { useQueryState } from "nuqs";
-import LayersAggregatedTVLChart from "@/components/charts/aggregated-tvl/layers";
-import StakingAggregatedTVLChart from "@/components/charts/aggregated-tvl/staking";
-import BridgesAggregatedTVLChart from "@/components/charts/aggregated-tvl/bridges";
+import AggregatedTVLChart from "@/components/charts/aggregated-tvl-chart";
+import useGetBalancesHistoricalBylayerBitcoinonly from "@/hooks/use-get-layertvl-historical-bitcoinonly";
+import useGetInfratvlHistoricalBridge from "@/hooks/use-get-infratvl-historical-bridge";
+import useGetInfratvlHistoricalStaked from "@/hooks/use-get-infratvl-historical-staked";
 
 export default function ChartSwitch() {
     const [view] = useQueryState("view");
 
     switch (view) {
         case "staking":
-            return <StakingAggregatedTVLChart />;
+            return (
+                <AggregatedTVLChart
+                    title="Staking TVL"
+                    description="Total amount of value locked in staking protocols"
+                    itemNameKey="infra_name"
+                    chartQueryParam="staking-chart"
+                    rangeQueryParam="staking-range"
+                    useDataHook={useGetInfratvlHistoricalStaked}
+                    showDivisionButtons={false}
+                    showLegend={false}
+                    chartHeight="h-64"
+                />
+            );
         case "wrappers":
-            return <BridgesAggregatedTVLChart />;
+            return (
+                <AggregatedTVLChart
+                    title="Crosschain BTC TVL"
+                    description="Total amount of value locked in crosschain BTC protocols"
+                    itemNameKey="infra_name"
+                    chartQueryParam="bridge-chart"
+                    rangeQueryParam="bridge-range"
+                    useDataHook={useGetInfratvlHistoricalBridge}
+                    showDivisionButtons={false}
+                    showLegend={false}
+                    chartHeight="h-64"
+                />
+            );
         case "layers":
         default:
-            return <LayersAggregatedTVLChart />;
+            return (
+                <AggregatedTVLChart
+                    title="Total Value Locked"
+                    description="Total amount of BTC locked on bitcoin layers"
+                    itemNameKey="layer_name"
+                    chartQueryParam="layer-chart"
+                    rangeQueryParam="layer-range"
+                    useDataHook={useGetBalancesHistoricalBylayerBitcoinonly}
+                    showDivisionButtons={false}
+                    showLegend={false}
+                    chartHeight="h-64"
+                />
+            );
     }
 }

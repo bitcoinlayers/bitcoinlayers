@@ -1,6 +1,7 @@
 import { allEcash } from "@/util/ecash_index";
 import Hero from "@/components/hero";
 import InfrastructureTable from "@/components/tables/infrastructure-table";
+import { CoinsIcon } from "lucide-react";
 
 export default function Home() {
     const sortedInfrastructures = allEcash.sort((a, b) =>
@@ -42,6 +43,9 @@ export default function Home() {
                 <InfrastructureTable
                     data={sortedInfrastructures}
                     headers={infrastructureHeaders}
+                    title="Ecash"
+                    description="Learn the tradeoffs for different ecash projects"
+                    icon={<CoinsIcon className="mr-3" />}
                 />
             </div>
         </div>

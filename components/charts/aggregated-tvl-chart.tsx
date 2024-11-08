@@ -25,6 +25,8 @@ import {
 } from "@/components/ui/select";
 import { useQueryState } from "nuqs";
 import { useMemo, useCallback } from "react";
+import { UseQueryResult } from "@tanstack/react-query";
+import { cn } from "@/lib/utils";
 
 interface ProcessedData {
     date: string;
@@ -34,35 +36,55 @@ interface ProcessedData {
 interface ChartProps {
     title: string;
     description: string;
-    data: any[] | undefined;
-    itemNameKey: string; // 'infra_name' or 'layer_name'
+    useDataHook: (params?: { queryString: string }) => UseQueryResult<
+        Partial<{
+            date: string;
+            amount: number;
+            layer_name?: string;
+            infra_name?: string;
+        }>[],
+        Error
+    >;
+    itemNameKey: "layer_name" | "infra_name";
     chartQueryParam?: string;
     rangeQueryParam?: string;
     showDivisionButtons?: boolean;
+    divisionDefaultValue?: "combined" | "separate";
     showLegend?: boolean;
+    chartHeight?: string;
 }
 
 export default function AggregatedTVLChart({
     title,
     description,
-    data,
+    useDataHook,
     itemNameKey,
     chartQueryParam = "chart",
     rangeQueryParam = "range",
     showDivisionButtons = true,
+    divisionDefaultValue = "combined",
     showLegend = true,
+    chartHeight = "h-96",
 }: ChartProps) {
     const [chartType, setChartType] = useQueryState(chartQueryParam, {
-        defaultValue: "combined",
+        defaultValue: divisionDefaultValue,
     });
     const [dateRange, setDateRange] = useQueryState(rangeQueryParam, {
         defaultValue: "1y",
     });
 
+    const { data } = useDataHook();
+
     const items =
         chartType === "combined"
             ? ["BTC"]
-            : [...new Set(data?.map((item) => item[itemNameKey]) || [])];
+            : [
+                  ...new Set(
+                      data
+                          ?.map((item) => item[itemNameKey])
+                          .filter((item): item is string => !!item) || [],
+                  ),
+              ];
 
     const processedData = useMemo(() => {
         if (!data) return [];
@@ -71,12 +93,18 @@ export default function AggregatedTVLChart({
             const existingEntry = acc.find(
                 (entry) => entry.date === itemDateUTC,
             );
-            const key = chartType === "combined" ? "BTC" : item[itemNameKey];
+            const key =
+                chartType === "combined"
+                    ? "BTC"
+                    : (item[itemNameKey] as string) ?? "unknown";
             if (existingEntry) {
                 existingEntry[key] =
-                    ((existingEntry[key] as number) || 0) + item.amount;
+                    ((existingEntry[key] as number) || 0) + (item.amount ?? 0);
             } else {
-                acc.push({ date: itemDateUTC, [key]: item.amount });
+                acc.push({
+                    date: itemDateUTC as string,
+                    [key]: item.amount ?? 0,
+                });
             }
             return acc;
         }, []);
@@ -109,7 +137,7 @@ export default function AggregatedTVLChart({
                       item,
                       {
                           label: item,
-                          color: `hsl(var(--chart-${item.toLowerCase().replace(/\s+/g, "-")}))`,
+                          color: `hsl(var(--chart-${item?.toLowerCase().replace(/\s+/g, "-")}))`,
                       },
                   ]),
               );
@@ -171,7 +199,10 @@ export default function AggregatedTVLChart({
                 </div>
             </CardHeader>
             <CardContent>
-                <ChartContainer config={chartConfig} className="h-64 w-full">
+                <ChartContainer
+                    config={chartConfig}
+                    className={cn("w-full", chartHeight)}
+                >
                     <AreaChart
                         data={filterDataByDateRange(processedData)}
                         margin={{

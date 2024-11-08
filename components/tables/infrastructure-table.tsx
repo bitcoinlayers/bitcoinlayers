@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, ReactNode, Component } from "react";
 import Image from "next/image";
 import TableHeader from "@/components/tables/tableHeader";
 import { MobileView, isMobile } from "react-device-detect";
@@ -31,6 +31,9 @@ interface Props {
         filterOptions?: string[];
         mobileLabel: string;
     }[];
+    title?: string;
+    description?: string;
+    icon?: ReactNode;
 }
 
 const InfrastructureImage = ({
@@ -57,7 +60,13 @@ const InfrastructureImage = ({
     );
 };
 
-const InfrastructureTable = ({ data, headers }: Props) => {
+const InfrastructureTable = ({
+    data,
+    headers,
+    title,
+    description,
+    icon,
+}: Props) => {
     const [status, setStatus] = useQueryState("status", {
         defaultValue: "mainnet",
     });
@@ -151,11 +160,12 @@ const InfrastructureTable = ({ data, headers }: Props) => {
             <CardHeader className="flex flex-col items-stretch space-y-0 border-b p-0 sm:flex-row border-none">
                 <div className="flex flex-1 flex-col justify-center gap-1 px-6 py-5 sm:py-6">
                     <CardTitle className="flex">
-                        <LayersIcon className="mr-3" /> Infrastructure
+                        {icon || <LayersIcon className="mr-3" />}{" "}
+                        {title || "Infrastructure"}
                     </CardTitle>
                     <CardDescription>
-                        Learn the tradeoffs for different infrastructure
-                        projects
+                        {description ||
+                            "Learn the tradeoffs for different infrastructure projects"}
                     </CardDescription>
                 </div>
                 <div className="flex">

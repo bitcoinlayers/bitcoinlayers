@@ -8,7 +8,7 @@ import TableSwitch from "@/components/tables/table-switch";
 export default function Home() {
     return (
         <div className="mx-auto space-y-8">
-            <ViewToggleGroup />
+            <ViewToggleGroup showAll={false} />
             <ChartSwitch />
             <StatCardGrid />
             <TableSwitch />

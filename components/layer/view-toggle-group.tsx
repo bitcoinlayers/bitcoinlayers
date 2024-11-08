@@ -9,15 +9,19 @@ const viewOptions = [
     { value: "wrappers", label: "Wrappers" },
 ];
 
-const ViewToggleGroup = () => {
+const ViewToggleGroup = ({ showAll }: { showAll: boolean }) => {
     const [view, setView] = useQueryState("view", {
-        defaultValue: viewOptions[0].value,
+        defaultValue: showAll ? "all" : "layers",
     });
+
+    const displayOptions = showAll
+        ? [{ value: "all", label: "All" }, ...viewOptions]
+        : viewOptions;
 
     return (
         <div className="flex justify-start relative z-20">
             <div className="flex gap-2">
-                {viewOptions.map((option) => {
+                {displayOptions.map((option) => {
                     const isActive = view === option.value;
                     return (
                         <div
