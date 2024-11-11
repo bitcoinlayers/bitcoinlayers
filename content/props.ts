@@ -8,6 +8,9 @@ export enum LiveStatus {
     Testnet = "Testnet",
     Announced = "Announced",
     Proposed = "Proposed",
+    Beta = "Beta",
+    Deposits = "Deposits Live",
+
 }
 
 export enum Purpose {
