@@ -108,6 +108,8 @@ export enum AssessmentCategory {
     KeyStorage = "Key Storage",
     CensorshipResistance = "Censorship Resistance",
     UserRisk = "User Risk",
+    ThirdPartyStaking = "Third Party Staking",
+    SelfCustodialStaking = "Self-custodial Staking",
 }
 
 export interface AssessmentSection {
