@@ -41,16 +41,16 @@ const solvlst: InfrastructureProject = {
         },
     ],
     description:
-        "Solv offers a liquid staking protocol that enables users to deposit SolvBTC into smart contracts on EVM-base chains. A staking provider will then delegate this stake on their behalf to a Babylon Finality Provider.",
+        "Solv LSTs offer a mechanism that enables users to deposit SolvBTC into smart contracts on EVM-based chains. Users receive a token representing BTC deposited on Babylon in exchange for their wrapped BTC token.",
     sections: [
         {
-            id: "apy",
-            title: "How APY is determined",
+            id: "Economics",
+            title: "Economics",
             content: [
                 {
-                    title: "Rewards from Bitcoin staking is determined by the Bitcoin Finality Provider in the Babylon protocol",
-                    content:
-                        "The custodians who delegate stake on users’ behalf may also determine a rate at which they redistribute rewards back to users.",
+                title: "Incentive model",
+                content:
+                        "🔬 Babylon’s staking is not currently securing any PoS chains. Rewards are only issued through points. Once live, we will review Babylon’s incentive and issuance mechanism.",
                 },
             ],
         },
@@ -83,7 +83,7 @@ const solvlst: InfrastructureProject = {
             tier: "",
             title: "Bitcoin assets used to back Solv LSTs are custodied by institutional providers",
             content:
-                "Five entities proposedly custody the bitcoin assets backing Solv LST tokens. These entities are Antalpha, Cobo, Ceffu, Fireblocks and the Solv Guard. These entities are known as Guardians in the [Solv application](https://app.solv.finance/staking).\n\nCeffu and Cobo are the custodians for funds that are staked with Babylon.",
+                "Five entities proposedly custody the bitcoin assets backing Solv LST tokens. These entities are Antalpha, Cobo, Ceffu, Fireblocks and the Solv Guard. These entities are known as Guardians in the [Solv application](https://app.solv.finance/staking).\n\nCeffu and Cobo are the custodians for funds that are staked with Babylon.\n\n[Source](https://docs.solv.finance/staking-abstraction-layer-sal/the-ecological-view)",
         },
         {
             category: AssessmentCategory.StakingType,
@@ -91,23 +91,15 @@ const solvlst: InfrastructureProject = {
             tier: "",
             title: "Stake is delegated to Babylon Finality Providers via Ceffu and Cobo",
             content:
-                "When a user exchanges SolvBTC for an LST token, this token is locked in a SolvBTC.LST smart contract on its respective chain. After this token deposit is confirmed, one of the guardians will deposit bitcoin into Babylon on the users behalf. This role is also fulfilled by the Staking Validators.\n\nFor staking on Bitcoin, the custodians who delegate user funds are Ceffu and Cobo. The majority of BTC is delegated to Solv Protocol's Babylon Finality Provider, but there has been delegation to other [operators](https://x.com/SolvProtocol/status/1843768604011143590).\n\nLearn more about delegated staking here.",
+                "When a user exchanges SolvBTC for an LST token, this token is locked in a SolvBTC.LST smart contract on its respective chain. After this token deposit is confirmed, one of the guardians will exchange the wrapped BTC they received, swap it for native BTC, and then deposit bitcoin into Babylon on the users behalf. This role is also fulfilled by the Staking Validators.\n\nFor staking on Bitcoin, the custodians who stake user funds are Ceffu and Cobo. The majority of BTC is delegated to Solv Protocol's Babylon Finality Provider, but there has been delegation to other [operators](https://x.com/SolvProtocol/status/1843768604011143590).\n\nLearn more about delegated staking here.",
         },
         {
             category: AssessmentCategory.SlashingRisk,
             score: 0,
             tier: "",
-            title: "Users' funds can be slashed, or liquidated, in two scenarios",
+            title: "Slashing is not live on Babylon",
             content:
                 "The first is that the Babylon Finality Provider, that their stake is delegated to, is slashed and penalized. This penalty will also be inflicted onto its delegates.\n\nThe second is that the user locks their funds in a vault executing a specific trading strategy and they get liquidated.",
-        },
-        {
-            category: AssessmentCategory.IncentiveModel,
-            score: 0,
-            tier: "",
-            title: "Rewards are distributed to users via third parties",
-            content:
-                "Users can earn rewards through yield (in the form of alternative token issuance) through staking on a PoS chain or earn profits via the vault they supply liquidity for.\n\n⚠️ Users do not earn yield directly in the LST model. They supply tokens for other parties to leverage on their behalf.",
         },
     ],
 };

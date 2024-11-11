@@ -41,17 +41,17 @@ const pump: InfrastructureProject = {
         },
     ],
     description:
-        "Pump is a liquid staking protocol featuring the pumpBTC token. Users deposit wrapped bitcoin tokens into the PumpBTC token contract and a custodian exchanges wrapped bitcoin tokens for native bitcoin, deposits them into Babylon, and then distributes them to users participating in the protocol.",
+        "Pump offers a mechanism that enables users to deposit wrapped BTC into smart contracts on EVM-based chains. Users receive PumpBTC, a token representing staked BTC, on Babylon in exchange for depositing a wrapped BTC token",
     sections: [
         {
-            id: "apy",
+            id: "Economics",
             title: "How APY is determined",
             content: [
                 {
-                    title: "Determined by Babylon Finality Provider",
+                    title: "Incentive model",
                     content:
-                        "APY is determined by the respective Babylon Finality Provider.",
-                },
+                            "🔬 Babylon’s staking is not currently securing any PoS chains. Rewards are only issued through points. Once live, we will review Babylon’s incentive and issuance mechanism.",
+                    },
             ],
         },
         {
@@ -89,15 +89,15 @@ const pump: InfrastructureProject = {
             tier: "",
             title: "PumpBTC works with custodians to store bitcoin assets",
             content:
-                "PumpBTC works with custodial providers to store the BTC that matches PumpBTC deposits. When a user deposits a wrapped bitcoin token into the PumpBTC contract, they are given PumpBTC in return.\n\nThe wrapped bitcoin is locked in the PumpBTC staking contracts. The operator (likely one of the custodians) of the contract then manually exchanges wrapped bitcoin for native bitcoin to stake on Babylon.\n\nCobo and Coinover have been mentioned as custodians participating in Pump.",
+                "PumpBTC works with custodial providers to store the BTC that matches PumpBTC deposits. When a user deposits a wrapped bitcoin token into the PumpBTC contract, they are given PumpBTC in return.\n\nAfter receiving the deposit, an operator (likely one of the custodians) of the contract then manually exchanges wrapped bitcoin for native bitcoin to deposit onto Babylon.\n\nCobo and Coinover have been mentioned as custodians participating in Pump.",
         },
         {
             category: AssessmentCategory.StakingType,
             score: 0,
             tier: "",
-            title: "Custodians delegate users’ stake on their behalf",
+            title: "Custodians deposit users' BTC on their behalf",
             content:
-                "The aforementioned custodians are responsible for delegating BTC on users’ behalf. When they exchange wrapped bitcoin for native bitcoin, they then take the newly acquired bitcoin to stake into the Babylon protocol.",
+                "The aforementioned custodians are responsible for delegating BTC on users’ behalf. When they exchange wrapped bitcoin for native bitcoin, they then take the newly acquired bitcoin to stake into the Babylon protocol.\n\n🔬 Babylon’s staking protocol is not currently live. It is only accepting deposits.",
         },
         {
             category: AssessmentCategory.SlashingRisk,
@@ -105,15 +105,7 @@ const pump: InfrastructureProject = {
             tier: "",
             title: "Slashing is done via Babylon, but is not currently live",
             content:
-                "If the delegated stake is with a validator who is slashed, users can be penalized and lose some of their funds.",
-        },
-        {
-            category: AssessmentCategory.IncentiveModel,
-            score: 0,
-            tier: "",
-            title: "Users delegate to a Babylon Finality Provider who determines how much rewards they receive",
-            content:
-                "Users can receive rewards in the form of another network’s (PoS network on Cosmos) alternative token issuance. The Babylon Finality Provider, to which the stake has been delegated, determines how much of the rewards are shared with PumpBTC holders.\n\n⚠️ Users do not earn yield directly in the LST model. They supply tokens for other parties to leverage on their behalf.",
+                "🔬 Babylon’s staking protocol is not currently live.",
         },
     ],
 };

@@ -45,16 +45,16 @@ const lombard: InfrastructureProject = {
         },
     ],
     description:
-        "Lombard is a liquid staking protocol where a security consortium network stakes assets on users' behalf.",
+        "Lombard offer a mechanism that enables users to deposit BTC into a smart contracts on Ethereum. Users receive a token representing BTC deposited on Babylon in exchange for their wrapped BTC token.",
     sections: [
         {
-            id: "apy",
-            title: "How APY is determined",
+            id: "Economics",
+            title: "Economics",
             content: [
                 {
-                    title: "Dependant on the various application parameters",
-                    content:
-                        "Potential yield opportunities are dependent on the various onchain applications parameters. For stake delegated to Babylon, the APY is determined by the Babylon Finality Provider.",
+                title: "Incentive model",
+                content:
+                        "🔬 Babylon’s staking is not currently securing any PoS chains. Rewards are only issued through points. Once live, we will review Babylon’s incentive and issuance mechanism.",
                 },
             ],
         },
@@ -94,9 +94,9 @@ const lombard: InfrastructureProject = {
             category: AssessmentCategory.StakingType,
             score: 0,
             tier: "",
-            title: "Stake is delegated on users behalf",
+            title: "Deposits are made on users behalf",
             content:
-                "Users delegate their BTC to the Lombard Security Consortium to stake BTC on their behalf. Users select which protocol they want to stake through (e.g. Babylon) and/or the destination chain their LBTC token is minted on (e.g. Ethereum).\n\nShould a user mint LBTC on a destination chain, they can use this token in various onchain protocols. These protocols may pay out rewards based on varying levels of parameters.",
+                "Users trust the Lombard Security Consortium to deposit BTC on their behalf.",
         },
         {
             category: AssessmentCategory.SlashingRisk,
@@ -105,14 +105,6 @@ const lombard: InfrastructureProject = {
             title: "Slashing enforced by Babylon. Slashing on Babylon is not currently live",
             content:
                 "Users’ slashing risk will be a result of PoS validators, whom their tokens are delegated to, getting slashed. Slashing is not currently live on Babylon.",
-        },
-        {
-            category: AssessmentCategory.IncentiveModel,
-            score: 0,
-            tier: "",
-            title: "Rewards are distributed to users via third parties",
-            content:
-                "Users receive points for staking in the Lombard protocol. They additionally have an opportunity to deposit funds into the Lombard “DeFi Vault”.\n\nWhen users deposit their LBTC tokens into the vault, they give up the custody of their LBTC token to the vault. The operators of the vault take this liquidity and apply it to a trading strategy, which can potentially earn users profits.\n\nOver time, should the trading strategy be profitable, users would earn returns based on the amount of LBTC they deposited into the DeFi vault.\n\n⚠️ If a trading strategy was executed poorly, user funds could be at risk for liquidation and loss.\n\n⚠️ Users do not earn yield directly in the LST model. They supply tokens for other parties to leverage on their behalf.",
         },
     ],
 };
