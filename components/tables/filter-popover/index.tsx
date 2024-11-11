@@ -11,7 +11,7 @@ import FilterItem from "./filter-item";
 
 interface Props {
     filterOptions: string[];
-    filterType: "type" | "status";
+    filterType: string;
 }
 
 const FilterPopover = ({ filterOptions, filterType }: Props) => {

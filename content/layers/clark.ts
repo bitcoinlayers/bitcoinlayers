@@ -17,6 +17,7 @@ const clark: LayerProject = {
     entityType: EntityType.Ark,
     live: LiveStatus.Mainnet,
     staking: false,
+    liquidStaking: false,
     bridge: false,
     underReview: true,
     riskFactors: ["", "", "", ""],

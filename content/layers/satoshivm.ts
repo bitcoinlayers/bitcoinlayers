@@ -17,6 +17,7 @@ const satoshivm: LayerProject = {
     entityType: EntityType.PermissionedChain,
     live: LiveStatus.Mainnet,
     staking: false,
+    liquidStaking: false,
     bridge: false,
     underReview: false,
     riskFactors: [

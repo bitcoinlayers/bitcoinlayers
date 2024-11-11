@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import externalIcon from "/public/icons/external.png";
 import type { ReactElement } from "react";
-import { GithubIcon } from "lucide-react";
+import { ExternalLinkIcon } from "lucide-react";
 
 const SectionHeader = ({ children }: { children: React.ReactNode }) => (
     <div className="self-stretch text-primary text-sm font-medium leading-tight">
@@ -42,13 +42,7 @@ const SectionItemExternal = ({
             <div className="text-muted-foreground text-sm font-normal leading-tight">
                 {children}
             </div>
-            <Image
-                src={externalIcon}
-                alt="External Link"
-                width={10}
-                height={10}
-                className="ml-1"
-            />
+            <ExternalLinkIcon className="size-3 text-muted-foreground" />
         </Link>
     </div>
 );

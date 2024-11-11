@@ -14,6 +14,7 @@ const bvm: InfrastructureProject = {
     entityType: EntityType.RaaS,
     live: LiveStatus.Mainnet,
     staking: false,
+    liquidStaking: false,
     bridge: false,
     underReview: true,
     riskFactors: ["", ""],

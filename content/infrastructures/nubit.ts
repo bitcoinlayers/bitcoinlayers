@@ -14,6 +14,7 @@ const nubit: InfrastructureProject = {
     entityType: EntityType.DataAvailability,
     live: LiveStatus.Announced,
     staking: false,
+    liquidStaking: false,
     bridge: false,
     underReview: true,
     riskFactors: ["", ""],

@@ -14,6 +14,7 @@ const babylon: InfrastructureProject = {
     entityType: EntityType.Staking,
     live: LiveStatus.Mainnet,
     staking: true,
+    liquidStaking: false,
     bridge: false,
     underReview: true,
     riskFactors: ["", ""],

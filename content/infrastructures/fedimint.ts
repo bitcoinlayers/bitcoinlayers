@@ -14,6 +14,7 @@ const fedimint: InfrastructureProject = {
     entityType: EntityType.FederationSDK,
     live: LiveStatus.Mainnet,
     staking: false,
+    liquidStaking: false,
     bridge: false,
     underReview: true,
     riskFactors: ["", ""],

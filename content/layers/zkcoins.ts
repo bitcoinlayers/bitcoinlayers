@@ -17,6 +17,7 @@ const zkcoins: LayerProject = {
     entityType: EntityType.zkCSV,
     live: LiveStatus.Announced,
     staking: false,
+    liquidStaking: false,
     bridge: false,
     underReview: true,
     riskFactors: ["", "", "", ""],

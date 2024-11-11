@@ -122,6 +122,7 @@ export interface BaseProject {
     entityType: EntityType;
     live: LiveStatus;
     staking: boolean;
+    liquidStaking: boolean;
     bridge: boolean;
     underReview: boolean;
     riskFactors: (RiskFactor | "")[];

@@ -17,6 +17,7 @@ const mercurylayer: LayerProject = {
     entityType: EntityType.Statechain,
     live: LiveStatus.Mainnet,
     staking: false,
+    liquidStaking: false,
     bridge: false,
     underReview: false,
     riskFactors: [

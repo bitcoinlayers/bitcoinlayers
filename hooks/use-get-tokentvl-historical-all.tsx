@@ -24,9 +24,6 @@ export default function useGetTokentvlHistoricalAll({
                 : "get_tokentvl_historical_all",
         ],
         queryFn: () => {
-            console.log(
-                `${process.env.NEXT_PUBLIC_API_URL}/get_tokentvl_historical_all${queryString ?? ""}`,
-            );
             return fetcher(
                 `${process.env.NEXT_PUBLIC_API_URL}/get_tokentvl_historical_all${queryString ?? ""}`,
             );

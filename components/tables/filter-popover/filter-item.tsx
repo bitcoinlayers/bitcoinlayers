@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 
 interface FilterItemProps {
     value: string;
-    filterType: "type" | "status";
+    filterType: string;
     selectedFilters: string[];
     setSelectedFilters: React.Dispatch<React.SetStateAction<string[]>>;
 }

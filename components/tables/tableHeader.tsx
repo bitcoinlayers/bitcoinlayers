@@ -1,15 +1,6 @@
 import FilterPopover from "./filter-popover";
 import { useQueryState } from "nuqs";
 
-interface TableHeaderProps {
-    headers: {
-        name: string;
-        filterOptions?: string[];
-        showSorting?: boolean;
-    }[];
-    onSort: (header: string) => void;
-}
-
 const getFilterType = (headerName: string): "type" | "status" => {
     switch (headerName.toLowerCase()) {
         case "type":
@@ -21,13 +12,35 @@ const getFilterType = (headerName: string): "type" | "status" => {
     }
 };
 
-const TableHeader: React.FC<TableHeaderProps> = ({ headers, onSort }) => {
+interface TableHeaderProps {
+    headers: {
+        name: string;
+        filterOptions?: string[];
+        showSorting?: boolean;
+        filterQueryParam?: string;
+    }[];
+    onSort: (header: string) => void;
+    sortByQueryParam?: string;
+    sortOrderQueryParam?: string;
+    filterQueryParam?: string;
+}
+
+const TableHeader: React.FC<TableHeaderProps> = ({
+    headers,
+    onSort,
+    sortByQueryParam = "sortBy",
+    sortOrderQueryParam = "sortOrder",
+}) => {
     const handleSort = (header: string) => {
         onSort(header);
     };
 
-    const [sortBy] = useQueryState("sortBy", { defaultValue: "Name" });
-    const [sortOrder] = useQueryState("sortOrder", { defaultValue: "asc" });
+    const [sortBy] = useQueryState(sortByQueryParam, {
+        defaultValue: "Name",
+    });
+    const [sortOrder] = useQueryState(sortOrderQueryParam, {
+        defaultValue: "asc",
+    });
 
     return (
         <thead className="bg-table_header">
@@ -48,9 +61,10 @@ const TableHeader: React.FC<TableHeaderProps> = ({ headers, onSort }) => {
                                     header.filterOptions?.length > 0 && (
                                         <div className="relative mr-2">
                                             <FilterPopover
-                                                filterType={getFilterType(
-                                                    header.name,
-                                                )}
+                                                filterType={
+                                                    header.filterQueryParam ??
+                                                    getFilterType(header.name)
+                                                }
                                                 filterOptions={
                                                     header.filterOptions
                                                 }

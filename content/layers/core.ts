@@ -16,7 +16,8 @@ const core: LayerProject = {
     title: "Core",
     entityType: EntityType.Sidechain,
     live: LiveStatus.Mainnet,
-    staking: false,
+    staking: true,
+    liquidStaking: false,
     bridge: false,
     underReview: false,
     riskFactors: [

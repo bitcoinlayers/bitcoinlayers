@@ -14,6 +14,7 @@ import {
     SheetTitle,
     SheetTrigger,
 } from "./ui/sheet";
+import { ExternalLinkIcon } from "lucide-react";
 
 export default function Navbar(): ReactElement {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -90,7 +91,7 @@ export default function Navbar(): ReactElement {
                 </h1>
             </Link>
             <div className="flex items-center">
-                <ul className="flex flex-row items-center space-x-4 lg:space-x-8 lg:pr-8 pr-4 text-public text-text_secondary">
+                <ul className="flex flex-row items-center space-x-4 lg:space-x-8 lg:pr-8 pr-4 text-public text-muted-foreground">
                     {/* {!searchHiddenRoutes.includes(pathname) && (
                         <>
                             <li className="md:hidden">
@@ -133,13 +134,20 @@ export default function Navbar(): ReactElement {
                             href="https://lxresearch.co"
                             target="_blank"
                             onClick={closeMenu}
+                            className="flex items-center space-x-1.5"
                         >
-                            Research
+                            <div>Research</div>
+                            <ExternalLinkIcon className="size-3" />
                         </Link>
                     </li>
                     <li className="hidden lg:block">
-                        <Link href="/dev-center" onClick={closeMenu}>
-                            Dev Center
+                        <Link
+                            href="/dev-center"
+                            onClick={closeMenu}
+                            className="flex items-center space-x-1.5"
+                        >
+                            <div>Dev Center</div>
+                            <ExternalLinkIcon className="size-3" />
                         </Link>
                     </li>
                 </ul>
@@ -163,7 +171,7 @@ export default function Navbar(): ReactElement {
                                         <li>
                                             <Link
                                                 href="/assessments"
-                                                className="text-black"
+                                                className="text-primary"
                                                 onClick={closeSheet}
                                             >
                                                 Assessments
@@ -172,7 +180,7 @@ export default function Navbar(): ReactElement {
                                         <li>
                                             <Link
                                                 href="/analytics"
-                                                className="text-black"
+                                                className="text-primary"
                                                 onClick={closeSheet}
                                             >
                                                 Analytics
@@ -182,19 +190,21 @@ export default function Navbar(): ReactElement {
                                             <Link
                                                 href="https://lxresearch.co"
                                                 target="_blank"
-                                                className="text-black"
+                                                className="text-primary flex space-x-2 items-center"
                                                 onClick={closeSheet}
                                             >
-                                                Research
+                                                <div>Research</div>
+                                                <ExternalLinkIcon className="size-3 text-primary" />
                                             </Link>
                                         </li>
                                         <li>
                                             <Link
                                                 href="/dev-center"
-                                                className="text-black"
+                                                className="text-primary flex space-x-2 items-center"
                                                 onClick={closeSheet}
                                             >
-                                                Dev Center
+                                                <div>Dev Center</div>
+                                                <ExternalLinkIcon className="size-3 text-primary" />
                                             </Link>
                                         </li>
                                     </ul>

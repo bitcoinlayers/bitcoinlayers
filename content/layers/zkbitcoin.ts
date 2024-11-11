@@ -17,6 +17,7 @@ const zkbitcoin: LayerProject = {
     entityType: EntityType.MPCProtocol,
     live: LiveStatus.Testnet,
     staking: false,
+    liquidStaking: false,
     bridge: false,
     underReview: true,
     riskFactors: ["", "", "", ""],

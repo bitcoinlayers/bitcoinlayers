@@ -15,6 +15,7 @@ const bob: LayerProject = {
     entityType: EntityType.EthereumRollup,
     live: LiveStatus.Mainnet,
     staking: false,
+    liquidStaking: false,
     bridge: false,
     underReview: false,
     riskFactors: [

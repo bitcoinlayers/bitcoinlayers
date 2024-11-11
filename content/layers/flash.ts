@@ -17,6 +17,7 @@ const flash: LayerProject = {
     entityType: EntityType["-"],
     live: LiveStatus.Testnet,
     staking: false,
+    liquidStaking: false,
     bridge: false,
     underReview: true,
     riskFactors: [

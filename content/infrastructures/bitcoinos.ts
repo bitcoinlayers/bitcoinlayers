@@ -15,6 +15,7 @@ const bitcoinos: InfrastructureProject = {
     entityType: EntityType.BitcoinBridge,
     live: LiveStatus.Announced,
     staking: false,
+    liquidStaking: false,
     bridge: true,
     underReview: true,
     riskFactors: ["", ""],

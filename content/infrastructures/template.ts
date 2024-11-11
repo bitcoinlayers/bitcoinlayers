@@ -15,6 +15,7 @@ const template: InfrastructureProject = {
     entityType: EntityType.BitcoinBridge,
     live: LiveStatus.Mainnet,
     staking: false,
+    liquidStaking: false,
     bridge: false,
     underReview: false,
     riskFactors: [RiskFactor.High, RiskFactor.High],

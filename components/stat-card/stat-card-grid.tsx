@@ -2,19 +2,11 @@
 
 import { BitcoinIcon, ArrowLeftRightIcon } from "lucide-react";
 import StatCard from "@/components/stat-card";
-import useGetLayertvlCurrentAll from "@/hooks/use-get-layertvl-current-all";
 import { useQueryState } from "nuqs";
+import LayerTvlStatCard from "./layer-tvl-stat-card";
 
 export default function StatCardGrid() {
     const [view] = useQueryState("view");
-    const { data } = useGetLayertvlCurrentAll();
-
-    const totalTVL =
-        data?.reduce((sum, item) => sum + item.total_amount, 0) || 0;
-    const formattedTVL = new Intl.NumberFormat("en-US", {
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2,
-    }).format(totalTVL);
 
     const sharedTitles = {
         tvlTitle: "Total Value Locked",
@@ -47,13 +39,17 @@ export default function StatCardGrid() {
 
     return (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            <StatCard
-                title={content.tvlTitle}
-                subtitle={content.tvlSubtitle}
-                isComingSoon
-                change={0}
-                symbol={<BitcoinIcon className="h-4" />}
-            />
+            {!view || view === "layers" ? (
+                <LayerTvlStatCard />
+            ) : (
+                <StatCard
+                    title={content.tvlTitle}
+                    subtitle={content.tvlSubtitle}
+                    isComingSoon
+                    change={0}
+                    symbol={<BitcoinIcon className="h-4" />}
+                />
+            )}
             <StatCard
                 title={content.txTitle}
                 subtitle={content.txSubtitle}

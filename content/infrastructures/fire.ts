@@ -14,6 +14,7 @@ const fire: InfrastructureProject = {
     entityType: EntityType.BTCWrapper,
     live: LiveStatus.Mainnet,
     staking: false,
+    liquidStaking: false,
     bridge: true,
     underReview: true,
     riskFactors: ["", ""],

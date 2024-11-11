@@ -17,6 +17,7 @@ const coordinate: LayerProject = {
     entityType: EntityType.Sidechain,
     live: LiveStatus.Announced,
     staking: false,
+    liquidStaking: false,
     bridge: false,
     underReview: true,
     riskFactors: ["", "", "", ""],

@@ -3,7 +3,7 @@
 import React, { useState, useMemo, useEffect } from "react";
 import Image from "next/image";
 import TableHeader from "@/components/tables/tableHeader";
-import { MobileView, isMobile } from "react-device-detect";
+import { isMobile } from "react-device-detect";
 import Link from "next/link";
 import { useQueryState } from "nuqs";
 import { InfrastructureProject, Project, Type } from "@/content/props";
@@ -16,7 +16,7 @@ import {
     CardTitle,
     CardDescription,
 } from "@/components/ui/card";
-import { DatabaseIcon } from "lucide-react";
+import { DropletsIcon } from "lucide-react";
 
 type TableTabKey = "Snapshot" | "Type" | "Status" | "TVL";
 
@@ -60,21 +60,24 @@ const LayerImage = ({ src, title }: { src: string; title: string }) => {
     );
 };
 
-const StakingTable = ({ data, headers }: Props) => {
-    const [status, setStatus] = useQueryState("status", {
+const LiquidStakingTable = ({ data, headers }: Props) => {
+    const [status, setStatus] = useQueryState("liquid-staking-status", {
         defaultValue: "mainnet",
     });
-    const [types] = useQueryState<string[]>("type", {
+    const [types] = useQueryState<string[]>("liquid-staking-type", {
         defaultValue: [],
         parse: (value) => value.split(",").filter(Boolean),
         serialize: (value) => value.join(","),
     });
-    const [sortBy, setSortBy] = useQueryState("sortBy", {
+    const [sortBy, setSortBy] = useQueryState("liquid-staking-sortBy", {
         defaultValue: "Name",
     });
-    const [sortOrder, setSortOrder] = useQueryState("sortOrder", {
-        defaultValue: "asc",
-    });
+    const [sortOrder, setSortOrder] = useQueryState(
+        "liquid-staking-sortOrder",
+        {
+            defaultValue: "asc",
+        },
+    );
 
     const { data: balances } = useGetInfratvlCurrentAll();
 
@@ -146,7 +149,7 @@ const StakingTable = ({ data, headers }: Props) => {
         }
 
         filtered = filtered.filter((item) => {
-            if (!item.staking) return false;
+            if (!item.liquidStaking) return false;
             if (status === "mainnet") return item.live === "Mainnet";
             if (status === "testnet") return item.live !== "Mainnet";
             return true;
@@ -187,10 +190,11 @@ const StakingTable = ({ data, headers }: Props) => {
             <CardHeader className="flex flex-col items-stretch space-y-0 border-b p-0 sm:flex-row border-none">
                 <div className="flex flex-1 flex-col justify-center gap-1 px-6 py-5 sm:py-6">
                     <CardTitle className="flex">
-                        <DatabaseIcon className="mr-3" /> Staking
+                        <DropletsIcon className="mr-3" /> Liquid Staking
                     </CardTitle>
                     <CardDescription>
-                        Learn the tradeoffs for different staking projects
+                        Learn the tradeoffs for different liquid staking
+                        projects
                     </CardDescription>
                 </div>
                 <div className="flex">
@@ -230,6 +234,8 @@ const StakingTable = ({ data, headers }: Props) => {
                         <TableHeader
                             headers={isMobile ? mobileTableHeaders : headers}
                             onSort={handleSort}
+                            sortByQueryParam="liquid-staking-sortBy"
+                            sortOrderQueryParam="liquid-staking-sortOrder"
                         />
                         <tbody className="bg-white gap-x-8 border-t border-stroke_tertiary text_table_important">
                             {sortAndFilterData.map((item, index) => (
@@ -315,16 +321,6 @@ const StakingTable = ({ data, headers }: Props) => {
                                                         : `infrastructure/${item.slug}`
                                                 }`}
                                             >
-                                                {/* {item.underReview ||
-                                                Object.keys(totaledBalances).find(
-                                                    (key) =>
-                                                        key.toLowerCase() ===
-                                                        item.title.toLowerCase(),
-                                                ) === undefined ? (
-                                                    <div className="font-light">
-                                                        Under review
-                                                    </div>
-                                                ) : ( */}
                                                 {totaledBalances[item.slug]
                                                     ?.totalAmount == null ? (
                                                     <div className="font-light">
@@ -359,4 +355,4 @@ const StakingTable = ({ data, headers }: Props) => {
     );
 };
 
-export default StakingTable;
+export default LiquidStakingTable;

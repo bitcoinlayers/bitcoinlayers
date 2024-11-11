@@ -12,7 +12,9 @@ interface Props {
     queryString?: string;
 }
 
-export default function useGetLayertvlCurrentAll({ queryString }: Props = {}) {
+export default function useGetLayertvlCurrentAllBitcoinonly({
+    queryString,
+}: Props = {}) {
     const response = useQuery<Balance[]>({
         queryKey: [
             queryString

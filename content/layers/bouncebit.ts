@@ -17,6 +17,7 @@ const bouncebit: LayerProject = {
     entityType: EntityType.Sidechain,
     live: LiveStatus.Mainnet,
     staking: false,
+    liquidStaking: false,
     bridge: false,
     underReview: false,
     riskFactors: [
