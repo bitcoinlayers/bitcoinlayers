@@ -13,7 +13,7 @@ const lombard: InfrastructureProject = {
     slug: "lombard",
     title: "Lombard",
     entityType: EntityType.LiquidStaking,
-    live: LiveStatus.Mainnet,
+    live: LiveStatus.Deposits,
     staking: true,
     bridge: false,
     underReview: false,

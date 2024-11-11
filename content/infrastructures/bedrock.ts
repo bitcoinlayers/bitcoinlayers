@@ -13,7 +13,7 @@ const bedrock: InfrastructureProject = {
     slug: "bedrock",
     title: "Bedrock",
     entityType: EntityType.LiquidStaking,
-    live: LiveStatus.Mainnet,
+    live: LiveStatus.Deposits,
     staking: true,
     bridge: false,
     underReview: false,

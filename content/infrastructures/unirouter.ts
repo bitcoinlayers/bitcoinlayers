@@ -12,7 +12,7 @@ const unirouter: InfrastructureProject = {
     slug: "unirouter",
     title: "UniRouter",
     entityType: EntityType.LiquidStaking,
-    live: LiveStatus.Mainnet,
+    live: LiveStatus.Deposits,
     staking: true,
     bridge: false,
     underReview: true,

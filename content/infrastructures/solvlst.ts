@@ -13,7 +13,7 @@ const solvlst: InfrastructureProject = {
     slug: "solvlst",
     title: "Solv LSTs",
     entityType: EntityType.LiquidStaking,
-    live: LiveStatus.Mainnet,
+    live: LiveStatus.Deposits,
     staking: true,
     bridge: false,
     underReview: true,
