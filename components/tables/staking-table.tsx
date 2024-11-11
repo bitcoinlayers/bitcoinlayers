@@ -54,7 +54,7 @@ const LayerImage = ({ src, title }: { src: string; title: string }) => {
 
 const StakingTable = ({ data, headers }: Props) => {
     const [status, setStatus] = useQueryState("status", {
-        defaultValue: [],
+        defaultValue: "Mainnet", "Deposits",
     });
     const [types] = useQueryState<string[]>("type", {
         defaultValue: [],
