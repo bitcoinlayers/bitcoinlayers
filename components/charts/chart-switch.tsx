@@ -13,8 +13,8 @@ export default function ChartSwitch() {
         case "staking":
             return (
                 <AggregatedTVLChart
-                    title="Staking TVL"
-                    description="Total amount of value locked in staking protocols"
+                    title="BTC deposits"
+                    description='Total amount of BTC locked in liquid "staking" protocols'
                     itemNameKey="infra_name"
                     chartQueryParam="staking-chart"
                     rangeQueryParam="staking-range"
@@ -27,8 +27,8 @@ export default function ChartSwitch() {
         case "wrappers":
             return (
                 <AggregatedTVLChart
-                    title="Crosschain BTC TVL"
-                    description="Total amount of value locked in crosschain BTC protocols"
+                    title="Crosschain BTC supply"
+                    description="Total amount of BTC locked in crosschain BTC protocols"
                     itemNameKey="infra_name"
                     chartQueryParam="bridge-chart"
                     rangeQueryParam="bridge-range"
@@ -42,8 +42,8 @@ export default function ChartSwitch() {
         default:
             return (
                 <AggregatedTVLChart
-                    title="Total Value Locked"
-                    description="Total amount of BTC locked on bitcoin layers"
+                    title="Total BTC locked"
+                    description="Total amount of BTC locked in bitcoin layers"
                     itemNameKey="layer_name"
                     chartQueryParam="layer-chart"
                     rangeQueryParam="layer-range"

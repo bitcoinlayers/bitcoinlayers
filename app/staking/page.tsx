@@ -45,7 +45,7 @@ export default function StakingPage() {
             <div className="mb-24 lg:mb-12 w-full lg:max-w-5xl mx-auto">
                 <AggregatedTVLChart
                     title="Staking TVL"
-                    description="Total amount of value locked in staking protocols"
+                    description="Total amount of BTC locked in staking protocols"
                     itemNameKey="infra_name"
                     chartQueryParam="staking-chart"
                     rangeQueryParam="staking-range"

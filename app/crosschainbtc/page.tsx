@@ -49,7 +49,7 @@ export default function BridgesPage() {
             <div className="mb-12 w-full lg:max-w-5xl mx-auto">
                 <AggregatedTVLChart
                     title="Crosschain BTC TVL"
-                    description="Total amount of value locked in crosschain BTC protocols"
+                    description="Total amount of BTC locked in crosschain BTC protocols"
                     itemNameKey="infra_name"
                     chartQueryParam="bridge-chart"
                     rangeQueryParam="bridge-range"

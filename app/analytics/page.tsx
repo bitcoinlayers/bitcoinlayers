@@ -17,8 +17,8 @@ export default function Analytics() {
             <ViewToggleGroup showAll />
             {(showAllCharts || view === "layers") && (
                 <AggregatedTVLChart
-                    title="Total Value Locked"
-                    description="Total amount of BTC locked on bitcoin layers"
+                    title="Bitcoin layers BTC TVL"
+                    description="Total amount of BTC deposited on bitcoin layers"
                     itemNameKey="layer_name"
                     chartQueryParam="layer-chart"
                     rangeQueryParam="layer-range"
@@ -28,8 +28,8 @@ export default function Analytics() {
             )}
             {(showAllCharts || view === "staking") && (
                 <AggregatedTVLChart
-                    title="Staking TVL"
-                    description="Total amount of value locked in staking protocols"
+                    title='Liquid "staking" BTC TVL'
+                    description='Total amount of BTC deposited in liquid "staking" protocols'
                     itemNameKey="infra_name"
                     chartQueryParam="staking-chart"
                     rangeQueryParam="staking-range"
@@ -40,7 +40,7 @@ export default function Analytics() {
             {(showAllCharts || view === "wrappers") && (
                 <AggregatedTVLChart
                     title="Crosschain BTC TVL"
-                    description="Total amount of value locked in crosschain BTC protocols"
+                    description="Total amount of BTC deposited in crosschain BTC protocols"
                     itemNameKey="infra_name"
                     chartQueryParam="bridge-chart"
                     rangeQueryParam="bridge-range"

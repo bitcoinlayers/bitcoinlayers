@@ -51,7 +51,7 @@ export default function AssessmentsPage() {
             <div className="mb-24 lg:mb-12 w-full lg:max-w-5xl mx-auto">
                 <AggregatedTVLChart
                     title="Layer TVL"
-                    description="Total amount of value locked in protocols"
+                    description="Total amount of BTC locked in bitcoin layers"
                     itemNameKey="layer_name"
                     chartQueryParam="assessments-chart"
                     rangeQueryParam="assessments-range"
