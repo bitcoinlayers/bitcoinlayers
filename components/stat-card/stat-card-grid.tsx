@@ -1,6 +1,11 @@
 "use client";
 
-import { BitcoinIcon, ArrowLeftRightIcon } from "lucide-react";
+import {
+    BitcoinIcon,
+    ArrowLeftRightIcon,
+    NotebookTabsIcon,
+    HandCoinsIcon,
+} from "lucide-react";
 import StatCard from "@/components/stat-card";
 import { useQueryState } from "nuqs";
 import LayerTvlStatCard from "./layer-tvl-stat-card";
@@ -9,9 +14,9 @@ export default function StatCardGrid() {
     const [view] = useQueryState("view");
 
     const sharedTitles = {
-        tvlTitle: "Total Value Locked",
+        tvlTitle: "Total BTC locked",
         txTitle: "Total transactions",
-        feeTitle: "Avg Transaction Fee",
+        feeTitle: "Avg transaction fee",
         addrTitle: "Active addressess",
     };
 
@@ -29,10 +34,10 @@ export default function StatCardGrid() {
             default:
                 return {
                     ...sharedTitles,
-                    tvlSubtitle: "in sidechain & L2 protocols",
-                    txSubtitle: "on layered protocols",
-                    feeSubtitle: "paid for layer transactions",
-                    addrSubtitle: "on layered protocols",
+                    tvlSubtitle: "in bitcoin layers",
+                    txSubtitle: "on bitcoin layers",
+                    feeSubtitle: "per BTC tx on bitcoin layers",
+                    addrSubtitle: "on bitcoin layers",
                 };
         }
     })();
@@ -62,14 +67,14 @@ export default function StatCardGrid() {
                 subtitle={content.feeSubtitle}
                 isComingSoon
                 change={0}
-                symbol={<BitcoinIcon className="h-4" />}
+                symbol={<HandCoinsIcon className="h-4" />}
             />
             <StatCard
                 title={content.addrTitle}
                 subtitle={content.addrSubtitle}
                 isComingSoon
                 change={0}
-                symbol={<BitcoinIcon className="h-4" />}
+                symbol={<NotebookTabsIcon className="h-4" />}
             />
         </div>
     );

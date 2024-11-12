@@ -14,8 +14,8 @@ export default function LayerTvlStatCard() {
 
     return (
         <StatCard
-            title="Total Value Locked"
-            subtitle="in sidechain & L2 protocols"
+            title="Total BTC locked"
+            subtitle="in bitcoin layers"
             value={formattedTVL}
             change={0}
             symbol={<BitcoinIcon className="h-4" />}

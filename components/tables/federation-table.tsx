@@ -196,7 +196,7 @@ const FederationTable = ({ data, headers }: Props) => {
                         <Layers2Icon className="mr-3" /> Wrappers
                     </CardTitle>
                     <CardDescription>
-                        Learn the tradeoffs for different wrapper projects
+                        Learn the tradeoffs for different BTC token wrappers
                     </CardDescription>
                 </div>
                 <div className="flex">
