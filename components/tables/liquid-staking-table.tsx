@@ -62,7 +62,7 @@ const LayerImage = ({ src, title }: { src: string; title: string }) => {
 
 const LiquidStakingTable = ({ data, headers }: Props) => {
     const [status, setStatus] = useQueryState("liquid-staking-status", {
-        defaultValue: "mainnet",
+        defaultValue: "testnet",
     });
     const [types] = useQueryState<string[]>("liquid-staking-type", {
         defaultValue: [],
