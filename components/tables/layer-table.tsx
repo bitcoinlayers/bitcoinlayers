@@ -19,7 +19,7 @@ import {
 import { LayersIcon } from "lucide-react";
 
 type TableTabKey =
-    | "Risk"
+    | "Trust Model"
     | "Type"
     | "Status"
     | "Unit of Account"
@@ -100,7 +100,8 @@ const LayerTable = ({ data, headers }: Props) => {
         );
     }, [balances]);
 
-    const [mobileActiveTab, setMobileActiveTab] = useState<TableTabKey>("Risk");
+    const [mobileActiveTab, setMobileActiveTab] =
+        useState<TableTabKey>("Trust Model");
 
     const sortAndFilterData = useMemo(() => {
         const sorted = [...data].sort((a, b) => {
@@ -289,7 +290,7 @@ const LayerTable = ({ data, headers }: Props) => {
                                         </Link>
                                     </td>
                                     {(!isMobile ||
-                                        mobileActiveTab === "Risk") && (
+                                        mobileActiveTab === "Trust Model") && (
                                         <td className="relative px-2 border-stroke_tertiary text_table_important">
                                             {!item.underReview ? (
                                                 <Risk layer={item} />

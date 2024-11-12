@@ -86,7 +86,11 @@ function getSortedDataAndHeaders(view: string) {
 
             const layerHeaders = [
                 { name: "Name", showSorting: true, mobileLabel: "Name" },
-                { name: "Risk", showSorting: false, mobileLabel: "Risk" },
+                {
+                    name: "Trust Model",
+                    showSorting: false,
+                    mobileLabel: "Trust Model",
+                },
                 {
                     name: "Type",
                     showSorting: true,
