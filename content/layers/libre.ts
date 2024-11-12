@@ -90,17 +90,6 @@ const libre: LayerProject = {
     ],
     sections: [
         {
-            id: "additionalconsiderations",
-            title: "Additional Considerations",
-            content: [
-                {
-                    title: "Token delegating used to select validators",
-                    content:
-                        "LIBRE token holders can use their voting power to select validators. Voting power is based on the amount of tokens someone has, and how long they’ve been staked. Currently, four accounts hold over 50% of the voting power.",
-                },
-            ],
-        },
-        {
             id: "bitcoinsecurity",
             title: "Bitcoin Security",
             content: [
@@ -123,6 +112,17 @@ const libre: LayerProject = {
                     title: "No fees paid to Bitcoin miners",
                     content:
                         "Libre does not contribute to Bitcoin’s security budget.",
+                },
+            ],
+        },
+        {
+            id: "additionalconsiderations",
+            title: "Additional Considerations",
+            content: [
+                {
+                    title: "Token delegating used to select validators",
+                    content:
+                        "LIBRE token holders can use their voting power to select validators. Voting power is based on the amount of tokens someone has, and how long they’ve been staked. Currently, four accounts hold over 50% of the voting power.",
                 },
             ],
         },

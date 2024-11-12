@@ -8,6 +8,8 @@ export enum LiveStatus {
     Testnet = "Testnet",
     Announced = "Announced",
     Proposed = "Proposed",
+    Beta = "Beta",
+    Deposits = "Deposits Live",
 }
 
 export enum Purpose {
@@ -105,6 +107,8 @@ export enum AssessmentCategory {
     KeyStorage = "Key Storage",
     CensorshipResistance = "Censorship Resistance",
     UserRisk = "User Risk",
+    ThirdPartyStaking = "Third Party Staking",
+    SelfCustodialStaking = "Self-custodial Staking",
 }
 
 export interface AssessmentSection {

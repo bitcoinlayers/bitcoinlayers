@@ -16,6 +16,8 @@ import {
     HandshakeIcon,
     BanIcon,
     CoinsIcon,
+    WaypointsIcon,
+    CircleUserIcon,
 } from "lucide-react";
 
 const CATEGORY_ICON_MAP: Record<
@@ -31,6 +33,8 @@ const CATEGORY_ICON_MAP: Record<
     [AssessmentCategory.KeyStorage]: LayersIcon,
     [AssessmentCategory.CensorshipResistance]: BanIcon,
     [AssessmentCategory.UserRisk]: UserIcon,
+    [AssessmentCategory.ThirdPartyStaking]: WaypointsIcon,
+    [AssessmentCategory.SelfCustodialStaking]: CircleUserIcon,
 } as const;
 
 export default function AssessmentSnapshotDialogBody({

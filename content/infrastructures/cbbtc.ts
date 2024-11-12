@@ -11,7 +11,7 @@ import {
 const cbbtc: InfrastructureProject = {
     type: Type.Infrastructure,
     slug: "cbbtc",
-    title: "cbBTC",
+    title: "Coinbase cbBTC",
     entityType: EntityType.BTCWrapper,
     live: LiveStatus.Mainnet,
     staking: false,

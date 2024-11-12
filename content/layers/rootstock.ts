@@ -116,23 +116,34 @@ const rootstock: LayerProject = {
             ],
         },
         {
+            id: "withdrawals",
+            title: "Withdrawals",
+            content: [
+                {
+                    title: "Users trust permissioned operators to process their withdrawals",
+                    content:
+                        "Withdrawals are currently permissioned by a federated group of signers. Users must trust that when they deposit BTC into the Rootstock blockchain, the signers will not collude and steal their BTC. Learn more about the Powpeg multisig in the Knowledge Bits section.",
+                },
+            ],
+        },
+        {
             id: "technology",
             title: "Technology",
             content: [
                 {
                     title: "Merge-mining",
                     content:
-                        "Merged mining is a crucial part of Rootstock’s consensus mechanism that allows coupling between bitcoin and Rootstock. Essentially, BTC mining pools add references to Rootstock blocks in mining jobs sent to mining participants. Additionally, because the Rootstock mining algorithm is the same as bitcoin’s, there is little added energy expenditure. This combined with miners earning a portion of transaction fees from Rootstock block mining creates an incentive for providing security to both BTC and to Rootstock.\n\nCurrently, more than 50% of the bitcoin hashrate is participating in Rootstock merged mining. Rootstock Labs states to have three phases for merged mining growth, a bootstrap phase (<30% of BTC hashrate), stable phase (60% ≥ Rootstock ≥ 30%), and its mature phase (≥60%). Currently, Rootstock is in its stable phase.\n\nIn order to pay out miners, every block executes the Reward Manager Smart Contract (REMASC). The contract keeps record of the Reward Balance account, which exists to change value during new block production. When a block reaches maturity, the appropriate portions of rewards are distributed according to REMASC specified rules.",
+                        "Merged mining is a feature of Rootstock’s consensus mechanism that allows coupling between bitcoin and Rootstock. Essentially, BTC mining pools add references to Rootstock blocks in mining jobs sent to mining participants. Additionally, because the Rootstock mining algorithm is the same as bitcoin’s, there is little added energy expenditure. This sees bitcoin miners have an ability to additionally mine a percentage of Rootstock blocks. Miners are incentivized through earning a portion of transaction fees to mine Rootstock",
                 },
                 {
-                    title: "Powpeg",
+                    title: "REMASC",
                     content:
-                        "The Powpeg is operated by special nodes referred to as Powpeg functionaries. The Powpeg functionaries are: BlockVenture, Collider, Constata, Luxor, MyCointainer, pNetwork, Rootstock Labs, Sovryn, and Xapo.\n\nEach functionary operates a Powpeg node. A Powpeg node combines a specialized Rootstock full node with a Proof of Work Hardware Security Module (PowHSM). A PowHSM is a hardware device designed to remove human control over the bitcoin private keys used to sign Powpeg multisig transactions. PowHSM operators cannot manually sign transactions, extract private keys, or perform any other functions with the private keys. The PowHSM firmware is open source and available in the Rootstock GitHub repo. PowHSM operators are publicly verifiable using remote attestation.\n\nRequests by users to withdraw BTC from the Powpeg bridge must be approved by a majority of Powpeg functionaries. If a functionary's PowHSM is online, then it will automatically sign a withdrawal transaction after the withdrawal request reaches a sufficient number of confirmations on the Rootstock blockchain.\n\nBTC held in the Powpeg bridge can be stolen if a majority of PowHSM devices are compromised.\n\nAdditionally, the Powpeg uses a time-locked emergency 3-of-4 federated multisig as a safeguard against PowHSM device failures or possible external intervention. The emergency multisig automatically gains spending authority over the funds in the Powpeg bridge if a majority of PowHSM devices are unresponsive for a period of one year. The emergency multisig signers are: Rootstock Labs, MoneyOnChain, Jameson Lopp, and Adrian Eidelman. In the event of an emergency, these signatories will evaluate the situation and coordinate for the recovery of funds.\n\nBTC held in the emergency multisig can be lost or stolen if a majority of the emergency multisig signers are compromised.\n\nIf BTC held in the Powpeg bridge (or emergency multisig, if the emergency multisig procedure has been activated) is lost or stolen, then users will not be able to convert RBTC to BTC and exit the bridge.\n\nTo potentially improve the trust assumptions of the Rootstock bitcoin bridge, Rootstock Labs is funding research into BitVMX, a protocol that can be used to develop a trust-minimized 1-of-N federated bitcoin bridge.",
+                        "In order to pay out miners, every block executes the Reward Manager Smart Contract (REMASC). The contract keeps record of the Reward Balance account, which exists to change value during new block production. When a block reaches maturity, the appropriate portions of rewards are distributed according to REMASC specified rules.",
                 },
                 {
-                    title: "Ethereum Virtual Machine",
+                    title: "EVM-Compatible",
                     content:
-                        "Rootstock uses a forked version of the Ethereum Virtual Machine (EVM), which it calls the Rootstock Virtual Machine (RVM). The EVM is a Turing-complete execution environment developed for Ethereum and adopted by various other networks. Solidity is the primary coding language used for smart contract development on the EVM. Solidity and the EVM are the dominant language and environment for smart contracts in the broader cryptocurrency ecosystem, respectively. Smart contracts created for the EVM are directly compatible with the RVM. The RVM is EVM-compatible at both the bytecode and opcode level, and can interact with Ethereum developer tooling. The RVM uses RBTC as its gas cost for smart contract execution.",
+                        "Rootstock uses a forked version of the Ethereum Virtual Machine (EVM), which it calls the Rootstock Virtual Machine (RVM). The Ethereum Virtual Machine is software responsible for smart contract execution for a number of blockchains, namely the Ethereum Network. It uses Solidity/Vyper as its code and is the dominant environment for smart contract execution in the cryptocurrency ecosystem. Smart contracts created for the EVM are directly compatible with the RVM.",
                 },
                 {
                     title: "Faster block times",
@@ -146,31 +157,9 @@ const rootstock: LayerProject = {
             title: "Use Cases",
             content: [
                 {
-                    title: "Decentralized finance",
+                    title: "Onchain applications",
                     content:
-                        "With its low fees and smart contract execution environment, Rootstock is designed to be an application-friendly ecosystem. It hosts a few apps fundamental to the development of a healthy DeFi sector: Sovryn (Lending), Uniswap (DEX), and MoneyOnChain (Stablecoins).",
-                },
-            ],
-        },
-        {
-            id: "operator",
-            title: "Operator",
-            content: [
-                {
-                    title: "Any bitcoin miner can merge-mine Rootstock",
-                    content:
-                        "Block production is permissionless. Anyone who is willing to merge-mine can produce blocks and earn rewards. If interested parties do not possess enough capital to competitively solo mine, they can join a mining pool that supports Rootstock merged mining.",
-                },
-            ],
-        },
-        {
-            id: "withdrawals",
-            title: "Withdrawals",
-            content: [
-                {
-                    title: "Users trust permissioned operators to process their withdrawals",
-                    content:
-                        "Withdrawals are currently permissioned by a federated group of signers. Users must trust that when they deposit BTC into the Rootstock blockchain, the signers will not collude and steal their BTC. Learn more about the Powpeg multisig in the Knowledge Bits section.",
+                        "Onchain applications are supported. Onchain applications including borrowing and lending protocols, onchain exchanges (commonly referred to as decentralized exchanges), and more. These applications are supported with more expressive smart contract environments.",
                 },
             ],
         },

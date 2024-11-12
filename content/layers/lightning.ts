@@ -79,7 +79,7 @@ const lightning: LayerProject = {
             category: RiskCategory.FinalityGuarantees,
             score: 0,
             tier: RiskFactor.Low,
-            title: "Users can challenge a malicious counterparty",
+            title: "Transactions settle instantly. Routed transactions are atomic",
             content:
                 "Transactions on the Lightning Network happen atomically via HTLCs. Once confirmed, they cannot be reversed. Users can also ensure finality when closing a channel with their counterparty.",
         },
@@ -116,14 +116,9 @@ const lightning: LayerProject = {
             title: "Additional Considerations",
             content: [
                 {
-                    title: "Self-hosted DA friction leading users to centralized solutions",
+                    title: "UX friction leading users to centralized solutions",
                     content:
                         "Non-technical users may find it difficult to self-host their own Lightning node, which can lead them to use custodial solutions. This can lead to a centralization of the network, as users are not interacting directly. A 2024 report from River found that 80% of Lightning Network liquidity is in channels hosted by centralized service providers.",
-                },
-                {
-                    title: "Replacement cycling attacks",
-                    content:
-                        "A vulnerability was disclosed in 2023, referred to as a replacement cycling attack. This attack requires two open channels with a user which are used together to cycle transactions a user for the duration of their challenge period",
                 },
             ],
         },
@@ -134,7 +129,7 @@ const lightning: LayerProject = {
                 {
                     title: "Users can unilaterally withdraw their funds with optimistic settlement guarantees",
                     content:
-                        "Users can close a channel and withdraw their funds at any time. They can close a channel collaboratively with their counterparty by agreeing on the final state of the channel and withdrawing their balances to their respective addresses. In the event of a dispute over the final state, the Lightning Network’s model is optimistic. A malicious user can attempt to steal channel funds by submitting a channel closure transaction with an old state. If their counterparty is offline with no watchtower for the entire duration of the challenge period then the old state will be finalized, allowing the theft to succeed. If the counterparty, or their watchtower, is online during the challenge period, then they can submit a challenge transaction onchain that will stop the theft attempt and sweep the full balance of the channel that was incorrectly closed. Users should be aware that the cost of challenging an incorrect channel closure attempt could eat significantly into the channel balance, to the point of being uneconomical, if bitcoin fee rates are prohibitively expensive. Users should also be aware that if they are unable to confirm their challenge transaction before the end of the challenge period, for example because their transaction is being withheld by bitcoin miners, then they risk losing the full balance of their channel to their counterparty.",
+                        "Users can close a channel and withdraw their funds at any time. They can close a channel collaboratively with their counterparty by agreeing on the final state of the channel and withdrawing their balances to their respective addresses. A malicious user can attempt to steal channel funds by submitting a channel closure transaction with an old state.\n\nIf the counterparty, or their watchtower, is online during the challenge period, then they can submit a challenge transaction onchain that will stop the theft attempt and sweep the full balance of the channel that was incorrectly closed.",
                 },
             ],
         },
@@ -172,27 +167,6 @@ const lightning: LayerProject = {
                     title: "Faster transactions",
                     content:
                         "With its near-immediate confirmations due to being offchain and using P2P consensus, Lightning is well-suited for fast transactions.",
-                },
-                {
-                    title: "Interoperability",
-                    content:
-                        "Lightning can act as an interoperability layer between blockchain protocols and bridge operators.",
-                },
-                {
-                    title: "Lightning Service Providers (LSP)",
-                    content:
-                        "A LSP deploys liquidity in Lightning on behalf of others. LSPs improve Lightning’sUX for users by essentially supplying liquidity and managing payment channels on their behalf. Managing a payment channel can come with a number of UX hurdles, so LSPs remove the majority of the complexity and charge fees to be compensated. These providers ideally interact with users in a way that ensures that users retain custody of their funds. However, even when using a self-custodial wallet supported by an LSP, users still have to initiate mainchain transactions to deposit funds into their wallet.",
-                },
-            ],
-        },
-        {
-            id: "operator",
-            title: "Operator",
-            content: [
-                {
-                    title: "The Lightning Network is peer-to-peer",
-                    content:
-                        "The only operators involved are the user and the counterparty with whom they open the payment channel. Users can transitively interact with others who have open channels with their counterparty(ies). The Lightning Network operators have to run their own node and must have near-perfect uptime to ensure their channels are not being force-closed or closed with an old channel state. Leveraging a self-custodial wallet supported by an LSP ensures users retain the custody of their funds, but the LSP operator can choose to stop servicing users at any point, meaning that users must withdraw their funds to an onchain address and find a new LSP.",
                 },
             ],
         },

@@ -10,7 +10,7 @@ import {
 const fire: InfrastructureProject = {
     type: Type.Infrastructure,
     slug: "fire",
-    title: "Fire Bitcoin",
+    title: "Fire Bitcoin FBTC",
     entityType: EntityType.BTCWrapper,
     live: LiveStatus.Mainnet,
     staking: false,

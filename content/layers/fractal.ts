@@ -161,16 +161,6 @@ const fractal: LayerProject = {
                     content:
                         "Cadence mining is a novel mining mechanism that sees ⅓ of Fractal blocks mined by bitcoin miners who merge-mine Fractal, and ⅔ of Fractal blocks mined by its own miner set. Thus, the security of Fractal mining is dependent on two distinct operator sets.\n\nBitcoin miners who want to merge-mine Fractal point some of their hashrate to secure the Fractal chain. Fractal miners run a distinct mining software that sees them leverage a different difficulty adjustment.",
                 },
-                {
-                    title: "Third party bridges",
-                    content:
-                        "Bool Network currently facilitates the bridging of bitcoin assets between Fractal and the Bitcoin mainchain. Bool Network leverages a unique MPC scheme for its signer set, but code on the mechanism is not open-source.",
-                },
-                {
-                    title: "Faster block times",
-                    content:
-                        "Fractal achieves block confirmation around every 30s.",
-                },
             ],
         },
         {
@@ -178,7 +168,7 @@ const fractal: LayerProject = {
             title: "Use Cases",
             content: [
                 {
-                    title: "Ordinals & BRC-20 trading",
+                    title: "Ordinals, Runes, & BRC-20 trading",
                     content:
                         "Due to having a similar scripting language as the Bitcoin mainchain, Fractal provides users with similar applications for Ordinals and BRC-20 token trading as the Bitcoin L1.",
                 },

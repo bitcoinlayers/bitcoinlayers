@@ -135,21 +135,6 @@ const liquid: LayerProject = {
                     content:
                         "Liquid is built with the Elements technology stack. Elements is an open-source technology stack built on top of the Bitcoin code base. Since it is built on the Bitcoin code base, Elements enables Liquid to be a testing ground for potential changes to the Bitcoin protocol.",
                 },
-                {
-                    title: "More Expressive Smart Contracts",
-                    content:
-                        "Liquid has a number of additional opcodes that enable developers to build more expressive smart contracting applications on top of it. These applications can include limit orders, options contracts and atomic swaps protocols. However, Liquid's execution environment is still not Turing-complete.",
-                },
-                {
-                    title: "Faster blocks",
-                    content:
-                        "Liquid has a fixed block time and produces a block every minute.",
-                },
-                {
-                    title: "Lower fees",
-                    content:
-                        "As of April 23, 2024, fees on the Liquid network are much lower than that of the Bitcoin mainchain.",
-                },
             ],
         },
         {
@@ -167,20 +152,9 @@ const liquid: LayerProject = {
                         "Liquid enables developers and users alike to issue tokenized securities, stablecoins, and synthetic forms of cryptocurrencies.",
                 },
                 {
-                    title: "Atomic swaps",
+                    title: "Testing ground for new opcodes",
                     content:
-                        "All tokens issued on Liquid, including L-BTC, are under the same token standard. This ensures that swaps between any token on Liquid can happen atomically.",
-                },
-            ],
-        },
-        {
-            id: "operator",
-            title: "Operator",
-            content: [
-                {
-                    title: "Liquid is operated by a federation",
-                    content:
-                        "Liquid is primarily operated by a predetermined, permissioned group of operators, known as “Functionaries”, who are a part of its Federation. A larger group of “Members” participate in the federation by determining upgrades to the network, and also vote on board elections. Users may trust these operators due to the reputational risk they would take on in the Bitcoin ecosystem if they acted maliciously.",
+                        "Since Liquid has enabled opcodes that are not yet live on Bitcoin, developers can deploy applications there to preview what it would be like on Bitcoin. This includes analyzing the builder experience, potential security vulnerabilities, and presenting how these changes might permanently affect the Bitcoin network.",
                 },
             ],
         },

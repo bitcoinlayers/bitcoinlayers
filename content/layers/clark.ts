@@ -15,7 +15,7 @@ const clark: LayerProject = {
     slug: "clark",
     title: "clArk",
     entityType: EntityType.Ark,
-    live: LiveStatus.Mainnet,
+    live: LiveStatus.Testnet,
     staking: false,
     liquidStaking: false,
     bridge: false,

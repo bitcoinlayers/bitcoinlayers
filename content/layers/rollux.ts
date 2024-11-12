@@ -23,7 +23,7 @@ const rollux: LayerProject = {
     riskFactors: [
         RiskFactor.Unverified,
         RiskFactor.Medium,
-        RiskFactor.Medium,
+        RiskFactor.High,
         RiskFactor.Medium,
     ],
     btcLocked: 10,
@@ -74,7 +74,7 @@ const rollux: LayerProject = {
         {
             category: RiskCategory.NetworkOperators,
             score: 0,
-            tier: RiskFactor.Medium,
+            tier: RiskFactor.High,
             title: "Rollux is operated by a centralized sequencer with forced inclusion to the Syscoin L1 possible",
             content:
                 "The Rollux chain is operated by a centralized sequencer. Users can be censored by the centralized sequencer and the chain can have liveness failures if the sequencer goes offline.\n\nForced inclusion to the Syscoin L1 is possible. Users are able to have their transaction included in a sequence by submitting it to the L1 smart contract.",
@@ -131,29 +131,14 @@ const rollux: LayerProject = {
             title: "Technology",
             content: [
                 {
-                    title: "Fraud proofs are under development",
-                    content:
-                        "[OP Stack](https://github.com/SYS-Labs/rollux/tree/develop/op-node) chains will use interactive fraud proofs to enforce state correctness. This feature is currently in development, meaning that Rollux currently permits invalid state roots.",
-                },
-                {
                     title: "Merge-mining",
                     content:
-                        "Merged mining is a crucial part of Syscoin’s consensus mechanism that allows coupling between Bitcoin and Syscoin. Essentially, BTC mining pools add references to Syscoin blocks in mining jobs sent to mining participants. Additionally, because the Syscoin mining algorithm is the same as bitcoin’s, there is little added energy expenditure. This combined with miners earning a portion of transaction fees and newly issued SYS tokens from Syscoin block mining creates an incentive for providing security to both BTC and to Syscoin.",
+                        "Merged mining is a crucial part of Syscoin’s (Rollux's parent chain) consensus mechanism that allows coupling between Bitcoin and Syscoin. Essentially, BTC mining pools add references to Syscoin blocks in mining jobs sent to mining participants. Additionally, because the Syscoin mining algorithm is the same as bitcoin’s, there is little added energy expenditure. This combined with miners earning a portion of transaction fees and newly issued SYS tokens from Syscoin block mining creates an incentive for providing security to both BTC and to Syscoin.",
                 },
                 {
                     title: "EVM-compatible",
                     content:
                         "Rollux uses an EVM-compatible virtual machine. The Ethereum Virtual Machine is software responsible for smart contract execution for a number of blockchains, namely the Ethereum Network. It uses Solidity/Vyper as its coding language, which is the dominant environment for smart contract execution in the cryptocurrency ecosystem. Rollux is EVM-compatible, which means that a developer from Ethereum would have less difficulty deploying their applications on Rollux compared to other execution environments.",
-                },
-                {
-                    title: "Faster block times",
-                    content:
-                        "Rollux is currently producing blocks every two seconds which provides a better user experience than using the Bitcoin mainchain.",
-                },
-                {
-                    title: "BitVM exploration",
-                    content:
-                        "The Rollux team has [announced](https://x.com/rolluxl2/status/1808176959618228551) their intention to develop a BitVM-style bridge. They are looking to build a trust-minimized bridge between Syscoin and Bitcoin which could also support the Rollux chain.",
                 },
             ],
         },
@@ -162,20 +147,9 @@ const rollux: LayerProject = {
             title: "Use Cases",
             content: [
                 {
-                    title: "EVM applications",
+                    title: "Onchain applications",
                     content:
-                        "The potential use cases for Rollux are similar to that of other EVM-based sidechains. Developers can deploy smart contracts that enable applications like borrowing and lending protocols, stablecoins, NFTs, and more. The primary, proposed use case for Rollux is to act as an application layer for Bitcoin.",
-                },
-            ],
-        },
-        {
-            id: "operator",
-            title: "Operator",
-            content: [
-                {
-                    title: "Rollux is operated by a centralized sequencer",
-                    content:
-                        "The Rollux blockchain is operated by a centralized validator. If the validator censors users, or goes offline, users can self-sequence their own transactions.",
+                        "Onchain applications are supported. Onchain applications including borrowing and lending protocols, onchain exchanges (commonly referred to as decentralized exchanges), and more. These applications are supported with more expressive smart contract environments.",
                 },
             ],
         },

@@ -10,7 +10,7 @@ import {
 const solv: InfrastructureProject = {
     type: Type.Infrastructure,
     slug: "solv",
-    title: "Solv",
+    title: "Solv SolvBTC",
     entityType: EntityType.BTCWrapper,
     live: LiveStatus.Mainnet,
     staking: false,
