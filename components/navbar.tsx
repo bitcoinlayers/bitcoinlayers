@@ -147,7 +147,7 @@ export default function Navbar(): ReactElement {
                             className="flex items-center space-x-1.5"
                         >
                             <div>Dev Center</div>
-                            <ExternalLinkIcon className="size-3" />
+                            {/* <ExternalLinkIcon className="size-3" /> */}
                         </Link>
                     </li>
                 </ul>
@@ -204,7 +204,7 @@ export default function Navbar(): ReactElement {
                                                 onClick={closeSheet}
                                             >
                                                 <div>Dev Center</div>
-                                                <ExternalLinkIcon className="size-3 text-primary" />
+                                                {/* <ExternalLinkIcon className="size-3 text-primary" /> */}
                                             </Link>
                                         </li>
                                     </ul>

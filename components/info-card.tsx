@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Card, CardContent } from "@/components/ui/card";
-import { BitcoinIcon } from "lucide-react";
+import { BitcoinIcon, ExternalLinkIcon } from "lucide-react";
 
 interface Props {
     title: string;
@@ -31,7 +31,14 @@ export default function InfoCard({
                                     {description}
                                 </p>
                             </div>
-                            <h3 className="text-xl font-semibold">{title}</h3>
+                            <div className="flex justify-between items-center">
+                                <h3 className="text-xl font-semibold">
+                                    {title}
+                                </h3>
+                                {isExternal && (
+                                    <ExternalLinkIcon className="h-4 ml-1.5" />
+                                )}
+                            </div>
                         </div>
                         <BitcoinIcon className="h-4" />
                     </div>

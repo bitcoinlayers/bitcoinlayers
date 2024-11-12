@@ -147,7 +147,7 @@ export default function AggregatedTVLChart({
         <Card className="bg-background">
             <CardHeader className="flex flex-col lg:flex-row flex-wrap lg:items-center justify-between border-b mb-4">
                 <div>
-                    <CardTitle className="flex font-normal items-center gap-2">
+                    <CardTitle className="flex font-semibold items-center gap-2">
                         {title}
                     </CardTitle>
                     <CardDescription className="mt-1 text-xs flex flex-wrap">
