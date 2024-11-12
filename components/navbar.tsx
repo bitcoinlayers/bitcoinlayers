@@ -120,8 +120,8 @@ export default function Navbar(): ReactElement {
                         </>
                     )} */}
                     <li className="hidden lg:block">
-                        <Link href="/assessments" onClick={closeMenu}>
-                            Assessments
+                        <Link href="/reviews" onClick={closeMenu}>
+                            Reviews
                         </Link>
                     </li>
                     <li className="hidden lg:block">
@@ -170,11 +170,11 @@ export default function Navbar(): ReactElement {
                                     <ul className="flex flex-col items-start gap-y-6">
                                         <li>
                                             <Link
-                                                href="/assessments"
+                                                href="/reviews"
                                                 className="text-primary"
                                                 onClick={closeSheet}
                                             >
-                                                Assessments
+                                                Reviews
                                             </Link>
                                         </li>
                                         <li>
