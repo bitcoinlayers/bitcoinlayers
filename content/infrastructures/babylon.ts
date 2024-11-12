@@ -12,7 +12,7 @@ const babylon: InfrastructureProject = {
     slug: "babylon",
     title: "Babylon",
     entityType: EntityType.Staking,
-    live: LiveStatus.Mainnet,
+    live: LiveStatus.Deposits,
     staking: true,
     liquidStaking: false,
     bridge: false,
