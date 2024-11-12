@@ -6,7 +6,7 @@ import AggregatedTVLChart from "@/components/charts/aggregated-tvl-chart";
 import LayerTable from "@/components/tables/layer-table";
 import useGetBalancesHistoricalBylayerBitcoinonly from "@/hooks/use-get-layertvl-historical-bitcoinonly";
 
-export default function AssessmentsPage() {
+export default function ReviewsPage() {
     const sortedLayers = allLayers.sort((a, b) =>
         a.title.toLowerCase().localeCompare(b.title.toLowerCase()),
     );
@@ -44,10 +44,10 @@ export default function AssessmentsPage() {
 
     return (
         <div className="mx-auto">
-            <Hero
+            {/* <Hero
                 title="Assessments"
                 description="Not every bitcoin protocol is equal."
-            />
+            /> */}
             <div className="mb-24 lg:mb-12 w-full lg:max-w-5xl mx-auto">
                 <AggregatedTVLChart
                     title="Layer TVL"
@@ -57,6 +57,9 @@ export default function AssessmentsPage() {
                     rangeQueryParam="assessments-range"
                     useDataHook={useGetBalancesHistoricalBylayerBitcoinonly}
                     divisionDefaultValue="separate"
+                    showDivisionButtons={false}
+                    showLegend={false}
+                    chartHeight="h-64"
                 />
             </div>
             <div className="lg:flex mb-4 justify-center w-full lg:max-w-5xl mx-auto">
