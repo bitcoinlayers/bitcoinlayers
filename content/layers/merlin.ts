@@ -57,7 +57,7 @@ const merlin: LayerProject = {
         {
             category: RiskCategory.BtcCustody,
             score: 0,
-            tier: RiskFactor.Unverified,
+            tier: RiskFactor.Critical,
             title: "Users deposit funds into a MPC wallet managed by a custodian",
             content:
                 "When users deposit funds into Merlin, they deposit funds into a MPC wallet managed by Cobo, a institutional custodian. Information on how many signers participate in this MPC scheme is not available. Merlin has stated that more players are being added into this custody scheme.\n\n🔬We are currently reviewing the signers for the Merlin two-way peg.",
@@ -65,7 +65,7 @@ const merlin: LayerProject = {
         {
             category: RiskCategory.DataAvailability,
             score: 0,
-            tier: RiskFactor.Unverified,
+            tier: RiskFactor.Critical,
             title: "State data is stored and made available by a permissioned data availability committee. The identities of its members are under review",
             content:
                 "Merlin chain is built on the Polygon CDK stack. In its Github, it has a copy of the Polygon CDK Committee contract. In the contract, it states that the admin has the control to set up the committee, so it is likely that the members of this committee are permissioned and selected by the Merlin Chain operator. We have not been able to verify the members of this committee.",
@@ -73,7 +73,7 @@ const merlin: LayerProject = {
         {
             category: RiskCategory.NetworkOperators,
             score: 0,
-            tier: RiskFactor.Unverified,
+            tier: RiskFactor.High,
             title: "Blocks are produced by a centralized sequencer and forced inclusion mechanism is unverified",
             content:
                 "Merlin chain blocks are currently produced by a centralized sequencer. If the sequencer were to go down, or censor users, users would force include transactions to an L1 that is not Bitcoin. We have not verified if Merlin's forced inclusion mechanism is currently live.\n\nAdditionally, Merlin transactions are not finalized until its parent chain accepts the Merlin state transition.",
@@ -81,7 +81,7 @@ const merlin: LayerProject = {
         {
             category: RiskCategory.FinalityGuarantees,
             score: 0,
-            tier: RiskFactor.Unverified,
+            tier: RiskFactor.High,
             title: "Sequencer batches and validity proofs posted offchain. ❓ We are unable to verify Merlin Chain's L1 contracts",
             content:
                 "Merlin uses zkSNARKS to ensure state correctness. The Merlin prover posts validity proofs of execution to its L1 contract to finalize state transitions. It is unknown which chain Merlin posts its latest state root to.",

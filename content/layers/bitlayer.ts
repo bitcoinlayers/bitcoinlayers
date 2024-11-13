@@ -57,10 +57,10 @@ const bitlayer: LayerProject = {
         {
             category: RiskCategory.BtcCustody,
             score: 0,
-            tier: RiskFactor.Unverified,
-            title: "Users trust a federated signer set to custody their BTC. Signers under review",
+            tier: RiskFactor.Critical,
+            title: "Users trust federated signers set to custody their BTC. Less than 5, individual signers have been publicly announced",
             content:
-                "Bitlayer's current BTC bridge is a federated two-way peg with institutional signers. Bitlayer is working with multiple MPC custody platforms.\n\nUsers do not custody bitcoin assets backing tokens on BitLayer.\n\n🔬We are currently reviewing the signers for the BitLayer two-way peg.",
+                "Bitlayer's current BTC bridge is a federated two-way peg with institutional signers. Bitlayer is working with multiple MPC custody platforms.\n\nUsers do not custody bitcoin assets backing tokens on BitLayer.\n\nNote that we are unable to verify the participants in this model[Source](https://docs.bitlayer.org/docs/Learn/BitlayerNetwork/Bridges)",
         },
         {
             category: RiskCategory.DataAvailability,
@@ -73,7 +73,7 @@ const bitlayer: LayerProject = {
         {
             category: RiskCategory.NetworkOperators,
             score: 0,
-            tier: RiskFactor.Unverified,
+            tier: RiskFactor.High,
             title: "Bitlayer is operated by a permissioned validator set",
             content:
                 "Bitlayer blocks are currently produced by a permissioned validator set. There are currently 21 validators participating in Bitlayer consensus. Users cannot bypass this operator set if they are censored by the validator set.\n\n🔬We are currently reviewing BitLayer's validators.",

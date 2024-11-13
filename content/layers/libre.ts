@@ -57,10 +57,10 @@ const libre: LayerProject = {
         {
             category: RiskCategory.BtcCustody,
             score: 0,
-            tier: RiskFactor.Unverified,
+            tier: RiskFactor.Critical,
             title: "Libre's bridge relies on a third party provider",
             content:
-                "BTC users who deposit funds onto Libre do so via the pNetwork chain. This is an alternative consensus mechanism that is governed by the pNetwork token and governance. The signers for the pNetwork bitcoin multi-sig, custodying the funds backing pBTC, participate in a MPC protocol.\n\n⚠️ The pNetwork bridge has historically seen two exploits occur. One of those exploits involved BTC-backed tokens.\n\n🔬We are currently reviewing a score for the Libre bridge",
+                "BTC users who deposit funds onto Libre do so via the pNetwork bridge. A limited group of signers operate the bridge.\n\n⚠️ The pNetwork bridge has historically seen two exploits occur. One of those exploits involved BTC-backed tokens.\n\n[Source](https://docs.libre.org/libre-docs/cross-chain-interoperability/bitcoin-mainnet)",
         },
         {
             category: RiskCategory.DataAvailability,
@@ -84,7 +84,7 @@ const libre: LayerProject = {
             tier: RiskFactor.High,
             title: "Finality assurances are provided by a federated operator set.",
             content:
-                "Finality guarantees are finalized by Libre’s validator set and not by Bitcoin consensus participants.\n\n A block is considered final after a supermajority of network participants have validated a block. Once a block is considered final, it cannot be reorged.",
+                "Finality guarantees are finalized by Libre’s validator set and not by Bitcoin consensus participants.\n\n A block is considered final after a super-majority of network participants have validated a block. Once a block is considered final, it cannot be reorged.",
         },
     ],
     sections: [
