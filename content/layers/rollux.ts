@@ -58,7 +58,7 @@ const rollux: LayerProject = {
         {
             category: RiskCategory.BtcCustody,
             score: 0,
-            tier: RiskFactor.Critical,
+            tier: RiskFactor.VeryHigh,
             title: "Rollux does not have a consensus-level bridge with bitcoin",
             content:
                 "The Rollux L2 does not currently have a direct bridge with the Bitcoin mainchain. The only Bitcoin synthetic on Rollux is a wBTC contract. The contract is an upgradeable contract managed by a specific address, the controller, on the Syscoin L1, the blockchain that Rollux settles to. wBTC can be deposited onto Rollux by way of Ethereum, Polygon PoS, and Binance Smart Chain. The controller of this address is responsible for minting and burning tokens related to the wBTC contract.\n\nRollux’s L1 bridge contract, which facilitates the transfer of wBTC from Syscoin to Rollux, is immediately upgradeable by a multi-sig wallet with anonymous signers.\n\nThe Rollux L1 contract lives on the Syscoin NEVM chain.",

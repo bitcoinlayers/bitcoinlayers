@@ -58,7 +58,7 @@ const bitlayer: LayerProject = {
         {
             category: RiskCategory.BtcCustody,
             score: 0,
-            tier: RiskFactor.Critical,
+            tier: RiskFactor.VeryHigh,
             title: "Users trust federated signers set to custody their BTC. Less than 5, individual signers have been publicly announced",
             content:
                 "Bitlayer's current BTC bridge is a federated two-way peg with institutional signers. Bitlayer is working with multiple MPC custody platforms.\n\nUsers do not custody bitcoin assets backing tokens on BitLayer.\n\nNote that we are unable to verify the participants in this model[Source](https://docs.bitlayer.org/docs/Learn/BitlayerNetwork/Bridges)",

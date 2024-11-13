@@ -25,6 +25,7 @@ export enum RiskFactor {
     Low = "Low",
     Medium = "Medium",
     High = "High",
+    VeryHigh = "Very High",
     Critical = "Critical",
     Unverified = "Unverified",
     UnderReview = "Under Review",

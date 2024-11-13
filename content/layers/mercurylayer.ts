@@ -24,7 +24,7 @@ const mercurylayer: LayerProject = {
         RiskFactor.Unverified,
         RiskFactor.Low,
         RiskFactor.Medium,
-        RiskFactor.Critical,
+        RiskFactor.VeryHigh,
     ],
     btcLocked: 0,
     nativeToken: "BTC",
@@ -82,7 +82,7 @@ const mercurylayer: LayerProject = {
         {
             category: RiskCategory.FinalityGuarantees,
             score: 0,
-            tier: RiskFactor.Critical,
+            tier: RiskFactor.VeryHigh,
             title: "Transaction settlement does not rely on onchain confirmations. Users are not safeguard against the statechain entity double-spending their coin",
             content:
                 "Offchain finality guarantees in Mercury Layer are provided by the statechain operator deleting their previous keyshare. When a user receives a statecoin, they receive a new keyshare together with the operator’s new keyshare. \n\n⚠️ Users do not have assurance that the statechain operator deleted their previous keyshare with the past owner of the statecoin.",

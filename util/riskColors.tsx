@@ -7,8 +7,12 @@ export const getRiskColorText = (riskFactor: string) => {
             return "var(--color-risk-medium-text)";
         case "High":
             return "var(--color-risk-high-text)";
+        case "VeryHigh":
+            return "var(--color-risk-critical-text)";
         case "Critical":
             return "var(--color-risk-critical-text)";
+        case "UnderReview":
+            return "var(--color-risk-unverified-text)";
         case "Unverified":
             return "var(--color-risk-unverified-text)";
         default:
