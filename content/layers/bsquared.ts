@@ -21,8 +21,8 @@ const bsquared: LayerProject = {
     bridge: false,
     underReview: false,
     riskFactors: [
-        RiskFactor.Unverified,
-        RiskFactor.Unverified,
+        RiskFactor.VeryHigh,
+        RiskFactor.VeryHigh,
         RiskFactor.VeryHigh,
         RiskFactor.VeryHigh,
     ],

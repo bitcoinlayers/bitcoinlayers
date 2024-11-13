@@ -21,7 +21,7 @@ const libre: LayerProject = {
     bridge: false,
     underReview: false,
     riskFactors: [
-        RiskFactor.Unverified,
+        RiskFactor.VeryHigh,
         RiskFactor.High,
         RiskFactor.High,
         RiskFactor.High,

@@ -21,10 +21,10 @@ const stacks: LayerProject = {
     bridge: false,
     underReview: true,
     riskFactors: [
-        RiskFactor.Unverified,
+        RiskFactor.VeryHigh,
         RiskFactor.Medium,
         RiskFactor.Medium,
-        RiskFactor.Unverified,
+        RiskFactor.UnderReview,
     ],
     btcLocked: 1054,
     nativeToken: "STX",
@@ -62,10 +62,10 @@ const stacks: LayerProject = {
         {
             category: RiskCategory.BtcCustody,
             score: 0,
-            tier: RiskFactor.Unverified,
+            tier: RiskFactor.VeryHigh,
             title: "Users must trust centralized companies with custody of their BTC. Signers under review",
             content:
-                "Stacks has no consensus-enshrined BTC bridge. It does have two third-party bridges, which are both custodial multisigs. Users must trust the operators of these bridges to custody their BTC and back bitcoin-backed tokens on the Stacks network.\n\n🔬We are currently reviewing a score for the Stacks two-way peg.",
+                "Stacks has no consensus-enshrined BTC bridge. It does have third-party bridges, which are operated by centralized custodial parties. Users must trust the operators of these bridges to custody their BTC and back bitcoin-backed tokens on the Stacks network.\n\nThe primary third-party bridge is operated by [Alex Labs](https://alexlab.co/).",
         },
         {
             category: RiskCategory.DataAvailability,
@@ -86,24 +86,13 @@ const stacks: LayerProject = {
         {
             category: RiskCategory.FinalityGuarantees,
             score: 0,
-            tier: RiskFactor.Medium,
+            tier: RiskFactor.UnderReview,
             title: "State transitions finalized by permissionless, alternative consensus mechanism",
             content:
-                "Settlement is done offchain, on Stacks, rather than onchain, on Bitcoin. The validity of Stacks state transitions are not enforced by Bitcoin",
+                "The Nakamoto upgrade may have affected the score for the Finality section. This section is currently under review.",
         },
     ],
     sections: [
-        {
-            id: "underreivew",
-            title: "Under review",
-            content: [
-                {
-                    title: "Stacks is under review",
-                    content:
-                        "Stacks is currently being reviewed by the Bitcoin Layers team. It recently underwent the Nakamoto upgrade which may potentially affect the contents of this review.",
-                },
-            ],
-        },
         {
             id: "bitcoinsecurity",
             title: "Bitcoin Security",

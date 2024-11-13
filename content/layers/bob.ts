@@ -19,7 +19,7 @@ const bob: LayerProject = {
     bridge: false,
     underReview: false,
     riskFactors: [
-        RiskFactor.Unverified,
+        RiskFactor.VeryHigh,
         RiskFactor.Medium,
         RiskFactor.High,
         RiskFactor.Medium,

@@ -21,7 +21,7 @@ const core: LayerProject = {
     bridge: false,
     underReview: false,
     riskFactors: [
-        RiskFactor.Unverified,
+        RiskFactor.UnderReview,
         RiskFactor.Medium,
         RiskFactor.Medium,
         RiskFactor.Medium,
@@ -58,7 +58,7 @@ const core: LayerProject = {
         {
             category: RiskCategory.BtcCustody,
             score: 0,
-            tier: RiskFactor.Unverified,
+            tier: RiskFactor.UnderReview,
             title: "Funds are custodied by a federated signer set, with a number of parties ensuring the honesty of the bridge",
             content:
                 "Users trust various parties in maintaining the honesty of Core’s bridge with Bitcoin. Lockers are the party responsible for securing the bitcoin that backs coreBTC on Core Chain. These actors stake collateral, in the form of Core tokens, in order to participate as a Locker. In the event of maliciously moving bitcoin from the multi-sig, or being unable to fulfill withdrawals, Lockers would be slashed and lose the collateral they posted.\n\nOther parties in the bridge set up are responsible for monitoring the Locker’s activity and initiating the slashing process.",
