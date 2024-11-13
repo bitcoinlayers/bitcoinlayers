@@ -19,7 +19,7 @@ const internetcomputer: LayerProject = {
     staking: false,
     liquidStaking: false,
     bridge: false,
-    underReview: true,
+    underReview: false,
     riskFactors: [
         RiskFactor.UnderReview,
         RiskFactor.High,
