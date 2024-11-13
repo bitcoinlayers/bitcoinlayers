@@ -215,10 +215,10 @@ export default function InfraTVLChart() {
                             <button
                                 key={chart}
                                 data-active={activeChart === chart}
-                                className="flex flex-1 flex-col justify-center gap-1 px-3 py-2 sm:px-6 sm:py-4 text-left even:border-x sm:even:border-x-0 sm:odd:border-l sm:first:border-r data-[active=true]:bg-muted/50"
+                                className="flex flex-1 flex-col justify-center gap-1 pl-6 py-2 sm:px-6 sm:py-4 text-left even:border-x sm:even:border-x-0 sm:odd:border-l sm:first:border-r data-[active=true]:bg-muted/50"
                                 onClick={() => setActiveChart(chart)}
                             >
-                                <span className="text-xs text-muted-foreground w-12 md:w-20">
+                                <span className="text-xs text-muted-foreground md:w-20">
                                     {key}
                                 </span>
                                 <span className="text-xs sm:text-base leading-none">
@@ -250,7 +250,10 @@ export default function InfraTVLChart() {
                 </div>
             </div>
             <CardContent>
-                <ChartContainer config={chartConfig} className="h-96 w-full">
+                <ChartContainer
+                    config={chartConfig}
+                    className="lg:h-96 h-64 w-full"
+                >
                     <AreaChart
                         data={filterDataByDateRange(processedData)}
                         margin={{ left: 0, right: 0, top: 20, bottom: 20 }}

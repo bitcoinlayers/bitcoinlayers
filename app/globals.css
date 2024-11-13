@@ -249,7 +249,7 @@ section {
     @media (max-width: 1000px) {
         .watermark::after,
         .watermark-agg::after {
-            top: 50%;
+            top: 55%;
         }
     }
 }
