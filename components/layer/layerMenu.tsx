@@ -48,7 +48,7 @@ const LayerMenu: React.FC<{ layer: Project }> = ({ layer }) => {
 
                 {[
                     { id: "overview", title: "Overview" },
-                    { id: "riskanalysis", title: "Risk Analysis" },
+                    { id: "trustmodel", title: "Trust Model" },
                     ...layer.sections,
                 ].map((section, index) => (
                     <div

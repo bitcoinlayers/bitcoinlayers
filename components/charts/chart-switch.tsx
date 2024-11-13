@@ -14,7 +14,7 @@ export default function ChartSwitch() {
             return (
                 <AggregatedTVLChart
                     title="BTC deposits"
-                    description='Total amount of BTC locked in liquid "staking" protocols'
+                    description="Total amount of BTC deposited in third-party staking protocols"
                     itemNameKey="infra_name"
                     chartQueryParam="staking-chart"
                     rangeQueryParam="staking-range"

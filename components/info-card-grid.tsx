@@ -6,7 +6,7 @@ export default function InfoCardGrid() {
             <InfoCard
                 title="Methodology"
                 subtitle="Review the standards"
-                description="we set for layered protocols"
+                description="we set for bitcoin layers"
                 href="/methodology"
             />
             <InfoCard
