@@ -217,10 +217,10 @@ export default function LayerTVLChart() {
                             <button
                                 key={chart}
                                 data-active={activeChart === chart}
-                                className="flex flex-1 flex-col justify-center gap-1 px-3 py-2 sm:px-6 sm:py-4 text-left even:border-x sm:even:border-x-0 sm:odd:border-l sm:first:border-r data-[active=true]:bg-muted/50"
+                                className="flex flex-1 flex-col justify-center gap-1 px-3 py-2 sm:px-2 sm:py-4 text-left even:border-x sm:even:border-x-0 sm:odd:border-l sm:first:border-r data-[active=true]:bg-muted/50"
                                 onClick={() => setActiveChart(chart)}
                             >
-                                <span className="text-xs text-muted-foreground w-8 md:w-16">
+                                <span className="text-xs text-muted-foreground w-6 md:w-20">
                                     {key}
                                 </span>
                                 <span className="text-xs sm:text-base leading-none">
