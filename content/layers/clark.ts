@@ -34,7 +34,7 @@ const clark: LayerProject = {
             url: "https://x.com/buildonspark",
         },
     ],
-    description: "Spark is building a statechain protocol.",
+    description: "clArk is an implementation of Ark.",
     riskAnalysis: [
         {
             category: RiskCategory.UnilateralExits,

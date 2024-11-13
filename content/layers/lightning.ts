@@ -18,7 +18,7 @@ const lightning: LayerProject = {
     live: LiveStatus.Mainnet,
     staking: false,
     bridge: false,
-    underReview: false,
+    underReview: true,
     riskFactors: [
         RiskFactor.Low,
         RiskFactor.Low,

@@ -65,7 +65,7 @@ const bedrock: InfrastructureProject = {
                 {
                     title: "Smart contracts have undergone audits",
                     content:
-                        "Users can verify the various implementations of uniBTC’s vault and token contracts on the chains they’re deployed on.\n\nThese operators can censor users from using the contracts, inflate the supply of uniBTC, and steal the funds locked in the vault.\n\nuniBTC has gone through two audits. However, the protocol was exploited after these audits.\n\n⚠️ Audits of smart contracts do not mean exploits are not possible. Users should not deposit more funds than they’re willing to lose.",
+                        "These operators can censor users from using the contracts, inflate the supply of uniBTC, and steal the funds locked in the vault.\n\nUsers can verify the various implementations of uniBTC’s vault and token contracts on the chains they’re deployed on.\n\nuniBTC has gone through two audits. However, the protocol was exploited after these audits.\n\n⚠️ Audits of smart contracts do not mean exploits are not possible. Users should not deposit more funds than they’re willing to lose.",
                 },
             ],
         },
