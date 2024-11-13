@@ -37,7 +37,7 @@ export default function LayerPage({ params }: { params: { slug: string } }) {
                 </div>
             </div>
             <div className="lg:container mx-4 lg:px-4 flex lg:flex-row flex-col">
-                <div className="lg:w-1/5 z-40 lg:sticky lg:top-[60px] h-fit max-h-[calc(100vh-60px)] w-full overflow-y-auto lg:pt-6 lg:px-0 no-scrollbar py-0 bg-background">
+                <div className="lg:w-1/5 z-40 lg:sticky lg:top-[60px] h-fit max-h-[calc(100vh-60px)] w-full overflow-y-auto overflow-x-hidden lg:pt-6 lg:px-2 no-scrollbar py-0 bg-background">
                     <LayerMenu layer={layer} />
                 </div>
                 <div className="lg:w-4/5 flex flex-col">
