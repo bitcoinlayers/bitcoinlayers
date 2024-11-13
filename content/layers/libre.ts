@@ -58,7 +58,7 @@ const libre: LayerProject = {
             category: RiskCategory.BtcCustody,
             score: 0,
             tier: RiskFactor.Critical,
-            title: "Libre's bridge relies on a third party provider",
+            title: "Libre's bridge relies on a third party provider. Signers are permissioned nodes from the pNetwork. Less than 5, individual signers have been publicly announced",
             content:
                 "BTC users who deposit funds onto Libre do so via the pNetwork bridge. A limited group of signers operate the bridge.\n\n⚠️ The pNetwork bridge has historically seen two exploits occur. One of those exploits involved BTC-backed tokens.\n\n[Source](https://docs.libre.org/libre-docs/cross-chain-interoperability/bitcoin-mainnet)",
         },
