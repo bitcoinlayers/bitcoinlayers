@@ -48,7 +48,6 @@ export default function ChartSwitch() {
                     chartQueryParam="layer-chart"
                     rangeQueryParam="layer-range"
                     useDataHook={useGetBalancesHistoricalBylayerBitcoinonly}
-                    showDivisionButtons={false}
                     showLegend={false}
                     chartHeight="h-64"
                 />
