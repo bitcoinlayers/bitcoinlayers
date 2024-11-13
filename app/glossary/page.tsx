@@ -390,7 +390,7 @@ const GlossaryPage: React.FC = () => {
     );
 
     return (
-        <article className="flex flex-col min-h-screen max-w-5xl mx-auto pt-16 px-4 sm:px-6 lg:px-8">
+        <article className="flex flex-col max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col justify-start items-start gap-4">
                 <div className="flex justify-start items-center gap-8 w-full">
                     <div className="flex-grow flex items-center gap-[30px] h-[156px]">
@@ -401,7 +401,7 @@ const GlossaryPage: React.FC = () => {
                 </div>
                 <div className="flex flex-col lg:flex-row w-full">
                     <nav className="lg:w-1/8 lg:mb-8 mb-4 mr-12 lg:pr-4">
-                        <div className="flex lg:flex-col flex-row lg:gap-4 gap-2 lg:sticky lg:top-16">
+                        <div className="flex lg:flex-col flex-row lg:gap-4 gap-2 lg:sticky lg:top-20">
                             {Object.keys(glossaryData).map((letter) => (
                                 <a
                                     key={letter}

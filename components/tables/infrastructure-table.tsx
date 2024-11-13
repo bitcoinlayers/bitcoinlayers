@@ -1,12 +1,20 @@
 "use client";
 
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, ReactNode, Component } from "react";
 import Image from "next/image";
 import TableHeader from "@/components/tables/tableHeader";
 import { MobileView, isMobile } from "react-device-detect";
 import Link from "next/link";
 import { useQueryState } from "nuqs";
 import { InfrastructureProject, Project } from "@/content/props";
+import {
+    Card,
+    CardContent,
+    CardHeader,
+    CardTitle,
+    CardDescription,
+} from "@/components/ui/card";
+import { LayersIcon } from "lucide-react";
 
 type TableTabKey =
     | "Type"
@@ -23,6 +31,9 @@ interface Props {
         filterOptions?: string[];
         mobileLabel: string;
     }[];
+    title?: string;
+    description?: string;
+    icon?: ReactNode;
 }
 
 const InfrastructureImage = ({
@@ -49,9 +60,15 @@ const InfrastructureImage = ({
     );
 };
 
-const InfrastructureTable = ({ data, headers }: Props) => {
+const InfrastructureTable = ({
+    data,
+    headers,
+    title,
+    description,
+    icon,
+}: Props) => {
     const [status, setStatus] = useQueryState("status", {
-        defaultValue: "Mainnet",
+        defaultValue: "mainnet",
     });
     const [types] = useQueryState<string[]>("type", {
         defaultValue: [],
@@ -113,8 +130,8 @@ const InfrastructureTable = ({ data, headers }: Props) => {
         }
 
         filtered = filtered.filter((item) => {
-            if (status === "Mainnet") return item.live === "Mainnet";
-            if (status === "Testnet") return item.live !== "Mainnet";
+            if (status === "mainnet") return item.live === "Mainnet";
+            if (status === "testnet") return item.live !== "Mainnet";
             return true;
         });
 
@@ -139,199 +156,145 @@ const InfrastructureTable = ({ data, headers }: Props) => {
     );
 
     return (
-        <div className="px-6 lg:px-0 w-full">
-            {/* <div className="flex lg:mb-6 justify-center -mt-12 lg:mt-0 relative z-20">
-                <div className="justify-start items-start gap-4 inline-flex">
-                    <div
-                        className={`h-[30px] px-4 py-[5px] rounded-full border-2 justify-center items-center gap-1.5 flex cursor-pointer ${
-                            status === "Mainnet"
-                                ? "bg-white border-orange-600"
-                                : "border-slate-300"
-                        }`}
-                        onClick={() => setStatus("Mainnet")}
-                    >
-                        <div
-                            className={`text-center text-sm font-medium leading-tight ${
-                                status === "Mainnet"
-                                    ? "text-orange-600"
-                                    : "text-slate-600"
-                            }`}
-                        >
-                            Mainnet
-                        </div>
-                    </div>
-                    <div
-                        className={`h-[30px] rounded-full border-2 justify-center items-center gap-1 flex cursor-pointer ${
-                            status === "Testnet"
-                                ? "bg-white border-orange-600"
-                                : "border-slate-300"
-                        }`}
-                        onClick={() => setStatus("Testnet")}
-                    >
-                        <div className="grow shrink basis-0 h-[30px] px-4 py-[5px] justify-center items-center gap-1.5 flex">
-                            <div
-                                className={`text-center text-sm font-medium leading-tight ${
-                                    status === "Testnet"
-                                        ? "text-orange-600"
-                                        : "text-slate-600"
-                                }`}
-                            >
-                                Testnet
-                            </div>
-                        </div>
-                    </div>
-                    <div
-                        className={`h-[30px] rounded-full border-2 justify-center items-center gap-1 flex cursor-pointer ${
-                            status === "All"
-                                ? "bg-white border-orange-600"
-                                : "border-slate-300"
-                        }`}
-                        onClick={() => setStatus("All")}
-                    >
-                        <div className="grow shrink basis-0 h-[30px] px-4 py-[5px] justify-center items-center gap-1.5 flex">
-                            <div
-                                className={`text-center text-sm font-medium leading-tight ${
-                                    status === "All"
-                                        ? "text-orange-600"
-                                        : "text-slate-600"
-                                }`}
-                            >
-                                All
-                            </div>
-                        </div>
-                    </div>
+        <Card className="w-full">
+            <CardHeader className="flex flex-col items-stretch space-y-0 border-b p-0 sm:flex-row border-none">
+                <div className="flex flex-1 flex-col justify-center gap-1 px-6 py-5 sm:py-6">
+                    <CardTitle className="flex">
+                        {icon || <LayersIcon className="mr-3" />}{" "}
+                        {title || "Infrastructure"}
+                    </CardTitle>
+                    <CardDescription>
+                        {description ||
+                            "Learn the tradeoffs for different infrastructure projects"}
+                    </CardDescription>
                 </div>
-            </div> */}
-            <MobileView className="flex justify-center">
-                <div className="justify-center lg:items-start gap-4 inline-flex py-3">
-                    {headers.slice(1).map((_item, ind) => {
-                        const isAllowedTab = [
-                            "Type",
-                            "Status",
-                            "Unit of Account",
-                            "Associated Layers",
-                        ].includes(_item.name);
-                        return (
-                            <div
-                                className={`h-[30px] px-4 py-[5px] rounded-full border-2 justify-center items-center gap-1.5 flex cursor-pointer ${
-                                    mobileActiveTab === _item.name
-                                        ? "bg-white border-orange-600"
-                                        : "border-slate-300"
-                                }`}
-                                onClick={() =>
-                                    isAllowedTab &&
-                                    handleMobileTabClick(
-                                        _item.name as TableTabKey,
-                                    )
-                                }
-                                key={ind}
-                            >
-                                <div
-                                    className={`text-center text-sm font-medium leading-tight ${
-                                        mobileActiveTab === _item.name
-                                            ? "text-orange-600"
-                                            : "text-slate-600"
+                <div className="flex">
+                    <button
+                        data-active={status === "mainnet"}
+                        className="relative z-30 flex flex-1 flex-col justify-center gap-1 border-t px-6 py-4 text-left even:border-l data-[active=true]:bg-muted/50 sm:border-l sm:border-t-0 sm:px-8 sm:py-6 min-w-[100px] sm:min-w-[150px]"
+                        onClick={() => setStatus("mainnet")}
+                    >
+                        <span className="text-xs text-muted-foreground">
+                            On mainnet
+                        </span>
+                        <span className="text-lg font-bold leading-none sm:text-3xl">
+                            {data
+                                .filter((item) => item.live === "Mainnet")
+                                .length.toLocaleString()}
+                        </span>
+                    </button>
+                    <button
+                        data-active={status === "testnet"}
+                        className="relative z-30 flex flex-1 flex-col justify-center gap-1 border-t px-6 py-4 text-left even:border-l data-[active=true]:bg-muted/50 sm:border-l sm:border-t-0 sm:px-8 sm:py-6 min-w-[100px] sm:min-w-[150px]"
+                        onClick={() => setStatus("testnet")}
+                    >
+                        <span className="text-xs text-muted-foreground">
+                            Coming soon
+                        </span>
+                        <span className="text-lg font-bold leading-none sm:text-3xl">
+                            {data
+                                .filter((item) => item.live !== "Mainnet")
+                                .length.toLocaleString()}
+                        </span>
+                    </button>
+                </div>
+            </CardHeader>
+            <CardContent className="p-0">
+                <div className="overflow-x-auto bg-lightsecondary rounded-xl mx-auto border-none">
+                    <table className="bg-lightsecondary w-full text-sm text-left rtl:text-right rounded-xl">
+                        <TableHeader
+                            headers={isMobile ? mobileTableHeaders : headers}
+                            onSort={handleSort}
+                        />
+                        <tbody className="bg-white gap-x-8 border-t border-stroke_tertiary text_table_important">
+                            {sortAndFilterData.map((item, index) => (
+                                <tr
+                                    className={`cursor-pointer border-b border-stroke_tertiary text_table_important ${
+                                        index === sortAndFilterData.length - 1
+                                            ? ""
+                                            : ""
                                     }`}
+                                    key={item.slug}
                                 >
-                                    {_item.mobileLabel}
-                                </div>
-                            </div>
-                        );
-                    })}
-                </div>
-            </MobileView>
-            <div className="overflow-x-auto bg-lightsecondary rounded-xl mx-auto border border-stroke_tertiary">
-                <table className="bg-lightsecondary w-full text-sm text-left rtl:text-right rounded-xl">
-                    <TableHeader
-                        headers={isMobile ? mobileTableHeaders : headers}
-                        onSort={handleSort}
-                    />
-                    <tbody className="bg-white gap-x-8 border-t border-stroke_tertiary text_table_important">
-                        {sortAndFilterData.map((item, index) => (
-                            <tr
-                                className={`cursor-pointer border-b border-stroke_tertiary text_table_important ${
-                                    index === sortAndFilterData.length - 1
-                                        ? ""
-                                        : ""
-                                }`}
-                                key={item.slug}
-                            >
-                                <td className="lg:px-6 px-4 py-4 font-semibold whitespace-nowrap border-r lg:border-r-0 border-stroke_tertiary text_table_important text-table_body">
-                                    <Link
-                                        href={`/infrastructure/${item.slug}`}
-                                        className="flex items-center"
-                                    >
-                                        <InfrastructureImage
-                                            src={`/logos/${item.slug}.png`}
-                                            title={item.title}
-                                        />
-                                        <span className="ml-2 lg:word-break-none">
-                                            {item.title}
-                                        </span>
-                                    </Link>
-                                </td>
+                                    <td className="lg:px-6 px-4 py-4 font-semibold whitespace-nowrap border-r lg:border-r-0 border-stroke_tertiary text_table_important text-table_body">
+                                        <Link
+                                            href={`/infrastructure/${item.slug}`}
+                                            className="flex items-center"
+                                        >
+                                            <InfrastructureImage
+                                                src={`/logos/${item.slug}.png`}
+                                                title={item.title}
+                                            />
+                                            <span className="ml-2 lg:word-break-none">
+                                                {item.title}
+                                            </span>
+                                        </Link>
+                                    </td>
 
-                                {(!isMobile || mobileActiveTab === "Type") && (
-                                    <td className="lg:px-6 px-4 py-3 lg:py-4 border-stroke_tertiary text_table_important">
-                                        <Link
-                                            href={`/infrastructure/${item.slug}`}
-                                        >
-                                            {" "}
-                                            {item.entityType}
-                                        </Link>
-                                    </td>
-                                )}
-                                {(!isMobile ||
-                                    mobileActiveTab === "Status") && (
-                                    <td className="lg:px-6 px-4 py-3 lg:py-4 border-stroke_tertiary text_table_important">
-                                        <Link
-                                            href={`/infrastructure/${item.slug}`}
-                                        >
-                                            {" "}
-                                            {item.live}
-                                        </Link>
-                                    </td>
-                                )}
-                                {(!isMobile ||
-                                    mobileActiveTab === "Unit of Account") && (
-                                    <td className="lg:px-6 px-4 py-3 lg:py-4 border-stroke_tertiary text_table_important">
-                                        <Link
-                                            href={`/infrastructure/${item.slug}`}
-                                        >
-                                            <div className="flex items-center">
-                                                {item.nativeToken
-                                                    .toLowerCase()
-                                                    .includes("btc") && (
-                                                    <Image
-                                                        src="/btc.svg"
-                                                        alt="BTC logo"
-                                                        width={20}
-                                                        height={20}
-                                                        className="mr-2"
-                                                    />
-                                                )}
-                                                {item.nativeToken}
-                                            </div>
-                                        </Link>
-                                    </td>
-                                )}
-                                {(!isMobile ||
-                                    mobileActiveTab ===
-                                        "Associated Layers") && (
-                                    <td className="lg:px-6 px-4 py-3 lg:py-4 border-r border-stroke_tertiary text_table_important">
-                                        <Link
-                                            href={`/infrastructure/${item.slug}`}
-                                        >
-                                            {item.associatedLayers}
-                                        </Link>
-                                    </td>
-                                )}
-                            </tr>
-                        ))}
-                    </tbody>
-                </table>
-            </div>
-        </div>
+                                    {(!isMobile ||
+                                        mobileActiveTab === "Type") && (
+                                        <td className="lg:px-6 px-4 py-3 lg:py-4 border-stroke_tertiary text_table_important">
+                                            <Link
+                                                href={`/infrastructure/${item.slug}`}
+                                            >
+                                                {" "}
+                                                {item.entityType}
+                                            </Link>
+                                        </td>
+                                    )}
+                                    {(!isMobile ||
+                                        mobileActiveTab === "Status") && (
+                                        <td className="lg:px-6 px-4 py-3 lg:py-4 border-stroke_tertiary text_table_important">
+                                            <Link
+                                                href={`/infrastructure/${item.slug}`}
+                                            >
+                                                {" "}
+                                                {item.live}
+                                            </Link>
+                                        </td>
+                                    )}
+                                    {(!isMobile ||
+                                        mobileActiveTab ===
+                                            "Unit of Account") && (
+                                        <td className="lg:px-6 px-4 py-3 lg:py-4 border-stroke_tertiary text_table_important">
+                                            <Link
+                                                href={`/infrastructure/${item.slug}`}
+                                            >
+                                                <div className="flex items-center">
+                                                    {item.nativeToken
+                                                        .toLowerCase()
+                                                        .includes("btc") && (
+                                                        <Image
+                                                            src="/btc.svg"
+                                                            alt="BTC logo"
+                                                            width={20}
+                                                            height={20}
+                                                            className="mr-2"
+                                                        />
+                                                    )}
+                                                    {item.nativeToken}
+                                                </div>
+                                            </Link>
+                                        </td>
+                                    )}
+                                    {(!isMobile ||
+                                        mobileActiveTab ===
+                                            "Associated Layers") && (
+                                        <td className="lg:px-6 px-4 py-3 lg:py-4 border-r border-stroke_tertiary text_table_important">
+                                            <Link
+                                                href={`/infrastructure/${item.slug}`}
+                                            >
+                                                {item.associatedLayers}
+                                            </Link>
+                                        </td>
+                                    )}
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
+            </CardContent>
+        </Card>
     );
 };
 

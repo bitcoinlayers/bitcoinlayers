@@ -33,30 +33,30 @@ const RiskIcon: React.FC<{
     );
 };
 
-const riskEmojiMap: Record<string, string> = {
-    Low: "😍",
-    Medium: "🙃",
-    High: "😖",
-    Critical: "🛑",
-    Unverified: "❓",
-};
+// const riskEmojiMap: Record<string, string> = {
+//     Low: "😍",
+//     Medium: "🙃",
+//     High: "😖",
+//     Critical: "🛑",
+//     Unverified: "❓",
+// };
 
-const getRiskEmoji = (risk: string): string => {
-    switch (risk) {
-        case "Low":
-            return "😍";
-        case "Medium":
-            return "🙃";
-        case "High":
-            return "😖";
-        case "Critical":
-            return "🛑";
-        case "Unverified":
-            return "❓";
-        default:
-            return "❓";
-    }
-};
+// const getRiskEmoji = (risk: string): string => {
+//     switch (risk) {
+//         case "Low":
+//             return "😍";
+//         case "Medium":
+//             return "🙃";
+//         case "High":
+//             return "😖";
+//         case "Critical":
+//             return "🛑";
+//         case "Unverified":
+//             return "❓";
+//         default:
+//             return "❓";
+//     }
+// };
 
 const RiskSnapshot: React.FC<RiskSnapshotProps> = ({ layer, title }) => {
     return (
@@ -93,8 +93,8 @@ const RiskSnapshot: React.FC<RiskSnapshotProps> = ({ layer, title }) => {
                                         ),
                                     }}
                                 >
-                                    {layer.riskFactors[index]} Risk{" "}
-                                    {getRiskEmoji(layer.riskFactors[index])}
+                                    {layer.riskFactors[index]}
+                                    {/* {getRiskEmoji(layer.riskFactors[index])} */}
                                 </span>
                             </div>
                             <div className="text_table_important text-xs sm:text-sm">

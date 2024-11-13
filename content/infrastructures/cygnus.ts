@@ -14,6 +14,7 @@ const cygnus: InfrastructureProject = {
     entityType: EntityType.Restaking,
     live: LiveStatus.Mainnet,
     staking: false,
+    liquidStaking: false,
     bridge: false,
     underReview: true,
     riskFactors: ["", ""],

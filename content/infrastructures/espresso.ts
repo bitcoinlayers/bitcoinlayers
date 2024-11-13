@@ -14,6 +14,7 @@ const espresso: InfrastructureProject = {
     entityType: EntityType.SequencingDA,
     live: LiveStatus.Proposed,
     staking: false,
+    liquidStaking: false,
     bridge: false,
     underReview: true,
     riskFactors: ["", ""],

@@ -42,7 +42,7 @@ const AboutPage: React.FC = () => {
                             <InfoBox
                                 question="The Project"
                                 answer="Bitcoin Layers is a website that analyzes Bitcoin L2s and sidechain protocols against a general framework. The goal of this site is to show users and other ecosystem participants trust assumptions related to Bitcoin L2s, sidechains and related infrastructure. Bitcoin Layers offers an opinionated analysis, and is aimed to show a high level overview of the technologies being developed in the Bitcoin scaling space. These assessments do not necessarily reflect the security of a given system, but shares if a system is natively integrated with, and derives security from, Bitcoin. The website is developed by LX Research Labs and is free and open-source under the MIT license. Anyone is welcome to use our research however they see fit, but we do request that you credit us when doing so. Nothing in the Bitcoin Layers website should be considered financial advice. Our risk assessments are not designed to be recommendations, or endorsements, of specific protocols. Our risk assessments are not security audits. Users should do their own research when choosing a scaling protocol to interact with. 
-" //TODO update
+"
                             />
                         </div>
                     </div>

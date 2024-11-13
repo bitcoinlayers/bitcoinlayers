@@ -14,6 +14,7 @@ const cashu: InfrastructureProject = {
     entityType: EntityType.ChaumianEcashProtocol,
     live: LiveStatus.Mainnet,
     staking: false,
+    liquidStaking: false,
     bridge: false,
     underReview: false,
     riskFactors: ["", ""],

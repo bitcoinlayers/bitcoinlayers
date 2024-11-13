@@ -1,11 +1,8 @@
 import "./globals.css";
 import { Inter } from "next/font/google";
-import { ThemeProvider } from "@/components/theme-provider";
 import { Analytics } from "@/components/analytics";
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
-import { QueryClientProvider } from "@tanstack/react-query";
-import { queryClient } from "@/util/tanstack";
 import Providers from "@/components/providers";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -22,11 +19,13 @@ interface RootLayoutProps {
 export default function RootLayout({ children }: RootLayoutProps) {
     return (
         <html lang="en" suppressHydrationWarning>
-            <body className={`antialiased ${inter.className}`}>
+            <body className={`antialiased bg-background ${inter.className}`}>
                 <Providers>
-                    <div className="mx-auto min-h-screen bg-bg_primary">
+                    <div className="mx-auto min-h-screen">
                         <Navbar />
-                        <main>{children}</main>
+                        <main className="mx-auto max-w-5xl px-4 py-4">
+                            {children}
+                        </main>
                         <Footer />
                     </div>
                 </Providers>

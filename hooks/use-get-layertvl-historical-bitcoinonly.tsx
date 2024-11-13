@@ -15,6 +15,7 @@ interface Props {
     queryString?: string;
 }
 
+// Populates Layers TVL charts
 export default function useGetBalancesHistoricalBylayerBitcoinonly({
     queryString,
 }: Props = {}) {

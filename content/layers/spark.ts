@@ -17,6 +17,7 @@ const spark: LayerProject = {
     entityType: EntityType.Statechain,
     live: LiveStatus.Announced,
     staking: false,
+    liquidStaking: false,
     bridge: false,
     underReview: true,
     riskFactors: ["", "", "", ""],

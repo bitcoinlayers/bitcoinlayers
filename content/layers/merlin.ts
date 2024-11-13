@@ -17,6 +17,7 @@ const merlin: LayerProject = {
     entityType: EntityType.Sidechain,
     live: LiveStatus.Mainnet,
     staking: false,
+    liquidStaking: false,
     bridge: false,
     underReview: false,
     riskFactors: [
@@ -57,7 +58,7 @@ const merlin: LayerProject = {
         {
             category: RiskCategory.BtcCustody,
             score: 0,
-            tier: RiskFactor.Critical,
+            tier: RiskFactor.VeryHigh,
             title: "Users deposit funds into a MPC wallet managed by a custodian",
             content:
                 "When users deposit funds into Merlin, they deposit funds into a MPC wallet managed by Cobo, a institutional custodian. Information on how many signers participate in this MPC scheme is not available. Merlin has stated that more players are being added into this custody scheme.\n\n🔬We are currently reviewing the signers for the Merlin two-way peg.",
@@ -65,7 +66,7 @@ const merlin: LayerProject = {
         {
             category: RiskCategory.DataAvailability,
             score: 0,
-            tier: RiskFactor.Critical,
+            tier: RiskFactor.VeryHigh,
             title: "State data is stored and made available by a permissioned data availability committee. The identities of its members are under review",
             content:
                 "Merlin chain is built on the Polygon CDK stack. In its Github, it has a copy of the Polygon CDK Committee contract. In the contract, it states that the admin has the control to set up the committee, so it is likely that the members of this committee are permissioned and selected by the Merlin Chain operator. We have not been able to verify the members of this committee.",

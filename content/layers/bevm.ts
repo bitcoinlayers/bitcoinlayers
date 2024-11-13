@@ -15,6 +15,7 @@ const bevm: LayerProject = {
     entityType: EntityType.Sidechain,
     live: LiveStatus.Mainnet,
     staking: false,
+    liquidStaking: false,
     bridge: false,
     underReview: false,
     riskFactors: [
@@ -141,7 +142,7 @@ const bevm: LayerProject = {
                     title: "Onchain applications",
                     content:
                         "Onchain applications are supported. Onchain applications including borrowing and lending protocols, onchain exchanges (commonly referred to as decentralized exchanges), and more. These applications are supported with more expressive smart contract environments.",
-                }
+                },
             ],
         },
         {

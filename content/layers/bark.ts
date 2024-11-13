@@ -17,6 +17,7 @@ const bark: LayerProject = {
     entityType: EntityType.Ark,
     live: LiveStatus.Announced,
     staking: false,
+    liquidStaking: false,
     bridge: false,
     underReview: true,
     riskFactors: ["", "", "", ""],

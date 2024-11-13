@@ -17,6 +17,7 @@ const nexio: LayerProject = {
     entityType: EntityType.TBD,
     live: LiveStatus.Announced,
     staking: false,
+    liquidStaking: false,
     bridge: false,
     underReview: true,
     riskFactors: ["", "", "", ""],

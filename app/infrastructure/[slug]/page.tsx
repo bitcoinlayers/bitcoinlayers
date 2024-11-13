@@ -35,9 +35,9 @@ export default async function InfrastructurePage({
 
     return (
         <>
-            <UnderDevelopmentBanner
+            {/* <UnderDevelopmentBanner
                 title={`The ${infrastructure.title} page of Bitcoin Layers is under development.`}
-            />
+            /> */}
             <article className="flex flex-col lg:min-h-screen max-w-5xl mx-auto lg:pt-24 pt-12">
                 <div className="flex justify-start items-center lg:gap-8 gap-2 lg:my-12 my-6 px-4 lg:px-0">
                     <div className="flex justify-center items-center">

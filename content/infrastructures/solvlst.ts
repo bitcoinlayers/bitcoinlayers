@@ -14,7 +14,8 @@ const solvlst: InfrastructureProject = {
     title: "Solv LSTs",
     entityType: EntityType.LiquidStaking,
     live: LiveStatus.Deposits,
-    staking: true,
+    staking: false,
+    liquidStaking: true,
     bridge: false,
     underReview: true,
     riskFactors: ["", ""],
@@ -48,8 +49,8 @@ const solvlst: InfrastructureProject = {
             title: "Economics",
             content: [
                 {
-                title: "Incentive model",
-                content:
+                    title: "Incentive model",
+                    content:
                         "🔬 Babylon’s staking is not currently securing any PoS chains. Rewards are only issued through points. Once live, we will review Babylon’s incentive and issuance mechanism.",
                 },
             ],

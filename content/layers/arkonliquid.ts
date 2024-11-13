@@ -14,6 +14,7 @@ const arkonliquid: LayerProject = {
     title: "Ark on Liquid",
     entityType: EntityType.ArkSidechain,
     staking: false,
+    liquidStaking: false,
     live: LiveStatus.Mainnet,
     bridge: false,
     underReview: false,

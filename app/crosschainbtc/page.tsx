@@ -1,9 +1,11 @@
+"use client";
+
 import { allLayers } from "@/util/layer_index";
 import { allInfrastructures } from "@/util/infrastructure_index";
 import FederationTable from "@/components/tables/federation-table";
 import Hero from "@/components/hero";
-import UnderDevelopmentBanner from "@/components/under-development-banner";
-import BridgesAggregatedTVLChart from "@/components/charts/aggregated-tvl/bridges";
+import AggregatedTVLChart from "@/components/charts/aggregated-tvl-chart";
+import useGetInfratvlHistoricalBridge from "@/hooks/use-get-infratvl-historical-bridge";
 
 export default function BridgesPage() {
     const sortedEverything = [...allLayers, ...allInfrastructures]
@@ -39,13 +41,21 @@ export default function BridgesPage() {
 
     return (
         <div className="mx-auto">
-            <UnderDevelopmentBanner />
+            {/* <UnderDevelopmentBanner /> */}
             <Hero
                 title="Crosschain"
                 description="Not all crosschain BTC is made equal."
             />
             <div className="mb-12 w-full lg:max-w-5xl mx-auto">
-                <BridgesAggregatedTVLChart />
+                <AggregatedTVLChart
+                    title="Crosschain BTC TVL"
+                    description="Total amount of BTC locked in crosschain BTC protocols"
+                    itemNameKey="infra_name"
+                    chartQueryParam="bridge-chart"
+                    rangeQueryParam="bridge-range"
+                    useDataHook={useGetInfratvlHistoricalBridge}
+                    divisionDefaultValue="separate"
+                />
             </div>
             <div className="lg:flex mb-4 justify-center w-full lg:max-w-5xl mx-auto">
                 <FederationTable

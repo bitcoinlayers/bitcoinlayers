@@ -14,6 +14,7 @@ const celestia: InfrastructureProject = {
     entityType: EntityType.DataAvailability,
     live: LiveStatus.Mainnet,
     staking: false,
+    liquidStaking: false,
     bridge: false,
     underReview: true,
     riskFactors: ["", ""],

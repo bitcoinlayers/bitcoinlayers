@@ -168,7 +168,7 @@ export default function LayerTVLChart() {
         <Card className="bg-background mb-6 watermark">
             <CardHeader className="flex flex-col space-y-4">
                 <div className="flex flex-col sm:flex-row justify-between w-full">
-                    <CardTitle className="flex font-normal items-center text-2xl sm:text-3xl mb-2 sm:mb-0">
+                    <CardTitle className="flex font-semibold items-center text-2xl sm:text-3xl mb-2 sm:mb-0">
                         Layer Metrics
                     </CardTitle>
                     <div className="flex flex-col sm:flex-row items-start sm:items-center justify-center sm:space-x-2 space-y-2 sm:space-y-0">

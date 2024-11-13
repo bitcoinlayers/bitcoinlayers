@@ -1,10 +1,12 @@
+"use client";
+
 import { allLayers } from "@/util/layer_index";
 import { allInfrastructures } from "@/util/infrastructure_index";
 
 import StakingTable from "@/components/tables/staking-table";
 import Hero from "@/components/hero";
-import UnderDevelopmentBanner from "@/components/under-development-banner";
-import StakingAggregatedTVLChart from "@/components/charts/aggregated-tvl/staking";
+import AggregatedTVLChart from "@/components/charts/aggregated-tvl-chart";
+import useGetInfratvlHistoricalStaked from "@/hooks/use-get-infratvl-historical-staked";
 
 export default function StakingPage() {
     const sortedEverything = [...allLayers, ...allInfrastructures]
@@ -36,13 +38,19 @@ export default function StakingPage() {
 
     return (
         <div className="mx-auto">
-            <UnderDevelopmentBanner title="The Staking module of Bitcoin Layers is under development." />
             <Hero
                 title="Staking"
                 description="Not every bitcoin staking protocol is equal."
             />
             <div className="mb-24 lg:mb-12 w-full lg:max-w-5xl mx-auto">
-                <StakingAggregatedTVLChart />
+                <AggregatedTVLChart
+                    title="Staking TVL"
+                    description="Total amount of BTC locked in staking protocols"
+                    itemNameKey="infra_name"
+                    chartQueryParam="staking-chart"
+                    rangeQueryParam="staking-range"
+                    useDataHook={useGetInfratvlHistoricalStaked}
+                />
             </div>
             <div className="lg:flex mb-4 justify-center w-full lg:max-w-5xl mx-auto">
                 <StakingTable data={sortedEverything} headers={layerHeaders} />

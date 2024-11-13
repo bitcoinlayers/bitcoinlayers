@@ -15,6 +15,7 @@ const astria: InfrastructureProject = {
     entityType: EntityType.Sequencing,
     live: LiveStatus.Proposed,
     staking: false,
+    liquidStaking: false,
     bridge: false,
     underReview: true,
     riskFactors: [RiskFactor.High, RiskFactor.High],

@@ -17,7 +17,7 @@ const RiskHeader: React.FC<{ category: string; riskFactor: string }> = ({
                     color: getRiskColorText(riskFactor),
                 }}
             >
-                {riskFactor} risk
+                {riskFactor}
             </div>
             <div className="w-8 h-8 justify-center items-center flex">
                 <div

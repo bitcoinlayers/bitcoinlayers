@@ -17,13 +17,14 @@ const bsquared: LayerProject = {
     entityType: EntityType.SidechainRollup,
     live: LiveStatus.Mainnet,
     staking: false,
+    liquidStaking: false,
     bridge: false,
     underReview: false,
     riskFactors: [
         RiskFactor.Unverified,
         RiskFactor.Unverified,
-        RiskFactor.Critical,
-        RiskFactor.Critical,
+        RiskFactor.VeryHigh,
+        RiskFactor.VeryHigh,
     ],
     btcLocked: 0,
     nativeToken: "BSQ",
@@ -57,7 +58,7 @@ const bsquared: LayerProject = {
         {
             category: RiskCategory.BtcCustody,
             score: 0,
-            tier: RiskFactor.Critical,
+            tier: RiskFactor.VeryHigh,
             title: "Users deposit funds into a MPC protocol managed by Bsquared Network and a custodian. Less than 5, individual signers have been publicly announced",
             content:
                 "Previous blog posts have stated that when users deposit funds into Bsquared, they deposit funds into a MPC wallet managed by the Bsquared Network team and Cobo, a institutional custodian. Information on how many signers participate in this MPC scheme is not available. Bsquared has stated that more players are being added into this custody scheme.\n\nNote that we are unable to verify the participants in this model[Source](https://www.cobo.com/post/cobo-partners-with-b2-network-to-enhance-advanced-bitcoin-layer-2-infrastructure-with-co-managed-mpc-custody-solution)",
@@ -65,7 +66,7 @@ const bsquared: LayerProject = {
         {
             category: RiskCategory.DataAvailability,
             score: 0,
-            tier: RiskFactor.Critical,
+            tier: RiskFactor.VeryHigh,
             title: "DA requirement is fulfilled by three permissioned validators",
             content:
                 "Sequencer batches are posted to the Bsquared Network L1. This network consists of a permissioned validator set who is responsible for making the data readily available.\n\n🔬We are currently reviewing the operators satisfying the Bsquared DA requirement.",
@@ -73,7 +74,7 @@ const bsquared: LayerProject = {
         {
             category: RiskCategory.NetworkOperators,
             score: 0,
-            tier: RiskFactor.Critical,
+            tier: RiskFactor.VeryHigh,
             title: "Both the rollup chain and parent chain are run by federated, centralized parties",
             content:
                 "Bsquared Network’s Polygon zkEVM implementation has a single sequencer that posts sequencer batches to its network of three L1 validators.",
@@ -81,7 +82,7 @@ const bsquared: LayerProject = {
         {
             category: RiskCategory.FinalityGuarantees,
             score: 0,
-            tier: RiskFactor.Critical,
+            tier: RiskFactor.VeryHigh,
             title: "Finality is guaranteed by a permissioned validator set",
             content:
                 "Bsquared receives no settlement assurances from Bitcoin. Bsquared settlement is finalized by a group of three, federated validators who verify state transitions submitted by the Bsquared Network zkEVM operator.",

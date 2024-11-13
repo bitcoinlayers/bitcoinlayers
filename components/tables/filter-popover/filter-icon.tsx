@@ -1,5 +1,5 @@
 interface Props {
-    filters: string[]
+    filters: string[];
 }
 
 export default function FilterIcon({ filters }: Props) {
