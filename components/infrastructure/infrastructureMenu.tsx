@@ -1,11 +1,11 @@
 "use client";
 
-import { Project } from "@/content/props";
+import { InfrastructureProject } from "@/content/props";
 import React, { useState, useEffect } from "react";
 
-const InfrastructureMenu: React.FC<{ infrastructure: Project }> = ({
-    infrastructure,
-}) => {
+const InfrastructureMenu: React.FC<{
+    infrastructure: InfrastructureProject;
+}> = ({ infrastructure }) => {
     const [activeSection, setActiveSection] = useState("overview");
 
     useEffect(() => {
@@ -42,33 +42,33 @@ const InfrastructureMenu: React.FC<{ infrastructure: Project }> = ({
             window.scrollTo({ top: yCoordinate, behavior: "smooth" });
         }
     }
+
     return (
-        <nav className="">
+        <nav className="w-full overflow-x-hidden">
             <div className="flex lg:flex-col justify-start items-start lg:gap-4 gap-2 z-40">
-                {/*  menu is updating with coloring to match the live section */}
                 {[
                     { id: "overview", title: "Overview" },
+                    ...(infrastructure.assessment
+                        ? [{ id: "assessment", title: "Assessment" }]
+                        : []),
                     ...infrastructure.sections,
                 ].map((section, index) => (
                     <div
                         key={index}
-                        className="flex justify-start items-center gap-4"
+                        className={`flex lg:flex-row flex-row justify-start items-center lg:gap-4 gap-2 p-3 whitespace-nowrap ${
+                            activeSection === section.id
+                                ? "border-b-[3px] lg:border-l-[3px] lg:border-b-0 border-brand"
+                                : "border-b-[3px] border-transparent lg:border-l-[3px]"
+                        }`}
                     >
-                        <div
-                            className={`w-[3px] h-10 ${
-                                activeSection === section.id
-                                    ? "bg-brand"
-                                    : "opacity-0 bg-brand_neutral"
-                            }`}
-                        ></div>
                         <a
                             className={`no-underline text-sm ${
                                 activeSection === section.id
                                     ? "text-orange-600 font-semibold font-inter leading-tight"
                                     : "text-neutral-700 font-light leading-tight"
-                            }`}
-                            href={`#${section.id}`}
+                            } w-full whitespace-normal break-words`}
                             onClick={() => handleClick(section.id)}
+                            href={`#${section.id}`}
                         >
                             {section.title}
                         </a>

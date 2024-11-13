@@ -52,8 +52,8 @@ export default async function InfrastructurePage({
                         </h1>
                     </div>
                 </div>
-                <div className="container flex lg:flex-row flex-col">
-                    <div className="lg:w-1/5 sticky top-[48px] lg:h-screen w-full overflow-y-auto lg:pt-6 px-4 lg:px-0 no-scrollbar py-0 bg-white">
+                <div className="lg:container mx-4 lg:px-4 flex lg:flex-row flex-col">
+                    <div className="lg:w-1/5 z-40 lg:sticky lg:top-[60px] max-h-[calc(100vh-60px)] w-full overflow-y-auto overflow-x-hidden whitespace-nowrap lg:whitespace-normal top-[68px] fixed h-auto lg:h-fit lg:pt-6 lg:px-2 no-scrollbar py-0 bg-background">
                         <InfrastructureMenu infrastructure={infrastructure} />
                     </div>
                     <div className="lg:w-4/5 flex flex-col px-4 lg:px-0">
