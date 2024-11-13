@@ -43,8 +43,8 @@ const InfrastructureMenu: React.FC<{ infrastructure: Project }> = ({
         }
     }
     return (
-        <nav className="">
-            <div className="flex lg:flex-col justify-start items-start lg:gap-4 gap-2 z-40">
+        <nav className="w-full overflow-x-auto">
+            <div className="flex lg:flex-col justify-start items-start lg:gap-4 gap-2 z-40 min-w-max">
                 {/*  menu is updating with coloring to match the live section */}
                 {[
                     { id: "overview", title: "Overview" },
@@ -52,7 +52,7 @@ const InfrastructureMenu: React.FC<{ infrastructure: Project }> = ({
                 ].map((section, index) => (
                     <div
                         key={index}
-                        className="flex justify-start items-center gap-4"
+                        className="flex justify-start items-center gap-4 whitespace-nowrap"
                     >
                         <div
                             className={`w-[3px] h-10 ${

@@ -25,22 +25,22 @@ const InfrastructureOverview: React.FC<{
         <div className="flex lg:flex-row flex-col justify-between items-center lg:items-start pt-6 gap-4">
             <div className="flex flex-col space-y-10 mb-12 w-full">
                 <Categories infrastructure={infrastructure} />
-                {hasAssessment && (
+                {/* {hasAssessment && (
                     <div className="flex lg:hidden w-auto">
                         <AssessmentSnapshotDialog
                             infrastructure={infrastructure}
                         />
                     </div>
-                )}
+                )} */}
                 <Description infrastructure={infrastructure} />
                 <div className="border-t border-stroke_secondary"></div>
                 <ProjectLinks links={infrastructure.links} />
             </div>
-            {hasAssessment && (
+            {/* {hasAssessment && (
                 <div className="hidden lg:flex justify-center w-[350px] h-[350px] lg:h-[350px]">
                     <AssessmentSnapshotDialog infrastructure={infrastructure} />
                 </div>
-            )}
+            )} */}
         </div>
     );
 };
