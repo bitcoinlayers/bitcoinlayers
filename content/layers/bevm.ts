@@ -19,7 +19,7 @@ const bevm: LayerProject = {
     bridge: false,
     underReview: false,
     riskFactors: [
-        RiskFactor.Unverified,
+        RiskFactor.UnderReview,
         RiskFactor.Medium,
         RiskFactor.High,
         RiskFactor.High,
@@ -56,7 +56,7 @@ const bevm: LayerProject = {
         {
             category: RiskCategory.BtcCustody,
             score: 0,
-            tier: RiskFactor.Unverified,
+            tier: RiskFactor.UnderReview,
             title: "Users trust a federation with the custody of their BTC. Signers under review",
             content:
                 "On BEVM's official bridge, BTC is locked in a bitcoin address controlled by up to 15 trustees. These trustees custody the BTC that backs wBTC on BEVM.\n\nTrustees are selected by BEVM's validator set. Users trust that the trustees will not steal their BTC.\n\n🔬We are currently reviewing a the signers for the BEVM two-way peg.",

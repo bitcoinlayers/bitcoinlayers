@@ -21,10 +21,10 @@ const merlin: LayerProject = {
     bridge: false,
     underReview: false,
     riskFactors: [
-        RiskFactor.Unverified,
-        RiskFactor.Unverified,
-        RiskFactor.Unverified,
-        RiskFactor.Unverified,
+        RiskFactor.VeryHigh,
+        RiskFactor.VeryHigh,
+        RiskFactor.VeryHigh,
+        RiskFactor.VeryHigh,
     ],
     btcLocked: 9303,
     nativeToken: "MERL",
@@ -74,7 +74,7 @@ const merlin: LayerProject = {
         {
             category: RiskCategory.NetworkOperators,
             score: 0,
-            tier: RiskFactor.High,
+            tier: RiskFactor.VeryHigh,
             title: "Blocks are produced by a centralized sequencer and forced inclusion mechanism is unverified",
             content:
                 "Merlin chain blocks are currently produced by a centralized sequencer. If the sequencer were to go down, or censor users, users would force include transactions to an L1 that is not Bitcoin. We have not verified if Merlin's forced inclusion mechanism is currently live.\n\nAdditionally, Merlin transactions are not finalized until its parent chain accepts the Merlin state transition.",
@@ -82,7 +82,7 @@ const merlin: LayerProject = {
         {
             category: RiskCategory.FinalityGuarantees,
             score: 0,
-            tier: RiskFactor.High,
+            tier: RiskFactor.VeryHigh,
             title: "Sequencer batches and validity proofs posted offchain. ❓ We are unable to verify Merlin Chain's L1 contracts",
             content:
                 "Merlin uses zkSNARKS to ensure state correctness. The Merlin prover posts validity proofs of execution to its L1 contract to finalize state transitions. It is unknown which chain Merlin posts its latest state root to.",

@@ -21,9 +21,9 @@ const bitlayer: LayerProject = {
     bridge: false,
     underReview: false,
     riskFactors: [
-        RiskFactor.Unverified,
+        RiskFactor.VeryHigh,
         RiskFactor.Medium,
-        RiskFactor.Unverified,
+        RiskFactor.UnderReview,
         RiskFactor.High,
     ],
     btcLocked: 5397,
@@ -61,7 +61,7 @@ const bitlayer: LayerProject = {
             tier: RiskFactor.VeryHigh,
             title: "Users trust federated signers set to custody their BTC. Less than 5, individual signers have been publicly announced",
             content:
-                "Bitlayer's current BTC bridge is a federated two-way peg with institutional signers. Bitlayer is working with multiple MPC custody platforms.\n\nUsers do not custody bitcoin assets backing tokens on BitLayer.\n\nNote that we are unable to verify the participants in this model[Source](https://docs.bitlayer.org/docs/Learn/BitlayerNetwork/Bridges)",
+                "Bitlayer's current BTC bridge is a federated two-way peg with institutional signers. Bitlayer is working with multiple MPC custody platforms.\n\nUsers do not custody bitcoin assets backing tokens on BitLayer.\n\nNote that we are unable to verify the participants in this model - [Source](https://docs.bitlayer.org/docs/Learn/BitlayerNetwork/Bridges)",
         },
         {
             category: RiskCategory.DataAvailability,
@@ -74,10 +74,10 @@ const bitlayer: LayerProject = {
         {
             category: RiskCategory.NetworkOperators,
             score: 0,
-            tier: RiskFactor.High,
+            tier: RiskFactor.UnderReview,
             title: "Bitlayer is operated by a permissioned validator set",
             content:
-                "Bitlayer blocks are currently produced by a permissioned validator set. There are currently 21 validators participating in Bitlayer consensus. Users cannot bypass this operator set if they are censored by the validator set.\n\n🔬We are currently reviewing BitLayer's validators.",
+                "Bitlayer blocks are currently produced by a permissioned validator set. There are currently 21 validators participating in Bitlayer consensus. Users cannot bypass this operator set if they are censored by the validator set.\n\n🔬We are currently reviewing the identities of BitLayer's validators.",
         },
         {
             category: RiskCategory.FinalityGuarantees,
