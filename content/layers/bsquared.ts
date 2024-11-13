@@ -61,7 +61,7 @@ const bsquared: LayerProject = {
             tier: RiskFactor.VeryHigh,
             title: "Users deposit funds into a MPC protocol managed by Bsquared Network and a custodian. Less than 5, individual signers have been publicly announced",
             content:
-                "Previous blog posts have stated that when users deposit funds into Bsquared, they deposit funds into a MPC wallet managed by the Bsquared Network team and Cobo, a institutional custodian. Information on how many signers participate in this MPC scheme is not available. Bsquared has stated that more players are being added into this custody scheme.\n\nNote that we are unable to verify the participants in this model[Source](https://www.cobo.com/post/cobo-partners-with-b2-network-to-enhance-advanced-bitcoin-layer-2-infrastructure-with-co-managed-mpc-custody-solution)",
+                "Previous blog posts have stated that when users deposit funds into Bsquared, they deposit funds into a MPC wallet managed by the Bsquared Network team and Cobo, a institutional custodian. Information on how many signers participate in this MPC scheme is not available. Bsquared has stated that more players are being added into this custody scheme.\n\nNote that we are unable to verify the participants in this model - [Source](https://www.cobo.com/post/cobo-partners-with-b2-network-to-enhance-advanced-bitcoin-layer-2-infrastructure-with-co-managed-mpc-custody-solution)",
         },
         {
             category: RiskCategory.DataAvailability,
