@@ -60,7 +60,7 @@ const fractal: LayerProject = {
             tier: RiskFactor.Unverified,
             title: "Fractal relies on a third party for bridge infrastructure",
             content:
-                "Fractal’s asset bridge between Bitcoin and Fractal is managed by a third party, Bool Network. Bool Network is responsible for custodying the bitcoin assets that back BTC on Fractal.\n\n⚠️ The code behind Bool Network’s bridge is not open-source. We do not know the signing mechanism, or who the signers are, for the Bool Network.\n\n⚠️If a fraudulent withdrawal was processed by the bridge operator, users would have no way to challenge it. Bridge operators can steal funds.",
+                "Fractal’s asset bridge between Bitcoin and Fractal is managed by a third party, Bool Network. Bool Network is responsible for custodying the bitcoin assets that back BTC on Fractal.\n\n⚠️ The code behind Bool Network’s bridge is not open-source. We do not know the signing mechanism, or who the signers are, for the Bool Network.\n\n⚠️ If a fraudulent withdrawal was processed by the bridge operator, users would have no way to challenge it. Bridge operators can steal funds.",
         },
         {
             category: RiskCategory.DataAvailability,
