@@ -10,7 +10,6 @@ export enum LiveStatus {
     Proposed = "Proposed",
     Beta = "Beta",
     Deposits = "Deposits Live",
-
 }
 
 export enum Purpose {
@@ -127,6 +126,7 @@ export interface BaseProject {
     entityType: EntityType;
     live: LiveStatus;
     staking: boolean;
+    liquidStaking: boolean;
     bridge: boolean;
     underReview: boolean;
     riskFactors: (RiskFactor | "")[];

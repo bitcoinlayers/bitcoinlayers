@@ -93,8 +93,8 @@ const RiskSnapshot: React.FC<RiskSnapshotProps> = ({ layer, title }) => {
                                         ),
                                     }}
                                 >
-                                    {layer.riskFactors[index]} Risk{" "}
-                                    {getRiskEmoji(layer.riskFactors[index])}
+                                    {layer.riskFactors[index]}
+                                    {/* {getRiskEmoji(layer.riskFactors[index])} */}
                                 </span>
                             </div>
                             <div className="text_table_important text-xs sm:text-sm">

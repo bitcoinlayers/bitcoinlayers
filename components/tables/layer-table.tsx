@@ -4,14 +4,22 @@ import React, { useState, useEffect, useMemo } from "react";
 import Image from "next/image";
 import Risk from "@/components/layer/layerTableItemRisk";
 import TableHeader from "@/components/tables/tableHeader";
-import { MobileView, isMobile } from "react-device-detect";
+import { isMobile } from "react-device-detect";
 import Link from "next/link";
 import { useQueryState } from "nuqs";
 import useGetLayertvlCurrentAll from "@/hooks/use-get-layertvl-current-all";
 import { LayerProject } from "@/content/props";
+import {
+    Card,
+    CardContent,
+    CardDescription,
+    CardHeader,
+    CardTitle,
+} from "@/components/ui/card";
+import { LayersIcon } from "lucide-react";
 
 type TableTabKey =
-    | "Risk"
+    | "Trust Model"
     | "Type"
     | "Status"
     | "Unit of Account"
@@ -62,7 +70,7 @@ const LayerTable = ({ data, headers }: Props) => {
     //     serialize: (value) => value.join(","),
     // });
     const [status, setStatus] = useQueryState("status", {
-        defaultValue: "Mainnet",
+        defaultValue: "mainnet",
     }); //rm when adding back in status table filter
     const [sortBy, setSortBy] = useQueryState("sortBy", {
         defaultValue: "Name",
@@ -92,7 +100,8 @@ const LayerTable = ({ data, headers }: Props) => {
         );
     }, [balances]);
 
-    const [mobileActiveTab, setMobileActiveTab] = useState<TableTabKey>("Risk");
+    const [mobileActiveTab, setMobileActiveTab] =
+        useState<TableTabKey>("Trust Model");
 
     const sortAndFilterData = useMemo(() => {
         const sorted = [...data].sort((a, b) => {
@@ -139,8 +148,8 @@ const LayerTable = ({ data, headers }: Props) => {
         //     );
         // }
         filtered = filtered.filter((item) => {
-            if (status === "Mainnet") return item.live === "Mainnet";
-            if (status === "Testnet") return item.live !== "Mainnet";
+            if (status === "mainnet") return item.live === "Mainnet";
+            if (status === "testnet") return item.live !== "Mainnet";
             return true;
         }); //rm when adding back in status table filter
 
@@ -167,160 +176,216 @@ const LayerTable = ({ data, headers }: Props) => {
     );
 
     return (
-        <div className="px-6 lg:px-0 w-full">
-            <MobileView className="flex justify-center">
-                <div className="justify-center lg:items-start gap-1 inline-flex py-3">
-                    {headers.slice(1).map((_item, ind) => {
-                        const isAllowedTab = [
-                            "Risk",
-                            "Type",
-                            "Status",
-                            "Unit of Account",
-                            "BTC Locked",
-                        ].includes(_item.name);
-                        return (
-                            <div
-                                className={`h-[30px] px-4 py-[5px] rounded-full border-2 justify-center items-center gap-1.5 flex cursor-pointer ${
-                                    mobileActiveTab === _item.name
-                                        ? "bg-white border-orange-600"
-                                        : "border-slate-300"
-                                }`}
-                                onClick={() =>
-                                    isAllowedTab &&
-                                    handleMobileTabClick(
-                                        _item.name as TableTabKey,
-                                    )
-                                }
-                                key={ind}
-                            >
+        <Card className="w-full">
+            {/* <CardHeader>
+                <MobileView className="flex justify-center">
+                    <div className="justify-center lg:items-start gap-1 inline-flex">
+                        {headers.slice(1).map((_item, ind) => {
+                            const isAllowedTab = [
+                                "Risk",
+                                "Type",
+                                "Status",
+                                "Unit of Account",
+                                "BTC Locked",
+                            ].includes(_item.name);
+                            return (
                                 <div
-                                    className={`text-center text-sm font-medium leading-tight ${
+                                    className={`h-[30px] px-4 py-[5px] rounded-full border-2 justify-center items-center gap-1.5 flex cursor-pointer ${
                                         mobileActiveTab === _item.name
-                                            ? "text-orange-600"
-                                            : "text-slate-600"
+                                            ? "bg-white border-orange-600"
+                                            : "border-slate-300"
                                     }`}
+                                    onClick={() =>
+                                        isAllowedTab &&
+                                        handleMobileTabClick(
+                                            _item.name as TableTabKey,
+                                        )
+                                    }
+                                    key={ind}
                                 >
-                                    {_item.mobileLabel}
-                                </div>
-                            </div>
-                        );
-                    })}
-                </div>
-            </MobileView>
-            <div className="overflow-x-auto bg-lightsecondary rounded-xl mx-auto border border-stroke_tertiary">
-                <table className="bg-lightsecondary w-full text-sm text-left rtl:text-right rounded-xl">
-                    <TableHeader
-                        headers={isMobile ? mobileTableHeaders : headers}
-                        onSort={handleSort}
-                    />
-                    <tbody className="bg-white gap-x-8 border-t border-stroke_tertiary text_table_important">
-                        {filteredData.map((item, index) => (
-                            <tr
-                                className={`cursor-pointer border-b border-stroke_tertiary text_table_important ${
-                                    index === filteredData.length - 1 ? "" : ""
-                                }`}
-                                key={item.slug}
-                            >
-                                <td className="lg:px-6 px-4 py-4 font-semibold whitespace-nowrap border-r lg:border-r-0 border-stroke_tertiary text_table_important text-table_body">
-                                    <Link
-                                        href={`/layers/${item.slug}`}
-                                        className="flex items-center"
+                                    <div
+                                        className={`text-center text-sm font-medium leading-tight ${
+                                            mobileActiveTab === _item.name
+                                                ? "text-orange-600"
+                                                : "text-slate-600"
+                                        }`}
                                     >
-                                        <LayerImage
-                                            src={`/logos/${item.slug}.png`}
-                                            title={item.title}
-                                        />
-                                        <span className="ml-2 truncate lg:word-break-none">
-                                            {item.title}
-                                        </span>
-                                    </Link>
-                                </td>
-                                {(!isMobile || mobileActiveTab === "Risk") && (
-                                    <td className="relative px-2 border-stroke_tertiary text_table_important">
-                                        {!item.underReview ? (
-                                            <Risk layer={item} />
-                                        ) : (
-                                            <div className="lg:px-5 px-1 text_table_important font-light">
-                                                Under review
-                                            </div>
-                                        )}
-                                    </td>
-                                )}
-                                {(!isMobile || mobileActiveTab === "Type") && (
-                                    <td className="lg:px-6 px-4 py-3 lg:py-4 border-stroke_tertiary text_table_important">
-                                        <Link href={`/layers/${item.slug}`}>
-                                            {item.entityType}
-                                        </Link>
-                                    </td>
-                                )}
-                                {(!isMobile ||
-                                    mobileActiveTab === "Status") && (
-                                    <td className="lg:px-6 px-4 py-3 lg:py-4 border-stroke_tertiary text_table_important">
-                                        <Link href={`/layers/${item.slug}`}>
-                                            {item.live}
-                                        </Link>
-                                    </td>
-                                )}
-                                {(!isMobile ||
-                                    mobileActiveTab === "Unit of Account") && (
-                                    <td className="lg:px-6 px-4 py-3 lg:py-4 border-stroke_tertiary text_table_important">
+                                        {_item.mobileLabel}
+                                    </div>
+                                </div>
+                            );
+                        })}
+                    </div>
+                </MobileView>
+            </CardHeader> */}
+            <CardHeader className="flex flex-col items-stretch space-y-0 border-b p-0 sm:flex-row border-none">
+                <div className="flex flex-1 flex-col justify-center gap-1 px-6 py-5 sm:py-6">
+                    <CardTitle className="flex">
+                        <LayersIcon className="mr-3" /> Layers
+                    </CardTitle>
+                    <CardDescription>
+                        Learn the tradeoffs for different bitcoin layers
+                    </CardDescription>
+                </div>
+                <div className="flex">
+                    <button
+                        data-active={status === "mainnet"}
+                        className="relative z-30 flex flex-1 flex-col justify-center gap-1 border-t px-6 py-4 text-left even:border-l data-[active=true]:bg-muted/50 sm:border-l sm:border-t-0 sm:px-8 sm:py-6 min-w-[100px] sm:min-w-[150px]"
+                        onClick={() => setStatus("mainnet")}
+                    >
+                        <span className="text-xs text-muted-foreground">
+                            On mainnet
+                        </span>
+                        <span className="text-lg font-bold leading-none sm:text-3xl">
+                            {data
+                                .filter((item) => item.live === "Mainnet")
+                                .length.toLocaleString()}
+                        </span>
+                    </button>
+                    <button
+                        data-active={status === "testnet"}
+                        className="relative z-30 flex flex-1 flex-col justify-center gap-1 border-t px-6 py-4 text-left even:border-l data-[active=true]:bg-muted/50 sm:border-l sm:border-t-0 sm:px-8 sm:py-6 min-w-[100px] sm:min-w-[150px]"
+                        onClick={() => setStatus("testnet")}
+                    >
+                        <span className="text-xs text-muted-foreground">
+                            Coming soon
+                        </span>
+                        <span className="text-lg font-bold leading-none sm:text-3xl">
+                            {data
+                                .filter((item) => item.live !== "Mainnet")
+                                .length.toLocaleString()}
+                        </span>
+                    </button>
+                </div>
+            </CardHeader>
+            <CardContent className="p-0">
+                <div className="overflow-x-auto bg-lightsecondary rounded-xl mx-auto border-none">
+                    <table className="bg-lightsecondary w-full text-sm text-left rtl:text-right rounded-xl">
+                        <TableHeader
+                            headers={isMobile ? mobileTableHeaders : headers}
+                            onSort={handleSort}
+                        />
+                        <tbody className="bg-white gap-x-8 border-t border-stroke_tertiary text_table_important">
+                            {filteredData.map((item, index) => (
+                                <tr
+                                    className={`cursor-pointer text_table_important ${
+                                        index !== filteredData.length - 1
+                                            ? "border-b border-stroke_tertiary"
+                                            : ""
+                                    }`}
+                                    key={item.slug}
+                                >
+                                    <td className="lg:px-6 px-4 py-4 font-semibold whitespace-nowrap text_table_important text-table_body">
                                         <Link
                                             href={`/layers/${item.slug}`}
                                             className="flex items-center"
                                         >
-                                            {item.feeToken
-                                                .toLowerCase()
-                                                .includes("btc") && (
-                                                <Image
-                                                    src="/btc.svg"
-                                                    alt="BTC logo"
-                                                    width={20}
-                                                    height={20}
-                                                    className="mr-2"
-                                                />
-                                            )}
-                                            {item.feeToken}
+                                            <LayerImage
+                                                src={`/logos/${item.slug}.png`}
+                                                title={item.title}
+                                            />
+                                            <span className="ml-2 truncate lg:word-break-none">
+                                                {item.title}
+                                            </span>
                                         </Link>
                                     </td>
-                                )}
-                                {(!isMobile ||
-                                    mobileActiveTab === "BTC Locked") && (
-                                    <td className="lg:px-6 px-4 py-3 lg:py-4 border-r border-stroke_tertiary text_table_important">
-                                        <Link href={`/layers/${item.slug}`}>
-                                            {item.underReview ||
-                                            (Object.keys(totaledBalances).find(
-                                                (key) =>
-                                                    key.toLowerCase() ===
-                                                    item.title.toLowerCase(),
-                                            ) === undefined &&
-                                                (item.btcLocked === null ||
-                                                    isNaN(item.btcLocked))) ? (
-                                                <div className="font-light">
+                                    {(!isMobile ||
+                                        mobileActiveTab === "Trust Model") && (
+                                        <td className="relative px-2 border-stroke_tertiary text_table_important">
+                                            {!item.underReview ? (
+                                                <Risk layer={item} />
+                                            ) : (
+                                                <div className="lg:px-5 px-1 text_table_important font-light">
                                                     Under review
                                                 </div>
-                                            ) : (
-                                                <div>
-                                                    ₿{" "}
-                                                    {Number(
-                                                        totaledBalances[
-                                                            item.slug
-                                                        ]?.totalAmount ??
-                                                            item.btcLocked,
-                                                    ).toLocaleString("en-US", {
-                                                        minimumFractionDigits: 0,
-                                                        maximumFractionDigits: 0,
-                                                    })}
-                                                </div>
                                             )}
-                                        </Link>
-                                    </td>
-                                )}
-                            </tr>
-                        ))}
-                    </tbody>
-                </table>
-            </div>
-        </div>
+                                        </td>
+                                    )}
+                                    {(!isMobile ||
+                                        mobileActiveTab === "Type") && (
+                                        <td className="lg:px-6 px-4 py-3 lg:py-4 border-stroke_tertiary text_table_important">
+                                            <Link href={`/layers/${item.slug}`}>
+                                                {item.entityType}
+                                            </Link>
+                                        </td>
+                                    )}
+                                    {(!isMobile ||
+                                        mobileActiveTab === "Status") && (
+                                        <td className="lg:px-6 px-4 py-3 lg:py-4 border-stroke_tertiary text_table_important">
+                                            <Link href={`/layers/${item.slug}`}>
+                                                {item.live}
+                                            </Link>
+                                        </td>
+                                    )}
+                                    {(!isMobile ||
+                                        mobileActiveTab ===
+                                            "Unit of Account") && (
+                                        <td className="lg:px-6 px-4 py-3 lg:py-4 border-stroke_tertiary text_table_important">
+                                            <Link
+                                                href={`/layers/${item.slug}`}
+                                                className="flex items-center"
+                                            >
+                                                {item.feeToken
+                                                    .toLowerCase()
+                                                    .includes("btc") && (
+                                                    <Image
+                                                        src="/btc.svg"
+                                                        alt="BTC logo"
+                                                        width={20}
+                                                        height={20}
+                                                        className="mr-2"
+                                                    />
+                                                )}
+                                                {item.feeToken}
+                                            </Link>
+                                        </td>
+                                    )}
+                                    {(!isMobile ||
+                                        mobileActiveTab === "BTC Locked") && (
+                                        <td className="lg:px-6 px-4 py-3 lg:py-4 text_table_important">
+                                            <Link href={`/layers/${item.slug}`}>
+                                                {item.underReview ||
+                                                (Object.keys(
+                                                    totaledBalances,
+                                                ).find(
+                                                    (key) =>
+                                                        key.toLowerCase() ===
+                                                        item.title.toLowerCase(),
+                                                ) === undefined &&
+                                                    (item.btcLocked === null ||
+                                                        isNaN(
+                                                            item.btcLocked,
+                                                        ))) ? (
+                                                    <div className="font-light">
+                                                        Under review
+                                                    </div>
+                                                ) : (
+                                                    <div>
+                                                        ₿{" "}
+                                                        {Number(
+                                                            totaledBalances[
+                                                                item.slug
+                                                            ]?.totalAmount ??
+                                                                item.btcLocked,
+                                                        ).toLocaleString(
+                                                            "en-US",
+                                                            {
+                                                                minimumFractionDigits: 0,
+                                                                maximumFractionDigits: 0,
+                                                            },
+                                                        )}
+                                                    </div>
+                                                )}
+                                            </Link>
+                                        </td>
+                                    )}
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
+            </CardContent>
+        </Card>
     );
 };
 

@@ -17,6 +17,7 @@ const mercurylayer: LayerProject = {
     entityType: EntityType.Statechain,
     live: LiveStatus.Mainnet,
     staking: false,
+    liquidStaking: false,
     bridge: false,
     underReview: true,
     riskFactors: [
@@ -129,16 +130,16 @@ const mercurylayer: LayerProject = {
             id: "technology",
             title: "Technology",
             content: [
-            {
-                title: "Blind signing server",
-                   content:
-                       "Mercury Layer employs a blind signing server that has two functions. One, it can create partial blind signatures to co-sign statechain transfers together with the user using a [variant of MuSig2](https://github.com/commerceblock/mercurylayer/blob/dev/docs/blind_musig.md). Second, the Mercury Layer server can update the key shares needed for co-signing.\n\nThe operator uses an HSM for key handling and key deletion after cosigning each new holder's withdrawal transaction.",
-            },
-            {
-                title: "Adding a decrementing timelock to the backup transaction",
-                content:
-                    "In the absence of covenants, which could invalidate old transactions, Mercury Layer employs [nLocktime](https://github.com/bitcoin/bips/blob/master/bip-0068.mediawiki) with decrementing timelocks to ensure users can reclaim their bitcoin L1 funds in case of server failure or attempted misbehavior of previous owners. Each time a statechain is transferred to a new owner, the timelock on the backup transaction is reduced. By progressively decreasing the timelock, Mercury Layer enables the current owner to claim the L1 funds before a previous owner can do so by publishing an old backup transaction.",
-            },
+                {
+                    title: "Blind signing server",
+                    content:
+                        "Mercury Layer employs a blind signing server that has two functions. One, it can create partial blind signatures to co-sign statechain transfers together with the user using a [variant of MuSig2](https://github.com/commerceblock/mercurylayer/blob/dev/docs/blind_musig.md). Second, the Mercury Layer server can update the key shares needed for co-signing.\n\nThe operator uses an HSM for key handling and key deletion after cosigning each new holder's withdrawal transaction.",
+                },
+                {
+                    title: "Adding a decrementing timelock to the backup transaction",
+                    content:
+                        "In the absence of covenants, which could invalidate old transactions, Mercury Layer employs [nLocktime](https://github.com/bitcoin/bips/blob/master/bip-0068.mediawiki) with decrementing timelocks to ensure users can reclaim their bitcoin L1 funds in case of server failure or attempted misbehavior of previous owners. Each time a statechain is transferred to a new owner, the timelock on the backup transaction is reduced. By progressively decreasing the timelock, Mercury Layer enables the current owner to claim the L1 funds before a previous owner can do so by publishing an old backup transaction.",
+                },
             ],
         },
         {

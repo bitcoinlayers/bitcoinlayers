@@ -14,6 +14,7 @@ const sovereign: InfrastructureProject = {
     entityType: EntityType.RollupSDK,
     live: LiveStatus.Testnet,
     staking: false,
+    liquidStaking: false,
     bridge: false,
     underReview: true,
     riskFactors: ["", ""],

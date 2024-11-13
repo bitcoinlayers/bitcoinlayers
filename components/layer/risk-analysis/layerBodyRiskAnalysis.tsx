@@ -45,10 +45,10 @@ const RiskAnalysis: React.FC<RiskAnalysisProps> = ({
         <div className="content flex-grow pt-0">
             <section
                 className="self-stretch lg:px-8 px-4 pt-6 pb-8 mb-6 bg-white rounded-xl border border-slate-300 flex-col justify-center items-end gap-4"
-                id="riskanalysis"
+                id="trustmodel"
             >
                 <div className="self-stretch justify-start items-start gap-4 inline-flex">
-                    <div className="body_section">Risk Analysis</div>
+                    <div className="body_section">Trust Model Review</div>
                 </div>
                 {riskAnalysis.map((content, contentIndex) => (
                     <React.Fragment key={contentIndex}>

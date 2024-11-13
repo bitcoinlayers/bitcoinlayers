@@ -14,6 +14,7 @@ const bit2: LayerProject = {
     entityType: EntityType.EthereumRollup,
     live: LiveStatus.Testnet,
     staking: false,
+    liquidStaking: false,
     bridge: false,
     underReview: true,
     riskFactors: ["", "", "", ""],

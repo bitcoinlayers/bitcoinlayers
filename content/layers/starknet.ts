@@ -17,6 +17,7 @@ const starknet: LayerProject = {
     entityType: EntityType.Rollup,
     live: LiveStatus.Proposed,
     staking: false,
+    liquidStaking: false,
     bridge: false,
     underReview: true,
     riskFactors: ["", "", "", ""],

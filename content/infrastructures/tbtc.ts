@@ -15,6 +15,7 @@ const tbtc: InfrastructureProject = {
     entityType: EntityType.BitcoinBridge,
     live: LiveStatus.Mainnet,
     staking: false,
+    liquidStaking: false,
     bridge: true,
     underReview: false,
     riskFactors: ["", ""],

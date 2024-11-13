@@ -11,7 +11,7 @@ import FilterItem from "./filter-item";
 
 interface Props {
     filterOptions: string[];
-    filterType: "type" | "status";
+    filterType: string;
 }
 
 const FilterPopover = ({ filterOptions, filterType }: Props) => {
@@ -35,8 +35,8 @@ const FilterPopover = ({ filterOptions, filterType }: Props) => {
             >
                 <div className="max-h-56 overflow-y-auto">
                     {filterOptions.sort().map((option: string) => (
-                        <FilterItem 
-                            key={option} 
+                        <FilterItem
+                            key={option}
                             value={option}
                             filterType={filterType}
                             selectedFilters={selectedFilters}

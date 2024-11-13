@@ -17,6 +17,7 @@ const hemi: LayerProject = {
     entityType: EntityType.TBD,
     live: LiveStatus.Testnet,
     staking: false,
+    liquidStaking: false,
     bridge: false,
     underReview: true,
     riskFactors: ["", "", "", ""],

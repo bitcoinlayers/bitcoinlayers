@@ -14,7 +14,8 @@ const pump: InfrastructureProject = {
     title: "Pump",
     entityType: EntityType.LiquidStaking,
     live: LiveStatus.Deposits,
-    staking: true,
+    staking: false,
+    liquidStaking: true,
     bridge: false,
     underReview: true,
     riskFactors: ["", ""],
@@ -50,8 +51,8 @@ const pump: InfrastructureProject = {
                 {
                     title: "Incentive model",
                     content:
-                            "🔬 Babylon’s staking is not currently securing any PoS chains. Rewards are only issued through points. Once live, we will review Babylon’s incentive and issuance mechanism.",
-                    },
+                        "🔬 Babylon’s staking is not currently securing any PoS chains. Rewards are only issued through points. Once live, we will review Babylon’s incentive and issuance mechanism.",
+                },
             ],
         },
         {
@@ -104,8 +105,7 @@ const pump: InfrastructureProject = {
             score: 0,
             tier: "",
             title: "Slashing is done via Babylon, but is not currently live",
-            content:
-                "🔬 Babylon’s staking protocol is not currently live.",
+            content: "🔬 Babylon’s staking protocol is not currently live.",
         },
     ],
 };

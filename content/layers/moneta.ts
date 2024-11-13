@@ -17,6 +17,7 @@ const moneta: LayerProject = {
     entityType: EntityType.Rollup,
     live: LiveStatus.Mainnet,
     staking: false,
+    liquidStaking: false,
     bridge: false,
     underReview: false,
     riskFactors: [

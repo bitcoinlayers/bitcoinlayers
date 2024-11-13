@@ -15,6 +15,7 @@ const arkliquid: LayerProject = {
     entityType: EntityType.VirtualUTXOs,
     live: LiveStatus.Mainnet,
     staking: false,
+    liquidStaking: false,
     bridge: false,
     underReview: false,
     riskFactors: [

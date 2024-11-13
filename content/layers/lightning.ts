@@ -17,6 +17,7 @@ const lightning: LayerProject = {
     entityType: EntityType.StateChannel,
     live: LiveStatus.Mainnet,
     staking: false,
+    liquidStaking: false,
     bridge: false,
     underReview: true,
     riskFactors: [

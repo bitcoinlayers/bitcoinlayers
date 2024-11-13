@@ -14,7 +14,8 @@ const bedrock: InfrastructureProject = {
     title: "Bedrock",
     entityType: EntityType.LiquidStaking,
     live: LiveStatus.Deposits,
-    staking: true,
+    staking: false,
+    liquidStaking: true,
     bridge: false,
     underReview: false,
     riskFactors: ["", ""],
@@ -52,8 +53,8 @@ const bedrock: InfrastructureProject = {
             title: "Economics",
             content: [
                 {
-                title: "Incentive model",
-                content:
+                    title: "Incentive model",
+                    content:
                         "🔬 Babylon’s staking is not currently securing any PoS chains. Rewards are only issued through points. Once live, we will review Babylon’s incentive and issuance mechanism.",
                 },
             ],

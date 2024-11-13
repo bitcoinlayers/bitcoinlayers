@@ -14,6 +14,7 @@ const bool: InfrastructureProject = {
     entityType: EntityType.Bridge,
     live: LiveStatus.Announced,
     staking: false,
+    liquidStaking: false,
     bridge: false,
     underReview: true,
     riskFactors: ["", ""],
