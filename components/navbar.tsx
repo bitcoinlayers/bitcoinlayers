@@ -119,14 +119,19 @@ export default function Navbar(): ReactElement {
                             </li>
                         </>
                     )} */}
-                    <li className="hidden lg:block">
+                    {/* <li className="hidden lg:block">
                         <Link href="/reviews" onClick={closeMenu}>
                             Reviews
                         </Link>
-                    </li>
+                    </li> */}
                     <li className="hidden lg:block">
                         <Link href="/analytics" onClick={closeMenu}>
                             Analytics
+                        </Link>
+                    </li>
+                    <li className="hidden lg:block">
+                        <Link href="/glossary" onClick={closeMenu}>
+                            Glossary
                         </Link>
                     </li>
                     <li className="hidden lg:block">
@@ -168,7 +173,7 @@ export default function Navbar(): ReactElement {
                             <SheetDescription className="text-base">
                                 <div className="pt-4 px-2">
                                     <ul className="flex flex-col items-start gap-y-6">
-                                        <li>
+                                        {/* <li>
                                             <Link
                                                 href="/reviews"
                                                 className="text-primary"
@@ -176,7 +181,7 @@ export default function Navbar(): ReactElement {
                                             >
                                                 Reviews
                                             </Link>
-                                        </li>
+                                        </li> */}
                                         <li>
                                             <Link
                                                 href="/analytics"
@@ -184,6 +189,15 @@ export default function Navbar(): ReactElement {
                                                 onClick={closeSheet}
                                             >
                                                 Analytics
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <Link
+                                                href="/glossary"
+                                                className="text-primary"
+                                                onClick={closeSheet}
+                                            >
+                                                Glossary
                                             </Link>
                                         </li>
                                         <li>

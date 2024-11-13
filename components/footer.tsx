@@ -119,23 +119,23 @@ export default function Footer(): ReactElement {
                             </div>
                             <div className="grow lg:flex lg:h-[228px] justify-start items-start gap-8 grid grid-cols-2">
                                 <div className="grow flex flex-col justify-start items-start gap-4">
-                                    <SectionHeader>Risk Analysis</SectionHeader>
+                                    <SectionHeader>Reviews</SectionHeader>
                                     <div className="self-stretch lg:h-[188px] flex flex-col justify-start items-start gap-3">
                                         <SectionItem href="/">
                                             Layers
                                         </SectionItem>
-                                        <SectionItem href="/staking">
+                                        <SectionItem href="/?view=staking">
                                             Staking
                                         </SectionItem>
-                                        <SectionItem href="/crosschainbtc">
-                                            Crosschain BTC
+                                        <SectionItem href="/?view=wrappers">
+                                            Wrappers
                                         </SectionItem>
                                         <SectionItem href="/ecash">
                                             Ecash
                                         </SectionItem>
-                                        <SectionItem href="/bitcoinonly">
+                                        {/* <SectionItem href="/bitcoinonly">
                                             Bitcoin Only
-                                        </SectionItem>
+                                        </SectionItem> */}
                                     </div>
                                 </div>
                                 <div className="grow flex flex-col justify-start items-start gap-4">
@@ -165,7 +165,7 @@ export default function Footer(): ReactElement {
                                             Contribute
                                         </SectionItem>
                                         <SectionItemExternal href="https://www.lxresearch.co/">
-                                            Blog
+                                            Research
                                         </SectionItemExternal>
                                     </div>
                                 </div>

@@ -35,10 +35,10 @@ export default function Home() {
 
     return (
         <div className="mx-auto">
-            <Hero
+            {/* <Hero
                 title="Ecash"
                 description="Not every ecash system is equal."
-            />
+            /> */}
             <div className="lg:flex mb-4 justify-center w-full lg:max-w-5xl mx-auto">
                 <InfrastructureTable
                     data={sortedInfrastructures}
