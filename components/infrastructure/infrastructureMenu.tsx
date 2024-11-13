@@ -42,6 +42,7 @@ const InfrastructureMenu: React.FC<{
             window.scrollTo({ top: yCoordinate, behavior: "smooth" });
         }
     }
+
     return (
         <nav className="w-full overflow-x-hidden">
             <div className="flex lg:flex-col justify-start items-start lg:gap-4 gap-2 z-40">

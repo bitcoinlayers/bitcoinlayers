@@ -8,7 +8,7 @@ const InfrastructureBody: React.FC<{ infrastructure: Project }> = ({
     return (
         <main className="content flex-grow sm:mt-0 pt-0">
             {infrastructure.sections.map((section, index) => (
-                <div
+                <section
                     key={index}
                     className="self-stretch lg:px-8 px-4 pt-6 pb-8 mb-6 bg-white rounded-xl border border-slate-300 flex-col justify-center items-end gap-4"
                     id={section.id}
@@ -33,7 +33,7 @@ const InfrastructureBody: React.FC<{ infrastructure: Project }> = ({
                             </div>
                         </React.Fragment>
                     ))}
-                </div>
+                </section>
             ))}
         </main>
     );
