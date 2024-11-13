@@ -7,11 +7,11 @@ export const getRiskColorText = (riskFactor: string) => {
             return "var(--color-risk-medium-text)";
         case "High":
             return "var(--color-risk-high-text)";
-        case "VeryHigh":
+        case "Very High":
             return "var(--color-risk-critical-text)";
         case "Critical":
             return "var(--color-risk-critical-text)";
-        case "UnderReview":
+        case "Under Review":
             return "var(--color-risk-unverified-text)";
         case "Unverified":
             return "var(--color-risk-unverified-text)";
@@ -28,8 +28,12 @@ export const getRiskColorIcon = (riskFactor: string) => {
             return "var(--color-risk-medium-icon)";
         case "High":
             return "var(--color-risk-high-icon)";
+        case "Very High":
+            return "var(--color-risk-critical-icon)";
         case "Critical":
             return "var(--color-risk-critical-icon)";
+        case "Under Review":
+            return "var(--color-risk-unverified-icon)";
         case "Unverified":
             return "var(--color-risk-unverified-icon)";
         default:
@@ -45,8 +49,12 @@ export const getRiskColorBackground = (riskFactor: string) => {
             return "var(--color-risk-medium-bg)";
         case "High":
             return "var(--color-risk-high-bg)";
+        case "Very High":
+            return "var(--color-risk-critical-bg)";
         case "Critical":
             return "var(--color-risk-critical-bg)";
+        case "Under Review":
+            return "var(--color-risk-unverified-bg)";
         case "Unverified":
             return "var(--color-risk-unverified-bg)";
         default:
