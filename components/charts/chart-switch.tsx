@@ -19,7 +19,6 @@ export default function ChartSwitch() {
                     chartQueryParam="staking-chart"
                     rangeQueryParam="staking-range"
                     useDataHook={useGetInfratvlHistoricalStaked}
-                    showDivisionButtons={false}
                     showLegend={false}
                     chartHeight="h-64"
                 />
@@ -33,7 +32,6 @@ export default function ChartSwitch() {
                     chartQueryParam="bridge-chart"
                     rangeQueryParam="bridge-range"
                     useDataHook={useGetInfratvlHistoricalBridge}
-                    showDivisionButtons={false}
                     showLegend={false}
                     chartHeight="h-64"
                 />
