@@ -50,9 +50,9 @@ export default function StatCardGrid() {
                 return {
                     ...sharedTitles,
                     tvlSubtitle: "in bitcoin layers",
-                    txSubtitle: "on bitcoin layers",
+                    txSubtitle: "using BTC on bitcoin layers",
                     feeSubtitle: "per BTC tx on bitcoin layers",
-                    addrSubtitle: "on bitcoin layers",
+                    addrSubtitle: "using BTC on bitcoin layers",
                 };
         }
     })();
