@@ -58,7 +58,7 @@ const Risk: React.FC<RiskProps> = ({ layer }) => {
             <DialogContent className="w-[calc(100vw-16px)] mx-auto max-w-[500px] rounded-lg">
                 <RiskSnapshot
                     layer={layer}
-                    title={`${layer.title} Trust Model`}
+                    title={`${layer.title} Trust Assumptions`}
                 />
             </DialogContent>
         </Dialog>

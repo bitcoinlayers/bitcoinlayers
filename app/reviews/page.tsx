@@ -18,9 +18,9 @@ export default function ReviewsPage() {
     const layerHeaders = [
         { name: "Name", showSorting: true, mobileLabel: "Name" },
         {
-            name: "Trust Model",
+            name: "Trust Assumptions",
             showSorting: false,
-            mobileLabel: "Trust Model",
+            mobileLabel: "Trust",
         },
         {
             name: "Type",

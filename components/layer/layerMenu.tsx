@@ -47,7 +47,7 @@ const LayerMenu: React.FC<{ layer: LayerProject }> = ({ layer }) => {
                 {[
                     { id: "overview", title: "Overview" },
                     ...(!layer.underReview
-                        ? [{ id: "trustmodel", title: "Trust Model" }]
+                        ? [{ id: "trust", title: "Trust Assumptions" }]
                         : []),
                     ...layer.sections,
                 ].map((section, index) => (
