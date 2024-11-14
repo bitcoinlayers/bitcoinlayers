@@ -233,7 +233,7 @@ section {
         width: 100px;
         height: 80px;
         position: absolute;
-        top: 40%;
+        top: 10%;
         left: 50%;
         transform: translate(-50%, 20%);
         background-image: url("/watermark.svg");
@@ -249,7 +249,7 @@ section {
     @media (max-width: 1000px) {
         .watermark::after,
         .watermark-agg::after {
-            top: 55%;
+            top: 10%;
         }
     }
 }

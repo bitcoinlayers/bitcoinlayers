@@ -165,7 +165,7 @@ export default function LayerTVLChart() {
     if (data?.length === 0) return null;
 
     return (
-        <Card className="bg-background mb-6 watermark">
+        <Card className="bg-background mb-6">
             <CardHeader className="flex flex-col space-y-4">
                 <div className="flex flex-col sm:flex-row justify-between w-full">
                     <CardTitle className="flex font-semibold items-center text-2xl sm:text-3xl mb-2 sm:mb-0">
@@ -254,7 +254,7 @@ export default function LayerTVLChart() {
             <CardContent>
                 <ChartContainer
                     config={chartConfig}
-                    className="lg:h-96 h-64 w-full"
+                    className="lg:h-96 h-64 w-full watermark"
                 >
                     <AreaChart
                         data={filterDataByDateRange(processedData)}

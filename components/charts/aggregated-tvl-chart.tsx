@@ -201,7 +201,7 @@ export default function AggregatedTVLChart({
             <CardContent>
                 <ChartContainer
                     config={chartConfig}
-                    className={cn("w-full", chartHeight)}
+                    className={cn("w-full watermark", chartHeight)}
                 >
                     <AreaChart
                         data={filterDataByDateRange(processedData)}
