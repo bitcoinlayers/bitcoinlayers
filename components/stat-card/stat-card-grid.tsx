@@ -9,6 +9,8 @@ import {
 import StatCard from "@/components/stat-card";
 import { useQueryState } from "nuqs";
 import LayerTvlStatCard from "./layer-tvl-stat-card";
+import LiquidstakingTvlStatCard from "./liquidstaking-tvl-stat-card";
+import WrapperTvlStatCard from "./wrapper-tvl-stat-card";
 
 export default function StatCardGrid() {
     const [view] = useQueryState("view");
@@ -41,7 +43,7 @@ export default function StatCardGrid() {
             case "liquidstaking":
                 return {
                     ...sharedTitles,
-                    tvlSubtitle: "in BTC LSTS",
+                    tvlSubtitle: "in BTC LSTs",
                     txSubtitle: "using BTC LSTs",
                     feeSubtitle: "per BTC LST tx",
                     addrSubtitle: "using BTC LSTs",
@@ -60,35 +62,22 @@ export default function StatCardGrid() {
     const TvlStatCard = (() => {
         switch (view) {
             case "wrappers":
-                return (
-                    <StatCard
-                        title={content.tvlTitle}
-                        subtitle={content.tvlSubtitle}
-                        isComingSoon
-                        change={0}
-                        symbol={<BitcoinIcon className="h-4" />}
-                    />
-                );
+                return <WrapperTvlStatCard />;
             case "staking":
-                return (
-                    <StatCard
-                        title={content.tvlTitle}
-                        subtitle={content.tvlSubtitle}
-                        isComingSoon
-                        change={0}
-                        symbol={<BitcoinIcon className="h-4" />}
-                    />
-                );
+                return <LiquidstakingTvlStatCard />;
+            //<StakingTvlStatCard />
+            // (
+            // <StatCard
+            //     title={content.tvlTitle}
+            //     subtitle={content.tvlSubtitle}
+            //     isComingSoon
+            //     change={0}
+            //     symbol={<BitcoinIcon className="h-4" />}
+            // />
+
+            // );
             case "liquidstaking":
-                return (
-                    <StatCard
-                        title={content.tvlTitle}
-                        subtitle={content.tvlSubtitle}
-                        isComingSoon
-                        change={0}
-                        symbol={<BitcoinIcon className="h-4" />}
-                    />
-                );
+                return <LiquidstakingTvlStatCard />;
             default:
                 return <LayerTvlStatCard />;
         }
