@@ -17,7 +17,7 @@ const botanix: LayerProject = {
     entityType: EntityType.Sidechain,
     live: LiveStatus.Testnet,
     staking: false,
-    liquidStaking: true,
+    liquidStaking: false,
     bridge: false,
     underReview: true,
     riskFactors: ["", "", "", ""],
