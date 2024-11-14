@@ -23,7 +23,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
                 <Providers>
                     <div className="mx-auto min-h-screen">
                         <Navbar />
-                        <main className="mx-auto max-w-5xl px-4 py-4">
+                        <main className="mx-auto max-w-5xl px-4">
                             {children}
                         </main>
                         <Footer />

@@ -25,9 +25,9 @@ export default function UnderDevelopmentBanner({
     return (
         <Alert
             variant="destructive"
-            className="bg-red-50 border border-red-200 text-primary sticky top-[82px] rounded-md z-40 lg:bg-opacity-80 backdrop-blur-sm"
+            className="bg-red-50 border border-red-200 text-primary sticky top-[82px] rounded-none z-50 lg:bg-opacity-80 backdrop-blur-sm"
         >
-            <div className="flex flex-col lg:space-x-1 lg:items-center xl:items-baseline xl:flex-row justify-center">
+            <div className="flex flex-col lg:space-x-1 items-baseline justify-center">
                 <AlertTitle className="font-semibold text-sm md:text-base">
                     {title}
                 </AlertTitle>

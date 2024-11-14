@@ -6,6 +6,7 @@ import FederationTable from "@/components/tables/federation-table";
 import Hero from "@/components/hero";
 import AggregatedTVLChart from "@/components/charts/aggregated-tvl-chart";
 import useGetInfratvlHistoricalBridge from "@/hooks/use-get-infratvl-historical-bridge";
+import UnderDevelopmentBanner from "@/components/under-development-banner";
 
 export default function BridgesPage() {
     const sortedEverything = [...allLayers, ...allInfrastructures]
@@ -40,8 +41,8 @@ export default function BridgesPage() {
     ];
 
     return (
-        <div className="mx-auto">
-            {/* <UnderDevelopmentBanner /> */}
+        <div className="mx-auto relative">
+            <UnderDevelopmentBanner />
             <Hero
                 title="Crosschain"
                 description="Not all crosschain BTC is made equal."
