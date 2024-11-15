@@ -105,7 +105,7 @@ const stacks: LayerProject = {
                 {
                     title: "The protocol does not enable MEV on Bitcoin, but Bitcoin miners can extract MEV from Stacks",
                     content:
-                        "Stacks' mining process requires a Bitcoin miner to submit a block commit as a bid to build a Stacks block. It is possible for a Bitcoin miner to censor all bids to build Stacks' blocks when building a Bitcoin block. Since the active Bitcoin miner would be the only entity with the ability to win a Stacks block, they could submit a minimal amount of funds to win the block and receive all STX rewards. This MEV-extraction scenario looks to be solved in the upcoming Nakamoto upgrade.",
+                        "Stacks' mining process requires a Bitcoin miner to submit a block commit as a bid to build a Stacks block. It is possible for a Bitcoin miner to censor all bids to build Stacks' blocks when building a Bitcoin block. Since the active Bitcoin miner would be the only entity with the ability to win a Stacks block, they could submit a minimal amount of funds to win the block and receive all STX rewards. This MEV-extraction scenario looks to be solved in the Nakamoto upgrade.\n\n🔬We are reviewing this section of the assessment.",
                 },
                 {
                     title: "An alternative token plays a role in network security",
@@ -137,7 +137,7 @@ const stacks: LayerProject = {
                 {
                     title: "Clarity",
                     content:
-                        "Stacks leveraages the Clarity execution environment. The Clarity language is a subset of Lisp, and is not Turing-complete as a design choice. However, it is still expressive enough to build complex smart contracts and replicate much of the functionalities from Turing-complete environments like the EVM (i.e., DeFi, NFTs, etc.). Stacks is able to read Bitcoin state, due to both Clarity and its integrated PoX consensus mechanism. This allows for events on Stacks to be triggered by Bitcoin activity, or for smart contracts to read Bitcoin state during their execution.",
+                        "Stacks leverages the Clarity execution environment. The Clarity language is a subset of Lisp, and is not Turing-complete as a design choice. However, it is still expressive enough to build complex smart contracts and replicate much of the functionalities from Turing-complete environments like the EVM (i.e., DeFi, NFTs, etc.). Stacks is able to read Bitcoin state, due to both Clarity and its integrated PoX consensus mechanism. This allows for events on Stacks to be triggered by Bitcoin activity, or for smart contracts to read Bitcoin state during their execution.",
                 },
                 {
                     title: "Proof-of-Transfer",
@@ -148,17 +148,7 @@ const stacks: LayerProject = {
                     title: "sBTC",
                     content:
                         "sBTC is still in development as of March 2024. It is a bridged version of BTC on Stacks. sBTC is minted by locking up BTC on Bitcoin, and is redeemable for BTC at a 1:1 ratio. sBTC is not yet permissionless, as withdrawals are permissioned by the validator set.",
-                },
-                {
-                    title: "Faster block times",
-                    content:
-                        "Stacks operates at the same block times as Bitcoin as of March 2024, roughly 10 minutes per block. However, the upcoming Nakamoto Upgrade in April 2024 will reduce block times to an order of seconds.",
-                },
-                {
-                    title: "Lower fees",
-                    content:
-                        "Stacks fees average in the order of tens of cents as of March 2024.",
-                },
+                }
             ],
         },
         {
@@ -169,22 +159,6 @@ const stacks: LayerProject = {
                     title: "Onchain applications",
                     content:
                         "The most popular use case for Stacks is onchain applications. Stacks has a number of applications, including lending, borrowing, and decentralized exchanges.",
-                },
-                {
-                    title: "NFTs",
-                    content:
-                        "Stacks is home to a number of NFT projects, including digital art, collectibles, and identity.",
-                },
-            ],
-        },
-        {
-            id: "operator",
-            title: "Operator",
-            content: [
-                {
-                    title: "Stacks is operated by miners and validators",
-                    content:
-                        "Block production is managed by Stacks miners (which are typically also Bitcoin miners, similar to the node overlap with classic merge-mining), by combining microblocks created by Stacks validators. Users trust the majority of validators and miners to not collude or censor.",
                 },
             ],
         },
