@@ -25,19 +25,23 @@ const espresso: InfrastructureProject = {
     links: [
         {
             text: Site.Website,
-            url: "https://espressosys.com/",
+            url: "https://espressosys.com",
         },
         {
             text: Site.Docs,
-            url: "https://docs.espressosys.com/",
+            url: "https://docs.espressosys.com",
         },
-        {
-            text: Site.Explorer,
-            url: "https://github.com/EspressoSystems",
-        },
+        // {
+        //     text: Site.Explorer,
+        //     url: "https://github.com/EspressoSystems",
+        // },
         {
             text: Site.GitHub,
-            url: "https://twitter.com/espressosys",
+            url: "https://github.com/espressosystems",
+        },
+        {
+            text: Site.Twitter,
+            url: "https://x.com/espressosys",
         },
     ],
     description:

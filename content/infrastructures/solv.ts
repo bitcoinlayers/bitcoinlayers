@@ -25,15 +25,15 @@ const solv: InfrastructureProject = {
     links: [
         {
             text: Site.Website,
-            url: "https://solv.finance/",
+            url: "https://solv.finance",
         },
         {
             text: Site.Docs,
-            url: "https://solv.finance/",
+            url: "https://docs.solv.finance",
         },
         {
             text: Site.Explorer,
-            url: "https://docs.solv.finance/",
+            url: "https://etherscan.io/token/0x7a56e1c57c7475ccf742a1832b028f0456652f97",
         },
         {
             text: Site.GitHub,

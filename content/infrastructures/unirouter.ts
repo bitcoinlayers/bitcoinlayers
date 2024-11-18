@@ -25,15 +25,15 @@ const unirouter: InfrastructureProject = {
     links: [
         {
             text: Site.Website,
-            url: "https://app.unirouter.io/",
+            url: "https://unirouter.io",
+        },
+        {
+            text: Site.Docs,
+            url: "https://docs.unirouter.io",
         },
         {
             text: Site.Explorer,
             url: "https://explorer.bsquared.network/address/0x796e4D53067FF374B89b2Ac101ce0c1f72ccaAc2",
-        },
-        {
-            text: Site.Docs,
-            url: "https://docs.unirouter.io/dataroom",
         },
         {
             text: Site.Twitter,

@@ -25,19 +25,23 @@ const dlclink: InfrastructureProject = {
     links: [
         {
             text: Site.Website,
-            url: "https://www.dlc.link/",
+            url: "https://www.dlcbtc.com",
         },
         {
             text: Site.Docs,
-            url: "https://github.com/DLC-link/gitbook-docs",
+            url: "https://docs.dlcbtc.com/dlcbtc-documentation",
         },
+        // {
+        //     text: Site.Explorer,
+        //     url: "https://github.com/dlc-link",
+        // },
         {
-            text: Site.Explorer,
+            text: Site.GitHub,
             url: "https://github.com/dlc-link",
         },
         {
-            text: Site.GitHub,
-            url: "https://x.com/dlc_link",
+            text: Site.Twitter,
+            url: "https://twitter.com/dlcbtc",
         },
     ],
     description:

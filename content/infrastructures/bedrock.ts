@@ -26,15 +26,15 @@ const bedrock: InfrastructureProject = {
     links: [
         {
             text: Site.Website,
-            url: "https://www.bedrock.technology/",
+            url: "https://www.bedrock.technology",
         },
         {
             text: Site.Docs,
-            url: "https://www.bedrock.technology/",
+            url: "https://docs.bedrock.technology",
         },
         {
             text: Site.Explorer,
-            url: "https://docs.bedrock.technology/",
+            url: "https://app.bedrock.technology/statistics",
         },
         {
             text: Site.GitHub,

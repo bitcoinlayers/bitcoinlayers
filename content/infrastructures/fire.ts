@@ -29,12 +29,12 @@ const fire: InfrastructureProject = {
         },
         {
             text: Site.Docs,
-            url: "https://fbtc.com/",
+            url: "https://docs.fbtc.com",
         },
-        {
-            text: Site.Explorer,
-            url: "https://docs.fbtc.com/",
-        },
+        // {
+        //     text: Site.Explorer,
+        //     url: "https://docs.fbtc.com/",
+        // },
         {
             text: Site.GitHub,
             url: "https://github.com/fbtc-xyz",

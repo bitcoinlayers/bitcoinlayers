@@ -29,10 +29,14 @@ const nubit: InfrastructureProject = {
         },
         {
             text: Site.Docs,
-            url: "https://docs.nubit.org/developer-guides/introduction",
+            url: "https://docs.nubit.org",
         },
         {
             text: Site.Explorer,
+            url: "https://www.explorer.nubit.org",
+        },
+        {
+            text: Site.GitHub,
             url: "https://github.com/RiemaLabs",
         },
         {

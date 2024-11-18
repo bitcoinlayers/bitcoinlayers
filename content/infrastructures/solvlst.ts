@@ -26,11 +26,11 @@ const solvlst: InfrastructureProject = {
     links: [
         {
             text: Site.Website,
-            url: "https://solv.finance/",
+            url: "https://solv.finance",
         },
         {
             text: Site.Docs,
-            url: "https://docs.solv.finance/",
+            url: "https://docs.solv.finance",
         },
         {
             text: Site.GitHub,
