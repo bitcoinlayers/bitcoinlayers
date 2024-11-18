@@ -34,16 +34,8 @@ const arkliquid: LayerProject = {
             url: "https://arklabs.to",
         },
         {
-            text: Site.Website,
-            url: "https://arkdev.info",
-        },
-        {
             text: Site.Docs,
-            url: "https://arkdev.info/docs/",
-        },
-        {
-            text: Site.Explorer,
-            url: "https://arkdev.info/docs/developers/get-started",
+            url: "https://arkdev.info/docs",
         },
         {
             text: Site.GitHub,

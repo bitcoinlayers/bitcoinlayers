@@ -148,7 +148,7 @@ const stacks: LayerProject = {
                     title: "sBTC",
                     content:
                         "sBTC is still in development as of March 2024. It is a bridged version of BTC on Stacks. sBTC is minted by locking up BTC on Bitcoin, and is redeemable for BTC at a 1:1 ratio. sBTC is not yet permissionless, as withdrawals are permissioned by the validator set.",
-                }
+                },
             ],
         },
         {

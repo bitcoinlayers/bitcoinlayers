@@ -28,11 +28,11 @@ const brollup: LayerProject = {
     links: [
         {
             text: Site.Website,
-            url: "https://github.com/brollup/brollup",
+            url: "https://brollup.org",
         },
         {
             text: Site.Docs,
-            url: "https://github.com/brollup/brollup",
+            url: "https://docs.brollup.org",
         },
         {
             text: Site.GitHub,

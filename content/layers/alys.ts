@@ -25,23 +25,15 @@ const alys: LayerProject = {
     links: [
         {
             text: Site.Website,
-            url: "https://www.anduro.io/",
+            url: "https://alys.anduro.io",
         },
         {
             text: Site.Docs,
-            url: "https://www.anduro.io/",
-        },
-        {
-            text: Site.Explorer,
-            url: "https://www.anduro.io/",
-        },
-        {
-            text: Site.GitHub,
-            url: "https://www.anduro.io/",
+            url: "https://cdn.prod.website-files.com/65d7ad8d6664c459f717e27d/65fc7d9bbb856302865ea302_ANDURO-Litepaper.pdf",
         },
         {
             text: Site.Twitter,
-            url: "https://www.anduro.io/",
+            url: "https://x.com/andurobtc",
         },
     ],
     description:

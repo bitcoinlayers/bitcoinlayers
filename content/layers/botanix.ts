@@ -28,15 +28,15 @@ const botanix: LayerProject = {
     links: [
         {
             text: Site.Website,
-            url: "https://www.botanixlabs.xyz/en/home",
+            url: "https://www.botanixlabs.xyz",
         },
         {
             text: Site.Docs,
-            url: "https://docs.botanixlabs.xyz/botanix-labs",
+            url: "https://docs.botanixlabs.xyz",
         },
         {
             text: Site.Explorer,
-            url: "https://blockscout.botanixlabs.dev/",
+            url: "https://blockscout.botanixlabs.dev",
         },
         {
             text: Site.GitHub,
@@ -44,7 +44,7 @@ const botanix: LayerProject = {
         },
         {
             text: Site.Twitter,
-            url: "https://twitter.com/BotanixLabs",
+            url: "https://x.com/BotanixLabs",
         },
     ],
     description:

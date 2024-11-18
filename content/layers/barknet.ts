@@ -25,15 +25,7 @@ const barknet: LayerProject = {
     links: [
         {
             text: Site.Website,
-            url: "https://github.com/KasarLabs/barknet",
-        },
-        {
-            text: Site.Docs,
-            url: "https://github.com/KasarLabs/barknet",
-        },
-        {
-            text: Site.Explorer,
-            url: "https://github.com/KasarLabs/barknet",
+            url: "https://kasar.io",
         },
         {
             text: Site.GitHub,

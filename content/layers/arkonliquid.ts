@@ -35,11 +35,7 @@ const arkonliquid: LayerProject = {
         },
         {
             text: Site.Docs,
-            url: "https://arkdev.info/docs/",
-        },
-        {
-            text: Site.Explorer,
-            url: "https://arkdev.info/docs/developers/get-started",
+            url: "https://arkdev.info/docs",
         },
         {
             text: Site.GitHub,
