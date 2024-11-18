@@ -25,18 +25,22 @@ const sovereign: InfrastructureProject = {
     links: [
         {
             text: Site.Website,
-            url: "https://www.sovereign.xyz/",
+            url: "https://www.sovereign.xyz",
         },
         {
             text: Site.Docs,
             url: "https://github.com/Sovereign-Labs/sovereign-sdk",
         },
-        {
-            text: Site.Explorer,
-            url: "https://github.com/Sovereign-Labs/sovereign-sdk",
-        },
+        // {
+        //     text: Site.Explorer,
+        //     url: "https://github.com/Sovereign-Labs/sovereign-sdk",
+        // },
         {
             text: Site.GitHub,
+            url: "https://x.com/sovereign_labs",
+        },
+        {
+            text: Site.Twitter,
             url: "https://x.com/sovereign_labs",
         },
     ],

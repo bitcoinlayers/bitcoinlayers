@@ -25,11 +25,11 @@ const binancebtcb: InfrastructureProject = {
     links: [
         {
             text: Site.Website,
-            url: "https://www.binance.com/",
+            url: "https://www.binance.com",
         },
         {
             text: Site.Explorer,
-            url: "https://bscscan.com",
+            url: "https://bscscan.com/token/0x7130d2a12b9bcbfae4f2634d864a1ee1ce3ead9c?ref=bnbchain.ghost.io",
         },
         {
             text: Site.GitHub,

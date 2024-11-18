@@ -29,12 +29,12 @@ const bvm: InfrastructureProject = {
         },
         {
             text: Site.Docs,
-            url: "https://bvm.network",
-        },
-        {
-            text: Site.Explorer,
             url: "https://docs.bvm.network",
         },
+        // {
+        //     text: Site.Explorer,
+        //     url: "https://docs.bvm.network",
+        // },
         {
             text: Site.GitHub,
             url: "https://github.com/trustlesscomputer",

@@ -26,15 +26,15 @@ const tbtc: InfrastructureProject = {
     links: [
         {
             text: Site.Website,
-            url: "https://threshold.network/",
+            url: "https://threshold.network",
         },
         {
             text: Site.Docs,
-            url: "https://threshold.network/",
+            url: "https://docs.threshold.network",
         },
         {
             text: Site.Explorer,
-            url: "https://docs.threshold.network/",
+            url: "https://etherscan.io/token/0xcdf7028ceab81fa0c6971208e83fa7872994bee5",
         },
         {
             text: Site.GitHub,

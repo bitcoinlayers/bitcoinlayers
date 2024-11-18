@@ -29,15 +29,19 @@ const babylon: InfrastructureProject = {
         },
         {
             text: Site.Docs,
-            url: "https://docs.babylonchain.io/",
+            url: "https://docs.babylonchain.io",
         },
         {
             text: Site.Explorer,
-            url: "https://github.com/babylonchain",
+            url: "https://testnet.babylon.explorers.guru",
         },
         {
             text: Site.GitHub,
-            url: "https://x.com/babylon_chain",
+            url: "https://github.com/babylonchain",
+        },
+        {
+            text: Site.Twitter,
+            url: "https://x.com/babylonlabs_io",
         },
     ],
     description:
