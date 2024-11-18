@@ -29,10 +29,14 @@ const celestia: InfrastructureProject = {
         },
         {
             text: Site.Docs,
-            url: "https://docs.celestia.org/",
+            url: "https://docs.celestia.org",
         },
+        // {
+        //     text: Site.Explorer,
+        //     url: "https://github.com/celestiaorg",
+        // },
         {
-            text: Site.Explorer,
+            text: Site.GitHub,
             url: "https://github.com/celestiaorg",
         },
         {

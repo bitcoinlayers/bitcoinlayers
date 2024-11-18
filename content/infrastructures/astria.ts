@@ -30,14 +30,18 @@ const astria: InfrastructureProject = {
         },
         {
             text: Site.Docs,
-            url: "https://docs.astria.org/",
+            url: "https://docs.astria.org",
         },
         {
             text: Site.Explorer,
-            url: "https://github.com/astriaorg",
+            url: "https://astrotrek.io",
         },
         {
             text: Site.GitHub,
+            url: "https://github.com/astriaorg",
+        },
+        {
+            text: Site.Twitter,
             url: "https://x.com/AstriaOrg",
         },
     ],

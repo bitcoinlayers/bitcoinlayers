@@ -30,15 +30,15 @@ const bitcoinos: InfrastructureProject = {
         },
         {
             text: Site.Docs,
-            url: "https://cdn.prod.website-files.com/661e3b1622f7c56970b07a4c/662a7a89ce097389c876db57_BitSNARK__Grail.pdf",
+            url: "https://bitcoinos-technical-documentatio.gitbook.io/bitcoinos",
         },
-        {
-            text: Site.Explorer,
-            url: "https://cdn.prod.website-files.com/661e3b1622f7c56970b07a4c/662a7a89ce097389c876db57_BitSNARK__Grail.pdf",
-        },
+        // {
+        //     text: Site.Explorer,
+        //     url: "https://cdn.prod.website-files.com/661e3b1622f7c56970b07a4c/662a7a89ce097389c876db57_BitSNARK__Grail.pdf",
+        // },
         {
             text: Site.GitHub,
-            url: "https://cdn.prod.website-files.com/661e3b1622f7c56970b07a4c/662a7a89ce097389c876db57_BitSNARK__Grail.pdf",
+            url: "https://github.com/bitsnark/bitsnark-lib",
         },
         {
             text: Site.Twitter,

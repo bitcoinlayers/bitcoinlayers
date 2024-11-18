@@ -26,16 +26,20 @@ const pump: InfrastructureProject = {
     links: [
         {
             text: Site.Website,
-            url: "https://mainnet.pumpbtc.xyz/",
+            url: "https://pumpbtc.xyz",
         },
         {
             text: Site.Docs,
             url: "https://pumpbtc.gitbook.io/pumpbtc",
         },
         {
-            text: Site.GitHub,
-            url: "https://pumpbtc.gitbook.io/pumpbtc/key-address",
+            text: Site.Explorer,
+            url: "https://www.blockchain.com/explorer/assets/pumpbtc",
         },
+        // {
+        //     text: Site.GitHub,
+        //     url: "https://pumpbtc.gitbook.io/pumpbtc/key-address",
+        // },
         {
             text: Site.Twitter,
             url: "https://x.com/Pumpbtcxyz",

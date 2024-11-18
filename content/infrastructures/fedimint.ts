@@ -31,8 +31,12 @@ const fedimint: InfrastructureProject = {
             text: Site.Docs,
             url: "https://fedimint.org/docs/intro",
         },
+        // {
+        //     text: Site.Explorer,
+        //     url: "https://github.com/fedimint",
+        // },
         {
-            text: Site.Explorer,
+            text: Site.GitHub,
             url: "https://github.com/fedimint",
         },
         {

@@ -25,7 +25,7 @@ const kbtc: InfrastructureProject = {
     links: [
         {
             text: Site.Website,
-            url: "https://www.kraken.com/",
+            url: "https://www.kraken.com",
         },
         {
             text: Site.Docs,
@@ -33,12 +33,12 @@ const kbtc: InfrastructureProject = {
         },
         {
             text: Site.Explorer,
-            url: "https://www.kraken.com/kbtc",
+            url: "https://etherscan.io/token/0x73e0c0d45e048d25fc26fa3159b0aa04bfa4db98",
         },
-        {
-            text: Site.GitHub,
-            url: "https://www.kraken.com/",
-        },
+        // {
+        //     text: Site.GitHub,
+        //     url: "https://www.kraken.com",
+        // },
         {
             text: Site.Twitter,
             url: "https://x.com/krakenfx",

@@ -30,7 +30,7 @@ const cbbtc: InfrastructureProject = {
         },
         {
             text: Site.Docs,
-            url: "https://coinbase.bynder.com/m/1303c2f4d78fc966/original/cbBTC-White-Paper.pdf",
+            url: "https://docs.base.org",
         },
         {
             text: Site.Explorer,
@@ -38,7 +38,7 @@ const cbbtc: InfrastructureProject = {
         },
         {
             text: Site.GitHub,
-            url: "https://x.com/base",
+            url: "https://github.com/base-org",
         },
         {
             text: Site.Twitter,

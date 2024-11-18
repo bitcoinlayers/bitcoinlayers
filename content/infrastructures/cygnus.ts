@@ -25,15 +25,15 @@ const cygnus: InfrastructureProject = {
     links: [
         {
             text: Site.Website,
-            url: "https://pool.cygnus.finance/restake",
+            url: "https://cygnus.finance/",
         },
-        {
-            text: Site.Explorer,
-            url: "https://explorer.bsquared.network",
-        },
+        // {
+        //     text: Site.Explorer,
+        //     url: "https://explorer.bsquared.network",
+        // },
         {
             text: Site.Docs,
-            url: "https://cygnus.finance/",
+            url: "https://wiki.cygnus.finance/",
         },
         {
             text: Site.Twitter,

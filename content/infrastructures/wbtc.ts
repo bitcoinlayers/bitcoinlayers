@@ -26,7 +26,7 @@ const wbtc: InfrastructureProject = {
     links: [
         {
             text: Site.Website,
-            url: "https://wbtc.network/",
+            url: "https://wbtc.network",
         },
         {
             text: Site.Explorer,
@@ -34,7 +34,11 @@ const wbtc: InfrastructureProject = {
         },
         {
             text: Site.GitHub,
-            url: "https://github.com/WrappedBTC/bitcoin-token-smart-contracts",
+            url: "https://github.com/WrappedBTC",
+        },
+        {
+            text: Site.Twitter,
+            url: "https://x.com/WrappedBTC",
         },
     ],
     description:

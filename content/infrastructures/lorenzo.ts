@@ -29,14 +29,18 @@ const lorenzo: InfrastructureProject = {
         },
         {
             text: Site.Docs,
-            url: "https://docs.lorenzo-protocol.xyz/",
+            url: "https://docs.lorenzo-protocol.xyz",
         },
         {
             text: Site.Explorer,
-            url: "https://github.com/Lorenzo-Protocol",
+            url: "https://scan.lorenzo-protocol.xyz",
         },
         {
             text: Site.GitHub,
+            url: "https://github.com/Lorenzo-Protocol",
+        },
+        {
+            text: Site.Twitter,
             url: "https://x.com/LorenzoProtocol",
         },
     ],

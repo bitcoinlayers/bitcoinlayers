@@ -25,18 +25,22 @@ const bool: InfrastructureProject = {
     links: [
         {
             text: Site.Website,
-            url: "https://bool.network/",
+            url: "https://bool.network",
         },
         {
             text: Site.Docs,
-            url: "https://docs.bool.network/",
+            url: "https://docs.bool.network",
         },
         {
             text: Site.Explorer,
-            url: "https://github.com/boolnetwork",
+            url: "https://beta-testnet.boolscan.com",
         },
         {
             text: Site.GitHub,
+            url: "https://github.com/boolnetwork",
+        },
+        {
+            text: Site.Twitter,
             url: "https://x.com/bool_official",
         },
     ],

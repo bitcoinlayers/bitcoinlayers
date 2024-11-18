@@ -33,11 +33,15 @@ const avail: InfrastructureProject = {
         },
         {
             text: Site.Explorer,
-            url: "https://github.com/availproject",
+            url: "https://explorer.avail.so/#/explorer",
         },
         {
             text: Site.GitHub,
-            url: "https://x.com/AvailProject",
+            url: "https://github.com/availproject",
+        },
+        {
+            text: Site.Twitter,
+            url: "https://x.com/availproject",
         },
     ],
     description:

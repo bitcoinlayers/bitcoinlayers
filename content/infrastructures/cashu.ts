@@ -25,14 +25,18 @@ const cashu: InfrastructureProject = {
     links: [
         {
             text: Site.Website,
-            url: "https://cashu.space/",
+            url: "https://cashu.space",
         },
         {
             text: Site.Docs,
-            url: "https://docs.cashu.space/",
+            url: "https://docs.cashu.space",
         },
+        // {
+        //     text: Site.Explorer,
+        //     url: "https://github.com/cashubtc",
+        // },
         {
-            text: Site.Explorer,
+            text: Site.GitHub,
             url: "https://github.com/cashubtc",
         },
         {

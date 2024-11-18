@@ -26,15 +26,15 @@ const lombard: InfrastructureProject = {
     links: [
         {
             text: Site.Website,
-            url: "https://www.lombard.finance/",
+            url: "https://www.lombard.finance",
         },
         {
             text: Site.Docs,
-            url: "https://docs.lombard.finance/",
+            url: "https://docs.lombard.finance",
         },
         {
             text: Site.Explorer,
-            url: "https://docs.lombard.finance/",
+            url: "https://etherscan.io/token/0x8236a87084f8b84306f72007f36f2618a5634494",
         },
         {
             text: Site.GitHub,
