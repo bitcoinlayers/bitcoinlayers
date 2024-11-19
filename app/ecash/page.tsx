@@ -46,6 +46,7 @@ export default function Home() {
                     title="Ecash"
                     description="Learn the tradeoffs for different ecash projects"
                     icon={<CoinsIcon className="mr-3" />}
+                    isEcash
                 />
             </div>
         </div>
