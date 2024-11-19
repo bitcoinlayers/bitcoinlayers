@@ -7,9 +7,10 @@ import InfrastructureMenu from "@/components/infrastructure/infrastructureMenu";
 import InfrastructureBody from "@/components/infrastructure/infrastructureBody";
 import InfrastructureOverview from "@/components/infrastructure/infrastructureOverview";
 import InfrastructureImage from "@/components/infrastructure/infrastructure-image";
+import { allEcash } from "@/util/ecash_index";
 
 async function getInfrastructureFromSlug(slug: string) {
-    const infrastructure = allInfrastructures.find(
+    const infrastructure = allEcash.find(
         (infrastructure) => infrastructure.slug === slug,
     );
     if (!infrastructure) {
