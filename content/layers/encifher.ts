@@ -28,11 +28,11 @@ const encifher: LayerProject = {
     links: [
         {
             text: Site.Website,
-            url: "https://encifher.io/",
+            url: "https://encifher.io",
         },
         {
             text: Site.Docs,
-            url: "https://docs.encifher.io/",
+            url: "https://docs.encifher.io",
         },
         {
             text: Site.GitHub,

@@ -28,15 +28,11 @@ const zklayer: LayerProject = {
     links: [
         {
             text: Site.Website,
-            url: "https://www.zklayer.co/",
+            url: "https://www.zklayer.co",
         },
         {
             text: Site.Docs,
-            url: "https://app.gitbook.com/o/62jIvTYSEInKMwhtPJXC/s/fTHAEGkacQhIFNLPH9VW/",
-        },
-        {
-            text: Site.Explorer,
-            url: "https://app.gitbook.com/o/62jIvTYSEInKMwhtPJXC/s/fTHAEGkacQhIFNLPH9VW/",
+            url: "https://docs.zklayer.co",
         },
         {
             text: Site.GitHub,
@@ -44,7 +40,7 @@ const zklayer: LayerProject = {
         },
         {
             text: Site.Twitter,
-            url: "https://twitter.com/zkLayer_",
+            url: "https://x.com/zkLayer_",
         },
     ],
     description:

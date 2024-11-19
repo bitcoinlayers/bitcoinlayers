@@ -33,15 +33,11 @@ const mercurylayer: LayerProject = {
     links: [
         {
             text: Site.Website,
-            url: "https://mercurylayer.com/",
+            url: "https://mercurylayer.com",
         },
         {
             text: Site.Docs,
-            url: "https://github.com/commerceblock/mercurylayer/blob/dev/docs/README.md",
-        },
-        {
-            text: Site.Explorer,
-            url: "https://mercurylayer.com/",
+            url: "https://docs.mercurylayer.com",
         },
         {
             text: Site.GitHub,

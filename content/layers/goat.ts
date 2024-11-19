@@ -28,7 +28,15 @@ const goat: LayerProject = {
     links: [
         {
             text: Site.Website,
-            url: "https://www.goat.network/",
+            url: "https://www.goat.network",
+        },
+        {
+            text: Site.Docs,
+            url: "https://goat.network/whitepaper",
+        },
+        {
+            text: Site.Explorer,
+            url: "https://explorer.testnet.goat.network",
         },
         {
             text: Site.GitHub,

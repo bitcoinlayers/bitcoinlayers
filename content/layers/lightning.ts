@@ -33,19 +33,11 @@ const lightning: LayerProject = {
     links: [
         {
             text: Site.Website,
-            url: "https://lightning.network/",
+            url: "https://lightning.network",
         },
         {
             text: Site.Docs,
-            url: "https://docs.corelightning.org/docs/home",
-        },
-        {
-            text: Site.Explorer,
-            url: "https://github.com/ACINQ/eclair",
-        },
-        {
-            text: Site.GitHub,
-            url: "https://twitter.com/lightning",
+            url: "https://lightning.network/docs",
         },
     ],
     description:

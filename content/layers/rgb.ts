@@ -28,27 +28,23 @@ const rgb: LayerProject = {
     links: [
         {
             text: Site.Website,
-            url: "https://rgb.tech/",
+            url: "https://rgb.tech",
         },
         {
             text: Site.Website,
-            url: "https://www.rgbfaq.com/",
+            url: "https://www.rgbfaq.com",
         },
         {
             text: Site.Docs,
-            url: "https://twitter.com/bitcoinlayers",
-        },
-        {
-            text: Site.Explorer,
-            url: "https://twitter.com/bitcoinlayers",
+            url: "https://rgb.tech/docs",
         },
         {
             text: Site.GitHub,
-            url: "https://twitter.com/bitcoinlayers",
+            url: "https://github.com/RGB-WG",
         },
         {
             text: Site.Twitter,
-            url: "https://twitter.com/bitcoinlayers",
+            url: "https://x.com/lnp_bp",
         },
     ],
     description: "Under review.",

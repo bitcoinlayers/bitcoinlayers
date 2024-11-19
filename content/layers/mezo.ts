@@ -28,23 +28,19 @@ const mezo: LayerProject = {
     links: [
         {
             text: Site.Website,
-            url: "https://mezo.org/",
+            url: "https://mezo.org",
         },
         {
             text: Site.Docs,
-            url: "https://info.mezo.org/proof-of-hodl",
+            url: "https://info.mezo.org",
         },
         {
             text: Site.Explorer,
-            url: "https://info.mezo.org/proof-of-hodl",
-        },
-        {
-            text: Site.GitHub,
-            url: "https://info.mezo.org/proof-of-hodl",
+            url: "https://explorer.test.mezo.org",
         },
         {
             text: Site.Twitter,
-            url: "https://twitter.com/mezonetwork",
+            url: "https://x.com/mezonetwork",
         },
     ],
     description:

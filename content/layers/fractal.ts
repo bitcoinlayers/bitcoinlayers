@@ -33,15 +33,15 @@ const fractal: LayerProject = {
     links: [
         {
             text: Site.Website,
-            url: "https://www.fractalbitcoin.io/",
+            url: "https://www.fractalbitcoin.io",
         },
         {
             text: Site.Docs,
-            url: "https://docs.fractalbitcoin.io/",
+            url: "https://docs.fractalbitcoin.io",
         },
         {
             text: Site.Explorer,
-            url: "https://docs.fractalbitcoin.io/",
+            url: "https://www.okx.com/web3/explorer/fractal-bitcoin",
         },
         {
             text: Site.GitHub,

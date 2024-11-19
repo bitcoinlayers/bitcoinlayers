@@ -25,23 +25,15 @@ const alpen: LayerProject = {
     links: [
         {
             text: Site.Website,
-            url: "https://alpenlabs.io/",
+            url: "https://www.stratabtc.org",
         },
         {
             text: Site.Docs,
-            url: "https://www.alpenlabs.io/",
-        },
-        {
-            text: Site.Explorer,
-            url: "https://www.alpenlabs.io/",
-        },
-        {
-            text: Site.GitHub,
-            url: "https://www.alpenlabs.io/",
+            url: "https://docs.stratabtc.org",
         },
         {
             text: Site.Twitter,
-            url: "https://twitter.com/AlpenLabs",
+            url: "https://x.com/Strata_BTC",
         },
     ],
     description:

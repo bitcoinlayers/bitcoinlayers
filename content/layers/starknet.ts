@@ -28,23 +28,23 @@ const starknet: LayerProject = {
     links: [
         {
             text: Site.Website,
-            url: "https://www.starknet.io/",
+            url: "https://www.starknet.io",
         },
         {
             text: Site.Docs,
-            url: "https://docs.btcwild.life/",
+            url: "https://docs.starknet.io",
         },
         {
             text: Site.Explorer,
-            url: "https://github.com/Bitcoin-Wildlife-Sanctuary/bitcoin-circle-stark",
+            url: "https://starkscan.co",
         },
         {
             text: Site.GitHub,
-            url: "https://github.com/Bitcoin-Wildlife-Sanctuary/bitcoin-circle-stark",
+            url: "https://github.com/keep-starknet-strange/awesome-starknet",
         },
         {
             text: Site.Twitter,
-            url: "https://twitter.com/starknet",
+            url: "https://x.com/Starknet",
         },
     ],
     description:

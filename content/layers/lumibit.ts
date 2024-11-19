@@ -28,7 +28,7 @@ const lumibit: LayerProject = {
     links: [
         {
             text: Site.Website,
-            url: "https://lumibit.xyz/",
+            url: "https://lumibit.xyz",
         },
         {
             text: Site.Docs,
@@ -36,7 +36,7 @@ const lumibit: LayerProject = {
         },
         {
             text: Site.Explorer,
-            url: "https://test-scan.lumibit.xyz/",
+            url: " https://scan.devnet.lumibit.xyz",
         },
         {
             text: Site.GitHub,
@@ -44,7 +44,7 @@ const lumibit: LayerProject = {
         },
         {
             text: Site.Twitter,
-            url: "https://twitter.com/LumiBitL2",
+            url: "https://x.com/LumiBitL2",
         },
     ],
     description:

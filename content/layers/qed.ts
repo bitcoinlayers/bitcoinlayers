@@ -28,15 +28,7 @@ const qed: LayerProject = {
     links: [
         {
             text: Site.Website,
-            url: "https://qedprotocol.com/",
-        },
-        {
-            text: Site.Docs,
-            url: "https://qedprotocol.com/",
-        },
-        {
-            text: Site.Explorer,
-            url: "https://qedprotocol.com/",
+            url: "https://qedprotocol.com",
         },
         {
             text: Site.GitHub,

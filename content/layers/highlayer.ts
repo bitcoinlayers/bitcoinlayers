@@ -28,19 +28,11 @@ const highlayer: LayerProject = {
     links: [
         {
             text: Site.Website,
-            url: "https://highlayer.io/",
+            url: "https://highlayer.io",
         },
         {
             text: Site.Docs,
-            url: "https://docs.highlayer.io/",
-        },
-        {
-            text: Site.Explorer,
-            url: "https://docs.highlayer.io/",
-        },
-        {
-            text: Site.GitHub,
-            url: "https://docs.highlayer.io/",
+            url: "https://docs.highlayer.io",
         },
         {
             text: Site.Twitter,

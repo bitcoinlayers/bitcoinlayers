@@ -28,15 +28,15 @@ const side: LayerProject = {
     links: [
         {
             text: Site.Website,
-            url: "https://side.one/",
+            url: "https://side.one",
         },
         {
             text: Site.Docs,
-            url: "https://docs.side.one/",
+            url: "https://docs.side.one",
         },
         {
             text: Site.Explorer,
-            url: "https://explorer.side.exchange/",
+            url: "https://explorer.side.exchange",
         },
         {
             text: Site.GitHub,
@@ -44,7 +44,7 @@ const side: LayerProject = {
         },
         {
             text: Site.Twitter,
-            url: "https://twitter.com/SideProtocol",
+            url: "https://x.com/SideProtocol",
         },
     ],
     description:

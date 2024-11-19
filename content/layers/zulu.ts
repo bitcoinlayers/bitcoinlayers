@@ -28,15 +28,15 @@ const zulu: LayerProject = {
     links: [
         {
             text: Site.Website,
-            url: "https://zulunetwork.io/",
+            url: "https://zulunetwork.io",
         },
         {
             text: Site.Docs,
-            url: "https://docs.zulunetwork.io/",
+            url: "https://docs.zulunetwork.io",
         },
         {
             text: Site.Explorer,
-            url: "https://testnet.zuluscan.io/",
+            url: "https://testnet.zuluscan.io",
         },
         {
             text: Site.GitHub,

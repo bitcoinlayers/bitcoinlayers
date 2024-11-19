@@ -30,28 +30,7 @@ const moneta: LayerProject = {
     nativeToken: "MTA",
     feeToken: "mBTC",
     bitcoinOnly: false,
-    links: [
-        {
-            text: Site.Website,
-            url: "https://twitter.com/bitcoinlayers",
-        },
-        {
-            text: Site.Docs,
-            url: "https://twitter.com/bitcoinlayers",
-        },
-        {
-            text: Site.Explorer,
-            url: "https://twitter.com/bitcoinlayers",
-        },
-        {
-            text: Site.GitHub,
-            url: "https://twitter.com/bitcoinlayers",
-        },
-        {
-            text: Site.Twitter,
-            url: "https://twitter.com/bitcoinlayers",
-        },
-    ],
+    links: [],
     description:
         "Moneta is a rollup that uses Bitcoin for data availability and consensus. It has an optimistically verified validating bridge via BitVM. It leverages STARK proofs to prove state transitions. In the event of an invalid state transition, verifiers in the BitVM bridge can submit a fraud proof to show that the state transition was invalid.",
     riskAnalysis: [

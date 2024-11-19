@@ -28,19 +28,19 @@ const rif: LayerProject = {
     links: [
         {
             text: Site.Website,
-            url: "https://rif.technology/",
+            url: "https://rif.technology",
         },
         {
             text: Site.Docs,
-            url: "https://dev.rootstock.io/rif/",
+            url: "https://dev.rootstock.io",
         },
         {
             text: Site.Explorer,
-            url: "https://explorer.testnet.rollup.rif.technology/",
+            url: "https://explorer.testnet.rollup.rif.technology",
         },
         {
             text: Site.GitHub,
-            url: "https://dev.rootstock.io/rif/rollup/dev-reference/",
+            url: "https://github.com/rsksmart/devportal",
         },
         {
             text: Site.Twitter,

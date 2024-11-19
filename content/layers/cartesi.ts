@@ -33,23 +33,23 @@ const cartesi: LayerProject = {
     links: [
         {
             text: Site.Website,
-            url: "https://cartesi.io/",
+            url: "https://cartesi.io",
         },
         {
             text: Site.Docs,
-            url: "https://twitter.com/bitcoinlayers",
+            url: "https://docs.cartesi.io",
         },
         {
             text: Site.Explorer,
-            url: "https://twitter.com/bitcoinlayers",
+            url: "https://explorer.cartesi.io",
         },
         {
             text: Site.GitHub,
-            url: "https://twitter.com/bitcoinlayers",
+            url: "https://github.com/cartesi",
         },
         {
             text: Site.Twitter,
-            url: "https://twitter.com/cartesiproject",
+            url: "https://x.com/cartesiproject",
         },
     ],
     description: "Under review.",
