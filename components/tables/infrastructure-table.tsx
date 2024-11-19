@@ -220,7 +220,7 @@ const InfrastructureTable = ({
                                 >
                                     <td className="lg:px-6 px-4 py-4 font-semibold whitespace-nowrap border-r lg:border-r-0 border-stroke_tertiary text_table_important text-table_body">
                                         <Link
-                                            href={`/${isEcash ? 'ecash' : 'infrastructure'}/${item.slug}`}
+                                            href={`/${isEcash ? "ecash" : "infrastructure"}/${item.slug}`}
                                             className="flex items-center"
                                         >
                                             <InfrastructureImage
@@ -237,7 +237,7 @@ const InfrastructureTable = ({
                                         mobileActiveTab === "Type") && (
                                         <td className="lg:px-6 px-4 py-3 lg:py-4 border-stroke_tertiary text_table_important">
                                             <Link
-                                                href={`/${isEcash ? 'ecash' : 'infrastructure'}/${item.slug}`}
+                                                href={`/${isEcash ? "ecash" : "infrastructure"}/${item.slug}`}
                                             >
                                                 {" "}
                                                 {item.entityType}
@@ -248,7 +248,7 @@ const InfrastructureTable = ({
                                         mobileActiveTab === "Status") && (
                                         <td className="lg:px-6 px-4 py-3 lg:py-4 border-stroke_tertiary text_table_important">
                                             <Link
-                                                href={`/${isEcash ? 'ecash' : 'infrastructure'}/${item.slug}`}
+                                                href={`/${isEcash ? "ecash" : "infrastructure"}/${item.slug}`}
                                             >
                                                 {" "}
                                                 {item.live}
@@ -260,7 +260,7 @@ const InfrastructureTable = ({
                                             "Unit of Account") && (
                                         <td className="lg:px-6 px-4 py-3 lg:py-4 border-stroke_tertiary text_table_important">
                                             <Link
-                                                href={`/${isEcash ? 'ecash' : 'infrastructure'}/${item.slug}`}
+                                                href={`/${isEcash ? "ecash" : "infrastructure"}/${item.slug}`}
                                             >
                                                 <div className="flex items-center">
                                                     {item.nativeToken
@@ -284,7 +284,7 @@ const InfrastructureTable = ({
                                             "Associated Layers") && (
                                         <td className="lg:px-6 px-4 py-3 lg:py-4 border-r border-stroke_tertiary text_table_important">
                                             <Link
-                                                href={`/${isEcash ? 'ecash' : 'infrastructure'}/${item.slug}`}
+                                                href={`/${isEcash ? "ecash" : "infrastructure"}/${item.slug}`}
                                             >
                                                 {item.associatedLayers}
                                             </Link>

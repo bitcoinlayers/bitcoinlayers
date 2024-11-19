@@ -37,7 +37,7 @@ const zkbitcoin: LayerProject = {
         {
             text: Site.GitHub,
             url: "https://github.com/sigma0-xyz/zkbitcoin",
-        }
+        },
     ],
     description:
         "zkBitcoin enables the use of zero-knowledge applications on Bitcoin. User funds would be secured by a federated MPC protocol in their proposed design.",
