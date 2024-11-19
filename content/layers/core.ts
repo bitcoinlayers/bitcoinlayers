@@ -33,15 +33,15 @@ const core: LayerProject = {
     links: [
         {
             text: Site.Website,
-            url: "https://coredao.org/",
+            url: "https://coredao.org",
         },
         {
             text: Site.Docs,
-            url: "https://docs.coredao.org/developer/introduction/quick-links",
+            url: "https://docs.coredao.org",
         },
         {
             text: Site.Explorer,
-            url: "https://scan.coredao.org/",
+            url: "https://scan.coredao.org",
         },
         {
             text: Site.GitHub,

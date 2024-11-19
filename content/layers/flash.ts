@@ -33,23 +33,19 @@ const flash: LayerProject = {
     links: [
         {
             text: Site.Website,
-            url: "https://flashprotocol.xyz/",
+            url: "https://flashprotocol.xyz",
         },
         {
             text: Site.Docs,
-            url: "https://twitter.com/bitcoinlayers",
+            url: "https://doc.flashprotocol.xyz",
         },
         {
             text: Site.Explorer,
-            url: "https://twitter.com/bitcoinlayers",
-        },
-        {
-            text: Site.GitHub,
-            url: "https://twitter.com/bitcoinlayers",
+            url: "https://flashprotocol.xyz/explorer",
         },
         {
             text: Site.Twitter,
-            url: "https://twitter.com/flashprotocol",
+            url: "https://x.com/flashprotocol",
         },
     ],
     description: "Under review.",

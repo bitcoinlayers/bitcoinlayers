@@ -49,7 +49,7 @@ const internetcomputer: LayerProject = {
         },
         {
             text: Site.Twitter,
-            url: "https://twitter.com/dfinity",
+            url: "https://x.com/dfinity",
         },
     ],
     description:

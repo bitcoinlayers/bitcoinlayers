@@ -25,23 +25,15 @@ const bit2: LayerProject = {
     links: [
         {
             text: Site.Website,
-            url: "https://bit2.network/",
+            url: "https://bit2.network",
         },
         {
             text: Site.Docs,
             url: "https://bit2.network/coming-soon",
         },
         {
-            text: Site.Explorer,
-            url: "https://explorer.bit2.network",
-        },
-        {
-            text: Site.GitHub,
-            url: "https://bit2.network/coming-soon",
-        },
-        {
             text: Site.Twitter,
-            url: "https://twitter.com/bit2net",
+            url: "https://x.com/bit2net",
         },
     ],
     description:

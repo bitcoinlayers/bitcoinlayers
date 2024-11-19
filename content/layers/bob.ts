@@ -31,15 +31,11 @@ const bob: LayerProject = {
     links: [
         {
             text: Site.Website,
-            url: "https://www.gobob.xyz/",
+            url: "https://www.gobob.xyz",
         },
         {
             text: Site.Docs,
-            url: "https://docs.gobob.xyz/",
-        },
-        {
-            text: Site.Explorer,
-            url: "https://twitter.com/build_on_bob",
+            url: "https://docs.gobob.xyz",
         },
         {
             text: Site.GitHub,

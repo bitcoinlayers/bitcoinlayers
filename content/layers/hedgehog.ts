@@ -28,15 +28,7 @@ const hedgehog: LayerProject = {
     links: [
         {
             text: Site.Website,
-            url: "https://github.com/supertestnet/hedgehog",
-        },
-        {
-            text: Site.Docs,
-            url: "https://github.com/supertestnet/hedgehog",
-        },
-        {
-            text: Site.Explorer,
-            url: "https://supertestnet.github.io/hedgehog/",
+            url: "https://supertestnet.github.io/hedgehog",
         },
         {
             text: Site.GitHub,
@@ -44,7 +36,7 @@ const hedgehog: LayerProject = {
         },
         {
             text: Site.Twitter,
-            url: "https://github.com/supertestnet/hedgehog,",
+            url: "https://x.com/super_testnet",
         },
     ],
     description:

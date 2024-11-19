@@ -28,14 +28,10 @@ const zkcoins: LayerProject = {
     links: [
         {
             text: Site.Website,
-            url: "https://zerosync.org/",
+            url: "https://zerosync.org",
         },
         {
             text: Site.Docs,
-            url: "https://gist.github.com/RobinLinus/d036511015caea5a28514259a1bab119",
-        },
-        {
-            text: Site.Explorer,
             url: "https://gist.github.com/RobinLinus/d036511015caea5a28514259a1bab119",
         },
         {
@@ -44,7 +40,7 @@ const zkcoins: LayerProject = {
         },
         {
             text: Site.Twitter,
-            url: "https://twitter.com/ZeroSync_",
+            url: "https://x.com/ZeroSync_",
         },
     ],
     description:

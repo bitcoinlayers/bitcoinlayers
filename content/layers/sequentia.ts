@@ -28,15 +28,11 @@ const sequentia: LayerProject = {
     links: [
         {
             text: Site.Website,
-            url: "https://sequentia.io/",
+            url: "https://sequentia.io",
         },
         {
             text: Site.Docs,
-            url: "https://docs.sequentia.io/",
-        },
-        {
-            text: Site.Explorer,
-            url: "https://docs.sequentia.io/",
+            url: "https://docs.sequentia.io",
         },
         {
             text: Site.GitHub,

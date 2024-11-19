@@ -33,7 +33,7 @@ const libre: LayerProject = {
     links: [
         {
             text: Site.Website,
-            url: "https://chain.libre.org/",
+            url: "https://chain.libre.org",
         },
         {
             text: Site.Docs,
@@ -41,7 +41,7 @@ const libre: LayerProject = {
         },
         {
             text: Site.Explorer,
-            url: "https://libre.antelope.tools/",
+            url: "https://libre.antelope.tools",
         },
         {
             text: Site.GitHub,
@@ -49,7 +49,7 @@ const libre: LayerProject = {
         },
         {
             text: Site.Twitter,
-            url: "https://twitter.com/libreblockchain",
+            url: "https://x.com/libreblockchain",
         },
     ],
     description:

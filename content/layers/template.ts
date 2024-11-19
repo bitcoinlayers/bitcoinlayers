@@ -36,10 +36,6 @@ const template: LayerProject = {
             url: "website",
         },
         {
-            text: Site.Website,
-            url: "ecosystem",
-        },
-        {
             text: Site.Docs,
             url: "docs",
         },

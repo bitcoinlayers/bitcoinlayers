@@ -33,15 +33,15 @@ const merlin: LayerProject = {
     links: [
         {
             text: Site.Website,
-            url: "https://merlinchain.io/",
+            url: "https://merlinchain.io",
         },
         {
             text: Site.Docs,
-            url: "https://docs.merlinchain.io/merlin-docs",
+            url: "https://docs.merlinchain.io",
         },
         {
             text: Site.Explorer,
-            url: "https://docs.merlinchain.io/merlin-docs/developers",
+            url: "https://scan.merlinchain.io",
         },
         {
             text: Site.GitHub,
@@ -49,7 +49,7 @@ const merlin: LayerProject = {
         },
         {
             text: Site.Twitter,
-            url: "https://twitter.com/MerlinLayer2",
+            url: "https://x.com/MerlinLayer2",
         },
     ],
     description:

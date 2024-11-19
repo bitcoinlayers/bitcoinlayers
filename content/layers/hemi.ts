@@ -28,15 +28,15 @@ const hemi: LayerProject = {
     links: [
         {
             text: Site.Website,
-            url: "https://hemi.xyz/",
+            url: "https://hemi.xyz",
         },
         {
             text: Site.Docs,
-            url: "https://docs.hemi.xyz/",
+            url: "https://docs.hemi.xyz",
         },
         {
             text: Site.Explorer,
-            url: "https://testnet.explorer.hemi.xyz/",
+            url: "https://testnet.explorer.hemi.xyz",
         },
         {
             text: Site.GitHub,

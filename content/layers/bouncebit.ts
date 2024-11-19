@@ -33,15 +33,15 @@ const bouncebit: LayerProject = {
     links: [
         {
             text: Site.Website,
-            url: "https://bouncebit.io/",
+            url: "https://bouncebit.io",
         },
         {
             text: Site.Docs,
-            url: "https://docs.bouncebit.io/",
+            url: "https://docs.bouncebit.io",
         },
         {
             text: Site.Explorer,
-            url: "https://bbscan.io/",
+            url: "https://bbscan.io",
         },
         {
             text: Site.GitHub,

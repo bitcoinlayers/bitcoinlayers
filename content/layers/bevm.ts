@@ -31,15 +31,15 @@ const bevm: LayerProject = {
     links: [
         {
             text: Site.Website,
-            url: "https://www.bevm.io/",
+            url: "https://www.bevm.io",
         },
         {
             text: Site.Docs,
-            url: "https://documents.bevm.io/",
+            url: "https://documents.bevm.io",
         },
         {
             text: Site.Explorer,
-            url: "https://scan.bevm.io/",
+            url: "https://scan.bevm.io",
         },
         {
             text: Site.GitHub,

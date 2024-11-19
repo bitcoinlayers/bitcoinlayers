@@ -33,23 +33,19 @@ const tunachain: LayerProject = {
     links: [
         {
             text: Site.Website,
-            url: "https://tunachain.io/",
+            url: "https://tunachain.io",
         },
         {
             text: Site.Docs,
-            url: "https://twitter.com/bitcoinlayers",
-        },
-        {
-            text: Site.Explorer,
-            url: "https://twitter.com/bitcoinlayers",
+            url: "https://tunachain.gitbook.io/tunachain",
         },
         {
             text: Site.GitHub,
-            url: "https://twitter.com/bitcoinlayers",
+            url: "https://github.com/Tunachain",
         },
         {
             text: Site.Twitter,
-            url: "https://twitter.com/zkLayer_",
+            url: "https://x.com/TunaChain",
         },
     ],
     description: "Under Review.",

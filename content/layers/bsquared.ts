@@ -33,15 +33,15 @@ const bsquared: LayerProject = {
     links: [
         {
             text: Site.Website,
-            url: "https://www.bsquared.network/",
+            url: "https://www.bsquared.network",
         },
         {
             text: Site.Docs,
-            url: "https://docs.bsquared.network/",
+            url: "https://docs.bsquared.network",
         },
         {
             text: Site.Explorer,
-            url: "https://explorer.bsquared.network/",
+            url: "https://explorer.bsquared.network",
         },
         {
             text: Site.GitHub,
@@ -49,7 +49,7 @@ const bsquared: LayerProject = {
         },
         {
             text: Site.Twitter,
-            url: "https://twitter.com/BSquaredNetwork",
+            url: "https://x.com/BSquaredNetwork",
         },
     ],
     description:

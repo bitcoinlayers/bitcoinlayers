@@ -25,23 +25,15 @@ const bison: LayerProject = {
     links: [
         {
             text: Site.Website,
-            url: "https://bisonlabs.io/#/dashboard",
-        },
-        {
-            text: Site.Docs,
-            url: "https://bisonlabs.io/#/dashboard",
-        },
-        {
-            text: Site.Explorer,
-            url: "https://bisonlabs.io/#/dashboard",
+            url: "https://bisonlabs.io",
         },
         {
             text: Site.GitHub,
-            url: "https://bisonlabs.io/#/dashboard",
+            url: "https://github.com/BisonLabs",
         },
         {
             text: Site.Twitter,
-            url: "https://twitter.com/Bison_Labs",
+            url: "https://x.com/Bison_Labs",
         },
     ],
     description:

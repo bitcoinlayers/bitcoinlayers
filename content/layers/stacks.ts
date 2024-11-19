@@ -33,11 +33,7 @@ const stacks: LayerProject = {
     links: [
         {
             text: Site.Website,
-            url: "https://www.stacks.co/",
-        },
-        {
-            text: Site.Website,
-            url: "https://www.stacks.co/explore/discover-apps",
+            url: "https://www.stacks.co",
         },
         {
             text: Site.Docs,
@@ -53,7 +49,7 @@ const stacks: LayerProject = {
         },
         {
             text: Site.Twitter,
-            url: "https://twitter.com/Stacks",
+            url: "https://x.com/Stacks",
         },
     ],
     description:

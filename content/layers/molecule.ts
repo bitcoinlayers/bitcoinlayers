@@ -28,23 +28,11 @@ const molecule: LayerProject = {
     links: [
         {
             text: Site.Website,
-            url: "https://twitter.com/moleculebtc",
-        },
-        {
-            text: Site.Docs,
-            url: "https://twitter.com/moleculebtc",
-        },
-        {
-            text: Site.Explorer,
-            url: "https://twitter.com/moleculebtc",
-        },
-        {
-            text: Site.GitHub,
-            url: "https://twitter.com/moleculebtc",
+            url: "https://moleculebtc.com",
         },
         {
             text: Site.Twitter,
-            url: "https://twitter.com/moleculebtc",
+            url: "https://x.com/moleculebtc",
         },
     ],
     description:

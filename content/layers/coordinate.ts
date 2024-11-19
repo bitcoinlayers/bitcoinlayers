@@ -28,23 +28,23 @@ const coordinate: LayerProject = {
     links: [
         {
             text: Site.Website,
-            url: "https://www.anduro.io/",
+            url: "https://coordinate.anduro.io",
         },
         {
             text: Site.Docs,
-            url: "https://www.anduro.io/",
+            url: "https://cdn.prod.website-files.com/663b795a2262884c40d19ac4/66e3e899b954ac7456f7fad4_Coordinate_Whitepaper.pdf",
         },
         {
             text: Site.Explorer,
-            url: "https://www.anduro.io/",
+            url: "https://coordiscan.io",
         },
         {
             text: Site.GitHub,
-            url: "https://www.anduro.io/",
+            url: "https://github.com/AnduroProject/coordinate",
         },
         {
             text: Site.Twitter,
-            url: "https://www.anduro.io/",
+            url: "https://x.com/andurobtc",
         },
     ],
     description:

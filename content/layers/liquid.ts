@@ -33,7 +33,7 @@ const liquid: LayerProject = {
     links: [
         {
             text: Site.Website,
-            url: "https://liquid.net/",
+            url: "https://liquid.net",
         },
         {
             text: Site.Docs,

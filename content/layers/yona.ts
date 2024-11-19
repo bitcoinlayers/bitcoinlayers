@@ -28,15 +28,11 @@ const yona: LayerProject = {
     links: [
         {
             text: Site.Website,
-            url: "https://yona.network/",
+            url: "https://yona.network",
         },
         {
             text: Site.Docs,
             url: "https://docs.yona.network/yona-network",
-        },
-        {
-            text: Site.Explorer,
-            url: "https://github.com/Yona-Labs",
         },
         {
             text: Site.GitHub,

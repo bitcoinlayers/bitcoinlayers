@@ -33,15 +33,15 @@ const satoshivm: LayerProject = {
     links: [
         {
             text: Site.Website,
-            url: "https://satoshivm.io/",
+            url: "https://satoshivm.io",
         },
         {
             text: Site.Docs,
-            url: "https://docs.satoshivm.io/",
+            url: "https://docs.satoshivm.io",
         },
         {
             text: Site.Explorer,
-            url: "https://svmscan.io/",
+            url: "https://svmscan.io",
         },
         {
             text: Site.GitHub,

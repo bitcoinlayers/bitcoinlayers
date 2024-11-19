@@ -28,15 +28,15 @@ const bitfinity: LayerProject = {
     links: [
         {
             text: Site.Website,
-            url: "https://bitfinity.network/",
+            url: "https://bitfinity.network",
         },
         {
             text: Site.Docs,
-            url: "https://docs.bitfinity.network/",
+            url: "https://docs.bitfinity.network",
         },
         {
             text: Site.Explorer,
-            url: "https://explorer.testnet.bitfinity.network/",
+            url: "https://explorer.testnet.bitfinity.network",
         },
         {
             text: Site.GitHub,

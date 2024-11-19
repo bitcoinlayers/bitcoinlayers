@@ -27,22 +27,6 @@ const heliosphere: LayerProject = {
     bitcoinOnly: false,
     links: [
         {
-            text: Site.Website,
-            url: "https://twitter.com/HeliosphereOne",
-        },
-        {
-            text: Site.Docs,
-            url: "https://twitter.com/bitcoinlayers",
-        },
-        {
-            text: Site.Explorer,
-            url: "https://twitter.com/bitcoinlayers",
-        },
-        {
-            text: Site.GitHub,
-            url: "https://twitter.com/bitcoinlayers",
-        },
-        {
             text: Site.Twitter,
             url: "https://twitter.com/HeliosphereOne",
         },

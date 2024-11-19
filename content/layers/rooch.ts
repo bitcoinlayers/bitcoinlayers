@@ -28,14 +28,10 @@ const rooch: LayerProject = {
     links: [
         {
             text: Site.Website,
-            url: "https://rooch.network/",
+            url: "https://rooch.network",
         },
         {
             text: Site.Docs,
-            url: "https://rooch.network/learn/welcome",
-        },
-        {
-            text: Site.Explorer,
             url: "https://rooch.network/learn/welcome",
         },
         {
@@ -44,7 +40,7 @@ const rooch: LayerProject = {
         },
         {
             text: Site.Twitter,
-            url: "https://twitter.com/roochnetwork",
+            url: "https://x.com/roochnetwork",
         },
     ],
     description:

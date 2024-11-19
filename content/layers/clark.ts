@@ -28,7 +28,7 @@ const clark: LayerProject = {
     links: [
         {
             text: Site.Website,
-            url: "https://www.spark.info/",
+            url: "https://www.spark.info",
         },
         {
             text: Site.Twitter,

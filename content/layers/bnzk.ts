@@ -28,19 +28,11 @@ const bnzk: LayerProject = {
     links: [
         {
             text: Site.Website,
-            url: "https://bnzk.io/",
+            url: "https://bnzk.io",
         },
         {
             text: Site.Docs,
-            url: "https://docs.bnzk.io/",
-        },
-        {
-            text: Site.Explorer,
-            url: "https://bnzk.io/",
-        },
-        {
-            text: Site.GitHub,
-            url: "https://docs.bnzk.io/",
+            url: "https://docs.bnzk.io",
         },
         {
             text: Site.Twitter,

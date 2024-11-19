@@ -33,15 +33,15 @@ const rollux: LayerProject = {
     links: [
         {
             text: Site.Website,
-            url: "https://rollux.com/",
+            url: "https://rollux.com",
         },
         {
             text: Site.Docs,
-            url: "https://docs.rollux.com/docs/developers/",
+            url: "https://docs.rollux.com/docs/developers",
         },
         {
             text: Site.Explorer,
-            url: "https://explorer.rollux.com/",
+            url: "https://explorer.rollux.com",
         },
         {
             text: Site.GitHub,

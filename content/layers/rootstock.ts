@@ -33,7 +33,7 @@ const rootstock: LayerProject = {
     links: [
         {
             text: Site.Website,
-            url: "https://rootstock.io/",
+            url: "https://rootstock.io",
         },
         {
             text: Site.Docs,
@@ -41,7 +41,7 @@ const rootstock: LayerProject = {
         },
         {
             text: Site.Explorer,
-            url: "https://explorer.rsk.co/",
+            url: "https://explorer.rootstock.io",
         },
         {
             text: Site.GitHub,

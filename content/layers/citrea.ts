@@ -32,11 +32,11 @@ const citrea: LayerProject = {
         },
         {
             text: Site.Docs,
-            url: "https://docs.citrea.xyz/",
+            url: "https://docs.citrea.xyz",
         },
         {
             text: Site.Explorer,
-            url: "https://docs.citrea.xyz/",
+            url: "https://explorer.devnet.citrea.xyz",
         },
         {
             text: Site.GitHub,

@@ -28,11 +28,11 @@ const nomic: LayerProject = {
     links: [
         {
             text: Site.Website,
-            url: "https://www.nomic.io/",
+            url: "https://www.nomic.io",
         },
         {
             text: Site.Docs,
-            url: "https://github.com/nomic-io/docs",
+            url: "https://docs.nomic.io",
         },
         {
             text: Site.Explorer,

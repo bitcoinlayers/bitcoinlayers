@@ -28,7 +28,11 @@ const bark: LayerProject = {
     links: [
         {
             text: Site.Website,
-            url: "https://second.tech/",
+            url: "https://second.tech",
+        },
+        {
+            text: Site.Docs,
+            url: "https://docs.second.tech",
         },
         {
             text: Site.Twitter,

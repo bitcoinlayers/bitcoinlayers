@@ -33,15 +33,15 @@ const bitlayer: LayerProject = {
     links: [
         {
             text: Site.Website,
-            url: "https://www.bitlayer.org/",
+            url: "https://www.bitlayer.org",
         },
         {
             text: Site.Docs,
-            url: "https://docs.bitlayer.org/docs/Learn/Introduction",
+            url: "https://docs.bitlayer.org",
         },
         {
             text: Site.Explorer,
-            url: "https://www.btrscan.com/home",
+            url: "https://www.btrscan.com",
         },
         {
             text: Site.GitHub,

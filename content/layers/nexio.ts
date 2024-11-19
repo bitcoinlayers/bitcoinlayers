@@ -28,19 +28,7 @@ const nexio: LayerProject = {
     links: [
         {
             text: Site.Website,
-            url: "https://x.com/buildnexio/status/1811057118625079800",
-        },
-        {
-            text: Site.Docs,
-            url: "https://x.com/buildnexio/status/1811057118625079800",
-        },
-        {
-            text: Site.Explorer,
-            url: "https://x.com/buildnexio/status/1811057118625079800",
-        },
-        {
-            text: Site.GitHub,
-            url: "https://x.com/buildnexio/status/1811057118625079800",
+            url: "https://www.nexio.xyz",
         },
         {
             text: Site.Twitter,
