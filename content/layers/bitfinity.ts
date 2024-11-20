@@ -15,7 +15,7 @@ const bitfinity: LayerProject = {
     slug: "bitfinity",
     title: "Bitfinity",
     entityType: EntityType.Sidechain,
-    live: LiveStatus.Testnet,
+    live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
     bridge: false,
