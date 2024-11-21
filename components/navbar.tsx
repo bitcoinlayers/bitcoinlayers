@@ -4,7 +4,6 @@ import Link from "next/link";
 import type { ReactElement } from "react";
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
-import SearchBlock from "./filter/SearchBlock";
 import { usePathname } from "next/navigation";
 import {
     Sheet,
@@ -15,6 +14,7 @@ import {
     SheetTrigger,
 } from "./ui/sheet";
 import { ExternalLinkIcon } from "lucide-react";
+import { ModeToggle } from "@/components/mode-toggle";
 
 export default function Navbar(): ReactElement {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -155,6 +155,9 @@ export default function Navbar(): ReactElement {
                             {/* <ExternalLinkIcon className="size-3" /> */}
                         </Link>
                     </li>
+                    <li className="hidden lg:block">
+                        <ModeToggle />
+                    </li>
                 </ul>
                 <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
                     <SheetTrigger asChild>
@@ -220,6 +223,9 @@ export default function Navbar(): ReactElement {
                                                 <div>Dev Center</div>
                                                 {/* <ExternalLinkIcon className="size-3 text-primary" /> */}
                                             </Link>
+                                        </li>
+                                        <li>
+                                            <ModeToggle />
                                         </li>
                                     </ul>
                                 </div>
