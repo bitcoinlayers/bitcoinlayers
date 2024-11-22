@@ -75,7 +75,7 @@ export default function AggregatedTVLChart({
 
     const { data } = useDataHook();
 
-    const items =
+    const items = useMemo(() => 
         chartType === "combined"
             ? ["BTC"]
             : [
@@ -84,7 +84,9 @@ export default function AggregatedTVLChart({
                           ?.map((item) => item[itemNameKey])
                           .filter((item): item is string => !!item) || [],
                   ),
-              ];
+              ],
+        [data, chartType, itemNameKey]
+    );
 
     const processedData = useMemo(() => {
         if (!data) return [];

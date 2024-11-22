@@ -225,23 +225,23 @@ const StakingTable = ({ data, headers }: Props) => {
                 </div>
             </CardHeader>
             <CardContent className="p-0">
-                <div className="overflow-x-auto bg-lightsecondary rounded-xl mx-auto border-none">
-                    <table className="bg-lightsecondary w-full text-sm text-left rtl:text-right rounded-xl">
+                <div className="overflow-x-auto mx-auto border-none">
+                    <table className="w-full text-sm text-left rtl:text-right">
                         <TableHeader
                             headers={isMobile ? mobileTableHeaders : headers}
                             onSort={handleSort}
                         />
-                        <tbody className="bg-white gap-x-8 border-t border-stroke_tertiary text_table_important">
+                        <tbody className="gap-x-8">
                             {sortAndFilterData.map((item, index) => (
                                 <tr
-                                    className={`cursor-pointer text_table_important ${
+                                    className={`cursor-pointer ${
                                         index !== sortAndFilterData.length - 1
-                                            ? "border-b border-stroke_tertiary"
+                                            ? "border-b border-border"
                                             : ""
                                     }`}
                                     key={item.slug}
                                 >
-                                    <td className="lg:px-6 px-4 py-4 font-semibold whitespace-nowrap text_table_important text-table_body">
+                                    <td className="lg:px-6 px-4 py-4 font-semibold whitespace-nowrap">
                                         <Link
                                             href={`/${
                                                 isLayer(item)
@@ -261,7 +261,7 @@ const StakingTable = ({ data, headers }: Props) => {
                                     </td>
                                     {(!isMobile ||
                                         mobileActiveTab === "Snapshot") && (
-                                        <td className="relative px-2 border-stroke_tertiary text_table_important">
+                                        <td className="relative px-2 border-border">
                                             {hasAssessment(item) ? (
                                                 <AssessmentSnapshotDialog
                                                     infrastructure={item}
@@ -275,7 +275,7 @@ const StakingTable = ({ data, headers }: Props) => {
                                     )}
                                     {(!isMobile ||
                                         mobileActiveTab === "Type") && (
-                                        <td className="lg:px-6 px-4 py-3 lg:py-4 border-stroke_tertiary text_table_important">
+                                        <td className="lg:px-6 px-4 py-3 lg:py-4 border-border">
                                             <Link
                                                 href={`/${
                                                     isLayer(item)
@@ -293,7 +293,7 @@ const StakingTable = ({ data, headers }: Props) => {
                                     )}
                                     {(!isMobile ||
                                         mobileActiveTab === "Status") && (
-                                        <td className="lg:px-6 px-4 py-3 lg:py-4 border-stroke_tertiary text_table_important">
+                                        <td className="lg:px-6 px-4 py-3 lg:py-4 border-border">
                                             <Link
                                                 href={`/${
                                                     isLayer(item)
@@ -307,7 +307,7 @@ const StakingTable = ({ data, headers }: Props) => {
                                     )}
                                     {(!isMobile ||
                                         mobileActiveTab === "TVL") && (
-                                        <td className="lg:px-6 px-4 py-3 lg:py-4 border-r border-stroke_tertiary text_table_important">
+                                        <td className="lg:px-6 px-4 py-3 lg:py-4">
                                             <Link
                                                 href={`/${
                                                     isLayer(item)
@@ -315,16 +315,6 @@ const StakingTable = ({ data, headers }: Props) => {
                                                         : `infrastructure/${item.slug}`
                                                 }`}
                                             >
-                                                {/* {item.underReview ||
-                                                Object.keys(totaledBalances).find(
-                                                    (key) =>
-                                                        key.toLowerCase() ===
-                                                        item.title.toLowerCase(),
-                                                ) === undefined ? (
-                                                    <div className="font-light">
-                                                        Under review
-                                                    </div>
-                                                ) : ( */}
                                                 {totaledBalances[item.slug]
                                                     ?.totalAmount == null ? (
                                                     <div className="font-light">

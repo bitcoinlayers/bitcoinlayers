@@ -49,7 +49,7 @@ export default function CtaCard() {
                     {content.description}
                 </p>
             </div>
-            <div className="bg-secondary h-24 w-full sm:w-1/3 flex flex-col justify-center items-center text-center rounded-r-lg">
+            <div className="bg-secondary h-24 w-full sm:w-1/3 flex flex-col justify-center items-center text-center sm:rounded-r-lg">
                 <Link
                     href={content.url}
                     target={content.isExternal ? "_blank" : undefined}

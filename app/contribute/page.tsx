@@ -1,7 +1,7 @@
 "use client";
+
 import Link from "next/link";
 import React from "react";
-import Image from "next/image";
 
 const ContributePage: React.FC = () => {
     const address = "36raB4921Au5Kck4uT521nbfL1ktTwLNSY";
@@ -25,9 +25,9 @@ const ContributePage: React.FC = () => {
         answer: JSX.Element;
     }) {
         return (
-            <div className="bg-white rounded-xl border border-slate-300 flex flex-col justify-center items-start gap-4 p-8">
+            <div className="rounded-xl border border-border flex flex-col justify-center items-start gap-4 p-8">
                 <div className="flex items-center gap-3">
-                    <div className="text-3xl font-light text-zinc-800 leading-9">
+                    <div className="text-3xl font-light leading-9">
                         {question}
                     </div>
                 </div>
@@ -39,13 +39,13 @@ const ContributePage: React.FC = () => {
     }
 
     const contributeContent = (
-        <span className="text-slate-500 text-base font-normal leading-normal">
+        <span className="text-base font-normal leading-normal">
             For now, please join our{" "}
             <Link
                 href="https://t.me/+8rv-1I2gkmQ4ZmJh"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-orange-600 text-base font-normal leading-normal"
+                className="text-blue-700 dark:text-blue-500 underline text-base font-normal leading-normal"
             >
                 Telegram
             </Link>{" "}
@@ -54,7 +54,7 @@ const ContributePage: React.FC = () => {
                 href="https://twitter.com/bitcoinlayers"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-orange-600 text-base font-normal leading-normal"
+                className="text-blue-700 dark:text-blue-500 underline text-base font-normal leading-normal"
             >
                 Twitter
             </Link>{" "}
@@ -67,14 +67,14 @@ const ContributePage: React.FC = () => {
     );
 
     const supportContent = (
-        <span className="text-slate-500 text-base font-normal leading-normal">
+        <span className="text-base font-normal leading-normal">
             A great way to support the Bitcoin Layers project is by following us
             on social media. We are active on{" "}
             <Link
                 href="https://twitter.com/bitcoinlayers"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-orange-600 text-base font-normal leading-normal"
+                className="text-blue-700 dark:text-blue-500 underline text-base font-normal leading-normal"
             >
                 Twitter
             </Link>{" "}
@@ -93,7 +93,7 @@ const ContributePage: React.FC = () => {
                 href="https://warpcast.com/~/channel/bitcoinlayers"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-orange-600 text-base font-normal leading-normal"
+                className="text-blue-700 dark:text-blue-500 underline text-base font-normal leading-normal"
             >
                 Warpcast
             </Link>
@@ -102,11 +102,11 @@ const ContributePage: React.FC = () => {
     );
 
     return (
-        <article className="flex flex-col min-h-screen max-w-5xl mx-auto pt-16 px-4 sm:px-6 lg:px-8">
+        <article className="flex flex-col min-h-screen max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col justify-start items-start gap-4">
                 <div className="flex justify-start items-center gap-8 w-full">
                     <div className="flex-grow flex items-center gap-[30px] h-[156px]">
-                        <div className="special_header flex-grow h-20 text_table_important">
+                        <div className="special_header flex-grow h-20">
                             Contribute
                         </div>
                     </div>

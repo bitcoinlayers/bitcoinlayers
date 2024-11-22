@@ -202,23 +202,23 @@ const InfrastructureTable = ({
                 </div>
             </CardHeader>
             <CardContent className="p-0">
-                <div className="overflow-x-auto bg-lightsecondary rounded-xl mx-auto border-none">
-                    <table className="bg-lightsecondary w-full text-sm text-left rtl:text-right rounded-xl">
+                <div className="overflow-x-auto mx-auto border-none">
+                    <table className="w-full text-sm text-left rtl:text-right">
                         <TableHeader
                             headers={isMobile ? mobileTableHeaders : headers}
                             onSort={handleSort}
                         />
-                        <tbody className="bg-white gap-x-8 border-t border-stroke_tertiary text_table_important">
+                        <tbody className="gap-x-8">
                             {sortAndFilterData.map((item, index) => (
                                 <tr
-                                    className={`cursor-pointer border-b border-stroke_tertiary text_table_important ${
-                                        index === sortAndFilterData.length - 1
-                                            ? ""
+                                    className={`cursor-pointer ${
+                                        index !== sortAndFilterData.length - 1
+                                            ? "border-b border-border"
                                             : ""
                                     }`}
                                     key={item.slug}
                                 >
-                                    <td className="lg:px-6 px-4 py-4 font-semibold whitespace-nowrap border-r lg:border-r-0 border-stroke_tertiary text_table_important text-table_body">
+                                    <td className="lg:px-6 px-4 py-4 font-semibold whitespace-nowrap">
                                         <Link
                                             href={`/${isEcash ? "ecash" : "infrastructure"}/${item.slug}`}
                                             className="flex items-center"
@@ -227,7 +227,7 @@ const InfrastructureTable = ({
                                                 src={`/logos/${item.slug}.png`}
                                                 title={item.title}
                                             />
-                                            <span className="ml-2 lg:word-break-none">
+                                            <span className="ml-2 truncate lg:word-break-none">
                                                 {item.title}
                                             </span>
                                         </Link>
@@ -235,22 +235,20 @@ const InfrastructureTable = ({
 
                                     {(!isMobile ||
                                         mobileActiveTab === "Type") && (
-                                        <td className="lg:px-6 px-4 py-3 lg:py-4 border-stroke_tertiary text_table_important">
+                                        <td className="lg:px-6 px-4 py-3 lg:py-4 border-border">
                                             <Link
                                                 href={`/${isEcash ? "ecash" : "infrastructure"}/${item.slug}`}
                                             >
-                                                {" "}
                                                 {item.entityType}
                                             </Link>
                                         </td>
                                     )}
                                     {(!isMobile ||
                                         mobileActiveTab === "Status") && (
-                                        <td className="lg:px-6 px-4 py-3 lg:py-4 border-stroke_tertiary text_table_important">
+                                        <td className="lg:px-6 px-4 py-3 lg:py-4 border-border">
                                             <Link
                                                 href={`/${isEcash ? "ecash" : "infrastructure"}/${item.slug}`}
                                             >
-                                                {" "}
                                                 {item.live}
                                             </Link>
                                         </td>
@@ -258,7 +256,7 @@ const InfrastructureTable = ({
                                     {(!isMobile ||
                                         mobileActiveTab ===
                                             "Unit of Account") && (
-                                        <td className="lg:px-6 px-4 py-3 lg:py-4 border-stroke_tertiary text_table_important">
+                                        <td className="lg:px-6 px-4 py-3 lg:py-4 border-border">
                                             <Link
                                                 href={`/${isEcash ? "ecash" : "infrastructure"}/${item.slug}`}
                                             >
@@ -282,7 +280,7 @@ const InfrastructureTable = ({
                                     {(!isMobile ||
                                         mobileActiveTab ===
                                             "Associated Layers") && (
-                                        <td className="lg:px-6 px-4 py-3 lg:py-4 border-r border-stroke_tertiary text_table_important">
+                                        <td className="lg:px-6 px-4 py-3 lg:py-4">
                                             <Link
                                                 href={`/${isEcash ? "ecash" : "infrastructure"}/${item.slug}`}
                                             >
