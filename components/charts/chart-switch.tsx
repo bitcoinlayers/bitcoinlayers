@@ -14,10 +14,36 @@ export default function ChartSwitch() {
             return (
                 <AggregatedTVLChart
                     title="BTC deposits"
-                    description="Total amount of BTC deposited in third-party staking protocols"
+                    description="Total amount of BTC deposited in staking protocols"
                     itemNameKey="infra_name"
                     chartQueryParam="staking-chart"
                     rangeQueryParam="staking-range"
+                    useDataHook={useGetInfratvlHistoricalStaked}
+                    showLegend={false}
+                    chartHeight="h-64"
+                />
+            );
+        case "liquidstaking":
+            return (
+                <AggregatedTVLChart
+                    title="BTC deposits"
+                    description="Total amount of BTC deposited in third-party staking protocols"
+                    itemNameKey="infra_name"
+                    chartQueryParam="liquidstaking-chart"
+                    rangeQueryParam="liquidstaking-range"
+                    useDataHook={useGetInfratvlHistoricalStaked}
+                    showLegend={false}
+                    chartHeight="h-64"
+                />
+            );
+        case "lending":
+            return (
+                <AggregatedTVLChart
+                    title="BTC deposits"
+                    description="Total amount of BTC deposited in third-party staking protocols"
+                    itemNameKey="infra_name"
+                    chartQueryParam="lending-chart"
+                    rangeQueryParam="lending-range"
                     useDataHook={useGetInfratvlHistoricalStaked}
                     showLegend={false}
                     chartHeight="h-64"
