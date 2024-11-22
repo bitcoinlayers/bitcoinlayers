@@ -28,16 +28,16 @@ const ViewToggleGroup = ({ showAll }: { showAll: boolean }) => {
                             key={option.value}
                             className={`h-[30px] px-4 py-[5px] rounded-full border-2 justify-center items-center gap-1.5 flex cursor-pointer ${
                                 isActive
-                                    ? "bg-white border-orange-600"
-                                    : "border-slate-300"
+                                    ? "bg-background border-brand"
+                                    : "border-muted-foreground"
                             }`}
                             onClick={() => setView(option.value)}
                         >
                             <div
                                 className={`text-center text-sm font-medium leading-tight ${
                                     isActive
-                                        ? "text-orange-600"
-                                        : "text-slate-600"
+                                        ? "text-brand"
+                                        : "text-muted-foreground"
                                 }`}
                             >
                                 {option.label}
