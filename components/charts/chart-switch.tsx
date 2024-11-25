@@ -5,6 +5,8 @@ import AggregatedTVLChart from "@/components/charts/aggregated-tvl-chart";
 import useGetBalancesHistoricalBylayerBitcoinonly from "@/hooks/use-get-layertvl-historical-bitcoinonly";
 import useGetInfratvlHistoricalBridge from "@/hooks/use-get-infratvl-historical-bridge";
 import useGetInfratvlHistoricalStaked from "@/hooks/use-get-infratvl-historical-staked";
+import useGetStakingValueHistorical from "@/hooks/use-get-staking-value-historical";
+import useGetLendingValueHistorical from "@/hooks/use-get-infratvl-historical-staked";
 
 export default function ChartSwitch() {
     const [view] = useQueryState("view");
@@ -18,7 +20,7 @@ export default function ChartSwitch() {
                     itemNameKey="infra_name"
                     chartQueryParam="staking-chart"
                     rangeQueryParam="staking-range"
-                    useDataHook={useGetInfratvlHistoricalStaked}
+                    useDataHook={useGetStakingValueHistorical}
                     showLegend={false}
                     chartHeight="h-64"
                 />
