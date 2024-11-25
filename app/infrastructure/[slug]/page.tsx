@@ -47,7 +47,7 @@ export default async function InfrastructurePage({
                         />{" "}
                     </div>
                     <div className="flex-grow flex items-center">
-                        <h1 className="layer_header flex-grow">
+                        <h1 className="layer_header flex-grow !text-foreground">
                             {infrastructure.title}
                         </h1>
                     </div>

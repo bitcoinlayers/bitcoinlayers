@@ -44,11 +44,13 @@ const RiskAnalysis: React.FC<RiskAnalysisProps> = ({
     return (
         <div className="content flex-grow pt-0">
             <section
-                className="self-stretch lg:px-8 px-4 pt-6 pb-8 mb-6 bg-white rounded-xl border border-slate-300 flex-col justify-center items-end gap-4"
+                className="self-stretch lg:px-8 px-4 pt-6 pb-8 mb-6 bg-background rounded-xl border border-border flex-col justify-center items-end gap-4"
                 id="assessment"
             >
                 <div className="self-stretch justify-start items-start gap-4 inline-flex">
-                    <div className="body_section">Assessment</div>
+                    <div className="body_section !text-foreground">
+                        Assessment
+                    </div>
                 </div>
                 {riskAnalysis.map((content, contentIndex) => (
                     <React.Fragment key={contentIndex}>
@@ -65,7 +67,7 @@ const RiskAnalysis: React.FC<RiskAnalysisProps> = ({
                             </div>
                         </div>
                         {contentIndex < riskAnalysis.length - 1 && (
-                            <div className="border-b border-slate-300 my-12"></div>
+                            <div className="border-b border-border my-12"></div>
                         )}
                     </React.Fragment>
                 ))}

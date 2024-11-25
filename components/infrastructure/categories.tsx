@@ -36,24 +36,20 @@ const Categories: React.FC<{ infrastructure: InfrastructureProject }> = ({
     return (
         <div className="flex flex-wrap gap-6 lg:gap-12 w-full">
             <div className="flex-col justify-center items-start">
-                <div className="text-text_primary text-sm leading-tight">
-                    Status
+                <div className="text-sm leading-tight">Status</div>
+                <div className="text-muted-foreground">
+                    {infrastructure.live}
                 </div>
-                <div className="text-text_header">{infrastructure.live}</div>
             </div>
             <div className="flex-col justify-center items-start">
-                <div className="text-text_primary text-sm leading-tight">
-                    Type
-                </div>
-                <div className="text-text_header">
+                <div className="text-sm leading-tight">Type</div>
+                <div className="text-muted-foreground">
                     {infrastructure.entityType}
                 </div>
             </div>
             <div className="flex-col justify-center items-start">
-                <div className="text-text_primary text-sm leading-tight">
-                    TVL
-                </div>
-                <div className="text-text_header">
+                <div className="text-sm leading-tight">TVL</div>
+                <div className="text-muted-foreground">
                     ₿
                     {totalAmountForInfra.toLocaleString("en-US", {
                         minimumFractionDigits: 0,
@@ -62,10 +58,8 @@ const Categories: React.FC<{ infrastructure: InfrastructureProject }> = ({
                 </div>
             </div>
             <div className="flex-col justify-center items-start">
-                <div className="text-text_primary text-sm leading-tight">
-                    Associated Layers
-                </div>
-                <div className="text-text_header">
+                <div className="text-sm leading-tight">Associated Layers</div>
+                <div className="text-muted-foreground">
                     {infrastructure.associatedLayers}
                 </div>
             </div>

@@ -10,11 +10,13 @@ const InfrastructureBody: React.FC<{ infrastructure: Project }> = ({
             {infrastructure.sections.map((section, index) => (
                 <section
                     key={index}
-                    className="self-stretch lg:px-8 px-4 pt-6 pb-8 mb-6 bg-white rounded-xl border border-slate-300 flex-col justify-center items-end gap-4"
+                    className="self-stretch lg:px-8 px-4 pt-6 pb-8 mb-6 bg-background rounded-xl border border-border flex-col justify-center items-end gap-4"
                     id={section.id}
                 >
                     <div className="self-stretch justify-start items-start gap-4">
-                        <div className="body_section">{section.title}</div>
+                        <div className="body_section !text-foreground">
+                            {section.title}
+                        </div>
                     </div>
                     {section.content.map((content, contentIndex) => (
                         <React.Fragment key={contentIndex}>
