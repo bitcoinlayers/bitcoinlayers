@@ -6,7 +6,7 @@ export default function StakingTvlStatCard() {
     const { data } = useGetStakingPercentchange();
 
     const bitcoinLayerData = data?.find(
-        (item) => item.token_name === "BabylonBTC", //TODO: hardcoded
+        (item) => item.token_name === "BabylonBTC", //TODO: hardcoded. add others and adjust API view
     );
 
     const totalTVL = bitcoinLayerData?.amount_today || 0;
