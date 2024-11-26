@@ -24,12 +24,12 @@ const InfrastructureBody: React.FC<{ infrastructure: Project }> = ({
                                 <div
                                     className={`self-stretch justify-between items-center inline-flex mt-6`}
                                 >
-                                    <div className="body_subsection">
+                                    <div className="body_subsection !text-muted-foreground">
                                         {parseTextWithLinks(content.title)}
                                     </div>
                                 </div>
                             )}
-                            <div className="body_paragraph mt-3">
+                            <div className="body_paragraph !text-foreground mt-3">
                                 {/** TODO glossary hover tips */}
                                 {parseTextWithLinks(content.content)}
                             </div>
