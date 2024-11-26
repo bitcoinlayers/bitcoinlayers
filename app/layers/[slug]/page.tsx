@@ -33,7 +33,9 @@ export default function LayerPage({ params }: { params: { slug: string } }) {
                     />{" "}
                 </div>
                 <div className="flex-grow flex items-center">
-                    <h1 className="layer_header flex-grow">{layer.title}</h1>
+                    <h1 className="layer_header !text-foreground flex-grow">
+                        {layer.title}
+                    </h1>
                 </div>
             </div>
             <div className="lg:container mx-4 lg:px-4 flex lg:flex-row flex-col">

@@ -138,7 +138,7 @@ const LayerDiamond: React.FC<{ layer: LayerProject }> = ({ layer }) => {
             {riskLabels.map((label) => (
                 <div
                     key={label.text}
-                    className={`absolute text-slate-600 text-xs font-medium leading-none ${label.className}`}
+                    className={`absolute text-muted-foreground text-xs font-medium leading-none ${label.className}`}
                 >
                     {label.text}
                 </div>

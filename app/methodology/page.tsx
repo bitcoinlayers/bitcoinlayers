@@ -1,25 +1,19 @@
 "use client";
 
-// import Image from "next/image";
-import React, { useState } from "react";
-import styles from "../../components/styles/methodology.module.css";
-
 const Methodology: React.FC = () => {
     const InfoBox: React.FC<{ title: string; body: string }> = ({
         title,
         body,
     }) => {
         return (
-            <div className="bg-white rounded-xl border border-slate-300 flex flex-col justify-center items-start gap-4 p-8">
+            <div className="rounded-xl border border-border flex flex-col justify-center items-start gap-4 p-8">
                 <div className="flex items-center gap-3">
-                    <div className="text-2xl font-light text-zinc-800 leading-9">
-                        {title}
-                    </div>
+                    <div className="text-2xl font-light leading-9">{title}</div>
                 </div>
                 <div className="flex flex-col justify-center items-start gap-8 w-full">
                     <div className="flex flex-col justify-start items-start gap-2 w-full">
                         <div
-                            className={`text-base font-normal text-slate-500 leading-normal ${styles["custom-ul"]}`}
+                            className="text-base font-normal leading-normal [&>ul]:list-disc [&>ul]:pl-6 [&>ul>ul]:list-circle [&>ul>ul]:pl-10 [&>ul>ul>ul]:list-square [&>ul>ul>ul]:pl-14 [&_a]:text-blue-700 [&_a]:dark:text-blue-500 [&_a]:underline"
                             dangerouslySetInnerHTML={{ __html: body }}
                         />
                     </div>
@@ -60,7 +54,7 @@ const Methodology: React.FC = () => {
         <br />
         <li>Additional considerations:</li>
         <ul>
-                <li>Layers that settle to a parent blockchain must consider their exit window. For rollups, we follow <a href="https://forum.l2beat.com/t/the-risk-rosette-framework/292" style="color: blue; text-decoration: underline;" target="_blank" rel="noopener noreferrer">L2Beat’s suggestions on exit windows</a>. These exit window scores overrule any other score related to the two-way peg. For example: If a rollup-style layer leverages tBTC (a yellow or red score) to natively mint bitcoin-backed tokens, but has an immediately upgradeable contract, then the layer will receive a “Stop!” score in the assessment.</li>
+                <li>Layers that settle to a parent blockchain must consider their exit window. For rollups, we follow <a href="https://forum.l2beat.com/t/the-risk-rosette-framework/292" target="_blank" rel="noopener noreferrer">L2Beat’s suggestions on exit windows</a>. These exit window scores overrule any other score related to the two-way peg. For example: If a rollup-style layer leverages tBTC (a yellow or red score) to natively mint bitcoin-backed tokens, but has an immediately upgradeable contract, then the layer will receive a “Stop!” score in the assessment.</li>
                 <li>Due to complexities related to federated set ups, we will additionally highlight more granular trust assumptions for federated two-way pegs in a subsection of the review. In this upcoming framework, we will outline how a federated peg can be upgraded to yellow if it meets a certain threshold of requirements.</li>
                 <li>Additional situations can be added to this framework for edge cases. For example, users of Statechains can unilaterally exit with a Bitcoin L1 transaction, but an operator can steal funds by colluding with the past owner, and users cannot submit a challenge transaction.</li>
                 <li>We refer to two-way pegs, lightning channels, and other mechanisms to lock bitcoin into a sidesystem as a "bridge" for uniformity. We are currently determining a better term to use for this section of the review</li>
@@ -191,15 +185,15 @@ const Methodology: React.FC = () => {
     <br />
     <p>Bitcoin does not have a unified scaling roadmap. There are tradeoffs with every protocol being implemented to support Bitcoin scaling. This framework hopes to capture some of the nuance related to the various designs being proposed.</p>
     <br />
-    <p>If you have comments on this framework, please consider joining our <a href="https://t.me/+8rv-1I2gkmQ4ZmJh" style="color: blue; text-decoration: underline;" target="_blank" rel="noopener noreferrer">community chat</a> to discuss. You can also add comments or feedback <a href="https://bitcoinlayers.discourse.group/t/updating-the-bitcoin-layers-framework/11" style="color: blue; text-decoration: underline;" target="_blank" rel="noopener noreferrer">here</a>.</p>
+    <p>If you have comments on this framework, please consider joining our <a href="https://t.me/+8rv-1I2gkmQ4ZmJh" target="_blank" rel="noopener noreferrer">community chat</a> to discuss. You can also add comments or feedback <a href="https://bitcoinlayers.discourse.group/t/updating-the-bitcoin-layers-framework/11" target="_blank" rel="noopener noreferrer">here</a>.</p>
 `;
 
     return (
-        <article className="flex flex-col min-h-screen max-w-5xl mx-auto pt-16 px-4 sm:px-6 lg:px-8">
+        <article className="flex flex-col min-h-screen max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col justify-start items-start gap-4">
                 <div className="flex justify-start items-center gap-8 w-full">
                     <div className="flex-grow flex items-center gap-[30px] h-[156px]">
-                        <div className="special_header flex-grow sm:h-20 text-6xl lg:text-10xl text_table_important">
+                        <div className="special_header flex-grow sm:h-20 text-6xl lg:text-10xl">
                             Approach to analyzing layers
                         </div>
                     </div>
@@ -208,14 +202,14 @@ const Methodology: React.FC = () => {
                     <div className="flex flex-col gap-12 w-full rounded-md">
                         {" "}
                         <div className="flex flex-col gap-8 w-full">
-                            <div className="bg-white rounded-xl border border-slate-300 flex flex-col justify-center items-start gap-4 p-8">
+                            <div className=" rounded-xl border border-border flex flex-col justify-center items-start gap-4 p-8">
                                 <div className="flex flex-col gap-3 cursor-pointer">
-                                    <div className="text-xl font-light text-zinc-800 leading-9">
+                                    <div className="text-xl font-light leading-9">
                                         This is the framework we use to analyze
                                         sidechains, L2s and other scaling
                                         protocols
                                     </div>
-                                    <div className="text-base font-normal text-slate-500 leading-normal">
+                                    <div className="text-base font-normal leading-normal">
                                         The Bitcoin Layers risk assessment is
                                         broken down into four sections. They
                                         cover BTC Custody, Data Availability,

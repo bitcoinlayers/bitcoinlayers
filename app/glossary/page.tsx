@@ -355,10 +355,10 @@ const GlossaryPage: React.FC = () => {
 
     const renderGlossarySection = (letter: string) => (
         <div id={letter} className="mb-8 flex flex-col lg:flex-row items-start">
-            <div className="font-black text-text_tertiary font-playfair-display text-10xl flex-shrink-0 w-24 leading-none">
+            <div className="font-black text-muted-foreground font-playfair-display text-10xl flex-shrink-0 w-24 leading-none">
                 {letter}
             </div>
-            <div className="flex-grow bg-white rounded-xl border border-slate-300 p-4">
+            <div className="flex-grow bg-background rounded-xl border border-border p-4">
                 {glossaryData[letter].map((item, index) => (
                     <div
                         id={item.term.toLowerCase().replace(/\s+/g, "-")}
@@ -370,7 +370,7 @@ const GlossaryPage: React.FC = () => {
                                 {item.term}
                             </div>
                             <button
-                                className="ml-2 text-blue-500 hover:text-blue-700 opacity-0 group-hover:opacity-100 transition-opacity"
+                                className="ml-2 opacity-0 group-hover:opacity-100 transition-opacity"
                                 onClick={() => {
                                     const link = `${window.location.origin}${window.location.pathname}#${item.term.toLowerCase().replace(/\s+/g, "-")}`;
                                     navigator.clipboard.writeText(link);
@@ -380,7 +380,7 @@ const GlossaryPage: React.FC = () => {
                                 🔗
                             </button>
                         </div>
-                        <div className="text-base font-normal text-slate-500 leading-normal">
+                        <div className="text-base font-normal leading-normal">
                             {item.definition}
                         </div>
                     </div>
@@ -394,7 +394,7 @@ const GlossaryPage: React.FC = () => {
             <div className="flex flex-col justify-start items-start gap-4">
                 <div className="flex justify-start items-center gap-8 w-full">
                     <div className="flex-grow flex items-center gap-[30px] h-[156px]">
-                        <div className="special_header flex-grow h-20 text_table_important">
+                        <div className="special_header flex-grow h-20">
                             Glossary
                         </div>
                     </div>
@@ -407,7 +407,7 @@ const GlossaryPage: React.FC = () => {
                                     key={letter}
                                     href={`#${letter}`}
                                     onClick={(e) => handleScroll(e, letter)}
-                                    className="text-lg font-medium text-text_primary hover:text-brand"
+                                    className="text-lg font-medium text-muted-foreground hover:text-brand"
                                 >
                                     {letter}
                                 </a>

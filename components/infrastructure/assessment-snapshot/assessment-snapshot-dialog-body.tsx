@@ -46,7 +46,7 @@ export default function AssessmentSnapshotDialogBody({
 }) {
     return (
         <div className="max-w-screen-lg mx-auto px-4 sm:px-6 lg:px-8">
-            <DialogHeader className="mb-4 sm:mb-6 pb-2 font-bold border-b border-stroke_tertiary text_table_important">
+            <DialogHeader className="mb-4 sm:mb-6 pb-2 font-bold border-b border-border">
                 <DialogTitle className="text-lg sm:text-xl">
                     {title}
                 </DialogTitle>
@@ -70,7 +70,7 @@ export default function AssessmentSnapshotDialogBody({
                                 )}
                             </div>
                             <div className="ml-3 sm:ml-4">
-                                <div className="mb-1 sm:mb-2 font-semibold text_table_important text-sm sm:text-base">
+                                <div className="mb-1 sm:mb-2 font-semibold text-sm sm:text-base">
                                     {category}:{" "}
                                     <span
                                         style={{
@@ -81,7 +81,7 @@ export default function AssessmentSnapshotDialogBody({
                                         {tier}
                                     </span>
                                 </div>
-                                <div className="text_table_important text-xs sm:text-sm">
+                                <div className="text-xs sm:text-sm">
                                     {sectionTitle}
                                 </div>
                             </div>

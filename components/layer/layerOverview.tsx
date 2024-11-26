@@ -13,7 +13,7 @@ const LayerOverview: React.FC<{ layer: LayerProject }> = ({ layer }) => {
             <div className="flex flex-col space-y-10 px-4 flex-grow w-full lg:w-1/4">
                 <Categories layer={layer} />
                 <Description layer={layer} />
-                <div className="border-t border-stroke_secondary"></div>
+                <div className="border-t border-border"></div>
                 <ProjectLinks links={layer.links} />
             </div>
             <div className="mt-4 lg:mt-0 w-[350px] h-[350px] lg:h-[350px] lg:ml-0 ml-0">
@@ -27,7 +27,7 @@ export default LayerOverview;
 
 const Description: React.FC<{ layer: LayerProject }> = ({ layer }) => {
     return (
-        <div className="self-stretch text-text_secondary">
+        <div className="self-stretch text-muted-foreground">
             {parseTextWithLinks(layer.description)}
         </div>
     );

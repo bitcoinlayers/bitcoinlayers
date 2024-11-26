@@ -4,7 +4,6 @@ import Link from "next/link";
 import type { ReactElement } from "react";
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
-import SearchBlock from "./filter/SearchBlock";
 import { usePathname } from "next/navigation";
 import {
     Sheet,
@@ -14,7 +13,9 @@ import {
     SheetTitle,
     SheetTrigger,
 } from "./ui/sheet";
-import { ExternalLinkIcon } from "lucide-react";
+import { ExternalLinkIcon, MenuIcon } from "lucide-react";
+import { ModeToggle } from "@/components/mode-toggle";
+import { Button } from "./ui/button";
 
 export default function Navbar(): ReactElement {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -91,7 +92,7 @@ export default function Navbar(): ReactElement {
                 </h1>
             </Link>
             <div className="flex items-center">
-                <ul className="flex flex-row items-center space-x-4 lg:space-x-8 lg:pr-8 pr-4 text-public text-muted-foreground">
+                <ul className="flex flex-row items-center space-x-4 lg:space-x-8">
                     {/* {!searchHiddenRoutes.includes(pathname) && (
                         <>
                             <li className="md:hidden">
@@ -120,17 +121,29 @@ export default function Navbar(): ReactElement {
                         </>
                     )} */}
                     <li className="hidden lg:block">
-                        <Link href="/" onClick={closeMenu}>
+                        <Link
+                            href="/"
+                            onClick={closeMenu}
+                            className="hover:underline"
+                        >
                             Reviews
                         </Link>
                     </li>
                     <li className="hidden lg:block">
-                        <Link href="/analytics" onClick={closeMenu}>
+                        <Link
+                            href="/analytics"
+                            onClick={closeMenu}
+                            className="hover:underline"
+                        >
                             Analytics
                         </Link>
                     </li>
                     <li className="hidden lg:block">
-                        <Link href="/glossary" onClick={closeMenu}>
+                        <Link
+                            href="/glossary"
+                            onClick={closeMenu}
+                            className="hover:underline"
+                        >
                             Glossary
                         </Link>
                     </li>
@@ -139,7 +152,7 @@ export default function Navbar(): ReactElement {
                             href="https://lxresearch.co"
                             target="_blank"
                             onClick={closeMenu}
-                            className="flex items-center space-x-1.5"
+                            className="flex items-center space-x-1.5 hover:underline"
                         >
                             <div>Research</div>
                             <ExternalLinkIcon className="size-3" />
@@ -149,34 +162,37 @@ export default function Navbar(): ReactElement {
                         <Link
                             href="/dev-center"
                             onClick={closeMenu}
-                            className="flex items-center space-x-1.5"
+                            className="flex items-center space-x-1.5 hover:underline"
                         >
                             <div>Dev Center</div>
                             {/* <ExternalLinkIcon className="size-3" /> */}
                         </Link>
                     </li>
+                    <li className="hidden lg:block">
+                        <ModeToggle />
+                    </li>
                 </ul>
                 <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
                     <SheetTrigger asChild>
-                        <button className="lg:hidden" onClick={openSheet}>
-                            <Image
-                                src="/icons/menu.svg"
-                                alt="menu"
-                                width={28}
-                                height={28}
-                            />
-                        </button>
+                        <Button
+                            variant="outline"
+                            size="icon"
+                            className="lg:hidden"
+                            onClick={openSheet}
+                        >
+                            <MenuIcon className="size-5" />
+                        </Button>
                     </SheetTrigger>
                     <SheetContent className="w-64">
                         <SheetHeader>
                             <SheetTitle></SheetTitle>
-                            <SheetDescription className="text-base">
+                            <SheetDescription className="text-base text-current">
                                 <div className="pt-4 px-2">
                                     <ul className="flex flex-col items-start gap-y-6">
                                         <li>
                                             <Link
                                                 href="/"
-                                                className="text-primary"
+                                                className="hover:underline"
                                                 onClick={closeSheet}
                                             >
                                                 Reviews
@@ -185,8 +201,8 @@ export default function Navbar(): ReactElement {
                                         <li>
                                             <Link
                                                 href="/analytics"
-                                                className="text-primary"
                                                 onClick={closeSheet}
+                                                className="hover:underline"
                                             >
                                                 Analytics
                                             </Link>
@@ -194,8 +210,8 @@ export default function Navbar(): ReactElement {
                                         <li>
                                             <Link
                                                 href="/glossary"
-                                                className="text-primary"
                                                 onClick={closeSheet}
+                                                className="hover:underline"
                                             >
                                                 Glossary
                                             </Link>
@@ -204,22 +220,25 @@ export default function Navbar(): ReactElement {
                                             <Link
                                                 href="https://lxresearch.co"
                                                 target="_blank"
-                                                className="text-primary flex space-x-2 items-center"
+                                                className="flex space-x-2 items-center hover:underline"
                                                 onClick={closeSheet}
                                             >
                                                 <div>Research</div>
-                                                <ExternalLinkIcon className="size-3 text-primary" />
+                                                <ExternalLinkIcon className="size-3" />
                                             </Link>
                                         </li>
                                         <li>
                                             <Link
                                                 href="/dev-center"
-                                                className="text-primary flex space-x-2 items-center"
+                                                className="flex space-x-2 items-center hover:underline"
                                                 onClick={closeSheet}
                                             >
                                                 <div>Dev Center</div>
                                                 {/* <ExternalLinkIcon className="size-3 text-primary" /> */}
                                             </Link>
+                                        </li>
+                                        <li>
+                                            <ModeToggle />
                                         </li>
                                     </ul>
                                 </div>
