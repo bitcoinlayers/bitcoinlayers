@@ -25,74 +25,52 @@ export default function LiquidstakingStatCardGrid() {
     };
 
     const content = (() => {
-        switch (view) {
-            case "wrappers":
-                return {
-                    ...sharedTitles,
-                    tvlSubtitle: "in wrapped BTC tokens",
-                    txSubtitle: "using wrapped BTC tokens",
-                    feeSubtitle: "per wrapped BTC tx",
-                    addrSubtitle: "holding wrapped BTC tokens",
-                };
-            case "staking":
-                return {
-                    ...sharedTitles,
-                    tvlSubtitle: "in BTC staking protocols",
-                    txSubtitle: "using BTC staking protocols",
-                    feeSubtitle: "per BTC staking tx",
-                    addrSubtitle: "staking BTC",
-                };
-            case "liquidstaking":
-                return {
-                    ...sharedTitles,
-                    tvlSubtitle: "in BTC LSTs",
-                    txSubtitle: "using BTC LSTs",
-                    feeSubtitle: "per BTC LST tx",
-                    addrSubtitle: "using BTC LSTs",
-                };
-            case "lending":
-                return {
-                    ...sharedTitles,
-                    tvlSubtitle: "in BTC lending protocols",
-                    txSubtitle: "using BTC lending protocols",
-                    feeSubtitle: "per BTC lending tx",
-                    addrSubtitle: "using BTC lending protocols",
-                };
-            default:
-                return {
-                    ...sharedTitles,
-                    tvlSubtitle: "in bitcoin layers",
-                    txSubtitle: "using BTC on bitcoin layers",
-                    feeSubtitle: "per BTC tx on bitcoin layers",
-                    addrSubtitle: "using BTC on bitcoin layers",
-                };
-        }
+        // switch (view) {
+        //     case "wrappers":
+        //         return {
+        //             ...sharedTitles,
+        //             tvlSubtitle: "in wrapped BTC tokens",
+        //             txSubtitle: "using wrapped BTC tokens",
+        //             feeSubtitle: "per wrapped BTC tx",
+        //             addrSubtitle: "holding wrapped BTC tokens",
+        //         };
+        //     case "staking":
+        //         return {
+        //             ...sharedTitles,
+        //             tvlSubtitle: "in BTC staking protocols",
+        //             txSubtitle: "using BTC staking protocols",
+        //             feeSubtitle: "per BTC staking tx",
+        //             addrSubtitle: "staking BTC",
+        //         };
+        //     case "liquidstaking":
+        return {
+            ...sharedTitles,
+            tvlSubtitle: "in BTC LSTs",
+            txSubtitle: "using BTC LSTs",
+            feeSubtitle: "per BTC LST tx",
+            addrSubtitle: "using BTC LSTs",
+        };
+        //     case "lending":
+        //         return {
+        //             ...sharedTitles,
+        //             tvlSubtitle: "in BTC lending protocols",
+        //             txSubtitle: "using BTC lending protocols",
+        //             feeSubtitle: "per BTC lending tx",
+        //             addrSubtitle: "using BTC lending protocols",
+        //         };
+        //     default:
+        //         return {
+        //             ...sharedTitles,
+        //             tvlSubtitle: "in bitcoin layers",
+        //             txSubtitle: "using BTC on bitcoin layers",
+        //             feeSubtitle: "per BTC tx on bitcoin layers",
+        //             addrSubtitle: "using BTC on bitcoin layers",
+        //         };
+        // }
     })();
 
     const TvlStatCard = (() => {
-        switch (view) {
-            case "wrappers":
-                return <WrapperTvlStatCard />;
-            case "staking":
-                return <StakingTvlStatCard />; //<LiquidstakingTvlStatCard />;
-            //<StakingTvlStatCard />
-            // (
-            // <StatCard
-            //     title={content.tvlTitle}
-            //     subtitle={content.tvlSubtitle}
-            //     isComingSoon
-            //     change={0}
-            //     symbol={<BitcoinIcon className="h-4" />}
-            // />
-
-            // );
-            case "liquidstaking":
-                return <LiquidstakingTvlStatCard />;
-            // case "lending":
-            //     return <LendingTvlStatCard />;
-            default:
-                return <LayerTvlStatCard />;
-        }
+        return <LiquidstakingTvlStatCard />;
     })();
 
     const TxStatCard = (() => {
