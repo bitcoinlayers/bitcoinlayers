@@ -231,23 +231,23 @@ const BitcoinonlyTable = ({ data, headers }: Props) => {
                     </div>
                 </MobileView>
 
-                <div className="overflow-x-auto bg-lightsecondary rounded-xl mx-auto border-none">
-                    <table className="bg-lightsecondary w-full text-sm text-left rtl:text-right rounded-xl">
+                <div className="overflow-x-auto mx-auto border-none">
+                    <table className="w-full text-sm text-left rtl:text-right">
                         <TableHeader
                             headers={isMobile ? mobileTableHeaders : headers}
                             onSort={handleSort}
                         />
-                        <tbody className="bg-white gap-x-8 border-t border-stroke_tertiary text_table_important">
+                        <tbody className="gap-x-8">
                             {sortAndFilterData.map((item, index) => (
                                 <tr
-                                    className={`cursor-pointer border-b border-stroke_tertiary text_table_important ${
+                                    className={`cursor-pointer ${
                                         index === sortAndFilterData.length - 1
                                             ? ""
-                                            : ""
+                                            : "border-b border-border"
                                     }`}
                                     key={item.slug}
                                 >
-                                    <td className="lg:px-6 px-4 py-4 font-semibold whitespace-nowrap border-r lg:border-r-0 border-stroke_tertiary text_table_important text-table_body">
+                                    <td className="lg:px-6 px-4 py-4 font-semibold whitespace-nowrap">
                                         <Link
                                             href={`/${
                                                 isLayer(item)
@@ -267,17 +267,17 @@ const BitcoinonlyTable = ({ data, headers }: Props) => {
                                     </td>
                                     {(!isMobile ||
                                         mobileActiveTab === "Risk") && (
-                                        <td className="relative px-2 border-stroke_tertiary text_table_important">
+                                        <td className="relative px-2 border-border">
                                             {isLayer(item) ? (
                                                 !item.underReview ? (
                                                     <Risk layer={item} />
                                                 ) : (
-                                                    <div className="lg:px-5 px-1 text_table_important font-light">
+                                                    <div className="lg:px-5 px-1 font-light">
                                                         Under review
                                                     </div>
                                                 )
                                             ) : (
-                                                <div className="lg:px-5 px-1 text_table_important">
+                                                <div className="lg:px-5 px-1">
                                                     Not applicable
                                                 </div>
                                             )}
@@ -285,7 +285,7 @@ const BitcoinonlyTable = ({ data, headers }: Props) => {
                                     )}
                                     {(!isMobile ||
                                         mobileActiveTab === "Type") && (
-                                        <td className="lg:px-6 px-4 py-3 lg:py-4 border-stroke_tertiary text_table_important">
+                                        <td className="lg:px-6 px-4 py-3 lg:py-4 border-border">
                                             <Link
                                                 href={`/${
                                                     isLayer(item)
@@ -303,7 +303,7 @@ const BitcoinonlyTable = ({ data, headers }: Props) => {
                                     )}
                                     {(!isMobile ||
                                         mobileActiveTab === "Status") && (
-                                        <td className="lg:px-6 px-4 py-3 lg:py-4 border-stroke_tertiary text_table_important">
+                                        <td className="lg:px-6 px-4 py-3 lg:py-4 border-border">
                                             <Link
                                                 href={`/${
                                                     isLayer(item)
@@ -317,7 +317,7 @@ const BitcoinonlyTable = ({ data, headers }: Props) => {
                                     )}
                                     {(!isMobile ||
                                         mobileActiveTab === "Category") && (
-                                        <td className="lg:px-6 px-4 py-3 lg:py-4 border-stroke_tertiary text_table_important">
+                                        <td className="lg:px-6 px-4 py-3 lg:py-4">
                                             <Link
                                                 href={`/${
                                                     isLayer(item)

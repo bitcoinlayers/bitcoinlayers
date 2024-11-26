@@ -19,6 +19,10 @@ const config = {
             },
         },
         extend: {
+            listStyleType: {
+                circle: "circle",
+                square: "square",
+            },
             colors: {
                 border: "hsl(var(--border))",
                 input: "hsl(var(--input))",

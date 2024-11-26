@@ -160,7 +160,7 @@ export default function LayerTVLChart() {
         return {
             TVL: tvl,
         };
-    }, [data, dateRange, tokens]);
+    }, [data, dateRange]);
 
     if (data?.length === 0) return null;
 

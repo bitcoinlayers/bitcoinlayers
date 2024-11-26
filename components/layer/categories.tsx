@@ -18,30 +18,22 @@ const Categories: React.FC<{ layer: LayerProject }> = ({ layer }) => {
     return (
         <div className="lg:flex lg:justify-between w-full grid grid-cols-2 gap-4">
             <div className="flex-col lg:justify-center lg:items-start pl-4 lg:pl-0">
-                <div className="text-text_primary text-sm leading-tight">
-                    Status
-                </div>
-                <div className="text-text_header">{layer.live}</div>
+                <div className="text-sm leading-tight">Status</div>
+                <div className="text-muted-foreground">{layer.live}</div>
             </div>
             <div className="flex-col justify-center items-start pl-4 lg:pl-0">
-                <div className="text-text_primary text-sm leading-tight">
-                    Type
-                </div>
-                <div className="text-text_header">{layer.entityType}</div>
+                <div className="text-sm leading-tight">Type</div>
+                <div className="text-muted-foreground">{layer.entityType}</div>
             </div>
             <div className="flex-col justify-center items-start pl-4 lg:pl-0">
-                <div className="text-text_primary text-sm leading-tight">
-                    Fee Token
-                </div>
-                <div className="text-text_header">
+                <div className="text-sm leading-tight">Fee Token</div>
+                <div className="text-muted-foreground">
                     {(layer as LayerProject).feeToken}
                 </div>
             </div>
             <div className="flex-col justify-center items-start pl-4 lg:pl-0">
-                <div className="text-text_primary text-sm leading-tight">
-                    TVL
-                </div>
-                <div className="text-zinc-800 text-base font-normal leading-normal">
+                <div className="text-sm leading-tight">TVL</div>
+                <div className="text-muted-foreground">
                     ₿ {/* Fallback to layer.btcLocked */}
                     {matchingBalance
                         ? matchingBalance.total_amount.toLocaleString("en-US", {

@@ -9,7 +9,7 @@ const Description: React.FC<{ infrastructure: InfrastructureProject }> = ({
     infrastructure,
 }) => {
     return (
-        <div className="self-stretch text-text_secondary">
+        <div className="text-muted-foreground self-stretch">
             {parseTextWithLinks(infrastructure.description)}
         </div>
     );
@@ -37,7 +37,7 @@ const InfrastructureOverview: React.FC<{
                     </div>
                 )} */}
                     <Description infrastructure={infrastructure} />
-                    <div className="border-t border-stroke_secondary"></div>
+                    <div className="border-t border-border"></div>
                     <ProjectLinks links={infrastructure.links} />
                 </div>
                 {/* {hasAssessment && (
