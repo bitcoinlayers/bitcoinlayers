@@ -8,6 +8,8 @@ import {
 import StatCard from "@/components/stat-card";
 import { useQueryState } from "nuqs";
 import LayerTvlStatCard from "./layer-tvl-stat-card";
+import StakingTvlStatCard from "./staking-tvl-stat-card";
+// import LendingTvlStatCard from "./lending-tvl-stat-card";
 import LiquidstakingTvlStatCard from "./liquidstaking-tvl-stat-card";
 import WrapperTvlStatCard from "./wrapper-tvl-stat-card";
 
@@ -47,6 +49,14 @@ export default function StatCardGrid() {
                     feeSubtitle: "per BTC LST tx",
                     addrSubtitle: "using BTC LSTs",
                 };
+            case "lending":
+                return {
+                    ...sharedTitles,
+                    tvlSubtitle: "in BTC lending protocols",
+                    txSubtitle: "using BTC lending protocols",
+                    feeSubtitle: "per BTC lending tx",
+                    addrSubtitle: "using BTC lending protocols",
+                };
             default:
                 return {
                     ...sharedTitles,
@@ -63,7 +73,7 @@ export default function StatCardGrid() {
             case "wrappers":
                 return <WrapperTvlStatCard />;
             case "staking":
-                return <LiquidstakingTvlStatCard />;
+                return <StakingTvlStatCard />; //<LiquidstakingTvlStatCard />;
             //<StakingTvlStatCard />
             // (
             // <StatCard
@@ -77,6 +87,8 @@ export default function StatCardGrid() {
             // );
             case "liquidstaking":
                 return <LiquidstakingTvlStatCard />;
+            // case "lending":
+            //     return <LendingTvlStatCard />;
             default:
                 return <LayerTvlStatCard />;
         }
@@ -87,6 +99,7 @@ export default function StatCardGrid() {
             case "wrappers":
             case "staking":
             case "liquidstaking":
+            case "lending":
                 return (
                     <StatCard
                         title={content.txTitle}
@@ -114,6 +127,7 @@ export default function StatCardGrid() {
             case "wrappers":
             case "staking":
             case "liquidstaking":
+            case "lending":
                 return (
                     <StatCard
                         title={content.feeTitle}
@@ -141,6 +155,7 @@ export default function StatCardGrid() {
             case "wrappers":
             case "staking":
             case "liquidstaking":
+            case "lending":
                 return (
                     <StatCard
                         title={content.addrTitle}
