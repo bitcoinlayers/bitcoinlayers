@@ -28,7 +28,6 @@ const Methodology: React.FC = () => {
         <ul>
                 <li>Users can contest a dispute in the final state with a counterparty and claim their assets on the L1</li>
                 <li>Bitcoin can verify changes to the layer’s state directly in Script when users’ offchain balances are updated, permitting withdrawals when users want to leave the system</li>
-                <li>The bridge is managed by an alternative consensus mechanism where anyone can challenge malicious withdrawal requests. Operators can be rotated in the event of liveness failures.</li>
             </ul>
             </li>
         <br />
@@ -36,7 +35,6 @@ const Methodology: React.FC = () => {
         <ul>
                 <li>The bridge is managed by an alternative consensus mechanism that is financially incentivized not to steal</li>
                 <li>The bridge is managed by an alternative consensus mechanism where anyone can challenge malicious withdrawal requests</li>
-                <ul><li><i>We are currently considering a score where systems like the Spiderchain and tBTC v2 would be considered yellow</i></li></ul>
             </ul>
             </li>
         <br />
@@ -74,7 +72,7 @@ const Methodology: React.FC = () => {
         <br />
         <li>🟡 Yellow must match one of the following conditions:</li>
         <ul>
-                <li>Data is made available by an alternative consensus protocol (that is not bitcoin) node operate set and the full node software is open-source</li>
+                <li>Data is made available by an alternative consensus protocol (that is not bitcoin) and the full node software is open-source</li>
                 <li>Data is stored via an offchain committee or consensus protocol, where validators stake slashable collateral greater than value locked in the layer and DA attestations are backed by this economic security</li>
             </ul>
             </li>
@@ -98,13 +96,13 @@ const Methodology: React.FC = () => {
 <ul>
         <li>🟢 Green must match one of the following conditions:</li>
         <ul>
-                <li>Users can self-sequence their own transactions by including it on bitcoin and the centralized validator cannot selectively censor. In layers with centralized block producers, they cannot selectively censor, the validator(s) would need to halt the entire system to censor users.</li>
+                <li>Users can self-sequence their own transactions</li>
             </ul>
             </li>
         <br />
         <li>🟡 Yellow must match one of the following conditions:</li>
         <ul>
-                <li>The validator (aka network operator) node software is open-source, anyone can become a validator in a (at least) minimally permissioned (e.g. proof of stake) way, and at least 5 externally, publicly known validators participate in proposing and signing blocks</li>
+                <li>The validator (aka network operator) node software is open-source, anyone can become a validator in a (at least) minimally permissioned (e.g. proof of stake) way</li>
                 <li>The layer is merge-mined with Bitcoin and secured by greater than 50% of hashrate</li>
             </ul>
             </li>
