@@ -97,7 +97,7 @@ const bedrock: InfrastructureProject = {
             category: AssessmentCategory.AssetCustody,
             score: 0,
             tier: "",
-            title: "Wrapped BTC tokens are locked in the uniBTC smart contract",
+            title: "Wrapped BTC tokens are swapped for BTC. A custodian is responsible for depositing funds into Babylon",
             content:
                 "When a user deposits funds into the Bedrock protocol, they deposit a wrapped BTC token into the uniBTC smart contract. The uniBTC smart contract on Ethereum (and other chains) is responsible for minting uniBTC in exchange for wrapped BTC tokens.\n\nTo deposit these tokens on Babylon, users rely on a custodial provider to exchange the wrapped BTC tokens for native BTC tokens that they would stake on Babylon. The custodian could also deposit the wrapped BTC tokens into another staking protocol that takes the liquidity. The trust assumptions related to these scenarios are dependent on the custodians and protocols involved.\n\n⚠️ A noted vulnerability in uniBTC is that if a specific wrapped BTC token became unbacked (e.g. wBTC), the uniBTC peg would be broken. This could cause a bank run for users to remove other wrapped bitcoin assets from the vault contract.",
         },
