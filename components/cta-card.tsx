@@ -20,11 +20,11 @@ export default function CtaCard() {
         switch (view) {
             case "staking":
                 return {
-                    title: "Liquid staking tokens are deployed on layers",
+                    title: "Liquid staking tokens are primarily managed by custodians",
                     description:
-                        "Learn how the trust assumptions for staking changes per token & layer",
+                        "Learn how the majority of deposits onto staking layers works",
                     ctaText: "Read more",
-                    url: "/staking",
+                    url: "https://www.lxresearch.co/some-thoughts-on-bitcoin-staking/",
                     isExternal: false,
                 };
             case "layers":
