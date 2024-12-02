@@ -34,6 +34,21 @@ type GlossaryData = {
 const glossaryData: GlossaryData = {
     A: [
         {
+            term: "Accountable Assertions and EOTS",
+            definition:
+                "Accountable Assertions use Extractable One-Time Signatures (EOTS) to penalize equivocation—making conflicting statements in a distributed system. EOTS leak the signer’s private key if they sign two different messages (e.g., signing two blocks at the same height) with the same key, enabling slashing mechanisms where violators’ Bitcoin collateral can be seized. This method extends Bitcoin’s capabilities despite its lack of native smart contracts, allowing safety violations in Proof-of-Stake (PoS) protocols to be punished via fund slashability on Bitcoin L1.",
+        },
+        {
+            term: "Ark Service Provider (ASP)",
+            definition:
+                "An Ark Service Provider (ASP) coordinates rounds in the Ark protocol, enabling users to exchange old VTXOs for new ones which is the way of transacting on an Ark. The ASP does so via aggregating transactions into a shared UTXO which is committed to onchain. The ASP needs to front the liquidity for all offchain VTXO transfers on Bitcoin L1. While being a central server, a user does not need to rely on the ASP to reclaim their offchain VTXOs for Bitcoin L1 onchain funds.",
+        },
+        {
+            term: "ArkOOR (Ark Out-of-Round Payments)",
+            definition:
+                "ArkOOR payments allow users to transfer VTXOs instantly without waiting for an Ark round or incurring liquidity fees. These transactions reuse the forfeit clause, enabling a sender to co-sign with the ASP to create a new VTXO for the recipient. While convenient and fast, ArkOOR introduces a trust trade-off, as recipients rely on the ASP and sender not colluding for a double spend. Recipients can mitigate this by converting ArkOOR VTXOs into regular VTXOs during the next Ark round.",
+        },
+        {
             term: "Atomic swap",
             definition:
                 "An exchange of crypto assets that does not require a trusted third party. Atomic swaps leverage smart contracts to ensure both parties fulfill transaction obligations before the swap is completed, otherwise, the transaction is canceled, and funds are returned to their respective owners. Atomicity refers to guarantee of a single, individible outcome, i.e., one token transfer cannot execute without its counterparty transfer also executing. In the context of Bitcoin, atomic swaps enable the seamless exchange of BTC with other cryptocurrencies in a secure and decentralized manner.",
@@ -68,6 +83,11 @@ const glossaryData: GlossaryData = {
                 "A paradigm to allow each data kept outside bitcoin transactions (onchain) under Bitcoin consensus rules. This sees users verify transactions and state transitions independently.",
         },
         {
+            term: "Connector Outputs (aka Connectors) in Ark",
+            definition:
+                "Connector Outputs are dust-value outputs created in Ark round transactions to ensure atomicity between forfeiting existing VTXOs and creating new VTXOs. A connector output links the forfeit transaction to the round transaction, making the former valid only if the latter is confirmed on-chain. By acting as cryptographic guarantees, connectors eliminate the need to trust a server for broadcasting transactions, ensuring that VTXO exchanges within Ark protocols remain trustless and secure.",
+        },
+        {
             term: "Consensus mechanism",
             definition:
                 "A procedure used to reach a collective agreement regarding the status of a data set or the ledger's state. Consensus mechanisms consists of several parts, such as Sybil resistance mechanisms (e.g., PoW, PoS, PoA), leader selection algorithms, and vote-power weighting systems.",
@@ -76,6 +96,11 @@ const glossaryData: GlossaryData = {
             term: "Covenant",
             definition:
                 "A mechanism that allows users to impose constraints on how BTC (a UTXO) can be transferred in future transactions.",
+        },
+        {
+            term: "Covenant Emulation in Ark",
+            definition:
+                "Covenant Emulation replicates the functionality of covenants—restrictions on how outputs can be spent—using pre-signed transactions instead of blockchain-native covenant primitives. In systems like Ark, this involves co-signers pre-signing transactions to enforce a single spend path, ensuring that alternative transactions cannot replace the pre-signed ones. By leveraging pre-signatures and a signer set, covenant emulation enables deterministic transaction flows, minimizing trust requirements and maintaining the benefits of covenants without protocol-level changes.",
         },
     ],
     D: [
@@ -316,6 +341,11 @@ const glossaryData: GlossaryData = {
             term: "Validium",
             definition:
                 "A modular execution layer that has a canonical bridge contract with its underlying L1, but does not use that L1 for data availability. Validity proofs are used to prove the validity of state transitions posted to the L1 contract.",
+        },
+        {
+            term: "VTXO",
+            definition:
+                "A virtual UTXO (VTXO) is a Bitcoin transaction output that exists offchain but can be redeemed onchain at any time. VTXOs represent a user’s share in a shared UTXO which are leaves in a transaction tree to which the shared output of an Ark round transaction commits to. They allow for offchain spending while ensuring the user can always create a corresponding UTXO on the blockchain if needed. VTXOs are secured by taproot scripts with two spending paths: unilateral redemption with a delay, enabling the user to reclaim their Bitcoin independently, or offchain forfeiture through co-signing with the Ark Service Provider (ASP).",
         },
     ],
     // W: [],
