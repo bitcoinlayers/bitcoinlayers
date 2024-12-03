@@ -142,7 +142,9 @@ section {
         --chart-solv-lsts: 263 99% 65%;
         --chart-pump: 216 75% 51%;
         --chart-bedrock: 299 36% 56%;
-        --chart-unirouter: 273 96% 9%; /*274 100% 50%;*/
+        --chart-unirouter: 274 100% 50%;
+        --chart-babylon: 27 90% 56%;
+        --chart-acorn: 126 63% 13%;
         /* Crosschain BTC */
         --chart-dlc-link-dlcbtc: 284 84% 35%;
         --chart-fire-fbtc: 238 100% 67%;

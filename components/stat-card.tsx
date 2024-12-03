@@ -23,13 +23,11 @@ const StatCard = ({
         ? parseFloat(value.replace(/[^0-9.-]+/g, ""))
         : 0;
     return (
-        <Card className="bg-white">
+        <Card className="bg-backgro">
             <CardContent className="p-4">
                 <div className="flex justify-between items-baseline">
                     <div className="space-y-0.5">
-                        <h3 className="text-base font-medium text-primary">
-                            {title}
-                        </h3>
+                        <h3 className="text-base font-medium">{title}</h3>
                         <p className="text-xs text-muted-foreground">
                             {subtitle}
                         </p>
@@ -57,7 +55,7 @@ const StatCard = ({
                     {change !== undefined && (
                         <div className="flex items-center mt-1">
                             <span
-                                className={`text-sm font-medium ${change >= 0 ? "text-emerald-500" : "text-red-500"}`}
+                                className={`text-sm font-medium ${change >= 0 ? "text-emerald-600" : "text-red-600"}`}
                             >
                                 {change >= 0 ? "+" : ""}
                                 {change}%

@@ -1,6 +1,21 @@
 import path from "path";
 import fs from "fs/promises";
 
+export async function generateStaticParams() {
+    const infrastructuresPath = path.join(
+        process.cwd(),
+        "content",
+        "infrastructures",
+    );
+    const files = await fs.readdir(infrastructuresPath);
+
+    return files
+        .filter((file) => file.endsWith(".ts"))
+        .map((file) => ({
+            slug: file.replace(".ts", ""),
+        }));
+}
+
 export async function GET(
     request: Request,
     { params }: { params: { slug: string } },

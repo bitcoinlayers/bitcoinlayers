@@ -158,7 +158,7 @@ export default function InfraTVLChart() {
         return {
             TVL: tvl,
         };
-    }, [data, dateRange, tokens]);
+    }, [data, dateRange]);
 
     if (data?.length === 0) return null;
 

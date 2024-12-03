@@ -5,6 +5,8 @@ import AggregatedTVLChart from "@/components/charts/aggregated-tvl-chart";
 import useGetBalancesHistoricalBylayerBitcoinonly from "@/hooks/use-get-layertvl-historical-bitcoinonly";
 import useGetInfratvlHistoricalBridge from "@/hooks/use-get-infratvl-historical-bridge";
 import useGetInfratvlHistoricalStaked from "@/hooks/use-get-infratvl-historical-staked";
+import useGetStakingValueHistorical from "@/hooks/use-get-staking-value-historical";
+import useGetLendingValueHistorical from "@/hooks/use-get-infratvl-historical-staked";
 
 export default function ChartSwitch() {
     const [view] = useQueryState("view");
@@ -14,10 +16,36 @@ export default function ChartSwitch() {
             return (
                 <AggregatedTVLChart
                     title="BTC deposits"
-                    description="Total amount of BTC deposited in third-party staking protocols"
+                    description="Total amount of BTC deposited in staking protocols"
                     itemNameKey="infra_name"
                     chartQueryParam="staking-chart"
                     rangeQueryParam="staking-range"
+                    useDataHook={useGetStakingValueHistorical}
+                    showLegend={false}
+                    chartHeight="h-64"
+                />
+            );
+        case "liquidstaking":
+            return (
+                <AggregatedTVLChart
+                    title="BTC deposits"
+                    description="Total amount of BTC deposited in third-party staking protocols"
+                    itemNameKey="infra_name"
+                    chartQueryParam="liquidstaking-chart"
+                    rangeQueryParam="liquidstaking-range"
+                    useDataHook={useGetInfratvlHistoricalStaked}
+                    showLegend={false}
+                    chartHeight="h-64"
+                />
+            );
+        case "lending":
+            return (
+                <AggregatedTVLChart
+                    title="BTC deposits"
+                    description="Total amount of BTC deposited in third-party staking protocols"
+                    itemNameKey="infra_name"
+                    chartQueryParam="lending-chart"
+                    rangeQueryParam="lending-range"
                     useDataHook={useGetInfratvlHistoricalStaked}
                     showLegend={false}
                     chartHeight="h-64"

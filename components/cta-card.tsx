@@ -20,11 +20,11 @@ export default function CtaCard() {
         switch (view) {
             case "staking":
                 return {
-                    title: "Liquid staking tokens are deployed on layers",
+                    title: "Liquid staking tokens are primarily managed by custodians",
                     description:
-                        "Learn how the trust assumptions for staking changes per token & layer",
+                        "Learn how the majority of deposits onto staking layers works",
                     ctaText: "Read more",
-                    url: "/staking",
+                    url: "https://www.lxresearch.co/some-thoughts-on-bitcoin-staking/",
                     isExternal: false,
                 };
             case "layers":
@@ -38,22 +38,22 @@ export default function CtaCard() {
         <Card className="flex flex-col sm:flex-row items-center justify-between bg-background">
             <div className="flex flex-col items-center sm:items-start mb-4 sm:mb-0 p-4">
                 <div className="flex space-x-3">
-                    <SendIcon className="h-5 w-5 mt-1 text-gray-600" />
+                    <SendIcon className="h-5 w-5 mt-1" />
                     <div>
-                        <h2 className="text-xl font-semibold text-gray-900">
+                        <h2 className="text-xl font-semibold">
                             {content.title}
                         </h2>
                     </div>
                 </div>
-                <p className="text-foreground text-sm md:text-base mt-1">
+                <p className="text-muted-foreground text-sm md:text-base mt-1">
                     {content.description}
                 </p>
             </div>
-            <div className="bg-blue-50 h-24 w-full sm:w-1/3 flex flex-col justify-center items-center text-center">
+            <div className="bg-secondary h-24 w-full sm:w-1/3 flex flex-col justify-center items-center text-center sm:rounded-r-lg">
                 <Link
                     href={content.url}
                     target={content.isExternal ? "_blank" : undefined}
-                    className="text-primary text-2xl font-medium inline-flex items-center underline"
+                    className="text-2xl font-medium inline-flex items-center underline"
                 >
                     {content.ctaText}
                 </Link>

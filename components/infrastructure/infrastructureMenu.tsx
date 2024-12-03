@@ -64,8 +64,8 @@ const InfrastructureMenu: React.FC<{
                         <a
                             className={`no-underline text-sm ${
                                 activeSection === section.id
-                                    ? "text-orange-600 font-semibold font-inter leading-tight"
-                                    : "text-neutral-700 font-light leading-tight"
+                                    ? "text-brand font-semibold font-inter leading-tight"
+                                    : "text-foreground font-light leading-tight"
                             } w-full whitespace-normal break-words`}
                             onClick={() => handleClick(section.id)}
                             href={`#${section.id}`}

@@ -61,7 +61,7 @@ const RiskIcon: React.FC<{
 const RiskSnapshot: React.FC<RiskSnapshotProps> = ({ layer, title }) => {
     return (
         <div className="max-w-screen-lg mx-auto px-4 sm:px-6 lg:px-8">
-            <DialogHeader className="mb-4 sm:mb-6 pb-2 font-bold border-b border-stroke_tertiary text_table_important">
+            <DialogHeader className="mb-4 sm:mb-6 pb-2 font-bold border-b border-border">
                 <DialogTitle className="text-lg sm:text-xl">
                     {title || "Risk Snapshot"}
                 </DialogTitle>
@@ -83,7 +83,7 @@ const RiskSnapshot: React.FC<RiskSnapshotProps> = ({ layer, title }) => {
                             />
                         </div>
                         <div className="ml-3 sm:ml-4">
-                            <div className="mb-1 sm:mb-2 font-semibold text_table_important text-sm sm:text-base">
+                            <div className="mb-1 sm:mb-2 font-semibold text-sm sm:text-base">
                                 {risk.category}:{" "}
                                 <span
                                     className="font-semibold"
@@ -97,15 +97,18 @@ const RiskSnapshot: React.FC<RiskSnapshotProps> = ({ layer, title }) => {
                                     {/* {getRiskEmoji(layer.riskFactors[index])} */}
                                 </span>
                             </div>
-                            <div className="text_table_important text-xs sm:text-sm">
+                            <div className="text-xs sm:text-sm">
                                 {risk.title}
                             </div>
                         </div>
                     </div>
                 ))}
             </div>
-            <DialogFooter className="mt-4 sm:mb-t pt-4 pb-2 border-t">
-                <Link href="/methodology" className="underline text-sm">
+            <DialogFooter className="mt-4 sm:mb-t pt-4 pb-2 border-t flex-row justify-center sm:justify-center">
+                <Link
+                    href="/methodology"
+                    className="hover:underline text-left text-xs"
+                >
                     Learn more about how we analyze trust assumptions past the
                     L1.
                 </Link>

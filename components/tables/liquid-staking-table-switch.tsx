@@ -5,6 +5,10 @@ import { allLayers } from "@/util/layer_index";
 import { allInfrastructures } from "@/util/infrastructure_index";
 import { DropletsIcon } from "lucide-react";
 import LiquidStakingTable from "./liquid-staking-table";
+import AggregatedTVLChart from "../charts/aggregated-tvl-chart";
+import useGetInfratvlHistoricalStaked from "@/hooks/use-get-infratvl-historical-staked";
+// import StatCardGrid from "../stat-card/stat-card-grid";
+import LiquidStakingStatCardGrid from "../stat-card/liquidstaking-stat-card-grid";
 
 export default function LiquidStakingTableSwitch() {
     const [view] = useQueryState("view");
@@ -39,10 +43,23 @@ export default function LiquidStakingTableSwitch() {
 
     if (view === "staking") {
         return (
-            <LiquidStakingTable
-                data={sortedLiquidStaking}
-                headers={liquidStakingHeaders}
-            />
+            <>
+                <AggregatedTVLChart
+                    title="BTC deposits"
+                    description="Total amount of BTC deposited in third-party staking protocols"
+                    itemNameKey="infra_name"
+                    chartQueryParam="liquidstaking-chart"
+                    rangeQueryParam="liquidstaking-range"
+                    useDataHook={useGetInfratvlHistoricalStaked}
+                    showLegend={false}
+                    chartHeight="h-64"
+                />
+                <LiquidStakingStatCardGrid />
+                <LiquidStakingTable
+                    data={sortedLiquidStaking}
+                    headers={liquidStakingHeaders}
+                />
+            </>
         );
     }
 

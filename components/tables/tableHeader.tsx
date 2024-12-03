@@ -43,16 +43,16 @@ const TableHeader: React.FC<TableHeaderProps> = ({
     });
 
     return (
-        <thead className="bg-table_header">
-            <tr className="border-b border-stroke_tertiary">
+        <thead className="">
+            <tr className="border-b border-border">
                 {headers.map((header, index) => (
                     <th
                         key={index}
-                        className={`lg:pl-6 lg:py-6 pl-4 py-2 font-medium text-text_table_header table_header border-t border-stroke_tertiary last:pr-4 first:border-l first:rounded-tl-xl last:border-r last:rounded-tr-xl`}
+                        className={`lg:pl-6 lg:py-6 pl-4 py-2 font-medium border-t border-border last:pr-4 `}
                     >
                         <div className="flex items-center justify-between">
                             <div className="flex items-center grow">
-                                <div className="text-zinc-800 text-sm font-medium leading-tight">
+                                <div className="text-sm font-medium leading-tight">
                                     {header.name}
                                 </div>
                             </div>
@@ -85,18 +85,14 @@ const TableHeader: React.FC<TableHeaderProps> = ({
                                                 viewBox="0 0 11 11"
                                                 fill="none"
                                                 xmlns="http://www.w3.org/2000/svg"
-                                                className="rotate-180"
+                                                className={`rotate-180 fill-current ${
+                                                    sortBy === header.name &&
+                                                    sortOrder === "desc"
+                                                        ? "text-brand"
+                                                        : "text-muted-foreground"
+                                                }`}
                                             >
-                                                <path
-                                                    d="M9.46854 2.93848H1.53146C1.2934 2.93848 1.16047 3.18983 1.3079 3.36143L5.27644 7.9632C5.39003 8.09492 5.60876 8.09492 5.72356 7.9632L9.6921 3.36143C9.83953 3.18983 9.7066 2.93848 9.46854 2.93848Z"
-                                                    fill={
-                                                        sortBy ===
-                                                            header.name &&
-                                                        sortOrder === "desc"
-                                                            ? "#FE4F18"
-                                                            : "#C9D0D8"
-                                                    }
-                                                />
+                                                <path d="M9.46854 2.93848H1.53146C1.2934 2.93848 1.16047 3.18983 1.3079 3.36143L5.27644 7.9632C5.39003 8.09492 5.60876 8.09492 5.72356 7.9632L9.6921 3.36143C9.83953 3.18983 9.7066 2.93848 9.46854 2.93848Z" />
                                             </svg>
                                         </div>
                                         <div
@@ -111,24 +107,21 @@ const TableHeader: React.FC<TableHeaderProps> = ({
                                                 viewBox="0 0 11 11"
                                                 fill="none"
                                                 xmlns="http://www.w3.org/2000/svg"
+                                                className={`fill-current ${
+                                                    sortBy === header.name &&
+                                                    sortOrder === "asc"
+                                                        ? "text-brand"
+                                                        : "text-muted-foreground"
+                                                }`}
                                             >
-                                                <path
-                                                    d="M9.46854 2.93848H1.53146C1.2934 2.93848 1.16047 3.18983 1.3079 3.36143L5.27644 7.9632C5.39003 8.09492 5.60876 8.09492 5.72356 7.9632L9.6921 3.36143C9.83953 3.18983 9.7066 2.93848 9.46854 2.93848Z"
-                                                    fill={
-                                                        sortBy ===
-                                                            header.name &&
-                                                        sortOrder === "asc"
-                                                            ? "#FE4F18"
-                                                            : "#C9D0D8"
-                                                    }
-                                                />
+                                                <path d="M9.46854 2.93848H1.53146C1.2934 2.93848 1.16047 3.18983 1.3079 3.36143L5.27644 7.9632C5.39003 8.09492 5.60876 8.09492 5.72356 7.9632L9.6921 3.36143C9.83953 3.18983 9.7066 2.93848 9.46854 2.93848Z" />
                                             </svg>
                                         </div>
                                     </div>
                                 )}
                             </div>
                             {index < headers.length - 1 && (
-                                <span className="w-px h-7 bg-[#E1EAF8] ml-5"></span>
+                                <span className="w-px h-7 bg-border ml-5"></span>
                             )}
                         </div>
                     </th>
