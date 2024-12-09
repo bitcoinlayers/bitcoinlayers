@@ -10,7 +10,7 @@ import {
 const lorenzo: InfrastructureProject = {
     type: Type.Infrastructure,
     slug: "lorenzo",
-    title: "Lorenzo",
+    title: "Lorenzo stBTC",
     entityType: EntityType.LiquidStaking,
     live: LiveStatus.Deposits,
     staking: false,

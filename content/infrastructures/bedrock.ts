@@ -11,7 +11,7 @@ import {
 const bedrock: InfrastructureProject = {
     type: Type.Infrastructure,
     slug: "bedrock",
-    title: "Bedrock",
+    title: "Bedrock uniBTC",
     entityType: EntityType.LiquidStaking,
     live: LiveStatus.Deposits,
     staking: false,

@@ -10,7 +10,7 @@ import {
 const acorn: InfrastructureProject = {
     type: Type.Infrastructure,
     slug: "acorn",
-    title: "Acorn",
+    title: "Acorn aBTC",
     entityType: EntityType.LiquidStaking,
     live: LiveStatus.Deposits,
     staking: false,
@@ -22,8 +22,7 @@ const acorn: InfrastructureProject = {
     purpose: Purpose.General,
     associatedLayers: "-",
     bitcoinOnly: false,
-    links: [
-    ],
+    links: [],
     description: "Under review.",
     sections: [
         {

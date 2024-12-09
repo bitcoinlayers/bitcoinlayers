@@ -10,7 +10,7 @@ import {
 const unirouter: InfrastructureProject = {
     type: Type.Infrastructure,
     slug: "unirouter",
-    title: "UniRouter",
+    title: "UniRouter uBTC",
     entityType: EntityType.LiquidStaking,
     live: LiveStatus.Deposits,
     staking: false,
