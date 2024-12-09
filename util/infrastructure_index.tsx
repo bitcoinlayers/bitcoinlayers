@@ -19,7 +19,8 @@ import wbtcProject from "../content/infrastructures/wbtc";
 import cbbtcProject from "../content/infrastructures/cbbtc";
 import kbtcProject from "../content/infrastructures/kbtc";
 import solvProject from "../content/infrastructures/solv";
-import solvlstProject from "../content/infrastructures/solvlst";
+import solvbbnProject from "../content/infrastructures/solvbbn";
+import solvenaProject from "../content/infrastructures/solvena";
 import bedrockProject from "../content/infrastructures/bedrock";
 import pumpProject from "../content/infrastructures/pump";
 import fireProject from "../content/infrastructures/fire";
@@ -51,7 +52,8 @@ const wbtc: InfrastructureProject = wbtcProject;
 const cbbtc: InfrastructureProject = cbbtcProject;
 const kbtc: InfrastructureProject = kbtcProject;
 const solv: InfrastructureProject = solvProject;
-const solvlst: InfrastructureProject = solvlstProject;
+const solvbbn: InfrastructureProject = solvbbnProject;
+const solvena: InfrastructureProject = solvenaProject;
 const bedrock: InfrastructureProject = bedrockProject;
 const pump: InfrastructureProject = pumpProject;
 const fire: InfrastructureProject = fireProject;
@@ -82,7 +84,8 @@ export const allInfrastructures: InfrastructureProject[] = [
     astria,
     babylon,
     solv,
-    solvlst,
+    solvbbn,
+    solvena,
     bedrock,
     pump,
     fire,

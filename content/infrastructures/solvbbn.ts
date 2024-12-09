@@ -8,10 +8,10 @@ import {
     AssessmentCategory,
 } from "../props";
 
-const solvlst: InfrastructureProject = {
+const solvbbn: InfrastructureProject = {
     type: Type.Infrastructure,
-    slug: "solvlst",
-    title: "Solv LSTs",
+    slug: "solvbbn",
+    title: "Solv Solv.BBN",
     entityType: EntityType.LiquidStaking,
     live: LiveStatus.Deposits,
     staking: false,
@@ -42,7 +42,7 @@ const solvlst: InfrastructureProject = {
         },
     ],
     description:
-        "Solv LSTs offer a mechanism that enables users to deposit SolvBTC into smart contracts on EVM-based chains. Users receive a token representing BTC deposited on Babylon in exchange for their wrapped BTC token.",
+        "Solv.BBN offer a mechanism that enables users to deposit SolvBTC into smart contracts on EVM-based chains. Users receive a token representing BTC deposited on Babylon in exchange for their wrapped BTC token.",
     sections: [
         {
             id: "Economics",
@@ -82,9 +82,9 @@ const solvlst: InfrastructureProject = {
             category: AssessmentCategory.AssetCustody,
             score: 0,
             tier: "",
-            title: "Bitcoin assets used to back Solv LSTs are custodied by institutional providers",
+            title: "Bitcoin assets used to back Solv.BBN are custodied by institutional providers",
             content:
-                "Five entities proposedly custody the bitcoin assets backing Solv LST tokens. These entities are Antalpha, Cobo, Ceffu, Fireblocks and the Solv Guard. These entities are known as Guardians in the [Solv application](https://app.solv.finance/staking).\n\nCeffu and Cobo are the custodians for funds that are staked with Babylon.\n\n[Source](https://docs.solv.finance/staking-abstraction-layer-sal/the-ecological-view)",
+                "Five entities proposedly custody the bitcoin assets backing Solv.BBN tokens. These entities are Antalpha, Cobo, Ceffu, Fireblocks and the Solv Guard. These entities are known as Guardians in the [Solv application](https://app.solv.finance/staking).\n\nCeffu and Cobo are the custodians for funds that are staked with Babylon.\n\n[Source](https://docs.solv.finance/staking-abstraction-layer-sal/the-ecological-view)",
         },
         {
             category: AssessmentCategory.StakingType,
@@ -92,7 +92,7 @@ const solvlst: InfrastructureProject = {
             tier: "",
             title: "Stake is delegated to Babylon Finality Providers via Ceffu and Cobo",
             content:
-                "When a user exchanges SolvBTC for an LST token, this token is locked in a SolvBTC.LST smart contract on its respective chain. After this token deposit is confirmed, one of the guardians will exchange the wrapped BTC they received, swap it for native BTC, and then deposit bitcoin into Babylon on the users behalf. This role is also fulfilled by the Staking Validators.\n\nFor staking on Bitcoin, the custodians who stake user funds are Ceffu and Cobo. The majority of BTC is delegated to Solv Protocol's Babylon Finality Provider, but there has been delegation to other [operators](https://x.com/SolvProtocol/status/1843768604011143590).\n\nLearn more about delegated staking here.",
+                "When a user exchanges SolvBTC for an LST token, this token is locked in a SolvBTC.BBN smart contract on its respective chain. After this token deposit is confirmed, one of the guardians will exchange the wrapped BTC they received, swap it for native BTC, and then deposit bitcoin into Babylon on the users behalf. This role is also fulfilled by the Staking Validators.\n\nFor staking on Bitcoin, the custodians who stake user funds are Ceffu and Cobo. The majority of BTC is delegated to Solv Protocol's Babylon Finality Provider, but there has been delegation to other [operators](https://x.com/SolvProtocol/status/1843768604011143590).\n\nLearn more about delegated staking here.",
         },
         {
             category: AssessmentCategory.SlashingRisk,
@@ -105,4 +105,4 @@ const solvlst: InfrastructureProject = {
     ],
 };
 
-export default solvlst;
+export default solvbbn;
