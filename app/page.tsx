@@ -11,7 +11,7 @@ export default async function Home() {
         <div className="mx-auto space-y-8">
             <ViewToggleGroup showAll={false} />
             <ChartSwitch />
-            <StatCardGrid />
+            {/* <StatCardGrid /> */}
             <TableSwitch />
             <CtaCard />
             <LiquidStakingTableSwitch />
