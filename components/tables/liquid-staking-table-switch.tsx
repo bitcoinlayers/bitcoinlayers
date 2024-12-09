@@ -54,7 +54,7 @@ export default function LiquidStakingTableSwitch() {
                     showLegend={false}
                     chartHeight="h-64"
                 />
-                <LiquidStakingStatCardGrid />
+                {/* <LiquidStakingStatCardGrid /> */}
                 <LiquidStakingTable
                     data={sortedLiquidStaking}
                     headers={liquidStakingHeaders}
