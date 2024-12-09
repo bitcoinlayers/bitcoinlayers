@@ -26,6 +26,11 @@ import fireProject from "../content/infrastructures/fire";
 import bitcoinosProject from "../content/infrastructures/bitcoinos";
 import binancebtcbProject from "../content/infrastructures/binancebtcb";
 import unirouterProject from "../content/infrastructures/unirouter";
+import acornProject from "../content/infrastructures/acorn";
+import babypieProject from "../content/infrastructures/babypie";
+import chakraProject from "../content/infrastructures/chakra";
+import kinzaProject from "../content/infrastructures/kinza";
+import pstakeProject from "../content/infrastructures/pstake";
 
 const astria: InfrastructureProject = astriaProject;
 const avail: InfrastructureProject = availProject;
@@ -53,6 +58,11 @@ const fire: InfrastructureProject = fireProject;
 const bitcoinos: InfrastructureProject = bitcoinosProject;
 const binancebtcb: InfrastructureProject = binancebtcbProject;
 const unirouter: InfrastructureProject = unirouterProject;
+const acorn: InfrastructureProject = acornProject;
+const babypie: InfrastructureProject = babypieProject;
+const chakra: InfrastructureProject = chakraProject;
+const kinza: InfrastructureProject = kinzaProject;
+const pstake: InfrastructureProject = pstakeProject;
 
 export const allInfrastructures: InfrastructureProject[] = [
     lombard,
@@ -79,6 +89,11 @@ export const allInfrastructures: InfrastructureProject[] = [
     bitcoinos,
     binancebtcb,
     unirouter,
+    acorn,
+    babypie,
+    chakra,
+    kinza,
+    pstake,
 ];
 
 export const allInfrastructureSlugs: string[] = allInfrastructures.map(
