@@ -10,7 +10,7 @@ import {
 const chakra: InfrastructureProject = {
     type: Type.Infrastructure,
     slug: "chakra",
-    title: "Chakra",
+    title: "Chakra stBTC",
     entityType: EntityType.LiquidStaking,
     live: LiveStatus.Deposits,
     staking: false,
@@ -22,8 +22,7 @@ const chakra: InfrastructureProject = {
     purpose: Purpose.General,
     associatedLayers: "-",
     bitcoinOnly: false,
-    links: [
-    ],
+    links: [],
     description: "Under review.",
     sections: [
         {

@@ -10,7 +10,7 @@ import {
 const pstake: InfrastructureProject = {
     type: Type.Infrastructure,
     slug: "pstake",
-    title: "Pstake",
+    title: "Pstake yBTC",
     entityType: EntityType.LiquidStaking,
     live: LiveStatus.Deposits,
     staking: false,
@@ -22,8 +22,7 @@ const pstake: InfrastructureProject = {
     purpose: Purpose.General,
     associatedLayers: "-",
     bitcoinOnly: false,
-    links: [
-    ],
+    links: [],
     description: "Under review.",
     sections: [
         {
