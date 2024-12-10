@@ -137,15 +137,15 @@ section {
         --chart-rootstock: 229 71% 67%;
         --chart-stacks: 271 100% 71%;
         /* Staking */
-        --chart-lombard: 172 62% 51%;
-        --chart-lorenzo: 205 29% 41%;
+        --chart-lombard-lbtc: 172 62% 51%;
+        --chart-lorenzo-stbtc: 205 29% 41%;
         --chart-solv-solvbbn: 27 90% 56%;
         --chart-solv-solvena: 263 99% 65%;
-        --chart-pump: 216 75% 51%;
-        --chart-bedrock: 299 36% 56%;
-        --chart-unirouter: 274 100% 50%;
+        --chart-pump-pumpbtc: 216 75% 51%;
+        --chart-bedrock-unibtc: 299 36% 56%;
+        --chart-unirouter-ubtc: 274 100% 50%;
         --chart-babylon: 27 90% 56%;
-        --chart-acorn: 126 63% 13%;
+        --chart-acorn-abtc: 126 63% 13%;
         --chart-kinza-kbtc: 47 75% 56%;
         --chart-babypie-mbtc: 178 45% 21%;
         /* Crosschain BTC */
