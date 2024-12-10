@@ -10,7 +10,7 @@ import {
 const kinza: InfrastructureProject = {
     type: Type.Infrastructure,
     slug: "kinza",
-    title: "Kinza",
+    title: "Kinza kBTC",
     entityType: EntityType.LiquidStaking,
     live: LiveStatus.Deposits,
     staking: false,
@@ -22,8 +22,7 @@ const kinza: InfrastructureProject = {
     purpose: Purpose.General,
     associatedLayers: "-",
     bitcoinOnly: false,
-    links: [
-    ],
+    links: [],
     description: "Under review.",
     sections: [
         {
