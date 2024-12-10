@@ -10,7 +10,7 @@ import {
 const babypie: InfrastructureProject = {
     type: Type.Infrastructure,
     slug: "babypie",
-    title: "Babypie",
+    title: "Babypie mBTC",
     entityType: EntityType.LiquidStaking,
     live: LiveStatus.Deposits,
     staking: false,
@@ -22,8 +22,7 @@ const babypie: InfrastructureProject = {
     purpose: Purpose.General,
     associatedLayers: "-",
     bitcoinOnly: false,
-    links: [
-    ],
+    links: [],
     description: "Under review.",
     sections: [
         {
