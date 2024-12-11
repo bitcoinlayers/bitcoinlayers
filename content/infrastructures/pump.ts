@@ -94,22 +94,15 @@ const pump: InfrastructureProject = {
             tier: "",
             title: "PumpBTC works with custodians to store bitcoin assets",
             content:
-                "PumpBTC works with custodial providers to store the BTC that matches PumpBTC deposits. When a user deposits a wrapped bitcoin token into the PumpBTC contract, they are given PumpBTC in return.\n\nAfter receiving the deposit, an operator (likely one of the custodians) of the contract then manually exchanges wrapped bitcoin for native bitcoin to deposit onto Babylon.\n\nCobo and Coinover have been mentioned as custodians participating in Pump.",
-        },
-        {
-            category: AssessmentCategory.StakingType,
-            score: 0,
-            tier: "",
-            title: "Custodians deposit users' BTC on their behalf",
-            content:
-                "The aforementioned custodians are responsible for delegating BTC on users’ behalf. When they exchange wrapped bitcoin for native bitcoin, they then take the newly acquired bitcoin to stake into the Babylon protocol.\n\n🔬 Babylon’s staking protocol is not currently live. It is only accepting deposits.",
+                "PumpBTC works with custodial providers to store the BTC that matches PumpBTC deposits. When a user deposits a wrapped bitcoin token into the PumpBTC contract, they are given PumpBTC in return.\n\nAfter receiving the deposit, an operator (likely one of the custodians) of the contract then manually exchanges wrapped bitcoin for native bitcoin to deposit onto Babylon.\n\nCobo and Coinover have been mentioned as operators participating in Pump.",
         },
         {
             category: AssessmentCategory.SlashingRisk,
             score: 0,
             tier: "",
-            title: "Slashing is done via Babylon, but is not currently live",
-            content: "🔬 Babylon’s staking protocol is not currently live.",
+            title: "Slashing enforced by Babylon. Slashing on Babylon is not currently live",
+            content:
+                "Users’ slashing risk will be a result of PoS validators, whom their tokens are delegated to, getting slashed. Slashing is not currently live on Babylon.",
         },
     ],
 };

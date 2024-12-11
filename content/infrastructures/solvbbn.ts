@@ -84,7 +84,7 @@ const solvbbn: InfrastructureProject = {
             tier: "",
             title: "Bitcoin assets used to back Solv.BBN are custodied by institutional providers",
             content:
-                "Five entities proposedly custody the bitcoin assets backing Solv.BBN tokens. These entities are Antalpha, Cobo, Ceffu, Fireblocks and the Solv Guard. These entities are known as Guardians in the [Solv application](https://app.solv.finance/staking).\n\nCeffu and Cobo are the custodians for funds that are staked with Babylon.\n\n[Source](https://docs.solv.finance/staking-abstraction-layer-sal/the-ecological-view)",
+                "Five entities custody the bitcoin assets backing Solv.BBN tokens. These entities are Antalpha, Cobo, Ceffu, Fireblocks and the Solv Guard. These entities are known as Guardians in the [Solv application](https://app.solv.finance/staking).\n\nCeffu and Cobo are the custodians for funds that are staked with Babylon.\n\n[Source](https://docs.solv.finance/staking-abstraction-layer-sal/the-ecological-view)",
         },
         {
             category: AssessmentCategory.StakingType,

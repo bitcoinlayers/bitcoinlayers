@@ -89,15 +89,7 @@ const lombard: InfrastructureProject = {
             tier: "",
             title: "Users trust a network of custodians with the custody of their BTC",
             content:
-                "When users deposit BTC into the Lombard protocol, their assets are held in a Bitcoin address stored in a secured hardware. This address is controlled by Lombard’s Security Consortium, a federated network of operators responsible for controlling funds in the deposit address, as well as staking the BTC on users behalf.\n\nLombard’s Security Consortium participates in a consensus protocol. The node implementation is viewable here.\n\n🚨 The members of the Lombard Security Consortium have not been publicly disclosed.",
-        },
-        {
-            category: AssessmentCategory.StakingType,
-            score: 0,
-            tier: "",
-            title: "Deposits are made on users behalf",
-            content:
-                "Users trust the Lombard Security Consortium to deposit BTC on their behalf.",
+                "When users deposit BTC into the Lombard protocol, their assets are held in a Bitcoin address stored in a secured hardware. This address is controlled by Lombard’s Security Consortium, a federated network of operators responsible for controlling funds in the deposit address, as well as staking the BTC on users behalf.\n\nLombard’s Security Consortium participates in a consensus protocol.\n\n🚨 The members of the Lombard Security Consortium have not been publicly disclosed.",
         },
         {
             category: AssessmentCategory.SlashingRisk,

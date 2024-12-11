@@ -66,7 +66,7 @@ const bedrock: InfrastructureProject = {
                 {
                     title: "Smart contracts have undergone audits",
                     content:
-                        "These operators can censor users from using the contracts, inflate the supply of uniBTC, and steal the funds locked in the vault.\n\nUsers can verify the various implementations of uniBTC’s vault and token contracts on the chains they’re deployed on.\n\nuniBTC has gone through two audits. However, the protocol was exploited after these audits.\n\n⚠️ Audits of smart contracts do not mean exploits are not possible. Users should not deposit more funds than they’re willing to lose.",
+                        "Users can verify the various implementations of uniBTC’s vault and token contracts on the chains they’re deployed on.\n\nuniBTC has gone through two audits. However, the protocol was exploited after these audits.\n\n⚠️ Audits of smart contracts do not mean exploits are not possible. Users should not deposit more funds than they’re willing to lose.",
                 },
             ],
         },
@@ -107,7 +107,7 @@ const bedrock: InfrastructureProject = {
             tier: "",
             title: "Deposits are made by a third party. We are currently reviewing who deposits funds on users’ behalf",
             content:
-                "Deposits into Babylon, via Bedrock, are done by a third party custodian.\n\nPer Bedrock’s documentation, there is no mention of the custodian who custodies BTC tokens on their behalf to deposit into Babylon. Typically, when a user locks BTC into a liquid staking contract, a third party takes these funds and deposits them into Babylon’s on their behalf.\n\n🔬 We're currently researching who the custodian, responsible for delegating stake, is in the uniBTC model.",
+                "Deposits into Babylon, via Bedrock, are done by a third party custodian.\n\nPer Bedrock’s documentation, there is no mention of the custodian who custodies BTC tokens on their behalf to deposit into Babylon. Typically, when a user locks BTC into a liquid staking contract, a third party takes these funds and deposits them into Babylon’s on their behalf.\n\n🔬 We're currently researching who the operator, responsible for delegating stake, is in the uniBTC model.",
         },
         {
             category: AssessmentCategory.SlashingRisk,
@@ -115,7 +115,7 @@ const bedrock: InfrastructureProject = {
             tier: "",
             title: "Slashing enforced by Babylon. Slashing on Babylon is not currently live",
             content:
-                "Users’ slashing risk will be a result of PoS validators, whom their tokens are delegated to, getting slashed. Slashing is not currently live on Babylon.🔬 We're currently researching if user funds are eventually deployed onto Babylon.",
+                "Users’ slashing risk will be a result of PoS validators, whom their tokens are delegated to, getting slashed. Slashing is not currently live on Babylon.",
         },
     ],
 };
