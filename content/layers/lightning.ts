@@ -41,39 +41,39 @@ const lightning: LayerProject = {
         },
     ],
     description:
-        "The Lightning Network (sometimes known as Lightning) is a payment-channel-based Layer 2 for payments. It enables users to open a payment channel with a counterparty and make an unlimited number of payments within the channel. It also enables users to route payments across a network of these channels to users outside of their specific channel.",
+        "The Lightning Network (often called Lightning) is a payment-channel-based Layer 2 protocol built on bitcoin. It enables users to open a payment channel with a counterparty and make an unlimited number of offchain payments within the channel. By routing payments across a network of interconnected nodes, users can reach recipients outside their specific channel. Optimized for high-frequency microtransactions, it addresses Bitcoin’s scalability challenges while maintaining decentralization and security.",
     riskAnalysis: [
         {
             category: RiskCategory.BtcCustody,
             score: 0,
             tier: RiskFactor.Low,
-            title: "Users custody their funds with their counterparty",
+            title: "Funds are secured in a 2-2 multisig with unilateral exit support for each counterparty",
             content:
-                "When a user opens a payment channel, they deposit their funds into a 2-2 multi-signature address with their counterparty via an onchain Bitcoin transaction. This address holds the funds that are transferred within the channel, and users can collaboratively exit a channel by agreeing on a final state before signing off on withdrawals.\n\nIf a channel counterparty is unresponsive to a cooperative channel closure attempt, then users can unilaterally exit the channel by spending an uncooperative channel closure transaction onchain. There is a challenge-response mechanism to settle potential disputes between channel counterparties over the final state of a channel closure transaction.",
+                "When users open a payment channel, funds are deposited onchain into a 2-of-2 multisig address shared between the respective channel counterparties. \n\nUsers can collaboratively close a channel by signing and broadcasting a closing transaction which distributes the funds on bitcoin L1 based on the latest channel state. \n\nIf a counterparty is unresponsive during a cooperative channel closure attempt, a user can unilaterally enforce the process by broadcasting the most recent commitment transaction representing the latest balance distribution. There is a challenge-response mechanism to settle potential disputes between channel counterparties over the final state of a channel closure transaction.",
         },
         {
             category: RiskCategory.DataAvailability,
             score: 0,
             tier: RiskFactor.Low,
-            title: "Users are responsible for fulfilling the data availability requirement. State data is self-hosted by default",
+            title: "Channel state data is self-hosted by users",
             content:
-                "Lightning users must be responsible for their own data availability, rather than relying on a network of nodes to complete this function. If users irrecoverably lose their channel state data, then they will lose all of the funds they had in the channel.",
+                "Lightning Network users are solely responsible for preserving their channel state data, as the network does not provide data redundancy. Failure to maintain this data could result in a complete loss of funds stored in the channel.",
         },
         {
             category: RiskCategory.NetworkOperators,
             score: 0,
             tier: RiskFactor.Low,
-            title: "Lightning transactions are done via a peer-to-peer network",
+            title: "Network operators run nodes to route Lightning payments, with node operation being permissionless. Single-node failures do not compromise payment reliability",
             content:
-                "In a payment channel, users interact in a peer-to-peer fashion, meaning no sequencer or block builder is needed. If a user wants to transfer funds to someone who is not in their specific channel, they can route their payment across a network of nodes to reach the receiver. If a channel counterparty fails to route the payment, the user will have to go through another channel (if they have another open, and there is a route to the recipient) or back onchain to transfer funds to the intended recipient.\n\nRouted payments are atomic, meaning all components of the transaction either fully succeed or fail together.\n\nLightning Network transactions are only considered final when a channel is closed. Bitcoin consensus enforces this closure as it would any other transaction. When closing a channel, users can collaboratively sign off on a final state, have this state validated by Bitcoin consensus, and then proceed to withdraw their funds.",
+                "Users in the Lightning Network interact directly with their channel counterparties, bypassing the need for block builders or sequencers. Payments to other recipients are routed through a decentralized network of nodes. \n\nIf a route fails due to a node operator being offline, users can route via an alternative channel.",
         },
         {
             category: RiskCategory.FinalityGuarantees,
             score: 0,
             tier: RiskFactor.Low,
-            title: "Transactions settle instantly. Routed transactions are atomic",
+            title: "Lightning transactions are atomic and settle instantly. Finality occurs with channel closure",
             content:
-                "Transactions on the Lightning Network happen atomically via HTLCs. Once confirmed, they cannot be reversed. Users can also ensure finality when closing a channel with their counterparty.",
+                "Transactions on the Lightning Network use HTLCs to ensure atomicity, meaning they either succeed completely or fail entirely. Once settled, they are irreversible. Finality occurs only when a channel is closed, at which point the agreed-upon state is validated and enforced by Bitcoin consensus, allowing for fund withdrawal.",
         },
     ],
     sections: [
@@ -84,12 +84,12 @@ const lightning: LayerProject = {
                 {
                     title: "Settlement is finalized by Bitcoin consensus",
                     content:
-                        "As mentioned in the risk analysis, settlement is optimistically finalized by Bitcoin consensus.",
+                        "Settlement is optimistically finalized through bitcoin consensus.",
                 },
                 {
                     title: "The protocol does not enable MEV on Bitcoin",
                     content:
-                        "Lightning does not enable malicious forms of MEV on Bitcoin. Since all transactions are done offchain within a payment channel, miners are unable to influence the ordering of transactions done via Lightning.",
+                        "Lightning does not enable malicious MEV on Bitcoin because all transactions occur off-chain, leaving miners unable to influence transaction ordering.",
                 },
                 {
                     title: "No alternative token needed for network security",
@@ -99,18 +99,7 @@ const lightning: LayerProject = {
                 {
                     title: "Opening and closing channels contributes to the security budget",
                     content:
-                        "Lightning does not directly contribute to Bitcoin’s security budget, but users do pay onchain transaction fees to miners when they open, and close, Lightning channels. .",
-                },
-            ],
-        },
-        {
-            id: "additionalconsiderations",
-            title: "Additional Considerations",
-            content: [
-                {
-                    title: "UX friction leading users to centralized solutions",
-                    content:
-                        "Non-technical users may find it difficult to self-host their own Lightning node, which can lead them to use custodial solutions. This can lead to a centralization of the network, as users are not interacting directly. A 2024 report from River found that 80% of Lightning Network liquidity is in channels hosted by centralized service providers.",
+                        "Lightning does not directly contribute to bitcoin’s security budget, but users do pay onchain transaction fees to miners when opening and closing LN channels.",
                 },
             ],
         },
@@ -121,7 +110,7 @@ const lightning: LayerProject = {
                 {
                     title: "Users can unilaterally withdraw their funds with optimistic settlement guarantees",
                     content:
-                        "Users can close a channel and withdraw their funds at any time. They can close a channel collaboratively with their counterparty by agreeing on the final state of the channel and withdrawing their balances to their respective addresses. A malicious user can attempt to steal channel funds by submitting a channel closure transaction with an old state.\n\nIf the counterparty, or their watchtower, is online during the challenge period, then they can submit a challenge transaction onchain that will stop the theft attempt and sweep the full balance of the channel that was incorrectly closed.",
+                        "Collaborative closure: Users can close a channel collaboratively by agreeing on the final state of the channel and withdraw funds directly to their respective onchain addresses. \n\nUnilateral closure: A malicious user may attempt to steal channel funds by broadcasting an outdated channel state. If the counterparty (or their watchtower) is online, they can broadcast a penalty transaction onchain using the revocation secret to counteract the fraud attempt, reclaims the full channel balance, and penalizes the malicious actor.",
                 },
             ],
         },
@@ -132,17 +121,17 @@ const lightning: LayerProject = {
                 {
                     title: "Payment channels",
                     content:
-                        "Payment channels are 2-2 multi-signature addresses that enable two counterparties to lock funds into an address, and process an unlimited number of payments between each other. Payments are considered final when the parties withdraw their funds back onchain and close their channel. Creating and managing one or more payment channels lis how a user interacts with Lightning.",
+                        "Payment channels are 2-2 multisig addresses on bitcoin L1 that allow two counterparties to lock funds and process an unlimited number of offchain payments between each other. Payments achieve finality only when a channel is closed and funds are settled onchain. Opening and managing one or more payment channels is how a user interacts with the Lightning Network.",
                 },
                 {
-                    title: "Network routing",
+                    title: "Payment routing",
                     content:
-                        "Lightning is a network of various two-party payment channels. Users can route their payments across a variety of channels to reach a final destination (the recipient). Atomicity is enforced via a script that ensures that the transaction either reaches its intended recipient, or it fails entirely.",
+                        "The Lightning Network consists of interconnected two-party payment channels. Users can route payments across intermediary nodes to reach the intended recipient. Routing is enforced by HTLCs, ensuring payment atomicity and security.",
                 },
                 {
                     title: "Hashed Timelock Contracts (HTLCs)",
                     content:
-                        "HTLCs are smart contracts that ensure conditional and atomic payments. HTLCs are used in Lightning to enable transaction routing across multiple nodes. These contracts are designed in a way that sees routed payments happen atomically; meaning the payment either succeeds or fails entirely. Routing nodes are unable to misappropriate funds as they are unable to reveal a secret preimage which is conditional to the transaction being finalized. Only the intended receiver has access to the secret preimage which was created when they generated the transaction’s invoice.",
+                        "Hashed Timelock Contracts (HTLCs) are smart contracts that enable atomic and conditional payments on the Lightning Network. They lock funds using two conditions: a cryptographic hash and a time limit. To unlock the funds, the recipient must provide the secret preimage matching the hash; otherwise, funds are returned automatically to the sender after the time limit expires. HTLCs facilitate secure payment routing across multiple nodes, ensuring funds cannot be misappropriated by intermediaries. The preimage, created by the recipient when generating an invoice, ensures that only they can complete the payment.",
                 },
             ],
         },
@@ -153,12 +142,23 @@ const lightning: LayerProject = {
                 {
                     title: "Micro-transactions",
                     content:
-                        "With its low fees, Lightning is well-suited for small or high frequency transactions.",
+                        "Once channels are established, payments occur offchain without requiring paying fees for bitcoin miners, enabling low-cost transactions. This makes Lightning well-suited for small, high frequency transactions.",
                 },
                 {
                     title: "Faster transactions",
                     content:
-                        "With its near-immediate confirmations due to being offchain and using P2P consensus, Lightning is well-suited for fast transactions.",
+                        "With near-instant confirmations enabled through offchain processing and p2p consensus, Lightning is optimized for rapid payments.",
+                },
+            ],
+        },
+        {
+            id: "additionalconsiderations",
+            title: "Additional Considerations",
+            content: [
+                {
+                    title: "UX friction leading users to centralized solutions",
+                    content:
+                        "Non-technical users can find it challenging to self-host a Lightning node, often driving them towards custodial solutions. This trend contributes to liquidity and network centralization, as users rely on intermediaries instead of interacting directly. A 2024 report from River found that 80% of Lightning Network liquidity resides in channels managed by centralized service providers.",
                 },
             ],
         },
