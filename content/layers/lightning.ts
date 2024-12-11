@@ -41,7 +41,7 @@ const lightning: LayerProject = {
         },
     ],
     description:
-        "The Lightning Network (often called Lightning) is a payment-channel-based Layer 2 protocol built on bitcoin. It enables users to open a payment channel with a counterparty and make an unlimited number of offchain payments within the channel. By routing payments across a network of interconnected nodes, users can reach recipients outside their specific channel. Optimized for high-frequency microtransactions, it addresses Bitcoin’s scalability challenges while maintaining decentralization and security.",
+        "The Lightning Network (often called Lightning) is a payment-channel-based Layer 2 protocol built on bitcoin. It enables users to open a payment channel with a counterparty and make an unlimited number of offchain payments within the channel. By routing payments across a network of interconnected nodes, users can reach recipients outside their specific channel.",
     riskAnalysis: [
         {
             category: RiskCategory.BtcCustody,
@@ -65,7 +65,7 @@ const lightning: LayerProject = {
             tier: RiskFactor.Low,
             title: "Network operators run nodes to route Lightning payments, with node operation being permissionless. Single-node failures do not compromise payment reliability",
             content:
-                "Users in the Lightning Network interact directly with their channel counterparties, bypassing the need for block builders or sequencers. Payments to other recipients are routed through a decentralized network of nodes. \n\nIf a route fails due to a node operator being offline, users can route via an alternative channel.",
+                "Users in the Lightning Network interact directly with their channel counterparties, bypassing the need for block builders or sequencers. Payments to other recipients are routed through a decentralized network of nodes.\n\nIf a route fails due to a node operator being offline, users can route via an alternative channel.",
         },
         {
             category: RiskCategory.FinalityGuarantees,
@@ -73,7 +73,7 @@ const lightning: LayerProject = {
             tier: RiskFactor.Low,
             title: "Lightning transactions are atomic and settle instantly. Finality occurs with channel closure",
             content:
-                "Transactions on the Lightning Network use HTLCs to ensure atomicity, meaning they either succeed completely or fail entirely. Once settled, they are irreversible. Finality occurs only when a channel is closed, at which point the agreed-upon state is validated and enforced by Bitcoin consensus, allowing for fund withdrawal.",
+                "Transactions on the Lightning Network use HTLCs to ensure atomicity, meaning they either succeed completely or fail entirely. Once settled, they are irreversible. Finality on Bitcoin occurs only when a channel is closed, at which point the agreed-upon state is validated and enforced by Bitcoin consensus, allowing for fund withdrawal.",
         },
     ],
     sections: [
@@ -110,7 +110,7 @@ const lightning: LayerProject = {
                 {
                     title: "Users can unilaterally withdraw their funds with optimistic settlement guarantees",
                     content:
-                        "Collaborative closure: Users can close a channel collaboratively by agreeing on the final state of the channel and withdraw funds directly to their respective onchain addresses. \n\nUnilateral closure: A malicious user may attempt to steal channel funds by broadcasting an outdated channel state. If the counterparty (or their watchtower) is online, they can broadcast a penalty transaction onchain using the revocation secret to counteract the fraud attempt, reclaims the full channel balance, and penalizes the malicious actor.",
+                        "Collaborative closure: Users can close a channel collaboratively by agreeing on the final state of the channel and withdraw funds directly to their respective onchain addresses.\n\nUnilateral closure: A malicious user may attempt to steal channel funds by broadcasting an outdated channel state. If the counterparty (or their watchtower) is online, they can broadcast a penalty transaction onchain using the revocation secret to counteract the fraud attempt, reclaims the full channel balance, and penalizes the malicious actor.",
                 },
             ],
         },
