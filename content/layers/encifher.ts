@@ -47,11 +47,12 @@ const encifher: LayerProject = {
         "Encifher is building a bitcoin scaling solution supported by FHE.",
     riskAnalysis: [
         {
-            category: RiskCategory.UnilateralExits,
+            category: RiskCategory.BtcCustody,
             score: 0,
             tier: "",
             title: "",
             content: "",
+            pegs: [],
         },
         {
             category: RiskCategory.DataAvailability,

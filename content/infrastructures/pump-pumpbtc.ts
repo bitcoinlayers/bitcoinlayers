@@ -10,7 +10,7 @@ import {
 
 const pump: InfrastructureProject = {
     type: Type.Infrastructure,
-    slug: "pump",
+    slug: "pump-pumpbtc",
     title: "Pump pumpBTC",
     entityType: EntityType.LiquidStaking,
     live: LiveStatus.Deposits,

@@ -7,10 +7,10 @@ import {
     Site,
 } from "../props";
 
-const chakra: InfrastructureProject = {
+const lorenzo: InfrastructureProject = {
     type: Type.Infrastructure,
-    slug: "chakra",
-    title: "Chakra stBTC",
+    slug: "lorenzo-stbtc",
+    title: "Lorenzo stBTC",
     entityType: EntityType.LiquidStaking,
     live: LiveStatus.Deposits,
     staking: false,
@@ -22,7 +22,28 @@ const chakra: InfrastructureProject = {
     purpose: Purpose.General,
     associatedLayers: "-",
     bitcoinOnly: false,
-    links: [],
+    links: [
+        {
+            text: Site.Website,
+            url: "https://lorenzo-protocol.xyz",
+        },
+        {
+            text: Site.Docs,
+            url: "https://docs.lorenzo-protocol.xyz",
+        },
+        {
+            text: Site.Explorer,
+            url: "https://scan.lorenzo-protocol.xyz",
+        },
+        {
+            text: Site.GitHub,
+            url: "https://github.com/Lorenzo-Protocol",
+        },
+        {
+            text: Site.Twitter,
+            url: "https://x.com/LorenzoProtocol",
+        },
+    ],
     description: "Under review.",
     sections: [
         {
@@ -38,4 +59,4 @@ const chakra: InfrastructureProject = {
     ],
 };
 
-export default chakra;
+export default lorenzo;

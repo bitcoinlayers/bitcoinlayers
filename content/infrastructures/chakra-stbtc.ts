@@ -7,10 +7,10 @@ import {
     Site,
 } from "../props";
 
-const babypie: InfrastructureProject = {
+const chakra: InfrastructureProject = {
     type: Type.Infrastructure,
-    slug: "babypie",
-    title: "Babypie mBTC",
+    slug: "chakra-stbtc",
+    title: "Chakra stBTC",
     entityType: EntityType.LiquidStaking,
     live: LiveStatus.Deposits,
     staking: false,
@@ -38,4 +38,4 @@ const babypie: InfrastructureProject = {
     ],
 };
 
-export default babypie;
+export default chakra;

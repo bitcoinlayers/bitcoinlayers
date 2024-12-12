@@ -58,10 +58,69 @@ const merlin: LayerProject = {
         {
             category: RiskCategory.BtcCustody,
             score: 0,
-            tier: RiskFactor.VeryHigh,
-            title: "Users deposit funds into a MPC wallet managed by a custodian",
-            content:
-                "When users deposit funds into Merlin, they deposit funds into a MPC wallet managed by Cobo, a institutional custodian. Information on how many signers participate in this MPC scheme is not available. Merlin has stated that more players are being added into this custody scheme.\n\n🔬We are currently reviewing the signers for the Merlin two-way peg.",
+            tier: RiskFactor.NotApplicable,
+            title: "",
+            content: "",
+            pegs: [
+                {
+                    name: "Merlin MBTC",
+                    infrastructureSlug: "merlin-mbtc",
+                    score: 0,
+                    tier: RiskFactor.VeryHigh,
+                    title: "Users deposit funds into a MPC wallet managed by a custodian",
+                    content:
+                        "When users deposit funds into Merlin, they deposit funds into a MPC wallet managed by Cobo, a institutional custodian. Information on how many signers participate in this MPC scheme is not available. Merlin has stated that more players are being added into this custody scheme.\n\n🔬We are currently reviewing the signers for the Merlin two-way peg.",
+                },
+                {
+                    name: "Bedrock uniBTC",
+                    infrastructureSlug: "bedrock-unibtc",
+                    score: 0,
+                    tier: RiskFactor.VeryHigh,
+                    title: "",
+                    content: "",
+                },
+                {
+                    name: "Lorenzo stBTC",
+                    infrastructureSlug: "lorenzo-stbtc",
+                    score: 0,
+                    tier: RiskFactor.VeryHigh,
+                    title: "",
+                    content: "",
+                },
+                {
+                    name: "Solv SolvBTC",
+                    infrastructureSlug: "solv-solvbtc",
+                    score: 0,
+                    tier: RiskFactor.VeryHigh,
+                    title: "",
+                    content: "",
+                },
+                {
+                    name: "Solv SolvBTC.BBN",
+                    infrastructureSlug: "solv-solvbtcbbn",
+                    score: 0,
+                    tier: RiskFactor.VeryHigh,
+                    title: "",
+                    content: "",
+                },
+                {
+                    name: "Solv SolvBTC.ENA",
+                    infrastructureSlug: "solv-solvbtcena",
+                    score: 0,
+                    tier: RiskFactor.VeryHigh,
+                    title: "",
+                    content: "",
+                },
+                {
+                    name: "BitGo wBTC",
+                    infrastructureSlug: "bitgo-wbtc",
+                    score: 0,
+                    tier: RiskFactor.VeryHigh,
+                    title: "Centralized custody model",
+                    content:
+                        "wBTC relies on a consortium of custodians to maintain BTC collateral. Users trust that custodians will not mismanage or steal their funds.",
+                },
+            ],
         },
         {
             category: RiskCategory.DataAvailability,

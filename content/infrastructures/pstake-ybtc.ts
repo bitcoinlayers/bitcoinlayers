@@ -9,7 +9,7 @@ import {
 
 const pstake: InfrastructureProject = {
     type: Type.Infrastructure,
-    slug: "pstake",
+    slug: "pstake-ybtc",
     title: "Pstake yBTC",
     entityType: EntityType.LiquidStaking,
     live: LiveStatus.Deposits,

@@ -7,10 +7,10 @@ import {
     Site,
 } from "../props";
 
-const solv: InfrastructureProject = {
+const fire: InfrastructureProject = {
     type: Type.Infrastructure,
-    slug: "solv",
-    title: "Solv SolvBTC",
+    slug: "firebitcoin-fbtc",
+    title: "Fire Bitcoin FBTC",
     entityType: EntityType.BTCWrapper,
     live: LiveStatus.Mainnet,
     staking: false,
@@ -20,31 +20,31 @@ const solv: InfrastructureProject = {
     riskFactors: ["", ""],
     nativeToken: "",
     purpose: Purpose.General,
-    associatedLayers: "Ethereum, BNB, Arbitrum, Avalanche, Merlin, BOB, Base",
+    associatedLayers: "EVM-based chains",
     bitcoinOnly: false,
     links: [
         {
             text: Site.Website,
-            url: "https://solv.finance",
+            url: "https://fbtc.com/",
         },
         {
             text: Site.Docs,
-            url: "https://docs.solv.finance",
+            url: "https://docs.fbtc.com",
         },
-        {
-            text: Site.Explorer,
-            url: "https://etherscan.io/token/0x7a56e1c57c7475ccf742a1832b028f0456652f97",
-        },
+        // {
+        //     text: Site.Explorer,
+        //     url: "https://docs.fbtc.com/",
+        // },
         {
             text: Site.GitHub,
-            url: "https://github.com/solv-finance",
+            url: "https://github.com/fbtc-xyz",
         },
         {
             text: Site.Twitter,
-            url: "https://x.com/SolvProtocol",
+            url: "https://x.com/IgnitionFBTC",
         },
     ],
-    description: "SolvBTC is a reserve asset. Solv also offers liquid staking.",
+    description: "Fire Bitcoin's FBTC is a wrapped version of BTC.",
     sections: [
         {
             id: "knowledgeBits",
@@ -52,11 +52,11 @@ const solv: InfrastructureProject = {
             content: [
                 {
                     title: "Learn more",
-                    content: "[Solv docs](https://docs.solv.finance/)",
+                    content: "[Fire Bitcoin docs](https://docs.fbtc.com/)",
                 },
             ],
         },
     ],
 };
 
-export default solv;
+export default fire;

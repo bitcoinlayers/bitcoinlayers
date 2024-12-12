@@ -7,10 +7,10 @@ import {
     Site,
 } from "../props";
 
-const unirouter: InfrastructureProject = {
+const babypie: InfrastructureProject = {
     type: Type.Infrastructure,
-    slug: "unirouter",
-    title: "UniRouter uBTC",
+    slug: "babypie-mbtc",
+    title: "Babypie mBTC",
     entityType: EntityType.LiquidStaking,
     live: LiveStatus.Deposits,
     staking: false,
@@ -20,38 +20,11 @@ const unirouter: InfrastructureProject = {
     riskFactors: ["", ""],
     nativeToken: "-",
     purpose: Purpose.General,
-    associatedLayers: "Bsquared Network",
+    associatedLayers: "-",
     bitcoinOnly: false,
-    links: [
-        {
-            text: Site.Website,
-            url: "https://unirouter.io",
-        },
-        {
-            text: Site.Docs,
-            url: "https://docs.unirouter.io",
-        },
-        {
-            text: Site.Explorer,
-            url: "https://explorer.bsquared.network/address/0x796e4D53067FF374B89b2Ac101ce0c1f72ccaAc2",
-        },
-        {
-            text: Site.Twitter,
-            url: "https://x.com/UniRouterBTC",
-        },
-    ],
-    description: "Under Review",
+    links: [],
+    description: "Under review.",
     sections: [
-        {
-            id: "contracts",
-            title: "Contract addresses",
-            content: [
-                {
-                    content:
-                        "[uBTC Bsquared smart contract](https://explorer.bsquared.network/address/0x796e4D53067FF374B89b2Ac101ce0c1f72ccaAc2)",
-                },
-            ],
-        },
         {
             id: "selfsubmit",
             title: "Process to self-submit information",
@@ -65,4 +38,4 @@ const unirouter: InfrastructureProject = {
     ],
 };
 
-export default unirouter;
+export default babypie;

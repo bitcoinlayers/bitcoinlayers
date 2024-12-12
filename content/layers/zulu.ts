@@ -51,11 +51,12 @@ const zulu: LayerProject = {
         "Zulu Network is building towards becoming a Bitvimium on Bitcoin that enables developers to deploy dApps on both EVM (ZKSync ZK Stack L2) & UTXO layers (Customized ZKVM L3). Zulu network is working on a trust-minimized decentralized bridge program and will leverage a unique hybrid PoS / PoW mining mechanism.",
     riskAnalysis: [
         {
-            category: RiskCategory.UnilateralExits,
+            category: RiskCategory.BtcCustody,
             score: 0,
             tier: "",
             title: "",
             content: "",
+            pegs: [],
         },
         {
             category: RiskCategory.DataAvailability,

@@ -58,7 +58,7 @@ const bob: LayerProject = {
             pegs: [
                 {
                     name: "Threshold tBTC",
-                    infrastructureSlug: "tbtc",
+                    infrastructureSlug: "threshold-tbtc",
                     score: 0,
                     tier: RiskFactor.High,
                     title: "Bitcoin users trust that tBTC will remain backed on Ethereum, and that the BOB bridge will not steal their funds",
@@ -67,12 +67,36 @@ const bob: LayerProject = {
                 },
                 {
                     name: "BitGo wBTC",
-                    infrastructureSlug: "wbtc",
+                    infrastructureSlug: "bitgo-wbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: "Centralized custody model",
                     content:
                         "wBTC relies on a consortium of custodians to maintain BTC collateral. Users trust that custodians will not mismanage or steal their funds.",
+                },
+                {
+                    name: "Bedrock uniBTC",
+                    infrastructureSlug: "bedrock-unibtc",
+                    score: 0,
+                    tier: RiskFactor.VeryHigh,
+                    title: "",
+                    content: "",
+                },
+                {
+                    name: "Solv SolvBTC",
+                    infrastructureSlug: "solv-solvbtc",
+                    score: 0,
+                    tier: RiskFactor.VeryHigh,
+                    title: "",
+                    content: "",
+                },
+                {
+                    name: "Solv SolvBTC.BBN",
+                    infrastructureSlug: "solv-solvbtcbbn",
+                    score: 0,
+                    tier: RiskFactor.VeryHigh,
+                    title: "",
+                    content: "",
                 },
             ],
         },

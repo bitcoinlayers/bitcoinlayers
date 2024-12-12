@@ -43,11 +43,12 @@ const bnzk: LayerProject = {
         "Bznk is working on using zk technology to improve Ordinals and BRC-20 trading.",
     riskAnalysis: [
         {
-            category: RiskCategory.UnilateralExits,
+            category: RiskCategory.BtcCustody,
             score: 0,
             tier: "",
             title: "",
             content: "",
+            pegs: [],
         },
         {
             category: RiskCategory.DataAvailability,

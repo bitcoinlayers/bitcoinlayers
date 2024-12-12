@@ -58,10 +58,20 @@ const satoshivm: LayerProject = {
         {
             category: RiskCategory.BtcCustody,
             score: 0,
-            tier: RiskFactor.Unverified,
-            title: "Two-way peg is managed by a third party",
-            content:
-                "SatoshiVM's bitcoin wallet for bridge deposits is managed by the Bool Network. Both the Bool Network and SatoshiVM bridge UIs deposit funds into the same Bitcoin address. The bitcoin bridge contract on SatoshiVM is upgradeable by a single EOA account.",
+            tier: RiskFactor.NotApplicable,
+            title: "",
+            content: "",
+            pegs: [
+                {
+                    name: "Bool bBTC",
+                    infrastructureSlug: "bool-bbtc",
+                    score: 0,
+                    tier: RiskFactor.Unverified,
+                    title: "Two-way peg is managed by a third party",
+                    content:
+                        "SatoshiVM's bitcoin wallet for bridge deposits is managed by the Bool Network. Both the Bool Network and SatoshiVM bridge UIs deposit funds into the same Bitcoin address. The bitcoin bridge contract on SatoshiVM is upgradeable by a single EOA account.",
+                },
+            ],
         },
         {
             category: RiskCategory.DataAvailability,

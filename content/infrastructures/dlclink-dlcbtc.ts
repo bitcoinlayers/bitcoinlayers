@@ -7,23 +7,45 @@ import {
     Site,
 } from "../props";
 
-const acorn: InfrastructureProject = {
+const dlclink: InfrastructureProject = {
     type: Type.Infrastructure,
-    slug: "acorn",
-    title: "Acorn aBTC",
-    entityType: EntityType.LiquidStaking,
-    live: LiveStatus.Deposits,
+    slug: "dlclink-dlcbtc",
+    title: "DLC Link dlcBTC",
+    entityType: EntityType.BTCWrapper,
+    live: LiveStatus.Mainnet,
     staking: false,
-    liquidStaking: true,
-    bridge: false,
+    liquidStaking: false,
+    bridge: true,
     underReview: true,
     riskFactors: ["", ""],
     nativeToken: "-",
     purpose: Purpose.General,
     associatedLayers: "-",
     bitcoinOnly: false,
-    links: [],
-    description: "Under review.",
+    links: [
+        {
+            text: Site.Website,
+            url: "https://www.dlcbtc.com",
+        },
+        {
+            text: Site.Docs,
+            url: "https://docs.dlcbtc.com/dlcbtc-documentation",
+        },
+        // {
+        //     text: Site.Explorer,
+        //     url: "https://github.com/dlc-link",
+        // },
+        {
+            text: Site.GitHub,
+            url: "https://github.com/dlc-link",
+        },
+        {
+            text: Site.Twitter,
+            url: "https://twitter.com/dlcbtc",
+        },
+    ],
+    description:
+        "DLC Link supports the development of dlcBTC, a Bitcoin wrapper that leverages discrete log contracts.",
     sections: [
         {
             id: "selfsubmit",
@@ -38,4 +60,4 @@ const acorn: InfrastructureProject = {
     ],
 };
 
-export default acorn;
+export default dlclink;

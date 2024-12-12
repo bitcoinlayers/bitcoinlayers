@@ -7,45 +7,23 @@ import {
     Site,
 } from "../props";
 
-const dlclink: InfrastructureProject = {
+const kinza: InfrastructureProject = {
     type: Type.Infrastructure,
-    slug: "dlclink",
-    title: "DLC Link dlcBTC",
-    entityType: EntityType.BTCWrapper,
-    live: LiveStatus.Mainnet,
+    slug: "kinza-kbtc",
+    title: "Kinza kBTC",
+    entityType: EntityType.LiquidStaking,
+    live: LiveStatus.Deposits,
     staking: false,
-    liquidStaking: false,
-    bridge: true,
+    liquidStaking: true,
+    bridge: false,
     underReview: true,
     riskFactors: ["", ""],
     nativeToken: "-",
     purpose: Purpose.General,
     associatedLayers: "-",
     bitcoinOnly: false,
-    links: [
-        {
-            text: Site.Website,
-            url: "https://www.dlcbtc.com",
-        },
-        {
-            text: Site.Docs,
-            url: "https://docs.dlcbtc.com/dlcbtc-documentation",
-        },
-        // {
-        //     text: Site.Explorer,
-        //     url: "https://github.com/dlc-link",
-        // },
-        {
-            text: Site.GitHub,
-            url: "https://github.com/dlc-link",
-        },
-        {
-            text: Site.Twitter,
-            url: "https://twitter.com/dlcbtc",
-        },
-    ],
-    description:
-        "DLC Link supports the development of dlcBTC, a Bitcoin wrapper that leverages discrete log contracts.",
+    links: [],
+    description: "Under review.",
     sections: [
         {
             id: "selfsubmit",
@@ -60,4 +38,4 @@ const dlclink: InfrastructureProject = {
     ],
 };
 
-export default dlclink;
+export default kinza;

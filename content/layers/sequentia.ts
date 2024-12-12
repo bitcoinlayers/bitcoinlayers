@@ -47,11 +47,12 @@ const sequentia: LayerProject = {
         "Sequentia is an upcoming Bitcoin sidechain that leverages the Elements codebase.",
     riskAnalysis: [
         {
-            category: RiskCategory.UnilateralExits,
+            category: RiskCategory.BtcCustody,
             score: 0,
             tier: "",
             title: "",
             content: "",
+            pegs: [],
         },
         {
             category: RiskCategory.DataAvailability,

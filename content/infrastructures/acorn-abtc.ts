@@ -7,10 +7,10 @@ import {
     Site,
 } from "../props";
 
-const kinza: InfrastructureProject = {
+const acorn: InfrastructureProject = {
     type: Type.Infrastructure,
-    slug: "kinza",
-    title: "Kinza kBTC",
+    slug: "acorn-abtc",
+    title: "Acorn aBTC",
     entityType: EntityType.LiquidStaking,
     live: LiveStatus.Deposits,
     staking: false,
@@ -38,4 +38,4 @@ const kinza: InfrastructureProject = {
     ],
 };
 
-export default kinza;
+export default acorn;

@@ -10,7 +10,7 @@ import {
 
 const lombard: InfrastructureProject = {
     type: Type.Infrastructure,
-    slug: "lombard",
+    slug: "lombard-lbtc",
     title: "Lombard LBTC",
     entityType: EntityType.LiquidStaking,
     live: LiveStatus.Deposits,

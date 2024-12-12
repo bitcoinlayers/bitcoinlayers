@@ -51,11 +51,21 @@ const nomic: LayerProject = {
         "Nomic is a Cosmos SDK Chain that enables users to leverage bitcoin in the Cosmos ecosystem.",
     riskAnalysis: [
         {
-            category: RiskCategory.UnilateralExits,
+            category: RiskCategory.BtcCustody,
             score: 0,
-            tier: "",
-            title: "Under Review",
+            tier: RiskFactor.NotApplicable,
+            title: "",
             content: "",
+            pegs: [
+                {
+                    name: "Nomic nBTC",
+                    infrastructureSlug: "nomic-nbtc",
+                    score: 0,
+                    tier: RiskFactor.UnderReview,
+                    title: "",
+                    content: "",
+                },
+            ],
         },
         {
             category: RiskCategory.DataAvailability,

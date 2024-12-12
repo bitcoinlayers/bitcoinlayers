@@ -47,11 +47,12 @@ const rooch: LayerProject = {
         "Rooch Network is building a MoveVM scaling solution to support new types of Bitcoin applications.",
     riskAnalysis: [
         {
-            category: RiskCategory.UnilateralExits,
+            category: RiskCategory.BtcCustody,
             score: 0,
             tier: "",
             title: "",
             content: "",
+            pegs: [],
         },
         {
             category: RiskCategory.DataAvailability,

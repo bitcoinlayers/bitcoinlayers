@@ -52,10 +52,20 @@ const arkonliquid: LayerProject = {
         {
             category: RiskCategory.BtcCustody,
             score: 0,
-            tier: RiskFactor.Unverified,
-            title: "Users enter a 2-of-2 multisig with the ASP that guarantees unilateral exit to L-BTC, but not to BTC",
-            content:
-                "The user deposits their L-BTC into a 2-of-2 multisig with the ASP, getting an off-chain VTXO in return. The setup allows the user to unilaterally exit back to the Liquid blockchain, ensuring self-custody of the funds, provided they exceed the minimum relay fee on the Liquid blockchain. However, the funds become custodial if the user fails to refresh their coins during the designated timeout period, enabling the ASP to sweep them. It is important to note that L-BTC cannot be exited unilaterally to BTC due to the federated nature of Liquid.\n\n🔬We are currently reviewing the signers for the Liquid two-way peg, which would affect this implementation of Ark.",
+            tier: RiskFactor.NotApplicable,
+            title: "",
+            content: "",
+            pegs: [
+                {
+                    name: "Threshold tBTC",
+                    infrastructureSlug: "threshold-tbtc",
+                    score: 0,
+                    tier: RiskFactor.Unverified,
+                    title: "Users enter a 2-of-2 multisig with the ASP that guarantees unilateral exit to L-BTC, but not to BTC",
+                    content:
+                        "The user deposits their L-BTC into a 2-of-2 multisig with the ASP, getting an off-chain VTXO in return. The setup allows the user to unilaterally exit back to the Liquid blockchain, ensuring self-custody of the funds, provided they exceed the minimum relay fee on the Liquid blockchain. However, the funds become custodial if the user fails to refresh their coins during the designated timeout period, enabling the ASP to sweep them. It is important to note that L-BTC cannot be exited unilaterally to BTC due to the federated nature of Liquid.\n\n🔬We are currently reviewing the signers for the Liquid two-way peg, which would affect this implementation of Ark.",
+                },
+            ],
         },
         {
             category: RiskCategory.DataAvailability,

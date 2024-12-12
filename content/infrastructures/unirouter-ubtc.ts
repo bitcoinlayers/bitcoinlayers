@@ -7,10 +7,10 @@ import {
     Site,
 } from "../props";
 
-const lorenzo: InfrastructureProject = {
+const unirouter: InfrastructureProject = {
     type: Type.Infrastructure,
-    slug: "lorenzo",
-    title: "Lorenzo stBTC",
+    slug: "unirouter-ubtc",
+    title: "UniRouter uBTC",
     entityType: EntityType.LiquidStaking,
     live: LiveStatus.Deposits,
     staking: false,
@@ -20,32 +20,38 @@ const lorenzo: InfrastructureProject = {
     riskFactors: ["", ""],
     nativeToken: "-",
     purpose: Purpose.General,
-    associatedLayers: "-",
+    associatedLayers: "Bsquared Network",
     bitcoinOnly: false,
     links: [
         {
             text: Site.Website,
-            url: "https://lorenzo-protocol.xyz",
+            url: "https://unirouter.io",
         },
         {
             text: Site.Docs,
-            url: "https://docs.lorenzo-protocol.xyz",
+            url: "https://docs.unirouter.io",
         },
         {
             text: Site.Explorer,
-            url: "https://scan.lorenzo-protocol.xyz",
-        },
-        {
-            text: Site.GitHub,
-            url: "https://github.com/Lorenzo-Protocol",
+            url: "https://explorer.bsquared.network/address/0x796e4D53067FF374B89b2Ac101ce0c1f72ccaAc2",
         },
         {
             text: Site.Twitter,
-            url: "https://x.com/LorenzoProtocol",
+            url: "https://x.com/UniRouterBTC",
         },
     ],
-    description: "Under review.",
+    description: "Under Review",
     sections: [
+        {
+            id: "contracts",
+            title: "Contract addresses",
+            content: [
+                {
+                    content:
+                        "[uBTC Bsquared smart contract](https://explorer.bsquared.network/address/0x796e4D53067FF374B89b2Ac101ce0c1f72ccaAc2)",
+                },
+            ],
+        },
         {
             id: "selfsubmit",
             title: "Process to self-submit information",
@@ -59,4 +65,4 @@ const lorenzo: InfrastructureProject = {
     ],
 };
 
-export default lorenzo;
+export default unirouter;

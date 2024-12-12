@@ -9,7 +9,7 @@ import {
 
 const binancebtcb: InfrastructureProject = {
     type: Type.Infrastructure,
-    slug: "binancebtcb",
+    slug: "binance-btcb",
     title: "Binance BTCB",
     entityType: EntityType.BTCWrapper,
     live: LiveStatus.Mainnet,

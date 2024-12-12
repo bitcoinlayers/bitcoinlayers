@@ -58,10 +58,20 @@ const liquid: LayerProject = {
         {
             category: RiskCategory.BtcCustody,
             score: 0,
-            tier: RiskFactor.UnderReview,
-            title: "Users trust a federation with custody of their BTC. Signers under review",
-            content:
-                "BTC withdrawals are currently permissioned by the Liquid federation. Users must trust that when they deposit BTC into the Liquid blockchain, the signers will not collude and steal their BTC. Most users typically acquire L-BTC on secondary marketplaces, not through bridge deposits. Supported marketplaces for L-BTC are also members of the Liquid federation. Users trust that the federation will not steal the BTC, which would leave their newly acquired L-BTC worthless. The BTC that backs L-BTC is held in a 11-15 multi-sig wallet where 11 (⅔ + 1) of the signers would need to be compromised in order to steal the BTC.\n\n🔬We are currently reviewing the signers for the Liquid two-way peg",
+            tier: RiskFactor.NotApplicable,
+            title: "",
+            content: "",
+            pegs: [
+                {
+                    name: "Liquid L-BTC",
+                    infrastructureSlug: "liquid-lbtc",
+                    score: 0,
+                    tier: RiskFactor.UnderReview,
+                    title: "Users trust a federation with custody of their BTC. Signers under review",
+                    content:
+                        "BTC withdrawals are currently permissioned by the Liquid federation. Users must trust that when they deposit BTC into the Liquid blockchain, the signers will not collude and steal their BTC. Most users typically acquire L-BTC on secondary marketplaces, not through bridge deposits. Supported marketplaces for L-BTC are also members of the Liquid federation. Users trust that the federation will not steal the BTC, which would leave their newly acquired L-BTC worthless. The BTC that backs L-BTC is held in a 11-15 multi-sig wallet where 11 (⅔ + 1) of the signers would need to be compromised in order to steal the BTC.\n\n🔬We are currently reviewing the signers for the Liquid two-way peg",
+                },
+            ],
         },
         {
             category: RiskCategory.DataAvailability,

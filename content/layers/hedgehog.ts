@@ -43,11 +43,12 @@ const hedgehog: LayerProject = {
         "Hedgehog is a payment channel protocol, similar to Lightning, but counterparties within the channel do not need to be online to receive funds. The payment experience is similar to that of Ecash or Fedimint, but with users retaining full custody of the coins and having optimistic settlement assurances. To make a payment, you propose a payment (a state change) and send this proposed payment to your counterparty via a preferred communication channel. When your party comes online, they can accept that payment and the state of the channel will consequently update.",
     riskAnalysis: [
         {
-            category: RiskCategory.UnilateralExits,
+            category: RiskCategory.BtcCustody,
             score: 0,
             tier: "",
             title: "",
             content: "",
+            pegs: [],
         },
         {
             category: RiskCategory.DataAvailability,

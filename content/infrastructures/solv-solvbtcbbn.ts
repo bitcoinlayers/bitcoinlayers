@@ -10,8 +10,8 @@ import {
 
 const solvbbn: InfrastructureProject = {
     type: Type.Infrastructure,
-    slug: "solvbbn",
-    title: "Solv Solv.BBN",
+    slug: "solv-solvbtcbbn",
+    title: "Solv SolvBTC.BBN",
     entityType: EntityType.LiquidStaking,
     live: LiveStatus.Deposits,
     staking: false,
@@ -42,7 +42,7 @@ const solvbbn: InfrastructureProject = {
         },
     ],
     description:
-        "Solv.BBN offer a mechanism that enables users to deposit SolvBTC into smart contracts on EVM-based chains. Users receive a token representing BTC deposited on Babylon in exchange for their wrapped BTC token.",
+        "SolvBTC.BBN offer a mechanism that enables users to deposit SolvBTC into smart contracts on EVM-based chains. Users receive a token representing BTC deposited on Babylon in exchange for their wrapped BTC token.",
     sections: [
         {
             id: "Economics",

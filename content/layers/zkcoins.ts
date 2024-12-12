@@ -47,11 +47,12 @@ const zkcoins: LayerProject = {
         "zkCoins is a proposed zkCSV protocol that would support confidential payments for BTC and tokenized assets. The Zerosync team is developing BitVM to create improved trust assumptions for bridging between the Bitcoin mainchain and the zkCoins protocol.",
     riskAnalysis: [
         {
-            category: RiskCategory.UnilateralExits,
+            category: RiskCategory.BtcCustody,
             score: 0,
             tier: "",
             title: "",
             content: "",
+            pegs: [],
         },
         {
             category: RiskCategory.DataAvailability,

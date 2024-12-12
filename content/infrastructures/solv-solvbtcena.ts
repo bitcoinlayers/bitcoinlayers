@@ -10,8 +10,8 @@ import {
 
 const solvena: InfrastructureProject = {
     type: Type.Infrastructure,
-    slug: "solvena",
-    title: "Solv Solv.ENA",
+    slug: "solv-solvbtcena",
+    title: "Solv SolvBTC.ENA",
     entityType: EntityType.LiquidStaking,
     live: LiveStatus.Deposits,
     staking: false,
@@ -42,7 +42,7 @@ const solvena: InfrastructureProject = {
         },
     ],
     description:
-        "Solv.ENA offer a mechanism that enables users to deposit SolvBTC into smart contracts on EVM-based chains. Users receive a token representing BTC deposited on Ethena in exchange for their wrapped BTC token.",
+        "SolvBTC.ENA offer a mechanism that enables users to deposit SolvBTC into smart contracts on EVM-based chains. Users receive a token representing BTC deposited on Ethena in exchange for their wrapped BTC token.",
     sections: [
         {
             id: "Economics",
