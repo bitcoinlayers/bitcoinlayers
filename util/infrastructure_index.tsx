@@ -32,6 +32,10 @@ import babypieProject from "../content/infrastructures/babypie-mbtc";
 import chakraProject from "../content/infrastructures/chakra-stbtc";
 import kinzaProject from "../content/infrastructures/kinza-kbtc";
 import pstakeProject from "../content/infrastructures/pstake-ybtc";
+import alexxbtcProject from "../content/infrastructures/alex-xbtc";
+import boolbbtcProject from "../content/infrastructures/bool-bbtc";
+import simplesbtcProject from "../content/infrastructures/simple-sbtc";
+import xlinkabtcProject from "../content/infrastructures/xlink-abtc";
 
 const astria: InfrastructureProject = astriaProject;
 const avail: InfrastructureProject = availProject;
@@ -65,6 +69,10 @@ const babypie: InfrastructureProject = babypieProject;
 const chakra: InfrastructureProject = chakraProject;
 const kinza: InfrastructureProject = kinzaProject;
 const pstake: InfrastructureProject = pstakeProject;
+const alexxbtc: InfrastructureProject = alexxbtcProject;
+const boolbbtc: InfrastructureProject = boolbbtcProject;
+const simplesbtc: InfrastructureProject = simplesbtcProject;
+const xlinkabtc: InfrastructureProject = xlinkabtcProject;
 
 export const allInfrastructures: InfrastructureProject[] = [
     lombard,
@@ -97,6 +105,10 @@ export const allInfrastructures: InfrastructureProject[] = [
     chakra,
     kinza,
     pstake,
+    alexxbtc,
+    boolbbtc,
+    simplesbtc,
+    xlinkabtc,
 ];
 
 export const allInfrastructureSlugs: string[] = allInfrastructures.map(
