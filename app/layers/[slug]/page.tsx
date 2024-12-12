@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import { allLayers, allLayerSlugs } from "@/util/layer_index";
 import LayerMenu from "@/components/layer/layerMenu";
 import LayerBody from "@/components/layer/layerBody";
-import RiskAnalysis from "@/components/layer/risk-analysis/layerBodyRiskAnalysis";
+import RiskAnalysis from "@/components/layer/risk-analysis/risk-analysis";
 import LayerOverview from "@/components/layer/layerOverview";
 import LayerImage from "@/components/layer/layer-image";
 import LayerTVLChart from "@/components/charts/layer-tvl-chart";

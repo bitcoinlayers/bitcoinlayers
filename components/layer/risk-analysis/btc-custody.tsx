@@ -13,18 +13,17 @@ interface Peg {
     content: string;
 }
 
-interface BtcCustodyProps {
+interface BtcCustodyHeaderProps {
     category: string;
     riskFactor: string;
     pegs: Peg[];
 }
 
-const BtcCustody: React.FC<BtcCustodyProps> = ({
+const BtcCustodyHeader: React.FC<BtcCustodyHeaderProps> = ({
     category,
-    riskFactor,
     pegs,
 }) => {
-    const [selectedPeg, setSelectedPeg] = useState<string | null>(null);
+    const [selectedPeg, setSelectedPeg] = useState<string>("view-all");
 
     useEffect(() => {
         if (!selectedPeg && pegs.length > 0) {
@@ -32,14 +31,19 @@ const BtcCustody: React.FC<BtcCustodyProps> = ({
         }
     }, [pegs, selectedPeg]);
 
+    const selectedPegData =
+        selectedPeg !== "view-all"
+            ? pegs.find((peg) => peg.name === selectedPeg)
+            : null;
+
     return (
         <div className="flex flex-col justify-start items-start gap-2">
             <RiskHeader
                 category={category}
-                riskFactor={riskFactor}
                 pegs={pegs}
                 selectedPeg={selectedPeg}
-                onPegChange={(peg) => setSelectedPeg(peg)}
+                onPegChange={setSelectedPeg}
+                riskFactor={""}
             />
             <div className="mt-4">
                 {selectedPeg === "view-all"
@@ -61,29 +65,27 @@ const BtcCustody: React.FC<BtcCustodyProps> = ({
                               </div>
                           </div>
                       ))
-                    : pegs
-                          .filter((peg) => peg.name === selectedPeg)
-                          .map((peg) => (
-                              <div key={peg.name} className="">
-                                  <RiskContent
-                                      name={peg.name}
-                                      title={peg.title}
-                                      content={peg.content}
-                                  />
-                                  <div className="mt-2 text-right">
-                                      <a
-                                          href={`/infrastructure/${peg.infrastructureSlug}`}
-                                          className="font-semibold hover:underline flex items-center justify-end"
-                                      >
-                                          Learn more about {peg.name}
-                                          <span className="ml-2">→</span>
-                                      </a>
-                                  </div>
+                    : selectedPegData && (
+                          <div className="">
+                              <RiskContent
+                                  name={selectedPegData.name}
+                                  title={selectedPegData.title}
+                                  content={selectedPegData.content}
+                              />
+                              <div className="mt-2 text-right">
+                                  <a
+                                      href={`/infrastructure/${selectedPegData.infrastructureSlug}`}
+                                      className="font-semibold hover:underline flex items-center justify-end"
+                                  >
+                                      Learn more about {selectedPegData.name}
+                                      <span className="ml-2">→</span>
+                                  </a>
                               </div>
-                          ))}
+                          </div>
+                      )}
             </div>
         </div>
     );
 };
 
-export default BtcCustody;
+export default BtcCustodyHeader;

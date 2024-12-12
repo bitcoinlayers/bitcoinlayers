@@ -1,8 +1,8 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import RiskContent from "./risk-content";
-import BtcCustody from "./btc-custody";
+import BtcCustodyHeader from "./btc-custody-header";
 import RiskHeader from "./risk-header";
 import { Project } from "@/content/props";
 
@@ -35,6 +35,7 @@ const RiskAnalysis: React.FC<RiskAnalysisProps> = ({
 }) => {
     const btcCustody = riskAnalysis[0];
     const otherRisks = riskAnalysis.slice(1);
+    const [selectedPeg, setSelectedPeg] = useState<string>("view-all");
 
     return (
         <div className="content flex-grow pt-0">
@@ -49,16 +50,15 @@ const RiskAnalysis: React.FC<RiskAnalysisProps> = ({
                 </div>
 
                 {btcCustody?.pegs && (
-                    <BtcCustody
+                    <BtcCustodyHeader
                         category={btcCustody.category}
-                        riskFactor={riskFactors[0]}
                         pegs={btcCustody.pegs}
+                        selectedPeg={selectedPeg}
+                        onPegChange={(peg) => setSelectedPeg(peg)}
                     />
                 )}
 
-                {btcCustody?.pegs && otherRisks.length > 0 && (
-                    <div className="border-b border-border my-12"></div>
-                )}
+                <div className="border-b border-border my-12"></div>
 
                 {otherRisks.map((content, index) => (
                     <React.Fragment key={index}>
