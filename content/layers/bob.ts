@@ -52,10 +52,29 @@ const bob: LayerProject = {
         {
             category: RiskCategory.BtcCustody,
             score: 0,
-            tier: RiskFactor.VeryHigh,
-            title: "Bitcoin users trust that bitcoin synthetics will remain backed, and that the BOB bridge will not steal their funds",
-            content:
-                "tBTC and wBTC are minted on BOB via its official Ethereum bridge.\n\nUsers trust that the bridge operators will not steal their BTC, the BOB proposer to not publish a malicious, unchallenged state transition, or the admin controlling the bridge to create a malicious smart contract upgrade.\n\nIn the event of a malicious smart contract upgrade, there is no exit window for BOB users. This means that the admin behind the bridge can steal all funds in the official bridge.\n\n🔬We are currently reviewing other bitcoin synthetics minted on BOB.",
+            tier: RiskFactor.NotApplicable,
+            title: "BOB has multiple peg options",
+            content: "",
+            pegs: [
+                {
+                    name: "tBTC",
+                    infrastructureSlug: "tbtc",
+                    score: 0,
+                    tier: RiskFactor.High,
+                    title: "Bitcoin users trust that bitcoin synthetics will remain backed, and that the BOB bridge will not steal their funds",
+                    content:
+                        "tBTC and wBTC are minted on BOB via its official Ethereum bridge.\n\nUsers trust that the bridge operators will not steal their BTC, the BOB proposer to not publish a malicious, unchallenged state transition, or the admin controlling the bridge to create a malicious smart contract upgrade.\n\nIn the event of a malicious smart contract upgrade, there is no exit window for BOB users. This means that the admin behind the bridge can steal all funds in the official bridge.\n\n🔬We are currently reviewing other bitcoin synthetics minted on BOB.",
+                },
+                {
+                    name: "wBTC",
+                    infrastructureSlug: "wbtc",
+                    score: 0,
+                    tier: RiskFactor.VeryHigh,
+                    title: "wBTC: Centralized custody model",
+                    content:
+                        "wBTC relies on a consortium of custodians to maintain BTC collateral. Users trust that custodians will not mismanage or steal their funds.",
+                },
+            ],
         },
         {
             category: RiskCategory.DataAvailability,

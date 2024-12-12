@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { useQueryState } from "nuqs";
 import RiskHeader from "./risk-header";
 import RiskContent from "./risk-content";
@@ -12,6 +12,14 @@ interface Risksection {
     tier: string;
     title: string;
     content: string;
+    pegs?: {
+        name: string;
+        infrastructureSlug: string;
+        score: number;
+        tier: string;
+        title: string;
+        content: string;
+    }[];
 }
 
 interface RiskAnalysisProps {
@@ -30,6 +38,8 @@ const RiskAnalysis: React.FC<RiskAnalysisProps> = ({
         parse: (value) => value.split(",").filter(Boolean),
         serialize: (value) => value.join(","),
     });
+
+    const [selectedPeg, setSelectedPeg] = useState<string>(""); // Track selected peg
 
     const toggleOpen = (value: string) => {
         setOpen((prev) => {
@@ -52,93 +62,178 @@ const RiskAnalysis: React.FC<RiskAnalysisProps> = ({
                         Trust Assumption Review
                     </div>
                 </div>
-                {riskAnalysis.map((content, contentIndex) => (
-                    <React.Fragment key={contentIndex}>
-                        <div>
-                            <div className="flex flex-col justify-start items-start gap-2">
-                                <RiskHeader
-                                    category={content.category}
-                                    riskFactor={riskFactors[contentIndex]}
-                                />
-                                <RiskContent
-                                    title={content.title}
-                                    content={content.content}
-                                />
-                                {/* {content.category === "Bridge Custody" &&
-                                    layer.bridge &&
-                                    !!layer?.bridgeAnalysis &&
-                                    layer?.bridgeAnalysis?.length > 0 && (
-                                        <Accordion
-                                            type="single"
-                                            collapsible
-                                            className="w-full"
-                                            value={
-                                                open.includes("federation")
-                                                    ? "item-1"
-                                                    : ""
-                                            }
-                                            onValueChange={(value) => {
-                                                if (value === "item-1") {
-                                                    toggleOpen("federation");
-                                                } else {
-                                                    setOpen((prev) =>
-                                                        prev.filter(
-                                                            (item) =>
-                                                                item !==
-                                                                "federation",
-                                                        ),
-                                                    );
-                                                }
-                                            }}
-                                        >
-                                            <AccordionItem value="item-1">
-                                                <AccordionTrigger>
-                                                    Read more about{" "}
-                                                    {layer.title}&apos;s bridge
-                                                    federation
-                                                </AccordionTrigger>
-                                                <AccordionContent>
-                                                    {layer.bridgeAnalysis?.map(
-                                                        (
-                                                            fedContent,
-                                                            fedIndex,
-                                                        ) => (
-                                                            <div
-                                                                key={fedIndex}
-                                                                className="mb-4"
-                                                            >
-                                                                <RiskHeader
-                                                                    category={
-                                                                        fedContent.category
-                                                                    }
-                                                                    riskFactor={
-                                                                        riskFactors[
-                                                                            fedIndex
-                                                                        ]
-                                                                    }
-                                                                />
-                                                                <RiskContent
-                                                                    title={
-                                                                        fedContent.title
-                                                                    }
-                                                                    content={
-                                                                        fedContent.content
-                                                                    }
-                                                                />
-                                                            </div>
-                                                        ),
-                                                    )}
-                                                </AccordionContent>
-                                            </AccordionItem>
-                                        </Accordion>
-                                    )} */}
+                {riskAnalysis.map((content, contentIndex) => {
+                    const initialPegName =
+                        content.pegs && content.pegs.length > 0
+                            ? content.pegs[0].name
+                            : "";
+
+                    if (!selectedPeg && initialPegName) {
+                        setSelectedPeg(initialPegName);
+                    }
+
+                    return (
+                        <React.Fragment key={contentIndex}>
+                            <div>
+                                <div className="flex flex-col justify-start items-start gap-2">
+                                    {!content.pegs ||
+                                        (content.pegs.length < 1 && (
+                                            <>
+                                                <RiskHeader
+                                                    category={content.category}
+                                                    riskFactor={
+                                                        riskFactors[
+                                                            contentIndex
+                                                        ]
+                                                    }
+                                                />
+                                                <RiskContent
+                                                    title={content.title}
+                                                    content={content.content}
+                                                />
+                                            </>
+                                        ))}
+                                    {content.pegs &&
+                                        content.pegs.length > 0 && (
+                                            <div className="mt-4">
+                                                <div className="flex space-x-4 mt-2">
+                                                    {/* Radio button for "View All" */}
+                                                    <label className="flex items-center cursor-pointer">
+                                                        <input
+                                                            type="radio"
+                                                            name={`peg-${contentIndex}`}
+                                                            value="view-all"
+                                                            checked={
+                                                                selectedPeg ===
+                                                                "view-all"
+                                                            }
+                                                            onChange={() =>
+                                                                setSelectedPeg(
+                                                                    "view-all",
+                                                                )
+                                                            }
+                                                            className="mr-2"
+                                                        />
+                                                        View All
+                                                    </label>
+                                                    {/* Radio buttons for individual pegs */}
+                                                    {content.pegs.map((peg) => (
+                                                        <label
+                                                            key={peg.name}
+                                                            className="flex items-center cursor-pointer"
+                                                        >
+                                                            <input
+                                                                type="radio"
+                                                                name={`peg-${contentIndex}`}
+                                                                value={peg.name}
+                                                                checked={
+                                                                    selectedPeg ===
+                                                                    peg.name
+                                                                }
+                                                                onChange={() =>
+                                                                    setSelectedPeg(
+                                                                        peg.name,
+                                                                    )
+                                                                }
+                                                                className="mr-2"
+                                                            />
+                                                            {peg.name}
+                                                        </label>
+                                                    ))}
+                                                </div>
+                                                <div className="mt-4">
+                                                    {selectedPeg === "view-all"
+                                                        ? content.pegs.map(
+                                                              (peg) => (
+                                                                  <div
+                                                                      key={
+                                                                          peg.name
+                                                                      }
+                                                                      className="p-4 mb-4 bg-background-alt rounded-lg border border-border"
+                                                                  >
+                                                                      <RiskHeader
+                                                                          category={
+                                                                              content.category
+                                                                          }
+                                                                          riskFactor={
+                                                                              peg.tier
+                                                                          }
+                                                                      />
+                                                                      <RiskContent
+                                                                          title={`${peg.name}: ${peg.title}`}
+                                                                          content={
+                                                                              peg.content
+                                                                          }
+                                                                      />
+                                                                      <div className="mt-2">
+                                                                          <a
+                                                                              href={`/${peg.infrastructureSlug}`}
+                                                                              className="text-primary hover:underline"
+                                                                          >
+                                                                              Learn
+                                                                              more
+                                                                              about{" "}
+                                                                              {
+                                                                                  peg.name
+                                                                              }
+                                                                          </a>
+                                                                      </div>
+                                                                  </div>
+                                                              ),
+                                                          )
+                                                        : content.pegs
+                                                              .filter(
+                                                                  (peg) =>
+                                                                      peg.name ===
+                                                                      selectedPeg,
+                                                              )
+                                                              .map((peg) => (
+                                                                  <div
+                                                                      key={
+                                                                          peg.name
+                                                                      }
+                                                                      className="p-4 bg-background-alt rounded-lg border border-border"
+                                                                  >
+                                                                      <RiskHeader
+                                                                          category={
+                                                                              content.category
+                                                                          }
+                                                                          riskFactor={
+                                                                              peg.tier
+                                                                          }
+                                                                      />
+                                                                      <RiskContent
+                                                                          title={`${peg.name}: ${peg.title}`}
+                                                                          content={
+                                                                              peg.content
+                                                                          }
+                                                                      />
+                                                                      <div className="mt-2">
+                                                                          <a
+                                                                              href={`/${peg.infrastructureSlug}`}
+                                                                              className="text-primary hover:underline"
+                                                                          >
+                                                                              Learn
+                                                                              more
+                                                                              about{" "}
+                                                                              {
+                                                                                  peg.name
+                                                                              }
+                                                                          </a>
+                                                                      </div>
+                                                                  </div>
+                                                              ))}
+                                                </div>
+                                            </div>
+                                        )}
+                                </div>
                             </div>
-                        </div>
-                        {contentIndex < riskAnalysis.length - 1 && (
-                            <div className="border-b border-border my-12"></div>
-                        )}
-                    </React.Fragment>
-                ))}
+                            {contentIndex < riskAnalysis.length - 1 && (
+                                <div className="border-b border-border my-12"></div>
+                            )}
+                        </React.Fragment>
+                    );
+                })}
             </section>
         </div>
     );

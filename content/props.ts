@@ -84,12 +84,22 @@ export enum Site {
     Twitter = "Twitter",
 }
 
+export interface Peg {
+    name: string;
+    infrastructureSlug: string;
+    score: number;
+    tier: RiskFactor | "";
+    title: string;
+    content: string;
+}
+
 export interface RiskSection {
     category: RiskCategory;
     score: number;
     tier: RiskFactor | "";
     title: string;
     content: string;
+    pegs?: Peg[];
 }
 
 export interface ContentSection {
