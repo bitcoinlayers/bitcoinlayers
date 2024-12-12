@@ -2,7 +2,7 @@
 
 import React from "react";
 import { useQueryState } from "nuqs";
-import RiskHeader from "./infra-section-header";
+import InfraRiskHeader from "./infra-section-header";
 import RiskContent from "./layer-section-content";
 import { Project } from "@/content/props";
 
@@ -56,7 +56,7 @@ const RiskAnalysis: React.FC<RiskAnalysisProps> = ({
                     <React.Fragment key={contentIndex}>
                         <div>
                             <div className="flex flex-col justify-start items-start gap-2">
-                                <RiskHeader
+                                <InfraRiskHeader
                                     category={content.category}
                                     riskFactor={riskFactors[contentIndex]}
                                 />
