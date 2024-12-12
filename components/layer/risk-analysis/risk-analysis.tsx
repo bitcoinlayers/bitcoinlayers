@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import RiskContent from "./risk-content";
-import BtcCustodyHeader from "./btc-custody-header";
+import BtcCustody from "./btc-custody";
 import RiskHeader from "./risk-header";
 import { Project } from "@/content/props";
 
@@ -35,7 +35,6 @@ const RiskAnalysis: React.FC<RiskAnalysisProps> = ({
 }) => {
     const btcCustody = riskAnalysis[0];
     const otherRisks = riskAnalysis.slice(1);
-    const [selectedPeg, setSelectedPeg] = useState<string>("view-all");
 
     return (
         <div className="content flex-grow pt-0">
@@ -50,11 +49,9 @@ const RiskAnalysis: React.FC<RiskAnalysisProps> = ({
                 </div>
 
                 {btcCustody?.pegs && (
-                    <BtcCustodyHeader
+                    <BtcCustody
                         category={btcCustody.category}
                         pegs={btcCustody.pegs}
-                        selectedPeg={selectedPeg}
-                        onPegChange={(peg) => setSelectedPeg(peg)}
                     />
                 )}
 

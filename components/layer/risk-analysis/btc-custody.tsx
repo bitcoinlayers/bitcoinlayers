@@ -1,8 +1,12 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import RiskHeader from "./risk-header";
 import RiskContent from "./risk-content";
+import {
+    getRiskColorBackground,
+    getRiskColorText,
+    getRiskEmoji,
+} from "@/util/riskColors";
 
 interface Peg {
     name: string;
@@ -13,16 +17,12 @@ interface Peg {
     content: string;
 }
 
-interface BtcCustodyHeaderProps {
+interface BtcCustodyProps {
     category: string;
-    riskFactor: string;
     pegs: Peg[];
 }
 
-const BtcCustodyHeader: React.FC<BtcCustodyHeaderProps> = ({
-    category,
-    pegs,
-}) => {
+const BtcCustody: React.FC<BtcCustodyProps> = ({ category, pegs }) => {
     const [selectedPeg, setSelectedPeg] = useState<string>("view-all");
 
     useEffect(() => {
@@ -36,19 +36,65 @@ const BtcCustodyHeader: React.FC<BtcCustodyHeaderProps> = ({
             ? pegs.find((peg) => peg.name === selectedPeg)
             : null;
 
+    const displayedRiskFactor =
+        selectedPeg !== "view-all"
+            ? selectedPegData?.tier || "Multiple"
+            : "Multiple";
+
     return (
         <div className="flex flex-col justify-start items-start gap-2">
-            <RiskHeader
-                category={category}
-                pegs={pegs}
-                selectedPeg={selectedPeg}
-                onPegChange={setSelectedPeg}
-                riskFactor={""}
-            />
+            <div className="self-stretch justify-between lg:items-center items-start flex lg:flex-row flex-col">
+                <div className="body_risksection !text-foreground">
+                    {category}
+                    <select
+                        className="ml-4 p-2 text-sm border border-border rounded-md bg-background text-foreground"
+                        value={selectedPeg}
+                        onChange={(e) => setSelectedPeg(e.target.value)}
+                    >
+                        <option value="view-all">View All</option>
+                        {pegs.map((peg) => (
+                            <option key={peg.name} value={peg.name}>
+                                {peg.name}
+                            </option>
+                        ))}
+                    </select>
+                </div>
+                <div className="h-8 justify-end items-center gap-2 flex lg:flex-row flex-row-reverse">
+                    <div
+                        className="text-sm font-medium leading-tight"
+                        style={{
+                            color: getRiskColorText(displayedRiskFactor),
+                        }}
+                    >
+                        {displayedRiskFactor}
+                    </div>
+                    <div className="w-8 h-8 justify-center items-center flex">
+                        <div
+                            className="w-8 h-8 rounded-full flex items-center justify-center"
+                            style={{
+                                backgroundColor:
+                                    getRiskColorBackground(displayedRiskFactor),
+                            }}
+                        >
+                            <div
+                                className="text-center text-base font-bold font-Hack"
+                                style={{
+                                    color: getRiskColorText(
+                                        displayedRiskFactor,
+                                    ),
+                                }}
+                            >
+                                {getRiskEmoji(displayedRiskFactor)}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div className="mt-4">
                 {selectedPeg === "view-all"
                     ? pegs.map((peg) => (
-                          <div key={peg.name} className="">
+                          <div key={peg.name}>
                               <RiskContent
                                   name={peg.name}
                                   title={peg.title}
@@ -66,7 +112,7 @@ const BtcCustodyHeader: React.FC<BtcCustodyHeaderProps> = ({
                           </div>
                       ))
                     : selectedPegData && (
-                          <div className="">
+                          <div>
                               <RiskContent
                                   name={selectedPegData.name}
                                   title={selectedPegData.title}
@@ -88,4 +134,4 @@ const BtcCustodyHeader: React.FC<BtcCustodyHeaderProps> = ({
     );
 };
 
-export default BtcCustodyHeader;
+export default BtcCustody;
