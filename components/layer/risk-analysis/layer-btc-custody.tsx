@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import RiskContent from "./layer-section-content";
 import {
     getRiskColorBackground,
@@ -23,13 +23,7 @@ interface BtcCustodyProps {
 }
 
 const BtcCustody: React.FC<BtcCustodyProps> = ({ category, pegs }) => {
-    const [selectedPeg, setSelectedPeg] = useState<string>("view-all");
-
-    useEffect(() => {
-        if (!selectedPeg && pegs.length > 0) {
-            setSelectedPeg(pegs[0].name);
-        }
-    }, [pegs, selectedPeg]);
+    const [selectedPeg, setSelectedPeg] = useState<string>(pegs[0].name);
 
     const selectedPegData =
         selectedPeg !== "view-all"
