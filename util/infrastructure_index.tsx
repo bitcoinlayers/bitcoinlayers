@@ -36,6 +36,16 @@ import alexxbtcProject from "../content/infrastructures/alex-xbtc";
 import boolbbtcProject from "../content/infrastructures/bool-bbtc";
 import simplesbtcProject from "../content/infrastructures/simple-sbtc";
 import xlinkabtcProject from "../content/infrastructures/xlink-abtc";
+import bevmwbtcProject from "../content/infrastructures/bevm-wbtc";
+import bitlayerwbtcProject from "@/content/infrastructures/bitlayer-wbtc";
+import corecorebtcProject from "@/content/infrastructures/core-corebtc";
+import icpckbtcProject from "@/content/infrastructures/icp-ckbtc";
+import layerbankbtcProject from "@/content/infrastructures/layerbank-btc";
+import layerbankubtcProject from "@/content/infrastructures/layerbank-ubtc";
+import librepbtcProject from "@/content/infrastructures/libre-pbtc";
+import liquidlbtcProject from "@/content/infrastructures/liquid-lbtc";
+import nomicnbtcProject from "@/content/infrastructures/nomic-nbtc";
+import rootstockrbtcProject from "@/content/infrastructures/rootstock-rbtc";
 
 const astria: InfrastructureProject = astriaProject;
 const avail: InfrastructureProject = availProject;
@@ -73,6 +83,16 @@ const alexxbtc: InfrastructureProject = alexxbtcProject;
 const boolbbtc: InfrastructureProject = boolbbtcProject;
 const simplesbtc: InfrastructureProject = simplesbtcProject;
 const xlinkabtc: InfrastructureProject = xlinkabtcProject;
+const bevmwbtc: InfrastructureProject = bevmwbtcProject;
+const bitlayerwbtc: InfrastructureProject = bitlayerwbtcProject;
+const corecorebtc: InfrastructureProject = corecorebtcProject;
+const icpckbtc: InfrastructureProject = icpckbtcProject;
+const layerbankbtc: InfrastructureProject = layerbankbtcProject;
+const layerbankubtc: InfrastructureProject = layerbankubtcProject;
+const librepbtc: InfrastructureProject = librepbtcProject;
+const liquidlbtc: InfrastructureProject = liquidlbtcProject;
+const nomicnbtc: InfrastructureProject = nomicnbtcProject;
+const rootstockrbtc: InfrastructureProject = rootstockrbtcProject;
 
 export const allInfrastructures: InfrastructureProject[] = [
     lombard,
@@ -109,6 +129,16 @@ export const allInfrastructures: InfrastructureProject[] = [
     boolbbtc,
     simplesbtc,
     xlinkabtc,
+    bevmwbtc,
+    bitlayerwbtc,
+    corecorebtc,
+    icpckbtc,
+    layerbankbtc,
+    layerbankubtc,
+    librepbtc,
+    liquidlbtc,
+    nomicnbtc,
+    rootstockrbtc,
 ];
 
 export const allInfrastructureSlugs: string[] = allInfrastructures.map(
