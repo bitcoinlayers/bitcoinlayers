@@ -12,9 +12,9 @@ import {
 
 const bitfinity: LayerProject = {
     type: Type.Layer,
-    slug: "bitfinity",
-    title: "Bitfinity",
-    entityType: EntityType.Sidechain,
+    slug: "corn",
+    title: "Corn",
+    entityType: EntityType.EthereumRollup,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -28,27 +28,27 @@ const bitfinity: LayerProject = {
     links: [
         {
             text: Site.Website,
-            url: "https://bitfinity.network",
+            url: "https://usecorn.com/",
         },
         {
             text: Site.Docs,
-            url: "https://docs.bitfinity.network",
+            url: "https://docs.usecorn.com/docs/developers/introduction",
         },
         {
             text: Site.Explorer,
-            url: "https://explorer.testnet.bitfinity.network",
+            url: "https://cornscan.io/",
         },
         {
             text: Site.GitHub,
-            url: "https://github.com/bitfinity-network",
+            url: "https://github.com/usecorn",
         },
         {
             text: Site.Twitter,
-            url: "https://x.com/bitfinitynet",
+            url: "https://x.com/use_corn",
         },
     ],
     description:
-        "Bitfinity is an EVM-based Proof-of-Stake sidechain. It is currently live on testnet.",
+        "Corn is an Ethereum rollup that leverages a wrapped BTC token as its gas token.",
     riskAnalysis: [
         {
             category: RiskCategory.UnilateralExits,
@@ -82,7 +82,7 @@ const bitfinity: LayerProject = {
     sections: [
         {
             id: "underreview",
-            title: "Under review.",
+            title: "Under review",
             content: [
                 {
                     content:
