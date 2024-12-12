@@ -7,7 +7,7 @@ import {
     CardHeader,
     CardTitle,
 } from "@/components/ui/card";
-import { CartesianGrid, XAxis, AreaChart, Area } from "recharts";
+import { CartesianGrid, XAxis, YAxis, AreaChart, Area } from "recharts";
 import {
     ChartContainer,
     ChartLegend,
@@ -227,6 +227,19 @@ export default function AggregatedTVLChart({
                                     day: "numeric",
                                     timeZone: "UTC",
                                 })
+                            }
+                        />
+                        <YAxis 
+                            tickLine={false}
+                            axisLine={false}
+                            tickMargin={8}
+                            width={60}
+                            tickFormatter={(value) =>
+                                new Intl.NumberFormat("en-US", {
+                                    style: "decimal",
+                                    minimumFractionDigits: 0,
+                                    maximumFractionDigits: 0,
+                                }).format(value as number)
                             }
                         />
                         <ChartTooltip
