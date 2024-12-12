@@ -6,7 +6,9 @@ const RiskContent: React.FC<{
     content: string;
 }> = ({ name, title, content }) => (
     <div className="self-stretch flex-col justify-start items-start flex">
-        {name && <div className="body_risksection">{name}</div>}
+        {name && (
+            <div className="body_risksection !text-foreground">{name}</div>
+        )}
         <div className="self-stretch justify-between items-end inline-flex">
             <div className="grow shrink basis-0 body_subsection !text-muted-foreground">
                 {title}

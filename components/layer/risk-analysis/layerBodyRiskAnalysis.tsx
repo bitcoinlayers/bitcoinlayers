@@ -55,24 +55,28 @@ const RiskAnalysis: React.FC<RiskAnalysisProps> = ({
                         pegs={btcCustody.pegs}
                     />
                 )}
-                <div className="border-b border-border my-12"></div>
+
+                {btcCustody?.pegs && otherRisks.length > 0 && (
+                    <div className="border-b border-border my-12"></div>
+                )}
+
                 {otherRisks.map((content, index) => (
-                    <div
-                        key={index}
-                        className="flex flex-col justify-start items-start gap-2"
-                    >
-                        <RiskHeader
-                            category={content.category}
-                            riskFactor={riskFactors[index + 1]} // Offset by 1
-                        />
-                        <RiskContent
-                            title={content.title}
-                            content={content.content}
-                        />
+                    <React.Fragment key={index}>
+                        <div className="flex flex-col justify-start items-start gap-2">
+                            <RiskHeader
+                                category={content.category}
+                                riskFactor={riskFactors[index + 1]} // Offset by 1
+                            />
+                            <RiskContent
+                                title={content.title}
+                                content={content.content}
+                            />
+                        </div>
+
                         {index < otherRisks.length - 1 && (
                             <div className="border-b border-border my-12"></div>
                         )}
-                    </div>
+                    </React.Fragment>
                 ))}
             </section>
         </div>
