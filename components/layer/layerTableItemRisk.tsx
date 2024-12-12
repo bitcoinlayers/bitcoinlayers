@@ -14,6 +14,13 @@ interface RiskProps {
 const Risk: React.FC<RiskProps> = ({ layer }) => {
     const riskLevels = (layer as LayerProject).riskAnalysis;
 
+    const getRiskFactor = (riskLevel: any, index: number): string => {
+        if (index === 0 && riskLevel?.pegs?.length > 0) {
+            return riskLevel.pegs[0].tier;
+        }
+        return riskLevel?.tier || "Under Review";
+    };
+
     const RiskIcon = ({
         riskFactor,
         IconComponent,
@@ -38,19 +45,19 @@ const Risk: React.FC<RiskProps> = ({ layer }) => {
             <DialogTrigger>
                 <div className="lg:w-44 w-34 lg:p-4 p-2 justify-start items-center gap-4 inline-flex lg:gap-4 gap-1">
                     <RiskIcon
-                        riskFactor={riskLevels[0]?.tier}
+                        riskFactor={getRiskFactor(riskLevels[0], 0)}
                         IconComponent={RiskIconBridge}
                     />
                     <RiskIcon
-                        riskFactor={riskLevels[1]?.tier}
+                        riskFactor={getRiskFactor(riskLevels[1], 1)}
                         IconComponent={RiskIconDA}
                     />
                     <RiskIcon
-                        riskFactor={riskLevels[2]?.tier}
+                        riskFactor={getRiskFactor(riskLevels[2], 2)}
                         IconComponent={RiskIconOperators}
                     />
                     <RiskIcon
-                        riskFactor={riskLevels[3]?.tier}
+                        riskFactor={getRiskFactor(riskLevels[3], 3)}
                         IconComponent={RiskIconSettlement}
                     />
                 </div>
