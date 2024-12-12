@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import RiskContent from "./risk-content";
+import RiskContent from "./layer-section-content";
 import {
     getRiskColorBackground,
     getRiskColorText,

@@ -1,9 +1,9 @@
 "use client";
 
 import React, { useState } from "react";
-import RiskContent from "./risk-content";
-import BtcCustody from "./btc-custody";
-import RiskHeader from "./risk-header";
+import RiskContent from "./layer-section-content";
+import BtcCustody from "./layer-btc-custody";
+import RiskHeader from "./layer-section-header";
 import { Project } from "@/content/props";
 
 interface Risksection {

@@ -2,8 +2,8 @@
 
 import React from "react";
 import { useQueryState } from "nuqs";
-import RiskHeader from "./assessment-header";
-import RiskContent from "./risk-content";
+import RiskHeader from "./infra-section-header";
+import RiskContent from "./layer-section-content";
 import { Project } from "@/content/props";
 
 interface Risksection {

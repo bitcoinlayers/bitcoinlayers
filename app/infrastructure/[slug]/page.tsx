@@ -8,7 +8,7 @@ import InfrastructureBody from "@/components/infrastructure/infrastructureBody";
 import InfrastructureOverview from "@/components/infrastructure/infrastructureOverview";
 import InfrastructureImage from "@/components/infrastructure/infrastructure-image";
 import InfraTVLChart from "@/components/charts/infra-tvl-chart";
-import RiskAnalysis from "@/components/layer/risk-analysis/layerBodyAssessment";
+import RiskAnalysis from "@/components/layer/risk-analysis/infra-container";
 import UnderDevelopmentBanner from "@/components/under-development-banner";
 
 async function getInfrastructureFromSlug(slug: string) {
