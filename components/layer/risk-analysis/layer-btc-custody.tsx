@@ -7,6 +7,7 @@ import {
     getRiskColorText,
     getRiskEmoji,
 } from "@/util/riskColors";
+import { Button } from "@/components/ui/button";
 
 interface Peg {
     name: string;
@@ -24,6 +25,7 @@ interface BtcCustodyProps {
 
 const BtcCustody: React.FC<BtcCustodyProps> = ({ category, pegs }) => {
     const [selectedPeg, setSelectedPeg] = useState<string>(pegs[0].name);
+    const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(false);
 
     const selectedPegData =
         selectedPeg !== "view-all"
@@ -35,23 +37,54 @@ const BtcCustody: React.FC<BtcCustodyProps> = ({ category, pegs }) => {
             ? selectedPegData?.tier || "Multiple"
             : "Multiple";
 
+    const toggleDropdown = () => {
+        setIsDropdownOpen((prev) => !prev);
+    };
+
+    const handleSelectPeg = (pegName: string) => {
+        setSelectedPeg(pegName);
+        setIsDropdownOpen(false);
+    };
+
     return (
         <div className="flex flex-col justify-start items-start gap-2">
             <div className="self-stretch justify-between lg:items-center items-start flex lg:flex-row flex-col">
                 <div className="body_risksection !text-foreground">
                     {category}
-                    <select
-                        className="ml-4 p-2 text-sm border border-border rounded-md bg-background text-foreground"
-                        value={selectedPeg}
-                        onChange={(e) => setSelectedPeg(e.target.value)}
-                    >
-                        <option value="view-all">View All</option>
-                        {pegs.map((peg) => (
-                            <option key={peg.name} value={peg.name}>
-                                {peg.name}
-                            </option>
-                        ))}
-                    </select>
+
+                    <div className="relative ml-4 inline-block">
+                        <Button
+                            variant="brand"
+                            onClick={toggleDropdown}
+                            className="p-2 text-sm rounded-md border-brand bg-transparent border"
+                        >
+                            {selectedPeg === "view-all"
+                                ? "View All"
+                                : selectedPeg}
+                        </Button>
+
+                        {isDropdownOpen && (
+                            <div className="absolute text-sm mt-2 w-40 bg-background border border-border rounded-md shadow-md z-10">
+                                <button
+                                    onClick={() => handleSelectPeg("view-all")}
+                                    className="w-full text-left p-2 hover:bg-brand hover:text-white"
+                                >
+                                    View All
+                                </button>
+                                {pegs.map((peg) => (
+                                    <button
+                                        key={peg.name}
+                                        onClick={() =>
+                                            handleSelectPeg(peg.name)
+                                        }
+                                        className="w-full text-sm text-left p-2 hover:bg-brand hover:text-white"
+                                    >
+                                        {peg.name}
+                                    </button>
+                                ))}
+                            </div>
+                        )}
+                    </div>
                 </div>
                 <div className="h-8 justify-end items-center gap-2 flex lg:flex-row flex-row-reverse">
                     <div

@@ -194,7 +194,11 @@ export default function AggregatedTVLChart({
                             TVL
                         </span>
                         <span className="font-bold">
-                            {new Intl.NumberFormat("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(totalBTC)} BTC
+                            {new Intl.NumberFormat("en-US", {
+                                minimumFractionDigits: 2,
+                                maximumFractionDigits: 2,
+                            }).format(totalBTC)}{" "}
+                            BTC
                         </span>
                         <div className="text-xs sm:text-sm text-muted-foreground">
                             {formatCurrency(
