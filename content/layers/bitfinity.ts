@@ -86,8 +86,7 @@ const bitfinity: LayerProject = {
             title: "Under review.",
             content: [
                 {
-                    content:
-                        "This project is under review.",
+                    content: "This project is under review.",
                 },
             ],
         },
