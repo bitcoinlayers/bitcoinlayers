@@ -40,11 +40,12 @@ const alpen: LayerProject = {
         "Alpen Labs is a team developing Strata, a rollup on top of Bitcoin. They have recently left stealth, and are inviting developers to contribute to their testnet.",
     riskAnalysis: [
         {
-            category: RiskCategory.UnilateralExits,
+            category: RiskCategory.BtcCustody,
             score: 0,
             tier: "",
             title: "",
             content: "",
+            pegs: [],
         },
         {
             category: RiskCategory.DataAvailability,

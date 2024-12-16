@@ -58,10 +58,20 @@ const bouncebit: LayerProject = {
         {
             category: RiskCategory.BtcCustody,
             score: 0,
-            tier: RiskFactor.Unverified,
-            title: "Bridge is managed by a third party",
-            content:
-                "The official BounceBit bitcoin bridge is proposedly managed by the Polyhedra Network. The two-way peg is currently an MPC protocol, where a selected number of signers are responsible for securing the bridge and custodying users’ BTC.\n\n🛑  We cannot currently verify claims related to BounceBit’s two-way peg. Polyhedra has not disclosed any information related to its operation of the BounceBit two-way peg.",
+            tier: RiskFactor.NotApplicable,
+            title: "",
+            content: "",
+            pegs: [
+                {
+                    name: "BounceBit WBTC",
+                    infrastructureSlug: "boundebit-wbtc",
+                    score: 0,
+                    tier: RiskFactor.Unverified,
+                    title: "Bridge is managed by a third party",
+                    content:
+                        "The official BounceBit bitcoin bridge is proposedly managed by the Polyhedra Network. The two-way peg is currently an MPC protocol, where a selected number of signers are responsible for securing the bridge and custodying users’ BTC.\n\n🛑  We cannot currently verify claims related to BounceBit’s two-way peg. Polyhedra has not disclosed any information related to its operation of the BounceBit two-way peg.",
+                },
+            ],
         },
         {
             category: RiskCategory.DataAvailability,

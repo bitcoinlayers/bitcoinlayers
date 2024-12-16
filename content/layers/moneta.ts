@@ -35,12 +35,22 @@ const moneta: LayerProject = {
         "Moneta is a rollup that uses Bitcoin for data availability and consensus. It has an optimistically verified validating bridge via BitVM. It leverages STARK proofs to prove state transitions. In the event of an invalid state transition, verifiers in the BitVM bridge can submit a fraud proof to show that the state transition was invalid.",
     riskAnalysis: [
         {
-            category: RiskCategory.UnilateralExits,
+            category: RiskCategory.BtcCustody,
             score: 0,
-            tier: RiskFactor.Medium,
-            title: "Withdrawals rely on 1-N trust assumptions.",
-            content:
-                "Withdrawing BTC and/or Bitcoin assets from the rollup is not trustless. Users must trust that 1 of any number of BitVM verifiers in the validating bridge are acting honestly to process their withdrawal.",
+            tier: RiskFactor.NotApplicable,
+            title: "",
+            content: "",
+            pegs: [
+                {
+                    name: "Moneta MBTC",
+                    infrastructureSlug: "moneta-mbtc",
+                    score: 0,
+                    tier: RiskFactor.Medium,
+                    title: "Withdrawals rely on 1-N trust assumptions.",
+                    content:
+                        "Withdrawing BTC and/or Bitcoin assets from the rollup is not trustless. Users must trust that 1 of any number of BitVM verifiers in the validating bridge are acting honestly to process their withdrawal.",
+                },
+            ],
         },
         {
             category: RiskCategory.DataAvailability,

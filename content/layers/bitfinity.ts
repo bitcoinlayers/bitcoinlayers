@@ -51,11 +51,12 @@ const bitfinity: LayerProject = {
         "Bitfinity is an EVM-based Proof-of-Stake sidechain. It is currently live on testnet.",
     riskAnalysis: [
         {
-            category: RiskCategory.UnilateralExits,
+            category: RiskCategory.BtcCustody,
             score: 0,
             tier: "",
             title: "",
             content: "",
+            pegs: [],
         },
         {
             category: RiskCategory.DataAvailability,

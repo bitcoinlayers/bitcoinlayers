@@ -33,32 +33,24 @@ const RiskIcon: React.FC<{
     );
 };
 
-// const riskEmojiMap: Record<string, string> = {
-//     Low: "😍",
-//     Medium: "🙃",
-//     High: "😖",
-//     Critical: "🛑",
-//     Unverified: "❓",
-// };
-
-// const getRiskEmoji = (risk: string): string => {
-//     switch (risk) {
-//         case "Low":
-//             return "😍";
-//         case "Medium":
-//             return "🙃";
-//         case "High":
-//             return "😖";
-//         case "Critical":
-//             return "🛑";
-//         case "Unverified":
-//             return "❓";
-//         default:
-//             return "❓";
-//     }
-// };
-
 const RiskSnapshot: React.FC<RiskSnapshotProps> = ({ layer, title }) => {
+    const riskAnalysis = (layer as LayerProject).riskAnalysis;
+    const riskFactors = layer.riskFactors;
+
+    const getRiskFactor = (risk: any, index: number): string => {
+        if (index === 0 && risk?.pegs?.length > 0) {
+            return risk.pegs[0].tier;
+        }
+        return riskFactors[index] || "Unknown";
+    };
+
+    const getRiskTitle = (risk: any, index: number): string => {
+        if (index === 0 && risk?.pegs?.length > 0) {
+            return risk.pegs[0].title;
+        }
+        return risk.title || "Unknown";
+    };
+
     return (
         <div className="max-w-screen-lg mx-auto px-4 sm:px-6 lg:px-8">
             <DialogHeader className="mb-4 sm:mb-6 pb-2 font-bold border-b border-border">
@@ -67,11 +59,11 @@ const RiskSnapshot: React.FC<RiskSnapshotProps> = ({ layer, title }) => {
                 </DialogTitle>
             </DialogHeader>
             <div className="grid grid-cols-1 gap-4 sm:gap-6">
-                {(layer as LayerProject).riskAnalysis.map((risk, index) => (
+                {riskAnalysis.map((risk, index) => (
                     <div key={index} className="flex items-start">
                         <div className="flex-shrink-0">
                             <RiskIcon
-                                riskFactor={layer.riskFactors[index]}
+                                riskFactor={getRiskFactor(risk, index)}
                                 IconComponent={
                                     [
                                         RiskIconBridge,
@@ -89,16 +81,15 @@ const RiskSnapshot: React.FC<RiskSnapshotProps> = ({ layer, title }) => {
                                     className="font-semibold"
                                     style={{
                                         color: getRiskColorText(
-                                            layer.riskFactors[index],
+                                            getRiskFactor(risk, index),
                                         ),
                                     }}
                                 >
-                                    {layer.riskFactors[index]}
-                                    {/* {getRiskEmoji(layer.riskFactors[index])} */}
+                                    {getRiskFactor(risk, index)}
                                 </span>
                             </div>
                             <div className="text-xs sm:text-sm">
-                                {risk.title}
+                                {getRiskTitle(risk, index)}
                             </div>
                         </div>
                     </div>

@@ -51,11 +51,12 @@ const starknet: LayerProject = {
         "Starknet is a validity rollup on Ethereum. They are proposing a multi-settlement rollup that will settle on Bitcoin and Ethereum should OP_CAT be activated. They are currently developing a STARK verifier directly in Script with OP_CAT on signet.",
     riskAnalysis: [
         {
-            category: RiskCategory.UnilateralExits,
+            category: RiskCategory.BtcCustody,
             score: 0,
             tier: "",
             title: "",
             content: "",
+            pegs: [],
         },
         {
             category: RiskCategory.DataAvailability,

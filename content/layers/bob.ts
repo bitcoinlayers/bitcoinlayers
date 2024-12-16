@@ -52,10 +52,53 @@ const bob: LayerProject = {
         {
             category: RiskCategory.BtcCustody,
             score: 0,
-            tier: RiskFactor.VeryHigh,
-            title: "Bitcoin users trust that bitcoin synthetics will remain backed, and that the BOB bridge will not steal their funds",
-            content:
-                "tBTC and wBTC are minted on BOB via its official Ethereum bridge.\n\nUsers trust that the bridge operators will not steal their BTC, the BOB proposer to not publish a malicious, unchallenged state transition, or the admin controlling the bridge to create a malicious smart contract upgrade.\n\nIn the event of a malicious smart contract upgrade, there is no exit window for BOB users. This means that the admin behind the bridge can steal all funds in the official bridge.\n\n🔬We are currently reviewing other bitcoin synthetics minted on BOB.",
+            tier: RiskFactor.NotApplicable,
+            title: "",
+            content: "",
+            pegs: [
+                {
+                    name: "Threshold tBTC",
+                    infrastructureSlug: "threshold-tbtc",
+                    score: 0,
+                    tier: RiskFactor.VeryHigh,
+                    title: "Bitcoin users trust that tBTC will remain backed on Ethereum, and that the BOB bridge will not steal their funds",
+                    content:
+                        "tBTC is minted on BOB via its official Ethereum bridge.tBTC on Ethereum is backed by BTC managed by the Threshold Network.\n\nUsers trust that the bridge operators will not steal their BTC, the BOB proposer to not publish a malicious, unchallenged state transition, or the admin controlling the bridge to create a malicious smart contract upgrade.\n\nIn the event of a malicious smart contract upgrade, there is no exit window for BOB users. This means that the admin behind the bridge can steal all funds in the official bridge.\n\nFor more information on the Threshold Network & tBTC, [click here.](https://www.bitcoinlayers.org/infrastructure/tbtc).",
+                },
+                {
+                    name: "BitGo wBTC",
+                    infrastructureSlug: "bitgo-wbtc",
+                    score: 0,
+                    tier: RiskFactor.VeryHigh,
+                    title: "Centralized custody model",
+                    content:
+                        "wBTC is minted onto BOB via its official bridge on Ethereum. wBTC relies on a permissioned, centralized consortium of custodians to maintain BTC collateral.\n\nUsers trust that the bridge operators will not steal their BTC, the BOB proposer to not publish a malicious, unchallenged state transition, or the admin controlling the bridge to create a malicious smart contract upgrade. In the event of a malicious smart contract upgrade, there is no exit window for BOB users. This means that the admin behind the bridge can steal all funds in the official bridge.\n\nFor more information on wBTC, [click here.](https://www.bitcoinlayers.org/infrastructure/wbtc).",
+                },
+                {
+                    name: "Bedrock uniBTC",
+                    infrastructureSlug: "bedrock-unibtc",
+                    score: 0,
+                    tier: RiskFactor.UnderReview,
+                    title: "This two-way peg is under review",
+                    content: "This two-way peg is under review",
+                },
+                {
+                    name: "Solv SolvBTC",
+                    infrastructureSlug: "solv-solvbtc",
+                    score: 0,
+                    tier: RiskFactor.UnderReview,
+                    title: "This two-way peg is under review",
+                    content: "This two-way peg is under review",
+                },
+                {
+                    name: "Solv SolvBTC.BBN",
+                    infrastructureSlug: "solv-solvbtcbbn",
+                    score: 0,
+                    tier: RiskFactor.UnderReview,
+                    title: "This two-way peg is under review",
+                    content: "This two-way peg is under review",
+                },
+            ],
         },
         {
             category: RiskCategory.DataAvailability,

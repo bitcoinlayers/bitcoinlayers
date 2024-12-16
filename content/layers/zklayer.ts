@@ -47,11 +47,12 @@ const zklayer: LayerProject = {
         "zkLayer is a proposed rollup project on top of Bitcoin. It is unclear what bridging model it will use to secure its two-way peg and validate state transitions.",
     riskAnalysis: [
         {
-            category: RiskCategory.UnilateralExits,
+            category: RiskCategory.BtcCustody,
             score: 0,
             tier: "",
             title: "",
             content: "",
+            pegs: [],
         },
         {
             category: RiskCategory.DataAvailability,

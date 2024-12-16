@@ -51,11 +51,12 @@ const rif: LayerProject = {
         "Rif is a proposed rollup design that would settle on the Rootstock sidechain. It is a fork of the zkSync codebase.",
     riskAnalysis: [
         {
-            category: RiskCategory.UnilateralExits,
+            category: RiskCategory.BtcCustody,
             score: 0,
             tier: "",
             title: "",
             content: "",
+            pegs: [],
         },
         {
             category: RiskCategory.DataAvailability,
