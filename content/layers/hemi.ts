@@ -51,11 +51,12 @@ const hemi: LayerProject = {
         "Hemi is a blockchain that is building compatability with bitcoin and Ethereum. It is currently live on testnet.",
     riskAnalysis: [
         {
-            category: RiskCategory.UnilateralExits,
+            category: RiskCategory.BtcCustody,
             score: 0,
             tier: "",
             title: "",
             content: "",
+            pegs: [],
         },
         {
             category: RiskCategory.DataAvailability,

@@ -51,11 +51,12 @@ const tunachain: LayerProject = {
     description: "Under Review.",
     riskAnalysis: [
         {
-            category: RiskCategory.UnilateralExits,
+            category: RiskCategory.BtcCustody,
             score: 0,
             tier: "",
             title: "",
             content: "",
+            pegs: [],
         },
         {
             category: RiskCategory.DataAvailability,

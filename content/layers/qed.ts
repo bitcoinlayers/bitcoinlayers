@@ -43,11 +43,12 @@ const qed: LayerProject = {
         "QED Protocol is designing a rollup-style blockchain using recursive validity proofs. They are currently building towards their first testnet launch.",
     riskAnalysis: [
         {
-            category: RiskCategory.UnilateralExits,
+            category: RiskCategory.BtcCustody,
             score: 0,
             tier: "",
             title: "",
             content: "",
+            pegs: [],
         },
         {
             category: RiskCategory.DataAvailability,

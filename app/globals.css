@@ -149,8 +149,8 @@ section {
         --chart-kinza-kbtc: 47 75% 56%;
         --chart-babypie-mbtc: 178 45% 21%;
         /* Crosschain BTC */
-        --chart-dlc-link-dlcbtc: 284 84% 35%;
-        --chart-fire-fbtc: 238 100% 67%;
+        --chart-ibtc-network-ibtc: 284 84% 35%;
+        --chart-fire-bitcoin-fbtc: 238 100% 67%;
         --chart-solv-solvbtc: 263 99% 65%;
         --chart-coinbase-cbbtc: 221 100% 52%;
         --chart-kraken-kbtc: 257 83% 60%;
@@ -159,7 +159,7 @@ section {
         --chart-binance-btcb: 51 89% 58%;
         --chart-rootstock-rbtc: 31 86% 53%;
         --chart-liquid-l-btc: 165 54% 57%;
-        --chart-core-chain-corebtc: 262 5% 52%;
+        --chart-core-corebtc: 262 5% 52%;
         --chart-bitgo-wbtc: 252 26% 18%;
         --chart-lightning-btc: 267 100% 49%;
     }

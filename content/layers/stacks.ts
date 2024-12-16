@@ -58,10 +58,29 @@ const stacks: LayerProject = {
         {
             category: RiskCategory.BtcCustody,
             score: 0,
-            tier: RiskFactor.VeryHigh,
-            title: "Users must trust centralized companies with custody of their BTC. Signers under review",
-            content:
-                "Stacks has no consensus-enshrined BTC bridge. It does have third-party bridges, which are operated by centralized custodial parties. Users must trust the operators of these bridges to custody their BTC and back bitcoin-backed tokens on the Stacks network.\n\nThe primary third-party bridge is operated by [Alex Labs](https://alexlab.co/).",
+            tier: RiskFactor.NotApplicable,
+            title: "",
+            content: "",
+            pegs: [
+                {
+                    name: "Alex xBTC",
+                    infrastructureSlug: "alex-xbtc",
+                    score: 0,
+                    tier: RiskFactor.VeryHigh,
+                    title: "Users must trust centralized companies with custody of their BTC. Signers under review",
+                    content:
+                        "Stacks has no consensus-enshrined BTC bridge. It does have third-party bridges, which are operated by centralized custodial parties. Users must trust the operators of these bridges to custody their BTC and back bitcoin-backed tokens on the Stacks network.\n\nThe primary third-party bridge is operated by [Alex Labs](https://alexlab.co/).",
+                },
+                {
+                    name: "XLink aBTC",
+                    infrastructureSlug: "xlink-abtc",
+                    score: 0,
+                    tier: RiskFactor.VeryHigh,
+                    title: "Users must trust centralized companies with custody of their BTC. Signers under review",
+                    content:
+                        "Stacks has no consensus-enshrined BTC bridge. It does have third-party bridges, which are operated by centralized custodial parties. Users must trust the operators of these bridges to custody their BTC and back bitcoin-backed tokens on the Stacks network.\n\nThe primary third-party bridge is operated by [Alex Labs](https://alexlab.co/).",
+                },
+            ],
         },
         {
             category: RiskCategory.DataAvailability,

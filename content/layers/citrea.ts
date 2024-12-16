@@ -51,11 +51,12 @@ const citrea: LayerProject = {
         "Citrea is building a rollup on top of Bitcoin. They are using implementations of BitVM for their Bitcoin two-way peg and SNARK verifier. They are using zkSTARKs to prove rollup state transitions and will use Bitcoin for data availability. Citrea is being developed by Chainway Labs.",
     riskAnalysis: [
         {
-            category: RiskCategory.UnilateralExits,
+            category: RiskCategory.BtcCustody,
             score: 0,
             tier: "",
             title: "",
             content: "",
+            pegs: [],
         },
         {
             category: RiskCategory.DataAvailability,

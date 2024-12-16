@@ -46,10 +46,20 @@ const lightning: LayerProject = {
         {
             category: RiskCategory.BtcCustody,
             score: 0,
-            tier: RiskFactor.Low,
-            title: "Funds are secured in a 2-2 multisig with unilateral exit support for each counterparty",
-            content:
-                "When users open a payment channel, funds are deposited onchain into a 2-of-2 multisig address shared between the respective channel counterparties. \n\nUsers can collaboratively close a channel by signing and broadcasting a closing transaction which distributes the funds on bitcoin L1 based on the latest channel state. \n\nIf a counterparty is unresponsive during a cooperative channel closure attempt, a user can unilaterally enforce the process by broadcasting the most recent commitment transaction representing the latest balance distribution. There is a challenge-response mechanism to settle potential disputes between channel counterparties over the final state of a channel closure transaction.",
+            tier: RiskFactor.NotApplicable,
+            title: "",
+            content: "",
+            pegs: [
+                {
+                    name: "Lightning BTC",
+                    infrastructureSlug: "lightning-btc",
+                    score: 0,
+                    tier: RiskFactor.Low,
+                    title: "Funds are secured in a 2-2 multisig with unilateral exit support for each counterparty",
+                    content:
+                        "When users open a payment channel, funds are deposited onchain into a 2-of-2 multisig address shared between the respective channel counterparties. \n\nUsers can collaboratively close a channel by signing and broadcasting a closing transaction which distributes the funds on bitcoin L1 based on the latest channel state. \n\nIf a counterparty is unresponsive during a cooperative channel closure attempt, a user can unilaterally enforce the process by broadcasting the most recent commitment transaction representing the latest balance distribution. There is a challenge-response mechanism to settle potential disputes between channel counterparties over the final state of a channel closure transaction.",
+                },
+            ],
         },
         {
             category: RiskCategory.DataAvailability,

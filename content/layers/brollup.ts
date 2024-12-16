@@ -43,11 +43,12 @@ const brollup: LayerProject = {
         "Brollups are a proposed rollup design that use the Bitcoin block space as their data availability layer. Brollups work natively with Bitcoin as a payable construct",
     riskAnalysis: [
         {
-            category: RiskCategory.UnilateralExits,
+            category: RiskCategory.BtcCustody,
             score: 0,
             tier: "",
             title: "",
             content: "",
+            pegs: [],
         },
         {
             category: RiskCategory.DataAvailability,

@@ -51,11 +51,12 @@ const goat: LayerProject = {
         "Goat Network is building a bitcoin scaling solution supported by a decentralized sequencer.",
     riskAnalysis: [
         {
-            category: RiskCategory.UnilateralExits,
+            category: RiskCategory.BtcCustody,
             score: 0,
             tier: "",
             title: "",
             content: "",
+            pegs: [],
         },
         {
             category: RiskCategory.DataAvailability,

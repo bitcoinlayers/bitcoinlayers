@@ -40,11 +40,12 @@ const bit2: LayerProject = {
         "Bit2 is an Ethereum rollup that uses wBTC for gas and shares sequencer revenue with wBTC holders.",
     riskAnalysis: [
         {
-            category: RiskCategory.UnilateralExits,
+            category: RiskCategory.BtcCustody,
             score: 0,
             tier: "",
             title: "",
             content: "",
+            pegs: [],
         },
         {
             category: RiskCategory.DataAvailability,

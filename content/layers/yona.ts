@@ -47,11 +47,12 @@ const yona: LayerProject = {
         "Yona Network is developing a rollup-style blockchain leveraging the Solana Virtual Machine. They currently have an active devnet where developers can deploy applications.",
     riskAnalysis: [
         {
-            category: RiskCategory.UnilateralExits,
+            category: RiskCategory.BtcCustody,
             score: 0,
             tier: "",
             title: "",
             content: "",
+            pegs: [],
         },
         {
             category: RiskCategory.DataAvailability,

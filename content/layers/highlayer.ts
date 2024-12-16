@@ -43,11 +43,12 @@ const highlayer: LayerProject = {
         "HighLayer is a rollup-style blockchain developing its own virtual machine penned the Highlayer Virtual Machine. It is currently live on testnet.",
     riskAnalysis: [
         {
-            category: RiskCategory.UnilateralExits,
+            category: RiskCategory.BtcCustody,
             score: 0,
             tier: "",
             title: "",
             content: "",
+            pegs: [],
         },
         {
             category: RiskCategory.DataAvailability,

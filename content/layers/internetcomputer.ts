@@ -58,10 +58,20 @@ const internetcomputer: LayerProject = {
         {
             category: RiskCategory.BtcCustody,
             score: 0,
-            tier: RiskFactor.UnderReview,
-            title: "Funds are custodied by signer set selected by ICP consensus",
-            content:
-                "Users who deposit funds into ckBTC trust a set of operators, who are elected via ICP governance, with the custody of their bitcoin. The operators of the ‘pzp6e…’ subnet manage the “ckBTC” smart contract module, which is responsible for minting, custodying and burning bitcoin-backed tokens on the ICP sidechain.\n\nThis smart contract is a part of a subnet with 34 node operators. These operators have undergone a KYB process to ICP governance and are publicly known.",
+            tier: RiskFactor.NotApplicable,
+            title: "",
+            content: "",
+            pegs: [
+                {
+                    name: "ICP ckBTC",
+                    infrastructureSlug: "icp-ckbtc",
+                    score: 0,
+                    tier: RiskFactor.UnderReview,
+                    title: "Funds are custodied by signer set selected by ICP consensus",
+                    content:
+                        "Users who deposit funds into ckBTC trust a set of operators, who are elected via ICP governance, with the custody of their bitcoin. The operators of the ‘pzp6e…’ subnet manage the “ckBTC” smart contract module, which is responsible for minting, custodying and burning bitcoin-backed tokens on the ICP sidechain.\n\nThis smart contract is a part of a subnet with 34 node operators. These operators have undergone a KYB process to ICP governance and are publicly known.",
+                },
+            ],
         },
         {
             category: RiskCategory.DataAvailability,

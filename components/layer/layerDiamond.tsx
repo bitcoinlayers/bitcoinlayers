@@ -12,6 +12,14 @@ const LayerDiamond: React.FC<{ layer: LayerProject }> = ({ layer }) => {
     const svgDivSize = containerSize / 2;
     const svgSize = 215;
 
+    const getRiskFactor = (index: number) => {
+        const risk = layer.riskAnalysis[index];
+        if ((index === 0 && risk?.pegs?.length) ?? 0 > 0) {
+            return risk.pegs?.[0]?.tier ?? risk.tier; // Use the first peg's tier for Bridge or fallback to root-level tier
+        }
+        return risk.tier; // Fallback to root-level tier
+    };
+
     const renderDiamond = (
         riskFactor: string,
         positionTop: number,
@@ -66,15 +74,6 @@ const LayerDiamond: React.FC<{ layer: LayerProject }> = ({ layer }) => {
                             />
                         </div>
                     </foreignObject>
-                    {/* <text
-                        x="33%"
-                        y="55%"
-                        textAnchor="middle"
-                        fill={fillColor}
-                        className="font-bold text-3xl"
-                    >
-                        {riskFactor} Risk
-                    </text> */}
                 </svg>
             </div>
         );
@@ -124,7 +123,7 @@ const LayerDiamond: React.FC<{ layer: LayerProject }> = ({ layer }) => {
         <>
             {diamondPositions.map((position, index) =>
                 renderDiamond(
-                    (layer as LayerProject).riskAnalysis[index].tier,
+                    getRiskFactor(index),
                     position.top,
                     position.left,
                     position.Icon,
@@ -144,7 +143,9 @@ const LayerDiamond: React.FC<{ layer: LayerProject }> = ({ layer }) => {
                 </div>
             ))}
             <Dialog>
-                <DialogTrigger className={containerClassName}>
+                <DialogTrigger
+                    className={`lg:w-[${containerSize}px] h-[${containerSize}px] flex justify-center items-center relative ml-0 z-30 cursor-pointer`}
+                >
                     {renderContent()}
                 </DialogTrigger>
                 <DialogContent className="w-[calc(100vw-16px)] mx-auto max-w-[500px] rounded-lg">
