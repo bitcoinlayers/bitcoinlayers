@@ -10,7 +10,7 @@ import sovereignProject from "../content/infrastructures/sovereign";
 import nubitProject from "../content/infrastructures/nubit";
 import babylonProject from "../content/infrastructures/babylon";
 import fedimintProject from "../content/infrastructures/fedimint";
-import dlclinkProject from "../content/infrastructures/dlclink-dlcbtc";
+import ibtcnetworkProject from "../content/infrastructures/ibtcnetwork-ibtc";
 import boolProject from "../content/infrastructures/bool";
 import cashuProject from "../content/infrastructures/cashu";
 import tbtcProject from "../content/infrastructures/threshold-tbtc";
@@ -57,7 +57,7 @@ const sovereign: InfrastructureProject = sovereignProject;
 const nubit: InfrastructureProject = nubitProject;
 const babylon: InfrastructureProject = babylonProject;
 const fedimint: InfrastructureProject = fedimintProject;
-const dlclink: InfrastructureProject = dlclinkProject;
+const ibtcnetwork: InfrastructureProject = ibtcnetworkProject;
 const bool: InfrastructureProject = boolProject;
 const cashu: InfrastructureProject = cashuProject;
 const tbtc: InfrastructureProject = tbtcProject;
@@ -100,7 +100,7 @@ export const allInfrastructures: InfrastructureProject[] = [
     wbtc,
     cbbtc,
     kbtc,
-    dlclink,
+    ibtcnetwork,
     bool,
     nubit,
     sovereign,

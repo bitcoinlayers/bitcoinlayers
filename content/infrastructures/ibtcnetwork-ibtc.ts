@@ -7,10 +7,10 @@ import {
     Site,
 } from "../props";
 
-const dlclink: InfrastructureProject = {
+const ibtcnetworkibtc: InfrastructureProject = {
     type: Type.Infrastructure,
-    slug: "dlclink-dlcbtc",
-    title: "DLC Link dlcBTC",
+    slug: "ibtcnetwork-ibtc",
+    title: "iBTC Network iBTC", //formerly DLC Link dlcBTC
     entityType: EntityType.BTCWrapper,
     live: LiveStatus.Mainnet,
     staking: false,
@@ -25,11 +25,11 @@ const dlclink: InfrastructureProject = {
     links: [
         {
             text: Site.Website,
-            url: "https://www.dlcbtc.com",
+            url: "https://www.ibtc.network/",
         },
         {
             text: Site.Docs,
-            url: "https://docs.dlcbtc.com/dlcbtc-documentation",
+            url: "https://docs.ibtc.network/ibtc-documentation",
         },
         // {
         //     text: Site.Explorer,
@@ -41,11 +41,11 @@ const dlclink: InfrastructureProject = {
         },
         {
             text: Site.Twitter,
-            url: "https://twitter.com/dlcbtc",
+            url: "https://x.com/ibtcnetwork",
         },
     ],
     description:
-        "DLC Link supports the development of dlcBTC, a Bitcoin wrapper that leverages discrete log contracts.",
+        "iBTC Network supports the development of iBTC, a Bitcoin wrapper that leverages discrete log contracts.",
     sections: [
         {
             id: "selfsubmit",
@@ -60,4 +60,4 @@ const dlclink: InfrastructureProject = {
     ],
 };
 
-export default dlclink;
+export default ibtcnetworkibtc;
