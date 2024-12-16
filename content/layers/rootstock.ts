@@ -78,7 +78,7 @@ const rootstock: LayerProject = {
                     tier: RiskFactor.VeryHigh,
                     title: "Centralized custody model",
                     content:
-                        "wBTC relies on a consortium of custodians to maintain BTC collateral. Users trust that custodians will not mismanage or steal their funds.",
+                        "wBTC relies on a consortium of custodians to maintain BTC collateral. Users trust that custodians will not mismanage or steal their funds.\n\nWe are reviewing the smart contracts, and other additional considerations, associated with wBTC on Rootstock.",
                 },
             ],
         },
