@@ -49,6 +49,7 @@ import encifherProject from "../content/layers/encifher";
 import sparkProject from "../content/layers/spark";
 import barkProject from "../content/layers/bark";
 import clarkProject from "../content/layers/clark";
+import arbitrumProject from "../content/layers/arbitrum";
 
 const core: LayerProject = coreProject;
 const internetcomputer: LayerProject = internetcomputerProject;
@@ -99,6 +100,7 @@ const encifher: LayerProject = encifherProject;
 const spark: LayerProject = sparkProject;
 const bark: LayerProject = barkProject;
 const clark: LayerProject = clarkProject;
+const arbitrum: LayerProject = arbitrumProject;
 
 export const allLayers: LayerProject[] = [
     core,
@@ -143,6 +145,7 @@ export const allLayers: LayerProject[] = [
     spark,
     bark,
     clark,
+    arbitrum,
 ];
 
 export const allLayerSlugs: string[] = allLayers.map((layer) => layer.slug);

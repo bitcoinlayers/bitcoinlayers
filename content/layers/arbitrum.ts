@@ -10,10 +10,10 @@ import {
     RiskCategory,
 } from "../props";
 
-const corn: LayerProject = {
+const arbitrum: LayerProject = {
     type: Type.Layer,
-    slug: "corn",
-    title: "Corn",
+    slug: "arbitrum",
+    title: "Arbitrum",
     entityType: EntityType.EthereumRollup,
     live: LiveStatus.Mainnet,
     staking: false,
@@ -23,7 +23,7 @@ const corn: LayerProject = {
     riskFactors: ["", "", "", ""],
     btcLocked: 0,
     nativeToken: "-",
-    feeToken: "-",
+    feeToken: "ETH",
     bitcoinOnly: false,
     links: [
         {
@@ -48,7 +48,7 @@ const corn: LayerProject = {
         },
     ],
     description:
-        "Corn is an Ethereum rollup that leverages a wrapped BTC token as its gas token.",
+        "Arbitrum is an Ethereum rollup that that supports a variety of wrapped BTC tokens.",
     riskAnalysis: [
         {
             category: RiskCategory.UnilateralExits,
@@ -92,4 +92,4 @@ const corn: LayerProject = {
     ],
 };
 
-export default corn;
+export default arbitrum;
