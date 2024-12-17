@@ -20,6 +20,8 @@ interface TableHeaderProps {
         filterQueryParam?: string;
     }[];
     onSort: (header: string) => void;
+    sortBy?: string;
+    sortOrder?: string;
     sortByQueryParam?: string;
     sortOrderQueryParam?: string;
     filterQueryParam?: string;
@@ -28,22 +30,27 @@ interface TableHeaderProps {
 const TableHeader: React.FC<TableHeaderProps> = ({
     headers,
     onSort,
+    sortBy: propSortBy,
+    sortOrder: propSortOrder,
     sortByQueryParam = "sortBy",
     sortOrderQueryParam = "sortOrder",
 }) => {
+    const [querySortBy] = useQueryState(sortByQueryParam, {
+        defaultValue: "Name",
+    });
+    const [querySortOrder] = useQueryState(sortOrderQueryParam, {
+        defaultValue: "asc",
+    });
+
+    const sortBy = propSortBy || querySortBy || "Name";
+    const sortOrder = propSortOrder || querySortOrder || "asc";
+
     const handleSort = (header: string) => {
         onSort(header);
     };
 
-    const [sortBy] = useQueryState(sortByQueryParam, {
-        defaultValue: "Name",
-    });
-    const [sortOrder] = useQueryState(sortOrderQueryParam, {
-        defaultValue: "asc",
-    });
-
     return (
-        <thead className="">
+        <thead>
             <tr className="border-b border-border">
                 {headers.map((header, index) => (
                     <th

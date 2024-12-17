@@ -75,10 +75,10 @@ const FederationTable = ({ data, headers }: Props) => {
         serialize: (value) => value.join(","),
     });
     const [sortBy, setSortBy] = useQueryState("sortBy", {
-        defaultValue: "Name",
+        defaultValue: "TVL",
     });
     const [sortOrder, setSortOrder] = useQueryState("sortOrder", {
-        defaultValue: "asc",
+        defaultValue: "desc",
     });
 
     const { data: balances } = useGetInfratvlCurrentAll();
@@ -236,6 +236,8 @@ const FederationTable = ({ data, headers }: Props) => {
                         <TableHeader
                             headers={isMobile ? mobileTableHeaders : headers}
                             onSort={handleSort}
+                            sortBy={sortBy}
+                            sortOrder={sortOrder}
                         />
                         <tbody className="gap-x-8">
                             {filteredData.map((item, index) => (

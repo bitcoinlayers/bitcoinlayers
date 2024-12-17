@@ -73,10 +73,10 @@ const LayerTable = ({ data, headers }: Props) => {
         defaultValue: "mainnet",
     }); //rm when adding back in status table filter
     const [sortBy, setSortBy] = useQueryState("sortBy", {
-        defaultValue: "Name",
+        defaultValue: "BTC Locked",
     });
     const [sortOrder, setSortOrder] = useQueryState("sortOrder", {
-        defaultValue: "asc",
+        defaultValue: "desc",
     });
 
     const { data: balances } = useGetLayertvlCurrentAll();
@@ -264,6 +264,8 @@ const LayerTable = ({ data, headers }: Props) => {
                         <TableHeader
                             headers={isMobile ? mobileTableHeaders : headers}
                             onSort={handleSort}
+                            sortBy={sortBy}
+                            sortOrder={sortOrder}
                         />
                         <tbody className="gap-x-8">
                             {filteredData.map((item, index) => (

@@ -78,10 +78,10 @@ const InfrastructureTable = ({
         serialize: (value) => value.join(","),
     });
     const [sortBy, setSortBy] = useQueryState("sortBy", {
-        defaultValue: "Name",
+        defaultValue: "BTC Locked",
     });
     const [sortOrder, setSortOrder] = useQueryState("sortOrder", {
-        defaultValue: "asc",
+        defaultValue: "desc",
     });
 
     const [mobileActiveTab, setMobileActiveTab] = useState<TableTabKey>("Type");
