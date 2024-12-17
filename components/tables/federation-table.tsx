@@ -22,6 +22,7 @@ import {
     Layers2Icon,
     LayersIcon,
 } from "lucide-react";
+import { LiveStatus } from "@/content/props";
 
 type TableTabKey = "Snapshot" | "Type" | "Status" | "TVL";
 
@@ -64,6 +65,9 @@ const LayerImage = ({ src, title }: { src: string; title: string }) => {
         />
     );
 };
+
+const isMainnet = (status: string) =>
+    status === LiveStatus.Mainnet || status === LiveStatus.Deposits;
 
 const FederationTable = ({ data, headers }: Props) => {
     const [status, setStatus] = useQueryState("status", {
@@ -141,7 +145,13 @@ const FederationTable = ({ data, headers }: Props) => {
             return 0;
         });
 
-        let filtered = sorted;
+        let filtered = sorted.filter((item) => {
+            if (status === LiveStatus.Mainnet.toLowerCase())
+                return isMainnet(item.live);
+            if (status === "testnet") return !isMainnet(item.live);
+            return true;
+        });
+
         if (types.length > 0) {
             filtered = filtered.filter((item) =>
                 types.includes(
@@ -149,12 +159,6 @@ const FederationTable = ({ data, headers }: Props) => {
                 ),
             );
         }
-
-        filtered = filtered.filter((item) => {
-            if (status === "mainnet") return item.live === "Mainnet";
-            if (status === "testnet") return item.live !== "Mainnet";
-            return true;
-        });
 
         return filtered;
     }, [data, sortBy, sortOrder, types, status, totaledBalances]);
@@ -210,7 +214,7 @@ const FederationTable = ({ data, headers }: Props) => {
                         </span>
                         <span className="text-lg font-bold leading-none sm:text-3xl">
                             {data
-                                .filter((item) => item.live === "Mainnet")
+                                .filter((item) => isMainnet(item.live))
                                 .length.toLocaleString()}
                         </span>
                     </button>
@@ -224,7 +228,7 @@ const FederationTable = ({ data, headers }: Props) => {
                         </span>
                         <span className="text-lg font-bold leading-none sm:text-3xl">
                             {data
-                                .filter((item) => item.live !== "Mainnet")
+                                .filter((item) => !isMainnet(item.live))
                                 .length.toLocaleString()}
                         </span>
                     </button>

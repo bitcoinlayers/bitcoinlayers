@@ -41,11 +41,9 @@ function getSortedDataAndHeaders(view: string) {
         //     return { sortedData: sortedStaking, headers: stakingHeaders };
 
         case "wrappers":
-            const sortedWrappers = [...allLayers, ...allInfrastructures]
-                .filter((item) => item.bridge)
-                .sort((a, b) =>
-                    a.title.toLowerCase().localeCompare(b.title.toLowerCase()),
-                );
+            const sortedWrappers = [...allInfrastructures].sort((a, b) =>
+                a.title.toLowerCase().localeCompare(b.title.toLowerCase()),
+            );
 
             const wrapperTypeFilters = [
                 ...new Set(
@@ -73,7 +71,6 @@ function getSortedDataAndHeaders(view: string) {
             ];
 
             return { sortedData: sortedWrappers, headers: wrapperHeaders };
-
         case "layers":
         default:
             const sortedLayers = allLayers.sort((a, b) =>
