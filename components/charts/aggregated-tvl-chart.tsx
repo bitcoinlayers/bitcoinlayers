@@ -156,7 +156,7 @@ export default function AggregatedTVLChart({
                           item,
                           {
                               label: item,
-                              color: `hsl(var(--chart-${item?.toLowerCase().replace(/\s+/g, "-")}))`,
+                              color: `hsl(var(--chart-${item?.toLowerCase().replace(/\s+/g, "-").replace(/\./g, "")}))`,
                           },
                       ]),
                   ),
