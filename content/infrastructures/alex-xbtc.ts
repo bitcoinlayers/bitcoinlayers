@@ -11,7 +11,7 @@ const alexxbtc: InfrastructureProject = {
     type: Type.Infrastructure,
     slug: "alex-xbtc",
     title: "Alex xBTC",
-    entityType: EntityType.BTCWrapper,
+    entityType: EntityType.ReserveAsset,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,

@@ -11,7 +11,7 @@ const avalanchebtcb: InfrastructureProject = {
     type: Type.Infrastructure,
     slug: "avalanche-btcb",
     title: "Avalanche BTC.b",
-    entityType: EntityType.BTCWrapper,
+    entityType: EntityType.ReserveAsset,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,

@@ -11,7 +11,7 @@ const nomicnbtc: InfrastructureProject = {
     type: Type.Infrastructure,
     slug: "nomic-nbtc",
     title: "Nomic nBTC",
-    entityType: EntityType.BTCWrapper,
+    entityType: EntityType.ReserveAsset,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,

@@ -11,7 +11,7 @@ const xlinkabtc: InfrastructureProject = {
     type: Type.Infrastructure,
     slug: "xlink-abtc",
     title: "XLink aBTC",
-    entityType: EntityType.BTCWrapper,
+    entityType: EntityType.ReserveAsset,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,

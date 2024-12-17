@@ -12,7 +12,7 @@ const wbtc: InfrastructureProject = {
     type: Type.Infrastructure,
     slug: "bitgo-wbtc",
     title: "BitGo wBTC",
-    entityType: EntityType.BTCWrapper,
+    entityType: EntityType.ReserveAsset,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,

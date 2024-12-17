@@ -11,7 +11,7 @@ const liquidlbtc: InfrastructureProject = {
     type: Type.Infrastructure,
     slug: "liquid-lbtc",
     title: "Liquid L-BTC",
-    entityType: EntityType.BTCWrapper,
+    entityType: EntityType.ReserveAsset,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,

@@ -11,7 +11,7 @@ const boolbbtc: InfrastructureProject = {
     type: Type.Infrastructure,
     slug: "bool-bbtc",
     title: "Bool bBTC",
-    entityType: EntityType.BTCWrapper,
+    entityType: EntityType.ReserveAsset,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,

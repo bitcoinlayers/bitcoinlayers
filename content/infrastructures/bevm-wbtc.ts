@@ -11,7 +11,7 @@ const bevmwbtc: InfrastructureProject = {
     type: Type.Infrastructure,
     slug: "bevm-wbtc",
     title: "BEVM WBTC",
-    entityType: EntityType.BTCWrapper,
+    entityType: EntityType.ReserveAsset,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,

@@ -11,7 +11,7 @@ const solv: InfrastructureProject = {
     type: Type.Infrastructure,
     slug: "solv-solvbtc",
     title: "Solv SolvBTC",
-    entityType: EntityType.BTCWrapper,
+    entityType: EntityType.ReserveAsset,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,

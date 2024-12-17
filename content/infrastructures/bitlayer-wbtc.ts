@@ -11,7 +11,7 @@ const bitlayerwbtc: InfrastructureProject = {
     type: Type.Infrastructure,
     slug: "bitlayer-wbtc",
     title: "Bitlayer WBTC",
-    entityType: EntityType.BTCWrapper,
+    entityType: EntityType.ReserveAsset,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,

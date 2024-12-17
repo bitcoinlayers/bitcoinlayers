@@ -11,7 +11,7 @@ const rootstockrbtc: InfrastructureProject = {
     type: Type.Infrastructure,
     slug: "rootstock-rbtc",
     title: "Rootstock RBTC",
-    entityType: EntityType.BTCWrapper,
+    entityType: EntityType.ReserveAsset,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,

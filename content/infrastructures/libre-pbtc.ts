@@ -11,7 +11,7 @@ const librepbtc: InfrastructureProject = {
     type: Type.Infrastructure,
     slug: "libre-pbtc",
     title: "Libre pBTC",
-    entityType: EntityType.BTCWrapper,
+    entityType: EntityType.ReserveAsset,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,

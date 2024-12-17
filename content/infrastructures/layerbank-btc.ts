@@ -11,7 +11,7 @@ const layerbankbtc: InfrastructureProject = {
     type: Type.Infrastructure,
     slug: "layerbank-btc",
     title: "Layerbank BTC",
-    entityType: EntityType.BTCWrapper,
+    entityType: EntityType.ReserveAsset,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,

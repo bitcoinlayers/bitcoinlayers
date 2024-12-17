@@ -11,7 +11,7 @@ const layerbankubtc: InfrastructureProject = {
     type: Type.Infrastructure,
     slug: "layerbank-ubtc",
     title: "Layerbank uBTC",
-    entityType: EntityType.BTCWrapper,
+    entityType: EntityType.ReserveAsset,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,

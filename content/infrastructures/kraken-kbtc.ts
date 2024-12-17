@@ -11,7 +11,7 @@ const kbtc: InfrastructureProject = {
     type: Type.Infrastructure,
     slug: "kraken-kbtc",
     title: "Kraken kBTC",
-    entityType: EntityType.BTCWrapper,
+    entityType: EntityType.ReserveAsset,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
