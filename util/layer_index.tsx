@@ -50,12 +50,13 @@ import sparkProject from "../content/layers/spark";
 import barkProject from "../content/layers/bark";
 import clarkProject from "../content/layers/clark";
 import arbitrumProject from "../content/layers/arbitrum";
+import avalancheProject from "../content/layers/avalanche";
 import baseProject from "../content/layers/base";
 import bscProject from "../content/layers/bsc";
 import optimismProject from "../content/layers/optimism";
 import ethereumProject from "../content/layers/ethereum";
 import polygonProject from "../content/layers/polygon";
-import avalancheProject from "../content/layers/avalanche";
+import solanaProject from "../content/layers/solana";
 
 const core: LayerProject = coreProject;
 const internetcomputer: LayerProject = internetcomputerProject;
@@ -113,6 +114,7 @@ const bsc: LayerProject = bscProject;
 const optimism: LayerProject = optimismProject;
 const ethereum: LayerProject = ethereumProject;
 const polygon: LayerProject = polygonProject;
+const solana: LayerProject = solanaProject;
 
 export const allLayers: LayerProject[] = [
     core,
@@ -164,6 +166,7 @@ export const allLayers: LayerProject[] = [
     optimism,
     ethereum,
     polygon,
+    solana,
 ];
 
 export const allLayerSlugs: string[] = allLayers.map((layer) => layer.slug);
