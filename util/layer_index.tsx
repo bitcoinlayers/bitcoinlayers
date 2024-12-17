@@ -52,7 +52,7 @@ import clarkProject from "../content/layers/clark";
 import arbitrumProject from "../content/layers/arbitrum";
 import avalancheProject from "../content/layers/avalanche";
 import baseProject from "../content/layers/base";
-import bscProject from "../content/layers/bsc";
+import bscProject from "../content/layers/bnbsmartchain";
 import optimismProject from "../content/layers/optimism";
 import ethereumProject from "../content/layers/ethereum";
 import polygonProject from "../content/layers/polygon";

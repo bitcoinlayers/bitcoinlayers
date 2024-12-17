@@ -10,10 +10,10 @@ import {
     RiskCategory,
 } from "../props";
 
-const bsc: LayerProject = {
+const bnbsmartchain: LayerProject = {
     type: Type.Layer,
-    slug: "bsc",
-    title: "Binance Smart Chain",
+    slug: "bnbsmartchain",
+    title: "BNB Smart Chain",
     entityType: EntityType.Sidechain,
     live: LiveStatus.Mainnet,
     staking: false,
@@ -92,4 +92,4 @@ const bsc: LayerProject = {
     ],
 };
 
-export default bsc;
+export default bnbsmartchain;
