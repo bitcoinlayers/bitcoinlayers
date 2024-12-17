@@ -223,7 +223,7 @@ export default function InfraTVLChart() {
                 </div>
             </CardHeader>
             <div className="w-full flex flex-col sm:flex-row border-y">
-                <div className="flex flex-col justify-center items-start py-4 sm:py-8 border-b sm:border-b-0 px-6 sm:w-1/2">
+                <div className="flex flex-col justify-center items-start py-4 sm:py-8 border-b sm:border-b-0 px-6 sm:w-3/4">
                     <div className="text-lg sm:text-xl">BTC Locked</div>
                     <div className="text-xs sm:text-sm text-muted-foreground">
                         Total amount of {getTokenName()} locked on{" "}
@@ -236,7 +236,7 @@ export default function InfraTVLChart() {
                         per day.
                     </div>
                 </div>
-                <div className="flex flex-row sm:w-1/2">
+                <div className="flex flex-row sm:w-1/4">
                     {["TVL"].map((key) => {
                         const chart = key as keyof typeof chartConfig;
                         return (
@@ -280,7 +280,7 @@ export default function InfraTVLChart() {
             <CardContent>
                 <ChartContainer
                     config={chartConfig}
-                    className="lg:h-96 h-64 w-full watermark"
+                    className="lg:h-64 h-64 w-full watermark"
                 >
                     <AreaChart
                         data={filterDataByDateRange(processedData)}

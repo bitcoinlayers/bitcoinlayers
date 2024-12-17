@@ -197,7 +197,7 @@ export default function LayerTVLChart() {
             <CardHeader className="flex flex-col space-y-4">
                 <div className="flex flex-col sm:flex-row justify-between w-full">
                     <CardTitle className="flex font-semibold items-center text-2xl sm:text-3xl mb-2 sm:mb-0">
-                        Layer Metrics
+                        Metrics
                     </CardTitle>
                     <div className="flex flex-col sm:flex-row items-start sm:items-center justify-center sm:space-x-2 space-y-2 sm:space-y-0">
                         <div className="block w-full sm:w-auto">
@@ -225,7 +225,7 @@ export default function LayerTVLChart() {
                 </div>
             </CardHeader>
             <div className="w-full flex flex-col sm:flex-row border-y">
-                <div className="flex flex-col justify-center items-start py-4 sm:py-8 border-b sm:border-b-0 px-6 sm:w-1/2">
+                <div className="flex flex-col justify-center items-start py-4 sm:py-8 border-b sm:border-b-0 px-6 sm:w-3/4">
                     <div className="text-lg sm:text-xl">BTC Locked</div>
                     <div className="text-xs sm:text-sm text-muted-foreground">
                         Total amount of{" "}
@@ -238,8 +238,9 @@ export default function LayerTVLChart() {
                         locked on {getLayerName()} per day
                     </div>
                 </div>
-                <div className="flex flex-row sm:w-1/2">
-                    {["TVL", "TPS", "Fee Rev."].map((key) => {
+                <div className="flex flex-row sm:w-1/4">
+                    {["TVL"].map((key) => {
+                        //, "TPS", "Fee Rev."
                         const chart = key as keyof typeof chartConfig;
                         return (
                             <button
@@ -282,7 +283,7 @@ export default function LayerTVLChart() {
             <CardContent>
                 <ChartContainer
                     config={chartConfig}
-                    className="lg:h-96 h-64 w-full watermark"
+                    className="lg:h-64 h-64 w-full watermark"
                 >
                     <AreaChart
                         data={filterDataByDateRange(processedData)}
