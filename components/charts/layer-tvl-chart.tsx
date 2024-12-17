@@ -284,11 +284,11 @@ export default function LayerTVLChart() {
             <CardContent>
                 <ChartContainer
                     config={chartConfig}
-                    className="lg:h-72 h-64 w-full watermark"
+                    className="lg:h-80 h-64 w-full watermark"
                 >
                     <AreaChart
                         data={filterDataByDateRange(processedData)}
-                        margin={{ left: 0, right: 0, top: 20, bottom: 0 }}
+                        margin={{ left: 0, right: 0, top: 30, bottom: 0 }}
                     >
                         <CartesianGrid vertical={false} />
                         <XAxis
