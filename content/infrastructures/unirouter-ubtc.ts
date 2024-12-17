@@ -20,7 +20,7 @@ const unirouter: InfrastructureProject = {
     riskFactors: ["", ""],
     nativeToken: "-",
     purpose: Purpose.General,
-    associatedLayers: "Bsquared Network",
+    associatedLayers: "Bsquared, Core",
     bitcoinOnly: false,
     links: [
         {
