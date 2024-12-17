@@ -69,7 +69,7 @@ const stacks: LayerProject = {
                     tier: RiskFactor.UnderReview,
                     title: "sBTC is managed by a federation of 15 institutional signers",
                     content:
-                        "sBTC is a bridge between bitcoin and stacks managed by 15 institutional signers. sBTC on Stacks is backed by BTC held in a wallet managed by these signers. The identities of entities participating in the sBTC bridge are publicly known.\n\nIf 11 of the signers colluded, they could steal all of the BTC backing sBTC. You can find the signers [here](https://bitcoinl2labs.com/sbtc-rollout#sbtc-signers)\n\nWe are reviewing a score for the current implementation for sBTC. Withdrawals are not currently live.",
+                        "sBTC is a bridge between bitcoin and stacks managed by 15 institutional signers. sBTC on Stacks is backed by BTC held in a wallet managed by these signers. The identities of entities participating in the sBTC bridge are publicly known.\n\nIf 11 of the signers colluded, they could steal all of the BTC backing sBTC. You can find the signers [here](https://bitcoinl2labs.com/sbtc-rollout#sbtc-signers).\n\nWe are reviewing a score for the current implementation for sBTC. Withdrawals are not currently live.",
                 },
                 {
                     name: "Alex xBTC",
@@ -105,15 +105,15 @@ const stacks: LayerProject = {
             tier: RiskFactor.Medium,
             title: "Leverages a permissionless consensus mechanism",
             content:
-                "Stacks has a permissionless block production mechanism, but it does not support exits that circumvent its miner/validator set. This means that users must trust Stacks validators to include their transactions in blocks. Anyone with sufficient capital and resources can participate as a Stacks miner. The large majority of Stacks blocks are built by Bitcoin miners additionally mining Stacks.",
+                "Stacks has a permissionless block production mechanism, Users must trust Stacks validators to include their transactions in blocks. Anyone with sufficient capital and resources can participate as a Stacks miner.",
         },
         {
             category: RiskCategory.FinalityGuarantees,
             score: 0,
             tier: RiskFactor.UnderReview,
-            title: "State transitions finalized by permissionless, alternative consensus mechanism",
+            title: "State transitions validated and finalized by Stackers. We are reviewing if the mechanism inherits finality guarantees from bitcoin",
             content:
-                "The Nakamoto upgrade may have affected the score for the Finality section. This section is currently under review.",
+                "The Nakamoto upgrade may have affected the score for the Finality section. This section is currently under review.\n\nSee the technology section for a description on Nakamoto consensus.",
         },
     ],
     sections: [
@@ -169,9 +169,9 @@ const stacks: LayerProject = {
                         "Proof-of-Transfer (PoX) is Stacks' consensus mechanism, based on Proof-of-Burn. PoX involves Bitcoin miners bidding BTC for the right to mint a Stacks block. The winning miner creates the block, and is rewarded with the STX block reward and STX transaction fees from the block. The miner's bid is paid to STX stackers (stakers). This system allows for STX stackers to earn native BTC yield, and creates an additional revenue stream for miners, similar to merge-mining.",
                 },
                 {
-                    title: "sBTC",
+                    title: "Nakamoto",
                     content:
-                        "sBTC is still in development as of March 2024. It is a bridged version of BTC on Stacks. sBTC is minted by locking up BTC on Bitcoin, and is redeemable for BTC at a 1:1 ratio. sBTC is not yet permissionless, as withdrawals are permissioned by the validator set.",
+                        "In Nakamoto Consensus, miners commit to mining Stacks blocks by broadcasting commit transactions on the Bitcoin blockchain. After winning the right to produce Stacks blocks, the selected miner gains the exclusive right to build and append Stacks blocks for a specific tenure, typically lasting about 10 minutes, corresponding to Bitcoin's block time. These blocks are then validated by Stackers, participants in a Proof-of-Stake-like mechanism. Once validated, blocks are finalized and added to the Stacks blockchain.,"
                 },
             ],
         },
