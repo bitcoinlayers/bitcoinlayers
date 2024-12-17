@@ -163,6 +163,7 @@ section {
         --chart-bitgo-wbtc: 252 26% 18%;
         --chart-lightning-btc: 267 100% 49%;
         --chart-avalanche-btcb: 354 86% 58%;
+        --chart-axelar-axlbtc: 0 0% 95%;
     }
 
     .dark {
