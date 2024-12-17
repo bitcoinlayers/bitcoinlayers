@@ -163,6 +163,30 @@ export default function AggregatedTVLChart({
         [chartType, tokens],
     );
 
+    const latestDate = processedData?.reduce(
+        (latest, current) =>
+            new Date(current.date) > new Date(latest.date) ? current : latest,
+        processedData[0],
+    )?.date;
+
+    const sortedTokens = useMemo(() => {
+        return tokens?.sort((a, b) => {
+            const valueA =
+                (a
+                    ? processedData.find((item) => item.date === latestDate)?.[
+                          a
+                      ]
+                    : 0) || 0;
+            const valueB =
+                (b
+                    ? processedData.find((item) => item.date === latestDate)?.[
+                          b
+                      ]
+                    : 0) || 0;
+            return valueB - valueA;
+        });
+    }, [tokens, processedData, latestDate]);
+
     const formatDate = (
         date: string,
         options: Intl.DateTimeFormatOptions = {},
@@ -258,22 +282,20 @@ export default function AggregatedTVLChart({
                                 />
                             }
                         />
-                        {tokens
-                            ?.sort()
-                            .map((item) => (
-                                <Area
-                                    key={item}
-                                    name={item}
-                                    dataKey={item!}
-                                    type="linear"
-                                    stroke={chartConfig[item!]?.color}
-                                    fill={chartConfig[item!]?.color}
-                                    strokeWidth={1}
-                                    dot={false}
-                                    fillOpacity={0.5}
-                                    stackId="1"
-                                />
-                            ))}
+                        {sortedTokens?.map((item) => (
+                            <Area
+                                key={item}
+                                name={item}
+                                dataKey={item!}
+                                type="linear"
+                                stroke={chartConfig[item!]?.color}
+                                fill={chartConfig[item!]?.color}
+                                strokeWidth={1}
+                                dot={false}
+                                fillOpacity={0.5}
+                                stackId="1"
+                            />
+                        ))}
                         {showLegend && (
                             <ChartLegend
                                 content={

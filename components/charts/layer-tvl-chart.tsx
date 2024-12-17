@@ -120,6 +120,34 @@ export default function LayerTVLChart() {
         [dateRange],
     );
 
+    const latestDate = processedData?.reduce(
+        (latest, current) =>
+            new Date(current.date) > new Date(latest.date) ? current : latest,
+        processedData[0],
+    )?.date;
+
+    const sortedTokens = useMemo(() => {
+        return tokens?.sort((a, b) => {
+            const valueA: number =
+                (a
+                    ? Number(
+                          processedData.find(
+                              (item) => item.date === latestDate,
+                          )?.[a],
+                      )
+                    : 0) || 0;
+            const valueB: number =
+                (b
+                    ? Number(
+                          processedData.find(
+                              (item) => item.date === latestDate,
+                          )?.[b],
+                      )
+                    : 0) || 0;
+            return valueB - valueA;
+        });
+    }, [tokens, processedData, latestDate]);
+
     const total = useMemo(() => {
         const currentDate = new Date();
         let startDate = new Date();
@@ -294,7 +322,7 @@ export default function LayerTVLChart() {
                                 />
                             }
                         />
-                        {tokens.sort().map((token) => (
+                        {sortedTokens?.map((token) => (
                             <Area
                                 key={token}
                                 name={token}
