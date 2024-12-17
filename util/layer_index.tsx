@@ -145,7 +145,6 @@ export const allLayers: LayerProject[] = [
     spark,
     bark,
     clark,
-    arbitrum,
 ];
 
 export const allLayerSlugs: string[] = allLayers.map((layer) => layer.slug);
