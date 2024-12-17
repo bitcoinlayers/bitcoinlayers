@@ -1,6 +1,6 @@
 import { allEcash } from "@/util/ecash_index";
 import Hero from "@/components/hero";
-import InfrastructureTable from "@/components/tables/infrastructure-table";
+import EcashTable from "@/components/tables/ecash-table";
 import { CoinsIcon } from "lucide-react";
 
 export default function Home() {
@@ -40,7 +40,7 @@ export default function Home() {
                 description="Not every ecash system is equal."
             /> */}
             <div className="lg:flex mb-4 justify-center w-full lg:max-w-5xl mx-auto">
-                <InfrastructureTable
+                <EcashTable
                     data={sortedInfrastructures}
                     headers={infrastructureHeaders}
                     title="Ecash"
