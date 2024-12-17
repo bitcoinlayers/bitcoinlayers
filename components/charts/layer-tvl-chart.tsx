@@ -43,7 +43,7 @@ export default function LayerTVLChart() {
         queryString: `?layer_slug=ilike.${slug}`,
     });
 
-    const { data: pricesData, isLoading, error } = useGetCurrentPrices();
+    const { data: pricesData } = useGetCurrentPrices();
 
     const btcPriceData = pricesData?.find(
         (price) => price.token_slug === "btc",
