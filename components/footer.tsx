@@ -121,9 +121,9 @@ export default function Footer(): ReactElement {
                                         <SectionItem href="/">
                                             Layers
                                         </SectionItem>
-                                        <SectionItem href="/?view=staking">
+                                        {/* <SectionItem href="/?view=staking">
                                             Staking
-                                        </SectionItem>
+                                        </SectionItem> */}
                                         <SectionItem href="/?view=wrappers">
                                             Wrappers
                                         </SectionItem>

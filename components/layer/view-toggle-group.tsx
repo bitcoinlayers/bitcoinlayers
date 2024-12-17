@@ -5,7 +5,7 @@ import { useQueryState } from "nuqs";
 
 const viewOptions = [
     { value: "layers", label: "Layers" },
-    { value: "staking", label: "Staking" },
+    // { value: "staking", label: "Staking" },
     { value: "wrappers", label: "Wrappers" },
 ];
 

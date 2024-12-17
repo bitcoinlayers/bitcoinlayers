@@ -1,7 +1,7 @@
 "use client";
 
 import { useQueryState } from "nuqs";
-import StakingTable from "./staking-table";
+// import StakingTable from "./staking-table";
 import LayerTable from "./layer-table";
 import { allLayers } from "@/util/layer_index";
 import { allInfrastructures } from "@/util/infrastructure_index";
@@ -10,35 +10,35 @@ import FederationTable from "./federation-table";
 
 function getSortedDataAndHeaders(view: string) {
     switch (view) {
-        case "staking":
-            const sortedStaking = [...allLayers, ...allInfrastructures]
-                .filter((item) => item.staking)
-                .sort((a, b) =>
-                    a.title.toLowerCase().localeCompare(b.title.toLowerCase()),
-                );
+        // case "staking":
+        //     const sortedStaking = [...allLayers, ...allInfrastructures]
+        //         .filter((item) => item.staking)
+        //         .sort((a, b) =>
+        //             a.title.toLowerCase().localeCompare(b.title.toLowerCase()),
+        //         );
 
-            const stakingTypeFilters = [
-                ...new Set(sortedStaking.map((item) => item.entityType)),
-            ];
+        //     const stakingTypeFilters = [
+        //         ...new Set(sortedStaking.map((item) => item.entityType)),
+        //     ];
 
-            const stakingHeaders = [
-                { name: "Name", showSorting: true, mobileLabel: "Name" },
-                {
-                    name: "Snapshot",
-                    showSorting: false,
-                    mobileLabel: "Snapshot",
-                },
-                {
-                    name: "Type",
-                    showSorting: true,
-                    mobileLabel: "Type",
-                    filterOptions: stakingTypeFilters,
-                },
-                { name: "Status", showSorting: true, mobileLabel: "Status" },
-                { name: "TVL", showSorting: true, mobileLabel: "TVL" },
-            ];
+        //     const stakingHeaders = [
+        //         { name: "Name", showSorting: true, mobileLabel: "Name" },
+        //         {
+        //             name: "Snapshot",
+        //             showSorting: false,
+        //             mobileLabel: "Snapshot",
+        //         },
+        //         {
+        //             name: "Type",
+        //             showSorting: true,
+        //             mobileLabel: "Type",
+        //             filterOptions: stakingTypeFilters,
+        //         },
+        //         { name: "Status", showSorting: true, mobileLabel: "Status" },
+        //         { name: "TVL", showSorting: true, mobileLabel: "TVL" },
+        //     ];
 
-            return { sortedData: sortedStaking, headers: stakingHeaders };
+        //     return { sortedData: sortedStaking, headers: stakingHeaders };
 
         case "wrappers":
             const sortedWrappers = [...allLayers, ...allInfrastructures]
@@ -121,8 +121,8 @@ export default function TableSwitch() {
     const { sortedData, headers } = getSortedDataAndHeaders(view || "");
 
     switch (view) {
-        case "staking":
-            return <StakingTable data={sortedData} headers={headers} />;
+        // case "staking":
+        //     return <StakingTable data={sortedData} headers={headers} />;
         case "wrappers":
             return (
                 <FederationTable

@@ -14,7 +14,7 @@ export default async function Home() {
             {/* <StatCardGrid /> */}
             <TableSwitch />
             <CtaCard />
-            <LiquidStakingTableSwitch />
+            {/* <LiquidStakingTableSwitch /> */}
             <InfoCardGrid />
         </div>
     );
