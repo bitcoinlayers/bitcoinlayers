@@ -139,8 +139,8 @@ section {
         /* Staking */
         --chart-lombard-lbtc: 172 62% 51%;
         --chart-lorenzo-stbtc: 205 29% 41%;
-        --chart-solv-solvbbn: 27 90% 56%;
-        --chart-solv-solvena: 263 99% 65%;
+        --chart-solv-solvbtcbbn: 27 90% 56%;
+        --chart-solv-solvbtcena: 263 99% 65%;
         --chart-pump-pumpbtc: 216 75% 51%;
         --chart-bedrock-unibtc: 299 36% 56%;
         --chart-unirouter-ubtc: 274 100% 50%;
@@ -162,6 +162,7 @@ section {
         --chart-core-corebtc: 262 5% 52%;
         --chart-bitgo-wbtc: 252 26% 18%;
         --chart-lightning-btc: 267 100% 49%;
+        --chart-avalanche-btcb: 354 86% 58%;
     }
 
     .dark {
