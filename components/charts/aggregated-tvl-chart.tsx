@@ -277,7 +277,7 @@ export default function AggregatedTVLChart({
                                             year: "numeric",
                                         })
                                     }
-                                    className="w-60"
+                                    className="w-60 max-h-60 overflow-y-hidden" //TODO: allow overflow, add scroll bar
                                     sort="desc"
                                 />
                             }

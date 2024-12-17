@@ -317,7 +317,7 @@ export default function LayerTVLChart() {
                                             },
                                         )
                                     }
-                                    className="w-60"
+                                    className="w-60 max-h-60 overflow-y-hidden"
                                     sort="desc"
                                 />
                             }
