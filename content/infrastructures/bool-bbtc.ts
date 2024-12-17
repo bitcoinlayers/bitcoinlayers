@@ -22,8 +22,30 @@ const boolbbtc: InfrastructureProject = {
     purpose: Purpose.General,
     associatedLayers: "Fractal",
     bitcoinOnly: false,
-    links: [],
-    description: "Under review.",
+    links: [
+        {
+            text: Site.Website,
+            url: "https://bool.network",
+        },
+        {
+            text: Site.Docs,
+            url: "https://docs.bool.network",
+        },
+        {
+            text: Site.Explorer,
+            url: "https://beta-testnet.boolscan.com",
+        },
+        {
+            text: Site.GitHub,
+            url: "https://github.com/boolnetwork",
+        },
+        {
+            text: Site.Twitter,
+            url: "https://x.com/bool_official",
+        },
+    ],
+    description:
+        "Bool Network is an infrastructure provider currently managing bridges for a number of Bitcoin scaling protocols. The Bitcoin wallets it manages are secured by an MPC Protocol.",
     sections: [
         {
             id: "selfsubmit",
