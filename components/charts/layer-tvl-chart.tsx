@@ -1,6 +1,6 @@
 "use client";
 
-import { CartesianGrid, XAxis, AreaChart, Area } from "recharts";
+import { CartesianGrid, XAxis, YAxis, AreaChart, Area } from "recharts";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
     ChartContainer,
@@ -226,7 +226,7 @@ export default function LayerTVLChart() {
                 </div>
             </CardHeader> */}
             <div className="w-full flex flex-col sm:flex-row border-y">
-                <div className="flex flex-col justify-center items-start py-4 sm:py-8 border-b sm:border-b-0 px-6 sm:w-3/4">
+                <div className="flex flex-col justify-center items-start py-4 sm:py-7 border-b sm:border-b-0 px-6 sm:w-3/4">
                     <div className="text-lg sm:text-xl">BTC Locked</div>
                     <div className="text-xs sm:text-sm text-muted-foreground">
                         Total amount of{" "}
@@ -284,11 +284,11 @@ export default function LayerTVLChart() {
             <CardContent>
                 <ChartContainer
                     config={chartConfig}
-                    className="lg:h-64 h-64 w-full watermark"
+                    className="lg:h-72 h-64 w-full watermark"
                 >
                     <AreaChart
                         data={filterDataByDateRange(processedData)}
-                        margin={{ left: 0, right: 0, top: 20, bottom: 20 }}
+                        margin={{ left: 0, right: 0, top: 20, bottom: 0 }}
                     >
                         <CartesianGrid vertical={false} />
                         <XAxis
@@ -302,6 +302,18 @@ export default function LayerTVLChart() {
                                     day: "numeric",
                                     timeZone: "UTC",
                                 })
+                            }
+                        />
+                        <YAxis
+                            tickLine={false}
+                            axisLine={false}
+                            tickMargin={8}
+                            width={60}
+                            tickFormatter={(value) =>
+                                new Intl.NumberFormat("en-US", {
+                                    notation: "compact",
+                                    compactDisplay: "short",
+                                }).format(value as number)
                             }
                         />
                         <ChartTooltip
