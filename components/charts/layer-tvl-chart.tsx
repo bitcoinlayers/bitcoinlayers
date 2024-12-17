@@ -1,6 +1,6 @@
 "use client";
 
-import { CartesianGrid, XAxis, AreaChart, Area } from "recharts";
+import { CartesianGrid, XAxis, YAxis, AreaChart, Area } from "recharts";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
     ChartContainer,
@@ -22,6 +22,7 @@ import { useParams } from "next/navigation";
 import useGetTokentvlHistoricalAll from "@/hooks/use-get-tokentvl-historical-all";
 import useGetCurrentPrices from "@/hooks/use-get-current-prices";
 import { formatCurrency } from "@/util/formatCurrency";
+import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 
 interface ProcessedData {
     date: string;
@@ -194,10 +195,10 @@ export default function LayerTVLChart() {
 
     return (
         <Card className="bg-background mb-6">
-            <CardHeader className="flex flex-col space-y-4">
+            {/* <CardHeader className="flex flex-col space-y-4">
                 <div className="flex flex-col sm:flex-row justify-between w-full">
                     <CardTitle className="flex font-semibold items-center text-2xl sm:text-3xl mb-2 sm:mb-0">
-                        Layer Metrics
+                        Metrics
                     </CardTitle>
                     <div className="flex flex-col sm:flex-row items-start sm:items-center justify-center sm:space-x-2 space-y-2 sm:space-y-0">
                         <div className="block w-full sm:w-auto">
@@ -223,9 +224,9 @@ export default function LayerTVLChart() {
                         </div>
                     </div>
                 </div>
-            </CardHeader>
+            </CardHeader> */}
             <div className="w-full flex flex-col sm:flex-row border-y">
-                <div className="flex flex-col justify-center items-start py-4 sm:py-8 border-b sm:border-b-0 px-6 sm:w-1/2">
+                <div className="flex flex-col justify-center items-start py-4 sm:py-7 border-b sm:border-b-0 px-6 sm:w-3/4">
                     <div className="text-lg sm:text-xl">BTC Locked</div>
                     <div className="text-xs sm:text-sm text-muted-foreground">
                         Total amount of{" "}
@@ -238,14 +239,15 @@ export default function LayerTVLChart() {
                         locked on {getLayerName()} per day
                     </div>
                 </div>
-                <div className="flex flex-row sm:w-1/2">
-                    {["TVL", "TPS", "Fee Rev."].map((key) => {
+                <div className="flex flex-row sm:w-1/4">
+                    {["TVL"].map((key) => {
+                        //, "TPS", "Fee Rev."
                         const chart = key as keyof typeof chartConfig;
                         return (
                             <button
                                 key={chart}
                                 data-active={activeChart === chart}
-                                className="flex flex-1 flex-col justify-center gap-1 pl-6 py-2 sm:px-2 sm:py-4 text-left even:border-x sm:even:border-x-0 sm:odd:border-l sm:first:border-r data-[active=true]:bg-muted/50"
+                                className="flex flex-1 flex-col justify-center gap-1 pl-6 py-2 sm:px-6 sm:py-4 text-left even:border-x sm:even:border-x-0 sm:odd:border-l sm:first:border-r data-[active=true]:bg-muted/50"
                                 onClick={() => setActiveChart(chart)}
                             >
                                 <span className="text-xs text-muted-foreground md:w-20">
@@ -282,11 +284,11 @@ export default function LayerTVLChart() {
             <CardContent>
                 <ChartContainer
                     config={chartConfig}
-                    className="lg:h-96 h-64 w-full watermark"
+                    className="lg:h-80 h-64 w-full watermark"
                 >
                     <AreaChart
                         data={filterDataByDateRange(processedData)}
-                        margin={{ left: 0, right: 0, top: 20, bottom: 20 }}
+                        margin={{ left: 0, right: 0, top: 30, bottom: 0 }}
                     >
                         <CartesianGrid vertical={false} />
                         <XAxis
@@ -300,6 +302,18 @@ export default function LayerTVLChart() {
                                     day: "numeric",
                                     timeZone: "UTC",
                                 })
+                            }
+                        />
+                        <YAxis
+                            tickLine={false}
+                            axisLine={false}
+                            tickMargin={8}
+                            width={60}
+                            tickFormatter={(value) =>
+                                new Intl.NumberFormat("en-US", {
+                                    notation: "compact",
+                                    compactDisplay: "short",
+                                }).format(value as number)
                             }
                         />
                         <ChartTooltip
@@ -343,6 +357,47 @@ export default function LayerTVLChart() {
                         />
                     </AreaChart>
                 </ChartContainer>
+                <div className="flex mt-6">
+                    <ToggleGroup
+                        type="single"
+                        value={chartType}
+                        onValueChange={(value) =>
+                            value && value !== chartType && setChartType(value)
+                        }
+                        className="!space-x-0"
+                    >
+                        {["combined", "separate"].map((value) => (
+                            <ToggleGroupItem
+                                key={value}
+                                value={value}
+                                className="border text-xs"
+                                size="sm"
+                            >
+                                {value.charAt(0).toUpperCase() + value.slice(1)}
+                            </ToggleGroupItem>
+                        ))}
+                    </ToggleGroup>
+                    <Select value={dateRange} onValueChange={setDateRange}>
+                        <SelectTrigger className="w-[150px] text-xs rounded-md h-9 ml-1">
+                            <SelectValue placeholder="Select date range" />
+                        </SelectTrigger>
+                        <SelectContent>
+                            {[
+                                { value: "1mo", label: "Last month" },
+                                { value: "3mo", label: "Last 3 months" },
+                                { value: "1y", label: "Last year" },
+                            ].map(({ value, label }) => (
+                                <SelectItem
+                                    key={value}
+                                    value={value}
+                                    className="text-xs"
+                                >
+                                    {label}
+                                </SelectItem>
+                            ))}
+                        </SelectContent>
+                    </Select>
+                </div>
             </CardContent>
         </Card>
     );
