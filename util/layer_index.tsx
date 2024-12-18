@@ -150,7 +150,6 @@ export const allLayers: LayerProject[] = [
     yona,
     nexio,
     qed,
-    bitfinity,
     bevm,
     starknet,
     hemi,
