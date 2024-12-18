@@ -9,7 +9,7 @@ import {
 
 const icpckbtc: InfrastructureProject = {
     type: Type.Infrastructure,
-    slug: "icp-ckbtc",
+    slug: "internetcomputer-ckbtc",
     title: "ICP ckBTC",
     entityType: EntityType.ReserveAsset,
     live: LiveStatus.Mainnet,

@@ -38,7 +38,7 @@ import xlinkabtcProject from "../content/infrastructures/xlink-abtc";
 import bevmwbtcProject from "../content/infrastructures/bevm-wbtc";
 import bitlayerwbtcProject from "@/content/infrastructures/bitlayer-wbtc";
 import corecorebtcProject from "@/content/infrastructures/core-corebtc";
-import icpckbtcProject from "@/content/infrastructures/icp-ckbtc";
+import icpckbtcProject from "@/content/infrastructures/internetcomputer-ckbtc";
 import layerbankbtcProject from "@/content/infrastructures/layerbank-btc";
 import layerbankubtcProject from "@/content/infrastructures/layerbank-ubtc";
 import librepbtcProject from "@/content/infrastructures/libre-pbtc";
