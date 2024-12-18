@@ -136,6 +136,19 @@ section {
         --chart-rollux: 24 100% 73%;
         --chart-rootstock: 229 71% 67%;
         --chart-stacks: 271 100% 71%;
+        --chart-ethereum: 0 0% 55%;
+        --chart-avalanche: 271 100% 71%;
+        --chart-base: 221 100% 50%;
+        --chart-arbitrum: 215 37% 20%;
+        --chart-bnb-smart-chain: 46 91% 49%;
+        --chart-solana: 163 83% 50%;
+        --chart-optimism: 353 100% 51%;
+        --chart-mantle: 0 0% 75%;
+        --chart-osmosis: 271 100% 24%;
+        --chart-tron: 359 100% 51%;
+        --chart-sui: 211 100% 65%;
+        --chart-cardano: 222 100% 34%;
+
         /* Staking */
         --chart-lombard-lbtc: 172 62% 51%;
         --chart-lorenzo-stbtc: 205 29% 41%;
