@@ -67,7 +67,7 @@ const arbitrum: LayerProject = {
                     infrastructureSlug: "bitgo-wbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: "wBTC is managed by a centralized consortium of companies. We are analyzing if wBTC is natively minted on Arbitrum or if is bridged from Ethereum.",
+                    title: "wBTC is managed by a centralized consortium of companies. We are analyzing if wBTC is natively minted on Arbitrum or if it is bridged from Ethereum.",
                     content:
                         "wBTC on Arbitrum is backed by a centralized consortium of three companies. These entities are responsible for custodying BTC that backs wBTC on its various networks. Users trust these entities to not collude and steal the funds backing wBTC.",
                 },
