@@ -182,7 +182,7 @@ const arbitrum: LayerProject = {
             tier: RiskFactor.Medium,
             title: "Arbitrum state transitions finalize on Ethereum",
             content:
-                "Arbitrum inherits finality guarantees from Ethereum. The Arbitrum sequencer provides a soft confirmation of transactions which are eventually summarized and sent to Ethereum.\n\n⚠️Arbitrum's sequencer can reorg prior to a transaction batch being accepted on Ethereum.",
+                "Arbitrum inherits finality guarantees from Ethereum. The Arbitrum sequencer provides a soft confirmation of transactions which are eventually summarized and sent to Ethereum.\n\n⚠️ Arbitrum's sequencer can reorg prior to a transaction batch being accepted on Ethereum.",
         },
     ],
     sections: [
