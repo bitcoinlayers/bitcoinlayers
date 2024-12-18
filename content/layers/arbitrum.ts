@@ -19,7 +19,7 @@ const arbitrum: LayerProject = {
     staking: false,
     liquidStaking: false,
     bridge: false,
-    underReview: true,
+    underReview: false,
     riskFactors: [
         RiskFactor.VeryHigh,
         RiskFactor.Medium,

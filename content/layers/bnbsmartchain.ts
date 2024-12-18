@@ -19,7 +19,7 @@ const bnbsmartchain: LayerProject = {
     staking: false,
     liquidStaking: false,
     bridge: false,
-    underReview: true,
+    underReview: false,
     riskFactors: ["", "", "", ""],
     btcLocked: 0,
     nativeToken: "-",
