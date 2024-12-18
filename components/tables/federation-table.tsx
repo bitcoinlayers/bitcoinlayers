@@ -24,7 +24,7 @@ import {
 } from "lucide-react";
 import { LiveStatus } from "@/content/props";
 import useGetMappingsRanked, { MappingRanked } from "@/hooks/use-get-mappings";
-import TokensList from "@/components/tables/mapping-network-img";
+import NetworkList from "@/components/tables/mapping-network-img";
 
 type TableTabKey = "Snapshot" | "Type" | "Status" | "Networks" | "TVL";
 
@@ -89,16 +89,13 @@ const FederationTable = ({ data, headers }: Props) => {
 
     const { data: allMappingsRanked, isLoading } = useGetMappingsRanked();
 
-    const networksByToken = useMemo(() => {
+    const tokensMap = useMemo(() => {
         if (!allMappingsRanked) return {};
-
         return allMappingsRanked.reduce(
-            (acc, mapping) => {
-                const tokenSlug = mapping.token_slug?.toLowerCase();
-                if (!tokenSlug) return acc;
-
-                if (!acc[tokenSlug]) acc[tokenSlug] = [];
-                acc[tokenSlug].push(mapping);
+            (acc, token) => {
+                const slug = token.network_slug.toLowerCase();
+                if (!acc[slug]) acc[slug] = [];
+                acc[slug].push(token);
                 return acc;
             },
             {} as Record<string, MappingRanked[]>,
@@ -343,9 +340,9 @@ const FederationTable = ({ data, headers }: Props) => {
                                             {isLoading ? (
                                                 <div>Loading...</div>
                                             ) : (
-                                                <TokensList
-                                                    tokens={
-                                                        networksByToken[
+                                                <NetworkList
+                                                    networks={
+                                                        tokensMap[
                                                             item.slug.toLowerCase()
                                                         ] || []
                                                     }
