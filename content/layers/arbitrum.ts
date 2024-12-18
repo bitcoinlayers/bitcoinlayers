@@ -122,7 +122,7 @@ const arbitrum: LayerProject = {
                 },
                 {
                     name: "Lorenzo stBTC",
-                    infrastructureSlug: "lorenzeo-stbtc",
+                    infrastructureSlug: "lorenzo-stbtc",
                     score: 0,
                     tier: RiskFactor.UnderReview,
                     title: "This two-way peg is under review",
@@ -130,7 +130,7 @@ const arbitrum: LayerProject = {
                 },
                 {
                     name: "iBTC",
-                    infrastructureSlug: "ibtc",
+                    infrastructureSlug: "ibtcnetwork-ibtc",
                     score: 0,
                     tier: RiskFactor.UnderReview,
                     title: "This two-way peg is under review",
