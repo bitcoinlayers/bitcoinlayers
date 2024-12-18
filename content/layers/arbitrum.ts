@@ -160,8 +160,8 @@ const arbitrum: LayerProject = {
         {
             category: RiskCategory.NetworkOperators,
             score: 0,
-            tier: RiskFactor.High,
-            title: "Arbitrum blocks are produced and proposed by a centralized operator, but forced inclusion to Ethereum L1 possible. Users can also self-propose their own state transition if whitelisted proposers go down.",
+            tier: RiskFactor.UnderReview,
+            title: "Arbitrum blocks are produced and proposed by a centralized operator, but users can become their own block producer in the event of censorship or liveness failures",
             content:
                 "Currently, Arbitrum's sequencer is managed by one entity. The Arbitrum sequencer can censor transactions and can also cause liveness failures if it goes down. Users can bypass the sequencer and send their transactions directly to the Ethereum L1. Users can also self-propose their own state transition, and exit Arbitrum.",
         },
@@ -177,10 +177,10 @@ const arbitrum: LayerProject = {
     sections: [
         {
             id: "underreview",
-            title: "Under review",
+            title: "Further sections under review",
             content: [
                 {
-                    content: "This project is under review.",
+                    content: "Aspects related to bitcoin security, relevant technologies, and some two-way pegs have not been reviewed.\n\nThey will be reviewed by our team soon.",
                 },
             ],
         },
