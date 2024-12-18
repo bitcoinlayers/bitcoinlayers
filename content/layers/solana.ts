@@ -28,27 +28,27 @@ const solana: LayerProject = {
     links: [
         {
             text: Site.Website,
-            url: "https://usecorn.com/",
+            url: "https://solana.com/",
         },
         {
             text: Site.Docs,
-            url: "https://docs.usecorn.com/docs/developers/introduction",
+            url: "https://solana.com/docs",
         },
         {
             text: Site.Explorer,
-            url: "https://cornscan.io/",
+            url: "https://explorer.solana.com/",
         },
         {
             text: Site.GitHub,
-            url: "https://github.com/usecorn",
+            url: "https://github.com/solana-foundation/solana-com",
         },
         {
             text: Site.Twitter,
-            url: "https://x.com/use_corn",
+            url: "https://x.com/solana",
         },
     ],
     description:
-        "Arbitrum is an Ethereum rollup that that supports a variety of wrapped BTC tokens.",
+        "Solana is an alternative blockchain that supports a number of wrapped BTC tokens. Ethereum is home to the SVM execution environment which supports more expressive smart contracts.",
     riskAnalysis: [
         {
             category: RiskCategory.UnilateralExits,
