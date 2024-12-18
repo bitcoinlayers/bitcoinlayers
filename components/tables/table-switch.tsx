@@ -95,10 +95,9 @@ function getSortedDataAndHeaders(view: string) {
                     filterOptions: layerTypeFilters,
                 },
                 {
-                    name: "Status",
-                    showSorting: true,
-                    mobileLabel: "Status",
-                    // filterOptions: statusFilters, //add back when moving status sort back into table header
+                    name: "BTC Pegs",
+                    showSorting: false,
+                    mobileLabel: "Pegs",
                 },
                 {
                     name: "Unit of Account",
