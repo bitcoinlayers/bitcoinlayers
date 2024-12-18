@@ -63,15 +63,6 @@ const arbitrum: LayerProject = {
             content: "",
             pegs: [
                 {
-                    name: "Threshold tBTC",
-                    infrastructureSlug: "threshold-tbtc",
-                    score: 0,
-                    tier: RiskFactor.High,
-                    title: "Users trust the Threshold Network to keep tBTC backed and a 9 member federation to manage tBTC's bridge between Arbitrum and Ethereum",
-                    content:
-                        "tBTC's peg with bitcoin is managed by the Threshold Network, a distributed, but permissioned, two-way peg. tBTC is minted on Ethereum and then bridged to Arbitrum via its own custom bridge contract.\n\nThis bridge is managed by a 6/9 federation. Bitcoin users trust that 6 of the 9 members of this federation do not collude and steal user funds.",
-                },
-                {
                     name: "BitGo wBTC",
                     infrastructureSlug: "bitgo-wbtc",
                     score: 0,
@@ -79,6 +70,15 @@ const arbitrum: LayerProject = {
                     title: "wBTC is managed by a centralized consortium of companies. We are analyzing if wBTC is natively minted on Arbitrum or if is bridged from Ethereum.",
                     content:
                         "wBTC on Arbitrum is backed by a centralized consortium of three companies. These entities are responsible for custodying BTC that backs wBTC on its various networks. Users trust these entities to not collude and steal the funds backing wBTC.",
+                },
+                {
+                    name: "Threshold tBTC",
+                    infrastructureSlug: "threshold-tbtc",
+                    score: 0,
+                    tier: RiskFactor.High,
+                    title: "Users trust the Threshold Network to keep tBTC backed and a 9 member federation to manage tBTC's bridge between Arbitrum and Ethereum",
+                    content:
+                        "tBTC's peg with bitcoin is managed by the Threshold Network, a distributed, but permissioned, two-way peg. tBTC is minted on Ethereum and then bridged to Arbitrum via its own custom bridge contract.\n\nThis bridge is managed by a 6/9 federation. Bitcoin users trust that 6 of the 9 members of this federation do not collude and steal user funds.",
                 },
                 {
                     name: "cbBTC",
