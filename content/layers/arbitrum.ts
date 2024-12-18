@@ -196,6 +196,16 @@ const arbitrum: LayerProject = {
                 },
             ],
         },
+        {
+            id: "knowledgebits",
+            title: "Knowledge Bits",
+            content: [
+                {
+                    content:
+                        "[L2Beat's review of Arbitrum from the lens of an Ethereum L2](https://l2beat.com/scaling/projects/arbitrum)",
+                },
+            ],
+        },
     ],
 };
 
