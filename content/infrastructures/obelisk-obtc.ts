@@ -11,7 +11,7 @@ const obeliskobtc: InfrastructureProject = {
     type: Type.Infrastructure,
     slug: "obelisk-obtc",
     title: "Obelisk oBTC",
-    entityType: EntityType.BTCWrapper,
+    entityType: EntityType.ReserveAsset,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
