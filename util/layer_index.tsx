@@ -55,7 +55,7 @@ import baseProject from "../content/layers/base";
 import bscProject from "../content/layers/bnbsmartchain";
 import optimismProject from "../content/layers/optimism";
 import ethereumProject from "../content/layers/ethereum";
-import polygonProject from "../content/layers/polygon";
+import polygonProject from "../content/layers/polygonpos";
 import solanaProject from "../content/layers/solana";
 
 const core: LayerProject = coreProject;
