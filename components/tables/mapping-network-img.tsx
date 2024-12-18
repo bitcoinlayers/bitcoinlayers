@@ -24,6 +24,7 @@ const NetworkList: React.FC<NetworkListProps> = ({ networks }) => {
                         folder="logos"
                         altText="" //{network.network_slug}
                     />
+                    {/* <span>{network.network_slug}</span> */}
                 </li>
             ))}
         </ul>

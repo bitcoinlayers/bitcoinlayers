@@ -22,6 +22,7 @@ const TokenList: React.FC<TokenListProps> = ({ tokens }) => {
                         folder="logos"
                         altText="" // {token.token_slug}
                     />
+                    {/* <span>{token.token_slug}</span> */}
                 </li>
             ))}
         </ul>
