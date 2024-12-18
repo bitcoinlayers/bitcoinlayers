@@ -11,7 +11,7 @@ const ibtcnetworkibtc: InfrastructureProject = {
     type: Type.Infrastructure,
     slug: "ibtcnetwork-ibtc",
     title: "iBTC Network iBTC", //formerly DLC Link dlcBTC
-    entityType: EntityType.BTCWrapper,
+    entityType: EntityType.ReserveAsset,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,

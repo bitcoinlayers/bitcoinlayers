@@ -17,12 +17,14 @@ import {
     CardTitle,
 } from "@/components/ui/card";
 import { LayersIcon } from "lucide-react";
+import useGetMappingsRanked, { MappingRanked } from "@/hooks/use-get-mappings";
+import TokenList from "@/components/tables/mapping-token-img";
 
 type TableTabKey =
     | "Trust Assumptions"
     | "Type"
     | "Status"
-    | "Unit of Account"
+    | "BTC Pegs"
     | "BTC Locked";
 
 interface Props {
@@ -79,6 +81,21 @@ const LayerTable = ({ data, headers }: Props) => {
         defaultValue: "desc",
     });
 
+    const { data: allMappingsRanked, isLoading } = useGetMappingsRanked();
+
+    const tokensMap = useMemo(() => {
+        if (!allMappingsRanked) return {};
+        return allMappingsRanked.reduce(
+            (acc, token) => {
+                const slug = token.network_slug.toLowerCase();
+                if (!acc[slug]) acc[slug] = [];
+                acc[slug].push(token);
+                return acc;
+            },
+            {} as Record<string, MappingRanked[]>,
+        );
+    }, [allMappingsRanked]);
+
     const { data: balances } = useGetLayertvlCurrentAll();
 
     const totaledBalances = useMemo(() => {
@@ -119,7 +136,7 @@ const LayerTable = ({ data, headers }: Props) => {
                     valueA = a.live;
                     valueB = b.live;
                     break;
-                case "Unit of Account":
+                case "BTC Pegs":
                     valueA = a.nativeToken;
                     valueB = b.nativeToken;
                     break;
@@ -177,47 +194,6 @@ const LayerTable = ({ data, headers }: Props) => {
 
     return (
         <Card className="w-full">
-            {/* <CardHeader>
-                <MobileView className="flex justify-center">
-                    <div className="justify-center lg:items-start gap-1 inline-flex">
-                        {headers.slice(1).map((_item, ind) => {
-                            const isAllowedTab = [
-                                "Risk",
-                                "Type",
-                                "Status",
-                                "Unit of Account",
-                                "BTC Locked",
-                            ].includes(_item.name);
-                            return (
-                                <div
-                                    className={`h-[30px] px-4 py-[5px] rounded-full border-2 justify-center items-center gap-1.5 flex cursor-pointer ${
-                                        mobileActiveTab === _item.name
-                                            ? "bg-white border-orange-600"
-                                            : "border-slate-300"
-                                    }`}
-                                    onClick={() =>
-                                        isAllowedTab &&
-                                        handleMobileTabClick(
-                                            _item.name as TableTabKey,
-                                        )
-                                    }
-                                    key={ind}
-                                >
-                                    <div
-                                        className={`text-center text-sm font-medium leading-tight ${
-                                            mobileActiveTab === _item.name
-                                                ? "text-orange-600"
-                                                : "text-slate-600"
-                                        }`}
-                                    >
-                                        {_item.mobileLabel}
-                                    </div>
-                                </div>
-                            );
-                        })}
-                    </div>
-                </MobileView>
-            </CardHeader> */}
             <CardHeader className="flex flex-col items-stretch space-y-0 border-b p-0 sm:flex-row border-none">
                 <div className="flex flex-1 flex-col justify-center gap-1 px-6 py-5 sm:py-6">
                     <CardTitle className="flex">
@@ -315,14 +291,21 @@ const LayerTable = ({ data, headers }: Props) => {
                                     {(!isMobile ||
                                         mobileActiveTab === "Status") && (
                                         <td className="lg:px-6 px-4 py-3 lg:py-4 border-border">
-                                            <Link href={`/layers/${item.slug}`}>
-                                                {item.live}
-                                            </Link>
+                                            {isLoading ? (
+                                                <div>Loading...</div>
+                                            ) : (
+                                                <TokenList
+                                                    tokens={
+                                                        tokensMap[
+                                                            item.slug.toLowerCase()
+                                                        ] || []
+                                                    }
+                                                />
+                                            )}
                                         </td>
                                     )}
                                     {(!isMobile ||
-                                        mobileActiveTab ===
-                                            "Unit of Account") && (
+                                        mobileActiveTab === "BTC Pegs") && (
                                         <td className="lg:px-6 px-4 py-3 lg:py-4 border-border">
                                             <Link
                                                 href={`/layers/${item.slug}`}

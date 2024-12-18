@@ -22,8 +22,11 @@ import {
     Layers2Icon,
     LayersIcon,
 } from "lucide-react";
+import { LiveStatus } from "@/content/props";
+import useGetMappingsRanked, { MappingRanked } from "@/hooks/use-get-mappings";
+import NetworkList from "@/components/tables/mapping-network-img";
 
-type TableTabKey = "Snapshot" | "Type" | "Status" | "TVL";
+type TableTabKey = "Snapshot" | "Type" | "Status" | "Networks" | "TVL";
 
 interface Props {
     data: Project[];
@@ -65,6 +68,9 @@ const LayerImage = ({ src, title }: { src: string; title: string }) => {
     );
 };
 
+const isMainnet = (status: string) =>
+    status === LiveStatus.Mainnet || status === LiveStatus.Deposits;
+
 const FederationTable = ({ data, headers }: Props) => {
     const [status, setStatus] = useQueryState("status", {
         defaultValue: "mainnet",
@@ -80,6 +86,21 @@ const FederationTable = ({ data, headers }: Props) => {
     const [sortOrder, setSortOrder] = useQueryState("sortOrder", {
         defaultValue: "desc",
     });
+
+    const { data: allMappingsRanked, isLoading } = useGetMappingsRanked();
+
+    const tokensMap = useMemo(() => {
+        if (!allMappingsRanked) return {};
+        return allMappingsRanked.reduce(
+            (acc, token) => {
+                const slug = token.token_slug;
+                if (!acc[slug]) acc[slug] = [];
+                acc[slug].push(token);
+                return acc;
+            },
+            {} as Record<string, MappingRanked[]>,
+        );
+    }, [allMappingsRanked]);
 
     const { data: balances } = useGetInfratvlCurrentAll();
 
@@ -141,7 +162,13 @@ const FederationTable = ({ data, headers }: Props) => {
             return 0;
         });
 
-        let filtered = sorted;
+        let filtered = sorted.filter((item) => {
+            if (status === LiveStatus.Mainnet.toLowerCase())
+                return isMainnet(item.live);
+            if (status === "testnet") return !isMainnet(item.live);
+            return true;
+        });
+
         if (types.length > 0) {
             filtered = filtered.filter((item) =>
                 types.includes(
@@ -149,12 +176,6 @@ const FederationTable = ({ data, headers }: Props) => {
                 ),
             );
         }
-
-        filtered = filtered.filter((item) => {
-            if (status === "mainnet") return item.live === "Mainnet";
-            if (status === "testnet") return item.live !== "Mainnet";
-            return true;
-        });
 
         return filtered;
     }, [data, sortBy, sortOrder, types, status, totaledBalances]);
@@ -210,7 +231,7 @@ const FederationTable = ({ data, headers }: Props) => {
                         </span>
                         <span className="text-lg font-bold leading-none sm:text-3xl">
                             {data
-                                .filter((item) => item.live === "Mainnet")
+                                .filter((item) => isMainnet(item.live))
                                 .length.toLocaleString()}
                         </span>
                     </button>
@@ -224,7 +245,7 @@ const FederationTable = ({ data, headers }: Props) => {
                         </span>
                         <span className="text-lg font-bold leading-none sm:text-3xl">
                             {data
-                                .filter((item) => item.live !== "Mainnet")
+                                .filter((item) => !isMainnet(item.live))
                                 .length.toLocaleString()}
                         </span>
                     </button>
@@ -311,6 +332,22 @@ const FederationTable = ({ data, headers }: Props) => {
                                             >
                                                 {item.live}
                                             </Link>
+                                        </td>
+                                    )}
+                                    {(!isMobile ||
+                                        mobileActiveTab === "Networks") && (
+                                        <td className="lg:px-6 px-4 py-3 lg:py-4 border-border">
+                                            {isLoading ? (
+                                                <div>Loading...</div>
+                                            ) : (
+                                                <NetworkList
+                                                    networks={
+                                                        tokensMap[
+                                                            item.slug.toLowerCase()
+                                                        ] || []
+                                                    }
+                                                />
+                                            )}
                                         </td>
                                     )}
                                     {(!isMobile ||

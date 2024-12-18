@@ -12,7 +12,7 @@ const tbtc: InfrastructureProject = {
     type: Type.Infrastructure,
     slug: "threshold-tbtc",
     title: "Threshold tBTC v2",
-    entityType: EntityType.BitcoinBridge,
+    entityType: EntityType.ReserveAsset,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,

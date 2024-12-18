@@ -61,7 +61,7 @@ const InfrastructureImage = ({
     );
 };
 
-const InfrastructureTable = ({
+const EcashTable = ({
     data,
     headers,
     title,
@@ -298,4 +298,4 @@ const InfrastructureTable = ({
     );
 };
 
-export default InfrastructureTable;
+export default EcashTable;

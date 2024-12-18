@@ -11,7 +11,6 @@ import nubitProject from "../content/infrastructures/nubit";
 import babylonProject from "../content/infrastructures/babylon";
 import fedimintProject from "../content/infrastructures/fedimint";
 import ibtcnetworkProject from "../content/infrastructures/ibtcnetwork-ibtc";
-import boolProject from "../content/infrastructures/bool";
 import cashuProject from "../content/infrastructures/cashu";
 import tbtcProject from "../content/infrastructures/threshold-tbtc";
 import lombardProject from "../content/infrastructures/lombard-lbtc";
@@ -59,7 +58,6 @@ const nubit: InfrastructureProject = nubitProject;
 const babylon: InfrastructureProject = babylonProject;
 const fedimint: InfrastructureProject = fedimintProject;
 const ibtcnetwork: InfrastructureProject = ibtcnetworkProject;
-const bool: InfrastructureProject = boolProject;
 const cashu: InfrastructureProject = cashuProject;
 const tbtc: InfrastructureProject = tbtcProject;
 const lombard: InfrastructureProject = lombardProject;
@@ -103,16 +101,15 @@ export const allInfrastructures: InfrastructureProject[] = [
     cbbtc,
     kbtc,
     ibtcnetwork,
-    bool,
-    nubit,
-    sovereign,
+    // nubit,
+    // sovereign,
     lorenzo,
-    espresso,
-    celestia,
-    bvm,
-    avail,
-    astria,
-    babylon,
+    // espresso,
+    // celestia,
+    // bvm,
+    // avail,
+    // astria,
+    // babylon,
     solv,
     solvbbn,
     solvena,

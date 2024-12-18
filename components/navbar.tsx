@@ -159,16 +159,6 @@ export default function Navbar(): ReactElement {
                         </Link>
                     </li>
                     <li className="hidden lg:block">
-                        <Link
-                            href="/dev-center"
-                            onClick={closeMenu}
-                            className="flex items-center space-x-1.5 hover:underline"
-                        >
-                            <div>Dev Center</div>
-                            {/* <ExternalLinkIcon className="size-3" /> */}
-                        </Link>
-                    </li>
-                    <li className="hidden lg:block">
                         <ModeToggle />
                     </li>
                 </ul>
@@ -225,16 +215,6 @@ export default function Navbar(): ReactElement {
                                             >
                                                 <div>Research</div>
                                                 <ExternalLinkIcon className="size-3" />
-                                            </Link>
-                                        </li>
-                                        <li>
-                                            <Link
-                                                href="/dev-center"
-                                                className="flex space-x-2 items-center hover:underline"
-                                                onClick={closeSheet}
-                                            >
-                                                <div>Dev Center</div>
-                                                {/* <ExternalLinkIcon className="size-3 text-primary" /> */}
                                             </Link>
                                         </li>
                                         <li>

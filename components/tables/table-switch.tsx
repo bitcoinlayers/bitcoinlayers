@@ -41,11 +41,9 @@ function getSortedDataAndHeaders(view: string) {
         //     return { sortedData: sortedStaking, headers: stakingHeaders };
 
         case "wrappers":
-            const sortedWrappers = [...allLayers, ...allInfrastructures]
-                .filter((item) => item.bridge)
-                .sort((a, b) =>
-                    a.title.toLowerCase().localeCompare(b.title.toLowerCase()),
-                );
+            const sortedWrappers = [...allInfrastructures].sort((a, b) =>
+                a.title.toLowerCase().localeCompare(b.title.toLowerCase()),
+            );
 
             const wrapperTypeFilters = [
                 ...new Set(
@@ -69,11 +67,15 @@ function getSortedDataAndHeaders(view: string) {
                     filterOptions: wrapperTypeFilters,
                 },
                 { name: "Status", showSorting: true, mobileLabel: "Status" },
+                {
+                    name: "Networks",
+                    showSorting: false,
+                    mobileLabel: "Networks",
+                },
                 { name: "TVL", showSorting: true, mobileLabel: "TVL" },
             ];
 
             return { sortedData: sortedWrappers, headers: wrapperHeaders };
-
         case "layers":
         default:
             const sortedLayers = allLayers.sort((a, b) =>
@@ -98,10 +100,9 @@ function getSortedDataAndHeaders(view: string) {
                     filterOptions: layerTypeFilters,
                 },
                 {
-                    name: "Status",
-                    showSorting: true,
-                    mobileLabel: "Status",
-                    // filterOptions: statusFilters, //add back when moving status sort back into table header
+                    name: "BTC Pegs",
+                    showSorting: false,
+                    mobileLabel: "Pegs",
                 },
                 {
                     name: "Unit of Account",

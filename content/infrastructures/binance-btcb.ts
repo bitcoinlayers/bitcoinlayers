@@ -11,7 +11,7 @@ const binancebtcb: InfrastructureProject = {
     type: Type.Infrastructure,
     slug: "binance-btcb",
     title: "Binance BTCB",
-    entityType: EntityType.BTCWrapper,
+    entityType: EntityType.ReserveAsset,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,

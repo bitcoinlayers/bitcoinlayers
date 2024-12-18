@@ -11,7 +11,7 @@ const simplesbtc: InfrastructureProject = {
     type: Type.Infrastructure,
     slug: "simple-sbtc",
     title: "Simple sBTC",
-    entityType: EntityType.BTCWrapper,
+    entityType: EntityType.ReserveAsset,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,

@@ -12,7 +12,7 @@ const cbbtc: InfrastructureProject = {
     type: Type.Infrastructure,
     slug: "coinbase-cbbtc",
     title: "Coinbase cbBTC",
-    entityType: EntityType.BTCWrapper,
+    entityType: EntityType.ReserveAsset,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,

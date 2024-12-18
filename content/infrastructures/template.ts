@@ -12,7 +12,7 @@ const template: InfrastructureProject = {
     type: Type.Infrastructure,
     slug: "slug",
     title: "Title",
-    entityType: EntityType.BitcoinBridge,
+    entityType: EntityType.ReserveAsset,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,

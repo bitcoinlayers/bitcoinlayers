@@ -11,7 +11,7 @@ const fire: InfrastructureProject = {
     type: Type.Infrastructure,
     slug: "firebitcoin-fbtc",
     title: "Fire Bitcoin FBTC",
-    entityType: EntityType.BTCWrapper,
+    entityType: EntityType.ReserveAsset,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,

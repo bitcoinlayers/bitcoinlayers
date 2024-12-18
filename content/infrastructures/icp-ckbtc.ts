@@ -11,7 +11,7 @@ const icpckbtc: InfrastructureProject = {
     type: Type.Infrastructure,
     slug: "icp-ckbtc",
     title: "ICP ckBTC",
-    entityType: EntityType.BTCWrapper,
+    entityType: EntityType.ReserveAsset,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
