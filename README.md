@@ -18,6 +18,6 @@ If you're building any materials, platforms or websites related to #Bitcoin L2s 
 
 ## Our other properties
 
--   [Website](https://bitcoinlayers.org)
--   [Social Media](https://twitter.com/bitcoinlayers)
--   [Documentation](https://bitcoin-layers.gitbook.io/bitcoin-layers)
+- [Website](https://bitcoinlayers.org)
+- [Social Media](https://twitter.com/bitcoinlayers)
+- [Documentation](https://bitcoin-layers.gitbook.io/bitcoin-layers)

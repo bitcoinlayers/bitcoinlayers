@@ -15,7 +15,10 @@ function getLayerFromSlug(slug: string) {
     return layer;
 }
 
-export default function LayerPage({ params }: { params: { slug: string } }) {
+export default async function LayerPage(props: {
+    params: Promise<{ slug: string }>;
+}) {
+    const params = await props.params;
     const { slug } = params;
     const layer = getLayerFromSlug(slug);
 

@@ -17,7 +17,7 @@ import { ExternalLinkIcon, MenuIcon } from "lucide-react";
 import { ModeToggle } from "@/components/mode-toggle";
 import { Button } from "./ui/button";
 
-export default function Navbar(): ReactElement {
+export default function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false);
     const [submenuOpen, setSubmenuOpen] = useState(false);
     const [searchOpen, setSearchOpen] = useState(false);

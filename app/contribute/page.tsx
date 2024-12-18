@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import React from "react";
+import { type JSX } from "react";
 
 const ContributePage: React.FC = () => {
     const address = "36raB4921Au5Kck4uT521nbfL1ktTwLNSY";

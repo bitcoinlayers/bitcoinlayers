@@ -90,7 +90,7 @@ const FooterBottom = () => (
     </div>
 );
 
-export default function Footer(): ReactElement {
+export default function Footer() {
     return (
         <footer className="w-full">
             <div className="max-w-5xl mx-auto flex flex-col justify-start items-start">
