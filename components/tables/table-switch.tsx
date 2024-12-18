@@ -100,14 +100,14 @@ function getSortedDataAndHeaders(view: string) {
                     filterOptions: layerTypeFilters,
                 },
                 {
-                    name: "BTC Pegs",
-                    showSorting: false,
-                    mobileLabel: "Pegs",
-                },
-                {
                     name: "Unit of Account",
                     showSorting: true,
                     mobileLabel: "Unit",
+                },
+                {
+                    name: "BTC Pegs",
+                    showSorting: false,
+                    mobileLabel: "Pegs",
                 },
                 { name: "BTC Locked", showSorting: true, mobileLabel: "BTC" },
             ];

@@ -289,22 +289,6 @@ const LayerTable = ({ data, headers }: Props) => {
                                         </td>
                                     )}
                                     {(!isMobile ||
-                                        mobileActiveTab === "Status") && (
-                                        <td className="lg:px-6 px-4 py-3 lg:py-4 border-border">
-                                            {isLoading ? (
-                                                <div>Loading...</div>
-                                            ) : (
-                                                <TokenList
-                                                    tokens={
-                                                        tokensMap[
-                                                            item.slug.toLowerCase()
-                                                        ] || []
-                                                    }
-                                                />
-                                            )}
-                                        </td>
-                                    )}
-                                    {(!isMobile ||
                                         mobileActiveTab === "BTC Pegs") && (
                                         <td className="lg:px-6 px-4 py-3 lg:py-4 border-border">
                                             <Link
@@ -324,6 +308,22 @@ const LayerTable = ({ data, headers }: Props) => {
                                                 )}
                                                 {item.feeToken}
                                             </Link>
+                                        </td>
+                                    )}
+                                    {(!isMobile ||
+                                        mobileActiveTab === "BTC Pegs") && (
+                                        <td className="lg:px-6 px-4 py-3 lg:py-4 border-border">
+                                            {isLoading ? (
+                                                <div>Loading...</div>
+                                            ) : (
+                                                <TokenList
+                                                    tokens={
+                                                        tokensMap[
+                                                            item.slug.toLowerCase()
+                                                        ] || []
+                                                    }
+                                                />
+                                            )}
                                         </td>
                                     )}
                                     {(!isMobile ||
