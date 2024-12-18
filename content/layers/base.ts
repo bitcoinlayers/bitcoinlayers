@@ -20,7 +20,12 @@ const base: LayerProject = {
     liquidStaking: false,
     bridge: false,
     underReview: true,
-    riskFactors: ["", "", "", ""],
+    riskFactors: [
+        RiskFactor.VeryHigh,
+        RiskFactor.Medium,
+        RiskFactor.UnderReview,
+        RiskFactor.Medium,
+    ],
     btcLocked: 0,
     nativeToken: "-",
     feeToken: "ETH",
