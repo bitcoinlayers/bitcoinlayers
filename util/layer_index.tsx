@@ -52,7 +52,7 @@ import clarkProject from "../content/layers/clark";
 import arbitrumProject from "../content/layers/arbitrum";
 import avalancheProject from "../content/layers/avalanche";
 import baseProject from "../content/layers/base";
-import bscProject from "../content/layers/bnbsmartchain";
+import bnbsmartchainProject from "../content/layers/bnbsmartchain";
 import optimismProject from "../content/layers/optimism";
 import ethereumProject from "../content/layers/ethereum";
 import polygonProject from "../content/layers/polygonpos";
@@ -110,7 +110,7 @@ const clark: LayerProject = clarkProject;
 const arbitrum: LayerProject = arbitrumProject;
 const avalanche: LayerProject = avalancheProject;
 const base: LayerProject = baseProject;
-const bsc: LayerProject = bscProject;
+const bnbsmartchain: LayerProject = bnbsmartchainProject;
 const optimism: LayerProject = optimismProject;
 const ethereum: LayerProject = ethereumProject;
 const polygon: LayerProject = polygonProject;
@@ -150,6 +150,7 @@ export const allLayers: LayerProject[] = [
     yona,
     nexio,
     qed,
+    bitfinity,
     bevm,
     starknet,
     hemi,
@@ -158,6 +159,14 @@ export const allLayers: LayerProject[] = [
     spark,
     bark,
     clark,
+    arbitrum,
+    avalanche,
+    base,
+    bnbsmartchain,
+    optimism,
+    ethereum,
+    polygon,
+    solana,
 ];
 
 export const allLayerSlugs: string[] = allLayers.map((layer) => layer.slug);
