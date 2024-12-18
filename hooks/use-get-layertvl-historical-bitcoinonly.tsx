@@ -13,11 +13,13 @@ export interface Balance {
 
 interface Props {
     queryString?: string;
+    enabled?: boolean;
 }
 
 // Populates Layers TVL charts
 export default function useGetBalancesHistoricalBylayerBitcoinonly({
     queryString,
+    ...rest
 }: Props = {}) {
     const response = useQuery<Balance[]>({
         queryKey: [
@@ -30,6 +32,7 @@ export default function useGetBalancesHistoricalBylayerBitcoinonly({
                 `${process.env.NEXT_PUBLIC_API_URL}/get_layertvl_historical_bitcoinonly${queryString ?? ""}`,
             );
         },
+        ...rest,
     });
 
     return response;

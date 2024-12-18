@@ -15,33 +15,15 @@ import {
     ChartTooltip,
     ChartTooltipContent,
 } from "@/components/ui/chart";
-import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
-import {
-    Select,
-    SelectContent,
-    SelectItem,
-    SelectTrigger,
-    SelectValue,
-} from "@/components/ui/select";
 import { useQueryState } from "nuqs";
 import { useMemo, useCallback } from "react";
-import { UseQueryResult } from "@tanstack/react-query";
 import { cn } from "@/lib/utils";
-import useGetCurrentPrices from "@/hooks/use-get-current-prices";
-import { formatCurrency } from "@/util/formatCurrency";
+import TVLDisplay from "./tvl-display";
+import ChartFilters from "./chart-filters";
 
 interface ChartProps {
     title: string;
     description: string;
-    useDataHook: (params?: { queryString: string }) => UseQueryResult<
-        Partial<{
-            date: string;
-            amount: number;
-            layer_name?: string;
-            infra_name?: string;
-        }>[],
-        Error
-    >;
     itemNameKey: "layer_name" | "infra_name";
     chartQueryParam?: string;
     rangeQueryParam?: string;
@@ -49,12 +31,19 @@ interface ChartProps {
     divisionDefaultValue?: "combined" | "separate";
     showLegend?: boolean;
     chartHeight?: string;
+    data?:
+        | Partial<{
+              date: string;
+              amount: number;
+              layer_name?: string;
+              infra_name?: string;
+          }>[]
+        | undefined;
 }
 
 export default function AggregatedTVLChart({
     title,
     description,
-    useDataHook,
     itemNameKey,
     chartQueryParam = "chart",
     rangeQueryParam = "range",
@@ -62,6 +51,7 @@ export default function AggregatedTVLChart({
     divisionDefaultValue = "combined",
     showLegend = true,
     chartHeight = "h-96",
+    data,
 }: ChartProps) {
     const [chartType, setChartType] = useQueryState(chartQueryParam, {
         defaultValue: divisionDefaultValue,
@@ -69,27 +59,6 @@ export default function AggregatedTVLChart({
     const [dateRange, setDateRange] = useQueryState(rangeQueryParam, {
         defaultValue: "1y",
     });
-
-    const { data } = useDataHook();
-    const { data: pricesData } = useGetCurrentPrices();
-
-    const totalBTC = useMemo(() => {
-        if (!data?.length) return 0;
-        const latestDate = data.reduce(
-            (latest, current) =>
-                latest && current.date && latest > current.date
-                    ? latest
-                    : current.date,
-            data[0].date,
-        );
-        return data
-            .filter((item) => item.date === latestDate)
-            .reduce((sum, item) => sum + (item.amount || 0), 0);
-    }, [data]);
-
-    const btcPriceData = pricesData?.find(
-        (price) => price.token_slug === "btc",
-    );
 
     const tokens = useMemo(
         () =>
@@ -170,21 +139,23 @@ export default function AggregatedTVLChart({
     )?.date;
 
     const sortedTokens = useMemo(() => {
-        return tokens?.sort((a, b) => {
-            const valueA =
-                (a
-                    ? processedData.find((item) => item.date === latestDate)?.[
-                          a
-                      ]
-                    : 0) || 0;
-            const valueB =
-                (b
-                    ? processedData.find((item) => item.date === latestDate)?.[
-                          b
-                      ]
-                    : 0) || 0;
-            return valueB - valueA;
-        });
+        return (
+            tokens?.sort((a, b) => {
+                const valueA =
+                    (a
+                        ? processedData.find(
+                              (item) => item.date === latestDate,
+                          )?.[a]
+                        : 0) || 0;
+                const valueB =
+                    (b
+                        ? processedData.find(
+                              (item) => item.date === latestDate,
+                          )?.[b]
+                        : 0) || 0;
+                return valueB - valueA;
+            }) || []
+        );
     }, [tokens, processedData, latestDate]);
 
     const formatDate = (
@@ -209,27 +180,7 @@ export default function AggregatedTVLChart({
                 </div>
                 <div className="flex">
                     {/* TODO: Add a button to toggle the chart type */}
-                    <div
-                        className="relative z-30 flex flex-1 flex-col justify-center gap-1 border-t px-6 py-4 text-left even:border-l sm:border-l sm:border-t-0 sm:px-8 sm:py-6"
-                        data-active={false}
-                        onClick={() => {}}
-                    >
-                        <span className="text-xs text-muted-foreground">
-                            TVL
-                        </span>
-                        <span className="font-bold">
-                            {new Intl.NumberFormat("en-US", {
-                                minimumFractionDigits: 2,
-                                maximumFractionDigits: 2,
-                            }).format(totalBTC)}{" "}
-                            BTC
-                        </span>
-                        <div className="text-xs sm:text-sm text-muted-foreground">
-                            {formatCurrency(
-                                totalBTC * (btcPriceData?.price_usd ?? 0),
-                            )}
-                        </div>
-                    </div>
+                    <TVLDisplay data={data} />
                 </div>
             </CardHeader>
             <CardContent>
@@ -277,12 +228,12 @@ export default function AggregatedTVLChart({
                                             year: "numeric",
                                         })
                                     }
-                                    className="w-60 max-h-60 overflow-y-hidden" //TODO: allow overflow, add scroll bar
+                                    className="w-60 max-h-64 overflow-y-hidden" //TODO: allow overflow, add scroll bar
                                     sort="desc"
                                 />
                             }
                         />
-                        {sortedTokens?.map((item) => (
+                        {sortedTokens.map((item) => (
                             <Area
                                 key={item}
                                 name={item}
@@ -306,50 +257,13 @@ export default function AggregatedTVLChart({
                     </AreaChart>
                 </ChartContainer>
                 <div className="flex mt-6">
-                    {showDivisionButtons && (
-                        <ToggleGroup
-                            type="single"
-                            value={chartType}
-                            onValueChange={(value) =>
-                                value &&
-                                value !== chartType &&
-                                setChartType(value)
-                            }
-                            className="!space-x-0"
-                        >
-                            {["combined", "separate"].map((value) => (
-                                <ToggleGroupItem
-                                    key={value}
-                                    value={value}
-                                    className="border text-xs"
-                                    size="sm"
-                                >
-                                    {value.charAt(0).toUpperCase() +
-                                        value.slice(1)}
-                                </ToggleGroupItem>
-                            ))}
-                        </ToggleGroup>
-                    )}
-                    <Select value={dateRange} onValueChange={setDateRange}>
-                        <SelectTrigger className="w-[150px] text-xs rounded-md h-9 ml-1">
-                            <SelectValue placeholder="Select date range" />
-                        </SelectTrigger>
-                        <SelectContent>
-                            {[
-                                { value: "1mo", label: "Last month" },
-                                { value: "3mo", label: "Last 3 months" },
-                                { value: "1y", label: "Last year" },
-                            ].map(({ value, label }) => (
-                                <SelectItem
-                                    key={value}
-                                    value={value}
-                                    className="text-xs"
-                                >
-                                    {label}
-                                </SelectItem>
-                            ))}
-                        </SelectContent>
-                    </Select>
+                    <ChartFilters
+                        showDivisionButtons={showDivisionButtons}
+                        chartType={chartType}
+                        setChartType={setChartType}
+                        dateRange={dateRange}
+                        setDateRange={setDateRange}
+                    />
                 </div>
             </CardContent>
         </Card>

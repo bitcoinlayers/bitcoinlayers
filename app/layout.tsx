@@ -21,7 +21,10 @@ export default function RootLayout({ children }: RootLayoutProps) {
     return (
         <html lang="en" suppressHydrationWarning>
             <head>
-                <PlausibleProvider domain="bitcoinlayers.org" trackOutboundLinks />
+                <PlausibleProvider
+                    domain="bitcoinlayers.org"
+                    trackOutboundLinks
+                />
             </head>
             <body className={`antialiased bg-background ${inter.className}`}>
                 <Providers>

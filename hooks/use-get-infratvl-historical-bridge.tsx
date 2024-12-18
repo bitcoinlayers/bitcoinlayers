@@ -13,10 +13,12 @@ export interface Balance {
 
 interface Props {
     queryString?: string;
+    enabled?: boolean;
 }
 
 export default function useGetInfratvlHistoricalBridge({
     queryString,
+    ...rest
 }: Props = {}) {
     const response = useQuery<Balance[]>({
         queryKey: [
@@ -29,6 +31,7 @@ export default function useGetInfratvlHistoricalBridge({
                 `${process.env.NEXT_PUBLIC_API_URL}/get_infratvl_historical_bridge${queryString ?? ""}`,
             );
         },
+        ...rest,
     });
 
     return response;

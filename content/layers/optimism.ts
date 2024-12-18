@@ -104,7 +104,6 @@ const optimism: LayerProject = {
                     title: "This two-way peg is under review",
                     content: "This two-way peg is under review",
                 },
-                
             ],
         },
         {
@@ -129,7 +128,7 @@ const optimism: LayerProject = {
             tier: RiskFactor.Medium,
             title: "Optimism state transitions finalize on Ethereum",
             content:
-                "Optimism inherits finality guarantees from Ethereum. The Optimism sequencer provides a soft confirmation of transactions which are eventually summarized and sent to Ethereum.\n\Optimism's sequencer can reorg prior to a transaction batch being accepted on Ethereum.",
+                "Optimism inherits finality guarantees from Ethereum. The Optimism sequencer provides a soft confirmation of transactions which are eventually summarized and sent to Ethereum.\nOptimism's sequencer can reorg prior to a transaction batch being accepted on Ethereum.",
         },
     ],
     sections: [
@@ -138,7 +137,8 @@ const optimism: LayerProject = {
             title: "Further sections under review",
             content: [
                 {
-                    content: "Aspects related to bitcoin security, relevant technologies, and some two-way pegs have not been reviewed.\n\nThey will be reviewed by our team soon.",
+                    content:
+                        "Aspects related to bitcoin security, relevant technologies, and some two-way pegs have not been reviewed.\n\nThey will be reviewed by our team soon.",
                 },
             ],
         },

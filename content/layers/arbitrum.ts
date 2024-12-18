@@ -86,7 +86,8 @@ const arbitrum: LayerProject = {
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: "cbBTC is managed by a centralized custodian. We are analyzing if cbBTC is natively minted on Arbitrum or if is bridged from Ethereum.",
-                    content: "cbBTC on Arbitrum is backed Coinbase. These entities are responsible for custodying BTC that backs cbBTC on its various networks. Users trust these entities to not collude and steal the funds backing cbBTC.\n\nIn addition to custodying funds backing cbBTC, Coinbase can censor users from using cbBTC and maintains unilateral control of cbBTC's smart contracts.",
+                    content:
+                        "cbBTC on Arbitrum is backed Coinbase. These entities are responsible for custodying BTC that backs cbBTC on its various networks. Users trust these entities to not collude and steal the funds backing cbBTC.\n\nIn addition to custodying funds backing cbBTC, Coinbase can censor users from using cbBTC and maintains unilateral control of cbBTC's smart contracts.",
                 },
                 {
                     name: "Solv SolvBTC",
@@ -110,7 +111,8 @@ const arbitrum: LayerProject = {
                     score: 0,
                     tier: RiskFactor.UnderReview,
                     title: "This two-way peg is under review",
-                    content: "SolvBTCBBN is a derivative of Solv BTC. We are reviewing its trust assumptions.",
+                    content:
+                        "SolvBTCBBN is a derivative of Solv BTC. We are reviewing its trust assumptions.",
                 },
                 {
                     name: "Solv SolvBTC.ENA",
@@ -118,7 +120,8 @@ const arbitrum: LayerProject = {
                     score: 0,
                     tier: RiskFactor.UnderReview,
                     title: "This two-way peg is under review",
-                    content: "SolvBTC.ENA is a derivative of Solv BTC. We are reviewing its trust assumptions.",
+                    content:
+                        "SolvBTC.ENA is a derivative of Solv BTC. We are reviewing its trust assumptions.",
                 },
                 {
                     name: "Lorenzo stBTC",
@@ -126,7 +129,8 @@ const arbitrum: LayerProject = {
                     score: 0,
                     tier: RiskFactor.UnderReview,
                     title: "This two-way peg is under review",
-                    content: "Lorenzo stBTC is a liquid staking token. We are reviewing its trust assumptions.",
+                    content:
+                        "Lorenzo stBTC is a liquid staking token. We are reviewing its trust assumptions.",
                 },
                 {
                     name: "iBTC",
@@ -134,7 +138,8 @@ const arbitrum: LayerProject = {
                     score: 0,
                     tier: RiskFactor.UnderReview,
                     title: "This two-way peg is under review",
-                    content: "iBTC is a two-way peg that leverages DLC contracts between various institutions and a federated attestor network. We are reviewing its trust assumptions.",
+                    content:
+                        "iBTC is a two-way peg that leverages DLC contracts between various institutions and a federated attestor network. We are reviewing its trust assumptions.",
                 },
                 {
                     name: "Avalanche BTCb",
@@ -142,7 +147,8 @@ const arbitrum: LayerProject = {
                     score: 0,
                     tier: RiskFactor.UnderReview,
                     title: "This two-way peg is under review",
-                    content: "Avalanche BTCb is a wrapped BTC asset on the Avalanche blockchain. We are reviewing its bridge between Arbitrum and Avalanche.",
+                    content:
+                        "Avalanche BTCb is a wrapped BTC asset on the Avalanche blockchain. We are reviewing its bridge between Arbitrum and Avalanche.",
                 },
                 {
                     name: "Babypie mBTC",
@@ -185,7 +191,8 @@ const arbitrum: LayerProject = {
             title: "Further sections under review",
             content: [
                 {
-                    content: "Aspects related to bitcoin security, relevant technologies, and some two-way pegs have not been reviewed.\n\nThey will be reviewed by our team soon.",
+                    content:
+                        "Aspects related to bitcoin security, relevant technologies, and some two-way pegs have not been reviewed.\n\nThey will be reviewed by our team soon.",
                 },
             ],
         },

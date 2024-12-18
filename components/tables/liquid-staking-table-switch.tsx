@@ -41,6 +41,10 @@ export default function LiquidStakingTableSwitch() {
         { name: "TVL", showSorting: true, mobileLabel: "TVL" },
     ];
 
+    const stakingData = useGetInfratvlHistoricalStaked({
+        enabled: view === "staking",
+    });
+
     if (view === "staking") {
         return (
             <>
@@ -50,7 +54,7 @@ export default function LiquidStakingTableSwitch() {
                     itemNameKey="infra_name"
                     chartQueryParam="liquidstaking-chart"
                     rangeQueryParam="liquidstaking-range"
-                    useDataHook={useGetInfratvlHistoricalStaked}
+                    data={stakingData.data}
                     showLegend={false}
                     chartHeight="h-64"
                 />
