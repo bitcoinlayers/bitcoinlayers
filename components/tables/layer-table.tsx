@@ -343,7 +343,7 @@ const LayerTable = ({ data, headers }: Props) => {
                                                             item.btcLocked,
                                                         ))) ? (
                                                     <div className="font-light">
-                                                        Under review
+                                                        NaN
                                                     </div>
                                                 ) : (
                                                     <div>
