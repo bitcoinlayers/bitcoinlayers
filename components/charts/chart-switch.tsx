@@ -64,7 +64,6 @@ export default function ChartSwitch() {
             itemNameKey={view === "layers" ? "layer_name" : "infra_name"}
             chartQueryParam={config.chartQueryParam}
             rangeQueryParam={config.rangeQueryParam}
-            // useDataHook={config.useDataHook}
             showLegend={false}
             chartHeight="h-64"
             data={data}

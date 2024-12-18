@@ -1,6 +1,6 @@
 import { Project, Site } from "@/content/props";
 import { FileSearchIcon, FileTextIcon, GlobeIcon } from "lucide-react";
-import { createElement, isValidElement } from "react";
+import { createElement, isValidElement, type JSX } from "react";
 
 const LinkButton = ({
     href,

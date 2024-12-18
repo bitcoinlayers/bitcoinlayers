@@ -1,5 +1,5 @@
 import Link from "next/link";
-import React from "react";
+import React, { type JSX } from "react";
 
 export const parseTextWithLinks = (text: string) => {
     const linkRegex = /\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g;

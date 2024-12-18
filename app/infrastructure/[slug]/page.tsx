@@ -21,11 +21,10 @@ async function getInfrastructureFromSlug(slug: string) {
     return infrastructure;
 }
 
-export default async function InfrastructurePage({
-    params,
-}: {
-    params: { slug: string };
+export default async function InfrastructurePage(props: {
+    params: Promise<{ slug: string }>;
 }) {
+    const params = await props.params;
     const { slug } = params;
     const infrastructure = await getInfrastructureFromSlug(slug);
 
