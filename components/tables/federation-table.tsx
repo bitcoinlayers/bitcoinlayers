@@ -23,8 +23,10 @@ import {
     LayersIcon,
 } from "lucide-react";
 import { LiveStatus } from "@/content/props";
+import useGetMappingsRanked, { MappingRanked } from "@/hooks/use-get-mappings";
+import TokensList from "@/components/tables/mapping-network-img";
 
-type TableTabKey = "Snapshot" | "Type" | "Status" | "TVL";
+type TableTabKey = "Snapshot" | "Type" | "Status" | "Networks" | "TVL";
 
 interface Props {
     data: Project[];
@@ -84,6 +86,24 @@ const FederationTable = ({ data, headers }: Props) => {
     const [sortOrder, setSortOrder] = useQueryState("sortOrder", {
         defaultValue: "desc",
     });
+
+    const { data: allMappingsRanked, isLoading } = useGetMappingsRanked();
+
+    const networksByToken = useMemo(() => {
+        if (!allMappingsRanked) return {};
+
+        return allMappingsRanked.reduce(
+            (acc, mapping) => {
+                const tokenSlug = mapping.token_slug?.toLowerCase();
+                if (!tokenSlug) return acc;
+
+                if (!acc[tokenSlug]) acc[tokenSlug] = [];
+                acc[tokenSlug].push(mapping);
+                return acc;
+            },
+            {} as Record<string, MappingRanked[]>,
+        );
+    }, [allMappingsRanked]);
 
     const { data: balances } = useGetInfratvlCurrentAll();
 
@@ -315,6 +335,22 @@ const FederationTable = ({ data, headers }: Props) => {
                                             >
                                                 {item.live}
                                             </Link>
+                                        </td>
+                                    )}
+                                    {(!isMobile ||
+                                        mobileActiveTab === "Networks") && (
+                                        <td className="lg:px-6 px-4 py-3 lg:py-4 border-border">
+                                            {isLoading ? (
+                                                <div>Loading...</div>
+                                            ) : (
+                                                <TokensList
+                                                    tokens={
+                                                        networksByToken[
+                                                            item.slug.toLowerCase()
+                                                        ] || []
+                                                    }
+                                                />
+                                            )}
                                         </td>
                                     )}
                                     {(!isMobile ||

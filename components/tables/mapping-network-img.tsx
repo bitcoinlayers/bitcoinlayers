@@ -17,13 +17,13 @@ const TokenList: React.FC<TokenListProps> = ({ tokens }) => {
         <ul className="flex flex-wrap gap-2">
             {topTokens.map((token) => {
                 const [imageSrc, setImageSrc] = useState(
-                    `/logos/${token.token_slug}.png`,
+                    `/logos/${token.network_slug}.png`,
                 );
                 const fallbackSrc = "/logos/bitcoinlayers-logo.png";
 
                 return (
                     <li
-                        key={token.token_slug}
+                        key={token.network_slug}
                         className="flex items-center gap-2"
                     >
                         <Image
@@ -33,6 +33,7 @@ const TokenList: React.FC<TokenListProps> = ({ tokens }) => {
                             height={20}
                             onError={() => setImageSrc(fallbackSrc)}
                         />
+                        {/* <span>{token.network_slug}</span> */}
                     </li>
                 );
             })}

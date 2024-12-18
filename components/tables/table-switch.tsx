@@ -67,6 +67,11 @@ function getSortedDataAndHeaders(view: string) {
                     filterOptions: wrapperTypeFilters,
                 },
                 { name: "Status", showSorting: true, mobileLabel: "Status" },
+                {
+                    name: "Networks",
+                    showSorting: false,
+                    mobileLabel: "Networks",
+                },
                 { name: "TVL", showSorting: true, mobileLabel: "TVL" },
             ];
 

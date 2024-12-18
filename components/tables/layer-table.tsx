@@ -18,7 +18,7 @@ import {
 } from "@/components/ui/card";
 import { LayersIcon } from "lucide-react";
 import useGetMappingsRanked, { MappingRanked } from "@/hooks/use-get-mappings";
-import TokenList from "@/components/tables/layer-table-token-list";
+import TokenList from "@/components/tables/mapping-token-img";
 
 type TableTabKey =
     | "Trust Assumptions"
