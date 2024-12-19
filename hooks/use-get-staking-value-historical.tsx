@@ -13,6 +13,7 @@ export interface Balance {
 
 interface Props {
     queryString?: string;
+    enabled?: boolean;
 }
 
 export default function useGetStakingValueHistorical({

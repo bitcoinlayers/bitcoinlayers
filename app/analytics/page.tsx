@@ -1,10 +1,11 @@
 "use client";
 
 import AggregatedTVLChart from "@/components/charts/aggregated-tvl-chart";
-import ViewToggleGroup from "@/components/layer/view-toggle-group";
+import ViewToggleGroup from "@/components/layer/view-toggle-group-analytics";
 import useGetInfratvlHistoricalBridge from "@/hooks/use-get-infratvl-historical-bridge";
 import useGetInfratvlHistoricalStaked from "@/hooks/use-get-infratvl-historical-staked";
 import useGetBalancesHistoricalBylayerBitcoinonly from "@/hooks/use-get-layertvl-historical-bitcoinonly";
+import useGetStakingValueHistorical from "@/hooks/use-get-staking-value-historical";
 import { useQueryState } from "nuqs";
 
 export default function Analytics() {
@@ -14,24 +15,15 @@ export default function Analytics() {
 
     const chartConfig = {
         layers: {
-            title: "Bitcoin layers BTC TVL",
+            title: "All Networks",
             description: "Total amount of BTC deposited on bitcoin layers",
             itemNameKey: "layer_name",
             chartQueryParam: "layer-chart",
             rangeQueryParam: "layer-range",
             useDataHook: useGetBalancesHistoricalBylayerBitcoinonly,
         },
-        staking: {
-            title: 'Liquid "staking" BTC TVL',
-            description:
-                'Total amount of BTC deposited in liquid "staking" protocols',
-            itemNameKey: "infra_name",
-            chartQueryParam: "staking-chart",
-            rangeQueryParam: "staking-range",
-            useDataHook: useGetInfratvlHistoricalStaked,
-        },
         wrappers: {
-            title: "Crosschain BTC TVL",
+            title: "All Wrapped Tokens",
             description:
                 "Total amount of BTC deposited in crosschain BTC protocols",
             itemNameKey: "infra_name",
@@ -39,16 +31,37 @@ export default function Analytics() {
             rangeQueryParam: "bridge-range",
             useDataHook: useGetInfratvlHistoricalBridge,
         },
+        staking: {
+            title: "Babylon Staking",
+            description:
+                'Total amount of BTC deposited in liquid "staking" protocols',
+            itemNameKey: "infra_name",
+            chartQueryParam: "staking-chart",
+            rangeQueryParam: "staking-range",
+            useDataHook: useGetStakingValueHistorical,
+        },
+        liquidstaking: {
+            title: "Liquid Staking BTC Tokens",
+            description:
+                'Total amount of BTC deposited in liquid "staking" protocols',
+            itemNameKey: "infra_name",
+            chartQueryParam: "staking-chart",
+            rangeQueryParam: "staking-range",
+            useDataHook: useGetInfratvlHistoricalStaked,
+        },
     };
 
     const layersData = useGetBalancesHistoricalBylayerBitcoinonly({
         enabled: view === "layers" || view === "all",
     });
-    const stakingData = useGetInfratvlHistoricalStaked({
-        enabled: view === "staking" || view === "all",
-    });
     const wrappersData = useGetInfratvlHistoricalBridge({
         enabled: view === "wrappers" || view === "all",
+    });
+    const stakingData = useGetStakingValueHistorical({
+        enabled: view === "staking" || view === "all",
+    });
+    const liquidstakingData = useGetInfratvlHistoricalStaked({
+        enabled: view === "liquidstaking" || view === "all",
     });
 
     return (
@@ -74,7 +87,9 @@ export default function Analytics() {
                                     ? layersData.data
                                     : key === "staking"
                                       ? stakingData.data
-                                      : wrappersData.data
+                                      : key === "wrappers"
+                                        ? wrappersData.data
+                                        : liquidstakingData.data
                             }
                         />
                     ),
