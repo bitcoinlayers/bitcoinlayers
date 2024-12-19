@@ -17,12 +17,12 @@ export default function useGetMappingsRanked({ queryString }: Props = {}) {
     const response = useQuery<MappingRanked[]>({
         queryKey: [
             queryString
-                ? `aaa_get_mappings_ranked${queryString}`
-                : "aaa_get_mappings_ranked",
+                ? `adjusted_mappings_ranked${queryString}`
+                : "adjusted_mappings_ranked",
         ],
         queryFn: () =>
             fetcher(
-                `${process.env.NEXT_PUBLIC_API_URL}/aaa_get_mappings_ranked${queryString ?? ""}`,
+                `${process.env.NEXT_PUBLIC_API_URL}/adjusted_mappings_ranked${queryString ?? ""}`,
             ),
         staleTime: Infinity,
     });
