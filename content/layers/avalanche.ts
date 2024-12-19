@@ -28,7 +28,7 @@ const avalanche: LayerProject = {
     ],
     btcLocked: 0,
     nativeToken: "-",
-    feeToken: "ETH",
+    feeToken: "AVAX",
     bitcoinOnly: false,
     links: [
         {
