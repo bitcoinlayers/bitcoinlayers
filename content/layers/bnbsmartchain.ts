@@ -23,7 +23,7 @@ const bnbsmartchain: LayerProject = {
     riskFactors: ["", "", "", ""],
     btcLocked: 0,
     nativeToken: "-",
-    feeToken: "ETH",
+    feeToken: "BNB",
     bitcoinOnly: false,
     links: [
         {
