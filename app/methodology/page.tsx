@@ -188,19 +188,16 @@ const Methodology: React.FC = () => {
 
     return (
         <article className="flex flex-col min-h-screen max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-col justify-start items-start gap-4">
-                <div className="flex justify-start items-center gap-8 w-full">
-                    <div className="flex-grow flex items-center gap-[30px] h-[156px]">
-                        <div className="special_header flex-grow sm:h-20 text-6xl lg:text-10xl">
-                            Approach to analyzing layers
-                        </div>
+            <div className="flex flex-col justify-start items-start gap-8">
+                <div className="w-full pt-8">
+                    <div className="special_header sm:leading-[80px] text-8xl lg:text-10xl font-light">
+                        Approach to analyzing layers
                     </div>
                 </div>
                 <div className="flex flex-col gap-8 w-full">
                     <div className="flex flex-col gap-12 w-full rounded-md">
-                        {" "}
                         <div className="flex flex-col gap-8 w-full">
-                            <div className=" rounded-xl border border-border flex flex-col justify-center items-start gap-4 p-8">
+                            <div className="rounded-xl border border-border flex flex-col justify-center items-start gap-4 p-8">
                                 <div className="flex flex-col gap-3 cursor-pointer">
                                     <div className="text-xl font-light leading-9">
                                         This is the framework we use to analyze
