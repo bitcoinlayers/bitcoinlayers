@@ -16,7 +16,7 @@ export default function Analytics() {
     const chartConfig = {
         layers: {
             title: "All Networks",
-            description: "Total amount of BTC deposited on bitcoin layers",
+            description: "Total supply of wrapped bitcoin tokens on various layers",
             itemNameKey: "layer_name",
             chartQueryParam: "layer-chart",
             rangeQueryParam: "layer-range",
@@ -25,7 +25,7 @@ export default function Analytics() {
         wrappers: {
             title: "All Wrapped Tokens",
             description:
-                "Total amount of BTC deposited in crosschain BTC protocols",
+                "Total supply of wrapped bitcoin tokens",
             itemNameKey: "infra_name",
             chartQueryParam: "bridge-chart",
             rangeQueryParam: "bridge-range",
@@ -34,7 +34,7 @@ export default function Analytics() {
         staking: {
             title: "Babylon Staking",
             description:
-                'Total amount of BTC deposited in liquid "staking" protocols',
+                'Total amount of BTC deposited in the Babylon staking protocol',
             itemNameKey: "infra_name",
             chartQueryParam: "staking-chart",
             rangeQueryParam: "staking-range",
@@ -43,7 +43,7 @@ export default function Analytics() {
         liquidstaking: {
             title: "Liquid Staking BTC Tokens",
             description:
-                'Total amount of BTC deposited in liquid "staking" protocols',
+                'Total amount of BTC deposited in liquid staking protocols',
             itemNameKey: "infra_name",
             chartQueryParam: "staking-chart",
             rangeQueryParam: "staking-range",
