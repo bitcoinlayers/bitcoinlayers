@@ -51,7 +51,7 @@ const solana: LayerProject = {
             text: Site.Twitter,
             url: "https://x.com/solana",
         },
-        ],
+    ],
     description:
         "Solana is an alternative proof-of-stake blockchain that supports a number of wrapped BTC tokens. It is home to the SVM execution environment which supports more expressive smart contracts.",
     riskAnalysis: [

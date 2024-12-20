@@ -67,6 +67,7 @@ export default function ChartSwitch() {
 
     return (
         <AggregatedTVLChart
+            key={data?.length}
             title={config.title}
             description={config.description}
             // itemNameKey={view === "layers" ? "layer_name" : "infra_name"}

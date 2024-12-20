@@ -52,8 +52,7 @@ const bitfinity: LayerProject = {
             url: "https://x.com/bitfinitynet",
         },
     ],
-    description:
-        "Bitfinity is an EVM-based sidechain.",
+    description: "Bitfinity is an EVM-based sidechain.",
     riskAnalysis: [
         {
             category: RiskCategory.BtcCustody,
@@ -78,21 +77,24 @@ const bitfinity: LayerProject = {
             score: 0,
             tier: RiskFactor.UnderReview,
             title: "We are reviewing what satisfies Bitfinity's data availability requirement",
-            content: "We are reviewing the operators responsible for data availability and storage for the Bitfinity sidechain.",
+            content:
+                "We are reviewing the operators responsible for data availability and storage for the Bitfinity sidechain.",
         },
         {
             category: RiskCategory.NetworkOperators,
             score: 0,
             tier: RiskFactor.UnderReview,
             title: "We are reviewing Bitfinity's block production mechanism",
-            content: "We are reviewing the operators of the Bitfinity sidechain.",
+            content:
+                "We are reviewing the operators of the Bitfinity sidechain.",
         },
         {
             category: RiskCategory.FinalityGuarantees,
             score: 0,
             tier: RiskFactor.UnderReview,
             title: "We are reviewing Bitfinity's finality guarantees",
-            content: "We are reviewing how transactions are finalized on Bitfinity.",
+            content:
+                "We are reviewing how transactions are finalized on Bitfinity.",
         },
     ],
     sections: [

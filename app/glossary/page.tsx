@@ -384,7 +384,11 @@ const GlossaryPage: React.FC = () => {
     }, []);
 
     const renderGlossarySection = (letter: string) => (
-        <div key={letter} id={letter} className="mb-8 flex flex-col lg:flex-row items-start">
+        <div
+            key={letter}
+            id={letter}
+            className="mb-8 flex flex-col lg:flex-row items-start"
+        >
             <div className="font-black text-muted-foreground font-playfair-display text-10xl flex-shrink-0 w-24 leading-none">
                 {letter}
             </div>
