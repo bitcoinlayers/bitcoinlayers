@@ -46,12 +46,20 @@ export default function ChartSwitch() {
             useDataHook: useGetInfratvlHistoricalBridge,
         },
         layers: {
-            title: "Total BTC locked",
-            description: "Total amount of BTC locked in bitcoin layers",
-            chartQueryParam: "layer-chart",
-            rangeQueryParam: "layer-range",
-            useDataHook: useGetBalancesHistoricalBylayerBitcoinonly,
+            title: "Crosschain BTC supply",
+            description:
+                "Total amount of BTC locked in crosschain BTC protocols",
+            chartQueryParam: "bridge-chart",
+            rangeQueryParam: "bridge-range",
+            useDataHook: useGetInfratvlHistoricalBridge,
         },
+        // layers: {
+        //     title: "Total BTC locked",
+        //     description: "Total amount of BTC locked in bitcoin layers",
+        //     chartQueryParam: "layer-chart",
+        //     rangeQueryParam: "layer-range",
+        //     useDataHook: useGetBalancesHistoricalBylayerBitcoinonly,
+        // },
     };
 
     const config = chartConfig[view as keyof typeof chartConfig];

@@ -24,12 +24,12 @@ export default function useGetBalancesHistoricalBylayerBitcoinonly({
     const response = useQuery<Balance[]>({
         queryKey: [
             queryString
-                ? `get_layertvl_historical_bitcoinonly${queryString}`
-                : "get_layertvl_historical_bitcoinonly",
+                ? `get_layertvl_historical_bitcoinonly3s${queryString}`
+                : "get_layertvl_historical_bitcoinonly3s",
         ],
         queryFn: () => {
             return fetcher(
-                `${process.env.NEXT_PUBLIC_API_URL}/get_layertvl_historical_bitcoinonly${queryString ?? ""}`,
+                `${process.env.NEXT_PUBLIC_API_URL}/get_layertvl_historical_bitcoinonly3s${queryString ?? ""}`,
             );
         },
         ...rest,
