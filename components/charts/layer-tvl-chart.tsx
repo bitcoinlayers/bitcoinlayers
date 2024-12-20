@@ -348,6 +348,7 @@ export default function LayerTVLChart() {
                                 dot={false}
                                 fillOpacity={0.5}
                                 stackId="1"
+                                isAnimationActive={true}
                             />
                         ))}
                         <ChartLegend

@@ -345,6 +345,7 @@ export default function InfraTVLChart() {
                                 dot={false}
                                 fillOpacity={0.5}
                                 stackId="1"
+                                isAnimationActive={true}
                             />
                         ))}
                         <ChartLegend
