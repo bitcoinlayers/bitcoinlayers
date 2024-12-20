@@ -93,7 +93,7 @@ const FederationTable = ({ data, headers }: Props) => {
         if (!allMappingsRanked) return {};
         return allMappingsRanked.reduce(
             (acc, token) => {
-                const slug = token.token_slug;
+                const slug = token.token_slug.toLowerCase();
                 if (!acc[slug]) acc[slug] = [];
                 acc[slug].push(token);
                 return acc;
