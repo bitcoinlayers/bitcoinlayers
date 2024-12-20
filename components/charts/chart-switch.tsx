@@ -38,17 +38,17 @@ export default function ChartSwitch() {
             useDataHook: useGetLendingValueHistorical,
         },
         wrappers: {
-            title: "Crosschain BTC supply",
+            title: "BTC supply on layers",
             description:
-                "Total amount of BTC locked in crosschain BTC protocols",
+                "Total BTC supply supporting L2s, sidechains, alternative L1s, and more",
             chartQueryParam: "bridge-chart",
             rangeQueryParam: "bridge-range",
             useDataHook: useGetInfratvlHistoricalBridge,
         },
         layers: {
-            title: "Crosschain BTC supply",
+            title: "BTC supply on layers",
             description:
-                "Total amount of BTC locked in crosschain BTC protocols",
+                "Total BTC supply supporting L2s, sidechains, alternative L1s, and more",
             chartQueryParam: "bridge-chart",
             rangeQueryParam: "bridge-range",
             useDataHook: useGetInfratvlHistoricalBridge,
