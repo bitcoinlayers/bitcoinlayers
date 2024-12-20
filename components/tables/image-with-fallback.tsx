@@ -20,7 +20,9 @@ const ImageWithFallback: React.FC<ImageWithFallbackProps> = ({
     width = 20,
     height = 20,
 }) => {
-    const [imageSrc, setImageSrc] = useState(`/${folder}/${slug}.png`);
+    const [imageSrc, setImageSrc] = useState(
+        `/${folder}/${slug.toLowerCase()}.png`,
+    );
 
     return (
         <Image
