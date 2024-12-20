@@ -280,7 +280,7 @@ const FederationTable = ({ data, headers }: Props) => {
                                             className="flex items-center"
                                         >
                                             <LayerImage
-                                                src={`/logos/${item.slug}.png`}
+                                                src={`/logos/${item.slug.toLowerCase()}.png`}
                                                 title={item.title}
                                             />
                                             <span className="ml-2 truncate lg:word-break-none">
