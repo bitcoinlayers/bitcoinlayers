@@ -7,7 +7,7 @@ const AboutPage: React.FC = () => {
     }: {
         question: string;
         answer: string;
-    }) {
+    }): React.ReactNode {
         return (
             <div className="rounded-xl border border-border flex flex-col justify-center items-start gap-4 p-8">
                 <div className="flex items-center gap-3">
@@ -41,8 +41,16 @@ const AboutPage: React.FC = () => {
                         <div className="flex flex-col gap-8 w-full">
                             <InfoBox
                                 question="The Project"
-                                answer="Bitcoin Layers is a website that analyzes Bitcoin L2s and sidechain protocols against a general framework. The goal of this site is to show users and other ecosystem participants trust assumptions related to Bitcoin L2s, sidechains and related infrastructure. Bitcoin Layers offers an opinionated analysis, and is aimed to show a high level overview of the technologies being developed in the Bitcoin scaling space. These assessments do not necessarily reflect the security of a given system, but shares if a system is natively integrated with, and derives security from, Bitcoin. The website is developed by LX Research Labs and is free and open-source under the MIT license. Anyone is welcome to use our research however they see fit, but we do request that you credit us when doing so. Nothing in the Bitcoin Layers website should be considered financial advice. Our risk assessments are not designed to be recommendations, or endorsements, of specific protocols. Our risk assessments are not security audits. Users should do their own research when choosing a scaling protocol to interact with. 
-"
+                                answer={`Bitcoin Layers is a website that analyzes Bitcoin L2s and sidechain protocols against a general framework. 
+    The goal of this site is to show users and other ecosystem participants trust assumptions related to Bitcoin L2s, 
+    sidechains and related infrastructure. Bitcoin Layers offers an opinionated analysis and is aimed to show a high-level 
+    overview of the technologies being developed in the Bitcoin scaling space. These assessments do not necessarily reflect 
+    the security of a given system but share if a system is natively integrated with, and derives security from, Bitcoin. 
+    The website is developed by LX Research Labs and is free and open-source under the MIT license. Anyone is welcome to use 
+    our research however they see fit, but we do request that you credit us when doing so. Nothing in the Bitcoin Layers 
+    website should be considered financial advice. Our risk assessments are not designed to be recommendations or endorsements 
+    of specific protocols. Our risk assessments are not security audits. Users should do their own research when choosing 
+    a scaling protocol to interact with.`}
                             />
                         </div>
                     </div>
