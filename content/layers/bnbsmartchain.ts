@@ -20,7 +20,12 @@ const bnbsmartchain: LayerProject = {
     liquidStaking: false,
     bridge: false,
     underReview: false,
-    riskFactors: ["", "", "", ""],
+    riskFactors: [
+        RiskFactor.UnderReview,
+        RiskFactor.UnderReview,
+        RiskFactor.UnderReview,
+        RiskFactor.UnderReview,
+    ],
     btcLocked: 0,
     nativeToken: "-",
     feeToken: "BNB",

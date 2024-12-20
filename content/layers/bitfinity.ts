@@ -20,10 +20,15 @@ const bitfinity: LayerProject = {
     liquidStaking: false,
     bridge: false,
     underReview: true,
-    riskFactors: ["", "", "", ""],
+    riskFactors: [
+        RiskFactor.UnderReview,
+        RiskFactor.UnderReview,
+        RiskFactor.UnderReview,
+        RiskFactor.UnderReview,
+    ],
     btcLocked: 0,
     nativeToken: "-",
-    feeToken: "-",
+    feeToken: "BTF",
     bitcoinOnly: false,
     links: [
         {
@@ -36,7 +41,7 @@ const bitfinity: LayerProject = {
         },
         {
             text: Site.Explorer,
-            url: "https://explorer.testnet.bitfinity.network",
+            url: "https://explorer.mainnet.bitfinity.network/",
         },
         {
             text: Site.GitHub,
