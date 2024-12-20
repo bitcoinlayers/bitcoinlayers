@@ -38,17 +38,17 @@ export default function ChartSwitch() {
             useDataHook: useGetLendingValueHistorical,
         },
         wrappers: {
-            title: "BTC supply on offchain protocols",
+            title: "BTC supply on layers",
             description:
-                "Total BTC supply supporting L2s, sidechains, and more",
+                "Total BTC supply supporting L2s, sidechains, alternative L1s, and more",
             chartQueryParam: "bridge-chart",
             rangeQueryParam: "bridge-range",
             useDataHook: useGetInfratvlHistoricalBridge,
         },
         layers: {
-            title: "BTC supply on offchain protocols",
+            title: "BTC supply on layers",
             description:
-                "Total BTC supply supporting L2s, sidechains, and more",
+                "Total BTC supply supporting L2s, sidechains, alternative L1s, and more",
             chartQueryParam: "bridge-chart",
             rangeQueryParam: "bridge-range",
             useDataHook: useGetInfratvlHistoricalBridge,
