@@ -69,7 +69,8 @@ export default function ChartSwitch() {
         <AggregatedTVLChart
             title={config.title}
             description={config.description}
-            itemNameKey={view === "layers" ? "layer_name" : "infra_name"}
+            // itemNameKey={view === "layers" ? "layer_name" : "infra_name"}
+            itemNameKey={view === "layers" ? "infra_name" : "infra_name"}
             chartQueryParam={config.chartQueryParam}
             rangeQueryParam={config.rangeQueryParam}
             showLegend={false}
