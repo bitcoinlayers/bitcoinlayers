@@ -28,7 +28,7 @@ const internetcomputer: LayerProject = {
     ],
     btcLocked: 277,
     nativeToken: "ICP",
-    feeToken: "ckBTC",
+    feeToken: "ICP",
     bitcoinOnly: false,
     links: [
         {
