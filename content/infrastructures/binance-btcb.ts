@@ -63,7 +63,7 @@ const binancebtcb: InfrastructureProject = {
             content: [
                 {
                     content:
-                        "Aspects related to BTC custody, key management, and transaction signing have not been reviewed. We are currently looking to review.",
+                        "Aspects related to BTC custody, key management, and transaction signing have not been reviewed. We are currently reviewing these sections.",
                 },
             ],
         },
