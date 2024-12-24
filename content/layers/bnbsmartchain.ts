@@ -66,9 +66,9 @@ const bnbsmartchain: LayerProject = {
                     name: "Binance BTCB",
                     infrastructureSlug: "binance-btcb",
                     score: 0,
-                    tier: RiskFactor.UnderReview,
-                    title: "This two-way peg is under review",
-                    content: "This two-way peg is under review",
+                    tier: RiskFactor.VeryHigh,
+                    title: "Binance custodies the BTC backing BTCB",
+                    content: "BTCB on BNB Smart Chain is backed by Binance. Binance is the single entity responsible for custodying BTC that backs BTCB on BNB Smart Chain.\n\nUsers trust Binance to ensure the funds backing BTCB are not stolen or lost.",
                 },
                 {
                     name: "BitGo wBTC",
@@ -77,7 +77,7 @@ const bnbsmartchain: LayerProject = {
                     tier: RiskFactor.VeryHigh,
                     title: "wBTC is managed by a centralized consortium of companies. We are analyzing if wBTC is natively minted on Binance or if is bridged from Ethereum.",
                     content:
-                        "wBTC on BNB Smart Chain is backed by a centralized consortium of three companies. These entities are responsible for custodying BTC that backs wBTC on its various networks. Users trust these entities to not collude and steal the funds backing wBTC.",
+                        "wBTC on BNB Smart Chain is backed by a centralized consortium of three companies. These entities are responsible for securing BTC that backs wBTC on its various networks. Users trust these entities to not collude and steal the funds backing wBTC.",
                 },
                 {
                     name: "Threshold tBTC",

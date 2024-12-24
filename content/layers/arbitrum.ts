@@ -87,7 +87,7 @@ const arbitrum: LayerProject = {
                     tier: RiskFactor.VeryHigh,
                     title: "cbBTC is managed by a centralized custodian. We are analyzing if cbBTC is natively minted on Arbitrum or if is bridged from Ethereum.",
                     content:
-                        "cbBTC on Arbitrum is backed Coinbase. These entities are responsible for custodying BTC that backs cbBTC on its various networks. Users trust these entities to not collude and steal the funds backing cbBTC.\n\nIn addition to custodying funds backing cbBTC, Coinbase can censor users from using cbBTC and maintains unilateral control of cbBTC's smart contracts.",
+                        "Coinbase is responsible for securing the BTC that backs cbBTC on Arbitrum. Users trust Coinbase to ensure the funds backing cbBTC are not stolen or lost.\n\nIn addition to securing the funds funds backing cbBTC, Coinbase can censor users from using cbBTC and maintains unilateral control of cbBTC's smart contracts.",
                 },
                 {
                     name: "Solv SolvBTC",
