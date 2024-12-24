@@ -168,9 +168,9 @@ const bnbsmartchain: LayerProject = {
             category: RiskCategory.DataAvailability,
             score: 0,
             tier: RiskFactor.UnderReview,
-            title: "Data is stored and made available by Polygon full nodes",
+            title: "We are reviewing BNB Smart Chain's data availability requirement",
             content:
-                "The data for Polygon's state is made available by its full nodes. Anyone can run an Polygon node and verify is state.\n\nWe are currently reviewing Polygon's full node implementation",
+                "We are currently reviewing BNB Smart Chains's full node implementation",
         },
         {
             category: RiskCategory.NetworkOperators,
