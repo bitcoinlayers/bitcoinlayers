@@ -5,6 +5,7 @@ import {
     LiveStatus,
     EntityType,
     Site,
+    AssessmentCategory,
 } from "../props";
 
 const binancebtcb: InfrastructureProject = {
@@ -48,21 +49,36 @@ const binancebtcb: InfrastructureProject = {
             content: [
                 {
                     content:
-                        "[BTCB BNB smart contract](https://bscscan.com/token/0x7130d2a12b9bcbfae4f2634d864a1ee1ce3ead9c)",
+                        "[This is the implementation of the BTCB token contract.](https://bscscan.com/token/0x7130d2a12b9bcbfae4f2634d864a1ee1ce3ead9c)",
+                },
+                {
+                    content:
+                        "[This is the owner of the BTCB token contract.](https://bscscan.com/address/0xF68a4b64162906efF0fF6aE34E2bB1Cd42FEf62d)",
                 },
             ],
         },
         {
             id: "selfsubmit",
-            title: "Process to self-submit information",
+            title: "Further sections under review",
             content: [
                 {
                     content:
-                        "The Bitcoin Layers project prioritizes risk reviews on projects that are in production and accepting users' BTC deposits. Projects on testnet are welcome to submit information about their project. We do not publish risk assessments for projects that are not in production.\n\nHere are the [instructions](https://github.com/bitcoinlayers/bitcoinlayers/blob/main/SELFSUBMIT.md) on self-submitting a project.",
+                        "Aspects related to BTC custody, key management, and transaction signing have not been reviewed. We are currently looking to review.",
                 },
             ],
         },
     ],
+    assessment: [
+        {
+            category: AssessmentCategory.Reputation,
+            score: 0,
+            tier: "",
+            title: "Users trust Binance with managing the BTC backing BTCB",
+            content:
+                "When interacting with BTCB, users trust that [Binance](https://www.binance.com/en), a centralized custodian, will safely custody the BTC backing BTCB. When interacting with a centralized custodian, users trust that the custodian will not steal the funds backing their BTCB tokens. They also trust that Binance will effectively manage the BTC and not lose access to it. If the BTC backing BTCB, BTCB tokens could become effectively worthless.\n\nUsers trust Binance's reputation as an institutional provider when interacting with BTCB.",
+        },
+    ],
 };
+
 
 export default binancebtcb;
