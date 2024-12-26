@@ -23,7 +23,7 @@ const corn: LayerProject = {
     riskFactors: ["", "", "", ""],
     btcLocked: 0,
     nativeToken: "-",
-    feeToken: "-",
+    feeToken: "BTCN",
     bitcoinOnly: false,
     links: [
         {
