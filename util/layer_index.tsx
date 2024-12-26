@@ -57,6 +57,7 @@ import optimismProject from "../content/layers/optimism";
 import ethereumProject from "../content/layers/ethereum";
 import polygonProject from "../content/layers/polygonpos";
 import solanaProject from "../content/layers/solana";
+import cornProject from "../content/layers/corn";
 
 const core: LayerProject = coreProject;
 const internetcomputer: LayerProject = internetcomputerProject;
@@ -115,6 +116,7 @@ const optimism: LayerProject = optimismProject;
 const ethereum: LayerProject = ethereumProject;
 const polygon: LayerProject = polygonProject;
 const solana: LayerProject = solanaProject;
+const corn: LayerProject = cornProject;
 
 export const allLayers: LayerProject[] = [
     core,
@@ -167,6 +169,7 @@ export const allLayers: LayerProject[] = [
     ethereum,
     polygon,
     solana,
+    corn,
 ];
 
 export const allLayerSlugs: string[] = allLayers.map((layer) => layer.slug);
