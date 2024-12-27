@@ -14,7 +14,7 @@ const corn: LayerProject = {
     type: Type.Layer,
     slug: "corn",
     title: "Corn",
-    entityType: EntityType.EthereumRollup,
+    entityType: EntityType.TBD,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -48,7 +48,7 @@ const corn: LayerProject = {
         },
     ],
     description:
-        "Corn is an Ethereum rollup that leverages a wrapped BTC token as its gas token.",
+        "Corn is a permissioned rollup that leverages a wrapped BTC token as its gas token.",
     riskAnalysis: [
         {
             category: RiskCategory.UnilateralExits,
