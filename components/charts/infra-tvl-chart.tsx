@@ -19,7 +19,7 @@ import {
 import { useQueryState } from "nuqs";
 import { useCallback, useMemo, useState } from "react";
 import { useParams } from "next/navigation";
-import useGetTokentvlHistoricalAll from "@/hooks/use-get-layertvl-historical-all";
+import useGetTokentvlHistorical from "@/hooks/use-get-layertvl-historical-all";
 import useGetCurrentPrices from "@/hooks/use-get-current-prices";
 import { formatCurrency } from "@/util/formatCurrency";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
@@ -40,7 +40,7 @@ export default function InfraTVLChart() {
         defaultValue: "1y",
     });
 
-    const { data } = useGetTokentvlHistoricalAll({
+    const { data } = useGetTokentvlHistorical({
         queryString: `?infra_slug=ilike.${slug}`,
     });
     const { data: pricesData, isLoading, error } = useGetCurrentPrices();
@@ -54,7 +54,7 @@ export default function InfraTVLChart() {
         () =>
             chartType === "combined"
                 ? ["BTC"]
-                : [...new Set(data?.map((item) => item.layer_name) || [])],
+                : [...new Set(data?.map((item) => item.network_slug) || [])],
         [data, chartType],
     );
 

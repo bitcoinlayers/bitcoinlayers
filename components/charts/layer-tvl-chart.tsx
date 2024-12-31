@@ -19,7 +19,7 @@ import {
 import { useQueryState } from "nuqs";
 import { useCallback, useMemo, useState } from "react";
 import { useParams } from "next/navigation";
-import useGetTokentvlHistoricalAll from "@/hooks/use-get-tokentvl-historical-all";
+import useGetTokentvlHistorical from "@/hooks/use-get-tokentvl-historical-all";
 import useGetCurrentPrices from "@/hooks/use-get-current-prices";
 import { formatCurrency } from "@/util/formatCurrency";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
@@ -40,8 +40,8 @@ export default function LayerTVLChart() {
         defaultValue: "1y",
     });
 
-    const { data } = useGetTokentvlHistoricalAll({
-        queryString: `?layer_slug=ilike.${slug}`,
+    const { data } = useGetTokentvlHistorical({
+        queryString: `?network_slug=ilike.${slug}`,
     });
 
     const { data: pricesData } = useGetCurrentPrices();
@@ -81,7 +81,7 @@ export default function LayerTVLChart() {
 
     const getLayerName = useCallback(() => {
         if (!data || data.length === 0) return null;
-        return data[0].layer_name;
+        return data[0].network_slug;
     }, [data]);
 
     const chartConfig = useMemo(

@@ -5,8 +5,7 @@ export interface Balance {
     total_amount: number;
     date: string;
     identifier: string;
-    layer_name: string;
-    layer_slug: string;
+    network_slug: string;
     token_name: string;
 }
 
@@ -14,18 +13,16 @@ interface Props {
     queryString?: string;
 }
 
-export default function useGetTokentvlHistoricalAll({
-    queryString,
-}: Props = {}) {
+export default function useGetTokentvlHistorical({ queryString }: Props = {}) {
     const response = useQuery<Balance[]>({
         queryKey: [
             queryString
-                ? `get_tokentvl_historical_all${queryString}`
-                : "get_tokentvl_historical_all",
+                ? `aaa_get_tokentvl_historical${queryString}`
+                : "aaa_get_tokentvl_historical",
         ],
         queryFn: () => {
             return fetcher(
-                `${process.env.NEXT_PUBLIC_API_URL}/get_tokentvl_historical_all${queryString ?? ""}`,
+                `${process.env.NEXT_PUBLIC_API_URL}/aaa_get_tokentvl_historical${queryString ?? ""}`,
             );
         },
     });
