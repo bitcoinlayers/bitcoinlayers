@@ -23,7 +23,7 @@ import TokenList from "@/components/tables/mapping-token-img";
 type TableTabKey =
     | "Trust Assumptions"
     | "Type"
-    | "Status"
+    | "Unit"
     | "BTC Pegs"
     | "BTC Locked";
 
@@ -138,7 +138,7 @@ const LayerTable = ({ data, headers }: Props) => {
                     valueA = a.live;
                     valueB = b.live;
                     break;
-                case "BTC Pegs":
+                case "Unit":
                     valueA = a.nativeToken;
                     valueB = b.nativeToken;
                     break;
@@ -291,7 +291,7 @@ const LayerTable = ({ data, headers }: Props) => {
                                         </td>
                                     )}
                                     {(!isMobile ||
-                                        mobileActiveTab === "BTC Pegs") && (
+                                        mobileActiveTab === "Unit") && (
                                         <td className="lg:px-6 px-4 py-3 lg:py-4 border-border">
                                             <Link
                                                 href={`/layers/${item.slug}`}
@@ -314,7 +314,7 @@ const LayerTable = ({ data, headers }: Props) => {
                                     )}
                                     {(!isMobile ||
                                         mobileActiveTab === "BTC Pegs") && (
-                                        <td className="lg:px-6 px-4 py-3 lg:py-4 border-border">
+                                        <td className="lg:px-4 px-4 py-3 lg:py-4 border-border">
                                             {isLoading ? (
                                                 <div>Loading...</div>
                                             ) : (
