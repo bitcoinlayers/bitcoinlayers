@@ -39,6 +39,21 @@ const glossaryData: GlossaryData = {
                 "Accountable Assertions use Extractable One-Time Signatures (EOTS) to penalize equivocation—making conflicting statements in a distributed system. EOTS leak the signer’s private key if they sign two different messages (e.g., signing two blocks at the same height) with the same key, enabling slashing mechanisms where violators’ Bitcoin collateral can be seized. This method extends Bitcoin’s capabilities despite its lack of native smart contracts, allowing safety violations in Proof-of-Stake (PoS) protocols to be punished via fund slashability on Bitcoin L1.",
         },
         {
+            term: "Alternative Layer 1",
+            definition:
+                "An alternative layer 1 (alt. l1) is an alternative blockchain that does not use a BTC-based derivative asset as its fee token. It has its own full node set and is monolithic in design. Alternative Layer 1s can act as execution layers for BTC-derivative assets even if that was not their intention.",
+        },
+        {
+            term: "Alternative Rollup",
+            definition:
+                "An alternative rollup (alt. rollup) is a modular blockchain that uses a parent blockchain for data availability. The blockchain stores its state root and enough transaction data to reconstruct the state of the blockchain from genesis in the parent blockchain. An alternative rollup does not use bitcoin for data availability.",
+        },
+        {
+            term: "Anchor Chain",
+            definition:
+                "An anchor chain is a blockchain that posts its latest state root to bitcoin and requires its block produces to build upon that latest state root. This sees anchor chain transactions inherit additional double-spend resistance from bitcoin. At one point an anchor chain inherits this double-spend resistance depends on the implementation.",
+        },
+        {
             term: "Ark Service Provider (ASP)",
             definition:
                 "An Ark Service Provider (ASP) coordinates rounds in the Ark protocol, enabling users to exchange old VTXOs for new ones which is the way of transacting on an Ark. The ASP does so via aggregating transactions into a shared UTXO which is committed to onchain. The ASP needs to front the liquidity for all offchain VTXO transfers on Bitcoin L1. While being a central server, a user does not need to rely on the ASP to reclaim their offchain VTXOs for Bitcoin L1 onchain funds.",
@@ -58,7 +73,12 @@ const glossaryData: GlossaryData = {
         {
             term: "Bitcoin layer",
             definition:
-                "A deliberately ambiguous term that encapsulates L2s, sidechains, state chains, and other networks 'aligned' with either Bitcoin (the network) or BTC (the asset).",
+                "A deliberately ambiguous term that encapsulates L2s, sidechains, state chains, and other networks that align with bitcoin (the network) or provide utility to BTC (the asset).",
+        },
+        {
+            term: "Bitcoin Rollup",
+            definition:
+                "A bitcoin rollup is a modular blockchain that uses a bitcoin for data availability.",
         },
         {
             term: "Bitcoin Script",
@@ -69,6 +89,11 @@ const glossaryData: GlossaryData = {
             term: "Blind merge mining",
             definition:
                 "A technique that allows miners to simultaneously mine multiple blockchains without needing to be fully aware of the contents of the additional chains.",
+        },
+        {
+            term: "BTC Sidechain",
+            definition:
+                "A BTC sidechain is an alternative blockchain that is monolithic in design and uses a BTC-derivative token as its fee token. BTC sidechains can vary in design from being merge-mined or being operated by federated validators. Its sole requirement is that the system is denominated in BTC.",
         },
     ],
     C: [
@@ -244,7 +269,7 @@ const glossaryData: GlossaryData = {
         {
             term: "Rollup",
             definition:
-                "A modular blockchain that uses a parent blockchain for data availability. The blockchain stores its state root and enough transaction data to reconstruct the state of the blockchain from genesis in the parent blockchain.",
+                "A modular blockchain that uses a parent blockchain for data availability. The blockchain stores its state root and enough transaction data to reconstruct the state of the blockchain from genesis in the parent blockchain. Bitcoin rollups use bitcoin for data availability.",
         },
     ],
     S: [

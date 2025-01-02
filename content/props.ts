@@ -46,11 +46,10 @@ export enum RiskCategory {
 
 export enum EntityType {
     CSV = "CSV",
-    EthereumRollup = "Ethereum Rollup",
-    Rollup = "Rollup",
-    Sidechain = "Sidechain",
-    SidechainRollup = "Sidechain Rollup",
+    BTCSidechain = "BTC Sidechain",
+    AltRollup = "Alt. Rollup",
     SovereignRollup = "Sovereign Rollup",
+    BitcoinRollup = "Bitcoin Rollup",
     StateChannel = "State Channel",
     Statechain = "Statechain",
     VirtualUTXOs = "Virtual UTXOs",
@@ -74,8 +73,12 @@ export enum EntityType {
     SequencingDA = "Sequencing & DA",
     BitcoinBridge = "Bitcoin Bridge",
     MPCProtocol = "MPC Protocol",
-    TBD = "To Be Determined",
+    TBD = "TBD",
     Ark = "Ark",
+    AnchorChain = "Anchor Chain",
+    AlternativeL1 = "Alt. Layer 1",
+    HybridSidechain = "Hybrid",
+    Federation = "Federation",
     "-" = "-",
 }
 
