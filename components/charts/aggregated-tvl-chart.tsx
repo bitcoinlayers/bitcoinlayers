@@ -212,9 +212,10 @@ export default function AggregatedTVLChart({
                             tickMargin={8}
                             width={60}
                             tickFormatter={(value) =>
-                                new Intl.NumberFormat("en-US").format(
-                                    value as number,
-                                )
+                                new Intl.NumberFormat("en-US", {
+                                    notation: "compact",
+                                    compactDisplay: "short",
+                                }).format(value as number)
                             }
                         />
                         <ChartTooltip
@@ -251,7 +252,7 @@ export default function AggregatedTVLChart({
                         {showLegend && (
                             <ChartLegend
                                 content={
-                                    <ChartLegendContent className="flex flex-wrap" />
+                                    <ChartLegendContent className="flex lg:flex-wrap sm:flex-nowrap overflow-x-auto whitespace-nowrap max-w-full scroll-smooth snap-x snap-start justify-start" />
                                 }
                             />
                         )}
