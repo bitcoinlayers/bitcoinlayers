@@ -47,6 +47,7 @@ import nomicnbtcProject from "@/content/infrastructures/nomic-nbtc";
 import rootstockrbtcProject from "@/content/infrastructures/rootstock-rbtc";
 import avalanchebtcbProject from "@/content/infrastructures/avalanche-btcb";
 import obeliskobtcProject from "@/content/infrastructures/obelisk-obtc";
+import cornbtcnProject from "@/content/infrastructures/corn-btcn";
 
 const astria: InfrastructureProject = astriaProject;
 const avail: InfrastructureProject = availProject;
@@ -95,6 +96,7 @@ const nomicnbtc: InfrastructureProject = nomicnbtcProject;
 const rootstockrbtc: InfrastructureProject = rootstockrbtcProject;
 const avalanchebtcb: InfrastructureProject = avalanchebtcbProject;
 const obeliskobtc: InfrastructureProject = obeliskobtcProject;
+const cornbtcn: InfrastructureProject = cornbtcnProject;
 
 export const allInfrastructures: InfrastructureProject[] = [
     lombard,
@@ -142,6 +144,7 @@ export const allInfrastructures: InfrastructureProject[] = [
     rootstockrbtc,
     avalanchebtcb,
     obeliskobtc,
+    cornbtcn,
 ];
 
 export const allInfrastructureSlugs: string[] = allInfrastructures.map(
