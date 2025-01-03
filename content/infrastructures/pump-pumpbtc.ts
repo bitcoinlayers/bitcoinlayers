@@ -49,17 +49,6 @@ const pump: InfrastructureProject = {
         "Pump offers a mechanism that enables users to deposit wrapped BTC into smart contracts on EVM-based chains. Users receive PumpBTC, a token representing staked BTC, on Babylon in exchange for depositing a wrapped BTC token",
     sections: [
         {
-            id: "Economics",
-            title: "How APY is determined",
-            content: [
-                {
-                    title: "Incentive model",
-                    content:
-                        "🔬 Babylon’s staking is not currently securing any PoS chains. Rewards are only issued through points. Once live, we will review Babylon’s incentive and issuance mechanism.",
-                },
-            ],
-        },
-        {
             id: "smartcontracts",
             title: "Smart contracts & audits",
             content: [
@@ -95,14 +84,6 @@ const pump: InfrastructureProject = {
             title: "PumpBTC works with custodians to store bitcoin assets",
             content:
                 "PumpBTC works with custodial providers to store the BTC that matches PumpBTC deposits. When a user deposits a wrapped bitcoin token into the PumpBTC contract, they are given PumpBTC in return.\n\nAfter receiving the deposit, an operator (likely one of the custodians) of the contract then manually exchanges wrapped bitcoin for native bitcoin to deposit onto Babylon.\n\nCobo and Coinover have been mentioned as operators participating in Pump.",
-        },
-        {
-            category: AssessmentCategory.SlashingRisk,
-            score: 0,
-            tier: "",
-            title: "Slashing enforced by Babylon. Slashing on Babylon is not currently live",
-            content:
-                "Users’ slashing risk will be a result of PoS validators, whom their tokens are delegated to, getting slashed. Slashing is not currently live on Babylon.",
         },
     ],
 };

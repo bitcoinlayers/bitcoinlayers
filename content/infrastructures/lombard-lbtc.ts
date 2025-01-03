@@ -49,17 +49,6 @@ const lombard: InfrastructureProject = {
         "Lombard offer a mechanism that enables users to deposit BTC into a smart contracts on Ethereum. Users receive a token representing BTC deposited on Babylon in exchange for their wrapped BTC token.",
     sections: [
         {
-            id: "economics",
-            title: "Economics",
-            content: [
-                {
-                    title: "Incentive model",
-                    content:
-                        "🔬 Babylon’s staking is not currently securing any PoS chains. Rewards are only issued through points. Once live, we will review Babylon’s incentive and issuance mechanism.",
-                },
-            ],
-        },
-        {
             id: "audits",
             title: "Smart Contracts & Audits",
             content: [
@@ -90,14 +79,6 @@ const lombard: InfrastructureProject = {
             title: "Users trust a network of custodians with the custody of their BTC",
             content:
                 "When users deposit BTC into the Lombard protocol, their assets are held in a Bitcoin address stored in a secured hardware. This address is controlled by Lombard’s Security Consortium, a federated network of operators responsible for controlling funds in the deposit address, as well as staking the BTC on users behalf.\n\nLombard’s Security Consortium participates in a consensus protocol.\n\n🚨 The members of the Lombard Security Consortium have not been publicly disclosed.",
-        },
-        {
-            category: AssessmentCategory.SlashingRisk,
-            score: 0,
-            tier: "",
-            title: "Slashing enforced by Babylon. Slashing on Babylon is not currently live",
-            content:
-                "Users’ slashing risk will be a result of PoS validators, whom their tokens are delegated to, getting slashed. Slashing is not currently live on Babylon.",
         },
     ],
 };

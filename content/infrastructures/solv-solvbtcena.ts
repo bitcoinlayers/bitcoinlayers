@@ -65,16 +65,6 @@ const solvena: InfrastructureProject = {
                 },
             ],
         },
-        {
-            id: "knowledgeBits",
-            title: "Knowledge Bits",
-            content: [
-                {
-                    title: "Learn more",
-                    content: "[Solv docs](https://docs.solv.finance/)",
-                },
-            ],
-        },
     ],
     assessment: [],
 };
