@@ -71,6 +71,14 @@ const corn: LayerProject = {
                         content:
                             "BTCN is an Ethereum-based ERC-20 token. It is a BTC-derivative asset that is backed by cbBTC and wBTC. All of the BTCN supply is locked into Corn’s ERC-20 Bridge contract on Ethereum and is in escrow. On Corn, BTCN is primarily stored in the Bitcorn OFT contract.\n\nThe BTCN contract is managed by the [0xCff...2C7D](https://etherscan.io/address/0xcff1ad9f09b32252171207e8525c90b18d4e2c7d#code) multisig address on Ethereum. The multi-sig has a 2/4 signing threshold.",
                     },
+                    {
+                        name: "Solv SolvBTC",
+                        infrastructureSlug: "solv-solvbtc",
+                        score: 0,
+                        tier: RiskFactor.UnderReview,
+                        title: "This two-way peg is under review",
+                        content: "This two-way peg is under review",
+                    },
                 ],
             },
             {
