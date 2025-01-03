@@ -69,7 +69,7 @@ const corn: LayerProject = {
                         tier: RiskFactor.VeryHigh,
                         title: "Bitcoin users trust that tBTC will remain backed on Ethereum, and that the BOB bridge will not steal their funds",
                         content:
-                            "BTCN is an Ethereum-based ERC-20 token. It is a BTC-derivative asset that is backed by cbBTC and wBTC. All of the BTCN supply is locked into Corn’s ERC-20 Bridge contract on Ethereum and is in escrow. On Corn, BTCN is primarily stored in the Bitcorn OFT contract.\n\nTo acquire BTCN on Corn, a user sends an approved BTC-derivative token to a swap contract on Ethereum and is then given BTCN on Corn from the Bitcorn OFT contract. The BTC-derivative is stored in a vault contract on Ethereum, essentially backing the BTCN outside of the Bitcorn OFT contract, that is on Corn.",
+                            "BTCN is an Ethereum-based ERC-20 token. It is a BTC-derivative asset that is backed by cbBTC and wBTC. All of the BTCN supply is locked into Corn’s ERC-20 Bridge contract on Ethereum and is in escrow. On Corn, BTCN is primarily stored in the Bitcorn OFT contract.\n\nThe BTCN contract is managed by a 2/4 multisig address on Ethereum. Distributed supply on Corn is backed by wBTC locked in a vault contract on Ethereum.",
                     },
                 ],
             },
@@ -165,6 +165,17 @@ const corn: LayerProject = {
                         title: "Onchain applications",
                         content:
                             "Onchain applications are supported. Onchain applications including borrowing and lending protocols, onchain exchanges (commonly referred to as decentralized exchanges), and more. These applications are supported with more expressive smart contract environments.",
+                    },
+                ],
+            },
+            {
+                id: "contracts",
+                title: "Contracts & Permissions",
+                content: [
+                    {
+                        title: "Corn is supported by various Ethereum smart contracts",
+                        content:
+                            "Below are the following contracts and their respective owners:\n\nSequencerInbox: [Proxy](https://etherscan.io/address/0x4ad144ea249a98f77e0b78104d3b6eb6cd3a76da#readProxyContract). [Implementation (Upgradeable)](https://etherscan.io/address/0x46faf6838bbf770986f073348d41881d5e54fb0f#code). [Admin.](https://etherscan.io/address/0xee9924c5fd94601c80ff8010f577c9f7f3c20b84)\n\nERC20Bridge: [Proxy](https://etherscan.io/address/0x7E31f112d340a4D0cB0e4bD82f2853089d1bF10C#readProxyContract). [Implementation (Upgradeable)](https://etherscan.io/address/0xd7fd189f1652378f32da3db7926e51a7b0344797#code). [Admin.](https://etherscan.io/address/0xee9924c5fd94601c80ff8010f577c9f7f3c20b84)\n\UpgradeExecutor: [Proxy](https://etherscan.io/address/0x8672705351c81f40b55b1ac2a1998de66166d0ea). [Implementation (Upgradeable)](https://etherscan.io/address/0x011d8f10fbc20c14b453768253cdff7eb5b96917#code). [Admin.](https://etherscan.io/address/0xee9924c5fd94601c80ff8010f577c9f7f3c20b84)",
                     },
                 ],
             },
