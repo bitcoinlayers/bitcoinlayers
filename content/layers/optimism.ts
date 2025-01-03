@@ -24,7 +24,7 @@ const optimism: LayerProject = {
         RiskFactor.VeryHigh,
         RiskFactor.Medium,
         RiskFactor.UnderReview,
-        RiskFactor.Medium,
+        RiskFactor.UnderReview,
     ],
     btcLocked: 0,
     nativeToken: "-",
@@ -128,7 +128,7 @@ const optimism: LayerProject = {
             tier: RiskFactor.Medium,
             title: "Optimism state transitions finalize on Ethereum",
             content:
-                "Optimism inherits finality guarantees from Ethereum. The Optimism sequencer provides a soft confirmation of transactions which are eventually summarized and sent to Ethereum.\nOptimism's sequencer can reorg prior to a transaction batch being accepted on Ethereum.",
+                "We are reviewing the Optimism validator set and how state transitions are proposed and finalized.",
         },
     ],
     sections: [
