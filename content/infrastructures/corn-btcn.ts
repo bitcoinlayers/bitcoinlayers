@@ -24,7 +24,7 @@ const cornbtcn: InfrastructureProject = {
     associatedLayers: "Corn",
     bitcoinOnly: false,
     links: [],
-    description: "BTCN is a derivative of BTC. It is backed by other BTC derivative assets. It is also the gas token for the Corn network..",
+    description: "BTCN is a derivative of BTC. It is backed by other BTC derivative assets. It is also the gas token for the Corn network.",
     sections: [
         {
             id: "contracts",
