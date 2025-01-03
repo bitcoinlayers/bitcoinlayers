@@ -11,7 +11,7 @@ import {
 const cornbtcn: InfrastructureProject = {
     type: Type.Infrastructure,
     slug: "corn-btcn",
-    title: "Corn BTCN",
+    title: "Bitcorn BTCN",
     entityType: EntityType.ReserveAsset,
     live: LiveStatus.Mainnet,
     staking: false,
