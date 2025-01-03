@@ -67,7 +67,7 @@ const corn: LayerProject = {
                         infrastructureSlug: "corn-btcn",
                         score: 0,
                         tier: RiskFactor.VeryHigh,
-                        title: "Bitcoin users trust that tBTC will remain backed on Ethereum, and that the BOB bridge will not steal their funds",
+                        title: "BTCN is backed by BTC-derivative assets and is managed by a 2/4 multisig",
                         content:
                             "BTCN is an Ethereum-based ERC-20 token. It is a BTC-derivative asset that is backed by cbBTC and wBTC. All of the BTCN supply is locked into Corn’s ERC-20 Bridge contract on Ethereum and is in escrow. On Corn, BTCN is primarily stored in the Bitcorn OFT contract.\n\nThe BTCN contract is managed by the [0xCff...2C7D](https://etherscan.io/address/0xcff1ad9f09b32252171207e8525c90b18d4e2c7d#code) multisig address on Ethereum. The multi-sig has a 2/4 signing threshold.",
                     },
@@ -101,7 +101,7 @@ const corn: LayerProject = {
                 category: RiskCategory.FinalityGuarantees,
                 score: 0,
                 tier: RiskFactor.VeryHigh,
-                title: "BOB state transitions finalize on Ethereum",
+                title: "Corn state transitions are submitted and validated by a centralized proposer",
                 content:
                     "Corn blocks are finalized after its full nodes compute a new state root based on the data made available by the data availability committee. In its current architecture, only one entity is able to propose new state roots and advance the state.\n\n⚠️ Corn blocks can be reorged by the sequencer prior to the proposer computing and finalizing a new state root.",
             },
