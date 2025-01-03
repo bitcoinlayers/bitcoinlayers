@@ -119,7 +119,7 @@ const corn: LayerProject = {
                     {
                         title: "BTCN token used to pay fees",
                         content:
-                            "Corn users pay sequencer fees in BTCN, a BTC-derivative asset. Corn operators pay fees in ETH.",
+                            "Corn users pay sequencer fees in BTCN, a BTC-derivative asset.",
                     },
                     {
                         title: "No MEV introduced to Bitcoin",
