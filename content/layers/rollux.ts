@@ -24,7 +24,7 @@ const rollux: LayerProject = {
         RiskFactor.VeryHigh,
         RiskFactor.Medium,
         RiskFactor.High,
-        RiskFactor.Medium,
+        RiskFactor.UnderReview,
     ],
     btcLocked: 10,
     nativeToken: "SYS",
@@ -84,7 +84,7 @@ const rollux: LayerProject = {
         {
             category: RiskCategory.NetworkOperators,
             score: 0,
-            tier: RiskFactor.High,
+            tier: RiskFactor.UnderReview,
             title: "Rollux is operated by a centralized sequencer with forced inclusion to the Syscoin L1 possible",
             content:
                 "The Rollux chain is operated by a centralized sequencer. Users can be censored by the centralized sequencer and the chain can have liveness failures if the sequencer goes offline.\n\nForced inclusion to the Syscoin L1 is possible. Users are able to have their transaction included in a sequence by submitting it to the L1 smart contract.",

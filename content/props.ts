@@ -76,6 +76,8 @@ export enum EntityType {
     MPCProtocol = "MPC Protocol",
     TBD = "To Be Determined",
     Ark = "Ark",
+    AltL1 = "Alt. Layer 1",
+    AltRollup = "Alt. Rollup",
     "-" = "-",
 }
 
