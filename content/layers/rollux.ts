@@ -92,7 +92,7 @@ const rollux: LayerProject = {
         {
             category: RiskCategory.FinalityGuarantees,
             score: 0,
-            tier: RiskFactor.Medium,
+            tier: RiskFactor.UnderReview,
             title: "Rollux inherits finality guarantees from Syscoin",
             content:
                 "The Rollux sequencer provides a soft confirmation of transactions which are eventually summarized and sent to Syscoin.\n\nRollux's sequencer can reorg prior to a transaction batch being accepted on Syscoin.",

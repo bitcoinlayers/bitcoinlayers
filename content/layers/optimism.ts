@@ -125,7 +125,7 @@ const optimism: LayerProject = {
         {
             category: RiskCategory.FinalityGuarantees,
             score: 0,
-            tier: RiskFactor.Medium,
+            tier: RiskFactor.UnderReview,
             title: "Optimism state transitions finalize on Ethereum",
             content:
                 "We are reviewing the Optimism validator set and how state transitions are proposed and finalized.",
