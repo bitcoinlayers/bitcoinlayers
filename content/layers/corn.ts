@@ -161,7 +161,7 @@ const corn: LayerProject = {
                     {
                         title: "Fault Proofs",
                         content:
-                            "Corn sees its rollup state transitions and bridge finality finalized by validators submitting proposals for new state transitions. These proposals are submitted by a validator staking 0.1 ETH to the [where]. If a proposed state transition is invalid, another validator can submit a fault proof and challenge another validator’s proposed state transition.\n\nCorn currently only has one, whitelisted validator who is able to submit state transitions and fault proofs.",
+                            "Corn sees its rollup state transitions and bridge finality finalized by validators submitting proposals for new state transitions. These proposals are submitted by a validator staking 0.1 ETH. If a proposed state transition is invalid, another validator can submit a fault proof and challenge another validator’s proposed state transition.\n\nCorn currently only has one, whitelisted validator who is able to submit state transitions and fault proofs.",
                     },
                 ],
             },
