@@ -69,7 +69,7 @@ const corn: LayerProject = {
                         tier: RiskFactor.VeryHigh,
                         title: "Bitcoin users trust that tBTC will remain backed on Ethereum, and that the BOB bridge will not steal their funds",
                         content:
-                            "BTCN is an Ethereum-based ERC-20 token. It is a BTC-derivative asset that is backed by cbBTC and wBTC. All of the BTCN supply is locked into Corn’s ERC-20 Bridge contract on Ethereum and is in escrow. On Corn, BTCN is primarily stored in the Bitcorn OFT contract.\n\nThe BTCN contract is managed by a 2/4 multisig address on Ethereum. Distributed supply on Corn is backed by wBTC locked in a vault contract on Ethereum.",
+                            "BTCN is an Ethereum-based ERC-20 token. It is a BTC-derivative asset that is backed by cbBTC and wBTC. All of the BTCN supply is locked into Corn’s ERC-20 Bridge contract on Ethereum and is in escrow. On Corn, BTCN is primarily stored in the Bitcorn OFT contract.\n\nThe BTCN contract is managed by the [0xCff...2C7D](https://etherscan.io/address/0xcff1ad9f09b32252171207e8525c90b18d4e2c7d#code) multisig address on Ethereum. The multi-sig has a 2/4 signing threshold.",
                     },
                 ],
             },
@@ -79,7 +79,7 @@ const corn: LayerProject = {
                 tier: RiskFactor.VeryHigh,
                 title: "Data is stored and made available by a permissioned federation",
                 content:
-                    "The data needed to reconstruct the state and construct fraud proofs is made available by a permissioned committee. The committee is based on the AnyTrust data availability protocol. This sees a committee of signers produce a data availability certificate that the data needed for proof construction is available for a certain amount of time. In Corn, the data is made available by the DAC for two weeks.",
+                    "The data needed to reconstruct the state and construct fraud proofs is made available by a permissioned committee. The committee is based on the AnyTrust data availability protocol. This sees a committee of signers produce a data availability certificate that the data needed for proof construction is available for a certain amount of time. In Corn, the data is made available by the DAC for two weeks.\n\nThere is one member of the data availability committee with a signing threshold of 1-1.",
             },
             {
                 category: RiskCategory.NetworkOperators,
@@ -175,7 +175,7 @@ const corn: LayerProject = {
                     {
                         title: "Corn is supported by various Ethereum smart contracts",
                         content:
-                            "Below are the following contracts and their respective owners:\n\nSequencerInbox: [Proxy](https://etherscan.io/address/0x4ad144ea249a98f77e0b78104d3b6eb6cd3a76da#readProxyContract). [Implementation (Upgradeable)](https://etherscan.io/address/0x46faf6838bbf770986f073348d41881d5e54fb0f#code). [Admin.](https://etherscan.io/address/0xee9924c5fd94601c80ff8010f577c9f7f3c20b84)\n\nERC20Bridge: [Proxy](https://etherscan.io/address/0x7E31f112d340a4D0cB0e4bD82f2853089d1bF10C#readProxyContract). [Implementation (Upgradeable)](https://etherscan.io/address/0xd7fd189f1652378f32da3db7926e51a7b0344797#code). [Admin.](https://etherscan.io/address/0xee9924c5fd94601c80ff8010f577c9f7f3c20b84)\n\UpgradeExecutor: [Proxy](https://etherscan.io/address/0x8672705351c81f40b55b1ac2a1998de66166d0ea). [Implementation (Upgradeable)](https://etherscan.io/address/0x011d8f10fbc20c14b453768253cdff7eb5b96917#code). [Admin.](https://etherscan.io/address/0xee9924c5fd94601c80ff8010f577c9f7f3c20b84)",
+                            "Below are the following contracts and their respective owners:\n\nSequencerInbox: [Proxy](https://etherscan.io/address/0x4ad144ea249a98f77e0b78104d3b6eb6cd3a76da#readProxyContract). [Implementation (Upgradeable)](https://etherscan.io/address/0x46faf6838bbf770986f073348d41881d5e54fb0f#code). [Admin.](https://etherscan.io/address/0xee9924c5fd94601c80ff8010f577c9f7f3c20b84)\n\nERC20Bridge: [Proxy](https://etherscan.io/address/0x7E31f112d340a4D0cB0e4bD82f2853089d1bF10C#readProxyContract). [Implementation (Upgradeable)](https://etherscan.io/address/0xd7fd189f1652378f32da3db7926e51a7b0344797#code). [Admin.](https://etherscan.io/address/0xee9924c5fd94601c80ff8010f577c9f7f3c20b84)\n\UpgradeExecutor: [Proxy](https://etherscan.io/address/0xd67c6b5f5a75807478efa05472c8dfd3f64d0bc7). [Implementation (Upgradeable)](https://etherscan.io/address/0x011d8f10fbc20c14b453768253cdff7eb5b96917#code). [Admin.](https://etherscan.io/token/0x386e7a3a0c0919c9d53c3b04ff67e73ff9e45fb6?a=0x1c2c9efa3693572d008fb55253f7deaaa7f3e6b1#readProxyContract)\n\nBTCN Contract: [Proxy](https://etherscan.io/token/0x386e7a3a0c0919c9d53c3b04ff67e73ff9e45fb6#code). [Implementation (Upgradeable)](https://etherscan.io/address/0xd67c6b5f5a75807478efa05472c8dfd3f64d0bc7#code). [Authority.](https://etherscan.io/address/0x515C7d8Fcb950f8b030ac08C994b37b4b8F3F7B5#code)",
                     },
                 ],
             },
