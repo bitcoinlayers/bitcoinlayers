@@ -14,7 +14,7 @@ const arbitrum: LayerProject = {
     type: Type.Layer,
     slug: "arbitrum",
     title: "Arbitrum",
-    entityType: EntityType.EthereumRollup,
+    entityType: EntityType.AltRollup,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,

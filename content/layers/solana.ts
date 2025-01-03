@@ -14,7 +14,7 @@ const solana: LayerProject = {
     type: Type.Layer,
     slug: "solana",
     title: "Solana",
-    entityType: EntityType.Sidechain,
+    entityType: EntityType.AltL1,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,

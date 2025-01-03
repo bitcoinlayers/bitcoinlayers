@@ -14,7 +14,7 @@ const starknet: LayerProject = {
     type: Type.Layer,
     slug: "starknet",
     title: "Starknet",
-    entityType: EntityType.Rollup,
+    entityType: EntityType.AltRollup,
     live: LiveStatus.Proposed,
     staking: false,
     liquidStaking: false,

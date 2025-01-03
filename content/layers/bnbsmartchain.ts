@@ -14,7 +14,7 @@ const bnbsmartchain: LayerProject = {
     type: Type.Layer,
     slug: "bnbsmartchain",
     title: "BNB Smart Chain",
-    entityType: EntityType.Sidechain,
+    entityType: EntityType.AltL1,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,

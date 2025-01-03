@@ -14,7 +14,7 @@ const avalanche: LayerProject = {
     type: Type.Layer,
     slug: "avalanche",
     title: "Avalanche",
-    entityType: EntityType.Sidechain,
+    entityType: EntityType.AltL1,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,

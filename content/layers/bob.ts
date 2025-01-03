@@ -12,7 +12,7 @@ const bob: LayerProject = {
     type: Type.Layer,
     slug: "bob",
     title: "BOB",
-    entityType: EntityType.EthereumRollup,
+    entityType: EntityType.AltRollup,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,

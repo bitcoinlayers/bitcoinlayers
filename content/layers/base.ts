@@ -14,7 +14,7 @@ const base: LayerProject = {
     type: Type.Layer,
     slug: "base",
     title: "Base",
-    entityType: EntityType.EthereumRollup,
+    entityType: EntityType.AltRollup,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,

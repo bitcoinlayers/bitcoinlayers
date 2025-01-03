@@ -14,7 +14,7 @@ const optimism: LayerProject = {
     type: Type.Layer,
     slug: "optimism",
     title: "Optimism",
-    entityType: EntityType.EthereumRollup,
+    entityType: EntityType.AltRollup,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
