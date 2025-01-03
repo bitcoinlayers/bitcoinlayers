@@ -14,7 +14,7 @@ const rollux: LayerProject = {
     type: Type.Layer,
     slug: "rollux",
     title: "Rollux",
-    entityType: EntityType.SidechainRollup,
+    entityType: EntityType.AltRollup,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
