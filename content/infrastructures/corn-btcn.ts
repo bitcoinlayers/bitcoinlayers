@@ -21,10 +21,10 @@ const cornbtcn: InfrastructureProject = {
     riskFactors: ["", ""],
     nativeToken: "-",
     purpose: Purpose.General,
-    associatedLayers: "-",
+    associatedLayers: "Corn",
     bitcoinOnly: false,
     links: [],
-    description: "Under review.",
+    description: "BTCN is a derivative of BTC. It is backed by other BTC derivative assets. It is also the gas token for the Corn network..",
     sections: [
         {
             id: "contracts",
