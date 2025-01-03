@@ -60,7 +60,7 @@ const cornbtcn: InfrastructureProject = {
             category: AssessmentCategory.UserRisk,
             score: 0,
             tier: "",
-            title: "Users trust Binance with managing the BTC backing BTCN",
+            title: "Users trust BTCN contract owners & the various derivative assets supporting its 1:1 peg with BTC",
             content:
                 "BTCN is a BTC derivative asset that is backed by other BTC derivative assets. wBTC and cbBTC are currently the two approved assets that back BTCN. BTCN, that is distributed to users from the Bitcorn contract on Corn, is currently backed by wBTC locked in a vault contract on Ethereum.\n\nUsers trust the owner of the BTCN contract to not implement a malicious contract upgrade. They additionally trust the owner of the Bitcorn contract on Corn to not issue more BTCN than what is locked in the vault contract on Ethereum.\n\nUsers also trust that [wBTC](https://www.bitcoinlayers.org/infrastructure/bitgo-wbtc) and [cbBTC](https://www.bitcoinlayers.org/infrastructure/coinbase-cbbtc) maintain a 1:1 peg with BTC so BTCN can also maintain a 1:1 peg.",
         },
