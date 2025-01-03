@@ -32,7 +32,15 @@ const cornbtcn: InfrastructureProject = {
             content: [
                 {
                     content:
-                        "[This is the implementation of the BTCN token contract](https://etherscan.io/token/0x386e7a3a0c0919c9d53c3b04ff67e73ff9e45fb6).",
+                        "[This is the implementation of the BTCN token contract on Ethereum](https://etherscan.io/token/0x386e7a3a0c0919c9d53c3b04ff67e73ff9e45fb6).",
+                },
+                {
+                    content:
+                        "[This is the ERC20Bridge contract that escrows BTCN which is minted on Corn](https://etherscan.io/address/0x7E31f112d340a4D0cB0e4bD82f2853089d1bF10C#readProxyContract).",
+                },
+                {
+                    content:
+                        "[This is the implementation of the BTCN token contract on Corn](https://maizenet-explorer.usecorn.com/address/0x386E7A3a0c0919c9d53c3b04FF67E73Ff9e45Fb6).",
                 },
                 {
                     content:
