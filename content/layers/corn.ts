@@ -64,7 +64,7 @@ const corn: LayerProject = {
                 pegs: [
                     {
                         name: "Bitcorn BTCN",
-                        infrastructureSlug: "bitcorn-btcn",
+                        infrastructureSlug: "corn-btcn",
                         score: 0,
                         tier: RiskFactor.VeryHigh,
                         title: "Bitcoin users trust that tBTC will remain backed on Ethereum, and that the BOB bridge will not steal their funds",
