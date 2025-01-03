@@ -53,7 +53,7 @@ const corn: LayerProject = {
         },
     ],
     description:
-        "Corn is a permissioned rollup that leverages a wrapped BTC token as its gas token.",
+        "Corn is a permissioned rollup that leverages a derivative of BTC as its gas token.",
         riskAnalysis: [
             {
                 category: RiskCategory.BtcCustody,
