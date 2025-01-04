@@ -17,12 +17,12 @@ export default function useGetMappingsRanked({ queryString }: Props = {}) {
     const response = useQuery<MappingRanked[]>({
         queryKey: [
             queryString
-                ? `helper_recent_token_balances_adjustedbynetwork${queryString}`
-                : "helper_recent_token_balances_adjustedbynetwork",
+                ? `recent_token_balances_adjustedbynetwork${queryString}`
+                : "recent_token_balances_adjustedbynetwork",
         ],
         queryFn: () =>
             fetcher(
-                `${process.env.NEXT_PUBLIC_API_URL}/helper_recent_token_balances_adjustedbynetwork${queryString ?? ""}`,
+                `${process.env.NEXT_PUBLIC_API_URL}/recent_token_balances_adjustedbynetwork${queryString ?? ""}`,
             ),
         staleTime: Infinity,
     });
