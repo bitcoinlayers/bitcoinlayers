@@ -59,11 +59,11 @@ const binancebtcb: InfrastructureProject = {
         },
         {
             id: "selfsubmit",
-            title: "Further sections under review",
+            title: "Further sections to be reviewed",
             content: [
                 {
                     content:
-                        "Aspects related to BTC custody, key management, and transaction signing have not been reviewed. We are currently reviewing these sections.",
+                        "Aspects related to BTC custody, key management, transaction signing, and redemptions have not been reviewed. We are currently reviewing these sections.",
                 },
             ],
         },

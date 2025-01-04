@@ -14,7 +14,7 @@ const polygon: LayerProject = {
     type: Type.Layer,
     slug: "polygonpos",
     title: "Polygon PoS",
-    entityType: EntityType.Sidechain,
+    entityType: EntityType.AltL1,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,

@@ -66,10 +66,10 @@ const stacks: LayerProject = {
                     name: "sBTC",
                     infrastructureSlug: "sBTC",
                     score: 0,
-                    tier: RiskFactor.UnderReview,
-                    title: "sBTC is managed by a federation of 15 institutional signers",
+                    tier: RiskFactor.VeryHigh,
+                    title: "sBTC is managed by a federation of 15 institutional signers. Withdrawals are not live",
                     content:
-                        "sBTC is a bridge between bitcoin and stacks managed by 15 institutional signers. sBTC on Stacks is backed by BTC held in a wallet managed by these signers. The identities of entities participating in the sBTC bridge are publicly known.\n\nIf 11 of the signers colluded, they could steal all of the BTC backing sBTC. You can find the signers [here](https://bitcoinl2labs.com/sbtc-rollout#sbtc-signers).\n\nWe are reviewing a score for the current implementation for sBTC. Withdrawals are not currently live.",
+                        "sBTC is a bridge between bitcoin and stacks managed by 15 institutional signers. sBTC on Stacks is backed by BTC held in a wallet managed by these signers. The identities of entities participating in the sBTC bridge are publicly known.\n\nIf 11 of the signers colluded, they could steal all of the BTC backing sBTC. You can find the signers [here](https://bitcoinl2labs.com/sbtc-rollout#sbtc-signers).\n\nWhile managed by a public federation, sBTC receives a Very High score as withdrawals are not currently live.",
                 },
                 {
                     name: "Alex xBTC",

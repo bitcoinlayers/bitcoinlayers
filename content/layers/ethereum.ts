@@ -14,7 +14,7 @@ const ethereum: LayerProject = {
     type: Type.Layer,
     slug: "ethereum",
     title: "Ethereum",
-    entityType: EntityType.Sidechain,
+    entityType: EntityType.AltL1,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,

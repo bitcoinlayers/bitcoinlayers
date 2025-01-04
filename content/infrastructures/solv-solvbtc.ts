@@ -5,6 +5,7 @@ import {
     LiveStatus,
     EntityType,
     Site,
+    AssessmentCategory
 } from "../props";
 
 const solv: InfrastructureProject = {
@@ -44,17 +45,37 @@ const solv: InfrastructureProject = {
             url: "https://x.com/SolvProtocol",
         },
     ],
-    description: "SolvBTC is a reserve asset. Solv also offers liquid staking.",
+    description: "SolvBTC is a BTC-derivative asset that is backed by native BTC and various BTC-derivatives. It is deployed across various blockchains.",
     sections: [
         {
-            id: "knowledgeBits",
-            title: "Knowledge Bits",
+            id: "contracts",
+            title: "Contract addresses",
             content: [
                 {
-                    title: "Learn more",
-                    content: "[Solv docs](https://docs.solv.finance/)",
+                    content:
+                        "You can find various implementations of SolvBTC [here](https://github.com/solv-finance/SolvBTC/tree/main/deployments).",
                 },
             ],
+        },
+        {
+            id: "selfsubmit",
+            title: "Further sections under review",
+            content: [
+                {
+                    content:
+                        "Aspects related to BTC custody, key management, and transaction signing have not been reviewed. We are currently reviewing these sections.",
+                },
+            ],
+        },
+    ],
+    assessment: [
+        {
+            category: AssessmentCategory.Reputation,
+            score: 0,
+            tier: "",
+            title: "Users trust custodians managing BTC backing SolvBTC and the operators of various BTC-derivative assets.",
+            content:
+                "SolvBTC is proposedly backed by native BTC managed by custodian providers. It's additionally backed by various BTC-derivative assets; [BTCB](https://www.bitcoinlayers.org/infrastructure/binance-btcb), [wBTC](https://www.bitcoinlayers.org/infrastructure/bitgo-wbtc), [FBTC](https://www.bitcoinlayers.org/infrastructure/firebitcoin-fbtc), [cbBTC](https://www.bitcoinlayers.org/infrastructure/coinbase-cbbtc), [BTC.b](https://www.bitcoinlayers.org/infrastructure/avalanche-btcb), and [tBTC](https://www.bitcoinlayers.org/infrastructure/threshold-tbtc).\n\nUsers trust that the custodians managing native BTC will not misappropriate the funds that are a part of SolvBTC reserves. They also trust the various operators of other BTC-derivative assets acting as reserve assets with SolvBTC to remain pegged 1:1 with BTC. If any of these derivative assets became unbacked, then SolvBTC's peg with BTC could be broken.",
         },
     ],
 };

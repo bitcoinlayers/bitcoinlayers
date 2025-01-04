@@ -14,7 +14,7 @@ const arbitrum: LayerProject = {
     type: Type.Layer,
     slug: "arbitrum",
     title: "Arbitrum",
-    entityType: EntityType.EthereumRollup,
+    entityType: EntityType.AltRollup,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -24,7 +24,7 @@ const arbitrum: LayerProject = {
         RiskFactor.VeryHigh,
         RiskFactor.Medium,
         RiskFactor.UnderReview,
-        RiskFactor.Medium,
+        RiskFactor.UnderReview,
     ],
     btcLocked: 0,
     nativeToken: "-",
@@ -179,10 +179,10 @@ const arbitrum: LayerProject = {
         {
             category: RiskCategory.FinalityGuarantees,
             score: 0,
-            tier: RiskFactor.Medium,
+            tier: RiskFactor.UnderReview,
             title: "Arbitrum state transitions finalize on Ethereum",
             content:
-                "Arbitrum inherits finality guarantees from Ethereum. The Arbitrum sequencer provides a soft confirmation of transactions which are eventually summarized and sent to Ethereum.\n\n⚠️ Arbitrum's sequencer can reorg prior to a transaction batch being accepted on Ethereum.",
+                "We are reviewing the Arbitrum validator set and how state transitions are proposed and finalized.",
         },
     ],
     sections: [

@@ -14,7 +14,7 @@ const rollux: LayerProject = {
     type: Type.Layer,
     slug: "rollux",
     title: "Rollux",
-    entityType: EntityType.SidechainRollup,
+    entityType: EntityType.AltRollup,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -24,7 +24,7 @@ const rollux: LayerProject = {
         RiskFactor.VeryHigh,
         RiskFactor.Medium,
         RiskFactor.High,
-        RiskFactor.Medium,
+        RiskFactor.UnderReview,
     ],
     btcLocked: 10,
     nativeToken: "SYS",
@@ -84,7 +84,7 @@ const rollux: LayerProject = {
         {
             category: RiskCategory.NetworkOperators,
             score: 0,
-            tier: RiskFactor.High,
+            tier: RiskFactor.UnderReview,
             title: "Rollux is operated by a centralized sequencer with forced inclusion to the Syscoin L1 possible",
             content:
                 "The Rollux chain is operated by a centralized sequencer. Users can be censored by the centralized sequencer and the chain can have liveness failures if the sequencer goes offline.\n\nForced inclusion to the Syscoin L1 is possible. Users are able to have their transaction included in a sequence by submitting it to the L1 smart contract.",
@@ -92,7 +92,7 @@ const rollux: LayerProject = {
         {
             category: RiskCategory.FinalityGuarantees,
             score: 0,
-            tier: RiskFactor.Medium,
+            tier: RiskFactor.UnderReview,
             title: "Rollux inherits finality guarantees from Syscoin",
             content:
                 "The Rollux sequencer provides a soft confirmation of transactions which are eventually summarized and sent to Syscoin.\n\nRollux's sequencer can reorg prior to a transaction batch being accepted on Syscoin.",

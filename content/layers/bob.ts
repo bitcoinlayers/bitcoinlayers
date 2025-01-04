@@ -12,7 +12,7 @@ const bob: LayerProject = {
     type: Type.Layer,
     slug: "bob",
     title: "BOB",
-    entityType: EntityType.EthereumRollup,
+    entityType: EntityType.AltRollup,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -22,7 +22,7 @@ const bob: LayerProject = {
         RiskFactor.VeryHigh,
         RiskFactor.Medium,
         RiskFactor.High,
-        RiskFactor.Medium,
+        RiskFactor.UnderReview,
     ],
     btcLocked: 974,
     nativeToken: "ETH",
@@ -119,10 +119,10 @@ const bob: LayerProject = {
         {
             category: RiskCategory.FinalityGuarantees,
             score: 0,
-            tier: RiskFactor.Medium,
+            tier: RiskFactor.UnderReview,
             title: "BOB state transitions finalize on Ethereum",
             content:
-                "BOB inherits finality guarantees from Ethereum. The BOB sequencer provides a soft confirmation of transactions which are eventually summarized and sent to Ethereum.\n\n⚠️BOB's sequencer can reorg prior to a transaction batch being accepted on Ethereum.",
+                "We are reviewing the BOB validator set and how state transitions are proposed and finalized.",
         },
     ],
     sections: [

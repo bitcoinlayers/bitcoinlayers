@@ -353,7 +353,7 @@ export default function LayerTVLChart() {
                         ))}
                         <ChartLegend
                             content={
-                                <ChartLegendContent className="flex flex-wrap" />
+                                <ChartLegendContent className="flex lg:flex-wrap sm:flex-nowrap overflow-x-auto whitespace-nowrap max-w-full scroll-smooth snap-x snap-start justify-start" />
                             }
                         />
                     </AreaChart>

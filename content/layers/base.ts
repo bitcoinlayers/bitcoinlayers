@@ -14,7 +14,7 @@ const base: LayerProject = {
     type: Type.Layer,
     slug: "base",
     title: "Base",
-    entityType: EntityType.EthereumRollup,
+    entityType: EntityType.AltRollup,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -24,7 +24,7 @@ const base: LayerProject = {
         RiskFactor.VeryHigh,
         RiskFactor.Medium,
         RiskFactor.UnderReview,
-        RiskFactor.Medium,
+        RiskFactor.UnderReview,
     ],
     btcLocked: 0,
     nativeToken: "-",
@@ -143,10 +143,10 @@ const base: LayerProject = {
         {
             category: RiskCategory.FinalityGuarantees,
             score: 0,
-            tier: RiskFactor.Medium,
+            tier: RiskFactor.UnderReview,
             title: "Base state transitions finalize on Ethereum",
             content:
-                "Base inherits finality guarantees from Ethereum. The Base sequencer provides a soft confirmation of transactions which are eventually summarized and sent to Ethereum.\n\n⚠️Base's sequencer can reorg prior to a transaction batch being accepted on Ethereum.",
+                "We are reviewing the Base validator set and how state transitions are proposed and finalized.",
         },
     ],
     sections: [
