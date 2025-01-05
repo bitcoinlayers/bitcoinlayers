@@ -19,8 +19,8 @@ import {
 import { useQueryState } from "nuqs";
 import { useCallback, useMemo, useState } from "react";
 import { useParams } from "next/navigation";
-import useGetTokentvlHistorical from "@/hooks/use-get-tokentvl-historical-all";
-import useGetCurrentPrices from "@/hooks/use-get-current-prices";
+import getHistoricalSuppliesByNetwork from "@/hooks/get-historical-supplies-by-tokenimpl";
+import getCurrentPrices from "@/hooks/get-current-prices";
 import { formatCurrency } from "@/util/formatCurrency";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 
@@ -40,11 +40,11 @@ export default function LayerTVLChart() {
         defaultValue: "1y",
     });
 
-    const { data } = useGetTokentvlHistorical({
+    const { data } = getHistoricalSuppliesByNetwork({
         queryString: `?network_slug=ilike.${slug}`,
     });
 
-    const { data: pricesData } = useGetCurrentPrices();
+    const { data: pricesData } = getCurrentPrices();
 
     const btcPriceData = pricesData?.find(
         (price) => price.token_slug === "btc",
@@ -55,25 +55,31 @@ export default function LayerTVLChart() {
         () =>
             chartType === "combined"
                 ? ["BTC"]
-                : [...new Set(data?.map((item) => item.token_name) || [])],
+                : [...new Set(data?.flatMap((item) => item.token_names) || [])],
         [data, chartType],
     );
 
     const processedData = useMemo(() => {
         if (!data) return [];
+
         return data.reduce((acc: ProcessedData[], item) => {
             const itemDateUTC = item.date;
             const existingEntry = acc.find(
                 (entry) => entry.date === itemDateUTC,
             );
-            const tokenKey = chartType === "combined" ? "BTC" : item.token_name;
+
+            const tokenKey =
+                chartType === "combined" ? "BTC" : item.token_names.join(", ");
 
             if (existingEntry) {
                 existingEntry[tokenKey] =
                     ((existingEntry[tokenKey] as number) || 0) +
-                    item.total_amount; // Use total_amount
+                    item.total_balance;
             } else {
-                acc.push({ date: itemDateUTC, [tokenKey]: item.total_amount }); // Use total_amount
+                acc.push({
+                    date: itemDateUTC,
+                    [tokenKey]: item.total_balance,
+                });
             }
             return acc;
         }, []);
@@ -173,17 +179,16 @@ export default function LayerTVLChart() {
                 return itemDate >= startDate && itemDate <= currentDate;
             }) || [];
 
-        // Calculate TVL as the sum of the last amounts for each token_name
         const tvl = [
-            ...new Set(data?.map((item) => item.token_name) || []),
+            ...new Set(data?.map((item) => item.identifier) || []),
         ].reduce((acc, token) => {
             const lastEntry = filteredData
-                .filter((item) => item.token_name === token)
+                .filter((item) => item.identifier === token)
                 .sort(
                     (a, b) =>
                         new Date(b.date).getTime() - new Date(a.date).getTime(),
                 )[0];
-            return acc + (lastEntry?.total_amount || 0);
+            return acc + (lastEntry?.amount || 0);
         }, 0);
 
         return {
@@ -195,36 +200,6 @@ export default function LayerTVLChart() {
 
     return (
         <Card className="bg-background mb-6">
-            {/* <CardHeader className="flex flex-col space-y-4">
-                <div className="flex flex-col sm:flex-row justify-between w-full">
-                    <CardTitle className="flex font-semibold items-center text-2xl sm:text-3xl mb-2 sm:mb-0">
-                        Metrics
-                    </CardTitle>
-                    <div className="flex flex-col sm:flex-row items-start sm:items-center justify-center sm:space-x-2 space-y-2 sm:space-y-0">
-                        <div className="block w-full sm:w-auto">
-                            <Select
-                                value={dateRange}
-                                onValueChange={setDateRange}
-                            >
-                                <SelectTrigger className="w-full sm:w-[180px] rounded-full px-6 py-1 text-sm">
-                                    <SelectValue placeholder="Select date range" />
-                                </SelectTrigger>
-                                <SelectContent>
-                                    <SelectItem value="1mo">
-                                        Last month
-                                    </SelectItem>
-                                    <SelectItem value="3mo">
-                                        Last 3 months
-                                    </SelectItem>
-                                    <SelectItem value="1y">
-                                        Last year
-                                    </SelectItem>
-                                </SelectContent>
-                            </Select>
-                        </div>
-                    </div>
-                </div>
-            </CardHeader> */}
             <div className="w-full flex flex-col sm:flex-row border-y">
                 <div className="flex flex-col justify-center items-start py-4 sm:py-7 border-b sm:border-b-0 px-6 sm:w-3/4">
                     <div className="text-lg sm:text-xl">BTC Locked</div>
@@ -241,7 +216,6 @@ export default function LayerTVLChart() {
                 </div>
                 <div className="flex flex-row sm:w-1/4">
                     {["TVL"].map((key) => {
-                        //, "TPS", "Fee Rev."
                         const chart = key as keyof typeof chartConfig;
                         return (
                             <button
@@ -260,8 +234,8 @@ export default function LayerTVLChart() {
                                                 {`${total[
                                                     key as keyof typeof total
                                                 ].toLocaleString("en-US", {
-                                                    minimumFractionDigits: 0,
-                                                    maximumFractionDigits: 0,
+                                                    minimumFractionDigits: 2,
+                                                    maximumFractionDigits: 2,
                                                 })} BTC`}
                                             </span>
                                             <div className="text-xs sm:text-sm py-2 text-muted-foreground">
@@ -353,7 +327,7 @@ export default function LayerTVLChart() {
                         ))}
                         <ChartLegend
                             content={
-                                <ChartLegendContent className="flex lg:flex-wrap sm:flex-nowrap overflow-x-auto whitespace-nowrap max-w-full scroll-smooth snap-x snap-start justify-start" />
+                                <ChartLegendContent className="flex lg:justify-center lg:flex-wrap sm:flex-nowrap overflow-x-auto whitespace-nowrap max-w-full scroll-smooth snap-x snap-start justify-start" />
                             }
                         />
                     </AreaChart>
