@@ -128,7 +128,7 @@ section {
         --chart-core: 20 100% 67%;
         --chart-internet-computer: 0 100% 60%;
         --chart-libre: 88 50% 63%;
-        --chart-lightning-network: 0 59% 51%;
+        --chart-lightning: 0 59% 51%;
         --chart-liquid: 271 100% 81%;
         --chart-mercury: 0 59% 61%;
         --chart-merlin: 120 61% 44%;
@@ -148,8 +148,8 @@ section {
         --chart-tron: 359 100% 51%;
         --chart-sui: 211 100% 65%;
         --chart-cardano: 222 100% 34%;
-
-        /* Staking */
+        /* Wrappers */
+        /* LSTs */
         --chart-lombard-lbtc: 172 62% 51%;
         --chart-lorenzo-stbtc: 205 29% 41%;
         --chart-solv-solvbtcbbn: 27 90% 56%;
@@ -161,7 +161,7 @@ section {
         --chart-acorn-abtc: 126 63% 13%;
         --chart-kinza-kbtc: 47 75% 56%;
         --chart-babypie-mbtc: 178 45% 21%;
-        /* Crosschain BTC */
+        /* Derivatives */
         --chart-ibtc-network-ibtc: 284 84% 35%;
         --chart-fire-bitcoin-fbtc: 238 100% 67%;
         --chart-solv-solvbtc: 263 99% 65%;
