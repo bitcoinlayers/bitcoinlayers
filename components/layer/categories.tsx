@@ -2,17 +2,17 @@
 
 import { useMemo } from "react";
 import { LayerProject } from "@/content/props";
-import useGetLayertvlCurrentAll from "@/hooks/use-get-layertvl-current-all";
+import getCurrentSuppliesByNetwork from "@/hooks/get-current-supplies-by-network";
 
 const Categories: React.FC<{ layer: LayerProject }> = ({ layer }) => {
-    const { data: balances } = useGetLayertvlCurrentAll({
-        queryString: `?layer_slug=ilike.${layer.slug}`,
+    const { data: balances } = getCurrentSuppliesByNetwork({
+        queryString: `?network_slug=ilike.${layer.slug}`,
     });
 
     const matchingBalance = useMemo(() => {
         if (!balances) return null;
 
-        return balances.find((balance) => balance.layer_slug === layer.slug);
+        return balances.find((balance) => balance.network_slug === layer.slug);
     }, [balances, layer.slug]);
 
     return (
@@ -36,10 +36,13 @@ const Categories: React.FC<{ layer: LayerProject }> = ({ layer }) => {
                 <div className="text-muted-foreground">
                     ₿ {/* Fallback to layer.btcLocked */}
                     {matchingBalance
-                        ? matchingBalance.total_amount.toLocaleString("en-US", {
-                              minimumFractionDigits: 0,
-                              maximumFractionDigits: 0,
-                          })
+                        ? matchingBalance.total_balance.toLocaleString(
+                              "en-US",
+                              {
+                                  minimumFractionDigits: 0,
+                                  maximumFractionDigits: 0,
+                              },
+                          )
                         : layer.btcLocked}
                 </div>
             </div>
