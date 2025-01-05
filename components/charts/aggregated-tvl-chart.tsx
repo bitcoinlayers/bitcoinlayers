@@ -24,21 +24,18 @@ import ChartFilters from "./chart-filters";
 interface ChartProps {
     title: string;
     description: string;
-    itemNameKey: "layer_name" | "infra_name";
+    itemNameKey: string;
     chartQueryParam?: string;
     rangeQueryParam?: string;
     showDivisionButtons?: boolean;
     divisionDefaultValue?: "combined" | "separate";
     showLegend?: boolean;
     chartHeight?: string;
-    data?:
-        | Partial<{
-              date: string;
-              amount: number;
-              layer_name?: string;
-              infra_name?: string;
-          }>[]
-        | undefined;
+    data?: Partial<{
+        date: string;
+        total_balance: number;
+        [key: string]: any;
+    }>[];
 }
 
 export default function AggregatedTVLChart({
@@ -88,9 +85,12 @@ export default function AggregatedTVLChart({
 
                 if (existingEntry) {
                     existingEntry[key] =
-                        (existingEntry[key] || 0) + (item.amount || 0);
+                        (existingEntry[key] || 0) + (item.total_balance || 0);
                 } else {
-                    acc.push({ date: item.date, [key]: item.amount || 0 });
+                    acc.push({
+                        date: item.date,
+                        [key]: item.total_balance || 0,
+                    });
                 }
                 return acc;
             },
@@ -125,7 +125,10 @@ export default function AggregatedTVLChart({
                           item,
                           {
                               label: item,
-                              color: `hsl(var(--chart-${item?.toLowerCase().replace(/\s+/g, "-").replace(/\./g, "")}))`,
+                              color: `hsl(var(--chart-${item
+                                  ?.toLowerCase()
+                                  .replace(/\s+/g, "-")
+                                  .replace(/\./g, "")}))`,
                           },
                       ]),
                   ),
@@ -179,7 +182,6 @@ export default function AggregatedTVLChart({
                     </CardDescription>
                 </div>
                 <div className="flex">
-                    {/* TODO: Add a button to toggle the chart type */}
                     <TVLDisplay data={data} />
                 </div>
             </CardHeader>
