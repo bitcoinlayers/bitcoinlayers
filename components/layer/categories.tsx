@@ -9,11 +9,25 @@ const Categories: React.FC<{ layer: LayerProject }> = ({ layer }) => {
         queryString: `?network_slug=ilike.${layer.slug}`,
     });
 
-    const matchingBalance = useMemo(() => {
-        if (!balances) return null;
+    const totaledBalances = useMemo(() => {
+        if (!balances) return {};
 
-        return balances.find((balance) => balance.network_slug === layer.slug);
-    }, [balances, layer.slug]);
+        return balances.reduce(
+            (acc, balance) => {
+                const normalizedSlug = balance.network_slug.toLowerCase();
+                if (!acc[normalizedSlug]) {
+                    acc[normalizedSlug] = { totalAmount: 0 };
+                }
+
+                acc[normalizedSlug].totalAmount += balance.total_balance;
+
+                return acc;
+            },
+            {} as Record<string, { totalAmount: number }>,
+        );
+    }, [balances]);
+
+    const totalAmountForNetwork = totaledBalances[layer.slug]?.totalAmount || 0;
 
     return (
         <div className="lg:flex lg:justify-between w-full grid grid-cols-2 gap-4">
@@ -34,16 +48,11 @@ const Categories: React.FC<{ layer: LayerProject }> = ({ layer }) => {
             <div className="flex-col justify-center items-start pl-4 lg:pl-0">
                 <div className="text-sm leading-tight">TVL</div>
                 <div className="text-muted-foreground">
-                    ₿ {/* Fallback to layer.btcLocked */}
-                    {matchingBalance
-                        ? matchingBalance.total_balance.toLocaleString(
-                              "en-US",
-                              {
-                                  minimumFractionDigits: 0,
-                                  maximumFractionDigits: 0,
-                              },
-                          )
-                        : layer.btcLocked}
+                    ₿
+                    {totalAmountForNetwork.toLocaleString("en-US", {
+                        minimumFractionDigits: 0,
+                        maximumFractionDigits: 0,
+                    })}
                 </div>
             </div>
         </div>
