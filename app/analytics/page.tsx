@@ -18,7 +18,6 @@ export default function Analytics() {
             itemNameKey: "network_name",
             chartQueryParam: "layer-chart",
             rangeQueryParam: "layer-range",
-            useDataHook: useGetHistoricalSuppliesByTokenimpl,
             queryString: "",
         },
         wrappers: {
@@ -27,7 +26,6 @@ export default function Analytics() {
             itemNameKey: "token_name",
             chartQueryParam: "bridge-chart",
             rangeQueryParam: "bridge-range",
-            useDataHook: useGetHistoricalSuppliesByTokenimpl,
             queryString: "?token_type=wrapper",
         },
         staking: {
@@ -37,7 +35,6 @@ export default function Analytics() {
             itemNameKey: "token_name",
             chartQueryParam: "staking-chart",
             rangeQueryParam: "staking-range",
-            useDataHook: useGetHistoricalSuppliesByTokenimpl,
             queryString: "?token_type=staking",
         },
         liquidstaking: {
@@ -47,67 +44,50 @@ export default function Analytics() {
             itemNameKey: "token_name",
             chartQueryParam: "liquidstaking-chart",
             rangeQueryParam: "liquidstaking-range",
-            useDataHook: useGetHistoricalSuppliesByTokenimpl,
             queryString: "?token_type=liquid_staking",
         },
-        lending: {
-            title: "Lending Protocols",
-            description:
-                "Total amount of BTC deposited in lending protocols, excluding staking",
-            itemNameKey: "token_name",
-            chartQueryParam: "lending-chart",
-            rangeQueryParam: "lending-range",
-            useDataHook: useGetHistoricalSuppliesByTokenimpl,
-            queryString: "?token_type=lending",
-        },
-        reserve: {
-            title: "Reserve Tokens",
-            description: "Total supply of reserve BTC tokens",
-            itemNameKey: "token_name",
-            chartQueryParam: "reserve-chart",
-            rangeQueryParam: "reserve-range",
-            useDataHook: useGetHistoricalSuppliesByTokenimpl,
-            queryString: "?token_type=reserve",
-        },
+        // lending: {
+        //     title: "Lending Protocols",
+        //     description:
+        //         "Total amount of BTC deposited in lending protocols, excluding staking",
+        //     itemNameKey: "token_name",
+        //     chartQueryParam: "lending-chart",
+        //     rangeQueryParam: "lending-range",
+        //     queryString: "?token_type=lending",
+        // },
+        // reserve: {
+        //     title: "Reserve Tokens",
+        //     description: "Total supply of reserve BTC tokens",
+        //     itemNameKey: "token_name",
+        //     chartQueryParam: "reserve-chart",
+        //     rangeQueryParam: "reserve-range",
+        //     queryString: "?token_type=reserve",
+        // },
     };
 
-    const layersData =
-        view === "layers" || view === "all"
-            ? useGetHistoricalSuppliesByTokenimpl({
-                  queryString: chartConfig.layers.queryString,
-              })
-            : { data: [] };
+    const layersData = useGetHistoricalSuppliesByTokenimpl({
+        queryString: chartConfig.layers.queryString,
+    });
 
-    const wrappersData =
-        view === "wrappers" || view === "all"
-            ? useGetHistoricalSuppliesByTokenimpl({
-                  queryString: chartConfig.layers.queryString,
-              })
-            : { data: [] };
-    const stakingData =
-        view === "staking" || view === "all"
-            ? useGetHistoricalSuppliesByTokenimpl({
-                  queryString: chartConfig.layers.queryString,
-              })
-            : { data: [] };
-    const liquidstakingData =
-        view === "liquidstaking" || view === "all"
-            ? useGetHistoricalSuppliesByTokenimpl({
-                  queryString: chartConfig.layers.queryString,
-              })
-            : { data: [] };
-    const lendingData =
-        view === "lending" || view === "all"
-            ? useGetHistoricalSuppliesByTokenimpl({
-                  queryString: chartConfig.layers.queryString,
-              })
-            : { data: [] };
-    const reserveData =
-        view === "reserve" || view === "all"
-            ? useGetHistoricalSuppliesByTokenimpl({
-                  queryString: chartConfig.layers.queryString,
-              })
-            : { data: [] };
+    const wrappersData = useGetHistoricalSuppliesByTokenimpl({
+        queryString: chartConfig.wrappers.queryString,
+    });
+
+    const stakingData = useGetHistoricalSuppliesByTokenimpl({
+        queryString: chartConfig.staking.queryString,
+    });
+
+    const liquidstakingData = useGetHistoricalSuppliesByTokenimpl({
+        queryString: chartConfig.liquidstaking.queryString,
+    });
+
+    // const lendingData = useGetHistoricalSuppliesByTokenimpl({
+    //     queryString: chartConfig.lending.queryString,
+    // });
+
+    // const reserveData = useGetHistoricalSuppliesByTokenimpl({
+    //     queryString: chartConfig.reserve.queryString,
+    // });
 
     return (
         <div className="mx-auto space-y-8">
@@ -122,9 +102,11 @@ export default function Analytics() {
                             ? stakingData.data
                             : key === "liquidstaking"
                               ? liquidstakingData.data
-                              : key === "lending"
-                                ? lendingData.data
-                                : reserveData.data;
+                              : [];
+
+                //   : key === "lending"
+                //     ? lendingData.data
+                //     : reserveData.data;
 
                 return (
                     (view === "all" || view === key) && (
