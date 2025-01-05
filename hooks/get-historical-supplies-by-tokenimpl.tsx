@@ -2,17 +2,15 @@ import { fetcher } from "@/util/fetcher";
 import { useQuery } from "@tanstack/react-query";
 
 export interface Balances {
-    token_implementation: string;
-    balance: number;
-    date: string;
-    network: string;
-    network_slug: string;
-    network_origin: string;
     network_name: string;
-    token_slug: string;
+    network_slug: string;
     token_name: string;
-    token_address: string;
-    rank: number;
+    identifier: string;
+    amount: number;
+    date: string;
+    infra_slug: string;
+    network_rank: number;
+    project_rank: number;
 }
 interface Props {
     queryString?: string;
@@ -24,12 +22,12 @@ export default function getHistoricalSuppliesByTokenimpl({
     const response = useQuery<Balances[]>({
         queryKey: [
             queryString
-                ? `historical_supplies_by_tokenimpl${queryString}`
-                : "historical_supplies_by_tokenimpl",
+                ? `historical_supplies${queryString}`
+                : "historical_supplies",
         ],
         queryFn: () =>
             fetcher(
-                `${process.env.NEXT_PUBLIC_API_URL}/historical_supplies_by_tokenimpl${queryString ?? ""}`,
+                `${process.env.NEXT_PUBLIC_API_URL}/historical_supplies${queryString ?? ""}`,
             ),
         staleTime: Infinity,
     });
