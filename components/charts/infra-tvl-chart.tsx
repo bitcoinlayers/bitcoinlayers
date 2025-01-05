@@ -19,8 +19,8 @@ import {
 import { useQueryState } from "nuqs";
 import { useCallback, useMemo, useState } from "react";
 import { useParams } from "next/navigation";
-import useGetTokentvlHistorical from "@/hooks/use-get-layertvl-historical-all";
-import useGetCurrentPrices from "@/hooks/use-get-current-prices";
+import getHistoricalSuppliesByTokenimpl from "@/hooks/get-historical-supplies-by-tokenimpl";
+import getCurrentPrices from "@/hooks/get-current-prices";
 import { formatCurrency } from "@/util/formatCurrency";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 
@@ -40,11 +40,10 @@ export default function InfraTVLChart() {
         defaultValue: "1y",
     });
 
-    const { data } = useGetTokentvlHistorical({
+    const { data } = getHistoricalSuppliesByTokenimpl({
         queryString: `?infra_slug=ilike.${slug}`,
     });
-    const { data: pricesData, isLoading, error } = useGetCurrentPrices();
-
+    const { data: pricesData, isLoading, error } = getCurrentPrices();
     const btcPriceData = pricesData?.find(
         (price) => price.token_slug === "btc",
     );
@@ -70,7 +69,8 @@ export default function InfraTVLChart() {
             const existingEntry = acc.find(
                 (entry) => entry.date === itemDateUTC,
             );
-            const tokenKey = chartType === "combined" ? "BTC" : item.layer_name;
+            const tokenKey =
+                chartType === "combined" ? "BTC" : item.network_slug;
 
             if (existingEntry) {
                 existingEntry[tokenKey] =
@@ -171,7 +171,6 @@ export default function InfraTVLChart() {
                 return itemDate >= startDate && itemDate <= currentDate;
             }) || [];
 
-        // Calculate TVL as the sum of the last amounts for each token_name
         const tvl = [
             ...new Set(data?.map((item) => item.identifier) || []),
         ].reduce((acc, token) => {
@@ -189,40 +188,10 @@ export default function InfraTVLChart() {
         };
     }, [data, dateRange]);
 
-    if (data?.length === 0) return null;
+    if (!data || data.length === 0) return null;
 
     return (
         <Card className="bg-background mb-6">
-            {/* <CardHeader className="flex flex-col space-y-4">
-                <div className="flex flex-col sm:flex-row justify-between w-full">
-                    <CardTitle className="flex font-semibold items-center text-2xl sm:text-3xl mb-2 sm:mb-0">
-                        Metrics
-                    </CardTitle>
-                    <div className="flex flex-col sm:flex-row items-start sm:items-center justify-center sm:space-x-2 space-y-2 sm:space-y-0">
-                        <div className="block w-full sm:w-auto">
-                            <Select
-                                value={dateRange}
-                                onValueChange={setDateRange}
-                            >
-                                <SelectTrigger className="w-full sm:w-[180px] rounded-full px-6 py-1 text-sm">
-                                    <SelectValue placeholder="Select date range" />
-                                </SelectTrigger>
-                                <SelectContent>
-                                    <SelectItem value="1mo">
-                                        Last month
-                                    </SelectItem>
-                                    <SelectItem value="3mo">
-                                        Last 3 months
-                                    </SelectItem>
-                                    <SelectItem value="1y">
-                                        Last year
-                                    </SelectItem>
-                                </SelectContent>
-                            </Select>
-                        </div>
-                    </div>
-                </div>
-            </CardHeader> */}
             <div className="w-full flex flex-col sm:flex-row border-y">
                 <div className="flex flex-col justify-center items-start py-4 sm:py-7 border-b sm:border-b-0 px-6 sm:w-3/4">
                     <div className="text-lg sm:text-xl">BTC Locked</div>
@@ -333,7 +302,7 @@ export default function InfraTVLChart() {
                                 />
                             }
                         />
-                        {sortedTokens?.map((token) => (
+                        {tokens.map((token) => (
                             <Area
                                 key={token}
                                 name={token}
@@ -350,7 +319,7 @@ export default function InfraTVLChart() {
                         ))}
                         <ChartLegend
                             content={
-                                <ChartLegendContent className="flex lg:flex-wrap sm:flex-nowrap overflow-x-auto whitespace-nowrap max-w-full scroll-smooth snap-x snap-start justify-start" />
+                                <ChartLegendContent className="flex lg:justify-center lg:flex-wrap sm:flex-nowrap overflow-x-auto whitespace-nowrap max-w-full scroll-smooth snap-x snap-start justify-start" />
                             }
                         />
                     </AreaChart>
