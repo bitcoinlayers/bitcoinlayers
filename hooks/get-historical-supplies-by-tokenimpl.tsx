@@ -22,12 +22,12 @@ export default function getHistoricalSuppliesByTokenimpl({
     const response = useQuery<Balances[]>({
         queryKey: [
             queryString
-                ? `historical_supplies${queryString}`
-                : "historical_supplies",
+                ? `historical_supplies_by_tokenimpl${queryString}`
+                : "historical_supplies_by_tokenimpl",
         ],
         queryFn: () =>
             fetcher(
-                `${process.env.NEXT_PUBLIC_API_URL}/historical_supplies${queryString ?? ""}`,
+                `${process.env.NEXT_PUBLIC_API_URL}/historical_supplies_by_tokenimpl${queryString ?? ""}`,
             ),
         staleTime: Infinity,
     });

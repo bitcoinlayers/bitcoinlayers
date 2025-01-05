@@ -2,10 +2,7 @@
 
 import AggregatedTVLChart from "@/components/charts/aggregated-tvl-chart";
 import ViewToggleGroup from "@/components/layer/view-toggle-group-analytics";
-import useGetInfratvlHistoricalBridge from "@/hooks/use-get-infratvl-historical-bridge";
-import useGetInfratvlHistoricalStaked from "@/hooks/use-get-infratvl-historical-staked";
-import useGetBalancesHistoricalBylayerBitcoinonly from "@/hooks/use-get-layertvl-historical-bitcoinonly";
-import useGetStakingValueHistorical from "@/hooks/use-get-staking-value-historical";
+import useGetHistoricalSuppliesByTokenimpl from "@/hooks/get-historical-supplies-by-tokenimpl";
 import { useQueryState } from "nuqs";
 
 export default function Analytics() {
@@ -18,57 +15,118 @@ export default function Analytics() {
             title: "All Networks",
             description:
                 "Total supply of wrapped bitcoin tokens on various layers",
-            itemNameKey: "layer_name",
+            itemNameKey: "network_name",
             chartQueryParam: "layer-chart",
             rangeQueryParam: "layer-range",
-            useDataHook: useGetBalancesHistoricalBylayerBitcoinonly,
+            useDataHook: useGetHistoricalSuppliesByTokenimpl,
+            queryString: "",
         },
         wrappers: {
             title: "All Wrapped Tokens",
             description: "Total supply of wrapped bitcoin tokens",
-            itemNameKey: "infra_name",
+            itemNameKey: "token_name",
             chartQueryParam: "bridge-chart",
             rangeQueryParam: "bridge-range",
-            useDataHook: useGetInfratvlHistoricalBridge,
+            useDataHook: useGetHistoricalSuppliesByTokenimpl,
+            queryString: "?token_type=wrapper",
         },
         staking: {
-            title: "Babylon Staking",
+            title: "BTC 'Staking'",
             description:
-                "Total amount of BTC deposited in the Babylon staking protocol",
-            itemNameKey: "infra_name",
+                "Total amount of BTC deposited in the BTC 'staking' protocols",
+            itemNameKey: "token_name",
             chartQueryParam: "staking-chart",
             rangeQueryParam: "staking-range",
-            useDataHook: useGetStakingValueHistorical,
+            useDataHook: useGetHistoricalSuppliesByTokenimpl,
+            queryString: "?token_type=staking",
         },
         liquidstaking: {
-            title: "Liquid Staking BTC Tokens",
+            title: "Liquid 'Staking' BTC Tokens",
             description:
-                "Total amount of BTC deposited in liquid staking protocols",
-            itemNameKey: "infra_name",
-            chartQueryParam: "staking-chart",
-            rangeQueryParam: "staking-range",
-            useDataHook: useGetInfratvlHistoricalStaked,
+                "Total amount of BTC deposited in liquid 'staking' protocols",
+            itemNameKey: "token_name",
+            chartQueryParam: "liquidstaking-chart",
+            rangeQueryParam: "liquidstaking-range",
+            useDataHook: useGetHistoricalSuppliesByTokenimpl,
+            queryString: "?token_type=liquid_staking",
+        },
+        lending: {
+            title: "Lending Protocols",
+            description:
+                "Total amount of BTC deposited in lending protocols, excluding staking",
+            itemNameKey: "token_name",
+            chartQueryParam: "lending-chart",
+            rangeQueryParam: "lending-range",
+            useDataHook: useGetHistoricalSuppliesByTokenimpl,
+            queryString: "?token_type=lending",
+        },
+        reserve: {
+            title: "Reserve Tokens",
+            description: "Total supply of reserve BTC tokens",
+            itemNameKey: "token_name",
+            chartQueryParam: "reserve-chart",
+            rangeQueryParam: "reserve-range",
+            useDataHook: useGetHistoricalSuppliesByTokenimpl,
+            queryString: "?token_type=reserve",
         },
     };
 
-    const layersData = useGetBalancesHistoricalBylayerBitcoinonly({
-        enabled: view === "layers" || view === "all",
-    });
-    const wrappersData = useGetInfratvlHistoricalBridge({
-        enabled: view === "wrappers" || view === "all",
-    });
-    const stakingData = useGetStakingValueHistorical({
-        enabled: view === "staking" || view === "all",
-    });
-    const liquidstakingData = useGetInfratvlHistoricalStaked({
-        enabled: view === "liquidstaking" || view === "all",
-    });
+    const layersData =
+        view === "layers" || view === "all"
+            ? useGetHistoricalSuppliesByTokenimpl({
+                  queryString: chartConfig.layers.queryString,
+              })
+            : { data: [] };
+
+    const wrappersData =
+        view === "wrappers" || view === "all"
+            ? useGetHistoricalSuppliesByTokenimpl({
+                  queryString: chartConfig.layers.queryString,
+              })
+            : { data: [] };
+    const stakingData =
+        view === "staking" || view === "all"
+            ? useGetHistoricalSuppliesByTokenimpl({
+                  queryString: chartConfig.layers.queryString,
+              })
+            : { data: [] };
+    const liquidstakingData =
+        view === "liquidstaking" || view === "all"
+            ? useGetHistoricalSuppliesByTokenimpl({
+                  queryString: chartConfig.layers.queryString,
+              })
+            : { data: [] };
+    const lendingData =
+        view === "lending" || view === "all"
+            ? useGetHistoricalSuppliesByTokenimpl({
+                  queryString: chartConfig.layers.queryString,
+              })
+            : { data: [] };
+    const reserveData =
+        view === "reserve" || view === "all"
+            ? useGetHistoricalSuppliesByTokenimpl({
+                  queryString: chartConfig.layers.queryString,
+              })
+            : { data: [] };
 
     return (
         <div className="mx-auto space-y-8">
             <ViewToggleGroup showAll />
-            {Object.entries(chartConfig).map(
-                ([key, config]) =>
+            {Object.entries(chartConfig).map(([key, config]) => {
+                const data =
+                    key === "layers"
+                        ? layersData.data
+                        : key === "wrappers"
+                          ? wrappersData.data
+                          : key === "staking"
+                            ? stakingData.data
+                            : key === "liquidstaking"
+                              ? liquidstakingData.data
+                              : key === "lending"
+                                ? lendingData.data
+                                : reserveData.data;
+
+                return (
                     (view === "all" || view === key) && (
                         <AggregatedTVLChart
                             key={key}
@@ -76,24 +134,17 @@ export default function Analytics() {
                             description={config.description}
                             itemNameKey={
                                 config.itemNameKey as
-                                    | "layer_name"
-                                    | "infra_name"
+                                    | "network_name"
+                                    | "token_name"
                             }
                             chartQueryParam={config.chartQueryParam}
                             rangeQueryParam={config.rangeQueryParam}
                             divisionDefaultValue="separate"
-                            data={
-                                key === "layers"
-                                    ? layersData.data
-                                    : key === "staking"
-                                      ? stakingData.data
-                                      : key === "wrappers"
-                                        ? wrappersData.data
-                                        : liquidstakingData.data
-                            }
+                            data={data}
                         />
-                    ),
-            )}
+                    )
+                );
+            })}
         </div>
     );
 }

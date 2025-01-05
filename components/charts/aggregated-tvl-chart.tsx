@@ -254,7 +254,7 @@ export default function AggregatedTVLChart({
                         {showLegend && (
                             <ChartLegend
                                 content={
-                                    <ChartLegendContent className="flex lg:flex-wrap sm:flex-nowrap overflow-x-auto whitespace-nowrap max-w-full scroll-smooth snap-x snap-start justify-start" />
+                                    <ChartLegendContent className="flex lg:justify-center lg:flex-wrap sm:flex-nowrap overflow-x-auto whitespace-nowrap max-w-full scroll-smooth snap-x snap-start justify-start" />
                                 }
                             />
                         )}

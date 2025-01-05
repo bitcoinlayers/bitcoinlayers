@@ -19,7 +19,7 @@ import {
 import { useQueryState } from "nuqs";
 import { useCallback, useMemo, useState } from "react";
 import { useParams } from "next/navigation";
-import getHistoricalSuppliesByNetwork from "@/hooks/get-historical-supplies-by-tokenimpl";
+import getHistoricalSuppliesByTokenimpl from "@/hooks/get-historical-supplies-by-tokenimpl";
 import getCurrentPrices from "@/hooks/get-current-prices";
 import { formatCurrency } from "@/util/formatCurrency";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
@@ -40,12 +40,11 @@ export default function LayerTVLChart() {
         defaultValue: "1y",
     });
 
-    const { data } = getHistoricalSuppliesByNetwork({
+    const { data } = getHistoricalSuppliesByTokenimpl({
         queryString: `?network_slug=ilike.${slug}`,
     });
 
     const { data: pricesData } = getCurrentPrices();
-
     const btcPriceData = pricesData?.find(
         (price) => price.token_slug === "btc",
     );
@@ -55,31 +54,24 @@ export default function LayerTVLChart() {
         () =>
             chartType === "combined"
                 ? ["BTC"]
-                : [...new Set(data?.flatMap((item) => item.token_names) || [])],
+                : [...new Set(data?.map((item) => item.token_name) || [])],
         [data, chartType],
     );
 
     const processedData = useMemo(() => {
         if (!data) return [];
-
         return data.reduce((acc: ProcessedData[], item) => {
             const itemDateUTC = item.date;
             const existingEntry = acc.find(
                 (entry) => entry.date === itemDateUTC,
             );
-
-            const tokenKey =
-                chartType === "combined" ? "BTC" : item.token_names.join(", ");
+            const tokenKey = chartType === "combined" ? "BTC" : item.token_name;
 
             if (existingEntry) {
                 existingEntry[tokenKey] =
-                    ((existingEntry[tokenKey] as number) || 0) +
-                    item.total_balance;
+                    ((existingEntry[tokenKey] as number) || 0) + item.amount;
             } else {
-                acc.push({
-                    date: itemDateUTC,
-                    [tokenKey]: item.total_balance,
-                });
+                acc.push({ date: itemDateUTC, [tokenKey]: item.amount });
             }
             return acc;
         }, []);
@@ -170,7 +162,7 @@ export default function LayerTVLChart() {
                 startDate.setFullYear(currentDate.getFullYear() - 1);
                 break;
             default:
-                startDate.setMonth(currentDate.getMonth() - 3); // Default to 3 months
+                startDate.setMonth(currentDate.getMonth() - 3);
         }
 
         const filteredData =
@@ -179,11 +171,9 @@ export default function LayerTVLChart() {
                 return itemDate >= startDate && itemDate <= currentDate;
             }) || [];
 
-        const tvl = [
-            ...new Set(data?.map((item) => item.identifier) || []),
-        ].reduce((acc, token) => {
+        const tvl = tokens.reduce((acc, token) => {
             const lastEntry = filteredData
-                .filter((item) => item.identifier === token)
+                .filter((item) => item.token_name === token)
                 .sort(
                     (a, b) =>
                         new Date(b.date).getTime() - new Date(a.date).getTime(),
@@ -191,12 +181,10 @@ export default function LayerTVLChart() {
             return acc + (lastEntry?.amount || 0);
         }, 0);
 
-        return {
-            TVL: tvl,
-        };
-    }, [data, dateRange]);
+        return { TVL: tvl };
+    }, [data, tokens, dateRange]);
 
-    if (data?.length === 0) return null;
+    if (!data || data.length === 0) return null;
 
     return (
         <Card className="bg-background mb-6">
