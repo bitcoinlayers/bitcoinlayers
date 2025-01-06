@@ -8,7 +8,7 @@ const LayerOverview: React.FC<{ layer: LayerProject }> = ({ layer }) => {
     return (
         <section
             id="overview"
-            className="flex lg:flex-row flex-col justify-between items-center lg:items-start pt-6 gap-4 mb-12"
+            className="flex lg:flex-row flex-col justify-between items-center lg:items-start pt-6 gap-4 mb-12 overflow-x-hidden"
         >
             <div className="flex flex-col space-y-10 px-4 flex-grow w-full lg:w-1/4">
                 <Categories layer={layer} />
@@ -16,7 +16,7 @@ const LayerOverview: React.FC<{ layer: LayerProject }> = ({ layer }) => {
                 <div className="border-t border-border"></div>
                 <ProjectLinks links={layer.links} />
             </div>
-            <div className="mt-4 lg:mt-0 w-[350px] h-[350px] lg:h-[350px] lg:ml-0 ml-0">
+            <div className="mt-4 lg:mt-0 w-[350px] h-[400px] lg:h-[400px] lg:ml-0 ml-0 overflow-visible">
                 <LayerDiamond layer={layer} />
             </div>
         </section>
