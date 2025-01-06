@@ -5,6 +5,7 @@ import {
     LiveStatus,
     EntityType,
     Site,
+    AssessmentCategory,
 } from "../props";
 
 const unirouter: InfrastructureProject = {
@@ -40,7 +41,7 @@ const unirouter: InfrastructureProject = {
             url: "https://x.com/UniRouterBTC",
         },
     ],
-    description: "Under Review",
+    description: "uBTC is a liquid staking token that is operated by the UniRouter team. It is live on Bsquared Network.",
     sections: [
         {
             id: "contracts",
@@ -54,13 +55,23 @@ const unirouter: InfrastructureProject = {
         },
         {
             id: "selfsubmit",
-            title: "Process to self-submit information",
+            title: "Further sections to be reviewed",
             content: [
                 {
                     content:
-                        "The Bitcoin Layers project prioritizes risk reviews on projects that are in production and accepting users' BTC deposits. Projects on testnet are welcome to submit information about their project. We do not publish risk assessments for projects that are not in production.\n\nHere are the [instructions](https://github.com/bitcoinlayers/bitcoinlayers/blob/main/SELFSUBMIT.md) on self-submitting a project.",
+                        "Aspects related to minting & burning, key management, transaction signing, and proof-of-reserves have not been reviewed. We are currently reviewing these sections.",
                 },
             ],
+        },
+    ],
+    assessment: [
+        {
+            category: AssessmentCategory.AssetCustody,
+            score: 0,
+            tier: "",
+            title: "Users trust UniRouter with their custody practices. UniRouter has not disclosed who manages the BTC backing uBTC.",
+            content:
+                "Users trust that the UniRouter team has set up secure custody practices and has BTC reserves backing uniBTC. UniRouter has not disclosed who secures the BTC backing uBTC.",
         },
     ],
 };

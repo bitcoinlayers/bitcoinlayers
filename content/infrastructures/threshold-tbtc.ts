@@ -115,7 +115,7 @@ const tbtc: InfrastructureProject = {
     ],
     assessment: [
         {
-            category: AssessmentCategory.Reputation,
+            category: AssessmentCategory.AssetCustody,
             score: 0,
             tier: "",
             title: "Users trust permissioned entities with the custody of their BTC. tBTC Beta Stakers must apply to Threshold DAO for signing privileges",

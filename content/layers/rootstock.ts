@@ -69,7 +69,7 @@ const rootstock: LayerProject = {
                     tier: RiskFactor.High,
                     title: "A federated multi-sig known as the Powpeg is used to custody users' BTC. More than 5, publicly-known signers participate in the Powpeg.",
                     content:
-                        "The bridge between bitcoin and Rootstock is secured by a 5-of-9 federated multisig, referred to as the Powpeg (Proof of Work Peg). The identities of entities participating in the Powpeg are publicly known. Users trust the operators of the Powpeg to custody their funds. Learn more about the Powpeg in the technology section below.\n\nPowpeg signer identities and attestations can be found [here](https://rootstock.io/powpeg/).",
+                        "The bridge between bitcoin and Rootstock is secured by a 5-of-9 federated multisig, referred to as the Powpeg (Proof of Work Peg). The identities of entities participating in the Powpeg are publicly known. Users trust the operators of the Powpeg to custody their funds.\n\nPowpeg signer identities and attestations can be found [here](https://rootstock.io/powpeg/).",
                 },
                 {
                     name: "BitGo wBTC",
