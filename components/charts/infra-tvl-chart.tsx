@@ -87,11 +87,14 @@ export default function InfraTVLChart() {
             chartType === "combined"
                 ? { BTC: { label: "BTC", color: "hsl(var(--chart-btc))" } }
                 : Object.fromEntries(
-                      tokens.map((token, index) => [
-                          token,
+                      tokens.map((item) => [
+                          item,
                           {
-                              label: token,
-                              color: `hsl(var(--chart-${tokens.length > 1 ? index + 1 : "btc"}))`,
+                              label: item,
+                              color: `hsl(var(--chart-${item
+                                  ?.toLowerCase()
+                                  .replace(/\s+/g, "-")
+                                  .replace(/\./g, "")}))`,
                           },
                       ]),
                   ),
