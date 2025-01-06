@@ -5,6 +5,7 @@ import {
     LiveStatus,
     EntityType,
     Site,
+    AssessmentCategory,
 } from "../props";
 
 const fire: InfrastructureProject = {
@@ -44,17 +45,27 @@ const fire: InfrastructureProject = {
             url: "https://x.com/IgnitionFBTC",
         },
     ],
-    description: "Fire Bitcoin's FBTC is a wrapped version of BTC.",
+    description: "Ignitions's FBTC is a BTC derivative asset that can be used across various EVM chains.",
     sections: [
         {
-            id: "knowledgeBits",
-            title: "Knowledge Bits",
+            id: "selfsubmit",
+            title: "Further sections to be reviewed",
             content: [
                 {
-                    title: "Learn more",
-                    content: "[Fire Bitcoin docs](https://docs.fbtc.com/)",
+                    content:
+                        "Aspects related to minting & burning, key management, transaction signing, and proof-of-reserves have not been reviewed. We are currently reviewing these sections.",
                 },
             ],
+        },
+    ],
+    assessment: [
+        {
+            category: AssessmentCategory.AssetCustody,
+            score: 0,
+            tier: "",
+            title: "Users trust an MPC set between Ignition and Cobo to secure funds backing mBTC.",
+            content:
+                "An MPC set up between Ignition and Cobo secures the BTC backing mBTC. Cobo is an institutional custodian provider. Users trust Ignition's claims in their documentation are being executed in practice.\n\n[Source](https://medium.com/@IgnitionFBTC/fbtc-announces-plans-to-launch-to-help-liberate-the-growth-power-of-btc-8a5957406b81)",
         },
     ],
 };
