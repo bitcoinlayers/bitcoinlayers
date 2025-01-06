@@ -93,7 +93,7 @@ const pump: InfrastructureProject = {
             tier: "",
             title: "PumpBTC works with custodians to store bitcoin assets",
             content:
-                "PumpBTC works with custodial providers to store the BTC that matches PumpBTC deposits. When a user deposits a BTC derivative token into the PumpBTC contract, they are given PumpBTC in return.\n\nCobo and Coinover have been mentioned as operators participating in Pump.\n\nUsers trust Pump's claims in their documentation are being executed in practice.[Source](https://pumpbtc.gitbook.io/pumpbtc/custody-and-security/how-does-pumpbtc-ensure-safety)",
+                "PumpBTC works with custodial providers to store the BTC that matches PumpBTC deposits. When a user deposits a BTC derivative token into the PumpBTC contract, they are given PumpBTC in return.\n\nCobo and Coinover have been mentioned as operators participating in Pump.\n\nUsers trust Pump's claims in their documentation are being executed in practice.\n\n[Source](https://pumpbtc.gitbook.io/pumpbtc/custody-and-security/how-does-pumpbtc-ensure-safety)",
         },
     ],
 };
