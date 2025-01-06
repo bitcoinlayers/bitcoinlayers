@@ -21,8 +21,9 @@ export default function ChartSwitch() {
             useDataHook: getHistoricalSuppliesByNetwork,
         },
         wrappers: {
-            title: "BTC supply in wrappers",
-            description: "Total BTC supply locked in various pegs",
+            title: "BTC supply on layers",
+            description:
+                "Total BTC supply supporting L2s, sidechains, alternative L1s, and more",
             chartQueryParam: "bridge-chart",
             rangeQueryParam: "bridge-range",
             useDataHook: getHistoricalSuppliesByTokenProject,
