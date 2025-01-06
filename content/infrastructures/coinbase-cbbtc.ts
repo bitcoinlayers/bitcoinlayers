@@ -72,7 +72,7 @@ const cbbtc: InfrastructureProject = {
     ],
     assessment: [
         {
-            category: AssessmentCategory.Reputation,
+            category: AssessmentCategory.AssetCustody,
             score: 0,
             tier: "",
             title: "Users trust Coinbase with managing the BTC backing cbBTC",
