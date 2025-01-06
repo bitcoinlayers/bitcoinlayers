@@ -4,7 +4,6 @@ import {
     Type,
     LiveStatus,
     EntityType,
-    Site,
 } from "../props";
 
 const stackssbtc: InfrastructureProject = {
