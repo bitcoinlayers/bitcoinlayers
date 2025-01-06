@@ -50,6 +50,26 @@
         -ms-overflow-style: none; /* IE and Edge */
         scrollbar-width: none; /* Firefox */
     }
+
+    .legend-scrollbar::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    }
+
+    .legend-scrollbar::-webkit-scrollbar-thumb {
+        background-color: hsl(var(--muted-foreground));
+        border-radius: 8px;
+        border: 2px solid hsl(var(--background));
+    }
+
+    .legend-scrollbar::-webkit-scrollbar-thumb:hover {
+        background-color: hsl(var(--primary));
+    }
+
+    .legend-scrollbar::-webkit-scrollbar-track {
+        background: hsl(var(--background));
+        border-radius: 8px;
+    }
 }
 
 section {
@@ -142,6 +162,7 @@ section {
         --chart-base: 221 100% 50%;
         --chart-arbitrum: 215 37% 20%;
         --chart-bnbsmartchain: 46 91% 49%;
+        --chart-bnb-smart-chain: 46 91% 49%;
         --chart-solana: 163 83% 50%;
         --chart-optimism: 353 100% 51%;
         --chart-mantle: 0 0% 75%;
@@ -193,6 +214,9 @@ section {
         --chart-corn-btcn: 32 92% 53%;
         --chart-bevm-wbtc: 187 100% 52%;
         --chart-libre-pbtc: 88 50% 63%;
+        --chart-manta-mbtc: 317 72% 66%;
+        /* Staking */
+        --chart-babylon-staked-btc: 27 90% 56%;
     }
 
     .dark {

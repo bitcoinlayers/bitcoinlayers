@@ -1,13 +1,17 @@
 "use client";
 
-import AggregatedTVLChart from "@/components/charts/aggregated-tvl-chart";
-import ViewToggleGroup from "@/components/layer/view-toggle-group-analytics";
-import useGetHistoricalSuppliesByTokenimpl from "@/hooks/get-historical-supplies-by-tokenimpl";
 import { useQueryState } from "nuqs";
+import AggregatedTVLChart from "@/components/charts/aggregated-tvl-chart";
+import getHistoricalSuppliesByTokenimpl from "@/hooks/get-historical-supplies-by-tokenimpl";
+import getHistoricalSuppliesByTokenProject from "@/hooks/get-historical-supplies-by-tokenproject";
+import getHistoricalSuppliesByNetwork from "@/hooks/get-historical-supplies-by-network";
+import ViewToggleGroup from "@/components/layer/view-toggle-group-analytics";
+import getHistoricalSuppliesByStaking from "@/hooks/get-historical-supplies-by-staking";
+import getHistoricalSuppliesByLiquidstaking from "@/hooks/get-historical-supplies-by-liquidstaking";
 
 export default function Analytics() {
     const [view] = useQueryState("view", {
-        defaultValue: "all",
+        defaultValue: "layers",
     });
 
     const chartConfig = {
@@ -15,118 +19,60 @@ export default function Analytics() {
             title: "All Networks",
             description:
                 "Total supply of wrapped bitcoin tokens on various layers",
-            itemNameKey: "network_name",
             chartQueryParam: "layer-chart",
             rangeQueryParam: "layer-range",
-            queryString: "",
+            useDataHook: getHistoricalSuppliesByNetwork,
+            itemNameKey: "network_name",
         },
         wrappers: {
             title: "All Wrapped Tokens",
             description: "Total supply of wrapped bitcoin tokens",
-            itemNameKey: "token_name",
             chartQueryParam: "bridge-chart",
             rangeQueryParam: "bridge-range",
-            queryString: "?token_type=wrapper",
+            useDataHook: getHistoricalSuppliesByTokenProject,
+            itemNameKey: "token_name",
         },
         staking: {
             title: "BTC 'Staking'",
             description:
-                "Total amount of BTC deposited in the BTC 'staking' protocols",
-            itemNameKey: "token_name",
+                "Total amount of BTC deposited in BTC 'staking' protocols",
             chartQueryParam: "staking-chart",
             rangeQueryParam: "staking-range",
-            queryString: "?token_type=staking",
+            useDataHook: getHistoricalSuppliesByStaking,
+            itemNameKey: "token_name",
         },
         liquidstaking: {
             title: "Liquid 'Staking' BTC Tokens",
             description:
                 "Total amount of BTC deposited in liquid 'staking' protocols",
-            itemNameKey: "token_name",
             chartQueryParam: "liquidstaking-chart",
             rangeQueryParam: "liquidstaking-range",
-            queryString: "?token_type=liquid_staking",
+            useDataHook: getHistoricalSuppliesByLiquidstaking,
+            itemNameKey: "token_name",
         },
-        // lending: {
-        //     title: "Lending Protocols",
-        //     description:
-        //         "Total amount of BTC deposited in lending protocols, excluding staking",
-        //     itemNameKey: "token_name",
-        //     chartQueryParam: "lending-chart",
-        //     rangeQueryParam: "lending-range",
-        //     queryString: "?token_type=lending",
-        // },
-        // reserve: {
-        //     title: "Reserve Tokens",
-        //     description: "Total supply of reserve BTC tokens",
-        //     itemNameKey: "token_name",
-        //     chartQueryParam: "reserve-chart",
-        //     rangeQueryParam: "reserve-range",
-        //     queryString: "?token_type=reserve",
-        // },
     };
 
-    const layersData = useGetHistoricalSuppliesByTokenimpl({
-        queryString: chartConfig.layers.queryString,
-    });
+    // Resolve config based on the view
+    const config = chartConfig[view as keyof typeof chartConfig];
 
-    const wrappersData = useGetHistoricalSuppliesByTokenimpl({
-        queryString: chartConfig.wrappers.queryString,
-    });
+    // Use data hook from the selected config
+    const { data, isLoading, error } = config.useDataHook();
 
-    const stakingData = useGetHistoricalSuppliesByTokenimpl({
-        queryString: chartConfig.staking.queryString,
-    });
-
-    const liquidstakingData = useGetHistoricalSuppliesByTokenimpl({
-        queryString: chartConfig.liquidstaking.queryString,
-    });
-
-    // const lendingData = useGetHistoricalSuppliesByTokenimpl({
-    //     queryString: chartConfig.lending.queryString,
-    // });
-
-    // const reserveData = useGetHistoricalSuppliesByTokenimpl({
-    //     queryString: chartConfig.reserve.queryString,
-    // });
-
+    // Render view toggle and chart
     return (
         <div className="mx-auto space-y-8">
             <ViewToggleGroup showAll />
-            {Object.entries(chartConfig).map(([key, config]) => {
-                const data =
-                    key === "layers"
-                        ? layersData.data
-                        : key === "wrappers"
-                          ? wrappersData.data
-                          : key === "staking"
-                            ? stakingData.data
-                            : key === "liquidstaking"
-                              ? liquidstakingData.data
-                              : [];
-
-                //   : key === "lending"
-                //     ? lendingData.data
-                //     : reserveData.data;
-
-                return (
-                    (view === "all" || view === key) && (
-                        <AggregatedTVLChart
-                            key={key}
-                            title={config.title}
-                            description={config.description}
-                            itemNameKey={
-                                config.itemNameKey as
-                                    | "network_name"
-                                    | "token_name"
-                            }
-                            chartQueryParam={config.chartQueryParam}
-                            rangeQueryParam={config.rangeQueryParam}
-                            divisionDefaultValue="separate"
-                            data={data}
-                        />
-                    )
-                );
-            })}
+            <AggregatedTVLChart
+                key={data?.length} // Forces re-render on data changes
+                title={config.title}
+                description={config.description}
+                itemNameKey={config.itemNameKey}
+                chartQueryParam={config.chartQueryParam}
+                rangeQueryParam={config.rangeQueryParam}
+                divisionDefaultValue="separate"
+                data={data}
+                chartHeight="h-64"
+            />
         </div>
     );
 }
