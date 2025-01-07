@@ -5,6 +5,7 @@ import {
     LiveStatus,
     EntityType,
     Site,
+    AssessmentCategory,
 } from "../props";
 
 const alexxbtc: InfrastructureProject = {
@@ -23,17 +24,27 @@ const alexxbtc: InfrastructureProject = {
     associatedLayers: "Stacks, Core Chain",
     bitcoinOnly: false,
     links: [],
-    description: "Under review.",
+    description: "Alex xBTC is a BTC reserve asset that is available across different blockchain environments.",
     sections: [
         {
             id: "selfsubmit",
-            title: "Process to self-submit information",
+            title: "Further sections to be reviewed",
             content: [
                 {
                     content:
-                        "The Bitcoin Layers project prioritizes risk reviews on projects that are in production and accepting users' BTC deposits. Projects on testnet are welcome to submit information about their project. We do not publish risk assessments for projects that are not in production.\n\nHere are the [instructions](https://github.com/bitcoinlayers/bitcoinlayers/blob/main/SELFSUBMIT.md) on self-submitting a project.",
+                        "Aspects related to minting & burning, key management, transaction signing, and proof-of-reserves have not been reviewed. We are currently reviewing these sections.",
                 },
             ],
+        },
+    ],
+    assessment: [
+        {
+            category: AssessmentCategory.AssetCustody,
+            score: 0,
+            tier: "",
+            title: "Users trust Wrapped with the custody of BTC backing xBTC",
+            content:
+                "Users trust Wrapped, a custodian provider, with the custody of BTC backing xBTC. Alex, a DeFi project largely associated with the Stacks ecosystem, acquired Wrapped and has initiated a transition to move xBTC into sBTC.\n\nFunds that are not moved into sBTC are still secured by [Wrapped](https://wrapped.com/).",
         },
     ],
 };

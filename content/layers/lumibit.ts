@@ -48,7 +48,7 @@ const lumibit: LayerProject = {
         },
     ],
     description:
-        "Lumibit is building a sovereign rollup leveraging Scoll's technology stack. Information on the rollup's design is limited, but a private testnet has been released.",
+        "Lumibit is building a sovereign rollup leveraging Scroll's technology stack. Information on the rollup's design is limited, but a private testnet has been released.",
     riskAnalysis: [
         {
             category: RiskCategory.BtcCustody,

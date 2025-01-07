@@ -5,6 +5,7 @@ import {
     LiveStatus,
     EntityType,
     Site,
+    AssessmentCategory
 } from "../props";
 
 const bitlayerwbtc: InfrastructureProject = {
@@ -23,17 +24,27 @@ const bitlayerwbtc: InfrastructureProject = {
     associatedLayers: "Bitlayer",
     bitcoinOnly: false,
     links: [],
-    description: "Under review.",
+    description: "Bitlayer wBTC is the gas token for the Bitlayer sidechain. It is backed by BTC stored in a MPC protocol.",
     sections: [
         {
             id: "selfsubmit",
-            title: "Process to self-submit information",
+            title: "Further sections to be reviewed",
             content: [
                 {
                     content:
-                        "The Bitcoin Layers project prioritizes risk reviews on projects that are in production and accepting users' BTC deposits. Projects on testnet are welcome to submit information about their project. We do not publish risk assessments for projects that are not in production.\n\nHere are the [instructions](https://github.com/bitcoinlayers/bitcoinlayers/blob/main/SELFSUBMIT.md) on self-submitting a project.",
+                        "Aspects related to minting & burning, key management, transaction signing, and proof-of-reserves have not been reviewed. We are currently reviewing these sections.",
                 },
             ],
+        },
+    ],
+    assessment: [
+        {
+            category: AssessmentCategory.AssetCustody,
+            score: 0,
+            tier: "",
+            title: "Users trust a federation of signers with the custody of BTC backing wBTC",
+            content:
+                "Bitlayer's current BTC bridge is a federated two-way peg with institutional signers. Bitlayer is working with multiple MPC custody platforms.\n\nUsers do not custody bitcoin assets backing tokens on Bitlayer.\n\nUsers trust Bitlayer's claims in their documentation are being executed in practice.\n\n[Source](https://docs.bitlayer.org/docs/Learn/BitlayerNetwork/Bridges) ",
         },
     ],
 };

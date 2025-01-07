@@ -36,7 +36,7 @@ const molecule: LayerProject = {
         },
     ],
     description:
-        "Molecule is a proposed Layer 2 design that will leverage the Solana virtal machine. They have recently announced the project, with information on the design expected to be coming soon. Little information is available on how it inherits Bitcoin security.",
+        "Molecule is a proposed Layer 2 design that will leverage the Solana virtual machine. They have recently announced the project, with information on the design expected to be coming soon. Little information is available on how it inherits Bitcoin security.",
     riskAnalysis: [
         {
             category: RiskCategory.BtcCustody,

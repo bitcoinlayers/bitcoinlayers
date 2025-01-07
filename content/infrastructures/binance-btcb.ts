@@ -70,7 +70,7 @@ const binancebtcb: InfrastructureProject = {
     ],
     assessment: [
         {
-            category: AssessmentCategory.Reputation,
+            category: AssessmentCategory.AssetCustody,
             score: 0,
             tier: "",
             title: "Users trust Binance with managing the BTC backing BTCB",

@@ -46,7 +46,7 @@ const tbtc: InfrastructureProject = {
         },
     ],
     description:
-        "tBTC is a wrapped version of BTC that lives as an ERC-20 token on EVM-based blockchains. Its accounting ledger is Ethereum. The BTC backing tBTC is secured by a distributed signer set and staking mechanism.",
+        "tBTC is a BTC-backed reserve asset that lives as an ERC-20 token on EVM-based blockchains. Its accounting ledger is Ethereum. The BTC backing tBTC is secured by a distributed signer set and staking mechanism.",
     sections: [
         {
             id: "additionalconsiderations",
@@ -115,7 +115,7 @@ const tbtc: InfrastructureProject = {
     ],
     assessment: [
         {
-            category: AssessmentCategory.Reputation,
+            category: AssessmentCategory.AssetCustody,
             score: 0,
             tier: "",
             title: "Users trust permissioned entities with the custody of their BTC. tBTC Beta Stakers must apply to Threshold DAO for signing privileges",

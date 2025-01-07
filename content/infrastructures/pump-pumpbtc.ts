@@ -70,7 +70,7 @@ const pump: InfrastructureProject = {
             content: [
                 {
                     content:
-                        "Aspects related to BTC custody, key management, transaction signing, and redemptions have not been reviewed. We are currently reviewing these sections.",
+                        "Aspects related to minting & burning, key management, transaction signing, and proof-of-reserves have not been reviewed. We are currently reviewing these sections.",
                 },
             ],
         },
@@ -93,7 +93,7 @@ const pump: InfrastructureProject = {
             tier: "",
             title: "PumpBTC works with custodians to store bitcoin assets",
             content:
-                "PumpBTC works with custodial providers to store the BTC that matches PumpBTC deposits. When a user deposits a wrapped bitcoin token into the PumpBTC contract, they are given PumpBTC in return.\n\nAfter receiving the deposit, an operator (likely one of the custodians) of the contract then manually exchanges wrapped bitcoin for native bitcoin to deposit onto Babylon.\n\nCobo and Coinover have been mentioned as operators participating in Pump.",
+                "PumpBTC works with custodial providers to store the BTC that matches PumpBTC deposits. When a user deposits a BTC derivative token into the PumpBTC contract, they are given PumpBTC in return.\n\nCobo and Coinover have been mentioned as operators participating in Pump.\n\nUsers trust Pump's claims in their documentation are being executed in practice.\n\n[Source](https://pumpbtc.gitbook.io/pumpbtc/custody-and-security/how-does-pumpbtc-ensure-safety)",
         },
     ],
 };

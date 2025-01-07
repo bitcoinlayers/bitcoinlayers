@@ -48,7 +48,7 @@ const hemi: LayerProject = {
         },
     ],
     description:
-        "Hemi is a blockchain that is building compatability with bitcoin and Ethereum. It is currently live on testnet.",
+        "Hemi is a blockchain that is building compatibility with bitcoin and Ethereum. It is currently live on testnet.",
     riskAnalysis: [
         {
             category: RiskCategory.BtcCustody,

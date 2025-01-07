@@ -5,6 +5,7 @@ import {
     LiveStatus,
     EntityType,
     Site,
+    AssessmentCategory,
 } from "../props";
 
 const kbtc: InfrastructureProject = {
@@ -44,7 +45,7 @@ const kbtc: InfrastructureProject = {
             url: "https://x.com/krakenfx",
         },
     ],
-    description: "Under Review",
+    description: "Kraken kBTC is a BTC-backed reserve asset that can be used on Ethereum or Optimism",
     sections: [
         {
             id: "contracts",
@@ -58,13 +59,23 @@ const kbtc: InfrastructureProject = {
         },
         {
             id: "selfsubmit",
-            title: "Process to self-submit information",
+            title: "Further sections to be reviewed",
             content: [
                 {
                     content:
-                        "The Bitcoin Layers project prioritizes risk reviews on projects that are in production and accepting users' BTC deposits. Projects on testnet are welcome to submit information about their project. We do not publish risk assessments for projects that are not in production.\n\nHere are the [instructions](https://github.com/bitcoinlayers/bitcoinlayers/blob/main/SELFSUBMIT.md) on self-submitting a project.",
+                        "Aspects related to minting & burning, key management, transaction signing, and proof-of-reserves have not been reviewed. We are currently reviewing these sections.",
                 },
             ],
+        },
+    ],
+    assessment: [
+        {
+            category: AssessmentCategory.AssetCustody,
+            score: 0,
+            tier: "",
+            title: "Users trust Kraken to secure funds backing kBTC",
+            content:
+                "Kraken, a centralized custodian, secures the BTC backing kBTC. The funds backing kBTC are held at Kraken Financial, a Wyoming-chartered SPDI (Special Purpose Depository Institution).\n\nUsers trust Kraken to implement secure custody practices for kBTC reserve assets.",
         },
     ],
 };

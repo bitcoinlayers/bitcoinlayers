@@ -51,7 +51,7 @@ const glossaryData: GlossaryData = {
         {
             term: "Atomic swap",
             definition:
-                "An exchange of crypto assets that does not require a trusted third party. Atomic swaps leverage smart contracts to ensure both parties fulfill transaction obligations before the swap is completed, otherwise, the transaction is canceled, and funds are returned to their respective owners. Atomicity refers to guarantee of a single, individible outcome, i.e., one token transfer cannot execute without its counterparty transfer also executing. In the context of Bitcoin, atomic swaps enable the seamless exchange of BTC with other cryptocurrencies in a secure and decentralized manner.",
+                "An exchange of crypto assets that does not require a trusted third party. Atomic swaps leverage smart contracts to ensure both parties fulfill transaction obligations before the swap is completed, otherwise, the transaction is canceled, and funds are returned to their respective owners. Atomicity refers to guarantee of a single, indivisible outcome, i.e., one token transfer cannot execute without its counterparty transfer also executing. In the context of Bitcoin, atomic swaps enable the seamless exchange of BTC with other cryptocurrencies in a secure and decentralized manner.",
         },
     ],
     B: [
@@ -141,7 +141,7 @@ const glossaryData: GlossaryData = {
         {
             term: "Fraud proof",
             definition:
-                "A cryptographic proof that enables challengers to contest a proposed state transition that contains invalid or fraudulent transactions. Networks that use fraud proofs (e.g., optmistic rollups or optimiums) initially assume that new blocks are valid, then rely on users or watchtowers to challenge blocks if they include invalid state transitions, which are then resolved on the L1.",
+                "A cryptographic proof that enables challengers to contest a proposed state transition that contains invalid or fraudulent transactions. Networks that use fraud proofs (e.g., optimistic rollups or optimiums) initially assume that new blocks are valid, then rely on users or watchtowers to challenge blocks if they include invalid state transitions, which are then resolved on the L1.",
         },
         {
             term: "Full node",
@@ -171,7 +171,7 @@ const glossaryData: GlossaryData = {
         {
             term: "Maximal Extractable Value (MEV)",
             definition:
-                "The maximum value block producers (miners or validators) can obtain by including, reordering, or excluding transactions when producing a new block. MEV is also known as miner extractable value in PoW systems. Nearly all consensus systems create, for short periods of time, privileged actors (e.g., the miner with the right to produce the next block) which have asymmetric knowledge or control over transactions; for sophisitacted actors, this asymmetric position allows them to make financial gains at the expense of other users. Less-sophisticated block producers will have trouble capitalizing on MEV opportunities and could be priced out of the role over time if margins are thin, leading to centralization.",
+                "The maximum value block producers (miners or validators) can obtain by including, reordering, or excluding transactions when producing a new block. MEV is also known as miner extractable value in PoW systems. Nearly all consensus systems create, for short periods of time, privileged actors (e.g., the miner with the right to produce the next block) which have asymmetric knowledge or control over transactions; for sophisticated actors, this asymmetric position allows them to make financial gains at the expense of other users. Less-sophisticated block producers will have trouble capitalizing on MEV opportunities and could be priced out of the role over time if margins are thin, leading to centralization.",
         },
         {
             term: "Merge mining",

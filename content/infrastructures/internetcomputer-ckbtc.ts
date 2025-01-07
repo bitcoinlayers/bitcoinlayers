@@ -5,6 +5,7 @@ import {
     LiveStatus,
     EntityType,
     Site,
+    AssessmentCategory,
 } from "../props";
 
 const icpckbtc: InfrastructureProject = {
@@ -23,17 +24,27 @@ const icpckbtc: InfrastructureProject = {
     associatedLayers: "Internet Computer",
     bitcoinOnly: false,
     links: [],
-    description: "Under review.",
+    description: "ckBTC is a BTC-backed reserve asset that can be leveraged on the ICP network.",
     sections: [
         {
             id: "selfsubmit",
-            title: "Process to self-submit information",
+            title: "Further sections to be reviewed",
             content: [
                 {
                     content:
-                        "The Bitcoin Layers project prioritizes risk reviews on projects that are in production and accepting users' BTC deposits. Projects on testnet are welcome to submit information about their project. We do not publish risk assessments for projects that are not in production.\n\nHere are the [instructions](https://github.com/bitcoinlayers/bitcoinlayers/blob/main/SELFSUBMIT.md) on self-submitting a project.",
+                        "Aspects related to minting & burning, key management, transaction signing, and proof-of-reserves have not been reviewed. We are currently reviewing these sections.",
                 },
             ],
+        },
+    ],
+    assessment: [
+        {
+            category: AssessmentCategory.AssetCustody,
+            score: 0,
+            tier: "",
+            title: "Funds are secured by signer set selected by ICP consensus",
+            content:
+                "Users who deposit funds into ckBTC trust a set of operators, who are elected via ICP governance, with the custody of their bitcoin. The operators of the ‘pzp6e…’ subnet manage the “ckBTC” smart contract module, which is responsible for minting, securing and burning bitcoin-backed tokens on the ICP sidechain.\n\nThis smart contract is a part of a subnet with 34 node operators. These operators have undergone a KYB process to ICP governance and are publicly known."
         },
     ],
 };

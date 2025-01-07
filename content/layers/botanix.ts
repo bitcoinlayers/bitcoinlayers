@@ -98,7 +98,7 @@ const botanix: LayerProject = {
                 {
                     title: "Bitcoin Staking",
                     content:
-                        "Botanix will be implement a version of Bitcoin staking to secure the network. Presumably, any Bitcoin holder with sufficient capital could paricipate in staking on Botanix and earn rewards for securing the network.",
+                        "Botanix will be implement a version of Bitcoin staking to secure the network. Presumably, any Bitcoin holder with sufficient capital could participate in staking on Botanix and earn rewards for securing the network.",
                 },
             ],
         },

@@ -95,7 +95,7 @@ const bouncebit: LayerProject = {
             tier: RiskFactor.Unverified,
             title: "Settlement assurances are provided by BounceBit consensus",
             content:
-                "Settlement assurances are provided by BounceBit’s validator set, not Bitcoin. More than 2/3 of BounceBit’s validators’ voting power is needed to sign a proposed block to finalize it onchain.\n\nBounceBit has single-slot finality, meaning that blocks cannot be re-organized once they are part of the canonical blockchain.\n\nBitcoin can not validate Bouncebit state transitions. Bridge operators can process fraudulent withdrawals and steal user funds.",
+                "Settlement assurances are provided by BounceBit’s validator set, not Bitcoin. More than 2/3 of BounceBit’s validators’ voting power is needed to sign a proposed block to finalize it onchain.\n\nBounceBit has single-slot finality, meaning that blocks cannot be re-organized once they are part of the canonical blockchain.\n\nBitcoin can not validate BounceBit state transitions. Bridge operators can process fraudulent withdrawals and steal user funds.",
         },
     ],
     sections: [
