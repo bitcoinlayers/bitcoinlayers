@@ -24,7 +24,7 @@ const alexxbtc: InfrastructureProject = {
     associatedLayers: "Stacks, Core Chain",
     bitcoinOnly: false,
     links: [],
-    description: "Alex xBTC is a BTC derivative asset that is available across different blockchain environments.",
+    description: "Alex xBTC is a BTC reserve asset that is available across different blockchain environments.",
     sections: [
         {
             id: "selfsubmit",

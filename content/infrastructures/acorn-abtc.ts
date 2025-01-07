@@ -24,7 +24,7 @@ const acorn: InfrastructureProject = {
     associatedLayers: "-",
     bitcoinOnly: false,
     links: [],
-    description: "Acorn aBTC is a derivative asset that looks to live across various EVM chains.",
+    description: "Acorn aBTC is a BTC-backed reserve asset that looks to live across various EVM chains.",
     sections: [
         {
             id: "selfsubmit",
@@ -44,7 +44,7 @@ const acorn: InfrastructureProject = {
             tier: "",
             title: "Users trust operators of a multi-signature wallet with the custody of BTC backing aBTC",
             content:
-                "Users of aBTC reportedly trust a multi-signature wallet to secure the funds backing aBTC. Acorn's documentation mentions that a multi-signature wallet, supported by HSM hardware devices, is responsible for securing funds that back aBTC. Acorn has not disclosed the operators of this wallet.\n\nUsers trust Acorn's claims in their documentation are being executed in practice.\n\n[Source](https://docs.acornnetwork.io/acorn-infrastructure/module-features)",
+                "Users of aBTC reportedly trust a multi-signature wallet to secure the funds backing aBTC. Acorn's documentation mentions that a multi-signature wallet, supported by HSMs, is responsible for securing funds that back aBTC. Acorn has not disclosed the operators of this wallet.\n\nUsers trust Acorn's claims in their documentation are being executed in practice.\n\n[Source](https://docs.acornnetwork.io/acorn-infrastructure/module-features)",
         },
     ],
 };

@@ -24,7 +24,7 @@ const icpckbtc: InfrastructureProject = {
     associatedLayers: "Internet Computer",
     bitcoinOnly: false,
     links: [],
-    description: "ckBTC is a BTC derivative asset that can be leveraged on the ICP network.",
+    description: "ckBTC is a BTC-backed reserve asset that can be leveraged on the ICP network.",
     sections: [
         {
             id: "selfsubmit",

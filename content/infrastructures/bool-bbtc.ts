@@ -46,7 +46,7 @@ const boolbbtc: InfrastructureProject = {
         },
     ],
     description:
-        "Bool Network is an infrastructure provider currently managing a BTC derivative asset, bBTC, for a number of Bitcoin scaling protocols. The Bitcoin wallets it manages are secured by an MPC Protocol.",
+        "Bool Network is an infrastructure provider currently managing a wrapped BTC reserve asset, bBTC, for a number of Bitcoin scaling protocols. The Bitcoin wallets it manages are secured by an MPC Protocol.",
     sections: [
         {
             id: "selfsubmit",
