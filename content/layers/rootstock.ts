@@ -104,7 +104,7 @@ const rootstock: LayerProject = {
             tier: RiskFactor.Medium,
             title: "Finality assurances are provided by Rootstock's consensus mechanism",
             content:
-                "There is no bitcoin enforcement of Rootstock state transitions. Rootsock full nodes accept blocks proposed by Roostock miners.",
+                "There is no bitcoin enforcement of Rootstock state transitions. Rootstock full nodes accept blocks proposed by Rootstock miners.",
         },
     ],
     sections: [
