@@ -5,7 +5,7 @@ import {
     LiveStatus,
     EntityType,
     Site,
-    AssessmentCategory
+    AssessmentCategory,
 } from "../props";
 
 const stackssbtc: InfrastructureProject = {
@@ -44,7 +44,7 @@ const stackssbtc: InfrastructureProject = {
             tier: "",
             title: "Users trust a federation of 15 signers with securing BTC that backs sBTC",
             content:
-                "Stacks sBTC implements a federation of 15, publicly known signers to secure the BTC backing sBTC. These signers are publicly known institutions.\n\nWithdrawals are not currently enabled for sBTC. If withdrawals are not activated, users will not be able to redeem BTC for sBTC.\n\nUsers can find the sBTC signer set [here](https://www.stacks.co/sbtc).",
+                "Stacks sBTC implements a federation of 15 publicly known signers to secure the BTC backing sBTC. These signers are publicly known institutions.\n\nWithdrawals are not currently enabled for sBTC. If withdrawals are not activated, users will not be able to redeem BTC for sBTC.\n\nUsers can find the sBTC signer set [here](https://www.stacks.co/sbtc).",
         },
     ],
 };
