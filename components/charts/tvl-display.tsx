@@ -1,6 +1,6 @@
 "use client";
 
-import useGetCurrentPrices from "@/hooks/use-get-current-prices";
+import getCurrentPrices from "@/hooks/get-current-prices";
 import { formatCurrency } from "@/util/formatCurrency";
 import { useMemo } from "react";
 
@@ -8,16 +8,17 @@ interface Props {
     data:
         | Partial<{
               date: string;
-              amount: number;
+              total_balance: number;
           }>[]
         | undefined;
 }
 
 export default function TVLDisplay({ data }: Props) {
-    const { data: pricesData } = useGetCurrentPrices();
+    const { data: pricesData } = getCurrentPrices();
 
     const totalBTC = useMemo(() => {
         if (!data?.length) return 0;
+
         const latestDate = data.reduce(
             (latest, current) =>
                 latest && current.date && latest > current.date
@@ -27,7 +28,7 @@ export default function TVLDisplay({ data }: Props) {
         );
         return data
             .filter((item) => item.date === latestDate)
-            .reduce((sum, item) => sum + (item.amount || 0), 0);
+            .reduce((sum, item) => sum + (item.total_balance || 0), 0);
     }, [data]);
 
     const btcPriceData = pricesData?.find(

@@ -2,13 +2,13 @@
 
 import { useMemo } from "react";
 import { InfrastructureProject } from "@/content/props";
-import useGetInfratvlCurrentAll from "@/hooks/use-get-infratvl-current-all";
+import getCurrentSuppliesByTokenproject from "@/hooks/get-current-supplies-by-tokenproject";
 
 const Categories: React.FC<{ infrastructure: InfrastructureProject }> = ({
     infrastructure,
 }) => {
-    const { data: balances } = useGetInfratvlCurrentAll({
-        queryString: `?infra_slug=ilike.${infrastructure.slug}`,
+    const { data: balances } = getCurrentSuppliesByTokenproject({
+        queryString: `?token_slug=ilike.${infrastructure.slug}`,
     });
 
     const totaledBalances = useMemo(() => {
@@ -16,13 +16,12 @@ const Categories: React.FC<{ infrastructure: InfrastructureProject }> = ({
 
         return balances.reduce(
             (acc, balance) => {
-                const { infra_slug, total_amount } = balance;
-
-                if (!acc[infra_slug]) {
-                    acc[infra_slug] = { totalAmount: 0 };
+                const normalizedSlug = balance.token_slug.toLowerCase();
+                if (!acc[normalizedSlug]) {
+                    acc[normalizedSlug] = { totalAmount: 0 };
                 }
 
-                acc[infra_slug].totalAmount += total_amount;
+                acc[normalizedSlug].totalAmount += balance.total_balance;
 
                 return acc;
             },

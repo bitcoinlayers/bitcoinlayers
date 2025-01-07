@@ -7,7 +7,6 @@ import TableHeader from "@/components/tables/tableHeader";
 import { isMobile } from "react-device-detect";
 import Link from "next/link";
 import { useQueryState } from "nuqs";
-import useGetLayertvlCurrentAll from "@/hooks/use-get-layertvl-current-all";
 import { LayerProject } from "@/content/props";
 import {
     Card,
@@ -17,7 +16,10 @@ import {
     CardTitle,
 } from "@/components/ui/card";
 import { LayersIcon } from "lucide-react";
-import useGetMappingsRanked, { MappingRanked } from "@/hooks/use-get-mappings";
+import getCurrentSuppliesByTokenimpl, {
+    Snapshot,
+} from "@/hooks/get-current-supplies-by-tokenimpl";
+import getCurrentSuppliesByNetwork from "@/hooks/get-current-supplies-by-network";
 import TokenList from "@/components/tables/mapping-token-img";
 
 type TableTabKey =
@@ -81,11 +83,12 @@ const LayerTable = ({ data, headers }: Props) => {
         defaultValue: "desc",
     });
 
-    const { data: allMappingsRanked, isLoading } = useGetMappingsRanked();
+    const { data: currentSupplies, isLoading } =
+        getCurrentSuppliesByTokenimpl();
 
     const tokensMap = useMemo(() => {
-        if (!allMappingsRanked) return {};
-        return allMappingsRanked.reduce(
+        if (!currentSupplies) return {};
+        return currentSupplies.reduce(
             (acc, token) => {
                 const slug = token.network_slug
                     ? token.network_slug.toLowerCase()
@@ -94,25 +97,22 @@ const LayerTable = ({ data, headers }: Props) => {
                 acc[slug].push(token);
                 return acc;
             },
-            {} as Record<string, MappingRanked[]>,
+            {} as Record<string, Snapshot[]>,
         );
-    }, [allMappingsRanked]);
+    }, [currentSupplies]);
 
-    const { data: balances } = useGetLayertvlCurrentAll();
+    const { data: balances } = getCurrentSuppliesByNetwork();
 
     const totaledBalances = useMemo(() => {
         if (!balances) return {};
 
         return balances.reduce(
             (acc, balance) => {
-                const { layer_slug, total_amount } = balance;
-
-                if (!acc[layer_slug]) {
-                    acc[layer_slug] = { totalAmount: 0 };
+                const key = balance.network_slug.toLowerCase();
+                if (!acc[key]) {
+                    acc[key] = { totalAmount: 0 };
                 }
-
-                acc[layer_slug].totalAmount += total_amount;
-
+                acc[key].totalAmount += balance.total_balance;
                 return acc;
             },
             {} as Record<string, { totalAmount: number }>,

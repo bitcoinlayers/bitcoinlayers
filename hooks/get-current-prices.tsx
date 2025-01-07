@@ -12,16 +12,14 @@ interface Props {
     queryString?: string;
 }
 
-export default function useGetCurrentPrices({ queryString }: Props = {}) {
+export default function getCurrentPrices({ queryString }: Props = {}) {
     const response = useQuery<Price[]>({
         queryKey: [
-            queryString
-                ? `get_current_prices${queryString}`
-                : "get_current_prices",
+            queryString ? `current_prices${queryString}` : "current_prices",
         ],
         queryFn: () => {
             return fetcher(
-                `${process.env.NEXT_PUBLIC_API_URL}/get_current_prices${queryString ?? ""}`,
+                `${process.env.NEXT_PUBLIC_API_URL}/current_prices${queryString ?? ""}`,
             );
         },
     });

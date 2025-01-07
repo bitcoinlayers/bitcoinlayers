@@ -7,7 +7,7 @@ import { isMobile } from "react-device-detect";
 import Link from "next/link";
 import { useQueryState } from "nuqs";
 import { InfrastructureProject, Project, Type } from "@/content/props";
-import useGetInfratvlCurrentAll from "@/hooks/use-get-infratvl-current-all";
+import getCurrentSuppliesByTokenproject from "@/hooks/get-current-supplies-by-tokenproject";
 import AssessmentSnapshotDialog from "../infrastructure/assessment-snapshot/assessment-snapshot-dialog-table";
 import {
     Card,
@@ -23,7 +23,9 @@ import {
     LayersIcon,
 } from "lucide-react";
 import { LiveStatus } from "@/content/props";
-import useGetMappingsRanked, { MappingRanked } from "@/hooks/use-get-mappings";
+import getCurrentSuppliesByTokenimpl, {
+    Snapshot,
+} from "@/hooks/get-current-supplies-by-tokenimpl";
 import NetworkList from "@/components/tables/mapping-network-img";
 
 type TableTabKey = "Snapshot" | "Type" | "Status" | "Networks" | "TVL";
@@ -87,36 +89,36 @@ const FederationTable = ({ data, headers }: Props) => {
         defaultValue: "desc",
     });
 
-    const { data: allMappingsRanked, isLoading } = useGetMappingsRanked();
+    const { data: currentSupplies, isLoading } =
+        getCurrentSuppliesByTokenimpl();
 
     const tokensMap = useMemo(() => {
-        if (!allMappingsRanked) return {};
-        return allMappingsRanked.reduce(
+        if (!currentSupplies) return {};
+        return currentSupplies.reduce(
             (acc, token) => {
-                const slug = token.token_slug.toLowerCase();
+                const slug = token.token_slug
+                    ? token.token_slug.toLowerCase()
+                    : "";
                 if (!acc[slug]) acc[slug] = [];
                 acc[slug].push(token);
                 return acc;
             },
-            {} as Record<string, MappingRanked[]>,
+            {} as Record<string, Snapshot[]>,
         );
-    }, [allMappingsRanked]);
+    }, [currentSupplies]);
 
-    const { data: balances } = useGetInfratvlCurrentAll();
+    const { data: balances } = getCurrentSuppliesByTokenproject();
 
     const totaledBalances = useMemo(() => {
         if (!balances) return {};
 
         return balances.reduce(
             (acc, balance) => {
-                const { infra_slug, total_amount } = balance;
-
-                if (!acc[infra_slug]) {
-                    acc[infra_slug] = { totalAmount: 0 };
+                const key = balance.token_slug.toLowerCase();
+                if (!acc[key]) {
+                    acc[key] = { totalAmount: 0 };
                 }
-
-                acc[infra_slug].totalAmount += total_amount;
-
+                acc[key].totalAmount += balance.total_balance;
                 return acc;
             },
             {} as Record<string, { totalAmount: number }>,

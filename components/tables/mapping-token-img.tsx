@@ -1,9 +1,9 @@
 import React from "react";
-import { MappingRanked } from "@/hooks/use-get-mappings";
+import { Snapshot } from "@/hooks/get-current-supplies-by-tokenimpl";
 import ImageWithFallback from "./image-with-fallback";
 
 interface TokenListProps {
-    tokens: MappingRanked[];
+    tokens: Snapshot[];
 }
 
 const TokenList: React.FC<TokenListProps> = ({ tokens }) => {
