@@ -5,7 +5,7 @@ import {
     LiveStatus,
     EntityType,
     Site,
-    AssessmentCategory
+    AssessmentCategory,
 } from "../props";
 
 const acorn: InfrastructureProject = {
@@ -24,7 +24,8 @@ const acorn: InfrastructureProject = {
     associatedLayers: "-",
     bitcoinOnly: false,
     links: [],
-    description: "Acorn aBTC is a BTC-backed reserve asset that looks to live across various EVM chains.",
+    description:
+        "Acorn aBTC is a BTC-backed reserve asset that looks to live across various EVM chains.",
     sections: [
         {
             id: "selfsubmit",

@@ -68,7 +68,8 @@ const bnbsmartchain: LayerProject = {
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: "Binance custodies the BTC backing BTCB",
-                    content: "BTCB on BNB Smart Chain is backed by Binance. Binance is the single entity responsible for custodying BTC that backs BTCB on BNB Smart Chain.\n\nUsers trust Binance to ensure the funds backing BTCB are not stolen or lost.",
+                    content:
+                        "BTCB on BNB Smart Chain is backed by Binance. Binance is the single entity responsible for custodying BTC that backs BTCB on BNB Smart Chain.\n\nUsers trust Binance to ensure the funds backing BTCB are not stolen or lost.",
                 },
                 {
                     name: "BitGo wBTC",

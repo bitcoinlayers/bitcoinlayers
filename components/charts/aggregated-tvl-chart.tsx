@@ -224,15 +224,26 @@ export default function AggregatedTVLChart({
                             cursor={false}
                             content={
                                 <ChartTooltipContent
-                                    labelFormatter={(value) =>
-                                        formatDate(value, {
-                                            month: "short",
-                                            day: "numeric",
-                                            year: "numeric",
-                                        })
-                                    }
+                                    labelFormatter={(value, payload) => (
+                                        <div className="flex flex-row justify-between">
+                                            <div>
+                                                {new Date(
+                                                    value,
+                                                ).toLocaleDateString("en-US", {
+                                                    month: "short",
+                                                    day: "numeric",
+                                                    year: "numeric",
+                                                    timeZone: "UTC",
+                                                })}
+                                            </div>
+                                            {payload.length > 10 && (
+                                                <div>Top 10</div>
+                                            )}
+                                        </div>
+                                    )}
                                     className="w-60 max-h-64 overflow-y-hidden" //TODO: allow overflow, add scroll bar
                                     sort="desc"
+                                    limit={10}
                                 />
                             }
                         />

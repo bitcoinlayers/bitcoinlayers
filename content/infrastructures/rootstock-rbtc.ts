@@ -5,7 +5,7 @@ import {
     LiveStatus,
     EntityType,
     Site,
-    AssessmentCategory
+    AssessmentCategory,
 } from "../props";
 
 const rootstockrbtc: InfrastructureProject = {
@@ -24,7 +24,8 @@ const rootstockrbtc: InfrastructureProject = {
     associatedLayers: "Rootstock",
     bitcoinOnly: false,
     links: [],
-    description: "RBTC is the gas token for the Rootstock sidechain. It is secured by a federation of nine signers who run specialized HSM hardware environments.",
+    description:
+        "RBTC is the gas token for the Rootstock sidechain. It is secured by a federation of nine signers who run specialized HSM hardware environments.",
     sections: [
         {
             id: "selfsubmit",

@@ -5,7 +5,7 @@ import {
     LiveStatus,
     EntityType,
     Site,
-    AssessmentCategory
+    AssessmentCategory,
 } from "../props";
 
 const solv: InfrastructureProject = {
@@ -45,7 +45,8 @@ const solv: InfrastructureProject = {
             url: "https://x.com/SolvProtocol",
         },
     ],
-    description: "SolvBTC is a BTC-backed reserve asset that is backed by native BTC and various BTC-derivatives. It is deployed across various blockchains.",
+    description:
+        "SolvBTC is a BTC-backed reserve asset that is backed by native BTC and various BTC-derivatives. It is deployed across various blockchains.",
     sections: [
         {
             id: "contracts",

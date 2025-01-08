@@ -21,10 +21,11 @@ const xlinkabtc: InfrastructureProject = {
     riskFactors: ["", ""],
     nativeToken: "-",
     purpose: Purpose.General,
-    associatedLayers: "Stacks", 
+    associatedLayers: "Stacks",
     bitcoinOnly: false,
     links: [],
-    description: "XLink aBTC is a BTC-backed reserve asset that can be used across a number of blockchain environments.",
+    description:
+        "XLink aBTC is a BTC-backed reserve asset that can be used across a number of blockchain environments.",
     sections: [
         {
             id: "selfsubmit",

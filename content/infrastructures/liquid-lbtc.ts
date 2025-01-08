@@ -24,7 +24,8 @@ const liquidlbtc: InfrastructureProject = {
     associatedLayers: "Liquid",
     bitcoinOnly: false,
     links: [],
-    description: "Liquid LBTC is the native token for the Liquid sidechain. The BTC backing LBTC is secured by an 11/15 federation.",
+    description:
+        "Liquid LBTC is the native token for the Liquid sidechain. The BTC backing LBTC is secured by an 11/15 federation.",
     sections: [
         {
             id: "selfsubmit",
