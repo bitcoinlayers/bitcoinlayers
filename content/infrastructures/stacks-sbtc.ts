@@ -25,7 +25,7 @@ const stackssbtc: InfrastructureProject = {
     bitcoinOnly: false,
     links: [],
     description:
-        "Stacks sBTC is a BTC-backed reserve asset that is native to the Stacks blockchain. BTC backing sBTC is secured by an 11/15 federation.",
+        "Stacks sBTC is a BTC-backed reserve asset that is native to the Stacks blockchain. BTC backing sBTC is secured by an 10/14 federation.",
     sections: [
         {
             id: "selfsubmit",
@@ -43,9 +43,9 @@ const stackssbtc: InfrastructureProject = {
             category: AssessmentCategory.AssetCustody,
             score: 0,
             tier: "",
-            title: "Users trust a federation of 15 signers with securing BTC that backs sBTC",
+            title: "Users trust a federation of 14 signers with securing BTC that backs sBTC",
             content:
-                "Stacks sBTC implements a federation of 15 publicly known signers to secure the BTC backing sBTC. These signers are publicly known institutions.\n\nWithdrawals are not currently enabled for sBTC. If withdrawals are not activated, users will not be able to redeem BTC for sBTC.\n\nUsers can find the sBTC signer set [here](https://www.stacks.co/sbtc).",
+                "Stacks sBTC implements a federation of 14 publicly known signers to secure the BTC backing sBTC. These signers are publicly known institutions.\n\nWithdrawals are not currently enabled for sBTC. If withdrawals are not activated, users will not be able to redeem BTC for sBTC.\n\nUsers can find the sBTC signer set [here](https://www.stacks.co/sbtc).",
         },
     ],
 };
