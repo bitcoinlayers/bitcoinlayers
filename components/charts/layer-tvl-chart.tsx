@@ -285,19 +285,26 @@ export default function LayerTVLChart() {
                             cursor={false}
                             content={
                                 <ChartTooltipContent
-                                    labelFormatter={(value) =>
-                                        new Date(value).toLocaleDateString(
-                                            "en-US",
-                                            {
-                                                month: "short",
-                                                day: "numeric",
-                                                year: "numeric",
-                                                timeZone: "UTC",
-                                            },
-                                        )
-                                    }
+                                    labelFormatter={(value, payload) => (
+                                        <div className="flex flex-row justify-between">
+                                            <div>
+                                                {new Date(
+                                                    value,
+                                                ).toLocaleDateString("en-US", {
+                                                    month: "short",
+                                                    day: "numeric",
+                                                    year: "numeric",
+                                                    timeZone: "UTC",
+                                                })}
+                                            </div>
+                                            {payload.length > 10 && (
+                                                <div>Top 10</div>
+                                            )}
+                                        </div>
+                                    )}
                                     className="w-60 max-h-60 overflow-y-hidden"
                                     sort="desc"
+                                    limit={10}
                                 />
                             }
                         />

@@ -5,7 +5,7 @@ import {
     LiveStatus,
     EntityType,
     Site,
-    AssessmentCategory
+    AssessmentCategory,
 } from "../props";
 
 const lorenzo: InfrastructureProject = {

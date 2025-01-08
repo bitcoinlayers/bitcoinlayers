@@ -24,7 +24,8 @@ const stackssbtc: InfrastructureProject = {
     associatedLayers: "Stacks, Aptos",
     bitcoinOnly: false,
     links: [],
-    description: "Stacks sBTC is a BTC-backed reserve asset that is native to the Stacks blockchain. BTC backing sBTC is secured by an 11/15 federation.",
+    description:
+        "Stacks sBTC is a BTC-backed reserve asset that is native to the Stacks blockchain. BTC backing sBTC is secured by an 11/15 federation.",
     sections: [
         {
             id: "selfsubmit",

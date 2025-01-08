@@ -5,7 +5,7 @@ import {
     LiveStatus,
     EntityType,
     Site,
-    AssessmentCategory
+    AssessmentCategory,
 } from "../props";
 
 const bitlayerwbtc: InfrastructureProject = {
@@ -24,7 +24,8 @@ const bitlayerwbtc: InfrastructureProject = {
     associatedLayers: "Bitlayer",
     bitcoinOnly: false,
     links: [],
-    description: "Bitlayer wBTC is the gas token for the Bitlayer sidechain. It is backed by BTC stored in a MPC protocol.",
+    description:
+        "Bitlayer wBTC is the gas token for the Bitlayer sidechain. It is backed by BTC stored in a MPC protocol.",
     sections: [
         {
             id: "selfsubmit",

@@ -5,7 +5,7 @@ import {
     LiveStatus,
     EntityType,
     Site,
-    AssessmentCategory
+    AssessmentCategory,
 } from "../props";
 
 const avalanchebtcb: InfrastructureProject = {
@@ -41,7 +41,8 @@ const avalanchebtcb: InfrastructureProject = {
             url: "https://x.com/avax",
         },
     ],
-    description: "Avalanche BTCb is a BTC-backed reserve asset that primarily supports the Avalanche ecosystem.",
+    description:
+        "Avalanche BTCb is a BTC-backed reserve asset that primarily supports the Avalanche ecosystem.",
     sections: [
         {
             id: "contracts",

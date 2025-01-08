@@ -80,5 +80,4 @@ const binancebtcb: InfrastructureProject = {
     ],
 };
 
-
 export default binancebtcb;

@@ -41,7 +41,8 @@ const unirouter: InfrastructureProject = {
             url: "https://x.com/UniRouterBTC",
         },
     ],
-    description: "uBTC is a liquid staking token that is operated by the UniRouter team. It is live on Bsquared Network.",
+    description:
+        "uBTC is a liquid staking token that is operated by the UniRouter team. It is live on Bsquared Network.",
     sections: [
         {
             id: "contracts",

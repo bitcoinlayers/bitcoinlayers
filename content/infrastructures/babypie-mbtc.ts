@@ -5,7 +5,7 @@ import {
     LiveStatus,
     EntityType,
     Site,
-    AssessmentCategory
+    AssessmentCategory,
 } from "../props";
 
 const babypie: InfrastructureProject = {
@@ -24,7 +24,8 @@ const babypie: InfrastructureProject = {
     associatedLayers: "-",
     bitcoinOnly: false,
     links: [],
-    description: "Babypie mBTC is a BTC reserve asset that can be used across various EVM chains.",
+    description:
+        "Babypie mBTC is a BTC reserve asset that can be used across various EVM chains.",
     sections: [
         {
             id: "selfsubmit",

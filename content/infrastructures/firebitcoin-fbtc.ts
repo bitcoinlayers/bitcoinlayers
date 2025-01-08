@@ -45,7 +45,8 @@ const fire: InfrastructureProject = {
             url: "https://x.com/IgnitionFBTC",
         },
     ],
-    description: "Ignitions's FBTC is a BTC-backed reserve asset that can be used across various EVM chains.",
+    description:
+        "Ignitions's FBTC is a BTC-backed reserve asset that can be used across various EVM chains.",
     sections: [
         {
             id: "selfsubmit",

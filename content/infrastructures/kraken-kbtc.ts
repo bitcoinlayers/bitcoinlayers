@@ -45,7 +45,8 @@ const kbtc: InfrastructureProject = {
             url: "https://x.com/krakenfx",
         },
     ],
-    description: "Kraken kBTC is a BTC-backed reserve asset that can be used on Ethereum or Optimism",
+    description:
+        "Kraken kBTC is a BTC-backed reserve asset that can be used on Ethereum or Optimism",
     sections: [
         {
             id: "contracts",
