@@ -48,10 +48,14 @@ const InfrastructureMenu: React.FC<{
             <div className="flex lg:flex-col justify-start items-start lg:gap-4 gap-2 z-40">
                 {[
                     { id: "overview", title: "Overview" },
+                    { id: "contracts", title: "Contract Addresses" },
                     ...(infrastructure.assessment
                         ? [{ id: "assessment", title: "Assessment" }]
                         : []),
-                    ...infrastructure.sections,
+                    // TODO: Filtering out hard-coded contracts for now
+                    ...infrastructure.sections.filter(
+                        (section) => section.id !== "contracts",
+                    ),
                 ].map((section, index) => (
                     <div
                         key={index}
