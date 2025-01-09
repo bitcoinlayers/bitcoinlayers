@@ -28,28 +28,28 @@ const gnosis: LayerProject = {
     ],
     btcLocked: 0,
     nativeToken: "-",
-    feeToken: "[x]BTC",
+    feeToken: "GNO",
     bitcoinOnly: false,
     links: [
         {
             text: Site.Website,
-            url: "website",
+            url: "https://www.gnosischain.com/",
         },
         {
             text: Site.Docs,
-            url: "docs",
+            url: "https://docs.gnosischain.com/",
         },
         {
             text: Site.Explorer,
-            url: "explorer",
+            url: "https://gnosisscan.io/",
         },
         {
             text: Site.GitHub,
-            url: "github",
+            url: "https://github.com/gnosischain",
         },
         {
             text: Site.Twitter,
-            url: "socials",
+            url: "https://x.com/gnosischain",
         },
     ],
     description: "",

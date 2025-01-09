@@ -28,28 +28,28 @@ const scroll: LayerProject = {
     ],
     btcLocked: 0,
     nativeToken: "-",
-    feeToken: "[x]BTC",
+    feeToken: "SCR",
     bitcoinOnly: false,
     links: [
         {
             text: Site.Website,
-            url: "website",
+            url: "https://scroll.io/",
         },
         {
             text: Site.Docs,
-            url: "docs",
+            url: "https://docs.scroll.io/en/home/",
         },
         {
             text: Site.Explorer,
-            url: "explorer",
+            url: "https://scrollscan.com/",
         },
         {
             text: Site.GitHub,
-            url: "github",
+            url: "https://github.com/scroll-tech",
         },
         {
             text: Site.Twitter,
-            url: "socials",
+            url: "https://x.com/Scroll_ZKP",
         },
     ],
     description: "",

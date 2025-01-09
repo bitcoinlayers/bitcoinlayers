@@ -28,28 +28,28 @@ const zeta: LayerProject = {
     ],
     btcLocked: 0,
     nativeToken: "-",
-    feeToken: "[x]BTC",
+    feeToken: "ZETA",
     bitcoinOnly: false,
     links: [
         {
             text: Site.Website,
-            url: "website",
+            url: "https://www.zetachain.com/",
         },
         {
             text: Site.Docs,
-            url: "docs",
+            url: "https://www.zetachain.com/docs/",
         },
         {
             text: Site.Explorer,
-            url: "explorer",
+            url: "https://explorer.zetachain.com/",
         },
         {
             text: Site.GitHub,
-            url: "github",
+            url: "https://github.com/zeta-chain",
         },
         {
             text: Site.Twitter,
-            url: "socials",
+            url: "https://x.com/zetablockchain",
         },
     ],
     description: "",

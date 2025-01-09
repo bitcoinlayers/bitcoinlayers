@@ -28,28 +28,28 @@ const polygonzkevm: LayerProject = {
     ],
     btcLocked: 0,
     nativeToken: "-",
-    feeToken: "[x]BTC",
+    feeToken: "POL",
     bitcoinOnly: false,
     links: [
         {
             text: Site.Website,
-            url: "website",
+            url: "https://polygon.technology/",
         },
         {
             text: Site.Docs,
-            url: "docs",
+            url: "https://docs.polygon.technology/zkEVM/",
         },
         {
             text: Site.Explorer,
-            url: "explorer",
+            url: "https://zkevm.polygonscan.com/",
         },
         {
             text: Site.GitHub,
-            url: "github",
+            url: "https://github.com/0xpolygonhermez",
         },
         {
             text: Site.Twitter,
-            url: "socials",
+            url: "https://x.com/0xPolygon",
         },
     ],
     description: "",

@@ -28,28 +28,28 @@ const tron: LayerProject = {
     ],
     btcLocked: 0,
     nativeToken: "-",
-    feeToken: "[x]BTC",
+    feeToken: "TRX",
     bitcoinOnly: false,
     links: [
         {
             text: Site.Website,
-            url: "website",
+            url: "https://trondao.org/",
         },
         {
             text: Site.Docs,
-            url: "docs",
+            url: "https://developers.tron.network/",
         },
         {
             text: Site.Explorer,
-            url: "explorer",
+            url: "https://tronscan.org/#/",
         },
         {
             text: Site.GitHub,
-            url: "github",
+            url: "https://github.com/tronprotocol",
         },
         {
             text: Site.Twitter,
-            url: "socials",
+            url: "https://x.com/trondao",
         },
     ],
     description: "",

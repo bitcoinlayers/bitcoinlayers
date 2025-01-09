@@ -28,28 +28,28 @@ const zksync: LayerProject = {
     ],
     btcLocked: 0,
     nativeToken: "-",
-    feeToken: "[x]BTC",
+    feeToken: "ZK",
     bitcoinOnly: false,
     links: [
         {
             text: Site.Website,
-            url: "website",
+            url: "https://zksync.io/",
         },
         {
             text: Site.Docs,
-            url: "docs",
+            url: "https://docs.zksync.io/",
         },
         {
             text: Site.Explorer,
-            url: "explorer",
+            url: "https://explorer.zksync.io/",
         },
         {
             text: Site.GitHub,
-            url: "github",
+            url: "https://github.com/matter-labs",
         },
         {
             text: Site.Twitter,
-            url: "socials",
+            url: "https://x.com/zksync",
         },
     ],
     description: "",

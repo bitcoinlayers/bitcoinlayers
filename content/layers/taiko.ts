@@ -28,28 +28,28 @@ const taiko: LayerProject = {
     ],
     btcLocked: 0,
     nativeToken: "-",
-    feeToken: "[x]BTC",
+    feeToken: "TAIKO",
     bitcoinOnly: false,
     links: [
         {
             text: Site.Website,
-            url: "website",
+            url: "https://taiko.xyz/",
         },
         {
             text: Site.Docs,
-            url: "docs",
+            url: "https://docs.taiko.xyz/start-here/getting-started",
         },
         {
             text: Site.Explorer,
-            url: "explorer",
+            url: "https://taikoscan.io/",
         },
         {
             text: Site.GitHub,
-            url: "github",
+            url: "https://github.com/taikoxyz",
         },
         {
             text: Site.Twitter,
-            url: "socials",
+            url: "https://x.com/taikoxyz",
         },
     ],
     description: "",

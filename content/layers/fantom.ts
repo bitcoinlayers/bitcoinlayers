@@ -28,28 +28,28 @@ const fantom: LayerProject = {
     ],
     btcLocked: 0,
     nativeToken: "-",
-    feeToken: "[x]BTC",
+    feeToken: "FTM",
     bitcoinOnly: false,
     links: [
         {
             text: Site.Website,
-            url: "website",
+            url: "https://www.soniclabs.com/",
         },
         {
             text: Site.Docs,
-            url: "docs",
+            url: "https://docs.soniclabs.com/",
         },
         {
             text: Site.Explorer,
-            url: "explorer",
+            url: "https://sonicscan.org/",
         },
         {
             text: Site.GitHub,
-            url: "github",
+            url: "https://github.com/Fantom-foundation",
         },
         {
             text: Site.Twitter,
-            url: "socials",
+            url: "https://x.com/FantomFDN",
         },
     ],
     description: "",
