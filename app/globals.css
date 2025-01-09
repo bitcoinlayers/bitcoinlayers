@@ -199,6 +199,8 @@ section {
         --chart-solv-solvbtc: 263 99% 65%;
         --chart-solv-solvbtcb: 220 99% 65%;
         --chart-solv-solvbtcm: 180 99% 65%;
+        --chart-solv-solvbtccore: 262 15% 72%;
+        --chart-solv-solvbtcjup: 163 83% 50%;
         --chart-coinbase-cbbtc: 221 100% 52%;
         --chart-kraken-kbtc: 257 83% 60%;
         --chart-threshold-tbtc: 286 99% 56%;
