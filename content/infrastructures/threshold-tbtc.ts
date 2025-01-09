@@ -60,16 +60,6 @@ const tbtc: InfrastructureProject = {
             ],
         },
         {
-            id: "contracts",
-            title: "Contract addresses",
-            content: [
-                {
-                    content:
-                        "The relevant smart contracts for tBTC are linked below:\n\n[tBTC Ethereum smart contract](https://etherscan.io/address/0x18084fbA666a33d37592fA2633fD49a74DD93a88)\n\n[tBTC Base smart contract](https://basescan.org/token/0x236aa50979d5f3de3bd1eeb40e81137f22ab794b)\n\n[tBTC BOB smart contract](https://explorer.gobob.xyz/token/0xBBa2eF945D523C4e2608C9E1214C2Cc64D4fc2e2)\n\n[tBTC Polygon smart contract](https://polygonscan.com/token/0x236aa50979d5f3de3bd1eeb40e81137f22ab794b)\n\n[tBTC Solana smart contract](https://explorer.solana.com/address/6DNSN2BJsaPFdFFc1zP37kkeNe4Usc1Sqkzr9C9vPWcU)\n\n[tBTC Optimism smart contract](https://optimistic.etherscan.io/token/0x6c84a8f1c29108f47a79964b5fe888d4f4d0de40)\n\n[tBTC Arbitrum smart contract](https://arbiscan.io/token/0x6c84a8f1c29108f47a79964b5fe888d4f4d0de40)",
-                },
-            ],
-        },
-        {
             id: "technology",
             title: "Technology",
             content: [

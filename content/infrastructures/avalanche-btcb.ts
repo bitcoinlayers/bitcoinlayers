@@ -45,16 +45,6 @@ const avalanchebtcb: InfrastructureProject = {
         "Avalanche BTCb is a BTC-backed reserve asset that primarily supports the Avalanche ecosystem.",
     sections: [
         {
-            id: "contracts",
-            title: "Contract addresses",
-            content: [
-                {
-                    content:
-                        "[BTC.b Avalanche smart contract](https://subnets.avax.network/c-chain/token/0x152b9d0FdC40C096757F570A51E494bd4b943E50)\n[BTC.b Arbitrum smart contract](https://arbiscan.io/token/0x2297aebd383787a160dd0d9f71508148769342e3)\n[BTC.b Core smart contract](https://scan.coredao.org/token/0x7a6888c85edba8e38f6c7e0485212da602761c08)",
-                },
-            ],
-        },
-        {
             id: "selfsubmit",
             title: "Further sections to be reviewed",
             content: [
