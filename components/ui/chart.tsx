@@ -219,7 +219,7 @@ const ChartTooltipContent = React.forwardRef<
                 )}
             >
                 {!nestLabel ? tooltipLabel : null}
-                <div className="grid gap-1.5 !overflow-y-scroll !overscroll-none">
+                <div className="grid gap-1.5">
                     {payload
                         .sort(sortFunction)
                         .slice(0, limit)
