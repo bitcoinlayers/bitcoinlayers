@@ -5,6 +5,7 @@ import {
     LiveStatus,
     EntityType,
     Site,
+    AssessmentCategory,
 } from "../props";
 
 const obeliskobtc: InfrastructureProject = {
@@ -23,17 +24,27 @@ const obeliskobtc: InfrastructureProject = {
     associatedLayers: "Core",
     bitcoinOnly: false,
     links: [],
-    description: "Under review.",
+    description: "Obelisk oBTC is a reserve asset that is live on various EVM-compatible networks.",
     sections: [
         {
             id: "selfsubmit",
-            title: "Process to self-submit information",
+            title: "Further sections to be reviewed",
             content: [
                 {
                     content:
-                        "The Bitcoin Layers project prioritizes risk reviews on projects that are in production and accepting users' BTC deposits. Projects on testnet are welcome to submit information about their project. We do not publish risk assessments for projects that are not in production.\n\nHere are the [instructions](https://github.com/bitcoinlayers/bitcoinlayers/blob/main/SELFSUBMIT.md) on self-submitting a project.",
+                        "Aspects related to minting & burning, key management, transaction signing, and proof-of-reserves have not been reviewed. We are currently reviewing these sections.",
                 },
             ],
+        },
+    ],
+    assessment: [
+        {
+            category: AssessmentCategory.AssetCustody,
+            score: 0,
+            tier: "",
+            title: "Users trust a federation of signers with the custody of BTC backing wBTC",
+            content:
+                "Obelisk's documentation claims that users deposit BTC into an MPC scheme to mint oBTC on a respective destination chain.\n\nUsers trust Obelisk's claims in their documentation are being executed in practice.\n\n[Source](https://docs-obelisk.nodedao.com/obtc-asset/how-to-mint-obtc-on-obelisk) ",
         },
     ],
 };
