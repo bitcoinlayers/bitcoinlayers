@@ -73,7 +73,7 @@ export default function ProjectContractAddresses({ slug, isLayer }: Props) {
     const [isOpen, setIsOpen] = useState(false);
 
     const { data, isLoading, error } = useQuery({
-        queryKey: ["contract-addresses"],
+        queryKey: [`contract-addresses-${slug}`],
         queryFn: () =>
             fetcher(
                 `${process.env.NEXT_PUBLIC_API_URL}/current_supplies_by_tokenimpl?${isLayer ? `network_slug=ilike.${slug}` : `token_slug=ilike.${slug}`}`,
