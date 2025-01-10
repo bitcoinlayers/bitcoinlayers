@@ -48,7 +48,12 @@ const AddressItem = ({
         </div>
         <div className="!text-foreground flex flex-wrap text-wrap break-all">
             <Link
-                href={`${item.explorer}${item.token_address}`}
+                href={`${item.explorer}${item.token_address}${
+                    item.token_slug === "Alex-xBTC" ||
+                    item.token_slug === "xLink-aBTC"
+                        ? "?chain=mainnet"
+                        : ""
+                }`}
                 target="_blank"
                 className="flex items-center gap-1 hover:underline"
             >
@@ -79,6 +84,8 @@ export default function ProjectContractAddresses({ slug, isLayer }: Props) {
 
     const initialItems = data.slice(0, 3);
     const collapsibleItems = data.slice(3);
+
+    console.log(data);
 
     return (
         <section
