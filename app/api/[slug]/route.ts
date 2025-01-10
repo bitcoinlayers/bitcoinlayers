@@ -3,9 +3,9 @@ import { allInfrastructures } from "../../../util/infrastructure_index";
 
 export async function GET(
     request: Request,
-    { params }: { params: { slug: string } },
-) {
-    const { slug } = params;
+    { params }: { params: Promise<{ slug: string }> },
+): Promise<Response> {
+    const { slug } = await params;
 
     if (!slug) {
         return new Response(
