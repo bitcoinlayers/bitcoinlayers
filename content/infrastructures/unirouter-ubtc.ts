@@ -45,16 +45,6 @@ const unirouter: InfrastructureProject = {
         "uBTC is a liquid staking token that is operated by the UniRouter team. It is live on Bsquared Network.",
     sections: [
         {
-            id: "contracts",
-            title: "Contract addresses",
-            content: [
-                {
-                    content:
-                        "[uBTC Bsquared smart contract](https://explorer.bsquared.network/address/0x796e4D53067FF374B89b2Ac101ce0c1f72ccaAc2)",
-                },
-            ],
-        },
-        {
             id: "selfsubmit",
             title: "Further sections to be reviewed",
             content: [
