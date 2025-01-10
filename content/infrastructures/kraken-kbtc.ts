@@ -49,16 +49,6 @@ const kbtc: InfrastructureProject = {
         "Kraken kBTC is a BTC-backed reserve asset that can be used on Ethereum or Optimism",
     sections: [
         {
-            id: "contracts",
-            title: "Contract addresses",
-            content: [
-                {
-                    content:
-                        "[kBTC OP Mainnet smart contract](https://optimistic.etherscan.io/token/0x73E0C0d45E048D25Fc26Fa3159b0aA04BfA4Db98)\n\n[kBTC ETH smart contract](https://etherscan.io/token/0x73e0c0d45e048d25fc26fa3159b0aa04bfa4db98)\n\n[BTC custody address](https://mempool.space/address/bc1qqwf6hexnnswmj6yuhz5xyj20frtp8exv7mclck)",
-                },
-            ],
-        },
-        {
             id: "selfsubmit",
             title: "Further sections to be reviewed",
             content: [

@@ -45,12 +45,8 @@ const binancebtcb: InfrastructureProject = {
     sections: [
         {
             id: "contracts",
-            title: "Contract addresses",
+            title: "Supporting contracts & permissions",
             content: [
-                {
-                    content:
-                        "[This is the implementation of the BTCB token contract.](https://bscscan.com/token/0x7130d2a12b9bcbfae4f2634d864a1ee1ce3ead9c)",
-                },
                 {
                     content:
                         "[This is the owner of the BTCB token contract.](https://bscscan.com/address/0xF68a4b64162906efF0fF6aE34E2bB1Cd42FEf62d)",

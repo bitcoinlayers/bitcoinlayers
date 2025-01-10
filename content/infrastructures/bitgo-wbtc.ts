@@ -53,21 +53,6 @@ const wbtc: InfrastructureProject = {
                     content:
                         "Trust assumptions related to wBTC change across each system it is deployed on. For example, the wBTC gateway between Ethereum and Base is managed by a 1/2 multisig. This is a stronger trust assumption when compared to using wBTC on Ethereum. When interacting with wBTC across various chains, users should be aware that there may be additional trust assumptions.\n\n🔬 We are currently researching wBTC trust assumptions across the chains its deployed on.",
                 },
-                {
-                    title: "wBTC provides a proof-of-reserves",
-                    content:
-                        "wBTC provides a list of bitcoin addresses they claim to be a [proof-of-reserves for wBTC](https://wbtc.network/dashboard/audit).",
-                },
-            ],
-        },
-        {
-            id: "contracts",
-            title: "Contract addresses",
-            content: [
-                {
-                    content:
-                        "The relevant smart contracts for wBTC are linked below:\n\n[wBTC Ethereum smart contract](https://etherscan.io/token/0x2260fac5e5542a773aa44fbcfedf7c193bc2c599)\n\n[wBTC Base smart contract](https://basescan.org/address/0x1ceA84203673764244E05693e42E6Ace62bE9BA5)\n\nOther chains, including Tron and Osmosis, [listed here](https://wbtc.network/dashboard/order-book/wbtc),",
-                },
             ],
         },
         {

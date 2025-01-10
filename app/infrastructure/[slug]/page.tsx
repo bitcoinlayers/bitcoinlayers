@@ -10,6 +10,7 @@ import InfrastructureImage from "@/components/infrastructure/infrastructure-imag
 import InfraTVLChart from "@/components/charts/infra-tvl-chart";
 import RiskAnalysis from "@/components/layer/risk-analysis/infra-container";
 import UnderDevelopmentBanner from "@/components/under-development-banner";
+import ProjectContractAddresses from "@/components/project-contract-addresses";
 
 async function getInfrastructureFromSlug(slug: string) {
     const infrastructure = allInfrastructures.find(
@@ -60,6 +61,7 @@ export default async function InfrastructurePage(props: {
                             infrastructure={infrastructure}
                         />
                         <InfraTVLChart />
+                        <ProjectContractAddresses slug={slug} isLayer={false} />
                         {infrastructure.assessment && (
                             <RiskAnalysis
                                 riskAnalysis={infrastructure.assessment}

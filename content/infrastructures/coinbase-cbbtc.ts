@@ -49,16 +49,6 @@ const cbbtc: InfrastructureProject = {
         "cbBTC is a tokenized form of BTC. It is an ERC-20 token that is available on Ethereum and Base. It is backed 1:1 by BTC. The BTC backing cbBTC is custodied by Coinbase, a centralized custodian. Coinbase also has unilateral control of the token contracts related to cbBTC.",
     sections: [
         {
-            id: "contracts",
-            title: "Contract addresses",
-            content: [
-                {
-                    content:
-                        "The relevant smart contracts for cbBTC are linked below:\n\n[cbBTC Base smart contract](https://basescan.org/token/0xcbb7c0000ab88b473b1f5afd9ef808440eed33bf)\n\n[cbBTC ETH smart contract](https://etherscan.io/token/0xcbb7c0000ab88b473b1f5afd9ef808440eed33bf)",
-                },
-            ],
-        },
-        {
             id: "knowledgeBits",
             title: "Knowledge Bits",
             content: [

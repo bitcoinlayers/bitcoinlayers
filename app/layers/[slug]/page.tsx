@@ -6,6 +6,7 @@ import RiskAnalysis from "@/components/layer/risk-analysis/layer-container";
 import LayerOverview from "@/components/layer/layerOverview";
 import LayerImage from "@/components/layer/layer-image";
 import LayerTVLChart from "@/components/charts/layer-tvl-chart";
+import ProjectContractAddresses from "@/components/project-contract-addresses";
 
 function getLayerFromSlug(slug: string) {
     const layer = allLayers.find((layer) => layer.slug === slug);
@@ -48,6 +49,7 @@ export default async function LayerPage(props: {
                 <div className="lg:w-4/5 flex flex-col">
                     <LayerOverview layer={layer} />
                     <LayerTVLChart />
+                    <ProjectContractAddresses slug={slug} isLayer={true} />
                     {!layer.underReview && (
                         <RiskAnalysis
                             riskAnalysis={layer.riskAnalysis}

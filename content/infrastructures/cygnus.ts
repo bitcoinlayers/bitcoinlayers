@@ -43,16 +43,6 @@ const cygnus: InfrastructureProject = {
     description: "Under Review",
     sections: [
         {
-            id: "contracts",
-            title: "Contract addresses",
-            content: [
-                {
-                    content:
-                        "[Bsquared vault for UniRouter uBTC](https://explorer.bsquared.network/address/0x7551aEa51588AaCe99B89c3FaC3CFc4108DB8094)\n\n[Bsquared vault for Lorenzo stBTC](https://explorer.bsquared.network/address/0x0Ce45dd53affbb011884EF1866E0738f58AB7969)\n\n[Bsquared vault for Bedrock uniBTC](https://explorer.bsquared.network/address/0xBc323bA4bbf2559417C3Ca47A75e2Ea341Cf8320)",
-                },
-            ],
-        },
-        {
             id: "selfsubmit",
             title: "Process to self-submit information",
             content: [

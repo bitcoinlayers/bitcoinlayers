@@ -49,16 +49,6 @@ const solv: InfrastructureProject = {
         "SolvBTC is a BTC-backed reserve asset that is backed by native BTC and various BTC-derivatives. It is deployed across various blockchains.",
     sections: [
         {
-            id: "contracts",
-            title: "Contract addresses",
-            content: [
-                {
-                    content:
-                        "You can find various implementations of SolvBTC [here](https://github.com/solv-finance/SolvBTC/tree/main/deployments).",
-                },
-            ],
-        },
-        {
             id: "selfsubmit",
             title: "Further sections under review",
             content: [
