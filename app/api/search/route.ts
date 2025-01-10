@@ -22,17 +22,36 @@ export async function GET(request: Request) {
         );
     });
 
+    const headers = {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET, OPTIONS",
+    };
+
     if (filteredProjects.length === 0) {
         return new Response(
             JSON.stringify({
                 error: "No projects found matching the criteria",
             }),
-            { status: 404, headers: { "Content-Type": "application/json" } },
+            { status: 404, headers },
         );
     }
 
     return new Response(JSON.stringify(filteredProjects), {
         status: 200,
-        headers: { "Content-Type": "application/json" },
+        headers,
+    });
+}
+
+export async function OPTIONS() {
+    const headers = {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET, OPTIONS",
+        "Access-Control-Allow-Headers": "Content-Type",
+    };
+
+    return new Response(null, {
+        status: 204,
+        headers,
     });
 }
