@@ -61,7 +61,6 @@ export default async function InfrastructurePage(props: {
                             infrastructure={infrastructure}
                         />
                         <InfraTVLChart />
-                        <ProjectContractAddresses slug={slug} isLayer={false} />
                         {infrastructure.assessment && (
                             <RiskAnalysis
                                 riskAnalysis={infrastructure.assessment}
@@ -69,6 +68,7 @@ export default async function InfrastructurePage(props: {
                                 infrastructure={infrastructure}
                             />
                         )}
+                        <ProjectContractAddresses slug={slug} isLayer={false} />
                         <InfrastructureBody infrastructure={infrastructure} />
                     </div>
                 </div>

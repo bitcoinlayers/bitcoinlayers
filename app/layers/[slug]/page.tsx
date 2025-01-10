@@ -49,7 +49,6 @@ export default async function LayerPage(props: {
                 <div className="lg:w-4/5 flex flex-col">
                     <LayerOverview layer={layer} />
                     <LayerTVLChart />
-                    <ProjectContractAddresses slug={slug} isLayer={true} />
                     {!layer.underReview && (
                         <RiskAnalysis
                             riskAnalysis={layer.riskAnalysis}
@@ -58,6 +57,7 @@ export default async function LayerPage(props: {
                         />
                     )}
                     <LayerBody layer={layer} />
+                    <ProjectContractAddresses slug={slug} isLayer={true} />
                 </div>
             </div>
         </article>

@@ -46,13 +46,11 @@ const LayerMenu: React.FC<{ layer: LayerProject }> = ({ layer }) => {
             <div className="flex lg:flex-col justify-start items-start lg:gap-4 gap-2 z-40">
                 {[
                     { id: "overview", title: "Overview" },
-                    { id: "contracts", title: "Contract Addresses" },
                     ...(!layer.underReview
                         ? [{ id: "trust", title: "Trust Assumptions" }]
                         : []),
-                    ...layer.sections.filter(
-                        (section) => section.id !== "contracts",
-                    ),
+                    ...layer.sections,
+                    { id: "tokencontracts", title: "Token Contracts" },
                 ].map((section, index) => (
                     <div
                         key={index}

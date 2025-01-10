@@ -89,12 +89,12 @@ export default function ProjectContractAddresses({ slug, isLayer }: Props) {
 
     return (
         <section
-            id="contracts"
+            id="tokencontracts"
             className="self-stretch lg:px-8 px-4 pt-6 pb-8 mb-6 bg-background rounded-xl border border-border flex-col justify-center items-end gap-4"
         >
             <div className="self-stretch justify-start items-start gap-4">
                 <div className="body_section !text-foreground">
-                    Contract Addresses
+                    Token Contracts
                 </div>
             </div>
 

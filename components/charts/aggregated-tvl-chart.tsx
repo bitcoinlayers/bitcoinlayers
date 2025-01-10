@@ -241,7 +241,7 @@ export default function AggregatedTVLChart({
                                             )}
                                         </div>
                                     )}
-                                    className="w-60 max-h-64 overflow-y-hidden" //TODO: allow overflow, add scroll bar
+                                    className="w-60 max-h-64 overflow-y-hidden"
                                     sort="desc"
                                     limit={10}
                                 />
