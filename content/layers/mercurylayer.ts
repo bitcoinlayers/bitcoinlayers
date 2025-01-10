@@ -21,9 +21,9 @@ const mercurylayer: LayerProject = {
     bridge: false,
     underReview: false,
     riskFactors: [
-        RiskFactor.UnderReview,
         RiskFactor.Low,
-        RiskFactor.Medium,
+        RiskFactor.Low,
+        RiskFactor.High,
         RiskFactor.VeryHigh,
     ],
     btcLocked: NaN,
@@ -62,10 +62,10 @@ const mercurylayer: LayerProject = {
                     name: "Mercury BTC",
                     infrastructureSlug: "mercury-btc",
                     score: 0,
-                    tier: RiskFactor.UnderReview,
+                    tier: RiskFactor.Low,
                     title: "A locked UTXO is collaboratively managed between a trusted server and the statecoin owner, with full L1 UTXO ownership enforceable after a timelock expiry",
                     content:
-                        "the operator and the current statecoin owner. Although the Mercury Layer server acts as a trusted entity, users are safeguarded against potential unresponsiveness by having the ability to unilaterally exit and enforce their UTXO ownership onchain as each transfer is secured by a decrementing timelock mechanism and a series of backup transactions. \n\n⚠️ The statechain entity can collude with the past owner of the UTXO, create a withdrawal transaction and steal the current owner’s funds. However, the statechain entity can only steal from one user at a time; not funds in the entire system. \n\n🔬 A bridge custody score has not been determined for Statechain protocols.",
+                        "the operator and the current statecoin owner. Although the Mercury Layer server acts as a trusted entity, users are safeguarded against potential unresponsiveness by having the ability to unilaterally exit and enforce their UTXO ownership onchain as each transfer is secured by a decrementing timelock mechanism and a series of backup transactions."
                 },
             ],
         },
@@ -80,8 +80,8 @@ const mercurylayer: LayerProject = {
         {
             category: RiskCategory.NetworkOperators,
             score: 0,
-            tier: RiskFactor.Medium,
-            title: "The network operator is a single server. Users can’t be censored individually.",
+            tier: RiskFactor.High,
+            title: "The network operator is a single server",
             content:
                 "The Mercury Layer system employs a statechain entity that generates and updates key shares in addition to offering a blind signing service. Mercury Layer chooses a non-federated (i.e. centralized) setup for their service provider.",
         },
@@ -91,7 +91,7 @@ const mercurylayer: LayerProject = {
             tier: RiskFactor.VeryHigh,
             title: "Transaction settlement does not rely on onchain confirmations. Users are not safeguard against the statechain entity double-spending their coin",
             content:
-                "Offchain finality guarantees in Mercury Layer are provided by the statechain operator deleting their previous keyshare. When a user receives a statecoin, they receive a new keyshare together with the operator’s new keyshare. \n\n⚠️ Users do not have assurance that the statechain operator deleted their previous keyshare with the past owner of the statecoin.",
+                "Offchain finality guarantees in Mercury Layer are provided by the statechain operator deleting their previous keyshare. When a user receives a statecoin, they receive a new keyshare together with the operator’s new keyshare. \n\n⚠️ Users do not have assurance that the statechain operator deleted their previous keyshare with the past owner of the statecoin.\n\nThe statechain entity can collude with the past owner of the UTXO, create a withdrawal transaction and steal the current owner’s funds.",
         },
     ],
     sections: [
