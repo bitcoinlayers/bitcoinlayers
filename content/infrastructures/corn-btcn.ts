@@ -29,7 +29,7 @@ const cornbtcn: InfrastructureProject = {
     sections: [
         {
             id: "contracts",
-            title: "Contract addresses",
+            title: "Supporting contracts & permissions",
             content: [
                 {
                     content:
