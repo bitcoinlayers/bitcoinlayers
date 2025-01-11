@@ -28,7 +28,7 @@ You're welcome to use Bitcoin Layers data. Everything we release is free and ope
 
 We have our own database and data ingestion pipeline. For some projects, we run our own nodes; for others, we leverage RPCs for our calls.
 
-See our data ingestion repo to view
+See our [data ingestion repo](https://github.com/bitcoinlayers/data-ingestion) to view:
 
 1. Scripts used to pull daily supply and reserve data
 2. Database structure, i.e., tables and views
