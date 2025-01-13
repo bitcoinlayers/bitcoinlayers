@@ -14,7 +14,7 @@ import Link from "next/link";
 import ImageWithFallback from "./tables/image-with-fallback";
 
 const truncateAddress = (address: string) => {
-    return `${address.slice(0, 6)}...${address.slice(-4)}`;
+    return ${address.slice(0, 6)}...${address.slice(-4)};
 };
 
 interface Props {
@@ -30,53 +30,69 @@ const AddressItem = ({
     item: any;
     showBorder: boolean;
     isLayer: boolean;
-}) => (
-    <div className={`${showBorder ? "border-b" : ""} py-4`}>
-        <div className="self-stretch justify-between items-center inline-flex">
-            <div className="!text-muted-foreground mb-1 flex items-center">
-                <ImageWithFallback
-                    slug={isLayer ? item.token_slug : item.network_slug}
-                    folder="logos"
-                    altText={isLayer ? item.token_name : item.network_name}
-                    width={20}
-                    height={20}
-                />
-                <p className="ml-2">
-                    {isLayer ? item.token_name : item.network_name}
-                </p>
+}) => {
+    const customUrls: { [key: string]: string } = {
+        "Rootstock-RBTC": "https://explorer.rootstock.io/",
+        "xLink-aBTC":
+            "https://explorer.hiro.so/token/SP2XD7417HGPRTREMKF748VNEQPDRR0RMANB7X1NK.token-abtc?chain=mainnet",
+        "Alex-xBTC":
+            "https://explorer.hiro.so/token/SP3DX3H4FEYZJZ586MFBS25ZW3HZDMEW92260R2PR.Wrapped-Bitcoin?chain=mainnet",
+        "Stacks-sBTC":
+            "https://explorer.hiro.so/token/SM3VDXK3WZZSA84XXFKAFAF15NNZX32CTSG82JFQ4.sbtc-token?chain=mainnet",
+    };
+
+    const url =
+        customUrls[item.token_slug] ?? ${item.explorer}${item.token_address};
+
+    return (
+        <div className={${showBorder ? "border-b" : ""} py-4}>
+            <div className="self-stretch justify-between items-center inline-flex">
+                <div className="!text-muted-foreground mb-1 flex items-center">
+                    <ImageWithFallback
+                        slug={isLayer ? item.token_slug : item.network_slug}
+                        folder="logos"
+                        altText={isLayer ? item.token_name : item.network_name}
+                        width={20}
+                        height={20}
+                    />
+                    <p className="ml-2">
+                        {isLayer ? item.token_name : item.network_name}
+                    </p>
+                </div>
+            </div>
+            <div className="!text-foreground flex flex-wrap text-wrap break-all">
+                <Link
+                    href={url}
+                    target="_blank"
+                    className="flex items-center gap-1 hover:underline"
+                >
+                    {customUrls[item.token_slug] ? (
+                        <span className="pl-7">{url}</span>
+                    ) : (
+                        <>
+                            <span className="sm:hidden pl-7">
+                                {truncateAddress(item.token_address)}
+                            </span>
+                            <span className="hidden sm:inline pl-7">
+                                {item.token_address}
+                            </span>
+                        </>
+                    )}
+                    <ExternalLinkIcon className="h-4 w-4 ml-2" />
+                </Link>
             </div>
         </div>
-        <div className="!text-foreground flex flex-wrap text-wrap break-all">
-            <Link
-                href={`${item.explorer}${item.token_address}${
-                    item.token_slug === "Alex-xBTC" ||
-                    item.token_slug === "xLink-aBTC"
-                        ? "?chain=mainnet"
-                        : ""
-                }`}
-                target="_blank"
-                className="flex items-center gap-1 hover:underline"
-            >
-                <span className="sm:hidden pl-7">
-                    {truncateAddress(item.token_address)}
-                </span>
-                <span className="hidden sm:inline pl-7">
-                    {item.token_address}
-                </span>
-                <ExternalLinkIcon className="h-4 w-4 ml-2" />
-            </Link>
-        </div>
-    </div>
-);
+    );
+};
 
 export default function ProjectContractAddresses({ slug, isLayer }: Props) {
     const [isOpen, setIsOpen] = useState(false);
 
     const { data, isLoading, error } = useQuery({
-        queryKey: [`contract-addresses-${slug}`],
+        queryKey: [contract-addresses-${slug}],
         queryFn: () =>
             fetcher(
-                `${process.env.NEXT_PUBLIC_API_URL}/current_supplies_by_tokenimpl?${isLayer ? `network_slug=ilike.${slug}` : `token_slug=ilike.${slug}`}`,
+                ${process.env.NEXT_PUBLIC_API_URL}/current_supplies_by_tokenimpl?${isLayer ? network_slug=ilike.${slug} : token_slug=ilike.${slug}},
             ),
     });
 
