@@ -26,9 +26,10 @@ export async function GET(request: Request) {
 
         const headers = {
             "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Origin":
+                "https://bitcoinstaking-eight.vercel.app/",
             "Access-Control-Allow-Methods": "GET, OPTIONS",
-            "Access-Control-Allow-Headers": "Content-Type",
+            "Access-Control-Allow-Headers": "Content-Type, Authorization",
         };
 
         if (filteredProjects.length === 0) {
@@ -58,9 +59,10 @@ export async function GET(request: Request) {
 export async function OPTIONS() {
     const headers = {
         "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Origin":
+            "https://bitcoinstaking-eight.vercel.app/",
         "Access-Control-Allow-Methods": "GET, OPTIONS",
-        "Access-Control-Allow-Headers": "Content-Type",
+        "Access-Control-Allow-Headers": "Content-Type, Authorization",
     };
 
     return new Response(null, {
