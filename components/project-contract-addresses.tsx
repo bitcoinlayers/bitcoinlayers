@@ -14,7 +14,7 @@ import Link from "next/link";
 import ImageWithFallback from "./tables/image-with-fallback";
 
 const truncateAddress = (address: string) => {
-    return ${address.slice(0, 6)}...${address.slice(-4)};
+    return `${address.slice(0, 6)}...${address.slice(-4)}`;
 };
 
 interface Props {
@@ -27,25 +27,33 @@ const AddressItem = ({
     showBorder,
     isLayer,
 }: {
-    item: any;
+    item: {
+        token_slug: string;
+        explorer: string;
+        token_address: string;
+        token_name: string;
+        network_slug: string;
+        network_name: string;
+    };
     showBorder: boolean;
     isLayer: boolean;
 }) => {
     const customUrls: { [key: string]: string } = {
-        "Rootstock-RBTC": "https://explorer.rootstock.io/",
-        "xLink-aBTC":
+        "Rootstock-RBTC_Rootstock": "https://explorer.rootstock.io/",
+        "xLink-aBTC_Stacks":
             "https://explorer.hiro.so/token/SP2XD7417HGPRTREMKF748VNEQPDRR0RMANB7X1NK.token-abtc?chain=mainnet",
-        "Alex-xBTC":
+        "Alex-xBTC_Stacks":
             "https://explorer.hiro.so/token/SP3DX3H4FEYZJZ586MFBS25ZW3HZDMEW92260R2PR.Wrapped-Bitcoin?chain=mainnet",
-        "Stacks-sBTC":
+        "Stacks-sBTC_Stacks":
             "https://explorer.hiro.so/token/SM3VDXK3WZZSA84XXFKAFAF15NNZX32CTSG82JFQ4.sbtc-token?chain=mainnet",
     };
 
     const url =
-        customUrls[item.token_slug] ?? ${item.explorer}${item.token_address};
+        customUrls[`${item.token_slug}_${item.network_slug}`] ??
+        `${item.explorer}${item.token_address}`;
 
     return (
-        <div className={${showBorder ? "border-b" : ""} py-4}>
+        <div className={`${showBorder ? "border-b" : ""} py-4`}>
             <div className="self-stretch justify-between items-center inline-flex">
                 <div className="!text-muted-foreground mb-1 flex items-center">
                     <ImageWithFallback
@@ -89,10 +97,10 @@ export default function ProjectContractAddresses({ slug, isLayer }: Props) {
     const [isOpen, setIsOpen] = useState(false);
 
     const { data, isLoading, error } = useQuery({
-        queryKey: [contract-addresses-${slug}],
+        queryKey: [`contract-addresses-${slug}`],
         queryFn: () =>
             fetcher(
-                ${process.env.NEXT_PUBLIC_API_URL}/current_supplies_by_tokenimpl?${isLayer ? network_slug=ilike.${slug} : token_slug=ilike.${slug}},
+                `${process.env.NEXT_PUBLIC_API_URL}/current_supplies_by_tokenimpl?${isLayer ? `network_slug=ilike.${slug}` : `token_slug=ilike.${slug}`}`,
             ),
     });
 
