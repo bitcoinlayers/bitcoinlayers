@@ -30,7 +30,9 @@ export async function GET(request: Request) {
             "https://stakingbitcoin.com",
         ];
 
-        const headers = {
+        const origin = request.headers.get("origin") || ""; // Fallback to an empty string if Origin is null
+
+        const headers: HeadersInit = {
             "Content-Type": "application/json",
             "Access-Control-Allow-Origin": allowedOrigins.includes(origin)
                 ? origin
@@ -58,19 +60,24 @@ export async function GET(request: Request) {
                 error: "Internal server error",
                 details: (error as Error).message,
             }),
-            { status: 500, headers: { "Content-Type": "application/json" } },
+            {
+                status: 500,
+                headers: { "Content-Type": "application/json" },
+            },
         );
     }
 }
 
-export async function OPTIONS() {
+export async function OPTIONS(request: Request) {
     const allowedOrigins = [
         "https://bitcoinstaking-git-read-data-from-bitcoinlayers-bitcoin-layers.vercel.app",
         "https://bitcoinstaking-eight.vercel.app",
         "https://stakingbitcoin.com",
     ];
-    const origin = request.headers.get("origin");
-    const headers = {
+
+    const origin = request.headers.get("origin") || "";
+
+    const headers: HeadersInit = {
         "Content-Type": "application/json",
         "Access-Control-Allow-Origin": allowedOrigins.includes(origin)
             ? origin
