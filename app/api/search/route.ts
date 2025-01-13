@@ -24,10 +24,17 @@ export async function GET(request: Request) {
             );
         });
 
+        const allowedOrigins = [
+            "https://bitcoinstaking-git-read-data-from-bitcoinlayers-bitcoin-layers.vercel.app",
+            "https://bitcoinstaking-eight.vercel.app",
+            "https://stakingbitcoin.com",
+        ];
+
         const headers = {
             "Content-Type": "application/json",
-            "Access-Control-Allow-Origin":
-                "https://bitcoinstaking-git-read-data-from-bitcoinlayers-bitcoin-layers.vercel.app",
+            "Access-Control-Allow-Origin": allowedOrigins.includes(origin)
+                ? origin
+                : "null",
             "Access-Control-Allow-Methods": "GET, OPTIONS",
             "Access-Control-Allow-Headers": "Content-Type, Authorization",
         };
@@ -57,10 +64,17 @@ export async function GET(request: Request) {
 }
 
 export async function OPTIONS() {
+    const allowedOrigins = [
+        "https://bitcoinstaking-git-read-data-from-bitcoinlayers-bitcoin-layers.vercel.app",
+        "https://bitcoinstaking-eight.vercel.app",
+        "https://stakingbitcoin.com",
+    ];
+    const origin = request.headers.get("origin");
     const headers = {
         "Content-Type": "application/json",
-        "Access-Control-Allow-Origin":
-            "https://bitcoinstaking-git-read-data-from-bitcoinlayers-bitcoin-layers.vercel.app",
+        "Access-Control-Allow-Origin": allowedOrigins.includes(origin)
+            ? origin
+            : "null",
         "Access-Control-Allow-Methods": "GET, OPTIONS",
         "Access-Control-Allow-Headers": "Content-Type, Authorization",
     };
