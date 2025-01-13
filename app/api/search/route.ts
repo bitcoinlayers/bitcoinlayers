@@ -25,12 +25,14 @@ export async function GET(request: Request) {
         });
 
         const allowedOrigins = [
+            "https://bitcoinlayers.org",
+            "https://www.bitcoinlayers.org",
             "https://bitcoinstaking-git-read-data-from-bitcoinlayers-bitcoin-layers.vercel.app",
             "https://bitcoinstaking-eight.vercel.app",
             "https://stakingbitcoin.com",
         ];
 
-        const origin = request.headers.get("origin") || ""; // Fallback to an empty string if Origin is null
+        const origin = request.headers.get("origin") || "";
 
         const headers: HeadersInit = {
             "Content-Type": "application/json",
@@ -55,6 +57,8 @@ export async function GET(request: Request) {
             headers,
         });
     } catch (error) {
+        console.error("Internal Server Error:", error);
+
         return new Response(
             JSON.stringify({
                 error: "Internal server error",
@@ -70,6 +74,8 @@ export async function GET(request: Request) {
 
 export async function OPTIONS(request: Request) {
     const allowedOrigins = [
+        "https://bitcoinlayers.org",
+        "https://www.bitcoinlayers.org",
         "https://bitcoinstaking-git-read-data-from-bitcoinlayers-bitcoin-layers.vercel.app",
         "https://bitcoinstaking-eight.vercel.app",
         "https://stakingbitcoin.com",
