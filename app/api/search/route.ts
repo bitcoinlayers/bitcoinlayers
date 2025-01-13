@@ -27,7 +27,7 @@ export async function GET(request: Request) {
         const headers = {
             "Content-Type": "application/json",
             "Access-Control-Allow-Origin":
-                "https://bitcoinstaking-git-read-data-from-bitcoinlayers-bitcoin-layers.vercel.app/",
+                "https://bitcoinstaking-git-read-data-from-bitcoinlayers-bitcoin-layers.vercel.app",
             "Access-Control-Allow-Methods": "GET, OPTIONS",
             "Access-Control-Allow-Headers": "Content-Type, Authorization",
         };
@@ -60,7 +60,7 @@ export async function OPTIONS() {
     const headers = {
         "Content-Type": "application/json",
         "Access-Control-Allow-Origin":
-            "https://bitcoinstaking-git-read-data-from-bitcoinlayers-bitcoin-layers.vercel.app/",
+            "https://bitcoinstaking-git-read-data-from-bitcoinlayers-bitcoin-layers.vercel.app",
         "Access-Control-Allow-Methods": "GET, OPTIONS",
         "Access-Control-Allow-Headers": "Content-Type, Authorization",
     };
