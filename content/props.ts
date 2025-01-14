@@ -81,6 +81,12 @@ export enum EntityType {
     "-" = "-",
 }
 
+export enum EntityCategory {
+    BitcoinNative = "Bitcoin Native",
+    SidechainsAndMore = "Sidechains",
+    Alt = "Alt. L1s & More",
+}
+
 export enum Site {
     Website = "Website",
     Docs = "Docs",
@@ -140,6 +146,7 @@ export interface BaseProject {
     slug: string;
     title: string;
     entityType: EntityType;
+    entityCategory?: EntityCategory;
     live: LiveStatus;
     staking: boolean;
     liquidStaking: boolean;

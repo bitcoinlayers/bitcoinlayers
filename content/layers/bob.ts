@@ -4,6 +4,7 @@ import {
     LiveStatus,
     RiskFactor,
     EntityType,
+    EntityCategory,
     Site,
     RiskCategory,
 } from "../props";
@@ -13,6 +14,7 @@ const bob: LayerProject = {
     slug: "bob",
     title: "BOB",
     entityType: EntityType.AltRollup,
+    entityCategory: EntityCategory.Alt,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,

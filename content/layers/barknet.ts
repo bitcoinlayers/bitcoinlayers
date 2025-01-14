@@ -3,6 +3,7 @@ import {
     Type,
     LiveStatus,
     EntityType,
+    EntityCategory,
     Site,
     RiskCategory,
 } from "../props";
@@ -12,6 +13,7 @@ const barknet: LayerProject = {
     slug: "barknet",
     title: "Barknet",
     entityType: EntityType.Rollup,
+    entityCategory: EntityCategory.Alt,
     live: LiveStatus.Testnet,
     staking: false,
     liquidStaking: false,

@@ -4,6 +4,7 @@ import {
     LiveStatus,
     RiskFactor,
     EntityType,
+    EntityCategory,
     Site,
     RiskCategory,
 } from "../props";
@@ -13,6 +14,7 @@ const bevm: LayerProject = {
     slug: "bevm",
     title: "BEVM",
     entityType: EntityType.Sidechain,
+    entityCategory: EntityCategory.Alt,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,

@@ -3,6 +3,7 @@ import {
     Type,
     LiveStatus,
     EntityType,
+    EntityCategory,
     Site,
     RiskCategory,
 } from "../props";
@@ -12,6 +13,7 @@ const bit2: LayerProject = {
     slug: "bit2",
     title: "Bit2",
     entityType: EntityType.EthereumRollup,
+    entityCategory: EntityCategory.Alt,
     live: LiveStatus.Testnet,
     staking: false,
     liquidStaking: false,
