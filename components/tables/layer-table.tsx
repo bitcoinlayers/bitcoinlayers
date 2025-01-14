@@ -7,7 +7,7 @@ import TableHeader from "@/components/tables/tableHeader";
 import { isMobile } from "react-device-detect";
 import Link from "next/link";
 import { useQueryState } from "nuqs";
-import { LayerProject } from "@/content/props";
+import { LayerProject, LiveStatus } from "@/content/props";
 import {
     Card,
     CardContent,
@@ -157,6 +157,9 @@ const LayerTable = ({ data, headers }: Props) => {
         });
 
         let filtered = sorted;
+
+        filtered = filtered.filter((item) => item.live === LiveStatus.Mainnet);
+
         if (types.length > 0) {
             filtered = filtered.filter((item) =>
                 types.includes(item.entityType),
@@ -211,7 +214,9 @@ const LayerTable = ({ data, headers }: Props) => {
                             <span className="text-lg font-bold leading-none sm:text-3xl">
                                 {data
                                     .filter(
-                                        (item) => item.entityCategory === cat,
+                                        (item) =>
+                                            item.entityCategory === cat &&
+                                            item.live === LiveStatus.Mainnet,
                                     )
                                     .length.toLocaleString()}
                             </span>
