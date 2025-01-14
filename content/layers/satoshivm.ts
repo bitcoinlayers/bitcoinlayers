@@ -16,7 +16,7 @@ const satoshivm: LayerProject = {
     slug: "satoshivm",
     title: "SatoshiVM",
     entityType: EntityType.PermissionedChain,
-    entityCategory: EntityCategory.SidechainsAndMore,
+    entityCategory: EntityCategory.Sidesystem,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,

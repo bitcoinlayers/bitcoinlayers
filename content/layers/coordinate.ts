@@ -16,7 +16,7 @@ const coordinate: LayerProject = {
     slug: "coordinate",
     title: "Coordinate",
     entityType: EntityType.Sidechain,
-    entityCategory: EntityCategory.SidechainsAndMore,
+    entityCategory: EntityCategory.Sidesystem,
     live: LiveStatus.Announced,
     staking: false,
     liquidStaking: false,

@@ -13,7 +13,7 @@ const alys: LayerProject = {
     slug: "alys",
     title: "Alys",
     entityType: EntityType.Sidechain,
-    entityCategory: EntityCategory.SidechainsAndMore,
+    entityCategory: EntityCategory.Sidesystem,
     live: LiveStatus.Announced,
     staking: false,
     liquidStaking: false,
