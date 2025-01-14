@@ -7,7 +7,7 @@ import TableHeader from "@/components/tables/tableHeader";
 import { isMobile } from "react-device-detect";
 import Link from "next/link";
 import { useQueryState } from "nuqs";
-import { LayerProject } from "@/content/props";
+import { LayerProject, LiveStatus } from "@/content/props";
 import {
     Card,
     CardContent,
@@ -21,6 +21,7 @@ import getCurrentSuppliesByTokenimpl, {
 } from "@/hooks/get-current-supplies-by-tokenimpl";
 import getCurrentSuppliesByNetwork from "@/hooks/get-current-supplies-by-network";
 import TokenList from "@/components/tables/mapping-token-img";
+import { EntityCategory } from "@/content/props";
 
 type TableTabKey =
     | "Trust Assumptions"
@@ -68,14 +69,18 @@ const LayerTable = ({ data, headers }: Props) => {
         parse: (value) => value.split(",").filter(Boolean),
         serialize: (value) => value.join(","),
     });
-    // const [status] = useQueryState<string[]>("status", {
-    //     defaultValue: ["Mainnet", "Beta"],
-    //     parse: (value) => value.split(",").filter(Boolean),
-    //     serialize: (value) => value.join(","),
-    // });
-    const [status, setStatus] = useQueryState("status", {
-        defaultValue: "mainnet",
-    }); //rm when adding back in status table filter
+    const [category, setCategory] = useQueryState<EntityCategory>(
+        "entityCategory",
+        {
+            defaultValue: EntityCategory.BitcoinNative,
+            parse: (value) =>
+                Object.values(EntityCategory).includes(value as EntityCategory)
+                    ? (value as EntityCategory)
+                    : EntityCategory.BitcoinNative,
+            serialize: (value) => value,
+        },
+    );
+
     const [sortBy, setSortBy] = useQueryState("sortBy", {
         defaultValue: "BTC Locked",
     });
@@ -134,10 +139,6 @@ const LayerTable = ({ data, headers }: Props) => {
                     valueA = a.entityType;
                     valueB = b.entityType;
                     break;
-                case "Status":
-                    valueA = a.live;
-                    valueB = b.live;
-                    break;
                 case "Unit":
                     valueA = a.nativeToken;
                     valueB = b.nativeToken;
@@ -156,24 +157,18 @@ const LayerTable = ({ data, headers }: Props) => {
         });
 
         let filtered = sorted;
+
+        filtered = filtered.filter((item) => item.live === LiveStatus.Mainnet);
+
         if (types.length > 0) {
             filtered = filtered.filter((item) =>
                 types.includes(item.entityType),
             );
         }
-        // if (status.length > 0) {
-        //     filtered = filtered.filter((item) =>
-        //         status.some((s) => s.toLowerCase() === item.live.toLowerCase()),
-        //     );
-        // }
-        filtered = filtered.filter((item) => {
-            if (status === "mainnet") return item.live === "Mainnet";
-            if (status === "testnet") return item.live !== "Mainnet";
-            return true;
-        }); //rm when adding back in status table filter
+        filtered = filtered.filter((item) => item.entityCategory === category);
 
         return filtered;
-    }, [data, sortBy, sortOrder, types, status, totaledBalances]);
+    }, [data, sortBy, sortOrder, types, category, totaledBalances]);
 
     const handleSort = (header: string) => {
         if (sortBy === header) {
@@ -206,34 +201,27 @@ const LayerTable = ({ data, headers }: Props) => {
                     </CardDescription>
                 </div>
                 <div className="flex">
-                    <button
-                        data-active={status === "mainnet"}
-                        className="relative z-30 flex flex-1 flex-col justify-center gap-1 border-t px-6 py-4 text-left even:border-l data-[active=true]:bg-muted/50 sm:border-l sm:border-t-0 sm:px-8 sm:py-6 min-w-[100px] sm:min-w-[150px]"
-                        onClick={() => setStatus("mainnet")}
-                    >
-                        <span className="text-xs text-muted-foreground">
-                            On mainnet
-                        </span>
-                        <span className="text-lg font-bold leading-none sm:text-3xl">
-                            {data
-                                .filter((item) => item.live === "Mainnet")
-                                .length.toLocaleString()}
-                        </span>
-                    </button>
-                    <button
-                        data-active={status === "testnet"}
-                        className="relative z-30 flex flex-1 flex-col justify-center gap-1 border-t px-6 py-4 text-left even:border-l data-[active=true]:bg-muted/50 sm:border-l sm:border-t-0 sm:px-8 sm:py-6 min-w-[100px] sm:min-w-[150px]"
-                        onClick={() => setStatus("testnet")}
-                    >
-                        <span className="text-xs text-muted-foreground">
-                            Coming soon
-                        </span>
-                        <span className="text-lg font-bold leading-none sm:text-3xl">
-                            {data
-                                .filter((item) => item.live !== "Mainnet")
-                                .length.toLocaleString()}
-                        </span>
-                    </button>
+                    {Object.values(EntityCategory).map((cat) => (
+                        <button
+                            key={cat}
+                            data-active={category === cat}
+                            className="relative z-30 flex flex-1 flex-col justify-center gap-1 border-t px-6 py-4 text-left even:border-l data-[active=true]:bg-muted/50 sm:border-l sm:border-t-0 sm:px-8 sm:py-6 min-w-[100px] sm:min-w-[150px]"
+                            onClick={() => setCategory(cat)}
+                        >
+                            <span className="text-xs text-muted-foreground">
+                                {cat}
+                            </span>
+                            <span className="text-lg font-bold leading-none sm:text-3xl">
+                                {data
+                                    .filter(
+                                        (item) =>
+                                            item.entityCategory === cat &&
+                                            item.live === LiveStatus.Mainnet,
+                                    )
+                                    .length.toLocaleString()}
+                            </span>
+                        </button>
+                    ))}
                 </div>
             </CardHeader>
             <CardContent className="p-0">

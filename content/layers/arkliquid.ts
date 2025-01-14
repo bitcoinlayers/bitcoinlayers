@@ -4,6 +4,7 @@ import {
     LiveStatus,
     RiskFactor,
     EntityType,
+    EntityCategory,
     Site,
     RiskCategory,
 } from "../props";
@@ -13,6 +14,7 @@ const arkliquid: LayerProject = {
     slug: "ark",
     title: "Ark (on Liquid)",
     entityType: EntityType.VirtualUTXOs,
+    entityCategory: EntityCategory.SidechainsAndMore,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,

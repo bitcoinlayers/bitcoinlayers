@@ -3,6 +3,7 @@ import {
     Type,
     LiveStatus,
     EntityType,
+    EntityCategory,
     Site,
     RiskCategory,
 } from "../props";
@@ -12,6 +13,7 @@ const alys: LayerProject = {
     slug: "alys",
     title: "Alys",
     entityType: EntityType.Sidechain,
+    entityCategory: EntityCategory.SidechainsAndMore,
     live: LiveStatus.Announced,
     staking: false,
     liquidStaking: false,

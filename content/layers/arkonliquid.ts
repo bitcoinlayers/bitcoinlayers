@@ -4,6 +4,7 @@ import {
     LiveStatus,
     RiskFactor,
     EntityType,
+    EntityCategory,
     Site,
     RiskCategory,
 } from "../props";
@@ -15,6 +16,7 @@ const arkonliquid: LayerProject = {
     entityType: EntityType.ArkSidechain,
     staking: false,
     liquidStaking: false,
+    entityCategory: EntityCategory.SidechainsAndMore,
     live: LiveStatus.Mainnet,
     bridge: false,
     underReview: false,
