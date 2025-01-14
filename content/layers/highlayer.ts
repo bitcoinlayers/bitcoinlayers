@@ -16,7 +16,7 @@ const highlayer: LayerProject = {
     slug: "highlayer",
     title: "Highlayer",
     entityType: EntityType.SovereignRollup,
-    entityCategory: EntityCategory.Testnet,
+    entityCategory: EntityCategory.Alt,
     live: LiveStatus.Testnet,
     staking: false,
     liquidStaking: false,

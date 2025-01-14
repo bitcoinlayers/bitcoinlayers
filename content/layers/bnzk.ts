@@ -16,7 +16,7 @@ const bnzk: LayerProject = {
     slug: "bnzk",
     title: "Bnzk",
     entityType: EntityType.Rollup,
-    entityCategory: EntityCategory.Testnet,
+    entityCategory: EntityCategory.Alt,
     live: LiveStatus.Announced,
     staking: false,
     liquidStaking: false,

@@ -16,7 +16,7 @@ const spark: LayerProject = {
     slug: "spark",
     title: "Spark",
     entityType: EntityType.Statechain,
-    entityCategory: EntityCategory.Testnet,
+    entityCategory: EntityCategory.BitcoinNative,
     live: LiveStatus.Announced,
     staking: false,
     liquidStaking: false,

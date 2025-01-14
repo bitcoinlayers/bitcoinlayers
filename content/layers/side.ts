@@ -16,7 +16,7 @@ const side: LayerProject = {
     slug: "side",
     title: "Side Protocol",
     entityType: EntityType.Sidechain,
-    entityCategory: EntityCategory.Testnet,
+    entityCategory: EntityCategory.Alt,
     live: LiveStatus.Testnet,
     staking: false,
     liquidStaking: false,

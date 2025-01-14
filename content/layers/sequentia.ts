@@ -16,7 +16,7 @@ const sequentia: LayerProject = {
     slug: "sequentia",
     title: "Sequentia",
     entityType: EntityType.Sidechain,
-    entityCategory: EntityCategory.Testnet,
+    entityCategory: EntityCategory.Alt,
     live: LiveStatus.Testnet,
     staking: false,
     liquidStaking: false,

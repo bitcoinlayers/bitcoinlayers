@@ -16,7 +16,7 @@ const zulu: LayerProject = {
     slug: "zulu",
     title: "Zulu",
     entityType: EntityType.TBD,
-    entityCategory: EntityCategory.Testnet,
+    entityCategory: EntityCategory.Alt,
     live: LiveStatus.Testnet,
     staking: false,
     liquidStaking: false,

@@ -16,7 +16,7 @@ const mezo: LayerProject = {
     slug: "mezo",
     title: "Mezo",
     entityType: EntityType.Sidechain,
-    entityCategory: EntityCategory.Testnet,
+    entityCategory: EntityCategory.Alt,
     live: LiveStatus.Announced,
     staking: false,
     liquidStaking: false,

@@ -13,7 +13,7 @@ const bison: LayerProject = {
     slug: "bison",
     title: "Bison",
     entityType: EntityType.Rollup,
-    entityCategory: EntityCategory.Testnet,
+    entityCategory: EntityCategory.Alt,
     live: LiveStatus.Testnet,
     staking: false,
     liquidStaking: false,

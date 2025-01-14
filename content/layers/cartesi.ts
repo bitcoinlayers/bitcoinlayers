@@ -16,7 +16,7 @@ const cartesi: LayerProject = {
     slug: "cartesi",
     title: "Cartesi",
     entityType: EntityType.Rollup,
-    entityCategory: EntityCategory.Testnet,
+    entityCategory: EntityCategory.Alt,
     live: LiveStatus.Testnet,
     staking: false,
     liquidStaking: false,

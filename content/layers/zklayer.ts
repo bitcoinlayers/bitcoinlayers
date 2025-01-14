@@ -16,7 +16,7 @@ const zklayer: LayerProject = {
     slug: "zklayer",
     title: "zkLayer",
     entityType: EntityType.Rollup,
-    entityCategory: EntityCategory.Testnet,
+    entityCategory: EntityCategory.Alt,
     live: LiveStatus.Testnet,
     staking: false,
     liquidStaking: false,

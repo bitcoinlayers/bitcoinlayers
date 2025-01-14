@@ -16,7 +16,7 @@ const rif: LayerProject = {
     slug: "rif",
     title: "RIF",
     entityType: EntityType.SidechainRollup,
-    entityCategory: EntityCategory.Testnet,
+    entityCategory: EntityCategory.Alt,
     live: LiveStatus.Testnet,
     staking: false,
     liquidStaking: false,

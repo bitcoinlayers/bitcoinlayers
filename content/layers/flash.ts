@@ -16,7 +16,7 @@ const flash: LayerProject = {
     slug: "flash",
     title: "Flash Protocol",
     entityType: EntityType["-"],
-    entityCategory: EntityCategory.Testnet,
+    entityCategory: EntityCategory.Alt,
     live: LiveStatus.Testnet,
     staking: false,
     liquidStaking: false,

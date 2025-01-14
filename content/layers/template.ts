@@ -16,7 +16,7 @@ const template: LayerProject = {
     slug: "slug",
     title: "Title",
     entityType: EntityType.Rollup,
-    entityCategory: EntityCategory.Testnet,
+    entityCategory: EntityCategory.Alt,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,

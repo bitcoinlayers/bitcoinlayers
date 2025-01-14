@@ -16,7 +16,7 @@ const zkcoins: LayerProject = {
     slug: "zkcoins",
     title: "zkCoins",
     entityType: EntityType.zkCSV,
-    entityCategory: EntityCategory.Testnet,
+    entityCategory: EntityCategory.Alt,
     live: LiveStatus.Announced,
     staking: false,
     liquidStaking: false,

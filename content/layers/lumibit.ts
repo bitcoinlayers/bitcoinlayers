@@ -16,7 +16,7 @@ const lumibit: LayerProject = {
     slug: "lumibit",
     title: "Lumibit",
     entityType: EntityType.Rollup,
-    entityCategory: EntityCategory.Testnet,
+    entityCategory: EntityCategory.Alt,
     live: LiveStatus.Testnet,
     staking: false,
     liquidStaking: false,

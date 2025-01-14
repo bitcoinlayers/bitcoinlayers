@@ -16,7 +16,7 @@ const rooch: LayerProject = {
     slug: "rooch",
     title: "Rooch Network",
     entityType: EntityType.TBD,
-    entityCategory: EntityCategory.Testnet,
+    entityCategory: EntityCategory.Alt,
     live: LiveStatus.Testnet,
     staking: false,
     liquidStaking: false,

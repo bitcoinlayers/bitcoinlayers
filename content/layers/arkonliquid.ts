@@ -16,7 +16,7 @@ const arkonliquid: LayerProject = {
     entityType: EntityType.ArkSidechain,
     staking: false,
     liquidStaking: false,
-    entityCategory: EntityCategory.Testnet,
+    entityCategory: EntityCategory.SidechainsAndMore,
     live: LiveStatus.Mainnet,
     bridge: false,
     underReview: false,
