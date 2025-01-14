@@ -16,7 +16,7 @@ const zkbitcoin: LayerProject = {
     slug: "zkbitcoin",
     title: "zkBitcoin",
     entityType: EntityType.MPCProtocol,
-    entityCategory: EntityCategory.Alt,
+    entityCategory: EntityCategory.Testnet,
     live: LiveStatus.Testnet,
     staking: false,
     liquidStaking: false,

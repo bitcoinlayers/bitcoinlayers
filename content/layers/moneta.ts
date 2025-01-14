@@ -16,7 +16,7 @@ const moneta: LayerProject = {
     slug: "moneta",
     title: "Moneta (Demo)",
     entityType: EntityType.Rollup,
-    entityCategory: EntityCategory.Alt,
+    entityCategory: EntityCategory.Testnet,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,

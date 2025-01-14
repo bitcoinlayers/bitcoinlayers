@@ -85,6 +85,7 @@ export enum EntityCategory {
     BitcoinNative = "Bitcoin Native",
     SidechainsAndMore = "Sidechains",
     Alt = "Alt. L1s & More",
+    Testnet = "Testnet",
 }
 
 export enum Site {

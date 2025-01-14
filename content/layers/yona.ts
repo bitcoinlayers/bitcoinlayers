@@ -16,7 +16,7 @@ const yona: LayerProject = {
     slug: "yona",
     title: "Yona",
     entityType: EntityType.TBD,
-    entityCategory: EntityCategory.Alt,
+    entityCategory: EntityCategory.Testnet,
     live: LiveStatus.Testnet,
     staking: false,
     liquidStaking: false,

@@ -13,7 +13,6 @@ const alpen: LayerProject = {
     slug: "strata",
     title: "Strata",
     entityType: EntityType.Rollup,
-    entityCategory: EntityCategory.Alt,
     live: LiveStatus.Testnet,
     staking: false,
     liquidStaking: false,

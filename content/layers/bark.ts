@@ -16,7 +16,7 @@ const bark: LayerProject = {
     slug: "bark",
     title: "Bark",
     entityType: EntityType.Ark,
-    entityCategory: EntityCategory.Alt,
+    entityCategory: EntityCategory.Testnet,
     live: LiveStatus.Announced,
     staking: false,
     liquidStaking: false,

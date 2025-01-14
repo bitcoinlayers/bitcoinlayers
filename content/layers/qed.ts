@@ -16,7 +16,7 @@ const qed: LayerProject = {
     slug: "qed",
     title: "QED",
     entityType: EntityType.Rollup,
-    entityCategory: EntityCategory.Alt,
+    entityCategory: EntityCategory.Testnet,
     live: LiveStatus.Announced,
     staking: false,
     liquidStaking: false,

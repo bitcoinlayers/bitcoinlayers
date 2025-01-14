@@ -16,7 +16,7 @@ const citrea: LayerProject = {
     slug: "citrea",
     title: "Citrea",
     entityType: EntityType.Rollup,
-    entityCategory: EntityCategory.SidechainsAndMore,
+    entityCategory: EntityCategory.Testnet,
     live: LiveStatus.Testnet,
     staking: false,
     liquidStaking: false,

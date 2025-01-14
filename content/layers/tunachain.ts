@@ -16,7 +16,7 @@ const tunachain: LayerProject = {
     slug: "tunachain",
     title: "Tunachain",
     entityType: EntityType.Sidechain,
-    entityCategory: EntityCategory.Alt,
+    entityCategory: EntityCategory.Testnet,
     live: LiveStatus.Testnet,
     staking: false,
     liquidStaking: false,

@@ -13,7 +13,7 @@ const barknet: LayerProject = {
     slug: "barknet",
     title: "Barknet",
     entityType: EntityType.Rollup,
-    entityCategory: EntityCategory.Alt,
+    entityCategory: EntityCategory.Testnet,
     live: LiveStatus.Testnet,
     staking: false,
     liquidStaking: false,

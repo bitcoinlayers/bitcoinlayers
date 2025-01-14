@@ -16,7 +16,7 @@ const clark: LayerProject = {
     slug: "clark",
     title: "clArk",
     entityType: EntityType.Ark,
-    entityCategory: EntityCategory.BitcoinNative,
+    entityCategory: EntityCategory.Testnet,
     live: LiveStatus.Testnet,
     staking: false,
     liquidStaking: false,

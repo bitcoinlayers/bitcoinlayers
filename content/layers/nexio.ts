@@ -16,7 +16,7 @@ const nexio: LayerProject = {
     slug: "nexio",
     title: "Nexio",
     entityType: EntityType.TBD,
-    entityCategory: EntityCategory.Alt,
+    entityCategory: EntityCategory.Testnet,
     live: LiveStatus.Announced,
     staking: false,
     liquidStaking: false,

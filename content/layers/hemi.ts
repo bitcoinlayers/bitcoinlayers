@@ -16,7 +16,7 @@ const hemi: LayerProject = {
     slug: "hemi",
     title: "Hemi",
     entityType: EntityType.TBD,
-    entityCategory: EntityCategory.Alt,
+    entityCategory: EntityCategory.Testnet,
     live: LiveStatus.Testnet,
     staking: false,
     liquidStaking: false,

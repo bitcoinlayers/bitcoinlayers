@@ -16,7 +16,7 @@ const molecule: LayerProject = {
     slug: "molecule",
     title: "Molecule",
     entityType: EntityType.TBD,
-    entityCategory: EntityCategory.Alt,
+    entityCategory: EntityCategory.Testnet,
     live: LiveStatus.Announced,
     staking: false,
     liquidStaking: false,

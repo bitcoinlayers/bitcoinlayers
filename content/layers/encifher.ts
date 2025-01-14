@@ -16,7 +16,7 @@ const encifher: LayerProject = {
     slug: "encifher",
     title: "Encifher",
     entityType: EntityType.TBD,
-    entityCategory: EntityCategory.Alt,
+    entityCategory: EntityCategory.Testnet,
     live: LiveStatus.Testnet,
     staking: false,
     liquidStaking: false,

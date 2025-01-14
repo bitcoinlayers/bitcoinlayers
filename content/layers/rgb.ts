@@ -16,7 +16,7 @@ const rgb: LayerProject = {
     slug: "rgb",
     title: "RGB",
     entityType: EntityType.CSV,
-    entityCategory: EntityCategory.Alt,
+    entityCategory: EntityCategory.Testnet,
     live: LiveStatus.Testnet,
     staking: false,
     liquidStaking: false,
