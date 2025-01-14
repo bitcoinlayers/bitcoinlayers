@@ -14,7 +14,7 @@ const bob: LayerProject = {
     slug: "bob",
     title: "BOB",
     entityType: EntityType.AltRollup,
-    entityCategory: EntityCategory.SidechainsAndMore,
+    entityCategory: EntityCategory.Sidesystem,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
