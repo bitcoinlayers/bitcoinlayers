@@ -16,7 +16,7 @@ const botanix: LayerProject = {
     slug: "botanix",
     title: "Botanix",
     entityType: EntityType.Sidechain,
-    entityCategory: EntityCategory.Alt,
+    entityCategory: EntityCategory.SidechainsAndMore,
     live: LiveStatus.Testnet,
     staking: false,
     liquidStaking: false,

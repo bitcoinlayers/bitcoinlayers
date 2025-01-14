@@ -16,7 +16,7 @@ const hedgehog: LayerProject = {
     slug: "hedgehog",
     title: "Hedgehog",
     entityType: EntityType.StateChannel,
-    entityCategory: EntityCategory.Alt,
+    entityCategory: EntityCategory.BitcoinNative,
     live: LiveStatus.Testnet,
     staking: false,
     liquidStaking: false,

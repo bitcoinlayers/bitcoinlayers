@@ -16,7 +16,7 @@ const mercurylayer: LayerProject = {
     slug: "mercurylayer",
     title: "Mercury Layer",
     entityType: EntityType.Statechain,
-    entityCategory: EntityCategory.Alt,
+    entityCategory: EntityCategory.BitcoinNative,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,

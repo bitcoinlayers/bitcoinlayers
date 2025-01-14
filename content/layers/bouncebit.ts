@@ -16,7 +16,7 @@ const bouncebit: LayerProject = {
     slug: "bouncebit",
     title: "BounceBit",
     entityType: EntityType.Sidechain,
-    entityCategory: EntityCategory.Alt,
+    entityCategory: EntityCategory.SidechainsAndMore,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,

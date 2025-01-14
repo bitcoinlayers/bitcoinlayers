@@ -16,7 +16,7 @@ const corn: LayerProject = {
     slug: "corn",
     title: "Corn",
     entityType: EntityType.AltRollup,
-    entityCategory: EntityCategory.Alt,
+    entityCategory: EntityCategory.SidechainsAndMore,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,

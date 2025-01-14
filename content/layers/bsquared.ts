@@ -16,7 +16,7 @@ const bsquared: LayerProject = {
     slug: "bsquared",
     title: "Bsquared Network",
     entityType: EntityType.AltRollup,
-    entityCategory: EntityCategory.Alt,
+    entityCategory: EntityCategory.SidechainsAndMore,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,

@@ -16,7 +16,7 @@ const brollup: LayerProject = {
     slug: "brollup",
     title: "Brollup",
     entityType: EntityType.Rollup,
-    entityCategory: EntityCategory.Alt,
+    entityCategory: EntityCategory.BitcoinNative,
     live: LiveStatus.Announced,
     staking: false,
     liquidStaking: false,
