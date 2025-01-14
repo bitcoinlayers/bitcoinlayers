@@ -174,6 +174,8 @@ section {
         --chart-zeta: 165 92% 16%;
         --chart-polygonpos: 266 94% 70%;
         --chart-polygonzkevm: 266 100% 48%;
+        --chart-polygon-pos: 266 94% 70%;
+        --chart-polygon-zkevm: 266 100% 48%;
         --chart-zksync: 228 73% 49%;
         --chart-fantom: 219 100% 55%;
         --chart-gnosis: 155 46% 15%;
@@ -215,6 +217,7 @@ section {
         --chart-axelar-axlbtc: 0 0% 95%;
         --chart-bitlayer-wbtc: 48 100% 50%;
         --chart-merlin-wbtc: 120 61% 44%;
+        --chart-merlin-m-btc: 120 81% 54%;
         --chart-layerbank-btc: 202 21% 36%;
         --chart-layerbank-ubtc: 201 33% 61%;
         --chart-xlink-abtc: 24 95% 53%;
@@ -226,6 +229,7 @@ section {
         --chart-libre-pbtc: 88 50% 63%;
         --chart-manta-mbtc: 317 72% 66%;
         --chart-obelisk-obtc: 134 59% 58%;
+        --chart-allo-allobtc: 33 93% 54%;
         /* Staking */
         --chart-babylon-staked-btc: 27 90% 56%;
     }

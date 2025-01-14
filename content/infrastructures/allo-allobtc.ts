@@ -7,20 +7,20 @@ import {
     Site,
 } from "../props";
 
-const chakra: InfrastructureProject = {
+const alloallobtc: InfrastructureProject = {
     type: Type.Infrastructure,
-    slug: "chakra-stbtc",
-    title: "Chakra stBTC",
+    slug: "allo-allobtc",
+    title: "Allo alloBTC",
     entityType: EntityType.LiquidStaking,
-    live: LiveStatus.Testnet,
+    live: LiveStatus.Mainnet,
     staking: false,
-    liquidStaking: false,
-    bridge: false,
+    liquidStaking: true,
+    bridge: true,
     underReview: true,
     riskFactors: ["", ""],
     nativeToken: "-",
     purpose: Purpose.General,
-    associatedLayers: "-",
+    associatedLayers: "BNBSmartChain",
     bitcoinOnly: false,
     links: [],
     description: "Under review.",
@@ -38,4 +38,4 @@ const chakra: InfrastructureProject = {
     ],
 };
 
-export default chakra;
+export default alloallobtc;

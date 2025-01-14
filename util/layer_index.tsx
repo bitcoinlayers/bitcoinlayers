@@ -58,6 +58,14 @@ import ethereumProject from "../content/layers/ethereum";
 import polygonProject from "../content/layers/polygonpos";
 import solanaProject from "../content/layers/solana";
 import cornProject from "../content/layers/corn";
+import zetaProject from "../content/layers/zeta";
+import fantomProject from "../content/layers/fantom";
+import gnosisProject from "../content/layers/gnosis";
+import polygonzkevmProject from "../content/layers/polygonzkevm";
+import scrollProject from "../content/layers/scroll";
+import taikoProject from "../content/layers/taiko";
+import tronProject from "../content/layers/tron";
+import zksyncProject from "../content/layers/zksync";
 
 const core: LayerProject = coreProject;
 const internetcomputer: LayerProject = internetcomputerProject;
@@ -117,6 +125,14 @@ const ethereum: LayerProject = ethereumProject;
 const polygon: LayerProject = polygonProject;
 const solana: LayerProject = solanaProject;
 const corn: LayerProject = cornProject;
+const zeta: LayerProject = zetaProject;
+const fantom: LayerProject = fantomProject;
+const gnosis: LayerProject = gnosisProject;
+const polygonzkevm: LayerProject = polygonzkevmProject;
+const scroll: LayerProject = scrollProject;
+const taiko: LayerProject = taikoProject;
+const tron: LayerProject = tronProject;
+const zksync: LayerProject = zksyncProject;
 
 export const allLayers: LayerProject[] = [
     core,
@@ -170,6 +186,14 @@ export const allLayers: LayerProject[] = [
     polygon,
     solana,
     corn,
+    zeta,
+    fantom,
+    gnosis,
+    polygonzkevm,
+    scroll,
+    taiko,
+    tron,
+    zksync,
 ];
 
 export const allLayerSlugs: string[] = allLayers.map((layer) => layer.slug);
