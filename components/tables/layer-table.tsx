@@ -23,12 +23,6 @@ import getCurrentSuppliesByNetwork from "@/hooks/get-current-supplies-by-network
 import TokenList from "@/components/tables/mapping-token-img";
 import { EntityCategory } from "@/content/props";
 
-// export enum EntityCategory {
-//     BitcoinNative = "Bitcoin Native",
-//     SidechainsAndMore = "Sidechains & More",
-//     Alt = "Alt. L1s & More",
-// }
-
 type TableTabKey =
     | "Trust Assumptions"
     | "Type"

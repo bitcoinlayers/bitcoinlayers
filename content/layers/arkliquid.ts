@@ -14,7 +14,7 @@ const arkliquid: LayerProject = {
     slug: "ark",
     title: "Ark (on Liquid)",
     entityType: EntityType.VirtualUTXOs,
-    entityCategory: EntityCategory.Alt,
+    entityCategory: EntityCategory.BitcoinNative,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
