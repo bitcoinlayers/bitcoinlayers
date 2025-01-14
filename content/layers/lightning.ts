@@ -16,7 +16,7 @@ const lightning: LayerProject = {
     slug: "lightning",
     title: "Lightning Network",
     entityType: EntityType.StateChannel,
-    entityCategory: EntityCategory.Alt,
+    entityCategory: EntityCategory.BitcoinNative,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
