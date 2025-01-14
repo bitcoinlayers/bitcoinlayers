@@ -16,7 +16,7 @@ const bitlayer: LayerProject = {
     slug: "bitlayer",
     title: "Bitlayer",
     entityType: EntityType.Sidechain,
-    entityCategory: EntityCategory.SidechainsAndMore,
+    entityCategory: EntityCategory.Sidesystem,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -25,7 +25,7 @@ const bitlayer: LayerProject = {
     riskFactors: [
         RiskFactor.VeryHigh,
         RiskFactor.Medium,
-        RiskFactor.UnderReview,
+        RiskFactor.High,
         RiskFactor.High,
     ],
     btcLocked: 5397,
