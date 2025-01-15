@@ -70,7 +70,7 @@ const nomic: LayerProject = {
                     score: 0,
                     tier: RiskFactor.High,
                     title: "BTC backing nBTC managed by a group of 20 publicly known signers who participate as validators in the Nomic blockchain",
-                    content: "Users deposit BTC into a Reserve Wallet to receive nBTC on Nomic. The Reserve Wallet is a Bitcoin L1 multisig wallet managed by the Nomic signatory set. The Nomic signatory is made up of the top 20 Nomic validators measured by weighted stake.\n\nBecoming a signatory is permissionless and requires staking NOM tokens. Disbursing funds from the reserve wallet requires 90% of signatories to sign, weighted by voting power through NOM tokens.",
+                    content: "Users deposit BTC into a Reserve Wallet to receive nBTC on Nomic. The Reserve Wallet is a Bitcoin L1 multisig wallet managed by the Nomic signatory set. The Nomic signatory is made up of the top 20 Nomic validators measured by weighted stake.\n\nBecoming a signatory is permissionless and requires staking NOM tokens. Disbursing funds from the reserve wallet requires a threshold of signatories to sign, weighted by voting power through NOM tokens.\n\nWe are reviewing the signing threshold for this wallet.",
                 },
             ],
         },
