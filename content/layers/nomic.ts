@@ -141,7 +141,7 @@ const nomic: LayerProject = {
                 {
                     title: "The NOM token has restrictions",
                     content:
-                        "Nomic’s native token, NOM, is currently unable to be sold or acquired in various markets. This means that the token currently has no value and validators currently have no current financial incentive to secure BTC backing nBTC.",
+                        "Nomic’s native token, NOM, is currently unable to be sold or acquired in various markets. This means that the token currently has no market value and validators currently have no current financial incentive to secure BTC backing nBTC.",
                 },
             ],
         },
