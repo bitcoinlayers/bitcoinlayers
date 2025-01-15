@@ -29,8 +29,12 @@ const xlinkabtc: InfrastructureProject = {
             url: "https://xlink.network",
         },
         {
+            text: Site.Docs,
+            url: "https://docs.xlink.network",
+        },
+        {
             text: Site.Explorer,
-            url: "https://app.xlink.network",
+            url: "https://docs.xlink.network/xlink-network/readme/ethereum-contract-addresses",
         },
         {
             text: Site.GitHub,
