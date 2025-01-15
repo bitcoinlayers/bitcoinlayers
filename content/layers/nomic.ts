@@ -139,9 +139,9 @@ const nomic: LayerProject = {
             title: "Additional Considerations",
             content: [
                 {
-                    title: "The NOM token is untransferrable",
+                    title: "The NOM token has restrictions",
                     content:
-                        "Nomic’s native token, NOM, is currently untransferrable and unable to be sold, or bought, in various markets. This means that the token currently has no value and validators currently have no current financial incentive to secure BTC backing nBTC.",
+                        "Nomic’s native token, NOM, is currently unable to be sold or acquired in various markets. This means that the token currently has no value and validators currently have no current financial incentive to secure BTC backing nBTC.",
                 },
             ],
         },
