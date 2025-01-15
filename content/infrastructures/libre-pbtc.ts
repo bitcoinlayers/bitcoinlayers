@@ -5,6 +5,7 @@ import {
     LiveStatus,
     EntityType,
     Site,
+    AssessmentCategory,
 } from "../props";
 
 const librepbtc: InfrastructureProject = {
@@ -27,15 +28,25 @@ const librepbtc: InfrastructureProject = {
     sections: [
         {
             id: "selfsubmit",
-            title: "Process to self-submit information",
+            title: "Further sections to be reviewed",
             content: [
                 {
                     content:
-                        "The Bitcoin Layers project prioritizes risk reviews on projects that are in production and accepting users' BTC deposits. Projects on testnet are welcome to submit information about their project. We do not publish risk assessments for projects that are not in production.\n\nHere are the [instructions](https://github.com/bitcoinlayers/bitcoinlayers/blob/main/SELFSUBMIT.md) on self-submitting a project.",
+                        "Aspects related to BTC custody, key management, transaction signing, and redemptions have not been reviewed. We are currently reviewing these sections.",
                 },
             ],
         },
     ],
-};
+        assessment: [
+            {
+                category: AssessmentCategory.AssetCustody,
+                score: 0,
+                tier: "",
+                title: "Libre's bridge relies on a third party provider. Signers are permissioned nodes from the pNetwork",
+                content:
+                    "BTC users who deposit funds onto Libre do so via the pNetwork bridge. A limited group of signers operate the bridge.\n\n⚠️ The pNetwork bridge has historically seen two exploits occur. One of those exploits involved BTC-backed tokens.\n\n[Source](https://docs.libre.org/libre-docs/cross-chain-interoperability/bitcoin-mainnet)",
+            },
+        ],
+    };
 
 export default librepbtc;
