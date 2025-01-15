@@ -21,7 +21,7 @@ const nomic: LayerProject = {
     staking: false,
     liquidStaking: false,
     bridge: false,
-    underReview: true,
+    underReview: false,
     riskFactors: [
         RiskFactor.High,
         RiskFactor.Medium,
