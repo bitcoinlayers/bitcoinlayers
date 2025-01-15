@@ -85,7 +85,7 @@ const bsquared: LayerProject = {
                     name: "Lorenzo stBTC",
                     infrastructureSlug: "lorenzo-stbtc",
                     score: 0,
-                    tier: RiskFactor.UnderReview,
+                    tier: RiskFactor.VeryHigh,
                     title: "Users trust custodians and various onchain contracts. We have not reviewed the contract implementations for this chain",
                     content: "Users trust Lorenzo, the operators of Lorenzo stBTC, to secure and stake native BTC that backs stBTC. It has also been stated in Lorenzo's [marketing materials](https://medium.com/@lorenzoprotocol/lorenzo-allies-with-cobo-ceffu-and-chainup-e0d824c4744d) that custodian providers Cobo, Ceffu, and Chainup are participating in Lorenzo's protocol as custody providers, but their documentation does not claim this.\n\nUsers trust Lorenzo's claims in their documentation are being executed in practice.\n\n[Source](https://docs.lorenzo-protocol.xyz/introduction/stbtc-issuance-and-settlement)",
                 },
@@ -105,6 +105,15 @@ const bsquared: LayerProject = {
                     title: "Users trust custodians and various onchain contracts. We have not reviewed the contract implementations for this chain",
                     content:
                         "The Bitcoin backing wBTC is secured by permissioned entities. BitGo and BiT Global are the participants responsible with custodying the funds backing wBTC across the various networks it's deployed on.\n\nThe wallets holding the bitcoin backing wBTC are dispersed between Hong Kong, Singapore, and the United States.",
+                },
+                {
+                    name: "Obelisk oBTC",
+                    infrastructureSlug: "obelisk-obtc",
+                    score: 0,
+                    tier: RiskFactor.VeryHigh,
+                title: "Users trust centralized signers to secure BTC backing oBTC",
+                content:
+                        "Obelisk's documentation claims that users deposit BTC into an MPC scheme to mint oBTC on a respective destination chain.\n\nUsers trust Obelisk's claims in their documentation are being executed in practice.\n\n[Source](https://docs-obelisk.nodedao.com/obtc-asset/how-to-mint-obtc-on-obelisk) ",
                 },
                 {
                     name: "LayerBank BTC",

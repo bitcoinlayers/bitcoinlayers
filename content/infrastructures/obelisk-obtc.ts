@@ -42,7 +42,7 @@ const obeliskobtc: InfrastructureProject = {
             category: AssessmentCategory.AssetCustody,
             score: 0,
             tier: "",
-            title: "Users trust centralized signers to secure BTC backing wBTC",
+            title: "Users trust centralized signers to secure BTC backing oBTC",
             content:
                 "Obelisk's documentation claims that users deposit BTC into an MPC scheme to mint oBTC on a respective destination chain.\n\nUsers trust Obelisk's claims in their documentation are being executed in practice.\n\n[Source](https://docs-obelisk.nodedao.com/obtc-asset/how-to-mint-obtc-on-obelisk) ",
         },
