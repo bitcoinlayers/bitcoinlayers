@@ -78,9 +78,9 @@ const rootstock: LayerProject = {
                     infrastructureSlug: "bitgo-wbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: "Centralized custody model",
+                    title: "Users trust custodians and various onchain contracts. We have not reviewed the contract implementations for this chain",
                     content:
-                        "wBTC relies on a consortium of custodians to maintain BTC collateral. Users trust that custodians will not mismanage or steal their funds.\n\nWe are reviewing the smart contracts, and other additional considerations, associated with wBTC on Rootstock.",
+                        "The Bitcoin backing wBTC is secured by permissioned entities. BitGo and BiT Global are the participants responsible with custodying the funds backing wBTC across the various networks it's deployed on.\n\nThe wallets holding the bitcoin backing wBTC are dispersed between Hong Kong, Singapore, and the United States.",
                 },
             ],
         },
