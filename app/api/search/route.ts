@@ -27,15 +27,17 @@ export async function GET(request: Request) {
         const allowedOrigins = [
             "https://bitcoinlayers.org",
             "https://www.bitcoinlayers.org",
-            "https://bitcoinstaking-git-read-data-from-bitcoinlayers-bitcoin-layers.vercel.app",
             "https://bitcoinstaking-eight.vercel.app",
+            "https://www.bitcoinstaking-eight.vercel.app",
             "https://stakingbitcoin.com",
+            "https://www.stakingbitcoin.com",
         ];
 
         const origin = request.headers.get("origin") || "";
 
         const headers: HeadersInit = {
             "Content-Type": "application/json",
+            // "Access-Control-Allow-Origin": "*",
             "Access-Control-Allow-Origin": allowedOrigins.includes(origin)
                 ? origin
                 : "null",
@@ -76,15 +78,17 @@ export async function OPTIONS(request: Request) {
     const allowedOrigins = [
         "https://bitcoinlayers.org",
         "https://www.bitcoinlayers.org",
-        "https://bitcoinstaking-git-read-data-from-bitcoinlayers-bitcoin-layers.vercel.app",
         "https://bitcoinstaking-eight.vercel.app",
+        "https://www.bitcoinstaking-eight.vercel.app",
         "https://stakingbitcoin.com",
+        "https://www.stakingbitcoin.com",
     ];
 
     const origin = request.headers.get("origin") || "";
 
     const headers: HeadersInit = {
         "Content-Type": "application/json",
+        // "Access-Control-Allow-Origin": "*",
         "Access-Control-Allow-Origin": allowedOrigins.includes(origin)
             ? origin
             : "null",
