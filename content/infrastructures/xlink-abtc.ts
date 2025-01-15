@@ -21,9 +21,26 @@ const xlinkabtc: InfrastructureProject = {
     riskFactors: ["", ""],
     nativeToken: "-",
     purpose: Purpose.General,
-    associatedLayers: "Stacks",
+    associatedLayers: "Stacks, Core, Base, Linea, Mode, BNB, Ethereum, Bsquared, BOB, Bitlayer, Merlin, AIlayer, Xlayer, Arbitrum, Aurora, Manta",
     bitcoinOnly: false,
-    links: [],
+    links: [
+        {
+            text: Site.Website,
+            url: "https://xlink.network",
+        },
+        {
+            text: Site.Explorer,
+            url: "https://app.xlink.network",
+        },
+        {
+            text: Site.GitHub,
+            url: "https://github.com/xlink-network",
+        },
+        {
+            text: Site.Twitter,
+            url: "https://x.com/XLinkbtc",
+        },
+    ],
     description:
         "XLink aBTC is a BTC-backed reserve asset that can be used across a number of blockchain environments.",
     sections: [
