@@ -237,7 +237,7 @@ const LayerTable = ({ data, headers }: Props) => {
                         <tbody className="gap-x-8">
                             {filteredData.map((item, index) => (
                                 <tr
-                                    className={`cursor-pointer ${
+                                    className={`${
                                         index !== filteredData.length - 1
                                             ? "border-b border-border"
                                             : ""
