@@ -209,7 +209,8 @@ export default function LayerTVLChart() {
                                 onClick={() => setActiveChart(chart)}
                             >
                                 <span className="text-xs text-muted-foreground md:w-20">
-                                    {key}
+                                    Supply
+                                    {/* {key} */}
                                 </span>
                                 <span className="text-xs sm:text-base leading-none">
                                     {key === "TVL" ? (
