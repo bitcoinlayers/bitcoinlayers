@@ -10,6 +10,7 @@ import {
     RiskSection,
     ContentSection,
     RiskCategory,
+    TokenSnippet,
 } from "../props";
 
 const internetcomputer: LayerProject = {

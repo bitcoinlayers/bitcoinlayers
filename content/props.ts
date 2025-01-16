@@ -101,12 +101,19 @@ export enum Site {
     Twitter = "Twitter",
 }
 
+export enum TokenSnippet { //TODO: Janusz to add more here
+    BitGowBTC = "wBTC is managed by a centralized consortium of companies.",
+    ThresholdtBTC = "BTC users trust that tBTC will remain backed on Ethereum.",
+    CoinbasecbBTC = "",
+    UnderReview = "This two-way peg is under review",
+}
+
 export interface Peg {
     name: string;
     infrastructureSlug: string;
     score: number;
     tier: RiskFactor | "";
-    title: string;
+    title: TokenSnippet | string;
     content: string;
 }
 

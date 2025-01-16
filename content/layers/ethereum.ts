@@ -10,6 +10,7 @@ import {
     RiskSection,
     ContentSection,
     RiskCategory,
+    TokenSnippet,
 } from "../props";
 
 const ethereum: LayerProject = {
@@ -89,7 +90,7 @@ const ethereum: LayerProject = {
                     infrastructureSlug: "lombard-lbtc",
                     score: 0,
                     tier: RiskFactor.UnderReview,
-                    title: "This two-way peg is under review",
+                    title: TokenSnippet.UnderReview,
                     content: "This two-way peg is under review",
                 },
                 {
@@ -97,7 +98,7 @@ const ethereum: LayerProject = {
                     infrastructureSlug: "kraken-kbtc",
                     score: 0,
                     tier: RiskFactor.UnderReview,
-                    title: "This two-way peg is under review",
+                    title: TokenSnippet.UnderReview,
                     content: "This two-way peg is under review",
                 },
                 {
@@ -105,7 +106,7 @@ const ethereum: LayerProject = {
                     infrastructureSlug: "bedrock-unibtc",
                     score: 0,
                     tier: RiskFactor.UnderReview,
-                    title: "This two-way peg is under review",
+                    title: TokenSnippet.UnderReview,
                     content: "This two-way peg is under review",
                 },
                 {
@@ -113,7 +114,7 @@ const ethereum: LayerProject = {
                     infrastructureSlug: "pump-pumpbtc",
                     score: 0,
                     tier: RiskFactor.UnderReview,
-                    title: "This two-way peg is under review",
+                    title: TokenSnippet.UnderReview,
                     content: "This two-way peg is under review",
                 },
                 {
@@ -121,7 +122,7 @@ const ethereum: LayerProject = {
                     infrastructureSlug: "firebitcoin-fbtc",
                     score: 0,
                     tier: RiskFactor.UnderReview,
-                    title: "This two-way peg is under review",
+                    title: TokenSnippet.UnderReview,
                     content: "This two-way peg is under review",
                 },
                 {
@@ -129,7 +130,7 @@ const ethereum: LayerProject = {
                     infrastructureSlug: "solv-solvbtc",
                     score: 0,
                     tier: RiskFactor.UnderReview,
-                    title: "This two-way peg is under review",
+                    title: TokenSnippet.UnderReview,
                     content: "This two-way peg is under review",
                 },
                 {
@@ -137,7 +138,7 @@ const ethereum: LayerProject = {
                     infrastructureSlug: "solv-solvbtcbbn",
                     score: 0,
                     tier: RiskFactor.UnderReview,
-                    title: "This two-way peg is under review",
+                    title: TokenSnippet.UnderReview,
                     content: "This two-way peg is under review",
                 },
                 {
@@ -145,7 +146,7 @@ const ethereum: LayerProject = {
                     infrastructureSlug: "solv-solvbtcena",
                     score: 0,
                     tier: RiskFactor.UnderReview,
-                    title: "This two-way peg is under review",
+                    title: TokenSnippet.UnderReview,
                     content: "This two-way peg is under review",
                 },
                 {
@@ -153,7 +154,7 @@ const ethereum: LayerProject = {
                     infrastructureSlug: "lorenzo-stbtc",
                     score: 0,
                     tier: RiskFactor.UnderReview,
-                    title: "This two-way peg is under review",
+                    title: TokenSnippet.UnderReview,
                     content: "This two-way peg is under review",
                 },
                 {
@@ -161,7 +162,7 @@ const ethereum: LayerProject = {
                     infrastructureSlug: "acorn-abtc",
                     score: 0,
                     tier: RiskFactor.UnderReview,
-                    title: "This two-way peg is under review",
+                    title: TokenSnippet.UnderReview,
                     content: "This two-way peg is under review",
                 },
                 {
@@ -169,7 +170,7 @@ const ethereum: LayerProject = {
                     infrastructureSlug: "babypie-mbtc",
                     score: 0,
                     tier: RiskFactor.UnderReview,
-                    title: "This two-way peg is under review",
+                    title: TokenSnippet.UnderReview,
                     content: "This two-way peg is under review",
                 },
             ],

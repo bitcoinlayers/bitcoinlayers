@@ -10,6 +10,7 @@ import {
     RiskSection,
     ContentSection,
     RiskCategory,
+    TokenSnippet,
 } from "../props";
 
 const base: LayerProject = {
@@ -89,7 +90,7 @@ const base: LayerProject = {
                     infrastructureSlug: "ibtc",
                     score: 0,
                     tier: RiskFactor.UnderReview,
-                    title: "This two-way peg is under review",
+                    title: TokenSnippet.UnderReview,
                     content:
                         "iBTC is a two-way peg that leverages DLC contracts between various institutions and a federated attestor network. We are reviewing its trust assumptions.",
                 },
@@ -98,7 +99,7 @@ const base: LayerProject = {
                     infrastructureSlug: "solv-solvbtc",
                     score: 0,
                     tier: RiskFactor.UnderReview,
-                    title: "This two-way peg is under review",
+                    title: TokenSnippet.UnderReview,
                     content: "This two-way peg is under review",
                 },
                 {
@@ -106,7 +107,7 @@ const base: LayerProject = {
                     infrastructureSlug: "pump-btc",
                     score: 0,
                     tier: RiskFactor.UnderReview,
-                    title: "This two-way peg is under review",
+                    title: TokenSnippet.UnderReview,
                     content: "This two-way peg is under review",
                 },
                 {
@@ -114,7 +115,7 @@ const base: LayerProject = {
                     infrastructureSlug: "axelar-axlbtc",
                     score: 0,
                     tier: RiskFactor.UnderReview,
-                    title: "This two-way peg is under review",
+                    title: TokenSnippet.UnderReview,
                     content: "This two-way peg is under review",
                 },
                 {
@@ -122,7 +123,7 @@ const base: LayerProject = {
                     infrastructureSlug: "solv-solvbtcbbn",
                     score: 0,
                     tier: RiskFactor.UnderReview,
-                    title: "This two-way peg is under review",
+                    title: TokenSnippet.UnderReview,
                     content:
                         "SolvBTCBBN is a derivative of Solv BTC. We are reviewing its trust assumptions.",
                 },

@@ -7,6 +7,7 @@ import {
     Notice,
     Site,
     RiskCategory,
+    TokenSnippet,
 } from "../props";
 
 const alys: LayerProject = {
