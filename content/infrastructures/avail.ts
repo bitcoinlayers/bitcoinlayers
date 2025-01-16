@@ -21,6 +21,7 @@ const avail: InfrastructureProject = {
     nativeToken: "AVAIL",
     purpose: Purpose.General,
     associatedLayers: "-",
+    notice: undefined,
     bitcoinOnly: false,
     links: [
         {

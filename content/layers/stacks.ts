@@ -5,6 +5,7 @@ import {
     RiskFactor,
     EntityType,
     EntityCategory,
+    Notice,
     Site,
     RiskSection,
     ContentSection,
@@ -31,6 +32,7 @@ const stacks: LayerProject = {
     btcLocked: 1054,
     nativeToken: "STX",
     feeToken: "STX",
+    notice: undefined,
     bitcoinOnly: false,
     links: [
         {
@@ -80,7 +82,7 @@ const stacks: LayerProject = {
                     tier: RiskFactor.VeryHigh,
                     title: "Users trust Wrapped with the custody of BTC backing xBTC",
                     content:
-                    "Users trust Wrapped, a custodian provider, with the custody of BTC backing xBTC. Alex, a DeFi project largely associated with the Stacks ecosystem, acquired Wrapped and has initiated a transition to move xBTC into sBTC.\n\nFunds that are not moved into sBTC are still secured by [Wrapped](https://wrapped.com/).",
+                        "Users trust Wrapped, a custodian provider, with the custody of BTC backing xBTC. Alex, a DeFi project largely associated with the Stacks ecosystem, acquired Wrapped and has initiated a transition to move xBTC into sBTC.\n\nFunds that are not moved into sBTC are still secured by [Wrapped](https://wrapped.com/).",
                 },
                 {
                     name: "XLink aBTC",
@@ -89,7 +91,7 @@ const stacks: LayerProject = {
                     tier: RiskFactor.VeryHigh,
                     title: "There is limited information available on Xlink aBTC's custody mechanism",
                     content:
-                    "There is limited information available on Xlink aBTC's custody mechanism for BTC backing aBTC. Users trust Alex, the project behind Xlink, to set up secure custody practices. Xlink's [website](https://www.xlink.network/) mentions that institutional grade MPC solutions are used."
+                        "There is limited information available on Xlink aBTC's custody mechanism for BTC backing aBTC. Users trust Alex, the project behind Xlink, to set up secure custody practices. Xlink's [website](https://www.xlink.network/) mentions that institutional grade MPC solutions are used.",
                 },
             ],
         },

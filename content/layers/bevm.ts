@@ -5,6 +5,7 @@ import {
     RiskFactor,
     EntityType,
     EntityCategory,
+    Notice,
     Site,
     RiskCategory,
 } from "../props";
@@ -21,7 +22,7 @@ const bevm: LayerProject = {
     bridge: false,
     underReview: false,
     riskFactors: [
-        RiskFactor.UnderReview,
+        RiskFactor.VeryHigh,
         RiskFactor.Medium,
         RiskFactor.High,
         RiskFactor.High,
@@ -29,6 +30,7 @@ const bevm: LayerProject = {
     btcLocked: 80,
     nativeToken: "BEVM",
     feeToken: "WBTC",
+    notice: Notice.Reorg,
     bitcoinOnly: false,
     links: [
         {

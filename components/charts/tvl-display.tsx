@@ -41,7 +41,7 @@ export default function TVLDisplay({ data }: Props) {
             data-active={false}
             onClick={() => {}}
         >
-            <span className="text-xs text-muted-foreground">TVL</span>
+            <span className="text-xs text-muted-foreground">BTC Supply</span>
             <span className="font-bold">
                 {new Intl.NumberFormat("en-US", {
                     minimumFractionDigits: 2,

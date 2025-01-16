@@ -4,6 +4,7 @@ import {
     Type,
     LiveStatus,
     EntityType,
+    Notice,
     Site,
     AssessmentCategory,
 } from "../props";
@@ -22,6 +23,7 @@ const pump: InfrastructureProject = {
     nativeToken: "",
     purpose: Purpose.LiquidStaking,
     associatedLayers: "Ethereum",
+    notice: undefined,
     bitcoinOnly: false,
     links: [
         {

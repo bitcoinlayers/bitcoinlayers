@@ -46,7 +46,7 @@ const Categories: React.FC<{ layer: LayerProject }> = ({ layer }) => {
                 </div>
             </div>
             <div className="flex-col justify-center items-start pl-4 lg:pl-0">
-                <div className="text-sm leading-tight">TVL</div>
+                <div className="text-sm leading-tight">BTC Supply</div>
                 <div className="text-muted-foreground">
                     ₿
                     {totalAmountForNetwork.toLocaleString("en-US", {

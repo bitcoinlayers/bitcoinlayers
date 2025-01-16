@@ -4,6 +4,7 @@ import {
     Type,
     LiveStatus,
     EntityType,
+    Notice,
     Site,
     AssessmentCategory,
 } from "../props";
@@ -22,6 +23,7 @@ const librepbtc: InfrastructureProject = {
     nativeToken: "-",
     purpose: Purpose.General,
     associatedLayers: "Libre",
+    notice: undefined,
     bitcoinOnly: false,
     links: [],
     description: "Under review.",
@@ -37,16 +39,16 @@ const librepbtc: InfrastructureProject = {
             ],
         },
     ],
-        assessment: [
-            {
-                category: AssessmentCategory.AssetCustody,
-                score: 0,
-                tier: "",
-                title: "Libre's bridge relies on a third party provider. Signers are permissioned nodes from the pNetwork",
-                content:
-                    "BTC users who deposit funds onto Libre do so via the pNetwork bridge. A limited group of signers operate the bridge.\n\n⚠️ The pNetwork bridge has historically seen two exploits occur. One of those exploits involved BTC-backed tokens.\n\n[Source](https://docs.libre.org/libre-docs/cross-chain-interoperability/bitcoin-mainnet)",
-            },
-        ],
-    };
+    assessment: [
+        {
+            category: AssessmentCategory.AssetCustody,
+            score: 0,
+            tier: "",
+            title: "Libre's bridge relies on a third party provider. Signers are permissioned nodes from the pNetwork",
+            content:
+                "BTC users who deposit funds onto Libre do so via the pNetwork bridge. A limited group of signers operate the bridge.\n\n⚠️ The pNetwork bridge has historically seen two exploits occur. One of those exploits involved BTC-backed tokens.\n\n[Source](https://docs.libre.org/libre-docs/cross-chain-interoperability/bitcoin-mainnet)",
+        },
+    ],
+};
 
 export default librepbtc;

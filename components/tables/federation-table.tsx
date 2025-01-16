@@ -28,7 +28,7 @@ import getCurrentSuppliesByTokenimpl, {
 } from "@/hooks/get-current-supplies-by-tokenimpl";
 import NetworkList from "@/components/tables/mapping-network-img";
 
-type TableTabKey = "Snapshot" | "Type" | "Status" | "Networks" | "TVL";
+type TableTabKey = "Snapshot" | "Type" | "Status" | "Networks" | "Supply";
 
 interface Props {
     data: Project[];
@@ -83,7 +83,7 @@ const FederationTable = ({ data, headers }: Props) => {
         serialize: (value) => value.join(","),
     });
     const [sortBy, setSortBy] = useQueryState("sortBy", {
-        defaultValue: "TVL",
+        defaultValue: "Supply",
     });
     const [sortOrder, setSortOrder] = useQueryState("sortOrder", {
         defaultValue: "desc",
@@ -152,7 +152,7 @@ const FederationTable = ({ data, headers }: Props) => {
                     valueA = a.live;
                     valueB = b.live;
                     break;
-                case "TVL":
+                case "Supply":
                     valueA = totaledBalances[a.slug]?.totalAmount ?? -Infinity;
                     valueB = totaledBalances[b.slug]?.totalAmount ?? -Infinity;
                     break;
@@ -353,7 +353,7 @@ const FederationTable = ({ data, headers }: Props) => {
                                         </td>
                                     )}
                                     {(!isMobile ||
-                                        mobileActiveTab === "TVL") && (
+                                        mobileActiveTab === "Supply") && (
                                         <td className="lg:px-6 px-4 py-3 lg:py-4">
                                             <Link
                                                 href={`/${
