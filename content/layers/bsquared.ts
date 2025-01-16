@@ -32,7 +32,7 @@ const bsquared: LayerProject = {
     btcLocked: 0,
     nativeToken: "BSQ",
     feeToken: "WBTC",
-    notice: Notice.NoBridge,
+    notice: Notice.Reorg,
     bitcoinOnly: false,
     links: [
         {

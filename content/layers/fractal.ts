@@ -32,7 +32,7 @@ const fractal: LayerProject = {
     btcLocked: 0,
     nativeToken: "FB",
     feeToken: "FB",
-    notice: undefined,
+    notice: Notice.Reorg,
     bitcoinOnly: false,
     links: [
         {

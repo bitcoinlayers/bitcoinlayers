@@ -32,7 +32,7 @@ const merlin: LayerProject = {
     btcLocked: 9303,
     nativeToken: "MERL",
     feeToken: "WBTC",
-    notice: undefined,
+    notice: Notice.Reorg,
     bitcoinOnly: false,
     links: [
         {

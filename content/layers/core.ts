@@ -32,7 +32,7 @@ const core: LayerProject = {
     btcLocked: 6705,
     nativeToken: "CORE",
     feeToken: "CORE",
-    notice: undefined,
+    notice: Notice.Reorg,
     bitcoinOnly: false,
     links: [
         {

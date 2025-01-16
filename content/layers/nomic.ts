@@ -32,7 +32,7 @@ const nomic: LayerProject = {
     btcLocked: 4.95,
     nativeToken: "NOM",
     feeToken: "NOM",
-    notice: undefined,
+    notice: Notice.Reorg,
     bitcoinOnly: false,
     links: [
         {

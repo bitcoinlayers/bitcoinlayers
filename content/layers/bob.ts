@@ -30,7 +30,7 @@ const bob: LayerProject = {
     btcLocked: 974,
     nativeToken: "ETH",
     feeToken: "ETH",
-    notice: Notice.NoBridge,
+    notice: Notice.Reorg,
     bitcoinOnly: false,
     links: [
         {
