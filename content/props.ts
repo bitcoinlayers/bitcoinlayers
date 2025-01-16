@@ -90,7 +90,7 @@ export enum EntityCategory {
 export enum Notice {
     NoBridge = "No native bitcoin bridge",
     Sidesystem = "Sidesystems",
-    Reorg = "Will be move to Alternative category",
+    Reorg = "🚨 This project will be moved to the Alternative category after June 30th.",
 }
 
 export enum Site {
