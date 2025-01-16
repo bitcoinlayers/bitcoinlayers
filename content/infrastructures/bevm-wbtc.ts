@@ -4,6 +4,7 @@ import {
     Type,
     LiveStatus,
     EntityType,
+    Notice,
     Site,
     AssessmentCategory,
 } from "../props";
@@ -22,6 +23,7 @@ const bevmwbtc: InfrastructureProject = {
     nativeToken: "-",
     purpose: Purpose.General,
     associatedLayers: "BEVM",
+    notice: undefined,
     bitcoinOnly: false,
     links: [],
     description: "Under review.",
@@ -37,16 +39,16 @@ const bevmwbtc: InfrastructureProject = {
             ],
         },
     ],
-        assessment: [
-            {
-                category: AssessmentCategory.AssetCustody,
-                score: 0,
-                tier: "",
-                title: "Users trust a federation to secure BTC backing BEVM wBTC",
-                content:
-                    "On BEVM's official bridge, BTC is locked in a bitcoin address controlled by up to 15 trustees. These trustees custody the BTC that backs wBTC on BEVM.\n\nTrustees are selected by BEVM's validator set. Users trust that the trustees will not steal their BTC.",
-            },
-        ],
-    };
+    assessment: [
+        {
+            category: AssessmentCategory.AssetCustody,
+            score: 0,
+            tier: "",
+            title: "Users trust a federation to secure BTC backing BEVM wBTC",
+            content:
+                "On BEVM's official bridge, BTC is locked in a bitcoin address controlled by up to 15 trustees. These trustees custody the BTC that backs wBTC on BEVM.\n\nTrustees are selected by BEVM's validator set. Users trust that the trustees will not steal their BTC.",
+        },
+    ],
+};
 
 export default bevmwbtc;

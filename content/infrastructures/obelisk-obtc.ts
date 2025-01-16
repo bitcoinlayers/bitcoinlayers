@@ -4,6 +4,7 @@ import {
     Type,
     LiveStatus,
     EntityType,
+    Notice,
     Site,
     AssessmentCategory,
 } from "../props";
@@ -22,9 +23,11 @@ const obeliskobtc: InfrastructureProject = {
     nativeToken: "-",
     purpose: Purpose.General,
     associatedLayers: "Core",
+    notice: undefined,
     bitcoinOnly: false,
     links: [],
-    description: "Obelisk oBTC is a reserve asset that is live on various EVM-compatible networks.",
+    description:
+        "Obelisk oBTC is a reserve asset that is live on various EVM-compatible networks.",
     sections: [
         {
             id: "selfsubmit",

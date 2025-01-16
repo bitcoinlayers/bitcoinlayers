@@ -4,6 +4,7 @@ import {
     Type,
     LiveStatus,
     EntityType,
+    Notice,
     Site,
 } from "../props";
 
@@ -21,6 +22,7 @@ const fedimint: InfrastructureProject = {
     nativeToken: "BTC",
     purpose: Purpose.FederatedEcashMint,
     associatedLayers: "-",
+    notice: undefined,
     bitcoinOnly: true,
     links: [
         {

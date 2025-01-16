@@ -5,6 +5,7 @@ import {
     RiskFactor,
     EntityType,
     EntityCategory,
+    Notice,
     Site,
     RiskCategory,
 } from "../props";
@@ -29,6 +30,7 @@ const bob: LayerProject = {
     btcLocked: 974,
     nativeToken: "ETH",
     feeToken: "ETH",
+    notice: Notice.NoBridge,
     bitcoinOnly: false,
     links: [
         {
@@ -82,7 +84,8 @@ const bob: LayerProject = {
                     score: 0,
                     tier: RiskFactor.UnderReview,
                     title: "Users trust custodians and various onchain contracts. We have not reviewed the contract implementations for this chain",
-                    content: "When a user deposits funds into the Bedrock protocol, they deposit a wrapped BTC token into a smart contract. The uniBTC smart contract on Ethereum (and other chains) is responsible for minting uniBTC in exchange for wrapped BTC tokens.\n\nTo deposit these tokens on Babylon, the protocol relies on a custodial provider to exchange the wrapped BTC tokens for native BTC tokens that they would stake on Babylon.\n\nBedrock has not disclosed who is responsible for securing and staking native BTC on users' behalf.",
+                    content:
+                        "When a user deposits funds into the Bedrock protocol, they deposit a wrapped BTC token into a smart contract. The uniBTC smart contract on Ethereum (and other chains) is responsible for minting uniBTC in exchange for wrapped BTC tokens.\n\nTo deposit these tokens on Babylon, the protocol relies on a custodial provider to exchange the wrapped BTC tokens for native BTC tokens that they would stake on Babylon.\n\nBedrock has not disclosed who is responsible for securing and staking native BTC on users' behalf.",
                 },
                 {
                     name: "Solv SolvBTC",
@@ -90,7 +93,8 @@ const bob: LayerProject = {
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: "Users trust custodians and various onchain contracts. We have not reviewed the contract implementations for this chain",
-                    content: "SolvBTC claims to be partially backed by native BTC managed by custodian providers. It’s been stated that Copper, Ceffu, Fireblocks, and Cobo are custodial providers securing BTC that partially backs SolvBTC. SolvBTC is additionally backed by various BTC-derivative assets; M-BTC, BTCB, wBTC, FBTC, cbBTC, BTC.b, and tBTC.\n\nMultisigs securing derivative assets backing by SolvBTC are secured by GnosisSafes with 5 signers.",
+                    content:
+                        "SolvBTC claims to be partially backed by native BTC managed by custodian providers. It’s been stated that Copper, Ceffu, Fireblocks, and Cobo are custodial providers securing BTC that partially backs SolvBTC. SolvBTC is additionally backed by various BTC-derivative assets; M-BTC, BTCB, wBTC, FBTC, cbBTC, BTC.b, and tBTC.\n\nMultisigs securing derivative assets backing by SolvBTC are secured by GnosisSafes with 5 signers.",
                 },
                 {
                     name: "Solv SolvBTC.BBN",
@@ -98,7 +102,8 @@ const bob: LayerProject = {
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: "Users trust custodians and various onchain contracts. We have not reviewed the contract implementations for this chain",
-                    content: "Four entities custody the bitcoin assets backing Solv.BBN tokens. These entities are Cobo, Ceffu, Fireblocks and the Solv Guard. These entities are known as Guardians in the [Solv application](https://app.solv.finance/staking).\n\nCeffu and Cobo are the custodians for funds that are staked with Babylon.\n\n[Source](https://docs.solv.finance/staking-abstraction-layer-sal/the-ecological-view)",
+                    content:
+                        "Four entities custody the bitcoin assets backing Solv.BBN tokens. These entities are Cobo, Ceffu, Fireblocks and the Solv Guard. These entities are known as Guardians in the [Solv application](https://app.solv.finance/staking).\n\nCeffu and Cobo are the custodians for funds that are staked with Babylon.\n\n[Source](https://docs.solv.finance/staking-abstraction-layer-sal/the-ecological-view)",
                 },
             ],
         },

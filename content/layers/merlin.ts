@@ -5,6 +5,7 @@ import {
     RiskFactor,
     EntityType,
     EntityCategory,
+    Notice,
     Site,
     RiskSection,
     ContentSection,
@@ -31,6 +32,7 @@ const merlin: LayerProject = {
     btcLocked: 9303,
     nativeToken: "MERL",
     feeToken: "WBTC",
+    notice: undefined,
     bitcoinOnly: false,
     links: [
         {
@@ -79,7 +81,8 @@ const merlin: LayerProject = {
                     score: 0,
                     tier: RiskFactor.UnderReview,
                     title: "Users trust custodians and various onchain contracts. We have not reviewed the contract implementations for this chain",
-                    content: "When a user deposits funds into the Bedrock protocol, they deposit a wrapped BTC token into a smart contract. The uniBTC smart contract on Ethereum (and other chains) is responsible for minting uniBTC in exchange for wrapped BTC tokens.\n\nTo deposit these tokens on Babylon, the protocol relies on a custodial provider to exchange the wrapped BTC tokens for native BTC tokens that they would stake on Babylon.\n\nBedrock has not disclosed who is responsible for securing and staking native BTC on users' behalf.",
+                    content:
+                        "When a user deposits funds into the Bedrock protocol, they deposit a wrapped BTC token into a smart contract. The uniBTC smart contract on Ethereum (and other chains) is responsible for minting uniBTC in exchange for wrapped BTC tokens.\n\nTo deposit these tokens on Babylon, the protocol relies on a custodial provider to exchange the wrapped BTC tokens for native BTC tokens that they would stake on Babylon.\n\nBedrock has not disclosed who is responsible for securing and staking native BTC on users' behalf.",
                 },
                 {
                     name: "Lorenzo stBTC",
@@ -87,7 +90,8 @@ const merlin: LayerProject = {
                     score: 0,
                     tier: RiskFactor.UnderReview,
                     title: "Users trust custodians and various onchain contracts. We have not reviewed the contract implementations for this chain",
-                    content: "Users trust Lorenzo, the operators of Lorenzo stBTC, to secure and stake native BTC that backs stBTC. It has also been stated in Lorenzo's [marketing materials](https://medium.com/@lorenzoprotocol/lorenzo-allies-with-cobo-ceffu-and-chainup-e0d824c4744d) that custodian providers Cobo, Ceffu, and Chainup are participating in Lorenzo's protocol as custody providers, but their documentation does not claim this.\n\nUsers trust Lorenzo's claims in their documentation are being executed in practice.\n\n[Source](https://docs.lorenzo-protocol.xyz/introduction/stbtc-issuance-and-settlement)",
+                    content:
+                        "Users trust Lorenzo, the operators of Lorenzo stBTC, to secure and stake native BTC that backs stBTC. It has also been stated in Lorenzo's [marketing materials](https://medium.com/@lorenzoprotocol/lorenzo-allies-with-cobo-ceffu-and-chainup-e0d824c4744d) that custodian providers Cobo, Ceffu, and Chainup are participating in Lorenzo's protocol as custody providers, but their documentation does not claim this.\n\nUsers trust Lorenzo's claims in their documentation are being executed in practice.\n\n[Source](https://docs.lorenzo-protocol.xyz/introduction/stbtc-issuance-and-settlement)",
                 },
                 {
                     name: "Solv SolvBTC",
@@ -95,7 +99,8 @@ const merlin: LayerProject = {
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: "MBTC on Merlin backs SolvBTC on Merlin",
-                    content: "SolvBTC is backed by MBTC on Merlin. MBTC backing SolvBTC is held in a [GnosisSafe with a 1/5 signer threshold](https://scan.merlinchain.io/address/0x6a57a8d6c4fe64b1fd6e8c3e07b0591d22b7ce7f).",
+                    content:
+                        "SolvBTC is backed by MBTC on Merlin. MBTC backing SolvBTC is held in a [GnosisSafe with a 1/5 signer threshold](https://scan.merlinchain.io/address/0x6a57a8d6c4fe64b1fd6e8c3e07b0591d22b7ce7f).",
                 },
                 {
                     name: "Solv SolvBTC.BBN",
@@ -103,7 +108,8 @@ const merlin: LayerProject = {
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: "Users trust custodians and various onchain contracts. We have not reviewed the contract implementations for this chain",
-                    content: "Four entities custody the bitcoin assets backing Solv.BBN tokens. These entities are Cobo, Ceffu, Fireblocks and the Solv Guard. These entities are known as Guardians in the [Solv application](https://app.solv.finance/staking).\n\nCeffu and Cobo are the custodians for funds that are staked with Babylon.\n\n[Source](https://docs.solv.finance/staking-abstraction-layer-sal/the-ecological-view)",
+                    content:
+                        "Four entities custody the bitcoin assets backing Solv.BBN tokens. These entities are Cobo, Ceffu, Fireblocks and the Solv Guard. These entities are known as Guardians in the [Solv application](https://app.solv.finance/staking).\n\nCeffu and Cobo are the custodians for funds that are staked with Babylon.\n\n[Source](https://docs.solv.finance/staking-abstraction-layer-sal/the-ecological-view)",
                 },
                 {
                     name: "Solv SolvBTC.ENA",

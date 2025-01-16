@@ -5,6 +5,7 @@ import {
     RiskFactor,
     EntityType,
     EntityCategory,
+    Notice,
     Site,
     RiskCategory,
 } from "../props";
@@ -29,6 +30,7 @@ const arkliquid: LayerProject = {
     btcLocked: 0,
     nativeToken: "LBTC",
     feeToken: "LBTC",
+    notice: undefined,
     bitcoinOnly: true,
     links: [
         {

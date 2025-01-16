@@ -4,6 +4,7 @@ import {
     Type,
     LiveStatus,
     EntityType,
+    Notice,
     Site,
     AssessmentCategory,
 } from "../props";
@@ -22,6 +23,7 @@ const solv: InfrastructureProject = {
     nativeToken: "",
     purpose: Purpose.General,
     associatedLayers: "Ethereum, BNB, Arbitrum, Avalanche, Merlin, BOB, Base",
+    notice: undefined,
     bitcoinOnly: false,
     links: [
         {

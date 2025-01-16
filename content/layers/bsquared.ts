@@ -5,6 +5,7 @@ import {
     RiskFactor,
     EntityType,
     EntityCategory,
+    Notice,
     Site,
     RiskSection,
     ContentSection,
@@ -31,6 +32,7 @@ const bsquared: LayerProject = {
     btcLocked: 0,
     nativeToken: "BSQ",
     feeToken: "WBTC",
+    notice: undefined,
     bitcoinOnly: false,
     links: [
         {
@@ -79,7 +81,8 @@ const bsquared: LayerProject = {
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: "Users trust custodians and various onchain contracts. We have not reviewed the contract implementations for this chain",
-                    content: "When a user deposits funds into the Bedrock protocol, they deposit a wrapped BTC token into a smart contract. The uniBTC smart contract on Ethereum (and other chains) is responsible for minting uniBTC in exchange for wrapped BTC tokens.\n\nTo deposit these tokens on Babylon, the protocol relies on a custodial provider to exchange the wrapped BTC tokens for native BTC tokens that they would stake on Babylon.\n\nBedrock has not disclosed who is responsible for securing and staking native BTC on users' behalf.",
+                    content:
+                        "When a user deposits funds into the Bedrock protocol, they deposit a wrapped BTC token into a smart contract. The uniBTC smart contract on Ethereum (and other chains) is responsible for minting uniBTC in exchange for wrapped BTC tokens.\n\nTo deposit these tokens on Babylon, the protocol relies on a custodial provider to exchange the wrapped BTC tokens for native BTC tokens that they would stake on Babylon.\n\nBedrock has not disclosed who is responsible for securing and staking native BTC on users' behalf.",
                 },
                 {
                     name: "Lorenzo stBTC",
@@ -87,7 +90,8 @@ const bsquared: LayerProject = {
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: "Users trust custodians and various onchain contracts. We have not reviewed the contract implementations for this chain",
-                    content: "Users trust Lorenzo, the operators of Lorenzo stBTC, to secure and stake native BTC that backs stBTC. It has also been stated in Lorenzo's [marketing materials](https://medium.com/@lorenzoprotocol/lorenzo-allies-with-cobo-ceffu-and-chainup-e0d824c4744d) that custodian providers Cobo, Ceffu, and Chainup are participating in Lorenzo's protocol as custody providers, but their documentation does not claim this.\n\nUsers trust Lorenzo's claims in their documentation are being executed in practice.\n\n[Source](https://docs.lorenzo-protocol.xyz/introduction/stbtc-issuance-and-settlement)",
+                    content:
+                        "Users trust Lorenzo, the operators of Lorenzo stBTC, to secure and stake native BTC that backs stBTC. It has also been stated in Lorenzo's [marketing materials](https://medium.com/@lorenzoprotocol/lorenzo-allies-with-cobo-ceffu-and-chainup-e0d824c4744d) that custodian providers Cobo, Ceffu, and Chainup are participating in Lorenzo's protocol as custody providers, but their documentation does not claim this.\n\nUsers trust Lorenzo's claims in their documentation are being executed in practice.\n\n[Source](https://docs.lorenzo-protocol.xyz/introduction/stbtc-issuance-and-settlement)",
                 },
                 {
                     name: "UniRouter uBTC",
@@ -95,7 +99,8 @@ const bsquared: LayerProject = {
                     score: 0,
                     tier: RiskFactor.Critical,
                     title: "Smart contracts have not been reviewed. UniRouter has not disclosed its custodian operators",
-                    content: "Users trust that the UniRouter team has set up secure custody practices and has BTC reserves backing uniBTC. UniRouter has not disclosed who secures the BTC backing uBTC.",
+                    content:
+                        "Users trust that the UniRouter team has set up secure custody practices and has BTC reserves backing uniBTC. UniRouter has not disclosed who secures the BTC backing uBTC.",
                 },
                 {
                     name: "BitGo wBTC",
@@ -111,8 +116,8 @@ const bsquared: LayerProject = {
                     infrastructureSlug: "obelisk-obtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                title: "Users trust centralized signers to secure BTC backing oBTC",
-                content:
+                    title: "Users trust centralized signers to secure BTC backing oBTC",
+                    content:
                         "Obelisk's documentation claims that users deposit BTC into an MPC scheme to mint oBTC on a respective destination chain.\n\nUsers trust Obelisk's claims in their documentation are being executed in practice.\n\n[Source](https://docs-obelisk.nodedao.com/obtc-asset/how-to-mint-obtc-on-obelisk) ",
                 },
                 {

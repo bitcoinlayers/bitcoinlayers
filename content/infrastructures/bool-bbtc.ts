@@ -4,6 +4,7 @@ import {
     Type,
     LiveStatus,
     EntityType,
+    Notice,
     Site,
     AssessmentCategory,
 } from "../props";
@@ -22,6 +23,7 @@ const boolbbtc: InfrastructureProject = {
     nativeToken: "-",
     purpose: Purpose.General,
     associatedLayers: "Fractal, Bsquared Network, BitLayer, SatoshiVM",
+    notice: undefined,
     bitcoinOnly: false,
     links: [
         {

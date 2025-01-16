@@ -4,6 +4,7 @@ import {
     Type,
     LiveStatus,
     EntityType,
+    Notice,
     Site,
     AssessmentCategory,
 } from "../props";
@@ -22,9 +23,11 @@ const nomicnbtc: InfrastructureProject = {
     nativeToken: "-",
     purpose: Purpose.General,
     associatedLayers: "Nomic, Osmosis, and other IBC-connected chains",
+    notice: undefined,
     bitcoinOnly: false,
     links: [],
-    description: "nBTC is the native token for the Nomic network. Nomic is a proof-of-stake blockchain prioritizing distributed BTC custody",
+    description:
+        "nBTC is the native token for the Nomic network. Nomic is a proof-of-stake blockchain prioritizing distributed BTC custody",
     sections: [
         {
             id: "selfsubmit",

@@ -22,6 +22,7 @@ import getCurrentSuppliesByTokenimpl, {
 import getCurrentSuppliesByNetwork from "@/hooks/get-current-supplies-by-network";
 import TokenList from "@/components/tables/mapping-token-img";
 import { EntityCategory } from "@/content/props";
+import NoticeSnapshotDialog from "../layer/notice-snapshot/notice-snapshot-dialog";
 
 type TableTabKey =
     | "Trust Assumptions"
@@ -256,6 +257,11 @@ const LayerTable = ({ data, headers }: Props) => {
                                                 {item.title}
                                             </span>
                                         </Link>
+                                        {item.notice && (
+                                            <NoticeSnapshotDialog
+                                                layer={item}
+                                            />
+                                        )}
                                     </td>
                                     {(!isMobile ||
                                         mobileActiveTab ===
