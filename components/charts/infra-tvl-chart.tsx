@@ -197,9 +197,9 @@ export default function InfraTVLChart() {
         <Card className="bg-background mb-6">
             <div className="w-full flex flex-col sm:flex-row border-y">
                 <div className="flex flex-col justify-center items-start py-4 sm:py-7 border-b sm:border-b-0 px-6 sm:w-3/4">
-                    <div className="text-lg sm:text-xl">BTC Locked</div>
+                    <div className="text-lg sm:text-xl">BTC Supply</div>
                     <div className="text-xs sm:text-sm text-muted-foreground">
-                        Total locked per day
+                        Total supply per day
                     </div>
                 </div>
                 <div className="flex flex-row sm:w-1/4">

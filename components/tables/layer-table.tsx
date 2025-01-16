@@ -28,7 +28,7 @@ type TableTabKey =
     | "Type"
     | "Unit"
     | "BTC Pegs"
-    | "BTC Locked";
+    | "BTC Supply";
 
 interface Props {
     data: LayerProject[];
@@ -82,7 +82,7 @@ const LayerTable = ({ data, headers }: Props) => {
     );
 
     const [sortBy, setSortBy] = useQueryState("sortBy", {
-        defaultValue: "BTC Locked",
+        defaultValue: "BTC Supply",
     });
     const [sortOrder, setSortOrder] = useQueryState("sortOrder", {
         defaultValue: "desc",
@@ -143,7 +143,7 @@ const LayerTable = ({ data, headers }: Props) => {
                     valueA = a.nativeToken;
                     valueB = b.nativeToken;
                     break;
-                case "BTC Locked":
+                case "BTC Supply":
                     valueA = totaledBalances[a.slug]?.totalAmount ?? -Infinity;
                     valueB = totaledBalances[b.slug]?.totalAmount ?? -Infinity;
                     break;
@@ -317,7 +317,7 @@ const LayerTable = ({ data, headers }: Props) => {
                                         </td>
                                     )}
                                     {(!isMobile ||
-                                        mobileActiveTab === "BTC Locked") && (
+                                        mobileActiveTab === "BTC Supply") && (
                                         <td className="lg:px-6 px-4 py-3 lg:py-4">
                                             <Link href={`/layers/${item.slug}`}>
                                                 {item.underReview ||
