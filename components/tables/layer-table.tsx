@@ -245,23 +245,25 @@ const LayerTable = ({ data, headers }: Props) => {
                                     key={item.slug}
                                 >
                                     <td className="lg:px-6 px-4 py-4 font-semibold whitespace-nowrap">
-                                        <Link
-                                            href={`/layers/${item.slug}`}
-                                            className="flex items-center"
-                                        >
-                                            <LayerImage
-                                                src={`/logos/${item.slug.toLowerCase()}.png`}
-                                                title={item.title}
-                                            />
-                                            <span className="ml-2 truncate lg:word-break-none">
-                                                {item.title}
-                                            </span>
-                                        </Link>
-                                        {item.notice && (
-                                            <NoticeSnapshotDialog
-                                                layer={item}
-                                            />
-                                        )}
+                                        <div className="flex items-center space-x-2">
+                                            <Link
+                                                href={`/layers/${item.slug}`}
+                                                className="flex items-center"
+                                            >
+                                                <LayerImage
+                                                    src={`/logos/${item.slug.toLowerCase()}.png`}
+                                                    title={item.title}
+                                                />
+                                                <span className="ml-2 truncate lg:word-break-none">
+                                                    {item.title}
+                                                </span>
+                                            </Link>
+                                            {item.notice && (
+                                                <NoticeSnapshotDialog
+                                                    layer={item}
+                                                />
+                                            )}
+                                        </div>
                                     </td>
                                     {(!isMobile ||
                                         mobileActiveTab ===

@@ -1,28 +1,10 @@
 import React from "react";
-import {
-    getRiskColorText,
-    getRiskColorIcon,
-    getRiskColorBackground,
-} from "@/util/riskColors";
 import { DialogHeader, DialogTitle } from "@/components/ui/dialog";
-import { LayerProject, Notice } from "@/content/props";
-import {
-    VaultIcon,
-    LayersIcon,
-    ShieldAlertIcon,
-    TrendingUpIcon,
-    KeyIcon,
-    UserIcon,
-    HandshakeIcon,
-    BanIcon,
-    CoinsIcon,
-    WaypointsIcon,
-    CircleUserIcon,
-} from "lucide-react";
+import { LayerProject } from "@/content/props";
 
 export default function NoticeSnapshotDialogBody({
     layer,
-    title = "Notice Snapshot",
+    title = "Notice", // TODO: Janusz to decide on copy. this is the header of the notice/info modal
 }: {
     layer: LayerProject;
     title?: string;
