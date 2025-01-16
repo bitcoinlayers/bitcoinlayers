@@ -24,7 +24,8 @@ const nomicnbtc: InfrastructureProject = {
     associatedLayers: "Nomic, Osmosis, and other IBC-connected chains",
     bitcoinOnly: false,
     links: [],
-    description: "nBTC is the native token for the Nomic network. Nomic is a proof-of-stake blockchain prioritizing distributed BTC custody",
+    description:
+        "nBTC is the native token for the Nomic network. Nomic is a proof-of-stake blockchain prioritizing distributed BTC custody",
     sections: [
         {
             id: "selfsubmit",

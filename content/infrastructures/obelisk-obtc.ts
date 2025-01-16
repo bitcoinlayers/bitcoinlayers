@@ -24,7 +24,8 @@ const obeliskobtc: InfrastructureProject = {
     associatedLayers: "Core",
     bitcoinOnly: false,
     links: [],
-    description: "Obelisk oBTC is a reserve asset that is live on various EVM-compatible networks.",
+    description:
+        "Obelisk oBTC is a reserve asset that is live on various EVM-compatible networks.",
     sections: [
         {
             id: "selfsubmit",
