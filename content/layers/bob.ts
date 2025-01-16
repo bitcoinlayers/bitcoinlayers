@@ -126,10 +126,10 @@ const bob: LayerProject = {
         {
             category: RiskCategory.FinalityGuarantees,
             score: 0,
-            tier: RiskFactor.UnderReview,
-            title: "BOB state transitions finalize on Ethereum",
+            tier: RiskFactor.VeryHigh,
+            title: "BOB state transitions finalize on Ethereum, but proposer role is whitelisted",
             content:
-                "We are reviewing the BOB validator set and how state transitions are proposed and finalized.",
+                "BOB's state is updated offchain. BOB state transitions, related to its official bridge, are finalized on Ethereum. Only a whitelisted proposer is able to publish state updates to Ethereum. If the BOB proposer goes offline, then users of the rollup would be unable to update BOB's state relative to its official bridge.",
         },
     ],
     sections: [

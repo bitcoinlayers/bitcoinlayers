@@ -28,13 +28,13 @@ export default function NoticeSnapshotDialogBody({
             <div className="my-4"></div>
             <div className="grid grid-cols-1 gap-4 sm:gap-6">
                 <p className="text-left text-white max-w-prose">
-                    It will be moved to the alternative category if it does not meet our minimum standards for sidesystems.
+                    It will be moved to the alternative category if it does not implement technical changes to meet our minimum standards.
                 </p>
             </div>
             <div className="my-4"></div>
             <div className="grid grid-cols-1 gap-4 sm:gap-6">
                 <p className="text-left text-white max-w-prose">
-                    If the project does not meet our standards by June 30th, it will be moved.
+                    If the project does not do this by June 30th, it will be moved.
                 </p>
             </div>
             <DialogFooter className="mt-4 sm:mb-t pt-4 pb-2 border-t flex-row justify-center sm:justify-center">

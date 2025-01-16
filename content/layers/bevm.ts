@@ -22,7 +22,7 @@ const bevm: LayerProject = {
     bridge: false,
     underReview: false,
     riskFactors: [
-        RiskFactor.UnderReview,
+        RiskFactor.VeryHigh,
         RiskFactor.Medium,
         RiskFactor.High,
         RiskFactor.High,
