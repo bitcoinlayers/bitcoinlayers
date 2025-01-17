@@ -27,7 +27,7 @@ const bsquared: LayerProject = {
         RiskFactor.VeryHigh,
         RiskFactor.VeryHigh,
         RiskFactor.VeryHigh,
-        RiskFactor.VeryHigh,
+        RiskFactor.UnderReview,
     ],
     btcLocked: 0,
     nativeToken: "BSQ",
@@ -57,7 +57,7 @@ const bsquared: LayerProject = {
         },
     ],
     description:
-        "The current Bsquared Network mainnet consists of two different chains. The parent chain is a fork of an EVM implementation on Tendermint, and has three permissioned validators operating the network. The rollup chain is a fork of Polygon zkEVM that settles on the Bsquared parent chain.",
+        "The current Bsquared Network mainnet consists of two different chains. The parent chain is a fork of Ethermint. The rollup chain is a fork of of an Ethereum rollup stack.",
     riskAnalysis: [
         {
             category: RiskCategory.BtcCustody,
@@ -144,7 +144,7 @@ const bsquared: LayerProject = {
             tier: RiskFactor.VeryHigh,
             title: "DA requirement is fulfilled by three permissioned validators",
             content:
-                "Sequencer batches are posted to the Bsquared Network L1. This network consists of a permissioned validator set who is responsible for making the data readily available.\n\n🔬We are currently reviewing the operators satisfying the Bsquared DA requirement.",
+                "Sequencer batches are posted to the Bsquared Network L1. This network consists of a permissioned validator set who is responsible for making the data readily available. The identities of these operators has not been disclosed.",
         },
         {
             category: RiskCategory.NetworkOperators,
@@ -152,7 +152,7 @@ const bsquared: LayerProject = {
             tier: RiskFactor.VeryHigh,
             title: "Both the rollup chain and parent chain are run by federated, centralized parties",
             content:
-                "Bsquared Network’s Polygon zkEVM implementation has a single sequencer that posts sequencer batches to its network of three L1 validators.",
+                "Bsquared Network’s implementation has a single sequencer that posts sequencer batches to its network of three L1 validators.",
         },
         {
             category: RiskCategory.FinalityGuarantees,
@@ -230,7 +230,7 @@ const bsquared: LayerProject = {
                 {
                     title: "Node software code is open-source",
                     content:
-                        "The node software and Polygon zkEVM contracts are open-source. Its our understanding that these implementations of Polygon zkEVM and Ethermint have not been audited.",
+                        "The node software is open-source.",
                 },
             ],
         },
