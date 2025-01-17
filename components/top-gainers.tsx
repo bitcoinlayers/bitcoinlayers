@@ -102,10 +102,21 @@ export default function TopGainers() {
                                             <span className="text-emerald-500">
                                                 ↑
                                             </span>{" "}
-                                            {token.percent_change.toFixed(0)}%
+                                            {token.percent_change.toLocaleString(
+                                                "en-US",
+                                                {
+                                                    maximumFractionDigits: 0,
+                                                },
+                                            )}
+                                            %
                                         </div>
                                         <div className="text-sm">
-                                            {token.recent_balance.toFixed(0)}{" "}
+                                            {token.recent_balance.toLocaleString(
+                                                "en-US",
+                                                {
+                                                    maximumFractionDigits: 0,
+                                                },
+                                            )}{" "}
                                             BTC
                                         </div>
                                     </div>
@@ -182,10 +193,21 @@ export default function TopGainers() {
                                         <span className="text-emerald-500">
                                             +
                                         </span>{" "}
-                                        {token.supply_change.toFixed(0)} BTC
+                                        {token.supply_change.toLocaleString(
+                                            "en-US",
+                                            {
+                                                maximumFractionDigits: 0,
+                                            },
+                                        )}{" "}
+                                        BTC
                                     </div>
                                     <div className="text-sm">
-                                        {token.recent_balance.toFixed(0)}{" "}
+                                        {token.recent_balance.toLocaleString(
+                                            "en-US",
+                                            {
+                                                maximumFractionDigits: 0,
+                                            },
+                                        )}{" "}
                                         <span className="">total BTC</span>
                                     </div>
                                 </div>
