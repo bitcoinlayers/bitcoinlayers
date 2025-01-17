@@ -44,7 +44,7 @@ export default function NoticeSnapshotDialogBody({
                     rel="noopener noreferrer"
                     className="hover:underline text-left text-xs"
                 >
-                    Learn more about our minimum criteria how we define bitcoin native systems, bitcoin sidesystems, and more.
+                    We will be releasing our minimum standards in a few days. Click the link and follow our blog for updates.
                 </a>
             </DialogFooter>
         </div>
