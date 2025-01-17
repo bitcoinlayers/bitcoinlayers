@@ -25,7 +25,7 @@ const bob: LayerProject = {
         RiskFactor.VeryHigh,
         RiskFactor.Medium,
         RiskFactor.High,
-        RiskFactor.UnderReview,
+        RiskFactor.VeryHigh,
     ],
     btcLocked: 974,
     nativeToken: "ETH",
