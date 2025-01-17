@@ -73,7 +73,7 @@ const libre: LayerProject = {
                     tier: RiskFactor.UnderReview,
                     title: "Libre announced a new two-way peg for managing bitcoin assets",
                     content:
-                        "Libre announced a new two way peg for managing BTC in its protocol. We are currently reviewing this two-way peg implementation.",
+                        "Libre announced a new two way peg for managing BTC in its protocol. It's announced that its validators participate in an MPC scheme to secure a bitcoin wallet backing BTC on Libre. We are currently reviewing this two-way peg implementation.",
                 },
                 {
                     name: "Libre pBTC",
@@ -82,7 +82,7 @@ const libre: LayerProject = {
                     tier: RiskFactor.VeryHigh,
                     title: "Libre's bridge relies on a third party provider. Signers are permissioned nodes from the pNetwork. Less than 5, individual signers have been publicly announced",
                     content:
-                        "BTC users who deposit funds onto Libre do so via the pNetwork bridge. A limited group of signers operate the bridge.\n\n⚠️ The pNetwork bridge has historically seen two exploits occur. One of those exploits involved BTC-backed tokens.\n\n[Source](https://docs.libre.org/libre-docs/cross-chain-interoperability/bitcoin-mainnet)",
+                        "BTC users who deposit funds onto Libre do so via the pNetwork bridge. A limited group of signers operate the bridge.\n\n⚠️ The pNetwork bridge has historically seen two exploits occur. One of those exploits involved BTC-backed tokens.\n\npBTC deposits are no longer being accepted. Users have to manually withdraw funds.\n\n[Source](https://docs.libre.org/libre-docs/cross-chain-interoperability/bitcoin-mainnet)",
                 },
             ],
         },
