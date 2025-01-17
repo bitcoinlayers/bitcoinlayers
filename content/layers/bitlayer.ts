@@ -148,6 +148,17 @@ const bitlayer: LayerProject = {
             ],
         },
         {
+            id: "notice",
+            title: "🚨 Project is not a sidesystem",
+            content: [
+                {
+                    title: "This project will be moved to the Alternative category",
+                    content:
+                        "Projects that do not meet our requirements to be considered a sidesystem will be moved to the Alternative category. They have until June 30th to implement the technical requirements to be considered a sidesystem.",
+                },
+            ],
+        },
+        {
             id: "withdrawals",
             title: "Withdrawals",
             content: [

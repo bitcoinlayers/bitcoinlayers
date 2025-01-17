@@ -160,7 +160,7 @@ const bsquared: LayerProject = {
             tier: RiskFactor.VeryHigh,
             title: "Finality is guaranteed by a permissioned validator set",
             content:
-                "Bsquared receives no settlement assurances from Bitcoin. Bsquared settlement is finalized by a group of three, federated validators who verify state transitions submitted by the Bsquared Network zkEVM operator.",
+                "Bsquared receives no settlement assurances from Bitcoin. Bsquared transaction finality is determined by a centralized entity who proposes state updates to the permissioned L1 chain.",
         },
     ],
     sections: [
@@ -187,6 +187,17 @@ const bsquared: LayerProject = {
                     title: "Bsquared Network does not contribute to the security budget",
                     content:
                         "Bsquared Network’s current mainnet does not pay any fees to Bitcoin miners.",
+                },
+            ],
+        },
+        {
+            id: "notice",
+            title: "🚨 Project is not a sidesystem",
+            content: [
+                {
+                    title: "This project will be moved to the Alternative category",
+                    content:
+                        "Projects that do not meet our requirements to be considered a sidesystem will be moved to the Alternative category. They have until June 30th to implement the technical requirements to be considered a sidesystem.",
                 },
             ],
         },
