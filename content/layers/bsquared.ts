@@ -5,6 +5,7 @@ import {
     RiskFactor,
     EntityType,
     EntityCategory,
+    Notice,
     Site,
     RiskSection,
     ContentSection,
@@ -26,11 +27,12 @@ const bsquared: LayerProject = {
         RiskFactor.VeryHigh,
         RiskFactor.VeryHigh,
         RiskFactor.VeryHigh,
-        RiskFactor.VeryHigh,
+        RiskFactor.UnderReview,
     ],
     btcLocked: 0,
     nativeToken: "BSQ",
     feeToken: "WBTC",
+    notice: Notice.Reorg,
     bitcoinOnly: false,
     links: [
         {
@@ -55,7 +57,7 @@ const bsquared: LayerProject = {
         },
     ],
     description:
-        "The current Bsquared Network mainnet consists of two different chains. The parent chain is a fork of an EVM implementation on Tendermint, and has three permissioned validators operating the network. The rollup chain is a fork of Polygon zkEVM that settles on the Bsquared parent chain.",
+        "The current Bsquared Network mainnet consists of two different chains. The parent chain is a fork of Ethermint. The rollup chain is a fork of of an Ethereum rollup stack.",
     riskAnalysis: [
         {
             category: RiskCategory.BtcCustody,
@@ -77,17 +79,46 @@ const bsquared: LayerProject = {
                     name: "Bedrock uniBTC",
                     infrastructureSlug: "bedrock-unibtc",
                     score: 0,
-                    tier: RiskFactor.UnderReview,
-                    title: "This two-way peg is under review",
-                    content: "This two-way peg is under review",
+                    tier: RiskFactor.VeryHigh,
+                    title: "Users trust custodians and various onchain contracts. We have not reviewed the contract implementations for this chain",
+                    content:
+                        "When a user deposits funds into the Bedrock protocol, they deposit a wrapped BTC token into a smart contract. The uniBTC smart contract on Ethereum (and other chains) is responsible for minting uniBTC in exchange for wrapped BTC tokens.\n\nTo deposit these tokens on Babylon, the protocol relies on a custodial provider to exchange the wrapped BTC tokens for native BTC tokens that they would stake on Babylon.\n\nBedrock has not disclosed who is responsible for securing and staking native BTC on users' behalf.",
                 },
                 {
                     name: "Lorenzo stBTC",
                     infrastructureSlug: "lorenzo-stbtc",
                     score: 0,
-                    tier: RiskFactor.UnderReview,
-                    title: "This two-way peg is under review",
-                    content: "This two-way peg is under review",
+                    tier: RiskFactor.VeryHigh,
+                    title: "Users trust custodians and various onchain contracts. We have not reviewed the contract implementations for this chain",
+                    content:
+                        "Users trust Lorenzo, the operators of Lorenzo stBTC, to secure and stake native BTC that backs stBTC. It has also been stated in Lorenzo's [marketing materials](https://medium.com/@lorenzoprotocol/lorenzo-allies-with-cobo-ceffu-and-chainup-e0d824c4744d) that custodian providers Cobo, Ceffu, and Chainup are participating in Lorenzo's protocol as custody providers, but their documentation does not claim this.\n\nUsers trust Lorenzo's claims in their documentation are being executed in practice.\n\n[Source](https://docs.lorenzo-protocol.xyz/introduction/stbtc-issuance-and-settlement)",
+                },
+                {
+                    name: "UniRouter uBTC",
+                    infrastructureSlug: "unirouter-ubtc",
+                    score: 0,
+                    tier: RiskFactor.Critical,
+                    title: "Smart contracts have not been reviewed. UniRouter has not disclosed its custodian operators",
+                    content:
+                        "Users trust that the UniRouter team has set up secure custody practices and has BTC reserves backing uniBTC. UniRouter has not disclosed who secures the BTC backing uBTC.",
+                },
+                {
+                    name: "BitGo wBTC",
+                    infrastructureSlug: "bitgo-wbtc",
+                    score: 0,
+                    tier: RiskFactor.VeryHigh,
+                    title: "Users trust custodians and various onchain contracts. We have not reviewed the contract implementations for this chain",
+                    content:
+                        "The Bitcoin backing wBTC is secured by permissioned entities. BitGo and BiT Global are the participants responsible with custodying the funds backing wBTC across the various networks it's deployed on.\n\nThe wallets holding the bitcoin backing wBTC are dispersed between Hong Kong, Singapore, and the United States.",
+                },
+                {
+                    name: "Obelisk oBTC",
+                    infrastructureSlug: "obelisk-obtc",
+                    score: 0,
+                    tier: RiskFactor.VeryHigh,
+                    title: "Users trust centralized signers to secure BTC backing oBTC",
+                    content:
+                        "Obelisk's documentation claims that users deposit BTC into an MPC scheme to mint oBTC on a respective destination chain.\n\nUsers trust Obelisk's claims in their documentation are being executed in practice.\n\n[Source](https://docs-obelisk.nodedao.com/obtc-asset/how-to-mint-obtc-on-obelisk) ",
                 },
                 {
                     name: "LayerBank BTC",
@@ -105,32 +136,15 @@ const bsquared: LayerProject = {
                     title: "This two-way peg is under review",
                     content: "This two-way peg is under review",
                 },
-                {
-                    name: "UniRouter uBTC",
-                    infrastructureSlug: "unirouter-ubtc",
-                    score: 0,
-                    tier: RiskFactor.UnderReview,
-                    title: "This two-way peg is under review",
-                    content: "This two-way peg is under review",
-                },
-                {
-                    name: "BitGo wBTC",
-                    infrastructureSlug: "bitgo-wbtc",
-                    score: 0,
-                    tier: RiskFactor.VeryHigh,
-                    title: "Centralized custody model",
-                    content:
-                        "wBTC relies on a consortium of custodians to maintain BTC collateral. Users trust that custodians will not mismanage or steal their funds.",
-                },
             ],
         },
         {
             category: RiskCategory.DataAvailability,
             score: 0,
             tier: RiskFactor.VeryHigh,
-            title: "DA requirement is fulfilled by three permissioned validators",
+            title: "DA requirement is fulfilled by permissioned validators",
             content:
-                "Sequencer batches are posted to the Bsquared Network L1. This network consists of a permissioned validator set who is responsible for making the data readily available.\n\n🔬We are currently reviewing the operators satisfying the Bsquared DA requirement.",
+                "Sequencer batches are posted to the Bsquared Network L1. This network consists of a permissioned validator set who is responsible for making the data readily available. The identities of these operators has not been disclosed.",
         },
         {
             category: RiskCategory.NetworkOperators,
@@ -138,7 +152,7 @@ const bsquared: LayerProject = {
             tier: RiskFactor.VeryHigh,
             title: "Both the rollup chain and parent chain are run by federated, centralized parties",
             content:
-                "Bsquared Network’s Polygon zkEVM implementation has a single sequencer that posts sequencer batches to its network of three L1 validators.",
+                "Bsquared Network’s implementation has a single sequencer that posts sequencer batches to its network of three L1 validators.",
         },
         {
             category: RiskCategory.FinalityGuarantees,
@@ -146,7 +160,7 @@ const bsquared: LayerProject = {
             tier: RiskFactor.VeryHigh,
             title: "Finality is guaranteed by a permissioned validator set",
             content:
-                "Bsquared receives no settlement assurances from Bitcoin. Bsquared settlement is finalized by a group of three, federated validators who verify state transitions submitted by the Bsquared Network zkEVM operator.",
+                "Bsquared receives no settlement assurances from Bitcoin. Bsquared transaction finality is determined by a centralized entity who proposes state updates to the permissioned L1 chain.",
         },
     ],
     sections: [
@@ -173,6 +187,17 @@ const bsquared: LayerProject = {
                     title: "Bsquared Network does not contribute to the security budget",
                     content:
                         "Bsquared Network’s current mainnet does not pay any fees to Bitcoin miners.",
+                },
+            ],
+        },
+        {
+            id: "notice",
+            title: "🚨 Project is not a sidesystem",
+            content: [
+                {
+                    title: "This project will be moved to the Alternative category",
+                    content:
+                        "Projects that do not meet our requirements to be considered a sidesystem will be moved to the Alternative category. They have until June 30th to implement the technical requirements to be considered a sidesystem.",
                 },
             ],
         },
@@ -216,7 +241,7 @@ const bsquared: LayerProject = {
                 {
                     title: "Node software code is open-source",
                     content:
-                        "The node software and Polygon zkEVM contracts are open-source. Its our understanding that these implementations of Polygon zkEVM and Ethermint have not been audited.",
+                        "The node software is open-source.",
                 },
             ],
         },

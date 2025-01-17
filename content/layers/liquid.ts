@@ -5,6 +5,7 @@ import {
     RiskFactor,
     EntityType,
     EntityCategory,
+    Notice,
     Site,
     RiskSection,
     ContentSection,
@@ -31,6 +32,7 @@ const liquid: LayerProject = {
     btcLocked: 3834,
     nativeToken: "LBTC",
     feeToken: "LBTC",
+    notice: undefined,
     bitcoinOnly: true,
     links: [
         {

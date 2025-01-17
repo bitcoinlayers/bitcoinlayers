@@ -5,6 +5,7 @@ import {
     RiskFactor,
     EntityType,
     EntityCategory,
+    Notice,
     Site,
     RiskSection,
     ContentSection,
@@ -26,6 +27,7 @@ const hedgehog: LayerProject = {
     btcLocked: 0,
     nativeToken: "BTC",
     feeToken: "BTC",
+    notice: undefined,
     bitcoinOnly: true,
     links: [
         {

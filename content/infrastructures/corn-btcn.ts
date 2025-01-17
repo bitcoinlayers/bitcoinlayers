@@ -4,6 +4,7 @@ import {
     Type,
     LiveStatus,
     EntityType,
+    Notice,
     Site,
     AssessmentCategory,
 } from "../props";
@@ -22,6 +23,7 @@ const cornbtcn: InfrastructureProject = {
     nativeToken: "-",
     purpose: Purpose.General,
     associatedLayers: "Corn",
+    notice: undefined,
     bitcoinOnly: false,
     links: [],
     description:

@@ -5,6 +5,7 @@ import {
     RiskFactor,
     EntityType,
     EntityCategory,
+    Notice,
     Site,
     RiskCategory,
 } from "../props";
@@ -24,11 +25,12 @@ const bob: LayerProject = {
         RiskFactor.VeryHigh,
         RiskFactor.Medium,
         RiskFactor.High,
-        RiskFactor.UnderReview,
+        RiskFactor.VeryHigh,
     ],
     btcLocked: 974,
     nativeToken: "ETH",
     feeToken: "ETH",
+    notice: Notice.Reorg,
     bitcoinOnly: false,
     links: [
         {
@@ -49,7 +51,7 @@ const bob: LayerProject = {
         },
     ],
     description:
-        "BOB is an optimistic rollup that serves as an application layer for Bitcoin. They have launched as a rollup on top of Ethereum, with plans to derive more security from Bitcoin miners, and full nodes, over time. Its relation to Bitcoin, currently, is similar to that of a sidechain as it is an alternative consensus protocol with a two-way peg(s) between it and the Bitcoin mainchain.",
+        "BOB is a rollup that serves as an application layer for bitcoin. They have launched as a rollup on top of Ethereum, with plans to derive more security from bitcoin over time.",
     riskAnalysis: [
         {
             category: RiskCategory.BtcCustody,
@@ -63,16 +65,16 @@ const bob: LayerProject = {
                     infrastructureSlug: "threshold-tbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: "Bitcoin users trust that tBTC will remain backed on Ethereum, and that the BOB bridge will not steal their funds",
+                    title: "BTC users trust that tBTC will remain backed on Ethereum, and that the BOB bridge will not steal their funds",
                     content:
-                        "tBTC is minted on BOB via its official Ethereum bridge.tBTC on Ethereum is backed by BTC managed by the Threshold Network.\n\nUsers trust that the bridge operators will not steal their BTC, the BOB proposer to not publish a malicious, unchallenged state transition, or the admin controlling the bridge to create a malicious smart contract upgrade.\n\nIn the event of a malicious smart contract upgrade, there is no exit window for BOB users. This means that the admin behind the bridge can steal all funds in the official bridge.\n\nFor more information on the Threshold Network & tBTC, [click here.](https://www.bitcoinlayers.org/infrastructure/tbtc).",
+                        "tBTC is minted on BOB via its official Ethereum bridge. tBTC on Ethereum is backed by BTC managed by the Threshold Network.\n\nUsers trust that the bridge operators will not steal their BTC, the BOB proposer to not publish a malicious, unchallenged state transition, or the admin controlling the bridge to create a malicious smart contract upgrade.\n\nIn the event of a malicious smart contract upgrade, there is no exit window for BOB users. This means that the admin behind the bridge can steal all funds in the official bridge.\n\nFor more information on the Threshold Network & tBTC, [click here.](https://www.bitcoinlayers.org/infrastructure/tbtc).",
                 },
                 {
                     name: "BitGo wBTC",
                     infrastructureSlug: "bitgo-wbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: "Centralized custody model",
+                    title: "BTC users trust that wBTC will remain backed on Ethereum, and that the BOB bridge will not steal their funds",
                     content:
                         "wBTC is minted onto BOB via its official bridge on Ethereum. wBTC relies on a permissioned, centralized consortium of custodians to maintain BTC collateral.\n\nUsers trust that the bridge operators will not steal their BTC, the BOB proposer to not publish a malicious, unchallenged state transition, or the admin controlling the bridge to create a malicious smart contract upgrade. In the event of a malicious smart contract upgrade, there is no exit window for BOB users. This means that the admin behind the bridge can steal all funds in the official bridge.\n\nFor more information on wBTC, [click here.](https://www.bitcoinlayers.org/infrastructure/wbtc).",
                 },
@@ -81,24 +83,27 @@ const bob: LayerProject = {
                     infrastructureSlug: "bedrock-unibtc",
                     score: 0,
                     tier: RiskFactor.UnderReview,
-                    title: "This two-way peg is under review",
-                    content: "This two-way peg is under review",
+                    title: "Users trust custodians and various onchain contracts. We have not reviewed the contract implementations for this chain",
+                    content:
+                        "When a user deposits funds into the Bedrock protocol, they deposit a wrapped BTC token into a smart contract. The uniBTC smart contract on Ethereum (and other chains) is responsible for minting uniBTC in exchange for wrapped BTC tokens.\n\nTo deposit these tokens on Babylon, the protocol relies on a custodial provider to exchange the wrapped BTC tokens for native BTC tokens that they would stake on Babylon.\n\nBedrock has not disclosed who is responsible for securing and staking native BTC on users' behalf.",
                 },
                 {
                     name: "Solv SolvBTC",
                     infrastructureSlug: "solv-solvbtc",
                     score: 0,
-                    tier: RiskFactor.UnderReview,
-                    title: "This two-way peg is under review",
-                    content: "This two-way peg is under review",
+                    tier: RiskFactor.VeryHigh,
+                    title: "Users trust custodians and various onchain contracts. We have not reviewed the contract implementations for this chain",
+                    content:
+                        "SolvBTC claims to be partially backed by native BTC managed by custodian providers. It’s been stated that Copper, Ceffu, Fireblocks, and Cobo are custodial providers securing BTC that partially backs SolvBTC. SolvBTC is additionally backed by various BTC-derivative assets; M-BTC, BTCB, wBTC, FBTC, cbBTC, BTC.b, and tBTC.\n\nMultisigs securing derivative assets backing by SolvBTC are secured by GnosisSafes with 5 signers.",
                 },
                 {
                     name: "Solv SolvBTC.BBN",
                     infrastructureSlug: "solv-solvbtcbbn",
                     score: 0,
-                    tier: RiskFactor.UnderReview,
-                    title: "This two-way peg is under review",
-                    content: "This two-way peg is under review",
+                    tier: RiskFactor.VeryHigh,
+                    title: "Users trust custodians and various onchain contracts. We have not reviewed the contract implementations for this chain",
+                    content:
+                        "Four entities custody the bitcoin assets backing Solv.BBN tokens. These entities are Cobo, Ceffu, Fireblocks and the Solv Guard. These entities are known as Guardians in the [Solv application](https://app.solv.finance/staking).\n\nCeffu and Cobo are the custodians for funds that are staked with Babylon.\n\n[Source](https://docs.solv.finance/staking-abstraction-layer-sal/the-ecological-view)",
                 },
             ],
         },
@@ -121,10 +126,10 @@ const bob: LayerProject = {
         {
             category: RiskCategory.FinalityGuarantees,
             score: 0,
-            tier: RiskFactor.UnderReview,
-            title: "BOB state transitions finalize on Ethereum",
+            tier: RiskFactor.VeryHigh,
+            title: "BOB state transitions finalize on Ethereum, but proposer role is whitelisted",
             content:
-                "We are reviewing the BOB validator set and how state transitions are proposed and finalized.",
+                "BOB's state is updated offchain. BOB state transitions, related to its official bridge, are finalized on Ethereum. Only a whitelisted proposer is able to publish state updates to Ethereum. If the BOB proposer goes offline, then users of the rollup would be unable to update BOB's state relative to its official bridge.",
         },
     ],
     sections: [
@@ -151,6 +156,17 @@ const bob: LayerProject = {
                     title: "BOB does not contribute to the security budget",
                     content:
                         "BOB does not currently contribute to the Bitcoin security budget.",
+                },
+            ],
+        },
+        {
+            id: "notice",
+            title: "🚨 Project is not a sidesystem",
+            content: [
+                {
+                    title: "This project will be moved to the Alternative category",
+                    content:
+                        "Projects that do not meet our requirements to be considered a sidesystem will be moved to the Alternative category. They have until June 30th to implement the technical requirements to be considered a sidesystem.",
                 },
             ],
         },

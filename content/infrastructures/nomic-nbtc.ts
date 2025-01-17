@@ -4,6 +4,7 @@ import {
     Type,
     LiveStatus,
     EntityType,
+    Notice,
     Site,
     AssessmentCategory,
 } from "../props";
@@ -22,9 +23,11 @@ const nomicnbtc: InfrastructureProject = {
     nativeToken: "-",
     purpose: Purpose.General,
     associatedLayers: "Nomic, Osmosis, and other IBC-connected chains",
+    notice: undefined,
     bitcoinOnly: false,
     links: [],
-    description: "nBTC is the native token for the Nomic network. Nomic is a proof-of-stake blockchain prioritizing distributed BTC custody",
+    description:
+        "nBTC is the native token for the Nomic network. Nomic is a proof-of-stake blockchain prioritizing distributed BTC custody",
     sections: [
         {
             id: "selfsubmit",
@@ -44,7 +47,7 @@ const nomicnbtc: InfrastructureProject = {
             tier: "",
             title: "BTC backing nBTC managed by a group of 20 publicly known signers who participate as validators in the Nomic blockchain",
             content:
-                "Users deposit BTC into a Reserve Wallet to receive nBTC on Nomic. The Reserve Wallet is a Bitcoin L1 multisig wallet managed by the Nomic signatory set. The Nomic signatory is made up of the top 20 Nomic validators measured by weighted stake.\n\nBecoming a signatory is permissionless and requires staking NOM tokens. Disbursing funds from the reserve wallet requires 90% of signatories to sign, weighted by voting power through NOM tokens.",
+                "Users deposit BTC into a Reserve Wallet to receive nBTC on Nomic. The Reserve Wallet is a Bitcoin L1 multisig wallet managed by the Nomic signatory set. The Nomic signatory is made up of the top 20 Nomic validators measured by weighted stake.\n\nBecoming a signatory requires staking NOM tokens. Disbursing funds from the reserve wallet requires a 90% threshold, weighted by voting power through NOM tokens.",
         },
     ],
 };

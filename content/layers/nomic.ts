@@ -5,6 +5,7 @@ import {
     RiskFactor,
     EntityType,
     EntityCategory,
+    Notice,
     Site,
     RiskSection,
     ContentSection,
@@ -69,8 +70,9 @@ const nomic: LayerProject = {
                     infrastructureSlug: "nomic-nbtc",
                     score: 0,
                     tier: RiskFactor.High,
-                    title: "BTC backing nBTC managed by a group of 20 publicly known signers who participate as validators in the Nomic blockchain",
-                    content: "Users deposit BTC into a Reserve Wallet to receive nBTC on Nomic. The Reserve Wallet is a Bitcoin L1 multisig wallet managed by the Nomic signatory set. The Nomic signatory is made up of the top 20 Nomic validators measured by weighted stake.\n\nBecoming a signatory is permissionless and requires staking NOM tokens. Disbursing funds from the reserve wallet requires 90% of signatories to sign, weighted by voting power through NOM tokens.",
+                    title: "BTC backing nBTC is managed by a group of 20 publicly known signers who participate as validators in the Nomic blockchain",
+                    content:
+                        "Users deposit BTC into a Reserve Wallet to receive nBTC on Nomic. The Reserve Wallet is a Bitcoin L1 multisig wallet managed by the Nomic signatory set. The Nomic signatory is made up of the top 20 Nomic validators measured by weighted stake.\n\nBecoming a signatory requires staking NOM tokens. Disbursing funds from the reserve wallet requires a 90% threshold, weighted by voting power through NOM tokens.",
                 },
             ],
         },
@@ -79,21 +81,24 @@ const nomic: LayerProject = {
             score: 0,
             tier: RiskFactor.Medium,
             title: "Data is made available via Nomic full nodes",
-            content: "Nomic blockchain data can be accessed via Nomic full nodes. The node software is open source and running a node is permissionless. Therefore, anyone can validate Nomic blockchain data.\n\nData transmission from and to Bitcoin happens via relayers. Running a relayer is also permissionless.",
+            content:
+                "Nomic blockchain data can be accessed via Nomic full nodes. The node software is open source and running a node is permissionless. Therefore, anyone can validate Nomic blockchain data.\n\nData transmission from and to Bitcoin happens via relayers. Running a relayer is also permissionless.",
         },
         {
             category: RiskCategory.BlockProduction,
             score: 0,
             tier: RiskFactor.Medium,
             title: "Network is operated by validators in a proof-of-stake consensus protocol",
-            content: "Nomic is a proof of stake blockchain that is currently operated by 90 validators. Any user can stake NOM to become a Nomic validator. A subset of validators also participate as signers on the Nomic Reserve Wallet.\n\nIn case of a Nomic network liveness failure, an emergency disbursal mechanism is in place which will distribute BTC on L1 to the respective nBTC holders.",
+            content:
+                "Nomic is a proof of stake blockchain that is currently operated by 90 validators. Any user can stake NOM to become a Nomic validator. A subset of validators also participate as signers on the Nomic Reserve Wallet.\n\nIn case of a Nomic network liveness failure, an emergency disbursal mechanism is in place which will distribute BTC on L1 to the respective nBTC holders.",
         },
         {
             category: RiskCategory.FinalityGuarantees,
             score: 0,
             tier: RiskFactor.Medium,
             title: "Finality is provided through an offchain consensus mechnaism",
-            content: "Nomic uses CometBFT for consensus. Like Tendermint, the protocol on which CometBFT is based, CometBFT has single-slot finality, meaning that blocks cannot be re-organized once they are part of the canonical blockchain. More than ⅔ of validator voting power must sign commit votes to finalize a block. If validators attempt to commit multiple blocks at the same block height, their NOM will be slashed.",
+            content:
+                "Nomic uses CometBFT for consensus. Like Tendermint, the protocol on which CometBFT is based, CometBFT has single-slot finality, meaning that blocks cannot be re-organized once they are part of the canonical blockchain. More than ⅔ of validator voting power must sign commit votes to finalize a block. If validators attempt to commit multiple blocks at the same block height, their NOM will be slashed.",
         },
     ],
     sections: [
@@ -113,8 +118,7 @@ const nomic: LayerProject = {
                 },
                 {
                     title: "No MEV introduced to Bitcoin",
-                    content:
-                        "Nomic does not leak MEV to bitcoin.",
+                    content: "Nomic does not leak MEV to bitcoin.",
                 },
                 {
                     title: "Nomic pays fees for checkpoint transactions",
@@ -139,9 +143,9 @@ const nomic: LayerProject = {
             title: "Additional Considerations",
             content: [
                 {
-                    title: "The NOM token is untransferrable",
+                    title: "The NOM token has restrictions",
                     content:
-                        "Nomic’s native token, NOM, is currently untransferrable and unable to be sold, or bought, in various markets. This means that the token currently has no value and validators currently have no current financial incentive to secure BTC backing nBTC..",
+                        "Nomic’s native token, NOM, is currently unable to be sold or acquired in various markets. This means that the token currently has no market value and validators currently have no current financial incentive to secure BTC backing nBTC.",
                 },
             ],
         },
@@ -193,8 +197,7 @@ const nomic: LayerProject = {
             content: [
                 {
                     title: "Code is open-source",
-                    content:
-                        "Nomic's node implementation is open-souce.",
+                    content: "Nomic's node implementation is open-souce.",
                 },
             ],
         },

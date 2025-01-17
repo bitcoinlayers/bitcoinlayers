@@ -5,6 +5,7 @@ import {
     RiskFactor,
     EntityType,
     EntityCategory,
+    Notice,
     Site,
     RiskSection,
     ContentSection,
@@ -26,6 +27,7 @@ const clark: LayerProject = {
     btcLocked: 0,
     nativeToken: "BTC",
     feeToken: "BTC",
+    notice: undefined,
     bitcoinOnly: true,
     links: [
         {

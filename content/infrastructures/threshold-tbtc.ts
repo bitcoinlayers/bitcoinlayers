@@ -4,6 +4,7 @@ import {
     Type,
     LiveStatus,
     EntityType,
+    Notice,
     Site,
     AssessmentCategory,
 } from "../props";
@@ -22,6 +23,7 @@ const tbtc: InfrastructureProject = {
     nativeToken: "T",
     purpose: Purpose.General,
     associatedLayers: "EVM-based chains",
+    notice: undefined,
     bitcoinOnly: false,
     links: [
         {

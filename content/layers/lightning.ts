@@ -5,6 +5,7 @@ import {
     RiskFactor,
     EntityType,
     EntityCategory,
+    Notice,
     Site,
     RiskSection,
     ContentSection,
@@ -31,6 +32,7 @@ const lightning: LayerProject = {
     btcLocked: 5208,
     nativeToken: "BTC",
     feeToken: "BTC",
+    notice: undefined,
     bitcoinOnly: true,
     links: [
         {

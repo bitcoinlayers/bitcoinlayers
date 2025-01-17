@@ -47,7 +47,7 @@ const Categories: React.FC<{ infrastructure: InfrastructureProject }> = ({
                 </div>
             </div>
             <div className="flex-col justify-center items-start">
-                <div className="text-sm leading-tight">TVL</div>
+                <div className="text-sm leading-tight">BTC Supply</div>
                 <div className="text-muted-foreground">
                     ₿
                     {totalAmountForInfra.toLocaleString("en-US", {

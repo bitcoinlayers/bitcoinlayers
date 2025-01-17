@@ -5,6 +5,7 @@ import {
     RiskFactor,
     EntityType,
     EntityCategory,
+    Notice,
     Site,
     RiskSection,
     ContentSection,
@@ -31,6 +32,7 @@ const fractal: LayerProject = {
     btcLocked: 0,
     nativeToken: "FB",
     feeToken: "FB",
+    notice: Notice.Reorg,
     bitcoinOnly: false,
     links: [
         {
@@ -143,6 +145,17 @@ const fractal: LayerProject = {
                     title: "The Fractal blockchain is growing at a fast rate",
                     content:
                         "The Fractal blockchain is growing at a rate much faster than that of Bitcoin. As the blockchain continues to grow, it becomes more difficult for users to run Fractal full nodes. This might see the majority of users pass on the data availability requirement onto another party.",
+                },
+            ],
+        },
+        {
+            id: "notice",
+            title: "🚨 Project is not a sidesystem",
+            content: [
+                {
+                    title: "This project will be moved to the Alternative category",
+                    content:
+                        "Projects that do not meet our requirements to be considered a sidesystem will be moved to the Alternative category. They have until June 30th to implement the technical requirements to be considered a sidesystem.",
                 },
             ],
         },

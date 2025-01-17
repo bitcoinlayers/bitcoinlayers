@@ -4,6 +4,7 @@ import {
     Type,
     LiveStatus,
     EntityType,
+    Notice,
     Site,
     AssessmentCategory,
 } from "../props";
@@ -22,6 +23,7 @@ const wbtc: InfrastructureProject = {
     nativeToken: "-",
     purpose: Purpose.General,
     associatedLayers: "Ethereum, Base, and more",
+    notice: undefined,
     bitcoinOnly: false,
     links: [
         {
@@ -74,7 +76,7 @@ const wbtc: InfrastructureProject = {
             tier: "",
             title: "Users trust permissioned entities with the custody of their BTC.",
             content:
-                "The Bitcoin backing wBTC is custodied by permissioned entities. BitGo and BiT Global are the participants responsible with custodying the funds backing wBTC across the various networks its deployed on.\n\nThe wallets holding the bitcoin backing wBTC are dispersed between Hong Kong, Singapore, and the United States.",
+                "The Bitcoin backing wBTC is custodied by permissioned entities. BitGo and BiT Global are the participants responsible with custodying the funds backing wBTC across the various networks it's deployed on.\n\nThe wallets holding the bitcoin backing wBTC are dispersed between Hong Kong, Singapore, and the United States.",
         },
         {
             category: AssessmentCategory.Signing,

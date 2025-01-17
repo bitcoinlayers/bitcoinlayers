@@ -5,6 +5,7 @@ import {
     RiskFactor,
     EntityType,
     EntityCategory,
+    Notice,
     Site,
     RiskSection,
     ContentSection,
@@ -31,6 +32,7 @@ const core: LayerProject = {
     btcLocked: 6705,
     nativeToken: "CORE",
     feeToken: "CORE",
+    notice: Notice.Reorg,
     bitcoinOnly: false,
     links: [
         {
@@ -65,53 +67,58 @@ const core: LayerProject = {
             content: "",
             pegs: [
                 {
-                    name: "Solv SolvBTC bridged from Merlin",
-                    infrastructureSlug: "solv-solvbtc",
+                    name: "Core coreBTC",
+                    infrastructureSlug: "core-corebtc",
                     score: 0,
-                    tier: RiskFactor.UnderReview,
-                    title: "This two-way peg is under review",
-                    content: "This two-way peg is under review",
+                    tier: RiskFactor.High,
+                    title: "Funds are custodied by a federated signer set, with a number of parties ensuring the honesty of the bridge",
+                    content:
+                        "Users trust various parties in maintaining the honesty of Core’s bridge with Bitcoin. Lockers are the party responsible for securing the bitcoin that backs coreBTC on Core Chain. These actors stake collateral, in the form of Core tokens, in order to participate as a Locker. In the event of maliciously moving bitcoin from the multi-sig, or being unable to fulfill withdrawals, Lockers would be slashed and lose the collateral they posted.\n\nOther parties in the bridge set up are responsible for monitoring the Locker’s activity and initiating the slashing process.",
                 },
                 {
-                    name: "Solv SolvBTC bridged from BNB Smart Chain",
+                    name: "Solv SolvBTC.m",
                     infrastructureSlug: "solv-solvbtc",
                     score: 0,
-                    tier: RiskFactor.UnderReview,
-                    title: "This two-way peg is under review",
-                    content: "This two-way peg is under review",
+                    tier: RiskFactor.VeryHigh,
+                    title: "Users trust custodians and various onchain contracts. We have not reviewed the contract implementations for this chain",
+                    content:
+                        "SolvBTC claims to be partially backed by native BTC managed by custodian providers. It’s been stated that Copper, Ceffu, Fireblocks, and Cobo are custodial providers securing BTC that partially backs SolvBTC. SolvBTC is additionally backed by various BTC-derivative assets; M-BTC, BTCB, wBTC, FBTC, cbBTC, BTC.b, and tBTC.\n\nMultisigs securing derivative assets backing by SolvBTC are secured by GnosisSafes with 5 signers.\n\nA percentage of SolvBTC on Core is backed by SolvBTC on Merlin.",
                 },
                 {
-                    name: "Solv SolvBTC native",
+                    name: "Solv SolvBTC.BNB",
                     infrastructureSlug: "solv-solvbtc",
                     score: 0,
-                    tier: RiskFactor.UnderReview,
-                    title: "This two-way peg is under review",
-                    content: "This two-way peg is under review",
+                    tier: RiskFactor.VeryHigh,
+                    title: "Users trust custodians and various onchain contracts. We have not reviewed the contract implementations for this chain",
+                    content:
+                        "SolvBTC claims to be partially backed by native BTC managed by custodian providers. It’s been stated that Copper, Ceffu, Fireblocks, and Cobo are custodial providers securing BTC that partially backs SolvBTC. SolvBTC is additionally backed by various BTC-derivative assets; M-BTC, BTCB, wBTC, FBTC, cbBTC, BTC.b, and tBTC.\n\nMultisigs securing derivative assets backing by SolvBTC are secured by GnosisSafes with 5 signers.\n\nA percentage of SolvBTC on Core is backed by SolvBTC on BNB Smart Chain.",
+                },
+                {
+                    name: "Solv SolvBTC",
+                    infrastructureSlug: "solv-solvbtc",
+                    score: 0,
+                    tier: RiskFactor.VeryHigh,
+                    title: "Users trust custodians and various onchain contracts. We have not reviewed the contract implementations for this chain",
+                    content:
+                        "SolvBTC claims to be partially backed by native BTC managed by custodian providers. It’s been stated that Copper, Ceffu, Fireblocks, and Cobo are custodial providers securing BTC that partially backs SolvBTC. SolvBTC is additionally backed by various BTC-derivative assets; M-BTC, BTCB, wBTC, FBTC, cbBTC, BTC.b, and tBTC.\n\nMultisigs securing derivative assets backing by SolvBTC are secured by GnosisSafes with 5 signers.",
                 },
                 {
                     name: "Binance BTCB",
                     infrastructureSlug: "binance-btcb",
                     score: 0,
-                    tier: RiskFactor.UnderReview,
-                    title: "This two-way peg is under review",
-                    content: "This two-way peg is under review",
+                    tier: RiskFactor.VeryHigh,
+                    title: "Users trust custodians and various onchain contracts. We have not reviewed the contract implementations for this chain",
+                    content:
+                        "When interacting with BTCB, users trust that [Binance](https://www.binance.com/en), a centralized custodian, will safely custody the BTC backing BTCB. When interacting with a centralized custodian, users trust that the custodian will not steal the funds backing their BTCB tokens. They also trust that Binance will effectively manage the BTC and not lose access to it. If the BTC backing BTCB, BTCB tokens could become effectively worthless.\n\nUsers trust Binance's reputation as an institutional provider when interacting with BTCB.",
                 },
                 {
                     name: "Avalanche BTC.b",
                     infrastructureSlug: "avalanche-btcb",
                     score: 0,
                     tier: RiskFactor.UnderReview,
-                    title: "This two-way peg is under review",
-                    content: "This two-way peg is under review",
-                },
-                {
-                    name: "Core coreBTC",
-                    infrastructureSlug: "core-corebtc",
-                    score: 0,
-                    tier: RiskFactor.UnderReview,
-                    title: "Funds are custodied by a federated signer set, with a number of parties ensuring the honesty of the bridge",
+                    title: "Users trust custodians and various onchain contracts. We have not reviewed the contract implementations for this chain",
                     content:
-                        "Users trust various parties in maintaining the honesty of Core’s bridge with Bitcoin. Lockers are the party responsible for securing the bitcoin that backs coreBTC on Core Chain. These actors stake collateral, in the form of Core tokens, in order to participate as a Locker. In the event of maliciously moving bitcoin from the multi-sig, or being unable to fulfill withdrawals, Lockers would be slashed and lose the collateral they posted.\n\nOther parties in the bridge set up are responsible for monitoring the Locker’s activity and initiating the slashing process.",
+                        "Ava Labs has disclosed that users trust a network of entities who participate in securing the BTC that backs BTCb. These eight entities are also reported to run special HSM hardware.\n\nThe eight entities securing the bridge are: Halborn, Avascan, Bware Labs, Ankr, Chainstack, Protofire, Blockdaemon, and Ava Labs.\n\nUsers trust that Ava Labs's claims in their documentation are being executed in practice.\n\n[Source](https://medium.com/avalancheavax/bridging-bitcoin-to-avalanche-a-technical-overview-2535e7088b8)",
                 },
             ],
         },
@@ -129,7 +136,7 @@ const core: LayerProject = {
             tier: RiskFactor.Medium,
             title: "Core's hybrid consensus mechanism operates the network",
             content:
-                "Core Chain has a network of validators who participate as block producers. Each day, the 23 validators with the highest hybrid score (from DPOW and DPOS) are elected to participate in block production. Any Core chain full node can register to become a part of this set. Core Chain does not support exits that circumvent its validator set. This means that users must trust Core Chain validators to propose and finalize blocks.\n\nThere is a minimum stake to run a Core Chain validator node.",
+                "Core Chain has a network of validators who participate as block producers. Each day, the validators with the highest hybrid score (from DPOW and DPOS) are elected to participate in block production. Any Core chain full node can register to become a part of this set.\n\nThere is a minimum stake to run a Core Chain validator node.",
         },
         {
             category: RiskCategory.FinalityGuarantees,
@@ -164,6 +171,17 @@ const core: LayerProject = {
                     title: "Core Chain indirectly contributes to the security budget.",
                     content:
                         "Core validators will reward miners who delegated their hashrate to them with newly issued CORE tokens.",
+                },
+            ],
+        },
+        {
+            id: "notice",
+            title: "🚨 Project is not a sidesystem",
+            content: [
+                {
+                    title: "This project will be moved to the Alternative category",
+                    content:
+                        "Projects that do not meet our requirements to be considered a sidesystem will be moved to the Alternative category. They have until June 30th to implement the technical requirements to be considered a sidesystem.",
                 },
             ],
         },

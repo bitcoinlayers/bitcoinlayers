@@ -5,6 +5,7 @@ import {
     RiskFactor,
     EntityType,
     EntityCategory,
+    Notice,
     Site,
     RiskSection,
     ContentSection,
@@ -31,6 +32,7 @@ const stacks: LayerProject = {
     btcLocked: 1054,
     nativeToken: "STX",
     feeToken: "STX",
+    notice: undefined,
     bitcoinOnly: false,
     links: [
         {
@@ -78,18 +80,18 @@ const stacks: LayerProject = {
                     infrastructureSlug: "alex-xbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: "Users must trust centralized companies with custody of their BTC. Signers under review",
+                    title: "Users trust Wrapped with the custody of BTC backing xBTC",
                     content:
-                        "Stacks has no consensus-enshrined BTC bridge. It does have third-party bridges, which are operated by centralized custodial parties. Users must trust the operators of these bridges to custody their BTC and back bitcoin-backed tokens on the Stacks network.\n\nThe primary third-party bridge is operated by [Alex Labs](https://alexlab.co/).",
+                        "Users trust Wrapped, a custodian provider, with the custody of BTC backing xBTC. Alex, a DeFi project largely associated with the Stacks ecosystem, acquired Wrapped and has initiated a transition to move xBTC into sBTC.\n\nFunds that are not moved into sBTC are still secured by [Wrapped](https://wrapped.com/).",
                 },
                 {
                     name: "XLink aBTC",
                     infrastructureSlug: "xlink-abtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: "Users must trust centralized companies with custody of their BTC. Signers under review",
+                    title: "There is limited information available on Xlink aBTC's custody mechanism",
                     content:
-                        "Stacks has no consensus-enshrined BTC bridge. It does have third-party bridges, which are operated by centralized custodial parties. Users must trust the operators of these bridges to custody their BTC and back bitcoin-backed tokens on the Stacks network.\n\nThe primary third-party bridge is operated by [Alex Labs](https://alexlab.co/).",
+                        "There is limited information available on Xlink aBTC's custody mechanism for BTC backing aBTC. Users trust Alex, the project behind Xlink, to set up secure custody practices. Xlink's [website](https://www.xlink.network/) mentions that institutional grade MPC solutions are used.",
                 },
             ],
         },

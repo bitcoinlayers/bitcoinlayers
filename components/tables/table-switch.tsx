@@ -35,7 +35,7 @@ function getSortedDataAndHeaders(view: string) {
         //             filterOptions: stakingTypeFilters,
         //         },
         //         { name: "Status", showSorting: true, mobileLabel: "Status" },
-        //         { name: "TVL", showSorting: true, mobileLabel: "TVL" },
+        //         { name: "Supply", showSorting: true, mobileLabel: "Supply" },
         //     ];
 
         //     return { sortedData: sortedStaking, headers: stakingHeaders };
@@ -72,7 +72,7 @@ function getSortedDataAndHeaders(view: string) {
                     showSorting: false,
                     mobileLabel: "Networks",
                 },
-                { name: "TVL", showSorting: true, mobileLabel: "TVL" },
+                { name: "Supply", showSorting: true, mobileLabel: "Supply" },
             ];
 
             return { sortedData: sortedWrappers, headers: wrapperHeaders };
@@ -109,7 +109,7 @@ function getSortedDataAndHeaders(view: string) {
                     showSorting: false,
                     mobileLabel: "Pegs",
                 },
-                { name: "BTC Locked", showSorting: true, mobileLabel: "BTC" },
+                { name: "BTC Supply", showSorting: true, mobileLabel: "BTC" },
             ];
 
             return { sortedData: sortedLayers, headers: layerHeaders };

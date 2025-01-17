@@ -5,6 +5,7 @@ import {
     RiskFactor,
     EntityType,
     EntityCategory,
+    Notice,
     Site,
     RiskSection,
     ContentSection,
@@ -31,6 +32,7 @@ const bouncebit: LayerProject = {
     btcLocked: 3901,
     nativeToken: "BB",
     feeToken: "BB",
+    notice: undefined,
     bitcoinOnly: false,
     links: [
         {

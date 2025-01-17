@@ -5,6 +5,7 @@ import {
     RiskFactor,
     EntityType,
     EntityCategory,
+    Notice,
     Site,
     RiskSection,
     ContentSection,
@@ -31,6 +32,7 @@ const bitlayer: LayerProject = {
     btcLocked: 5397,
     nativeToken: "BTR",
     feeToken: "WBTC",
+    notice: Notice.Reorg,
     bitcoinOnly: false,
     links: [
         {
@@ -77,17 +79,19 @@ const bitlayer: LayerProject = {
                     name: "Bedrock uniBTC",
                     infrastructureSlug: "bedrock-unibtc",
                     score: 0,
-                    tier: RiskFactor.UnderReview,
-                    title: "This two-way peg is under review",
-                    content: "This two-way peg is under review",
+                    tier: RiskFactor.VeryHigh,
+                    title: "Users trust custodians and various onchain contracts. We have not reviewed the contract implementations for this chain",
+                    content:
+                        "When a user deposits funds into the Bedrock protocol, they deposit a wrapped BTC token into a smart contract. The uniBTC smart contract on Ethereum (and other chains) is responsible for minting uniBTC in exchange for wrapped BTC tokens.\n\nTo deposit these tokens on Babylon, the protocol relies on a custodial provider to exchange the wrapped BTC tokens for native BTC tokens that they would stake on Babylon.\n\nBedrock has not disclosed who is responsible for securing and staking native BTC on users' behalf.",
                 },
                 {
                     name: "Lorenzo stBTC",
                     infrastructureSlug: "lorenzo-stbtc",
                     score: 0,
-                    tier: RiskFactor.UnderReview,
-                    title: "This two-way peg is under review",
-                    content: "This two-way peg is under review",
+                    tier: RiskFactor.VeryHigh,
+                    title: "Users trust custodians and various onchain contracts. We have not reviewed the contract implementations for this chain",
+                    content:
+                        "Users trust Lorenzo, the operators of Lorenzo stBTC, to secure and stake native BTC that backs stBTC. It has also been stated in Lorenzo's [marketing materials](https://medium.com/@lorenzoprotocol/lorenzo-allies-with-cobo-ceffu-and-chainup-e0d824c4744d) that custodian providers Cobo, Ceffu, and Chainup are participating in Lorenzo's protocol as custody providers, but their documentation does not claim this.\n\nUsers trust Lorenzo's claims in their documentation are being executed in practice.\n\n[Source](https://docs.lorenzo-protocol.xyz/introduction/stbtc-issuance-and-settlement)",
                 },
             ],
         },
@@ -140,6 +144,17 @@ const bitlayer: LayerProject = {
                     title: "Bitlayer does not contribute to the security budget",
                     content:
                         "Bitlayer does not currently contribute to the Bitcoin security budget.",
+                },
+            ],
+        },
+        {
+            id: "notice",
+            title: "🚨 Project is not a sidesystem",
+            content: [
+                {
+                    title: "This project will be moved to the Alternative category",
+                    content:
+                        "Projects that do not meet our requirements to be considered a sidesystem will be moved to the Alternative category. They have until June 30th to implement the technical requirements to be considered a sidesystem.",
                 },
             ],
         },

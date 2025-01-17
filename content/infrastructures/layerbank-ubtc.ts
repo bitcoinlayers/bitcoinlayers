@@ -4,6 +4,7 @@ import {
     Type,
     LiveStatus,
     EntityType,
+    Notice,
     Site,
 } from "../props";
 
@@ -21,6 +22,7 @@ const layerbankubtc: InfrastructureProject = {
     nativeToken: "-",
     purpose: Purpose.General,
     associatedLayers: "Bsquared Network",
+    notice: undefined,
     bitcoinOnly: false,
     links: [],
     description: "Under review.",

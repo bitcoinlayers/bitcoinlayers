@@ -5,6 +5,7 @@ import {
     RiskFactor,
     EntityType,
     EntityCategory,
+    Notice,
     Site,
     RiskSection,
     ContentSection,
@@ -31,6 +32,7 @@ const template: LayerProject = {
     btcLocked: 0,
     nativeToken: "-",
     feeToken: "[x]BTC",
+    notice: undefined,
     bitcoinOnly: false,
     links: [
         {

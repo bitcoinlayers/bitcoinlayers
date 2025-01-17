@@ -4,6 +4,7 @@ import {
     Type,
     LiveStatus,
     EntityType,
+    Notice,
     Site,
     AssessmentCategory,
 } from "../props";
@@ -22,6 +23,7 @@ const avalanchebtcb: InfrastructureProject = {
     nativeToken: "-",
     purpose: Purpose.General,
     associatedLayers: "Avalanche, Arbitrum, Core",
+    notice: undefined,
     bitcoinOnly: false,
     links: [
         {
@@ -62,7 +64,7 @@ const avalanchebtcb: InfrastructureProject = {
             tier: "",
             title: "Users trust a network of 8 entities to secure the funds backing BTCb",
             content:
-                "Ava Labs has disclosed that users trust a network of entities who participate in securing the BTC that backs BTCb. These eight entities are also reported to run special HSM hardware.\n\nThe eight entities securing the bridge are: Halborn, Avascan, Bware Labs, Ankr, Chainstack, Protofire, Blockdaemon, and Ava Labs.\n\nUsers trust Ava Labs's claims in their documentation are being executed in practice.\n\n[Source](https://medium.com/avalancheavax/bridging-bitcoin-to-avalanche-a-technical-overview-2535e7088b8)",
+                "Ava Labs has disclosed that users trust a network of entities who participate in securing the BTC that backs BTCb. These eight entities are also reported to run special HSM hardware.\n\nThe eight entities securing the bridge are: Halborn, Avascan, Bware Labs, Ankr, Chainstack, Protofire, Blockdaemon, and Ava Labs.\n\nUsers trust that Ava Labs's claims in their documentation are being executed in practice.\n\n[Source](https://medium.com/avalancheavax/bridging-bitcoin-to-avalanche-a-technical-overview-2535e7088b8)",
         },
     ],
 };

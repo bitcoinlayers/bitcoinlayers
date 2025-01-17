@@ -4,6 +4,7 @@ import {
     Type,
     LiveStatus,
     EntityType,
+    Notice,
     Site,
     AssessmentCategory,
 } from "../props";
@@ -22,9 +23,11 @@ const obeliskobtc: InfrastructureProject = {
     nativeToken: "-",
     purpose: Purpose.General,
     associatedLayers: "Core",
+    notice: undefined,
     bitcoinOnly: false,
     links: [],
-    description: "Obelisk oBTC is a reserve asset that is live on various EVM-compatible networks.",
+    description:
+        "Obelisk oBTC is a reserve asset that is live on various EVM-compatible networks.",
     sections: [
         {
             id: "selfsubmit",
@@ -42,7 +45,7 @@ const obeliskobtc: InfrastructureProject = {
             category: AssessmentCategory.AssetCustody,
             score: 0,
             tier: "",
-            title: "Users trust centralized signers to secure BTC backing wBTC",
+            title: "Users trust centralized signers to secure BTC backing oBTC",
             content:
                 "Obelisk's documentation claims that users deposit BTC into an MPC scheme to mint oBTC on a respective destination chain.\n\nUsers trust Obelisk's claims in their documentation are being executed in practice.\n\n[Source](https://docs-obelisk.nodedao.com/obtc-asset/how-to-mint-obtc-on-obelisk) ",
         },

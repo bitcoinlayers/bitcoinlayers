@@ -4,6 +4,7 @@ import {
     Type,
     LiveStatus,
     EntityType,
+    Notice,
     Site,
     AssessmentCategory,
 } from "../props";
@@ -22,6 +23,7 @@ const bitlayerwbtc: InfrastructureProject = {
     nativeToken: "-",
     purpose: Purpose.General,
     associatedLayers: "Bitlayer",
+    notice: undefined,
     bitcoinOnly: false,
     links: [],
     description:

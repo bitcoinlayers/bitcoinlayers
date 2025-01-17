@@ -4,6 +4,7 @@ import {
     Type,
     LiveStatus,
     EntityType,
+    Notice,
     Site,
 } from "../props";
 
@@ -21,6 +22,7 @@ const sovereign: InfrastructureProject = {
     nativeToken: "-",
     purpose: Purpose.General,
     associatedLayers: "-",
+    notice: undefined,
     bitcoinOnly: true,
     links: [
         {
