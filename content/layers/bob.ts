@@ -25,7 +25,7 @@ const bob: LayerProject = {
         RiskFactor.VeryHigh,
         RiskFactor.Medium,
         RiskFactor.High,
-        RiskFactor.UnderReview,
+        RiskFactor.VeryHigh,
     ],
     btcLocked: 974,
     nativeToken: "ETH",
@@ -51,7 +51,7 @@ const bob: LayerProject = {
         },
     ],
     description:
-        "BOB is an optimistic rollup that serves as an application layer for Bitcoin. They have launched as a rollup on top of Ethereum, with plans to derive more security from Bitcoin miners, and full nodes, over time. Its relation to Bitcoin, currently, is similar to that of a sidechain as it is an alternative consensus protocol with a two-way peg(s) between it and the Bitcoin mainchain.",
+        "BOB is a rollup that serves as an application layer for bitcoin. They have launched as a rollup on top of Ethereum, with plans to derive more security from bitcoin over time.",
     riskAnalysis: [
         {
             category: RiskCategory.BtcCustody,
@@ -67,7 +67,7 @@ const bob: LayerProject = {
                     tier: RiskFactor.VeryHigh,
                     title: "BTC users trust that tBTC will remain backed on Ethereum, and that the BOB bridge will not steal their funds",
                     content:
-                        "tBTC is minted on BOB via its official Ethereum bridge.tBTC on Ethereum is backed by BTC managed by the Threshold Network.\n\nUsers trust that the bridge operators will not steal their BTC, the BOB proposer to not publish a malicious, unchallenged state transition, or the admin controlling the bridge to create a malicious smart contract upgrade.\n\nIn the event of a malicious smart contract upgrade, there is no exit window for BOB users. This means that the admin behind the bridge can steal all funds in the official bridge.\n\nFor more information on the Threshold Network & tBTC, [click here.](https://www.bitcoinlayers.org/infrastructure/tbtc).",
+                        "tBTC is minted on BOB via its official Ethereum bridge. tBTC on Ethereum is backed by BTC managed by the Threshold Network.\n\nUsers trust that the bridge operators will not steal their BTC, the BOB proposer to not publish a malicious, unchallenged state transition, or the admin controlling the bridge to create a malicious smart contract upgrade.\n\nIn the event of a malicious smart contract upgrade, there is no exit window for BOB users. This means that the admin behind the bridge can steal all funds in the official bridge.\n\nFor more information on the Threshold Network & tBTC, [click here.](https://www.bitcoinlayers.org/infrastructure/tbtc).",
                 },
                 {
                     name: "BitGo wBTC",
@@ -156,6 +156,17 @@ const bob: LayerProject = {
                     title: "BOB does not contribute to the security budget",
                     content:
                         "BOB does not currently contribute to the Bitcoin security budget.",
+                },
+            ],
+        },
+        {
+            id: "notice",
+            title: "🚨 Project is not a sidesystem",
+            content: [
+                {
+                    title: "This project will be moved to the Alternative category",
+                    content:
+                        "Projects that do not meet our requirements to be considered a sidesystem will be moved to the Alternative category. They have until June 30th to implement the technical requirements to be considered a sidesystem.",
                 },
             ],
         },

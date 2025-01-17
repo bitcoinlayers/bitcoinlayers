@@ -136,7 +136,7 @@ const core: LayerProject = {
             tier: RiskFactor.Medium,
             title: "Core's hybrid consensus mechanism operates the network",
             content:
-                "Core Chain has a network of validators who participate as block producers. Each day, the 23 validators with the highest hybrid score (from DPOW and DPOS) are elected to participate in block production. Any Core chain full node can register to become a part of this set. Core Chain does not support exits that circumvent its validator set. This means that users must trust Core Chain validators to propose and finalize blocks.\n\nThere is a minimum stake to run a Core Chain validator node.",
+                "Core Chain has a network of validators who participate as block producers. Each day, the validators with the highest hybrid score (from DPOW and DPOS) are elected to participate in block production. Any Core chain full node can register to become a part of this set.\n\nThere is a minimum stake to run a Core Chain validator node.",
         },
         {
             category: RiskCategory.FinalityGuarantees,
@@ -171,6 +171,17 @@ const core: LayerProject = {
                     title: "Core Chain indirectly contributes to the security budget.",
                     content:
                         "Core validators will reward miners who delegated their hashrate to them with newly issued CORE tokens.",
+                },
+            ],
+        },
+        {
+            id: "notice",
+            title: "🚨 Project is not a sidesystem",
+            content: [
+                {
+                    title: "This project will be moved to the Alternative category",
+                    content:
+                        "Projects that do not meet our requirements to be considered a sidesystem will be moved to the Alternative category. They have until June 30th to implement the technical requirements to be considered a sidesystem.",
                 },
             ],
         },

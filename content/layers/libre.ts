@@ -24,7 +24,7 @@ const libre: LayerProject = {
     bridge: false,
     underReview: false,
     riskFactors: [
-        RiskFactor.VeryHigh,
+        RiskFactor.UnderReview,
         RiskFactor.High,
         RiskFactor.High,
         RiskFactor.High,
@@ -57,7 +57,7 @@ const libre: LayerProject = {
         },
     ],
     description:
-        "Libre is a sidechain that leverages a Delegated Proof of Stake (DPoS) consensus mechanism. It currently features three tokens: PBTC, PUSDT, and LIBRE. BTC live on the Libre network is managed by an alternative consensus mechanism that is not directly affiliated with Libre.",
+        "Libre leverages a Delegated Proof of Stake (DPoS) consensus mechanism. It currently features three tokens: PBTC, PUSDT, and LIBRE. BTC live on the Libre network is managed by an alternative consensus mechanism that is not directly affiliated with Libre.",
     riskAnalysis: [
         {
             category: RiskCategory.BtcCustody,
@@ -67,13 +67,22 @@ const libre: LayerProject = {
             content: "",
             pegs: [
                 {
+                    name: "Crosslink MPC Bridge",
+                    infrastructureSlug: "crosslink-librebtc",
+                    score: 0,
+                    tier: RiskFactor.UnderReview,
+                    title: "Libre announced a new two-way peg for managing bitcoin assets",
+                    content:
+                        "Libre announced a new two way peg for managing BTC in its protocol. It's announced that its validators participate in an MPC scheme to secure a bitcoin wallet backing BTC on Libre. We are currently reviewing this two-way peg implementation.",
+                },
+                {
                     name: "Libre pBTC",
                     infrastructureSlug: "libre-pbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: "Libre's bridge relies on a third party provider. Signers are permissioned nodes from the pNetwork. Less than 5, individual signers have been publicly announced",
                     content:
-                        "BTC users who deposit funds onto Libre do so via the pNetwork bridge. A limited group of signers operate the bridge.\n\n⚠️ The pNetwork bridge has historically seen two exploits occur. One of those exploits involved BTC-backed tokens.\n\n[Source](https://docs.libre.org/libre-docs/cross-chain-interoperability/bitcoin-mainnet)",
+                        "BTC users who deposit funds onto Libre do so via the pNetwork bridge. A limited group of signers operate the bridge.\n\n⚠️ The pNetwork bridge has historically seen two exploits occur. One of those exploits involved BTC-backed tokens.\n\npBTC deposits are no longer being accepted. Users have to manually withdraw funds.\n\n[Source](https://docs.libre.org/libre-docs/cross-chain-interoperability/bitcoin-mainnet)",
                 },
             ],
         },
@@ -148,6 +157,17 @@ const libre: LayerProject = {
                     title: "Users trust the operators of the pNetwork to process their withdrawals",
                     content:
                         "When users withdraw funds from the Libre chain, they trust the operators of the Libre chain to include their withdrawal transaction in a block. They additionally trust the operators of the pNetwork to process their withdrawal and release their funds on the Bitcoin main chain.",
+                },
+            ],
+        },
+        {
+            id: "notice",
+            title: "🚨 Project is not a sidesystem",
+            content: [
+                {
+                    title: "This project will be moved to the Alternative category",
+                    content:
+                        "Projects that do not meet our requirements to be considered a sidesystem will be moved to the Alternative category. They have until June 30th to implement the technical requirements to be considered a sidesystem.",
                 },
             ],
         },

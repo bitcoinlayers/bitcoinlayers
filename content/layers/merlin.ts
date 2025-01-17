@@ -49,7 +49,7 @@ const merlin: LayerProject = {
         },
         {
             text: Site.GitHub,
-            url: "https://docs.merlinchain.io/merlin-docs/developers",
+            url: "https://github.com/MerlinLayer2",
         },
         {
             text: Site.Twitter,
@@ -57,7 +57,7 @@ const merlin: LayerProject = {
         },
     ],
     description:
-        "Merlin is an implementation of Polygon CDK chain. It likely is running a Polygon chain on top of a permissioned fork of the EVM.",
+        "Merlin is an implementation of Polygon CDK chain. It likely is running its rollup chain on top of a permissioned fork of the EVM.",
     riskAnalysis: [
         {
             category: RiskCategory.BtcCustody,
@@ -159,7 +159,7 @@ const merlin: LayerProject = {
                 {
                     title: "MERL token is live, but not currently used to pay transaction fees",
                     content:
-                        "Gas on the Merlin chain is currently paid in a BTC-synthetic. It is unknown if Merlin will use the MERL token for network security in the future.\n\nWhen Merlin integrates with Bsquared Network, it will rely on the BSQ token for security.",
+                        "Gas on the Merlin chain is currently paid in a BTC-synthetic. It is unknown if Merlin will use the MERL token for network security in the future.",
                 },
                 {
                     title: "No MEV introduced to Bitcoin, but a centralized sequencer can reorder transactions",
@@ -170,6 +170,17 @@ const merlin: LayerProject = {
                     title: "Merlin does not contribute to the security budget",
                     content:
                         "Merlin does not currently contribute to the Bitcoin security budget.",
+                },
+            ],
+        },
+        {
+            id: "notice",
+            title: "🚨 Project is not a sidesystem",
+            content: [
+                {
+                    title: "This project will be moved to the Alternative category",
+                    content:
+                        "Projects that do not meet our requirements to be considered a sidesystem will be moved to the Alternative category. They have until June 30th to implement the technical requirements to be considered a sidesystem.",
                 },
             ],
         },
