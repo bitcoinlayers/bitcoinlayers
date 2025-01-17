@@ -142,7 +142,7 @@ const bsquared: LayerProject = {
             category: RiskCategory.DataAvailability,
             score: 0,
             tier: RiskFactor.VeryHigh,
-            title: "DA requirement is fulfilled by three permissioned validators",
+            title: "DA requirement is fulfilled by permissioned validators",
             content:
                 "Sequencer batches are posted to the Bsquared Network L1. This network consists of a permissioned validator set who is responsible for making the data readily available. The identities of these operators has not been disclosed.",
         },
