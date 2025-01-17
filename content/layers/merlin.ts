@@ -159,7 +159,7 @@ const merlin: LayerProject = {
                 {
                     title: "MERL token is live, but not currently used to pay transaction fees",
                     content:
-                        "Gas on the Merlin chain is currently paid in a BTC-synthetic. It is unknown if Merlin will use the MERL token for network security in the future.\n\nWhen Merlin integrates with Bsquared Network, it will rely on the BSQ token for security.",
+                        "Gas on the Merlin chain is currently paid in a BTC-synthetic. It is unknown if Merlin will use the MERL token for network security in the future.",
                 },
                 {
                     title: "No MEV introduced to Bitcoin, but a centralized sequencer can reorder transactions",
