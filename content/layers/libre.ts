@@ -24,7 +24,7 @@ const libre: LayerProject = {
     bridge: false,
     underReview: false,
     riskFactors: [
-        RiskFactor.VeryHigh,
+        RiskFactor.UnderReview,
         RiskFactor.High,
         RiskFactor.High,
         RiskFactor.High,
@@ -66,6 +66,15 @@ const libre: LayerProject = {
             title: "",
             content: "",
             pegs: [
+                {
+                    name: "Crosslink MPC Bridge",
+                    infrastructureSlug: "crosslink-librebtc",
+                    score: 0,
+                    tier: RiskFactor.UnderReview,
+                    title: "Libre announced a new two-way peg for managing bitcoin assets",
+                    content:
+                        "Libre announced a new two way peg for managing BTC in its protocol. We are currently reviewing this two-way peg implementation.",
+                },
                 {
                     name: "Libre pBTC",
                     infrastructureSlug: "libre-pbtc",
