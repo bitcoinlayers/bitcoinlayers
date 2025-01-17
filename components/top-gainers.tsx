@@ -40,7 +40,7 @@ export default function TopGainers() {
                 <CardContent className="pt-6">
                     <div className="flex justify-between items-center mb-4">
                         <h2 className="text-xl font-semibold flex items-center gap-2">
-                            📈 Percent Growth
+                            Percent Growth
                         </h2>
                         <ToggleGroup
                             type="single"
@@ -100,15 +100,15 @@ export default function TopGainers() {
                                     <div className="text-right">
                                         <div className="font-medium">
                                             <span className="text-emerald-500">
-                                                ↑
-                                            </span>{" "}
-                                            {token.percent_change.toLocaleString(
-                                                "en-US",
-                                                {
-                                                    maximumFractionDigits: 0,
-                                                },
-                                            )}
-                                            %
+                                                ↑{" "}
+                                                {token.percent_change.toLocaleString(
+                                                    "en-US",
+                                                    {
+                                                        maximumFractionDigits: 0,
+                                                    },
+                                                )}
+                                                %
+                                            </span>
                                         </div>
                                         <div className="text-sm">
                                             {token.recent_balance.toLocaleString(
@@ -117,7 +117,7 @@ export default function TopGainers() {
                                                     maximumFractionDigits: 0,
                                                 },
                                             )}{" "}
-                                            BTC
+                                            total BTC
                                         </div>
                                     </div>
                                 </div>
@@ -132,7 +132,7 @@ export default function TopGainers() {
                 <CardContent className="pt-6">
                     <div className="flex justify-between items-center mb-4">
                         <h2 className="text-xl font-semibold flex items-center gap-2">
-                            🚀 Supply Growth
+                            Supply Growth
                         </h2>
                         <ToggleGroup
                             type="single"
@@ -191,15 +191,15 @@ export default function TopGainers() {
                                 <div className="text-right">
                                     <div className="font-medium">
                                         <span className="text-emerald-500">
-                                            +
-                                        </span>{" "}
-                                        {token.supply_change.toLocaleString(
-                                            "en-US",
-                                            {
-                                                maximumFractionDigits: 0,
-                                            },
-                                        )}{" "}
-                                        BTC
+                                            +{" "}
+                                            {token.supply_change.toLocaleString(
+                                                "en-US",
+                                                {
+                                                    maximumFractionDigits: 0,
+                                                },
+                                            )}{" "}
+                                            BTC
+                                        </span>
                                     </div>
                                     <div className="text-sm">
                                         {token.recent_balance.toLocaleString(
