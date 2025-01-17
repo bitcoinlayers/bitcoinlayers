@@ -7,6 +7,7 @@ import getHistoricalSuppliesByNetwork from "@/hooks/get-historical-supplies-by-n
 import getHistoricalSuppliesByStaking from "@/hooks/get-historical-supplies-by-staking";
 import getHistoricalSuppliesByLiquidstaking from "@/hooks/get-historical-supplies-by-liquidstaking";
 import { useQueryState } from "nuqs";
+import TopGainers from "@/components/top-gainers";
 
 export default function Analytics() {
     const [view] = useQueryState("view", {
@@ -65,7 +66,8 @@ export default function Analytics() {
 
     return (
         <div className="mx-auto space-y-8">
-            <ViewToggleGroup showAll />
+            {/* <ViewToggleGroup showAll /> */}
+            <TopGainers />
             {Object.entries(chartConfig).map(([key, config]) => {
                 if (view === "all" || view === key) {
                     return (
