@@ -10,6 +10,7 @@ import {
     RiskSection,
     ContentSection,
     RiskCategory,
+    TokenSnippet,
 } from "../props";
 
 const merlin: LayerProject = {
@@ -116,7 +117,7 @@ const merlin: LayerProject = {
                     infrastructureSlug: "solv-solvbtcena",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: "This two-way peg is under review",
+                    title: TokenSnippet.UnderReview,
                     content: "This two-way peg is under review",
                 },
             ],

@@ -10,6 +10,7 @@ import {
     RiskSection,
     ContentSection,
     RiskCategory,
+    TokenSnippet,
 } from "../props";
 
 const fractal: LayerProject = {
@@ -80,7 +81,7 @@ const fractal: LayerProject = {
                     infrastructureSlug: "simple-sbtc",
                     score: 0,
                     tier: RiskFactor.UnderReview,
-                    title: "This two-way peg is under review",
+                    title: TokenSnippet.UnderReview,
                     content: "This two-way peg is under review",
                 },
             ],

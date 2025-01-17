@@ -10,6 +10,7 @@ import {
     RiskSection,
     ContentSection,
     RiskCategory,
+    TokenSnippet,
 } from "../props";
 
 const bsquared: LayerProject = {
@@ -125,7 +126,7 @@ const bsquared: LayerProject = {
                     infrastructureSlug: "layerbank-btc",
                     score: 0,
                     tier: RiskFactor.UnderReview,
-                    title: "This two-way peg is under review",
+                    title: TokenSnippet.UnderReview,
                     content: "This two-way peg is under review",
                 },
                 {
@@ -133,7 +134,7 @@ const bsquared: LayerProject = {
                     infrastructureSlug: "layerbank-ubtc",
                     score: 0,
                     tier: RiskFactor.UnderReview,
-                    title: "This two-way peg is under review",
+                    title: TokenSnippet.UnderReview,
                     content: "This two-way peg is under review",
                 },
             ],

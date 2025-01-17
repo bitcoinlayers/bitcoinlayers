@@ -10,6 +10,7 @@ import {
     RiskSection,
     ContentSection,
     RiskCategory,
+    TokenSnippet,
 } from "../props";
 
 const optimism: LayerProject = {
@@ -89,7 +90,7 @@ const optimism: LayerProject = {
                     infrastructureSlug: "kraken-kbtc",
                     score: 0,
                     tier: RiskFactor.UnderReview,
-                    title: "This two-way peg is under review",
+                    title: TokenSnippet.UnderReview,
                     content: "This two-way peg is under review",
                 },
                 {
@@ -97,7 +98,7 @@ const optimism: LayerProject = {
                     infrastructureSlug: "bedrock-unibtc",
                     score: 0,
                     tier: RiskFactor.UnderReview,
-                    title: "This two-way peg is under review",
+                    title: TokenSnippet.UnderReview,
                     content: "This two-way peg is under review",
                 },
                 {
@@ -105,7 +106,7 @@ const optimism: LayerProject = {
                     infrastructureSlug: "synths-sbtc",
                     score: 0,
                     tier: RiskFactor.UnderReview,
-                    title: "This two-way peg is under review",
+                    title: TokenSnippet.UnderReview,
                     content: "This two-way peg is under review",
                 },
             ],

@@ -10,6 +10,7 @@ import {
     RiskSection,
     ContentSection,
     RiskCategory,
+    TokenSnippet,
 } from "../props";
 
 const avalanche: LayerProject = {
@@ -71,7 +72,7 @@ const avalanche: LayerProject = {
                     infrastructureSlug: "avalance-btcb",
                     score: 0,
                     tier: RiskFactor.UnderReview,
-                    title: "This two-way peg is under review",
+                    title: TokenSnippet.UnderReview,
                     content: "This two-way peg is under review",
                 },
                 {
@@ -79,7 +80,7 @@ const avalanche: LayerProject = {
                     infrastructureSlug: "solv-solvbtc",
                     score: 0,
                     tier: RiskFactor.UnderReview,
-                    title: "This two-way peg is under review",
+                    title: TokenSnippet.UnderReview,
                     content: "This two-way peg is under review",
                 },
                 {
@@ -87,7 +88,7 @@ const avalanche: LayerProject = {
                     infrastructureSlug: "solv-solvbtcbbn",
                     score: 0,
                     tier: RiskFactor.UnderReview,
-                    title: "This two-way peg is under review",
+                    title: TokenSnippet.UnderReview,
                     content: "This two-way peg is under review",
                 },
             ],

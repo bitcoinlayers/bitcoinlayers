@@ -10,6 +10,7 @@ import {
     RiskSection,
     ContentSection,
     RiskCategory,
+    TokenSnippet,
 } from "../props";
 
 const arbitrum: LayerProject = {
@@ -71,7 +72,7 @@ const arbitrum: LayerProject = {
                     infrastructureSlug: "bitgo-wbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: "wBTC is managed by a centralized consortium of companies. We are analyzing if wBTC is natively minted on Arbitrum or if it is bridged from Ethereum.",
+                    title: TokenSnippet.BitGowBTC, //TODO: Janusz reference this as an example
                     content:
                         "wBTC on Arbitrum is backed by a centralized consortium of three companies. These entities are responsible for custodying BTC that backs wBTC on its various networks. Users trust these entities to not collude and steal the funds backing wBTC.",
                 },
@@ -80,16 +81,15 @@ const arbitrum: LayerProject = {
                     infrastructureSlug: "threshold-tbtc",
                     score: 0,
                     tier: RiskFactor.High,
-                    title: "Users trust the Threshold Network to keep tBTC backed and a 9 member federation to manage tBTC's bridge between Arbitrum and Ethereum",
-                    content:
-                        "tBTC's peg with bitcoin is managed by the Threshold Network, a distributed, but permissioned, two-way peg. tBTC is minted on Ethereum and then bridged to Arbitrum via its own custom bridge contract.\n\nThis bridge is managed by a 6/9 federation. Bitcoin users trust that 6 of the 9 members of this federation do not collude and steal user funds.",
+                    title: TokenSnippet.ThresholdtBTC,
+                    content: `tBTC's peg ${TokenSnippet.ThresholdtBTC} with bitcoin is managed by the Threshold Network, a distributed, but permissioned, two-way peg. tBTC is minted on Ethereum and then bridged to Arbitrum via its own custom bridge contract.\n\nThis bridge is managed by a 6/9 federation. Bitcoin users trust that 6 of the 9 members of this federation do not collude and steal user funds.`,
                 },
                 {
                     name: "cbBTC",
                     infrastructureSlug: "coinbase-cbbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: "cbBTC is managed by a centralized custodian. We are analyzing if cbBTC is natively minted on Arbitrum or if is bridged from Ethereum.",
+                    title: TokenSnippet.CoinbasecbBTC,
                     content:
                         "Coinbase is responsible for securing the BTC that backs cbBTC on Arbitrum. Users trust Coinbase to ensure the funds backing cbBTC are not stolen or lost.\n\nIn addition to securing the funds funds backing cbBTC, Coinbase can censor users from using cbBTC and maintains unilateral control of cbBTC's smart contracts.",
                 },
@@ -98,7 +98,7 @@ const arbitrum: LayerProject = {
                     infrastructureSlug: "solv-solvbtc",
                     score: 0,
                     tier: RiskFactor.UnderReview,
-                    title: "This two-way peg is under review",
+                    title: TokenSnippet.UnderReview,
                     content: "This two-way peg is under review",
                 },
                 {
@@ -106,7 +106,7 @@ const arbitrum: LayerProject = {
                     infrastructureSlug: "bedrock-unibtc",
                     score: 0,
                     tier: RiskFactor.UnderReview,
-                    title: "This two-way peg is under review",
+                    title: TokenSnippet.UnderReview,
                     content: "This two-way peg is under review",
                 },
                 {
@@ -114,7 +114,7 @@ const arbitrum: LayerProject = {
                     infrastructureSlug: "solv-solvbtcbbn",
                     score: 0,
                     tier: RiskFactor.UnderReview,
-                    title: "This two-way peg is under review",
+                    title: TokenSnippet.UnderReview,
                     content:
                         "SolvBTCBBN is a derivative of Solv BTC. We are reviewing its trust assumptions.",
                 },
@@ -123,7 +123,7 @@ const arbitrum: LayerProject = {
                     infrastructureSlug: "solv-solvbtcena",
                     score: 0,
                     tier: RiskFactor.UnderReview,
-                    title: "This two-way peg is under review",
+                    title: TokenSnippet.UnderReview,
                     content:
                         "SolvBTC.ENA is a derivative of Solv BTC. We are reviewing its trust assumptions.",
                 },
@@ -132,7 +132,7 @@ const arbitrum: LayerProject = {
                     infrastructureSlug: "lorenzo-stbtc",
                     score: 0,
                     tier: RiskFactor.UnderReview,
-                    title: "This two-way peg is under review",
+                    title: TokenSnippet.UnderReview,
                     content:
                         "Lorenzo stBTC is a liquid staking token. We are reviewing its trust assumptions.",
                 },
@@ -141,7 +141,7 @@ const arbitrum: LayerProject = {
                     infrastructureSlug: "ibtcnetwork-ibtc",
                     score: 0,
                     tier: RiskFactor.UnderReview,
-                    title: "This two-way peg is under review",
+                    title: TokenSnippet.UnderReview,
                     content:
                         "iBTC is a two-way peg that leverages DLC contracts between various institutions and a federated attestor network. We are reviewing its trust assumptions.",
                 },
@@ -150,7 +150,7 @@ const arbitrum: LayerProject = {
                     infrastructureSlug: "avalanche-btcb",
                     score: 0,
                     tier: RiskFactor.UnderReview,
-                    title: "This two-way peg is under review",
+                    title: TokenSnippet.UnderReview,
                     content:
                         "Avalanche BTCb is a wrapped BTC asset on the Avalanche blockchain. We are reviewing its bridge between Arbitrum and Avalanche.",
                 },
@@ -159,7 +159,7 @@ const arbitrum: LayerProject = {
                     infrastructureSlug: "babypie-mbtc",
                     score: 0,
                     tier: RiskFactor.UnderReview,
-                    title: "This two-way peg is under review",
+                    title: TokenSnippet.UnderReview,
                     content: "This two-way peg is under review",
                 },
             ],
