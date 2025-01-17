@@ -9,8 +9,8 @@ export default async function Home() {
     return (
         <div className="mx-auto space-y-8">
             <ViewToggleGroup showAll={false} />
-            <TopGainers />
             <ChartSwitch />
+            <TopGainers />
             <TableSwitch />
             <CtaCard />
             <InfoCardGrid />
