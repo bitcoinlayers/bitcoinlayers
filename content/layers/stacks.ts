@@ -5,6 +5,7 @@ import {
     RiskFactor,
     EntityType,
     EntityCategory,
+    Notice,
     Site,
     RiskSection,
     ContentSection,
@@ -31,6 +32,7 @@ const stacks: LayerProject = {
     btcLocked: 1054,
     nativeToken: "STX",
     feeToken: "STX",
+    notice: undefined,
     bitcoinOnly: false,
     links: [
         {

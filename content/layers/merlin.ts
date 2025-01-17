@@ -5,6 +5,7 @@ import {
     RiskFactor,
     EntityType,
     EntityCategory,
+    Notice,
     Site,
     RiskSection,
     ContentSection,
@@ -31,6 +32,7 @@ const merlin: LayerProject = {
     btcLocked: 9303,
     nativeToken: "MERL",
     feeToken: "WBTC",
+    notice: Notice.Reorg,
     bitcoinOnly: false,
     links: [
         {

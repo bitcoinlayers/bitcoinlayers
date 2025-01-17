@@ -4,6 +4,7 @@ import {
     Type,
     LiveStatus,
     EntityType,
+    Notice,
     Site,
     AssessmentCategory,
 } from "../props";
@@ -22,6 +23,7 @@ const nomicnbtc: InfrastructureProject = {
     nativeToken: "-",
     purpose: Purpose.General,
     associatedLayers: "Nomic, Osmosis, and other IBC-connected chains",
+    notice: undefined,
     bitcoinOnly: false,
     links: [],
     description:

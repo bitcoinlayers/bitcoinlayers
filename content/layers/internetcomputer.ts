@@ -5,6 +5,7 @@ import {
     RiskFactor,
     EntityType,
     EntityCategory,
+    Notice,
     Site,
     RiskSection,
     ContentSection,
@@ -31,6 +32,7 @@ const internetcomputer: LayerProject = {
     btcLocked: 277,
     nativeToken: "ICP",
     feeToken: "ICP",
+    notice: undefined,
     bitcoinOnly: false,
     links: [
         {

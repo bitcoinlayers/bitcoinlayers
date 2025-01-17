@@ -5,6 +5,7 @@ import {
     RiskFactor,
     EntityType,
     EntityCategory,
+    Notice,
     Site,
     RiskSection,
     ContentSection,
@@ -31,6 +32,7 @@ const core: LayerProject = {
     btcLocked: 6705,
     nativeToken: "CORE",
     feeToken: "CORE",
+    notice: Notice.Reorg,
     bitcoinOnly: false,
     links: [
         {

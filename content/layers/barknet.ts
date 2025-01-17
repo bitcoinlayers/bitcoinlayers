@@ -4,6 +4,7 @@ import {
     LiveStatus,
     EntityType,
     EntityCategory,
+    Notice,
     Site,
     RiskCategory,
 } from "../props";
@@ -23,6 +24,7 @@ const barknet: LayerProject = {
     btcLocked: 0,
     nativeToken: "-",
     feeToken: "-",
+    notice: undefined,
     bitcoinOnly: false,
     links: [
         {

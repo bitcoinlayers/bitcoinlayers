@@ -5,6 +5,7 @@ import {
     RiskFactor,
     EntityType,
     EntityCategory,
+    Notice,
     Site,
     RiskSection,
     ContentSection,
@@ -31,6 +32,7 @@ const rootstock: LayerProject = {
     btcLocked: 2757,
     nativeToken: "RBTC",
     feeToken: "RBTC",
+    notice: undefined,
     bitcoinOnly: true,
     links: [
         {

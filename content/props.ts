@@ -87,6 +87,12 @@ export enum EntityCategory {
     Alt = "Alt. L1s & More",
 }
 
+export enum Notice {
+    NoBridge = "No native bitcoin bridge",
+    Sidesystem = "Sidesystems",
+    Reorg = "🚨 This project will be moved to the Alternative category after June 30th.",
+}
+
 export enum Site {
     Website = "Website",
     Docs = "Docs",
@@ -154,6 +160,7 @@ export interface BaseProject {
     underReview: boolean;
     riskFactors: (RiskFactor | "")[];
     nativeToken: string;
+    notice?: Notice;
     bitcoinOnly: boolean;
     links: { text: Site | string; url: string | URL }[];
     description: string;

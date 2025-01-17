@@ -78,7 +78,7 @@ const EcashTable = ({
         serialize: (value) => value.join(","),
     });
     const [sortBy, setSortBy] = useQueryState("sortBy", {
-        defaultValue: "BTC Locked",
+        defaultValue: "BTC Supply",
     });
     const [sortOrder, setSortOrder] = useQueryState("sortOrder", {
         defaultValue: "desc",

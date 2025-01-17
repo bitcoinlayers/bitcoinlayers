@@ -5,6 +5,7 @@ import {
     RiskFactor,
     EntityType,
     EntityCategory,
+    Notice,
     Site,
     RiskSection,
     ContentSection,
@@ -26,6 +27,7 @@ const mezo: LayerProject = {
     btcLocked: 0,
     nativeToken: "MEZO",
     feeToken: "-",
+    notice: undefined,
     bitcoinOnly: false,
     links: [
         {

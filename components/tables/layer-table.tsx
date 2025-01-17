@@ -22,13 +22,14 @@ import getCurrentSuppliesByTokenimpl, {
 import getCurrentSuppliesByNetwork from "@/hooks/get-current-supplies-by-network";
 import TokenList from "@/components/tables/mapping-token-img";
 import { EntityCategory } from "@/content/props";
+import NoticeSnapshotDialog from "../layer/notice-snapshot/notice-snapshot-dialog";
 
 type TableTabKey =
     | "Trust Assumptions"
     | "Type"
     | "Unit"
     | "BTC Pegs"
-    | "BTC Locked";
+    | "BTC Supply";
 
 interface Props {
     data: LayerProject[];
@@ -82,7 +83,7 @@ const LayerTable = ({ data, headers }: Props) => {
     );
 
     const [sortBy, setSortBy] = useQueryState("sortBy", {
-        defaultValue: "BTC Locked",
+        defaultValue: "BTC Supply",
     });
     const [sortOrder, setSortOrder] = useQueryState("sortOrder", {
         defaultValue: "desc",
@@ -143,7 +144,7 @@ const LayerTable = ({ data, headers }: Props) => {
                     valueA = a.nativeToken;
                     valueB = b.nativeToken;
                     break;
-                case "BTC Locked":
+                case "BTC Supply":
                     valueA = totaledBalances[a.slug]?.totalAmount ?? -Infinity;
                     valueB = totaledBalances[b.slug]?.totalAmount ?? -Infinity;
                     break;
@@ -236,7 +237,7 @@ const LayerTable = ({ data, headers }: Props) => {
                         <tbody className="gap-x-8">
                             {filteredData.map((item, index) => (
                                 <tr
-                                    className={`cursor-pointer ${
+                                    className={`${
                                         index !== filteredData.length - 1
                                             ? "border-b border-border"
                                             : ""
@@ -244,18 +245,25 @@ const LayerTable = ({ data, headers }: Props) => {
                                     key={item.slug}
                                 >
                                     <td className="lg:px-6 px-4 py-4 font-semibold whitespace-nowrap">
-                                        <Link
-                                            href={`/layers/${item.slug}`}
-                                            className="flex items-center"
-                                        >
-                                            <LayerImage
-                                                src={`/logos/${item.slug.toLowerCase()}.png`}
-                                                title={item.title}
-                                            />
-                                            <span className="ml-2 truncate lg:word-break-none">
-                                                {item.title}
-                                            </span>
-                                        </Link>
+                                        <div className="flex items-center space-x-2">
+                                            <Link
+                                                href={`/layers/${item.slug}`}
+                                                className="flex items-center"
+                                            >
+                                                <LayerImage
+                                                    src={`/logos/${item.slug.toLowerCase()}.png`}
+                                                    title={item.title}
+                                                />
+                                                <span className="ml-2 truncate lg:word-break-none">
+                                                    {item.title}
+                                                </span>
+                                            </Link>
+                                            {item.notice && (
+                                                <NoticeSnapshotDialog
+                                                    layer={item}
+                                                />
+                                            )}
+                                        </div>
                                     </td>
                                     {(!isMobile ||
                                         mobileActiveTab ===
@@ -317,7 +325,7 @@ const LayerTable = ({ data, headers }: Props) => {
                                         </td>
                                     )}
                                     {(!isMobile ||
-                                        mobileActiveTab === "BTC Locked") && (
+                                        mobileActiveTab === "BTC Supply") && (
                                         <td className="lg:px-6 px-4 py-3 lg:py-4">
                                             <Link href={`/layers/${item.slug}`}>
                                                 {item.underReview ||

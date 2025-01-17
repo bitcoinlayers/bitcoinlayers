@@ -5,6 +5,7 @@ import {
     RiskFactor,
     EntityType,
     EntityCategory,
+    Notice,
     Site,
     RiskSection,
     ContentSection,
@@ -31,6 +32,7 @@ const zksync: LayerProject = {
     btcLocked: 0,
     nativeToken: "-",
     feeToken: "ZK",
+    notice: undefined,
     bitcoinOnly: false,
     links: [
         {

@@ -4,6 +4,7 @@ import {
     Type,
     LiveStatus,
     EntityType,
+    Notice,
     Site,
 } from "../props";
 
@@ -21,6 +22,7 @@ const cashu: InfrastructureProject = {
     nativeToken: "BTC",
     purpose: Purpose.EcashMint,
     associatedLayers: "Lightning Network, nostr",
+    notice: undefined,
     bitcoinOnly: true,
     links: [
         {

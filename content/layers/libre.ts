@@ -5,6 +5,7 @@ import {
     RiskFactor,
     EntityType,
     EntityCategory,
+    Notice,
     Site,
     RiskSection,
     ContentSection,
@@ -31,6 +32,7 @@ const libre: LayerProject = {
     btcLocked: 3,
     nativeToken: "LIBRE",
     feeToken: "LIBRE",
+    notice: Notice.Reorg,
     bitcoinOnly: false,
     links: [
         {

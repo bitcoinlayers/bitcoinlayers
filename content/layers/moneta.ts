@@ -5,6 +5,7 @@ import {
     RiskFactor,
     EntityType,
     EntityCategory,
+    Notice,
     Site,
     RiskSection,
     ContentSection,
@@ -31,6 +32,7 @@ const moneta: LayerProject = {
     btcLocked: 3555,
     nativeToken: "MTA",
     feeToken: "mBTC",
+    notice: undefined,
     bitcoinOnly: false,
     links: [],
     description:

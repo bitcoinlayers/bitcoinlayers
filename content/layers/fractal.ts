@@ -5,6 +5,7 @@ import {
     RiskFactor,
     EntityType,
     EntityCategory,
+    Notice,
     Site,
     RiskSection,
     ContentSection,
@@ -31,6 +32,7 @@ const fractal: LayerProject = {
     btcLocked: 0,
     nativeToken: "FB",
     feeToken: "FB",
+    notice: Notice.Reorg,
     bitcoinOnly: false,
     links: [
         {

@@ -22,6 +22,7 @@ const template: InfrastructureProject = {
     nativeToken: "None/Ticker",
     purpose: Purpose.General,
     associatedLayers: "-",
+    notice: undefined,
     bitcoinOnly: false,
     links: [
         {
