@@ -229,8 +229,16 @@ const Methodology: React.FC = () => {
                                         bitcoin native, sidesystems, and alternative chains.
                                         Bitcoin native protocols and sidesystems are bitcoin
                                         layers. For a project to be considered a Bitcoin
-                                        layer, they must meet our technical requirements listed
-                                        [here](https://www.lxresearch.co/starting-to-define-layers-a-year-later/).<br />
+                                        layer, they must meet our technical requirements listed&nbsp;
+    <a
+        href="https://www.lxresearch.co/starting-to-define-layers-a-year-later/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-blue-500 underline"
+    >
+        here
+    </a>.
+                                        <br />
                                     </div>
                                 </div>
                             </div>
