@@ -27,7 +27,7 @@ const bsquared: LayerProject = {
         RiskFactor.VeryHigh,
         RiskFactor.VeryHigh,
         RiskFactor.VeryHigh,
-        RiskFactor.UnderReview,
+        RiskFactor.VeryHigh,
     ],
     btcLocked: 0,
     nativeToken: "BSQ",
