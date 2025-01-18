@@ -62,10 +62,10 @@ const mercurylayer: LayerProject = {
                     name: "Mercury BTC",
                     infrastructureSlug: "mercury-btc",
                     score: 0,
-                    tier: RiskFactor.Low,
+                    tier: RiskFactor.Medium,
                     title: "A locked UTXO is collaboratively managed between a trusted server and the statecoin owner, with full L1 UTXO ownership enforceable after a timelock expiry",
                     content:
-                        "The statechain setup involves locking a UTXO onchain with the private key shared between the operator and the current statecoin owner. Although the Mercury Layer server acts as a trusted entity, users are safeguarded against potential unresponsiveness by having the ability to unilaterally exit and enforce their UTXO ownership onchain as each transfer is secured by a decrementing timelock mechanism and a series of backup transactions."
+                        "The statechain setup involves locking a UTXO onchain with the private key shared between the operator and the current statecoin owner. Although the Mercury Layer server acts as a trusted entity, users are safeguarded against potential unresponsiveness by having the ability to unilaterally exit and enforce their UTXO ownership onchain as each transfer is secured by a decrementing timelock mechanism and a series of backup transactions.\n\nWe have assigned Mercury Layer a medium score due to situational differences in user Custody."
                 },
             ],
         },
@@ -122,13 +122,29 @@ const mercurylayer: LayerProject = {
             ],
         },
         {
+            id: "additionalconsiderations",
+            title: "Custom score assigned",
+            content: [
+                {
+                    title: "Medium score assigned to Mercury Layer custody mechanism",
+                    content:
+                        "Mercury Layer has been assigned a medium score for custody in the project assessment page. This is due to situational differences in custody. As noted in BTC Custody, a user retains custody of their funds when depositing into the protocol. But as noted in the finality section, they trust an honest operator to delete their previous keyshare.\n\nIf the operator does not due this, they can steal a user's funds.",
+                },
+                {
+                    title: "Statechains only allow for fixed-value transfers",
+                    content:
+                        "Mercury Layer facilitates the offline transfer of UTXO ownership through the transfer of private key shares. Ownership transfer and not involving Bitcoin L1 interaction implies that UTXOs cannot be split and must always be transferred as a whole.",
+                },
+            ],
+        },
+        {
             id: "withdrawals",
             title: "Withdrawals",
             content: [
                 {
                     title: "Users can unilaterally exit given the statechain entity doesn’t collude with a previous statecoin owner",
                     content:
-                        "Mercury Layer permits unilateral exits. To reclaim full UTXO ownership on bitcoin L1, the current owner can close the statechain by creating an onchain transaction that spends the UTXO. In an orderly closure, the statechain operator co-signs this transaction with its key share. In an uncooperative scenario, the statecoin owner can use their backup transaction to reclaim the UTXO onchain after a timelock expiry. ",
+                        "Mercury Layer permits unilateral exits. To reclaim full UTXO ownership on bitcoin L1, the current owner can close the statechain by creating an onchain transaction that spends the UTXO. In an orderly closure, the statechain operator co-signs this transaction with its key share. In an uncooperative scenario, the statecoin owner can use their backup transaction to reclaim the UTXO onchain after a timelock expiry.",
                 },
             ],
         },
@@ -156,17 +172,6 @@ const mercurylayer: LayerProject = {
                     title: "Enhanced privacy with blind statechains",
                     content:
                         "The blinding feature of MuSig2 prevents the statechain entity from learning about transaction details, such as the TxID, the full shared public key, the final signature it co-generates, or any information about statechain closure transactions.",
-                },
-            ],
-        },
-        {
-            id: "additionalconsiderations",
-            title: "Additional Considerations",
-            content: [
-                {
-                    title: "Statechains only allow for fixed-value transfers",
-                    content:
-                        "Mercury Layer facilitates the offline transfer of UTXO ownership through the transfer of private key shares. Ownership transfer and not involving Bitcoin L1 interaction implies that UTXOs cannot be split and must always be transferred as a whole.",
                 },
             ],
         },
