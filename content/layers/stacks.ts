@@ -117,7 +117,7 @@ const stacks: LayerProject = {
             tier: RiskFactor.UnderReview,
             title: "State transitions validated and finalized by Stackers. We are reviewing if the mechanism inherits finality guarantees from bitcoin",
             content:
-                "The Nakamoto upgrade may have affected the score for the Finality section. This section is currently under review.\n\nSee the technology section for a description on Nakamoto consensus.",
+                "The Nakamoto upgrade sees Stacks checkpoint its state to bitcoin. We are reviewing the details around Stacks' reorg resistance guarantees from bitcoin.\n\nSee the technology section for a description on Nakamoto consensus.",
         },
     ],
     sections: [
