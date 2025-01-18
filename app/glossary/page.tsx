@@ -49,6 +49,16 @@ const glossaryData: GlossaryData = {
                 "ArkOOR payments allow users to transfer VTXOs instantly without waiting for an Ark round or incurring liquidity fees. These transactions reuse the forfeit clause, enabling a sender to co-sign with the ASP to create a new VTXO for the recipient. While convenient and fast, ArkOOR introduces a trust trade-off, as recipients rely on the ASP and sender not colluding for a double spend. Recipients can mitigate this by converting ArkOOR VTXOs into regular VTXOs during the next Ark round.",
         },
         {
+            term: "Alternative Rollup",
+            definition:
+                "An alternative rollup (alt. rollup) is a modular blockchain that uses a parent blockchain for data availability. The blockchain stores its state root and enough transaction data to reconstruct the state of the blockchain from genesis in the parent blockchain. An alternative rollup does not use bitcoin for data availability.",
+        },
+        {
+            term: "Anchor Chain",
+            definition:
+                "An anchor chain is a blockchain that posts its latest state root to bitcoin and requires its block produces to build upon that latest state root. This sees anchor chain transactions inherit additional double-spend resistance from bitcoin. At one point an anchor chain inherits this double-spend resistance depends on the implementation.",
+        },
+        {
             term: "Atomic swap",
             definition:
                 "An exchange of crypto assets that does not require a trusted third party. Atomic swaps leverage smart contracts to ensure both parties fulfill transaction obligations before the swap is completed, otherwise, the transaction is canceled, and funds are returned to their respective owners. Atomicity refers to guarantee of a single, indivisible outcome, i.e., one token transfer cannot execute without its counterparty transfer also executing. In the context of Bitcoin, atomic swaps enable the seamless exchange of BTC with other cryptocurrencies in a secure and decentralized manner.",
@@ -61,6 +71,21 @@ const glossaryData: GlossaryData = {
                 "A deliberately ambiguous term that encapsulates L2s, sidechains, state chains, and other networks 'aligned' with either Bitcoin (the network) or BTC (the asset).",
         },
         {
+            term: "Bitcoin native",
+            definition:
+                "A protocol that enables offchain transaction execution and sees users retain custody of their funds. This means they enable unilateral exit if the system goes offline. Arks, Statechains, and Lightning are bitcoin native protocols. Rollups, CSV protocols, and alternative rollups with validity proof bridges can be bitcoin native if there is a soft fork to bitcoin.",
+        },
+        {
+            term: "Bitcoin sidesystem",
+            definition:
+                "A bitcoin layer that has a direct connection to bitcoin. Sidesystems are alternative blockchains that are bitcoin-denominated and/or rely on bitcoin for consensus, transaction finalization, are secured by native BTC, or support interactions with L1 scripts or PSBTs.",
+        },
+        {
+            term: "Bitcoin Rollup",
+            definition:
+                "A bitcoin rollup is a modular blockchain that uses a bitcoin for data availability.",
+        },
+        {
             term: "Bitcoin Script",
             definition:
                 "A low-level Assembly-based programming language used to define the conditions under which a Bitcoin UTXO can be spent.",
@@ -69,6 +94,11 @@ const glossaryData: GlossaryData = {
             term: "Blind merge mining",
             definition:
                 "A technique that allows miners to simultaneously mine multiple blockchains without needing to be fully aware of the contents of the additional chains.",
+        },
+        {
+            term: "BTC Sidechain",
+            definition:
+                "A BTC sidechain is an alternative blockchain that is monolithic in design and uses a BTC-derivative token as its fee token. BTC sidechains can vary in design from being merge-mined or being operated by federated validators. Its sole requirement is that the system is denominated in BTC.",
         },
     ],
     C: [
@@ -147,6 +177,13 @@ const glossaryData: GlossaryData = {
             term: "Full node",
             definition:
                 "A node actor that validates all transactions. A full node verifies and enforces all the rules of the network, rather than only verifying headers (such as light client nodes do). Full nodes do not participate in block production (such as PoW miner nodes or PoS validator nodes do) or store a full copy of a blockchain's history (such as archival nodes do).",
+        },
+    ],
+        H: [
+        {
+            term: "Hybrid chain",
+            definition:
+                "Alternative blockchains where execution environments can interact with L1 scripts or PSBTs.",
         },
     ],
     // G: [],
@@ -242,6 +279,11 @@ const glossaryData: GlossaryData = {
     // Q: [],
     R: [
         {
+            term: "Remote staking",
+            definition:
+                "A way to leverage L1 scripts to assign native BTC as stake to another blockchain. This is typically provided by a Hybrid Chain with its own execution environment and token.",
+        },
+        {
             term: "Rollup",
             definition:
                 "A modular blockchain that uses a parent blockchain for data availability. The blockchain stores its state root and enough transaction data to reconstruct the state of the blockchain from genesis in the parent blockchain.",
@@ -279,6 +321,11 @@ const glossaryData: GlossaryData = {
             term: "Spiderchain",
             definition:
                 "A sidechain protocol that leverages a variety of rotating multi-sigs to secure the BTC that is deposited into the sidechain.",
+        },
+        {
+            term: "Stakechain",
+            definition:
+                "A protocol that is secured by native BTC staking.",
         },
         {
             term: "State channel",
