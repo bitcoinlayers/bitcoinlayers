@@ -27,7 +27,7 @@ const Methodology: React.FC = () => {
         <li>🟢 Green must match one of the following conditions:</li>
         <ul>
                 <li>Users can contest a dispute in the final state with a counterparty and claim their assets on the L1</li>
-                <li>Bitcoin can verify changes to the layer’s state directly in Script when users’ offchain balances are updated, permitting withdrawals when users want to leave the system</li>
+                <li>Bitcoin can verify changes to the offchain systems directly when users’ offchain balances are updated, permitting withdrawals when users want to leave the system</li>
             </ul>
             </li>
         <br />
