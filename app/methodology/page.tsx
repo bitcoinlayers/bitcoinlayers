@@ -223,7 +223,14 @@ const Methodology: React.FC = () => {
                                         that outlines the varying degree of
                                         trust assumptions that users have to
                                         take on when interacting with a bitcoin
-                                        sidesystem. <br />
+                                        sidesystem.<br />
+                                        <br />
+                                        Protocols are divided into three categories;
+                                        bitcoin native, sidesystems, and alternative chains.
+                                        Bitcoin native protocols and sidesystems are bitcoin
+                                        layers. For a project to be considered a Bitcoin
+                                        layer, they must meet our technical requirements listed
+                                        [here](https://www.lxresearch.co/starting-to-define-layers-a-year-later/).<br />
                                     </div>
                                 </div>
                             </div>
