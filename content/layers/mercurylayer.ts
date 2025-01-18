@@ -4,8 +4,6 @@ import {
     LiveStatus,
     RiskFactor,
     EntityType,
-    EntityCategory,
-    Notice,
     Site,
     RiskSection,
     ContentSection,
@@ -17,22 +15,20 @@ const mercurylayer: LayerProject = {
     slug: "mercurylayer",
     title: "Mercury Layer",
     entityType: EntityType.Statechain,
-    entityCategory: EntityCategory.BitcoinNative,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
     bridge: false,
     underReview: false,
     riskFactors: [
-        RiskFactor.UnderReview,
         RiskFactor.Low,
-        RiskFactor.Medium,
+        RiskFactor.Low,
+        RiskFactor.High,
         RiskFactor.VeryHigh,
     ],
     btcLocked: NaN,
     nativeToken: "BTC",
     feeToken: "BTC",
-    notice: undefined,
     bitcoinOnly: true,
     links: [
         {
@@ -66,10 +62,10 @@ const mercurylayer: LayerProject = {
                     name: "Mercury BTC",
                     infrastructureSlug: "mercury-btc",
                     score: 0,
-                    tier: RiskFactor.UnderReview,
+                    tier: RiskFactor.Medium,
                     title: "A locked UTXO is collaboratively managed between a trusted server and the statecoin owner, with full L1 UTXO ownership enforceable after a timelock expiry",
                     content:
-                        "The statechain setup involves locking a UTXO onchain with the private key shared between the operator and the current statecoin owner. Although the Mercury Layer server acts as a trusted entity, users are safeguarded against potential unresponsiveness by having the ability to unilaterally exit and enforce their UTXO ownership onchain as each transfer is secured by a decrementing timelock mechanism and a series of backup transactions.\n\n⚠️ The statechain entity can collude with the past owner of the UTXO, create a withdrawal transaction and steal the current owner’s funds. However, the statechain entity can only steal from one user at a time; not funds in the entire system.\n\n🔬 A bridge custody score has not been determined for Statechain protocols.",
+                        "The statechain setup involves locking a UTXO onchain with the private key shared between the operator and the current statecoin owner. Although the Mercury Layer server acts as a trusted entity, users are safeguarded against potential unresponsiveness by having the ability to unilaterally exit and enforce their UTXO ownership onchain as each transfer is secured by a decrementing timelock mechanism and a series of backup transactions.\n\nWe have assigned Mercury Layer a medium score due to situational differences in user custody."
                 },
             ],
         },
@@ -84,8 +80,8 @@ const mercurylayer: LayerProject = {
         {
             category: RiskCategory.NetworkOperators,
             score: 0,
-            tier: RiskFactor.Medium,
-            title: "The network operator is a single server. Users can’t be censored individually.",
+            tier: RiskFactor.High,
+            title: "The network operator is a single server",
             content:
                 "The Mercury Layer system employs a statechain entity that generates and updates key shares in addition to offering a blind signing service. Mercury Layer chooses a non-federated (i.e. centralized) setup for their service provider.",
         },
@@ -95,7 +91,7 @@ const mercurylayer: LayerProject = {
             tier: RiskFactor.VeryHigh,
             title: "Transaction settlement does not rely on onchain confirmations. Users are not safeguard against the statechain entity double-spending their coin",
             content:
-                "Offchain finality guarantees in Mercury Layer are provided by the statechain operator deleting their previous keyshare. When a user receives a statecoin, they receive a new keyshare together with the operator’s new keyshare. \n\n⚠️ Users do not have assurance that the statechain operator deleted their previous keyshare with the past owner of the statecoin.",
+                "Offchain finality guarantees in Mercury Layer are provided by the statechain operator deleting their previous keyshare. When a user receives a statecoin, they receive a new keyshare together with the operator’s new keyshare. \n\n⚠️ Users do not have assurance that the statechain operator deleted their previous keyshare with the past owner of the statecoin.\n\nThe statechain entity can collude with the past owner of the UTXO, create a withdrawal transaction and steal the current owner’s funds.",
         },
     ],
     sections: [
@@ -126,13 +122,29 @@ const mercurylayer: LayerProject = {
             ],
         },
         {
+            id: "additionalconsiderations",
+            title: "Custom score assigned",
+            content: [
+                {
+                    title: "Medium score assigned to Mercury Layer custody mechanism",
+                    content:
+                        "Mercury Layer has been assigned a medium score for custody in the project assessment page. This is due to situational differences in custody. As noted in BTC Custody, a user retains custody of their funds when depositing into the protocol. But as noted in the finality section, they trust an honest operator to delete their previous keyshare.\n\nIf the operator does not due this, they can steal a user's funds.",
+                },
+                {
+                    title: "Statechains only allow for fixed-value transfers",
+                    content:
+                        "Mercury Layer facilitates the offline transfer of UTXO ownership through the transfer of private key shares. Ownership transfer and not involving Bitcoin L1 interaction implies that UTXOs cannot be split and must always be transferred as a whole.",
+                },
+            ],
+        },
+        {
             id: "withdrawals",
             title: "Withdrawals",
             content: [
                 {
                     title: "Users can unilaterally exit given the statechain entity doesn’t collude with a previous statecoin owner",
                     content:
-                        "Mercury Layer permits unilateral exits. To reclaim full UTXO ownership on bitcoin L1, the current owner can close the statechain by creating an onchain transaction that spends the UTXO. In an orderly closure, the statechain operator co-signs this transaction with its key share. In an uncooperative scenario, the statecoin owner can use their backup transaction to reclaim the UTXO onchain after a timelock expiry. ",
+                        "Mercury Layer permits unilateral exits. To reclaim full UTXO ownership on bitcoin L1, the current owner can close the statechain by creating an onchain transaction that spends the UTXO. In an orderly closure, the statechain operator co-signs this transaction with its key share. In an uncooperative scenario, the statecoin owner can use their backup transaction to reclaim the UTXO onchain after a timelock expiry.",
                 },
             ],
         },
@@ -160,17 +172,6 @@ const mercurylayer: LayerProject = {
                     title: "Enhanced privacy with blind statechains",
                     content:
                         "The blinding feature of MuSig2 prevents the statechain entity from learning about transaction details, such as the TxID, the full shared public key, the final signature it co-generates, or any information about statechain closure transactions.",
-                },
-            ],
-        },
-        {
-            id: "additionalconsiderations",
-            title: "Additional Considerations",
-            content: [
-                {
-                    title: "Statechains only allow for fixed-value transfers",
-                    content:
-                        "Mercury Layer facilitates the offline transfer of UTXO ownership through the transfer of private key shares. Ownership transfer and not involving Bitcoin L1 interaction implies that UTXOs cannot be split and must always be transferred as a whole.",
                 },
             ],
         },
