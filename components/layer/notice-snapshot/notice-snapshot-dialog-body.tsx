@@ -47,13 +47,12 @@ export default function NoticeSnapshotDialogBody({
             </div>
             <DialogFooter className="mt-4 sm:mb-t pt-4 pb-2 border-t flex-row justify-center sm:justify-center">
                 <a
-                    href="https://lxresearch.co"
+                    href="https://www.lxresearch.co/starting-to-define-layers-a-year-later/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="hover:underline text-left text-xs"
                 >
-                    We will be releasing our minimum standards in a few days.
-                    Click the link and follow our blog for updates.
+                    Our latest blog covers the standards projects need to meet by June 30th.
                 </a>
             </DialogFooter>
         </div>
