@@ -4,4 +4,4 @@ For Fractal to be considered a bitcoin sidesystem, we recommend the following up
 
 - Publish the signers of the Unisat two-way peg: The majority of Fractal's BTC TVL is managed by centralized parties. We recommend that the protocol implements a public, federated two way peg. Our requirements see at least 5 individual signers external to the development organization. An example of this can be found here.
 
-For more information on how we define sidesystems, and our minimum technical requirements, see here.
+For more information on how we define sidesystems, and our minimum technical requirements, see [here](https://www.lxresearch.co/starting-to-define-layers-a-year-later/).

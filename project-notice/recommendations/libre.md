@@ -5,4 +5,4 @@ For Libre to be considered a bitcoin sidesystem, we recommend the following upgr
 - Implement and publish the full signer set for its current two-way peg with bitcoin. Our requirements see at least 5 individual signers external to the development organization. An example of this can be found here.
 - Introduce a checkpointing mechanism so malicious, Libre validators cannot reorg the chain after a checkpoint has been accepted.
 
-For more information on how we define sidesystems, and our minimum technical requirements, see here.
+For more information on how we define sidesystems, and our minimum technical requirements, see [here](https://www.lxresearch.co/starting-to-define-layers-a-year-later/).

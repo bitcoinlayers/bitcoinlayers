@@ -7,4 +7,4 @@ For Bsquared Network to be considered a bitcoin sidesystem, we recommend the fol
 
 Another recommendation we have for the Bsquared network team is to provide clearer documentation on various L1 smart contracts and verify them on the Bsquared Hub explorer.
 
-For more information on how we define sidesystems, and our minimum technical requirements, see here.
+For more information on how we define sidesystems, and our minimum technical requirements, see [here](https://www.lxresearch.co/starting-to-define-layers-a-year-later/).

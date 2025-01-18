@@ -5,4 +5,4 @@ For Core to be considered a bitcoin sidesystem, we recommend the following upgra
 - Publish the signers of the two-way peg for coreBTC. Our requirements see at least 5 individual signers external to the development organization. An example of this can be found here.
 - Clearly document L1 staking scripts to enable L1 users to remotely assign BTC to Core validators.
 
-For more information on how we define sidesystems, and our minimum technical requirements, see here.
+For more information on how we define sidesystems, and our minimum technical requirements, see [here](https://www.lxresearch.co/starting-to-define-layers-a-year-later/).

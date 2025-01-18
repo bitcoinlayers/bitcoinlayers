@@ -8,4 +8,4 @@ For BOB to be considered a bitcoin sidesystem, we recommend the following upgrad
 
 These are the minimum requirements as BOB works towards adding bitcoin fault proofs.
 
-For more information on how we define sidesystems, and our minimum technical requirements, see here.
+For more information on how we define sidesystems, and our minimum technical requirements, see [here](https://www.lxresearch.co/starting-to-define-layers-a-year-later/).
