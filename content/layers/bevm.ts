@@ -14,7 +14,7 @@ const bevm: LayerProject = {
     type: Type.Layer,
     slug: "bevm",
     title: "BEVM",
-    entityType: EntityType.Sidechain,
+    entityType: EntityType.Alt,
     entityCategory: EntityCategory.Sidesystem,
     live: LiveStatus.Mainnet,
     staking: false,

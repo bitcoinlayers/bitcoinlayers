@@ -16,7 +16,7 @@ const stacks: LayerProject = {
     type: Type.Layer,
     slug: "stacks",
     title: "Stacks",
-    entityType: EntityType.Sidechain,
+    entityType: EntityType.Anchor,
     entityCategory: EntityCategory.Sidesystem,
     live: LiveStatus.Mainnet,
     staking: false,

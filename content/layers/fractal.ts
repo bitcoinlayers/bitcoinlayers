@@ -16,7 +16,7 @@ const fractal: LayerProject = {
     type: Type.Layer,
     slug: "fractal",
     title: "Fractal",
-    entityType: EntityType.Sidechain,
+    entityType: EntityType.Alt,
     entityCategory: EntityCategory.Sidesystem,
     live: LiveStatus.Mainnet,
     staking: false,

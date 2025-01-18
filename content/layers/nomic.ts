@@ -16,7 +16,7 @@ const nomic: LayerProject = {
     type: Type.Layer,
     slug: "nomic",
     title: "Nomic",
-    entityType: EntityType.Sidechain,
+    entityType: EntityType.Anchor,
     entityCategory: EntityCategory.Sidesystem,
     live: LiveStatus.Mainnet,
     staking: false,

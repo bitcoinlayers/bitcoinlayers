@@ -16,7 +16,7 @@ const bitlayer: LayerProject = {
     type: Type.Layer,
     slug: "bitlayer",
     title: "Bitlayer",
-    entityType: EntityType.Sidechain,
+    entityType: EntityType.Alt,
     entityCategory: EntityCategory.Sidesystem,
     live: LiveStatus.Mainnet,
     staking: false,

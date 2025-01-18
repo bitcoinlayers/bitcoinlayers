@@ -16,7 +16,7 @@ const libre: LayerProject = {
     type: Type.Layer,
     slug: "libre",
     title: "Libre",
-    entityType: EntityType.Sidechain,
+    entityType: EntityType.Alt,
     entityCategory: EntityCategory.Sidesystem,
     live: LiveStatus.Mainnet,
     staking: false,
