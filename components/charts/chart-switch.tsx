@@ -15,7 +15,7 @@ export default function ChartSwitch() {
         layers: {
             title: "BTC supply on layers",
             description:
-                "Total BTC supply supporting L2s, sidechains, alternative L1s, and more",
+                "Total BTC supply supporting bitcoin native protocols, bitcoin sidesystems, alternative L1s, and more",
             chartQueryParam: "layer-chart",
             rangeQueryParam: "layer-range",
             useDataHook: getHistoricalSuppliesByNetwork,
@@ -23,7 +23,7 @@ export default function ChartSwitch() {
         wrappers: {
             title: "BTC supply on layers",
             description:
-                "Total BTC supply supporting L2s, sidechains, alternative L1s, and more",
+                "Total BTC supply supporting bitcoin native protocols, bitcoin sidesystems, alternative L1s, and more",
             chartQueryParam: "bridge-chart",
             rangeQueryParam: "bridge-range",
             useDataHook: getHistoricalSuppliesByTokenProject,
