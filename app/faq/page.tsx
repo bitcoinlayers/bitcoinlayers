@@ -61,15 +61,15 @@ const FaqPage: React.FC = () => {
                         <div className="flex flex-col gap-8 w-full">
                             <FAQItem
                                 question="What is the Bitcoin Layers site?"
-                                answer="Bitcoin Layers is an educational tool dedicated to Bitcoin scaling. Currently, we are focusing on a module that outlines the risks associated with various scaling protocols that support Bitcoin and BTC the asset. We are also planning on building modules related to BTC wrappers, scaling infrastructure, and opcodes that can support new variations of L2s."
+                                answer="Bitcoin Layers is an educational tool dedicated to Bitcoin scaling. Currently, we are focusing on a module that outlines the risks associated with various scaling protocols that support bitcoin and BTC the asset."
                             />
                             <FAQItem
-                                question="What is a Bitcoin Layer?"
-                                answer='We use the term "Bitcoin Layer" to describe Bitcoin Layer 2s, sidechains, and other scaling protocols. There are many definitions that exist for the term "Layer 2". We view Layer 2s as protocols that take transaction execution offchain, ensure users retain full custody of their assets, and additionally enable unilateral exit from the system via an L1 transaction. Another definition sees this extended to a system where any party can participate in the security of the protocol and its two-way peg with Bitcoin. We use the term "Bitcoin Layer" as an agnostic term to describe a variety of scaling protocols, including Layer 2s. We analyze all of these protocols against a generalized, opinionated framework that we developed to show users the relevant trust assumptions for each system.'
+                                question="What is a bitcoin layer?"
+                                answer='We use the term "bitcoin layer" to describe bitcoin native protocols and bitcoin sidesystems. Generally, bitcoin layers are protocol that either 1. enable unilateral exits or 2. have real integration with bitcoin the network (e.g., consensus, transaction finality, use of L1 scripts) or BTC the asset (e.g., unit of account or economic security). We additionally provide reviews and data on networks and wrappers that are not bitcoin layers, but instead on alternative L1s or others. We analyze all of these protocols against a generalized, opinionated framework that we developed to show users the relevant trust assumptions for each system.'
                             />
                             <FAQItem
-                                question='Are all Bitcoin Layers "L2s"?'
-                                answer='The overwhelming majority of newer Bitcoin "Layer 2s" are not Layer 2s. Bitcoin Layers is a broad term we use to cover offchain scaling protocols. People typically define L2s as protocols that take transaction execution offchain, but inherit security from its parent blockchain. Most consider unilateral exit as a primary criterion for being a “true L2”, which means that users retain self-custody of their BTC and can exit the L2, with an L1 transaction, whenever they choose.'
+                                question='Are all bitcoin layers "L2s"?'
+                                answer='The overwhelming majority of newer bitcoin "Layer 2s" are not Layer 2s. Bitcoin layers is a broad term we use to cover offchain scaling protocols. People typically define L2s as protocols that take transaction execution offchain, but inherit security from its parent blockchain. Most consider unilateral exit as a primary criterion for being a “true L2”, which means that users retain self-custody of their BTC and can exit the L2, with an L1 transaction, whenever they choose.'
                             />
                             <FAQItem
                                 question='Why are newer Bitcoin "L2s" receiving so much attention?'
