@@ -10,10 +10,10 @@ export default function CtaCard() {
 
     const content = (() => {
         const buildingContent = {
-            title: "Looking to build on Bitcoin?",
-            description: "Get in touch with our team to learn where to deploy",
-            ctaText: "Contact us",
-            url: "https://t.me/+8rv-1I2gkmQ4ZmJh",
+            title: "Some sidesystems are not bitcoin layers",
+            description: "Learn how these projects can improve their trust assumptions",
+            ctaText: "Read the blog",
+            url: "https://www.lxresearch.co/starting-to-define-layers-a-year-later/",
             isExternal: true,
         };
 
