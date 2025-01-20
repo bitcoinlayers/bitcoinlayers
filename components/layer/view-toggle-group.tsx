@@ -4,14 +4,14 @@ import React from "react";
 import { useQueryState } from "nuqs";
 
 const viewOptions = [
-    { value: "layers", label: "Layers" },
+    { value: "networks", label: "Networks" },
     // { value: "staking", label: "Staking" },
     { value: "wrappers", label: "Wrappers" },
 ];
 
 const ViewToggleGroup = ({ showAll }: { showAll: boolean }) => {
     const [view, setView] = useQueryState("view", {
-        defaultValue: showAll ? "all" : "layers",
+        defaultValue: showAll ? "all" : "networks",
     });
 
     const displayOptions = showAll

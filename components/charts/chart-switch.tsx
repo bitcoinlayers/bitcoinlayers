@@ -8,14 +8,14 @@ import getHistoricalSuppliesByNetwork from "@/hooks/get-historical-supplies-by-n
 
 export default function ChartSwitch() {
     const [view] = useQueryState("view", {
-        defaultValue: "layers",
+        defaultValue: "networks",
     });
 
     const chartConfig = {
-        layers: {
+        networks: {
             title: "BTC supply on layers",
             description:
-                "Total BTC supply supporting L2s, sidechains, alternative L1s, and more",
+                "Total BTC supply supporting bitcoin native protocols, bitcoin sidesystems, alternative L1s, and more",
             chartQueryParam: "layer-chart",
             rangeQueryParam: "layer-range",
             useDataHook: getHistoricalSuppliesByNetwork,
@@ -23,7 +23,7 @@ export default function ChartSwitch() {
         wrappers: {
             title: "BTC supply on layers",
             description:
-                "Total BTC supply supporting L2s, sidechains, alternative L1s, and more",
+                "Total BTC supply supporting bitcoin native protocols, bitcoin sidesystems, alternative L1s, and more",
             chartQueryParam: "bridge-chart",
             rangeQueryParam: "bridge-range",
             useDataHook: getHistoricalSuppliesByTokenProject,
@@ -62,7 +62,7 @@ export default function ChartSwitch() {
             title={config.title}
             description={config.description}
             // itemNameKey={view === "layers" ? "layer_name" : "infra_name"}
-            itemNameKey={view === "layers" ? "network_name" : "token_name"}
+            itemNameKey={view === "networks" ? "network_name" : "token_name"}
             chartQueryParam={config.chartQueryParam}
             rangeQueryParam={config.rangeQueryParam}
             showLegend={false}
