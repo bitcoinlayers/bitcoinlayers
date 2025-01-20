@@ -18,7 +18,7 @@ export default function Analytics() {
         layers: {
             title: "All Networks",
             description:
-                "Total supply of wrapped bitcoin tokens on various layers",
+                "Total supply of wrapped bitcoin tokens on various networks",
             itemNameKey: "network_name",
             chartQueryParam: "layer-chart",
             rangeQueryParam: "layer-range",

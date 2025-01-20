@@ -1,12 +1,12 @@
 # Bitcoin Layers
 
-Bitcoin Layers is an open-source, risk analysis platform focusing on Bitcoin scaling protocols. In this repo, you will see the code to our website. If you're interested in contributing to the discussion around Bitcoin Layers, please join this [telegram chat](https://t.me/+8rv-1I2gkmQ4ZmJh).
+Bitcoin Layers is an open-source, risk analysis platform focusing on bitcoin scaling protocols. In this repo, you will see the code to our website. If you're interested in contributing to the discussion around Bitcoin Layers, please join this [telegram chat](https://t.me/+8rv-1I2gkmQ4ZmJh).
 
 If you'd like to see your project added to Bitcoin Layers, please see the section below.
 
 ## Using our research
 
-If you're building any materials, platforms or websites related to #Bitcoin L2s and sidechains, you're welcome to use Bitcoin Layers research. Everything we release is free and open-source under an MIT license. We kindly ask that you reference this project with a link to the domain bitcoinlayers.org.
+If you're building any materials, platforms or websites related to #bitcoin L2s and sidechains, you're welcome to use Bitcoin Layers research. Everything we release is free and open-source under an MIT license. We kindly ask that you reference this project with a link to the domain bitcoinlayers.org.
 
 ## How to add a project
 

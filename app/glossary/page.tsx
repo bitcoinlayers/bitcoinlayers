@@ -36,12 +36,12 @@ const glossaryData: GlossaryData = {
         {
             term: "Accountable Assertions and EOTS",
             definition:
-                "Accountable Assertions use Extractable One-Time Signatures (EOTS) to penalize equivocation—making conflicting statements in a distributed system. EOTS leak the signer’s private key if they sign two different messages (e.g., signing two blocks at the same height) with the same key, enabling slashing mechanisms where violators’ Bitcoin collateral can be seized. This method extends Bitcoin’s capabilities despite its lack of native smart contracts, allowing safety violations in Proof-of-Stake (PoS) protocols to be punished via fund slashability on Bitcoin L1.",
+                "Accountable Assertions use Extractable One-Time Signatures (EOTS) to penalize equivocation—making conflicting statements in a distributed system. EOTS leak the signer’s private key if they sign two different messages (e.g., signing two blocks at the same height) with the same key, enabling slashing mechanisms where violators’ bitcoin collateral can be seized. This method extends bitcoin’s capabilities despite its lack of native smart contracts, allowing safety violations in Proof-of-Stake (PoS) protocols to be punished via fund slashability on bitcoin L1.",
         },
         {
             term: "Ark Service Provider (ASP)",
             definition:
-                "An Ark Service Provider (ASP) coordinates rounds in the Ark protocol, enabling users to exchange old VTXOs for new ones which is the way of transacting on an Ark. The ASP does so via aggregating transactions into a shared UTXO which is committed to onchain. The ASP needs to front the liquidity for all offchain VTXO transfers on Bitcoin L1. While being a central server, a user does not need to rely on the ASP to reclaim their offchain VTXOs for Bitcoin L1 onchain funds.",
+                "An Ark Service Provider (ASP) coordinates rounds in the Ark protocol, enabling users to exchange old VTXOs for new ones which is the way of transacting on an Ark. The ASP does so via aggregating transactions into a shared UTXO which is committed to onchain. The ASP needs to front the liquidity for all offchain VTXO transfers on bitcoin L1. While being a central server, a user does not need to rely on the ASP to reclaim their offchain VTXOs for bitcoin L1 onchain funds.",
         },
         {
             term: "ArkOOR (Ark Out-of-Round Payments)",
@@ -61,14 +61,14 @@ const glossaryData: GlossaryData = {
         {
             term: "Atomic swap",
             definition:
-                "An exchange of crypto assets that does not require a trusted third party. Atomic swaps leverage smart contracts to ensure both parties fulfill transaction obligations before the swap is completed, otherwise, the transaction is canceled, and funds are returned to their respective owners. Atomicity refers to guarantee of a single, indivisible outcome, i.e., one token transfer cannot execute without its counterparty transfer also executing. In the context of Bitcoin, atomic swaps enable the seamless exchange of BTC with other cryptocurrencies in a secure and decentralized manner.",
+                "An exchange of crypto assets that does not require a trusted third party. Atomic swaps leverage smart contracts to ensure both parties fulfill transaction obligations before the swap is completed, otherwise, the transaction is canceled, and funds are returned to their respective owners. Atomicity refers to guarantee of a single, indivisible outcome, i.e., one token transfer cannot execute without its counterparty transfer also executing. In the context of bitcoin, atomic swaps enable the seamless exchange of BTC with other cryptocurrencies in a secure and decentralized manner.",
         },
     ],
     B: [
         {
             term: "Bitcoin layer",
             definition:
-                "A deliberately ambiguous term that encapsulates L2s, sidechains, state chains, and other networks 'aligned' with either Bitcoin (the network) or BTC (the asset).",
+                "A deliberately ambiguous term that encapsulates L2s, sidechains, state chains, and other networks 'aligned' with either bitcoin (the network) or BTC (the asset).",
         },
         {
             term: "Bitcoin native",
@@ -88,7 +88,7 @@ const glossaryData: GlossaryData = {
         {
             term: "Bitcoin Script",
             definition:
-                "A low-level Assembly-based programming language used to define the conditions under which a Bitcoin UTXO can be spent.",
+                "A low-level Assembly-based programming language used to define the conditions under which a bitcoin UTXO can be spent.",
         },
         {
             term: "Blind merge mining",
@@ -110,7 +110,7 @@ const glossaryData: GlossaryData = {
         {
             term: "Client side validation (CSV)",
             definition:
-                "A paradigm to allow each data kept outside bitcoin transactions (onchain) under Bitcoin consensus rules. This sees users verify transactions and state transitions independently.",
+                "A paradigm to allow each data kept outside bitcoin transactions (onchain) under bitcoin consensus rules. This sees users verify transactions and state transitions independently.",
         },
         {
             term: "Connector Outputs (aka Connectors) in Ark",
@@ -137,17 +137,17 @@ const glossaryData: GlossaryData = {
         {
             term: "Data availability",
             definition:
-                "The publishing of transaction data is required to verify transactions, satisfy proving schemes, or otherwise progress the chain. Data availability is where a specific party makes a layer's protocol available for a specific period of time. In Bitcoin, a layer's protocol data is made available by bitcoin full nodes. A layer would publish transaction data to bitcoin via an inscription-like envelope and any bitcoin full node would be able to verify that the data has indeed been published.",
+                "The publishing of transaction data is required to verify transactions, satisfy proving schemes, or otherwise progress the chain. Data availability is where a specific party makes a layer's protocol available for a specific period of time. In bitcoin, a layer's protocol data is made available by bitcoin full nodes. A layer would publish transaction data to bitcoin via an inscription-like envelope and any bitcoin full node would be able to verify that the data has indeed been published.",
         },
         {
             term: "Discrete Log Contract (DLC)",
             definition:
-                "A type of smart contract designed to facilitate financial agreements on the Bitcoin network using oracles to provide external data. DLCs enable the creation of complex financial instruments, such as options and futures, by using cryptographic techniques to ensure that the contract is executed based on the outcome of real-world events.",
+                "A type of smart contract designed to facilitate financial agreements on the bitcoin network using oracles to provide external data. DLCs enable the creation of complex financial instruments, such as options and futures, by using cryptographic techniques to ensure that the contract is executed based on the outcome of real-world events.",
         },
         // {
         //     term: "Drivechain",
         //     definition:
-        //         "A separate blockchain (sidechain) pegged to the Bitcoin mainchain. Drivechains allow Bitcoin to create, delete, send BTC to, and receive BTC from sidechains called sidechains.",
+        //         "A separate blockchain (sidechain) pegged to the bitcoin mainchain. Drivechains allow bitcoin to create, delete, send BTC to, and receive BTC from sidechains called sidechains.",
         // },
     ],
     E: [
@@ -166,7 +166,7 @@ const glossaryData: GlossaryData = {
         {
             term: "Forced inclusion",
             definition:
-                "A mechanism for increasing censorship resistance in a Bitcoin layer. It enables a single participant to circumvent sequencer censorship by submitting their transaction directly to the L1 inbox contract. This forces the sequencer to include the transaction in the upcoming batch.",
+                "A mechanism for increasing censorship resistance in a bitcoin layer. It enables a single participant to circumvent sequencer censorship by submitting their transaction directly to the L1 inbox contract. This forces the sequencer to include the transaction in the upcoming batch.",
         },
         {
             term: "Fraud proof",
@@ -179,7 +179,7 @@ const glossaryData: GlossaryData = {
                 "A node actor that validates all transactions. A full node verifies and enforces all the rules of the network, rather than only verifying headers (such as light client nodes do). Full nodes do not participate in block production (such as PoW miner nodes or PoS validator nodes do) or store a full copy of a blockchain's history (such as archival nodes do).",
         },
     ],
-        H: [
+    H: [
         {
             term: "Hybrid chain",
             definition:
@@ -195,7 +195,7 @@ const glossaryData: GlossaryData = {
         {
             term: "Layer 1 (L1)",
             definition:
-                "A sovereign network that performs all four core functions of a crypto network: consensus, security, data availability, and execution. In this context, Bitcoin is the L1.",
+                "A sovereign network that performs all four core functions of a crypto network: consensus, security, data availability, and execution. In this context, bitcoin is the L1.",
         },
         {
             term: "Layer 2 (L2)",
@@ -213,7 +213,7 @@ const glossaryData: GlossaryData = {
         {
             term: "Merge mining",
             definition:
-                "A consensus strategy in which a sidechain (L1) uses a similar consensus mechanism to Bitcoin, with the same PoW hashing algorithm. By using the same algorithm for consensus, Bitcoin miners can opt-in to securing and producing blocks for the sidechain with essentially no additional costs (i.e., reusing the same “work” from Bitcoin’s PoW). To merge mine a sidechain, a Bitcoin miner would run node software for the sidechain and configure it with their Bitcoin miner.",
+                "A consensus strategy in which a sidechain (L1) uses a similar consensus mechanism to bitcoin, with the same PoW hashing algorithm. By using the same algorithm for consensus, bitcoin miners can opt-in to securing and producing blocks for the sidechain with essentially no additional costs (i.e., reusing the same “work” from bitcoin’s PoW). To merge mine a sidechain, a bitcoin miner would run node software for the sidechain and configure it with their bitcoin miner.",
         },
         {
             term: "Merkle proof",
@@ -228,7 +228,7 @@ const glossaryData: GlossaryData = {
         {
             term: "MPC (multi-party computation) bridge",
             definition:
-                "A cryptographic technique that enables a group of participants (a federation) to collectively manage and control the movement of BTC between Bitcoin and a given destination chain.",
+                "A cryptographic technique that enables a group of participants (a federation) to collectively manage and control the movement of BTC between bitcoin and a given destination chain.",
         },
         {
             term: "Multisig (multi-signature) wallet",
@@ -258,7 +258,7 @@ const glossaryData: GlossaryData = {
         {
             term: "Payment channel",
             definition:
-                "A two-of-two multi-signature wallet that enables two parties to conduct limitless transactions between themselves without broadcasting each one to the Bitcoin network. Only the state differential (i.e., the start state and the end state) need to be posted onchain to close a payment channel and settle the balance.",
+                "A two-of-two multi-signature wallet that enables two parties to conduct limitless transactions between themselves without broadcasting each one to the bitcoin network. Only the state differential (i.e., the start state and the end state) need to be posted onchain to close a payment channel and settle the balance.",
         },
         {
             term: "Prover",
@@ -298,7 +298,7 @@ const glossaryData: GlossaryData = {
         {
             term: "Sidechain",
             definition:
-                "An L1 that exists to add more functionality to BTC the asset. L1s are sovereign in technical architecture but typically exist as subsets of the broader Bitcoin ecosystem. It’s common for sidechains to enshrine a BTC bridge into their consensus mechanisms or involve Bitcoin miners in consensus - through merge mining or fee sharing.",
+                "An L1 that exists to add more functionality to BTC the asset. L1s are sovereign in technical architecture but typically exist as subsets of the broader bitcoin ecosystem. It’s common for sidechains to enshrine a BTC bridge into their consensus mechanisms or involve bitcoin miners in consensus - through merge mining or fee sharing.",
         },
         //TODO SPV
         {
@@ -315,7 +315,7 @@ const glossaryData: GlossaryData = {
         {
             term: "Sovereign rollup",
             definition:
-                "A rollup implementation that sovereignly manages its own execution environment, and does not have a canonical bridge with its parent blockchain. Rollups on Bitcoin are technically sovereign rollups, even if they have a socially enshrined two-way peg.",
+                "A rollup implementation that sovereignly manages its own execution environment, and does not have a canonical bridge with its parent blockchain. Rollups on bitcoin are technically sovereign rollups, even if they have a socially enshrined two-way peg.",
         },
         {
             term: "Spiderchain",
@@ -324,8 +324,7 @@ const glossaryData: GlossaryData = {
         },
         {
             term: "Stakechain",
-            definition:
-                "A protocol that is secured by native BTC staking.",
+            definition: "A protocol that is secured by native BTC staking.",
         },
         {
             term: "State channel",
@@ -352,7 +351,7 @@ const glossaryData: GlossaryData = {
         {
             term: "Two-way peg",
             definition:
-                "A system that facilitates the minting and burning of BTC-backed tokens on a Bitcoin layer or alternative L1. These systems are also known as bridges.",
+                "A system that facilitates the minting and burning of BTC-backed tokens on a bitcoin layer or alternative L1. These systems are also known as bridges.",
         },
     ],
     U: [
@@ -392,7 +391,7 @@ const glossaryData: GlossaryData = {
         {
             term: "VTXO",
             definition:
-                "A virtual UTXO (VTXO) is a Bitcoin transaction output that exists offchain but can be redeemed onchain at any time. VTXOs represent a user’s share in a shared UTXO which are leaves in a transaction tree to which the shared output of an Ark round transaction commits to. They allow for offchain spending while ensuring the user can always create a corresponding UTXO on the blockchain if needed. VTXOs are secured by taproot scripts with two spending paths: unilateral redemption with a delay, enabling the user to reclaim their Bitcoin independently, or offchain forfeiture through co-signing with the Ark Service Provider (ASP).",
+                "A virtual UTXO (VTXO) is a bitcoin transaction output that exists offchain but can be redeemed onchain at any time. VTXOs represent a user’s share in a shared UTXO which are leaves in a transaction tree to which the shared output of an Ark round transaction commits to. They allow for offchain spending while ensuring the user can always create a corresponding UTXO on the blockchain if needed. VTXOs are secured by taproot scripts with two spending paths: unilateral redemption with a delay, enabling the user to reclaim their bitcoin independently, or offchain forfeiture through co-signing with the Ark Service Provider (ASP).",
         },
     ],
     // W: [],

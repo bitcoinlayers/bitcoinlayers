@@ -65,7 +65,7 @@ const Methodology: React.FC = () => {
 <ul>
         <li>🟢 Green must match one of the following conditions:</li>
         <ul>
-                <li>All data needed to reconstruct the layer’s state lives on the Bitcoin L1 and is accessible via full nodes</li>
+                <li>All data needed to reconstruct the layer’s state lives on the bitcoin L1 and is accessible via full nodes</li>
                 <li>Data is self hosted by default and users are required to store data relative to their own state</li>
             </ul>
             </li>
@@ -103,7 +103,7 @@ const Methodology: React.FC = () => {
         <li>🟡 Yellow must match one of the following conditions:</li>
         <ul>
                 <li>The validator (aka network operator) node software is open-source, anyone can become a validator in a (at least) minimally permissioned (e.g. proof of stake) way</li>
-                <li>The layer is merge-mined with Bitcoin and secured by greater than 50% of hashrate</li>
+                <li>The layer is merge-mined with bitcoin and secured by greater than 50% of hashrate</li>
             </ul>
             </li>
         <br />
@@ -158,7 +158,7 @@ const Methodology: React.FC = () => {
 `;
 
     const additionalQuestionsBody = `
-        <p>In addition to performing this assessment, we additionally have a “Bitcoin security” section where we cover:</p>
+        <p>In addition to performing this assessment, we additionally have a “bitcoin security” section where we cover:</p>
         <ul>
                 <li>If the protocol inherits security from bitcoin</li>
                 <li>If the protocol needs an alternative token to function</li>
@@ -177,11 +177,11 @@ const Methodology: React.FC = () => {
 `;
 
     const summaryBody = `
-    <p>This framework can be easier to customize and provide more nuance given the number of scaling solutions that are present in Bitcoin today. For example, related to block production/network operators, we can add even more scoring mechanisms based on how decentralized the network is. E.g. A network with 200 validators is better than a network with 10, and we can customize the assessment to highlight this.</p>
+    <p>This framework can be easier to customize and provide more nuance given the number of scaling solutions that are present in bitcoin today. For example, related to block production/network operators, we can add even more scoring mechanisms based on how decentralized the network is. E.g. A network with 200 validators is better than a network with 10, and we can customize the assessment to highlight this.</p>
     <br />
-    <p>This risk assessment is an initial starting point to analyze Bitcoin scaling protocols. It is a living document and is subject to change.</p>
+    <p>This risk assessment is an initial starting point to analyze bitcoin scaling protocols. It is a living document and is subject to change.</p>
     <br />
-    <p>Bitcoin does not have a unified scaling roadmap. There are tradeoffs with every protocol being implemented to support Bitcoin scaling. This framework hopes to capture some of the nuance related to the various designs being proposed.</p>
+    <p>Bitcoin does not have a unified scaling roadmap. There are tradeoffs with every protocol being implemented to support bitcoin scaling. This framework hopes to capture some of the nuance related to the various designs being proposed.</p>
     <br />
     <p>If you have comments on this framework, please consider joining our <a href="https://t.me/+8rv-1I2gkmQ4ZmJh" target="_blank" rel="noopener noreferrer">community chat</a> to discuss. You can also add comments or feedback <a href="https://bitcoinlayers.discourse.group/t/updating-the-bitcoin-layers-framework/11" target="_blank" rel="noopener noreferrer">here</a>.</p>
 `;
@@ -223,21 +223,25 @@ const Methodology: React.FC = () => {
                                         that outlines the varying degree of
                                         trust assumptions that users have to
                                         take on when interacting with a bitcoin
-                                        sidesystem.<br />
+                                        sidesystem.
                                         <br />
-                                        Protocols are divided into three categories;
-                                        bitcoin native, sidesystems, and alternative chains.
-                                        Bitcoin native protocols and sidesystems are bitcoin
-                                        layers. For a project to be considered a Bitcoin
-                                        layer, they must meet our technical requirements listed&nbsp;
-    <a
-        href="https://www.lxresearch.co/starting-to-define-layers-a-year-later/"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-blue-500 underline"
-    >
-        here
-    </a>.
+                                        <br />
+                                        Protocols are divided into three
+                                        categories; bitcoin native, sidesystems,
+                                        and alternative chains. Bitcoin native
+                                        protocols and sidesystems are bitcoin
+                                        layers. For a project to be considered a
+                                        bitcoin layer, they must meet our
+                                        technical requirements listed&nbsp;
+                                        <a
+                                            href="https://www.lxresearch.co/starting-to-define-layers-a-year-later/"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="text-blue-500 underline"
+                                        >
+                                            here
+                                        </a>
+                                        .
                                         <br />
                                     </div>
                                 </div>

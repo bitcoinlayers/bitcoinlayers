@@ -4,7 +4,7 @@ Hey there! We’re stoked to hear that you’re interested in contributing to Bi
 
 ## Reviewing risk assessments
 
-We think we have a pretty good handle on the risk assessments. But, an extra set of eyes is always helpful. If you have a technical understanding on how Bitcoin scaling protocols operate, please consider joining on our [telegram chat](https://t.me/+8rv-1I2gkmQ4ZmJh) and ask which risk assessments are in the “review” stage. You can also review our published risk assessments [here](https://github.com/bitcoinlayers/bitcoinlayers/tree/main/content).
+We think we have a pretty good handle on the risk assessments. But, an extra set of eyes is always helpful. If you have a technical understanding on how bitcoin scaling protocols operate, please consider joining on our [telegram chat](https://t.me/+8rv-1I2gkmQ4ZmJh) and ask which risk assessments are in the “review” stage. You can also review our published risk assessments [here](https://github.com/bitcoinlayers/bitcoinlayers/tree/main/content).
 
 ## Reviewing our risk framework
 
@@ -16,11 +16,11 @@ We host weekly community calls and are considering expanding to more community-c
 
 ## Writing risk assessments
 
-A lot of the new “L2s” that are popping up are similar to Ethereum rollups / validiums / optimiums. If you have a technical understanding of these protocols, and would like to review some of their implementations in the Bitcoin space, [please join our telegram](https://t.me/+8rv-1I2gkmQ4ZmJh) so we can coordinate which reviews you can take on :)
+A lot of the new “L2s” that are popping up are similar to Ethereum rollups / validiums / optimiums. If you have a technical understanding of these protocols, and would like to review some of their implementations in the bitcoin space, [please join our telegram](https://t.me/+8rv-1I2gkmQ4ZmJh) so we can coordinate which reviews you can take on :)
 
 ## Opinion blog pieces
 
-We’re going to start hosting opinion pieces on our blog. If you’d like to write a blog related to Bitcoin scaling infrastructure, and have it featured on our site, [let us know](https://t.me/+8rv-1I2gkmQ4ZmJh)!
+We’re going to start hosting opinion pieces on our blog. If you’d like to write a blog related to bitcoin scaling infrastructure, and have it featured on our site, [let us know](https://t.me/+8rv-1I2gkmQ4ZmJh)!
 
 ## Just join the conversation
 

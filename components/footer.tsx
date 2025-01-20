@@ -119,7 +119,7 @@ export default function Footer() {
                                     <SectionHeader>Reviews</SectionHeader>
                                     <div className="self-stretch lg:h-[188px] flex flex-col justify-start items-start gap-3">
                                         <SectionItem href="/">
-                                            Layers
+                                            Networks
                                         </SectionItem>
                                         {/* <SectionItem href="/?view=staking">
                                             Staking
