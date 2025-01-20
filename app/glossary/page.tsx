@@ -88,7 +88,7 @@ const glossaryData: GlossaryData = {
         {
             term: "Bitcoin Script",
             definition:
-                "A low-level Assembly-based programming language used to define the conditions under which a Bitcoin UTXO can be spent.",
+                "A low-level Assembly-based programming language used to define the conditions under which a bitcoin UTXO can be spent.",
         },
         {
             term: "Blind merge mining",
@@ -110,7 +110,7 @@ const glossaryData: GlossaryData = {
         {
             term: "Client side validation (CSV)",
             definition:
-                "A paradigm to allow each data kept outside bitcoin transactions (onchain) under Bitcoin consensus rules. This sees users verify transactions and state transitions independently.",
+                "A paradigm to allow each data kept outside bitcoin transactions (onchain) under bitcoin consensus rules. This sees users verify transactions and state transitions independently.",
         },
         {
             term: "Connector Outputs (aka Connectors) in Ark",
@@ -137,17 +137,17 @@ const glossaryData: GlossaryData = {
         {
             term: "Data availability",
             definition:
-                "The publishing of transaction data is required to verify transactions, satisfy proving schemes, or otherwise progress the chain. Data availability is where a specific party makes a layer's protocol available for a specific period of time. In Bitcoin, a layer's protocol data is made available by bitcoin full nodes. A layer would publish transaction data to bitcoin via an inscription-like envelope and any bitcoin full node would be able to verify that the data has indeed been published.",
+                "The publishing of transaction data is required to verify transactions, satisfy proving schemes, or otherwise progress the chain. Data availability is where a specific party makes a layer's protocol available for a specific period of time. In bitcoin, a layer's protocol data is made available by bitcoin full nodes. A layer would publish transaction data to bitcoin via an inscription-like envelope and any bitcoin full node would be able to verify that the data has indeed been published.",
         },
         {
             term: "Discrete Log Contract (DLC)",
             definition:
-                "A type of smart contract designed to facilitate financial agreements on the Bitcoin network using oracles to provide external data. DLCs enable the creation of complex financial instruments, such as options and futures, by using cryptographic techniques to ensure that the contract is executed based on the outcome of real-world events.",
+                "A type of smart contract designed to facilitate financial agreements on the bitcoin network using oracles to provide external data. DLCs enable the creation of complex financial instruments, such as options and futures, by using cryptographic techniques to ensure that the contract is executed based on the outcome of real-world events.",
         },
         // {
         //     term: "Drivechain",
         //     definition:
-        //         "A separate blockchain (sidechain) pegged to the Bitcoin mainchain. Drivechains allow Bitcoin to create, delete, send BTC to, and receive BTC from sidechains called sidechains.",
+        //         "A separate blockchain (sidechain) pegged to the bitcoin mainchain. Drivechains allow bitcoin to create, delete, send BTC to, and receive BTC from sidechains called sidechains.",
         // },
     ],
     E: [
@@ -195,7 +195,7 @@ const glossaryData: GlossaryData = {
         {
             term: "Layer 1 (L1)",
             definition:
-                "A sovereign network that performs all four core functions of a crypto network: consensus, security, data availability, and execution. In this context, Bitcoin is the L1.",
+                "A sovereign network that performs all four core functions of a crypto network: consensus, security, data availability, and execution. In this context, bitcoin is the L1.",
         },
         {
             term: "Layer 2 (L2)",

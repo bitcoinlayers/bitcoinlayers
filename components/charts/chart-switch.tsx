@@ -13,7 +13,7 @@ export default function ChartSwitch() {
 
     const chartConfig = {
         networks: {
-            title: "BTC supply on layers",
+            title: "BTC supply by network",
             description:
                 "Total BTC supply supporting bitcoin native protocols, bitcoin sidesystems, alternative L1s, and more",
             chartQueryParam: "layer-chart",
@@ -21,7 +21,7 @@ export default function ChartSwitch() {
             useDataHook: getHistoricalSuppliesByNetwork,
         },
         wrappers: {
-            title: "BTC supply on layers",
+            title: "BTC supply by wrapper",
             description:
                 "Total BTC supply supporting bitcoin native protocols, bitcoin sidesystems, alternative L1s, and more",
             chartQueryParam: "bridge-chart",
