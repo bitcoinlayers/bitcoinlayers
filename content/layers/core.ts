@@ -67,15 +67,6 @@ const core: LayerProject = {
             content: "",
             pegs: [
                 {
-                    name: "Core coreBTC",
-                    infrastructureSlug: "core-corebtc",
-                    score: 0,
-                    tier: RiskFactor.High,
-                    title: "Funds are custodied by a federated signer set, with a number of parties ensuring the honesty of the bridge",
-                    content:
-                        "Users trust various parties in maintaining the honesty of Core’s bridge with Bitcoin. Lockers are the party responsible for securing the bitcoin that backs coreBTC on Core Chain. These actors stake collateral, in the form of Core tokens, in order to participate as a Locker. In the event of maliciously moving bitcoin from the multi-sig, or being unable to fulfill withdrawals, Lockers would be slashed and lose the collateral they posted.\n\nOther parties in the bridge set up are responsible for monitoring the Locker’s activity and initiating the slashing process.",
-                },
-                {
                     name: "Solv SolvBTC.m",
                     infrastructureSlug: "solv-solvbtc",
                     score: 0,
@@ -119,6 +110,15 @@ const core: LayerProject = {
                     title: "Users trust custodians and various onchain contracts. We have not reviewed the contract implementations for this chain",
                     content:
                         "Ava Labs has disclosed that users trust a network of entities who participate in securing the BTC that backs BTCb. These eight entities are also reported to run special HSM hardware.\n\nThe eight entities securing the bridge are: Halborn, Avascan, Bware Labs, Ankr, Chainstack, Protofire, Blockdaemon, and Ava Labs.\n\nUsers trust that Ava Labs's claims in their documentation are being executed in practice.\n\n[Source](https://medium.com/avalancheavax/bridging-bitcoin-to-avalanche-a-technical-overview-2535e7088b8)",
+                },
+                {
+                    name: "Core coreBTC",
+                    infrastructureSlug: "core-corebtc",
+                    score: 0,
+                    tier: RiskFactor.High,
+                    title: "Funds are custodied by a federated signer set, with a number of parties ensuring the honesty of the bridge",
+                    content:
+                        "Users trust various parties in maintaining the honesty of Core’s bridge with Bitcoin. Lockers are the party responsible for securing the bitcoin that backs coreBTC on Core Chain. These actors stake collateral, in the form of Core tokens, in order to participate as a Locker. In the event of maliciously moving bitcoin from the multi-sig, or being unable to fulfill withdrawals, Lockers would be slashed and lose the collateral they posted.\n\nOther parties in the bridge set up are responsible for monitoring the Locker’s activity and initiating the slashing process.",
                 },
             ],
         },
