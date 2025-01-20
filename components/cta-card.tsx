@@ -10,7 +10,7 @@ export default function CtaCard() {
 
     const content = (() => {
         const buildingContent = {
-            title: "Some sidesystems are not bitcoin layers",
+            title: "Some projects in sidesystems are not bitcoin layers",
             description: "Projects will be moved to alternative category if they don't meet our requirements",
             ctaText: "Read the blog",
             url: "https://www.lxresearch.co/starting-to-define-layers-a-year-later/",
