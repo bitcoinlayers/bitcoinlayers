@@ -4,6 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 export interface Snapshot {
     token_slug: string;
     networks: string[];
+    network_names: string[];
     total_balance: number;
     rank: number | null;
 }
