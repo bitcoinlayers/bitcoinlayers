@@ -21,7 +21,7 @@ type TableTabKey =
     | "Purpose"
     | "Status"
     | "Unit of Account"
-    | "Associated Layers";
+    | "Associated Networks";
 
 interface Props {
     data: InfrastructureProject[];
@@ -110,7 +110,7 @@ const EcashTable = ({
                     valueA = a.nativeToken;
                     valueB = b.nativeToken;
                     break;
-                case "Associated Layers":
+                case "Associated Networks":
                     valueA = a.associatedLayers;
                     valueB = b.associatedLayers;
                     break;
@@ -279,7 +279,7 @@ const EcashTable = ({
                                     )}
                                     {(!isMobile ||
                                         mobileActiveTab ===
-                                            "Associated Layers") && (
+                                            "Associated Networks") && (
                                         <td className="lg:px-6 px-4 py-3 lg:py-4">
                                             <Link
                                                 href={`/${isEcash ? "ecash" : "infrastructure"}/${item.slug}`}

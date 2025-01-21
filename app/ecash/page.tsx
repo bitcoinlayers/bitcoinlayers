@@ -30,7 +30,11 @@ export default function Home() {
             showSorting: true,
             mobileLabel: "Unit",
         },
-        { name: "Associated Layers", showSorting: true, mobileLabel: "Layers" },
+        {
+            name: "Associated Networks",
+            showSorting: true,
+            mobileLabel: "Networks",
+        },
     ];
 
     return (
