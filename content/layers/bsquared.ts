@@ -240,8 +240,7 @@ const bsquared: LayerProject = {
             content: [
                 {
                     title: "Node software code is open-source",
-                    content:
-                        "The node software is open-source.",
+                    content: "The node software is open-source.",
                 },
             ],
         },

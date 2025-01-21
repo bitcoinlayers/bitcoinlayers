@@ -81,7 +81,8 @@ const fractal: LayerProject = {
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: "Simple sBTC is managed by Unisat",
-                    content: "The Simple sBTC bridge is managed by Unisat, a centralized company. There is no public information or code repository available to verify that the two-way peg is managed by multiple parties.",
+                    content:
+                        "The Simple sBTC bridge is managed by Unisat, a centralized company. There is no public information or code repository available to verify that the two-way peg is managed by multiple parties.",
                 },
             ],
         },

@@ -22,7 +22,8 @@ const xlinkabtc: InfrastructureProject = {
     riskFactors: ["", ""],
     nativeToken: "-",
     purpose: Purpose.General,
-    associatedLayers: "Stacks, Core, Base, Linea, Mode, BNB, Ethereum, Bsquared, BOB, Bitlayer, Merlin, AIlayer, Xlayer, Arbitrum, Aurora, Manta",
+    associatedLayers:
+        "Stacks, Core, Base, Linea, Mode, BNB, Ethereum, Bsquared, BOB, Bitlayer, Merlin, AIlayer, Xlayer, Arbitrum, Aurora, Manta",
     notice: undefined,
     bitcoinOnly: false,
     links: [

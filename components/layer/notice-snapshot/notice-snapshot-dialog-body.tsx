@@ -52,7 +52,8 @@ export default function NoticeSnapshotDialogBody({
                     rel="noopener noreferrer"
                     className="hover:underline text-left text-xs"
                 >
-                    Our latest blog covers the standards projects need to meet by June 30th.
+                    Our latest blog covers the standards projects need to meet
+                    by June 30th.
                 </a>
             </DialogFooter>
         </div>

@@ -59,7 +59,9 @@ const Categories: React.FC<{ infrastructure: InfrastructureProject }> = ({
             <div className="flex-col justify-center items-start">
                 <div className="text-sm leading-tight">Associated Layers</div>
                 <div className="text-muted-foreground">
-                    {infrastructure.associatedLayers}
+                    {balances?.[0]?.network_names
+                        ?.map((name: string) => name)
+                        .join(", ")}
                 </div>
             </div>
         </div>
