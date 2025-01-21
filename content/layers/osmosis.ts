@@ -57,7 +57,7 @@ const osmosis: LayerProject = {
         },
     ],
     description:
-        "Osmosis is a proof-of-stake blockchain that supports a number of wrapped BTC tokens. It offers an EVM-compatible execution environment which supports more expressive smart contracts.",
+        "Osmosis is a proof-of-stake blockchain that supports a number of wrapped BTC tokens. It is IBC-compatible and a part of the Cosmos ecosystem.",
     riskAnalysis: [
         {
             category: RiskCategory.BtcCustody,
