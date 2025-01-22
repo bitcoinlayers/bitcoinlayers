@@ -173,14 +173,14 @@ const arbitrum: LayerProject = {
         {
             category: RiskCategory.NetworkOperators,
             score: 0,
-            tier: RiskFactor.UnderReview,
+            tier: RiskFactor.Medium,
             title: "Arbitrum blocks are produced and proposed by a centralized operator, but users can become their own block producer in the event of censorship or liveness failures",
             content: ReviewSnippet.SelfProposeMainAlt,
         },
         {
             category: RiskCategory.FinalityGuarantees,
             score: 0,
-            tier: RiskFactor.UnderReview,
+            tier: RiskFactor.High,
             title: "Arbitrum state transitions finalize on Ethereum. 14 whitelisted validators are able to propose state transitions and submit fault proofs",
             content: ReviewSnippet.FinalityAltRollupFederationFraudProofs,
         },
