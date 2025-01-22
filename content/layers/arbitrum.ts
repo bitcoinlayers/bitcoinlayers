@@ -101,7 +101,7 @@ const arbitrum: LayerProject = {
                     name: "Solv SolvBTC",
                     infrastructureSlug: "solv-solvbtc",
                     score: 0,
-                    tier: RiskFactor.UnderReview,
+                    tier: RiskFactor.VeryHigh,
                     title: TokenSnippet.CustodianPeg,
                     content: `${TokenSnippet.SolvBTC}\n\n${TokenSnippet.smartcontractreview}`
                 },
@@ -109,7 +109,7 @@ const arbitrum: LayerProject = {
                     name: "Bedrock uniBTC",
                     infrastructureSlug: "bedrock-unibtc",
                     score: 0,
-                    tier: RiskFactor.UnderReview,
+                    tier: RiskFactor.VeryHigh,
                     title: TokenSnippet.CustodianPeg,
                     content: `${TokenSnippet.BedrockUniBTC}\n\n${TokenSnippet.smartcontractreview}`
                 },
@@ -117,7 +117,7 @@ const arbitrum: LayerProject = {
                     name: "Solv SolvBTCBBN",
                     infrastructureSlug: "solv-solvbtcbbn",
                     score: 0,
-                    tier: RiskFactor.UnderReview,
+                    tier: RiskFactor.VeryHigh,
                     title: TokenSnippet.CustodianPeg,
                     content: `${TokenSnippet.SolvBTCBBN}\n\n${TokenSnippet.smartcontractreview}`
                 },
@@ -133,7 +133,7 @@ const arbitrum: LayerProject = {
                     name: "Lorenzo stBTC",
                     infrastructureSlug: "lorenzo-stbtc",
                     score: 0,
-                    tier: RiskFactor.UnderReview,
+                    tier: RiskFactor.VeryHigh,
                     title: TokenSnippet.CustodianPeg,
                     content: `${TokenSnippet.LorenzostBTC}\n\n${TokenSnippet.smartcontractreview}`
                 },
@@ -149,8 +149,8 @@ const arbitrum: LayerProject = {
                     name: "Avalanche BTCb",
                     infrastructureSlug: "avalanche-btcb",
                     score: 0,
-                    tier: RiskFactor.UnderReview,
-                    title: TokenSnippet.UnderReview,
+                    tier: RiskFactor.High,
+                    title: TokenSnippet.FederationPeg,
                     content: `${TokenSnippet.AvalancheBTCb}\n\n${TokenSnippet.smartcontractreview}`
                 },
                 {
@@ -181,7 +181,7 @@ const arbitrum: LayerProject = {
             category: RiskCategory.FinalityGuarantees,
             score: 0,
             tier: RiskFactor.UnderReview,
-            title: "Arbitrum state transitions finalize on Ethereum. 14 whitelisted validators are able to propose state transitions and submit fault proofs.",
+            title: "Arbitrum state transitions finalize on Ethereum. 14 whitelisted validators are able to propose state transitions and submit fault proofs",
             content: ReviewSnippet.FinalityAltRollupFederationFraudProofs
         },
     ],
