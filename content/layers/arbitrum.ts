@@ -31,10 +31,10 @@ const arbitrum: LayerProject = {
     bridge: false,
     underReview: false,
     riskFactors: [
-        RiskFactor.VeryHigh,
+        RiskFactor.High,
         RiskFactor.Medium,
-        RiskFactor.UnderReview,
-        RiskFactor.UnderReview,
+        RiskFactor.Medium,
+        RiskFactor.High,
     ],
     btcLocked: 0,
     nativeToken: "-",
@@ -74,20 +74,20 @@ const arbitrum: LayerProject = {
             content: "",
             pegs: [
                 {
-                    name: "BitGo wBTC",
-                    infrastructureSlug: "bitgo-wbtc",
-                    score: 0,
-                    tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet.CustodianPeg,
-                    content: TokenSnippet.BitGowBTC
-                },
-                {
                     name: "Threshold tBTC",
                     infrastructureSlug: "threshold-tbtc",
                     score: 0,
                     tier: RiskFactor.High,
                     title: TokenSnippet.FederationPeg,
                     content: `${TokenSnippet.ThresholdtBTC}\n\nThis bridge is managed by a 9 member federation. Bitcoin users trust that 6 of the 9 members of this federation do not collude and steal user funds.`,
+                },
+                {
+                    name: "BitGo wBTC",
+                    infrastructureSlug: "bitgo-wbtc",
+                    score: 0,
+                    tier: RiskFactor.VeryHigh,
+                    title: TokenSnippet.CustodianPeg,
+                    content: TokenSnippet.BitGowBTC
                 },
                 {
                     name: "cbBTC",
