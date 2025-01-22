@@ -56,7 +56,7 @@ const bevm: LayerProject = {
         },
     ],
     description:
-        "BEVM is an EVM-compatible sidechain built on substrate. On the BEVM chain, the BTC is held in custody by a federated signer set.",
+        "BEVM is an EVM-compatible blockchain built on substrate. On the BEVM chain, the BTC is held in custody by a federated signer set.",
     riskAnalysis: [
         {
             category: RiskCategory.BtcCustody,
@@ -124,6 +124,17 @@ const bevm: LayerProject = {
                 {
                     title: "The BEVM network does not pay fees to Bitcoin miners",
                     content: "BEVM does not pay fees to Bitcoin miners.",
+                },
+            ],
+        },
+        {
+            id: "notice",
+            title: "🚨 Project is not a sidesystem",
+            content: [
+                {
+                    title: "This project will be moved to the Alternative category",
+                    content:
+                        "Projects that do not meet our requirements to be considered a sidesystem will be moved to the Alternative category. They have until June 30th to implement the technical requirements to be considered a sidesystem.",
                 },
             ],
         },

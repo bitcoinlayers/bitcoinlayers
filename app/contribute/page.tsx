@@ -77,8 +77,8 @@ const ContributePage: React.FC = () => {
                 className="text-blue-700 dark:text-blue-500 underline text-base font-normal leading-normal"
             >
                 Twitter
-            </Link>{" "}
-            and{" "}
+            </Link>
+            {/* and{" "} */}
             {/* ,{" "}
             <Link
                 href="https://snort.social/nprofile1qqswq22rw7f34s4us866f8twrght0p5vlmvhpxcfz780t4kpmtgyq7gpr9mhxue69uhkummnw3ezuer0de4hjtnnda3kjctv9uq32amnwvaz7tmjv4kxz7fwv3sk6atn9e5k7tcprpmhxue69uhhyetvv9uju6rpwa6xjetn9eu8j730rfdn4f"
@@ -89,14 +89,14 @@ const ContributePage: React.FC = () => {
                 Nostr
             </Link>{" "}
             , and{" "} */}
-            <Link
+            {/* <Link
                 href="https://warpcast.com/~/channel/bitcoinlayers"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-blue-700 dark:text-blue-500 underline text-base font-normal leading-normal"
             >
                 Warpcast
-            </Link>
+            </Link> */}
             .
         </span>
     );
