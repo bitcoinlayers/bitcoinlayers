@@ -10,6 +10,7 @@ import {
     RiskSection,
     ContentSection,
     RiskCategory,
+    TokenSnippet,
 } from "../props";
 
 const bnbsmartchain: LayerProject = {
@@ -98,7 +99,7 @@ const bnbsmartchain: LayerProject = {
                     infrastructureSlug: "solv-solvbtc",
                     score: 0,
                     tier: RiskFactor.UnderReview,
-                    title: "This two-way peg is under review",
+                    title: TokenSnippet.UnderReview,
                     content: "This two-way peg is under review",
                 },
                 {
@@ -106,7 +107,7 @@ const bnbsmartchain: LayerProject = {
                     infrastructureSlug: "solv-solvbtcbbn",
                     score: 0,
                     tier: RiskFactor.UnderReview,
-                    title: "This two-way peg is under review",
+                    title: TokenSnippet.UnderReview,
                     content:
                         "SolvBTCBBN is a derivative of Solv BTC. We are reviewing its trust assumptions.",
                 },
@@ -115,7 +116,7 @@ const bnbsmartchain: LayerProject = {
                     infrastructureSlug: "solv-solvbtcena",
                     score: 0,
                     tier: RiskFactor.UnderReview,
-                    title: "This two-way peg is under review",
+                    title: TokenSnippet.UnderReview,
                     content:
                         "SolvBTC.ENA is a derivative of Solv BTC. We are reviewing its trust assumptions.",
                 },
@@ -124,7 +125,7 @@ const bnbsmartchain: LayerProject = {
                     infrastructureSlug: "pump-btc",
                     score: 0,
                     tier: RiskFactor.UnderReview,
-                    title: "This two-way peg is under review",
+                    title: TokenSnippet.UnderReview,
                     content: "This two-way peg is under review",
                 },
                 {
@@ -132,7 +133,7 @@ const bnbsmartchain: LayerProject = {
                     infrastructureSlug: "firebitcoin-fbtc",
                     score: 0,
                     tier: RiskFactor.UnderReview,
-                    title: "This two-way peg is under review",
+                    title: TokenSnippet.UnderReview,
                     content: "This two-way peg is under review",
                 },
                 {
@@ -140,7 +141,7 @@ const bnbsmartchain: LayerProject = {
                     infrastructureSlug: "lorenzo-stbtc",
                     score: 0,
                     tier: RiskFactor.UnderReview,
-                    title: "This two-way peg is under review",
+                    title: TokenSnippet.UnderReview,
                     content: "This two-way peg is under review",
                 },
                 {
@@ -148,7 +149,7 @@ const bnbsmartchain: LayerProject = {
                     infrastructureSlug: "lombard-lbtc",
                     score: 0,
                     tier: RiskFactor.UnderReview,
-                    title: "This two-way peg is under review",
+                    title: TokenSnippet.UnderReview,
                     content: "This two-way peg is under review",
                 },
                 {
@@ -156,7 +157,7 @@ const bnbsmartchain: LayerProject = {
                     infrastructureSlug: "babypie-mbtc",
                     score: 0,
                     tier: RiskFactor.UnderReview,
-                    title: "This two-way peg is under review",
+                    title: TokenSnippet.UnderReview,
                     content: "This two-way peg is under review",
                 },
                 {
@@ -164,7 +165,7 @@ const bnbsmartchain: LayerProject = {
                     infrastructureSlug: "kinza-kbtc",
                     score: 0,
                     tier: RiskFactor.UnderReview,
-                    title: "This two-way peg is under review",
+                    title: TokenSnippet.UnderReview,
                     content: "This two-way peg is under review",
                 },
             ],
