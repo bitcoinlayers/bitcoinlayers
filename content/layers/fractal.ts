@@ -17,7 +17,7 @@ const fractal: LayerProject = {
     type: Type.Layer,
     slug: "fractal",
     title: "Fractal",
-    entityType: EntityType.Sidechain,
+    entityType: EntityType.Alt,
     entityCategory: EntityCategory.Sidesystem,
     live: LiveStatus.Mainnet,
     staking: false,
@@ -80,9 +80,10 @@ const fractal: LayerProject = {
                     name: "Simple sBTC",
                     infrastructureSlug: "simple-sbtc",
                     score: 0,
-                    tier: RiskFactor.UnderReview,
-                    title: TokenSnippet.UnderReview,
-                    content: "This two-way peg is under review",
+                    tier: RiskFactor.VeryHigh,
+                    title: "Simple sBTC is managed by Unisat",
+                    content:
+                        "The Simple sBTC bridge is managed by Unisat, a centralized company. There is no public information or code repository available to verify that the two-way peg is managed by multiple parties.",
                 },
             ],
         },
@@ -146,6 +147,17 @@ const fractal: LayerProject = {
                     title: "The Fractal blockchain is growing at a fast rate",
                     content:
                         "The Fractal blockchain is growing at a rate much faster than that of Bitcoin. As the blockchain continues to grow, it becomes more difficult for users to run Fractal full nodes. This might see the majority of users pass on the data availability requirement onto another party.",
+                },
+            ],
+        },
+        {
+            id: "notice",
+            title: "🚨 Project is not a sidesystem",
+            content: [
+                {
+                    title: "This project will be moved to the Alternative category",
+                    content:
+                        "Projects that do not meet our requirements to be considered a sidesystem will be moved to the Alternative category. They have until June 30th to implement the technical requirements to be considered a sidesystem.",
                 },
             ],
         },

@@ -17,7 +17,7 @@ const internetcomputer: LayerProject = {
     type: Type.Layer,
     slug: "internetcomputer",
     title: "Internet Computer",
-    entityType: EntityType.Sidechain,
+    entityType: EntityType.Hybrid,
     entityCategory: EntityCategory.Sidesystem,
     live: LiveStatus.Mainnet,
     staking: false,
@@ -25,7 +25,7 @@ const internetcomputer: LayerProject = {
     bridge: false,
     underReview: false,
     riskFactors: [
-        RiskFactor.UnderReview,
+        RiskFactor.High,
         RiskFactor.High,
         RiskFactor.Medium,
         RiskFactor.Medium,

@@ -10,15 +10,14 @@ import {
     RiskSection,
     ContentSection,
     RiskCategory,
-    TokenSnippet,
 } from "../props";
 
-const bitfinity: LayerProject = {
+const osmosis: LayerProject = {
     type: Type.Layer,
-    slug: "bitfinity",
-    title: "Bitfinity",
-    entityType: EntityType.Alt,
-    entityCategory: EntityCategory.Sidesystem,
+    slug: "osmosis",
+    title: "Osmosis",
+    entityType: EntityType.AltL1,
+    entityCategory: EntityCategory.Alt,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -32,32 +31,33 @@ const bitfinity: LayerProject = {
     ],
     btcLocked: 0,
     nativeToken: "-",
-    feeToken: "BTF",
+    feeToken: "OSMO",
     notice: undefined,
     bitcoinOnly: false,
     links: [
         {
             text: Site.Website,
-            url: "https://bitfinity.network",
+            url: "https://osmosis.zone/",
         },
         {
             text: Site.Docs,
-            url: "https://docs.bitfinity.network",
+            url: "https://docs.osmosis.zone/",
         },
         {
             text: Site.Explorer,
-            url: "https://explorer.mainnet.bitfinity.network/",
+            url: "https://www.mintscan.io/osmosis",
         },
         {
             text: Site.GitHub,
-            url: "https://github.com/bitfinity-network",
+            url: "https://github.com/osmosis-labs",
         },
         {
             text: Site.Twitter,
-            url: "https://x.com/bitfinitynet",
+            url: "https://x.com/osmosiszone",
         },
     ],
-    description: "Bitfinity is an EVM-based sidechain.",
+    description:
+        "Osmosis is a proof-of-stake blockchain that supports a number of wrapped BTC tokens. It is IBC-compatible and a part of the Cosmos ecosystem.",
     riskAnalysis: [
         {
             category: RiskCategory.BtcCustody,
@@ -67,13 +67,13 @@ const bitfinity: LayerProject = {
             content: "",
             pegs: [
                 {
-                    name: "ICP ckBTC",
-                    infrastructureSlug: "icp-ckbtc",
+                    name: "Osmosis BTC",
+                    infrastructureSlug: "osmosis-btc",
                     score: 0,
                     tier: RiskFactor.UnderReview,
-                    title: "Leverages ICP's ckBTC two-way peg with bitcoin. We are reviewing if there are any changes for the Bitfinity integration",
+                    title: "BTC on Osmosis is backed by several reserve assets",
                     content:
-                        "Bitfinity's two-wag peg leverages ICP's ckBTC two-way peg to bring BTC onto the sidechain. BTC backing ckBTC is secured by validators selected by ICP's governance mechanism. This implementation is under review.",
+                        "BTC on Osmosis is backed by a number of collateral assets; WBTC.eth.axl, wBTC, nBTC, ckBTC, and cbBTC.axl.",
                 },
             ],
         },
@@ -81,25 +81,25 @@ const bitfinity: LayerProject = {
             category: RiskCategory.DataAvailability,
             score: 0,
             tier: RiskFactor.UnderReview,
-            title: "We are reviewing what satisfies Bitfinity's data availability requirement",
+            title: "We are currently reviewing Osmosis' full node implementation",
             content:
-                "We are reviewing the operators responsible for data availability and storage for the Bitfinity sidechain.",
+                "We are currently reviewing Osmosis' full node implementation.",
         },
         {
             category: RiskCategory.NetworkOperators,
             score: 0,
             tier: RiskFactor.UnderReview,
-            title: "We are reviewing Bitfinity's block production mechanism",
+            title: "Osmosis is operated by a distributed validator set",
             content:
-                "We are reviewing the operators of the Bitfinity sidechain.",
+                "Blocks are built and proposed by a distributed consensus network.\n\nWe are currently reviewing Osmosis' network operators.",
         },
         {
             category: RiskCategory.FinalityGuarantees,
             score: 0,
             tier: RiskFactor.UnderReview,
-            title: "We are reviewing Bitfinity's finality guarantees",
+            title: "We are currently reviewing Osmosis' finality guarantees",
             content:
-                "We are reviewing how transactions are finalized on Bitfinity.",
+                "Blocks are validated and finalized by a distributed consensus network.\n\nWe are currently reviewing Osmosis' finality guarantees",
         },
     ],
     sections: [
@@ -116,4 +116,4 @@ const bitfinity: LayerProject = {
     ],
 };
 
-export default bitfinity;
+export default osmosis;

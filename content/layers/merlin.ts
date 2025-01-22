@@ -26,9 +26,9 @@ const merlin: LayerProject = {
     underReview: false,
     riskFactors: [
         RiskFactor.VeryHigh,
-        RiskFactor.VeryHigh,
-        RiskFactor.VeryHigh,
-        RiskFactor.VeryHigh,
+        RiskFactor.Critical,
+        RiskFactor.Critical,
+        RiskFactor.Critical,
     ],
     btcLocked: 9303,
     nativeToken: "MERL",
@@ -50,7 +50,7 @@ const merlin: LayerProject = {
         },
         {
             text: Site.GitHub,
-            url: "https://docs.merlinchain.io/merlin-docs/developers",
+            url: "https://github.com/MerlinLayer2",
         },
         {
             text: Site.Twitter,
@@ -58,7 +58,7 @@ const merlin: LayerProject = {
         },
     ],
     description:
-        "Merlin is an implementation of Polygon CDK chain. It likely is running a Polygon chain on top of a permissioned fork of the EVM.",
+        "Merlin is an implementation of Polygon CDK chain. It likely is running its rollup chain on top of a permissioned fork of the EVM.",
     riskAnalysis: [
         {
             category: RiskCategory.BtcCustody,
@@ -126,9 +126,9 @@ const merlin: LayerProject = {
             category: RiskCategory.DataAvailability,
             score: 0,
             tier: RiskFactor.VeryHigh,
-            title: "State data is stored and made available by a permissioned data availability committee. The identities of its members are under review",
+            title: "State data is stored and made available by a permissioned network. The identities of its members are under review",
             content:
-                "Merlin chain is built on the Polygon CDK stack. In its Github, it has a copy of the Polygon CDK Committee contract. In the contract, it states that the admin has the control to set up the committee, so it is likely that the members of this committee are permissioned and selected by the Merlin Chain operator. We have not been able to verify the members of this committee.",
+                "Merlin's parent chain is a private network. We cannot verify who is responsible for making data available. Users should remain cautious when interacting with this chain.",
         },
         {
             category: RiskCategory.NetworkOperators,
@@ -136,15 +136,15 @@ const merlin: LayerProject = {
             tier: RiskFactor.VeryHigh,
             title: "Blocks are produced by a centralized sequencer and forced inclusion mechanism is unverified",
             content:
-                "Merlin chain blocks are currently produced by a centralized sequencer. If the sequencer were to go down, or censor users, users would force include transactions to an L1 that is not Bitcoin. We have not verified if Merlin's forced inclusion mechanism is currently live.\n\nAdditionally, Merlin transactions are not finalized until its parent chain accepts the Merlin state transition.",
+                "Merlin chain blocks are currently produced by a centralized sequencer. It posts state updates to its parent chain which is a private network. We cannot review its trust assumptions. Users should remain cautious when interacting with this chain.",
         },
         {
             category: RiskCategory.FinalityGuarantees,
             score: 0,
             tier: RiskFactor.VeryHigh,
-            title: "Sequencer batches and validity proofs posted offchain. ❓ We are unable to verify Merlin Chain's L1 contracts",
+            title: "Sequencer batches and validity proofs posted to a permissioned network",
             content:
-                "Merlin uses zkSNARKS to ensure state correctness. The Merlin prover posts validity proofs of execution to its L1 contract to finalize state transitions. It is unknown which chain Merlin posts its latest state root to.",
+                "Merlin's parent chain is a private network. We cannot verify smart contracts related to Merlin. Users should remain cautious when interacting with this chain.",
         },
     ],
     sections: [
@@ -160,7 +160,7 @@ const merlin: LayerProject = {
                 {
                     title: "MERL token is live, but not currently used to pay transaction fees",
                     content:
-                        "Gas on the Merlin chain is currently paid in a BTC-synthetic. It is unknown if Merlin will use the MERL token for network security in the future.\n\nWhen Merlin integrates with Bsquared Network, it will rely on the BSQ token for security.",
+                        "Gas on the Merlin chain is currently paid in a BTC-synthetic. It is unknown if Merlin will use the MERL token for network security in the future.",
                 },
                 {
                     title: "No MEV introduced to Bitcoin, but a centralized sequencer can reorder transactions",
@@ -175,18 +175,24 @@ const merlin: LayerProject = {
             ],
         },
         {
+            id: "notice",
+            title: "🚨 Project is not a sidesystem",
+            content: [
+                {
+                    title: "This project will be moved to the Alternative category",
+                    content:
+                        "Projects that do not meet our requirements to be considered a sidesystem will be moved to the Alternative category. They have until June 30th to implement the technical requirements to be considered a sidesystem.",
+                },
+            ],
+        },
+        {
             id: "additionalconsiderations",
             title: "Additional Considerations",
             content: [
                 {
-                    title: "Some code is not open-source",
+                    title: "Merlin's L1 contracts cannot be verified",
                     content:
                         "Merlin Chain contracts are all currently upgradeable by an admin. The contracts it has listed on its CDKValidium can not be verified on its respective L1 blockchain.",
-                },
-                {
-                    title: "Merlin L1 smart contract not verified",
-                    content:
-                        "We are currently unable to verify if the smart contracts listed in Merlin's Github are in fact the contracts used on its mainnet. The main contract for Polygon CDKValidium on Ethereum was previously listed as the Merlin L1 contract in its documentation, but that was removed and no longer listed. Merlin chain have announced they will deploy their chain on Bsquared Network's L1 blockchain, which is a permissioned network. New contracts have been listed in its Github, but their L1 RPC points to a different chain that is not Bsquared Network.",
                 },
             ],
         },
@@ -205,11 +211,6 @@ const merlin: LayerProject = {
             id: "technology",
             title: "Technology",
             content: [
-                {
-                    title: "Leveraging the Polygon zkEVM stack",
-                    content:
-                        "Merlin was deployed by Lumoz, a Rollup-as-a-Service provider that supports the Polygon zkEVM stack. This sees the Merlin chain be EVM-compatible and mimic a similar architecture to Polygon Validiums on Ethereum, albeit the security of its host chain is unknown.",
-                },
                 {
                     title: "EVM-compatible",
                     content:

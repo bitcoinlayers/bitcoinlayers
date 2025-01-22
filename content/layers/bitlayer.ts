@@ -27,7 +27,7 @@ const bitlayer: LayerProject = {
     riskFactors: [
         RiskFactor.VeryHigh,
         RiskFactor.Medium,
-        RiskFactor.High,
+        RiskFactor.VeryHigh,
         RiskFactor.High,
     ],
     btcLocked: 5397,
@@ -107,10 +107,10 @@ const bitlayer: LayerProject = {
         {
             category: RiskCategory.NetworkOperators,
             score: 0,
-            tier: RiskFactor.UnderReview,
+            tier: RiskFactor.VeryHigh,
             title: "Bitlayer is operated by a permissioned validator set",
             content:
-                "Bitlayer blocks are currently produced by a permissioned validator set. There are currently 21 validators participating in Bitlayer consensus. Users cannot bypass this operator set if they are censored by the validator set.\n\n🔬We are currently reviewing the identities of Bitlayer's validators.",
+                "Bitlayer blocks are currently produced by a permissioned validator set. There are currently 21 validators participating in Bitlayer consensus. Users cannot bypass this operator set if they are censored by the validator set.\n\nBitLayer has not disclosed the operators for this validator set.",
         },
         {
             category: RiskCategory.FinalityGuarantees,
@@ -145,6 +145,17 @@ const bitlayer: LayerProject = {
                     title: "Bitlayer does not contribute to the security budget",
                     content:
                         "Bitlayer does not currently contribute to the Bitcoin security budget.",
+                },
+            ],
+        },
+        {
+            id: "notice",
+            title: "🚨 Project is not a sidesystem",
+            content: [
+                {
+                    title: "This project will be moved to the Alternative category",
+                    content:
+                        "Projects that do not meet our requirements to be considered a sidesystem will be moved to the Alternative category. They have until June 30th to implement the technical requirements to be considered a sidesystem.",
                 },
             ],
         },

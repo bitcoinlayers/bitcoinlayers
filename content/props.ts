@@ -48,6 +48,7 @@ export enum EntityType {
     CSV = "CSV",
     EthereumRollup = "Ethereum Rollup",
     Rollup = "Rollup",
+    Federated = "Federated",
     Sidechain = "Sidechain",
     SidechainRollup = "Sidechain Rollup",
     SovereignRollup = "Sovereign Rollup",
@@ -55,6 +56,8 @@ export enum EntityType {
     Statechain = "Statechain",
     VirtualUTXOs = "Virtual UTXOs",
     zkCSV = "zkCSV",
+    Hybrid = "Hybrid Chain",
+    Anchor = "Anchor Chain",
     ChaumianEcashProtocol = "Chaumian Ecash Protocol",
     FederationSDK = "Federation SDK",
     LiquidStaking = "Liquid Staking",
@@ -78,6 +81,7 @@ export enum EntityType {
     Ark = "Ark",
     AltL1 = "Alt. Layer 1",
     AltRollup = "Alt. Rollup",
+    Alt = "Alt. Chain",
     "-" = "-",
 }
 

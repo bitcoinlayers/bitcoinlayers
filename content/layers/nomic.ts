@@ -17,7 +17,7 @@ const nomic: LayerProject = {
     type: Type.Layer,
     slug: "nomic",
     title: "Nomic",
-    entityType: EntityType.Sidechain,
+    entityType: EntityType.Anchor,
     entityCategory: EntityCategory.Sidesystem,
     live: LiveStatus.Mainnet,
     staking: false,
@@ -33,7 +33,6 @@ const nomic: LayerProject = {
     btcLocked: 4.95,
     nativeToken: "NOM",
     feeToken: "NOM",
-    notice: Notice.Reorg,
     bitcoinOnly: false,
     links: [
         {

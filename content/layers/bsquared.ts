@@ -58,7 +58,7 @@ const bsquared: LayerProject = {
         },
     ],
     description:
-        "The current Bsquared Network mainnet consists of two different chains. The parent chain is a fork of an EVM implementation on Tendermint, and has three permissioned validators operating the network. The rollup chain is a fork of Polygon zkEVM that settles on the Bsquared parent chain.",
+        "The current Bsquared Network mainnet consists of two different chains. The parent chain is a fork of Ethermint. The rollup chain is a fork of of an Ethereum rollup stack.",
     riskAnalysis: [
         {
             category: RiskCategory.BtcCustody,
@@ -143,9 +143,9 @@ const bsquared: LayerProject = {
             category: RiskCategory.DataAvailability,
             score: 0,
             tier: RiskFactor.VeryHigh,
-            title: "DA requirement is fulfilled by three permissioned validators",
+            title: "DA requirement is fulfilled by permissioned validators",
             content:
-                "Sequencer batches are posted to the Bsquared Network L1. This network consists of a permissioned validator set who is responsible for making the data readily available.\n\n🔬We are currently reviewing the operators satisfying the Bsquared DA requirement.",
+                "Sequencer batches are posted to the Bsquared Network L1. This network consists of a permissioned validator set who is responsible for making the data readily available. The identities of these operators has not been disclosed.",
         },
         {
             category: RiskCategory.NetworkOperators,
@@ -153,7 +153,7 @@ const bsquared: LayerProject = {
             tier: RiskFactor.VeryHigh,
             title: "Both the rollup chain and parent chain are run by federated, centralized parties",
             content:
-                "Bsquared Network’s Polygon zkEVM implementation has a single sequencer that posts sequencer batches to its network of three L1 validators.",
+                "Bsquared Network’s implementation has a single sequencer that posts sequencer batches to its network of three L1 validators.",
         },
         {
             category: RiskCategory.FinalityGuarantees,
@@ -161,7 +161,7 @@ const bsquared: LayerProject = {
             tier: RiskFactor.VeryHigh,
             title: "Finality is guaranteed by a permissioned validator set",
             content:
-                "Bsquared receives no settlement assurances from Bitcoin. Bsquared settlement is finalized by a group of three, federated validators who verify state transitions submitted by the Bsquared Network zkEVM operator.",
+                "Bsquared receives no settlement assurances from Bitcoin. Bsquared transaction finality is determined by a centralized entity who proposes state updates to the permissioned L1 chain.",
         },
     ],
     sections: [
@@ -188,6 +188,17 @@ const bsquared: LayerProject = {
                     title: "Bsquared Network does not contribute to the security budget",
                     content:
                         "Bsquared Network’s current mainnet does not pay any fees to Bitcoin miners.",
+                },
+            ],
+        },
+        {
+            id: "notice",
+            title: "🚨 Project is not a sidesystem",
+            content: [
+                {
+                    title: "This project will be moved to the Alternative category",
+                    content:
+                        "Projects that do not meet our requirements to be considered a sidesystem will be moved to the Alternative category. They have until June 30th to implement the technical requirements to be considered a sidesystem.",
                 },
             ],
         },
@@ -230,8 +241,7 @@ const bsquared: LayerProject = {
             content: [
                 {
                     title: "Node software code is open-source",
-                    content:
-                        "The node software and Polygon zkEVM contracts are open-source. Its our understanding that these implementations of Polygon zkEVM and Ethermint have not been audited.",
+                    content: "The node software is open-source.",
                 },
             ],
         },
