@@ -14,6 +14,9 @@ import {
     TokenSnippet,
     ReviewSnippet,
     BitcoinSecuritySnippet,
+    TechnologySnippet,
+    UseCaseSnippet,
+    KnowledgeBitSnippet,
 } from "../props";
 
 const arbitrum: LayerProject = {
@@ -61,7 +64,7 @@ const arbitrum: LayerProject = {
         },
     ],
     description:
-        "Arbitrum is an Ethereum rollup that that supports a variety of wrapped BTC tokens.",
+        "Arbitrum is an Ethereum rollup that supports a variety of wrapped BTC tokens.",
     riskAnalysis: [
         {
             category: RiskCategory.BtcCustody,
@@ -83,7 +86,7 @@ const arbitrum: LayerProject = {
                     infrastructureSlug: "threshold-tbtc",
                     score: 0,
                     tier: RiskFactor.High,
-                    title: TokenSnippet.ThresholdtBTC,
+                    title: TokenSnippet.FederationPeg,
                     content: `${TokenSnippet.ThresholdtBTC}\n\nThis bridge is managed by a 9 member federation. Bitcoin users trust that 6 of the 9 members of this federation do not collude and steal user funds.`,
                 },
                 {
@@ -92,7 +95,7 @@ const arbitrum: LayerProject = {
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: TokenSnippet.CustodianPeg,
-                    content: TokenSnippet.CoinbasecbBTC
+                    content: `${TokenSnippet.CoinbasecbBTC}`,
                 },
                 {
                     name: "Solv SolvBTC",
@@ -100,7 +103,7 @@ const arbitrum: LayerProject = {
                     score: 0,
                     tier: RiskFactor.UnderReview,
                     title: TokenSnippet.CustodianPeg,
-                    content: TokenSnippet.SolvBTC
+                    content: `${TokenSnippet.SolvBTC}\n\n${TokenSnippet.smartcontractreview}`
                 },
                 {
                     name: "Bedrock uniBTC",
@@ -108,7 +111,7 @@ const arbitrum: LayerProject = {
                     score: 0,
                     tier: RiskFactor.UnderReview,
                     title: TokenSnippet.CustodianPeg,
-                    content: TokenSnippet.BedrockUniBTC
+                    content: `${TokenSnippet.BedrockUniBTC}\n\n${TokenSnippet.smartcontractreview}`
                 },
                 {
                     name: "Solv SolvBTCBBN",
@@ -116,7 +119,7 @@ const arbitrum: LayerProject = {
                     score: 0,
                     tier: RiskFactor.UnderReview,
                     title: TokenSnippet.CustodianPeg,
-                    content: TokenSnippet.SolvBTCBBN,
+                    content: `${TokenSnippet.SolvBTCBBN}\n\n${TokenSnippet.smartcontractreview}`
                 },
                 {
                     name: "Solv SolvBTC.ENA",
@@ -132,7 +135,7 @@ const arbitrum: LayerProject = {
                     score: 0,
                     tier: RiskFactor.UnderReview,
                     title: TokenSnippet.CustodianPeg,
-                    content: TokenSnippet.SolvBTC
+                    content: `${TokenSnippet.LorenzostBTC}\n\n${TokenSnippet.smartcontractreview}`
                 },
                 {
                     name: "iBTC",
@@ -140,7 +143,7 @@ const arbitrum: LayerProject = {
                     score: 0,
                     tier: RiskFactor.UnderReview,
                     title: TokenSnippet.UnderReview,
-                    content: TokenSnippet.ibtcnetworkibtc,
+                    content: `${TokenSnippet.ibtcnetworkibtc}\n\n${TokenSnippet.smartcontractreview}`
                 },
                 {
                     name: "Avalanche BTCb",
@@ -148,7 +151,7 @@ const arbitrum: LayerProject = {
                     score: 0,
                     tier: RiskFactor.UnderReview,
                     title: TokenSnippet.UnderReview,
-                    content: TokenSnippet.AvalancheBTCb,
+                    content: `${TokenSnippet.AvalancheBTCb}\n\n${TokenSnippet.smartcontractreview}`
                 },
                 {
                     name: "Babypie mBTC",
@@ -206,12 +209,26 @@ const arbitrum: LayerProject = {
             ],
         },
         {
-            id: "underreview",
-            title: "Further sections under review",
+            id: "technology",
+            title: "Technology",
             content: [
                 {
-                    content:
-                        "Aspects related to bitcoin security, relevant technologies, and some two-way pegs have not been reviewed.\n\nThey will be reviewed by our team soon.",
+                    title: "Ethereum Virtual Machine",
+                    content: TechnologySnippet.EVM,
+                },
+                {
+                    title: "Fault Proofs (a.k.a Fraud Proofs)",
+                    content: TechnologySnippet.FaultProofs,
+                },
+            ],
+        },
+        {
+            id: "usecases",
+            title: "Use Cases",
+            content: [
+                {
+                    title: "Onchain applications",
+                    content: UseCaseSnippet.OnchainApps,
                 },
             ],
         },
@@ -220,8 +237,7 @@ const arbitrum: LayerProject = {
             title: "Knowledge Bits",
             content: [
                 {
-                    content:
-                        "[L2Beat's review of Arbitrum from the lens of an Ethereum L2](https://l2beat.com/scaling/projects/arbitrum)",
+                    content: `${KnowledgeBitSnippet.EthereumL2}`
                 },
             ],
         },
