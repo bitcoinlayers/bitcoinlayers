@@ -87,7 +87,7 @@ const arbitrum: LayerProject = {
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: TokenSnippet.CustodianPeg,
-                    content: TokenSnippet.BitGowBTC
+                    content: TokenSnippet.BitGowBTC,
                 },
                 {
                     name: "cbBTC",
@@ -103,7 +103,7 @@ const arbitrum: LayerProject = {
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: TokenSnippet.CustodianPeg,
-                    content: `${TokenSnippet.SolvBTC}\n\n${TokenSnippet.smartcontractreview}`
+                    content: `${TokenSnippet.SolvBTC}\n\n${TokenSnippet.smartcontractreview}`,
                 },
                 {
                     name: "Bedrock uniBTC",
@@ -111,7 +111,7 @@ const arbitrum: LayerProject = {
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: TokenSnippet.CustodianPeg,
-                    content: `${TokenSnippet.BedrockUniBTC}\n\n${TokenSnippet.smartcontractreview}`
+                    content: `${TokenSnippet.BedrockUniBTC}\n\n${TokenSnippet.smartcontractreview}`,
                 },
                 {
                     name: "Solv SolvBTCBBN",
@@ -119,7 +119,7 @@ const arbitrum: LayerProject = {
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: TokenSnippet.CustodianPeg,
-                    content: `${TokenSnippet.SolvBTCBBN}\n\n${TokenSnippet.smartcontractreview}`
+                    content: `${TokenSnippet.SolvBTCBBN}\n\n${TokenSnippet.smartcontractreview}`,
                 },
                 {
                     name: "Solv SolvBTC.ENA",
@@ -135,7 +135,7 @@ const arbitrum: LayerProject = {
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: TokenSnippet.CustodianPeg,
-                    content: `${TokenSnippet.LorenzostBTC}\n\n${TokenSnippet.smartcontractreview}`
+                    content: `${TokenSnippet.LorenzostBTC}\n\n${TokenSnippet.smartcontractreview}`,
                 },
                 {
                     name: "iBTC",
@@ -143,7 +143,7 @@ const arbitrum: LayerProject = {
                     score: 0,
                     tier: RiskFactor.UnderReview,
                     title: TokenSnippet.UnderReview,
-                    content: `${TokenSnippet.ibtcnetworkibtc}\n\n${TokenSnippet.smartcontractreview}`
+                    content: `${TokenSnippet.ibtcnetworkibtc}\n\n${TokenSnippet.smartcontractreview}`,
                 },
                 {
                     name: "Avalanche BTCb",
@@ -151,7 +151,7 @@ const arbitrum: LayerProject = {
                     score: 0,
                     tier: RiskFactor.High,
                     title: TokenSnippet.FederationPeg,
-                    content: `${TokenSnippet.AvalancheBTCb}\n\n${TokenSnippet.smartcontractreview}`
+                    content: `${TokenSnippet.AvalancheBTCb}\n\n${TokenSnippet.smartcontractreview}`,
                 },
                 {
                     name: "Babypie mBTC",
@@ -168,21 +168,21 @@ const arbitrum: LayerProject = {
             score: 0,
             tier: RiskFactor.Medium,
             title: "Data is stored and made available by Ethereum full nodes",
-            content: ReviewSnippet.EthereumRollupDA
+            content: ReviewSnippet.EthereumRollupDA,
         },
         {
             category: RiskCategory.NetworkOperators,
             score: 0,
             tier: RiskFactor.UnderReview,
             title: "Arbitrum blocks are produced and proposed by a centralized operator, but users can become their own block producer in the event of censorship or liveness failures",
-            content: ReviewSnippet.SelfProposeMainAlt
+            content: ReviewSnippet.SelfProposeMainAlt,
         },
         {
             category: RiskCategory.FinalityGuarantees,
             score: 0,
             tier: RiskFactor.UnderReview,
             title: "Arbitrum state transitions finalize on Ethereum. 14 whitelisted validators are able to propose state transitions and submit fault proofs",
-            content: ReviewSnippet.FinalityAltRollupFederationFraudProofs
+            content: ReviewSnippet.FinalityAltRollupFederationFraudProofs,
         },
     ],
     sections: [
@@ -192,19 +192,19 @@ const arbitrum: LayerProject = {
             content: [
                 {
                     title: "Arbitrum does not inherit any security from Bitcoin",
-                    content: BitcoinSecuritySnippet.NoSecurity
+                    content: BitcoinSecuritySnippet.NoSecurity,
                 },
                 {
                     title: "ETH token used to pay fees",
-                    content: BitcoinSecuritySnippet.AltTokenFees
+                    content: BitcoinSecuritySnippet.AltTokenFees,
                 },
                 {
                     title: "No MEV introduced to Bitcoin",
-                    content: BitcoinSecuritySnippet.CentralizedSequencerMEV
+                    content: BitcoinSecuritySnippet.CentralizedSequencerMEV,
                 },
                 {
                     title: "Arbitrum does not contribute to the security budget",
-                    content: BitcoinSecuritySnippet.NoSecurity
+                    content: BitcoinSecuritySnippet.NoSecurity,
                 },
             ],
         },
@@ -237,7 +237,7 @@ const arbitrum: LayerProject = {
             title: "Knowledge Bits",
             content: [
                 {
-                    content: `${KnowledgeBitSnippet.EthereumL2}`
+                    content: `${KnowledgeBitSnippet.EthereumL2}`,
                 },
             ],
         },

@@ -174,9 +174,11 @@ export default function LayerTVLChart() {
                 return itemDate >= startDate && itemDate <= currentDate;
             }) || [];
 
-        const tvl = tokens.reduce((acc, token) => {
+        const tvl = [
+            ...new Set(data?.map((item) => item.identifier) || []),
+        ].reduce((acc, token) => {
             const lastEntry = filteredData
-                .filter((item) => item.token_name === token)
+                .filter((item) => item.identifier === token)
                 .sort(
                     (a, b) =>
                         new Date(b.date).getTime() - new Date(a.date).getTime(),
@@ -184,7 +186,9 @@ export default function LayerTVLChart() {
             return acc + (lastEntry?.amount || 0);
         }, 0);
 
-        return { TVL: tvl };
+        return {
+            TVL: tvl,
+        };
     }, [data, tokens, dateRange]);
 
     if (!data || data.length === 0) return null;
