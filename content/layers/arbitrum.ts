@@ -159,7 +159,7 @@ const arbitrum: LayerProject = {
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: TokenSnippet.CustodianPeg,
-                    content: `TokenSnippet.FireBTC,\n\n${TokenSnippet.smartcontractreview}`,
+                    content: `${TokenSnippet.FireBTC},\n\n${TokenSnippet.smartcontractreview}`,
                 },
                 {
                     name: "Babypie mBTC",
@@ -167,7 +167,7 @@ const arbitrum: LayerProject = {
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: TokenSnippet.CustodianPeg,
-                    content: `TokenSnippet.babypie,\n\n${TokenSnippet.smartcontractreview}`,
+                    content: `${TokenSnippet.babypie},\n\n${TokenSnippet.smartcontractreview}`,
                 },
                 {
                     name: "xLink aBTC",
@@ -175,7 +175,7 @@ const arbitrum: LayerProject = {
                     score: 0,
                     tier: RiskFactor.UnderReview,
                     title: TokenSnippet.UnderReview,
-                    content: `TokenSnippet.xlink,\n\n${TokenSnippet.smartcontractreview}`,
+                    content: `${TokenSnippet.xlink},\n\n${TokenSnippet.smartcontractreview}`,
                 },
             ],
         },
