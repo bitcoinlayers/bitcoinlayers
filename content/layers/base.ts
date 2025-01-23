@@ -86,12 +86,28 @@ const base: LayerProject = {
                         `${TokenSnippet.ThresholdtBTC}\n\nThis bridge is managed by a 9 member federation. Bitcoin users trust that 6 of the 9 members of this federation do not collude and steal user funds.`,
                 },
                 {
+                    name: "BitGo wBTC",
+                    infrastructureSlug: "bitgo-wbtc",
+                    score: 0,
+                    tier: RiskFactor.VeryHigh,
+                    title: TokenSnippet.CustodianPeg,
+                    content: TokenSnippet.BitGowBTC,
+                },
+                {
+                    name: "Lombard LBTC",
+                    infrastructureSlug: "lombard-lbtc",
+                    score: 0,
+                    tier: RiskFactor.UnderReview,
+                    title: TokenSnippet.UnderReview,
+                    content: `${TokenSnippet.LombardLBTC}\n\n${TokenSnippet.smartcontractreview}`,
+                },
+                {
                     name: "iBTC",
                     infrastructureSlug: "ibtc",
                     score: 0,
                     tier: RiskFactor.UnderReview,
                     title: TokenSnippet.UnderReview,
-                    content: TokenSnippet.ibtcnetworkibtc
+                    content: TokenSnippet.ibtcnetworkibtc,
                 },
                 {
                     name: "Solv SolvBTC",
@@ -159,15 +175,6 @@ const base: LayerProject = {
                 {
                     content:
                         "Aspects related to bitcoin security, relevant technologies, and some two-way pegs have not been reviewed.\n\nThey will be reviewed by our team soon.",
-                },
-            ],
-        },
-        {
-            id: "additionalconsiderations",
-            title: "Additional Considerations",
-            content: [
-                {
-                    content: "The creator of both cbBTC and Base is Coinbase.",
                 },
             ],
         },
