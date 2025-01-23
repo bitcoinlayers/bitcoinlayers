@@ -11,6 +11,7 @@ import {
     ContentSection,
     RiskCategory,
     TokenSnippet,
+    ReviewSnippet,
 } from "../props";
 
 const base: LayerProject = {
@@ -58,7 +59,7 @@ const base: LayerProject = {
         },
     ],
     description:
-        "Arbitrum is an Ethereum rollup that that supports a variety of wrapped BTC tokens.",
+        "Base is an Ethereum rollup that that supports a variety of wrapped BTC tokens.",
     riskAnalysis: [
         {
             category: RiskCategory.BtcCustody,
@@ -72,9 +73,8 @@ const base: LayerProject = {
                     infrastructureSlug: "coinbase-cbbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: "cbBTC is managed by a centralized custodian",
-                    content:
-                        "cbBTC on Base is backed Coinbase. This custodian is responsible for custodying BTC that backs cbBTC on its various networks. Users trust Coinbase to not misappropriate the funds backing cbBTC.\n\nIn addition to custodying funds backing cbBTC, Coinbase can censor users from using cbBTC and maintains unilateral control of cbBTC's smart contracts.\n\ncbBTC is natively minted on Base.",
+                    title: TokenSnippet.CustodianPeg,
+                    content: TokenSnippet.CoinbasecbBTC
                 },
                 {
                     name: "Threshold tBTC",
@@ -83,7 +83,7 @@ const base: LayerProject = {
                     tier: RiskFactor.High,
                     title: "Users trust the Threshold Network to keep tBTC backed and a 9 member federation to manage tBTC's bridge between Base and Ethereum",
                     content:
-                        "tBTC's peg with bitcoin is managed by the Threshold Network, a distributed, but permissioned, two-way peg. tBTC is minted on Ethereum and then bridged to Arbitrum via its own custom bridge contract.\n\nThis bridge is managed by a 6/9 federation. Bitcoin users trust that 6 of the 9 members of this federation do not collude and steal user funds.",
+                        `${TokenSnippet.ThresholdtBTC}\n\nThis bridge is managed by a 9 member federation. Bitcoin users trust that 6 of the 9 members of this federation do not collude and steal user funds.`,
                 },
                 {
                     name: "iBTC",
@@ -91,24 +91,23 @@ const base: LayerProject = {
                     score: 0,
                     tier: RiskFactor.UnderReview,
                     title: TokenSnippet.UnderReview,
-                    content:
-                        "iBTC is a two-way peg that leverages DLC contracts between various institutions and a federated attestor network. We are reviewing its trust assumptions.",
+                    content: TokenSnippet.ibtcnetworkibtc
                 },
                 {
                     name: "Solv SolvBTC",
                     infrastructureSlug: "solv-solvbtc",
                     score: 0,
-                    tier: RiskFactor.UnderReview,
-                    title: TokenSnippet.UnderReview,
-                    content: "This two-way peg is under review",
+                    tier: RiskFactor.VeryHigh,
+                    title: TokenSnippet.CustodianDerivative,
+                    content: `${TokenSnippet.SolvBTC}\n\n${TokenSnippet.smartcontractreview}`,
                 },
                 {
                     name: "Pump BTC",
                     infrastructureSlug: "pump-btc",
                     score: 0,
-                    tier: RiskFactor.UnderReview,
-                    title: TokenSnippet.UnderReview,
-                    content: "This two-way peg is under review",
+                    tier: RiskFactor.VeryHigh,
+                    title: TokenSnippet.CustodianDerivative,
+                    content: `${TokenSnippet.PumpBTC}\n\n${TokenSnippet.smartcontractreview}`,
                 },
                 {
                     name: "AxlBTC",
@@ -122,10 +121,9 @@ const base: LayerProject = {
                     name: "Solv SolvBTCBBN",
                     infrastructureSlug: "solv-solvbtcbbn",
                     score: 0,
-                    tier: RiskFactor.UnderReview,
-                    title: TokenSnippet.UnderReview,
-                    content:
-                        "SolvBTCBBN is a derivative of Solv BTC. We are reviewing its trust assumptions.",
+                    tier: RiskFactor.VeryHigh,
+                    title: TokenSnippet.CustodianDerivative,
+                    content: `${TokenSnippet.SolvBTCBBN}\n\n${TokenSnippet.smartcontractreview}`,
                 },
             ],
         },
@@ -134,8 +132,7 @@ const base: LayerProject = {
             score: 0,
             tier: RiskFactor.Medium,
             title: "Data is stored and made available by Ethereum full nodes",
-            content:
-                "The data for Base's state is stored on the Ethereum blockchain. Anyone can run an Ethereum node and verify the state of Base.",
+            content: ReviewSnippet.EthereumRollupDA,
         },
         {
             category: RiskCategory.NetworkOperators,
