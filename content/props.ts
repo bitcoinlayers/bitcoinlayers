@@ -161,6 +161,10 @@ export enum UseCaseSnippet { //TODO: Janusz to add more here
 export enum KnowledgeBitSnippet { //TODO: Janusz to add more here
     EthereumL2 = "This network is a layer 2 for Ethereum. For a view into the technology from an Ethereum perspective, head to [L2Beat](https://www.L2Beat.com) for their review.",
 }
+export enum AdditionalSnippet { //TODO: Janusz to add more here
+    UpgradeableContractsCentralizedAndNoExit = "The contracts related to this project are immediately upgradeable by a centralized party. These contracts affect the project's chain and may affect specific two-way peg implementations.\n\nIn case of an malicious upgrade, there is no exit delay and users are unable to leave the chain.",
+    UpgradeableContractsFederatedAndExit = "The contracts related to this project are immediately upgradeable by a federation. These contracts affect the project's chain and may affect specific two-way peg implementations.\n\nIn case of an malicious upgrade by this federation, there is no exit delay and users are unable to leave the chain.",
+}
 
 export interface Peg {
     name: string;

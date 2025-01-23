@@ -17,6 +17,7 @@ import {
     TechnologySnippet,
     UseCaseSnippet,
     KnowledgeBitSnippet,
+    AdditionalSnippet,
 } from "../props";
 
 const arbitrum: LayerProject = {
@@ -202,6 +203,16 @@ const arbitrum: LayerProject = {
         },
     ],
     sections: [
+        {
+            id: "additionalconsiderations",
+            title: "Additional Considerations",
+            content: [
+                {
+                    title: "⚠️ A federation can immediately upgrade relevant contracts. This affects some two-way peg implementations",
+                    content: AdditionalSnippet.UpgradeableContractsCentralizedAndNoExit,
+                },
+            ],
+        },
         {
             id: "bitcoinsecurity",
             title: "Bitcoin Security",

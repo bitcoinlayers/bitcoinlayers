@@ -12,6 +12,11 @@ import {
     RiskCategory,
     TokenSnippet,
     ReviewSnippet,
+    UseCaseSnippet,
+    TechnologySnippet,
+    KnowledgeBitSnippet,
+    BitcoinSecuritySnippet,
+    AdditionalSnippet,
 } from "../props";
 
 const base: LayerProject = {
@@ -28,8 +33,8 @@ const base: LayerProject = {
     riskFactors: [
         RiskFactor.VeryHigh,
         RiskFactor.Medium,
-        RiskFactor.UnderReview,
-        RiskFactor.UnderReview,
+        RiskFactor.Medium,
+        RiskFactor.Medium,
     ],
     btcLocked: 0,
     nativeToken: "-",
@@ -153,28 +158,81 @@ const base: LayerProject = {
         {
             category: RiskCategory.NetworkOperators,
             score: 0,
-            tier: RiskFactor.UnderReview,
+            tier: RiskFactor.Medium,
             title: "Base blocks are produced and proposed by a centralized operator, but users can become their own block producer in the event of censorship or liveness failures",
-            content:
-                "Currently, Base's sequencer is managed by one entity. The Base sequencer can censor transactions and can also cause liveness failures if it goes down. Users can bypass the sequencer and send their transactions directly to the Ethereum L1.\n\nWe are reviewing if users can become their own block producer in Base's design.",
+            content: ReviewSnippet.SelfProposeMainAlt,
         },
         {
             category: RiskCategory.FinalityGuarantees,
             score: 0,
-            tier: RiskFactor.UnderReview,
+            tier: RiskFactor.Medium,
             title: "Base state transitions finalize on Ethereum",
-            content:
-                "We are reviewing the Base validator set and how state transitions are proposed and finalized.",
+            content: ReviewSnippet.FinalityAltRollupPermissionlessFraudProofs,
         },
     ],
     sections: [
         {
-            id: "underreview",
-            title: "Further sections under review",
+            id: "additionalconsiderations",
+            title: "Additional Considerations",
             content: [
                 {
-                    content:
-                        "Aspects related to bitcoin security, relevant technologies, and some two-way pegs have not been reviewed.\n\nThey will be reviewed by our team soon.",
+                    title: "🚨 A centralized party can immediately upgrade relevant contracts. This affects some two-way peg implementations",
+                    content: AdditionalSnippet.UpgradeableContractsCentralizedAndNoExit,
+                },
+            ],
+        },
+        {
+            id: "bitcoinsecurity",
+            title: "Bitcoin Security",
+            content: [
+                {
+                    title: "Base does not inherit any security from Bitcoin",
+                    content: BitcoinSecuritySnippet.NoSecurity,
+                },
+                {
+                    title: "ETH token used to pay fees",
+                    content: BitcoinSecuritySnippet.AltTokenFees,
+                },
+                {
+                    title: "No MEV introduced to Bitcoin",
+                    content: BitcoinSecuritySnippet.CentralizedSequencerMEV,
+                },
+                {
+                    title: "Base does not contribute to the security budget",
+                    content: BitcoinSecuritySnippet.NoSecurity,
+                },
+            ],
+        },
+        {
+            id: "technology",
+            title: "Technology",
+            content: [
+                {
+                    title: "Ethereum Virtual Machine",
+                    content: TechnologySnippet.EVM,
+                },
+                {
+                    title: "Fault Proofs (a.k.a Fraud Proofs)",
+                    content: TechnologySnippet.FaultProofs,
+                },
+            ],
+        },
+        {
+            id: "usecases",
+            title: "Use Cases",
+            content: [
+                {
+                    title: "Onchain applications",
+                    content: UseCaseSnippet.OnchainApps,
+                },
+            ],
+        },
+        {
+            id: "knowledgebits",
+            title: "Knowledge Bits",
+            content: [
+                {
+                    content: `${KnowledgeBitSnippet.EthereumL2}`,
                 },
             ],
         },
