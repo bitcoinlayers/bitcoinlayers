@@ -107,8 +107,8 @@ const corn: LayerProject = {
         {
             category: RiskCategory.NetworkOperators,
             score: 0,
-            tier: RiskFactor.VeryHigh,
-            title: "The Corn network is operated and validated by permissioned entities",
+            tier: RiskFactor.UnderReview,
+            title: "The Corn network is operated and validated by permissioned entities. We are reviewing if users can self-propose their own state transitions if operators go offline",
             content:
                 "The Corn Network is operated by permissioned entities. Blocks are constructed by a single sequencer who is responsible for building Corn blocks and submitting the latest hash of these batches, and a corresponding Data Availability Certificate, to Ethereum.\n\nA centralized proposer is responsible for updating the system by proposing a new state root based on the data posted to Ethereum. This proposal requires 0.1 ETH stake.\n\nCurrently, producing blocks and state root proposals are done by two centralized entities. Their addresses are:\n\n[Sequencer address](https://etherscan.io/address/0x9298413c781c241af6f6733b7df00de5d4a42d93)\n\n[Proposer address](https://etherscan.io/address/0xe9d1e89a73d7608a45f3cdb5a898dfd9e3a3ba42)",
         },
