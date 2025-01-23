@@ -159,7 +159,7 @@ const base: LayerProject = {
             category: RiskCategory.NetworkOperators,
             score: 0,
             tier: RiskFactor.Medium,
-            title: "Base blocks are produced and proposed by a centralized operator, but users can become their own block producer in the event of censorship or liveness failures",
+            title: "Base blocks are produced by a centralized operator, but users can become their own block producer in the event of censorship or liveness failures",
             content: ReviewSnippet.SelfProposeMainAlt,
         },
         {
