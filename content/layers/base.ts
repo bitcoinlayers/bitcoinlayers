@@ -81,7 +81,7 @@ const base: LayerProject = {
                     infrastructureSlug: "threshold-tbtc",
                     score: 0,
                     tier: RiskFactor.High,
-                    title: "Users trust the Threshold Network to keep tBTC backed and a 9 member federation to manage tBTC's bridge between Base and Ethereum",
+                    title: TokenSnippet.FederationPeg,
                     content:
                         `${TokenSnippet.ThresholdtBTC}\n\nThis bridge is managed by a 9 member federation. Bitcoin users trust that 6 of the 9 members of this federation do not collude and steal user funds.`,
                 },
@@ -114,7 +114,7 @@ const base: LayerProject = {
                     infrastructureSlug: "solv-solvbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet.CustodianDerivative,
+                    title: TokenSnippet.CustodianPeg,
                     content: `${TokenSnippet.SolvBTC}\n\n${TokenSnippet.smartcontractreview}`,
                 },
                 {
@@ -122,7 +122,7 @@ const base: LayerProject = {
                     infrastructureSlug: "pump-btc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet.CustodianDerivative,
+                    title: TokenSnippet.CustodianPeg,
                     content: `${TokenSnippet.PumpBTC}\n\n${TokenSnippet.smartcontractreview}`,
                 },
                 {

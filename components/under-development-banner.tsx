@@ -13,7 +13,7 @@ interface Props {
 }
 
 export default function UnderDevelopmentBanner({
-    title = "The Crosschain BTC module of Bitcoin Layers is under development.",
+    title = "The BTC wrapper module of Bitcoin Layers is under development.",
     description = "We have not yet implemented our proof-of-reserves and therefore cannot assure you that wrappers are fully backed, 1:1, with BTC. Please use caution interacting with these wrapped BTC assets. Additionally, there may be incomplete or outdated research.",
     linkText = "Join our telegram",
     linkHref = "https://t.me/+8rv-1I2gkmQ4ZmJh",
