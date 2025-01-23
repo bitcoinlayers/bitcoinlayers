@@ -127,7 +127,7 @@ const arbitrum: LayerProject = {
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: TokenSnippet.CustodianDerivative,
-                    content: `TokenSnippet.SolvBTCENA,\n\n${TokenSnippet.smartcontractreview}`,
+                    content: `${TokenSnippet.SolvBTCENA},\n\n${TokenSnippet.smartcontractreview}`,
                 },
                 {
                     name: "Lorenzo stBTC",
