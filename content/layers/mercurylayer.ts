@@ -131,7 +131,7 @@ const mercurylayer: LayerProject = {
                 {
                     title: "Medium score assigned to Mercury Layer custody mechanism",
                     content:
-                        "Mercury Layer has been assigned a medium score for custody in the project assessment page. This is due to situational differences in custody. As noted in BTC Custody, a user retains custody of their funds when depositing into the protocol. But as noted in the finality section, they trust an honest operator to delete their previous keyshare.\n\nIf the operator does not do this, they can collude with a prior owner of the statchain UTXO to steal a user's funds",
+                        "Mercury Layer has been assigned a medium score for custody in the project assessment page. This is due to situational differences in custody. As noted in BTC Custody, a user retains custody of their funds when depositing into the protocol. But as noted in the finality section, they trust an honest operator to delete their previous keyshare.\n\nIf the operator does not do this, they can collude with a prior owner of the statechain UTXO to steal a user's funds",
                 },
                 {
                     title: "Statechains only allow for fixed-value transfers",
