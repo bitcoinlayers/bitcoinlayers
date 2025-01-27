@@ -79,7 +79,7 @@ const base: LayerProject = {
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: TokenSnippet.CustodianPeg,
-                    content: TokenSnippet.CoinbasecbBTC
+                    content: TokenSnippet.CoinbasecbBTC,
                 },
                 {
                     name: "Threshold tBTC",
@@ -87,8 +87,7 @@ const base: LayerProject = {
                     score: 0,
                     tier: RiskFactor.High,
                     title: TokenSnippet.FederationPeg,
-                    content:
-                        `${TokenSnippet.ThresholdtBTC}\n\nThis bridge is managed by a 9 member federation. Bitcoin users trust that 6 of the 9 members of this federation do not collude and steal user funds.`,
+                    content: `${TokenSnippet.ThresholdtBTC}\n\nThis bridge is managed by a 9 member federation. Bitcoin users trust that 6 of the 9 members of this federation do not collude and steal user funds.`,
                 },
                 {
                     name: "BitGo wBTC",
@@ -177,7 +176,8 @@ const base: LayerProject = {
             content: [
                 {
                     title: "🚨 A centralized party can immediately upgrade relevant contracts. This affects some two-way peg implementations",
-                    content: AdditionalSnippet.UpgradeableContractsCentralizedAndNoExit,
+                    content:
+                        AdditionalSnippet.UpgradeableContractsCentralizedAndNoExit,
                 },
             ],
         },

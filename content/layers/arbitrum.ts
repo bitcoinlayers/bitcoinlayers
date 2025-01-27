@@ -209,7 +209,8 @@ const arbitrum: LayerProject = {
             content: [
                 {
                     title: "⚠️ A federation can immediately upgrade relevant contracts. This affects some two-way peg implementations",
-                    content: AdditionalSnippet.UpgradeableContractsCentralizedAndNoExit,
+                    content:
+                        AdditionalSnippet.UpgradeableContractsCentralizedAndNoExit,
                 },
             ],
         },
