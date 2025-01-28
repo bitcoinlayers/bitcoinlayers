@@ -6,6 +6,7 @@
 @tailwind utilities;
 
 @layer components {
+
     html,
     body {
         scroll-behavior: smooth;
@@ -249,6 +250,16 @@ section {
         --chart-allo-allobtc: 33 93% 54%;
         /* Staking */
         --chart-babylon-staked-btc: 27 90% 56%;
+        /* Risk */
+        --risk-background-low: 100 77% 44%;
+        --risk-background-medium: 34 95% 50%;
+        --risk-background-high: 359 100% 65%;
+        --risk-background-critical: 1 98% 81%;
+
+        --risk-icon-low: 104 57% 20%;
+        --risk-icon-medium: 34 95% 50%;
+        --risk-icon-high: 359 100% 65%;
+        --risk-icon-critical: 359 88 42%;
     }
 
     .dark {
@@ -303,6 +314,16 @@ section {
         --chart-rollux: 24 100% 73%;
         --chart-rootstock: 229 71% 67%;
         --chart-stacks: 271 100% 81%;
+        /* Risk */
+        --risk-background-low: 104 57% 20%;
+        --risk-background-medium: 18 81% 26%;
+        --risk-background-high: 359 74% 31%;
+        --risk-background-critical: 359 88 42%;
+
+        --risk-icon-low: 100 77% 44%;
+        --risk-icon-medium: 34 95% 50%;
+        --risk-icon-high: 359 100% 65%;
+        --risk-icon-critical: 1 98% 81%;
     }
 }
 
@@ -317,6 +338,7 @@ section {
 }
 
 @layer utilities {
+
     .watermark,
     .watermark-agg {
         position: relative;
@@ -345,6 +367,7 @@ section {
     }
 
     @media (max-width: 1000px) {
+
         .watermark::after,
         .watermark-agg::after {
             top: 10%;

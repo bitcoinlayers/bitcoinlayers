@@ -23,15 +23,15 @@ export const getRiskColorText = (riskFactor: string) => {
 export const getRiskColorIcon = (riskFactor: string) => {
     switch (riskFactor) {
         case "Low":
-            return "var(--color-risk-low-icon)";
+            return "hsl(var(--risk-icon-low))";
         case "Medium":
-            return "var(--color-risk-medium-icon)";
+            return "hsl(var(--risk-icon-medium))";
         case "High":
-            return "var(--color-risk-high-icon)";
+            return "hsl(var(--risk-icon-high))";
         case "Very High":
             return "var(--color-risk-critical-icon)";
         case "Critical":
-            return "var(--color-risk-critical-icon)";
+            return "hsl(var(--risk-icon-critical))";
         case "Under Review":
             return "var(--color-icon-secondary)";
         case "Unverified":
@@ -44,15 +44,15 @@ export const getRiskColorIcon = (riskFactor: string) => {
 export const getRiskColorBackground = (riskFactor: string) => {
     switch (riskFactor) {
         case "Low":
-            return "var(--color-risk-low-bg)";
+            return "hsl(var(--risk-background-low))";
         case "Medium":
-            return "var(--color-risk-medium-bg)";
+            return "hsl(var(--risk-background-medium))";
         case "High":
-            return "var(--color-risk-high-bg)";
+            return "hsl(var(--risk-background-high))";
         case "Very High":
             return "var(--color-risk-critical-bg)";
         case "Critical":
-            return "var(--color-risk-critical-bg)";
+            return "hsl(var(--risk-background-critical))";
         case "Under Review":
             return "#d6d6d6";
         case "Unverified":
