@@ -50,7 +50,7 @@ const lombard: InfrastructureProject = {
         },
     ],
     description:
-        "Lombard offer a mechanism that enables users to deposit BTC into a smart contracts on Ethereum. Users receive a token representing BTC deposited on Babylon in exchange for their wrapped BTC token.",
+        "Lombard offer a mechanism that enables users to deposit BTC and receive a wrapped version of BTC that represents BTC staked into the Babylon protocol.",
     sections: [
         {
             id: "protocoltransparency",
