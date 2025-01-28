@@ -6,7 +6,6 @@
 @tailwind utilities;
 
 @layer components {
-
     html,
     body {
         scroll-behavior: smooth;
@@ -83,40 +82,6 @@
         background: hsl(var(--background));
         border-radius: 8px;
     }
-}
-
-section {
-    scroll-margin-top: 80px;
-}
-
-/* ::-webkit-scrollbar {
-    width: 8px;
-}
-::-webkit-scrollbar-track {
-    border-radius: 9999px;
-    background: #ececec;
-}
-::-webkit-scrollbar-thumb {
-    background: #d9d9d9;
-    border-radius: 9999px;
-} */
-
-:root {
-    --color-risk-low-bg: #dffbcc;
-    --color-risk-low-text: #3d9f11;
-    --color-risk-low-icon: #52c41a;
-    --color-risk-medium-bg: #feffc1;
-    --color-risk-medium-text: #d19d00;
-    --color-risk-medium-icon: #f4cd00;
-    --color-risk-high-bg: #ffdfdf;
-    --color-risk-high-text: #ed1517;
-    --color-risk-high-icon: #ed1517;
-    --color-risk-critical-bg: #ff9d9e;
-    --color-risk-critical-text: #a50f11;
-    --color-risk-critical-icon: #c80d0f;
-    --color-risk-unverified-bg: #ff9d9e;
-    --color-risk-unverified-text: #a50f11;
-    --color-risk-unverified-icon: #c80d0f;
 }
 
 @layer base {
@@ -251,15 +216,26 @@ section {
         /* Staking */
         --chart-babylon-staked-btc: 27 90% 56%;
         /* Risk */
-        --risk-background-low: 100 77% 44%;
-        --risk-background-medium: 34 95% 50%;
-        --risk-background-high: 359 100% 65%;
-        --risk-background-critical: 1 98% 81%;
+        --risk-background-under-review: 216 16.1% 93.9%;
+        --risk-background-low: 95 85% 89%;
+        --risk-background-medium: 61 96.7% 88%;
+        --risk-background-high: 45 100% 88.8%;
+        --risk-background-very-high: 0 100% 93.7%;
+        --risk-background-critical: 359 100% 80.8%;
 
-        --risk-icon-low: 104 57% 20%;
-        --risk-icon-medium: 34 95% 50%;
-        --risk-icon-high: 359 100% 65%;
-        --risk-icon-critical: 359 88 42%;
+        --risk-icon-under-review: 222 14.1% 66.7%;
+        --risk-icon-low: 100 76.6% 43.5%;
+        --risk-icon-medium: 52 93.4% 47.5%;
+        --risk-icon-high: 34 95.3% 50.2%;
+        --risk-icon-very-high: 359 100% 65.1%;
+        --risk-icon-critical: 359 87.8% 41.8%;
+
+        --risk-text-under-review: 227 12.8% 58.6%;
+        --risk-text-low: 101 80.7% 34.5%;
+        --risk-text-medium: 47 96.1% 40.4%;
+        --risk-text-high: 29 98.2% 43.7%;
+        --risk-text-very-high: 359 85.7% 50.6%;
+        --risk-text-critical: 359 83.3% 35.3%;
     }
 
     .dark {
@@ -315,15 +291,26 @@ section {
         --chart-rootstock: 229 71% 67%;
         --chart-stacks: 271 100% 81%;
         /* Risk */
-        --risk-background-low: 104 57% 20%;
-        --risk-background-medium: 18 81% 26%;
-        --risk-background-high: 359 74% 31%;
-        --risk-background-critical: 359 88 42%;
+        --risk-background-under-review: 228 8.6% 34.3%;
+        --risk-background-low: 104 57.3% 20.2%;
+        --risk-background-medium: 35 72.5% 25.7%;
+        --risk-background-high: 18 80.7% 26.5%;
+        --risk-background-very-high: 359 74.4% 30.6%;
+        --risk-background-critical: 359 87.8% 41.8%;
 
-        --risk-icon-low: 100 77% 44%;
-        --risk-icon-medium: 34 95% 50%;
-        --risk-icon-high: 359 100% 65%;
-        --risk-icon-critical: 1 98% 81%;
+        --risk-icon-under-review: 222 14.1% 66.7%;
+        --risk-icon-low: 100 76.6% 43.5%;
+        --risk-icon-medium: 52 93.4% 47.5%;
+        --risk-icon-high: 34 95.3% 50.2%;
+        --risk-icon-very-high: 359 100% 65.1%;
+        --risk-icon-critical: 359 87.8% 41.8%;
+
+        --risk-text-under-review: 217 15.8% 73.9%;
+        --risk-text-low: 99 74.4% 55.5%;
+        --risk-text-medium: 54 95.8% 52.9%;
+        --risk-text-high: 40 100% 56.3%;
+        --risk-text-very-high: 359 100% 69.6%;
+        --risk-text-critical: 359 85.7% 50.6%;
     }
 }
 
@@ -338,7 +325,6 @@ section {
 }
 
 @layer utilities {
-
     .watermark,
     .watermark-agg {
         position: relative;
@@ -367,7 +353,6 @@ section {
     }
 
     @media (max-width: 1000px) {
-
         .watermark::after,
         .watermark-agg::after {
             top: 10%;

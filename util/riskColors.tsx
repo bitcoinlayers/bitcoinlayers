@@ -2,19 +2,19 @@
 export const getRiskColorText = (riskFactor: string) => {
     switch (riskFactor) {
         case "Low":
-            return "var(--color-risk-low-text)";
+            return "hsl(var(--risk-text-low))";
         case "Medium":
-            return "var(--color-risk-medium-text)";
+            return "hsl(var(--risk-text-medium))";
         case "High":
-            return "var(--color-risk-high-text)";
+            return "hsl(var(--risk-text-high))";
         case "Very High":
-            return "var(--color-risk-critical-text)";
+            return "hsl(var(--risk-text-very-high))";
         case "Critical":
-            return "var(--color-risk-critical-text)";
+            return "hsl(var(--risk-text-critical))";
         case "Under Review":
-            return "var(--color-text-secondary)";
+            return "hsl(var(--risk-text-under-review))";
         case "Unverified":
-            return "var(--color-risk-unverified-text)";
+            return "var(--color-text-secondary)";
         default:
             return "var(--color-text-secondary)";
     }
@@ -29,13 +29,13 @@ export const getRiskColorIcon = (riskFactor: string) => {
         case "High":
             return "hsl(var(--risk-icon-high))";
         case "Very High":
-            return "var(--color-risk-critical-icon)";
+            return "hsl(var(--risk-icon-very-high))";
         case "Critical":
             return "hsl(var(--risk-icon-critical))";
         case "Under Review":
-            return "var(--color-icon-secondary)";
+            return "hsl(var(--risk-icon-under-review))";
         case "Unverified":
-            return "var(--color-risk-unverified-icon)";
+            return "var(--color-icon-secondary)";
         default:
             return "var(--color-icon-secondary)";
     }
@@ -50,15 +50,15 @@ export const getRiskColorBackground = (riskFactor: string) => {
         case "High":
             return "hsl(var(--risk-background-high))";
         case "Very High":
-            return "var(--color-risk-critical-bg)";
+            return "hsl(var(--risk-background-very-high))";
         case "Critical":
             return "hsl(var(--risk-background-critical))";
         case "Under Review":
-            return "#d6d6d6";
+            return "hsl(var(--risk-background-under-review))";
         case "Unverified":
-            return "var(--color-risk-unverified-bg)";
+            return "var(--color-background-secondary)";
         default:
-            return "#abadb1";
+            return "var(--color-background-secondary)";
     }
 };
 
