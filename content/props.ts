@@ -166,6 +166,16 @@ export enum AdditionalSnippet { //TODO: Janusz to add more here
     UpgradeableContractsFederatedAndExit = "The contracts related to this project are immediately upgradeable by a federation. These contracts affect the project's chain and may affect specific two-way peg implementations.\n\nIn case of an malicious upgrade by this federation, there is no exit delay and users are unable to leave the chain.",
 }
 
+export enum BTCWrapperTransparency { //TODO: Janusz to add more here
+    ProofofReservesYes = "The project provides active proof-of-reserves. The proof-of-reserves can be seen",
+    OperatorsDisclosedYes = "Fees to network operators are paid in an alternative token.",
+    OperatorsDisclosedNo = "Operators of the Lombard Consortium are not publicly disclosed",
+    WithdrawalsYes = "The network does not introduce any MEV on the Bitcoin L1. Users trust the sequencer to not reorder their transactions to extract MEV.",
+    ContractsYes = "Contracts related to the project are source viewable and verified.",
+    RedemptionsYes = "Redemptions are enabled. The project has documented how redemptions are processed in their documentation",
+    StakeAttestationsYes = "The network does not currently contribute to the Bitcoin security budget.",
+}
+
 export interface Peg {
     name: string;
     infrastructureSlug: string;
@@ -202,6 +212,9 @@ export enum AssessmentCategory {
     UserRisk = "User Risk",
     ThirdPartyStaking = "Third Party Staking",
     SelfCustodialStaking = "Self-custodial Staking",
+    SupplyIssuance = "Supply Issuance",
+    StakeAttestations = "Stake Attestations",
+    Governance = "Governance",
 }
 
 export interface AssessmentSection {

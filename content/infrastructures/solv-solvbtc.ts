@@ -7,6 +7,7 @@ import {
     Notice,
     Site,
     AssessmentCategory,
+    BTCWrapperTransparency,
 } from "../props";
 
 const solv: InfrastructureProject = {

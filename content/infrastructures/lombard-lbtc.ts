@@ -1,3 +1,4 @@
+import BtcCustody from "@/components/layer/risk-analysis/layer-btc-custody";
 import {
     InfrastructureProject,
     Purpose,
@@ -7,6 +8,7 @@ import {
     Notice,
     Site,
     AssessmentCategory,
+    BTCWrapperTransparency,
 } from "../props";
 
 const lombard: InfrastructureProject = {
@@ -51,23 +53,24 @@ const lombard: InfrastructureProject = {
         "Lombard offer a mechanism that enables users to deposit BTC into a smart contracts on Ethereum. Users receive a token representing BTC deposited on Babylon in exchange for their wrapped BTC token.",
     sections: [
         {
-            id: "audits",
-            title: "Smart Contracts & Audits",
+            id: "protocoltransparency",
+            title: "Protocol Transparency",
             content: [
                 {
-                    title: "Lombard's smart contracts have been audited.",
-                    content:
-                        "Lombard has published audit reports on its smart contracts here.\n\nThe code behind Lombard’s is also source viewable here.\n\n⚠️ Audits of smart contracts do not mean exploits are not possible. Users should not deposit more funds than they’re willing to lose.\n\nLombard's audits can be found [here](https://github.com/lombard-finance/evm-smart-contracts/tree/main/docs/audit).",
+                    title: "The protocol provides a public proof-of-reserve",
+                    content: "The project provides active proof-of-reserves. The proof-of-reserves can be seen [here](https://www.lombard.finance/por/). The proof-of-reserves is provided through an integration with [Redstone](https://docs.redstone.finance/docs/get-started/price-feeds/types-of-feeds/lombard/).\n\n⚠️ We have not reviewed the codebase behind this PoR integration.",
                 },
-            ],
-        },
-        {
-            id: "selfsubmit",
-            title: "Further sections to be reviewed",
-            content: [
                 {
-                    content:
-                        "Aspects related to BTC custody, key management, transaction signing, and redemptions have not been reviewed. We are currently reviewing these sections.",
+                    title: "External operators are not disclosed",
+                    content: `${BTCWrapperTransparency.OperatorsDisclosedNo}\n\nOperators undergo KYB checks and must be approved by members of the consortium network before entering the protocol.`,
+                },
+                {
+                    title: "Redemptions enabled and documented",
+                    content: BTCWrapperTransparency.RedemptionsYes,
+                },
+                {
+                    title: "Contracts are open-source and verified",
+                    content: BTCWrapperTransparency.ContractsYes,
                 },
             ],
         },
@@ -90,7 +93,31 @@ const lombard: InfrastructureProject = {
             tier: "",
             title: "Users trust a network of custodians with the custody of their BTC",
             content:
-                "When users deposit BTC into the Lombard protocol, their assets are held by a network of custodians. The BTC address is controlled by Lombard’s Security Consortium, a federated network of operators responsible for controlling funds in the deposit address.\n\n🚨 The members of the Lombard Security Consortium have not been publicly disclosed.",
+                "BTC backing Lombard LBTC is secured by a network of [five validators](https://etherscan.io/address/0xdad58DfA5c1a7a34419AFdBE1f0d610efeea95E4#readProxyContract) participating in Lombard’s security consortium. The security consortium participates in a CometBFT consensus protocol.\n\nAdding and removing validators from this consortium is handled by the current validator set within a given epoch.",
+        },
+        {
+            category: AssessmentCategory.SupplyIssuance,
+            score: 0,
+            tier: "",
+            title: "Issuing LBTC tokens requires consortium & bascule approval",
+            content:
+                "Issuing new LBTC tokens requires approval from the consortium validator set and Bascule bridge. If both of these parties approve a specific batch of mint requests, new LBTC tokens will be created.\n\nThe LBTC token contract owner can grant and revoke minting & burning permissions for actors who facilitate cross-chain transfers (e.g. Chainlink CCIP).",
+        },
+        {
+            category: AssessmentCategory.CensorshipResistance,
+            score: 0,
+            tier: "",
+            title: "Pause function on respective contracts",
+            content:
+                "Token contracts have a pause function implemented. The pauser role can pause transfers of LBTC unilaterally. The pauser role is held by a 2/8 [GnosisSafe](https://etherscan.io/address/0x32B8AE4eE1401E726aF0BC154D2165D0592584c4#readProxyContract).",
+        },
+        {
+            category: AssessmentCategory.Governance,
+            score: 0,
+            tier: "",
+            title: "Contracts are upgradeable after 1 hour delay. A centralized party can upgrade contracts and implement malicious upgrades",
+            content:
+                "Contracts are upgradeable after a 1 hour delay. Contract upgrades can be proposed and executed by a ⅗ [GnosisSafe](https://etherscan.io/address/0x251a604E8E8f6906d60f8dedC5aAeb8CD38F4892#readProxyContract).",
         },
     ],
 };
