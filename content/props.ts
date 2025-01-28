@@ -168,6 +168,7 @@ export enum AdditionalSnippet { //TODO: Janusz to add more here
 
 export enum BTCWrapperTransparency { //TODO: Janusz to add more here
     ProofofReservesYes = "The project provides active proof-of-reserves. The proof-of-reserves can be seen",
+    ProofofReservesNo = "The project has not published a Proof-of-Reserves. Users trust that the custodians holding native BTC backing the derivative asset to have ample reserves.",
     OperatorsDisclosedYes = "Fees to network operators are paid in an alternative token.",
     OperatorsDisclosedNo = "Operators of the Lombard Consortium are not publicly disclosed",
     WithdrawalsYes = "The network does not introduce any MEV on the Bitcoin L1. Users trust the sequencer to not reorder their transactions to extract MEV.",

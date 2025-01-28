@@ -115,7 +115,7 @@ const lombard: InfrastructureProject = {
             category: AssessmentCategory.Governance,
             score: 0,
             tier: "",
-            title: "Contracts are upgradeable after 1 hour delay. A centralized party can upgrade contracts and implement malicious upgrades",
+            title: "Contracts are upgradeable after 1 hour delay. A centralized party can upgrade contracts",
             content:
                 "Contracts are upgradeable after a 1 hour delay. Contract upgrades can be proposed and executed by a ⅗ [GnosisSafe](https://etherscan.io/address/0x251a604E8E8f6906d60f8dedC5aAeb8CD38F4892#readProxyContract).",
         },
