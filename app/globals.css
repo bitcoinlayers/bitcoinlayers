@@ -127,14 +127,16 @@
         --chart-bitlayer: 48 100% 50%;
         --chart-bob: 174 100% 29%;
         --chart-bsquared-network: 302 59% 65%;
+        --chart-bsquared: 302 59% 75%;
         --chart-btc: 14 99% 55%;
+        --chart-btc-multisig: 14 99% 55%;
         --chart-core: 20 100% 67%;
         --chart-internet-computer: 0 100% 60%;
         --chart-internetcomputer: 0 100% 60%;
         --chart-libre: 88 50% 63%;
         --chart-lightning: 0 59% 51%;
         --chart-liquid: 271 100% 81%;
-        --chart-mercury: 0 59% 61%;
+        --chart-mercury-layer: 0 59% 61%;
         --chart-merlin: 120 61% 44%;
         --chart-nomic: 45 100% 61%;
         --chart-rollux: 24 100% 73%;
