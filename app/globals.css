@@ -14,41 +14,53 @@
     .special_header {
         @apply font-playfair-display text-[80px] italic font-normal leading-[80px] tracking-[-1.6px];
     }
+
     .layer_header {
         @apply font-playfair-display lg:text-[100px] text-[32px] italic font-normal lg:leading-[80px] leading-10 tracking-[-1.6px] text-[#1a202c];
     }
+
     .body_section {
         @apply text-zinc-800 text-3xl font-light leading-9 mb-4 text-text_header;
     }
+
     .body_subsection {
         @apply text-zinc-800 text-base font-medium leading-normal mb-2 text-text_primary;
     }
+
     .body_paragraph {
         @apply mb-2 text-text_secondary;
     }
+
     .body_risksection {
         @apply text-zinc-800 text-2xl font-medium leading-normal mb-2 text-text_primary;
     }
+
     .table_header {
         @apply text-zinc-800 text-sm font-medium leading-tight mb-2 text-text_primary;
     }
+
     .text_table_important {
         color: #1a202c !important;
     }
+
     .text_table_body {
         @apply text-text_primary text-xs lg:text-base font-normal leading-tight;
     }
+
     .font_playfair {
         @apply font-playfair-display italic font-normal;
     }
+
     .no-scrollbar::-webkit-scrollbar {
         display: none;
     }
 
     /* Hide scrollbar for IE, Edge and Firefox */
     .no-scrollbar {
-        -ms-overflow-style: none; /* IE and Edge */
-        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none;
+        /* IE and Edge */
+        scrollbar-width: none;
+        /* Firefox */
     }
 
     .legend-scrollbar::-webkit-scrollbar {
@@ -133,11 +145,16 @@ section {
         --chart-3: 197 37% 24%;
         --chart-4: 43 74% 66%;
         --chart-5: 27 87% 67%;
-        --chart-6: 180 100% 35%; /* Deep Teal */
-        --chart-7: 30 90% 55%; /* Pumpkin Orange */
-        --chart-8: 270 70% 75%; /* Lavender */
-        --chart-9: 150 100% 35%; /* Lime Green */
-        --chart-10: 330 90% 45%; /* Deep Pink */
+        --chart-6: 180 100% 35%;
+        /* Deep Teal */
+        --chart-7: 30 90% 55%;
+        /* Pumpkin Orange */
+        --chart-8: 270 70% 75%;
+        /* Lavender */
+        --chart-9: 150 100% 35%;
+        /* Lime Green */
+        --chart-10: 330 90% 45%;
+        /* Deep Pink */
         /* Layers */
         --chart-ark: 14 100% 57%;
         --chart-bevm: 187 100% 42%;
@@ -259,11 +276,16 @@ section {
         --chart-3: 30 80% 55%;
         --chart-4: 280 65% 60%;
         --chart-5: 340 75% 55%;
-        --chart-6: 180 100% 35%; /* Deep Teal */
-        --chart-7: 30 90% 55%; /* Pumpkin Orange */
-        --chart-8: 270 70% 75%; /* Lavender */
-        --chart-9: 150 100% 35%; /* Lime Green */
-        --chart-10: 330 90% 45%; /* Deep Pink */
+        --chart-6: 180 100% 35%;
+        /* Deep Teal */
+        --chart-7: 30 90% 55%;
+        /* Pumpkin Orange */
+        --chart-8: 270 70% 75%;
+        /* Lavender */
+        --chart-9: 150 100% 35%;
+        /* Lime Green */
+        --chart-10: 330 90% 45%;
+        /* Deep Pink */
         --chart-ark: 14 100% 67%;
         --chart-bevm: 187 100% 52%;
         --chart-bitlayer: 48 100% 60%;
@@ -288,6 +310,7 @@ section {
     * {
         @apply border-border;
     }
+
     body {
         @apply bg-background text-foreground;
     }

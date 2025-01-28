@@ -19,7 +19,7 @@ import { useQueryState } from "nuqs";
 import { useMemo, useCallback } from "react";
 import { cn } from "@/lib/utils";
 import TVLDisplay from "./tvl-display";
-import ChartFilters from "./chart-filters";
+import ChartFilters from "@/components/charts/chart-filters";
 
 interface ChartProps {
     title: string;
@@ -27,7 +27,6 @@ interface ChartProps {
     itemNameKey: string;
     chartQueryParam?: string;
     rangeQueryParam?: string;
-    showDivisionButtons?: boolean;
     divisionDefaultValue?: "combined" | "separate";
     showLegend?: boolean;
     chartHeight?: string;
@@ -44,7 +43,6 @@ export default function AggregatedTVLChart({
     itemNameKey,
     chartQueryParam = "chart",
     rangeQueryParam = "range",
-    showDivisionButtons = true,
     divisionDefaultValue = "combined",
     showLegend = true,
     chartHeight = "h-96",
@@ -171,7 +169,7 @@ export default function AggregatedTVLChart({
         });
 
     return (
-        <Card className="bg-background space-y-4">
+        <Card className="bg-background space-y-4" id={title}>
             <CardHeader className="flex flex-col items-stretch space-y-0 border-b p-0 sm:flex-row">
                 <div className="flex flex-1 flex-col justify-center gap-1 px-6 py-5 sm:py-6">
                     <CardTitle className="flex font-semibold items-center gap-2">
@@ -273,11 +271,11 @@ export default function AggregatedTVLChart({
                 </ChartContainer>
                 <div className="flex mt-6">
                     <ChartFilters
-                        showDivisionButtons={showDivisionButtons}
                         chartType={chartType}
                         setChartType={setChartType}
                         dateRange={dateRange}
                         setDateRange={setDateRange}
+                        title={title}
                     />
                 </div>
             </CardContent>
