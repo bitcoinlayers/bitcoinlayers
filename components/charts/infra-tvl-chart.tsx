@@ -1,7 +1,7 @@
 "use client";
 
 import { CartesianGrid, XAxis, YAxis, AreaChart, Area } from "recharts";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import {
     ChartContainer,
     ChartLegend,
@@ -9,20 +9,13 @@ import {
     ChartTooltip,
     ChartTooltipContent,
 } from "@/components/ui/chart";
-import {
-    Select,
-    SelectContent,
-    SelectItem,
-    SelectTrigger,
-    SelectValue,
-} from "@/components/ui/select";
 import { useQueryState } from "nuqs";
 import { useCallback, useMemo, useState } from "react";
 import { useParams } from "next/navigation";
 import getHistoricalSuppliesByTokenimpl from "@/hooks/get-historical-supplies-by-tokenimpl";
 import getCurrentPrices from "@/hooks/get-current-prices";
 import { formatCurrency } from "@/util/formatCurrency";
-import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
+import ChartFilters from "./chart-filters";
 
 interface ProcessedData {
     date: string;
@@ -194,7 +187,7 @@ export default function InfraTVLChart() {
     if (!data || data.length === 0) return null;
 
     return (
-        <Card className="bg-background mb-6">
+        <Card className="bg-background mb-6" id="BTC Supply">
             <div className="w-full flex flex-col sm:flex-row border-y">
                 <div className="flex flex-col justify-center items-start py-4 sm:py-7 border-b sm:border-b-0 px-6 sm:w-3/4">
                     <div className="text-lg sm:text-xl">BTC Supply</div>
@@ -329,45 +322,13 @@ export default function InfraTVLChart() {
                     </AreaChart>
                 </ChartContainer>
                 <div className="flex mt-6">
-                    <ToggleGroup
-                        type="single"
-                        value={chartType}
-                        onValueChange={(value) =>
-                            value && value !== chartType && setChartType(value)
-                        }
-                        className="!space-x-0"
-                    >
-                        {["combined", "separate"].map((value) => (
-                            <ToggleGroupItem
-                                key={value}
-                                value={value}
-                                className="border text-xs"
-                                size="sm"
-                            >
-                                {value.charAt(0).toUpperCase() + value.slice(1)}
-                            </ToggleGroupItem>
-                        ))}
-                    </ToggleGroup>
-                    <Select value={dateRange} onValueChange={setDateRange}>
-                        <SelectTrigger className="w-[150px] text-xs rounded-md h-9 ml-1">
-                            <SelectValue placeholder="Select date range" />
-                        </SelectTrigger>
-                        <SelectContent>
-                            {[
-                                { value: "1mo", label: "Last month" },
-                                { value: "3mo", label: "Last 3 months" },
-                                { value: "1y", label: "Last year" },
-                            ].map(({ value, label }) => (
-                                <SelectItem
-                                    key={value}
-                                    value={value}
-                                    className="text-xs"
-                                >
-                                    {label}
-                                </SelectItem>
-                            ))}
-                        </SelectContent>
-                    </Select>
+                    <ChartFilters
+                        chartType={chartType}
+                        setChartType={setChartType}
+                        dateRange={dateRange}
+                        setDateRange={setDateRange}
+                        title="BTC Supply"
+                    />
                 </div>
             </CardContent>
         </Card>
