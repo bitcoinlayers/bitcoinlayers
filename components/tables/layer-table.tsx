@@ -293,9 +293,8 @@ const LayerTable = ({ data, headers }: Props) => {
                                                 href={`/layers/${item.slug}`}
                                                 className="flex items-center"
                                             >
-                                                {item.feeToken
-                                                    .toLowerCase()
-                                                    .includes("btc") && (
+                                                {item.feeToken.toLowerCase() ===
+                                                "btc" ? (
                                                     <Image
                                                         src="/btc.svg"
                                                         alt="BTC logo"
@@ -303,7 +302,17 @@ const LayerTable = ({ data, headers }: Props) => {
                                                         height={20}
                                                         className="mr-2"
                                                     />
-                                                )}
+                                                ) : item.feeToken
+                                                      .toLowerCase()
+                                                      .includes("btc") ? (
+                                                    <Image
+                                                        src="/btc-inverse.svg"
+                                                        alt="BTC inverse logo"
+                                                        width={20}
+                                                        height={20}
+                                                        className="mr-2"
+                                                    />
+                                                ) : null}
                                                 {item.feeToken}
                                             </Link>
                                         </td>
