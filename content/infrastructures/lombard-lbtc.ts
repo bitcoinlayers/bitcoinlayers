@@ -75,6 +75,30 @@ const lombard: InfrastructureProject = {
             ],
         },
         {
+            id: "technology",
+            title: "Technology",
+            content: [
+                {
+                    title: "User keys managed in CubeSigner",
+                    content: "When users deposit their funds into the Lombard protocol, the security consortium creates a BTC address for their deposit. This address stores the funds backing their LTBC holdings on the destination chain.\n\nThe keys for this address are managed in a CubeSigner device. CubeSigner is an HSM service that stores users’ keys in secure hardware. It additionally restricts spending actions to staking-specific transactions.",
+                },
+            ],
+        },
+        {
+            id: "additionalconsiderations",
+            title: "Additional Considerations",
+            content: [
+                {
+                    title: "Reserve assets",
+                    content: "Lombard LBTC is primarily backed by native BTC.\n\nOn BNB Smart Chain, it is backed by BTCB.",
+                },
+                {
+                    title: "Blacklist monitor on deposits",
+                    content: "Lombard scans incoming deposit transactions against a sanctions database. If a user with a blacklisted address attempts to deposit funds into Lombard, their mint request will be declined.",
+                },
+            ],
+        },
+        {
             id: "knowledgeBits",
             title: "Knowledge Bits",
             content: [
