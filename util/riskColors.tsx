@@ -15,6 +15,8 @@ export const getRiskColorText = (riskFactor: string) => {
             return "hsl(var(--risk-text-under-review))";
         case "Unverified":
             return "var(--color-text-secondary)";
+        case "Alternative PoS Network":
+            return "hsl(var(--risk-text-medium))";
         default:
             return "var(--color-text-secondary)";
     }
@@ -36,6 +38,8 @@ export const getRiskColorIcon = (riskFactor: string) => {
             return "hsl(var(--risk-icon-under-review))";
         case "Unverified":
             return "var(--color-icon-secondary)";
+        case "Alternative PoS Network":
+            return "hsl(var(--risk-icon-medium))";
         default:
             return "var(--color-icon-secondary)";
     }
@@ -57,6 +61,8 @@ export const getRiskColorBackground = (riskFactor: string) => {
             return "hsl(var(--risk-background-under-review))";
         case "Unverified":
             return "var(--color-background-secondary)";
+        case "Alternative PoS Network":
+            return "hsl(var(--risk-background-medium))";
         default:
             return "var(--color-background-secondary)";
     }
@@ -78,6 +84,8 @@ export const getRiskEmoji = (riskFactor: string) => {
             return "🔬";
         case "Unverified":
             return "❓";
+        case "Alternative PoS Network":
+            return "⚠️";
         default:
             return "🔬";
     }

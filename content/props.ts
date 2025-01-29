@@ -30,6 +30,7 @@ export enum RiskFactor {
     Unverified = "Unverified",
     UnderReview = "Under Review",
     NotApplicable = "Not Applicable",
+    AlternativePoS = "Alternative PoS Network",
 }
 
 export enum RiskCategory {
@@ -164,6 +165,15 @@ export enum KnowledgeBitSnippet { //TODO: Janusz to add more here
 export enum AdditionalSnippet { //TODO: Janusz to add more here
     UpgradeableContractsCentralizedAndNoExit = "The contracts related to this project are immediately upgradeable by a centralized party. These contracts affect the project's chain and may affect specific two-way peg implementations.\n\nIn case of an malicious upgrade, there is no exit delay and users are unable to leave the chain.",
     UpgradeableContractsFederatedAndExit = "The contracts related to this project are immediately upgradeable by a federation. These contracts affect the project's chain and may affect specific two-way peg implementations.\n\nIn case of an malicious upgrade by this federation, there is no exit delay and users are unable to leave the chain.",
+}
+
+//Below is snippets for alternative chains that we haven't been able to review yet due to volume.
+
+export enum AtlSnippet { //TODO: Janusz to add more here
+    OperatorsPoSNetwork = "Blocks are produced and proposed by an alternative proof-of-stake network.",
+    DAConsensusNetwork = "Data is published to, and made available by, full nodes participating in an alternative consensus network. Anyone can run a node and verify the current state of the network",
+    FinalityConsensusNetwork = "Finality assurances are provided by an alternative consensus network. Users trust that once a transaction has been added to the chain it won't be reverted.",
+    PrioritizeLayers = "The Bitcoin Layers project prioritizes reviews on protocols that claim to be bitcoin layers. It also reviews bridges, token wrappers, and other mechanisms that support synthetic versions of bitcoin on other chains. If you'd ike to contribute to this review, feel free to submit a PR in our [GitHub](https://github.com/bitcoinlayers/bitcoinlayers) or join our [telegram group](https://t.me/+8rv-1I2gkmQ4ZmJh) to discuss.",
 }
 
 export interface Peg {

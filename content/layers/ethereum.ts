@@ -11,6 +11,8 @@ import {
     ContentSection,
     RiskCategory,
     TokenSnippet,
+    AtlSnippet,
+    BitcoinSecuritySnippet,
 } from "../props";
 
 const ethereum: LayerProject = {
@@ -25,10 +27,10 @@ const ethereum: LayerProject = {
     bridge: false,
     underReview: false,
     riskFactors: [
-        RiskFactor.UnderReview,
-        RiskFactor.UnderReview,
-        RiskFactor.UnderReview,
-        RiskFactor.UnderReview,
+        RiskFactor.VeryHigh,
+        RiskFactor.AlternativePoS,
+        RiskFactor.AlternativePoS,
+        RiskFactor.AlternativePoS,
     ],
     btcLocked: 0,
     nativeToken: "-",
@@ -68,15 +70,6 @@ const ethereum: LayerProject = {
             content: "",
             pegs: [
                 {
-                    name: "Threshold tBTC",
-                    infrastructureSlug: "threshold-tbtc",
-                    score: 0,
-                    tier: RiskFactor.High,
-                    title: "BTC users trust that tBTC will remain backed on Ethereum",
-                    content:
-                        "tBTC is backed by BTC secured by the Threshold Network. Signers in the Threshold Network participate in a randomized tECDSA scheme. Signers are selected to participate in securing the BTC in a randomized process.\n\nParticipation as a signer in the Threshold Network is currently permissioned.",
-                },
-                {
                     name: "BitGo wBTC",
                     infrastructureSlug: "bitgo-wbtc",
                     score: 0,
@@ -84,6 +77,15 @@ const ethereum: LayerProject = {
                     title: "Centralized custody model",
                     content:
                         "wBTC is minted on Ethereum via its official bridge on Ethereum. wBTC relies on a permissioned, centralized consortium of custodians to maintain BTC collateral.",
+                },
+                {
+                    name: "Threshold tBTC",
+                    infrastructureSlug: "threshold-tbtc",
+                    score: 0,
+                    tier: RiskFactor.High,
+                    title: "BTC users trust that tBTC will remain backed on Ethereum",
+                    content:
+                        "tBTC is backed by BTC secured by the Threshold Network. Signers in the Threshold Network participate in a randomized tECDSA scheme. Signers are selected to participate in securing the BTC in a randomized process.\n\nParticipation as a signer in the Threshold Network is currently permissioned.",
                 },
                 {
                     name: "Lombard LBTC",
@@ -178,29 +180,48 @@ const ethereum: LayerProject = {
         {
             category: RiskCategory.DataAvailability,
             score: 0,
-            tier: RiskFactor.UnderReview,
+            tier: RiskFactor.AlternativePoS,
             title: "Data is stored and made available by Ethereum full nodes",
-            content:
-                "The data for Ethereum state is made available by its full nodes. Anyone can run an Ethereum node and verify is state.\n\nWe are currently reviewing Ethereum's full node implementation",
+            content: AtlSnippet.DAConsensusNetwork
         },
         {
             category: RiskCategory.NetworkOperators,
             score: 0,
-            tier: RiskFactor.UnderReview,
+            tier: RiskFactor.AlternativePoS,
             title: "Ethereum is operated by a decentralized validator set",
-            content:
-                "Blocks are built and proposed by a permissionless consensus network.\n\nWe are currently reviewing Ethereum's network operators",
+            content: AtlSnippet.OperatorsPoSNetwork
         },
         {
             category: RiskCategory.FinalityGuarantees,
             score: 0,
-            tier: RiskFactor.UnderReview,
-            title: "Finality on Ethereum is guaranteed by a permissionless consensus mechanism",
-            content:
-                "Blocks are validated and finalized by a permissionless consensus network.\n\nWe are currently reviewing Ethereum's finality guarantees",
+            tier: RiskFactor.AlternativePoS,
+            title: "Finality on Ethereum is guaranteed by an alternative consensus mechanism",
+            content: AtlSnippet.FinalityConsensusNetwork
         },
     ],
     sections: [
+        {
+            id: "bitcoinsecurity",
+            title: "Bitcoin Security",
+            content: [
+                {
+                    title: "Ethereum does not inherit any security from bitcoin",
+                    content: BitcoinSecuritySnippet.NoSecurity,
+                },
+                {
+                    title: "ETH token used to pay fees",
+                    content: BitcoinSecuritySnippet.AltTokenFees,
+                },
+                {
+                    title: "No MEV introduced to bitcoin",
+                    content: "Ethereum does not introduce MEV to bitcoin. Blocks in Ethereum are primarily auctioned off to builders who construct blocks on behalf of a proposer in a given slot. The majority of blocks in Ethereum are built by 2-3 builders.",
+                },
+                {
+                    title: "Ethereum does not contribute to the security budget",
+                    content: BitcoinSecuritySnippet.NoSecurity,
+                },
+            ],
+        },
         {
             id: "underreview",
             title: "Further sections under review",
