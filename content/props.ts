@@ -129,6 +129,7 @@ export enum TokenSnippet { //TODO: Janusz to add more here
     xlink = "There is limited information available on Xlink aBTC's custody mechanism for BTC backing aBTC. Users trust Alex, the project behind Xlink, to set up secure custody practices. Xlink's [website](https://www.xlink.network/) mentions that institutional grade MPC solutions are used.",
     FireBTC = "An MPC set up between Ignition and Cobo secures the BTC backing mBTC. Cobo is an institutional custodian provider. Users trust Ignition's claims in their documentation are being executed in practice.",
     SolvBTCENA = "SolvBTC.ENA is a derivative asset that represents SolvBTC locked in a vault executing a trading strategy. The token is backed by [SolvBTC](https://www.bitcoinlayers.org/infrastructure/solv-solvbtc).",
+    KrakenKBTC = "Kraken, a centralized custodian, secures the BTC backing kBTC. The funds backing kBTC are held at Kraken Financial, a Wyoming-chartered SPDI (Special Purpose Depository Institution)",
     smartcontractreview = "We are reviewing the specific smart contracts related to this two-way peg. The relevant token contract is listed in the bottom of the review.",
 }
 export enum ReviewSnippet { //TODO: Janusz to add more here
