@@ -96,6 +96,14 @@ const ethereum: LayerProject = {
                     content: TokenSnippet.LombardLBTC,
                 },
                 {
+                    name: "Coinbase cbBTC",
+                    infrastructureSlug: "coinbase-cbbtc",
+                    score: 0,
+                    tier: RiskFactor.VeryHigh,
+                    title: TokenSnippet.CustodianPeg,
+                    content: TokenSnippet.CoinbasecbBTC,
+                },
+                {
                     name: "Kraken KBTC",
                     infrastructureSlug: "kraken-kbtc",
                     score: 0,
