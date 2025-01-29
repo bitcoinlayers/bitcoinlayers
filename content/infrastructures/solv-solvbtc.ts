@@ -73,6 +73,16 @@ const solv: InfrastructureProject = {
                 },
             ],
         },
+        {
+            id: "additionalconsiderations",
+            title: "Additional Considerations",
+            content: [
+                {
+                    title: "Blacklist function added to SolvV3 contracts",
+                    content: "The SolvBTCV3 [release](https://github.com/solv-finance/SolvBTC/commits/main/contracts/SolvBTCV3.sol) will see a blaskList function implemented. This function will enable the owner of the SolvBTC contract to blacklist individual users; refraining them from interacting with the token. Current implementations of SolvBTC do not have this function.",
+                },
+            ],
+        },
     ],
     assessment: [
         {
