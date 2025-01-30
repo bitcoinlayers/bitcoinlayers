@@ -1,3 +1,4 @@
+import { tokenToString } from "typescript";
 import {
     LayerProject,
     Type,
@@ -11,7 +12,12 @@ import {
     ContentSection,
     RiskCategory,
     TokenSnippet,
+    AtlSnippet,
+    BitcoinSecuritySnippet,
+    UseCaseSnippet,
+    TechnologySnippet,
 } from "../props";
+import { Bitcoin } from "lucide-react";
 
 const bnbsmartchain: LayerProject = {
     type: Type.Layer,
@@ -72,53 +78,48 @@ const bnbsmartchain: LayerProject = {
                     infrastructureSlug: "binance-btcb",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: "Binance custodies the BTC backing BTCB",
-                    content:
-                        "BTCB on BNB Smart Chain is backed by Binance. Binance is the single entity responsible for custodying BTC that backs BTCB on BNB Smart Chain.\n\nUsers trust Binance to ensure the funds backing BTCB are not stolen or lost.",
+                    title: TokenSnippet.CustodianPeg,
+                    content: TokenSnippet.BinanceBTCB,
                 },
                 {
                     name: "BitGo wBTC",
                     infrastructureSlug: "bitgo-wbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: "wBTC is managed by a centralized consortium of companies. We are analyzing if wBTC is natively minted on Binance or if is bridged from Ethereum.",
-                    content:
-                        "wBTC on BNB Smart Chain is backed by a centralized consortium of three companies. These entities are responsible for securing BTC that backs wBTC on its various networks. Users trust these entities to not collude and steal the funds backing wBTC.",
+                    title: TokenSnippet.CustodianPeg,
+                    content: TokenSnippet.BinanceBTCB,
                 },
                 {
                     name: "Threshold tBTC",
                     infrastructureSlug: "threshold-tbtc",
                     score: 0,
                     tier: RiskFactor.UnderReview,
-                    title: "Users trust the Threshold Network to keep tBTC backed",
-                    content:
-                        "tBTC's peg with bitcoin is managed by the Threshold Network, a distributed, but permissioned, two-way peg.\n\nWe are currently reviewing if tBTC is minted on BNB Smart Chain natively or minted on Ethereum and then bridged to BNB Smart Chain via a custom bridge contract.",
+                    title: TokenSnippet.ThresholdtBTC,
+                    content: `${TokenSnippet.ThresholdtBTC}\n\nWe are currently reviewing if tBTC is minted on BNB Smart Chain natively or minted on Ethereum and then bridged to BNB Smart Chain via a custom bridge contract.`,
                 },
                 {
                     name: "Solv SolvBTC",
                     infrastructureSlug: "solv-solvbtc",
                     score: 0,
-                    tier: RiskFactor.UnderReview,
-                    title: TokenSnippet.UnderReview,
-                    content: "This two-way peg is under review",
+                    tier: RiskFactor.VeryHigh,
+                    title: TokenSnippet.CustodianPeg,
+                    content: TokenSnippet.SolvBTC,
                 },
                 {
                     name: "Solv SolvBTCBBN",
                     infrastructureSlug: "solv-solvbtcbbn",
                     score: 0,
-                    tier: RiskFactor.UnderReview,
-                    title: TokenSnippet.UnderReview,
-                    content:
-                        "SolvBTCBBN is a derivative of Solv BTC. We are reviewing its trust assumptions.",
+                    tier: RiskFactor.VeryHigh,
+                    title: TokenSnippet.CustodianDerivative,
+                    content: TokenSnippet.SolvBTCBBN,
                 },
                 {
                     name: "Solv SolvBTC.ENA",
                     infrastructureSlug: "solv-solvbtcena",
                     score: 0,
-                    tier: RiskFactor.UnderReview,
-                    title: TokenSnippet.UnderReview,
-                    content:
-                        "SolvBTC.ENA is a derivative of Solv BTC. We are reviewing its trust assumptions.",
+                    tier: RiskFactor.VeryHigh,
+                    title: TokenSnippet.CustodianDerivative,
+                    content: `${TokenSnippet.SolvBTCENA}\n\n${TokenSnippet.smartcontractreview}`,
                 },
                 {
                     name: "Pump BTC",
@@ -126,15 +127,15 @@ const bnbsmartchain: LayerProject = {
                     score: 0,
                     tier: RiskFactor.UnderReview,
                     title: TokenSnippet.UnderReview,
-                    content: "This two-way peg is under review",
+                    content: `${TokenSnippet.PumpBTC}\n\n${TokenSnippet.smartcontractreview}`,
                 },
                 {
                     name: "FBTC",
                     infrastructureSlug: "firebitcoin-fbtc",
                     score: 0,
-                    tier: RiskFactor.UnderReview,
-                    title: TokenSnippet.UnderReview,
-                    content: "This two-way peg is under review",
+                    tier: RiskFactor.VeryHigh,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.PumpBTC}\n\n${TokenSnippet.smartcontractreview}`,
                 },
                 {
                     name: "Lorenzo stBTC",
@@ -142,7 +143,7 @@ const bnbsmartchain: LayerProject = {
                     score: 0,
                     tier: RiskFactor.UnderReview,
                     title: TokenSnippet.UnderReview,
-                    content: "This two-way peg is under review",
+                    content: `${TokenSnippet.PumpBTC}\n\n${TokenSnippet.smartcontractreview}`,
                 },
                 {
                     name: "Lombard LBTC",
@@ -150,7 +151,7 @@ const bnbsmartchain: LayerProject = {
                     score: 0,
                     tier: RiskFactor.UnderReview,
                     title: TokenSnippet.UnderReview,
-                    content: "This two-way peg is under review",
+                    content: `${TokenSnippet.PumpBTC}\n\n${TokenSnippet.smartcontractreview}`,
                 },
                 {
                     name: "Babypie mBTC",
@@ -158,7 +159,7 @@ const bnbsmartchain: LayerProject = {
                     score: 0,
                     tier: RiskFactor.UnderReview,
                     title: TokenSnippet.UnderReview,
-                    content: "This two-way peg is under review",
+                    content: `${TokenSnippet.PumpBTC}\n\n${TokenSnippet.smartcontractreview}`,
                 },
                 {
                     name: "Kinza kBTC",
@@ -166,43 +167,72 @@ const bnbsmartchain: LayerProject = {
                     score: 0,
                     tier: RiskFactor.UnderReview,
                     title: TokenSnippet.UnderReview,
-                    content: "This two-way peg is under review",
+                    content: `${TokenSnippet.PumpBTC}\n\n${TokenSnippet.smartcontractreview}`,
                 },
             ],
         },
         {
             category: RiskCategory.DataAvailability,
             score: 0,
-            tier: RiskFactor.UnderReview,
-            title: "We are reviewing BNB Smart Chain's data availability requirement",
-            content:
-                "We are currently reviewing BNB Smart Chains's full node implementation",
+            tier: RiskFactor.AlternativePoS,
+            title: "Data is made available by an alternative consensus network",
+            content: AtlSnippet.DAConsensusNetwork,
         },
         {
             category: RiskCategory.NetworkOperators,
             score: 0,
-            tier: RiskFactor.UnderReview,
+            tier: RiskFactor.AlternativePoS,
             title: "BNB Smart Chain is operated by a distributed validator set",
-            content:
-                "Blocks are built and proposed by a distributed consensus network.\n\nWe are currently reviewing BNB Smart Chain's network operators",
+            content: `${AtlSnippet.OperatorsPoSNetwork}\n\nBNB Smart Chain leverages a hybrid proof-of-stake mechanism similar to delegated proof-of-stake. BNB token holders can delegate tokens to their preferred validator to support their chances at winning blocks.`,
         },
         {
             category: RiskCategory.FinalityGuarantees,
             score: 0,
-            tier: RiskFactor.UnderReview,
-            title: "We are currently reviewing BNB Smart Chain's finality guarantees",
-            content:
-                "Blocks are validated and finalized by a distributed consensus network.\n\nWe are currently reviewing BNB Smart Chain's finality guarantees",
+            tier: RiskFactor.AlternativePoS,
+            title: "Finality guarantees are provided through BNB Smart Chain's validators",
+            content: AtlSnippet.FinalityConsensusNetwork,
         },
     ],
     sections: [
         {
-            id: "underreview",
-            title: "Further sections under review",
+            id: "bitcoinsecurity",
+            title: "Bitcoin Security",
             content: [
                 {
-                    content:
-                        "Aspects related to bitcoin security, relevant technologies, and some two-way pegs have not been reviewed.\n\nThey will be reviewed by our team soon.",
+                    title: "BNB Smart Chain does not inherit any security from bitcoin",
+                    content: BitcoinSecuritySnippet.NoSecurity,
+                },
+                {
+                    title: "ETH token used to pay fees",
+                    content: BitcoinSecuritySnippet.AltTokenFees,
+                },
+                {
+                    title: "No MEV introduced to bitcoin",
+                    content: BitcoinSecuritySnippet.AltNetworkMEV,
+                },
+                {
+                    title: "BNB Smart Chain does not contribute to the security budget",
+                    content: BitcoinSecuritySnippet.NoSecurity,
+                },
+            ],
+        },
+        {
+            id: "technology",
+            title: "Technology",
+            content: [
+                {
+                    title: "Ethereum Virtual Machine",
+                    content: TechnologySnippet.EVM,
+                },
+            ],
+        },
+        {
+            id: "usecases",
+            title: "Use Cases",
+            content: [
+                {
+                    title: "Onchain applications",
+                    content: UseCaseSnippet.OnchainApps
                 },
             ],
         },

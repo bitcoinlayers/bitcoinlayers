@@ -150,6 +150,7 @@ export enum BitcoinSecuritySnippet { //TODO: Janusz to add more here
     NoSecurity = "In its current state, the network does not inherit security from Bitcoin.",
     AltTokenFees = "Fees to network operators are paid in an alternative token.",
     CentralizedSequencerMEV = "The network does not introduce any MEV on the Bitcoin L1. Users trust the sequencer to not reorder their transactions to extract MEV.",
+    AltNetworkMEV = "The network does not introduce any MEV on the Bitcoin L1. Users trust the validators of the network to not reorder their transactions to extract MEV.",
     NoSecurityBudget = "The network does not currently contribute to the Bitcoin security budget.",
     UnderReview = "This two-way peg is under review",
 }

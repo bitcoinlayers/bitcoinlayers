@@ -196,7 +196,7 @@ const ethereum: LayerProject = {
             category: RiskCategory.NetworkOperators,
             score: 0,
             tier: RiskFactor.AlternativePoS,
-            title: "Ethereum is operated by a decentralized validator set",
+            title: "Ethereum is operated by an alternative validator set",
             content: AtlSnippet.OperatorsPoSNetwork
         },
         {
