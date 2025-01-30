@@ -7,6 +7,8 @@ import LayerOverview from "@/components/layer/layerOverview";
 import LayerImage from "@/components/layer/layer-image";
 import LayerTVLChart from "@/components/charts/layer-tvl-chart";
 import ProjectContractAddresses from "@/components/project-contract-addresses";
+import AlternativeBanner from "@/components/alternative-banner";
+import { EntityCategory } from "@/content/props";
 
 function getLayerFromSlug(slug: string) {
     const layer = allLayers.find((layer) => layer.slug === slug);
@@ -29,6 +31,13 @@ export default async function LayerPage(props: {
 
     return (
         <article className="flex flex-col lg:min-h-screen max-w-5xl mx-auto lg:pt-24 pt-12">
+            {(layer.entityCategory === EntityCategory.Alt ) ?
+            <AlternativeBanner
+            title={`The ${layer.title} page of Bitcoin Layers is under development.`}
+            />
+            :
+            <>
+            </>}
             <div className="flex justify-start items-center lg:gap-8 gap-2 lg:my-12 my-6 px-4 lg:px-0">
                 <div className="flex justify-center items-center">
                     <LayerImage
