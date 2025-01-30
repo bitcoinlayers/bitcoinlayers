@@ -62,7 +62,7 @@ const taiko: LayerProject = {
             url: "https://x.com/taikoxyz",
         },
     ],
-    description: "",
+    description: "Taiko is an Ethereum rollup that leverages based sequencing. It is home to various BTC-derivative assets.",
     riskAnalysis: [
         {
             category: RiskCategory.BtcCustody,
