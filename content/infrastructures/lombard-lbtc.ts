@@ -16,7 +16,7 @@ const lombard: InfrastructureProject = {
     slug: "lombard-lbtc",
     title: "Lombard LBTC",
     entityType: EntityType.LiquidStaking,
-    live: LiveStatus.Deposits,
+    live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: true,
     bridge: false,
@@ -117,7 +117,7 @@ const lombard: InfrastructureProject = {
             tier: "",
             title: "Users trust a network of custodians with the custody of their BTC",
             content:
-                "BTC backing Lombard LBTC is secured by a network of [five validators](https://etherscan.io/address/0xdad58DfA5c1a7a34419AFdBE1f0d610efeea95E4#readProxyContract) participating in Lombard’s security consortium. The security consortium participates in a CometBFT consensus protocol.\n\nAdding and removing validators from this consortium is handled by the current validator set within a given epoch.",
+                "BTC backing Lombard LBTC is secured by a network of [five validators](https://etherscan.io/address/0xdad58DfA5c1a7a34419AFdBE1f0d610efeea95E4#readProxyContract) participating in Lombard’s security consortium. The security consortium participates in a CometBFT consensus protocol.\n\nAdding and removing validators from this consortium is handled by the current validator set within a given epoch.\n\nWhen a user deposits funds into the Lombard protocol, they are given a specific CubeSigner address to manage their deposits and staking transactions.",
         },
         {
             category: AssessmentCategory.SupplyIssuance,

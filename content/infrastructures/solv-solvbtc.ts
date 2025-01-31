@@ -65,7 +65,7 @@ const solv: InfrastructureProject = {
                 },
                 {
                     title: "Redemptions enabled",
-                    content: BTCWrapperTransparency.RedemptionsYes,
+                    content: BTCWrapperTransparency.RedemptionsYesNoDocs,
                 },
                 {
                     title: "Contracts are open-source and verified",
