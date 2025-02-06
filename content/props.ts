@@ -217,6 +217,9 @@ export enum AssessmentCategory {
     UserRisk = "User Risk",
     ThirdPartyStaking = "Third Party Staking",
     SelfCustodialStaking = "Self-custodial Staking",
+    SupplyIssuance = "Supply Issuance",
+    StakeAttestations = "Stake Attestations",
+    Governance = "Governance",
 }
 
 export interface AssessmentSection {
