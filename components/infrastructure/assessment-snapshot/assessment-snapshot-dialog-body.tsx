@@ -27,13 +27,16 @@ const CATEGORY_ICON_MAP: Record<
     [AssessmentCategory.AssetCustody]: VaultIcon,
     [AssessmentCategory.StakingType]: CoinsIcon,
     [AssessmentCategory.SlashingRisk]: ShieldAlertIcon,
+    [AssessmentCategory.StakeAttestations]: ShieldAlertIcon,
     [AssessmentCategory.IncentiveModel]: TrendingUpIcon,
+    [AssessmentCategory.SupplyIssuance]: TrendingUpIcon,
     [AssessmentCategory.Reputation]: HandshakeIcon,
     [AssessmentCategory.Signing]: KeyIcon,
     [AssessmentCategory.KeyStorage]: LayersIcon,
     [AssessmentCategory.CensorshipResistance]: BanIcon,
     [AssessmentCategory.UserRisk]: UserIcon,
     [AssessmentCategory.ThirdPartyStaking]: WaypointsIcon,
+    [AssessmentCategory.Governance]: WaypointsIcon,
     [AssessmentCategory.SelfCustodialStaking]: CircleUserIcon,
 } as const;
 
