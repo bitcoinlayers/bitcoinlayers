@@ -56,7 +56,7 @@ const solv: InfrastructureProject = {
             title: "Protocol Transparency",
             content: [
                 {
-                    title: "The protocol provides a public proof-of-reserve",
+                    title: "The protocol does not provide a public proof-of-reserve",
                     content: BTCWrapperTransparency.ProofofReservesNo,
                 },
                 {
