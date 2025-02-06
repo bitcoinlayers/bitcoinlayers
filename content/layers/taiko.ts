@@ -32,7 +32,7 @@ const taiko: LayerProject = {
     riskFactors: [
         RiskFactor.UnderReview,
         RiskFactor.Medium,
-        RiskFactor.UnderReview,
+        RiskFactor.Medium,
         RiskFactor.UnderReview,
     ],
     btcLocked: 0,
