@@ -181,6 +181,18 @@ export enum AtlSnippet { //TODO: Janusz to add more here
     PrioritizeLayers = "The Bitcoin Layers project prioritizes reviews on protocols that claim to be bitcoin layers. It also reviews bridges, token wrappers, and other mechanisms that support synthetic versions of bitcoin on other chains. If you'd ike to contribute to this review, feel free to submit a PR in our [GitHub](https://github.com/bitcoinlayers/bitcoinlayers) or join our [telegram group](https://t.me/+8rv-1I2gkmQ4ZmJh) to discuss.",
 }
 
+export enum BTCWrapperTransparency { //TODO: Janusz to add more here
+    ProofofReservesYes = "The project provides active proof-of-reserves. The proof-of-reserves can be seen",
+    ProofofReservesNo = "The project has not published a Proof-of-Reserves. Users trust that the custodians holding native BTC backing the derivative asset to have ample reserves.",
+    OperatorsDisclosedYes = "Fees to network operators are paid in an alternative token.",
+    OperatorsDisclosedNo = "Operators of the protocol are not publicly disclosed.",
+    WithdrawalsYes = "The network does not introduce any MEV on the Bitcoin L1. Users trust the sequencer to not reorder their transactions to extract MEV.",
+    ContractsYes = "Contracts related to the project are source viewable and verified.",
+    RedemptionsYes = "Redemptions are enabled. The project has documented how redemptions are processed in their documentation.",
+    RedemptionsYesNoDocs = "Redemptions are enabled. The project has not disclosed how redemptions are processed in their documentation.",
+    StakeAttestationsYes = "The network does not currently contribute to the Bitcoin security budget.",
+}
+
 export interface Peg {
     name: string;
     infrastructureSlug: string;
