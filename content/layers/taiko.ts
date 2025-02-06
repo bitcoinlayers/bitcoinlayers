@@ -17,6 +17,7 @@ import {
     TechnologySnippet,
     BitcoinSecuritySnippet,
 } from "../props";
+import { tokenToString } from "typescript";
 
 const taiko: LayerProject = {
     type: Type.Layer,
@@ -93,7 +94,7 @@ const taiko: LayerProject = {
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: TokenSnippet.CustodianPeg,
-                    content: TokenSnippet.BedrockUniBTC,
+                    content: `${TokenSnippet.BedrockUniBTC}\n\n${TokenSnippet.smartcontractreview}`,
                 },
                 {
                     name: "Solv SolvBTC.BBN",
