@@ -58,7 +58,7 @@ const merlinmbtc: InfrastructureProject = {
             category: AssessmentCategory.AssetCustody,
             score: 0,
             tier: "",
-            title: "Users trust centralized parties with the custody of BTC backing mBTC",
+            title: "Users trust centralized parties with the custody of BTC backing M-BTC",
             content:
                 "When users deposit funds into Merlin, they deposit funds into a MPC wallet managed by Cobo, a institutional custodian. Information on how many signers participate in this MPC scheme is not available. Merlin has stated that more players are being added into this custody scheme.\n\n[Source](https://www.cobo.com/post/cobo-bitmap-tech-establish-merlin-chain-bitcoin-layer-2-network-with-mpc-custody-technology)",
         },
@@ -66,7 +66,7 @@ const merlinmbtc: InfrastructureProject = {
                     category: AssessmentCategory.SupplyIssuance,
                     score: 0,
                     tier: "",
-                    title: "We cannot verify information on MBTC’s minting mechanism",
+                    title: "We cannot verify information on M-BTC’s minting mechanism",
                     content:
                         "MBTC is minted to Merlin via a bridge contract between Merlin and its parent chain. Because we cannot verify its parent chain’s contracts, we are unable to verify MBTC’s minting and burning permissions.",
                 },
@@ -74,14 +74,14 @@ const merlinmbtc: InfrastructureProject = {
                     category: AssessmentCategory.CensorshipResistance,
                     score: 0,
                     tier: "",
-                    title: "No blacklist or pause function on respective contracts",
+                    title: "M-BTC has a blacklist function",
                     content: WrapperSnippet.BlacklistYes
                 },
                 {
                     category: AssessmentCategory.Governance,
                     score: 0,
                     tier: "",
-                    title: "We cannot verify information on MBTC’s governance mechanism",
+                    title: "We cannot verify information on M-BTC’s governance mechanism",
                     content:
                         "MBTC governance is likely managed via a bridge contract between Merlin and its parent chain. Because we cannot verify its parent chain’s contracts, we are unable to verify MBTC’s minting and burning permissions.\n\nIt is likely managed by the development team.",
                 },
