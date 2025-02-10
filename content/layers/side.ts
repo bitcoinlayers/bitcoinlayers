@@ -34,7 +34,7 @@ const side: LayerProject = {
     ],
     btcLocked: 0,
     nativeToken: "-",
-    feeToken: "-",
+    feeToken: "SBTC",
     notice: undefined,
     bitcoinOnly: false,
     links: [
