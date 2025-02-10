@@ -7,6 +7,9 @@ import {
     Notice,
     Site,
     AssessmentCategory,
+    ReviewSnippet,
+    TokenSnippet,
+    BTCWrapperTransparency,
 } from "../props";
 
 const solvbbn: InfrastructureProject = {
@@ -47,24 +50,38 @@ const solvbbn: InfrastructureProject = {
         "SolvBTC.BBN offer a mechanism that enables users to deposit SolvBTC into smart contracts on EVM-based chains. Users receive a token representing BTC deposited on Babylon in exchange for their wrapped BTC token.",
     sections: [
         {
-            id: "Economics",
-            title: "Economics",
+            id: "protocoltransparency",
+            title: "Protocol Transparency",
             content: [
                 {
-                    title: "Incentive model",
-                    content:
-                        "🔬 Babylon’s staking is not currently securing any PoS chains. Rewards are only issued through points. Once live, we will review Babylon’s incentive and issuance mechanism.",
+                    title: "The protocol does not provide a public proof-of-reserve",
+                    content: BTCWrapperTransparency.ProofofReservesNo,
+                },
+                {
+                    title: "External operators are not disclosed",
+                    content: BTCWrapperTransparency.OperatorsDisclosedYes,
+                },
+                {
+                    title: "Redemptions enabled",
+                    content: BTCWrapperTransparency.RedemptionsYesNoDocs,
+                },
+                {
+                    title: "Contracts are open-source and verified",
+                    content: BTCWrapperTransparency.ContractsYes,
+                },
+                {
+                    title: "The project does not provide stake attestations",
+                    content: BTCWrapperTransparency.StakeAttestationsNo,
                 },
             ],
         },
         {
-            id: "smartcontracts",
-            title: "Smart Contracts & Audits",
+            id: "additionalconsiderations",
+            title: "Additional Considerations",
             content: [
                 {
-                    title: "Dozens of token contracts live",
-                    content:
-                        "There are numerous Solv BTC token contracts deployed across many chains. You can find them [here](https://github.com/solv-finance/SolvBTC/tree/main/deployments).\n\n🔬 We are currently reviewing the implementations of these smart contracts.",
+                    title: "Babylon is not live.",
+                    content: "The Babylon blockchain is not live. Only deposits are being processed.",
                 },
             ],
         },
@@ -85,24 +102,31 @@ const solvbbn: InfrastructureProject = {
             score: 0,
             tier: "",
             title: "Bitcoin assets used to back Solv.BBN are custodied by institutional providers",
-            content:
-                "Four entities custody the bitcoin assets backing Solv.BBN tokens. These entities are Cobo, Ceffu, Fireblocks and the Solv Guard. These entities are known as Guardians in the [Solv application](https://app.solv.finance/staking).\n\nCeffu and Cobo are the custodians for funds that are staked with Babylon.\n\n[Source](https://docs.solv.finance/staking-abstraction-layer-sal/the-ecological-view)",
+            content: TokenSnippet.SolvBTCBBN
         },
         {
-            category: AssessmentCategory.StakingType,
+            category: AssessmentCategory.SupplyIssuance,
             score: 0,
             tier: "",
-            title: "Stake is delegated to Babylon Finality Providers via Ceffu and Cobo",
+            title: "Minting of SolvBTC is managed by a permissioned group of entities",
             content:
-                "When a user exchanges SolvBTC for an LST token, this token is locked in a SolvBTC.BBN smart contract on its respective chain. After this token deposit is confirmed, one of the guardians will exchange the wrapped BTC they received, swap it for native BTC, and then deposit bitcoin into Babylon on the users behalf. This role is also fulfilled by the Staking Validators.\n\nFor staking on Bitcoin, the custodians who stake user funds are Ceffu and Cobo. The majority of BTC is delegated to Solv Protocol's Babylon Finality Provider, but there has been delegation to other [operators](https://x.com/SolvProtocol/status/1843768604011143590).\n\nLearn more about delegated staking here.",
+                "Minting permissions are handled by three distinct entities in SolvBTC.BBN. In each implementation, the SolvBTCMultiAsset pool has minting capabilities and is the only entity with burning capabilities. An implementation of Chainlink CCIP on each chain enables cross-chain minting of SolvBTC.BBN tokens. Additionally, an AtomicMintContract on each chain has minting permissions.\n\nSolvBTC.BBN discloses all contract owner addresses in its documentation. The 0x0c2…5b7D address can grant, and revoke, minting authority for all implementations of SolvBTC.BBN tokens.",
         },
         {
-            category: AssessmentCategory.SlashingRisk,
+            category: AssessmentCategory.CensorshipResistance,
             score: 0,
             tier: "",
-            title: "Slashing is not live on Babylon",
+            title: "No blacklist function currently implemented",
             content:
-                "The first is that the Babylon Finality Provider, that their stake is delegated to, is slashed and penalized. This penalty will also be inflicted onto its delegates.\n\nThe second is that the user locks their funds in a vault executing a specific trading strategy and they get liquidated.",
+                "Implementations of the token do not have a blacklist or pause function.",
+        },
+        {
+            category: AssessmentCategory.Governance,
+            score: 0,
+            tier: "",
+            title: "A centralized party can upgrade contracts",
+            content:
+                "The token contracts’ various deployments are unilaterally owned by an address controlled by an owner. This owner can unilaterally upgrade contracts. The signing threshold is ⅗.",
         },
     ],
 };

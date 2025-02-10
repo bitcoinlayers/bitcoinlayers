@@ -96,6 +96,10 @@ const lombard: InfrastructureProject = {
                     title: "Blacklist monitor on deposits",
                     content: "Lombard scans incoming deposit transactions against a sanctions database. If a user with a blacklisted address attempts to deposit funds into Lombard, their mint request will be declined.",
                 },
+                {
+                    title: "Babylon is not live.",
+                    content: "The Babylon blockchain is not live. Only deposits are being processed.",
+                },
             ],
         },
         {
