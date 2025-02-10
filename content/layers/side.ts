@@ -25,7 +25,7 @@ const side: LayerProject = {
     staking: false,
     liquidStaking: false,
     bridge: false,
-    underReview: true,
+    underReview: false,
     riskFactors: [
         RiskFactor.UnderReview,
         RiskFactor.AlternativePoS,
@@ -82,21 +82,21 @@ const side: LayerProject = {
         {
             category: RiskCategory.DataAvailability,
             score: 0,
-            tier: "",
+            tier: RiskFactor.AlternativePoS,
             title: "Data availability is satisfied by Side's full node set",
             content: ReviewSnippet.AltL1DA,
         },
         {
             category: RiskCategory.BlockProduction,
             score: 0,
-            tier: "",
+            tier: RiskFactor.AlternativePoS,
             title: "Side protocol is operated by an alternative PoS network",
             content: ReviewSnippet.AltL1Operators,
         },
         {
             category: RiskCategory.StateValidation,
             score: 0,
-            tier: "",
+            tier: RiskFactor.AlternativePoS,
             title: "Side protocol users CometBFT for consensus",
             content: ReviewSnippet.CometBFTFinality,
         },
