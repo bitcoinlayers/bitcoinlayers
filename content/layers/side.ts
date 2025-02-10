@@ -11,6 +11,8 @@ import {
     ContentSection,
     RiskCategory,
     TokenSnippet,
+    ReviewSnippet,
+    BitcoinSecuritySnippet,
 } from "../props";
 
 const side: LayerProject = {
@@ -18,13 +20,18 @@ const side: LayerProject = {
     slug: "side",
     title: "Side Protocol",
     entityType: EntityType.Sidechain,
-    entityCategory: EntityCategory.Alt,
-    live: LiveStatus.Testnet,
+    entityCategory: EntityCategory.Sidesystem,
+    live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
     bridge: false,
     underReview: true,
-    riskFactors: ["", "", "", ""],
+    riskFactors: [
+        RiskFactor.UnderReview,
+        RiskFactor.AlternativePoS,
+        RiskFactor.AlternativePoS,
+        RiskFactor.AlternativePoS,
+    ],
     btcLocked: 0,
     nativeToken: "-",
     feeToken: "-",
@@ -61,38 +68,59 @@ const side: LayerProject = {
             tier: "",
             title: "",
             content: "",
-            pegs: [],
+            pegs: [
+            {
+                name: "Side sBTC",
+                infrastructureSlug: "side-sbtc",
+                score: 0,
+                tier: RiskFactor.UnderReview,
+                title: TokenSnippet.UnderReview,
+                content: "We are currently reviewing the implementation for this two-way peg",
+            },
+        ],
         },
         {
             category: RiskCategory.DataAvailability,
             score: 0,
             tier: "",
-            title: "",
-            content: "",
+            title: "Data availability is satisfied by Side's full node set",
+            content: ReviewSnippet.AltL1DA,
         },
         {
             category: RiskCategory.BlockProduction,
             score: 0,
             tier: "",
-            title: "",
-            content: "",
+            title: "Side protocol is operated by an alternative PoS network",
+            content: ReviewSnippet.AltL1Operators,
         },
         {
             category: RiskCategory.StateValidation,
             score: 0,
             tier: "",
-            title: "",
-            content: "",
+            title: "Side protocol users CometBFT for consensus",
+            content: ReviewSnippet.CometBFTFinality,
         },
     ],
     sections: [
         {
-            id: "selfsubmit",
-            title: "Process to self-submit information",
+            id: "bitcoinsecurity",
+            title: "Bitcoin Security",
             content: [
                 {
-                    content:
-                        "The Bitcoin Layers project prioritizes risk reviews on projects that are in production and accepting users' BTC deposits. Projects on testnet are welcome to submit information about their project. We do not publish risk assessments for projects that are not in production.\n\nHere are the [instructions](https://github.com/bitcoinlayers/bitcoinlayers/blob/main/SELFSUBMIT.md) on self-submitting a project.",
+                    title: "Side does not inherit any security from bitcoin",
+                    content: BitcoinSecuritySnippet.NoSecurity,
+                },
+                {
+                    title: "sBTC or SIDE token used to pay fees",
+                    content: "Users can pay fees in sBTC or SIDE on the Side Protocol",
+                },
+                {
+                    title: "No MEV introduced to bitcoin",
+                    content: BitcoinSecuritySnippet.AltNetworkMEV,
+                },
+                {
+                    title: "Side does not contribute to the security budget",
+                    content: BitcoinSecuritySnippet.NoSecurity,
                 },
             ],
         },

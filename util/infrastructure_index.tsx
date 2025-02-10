@@ -52,6 +52,7 @@ import stackssbtcProject from "@/content/infrastructures/stacks-sbtc";
 import tronbtcProject from "@/content/infrastructures/tron-btc";
 import merlinmbtcProject from "@/content/infrastructures/merlin-mbtc";
 import alloallobtcProject from "@/content/infrastructures/allo-allobtc";
+import sidesbtcProject from "@/content/infrastructures/side-sbtc";
 
 const astria: InfrastructureProject = astriaProject;
 const avail: InfrastructureProject = availProject;
@@ -105,6 +106,7 @@ const stackssbtc: InfrastructureProject = stackssbtcProject;
 const tronbtc: InfrastructureProject = tronbtcProject;
 const merlinmbtc: InfrastructureProject = merlinmbtcProject;
 const alloallobtc: InfrastructureProject = alloallobtcProject;
+const sidesbtc: InfrastructureProject = sidesbtcProject;
 
 export const allInfrastructures: InfrastructureProject[] = [
     lombard,
@@ -157,6 +159,7 @@ export const allInfrastructures: InfrastructureProject[] = [
     tronbtc,
     merlinmbtc,
     alloallobtc,
+    sidesbtc,
 ];
 
 export const allInfrastructureSlugs: string[] = allInfrastructures.map(
