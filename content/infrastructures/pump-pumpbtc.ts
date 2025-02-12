@@ -57,7 +57,8 @@ const pump: InfrastructureProject = {
             content: [
                 {
                     title: "Proof-of-Reserves",
-                    content: "The project provides a [list of BTC addresses](https://dashboard.pumpbtc.xyz/) that it claims to be its reserves.",
+                    content:
+                        "The project provides a [list of BTC addresses](https://dashboard.pumpbtc.xyz/) that it claims to be its reserves.",
                 },
                 {
                     title: "External operators disclosed",
@@ -80,7 +81,7 @@ const pump: InfrastructureProject = {
                 {
                     title: "Key storage & signing",
                     content:
-                        "PumpBTC states that reserve wallets are managed by an MPC solution between Cobo, Coinover, and Cobo. EVM wallets managing derivative assets are signed by GnosisSafes.",
+                        "PumpBTC states that reserve wallets are managed by an MPC solution between Cobo and Cobo. EVM wallets managing derivative assets are signed by GnosisSafes.",
                 },
                 {
                     title: "Cross-chain PumpBTC",
@@ -108,7 +109,7 @@ const pump: InfrastructureProject = {
             tier: "",
             title: "PumpBTC works with custodians to store bitcoin assets",
             content:
-                "PumpBTC works with custodial providers to swap PumpBTC deposits into native BTC for BTC staking. When a user deposits a BTC derivative token (e.g. wBTC) into the PumpBTC contract, they are given PumpBTC in return. The staking contract is operated by a [⅔ GnosisSafe](https://etherscan.io/address/0xAC364d14020f1da0044699691a91f06ca6131Fe3).\n\nCobo and Coinover have been mentioned as operators participating in Pump.\n\n[Source](https://pumpbtc.gitbook.io/pumpbtc/custody-and-security/how-does-pumpbtc-ensure-safety)",
+                "PumpBTC works with custodial providers to swap PumpBTC deposits into native BTC for BTC staking. When a user deposits a BTC derivative token (e.g., wBTC) into the PumpBTC contract, they are given PumpBTC in return. The staking contract is operated by a [⅔ GnosisSafe](https://etherscan.io/address/0xAC364d14020f1da0044699691a91f06ca6131Fe3).\n\nCobo and Coinover have been mentioned as operators participating in Pump.\n\n[Source](https://pumpbtc.gitbook.io/pumpbtc/custody-and-security/how-does-pumpbtc-ensure-safety)",
         },
         {
             category: AssessmentCategory.SupplyIssuance,
