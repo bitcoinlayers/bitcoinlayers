@@ -81,7 +81,7 @@ const pump: InfrastructureProject = {
                 {
                     title: "Key storage & signing",
                     content:
-                        "PumpBTC states that reserve wallets are managed by an MPC solution between Cobo and Cobo. EVM wallets managing derivative assets are signed by GnosisSafes.",
+                        "PumpBTC states that reserve wallets are managed by an MPC solution between Cobo and Coinover. EVM wallets managing derivative assets are signed by GnosisSafes.",
                 },
                 {
                     title: "Cross-chain PumpBTC",
