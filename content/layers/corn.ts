@@ -11,6 +11,7 @@ import {
     ContentSection,
     RiskCategory,
     TokenSnippet,
+    TechnologySnippet,
 } from "../props";
 
 const corn: LayerProject = {
@@ -27,7 +28,7 @@ const corn: LayerProject = {
     riskFactors: [
         RiskFactor.VeryHigh,
         RiskFactor.VeryHigh,
-        RiskFactor.VeryHigh,
+        RiskFactor.UnderReview,
         RiskFactor.VeryHigh,
     ],
     btcLocked: 0,
@@ -165,8 +166,7 @@ const corn: LayerProject = {
             content: [
                 {
                     title: "Ethereum Virtual Machine",
-                    content:
-                        "Corn uses an EVM-compatible virtual machine. The Ethereum Virtual Machine is software responsible for smart contract execution for a number of blockchains, namely the Ethereum Network. It uses Solidity/Vyper as its code and is the dominant environment for smart contract execution in the cryptocurrency ecosystem. Corn is EVM-compatible, which means that a developer from Ethereum would have less difficulty deploying their applications on Corn compared to other execution environments.",
+                    content: TechnologySnippet.EVM,
                 },
                 {
                     title: "Arbitrum Stylus",
