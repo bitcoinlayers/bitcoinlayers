@@ -67,6 +67,7 @@ import taikoProject from "../content/layers/taiko";
 import tronProject from "../content/layers/tron";
 import zksyncProject from "../content/layers/zksync";
 import osmosisProject from "../content/layers/osmosis";
+import berachainProject from "../content/layers/berachain";
 
 const core: LayerProject = coreProject;
 const internetcomputer: LayerProject = internetcomputerProject;
@@ -135,6 +136,7 @@ const taiko: LayerProject = taikoProject;
 const tron: LayerProject = tronProject;
 const zksync: LayerProject = zksyncProject;
 const osmosis: LayerProject = osmosisProject;
+const berachain: LayerProject = berachainProject;
 
 export const allLayers: LayerProject[] = [
     core,
@@ -197,6 +199,7 @@ export const allLayers: LayerProject[] = [
     tron,
     zksync,
     osmosis,
+    berachain,
 ];
 
 export const allLayerSlugs: string[] = allLayers.map((layer) => layer.slug);
