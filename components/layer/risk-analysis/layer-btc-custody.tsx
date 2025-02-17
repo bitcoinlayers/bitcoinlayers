@@ -20,21 +20,23 @@ interface Peg {
 
 interface BtcCustodyProps {
     category: string;
-    pegs: Peg[];
+    pegs?: Peg[];
 }
 
-const BtcCustody: React.FC<BtcCustodyProps> = ({ category, pegs }) => {
-    const [selectedPeg, setSelectedPeg] = useState<string>(pegs[0].name);
+const BtcCustody: React.FC<BtcCustodyProps> = ({ category, pegs = [] }) => {
+    const [selectedPeg, setSelectedPeg] = useState<string>(
+        pegs.length > 0 ? pegs[0].name : "none",
+    );
     const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(false);
 
     const selectedPegData =
-        selectedPeg !== "view-all"
+        selectedPeg !== "view-all" && pegs.length > 0
             ? pegs.find((peg) => peg.name === selectedPeg)
             : null;
 
     const displayedRiskFactor =
-        selectedPeg !== "view-all"
-            ? selectedPegData?.tier || "Multiple"
+        selectedPeg !== "view-all" && selectedPegData
+            ? selectedPegData.tier
             : "Multiple";
 
     const toggleDropdown = () => {
@@ -52,40 +54,49 @@ const BtcCustody: React.FC<BtcCustodyProps> = ({ category, pegs }) => {
                 <div className="body_risksection !text-foreground">
                     {category}
 
-                    <div className="relative ml-4 inline-block">
-                        <Button
-                            variant="brand"
-                            onClick={toggleDropdown}
-                            className="p-2 text-sm rounded-md border-brand bg-transparent border"
-                        >
-                            {selectedPeg === "view-all"
-                                ? "View All"
-                                : selectedPeg}
-                        </Button>
+                    {pegs.length > 0 ? (
+                        <div className="relative ml-4 inline-block">
+                            <Button
+                                variant="brand"
+                                onClick={toggleDropdown}
+                                className="p-2 text-sm rounded-md border-brand bg-transparent border"
+                            >
+                                {selectedPeg === "view-all"
+                                    ? "View All"
+                                    : selectedPeg}
+                            </Button>
 
-                        {isDropdownOpen && (
-                            <div className="absolute text-sm mt-2 w-40 bg-background border border-border rounded-md shadow-md z-10">
-                                <button
-                                    onClick={() => handleSelectPeg("view-all")}
-                                    className="w-full text-left p-2 hover:bg-brand hover:text-white"
-                                >
-                                    View All
-                                </button>
-                                {pegs.map((peg) => (
+                            {isDropdownOpen && (
+                                <div className="absolute text-sm mt-2 w-40 bg-background border border-border rounded-md shadow-md z-10">
                                     <button
-                                        key={peg.name}
                                         onClick={() =>
-                                            handleSelectPeg(peg.name)
+                                            handleSelectPeg("view-all")
                                         }
-                                        className="w-full text-sm text-left p-2 hover:bg-brand hover:text-white"
+                                        className="w-full text-left p-2 hover:bg-brand hover:text-white"
                                     >
-                                        {peg.name}
+                                        View All
                                     </button>
-                                ))}
-                            </div>
-                        )}
-                    </div>
+                                    {pegs.map((peg) => (
+                                        <button
+                                            key={peg.name}
+                                            onClick={() =>
+                                                handleSelectPeg(peg.name)
+                                            }
+                                            className="w-full text-sm text-left p-2 hover:bg-brand hover:text-white"
+                                        >
+                                            {peg.name}
+                                        </button>
+                                    ))}
+                                </div>
+                            )}
+                        </div>
+                    ) : (
+                        <p className="ml-4 text-sm text-gray-500">
+                            No pegs available
+                        </p>
+                    )}
                 </div>
+
                 <div className="h-8 justify-end items-center gap-2 flex lg:flex-row flex-row-reverse">
                     <div
                         className="text-sm font-medium leading-tight"
@@ -119,43 +130,51 @@ const BtcCustody: React.FC<BtcCustodyProps> = ({ category, pegs }) => {
             </div>
 
             <div className="mt-4">
-                {selectedPeg === "view-all"
-                    ? pegs.map((peg) => (
-                          <div key={peg.name}>
-                              <RiskContent
-                                  name={peg.name}
-                                  title={peg.title}
-                                  content={peg.content}
-                              />
-                              <div className="mt-2 text-right">
-                                  <a
-                                      href={`/infrastructure/${peg.infrastructureSlug}`}
-                                      className="font-semibold hover:underline flex items-center justify-end"
-                                  >
-                                      Learn more about {peg.name}
-                                      <span className="ml-2">→</span>
-                                  </a>
-                              </div>
-                          </div>
-                      ))
-                    : selectedPegData && (
-                          <div>
-                              <RiskContent
-                                  name={selectedPegData.name}
-                                  title={selectedPegData.title}
-                                  content={selectedPegData.content}
-                              />
-                              <div className="mt-2 text-right">
-                                  <a
-                                      href={`/infrastructure/${selectedPegData.infrastructureSlug}`}
-                                      className="font-semibold hover:underline flex items-center justify-end"
-                                  >
-                                      Learn more about {selectedPegData.name}
-                                      <span className="ml-2">→</span>
-                                  </a>
-                              </div>
-                          </div>
-                      )}
+                {pegs.length > 0 ? (
+                    selectedPeg === "view-all" ? (
+                        pegs.map((peg) => (
+                            <div key={peg.name}>
+                                <RiskContent
+                                    name={peg.name}
+                                    title={peg.title}
+                                    content={peg.content}
+                                />
+                                <div className="mt-2 text-right">
+                                    <a
+                                        href={`/infrastructure/${peg.infrastructureSlug}`}
+                                        className="font-semibold hover:underline flex items-center justify-end"
+                                    >
+                                        Learn more about {peg.name}
+                                        <span className="ml-2">→</span>
+                                    </a>
+                                </div>
+                            </div>
+                        ))
+                    ) : (
+                        selectedPegData && (
+                            <div>
+                                <RiskContent
+                                    name={selectedPegData.name}
+                                    title={selectedPegData.title}
+                                    content={selectedPegData.content}
+                                />
+                                <div className="mt-2 text-right">
+                                    <a
+                                        href={`/infrastructure/${selectedPegData.infrastructureSlug}`}
+                                        className="font-semibold hover:underline flex items-center justify-end"
+                                    >
+                                        Learn more about {selectedPegData.name}
+                                        <span className="ml-2">→</span>
+                                    </a>
+                                </div>
+                            </div>
+                        )
+                    )
+                ) : (
+                    <p className="text-sm text-gray-500">
+                        No peg data available
+                    </p>
+                )}
             </div>
         </div>
     );
