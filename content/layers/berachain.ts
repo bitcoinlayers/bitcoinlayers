@@ -18,6 +18,7 @@ import {
     BitcoinSecuritySnippet,
 } from "../props";
 import { tokenToString } from "typescript";
+import { Rubik_Vinyl } from "next/font/google";
 
 const berachain: LayerProject = {
     type: Type.Layer,
@@ -110,23 +111,23 @@ const berachain: LayerProject = {
         {
             category: RiskCategory.DataAvailability,
             score: 0,
-            tier: RiskFactor.UnderReview,
-            title: ReviewSnippet.UnderReview,
-            content: "Under review.",
+            tier: RiskFactor.AlternativePoS,
+            title: "Data is stored and made available by an alternative PoS network",
+            content: ReviewSnippet.AltL1DA
         },
         {
             category: RiskCategory.BlockProduction,
             score: 0,
-            tier: RiskFactor.UnderReview,
-            title: ReviewSnippet.UnderReview,
-            content: "Under review.",
+            tier: RiskFactor.AlternativePoS,
+            title: "Network is operated by an alternative PoS network",
+            content: ReviewSnippet.AltL1Operators
         },
         {
-            category: RiskCategory.StateValidation,
+            category: RiskCategory.FinalityGuarantees,
             score: 0,
-            tier: RiskFactor.UnderReview,
-            title: ReviewSnippet.UnderReview,
-            content: "Under review.",
+            tier: RiskFactor.AlternativePoS,
+            title: "Finality guarantees are provided by an alternative PoS Network",
+            content: "Berachain leverages a novel consensus mechanism for transaction execution. Like CometBFT, it offers single slot finality. This means that once a transaction is added to the cannonical chain, it cannot be reorged.",
         },
     ],
     sections: [
@@ -144,11 +145,11 @@ const berachain: LayerProject = {
                 },
                 {
                     title: "No MEV introduced to bitcoin",
-                    content: "Berachain does not introduce MEV to bitcoin.",
+                    content: BitcoinSecuritySnippet.AltNetworkMEV,
                 },
                 {
                     title: "Berachain does not contribute to the security budget",
-                    content: BitcoinSecuritySnippet.NoSecurity,
+                    content: BitcoinSecuritySnippet.NoSecurityBudget,
                 },
             ],
         },
