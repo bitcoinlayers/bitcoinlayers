@@ -19,7 +19,7 @@ const hemi: LayerProject = {
     title: "Hemi",
     entityType: EntityType.TBD,
     entityCategory: EntityCategory.Alt,
-    live: LiveStatus.Testnet,
+    live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
     bridge: false,
