@@ -45,7 +45,11 @@ const sonic: LayerProject = {
     links: [
         {
             text: Site.Website,
+<<<<<<< Updated upstream
             url: "https://www.berachain.com/",
+=======
+            url: "https://www.soniclabs.com/",
+>>>>>>> Stashed changes
         },
         {
             text: Site.Docs,
@@ -61,7 +65,11 @@ const sonic: LayerProject = {
         },
         {
             text: Site.Twitter,
+<<<<<<< Updated upstream
             url: "https://x.com/berachain",
+=======
+            url: "https://x.com/SonicLabs",
+>>>>>>> Stashed changes
         },
     ],
     description:
