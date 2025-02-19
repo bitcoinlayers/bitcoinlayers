@@ -1,3 +1,4 @@
+import Risk from "@/components/layer/layerTableItemRisk";
 import {
     LayerProject,
     Type,
@@ -11,20 +12,31 @@ import {
     ContentSection,
     RiskCategory,
     TokenSnippet,
+    ReviewSnippet,
+    UseCaseSnippet,
+    TechnologySnippet,
+    BitcoinSecuritySnippet,
 } from "../props";
+import { tokenToString } from "typescript";
+import { Rubik_Vinyl } from "next/font/google";
 
 const hemi: LayerProject = {
     type: Type.Layer,
     slug: "hemi",
     title: "Hemi",
-    entityType: EntityType.TBD,
+    entityType: EntityType.Sidechain,
     entityCategory: EntityCategory.Alt,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
     bridge: false,
     underReview: true,
-    riskFactors: ["", "", "", ""],
+    riskFactors: [
+        RiskFactor.UnderReview,
+        RiskFactor.UnderReview,
+        RiskFactor.UnderReview,
+        RiskFactor.UnderReview,
+    ],
     btcLocked: 0,
     nativeToken: "-",
     feeToken: "-",
@@ -53,36 +65,36 @@ const hemi: LayerProject = {
         },
     ],
     description:
-        "Hemi is a blockchain that is building compatibility with bitcoin and Ethereum. It is currently live on testnet.",
+        "Hemi is a blockchain that is building compatibility with bitcoin and Ethereum.",
     riskAnalysis: [
         {
             category: RiskCategory.BtcCustody,
             score: 0,
-            tier: "",
-            title: "",
-            content: "",
+            tier: RiskFactor.UnderReview,
+            title: ReviewSnippet.UnderReview,
+            content: ReviewSnippet.UnderReview,
             pegs: [],
         },
         {
             category: RiskCategory.DataAvailability,
             score: 0,
-            tier: "",
-            title: "",
-            content: "",
+            tier: RiskFactor.UnderReview,
+            title: ReviewSnippet.UnderReview,
+            content: ReviewSnippet.UnderReview,
         },
         {
             category: RiskCategory.BlockProduction,
             score: 0,
-            tier: "",
-            title: "",
-            content: "",
+            tier: RiskFactor.UnderReview,
+            title: ReviewSnippet.UnderReview,
+            content: ReviewSnippet.UnderReview,
         },
         {
-            category: RiskCategory.StateValidation,
+            category: RiskCategory.FinalityGuarantees,
             score: 0,
-            tier: "",
-            title: "",
-            content: "",
+            tier: RiskFactor.UnderReview,
+            title: ReviewSnippet.UnderReview,
+            content: ReviewSnippet.UnderReview,
         },
     ],
     sections: [
