@@ -35,7 +35,7 @@ const arbitrum: LayerProject = {
         RiskFactor.High,
         RiskFactor.Medium,
         RiskFactor.Medium,
-        RiskFactor.High,
+        RiskFactor.Medium,
     ],
     btcLocked: 0,
     nativeToken: "-",
@@ -197,9 +197,9 @@ const arbitrum: LayerProject = {
         {
             category: RiskCategory.FinalityGuarantees,
             score: 0,
-            tier: RiskFactor.High,
-            title: "Arbitrum state transitions finalize on Ethereum. 14 whitelisted validators are able to propose state transitions and submit fault proofs",
-            content: ReviewSnippet.FinalityAltRollupFederationFraudProofs,
+            tier: RiskFactor.Medium,
+            title: "Arbitrum state transitions finalize on Ethereum. Validators who stake 1100 ETH can contest invalid state transitions",
+            content: `${ReviewSnippet.FinalityAltRollupPermissionlessFraudProofs},\n\n,The stake required to become a validator is 1100 ETH.`
         },
     ],
     sections: [
