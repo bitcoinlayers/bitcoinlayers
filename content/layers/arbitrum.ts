@@ -198,8 +198,8 @@ const arbitrum: LayerProject = {
             category: RiskCategory.FinalityGuarantees,
             score: 0,
             tier: RiskFactor.Medium,
-            title: "Arbitrum state transitions finalize on Ethereum. Validators who stake 1100 ETH can contest invalid state transitions",
-            content: `${ReviewSnippet.FinalityAltRollupPermissionlessFraudProofs},\n\n,The stake required to become a validator is 1100 ETH.`
+            title: "Arbitrum state transitions finalize on Ethereum. Validators who stake 3600 ETH can contest invalid state transitions",
+            content: `${ReviewSnippet.FinalityAltRollupPermissionlessFraudProofs},\n\n,The stake required to become a validator is 3600 ETH.`
         },
     ],
     sections: [
