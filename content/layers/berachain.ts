@@ -33,9 +33,9 @@ const berachain: LayerProject = {
     underReview: false,
     riskFactors: [
         RiskFactor.UnderReview,
-        RiskFactor.UnderReview,
-        RiskFactor.UnderReview,
-        RiskFactor.UnderReview,
+        RiskFactor.AlternativePoS,
+        RiskFactor.AlternativePoS,
+        RiskFactor.AlternativePoS,
     ],
     btcLocked: 0,
     nativeToken: "-",
