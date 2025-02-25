@@ -11,6 +11,7 @@ import {
     ContentSection,
     RiskCategory,
     TokenSnippet,
+    ReviewSnippet,
 } from "../props";
 
 const solana: LayerProject = {
@@ -68,22 +69,20 @@ const solana: LayerProject = {
             content: "",
             pegs: [
                 {
-                    name: "Threshold tBTC",
-                    infrastructureSlug: "threshold-tbtc",
-                    score: 0,
-                    tier: RiskFactor.UnderReview,
-                    title: "Users trust the Threshold Network to keep tBTC backed",
-                    content:
-                        "tBTC's peg with bitcoin is managed by the Threshold Network, a distributed, but permissioned, two-way peg.\n\nWe are currently reviewing if tBTC is minted on Solana natively or minted on Ethereum and then bridged to Solana via a custom bridge program.",
-                },
-                {
                     name: "cbBTC",
                     infrastructureSlug: "coinbase-cbbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: "cbBTC is managed by a centralized custodian. We are analyzing if cbBTC is natively minted on Solana or if is bridged from Ethereum.",
-                    content:
-                        "cbBTC on Solana is backed Coinbase. These entities are responsible for custodying BTC that backs cbBTC on its various networks. Users trust these entities to not collude and steal the funds backing cbBTC.\n\nIn addition to custodying funds backing cbBTC, Coinbase can censor users from using cbBTC and maintains unilateral control of cbBTC's smart contracts.",
+                    title: "cbBTC is managed by a centralized custodian.",
+                    content: TokenSnippet.CoinbasecbBTC,
+                },
+                {
+                    name: "Threshold tBTC",
+                    infrastructureSlug: "threshold-tbtc",
+                    score: 0,
+                    tier: RiskFactor.High,
+                    title: "Users trust the Threshold Network to keep tBTC backed",
+                    content: `${TokenSnippet.ThresholdtBTC}\n\nThis bridge is managed by an [8 member](https://explorer.solana.com/address/Gj93RRt6QB7FjmyokAD5rcMAku7pq3Fk2Aa8y6nNbwsV/program-multisig) federation.`,
                 },
                 {
                     name: "Wormhole wBTC",
