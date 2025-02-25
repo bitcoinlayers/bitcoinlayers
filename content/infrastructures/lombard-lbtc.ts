@@ -61,8 +61,8 @@ const lombard: InfrastructureProject = {
                     content: "The project provides active proof-of-reserves. The proof-of-reserves can be seen [here](https://www.lombard.finance/por/). The proof-of-reserves is provided through an integration with [Redstone](https://docs.redstone.finance/docs/get-started/price-feeds/types-of-feeds/lombard/).\n\n⚠️ We have not reviewed the codebase behind this PoR integration.",
                 },
                 {
-                    title: "External operators are not disclosed",
-                    content: `${BTCWrapperTransparency.OperatorsDisclosedNo}\n\nOperators undergo KYB checks and must be approved by members of the consortium network before entering the protocol.`,
+                    title: "External operators are disclosed",
+                    content: `${BTCWrapperTransparency.OperatorsDisclosedYes}\n\nOperators undergo KYB checks and must be approved by members of the consortium network before entering the protocol.`,
                 },
                 {
                     title: "Redemptions enabled and documented",
