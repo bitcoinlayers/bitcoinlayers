@@ -121,7 +121,7 @@ const lombard: InfrastructureProject = {
             tier: "",
             title: "Users trust a network of custodians in the Lombard protocol. Signers under review",
             content:
-                "BTC backing Lombard LBTC is secured by a network of [validators](https://etherscan.io/address/0xdad58DfA5c1a7a34419AFdBE1f0d610efeea95E4#readProxyContract) participating in Lombard’s security consortium. The security consortium participates in a CometBFT consensus protocol.\n\nAdding and removing validators from this consortium is handled by the current validator set within a given epoch. When a user deposits funds into the Lombard protocol, they are given a specific CubeSigner address to manage their deposits and staking transactions.\n\nWe are reviewing the signer set for the Lombard Security Consortium.",
+                "BTC backing Lombard LBTC is secured by a network of [custodians](https://etherscan.io/address/0xdad58DfA5c1a7a34419AFdBE1f0d610efeea95E4#readProxyContract) participating in Lombard’s security consortium. The security consortium participates in a CometBFT consensus protocol.\n\nAdding and removing validators from this consortium is handled by the current validator set within a given epoch. When a user deposits funds into the Lombard protocol, they are given a specific CubeSigner address to manage their deposits and staking transactions.\n\nWe are reviewing the signer set for the Lombard Security Consortium.",
         },
         {
             category: AssessmentCategory.SupplyIssuance,
