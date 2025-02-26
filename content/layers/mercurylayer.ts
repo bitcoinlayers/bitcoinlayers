@@ -36,7 +36,7 @@ const mercurylayer: LayerProject = {
     links: [
         {
             text: Site.Website,
-            url: "https://mercurylayer.com",
+            url: "https://mercurylayer.com/",
         },
         {
             text: Site.Docs,
