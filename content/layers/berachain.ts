@@ -24,7 +24,7 @@ const berachain: LayerProject = {
     type: Type.Layer,
     slug: "berachain",
     title: "Berachain",
-    entityType: EntityType.AltRollup,
+    entityType: EntityType.AltL1,
     entityCategory: EntityCategory.Alt,
     live: LiveStatus.Mainnet,
     staking: false,
