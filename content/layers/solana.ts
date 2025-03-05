@@ -12,6 +12,8 @@ import {
     RiskCategory,
     TokenSnippet,
     ReviewSnippet,
+    BitcoinSecuritySnippet,
+    UseCaseSnippet,
 } from "../props";
 
 const solana: LayerProject = {
@@ -98,35 +100,54 @@ const solana: LayerProject = {
             category: RiskCategory.DataAvailability,
             score: 0,
             tier: RiskFactor.UnderReview,
-            title: "This section is under review",
-            content:
-                "We are currently reviewing what satisfies the data availability requirement on Solana.",
+            title: "Data is stored and made available by an alternative PoS network",
+            content: ReviewSnippet.AltL1DA,
         },
         {
             category: RiskCategory.NetworkOperators,
             score: 0,
             tier: RiskFactor.UnderReview,
             title: "Solana is operated by a distributed validator set",
-            content:
-                "Blocks are built and proposed by a distributed consensus network.\n\nWe are currently reviewing Solana's network operators",
+            content: ReviewSnippet.AltL1Operators
         },
         {
             category: RiskCategory.FinalityGuarantees,
             score: 0,
             tier: RiskFactor.UnderReview,
             title: "We are currently reviewing Solana's finality guarantees",
-            content:
-                "Blocks are validated and finalized by a distributed consensus network.\n\nWe are currently reviewing Solana's finality guarantees",
+            content: "Solana's finality guarantees are achieved through a distributed consensus mechanism. We are reviewing relevant trust assumptions.",
         },
     ],
     sections: [
         {
-            id: "underreview",
-            title: "Further sections under review",
+            id: "bitcoinsecurity",
+            title: "Bitcoin Security",
             content: [
                 {
-                    content:
-                        "Aspects related to bitcoin security, relevant technologies, and some two-way pegs have not been reviewed.\n\nThey will be reviewed by our team soon.",
+                    title: "Solana does not inherit any security from bitcoin",
+                    content: BitcoinSecuritySnippet.NoSecurity,
+                },
+                {
+                    title: "SOL token used to pay fees",
+                    content: BitcoinSecuritySnippet.AltTokenFees,
+                },
+                {
+                    title: "No MEV introduced to bitcoin",
+                    content: BitcoinSecuritySnippet.AltNetworkMEV,
+                },
+                {
+                    title: "Solana does not contribute to the security budget",
+                    content: BitcoinSecuritySnippet.NoSecurityBudget,
+                },
+            ],
+        },
+        {
+            id: "usecases",
+            title: "Use Cases",
+            content: [
+                {
+                    title: "Onchain applications",
+                    content: UseCaseSnippet.OnchainApps,
                 },
             ],
         },
