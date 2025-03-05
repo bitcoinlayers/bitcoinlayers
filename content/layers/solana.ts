@@ -92,7 +92,7 @@ const solana: LayerProject = {
                     score: 0,
                     tier: RiskFactor.UnderReview,
                     title: TokenSnippet.UnderReview,
-                    content: "This two-way peg is under review",
+                    content: `${TokenSnippet.BitGowBTC}\n\nwBTC on Solana is minted via the Portal bridge from Ethereum. We are further reviewing this bridge's trust assumptions.`,
                 },
             ],
         },
