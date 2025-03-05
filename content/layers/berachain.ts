@@ -65,7 +65,7 @@ const berachain: LayerProject = {
         },
     ],
     description:
-        "Berachain is an EVM L1. It is home to various BTC-derivative assets.",
+        "Berachain is an EVM-compatible L1. It leverages a novel consensus mechanism and is home to various BTC-derivative assets.",
     riskAnalysis: [
         {
             category: RiskCategory.BtcCustody,
@@ -127,7 +127,7 @@ const berachain: LayerProject = {
             score: 0,
             tier: RiskFactor.AlternativePoS,
             title: "Finality guarantees are provided by an alternative PoS Network",
-            content: "Berachain leverages a novel consensus mechanism for transaction execution. Like CometBFT, it offers single slot finality. This means that once a transaction is added to the cannonical chain, it cannot be reorged.",
+            content: "Berachain leverages a novel consensus mechanism for transaction execution. Like CometBFT, it offers single slot finality. This means that once a transaction is added to the canonical chain, it cannot be reorged.",
         },
     ],
     sections: [
