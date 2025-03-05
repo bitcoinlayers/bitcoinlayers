@@ -6,6 +6,7 @@ import bvmProject from "../content/infrastructures/bvm";
 import celestiaProject from "../content/infrastructures/celestia";
 import espressoProject from "../content/infrastructures/espresso";
 import lorenzoProject from "../content/infrastructures/lorenzo-stbtc";
+import enzobtcProject from "../content/infrastructures/lorenzo-enzobtc";
 import sovereignProject from "../content/infrastructures/sovereign";
 import nubitProject from "../content/infrastructures/nubit";
 import babylonProject from "../content/infrastructures/babylon";
@@ -60,6 +61,7 @@ const bvm: InfrastructureProject = bvmProject;
 const celestia: InfrastructureProject = celestiaProject;
 const espresso: InfrastructureProject = espressoProject;
 const lorenzo: InfrastructureProject = lorenzoProject;
+const enzobtc: InfrastructureProject = enzobtcProject;
 const sovereign: InfrastructureProject = sovereignProject;
 const nubit: InfrastructureProject = nubitProject;
 const babylon: InfrastructureProject = babylonProject;
@@ -118,6 +120,7 @@ export const allInfrastructures: InfrastructureProject[] = [
     // nubit,
     // sovereign,
     lorenzo,
+    enzobtc,
     // espresso,
     // celestia,
     // bvm,
