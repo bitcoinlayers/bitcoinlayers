@@ -185,7 +185,7 @@ const starknet: LayerProject = {
         },
         {
             id: "openresearch",
-            title: "Open research questions",
+            title: "Open Research Questions",
             content: [
                 {
                     title: "Starknet will likely use an external sequencer thus mitigating MEV leakage to the Bitcoin L1",
