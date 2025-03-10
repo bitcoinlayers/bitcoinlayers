@@ -105,21 +105,6 @@ const starknet: LayerProject = {
     ],
     sections: [
         {
-            id: "additionalconsiderations",
-            title: "Additional Considerations",
-            content: [
-                {
-                    title: "⚠️ A federation can immediately upgrade relevant contracts. This affects some two-way peg implementations",
-                    content:
-                        AdditionalSnippet.UpgradeableContractsCentralizedAndNoExit,
-                },
-                {
-                    title: "BTC users currently receive less security from validity proofs on Starknet",
-                    content: "Validity proofs are used on the network to finalize a bridge contract on Ethereum and permit withdrawals. Whilst this provides security from an Ethereum user perspective, BTC users ultimately receive security from the custodian (or network) securing BTC backing wrapped BTC assets.\n\nIf the network were to add a SNARK verifier on bitcoin (via a BitVM-style mechanism or soft fork), then the finality assurances for the protocol would change.\n\nWe gave the project a custom score for this section.",
-                },
-            ],
-        },
-        {
             id: "bitcoinsecurity",
             title: "Bitcoin Security",
             content: [
@@ -138,6 +123,21 @@ const starknet: LayerProject = {
                 {
                     title: "Arbitrum does not contribute to the security budget",
                     content: BitcoinSecuritySnippet.NoSecurity,
+                },
+            ],
+        },
+        {
+            id: "additionalconsiderations",
+            title: "Additional Considerations",
+            content: [
+                {
+                    title: "⚠️ A federation can immediately upgrade relevant contracts. This affects some two-way peg implementations",
+                    content:
+                        AdditionalSnippet.UpgradeableContractsCentralizedAndNoExit,
+                },
+                {
+                    title: "Validity proofs on Starknet don't ultimately secure two-way pegs securing BTC",
+                    content: "Validity proofs are used on the network to finalize a bridge contract on Ethereum and permit withdrawals. Whilst this provides security from an Ethereum user perspective, BTC users ultimately receive security from the custodian (or network) securing BTC backing wrapped BTC assets.\n\nIf the network were to add a SNARK verifier on bitcoin (via a BitVM-style mechanism or soft fork), then the finality assurances for the protocol would change.\n\nWe gave the project a custom score for this section.",
                 },
             ],
         },
