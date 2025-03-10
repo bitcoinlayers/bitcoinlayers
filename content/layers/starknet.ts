@@ -32,7 +32,7 @@ const starknet: LayerProject = {
         RiskFactor.VeryHigh,
         RiskFactor.Medium,
         RiskFactor.VeryHigh,
-        RiskFactor.VeryHigh,
+        RiskFactor.High,
     ],
     btcLocked: 0,
     nativeToken: "ETH",
