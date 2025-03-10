@@ -13,6 +13,8 @@ import {
     RiskCategory,
     TokenSnippet,
     ReviewSnippet,
+    BitcoinSecuritySnippet,
+    AdditionalSnippet,
 } from "../props";
 
 const starknet: LayerProject = {
@@ -103,6 +105,39 @@ const starknet: LayerProject = {
     ],
     sections: [
         {
+            id: "additionalconsiderations",
+            title: "Additional Considerations",
+            content: [
+                {
+                    title: "⚠️ A federation can immediately upgrade relevant contracts. This affects some two-way peg implementations",
+                    content:
+                        AdditionalSnippet.UpgradeableContractsCentralizedAndNoExit,
+                },
+            ],
+        },
+        {
+            id: "bitcoinsecurity",
+            title: "Bitcoin Security",
+            content: [
+                {
+                    title: "Arbitrum does not inherit any security from Bitcoin",
+                    content: BitcoinSecuritySnippet.NoSecurity,
+                },
+                {
+                    title: "ETH token used to pay fees",
+                    content: BitcoinSecuritySnippet.AltTokenFees,
+                },
+                {
+                    title: "No MEV introduced to Bitcoin",
+                    content: BitcoinSecuritySnippet.CentralizedSequencerMEV,
+                },
+                {
+                    title: "Arbitrum does not contribute to the security budget",
+                    content: BitcoinSecuritySnippet.NoSecurity,
+                },
+            ],
+        },
+        {
             id: "Technology",
             title: "Technology",
             content: [
@@ -145,13 +180,13 @@ const starknet: LayerProject = {
             ],
         },
         {
-            id: "additionalconsiderations",
-            title: "Additional considerations",
+            id: "openresearch",
+            title: "Open research questions",
             content: [
                 {
-                    title: "Starknet will likely use an external sequencer thus mitigating MEV leakage to the L1",
+                    title: "Starknet will likely use an external sequencer thus mitigating MEV leakage to the Bitcoin L1",
                     content:
-                        "A concern with rollups on Bitcoin is the potential introduction of MEV. If Bitcoin miners have exclusive rights in ordering rollup transactions, especially those with more expressive execution environments, miners have opportunities to extract MEV through a variety of mechanisms. This is known as based sequencing. If Bitcoin rollups implemented based sequencing, miners could invest into more sophisticated block building infrastructure to extract more harmful MEV for increased profits. This could raise the barrier to entry for mining, and potentially introduce centralizing pressures.\n\nStarknet is currently sequenced (ordered) by a centralized sequencer. The Starknet community has additionally researched decentralized sequencer, but have focused on alternative consensus protocols taking on this role (CometBFT as an example).\n\nIf an alternative consensus mechanism is used to decentralize the sequencer, versus based sequencing, then MEV is unlikely to leak to Bitcoin miners.",
+                        "A concern with rollups, and alternative rollups, on Bitcoin is the potential introduction of MEV. If Bitcoin miners have exclusive rights in ordering rollup transactions, especially those with more expressive execution environments, miners have opportunities to extract MEV through a variety of mechanisms. This is known as based sequencing. If Bitcoin rollups implemented based sequencing, miners could invest into more sophisticated block building infrastructure to extract more harmful MEV for increased profits. This could raise the barrier to entry for mining, and potentially introduce centralizing pressures.\n\nStarknet is currently sequenced (ordered) by a centralized sequencer. The Starknet community has additionally researched decentralized sequencer, but have focused on alternative consensus protocols taking on this role (CometBFT as an example).\n\nIf an alternative consensus mechanism is used to decentralize the sequencer, versus based sequencing, then MEV is unlikely to leak to Bitcoin miners.",
                 },
             ],
         },
