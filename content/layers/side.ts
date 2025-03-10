@@ -13,6 +13,8 @@ import {
     TokenSnippet,
     ReviewSnippet,
     BitcoinSecuritySnippet,
+    TechnologySnippet,
+    UseCaseSnippet,
 } from "../props";
 
 const side: LayerProject = {
@@ -27,7 +29,7 @@ const side: LayerProject = {
     bridge: false,
     underReview: false,
     riskFactors: [
-        RiskFactor.UnderReview,
+        RiskFactor.High,
         RiskFactor.AlternativePoS,
         RiskFactor.AlternativePoS,
         RiskFactor.AlternativePoS,
@@ -60,7 +62,7 @@ const side: LayerProject = {
         },
     ],
     description:
-        "Side Protocol is building a settlement layer for modular blockchains. It will run a Proof-of-Stake consensus mechanism. Its relationship with Bitcoin would be that of a sidechain, and rollups settling on Side can leverage its BTC bridge contract.",
+        "Side Protocol is a Proof-of-Stake blockchain for BTC-denominated applications. It runs on CometBFT consensus.",
     riskAnalysis: [
         {
             category: RiskCategory.BtcCustody,
@@ -73,9 +75,9 @@ const side: LayerProject = {
                 name: "Side sBTC",
                 infrastructureSlug: "side-sbtc",
                 score: 0,
-                tier: RiskFactor.UnderReview,
-                title: TokenSnippet.UnderReview,
-                content: "We are currently reviewing the implementation for this two-way peg",
+                tier: RiskFactor.High,
+                title: "Side sBTC is managed by a federation made up of a portion of its validator set",
+                content: "Side sBTC is managed by 21 signers who additionally participate as validators in Side's proof-of-stake consensus.\n\nThese signers participate in a TSS network that where trusted validators perform signing duties for sBTC abd Side Chain.",
             },
         ],
         },
@@ -122,6 +124,26 @@ const side: LayerProject = {
                     title: "Side does not contribute to the security budget",
                     content: BitcoinSecuritySnippet.NoSecurity,
                 },
+            ],
+        },
+        {
+            id: "technology",
+            title: "Technology",
+            content: [
+                {
+                    title: "Side Chain is IBC=compatible",
+                    content: TechnologySnippet.IBC,
+                }
+            ],
+        },
+        {
+            id: "usecase",
+            title: "Use cases",
+            content: [
+                {
+                    title: "Side Chain offers a variety of financial applications",
+                    content: UseCaseSnippet.OnchainApps,
+                }
             ],
         },
     ],
