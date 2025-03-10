@@ -100,7 +100,7 @@ const starknet: LayerProject = {
             score: 0,
             tier: RiskFactor.High,
             title: "Validity proofs are used to finalize bridges and light clients",
-            content: `${ReviewSnippet.FinalityAltRollupValidityProofs}\n\nUsers cannot run their own provers in the event of censorship or liveness failures.,`
+            content: `${ReviewSnippet.FinalityAltRollupValidityProofs}\n\nUsers cannot run their own provers in the event of censorship or liveness failures.`
         },
     ],
     sections: [
