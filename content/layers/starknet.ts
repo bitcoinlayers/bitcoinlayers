@@ -1,3 +1,4 @@
+import Risk from "@/components/layer/layerTableItemRisk";
 import {
     LayerProject,
     Type,
@@ -11,6 +12,7 @@ import {
     ContentSection,
     RiskCategory,
     TokenSnippet,
+    ReviewSnippet,
 } from "../props";
 
 const starknet: LayerProject = {
@@ -19,7 +21,7 @@ const starknet: LayerProject = {
     title: "Starknet",
     entityType: EntityType.AltRollup,
     entityCategory: EntityCategory.Alt,
-    live: LiveStatus.Proposed,
+    live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
     bridge: false,
@@ -53,64 +55,52 @@ const starknet: LayerProject = {
         },
     ],
     description:
-        "Starknet is a validity rollup on Ethereum. They are proposing a multi-settlement rollup that will settle on Bitcoin and Ethereum should OP_CAT be activated. They are currently developing a STARK verifier directly in Script with OP_CAT on signet.",
+        "Starknet is a rollup that posts data to Ethereum.",
     riskAnalysis: [
         {
             category: RiskCategory.BtcCustody,
             score: 0,
-            tier: "",
+            tier: RiskFactor.NotApplicable,
             title: "",
             content: "",
-            pegs: [],
-        },
-        {
-            category: RiskCategory.DataAvailability,
-            score: 0,
-            tier: "",
-            title: "",
-            content: "",
-        },
-        {
-            category: RiskCategory.BlockProduction,
-            score: 0,
-            tier: "",
-            title: "",
-            content: "",
-        },
-        {
-            category: RiskCategory.StateValidation,
-            score: 0,
-            tier: "",
-            title: "",
-            content: "",
-        },
-    ],
-    sections: [
-        {
-            id: "disclaimer",
-            title: "Disclaimer",
-            content: [
+            pegs: [
                 {
-                    title: "😇 This page did not undergo a formal review process",
-                    content:
-                        "This page provides a high level assessment on a proposed Layer 2 design which requires a soft fork. This page should not be considered a risk assessment.",
+                    name: "BitGo wBTC",
+                    infrastructureSlug: "bitgo-wbtc",
+                    score: 0,
+                    tier: RiskFactor.VeryHigh,
+                    title: TokenSnippet.CustodianPeg,
+                    content: TokenSnippet.BitGowBTC,
                 },
             ],
         },
         {
-            id: "technology",
+            category: RiskCategory.DataAvailability,
+            score: 0,
+            tier: RiskFactor.Medium,
+            title: "Ethereum satisfies Starknet's data availability requirement",
+            content: ReviewSnippet.EthereumRollupDA,
+        },
+        {
+            category: RiskCategory.BlockProduction,
+            score: 0,
+            tier: RiskFactor.VeryHigh,
+            title: "Blocks are currently produced by a centralized sequencer",
+            content: "Starknet blocks are constructed by a centralized block producer. \n\nUsers cannot build their own blocks in the event of censorship or liveness failures.",
+        },
+        {
+            category: RiskCategory.FinalityGuarantees,
+            score: 0,
+            tier: RiskFactor.VeryHigh,
+            title: "Validity proofs are used to finalize bridges and light clients",
+            content: `${ReviewSnippet.FinalityAltRollupValidityProofs}\n\nUsers cannot run their own provers in the event of censorship or liveness failures.,`
+        },
+    ],
+    sections: [
+        {
+            id: "Technology",
             title: "Technology",
             content: [
-                {
-                    title: "Recursive Covenants",
-                    content:
-                        "OP_CAT is a proposed opcode that could enable two primitives that would support improved bridging protocols for projects like Starknet. The first enables users to predefine spending conditions for individual UTXOs. The second primitive is the verification of merkle tree branches. This would enable you to continuously add hashes of data to a merkle tree that continuously builds upon restrictions placed by previous transactions.\n\nBy building a continuous chain of restrictions over a number of transactions, you enable recursive covenants. Recursive covenants enable users to lock funds into a group UTXO that can continuously add more restrictions based on new user deposits, and additionally enforce changes for partial withdrawals which must go back into the rollup script.",
-                },
-                {
-                    title: "STARK Verifier with OP_CAT",
-                    content:
-                        "An issue that arises from shared UTXOs, specifically for L2s, is that you need a trusted party to verify offchain state transitions to enable users to withdraw funds relative to their updated balance. The StarkWare team (lead developers of Starknet) are working with L2 Iterative Ventures on developing a STARK verifier directly in Bitcoin Script with OP_CAT.\n\nIn rollups, state differences are compressed together and sent to the Bitcoin L1 with a corresponding validity proof proving that the state transition was executed correctly. Starknet are proposing a mechanism that would verify these STARK proofs proving the validity of L2 state transitions. By verifying offchain state transitions directly in Script, shared UTXOs would be able to process user withdrawals based on their updated balances. Recursive covenants and onchain STARK verification would create trust-minimized bridge programs for L2s.",
-                },
                 {
                     title: "Cairo Virtual Machine",
                     content:
@@ -126,6 +116,22 @@ const starknet: LayerProject = {
                     content:
                         "Madara is a sequencer built for L3s on top of Starknet. Madara allows L3s to leverage the SHARP system, with proofs verified on Starknet/Ethereum, while also offering DA flexibility, as L3s can choose alternative DA layers, e.g., Celestia.",
                 },
+            ]
+        },
+        {
+            id: "proposedtech",
+            title: "Proposed Technology",
+            content: [
+                {
+                    title: "Recursive Covenants",
+                    content:
+                        "OP_CAT is a proposed opcode that could enable two primitives that would support improved bridging protocols for projects like Starknet. The first enables users to predefine spending conditions for individual UTXOs. The second primitive is the verification of merkle tree branches. This would enable you to continuously add hashes of data to a merkle tree that continuously builds upon restrictions placed by previous transactions.\n\nBy building a continuous chain of restrictions over a number of transactions, you enable recursive covenants. Recursive covenants enable users to lock funds into a group UTXO that can continuously add more restrictions based on new user deposits, and additionally enforce changes for partial withdrawals which must go back into the rollup script.",
+                },
+                {
+                    title: "STARK Verifier with OP_CAT",
+                    content:
+                        "An issue that arises from shared UTXOs, specifically for L2s, is that you need a trusted party to verify offchain state transitions to enable users to withdraw funds relative to their updated balance. The StarkWare team (lead developers of Starknet) are working with L2 Iterative Ventures on developing a STARK verifier directly in Bitcoin Script with OP_CAT.\n\nIn rollups, state differences are compressed together and sent to the Bitcoin L1 with a corresponding validity proof proving that the state transition was executed correctly. Starknet are proposing a mechanism that would verify these STARK proofs proving the validity of L2 state transitions. By verifying offchain state transitions directly in Script, shared UTXOs would be able to process user withdrawals based on their updated balances. Recursive covenants and onchain STARK verification would create trust-minimized bridge programs for L2s.",
+                },
                 {
                     title: "Volition DA model",
                     content:
@@ -137,11 +143,6 @@ const starknet: LayerProject = {
             id: "additionalconsiderations",
             title: "Additional considerations",
             content: [
-                {
-                    title: "Starknet is a Stage 0 rollup on Ethereum",
-                    content:
-                        "The Starknet rollup on Ethereum, which would be additionally settled on Bitcoin should OP_CAT be activated, is a Stage 0 rollup based on the L2Beat Stages Framework.\n\nThe main issues with the Starknet rollup, on Ethereum, are:\n\n1️⃣ If the centralized sequencer (Starknet validator) goes down or censors users, they can not force-include a transaction to the L1.\n\n2️⃣ If the centralized proposer goes down or censors users, they can not force a withdrawal from Starknet to the Layer 1.\n\n3️⃣ Starknet’s L1 smart contract is immediately upgradeable, and users cannot withdraw their funds if a malicious upgrade is implemented. Funds can be stolen if a malicious contract upgrade is implemented.",
-                },
                 {
                     title: "Starknet will likely use an external sequencer thus mitigating MEV leakage to the L1",
                     content:
