@@ -46,9 +46,9 @@ const sidesbtc: InfrastructureProject = {
             category: AssessmentCategory.AssetCustody,
             score: 0,
             tier: "",
-            title: TokenSnippet.UnderReview,
+            title: "21 Side Chain validators are signers securing BTC backing sBTC",
             content:
-                "BTC backing Side sBTC is secured by a subset of its validators participating in a threshold signature scheme. We are currently reviewing its signer set.",
+                "BTC backing Side sBTC is secured by a subset of its validators participating in a threshold signature scheme. 21 validators are given the right to participate as a signer in this set up.\n\nThese signers are [publicly disclosed entities](https://docs.side.one/overview/side-introduction/sbtc-and-side-bridge/signer-set).",
         },
     ],
 };
