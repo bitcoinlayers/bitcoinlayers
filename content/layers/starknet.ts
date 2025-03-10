@@ -98,7 +98,7 @@ const starknet: LayerProject = {
         {
             category: RiskCategory.FinalityGuarantees,
             score: 0,
-            tier: RiskFactor.VeryHigh,
+            tier: RiskFactor.High,
             title: "Validity proofs are used to finalize bridges and light clients",
             content: `${ReviewSnippet.FinalityAltRollupValidityProofs}\n\nUsers cannot run their own provers in the event of censorship or liveness failures.,`
         },
@@ -112,6 +112,10 @@ const starknet: LayerProject = {
                     title: "⚠️ A federation can immediately upgrade relevant contracts. This affects some two-way peg implementations",
                     content:
                         AdditionalSnippet.UpgradeableContractsCentralizedAndNoExit,
+                },
+                {
+                    title: "BTC users currently receive less security from validity proofs on Starknet",
+                    content: "Validity proofs are used on the network to finalize a bridge contract on Ethereum and permit withdrawals. Whilst this provides security from an Ethereum user perspective, BTC users ultimately receive security from the custodian (or network) securing BTC backing wrapped BTC assets.\n\nIf the network were to add a SNARK verifier on bitcoin (via a BitVM-style mechanism or soft fork), then the finality assurances for the protocol would change.\n\nWe gave the project a custom score for this section.",
                 },
             ],
         },
