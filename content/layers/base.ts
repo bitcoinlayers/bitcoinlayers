@@ -164,9 +164,9 @@ const base: LayerProject = {
         {
             category: RiskCategory.FinalityGuarantees,
             score: 0,
-            tier: RiskFactor.Medium,
+            tier: RiskFactor.UnderReview,
             title: "Base state transitions finalize on Ethereum",
-            content: ReviewSnippet.FinalityAltRollupPermissionlessFraudProofs,
+            content: `${ReviewSnippet.FinalityAltRollupPermissionlessFraudProofs}\n\nWe are reviewing how to score finality guarantees for alternative rollups. Learn more on our thoughts [here](https://www.lxresearch.co/some-thoughts-on-proof-systems-for-bridges-on-other-chains/).`
         },
     ],
     sections: [

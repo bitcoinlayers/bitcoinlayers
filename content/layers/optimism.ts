@@ -11,6 +11,7 @@ import {
     ContentSection,
     RiskCategory,
     TokenSnippet,
+    ReviewSnippet,
 } from "../props";
 
 const optimism: LayerProject = {
@@ -132,8 +133,7 @@ const optimism: LayerProject = {
             score: 0,
             tier: RiskFactor.UnderReview,
             title: "Optimism state transitions finalize on Ethereum",
-            content:
-                "We are reviewing the Optimism validator set and how state transitions are proposed and finalized.",
+            content: `${ReviewSnippet.FinalityAltRollupPermissionlessFraudProofs}\n\nWe are reviewing how to score finality guarantees for alternative rollups. Learn more on our thoughts [here](https://www.lxresearch.co/some-thoughts-on-proof-systems-for-bridges-on-other-chains/).`
         },
     ],
     sections: [

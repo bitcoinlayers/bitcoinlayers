@@ -197,9 +197,9 @@ const arbitrum: LayerProject = {
         {
             category: RiskCategory.FinalityGuarantees,
             score: 0,
-            tier: RiskFactor.Medium,
+            tier: RiskFactor.UnderReview,
             title: "Arbitrum state transitions finalize on Ethereum. Validators who stake 3600 ETH can contest invalid state transitions",
-            content: `${ReviewSnippet.FinalityAltRollupPermissionlessFraudProofs},\n\n,The stake required to become a validator is 3600 ETH.`
+            content: `${ReviewSnippet.FinalityAltRollupPermissionlessFraudProofs}\n\nWe are reviewing how to score finality guarantees for alternative rollups. Learn more on our thoughts [here](https://www.lxresearch.co/some-thoughts-on-proof-systems-for-bridges-on-other-chains/).\n\n,The stake required to become a validator is 3600 ETH.`
         },
     ],
     sections: [
