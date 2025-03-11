@@ -123,7 +123,7 @@ const starknet: LayerProject = {
                 },
                 {
                     title: "Starknet does not contribute to the security budget",
-                    content: BitcoinSecuritySnippet.NoSecurity,
+                    content: BitcoinSecuritySnippet.NoSecurityBudget,
                 },
             ],
         },
