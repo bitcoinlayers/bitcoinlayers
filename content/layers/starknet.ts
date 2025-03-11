@@ -15,6 +15,7 @@ import {
     ReviewSnippet,
     BitcoinSecuritySnippet,
     AdditionalSnippet,
+    UseCaseSnippet,
 } from "../props";
 
 const starknet: LayerProject = {
@@ -93,7 +94,7 @@ const starknet: LayerProject = {
             score: 0,
             tier: RiskFactor.VeryHigh,
             title: "Blocks are currently produced by a centralized sequencer",
-            content: "Starknet blocks are constructed by a centralized block producer. \n\nUsers cannot build their own blocks in the event of censorship or liveness failures.",
+            content: "The network's blocks are constructed by a centralized block producer. \n\nUsers cannot build their own blocks in the event of censorship or liveness failures.",
         },
         {
             category: RiskCategory.FinalityGuarantees,
@@ -109,7 +110,7 @@ const starknet: LayerProject = {
             title: "Bitcoin Security",
             content: [
                 {
-                    title: "Arbitrum does not inherit any security from Bitcoin",
+                    title: "Starknet does not inherit any security from Bitcoin",
                     content: BitcoinSecuritySnippet.NoSecurity,
                 },
                 {
@@ -121,7 +122,7 @@ const starknet: LayerProject = {
                     content: BitcoinSecuritySnippet.CentralizedSequencerMEV,
                 },
                 {
-                    title: "Arbitrum does not contribute to the security budget",
+                    title: "Starknet does not contribute to the security budget",
                     content: BitcoinSecuritySnippet.NoSecurity,
                 },
             ],
@@ -131,13 +132,12 @@ const starknet: LayerProject = {
             title: "Additional Considerations",
             content: [
                 {
-                    title: "⚠️ A federation can immediately upgrade relevant contracts. This affects some two-way peg implementations",
-                    content:
-                        AdditionalSnippet.UpgradeableContractsCentralizedAndNoExit,
+                    title: "A federation can immediately upgrade relevant contracts. This affects some two-way peg implementations",
+                    content: AdditionalSnippet.UpgradeableContractsCentralizedAndNoExit,
                 },
                 {
-                    title: "Validity proofs on Starknet don't ultimately secure two-way pegs securing BTC",
-                    content: "Validity proofs are used on the network to finalize a bridge contract on Ethereum and permit withdrawals. Whilst this provides security from an Ethereum user perspective, BTC users ultimately receive security from the custodian (or network) securing BTC backing wrapped BTC assets.\n\nIf the network were to add a SNARK verifier on bitcoin (via a BitVM-style mechanism or soft fork), then the finality assurances for the protocol would change.\n\nWe gave the project a custom score for this section.",
+                    title: "Validity proofs on Starknet don't ultimately provide security for two-way pegs securing BTC",
+                    content: "Validity proofs are used to finalize a bridge contract on Ethereum and permit withdrawals. Whilst this provides security from an Ethereum user perspective, BTC users ultimately receive security from the custodian (or network) securing BTC backing wrapped BTC assets.\n\nIf the network were to add a SNARK verifier on bitcoin (via a BitVM-style mechanism or soft fork), then the finality assurances for the protocol would change.\n\nWe gave the project a custom score for this section.",
                 },
             ],
         },
@@ -161,6 +161,16 @@ const starknet: LayerProject = {
                         "Madara is a sequencer built for L3s on top of Starknet. Madara allows L3s to leverage the SHARP system, with proofs verified on Starknet/Ethereum, while also offering DA flexibility, as L3s can choose alternative DA layers, e.g., Celestia.",
                 },
             ]
+        },
+        {
+            id: "usecases",
+            title: "Use Cases",
+            content: [
+                {
+                    title: "Onchain applications",
+                    content: UseCaseSnippet.OnchainApps,
+                },
+            ],
         },
         {
             id: "proposedtech",
