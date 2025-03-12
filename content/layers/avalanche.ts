@@ -105,7 +105,7 @@ const avalanche: LayerProject = {
             category: RiskCategory.NetworkOperators,
             score: 0,
             tier: RiskFactor.UnderReview,
-            title: "Avalanche is operated by a decentralized validator set",
+            title: "Avalanche is operated by a distributed validator set",
             content:
                 "Blocks are built and proposed by a permissionless consensus network.\n\nWe are currently reviewing Avalanche's network operators",
         },
