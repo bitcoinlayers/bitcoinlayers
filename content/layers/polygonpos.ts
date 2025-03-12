@@ -11,6 +11,7 @@ import {
     ContentSection,
     RiskCategory,
     TokenSnippet,
+    BitcoinSecuritySnippet,
 } from "../props";
 
 const polygon: LayerProject = {
@@ -25,10 +26,10 @@ const polygon: LayerProject = {
     bridge: false,
     underReview: false,
     riskFactors: [
-        RiskFactor.UnderReview,
-        RiskFactor.UnderReview,
-        RiskFactor.UnderReview,
-        RiskFactor.UnderReview,
+        RiskFactor.VeryHigh,
+        RiskFactor.AlternativePoS,
+        RiskFactor.AlternativePoS,
+        RiskFactor.AlternativePoS,
     ],
     btcLocked: 0,
     nativeToken: "-",
@@ -91,36 +92,58 @@ const polygon: LayerProject = {
                     score: 0,
                     tier: RiskFactor.UnderReview,
                     title: TokenSnippet.UnderReview,
-                    content: "This two-way peg is under review",
+                    content: `${TokenSnippet.AvalancheBTCb}\n\n${TokenSnippet.smartcontractreview},`
                 },
             ],
         },
         {
             category: RiskCategory.DataAvailability,
             score: 0,
-            tier: RiskFactor.UnderReview,
+            tier: RiskFactor.AlternativePoS,
             title: "Data is stored and made available by Polygon full nodes",
             content:
-                "The data for Polygon's state is made available by its full nodes. Anyone can run an Polygon node and verify is state.\n\nWe are currently reviewing Polygon's full node implementation",
+                "The data for Polygon's state is made available by its full nodes. Anyone can run an Polygon node and verify is state.",
         },
         {
             category: RiskCategory.NetworkOperators,
             score: 0,
-            tier: RiskFactor.UnderReview,
+            tier: RiskFactor.AlternativePoS,
             title: "Polygon is operated by a distributed validator set",
             content:
-                "Blocks are built and proposed by a distributed consensus network.\n\nWe are currently reviewing Polygon's network operators",
+                "Blocks are built and proposed by a distributed consensus network. Block producers in Polygon PoS are committee based and selected by its validator set.\n\nThe set of block producers is rotated periodically.",
         },
         {
             category: RiskCategory.FinalityGuarantees,
             score: 0,
-            tier: RiskFactor.UnderReview,
+            tier: RiskFactor.AlternativePoS,
             title: "We are currently reviewing Polygon's finality guarantees",
             content:
-                "Blocks are validated and finalized by a distributed consensus network.\n\nWe are currently reviewing Polygon's finality guarantees",
+                "Blocks are validated and finalized by a distributed consensus network. Block producers in Polygon PoS are elected to exclusively construct blocks for a specific duration of time.\n\nAfter blocks are constructed, they are validated by the block producer committee.",
         },
     ],
     sections: [
+        {
+            id: "bitcoinsecurity",
+            title: "Bitcoin Security",
+            content: [
+                {
+                    title: "Polygon PoS does not inherit any security from Bitcoin",
+                    content: BitcoinSecuritySnippet.NoSecurity,
+                },
+                {
+                    title: "POL token used to pay fees",
+                    content: BitcoinSecuritySnippet.AltTokenFees,
+                },
+                {
+                    title: "No MEV introduced to Bitcoin",
+                    content: BitcoinSecuritySnippet.CentralizedSequencerMEV,
+                },
+                {
+                    title: "Polygon PoS does not contribute to the security budget",
+                    content: BitcoinSecuritySnippet.NoSecurityBudget,
+                },
+            ],
+        },
         {
             id: "underreview",
             title: "Further sections under review",
