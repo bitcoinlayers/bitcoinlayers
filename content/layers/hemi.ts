@@ -40,8 +40,8 @@ const hemi: LayerProject = {
         RiskFactor.VeryHigh,
     ],
     btcLocked: 0,
-    nativeToken: "-",
-    feeToken: "-",
+    nativeToken: "ETH",
+    feeToken: "ETH",
     notice: undefined,
     bitcoinOnly: false,
     links: [
