@@ -140,6 +140,22 @@ const hemi: LayerProject = {
                     title: TokenSnippet.CustodianPeg,
                     content: `${TokenSnippet.MerlinMBTC}\n\n${TokenSnippet.smartcontractreview}`,
                 },
+                {
+                    name: "Threshold tBTC",
+                    infrastructureSlug: "threshold-tbtc",
+                    score: 0,
+                    tier: RiskFactor.UnderReview,
+                    title: TokenSnippet.UnderReview,
+                    content: `${TokenSnippet.ThresholdtBTC}\n\n${TokenSnippet.smartcontractreview}`,
+                },
+                {
+                    name: "Obelisk oBTC",
+                    infrastructureSlug: "obelisk-obtc",
+                    score: 0,
+                    tier: RiskFactor.VeryHigh,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.ObeliskoBTC}\n\n${TokenSnippet.smartcontractreview}`,
+                },
             ],
         },
         {
