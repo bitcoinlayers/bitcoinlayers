@@ -1,3 +1,4 @@
+import Risk from "@/components/layer/layerTableItemRisk";
 import {
     LayerProject,
     Type,
@@ -11,20 +12,33 @@ import {
     ContentSection,
     RiskCategory,
     TokenSnippet,
+    ReviewSnippet,
+    UseCaseSnippet,
+    TechnologySnippet,
+    BitcoinSecuritySnippet,
+    AdditionalSnippet,
+    KnowledgeBitSnippet,
 } from "../props";
+import { tokenToString } from "typescript";
+import { Rubik_Vinyl } from "next/font/google";
 
 const hemi: LayerProject = {
     type: Type.Layer,
     slug: "hemi",
     title: "Hemi",
-    entityType: EntityType.TBD,
+    entityType: EntityType.AltRollup,
     entityCategory: EntityCategory.Alt,
-    live: LiveStatus.Testnet,
+    live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
     bridge: false,
-    underReview: true,
-    riskFactors: ["", "", "", ""],
+    underReview: false,
+    riskFactors: [
+        RiskFactor.VeryHigh,
+        RiskFactor.Medium,
+        RiskFactor.UnderReview,
+        RiskFactor.VeryHigh,
+    ],
     btcLocked: 0,
     nativeToken: "-",
     feeToken: "-",
@@ -53,46 +67,152 @@ const hemi: LayerProject = {
         },
     ],
     description:
-        "Hemi is a blockchain that is building compatibility with bitcoin and Ethereum. It is currently live on testnet.",
+        "Hemi is a blockchain that is building compatibility with bitcoin and Ethereum.",
     riskAnalysis: [
         {
             category: RiskCategory.BtcCustody,
             score: 0,
-            tier: "",
+            tier: RiskFactor.NotApplicable,
             title: "",
             content: "",
-            pegs: [],
+            pegs: [
+                {
+                    name: "BitGo wBTC",
+                    infrastructureSlug: "bitgo-wbtc",
+                    score: 0,
+                    tier: RiskFactor.VeryHigh,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.BitGowBTC}\n\n${TokenSnippet.smartcontractreview}`,
+                },
+                {
+                    name: "Lorenzo enzoBTC",
+                    infrastructureSlug: "lorenzo-enzobtc",
+                    score: 0,
+                    tier: RiskFactor.UnderReview,
+                    title: TokenSnippet.UnderReview,
+                    content: TokenSnippet.UnderReview,
+                },
+                {
+                    name: "UniRouter uBTC",
+                    infrastructureSlug: "unirouter-ubtc",
+                    score: 0,
+                    tier: RiskFactor.VeryHigh,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.UniRouterBTC}\n\n${TokenSnippet.smartcontractreview}`,
+                },
+                {
+                    name: "Bedrock uniBTC",
+                    infrastructureSlug: "bedrock-unibtc",
+                    score: 0,
+                    tier: RiskFactor.VeryHigh,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.BedrockUniBTC}\n\n${TokenSnippet.smartcontractreview}`,
+                },
+                {
+                    name: "Hemi hemiBTC",
+                    infrastructureSlug: "hemi-hemibtc",
+                    score: 0,
+                    tier: RiskFactor.VeryHigh,
+                    title: TokenSnippet.UnderReview,
+                    content: "HemiBTC is a synthetic BTC asset on the Hemi blockchain. It is under review",
+                },
+                {
+                    name: "Babypie mBTC",
+                    infrastructureSlug: "babypie-mbtc",
+                    score: 0,
+                    tier: RiskFactor.VeryHigh,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.babypie}\n\n${TokenSnippet.smartcontractreview}`,
+                },
+                {
+                    name: "Pump pumpBTC",
+                    infrastructureSlug: "pump-pumpbtc",
+                    score: 0,
+                    tier: RiskFactor.VeryHigh,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.babypie}\n\n${TokenSnippet.smartcontractreview}`,
+                },
+                {
+                    name: "Merlin MBTC",
+                    infrastructureSlug: "merlin-mbtc",
+                    score: 0,
+                    tier: RiskFactor.VeryHigh,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.MerlinMBTC}\n\n${TokenSnippet.smartcontractreview}`,
+                },
+            ],
         },
         {
             category: RiskCategory.DataAvailability,
             score: 0,
-            tier: "",
-            title: "",
-            content: "",
+            tier: RiskFactor.Medium,
+            title: "Data is stored and made available by Ethereum full nodes",
+            content: ReviewSnippet.EthereumRollupDA,
         },
         {
-            category: RiskCategory.BlockProduction,
+            category: RiskCategory.NetworkOperators,
             score: 0,
-            tier: "",
-            title: "",
-            content: "",
+            tier: RiskFactor.Medium,
+            title: "We are reviewing Hemi's sequencing mechanism",
+            content: ReviewSnippet.UnderReview,
         },
         {
-            category: RiskCategory.StateValidation,
+            category: RiskCategory.FinalityGuarantees,
             score: 0,
-            tier: "",
-            title: "",
-            content: "",
+            tier: RiskFactor.VeryHigh,
+            title: "Hemi updates its state on Ethereum. The proposer role is currently centralized",
+            content: ReviewSnippet.FinalityAltRollupCentralizedProposer,
         },
     ],
     sections: [
         {
-            id: "selfsubmit",
-            title: "Process to self-submit information",
+            id: "additionalconsiderations",
+            title: "Additional Considerations",
             content: [
                 {
-                    content:
-                        "The Bitcoin Layers project prioritizes risk reviews on projects that are in production and accepting users' BTC deposits. Projects on testnet are welcome to submit information about their project. We do not publish risk assessments for projects that are not in production.\n\nHere are the [instructions](https://github.com/bitcoinlayers/bitcoinlayers/blob/main/SELFSUBMIT.md) on self-submitting a project.",
+                    title: "This review is in progress",
+                    content: "Some aspects of this review have not been completed. We are currently reviewing the project.",
+                },
+            ],
+        },
+        {
+            id: "bitcoinsecurity",
+            title: "Bitcoin Security",
+            content: [
+                {
+                    title: "Hemi does not inherit any security from Bitcoin",
+                    content: BitcoinSecuritySnippet.NoSecurity,
+                },
+                {
+                    title: "ETH token used to pay fees",
+                    content: BitcoinSecuritySnippet.AltTokenFees,
+                },
+                {
+                    title: "No MEV introduced to Bitcoin",
+                    content: BitcoinSecuritySnippet.CentralizedSequencerMEV,
+                },
+                {
+                    title: "Hemi does not contribute to the security budget",
+                    content: BitcoinSecuritySnippet.NoSecurity,
+                },
+            ],
+        },
+        {
+            id: "usecases",
+            title: "Use Cases",
+            content: [
+                {
+                    title: "Onchain applications",
+                    content: UseCaseSnippet.OnchainApps,
+                },
+            ],
+        },
+        {
+            id: "knowledgebits",
+            title: "Knowledge Bits",
+            content: [
+                {
+                    content: `${KnowledgeBitSnippet.EthereumL2}`,
                 },
             ],
         },
