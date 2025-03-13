@@ -152,7 +152,7 @@ const hemi: LayerProject = {
         {
             category: RiskCategory.NetworkOperators,
             score: 0,
-            tier: RiskFactor.Medium,
+            tier: RiskFactor.UnderReview,
             title: "We are reviewing Hemi's sequencing mechanism",
             content: ReviewSnippet.UnderReview,
         },
