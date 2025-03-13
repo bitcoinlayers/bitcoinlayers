@@ -170,7 +170,7 @@ const hemi: LayerProject = {
             score: 0,
             tier: RiskFactor.UnderReview,
             title: "We are reviewing Hemi's sequencing mechanism",
-            content: ReviewSnippet.UnderReview,
+            content: "This section of the assessment is under review.",
         },
         {
             category: RiskCategory.FinalityGuarantees,
