@@ -10,6 +10,8 @@ import {
     RiskSection,
     ContentSection,
     RiskCategory,
+    ReviewSnippet,
+    BitcoinSecuritySnippet,
 } from "../props";
 
 const osmosis: LayerProject = {
@@ -25,9 +27,9 @@ const osmosis: LayerProject = {
     underReview: false,
     riskFactors: [
         RiskFactor.UnderReview,
-        RiskFactor.UnderReview,
-        RiskFactor.UnderReview,
-        RiskFactor.UnderReview,
+        RiskFactor.AlternativePoS,
+        RiskFactor.AlternativePoS,
+        RiskFactor.AlternativePoS,
     ],
     btcLocked: 0,
     nativeToken: "-",
@@ -80,36 +82,55 @@ const osmosis: LayerProject = {
         {
             category: RiskCategory.DataAvailability,
             score: 0,
-            tier: RiskFactor.UnderReview,
-            title: "We are currently reviewing Osmosis' full node implementation",
-            content:
-                "We are currently reviewing Osmosis' full node implementation.",
+            tier: RiskFactor.AlternativePoS,
+            title: "Osmosis' full node set satisfies the data availability requirement",
+            content: ReviewSnippet.AltL1DA,
         },
         {
             category: RiskCategory.NetworkOperators,
             score: 0,
-            tier: RiskFactor.UnderReview,
+            tier: RiskFactor.AlternativePoS,
             title: "Osmosis is operated by a distributed validator set",
-            content:
-                "Blocks are built and proposed by a distributed consensus network.\n\nWe are currently reviewing Osmosis' network operators.",
+            content: ReviewSnippet.AltL1Operators,
         },
         {
             category: RiskCategory.FinalityGuarantees,
             score: 0,
-            tier: RiskFactor.UnderReview,
-            title: "We are currently reviewing Osmosis' finality guarantees",
-            content:
-                "Blocks are validated and finalized by a distributed consensus network.\n\nWe are currently reviewing Osmosis' finality guarantees",
+            tier: RiskFactor.AlternativePoS,
+            title: "Osmosis' finality guarantees are provided by its validator set",
+            content: ReviewSnippet.CometBFTFinality,
         },
     ],
     sections: [
+        {
+            id: "bitcoinsecurity",
+            title: "Bitcoin Security",
+            content: [
+                {
+                    title: "Osmosis does not inherit any security from Bitcoin",
+                    content: BitcoinSecuritySnippet.NoSecurity,
+                },
+                {
+                    title: "OSMO token used to pay fees",
+                    content: BitcoinSecuritySnippet.AltTokenFees,
+                },
+                {
+                    title: "No MEV introduced to Bitcoin",
+                    content: BitcoinSecuritySnippet.AltNetworkMEV,
+                },
+                {
+                    title: "Osmosis does not contribute to the security budget",
+                    content: BitcoinSecuritySnippet.NoSecurityBudget,
+                },
+            ],
+        },
         {
             id: "underreview",
             title: "Further sections under review",
             content: [
                 {
                     content:
-                        "Aspects related to bitcoin security, relevant technologies, and some two-way pegs have not been reviewed.\n\nThey will be reviewed by our team soon.",
+                        "Aspects related to relevant technologies and some two-way pegs have not been reviewed.\n\nThey will be reviewed by our team soon.",
                 },
             ],
         },
