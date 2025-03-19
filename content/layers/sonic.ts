@@ -33,7 +33,7 @@ const sonic: LayerProject = {
     ],
     btcLocked: 0,
     nativeToken: "-",
-    feeToken: "POL",
+    feeToken: "S",
     notice: undefined,
     bitcoinOnly: false,
     links: [
