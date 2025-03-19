@@ -69,6 +69,22 @@ const sonic: LayerProject = {
             content: "",
             pegs: [
                 {
+                    name: "Solv SolvBTC",
+                    infrastructureSlug: "solv-solvbtc",
+                    score: 0,
+                    tier: RiskFactor.UnderReview,
+                    title: TokenSnippet.CustodianPeg,
+                    content: TokenSnippet.SolvBTC,
+                },
+                {
+                    name: "Solv SolvBTC.BBN",
+                    infrastructureSlug: "solv-solvbtcbbn",
+                    score: 0,
+                    tier: RiskFactor.UnderReview,
+                    title: TokenSnippet.CustodianDerivative,
+                    content: TokenSnippet.SolvBTCBBN,
+                },
+                {
                     name: "BitGo wBTC",
                     infrastructureSlug: "bitgo-wbtc",
                     score: 0,
