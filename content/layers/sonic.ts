@@ -72,25 +72,25 @@ const sonic: LayerProject = {
                     name: "Solv SolvBTC",
                     infrastructureSlug: "solv-solvbtc",
                     score: 0,
-                    tier: RiskFactor.UnderReview,
+                    tier: RiskFactor.VeryHigh,
                     title: TokenSnippet.CustodianPeg,
-                    content: TokenSnippet.SolvBTC,
+                    content: `${TokenSnippet.SolvBTC}\n\n${TokenSnippet.smartcontractreview},`
                 },
                 {
                     name: "Solv SolvBTC.BBN",
                     infrastructureSlug: "solv-solvbtcbbn",
                     score: 0,
-                    tier: RiskFactor.UnderReview,
+                    tier: RiskFactor.VeryHigh,
                     title: TokenSnippet.CustodianDerivative,
-                    content: TokenSnippet.SolvBTCBBN,
+                    content: `${TokenSnippet.SolvBTCBBN}\n\n${TokenSnippet.smartcontractreview},`
                 },
                 {
                     name: "BitGo wBTC",
                     infrastructureSlug: "bitgo-wbtc",
                     score: 0,
-                    tier: RiskFactor.UnderReview,
+                    tier: RiskFactor.VeryHigh,
                     title: TokenSnippet.CustodianPeg,
-                    content: TokenSnippet.BitGowBTC,
+                    content: `${TokenSnippet.BitGowBTC}\n\n${TokenSnippet.smartcontractreview},`
                 },
                 {
                     name: "Lombard LBTC",
