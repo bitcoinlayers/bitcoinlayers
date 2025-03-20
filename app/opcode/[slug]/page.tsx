@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import {
-    allOpcode,
-    allOpcodeSlugs,
+    allOpcodes,
+    allOpcodesSlugs,
 } from "@/util/opcode_index";
 import InfrastructureMenu from "@/components/infrastructure/infrastructureMenu";
 import InfrastructureBody from "@/components/infrastructure/infrastructureBody";
@@ -13,7 +13,7 @@ import UnderDevelopmentBanner from "@/components/under-development-banner";
 import ProjectContractAddresses from "@/components/project-contract-addresses";
 
 async function getInfrastructureFromSlug(slug: string) {
-    const infrastructure = allOpcode.find(
+    const infrastructure = allOpcodes.find(
         (infrastructure) => infrastructure.slug === slug,
     );
     if (!infrastructure) {
@@ -78,7 +78,7 @@ export default async function InfrastructurePage(props: {
 }
 
 export async function generateStaticParams() {
-    return allOpcodeSlugs.map((slug) => ({
+    return allOpcodesSlugs.map((slug) => ({
         slug,
     }));
 }

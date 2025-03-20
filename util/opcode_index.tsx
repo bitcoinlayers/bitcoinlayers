@@ -4,8 +4,8 @@ import opcatProject from "../content/infrastructures/opcat";
 
 const opcat: InfrastructureProject = opcatProject;
 
-export const allOpcode: InfrastructureProject[] = [opcat];
+export const allOpcodes: InfrastructureProject[] = [opcat];
 
-export const allOpcodeSlugs: string[] = allOpcode.map(
+export const allOpcodesSlugs: string[] = allOpcodes.map(
     (infrastructure) => infrastructure.slug,
 );

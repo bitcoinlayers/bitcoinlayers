@@ -1,10 +1,10 @@
-import { allOpcode } from "@/util/opcode_index";
+import { allOpcodes } from "@/util/opcode_index";
 import Hero from "@/components/hero";
 import OpcodeTable from "@/components/tables/opcode-table";
 import { CoinsIcon } from "lucide-react";
 
 export default function Home() {
-    const sortedInfrastructures = allOpcode.sort((a, b) =>
+    const sortedInfrastructures = allOpcodes.sort((a, b) =>
         a.title.toLowerCase().localeCompare(b.title.toLowerCase()),
     );
 
@@ -47,8 +47,8 @@ export default function Home() {
                 <OpcodeTable
                     data={sortedInfrastructures}
                     headers={infrastructureHeaders}
-                    title="Applications & more"
-                    description="Learn the tradeoffs for different application layers"
+                    title="Proposed Opcodes"
+                    description="Learn the tradeoffs for different opcode proposals"
                     icon={<CoinsIcon className="mr-3" />}
                     isOpcode
                 />

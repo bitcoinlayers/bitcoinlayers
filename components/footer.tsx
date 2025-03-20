@@ -130,7 +130,7 @@ export default function Footer() {
                                         <SectionItem href="/more">
                                             Apps & more
                                         </SectionItem>
-                                        <SectionItem href="/opcodes">
+                                        <SectionItem href="/opcode">
                                             Opcodes
                                         </SectionItem>
                                         {/* <SectionItem href="/bitcoinonly">
