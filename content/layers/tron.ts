@@ -100,7 +100,7 @@ const tron: LayerProject = {
             score: 0,
             tier: RiskFactor.AlternativePoS,
             title: "Blocks are produced by an elected group of validators known as super representatives",
-            content: `${ReviewSnippet.AltL1Operators}\n\nAnyone can apply to participate as a block producer in Tron. Prospective validators, known as super representatives, can purchase TRX tokens and apply to become a super representative. After a voting process, the top 27 super representatives per voting power are selected to become block producers.`
+            content: "Anyone can apply to participate as a block producer in Tron. Prospective validators, known as super representatives, can purchase TRX tokens and apply to become a super representative. After a voting process, the top 27 super representatives per voting power are selected to become block producers.",
         },
         {
             category: RiskCategory.FinalityGuarantees,
