@@ -70,7 +70,32 @@ const zeta: LayerProject = {
             tier: "",
             title: "",
             content: "",
-            pegs: [],
+            pegs: [
+                {
+                    name: "BTC.BTC",
+                    infrastructureSlug: "zeta-btc",
+                    score: 0,
+                    tier: RiskFactor.UnderReview,
+                    title: TokenSnippet.FederationPeg,
+                    content: `${TokenSnippet.UnderReview}\n\n${TokenSnippet.smartcontractreview},`
+                },
+                {
+                    name: "PumpBTC",
+                    infrastructureSlug: "pump-pumpbtc",
+                    score: 0,
+                    tier: RiskFactor.VeryHigh,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.PumpBTC}\n\n${TokenSnippet.smartcontractreview},`
+                },
+                {
+                    name: "Bedrock uniBTC",
+                    infrastructureSlug: "bedrock-unibtc",
+                    score: 0,
+                    tier: RiskFactor.VeryHigh,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.BedrockUniBTC}\n\n${TokenSnippet.smartcontractreview},`
+                },
+            ],
         },
         {
             category: RiskCategory.DataAvailability,
