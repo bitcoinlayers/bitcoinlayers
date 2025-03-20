@@ -77,7 +77,7 @@ const zeta: LayerProject = {
                     score: 0,
                     tier: RiskFactor.UnderReview,
                     title: TokenSnippet.FederationPeg,
-                    content: `${TokenSnippet.UnderReview}\n\n${TokenSnippet.smartcontractreview},`
+                    content: `${TokenSnippet.UnderReview}${TokenSnippet.smartcontractreview},`
                 },
                 {
                     name: "PumpBTC",
