@@ -11,6 +11,10 @@ import {
     ContentSection,
     RiskCategory,
     TokenSnippet,
+    ReviewSnippet,
+    BitcoinSecuritySnippet,
+    TechnologySnippet,
+    UseCaseSnippet,
 } from "../props";
 
 const gnosis: LayerProject = {
@@ -57,7 +61,7 @@ const gnosis: LayerProject = {
             url: "https://x.com/gnosischain",
         },
     ],
-    description: "",
+    description: "Gnosis is an alternative blockchain that supports a number of wrapped BTC tokens. It is EVM-compatible and leverages the same network architecture as Ethereum.",
     riskAnalysis: [
         {
             category: RiskCategory.BtcCustody,
@@ -65,37 +69,89 @@ const gnosis: LayerProject = {
             tier: "",
             title: "",
             content: "",
-            pegs: [],
+            pegs: [
+                {
+                    name: "BitGo wBTC",
+                    infrastructureSlug: "bitgo-wbtc",
+                    score: 0,
+                    tier: RiskFactor.VeryHigh,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.BitGowBTC}\n\n${TokenSnippet.smartcontractreview},`
+                },
+            ],
         },
         {
             category: RiskCategory.DataAvailability,
             score: 0,
-            tier: "",
+            tier: RiskFactor.AlternativePoS,
             title: "",
-            content: "",
+            content: ReviewSnippet.AltL1DA,
         },
         {
             category: RiskCategory.BlockProduction,
             score: 0,
-            tier: "",
-            title: "",
-            content: "",
+            tier: RiskFactor.AlternativePoS,
+            title: "Gnosis chain is operated by a distributed validator set",
+            content: ReviewSnippet.AltL1Operators,
         },
         {
-            category: RiskCategory.StateValidation,
+            category: RiskCategory.FinalityGuarantees,
             score: 0,
-            tier: "",
-            title: "",
-            content: "",
+            tier: RiskFactor.AlternativePoS,
+            title: "Finality guarantees are provided by the network's operator set",
+            content: "Finality guarantees are provided through the network's operators. Users trust the network's operators to not reorg their transactions.",
         },
     ],
     sections: [
         {
-            id: "description",
-            title: "Description",
+            id: "additionalconsiderations",
+            title: "Additional Considerations",
             content: [
                 {
-                    content: "Under review.",
+                    title: "Low cost to stake and run a validator node",
+                    content: "Running a validator node for Gnosis Chain requires a 1 GNO stake. The lost cost to run a validator (historically less than 1000 USD) enables more participants to join the network operator set.",
+                },
+            ],
+        },
+        {
+            id: "bitcoinsecurity",
+            title: "Bitcoin Security",
+            content: [
+                {
+                    title: "Gnosis does not inherit any security from Bitcoin",
+                    content: BitcoinSecuritySnippet.NoSecurity,
+                },
+                {
+                    title: "GNO token used to pay fees",
+                    content: BitcoinSecuritySnippet.AltTokenFees,
+                },
+                {
+                    title: "No MEV introduced to Bitcoin",
+                    content: BitcoinSecuritySnippet.CentralizedSequencerMEV,
+                },
+                {
+                    title: "Gnosis does not contribute to the security budget",
+                    content: BitcoinSecuritySnippet.NoSecurityBudget,
+                },
+            ],
+        },
+        {
+            id: "technology",
+            title: "Technology",
+            content: [
+                {
+                    title: "EVM-compatible",
+                    content: TechnologySnippet.EVM,
+                },
+            ],
+        },
+        {
+            id: "usecases",
+            title: "Use Cases",
+            content: [
+                {
+                    title: "Onchain applications",
+                    content: UseCaseSnippet.OnchainApps,
                 },
             ],
         },
