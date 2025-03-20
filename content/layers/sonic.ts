@@ -26,9 +26,9 @@ const sonic: LayerProject = {
     bridge: false,
     underReview: false,
     riskFactors: [
-        RiskFactor.UnderReview,
-        RiskFactor.UnderReview,
-        RiskFactor.UnderReview,
+        RiskFactor.VeryHigh,
+        RiskFactor.AlternativePoS,
+        RiskFactor.AlternativePoS,
         RiskFactor.UnderReview,
     ],
     btcLocked: 0,
@@ -121,7 +121,7 @@ const sonic: LayerProject = {
         {
             category: RiskCategory.FinalityGuarantees,
             score: 0,
-            tier: RiskFactor.AlternativePoS,
+            tier: RiskFactor.UnderReview,
             title: "We are currently reviewing Sonic's finality guarantees",
             content: "Finality guarantees are provided via an alternative proof-of-stake network. We are reviewing Sonic's consensus mechanism.",
         },
