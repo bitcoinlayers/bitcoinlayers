@@ -26,7 +26,7 @@ const tronbtc: InfrastructureProject = {
     notice: undefined,
     bitcoinOnly: false,
     links: [],
-    description: "Under review.",
+    description: "BTCTRON is a BTC-synthetic asset home to the Tron blockchain.",
     sections: [
         {
             id: "selfsubmit",
