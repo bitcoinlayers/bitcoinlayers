@@ -78,6 +78,14 @@ const tron: LayerProject = {
                     title: TokenSnippet.CustodianPeg,
                     content: `${TokenSnippet.BTCTRON}\n\n${TokenSnippet.smartcontractreview},`
                 },
+                {
+                    name: "BitGo wBTC",
+                    infrastructureSlug: "bitgo-wbtc",
+                    score: 0,
+                    tier: RiskFactor.VeryHigh,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.BitGowBTC}\n\n${TokenSnippet.smartcontractreview},`
+                },
             ],
         },
         {
