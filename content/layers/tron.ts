@@ -107,7 +107,7 @@ const tron: LayerProject = {
             score: 0,
             tier: RiskFactor.AlternativePoS,
             title: "Finality guarantees are provided by Tron's network operators",
-            content: ReviewSnippet.AltL1Operators,
+            content: "Finality guarantees are provided through the network's operators. Users trust the network's operators to not reorg their transactions.",
         },
     ],
     sections: [
@@ -125,7 +125,7 @@ const tron: LayerProject = {
                 },
                 {
                     title: "No MEV introduced to Bitcoin",
-                    content: BitcoinSecuritySnippet.CentralizedSequencerMEV,
+                    content: BitcoinSecuritySnippet.AltNetworkMEV,
                 },
                 {
                     title: "Tron does not contribute to the security budget",

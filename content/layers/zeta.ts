@@ -1,3 +1,4 @@
+import Risk from "@/components/layer/layerTableItemRisk";
 import {
     LayerProject,
     Type,
@@ -11,6 +12,10 @@ import {
     ContentSection,
     RiskCategory,
     TokenSnippet,
+    ReviewSnippet,
+    BitcoinSecuritySnippet,
+    TechnologySnippet,
+    UseCaseSnippet,
 } from "../props";
 
 const zeta: LayerProject = {
@@ -25,10 +30,10 @@ const zeta: LayerProject = {
     bridge: false,
     underReview: false,
     riskFactors: [
-        RiskFactor.High,
-        RiskFactor.High,
-        RiskFactor.High,
-        RiskFactor.High,
+        RiskFactor.UnderReview,
+        RiskFactor.AlternativePoS,
+        RiskFactor.AlternativePoS,
+        RiskFactor.AlternativePoS,
     ],
     btcLocked: 0,
     nativeToken: "-",
@@ -70,32 +75,65 @@ const zeta: LayerProject = {
         {
             category: RiskCategory.DataAvailability,
             score: 0,
-            tier: "",
+            tier: RiskFactor.AlternativePoS,
             title: "",
-            content: "",
+            content: ReviewSnippet.AltL1DA,
         },
         {
             category: RiskCategory.BlockProduction,
             score: 0,
-            tier: "",
+            tier: RiskFactor.AlternativePoS,
             title: "",
-            content: "",
+            content: ReviewSnippet.AltL1Operators,
         },
         {
             category: RiskCategory.StateValidation,
             score: 0,
-            tier: "",
+            tier: RiskFactor.AlternativePoS,
             title: "",
-            content: "",
+            content: ReviewSnippet.CometBFTFinality,
         },
     ],
     sections: [
         {
-            id: "description",
-            title: "Description",
+            id: "bitcoinsecurity",
+            title: "Bitcoin Security",
             content: [
                 {
-                    content: "Under review.",
+                    title: "Zeta does not inherit any security from Bitcoin",
+                    content: BitcoinSecuritySnippet.NoSecurity,
+                },
+                {
+                    title: "Zeta token used to pay fees",
+                    content: BitcoinSecuritySnippet.AltTokenFees,
+                },
+                {
+                    title: "No MEV introduced to Bitcoin",
+                    content: BitcoinSecuritySnippet.AltNetworkMEV,
+                },
+                {
+                    title: "Zeta does not contribute to the security budget",
+                    content: BitcoinSecuritySnippet.NoSecurityBudget,
+                },
+            ],
+        },
+        {
+            id: "technology",
+            title: "Technology",
+            content: [
+                {
+                    title: "EVM-compatible",
+                    content: TechnologySnippet.EVM,
+                },
+            ],
+        },
+        {
+            id: "usecases",
+            title: "Use Cases",
+            content: [
+                {
+                    title: "Onchain applications",
+                    content: UseCaseSnippet.OnchainApps,
                 },
             ],
         },

@@ -127,7 +127,7 @@ const gnosis: LayerProject = {
                 },
                 {
                     title: "No MEV introduced to Bitcoin",
-                    content: BitcoinSecuritySnippet.CentralizedSequencerMEV,
+                    content: BitcoinSecuritySnippet.AltNetworkMEV,
                 },
                 {
                     title: "Gnosis does not contribute to the security budget",
