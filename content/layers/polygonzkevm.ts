@@ -11,6 +11,11 @@ import {
     ContentSection,
     RiskCategory,
     TokenSnippet,
+    BitcoinSecuritySnippet,
+    UseCaseSnippet,
+    KnowledgeBitSnippet,
+    TechnologySnippet,
+    ReviewSnippet,
 } from "../props";
 
 const polygonzkevm: LayerProject = {
@@ -25,10 +30,10 @@ const polygonzkevm: LayerProject = {
     bridge: false,
     underReview: false,
     riskFactors: [
-        RiskFactor.High,
-        RiskFactor.High,
-        RiskFactor.High,
-        RiskFactor.High,
+        RiskFactor.VeryHigh,
+        RiskFactor.Medium,
+        RiskFactor.VeryHigh,
+        RiskFactor.UnderReview,
     ],
     btcLocked: 0,
     nativeToken: "-",
@@ -57,7 +62,7 @@ const polygonzkevm: LayerProject = {
             url: "https://x.com/0xPolygon",
         },
     ],
-    description: "",
+    description: "Polygon zkEVM is a rollup that posts data to Ethereum.",
     riskAnalysis: [
         {
             category: RiskCategory.BtcCustody,
@@ -65,37 +70,88 @@ const polygonzkevm: LayerProject = {
             tier: "",
             title: "",
             content: "",
-            pegs: [],
+            pegs: [
+                {
+                    name: "BitGo wBTC",
+                    infrastructureSlug: "bitgo-wbtc",
+                    score: 0,
+                    tier: RiskFactor.VeryHigh,
+                    title: TokenSnippet.CustodianPeg,
+                    content: TokenSnippet.BitGowBTC,
+                },
+            ],
         },
         {
             category: RiskCategory.DataAvailability,
             score: 0,
-            tier: "",
-            title: "",
-            content: "",
+            tier: RiskFactor.Medium,
+            title: "A distributed consensus network satisfies the data availability requirement",
+            content: ReviewSnippet.EthereumRollupDA,
         },
         {
-            category: RiskCategory.BlockProduction,
+            category: RiskCategory.NetworkOperators,
             score: 0,
-            tier: "",
-            title: "",
-            content: "",
+            tier: RiskFactor.VeryHigh,
+            title: "The network is operated by a centralized block producer",
+            content: ReviewSnippet.SelfSequenceNone,
         },
         {
-            category: RiskCategory.StateValidation,
+            category: RiskCategory.FinalityGuarantees,
             score: 0,
-            tier: "",
-            title: "",
-            content: "",
+            tier: RiskFactor.UnderReview,
+            title: "State updates are finalized by rollup nodes. We are reviewing finality assurance scores for alternative rollups with no official BTC bridge",
+            content: `${ReviewSnippet.FinalityAltRollupValidityProofs}\n\n\n\nWe are reviewing how to score finality guarantees for alternative rollups. Learn more on our thoughts [here](https://www.lxresearch.co/some-thoughts-on-proof-systems-for-bridges-on-other-chains/).`
         },
     ],
     sections: [
         {
-            id: "description",
-            title: "Description",
+            id: "bitcoinsecurity",
+            title: "Bitcoin Security",
             content: [
                 {
-                    content: "Under review.",
+                    title: "Polygon zkEVM does not inherit any security from Bitcoin",
+                    content: BitcoinSecuritySnippet.NoSecurity,
+                },
+                {
+                    title: "ETH token used to pay fees",
+                    content: BitcoinSecuritySnippet.AltTokenFees,
+                },
+                {
+                    title: "No MEV introduced to Bitcoin",
+                    content: BitcoinSecuritySnippet.CentralizedSequencerMEV,
+                },
+                {
+                    title: "Polygon zkEVM does not contribute to the security budget",
+                    content: BitcoinSecuritySnippet.NoSecurity,
+                },
+            ],
+        },
+        {
+            id: "technology",
+            title: "Technology",
+            content: [
+                {
+                    title: "Ethereum Virtual Machine",
+                    content: TechnologySnippet.EVM,
+                },
+            ],
+        },
+        {
+            id: "usecases",
+            title: "Use Cases",
+            content: [
+                {
+                    title: "Onchain applications",
+                    content: UseCaseSnippet.OnchainApps,
+                },
+            ],
+        },
+        {
+            id: "knowledgebits",
+            title: "Knowledge Bits",
+            content: [
+                {
+                    content: `${KnowledgeBitSnippet.EthereumL2}`,
                 },
             ],
         },
