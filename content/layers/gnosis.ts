@@ -76,7 +76,7 @@ const gnosis: LayerProject = {
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: TokenSnippet.CustodianPeg,
-                    content: `${TokenSnippet.BitGowBTC}\n\n${TokenSnippet.smartcontractreview},`
+                    content: `${TokenSnippet.BitGowBTC}\n\n${TokenSnippet.smartcontractreview}`
                 },
             ],
         },
