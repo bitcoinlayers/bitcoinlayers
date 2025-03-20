@@ -1,3 +1,4 @@
+import { tokenToString } from "typescript";
 import {
     LayerProject,
     Type,
@@ -94,6 +95,14 @@ const corn: LayerProject = {
                     title: "Users trust custodians and various onchain contracts. We have not reviewed the contract implementations for this chain",
                     content:
                         "Four entities custody the bitcoin assets backing Solv.BBN tokens. These entities are Cobo, Ceffu, Fireblocks and the Solv Guard. These entities are known as Guardians in the [Solv application](https://app.solv.finance/staking).\n\nCeffu and Cobo are the custodians for funds that are staked with Babylon.\n\n[Source](https://docs.solv.finance/staking-abstraction-layer-sal/the-ecological-view)",
+                },
+                {
+                    name: "Bedrock uniBTC",
+                    infrastructureSlug: "bedrock-unibtc",
+                    score: 0,
+                    tier: RiskFactor.VeryHigh,
+                    title: TokenSnippet.CustodianPeg,
+                    content: TokenSnippet.BedrockUniBTC,
                 },
             ],
         },
