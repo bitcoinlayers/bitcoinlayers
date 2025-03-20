@@ -232,7 +232,7 @@ const arbitrum: LayerProject = {
                 },
                 {
                     title: "Arbitrum does not contribute to the security budget",
-                    content: BitcoinSecuritySnippet.NoSecurity,
+                    content: BitcoinSecuritySnippet.NoSecurityBudget,
                 },
             ],
         },
@@ -241,7 +241,7 @@ const arbitrum: LayerProject = {
             title: "Technology",
             content: [
                 {
-                    title: "Ethereum Virtual Machine",
+                    title: "EVM-Compatible",
                     content: TechnologySnippet.EVM,
                 },
                 {

@@ -1,3 +1,4 @@
+import { tokenToString } from "typescript";
 import {
     LayerProject,
     Type,
@@ -11,6 +12,9 @@ import {
     ContentSection,
     RiskCategory,
     TokenSnippet,
+    BitcoinSecuritySnippet,
+    TechnologySnippet,
+    UseCaseSnippet,
 } from "../props";
 
 const avalanche: LayerProject = {
@@ -71,32 +75,32 @@ const avalanche: LayerProject = {
                     name: "Avalanche BTCb",
                     infrastructureSlug: "avalance-btcb",
                     score: 0,
-                    tier: RiskFactor.UnderReview,
-                    title: TokenSnippet.UnderReview,
-                    content: "This two-way peg is under review",
+                    tier: RiskFactor.High,
+                    title: TokenSnippet.FederationPeg,
+                    content: TokenSnippet.AvalancheBTCb,
                 },
                 {
                     name: "Solv LBTC",
                     infrastructureSlug: "solv-solvbtc",
                     score: 0,
-                    tier: RiskFactor.UnderReview,
-                    title: TokenSnippet.UnderReview,
-                    content: "This two-way peg is under review",
+                    tier: RiskFactor.VeryHigh,
+                    title: TokenSnippet.CustodianPeg,
+                    content: TokenSnippet.SolvBTC,
                 },
                 {
                     name: "Kraken KBTC",
                     infrastructureSlug: "solv-solvbtcbbn",
                     score: 0,
-                    tier: RiskFactor.UnderReview,
-                    title: TokenSnippet.UnderReview,
-                    content: "This two-way peg is under review",
+                    tier: RiskFactor.VeryHigh,
+                    title: TokenSnippet.CustodianDerivative,
+                    content: TokenSnippet.SolvBTCBBN,
                 },
             ],
         },
         {
             category: RiskCategory.DataAvailability,
             score: 0,
-            tier: RiskFactor.UnderReview,
+            tier: RiskFactor.AlternativePoS,
             title: "Data is stored and made available by Avalanche full nodes",
             content:
                 "The data for Avalanche's state is made available by its full nodes. Anyone can run an Avalanche node and verify is state.\n\nWe are currently reviewing Avalanche's full node implementation",
@@ -104,7 +108,7 @@ const avalanche: LayerProject = {
         {
             category: RiskCategory.NetworkOperators,
             score: 0,
-            tier: RiskFactor.UnderReview,
+            tier: RiskFactor.AlternativePoS,
             title: "Avalanche is operated by a distributed validator set",
             content:
                 "Blocks are built and proposed by a permissionless consensus network.\n\nWe are currently reviewing Avalanche's network operators",
@@ -112,7 +116,7 @@ const avalanche: LayerProject = {
         {
             category: RiskCategory.FinalityGuarantees,
             score: 0,
-            tier: RiskFactor.UnderReview,
+            tier: RiskFactor.AlternativePoS,
             title: "Finality on Avalanche is guaranteed by a permissionless consensus mechanism",
             content:
                 "Blocks are validated and finalized by a permissionless consensus network.\n\nWe are currently reviewing Avalanche's finality guarantees",
@@ -120,12 +124,44 @@ const avalanche: LayerProject = {
     ],
     sections: [
         {
-            id: "underreview",
-            title: "Further sections under review",
+            id: "bitcoinsecurity",
+            title: "Bitcoin Security",
             content: [
                 {
-                    content:
-                        "Aspects related to bitcoin security, relevant technologies, and some two-way pegs have not been reviewed.\n\nThey will be reviewed by our team soon.",
+                    title: "Avalanche does not inherit any security from Bitcoin",
+                    content: BitcoinSecuritySnippet.NoSecurity,
+                },
+                {
+                    title: "AVAX token used to pay fees",
+                    content: BitcoinSecuritySnippet.AltTokenFees,
+                },
+                {
+                    title: "No MEV introduced to Bitcoin",
+                    content: BitcoinSecuritySnippet.AltNetworkMEV,
+                },
+                {
+                    title: "Avalanche does not contribute to the security budget",
+                    content: BitcoinSecuritySnippet.NoSecurityBudget,
+                },
+            ],
+        },
+        {
+            id: "technology",
+            title: "Technology",
+            content: [
+                {
+                    title: "EVM-Compatible",
+                    content: TechnologySnippet.EVM,
+                },
+            ],
+        },
+        {
+            id: "usecases",
+            title: "Use Cases",
+            content: [
+                {
+                    title: "Onchain applications",
+                    content: UseCaseSnippet.OnchainApps,
                 },
             ],
         },
