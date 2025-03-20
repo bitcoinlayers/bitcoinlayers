@@ -10,6 +10,8 @@ export enum LiveStatus {
     Proposed = "Proposed",
     Beta = "Beta",
     Deposits = "Deposits Live",
+    BIP = "Bip Drafted",
+    Activation = "Activation Client",
 }
 
 export enum Purpose {
@@ -83,6 +85,8 @@ export enum EntityType {
     AltL1 = "Alt. Layer 1",
     AltRollup = "Alt. Rollup",
     Alt = "Alt. Chain",
+    SingleOp = "Single Opcode",
+    GroupOp = "Group of Opcodes",
     "-" = "-",
 }
 
