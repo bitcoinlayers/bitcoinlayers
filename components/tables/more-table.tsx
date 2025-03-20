@@ -34,7 +34,7 @@ interface Props {
     title?: string;
     description?: string;
     icon?: ReactNode;
-    isEcash?: boolean;
+    isMore?: boolean;
 }
 
 const InfrastructureImage = ({
@@ -61,13 +61,13 @@ const InfrastructureImage = ({
     );
 };
 
-const EcashTable = ({
+const MoreTable = ({
     data,
     headers,
     title,
     description,
     icon,
-    isEcash = false,
+    isMore = false,
 }: Props) => {
     const [status, setStatus] = useQueryState("status", {
         defaultValue: "mainnet",
@@ -220,7 +220,7 @@ const EcashTable = ({
                                 >
                                     <td className="lg:px-6 px-4 py-4 font-semibold whitespace-nowrap">
                                         <Link
-                                            href={`/${isEcash ? "ecash" : "infrastructure"}/${item.slug}`}
+                                            href={`/${isMore ? "more" : "infrastructure"}/${item.slug}`}
                                             className="flex items-center"
                                         >
                                             <InfrastructureImage
@@ -237,7 +237,7 @@ const EcashTable = ({
                                         mobileActiveTab === "Type") && (
                                         <td className="lg:px-6 px-4 py-3 lg:py-4 border-border">
                                             <Link
-                                                href={`/${isEcash ? "ecash" : "infrastructure"}/${item.slug}`}
+                                                href={`/${isMore ? "more" : "infrastructure"}/${item.slug}`}
                                             >
                                                 {item.entityType}
                                             </Link>
@@ -247,7 +247,7 @@ const EcashTable = ({
                                         mobileActiveTab === "Status") && (
                                         <td className="lg:px-6 px-4 py-3 lg:py-4 border-border">
                                             <Link
-                                                href={`/${isEcash ? "ecash" : "infrastructure"}/${item.slug}`}
+                                                href={`/${isMore ? "more" : "infrastructure"}/${item.slug}`}
                                             >
                                                 {item.live}
                                             </Link>
@@ -258,7 +258,7 @@ const EcashTable = ({
                                             "Unit of Account") && (
                                         <td className="lg:px-6 px-4 py-3 lg:py-4 border-border">
                                             <Link
-                                                href={`/${isEcash ? "ecash" : "infrastructure"}/${item.slug}`}
+                                                href={`/${isMore ? "more" : "infrastructure"}/${item.slug}`}
                                             >
                                                 <div className="flex items-center">
                                                     {item.nativeToken
@@ -282,7 +282,7 @@ const EcashTable = ({
                                             "Associated Networks") && (
                                         <td className="lg:px-6 px-4 py-3 lg:py-4">
                                             <Link
-                                                href={`/${isEcash ? "ecash" : "infrastructure"}/${item.slug}`}
+                                                href={`/${isMore ? "more" : "infrastructure"}/${item.slug}`}
                                             >
                                                 {item.associatedLayers}
                                             </Link>
@@ -298,4 +298,4 @@ const EcashTable = ({
     );
 };
 
-export default EcashTable;
+export default MoreTable;
