@@ -20,6 +20,7 @@ import kbtcProject from "../content/infrastructures/kraken-kbtc";
 import solvProject from "../content/infrastructures/solv-solvbtc";
 import solvbbnProject from "../content/infrastructures/solv-solvbtcbbn";
 import solvenaProject from "../content/infrastructures/solv-solvbtcena";
+import solvcoreProject from "../content/infrastructures/solv-solvbtccore";
 import bedrockProject from "../content/infrastructures/bedrock-unibtc";
 import pumpProject from "../content/infrastructures/pump-pumpbtc";
 import fireProject from "../content/infrastructures/firebitcoin-fbtc";
@@ -74,6 +75,7 @@ const kbtc: InfrastructureProject = kbtcProject;
 const solv: InfrastructureProject = solvProject;
 const solvbbn: InfrastructureProject = solvbbnProject;
 const solvena: InfrastructureProject = solvenaProject;
+const solvcore: InfrastructureProject = solvcoreProject;
 const bedrock: InfrastructureProject = bedrockProject;
 const pump: InfrastructureProject = pumpProject;
 const fire: InfrastructureProject = fireProject;
@@ -127,6 +129,7 @@ export const allInfrastructures: InfrastructureProject[] = [
     solv,
     solvbbn,
     solvena,
+    solvcore,
     bedrock,
     pump,
     fire,
