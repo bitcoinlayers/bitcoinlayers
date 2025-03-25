@@ -26,11 +26,6 @@ export default function Home() {
         },
         { name: "Status", showSorting: true, mobileLabel: "Status" },
         {
-            name: "Unit of Account",
-            showSorting: true,
-            mobileLabel: "Unit",
-        },
-        {
             name: "Associated Networks",
             showSorting: true,
             mobileLabel: "Networks",
@@ -40,7 +35,7 @@ export default function Home() {
     return (
         <div className="mx-auto">
             { <Hero
-                title="Layers"
+                title="Opcodes"
                 description="Not every app layer is made equal."
             /> }
             <div className="lg:flex mb-4 justify-center w-full lg:max-w-5xl mx-auto">

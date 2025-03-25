@@ -52,7 +52,7 @@ const bob: LayerProject = {
         },
     ],
     description:
-        "BOB is a rollup that serves as an application layer for bitcoin. They have launched as a rollup on top of Ethereum, with plans to derive more security from bitcoin over time.",
+        "BOB is a rollup that serves as an application layer for bitcoin. They have launched as a rollup on top of Ethereum, with plans to derive more security from bitcoin over time. BOB is a rollup that serves as an application layer for bitcoin. They have launched as a rollup on top of Ethereum, with plans to derive more security from bitcoin over time.",
     riskAnalysis: [
         {
             category: RiskCategory.BtcCustody,

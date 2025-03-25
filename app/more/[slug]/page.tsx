@@ -5,7 +5,7 @@ import {
 } from "@/util/infrastructure_index";
 import InfrastructureMenu from "@/components/infrastructure/infrastructureMenu";
 import InfrastructureBody from "@/components/infrastructure/infrastructureBody";
-import InfrastructureOverview from "@/components/infrastructure/infrastructureOverview";
+import InfrastructureOverviewAlt from "@/components/infrastructure/infrastructureOverviewAlt";
 import InfrastructureImage from "@/components/infrastructure/infrastructure-image";
 import { allMore } from "@/util/more_index";
 import UnderDevelopmentBanner from "@/components/under-development-banner";
@@ -36,7 +36,7 @@ export default async function InfrastructurePage(props: {
             <UnderDevelopmentBanner
                 title={`The ${infrastructure.title} page of Bitcoin Layers is under development.`}
             />
-            <article className="flex flex-col lg:min-h-screen max-w-5xl mx-auto lg:pt-24 pt-12">
+            <article className="flex flex-col lg:min-h-screen max-w-5xl mx-auto lg:pt-0 pt-12">
                 <div className="flex justify-start items-center lg:gap-8 gap-2 lg:my-12 my-6 px-4 lg:px-0">
                     <div className="flex justify-center items-center">
                         <InfrastructureImage
@@ -55,7 +55,7 @@ export default async function InfrastructurePage(props: {
                         <InfrastructureMenu infrastructure={infrastructure} />
                     </div>
                     <div className="lg:w-4/5 flex flex-col px-4 lg:px-0">
-                        <InfrastructureOverview
+                        <InfrastructureOverviewAlt
                             infrastructure={infrastructure}
                         />
 
