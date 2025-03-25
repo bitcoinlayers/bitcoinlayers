@@ -55,9 +55,14 @@ const opcat: InfrastructureProject = {
             title: "Use cases",
             content: [
                 {
-                    title: "Users do not have custody of their BTC and trust guardians to process withdrawals",
+                    title: "Recursive Covenants",
                     content:
-                        "Users deposit BTC into a multisig to interact with a Fedimint. Fedimints do not enable unilateral exits. Users explicitly trust the signers, known as guardians, of the federations’ multisig to not steal their funds. Stealing users’ funds needs a majority (e.g. 3/5 or 7/13) of guardians to collude. This is why “knowing your federation” is a key requirement when choosing second party custody.",
+                        "OP_CAT is a proposed opcode that could enable two primitives that would support improved bridging protocols for projects like Starknet. The first enables users to predefine spending conditions for individual UTXOs. The second primitive is the verification of merkle tree branches. This would enable you to continuously add hashes of data to a merkle tree that continuously builds upon restrictions placed by previous transactions.\n\nBy building a continuous chain of restrictions over a number of transactions, you enable recursive covenants. Recursive covenants enable users to lock funds into a group UTXO that can continuously add more restrictions based on new user deposits, and additionally enforce changes for partial withdrawals which must go back into the rollup script.",
+                 },
+                 {
+                    title: "STARK Verifier with OP_CAT",
+                    content:
+                        "An issue that arises from shared UTXOs, specifically for L2s, is that you need a trusted party to verify offchain state transitions to enable users to withdraw funds relative to their updated balance. The StarkWare team (lead developers of Starknet) are working with L2 Iterative Ventures on developing a STARK verifier directly in Bitcoin Script with OP_CAT.\n\nIn rollups, state differences are compressed together and sent to the Bitcoin L1 with a corresponding validity proof proving that the state transition was executed correctly. Starknet are proposing a mechanism that would verify these STARK proofs proving the validity of L2 state transitions. By verifying offchain state transitions directly in Script, shared UTXOs would be able to process user withdrawals based on their updated balances. Recursive covenants and onchain STARK verification would create trust-minimized bridge programs for L2s.",
                  },
             ],
         },
@@ -109,35 +114,13 @@ const opcat: InfrastructureProject = {
             ],
         },
         {
-            id: "usecases",
-            title: "Use Cases",
-            content: [
-                {
-                    title: "Private Payments",
-                    content:
-                        "Fedimints enable anonymous payments through the use of blinded signatures. The mint is unaware of transactions made by the users or their respective account balance. The mint can only establish a link to a users’ onchain address when pegging in and out of the mint.",
-                },
-            ],
-        },
-        {
             id: "stakeholderresources",
             title: "Stakeholder Resources",
             content: [
                 {
-                    title: "Private Payments",
+                    title: "Learn how OP_CAT impacts you",
                     content:
-                        "Fedimints enable anonymous payments through the use of blinded signatures. The mint is unaware of transactions made by the users or their respective account balance. The mint can only establish a link to a users’ onchain address when pegging in and out of the mint.",
-                },
-            ],
-        },
-        {
-            id: "sources",
-            title: "Sources",
-            content: [
-                {
-                    title: "Code is open source",
-                    content:
-                        "All code related to the Fedimint project is free and open source.",
+                        "Each softfork proposal impacts different stakeholders differently. Check out the resources below to learn this proposal would impact you.",
                 },
             ],
         },

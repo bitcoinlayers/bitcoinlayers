@@ -20,6 +20,8 @@ const InfrastructureBody: React.FC<{ infrastructure: Project }> = ({
                         </div>
                     </div>
 
+                    <div className="body_paragraph !text-foreground mt-3">
+                    </div>
                     {section.content.map((content, contentIndex) => (
                         <React.Fragment key={contentIndex}>
                             {content.title && (
