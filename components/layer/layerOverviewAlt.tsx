@@ -38,10 +38,10 @@ const LayerOverviewAlt: React.FC<{ layer: Project }> = ({ layer }) => {
 
                 {/* RIGHT: Diamond */}
                 <div className="flex justify-center items-center w-full lg:w-2/5 pt-4 lg:pt-2">
-    <div className="scale-[0.85] origin-top">
-        <LayerDiamond layer={layer as LayerProject} />
-    </div>
-</div>
+                    <div className="scale-[0.85] origin-top">
+                            <LayerDiamond layer={layer as LayerProject} />
+                    </div>
+                    </div>
                 </div>
             {/* Footer: Project links */}
             <div className="pt-6 mt-0 border-t border-border">
