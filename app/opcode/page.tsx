@@ -2,6 +2,7 @@ import { allOpcodes } from "@/util/opcode_index";
 import Hero from "@/components/hero";
 import OpcodeTable from "@/components/tables/opcode-table";
 import { CoinsIcon } from "lucide-react";
+import OpcodeChart from "@/components/charts/opcode-chart";
 
 export default function Home() {
     const sortedInfrastructures = allOpcodes.sort((a, b) =>
@@ -38,6 +39,10 @@ export default function Home() {
                 title="Opcodes"
                 description="Each opcode proposal comes with tradeoffs."
             /> }
+
+<div className="mb-8 max-w-5xl mx-auto">
+                <OpcodeChart />
+            </div>
 
             <div className="lg:flex mb-4 justify-center w-full lg:max-w-5xl mx-auto">
                 <OpcodeTable
