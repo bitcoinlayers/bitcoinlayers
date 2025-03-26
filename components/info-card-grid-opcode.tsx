@@ -1,4 +1,5 @@
 import InfoCardOpcode from "./info-card-opcode";
+import { BitcoinIcon, HandCoinsIcon, Pickaxe, Code } from "lucide-react";
 
 export default function InfoCardGridOpcode() {
     return (
@@ -8,6 +9,7 @@ export default function InfoCardGridOpcode() {
                 subtitle="Review how proposals"
                 description="affect your business"
                 href="/methodology"
+                icon={HandCoinsIcon}
             />
             <InfoCardOpcode
                 title="Miners"
@@ -15,6 +17,7 @@ export default function InfoCardGridOpcode() {
                 description="with other layer enjoyers"
                 href="https://t.me/+8rv-1I2gkmQ4ZmJh"
                 isExternal
+                icon={Pickaxe}
             />
             <InfoCardOpcode
                 title="Developers"
@@ -22,13 +25,15 @@ export default function InfoCardGridOpcode() {
                 description="impact the application layer"
                 href="https://www.lxresearch.co"
                 isExternal
+                icon={Code}
             />
             <InfoCardOpcode
-                title="Research & media"
+                title="Users"
                 subtitle="Review how proposals"
-                description="from our R&D team"
+                description="provide different use cases"
                 href="https://www.lxresearch.co"
                 isExternal
+                icon={BitcoinIcon}
             />
         </div>
     );

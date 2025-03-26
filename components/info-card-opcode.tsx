@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Card, CardContent } from "@/components/ui/card";
-import { BitcoinIcon, ExternalLinkIcon } from "lucide-react";
+import { BitcoinIcon, ExternalLinkIcon, HandCoinsIcon, Pickaxe, Code,  } from "lucide-react";
+import type { LucideIcon } from "lucide-react"; // ⬅️ This is the missing piece
 
 interface Props {
     title: string;
@@ -8,6 +9,7 @@ interface Props {
     description: string;
     href: string;
     isExternal?: boolean;
+    icon?: LucideIcon; // ⬅️ New prop
 }
 
 export default function InfoCardOpcode({
@@ -16,6 +18,7 @@ export default function InfoCardOpcode({
     description,
     href,
     isExternal,
+    icon: Icon = BitcoinIcon, // ⬅️ New line
 }: Props) {
     return (
         <Link href={href} target={isExternal ? "_blank" : undefined}>
@@ -37,7 +40,7 @@ export default function InfoCardOpcode({
                                 </p>
                             </div>
                         </div>
-                        <BitcoinIcon className="h-4" />
+                        <Icon className="h-4" />
                     </div>
                 </CardContent>
             </Card>
