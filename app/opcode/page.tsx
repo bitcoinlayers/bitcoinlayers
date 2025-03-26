@@ -36,8 +36,9 @@ export default function Home() {
         <div className="mx-auto">
             { <Hero
                 title="Opcodes"
-                description="Not every app layer is made equal."
+                description="Each opcode proposal comes with tradeoffs."
             /> }
+
             <div className="lg:flex mb-4 justify-center w-full lg:max-w-5xl mx-auto">
                 <OpcodeTable
                     data={sortedInfrastructures}

@@ -22,7 +22,7 @@ const opcat: InfrastructureProject = {
     riskFactors: ["", ""],
     nativeToken: "BTC",
     purpose: Purpose.EcashMint,
-    associatedLayers: "Rollups, Alt. Rollups, ",
+    associatedLayers: "Layer 1, Sidesystems, Alternative Networks",
     notice: undefined,
     bitcoinOnly: true,
     links: [
