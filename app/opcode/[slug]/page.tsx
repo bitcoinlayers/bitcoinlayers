@@ -4,11 +4,11 @@ import {
     allOpcodesSlugs,
 } from "@/util/opcode_index";
 import InfrastructureMenu from "@/components/infrastructure/infrastructureMenu";
-import InfrastructureBody from "@/components/infrastructure/infrastructureBody";
-import InfrastructureOverviewAlt from "@/components/infrastructure/infrastructureOverviewAlt";
+import OpcodeBody from "@/components/opcodes/opcodeBody";
 import InfrastructureImage from "@/components/infrastructure/infrastructure-image";
 import RiskAnalysis from "@/components/layer/risk-analysis/infra-container";
-import UnderDevelopmentBanner from "@/components/under-development-banner";
+import OpcodeOverview from "@/components/opcodes/opcodeOverview";
+import UnderDevelopmentBanner from "@/components/opcodes/underdevelopmentbanner";
 
 async function getInfrastructureFromSlug(slug: string) {
     const infrastructure = allOpcodes.find(
@@ -55,7 +55,7 @@ export default async function InfrastructurePage(props: {
                         <InfrastructureMenu infrastructure={infrastructure} />
                     </div>
                     <div className="lg:w-4/5 flex flex-col px-4 lg:px-0">
-                        <InfrastructureOverviewAlt
+                        <OpcodeOverview
                             infrastructure={infrastructure}
                         />
                         {infrastructure.assessment && (
@@ -65,7 +65,7 @@ export default async function InfrastructurePage(props: {
                                 infrastructure={infrastructure}
                             />
                         )}
-                        <InfrastructureBody infrastructure={infrastructure} />
+                        <OpcodeBody infrastructure={infrastructure} />
                     </div>
                 </div>
             </article>
