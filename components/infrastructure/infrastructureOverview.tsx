@@ -27,7 +27,7 @@ const InfrastructureOverview: React.FC<{
             className="flex lg:flex-row flex-col justify-between items-center lg:items-start pt-6 gap-4 mb-12"
         >
             <div className="flex lg:flex-row flex-col justify-between items-center lg:items-start pt-6 gap-4">
-                <div className="flex flex-col space-y-10 mb-12 w-full">
+                <div className="flex flex-col space-y-10 mb-0 w-full">
                     <Categories infrastructure={infrastructure} />
                     {/* {hasAssessment && (
                     <div className="flex lg:hidden w-auto">

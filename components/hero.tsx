@@ -26,7 +26,6 @@ const Hero: React.FC<Props> = ({ title, description }: Props) => {
                         <br />
                         Learn the difference.
                     </p>
-                    <SearchBlock />
                 </div>
             </div>
         </div>

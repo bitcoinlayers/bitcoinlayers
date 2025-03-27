@@ -6,8 +6,8 @@ import cashuProject from "../content/infrastructures/cashu";
 const fedimint: InfrastructureProject = fedimintProject;
 const cashu: InfrastructureProject = cashuProject;
 
-export const allEcash: InfrastructureProject[] = [cashu, fedimint];
+export const allMore: InfrastructureProject[] = [cashu, fedimint];
 
-export const allEcashSlugs: string[] = allEcash.map(
+export const allMoreSlugs: string[] = allMore.map(
     (infrastructure) => infrastructure.slug,
 );

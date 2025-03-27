@@ -79,8 +79,6 @@ const LayerDiamond: React.FC<{ layer: LayerProject }> = ({ layer }) => {
         );
     };
 
-    const containerClassName = `lg:w-[${containerSize}px] h-[${containerSize}px] lg:h-full flex justify-center items-center relative ml-0 z-30 cursor-pointer`;
-
     const riskLabels = [
         {
             text: "CUSTODY",
@@ -143,8 +141,8 @@ const LayerDiamond: React.FC<{ layer: LayerProject }> = ({ layer }) => {
                 </div>
             ))}
             <Dialog>
-                <DialogTrigger
-                    className={`lg:w-[${containerSize}px] h-[${containerSize}px] flex justify-center items-center relative ml-0 z-30 cursor-pointer`}
+            <DialogTrigger
+                className="w-[350px] h-[350px] flex justify-center items-center relative ml-0 z-30 cursor-pointer"
                 >
                     {renderContent()}
                 </DialogTrigger>

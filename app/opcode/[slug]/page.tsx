@@ -1,19 +1,17 @@
 import { notFound } from "next/navigation";
 import {
-    allInfrastructures,
-    allInfrastructureSlugs,
-} from "@/util/infrastructure_index";
+    allOpcodes,
+    allOpcodesSlugs,
+} from "@/util/opcode_index";
 import InfrastructureMenu from "@/components/infrastructure/infrastructureMenu";
-import InfrastructureBody from "@/components/infrastructure/infrastructureBody";
-import InfrastructureOverviewAlt from "@/components/infrastructure/infrastructureOverviewAlt";
+import OpcodeBody from "@/components/opcodes/opcodeBody";
 import InfrastructureImage from "@/components/infrastructure/infrastructure-image";
-import InfraTVLChart from "@/components/charts/infra-tvl-chart";
 import RiskAnalysis from "@/components/layer/risk-analysis/infra-container";
-import UnderDevelopmentBanner from "@/components/under-development-banner";
-import ProjectContractAddresses from "@/components/project-contract-addresses";
+import OpcodeOverview from "@/components/opcodes/opcodeOverview";
+import UnderDevelopmentBanner from "@/components/opcodes/underdevelopmentbanner";
 
 async function getInfrastructureFromSlug(slug: string) {
-    const infrastructure = allInfrastructures.find(
+    const infrastructure = allOpcodes.find(
         (infrastructure) => infrastructure.slug === slug,
     );
     if (!infrastructure) {
@@ -57,10 +55,9 @@ export default async function InfrastructurePage(props: {
                         <InfrastructureMenu infrastructure={infrastructure} />
                     </div>
                     <div className="lg:w-4/5 flex flex-col px-4 lg:px-0">
-                        <InfrastructureOverviewAlt
+                        <OpcodeOverview
                             infrastructure={infrastructure}
                         />
-                        <InfraTVLChart />
                         {infrastructure.assessment && (
                             <RiskAnalysis
                                 riskAnalysis={infrastructure.assessment}
@@ -68,8 +65,7 @@ export default async function InfrastructurePage(props: {
                                 infrastructure={infrastructure}
                             />
                         )}
-                        <ProjectContractAddresses slug={slug} isLayer={false} />
-                        <InfrastructureBody infrastructure={infrastructure} />
+                        <OpcodeBody infrastructure={infrastructure} />
                     </div>
                 </div>
             </article>
@@ -78,7 +74,7 @@ export default async function InfrastructurePage(props: {
 }
 
 export async function generateStaticParams() {
-    return allInfrastructureSlugs.map((slug) => ({
+    return allOpcodesSlugs.map((slug) => ({
         slug,
     }));
 }

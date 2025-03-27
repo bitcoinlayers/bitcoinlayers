@@ -1,10 +1,10 @@
-import { allEcash } from "@/util/ecash_index";
+import { allOpcodes } from "@/util/opcode_index";
 import Hero from "@/components/hero";
-import EcashTable from "@/components/tables/ecash-table";
+import OpcodeTable from "@/components/tables/opcode-table";
 import { CoinsIcon } from "lucide-react";
 
 export default function Home() {
-    const sortedInfrastructures = allEcash.sort((a, b) =>
+    const sortedInfrastructures = allOpcodes.sort((a, b) =>
         a.title.toLowerCase().localeCompare(b.title.toLowerCase()),
     );
 
@@ -26,11 +26,6 @@ export default function Home() {
         },
         { name: "Status", showSorting: true, mobileLabel: "Status" },
         {
-            name: "Unit of Account",
-            showSorting: true,
-            mobileLabel: "Unit",
-        },
-        {
             name: "Associated Networks",
             showSorting: true,
             mobileLabel: "Networks",
@@ -39,18 +34,19 @@ export default function Home() {
 
     return (
         <div className="mx-auto">
-            {/* <Hero
-                title="Ecash"
-                description="Not every ecash system is equal."
-            /> */}
+            { <Hero
+                title="Opcodes"
+                description="Each opcode proposal comes with tradeoffs."
+            /> }
+
             <div className="lg:flex mb-4 justify-center w-full lg:max-w-5xl mx-auto">
-                <EcashTable
+                <OpcodeTable
                     data={sortedInfrastructures}
                     headers={infrastructureHeaders}
-                    title="Ecash"
-                    description="Learn the tradeoffs for different ecash projects"
+                    title="Proposed Opcodes"
+                    description="Learn the tradeoffs for different opcode proposals"
                     icon={<CoinsIcon className="mr-3" />}
-                    isEcash
+                    isOpcode
                 />
             </div>
         </div>

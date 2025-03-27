@@ -70,20 +70,10 @@ const Categories: React.FC<{ infrastructure: InfrastructureProject }> = ({
                     {infrastructure.live}
                 </div>
             </div>
-            <div className="flex-col justify-center items-start sm:w-1/2 lg:w-[110px]">
+            <div className="flex-col justify-center items-start sm:w-1/2 lg:w-[120px]">
                 <div className="text-sm leading-tight">Type</div>
                 <div className="text-muted-foreground">
                     {infrastructure.entityType}
-                </div>
-            </div>
-            <div className="flex-col justify-center items-start sm:w-1/3 lg:w-[80px]">
-                <div className="text-sm leading-tight">BTC Supply</div>
-                <div className="text-muted-foreground">
-                    ₿
-                    {totalAmountForInfra.toLocaleString("en-US", {
-                        minimumFractionDigits: 0,
-                        maximumFractionDigits: 0,
-                    })}
                 </div>
             </div>
         </div>

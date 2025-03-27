@@ -3,7 +3,7 @@ import { allLayers, allLayerSlugs } from "@/util/layer_index";
 import LayerMenu from "@/components/layer/layerMenu";
 import LayerBody from "@/components/layer/layerBody";
 import RiskAnalysis from "@/components/layer/risk-analysis/layer-container";
-import LayerOverview from "@/components/layer/layerOverview";
+import LayerOverviewAlt from "@/components/layer/layerOverviewAlt";
 import LayerImage from "@/components/layer/layer-image";
 import LayerTVLChart from "@/components/charts/layer-tvl-chart";
 import ProjectContractAddresses from "@/components/project-contract-addresses";
@@ -30,7 +30,7 @@ export default async function LayerPage(props: {
     }
 
     return (
-        <article className="flex flex-col lg:min-h-screen max-w-5xl mx-auto lg:pt-24 pt-12">
+        <article className="flex flex-col lg:min-h-screen max-w-5xl mx-auto lg:pt-0 pt-12">
             {(layer.entityCategory === EntityCategory.Alt ) ?
             <AlternativeBanner
             title={`The ${layer.title} page of Bitcoin Layers is under development.`}
@@ -56,7 +56,7 @@ export default async function LayerPage(props: {
                     <LayerMenu layer={layer} />
                 </div>
                 <div className="lg:w-4/5 flex flex-col">
-                    <LayerOverview layer={layer} />
+                    <LayerOverviewAlt layer={layer} />
                     <LayerTVLChart />
                     {!layer.underReview && (
                         <RiskAnalysis

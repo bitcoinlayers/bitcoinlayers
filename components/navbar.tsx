@@ -29,7 +29,8 @@ export default function Navbar() {
         "/",
         "/staking",
         "/crosschainbtc",
-        "/ecash",
+        "/more",
+        "/opcodes",
         "/bitcoinonly",
         "/metrics",
     ];
