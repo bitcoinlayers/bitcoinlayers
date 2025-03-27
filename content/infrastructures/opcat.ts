@@ -28,11 +28,11 @@ const opcat: InfrastructureProject = {
     links: [
         {
             text: Site.Website,
-            url: "https://fedimint.org",
+            url: "https://github.com/sCrypt-Inc/awesome-op-cat",
         },
         {
             text: Site.Docs,
-            url: "https://fedimint.org/docs/intro",
+            url: "https://github.com/sCrypt-Inc/awesome-op-cat",
         },
         // {
         //     text: Site.Explorer,
@@ -40,11 +40,11 @@ const opcat: InfrastructureProject = {
         // },
         {
             text: Site.GitHub,
-            url: "https://github.com/fedimint",
+            url: "https://github.com/sCrypt-Inc/awesome-op-cat",
         },
         {
             text: Site.GitHub,
-            url: "https://x.com/fedimint",
+            url: "https://github.com/sCrypt-Inc/awesome-op-cat",
         },
     ],
     description:
