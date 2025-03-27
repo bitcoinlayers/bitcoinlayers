@@ -8,6 +8,13 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import {
   BarChart,
   Bar,
   XAxis,
@@ -19,7 +26,16 @@ import {
 import { ChartContainer } from "@/components/ui/chart";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
+
+const scoreTypes = [
+  { key: "Prefer", color: "#16a34a" },
+  { key: "Acceptable", color: "#84cc16" },
+  { key: "Weak", color: "#facc15" },
+  { key: "Wanting", color: "#fb923c" },
+  { key: "Evaluating", color: "#38bdf8" },
+  { key: "No", color: "#ef4444" },
+  { key: "Deficient", color: "#6b7280" },
+];
 
 const opcodeData: Record<string, { score: string; count: number }[]> = {
   OP_CAT: [
@@ -106,7 +122,7 @@ const opcodeData: Record<string, { score: string; count: number }[]> = {
 };
 
 export default function OpcodeSupportChart() {
-  const [selectedOpcode, setSelectedOpcode] = useState<keyof typeof opcodeData>("OP_CAT");
+  const [selectedOpcode, setSelectedOpcode] = useState<string>("OP_CAT");
   const currentData = opcodeData[selectedOpcode];
 
   return (
@@ -114,23 +130,25 @@ export default function OpcodeSupportChart() {
       <CardHeader className="flex flex-col items-stretch space-y-0 border-b p-0 sm:flex-row">
         <div className="flex flex-1 flex-col justify-center gap-1 px-6 py-5 sm:py-6">
           <CardTitle className="flex font-semibold items-center gap-2">
-            {selectedOpcode} Score Breakdown
+            {selectedOpcode} developer sentiment
           </CardTitle>
           <CardDescription className="text-xs flex flex-wrap">
-            Developer sentiment for the {selectedOpcode} proposal
+            Select developer sentiment for the {selectedOpcode} proposal
           </CardDescription>
         </div>
-        <div className="flex items-center px-6 flex-wrap gap-1">
-          {Object.keys(opcodeData).map((opcode) => (
-            <Button
-              key={opcode}
-              variant={selectedOpcode === opcode ? "default" : "outline"}
-              onClick={() => setSelectedOpcode(opcode as keyof typeof opcodeData)}
-              className="text-[10px] px-2 py-1"
-            >
-              {opcode}
-            </Button>
-          ))}
+        <div className="px-6 flex items-center">
+          <Select value={selectedOpcode} onValueChange={(value) => setSelectedOpcode(value)}>
+            <SelectTrigger className="w-[180px]">
+              <SelectValue placeholder="Select opcode" />
+            </SelectTrigger>
+            <SelectContent>
+              {Object.keys(opcodeData).map((opcode) => (
+                <SelectItem key={opcode} value={opcode}>
+                  {opcode}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
         </div>
       </CardHeader>
       <CardContent>
@@ -148,6 +166,7 @@ export default function OpcodeSupportChart() {
                 tickMargin={8}
               />
               <YAxis
+                domain={[0, 30]}
                 tickLine={false}
                 axisLine={false}
                 tickMargin={8}
@@ -163,8 +182,26 @@ export default function OpcodeSupportChart() {
             </BarChart>
           </ResponsiveContainer>
         </ChartContainer>
+        <div className="mt-4 flex justify-end pr-2">
+          <a
+            href="https://github.com/bitcoinlayers/bitcoinlayers"
+            className="text-sm font-medium hover:underline flex items-center text-muted-foreground"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Learn more
+            <span className="ml-1">→</span>
+          </a>
+        </div>
       </CardContent>
     </Card>
   );
 }
+
+
+
+
+
+
+
 
