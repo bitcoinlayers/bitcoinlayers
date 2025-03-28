@@ -31,7 +31,7 @@ const osmosis: LayerProject = {
         RiskFactor.AlternativePoS,
         RiskFactor.AlternativePoS,
     ],
-    btcLocked: 0,
+    btcLocked: NaN,
     nativeToken: "-",
     feeToken: "OSMO",
     notice: undefined,

@@ -30,7 +30,7 @@ const bitfinity: LayerProject = {
         RiskFactor.UnderReview,
         RiskFactor.UnderReview,
     ],
-    btcLocked: 0,
+    btcLocked: NaN,
     nativeToken: "-",
     feeToken: "BTF",
     notice: undefined,

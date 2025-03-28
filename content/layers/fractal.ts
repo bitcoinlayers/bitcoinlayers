@@ -30,7 +30,7 @@ const fractal: LayerProject = {
         RiskFactor.Medium,
         RiskFactor.Medium,
     ],
-    btcLocked: 0,
+    btcLocked: NaN,
     nativeToken: "FB",
     feeToken: "FB",
     notice: Notice.Reorg,

@@ -34,7 +34,7 @@ const side: LayerProject = {
         RiskFactor.AlternativePoS,
         RiskFactor.AlternativePoS,
     ],
-    btcLocked: 0,
+    btcLocked: NaN,
     nativeToken: "-",
     feeToken: "SBTC",
     notice: undefined,

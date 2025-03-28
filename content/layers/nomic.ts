@@ -30,7 +30,7 @@ const nomic: LayerProject = {
         RiskFactor.Medium,
         RiskFactor.Medium,
     ],
-    btcLocked: 4.95,
+    btcLocked: NaN,
     nativeToken: "NOM",
     feeToken: "NOM",
     bitcoinOnly: false,
