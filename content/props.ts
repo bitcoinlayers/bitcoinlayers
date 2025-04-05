@@ -110,6 +110,8 @@ export enum Site {
     Twitter = "Twitter",
 }
 
+//Below is snippets for bitcoin tokens. This is where we write the custody score for the token so we don't have to write it on dozens of pages.
+
 export enum TokenSnippet { //TODO: Janusz to add more here
     UnderReview = "This two-way peg is under review",
     CustodianPeg = "BTC backing this asset is managed by centralized parties",
@@ -139,6 +141,10 @@ export enum TokenSnippet { //TODO: Janusz to add more here
     BTCTRON = "When users swap BTC for BTCTRON, they send their BTC to Poloniex, a centralized custodian. Information on how the BTC is secured is not available.",
     smartcontractreview = "We are reviewing the specific smart contracts related to this two-way peg. The relevant token contract is listed in the bottom of the review.",
 }
+
+//Below is snippets for layer assessments.
+
+
 export enum ReviewSnippet { //TODO: Janusz to add more here
     EthereumRollupDA = "The data for network's state is made available by Ethereum full nodes. Anyone can run an Ethereum node and verify the state of the network.",
     BasedSequencedAlt = "The network is a based sequenced rollup. L1 block producers are responsible for sequencing the network's transactions.",
@@ -154,7 +160,15 @@ export enum ReviewSnippet { //TODO: Janusz to add more here
     AltL1Operators = "Block production is handled by a distributed network of operators.\n\nAnyone with sufficient capital resources can become a network operator and produce blocks.",
     CometBFTFinality = "The network uses CometBFT for consensus. Like Tendermint, the protocol on which CometBFT is based, CometBFT has single-slot finality, meaning that blocks cannot be re-organized once they are part of the canonical blockchain. More than ⅔ of validator voting power must sign commit votes to finalize a block. If validators attempt to commit multiple blocks at the same block height, their stake will be slashed.",
     UnderReview = "This two-way peg is under review",
+    NoFraudProofsBridge = "Users trust the proposer to not publish a malicious, unchallenged state transition. If a centralized party does not contest this state transition within a given time frame, all funds from the bridge can be stolen.",
+    CentralizedUpgradeableBridge = "A centralized admin can create a malicious smart contract upgrade. In the event of a malicious smart contract upgrade, there is no exit window for users. This means that the admin behind the bridge can steal all funds in the official bridge.",
+
+
 }
+
+    //Below is snippets for additional information in layers reviews.
+
+
 export enum BitcoinSecuritySnippet { //TODO: Janusz to add more here
     NoSecurity = "In its current state, the network does not inherit security from Bitcoin.",
     AltTokenFees = "Fees to network operators are paid in an alternative token.",
@@ -178,6 +192,10 @@ export enum AdditionalSnippet { //TODO: Janusz to add more here
     UpgradeableContractsCentralizedAndNoExit = "The contracts related to this project are immediately upgradeable by a centralized party. These contracts affect the project's chain and may affect specific two-way peg implementations.\n\nIn case of an malicious upgrade, there is no exit delay and users are unable to leave the chain.",
     UpgradeableContractsFederatedAndExit = "The contracts related to this project are immediately upgradeable by a federation. These contracts affect the project's chain and may affect specific two-way peg implementations.\n\nIn case of an malicious upgrade by this federation, there is no exit delay and users are unable to leave the chain.",
 }
+export enum OtherSnippet { //TODO: Janusz to add more here
+    WithdrawalsAltRollup = "Withdrawing BTC-backed assets from the network depends on a variety of factors. First, users must trust the network operators to include their withdrawal request in a block. If the user's assets are locked in the network's official bridge program, they rely on a proposer to include their request in proposed state transition. After the state transition is finalized, the user can redeem their funds.\n\nIf a user's BTC-backed asset is minted directly onto the network, then the user's withdrawal request must be processed by the asset issuer.",
+    NotASideSystem = "Projects that do not meet our requirements to be considered a sidesystem will be moved to the Alternative category. They have until June 30th to implement the technical requirements to be considered a sidesystem.",
+}
 
 //Below is snippets for alternative chains that we haven't been able to review yet due to volume.
 
@@ -187,6 +205,15 @@ export enum AtlSnippet { //TODO: Janusz to add more here
     FinalityConsensusNetwork = "Finality assurances are provided by an alternative consensus network. Users trust that once a transaction has been added to the chain it won't be reverted.",
     PrioritizeLayers = "The Bitcoin Layers project prioritizes reviews on protocols that claim to be bitcoin layers. It also reviews bridges, token wrappers, and other mechanisms that support synthetic versions of bitcoin on other chains. If you'd ike to contribute to this review, feel free to submit a PR in our [GitHub](https://github.com/bitcoinlayers/bitcoinlayers) or join our [telegram group](https://t.me/+8rv-1I2gkmQ4ZmJh) to discuss.",
 }
+
+    //Below is snippets for wrapper assessments.
+
+
+    export enum WrapperReviews { //TODO: Janusz to add more here
+        tssScheme = "TO DO",
+    }
+
+    //Below is snippets for additional information in wrapper reviews.
 
 export enum WrapperSnippet { //TODO: Janusz to add more here
     BlacklistYes = "The token implementation has a blacklist function." 
@@ -206,6 +233,10 @@ export enum BTCWrapperTransparency { //TODO: Janusz to add more here
     RedemptionsYesNoDocs = "Redemptions are enabled. The project has not disclosed how redemptions are processed in their documentation.",
     StakeAttestationsNo = "The project does not provide any attestations that its BTC is in-fact staked onto Babylon.",
     StakeAttestationsYes = "The project does not provide any attestations that its BTC is in-fact staked onto Babylon.",
+}
+
+export enum DefinitionSnippet { //TODO: Janusz to add more here
+    DefinitionAltRollup = "The network is an alternative rollup. It uses an alternative network for data availability and consensus. It supports a variety of BTC-backed assets." 
 }
 
 export interface Peg {
