@@ -210,7 +210,23 @@ export enum AtlSnippet { //TODO: Janusz to add more here
 
 
     export enum WrapperReviews { //TODO: Janusz to add more here
-        tssScheme = "TO DO",
+        GovernanceLow = "Users have at least 48 hours to submit a withdrawal request to the bridge operators if a malicious contract upgrade is pushed to the token contract.",
+        GovernanceMediumLessThan48 = "Users have less than 48 hours to submit a withdrawal request to the bridge operators if a malicious contract upgrade is pushed to the token contract. A publicly disclosed federation with at least 5 operators can implement contract upgrades",
+        GovernanceMedium = "There is no delay on contract upgrades. A publicly disclosed federation with at least 5 operators can implement contract upgrades.",
+        GovernanceHigh = "There is no delay on contract upgrades. A known, centralized party or federation with less than 5 operators can implement contract upgrades",
+        GovernanceVeryHigh = "There is no delay on contract upgrades. The identities of the signers who can implement contract upgrades is not disclosed",
+        crLow = "The token has no pause or blacklist function. Users can transact the BTC-backed token freely on a given network.",
+        CrBlacklistFederation = "The token has a blacklist function. A publicly known federation is able to blacklist users and stop them from being able to transact with the token.",
+        CrBlacklistSingleSigner = "The token has a blacklist function. A single entity is able to blacklist users and stop them from being able to transact with the token.",
+        CrBlacklistUnknown = "The token has a blacklist function. The identity of the entity who can blacklist users is unknown.",
+        CrPauseFederation = "The token has a pause function. A publicly known federation is able to blacklist users and stop them from being able to transact with the token.",
+        CrPauseSingleSigner = "The token has a pause function. A single entity is able to blacklist users and stop them from being able to transact with the token.",
+        CrPauseUnknown = "The token has a pause function. The identity of the entity who can blacklist users is unknown.",
+        crHigh = "The token has a pause and a blacklist function.",
+        SupplyIssuanceLow = "Newly tokens are minted via an onchain smart contract. The smart contract executes a bitcoin light client and mints tokens when a deposit transaction occurs on bitcoin. Users can notify the smart contract of a deposit if necessary.",
+        SupplyIssuanceMed = "A federation is responsible for passing messages that result in tokens being minted on a given layer.",
+        SupplyIssuanceHigh = "A single entity is responsible for passing messages that result in tokens being minted on a given layer.",
+        SupplyIssuanceVeryHigh = "The process of passing messages between bitcoin and a given layer to mint this token is not disclosed.",
     }
 
     //Below is snippets for additional information in wrapper reviews.

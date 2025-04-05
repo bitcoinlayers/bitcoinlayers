@@ -46,16 +46,6 @@ const binancebtcb: InfrastructureProject = {
     description: "Under Review",
     sections: [
         {
-            id: "contracts",
-            title: "Supporting contracts & permissions",
-            content: [
-                {
-                    content:
-                        "[This is the owner of the BTCB token contract.](https://bscscan.com/address/0xF68a4b64162906efF0fF6aE34E2bB1Cd42FEf62d)",
-                },
-            ],
-        },
-        {
             id: "selfsubmit",
             title: "Further sections to be reviewed",
             content: [
