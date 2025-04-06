@@ -170,7 +170,9 @@ export enum ReviewSnippet { //TODO: Janusz to add more here
     OperatorSidechainPOS = "The network's blocks are constructed by a distributed validator set. Validators participate in a proof-of-stake consensus network. Anyone with sufficient resources and token stake can become a validator and participate in block production.",
     OperatorSidechainMergeMine = "Bitcoin miners who are willing are able to merge-mine the network and produce blocks. If interested parties do not possess enough hashpower to competitively solo mine, they can join a mining pool that support the network.",
     OperatorFederated = "Blocks are proposed and finalized by a permissioned federation. Only a limited number of operators are able to participate in block production.",
-
+    OperatorCentralizedStatechain = "Offchain UTXO transfers are co-signed by the user and a single operator. Users trust this operator for liveness and ensuring the system remains operational.",
+    OperatorFederatedStatechain = "Offchain UTXO transfers are co-signed by the user and a federation of operators. Users trust this federation for liveness and ensuring the system remains operational.",
+    FinalityStatechain = "Finality is provided by the statechain operator deleting the keyshare that it held with the previous owner. If the operator does not do this, then it can double spend the new owner of the offchain UTXO.\n\nThere is no way to prove that the operator deleted its previous keyshare. Users are unable to have any finality assurances in this set up."
 }
 
     //Below is snippets for additional information in layers reviews.
