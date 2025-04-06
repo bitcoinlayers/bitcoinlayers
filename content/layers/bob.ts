@@ -58,7 +58,7 @@ const bob: LayerProject = {
         },
     ],
     description:
-        `${DefinitionSnippet.DefinitionAltRollup} BOB prioritizes use cases for BTC-backed assets and is looking to derive more security from bitcoin over time`,
+        `BOB prioritizes use cases for BTC-backed assets and is looking to derive more security from bitcoin over time. ${DefinitionSnippet.DefinitionAltRollup}`,
     riskAnalysis: [
         {
             category: RiskCategory.BtcCustody,
