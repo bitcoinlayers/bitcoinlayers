@@ -120,7 +120,7 @@ const berachain: LayerProject = {
             score: 0,
             tier: RiskFactor.AlternativePoS,
             title: "Network is operated by an alternative PoS network",
-            content: ReviewSnippet.AltL1Operators
+            content: ReviewSnippet.OperatorSidechainPOS
         },
         {
             category: RiskCategory.FinalityGuarantees,

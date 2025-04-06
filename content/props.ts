@@ -156,13 +156,20 @@ export enum ReviewSnippet { //TODO: Janusz to add more here
     FinalityAltRollupFederationFraudProofs = "The network's state is updated offchain. State transitions are ultimately considered finalized on its parent chain. A network of validators are able to publish state updates.\n\nIf they were to publish malicious state updates, they could be challenged via fault proofs. A federated group of validators are able to submit fault proofs.",
     FinalityAltRollupPermissionlessFraudProofs = "The network's state is updated offchain. State transitions are ultimately considered finalized on its parent chain.\n\nIf a proposer were to publish a malicious state update, they could be challenged via fault proofs. Anyone with sufficient capital resources can submit a fault proof.",
     FinalityAltRollupValidityProofs = "The network's state is updated offchain. State transitions are ultimately considered finalized on its parent chain. An entity known as a prover periodically submits a validity proof to prove the correctness of a batch of transactions to the parent chain hosting the network's bridge program.",
+    FinalityAnchorChain = "The network's consensus mechanism sees its validator set build upon a checkpoint it posts to bitcoin. Since a validator cannot build a valid block without referencing a block hash posted to bitcoin, the network cannot be reorged without reorging bitcoin.",
     AltL1DA = "Data relative to the network's state is stored and made available by its full node set. Anyone can run a full node and verify the state of the network.",
-    AltL1Operators = "Block production is handled by a distributed network of operators.\n\nAnyone with sufficient capital resources can become a network operator and produce blocks.",
+    DAConsensusNetwork = "Data is published to, and made available by, full nodes participating in an alternative consensus network. Anyone can run a node and verify the current state of the network",
+    AltL1DaBTCStake = "Data relative to the network's state is stored and made available by its full node set. Anyone can run a full node and verify the state of the network. The network's data availability layer is secured via bitcoin staking.",
+    AltL1DaMergeMine = "Data relative to the network's state is stored and made available by its full node set. Anyone can run a full node and verify the state of the network. The network's data availability layer is indirectly secured via bitcoin miners who merge-mine the network.",
+    AltDADAC = "Data relative to the network's state is stored and made available by a permissioned set of nodes. Users trust this committee to make the data available to them so they can verify the state of the network.",
     CometBFTFinality = "The network uses CometBFT for consensus. Like Tendermint, the protocol on which CometBFT is based, CometBFT has single-slot finality, meaning that blocks cannot be re-organized once they are part of the canonical blockchain. More than ⅔ of validator voting power must sign commit votes to finalize a block. If validators attempt to commit multiple blocks at the same block height, their stake will be slashed.",
     UnderReview = "This two-way peg is under review",
     NoFraudProofsBridge = "Users trust the proposer to not publish a malicious, unchallenged state transition. If a centralized party does not contest this state transition within a given time frame, all funds from the bridge can be stolen.",
     CentralizedUpgradeableBridge = "A centralized admin can create a malicious smart contract upgrade. In the event of a malicious smart contract upgrade, there is no exit window for users. This means that the admin behind the bridge can steal all funds in the official bridge.",
-
+    OperatorsPoSNetwork = "Blocks are produced and proposed by an alternative proof-of-stake network.",
+    OperatorSidechainPOS = "The network's blocks are constructed by a distributed validator set. Validators participate in a proof-of-stake consensus network. Anyone with sufficient resources and token stake can become a validator and participate in block production.",
+    OperatorSidechainMergeMine = "Bitcoin miners who are willing are able to merge-mine the network and produce blocks. If interested parties do not possess enough hashpower to competitively solo mine, they can join a mining pool that support the network.",
+    OperatorFederated = "Blocks are proposed and finalized by a permissioned federation. Only a limited number of operators are able to participate in block production.",
 
 }
 
@@ -176,6 +183,7 @@ export enum BitcoinSecuritySnippet { //TODO: Janusz to add more here
     AltNetworkMEV = "The network does not introduce any MEV on the Bitcoin L1. Users trust the validators of the network to not reorder their transactions to extract MEV.",
     NoSecurityBudget = "The network does not currently contribute to the Bitcoin security budget.",
     UnderReview = "This two-way peg is under review",
+    YesSecurityCheckpointPOS = "The network's checkpoint mechanism provides security against long-range attacks, enabling more secure light clients and shorter unbonding periods for validators.",
 }
 export enum TechnologySnippet { //TODO: Janusz to add more here
     EVM = "The network uses an EVM-compatible virtual machine. The Ethereum Virtual Machine is software responsible for smart contract execution for a number of blockchains, namely the Ethereum Network. It uses Solidity/Vyper as its code and is the dominant environment for smart contract execution in the cryptocurrency ecosystem.",
@@ -200,9 +208,9 @@ export enum OtherSnippet { //TODO: Janusz to add more here
 //Below is snippets for alternative chains that we haven't been able to review yet due to volume.
 
 export enum AtlSnippet { //TODO: Janusz to add more here
-    OperatorsPoSNetwork = "Blocks are produced and proposed by an alternative proof-of-stake network.",
-    DAConsensusNetwork = "Data is published to, and made available by, full nodes participating in an alternative consensus network. Anyone can run a node and verify the current state of the network",
     FinalityConsensusNetwork = "Finality assurances are provided by an alternative consensus network. Users trust that once a transaction has been added to the chain it won't be reverted.",
+    DAConsensusNetwork = "Data is published to, and made available by, full nodes participating in an alternative consensus network. Anyone can run a node and verify the current state of the network",
+    OperatorsPoSNetwork = "Blocks are produced and proposed by an alternative proof-of-stake network.",
     PrioritizeLayers = "The Bitcoin Layers project prioritizes reviews on protocols that claim to be bitcoin layers. It also reviews bridges, token wrappers, and other mechanisms that support synthetic versions of bitcoin on other chains. If you'd ike to contribute to this review, feel free to submit a PR in our [GitHub](https://github.com/bitcoinlayers/bitcoinlayers) or join our [telegram group](https://t.me/+8rv-1I2gkmQ4ZmJh) to discuss.",
 }
 

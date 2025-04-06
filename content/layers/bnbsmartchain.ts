@@ -16,6 +16,7 @@ import {
     BitcoinSecuritySnippet,
     UseCaseSnippet,
     TechnologySnippet,
+    ReviewSnippet,
 } from "../props";
 import { Bitcoin } from "lucide-react";
 
@@ -176,14 +177,14 @@ const bnbsmartchain: LayerProject = {
             score: 0,
             tier: RiskFactor.AlternativePoS,
             title: "Data is made available by an alternative consensus network",
-            content: AtlSnippet.DAConsensusNetwork,
+            content: ReviewSnippet.DAConsensusNetwork,
         },
         {
             category: RiskCategory.NetworkOperators,
             score: 0,
             tier: RiskFactor.AlternativePoS,
             title: "BNB Smart Chain is operated by a distributed validator set",
-            content: `${AtlSnippet.OperatorsPoSNetwork}\n\nBNB Smart Chain leverages a hybrid proof-of-stake mechanism similar to delegated proof-of-stake. BNB token holders can delegate tokens to their preferred validator to support their chances at winning blocks.`,
+            content: `${ReviewSnippet.OperatorSidechainPOS}\n\nBNB Smart Chain leverages a hybrid proof-of-stake mechanism similar to delegated proof-of-stake. BNB token holders can delegate tokens to their preferred validator to support their chances at winning blocks.`,
         },
         {
             category: RiskCategory.FinalityGuarantees,

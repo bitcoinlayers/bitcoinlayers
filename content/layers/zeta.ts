@@ -109,7 +109,7 @@ const zeta: LayerProject = {
             score: 0,
             tier: RiskFactor.AlternativePoS,
             title: "",
-            content: ReviewSnippet.AltL1Operators,
+            content: ReviewSnippet.OperatorSidechainPOS,
         },
         {
             category: RiskCategory.StateValidation,

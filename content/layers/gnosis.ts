@@ -92,7 +92,7 @@ const gnosis: LayerProject = {
             score: 0,
             tier: RiskFactor.AlternativePoS,
             title: "Gnosis chain is operated by a distributed validator set",
-            content: ReviewSnippet.AltL1Operators,
+            content: ReviewSnippet.OperatorSidechainPOS,
         },
         {
             category: RiskCategory.FinalityGuarantees,

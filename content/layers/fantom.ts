@@ -91,7 +91,7 @@ const fantom: LayerProject = {
             score: 0,
             tier: RiskFactor.VeryHigh,
             title: "Fantom is operated by a federated validator set",
-            content: ReviewSnippet.AltL1Operators
+            content: ReviewSnippet.OperatorSidechainPOS
         },
         {
             category: RiskCategory.FinalityGuarantees,
