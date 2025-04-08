@@ -22,7 +22,7 @@ const zksync: LayerProject = {
     type: Type.Layer,
     slug: "zksync",
     title: "zkSync",
-    entityType: EntityType.AltL1,
+    entityType: EntityType.AltRollup,
     entityCategory: EntityCategory.Alt,
     live: LiveStatus.Mainnet,
     staking: false,
