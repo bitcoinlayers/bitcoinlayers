@@ -257,7 +257,7 @@ const preferOnlyData = Object.entries(opcodeData).map(([opcode, scores]) => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Learn more
+            Head to the covenants wiki
             <span className="ml-1">→</span>
           </a>
         </div>

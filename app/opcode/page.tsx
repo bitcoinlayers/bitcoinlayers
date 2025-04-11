@@ -3,6 +3,7 @@ import Hero from "@/components/hero";
 import OpcodeTable from "@/components/tables/opcode-table";
 import { CoinsIcon } from "lucide-react";
 import OpcodeChart from "@/components/charts/opcode-chart";
+import CtaCardOpcode from "@/components/cta-card-opcodes";
 
 export default function Home() {
     const sortedInfrastructures = allOpcodes.sort((a, b) =>
@@ -34,13 +35,9 @@ export default function Home() {
     ];
 
     return (
-        <div className="mx-auto">
-            { <Hero
-                title="Opcodes"
-                description="Each opcode proposal comes with tradeoffs."
-            /> }
+        <div className="mx-auto space-y-8">
 
-<div className="mb-8 max-w-5xl mx-auto">
+            <div className="mb-8 max-w-5xl mx-auto">
                 <OpcodeChart />
             </div>
 
@@ -54,6 +51,8 @@ export default function Home() {
                     isOpcode
                 />
             </div>
+
+            <CtaCardOpcode />
         </div>
     );
 }
