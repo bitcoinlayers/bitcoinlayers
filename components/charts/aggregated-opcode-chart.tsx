@@ -28,6 +28,13 @@ import { ChartContainer } from "@/components/ui/chart";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
 
+type AggregatedOpcodeChartProps = {
+  defaultOpcode?: string;
+  title?: string;
+  description?: string;
+  chartHeight?: string;
+};
+
 const scoreTypes = [
   { key: "Prefer", color: "#52c41a" },       // Lima 500 – strong green
   { key: "Acceptable", color: "#c0ffb6" },   // Lima 100 – soft green
@@ -134,7 +141,12 @@ const opcodeData: Record<string, { score: string; count: number }[]> = {
   ],
 };
 
-export default function OpcodeSupportChart({ defaultOpcode = "ALL_PREFER" }: { defaultOpcode?: string }) {
+export default function OpcodeSupportChart({
+  defaultOpcode = "ALL_PREFER",
+  title,
+  description,
+  chartHeight = "h-96",
+}: AggregatedOpcodeChartProps) {
   const normalizedSlug = defaultOpcode.replace(/_/g, "").toLowerCase();
 const initialOpcode = slugToOpcode[normalizedSlug] || defaultOpcode.toUpperCase();
 const [selectedOpcode, setSelectedOpcode] = useState<string>(initialOpcode);
