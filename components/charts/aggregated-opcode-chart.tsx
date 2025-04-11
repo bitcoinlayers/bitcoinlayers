@@ -38,6 +38,17 @@ const scoreTypes = [
   { key: "Evaluating", color: "#74a3cc" },   // Link Water 400 – soft blue
 ];
 
+const slugToOpcode: Record<string, string> = {
+  opcat: "OP_CAT",
+  opctv: "OP_CTV",
+  opccv: "OP_CCV",
+  opcsfs: "OP_CSFS",
+  oppaircommit: "OP_PAIRCOMMIT",
+  opinternalkey: "OP_INTERNALKEY",
+  opvault: "OP_VAULT",
+  optxhash: "OP_TXHASH",
+  sighash_apo: "SIGHASH_APO",
+};
 
 const opcodeData: Record<string, { score: string; count: number }[]> = {
   OP_CAT: [
@@ -123,8 +134,10 @@ const opcodeData: Record<string, { score: string; count: number }[]> = {
   ],
 };
 
-export default function OpcodeSupportChart() {
-  const [selectedOpcode, setSelectedOpcode] = useState<string>("OP_CAT");
+export default function OpcodeSupportChart({ defaultOpcode = "ALL_PREFER" }: { defaultOpcode?: string }) {
+  const normalizedSlug = defaultOpcode.replace(/_/g, "").toLowerCase();
+const initialOpcode = slugToOpcode[normalizedSlug] || defaultOpcode.toUpperCase();
+const [selectedOpcode, setSelectedOpcode] = useState<string>(initialOpcode);
   const isPreferOnlyView = selectedOpcode === "ALL_PREFER";
 const currentData = !isPreferOnlyView ? opcodeData[selectedOpcode] : undefined;
 
