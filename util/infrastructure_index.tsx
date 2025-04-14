@@ -8,7 +8,7 @@ import espressoProject from "../content/infrastructures/espresso";
 import lorenzoProject from "../content/infrastructures/lorenzo-stbtc";
 import sovereignProject from "../content/infrastructures/sovereign";
 import nubitProject from "../content/infrastructures/nubit";
-import babylonProject from "../content/infrastructures/babylon";
+import babylonbtcProject from "../content/infrastructures/babylonstaked-btc";
 import fedimintProject from "../content/infrastructures/fedimint";
 import ibtcnetworkProject from "../content/infrastructures/ibtcnetwork-ibtc";
 import cashuProject from "../content/infrastructures/cashu";
@@ -62,7 +62,7 @@ const espresso: InfrastructureProject = espressoProject;
 const lorenzo: InfrastructureProject = lorenzoProject;
 const sovereign: InfrastructureProject = sovereignProject;
 const nubit: InfrastructureProject = nubitProject;
-const babylon: InfrastructureProject = babylonProject;
+const babylonbtc: InfrastructureProject = babylonbtcProject;
 const fedimint: InfrastructureProject = fedimintProject;
 const ibtcnetwork: InfrastructureProject = ibtcnetworkProject;
 const cashu: InfrastructureProject = cashuProject;
@@ -123,7 +123,7 @@ export const allInfrastructures: InfrastructureProject[] = [
     // bvm,
     // avail,
     // astria,
-    // babylon,
+    babylonbtc,
     solv,
     xsolvbtc,
     solvena,
