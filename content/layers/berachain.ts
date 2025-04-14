@@ -91,12 +91,12 @@ const berachain: LayerProject = {
                     content: `${TokenSnippet.BedrockUniBTC}\n\n${TokenSnippet.smartcontractreview}`,
                 },
                 {
-                    name: "Solv SolvBTC.BBN",
-                    infrastructureSlug: "solv-solvbtcbbn",
+                    name: "Solv xSolvBTC",
+                    infrastructureSlug: "solv-xsolvbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: TokenSnippet.CustodianDerivative,
-                    content: TokenSnippet.SolvBTCBBN,
+                    content: TokenSnippet.xSolvBTC,
                 },
                 {
                     name: "BitGo wBTC",
@@ -113,21 +113,22 @@ const berachain: LayerProject = {
             score: 0,
             tier: RiskFactor.AlternativePoS,
             title: "Data is stored and made available by an alternative PoS network",
-            content: ReviewSnippet.AltL1DA
+            content: ReviewSnippet.AltL1DA,
         },
         {
             category: RiskCategory.BlockProduction,
             score: 0,
             tier: RiskFactor.AlternativePoS,
             title: "Network is operated by an alternative PoS network",
-            content: ReviewSnippet.OperatorSidechainPOS
+            content: ReviewSnippet.OperatorSidechainPOS,
         },
         {
             category: RiskCategory.FinalityGuarantees,
             score: 0,
             tier: RiskFactor.AlternativePoS,
             title: "Finality guarantees are provided by an alternative PoS Network",
-            content: "Berachain leverages a novel consensus mechanism for transaction execution. Like CometBFT, it offers single slot finality. This means that once a transaction is added to the canonical chain, it cannot be reorged.",
+            content:
+                "Berachain leverages a novel consensus mechanism for transaction execution. Like CometBFT, it offers single slot finality. This means that once a transaction is added to the canonical chain, it cannot be reorged.",
         },
     ],
     sections: [

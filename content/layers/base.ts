@@ -138,12 +138,12 @@ const base: LayerProject = {
                     content: "This two-way peg is under review",
                 },
                 {
-                    name: "Solv SolvBTCBBN",
-                    infrastructureSlug: "solv-solvbtcbbn",
+                    name: "Solv xSolvBTC",
+                    infrastructureSlug: "solv-xsolvbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: TokenSnippet.CustodianDerivative,
-                    content: `${TokenSnippet.SolvBTCBBN}\n\n${TokenSnippet.smartcontractreview}`,
+                    content: `${TokenSnippet.xSolvBTC}\n\n${TokenSnippet.smartcontractreview}`,
                 },
             ],
         },
@@ -166,7 +166,7 @@ const base: LayerProject = {
             score: 0,
             tier: RiskFactor.UnderReview,
             title: "Base state transitions finalize on Ethereum",
-            content: `${ReviewSnippet.FinalityAltRollupPermissionlessFraudProofs}\n\nWe are reviewing how to score finality guarantees for alternative rollups. Learn more on our thoughts [here](https://www.lxresearch.co/some-thoughts-on-proof-systems-for-bridges-on-other-chains/).`
+            content: `${ReviewSnippet.FinalityAltRollupPermissionlessFraudProofs}\n\nWe are reviewing how to score finality guarantees for alternative rollups. Learn more on our thoughts [here](https://www.lxresearch.co/some-thoughts-on-proof-systems-for-bridges-on-other-chains/).`,
         },
     ],
     sections: [

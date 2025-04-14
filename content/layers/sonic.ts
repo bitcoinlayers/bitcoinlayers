@@ -74,15 +74,15 @@ const sonic: LayerProject = {
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: TokenSnippet.CustodianPeg,
-                    content: `${TokenSnippet.SolvBTC}\n\n${TokenSnippet.smartcontractreview},`
+                    content: `${TokenSnippet.SolvBTC}\n\n${TokenSnippet.smartcontractreview},`,
                 },
                 {
-                    name: "Solv SolvBTC.BBN",
-                    infrastructureSlug: "solv-solvbtcbbn",
+                    name: "Solv xSolvBTC",
+                    infrastructureSlug: "solv-xsolvbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: TokenSnippet.CustodianDerivative,
-                    content: `${TokenSnippet.SolvBTCBBN}\n\n${TokenSnippet.smartcontractreview},`
+                    content: `${TokenSnippet.xSolvBTC}\n\n${TokenSnippet.smartcontractreview},`,
                 },
                 {
                     name: "BitGo wBTC",
@@ -90,7 +90,7 @@ const sonic: LayerProject = {
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: TokenSnippet.CustodianPeg,
-                    content: `${TokenSnippet.BitGowBTC}\n\n${TokenSnippet.smartcontractreview},`
+                    content: `${TokenSnippet.BitGowBTC}\n\n${TokenSnippet.smartcontractreview},`,
                 },
                 {
                     name: "Lombard LBTC",
@@ -98,7 +98,7 @@ const sonic: LayerProject = {
                     score: 0,
                     tier: RiskFactor.UnderReview,
                     title: TokenSnippet.FederationPeg,
-                    content:`${TokenSnippet.LombardLBTC}\n\n${TokenSnippet.smartcontractreview},`
+                    content: `${TokenSnippet.LombardLBTC}\n\n${TokenSnippet.smartcontractreview},`,
                 },
             ],
         },
@@ -123,7 +123,8 @@ const sonic: LayerProject = {
             score: 0,
             tier: RiskFactor.UnderReview,
             title: "We are currently reviewing Sonic's finality guarantees",
-            content: "Finality guarantees are provided via an alternative proof-of-stake network. We are reviewing Sonic's consensus mechanism.",
+            content:
+                "Finality guarantees are provided via an alternative proof-of-stake network. We are reviewing Sonic's consensus mechanism.",
         },
     ],
     sections: [

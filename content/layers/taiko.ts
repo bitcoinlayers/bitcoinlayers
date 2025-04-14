@@ -63,7 +63,8 @@ const taiko: LayerProject = {
             url: "https://x.com/taikoxyz",
         },
     ],
-    description: "Taiko is an Ethereum rollup that leverages based sequencing. It is home to various BTC-derivative assets.",
+    description:
+        "Taiko is an Ethereum rollup that leverages based sequencing. It is home to various BTC-derivative assets.",
     riskAnalysis: [
         {
             category: RiskCategory.BtcCustody,
@@ -97,12 +98,12 @@ const taiko: LayerProject = {
                     content: `${TokenSnippet.BedrockUniBTC}\n\n${TokenSnippet.smartcontractreview}`,
                 },
                 {
-                    name: "Solv SolvBTC.BBN",
-                    infrastructureSlug: "solv-solvbtcbbn",
+                    name: "Solv xSolvBTC",
+                    infrastructureSlug: "solv-xsolvbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: TokenSnippet.CustodianDerivative,
-                    content: TokenSnippet.SolvBTCBBN,
+                    content: TokenSnippet.xSolvBTC,
                 },
                 {
                     name: "BitGo wBTC",
@@ -149,7 +150,8 @@ const taiko: LayerProject = {
             score: 0,
             tier: RiskFactor.High,
             title: "State updates are ulimately finalized by a federation",
-            content: "Taiko's state validation mechanism has a [multi-tiered proof system](https://l2beat.com/scaling/projects/taiko#technology). Invalid state roots can be submitted to the L1 if the highest tier of the system is compromised.",
+            content:
+                "Taiko's state validation mechanism has a [multi-tiered proof system](https://l2beat.com/scaling/projects/taiko#technology). Invalid state roots can be submitted to the L1 if the highest tier of the system is compromised.",
         },
     ],
     sections: [
@@ -167,7 +169,8 @@ const taiko: LayerProject = {
                 },
                 {
                     title: "No MEV introduced to bitcoin",
-                    content: "Taiko does not introduce MEV to bitcoin. Since it is a based sequenced rollups, it is possible for Ethereum block producers to extract MEV. Blocks in Ethereum are primarily auctioned off to builders who construct blocks on behalf of a proposer in a given slot. The majority of blocks in Ethereum are built by 2-3 builders.",
+                    content:
+                        "Taiko does not introduce MEV to bitcoin. Since it is a based sequenced rollups, it is possible for Ethereum block producers to extract MEV. Blocks in Ethereum are primarily auctioned off to builders who construct blocks on behalf of a proposer in a given slot. The majority of blocks in Ethereum are built by 2-3 builders.",
                 },
                 {
                     title: "Ethereum does not contribute to the security budget",
@@ -191,7 +194,7 @@ const taiko: LayerProject = {
             content: [
                 {
                     title: "Onchain applications",
-                    content: UseCaseSnippet.OnchainApps
+                    content: UseCaseSnippet.OnchainApps,
                 },
             ],
         },

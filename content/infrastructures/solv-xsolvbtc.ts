@@ -12,10 +12,10 @@ import {
     BTCWrapperTransparency,
 } from "../props";
 
-const solvbbn: InfrastructureProject = {
+const xsolvbtc: InfrastructureProject = {
     type: Type.Infrastructure,
-    slug: "solv-solvbtcbbn",
-    title: "Solv SolvBTC.BBN",
+    slug: "solv-xsolvbtc",
+    title: "Solv xSolvBTC",
     entityType: EntityType.LiquidStaking,
     live: LiveStatus.Deposits,
     staking: false,
@@ -47,7 +47,7 @@ const solvbbn: InfrastructureProject = {
         },
     ],
     description:
-        "SolvBTC.BBN offer a mechanism that enables users to deposit SolvBTC into smart contracts on EVM-based chains. Users receive a token representing BTC deposited on Babylon in exchange for their wrapped BTC token.",
+        "xSolvBTC offer a mechanism that enables users to deposit SolvBTC into smart contracts on EVM-based chains. Users receive a token representing BTC deposited on Babylon in exchange for their wrapped BTC token.",
     sections: [
         {
             id: "protocoltransparency",
@@ -81,7 +81,8 @@ const solvbbn: InfrastructureProject = {
             content: [
                 {
                     title: "Babylon is not live.",
-                    content: "The Babylon blockchain is not live. Only deposits are being processed.",
+                    content:
+                        "The Babylon blockchain is not live. Only deposits are being processed.",
                 },
             ],
         },
@@ -101,8 +102,8 @@ const solvbbn: InfrastructureProject = {
             category: AssessmentCategory.AssetCustody,
             score: 0,
             tier: "",
-            title: "Bitcoin assets used to back Solv.BBN are custodied by institutional providers",
-            content: TokenSnippet.SolvBTCBBN
+            title: "Bitcoin assets used to back xSolvBTC are custodied by institutional providers",
+            content: TokenSnippet.xSolvBTC,
         },
         {
             category: AssessmentCategory.SupplyIssuance,
@@ -110,7 +111,7 @@ const solvbbn: InfrastructureProject = {
             tier: "",
             title: "Minting of SolvBTC is managed by a permissioned group of entities",
             content:
-                "Minting permissions are handled by three distinct entities in SolvBTC.BBN. In each implementation, the SolvBTCMultiAsset pool has minting capabilities and is the only entity with burning capabilities. An implementation of Chainlink CCIP on each chain enables cross-chain minting of SolvBTC.BBN tokens. Additionally, an AtomicMintContract on each chain has minting permissions.\n\nSolvBTC.BBN discloses all contract owner addresses in its documentation. The 0x0c2…5b7D address can grant, and revoke, minting authority for all implementations of SolvBTC.BBN tokens.",
+                "Minting permissions are handled by three distinct entities in xSolvBTC. In each implementation, the SolvBTCMultiAsset pool has minting capabilities and is the only entity with burning capabilities. An implementation of Chainlink CCIP on each chain enables cross-chain minting of xSolvBTC tokens. Additionally, an AtomicMintContract on each chain has minting permissions.\n\nxSolvBTC discloses all contract owner addresses in its documentation. The 0x0c2…5b7D address can grant, and revoke, minting authority for all implementations of xSolvBTC tokens.",
         },
         {
             category: AssessmentCategory.CensorshipResistance,
@@ -131,4 +132,4 @@ const solvbbn: InfrastructureProject = {
     ],
 };
 
-export default solvbbn;
+export default xsolvbtc;

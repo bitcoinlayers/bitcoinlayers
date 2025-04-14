@@ -144,12 +144,12 @@ const ethereum: LayerProject = {
                     content: TokenSnippet.SolvBTC,
                 },
                 {
-                    name: "Solv SolvBTC.BBN",
-                    infrastructureSlug: "solv-solvbtcbbn",
+                    name: "Solv xSolvBTC",
+                    infrastructureSlug: "solv-xsolvbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: TokenSnippet.CustodianDerivative,
-                    content: TokenSnippet.SolvBTCBBN,
+                    content: TokenSnippet.xSolvBTC,
                 },
                 {
                     name: "Solv SolvBTC.ENA",
@@ -190,21 +190,21 @@ const ethereum: LayerProject = {
             score: 0,
             tier: RiskFactor.AlternativePoS,
             title: "Data is stored and made available by Ethereum full nodes",
-            content: AtlSnippet.DAConsensusNetwork
+            content: AtlSnippet.DAConsensusNetwork,
         },
         {
             category: RiskCategory.NetworkOperators,
             score: 0,
             tier: RiskFactor.AlternativePoS,
             title: "Ethereum is operated by an alternative validator set",
-            content: AtlSnippet.OperatorsPoSNetwork
+            content: AtlSnippet.OperatorsPoSNetwork,
         },
         {
             category: RiskCategory.FinalityGuarantees,
             score: 0,
             tier: RiskFactor.AlternativePoS,
             title: "Finality on Ethereum is guaranteed by an alternative consensus mechanism",
-            content: AtlSnippet.FinalityConsensusNetwork
+            content: AtlSnippet.FinalityConsensusNetwork,
         },
     ],
     sections: [
@@ -222,7 +222,8 @@ const ethereum: LayerProject = {
                 },
                 {
                     title: "No MEV introduced to bitcoin",
-                    content: "Ethereum does not introduce MEV to bitcoin. Blocks in Ethereum are primarily auctioned off to builders who construct blocks on behalf of a proposer in a given slot. The majority of blocks in Ethereum are built by 2-3 builders.",
+                    content:
+                        "Ethereum does not introduce MEV to bitcoin. Blocks in Ethereum are primarily auctioned off to builders who construct blocks on behalf of a proposer in a given slot. The majority of blocks in Ethereum are built by 2-3 builders.",
                 },
                 {
                     title: "Ethereum does not contribute to the security budget",
@@ -246,7 +247,7 @@ const ethereum: LayerProject = {
             content: [
                 {
                     title: "Onchain applications",
-                    content: UseCaseSnippet.OnchainApps
+                    content: UseCaseSnippet.OnchainApps,
                 },
             ],
         },

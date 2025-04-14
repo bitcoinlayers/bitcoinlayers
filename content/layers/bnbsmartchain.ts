@@ -107,12 +107,12 @@ const bnbsmartchain: LayerProject = {
                     content: TokenSnippet.SolvBTC,
                 },
                 {
-                    name: "Solv SolvBTCBBN",
-                    infrastructureSlug: "solv-solvbtcbbn",
+                    name: "Solv xSolvBTC",
+                    infrastructureSlug: "solv-xsolvbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: TokenSnippet.CustodianDerivative,
-                    content: TokenSnippet.SolvBTCBBN,
+                    content: TokenSnippet.xSolvBTC,
                 },
                 {
                     name: "Solv SolvBTC.ENA",
@@ -233,7 +233,7 @@ const bnbsmartchain: LayerProject = {
             content: [
                 {
                     title: "Onchain applications",
-                    content: UseCaseSnippet.OnchainApps
+                    content: UseCaseSnippet.OnchainApps,
                 },
             ],
         },
