@@ -115,12 +115,12 @@ const arbitrum: LayerProject = {
                     content: `${TokenSnippet.BedrockUniBTC}\n\n${TokenSnippet.smartcontractreview}`,
                 },
                 {
-                    name: "Solv SolvBTCBBN",
-                    infrastructureSlug: "solv-solvbtcbbn",
+                    name: "Solv xSolvBTC",
+                    infrastructureSlug: "solv-xsolvbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: TokenSnippet.CustodianPeg,
-                    content: `${TokenSnippet.SolvBTCBBN}\n\n${TokenSnippet.smartcontractreview}`,
+                    content: `${TokenSnippet.xSolvBTC}\n\n${TokenSnippet.smartcontractreview}`,
                 },
                 {
                     name: "Solv SolvBTC.ENA",
@@ -199,7 +199,7 @@ const arbitrum: LayerProject = {
             score: 0,
             tier: RiskFactor.UnderReview,
             title: "Arbitrum state transitions finalize on Ethereum. Validators who stake 3600 ETH can contest invalid state transitions",
-            content: `${ReviewSnippet.FinalityAltRollupPermissionlessFraudProofs}\n\nWe are reviewing how to score finality guarantees for alternative rollups. Learn more on our thoughts [here](https://www.lxresearch.co/some-thoughts-on-proof-systems-for-bridges-on-other-chains/).\n\n,The stake required to become a validator is 3600 ETH.`
+            content: `${ReviewSnippet.FinalityAltRollupPermissionlessFraudProofs}\n\nWe are reviewing how to score finality guarantees for alternative rollups. Learn more on our thoughts [here](https://www.lxresearch.co/some-thoughts-on-proof-systems-for-bridges-on-other-chains/).\n\n,The stake required to become a validator is 3600 ETH.`,
         },
     ],
     sections: [

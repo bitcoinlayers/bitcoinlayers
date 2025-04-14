@@ -18,7 +18,7 @@ import wbtcProject from "../content/infrastructures/bitgo-wbtc";
 import cbbtcProject from "../content/infrastructures/coinbase-cbbtc";
 import kbtcProject from "../content/infrastructures/kraken-kbtc";
 import solvProject from "../content/infrastructures/solv-solvbtc";
-import solvbbnProject from "../content/infrastructures/solv-solvbtcbbn";
+import xsolvbtcProject from "../content/infrastructures/solv-xsolvbtc";
 import solvenaProject from "../content/infrastructures/solv-solvbtcena";
 import bedrockProject from "../content/infrastructures/bedrock-unibtc";
 import pumpProject from "../content/infrastructures/pump-pumpbtc";
@@ -72,7 +72,7 @@ const wbtc: InfrastructureProject = wbtcProject;
 const cbbtc: InfrastructureProject = cbbtcProject;
 const kbtc: InfrastructureProject = kbtcProject;
 const solv: InfrastructureProject = solvProject;
-const solvbbn: InfrastructureProject = solvbbnProject;
+const xsolvbtc: InfrastructureProject = xsolvbtcProject;
 const solvena: InfrastructureProject = solvenaProject;
 const bedrock: InfrastructureProject = bedrockProject;
 const pump: InfrastructureProject = pumpProject;
@@ -125,7 +125,7 @@ export const allInfrastructures: InfrastructureProject[] = [
     // astria,
     // babylon,
     solv,
-    solvbbn,
+    xsolvbtc,
     solvena,
     bedrock,
     pump,

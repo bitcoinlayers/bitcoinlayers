@@ -89,11 +89,11 @@ const avalanche: LayerProject = {
                 },
                 {
                     name: "Kraken KBTC",
-                    infrastructureSlug: "solv-solvbtcbbn",
+                    infrastructureSlug: "solv-xsolvbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: TokenSnippet.CustodianDerivative,
-                    content: TokenSnippet.SolvBTCBBN,
+                    content: TokenSnippet.xSolvBTC,
                 },
             ],
         },

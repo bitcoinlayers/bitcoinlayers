@@ -123,7 +123,7 @@ export enum TokenSnippet { //TODO: Janusz to add more here
     BinanceBTCB = "When interacting with BTCB, users trust that Binance, a centralized custodian, will safely custody the BTC backing BTCB. When interacting with a centralized custodian, users trust that the custodian will not steal the funds backing their BTCB tokens. They also trust that Binance will effectively manage the BTC and not lose access to it. If the BTC backing BTCB, BTCB tokens could become effectively worthless.",
     LombardLBTC = "BTC backing Lombard LBTC is secured by a network of five validators participating in Lombard’s security consortium. The security consortium participates in a CometBFT consensus protocol.\n\nAdding and removing validators from this consortium is handled by the current validator set within a given epoch.",
     SolvBTC = "SolvBTC claims to be partially backed by native BTC managed by custodian providers. It’s been stated that Copper, Ceffu, Fireblocks, and Cobo are custodial providers securing BTC that partially backs SolvBTC. It's additionally backed by various BTC-derivative assets; [BTCB](https://www.bitcoinlayers.org/infrastructure/binance-btcb), [wBTC](https://www.bitcoinlayers.org/infrastructure/bitgo-wbtc), [FBTC](https://www.bitcoinlayers.org/infrastructure/firebitcoin-fbtc), [cbBTC](https://www.bitcoinlayers.org/infrastructure/coinbase-cbbtc), [BTC.b](https://www.bitcoinlayers.org/infrastructure/avalanche-btcb), and [tBTC](https://www.bitcoinlayers.org/infrastructure/threshold-tbtc).",
-    SolvBTCBBN = "Four entities custody the bitcoin assets backing Solv.BBN tokens. These entities are Cobo, Ceffu, Fireblocks and the Solv Guard. These entities are known as Guardians in the [Solv application](https://app.solv.finance/staking). Ceffu and Cobo are the custodians for funds that are staked with Babylon.",
+    xSolvBTC = "Four entities custody the bitcoin assets backing xSolvBTC tokens. These entities are Cobo, Ceffu, Fireblocks and the Solv Guard. These entities are known as Guardians in the [Solv application](https://app.solv.finance/staking). Ceffu and Cobo are the custodians for funds that are staked with Babylon.",
     PumpBTC = "PumpBTC works with custodial providers to swap PumpBTC deposits into native BTC for BTC staking. When a user deposits a BTC derivative token (e.g. wBTC) into the PumpBTC contract, they are given PumpBTC in return. The staking contract is operated by a [⅔ GnosisSafe](https://etherscan.io/address/0xAC364d14020f1da0044699691a91f06ca6131Fe3).\n\nCobo and Coinover have been mentioned as operators participating in Pump.",
     UniRouterBTC = "Users trust that the UniRouter team has set up secure custody practices and has BTC reserves backing uniBTC. UniRouter has not disclosed who secures the BTC backing uBTC.",
     AvalancheBTCb = "Ava Labs has disclosed that users trust a network of entities who participate in securing the BTC that backs BTCb. These eight entities are also reported to run special HSM hardware.\n\nThe eight entities securing the bridge are: Halborn, Avascan, Bware Labs, Ankr, Chainstack, Protofire, Blockdaemon, and Ava Labs.",
@@ -137,13 +137,12 @@ export enum TokenSnippet { //TODO: Janusz to add more here
     SolvBTCENA = "SolvBTC.ENA is a derivative asset that represents SolvBTC locked in a vault executing a trading strategy. The token is backed by [SolvBTC](https://www.bitcoinlayers.org/infrastructure/solv-solvbtc).",
     KrakenKBTC = "Kraken, a centralized custodian, secures the BTC backing kBTC. The funds backing kBTC are held at Kraken Financial, a Wyoming-chartered SPDI (Special Purpose Depository Institution)",
     MerlinMBTC = "When users deposit funds into Merlin, they deposit funds into a MPC wallet managed by Cobo, a institutional custodian. Information on how many signers participate in this MPC scheme is not available. Merlin has stated that more players are being added into this custody scheme.",
-    ObeliskoBTC = "Obelisk's documentation claims that users deposit BTC into an MPC scheme to mint oBTC on a respective destination chain.", 
+    ObeliskoBTC = "Obelisk's documentation claims that users deposit BTC into an MPC scheme to mint oBTC on a respective destination chain.",
     BTCTRON = "When users swap BTC for BTCTRON, they send their BTC to Poloniex, a centralized custodian. Information on how the BTC is secured is not available.",
     smartcontractreview = "We are reviewing the specific smart contracts related to this two-way peg. The relevant token contract is listed in the bottom of the review.",
 }
 
 //Below is snippets for layer assessments.
-
 
 export enum ReviewSnippet { //TODO: Janusz to add more here
     EthereumRollupDA = "The data for network's state is made available by Ethereum full nodes. Anyone can run an Ethereum node and verify the state of the network.",
@@ -172,11 +171,10 @@ export enum ReviewSnippet { //TODO: Janusz to add more here
     OperatorFederated = "Blocks are proposed and finalized by a permissioned federation. Only a limited number of operators are able to participate in block production.",
     OperatorCentralizedStatechain = "Offchain UTXO transfers are co-signed by the user and a single operator. Users trust this operator for liveness and ensuring the system remains operational.",
     OperatorFederatedStatechain = "Offchain UTXO transfers are co-signed by the user and a federation of operators. Users trust this federation for liveness and ensuring the system remains operational.",
-    FinalityStatechain = "Finality is provided by the statechain operator deleting the keyshare that it held with the previous owner. If the operator does not do this, then it can double spend the new owner of the offchain UTXO.\n\nThere is no way to prove that the operator deleted its previous keyshare. Users are unable to have any finality assurances in this set up."
+    FinalityStatechain = "Finality is provided by the statechain operator deleting the keyshare that it held with the previous owner. If the operator does not do this, then it can double spend the new owner of the offchain UTXO.\n\nThere is no way to prove that the operator deleted its previous keyshare. Users are unable to have any finality assurances in this set up.",
 }
 
-    //Below is snippets for additional information in layers reviews.
-
+//Below is snippets for additional information in layers reviews.
 
 export enum BitcoinSecuritySnippet { //TODO: Janusz to add more here
     NoSecurity = "In its current state, the network does not inherit security from Bitcoin.",
@@ -216,33 +214,32 @@ export enum AtlSnippet { //TODO: Janusz to add more here
     PrioritizeLayers = "The Bitcoin Layers project prioritizes reviews on protocols that claim to be bitcoin layers. It also reviews bridges, token wrappers, and other mechanisms that support synthetic versions of bitcoin on other chains. If you'd ike to contribute to this review, feel free to submit a PR in our [GitHub](https://github.com/bitcoinlayers/bitcoinlayers) or join our [telegram group](https://t.me/+8rv-1I2gkmQ4ZmJh) to discuss.",
 }
 
-    //Below is snippets for wrapper assessments.
+//Below is snippets for wrapper assessments.
 
+export enum WrapperReviews { //TODO: Janusz to add more here
+    GovernanceLow = "Users have at least 48 hours to submit a withdrawal request to the bridge operators if a malicious contract upgrade is pushed to the token contract.",
+    GovernanceMediumLessThan48 = "Users have less than 48 hours to submit a withdrawal request to the bridge operators if a malicious contract upgrade is pushed to the token contract. A publicly disclosed federation with at least 5 operators can implement contract upgrades",
+    GovernanceMedium = "There is no delay on contract upgrades. A publicly disclosed federation with at least 5 operators can implement contract upgrades.",
+    GovernanceHigh = "There is no delay on contract upgrades. A known, centralized party or federation with less than 5 operators can implement contract upgrades",
+    GovernanceVeryHigh = "There is no delay on contract upgrades. The identities of the signers who can implement contract upgrades is not disclosed",
+    crLow = "The token has no pause or blacklist function. Users can transact the BTC-backed token freely on a given network.",
+    CrBlacklistFederation = "The token has a blacklist function. A publicly known federation is able to blacklist users and stop them from being able to transact with the token.",
+    CrBlacklistSingleSigner = "The token has a blacklist function. A single entity is able to blacklist users and stop them from being able to transact with the token.",
+    CrBlacklistUnknown = "The token has a blacklist function. The identity of the entity who can blacklist users is unknown.",
+    CrPauseFederation = "The token has a pause function. A publicly known federation is able to blacklist users and stop them from being able to transact with the token.",
+    CrPauseSingleSigner = "The token has a pause function. A single entity is able to blacklist users and stop them from being able to transact with the token.",
+    CrPauseUnknown = "The token has a pause function. The identity of the entity who can blacklist users is unknown.",
+    crHigh = "The token has a pause and a blacklist function.",
+    SupplyIssuanceLow = "Newly tokens are minted via an onchain smart contract. The smart contract executes a bitcoin light client and mints tokens when a deposit transaction occurs on bitcoin. Users can notify the smart contract of a deposit if necessary.",
+    SupplyIssuanceMed = "A federation is responsible for passing messages that result in tokens being minted on a given layer.",
+    SupplyIssuanceHigh = "A single entity is responsible for passing messages that result in tokens being minted on a given layer.",
+    SupplyIssuanceVeryHigh = "The process of passing messages between bitcoin and a given layer to mint this token is not disclosed.",
+}
 
-    export enum WrapperReviews { //TODO: Janusz to add more here
-        GovernanceLow = "Users have at least 48 hours to submit a withdrawal request to the bridge operators if a malicious contract upgrade is pushed to the token contract.",
-        GovernanceMediumLessThan48 = "Users have less than 48 hours to submit a withdrawal request to the bridge operators if a malicious contract upgrade is pushed to the token contract. A publicly disclosed federation with at least 5 operators can implement contract upgrades",
-        GovernanceMedium = "There is no delay on contract upgrades. A publicly disclosed federation with at least 5 operators can implement contract upgrades.",
-        GovernanceHigh = "There is no delay on contract upgrades. A known, centralized party or federation with less than 5 operators can implement contract upgrades",
-        GovernanceVeryHigh = "There is no delay on contract upgrades. The identities of the signers who can implement contract upgrades is not disclosed",
-        crLow = "The token has no pause or blacklist function. Users can transact the BTC-backed token freely on a given network.",
-        CrBlacklistFederation = "The token has a blacklist function. A publicly known federation is able to blacklist users and stop them from being able to transact with the token.",
-        CrBlacklistSingleSigner = "The token has a blacklist function. A single entity is able to blacklist users and stop them from being able to transact with the token.",
-        CrBlacklistUnknown = "The token has a blacklist function. The identity of the entity who can blacklist users is unknown.",
-        CrPauseFederation = "The token has a pause function. A publicly known federation is able to blacklist users and stop them from being able to transact with the token.",
-        CrPauseSingleSigner = "The token has a pause function. A single entity is able to blacklist users and stop them from being able to transact with the token.",
-        CrPauseUnknown = "The token has a pause function. The identity of the entity who can blacklist users is unknown.",
-        crHigh = "The token has a pause and a blacklist function.",
-        SupplyIssuanceLow = "Newly tokens are minted via an onchain smart contract. The smart contract executes a bitcoin light client and mints tokens when a deposit transaction occurs on bitcoin. Users can notify the smart contract of a deposit if necessary.",
-        SupplyIssuanceMed = "A federation is responsible for passing messages that result in tokens being minted on a given layer.",
-        SupplyIssuanceHigh = "A single entity is responsible for passing messages that result in tokens being minted on a given layer.",
-        SupplyIssuanceVeryHigh = "The process of passing messages between bitcoin and a given layer to mint this token is not disclosed.",
-    }
-
-    //Below is snippets for additional information in wrapper reviews.
+//Below is snippets for additional information in wrapper reviews.
 
 export enum WrapperSnippet { //TODO: Janusz to add more here
-    BlacklistYes = "The token implementation has a blacklist function." 
+    BlacklistYes = "The token implementation has a blacklist function.",
 }
 
 export enum BTCWrapperTransparency { //TODO: Janusz to add more here
@@ -262,7 +259,7 @@ export enum BTCWrapperTransparency { //TODO: Janusz to add more here
 }
 
 export enum DefinitionSnippet { //TODO: Janusz to add more here
-    DefinitionAltRollup = "The network is an alternative rollup. It uses an alternative network for data availability and consensus. It supports a variety of BTC-backed assets." 
+    DefinitionAltRollup = "The network is an alternative rollup. It uses an alternative network for data availability and consensus. It supports a variety of BTC-backed assets.",
 }
 
 export interface Peg {

@@ -14,7 +14,7 @@ import {
     OtherSnippet,
     TechnologySnippet,
     UseCaseSnippet,
-    DefinitionSnippet
+    DefinitionSnippet,
 } from "../props";
 
 const bob: LayerProject = {
@@ -57,8 +57,7 @@ const bob: LayerProject = {
             url: "https://twitter.com/build_on_bob",
         },
     ],
-    description:
-        `BOB prioritizes use cases for BTC-backed assets and is looking to derive more security from bitcoin over time. ${DefinitionSnippet.DefinitionAltRollup}`,
+    description: `BOB prioritizes use cases for BTC-backed assets and is looking to derive more security from bitcoin over time. ${DefinitionSnippet.DefinitionAltRollup}`,
     riskAnalysis: [
         {
             category: RiskCategory.BtcCustody,
@@ -73,8 +72,7 @@ const bob: LayerProject = {
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: "BTC users trust that tBTC will remain backed on Ethereum, and that the BOB bridge will not steal their funds",
-                    content:
-                    `${TokenSnippet.ThresholdtBTC}\n\nIn Bob, tBTC is minted via its official bridge. ${ReviewSnippet.NoFraudProofsBridge}\n\n${ReviewSnippet.CentralizedUpgradeableBridge}`,
+                    content: `${TokenSnippet.ThresholdtBTC}\n\nIn Bob, tBTC is minted via its official bridge. ${ReviewSnippet.NoFraudProofsBridge}\n\n${ReviewSnippet.CentralizedUpgradeableBridge}`,
                 },
                 {
                     name: "BitGo wBTC",
@@ -82,8 +80,7 @@ const bob: LayerProject = {
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: "BTC users trust that wBTC will remain backed on Ethereum, and that the BOB bridge will not steal their funds",
-                    content:
-                    `${TokenSnippet.BitGowBTC}\n\nIn Bob, wBTC is minted via its official bridge. ${ReviewSnippet.NoFraudProofsBridge}\n\n${ReviewSnippet.CentralizedUpgradeableBridge}`
+                    content: `${TokenSnippet.BitGowBTC}\n\nIn Bob, wBTC is minted via its official bridge. ${ReviewSnippet.NoFraudProofsBridge}\n\n${ReviewSnippet.CentralizedUpgradeableBridge}`,
                 },
                 {
                     name: "Bedrock uniBTC",
@@ -91,8 +88,7 @@ const bob: LayerProject = {
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: TokenSnippet.CustodianPeg,
-                    content:
-                    `${TokenSnippet.BedrockUniBTC} ${TokenSnippet.smartcontractreview}",`
+                    content: `${TokenSnippet.BedrockUniBTC} ${TokenSnippet.smartcontractreview}",`,
                 },
                 {
                     name: "Solv SolvBTC",
@@ -100,17 +96,15 @@ const bob: LayerProject = {
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: TokenSnippet.CustodianPeg,
-                    content:
-                    `${TokenSnippet.SolvBTC} ${TokenSnippet.smartcontractreview}",`
+                    content: `${TokenSnippet.SolvBTC} ${TokenSnippet.smartcontractreview}",`,
                 },
                 {
-                    name: "Solv SolvBTC.BBN",
-                    infrastructureSlug: "solv-solvbtcbbn",
+                    name: "Solv xSolvBTC",
+                    infrastructureSlug: "solv-xsolvbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: TokenSnippet.CustodianDerivative,
-                    content:
-                    `${TokenSnippet.SolvBTCBBN} ${TokenSnippet.smartcontractreview}",`
+                    content: `${TokenSnippet.xSolvBTC} ${TokenSnippet.smartcontractreview}",`,
                 },
             ],
         },
