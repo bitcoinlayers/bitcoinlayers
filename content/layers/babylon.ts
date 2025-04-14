@@ -152,7 +152,7 @@ const babylon: LayerProject = {
             content: [
                 {
                     title: "Onchain applications",
-                    content: UseCaseSnippet.OnchainApps,
+                    content: `${UseCaseSnippet.OnchainApps}\n\nDeploying an application on Babylon is currently permissioned. Developers must apply and be approved through Babylon governance to currently deploy on Babylon Genesis.`,
                 },
             ],
         },
