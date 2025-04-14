@@ -89,6 +89,14 @@ const babylon: LayerProject = {
                     title: TokenSnippet.FederationPeg,
                     content: `${TokenSnippet.LombardLBTC}\n\n${TokenSnippet.smartcontractreview}`,
                 },
+                {
+                    name: "Solv BTC",
+                    infrastructureSlug: "solv-solvbtc",
+                    score: 0,
+                    tier: RiskFactor.UnderReview,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.SolvBTC}\n\n${TokenSnippet.smartcontractreview}`,
+                },
             ],
         },
         {
