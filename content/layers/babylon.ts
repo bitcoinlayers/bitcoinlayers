@@ -64,7 +64,7 @@ const babylon: LayerProject = {
         },
     ],
     description:
-        "Babylon is a proof-of-stake blockchain that is partially secured by bitcoin staking. It is the first Babylon BSN network. It offers a CosmWasm execution environment that supports arbitrary smart contracts.",
+        "Babylon is a proof-of-stake blockchain with a CosmWasm execution environment. It is the first network to integrate with Babylon BTC staking. It checkpoints its state to bitcoin periodically. Checkpointers are disincentivized to post malicious checkpoints as they post BTC as slashable collateral.",
     riskAnalysis: [
         {
             category: RiskCategory.BtcCustody,
@@ -73,14 +73,6 @@ const babylon: LayerProject = {
             title: "",
             content: "",
             pegs: [
-                {
-                    name: "Babylon Staked BTC",
-                    infrastructureSlug: "babylonstaked-btc",
-                    score: 0,
-                    tier: RiskFactor.Low,
-                    title: TokenSnippet.UnderReview,
-                    content: TokenSnippet.BabylonStakedBTC,
-                },
                 {
                     name: "Lombard LBTC",
                     infrastructureSlug: "lombard-lbtc",
@@ -127,16 +119,16 @@ const babylon: LayerProject = {
             title: "Bitcoin Security",
             content: [
                 {
-                    title: "Babylon inherits economic security from BTC the asset",
-                    content: BitcoinSecuritySnippet.YesSecurityDualStaking,
+                    title: "Babylon inherits finality from checkpointers who stake BTC",
+                    content: BitcoinSecuritySnippet.BTCStakingFinality,
                 },
                 {
                     title: "BABY token used to pay fees",
                     content: BitcoinSecuritySnippet.AltTokenFees,
                 },
                 {
-                    title: "MEV implications under review",
-                    content: BitcoinSecuritySnippet.MEVUnderReview,
+                    title: "The Babylon Genesis network does not leak MEV to bitcoin",
+                    content: BitcoinSecuritySnippet.AltNetworkMEV,
                 },
                 {
                     title: "Babylon does not contribute to the security budget",
@@ -150,7 +142,7 @@ const babylon: LayerProject = {
             content: [
                 {
                     title: "Bitcoin Staking",
-                    content: TechnologySnippet.BitcoinStakingUnderReview,
+                    content: TechnologySnippet.BabylonStakingFinality,
                 },
             ],
         },

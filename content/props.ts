@@ -187,6 +187,7 @@ export enum BitcoinSecuritySnippet { //TODO: Janusz to add more here
     UnderReview = "This two-way peg is under review",
     YesSecurityCheckpointPOS = "The network's checkpoint mechanism provides security against long-range attacks, enabling more secure light clients and shorter unbonding periods for validators.",
     YesSecurityDualStaking = "The network's economic security is partially derived from staked BTC locked in bitcoin L1 staking scripts.",
+    BTCStakingFinality = "The network inherits reorg resistance by checkpointing its state to bitcoin. Checkpointers are specialized validators who stake BTC in bitcoin L1 staking scripts. If a validator posts a malicious checkpoint, they can be slashed.",
     MEVUnderReview = "We are currently reviewing the network's potential creating more opportunities for MEV on bitcoin.",
 }
 export enum TechnologySnippet { //TODO: Janusz to add more here
@@ -194,6 +195,7 @@ export enum TechnologySnippet { //TODO: Janusz to add more here
     FaultProofs = "A cryptographic proof that enables challengers to contest a proposed state transition that contains invalid or fraudulent transactions. Networks that use fault proofs (e.g., optimistic rollups) initially assume that new blocks are valid, then rely on users or watchtowers to challenge blocks if they include invalid state transitions, which are then resolved onchain or a parent blockchain.",
     IBC = "This protocol has implemented support for IBC, enabling users to transfer their nBTC to other supported IBC-enabled blockchains. IBC, or the Inter-Blockchain Communication protocol, is a blockchain interoperability standard that enables connected chains to transfer assets and messages between each other.",
     BitcoinStakingUnderReview = "Bitcoin staking is a mechanism by which BTC on the L1 is locked in a staking script. The BTC is then directed to validators on a Proof-of-Stake network which adds to the network's economic security. These scripts see users retain custody of their funds.\n\nAll bitcoin staking mechanisms vary in implementation. We are currently reviewing the network's exact staking mechanism.",
+    BabylonStakingFinality = "The network receives additional finality guarantees from bitcoin through checkpointing. Validators responsible for posting checkpoints to bitcoin are known as Finality Providers who stake BTC as slashable collateral. Finality providers lock their BTC into a L1 staking contract via the Babylon protocol.\n\nThe spending conditions of this contract are restricted through co-signing with a covenant emulator committee - a federation with a 6/9 signing threshold. If a validator double signs a conflicting checkpoint, then the covenant emulator committee can spend the staked BTC to a burn address. This effectively slashes the malicious Finality Provider.",
 }
 export enum UseCaseSnippet { //TODO: Janusz to add more here
     OnchainApps = "Onchain applications are supported. Onchain applications including borrowing and lending protocols, onchain exchanges (commonly referred to as decentralized exchanges), and more. These applications are supported with more expressive smart contract environments.",
