@@ -32,8 +32,8 @@ const spark: LayerProject = {
         RiskFactor.UnderReview,
     ],
     btcLocked: 0,
-    nativeToken: "-",
-    feeToken: "-",
+    nativeToken: "BTC",
+    feeToken: "BTC",
     notice: undefined,
     bitcoinOnly: true,
     links: [
