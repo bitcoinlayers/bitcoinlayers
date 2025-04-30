@@ -31,7 +31,7 @@ const spark: LayerProject = {
         RiskFactor.UnderReview,
         RiskFactor.UnderReview,
     ],
-    btcLocked: 0,
+    btcLocked: NaN,
     nativeToken: "BTC",
     feeToken: "BTC",
     notice: undefined,
