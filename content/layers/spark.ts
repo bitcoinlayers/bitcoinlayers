@@ -61,9 +61,9 @@ const spark: LayerProject = {
             pegs: [
                 {
                     name: "Bitcoin Native",
-                    infrastructureSlug: "bitcoin-native",
+                    infrastructureSlug: "mercury-btc",
                     score: 0,
-                    tier: RiskFactor.VeryHigh,
+                    tier: RiskFactor.UnderReview,
                     title: "Users collaboratively custody BTC backing offchain UTXOs with a federation",
                     content: ReviewSnippet.UnderReview,
                 },
