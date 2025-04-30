@@ -11,6 +11,7 @@ import {
     ContentSection,
     RiskCategory,
     TokenSnippet,
+    ReviewSnippet,
 } from "../props";
 
 const spark: LayerProject = {
@@ -19,12 +20,17 @@ const spark: LayerProject = {
     title: "Spark",
     entityType: EntityType.Statechain,
     entityCategory: EntityCategory.BitcoinNative,
-    live: LiveStatus.Announced,
+    live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
     bridge: false,
-    underReview: true,
-    riskFactors: ["", "", "", ""],
+    underReview: false,
+    riskFactors: [
+        RiskFactor.UnderReview,
+        RiskFactor.UnderReview,
+        RiskFactor.UnderReview,
+        RiskFactor.UnderReview,
+    ],
     btcLocked: 0,
     nativeToken: "-",
     feeToken: "-",
@@ -33,14 +39,18 @@ const spark: LayerProject = {
     links: [
         {
             text: Site.Website,
-            url: "https://www.spark.info",
+            url: "https://www.spark.money/",
         },
         {
             text: Site.Twitter,
             url: "https://x.com/buildonspark",
         },
+        {
+            text: Site.Docs,
+            url: "https://docs.spark.money/home/welcome",
+        },
     ],
-    description: "Spark is building a statechain protocol.",
+    description: "Spark is an implementation of the statechain protocol where users interact with operators to process transfers for offchain representations of UTXOs. This protocol is under review.",
     riskAnalysis: [
         {
             category: RiskCategory.BtcCustody,
@@ -48,41 +58,41 @@ const spark: LayerProject = {
             tier: "",
             title: "",
             content: "",
-            pegs: [],
+            pegs: [
+                {
+                    name: "Bitcoin Native",
+                    infrastructureSlug: "bitcoin-native",
+                    score: 0,
+                    tier: RiskFactor.VeryHigh,
+                    title: "Users collaboratively custody BTC backing offchain UTXOs with a federation",
+                    content: ReviewSnippet.UnderReview,
+                },
+            ],
         },
         {
             category: RiskCategory.DataAvailability,
             score: 0,
             tier: "",
-            title: "",
-            content: "",
+            title: "This section is under review",
+            content: ReviewSnippet.UnderReview,
         },
         {
             category: RiskCategory.BlockProduction,
             score: 0,
             tier: "",
-            title: "",
-            content: "",
+            title: "This section is under review",
+            content: ReviewSnippet.UnderReview,
         },
         {
             category: RiskCategory.StateValidation,
             score: 0,
             tier: "",
-            title: "",
-            content: "",
+            title: "This section is under review",
+            content: ReviewSnippet.UnderReview,
         },
     ],
     sections: [
-        {
-            id: "selfsubmit",
-            title: "Process to self-submit information",
-            content: [
-                {
-                    content:
-                        "The Bitcoin Layers project prioritizes risk reviews on projects that are in production and accepting users' BTC deposits. Projects on testnet are welcome to submit information about their project. We do not publish risk assessments for projects that are not in production.\n\nHere are the [instructions](https://github.com/bitcoinlayers/bitcoinlayers/blob/main/SELFSUBMIT.md) on self-submitting a project.",
-                },
-            ],
-        },
+
     ],
 };
 
