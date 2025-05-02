@@ -63,7 +63,7 @@ const starknet: LayerProject = {
         },
     ],
     description:
-        "Starknet is a rollup that posts data to Ethereum.",
+        "Starknet is a validity rollup that posts data to Ethereum.",
     riskAnalysis: [
         {
             category: RiskCategory.BtcCustody,
@@ -94,7 +94,7 @@ const starknet: LayerProject = {
             score: 0,
             tier: RiskFactor.VeryHigh,
             title: "Blocks are currently produced by a centralized sequencer",
-            content: "The network's blocks are constructed by a centralized block producer. \n\nUsers cannot build their own blocks in the event of censorship or liveness failures.",
+            content: "The network's blocks are constructed by a centralized block producer. There is work ongoing to decentralize this. You can follow https://github.com/informalsystems/malachite for progress.\n\nUsers cannot build their own blocks in the event of censorship or liveness failures.",
         },
         {
             category: RiskCategory.FinalityGuarantees,
@@ -114,7 +114,7 @@ const starknet: LayerProject = {
                     content: BitcoinSecuritySnippet.NoSecurity,
                 },
                 {
-                    title: "ETH token used to pay fees",
+                    title: "ETH or STRK token used to pay fees. [Paymaster](https://doc.avnu.fi/avnu-paymaster/overview) allows dapps to expand this scope",
                     content: BitcoinSecuritySnippet.AltTokenFees,
                 },
                 {
@@ -148,12 +148,12 @@ const starknet: LayerProject = {
                 {
                     title: "Cairo Virtual Machine",
                     content:
-                        "Cairo is a virtual machine with zk-provable function executions by default. The Cairo virtual machine uses three languages: Cairo, an ergonomic, Rust-based language for users to interface; SIERRA, a safe intermediary representation for Cairo to compile down to that avoids potentially unprovable situations such as assertions or division by zero, making function executions deterministic; and finally CASM, low-level provable code which SIERRA compiles to.\n\nThe Cairo virtual machine ensures that all function executions can be proved while still offering a fully expressive and Turing-complete environment. Cairo’s Turing-completeness allows it to emulate other VMs, which can then inherit provable characteristics on Starknet. The Ethereum Virtual Machine (EVM) is one such example with Kakarot ZK-EVM, allowing EVM native transactions to be executed and proven on Starknet.",
+                        "Cairo is a virtual machine with provable function executions by default. The Cairo virtual machine uses three languages: Cairo, an ergonomic, Rust-based language for users to interface; SIERRA, a safe intermediary representation for Cairo to compile down to that avoids potentially unprovable situations such as assertions or division by zero, making function executions deterministic; and finally CASM, low-level provable code which SIERRA compiles to.\n\nThe Cairo virtual machine ensures that all function executions can be proved while still offering a fully expressive and Turing-complete environment. Cairo’s Turing-completeness allows it to emulate other VMs, which can then inherit provable characteristics on Starknet. The Ethereum Virtual Machine (EVM) is one such example with Kakarot, allowing EVM native transactions to be executed and proven on Starknet.",
                 },
                 {
                     title: "SHARP and Stwo",
                     content:
-                        "Starknet, as well as the various StarkEx-built rollups, use a shared proving system for proof generation, called SHARP. The benefit of shared proving is saving on costs. Specifically, SHARP uses the StarkWare-built Stwo prover, an iteration of the STONE prover.",
+                        "Starknet, as well as the various StarkEx-built rollups, use a shared proving system for proof generation, called SHARP. The benefit of shared proving is saving on costs. Specifically, SHARP uses the StarkWare-built Stone prover, which next iteration Stwo, is being worked on.",
                 },
                 {
                     title: "Madara sequencer",
