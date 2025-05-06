@@ -21,6 +21,7 @@ import solvProject from "../content/infrastructures/solv-solvbtc";
 import xsolvbtcProject from "../content/infrastructures/solv-xsolvbtc";
 import solvenaProject from "../content/infrastructures/solv-solvbtcena";
 import bedrockProject from "../content/infrastructures/bedrock-unibtc";
+import bedrockbrbtcProject from "../content/infrastructures/bedrock-brbtc";
 import pumpProject from "../content/infrastructures/pump-pumpbtc";
 import fireProject from "../content/infrastructures/firebitcoin-fbtc";
 import bitcoinosProject from "../content/infrastructures/bitcoinos";
@@ -75,6 +76,7 @@ const solv: InfrastructureProject = solvProject;
 const xsolvbtc: InfrastructureProject = xsolvbtcProject;
 const solvena: InfrastructureProject = solvenaProject;
 const bedrock: InfrastructureProject = bedrockProject;
+const bedrockbrbtc: InfrastructureProject = bedrockbrbtcProject;
 const pump: InfrastructureProject = pumpProject;
 const fire: InfrastructureProject = fireProject;
 const bitcoinos: InfrastructureProject = bitcoinosProject;
@@ -128,6 +130,7 @@ export const allInfrastructures: InfrastructureProject[] = [
     xsolvbtc,
     solvena,
     bedrock,
+    bedrockbrbtc,
     pump,
     fire,
     bitcoinos,
