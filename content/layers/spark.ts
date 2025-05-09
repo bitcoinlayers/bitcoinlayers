@@ -84,7 +84,7 @@ const spark: LayerProject = {
             content: "Transaction data is self-hosted. The statechain entity signs individual transactions and the transfer history gets passed on between clients.",
         },
         {
-            category: RiskCategory.BlockProduction,
+            category: RiskCategory.NetworkOperators,
             score: 0,
             tier: RiskFactor.High,
             title: "Offchain transfers are co-signed by a federation",
