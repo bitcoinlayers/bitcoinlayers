@@ -100,7 +100,7 @@ const spark: LayerProject = {
             title: "Bitcoin Security",
             content: [
                 {
-                    title: "Settlement is finalized by Bitcoin consensus",
+                    title: "Users rely on Bitcoin network participants for exit transactions",
                     content: BitcoinSecuritySnippet.OffchainUTXO,
                 },
                 {
@@ -152,7 +152,7 @@ const spark: LayerProject = {
                 {
                     title: "Learn more about statechains below",
                     content:
-                        "Statechains Whitepaper by Ruben Somsen ([GitHub, Oct 2018](https://github.com/RubenSomsen/rubensomsen.github.io/blob/master/img/statechains.pdf)) \n Statechains: Non-custodial Off-chain Bitcoin Transfer by Ruben Somsen ([Medium, Jun 2019](https://medium.com/@RubenSomsen/statechains-non-custodial-off-chain-bitcoin-transfer-1ae4845a4a39#:~:text=Statechains%20are%20a%20layer%20two,with%20scaling%20and%20save%20fees.))",
+                        "Statechains Whitepaper by Ruben Somsen ([GitHub, Oct 2018](https://github.com/RubenSomsen/rubensomsen.github.io/blob/master/img/statechains.pdf)) \n Statechains: Non-custodial Off-chain Bitcoin Transfer by Ruben Somsen ([Medium, Jun 2019](https://medium.com/@RubenSomsen/statechains-non-custodial-off-chain-bitcoin-transfer-1ae4845a4a39#:~:text=Statechains%20are%20a%20layer%20two,with%20scaling%20and%20save%20fees.)) \n Information on [FROST](https://glossary.blockstream.com/frost/)",
                 },
             ],
         },
