@@ -49,11 +49,15 @@ const spark: LayerProject = {
             url: "https://x.com/buildonspark",
         },
         {
+            text: Site.GitHub,
+            url: "https://github.com/buildonspark",
+        },
+        {
             text: Site.Docs,
             url: "https://docs.spark.money/home/welcome",
         },
     ],
-    description: "Spark is an implementation of the statechain protocol where users interact with operators to process transfers for offchain representations of UTXOs. This protocol is under review.",
+    description: "Spark is an implementation of the statechain protocol where users interact with a statechain entity to process transfers for offchain representations of UTXOs. Spark's statechain implementation leverages a federation of operators to act as the statechain entity. In statechains, users can unilaterally exit to the L1 if operators become unresponsive..",
     riskAnalysis: [
         {
             category: RiskCategory.BtcCustody,
@@ -83,14 +87,14 @@ const spark: LayerProject = {
             category: RiskCategory.BlockProduction,
             score: 0,
             tier: RiskFactor.High,
-            title: "Offchain transfers are signed by a federation",
+            title: "Offchain transfers are co-signed by a federation",
             content: ReviewSnippet.OperatorFederatedStatechain,
         },
         {
             category: RiskCategory.FinalityGuarantees,
             score: 0,
             tier: RiskFactor.High,
-            title: "Users trust a federation to delete users' previous keyshare",
+            title: "Users trust a federation to delete keyshares held with previous owners",
             content: ReviewSnippet.FinalityStatechainFederation,
         },
     ],
