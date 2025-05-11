@@ -317,22 +317,27 @@ const LayerTable = ({ data, headers }: Props) => {
                                             </Link>
                                         </td>
                                     )}
-                                    {(!isMobile ||
-                                        mobileActiveTab === "BTC Pegs") && (
-                                        <td className="lg:px-4 px-4 py-3 lg:py-4 border-border">
-                                            {isLoading ? (
-                                                <div>Loading...</div>
-                                            ) : (
-                                                <TokenList
-                                                    tokens={
-                                                        tokensMap[
-                                                            item.slug.toLowerCase()
-                                                        ] || []
-                                                    }
-                                                />
-                                            )}
-                                        </td>
-                                    )}
+                                    {(!isMobile || mobileActiveTab === "BTC Pegs") && (
+  <td className="lg:px-4 px-4 py-3 lg:py-4 border-border">
+    {item.entityCategory === EntityCategory.BitcoinNative ? (
+      <Image
+        src="/btc.svg"
+        alt="BTC"
+        width={20}
+        height={20}
+      />
+    ) : isLoading ? (
+      <div>Loading...</div>
+    ) : (
+      <TokenList
+        tokens={
+          tokensMap[item.slug.toLowerCase()] || []
+        }
+      />
+    )}
+  </td>
+)}
+
                                     {(!isMobile ||
                                         mobileActiveTab === "BTC Supply") && (
                                         <td className="lg:px-6 px-4 py-3 lg:py-4">
@@ -350,7 +355,7 @@ const LayerTable = ({ data, headers }: Props) => {
                                                             item.btcLocked,
                                                         ))) ? (
                                                     <div className="font-light">
-                                                        NaN
+                                                        Unavailable
                                                     </div>
                                                 ) : (
                                                     <div>

@@ -3,6 +3,7 @@
 import { useMemo } from "react";
 import { LayerProject } from "@/content/props";
 import getCurrentSuppliesByNetwork from "@/hooks/get-current-supplies-by-network";
+import { EntityCategory } from "@/content/props";
 
 const Categories: React.FC<{ layer: LayerProject }> = ({ layer }) => {
     const { data: balances } = getCurrentSuppliesByNetwork({
@@ -48,12 +49,18 @@ const Categories: React.FC<{ layer: LayerProject }> = ({ layer }) => {
             <div className="flex-col justify-center items-start pl-4 lg:pl-0">
                 <div className="text-sm leading-tight">BTC Supply</div>
                 <div className="text-muted-foreground">
-                    ₿
-                    {totalAmountForNetwork.toLocaleString("en-US", {
-                        minimumFractionDigits: 0,
-                        maximumFractionDigits: 0,
-                    })}
-                </div>
+    {isNaN(layer.btcLocked) ? (
+        "Unavailable"
+    ) : (
+        <>
+            ₿
+            {totalAmountForNetwork.toLocaleString("en-US", {
+                minimumFractionDigits: 0,
+                maximumFractionDigits: 0,
+            })}
+        </>
+    )}
+</div>
             </div>
         </div>
     );
