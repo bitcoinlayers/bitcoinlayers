@@ -28,7 +28,7 @@ const cbbtc: InfrastructureProject = {
     links: [
         {
             text: Site.Website,
-            url: "https://www.base.org/",
+            url: "https://www.coinbase.com/cbbtc",
         },
         {
             text: Site.Docs,
