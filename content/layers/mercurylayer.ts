@@ -28,7 +28,7 @@ const mercurylayer: LayerProject = {
     riskFactors: [
         RiskFactor.Low,
         RiskFactor.Low,
-        RiskFactor.High,
+        RiskFactor.VeryHigh,
         RiskFactor.VeryHigh,
     ],
     btcLocked: NaN,
