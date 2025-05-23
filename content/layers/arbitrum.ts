@@ -248,6 +248,10 @@ const arbitrum: LayerProject = {
                     title: "Fault Proofs (a.k.a Fraud Proofs)",
                     content: TechnologySnippet.FaultProofs,
                 },
+                {
+                    title: "Arbitrum Stylus",
+                    content: TechnologySnippet.ArbitrumStylus,
+                },
             ],
         },
         {

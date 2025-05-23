@@ -155,6 +155,7 @@ export enum TokenSnippet { //TODO: Janusz to add more here
     LiquidLBTC = "BTC withdrawals are currently permissioned by the Liquid federation. Users must trust that when they deposit BTC into the Liquid blockchain, the signers will not collude and steal their BTC. Most users typically acquire L-BTC on secondary marketplaces, not through bridge deposits. Supported marketplaces for L-BTC are also members of the Liquid federation. Users trust that the federation will not steal the BTC, which would leave their newly acquired L-BTC worthless. The BTC that backs L-BTC is held in a 11-15 multi-sig wallet where 11 (⅔ + 1) of the signers would need to be compromised in order to steal the BTC.\n\nNot all signers for the Liquid two-way peg are publicly disclosed.",
     SideBTC = "Side sBTC is managed by 21 signers who additionally participate as validators in Side's proof-of-stake consensus.\n\nThese signers participate in a TSS network that where trusted validators perform signing duties for sBTC abd Side Chain.",
     smartcontractreview = "We are reviewing the specific smart contracts related to this two-way peg. The relevant token contract is listed in the bottom of the review.",
+    TemplateBTC = "This is a fake prop used for the template file.",
 }
 
 //Below is snippets for layer assessments.
@@ -197,6 +198,8 @@ export enum ReviewSnippet { //TODO: Janusz to add more here
     StatechainDABlindedServer = "Transaction data is self-hosted. The operator blindly signs and timestamps the individual statechain states and the transfer history gets passed on between clients. Due to the use of blind signing, the operator remains unaware of the transfer history.",
     OperatorStatechainBlindedServerSingleServer = "The system employs a statechain entity that generates and updates key shares in addition to offering a blind signing service. The statechain entity is a centralized server.",
     FinalityAltNetworkUnderReview = "Finality assurances are provided by an alternative consensus network. We are reviewing this section.",
+    TemplateReview = "This is a fake prop used for the template file.",
+
 }
 
 //Below is snippets for additional information in layers reviews.
@@ -223,6 +226,7 @@ export enum BitcoinSecuritySnippet { //TODO: Janusz to add more here
     MergeMineDAFees = "Fees from securing the network's data availability are paid to Bitcoin miners who optionally merge-mine the network.",
     MergeMineFees = "Fees from securing the network's are paid to Bitcoin miners who optionally merge-mine the network.",
     MergeMineMEV = "The network does not leak MEV to bitcoin. Bitcoin miners may take advantage of opportunities to extract MEV if the network is experiencing high activity.",
+    Template = "Template used for the template prop file.",
 
 }
 export enum TechnologySnippet { //TODO: Janusz to add more here
@@ -240,6 +244,7 @@ export enum TechnologySnippet { //TODO: Janusz to add more here
     Elements = "The network is built with the Elements technology stack. Elements is an open-source technology stack built on top of the Bitcoin code base. Since it is built on the Bitcoin code base, Elements enables the network to be a testing ground for potential changes to the Bitcoin protocol.",
     ConfidentialTransactions = "The network enables Confidential Transactions which can provide users a higher level of privacy. This feature ensures that anyone, other than the participants in a transaction, cannot see the tokens, and the amount of, transferred between them.",
     OrgaMerk = "Orga is a custom-built stack designed for creating Proof-of-Stake (PoS) blockchains in Rust, offering an alternative to the Cosmos SDK. At its core, Orga integrates with CometBFT as its consensus engine.\n\nMerk complements Orga as a high-performance Merkle key/value store, serving as the state database for blockchains. It supports the proof generation necessary for the networks's IBC interactions with other networks and for enabling lightweight client functionalities for end users.",
+    Template = "Template used for the template prop file.",
 }
 export enum UseCaseSnippet { //TODO: Janusz to add more here
     OnchainApps = "Onchain applications are supported. Onchain applications including borrowing and lending protocols, onchain exchanges (commonly referred to as decentralized exchanges), and more. These applications are supported with more expressive smart contract environments.",
@@ -250,9 +255,11 @@ export enum UseCaseSnippet { //TODO: Janusz to add more here
     TokenizedAssets = "The network enables developers and users alike to issue tokenized securities, stablecoins, and synthetic forms of cryptocurrencies.",
     IBCTransfers = "Using IBC, users can transfer tokens (including BTC-denominated tokens) to connected blockchains and engage in use-cases such as: 1) Get a USK loan on Kujira 2) Trade and provide liquidity on Osmosis 3) Trade perpetual swaps using Levana",
     OffchainTransfers = "The network itself can also be used for p2p payments denominated in BTC.",
+    Template = "Template used for the template prop file.",
 }
 export enum KnowledgeBitSnippet { //TODO: Janusz to add more here
     EthereumL2 = "This network is a layer 2 for Ethereum. For a view into the technology from an Ethereum perspective, head to [L2Beat](https://www.L2Beat.com) for their review.",
+    Template = "Template used for the template prop file.",
 }
 export enum AdditionalSnippet { //TODO: Janusz to add more here
     UpgradeableContractsCentralizedAndNoExit = "The contracts related to this project are immediately upgradeable by a centralized party. These contracts affect the project's chain and may affect specific two-way peg implementations.\n\nIn case of an malicious upgrade, there is no exit delay and users are unable to leave the chain.",
