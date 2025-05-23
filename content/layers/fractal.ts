@@ -12,6 +12,10 @@ import {
     ContentSection,
     RiskCategory,
     TokenSnippet,
+    ReviewSnippet,
+    BitcoinSecuritySnippet,
+    TechnologySnippet,
+    UseCaseSnippet,
 } from "../props";
 
 const fractal: LayerProject = {
@@ -91,8 +95,7 @@ const fractal: LayerProject = {
             score: 0,
             tier: RiskFactor.Medium,
             title: "DA requirement satisfied by Fractal full nodes",
-            content:
-                "The data availability requirement is satisfied by sidechain full nodes. Fractal’s node software is open-source, and anyone can run a full node to verify the current state of the chain.\n\nLike any sidechain, sidechain blocks can be orphaned, so miners are disincentivized to withhold data and not broadcast their blocks as they would not receive mining rewards.",
+            content: ReviewSnippet.AltL1DAPOW,
         },
         {
             category: RiskCategory.BlockProduction,
@@ -107,8 +110,7 @@ const fractal: LayerProject = {
             score: 0,
             tier: RiskFactor.Medium,
             title: "Fractal full nodes validate proposed blocks",
-            content:
-                "Fractal state transitions are validated by its miner set. After a block is mined by a Fractal miner, it is broadcast to its full node set who validates the block and includes it in the chain.",
+            content: ReviewSnippet.AltL1FinalityPOW,
         },
     ],
     sections: [
@@ -123,18 +125,15 @@ const fractal: LayerProject = {
                 },
                 {
                     title: "MEV not directly on bitcoin",
-                    content:
-                        "Fractal does not leak MEV to bitcoin directly. Bitcoin miners may take advantage of opportunities to extract MEV if the network is experiencing high activity.",
+                    content: BitcoinSecuritySnippet.MergeMineMEV,
                 },
                 {
-                    title: "Alternative token used for fees and to incentivize miners",
-                    content:
-                        "Fees on Fractal are paid in FB tokens. Token issuance is paid out in FB tokens to incentivized miners.",
+                    title: "FB token used for fees and to incentivize miners",
+                    content: BitcoinSecuritySnippet.AltTokenFees,
                 },
                 {
                     title: "Merge-mining enables Bitcoin miners to earn more fees",
-                    content:
-                        "Fractal contributes to Bitcoin's security budget indirectly by providing Bitcoin miners an opportunity to earn fee revenue via merge-mining.",
+                    content: BitcoinSecuritySnippet.MergeMineFees,
                 },
             ],
         },
@@ -177,18 +176,15 @@ const fractal: LayerProject = {
             content: [
                 {
                     title: "Bitcoin Script",
-                    content:
-                        "Bitcoin Script is bitcoin’s scripting language that enables users to define the conditions under which a Bitcoin UTXO can be spent. It is a low-level Assembly-based programming language.\n\nFractal is based on Bitcoin Script.",
+                    content: `${TechnologySnippet.BitcoinScript}\n\nFractal is based on Bitcoin Script.`
                 },
                 {
                     title: "OP_CAT",
-                    content:
-                        "OP_CAT is a Bitcoin opcode, short for Operation Concatenate. It allows the combination of two data elements on the Bitcoin stack. The opcode was originally introduced by Satoshi Nakamoto, but was removed due to potential denial of service attack vectors.\n\nOP_CAT would enable more expressive smart contracts on bitcoin, including “covenants”, a way to set spending conditions on individual UTXOs. Teams are also reviewing how it can support SNARK verification in Script, which would further improve bridging L1 assets to second layer protocols.",
+                    content: TechnologySnippet.OP_CAT,
                 },
                 {
                     title: "Merge-mining",
-                    content:
-                        "Merged mining is a feature of Fractal’s consensus mechanism that allows coupling between bitcoin and Fractal. Essentially, BTC mining pools add references to Fractal blocks in mining jobs sent to mining participants. Additionally, because the Fractal mining algorithm is the same as bitcoin’s, there is little added energy expenditure. This sees bitcoin miners have an ability to additionally mine a percentage of Fractal blocks. Miners are incentivized through earning a portion of transaction fees and newly issued tokens to mine Fractal.",
+                    content: TechnologySnippet.MergeMining,
                 },
                 {
                     title: "Cadence mining",
@@ -202,14 +198,12 @@ const fractal: LayerProject = {
             title: "Use Cases",
             content: [
                 {
-                    title: "Ordinals, Runes, & BRC-20 trading",
-                    content:
-                        "Due to having a similar scripting language as the Bitcoin mainchain, Fractal provides users with similar applications for Ordinals and BRC-20 token trading as the Bitcoin L1.",
+                    title: "Tokenized UTXO applications",
+                    content: UseCaseSnippet.UTXOTokenizedApplications,
                 },
                 {
                     title: "Testing ground for new opcodes",
-                    content:
-                        "Since Fractal has enabled opcodes that are not yet live on Bitcoin, developers can deploy applications there to preview what it would be like on Bitcoin. This includes analyzing the builder experience, potential security vulnerabilities, and presenting how these changes might permanently affect the Bitcoin network.",
+                    content: UseCaseSnippet.TestingGround,
                 },
             ],
         },
