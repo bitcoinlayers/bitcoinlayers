@@ -196,6 +196,7 @@ export enum BitcoinSecuritySnippet { //TODO: Janusz to add more here
     OffchainUTXOMEV = "Due to transaction sequencing being offchain, the protocol does not enable MEV on the Layer 1.",
     OffchainUTXONoToken = "The protocol does not need another token for transaction fees or other use cases.",
     StatechainSecurityBudget = "Statechains do not interact with the base layer outside of uses unilaterally exiting with their funds. Unilateral exit transactions pay L1 transaction fees.",
+    FinalityAssurance = "The network cannot be reorged without reorging bitcoin. This is due to the fact that the network builds upon a checkpoint posted to bitcoin.",
 }
 export enum TechnologySnippet { //TODO: Janusz to add more here
     EVM = "The network uses an EVM-compatible virtual machine. The Ethereum Virtual Machine is software responsible for smart contract execution for a number of blockchains, namely the Ethereum Network. It uses Solidity/Vyper as its code and is the dominant environment for smart contract execution in the cryptocurrency ecosystem.",
