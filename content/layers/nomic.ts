@@ -14,6 +14,8 @@ import {
     TokenSnippet,
     ReviewSnippet,
     BitcoinSecuritySnippet,
+    TechnologySnippet,
+    UseCaseSnippet,
 } from "../props";
 
 const nomic: LayerProject = {
@@ -129,9 +131,9 @@ const nomic: LayerProject = {
             title: "Withdrawals",
             content: [
                 {
-                    title: "Users need cooperation from 90% of the voting power on the Reserve Wallet to withdraw",
+                    title: "Users need cooperation from 67% of the voting power on the Reserve Wallet to withdraw",
                     content:
-                        "The Nomic BTC bridge is a proof of stake bridge. Users need cooperation from over 90% of the voting power on the Reserve Wallet to withdraw BTC from the bridge.",
+                        "The Nomic BTC bridge is a proof of stake bridge. Users need cooperation from over 67% of the voting power on the Reserve Wallet to withdraw BTC from the bridge.",
                 },
             ],
         },
@@ -157,13 +159,11 @@ const nomic: LayerProject = {
                 },
                 {
                     title: "IBC-enabled transfers",
-                    content:
-                        "Nomic has implemented support for IBC, enabling users to transfer their nBTC to other supported IBC-enabled blockchains. IBC, or the Inter-Blockchain Communication protocol, is a blockchain interoperability standard that enables connected chains to transfer assets and messages between each other.",
+                    content: TechnologySnippet.IBC,
                 },
                 {
                     title: "Orga & Merk",
-                    content:
-                        "Orga is a custom-built stack designed for creating Proof-of-Stake (PoS) blockchains in Rust, offering an alternative to the Cosmos SDK. At its core, Orga integrates with CometBFT as its consensus engine.\n\nMerk complements Orga as a high-performance Merkle key/value store, serving as the state database for blockchains. It supports the proof generation necessary for Nomic's IBC interactions with other networks and for enabling lightweight client functionalities for end users.",
+                    content: TechnologySnippet.OrgaMerk,
                 },
                 {
                     title: "Checkpointing mechanism",
@@ -178,13 +178,11 @@ const nomic: LayerProject = {
             content: [
                 {
                     title: "Connection to IBC-enabled blockchains",
-                    content:
-                        "Using IBC, users can transfer nBTC to connected blockchains and engage in use-cases such as:\n\n- Get a USK loan on Kujira\n\n- Trade and provide liquidity on Osmosis\n\n- Trade perpetual swaps using Levana",
+                    content: UseCaseSnippet.IBCTransfers,
                 },
                 {
                     title: "Offchain nBTC transfers",
-                    content:
-                        "Nomic itself can also be used for p2p payments denominated in nBTC.",
+                    content: UseCaseSnippet.OffchainTransfers,
                 },
             ],
         },

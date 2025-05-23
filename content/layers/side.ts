@@ -77,7 +77,7 @@ const side: LayerProject = {
                 score: 0,
                 tier: RiskFactor.High,
                 title: "Side sBTC is managed by a federation made up of a portion of its validator set",
-                content: "Side sBTC is managed by 21 signers who additionally participate as validators in Side's proof-of-stake consensus.\n\nThese signers participate in a TSS network that where trusted validators perform signing duties for sBTC abd Side Chain.",
+                content: TokenSnippet.SideBTC,
             },
         ],
         },

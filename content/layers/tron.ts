@@ -151,6 +151,10 @@ const tron: LayerProject = {
                     title: "Onchain applications",
                     content: UseCaseSnippet.OnchainApps,
                 },
+                {
+                    title: "Asset transfers",
+                    content: `${UseCaseSnippet.OffchainTransfers}`
+                },
             ],
         },
     ],
