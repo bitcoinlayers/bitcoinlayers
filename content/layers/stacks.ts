@@ -71,7 +71,7 @@ const stacks: LayerProject = {
             pegs: [
                 {
                     name: "sBTC",
-                    infrastructureSlug: "sBTC",
+                    infrastructureSlug: "stacks-sBTC",
                     score: 0,
                     tier: RiskFactor.High,
                     title: TokenSnippet.FederationPeg,
