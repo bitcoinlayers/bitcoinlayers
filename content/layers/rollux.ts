@@ -11,6 +11,8 @@ import {
     ContentSection,
     RiskCategory,
     TokenSnippet,
+    ReviewSnippet,
+    BitcoinSecuritySnippet,
 } from "../props";
 
 const rollux: LayerProject = {
@@ -73,8 +75,7 @@ const rollux: LayerProject = {
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: "wBTC on Rollux has a number of trust assumptions",
-                    content:
-                        "The Rollux L2 does not currently have a direct bridge with the Bitcoin mainchain. The only Bitcoin synthetic on Rollux is a wBTC contract. The contract is an upgradeable contract managed by a specific address, the controller, on the Syscoin L1, the blockchain that Rollux settles to. wBTC can be deposited onto Rollux by way of Ethereum, Polygon PoS, and Binance Smart Chain. The controller of this address is responsible for minting and burning tokens related to the wBTC contract.\n\nRollux’s L1 bridge contract, which facilitates the transfer of wBTC from Syscoin to Rollux, is immediately upgradeable by a multi-sig wallet with anonymous signers.\n\nThe Rollux L1 contract lives on the Syscoin NEVM chain.",
+                    content: `${TokenSnippet.BitGowBTC}\n\nRollux’s L1 bridge contract, which facilitates the transfer of wBTC from Syscoin to Rollux, is immediately upgradeable by a multi-sig wallet with anonymous signers. The Rollux L1 contract lives on the Syscoin NEVM chain.`,
                 },
             ],
         },
@@ -89,18 +90,16 @@ const rollux: LayerProject = {
         {
             category: RiskCategory.NetworkOperators,
             score: 0,
-            tier: RiskFactor.UnderReview,
+            tier: RiskFactor.High,
             title: "Rollux is operated by a centralized sequencer with forced inclusion to the Syscoin L1 possible",
-            content:
-                "The Rollux chain is operated by a centralized sequencer. Users can be censored by the centralized sequencer and the chain can have liveness failures if the sequencer goes offline.\n\nForced inclusion to the Syscoin L1 is possible. Users are able to have their transaction included in a sequence by submitting it to the L1 smart contract.",
+            content: ReviewSnippet.SelfSequenceMainAlt,
         },
         {
             category: RiskCategory.FinalityGuarantees,
             score: 0,
-            tier: RiskFactor.UnderReview,
+            tier: RiskFactor.High,
             title: "Rollux inherits finality guarantees from Syscoin",
-            content:
-                "The Rollux sequencer provides a soft confirmation of transactions which are eventually summarized and sent to Syscoin.\n\nRollux's sequencer can reorg prior to a transaction batch being accepted on Syscoin.",
+            content: ReviewSnippet.FinalityAltRollupCentralizedProposer,
         },
     ],
     sections: [
@@ -109,24 +108,20 @@ const rollux: LayerProject = {
             title: "Bitcoin Security",
             content: [
                 {
-                    title: "Unilateral exits to Bitcoin not possible",
-                    content:
-                        "Users cannot exit from Rollux to Bitcoin at all, as there is no bridge; they must instead withdraw to Syscoin and then to Bitcoin. Users cannot unilaterally exit from the Syscoin with an L1 Bitcoin transaction. They currently trust centralized operators to process their withdrawals.",
+                    title: "Rollux's data availability layer is merge-mined",
+                    content: BitcoinSecuritySnippet.MergeMineDA,
                 },
                 {
                     title: "The protocol does not enable MEV on Bitcoin",
-                    content:
-                        "Rollux does not leak MEV to the Bitcoin L1. Users trust the centralized sequencer to not extract MEV from their transactions.",
+                    content: BitcoinSecuritySnippet.CentralizedSequencerMEV,
                 },
                 {
                     title: "An alternative token plays a role in network security",
-                    content:
-                        "Rollux’s gas fees and data availability fees are paid in [SYS](https://www.coingecko.com/en/coins/syscoin).",
+                    content: BitcoinSecuritySnippet.AltTokenFees,
                 },
                 {
                     title: "Fees and issuance are paid to miners who merge-mine Syscoin",
-                    content:
-                        "Fees associated with Rollux’s data availability are paid to Bitcoin miners who optionally merge-mine Rollux’s data availability layer, Syscoin.",
+                    content: BitcoinSecuritySnippet.MergeMineDAFees,
                 },
             ],
         },

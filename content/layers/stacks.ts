@@ -11,6 +11,8 @@ import {
     ContentSection,
     RiskCategory,
     TokenSnippet,
+    ReviewSnippet,
+    BitcoinSecuritySnippet,
 } from "../props";
 
 const stacks: LayerProject = {
@@ -28,7 +30,7 @@ const stacks: LayerProject = {
         RiskFactor.VeryHigh,
         RiskFactor.Medium,
         RiskFactor.Medium,
-        RiskFactor.UnderReview,
+        RiskFactor.Low,
     ],
     btcLocked: 1054,
     nativeToken: "STX",
@@ -69,30 +71,27 @@ const stacks: LayerProject = {
             pegs: [
                 {
                     name: "sBTC",
-                    infrastructureSlug: "sBTC",
+                    infrastructureSlug: "stacks-sbtc",
                     score: 0,
-                    tier: RiskFactor.VeryHigh,
-                    title: "sBTC is managed by a federation of 14 institutional signers. Withdrawals are not live",
-                    content:
-                        "sBTC is a bridge between bitcoin and stacks managed by 14 institutional signers. sBTC on Stacks is backed by BTC held in a wallet managed by these signers. The identities of entities participating in the sBTC bridge are publicly known.\n\nIf 10 of the signers colluded, they could steal all of the BTC backing sBTC. You can find the signers [here](https://bitcoinl2labs.com/sbtc-rollout#sbtc-signers).\n\nWhile managed by a public federation, sBTC receives a Very High score as withdrawals are not currently live.",
+                    tier: RiskFactor.High,
+                    title: TokenSnippet.FederationPeg,
+                    content: TokenSnippet.StacksSBTC,
                 },
                 {
                     name: "Alex xBTC",
                     infrastructureSlug: "alex-xbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: "Users trust Wrapped with the custody of BTC backing xBTC",
-                    content:
-                        "Users trust Wrapped, a custodian provider, with the custody of BTC backing xBTC. Alex, a DeFi project largely associated with the Stacks ecosystem, acquired Wrapped and has initiated a transition to move xBTC into sBTC.\n\nFunds that are not moved into sBTC are still secured by [Wrapped](https://wrapped.com/).",
+                    title: TokenSnippet.CustodianPeg,
+                    content: TokenSnippet.AlexBTC,
                 },
                 {
                     name: "XLink aBTC",
                     infrastructureSlug: "xlink-abtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: "There is limited information available on Xlink aBTC's custody mechanism",
-                    content:
-                        "There is limited information available on Xlink aBTC's custody mechanism for BTC backing aBTC. Users trust Alex, the project behind Xlink, to set up secure custody practices. Xlink's [website](https://www.xlink.network/) mentions that institutional grade MPC solutions are used.",
+                    title: TokenSnippet.CustodianPeg,
+                    content: TokenSnippet.xlink,
                 },
             ],
         },
@@ -101,24 +100,21 @@ const stacks: LayerProject = {
             score: 0,
             tier: RiskFactor.Medium,
             title: "Data availability requirement is fulfilled through Stacks' full nodes",
-            content:
-                "Stacks posts state roots to Bitcoin, but not full transaction calldata. Because of this, Stacks' state cannot be reconstructed using only data from Bitcoin. Stacks has a permissionless validator and node operator set which participate in making data availability readily available.",
+            content: ReviewSnippet.AltL1DA,
         },
         {
             category: RiskCategory.NetworkOperators,
             score: 0,
             tier: RiskFactor.Medium,
-            title: "Leverages a permissionless consensus mechanism",
-            content:
-                "Stacks has a permissionless block production mechanism, Users must trust Stacks validators to include their transactions in blocks. Anyone with sufficient capital and resources can participate as a Stacks miner.",
+            title: "Stacks blocks are built by miners and validated by stakers",
+            content: "Blocks are built by miners during a given mining tenure. After their tenure, stakers validate the blocks built during this tenure. Anyone with sufficient capital resources can become a miner or staker.",
         },
         {
             category: RiskCategory.FinalityGuarantees,
             score: 0,
-            tier: RiskFactor.UnderReview,
-            title: "State transitions validated and finalized by Stackers. We are reviewing if the mechanism inherits finality guarantees from bitcoin",
-            content:
-                "The Nakamoto upgrade sees Stacks checkpoint its state to bitcoin. We are reviewing the details around Stacks' reorg resistance guarantees from bitcoin.\n\nSee the technology section for a description on Nakamoto consensus.",
+            tier: RiskFactor.Low,
+            title: "State transitions validated and finalized by Stackers. Block leaders must build on the latest checkpoint included in the latest block tenure that was validated by stackers",
+            content: ReviewSnippet.FinalityAnchorChain,
         },
     ],
     sections: [
@@ -127,24 +123,20 @@ const stacks: LayerProject = {
             title: "Bitcoin Security",
             content: [
                 {
-                    title: "Unilateral exits to Bitcoin not possible",
-                    content:
-                        "Users cannot unilaterally exit from the Stacks sidechain with an L1 Bitcoin transaction. They currently trust centralized operators to process their withdrawals.",
+                    title: "Stacks inherits additional reorg resistance from bitcoin",
+                    content: BitcoinSecuritySnippet.FinalityAssurance,
                 },
                 {
                     title: "The protocol does not enable MEV on Bitcoin, but Bitcoin miners can extract MEV from Stacks",
-                    content:
-                        "Stacks' mining process requires a Bitcoin miner to submit a block commit as a bid to build a Stacks block. It is possible for a Bitcoin miner to censor all bids to build Stacks' blocks when building a Bitcoin block. Since the active Bitcoin miner would be the only entity with the ability to win a Stacks block, they could submit a minimal amount of funds to win the block and receive all STX rewards. This MEV-extraction scenario looks to be solved in the Nakamoto upgrade.\n\n🔬We are reviewing this section of the assessment.",
+                    content: BitcoinSecuritySnippet.AltNetworkMEV,
                 },
                 {
                     title: "An alternative token plays a role in network security",
-                    content:
-                        "The STX token is required to pay for transaction fees and smart contract execution on the Stacks network. It is also used as a reward for miners who participate in the PoX consensus mechanism. The token is indirectly required for the security of the network, as block production by miners is incentivized by STX.",
+                    content: BitcoinSecuritySnippet.AltTokenFees,
                 },
                 {
-                    title: "Stacks indirectly contributes to the security budget",
-                    content:
-                        "Stacks sees Bitcoin miners bid on the opportunity to win Stacks blocks and earn fees for doing so. However, miners rewards are paid out in STX tokens via a distinct mining set up.",
+                    title: "Stacks does not contribute to the security budget",
+                    content: BitcoinSecuritySnippet.NoSecurityBudget,
                 },
             ],
         },

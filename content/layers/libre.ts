@@ -19,7 +19,7 @@ const libre: LayerProject = {
     title: "Libre",
     entityType: EntityType.Alt,
     entityCategory: EntityCategory.Sidesystem,
-    live: LiveStatus.Mainnet,
+    live: LiveStatus.Testnet,
     staking: false,
     liquidStaking: false,
     bridge: false,
