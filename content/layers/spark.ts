@@ -80,8 +80,8 @@ const spark: LayerProject = {
             category: RiskCategory.DataAvailability,
             score: 0,
             tier: RiskFactor.Low,
-            title: "Transfer history data is held client-side",
-            content: "Transaction data is self-hosted. The statechain entity signs individual transactions and the transfer history gets passed on between clients.\n\nThe statechain entity also keeps a record of transfer history.",
+            title: "Data related to current UTXO ownership is held client-side",
+            content: "Transaction data is self-hosted. The statechain entity signs individual transactions and users store data for their keyshare and unilateral exit path client-side.\n\nThe statechain entity also keeps a record of transfer history.",
         },
         {
             category: RiskCategory.NetworkOperators,
