@@ -19,7 +19,7 @@ const bitfinity: LayerProject = {
     title: "Bitfinity",
     entityType: EntityType.Alt,
     entityCategory: EntityCategory.Sidesystem,
-    live: LiveStatus.Mainnet,
+    live: LiveStatus.Testnet,
     staking: false,
     liquidStaking: false,
     bridge: false,
