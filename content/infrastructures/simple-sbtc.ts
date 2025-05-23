@@ -26,7 +26,7 @@ const simplesbtc: InfrastructureProject = {
     notice: undefined,
     bitcoinOnly: false,
     links: [],
-    description: "Under review.",
+    description: "Simple sBTC is a two-way peg managed by the Unisat team. It is used to secure BTC backing sBTC on the Fractal network.",
     sections: [
                 {
                     id: "selfsubmit",
