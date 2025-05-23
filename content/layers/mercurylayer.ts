@@ -65,7 +65,7 @@ const mercurylayer: LayerProject = {
                     name: "Mercury BTC",
                     infrastructureSlug: "mercury-btc",
                     score: 0,
-                    tier: RiskFactor.Medium,
+                    tier: RiskFactor.Low,
                     title: "A locked UTXO is collaboratively managed between a trusted server and the statecoin owner, with full L1 UTXO ownership enforceable after a timelock expiry",
                     content:
                         "The statechain setup involves locking a UTXO onchain with the private key shared between the operator and the current statecoin owner. Although the Mercury Layer server acts as a trusted entity, users are safeguarded against potential unresponsiveness by having the ability to unilaterally exit and enforce their UTXO ownership onchain as each transfer is secured by a decrementing timelock mechanism and a series of backup transactions.\n\nWe have assigned Mercury Layer a medium score due to situational differences in user custody.",
@@ -129,11 +129,6 @@ const mercurylayer: LayerProject = {
             title: "Custom score assigned",
             content: [
                 {
-                    title: "Medium score assigned to Mercury Layer custody mechanism",
-                    content:
-                        "Mercury Layer has been assigned a medium score for custody in the project assessment page. This is due to situational differences in custody. As noted in BTC Custody, a user retains custody of their funds when depositing into the protocol. But as noted in the finality section, they trust an honest operator to delete their previous keyshare.\n\nIf the operator does not do this, they can collude with a prior owner of the statechain UTXO to steal a user's funds",
-                },
-                {
                     title: "Statechains only allow for fixed-value transfers",
                     content:
                         "Mercury Layer facilitates the offline transfer of UTXO ownership through the transfer of private key shares. Ownership transfer and not involving Bitcoin L1 interaction implies that UTXOs cannot be split and must always be transferred as a whole.",
@@ -196,7 +191,7 @@ const mercurylayer: LayerProject = {
                 {
                     title: "Learn more",
                     content:
-                        "Statechains Whitepaper by Ruben Somsen ([GitHub, Oct 2018](https://github.com/RubenSomsen/rubensomsen.github.io/blob/master/img/statechains.pdf)) \n Statechains: Non-custodial Off-chain Bitcoin Transfer by Ruben Somsen ([Medium, Jun 2019](https://medium.com/@RubenSomsen/statechains-non-custodial-off-chain-bitcoin-transfer-1ae4845a4a39#:~:text=Statechains%20are%20a%20layer%20two,with%20scaling%20and%20save%20fees.)) \n Mercury Layer's Lightning Latch Swap Protocol by Shinobi ([BM, Mar 2024](https://bitcoinmagazine.com/technical/mercury-layers-lightning-latch-swap-protocol)) \n Nicholas Gregory on Mercury Layer, Lightning Network, and More | Bitfinex Talk ([Youtube, May 2024](https://www.youtube.com/watch?v=nwWmLmxfOtc))",
+                        "[Statechains are L2s, by the Bitcoin Layers team](https://x.com/BitcoinLayers/status/1925586374473724392) \n [Statechains Whitepaper, by Ruben Somsen](https://github.com/RubenSomsen/rubensomsen.github.io/blob/master/img/statechains.pdf) \n [Statechains: Non-custodial Off-chain Bitcoin Transfer, by Ruben Somsen](https://medium.com/@RubenSomsen/statechains-non-custodial-off-chain-bitcoin-transfer-1ae4845a4a39#:~:text=Statechains%20are%20a%20layer%20two,with%20scaling%20and%20save%20fees.) \n Mercury Layer's Lightning Latch Swap Protocol by Shinobi ([BM, Mar 2024](https://bitcoinmagazine.com/technical/mercury-layers-lightning-latch-swap-protocol)) \n Nicholas Gregory on Mercury Layer, Lightning Network, and More | Bitfinex Talk ([Youtube, May 2024](https://www.youtube.com/watch?v=nwWmLmxfOtc))",
                 },
             ],
         },
