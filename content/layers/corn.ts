@@ -32,7 +32,7 @@ const corn: LayerProject = {
     riskFactors: [
         RiskFactor.VeryHigh,
         RiskFactor.VeryHigh,
-        RiskFactor.UnderReview,
+        RiskFactor.Medium,
         RiskFactor.VeryHigh,
     ],
     btcLocked: 0,
