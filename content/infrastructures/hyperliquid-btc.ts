@@ -11,8 +11,8 @@ import {
 
 const hyperliquidbtc: InfrastructureProject = {
     type: Type.Infrastructure,
-    slug: "stacks-sbtc",
-    title: "Stacks sBTC",
+    slug: "hyperliquid-btc",
+    title: "Hyperliquid BTC",
     entityType: EntityType.ReserveAsset,
     live: LiveStatus.Mainnet,
     staking: false,
@@ -47,7 +47,7 @@ const hyperliquidbtc: InfrastructureProject = {
             tier: "",
             title: "Users trust 2/3 signers participating in the Unit Protocol",
             content:
-                "The Unit Protocol consists of a network of 3 guardians participating in an MPC scheme. These guardians are responsible for securing the BTC backing a BTC-denominated asset on Hyperliquid. They are also responsible for executing signing events related to the asset.\n\n[Source}(https://docs.hyperunit.xyz/architecture/security)",
+                "The Unit Protocol consists of a network of 3 guardians participating in an MPC scheme. These guardians are responsible for securing the BTC backing a BTC-denominated asset on Hyperliquid. They are also responsible for executing signing events related to the asset.\n\n[Source](https://docs.hyperunit.xyz/architecture/security)",
         },
     ],
 };

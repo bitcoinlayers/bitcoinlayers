@@ -70,6 +70,7 @@ import zksyncProject from "../content/layers/zksync";
 import osmosisProject from "../content/layers/osmosis";
 import berachainProject from "../content/layers/berachain";
 import sonicProject from "../content/layers/sonic";
+import hyperliquidProject from "@/content/layers/hyperliquid";
 
 const core: LayerProject = coreProject;
 const internetcomputer: LayerProject = internetcomputerProject;
@@ -141,6 +142,7 @@ const zksync: LayerProject = zksyncProject;
 const osmosis: LayerProject = osmosisProject;
 const berachain: LayerProject = berachainProject;
 const sonic: LayerProject = sonicProject;
+const hyperliquid: LayerProject = hyperliquidProject;
 
 export const allLayers: LayerProject[] = [
     core,
@@ -206,6 +208,7 @@ export const allLayers: LayerProject[] = [
     osmosis,
     berachain,
     sonic,
+    hyperliquid,
 ];
 
 export const allLayerSlugs: string[] = allLayers.map((layer) => layer.slug);
