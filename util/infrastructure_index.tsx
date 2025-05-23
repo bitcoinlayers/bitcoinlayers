@@ -53,6 +53,7 @@ import tronbtcProject from "@/content/infrastructures/tron-btc";
 import merlinmbtcProject from "@/content/infrastructures/merlin-mbtc";
 import alloallobtcProject from "@/content/infrastructures/allo-allobtc";
 import sidesbtcProject from "@/content/infrastructures/side-sbtc";
+import hyperliquidbtc from "@/content/infrastructures/hyperliquid-btc";
 
 const astria: InfrastructureProject = astriaProject;
 const avail: InfrastructureProject = availProject;
@@ -160,6 +161,7 @@ export const allInfrastructures: InfrastructureProject[] = [
     merlinmbtc,
     alloallobtc,
     sidesbtc,
+    hyperliquidbtc,
 ];
 
 export const allInfrastructureSlugs: string[] = allInfrastructures.map(
