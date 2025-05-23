@@ -10,6 +10,8 @@ import {
     ContentSection,
     RiskCategory,
     TokenSnippet,
+    ReviewSnippet,
+    BitcoinSecuritySnippet,
 } from "../props";
 
 const mercurylayer: LayerProject = {
@@ -67,8 +69,7 @@ const mercurylayer: LayerProject = {
                     score: 0,
                     tier: RiskFactor.Low,
                     title: "A locked UTXO is collaboratively managed between a trusted server and the statecoin owner, with full L1 UTXO ownership enforceable after a timelock expiry",
-                    content:
-                        "The statechain setup involves locking a UTXO onchain with the private key shared between the operator and the current statecoin owner. Although the Mercury Layer server acts as a trusted entity, users are safeguarded against potential unresponsiveness by having the ability to unilaterally exit and enforce their UTXO ownership onchain as each transfer is secured by a decrementing timelock mechanism and a series of backup transactions.\n\nWe have assigned Mercury Layer a medium score due to situational differences in user custody.",
+                    content: TokenSnippet.MercuryLayerBTC,
                 },
             ],
         },
@@ -77,24 +78,21 @@ const mercurylayer: LayerProject = {
             score: 0,
             tier: RiskFactor.Low,
             title: "Transaction verification and data transmission happens via a client-side validation model",
-            content:
-                "Transaction data is self-hosted. The operator blindly signs and timestamps the individual statechain states and the transfer history gets passed on between clients. Due to the use of blind signing, the operator remains unaware of the transfer history.",
+            content: ReviewSnippet.StatechainDABlindedServer,
         },
         {
             category: RiskCategory.NetworkOperators,
             score: 0,
-            tier: RiskFactor.High,
+            tier: RiskFactor.VeryHigh,
             title: "The network operator is a single server",
-            content:
-                "The Mercury Layer system employs a statechain entity that generates and updates key shares in addition to offering a blind signing service. Mercury Layer chooses a non-federated (i.e. centralized) setup for their service provider.",
+            content: ReviewSnippet.OperatorStatechainBlindedServerSingleServer,
         },
         {
             category: RiskCategory.FinalityGuarantees,
             score: 0,
             tier: RiskFactor.VeryHigh,
-            title: "Transaction settlement does not rely on onchain confirmations. Users are not safeguard against the statechain entity double-spending their coin",
-            content:
-                "Offchain finality guarantees in Mercury Layer are provided by the statechain operator deleting their previous keyshare. When a user receives a statecoin, they receive a new keyshare together with the operator’s new keyshare. \n\n⚠️ Users do not have assurance that the statechain operator deleted their previous keyshare with the past owner of the statecoin.\n\nThe statechain entity can collude with the past owner of the UTXO, create a withdrawal transaction and steal the current owner’s funds.",
+            title: "There is no way to prove key deletion from the statechain entity",
+            content: ReviewSnippet.FinalityStatechainSingleOperator,
         },
     ],
     sections: [
@@ -104,29 +102,25 @@ const mercurylayer: LayerProject = {
             content: [
                 {
                     title: "Bitcoin finalizes statechain initiation and closures",
-                    content:
-                        "Transactions within the Mercury Layer protocol are executed completely offchain. However, when a user exits the protocol, their exit transaction is validated by bitcoin miners.",
+                    content: BitcoinSecuritySnippet.BitcoinSecurityOffchainUTXO,
                 },
                 {
                     title: "The protocol does not enable MEV on bitcoin. Transaction verification happens via a client-side validation mechanism",
-                    content:
-                        "Transaction verification is conducted via a client-side validation model. The statechain operator is not included in transaction ordering or verification.",
+                    content: BitcoinSecuritySnippet.OffchainUTXOMEV,
                 },
                 {
                     title: "No alternative token is being introduced",
-                    content:
-                        "Mercury Layer currently uses Bitcoin UTXOs as the main and only asset being transferred in the network. No other token is used for the operation of the protocol.",
+                    content: BitcoinSecuritySnippet.OffchainUTXONoToken,
                 },
                 {
                     title: "Mercury Layer does not contribute to the security budget",
-                    content:
-                        "Statechain transfers occur offchain through key share updates and the pre-signing of backup transactions, with onchain fees incurred only during statechain initiation or closure.",
+                    content: BitcoinSecuritySnippet.StatechainSecurityBudget,
                 },
             ],
         },
         {
             id: "additionalconsiderations",
-            title: "Custom score assigned",
+            title: "Additional considerations",
             content: [
                 {
                     title: "Statechains only allow for fixed-value transfers",

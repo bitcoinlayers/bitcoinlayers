@@ -105,7 +105,7 @@ const spark: LayerProject = {
             content: [
                 {
                     title: "Users rely on Bitcoin network participants for exit transactions",
-                    content: BitcoinSecuritySnippet.OffchainUTXO,
+                    content: BitcoinSecuritySnippet.BitcoinSecurityOffchainUTXO,
                 },
                 {
                     title: "The protocol does not enable MEV on Bitcoin",
