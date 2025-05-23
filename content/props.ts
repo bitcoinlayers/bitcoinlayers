@@ -202,6 +202,7 @@ export enum BitcoinSecuritySnippet { //TODO: Janusz to add more here
     FinalityAssurance = "The network cannot be reorged without reorging bitcoin. This is due to the fact that the network builds upon a checkpoint posted to bitcoin.",
     CheckpointCometBFT = "The network's security is independent of bitcoin and reliant on its own proof-of-stake mechanism.\n\nIts checkpoint mechanism does provide security against long-range attacks, enabling more secure light clients and shorter unbonding periods for validators.",
     FeesPOSCheckpoint = "Periodic checkpoint transactions are made that pay fees to bitcoin miners.",
+    MergeMineDA = "The network's data availability layer is merge-mined by bitcoin miners."
 }
 export enum TechnologySnippet { //TODO: Janusz to add more here
     EVM = "The network uses an EVM-compatible virtual machine. The Ethereum Virtual Machine is software responsible for smart contract execution for a number of blockchains, namely the Ethereum Network. It uses Solidity/Vyper as its code and is the dominant environment for smart contract execution in the cryptocurrency ecosystem.",
