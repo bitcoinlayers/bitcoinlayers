@@ -7,6 +7,7 @@ import {
     Notice,
     Site,
     AssessmentCategory,
+    TokenSnippet,
 } from "../props";
 
 const solvena: InfrastructureProject = {
@@ -47,38 +48,25 @@ const solvena: InfrastructureProject = {
         "SolvBTC.ENA offer a mechanism that enables users to deposit SolvBTC into smart contracts on EVM-based chains. Users receive a token representing BTC deposited on Ethena in exchange for their wrapped BTC token.",
     sections: [
         {
-            id: "Economics",
-            title: "Economics",
-            content: [
-                {
-                    title: "Incentive model",
-                    content: "Ethena incentives are under review.",
-                },
-            ],
-        },
-        {
-            id: "smartcontracts",
-            title: "Smart Contracts & Audits",
-            content: [
-                {
-                    title: "Dozens of token contracts live",
-                    content:
-                        "There are numerous Solv BTC token contracts deployed across many chains. You can find them [here](https://github.com/solv-finance/SolvBTC/tree/main/deployments).\n\n🔬 We are currently reviewing the implementations of these smart contracts.",
-                },
-            ],
-        },
-        {
-            id: "knowledgeBits",
-            title: "Knowledge Bits",
-            content: [
-                {
-                    title: "Learn more",
-                    content: "[Solv docs](https://docs.solv.finance/)",
-                },
-            ],
-        },
+                        id: "selfsubmit",
+                        title: "Further sections to be reviewed",
+                        content: [
+                            {
+                                content:
+                                    "Aspects related to minting & burning, key management, transaction signing, and proof-of-reserves have not been reviewed. We are currently reviewing these sections.",
+                            },
+                        ],
+                    },
     ],
-    assessment: [],
+    assessment: [
+        {
+                            category: AssessmentCategory.AssetCustody,
+                            score: 0,
+                            tier: "",
+                            title: "This peg is under review.",
+                            content: TokenSnippet.SolvBTCENA,
+                        },
+    ],
 };
 
 export default solvena;

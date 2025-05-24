@@ -6,6 +6,7 @@ import {
     EntityType,
     Notice,
     Site,
+    AssessmentCategory,
 } from "../props";
 
 const chakra: InfrastructureProject = {
@@ -25,19 +26,29 @@ const chakra: InfrastructureProject = {
     notice: undefined,
     bitcoinOnly: false,
     links: [],
-    description: "Under review.",
-    sections: [
-        {
-            id: "selfsubmit",
-            title: "Process to self-submit information",
-            content: [
-                {
-                    content:
-                        "The Bitcoin Layers project prioritizes risk reviews on projects that are in production and accepting users' BTC deposits. Projects on testnet are welcome to submit information about their project. We do not publish risk assessments for projects that are not in production.\n\nHere are the [instructions](https://github.com/bitcoinlayers/bitcoinlayers/blob/main/SELFSUBMIT.md) on self-submitting a project.",
-                },
-            ],
-        },
-    ],
+    description: "Chakra stBTC is a BTC wrapped asset. It is under review.",
+            sections: [
+                    {
+                        id: "selfsubmit",
+                        title: "Further sections to be reviewed",
+                        content: [
+                            {
+                                content:
+                                    "Aspects related to minting & burning, key management, transaction signing, and proof-of-reserves have not been reviewed. We are currently reviewing these sections.",
+                            },
+                        ],
+                    },
+                ],
+                assessment: [
+                        {
+                            category: AssessmentCategory.AssetCustody,
+                            score: 0,
+                            tier: "",
+                            title: "This peg is under review.",
+                            content:
+                                "This peg is under review.",
+                        },
+                    ],
 };
 
 export default chakra;
