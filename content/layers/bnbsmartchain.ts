@@ -45,23 +45,23 @@ const bnbsmartchain: LayerProject = {
     links: [
         {
             text: Site.Website,
-            url: "https://usecorn.com/",
+            url: "https://www.bnbchain.org/",
         },
         {
             text: Site.Docs,
-            url: "https://docs.usecorn.com/docs/developers/introduction",
+            url: "https://docs.bnbchain.org/",
         },
         {
             text: Site.Explorer,
-            url: "https://cornscan.io/",
+            url: "https://bscscan.com/",
         },
         {
             text: Site.GitHub,
-            url: "https://github.com/usecorn",
+            url: "https://github.com/bnb-chain",
         },
         {
             text: Site.Twitter,
-            url: "https://x.com/use_corn",
+            url: "https://x.com/BNBChain",
         },
     ],
     description:
