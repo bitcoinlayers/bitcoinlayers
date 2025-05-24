@@ -14,7 +14,7 @@ const chakra: InfrastructureProject = {
     slug: "chakra-stbtc",
     title: "Chakra stBTC",
     entityType: EntityType.LiquidStaking,
-    live: LiveStatus.Testnet,
+    live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
     bridge: false,

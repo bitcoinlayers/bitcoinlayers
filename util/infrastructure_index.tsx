@@ -54,6 +54,15 @@ import merlinmbtcProject from "@/content/infrastructures/merlin-mbtc";
 import alloallobtcProject from "@/content/infrastructures/allo-allobtc";
 import sidesbtcProject from "@/content/infrastructures/side-sbtc";
 import hyperliquidbtc from "@/content/infrastructures/hyperliquid-btc";
+import solvsolvbtccore from "@/content/infrastructures/solv-solvbtccore";
+import bedrockbrbtc from "@/content/infrastructures/bedrock-brbtc";
+import nexusnbtc from "@/content/infrastructures/nexus-nbtc";
+import hemihemibtc from "@/content/infrastructures/hemi-hemibtc";
+import axelaraxlbtc from "@/content/infrastructures/axelar-axlbtc";
+import merlinwbtc from "@/content/infrastructures/merlin-wbtc";
+import twentyonesharesbtc from "@/content/infrastructures/21shares-btc";
+import badgerebtc from "@/content/infrastructures/badger-ebtc";
+import mantambtc from "@/content/infrastructures/manta-mbtc";
 
 const astria: InfrastructureProject = astriaProject;
 const avail: InfrastructureProject = availProject;
@@ -131,7 +140,6 @@ export const allInfrastructures: InfrastructureProject[] = [
     bedrock,
     pump,
     fire,
-    bitcoinos,
     binancebtcb,
     unirouter,
     acorn,
@@ -162,6 +170,14 @@ export const allInfrastructures: InfrastructureProject[] = [
     alloallobtc,
     sidesbtc,
     hyperliquidbtc,
+    solvsolvbtccore,
+    bedrockbrbtc,
+    hemihemibtc,
+    axelaraxlbtc,
+    merlinwbtc,
+    twentyonesharesbtc,
+    badgerebtc,
+    mantambtc,
 ];
 
 export const allInfrastructureSlugs: string[] = allInfrastructures.map(
