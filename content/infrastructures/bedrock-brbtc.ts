@@ -47,7 +47,7 @@ const bedrockbrbtc: InfrastructureProject = {
             url: "",
         },
     ],
-    description: "Bedrock brBTC is a BTC wrapped asset. It is under review.",
+    description: "Bedrock brBTC is BTC-denominated asset backed by other derivative assets.",
     sections: [
         {
             id: "selfsubmit",
@@ -65,9 +65,9 @@ const bedrockbrbtc: InfrastructureProject = {
                 category: AssessmentCategory.AssetCustody,
                 score: 0,
                 tier: "",
-                title: "This peg is under review.",
+                title: "Bedrock brBTC is backed by various wrapped BTC assets",
                 content:
-                    "This peg is under review.",
+                    "Bedrock brBTC is a derivative asset backed by other wrapped BTC assets. When depositing funds for brBTC, users take on smart contract risks in addition to the custodian risk related to the backing asset.\b\bBedrock brBTC may be backed by [uniBTC](https://www.bitcoinlayers.org/infrastructure/bedrock-unibtc), [FBTS](https://www.bitcoinlayers.org/infrastructure/firebitcoin-fbtc), [cbBTC](https://www.bitcoinlayers.org/infrastructure/coinbase-cbbtc), [wBTC](https://www.bitcoinlayers.org/infrastructure/bitgo-wbtc), [M-BTC](https://www.bitcoinlayers.org/infrastructure/merlin-mbtc), or [BTCB](https://www.bitcoinlayers.org/infrastructure/binance-btcb).\n\n[Source](https://docs.bedrock.technology/multi-asset-liquid-staking/brbtc/introduction)",
             },
         ],
 };

@@ -43,7 +43,7 @@ const binancebtcb: InfrastructureProject = {
             url: "https://x.com/binance",
         },
     ],
-    description: "Under Review",
+    description: "Binance BTCB is a derivative asset native to BNB Smart Chain. BTC backing BTCB is secured by Binance, a centralized exchange.",
     sections: [
         {
             id: "selfsubmit",

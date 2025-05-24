@@ -47,7 +47,7 @@ const hemihemibtc: InfrastructureProject = {
             url: "",
         },
     ],
-    description: "HemiBTC is a BTC wrapped asset. It is under review.",
+    description: "HemiBTC is a wrapped BTC asset native to the Hemi blockchain, an Ethereum rollup.",
     sections: [
         {
             id: "selfsubmit",
@@ -65,9 +65,9 @@ const hemihemibtc: InfrastructureProject = {
                 category: AssessmentCategory.AssetCustody,
                 score: 0,
                 tier: "",
-                title: "This peg is under review.",
+                title: "BTC backing HemiBTC is secured by a federated multisig",
                 content:
-                    "This peg is under review.",
+                    "Hemi leverages a federated multisig to secure BTC backing HemiBTC. The signers participating in this federation have not been officially disclosed.",
             },
         ],
 };

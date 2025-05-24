@@ -47,7 +47,7 @@ const badgerebtc: InfrastructureProject = {
             url: "",
         },
     ],
-    description: "Badger eBTC is a BTC wrapped asset. It is under review.",
+    description: "Badger eBTC is a BTC-denominated asset that enables users to borrow BTC against Lido stETH. Lido stETH is a derivative of ETH, Ethereum's native currency.",
     sections: [
         {
             id: "selfsubmit",
@@ -65,9 +65,9 @@ const badgerebtc: InfrastructureProject = {
                 category: AssessmentCategory.AssetCustody,
                 score: 0,
                 tier: "",
-                title: "This peg is under review.",
+                title: "Users deposit stETH into a smart contract to receive eBTC",
                 content:
-                    "This peg is under review.",
+                    `To obtain eBTC, users must deposit Lido stETH, an ETH-denominated asset, as collateral to borrow eBTC. If a users's collateralization ratio falls below a certain threshold, they can be liquidated. Collateralization ratios are based on the ETH/BTC price pair.\n\n[Source](https://docs.ebtc.finance/ebtc/protocol-mechanics/liquidations)`
             },
         ],
 };

@@ -44,9 +44,9 @@ const pstake: InfrastructureProject = {
                             category: AssessmentCategory.AssetCustody,
                             score: 0,
                             tier: "",
-                            title: "This peg is under review.",
+                            title: "BTC backing yBTC is secured by Cobo, an institutional provider",
                             content:
-                                "This peg is under review.",
+                                "pStake's yBTC is backed by BTC held in custodian wallets. These wallets are secured by signers participating in an MPC scheme. pStake has a dedicated Cobo account where users' funds are held.\n\n[Source](https://blog.pstake.finance/2024/10/17/introducing-ybtc-by-pstake-yield-optimized-bitcoin-lst-on-babylon/#:~:text=Due%20to%20the%20Bitcoin%20Network%E2%80%99s,minimize%20the%20risk%20of%20centralization)",
                         },
                     ],
 };

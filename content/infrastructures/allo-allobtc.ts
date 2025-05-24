@@ -7,6 +7,7 @@ import {
     Notice,
     Site,
     AssessmentCategory,
+    TokenSnippet,
 } from "../props";
 
 const alloallobtc: InfrastructureProject = {
@@ -44,9 +45,9 @@ const alloallobtc: InfrastructureProject = {
                     category: AssessmentCategory.AssetCustody,
                     score: 0,
                     tier: "",
-                    title: "This peg is under review.",
+                    title: "BTC backing AlloBTC is held in custody by Cobo, a centralized exchange.",
                     content:
-                        "This peg is under review.",
+                        "BTC backing AlloBTC is custodied by Cobo, a centralized exchange. Cobo offers a 2/2 MPC custody solution where they co-custody funds along with protocols leveraging their servives. AlloBTC has not disclosed if this is the case in their documentation or marketing materials.\n\n[Source](https://docs.allo.xyz/faq-1/btc-staking)",
                 },
             ],
 };

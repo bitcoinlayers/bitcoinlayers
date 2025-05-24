@@ -47,7 +47,7 @@ const lorenzoenzobtc: InfrastructureProject = {
             url: "",
         },
     ],
-    description: "Lorenzo enzoBTC is a BTC wrapped asset. It is under review.",
+    description: "Lorenzo enzoBTC is a wrapped BTC asset offered through the Lorenzo protocol.",
     sections: [
         {
             id: "selfsubmit",
@@ -65,9 +65,9 @@ const lorenzoenzobtc: InfrastructureProject = {
                 category: AssessmentCategory.AssetCustody,
                 score: 0,
                 tier: "",
-                title: "This peg is under review.",
+                title: "enzoBTC is backed by native BTC and other derivative assets",
                 content:
-                    "This peg is under review.",
+                    "enzoBTC can be acquired through depositing native BTC, [wBTC](https://www.bitcoinlayers.org/infrastructure/bitgo-wbtc), or [BTCB](https://www.bitcoinlayers.org/infrastructure/binance-btcb).\n\nFunds backing enzoBTC are secured by various custodians including Cobo, Ceffu, and Chainup.\n\n[Source](https://lorenzo-protocol.gitbook.io/docs/bitcoin-liquidity-layer/enzobtc-decentralized-wrapped-btc-for-defi)",
             },
         ],
 };

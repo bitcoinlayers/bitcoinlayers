@@ -44,9 +44,9 @@ const kinza: InfrastructureProject = {
                             category: AssessmentCategory.AssetCustody,
                             score: 0,
                             tier: "",
-                            title: "This peg is under review.",
+                            title: "BTC backing kBTC is collaboratively secured by Cobo, Kinza, and Coinover",
                             content:
-                                "This peg is under review.",
+                                "Kinza's kBTC is backed by BTC held in custodian wallets. These wallets are secured by an MPC scheme where Kinza, Cobo, and Coinover participate as signers. Cobo and Coinover are institutional custody providers.\n\n[Source](https://docs.kinza.finance/kinza-bitcoin-staking/bitcoin-staking/technical-details)",
                         },
                     ],
 };

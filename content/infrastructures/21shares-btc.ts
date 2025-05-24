@@ -12,7 +12,7 @@ import {
 const twentyonesharesbtc: InfrastructureProject = {
     type: Type.Infrastructure,
     slug: "21shares-21btc",
-    title: "21 Shares BTC",
+    title: "21.co BTC",
     entityType: EntityType.ReserveAsset,
     live: LiveStatus.Mainnet,
     staking: false,
@@ -65,9 +65,9 @@ const twentyonesharesbtc: InfrastructureProject = {
                 category: AssessmentCategory.AssetCustody,
                 score: 0,
                 tier: "",
-                title: "This peg is under review.",
+                title: "BTC backing 21.co BTC is held by third party custodians",
                 content:
-                    "This peg is under review.",
+                    "BTC backing 21.co BTC is held by third party custodians. 21.co has not officially disclosed the identities of these custodian providers.\n\n[Source](https://cdn.21.co/uploads/documents/whitepapers/21co_21BTC_Whitepaper.pdf)",
             },
         ],
 };

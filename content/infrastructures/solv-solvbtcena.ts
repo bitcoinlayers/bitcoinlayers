@@ -64,7 +64,7 @@ const solvena: InfrastructureProject = {
                             score: 0,
                             tier: "",
                             title: "This peg is under review.",
-                            content: TokenSnippet.SolvBTCENA,
+                            content: `SolvBTC.ENA is a derivative asset that represents SolvBTC locked in a vault executing a trading strategy.\n\n${TokenSnippet.SolvBTC}The token is backed by [SolvBTC](https://www.bitcoinlayers.org/infrastructure/solv-solvbtc).\n\nUsers expose themselves to smart contract and application risks when depositing funds into SolvBTC.ENA.`
                         },
     ],
 };
