@@ -64,6 +64,7 @@ import twentyonesharesbtc from "@/content/infrastructures/21shares-btc";
 import badgerebtc from "@/content/infrastructures/badger-ebtc";
 import mantambtc from "@/content/infrastructures/manta-mbtc";
 import zueszbtc from "@/content/infrastructures/zues-zbtc";
+import lorenzoenzobtc from "@/content/infrastructures/lorenzo-enzobtc";
 
 const astria: InfrastructureProject = astriaProject;
 const avail: InfrastructureProject = availProject;
@@ -179,6 +180,7 @@ export const allInfrastructures: InfrastructureProject[] = [
     badgerebtc,
     mantambtc,
     zueszbtc,
+    lorenzoenzobtc,
 ];
 
 export const allInfrastructureSlugs: string[] = allInfrastructures.map(
