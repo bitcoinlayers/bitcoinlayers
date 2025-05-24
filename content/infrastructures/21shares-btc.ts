@@ -11,7 +11,7 @@ import {
 
 const twentyonesharesbtc: InfrastructureProject = {
     type: Type.Infrastructure,
-    slug: "1shares-21btc",
+    slug: "21shares-21btc",
     title: "21 Shares BTC",
     entityType: EntityType.ReserveAsset,
     live: LiveStatus.Mainnet,
