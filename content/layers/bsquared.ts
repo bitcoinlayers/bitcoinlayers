@@ -131,6 +131,14 @@ const bsquared: LayerProject = {
                     title: TokenSnippet.UnderReview,
                     content: "This two-way peg is under review",
                 },
+                {
+                    name: "Xlink aBTC",
+                    infrastructureSlug: "xlink-abtc",
+                    score: 0,
+                    tier: RiskFactor.VeryHigh,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.xlink}${TokenSnippet.smartcontractreview}.`,
+                },
             ],
         },
         {

@@ -81,6 +81,14 @@ const corn: LayerProject = {
                     content: TokenSnippet.BTCN,
                 },
                 {
+                    name: "Lombard LBTC",
+                    infrastructureSlug: "lombard-lbtc",
+                    score: 0,
+                    tier: RiskFactor.UnderReview,
+                    title: TokenSnippet.FederationPeg,
+                    content: `${TokenSnippet.LombardLBTC}\n\n${TokenSnippet.smartcontractreview}`,
+                },
+                {
                     name: "Solv SolvBTC",
                     infrastructureSlug: "solv-solvbtc",
                     score: 0,

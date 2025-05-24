@@ -74,6 +74,14 @@ const bevm: LayerProject = {
                     content:
                         "On BEVM's official bridge, BTC is locked in a bitcoin address controlled by up to 15 trustees. These trustees custody the BTC that backs wBTC on BEVM.\n\nTrustees are selected by BEVM's validator set. Users trust that the trustees will not steal their BTC.\n\n🔬We are currently reviewing if the signers for the BEVM two-way peg are publicly disclosed.",
                 },
+                {
+                    name: "Lorenzo stBTC",
+                    infrastructureSlug: "lorenzo-stbtc",
+                    score: 0,
+                    tier: RiskFactor.VeryHigh,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.LorenzostBTC}\n\n${TokenSnippet.smartcontractreview}`,
+                },
             ],
         },
         {

@@ -145,6 +145,22 @@ const base: LayerProject = {
                     title: TokenSnippet.CustodianDerivative,
                     content: `${TokenSnippet.xSolvBTC}\n\n${TokenSnippet.smartcontractreview}`,
                 },
+                {
+                    name: "Rootstock RBTC",
+                    infrastructureSlug: "rootstock-rbtc",
+                    score: 0,
+                    tier: RiskFactor.UnderReview,
+                    title: TokenSnippet.UnderReview,
+                    content: `${TokenSnippet.RootstockRBTC}${TokenSnippet.smartcontractreview}.`,
+                },
+                {
+                    name: "Xlink aBTC",
+                    infrastructureSlug: "xlink-abtc",
+                    score: 0,
+                    tier: RiskFactor.UnderReview,
+                    title: TokenSnippet.UnderReview,
+                    content: `${TokenSnippet.xlink}${TokenSnippet.smartcontractreview}.`,
+                },
             ],
         },
         {

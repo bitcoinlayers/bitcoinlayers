@@ -119,6 +119,22 @@ const merlin: LayerProject = {
                     title: TokenSnippet.UnderReview,
                     content: TokenSnippet.SolvBTCENA,
                 },
+                {
+                    name: "Xlink aBTC",
+                    infrastructureSlug: "xlink-abtc",
+                    score: 0,
+                    tier: RiskFactor.VeryHigh,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.xlink}${TokenSnippet.smartcontractreview}.`,
+                },
+                {
+                    name: "Merlin wBTC",
+                    infrastructureSlug: "merlin-wbtc",
+                    score: 0,
+                    tier: RiskFactor.UnderReview,
+                    title: TokenSnippet.UnderReview,
+                    content: `${TokenSnippet.UnderReview}`,
+                },
             ],
         },
         {

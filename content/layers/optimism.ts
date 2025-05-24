@@ -109,6 +109,22 @@ const optimism: LayerProject = {
                     title: TokenSnippet.UnderReview,
                     content: `${TokenSnippet.UnderReview}\n\n${TokenSnippet.smartcontractreview}`,
                 },
+                {
+                    name: "Avalanche BTC.b",
+                    infrastructureSlug: "avalanche-btcb",
+                    score: 0,
+                    tier: RiskFactor.UnderReview,
+                    title: TokenSnippet.FederationPeg,
+                    content: `${TokenSnippet.AvalancheBTCb}\n\n${TokenSnippet.smartcontractreview}`,
+                },
+                {
+                    name: "iBTC",
+                    infrastructureSlug: "ibtcnetwork-ibtc",
+                    score: 0,
+                    tier: RiskFactor.UnderReview,
+                    title: TokenSnippet.UnderReview,
+                    content: TokenSnippet.ibtcnetworkibtc,
+                },
             ],
         },
         {
