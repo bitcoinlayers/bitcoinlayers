@@ -65,9 +65,9 @@ const solvsolvbtccore: InfrastructureProject = {
                 category: AssessmentCategory.AssetCustody,
                 score: 0,
                 tier: "",
-                title: "This peg is under review.",
+                title: "Users trust custodians managing BTC backing SolvBTC and the operators of various BTC-derivative assets.",
                 content:
-                    "This peg is under review.",
+                    "SolvBTC claims to be partially backed by native BTC managed by custodian providers. It’s been stated that Copper, Ceffu, Fireblocks, and Cobo are custodial providers securing BTC that partially backs SolvBTC. SolvBTC is additionally backed by various BTC-derivative assets; M-BTC, BTCB, wBTC, FBTC, cbBTC, BTC.b, and tBTC.\n\nWe are reviewing if SolvBTC.CORE is natively minted or bridged from another chain.",
             },
         ],
 };
