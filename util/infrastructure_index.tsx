@@ -133,7 +133,6 @@ export const allInfrastructures: InfrastructureProject[] = [
     // bvm,
     // avail,
     // astria,
-    babylonbtc,
     solv,
     xsolvbtc,
     solvena,

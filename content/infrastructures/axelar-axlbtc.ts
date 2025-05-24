@@ -11,7 +11,7 @@ import {
 
 const axelaraxlbtc: InfrastructureProject = {
     type: Type.Infrastructure,
-    slug: "axelar-axlbtc",
+    slug: "axelar",
     title: "Axelar axlBTC",
     entityType: EntityType.ReserveAsset,
     live: LiveStatus.Mainnet,
