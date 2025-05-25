@@ -84,9 +84,9 @@ const liquid: LayerProject = {
         {
             category: RiskCategory.DataAvailability,
             score: 0,
-            tier: RiskFactor.Medium,
-            title: "Data is stored and made available by Liquid full nodes. Anyone can run a Liquid full node",
-            content: `${ReviewSnippet.DAConsensusNetwork}\n\nHowever, node operators connect to the network through “bridge nodes” that are run by permissioned actors. Access to bridge nodes can be cut off should these actors (roughly 65) not provide access.`
+            tier: RiskFactor.High,
+            title: "Data is stored and made available by Liquid full nodes. Full nodes must connect to the network via permissioned entities",
+            content: `${ReviewSnippet.DAConsensusNetwork}\n\nLiquid full nodes must connect to bridge nodes to be able to participate in the network. [Bridge nodes](https://docs.liquid.net/docs/technical-overview#general-public) are run by Liquid federation members`
         },
         {
             category: RiskCategory.NetworkOperators,
