@@ -87,6 +87,14 @@ const template: LayerProject = {
                     score: 0,
                     tier: RiskFactor.High,
                     title: "For other titles, just use TokenSnippet.PegType as shown in the example below.",
+                    content: `${TokenSnippet.ThresholdtBTC}\n\n${TokenSnippet.smartcontractreview}\n\n`,
+                },
+                {
+                    name: "Threshold tBTC",
+                    infrastructureSlug: "threshold-tbtc",
+                    score: 0,
+                    tier: RiskFactor.High,
+                    title: "For other titles, just use TokenSnippet.PegType as shown in the example below.",
                     content: `${TokenSnippet.ThresholdtBTC}\n\n${TokenSnippet.smartcontractreview}\n\nUse the smart contract review field to highlight that the asset may have additional trust assumptions if it's bridged across chains. You can also use text to describe additional trust assumptions.`,
                 },
                 {

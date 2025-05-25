@@ -97,6 +97,14 @@ const core: LayerProject = {
                     title: "Users trust custodians and various onchain contracts. We have not reviewed the contract implementations for this chain",
                     content: TokenSnippet.SolvBTC,
                 },
+                                {
+                    name: "SolvBTC.CORE",
+                    infrastructureSlug: "solv-solvbtccore",
+                    score: 0,
+                    tier: RiskFactor.High,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.SolvsolvbtcCORE}\n\n${TokenSnippet.smartcontractreview}`,
+                },
                 {
                     name: "Binance BTCB",
                     infrastructureSlug: "binance-btcb",

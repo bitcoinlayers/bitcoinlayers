@@ -91,7 +91,7 @@ const polygon: LayerProject = {
                     infrastructureSlug: "avalanche-btcb",
                     score: 0,
                     tier: RiskFactor.UnderReview,
-                    title: TokenSnippet.UnderReview,
+                    title: TokenSnippet.FederationPeg,
                     content: `${TokenSnippet.AvalancheBTCb}\n\n${TokenSnippet.smartcontractreview},`
                 },
             ],

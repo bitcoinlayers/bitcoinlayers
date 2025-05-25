@@ -117,7 +117,7 @@ const avalanche: LayerProject = {
                     score: 0,
                     tier: RiskFactor.UnderReview,
                     title: TokenSnippet.UnderReview,
-                    content: TokenSnippet.ibtcnetworkibtc,
+                    content: `${TokenSnippet.iBTC}\n\n${TokenSnippet.smartcontractreview}\n\n`,
                 },
             ],
         },

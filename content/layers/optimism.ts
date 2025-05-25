@@ -102,14 +102,6 @@ const optimism: LayerProject = {
                     content: `${TokenSnippet.BedrockUniBTC}\n\n${TokenSnippet.smartcontractreview}`,
                 },
                 {
-                    name: "Synths sBTC",
-                    infrastructureSlug: "synths-sbtc",
-                    score: 0,
-                    tier: RiskFactor.UnderReview,
-                    title: TokenSnippet.UnderReview,
-                    content: `${TokenSnippet.UnderReview}\n\n${TokenSnippet.smartcontractreview}`,
-                },
-                {
                     name: "Avalanche BTC.b",
                     infrastructureSlug: "avalanche-btcb",
                     score: 0,
@@ -122,8 +114,16 @@ const optimism: LayerProject = {
                     infrastructureSlug: "ibtcnetwork-ibtc",
                     score: 0,
                     tier: RiskFactor.UnderReview,
+                    title: TokenSnippet.VariousCustodianPeg,
+                    content: `${TokenSnippet.iBTC}\n\n${TokenSnippet.smartcontractreview}\n\n`
+                },
+                                {
+                    name: "Synths sBTC",
+                    infrastructureSlug: "synths-sbtc",
+                    score: 0,
+                    tier: RiskFactor.UnderReview,
                     title: TokenSnippet.UnderReview,
-                    content: TokenSnippet.ibtcnetworkibtc,
+                    content: `${TokenSnippet.UnderReview}\n\n${TokenSnippet.smartcontractreview}`,
                 },
             ],
         },

@@ -142,9 +142,9 @@ const arbitrum: LayerProject = {
                     name: "iBTC",
                     infrastructureSlug: "ibtcnetwork-ibtc",
                     score: 0,
-                    tier: RiskFactor.UnderReview,
-                    title: TokenSnippet.UnderReview,
-                    content: `${TokenSnippet.ibtcnetworkibtc}\n\n${TokenSnippet.smartcontractreview}`,
+                    tier: RiskFactor.High,
+                    title: TokenSnippet.VariousCustodianPeg,
+                    content: `${TokenSnippet.iBTC}\n\n${TokenSnippet.smartcontractreview}`,
                 },
                 {
                     name: "Avalanche BTCb",
