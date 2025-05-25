@@ -11,7 +11,7 @@ import {
 
 const hyperliquidbtc: InfrastructureProject = {
     type: Type.Infrastructure,
-    slug: "hyperliquid-btc",
+    slug: "unit-ubtc",
     title: "Hyperliquid BTC",
     entityType: EntityType.ReserveAsset,
     live: LiveStatus.Mainnet,

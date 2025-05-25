@@ -76,7 +76,7 @@ const hyperliquid: LayerProject = {
             pegs: [
                 {
                     name: "Hyperliquid BTC",
-                    infrastructureSlug: "hyperliquid-btc",
+                    infrastructureSlug: "unit-ubtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: TokenSnippet.FederationPeg,
