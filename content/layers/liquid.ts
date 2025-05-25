@@ -98,9 +98,9 @@ const liquid: LayerProject = {
         {
             category: RiskCategory.FinalityGuarantees,
             score: 0,
-            tier: RiskFactor.Medium,
+            tier: RiskFactor.High,
             title: "Liquid blocks are finalized via Liquid full nodes",
-            content: ReviewSnippet.AltL1FinalityFederatedFullNode,
+            content: `${ReviewSnippet.AltL1FinalityFederatedFullNode}\n\nLiquid full nodes must connect to bridge nodes to be able to participate in the network. [Bridge nodes](https://docs.liquid.net/docs/technical-overview#general-public) are run by Liquid federation members.`,
         },
     ],
     sections: [
