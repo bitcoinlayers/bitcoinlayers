@@ -65,6 +65,8 @@ import badgerebtc from "@/content/infrastructures/badger-ebtc";
 import mantambtc from "@/content/infrastructures/manta-mbtc";
 import zueszbtc from "@/content/infrastructures/zues-zbtc";
 import lorenzoenzobtc from "@/content/infrastructures/lorenzo-enzobtc";
+import OsmosisBTC from "@/content/infrastructures/osmosis-osmobtc";
+import osmosis from "@/content/layers/osmosis";
 
 const astria: InfrastructureProject = astriaProject;
 const avail: InfrastructureProject = availProject;
@@ -177,6 +179,7 @@ export const allInfrastructures: InfrastructureProject[] = [
     mantambtc,
     zueszbtc,
     lorenzoenzobtc,
+    OsmosisBTC,
 ];
 
 export const allInfrastructureSlugs: string[] = allInfrastructures.map(
