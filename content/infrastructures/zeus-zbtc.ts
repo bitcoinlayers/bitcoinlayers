@@ -11,8 +11,8 @@ import {
 
 const zueszbtc: InfrastructureProject = {
     type: Type.Infrastructure,
-    slug: "zues-zbtc",
-    title: "Zues zBTC",
+    slug: "zeus-zbtc",
+    title: "Zeus zBTC",
     entityType: EntityType.ReserveAsset,
     live: LiveStatus.Mainnet,
     staking: false,
