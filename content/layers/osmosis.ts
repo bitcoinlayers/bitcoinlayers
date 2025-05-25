@@ -12,6 +12,7 @@ import {
     RiskCategory,
     ReviewSnippet,
     BitcoinSecuritySnippet,
+    TokenSnippet,
 } from "../props";
 
 const osmosis: LayerProject = {
@@ -74,8 +75,7 @@ const osmosis: LayerProject = {
                     score: 0,
                     tier: RiskFactor.UnderReview,
                     title: "BTC on Osmosis is backed by several reserve assets",
-                    content:
-                        "BTC on Osmosis is backed by a number of collateral assets; WBTC.eth.axl, wBTC, nBTC, ckBTC, and cbBTC.axl.",
+                    content: TokenSnippet.OsmosisBTC,
                 },
             ],
         },

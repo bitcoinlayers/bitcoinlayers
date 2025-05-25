@@ -169,6 +169,8 @@ export enum TokenSnippet { //TODO: Janusz to add more here
     ZueszBTC = "zBTC has a group of guardians securing the BTC that backs zBTC. This BTC is dispersed across a number of individual addresses, meaning that each custodian custodies a subset of funds in isolation of other custodians. Users should be aware of which custodian custodies the funds backing zBTC when using the network.",
     MantamBTC = "mBTC is backed by [BitGo wBTC](https://www.bitcoinlayers.org/infrastructure/bitgo-wbtc) and [Binance BTCB](https://www.bitcoinlayers.org/infrastructure/binance-btcb). When users exchange these funds for mBTC, reserve assets are secured by vaults managed by Ceffu, an centralized institution.",
     SolvsolvbtcCORE = `${TokenSnippet.SolvBTC}\n\nWe are reviewing if SolvBTC.CORE is natively minted or bridged from another chain.`,
+    BitLayerwBTC = "Bitlayer's current BTC bridge is a federated two-way peg with institutional signers. Bitlayer is working with multiple MPC custody platforms.\n\nUsers do not custody bitcoin assets backing tokens on Bitlayer.\n\nNote that we are unable to verify the participants in this model",
+    OsmosisBTC = "BTC on Osmosis is backed by a number of collateral assets; WBTC.eth.axl, wBTC, nBTC, ckBTC, and cbBTC.axl.",
     smartcontractreview = "This token's trust asssumptions change across chains. We are reviewing the specific smart contracts related to this two-way peg. The relevant token contract is listed in the bottom of the review.",
     TemplateBTC = "This is a fake prop used for the template file.",
 }
@@ -238,6 +240,7 @@ export enum BitcoinSecuritySnippet { //TODO: Janusz to add more here
     CheckpointCometBFT = "The network's security is independent of bitcoin and reliant on its own proof-of-stake mechanism.\n\nIts checkpoint mechanism does provide security against long-range attacks, enabling more secure light clients and shorter unbonding periods for validators.",
     FeesPOSCheckpoint = "Periodic checkpoint transactions are made that pay fees to bitcoin miners.",
     MergeMineDA = "The network's data availability layer is merge-mined by bitcoin miners.",
+    MergeMine = "The network is merge-mined by bitcoin miners.",
     MergeMineDAFees = "Fees from securing the network's data availability are paid to Bitcoin miners who optionally merge-mine the network.",
     MergeMineFees = "Fees from securing the network's are paid to Bitcoin miners who optionally merge-mine the network.",
     MergeMineMEV = "The network does not leak MEV to bitcoin. Bitcoin miners may take advantage of opportunities to extract MEV if the network is experiencing high activity.",
