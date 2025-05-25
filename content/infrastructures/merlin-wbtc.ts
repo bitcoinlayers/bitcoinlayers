@@ -65,9 +65,9 @@ const merlinwbtc: InfrastructureProject = {
                 category: AssessmentCategory.AssetCustody,
                 score: 0,
                 tier: "",
-                title: "This peg is under review.",
+                title: "Merlin works with Cobo, a centralized institution, on securing funds backing Merlin wBTC",
                 content:
-                    "This peg is under review.",
+                    "BTC backing Merlin wBTC is likely secured by Cobo, a centralized institution. When users deposit BTC into the Merlin Chain bridge, they are depositing funds into custodian addresses managed by Cobo.",
             },
         ],
 };

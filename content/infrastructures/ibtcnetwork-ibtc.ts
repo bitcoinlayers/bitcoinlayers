@@ -65,9 +65,9 @@ const ibtcnetworkibtc: InfrastructureProject = {
                             category: AssessmentCategory.AssetCustody,
                             score: 0,
                             tier: "",
-                            title: "This peg is under review.",
+                            title: "Institutions lock their funds into a 2-2 multisig with iBTC's attestor network",
                             content:
-                                "This peg is under review.",
+                                "BTC backing iBTC is secured by numerous 2-2 multisigs between institutions and iBTC's attestor network. iBTC network's attestor network has a 2/3s majority signing threshold and uses FROST to produce valid signatures to co-sign movement of funds related to iBTC BTC multisigs.\n\nUsers who acquire iBTC in onchains market trust that their tokens will remain backed by institutions supplying liquidity.",
                         },
                     ],
 };

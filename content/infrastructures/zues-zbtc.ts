@@ -47,7 +47,7 @@ const zueszbtc: InfrastructureProject = {
             url: "",
         },
     ],
-    description: "Zeus zBTC is a BTC wrapped asset. It is under review.",
+    description: "Zeus zBTC is a wrapped BTC asset on Solana. Funds backing zBTC are secured in individual instances by custodian partners.",
     sections: [
         {
             id: "selfsubmit",
@@ -65,9 +65,9 @@ const zueszbtc: InfrastructureProject = {
                 category: AssessmentCategory.AssetCustody,
                 score: 0,
                 tier: "",
-                title: "This peg is under review.",
+                title: "Funds backing zBTC are secured by a number custodians individually",
                 content:
-                    "This peg is under review.",
+                    "zBTC has a group of guardians securing the BTC that backs zBTC. This BTC is dispersed across a number of individual addresses, meaning that each custodian custodies a subset of funds in isolation of other custodians. Users should be aware of which custodian custodies the funds backing zBTC when using the network.",
             },
         ],
 };

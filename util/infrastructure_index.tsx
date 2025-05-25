@@ -171,7 +171,6 @@ export const allInfrastructures: InfrastructureProject[] = [
     solvsolvbtccore,
     bedrockbrbtc,
     hemihemibtc,
-    axelaraxlbtc,
     merlinwbtc,
     twentyonesharesbtc,
     badgerebtc,

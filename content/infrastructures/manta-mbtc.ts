@@ -47,7 +47,7 @@ const mantambtc: InfrastructureProject = {
             url: "",
         },
     ],
-    description: "Manta mBTC is a BTC wrapped asset. It is under review.",
+    description: "Manta mBTC is a wrapped BTC asset available on various networks. It is backed by other wrapped BTC assets.",
     sections: [
         {
             id: "selfsubmit",
@@ -65,9 +65,9 @@ const mantambtc: InfrastructureProject = {
                 category: AssessmentCategory.AssetCustody,
                 score: 0,
                 tier: "",
-                title: "This peg is under review.",
+                title: "mBTC is backed by other wrapped assets. Funds backing mBTC are secured by Ceffu, a centralized institution",
                 content:
-                    "This peg is under review.",
+                    "mBTC is backed by [BitGo wBTC](https://www.bitcoinlayers.org/infrastructure/bitgo-wbtc) and [Binance BTCB](https://www.bitcoinlayers.org/infrastructure/binance-btcb). When users exchange these funds for mBTC, reserve assets are secured by vaults managed by Ceffu, an centralized institution.\n\n[Source](https://mantanetwork.medium.com/manta-cedefi-boosting-yield-and-security-4728b723be69)",
             },
         ],
 };
