@@ -171,6 +171,7 @@
         --chart-starknet: 240 46% 30%;
         --chart-taiko: 350 46% 30%;
         --chart-hemi: 54 82% 53%;
+        --chart-fractal: 40 78% 47%;
         /* Wrappers */
         /* LSTs */
         --chart-lombard-lbtc: 172 62% 51%;
@@ -229,6 +230,7 @@
         --chart-zeta-btcbtc: 165 92% 16%;
         --chart-zeus-zbtc: 301 97% 76%;
         --chart-unit-ubtc: 166 94% 79%;
+        --chart-simple-sbtc: 40 78% 47%;
         /* Staking */
         --chart-babylon-staked-btc: 27 100% 24%;
         --chart-core-staked-btc: 20 100% 67%;
