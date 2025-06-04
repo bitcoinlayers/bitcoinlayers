@@ -11,23 +11,32 @@ import {
     ContentSection,
     RiskCategory,
     TokenSnippet,
+    ReviewSnippet,
+    BitcoinSecuritySnippet,
+    TechnologySnippet,
+    UseCaseSnippet,
 } from "../props";
 
 const mezo: LayerProject = {
     type: Type.Layer,
     slug: "mezo",
     title: "Mezo",
-    entityType: EntityType.Sidechain,
+    entityType: EntityType.AltL1,
     entityCategory: EntityCategory.Alt,
-    live: LiveStatus.Announced,
+    live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
     bridge: false,
-    underReview: true,
-    riskFactors: ["", "", "", ""],
+    underReview: false,
+    riskFactors: [
+        RiskFactor.UnderReview,
+        RiskFactor.High,
+        RiskFactor.High,
+        RiskFactor.High,
+    ],
     btcLocked: 0,
-    nativeToken: "MEZO",
-    feeToken: "-",
+    nativeToken: "mezotBTC",
+    feeToken: "mezotBTC",
     notice: undefined,
     bitcoinOnly: false,
     links: [
@@ -37,11 +46,11 @@ const mezo: LayerProject = {
         },
         {
             text: Site.Docs,
-            url: "https://info.mezo.org",
+            url: "https://mezo.org/docs/users/",
         },
         {
             text: Site.Explorer,
-            url: "https://explorer.test.mezo.org",
+            url: "https://explorer.mezo.org",
         },
         {
             text: Site.Twitter,
@@ -49,7 +58,7 @@ const mezo: LayerProject = {
         },
     ],
     description:
-        "Mezo is building a general purpose sidechain protocol that will support general purpose applications. It will run a CometBFT consensus protocol that is secured by staking BTC and the Mezo token. It will use tBTC for its Bitcoin bridge.",
+        "Mezo is an EVM-compatible blockchain that supports general purpose onchain applications. It runs on CometBFT consensus protocol and is operated by a federated validator set. Its official bridge is supports briding tBTC from Ethereum to Mezo.",
     riskAnalysis: [
         {
             category: RiskCategory.BtcCustody,
@@ -57,38 +66,79 @@ const mezo: LayerProject = {
             tier: "",
             title: "",
             content: "",
-            pegs: [],
+            pegs: [
+                {
+                    name: "Threshold tBTC",
+                    infrastructureSlug: "threshold-tbtc",
+                    score: 0,
+                    tier: RiskFactor.UnderReview,
+                    title: TokenSnippet.FederationPeg,
+                    content: `${TokenSnippet.ThresholdtBTC}\n\nThis Mezo bridge is a escrow contract on Ethereum that holds various BTC-backed assets. The brideg is upgradeable by a 9 member federation. 5 signers are needed to initaite upgrades.`,
+                },
+            ],
         },
         {
             category: RiskCategory.DataAvailability,
             score: 0,
-            tier: "",
-            title: "",
-            content: "",
+            tier: RiskFactor.High,
+            title: "Data related to the Mezo network is made available by its validator set",
+            content: ReviewSnippet.DAFederation,
         },
         {
             category: RiskCategory.BlockProduction,
             score: 0,
-            tier: "",
-            title: "",
-            content: "",
+            tier: RiskFactor.High,
+            title: "The Mezo network is operated by a federated validator set",
+            content: ReviewSnippet.OperatorFederated,
         },
         {
             category: RiskCategory.StateValidation,
             score: 0,
-            tier: "",
-            title: "",
-            content: "",
+            tier: RiskFactor.High,
+            title: "Finality guarantees are provided through a federation. Mezo blocks cannot be reorged after being added to the chain",
+            content: `${ReviewSnippet.CometBFTFinality}\n\nThe Mezo network is currently operated by a federated validator set. Finality assurances are provided by this federated group of operators.`,
         },
     ],
     sections: [
         {
-            id: "selfsubmit",
-            title: "Process to self-submit information",
+            id: "bitcoinsecurity",
+            title: "Bitcoin Security",
             content: [
                 {
-                    content:
-                        "The Bitcoin Layers project prioritizes risk reviews on projects that are in production and accepting users' BTC deposits. Projects on testnet are welcome to submit information about their project. We do not publish risk assessments for projects that are not in production.\n\nHere are the [instructions](https://github.com/bitcoinlayers/bitcoinlayers/blob/main/SELFSUBMIT.md) on self-submitting a project.",
+                    title: "Mezo does not inherit any security from Bitcoin",
+                    content: BitcoinSecuritySnippet.NoSecurity,
+                },
+                {
+                    title: "A wrapped BTC token used to pay fees",
+                    content: BitcoinSecuritySnippet.WrappedTokenFees,
+                },
+                {
+                    title: "No MEV introduced to Bitcoin",
+                    content: BitcoinSecuritySnippet.AltNetworkMEV,
+                },
+                {
+                    title: "Mezo does not contribute to the security budget",
+                    content: BitcoinSecuritySnippet.NoSecurityBudget,
+                },
+            ],
+        },
+        {
+            id: "technology",
+            title: "Technology",
+            content: [
+                {
+                    title: "EVM-Compatible",
+                    content: TechnologySnippet.EVM,
+                },
+            ],
+        },
+        {
+            id: "usecases",
+            title: "Use Cases",
+            content: [
+                {
+                    title: "Onchain applications",
+                    content: UseCaseSnippet.OnchainApps,
                 },
             ],
         },

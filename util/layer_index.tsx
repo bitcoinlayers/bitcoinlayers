@@ -14,7 +14,6 @@ import merlinProject from "../content/layers/merlin";
 import rolluxProject from "../content/layers/rollux";
 import bitlayerProject from "../content/layers/bitlayer";
 import sideProject from "../content/layers/side";
-import mezoProject from "../content/layers/mezo";
 import nomicProject from "../content/layers/nomic";
 import fractalProject from "../content/layers/fractal";
 import bitfinityProject from "../content/layers/bitfinity";
@@ -44,6 +43,7 @@ import osmosisProject from "../content/layers/osmosis";
 import berachainProject from "../content/layers/berachain";
 import sonicProject from "../content/layers/sonic";
 import hyperliquidProject from "@/content/layers/hyperliquid";
+import mezoProject from "@/content/layers/mezo";
 
 const core: LayerProject = coreProject;
 const internetcomputer: LayerProject = internetcomputerProject;
