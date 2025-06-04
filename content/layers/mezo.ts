@@ -85,14 +85,14 @@ const mezo: LayerProject = {
             content: ReviewSnippet.DAFederation,
         },
         {
-            category: RiskCategory.BlockProduction,
+            category: RiskCategory.NetworkOperators,
             score: 0,
             tier: RiskFactor.High,
             title: "The Mezo network is operated by a federated validator set",
             content: ReviewSnippet.OperatorFederated,
         },
         {
-            category: RiskCategory.StateValidation,
+            category: RiskCategory.FinalityGuarantees,
             score: 0,
             tier: RiskFactor.High,
             title: "Finality guarantees are provided through a federation. Mezo blocks cannot be reorged after being added to the chain",
