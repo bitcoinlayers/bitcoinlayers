@@ -245,23 +245,23 @@ const LayerTable = ({ data, headers }: Props) => {
                                     key={item.slug}
                                 >
                                     <td className="lg:px-6 px-4 py-4 font-semibold whitespace-nowrap">
-                                        <div className="flex items-center space-x-2">
+                                        <div className="flex items-center space-x-2 max-w-[200px] lg:max-w-[250px]">
                                             <Link
                                                 href={`/layers/${item.slug}`}
-                                                className="flex items-center"
+                                                className="flex items-center min-w-0 flex-1"
                                             >
                                                 <LayerImage
                                                     src={`/logos/${item.slug.toLowerCase()}.png`}
                                                     title={item.title}
                                                 />
-                                                <span className="ml-2 truncate lg:word-break-none">
+                                                <span className="ml-2 truncate">
                                                     {item.title}
                                                 </span>
                                             </Link>
                                             {item.notice && (
-                                                <NoticeSnapshotDialog
-                                                    layer={item}
-                                                />
+                                                <div className="flex-shrink-0">
+                                                    <NoticeSnapshotDialog layer={item} />
+                                                </div>
                                             )}
                                         </div>
                                     </td>
