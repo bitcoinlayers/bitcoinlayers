@@ -35,8 +35,8 @@ const mezo: LayerProject = {
         RiskFactor.High,
     ],
     btcLocked: 0,
-    nativeToken: "mezotBTC",
-    feeToken: "mezotBTC",
+    nativeToken: "tBTC",
+    feeToken: "tBTC",
     notice: undefined,
     bitcoinOnly: false,
     links: [
