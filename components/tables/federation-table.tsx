@@ -348,6 +348,7 @@ const FederationTable = ({ data, headers }: Props) => {
                                                             item.slug.toLowerCase()
                                                         ] || []
                                                     }
+                                                    tokenSlug={item.slug}
                                                 />
                                             )}
                                         </td>
