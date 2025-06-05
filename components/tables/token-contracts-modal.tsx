@@ -20,7 +20,7 @@ const TokenContractsModal: React.FC<TokenContractsModalProps> = ({
     const [showAll, setShowAll] = useState(false);
     const [open, setOpen] = useState(false);
 
-    // Always show all contracts when showAll is true, but limit to 4 initially
+    // Show only first 4 contracts initially, then all when showAll is true
     const displayedContracts = showAll ? contracts : contracts.slice(0, 4);
     const remainingCount = contracts.length - 4;
 
@@ -98,7 +98,16 @@ const TokenContractsModal: React.FC<TokenContractsModalProps> = ({
                         }}
                     >
                         {/* Title text */}
-                        <div className="text-xl font-medium text-text_header">
+                        <div
+                            style={{
+                                color: "var(--text-header-off-grey-950, #292929)",
+                                fontFamily: "Public Sans",
+                                fontSize: "20px",
+                                fontStyle: "normal",
+                                fontWeight: 500,
+                                lineHeight: "28px",
+                            }}
+                        >
                             {title}
                         </div>
 
@@ -145,7 +154,19 @@ const TokenContractsModal: React.FC<TokenContractsModalProps> = ({
                                 }}
                             >
                                 {/* Network/Token name with logo */}
-                                <div className="flex items-center gap-2 text-lg font-medium text-text_primary">
+                                <div
+                                    style={{
+                                        display: "flex",
+                                        alignItems: "center",
+                                        gap: "8px",
+                                        color: "var(--text-primary-link-water-900, #434D65)",
+                                        fontFamily: "Public Sans",
+                                        fontSize: "18px",
+                                        fontStyle: "normal",
+                                        fontWeight: 500,
+                                        lineHeight: "28px",
+                                    }}
+                                >
                                     <ImageWithFallback
                                         slug={type === "tokens" ? contract.token_slug : contract.network_slug}
                                         folder="logos"
@@ -156,12 +177,30 @@ const TokenContractsModal: React.FC<TokenContractsModalProps> = ({
                                     {getDisplayName(contract)}
                                 </div>
 
-                                {/* Contract address */}
+                                {/* Contract address - CHANGED TO PUBLIC SANS */}
                                 <a
                                     href={getContractUrl(contract)}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="flex items-center gap-2 text-base font-normal font-hack text-text_primary no-underline hover:underline cursor-pointer"
+                                    style={{
+                                        display: "flex",
+                                        alignItems: "center",
+                                        gap: "8px",
+                                        color: "var(--text-primary-link-water-900, #434D65)",
+                                        fontFamily: "Public Sans", // CHANGED FROM "Hack" TO "Public Sans"
+                                        fontSize: "16px",
+                                        fontStyle: "normal",
+                                        fontWeight: 400,
+                                        lineHeight: "normal",
+                                        textDecoration: "none",
+                                        cursor: "pointer",
+                                    }}
+                                    onMouseEnter={(e) => {
+                                        e.currentTarget.style.textDecoration = "underline";
+                                    }}
+                                    onMouseLeave={(e) => {
+                                        e.currentTarget.style.textDecoration = "none";
+                                    }}
                                 >
                                     {getDisplayAddress(contract)}
                                     <ExternalLink size={16} />
@@ -171,7 +210,26 @@ const TokenContractsModal: React.FC<TokenContractsModalProps> = ({
 
                         {/* Show more button */}
                         {!showAll && remainingCount > 0 && (
-                            <button className="bg-transparent border-none cursor-pointer text-sm font-medium text-text_secondary underline">
+                            <button
+                                onClick={() => setShowAll(true)}
+                                style={{
+                                    background: "none",
+                                    border: "none",
+                                    cursor: "pointer",
+                                    color: "var(--text-secondary-storm-gray-700, #767B8F)",
+                                    fontFamily: "Public Sans",
+                                    fontSize: "14px",
+                                    fontStyle: "normal",
+                                    fontWeight: 500,
+                                    lineHeight: "20px",
+                                    textDecorationLine: "underline",
+                                    textDecorationStyle: "solid",
+                                    textDecorationSkipInk: "none",
+                                    textDecorationThickness: "auto",
+                                    textUnderlineOffset: "auto",
+                                    textUnderlinePosition: "from-font",
+                                }}
+                            >
                                 Show {remainingCount} more addresses
                             </button>
                         )}
