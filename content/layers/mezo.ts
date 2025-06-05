@@ -34,7 +34,7 @@ const mezo: LayerProject = {
         RiskFactor.High,
         RiskFactor.High,
     ],
-    btcLocked: NaN,
+    btcLocked: 0,
     nativeToken: "mezotBTC",
     feeToken: "mezotBTC",
     notice: undefined,
