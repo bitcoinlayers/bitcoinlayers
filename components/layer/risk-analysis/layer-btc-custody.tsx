@@ -74,7 +74,7 @@ const BtcCustody: React.FC<BtcCustodyProps> = ({ category, pegs = [] }) => {
             <g opacity="0.5">
                 <path 
                     d="M4.31226 6.6875L8.31226 10.6875L12.3123 6.6875" 
-                    stroke="#18181B" 
+                    stroke="currentColor" 
                     strokeWidth="1.33" 
                     strokeLinecap="round" 
                     strokeLinejoin="round"
@@ -95,12 +95,11 @@ const BtcCustody: React.FC<BtcCustodyProps> = ({ category, pegs = [] }) => {
                     {/* Dropdown positioned below the title */}
                     {pegs.length > 0 ? (
                         <div className="relative" ref={dropdownRef}>
-                            {/* Dropdown Button */}
+                            {/* Dropdown Button - now uses foreground color */}
                             <button
                                 onClick={toggleDropdown}
-                                className="flex items-center gap-2 cursor-pointer"
+                                className="flex items-center gap-2 cursor-pointer text-foreground"
                                 style={{
-                                    color: '#292929',
                                     fontFamily: 'Public Sans',
                                     fontSize: '20px',
                                     fontWeight: 500,
@@ -111,10 +110,10 @@ const BtcCustody: React.FC<BtcCustodyProps> = ({ category, pegs = [] }) => {
                                 <ChevronDownIcon />
                             </button>
 
-                            {/* Enhanced Dropdown - positioned right below button */}
+                            {/* Enhanced Dropdown - now uses design system colors */}
                             {isDropdownOpen && (
                                 <div 
-                                    className="absolute z-10"
+                                    className="absolute z-10 bg-popover border border-border rounded-lg shadow-md"
                                     style={{
                                         display: 'flex',
                                         width: '263px',
@@ -122,10 +121,6 @@ const BtcCustody: React.FC<BtcCustodyProps> = ({ category, pegs = [] }) => {
                                         alignItems: 'flex-start',
                                         left: '-1.312px',
                                         top: '32px',
-                                        borderRadius: '8px',
-                                        border: '1px solid #E4E4E7',
-                                        background: '#FFF',
-                                        boxShadow: '0px 4px 6px -1px rgba(0, 0, 0, 0.10), 0px 2px 4px -1px rgba(0, 0, 0, 0.06)',
                                     }}
                                 >
                                     {/* Individual Peg Options */}
@@ -133,7 +128,7 @@ const BtcCustody: React.FC<BtcCustodyProps> = ({ category, pegs = [] }) => {
                                         <button
                                             key={peg.name}
                                             onClick={() => handleSelectPeg(peg.name)}
-                                            className="w-full text-left transition-colors duration-200 hover:text-white"
+                                            className="w-full text-left transition-colors duration-200 hover:bg-brand hover:text-white text-popover-foreground"
                                             style={{
                                                 display: 'flex',
                                                 height: '56px',
@@ -144,17 +139,11 @@ const BtcCustody: React.FC<BtcCustodyProps> = ({ category, pegs = [] }) => {
                                                 gap: '10px',
                                                 alignSelf: 'stretch',
                                             }}
-                                            onMouseEnter={(e) => {
-                                                e.currentTarget.style.background = '#FE4F18';
-                                            }}
-                                            onMouseLeave={(e) => {
-                                                e.currentTarget.style.background = 'transparent';
-                                            }}
                                         >
                                             <div className="flex items-center gap-3">
-                                                {/* Icon placeholder */}
-                                                <div className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center">
-                                                    <span className="text-sm font-bold">
+                                                {/* Icon placeholder - now uses muted colors */}
+                                                <div className="w-8 h-8 rounded-full bg-muted flex items-center justify-center">
+                                                    <span className="text-sm font-bold text-muted-foreground">
                                                         {peg.name.charAt(0)}
                                                     </span>
                                                 </div>
@@ -166,7 +155,7 @@ const BtcCustody: React.FC<BtcCustodyProps> = ({ category, pegs = [] }) => {
                             )}
                         </div>
                     ) : (
-                        <p className="text-sm text-gray-500">
+                        <p className="text-sm text-muted-foreground">
                             No pegs available
                         </p>
                     )}
@@ -216,7 +205,7 @@ const BtcCustody: React.FC<BtcCustodyProps> = ({ category, pegs = [] }) => {
                         <div className="mt-2 text-right">
                             <a
                                 href={`/infrastructure/${selectedPegData.infrastructureSlug}`}
-                                className="font-semibold hover:underline flex items-center justify-end"
+                                className="font-semibold hover:underline flex items-center justify-end text-foreground"
                             >
                                 Learn more about {selectedPegData.name}
                                 <span className="ml-2">→</span>
@@ -224,7 +213,7 @@ const BtcCustody: React.FC<BtcCustodyProps> = ({ category, pegs = [] }) => {
                         </div>
                     </div>
                 ) : (
-                    <p className="text-sm text-gray-500">
+                    <p className="text-sm text-muted-foreground">
                         No peg data available
                     </p>
                 )}
