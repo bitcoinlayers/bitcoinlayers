@@ -16,7 +16,7 @@ import {
 const bsquared: LayerProject = {
     type: Type.Layer,
     slug: "bsquared",
-    title: "Bsquared Network",
+    title: "Bsquared",
     entityType: EntityType.AltRollup,
     entityCategory: EntityCategory.Sidesystem,
     live: LiveStatus.Mainnet,
