@@ -345,6 +345,13 @@ export enum DefinitionSnippet { //TODO: Janusz to add more here
     DefinitionAltRollup = "The network is an alternative rollup. It uses an alternative network for data availability and consensus. It supports a variety of BTC-backed assets.",
 }
 
+export interface ContractItem {
+    title: string;
+    address: string;
+    subtitle: string;
+    explorerUrl: string;
+}
+
 export interface Peg {
     name: string;
     infrastructureSlug: string;
@@ -413,6 +420,7 @@ export interface BaseProject {
     description: string;
     sections: ContentSection[];
     associatedLayers?: string;
+    manualContracts?: ContractItem[];
 }
 
 export interface InfrastructureProject extends BaseProject {
@@ -426,6 +434,7 @@ export interface LayerProject extends BaseProject {
     btcLocked: number;
     feeToken: string;
     riskAnalysis: RiskSection[];
+    riskSummary?: { title?: string; content: string }[];
 }
 
 export type Project = InfrastructureProject | LayerProject;

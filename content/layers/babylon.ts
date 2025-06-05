@@ -23,7 +23,7 @@ const babylon: LayerProject = {
     type: Type.Layer,
     slug: "babylon",
     title: "Babylon",
-    entityType: EntityType.Hybrid,
+    entityType: EntityType.Anchor,
     entityCategory: EntityCategory.Sidesystem,
     live: LiveStatus.Mainnet,
     staking: true,

@@ -52,6 +52,9 @@ const InfrastructureMenu: React.FC<{
                         ? [{ id: "assessment", title: "Assessment" }]
                         : []),
                     { id: "tokencontracts", title: "Token Contracts" },
+                    ...(infrastructure.manualContracts && infrastructure.manualContracts.length > 0
+                        ? [{ id: "manualcontracts", title: "Additional Contracts" }]
+                        : []),
                     ...infrastructure.sections,
                 ].map((section, index) => (
                     <div

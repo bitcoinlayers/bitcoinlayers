@@ -73,7 +73,7 @@ const mezo: LayerProject = {
                     score: 0,
                     tier: RiskFactor.UnderReview,
                     title: TokenSnippet.FederationPeg,
-                    content: `${TokenSnippet.ThresholdtBTC}\n\nThis Mezo bridge is a escrow contract on Ethereum that holds various BTC-backed assets. The brideg is upgradeable by a 9 member federation. 5 signers are needed to initaite upgrades.`,
+                    content: `${TokenSnippet.ThresholdtBTC}\n\nThis Mezo bridge is a escrow contract on Ethereum that holds various BTC-backed assets. The bridge is upgradeable by a 9 member federation. 5 signers are needed to initaite upgrades.`,
                 },
             ],
         },
