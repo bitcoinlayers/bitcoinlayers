@@ -98,16 +98,7 @@ const TokenContractsModal: React.FC<TokenContractsModalProps> = ({
                         }}
                     >
                         {/* Title text */}
-                        <div
-                            style={{
-                                color: "var(--text-header-off-grey-950, #292929)",
-                                fontFamily: "Public Sans",
-                                fontSize: "20px",
-                                fontStyle: "normal",
-                                fontWeight: 500,
-                                lineHeight: "28px",
-                            }}
-                        >
+                        <div className="text-xl font-medium text-text_header">
                             {title}
                         </div>
 
@@ -154,19 +145,7 @@ const TokenContractsModal: React.FC<TokenContractsModalProps> = ({
                                 }}
                             >
                                 {/* Network/Token name with logo */}
-                                <div
-                                    style={{
-                                        display: "flex",
-                                        alignItems: "center",
-                                        gap: "8px",
-                                        color: "var(--text-primary-link-water-900, #434D65)",
-                                        fontFamily: "Public Sans",
-                                        fontSize: "18px",
-                                        fontStyle: "normal",
-                                        fontWeight: 500,
-                                        lineHeight: "28px",
-                                    }}
-                                >
+                                <div className="flex items-center gap-2 text-lg font-medium text-text_primary">
                                     <ImageWithFallback
                                         slug={type === "tokens" ? contract.token_slug : contract.network_slug}
                                         folder="logos"
@@ -182,25 +161,7 @@ const TokenContractsModal: React.FC<TokenContractsModalProps> = ({
                                     href={getContractUrl(contract)}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    style={{
-                                        display: "flex",
-                                        alignItems: "center",
-                                        gap: "8px",
-                                        color: "var(--text-primary-link-water-900, #434D65)",
-                                        fontFamily: "Hack",
-                                        fontSize: "16px",
-                                        fontStyle: "normal",
-                                        fontWeight: 400,
-                                        lineHeight: "normal",
-                                        textDecoration: "none",
-                                        cursor: "pointer",
-                                    }}
-                                    onMouseEnter={(e) => {
-                                        e.currentTarget.style.textDecoration = "underline";
-                                    }}
-                                    onMouseLeave={(e) => {
-                                        e.currentTarget.style.textDecoration = "none";
-                                    }}
+                                    className="flex items-center gap-2 text-base font-normal font-hack text-text_primary no-underline hover:underline cursor-pointer"
                                 >
                                     {getDisplayAddress(contract)}
                                     <ExternalLink size={16} />
@@ -210,26 +171,7 @@ const TokenContractsModal: React.FC<TokenContractsModalProps> = ({
 
                         {/* Show more button */}
                         {!showAll && remainingCount > 0 && (
-                            <button
-                                onClick={() => setShowAll(true)}
-                                style={{
-                                    background: "none",
-                                    border: "none",
-                                    cursor: "pointer",
-                                    color: "var(--text-secondary-storm-gray-700, #767B8F)",
-                                    fontFamily: "Public Sans",
-                                    fontSize: "14px",
-                                    fontStyle: "normal",
-                                    fontWeight: 500,
-                                    lineHeight: "20px",
-                                    textDecorationLine: "underline",
-                                    textDecorationStyle: "solid",
-                                    textDecorationSkipInk: "none",
-                                    textDecorationThickness: "auto",
-                                    textUnderlineOffset: "auto",
-                                    textUnderlinePosition: "from-font",
-                                }}
-                            >
+                            <button className="bg-transparent border-none cursor-pointer text-sm font-medium text-text_secondary underline">
                                 Show {remainingCount} more addresses
                             </button>
                         )}
