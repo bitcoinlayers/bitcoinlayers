@@ -68,7 +68,7 @@ const TokenContractsModal: React.FC<TokenContractsModalProps> = ({
         <Dialog open={open} onOpenChange={setOpen}>
             <DialogTrigger asChild>{children}</DialogTrigger>
             <DialogContent
-                className="p-0 border-0 bg-transparent shadow-none max-w-fit"
+                className="p-0 border-0 bg-transparent shadow-none max-w-fit [&>button]:hidden"
                 style={{
                     width: "auto",
                     maxWidth: "90vw",
