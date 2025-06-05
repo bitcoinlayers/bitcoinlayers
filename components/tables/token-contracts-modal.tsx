@@ -139,7 +139,7 @@ const TokenContractsModal: React.FC<TokenContractsModalProps> = ({
                         style={{
                             display: "flex",
                             flexDirection: "column",
-                            justifyContent: "center",
+                            justifyContent: showAll ? "flex-start" : "center",
                             alignItems: "center",
                             gap: "24px",
                             alignSelf: "stretch",
@@ -147,6 +147,7 @@ const TokenContractsModal: React.FC<TokenContractsModalProps> = ({
                                 maxHeight: "400px",
                                 overflowY: "auto",
                                 paddingRight: "8px",
+                                paddingTop: "0px",
                             }),
                         }}
                         className={showAll ? "contracts-scrollable" : ""}
@@ -220,7 +221,15 @@ const TokenContractsModal: React.FC<TokenContractsModalProps> = ({
                         {/* Show more button */}
                         {!showAll && remainingCount > 0 && (
                             <button
-                                onClick={() => setShowAll(true)}
+                                onClick={() => {
+                                    setShowAll(true);
+                                    setTimeout(() => {
+                                        const scrollableElement = document.querySelector('.contracts-scrollable');
+                                        if (scrollableElement) {
+                                            scrollableElement.scrollTop = 0;
+                                        }
+                                    }, 0);
+                                }}
                                 style={{
                                     background: "none",
                                     border: "none",
