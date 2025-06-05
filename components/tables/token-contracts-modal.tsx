@@ -20,8 +20,9 @@ const TokenContractsModal: React.FC<TokenContractsModalProps> = ({
     const [showAll, setShowAll] = useState(false);
     const [open, setOpen] = useState(false);
 
-    const displayedContracts = showAll ? contracts : contracts.slice(0, 8);
-    const remainingCount = contracts.length - 8;
+    // Always show all contracts when showAll is true, but limit to 4 initially
+    const displayedContracts = showAll ? contracts : contracts.slice(0, 4);
+    const remainingCount = contracts.length - 4;
 
     const getContractUrl = (contract: ContractAddress) => {
         // Custom URL logic similar to the existing ProjectContractAddresses component
@@ -67,9 +68,9 @@ const TokenContractsModal: React.FC<TokenContractsModalProps> = ({
         <Dialog open={open} onOpenChange={setOpen}>
             <DialogTrigger asChild>{children}</DialogTrigger>
             <DialogContent
-                className="p-0 border-0 bg-transparent shadow-none max-w-none"
+                className="p-0 border-0 bg-transparent shadow-none max-w-fit"
                 style={{
-                    width: "var(--breakpoint-sm, 640px)",
+                    width: "auto",
                     maxWidth: "90vw",
                 }}
             >
@@ -84,41 +85,47 @@ const TokenContractsModal: React.FC<TokenContractsModalProps> = ({
                         flexShrink: 0,
                         borderRadius: "var(--border-radius-lg, 8px)",
                         background: "var(--bg-primary-off-grey-50, #FDFDFD)",
-                        boxShadow:
-                            "0px 10px 15px -3px rgba(0, 0, 0, 0.10), 0px 4px 6px -2px rgba(0, 0, 0, 0.05)",
+                        boxShadow: "0px 10px 15px -3px rgba(0, 0, 0, 0.10), 0px 4px 6px -2px rgba(0, 0, 0, 0.05)",
                     }}
                 >
-                    {/* Close button */}
-                    <button
-                        onClick={() => setOpen(false)}
-                        className="self-end"
-                        style={{
-                            background: "none",
-                            border: "none",
-                            cursor: "pointer",
-                            padding: "4px",
-                        }}
-                    >
-                        <X size={24} color="var(--text-primary-link-water-900, #434D65)" />
-                    </button>
-
-                    {/* Title */}
+                    {/* Title box with close button */}
                     <div
                         style={{
-                            color: "var(--text-primary-link-water-900, #434D65)",
-                            fontFamily: "Public Sans",
-                            fontSize: "18px",
-                            fontStyle: "normal",
-                            fontWeight: 500,
-                            lineHeight: "28px",
+                            display: "flex",
+                            justifyContent: "space-between",
+                            alignItems: "center",
                             alignSelf: "stretch",
-                            textAlign: "center",
                         }}
                     >
-                        {title}
+                        {/* Title text */}
+                        <div
+                            style={{
+                                color: "var(--text-header-off-grey-950, #292929)",
+                                fontFamily: "Public Sans",
+                                fontSize: "20px",
+                                fontStyle: "normal",
+                                fontWeight: 500,
+                                lineHeight: "28px",
+                            }}
+                        >
+                            {title}
+                        </div>
+
+                        {/* Close button */}
+                        <button
+                            onClick={() => setOpen(false)}
+                            style={{
+                                background: "none",
+                                border: "none",
+                                cursor: "pointer",
+                                padding: "4px",
+                            }}
+                        >
+                            <X size={24} color="var(--text-primary-link-water-900, #434D65)" />
+                        </button>
                     </div>
 
-                    {/* Token contracts container */}
+                    {/* Token addresses container */}
                     <div
                         style={{
                             display: "flex",
@@ -127,7 +134,13 @@ const TokenContractsModal: React.FC<TokenContractsModalProps> = ({
                             alignItems: "center",
                             gap: "24px",
                             alignSelf: "stretch",
+                            ...(showAll && {
+                                maxHeight: "400px",
+                                overflowY: "auto",
+                                paddingRight: "8px",
+                            }),
                         }}
+                        className={showAll ? "contracts-scrollable" : ""}
                     >
                         {displayedContracts.map((contract, index) => (
                             <div
@@ -135,8 +148,8 @@ const TokenContractsModal: React.FC<TokenContractsModalProps> = ({
                                 style={{
                                     display: "flex",
                                     flexDirection: "column",
-                                    alignItems: "center",
-                                    gap: "8px",
+                                    alignItems: "flex-start",
+                                    gap: "16px",
                                     alignSelf: "stretch",
                                 }}
                             >
@@ -221,6 +234,31 @@ const TokenContractsModal: React.FC<TokenContractsModalProps> = ({
                             </button>
                         )}
                     </div>
+
+                    {/* Add CSS for custom scrollbar styling */}
+                    <style jsx>{`
+                        .contracts-scrollable {
+                            scrollbar-width: thin;
+                            scrollbar-color: #cbd5e1 transparent;
+                        }
+                        
+                        .contracts-scrollable::-webkit-scrollbar {
+                            width: 6px;
+                        }
+                        
+                        .contracts-scrollable::-webkit-scrollbar-track {
+                            background: transparent;
+                        }
+                        
+                        .contracts-scrollable::-webkit-scrollbar-thumb {
+                            background-color: #cbd5e1;
+                            border-radius: 3px;
+                        }
+                        
+                        .contracts-scrollable::-webkit-scrollbar-thumb:hover {
+                            background-color: #94a3b8;
+                        }
+                    `}</style>
                 </div>
             </DialogContent>
         </Dialog>
