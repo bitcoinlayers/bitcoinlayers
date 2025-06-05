@@ -141,12 +141,15 @@ const BtcCustody: React.FC<BtcCustodyProps> = ({ category, pegs = [] }) => {
                                             }}
                                         >
                                             <div className="flex items-center gap-3">
-                                                {/* Icon placeholder - now uses muted colors */}
-                                                <div className="w-8 h-8 rounded-full bg-muted flex items-center justify-center">
-                                                    <span className="text-sm font-bold text-muted-foreground">
-                                                        {peg.name.charAt(0)}
-                                                    </span>
-                                                </div>
+                                                {/* Actual peg logo from logos directory */}
+                                                <img
+                                                    src={`/logos/${peg.infrastructureSlug}.png`}
+                                                    alt={peg.name}
+                                                    className="w-6 h-6 rounded-full object-cover bg-muted"
+                                                    onError={(e) => {
+                                                        (e.target as HTMLImageElement).src = '/logos/default.png';
+                                                    }}
+                                                />
                                                 <span className="font-medium">{peg.name}</span>
                                             </div>
                                         </button>
