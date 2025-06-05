@@ -125,6 +125,15 @@ const TokenContractsModal: React.FC<TokenContractsModalProps> = ({
                         </button>
                     </div>
 
+                    {/* Divider */}
+                    <div
+                        style={{
+                            width: "592px",
+                            height: "1px",
+                            background: "var(--stroke-secondary-link-water-200, #D3DDE8)",
+                        }}
+                    />
+
                     {/* Token addresses container */}
                     <div
                         style={{
