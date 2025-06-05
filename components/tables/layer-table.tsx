@@ -333,6 +333,7 @@ const LayerTable = ({ data, headers }: Props) => {
         tokens={
           tokensMap[item.slug.toLowerCase()] || []
         }
+        networkSlug={item.slug}
       />
     )}
   </td>
