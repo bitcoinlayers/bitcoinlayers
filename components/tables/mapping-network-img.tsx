@@ -11,9 +11,10 @@ const NetworkList: React.FC<NetworkListProps> = ({ networks }) => {
     }
 
     const topNetworks = networks.slice(0, 3);
+    const remainingCount = networks.length - 3;
 
     return (
-        <ul className="flex flex-wrap gap-2">
+        <ul className="flex flex-wrap gap-2 items-center">
             {topNetworks.map((network) => (
                 <li
                     key={network.network_slug}
@@ -27,6 +28,22 @@ const NetworkList: React.FC<NetworkListProps> = ({ networks }) => {
                     {/* <span>{network.network_slug}</span> */}
                 </li>
             ))}
+            {remainingCount > 0 && (
+                <li className="flex items-center">
+                    <span
+                        style={{
+                            color: "var(--text-primary-link-water-900, #434D65)",
+                            fontFamily: "Public Sans",
+                            fontSize: "12px",
+                            fontStyle: "normal",
+                            fontWeight: 400,
+                            lineHeight: "16px",
+                        }}
+                    >
+                        +{remainingCount}
+                    </span>
+                </li>
+            )}
         </ul>
     );
 };

@@ -12,9 +12,10 @@ const TokenList: React.FC<TokenListProps> = ({ tokens }) => {
     }
 
     const topTokens = tokens.slice(0, 3);
+    const remainingCount = tokens.length - 3;
 
     return (
-        <ul className="flex flex-wrap gap-2">
+        <ul className="flex flex-wrap gap-2 items-center">
             {topTokens.map((token) => (
                 <li key={token.token_slug} className="flex items-center gap-2">
                     <ImageWithFallback
@@ -25,6 +26,22 @@ const TokenList: React.FC<TokenListProps> = ({ tokens }) => {
                     {/* <span>{token.token_slug}</span> */}
                 </li>
             ))}
+            {remainingCount > 0 && (
+                <li className="flex items-center">
+                    <span
+                        style={{
+                            color: "var(--text-primary-link-water-900, #434D65)",
+                            fontFamily: "Public Sans",
+                            fontSize: "12px",
+                            fontStyle: "normal",
+                            fontWeight: 400,
+                            lineHeight: "16px",
+                        }}
+                    >
+                        +{remainingCount}
+                    </span>
+                </li>
+            )}
         </ul>
     );
 };
