@@ -61,7 +61,17 @@ const rollux: LayerProject = {
     ],
     description:
         "Rollux is an optimistic rollup that uses Syscoin, two blockchains that are simultaneously merge-mined by bitcoin miners, as its base layer for data availability and state validation respectively. It has an EVM-compatible execution environment.",
-    riskAnalysis: [
+        riskSummary: [
+            {
+                title: "Specific Risk",
+                content: "risk text explanation"
+            },
+            {
+                title: "Specific Risk",
+                content: "risk text explanation"
+            }
+        ],
+        riskAnalysis: [
         {
             category: RiskCategory.BtcCustody,
             score: 0,

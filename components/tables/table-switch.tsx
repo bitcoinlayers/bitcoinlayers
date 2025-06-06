@@ -100,9 +100,9 @@ function getSortedDataAndHeaders(view: string) {
                     filterOptions: layerTypeFilters,
                 },
                 {
-                    name: "Unit of Account",
-                    showSorting: true,
-                    mobileLabel: "Unit",
+                    name: "Risk Summary",
+                    showSorting: false,
+                    mobileLabel: "Risk",
                 },
                 {
                     name: "BTC Pegs",

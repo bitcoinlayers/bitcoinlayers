@@ -23,11 +23,13 @@ import getCurrentSuppliesByNetwork from "@/hooks/get-current-supplies-by-network
 import TokenList from "@/components/tables/mapping-token-img";
 import { EntityCategory } from "@/content/props";
 import NoticeSnapshotDialog from "../layer/notice-snapshot/notice-snapshot-dialog";
+import RiskSummaryDialog from "../layer/risk-summary-dialog";
+import NetworkTypeHoverCard from "../layer/network-type-hover-card";
 
 type TableTabKey =
     | "Trust Assumptions"
     | "Type"
-    | "Unit"
+    | "Risk Summary"
     | "BTC Pegs"
     | "BTC Supply";
 
@@ -140,9 +142,9 @@ const LayerTable = ({ data, headers }: Props) => {
                     valueA = a.entityType;
                     valueB = b.entityType;
                     break;
-                case "Unit":
-                    valueA = a.nativeToken;
-                    valueB = b.nativeToken;
+                case "Risk Summary":
+                    valueA = a.riskSummary?.join(",") || "";
+                    valueB = b.riskSummary?.join(",") || "";
                     break;
                 case "BTC Supply":
                     valueA = totaledBalances[a.slug]?.totalAmount ?? -Infinity;
@@ -281,43 +283,27 @@ const LayerTable = ({ data, headers }: Props) => {
                                     {(!isMobile ||
                                         mobileActiveTab === "Type") && (
                                         <td className="lg:px-6 px-4 py-3 lg:py-4 border-border">
-                                            <Link href={`/layers/${item.slug}`}>
-                                                {item.entityType}
-                                            </Link>
+                                            <NetworkTypeHoverCard entityType={item.entityType}>
+                                                <Link 
+                                                    href={`/layers/${item.slug}`}
+                                                    className="hover:underline cursor-pointer"
+                                                >
+                                                    {item.entityType}
+                                                </Link>
+                                            </NetworkTypeHoverCard>
                                         </td>
                                     )}
                                     {(!isMobile ||
-                                        mobileActiveTab === "Unit") && (
+                                        mobileActiveTab === "Risk Summary") && (
                                         <td className="lg:px-6 px-4 py-3 lg:py-4 border-border">
-                                            <Link
-                                                href={`/layers/${item.slug}`}
-                                                className="flex items-center"
-                                            >
-                                                {item.feeToken.toLowerCase() ===
-                                                "btc" ? (
-                                                    <Image
-                                                        src="/btc.svg"
-                                                        alt="BTC logo"
-                                                        width={20}
-                                                        height={20}
-                                                        className="mr-2"
-                                                    />
-                                                ) : item.feeToken
-                                                      .toLowerCase()
-                                                      .includes("btc") ? (
-                                                    <Image
-                                                        src="/btc-inverse.svg"
-                                                        alt="BTC inverse logo"
-                                                        width={20}
-                                                        height={20}
-                                                        className="mr-2"
-                                                    />
-                                                ) : null}
-                                                {item.feeToken}
-                                            </Link>
+                                            <RiskSummaryDialog 
+                                                layer={item}
+                                                riskSummary={item.riskSummary || []}
+                                            />
                                         </td>
                                     )}
-                                    {(!isMobile || mobileActiveTab === "BTC Pegs") && (
+                                    {(!isMobile ||
+                                        mobileActiveTab === "BTC Pegs") && (
   <td className="lg:px-4 px-4 py-3 lg:py-4 border-border">
     {item.entityCategory === EntityCategory.BitcoinNative ? (
       <Image

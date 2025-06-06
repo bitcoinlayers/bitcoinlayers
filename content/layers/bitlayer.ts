@@ -59,7 +59,17 @@ const bitlayer: LayerProject = {
     ],
     description:
         "Bitlayer's mainnet v1 is a federated sidechain. It supports an EVM execution environment with plans to support other VMs.",
-    riskAnalysis: [
+        riskSummary: [
+            {
+                title: "Specific Risk",
+                content: "risk text explanation"
+            },
+            {
+                title: "Specific Risk",
+                content: "risk text explanation"
+            }
+        ],
+        riskAnalysis: [
         {
             category: RiskCategory.BtcCustody,
             score: 0,

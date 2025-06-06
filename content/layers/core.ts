@@ -65,7 +65,17 @@ const core: LayerProject = {
     ],
     description:
         "Core (in relation to Bitcoin) is an EVM sidechain with a hybrid consensus mechanism, Satoshi Plus, that leverages both DPoW and DPoS. It uses a federated multisig to bridge BTC with multiple parties ensuring the honesty of the two-way peg. The native token of the network is CORE, which is used for transaction fees, staking, and governance in Core DAO.",
-    riskAnalysis: [
+        riskSummary: [
+            {
+                title: "Specific Risk",
+                content: "risk text explanation"
+            },
+            {
+                title: "Specific Risk",
+                content: "risk text explanation"
+            }
+        ],
+        riskAnalysis: [
         {
             category: RiskCategory.BtcCustody,
             score: 0,

@@ -66,7 +66,17 @@ const berachain: LayerProject = {
     ],
     description:
         "Berachain is an EVM-compatible L1. It leverages a novel consensus mechanism and is home to various BTC-derivative assets.",
-    riskAnalysis: [
+        riskSummary: [
+            {
+                title: "Specific Risk",
+                content: "risk text explanation"
+            },
+            {
+                title: "Specific Risk",
+                content: "risk text explanation"
+            }
+        ],
+        riskAnalysis: [
         {
             category: RiskCategory.BtcCustody,
             score: 0,
