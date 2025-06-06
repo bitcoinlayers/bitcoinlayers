@@ -62,7 +62,17 @@ const zeta: LayerProject = {
             url: "https://x.com/zetablockchain",
         },
     ],
-    description: "",
+    description: "Zeta is a proof-of-stake blockchain that supports a number of wrapped BTC tokens. It is home to the ZetaBTC token.",
+    riskSummary: [
+        {
+            title: "Specific Risk",
+            content: "risk text explanation"
+        },
+        {
+            title: "Specific Risk",
+            content: "risk text explanation"
+        }
+    ],
     riskAnalysis: [
         {
             category: RiskCategory.BtcCustody,

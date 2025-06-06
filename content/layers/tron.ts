@@ -62,6 +62,16 @@ const tron: LayerProject = {
         },
     ],
     description: "Tron is a proof-of-stake blockchain. It is EVM-compatible and home to BTCTRON.",
+    riskSummary: [
+        {
+            title: "Specific Risk",
+            content: "risk text explanation"
+        },
+        {
+            title: "Specific Risk",
+            content: "risk text explanation"
+        }
+    ],
     riskAnalysis: [
         {
             category: RiskCategory.BtcCustody,
