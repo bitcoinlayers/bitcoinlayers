@@ -28,7 +28,11 @@ const RiskSummaryDialog: React.FC<RiskSummaryDialogProps> = ({ layer, riskSummar
     return (
         <Dialog>
             <DialogTrigger asChild>
-                <Button variant="outline" size="sm" className="h-8 px-3">
+                <Button 
+                    variant="outline" 
+                    size="sm" 
+                    className="h-8 px-3 bg-[#FFDFDF] dark:bg-[#7A2E0D] border-[#FFDFDF] dark:border-[#7A2E0D] hover:bg-[#FFD0D0] dark:hover:bg-[#991617] text-[#881415] dark:text-[#FFDFDF]"
+                >
                     <AlertTriangleIcon className="w-4 h-4 mr-1" />
                     Review
                 </Button>
