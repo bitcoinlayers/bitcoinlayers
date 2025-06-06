@@ -24,6 +24,7 @@ import TokenList from "@/components/tables/mapping-token-img";
 import { EntityCategory } from "@/content/props";
 import NoticeSnapshotDialog from "../layer/notice-snapshot/notice-snapshot-dialog";
 import RiskSummaryDialog from "../layer/risk-summary-dialog";
+import NetworkTypeHoverCard from "../layer/network-type-hover-card";
 
 type TableTabKey =
     | "Trust Assumptions"
@@ -282,9 +283,14 @@ const LayerTable = ({ data, headers }: Props) => {
                                     {(!isMobile ||
                                         mobileActiveTab === "Type") && (
                                         <td className="lg:px-6 px-4 py-3 lg:py-4 border-border">
-                                            <Link href={`/layers/${item.slug}`}>
-                                                {item.entityType}
-                                            </Link>
+                                            <NetworkTypeHoverCard entityType={item.entityType}>
+                                                <Link 
+                                                    href={`/layers/${item.slug}`}
+                                                    className="hover:underline cursor-pointer"
+                                                >
+                                                    {item.entityType}
+                                                </Link>
+                                            </NetworkTypeHoverCard>
                                         </td>
                                     )}
                                     {(!isMobile ||
