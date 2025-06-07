@@ -99,7 +99,7 @@ const AboutPage: React.FC = () => {
                         <div className="flex flex-col gap-8 w-full">
                             <InfoBox
                                 question="Contributors"
-                                answer={`Research for Bitcoin Layers is maintained by [Janusz](https://janusz.cash), a pseudonymous bitcoin enthusiast. Data is maintained by [Red](https://x.com/redvelvetzip). The project is currently maintained on a volunteer basis. Bitcoin Layers was initially bootstrapped by a small research company supported by an investment check from UTXO Management.\n\nNow, the project has since seperated itself from any specific entity and funding model. Bitcoin Layers has no affiliation with any specific organization, ecosystem, or protocol.\n\nIf you'd like to contribute to Bitcoin Layers, please reach out to [Janusz](https://t.me/januszgrze).`}
+                                answer={`Research for Bitcoin Layers is maintained by [Janusz](https://janusz.cash), a pseudonymous bitcoin enthusiast. Data is maintained by [Red](https://x.com/redvelvetzip). The project is currently maintained on a volunteer basis. Bitcoin Layers was initially bootstrapped by a small research company supported by investment checks from venture capital firms.\n\nNow, the project has since seperated itself from any specific entity and funding model. Bitcoin Layers has no affiliation with any specific organization, ecosystem, or protocol.\n\nIf you'd like to contribute to Bitcoin Layers, please reach out to [Janusz](https://t.me/januszgrze).`}
                             />
                         </div>
                     </div>
