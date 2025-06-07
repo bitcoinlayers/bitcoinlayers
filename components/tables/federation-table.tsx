@@ -27,6 +27,7 @@ import getCurrentSuppliesByTokenimpl, {
     Snapshot,
 } from "@/hooks/get-current-supplies-by-tokenimpl";
 import NetworkList from "@/components/tables/mapping-network-img";
+import WrapperNetworkDistributionHoverCard from "../infrastructure/wrapper-network-distribution-hover-card";
 
 type TableTabKey = "Snapshot" | "Type" | "Status" | "Networks" | "Supply";
 
@@ -356,35 +357,54 @@ const FederationTable = ({ data, headers }: Props) => {
                                     {(!isMobile ||
                                         mobileActiveTab === "Supply") && (
                                         <td className="lg:px-6 px-4 py-3 lg:py-4">
-                                            <Link
-                                                href={`/${
-                                                    isLayer(item)
-                                                        ? `layers/${item.slug}/#usecases`
-                                                        : `infrastructure/${item.slug}`
-                                                }`}
-                                            >
-                                                {totaledBalances[item.slug]
-                                                    ?.totalAmount == null ? (
+                                            {totaledBalances[item.slug]
+                                                ?.totalAmount == null ? (
+                                                <Link
+                                                    href={`/${
+                                                        isLayer(item)
+                                                            ? `layers/${item.slug}/#usecases`
+                                                            : `infrastructure/${item.slug}`
+                                                    }`}
+                                                >
                                                     <div className="font-light">
                                                         Under review
                                                     </div>
-                                                ) : (
-                                                    <div>
-                                                        ₿{" "}
-                                                        {Number(
-                                                            totaledBalances[
-                                                                item.slug
-                                                            ]?.totalAmount ?? 0,
-                                                        ).toLocaleString(
-                                                            "en-US",
-                                                            {
-                                                                minimumFractionDigits: 0,
-                                                                maximumFractionDigits: 0,
-                                                            },
-                                                        )}
-                                                    </div>
-                                                )}
-                                            </Link>
+                                                </Link>
+                                            ) : (
+                                                <WrapperNetworkDistributionHoverCard
+                                                    networks={tokensMap[item.slug.toLowerCase()] || []}
+                                                    totalAmount={Number(
+                                                        totaledBalances[
+                                                            item.slug
+                                                        ]?.totalAmount ?? 0,
+                                                    )}
+                                                    tokenName={item.title}
+                                                >
+                                                    <Link
+                                                        href={`/${
+                                                            isLayer(item)
+                                                                ? `layers/${item.slug}/#usecases`
+                                                                : `infrastructure/${item.slug}`
+                                                        }`}
+                                                        className="hover:underline cursor-pointer"
+                                                    >
+                                                        <div>
+                                                            ₿{" "}
+                                                            {Number(
+                                                                totaledBalances[
+                                                                    item.slug
+                                                                ]?.totalAmount ?? 0,
+                                                            ).toLocaleString(
+                                                                "en-US",
+                                                                {
+                                                                    minimumFractionDigits: 0,
+                                                                    maximumFractionDigits: 0,
+                                                                },
+                                                            )}
+                                                        </div>
+                                                    </Link>
+                                                </WrapperNetworkDistributionHoverCard>
+                                            )}
                                         </td>
                                     )}
                                 </tr>

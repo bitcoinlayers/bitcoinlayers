@@ -25,6 +25,7 @@ import { EntityCategory } from "@/content/props";
 import NoticeSnapshotDialog from "../layer/notice-snapshot/notice-snapshot-dialog";
 import RiskSummaryDialog from "../layer/risk-summary-dialog";
 import NetworkTypeHoverCard from "../layer/network-type-hover-card";
+import SupplyDistributionHoverCard from "../layer/supply-distribution-hover-card";
 
 type TableTabKey =
     | "Trust Assumptions"
@@ -328,40 +329,56 @@ const LayerTable = ({ data, headers }: Props) => {
                                     {(!isMobile ||
                                         mobileActiveTab === "BTC Supply") && (
                                         <td className="lg:px-6 px-4 py-3 lg:py-4">
-                                            <Link href={`/layers/${item.slug}`}>
-                                                {item.underReview ||
-                                                (Object.keys(
-                                                    totaledBalances,
-                                                ).find(
-                                                    (key) =>
-                                                        key.toLowerCase() ===
-                                                        item.title.toLowerCase(),
-                                                ) === undefined &&
-                                                    (item.btcLocked === null ||
-                                                        isNaN(
-                                                            item.btcLocked,
-                                                        ))) ? (
+                                            {item.underReview ||
+                                            (Object.keys(
+                                                totaledBalances,
+                                            ).find(
+                                                (key) =>
+                                                    key.toLowerCase() ===
+                                                    item.title.toLowerCase(),
+                                            ) === undefined &&
+                                                (item.btcLocked === null ||
+                                                    isNaN(
+                                                        item.btcLocked,
+                                                    ))) ? (
+                                                <Link href={`/layers/${item.slug}`}>
                                                     <div className="font-light">
                                                         Unavailable
                                                     </div>
-                                                ) : (
-                                                    <div>
-                                                        ₿{" "}
-                                                        {Number(
-                                                            totaledBalances[
-                                                                item.slug
-                                                            ]?.totalAmount ??
-                                                                item.btcLocked,
-                                                        ).toLocaleString(
-                                                            "en-US",
-                                                            {
-                                                                minimumFractionDigits: 0,
-                                                                maximumFractionDigits: 0,
-                                                            },
-                                                        )}
-                                                    </div>
-                                                )}
-                                            </Link>
+                                                </Link>
+                                            ) : (
+                                                <SupplyDistributionHoverCard
+                                                    tokens={tokensMap[item.slug.toLowerCase()] || []}
+                                                    totalAmount={Number(
+                                                        totaledBalances[
+                                                            item.slug
+                                                        ]?.totalAmount ??
+                                                            item.btcLocked,
+                                                    )}
+                                                    networkName={item.title}
+                                                >
+                                                    <Link 
+                                                        href={`/layers/${item.slug}`}
+                                                        className="hover:underline cursor-pointer"
+                                                    >
+                                                        <div>
+                                                            ₿{" "}
+                                                            {Number(
+                                                                totaledBalances[
+                                                                    item.slug
+                                                                ]?.totalAmount ??
+                                                                    item.btcLocked,
+                                                            ).toLocaleString(
+                                                                "en-US",
+                                                                {
+                                                                    minimumFractionDigits: 0,
+                                                                    maximumFractionDigits: 0,
+                                                                },
+                                                            )}
+                                                        </div>
+                                                    </Link>
+                                                </SupplyDistributionHoverCard>
+                                            )}
                                         </td>
                                     )}
                                 </tr>
