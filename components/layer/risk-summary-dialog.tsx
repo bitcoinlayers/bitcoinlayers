@@ -2,8 +2,8 @@ import React from "react";
 import { Dialog, DialogContent, DialogTrigger, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { AlertTriangleIcon } from "lucide-react";
-import RiskSummary from "./risk-summary";
-import { LayerProject } from "@/content/props";
+import RiskSummary from "@/components/shared/risk-summary";
+import { LayerProject, InfrastructureProject } from "@/content/props";
 
 interface RiskSummaryContent {
     title?: string;
@@ -11,7 +11,7 @@ interface RiskSummaryContent {
 }
 
 interface RiskSummaryDialogProps {
-    layer: LayerProject;
+    layer: LayerProject | InfrastructureProject;
     riskSummary: RiskSummaryContent[];
 }
 

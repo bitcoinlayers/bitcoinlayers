@@ -269,19 +269,6 @@ const LayerTable = ({ data, headers }: Props) => {
                                         </div>
                                     </td>
                                     {(!isMobile ||
-                                        mobileActiveTab ===
-                                            "Trust Assumptions") && (
-                                        <td className="relative px-2 border-border">
-                                            {!item.underReview ? (
-                                                <Risk layer={item} />
-                                            ) : (
-                                                <div className="lg:px-5 px-1 font-light">
-                                                    Under review
-                                                </div>
-                                            )}
-                                        </td>
-                                    )}
-                                    {(!isMobile ||
                                         mobileActiveTab === "Type") && (
                                         <td className="lg:px-6 px-4 py-3 lg:py-4 border-border">
                                             <NetworkTypeHoverCard entityType={item.entityType}>
@@ -292,6 +279,19 @@ const LayerTable = ({ data, headers }: Props) => {
                                                     {item.entityType}
                                                 </Link>
                                             </NetworkTypeHoverCard>
+                                        </td>
+                                    )}
+                                    {(!isMobile ||
+                                        mobileActiveTab ===
+                                            "Trust Assumptions") && (
+                                        <td className="relative px-2 border-border">
+                                            {!item.underReview ? (
+                                                <Risk layer={item} />
+                                            ) : (
+                                                <div className="lg:px-5 px-1 font-light">
+                                                    Under review
+                                                </div>
+                                            )}
                                         </td>
                                     )}
                                     {(!isMobile ||
