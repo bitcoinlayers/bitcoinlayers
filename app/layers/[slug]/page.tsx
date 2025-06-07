@@ -8,7 +8,7 @@ import LayerImage from "@/components/layer/layer-image";
 import LayerTVLChart from "@/components/charts/layer-tvl-chart";
 import ProjectContractAddresses from "@/components/project-contract-addresses";
 import ManualContractAddresses from "@/components/manual-contract-addresses";
-import RiskSummary from "@/components/layer/risk-summary";
+import RiskSummary from "@/components/shared/risk-summary";
 import AlternativeBanner from "@/components/alternative-banner";
 import { EntityCategory } from "@/content/props";
 

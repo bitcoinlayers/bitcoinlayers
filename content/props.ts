@@ -427,6 +427,7 @@ export interface InfrastructureProject extends BaseProject {
     type: Type.Infrastructure;
     purpose: Purpose;
     assessment?: AssessmentSection[];
+    riskSummary?: { title?: string; content: string }[];
 }
 
 export interface LayerProject extends BaseProject {

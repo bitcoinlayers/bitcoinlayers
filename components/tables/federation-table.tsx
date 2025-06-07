@@ -28,8 +28,9 @@ import getCurrentSuppliesByTokenimpl, {
 } from "@/hooks/get-current-supplies-by-tokenimpl";
 import NetworkList from "@/components/tables/mapping-network-img";
 import WrapperNetworkDistributionHoverCard from "../infrastructure/wrapper-network-distribution-hover-card";
+import RiskSummaryDialog from "../layer/risk-summary-dialog";
 
-type TableTabKey = "Snapshot" | "Type" | "Status" | "Networks" | "Supply";
+type TableTabKey = "Snapshot" | "Type" | "Risk Summary" | "Networks" | "Supply";
 
 interface Props {
     data: Project[];
@@ -75,9 +76,7 @@ const isMainnet = (status: string) =>
     status === LiveStatus.Mainnet || status === LiveStatus.Deposits;
 
 const FederationTable = ({ data, headers }: Props) => {
-    const [status, setStatus] = useQueryState("status", {
-        defaultValue: "mainnet",
-    });
+
     const [types] = useQueryState<string[]>("type", {
         defaultValue: [],
         parse: (value) => value.split(",").filter(Boolean),
@@ -165,12 +164,7 @@ const FederationTable = ({ data, headers }: Props) => {
             return 0;
         });
 
-        let filtered = sorted.filter((item) => {
-            if (status === LiveStatus.Mainnet.toLowerCase())
-                return isMainnet(item.live);
-            if (status === "testnet") return !isMainnet(item.live);
-            return true;
-        });
+        let filtered = sorted.filter((item) => isMainnet(item.live));
 
         if (types.length > 0) {
             filtered = filtered.filter((item) =>
@@ -181,7 +175,7 @@ const FederationTable = ({ data, headers }: Props) => {
         }
 
         return filtered;
-    }, [data, sortBy, sortOrder, types, status, totaledBalances]);
+    }, [data, sortBy, sortOrder, types, totaledBalances]);
 
     const handleSort = (header: string) => {
         if (sortBy === header) {
@@ -224,11 +218,7 @@ const FederationTable = ({ data, headers }: Props) => {
                     </CardDescription>
                 </div>
                 <div className="flex">
-                    <button
-                        data-active={status === "mainnet"}
-                        className="relative z-30 flex flex-1 flex-col justify-center gap-1 border-t px-6 py-4 text-left even:border-l data-[active=true]:bg-muted/50 sm:border-l sm:border-t-0 sm:px-8 sm:py-6 min-w-[100px] sm:min-w-[150px]"
-                        onClick={() => setStatus("mainnet")}
-                    >
+                    <div className="relative z-30 flex flex-1 flex-col justify-center gap-1 border-t px-6 py-4 text-left even:border-l bg-muted/50 sm:border-l sm:border-t-0 sm:px-8 sm:py-6 min-w-[100px] sm:min-w-[150px]">
                         <span className="text-xs text-muted-foreground">
                             On mainnet
                         </span>
@@ -237,21 +227,7 @@ const FederationTable = ({ data, headers }: Props) => {
                                 .filter((item) => isMainnet(item.live))
                                 .length.toLocaleString()}
                         </span>
-                    </button>
-                    <button
-                        data-active={status === "testnet"}
-                        className="relative z-30 flex flex-1 flex-col justify-center gap-1 border-t px-6 py-4 text-left even:border-l data-[active=true]:bg-muted/50 sm:border-l sm:border-t-0 sm:px-8 sm:py-6 min-w-[100px] sm:min-w-[150px]"
-                        onClick={() => setStatus("testnet")}
-                    >
-                        <span className="text-xs text-muted-foreground">
-                            Coming soon
-                        </span>
-                        <span className="text-lg font-bold leading-none sm:text-3xl">
-                            {data
-                                .filter((item) => !isMainnet(item.live))
-                                .length.toLocaleString()}
-                        </span>
-                    </button>
+                    </div>
                 </div>
             </CardHeader>
             <CardContent className="p-0">
@@ -292,20 +268,6 @@ const FederationTable = ({ data, headers }: Props) => {
                                         </Link>
                                     </td>
                                     {(!isMobile ||
-                                        mobileActiveTab === "Snapshot") && (
-                                        <td className="relative px-2 border-border">
-                                            {hasAssessment(item) ? (
-                                                <AssessmentSnapshotDialog
-                                                    infrastructure={item}
-                                                />
-                                            ) : (
-                                                <div className="px-4">
-                                                    Coming Soon
-                                                </div>
-                                            )}
-                                        </td>
-                                    )}
-                                    {(!isMobile ||
                                         mobileActiveTab === "Type") && (
                                         <td className="lg:px-6 px-4 py-3 lg:py-4 border-border">
                                             <Link
@@ -324,17 +286,26 @@ const FederationTable = ({ data, headers }: Props) => {
                                         </td>
                                     )}
                                     {(!isMobile ||
-                                        mobileActiveTab === "Status") && (
+                                        mobileActiveTab === "Snapshot") && (
+                                        <td className="relative px-2 border-border">
+                                            {hasAssessment(item) ? (
+                                                <AssessmentSnapshotDialog
+                                                    infrastructure={item}
+                                                />
+                                            ) : (
+                                                <div className="px-4">
+                                                    Coming Soon
+                                                </div>
+                                            )}
+                                        </td>
+                                    )}
+                                    {(!isMobile ||
+                                        mobileActiveTab === "Risk Summary") && (
                                         <td className="lg:px-6 px-4 py-3 lg:py-4 border-border">
-                                            <Link
-                                                href={`/${
-                                                    isLayer(item)
-                                                        ? `layers/${item.slug}/#usecases`
-                                                        : `infrastructure/${item.slug}`
-                                                }`}
-                                            >
-                                                {item.live}
-                                            </Link>
+                                            <RiskSummaryDialog 
+                                                layer={item}
+                                                riskSummary={item.riskSummary || []}
+                                            />
                                         </td>
                                     )}
                                     {(!isMobile ||

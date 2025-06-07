@@ -48,6 +48,9 @@ const InfrastructureMenu: React.FC<{
             <div className="flex lg:flex-col justify-start items-start lg:gap-4 gap-2 z-40">
                 {[
                     { id: "overview", title: "Overview" },
+                    ...(infrastructure.riskSummary && infrastructure.riskSummary.length > 0
+                        ? [{ id: "risksummary", title: "Risk Summary" }]
+                        : []),
                     ...(infrastructure.assessment
                         ? [{ id: "assessment", title: "Assessment" }]
                         : []),

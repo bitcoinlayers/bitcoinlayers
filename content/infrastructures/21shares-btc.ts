@@ -48,6 +48,16 @@ const twentyonesharesbtc: InfrastructureProject = {
         },
     ],
     description: "21 Shares BTC is a BTC wrapped asset. It is under review.",
+    riskSummary: [
+        {
+            title: "Specific Risk",
+            content: "risk text explanation"
+        },
+        {
+            title: "Specific Risk",
+            content: "risk text explanation"
+        }
+    ],
     sections: [
         {
             id: "selfsubmit",
