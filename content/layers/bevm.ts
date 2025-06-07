@@ -57,7 +57,17 @@ const bevm: LayerProject = {
     ],
     description:
         "BEVM is an EVM-compatible blockchain built on substrate. On the BEVM chain, the BTC is held in custody by a federated signer set.",
-    riskAnalysis: [
+        riskSummary: [
+            {
+                title: "Specific Risk",
+                content: "risk text explanation"
+            },
+            {
+                title: "Specific Risk",
+                content: "risk text explanation"
+            }
+        ],
+        riskAnalysis: [
         {
             category: RiskCategory.BtcCustody,
             score: 0,

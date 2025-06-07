@@ -60,6 +60,16 @@ const fantom: LayerProject = {
         },
     ],
     description: "",
+    riskSummary: [
+        {
+            title: "Specific Risk",
+            content: "risk text explanation"
+        },
+        {
+            title: "Specific Risk",
+            content: "risk text explanation"
+        }
+    ],
     riskAnalysis: [
         {
             category: RiskCategory.BtcCustody,

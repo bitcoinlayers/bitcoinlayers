@@ -62,6 +62,16 @@ const gnosis: LayerProject = {
         },
     ],
     description: "Gnosis is an alternative blockchain that supports a number of wrapped BTC tokens. It is EVM-compatible and leverages the same network architecture as Ethereum.",
+    riskSummary: [
+        {
+            title: "Specific Risk",
+            content: "risk text explanation"
+        },
+        {
+            title: "Specific Risk",
+            content: "risk text explanation"
+        }
+    ],
     riskAnalysis: [
         {
             category: RiskCategory.BtcCustody,

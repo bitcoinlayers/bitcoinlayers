@@ -61,7 +61,17 @@ const optimism: LayerProject = {
     ],
     description:
         "Arbitrum is an Ethereum rollup that that supports a variety of wrapped BTC tokens.",
-    riskAnalysis: [
+        riskSummary: [
+            {
+                title: "Specific Risk",
+                content: "risk text explanation"
+            },
+            {
+                title: "Specific Risk",
+                content: "risk text explanation"
+            }
+        ],
+        riskAnalysis: [
         {
             category: RiskCategory.BtcCustody,
             score: 0,

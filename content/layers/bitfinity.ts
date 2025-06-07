@@ -58,6 +58,16 @@ const bitfinity: LayerProject = {
         },
     ],
     description: "Bitfinity is an EVM-based sidechain.",
+    riskSummary: [
+        {
+            title: "Specific Risk",
+            content: "risk text explanation"
+        },
+        {
+            title: "Specific Risk",
+            content: "risk text explanation"
+        }
+    ],
     riskAnalysis: [
         {
             category: RiskCategory.BtcCustody,

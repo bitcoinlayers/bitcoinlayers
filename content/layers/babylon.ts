@@ -23,7 +23,7 @@ const babylon: LayerProject = {
     type: Type.Layer,
     slug: "babylon",
     title: "Babylon",
-    entityType: EntityType.Hybrid,
+    entityType: EntityType.Anchor,
     entityCategory: EntityCategory.Sidesystem,
     live: LiveStatus.Mainnet,
     staking: true,
@@ -65,7 +65,17 @@ const babylon: LayerProject = {
     ],
     description:
         "Babylon is a proof-of-stake blockchain that is partially secured by bitcoin staking. It is the first Babylon BSN network. It offers a CosmWasm execution environment that supports arbitrary smart contracts.",
-    riskAnalysis: [
+        riskSummary: [
+            {
+                title: "Specific Risk",
+                content: "risk text explanation"
+            },
+            {
+                title: "Specific Risk",
+                content: "risk text explanation"
+            }
+        ],
+        riskAnalysis: [
         {
             category: RiskCategory.BtcCustody,
             score: 0,

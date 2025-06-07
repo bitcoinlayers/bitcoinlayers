@@ -66,7 +66,17 @@ const hyperliquid: LayerProject = {
     ],
     description:
         "Hyperliquid is a purpose built layer 1 blockchain focused on high performance applications. It supports a BTC derivative asset where BTC backing the asset is secured by a federation of guardians.",
-    riskAnalysis: [
+        riskSummary: [
+            {
+                title: "Specific Risk",
+                content: "risk text explanation"
+            },
+            {
+                title: "Specific Risk",
+                content: "risk text explanation"
+            }
+        ],
+        riskAnalysis: [
         {
             category: RiskCategory.BtcCustody,
             score: 0,

@@ -65,7 +65,17 @@ const taiko: LayerProject = {
     ],
     description:
         "Taiko is an Ethereum rollup that leverages based sequencing. It is home to various BTC-derivative assets.",
-    riskAnalysis: [
+        riskSummary: [
+            {
+                title: "Specific Risk",
+                content: "risk text explanation"
+            },
+            {
+                title: "Specific Risk",
+                content: "risk text explanation"
+            }
+        ],
+        riskAnalysis: [
         {
             category: RiskCategory.BtcCustody,
             score: 0,

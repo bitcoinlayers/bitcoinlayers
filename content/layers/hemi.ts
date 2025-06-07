@@ -68,7 +68,17 @@ const hemi: LayerProject = {
     ],
     description:
         "Hemi is a blockchain that is building compatibility with bitcoin and Ethereum.",
-    riskAnalysis: [
+        riskSummary: [
+            {
+                title: "Specific Risk",
+                content: "risk text explanation"
+            },
+            {
+                title: "Specific Risk",
+                content: "risk text explanation"
+            }
+        ],
+        riskAnalysis: [
         {
             category: RiskCategory.BtcCustody,
             score: 0,

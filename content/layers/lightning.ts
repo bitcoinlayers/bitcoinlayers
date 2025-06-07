@@ -47,7 +47,17 @@ const lightning: LayerProject = {
     ],
     description:
         "The Lightning Network (often called Lightning) is a payment-channel-based Layer 2 protocol built on bitcoin. It enables users to open a payment channel with a counterparty and make an unlimited number of offchain payments within the channel. By routing payments across a network of interconnected nodes, users can reach recipients outside their specific channel.",
-    riskAnalysis: [
+        riskSummary: [
+            {
+                title: "Specific Risk",
+                content: "risk text explanation"
+            },
+            {
+                title: "Specific Risk",
+                content: "risk text explanation"
+            }
+        ],
+        riskAnalysis: [
         {
             category: RiskCategory.BtcCustody,
             score: 0,

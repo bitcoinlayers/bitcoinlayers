@@ -63,6 +63,16 @@ const polygonzkevm: LayerProject = {
         },
     ],
     description: "Polygon zkEVM is a rollup that posts data to Ethereum.",
+    riskSummary: [
+        {
+            title: "Specific Risk",
+            content: "risk text explanation"
+        },
+        {
+            title: "Specific Risk",
+            content: "risk text explanation"
+        }
+    ],
     riskAnalysis: [
         {
             category: RiskCategory.BtcCustody,
