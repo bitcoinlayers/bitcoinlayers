@@ -1,6 +1,7 @@
 import React from "react";
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
 import { Snapshot } from "@/hooks/get-current-supplies-by-tokenimpl";
+import ImageWithFallback from "../tables/image-with-fallback";
 
 interface SupplyDistributionHoverCardProps {
     tokens: Snapshot[];
@@ -8,67 +9,6 @@ interface SupplyDistributionHoverCardProps {
     networkName: string;
     children: React.ReactNode;
 }
-
-// Color mapping for tokens (matching exact chart colors from globals.css)
-const getTokenColor = (tokenSlug: string): string => {
-    const colorMap: Record<string, string> = {
-        'stacks-sbtc': 'hsl(var(--chart-stacks-sbtc))',
-        'xlink-abtc': 'hsl(var(--chart-xlink-abtc))',
-        'alex-xbtc': 'hsl(var(--chart-alex-xbtc))',
-        'bitgo-wbtc': 'hsl(var(--chart-bitgo-wbtc))',
-        'threshold-tbtc': 'hsl(var(--chart-threshold-tbtc))',
-        'lorenzo-stbtc': 'hsl(var(--chart-lorenzo-stbtc))',
-        'solv-solvbtc': 'hsl(var(--chart-solv-solvbtc))',
-        'bedrock-unibtc': 'hsl(var(--chart-bedrock-unibtc))',
-        'lombard-lbtc': 'hsl(var(--chart-lombard-lbtc))',
-        'kraken-kbtc': 'hsl(var(--chart-kraken-kbtc))',
-        'avalanche-btcb': 'hsl(var(--chart-avalanche-btcb))',
-        'tron-btc': 'hsl(var(--chart-tron-btc))',
-        'bevm-wbtc': 'hsl(var(--chart-bevm-wbtc))',
-        'acorn-abtc': 'hsl(var(--chart-acorn-abtc))',
-        'ibtc-network-ibtc': 'hsl(var(--chart-ibtc-network-ibtc))',
-        'coinbase-cbbtc': 'hsl(var(--chart-coinbase-cbbtc))',
-        'binance-btcb': 'hsl(var(--chart-binance-btcb))',
-        'liquid-l-btc': 'hsl(var(--chart-liquid-l-btc))',
-        'core-corebtc': 'hsl(var(--chart-core-corebtc))',
-        'fire-bitcoin-fbtc': 'hsl(var(--chart-fire-bitcoin-fbtc))',
-        'rootstock-rbtc': 'hsl(var(--chart-rootstock-rbtc))',
-        'unirouter-ubtc': 'hsl(var(--chart-unirouter-ubtc))',
-        'solv-xsolvbtc': 'hsl(var(--chart-solv-xsolvbtc))',
-        'solv-solvbtcena': 'hsl(var(--chart-solv-solvbtcena))',
-        'pump-pumpbtc': 'hsl(var(--chart-pump-pumpbtc))',
-        '21-shares-21btc': 'hsl(var(--chart-21-shares-21btc))',
-        'axelar-axlbtc': 'hsl(var(--chart-axelar-axlbtc))',
-        'bitlayer-wbtc': 'hsl(var(--chart-bitlayer-wbtc))',
-        'merlin-wbtc': 'hsl(var(--chart-merlin-wbtc))',
-        'merlin-m-btc': 'hsl(var(--chart-merlin-m-btc))',
-        'internet-computer-ckbtc': 'hsl(var(--chart-internet-computer-ckbtc))',
-        'corn-btcn': 'hsl(var(--chart-corn-btcn))',
-        'libre-pbtc': 'hsl(var(--chart-libre-pbtc))',
-        'manta-mbtc': 'hsl(var(--chart-manta-mbtc))',
-        'obelisk-obtc': 'hsl(var(--chart-obelisk-obtc))',
-        'allo-allobtc': 'hsl(var(--chart-allo-allobtc))',
-        'badger-ebtc': 'hsl(var(--chart-badger-ebtc))',
-        'pstake-ybtc': 'hsl(var(--chart-pstake-ybtc))',
-        'hemi-hemibtc': 'hsl(var(--chart-hemi-hemibtc))',
-        'lorenzo-enzobtc': 'hsl(var(--chart-lorenzo-enzobtc))',
-        'bedrock-brbtc': 'hsl(var(--chart-bedrock-brbtc))',
-        'zeta-btcbtc': 'hsl(var(--chart-zeta-btcbtc))',
-        'zeus-zbtc': 'hsl(var(--chart-zeus-zbtc))',
-        'unit-ubtc': 'hsl(var(--chart-unit-ubtc))',
-        'simple-sbtc': 'hsl(var(--chart-simple-sbtc))',
-        'kinza-kbtc': 'hsl(var(--chart-kinza-kbtc))',
-        'babypie-mbtc': 'hsl(var(--chart-babypie-mbtc))',
-        'layerbank-btc': 'hsl(var(--chart-layerbank-btc))',
-        'layerbank-ubtc': 'hsl(var(--chart-layerbank-ubtc))',
-        'solv-solvbtcb': 'hsl(var(--chart-solv-solvbtcb))',
-        'solv-solvbtcm': 'hsl(var(--chart-solv-solvbtcm))',
-        'solv-solvbtccore': 'hsl(var(--chart-solv-solvbtccore))',
-        'solv-solvbtcjup': 'hsl(var(--chart-solv-solvbtcjup))',
-    };
-    
-    return colorMap[tokenSlug] || 'hsl(var(--chart-1))';
-};
 
 const SupplyDistributionHoverCard: React.FC<SupplyDistributionHoverCardProps> = ({ 
     tokens, 
@@ -115,9 +55,12 @@ const SupplyDistributionHoverCard: React.FC<SupplyDistributionHoverCardProps> = 
                         {topTokens.map((token, index) => (
                             <div key={token.token_slug || index} className="flex items-center justify-between">
                                 <div className="flex items-center space-x-2">
-                                    <div 
-                                        className="w-3 h-3 rounded-sm flex-shrink-0"
-                                        style={{ backgroundColor: getTokenColor(token.token_slug) }}
+                                    <ImageWithFallback
+                                        slug={token.token_slug}
+                                        folder="logos"
+                                        altText={`${token.token_slug} logo`}
+                                        width={16}
+                                        height={16}
                                     />
                                     <span className="text-sm text-muted-foreground truncate">
                                         {token.token_slug?.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase()) || 'Unknown Token'}
