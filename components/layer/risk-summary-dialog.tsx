@@ -1,7 +1,7 @@
 import React from "react";
 import { Dialog, DialogContent, DialogTrigger, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
-import { FileKey } from "lucide-react";
+import { AlertTriangleIcon } from "lucide-react";
 import RiskSummary from "@/components/shared/risk-summary";
 import { LayerProject, InfrastructureProject } from "@/content/props";
 import Image from "next/image";
@@ -34,7 +34,7 @@ const RiskSummaryDialog: React.FC<RiskSummaryDialogProps> = ({ layer, riskSummar
                     size="sm" 
                     className="h-8 px-3 bg-[#FFDFDF] dark:bg-[#7A2E0D] border-[#FFDFDF] dark:border-[#7A2E0D] hover:bg-[#FFD0D0] dark:hover:bg-[#991617] text-[#881415] dark:text-[#FFDFDF]"
                 >
-                    <FileKey className="w-4 h-4 mr-1" />
+                    <AlertTriangleIcon className="w-4 h-4 mr-1" />
                     Review
                 </Button>
             </DialogTrigger>
