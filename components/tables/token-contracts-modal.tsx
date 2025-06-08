@@ -75,6 +75,7 @@ const TokenContractsModal: React.FC<TokenContractsModalProps> = ({
                 }}
             >
                 <div
+                    className="bg-popover border border-border rounded-lg shadow-lg"
                     style={{
                         display: "flex",
                         width: "var(--breakpoint-sm, 640px)",
@@ -83,9 +84,6 @@ const TokenContractsModal: React.FC<TokenContractsModalProps> = ({
                         alignItems: "flex-end",
                         gap: "var(--spacing-4, 16px)",
                         flexShrink: 0,
-                        borderRadius: "var(--border-radius-lg, 8px)",
-                        background: "var(--bg-primary-off-grey-50, #FDFDFD)",
-                        boxShadow: "0px 10px 15px -3px rgba(0, 0, 0, 0.10), 0px 4px 6px -2px rgba(0, 0, 0, 0.05)",
                     }}
                 >
                     {/* Title box with close button */}
@@ -99,8 +97,8 @@ const TokenContractsModal: React.FC<TokenContractsModalProps> = ({
                     >
                         {/* Title text */}
                         <div
+                            className="text-popover-foreground"
                             style={{
-                                color: "var(--text-header-off-grey-950, #292929)",
                                 fontFamily: "Public Sans",
                                 fontSize: "20px",
                                 fontStyle: "normal",
@@ -114,6 +112,7 @@ const TokenContractsModal: React.FC<TokenContractsModalProps> = ({
                         {/* Close button */}
                         <button
                             onClick={() => setOpen(false)}
+                            className="text-muted-foreground hover:text-popover-foreground"
                             style={{
                                 background: "none",
                                 border: "none",
@@ -121,16 +120,16 @@ const TokenContractsModal: React.FC<TokenContractsModalProps> = ({
                                 padding: "4px",
                             }}
                         >
-                            <X size={24} color="var(--text-primary-link-water-900, #434D65)" />
+                            <X size={24} />
                         </button>
                     </div>
 
                     {/* Divider */}
                     <div
+                        className="bg-border"
                         style={{
                             width: "592px",
                             height: "1px",
-                            background: "var(--stroke-secondary-link-water-200, #D3DDE8)",
                         }}
                     />
 
@@ -165,11 +164,11 @@ const TokenContractsModal: React.FC<TokenContractsModalProps> = ({
                             >
                                 {/* Network/Token name with logo */}
                                 <div
+                                    className="text-popover-foreground"
                                     style={{
                                         display: "flex",
                                         alignItems: "center",
                                         gap: "8px",
-                                        color: "var(--text-primary-link-water-900, #434D65)",
                                         fontFamily: "Public Sans",
                                         fontSize: "18px",
                                         fontStyle: "normal",
@@ -187,17 +186,17 @@ const TokenContractsModal: React.FC<TokenContractsModalProps> = ({
                                     {getDisplayName(contract)}
                                 </div>
 
-                                {/* Contract address - CHANGED TO PUBLIC SANS */}
+                                {/* Contract address */}
                                 <a
                                     href={getContractUrl(contract)}
                                     target="_blank"
                                     rel="noopener noreferrer"
+                                    className="text-muted-foreground hover:text-popover-foreground transition-colors"
                                     style={{
                                         display: "flex",
                                         alignItems: "center",
                                         gap: "8px",
-                                        color: "var(--text-primary-link-water-900, #434D65)",
-                                        fontFamily: "Public Sans", // CHANGED FROM "Hack" TO "Public Sans"
+                                        fontFamily: "Public Sans",
                                         fontSize: "16px",
                                         fontStyle: "normal",
                                         fontWeight: 400,
@@ -230,22 +229,16 @@ const TokenContractsModal: React.FC<TokenContractsModalProps> = ({
                                         }
                                     }, 0);
                                 }}
+                                className="text-muted-foreground hover:text-popover-foreground transition-colors underline"
                                 style={{
                                     background: "none",
                                     border: "none",
                                     cursor: "pointer",
-                                    color: "var(--text-secondary-storm-gray-700, #767B8F)",
                                     fontFamily: "Public Sans",
                                     fontSize: "14px",
                                     fontStyle: "normal",
                                     fontWeight: 500,
                                     lineHeight: "20px",
-                                    textDecorationLine: "underline",
-                                    textDecorationStyle: "solid",
-                                    textDecorationSkipInk: "none",
-                                    textDecorationThickness: "auto",
-                                    textUnderlineOffset: "auto",
-                                    textUnderlinePosition: "from-font",
                                 }}
                             >
                                 Show {remainingCount} more addresses
@@ -257,7 +250,7 @@ const TokenContractsModal: React.FC<TokenContractsModalProps> = ({
                     <style jsx>{`
                         .contracts-scrollable {
                             scrollbar-width: thin;
-                            scrollbar-color: #cbd5e1 transparent;
+                            scrollbar-color: hsl(var(--muted-foreground)) transparent;
                         }
                         
                         .contracts-scrollable::-webkit-scrollbar {
@@ -269,12 +262,12 @@ const TokenContractsModal: React.FC<TokenContractsModalProps> = ({
                         }
                         
                         .contracts-scrollable::-webkit-scrollbar-thumb {
-                            background-color: #cbd5e1;
+                            background-color: hsl(var(--muted-foreground));
                             border-radius: 3px;
                         }
                         
                         .contracts-scrollable::-webkit-scrollbar-thumb:hover {
-                            background-color: #94a3b8;
+                            background-color: hsl(var(--popover-foreground));
                         }
                     `}</style>
                 </div>
