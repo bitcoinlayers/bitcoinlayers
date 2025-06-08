@@ -7,6 +7,7 @@ import {
     EntityType,
     Site,
     AssessmentCategory,
+    PegRiskSummarySnippet,
 } from "../props";
 
 const hemihemibtc: InfrastructureProject = {
@@ -48,6 +49,16 @@ const hemihemibtc: InfrastructureProject = {
         },
     ],
     description: "HemiBTC is a wrapped BTC asset native to the Hemi blockchain, an Ethereum rollup.",
+    riskSummary: [
+        {
+            title: PegRiskSummarySnippet.CustodianTitle,
+            content: PegRiskSummarySnippet.Federation,
+        },
+        {
+            title: PegRiskSummarySnippet.UnkownSignersTitle,
+            content: PegRiskSummarySnippet.UnkownSigners,
+        },
+    ],
     sections: [
         {
             id: "selfsubmit",

@@ -7,6 +7,7 @@ import {
     EntityType,
     Site,
     AssessmentCategory,
+    PegRiskSummarySnippet
 } from "../props";
 
 const twentyonesharesbtc: InfrastructureProject = {
@@ -50,13 +51,13 @@ const twentyonesharesbtc: InfrastructureProject = {
     description: "21 Shares BTC is a BTC wrapped asset. It is under review.",
     riskSummary: [
         {
-            title: "Specific Risk",
-            content: "risk text explanation"
+            title: PegRiskSummarySnippet.CustodianTitle,
+            content: PegRiskSummarySnippet.Guardian,
         },
         {
-            title: "Specific Risk",
-            content: "risk text explanation"
-        }
+            title: PegRiskSummarySnippet.UnkownSignersTitle,
+            content: PegRiskSummarySnippet.UnkownSigners,
+        },
     ],
     sections: [
         {

@@ -7,6 +7,7 @@ import {
     EntityType,
     Site,
     AssessmentCategory,
+    PegRiskSummarySnippet,
 } from "../props";
 
 const merlinwbtc: InfrastructureProject = {
@@ -48,6 +49,12 @@ const merlinwbtc: InfrastructureProject = {
         },
     ],
     description: "Merlin wBTC is a BTC wrapped asset. It is under review.",
+    riskSummary: [
+        {
+            title: PegRiskSummarySnippet.CustodianTitle,
+            content: PegRiskSummarySnippet.Guardian,
+        },
+    ],
     sections: [
         {
             id: "selfsubmit",

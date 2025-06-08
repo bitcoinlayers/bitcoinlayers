@@ -8,6 +8,7 @@ import {
     Site,
     AssessmentCategory,
     BTCWrapperTransparency,
+    PegRiskSummarySnippet,
 } from "../props";
 
 const solv: InfrastructureProject = {
@@ -50,7 +51,17 @@ const solv: InfrastructureProject = {
     ],
     description:
         "SolvBTC is a BTC-backed reserve asset that is backed by native BTC and various BTC-derivatives. It is deployed across various blockchains.",
-    sections: [
+        riskSummary: [
+            {
+                title: PegRiskSummarySnippet.CustodianTitle,
+                content: PegRiskSummarySnippet.Guardian,
+            },
+            {
+                title: "Various reserve assets used",
+                content: PegRiskSummarySnippet.MultipleAssets,
+            },
+        ],
+        sections: [
         {
             id: "protocoltransparency",
             title: "Protocol Transparency",

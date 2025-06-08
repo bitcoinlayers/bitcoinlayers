@@ -8,6 +8,7 @@ import {
     Site,
     AssessmentCategory,
     TokenSnippet,
+    PegRiskSummarySnippet,
 } from "../props";
 
 const solvsolvbtccore: InfrastructureProject = {
@@ -49,6 +50,16 @@ const solvsolvbtccore: InfrastructureProject = {
         },
     ],
     description: "BTC is a BTC wrapped asset. It is under review.",
+    riskSummary: [
+        {
+            title: PegRiskSummarySnippet.CustodianTitle,
+            content: PegRiskSummarySnippet.Guardian,
+        },
+        {
+            title: "Various reserve assets used",
+            content: PegRiskSummarySnippet.MultipleAssets,
+        },
+    ],
     sections: [
         {
             id: "selfsubmit",

@@ -7,6 +7,7 @@ import {
     Notice,
     Site,
     AssessmentCategory,
+    PegRiskSummarySnippet,
 } from "../props";
 
 const lorenzo: InfrastructureProject = {
@@ -48,6 +49,12 @@ const lorenzo: InfrastructureProject = {
         },
     ],
     description: "Lorenzo stBTC is a liquid staking token.",
+    riskSummary: [
+        {
+            title: PegRiskSummarySnippet.CustodianTitle,
+            content: PegRiskSummarySnippet.Guardian,
+        },
+    ],
     sections: [
         {
             id: "selfsubmit",

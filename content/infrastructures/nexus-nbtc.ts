@@ -7,6 +7,7 @@ import {
     EntityType,
     Site,
     AssessmentCategory,
+    PegRiskSummarySnippet,
 } from "../props";
 
 const nexusnbtc: InfrastructureProject = {
@@ -48,6 +49,12 @@ const nexusnbtc: InfrastructureProject = {
         },
     ],
     description: "Nexus nBTC is a BTC wrapped asset. It is under review.",
+    riskSummary: [
+        {
+            title: "This wrapper is under review",
+            content: "We are currently reviewing this two-way peg implementation."
+        },
+    ],
     sections: [
         {
             id: "selfsubmit",

@@ -7,6 +7,7 @@ import {
     Notice,
     Site,
     AssessmentCategory,
+    PegRiskSummarySnippet,
 } from "../props";
 
 const cornbtcn: InfrastructureProject = {
@@ -28,6 +29,16 @@ const cornbtcn: InfrastructureProject = {
     links: [],
     description:
         "BTCN is a derivative of BTC. It is backed by other BTC derivative assets. It is also the gas token for the Corn network.",
+    riskSummary: [
+        {
+            title: PegRiskSummarySnippet.CustodianTitle,
+            content: PegRiskSummarySnippet.Guardian,
+        },
+        {
+            title: "Various reserve assets used",
+            content: PegRiskSummarySnippet.MultipleAssets,
+        },
+    ],
     sections: [
         {
             id: "contracts",

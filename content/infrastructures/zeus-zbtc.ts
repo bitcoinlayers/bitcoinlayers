@@ -7,6 +7,7 @@ import {
     EntityType,
     Site,
     AssessmentCategory,
+    PegRiskSummarySnippet,
 } from "../props";
 
 const zueszbtc: InfrastructureProject = {
@@ -48,6 +49,12 @@ const zueszbtc: InfrastructureProject = {
         },
     ],
     description: "Zeus zBTC is a wrapped BTC asset on Solana. Funds backing zBTC are secured in individual instances by custodian partners.",
+    riskSummary: [
+        {
+            title: PegRiskSummarySnippet.CustodianTitle,
+            content: `${PegRiskSummarySnippet.Guardian} Zeus zBTC guardians secure native BTC indepedent of each other. They do not collectively manage an MPC protocol. Users trust the specific guardian securing BTC backing their zBTC tokens.`,
+        },
+    ],
     sections: [
         {
             id: "selfsubmit",

@@ -364,6 +364,20 @@ export enum RiskSummarySnippet { //TODO: Janusz to add more here
     RiskSummary = "",
 }
 
+export enum PegRiskSummarySnippet { //TODO: Janusz to add more here
+    CustodianTitle = "Users do not have unilateral claims on native BTC.",
+    OneCustodian = "BTC backing this asset is secured by a centralized custodian. Users trust this single entity with maintaining the peg with BTC.",
+    Guardian = "BTC backing this asset is secured by multiple custodians. Users trust this group with maintaining the peg with BTC.",
+    Federation = "BTC backing this asset is secured by a federation of signers. Users trust this federation with maintaining the peg with BTC.",
+    PoS = "BTC backing this asset is secured by a signers participating in a proof-of-stake network. Users trust these signers with maintaining the peg with BTC.",
+    UnkownSignersTitle = "The signers for this two-way peg have not been disclosed",
+    UnkownSigners = "The parties responsible for securing the assets backing this wrapper have not been disclosed. There is little-to-no reputational risk for signers securing these funds.",
+    Collateralized = "Users are exposed to smart contract risks and potential liquidations when using this asset.",
+    MultipleAssets = "This asset is backed by other BTC wrapped assets. If a reserve asset became unbacked, the two-way peg with BTC would break.",
+    SlashingRisk = "This asset represents BTC staked in a staking protocol. If the corresponding BTC is slashed, users' balances could be affected.",
+    RiskSummary = "",
+}
+
 export enum DefinitionSnippet { //TODO: Janusz to add more here
     DefinitionAltRollup = "The network is an alternative rollup. It uses an alternative network for data availability and consensus. It supports a variety of BTC-backed assets.",
 }

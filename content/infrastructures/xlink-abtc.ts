@@ -7,6 +7,7 @@ import {
     Notice,
     Site,
     AssessmentCategory,
+    PegRiskSummarySnippet,
 } from "../props";
 
 const xlinkabtc: InfrastructureProject = {
@@ -50,7 +51,13 @@ const xlinkabtc: InfrastructureProject = {
     ],
     description:
         "XLink aBTC is a BTC-backed reserve asset that can be used across a number of blockchain environments.",
-    sections: [
+        riskSummary: [
+            {
+                title: PegRiskSummarySnippet.UnkownSignersTitle,
+                content: PegRiskSummarySnippet.UnkownSigners,
+            },
+        ],
+        sections: [
         {
             id: "selfsubmit",
             title: "Further sections to be reviewed",

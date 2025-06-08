@@ -8,6 +8,7 @@ import {
     Site,
     AssessmentCategory,
     TokenSnippet,
+    PegRiskSummarySnippet,
 } from "../props";
 
 const alloallobtc: InfrastructureProject = {
@@ -28,6 +29,12 @@ const alloallobtc: InfrastructureProject = {
     bitcoinOnly: false,
     links: [],
     description: "AlloBTC is a BTC wrapped asset. It is under review.",
+    riskSummary: [
+        {
+            title: PegRiskSummarySnippet.CustodianTitle,
+            content: PegRiskSummarySnippet.OneCustodian,
+        },
+    ],
     sections: [
             {
                 id: "selfsubmit",
