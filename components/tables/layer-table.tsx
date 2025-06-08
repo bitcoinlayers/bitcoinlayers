@@ -23,12 +23,17 @@ import getCurrentSuppliesByNetwork from "@/hooks/get-current-supplies-by-network
 import TokenList from "@/components/tables/mapping-token-img";
 import { EntityCategory } from "@/content/props";
 import NoticeSnapshotDialog from "../layer/notice-snapshot/notice-snapshot-dialog";
+import RiskSummaryDialog from "../layer/risk-summary-dialog";
+import NetworkTypeHoverCard from "../layer/network-type-hover-card";
+import SupplyDistributionHoverCard from "../layer/supply-distribution-hover-card";
+import CustodyTypeDialog from "../layer/custody-type-dialog";
 
 type TableTabKey =
     | "Trust Assumptions"
     | "Type"
-    | "Unit"
+    | "Risk Summary"
     | "BTC Pegs"
+    | "Custody Type"
     | "BTC Supply";
 
 interface Props {
@@ -140,9 +145,9 @@ const LayerTable = ({ data, headers }: Props) => {
                     valueA = a.entityType;
                     valueB = b.entityType;
                     break;
-                case "Unit":
-                    valueA = a.nativeToken;
-                    valueB = b.nativeToken;
+                case "Risk Summary":
+                    valueA = a.riskSummary?.join(",") || "";
+                    valueB = b.riskSummary?.join(",") || "";
                     break;
                 case "BTC Supply":
                     valueA = totaledBalances[a.slug]?.totalAmount ?? -Infinity;
@@ -186,7 +191,20 @@ const LayerTable = ({ data, headers }: Props) => {
         setMobileActiveTab(tab);
     };
 
-    const mobileTableHeaders = headers.filter(
+    const dynamicHeaders = useMemo(() => {
+        return headers.map(header => {
+            if (header.name === "BTC Pegs" && category === EntityCategory.BitcoinNative) {
+                return {
+                    ...header,
+                    name: "Custody Type",
+                    mobileLabel: "Custody"
+                };
+            }
+            return header;
+        });
+    }, [headers, category]);
+
+    const mobileTableHeaders = dynamicHeaders.filter(
         (_item) => _item.name === mobileActiveTab || _item.name === "Name",
     );
 
@@ -229,7 +247,7 @@ const LayerTable = ({ data, headers }: Props) => {
                 <div className="overflow-x-auto mx-auto border-none">
                     <table className="w-full text-sm text-left rtl:text-right">
                         <TableHeader
-                            headers={isMobile ? mobileTableHeaders : headers}
+                            headers={isMobile ? mobileTableHeaders : dynamicHeaders}
                             onSort={handleSort}
                             sortBy={sortBy}
                             sortOrder={sortOrder}
@@ -245,26 +263,39 @@ const LayerTable = ({ data, headers }: Props) => {
                                     key={item.slug}
                                 >
                                     <td className="lg:px-6 px-4 py-4 font-semibold whitespace-nowrap">
-                                        <div className="flex items-center space-x-2">
+                                        <div className="flex items-center space-x-2 max-w-[200px] lg:max-w-[250px]">
                                             <Link
                                                 href={`/layers/${item.slug}`}
-                                                className="flex items-center"
+                                                className="flex items-center min-w-0 flex-1"
                                             >
                                                 <LayerImage
                                                     src={`/logos/${item.slug.toLowerCase()}.png`}
                                                     title={item.title}
                                                 />
-                                                <span className="ml-2 truncate lg:word-break-none">
+                                                <span className="ml-2 truncate">
                                                     {item.title}
                                                 </span>
                                             </Link>
                                             {item.notice && (
-                                                <NoticeSnapshotDialog
-                                                    layer={item}
-                                                />
+                                                <div className="flex-shrink-0">
+                                                    <NoticeSnapshotDialog layer={item} />
+                                                </div>
                                             )}
                                         </div>
                                     </td>
+                                    {(!isMobile ||
+                                        mobileActiveTab === "Type") && (
+                                        <td className="lg:px-6 px-4 py-3 lg:py-4 border-border">
+                                            <NetworkTypeHoverCard entityType={item.entityType}>
+                                                <Link 
+                                                    href={`/layers/${item.slug}`}
+                                                    className="hover:underline cursor-pointer"
+                                                >
+                                                    {item.entityType}
+                                                </Link>
+                                            </NetworkTypeHoverCard>
+                                        </td>
+                                    )}
                                     {(!isMobile ||
                                         mobileActiveTab ===
                                             "Trust Assumptions") && (
@@ -279,102 +310,83 @@ const LayerTable = ({ data, headers }: Props) => {
                                         </td>
                                     )}
                                     {(!isMobile ||
-                                        mobileActiveTab === "Type") && (
+                                        mobileActiveTab === "Risk Summary") && (
                                         <td className="lg:px-6 px-4 py-3 lg:py-4 border-border">
-                                            <Link href={`/layers/${item.slug}`}>
-                                                {item.entityType}
-                                            </Link>
+                                            <RiskSummaryDialog 
+                                                layer={item}
+                                                riskSummary={item.riskSummary || []}
+                                            />
                                         </td>
                                     )}
                                     {(!isMobile ||
-                                        mobileActiveTab === "Unit") && (
-                                        <td className="lg:px-6 px-4 py-3 lg:py-4 border-border">
-                                            <Link
-                                                href={`/layers/${item.slug}`}
-                                                className="flex items-center"
-                                            >
-                                                {item.feeToken.toLowerCase() ===
-                                                "btc" ? (
-                                                    <Image
-                                                        src="/btc.svg"
-                                                        alt="BTC logo"
-                                                        width={20}
-                                                        height={20}
-                                                        className="mr-2"
-                                                    />
-                                                ) : item.feeToken
-                                                      .toLowerCase()
-                                                      .includes("btc") ? (
-                                                    <Image
-                                                        src="/btc-inverse.svg"
-                                                        alt="BTC inverse logo"
-                                                        width={20}
-                                                        height={20}
-                                                        className="mr-2"
-                                                    />
-                                                ) : null}
-                                                {item.feeToken}
-                                            </Link>
+                                        mobileActiveTab === "BTC Pegs" ||
+                                        mobileActiveTab === "Custody Type") && (
+                                        <td className="lg:px-4 px-4 py-3 lg:py-4 border-border">
+                                            {item.entityCategory === EntityCategory.BitcoinNative ? (
+                                                <CustodyTypeDialog layer={item} />
+                                            ) : isLoading ? (
+                                                <div>Loading...</div>
+                                            ) : (
+                                                <TokenList
+                                                    tokens={tokensMap[item.slug.toLowerCase()] || []}
+                                                    networkSlug={item.slug}
+                                                />
+                                            )}
                                         </td>
                                     )}
-                                    {(!isMobile || mobileActiveTab === "BTC Pegs") && (
-  <td className="lg:px-4 px-4 py-3 lg:py-4 border-border">
-    {item.entityCategory === EntityCategory.BitcoinNative ? (
-      <Image
-        src="/btc.svg"
-        alt="BTC"
-        width={20}
-        height={20}
-      />
-    ) : isLoading ? (
-      <div>Loading...</div>
-    ) : (
-      <TokenList
-        tokens={
-          tokensMap[item.slug.toLowerCase()] || []
-        }
-      />
-    )}
-  </td>
-)}
-
                                     {(!isMobile ||
                                         mobileActiveTab === "BTC Supply") && (
                                         <td className="lg:px-6 px-4 py-3 lg:py-4">
-                                            <Link href={`/layers/${item.slug}`}>
-                                                {item.underReview ||
-                                                (Object.keys(
-                                                    totaledBalances,
-                                                ).find(
-                                                    (key) =>
-                                                        key.toLowerCase() ===
-                                                        item.title.toLowerCase(),
-                                                ) === undefined &&
-                                                    (item.btcLocked === null ||
-                                                        isNaN(
-                                                            item.btcLocked,
-                                                        ))) ? (
+                                            {item.underReview ||
+                                            (Object.keys(
+                                                totaledBalances,
+                                            ).find(
+                                                (key) =>
+                                                    key.toLowerCase() ===
+                                                    item.title.toLowerCase(),
+                                            ) === undefined &&
+                                                (item.btcLocked === null ||
+                                                    isNaN(
+                                                        item.btcLocked,
+                                                    ))) ? (
+                                                <Link href={`/layers/${item.slug}`}>
                                                     <div className="font-light">
                                                         Unavailable
                                                     </div>
-                                                ) : (
-                                                    <div>
-                                                        ₿{" "}
-                                                        {Number(
-                                                            totaledBalances[
-                                                                item.slug
-                                                            ]?.totalAmount ??
-                                                                item.btcLocked,
-                                                        ).toLocaleString(
-                                                            "en-US",
-                                                            {
-                                                                minimumFractionDigits: 0,
-                                                                maximumFractionDigits: 0,
-                                                            },
-                                                        )}
-                                                    </div>
-                                                )}
-                                            </Link>
+                                                </Link>
+                                            ) : (
+                                                <SupplyDistributionHoverCard
+                                                    tokens={tokensMap[item.slug.toLowerCase()] || []}
+                                                    totalAmount={Number(
+                                                        totaledBalances[
+                                                            item.slug
+                                                        ]?.totalAmount ??
+                                                            item.btcLocked,
+                                                    )}
+                                                    networkName={item.title}
+                                                >
+                                                    <Link 
+                                                        href={`/layers/${item.slug}`}
+                                                        className="hover:underline cursor-pointer"
+                                                    >
+                                                        <div>
+                                                            ₿{" "}
+                                                            {Number(
+                                                                totaledBalances[
+                                                                    item.slug
+                                                                ]?.totalAmount ??
+                                                                    item.btcLocked,
+                                                            ).toLocaleString(
+                                                                "en-US",
+                                                                {
+                                                                    minimumFractionDigits: 0,
+                                                                    maximumFractionDigits: 0,
+                                                                },
+                                                            )}
+                                                        </div>
+                                                    </Link>
+                                                </SupplyDistributionHoverCard>
+                                            )}
                                         </td>
                                     )}
                                 </tr>

@@ -7,6 +7,7 @@ import {
     Notice,
     Site,
     AssessmentCategory,
+    PegRiskSummarySnippet,
 } from "../props";
 
 const rootstockrbtc: InfrastructureProject = {
@@ -28,7 +29,13 @@ const rootstockrbtc: InfrastructureProject = {
     links: [],
     description:
         "RBTC is the gas token for the Rootstock sidechain. It is secured by a federation of nine signers who run specialized HSM hardware environments.",
-    sections: [
+    riskSummary: [
+            {
+                title: PegRiskSummarySnippet.CustodianTitle,
+                content: PegRiskSummarySnippet.Federation,
+            },
+        ],
+        sections: [
         {
             id: "selfsubmit",
             title: "Further sections to be reviewed",

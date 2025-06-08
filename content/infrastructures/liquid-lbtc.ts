@@ -7,6 +7,7 @@ import {
     Notice,
     Site,
     AssessmentCategory,
+    PegRiskSummarySnippet,
 } from "../props";
 
 const liquidlbtc: InfrastructureProject = {
@@ -28,7 +29,13 @@ const liquidlbtc: InfrastructureProject = {
     links: [],
     description:
         "Liquid LBTC is the native token for the Liquid sidechain. The BTC backing LBTC is secured by an 11/15 federation.",
-    sections: [
+        riskSummary: [
+            {
+                title: PegRiskSummarySnippet.CustodianTitle,
+                content: PegRiskSummarySnippet.Federation,
+            },
+        ],
+        sections: [
         {
             id: "selfsubmit",
             title: "Further sections to be reviewed",

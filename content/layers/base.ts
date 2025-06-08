@@ -17,6 +17,7 @@ import {
     KnowledgeBitSnippet,
     BitcoinSecuritySnippet,
     AdditionalSnippet,
+    RiskSummarySnippet,
 } from "../props";
 
 const base: LayerProject = {
@@ -65,7 +66,25 @@ const base: LayerProject = {
     ],
     description:
         "Base is an Ethereum rollup that that supports a variety of wrapped BTC tokens.",
-    riskAnalysis: [
+        riskSummary: [
+            {
+                title: RiskSummarySnippet.TitleUpgrade,
+                content: RiskSummarySnippet.RiskSummaryImmediateUpgrade
+            },
+            {
+                title: RiskSummarySnippet.TitleCustodianPegs,
+                content: RiskSummarySnippet.RiskSummaryCustodianPegs
+            },
+            {
+                title: RiskSummarySnippet.TitleAltDA,
+                content: RiskSummarySnippet.RiskSummaryAltDANetwork,
+            },
+            {
+                title: RiskSummarySnippet.TitleCentralizedSequencer,
+                content: RiskSummarySnippet.RiskSummaryCentralizedSequencer,
+            }
+        ],
+        riskAnalysis: [
         {
             category: RiskCategory.BtcCustody,
             score: 0,

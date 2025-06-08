@@ -15,6 +15,7 @@ import {
     BitcoinSecuritySnippet,
     TechnologySnippet,
     UseCaseSnippet,
+    RiskSummarySnippet,
 } from "../props";
 
 const mezo: LayerProject = {
@@ -35,8 +36,8 @@ const mezo: LayerProject = {
         RiskFactor.High,
     ],
     btcLocked: 0,
-    nativeToken: "mezotBTC",
-    feeToken: "mezotBTC",
+    nativeToken: "tBTC",
+    feeToken: "tBTC",
     notice: undefined,
     bitcoinOnly: false,
     links: [
@@ -59,6 +60,16 @@ const mezo: LayerProject = {
     ],
     description:
         "Mezo is an EVM-compatible blockchain that supports general purpose onchain applications. It runs on CometBFT consensus protocol and is operated by a federated validator set. Its official bridge is supports briding tBTC from Ethereum to Mezo.",
+        riskSummary: [
+            {
+                title: RiskSummarySnippet.TitleCustodianPegs,
+                content: `${RiskSummarySnippet.RiskSummaryCustodianPegs}The majority of Mezo's BTC-backed assets are secured by a bridge contract on Ethereum. This bridge contract can be upgraded by a 5/9 federation.,`
+            },
+            {
+                title: RiskSummarySnippet.TitleAlternativeL1,
+                content: RiskSummarySnippet.RiskSummaryAlternativeL1,
+            },
+        ],
     riskAnalysis: [
         {
             category: RiskCategory.BtcCustody,

@@ -8,6 +8,7 @@ import {
     Site,
     AssessmentCategory,
     BTCWrapperTransparency,
+    PegRiskSummarySnippet,
 } from "../props";
 
 const unirouter: InfrastructureProject = {
@@ -46,6 +47,12 @@ const unirouter: InfrastructureProject = {
         {
             text: Site.Twitter,
             url: "https://x.com/UniRouterBTC",
+        },
+    ],
+    riskSummary: [
+        {
+            title: PegRiskSummarySnippet.UnkownSignersTitle,
+            content: PegRiskSummarySnippet.UnkownSigners,
         },
     ],
     description:

@@ -7,6 +7,7 @@ import {
     Notice,
     Site,
     AssessmentCategory,
+    PegRiskSummarySnippet,
 } from "../props";
 
 const kbtc: InfrastructureProject = {
@@ -49,6 +50,12 @@ const kbtc: InfrastructureProject = {
     ],
     description:
         "Kraken kBTC is a BTC-backed reserve asset that can be used on Ethereum or Optimism",
+    riskSummary: [
+        {
+            title: PegRiskSummarySnippet.CustodianTitle,
+            content: PegRiskSummarySnippet.OneCustodian,
+        },
+    ],
     sections: [
         {
             id: "selfsubmit",

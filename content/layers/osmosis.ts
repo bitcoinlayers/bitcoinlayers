@@ -13,6 +13,7 @@ import {
     ReviewSnippet,
     BitcoinSecuritySnippet,
     TokenSnippet,
+    RiskSummarySnippet,
 } from "../props";
 
 const osmosis: LayerProject = {
@@ -61,7 +62,17 @@ const osmosis: LayerProject = {
     ],
     description:
         "Osmosis is a proof-of-stake blockchain that supports a number of wrapped BTC tokens. It is IBC-compatible and a part of the Cosmos ecosystem.",
-    riskAnalysis: [
+        riskSummary: [
+            {
+                title: RiskSummarySnippet.TitleCustodianPegs,
+                content: `${RiskSummarySnippet.RiskSummaryCustodianPegs}`,
+            },
+            {
+                title: RiskSummarySnippet.TitleAlternativeL1,
+                content: RiskSummarySnippet.RiskSummaryAlternativeL1,
+            },
+        ],
+        riskAnalysis: [
         {
             category: RiskCategory.BtcCustody,
             score: 0,

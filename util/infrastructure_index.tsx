@@ -1,7 +1,5 @@
 import { InfrastructureProject } from "../content/props";
 
-import astriaProject from "../content/infrastructures/astria";
-import availProject from "../content/infrastructures/avail";
 import bvmProject from "../content/infrastructures/bvm";
 import celestiaProject from "../content/infrastructures/celestia";
 import espressoProject from "../content/infrastructures/espresso";
@@ -68,8 +66,6 @@ import lorenzoenzobtc from "@/content/infrastructures/lorenzo-enzobtc";
 import OsmosisBTC from "@/content/infrastructures/osmosis-osmobtc";
 import osmosis from "@/content/layers/osmosis";
 
-const astria: InfrastructureProject = astriaProject;
-const avail: InfrastructureProject = availProject;
 const bvm: InfrastructureProject = bvmProject;
 const celestia: InfrastructureProject = celestiaProject;
 const espresso: InfrastructureProject = espressoProject;

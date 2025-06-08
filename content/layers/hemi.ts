@@ -18,6 +18,7 @@ import {
     BitcoinSecuritySnippet,
     AdditionalSnippet,
     KnowledgeBitSnippet,
+    RiskSummarySnippet,
 } from "../props";
 import { tokenToString } from "typescript";
 import { Rubik_Vinyl } from "next/font/google";
@@ -68,7 +69,21 @@ const hemi: LayerProject = {
     ],
     description:
         "Hemi is a blockchain that is building compatibility with bitcoin and Ethereum.",
-    riskAnalysis: [
+        riskSummary: [
+            {
+                title: RiskSummarySnippet.TitleCustodianPegs,
+                content: RiskSummarySnippet.RiskSummaryCustodianPegs,
+            },
+            {
+                title: RiskSummarySnippet.TitleAltDA,
+                content: RiskSummarySnippet.RiskSummaryAltDANetwork,
+            },
+            {
+                title: RiskSummarySnippet.TitleCentralizedSequencer,
+                content: RiskSummarySnippet.RiskSummaryCentralizedSequencer,
+            },
+        ],
+        riskAnalysis: [
         {
             category: RiskCategory.BtcCustody,
             score: 0,

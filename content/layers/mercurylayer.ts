@@ -12,6 +12,7 @@ import {
     TokenSnippet,
     ReviewSnippet,
     BitcoinSecuritySnippet,
+    RiskSummarySnippet,
 } from "../props";
 
 const mercurylayer: LayerProject = {
@@ -55,7 +56,17 @@ const mercurylayer: LayerProject = {
     ],
     description:
         "Mercury Layer is an implementation of the statechain protocol. Statechains enable the offchain transfer of UTXO ownership by transferring key shares from one entity to the next with support of a trusted third party, the statechain entity. A statecoin owner can unilaterally exit back to Bitcoin’s L1 network, given the statechain entity doesn’t collude with a previous statecoin owner. Mercury Layer utilizes an HSM server that leverages blind co-signing and key share updates. The system relies entirely on client-side software to manage the statechain transfer history and handle transaction validation.",
-    riskAnalysis: [
+        riskSummary: [
+            {
+                title: "Users trust the statechain entity with key deletion",
+                content: RiskSummarySnippet.RiskStatechainFinality,
+            },
+            {
+                title: "Users must watch for previous owners' unilateral exit transactions",
+                content: RiskSummarySnippet.RiskStatechainTimelock,
+            },
+        ],
+        riskAnalysis: [
         {
             category: RiskCategory.BtcCustody,
             score: 0,

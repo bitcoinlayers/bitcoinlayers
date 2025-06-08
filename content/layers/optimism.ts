@@ -13,6 +13,7 @@ import {
     RiskCategory,
     TokenSnippet,
     ReviewSnippet,
+    RiskSummarySnippet,
 } from "../props";
 
 const optimism: LayerProject = {
@@ -40,11 +41,11 @@ const optimism: LayerProject = {
     links: [
         {
             text: Site.Website,
-            url: "https://usecorn.com/",
+            url: "https://optimism.io/",
         },
         {
             text: Site.Docs,
-            url: "https://docs.usecorn.com/docs/developers/introduction",
+            url: "https://www.docs.optimism.io/",
         },
         {
             text: Site.Explorer,
@@ -52,16 +53,34 @@ const optimism: LayerProject = {
         },
         {
             text: Site.GitHub,
-            url: "https://github.com/usecorn",
+            url: "https://github.com/optimism",
         },
         {
             text: Site.Twitter,
-            url: "https://x.com/use_corn",
+            url: "https://x.com/optimism",
         },
     ],
     description:
-        "Arbitrum is an Ethereum rollup that that supports a variety of wrapped BTC tokens.",
-    riskAnalysis: [
+        "Optimism is an Ethereum rollup that that supports a variety of wrapped BTC tokens.",
+        riskSummary: [
+            {
+                title: RiskSummarySnippet.TitleUpgrade,
+                content: RiskSummarySnippet.RiskSummaryImmediateUpgrade
+            },
+            {
+                title: RiskSummarySnippet.TitleCustodianPegs,
+                content: RiskSummarySnippet.RiskSummaryCustodianPegs
+            },
+            {
+                title: RiskSummarySnippet.TitleAltDA,
+                content: RiskSummarySnippet.RiskSummaryAltDANetwork,
+            },
+            {
+                title: RiskSummarySnippet.TitleCentralizedSequencer,
+                content: RiskSummarySnippet.RiskSummaryCentralizedSequencer,
+            }
+        ],
+        riskAnalysis: [
         {
             category: RiskCategory.BtcCustody,
             score: 0,

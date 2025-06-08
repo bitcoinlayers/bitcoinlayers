@@ -16,6 +16,7 @@ import {
     UseCaseSnippet,
     TechnologySnippet,
     BitcoinSecuritySnippet,
+    RiskSummarySnippet,
 } from "../props";
 import { tokenToString } from "typescript";
 import { Rubik_Vinyl } from "next/font/google";
@@ -66,7 +67,17 @@ const berachain: LayerProject = {
     ],
     description:
         "Berachain is an EVM-compatible L1. It leverages a novel consensus mechanism and is home to various BTC-derivative assets.",
-    riskAnalysis: [
+        riskSummary: [
+            {
+                title: RiskSummarySnippet.TitleCustodianPegs,
+                content: RiskSummarySnippet.RiskSummaryCustodianPegs,
+            },
+            {
+                title: RiskSummarySnippet.TitleAlternativeL1,
+                content: RiskSummarySnippet.RiskSummaryAlternativeL1,
+            }
+        ],
+        riskAnalysis: [
         {
             category: RiskCategory.BtcCustody,
             score: 0,

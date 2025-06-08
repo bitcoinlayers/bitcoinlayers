@@ -7,6 +7,7 @@ import {
     Notice,
     Site,
     AssessmentCategory,
+    PegRiskSummarySnippet,
 } from "../props";
 
 const hyperliquidbtc: InfrastructureProject = {
@@ -28,7 +29,13 @@ const hyperliquidbtc: InfrastructureProject = {
     links: [],
     description:
         "Hyperliquid BTC is a BTC-denominated asset available to Hyperliquid users. BTC backing this asset is secured by a 2/3 MPC scheme.",
-    sections: [
+        riskSummary: [
+            {
+                title: PegRiskSummarySnippet.CustodianTitle,
+                content: PegRiskSummarySnippet.Guardian,
+            },
+        ],
+        sections: [
         {
             id: "selfsubmit",
             title: "Further sections to be reviewed",

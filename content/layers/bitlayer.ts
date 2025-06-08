@@ -11,6 +11,7 @@ import {
     ContentSection,
     RiskCategory,
     TokenSnippet,
+    RiskSummarySnippet,
 } from "../props";
 
 const bitlayer: LayerProject = {
@@ -59,7 +60,17 @@ const bitlayer: LayerProject = {
     ],
     description:
         "Bitlayer's mainnet v1 is a federated sidechain. It supports an EVM execution environment with plans to support other VMs.",
-    riskAnalysis: [
+        riskSummary: [
+            {
+                title: RiskSummarySnippet.TitleCustodianPegs,
+                content: RiskSummarySnippet.RiskSummaryCustodianPegs,
+            },
+            {
+                title: RiskSummarySnippet.TitleFederation,
+                content: RiskSummarySnippet.RiskSummaryFederation,
+            }
+        ],
+        riskAnalysis: [
         {
             category: RiskCategory.BtcCustody,
             score: 0,

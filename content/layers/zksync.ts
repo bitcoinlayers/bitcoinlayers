@@ -16,6 +16,7 @@ import {
     TechnologySnippet,
     KnowledgeBitSnippet,
     UseCaseSnippet,
+    RiskSummarySnippet,
 } from "../props";
 
 const zksync: LayerProject = {
@@ -63,6 +64,24 @@ const zksync: LayerProject = {
         },
     ],
     description: "zkSync is a rollup that posts data to Ethereum.",
+    riskSummary: [
+        {
+            title: RiskSummarySnippet.TitleUpgrade,
+            content: RiskSummarySnippet.RiskSummaryImmediateUpgrade
+        },
+        {
+            title: RiskSummarySnippet.TitleCustodianPegs,
+            content: RiskSummarySnippet.RiskSummaryCustodianPegs
+        },
+        {
+            title: RiskSummarySnippet.TitleAltDA,
+            content: RiskSummarySnippet.RiskSummaryAltDANetwork,
+        },
+        {
+            title: RiskSummarySnippet.TitleCentralizedSequencer,
+            content: RiskSummarySnippet.RiskSummaryCentralizedSequencer,
+        }
+    ],
     riskAnalysis: [
         {
             category: RiskCategory.BtcCustody,

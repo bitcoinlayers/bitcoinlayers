@@ -16,6 +16,7 @@ import {
     UseCaseSnippet,
     TechnologySnippet,
     BitcoinSecuritySnippet,
+    RiskSummarySnippet,
 } from "../props";
 import { tokenToString } from "typescript";
 
@@ -65,7 +66,25 @@ const taiko: LayerProject = {
     ],
     description:
         "Taiko is an Ethereum rollup that leverages based sequencing. It is home to various BTC-derivative assets.",
-    riskAnalysis: [
+        riskSummary: [
+            {
+                title: RiskSummarySnippet.TitleUpgrade,
+                content: RiskSummarySnippet.RiskSummaryImmediateUpgrade
+            },
+            {
+                title: RiskSummarySnippet.TitleCustodianPegs,
+                content: RiskSummarySnippet.RiskSummaryCustodianPegs
+            },
+            {
+                title: RiskSummarySnippet.TitleAltDA,
+                content: RiskSummarySnippet.RiskSummaryAltDANetwork,
+            },
+            {
+                title: RiskSummarySnippet.TitleCentralizedSequencer,
+                content: RiskSummarySnippet.RiskSummaryCentralizedSequencer,
+            }
+        ],
+        riskAnalysis: [
         {
             category: RiskCategory.BtcCustody,
             score: 0,

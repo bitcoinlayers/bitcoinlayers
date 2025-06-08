@@ -10,6 +10,7 @@ import {
     ReviewSnippet,
     TokenSnippet,
     BTCWrapperTransparency,
+    PegRiskSummarySnippet,
 } from "../props";
 
 const xsolvbtc: InfrastructureProject = {
@@ -48,7 +49,17 @@ const xsolvbtc: InfrastructureProject = {
     ],
     description:
         "xSolvBTC offer a mechanism that enables users to deposit SolvBTC into smart contracts on EVM-based chains. Users receive a token representing BTC deposited on Babylon in exchange for their wrapped BTC token.",
-    sections: [
+    riskSummary: [
+            {
+                title: PegRiskSummarySnippet.CustodianTitle,
+                content: PegRiskSummarySnippet.Guardian,
+            },
+            {
+                title: "Asset represents staked BTC",
+                content: PegRiskSummarySnippet.SlashingRisk,
+            },
+        ],
+        sections: [
         {
             id: "protocoltransparency",
             title: "Protocol Transparency",

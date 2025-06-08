@@ -7,6 +7,7 @@ import {
     Notice,
     Site,
     AssessmentCategory,
+    PegRiskSummarySnippet,
 } from "../props";
 
 const tronbtc: InfrastructureProject = {
@@ -27,6 +28,12 @@ const tronbtc: InfrastructureProject = {
     bitcoinOnly: false,
     links: [],
     description: "BTCTRON is a BTC-synthetic asset home to the Tron blockchain.",
+    riskSummary: [
+        {
+            title: PegRiskSummarySnippet.CustodianTitle,
+            content: PegRiskSummarySnippet.OneCustodian,
+        },
+    ],
     sections: [
         {
             id: "selfsubmit",

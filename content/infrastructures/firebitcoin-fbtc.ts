@@ -7,6 +7,7 @@ import {
     Notice,
     Site,
     AssessmentCategory,
+    PegRiskSummarySnippet,
 } from "../props";
 
 const fire: InfrastructureProject = {
@@ -49,6 +50,12 @@ const fire: InfrastructureProject = {
     ],
     description:
         "Ignitions's FBTC is a BTC-backed reserve asset that can be used across various EVM chains.",
+    riskSummary: [
+        {
+            title: PegRiskSummarySnippet.CustodianTitle,
+            content: PegRiskSummarySnippet.Guardian,
+        },
+    ],
     sections: [
         {
             id: "selfsubmit",

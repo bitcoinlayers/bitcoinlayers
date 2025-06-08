@@ -18,6 +18,7 @@ import {
     UseCaseSnippet,
     KnowledgeBitSnippet,
     AdditionalSnippet,
+    RiskSummarySnippet,
 } from "../props";
 
 const hyperliquid: LayerProject = {
@@ -66,7 +67,13 @@ const hyperliquid: LayerProject = {
     ],
     description:
         "Hyperliquid is a purpose built layer 1 blockchain focused on high performance applications. It supports a BTC derivative asset where BTC backing the asset is secured by a federation of guardians.",
-    riskAnalysis: [
+        riskSummary: [
+            {
+                title: RiskSummarySnippet.TitleCustodianPegs,
+                content: RiskSummarySnippet.RiskSummaryCustodianPegs,
+            },
+        ],
+        riskAnalysis: [
         {
             category: RiskCategory.BtcCustody,
             score: 0,

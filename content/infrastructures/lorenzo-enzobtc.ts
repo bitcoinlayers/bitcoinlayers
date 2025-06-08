@@ -7,6 +7,7 @@ import {
     EntityType,
     Site,
     AssessmentCategory,
+    PegRiskSummarySnippet,
 } from "../props";
 
 const lorenzoenzobtc: InfrastructureProject = {
@@ -48,6 +49,12 @@ const lorenzoenzobtc: InfrastructureProject = {
         },
     ],
     description: "Lorenzo enzoBTC is a wrapped BTC asset offered through the Lorenzo protocol.",
+    riskSummary: [
+        {
+            title: PegRiskSummarySnippet.CustodianTitle,
+            content: PegRiskSummarySnippet.Guardian,
+        },
+    ],
     sections: [
         {
             id: "selfsubmit",

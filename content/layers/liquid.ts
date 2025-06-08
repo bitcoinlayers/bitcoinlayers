@@ -15,6 +15,7 @@ import {
     BitcoinSecuritySnippet,
     TechnologySnippet,
     UseCaseSnippet,
+    RiskSummarySnippet,
 } from "../props";
 
 const liquid: LayerProject = {
@@ -63,6 +64,16 @@ const liquid: LayerProject = {
     ],
     description:
         "The Liquid Network is a sidechain that enables users to perform confidential transactions, swaps, issue tokenized assets, and more, on the sidechain. It is managed by a permissioned federation, and does not use the Bitcoin Layer 1 for security. It uses a federated multi-sig to custody the BTC that is used to issue BTC IOUs (L-BTC) on the sidechain.",
+    riskSummary: [
+        {
+            title: RiskSummarySnippet.TitleCustodianPegs,
+            content: RiskSummarySnippet.RiskSummaryCustodianPegs,
+        },
+        {
+            title: RiskSummarySnippet.TitleFederation,
+            content: RiskSummarySnippet.RiskSummaryFederation,
+        }
+    ],
     riskAnalysis: [
         {
             category: RiskCategory.BtcCustody,

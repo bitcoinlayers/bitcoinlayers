@@ -16,6 +16,7 @@ import {
     BitcoinSecuritySnippet,
     TechnologySnippet,
     UseCaseSnippet,
+    RiskSummarySnippet,
 } from "../props";
 
 const fractal: LayerProject = {
@@ -64,7 +65,17 @@ const fractal: LayerProject = {
     ],
     description:
         "Fractal is a Bitcoin sidechain purpose built to scale bitcoin-native applications like Runes and BRC-20s. It leverages a novel consensus mechanism similar to merge-mining.",
-    riskAnalysis: [
+        riskSummary: [
+            {
+                title: RiskSummarySnippet.TitleCustodianPegs,
+                content: RiskSummarySnippet.RiskSummaryCustodianPegs,
+            },
+            {
+                title: RiskSummarySnippet.TitleAlternativeL1,
+                content: RiskSummarySnippet.RiskSummaryAlternativeL1,
+            }
+        ],
+        riskAnalysis: [
         {
             category: RiskCategory.BtcCustody,
             score: 0,

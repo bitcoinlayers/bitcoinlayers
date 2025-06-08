@@ -11,12 +11,13 @@ import {
     ContentSection,
     RiskCategory,
     TokenSnippet,
+    RiskSummarySnippet,
 } from "../props";
 
 const bsquared: LayerProject = {
     type: Type.Layer,
     slug: "bsquared",
-    title: "Bsquared Network",
+    title: "Bsquared",
     entityType: EntityType.AltRollup,
     entityCategory: EntityCategory.Sidesystem,
     live: LiveStatus.Mainnet,
@@ -59,7 +60,25 @@ const bsquared: LayerProject = {
     ],
     description:
         "The current Bsquared Network mainnet consists of two different chains. The parent chain is a fork of Ethermint. The rollup chain is a fork of of an Ethereum rollup stack.",
-    riskAnalysis: [
+        riskSummary: [
+            {
+                title: RiskSummarySnippet.TitleUpgrade,
+                content: RiskSummarySnippet.RiskSummaryImmediateUpgrade
+            },
+            {
+                title: RiskSummarySnippet.TitleCustodianPegs,
+                content: RiskSummarySnippet.RiskSummaryCustodianPegs
+            },
+            {
+                title: RiskSummarySnippet.TitleAltDA,
+                content: RiskSummarySnippet.RiskSummaryAltDACommittee,
+            },
+            {
+                title: RiskSummarySnippet.TitleCentralizedSequencer,
+                content: RiskSummarySnippet.RiskSummaryCentralizedSequencer,
+            }
+        ],
+        riskAnalysis: [
         {
             category: RiskCategory.BtcCustody,
             score: 0,

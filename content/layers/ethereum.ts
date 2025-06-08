@@ -15,6 +15,7 @@ import {
     BitcoinSecuritySnippet,
     TechnologySnippet,
     UseCaseSnippet,
+    RiskSummarySnippet,
 } from "../props";
 
 const ethereum: LayerProject = {
@@ -63,6 +64,16 @@ const ethereum: LayerProject = {
     ],
     description:
         "Ethereum is an alternative blockchain that supports a number of wrapped BTC tokens. Ethereum is home to the EVM execution environment which supports more expressive smart contracts.",
+    riskSummary: [
+        {
+            title: RiskSummarySnippet.TitleCustodianPegs,
+            content: RiskSummarySnippet.RiskSummaryCustodianPegs,
+        },
+        {
+            title: RiskSummarySnippet.TitleAlternativeL1,
+            content: RiskSummarySnippet.RiskSummaryAlternativeL1,
+        },
+    ],
     riskAnalysis: [
         {
             category: RiskCategory.BtcCustody,

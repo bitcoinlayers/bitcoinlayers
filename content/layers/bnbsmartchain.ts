@@ -17,8 +17,10 @@ import {
     UseCaseSnippet,
     TechnologySnippet,
     ReviewSnippet,
+    RiskSummarySnippet,
 } from "../props";
 import { Bitcoin } from "lucide-react";
+import RiskSummary from "@/components/shared/risk-summary";
 
 const bnbsmartchain: LayerProject = {
     type: Type.Layer,
@@ -66,7 +68,17 @@ const bnbsmartchain: LayerProject = {
     ],
     description:
         "BNB Smart Chain is an alternative proof-of-stake blockchain that supports a number of wrapped BTC tokens. It offers an EVM-compatible execution environment which supports more expressive smart contracts.",
-    riskAnalysis: [
+        riskSummary: [
+            {
+                title: RiskSummarySnippet.TitleCustodianPegs,
+                content: RiskSummarySnippet.RiskSummaryCustodianPegs,
+            },
+            {
+                title: RiskSummarySnippet.TitleAlternativeL1,
+                content: RiskSummarySnippet.RiskSummaryAlternativeL1,
+            },
+        ],
+        riskAnalysis: [
         {
             category: RiskCategory.BtcCustody,
             score: 0,

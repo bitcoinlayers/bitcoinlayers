@@ -56,17 +56,17 @@ function getSortedDataAndHeaders(view: string) {
             const wrapperHeaders = [
                 { name: "Name", showSorting: true, mobileLabel: "Name" },
                 {
-                    name: "Snapshot",
-                    showSorting: false,
-                    mobileLabel: "Snapshot",
-                },
-                {
                     name: "Type",
                     showSorting: true,
                     mobileLabel: "Type",
                     filterOptions: wrapperTypeFilters,
                 },
-                { name: "Status", showSorting: true, mobileLabel: "Status" },
+                {
+                    name: "Snapshot",
+                    showSorting: false,
+                    mobileLabel: "Snapshot",
+                },
+                { name: "Risk Summary", showSorting: true, mobileLabel: "Risk Summary" },
                 {
                     name: "Networks",
                     showSorting: false,
@@ -89,20 +89,20 @@ function getSortedDataAndHeaders(view: string) {
             const layerHeaders = [
                 { name: "Name", showSorting: true, mobileLabel: "Name" },
                 {
-                    name: "Trust Assumptions",
-                    showSorting: false,
-                    mobileLabel: "Trust",
-                },
-                {
                     name: "Type",
                     showSorting: true,
                     mobileLabel: "Type",
                     filterOptions: layerTypeFilters,
                 },
                 {
-                    name: "Unit of Account",
-                    showSorting: true,
-                    mobileLabel: "Unit",
+                    name: "Trust Assumptions",
+                    showSorting: false,
+                    mobileLabel: "Trust",
+                },
+                {
+                    name: "Risk Summary",
+                    showSorting: false,
+                    mobileLabel: "Risk",
                 },
                 {
                     name: "BTC Pegs",

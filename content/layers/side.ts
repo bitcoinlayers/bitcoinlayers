@@ -15,6 +15,7 @@ import {
     BitcoinSecuritySnippet,
     TechnologySnippet,
     UseCaseSnippet,
+    RiskSummarySnippet,
 } from "../props";
 
 const side: LayerProject = {
@@ -63,7 +64,17 @@ const side: LayerProject = {
     ],
     description:
         "Side Protocol is a Proof-of-Stake blockchain for BTC-denominated applications. It runs on CometBFT consensus.",
-    riskAnalysis: [
+        riskSummary: [
+            {
+                title: RiskSummarySnippet.TitleCustodianPegs,
+                content: `${RiskSummarySnippet.RiskFederationPeg}`,
+            },
+            {
+                title: RiskSummarySnippet.TitleAlternativeL1,
+                content: RiskSummarySnippet.RiskSummaryAlternativeL1,
+            },
+        ],
+        riskAnalysis: [
         {
             category: RiskCategory.BtcCustody,
             score: 0,

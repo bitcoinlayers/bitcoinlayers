@@ -7,6 +7,7 @@ import {
     EntityType,
     Site,
     AssessmentCategory,
+    PegRiskSummarySnippet
 } from "../props";
 
 const OsmosisBTC: InfrastructureProject = {
@@ -48,6 +49,16 @@ const OsmosisBTC: InfrastructureProject = {
         },
     ],
     description: "OsmoBTC is a wrapped BTC asset home to the Osmosis blockchain. It is backed by a number of different wrapped assets.",
+    riskSummary: [
+        {
+            title: PegRiskSummarySnippet.CustodianTitle,
+            content: PegRiskSummarySnippet.Guardian,
+        },
+        {
+            title: "Various reserve assets used",
+            content: PegRiskSummarySnippet.MultipleAssets,
+        },
+    ],
     sections: [
         {
             id: "selfsubmit",
