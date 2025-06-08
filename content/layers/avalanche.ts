@@ -15,7 +15,9 @@ import {
     BitcoinSecuritySnippet,
     TechnologySnippet,
     UseCaseSnippet,
+    RiskSummarySnippet,
 } from "../props";
+import RiskSummary from "@/components/shared/risk-summary";
 
 const avalanche: LayerProject = {
     type: Type.Layer,
@@ -65,12 +67,12 @@ const avalanche: LayerProject = {
         "Avalanche is an alternative proof-of-stake blockchain that supports a number of wrapped BTC tokens. It offers an EVM-compatible execution environment which supports more expressive smart contracts. It also supports the interoperable subnet blockchains.",
         riskSummary: [
             {
-                title: "Specific Risk",
-                content: "risk text explanation"
+                title: "All BTC pegs have custodian trust assumptions",
+                content: RiskSummarySnippet.RiskSummaryCustodianPegs
             },
             {
-                title: "Specific Risk",
-                content: "risk text explanation"
+                title: "The network is an alternative blockchain",
+                content: RiskSummarySnippet.RiskSummaryAlternativeL1,
             }
         ],
         riskAnalysis: [

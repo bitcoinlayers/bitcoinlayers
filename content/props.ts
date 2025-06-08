@@ -341,6 +341,24 @@ export enum BTCWrapperTransparency { //TODO: Janusz to add more here
     StakeAttestationsYes = "The project does not provide any attestations that its BTC is in-fact staked onto Babylon.",
 }
 
+export enum RiskSummarySnippet { //TODO: Janusz to add more here
+    RiskSummarySecurityCouncil = "If the security council is compromised, they can immediately upgrade the bridge contracts and steal user funds. This risk is relevant to BTC-backed tokens locked in the layer's official bridge contract.",
+    RiskSummaryImmediateUpgrade = "A centralized entity can immediately upgrade bridge contracts and steal user funds. This risk is relevant to BTC-backed tokens locked in the layer's official bridge contract.",
+    TitleUpgrade = "Bridge contracts are upgradeable",
+    RiskSummaryCustodianPegs = "All BTC backing wrapped tokens on this network are ultimately secured by custodians. Users trust that these custodians will not misappropriate funds and keep their assets pegged 1:1. Each custodian has their own risks. Learn more in the trust assumptions review section.",
+    TitleCustodianPegs = "All BTC pegs have custodian trust assumptions",
+    RiskSummaryAltDANetwork = "Data related to the network's state is made available by another consensus network. The network's state cannot make progress if the data availability layer withholds the data. If the network cannot make progress, user funds can be frozen.",
+    RiskSummaryAltDACommittee = "Data related to the network's state is made available by an offchain committee. The network's state cannot make progress if this committee withholds the data. If the network cannot make progress, user funds can be frozen.",
+    TitleAltDA = "Another data availability layer is used",
+    RiskSummaryCentralizedSequencer = "The network is operated by a centralized operator. If this operator goes offline, the network can be halted which can freeze user funds. Please see the trust assumptions to learn if their is a fallback mechanism for liveness failures.",
+    TitleCentralizedSequencer = "A centralized entity is the network operator",
+    RiskSummaryAlternativeL1 = "The network is an alternative blockchain. Users trust the economic security of the network to deter validators from censorship and creating malicious peg outs.",
+    TitleAlternativeL1 = "The network is an alternative blockchain",
+    TitleFederation = "The network is managed by a federation.",
+    RiskSummaryFederation = "The network is managed by a federation. Users trust the federation to not censor them, halt the network, and freeze user funds.",
+    RiskSummary = "",
+}
+
 export enum DefinitionSnippet { //TODO: Janusz to add more here
     DefinitionAltRollup = "The network is an alternative rollup. It uses an alternative network for data availability and consensus. It supports a variety of BTC-backed assets.",
 }

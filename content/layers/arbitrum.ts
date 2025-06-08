@@ -18,6 +18,7 @@ import {
     UseCaseSnippet,
     KnowledgeBitSnippet,
     AdditionalSnippet,
+    RiskSummarySnippet,
 } from "../props";
 
 const arbitrum: LayerProject = {
@@ -68,13 +69,21 @@ const arbitrum: LayerProject = {
         "Arbitrum is an Ethereum rollup that supports a variety of wrapped BTC tokens.",
     riskSummary: [
         {
-            title: "Specific Risk",
-            content: "risk text explanation"
+            title: "All BTC pegs have custodian trust assumptions",
+            content: RiskSummarySnippet.RiskSummaryCustodianPegs
         },
         {
-            title: "Specific Risk",
-            content: "risk text explanation"
-        }
+            title: "Some contracts immediately upgradeable by Arbitrum Security council",
+            content: `${RiskSummarySnippet.RiskSummarySecurityCouncil} The Arbitrum Security council is a 9/12 multisig.`,
+        },
+        {
+            title: "Another network is used for data availability",
+            content: RiskSummarySnippet.RiskSummaryAltDANetwork,
+        },
+        {
+            title: "A centralized entity is the network operator",
+            content: RiskSummarySnippet.RiskSummaryCentralizedSequencer,
+        },
     ],
     riskAnalysis: [
         {
