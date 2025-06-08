@@ -16,6 +16,7 @@ import {
     UseCaseSnippet,
     BitcoinSecuritySnippet,
     ReviewSnippet,
+    RiskSummarySnippet,
 } from "../props";
 
 const corn: LayerProject = {
@@ -66,13 +67,21 @@ const corn: LayerProject = {
         "Corn is a permissioned rollup that leverages a derivative of BTC as its gas token. It is built on the Arbitrum Orbit stack and uses the AnyTrust protocol for data availability. Its native token, BTCN, is an ERC-20 that lives on Ethereum.",
         riskSummary: [
             {
-                title: "Specific Risk",
-                content: "risk text explanation"
+                title: RiskSummarySnippet.TitleCustodianPegs,
+                content: RiskSummarySnippet.RiskSummaryCustodianPegs,
             },
             {
-                title: "Specific Risk",
-                content: "risk text explanation"
-            }
+                title: RiskSummarySnippet.TitleUpgrade,
+                content: RiskSummarySnippet.RiskSummaryImmediateUpgrade,
+            },
+            {
+                title: RiskSummarySnippet.TitleAltDA,
+                content: RiskSummarySnippet.RiskSummaryAltDACommittee,
+            },
+            {
+                title: RiskSummarySnippet.TitleCentralizedSequencer,
+                content: RiskSummarySnippet.RiskSummaryCentralizedSequencer,
+            },
         ],
         riskAnalysis: [
         {

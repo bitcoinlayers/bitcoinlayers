@@ -343,7 +343,7 @@ export enum BTCWrapperTransparency { //TODO: Janusz to add more here
 
 export enum RiskSummarySnippet { //TODO: Janusz to add more here
     RiskSummarySecurityCouncil = "If the security council is compromised, they can immediately upgrade the bridge contracts and steal user funds. This risk is relevant to BTC-backed tokens locked in the layer's official bridge contract.",
-    RiskSummaryImmediateUpgrade = "A centralized entity can immediately upgrade bridge contracts and steal user funds. This risk is relevant to BTC-backed tokens locked in the layer's official bridge contract.",
+    RiskSummaryImmediateUpgrade = "A centralized party can immediately upgrade bridge contracts and steal user funds. This risk is relevant to BTC-backed tokens locked in the layer's official bridge contract.",
     TitleUpgrade = "Bridge contracts are upgradeable",
     RiskSummaryCustodianPegs = "All BTC backing wrapped tokens on this network are ultimately secured by custodians. Users trust that these custodians will not misappropriate funds and keep their assets pegged 1:1. Each custodian has their own risks. Learn more in the trust assumptions review section.",
     TitleCustodianPegs = "All BTC pegs have custodian trust assumptions",
@@ -356,6 +356,11 @@ export enum RiskSummarySnippet { //TODO: Janusz to add more here
     TitleAlternativeL1 = "The network is an alternative blockchain",
     TitleFederation = "The network is managed by a federation.",
     RiskSummaryFederation = "The network is managed by a federation. Users trust the federation to not censor them, halt the network, and freeze user funds.",
+    RiskFederationPeg = "The BTC backing the official wrapped bitcoin asset is managed by a federation. Users trust that this federation of custodians will not misappropriate funds and keep their assets pegged 1:1. If the federation becomes compromised, it can unilaterally steal users' funds. The network may support other wrapped BTC assets with different trust assumptions.",
+    RiskPOSPeg = "The BTC backing the official wrapped bitcoin asset is managed by a validators participating in the network's proof-of-stake protocol. Users trust that these signers will not misappropriate funds and keep their assets pegged 1:1. If signers with the majority of stake becomes malicious, they can unilaterally steal users' funds. The network may support other wrapped BTC assets with different trust assumptions.",
+    RiskStatechainFinality = "If the statechain entity does not delete the keyshare it held with the previous owner, they can collude and immediately spend funds.",
+    RiskStatechainTimelock = "If a previous owner of the UTXO broadcasts their unilateral exit transaction, and the current owner does not broadcast their own, the previous owner can steal funds.",
+    RiskLightningChannel = "If a counterparty maliciously broadcasts a previous state, and it is not contested, they can close the channel with previous balances that favor the malicious actor.",
     RiskSummary = "",
 }
 

@@ -13,6 +13,7 @@ import {
     TokenSnippet,
     ReviewSnippet,
     BitcoinSecuritySnippet,
+    RiskSummarySnippet,
 } from "../props";
 
 const rollux: LayerProject = {
@@ -63,12 +64,20 @@ const rollux: LayerProject = {
         "Rollux is an optimistic rollup that uses Syscoin, two blockchains that are simultaneously merge-mined by bitcoin miners, as its base layer for data availability and state validation respectively. It has an EVM-compatible execution environment.",
         riskSummary: [
             {
-                title: "Specific Risk",
-                content: "risk text explanation"
+                title: RiskSummarySnippet.TitleUpgrade,
+                content: RiskSummarySnippet.RiskSummaryImmediateUpgrade
             },
             {
-                title: "Specific Risk",
-                content: "risk text explanation"
+                title: RiskSummarySnippet.TitleCustodianPegs,
+                content: RiskSummarySnippet.RiskSummaryCustodianPegs
+            },
+            {
+                title: RiskSummarySnippet.TitleAltDA,
+                content: RiskSummarySnippet.RiskSummaryAltDANetwork,
+            },
+            {
+                title: RiskSummarySnippet.TitleCentralizedSequencer,
+                content: RiskSummarySnippet.RiskSummaryCentralizedSequencer,
             }
         ],
         riskAnalysis: [

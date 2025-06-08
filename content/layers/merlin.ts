@@ -15,6 +15,7 @@ import {
     BitcoinSecuritySnippet,
     TechnologySnippet,
     UseCaseSnippet,
+    RiskSummarySnippet,
 } from "../props";
 
 const merlin: LayerProject = {
@@ -65,12 +66,20 @@ const merlin: LayerProject = {
         "Merlin is an implementation of Polygon CDK chain. It likely is running its rollup chain on top of a permissioned fork of the EVM.",
         riskSummary: [
             {
-                title: "Specific Risk",
-                content: "risk text explanation"
+                title: RiskSummarySnippet.TitleUpgrade,
+                content: RiskSummarySnippet.RiskSummaryImmediateUpgrade
             },
             {
-                title: "Specific Risk",
-                content: "risk text explanation"
+                title: RiskSummarySnippet.TitleCustodianPegs,
+                content: RiskSummarySnippet.RiskSummaryCustodianPegs
+            },
+            {
+                title: RiskSummarySnippet.TitleAltDA,
+                content: RiskSummarySnippet.RiskSummaryAltDACommittee,
+            },
+            {
+                title: RiskSummarySnippet.TitleCentralizedSequencer,
+                content: RiskSummarySnippet.RiskSummaryCentralizedSequencer,
             }
         ],
         riskAnalysis: [

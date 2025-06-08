@@ -15,6 +15,7 @@ import {
     UseCaseSnippet,
     BitcoinSecuritySnippet,
     TechnologySnippet,
+    RiskSummarySnippet,
 } from "../props";
 
 const spark: LayerProject = {
@@ -60,13 +61,13 @@ const spark: LayerProject = {
     description: "Spark is an implementation of the statechain protocol where users interact with a statechain entity to process transfers for offchain representations of UTXOs. Spark's statechain implementation leverages a federation of operators to act as the statechain entity. In statechains, users can unilaterally exit to the L1 if operators become unresponsive..",
     riskSummary: [
         {
-            title: "Specific Risk",
-            content: "risk text explanation"
+            title: "Users trust the statechain entity with key deletion",
+            content: RiskSummarySnippet.RiskStatechainFinality,
         },
         {
-            title: "Specific Risk",
-            content: "risk text explanation"
-        }
+            title: "Users must watch for previous owners' unilateral exit transactions",
+            content: RiskSummarySnippet.RiskStatechainTimelock,
+        },
     ],
     riskAnalysis: [
         {

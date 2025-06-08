@@ -13,6 +13,7 @@ import {
     TokenSnippet,
     ReviewSnippet,
     BitcoinSecuritySnippet,
+    RiskSummarySnippet,
 } from "../props";
 
 const stacks: LayerProject = {
@@ -63,13 +64,13 @@ const stacks: LayerProject = {
         "Stacks is a sidechain that aims to be programmability layer for Bitcoin. It uses a novel execution environment, Clarity. Stacks uses a hybrid PoS mechanism (PoX) and derives economic security from its native token (STX).",
         riskSummary: [
             {
-                title: "Specific Risk",
-                content: "risk text explanation"
+                title: RiskSummarySnippet.TitleCustodianPegs,
+                content: `${RiskSummarySnippet.RiskFederationPeg}`
             },
             {
-                title: "Specific Risk",
-                content: "risk text explanation"
-            }
+                title: RiskSummarySnippet.TitleAlternativeL1,
+                content: RiskSummarySnippet.RiskSummaryAlternativeL1,
+            },
         ],
         riskAnalysis: [
         {

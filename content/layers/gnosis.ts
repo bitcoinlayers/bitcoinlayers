@@ -15,6 +15,7 @@ import {
     BitcoinSecuritySnippet,
     TechnologySnippet,
     UseCaseSnippet,
+    RiskSummarySnippet,
 } from "../props";
 
 const gnosis: LayerProject = {
@@ -64,13 +65,13 @@ const gnosis: LayerProject = {
     description: "Gnosis is an alternative blockchain that supports a number of wrapped BTC tokens. It is EVM-compatible and leverages the same network architecture as Ethereum.",
     riskSummary: [
         {
-            title: "Specific Risk",
-            content: "risk text explanation"
+            title: RiskSummarySnippet.TitleCustodianPegs,
+            content: RiskSummarySnippet.RiskSummaryCustodianPegs,
         },
         {
-            title: "Specific Risk",
-            content: "risk text explanation"
-        }
+            title: RiskSummarySnippet.TitleAlternativeL1,
+            content: RiskSummarySnippet.RiskSummaryAlternativeL1,
+        },
     ],
     riskAnalysis: [
         {

@@ -14,6 +14,7 @@ import {
     ReviewSnippet,
     BitcoinSecuritySnippet,
     UseCaseSnippet,
+    RiskSummarySnippet,
 } from "../props";
 
 const solana: LayerProject = {
@@ -64,13 +65,13 @@ const solana: LayerProject = {
         "Solana is an alternative proof-of-stake blockchain that supports a number of wrapped BTC tokens. It is home to the SVM execution environment which supports more expressive smart contracts.",
         riskSummary: [
             {
-                title: "Specific Risk",
-                content: "risk text explanation"
+                title: RiskSummarySnippet.TitleCustodianPegs,
+                content: `${RiskSummarySnippet.RiskSummaryCustodianPegs}`,
             },
             {
-                title: "Specific Risk",
-                content: "risk text explanation"
-            }
+                title: RiskSummarySnippet.TitleAlternativeL1,
+                content: RiskSummarySnippet.RiskSummaryAlternativeL1,
+            },
         ],
         riskAnalysis: [
         {

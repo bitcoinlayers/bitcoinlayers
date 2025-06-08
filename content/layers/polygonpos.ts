@@ -12,6 +12,7 @@ import {
     RiskCategory,
     TokenSnippet,
     BitcoinSecuritySnippet,
+    RiskSummarySnippet,
 } from "../props";
 
 const polygon: LayerProject = {
@@ -62,13 +63,13 @@ const polygon: LayerProject = {
         "Polygon is an alternative proof-of-stake blockchain that supports a number of wrapped BTC tokens. It offers an EVM-compatible execution environment which supports more expressive smart contracts.",
         riskSummary: [
             {
-                title: "Specific Risk",
-                content: "risk text explanation"
+                title: RiskSummarySnippet.TitleCustodianPegs,
+                content: `${RiskSummarySnippet.RiskSummaryCustodianPegs}`,
             },
             {
-                title: "Specific Risk",
-                content: "risk text explanation"
-            }
+                title: RiskSummarySnippet.TitleAlternativeL1,
+                content: RiskSummarySnippet.RiskSummaryAlternativeL1,
+            },
         ],
         riskAnalysis: [
         {
