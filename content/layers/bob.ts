@@ -1,3 +1,4 @@
+import RiskSummary from "@/components/shared/risk-summary";
 import {
     LayerProject,
     Type,
@@ -15,6 +16,7 @@ import {
     TechnologySnippet,
     UseCaseSnippet,
     DefinitionSnippet,
+    RiskSummarySnippet,
 } from "../props";
 
 const bob: LayerProject = {
@@ -60,13 +62,21 @@ const bob: LayerProject = {
     description: `BOB prioritizes use cases for BTC-backed assets and is looking to derive more security from bitcoin over time. ${DefinitionSnippet.DefinitionAltRollup}`,
     riskSummary: [
         {
-            title: "Specific Risk",
-            content: "risk text explanation"
+            title: RiskSummarySnippet.TitleCustodianPegs,
+            content: RiskSummarySnippet.RiskSummaryCustodianPegs,
         },
         {
-            title: "Specific Risk",
-            content: "risk text explanation"
-        }
+            title: RiskSummarySnippet.TitleUpgrade,
+            content: RiskSummarySnippet.RiskSummaryImmediateUpgrade,
+        },
+        {
+            title: RiskSummarySnippet.TitleAltDA,
+            content: RiskSummarySnippet.RiskSummaryAltDANetwork,
+        },
+        {
+            title: RiskSummarySnippet.TitleCentralizedSequencer,
+            content: RiskSummarySnippet.RiskSummaryCentralizedSequencer,
+        },
     ],
     riskAnalysis: [
         {

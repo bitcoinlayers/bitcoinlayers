@@ -8,6 +8,7 @@ import {
     Site,
     AssessmentCategory,
     BTCWrapperTransparency,
+    PegRiskSummarySnippet,
 } from "../props";
 
 const pump: InfrastructureProject = {
@@ -50,7 +51,17 @@ const pump: InfrastructureProject = {
     ],
     description:
         "Pump offers a mechanism that enables users to deposit wrapped BTC into smart contracts on EVM-based chains. Users receive PumpBTC, a token representing staked BTC, on Babylon in exchange for depositing a wrapped BTC token",
-    sections: [
+    riskSummary: [
+            {
+                title: PegRiskSummarySnippet.CustodianTitle,
+                content: PegRiskSummarySnippet.Guardian,
+            },
+            {
+                title: "Various reserve assets used",
+                content: PegRiskSummarySnippet.MultipleAssets,
+            },
+        ],
+        sections: [
         {
             id: "protocoltransparency",
             title: "Protocol Transparency",

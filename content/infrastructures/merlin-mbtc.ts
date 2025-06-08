@@ -9,6 +9,7 @@ import {
     AssessmentCategory,
     WrapperSnippet,
     BTCWrapperTransparency,
+    PegRiskSummarySnippet,
 } from "../props";
 
 const merlinmbtc: InfrastructureProject = {
@@ -29,6 +30,12 @@ const merlinmbtc: InfrastructureProject = {
     bitcoinOnly: false,
     links: [],
     description: "Merlin MBTC is a BTC-backed asset that primarily lives on Merlin Chain.",
+    riskSummary: [
+        {
+            title: PegRiskSummarySnippet.CustodianTitle,
+            content: PegRiskSummarySnippet.Guardian,
+        },
+    ],
     sections: [
         {
                     id: "protocoltransparency",
@@ -66,9 +73,9 @@ const merlinmbtc: InfrastructureProject = {
                     category: AssessmentCategory.SupplyIssuance,
                     score: 0,
                     tier: "",
-                    title: "We cannot verify information on M-BTC’s minting mechanism",
+                    title: "We cannot verify information on M-BTC's minting mechanism",
                     content:
-                        "MBTC is minted to Merlin via a bridge contract between Merlin and its parent chain. Because we cannot verify its parent chain’s contracts, we are unable to verify MBTC’s minting and burning permissions.",
+                        "MBTC is minted to Merlin via a bridge contract between Merlin and its parent chain. Because we cannot verify its parent chain's contracts, we are unable to verify MBTC's minting and burning permissions.",
                 },
                 {
                     category: AssessmentCategory.CensorshipResistance,
@@ -81,9 +88,9 @@ const merlinmbtc: InfrastructureProject = {
                     category: AssessmentCategory.Governance,
                     score: 0,
                     tier: "",
-                    title: "We cannot verify information on M-BTC’s governance mechanism",
+                    title: "We cannot verify information on M-BTC's governance mechanism",
                     content:
-                        "MBTC governance is likely managed via a bridge contract between Merlin and its parent chain. Because we cannot verify its parent chain’s contracts, we are unable to verify MBTC’s minting and burning permissions.\n\nIt is likely managed by the development team.",
+                        "MBTC governance is likely managed via a bridge contract between Merlin and its parent chain. Because we cannot verify its parent chain's contracts, we are unable to verify MBTC's minting and burning permissions.\n\nIt is likely managed by the development team.",
                 },
     ],
 };

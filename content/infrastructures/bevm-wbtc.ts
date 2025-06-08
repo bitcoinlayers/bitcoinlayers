@@ -7,6 +7,7 @@ import {
     Notice,
     Site,
     AssessmentCategory,
+    PegRiskSummarySnippet,
 } from "../props";
 
 const bevmwbtc: InfrastructureProject = {
@@ -27,6 +28,12 @@ const bevmwbtc: InfrastructureProject = {
     bitcoinOnly: false,
     links: [],
     description: "Under review.",
+    riskSummary: [
+        {
+            title: PegRiskSummarySnippet.CustodianTitle,
+            content: PegRiskSummarySnippet.Federation,
+        },
+    ],
     sections: [
         {
             id: "selfsubmit",

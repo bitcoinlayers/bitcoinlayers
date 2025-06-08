@@ -7,6 +7,7 @@ import {
     EntityType,
     Site,
     AssessmentCategory,
+    PegRiskSummarySnippet,
 } from "../props";
 
 const bedrockbrbtc: InfrastructureProject = {
@@ -48,6 +49,12 @@ const bedrockbrbtc: InfrastructureProject = {
         },
     ],
     description: "Bedrock brBTC is BTC-denominated asset backed by other derivative assets.",
+    riskSummary: [
+        {
+            title: PegRiskSummarySnippet.CustodianTitle,
+            content: PegRiskSummarySnippet.Guardian,
+        },
+    ],
     sections: [
         {
             id: "selfsubmit",

@@ -7,6 +7,7 @@ import {
     Notice,
     Site,
     AssessmentCategory,
+    PegRiskSummarySnippet,
 } from "../props";
 
 const kinza: InfrastructureProject = {
@@ -27,7 +28,13 @@ const kinza: InfrastructureProject = {
     bitcoinOnly: false,
     links: [],
     description: "Kinza kBTC is a BTC wrapped asset. It is under review.",
-            sections: [
+    riskSummary: [
+        {
+            title: PegRiskSummarySnippet.CustodianTitle,
+            content: PegRiskSummarySnippet.Guardian,
+        },
+    ],        
+    sections: [
                     {
                         id: "selfsubmit",
                         title: "Further sections to be reviewed",

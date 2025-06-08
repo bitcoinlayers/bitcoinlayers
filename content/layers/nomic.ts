@@ -16,6 +16,7 @@ import {
     BitcoinSecuritySnippet,
     TechnologySnippet,
     UseCaseSnippet,
+    RiskSummarySnippet,
 } from "../props";
 
 const nomic: LayerProject = {
@@ -65,13 +66,13 @@ const nomic: LayerProject = {
         "Nomic is a proof-of-stake blockchain focused on distributed BTC custody. Nomic validators collectively control a bitcoin wallet known as the Reserve Wallet, which users can deposit BTC to in order to receive nBTC, an asset issued on the Nomic blockchain that is backed 1:1 by the BTC deposits held in the Reserve Wallet.",
         riskSummary: [
             {
-                title: "Specific Risk",
-                content: "risk text explanation"
+                title: RiskSummarySnippet.TitleCustodianPegs,
+                content: `${RiskSummarySnippet.RiskPOSPeg}`,
             },
             {
-                title: "Specific Risk",
-                content: "risk text explanation"
-            }
+                title: RiskSummarySnippet.TitleAlternativeL1,
+                content: RiskSummarySnippet.RiskSummaryAlternativeL1,
+            },
         ],
         riskAnalysis: [
         {

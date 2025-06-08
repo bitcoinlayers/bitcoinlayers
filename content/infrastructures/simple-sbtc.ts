@@ -6,7 +6,8 @@ import {
     EntityType,
     Notice,
     Site,
-    AssessmentCategory
+    AssessmentCategory,
+    PegRiskSummarySnippet,
 } from "../props";
 
 const simplesbtc: InfrastructureProject = {
@@ -27,6 +28,12 @@ const simplesbtc: InfrastructureProject = {
     bitcoinOnly: false,
     links: [],
     description: "Simple sBTC is a two-way peg managed by the Unisat team. It is used to secure BTC backing sBTC on the Fractal network.",
+    riskSummary: [
+        {
+            title: PegRiskSummarySnippet.CustodianTitle,
+            content: PegRiskSummarySnippet.OneCustodian,
+        },
+    ],
     sections: [
                 {
                     id: "selfsubmit",

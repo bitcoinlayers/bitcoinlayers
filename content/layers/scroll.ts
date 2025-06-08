@@ -16,6 +16,7 @@ import {
     TechnologySnippet,
     KnowledgeBitSnippet,
     UseCaseSnippet,
+    RiskSummarySnippet,
 } from "../props";
 
 const scroll: LayerProject = {
@@ -65,12 +66,20 @@ const scroll: LayerProject = {
     description: "Scroll is a rollup that posts data to Ethereum.",
     riskSummary: [
         {
-            title: "Specific Risk",
-            content: "risk text explanation"
+            title: RiskSummarySnippet.TitleUpgrade,
+            content: RiskSummarySnippet.RiskSummaryImmediateUpgrade
         },
         {
-            title: "Specific Risk",
-            content: "risk text explanation"
+            title: RiskSummarySnippet.TitleCustodianPegs,
+            content: RiskSummarySnippet.RiskSummaryCustodianPegs
+        },
+        {
+            title: RiskSummarySnippet.TitleAltDA,
+            content: RiskSummarySnippet.RiskSummaryAltDANetwork,
+        },
+        {
+            title: RiskSummarySnippet.TitleCentralizedSequencer,
+            content: RiskSummarySnippet.RiskSummaryCentralizedSequencer,
         }
     ],
     riskAnalysis: [

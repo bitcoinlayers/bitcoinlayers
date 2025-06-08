@@ -7,6 +7,7 @@ import {
     Notice,
     Site,
     AssessmentCategory,
+    PegRiskSummarySnippet,
 } from "../props";
 
 const pstake: InfrastructureProject = {
@@ -27,7 +28,13 @@ const pstake: InfrastructureProject = {
     bitcoinOnly: false,
     links: [],
     description: "pStake yBTC is a BTC wrapped asset. It is under review.",
-            sections: [
+    riskSummary: [
+        {
+            title: PegRiskSummarySnippet.CustodianTitle,
+            content: PegRiskSummarySnippet.Guardian,
+        },
+    ],        
+    sections: [
                     {
                         id: "selfsubmit",
                         title: "Further sections to be reviewed",

@@ -7,6 +7,7 @@ import {
     Notice,
     Site,
     AssessmentCategory,
+    PegRiskSummarySnippet,
 } from "../props";
 
 const bedrock: InfrastructureProject = {
@@ -49,7 +50,12 @@ const bedrock: InfrastructureProject = {
     ],
     description:
         "Bedrock is a liquid staking protocol featuring the uniBTC token.",
-    sections: [
+        riskSummary: [
+            {
+                title: PegRiskSummarySnippet.CustodianTitle,
+                content: PegRiskSummarySnippet.Guardian,
+            },
+        ],    sections: [
         {
             id: "smartcontracts",
             title: "Smart contracts & audits",

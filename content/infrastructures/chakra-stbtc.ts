@@ -7,6 +7,7 @@ import {
     Notice,
     Site,
     AssessmentCategory,
+    PegRiskSummarySnippet,
 } from "../props";
 
 const chakra: InfrastructureProject = {
@@ -26,6 +27,12 @@ const chakra: InfrastructureProject = {
     notice: undefined,
     bitcoinOnly: false,
     links: [],
+    riskSummary: [
+        {
+            title: "This wrapper is under review",
+            content: "We are currently reviewing this two-way peg implementation."
+        },
+    ],
     description: "Chakra stBTC is a BTC wrapped asset. It is under review.",
             sections: [
                     {

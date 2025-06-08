@@ -7,6 +7,7 @@ import {
     Notice,
     Site,
     AssessmentCategory,
+    PegRiskSummarySnippet,
 } from "../props";
 
 const wbtc: InfrastructureProject = {
@@ -45,6 +46,12 @@ const wbtc: InfrastructureProject = {
     ],
     description:
         "wBTC is a wrapped version of bitcoin that lives on EVM-compatible networks. wBTC is backed 1:1 with bitcoin, with the bitcoin backing wBTC custodied by three custodial providers dispersed across different geographic locations.",
+    riskSummary: [
+        {
+            title: PegRiskSummarySnippet.CustodianTitle,
+            content: PegRiskSummarySnippet.Guardian,
+        },
+    ],
     sections: [
         {
             id: "additionalconsiderations",

@@ -15,9 +15,11 @@ import {
     UseCaseSnippet,
     TechnologySnippet,
     BitcoinSecuritySnippet,
+    RiskSummarySnippet,
 } from "../props";
 import { tokenToString } from "typescript";
 import { Rubik_Vinyl } from "next/font/google";
+import RiskSummary from "@/components/shared/risk-summary";
 
 const babylon: LayerProject = {
     type: Type.Layer,
@@ -67,12 +69,12 @@ const babylon: LayerProject = {
         "Babylon is a proof-of-stake blockchain that is partially secured by bitcoin staking. It is the first Babylon BSN network. It offers a CosmWasm execution environment that supports arbitrary smart contracts.",
         riskSummary: [
             {
-                title: "Specific Risk",
-                content: "risk text explanation"
+                title: RiskSummarySnippet.TitleCustodianPegs,
+                content: RiskSummarySnippet.RiskSummaryCustodianPegs,
             },
             {
-                title: "Specific Risk",
-                content: "risk text explanation"
+                title: RiskSummarySnippet.TitleAlternativeL1,
+                content: RiskSummarySnippet.RiskSummaryAlternativeL1,
             }
         ],
         riskAnalysis: [

@@ -9,6 +9,7 @@ import {
     Site,
     RiskCategory,
     TokenSnippet,
+    RiskSummarySnippet,
 } from "../props";
 
 const bevm: LayerProject = {
@@ -59,12 +60,12 @@ const bevm: LayerProject = {
         "BEVM is an EVM-compatible blockchain built on substrate. On the BEVM chain, the BTC is held in custody by a federated signer set.",
         riskSummary: [
             {
-                title: "Specific Risk",
-                content: "risk text explanation"
+                title: RiskSummarySnippet.TitleCustodianPegs,
+                content: RiskSummarySnippet.RiskSummaryCustodianPegs,
             },
             {
-                title: "Specific Risk",
-                content: "risk text explanation"
+                title: RiskSummarySnippet.TitleAlternativeL1,
+                content: RiskSummarySnippet.RiskSummaryAlternativeL1,
             }
         ],
         riskAnalysis: [

@@ -13,6 +13,7 @@ import {
     TokenSnippet,
     ReviewSnippet,
     BitcoinSecuritySnippet,
+    RiskSummarySnippet,
 } from "../props";
 
 const fantom: LayerProject = {
@@ -62,13 +63,13 @@ const fantom: LayerProject = {
     description: "",
     riskSummary: [
         {
-            title: "Specific Risk",
-            content: "risk text explanation"
+            title: RiskSummarySnippet.TitleCustodianPegs,
+            content: RiskSummarySnippet.RiskSummaryCustodianPegs,
         },
         {
-            title: "Specific Risk",
-            content: "risk text explanation"
-        }
+            title: RiskSummarySnippet.TitleAlternativeL1,
+            content: RiskSummarySnippet.RiskSummaryAlternativeL1,
+        },
     ],
     riskAnalysis: [
         {

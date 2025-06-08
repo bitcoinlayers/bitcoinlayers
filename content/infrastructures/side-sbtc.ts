@@ -8,6 +8,7 @@ import {
     Site,
     AssessmentCategory,
     TokenSnippet,
+    PegRiskSummarySnippet,
 } from "../props";
 
 const sidesbtc: InfrastructureProject = {
@@ -29,7 +30,13 @@ const sidesbtc: InfrastructureProject = {
     links: [],
     description:
         "Side sBTC is a BTC-backed asset that lives on the Side protocol. It can be used across various applications and is also one of the network's gas tokens.",
-    sections: [
+        riskSummary: [
+            {
+                title: PegRiskSummarySnippet.CustodianTitle,
+                content: PegRiskSummarySnippet.PoS,
+            },
+        ],
+        sections: [
         {
             id: "selfsubmit",
             title: "Further sections to be reviewed",

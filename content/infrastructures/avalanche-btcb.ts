@@ -7,6 +7,7 @@ import {
     Notice,
     Site,
     AssessmentCategory,
+    PegRiskSummarySnippet,
 } from "../props";
 
 const avalanchebtcb: InfrastructureProject = {
@@ -45,7 +46,13 @@ const avalanchebtcb: InfrastructureProject = {
     ],
     description:
         "Avalanche BTCb is a BTC-backed reserve asset that primarily supports the Avalanche ecosystem.",
-    sections: [
+        riskSummary: [
+            {
+                title: PegRiskSummarySnippet.CustodianTitle,
+                content: PegRiskSummarySnippet.Federation,
+            },
+        ],
+        sections: [
         {
             id: "selfsubmit",
             title: "Further sections to be reviewed",

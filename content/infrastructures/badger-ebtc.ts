@@ -7,6 +7,7 @@ import {
     EntityType,
     Site,
     AssessmentCategory,
+    PegRiskSummarySnippet,
 } from "../props";
 
 const badgerebtc: InfrastructureProject = {
@@ -48,6 +49,12 @@ const badgerebtc: InfrastructureProject = {
         },
     ],
     description: "Badger eBTC is a BTC-denominated asset that enables users to borrow BTC against Lido stETH. Lido stETH is a derivative of ETH, Ethereum's native currency.",
+    riskSummary: [
+        {
+            title: PegRiskSummarySnippet.CustodianTitle,
+            content: PegRiskSummarySnippet.Collateralized,
+        },
+    ],
     sections: [
         {
             id: "selfsubmit",

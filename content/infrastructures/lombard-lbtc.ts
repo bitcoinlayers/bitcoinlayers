@@ -9,6 +9,7 @@ import {
     Site,
     AssessmentCategory,
     BTCWrapperTransparency,
+    PegRiskSummarySnippet,
 } from "../props";
 
 const lombard: InfrastructureProject = {
@@ -51,7 +52,13 @@ const lombard: InfrastructureProject = {
     ],
     description:
         "Lombard offer a mechanism that enables users to deposit BTC and receive a wrapped version of BTC that represents BTC staked into the Babylon protocol.",
-    sections: [
+        riskSummary: [
+            {
+                title: PegRiskSummarySnippet.CustodianTitle,
+                content: PegRiskSummarySnippet.Federation,
+            },
+        ],
+        sections: [
         {
             id: "protocoltransparency",
             title: "Protocol Transparency",

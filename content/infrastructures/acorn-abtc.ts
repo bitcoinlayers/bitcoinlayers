@@ -7,6 +7,7 @@ import {
     Notice,
     Site,
     AssessmentCategory,
+    PegRiskSummarySnippet,
 } from "../props";
 
 const acorn: InfrastructureProject = {
@@ -28,7 +29,17 @@ const acorn: InfrastructureProject = {
     links: [],
     description:
         "Acorn aBTC is a BTC-backed reserve asset that looks to live across various EVM chains.",
-    sections: [
+        riskSummary: [
+            {
+                title: PegRiskSummarySnippet.CustodianTitle,
+                content: PegRiskSummarySnippet.Guardian,
+            },
+            {
+                title: PegRiskSummarySnippet.UnkownSignersTitle,
+                content: PegRiskSummarySnippet.UnkownSigners,
+            },
+        ],
+        sections: [
         {
             id: "selfsubmit",
             title: "Further sections to be reviewed",
