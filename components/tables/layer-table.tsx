@@ -26,12 +26,14 @@ import NoticeSnapshotDialog from "../layer/notice-snapshot/notice-snapshot-dialo
 import RiskSummaryDialog from "../layer/risk-summary-dialog";
 import NetworkTypeHoverCard from "../layer/network-type-hover-card";
 import SupplyDistributionHoverCard from "../layer/supply-distribution-hover-card";
+import CustodyTypeDialog from "../layer/custody-type-dialog";
 
 type TableTabKey =
     | "Trust Assumptions"
     | "Type"
     | "Risk Summary"
     | "BTC Pegs"
+    | "Custody Type"
     | "BTC Supply";
 
 interface Props {
@@ -189,7 +191,20 @@ const LayerTable = ({ data, headers }: Props) => {
         setMobileActiveTab(tab);
     };
 
-    const mobileTableHeaders = headers.filter(
+    const dynamicHeaders = useMemo(() => {
+        return headers.map(header => {
+            if (header.name === "BTC Pegs" && category === EntityCategory.BitcoinNative) {
+                return {
+                    ...header,
+                    name: "Custody Type",
+                    mobileLabel: "Custody"
+                };
+            }
+            return header;
+        });
+    }, [headers, category]);
+
+    const mobileTableHeaders = dynamicHeaders.filter(
         (_item) => _item.name === mobileActiveTab || _item.name === "Name",
     );
 
@@ -232,7 +247,7 @@ const LayerTable = ({ data, headers }: Props) => {
                 <div className="overflow-x-auto mx-auto border-none">
                     <table className="w-full text-sm text-left rtl:text-right">
                         <TableHeader
-                            headers={isMobile ? mobileTableHeaders : headers}
+                            headers={isMobile ? mobileTableHeaders : dynamicHeaders}
                             onSort={handleSort}
                             sortBy={sortBy}
                             sortOrder={sortOrder}
@@ -304,28 +319,21 @@ const LayerTable = ({ data, headers }: Props) => {
                                         </td>
                                     )}
                                     {(!isMobile ||
-                                        mobileActiveTab === "BTC Pegs") && (
-  <td className="lg:px-4 px-4 py-3 lg:py-4 border-border">
-    {item.entityCategory === EntityCategory.BitcoinNative ? (
-      <Image
-        src="/btc.svg"
-        alt="BTC"
-        width={20}
-        height={20}
-      />
-    ) : isLoading ? (
-      <div>Loading...</div>
-    ) : (
-      <TokenList
-        tokens={
-          tokensMap[item.slug.toLowerCase()] || []
-        }
-        networkSlug={item.slug}
-      />
-    )}
-  </td>
-)}
-
+                                        mobileActiveTab === "BTC Pegs" ||
+                                        mobileActiveTab === "Custody Type") && (
+                                        <td className="lg:px-4 px-4 py-3 lg:py-4 border-border">
+                                            {item.entityCategory === EntityCategory.BitcoinNative ? (
+                                                <CustodyTypeDialog layer={item} />
+                                            ) : isLoading ? (
+                                                <div>Loading...</div>
+                                            ) : (
+                                                <TokenList
+                                                    tokens={tokensMap[item.slug.toLowerCase()] || []}
+                                                    networkSlug={item.slug}
+                                                />
+                                            )}
+                                        </td>
+                                    )}
                                     {(!isMobile ||
                                         mobileActiveTab === "BTC Supply") && (
                                         <td className="lg:px-6 px-4 py-3 lg:py-4">
