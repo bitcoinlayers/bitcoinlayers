@@ -63,7 +63,7 @@ const mezo: LayerProject = {
         riskSummary: [
             {
                 title: RiskSummarySnippet.TitleCustodianPegs,
-                content: `${RiskSummarySnippet.RiskSummaryCustodianPegs}The majority of Mezo's BTC-backed assets are secured by a bridge contract on Ethereum. This bridge contract can be upgraded by a 5/9 federation.,`
+                content: `${RiskSummarySnippet.RiskSummaryCustodianPegs}The majority of Mezo's BTC-backed assets are secured by a bridge contract on Ethereum. This bridge contract can be upgraded by a 5/9 federation.`
             },
             {
                 title: RiskSummarySnippet.TitleAlternativeL1,
@@ -82,9 +82,41 @@ const mezo: LayerProject = {
                     name: "Threshold tBTC",
                     infrastructureSlug: "threshold-tbtc",
                     score: 0,
-                    tier: RiskFactor.UnderReview,
+                    tier: RiskFactor.VeryHigh,
                     title: TokenSnippet.FederationPeg,
-                    content: `${TokenSnippet.ThresholdtBTC}\n\nThis Mezo bridge is a escrow contract on Ethereum that holds various BTC-backed assets. The bridge is upgradeable by a 9 member federation. 5 signers are needed to initaite upgrades.`,
+                    content: `${TokenSnippet.ThresholdtBTC}\n\nThis Mezo bridge is a escrow contract on Ethereum that holds various BTC-backed assets. The bridge is upgradeable by a 9 member federation. 5 signers are needed to initaite upgrades. The identity of these signers is unknown.`,
+                },
+                {
+                    name: "Solv xSolvBTC",
+                    infrastructureSlug: "solv-xsolvbtc",
+                    score: 0,
+                    tier: RiskFactor.VeryHigh,
+                    title: TokenSnippet.CustodianDerivative,
+                    content: `${TokenSnippet.xSolvBTC}`,
+                },
+                {
+                    name: "BitGo wBTC",
+                    infrastructureSlug: "bitgo-wbtc",
+                    score: 0,
+                    tier: RiskFactor.VeryHigh,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.BitGowBTC}`,
+                },
+                {
+                    name: "Coinbase cbBTC",
+                    infrastructureSlug: "coinbase-cbbtc",
+                    score: 0,
+                    tier: RiskFactor.VeryHigh,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.CoinbasecbBTC}`,
+                },
+                {
+                    name: "Fire Bitcoin FBTC",
+                    infrastructureSlug: "firebitcoin-fbtc",
+                    score: 0,
+                    tier: RiskFactor.VeryHigh,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.FireBTC}`,
                 },
             ],
         },
@@ -108,6 +140,20 @@ const mezo: LayerProject = {
             tier: RiskFactor.High,
             title: "Finality guarantees are provided through a federation. Mezo blocks cannot be reorged after being added to the chain",
             content: `${ReviewSnippet.CometBFTFinality}\n\nThe Mezo network is currently operated by a federated validator set. Finality assurances are provided by this federated group of operators.`,
+        },
+    ],
+    manualContracts: [
+        {
+            title: "Mezo Bridge Escrow Contract",
+            address: "0x46abfe1c972fca43766d6ad70e1c1df72f4bb4d1",
+            subtitle: "Main bridge contract that escrows wrapped BTC assets on Ethereum to back corresponding assets on Mezo.",
+            explorerUrl: "https://etherscan.io/address/0xF6680EA3b480cA2b72D96ea13cCAF2cFd8e6908c"
+        },
+        {
+            title: "Governance Multisig",
+            address: "0x9f8f72aa9304c8b593d555f12ef6589cc3a579a2", 
+            subtitle: "5-of-9 multisig responsible for upgrades to the bridge escrow contract",
+            explorerUrl: "https://etherscan.io/address/0x98D8899c3030741925BE630C710A98B57F397C7a"
         },
     ],
     sections: [

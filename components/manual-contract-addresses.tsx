@@ -37,11 +37,11 @@ const ContractAddressItem = ({
     return (
         <div className={`${showBorder ? "border-b" : ""} py-4`}>
             <div className="self-stretch justify-between items-center inline-flex">
-                <div className="!text-foreground mb-1 flex items-center">
-                    <p className="font-medium">{item.title}</p>
+                <div className="body_subsection !text-muted-foreground mb-1 flex items-center">
+                    <p>{item.title}</p>
                 </div>
             </div>
-            <div className="!text-foreground flex flex-wrap text-wrap break-all mb-2">
+            <div className="!text-muted-foreground flex flex-wrap text-wrap break-all mb-2">
                 <Link
                     href={item.explorerUrl}
                     target="_blank"
@@ -56,7 +56,7 @@ const ContractAddressItem = ({
                     <ExternalLinkIcon className="h-4 w-4 ml-2" />
                 </Link>
             </div>
-            <div className="!text-muted-foreground text-sm">
+            <div className="body_paragraph !text-foreground">
                 {item.subtitle}
             </div>
         </div>
@@ -65,7 +65,7 @@ const ContractAddressItem = ({
 
 export default function ManualContractAddresses({ 
     contracts, 
-    sectionTitle = "Additional Contracts",
+    sectionTitle = "Key Contracts",
     sectionId = "manualcontracts" 
 }: Props) {
     const [isOpen, setIsOpen] = useState(false);
