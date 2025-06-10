@@ -55,7 +55,7 @@ const entityTypeDefinitions: Record<EntityType, { name: string; description: str
     },
     [EntityType.Hybrid]: {
         name: "Hybrid",
-        description: "A network that combines multiple architectural approaches, such as sidechain and rollup technologies."
+        description: "An alternative blockchain that has an official two-wage peg with bitcoin and also enables users to interact with the network through L1 transactions."
     },
     [EntityType.EthereumRollup]: {
         name: "Ethereum Rollup",
