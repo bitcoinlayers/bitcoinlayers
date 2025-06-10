@@ -205,11 +205,11 @@ const mezo: LayerProject = {
             content: [
                 {
                     title: "Threshold Network's tBTC review",
-                    content: "[Bitcoin Layers' review of Threshold Network's tBTC](https://bitcoinlayers.org/layers/threshold-tbtc)",
+                    content: "Bitcoin Layers' review of [Threshold Network's tBTC](https://bitcoinlayers.org/layers/threshold-tbtc)",
                 },
                 {
                     title: "Proxy Upgrade Pattern",
-                    content: "[Learn how smart contracts on Ethereum are upgraded](https://docs.openzeppelin.com/upgrades-plugins/proxies",
+                    content: "Learn how smart contracts on [Ethereum are upgraded](https://docs.openzeppelin.com/upgrades-plugins/proxies)",
                 },
             ],
         },
