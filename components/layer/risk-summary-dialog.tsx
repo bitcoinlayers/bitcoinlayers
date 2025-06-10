@@ -38,13 +38,19 @@ const RiskSummaryDialog: React.FC<RiskSummaryDialogProps> = ({ layer, riskSummar
                     Review
                 </Button>
             </DialogTrigger>
-            <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
-                <DialogTitle className="sr-only">
-                    {layer.title} - Risk Summary
-                </DialogTitle>
-                <div className="space-y-6">
-                    {/* Single Combined Card */}
-                    <div className="p-4 bg-muted/30 rounded-lg space-y-4">
+            <DialogContent className="p-0 border-0 bg-transparent shadow-none max-w-fit [&>button]:hidden" style={{ width: "auto", maxWidth: "90vw" }}>
+                <div 
+                    className="bg-popover border border-border rounded-lg shadow-lg p-6"
+                    style={{
+                        width: "var(--breakpoint-sm, 640px)",
+                        maxHeight: "80vh",
+                        overflowY: "auto"
+                    }}
+                >
+                    <DialogTitle className="sr-only">
+                        {layer.title} - Risk Summary
+                    </DialogTitle>
+                    <div className="space-y-6">
                         {/* Network Header */}
                         <div className="flex items-center gap-3">
                             <Image
@@ -58,9 +64,14 @@ const RiskSummaryDialog: React.FC<RiskSummaryDialogProps> = ({ layer, riskSummar
                                 }}
                             />
                             <div>
-                                <h3 className="font-semibold text-foreground">{layer.title} risk summary</h3>
+                                <h3 className="text-xl font-medium text-foreground" style={{ lineHeight: "28px" }}>
+                                    {layer.title}
+                                </h3>
                             </div>
                         </div>
+                        
+                        {/* Underline separator */}
+                        <hr className="border-border" />
                         
                         {/* Risk Summary Content */}
                         <div>

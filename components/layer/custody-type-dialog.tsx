@@ -51,7 +51,7 @@ const CustodyTypeDialog: React.FC<CustodyTypeDialogProps> = ({ layer }) => {
                         {layer.title} - Custody Type
                     </DialogTitle>
                     <div className="space-y-4">
-                        <div className="p-4 bg-muted/50 rounded-lg">
+                        <div className="p-4">
                             <p className="text-muted-foreground">
                                 No custody information available for {layer.title}.
                             </p>
@@ -74,60 +74,75 @@ const CustodyTypeDialog: React.FC<CustodyTypeDialogProps> = ({ layer }) => {
                     Review
                 </Button>
             </DialogTrigger>
-            <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
-                <DialogTitle className="sr-only">
-                    {layer.title} - Custody Type
-                </DialogTitle>
-                <div className="space-y-6">
-                    {/* Peg Selection */}
-                    {pegs.length > 1 && (
-                        <div className="space-y-3">
-                            <h3 className="text-md font-semibold text-foreground">Select Bitcoin Asset:</h3>
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                                {pegs.map((peg) => (
-                                    <button
-                                        key={peg.name}
-                                        onClick={() => setSelectedPeg(peg.name)}
-                                        className={`p-3 rounded-lg border text-left transition-colors ${
-                                            selectedPeg === peg.name
-                                                ? 'border-brand bg-brand/10 text-foreground'
-                                                : 'border-border bg-muted/30 text-muted-foreground hover:bg-muted/50'
-                                        }`}
-                                    >
-                                        <div className="flex items-center gap-3">
-                                            <img
-                                                src={`/logos/${peg.infrastructureSlug}.png`}
-                                                alt={peg.name}
-                                                className="w-6 h-6 rounded-full object-cover bg-muted"
-                                                onError={(e) => {
-                                                    (e.target as HTMLImageElement).src = '/logos/default.png';
-                                                }}
-                                            />
-                                            <span className="font-medium">{peg.name}</span>
-                                        </div>
-                                    </button>
-                                ))}
+            <DialogContent className="p-0 border-0 bg-transparent shadow-none max-w-fit [&>button]:hidden" style={{ width: "auto", maxWidth: "90vw" }}>
+                <div 
+                    className="bg-popover border border-border rounded-lg shadow-lg p-6"
+                    style={{
+                        width: "var(--breakpoint-sm, 640px)",
+                        maxHeight: "80vh",
+                        overflowY: "auto"
+                    }}
+                >
+                    <DialogTitle className="sr-only">
+                        {layer.title} - Custody Type
+                    </DialogTitle>
+                    <div className="space-y-6">
+                        {/* Peg Selection */}
+                        {pegs.length > 1 && (
+                            <div className="space-y-3">
+                                <h3 className="text-md font-semibold text-foreground">Select Bitcoin Asset:</h3>
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                                    {pegs.map((peg) => (
+                                        <button
+                                            key={peg.name}
+                                            onClick={() => setSelectedPeg(peg.name)}
+                                            className={`p-3 rounded-lg border text-left transition-colors ${
+                                                selectedPeg === peg.name
+                                                    ? 'border-brand bg-brand/10 text-foreground'
+                                                    : 'border-border text-muted-foreground hover:bg-muted/50'
+                                            }`}
+                                        >
+                                            <div className="flex items-center gap-3">
+                                                <img
+                                                    src={`/logos/${peg.infrastructureSlug}.png`}
+                                                    alt={peg.name}
+                                                    className="w-6 h-6 rounded-full object-cover bg-muted"
+                                                    onError={(e) => {
+                                                        (e.target as HTMLImageElement).src = '/logos/default.png';
+                                                    }}
+                                                />
+                                                <span className="font-medium">{peg.name}</span>
+                                            </div>
+                                        </button>
+                                    ))}
+                                </div>
                             </div>
-                        </div>
-                    )}
+                        )}
 
-                    {/* Combined Network and Custody Info */}
-                    {selectedPegData && (
-                        <div className="space-y-4">
-                            {/* Single Combined Card */}
-                            <div className="p-4 bg-muted/30 rounded-lg space-y-4">
+                        {/* Combined Network and Custody Info */}
+                        {selectedPegData && (
+                            <div className="space-y-4">
                                 {/* Network Header */}
                                 <div className="flex items-center gap-3">
                                     <Image
-                                        src="/btc.svg"
-                                        alt="BTC"
+                                        src={`/logos/${layer.slug}.png`}
+                                        alt={layer.title}
                                         width={32}
                                         height={32}
+                                        className="rounded-full object-cover bg-muted"
+                                        onError={(e) => {
+                                            (e.target as HTMLImageElement).src = '/logos/default.png';
+                                        }}
                                     />
                                     <div>
-                                        <h3 className="font-semibold text-foreground">{layer.title} custody mechanism</h3>
+                                        <h3 className="text-xl font-medium text-foreground" style={{ lineHeight: "28px" }}>
+                                            {layer.title}
+                                        </h3>
                                     </div>
                                 </div>
+                                
+                                {/* Underline separator */}
+                                <hr className="border-border" />
                                 
                                 {/* Custody Details */}
                                 <div>
@@ -137,8 +152,8 @@ const CustodyTypeDialog: React.FC<CustodyTypeDialogProps> = ({ layer }) => {
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    )}
+                        )}
+                    </div>
                 </div>
             </DialogContent>
         </Dialog>
