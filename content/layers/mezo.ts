@@ -59,7 +59,7 @@ const mezo: LayerProject = {
         },
     ],
     description:
-        "Mezo is an EVM-compatible blockchain that supports general purpose onchain applications. It runs on CometBFT consensus protocol and is operated by a federated validator set. Its official bridge is supports briding tBTC from Ethereum to Mezo.",
+        "Mezo is an EVM-compatible blockchain that supports general purpose onchain applications. It runs on CometBFT consensus protocol and is operated by a federated validator set. Its official bridge is supports bridging tBTC from Ethereum to Mezo.",
         riskSummary: [
             {
                 title: RiskSummarySnippet.TitleCustodianPegs,
