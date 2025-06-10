@@ -152,7 +152,7 @@ const mezo: LayerProject = {
         {
             title: "Governance Multisig",
             address: "0x98D8899c3030741925BE630C710A98B57F397C7a", 
-            subtitle: "5-of-9 multisig responsible for upgrades to the bridge escrow contract",
+            subtitle: "5-of-9 multisig responsible for upgrades to the bridge escrow contract.",
             explorerUrl: "https://etherscan.io/address/0x98D8899c3030741925BE630C710A98B57F397C7a"
         },
     ],
