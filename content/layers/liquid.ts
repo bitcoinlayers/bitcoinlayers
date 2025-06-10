@@ -22,7 +22,7 @@ const liquid: LayerProject = {
     type: Type.Layer,
     slug: "liquid",
     title: "Liquid",
-    entityType: EntityType.Sidechain,
+    entityType: EntityType.Federation,
     entityCategory: EntityCategory.Sidesystem,
     live: LiveStatus.Mainnet,
     staking: false,

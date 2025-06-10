@@ -22,7 +22,7 @@ const mezo: LayerProject = {
     type: Type.Layer,
     slug: "mezo",
     title: "Mezo",
-    entityType: EntityType.Sidechain,
+    entityType: EntityType.Federation,
     entityCategory: EntityCategory.Sidesystem,
     live: LiveStatus.Mainnet,
     staking: false,

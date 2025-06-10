@@ -51,7 +51,7 @@ export enum EntityType {
     CSV = "CSV",
     EthereumRollup = "Ethereum Rollup",
     Rollup = "Rollup",
-    Federated = "Federated",
+    Federation = "Federation",
     Sidechain = "Sidechain",
     SidechainRollup = "Sidechain Rollup",
     SovereignRollup = "Sovereign Rollup",
