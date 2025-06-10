@@ -17,6 +17,10 @@ const entityTypeDefinitions: Record<EntityType, { name: string; description: str
         name: "Sidechain",
         description: "An L1 that exists to add more functionality to BTC the asset. L1s are sovereign in technical architecture but typically exist as subsets of the broader bitcoin ecosystem. It's common for sidechains to enshrine a BTC bridge into their consensus mechanisms or involve bitcoin miners in consensus - through merge mining or fee sharing."
     },
+    [EntityType.Federation]: {
+        name: "Federation",
+        description: "A network operated by a permissioned set of entities responsible for operating all facets of the network. Users trust the federation to not censor them, halt the network, and freeze user funds."
+    },
     [EntityType.Statechain]: {
         name: "Statechain",
         description: "A protocol where users enter a 2-2 multisig with a federated entity and transfer ownership of a UTXO to an intended recipient by providing them a statechain private key for that specific UTXO."
@@ -36,10 +40,6 @@ const entityTypeDefinitions: Record<EntityType, { name: string; description: str
     [EntityType.AltL1]: {
         name: "Alternative Layer 1",
         description: "An alternative blockchain that operates independently of Bitcoin, with its own consensus mechanism and security model."
-    },
-    [EntityType.Federated]: {
-        name: "Federated",
-        description: "A network operated by a group of known validators or entities that coordinate to process transactions and maintain consensus."
     },
     [EntityType.CSV]: {
         name: "Client Side Validation",
