@@ -66,8 +66,8 @@ const mezo: LayerProject = {
                 content: `${RiskSummarySnippet.RiskSummaryCustodianPegs}The majority of Mezo's BTC-backed assets are secured by a bridge contract on Ethereum. This bridge contract can be upgraded by a 5/9 federation.`
             },
             {
-                title: RiskSummarySnippet.TitleAlternativeL1,
-                content: RiskSummarySnippet.RiskSummaryAlternativeL1,
+                title: RiskSummarySnippet.TitleFederation,
+                content: RiskSummarySnippet.RiskSummaryFederation,
             },
         ],
     riskAnalysis: [
