@@ -145,13 +145,13 @@ const mezo: LayerProject = {
     manualContracts: [
         {
             title: "Mezo Bridge Escrow Contract",
-            address: "0x46abfe1c972fca43766d6ad70e1c1df72f4bb4d1",
+            address: "0xF6680EA3b480cA2b72D96ea13cCAF2cFd8e6908c",
             subtitle: "Main bridge contract that escrows wrapped BTC assets on Ethereum to back corresponding assets on Mezo.",
             explorerUrl: "https://etherscan.io/address/0xF6680EA3b480cA2b72D96ea13cCAF2cFd8e6908c"
         },
         {
             title: "Governance Multisig",
-            address: "0x9f8f72aa9304c8b593d555f12ef6589cc3a579a2", 
+            address: "0x98D8899c3030741925BE630C710A98B57F397C7a", 
             subtitle: "5-of-9 multisig responsible for upgrades to the bridge escrow contract",
             explorerUrl: "https://etherscan.io/address/0x98D8899c3030741925BE630C710A98B57F397C7a"
         },
@@ -196,6 +196,20 @@ const mezo: LayerProject = {
                 {
                     title: "Onchain applications",
                     content: UseCaseSnippet.OnchainApps,
+                },
+            ],
+        },
+        {
+            id: "knowledgebits",
+            title: "Knowledge Bits",
+            content: [
+                {
+                    title: "Threshold Network's tBTC review",
+                    content: "[Bitcoin Layers' review of Threshold Network's tBTC](https://bitcoinlayers.org/layers/threshold-tbtc)",
+                },
+                {
+                    title: "Proxy Upgrade Pattern",
+                    content: "[Learn how smart contracts on Ethereum are upgraded](https://docs.openzeppelin.com/upgrades-plugins/proxies",
                 },
             ],
         },
