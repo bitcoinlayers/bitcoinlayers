@@ -136,7 +136,7 @@ const CustodyTypeDialog: React.FC<CustodyTypeDialogProps> = ({ layer }) => {
                                     />
                                     <div>
                                         <h3 className="text-xl font-medium text-foreground" style={{ lineHeight: "28px" }}>
-                                            {layer.title}
+                                            {layer.title} - Custody Model
                                         </h3>
                                     </div>
                                 </div>
