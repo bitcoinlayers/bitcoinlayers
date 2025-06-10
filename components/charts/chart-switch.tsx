@@ -28,6 +28,14 @@ export default function ChartSwitch() {
             rangeQueryParam: "bridge-range",
             useDataHook: getHistoricalSuppliesByTokenProject,
         },
+        more: {
+            title: "Totarackable offchain BTC",
+            description:
+                "Total BTC supply supporting bitcoin native protocols, bitcoin sidesystems, alternative L1s, and more",
+            chartQueryParam: "bridge-chart",
+            rangeQueryParam: "bridge-range",
+            useDataHook: getHistoricalSuppliesByTokenProject,
+        },
         // staking: {
         //     title: "BTC deposits",
         //     description: "Total amount of BTC deposited in staking protocols",
