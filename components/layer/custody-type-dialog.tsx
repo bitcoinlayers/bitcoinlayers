@@ -146,8 +146,8 @@ const CustodyTypeDialog: React.FC<CustodyTypeDialogProps> = ({ layer }) => {
                                 
                                 {/* Custody Details */}
                                 <div>
-                                    <p className="text-muted-foreground text-sm mb-3">{selectedPegData.title}</p>
-                                    <div className="text-foreground text-sm mb-3">
+                                    <p className="body_subsection !text-[#FF4D4F] mt-6">{selectedPegData.title}</p>
+                                    <div className="body_paragraph !text-foreground mt-3">
                                         {parseTextWithLinks(selectedPegData.content)}
                                     </div>
                                 </div>
