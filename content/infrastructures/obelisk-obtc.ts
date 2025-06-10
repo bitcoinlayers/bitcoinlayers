@@ -7,6 +7,7 @@ import {
     Notice,
     Site,
     AssessmentCategory,
+    PegRiskSummarySnippet,
 } from "../props";
 
 const obeliskobtc: InfrastructureProject = {
@@ -28,7 +29,13 @@ const obeliskobtc: InfrastructureProject = {
     links: [],
     description:
         "Obelisk oBTC is a reserve asset that is live on various EVM-compatible networks.",
-    sections: [
+        riskSummary: [
+            {
+                title: PegRiskSummarySnippet.CustodianTitle,
+                content: PegRiskSummarySnippet.Guardian,
+            },
+        ],
+        sections: [
         {
             id: "selfsubmit",
             title: "Further sections to be reviewed",

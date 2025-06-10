@@ -12,6 +12,8 @@ import {
     RiskCategory,
     ReviewSnippet,
     BitcoinSecuritySnippet,
+    TokenSnippet,
+    RiskSummarySnippet,
 } from "../props";
 
 const osmosis: LayerProject = {
@@ -31,7 +33,7 @@ const osmosis: LayerProject = {
         RiskFactor.AlternativePoS,
         RiskFactor.AlternativePoS,
     ],
-    btcLocked: 0,
+    btcLocked: NaN,
     nativeToken: "-",
     feeToken: "OSMO",
     notice: undefined,
@@ -60,7 +62,17 @@ const osmosis: LayerProject = {
     ],
     description:
         "Osmosis is a proof-of-stake blockchain that supports a number of wrapped BTC tokens. It is IBC-compatible and a part of the Cosmos ecosystem.",
-    riskAnalysis: [
+        riskSummary: [
+            {
+                title: RiskSummarySnippet.TitleCustodianPegs,
+                content: `${RiskSummarySnippet.RiskSummaryCustodianPegs}`,
+            },
+            {
+                title: RiskSummarySnippet.TitleAlternativeL1,
+                content: RiskSummarySnippet.RiskSummaryAlternativeL1,
+            },
+        ],
+        riskAnalysis: [
         {
             category: RiskCategory.BtcCustody,
             score: 0,
@@ -74,8 +86,7 @@ const osmosis: LayerProject = {
                     score: 0,
                     tier: RiskFactor.UnderReview,
                     title: "BTC on Osmosis is backed by several reserve assets",
-                    content:
-                        "BTC on Osmosis is backed by a number of collateral assets; WBTC.eth.axl, wBTC, nBTC, ckBTC, and cbBTC.axl.",
+                    content: TokenSnippet.OsmosisBTC,
                 },
             ],
         },
@@ -91,7 +102,7 @@ const osmosis: LayerProject = {
             score: 0,
             tier: RiskFactor.AlternativePoS,
             title: "Osmosis is operated by a distributed validator set",
-            content: ReviewSnippet.AltL1Operators,
+            content: ReviewSnippet.OperatorSidechainPOS,
         },
         {
             category: RiskCategory.FinalityGuarantees,

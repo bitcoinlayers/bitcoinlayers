@@ -16,6 +16,7 @@ import {
     UseCaseSnippet,
     TechnologySnippet,
     BitcoinSecuritySnippet,
+    RiskSummarySnippet,
 } from "../props";
 import { tokenToString } from "typescript";
 import { Rubik_Vinyl } from "next/font/google";
@@ -66,7 +67,17 @@ const berachain: LayerProject = {
     ],
     description:
         "Berachain is an EVM-compatible L1. It leverages a novel consensus mechanism and is home to various BTC-derivative assets.",
-    riskAnalysis: [
+        riskSummary: [
+            {
+                title: RiskSummarySnippet.TitleCustodianPegs,
+                content: RiskSummarySnippet.RiskSummaryCustodianPegs,
+            },
+            {
+                title: RiskSummarySnippet.TitleAlternativeL1,
+                content: RiskSummarySnippet.RiskSummaryAlternativeL1,
+            }
+        ],
+        riskAnalysis: [
         {
             category: RiskCategory.BtcCustody,
             score: 0,
@@ -83,6 +94,14 @@ const berachain: LayerProject = {
                     content: TokenSnippet.SolvBTC,
                 },
                 {
+                    name: "Lombard LBTC",
+                    infrastructureSlug: "lombard-lbtc",
+                    score: 0,
+                    tier: RiskFactor.UnderReview,
+                    title: TokenSnippet.FederationPeg,
+                    content: `${TokenSnippet.LombardLBTC}\n\n${TokenSnippet.smartcontractreview}`,
+                },
+                {
                     name: "Bedrock uniBTC",
                     infrastructureSlug: "bedrock-unibtc",
                     score: 0,
@@ -91,12 +110,12 @@ const berachain: LayerProject = {
                     content: `${TokenSnippet.BedrockUniBTC}\n\n${TokenSnippet.smartcontractreview}`,
                 },
                 {
-                    name: "Solv SolvBTC.BBN",
-                    infrastructureSlug: "solv-solvbtcbbn",
+                    name: "Solv xSolvBTC",
+                    infrastructureSlug: "solv-xsolvbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: TokenSnippet.CustodianDerivative,
-                    content: TokenSnippet.SolvBTCBBN,
+                    content: TokenSnippet.xSolvBTC,
                 },
                 {
                     name: "BitGo wBTC",
@@ -106,6 +125,30 @@ const berachain: LayerProject = {
                     title: TokenSnippet.CustodianPeg,
                     content: TokenSnippet.BitGowBTC,
                 },
+                {
+                    name: "Fire FBTC",
+                    infrastructureSlug: "firebitcoin-fbtc",
+                    score: 0,
+                    tier: RiskFactor.VeryHigh,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.FireBTC}\n\n${TokenSnippet.smartcontractreview}`,
+                },
+                {
+                    name: "Pump pumpBTC",
+                    infrastructureSlug: "pump-pumpbtc",
+                    score: 0,
+                    tier: RiskFactor.VeryHigh,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.PumpBTC}\n\n${TokenSnippet.smartcontractreview}`,
+                },
+                {
+                    name: "Lorenzo stBTC",
+                    infrastructureSlug: "lorenzo-stbtc",
+                    score: 0,
+                    tier: RiskFactor.VeryHigh,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.LorenzostBTC}\n\n${TokenSnippet.smartcontractreview}`,
+                },
             ],
         },
         {
@@ -113,21 +156,22 @@ const berachain: LayerProject = {
             score: 0,
             tier: RiskFactor.AlternativePoS,
             title: "Data is stored and made available by an alternative PoS network",
-            content: ReviewSnippet.AltL1DA
+            content: ReviewSnippet.AltL1DA,
         },
         {
             category: RiskCategory.BlockProduction,
             score: 0,
             tier: RiskFactor.AlternativePoS,
             title: "Network is operated by an alternative PoS network",
-            content: ReviewSnippet.AltL1Operators
+            content: ReviewSnippet.OperatorSidechainPOS,
         },
         {
             category: RiskCategory.FinalityGuarantees,
             score: 0,
             tier: RiskFactor.AlternativePoS,
             title: "Finality guarantees are provided by an alternative PoS Network",
-            content: "Berachain leverages a novel consensus mechanism for transaction execution. Like CometBFT, it offers single slot finality. This means that once a transaction is added to the canonical chain, it cannot be reorged.",
+            content:
+                "Berachain leverages a novel consensus mechanism for transaction execution. Like CometBFT, it offers single slot finality. This means that once a transaction is added to the canonical chain, it cannot be reorged.",
         },
     ],
     sections: [

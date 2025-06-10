@@ -7,6 +7,7 @@ import {
     Notice,
     Site,
     AssessmentCategory,
+    PegRiskSummarySnippet,
 } from "../props";
 
 const alexxbtc: InfrastructureProject = {
@@ -27,7 +28,13 @@ const alexxbtc: InfrastructureProject = {
     bitcoinOnly: false,
     links: [],
     description:
-        "Alex xBTC is a BTC reserve asset that is available across different blockchain environments.",
+        "xBTC is a BTC-derivative used primarily within Stacks DeFi applications. xBTC is backed by BTC held in Wrapped's custody.",
+    riskSummary: [
+        {
+            title: PegRiskSummarySnippet.CustodianTitle,
+            content: PegRiskSummarySnippet.OneCustodian,
+        },
+    ],
     sections: [
         {
             id: "selfsubmit",

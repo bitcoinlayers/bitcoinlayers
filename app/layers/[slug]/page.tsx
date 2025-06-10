@@ -7,6 +7,8 @@ import LayerOverviewAlt from "@/components/layer/layerOverviewAlt";
 import LayerImage from "@/components/layer/layer-image";
 import LayerTVLChart from "@/components/charts/layer-tvl-chart";
 import ProjectContractAddresses from "@/components/project-contract-addresses";
+import ManualContractAddresses from "@/components/manual-contract-addresses";
+import RiskSummary from "@/components/shared/risk-summary";
 import AlternativeBanner from "@/components/alternative-banner";
 import { EntityCategory } from "@/content/props";
 
@@ -58,6 +60,7 @@ export default async function LayerPage(props: {
                 <div className="lg:w-4/5 flex flex-col">
                     <LayerOverviewAlt layer={layer} />
                     <LayerTVLChart />
+                    <RiskSummary content={layer.riskSummary || []} />
                     {!layer.underReview && (
                         <RiskAnalysis
                             riskAnalysis={layer.riskAnalysis}
@@ -65,6 +68,11 @@ export default async function LayerPage(props: {
                             layer={layer}
                         />
                     )}
+                    <ManualContractAddresses 
+                        contracts={layer.manualContracts || []} 
+                        sectionTitle="Additional Contracts"
+                        sectionId="manualcontracts"
+                    />
                     <LayerBody layer={layer} />
                     <ProjectContractAddresses slug={slug} isLayer={true} />
                 </div>

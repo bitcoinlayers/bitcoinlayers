@@ -11,6 +11,7 @@ import {
     ContentSection,
     RiskCategory,
     TokenSnippet,
+    RiskSummarySnippet,
 } from "../props";
 
 const bitlayer: LayerProject = {
@@ -59,7 +60,17 @@ const bitlayer: LayerProject = {
     ],
     description:
         "Bitlayer's mainnet v1 is a federated sidechain. It supports an EVM execution environment with plans to support other VMs.",
-    riskAnalysis: [
+        riskSummary: [
+            {
+                title: RiskSummarySnippet.TitleCustodianPegs,
+                content: RiskSummarySnippet.RiskSummaryCustodianPegs,
+            },
+            {
+                title: RiskSummarySnippet.TitleFederation,
+                content: RiskSummarySnippet.RiskSummaryFederation,
+            }
+        ],
+        riskAnalysis: [
         {
             category: RiskCategory.BtcCustody,
             score: 0,
@@ -72,27 +83,32 @@ const bitlayer: LayerProject = {
                     infrastructureSlug: "bitlayer-wbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: "Users trust federated signers set to custody their BTC. Less than 5, individual signers have been publicly announced",
-                    content:
-                        "Bitlayer's current BTC bridge is a federated two-way peg with institutional signers. Bitlayer is working with multiple MPC custody platforms.\n\nUsers do not custody bitcoin assets backing tokens on Bitlayer.\n\nNote that we are unable to verify the participants in this model - [Source](https://docs.bitlayer.org/docs/Learn/BitlayerNetwork/Bridges)",
+                    title: TokenSnippet.CustodianPeg,
+                    content: TokenSnippet.BitLayerwBTC,
                 },
                 {
                     name: "Bedrock uniBTC",
                     infrastructureSlug: "bedrock-unibtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: "Users trust custodians and various onchain contracts. We have not reviewed the contract implementations for this chain",
-                    content:
-                        "When a user deposits funds into the Bedrock protocol, they deposit a wrapped BTC token into a smart contract. The uniBTC smart contract on Ethereum (and other chains) is responsible for minting uniBTC in exchange for wrapped BTC tokens.\n\nTo deposit these tokens on Babylon, the protocol relies on a custodial provider to exchange the wrapped BTC tokens for native BTC tokens that they would stake on Babylon.\n\nBedrock has not disclosed who is responsible for securing and staking native BTC on users' behalf.",
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.BedrockUniBTC}\n\n${TokenSnippet.smartcontractreview}`,
                 },
                 {
                     name: "Lorenzo stBTC",
                     infrastructureSlug: "lorenzo-stbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: "Users trust custodians and various onchain contracts. We have not reviewed the contract implementations for this chain",
-                    content:
-                        "Users trust Lorenzo, the operators of Lorenzo stBTC, to secure and stake native BTC that backs stBTC. It has also been stated in Lorenzo's [marketing materials](https://medium.com/@lorenzoprotocol/lorenzo-allies-with-cobo-ceffu-and-chainup-e0d824c4744d) that custodian providers Cobo, Ceffu, and Chainup are participating in Lorenzo's protocol as custody providers, but their documentation does not claim this.\n\nUsers trust Lorenzo's claims in their documentation are being executed in practice.\n\n[Source](https://docs.lorenzo-protocol.xyz/introduction/stbtc-issuance-and-settlement)",
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.LorenzostBTC}\n\n${TokenSnippet.smartcontractreview}`,
+                },
+                {
+                    name: "Xlink aBTC",
+                    infrastructureSlug: "xlink-abtc",
+                    score: 0,
+                    tier: RiskFactor.VeryHigh,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.xlink}${TokenSnippet.smartcontractreview}.`,
                 },
             ],
         },

@@ -7,6 +7,7 @@ import {
     Notice,
     Site,
     AssessmentCategory,
+    PegRiskSummarySnippet,
 } from "../props";
 
 const cbbtc: InfrastructureProject = {
@@ -28,7 +29,7 @@ const cbbtc: InfrastructureProject = {
     links: [
         {
             text: Site.Website,
-            url: "https://www.base.org/",
+            url: "https://www.coinbase.com/cbbtc",
         },
         {
             text: Site.Docs,
@@ -49,6 +50,12 @@ const cbbtc: InfrastructureProject = {
     ],
     description:
         "cbBTC is a tokenized form of BTC. It is an ERC-20 token that is available on Ethereum and Base. It is backed 1:1 by BTC. The BTC backing cbBTC is custodied by Coinbase, a centralized custodian. Coinbase also has unilateral control of the token contracts related to cbBTC.",
+    riskSummary: [
+        {
+            title: PegRiskSummarySnippet.CustodianTitle,
+            content: PegRiskSummarySnippet.OneCustodian,
+        },
+    ],
     sections: [
         {
             id: "knowledgeBits",

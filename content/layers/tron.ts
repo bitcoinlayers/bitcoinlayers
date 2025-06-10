@@ -14,7 +14,8 @@ import {
     ReviewSnippet,
     BitcoinSecuritySnippet,
     TechnologySnippet,
-    UseCaseSnippet
+    UseCaseSnippet,
+    RiskSummarySnippet,
 } from "../props";
 
 const tron: LayerProject = {
@@ -62,6 +63,16 @@ const tron: LayerProject = {
         },
     ],
     description: "Tron is a proof-of-stake blockchain. It is EVM-compatible and home to BTCTRON.",
+    riskSummary: [
+        {
+            title: RiskSummarySnippet.TitleCustodianPegs,
+            content: `${RiskSummarySnippet.RiskSummaryCustodianPegs}`,
+        },
+        {
+            title: RiskSummarySnippet.TitleAlternativeL1,
+            content: RiskSummarySnippet.RiskSummaryAlternativeL1,
+        },
+    ],
     riskAnalysis: [
         {
             category: RiskCategory.BtcCustody,
@@ -150,6 +161,10 @@ const tron: LayerProject = {
                 {
                     title: "Onchain applications",
                     content: UseCaseSnippet.OnchainApps,
+                },
+                {
+                    title: "Asset transfers",
+                    content: `${UseCaseSnippet.OffchainTransfers}`
                 },
             ],
         },

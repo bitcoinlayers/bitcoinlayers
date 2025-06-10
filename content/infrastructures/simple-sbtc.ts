@@ -6,6 +6,8 @@ import {
     EntityType,
     Notice,
     Site,
+    AssessmentCategory,
+    PegRiskSummarySnippet,
 } from "../props";
 
 const simplesbtc: InfrastructureProject = {
@@ -25,19 +27,35 @@ const simplesbtc: InfrastructureProject = {
     notice: undefined,
     bitcoinOnly: false,
     links: [],
-    description: "Under review.",
-    sections: [
+    description: "Simple sBTC is a two-way peg managed by the Unisat team. It is used to secure BTC backing sBTC on the Fractal network.",
+    riskSummary: [
         {
-            id: "selfsubmit",
-            title: "Process to self-submit information",
-            content: [
-                {
-                    content:
-                        "The Bitcoin Layers project prioritizes risk reviews on projects that are in production and accepting users' BTC deposits. Projects on testnet are welcome to submit information about their project. We do not publish risk assessments for projects that are not in production.\n\nHere are the [instructions](https://github.com/bitcoinlayers/bitcoinlayers/blob/main/SELFSUBMIT.md) on self-submitting a project.",
-                },
-            ],
+            title: PegRiskSummarySnippet.CustodianTitle,
+            content: PegRiskSummarySnippet.OneCustodian,
         },
     ],
+    sections: [
+                {
+                    id: "selfsubmit",
+                    title: "Further sections to be reviewed",
+                    content: [
+                        {
+                            content:
+                                "Aspects related to minting & burning, key management, transaction signing, and proof-of-reserves have not been reviewed. We are currently reviewing these sections.",
+                        },
+                    ],
+                },
+            ],
+            assessment: [
+                {
+                    category: AssessmentCategory.AssetCustody,
+                    score: 0,
+                    tier: "",
+                    title: "A 3/5 multisig secures the BTC backing Simple sBTC",
+                    content:
+                        "BTC backing Simple sBTC is secured by a [3/5 multisig](https://mempool.space/address/bc1ps0qa22q30rrp4584gz4teqkchn76wakzaq6mlhsv6sg36e0fl83sss2vxa). Information on who the signers are for this multisig and their signing mechanisms is unavailable.",
+                },
+            ],
 };
 
 export default simplesbtc;

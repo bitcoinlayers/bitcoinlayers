@@ -15,6 +15,7 @@ import {
     BitcoinSecuritySnippet,
     TechnologySnippet,
     UseCaseSnippet,
+    RiskSummarySnippet,
 } from "../props";
 
 const gnosis: LayerProject = {
@@ -62,6 +63,16 @@ const gnosis: LayerProject = {
         },
     ],
     description: "Gnosis is an alternative blockchain that supports a number of wrapped BTC tokens. It is EVM-compatible and leverages the same network architecture as Ethereum.",
+    riskSummary: [
+        {
+            title: RiskSummarySnippet.TitleCustodianPegs,
+            content: RiskSummarySnippet.RiskSummaryCustodianPegs,
+        },
+        {
+            title: RiskSummarySnippet.TitleAlternativeL1,
+            content: RiskSummarySnippet.RiskSummaryAlternativeL1,
+        },
+    ],
     riskAnalysis: [
         {
             category: RiskCategory.BtcCustody,
@@ -92,7 +103,7 @@ const gnosis: LayerProject = {
             score: 0,
             tier: RiskFactor.AlternativePoS,
             title: "Gnosis chain is operated by a distributed validator set",
-            content: ReviewSnippet.AltL1Operators,
+            content: ReviewSnippet.OperatorSidechainPOS,
         },
         {
             category: RiskCategory.FinalityGuarantees,

@@ -6,6 +6,8 @@ import {
     EntityType,
     Notice,
     Site,
+    AssessmentCategory,
+    PegRiskSummarySnippet,
 } from "../props";
 
 const kinza: InfrastructureProject = {
@@ -25,19 +27,35 @@ const kinza: InfrastructureProject = {
     notice: undefined,
     bitcoinOnly: false,
     links: [],
-    description: "Under review.",
-    sections: [
+    description: "Kinza kBTC is a BTC wrapped asset. It is under review.",
+    riskSummary: [
         {
-            id: "selfsubmit",
-            title: "Process to self-submit information",
-            content: [
-                {
-                    content:
-                        "The Bitcoin Layers project prioritizes risk reviews on projects that are in production and accepting users' BTC deposits. Projects on testnet are welcome to submit information about their project. We do not publish risk assessments for projects that are not in production.\n\nHere are the [instructions](https://github.com/bitcoinlayers/bitcoinlayers/blob/main/SELFSUBMIT.md) on self-submitting a project.",
-                },
-            ],
+            title: PegRiskSummarySnippet.CustodianTitle,
+            content: PegRiskSummarySnippet.Guardian,
         },
-    ],
+    ],        
+    sections: [
+                    {
+                        id: "selfsubmit",
+                        title: "Further sections to be reviewed",
+                        content: [
+                            {
+                                content:
+                                    "Aspects related to minting & burning, key management, transaction signing, and proof-of-reserves have not been reviewed. We are currently reviewing these sections.",
+                            },
+                        ],
+                    },
+                ],
+                assessment: [
+                        {
+                            category: AssessmentCategory.AssetCustody,
+                            score: 0,
+                            tier: "",
+                            title: "BTC backing kBTC is collaboratively secured by Cobo, Kinza, and Coinover",
+                            content:
+                                "Kinza's kBTC is backed by BTC held in custodian wallets. These wallets are secured by an MPC scheme where Kinza, Cobo, and Coinover participate as signers. Cobo and Coinover are institutional custody providers.\n\n[Source](https://docs.kinza.finance/kinza-bitcoin-staking/bitcoin-staking/technical-details)",
+                        },
+                    ],
 };
 
 export default kinza;

@@ -19,7 +19,7 @@ const bitfinity: LayerProject = {
     title: "Bitfinity",
     entityType: EntityType.Alt,
     entityCategory: EntityCategory.Sidesystem,
-    live: LiveStatus.Mainnet,
+    live: LiveStatus.Testnet,
     staking: false,
     liquidStaking: false,
     bridge: false,
@@ -30,7 +30,7 @@ const bitfinity: LayerProject = {
         RiskFactor.UnderReview,
         RiskFactor.UnderReview,
     ],
-    btcLocked: 0,
+    btcLocked: NaN,
     nativeToken: "-",
     feeToken: "BTF",
     notice: undefined,
@@ -58,6 +58,16 @@ const bitfinity: LayerProject = {
         },
     ],
     description: "Bitfinity is an EVM-based sidechain.",
+    riskSummary: [
+        {
+            title: "Specific Risk",
+            content: "risk text explanation"
+        },
+        {
+            title: "Specific Risk",
+            content: "risk text explanation"
+        }
+    ],
     riskAnalysis: [
         {
             category: RiskCategory.BtcCustody,

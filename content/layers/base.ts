@@ -17,6 +17,7 @@ import {
     KnowledgeBitSnippet,
     BitcoinSecuritySnippet,
     AdditionalSnippet,
+    RiskSummarySnippet,
 } from "../props";
 
 const base: LayerProject = {
@@ -65,7 +66,25 @@ const base: LayerProject = {
     ],
     description:
         "Base is an Ethereum rollup that that supports a variety of wrapped BTC tokens.",
-    riskAnalysis: [
+        riskSummary: [
+            {
+                title: RiskSummarySnippet.TitleUpgrade,
+                content: RiskSummarySnippet.RiskSummaryImmediateUpgrade
+            },
+            {
+                title: RiskSummarySnippet.TitleCustodianPegs,
+                content: RiskSummarySnippet.RiskSummaryCustodianPegs
+            },
+            {
+                title: RiskSummarySnippet.TitleAltDA,
+                content: RiskSummarySnippet.RiskSummaryAltDANetwork,
+            },
+            {
+                title: RiskSummarySnippet.TitleCentralizedSequencer,
+                content: RiskSummarySnippet.RiskSummaryCentralizedSequencer,
+            }
+        ],
+        riskAnalysis: [
         {
             category: RiskCategory.BtcCustody,
             score: 0,
@@ -102,7 +121,7 @@ const base: LayerProject = {
                     infrastructureSlug: "lombard-lbtc",
                     score: 0,
                     tier: RiskFactor.UnderReview,
-                    title: TokenSnippet.UnderReview,
+                    title: TokenSnippet.FederationPeg,
                     content: `${TokenSnippet.LombardLBTC}\n\n${TokenSnippet.smartcontractreview}`,
                 },
                 {
@@ -110,8 +129,8 @@ const base: LayerProject = {
                     infrastructureSlug: "ibtc",
                     score: 0,
                     tier: RiskFactor.UnderReview,
-                    title: TokenSnippet.UnderReview,
-                    content: TokenSnippet.ibtcnetworkibtc,
+                    title: TokenSnippet.VariousCustodianPeg,
+                    content: `${TokenSnippet.iBTC}\n\n${TokenSnippet.smartcontractreview}`,
                 },
                 {
                     name: "Solv SolvBTC",
@@ -130,20 +149,36 @@ const base: LayerProject = {
                     content: `${TokenSnippet.PumpBTC}\n\n${TokenSnippet.smartcontractreview}`,
                 },
                 {
+                    name: "Solv xSolvBTC",
+                    infrastructureSlug: "solv-xsolvbtc",
+                    score: 0,
+                    tier: RiskFactor.VeryHigh,
+                    title: TokenSnippet.CustodianDerivative,
+                    content: `${TokenSnippet.xSolvBTC}\n\n${TokenSnippet.smartcontractreview}`,
+                },
+                {
+                    name: "Rootstock RBTC",
+                    infrastructureSlug: "rootstock-rbtc",
+                    score: 0,
+                    tier: RiskFactor.UnderReview,
+                    title: TokenSnippet.FederationPeg,
+                    content: `${TokenSnippet.RootstockRBTC}${TokenSnippet.smartcontractreview}.`,
+                },
+                {
+                    name: "Xlink aBTC",
+                    infrastructureSlug: "xlink-abtc",
+                    score: 0,
+                    tier: RiskFactor.VeryHigh,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.xlink}${TokenSnippet.smartcontractreview}.`,
+                },
+                {
                     name: "AxlBTC",
                     infrastructureSlug: "axelar-axlbtc",
                     score: 0,
                     tier: RiskFactor.UnderReview,
                     title: TokenSnippet.UnderReview,
                     content: "This two-way peg is under review",
-                },
-                {
-                    name: "Solv SolvBTCBBN",
-                    infrastructureSlug: "solv-solvbtcbbn",
-                    score: 0,
-                    tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet.CustodianDerivative,
-                    content: `${TokenSnippet.SolvBTCBBN}\n\n${TokenSnippet.smartcontractreview}`,
                 },
             ],
         },
@@ -166,7 +201,7 @@ const base: LayerProject = {
             score: 0,
             tier: RiskFactor.UnderReview,
             title: "Base state transitions finalize on Ethereum",
-            content: `${ReviewSnippet.FinalityAltRollupPermissionlessFraudProofs}\n\nWe are reviewing how to score finality guarantees for alternative rollups. Learn more on our thoughts [here](https://www.lxresearch.co/some-thoughts-on-proof-systems-for-bridges-on-other-chains/).`
+            content: `${ReviewSnippet.FinalityAltRollupPermissionlessFraudProofs}\n\nWe are reviewing how to score finality guarantees for alternative rollups. Learn more on our thoughts [here](https://www.lxresearch.co/some-thoughts-on-proof-systems-for-bridges-on-other-chains/).`,
         },
     ],
     sections: [

@@ -8,14 +8,14 @@ export default function InfoCardGridOpcode() {
                 title="Economic nodes"
                 subtitle="Review how proposals"
                 description="affect your business"
-                href="/methodology"
+                href="https://github.com/sCrypt-Inc/awesome-op-cat"
                 icon={HandCoinsIcon}
             />
             <InfoCardOpcode
                 title="Miners"
                 subtitle="Review how proposals"
                 description="with other layer enjoyers"
-                href="https://t.me/+8rv-1I2gkmQ4ZmJh"
+                href="https://github.com/sCrypt-Inc/awesome-op-cat"
                 isExternal
                 icon={Pickaxe}
             />
@@ -23,7 +23,7 @@ export default function InfoCardGridOpcode() {
                 title="Developers"
                 subtitle="Review how proposals"
                 description="impact the application layer"
-                href="https://www.lxresearch.co"
+                href="https://github.com/sCrypt-Inc/awesome-op-cat"
                 isExternal
                 icon={Code}
             />
@@ -31,7 +31,7 @@ export default function InfoCardGridOpcode() {
                 title="Users"
                 subtitle="Review how proposals"
                 description="provide different use cases"
-                href="https://www.lxresearch.co"
+                href="https://github.com/sCrypt-Inc/awesome-op-cat"
                 isExternal
                 icon={BitcoinIcon}
             />

@@ -15,6 +15,7 @@ import {
     BitcoinSecuritySnippet,
     TechnologySnippet,
     UseCaseSnippet,
+    RiskSummarySnippet,
 } from "../props";
 
 const ethereum: LayerProject = {
@@ -63,6 +64,16 @@ const ethereum: LayerProject = {
     ],
     description:
         "Ethereum is an alternative blockchain that supports a number of wrapped BTC tokens. Ethereum is home to the EVM execution environment which supports more expressive smart contracts.",
+    riskSummary: [
+        {
+            title: RiskSummarySnippet.TitleCustodianPegs,
+            content: RiskSummarySnippet.RiskSummaryCustodianPegs,
+        },
+        {
+            title: RiskSummarySnippet.TitleAlternativeL1,
+            content: RiskSummarySnippet.RiskSummaryAlternativeL1,
+        },
+    ],
     riskAnalysis: [
         {
             category: RiskCategory.BtcCustody,
@@ -144,12 +155,12 @@ const ethereum: LayerProject = {
                     content: TokenSnippet.SolvBTC,
                 },
                 {
-                    name: "Solv SolvBTC.BBN",
-                    infrastructureSlug: "solv-solvbtcbbn",
+                    name: "Solv xSolvBTC",
+                    infrastructureSlug: "solv-xsolvbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: TokenSnippet.CustodianDerivative,
-                    content: TokenSnippet.SolvBTCBBN,
+                    content: TokenSnippet.xSolvBTC,
                 },
                 {
                     name: "Solv SolvBTC.ENA",
@@ -183,6 +194,94 @@ const ethereum: LayerProject = {
                     title: TokenSnippet.CustodianPeg,
                     content: TokenSnippet.babypie,
                 },
+                {
+                    name: "Binance BTCB",
+                    infrastructureSlug: "binance-btcb",
+                    score: 0,
+                    tier: RiskFactor.VeryHigh,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.BinanceBTCB}${TokenSnippet.smartcontractreview},`
+                },
+                {
+                    name: "Obelisk oTCB",
+                    infrastructureSlug: "obelisk-obtc",
+                    score: 0,
+                    tier: RiskFactor.VeryHigh,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.ObeliskoBTC}${TokenSnippet.smartcontractreview},`
+                },
+                {
+                    name: "IBTC Network iBTC",
+                    infrastructureSlug: "ibtcnetwork-ibtc",
+                    score: 0,
+                    tier: RiskFactor.UnderReview,
+                    title: TokenSnippet.UnderReview,
+                    content: `${TokenSnippet.ibtcnetworkibtc}`
+                },
+                {
+                    name: "Xlink aBTC",
+                    infrastructureSlug: "xlink-abtc",
+                    score: 0,
+                    tier: RiskFactor.VeryHigh,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.xlink}${TokenSnippet.smartcontractreview},`
+                },
+                {
+                    name: "Avalanche BTC.b",
+                    infrastructureSlug: "avalanche-btcb",
+                    score: 0,
+                    tier: RiskFactor.VeryHigh,
+                    title: TokenSnippet.FederationPeg,
+                    content: `${TokenSnippet.AvalancheBTCb}${TokenSnippet.smartcontractreview},`
+                },
+                {
+                    name: "Bedrock brBTC",
+                    infrastructureSlug: "bedrock-brbtc",
+                    score: 0,
+                    tier: RiskFactor.UnderReview,
+                    title: TokenSnippet.UnderReview,
+                    content: `This two-way peg is under review.`,
+                },
+                {
+                    name: "Badger eBTC",
+                    infrastructureSlug: "badger-ebtc",
+                    score: 0,
+                    tier: RiskFactor.UnderReview,
+                    title: TokenSnippet.UnderReview,
+                    content: `This two-way peg is under review.`,
+                },
+                {
+                    name: "21 Shares BBTC",
+                    infrastructureSlug: "21shares-btc",
+                    score: 0,
+                    tier: RiskFactor.UnderReview,
+                    title: TokenSnippet.UnderReview,
+                    content: `This two-way peg is under review.`,
+                },
+                {
+                    name: "pStake yBTC",
+                    infrastructureSlug: "pstake-ybtc",
+                    score: 0,
+                    tier: RiskFactor.UnderReview,
+                    title: TokenSnippet.UnderReview,
+                    content: `This two-way peg is under review.`,
+                },
+                {
+                    name: "Lorenzo enzoBTC",
+                    infrastructureSlug: "lorenzo-enzobtc",
+                    score: 0,
+                    tier: RiskFactor.UnderReview,
+                    title: TokenSnippet.UnderReview,
+                    content: `This two-way peg is under review.`,
+                },
+                {
+                    name: "Manta mBTC",
+                    infrastructureSlug: "manta-mbtc",
+                    score: 0,
+                    tier: RiskFactor.UnderReview,
+                    title: TokenSnippet.UnderReview,
+                    content: `This two-way peg is under review.`,
+                },
             ],
         },
         {
@@ -190,21 +289,21 @@ const ethereum: LayerProject = {
             score: 0,
             tier: RiskFactor.AlternativePoS,
             title: "Data is stored and made available by Ethereum full nodes",
-            content: AtlSnippet.DAConsensusNetwork
+            content: AtlSnippet.DAConsensusNetwork,
         },
         {
             category: RiskCategory.NetworkOperators,
             score: 0,
             tier: RiskFactor.AlternativePoS,
             title: "Ethereum is operated by an alternative validator set",
-            content: AtlSnippet.OperatorsPoSNetwork
+            content: AtlSnippet.OperatorsPoSNetwork,
         },
         {
             category: RiskCategory.FinalityGuarantees,
             score: 0,
             tier: RiskFactor.AlternativePoS,
             title: "Finality on Ethereum is guaranteed by an alternative consensus mechanism",
-            content: AtlSnippet.FinalityConsensusNetwork
+            content: AtlSnippet.FinalityConsensusNetwork,
         },
     ],
     sections: [
@@ -222,7 +321,8 @@ const ethereum: LayerProject = {
                 },
                 {
                     title: "No MEV introduced to bitcoin",
-                    content: "Ethereum does not introduce MEV to bitcoin. Blocks in Ethereum are primarily auctioned off to builders who construct blocks on behalf of a proposer in a given slot. The majority of blocks in Ethereum are built by 2-3 builders.",
+                    content:
+                        "Ethereum does not introduce MEV to bitcoin. Blocks in Ethereum are primarily auctioned off to builders who construct blocks on behalf of a proposer in a given slot. The majority of blocks in Ethereum are built by 2-3 builders.",
                 },
                 {
                     title: "Ethereum does not contribute to the security budget",
@@ -246,7 +346,7 @@ const ethereum: LayerProject = {
             content: [
                 {
                     title: "Onchain applications",
-                    content: UseCaseSnippet.OnchainApps
+                    content: UseCaseSnippet.OnchainApps,
                 },
             ],
         },

@@ -14,6 +14,7 @@ import {
     ReviewSnippet,
     BitcoinSecuritySnippet,
     UseCaseSnippet,
+    RiskSummarySnippet,
 } from "../props";
 
 const solana: LayerProject = {
@@ -62,7 +63,17 @@ const solana: LayerProject = {
     ],
     description:
         "Solana is an alternative proof-of-stake blockchain that supports a number of wrapped BTC tokens. It is home to the SVM execution environment which supports more expressive smart contracts.",
-    riskAnalysis: [
+        riskSummary: [
+            {
+                title: RiskSummarySnippet.TitleCustodianPegs,
+                content: `${RiskSummarySnippet.RiskSummaryCustodianPegs}`,
+            },
+            {
+                title: RiskSummarySnippet.TitleAlternativeL1,
+                content: RiskSummarySnippet.RiskSummaryAlternativeL1,
+            },
+        ],
+        riskAnalysis: [
         {
             category: RiskCategory.BtcCustody,
             score: 0,
@@ -94,6 +105,30 @@ const solana: LayerProject = {
                     title: TokenSnippet.UnderReview,
                     content: `${TokenSnippet.BitGowBTC}\n\nwBTC on Solana is minted via the Portal bridge from Ethereum. We are reviewing the Portal bridge's smart contracts and trust assumptions.`,
                 },
+                {
+                    name: "21 Shares BTC",
+                    infrastructureSlug: "21shares-btc",
+                    score: 0,
+                    tier: RiskFactor.VeryHigh,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.TwentyOnecoBTC}\n\n${TokenSnippet.smartcontractreview}\n\n`,
+                },
+                {
+                    name: "Zeus BTC",
+                    infrastructureSlug: "zeus-btc",
+                    score: 0,
+                    tier: RiskFactor.VeryHigh,
+                    title: TokenSnippet.VariousCustodianPeg,
+                    content: `${TokenSnippet.ZueszBTC}\n\n${TokenSnippet.smartcontractreview}\n\n`,
+                },
+                {
+                    name: "Rootstock RBTC",
+                    infrastructureSlug: "rootstock-rbtc",
+                    score: 0,
+                    tier: RiskFactor.UnderReview,
+                    title: TokenSnippet.UnderReview,
+                    content: `${TokenSnippet.RootstockRBTC}${TokenSnippet.smartcontractreview}.`,
+                },
             ],
         },
         {
@@ -108,7 +143,7 @@ const solana: LayerProject = {
             score: 0,
             tier: RiskFactor.AlternativePoS,
             title: "Solana is operated by a distributed validator set",
-            content: ReviewSnippet.AltL1Operators
+            content: ReviewSnippet.OperatorSidechainPOS
         },
         {
             category: RiskCategory.FinalityGuarantees,

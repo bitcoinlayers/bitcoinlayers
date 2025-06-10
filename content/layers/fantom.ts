@@ -13,6 +13,7 @@ import {
     TokenSnippet,
     ReviewSnippet,
     BitcoinSecuritySnippet,
+    RiskSummarySnippet,
 } from "../props";
 
 const fantom: LayerProject = {
@@ -60,6 +61,16 @@ const fantom: LayerProject = {
         },
     ],
     description: "",
+    riskSummary: [
+        {
+            title: RiskSummarySnippet.TitleCustodianPegs,
+            content: RiskSummarySnippet.RiskSummaryCustodianPegs,
+        },
+        {
+            title: RiskSummarySnippet.TitleAlternativeL1,
+            content: RiskSummarySnippet.RiskSummaryAlternativeL1,
+        },
+    ],
     riskAnalysis: [
         {
             category: RiskCategory.BtcCustody,
@@ -91,7 +102,7 @@ const fantom: LayerProject = {
             score: 0,
             tier: RiskFactor.VeryHigh,
             title: "Fantom is operated by a federated validator set",
-            content: ReviewSnippet.AltL1Operators
+            content: ReviewSnippet.OperatorSidechainPOS
         },
         {
             category: RiskCategory.FinalityGuarantees,

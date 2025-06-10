@@ -7,6 +7,7 @@ import {
     Notice,
     Site,
     AssessmentCategory,
+    PegRiskSummarySnippet,
 } from "../props";
 
 const icpckbtc: InfrastructureProject = {
@@ -28,7 +29,13 @@ const icpckbtc: InfrastructureProject = {
     links: [],
     description:
         "ckBTC is a BTC-backed reserve asset that can be leveraged on the ICP network.",
-    sections: [
+        riskSummary: [
+            {
+                title: PegRiskSummarySnippet.CustodianTitle,
+                content: `${PegRiskSummarySnippet.Federation} ICP governance elects the validators of the subnet repsonsible for managing the ckBTC two-way peg.`
+            },
+        ],
+        sections: [
         {
             id: "selfsubmit",
             title: "Further sections to be reviewed",

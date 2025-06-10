@@ -16,8 +16,11 @@ import {
     BitcoinSecuritySnippet,
     UseCaseSnippet,
     TechnologySnippet,
+    ReviewSnippet,
+    RiskSummarySnippet,
 } from "../props";
 import { Bitcoin } from "lucide-react";
+import RiskSummary from "@/components/shared/risk-summary";
 
 const bnbsmartchain: LayerProject = {
     type: Type.Layer,
@@ -44,28 +47,38 @@ const bnbsmartchain: LayerProject = {
     links: [
         {
             text: Site.Website,
-            url: "https://usecorn.com/",
+            url: "https://www.bnbchain.org/",
         },
         {
             text: Site.Docs,
-            url: "https://docs.usecorn.com/docs/developers/introduction",
+            url: "https://docs.bnbchain.org/",
         },
         {
             text: Site.Explorer,
-            url: "https://cornscan.io/",
+            url: "https://bscscan.com/",
         },
         {
             text: Site.GitHub,
-            url: "https://github.com/usecorn",
+            url: "https://github.com/bnb-chain",
         },
         {
             text: Site.Twitter,
-            url: "https://x.com/use_corn",
+            url: "https://x.com/BNBChain",
         },
     ],
     description:
         "BNB Smart Chain is an alternative proof-of-stake blockchain that supports a number of wrapped BTC tokens. It offers an EVM-compatible execution environment which supports more expressive smart contracts.",
-    riskAnalysis: [
+        riskSummary: [
+            {
+                title: RiskSummarySnippet.TitleCustodianPegs,
+                content: RiskSummarySnippet.RiskSummaryCustodianPegs,
+            },
+            {
+                title: RiskSummarySnippet.TitleAlternativeL1,
+                content: RiskSummarySnippet.RiskSummaryAlternativeL1,
+            },
+        ],
+        riskAnalysis: [
         {
             category: RiskCategory.BtcCustody,
             score: 0,
@@ -87,7 +100,7 @@ const bnbsmartchain: LayerProject = {
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: TokenSnippet.CustodianPeg,
-                    content: TokenSnippet.BinanceBTCB,
+                    content: TokenSnippet.BitGowBTC,
                 },
                 {
                     name: "Threshold tBTC",
@@ -106,12 +119,12 @@ const bnbsmartchain: LayerProject = {
                     content: TokenSnippet.SolvBTC,
                 },
                 {
-                    name: "Solv SolvBTCBBN",
-                    infrastructureSlug: "solv-solvbtcbbn",
+                    name: "Solv xSolvBTC",
+                    infrastructureSlug: "solv-xsolvbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: TokenSnippet.CustodianDerivative,
-                    content: TokenSnippet.SolvBTCBBN,
+                    content: TokenSnippet.xSolvBTC,
                 },
                 {
                     name: "Solv SolvBTC.ENA",
@@ -125,8 +138,8 @@ const bnbsmartchain: LayerProject = {
                     name: "Pump BTC",
                     infrastructureSlug: "pump-btc",
                     score: 0,
-                    tier: RiskFactor.UnderReview,
-                    title: TokenSnippet.UnderReview,
+                    tier: RiskFactor.VeryHigh,
+                    title: TokenSnippet.CustodianPeg,
                     content: `${TokenSnippet.PumpBTC}\n\n${TokenSnippet.smartcontractreview}`,
                 },
                 {
@@ -135,39 +148,87 @@ const bnbsmartchain: LayerProject = {
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: TokenSnippet.CustodianPeg,
-                    content: `${TokenSnippet.PumpBTC}\n\n${TokenSnippet.smartcontractreview}`,
+                    content: `${TokenSnippet.FireBTC}\n\n${TokenSnippet.smartcontractreview}`,
                 },
                 {
                     name: "Lorenzo stBTC",
                     infrastructureSlug: "lorenzo-stbtc",
                     score: 0,
-                    tier: RiskFactor.UnderReview,
-                    title: TokenSnippet.UnderReview,
-                    content: `${TokenSnippet.PumpBTC}\n\n${TokenSnippet.smartcontractreview}`,
+                    tier: RiskFactor.VeryHigh,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.LorenzostBTC}\n\n${TokenSnippet.smartcontractreview}`,
                 },
                 {
                     name: "Lombard LBTC",
                     infrastructureSlug: "lombard-lbtc",
                     score: 0,
                     tier: RiskFactor.UnderReview,
-                    title: TokenSnippet.UnderReview,
-                    content: `${TokenSnippet.PumpBTC}\n\n${TokenSnippet.smartcontractreview}`,
+                    title: TokenSnippet.FederationPeg,
+                    content: `${TokenSnippet.LombardLBTC}\n\n${TokenSnippet.smartcontractreview}`,
                 },
                 {
                     name: "Babypie mBTC",
                     infrastructureSlug: "babypie-mbtc",
                     score: 0,
-                    tier: RiskFactor.UnderReview,
-                    title: TokenSnippet.UnderReview,
-                    content: `${TokenSnippet.PumpBTC}\n\n${TokenSnippet.smartcontractreview}`,
+                    tier: RiskFactor.VeryHigh,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.babypie}\n\n${TokenSnippet.smartcontractreview}`,
                 },
                 {
                     name: "Kinza kBTC",
                     infrastructureSlug: "kinza-kbtc",
                     score: 0,
+                    tier: RiskFactor.VeryHigh,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.KinzaBTC}\n\n${TokenSnippet.smartcontractreview}`,
+                },
+                {
+                    name: "Bedrock uniBTC",
+                    infrastructureSlug: "bedrock-unibtc",
+                    score: 0,
                     tier: RiskFactor.UnderReview,
                     title: TokenSnippet.UnderReview,
-                    content: `${TokenSnippet.PumpBTC}\n\n${TokenSnippet.smartcontractreview}`,
+                    content: `${TokenSnippet.BedrockUniBTC}\n\n${TokenSnippet.smartcontractreview}`,
+                },
+                {
+                    name: "Avalanche BTC.b",
+                    infrastructureSlug: "avalanche-btcb",
+                    score: 0,
+                    tier: RiskFactor.UnderReview,
+                    title: TokenSnippet.FederationPeg,
+                    content: `${TokenSnippet.AvalancheBTCb}\n\n${TokenSnippet.smartcontractreview}`,
+                },
+                {
+                    name: "Xlink aBTC",
+                    infrastructureSlug: "xlink-abtc",
+                    score: 0,
+                    tier: RiskFactor.VeryHigh,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.xlink}${TokenSnippet.smartcontractreview}.`,
+                },
+                {
+                    name: "iBTC",
+                    infrastructureSlug: "ibtcnetwork-ibtc",
+                    score: 0,
+                    tier: RiskFactor.UnderReview,
+                    title: TokenSnippet.UnderReview,
+                    content: `${TokenSnippet.iBTC}\n\n${TokenSnippet.smartcontractreview}\n\n`
+                },
+                {
+                    name: "Bedrock brBTC",
+                    infrastructureSlug: "Bedrock-brbtc",
+                    score: 0,
+                    tier: RiskFactor.UnderReview,
+                    title: TokenSnippet.UnderReview,
+                    content: `${TokenSnippet.BedrockbrBTC}\n\n${TokenSnippet.smartcontractreview}\n\n`,
+                },
+                {
+                    name: "Allo alloBTC",
+                    infrastructureSlug: "allo-allobtc",
+                    score: 0,
+                    tier: RiskFactor.VeryHigh,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.AlloBTC}\n\n${TokenSnippet.smartcontractreview}\n\n`,
                 },
             ],
         },
@@ -176,14 +237,14 @@ const bnbsmartchain: LayerProject = {
             score: 0,
             tier: RiskFactor.AlternativePoS,
             title: "Data is made available by an alternative consensus network",
-            content: AtlSnippet.DAConsensusNetwork,
+            content: ReviewSnippet.DAConsensusNetwork,
         },
         {
             category: RiskCategory.NetworkOperators,
             score: 0,
             tier: RiskFactor.AlternativePoS,
             title: "BNB Smart Chain is operated by a distributed validator set",
-            content: `${AtlSnippet.OperatorsPoSNetwork}\n\nBNB Smart Chain leverages a hybrid proof-of-stake mechanism similar to delegated proof-of-stake. BNB token holders can delegate tokens to their preferred validator to support their chances at winning blocks.`,
+            content: `${ReviewSnippet.OperatorSidechainPOS}\n\nBNB Smart Chain leverages a hybrid proof-of-stake mechanism similar to delegated proof-of-stake. BNB token holders can delegate tokens to their preferred validator to support their chances at winning blocks.`,
         },
         {
             category: RiskCategory.FinalityGuarantees,
@@ -232,7 +293,7 @@ const bnbsmartchain: LayerProject = {
             content: [
                 {
                     title: "Onchain applications",
-                    content: UseCaseSnippet.OnchainApps
+                    content: UseCaseSnippet.OnchainApps,
                 },
             ],
         },

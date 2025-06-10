@@ -11,12 +11,13 @@ import {
     ContentSection,
     RiskCategory,
     TokenSnippet,
+    RiskSummarySnippet,
 } from "../props";
 
 const bsquared: LayerProject = {
     type: Type.Layer,
     slug: "bsquared",
-    title: "Bsquared Network",
+    title: "Bsquared",
     entityType: EntityType.AltRollup,
     entityCategory: EntityCategory.Sidesystem,
     live: LiveStatus.Mainnet,
@@ -59,7 +60,25 @@ const bsquared: LayerProject = {
     ],
     description:
         "The current Bsquared Network mainnet consists of two different chains. The parent chain is a fork of Ethermint. The rollup chain is a fork of of an Ethereum rollup stack.",
-    riskAnalysis: [
+        riskSummary: [
+            {
+                title: RiskSummarySnippet.TitleUpgrade,
+                content: RiskSummarySnippet.RiskSummaryImmediateUpgrade
+            },
+            {
+                title: RiskSummarySnippet.TitleCustodianPegs,
+                content: RiskSummarySnippet.RiskSummaryCustodianPegs
+            },
+            {
+                title: RiskSummarySnippet.TitleAltDA,
+                content: RiskSummarySnippet.RiskSummaryAltDACommittee,
+            },
+            {
+                title: RiskSummarySnippet.TitleCentralizedSequencer,
+                content: RiskSummarySnippet.RiskSummaryCentralizedSequencer,
+            }
+        ],
+        riskAnalysis: [
         {
             category: RiskCategory.BtcCustody,
             score: 0,
@@ -73,8 +92,7 @@ const bsquared: LayerProject = {
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: "Users deposit funds into a MPC protocol managed by Bsquared Network and a custodian. Less than 5, individual signers have been publicly announced",
-                    content:
-                        "Previous blog posts have stated that when users deposit funds into Bsquared, they deposit funds into a MPC wallet managed by the Bsquared Network team and Cobo, a institutional custodian. Information on how many signers participate in this MPC scheme is not available. Bsquared has stated that more players are being added into this custody scheme.\n\nNote that we are unable to verify the participants in this model - [Source](https://www.cobo.com/post/cobo-partners-with-b2-network-to-enhance-advanced-bitcoin-layer-2-infrastructure-with-co-managed-mpc-custody-solution)",
+                    content: TokenSnippet.BsquaredBTC,
                 },
                 {
                     name: "Bedrock uniBTC",
@@ -82,8 +100,7 @@ const bsquared: LayerProject = {
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: "Users trust custodians and various onchain contracts. We have not reviewed the contract implementations for this chain",
-                    content:
-                        "When a user deposits funds into the Bedrock protocol, they deposit a wrapped BTC token into a smart contract. The uniBTC smart contract on Ethereum (and other chains) is responsible for minting uniBTC in exchange for wrapped BTC tokens.\n\nTo deposit these tokens on Babylon, the protocol relies on a custodial provider to exchange the wrapped BTC tokens for native BTC tokens that they would stake on Babylon.\n\nBedrock has not disclosed who is responsible for securing and staking native BTC on users' behalf.",
+                    content: TokenSnippet.BedrockUniBTC,
                 },
                 {
                     name: "Lorenzo stBTC",
@@ -91,8 +108,7 @@ const bsquared: LayerProject = {
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: "Users trust custodians and various onchain contracts. We have not reviewed the contract implementations for this chain",
-                    content:
-                        "Users trust Lorenzo, the operators of Lorenzo stBTC, to secure and stake native BTC that backs stBTC. It has also been stated in Lorenzo's [marketing materials](https://medium.com/@lorenzoprotocol/lorenzo-allies-with-cobo-ceffu-and-chainup-e0d824c4744d) that custodian providers Cobo, Ceffu, and Chainup are participating in Lorenzo's protocol as custody providers, but their documentation does not claim this.\n\nUsers trust Lorenzo's claims in their documentation are being executed in practice.\n\n[Source](https://docs.lorenzo-protocol.xyz/introduction/stbtc-issuance-and-settlement)",
+                    content: TokenSnippet.LorenzostBTC,
                 },
                 {
                     name: "UniRouter uBTC",
@@ -100,8 +116,7 @@ const bsquared: LayerProject = {
                     score: 0,
                     tier: RiskFactor.Critical,
                     title: "Smart contracts have not been reviewed. UniRouter has not disclosed its custodian operators",
-                    content:
-                        "Users trust that the UniRouter team has set up secure custody practices and has BTC reserves backing uniBTC. UniRouter has not disclosed who secures the BTC backing uBTC.",
+                    content: TokenSnippet.UniRouterBTC,
                 },
                 {
                     name: "BitGo wBTC",
@@ -109,8 +124,7 @@ const bsquared: LayerProject = {
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: "Users trust custodians and various onchain contracts. We have not reviewed the contract implementations for this chain",
-                    content:
-                        "The Bitcoin backing wBTC is secured by permissioned entities. BitGo and BiT Global are the participants responsible with custodying the funds backing wBTC across the various networks it's deployed on.\n\nThe wallets holding the bitcoin backing wBTC are dispersed between Hong Kong, Singapore, and the United States.",
+                    content: TokenSnippet.BitGowBTC,
                 },
                 {
                     name: "Obelisk oBTC",
@@ -118,8 +132,15 @@ const bsquared: LayerProject = {
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: "Users trust centralized signers to secure BTC backing oBTC",
-                    content:
-                        "Obelisk's documentation claims that users deposit BTC into an MPC scheme to mint oBTC on a respective destination chain.\n\nUsers trust Obelisk's claims in their documentation are being executed in practice.\n\n[Source](https://docs-obelisk.nodedao.com/obtc-asset/how-to-mint-obtc-on-obelisk) ",
+                    content: TokenSnippet.ObeliskoBTC,
+                },
+                {
+                    name: "Xlink aBTC",
+                    infrastructureSlug: "xlink-abtc",
+                    score: 0,
+                    tier: RiskFactor.VeryHigh,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.xlink}${TokenSnippet.smartcontractreview}.`,
                 },
                 {
                     name: "LayerBank BTC",

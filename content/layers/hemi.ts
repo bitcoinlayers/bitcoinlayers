@@ -18,6 +18,7 @@ import {
     BitcoinSecuritySnippet,
     AdditionalSnippet,
     KnowledgeBitSnippet,
+    RiskSummarySnippet,
 } from "../props";
 import { tokenToString } from "typescript";
 import { Rubik_Vinyl } from "next/font/google";
@@ -68,7 +69,21 @@ const hemi: LayerProject = {
     ],
     description:
         "Hemi is a blockchain that is building compatibility with bitcoin and Ethereum.",
-    riskAnalysis: [
+        riskSummary: [
+            {
+                title: RiskSummarySnippet.TitleCustodianPegs,
+                content: RiskSummarySnippet.RiskSummaryCustodianPegs,
+            },
+            {
+                title: RiskSummarySnippet.TitleAltDA,
+                content: RiskSummarySnippet.RiskSummaryAltDANetwork,
+            },
+            {
+                title: RiskSummarySnippet.TitleCentralizedSequencer,
+                content: RiskSummarySnippet.RiskSummaryCentralizedSequencer,
+            },
+        ],
+        riskAnalysis: [
         {
             category: RiskCategory.BtcCustody,
             score: 0,
@@ -113,8 +128,8 @@ const hemi: LayerProject = {
                     infrastructureSlug: "hemi-hemibtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet.UnderReview,
-                    content: "HemiBTC is a synthetic BTC asset on the Hemi blockchain. It is under review",
+                    title: TokenSnippet.FederationPeg,
+                    content: TokenSnippet.HemiBTC,
                 },
                 {
                     name: "Babypie mBTC",
@@ -155,6 +170,14 @@ const hemi: LayerProject = {
                     tier: RiskFactor.VeryHigh,
                     title: TokenSnippet.CustodianPeg,
                     content: `${TokenSnippet.ObeliskoBTC}\n\n${TokenSnippet.smartcontractreview}`,
+                },
+                {
+                    name: "Bedrock brBTC",
+                    infrastructureSlug: "bedrock-brbtc",
+                    score: 0,
+                    tier: RiskFactor.UnderReview,
+                    title: TokenSnippet.UnderReview,
+                    content: `${TokenSnippet.BedrockbrBTC}\n\n${TokenSnippet.smartcontractreview}\n\n`,
                 },
             ],
         },

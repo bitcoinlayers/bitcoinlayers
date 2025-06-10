@@ -11,6 +11,11 @@ import {
     ContentSection,
     RiskCategory,
     TokenSnippet,
+    ReviewSnippet,
+    UseCaseSnippet,
+    BitcoinSecuritySnippet,
+    TechnologySnippet,
+    RiskSummarySnippet,
 } from "../props";
 
 const spark: LayerProject = {
@@ -19,28 +24,51 @@ const spark: LayerProject = {
     title: "Spark",
     entityType: EntityType.Statechain,
     entityCategory: EntityCategory.BitcoinNative,
-    live: LiveStatus.Announced,
+    live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
     bridge: false,
-    underReview: true,
-    riskFactors: ["", "", "", ""],
-    btcLocked: 0,
-    nativeToken: "-",
-    feeToken: "-",
+    underReview: false,
+    riskFactors: [
+        RiskFactor.Low,
+        RiskFactor.Low,
+        RiskFactor.VeryHigh,
+        RiskFactor.VeryHigh,
+    ],
+    btcLocked: NaN,
+    nativeToken: "BTC",
+    feeToken: "BTC",
     notice: undefined,
     bitcoinOnly: true,
     links: [
         {
             text: Site.Website,
-            url: "https://www.spark.info",
+            url: "https://www.spark.money/",
         },
         {
             text: Site.Twitter,
             url: "https://x.com/buildonspark",
         },
+        {
+            text: Site.GitHub,
+            url: "https://github.com/buildonspark",
+        },
+        {
+            text: Site.Docs,
+            url: "https://docs.spark.money/home/welcome",
+        },
     ],
-    description: "Spark is building a statechain protocol.",
+    description: "Spark is an implementation of the statechain protocol where users interact with a statechain entity to process transfers for offchain representations of UTXOs. Spark's statechain implementation leverages a federation of operators to act as the statechain entity. In statechains, users can unilaterally exit to the L1 if operators become unresponsive..",
+    riskSummary: [
+        {
+            title: "Users trust the statechain entity with key deletion",
+            content: RiskSummarySnippet.RiskStatechainFinality,
+        },
+        {
+            title: "Users must watch for previous owners' unilateral exit transactions",
+            content: RiskSummarySnippet.RiskStatechainTimelock,
+        },
+    ],
     riskAnalysis: [
         {
             category: RiskCategory.BtcCustody,
@@ -48,38 +76,98 @@ const spark: LayerProject = {
             tier: "",
             title: "",
             content: "",
-            pegs: [],
+            pegs: [
+                {
+                    name: "Bitcoin Native",
+                    infrastructureSlug: "spark-btc",
+                    score: 0,
+                    tier: RiskFactor.Low,
+                    title: "Users collaboratively custody funds with the statechain entitiy",
+                    content: TokenSnippet.SparkBTC,
+                },
+            ],
         },
         {
             category: RiskCategory.DataAvailability,
             score: 0,
-            tier: "",
-            title: "",
-            content: "",
+            tier: RiskFactor.Low,
+            title: "Data related to current UTXO ownership is held client-side",
+            content: "Transaction data is self-hosted. The statechain entity signs individual transactions and users store data for their keyshare and unilateral exit path client-side.\n\nThe statechain entity also keeps a record of transfer history.",
         },
         {
-            category: RiskCategory.BlockProduction,
+            category: RiskCategory.NetworkOperators,
             score: 0,
-            tier: "",
-            title: "",
-            content: "",
+            tier: RiskFactor.VeryHigh,
+            title: "Offchain transfers are co-signed by a federation",
+            content: `${ReviewSnippet.OperatorFederatedStatechain}\n\nSpark currently has two members in its statechain entity; [Lightspark](https://www.lightspark.com/) and [Flashnet](https://www.flashnet.xyz/).`
         },
         {
-            category: RiskCategory.StateValidation,
+            category: RiskCategory.FinalityGuarantees,
             score: 0,
-            tier: "",
-            title: "",
-            content: "",
+            tier: RiskFactor.VeryHigh,
+            title: "Users trust a federation to delete keyshares held with previous owners",
+            content: ReviewSnippet.FinalityStatechainFederation,
         },
     ],
     sections: [
         {
-            id: "selfsubmit",
-            title: "Process to self-submit information",
+            id: "bitcoinsecurity",
+            title: "Bitcoin Security",
             content: [
                 {
+                    title: "Users rely on Bitcoin network participants for exit transactions",
+                    content: BitcoinSecuritySnippet.BitcoinSecurityOffchainUTXO,
+                },
+                {
+                    title: "The protocol does not enable MEV on Bitcoin",
+                    content: BitcoinSecuritySnippet.OffchainUTXOMEV,
+                },
+                {
+                    title: "No alternative token needed for network security",
+                    content: BitcoinSecuritySnippet.OffchainUTXONoToken,
+                },
+                {
+                    title: "Unilateral exits contribute to the security budget",
+                    content: BitcoinSecuritySnippet.StatechainSecurityBudget,
+                },
+            ],
+        },
+        {
+            id: "Technology",
+            title: "Technology",
+            content: [
+                {
+                    title: "Statechains",
+                    content: TechnologySnippet.Statechain,
+                },
+                {
+                    title: "FROST",
+                    content: `${TechnologySnippet.FROST}\n\nSpark leverages FROST for its statechain entity. A threshold of statechain operators are needed to create a valid signature for signing events.`,
+                },
+            ]
+        },
+        {
+            id: "usecases",
+            title: "Use Cases",
+            content: [
+                {
+                    title: "Offchain UTXO transfers",
+                    content: UseCaseSnippet.OffchainUTXOTransfers,
+                },
+                {
+                    title: "Tokenized applications",
+                    content: UseCaseSnippet.UTXOTokenizedApplications,
+                },
+            ],
+        },
+        {
+            id: "knowledgeBits",
+            title: "Knowledge Bits",
+            content: [
+                {
+                    title: "Learn more about statechains below",
                     content:
-                        "The Bitcoin Layers project prioritizes risk reviews on projects that are in production and accepting users' BTC deposits. Projects on testnet are welcome to submit information about their project. We do not publish risk assessments for projects that are not in production.\n\nHere are the [instructions](https://github.com/bitcoinlayers/bitcoinlayers/blob/main/SELFSUBMIT.md) on self-submitting a project.",
+                        "[Statechains are L2s, by the Bitcoin Layers team](https://x.com/BitcoinLayers/status/1925586374473724392) \n [Statechains Whitepaper, by Ruben Somsen](https://github.com/RubenSomsen/rubensomsen.github.io/blob/master/img/statechains.pdf) \n [Statechains: Non-custodial Off-chain Bitcoin Transfer, by Ruben Somsen](https://medium.com/@RubenSomsen/statechains-non-custodial-off-chain-bitcoin-transfer-1ae4845a4a39#:~:text=Statechains%20are%20a%20layer%20two,with%20scaling%20and%20save%20fees.) \n [Information on FROST from the Blockstream team](https://glossary.blockstream.com/frost/)",
                 },
             ],
         },

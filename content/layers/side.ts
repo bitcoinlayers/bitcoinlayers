@@ -15,6 +15,7 @@ import {
     BitcoinSecuritySnippet,
     TechnologySnippet,
     UseCaseSnippet,
+    RiskSummarySnippet,
 } from "../props";
 
 const side: LayerProject = {
@@ -34,7 +35,7 @@ const side: LayerProject = {
         RiskFactor.AlternativePoS,
         RiskFactor.AlternativePoS,
     ],
-    btcLocked: 0,
+    btcLocked: NaN,
     nativeToken: "-",
     feeToken: "SBTC",
     notice: undefined,
@@ -63,7 +64,17 @@ const side: LayerProject = {
     ],
     description:
         "Side Protocol is a Proof-of-Stake blockchain for BTC-denominated applications. It runs on CometBFT consensus.",
-    riskAnalysis: [
+        riskSummary: [
+            {
+                title: RiskSummarySnippet.TitleCustodianPegs,
+                content: `${RiskSummarySnippet.RiskFederationPeg}`,
+            },
+            {
+                title: RiskSummarySnippet.TitleAlternativeL1,
+                content: RiskSummarySnippet.RiskSummaryAlternativeL1,
+            },
+        ],
+        riskAnalysis: [
         {
             category: RiskCategory.BtcCustody,
             score: 0,
@@ -77,7 +88,7 @@ const side: LayerProject = {
                 score: 0,
                 tier: RiskFactor.High,
                 title: "Side sBTC is managed by a federation made up of a portion of its validator set",
-                content: "Side sBTC is managed by 21 signers who additionally participate as validators in Side's proof-of-stake consensus.\n\nThese signers participate in a TSS network that where trusted validators perform signing duties for sBTC abd Side Chain.",
+                content: TokenSnippet.SideBTC,
             },
         ],
         },
@@ -93,7 +104,7 @@ const side: LayerProject = {
             score: 0,
             tier: RiskFactor.AlternativePoS,
             title: "Side protocol is operated by an alternative PoS network",
-            content: ReviewSnippet.AltL1Operators,
+            content: ReviewSnippet.OperatorSidechainPOS,
         },
         {
             category: RiskCategory.StateValidation,

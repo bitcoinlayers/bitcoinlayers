@@ -9,8 +9,10 @@ import InfrastructureOverviewAlt from "@/components/infrastructure/infrastructur
 import InfrastructureImage from "@/components/infrastructure/infrastructure-image";
 import InfraTVLChart from "@/components/charts/infra-tvl-chart";
 import RiskAnalysis from "@/components/layer/risk-analysis/infra-container";
+import RiskSummary from "@/components/shared/risk-summary";
 import UnderDevelopmentBanner from "@/components/under-development-banner";
 import ProjectContractAddresses from "@/components/project-contract-addresses";
+import ManualContractAddresses from "@/components/manual-contract-addresses";
 
 async function getInfrastructureFromSlug(slug: string) {
     const infrastructure = allInfrastructures.find(
@@ -61,6 +63,7 @@ export default async function InfrastructurePage(props: {
                             infrastructure={infrastructure}
                         />
                         <InfraTVLChart />
+                        <RiskSummary content={infrastructure.riskSummary || []} />
                         {infrastructure.assessment && (
                             <RiskAnalysis
                                 riskAnalysis={infrastructure.assessment}
@@ -69,6 +72,11 @@ export default async function InfrastructurePage(props: {
                             />
                         )}
                         <ProjectContractAddresses slug={slug} isLayer={false} />
+                        <ManualContractAddresses 
+                            contracts={infrastructure.manualContracts || []} 
+                            sectionTitle="Additional Contracts"
+                            sectionId="manualcontracts"
+                        />
                         <InfrastructureBody infrastructure={infrastructure} />
                     </div>
                 </div>

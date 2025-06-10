@@ -16,13 +16,14 @@ import {
     TechnologySnippet,
     KnowledgeBitSnippet,
     UseCaseSnippet,
+    RiskSummarySnippet,
 } from "../props";
 
 const zksync: LayerProject = {
     type: Type.Layer,
     slug: "zksync",
     title: "zkSync",
-    entityType: EntityType.AltL1,
+    entityType: EntityType.AltRollup,
     entityCategory: EntityCategory.Alt,
     live: LiveStatus.Mainnet,
     staking: false,
@@ -63,6 +64,24 @@ const zksync: LayerProject = {
         },
     ],
     description: "zkSync is a rollup that posts data to Ethereum.",
+    riskSummary: [
+        {
+            title: RiskSummarySnippet.TitleUpgrade,
+            content: RiskSummarySnippet.RiskSummaryImmediateUpgrade
+        },
+        {
+            title: RiskSummarySnippet.TitleCustodianPegs,
+            content: RiskSummarySnippet.RiskSummaryCustodianPegs
+        },
+        {
+            title: RiskSummarySnippet.TitleAltDA,
+            content: RiskSummarySnippet.RiskSummaryAltDANetwork,
+        },
+        {
+            title: RiskSummarySnippet.TitleCentralizedSequencer,
+            content: RiskSummarySnippet.RiskSummaryCentralizedSequencer,
+        }
+    ],
     riskAnalysis: [
         {
             category: RiskCategory.BtcCustody,
@@ -84,7 +103,7 @@ const zksync: LayerProject = {
                     infrastructureSlug: "threshold-tbtc",
                     score: 0,
                     tier: RiskFactor.UnderReview,
-                    title: TokenSnippet.UnderReview,
+                    title: TokenSnippet.FederationPeg,
                     content: `${TokenSnippet.ThresholdtBTC}\n\n${TokenSnippet.smartcontractreview}.`,
                 },
                 {
@@ -92,7 +111,7 @@ const zksync: LayerProject = {
                     infrastructureSlug: "binance-btcb",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet.CustodianDerivative,
+                    title: TokenSnippet.CustodianPeg,
                     content: `${TokenSnippet.BinanceBTCB},\n\n${TokenSnippet.smartcontractreview}`,
                 },
                 {
@@ -100,7 +119,7 @@ const zksync: LayerProject = {
                     infrastructureSlug: "merlin-mbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet.CustodianDerivative,
+                    title: TokenSnippet.CustodianPeg,
                     content: `${TokenSnippet.MerlinMBTC},\n\n${TokenSnippet.smartcontractreview}`,
                 },
             ],

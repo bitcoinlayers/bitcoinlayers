@@ -7,6 +7,7 @@ import {
     Notice,
     Site,
     AssessmentCategory,
+    PegRiskSummarySnippet,
 } from "../props";
 
 const tbtc: InfrastructureProject = {
@@ -49,6 +50,12 @@ const tbtc: InfrastructureProject = {
     ],
     description:
         "tBTC is a BTC-backed reserve asset that lives as an ERC-20 token on EVM-based blockchains. Its accounting ledger is Ethereum. The BTC backing tBTC is secured by a distributed signer set and staking mechanism.",
+    riskSummary: [
+        {
+            title: PegRiskSummarySnippet.CustodianTitle,
+            content: `${PegRiskSummarySnippet.Federation} Signers must stake T tokens before being approved by the Threshold DAO to become a signer.`
+        },
+    ],
     sections: [
         {
             id: "additionalconsiderations",

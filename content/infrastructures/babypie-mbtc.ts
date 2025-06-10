@@ -7,6 +7,7 @@ import {
     Notice,
     Site,
     AssessmentCategory,
+    PegRiskSummarySnippet,
 } from "../props";
 
 const babypie: InfrastructureProject = {
@@ -28,7 +29,13 @@ const babypie: InfrastructureProject = {
     links: [],
     description:
         "Babypie mBTC is a BTC reserve asset that can be used across various EVM chains.",
-    sections: [
+        riskSummary: [
+            {
+                title: PegRiskSummarySnippet.CustodianTitle,
+                content: PegRiskSummarySnippet.Guardian,
+            },
+        ],
+        sections: [
         {
             id: "selfsubmit",
             title: "Further sections to be reviewed",

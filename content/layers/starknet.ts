@@ -16,6 +16,7 @@ import {
     BitcoinSecuritySnippet,
     AdditionalSnippet,
     UseCaseSnippet,
+    RiskSummarySnippet,
 } from "../props";
 
 const starknet: LayerProject = {
@@ -64,7 +65,25 @@ const starknet: LayerProject = {
     ],
     description:
         "Starknet is a rollup that posts data to Ethereum.",
-    riskAnalysis: [
+        riskSummary: [
+            {
+                title: RiskSummarySnippet.TitleUpgrade,
+                content: `${RiskSummarySnippet.RiskSummarySecurityCouncil}Starknet's security council is a 9/12 multisig.`,
+            },
+            {
+                title: RiskSummarySnippet.TitleCustodianPegs,
+                content: RiskSummarySnippet.RiskSummaryCustodianPegs
+            },
+            {
+                title: RiskSummarySnippet.TitleAltDA,
+                content: RiskSummarySnippet.RiskSummaryAltDANetwork,
+            },
+            {
+                title: RiskSummarySnippet.TitleCentralizedSequencer,
+                content: RiskSummarySnippet.RiskSummaryCentralizedSequencer,
+            }
+        ],
+        riskAnalysis: [
         {
             category: RiskCategory.BtcCustody,
             score: 0,

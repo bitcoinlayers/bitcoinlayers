@@ -7,6 +7,7 @@ import {
     Notice,
     Site,
     AssessmentCategory,
+    PegRiskSummarySnippet,
 } from "../props";
 
 const binancebtcb: InfrastructureProject = {
@@ -43,18 +44,14 @@ const binancebtcb: InfrastructureProject = {
             url: "https://x.com/binance",
         },
     ],
-    description: "Under Review",
-    sections: [
+    description: "Binance BTCB is a derivative asset native to BNB Smart Chain. BTC backing BTCB is secured by Binance, a centralized exchange.",
+    riskSummary: [
         {
-            id: "contracts",
-            title: "Supporting contracts & permissions",
-            content: [
-                {
-                    content:
-                        "[This is the owner of the BTCB token contract.](https://bscscan.com/address/0xF68a4b64162906efF0fF6aE34E2bB1Cd42FEf62d)",
-                },
-            ],
+            title: PegRiskSummarySnippet.CustodianTitle,
+            content: PegRiskSummarySnippet.OneCustodian,
         },
+    ],
+    sections: [
         {
             id: "selfsubmit",
             title: "Further sections to be reviewed",

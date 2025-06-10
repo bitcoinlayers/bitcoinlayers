@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { LayerProject } from "@/content/props";
+import { EntityCategory } from "@/content/props";
 
 const LayerMenu: React.FC<{ layer: LayerProject }> = ({ layer }) => {
     const [activeSection, setActiveSection] = useState("overview");
@@ -45,12 +46,20 @@ const LayerMenu: React.FC<{ layer: LayerProject }> = ({ layer }) => {
         <nav className="w-full overflow-x-hidden">
             <div className="flex lg:flex-col justify-start items-start lg:gap-4 gap-2 z-40">
                 {[
-                    { id: "overview", title: "Overview" },
-                    ...(!layer.underReview
-                        ? [{ id: "trust", title: "Trust Assumptions" }]
-                        : []),
-                    ...layer.sections,
-                    { id: "tokencontracts", title: "Token Contracts" },
+    { id: "overview", title: "Overview" },
+    ...(layer.riskSummary && layer.riskSummary.length > 0
+        ? [{ id: "risksummary", title: "Risk Summary" }]
+        : []),
+    ...(!layer.underReview
+        ? [{ id: "trust", title: "Trust Assumptions" }]
+        : []),
+    ...(layer.manualContracts && layer.manualContracts.length > 0
+        ? [{ id: "manualcontracts", title: "Additional Contracts" }]
+        : []),
+    ...layer.sections,
+    ...(layer.entityCategory === EntityCategory.BitcoinNative
+        ? []
+        : [{ id: "tokencontracts", title: "Token Contracts" }]),
                 ].map((section, index) => (
                     <div
                         key={index}

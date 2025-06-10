@@ -1,3 +1,4 @@
+import { tokenToString } from "typescript";
 import {
     LayerProject,
     Type,
@@ -11,6 +12,11 @@ import {
     ContentSection,
     RiskCategory,
     TokenSnippet,
+    ReviewSnippet,
+    BitcoinSecuritySnippet,
+    TechnologySnippet,
+    UseCaseSnippet,
+    RiskSummarySnippet,
 } from "../props";
 
 const nomic: LayerProject = {
@@ -30,7 +36,7 @@ const nomic: LayerProject = {
         RiskFactor.Medium,
         RiskFactor.Medium,
     ],
-    btcLocked: 4.95,
+    btcLocked: NaN,
     nativeToken: "NOM",
     feeToken: "NOM",
     bitcoinOnly: false,
@@ -58,7 +64,17 @@ const nomic: LayerProject = {
     ],
     description:
         "Nomic is a proof-of-stake blockchain focused on distributed BTC custody. Nomic validators collectively control a bitcoin wallet known as the Reserve Wallet, which users can deposit BTC to in order to receive nBTC, an asset issued on the Nomic blockchain that is backed 1:1 by the BTC deposits held in the Reserve Wallet.",
-    riskAnalysis: [
+        riskSummary: [
+            {
+                title: RiskSummarySnippet.TitleCustodianPegs,
+                content: `${RiskSummarySnippet.RiskPOSPeg}`,
+            },
+            {
+                title: RiskSummarySnippet.TitleAlternativeL1,
+                content: RiskSummarySnippet.RiskSummaryAlternativeL1,
+            },
+        ],
+        riskAnalysis: [
         {
             category: RiskCategory.BtcCustody,
             score: 0,
@@ -72,8 +88,7 @@ const nomic: LayerProject = {
                     score: 0,
                     tier: RiskFactor.High,
                     title: "BTC backing nBTC is managed by a group of 20 publicly known signers who participate as validators in the Nomic blockchain",
-                    content:
-                        "Users deposit BTC into a Reserve Wallet to receive nBTC on Nomic. The Reserve Wallet is a Bitcoin L1 multisig wallet managed by the Nomic signatory set. The Nomic signatory is made up of the top 20 Nomic validators measured by weighted stake.\n\nBecoming a signatory requires staking NOM tokens. Disbursing funds from the reserve wallet requires a 90% threshold, weighted by voting power through NOM tokens.",
+                    content: TokenSnippet.NomicNBTC,
                 },
             ],
         },
@@ -82,24 +97,21 @@ const nomic: LayerProject = {
             score: 0,
             tier: RiskFactor.Medium,
             title: "Data is made available via Nomic full nodes",
-            content:
-                "Nomic blockchain data can be accessed via Nomic full nodes. The node software is open source and running a node is permissionless. Therefore, anyone can validate Nomic blockchain data.\n\nData transmission from and to Bitcoin happens via relayers. Running a relayer is also permissionless.",
+            content: ReviewSnippet.AltL1DA,
         },
         {
             category: RiskCategory.BlockProduction,
             score: 0,
             tier: RiskFactor.Medium,
             title: "Network is operated by validators in a proof-of-stake consensus protocol",
-            content:
-                "Nomic is a proof of stake blockchain that is currently operated by 90 validators. Any user can stake NOM to become a Nomic validator. A subset of validators also participate as signers on the Nomic Reserve Wallet.\n\nIn case of a Nomic network liveness failure, an emergency disbursal mechanism is in place which will distribute BTC on L1 to the respective nBTC holders.",
+            content: ReviewSnippet.OperatorSidechainPOS,
         },
         {
             category: RiskCategory.FinalityGuarantees,
             score: 0,
             tier: RiskFactor.Medium,
             title: "Finality is provided through an offchain consensus mechnaism",
-            content:
-                "Nomic uses CometBFT for consensus. Like Tendermint, the protocol on which CometBFT is based, CometBFT has single-slot finality, meaning that blocks cannot be re-organized once they are part of the canonical blockchain. More than ⅔ of validator voting power must sign commit votes to finalize a block. If validators attempt to commit multiple blocks at the same block height, their NOM will be slashed.",
+            content: ReviewSnippet.CometBFTFinality,
         },
     ],
     sections: [
@@ -109,22 +121,19 @@ const nomic: LayerProject = {
             content: [
                 {
                     title: "Nomic does not inherit security from bitcoin consensus participants",
-                    content:
-                        "Nomic's security is independent of bitcoin and reliant on its own proof-of-stake mechanism.\n\nIts checkpoint mechanism does provide security against long-range attacks, enabling more secure light clients and shorter unbonding periods for validators.",
+                    content: BitcoinSecuritySnippet.CheckpointCometBFT,
                 },
                 {
                     title: "NOM token is used for network security",
-                    content:
-                        "Users must stake NOM to become a validator and signer on the Reserve Wallet.",
+                    content: BitcoinSecuritySnippet.AltTokenFees,
                 },
                 {
                     title: "No MEV introduced to Bitcoin",
-                    content: "Nomic does not leak MEV to bitcoin.",
+                    content: BitcoinSecuritySnippet.AltNetworkMEV,
                 },
                 {
                     title: "Nomic pays fees for checkpoint transactions",
-                    content:
-                        "Periodic checkpoint transactions are made that pay fees to bitcoin miners.",
+                    content: BitcoinSecuritySnippet.FeesPOSCheckpoint,
                 },
             ],
         },
@@ -133,9 +142,9 @@ const nomic: LayerProject = {
             title: "Withdrawals",
             content: [
                 {
-                    title: "Users need cooperation from 90% of the voting power on the Reserve Wallet to withdraw",
+                    title: "Users need cooperation from 67% of the voting power on the Reserve Wallet to withdraw",
                     content:
-                        "The Nomic BTC bridge is a proof of stake bridge. Users need cooperation from over 90% of the voting power on the Reserve Wallet to withdraw BTC from the bridge.",
+                        "The Nomic BTC bridge is a proof of stake bridge. Users need cooperation from over 67% of the voting power on the Reserve Wallet to withdraw BTC from the bridge.",
                 },
             ],
         },
@@ -161,13 +170,11 @@ const nomic: LayerProject = {
                 },
                 {
                     title: "IBC-enabled transfers",
-                    content:
-                        "Nomic has implemented support for IBC, enabling users to transfer their nBTC to other supported IBC-enabled blockchains. IBC, or the Inter-Blockchain Communication protocol, is a blockchain interoperability standard that enables connected chains to transfer assets and messages between each other.",
+                    content: TechnologySnippet.IBC,
                 },
                 {
                     title: "Orga & Merk",
-                    content:
-                        "Orga is a custom-built stack designed for creating Proof-of-Stake (PoS) blockchains in Rust, offering an alternative to the Cosmos SDK. At its core, Orga integrates with CometBFT as its consensus engine.\n\nMerk complements Orga as a high-performance Merkle key/value store, serving as the state database for blockchains. It supports the proof generation necessary for Nomic's IBC interactions with other networks and for enabling lightweight client functionalities for end users.",
+                    content: TechnologySnippet.OrgaMerk,
                 },
                 {
                     title: "Checkpointing mechanism",
@@ -182,13 +189,11 @@ const nomic: LayerProject = {
             content: [
                 {
                     title: "Connection to IBC-enabled blockchains",
-                    content:
-                        "Using IBC, users can transfer nBTC to connected blockchains and engage in use-cases such as:\n\n- Get a USK loan on Kujira\n\n- Trade and provide liquidity on Osmosis\n\n- Trade perpetual swaps using Levana",
+                    content: UseCaseSnippet.IBCTransfers,
                 },
                 {
                     title: "Offchain nBTC transfers",
-                    content:
-                        "Nomic itself can also be used for p2p payments denominated in nBTC.",
+                    content: UseCaseSnippet.OffchainTransfers,
                 },
             ],
         },

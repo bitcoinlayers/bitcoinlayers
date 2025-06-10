@@ -14,7 +14,7 @@ interface Props {
 
 export default function UnderDevelopmentBanner({
     title = "The opcode module of Bitcoin Layers is under development.",
-    description = "We are currently building out the opcode module for bitcoin layers. Some information and research may be outdated and missing context.",
+    description = "We are currently building out the opcode module for bitcoin layers. Janusz added this to a big PR before it was ready. Some information and research may be outdated and missing context.",
     linkText = "Join our telegram",
     linkHref = "https://t.me/+8rv-1I2gkmQ4ZmJh",
 }: Props) {

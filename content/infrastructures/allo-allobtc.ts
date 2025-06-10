@@ -6,6 +6,9 @@ import {
     EntityType,
     Notice,
     Site,
+    AssessmentCategory,
+    TokenSnippet,
+    PegRiskSummarySnippet,
 } from "../props";
 
 const alloallobtc: InfrastructureProject = {
@@ -25,19 +28,35 @@ const alloallobtc: InfrastructureProject = {
     notice: undefined,
     bitcoinOnly: false,
     links: [],
-    description: "Under review.",
-    sections: [
+    description: "AlloBTC is a BTC wrapped asset. It is under review.",
+    riskSummary: [
         {
-            id: "selfsubmit",
-            title: "Process to self-submit information",
-            content: [
-                {
-                    content:
-                        "The Bitcoin Layers project prioritizes risk reviews on projects that are in production and accepting users' BTC deposits. Projects on testnet are welcome to submit information about their project. We do not publish risk assessments for projects that are not in production.\n\nHere are the [instructions](https://github.com/bitcoinlayers/bitcoinlayers/blob/main/SELFSUBMIT.md) on self-submitting a project.",
-                },
-            ],
+            title: PegRiskSummarySnippet.CustodianTitle,
+            content: PegRiskSummarySnippet.OneCustodian,
         },
     ],
+    sections: [
+            {
+                id: "selfsubmit",
+                title: "Further sections to be reviewed",
+                content: [
+                    {
+                        content:
+                            "Aspects related to minting & burning, key management, transaction signing, and proof-of-reserves have not been reviewed. We are currently reviewing these sections.",
+                    },
+                ],
+            },
+        ],
+        assessment: [
+                {
+                    category: AssessmentCategory.AssetCustody,
+                    score: 0,
+                    tier: "",
+                    title: "BTC backing AlloBTC is held in custody by Cobo, a centralized exchange.",
+                    content:
+                        "BTC backing AlloBTC is custodied by Cobo, a centralized exchange. Cobo offers a 2/2 MPC custody solution where they co-custody funds along with protocols leveraging their servives. AlloBTC has not disclosed if this is the case in their documentation or marketing materials.\n\n[Source](https://docs.allo.xyz/faq-1/btc-staking)",
+                },
+            ],
 };
 
 export default alloallobtc;

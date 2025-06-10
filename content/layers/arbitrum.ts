@@ -18,6 +18,7 @@ import {
     UseCaseSnippet,
     KnowledgeBitSnippet,
     AdditionalSnippet,
+    RiskSummarySnippet,
 } from "../props";
 
 const arbitrum: LayerProject = {
@@ -66,6 +67,24 @@ const arbitrum: LayerProject = {
     ],
     description:
         "Arbitrum is an Ethereum rollup that supports a variety of wrapped BTC tokens.",
+    riskSummary: [
+        {
+            title: "All BTC pegs have custodian trust assumptions",
+            content: RiskSummarySnippet.RiskSummaryCustodianPegs
+        },
+        {
+            title: "Some contracts immediately upgradeable by Arbitrum Security council",
+            content: `${RiskSummarySnippet.RiskSummarySecurityCouncil} The Arbitrum Security council is a 9/12 multisig.`,
+        },
+        {
+            title: "Another network is used for data availability",
+            content: RiskSummarySnippet.RiskSummaryAltDANetwork,
+        },
+        {
+            title: "A centralized entity is the network operator",
+            content: RiskSummarySnippet.RiskSummaryCentralizedSequencer,
+        },
+    ],
     riskAnalysis: [
         {
             category: RiskCategory.BtcCustody,
@@ -115,12 +134,12 @@ const arbitrum: LayerProject = {
                     content: `${TokenSnippet.BedrockUniBTC}\n\n${TokenSnippet.smartcontractreview}`,
                 },
                 {
-                    name: "Solv SolvBTCBBN",
-                    infrastructureSlug: "solv-solvbtcbbn",
+                    name: "Solv xSolvBTC",
+                    infrastructureSlug: "solv-xsolvbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: TokenSnippet.CustodianPeg,
-                    content: `${TokenSnippet.SolvBTCBBN}\n\n${TokenSnippet.smartcontractreview}`,
+                    content: `${TokenSnippet.xSolvBTC}\n\n${TokenSnippet.smartcontractreview}`,
                 },
                 {
                     name: "Solv SolvBTC.ENA",
@@ -142,15 +161,15 @@ const arbitrum: LayerProject = {
                     name: "iBTC",
                     infrastructureSlug: "ibtcnetwork-ibtc",
                     score: 0,
-                    tier: RiskFactor.UnderReview,
-                    title: TokenSnippet.UnderReview,
-                    content: `${TokenSnippet.ibtcnetworkibtc}\n\n${TokenSnippet.smartcontractreview}`,
+                    tier: RiskFactor.High,
+                    title: TokenSnippet.VariousCustodianPeg,
+                    content: `${TokenSnippet.iBTC}\n\n${TokenSnippet.smartcontractreview}`,
                 },
                 {
                     name: "Avalanche BTCb",
                     infrastructureSlug: "avalanche-btcb",
                     score: 0,
-                    tier: RiskFactor.High,
+                    tier: RiskFactor.UnderReview,
                     title: TokenSnippet.FederationPeg,
                     content: `${TokenSnippet.AvalancheBTCb}\n\n${TokenSnippet.smartcontractreview}`,
                 },
@@ -174,9 +193,17 @@ const arbitrum: LayerProject = {
                     name: "xLink aBTC",
                     infrastructureSlug: "xlink-abtc",
                     score: 0,
+                    tier: RiskFactor.VeryHigh,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.xlink},\n\n${TokenSnippet.smartcontractreview}`,
+                },
+                {
+                    name: "Rootstock RBTC",
+                    infrastructureSlug: "rootstock-rbtc",
+                    score: 0,
                     tier: RiskFactor.UnderReview,
                     title: TokenSnippet.UnderReview,
-                    content: `${TokenSnippet.xlink},\n\n${TokenSnippet.smartcontractreview}`,
+                    content: `${TokenSnippet.RootstockRBTC}${TokenSnippet.smartcontractreview}.`,
                 },
             ],
         },
@@ -199,7 +226,7 @@ const arbitrum: LayerProject = {
             score: 0,
             tier: RiskFactor.UnderReview,
             title: "Arbitrum state transitions finalize on Ethereum. Validators who stake 3600 ETH can contest invalid state transitions",
-            content: `${ReviewSnippet.FinalityAltRollupPermissionlessFraudProofs}\n\nWe are reviewing how to score finality guarantees for alternative rollups. Learn more on our thoughts [here](https://www.lxresearch.co/some-thoughts-on-proof-systems-for-bridges-on-other-chains/).\n\n,The stake required to become a validator is 3600 ETH.`
+            content: `${ReviewSnippet.FinalityAltRollupPermissionlessFraudProofs}\n\nWe are reviewing how to score finality guarantees for alternative rollups. Learn more on our thoughts [here](https://www.lxresearch.co/some-thoughts-on-proof-systems-for-bridges-on-other-chains/).\n\n,The stake required to become a validator is 3600 ETH.`,
         },
     ],
     sections: [
@@ -247,6 +274,10 @@ const arbitrum: LayerProject = {
                 {
                     title: "Fault Proofs (a.k.a Fraud Proofs)",
                     content: TechnologySnippet.FaultProofs,
+                },
+                {
+                    title: "Arbitrum Stylus",
+                    content: TechnologySnippet.ArbitrumStylus,
                 },
             ],
         },

@@ -1,14 +1,12 @@
 import { InfrastructureProject } from "../content/props";
 
-import astriaProject from "../content/infrastructures/astria";
-import availProject from "../content/infrastructures/avail";
 import bvmProject from "../content/infrastructures/bvm";
 import celestiaProject from "../content/infrastructures/celestia";
 import espressoProject from "../content/infrastructures/espresso";
 import lorenzoProject from "../content/infrastructures/lorenzo-stbtc";
 import sovereignProject from "../content/infrastructures/sovereign";
 import nubitProject from "../content/infrastructures/nubit";
-import babylonProject from "../content/infrastructures/babylon";
+import babylonbtcProject from "../content/infrastructures/babylonstaked-btc";
 import fedimintProject from "../content/infrastructures/fedimint";
 import ibtcnetworkProject from "../content/infrastructures/ibtcnetwork-ibtc";
 import cashuProject from "../content/infrastructures/cashu";
@@ -18,7 +16,7 @@ import wbtcProject from "../content/infrastructures/bitgo-wbtc";
 import cbbtcProject from "../content/infrastructures/coinbase-cbbtc";
 import kbtcProject from "../content/infrastructures/kraken-kbtc";
 import solvProject from "../content/infrastructures/solv-solvbtc";
-import solvbbnProject from "../content/infrastructures/solv-solvbtcbbn";
+import xsolvbtcProject from "../content/infrastructures/solv-xsolvbtc";
 import solvenaProject from "../content/infrastructures/solv-solvbtcena";
 import bedrockProject from "../content/infrastructures/bedrock-unibtc";
 import pumpProject from "../content/infrastructures/pump-pumpbtc";
@@ -53,16 +51,28 @@ import tronbtcProject from "@/content/infrastructures/tron-btc";
 import merlinmbtcProject from "@/content/infrastructures/merlin-mbtc";
 import alloallobtcProject from "@/content/infrastructures/allo-allobtc";
 import sidesbtcProject from "@/content/infrastructures/side-sbtc";
+import hyperliquidbtc from "@/content/infrastructures/unit-ubtc";
+import solvsolvbtccore from "@/content/infrastructures/solv-solvbtccore";
+import bedrockbrbtc from "@/content/infrastructures/bedrock-brbtc";
+import nexusnbtc from "@/content/infrastructures/nexus-nbtc";
+import hemihemibtc from "@/content/infrastructures/hemi-hemibtc";
+import axelaraxlbtc from "@/content/infrastructures/axelar-axlbtc";
+import merlinwbtc from "@/content/infrastructures/merlin-wbtc";
+import twentyonesharesbtc from "@/content/infrastructures/21shares-btc";
+import badgerebtc from "@/content/infrastructures/badger-ebtc";
+import mantambtc from "@/content/infrastructures/manta-mbtc";
+import zueszbtc from "@/content/infrastructures/zeus-zbtc";
+import lorenzoenzobtc from "@/content/infrastructures/lorenzo-enzobtc";
+import OsmosisBTC from "@/content/infrastructures/osmosis-osmobtc";
+import osmosis from "@/content/layers/osmosis";
 
-const astria: InfrastructureProject = astriaProject;
-const avail: InfrastructureProject = availProject;
 const bvm: InfrastructureProject = bvmProject;
 const celestia: InfrastructureProject = celestiaProject;
 const espresso: InfrastructureProject = espressoProject;
 const lorenzo: InfrastructureProject = lorenzoProject;
 const sovereign: InfrastructureProject = sovereignProject;
 const nubit: InfrastructureProject = nubitProject;
-const babylon: InfrastructureProject = babylonProject;
+const babylonbtc: InfrastructureProject = babylonbtcProject;
 const fedimint: InfrastructureProject = fedimintProject;
 const ibtcnetwork: InfrastructureProject = ibtcnetworkProject;
 const cashu: InfrastructureProject = cashuProject;
@@ -72,7 +82,7 @@ const wbtc: InfrastructureProject = wbtcProject;
 const cbbtc: InfrastructureProject = cbbtcProject;
 const kbtc: InfrastructureProject = kbtcProject;
 const solv: InfrastructureProject = solvProject;
-const solvbbn: InfrastructureProject = solvbbnProject;
+const xsolvbtc: InfrastructureProject = xsolvbtcProject;
 const solvena: InfrastructureProject = solvenaProject;
 const bedrock: InfrastructureProject = bedrockProject;
 const pump: InfrastructureProject = pumpProject;
@@ -123,19 +133,16 @@ export const allInfrastructures: InfrastructureProject[] = [
     // bvm,
     // avail,
     // astria,
-    // babylon,
     solv,
-    solvbbn,
+    xsolvbtc,
     solvena,
     bedrock,
     pump,
     fire,
-    bitcoinos,
     binancebtcb,
     unirouter,
     acorn,
     babypie,
-    chakra,
     kinza,
     pstake,
     alexxbtc,
@@ -146,8 +153,6 @@ export const allInfrastructures: InfrastructureProject[] = [
     bitlayerwbtc,
     corecorebtc,
     icpckbtc,
-    layerbankbtc,
-    layerbankubtc,
     librepbtc,
     liquidlbtc,
     nomicnbtc,
@@ -160,6 +165,17 @@ export const allInfrastructures: InfrastructureProject[] = [
     merlinmbtc,
     alloallobtc,
     sidesbtc,
+    hyperliquidbtc,
+    solvsolvbtccore,
+    bedrockbrbtc,
+    hemihemibtc,
+    merlinwbtc,
+    twentyonesharesbtc,
+    badgerebtc,
+    mantambtc,
+    zueszbtc,
+    lorenzoenzobtc,
+    OsmosisBTC,
 ];
 
 export const allInfrastructureSlugs: string[] = allInfrastructures.map(

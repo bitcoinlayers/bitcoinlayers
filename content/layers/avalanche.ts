@@ -15,7 +15,9 @@ import {
     BitcoinSecuritySnippet,
     TechnologySnippet,
     UseCaseSnippet,
+    RiskSummarySnippet,
 } from "../props";
+import RiskSummary from "@/components/shared/risk-summary";
 
 const avalanche: LayerProject = {
     type: Type.Layer,
@@ -63,7 +65,17 @@ const avalanche: LayerProject = {
     ],
     description:
         "Avalanche is an alternative proof-of-stake blockchain that supports a number of wrapped BTC tokens. It offers an EVM-compatible execution environment which supports more expressive smart contracts. It also supports the interoperable subnet blockchains.",
-    riskAnalysis: [
+        riskSummary: [
+            {
+                title: "All BTC pegs have custodian trust assumptions",
+                content: RiskSummarySnippet.RiskSummaryCustodianPegs
+            },
+            {
+                title: "The network is an alternative blockchain",
+                content: RiskSummarySnippet.RiskSummaryAlternativeL1,
+            }
+        ],
+        riskAnalysis: [
         {
             category: RiskCategory.BtcCustody,
             score: 0,
@@ -80,7 +92,7 @@ const avalanche: LayerProject = {
                     content: TokenSnippet.AvalancheBTCb,
                 },
                 {
-                    name: "Solv LBTC",
+                    name: "SolvBTC",
                     infrastructureSlug: "solv-solvbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
@@ -89,11 +101,35 @@ const avalanche: LayerProject = {
                 },
                 {
                     name: "Kraken KBTC",
-                    infrastructureSlug: "solv-solvbtcbbn",
+                    infrastructureSlug: "solv-xsolvbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: TokenSnippet.CustodianDerivative,
-                    content: TokenSnippet.SolvBTCBBN,
+                    content: TokenSnippet.xSolvBTC,
+                },
+                {
+                    name: "BitGo wBTC",
+                    infrastructureSlug: "bitgo-wbtc",
+                    score: 0,
+                    tier: RiskFactor.VeryHigh,
+                    title: TokenSnippet.CustodianPeg,
+                    content: TokenSnippet.BitGowBTC,
+                },
+                {
+                    name: "Solv xSolvBTC",
+                    infrastructureSlug: "solv-xsolvbtc",
+                    score: 0,
+                    tier: RiskFactor.VeryHigh,
+                    title: TokenSnippet.CustodianPeg,
+                    content: TokenSnippet.xSolvBTC,
+                },
+                {
+                    name: "iBTC",
+                    infrastructureSlug: "ibtcnetwork-ibtc",
+                    score: 0,
+                    tier: RiskFactor.UnderReview,
+                    title: TokenSnippet.UnderReview,
+                    content: `${TokenSnippet.iBTC}\n\n${TokenSnippet.smartcontractreview}\n\n`,
                 },
             ],
         },

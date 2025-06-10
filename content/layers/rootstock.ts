@@ -11,6 +11,9 @@ import {
     ContentSection,
     RiskCategory,
     TokenSnippet,
+    ReviewSnippet,
+    BitcoinSecuritySnippet,
+    RiskSummarySnippet,
 } from "../props";
 
 const rootstock: LayerProject = {
@@ -59,7 +62,17 @@ const rootstock: LayerProject = {
     ],
     description:
         "Rootstock is a merge-mined, EVM-compatible bitcoin sidechain. As a merge-mined network, bitcoin miners can concurrently mine for Rootstock's consensus. The network is not secured by another token. As an EVM-compatible network, developers can deploy Solidity and other EVM-compatible smart contracts with arbitrary logic, creating a host of new applications for BTC. Rootstock has an enshrined cross-chain BTC asset called ''Smart Bitcoin'' (RBTC), which is pegged 1:1 to BTC and secured by a permissioned multisig federation.",
-    riskAnalysis: [
+        riskSummary: [
+            {
+                title: RiskSummarySnippet.TitleCustodianPegs,
+                content: `${RiskSummarySnippet.RiskFederationPeg}`,
+            },
+            {
+                title: RiskSummarySnippet.TitleAlternativeL1,
+                content: RiskSummarySnippet.RiskSummaryAlternativeL1,
+            },
+        ],
+        riskAnalysis: [
         {
             category: RiskCategory.BtcCustody,
             score: 0,
@@ -73,17 +86,15 @@ const rootstock: LayerProject = {
                     score: 0,
                     tier: RiskFactor.High,
                     title: "A federated multi-sig known as the Powpeg is used to custody users' BTC. More than 5, publicly-known signers participate in the Powpeg.",
-                    content:
-                        "The bridge between bitcoin and Rootstock is secured by a 5-of-9 federated multisig, referred to as the Powpeg (Proof of Work Peg). The identities of entities participating in the Powpeg are publicly known. Users trust the operators of the Powpeg to custody their funds.\n\nPowpeg signer identities and attestations can be found [here](https://rootstock.io/powpeg/).",
+                    content: TokenSnippet.RootstockRBTC,
                 },
                 {
                     name: "BitGo wBTC",
                     infrastructureSlug: "bitgo-wbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: "Users trust custodians and various onchain contracts. We have not reviewed the contract implementations for this chain",
-                    content:
-                        "The Bitcoin backing wBTC is secured by permissioned entities. BitGo and BiT Global are the participants responsible with custodying the funds backing wBTC across the various networks it's deployed on.\n\nThe wallets holding the bitcoin backing wBTC are dispersed between Hong Kong, Singapore, and the United States.",
+                    title: TokenSnippet.CustodianPeg,
+                    content: TokenSnippet.BitGowBTC,
                 },
             ],
         },
@@ -92,24 +103,21 @@ const rootstock: LayerProject = {
             score: 0,
             tier: RiskFactor.Medium,
             title: "Data is stored and made available via Rootstock nodes. Running a node is permissionless",
-            content:
-                "The data for Rootstock's state updates is stored on the Rootstock blockchain. Anyone can run a Rootstock node and verify the state of the Rootstock blockchain. So long as there is at least one non-pruned Rootstock full node online, users will be able to recover the full history and state of the Rootstock blockchain.",
+            content: `${ReviewSnippet.AltL1DAPOW}\n\nSo long as there is at least one non-pruned Rootstock full node online, users will be able to recover the full history and state of the Rootstock blockchain.`,
         },
         {
             category: RiskCategory.NetworkOperators,
             score: 0,
             tier: RiskFactor.Medium,
             title: "Any Bitcoin miner can participate in merge-mining Rootstock",
-            content:
-                "Block production is permissionless. Anyone who is willing and able to merge-mine Rootstock and bitcoin can produce Rootstock blocks and earn rewards. If interested parties do not possess enough hashpower to competitively solo mine, they can join a mining pool that supports Rootstock merged mining.",
+            content: ReviewSnippet.OperatorSidechainMergeMine,
         },
         {
             category: RiskCategory.FinalityGuarantees,
             score: 0,
             tier: RiskFactor.Medium,
             title: "Finality assurances are provided by Rootstock's consensus mechanism",
-            content:
-                "There is no bitcoin enforcement of Rootstock state transitions. Rootstock full nodes accept blocks proposed by Rootstock miners.",
+            content: ReviewSnippet.AltL1FinalityPOW,
         },
     ],
     sections: [
@@ -119,8 +127,7 @@ const rootstock: LayerProject = {
             content: [
                 {
                     title: "Rootstock enables Bitcoin miners to merge-mine Rootstock",
-                    content:
-                        "Rootstock indirectly inherits security from Bitcoin's consensus participants. Bitcoin miners can permissionlessly opt-in to merge-mining Rootstock and secure the network.",
+                    content: BitcoinSecuritySnippet.MergeMine,
                 },
                 {
                     title: "Another token is not used for network security",
@@ -129,13 +136,11 @@ const rootstock: LayerProject = {
                 },
                 {
                     title: "No MEV introduced to Bitcoin, but Bitcoin miners can extract sidechain MEV",
-                    content:
-                        "Rootstock does not leak MEV to Bitcoin directly. Due to the nature of Rootstocks execution environment, Bitcoin miners may take advantage of opportunities to extract MEV if the network is experiencing high activity.",
+                    content: BitcoinSecuritySnippet.MergeMineMEV,
                 },
                 {
                     title: "Merge-mining enables Bitcoin miners to earn more fees",
-                    content:
-                        "Rootstock contributes to Bitcoin's security budget indirectly by providing Bitcoin miners an exclusive opportunity to earn fee revenue via merge-mining.",
+                    content: BitcoinSecuritySnippet.MergeMineFees,
                 },
             ],
         },
