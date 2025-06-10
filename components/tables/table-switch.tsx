@@ -220,7 +220,7 @@ export default function TableSwitch() {
                     <MoreTable
                         data={sortedData as InfrastructureProject[]}
                         headers={headers}
-                        title="Applications & more"
+                        title="Applications"
                         description="Learn the tradeoffs for different application layers"
                         icon={<CoinsIcon className="mr-3" />}
                         isMore

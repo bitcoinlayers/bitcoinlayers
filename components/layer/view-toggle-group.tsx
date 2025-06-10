@@ -11,7 +11,7 @@ const viewOptions = [
 ];
 
 const moreOptions = [
-    { value: "applications", label: "Applications & more" },
+    { value: "applications", label: "Applications" },
     { value: "opcodes", label: "Opcodes" },
 ];
 
