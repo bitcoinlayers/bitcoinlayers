@@ -66,7 +66,7 @@ const bob: LayerProject = {
             content: RiskSummarySnippet.RiskSummaryCustodianPegs,
         },
         {
-            title: RiskSummarySnippet.TitleUpgrade,
+            title: RiskSummarySnippet.TitleBridgeUpgrade,
             content: RiskSummarySnippet.RiskSummaryImmediateUpgrade,
         },
         {

@@ -347,6 +347,7 @@ export enum RiskSummarySnippet { //TODO: Janusz to add more here
     RiskSummaryCentralNotImmediateUpgrade = "A centralized party can upgrade bridge contracts and steal user funds.",
     TitleBridgeUpgrade = "Bridge contracts are upgradeable",
     TitleSystemUpgrade = "Some system contracts are upgradeable",
+    TitleUpgrade = "Some contracts are upgradeable. These contracts may be related to BTC-backed tokens locked in the layer's official bridge contract.",
     RiskSummaryCustodianPegs = "All BTC backing wrapped tokens on this network are ultimately secured by custodians. Users trust that these custodians will not misappropriate funds and keep their assets pegged 1:1. Each custodian has their own risks. Learn more in the trust assumptions review section.",
     TitleCustodianPegs = "All BTC pegs have custodian trust assumptions",
     RiskSummaryAltDANetwork = "Data related to the network's state is made available by another consensus network. The network's state cannot make progress if the data availability layer withholds the data. If the network cannot make progress, user funds can be frozen.",

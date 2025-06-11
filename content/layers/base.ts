@@ -68,7 +68,7 @@ const base: LayerProject = {
         "Base is an Ethereum rollup that that supports a variety of wrapped BTC tokens.",
         riskSummary: [
             {
-                title: RiskSummarySnippet.TitleUpgrade,
+                title: RiskSummarySnippet.TitleSystemUpgrade,
                 content: RiskSummarySnippet.RiskSummaryImmediateUpgrade
             },
             {

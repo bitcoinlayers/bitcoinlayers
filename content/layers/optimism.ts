@@ -64,7 +64,7 @@ const optimism: LayerProject = {
         "Optimism is an Ethereum rollup that that supports a variety of wrapped BTC tokens.",
         riskSummary: [
             {
-                title: RiskSummarySnippet.TitleUpgrade,
+                title: RiskSummarySnippet.TitleBridgeUpgrade,
                 content: RiskSummarySnippet.RiskSummaryImmediateUpgrade
             },
             {
