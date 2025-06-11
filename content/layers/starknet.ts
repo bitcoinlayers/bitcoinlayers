@@ -67,12 +67,16 @@ const starknet: LayerProject = {
         "Starknet is a rollup that posts data to Ethereum.",
         riskSummary: [
             {
-                title: RiskSummarySnippet.TitleUpgrade,
-                content: `${RiskSummarySnippet.RiskSummarySecurityCouncil}Starknet's security council is a 9/12 multisig.`,
+                title: RiskSummarySnippet.TitleSystemUpgrade,
+                content: `${RiskSummarySnippet.RiskSummarySecurityCouncil} Starknet's security council is a 9/12 multisig.`,
+            },
+            {
+                title: RiskSummarySnippet.TitleBridgeUpgrade,
+                content: `${RiskSummarySnippet.RiskSummaryCentralNotImmediateUpgrade} A 2/4 multisig can upgrade the wBTC bridge contract after a three day delay. A single signer can upgrade the tBTC bridge contract after a three day delay.`,
             },
             {
                 title: RiskSummarySnippet.TitleCustodianPegs,
-                content: RiskSummarySnippet.RiskSummaryCustodianPegs
+                content: RiskSummarySnippet.RiskSummaryCustodianPegs,
             },
             {
                 title: RiskSummarySnippet.TitleAltDA,
@@ -97,7 +101,15 @@ const starknet: LayerProject = {
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: TokenSnippet.CustodianPeg,
-                    content: TokenSnippet.BitGowBTC,
+                    content: `${TokenSnippet.BitGowBTC}. The wBTC implementation of the Starknet bridge contract is upgradeable by a 2/4 multisig. There is a 3 day delay before the upgrade is implemented.`,
+                },
+                {
+                    name: "Threshold tBTC",
+                    infrastructureSlug: "threshold-tbtc",
+                    score: 0,
+                    tier: RiskFactor.VeryHigh,
+                    title: TokenSnippet.FederationPeg,
+                    content: `${TokenSnippet.ThresholdtBTC} The tBTC implementation of the Starknet bridge contract is upgradeable by a signer signer. There is a there a 3 day delay before the upgrade is implemented.`,
                 },
             ],
         },
@@ -109,11 +121,11 @@ const starknet: LayerProject = {
             content: ReviewSnippet.EthereumRollupDA,
         },
         {
-            category: RiskCategory.BlockProduction,
+            category: RiskCategory.NetworkOperators,
             score: 0,
             tier: RiskFactor.VeryHigh,
             title: "Blocks are currently produced by a centralized sequencer",
-            content: "The network's blocks are constructed by a centralized block producer. \n\nUsers cannot build their own blocks in the event of censorship or liveness failures.",
+            content: "The network's blocks are constructed by a centralized block producer.\n\nUsers cannot build their own blocks in the event of censorship or liveness failures.",
         },
         {
             category: RiskCategory.FinalityGuarantees,
@@ -121,6 +133,20 @@ const starknet: LayerProject = {
             tier: RiskFactor.High,
             title: "Validity proofs are used to finalize bridges and light clients",
             content: `${ReviewSnippet.FinalityAltRollupValidityProofs}\n\nUsers cannot run their own provers in the event of censorship or liveness failures.`
+        },
+    ],
+    manualContracts: [
+        {
+            title: "Starknet wBTC Escrow Contract",
+            address: "0x283751A21eafBFcD52297820D27C1f1963D9b5b4",
+            subtitle: "Bridge contract that escrows BitGo wBTC that is minted on Starknet.",
+            explorerUrl: "https://etherscan.io/address/0x283751A21eafBFcD52297820D27C1f1963D9b5b4"
+        },
+        {
+            title: "Starknet tBTC Escrow Contract",
+            address: "0x2111A49ebb717959059693a3698872a0aE9866b9", 
+            subtitle: "Bridge contract that escrows Threshold tBTC that is minted on Starknet.",
+            explorerUrl: "https://etherscan.io/address/0x2111A49ebb717959059693a3698872a0aE9866b9"
         },
     ],
     sections: [
