@@ -49,7 +49,7 @@ const optimism: LayerProject = {
         },
         {
             text: Site.Explorer,
-            url: "https://cornscan.io/",
+            url: "https://optimistic.etherscan.io/",
         },
         {
             text: Site.GitHub,
