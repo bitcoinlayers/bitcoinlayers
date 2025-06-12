@@ -63,15 +63,20 @@ function getSortedDataAndHeaders(view: string, subView: string) {
                 const opcodeHeaders = [
                     { name: "Name", showSorting: true, mobileLabel: "Name" },
                     {
-                        name: "Type",
-                        showSorting: true,
-                        mobileLabel: "Type",
-                        filterOptions: opcodeTypeFilters,
+                        name: "Opcodes",
+                        showSorting: false,
+                        mobileLabel: "Opcodes",
+                    },
+                    {
+                        name: "Applications",
+                        showSorting: false,
+                        mobileLabel: "Applications",
                     },
                     { name: "Status", showSorting: true, mobileLabel: "Status" },
+                    { name: "Summary", showSorting: false, mobileLabel: "Summary" },
                     {
-                        name: "Associated Networks",
-                        showSorting: true,
+                        name: "Support Networks",
+                        showSorting: false,
                         mobileLabel: "Networks",
                     },
                 ];

@@ -8,6 +8,9 @@ export default function OpcodeChart() {
     const [view] = useQueryState("view", {
         defaultValue: "networks",
     });
+    const [subView] = useQueryState("subview", {
+        defaultValue: "applications",
+    });
 
     const chartConfig = {
         networks: {
@@ -16,7 +19,13 @@ export default function OpcodeChart() {
                 "See what developers prefer for a possible bitcoin soft fork",
             chartQueryParam: "layer-chart",
             rangeQueryParam: "layer-range",
-
+        },
+        more: {
+            title: "Proposed opcodes",
+            description:
+                "See what developers prefer for a possible bitcoin soft fork",
+            chartQueryParam: "layer-chart",
+            rangeQueryParam: "layer-range",
         },
 
         // staking: {
@@ -44,14 +53,19 @@ export default function OpcodeChart() {
         // },
     };
 
-    const config = chartConfig[view as keyof typeof chartConfig];
-if (!config) return null;
+    // For the 'more' view, only show the chart if subview is 'opcodes'
+    if (view === "more" && subView !== "opcodes") {
+        return null;
+    }
 
-return (
-    <AggregatedOpcodeChart
-        title={config.title}
-        description={config.description}
-        chartHeight="h-64"
-    />
-);
+    const config = chartConfig[view as keyof typeof chartConfig];
+    if (!config) return null;
+
+    return (
+        <AggregatedOpcodeChart
+            title={config.title}
+            description={config.description}
+            chartHeight="h-64"
+        />
+    );
 }
