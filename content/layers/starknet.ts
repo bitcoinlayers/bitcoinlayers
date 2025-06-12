@@ -108,7 +108,7 @@ const starknet: LayerProject = {
                     infrastructureSlug: "threshold-tbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet.FederationPeg,
+                    title: `${TokenSnippet.FederationPeg}. To mint on starknet, tBTC on Ethereum is locked in an upgreadeable escrow contract`,
                     content: `${TokenSnippet.ThresholdtBTC} The tBTC implementation of the Starknet bridge contract is upgradeable by a signer signer. There is a there a 3 day delay before the upgrade is implemented.`,
                 },
             ],
