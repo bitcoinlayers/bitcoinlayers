@@ -117,9 +117,9 @@ const polygonzkevm: LayerProject = {
         {
             category: RiskCategory.FinalityGuarantees,
             score: 0,
-            tier: RiskFactor.UnderReview,
+            tier: RiskFactor.VeryHigh,
             title: "State updates are finalized by rollup nodes. We are reviewing finality assurance scores for alternative rollups with no official BTC bridge",
-            content: `${ReviewSnippet.FinalityAltRollupValidityProofs}\n\n\n\nWe are reviewing how to score finality guarantees for alternative rollups. Learn more on our thoughts [here](https://www.lxresearch.co/some-thoughts-on-proof-systems-for-bridges-on-other-chains/).`
+            content: `${ReviewSnippet.FinalityAltRollupValidityProofs}\n\nTwo entties are permissioned to submit state updates.`
         },
     ],
     sections: [

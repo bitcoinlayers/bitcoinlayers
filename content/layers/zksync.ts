@@ -135,15 +135,15 @@ const zksync: LayerProject = {
             category: RiskCategory.NetworkOperators,
             score: 0,
             tier: RiskFactor.VeryHigh,
-            title: "The network is operated by a centralized block producer",
+            title: "The network is operated by a centralized operator",
             content: ReviewSnippet.SelfSequenceNone,
         },
         {
             category: RiskCategory.FinalityGuarantees,
             score: 0,
-            tier: RiskFactor.UnderReview,
-            title: "State updates are finalized by rollup nodes. We are reviewing finality assurance scores for alternative rollups with no official BTC bridge",
-            content: `${ReviewSnippet.FinalityAltRollupValidityProofs}\n\n\n\nWe are reviewing how to score finality guarantees for alternative rollups. Learn more on our thoughts [here](https://www.lxresearch.co/some-thoughts-on-proof-systems-for-bridges-on-other-chains/).`
+            tier: RiskFactor.VeryHigh,
+            title: "Validity proofs are used to finalize bridges and light clients",
+            content: `${ReviewSnippet.FinalityAltRollupValidityProofs}\n\nA federated set of validators are responsible for posting state updates.`
         },
     ],
     sections: [

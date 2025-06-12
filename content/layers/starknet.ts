@@ -132,7 +132,7 @@ const starknet: LayerProject = {
             score: 0,
             tier: RiskFactor.High,
             title: "Validity proofs are used to finalize bridges and light clients",
-            content: `${ReviewSnippet.FinalityAltRollupValidityProofs}\n\nStarknet's bridge programs escrowing BTC-backed assets are finalized with validity proofs. Users cannot run their own provers in the event of censorship or liveness failures.`
+            content: `${ReviewSnippet.FinalityAltRollupValidityProofs}\n\nStarknet's bridge programs escrowing BTC-backed assets are finalized with validity proofs. Users cannot run their own provers in the event of censorship or liveness failures. A 3/12 federation is responsible for posting state updates on behalf of users if they are censored.`
         },
     ],
     manualContracts: [

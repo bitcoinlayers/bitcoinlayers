@@ -30,8 +30,8 @@ const optimism: LayerProject = {
     riskFactors: [
         RiskFactor.VeryHigh,
         RiskFactor.Medium,
-        RiskFactor.UnderReview,
-        RiskFactor.UnderReview,
+        RiskFactor.Medium,
+        RiskFactor.High,
     ],
     btcLocked: 0,
     nativeToken: "-",
@@ -157,15 +157,15 @@ const optimism: LayerProject = {
             category: RiskCategory.NetworkOperators,
             score: 0,
             tier: RiskFactor.Medium,
-            title: "Optimism blocks are produced and proposed by a centralized operator, but users can become their own block producer in the event of censorship or liveness failures",
+            title: "Optimism blocks are produced and proposed by a centralized operator, but users can propose their own state updates in the event of censorship or liveness failures",
             content: ReviewSnippet.SelfProposeMainAlt,
         },
         {
             category: RiskCategory.FinalityGuarantees,
             score: 0,
             tier: RiskFactor.UnderReview,
-            title: "Optimism state transitions finalize on Ethereum",
-            content: `${ReviewSnippet.FinalityAltRollupPermissionlessFraudProofs}\n\nWe are reviewing how to score finality guarantees for alternative rollups. Learn more on our thoughts [here](https://www.lxresearch.co/some-thoughts-on-proof-systems-for-bridges-on-other-chains/).`
+            title: "Optimism state transitions finalize on Ethereum. Rollup nodes finalize after applying the STF over data blogs. Light clients finalize after a fraud proof window passes",
+            content: `${ReviewSnippet.FinalityAltRollupPermissionlessFraudProofs}`
         },
     ],
     sections: [
