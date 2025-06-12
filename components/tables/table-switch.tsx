@@ -11,7 +11,7 @@ import { InfrastructureProject, LayerProject } from "@/content/props";
 import FederationTable from "./federation-table";
 import MoreTable from "./more-table";
 import OpcodeTable from "./opcode-table";
-import { CoinsIcon } from "lucide-react";
+import { CoinsIcon, GitForkIcon } from "lucide-react";
 
 function getSortedDataAndHeaders(view: string, subView: string) {
     switch (view) {
@@ -63,16 +63,21 @@ function getSortedDataAndHeaders(view: string, subView: string) {
                 const opcodeHeaders = [
                     { name: "Name", showSorting: true, mobileLabel: "Name" },
                     {
-                        name: "Type",
-                        showSorting: true,
-                        mobileLabel: "Type",
-                        filterOptions: opcodeTypeFilters,
+                        name: "Components",
+                        showSorting: false,
+                        mobileLabel: "Components",
                     },
-                    { name: "Status", showSorting: true, mobileLabel: "Status" },
                     {
-                        name: "Associated Networks",
-                        showSorting: true,
-                        mobileLabel: "Networks",
+                        name: "Primitives",
+                        showSorting: false,
+                        mobileLabel: "Primitives",
+                    },
+                    { name: "Tech Analysis", showSorting: true, mobileLabel: "Tech Analysis" },
+                    { name: "Applications", showSorting: false, mobileLabel: "Applications" },
+                    {
+                        name: "Users",
+                        showSorting: false,
+                        mobileLabel: "Users",
                     },
                 ];
 
@@ -211,7 +216,7 @@ export default function TableSwitch() {
                         headers={headers}
                         title="Proposed Opcodes"
                         description="Learn the tradeoffs for different opcode proposals"
-                        icon={<CoinsIcon className="mr-3" />}
+                        icon={<GitForkIcon className="mr-3" />}
                         isOpcode
                     />
                 );

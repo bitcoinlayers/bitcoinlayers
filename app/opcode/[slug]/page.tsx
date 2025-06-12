@@ -3,12 +3,13 @@ import {
     allOpcodes,
     allOpcodesSlugs,
 } from "@/util/opcode_index";
-import InfrastructureMenu from "@/components/infrastructure/infrastructureMenu";
+import OpcodeMenu from "@/components/infrastructure/OpcodeMenu";
 import OpcodeBody from "@/components/opcodes/opcodeBody";
 import InfrastructureImage from "@/components/infrastructure/infrastructure-image";
 import RiskAnalysis from "@/components/layer/risk-analysis/infra-container";
 import OpcodeOverview from "@/components/opcodes/opcodeOverview";
 import UnderDevelopmentBanner from "@/components/opcodes/underdevelopmentbanner";
+import OpcodeSupportChart from "@/components/charts/aggregated-opcode-chart";
 
 async function getInfrastructureFromSlug(slug: string) {
     const infrastructure = allOpcodes.find(
@@ -52,12 +53,15 @@ export default async function InfrastructurePage(props: {
                 </div>
                 <div className="lg:container mx-4 lg:px-4 flex lg:flex-row flex-col">
                     <div className="lg:w-1/5 z-40 lg:sticky lg:top-[60px] max-h-[calc(100vh-60px)] w-full overflow-y-auto overflow-x-hidden whitespace-nowrap lg:whitespace-normal top-[68px] fixed h-auto lg:h-fit lg:pt-6 lg:px-2 no-scrollbar py-0 bg-background">
-                        <InfrastructureMenu infrastructure={infrastructure} />
+                        <OpcodeMenu infrastructure={infrastructure} />
                     </div>
                     <div className="lg:w-4/5 flex flex-col px-4 lg:px-0">
                         <OpcodeOverview
                             infrastructure={infrastructure}
                         />
+                        <div className="mb-7">
+                        <OpcodeSupportChart defaultOpcode={infrastructure.slug} />
+                        </div>
                         {infrastructure.assessment && (
                             <RiskAnalysis
                                 riskAnalysis={infrastructure.assessment}

@@ -9,10 +9,10 @@ import {
     Site,
 } from "../props";
 
-const opcat: InfrastructureProject = {
+const opctv: InfrastructureProject = {
     type: Type.Infrastructure,
-    slug: "opcat",
-    title: "OP_CAT",
+    slug: "opctv",
+    title: "OP_CTV",
     entityType: EntityType.SingleOp,
     live: LiveStatus.BIP,
     staking: false,
@@ -28,11 +28,11 @@ const opcat: InfrastructureProject = {
     links: [
         {
             text: Site.Website,
-            url: "https://github.com/sCrypt-Inc/awesome-op-cat",
+            url: "https://fedimint.org",
         },
         {
             text: Site.Docs,
-            url: "https://github.com/sCrypt-Inc/awesome-op-cat",
+            url: "https://fedimint.org/docs/intro",
         },
         // {
         //     text: Site.Explorer,
@@ -40,11 +40,11 @@ const opcat: InfrastructureProject = {
         // },
         {
             text: Site.GitHub,
-            url: "https://github.com/sCrypt-Inc/awesome-op-cat",
+            url: "https://github.com/fedimint",
         },
         {
             text: Site.GitHub,
-            url: "https://github.com/sCrypt-Inc/awesome-op-cat",
+            url: "https://x.com/fedimint",
         },
     ],
     description:
@@ -169,4 +169,4 @@ const opcat: InfrastructureProject = {
 
 
 
-export default opcat;
+export default opctv;
