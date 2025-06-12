@@ -1,6 +1,6 @@
 import type { FC, ReactNode } from "react";
 import { useState } from "react";
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogTrigger, DialogTitle } from "@/components/ui/dialog";
 import ImageWithFallback from "./image-with-fallback";
 
 export interface NetworkInfo {
@@ -20,6 +20,9 @@ const SupportNetworksModal: FC<SupportNetworksModalProps> = ({ networks, childre
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>{children}</DialogTrigger>
       <DialogContent className="p-0 border-0 bg-transparent shadow-none max-w-fit [&>button]:hidden" style={{ width: "auto", maxWidth: "90vw" }}>
+        <DialogTitle className="sr-only">
+          Supported Alt Rollup Networks
+        </DialogTitle>
         <div className="bg-popover border border-border rounded-lg shadow-lg" style={{ display: "flex", width: "var(--breakpoint-sm, 640px)", padding: "var(--spacing-6, 24px)", flexDirection: "column", alignItems: "flex-end", gap: "var(--spacing-4, 16px)", flexShrink: 0 }}>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", alignSelf: "stretch" }}>
             <div className="text-popover-foreground" style={{ fontFamily: "Public Sans", fontSize: "20px", fontStyle: "normal", fontWeight: 500, lineHeight: "28px" }}>Supported Alt Rollup Networks</div>

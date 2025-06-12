@@ -1,59 +1,43 @@
 import React from "react";
 import { Dialog, DialogContent, DialogTrigger, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
-import { CodeIcon, HashIcon } from "lucide-react";
+import { FileTextIcon } from "lucide-react";
 import { InfrastructureProject } from "@/content/props";
 import Image from "next/image";
 import { parseTextWithLinks } from "@/util/parseTextWithLinks";
 
-interface ApplicationsContent {
+interface TechAnalysisContent {
     title?: string;
     content: string;
 }
 
-interface ApplicationsSummaryDialogProps {
+interface TechAnalysisDialogProps {
     opcode: InfrastructureProject;
-    applications: ApplicationsContent[];
+    analysis: TechAnalysisContent[];
 }
 
-// Hardcoded applications content for opcodes
-const OPCODE_APPLICATIONS: Record<string, ApplicationsContent[]> = {
+// Hardcoded tech analysis content for opcodes
+export const TECH_ANALYSIS: Record<string, TechAnalysisContent[]> = {
     "opcat": [
         {
-            title: "Layer 2 Protocols",
-            content: "OP_CAT enables more sophisticated Layer 2 protocols including rollups and sidechains with improved security models through covenant-based bridges."
-        },
-        {
-            title: "Decentralized Finance", 
-            content: "Enables advanced DeFi applications like payment pools, multi-party channels, and more complex covenant-based financial instruments on Bitcoin."
-        },
-        {
-            title: "Zero-Knowledge Proofs",
-            content: "Supports ZK-proof verification directly in Bitcoin Script, enabling privacy-preserving applications and scalable computation verification."
+            title: "Technical Analysis",
+            content: ""
         }
     ],
     "opctv": [
         {
-            title: "Vault Systems",
-            content: "OP_CTV enables sophisticated vault constructions with time-locked withdrawals, multi-signature requirements, and emergency recovery mechanisms."
-        },
-        {
-            title: "Payment Channels",
-            content: "Supports advanced payment channel topologies including channel factories, payment pools, and more efficient Lightning Network constructions."
-        },
-        {
-            title: "Congestion Control", 
-            content: "Enables batched transactions and fee optimization strategies during network congestion through pre-committed transaction trees."
+            title: "Technical Analysis",
+            content: ""
         }
     ]
 };
 
-const ApplicationsSummaryDialog: React.FC<ApplicationsSummaryDialogProps> = ({ opcode, applications }) => {
-    // Don't show button if no applications content
-    if (!applications || applications.length === 0) {
+const TechAnalysisDialog: React.FC<TechAnalysisDialogProps> = ({ opcode, analysis }) => {
+    // Don't show button if no analysis content
+    if (!analysis || analysis.length === 0) {
         return (
             <div className="text-muted-foreground text-sm">
-                No applications
+                No analysis
             </div>
         );
     }
@@ -64,10 +48,10 @@ const ApplicationsSummaryDialog: React.FC<ApplicationsSummaryDialogProps> = ({ o
                 <Button 
                     variant="outline" 
                     size="sm" 
-                    className="h-8 px-3 bg-[#F6FFED] dark:bg-[#162312] border-[#B7EB8F] dark:border-[#162312] hover:bg-[#EAFFDA] dark:hover:bg-[#274016] text-[#52C41A] dark:text-[#B7EB8F]"
+                    className="h-8 px-3 bg-[#E6F7FF] dark:bg-[#0F2A44] border-[#91D5FF] dark:border-[#0F2A44] hover:bg-[#D1F2FF] dark:hover:bg-[#1F3A5F] text-[#0958D9] dark:text-[#91D5FF]"
                 >
-                    <CodeIcon className="w-4 h-4 mr-1" />
-                    Primitives
+                    <FileTextIcon className="w-4 h-4 mr-1" />
+                    Tech Analysis
                 </Button>
             </DialogTrigger>
             <DialogContent className="p-0 border-0 bg-transparent shadow-none max-w-fit [&>button]:hidden" style={{ width: "auto", maxWidth: "90vw" }}>
@@ -80,7 +64,7 @@ const ApplicationsSummaryDialog: React.FC<ApplicationsSummaryDialogProps> = ({ o
                     }}
                 >
                     <DialogTitle className="sr-only">
-                        {opcode.title} - Primitives
+                        {opcode.title} - Technical Analysis
                     </DialogTitle>
                     <div className="space-y-6">
                         {/* Opcode Header */}
@@ -97,7 +81,7 @@ const ApplicationsSummaryDialog: React.FC<ApplicationsSummaryDialogProps> = ({ o
                             />
                             <div>
                                 <h3 className="text-xl font-medium text-foreground" style={{ lineHeight: "28px" }}>
-                                    {opcode.title} - Primitives
+                                    {opcode.title} - Technical Analysis
                                 </h3>
                             </div>
                         </div>
@@ -105,9 +89,9 @@ const ApplicationsSummaryDialog: React.FC<ApplicationsSummaryDialogProps> = ({ o
                         {/* Underline separator */}
                         <hr className="border-border" />
                         
-                        {/* Applications Content */}
+                        {/* Analysis Content */}
                         <div className="content flex-grow pt-0">
-                            {applications.map((item, index) => (
+                            {analysis.map((item, index) => (
                                 <div key={index} className="self-stretch mb-4">
                                     {item.title && (
                                         <div className="text-lg font-semibold text-foreground mb-2">
@@ -127,5 +111,4 @@ const ApplicationsSummaryDialog: React.FC<ApplicationsSummaryDialogProps> = ({ o
     );
 };
 
-export { OPCODE_APPLICATIONS };
-export default ApplicationsSummaryDialog; 
+export default TechAnalysisDialog; 

@@ -20,6 +20,7 @@ import ImageWithFallback from "./image-with-fallback";
 import OpcodeSummaryDialog, { OPCODE_SUMMARIES } from "../opcodes/opcode-summary-dialog";
 import ApplicationsSummaryDialog, { OPCODE_APPLICATIONS } from "../opcodes/applications-summary-dialog";
 import OpcodesButtonDialog from "../opcodes/opcodes-button-dialog";
+import TechAnalysisDialog, { TECH_ANALYSIS } from "../opcodes/tech-analysis-dialog";
 import type { NetworkInfo } from "./support-networks-modal";
 import SupportNetworksModal from "./support-networks-modal";
 import starknet from "@/content/layers/starknet";
@@ -37,10 +38,10 @@ const OPCODE_SUPPORT_NETWORKS: Record<string, string[]> = {
 };
 
 type TableTabKey =
-    | "Opcodes"
+    | "Components"
+    | "Primitives"
+    | "Tech Analysis"
     | "Applications"
-    | "Status"
-    | "Summary"
     | "Support Networks"
     | "Purpose";
 
@@ -140,7 +141,7 @@ const OpcodeTable = ({ data, headers, title, description, icon, isOpcode = false
     });
     const [sortBy, setSortBy] = useQueryState("sortBy", { defaultValue: "Name" });
     const [sortOrder, setSortOrder] = useQueryState("sortOrder", { defaultValue: "asc" });
-    const [mobileActiveTab, setMobileActiveTab] = useState<TableTabKey>("Opcodes");
+    const [mobileActiveTab, setMobileActiveTab] = useState<TableTabKey>("Components");
 
     const fullHeaders = headers;
 
@@ -157,19 +158,19 @@ const OpcodeTable = ({ data, headers, title, description, icon, isOpcode = false
                     valueA = a.title.toLowerCase();
                     valueB = b.title.toLowerCase();
                     break;
-                case "Opcodes":
+                case "Components":
                     valueA = OPCODE_SUMMARIES[a.slug] ? 1 : 0;
                     valueB = OPCODE_SUMMARIES[b.slug] ? 1 : 0;
                     break;
-                case "Applications":
+                case "Primitives":
                     valueA = OPCODE_APPLICATIONS[a.slug] ? 1 : 0;
                     valueB = OPCODE_APPLICATIONS[b.slug] ? 1 : 0;
                     break;
-                case "Status":
-                    valueA = a.live;
-                    valueB = b.live;
+                case "Tech Analysis":
+                    valueA = TECH_ANALYSIS[a.slug] ? 1 : 0;
+                    valueB = TECH_ANALYSIS[b.slug] ? 1 : 0;
                     break;
-                case "Summary":
+                case "Applications":
                     valueA = OPCODE_SUMMARIES[a.slug] ? 1 : 0;
                     valueB = OPCODE_SUMMARIES[b.slug] ? 1 : 0;
                     break;
@@ -213,7 +214,7 @@ const OpcodeTable = ({ data, headers, title, description, icon, isOpcode = false
 
     return (
         <Card className="w-full">
-            <CardHeader className="flex flex-col sm:flex-row p-0 border-none">
+            <CardHeader className="flex flex-col items-stretch space-y-0 border-b p-0 sm:flex-row border-none">
                 <div className="flex flex-1 flex-col justify-center px-6 py-5 sm:py-6">
                     <CardTitle className="flex">
                         {icon || <CoinsIcon className="mr-3" />} {title || "Proposed Opcodes"}
@@ -230,7 +231,7 @@ const OpcodeTable = ({ data, headers, title, description, icon, isOpcode = false
                         <button
                             key={statusOption.key}
                             data-active={status === statusOption.key}
-                            className="relative z-30 flex flex-1 flex-col justify-center gap-1 border-t px-6 py-4 text-left even:border-l data-[active=true]:bg-muted/50 sm:border-l sm:border-t-0 sm:px-8 sm:py-6 min-w-[100px] sm:min-w-[150px]"
+                            className="relative z-30 flex flex-1 flex-col justify-center gap-1 px-6 py-4 text-left even:border-l data-[active=true]:bg-muted/50 sm:border-l sm:px-8 sm:py-6 min-w-[100px] sm:min-w-[150px]"
                             onClick={() => setStatus(statusOption.key)}
                         >
                             <span className="text-xs text-muted-foreground">
@@ -265,29 +266,31 @@ const OpcodeTable = ({ data, headers, title, description, icon, isOpcode = false
                                             {item.notice && <div className="w-2 h-2 bg-orange-400 rounded-full" />}    
                                         </div>
                                     </td>
-                                                                        {/* Opcodes */}
+                                                                        {/* Components */}
                                     <td className="px-4 py-3">
                                         {OPCODE_SUMMARIES[item.slug] ? (
                                             <OpcodesButtonDialog opcode={item} summary={OPCODE_SUMMARIES[item.slug]} />
                                         ) : (
-                                            <span className="text-muted-foreground text-sm">No opcode data</span>
+                                            <span className="text-muted-foreground text-sm">No component data</span>
                                         )}
                                     </td>
-                                    {/* Applications */}
+                                    {/* Primitives */}
                                     <td className="px-4 py-3">
                                         {OPCODE_APPLICATIONS[item.slug] ? (
                                             <ApplicationsSummaryDialog opcode={item} applications={OPCODE_APPLICATIONS[item.slug]} />
                                         ) : (
-                                            <span className="text-muted-foreground text-sm">No applications</span>
+                                            <span className="text-muted-foreground text-sm">No primitives</span>
                                         )}
                                     </td>
-                                    {/* Status */}
+                                    {/* Tech Analysis */}
                                     <td className="px-4 py-3">
-                                        <Link href={`/${isOpcode ? "opcode" : "infrastructure"}/${item.slug}`}>
-                                            <StatusBadge status={item.live} />
-                                        </Link>
+                                        {TECH_ANALYSIS[item.slug] ? (
+                                            <TechAnalysisDialog opcode={item} analysis={TECH_ANALYSIS[item.slug]} />
+                                        ) : (
+                                            <span className="text-muted-foreground text-sm">No tech analysis</span>
+                                        )}
                                     </td>
-                                    {/* Summary */}
+                                    {/* Applications */}
                                     <td className="px-4 py-3">
                                         {OPCODE_SUMMARIES[item.slug] ? (
                                             <OpcodeSummaryDialog opcode={item} summary={OPCODE_SUMMARIES[item.slug]} />

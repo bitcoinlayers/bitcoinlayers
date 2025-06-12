@@ -1,7 +1,7 @@
 import { allOpcodes } from "@/util/opcode_index";
 import Hero from "@/components/hero";
 import OpcodeTable from "@/components/tables/opcode-table";
-import { CoinsIcon } from "lucide-react";
+import { GitForkIcon } from "lucide-react";
 import OpcodeChart from "@/components/charts/opcode-chart";
 import CtaCardOpcode from "@/components/cta-card-opcodes";
 
@@ -26,7 +26,9 @@ export default function Home() {
             mobileLabel: "Type",
             filterOptions: typeFilters,
         },
-        { name: "Status", showSorting: true, mobileLabel: "Status" },
+        { name: "Components", showSorting: true, mobileLabel: "Components" },
+        { name: "Primitives", showSorting: true, mobileLabel: "Primitives" },
+        { name: "Tech Analysis", showSorting: true, mobileLabel: "Tech Analysis" },
         {
             name: "Associated Networks",
             showSorting: true,
@@ -47,7 +49,7 @@ export default function Home() {
                     headers={infrastructureHeaders}
                     title="Proposed Opcodes"
                     description="Learn the tradeoffs for different opcode proposals"
-                    icon={<CoinsIcon className="mr-3" />}
+                    icon={<GitForkIcon className="mr-3" />}
                     isOpcode
                 />
             </div>
