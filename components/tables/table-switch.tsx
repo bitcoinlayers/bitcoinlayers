@@ -75,9 +75,9 @@ function getSortedDataAndHeaders(view: string, subView: string) {
                     { name: "Tech Analysis", showSorting: true, mobileLabel: "Tech Analysis" },
                     { name: "Applications", showSorting: false, mobileLabel: "Applications" },
                     {
-                        name: "Support Networks",
+                        name: "Users",
                         showSorting: false,
-                        mobileLabel: "Networks",
+                        mobileLabel: "Users",
                     },
                 ];
 
