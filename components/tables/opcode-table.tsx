@@ -6,7 +6,7 @@ import TableHeader from "@/components/tables/tableHeader";
 import { isMobile } from "react-device-detect";
 import Link from "next/link";
 import { useQueryState } from "nuqs";
-import { InfrastructureProject } from "@/content/props";
+import { InfrastructureProject, EntityType, LayerProject } from "@/content/props";
 import {
     Card,
     CardContent,
@@ -20,6 +20,15 @@ import ImageWithFallback from "./image-with-fallback";
 import OpcodeSummaryDialog, { OPCODE_SUMMARIES } from "../opcodes/opcode-summary-dialog";
 import ApplicationsSummaryDialog, { OPCODE_APPLICATIONS } from "../opcodes/applications-summary-dialog";
 import OpcodesButtonDialog from "../opcodes/opcodes-button-dialog";
+import type { NetworkInfo } from "./support-networks-modal";
+import SupportNetworksModal from "./support-networks-modal";
+import starknet from "@/content/layers/starknet";
+import base from "@/content/layers/base";
+import optimism from "@/content/layers/optimism";
+import bob from "@/content/layers/bob";
+import scroll from "@/content/layers/scroll";
+import taiko from "@/content/layers/taiko";
+import zksync from "@/content/layers/zksync";
 
 // Hardcoded support networks for each opcode
 const OPCODE_SUPPORT_NETWORKS: Record<string, string[]> = {
@@ -81,30 +90,44 @@ const StatusBadge = ({ status }: { status: string }) => {
     );
 };
 
-const SupportNetworksList = ({ opcodeSlug }: { opcodeSlug: string }) => {
-    const supportedNetworks = OPCODE_SUPPORT_NETWORKS[opcodeSlug] || [];
-    if (!supportedNetworks.length) {
-        return <div className="text-xs text-muted-foreground">No support yet</div>;
-    }
+// Utility to get all AltRollup networks
+const getAltRollupNetworks = () => {
+    const layers: LayerProject[] = [starknet, base, optimism, bob, scroll, taiko, zksync];
+    return layers
+        .filter((layer) => layer.entityType === EntityType.AltRollup)
+        .map((layer) => ({
+            slug: layer.slug,
+            title: layer.title,
+            description: layer.description,
+        }));
+};
+
+const SupportNetworksList = () => {
+    const networks = getAltRollupNetworks();
+    const topThree = networks.slice(0, 3);
+    const remainingCount = networks.length - 3;
+
     return (
-        <div className="flex flex-nowrap gap-2 items-center">
-            {supportedNetworks.map((networkSlug) => (
-                <div key={networkSlug} className="flex items-center">
-                    <ImageWithFallback
-  slug={networkSlug}
-  folder="logos"
-  altText={`${networkSlug} logo`}
-  width={20}
-  height={20}
-/>
-                </div>
-            ))}
-            {supportedNetworks.length > 3 && (
-                <div className="flex items-center">
-                    <span className="text-xs text-muted-foreground">+{supportedNetworks.length - 3}</span>
-                </div>
-            )}
-        </div>
+        <SupportNetworksModal networks={networks}>
+            <div className="flex flex-nowrap gap-2 items-center cursor-pointer hover:opacity-80 transition-opacity">
+                {topThree.map((network) => (
+                    <div key={network.slug} className="flex items-center">
+                        <ImageWithFallback
+                            slug={network.slug}
+                            folder="logos"
+                            altText={`${network.title} logo`}
+                            width={20}
+                            height={20}
+                        />
+                    </div>
+                ))}
+                {remainingCount > 0 && (
+                    <div className="flex items-center">
+                        <span className="text-xs text-muted-foreground">+{remainingCount}</span>
+                    </div>
+                )}
+            </div>
+        </SupportNetworksModal>
     );
 };
 
@@ -274,7 +297,7 @@ const OpcodeTable = ({ data, headers, title, description, icon, isOpcode = false
                                     </td>
                                     {/* Support Networks */}
                                     <td className="px-4 py-3">
-                                        <SupportNetworksList opcodeSlug={item.slug} />
+                                        <SupportNetworksList />
                                     </td>
                                 </tr>
                             ))}
