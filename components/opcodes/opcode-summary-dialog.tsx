@@ -1,7 +1,7 @@
 import React from "react";
 import { Dialog, DialogContent, DialogTrigger, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
-import { InfoIcon } from "lucide-react";
+import { GamepadIcon } from "lucide-react";
 import { InfrastructureProject } from "@/content/props";
 import Image from "next/image";
 import { parseTextWithLinks } from "@/util/parseTextWithLinks";
@@ -64,10 +64,10 @@ const OpcodeSummaryDialog: React.FC<OpcodeSummaryDialogProps> = ({ opcode, summa
                 <Button 
                     variant="outline" 
                     size="sm" 
-                    className="h-8 px-3 bg-[#E6F7FF] dark:bg-[#0F2A44] border-[#91D5FF] dark:border-[#0F2A44] hover:bg-[#D1F2FF] dark:hover:bg-[#1F3A5F] text-[#0958D9] dark:text-[#91D5FF]"
+                    className="h-8 px-3 bg-[#F9F0FF] dark:bg-[#2B1B3D] border-[#D3ADF7] dark:border-[#2B1B3D] hover:bg-[#F4E8FF] dark:hover:bg-[#3E2A5C] text-[#722ED1] dark:text-[#D3ADF7]"
                 >
-                    <InfoIcon className="w-4 h-4 mr-1" />
-                    Summary
+                    <GamepadIcon className="w-4 h-4 mr-1" />
+                    Applications
                 </Button>
             </DialogTrigger>
             <DialogContent className="p-0 border-0 bg-transparent shadow-none max-w-fit [&>button]:hidden" style={{ width: "auto", maxWidth: "90vw" }}>
@@ -80,7 +80,7 @@ const OpcodeSummaryDialog: React.FC<OpcodeSummaryDialogProps> = ({ opcode, summa
                     }}
                 >
                     <DialogTitle className="sr-only">
-                        {opcode.title} - Summary
+                        {opcode.title} - Applications
                     </DialogTitle>
                     <div className="space-y-6">
                         {/* Opcode Header */}
@@ -97,7 +97,7 @@ const OpcodeSummaryDialog: React.FC<OpcodeSummaryDialogProps> = ({ opcode, summa
                             />
                             <div>
                                 <h3 className="text-xl font-medium text-foreground" style={{ lineHeight: "28px" }}>
-                                    {opcode.title} - Summary
+                                    {opcode.title} - Applications
                                 </h3>
                             </div>
                         </div>

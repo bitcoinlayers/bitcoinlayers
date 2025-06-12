@@ -36,7 +36,7 @@ const OpcodesButtonDialog: React.FC<OpcodesButtonDialogProps> = ({ opcode, summa
                     className="h-8 px-3 bg-[#FFF2E8] dark:bg-[#2B1810] border-[#FFD591] dark:border-[#2B1810] hover:bg-[#FFEBD3] dark:hover:bg-[#3E2723] text-[#FA8C16] dark:text-[#FFD591]"
                 >
                     <HashIcon className="w-4 h-4 mr-1" />
-                    Opcodes
+                    Components
                 </Button>
             </DialogTrigger>
             <DialogContent className="p-0 border-0 bg-transparent shadow-none max-w-fit [&>button]:hidden" style={{ width: "auto", maxWidth: "90vw" }}>
@@ -49,7 +49,7 @@ const OpcodesButtonDialog: React.FC<OpcodesButtonDialogProps> = ({ opcode, summa
                     }}
                 >
                     <DialogTitle className="sr-only">
-                        {opcode.title} - Opcode Details
+                        {opcode.title} - Component Details
                     </DialogTitle>
                     <div className="space-y-6">
                         {/* Opcode Header */}
