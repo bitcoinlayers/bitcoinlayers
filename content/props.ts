@@ -342,7 +342,7 @@ export enum BTCWrapperTransparency { //TODO: Janusz to add more here
 }
 
 export enum RiskSummarySnippet { //TODO: Janusz to add more here
-    RiskSummarySecurityCouncil = "If the security council is compromised, they can immediately upgrade specific contracts and potentiallysteal user funds. This risk may be relevant to BTC-backed tokens locked in the layer's official bridge contract.",
+    RiskSummarySecurityCouncil = "If the security council is compromised, they can immediately upgrade specific contracts and potentially steal user funds. This risk may be relevant to BTC-backed tokens locked in the layer's official bridge contract.",
     RiskSummaryImmediateUpgrade = "A centralized party can immediately upgrade specific system contracts. This risk may be relevant to BTC-backed tokens locked in the layer's official bridge contract.",
     RiskSummaryCentralNotImmediateUpgrade = "A centralized party can upgrade bridge contracts and steal user funds.",
     TitleBridgeUpgrade = "Bridge contracts are upgradeable",
