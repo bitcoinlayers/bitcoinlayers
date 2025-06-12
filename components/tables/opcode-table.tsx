@@ -199,19 +199,23 @@ const OpcodeTable = ({ data, headers, title, description, icon, isOpcode = false
                 </div>
                 <div className="flex">
                     {[
-                        { key: "all",        label: "All",        count: data.length },
-                        { key: "proposed",   label: "Proposed",   count: data.filter(d => d.live === "Proposed").length },
-                        { key: "bip",        label: "BIP Drafted", count: data.filter(d => d.live === "Bip Drafted").length },
+                        { key: "all", label: "All", count: data.length },
+                        { key: "proposed", label: "Proposed", count: data.filter(d => d.live === "Proposed").length },
+                        { key: "bip", label: "BIP Drafted", count: data.filter(d => d.live === "Bip Drafted").length },
                         { key: "activation", label: "Activation", count: data.filter(d => d.live === "Activation Client").length },
-                    ].map(statusOption => (
+                    ].map((statusOption) => (
                         <button
                             key={statusOption.key}
                             data-active={status === statusOption.key}
-                            className="relative z-30 flex-1 flex-col justify-center px-6 py-4 even:border-l sm:min-w-[120px] data-[active=true]:bg-muted/50"
+                            className="relative z-30 flex flex-1 flex-col justify-center gap-1 border-t px-6 py-4 text-left even:border-l data-[active=true]:bg-muted/50 sm:border-l sm:border-t-0 sm:px-8 sm:py-6 min-w-[100px] sm:min-w-[150px]"
                             onClick={() => setStatus(statusOption.key)}
                         >
-                            <span className="text-xs text-muted-foreground">{statusOption.label}</span>
-                            <span className="text-lg font-bold leading-none sm:text-3xl">{statusOption.count}</span>
+                            <span className="text-xs text-muted-foreground">
+                                {statusOption.label}
+                            </span>
+                            <span className="text-lg font-bold leading-none sm:text-3xl">
+                                {statusOption.count.toLocaleString()}
+                            </span>
                         </button>
                     ))}
                 </div>
