@@ -223,10 +223,9 @@ const OpcodeTable = ({ data, headers, title, description, icon, isOpcode = false
                 </div>
                 <div className="flex">
                     {[
+                        { key: "activation", label: "Act. Client", count: data.filter(d => d.live === "Activation Client").length },
+                        { key: "bip", label: "Proposed", count: data.filter(d => d.live === "Proposed").length },
                         { key: "all", label: "All", count: data.length },
-                        { key: "proposed", label: "Proposed", count: data.filter(d => d.live === "Proposed").length },
-                        { key: "bip", label: "BIP Drafted", count: data.filter(d => d.live === "Bip Drafted").length },
-                        { key: "activation", label: "Activation", count: data.filter(d => d.live === "Activation Client").length },
                     ].map((statusOption) => (
                         <button
                             key={statusOption.key}
