@@ -64,7 +64,7 @@ const starknet: LayerProject = {
         },
     ],
     description:
-        "Starknet is a rollup that posts data to Ethereum.",
+        "Starknet is a rollup that posts data to Ethereum. Its official bridge programs on Ethereum are finalized with validity proofs. It is currently researching bridge programs on bitcoin using BitVM, ColliderVM, or native proof verification (in the event more expressive opcodes are added to bitcoin Script).",
         riskSummary: [
             {
                 title: RiskSummarySnippet.TitleSystemUpgrade,
@@ -132,7 +132,7 @@ const starknet: LayerProject = {
             score: 0,
             tier: RiskFactor.High,
             title: "Validity proofs are used to finalize bridges and light clients",
-            content: `${ReviewSnippet.FinalityAltRollupValidityProofs}\n\nUsers cannot run their own provers in the event of censorship or liveness failures.`
+            content: `${ReviewSnippet.FinalityAltRollupValidityProofs}\n\nStarknet's bridge programs escrowing BTC-backed assets are finalized with validity proofs. Users cannot run their own provers in the event of censorship or liveness failures.`
         },
     ],
     manualContracts: [
