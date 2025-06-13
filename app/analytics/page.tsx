@@ -32,24 +32,6 @@ export default function Analytics() {
             rangeQueryParam: "bridge-range",
             useDataHook: getHistoricalSuppliesByTokenProject,
         },
-        staking: {
-            title: "BTC 'Staking'",
-            description:
-                "Total amount of BTC deposited in BTC 'staking' protocols",
-            itemNameKey: "token_name",
-            chartQueryParam: "staking-chart",
-            rangeQueryParam: "staking-range",
-            useDataHook: getHistoricalSuppliesByStaking,
-        },
-        liquidstaking: {
-            title: "Liquid 'Staking' BTC Tokens",
-            description:
-                "Total amount of BTC deposited in liquid 'staking' protocols",
-            itemNameKey: "token_name",
-            chartQueryParam: "liquidstaking-chart",
-            rangeQueryParam: "liquidstaking-range",
-            useDataHook: getHistoricalSuppliesByLiquidstaking,
-        },
     };
 
     const layersData = getHistoricalSuppliesByNetwork();
