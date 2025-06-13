@@ -33,12 +33,12 @@ const babylon: LayerProject = {
     bridge: false,
     underReview: false,
     riskFactors: [
-        RiskFactor.Low,
+        RiskFactor.UnderReview,
         RiskFactor.AlternativePoS,
         RiskFactor.AlternativePoS,
         RiskFactor.AlternativePoS,
     ],
-    btcLocked: 0,
+    btcLocked: NaN,
     nativeToken: "-",
     feeToken: "BABY",
     notice: undefined,
@@ -85,14 +85,6 @@ const babylon: LayerProject = {
             title: "",
             content: "",
             pegs: [
-                {
-                    name: "Babylon Staked BTC",
-                    infrastructureSlug: "babylonstaked-btc",
-                    score: 0,
-                    tier: RiskFactor.Low,
-                    title: TokenSnippet.UnderReview,
-                    content: TokenSnippet.BabylonStakedBTC,
-                },
                 {
                     name: "Lombard LBTC",
                     infrastructureSlug: "lombard-lbtc",
