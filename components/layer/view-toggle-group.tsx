@@ -12,7 +12,7 @@ const viewOptions = [
 
 const moreOptions = [
     { value: "applications", label: "Applications" },
-    { value: "opcodes", label: "Opcodes" },
+    { value: "opcodes", label: "Opcodes (coming soon)", disabled: true },
 ];
 
 const ViewToggleGroup = ({ showAll }: { showAll: boolean }) => {
@@ -50,7 +50,10 @@ const ViewToggleGroup = ({ showAll }: { showAll: boolean }) => {
                                     ? "bg-background border-brand"
                                     : "border-muted-foreground"
                             }`}
-                            onClick={() => setView(option.value)}
+                            onClick={() => {
+                                setView(option.value);
+                                setDropdownOpen(false);
+                            }}
                         >
                             <div
                                 className={`text-center text-sm font-medium leading-tight ${
@@ -97,12 +100,16 @@ const ViewToggleGroup = ({ showAll }: { showAll: boolean }) => {
                             {moreOptions.map((option) => (
                                 <div
                                     key={option.value}
-                                    className={`px-4 py-2 cursor-pointer hover:bg-muted transition-colors first:rounded-t-lg last:rounded-b-lg ${
-                                        subView === option.value && isMoreActive
-                                            ? "bg-muted text-brand"
-                                            : "text-foreground"
+                                    className={`px-4 py-2 transition-colors first:rounded-t-lg last:rounded-b-lg ${
+                                        option.disabled
+                                            ? "cursor-not-allowed text-muted-foreground opacity-50"
+                                            : `cursor-pointer hover:bg-muted ${
+                                                subView === option.value && isMoreActive
+                                                    ? "bg-muted text-brand"
+                                                    : "text-foreground"
+                                            }`
                                     }`}
-                                    onClick={() => handleMoreClick(option.value)}
+                                    onClick={() => !option.disabled && handleMoreClick(option.value)}
                                 >
                                     {option.label}
                                 </div>

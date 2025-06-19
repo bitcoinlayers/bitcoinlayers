@@ -21,7 +21,6 @@ const fedimint: InfrastructureProject = {
     riskFactors: ["", ""],
     nativeToken: "BTC",
     purpose: Purpose.FederatedEcashMint,
-    associatedLayers: "-",
     notice: undefined,
     bitcoinOnly: true,
     links: [

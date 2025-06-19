@@ -127,10 +127,10 @@ export default function Footer() {
                                         <SectionItem href="/?view=wrappers">
                                             Wrappers
                                         </SectionItem>
-                                        <SectionItem href="/more">
+                                        <SectionItem href="/?view=more">
                                             Apps & more
                                         </SectionItem>
-                                        <SectionItem href="/opcode">
+                                        <SectionItem href="/?view=more&subview=opcodes">
                                             Opcodes
                                         </SectionItem>
                                         {/* <SectionItem href="/bitcoinonly">

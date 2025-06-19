@@ -6,6 +6,8 @@ import {
     EntityType,
     Notice,
     Site,
+    AssessmentCategory,
+    RiskSummarySnippet,
 } from "../props";
 
 const cashu: InfrastructureProject = {
@@ -21,7 +23,7 @@ const cashu: InfrastructureProject = {
     riskFactors: ["", ""],
     nativeToken: "BTC",
     purpose: Purpose.EcashMint,
-    associatedLayers: "Lightning Network, nostr",
+    associatedLayers: "lightning, liquid",
     notice: undefined,
     bitcoinOnly: true,
     links: [
@@ -48,7 +50,17 @@ const cashu: InfrastructureProject = {
     ],
     description:
         "The concept of blind signatures and electronic cash was first introduced by David Chaum in 1982 in his paper titled “[Blind Signatures for Untraceable Payments](https://chaum.com/wp-content/uploads/2022/01/Chaum-blind-signatures.pdf)“. Cashu is an Ecash protocol based on [David Wagner’s variant of Chaumian blinding](https://cypherpunks.venona.com/date/1996/03/msg01848.html) which uses the [Blind Diffie-Hellman Key Exchange (blind ecash) scheme](https://gist.github.com/RubenSomsen/be7a4760dd4596d06963d67baf140406). It was [first introduced](https://x.com/callebtc/status/1569986110272540674) in 2022 by its creator Calle, a pseudonymous Bitcoin and Lightning Network developer. Cashu is an open-source protocol with well-defined specifications, called [NUTs (Notation, Usage, and Terminology)](https://github.com/cashubtc/nuts), which are followed by mints and wallets. An Ecash system consists of two parts, the mint and the Ecash wallet that stores digital bearer tokens. Anyone can run a mint for their application, be it a wallet, a web paywall, paid streaming services or a voucher and rewards system. There are [several libraries](https://docs.cashu.space/libraries) that allow developers to build their respective services. Using blind signatures assures users’ privacy towards the mint when transacting with Ecash tokens. This functionality allows building custodial Bitcoin services that provide a superior user experience and privacy.",
-    sections: [
+        riskSummary: [
+            {
+                title: RiskSummarySnippet.TitleCustodianPegs,
+                content: RiskSummarySnippet.RiskSummaryCustodianPegs,
+            },
+            {
+                title: RiskSummarySnippet.TitleFederation,
+                content: RiskSummarySnippet.RiskSummaryFederation,
+            }
+        ],
+        sections: [
         {
             id: "riskbits",
             title: "Risk Bits",
@@ -179,6 +191,16 @@ const cashu: InfrastructureProject = {
                         "[Main Cashu website](https://cashu.space/)\n[Curated resource section](https://docs.cashu.space/resources/learn)\n[David Chaum - Blind signatures for untraceable payments](https://chaum.com/wp-content/uploads/2022/01/Chaum-blind-signatures.pdf)\n[Proof of Liabilities scheme](https://gist.github.com/callebtc/ed5228d1d8cbaade0104db5d1cf63939)\n[Cashu NUTs (Notation, Usage, and Terminology) specification](https://github.com/cashubtc/nuts)",
                 },
             ],
+        },
+    ],
+    assessment: [
+        {
+            category: AssessmentCategory.AssetCustody,
+            score: 0,
+            tier: "",
+            title: "Users trust a federation of signers with the custody of BTC backing wBTC",
+            content:
+                "Bitlayer's current BTC bridge is a federated two-way peg with institutional signers. Bitlayer is working with multiple MPC custody platforms.\n\nUsers do not custody bitcoin assets backing tokens on Bitlayer.\n\nUsers trust Bitlayer's claims in their documentation are being executed in practice.\n\n[Source](https://docs.bitlayer.org/docs/Learn/BitlayerNetwork/Bridges) ",
         },
     ],
 };

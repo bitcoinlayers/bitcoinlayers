@@ -99,11 +99,11 @@ function getSortedDataAndHeaders(view: string, subView: string) {
                         mobileLabel: "Type",
                         filterOptions: moreTypeFilters,
                     },
-                    { name: "Status", showSorting: true, mobileLabel: "Status" },
+                    { name: "Review", showSorting: false, mobileLabel: "Review" },
                     {
-                        name: "Unit of Account",
-                        showSorting: true,
-                        mobileLabel: "Unit",
+                        name: "Risk Summary",
+                        showSorting: false,
+                        mobileLabel: "Risk Summary",
                     },
                     {
                         name: "Associated Networks",
