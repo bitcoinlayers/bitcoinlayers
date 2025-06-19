@@ -11,7 +11,7 @@ const viewOptions = [
 ];
 
 const moreOptions = [
-    { value: "other protocols", label: "Other Protocols" },
+    { value: "other layers", label: "Other Layers" },
     { value: "opcodes", label: "Opcodes (Coming Soon)", disabled: true },
 ];
 
