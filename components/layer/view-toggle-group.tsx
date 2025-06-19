@@ -11,8 +11,8 @@ const viewOptions = [
 ];
 
 const moreOptions = [
-    { value: "applications", label: "Applications" },
-    { value: "opcodes", label: "Opcodes (coming soon)", disabled: true },
+    { value: "other protocols", label: "Other Protocols" },
+    { value: "opcodes", label: "Opcodes (Coming Soon)", disabled: true },
 ];
 
 const ViewToggleGroup = ({ showAll }: { showAll: boolean }) => {
@@ -20,7 +20,7 @@ const ViewToggleGroup = ({ showAll }: { showAll: boolean }) => {
         defaultValue: showAll ? "all" : "networks",
     });
     const [subView, setSubView] = useQueryState("subview", {
-        defaultValue: "applications",
+        defaultValue: "other",
     });
     const [dropdownOpen, setDropdownOpen] = useState(false);
 

@@ -12,6 +12,8 @@ import FederationTable from "./federation-table";
 import MoreTable from "./more-table";
 import OpcodeTable from "./opcode-table";
 import { CoinsIcon } from "lucide-react";
+import { HardDrive } from "lucide-react";
+import { Code } from "lucide-react";
 
 function getSortedDataAndHeaders(view: string, subView: string) {
     switch (view) {
@@ -216,7 +218,7 @@ export default function TableSwitch() {
                         headers={headers}
                         title="Proposed Opcodes"
                         description="Learn the tradeoffs for different opcode proposals"
-                        icon={<CoinsIcon className="mr-3" />}
+                        icon={<Code className="mr-3" />}
                         isOpcode
                     />
                 );
@@ -225,9 +227,9 @@ export default function TableSwitch() {
                     <MoreTable
                         data={sortedData as InfrastructureProject[]}
                         headers={headers}
-                        title="Applications"
+                        title="Other Layers"
                         description="Learn the tradeoffs for different application layers"
-                        icon={<CoinsIcon className="mr-3" />}
+                        icon={<HardDrive className="mr-3" />}
                         isMore
                     />
                 );

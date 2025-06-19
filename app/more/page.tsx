@@ -47,7 +47,7 @@ export default function Home() {
                 <MoreTable
                     data={sortedInfrastructures}
                     headers={infrastructureHeaders}
-                    title="Applications & more"
+                    title="Other layers"
                     description="Learn the tradeoffs for different application layers"
                     icon={<CoinsIcon className="mr-3" />}
                     isMore
