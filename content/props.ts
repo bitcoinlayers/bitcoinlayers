@@ -61,7 +61,7 @@ export enum EntityType {
     zkCSV = "zkCSV",
     Hybrid = "Hybrid",
     Anchor = "Anchor",
-    ChaumianEcashProtocol = "Chaumian Ecash Protocol",
+    ChaumianEcashProtocol = "Chaumian Ecash",
     FederationSDK = "Federation SDK",
     LiquidStaking = "Liquid Staking",
     Restaking = "Restaking",
@@ -375,6 +375,15 @@ export enum PegRiskSummarySnippet { //TODO: Janusz to add more here
     Collateralized = "Users are exposed to smart contract risks and potential liquidations when using this asset.",
     MultipleAssets = "This asset is backed by other BTC wrapped assets. If a reserve asset became unbacked, the two-way peg with BTC would break.",
     SlashingRisk = "This asset represents BTC staked in a staking protocol. If the corresponding BTC is slashed, users' balances could be affected.",
+    RiskSummary = "",
+}
+
+export enum OtherRiskSummarySnippet { //TODO: Janusz to add more here
+    EcashCustodyTitle = "Users funds are managed by the mint operator",
+    CashuCustody = "A Cashu mint is operated by a single entity that custodies users’ funds in return for issuing bearer Ecash tokens. If the mint gets hacked, becomes unresponsive or turns malicious, user funds can be stolen.",
+    FedimintCustody = "Users deposit BTC into a multisig to interact with a Fedimint. Users explicitly trust the signers, known as guardians, of the federations’ multisig to not steal their funds. If the mint gets hacked, becomes unresponsive or turns malicious, user funds can be stolen.",
+    VariousMints = "Users can choose between different mints to interact with. It is avised that users choose a mint that they trust and personally know the identities of the operators.",
+    EcashDebasementRisk = "Ecash notes represent a claim on BTC held by the mint operators. As such, there is the risk that the operators issues more Ecash tokens than bitcoin it actually holds. This can lead to Ecash tokens being unbacked.",
     RiskSummary = "",
 }
 

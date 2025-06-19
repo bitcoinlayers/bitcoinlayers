@@ -8,6 +8,7 @@ import {
     Site,
     AssessmentCategory,
     RiskSummarySnippet,
+    OtherRiskSummarySnippet,
 } from "../props";
 
 const cashu: InfrastructureProject = {
@@ -23,7 +24,7 @@ const cashu: InfrastructureProject = {
     riskFactors: ["", ""],
     nativeToken: "BTC",
     purpose: Purpose.EcashMint,
-    associatedLayers: "lightning, liquid",
+    associatedLayers: "lightning",
     notice: undefined,
     bitcoinOnly: true,
     links: [
@@ -49,37 +50,25 @@ const cashu: InfrastructureProject = {
         },
     ],
     description:
-        "The concept of blind signatures and electronic cash was first introduced by David Chaum in 1982 in his paper titled “[Blind Signatures for Untraceable Payments](https://chaum.com/wp-content/uploads/2022/01/Chaum-blind-signatures.pdf)“. Cashu is an Ecash protocol based on [David Wagner’s variant of Chaumian blinding](https://cypherpunks.venona.com/date/1996/03/msg01848.html) which uses the [Blind Diffie-Hellman Key Exchange (blind ecash) scheme](https://gist.github.com/RubenSomsen/be7a4760dd4596d06963d67baf140406). It was [first introduced](https://x.com/callebtc/status/1569986110272540674) in 2022 by its creator Calle, a pseudonymous Bitcoin and Lightning Network developer. Cashu is an open-source protocol with well-defined specifications, called [NUTs (Notation, Usage, and Terminology)](https://github.com/cashubtc/nuts), which are followed by mints and wallets. An Ecash system consists of two parts, the mint and the Ecash wallet that stores digital bearer tokens. Anyone can run a mint for their application, be it a wallet, a web paywall, paid streaming services or a voucher and rewards system. There are [several libraries](https://docs.cashu.space/libraries) that allow developers to build their respective services. Using blind signatures assures users’ privacy towards the mint when transacting with Ecash tokens. This functionality allows building custodial Bitcoin services that provide a superior user experience and privacy.",
+        "Cashu is an open-source protocol with well-defined specifications, called [NUTs (Notation, Usage, and Terminology)](https://github.com/cashubtc/nuts), which are followed by mints and wallets. An Ecash system consists of two parts, the mint and the Ecash wallet that stores digital bearer tokens. There are [several libraries](https://docs.cashu.space/libraries) that allow developers to build their respective services. Using blind signatures assures users’ privacy towards the mint when transacting with Ecash tokens.",
         riskSummary: [
             {
-                title: RiskSummarySnippet.TitleCustodianPegs,
-                content: RiskSummarySnippet.RiskSummaryCustodianPegs,
+                title: OtherRiskSummarySnippet.EcashCustodyTitle,
+                content: OtherRiskSummarySnippet.CashuCustody,
             },
             {
-                title: RiskSummarySnippet.TitleFederation,
-                content: RiskSummarySnippet.RiskSummaryFederation,
-            }
+                title: "Users must select which mint custodies their funds",
+                content: OtherRiskSummarySnippet.VariousMints,
+            },
+            {
+                title: "Tokens can be debased",
+                content: OtherRiskSummarySnippet.EcashDebasementRisk,
+            },
         ],
         sections: [
         {
-            id: "riskbits",
-            title: "Risk Bits",
-            content: [
-                {
-                    title: "Bridge custody: One mint, one entity - a single point of failure",
-                    content:
-                        "A Cashu mint is operated by a single entity that custodies users’ funds in return for issuing bearer Ecash tokens. If the mint gets hacked, becomes unresponsive or turns malicious, token redemption is at risk.",
-                },
-                {
-                    title: "Fractional reserve banking due to challenging liabilities audit",
-                    content:
-                        "Ecash tokens represent a claim on bitcoin held by the mint. Due to the blinded mechanism the mint uses during the token issuance process, an audit of its liabilities towards the users remains a challenge. A [Proof of Liabilities scheme has been proposed](https://gist.github.com/callebtc/ed5228d1d8cbaade0104db5d1cf63939), without open source code of an implementation being available to date. Such a scheme would introduce a UX tradeoff with a liveness requirement of the user in the defined key rotation period.",
-                },
-            ],
-        },
-        {
-            id: "coretechnology",
-            title: "Core Technology Components",
+            id: "technology",
+            title: "Technology",
             content: [
                 {
                     title: "Chaumian blinding",
@@ -118,15 +107,11 @@ const cashu: InfrastructureProject = {
             title: "Use Cases",
             content: [
                 {
-                    title: "Better custodial experience through enhanced users’ privacy",
+                    title: "Enhanced user privacy",
                     content:
                         "Cashu aims at providing a better custodial experience by [enhancing privacy](https://maxmoney.substack.com/p/ecash-for-better-bitcoin-privacy) and therefore protecting users’ data: the custodian would not - in contrast to the current state - learn about users’ account balances, nor about their transaction history or spending habits.",
                 },
-                {
-                    title: "Censorship resistance against a particular user",
-                    content:
-                        "The custodian can deny a peg-out to BTC, but cannot do so against a specific user, as the mint doesn’t know who redeems the Cashu token for BTC, making Ecash custodial, but censorship-resistant. Moreover, users benefit from the ability to easily choose between different mints, without going through a cumbersome registration process. Mints will be able to limit access to their mint through an [optional authentication protocol](https://github.com/cashubtc/nuts/pull/106).",
-                },
+
                 {
                     title: "Cashu as credit tokens to unlock toll gates",
                     content:
@@ -138,7 +123,7 @@ const cashu: InfrastructureProject = {
                         "The token can furthermore carry additional spending restrictions ([NUT11](https://github.com/cashubtc/nuts/blob/main/11.md)) by using P2PK. This enables time-locked payments, multi-sig transactions or conditional payments.",
                 },
                 {
-                    title: "Submarine nuts? (Submarine Swap equivalent)",
+                    title: "Submarine nuts (Submarine Swap equivalent)",
                     content:
                         "Ecash-based HTLCs can be atomically linked to Ecash HTLCs ([Calle](https://x.com/callebtc/status/1742948259050500561)). This might enable a submarine swap-equivalent (BTC-LN), called “[submarine nuts](https://x.com/callebtc/status/1704915759808303542)” (Cashu <--> LN), meaning LN nodes can assist one another in receiving funds even if they lack any channels or inbound liquidity.",
                 },
@@ -152,11 +137,6 @@ const cashu: InfrastructureProject = {
                     content:
                         "Stablenuts [was tested](https://x.com/CashuBTC/status/1711676159639929135) as a Cashu USD mint supported by a Strike Lightning BTC wallet. It enables the conversion of Lightning BTC to Ecash USD and back to Lightning BTC, potentially running on DLCs, USDT, LNMarkets, Stablesats, or any fiat-stable Bitcoin rails. A non-Strike-based version was [introduced](https://x.com/callebtc/status/1770097016686645642) in March 2024, with its [first tests](https://x.com/callebtc/status/1777598819355496587) in April 2024. [Boardwalk introduced](https://x.com/makeprisms/status/1790423585888280756) the first dollar-based Cashu wallet built on Bitcoin and connected to nostr shortly after.",
                 },
-                {
-                    title: "Free City monetary unit",
-                    content:
-                        "[Seemingly](https://x0f.org/@waxwing/108459745605989567) there has already been an attempt in the 1990s to use a form of Chaumian Ecash, called “DMT” in Costa Rica. Current tests are aiming at the (much) smaller version of a Free City, which is a [private event](https://x.com/SovereignProtoc/status/1777561415379042582), like a conference or a festival.",
-                },
             ],
         },
         {
@@ -167,17 +147,6 @@ const cashu: InfrastructureProject = {
                     title: "Privacy chokepoints (user-inflicted) ([Cashu FAQ](https://docs.cashu.space/faq#general-safety-and-privacy-questions))",
                     content:
                         "While Cashu token transfers provide the transacting entity with an incomparable degree of privacy, there’s some chokepoints to bear in mind: not using a VPN/Tor/mixnet, etc, when interacting with the mint, may leak network metadata. The mint might collect network data such as access time, IP addresses and or other metadata users might leak information when melting their tokens with the mint and receiving Bitcoin via LN in return. The privacy characteristics of a recipient on LN apply in this case.",
-                },
-            ],
-        },
-        {
-            id: "sourcecode",
-            title: "Source Code",
-            content: [
-                {
-                    title: "Code is open source",
-                    content:
-                        "All code related to the Cashu project is free and open source.",
                 },
             ],
         },
@@ -198,9 +167,9 @@ const cashu: InfrastructureProject = {
             category: AssessmentCategory.AssetCustody,
             score: 0,
             tier: "",
-            title: "Users trust a federation of signers with the custody of BTC backing wBTC",
+            title: "Users funds are managed by a single entity",
             content:
-                "Bitlayer's current BTC bridge is a federated two-way peg with institutional signers. Bitlayer is working with multiple MPC custody platforms.\n\nUsers do not custody bitcoin assets backing tokens on Bitlayer.\n\nUsers trust Bitlayer's claims in their documentation are being executed in practice.\n\n[Source](https://docs.bitlayer.org/docs/Learn/BitlayerNetwork/Bridges) ",
+                "A Cashu mint is operated by a single entity that custodies users’ funds in return for issuing bearer Ecash tokens. If the mint gets hacked, becomes unresponsive or turns malicious, token redemption is at risk.",
         },
     ],
 };
