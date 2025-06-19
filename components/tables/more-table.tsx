@@ -15,12 +15,17 @@ import {
     CardDescription,
 } from "@/components/ui/card";
 import { LayersIcon } from "lucide-react";
+import ApplicationReviewDialog from "@/components/layer/application-review-dialog";
+import RiskSummaryDialog from "@/components/layer/risk-summary-dialog";
+import AssociatedNetworksDialog from "@/components/layer/associated-networks-dialog";
+import UseCaseDialog from "@/components/layer/use-case-dialog";
 
 type TableTabKey =
     | "Type"
     | "Purpose"
-    | "Status"
-    | "Unit of Account"
+    | "Review"
+    | "Risk Summary"
+    | "Use Case"
     | "Associated Networks";
 
 interface Props {
@@ -54,6 +59,38 @@ const InfrastructureImage = ({
         <Image
             src={imageSrc}
             alt={`${title} logo`}
+            width={20}
+            height={20}
+            onError={handleError}
+        />
+    );
+};
+
+const AssociatedNetworkImage = ({
+    associatedLayers,
+}: {
+    associatedLayers: string | undefined;
+}) => {
+    const [imageSrc, setImageSrc] = useState(
+        associatedLayers ? `/logos/${associatedLayers.toLowerCase()}.png` : "/bitcoinlayers-logo.png"
+    );
+
+    const handleError = () => {
+        console.log(`Image failed to load: /logos/${associatedLayers?.toLowerCase()}.png`);
+        setImageSrc("/bitcoinlayers-logo.png");
+    };
+
+    console.log(`AssociatedNetworkImage - associatedLayers: "${associatedLayers}", imageSrc: "${imageSrc}"`);
+
+    if (!associatedLayers) {
+        console.log("No associatedLayers, showing nothing");
+        return null;
+    }
+
+    return (
+        <Image
+            src={imageSrc}
+            alt={`${associatedLayers} logo`}
             width={20}
             height={20}
             onError={handleError}
@@ -102,13 +139,17 @@ const MoreTable = ({
                     valueA = a.purpose;
                     valueB = b.purpose;
                     break;
-                case "Status":
+                case "Review":
                     valueA = a.live;
                     valueB = b.live;
                     break;
-                case "Unit of Account":
+                case "Risk Summary":
                     valueA = a.nativeToken;
                     valueB = b.nativeToken;
+                    break;
+                case "Use Case":
+                    valueA = a.sections?.find(s => s.id === "usecases")?.title || "";
+                    valueB = b.sections?.find(s => s.id === "usecases")?.title || "";
                     break;
                 case "Associated Networks":
                     valueA = a.associatedLayers;
@@ -230,48 +271,32 @@ const MoreTable = ({
                                         </td>
                                     )}
                                     {(!isMobile ||
-                                        mobileActiveTab === "Status") && (
+                                        mobileActiveTab === "Review") && (
                                         <td className="lg:px-6 px-4 py-3 lg:py-4 border-border">
-                                            <Link
-                                                href={`/${isMore ? "more" : "infrastructure"}/${item.slug}`}
-                                            >
-                                                {item.live}
-                                            </Link>
+                                            <ApplicationReviewDialog application={item} />
                                         </td>
                                     )}
                                     {(!isMobile ||
                                         mobileActiveTab ===
-                                            "Unit of Account") && (
+                                            "Risk Summary") && (
                                         <td className="lg:px-6 px-4 py-3 lg:py-4 border-border">
-                                            <Link
-                                                href={`/${isMore ? "more" : "infrastructure"}/${item.slug}`}
-                                            >
-                                                <div className="flex items-center">
-                                                    {item.nativeToken
-                                                        .toLowerCase()
-                                                        .includes("btc") && (
-                                                        <Image
-                                                            src="/btc.svg"
-                                                            alt="BTC logo"
-                                                            width={20}
-                                                            height={20}
-                                                            className="mr-2"
-                                                        />
-                                                    )}
-                                                    {item.nativeToken}
-                                                </div>
-                                            </Link>
+                                            <RiskSummaryDialog 
+                                                layer={item}
+                                                riskSummary={item.riskSummary || []}
+                                            />
+                                        </td>
+                                    )}
+                                    {(!isMobile ||
+                                        mobileActiveTab === "Use Case") && (
+                                        <td className="lg:px-6 px-4 py-3 lg:py-4 border-border">
+                                            <UseCaseDialog application={item} />
                                         </td>
                                     )}
                                     {(!isMobile ||
                                         mobileActiveTab ===
                                             "Associated Networks") && (
                                         <td className="lg:px-6 px-4 py-3 lg:py-4">
-                                            <Link
-                                                href={`/${isMore ? "more" : "infrastructure"}/${item.slug}`}
-                                            >
-                                                {item.associatedLayers}
-                                            </Link>
+                                            <AssociatedNetworksDialog application={item} />
                                         </td>
                                     )}
                                 </tr>

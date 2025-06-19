@@ -5,10 +5,17 @@ import { useQueryState } from "nuqs";
 import LayerTable from "./layer-table";
 import { allLayers } from "@/util/layer_index";
 import { allInfrastructures } from "@/util/infrastructure_index";
+import { allMore } from "@/util/more_index";
+import { allOpcodes } from "@/util/opcode_index";
 import { InfrastructureProject, LayerProject } from "@/content/props";
 import FederationTable from "./federation-table";
+import MoreTable from "./more-table";
+import OpcodeTable from "./opcode-table";
+import { CoinsIcon } from "lucide-react";
+import { HardDrive } from "lucide-react";
+import { Code } from "lucide-react";
 
-function getSortedDataAndHeaders(view: string) {
+function getSortedDataAndHeaders(view: string, subView: string) {
     switch (view) {
         // case "staking":
         //     const sortedStaking = [...allLayers, ...allInfrastructures]
@@ -39,6 +46,81 @@ function getSortedDataAndHeaders(view: string) {
         //     ];
 
         //     return { sortedData: sortedStaking, headers: stakingHeaders };
+
+        case "more":
+            if (subView === "opcodes") {
+                // Opcodes case
+                const sortedOpcodes = allOpcodes.sort((a, b) =>
+                    a.title.toLowerCase().localeCompare(b.title.toLowerCase()),
+                );
+
+                const opcodeTypeFilters = [
+                    ...new Set(
+                        sortedOpcodes.map(
+                            (infrastructure) => infrastructure.entityType,
+                        ),
+                    ),
+                ];
+
+                const opcodeHeaders = [
+                    { name: "Name", showSorting: true, mobileLabel: "Name" },
+                    {
+                        name: "Type",
+                        showSorting: true,
+                        mobileLabel: "Type",
+                        filterOptions: opcodeTypeFilters,
+                    },
+                    { name: "Status", showSorting: true, mobileLabel: "Status" },
+                    {
+                        name: "Associated Networks",
+                        showSorting: true,
+                        mobileLabel: "Networks",
+                    },
+                ];
+
+                return { sortedData: sortedOpcodes, headers: opcodeHeaders };
+            } else {
+                // Applications case (default)
+                const sortedMore = allMore.sort((a, b) =>
+                    a.title.toLowerCase().localeCompare(b.title.toLowerCase()),
+                );
+
+                const moreTypeFilters = [
+                    ...new Set(
+                        sortedMore.map(
+                            (infrastructure) => infrastructure.entityType,
+                        ),
+                    ),
+                ];
+
+                const moreHeaders = [
+                    { name: "Name", showSorting: true, mobileLabel: "Name" },
+                    {
+                        name: "Type",
+                        showSorting: true,
+                        mobileLabel: "Type",
+                        filterOptions: moreTypeFilters,
+                    },
+                    { name: "Review", showSorting: false, mobileLabel: "Review" },
+                    {
+                        name: "Risk Summary",
+                        showSorting: false,
+                        mobileLabel: "Risk Summary",
+                    },
+                    {
+                        name: "Use Case",
+                        showSorting: false,
+                        mobileLabel: "Use Case",
+                    },
+                    {
+                        name: "Associated Networks",
+                        showSorting: true,
+                        mobileLabel: "Networks",
+                    },
+                ];
+
+                return { sortedData: sortedMore, headers: moreHeaders };
+            }
 
         case "wrappers":
             const sortedWrappers = [...allInfrastructures].sort((a, b) =>
@@ -76,6 +158,7 @@ function getSortedDataAndHeaders(view: string) {
             ];
 
             return { sortedData: sortedWrappers, headers: wrapperHeaders };
+        case "networks":
         case "layers":
         default:
             const sortedLayers = allLayers.sort((a, b) =>
@@ -118,12 +201,39 @@ function getSortedDataAndHeaders(view: string) {
 
 export default function TableSwitch() {
     const [view] = useQueryState("view");
+    const [subView] = useQueryState("subview", {
+        defaultValue: "applications",
+    });
 
-    const { sortedData, headers } = getSortedDataAndHeaders(view || "");
+    const { sortedData, headers } = getSortedDataAndHeaders(view || "", subView || "applications");
 
     switch (view) {
         // case "staking":
         //     return <StakingTable data={sortedData} headers={headers} />;
+        case "more":
+            if (subView === "opcodes") {
+                return (
+                    <OpcodeTable
+                        data={sortedData as InfrastructureProject[]}
+                        headers={headers}
+                        title="Proposed Opcodes"
+                        description="Learn the tradeoffs for different opcode proposals"
+                        icon={<Code className="mr-3" />}
+                        isOpcode
+                    />
+                );
+            } else {
+                return (
+                    <MoreTable
+                        data={sortedData as InfrastructureProject[]}
+                        headers={headers}
+                        title="Other Layers"
+                        description="Learn the tradeoffs for different application layers"
+                        icon={<HardDrive className="mr-3" />}
+                        isMore
+                    />
+                );
+            }
         case "wrappers":
             return (
                 <FederationTable
@@ -131,6 +241,7 @@ export default function TableSwitch() {
                     headers={headers}
                 />
             );
+        case "networks":
         case "layers":
         default:
             return (
