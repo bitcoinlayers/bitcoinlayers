@@ -106,6 +106,11 @@ function getSortedDataAndHeaders(view: string, subView: string) {
                         mobileLabel: "Risk Summary",
                     },
                     {
+                        name: "Use Case",
+                        showSorting: false,
+                        mobileLabel: "Use Case",
+                    },
+                    {
                         name: "Associated Networks",
                         showSorting: true,
                         mobileLabel: "Networks",

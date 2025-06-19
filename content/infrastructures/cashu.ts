@@ -7,7 +7,6 @@ import {
     Notice,
     Site,
     AssessmentCategory,
-    RiskSummarySnippet,
     OtherRiskSummarySnippet,
 } from "../props";
 

@@ -18,12 +18,14 @@ import { LayersIcon } from "lucide-react";
 import ApplicationReviewDialog from "@/components/layer/application-review-dialog";
 import RiskSummaryDialog from "@/components/layer/risk-summary-dialog";
 import AssociatedNetworksDialog from "@/components/layer/associated-networks-dialog";
+import UseCaseDialog from "@/components/layer/use-case-dialog";
 
 type TableTabKey =
     | "Type"
     | "Purpose"
     | "Review"
     | "Risk Summary"
+    | "Use Case"
     | "Associated Networks";
 
 interface Props {
@@ -144,6 +146,10 @@ const MoreTable = ({
                 case "Risk Summary":
                     valueA = a.nativeToken;
                     valueB = b.nativeToken;
+                    break;
+                case "Use Case":
+                    valueA = a.sections?.find(s => s.id === "usecases")?.title || "";
+                    valueB = b.sections?.find(s => s.id === "usecases")?.title || "";
                     break;
                 case "Associated Networks":
                     valueA = a.associatedLayers;
@@ -278,6 +284,12 @@ const MoreTable = ({
                                                 layer={item}
                                                 riskSummary={item.riskSummary || []}
                                             />
+                                        </td>
+                                    )}
+                                    {(!isMobile ||
+                                        mobileActiveTab === "Use Case") && (
+                                        <td className="lg:px-6 px-4 py-3 lg:py-4 border-border">
+                                            <UseCaseDialog application={item} />
                                         </td>
                                     )}
                                     {(!isMobile ||
