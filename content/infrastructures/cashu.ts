@@ -51,7 +51,7 @@ const cashu: InfrastructureProject = {
         },
     ],
     description:
-        "Cashu is an open-source protocol with well-defined specifications, called [NUTs (Notation, Usage, and Terminology)](https://github.com/cashubtc/nuts), which are followed by mints and wallets. An Ecash system consists of two parts, the mint and the Ecash wallet that stores digital bearer tokens. There are [several libraries](https://docs.cashu.space/libraries) that allow developers to build their respective services. Using blind signatures assures users’ privacy towards the mint when transacting with Ecash tokens.",
+        "An Ecash system consists of two parts, the mint and the Ecash wallet that stores digital bearer tokens. There are [several libraries](https://docs.cashu.space/libraries) that allow developers to build their respective services. Using blind signatures assures users’ privacy towards the mint when transacting with Ecash tokens.",
         riskSummary: [
             {
                 title: OtherRiskSummarySnippet.EcashCustodyTitle,
@@ -74,12 +74,12 @@ const cashu: InfrastructureProject = {
                 {
                     title: "Chaumian blinding",
                     content:
-                        "Chaumian blinding works by allowing a message to be signed without revealing its content to the signer itself. The process involves a blinding factor that obscures the message. The signed blinded message is unblinded by the creator of the message using the original blinding factor. This process was broken down in an easy-to-understand [video explainer by Rijndael](https://x.com/rot13maxi/status/1549766946366840834).",
+                        "Chaumian blinding works by allowing a message to be signed without revealing its content to the signer itself. The process involves a blinding factor that obscures the message. The signed blinded message is unblinded by the creator of the message using the original blinding factor.",
                 },
                 {
                     title: "Mint module",
                     content:
-                        "In the context of Cashu, a mint is a trusted entity that is responsible for issuing (“minting”) and redeeming (“melting”) Ecash tokens. Those tokens act as IOUs and are backed by BTC. It can be thought of as “[free banking](https://docs.cashu.space/faq#mints)”, where the bank issued their own bank notes that are backed by gold for example. Having mints hold users’ funds, requires the user to trust the mint to redeem their Ecash when they wish to convert back to BTC. Peg-ins and peg-outs to and from a Cashu mint happen through the Lightning Network. The LN infrastructure is run by the mints themselves or by public and untrusted Lightning gateways (Cashu wallets are not LN wallets). The blinding mechanism ensures that the mint operator remains unaware of users’ account balance or transaction data. While the mint stays unaware of its user base in the current implementation, [an optional authentication protocol will be added](https://x.com/CashuBTC/status/1791001643019809146) to the protocol that allows mints to control access to its services. This authentication protocol enables KYC/AML integration with Ecash. Every entity running a Lightning node can run a mint using one of the [available implementations](https://docs.cashu.space/mints). The easiest way to do so is via [Nutshell](https://github.com/cashubtc/nutshell).",
+                        "In the context of Cashu, a mint is a trusted entity that is responsible for issuing (“minting”) and redeeming (“melting”) Ecash tokens. Those tokens act as IOUs and are backed by BTC. Having mints hold users’ funds, requires the user to trust the mint to redeem their Ecash when they wish to convert back to BTC. Peg-ins and peg-outs to and from a Cashu mint happen through the Lightning Network. The LN infrastructure is run by the mints themselves or by public and untrusted Lightning gateways (Cashu wallets are not LN wallets). The blinding mechanism ensures that the mint operator remains unaware of users’ account balance or transaction data. Every entity running a Lightning node can run a mint using one of the [available implementations](https://docs.cashu.space/mints). The easiest way to do so is via [Nutshell](https://github.com/cashubtc/nutshell).",
                 },
                 {
                     title: "Token Issuance",
@@ -112,12 +112,6 @@ const cashu: InfrastructureProject = {
                     content:
                         "Cashu aims at providing a better custodial experience by [enhancing privacy](https://maxmoney.substack.com/p/ecash-for-better-bitcoin-privacy) and therefore protecting users’ data: the custodian would not - in contrast to the current state - learn about users’ account balances, nor about their transaction history or spending habits.",
                 },
-
-                {
-                    title: "Cashu as credit tokens to unlock toll gates",
-                    content:
-                        "Cashu tokens carry voucher-like properties. Those tokens can be used to get (privacy-preserving) and accountless access to online services through toll gates: be it an internet connection, [anonymous API access](https://github.com/cashubtc/xcashu), a VPN service, [pay-per-request for LLM prompts](https://chatnut.sparkpay.pt/).",
-                },
                 {
                     title: "Programmable Ecash",
                     content:
@@ -126,17 +120,17 @@ const cashu: InfrastructureProject = {
                 {
                     title: "Submarine nuts (Submarine Swap equivalent)",
                     content:
-                        "Ecash-based HTLCs can be atomically linked to Ecash HTLCs ([Calle](https://x.com/callebtc/status/1742948259050500561)). This might enable a submarine swap-equivalent (BTC-LN), called “[submarine nuts](https://x.com/callebtc/status/1704915759808303542)” (Cashu <--> LN), meaning LN nodes can assist one another in receiving funds even if they lack any channels or inbound liquidity.",
+                        "Ecash-based HTLCs can be atomically linked to Ecash [HTLCs](https://x.com/callebtc/status/1742948259050500561). This might enable a submarine swap-equivalent (BTC-LN), called “[submarine nuts](https://x.com/callebtc/status/1704915759808303542)” (Cashu <--> LN), meaning LN nodes can assist one another in receiving funds even if they lack any channels or inbound liquidity.",
                 },
                 {
                     title: "Cashu via nostr",
                     content:
-                        "Cashu tokens can be [sent](https://x.com/CashuBTC/status/1616063616150634498) via [nostr](https://nostr.com/), an open protocol that enables a global social network. The [message is an encrypted NIP-04 DM](https://x.com/CashuBTC/status/1607423255681318914). Nostr Wallet Connect (NWC) will further [enable users to zap other users with Cashu tokens](https://x.com/callebtc/status/1787519215051715016). A new zap protocol for nostr based on Cashu ecash was recently [proposed](https://github.com/nostr-protocol/nips/pull/1369).",
+                        "Cashu tokens can be [sent](https://x.com/CashuBTC/status/1616063616150634498) via [nostr](https://nostr.com/), an open protocol that enables a global social network. The message is an encrypted [NIP-04 DM](https://x.com/CashuBTC/status/1607423255681318914). Nostr Wallet Connect (NWC) will further enable users to zap other users with [Cashu tokens](https://x.com/callebtc/status/1787519215051715016).",
                 },
                 {
                     title: "Stablenuts: USD Ecash, backed by BTC (Stablesats equivalent)",
                     content:
-                        "Stablenuts [was tested](https://x.com/CashuBTC/status/1711676159639929135) as a Cashu USD mint supported by a Strike Lightning BTC wallet. It enables the conversion of Lightning BTC to Ecash USD and back to Lightning BTC, potentially running on DLCs, USDT, LNMarkets, Stablesats, or any fiat-stable Bitcoin rails. A non-Strike-based version was [introduced](https://x.com/callebtc/status/1770097016686645642) in March 2024, with its [first tests](https://x.com/callebtc/status/1777598819355496587) in April 2024. [Boardwalk introduced](https://x.com/makeprisms/status/1790423585888280756) the first dollar-based Cashu wallet built on Bitcoin and connected to nostr shortly after.",
+                        "Stablenuts [was tested](https://x.com/CashuBTC/status/1711676159639929135) as a Cashu USD mint supported by a Strike Lightning BTC wallet. It enables the conversion of Lightning BTC to Ecash USD and back to Lightning BTC, potentially running on DLCs, USDT, LNMarkets, Stablesats, or any fiat-stable Bitcoin rails. [Boardwalk introduced](https://x.com/makeprisms/status/1790423585888280756) the first dollar-based Cashu wallet built on Bitcoin and connected to nostr shortly after.",
                 },
             ],
         },
@@ -149,6 +143,11 @@ const cashu: InfrastructureProject = {
                     content:
                         "While Cashu token transfers provide the transacting entity with an incomparable degree of privacy, there’s some chokepoints to bear in mind: not using a VPN/Tor/mixnet, etc, when interacting with the mint, may leak network metadata. The mint might collect network data such as access time, IP addresses and or other metadata users might leak information when melting their tokens with the mint and receiving Bitcoin via LN in return. The privacy characteristics of a recipient on LN apply in this case.",
                 },
+                {
+                    title: "KYC/AML integrations possible",
+                    content:
+                        "While the mint stays unaware of its user base in the current implementation, [an optional authentication protocol can be added](https://x.com/CashuBTC/status/1791001643019809146) to the protocol that allows mints to control access to its services. This authentication protocol could enable KYC/AML integration with Ecash.",
+                }, 
             ],
         },
         {
@@ -158,7 +157,7 @@ const cashu: InfrastructureProject = {
                 {
                     title: "Learn more",
                     content:
-                        "[Main Cashu website](https://cashu.space/)\n[Curated resource section](https://docs.cashu.space/resources/learn)\n[David Chaum - Blind signatures for untraceable payments](https://chaum.com/wp-content/uploads/2022/01/Chaum-blind-signatures.pdf)\n[Proof of Liabilities scheme](https://gist.github.com/callebtc/ed5228d1d8cbaade0104db5d1cf63939)\n[Cashu NUTs (Notation, Usage, and Terminology) specification](https://github.com/cashubtc/nuts)",
+                        "[Main Cashu website](https://cashu.space/)\n[Curated resource section](https://docs.cashu.space/resources/learn)\n[David Chaum - Blind signatures for untraceable payments](https://chaum.com/wp-content/uploads/2022/01/Chaum-blind-signatures.pdf)\n[Proof of Liabilities scheme](https://gist.github.com/callebtc/ed5228d1d8cbaade0104db5d1cf63939)\n[Cashu NUTs (Notation, Usage, and Terminology) specification](https://github.com/cashubtc/nuts)\n[Video explainer by Rijndael](https://www.youtube.com/watch?v=xfYmwc-gnK8&t=379s)",
                 },
             ],
         },
