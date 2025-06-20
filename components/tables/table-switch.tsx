@@ -101,7 +101,7 @@ function getSortedDataAndHeaders(view: string, subView: string) {
                         mobileLabel: "Type",
                         filterOptions: moreTypeFilters,
                     },
-                    { name: "Review", showSorting: false, mobileLabel: "Review" },
+                    { name: "Asset Custody", showSorting: false, mobileLabel: "Asset Custody" },
                     {
                         name: "Risk Summary",
                         showSorting: false,
