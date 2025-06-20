@@ -8,7 +8,7 @@ import InfrastructureBody from "@/components/infrastructure/infrastructureBody";
 import InfrastructureOverviewAlt from "@/components/infrastructure/infrastructureOverviewAlt";
 import InfrastructureImage from "@/components/infrastructure/infrastructure-image";
 import { allMore } from "@/util/more_index";
-import UnderDevelopmentBanner from "@/components/under-development-banner";
+import MoreBanner from "@/components/more-banner";
 import RiskSummary from "@/components/shared/risk-summary";
 import RiskAnalysis from "@/components/layer/risk-analysis/infra-container";
 
@@ -35,8 +35,8 @@ export default async function InfrastructurePage(props: {
 
     return (
         <>
-            <UnderDevelopmentBanner
-                title={`The ${infrastructure.title} page of Bitcoin Layers is under development.`}
+            <MoreBanner
+                title={`This ${infrastructure.title} review is under development.`}
             />
             <article className="flex flex-col lg:min-h-screen max-w-5xl mx-auto lg:pt-0 pt-12">
                 <div className="flex justify-start items-center lg:gap-8 gap-2 lg:my-12 my-6 px-4 lg:px-0">
