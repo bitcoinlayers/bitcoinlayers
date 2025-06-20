@@ -139,7 +139,7 @@ const MoreTable = ({
                     valueA = a.purpose;
                     valueB = b.purpose;
                     break;
-                case "Review":
+                case "Asset Custody":
                     valueA = a.live;
                     valueB = b.live;
                     break;
@@ -271,7 +271,7 @@ const MoreTable = ({
                                         </td>
                                     )}
                                     {(!isMobile ||
-                                        mobileActiveTab === "Review") && (
+                                        mobileActiveTab === "Asset Custody") && (
                                         <td className="lg:px-6 px-4 py-3 lg:py-4 border-border">
                                             <ApplicationReviewDialog application={item} />
                                         </td>
