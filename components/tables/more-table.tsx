@@ -23,7 +23,7 @@ import UseCaseDialog from "@/components/layer/use-case-dialog";
 type TableTabKey =
     | "Type"
     | "Purpose"
-    | "Review"
+    | "Asset Custody"
     | "Risk Summary"
     | "Use Case"
     | "Associated Networks";
