@@ -131,7 +131,7 @@ const cashu: InfrastructureProject = {
                 {
                     title: "Cashu via nostr",
                     content:
-                        "Cashu tokens can be [sent](https://x.com/CashuBTC/status/1616063616150634498) via [nostr](https://nostr.com/), an open protocol that enables a truly censorship-resistant and global social network. The [message is an encrypted NIP-04 DM](https://x.com/CashuBTC/status/1607423255681318914). Nostr Wallet Connect (NWC) will further [enable users to zap other users with Cashu tokens](https://x.com/callebtc/status/1787519215051715016). A new zap protocol for nostr based on Cashu ecash was recently [proposed](https://github.com/nostr-protocol/nips/pull/1369).",
+                        "Cashu tokens can be [sent](https://x.com/CashuBTC/status/1616063616150634498) via [nostr](https://nostr.com/), an open protocol that enables a global social network. The [message is an encrypted NIP-04 DM](https://x.com/CashuBTC/status/1607423255681318914). Nostr Wallet Connect (NWC) will further [enable users to zap other users with Cashu tokens](https://x.com/callebtc/status/1787519215051715016). A new zap protocol for nostr based on Cashu ecash was recently [proposed](https://github.com/nostr-protocol/nips/pull/1369).",
                 },
                 {
                     title: "Stablenuts: USD Ecash, backed by BTC (Stablesats equivalent)",
