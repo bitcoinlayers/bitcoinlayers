@@ -139,7 +139,7 @@ const cashu: InfrastructureProject = {
             title: "Additional Considerations",
             content: [
                 {
-                    title: "Privacy chokepoints (user-inflicted) ([Cashu FAQ](https://docs.cashu.space/faq#general-safety-and-privacy-questions))",
+                    title: "Privacy chokepoints (user-inflicted)",
                     content:
                         "While Cashu token transfers provide the transacting entity with an incomparable degree of privacy, there’s some chokepoints to bear in mind: not using a VPN/Tor/mixnet, etc, when interacting with the mint, may leak network metadata. The mint might collect network data such as access time, IP addresses and or other metadata users might leak information when melting their tokens with the mint and receiving Bitcoin via LN in return. The privacy characteristics of a recipient on LN apply in this case.",
                 },
@@ -157,7 +157,7 @@ const cashu: InfrastructureProject = {
                 {
                     title: "Learn more",
                     content:
-                        "[Main Cashu website](https://cashu.space/)\n[Curated resource section](https://docs.cashu.space/resources/learn)\n[David Chaum - Blind signatures for untraceable payments](https://chaum.com/wp-content/uploads/2022/01/Chaum-blind-signatures.pdf)\n[Proof of Liabilities scheme](https://gist.github.com/callebtc/ed5228d1d8cbaade0104db5d1cf63939)\n[Cashu NUTs (Notation, Usage, and Terminology) specification](https://github.com/cashubtc/nuts)\n[Video explainer by Rijndael](https://www.youtube.com/watch?v=xfYmwc-gnK8&t=379s)",
+                        "[Main Cashu website](https://cashu.space/)\n[Curated resource section](https://docs.cashu.space/resources/learn)\n[David Chaum - Blind signatures for untraceable payments](https://chaum.com/wp-content/uploads/2022/01/Chaum-blind-signatures.pdf)\n[Proof of Liabilities scheme](https://gist.github.com/callebtc/ed5228d1d8cbaade0104db5d1cf63939)\n[Cashu NUTs (Notation, Usage, and Terminology) specification](https://github.com/cashubtc/nuts)\n[Video explainer by Rijndael](https://www.youtube.com/watch?v=xfYmwc-gnK8&t=379s)\n[Cashu FAQ](https://docs.cashu.space/faq#general-safety-and-privacy-questions)",
                 },
             ],
         },
