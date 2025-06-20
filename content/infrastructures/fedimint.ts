@@ -100,10 +100,10 @@ const fedimint: InfrastructureProject = {
                 {
                     title: "Second Party Custody",
                     content:
-                        "It is being argued that self-custody, in its current form, is difficult for non-tech-savvy users. Fedimints would enable users to deposit their Bitcoin with a federation of trusted “second” parties” (e.g. family member or community leader). Federated community custody may be preferred by some users over the prevailing third party custodial model.",
+                        "Fedimints enable users to deposit their Bitcoin with a federation of trusted “second” parties” (e.g. family member or community leader). Federated community custody may be preferred by some users over the prevailing third-party custodial model.",
                 },
                 {
-                    title: "Cheap and fast transactions",
+                    title: "Low fee transactions",
                     content:
                         "Fedimints provide low transaction fees for users, as a mint is a central entity and transactions do not require Bitcoin blockspace. Fund deposits can either be done via an onchain deposit or via the Lightning Network.",
                 },
