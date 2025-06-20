@@ -220,7 +220,9 @@ const LayerTable = ({ data, headers }: Props) => {
                     </CardDescription>
                 </div>
                 <div className="flex">
-                    {Object.values(EntityCategory).map((cat) => (
+                    {Object.values(EntityCategory)
+                        .filter((cat) => cat !== EntityCategory.More)
+                        .map((cat) => (
                         <button
                             key={cat}
                             data-active={category === cat}
