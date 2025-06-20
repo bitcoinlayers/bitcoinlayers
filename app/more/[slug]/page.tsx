@@ -9,6 +9,8 @@ import InfrastructureOverviewAlt from "@/components/infrastructure/infrastructur
 import InfrastructureImage from "@/components/infrastructure/infrastructure-image";
 import { allMore } from "@/util/more_index";
 import UnderDevelopmentBanner from "@/components/under-development-banner";
+import RiskSummary from "@/components/shared/risk-summary";
+import RiskAnalysis from "@/components/layer/risk-analysis/infra-container";
 
 async function getInfrastructureFromSlug(slug: string) {
     const infrastructure = allMore.find(
@@ -58,6 +60,15 @@ export default async function InfrastructurePage(props: {
                         <InfrastructureOverviewAlt
                             infrastructure={infrastructure}
                         />
+                        
+                        <RiskSummary content={infrastructure.riskSummary || []} />
+                        {infrastructure.assessment && (
+                            <RiskAnalysis
+                                riskAnalysis={infrastructure.assessment}
+                                riskFactors={infrastructure.riskFactors}
+                                infrastructure={infrastructure}
+                            />
+                        )}
 
                         <InfrastructureBody infrastructure={infrastructure} />
                     </div>

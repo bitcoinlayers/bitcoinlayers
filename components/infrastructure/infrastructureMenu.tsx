@@ -1,6 +1,6 @@
 "use client";
 
-import { InfrastructureProject } from "@/content/props";
+import { InfrastructureProject, EntityCategory } from "@/content/props";
 import React, { useState, useEffect } from "react";
 
 const InfrastructureMenu: React.FC<{
@@ -54,7 +54,9 @@ const InfrastructureMenu: React.FC<{
                     ...(infrastructure.assessment
                         ? [{ id: "assessment", title: "Assessment" }]
                         : []),
-                    { id: "tokencontracts", title: "Token Contracts" },
+                    ...(infrastructure.entityCategory === EntityCategory.More
+                        ? []
+                        : [{ id: "tokencontracts", title: "Token Contracts" }]),
                     ...(infrastructure.manualContracts && infrastructure.manualContracts.length > 0
                         ? [{ id: "manualcontracts", title: "Additional Contracts" }]
                         : []),
