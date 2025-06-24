@@ -164,7 +164,9 @@ const LayerTable = ({ data, headers }: Props) => {
 
         let filtered = sorted;
 
-        filtered = filtered.filter((item) => item.live === LiveStatus.Mainnet);
+        filtered = filtered.filter((item) => 
+            item.live === LiveStatus.Mainnet || item.live === LiveStatus.Beta
+        );
 
         if (types.length > 0) {
             filtered = filtered.filter((item) =>
@@ -237,7 +239,7 @@ const LayerTable = ({ data, headers }: Props) => {
                                     .filter(
                                         (item) =>
                                             item.entityCategory === cat &&
-                                            item.live === LiveStatus.Mainnet,
+                                            (item.live === LiveStatus.Mainnet || item.live === LiveStatus.Beta),
                                     )
                                     .length.toLocaleString()}
                             </span>

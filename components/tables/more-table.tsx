@@ -173,8 +173,8 @@ const MoreTable = ({
         }
 
         filtered = filtered.filter((item) => {
-            if (status === "mainnet") return item.live === "Mainnet";
-            if (status === "testnet") return item.live !== "Mainnet";
+            if (status === "mainnet") return item.live === "Mainnet" || item.live === "Beta";
+            if (status === "testnet") return item.live !== "Mainnet" && item.live !== "Beta";
             return true;
         });
 
@@ -218,11 +218,11 @@ const MoreTable = ({
                         onClick={() => setStatus("mainnet")}
                     >
                         <span className="text-xs text-muted-foreground">
-                            On mainnet
+                            Live projects
                         </span>
                         <span className="text-lg font-bold leading-none sm:text-3xl">
                             {data
-                                .filter((item) => item.live === "Mainnet")
+                                .filter((item) => item.live === "Mainnet" || item.live === "Beta")
                                 .length.toLocaleString()}
                         </span>
                     </button>

@@ -24,7 +24,7 @@ const spark: LayerProject = {
     title: "Spark",
     entityType: EntityType.Statechain,
     entityCategory: EntityCategory.BitcoinNative,
-    live: LiveStatus.Mainnet,
+    live: LiveStatus.Beta,
     staking: false,
     liquidStaking: false,
     bridge: false,
@@ -58,15 +58,15 @@ const spark: LayerProject = {
             url: "https://docs.spark.money/home/welcome",
         },
     ],
-    description: "Spark is an implementation of the statechain protocol where users interact with a statechain entity to process transfers for offchain representations of UTXOs. Spark's statechain implementation leverages a federation of operators to act as the statechain entity. In statechains, users can unilaterally exit to the L1 if operators become unresponsive..",
+    description: "Spark is an implementation of the statechain protocol where users interact with a statechain entity to process transfers for offchain representations of UTXOs. Spark's statechain implementation leverages a federation of operators to act as the statechain entity.",
     riskSummary: [
         {
             title: "Users trust the statechain entity with key deletion",
             content: RiskSummarySnippet.RiskStatechainFinality,
         },
         {
-            title: "Users must watch for previous owners' unilateral exit transactions",
-            content: RiskSummarySnippet.RiskStatechainTimelock,
+            title: "Unilateral exits not live during beta release",
+            content: RiskSummarySnippet.RiskStatechainNoExit,
         },
     ],
     riskAnalysis: [
@@ -78,11 +78,11 @@ const spark: LayerProject = {
             content: "",
             pegs: [
                 {
-                    name: "Bitcoin Native",
+                    name: "Spark Statechain",
                     infrastructureSlug: "spark-btc",
                     score: 0,
                     tier: RiskFactor.Low,
-                    title: "Users collaboratively custody funds with the statechain entitiy",
+                    title: "Users collaboratively custody funds with the statechain entity",
                     content: TokenSnippet.SparkBTC,
                 },
             ],

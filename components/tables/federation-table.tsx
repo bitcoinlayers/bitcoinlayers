@@ -73,7 +73,7 @@ const LayerImage = ({ src, title }: { src: string; title: string }) => {
 };
 
 const isMainnet = (status: string) =>
-    status === LiveStatus.Mainnet || status === LiveStatus.Deposits;
+    status === LiveStatus.Mainnet || status === LiveStatus.Deposits || status === LiveStatus.Beta;
 
 const FederationTable = ({ data, headers }: Props) => {
 
@@ -220,7 +220,7 @@ const FederationTable = ({ data, headers }: Props) => {
                 <div className="flex">
                     <div className="relative z-30 flex flex-1 flex-col justify-center gap-1 border-t px-6 py-4 text-left even:border-l bg-muted/50 sm:border-l sm:border-t-0 sm:px-8 sm:py-6 min-w-[100px] sm:min-w-[150px]">
                         <span className="text-xs text-muted-foreground">
-                            On mainnet
+                            Live projects
                         </span>
                         <span className="text-lg font-bold leading-none sm:text-3xl">
                             {data
