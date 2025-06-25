@@ -53,6 +53,7 @@ export enum EntityType {
     Rollup = "Rollup",
     Federation = "Federation",
     Sidechain = "Sidechain",
+    MergeMined = "Merge-mined",
     SidechainRollup = "Sidechain Rollup",
     SovereignRollup = "Sovereign Rollup",
     StateChannel = "State Channel",

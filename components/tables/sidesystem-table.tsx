@@ -193,7 +193,7 @@ const SidesystemTable = ({ data, headers }: Props) => {
                         <LayersIcon className="mr-3" /> Sidesystems
                     </CardTitle>
                     <CardDescription>
-                    Sidesystems are bitcoin-denominatednetworks that inherit security from bitcoin protocol participants.
+                    Sidesystems are bitcoin-denominated networks that inherit security from bitcoin protocol participants.
                     </CardDescription>
                 </div>
             </CardHeader>

@@ -26,7 +26,7 @@ const babylon: LayerProject = {
     slug: "babylon",
     title: "Babylon",
     entityType: EntityType.Hybrid,
-    entityCategory: EntityCategory.Sidesystem,
+    entityCategory: EntityCategory.Integrated,
     live: LiveStatus.Mainnet,
     staking: true,
     liquidStaking: false,

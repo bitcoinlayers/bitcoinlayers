@@ -20,7 +20,7 @@ const rootstock: LayerProject = {
     type: Type.Layer,
     slug: "rootstock",
     title: "Rootstock",
-    entityType: EntityType.Sidechain,
+    entityType: EntityType.MergeMined,
     entityCategory: EntityCategory.Sidesystem,
     live: LiveStatus.Mainnet,
     staking: false,

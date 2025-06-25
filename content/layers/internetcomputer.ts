@@ -19,7 +19,7 @@ const internetcomputer: LayerProject = {
     slug: "internetcomputer",
     title: "Internet Computer",
     entityType: EntityType.Hybrid,
-    entityCategory: EntityCategory.Sidesystem,
+    entityCategory: EntityCategory.Integrated,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,

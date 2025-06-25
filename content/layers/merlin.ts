@@ -23,7 +23,7 @@ const merlin: LayerProject = {
     slug: "merlin",
     title: "Merlin",
     entityType: EntityType.AltRollup,
-    entityCategory: EntityCategory.Sidesystem,
+    entityCategory: EntityCategory.Alt,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
