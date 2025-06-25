@@ -18,14 +18,13 @@ import {
     UseCaseSnippet,
     RiskSummarySnippet,
 } from "../props";
-import bitcoinos from "../infrastructures/bitcoinos";
 
 const core: LayerProject = {
     type: Type.Layer,
     slug: "core",
     title: "Core",
     entityType: EntityType.Hybrid,
-    entityCategory: EntityCategory.Sidesystem,
+    entityCategory: EntityCategory.Integrated,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,

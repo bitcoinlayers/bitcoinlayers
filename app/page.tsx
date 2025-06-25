@@ -11,11 +11,17 @@ export default function Home() {
     const [view] = useQueryState("view", {
         defaultValue: "networks",
     });
+    const [subView] = useQueryState("subview", {
+        defaultValue: "applications",
+    });
+
+    // Show chart for all views except "more", unless it's "alternative networks" or "wrappers"
+    const showChart = view !== "more" || subView === "alternative networks" || subView === "wrappers";
 
     return (
         <div className="mx-auto space-y-8">
             <ViewToggleGroup showAll={false} />
-            {view !== "more" && <ChartSwitch />}
+            {showChart && <ChartSwitch />}
             <TableSwitch />
             <CtaCard />
             <InfoCardGrid />

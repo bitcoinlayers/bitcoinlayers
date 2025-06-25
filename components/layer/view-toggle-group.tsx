@@ -5,12 +5,15 @@ import { useQueryState } from "nuqs";
 import { ChevronDown } from "lucide-react";
 
 const viewOptions = [
-    { value: "networks", label: "Networks" },
+    { value: "networks", label: "Bitcoin Native" },
+    { value: "sidesystems", label: "Sidesystems" },
+    { value: "integrated", label: "Integrated" },
     // { value: "staking", label: "Staking" },
-    { value: "wrappers", label: "Wrappers" },
 ];
 
 const moreOptions = [
+    { value: "alternative networks", label: "Alternative Networks" },
+    { value: "wrappers", label: "Wrappers" },
     { value: "other layers", label: "Other Layers" },
     { value: "opcodes", label: "Opcodes (Coming Soon)", disabled: true },
 ];

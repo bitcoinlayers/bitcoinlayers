@@ -94,6 +94,7 @@ export enum EntityType {
 export enum EntityCategory {
     BitcoinNative = "Bitcoin Native",
     Sidesystem = "Sidesystems",
+    Integrated = "Integrated",
     Alt = "Alt. L1s & More",
     More = "More",
 }
