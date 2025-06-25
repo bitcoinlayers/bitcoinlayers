@@ -17,6 +17,10 @@ const entityTypeDefinitions: Record<EntityType, { name: string; description: str
         name: "Sidechain",
         description: "An L1 that exists to add more functionality to BTC the asset. L1s are sovereign in technical architecture but typically exist as subsets of the broader bitcoin ecosystem. It's common for sidechains to enshrine a BTC bridge into their consensus mechanisms or involve bitcoin miners in consensus - through merge mining or fee sharing."
     },
+    [EntityType.MergeMined]: {
+        name: "Merge-mined",
+        description: "A blockchain (L1) that uses a similar consensus mechanism to bitcoin, with the same PoW hashing algorithm. By using the same algorithm for consensus, bitcoin miners can opt-in to securing and producing blocks for the sidechain with essentially no additional costs (i.e., reusing the same “work” from bitcoin’s PoW)."
+    },
     [EntityType.Federation]: {
         name: "Federation",
         description: "A network operated by a permissioned set of entities responsible for operating all facets of the network. Users trust the federation to not censor them, halt the network, and freeze user funds."
