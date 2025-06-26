@@ -43,7 +43,7 @@ const hemi: LayerProject = {
     btcLocked: 0,
     nativeToken: "ETH",
     feeToken: "ETH",
-    notice: undefined,
+    notice: Notice.ClaimBitcoinLayer,
     bitcoinOnly: false,
     links: [
         {

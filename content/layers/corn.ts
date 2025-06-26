@@ -39,7 +39,7 @@ const corn: LayerProject = {
     btcLocked: 0,
     nativeToken: "-",
     feeToken: "BTCN",
-    notice: undefined,
+    notice: Notice.ClaimBitcoinLayer,
     bitcoinOnly: false,
     links: [
         {

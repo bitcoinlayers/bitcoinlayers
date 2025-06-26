@@ -38,7 +38,7 @@ const mezo: LayerProject = {
     btcLocked: 0,
     nativeToken: "tBTC",
     feeToken: "tBTC",
-    notice: undefined,
+    notice: Notice.ClaimBitcoinLayer,
     bitcoinOnly: false,
     links: [
         {

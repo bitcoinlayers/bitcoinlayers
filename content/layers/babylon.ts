@@ -16,6 +16,7 @@ import {
     TechnologySnippet,
     BitcoinSecuritySnippet,
     RiskSummarySnippet,
+    Notice,
 } from "../props";
 import { tokenToString } from "typescript";
 import { Rubik_Vinyl } from "next/font/google";
@@ -41,7 +42,7 @@ const babylon: LayerProject = {
     btcLocked: NaN,
     nativeToken: "-",
     feeToken: "BABY",
-    notice: undefined,
+    notice: Notice.ClaimBitcoinLayer,
     bitcoinOnly: false,
     links: [
         {

@@ -7,7 +7,7 @@ import TableHeader from "@/components/tables/tableHeader";
 import { isMobile } from "react-device-detect";
 import Link from "next/link";
 import { useQueryState } from "nuqs";
-import { LayerProject, LiveStatus } from "@/content/props";
+import { LayerProject, LiveStatus, EntityCategory, Notice } from "@/content/props";
 import {
     Card,
     CardContent,
@@ -21,8 +21,8 @@ import getCurrentSuppliesByTokenimpl, {
 } from "@/hooks/get-current-supplies-by-tokenimpl";
 import getCurrentSuppliesByNetwork from "@/hooks/get-current-supplies-by-network";
 import TokenList from "@/components/tables/mapping-token-img";
-import { EntityCategory } from "@/content/props";
 import NoticeSnapshotDialog from "../layer/notice-snapshot/notice-snapshot-dialog";
+import ClaimBitcoinLayerDialog from "../layer/claim-bitcoin-layer-dialog";
 import RiskSummaryDialog from "../layer/risk-summary-dialog";
 import NetworkTypeHoverCard from "../layer/network-type-hover-card";
 import SupplyDistributionHoverCard from "../layer/supply-distribution-hover-card";
@@ -247,7 +247,12 @@ const LayerTable = ({ data, headers }: Props) => {
                                                     {item.title}
                                                 </span>
                                             </Link>
-                                            {item.notice && (
+                                            {item.notice === Notice.ClaimBitcoinLayer && (
+                                                <div className="flex-shrink-0">
+                                                    <ClaimBitcoinLayerDialog layer={item} />
+                                                </div>
+                                            )}
+                                            {item.notice && item.notice !== Notice.ClaimBitcoinLayer && (
                                                 <div className="flex-shrink-0">
                                                     <NoticeSnapshotDialog layer={item} />
                                                 </div>

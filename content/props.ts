@@ -104,6 +104,7 @@ export enum Notice {
     NoBridge = "No native bitcoin bridge",
     Sidesystem = "Sidesystems",
     Reorg = "🚨 This project will be moved to the Alternative category after June 30th.",
+    ClaimBitcoinLayer = "This network is denominated in BTC.",
 }
 
 export enum Site {

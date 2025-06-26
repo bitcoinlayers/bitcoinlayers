@@ -36,7 +36,7 @@ const osmosis: LayerProject = {
     btcLocked: NaN,
     nativeToken: "-",
     feeToken: "OSMO",
-    notice: undefined,
+    notice: Notice.ClaimBitcoinLayer,
     bitcoinOnly: false,
     links: [
         {

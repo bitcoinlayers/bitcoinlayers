@@ -34,7 +34,7 @@ const internetcomputer: LayerProject = {
     btcLocked: 277,
     nativeToken: "ICP",
     feeToken: "ICP",
-    notice: undefined,
+    notice: Notice.ClaimBitcoinLayer,
     bitcoinOnly: false,
     links: [
         {
