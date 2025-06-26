@@ -19,7 +19,7 @@ const bitlayer: LayerProject = {
     slug: "bitlayer",
     title: "Bitlayer",
     entityType: EntityType.Federation,
-    entityCategory: EntityCategory.Sidesystem,
+    entityCategory: EntityCategory.Alt,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
