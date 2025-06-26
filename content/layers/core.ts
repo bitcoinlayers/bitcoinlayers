@@ -39,7 +39,7 @@ const core: LayerProject = {
     btcLocked: 6705,
     nativeToken: "CORE",
     feeToken: "CORE",
-    notice: Notice.ClaimBitcoinLayer,
+    notice: Notice.Reorg,
     bitcoinOnly: false,
     links: [
         {

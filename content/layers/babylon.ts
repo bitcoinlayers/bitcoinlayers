@@ -42,7 +42,7 @@ const babylon: LayerProject = {
     btcLocked: NaN,
     nativeToken: "-",
     feeToken: "BABY",
-    notice: Notice.ClaimBitcoinLayer,
+    notice: Notice.Reorg,
     bitcoinOnly: false,
     links: [
         {
