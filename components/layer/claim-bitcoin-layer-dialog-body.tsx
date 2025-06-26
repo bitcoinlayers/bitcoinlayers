@@ -26,7 +26,7 @@ export default function ClaimBitcoinLayerDialogBody({
             <div className="my-4"></div>
             <div className="grid grid-cols-1 gap-4 sm:gap-6">
                 <p className="text-left max-w-prose text-gray-900 dark:text-gray-100">
-                    This network is denominated in BTC. This means that users do not need to use an alterantive token to interact with the network. Please review the project's BTC custody scores to understand the trust assumptions related to the pegged asset used for fees.
+                    This network is denominated in BTC. This means that users do not need to use an alterantive token to interact with the network. Please review BTC custody scores to understand the trust assumptions related to the pegged asset used for fees.
                 </p>
             </div>
             <DialogFooter className="mt-4 sm:mb-t pt-4 pb-2 border-t flex-row justify-center sm:justify-center">
