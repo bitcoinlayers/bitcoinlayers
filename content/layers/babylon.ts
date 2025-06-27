@@ -42,6 +42,7 @@ const babylon: LayerProject = {
     btcLocked: NaN,
     nativeToken: "-",
     feeToken: "BABY",
+    notice: Notice.OtherReasonBridge,
     bitcoinOnly: false,
     links: [
         {

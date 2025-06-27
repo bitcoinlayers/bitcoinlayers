@@ -41,6 +41,7 @@ const bob: LayerProject = {
     nativeToken: "ETH",
     feeToken: "ETH",
     bitcoinOnly: false,
+    notice: Notice.OtherReasonBridge,
     links: [
         {
             text: Site.Website,

@@ -40,6 +40,7 @@ const corn: LayerProject = {
     nativeToken: "-",
     feeToken: "BTCN",
     bitcoinOnly: false,
+    notice: Notice.OtherReasonBridge,
     links: [
         {
             text: Site.Website,

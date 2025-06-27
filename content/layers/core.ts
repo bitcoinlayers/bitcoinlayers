@@ -41,6 +41,7 @@ const core: LayerProject = {
     nativeToken: "CORE",
     feeToken: "CORE",
     otherIcons: OtherIcons.Staking,
+    notice: Notice.OtherReasonBridge,
     bitcoinOnly: false,
     links: [
         {

@@ -21,6 +21,8 @@ import getCurrentSuppliesByNetwork from "@/hooks/get-current-supplies-by-network
 import TokenList from "@/components/tables/mapping-token-img";
 import NoticeSnapshotDialog from "../layer/notice-snapshot/notice-snapshot-dialog";
 import ClaimBitcoinLayerDialog from "../layer/claim-bitcoin-layer-dialog";
+import UnderReviewDialog from "../layer/under-review-dialog";
+import OtherReasonBridgeDialog from "../layer/other-reason-bridge-dialog";
 import BitcoinLayerDialog from "../layer/bitcoin-layer-dialog";
 import UnilateralExitDialog from "../layer/unilateral-exit-dialog";
 import MergeMineDialog from "../layer/merge-mine-dialog";
@@ -272,7 +274,17 @@ const SidesystemTable = ({ data, headers }: Props) => {
                                                     <ClaimBitcoinLayerDialog layer={item} />
                                                 </div>
                                             )}
-                                            {item.notice && item.notice !== Notice.ClaimBitcoinLayer && (
+                                            {item.notice === Notice.UnderReview && (
+                                                <div className="flex-shrink-0">
+                                                    <UnderReviewDialog layer={item} />
+                                                </div>
+                                            )}
+                                            {item.notice === Notice.OtherReasonBridge && (
+                                                <div className="flex-shrink-0">
+                                                    <OtherReasonBridgeDialog layer={item} />
+                                                </div>
+                                            )}
+                                            {item.notice && item.notice !== Notice.ClaimBitcoinLayer && item.notice !== Notice.UnderReview && item.notice !== Notice.OtherReasonBridge && (
                                                 <div className="flex-shrink-0">
                                                     <NoticeSnapshotDialog layer={item} />
                                                 </div>

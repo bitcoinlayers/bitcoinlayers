@@ -6,7 +6,6 @@ import {
     RiskFactor,
     EntityType,
     EntityCategory,
-    Notice,
     Site,
     RiskSection,
     ContentSection,
@@ -16,6 +15,7 @@ import {
     BitcoinSecuritySnippet,
     AdditionalSnippet,
     UseCaseSnippet,
+    Notice,
     RiskSummarySnippet,
 } from "../props";
 
@@ -39,8 +39,8 @@ const starknet: LayerProject = {
     btcLocked: 0,
     nativeToken: "ETH",
     feeToken: "ETH",
-    notice: undefined,
     bitcoinOnly: false,
+    notice: Notice.OtherReasonBridge,
     links: [
         {
             text: Site.Website,

@@ -35,6 +35,7 @@ const bitlayer: LayerProject = {
     nativeToken: "BTR",
     feeToken: "WBTC",
     bitcoinOnly: false,
+    notice: Notice.OtherReasonBridge,
     links: [
         {
             text: Site.Website,

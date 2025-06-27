@@ -37,6 +37,7 @@ const rollux: LayerProject = {
     btcLocked: 10,
     nativeToken: "SYS",
     feeToken: "SYS",
+    notice: Notice.OtherReasonBridge,
     bitcoinOnly: false,
     links: [
         {

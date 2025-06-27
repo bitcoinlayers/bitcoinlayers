@@ -35,6 +35,7 @@ const bsquared: LayerProject = {
     nativeToken: "BSQ",
     feeToken: "WBTC",
     bitcoinOnly: false,
+    notice: Notice.OtherReasonBridge,
     links: [
         {
             text: Site.Website,
