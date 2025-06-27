@@ -15,6 +15,7 @@ import {
     ReviewSnippet,
     BitcoinSecuritySnippet,
     RiskSummarySnippet,
+    BitcoinLayer,
 } from "../props";
 
 const rootstock: LayerProject = {
@@ -38,7 +39,6 @@ const rootstock: LayerProject = {
     nativeToken: "RBTC",
     feeToken: "RBTC",
     notice: undefined,
-    otherIcons: OtherIcons.MergeMine,
     bitcoinOnly: true,
     links: [
         {

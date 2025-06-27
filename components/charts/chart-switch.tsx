@@ -26,20 +26,20 @@ export default function ChartSwitch() {
             rangeQueryParam: "layer-range",
             useDataHook: getHistoricalSuppliesByNetwork,
         },
-        integrated: {
-            title: "BTC supply by network",
-            description:
-                "Total BTC supply supporting bitcoin native protocols, bitcoin sidesystems, alternative L1s, and more",
-            chartQueryParam: "integrated-chart",
-            rangeQueryParam: "integrated-range",
-            useDataHook: getHistoricalSuppliesByNetwork,
-        },
         sidesystems: {
             title: "BTC supply by network",
             description:
                 "Total BTC supply supporting bitcoin native protocols, bitcoin sidesystems, alternative L1s, and more",
             chartQueryParam: "sidesystems-chart",
             rangeQueryParam: "sidesystems-range",
+            useDataHook: getHistoricalSuppliesByNetwork,
+        },
+        integrated: {
+            title: "BTC supply by network",
+            description:
+                "Total BTC supply supporting bitcoin native protocols, bitcoin sidesystems, alternative L1s, and more",
+            chartQueryParam: "integrated-chart",
+            rangeQueryParam: "integrated-range",
             useDataHook: getHistoricalSuppliesByNetwork,
         },
         "alternative networks": {

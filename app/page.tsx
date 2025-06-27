@@ -16,8 +16,8 @@ export default function Home() {
         defaultValue: "applications",
     });
 
-    // Show chart for all views except "more", unless it's "alternative networks" or "wrappers"
-    const showChart = view !== "more" || subView === "alternative networks" || subView === "wrappers";
+    // Show chart for all views except "more", unless it's "alternative networks", "wrappers", or "integrated"
+    const showChart = view !== "more" || subView === "alternative networks" || subView === "wrappers" || subView === "integrated";
 
     return (
         <div className="mx-auto space-y-8">

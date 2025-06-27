@@ -7,11 +7,11 @@ import { ChevronDown } from "lucide-react";
 const viewOptions = [
     { value: "networks", label: "Bitcoin Native" },
     { value: "sidesystems", label: "Sidesystems" },
-    { value: "integrated", label: "Integrated" },
     // { value: "staking", label: "Staking" },
 ];
 
 const moreOptions = [
+    { value: "integrated", label: "Integrated Chains" },
     { value: "alternative networks", label: "Alternative Networks" },
     { value: "wrappers", label: "Wrappers" },
     { value: "other layers", label: "Other Layers" },

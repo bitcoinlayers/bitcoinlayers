@@ -200,7 +200,7 @@ const IntegratedTable = ({ data, headers }: Props) => {
                         <LayersIcon className="mr-3" /> Integrated networks
                     </CardTitle>
                     <CardDescription>
-                        Integrated networks are networks that inherit security from bitcoin protocol participants.
+                        Integrated networks are alternative networks that inherit security from bitcoin protocol participants.
                     </CardDescription>
                 </div>
             </CardHeader>

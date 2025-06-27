@@ -14,6 +14,7 @@ import {
     ReviewSnippet,
     BitcoinSecuritySnippet,
     RiskSummarySnippet,
+    OtherIcons,
 } from "../props";
 
 const rollux: LayerProject = {
@@ -36,7 +37,6 @@ const rollux: LayerProject = {
     btcLocked: 10,
     nativeToken: "SYS",
     feeToken: "SYS",
-    notice: Notice.Reorg,
     bitcoinOnly: false,
     links: [
         {

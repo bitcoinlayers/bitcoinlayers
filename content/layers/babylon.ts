@@ -26,10 +26,10 @@ const babylon: LayerProject = {
     type: Type.Layer,
     slug: "babylon",
     title: "Babylon",
-    entityType: EntityType.Hybrid,
+    entityType: EntityType.Anchor,
     entityCategory: EntityCategory.Integrated,
     live: LiveStatus.Mainnet,
-    staking: true,
+    staking: false,
     liquidStaking: false,
     bridge: false,
     underReview: false,
@@ -42,7 +42,6 @@ const babylon: LayerProject = {
     btcLocked: NaN,
     nativeToken: "-",
     feeToken: "BABY",
-    notice: Notice.Reorg,
     bitcoinOnly: false,
     links: [
         {

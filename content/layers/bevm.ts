@@ -32,7 +32,6 @@ const bevm: LayerProject = {
     btcLocked: 80,
     nativeToken: "BEVM",
     feeToken: "WBTC",
-    notice: Notice.ClaimBitcoinLayer,
     bitcoinOnly: false,
     links: [
         {

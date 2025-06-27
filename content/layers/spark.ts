@@ -41,7 +41,6 @@ const spark: LayerProject = {
     feeToken: "BTC",
     notice: undefined,
     bitcoinOnly: true,
-    bitcoinLayer: BitcoinLayer.Yes,
     links: [
         {
             text: Site.Website,

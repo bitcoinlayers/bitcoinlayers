@@ -52,46 +52,42 @@ function getSortedDataAndHeaders(view: string, subView: string) {
 
         case "more":
             if (subView === "opcodes") {
-                // Opcodes case
-                const sortedOpcodes = allOpcodes.sort((a, b) =>
+                return {
+                    sortedData: allOpcodes,
+                    headers: [
+                        { name: "Name", showSorting: true, mobileLabel: "Name" },
+                        {
+                            name: "Type",
+                            showSorting: false,
+                            mobileLabel: "Type",
+                        },
+                        {
+                            name: "Description",
+                            showSorting: false,
+                            mobileLabel: "Description",
+                        },
+                        {
+                            name: "Complexity",
+                            showSorting: false,
+                            mobileLabel: "Complexity",
+                        },
+                        {
+                            name: "Research",
+                            showSorting: false,
+                            mobileLabel: "Research",
+                        },
+                    ],
+                };
+            } else if (subView === "alternative networks") {
+                const alternativeLayers = allLayers.filter(
+                    (layer) =>
+                        layer.entityCategory === EntityCategory.Alt,
+                ).sort((a, b) =>
                     a.title.toLowerCase().localeCompare(b.title.toLowerCase()),
                 );
 
-                const opcodeTypeFilters = [
-                    ...new Set(
-                        sortedOpcodes.map(
-                            (infrastructure) => infrastructure.entityType,
-                        ),
-                    ),
-                ];
-
-                const opcodeHeaders = [
-                    { name: "Name", showSorting: true, mobileLabel: "Name" },
-                    {
-                        name: "Type",
-                        showSorting: true,
-                        mobileLabel: "Type",
-                        filterOptions: opcodeTypeFilters,
-                    },
-                    { name: "Status", showSorting: true, mobileLabel: "Status" },
-                    {
-                        name: "Associated Networks",
-                        showSorting: true,
-                        mobileLabel: "Networks",
-                    },
-                ];
-
-                return { sortedData: sortedOpcodes, headers: opcodeHeaders };
-            } else if (subView === "alternative networks") {
-                // Alternative Networks case
-                const sortedAlternativeLayers = allLayers.filter(
-                    (layer) => layer.entityCategory === EntityCategory.Alt
-                ).sort((a, b) =>
-                    a.title.toLowerCase().localeCompare(b.title.toLowerCase())
-                );
-
                 const alternativeTypeFilters = [
-                    ...new Set(sortedAlternativeLayers.map((layer) => layer.entityType)),
+                    ...new Set(alternativeLayers.map((layer) => layer.entityType)),
                 ];
 
                 const alternativeHeaders = [
@@ -120,56 +116,88 @@ function getSortedDataAndHeaders(view: string, subView: string) {
                     { name: "BTC Supply", showSorting: true, mobileLabel: "BTC" },
                 ];
 
-                return { sortedData: sortedAlternativeLayers, headers: alternativeHeaders };
+                return { sortedData: alternativeLayers, headers: alternativeHeaders };
             } else if (subView === "wrappers") {
-                // Wrappers case
-                const sortedWrappers = [...allInfrastructures].sort((a, b) =>
+                const sortedInfrastructures = allInfrastructures.sort((a, b) =>
                     a.title.toLowerCase().localeCompare(b.title.toLowerCase()),
                 );
 
-                const wrapperTypeFilters = [
-                    ...new Set(
-                        sortedWrappers.map((item) =>
-                            "layerType" in item ? item.entityType : item.entityType,
-                        ),
-                    ),
+                const federationTypeFilters = [
+                    ...new Set(sortedInfrastructures.map((layer) => layer.entityType)),
                 ];
 
-                const wrapperHeaders = [
+                const federationHeaders = [
                     { name: "Name", showSorting: true, mobileLabel: "Name" },
                     {
                         name: "Type",
                         showSorting: true,
                         mobileLabel: "Type",
-                        filterOptions: wrapperTypeFilters,
+                        filterOptions: federationTypeFilters,
                     },
                     {
-                        name: "Snapshot",
+                        name: "Trust Assumptions",
                         showSorting: false,
-                        mobileLabel: "Snapshot",
+                        mobileLabel: "Trust",
                     },
-                    { name: "Risk Summary", showSorting: true, mobileLabel: "Risk Summary" },
                     {
-                        name: "Networks",
+                        name: "Risk Summary",
                         showSorting: false,
-                        mobileLabel: "Networks",
+                        mobileLabel: "Risk",
                     },
-                    { name: "Supply", showSorting: true, mobileLabel: "Supply" },
+                    {
+                        name: "BTC Pegs",
+                        showSorting: false,
+                        mobileLabel: "Pegs",
+                    },
+                    { name: "BTC Supply", showSorting: true, mobileLabel: "BTC" },
                 ];
 
-                return { sortedData: sortedWrappers, headers: wrapperHeaders };
+                return { sortedData: sortedInfrastructures, headers: federationHeaders };
+            } else if (subView === "integrated") {
+                const integratedLayers = allLayers.filter(
+                    (layer) => layer.entityCategory === EntityCategory.Integrated
+                ).sort((a, b) =>
+                    a.title.toLowerCase().localeCompare(b.title.toLowerCase())
+                );
+
+                const integratedTypeFilters = [
+                    ...new Set(integratedLayers.map((layer) => layer.entityType)),
+                ];
+
+                const integratedHeaders = [
+                    { name: "Name", showSorting: true, mobileLabel: "Name" },
+                    {
+                        name: "Type",
+                        showSorting: true,
+                        mobileLabel: "Type",
+                        filterOptions: integratedTypeFilters,
+                    },
+                    {
+                        name: "Trust Assumptions",
+                        showSorting: false,
+                        mobileLabel: "Trust",
+                    },
+                    {
+                        name: "Risk Summary",
+                        showSorting: false,
+                        mobileLabel: "Risk",
+                    },
+                    {
+                        name: "BTC Pegs",
+                        showSorting: false,
+                        mobileLabel: "Pegs",
+                    },
+                    { name: "BTC Supply", showSorting: true, mobileLabel: "BTC" },
+                ];
+
+                return { sortedData: integratedLayers, headers: integratedHeaders };
             } else {
-                // Applications case (default)
                 const sortedMore = allMore.sort((a, b) =>
                     a.title.toLowerCase().localeCompare(b.title.toLowerCase()),
                 );
 
                 const moreTypeFilters = [
-                    ...new Set(
-                        sortedMore.map(
-                            (infrastructure) => infrastructure.entityType,
-                        ),
-                    ),
+                    ...new Set(sortedMore.map((layer) => layer.entityType)),
                 ];
 
                 const moreHeaders = [
@@ -180,22 +208,22 @@ function getSortedDataAndHeaders(view: string, subView: string) {
                         mobileLabel: "Type",
                         filterOptions: moreTypeFilters,
                     },
-                    { name: "Asset Custody", showSorting: false, mobileLabel: "Asset Custody" },
+                    {
+                        name: "Trust Assumptions",
+                        showSorting: false,
+                        mobileLabel: "Trust",
+                    },
                     {
                         name: "Risk Summary",
                         showSorting: false,
-                        mobileLabel: "Risk Summary",
+                        mobileLabel: "Risk",
                     },
                     {
-                        name: "Use Case",
+                        name: "BTC Pegs",
                         showSorting: false,
-                        mobileLabel: "Use Case",
+                        mobileLabel: "Pegs",
                     },
-                    {
-                        name: "Associated Networks",
-                        showSorting: true,
-                        mobileLabel: "Networks",
-                    },
+                    { name: "BTC Supply", showSorting: true, mobileLabel: "BTC" },
                 ];
 
                 return { sortedData: sortedMore, headers: moreHeaders };
@@ -240,44 +268,6 @@ function getSortedDataAndHeaders(view: string, subView: string) {
             ];
 
             return { sortedData: sortedSidesystems, headers: sidesystemHeaders };
-        case "integrated":
-            const integratedLayers = allLayers.filter(
-                (layer) => layer.entityCategory === EntityCategory.Integrated
-            ).sort((a, b) =>
-                a.title.toLowerCase().localeCompare(b.title.toLowerCase())
-            );
-
-            const integratedTypeFilters = [
-                ...new Set(integratedLayers.map((layer) => layer.entityType)),
-            ];
-
-            const integratedHeaders = [
-                { name: "Name", showSorting: true, mobileLabel: "Name" },
-                {
-                    name: "Type",
-                    showSorting: true,
-                    mobileLabel: "Type",
-                    filterOptions: integratedTypeFilters,
-                },
-                {
-                    name: "Trust Assumptions",
-                    showSorting: false,
-                    mobileLabel: "Trust",
-                },
-                {
-                    name: "Risk Summary",
-                    showSorting: false,
-                    mobileLabel: "Risk",
-                },
-                {
-                    name: "BTC Pegs",
-                    showSorting: false,
-                    mobileLabel: "Pegs",
-                },
-                { name: "BTC Supply", showSorting: true, mobileLabel: "BTC" },
-            ];
-
-            return { sortedData: integratedLayers, headers: integratedHeaders };
         case "networks":
         case "layers":
         default:
@@ -358,6 +348,13 @@ export default function TableSwitch() {
                         headers={headers}
                     />
                 );
+            } else if (subView === "integrated") {
+                return (
+                    <IntegratedTable
+                        data={sortedData as LayerProject[]}
+                        headers={headers}
+                    />
+                );
             } else {
                 return (
                     <MoreTable
@@ -374,13 +371,6 @@ export default function TableSwitch() {
         case "sidesystems":
             return (
                 <SidesystemTable
-                    data={sortedData as LayerProject[]}
-                    headers={headers}
-                />
-            );
-        case "integrated":
-            return (
-                <IntegratedTable
                     data={sortedData as LayerProject[]}
                     headers={headers}
                 />

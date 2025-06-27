@@ -34,7 +34,6 @@ const bitlayer: LayerProject = {
     btcLocked: 5397,
     nativeToken: "BTR",
     feeToken: "WBTC",
-    notice: Notice.ClaimBitcoinLayer,
     bitcoinOnly: false,
     links: [
         {

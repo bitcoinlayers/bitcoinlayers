@@ -17,6 +17,7 @@ import {
     TechnologySnippet,
     UseCaseSnippet,
     RiskSummarySnippet,
+    OtherIcons,
 } from "../props";
 
 const core: LayerProject = {
@@ -39,7 +40,7 @@ const core: LayerProject = {
     btcLocked: 6705,
     nativeToken: "CORE",
     feeToken: "CORE",
-    notice: Notice.Reorg,
+    otherIcons: OtherIcons.Staking,
     bitcoinOnly: false,
     links: [
         {

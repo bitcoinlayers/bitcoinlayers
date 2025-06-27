@@ -13,6 +13,7 @@ import {
     ReviewSnippet,
     BitcoinSecuritySnippet,
     RiskSummarySnippet,
+    BitcoinLayer,
 } from "../props";
 
 const mercurylayer: LayerProject = {

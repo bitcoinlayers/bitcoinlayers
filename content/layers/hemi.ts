@@ -43,7 +43,6 @@ const hemi: LayerProject = {
     btcLocked: 0,
     nativeToken: "ETH",
     feeToken: "ETH",
-    notice: Notice.Reorg,
     bitcoinOnly: false,
     links: [
         {
