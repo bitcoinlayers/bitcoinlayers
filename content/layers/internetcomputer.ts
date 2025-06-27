@@ -12,6 +12,7 @@ import {
     RiskCategory,
     TokenSnippet,
     RiskSummarySnippet,
+    OtherIcons,
 } from "../props";
 
 const internetcomputer: LayerProject = {
@@ -36,6 +37,7 @@ const internetcomputer: LayerProject = {
     feeToken: "ICP",
     notice: Notice.ClaimBitcoinLayer,
     bitcoinOnly: false,
+    otherIcons: OtherIcons.Hybrid,
     links: [
         {
             text: Site.Website,

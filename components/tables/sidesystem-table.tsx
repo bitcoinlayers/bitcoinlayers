@@ -25,6 +25,7 @@ import BitcoinLayerDialog from "../layer/bitcoin-layer-dialog";
 import UnilateralExitDialog from "../layer/unilateral-exit-dialog";
 import MergeMineDialog from "../layer/merge-mine-dialog";
 import NotALayerDialog from "../layer/not-a-layer-dialog";
+import HybridDialog from "../layer/hybrid-dialog";
 import StakingDialog from "../layer/staking-dialog";
 import RiskSummaryDialog from "../layer/risk-summary-dialog";
 import NetworkTypeHoverCard from "../layer/network-type-hover-card";
@@ -249,6 +250,11 @@ const SidesystemTable = ({ data, headers }: Props) => {
                                             {item.otherIcons === OtherIcons.NotALayer && (
                                                 <div className="flex-shrink-0">
                                                     <NotALayerDialog layer={item} />
+                                                </div>
+                                            )}
+                                            {item.otherIcons === OtherIcons.Hybrid && (
+                                                <div className="flex-shrink-0">
+                                                    <HybridDialog layer={item} />
                                                 </div>
                                             )}
                                             {item.unilateralExit === UnilateralExit.Yes && (

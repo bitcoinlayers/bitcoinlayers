@@ -119,6 +119,7 @@ export enum OtherIcons {
     MergeMine = "This protocol is merge-mined by bitcoin miners.",
     NotALayer = "This protocol is not a bitcoin layer",
     Staking = "This protocol leverages bitcoin staking for aspects of its protocol.",
+    Hybrid = "This protocol's VM can interact with L1 bitcoin transactions.",
 }
 
 export enum Site {
