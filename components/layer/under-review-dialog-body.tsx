@@ -26,7 +26,7 @@ export default function UnderReviewDialogBody({
             <div className="my-4"></div>
             <div className="grid grid-cols-1 gap-4 sm:gap-6">
                 <p className="text-left max-w-prose text-gray-900 dark:text-gray-100">
-                    This project's categorization is currently under review. We are 
+                    This project&apos;s categorization is currently under review. We are 
                     evaluating whether it meets our technical standards to be considered a bitcoin sidesystem.
                 </p>
             </div>
