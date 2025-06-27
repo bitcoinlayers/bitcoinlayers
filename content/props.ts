@@ -105,6 +105,8 @@ export enum Notice {
     NoBridge = "No native bitcoin bridge",
     Sidesystem = "Sidesystems",
     Reorg = "🚨 This project will be moved to the Alternative category after June 30th.",
+    UnderReview = "🚨 This project's categorization is under review.",
+    OtherReasonBridge = "This project does not have an enshrined bitcoin bridge that meets our sidesystem standards.",
     ClaimBitcoinLayer = "This network is denominated in BTC.",
 }
 

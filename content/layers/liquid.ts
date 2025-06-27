@@ -38,7 +38,7 @@ const liquid: LayerProject = {
     btcLocked: 3834,
     nativeToken: "LBTC",
     feeToken: "LBTC",
-    notice: undefined,
+    notice: Notice.UnderReview,
     bitcoinOnly: true,
     links: [
         {
