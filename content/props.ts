@@ -107,6 +107,20 @@ export enum Notice {
     ClaimBitcoinLayer = "This network is denominated in BTC.",
 }
 
+export enum BitcoinLayer {
+    Yes = "The project meets our technical standards to be considered a bitcoin layer",
+}
+
+export enum UnilateralExit {
+    Yes = "This protocol supports unilateral exit, allowing users to withdraw funds without counterparty cooperation",
+}
+
+export enum OtherIcons {
+    MergeMine = "This protocol is merge-mined by bitcoin miners.",
+    NotALayer = "This protocol is not a bitcoin layer",
+    Staking = "This protocol leverages bitcoin staking for aspects of its protocol.",
+}
+
 export enum Site {
     Website = "Website",
     Docs = "Docs",
@@ -469,6 +483,9 @@ export interface BaseProject {
     riskFactors: (RiskFactor | "")[];
     nativeToken: string;
     notice?: Notice;
+    bitcoinLayer?: BitcoinLayer;
+    unilateralExit?: UnilateralExit;
+    otherIcons?: OtherIcons;
     bitcoinOnly: boolean;
     links: { text: Site | string; url: string | URL }[];
     description: string;

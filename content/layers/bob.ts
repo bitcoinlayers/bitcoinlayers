@@ -7,6 +7,7 @@ import {
     EntityType,
     EntityCategory,
     Notice,
+    OtherIcons,
     Site,
     RiskCategory,
     TokenSnippet,
@@ -40,6 +41,7 @@ const bob: LayerProject = {
     nativeToken: "ETH",
     feeToken: "ETH",
     notice: Notice.Reorg,
+    otherIcons: OtherIcons.NotALayer,
     bitcoinOnly: false,
     links: [
         {

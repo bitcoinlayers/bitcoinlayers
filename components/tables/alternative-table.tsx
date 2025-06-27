@@ -7,7 +7,7 @@ import TableHeader from "@/components/tables/tableHeader";
 import { isMobile } from "react-device-detect";
 import Link from "next/link";
 import { useQueryState } from "nuqs";
-import { LayerProject, LiveStatus, EntityCategory, Notice } from "@/content/props";
+import { LayerProject, LiveStatus, EntityCategory, Notice, BitcoinLayer, UnilateralExit, OtherIcons } from "@/content/props";
 import {
     Card,
     CardContent,
@@ -21,6 +21,11 @@ import getCurrentSuppliesByNetwork from "@/hooks/get-current-supplies-by-network
 import TokenList from "@/components/tables/mapping-token-img";
 import NoticeSnapshotDialog from "../layer/notice-snapshot/notice-snapshot-dialog";
 import ClaimBitcoinLayerDialog from "../layer/claim-bitcoin-layer-dialog";
+import BitcoinLayerDialog from "../layer/bitcoin-layer-dialog";
+import UnilateralExitDialog from "../layer/unilateral-exit-dialog";
+import MergeMineDialog from "../layer/merge-mine-dialog";
+import NotALayerDialog from "../layer/not-a-layer-dialog";
+import StakingDialog from "../layer/staking-dialog";
 import RiskSummaryDialog from "../layer/risk-summary-dialog";
 import NetworkTypeHoverCard from "../layer/network-type-hover-card";
 import SupplyDistributionHoverCard from "../layer/supply-distribution-hover-card";
@@ -231,6 +236,31 @@ const AlternativeTable = ({ data, headers }: Props) => {
                                                     {item.title}
                                                 </span>
                                             </Link>
+                                            {item.staking && (
+                                                <div className="flex-shrink-0">
+                                                    <StakingDialog layer={item} />
+                                                </div>
+                                            )}
+                                            {item.otherIcons === OtherIcons.MergeMine && (
+                                                <div className="flex-shrink-0">
+                                                    <MergeMineDialog layer={item} />
+                                                </div>
+                                            )}
+                                            {item.otherIcons === OtherIcons.NotALayer && (
+                                                <div className="flex-shrink-0">
+                                                    <NotALayerDialog layer={item} />
+                                                </div>
+                                            )}
+                                            {item.unilateralExit === UnilateralExit.Yes && (
+                                                <div className="flex-shrink-0">
+                                                    <UnilateralExitDialog layer={item} />
+                                                </div>
+                                            )}
+                                            {item.bitcoinLayer === BitcoinLayer.Yes && (
+                                                <div className="flex-shrink-0">
+                                                    <BitcoinLayerDialog layer={item} />
+                                                </div>
+                                            )}
                                             {item.notice === Notice.ClaimBitcoinLayer && (
                                                 <div className="flex-shrink-0">
                                                     <ClaimBitcoinLayerDialog layer={item} />

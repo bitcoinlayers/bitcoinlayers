@@ -6,6 +6,7 @@ import {
     EntityType,
     EntityCategory,
     Notice,
+    OtherIcons,
     Site,
     RiskSection,
     ContentSection,
@@ -37,6 +38,7 @@ const rootstock: LayerProject = {
     nativeToken: "RBTC",
     feeToken: "RBTC",
     notice: undefined,
+    otherIcons: OtherIcons.MergeMine,
     bitcoinOnly: true,
     links: [
         {

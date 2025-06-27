@@ -16,6 +16,7 @@ import {
     BitcoinSecuritySnippet,
     TechnologySnippet,
     RiskSummarySnippet,
+    BitcoinLayer
 } from "../props";
 
 const spark: LayerProject = {
@@ -40,6 +41,7 @@ const spark: LayerProject = {
     feeToken: "BTC",
     notice: undefined,
     bitcoinOnly: true,
+    bitcoinLayer: BitcoinLayer.Yes,
     links: [
         {
             text: Site.Website,

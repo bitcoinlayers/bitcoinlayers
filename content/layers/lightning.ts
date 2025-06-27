@@ -6,6 +6,8 @@ import {
     EntityType,
     EntityCategory,
     Notice,
+    BitcoinLayer,
+    UnilateralExit,
     Site,
     RiskSection,
     ContentSection,
@@ -35,6 +37,8 @@ const lightning: LayerProject = {
     nativeToken: "BTC",
     feeToken: "BTC",
     notice: undefined,
+    bitcoinLayer: BitcoinLayer.Yes,
+    unilateralExit: UnilateralExit.Yes,
     bitcoinOnly: true,
     links: [
         {
