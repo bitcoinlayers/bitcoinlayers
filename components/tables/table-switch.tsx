@@ -208,22 +208,22 @@ function getSortedDataAndHeaders(view: string, subView: string) {
                         mobileLabel: "Type",
                         filterOptions: moreTypeFilters,
                     },
-                    {
-                        name: "Trust Assumptions",
-                        showSorting: false,
-                        mobileLabel: "Trust",
-                    },
+                    { name: "Asset Custody", showSorting: true, mobileLabel: "Asset Custody" },
                     {
                         name: "Risk Summary",
-                        showSorting: false,
-                        mobileLabel: "Risk",
+                        showSorting: true,
+                        mobileLabel: "Risk Summary",
                     },
                     {
-                        name: "BTC Pegs",
-                        showSorting: false,
-                        mobileLabel: "Pegs",
+                        name: "Use Cases",
+                        showSorting: true,
+                        mobileLabel: "Use Cases",
                     },
-                    { name: "BTC Supply", showSorting: true, mobileLabel: "BTC" },
+                    {
+                        name: "Associated Networks",
+                        showSorting: true,
+                        mobileLabel: "Associated Networks",
+                    },
                 ];
 
                 return { sortedData: sortedMore, headers: moreHeaders };

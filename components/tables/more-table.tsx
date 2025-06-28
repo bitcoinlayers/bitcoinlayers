@@ -115,7 +115,7 @@ const MoreTable = ({
         serialize: (value) => value.join(","),
     });
     const [sortBy, setSortBy] = useQueryState("sortBy", {
-        defaultValue: "BTC Supply",
+        defaultValue: "Name",
     });
     const [sortOrder, setSortOrder] = useQueryState("sortOrder", {
         defaultValue: "desc",

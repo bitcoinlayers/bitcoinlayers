@@ -24,16 +24,21 @@ export default function Home() {
             mobileLabel: "Type",
             filterOptions: typeFilters,
         },
-        { name: "Status", showSorting: true, mobileLabel: "Status" },
+        { name: "Asset Custody", showSorting: true, mobileLabel: "Asset Custody" },
         {
-            name: "Unit of Account",
+            name: "Risk Summary",
             showSorting: true,
-            mobileLabel: "Unit",
+            mobileLabel: "Risk Summary",
+        },
+        {
+            name: "Use Case",
+            showSorting: true,
+            mobileLabel: "Use Case",
         },
         {
             name: "Associated Networks",
             showSorting: true,
-            mobileLabel: "Networks",
+            mobileLabel: "Associated Networks",
         },
     ];
 
