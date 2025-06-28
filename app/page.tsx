@@ -21,7 +21,8 @@ export default function Home() {
 
     return (
         <div className="mx-auto space-y-8">
-            <div className="flex justify-between items-center">
+            {/* Mobile: Stacked layout, Desktop: Side by side */}
+            <div className="flex flex-col gap-4 lg:flex-row lg:justify-between lg:items-center">
                 <ViewToggleGroup showAll={false} />
                 <SearchBlock 
                     inputClassName="h-[30px] text-sm p-2 pl-4 pr-10 bg-transparent border-2 border-muted-foreground rounded-full text-foreground placeholder:text-muted-foreground hover:border-brand focus:border-brand font-sans not-italic"
