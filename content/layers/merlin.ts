@@ -23,7 +23,7 @@ const merlin: LayerProject = {
     slug: "merlin",
     title: "Merlin",
     entityType: EntityType.AltRollup,
-    entityCategory: EntityCategory.Sidesystem,
+    entityCategory: EntityCategory.Alt,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -38,8 +38,8 @@ const merlin: LayerProject = {
     btcLocked: 9303,
     nativeToken: "MERL",
     feeToken: "WBTC",
-    notice: Notice.Reorg,
     bitcoinOnly: false,
+    notice: Notice.OtherReasonBridge,
     links: [
         {
             text: Site.Website,

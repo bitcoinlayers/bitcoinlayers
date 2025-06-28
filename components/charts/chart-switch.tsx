@@ -10,6 +10,12 @@ export default function ChartSwitch() {
     const [view] = useQueryState("view", {
         defaultValue: "networks",
     });
+    const [subView] = useQueryState("subview", {
+        defaultValue: "applications",
+    });
+
+    // Use subView when view is "more", otherwise use view
+    const effectiveView = view === "more" ? subView : view;
 
     const chartConfig = {
         networks: {
@@ -18,6 +24,30 @@ export default function ChartSwitch() {
                 "Total BTC supply supporting bitcoin native protocols, bitcoin sidesystems, alternative L1s, and more",
             chartQueryParam: "layer-chart",
             rangeQueryParam: "layer-range",
+            useDataHook: getHistoricalSuppliesByNetwork,
+        },
+        sidesystems: {
+            title: "BTC supply by network",
+            description:
+                "Total BTC supply supporting bitcoin native protocols, bitcoin sidesystems, alternative L1s, and more",
+            chartQueryParam: "sidesystems-chart",
+            rangeQueryParam: "sidesystems-range",
+            useDataHook: getHistoricalSuppliesByNetwork,
+        },
+        integrated: {
+            title: "BTC supply by network",
+            description:
+                "Total BTC supply supporting bitcoin native protocols, bitcoin sidesystems, alternative L1s, and more",
+            chartQueryParam: "integrated-chart",
+            rangeQueryParam: "integrated-range",
+            useDataHook: getHistoricalSuppliesByNetwork,
+        },
+        "alternative networks": {
+            title: "BTC supply by network",
+            description:
+                "Total BTC supply supporting bitcoin native protocols, bitcoin sidesystems, alternative L1s, and more",
+            chartQueryParam: "alternative-chart",
+            rangeQueryParam: "alternative-range",
             useDataHook: getHistoricalSuppliesByNetwork,
         },
         wrappers: {
@@ -53,7 +83,7 @@ export default function ChartSwitch() {
         // },
     };
 
-    const config = chartConfig[view as keyof typeof chartConfig];
+    const config = chartConfig[effectiveView as keyof typeof chartConfig];
     const { data, isLoading, error } = config.useDataHook();
 
     return (
@@ -62,7 +92,7 @@ export default function ChartSwitch() {
             title={config.title}
             description={config.description}
             // itemNameKey={view === "layers" ? "layer_name" : "infra_name"}
-            itemNameKey={view === "networks" ? "network_name" : "token_name"}
+            itemNameKey={effectiveView === "networks" || effectiveView === "integrated" || effectiveView === "sidesystems" || effectiveView === "alternative networks" ? "network_name" : "token_name"}
             chartQueryParam={config.chartQueryParam}
             rangeQueryParam={config.rangeQueryParam}
             showLegend={false}

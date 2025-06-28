@@ -12,6 +12,7 @@ import {
     RiskCategory,
     TokenSnippet,
     RiskSummarySnippet,
+    OtherIcons,
 } from "../props";
 
 const internetcomputer: LayerProject = {
@@ -34,7 +35,6 @@ const internetcomputer: LayerProject = {
     btcLocked: 277,
     nativeToken: "ICP",
     feeToken: "ICP",
-    notice: undefined,
     bitcoinOnly: false,
     links: [
         {

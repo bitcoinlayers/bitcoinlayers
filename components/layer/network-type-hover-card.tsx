@@ -17,6 +17,10 @@ const entityTypeDefinitions: Record<EntityType, { name: string; description: str
         name: "Sidechain",
         description: "An L1 that exists to add more functionality to BTC the asset. L1s are sovereign in technical architecture but typically exist as subsets of the broader bitcoin ecosystem. It's common for sidechains to enshrine a BTC bridge into their consensus mechanisms or involve bitcoin miners in consensus - through merge mining or fee sharing."
     },
+    [EntityType.MergeMined]: {
+        name: "Merge-mined",
+        description: "A blockchain (L1) that uses a similar consensus mechanism to bitcoin, with the same PoW hashing algorithm. By using the same algorithm for consensus, bitcoin miners can opt-in to securing and producing blocks for the sidechain with essentially no additional costs (i.e., reusing the same “work” from bitcoin’s PoW)."
+    },
     [EntityType.Federation]: {
         name: "Federation",
         description: "A network operated by a permissioned set of entities responsible for operating all facets of the network. Users trust the federation to not censor them, halt the network, and freeze user funds."
@@ -27,7 +31,7 @@ const entityTypeDefinitions: Record<EntityType, { name: string; description: str
     },
     [EntityType.StateChannel]: {
         name: "State Channel",
-        description: "A type of L2 scaling solution that allows participants to conduct transactions offchain, in a faster and cheaper environment. Only the state differentials (i.e., the start state and the end state) are recorded on the blockchain, reducing the load on the main network and by extension, the fees required. Unlike rollups, state channels do not have a 'global state' and instead exist as a series of bilateral agreements between participants."
+        description: "A network that allows participants to conduct transactions offchain, in a faster and cheaper environment. Only the state differentials (i.e., the start state and the end state) are recorded on the blockchain, reducing the load on the main network and by extension, the fees required. State channels do not have a 'global state' and instead exist as a series of channels between participants."
     },
     [EntityType.SovereignRollup]: {
         name: "Sovereign Rollup",
@@ -168,6 +172,10 @@ const entityTypeDefinitions: Record<EntityType, { name: string; description: str
     [EntityType.StakedBTC]: {
         name: "Natively Staked BTC",
         description: "Bitcoin that is natively staked to secure a network or protocol."
+    },
+    [EntityType.PoSNetwork]: {
+        name: "BTC-denominated PoS Network",
+        description: "The network is an alternative PoS network secured by another token and consensus set. However, the network supports a cannonical two-way peg with bitcoin and fees can be paid in BTC-denominated tokens."
     },
     [EntityType["-"]]: {
         name: "Not Applicable",

@@ -6,6 +6,7 @@ import {
     EntityType,
     EntityCategory,
     Notice,
+    OtherIcons,
     Site,
     RiskSection,
     ContentSection,
@@ -14,13 +15,14 @@ import {
     ReviewSnippet,
     BitcoinSecuritySnippet,
     RiskSummarySnippet,
+    BitcoinLayer,
 } from "../props";
 
 const rootstock: LayerProject = {
     type: Type.Layer,
     slug: "rootstock",
     title: "Rootstock",
-    entityType: EntityType.Sidechain,
+    entityType: EntityType.MergeMined,
     entityCategory: EntityCategory.Sidesystem,
     live: LiveStatus.Mainnet,
     staking: false,

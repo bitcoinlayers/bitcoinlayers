@@ -7,6 +7,7 @@ import {
     EntityType,
     EntityCategory,
     Notice,
+    OtherIcons,
     Site,
     RiskCategory,
     TokenSnippet,
@@ -24,7 +25,7 @@ const bob: LayerProject = {
     slug: "bob",
     title: "BOB",
     entityType: EntityType.AltRollup,
-    entityCategory: EntityCategory.Sidesystem,
+    entityCategory: EntityCategory.Alt,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -39,8 +40,8 @@ const bob: LayerProject = {
     btcLocked: 974,
     nativeToken: "ETH",
     feeToken: "ETH",
-    notice: Notice.Reorg,
     bitcoinOnly: false,
+    notice: Notice.OtherReasonBridge,
     links: [
         {
             text: Site.Website,

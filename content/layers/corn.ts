@@ -39,8 +39,8 @@ const corn: LayerProject = {
     btcLocked: 0,
     nativeToken: "-",
     feeToken: "BTCN",
-    notice: undefined,
     bitcoinOnly: false,
+    notice: Notice.OtherReasonBridge,
     links: [
         {
             text: Site.Website,

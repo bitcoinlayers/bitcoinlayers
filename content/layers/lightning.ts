@@ -6,6 +6,8 @@ import {
     EntityType,
     EntityCategory,
     Notice,
+    BitcoinLayer,
+    UnilateralExit,
     Site,
     RiskSection,
     ContentSection,

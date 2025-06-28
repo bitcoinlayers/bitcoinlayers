@@ -16,6 +16,7 @@ import {
     BitcoinSecuritySnippet,
     TechnologySnippet,
     RiskSummarySnippet,
+    BitcoinLayer
 } from "../props";
 
 const spark: LayerProject = {

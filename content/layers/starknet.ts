@@ -6,7 +6,6 @@ import {
     RiskFactor,
     EntityType,
     EntityCategory,
-    Notice,
     Site,
     RiskSection,
     ContentSection,
@@ -16,6 +15,7 @@ import {
     BitcoinSecuritySnippet,
     AdditionalSnippet,
     UseCaseSnippet,
+    Notice,
     RiskSummarySnippet,
 } from "../props";
 
@@ -39,8 +39,8 @@ const starknet: LayerProject = {
     btcLocked: 0,
     nativeToken: "ETH",
     feeToken: "ETH",
-    notice: undefined,
     bitcoinOnly: false,
+    notice: Notice.OtherReasonBridge,
     links: [
         {
             text: Site.Website,
@@ -109,7 +109,7 @@ const starknet: LayerProject = {
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: `${TokenSnippet.FederationPeg}. To mint on starknet, tBTC on Ethereum is locked in an upgreadeable escrow contract`,
-                    content: `${TokenSnippet.ThresholdtBTC} The tBTC implementation of the Starknet bridge contract is upgradeable by a signer signer. There is a there a 3 day delay before the upgrade is implemented.`,
+                    content: `${TokenSnippet.ThresholdtBTC} The tBTC implementation of the Starknet bridge contract is upgradeable by a single signer. There is a there a 3 day delay before the upgrade is implemented.`,
                 },
             ],
         },

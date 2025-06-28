@@ -23,8 +23,8 @@ const fractal: LayerProject = {
     type: Type.Layer,
     slug: "fractal",
     title: "Fractal",
-    entityType: EntityType.Alt,
-    entityCategory: EntityCategory.Sidesystem,
+    entityType: EntityType.MergeMined,
+    entityCategory: EntityCategory.Integrated,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -39,7 +39,7 @@ const fractal: LayerProject = {
     btcLocked: NaN,
     nativeToken: "FB",
     feeToken: "FB",
-    notice: Notice.Reorg,
+    notice: Notice.OtherReasonBridge,
     bitcoinOnly: false,
     links: [
         {

@@ -17,15 +17,15 @@ import {
     TechnologySnippet,
     UseCaseSnippet,
     RiskSummarySnippet,
+    OtherIcons,
 } from "../props";
-import bitcoinos from "../infrastructures/bitcoinos";
 
 const core: LayerProject = {
     type: Type.Layer,
     slug: "core",
     title: "Core",
     entityType: EntityType.Hybrid,
-    entityCategory: EntityCategory.Sidesystem,
+    entityCategory: EntityCategory.Integrated,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -40,7 +40,8 @@ const core: LayerProject = {
     btcLocked: 6705,
     nativeToken: "CORE",
     feeToken: "CORE",
-    notice: Notice.Reorg,
+    otherIcons: OtherIcons.Staking,
+    notice: Notice.OtherReasonBridge,
     bitcoinOnly: false,
     links: [
         {

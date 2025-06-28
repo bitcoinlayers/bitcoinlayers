@@ -14,6 +14,7 @@ import {
     ReviewSnippet,
     BitcoinSecuritySnippet,
     RiskSummarySnippet,
+    OtherIcons,
 } from "../props";
 
 const rollux: LayerProject = {
@@ -21,7 +22,7 @@ const rollux: LayerProject = {
     slug: "rollux",
     title: "Rollux",
     entityType: EntityType.AltRollup,
-    entityCategory: EntityCategory.Sidesystem,
+    entityCategory: EntityCategory.Integrated,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -36,7 +37,7 @@ const rollux: LayerProject = {
     btcLocked: 10,
     nativeToken: "SYS",
     feeToken: "SYS",
-    notice: Notice.Reorg,
+    notice: Notice.OtherReasonBridge,
     bitcoinOnly: false,
     links: [
         {

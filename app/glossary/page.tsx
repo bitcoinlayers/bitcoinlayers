@@ -329,7 +329,7 @@ const glossaryData: GlossaryData = {
         {
             term: "State channel",
             definition:
-                "A type of L2 scaling solution that allows participants to conduct transactions offchain, in a faster and cheaper environment. Only the state differentials (i.e., the start state and the end state) are recorded on the blockchain, reducing the load on the main network and by extension, the fees required. Unlike rollups, state channels do not have a 'global state' and instead exist as a series of bilateral agreements between participants.",
+                "A type of L2 scaling solution that allows participants to conduct transactions offchain, in a faster and cheaper environment. Only the state differentials (i.e., the start state and the end state) are recorded on the blockchain, reducing the load on the main network and by extension, the fees required. State channels do not have a 'global state' and instead exist as a series of channels between participants.",
         },
         {
             term: "State validation",

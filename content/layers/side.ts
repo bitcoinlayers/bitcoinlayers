@@ -22,7 +22,7 @@ const side: LayerProject = {
     type: Type.Layer,
     slug: "side",
     title: "Side Protocol",
-    entityType: EntityType.Sidechain,
+    entityType: EntityType.PoSNetwork,
     entityCategory: EntityCategory.Sidesystem,
     live: LiveStatus.Mainnet,
     staking: false,
@@ -38,7 +38,6 @@ const side: LayerProject = {
     btcLocked: NaN,
     nativeToken: "-",
     feeToken: "SBTC",
-    notice: undefined,
     bitcoinOnly: false,
     links: [
         {

@@ -16,6 +16,7 @@ import {
     TechnologySnippet,
     BitcoinSecuritySnippet,
     RiskSummarySnippet,
+    Notice,
 } from "../props";
 import { tokenToString } from "typescript";
 import { Rubik_Vinyl } from "next/font/google";
@@ -25,10 +26,10 @@ const babylon: LayerProject = {
     type: Type.Layer,
     slug: "babylon",
     title: "Babylon",
-    entityType: EntityType.Hybrid,
-    entityCategory: EntityCategory.Sidesystem,
+    entityType: EntityType.Anchor,
+    entityCategory: EntityCategory.Integrated,
     live: LiveStatus.Mainnet,
-    staking: true,
+    staking: false,
     liquidStaking: false,
     bridge: false,
     underReview: false,
@@ -41,7 +42,7 @@ const babylon: LayerProject = {
     btcLocked: NaN,
     nativeToken: "-",
     feeToken: "BABY",
-    notice: undefined,
+    notice: Notice.OtherReasonBridge,
     bitcoinOnly: false,
     links: [
         {

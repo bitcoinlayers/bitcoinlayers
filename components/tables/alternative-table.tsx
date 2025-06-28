@@ -16,9 +16,7 @@ import {
     CardTitle,
 } from "@/components/ui/card";
 import { LayersIcon } from "lucide-react";
-import getCurrentSuppliesByTokenimpl, {
-    Snapshot,
-} from "@/hooks/get-current-supplies-by-tokenimpl";
+import getCurrentSuppliesByTokenimpl, { Snapshot } from "@/hooks/get-current-supplies-by-tokenimpl";
 import getCurrentSuppliesByNetwork from "@/hooks/get-current-supplies-by-network";
 import TokenList from "@/components/tables/mapping-token-img";
 import NoticeSnapshotDialog from "../layer/notice-snapshot/notice-snapshot-dialog";
@@ -77,7 +75,7 @@ const LayerImage = ({ src, title }: { src: string; title: string }) => {
     );
 };
 
-const LayerTable = ({ data, headers }: Props) => {
+const AlternativeTable = ({ data, headers }: Props) => {
     const [types] = useQueryState<string[]>("type", {
         defaultValue: [],
         parse: (value) => value.split(",").filter(Boolean),
@@ -131,10 +129,10 @@ const LayerTable = ({ data, headers }: Props) => {
         useState<TableTabKey>("Trust Assumptions");
 
     const sortAndFilterData = useMemo(() => {
-        // First filter to only bitcoin native projects
-        const bitcoinNativeOnly = data.filter(item => item.entityCategory === EntityCategory.BitcoinNative);
+        // First filter to only alternative L1 projects
+        const alternativeOnly = data.filter(item => item.entityCategory === EntityCategory.Alt);
         
-        const sorted = [...bitcoinNativeOnly].sort((a, b) => {
+        const sorted = [...alternativeOnly].sort((a, b) => {
             let valueA, valueB;
             switch (sortBy) {
                 case "Name":
@@ -192,21 +190,7 @@ const LayerTable = ({ data, headers }: Props) => {
         setMobileActiveTab(tab);
     };
 
-    // For Bitcoin Native, change BTC Pegs header to Custody Type
-    const dynamicHeaders = useMemo(() => {
-        return headers.map(header => {
-            if (header.name === "BTC Pegs") {
-                return {
-                    ...header,
-                    name: "Custody Type",
-                    mobileLabel: "Custody"
-                };
-            }
-            return header;
-        });
-    }, [headers]);
-
-    const mobileTableHeaders = dynamicHeaders.filter(
+    const mobileTableHeaders = headers.filter(
         (_item) => _item.name === mobileActiveTab || _item.name === "Name",
     );
 
@@ -215,10 +199,10 @@ const LayerTable = ({ data, headers }: Props) => {
             <CardHeader className="flex flex-col items-stretch space-y-0 border-b p-0 sm:flex-row border-none">
                 <div className="flex flex-1 flex-col justify-center gap-1 px-6 py-5 sm:py-6">
                     <CardTitle className="flex">
-                        <LayersIcon className="mr-3" /> Bitcoin native protocols
+                        <LayersIcon className="mr-3" /> Alternative networks
                     </CardTitle>
                     <CardDescription>
-                        Bitcoin native protocols are offchain systems where users have unilateral exit paths.
+                        Learn the tradeoffs for different alternative blockchain networks leveraging bitcoin wrapped assets
                     </CardDescription>
                 </div>
             </CardHeader>
@@ -226,7 +210,7 @@ const LayerTable = ({ data, headers }: Props) => {
                 <div className="overflow-x-auto mx-auto border-none">
                     <table className="w-full text-sm text-left rtl:text-right">
                         <TableHeader
-                            headers={isMobile ? mobileTableHeaders : dynamicHeaders}
+                            headers={isMobile ? mobileTableHeaders : headers}
                             onSort={handleSort}
                             sortBy={sortBy}
                             sortOrder={sortOrder}
@@ -423,4 +407,4 @@ const LayerTable = ({ data, headers }: Props) => {
     );
 };
 
-export default LayerTable;
+export default AlternativeTable; 

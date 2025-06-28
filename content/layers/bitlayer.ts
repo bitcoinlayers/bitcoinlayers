@@ -19,7 +19,7 @@ const bitlayer: LayerProject = {
     slug: "bitlayer",
     title: "Bitlayer",
     entityType: EntityType.Federation,
-    entityCategory: EntityCategory.Sidesystem,
+    entityCategory: EntityCategory.Alt,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -34,8 +34,8 @@ const bitlayer: LayerProject = {
     btcLocked: 5397,
     nativeToken: "BTR",
     feeToken: "WBTC",
-    notice: Notice.Reorg,
     bitcoinOnly: false,
+    notice: Notice.OtherReasonBridge,
     links: [
         {
             text: Site.Website,

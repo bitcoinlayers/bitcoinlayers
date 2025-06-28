@@ -19,7 +19,7 @@ const bsquared: LayerProject = {
     slug: "bsquared",
     title: "Bsquared",
     entityType: EntityType.AltRollup,
-    entityCategory: EntityCategory.Sidesystem,
+    entityCategory: EntityCategory.Alt,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -34,8 +34,8 @@ const bsquared: LayerProject = {
     btcLocked: 0,
     nativeToken: "BSQ",
     feeToken: "WBTC",
-    notice: Notice.Reorg,
     bitcoinOnly: false,
+    notice: Notice.OtherReasonBridge,
     links: [
         {
             text: Site.Website,

@@ -53,6 +53,7 @@ export enum EntityType {
     Rollup = "Rollup",
     Federation = "Federation",
     Sidechain = "Sidechain",
+    MergeMined = "Merge-mined",
     SidechainRollup = "Sidechain Rollup",
     SovereignRollup = "Sovereign Rollup",
     StateChannel = "State Channel",
@@ -88,12 +89,14 @@ export enum EntityType {
     SingleOp = "Single Opcode",
     GroupOp = "Group of Opcodes",
     StakedBTC = "Natively Staked BTC",
+    PoSNetwork = "PoS Network",
     "-" = "-",
 }
 
 export enum EntityCategory {
     BitcoinNative = "Bitcoin Native",
     Sidesystem = "Sidesystems",
+    Integrated = "Integrated",
     Alt = "Alt. L1s & More",
     More = "More",
 }
@@ -102,6 +105,24 @@ export enum Notice {
     NoBridge = "No native bitcoin bridge",
     Sidesystem = "Sidesystems",
     Reorg = "🚨 This project will be moved to the Alternative category after June 30th.",
+    UnderReview = "🚨 This project's categorization is under review.",
+    OtherReasonBridge = "This project does not have an enshrined bitcoin bridge that meets our sidesystem standards.",
+    ClaimBitcoinLayer = "This network is denominated in BTC.",
+}
+
+export enum BitcoinLayer {
+    Yes = "The project meets our technical standards to be considered a bitcoin layer",
+}
+
+export enum UnilateralExit {
+    Yes = "This protocol supports unilateral exit, allowing users to withdraw funds without counterparty cooperation",
+}
+
+export enum OtherIcons {
+    MergeMine = "This protocol is merge-mined by bitcoin miners.",
+    NotALayer = "This protocol is not a bitcoin layer",
+    Staking = "This protocol leverages bitcoin staking for aspects of its protocol.",
+    Hybrid = "This protocol's VM can interact with L1 bitcoin transactions.",
 }
 
 export enum Site {
@@ -466,6 +487,9 @@ export interface BaseProject {
     riskFactors: (RiskFactor | "")[];
     nativeToken: string;
     notice?: Notice;
+    bitcoinLayer?: BitcoinLayer;
+    unilateralExit?: UnilateralExit;
+    otherIcons?: OtherIcons;
     bitcoinOnly: boolean;
     links: { text: Site | string; url: string | URL }[];
     description: string;
