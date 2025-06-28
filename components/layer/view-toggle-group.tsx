@@ -65,7 +65,14 @@ const ViewToggleGroup = ({ showAll }: { showAll: boolean }) => {
                                         : "text-muted-foreground"
                                 }`}
                             >
-                                {option.label}
+                                {option.value === "networks" ? (
+                                    <>
+                                        <span className="lg:hidden">Native</span>
+                                        <span className="hidden lg:inline">Bitcoin Native</span>
+                                    </>
+                                ) : (
+                                    option.label
+                                )}
                             </div>
                         </div>
                     );
