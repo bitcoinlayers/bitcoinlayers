@@ -14,6 +14,7 @@ import {
     RiskCategory,
     TokenSnippet,
     RiskSummarySnippet,
+    CustodyTitle,
 } from "../props";
 
 const lightning: LayerProject = {
@@ -37,6 +38,7 @@ const lightning: LayerProject = {
     nativeToken: "BTC",
     feeToken: "BTC",
     notice: undefined,
+    custodyTitle: CustodyTitle.BitcoinNative,
     bitcoinOnly: true,
     links: [
         {
