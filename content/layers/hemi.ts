@@ -29,7 +29,7 @@ const hemi: LayerProject = {
     slug: "hemi",
     title: "Hemi",
     entityType: EntityType.AltRollup,
-    entityCategory: EntityCategory.Alt,
+    entityCategory: EntityCategory.Integrated,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -39,13 +39,13 @@ const hemi: LayerProject = {
         RiskFactor.VeryHigh,
         RiskFactor.Medium,
         RiskFactor.UnderReview,
-        RiskFactor.VeryHigh,
+        RiskFactor.UnderReview,
     ],
     btcLocked: 0,
     nativeToken: "ETH",
     feeToken: "ETH",
     bitcoinOnly: false,
-    notice: Notice.OtherReasonBridge,
+    notice: Notice.UnderReview,
     links: [
         {
             text: Site.Website,
@@ -205,9 +205,9 @@ const hemi: LayerProject = {
         {
             category: RiskCategory.FinalityGuarantees,
             score: 0,
-            tier: RiskFactor.VeryHigh,
-            title: "Hemi updates its state on Ethereum. The proposer role is currently centralized",
-            content: ReviewSnippet.FinalityAltRollupCentralizedProposer,
+            tier: RiskFactor.UnderReview,
+            title: "We are reviewing Hemi's finality mechanism",
+            content: "This section of the assessment is under review.",
         },
     ],
     sections: [
