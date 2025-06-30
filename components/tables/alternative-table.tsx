@@ -202,7 +202,7 @@ const AlternativeTable = ({ data, headers }: Props) => {
                         <LayersIcon className="mr-3" /> Alternative networks
                     </CardTitle>
                     <CardDescription>
-                        Learn the tradeoffs for different alternative blockchain networks leveraging bitcoin wrapped assets
+                        Alternative networks are independent networks that leverage bitcoin wrapped assets.
                     </CardDescription>
                 </div>
             </CardHeader>
