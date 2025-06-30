@@ -25,7 +25,7 @@ const core: LayerProject = {
     type: Type.Layer,
     slug: "core",
     title: "Core",
-    entityType: EntityType.Hybrid,
+    entityType: EntityType.BPoSNetwork,
     entityCategory: EntityCategory.Integrated,
     live: LiveStatus.Mainnet,
     staking: false,

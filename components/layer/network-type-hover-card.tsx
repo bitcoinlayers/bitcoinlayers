@@ -177,6 +177,10 @@ const entityTypeDefinitions: Record<EntityType, { name: string; description: str
         name: "BTC-denominated PoS Network",
         description: "The network is an alternative PoS network secured by another token and consensus set. However, the network supports a cannonical two-way peg with bitcoin and fees can be paid in BTC-denominated tokens."
     },
+    [EntityType.BPoSNetwork]: {
+        name: "PoS Network with Bitcoin staking",
+        description: "The network is an alternative PoS network that is partially secured by bitcoin staking. The network also supports various bitcoin wrapped assets."
+    },
     [EntityType["-"]]: {
         name: "Not Applicable",
         description: "This classification does not apply to the current context."

@@ -90,6 +90,7 @@ export enum EntityType {
     GroupOp = "Group of Opcodes",
     StakedBTC = "Natively Staked BTC",
     PoSNetwork = "PoS Network",
+    BPoSNetwork = "BPoS Network",
     "-" = "-",
 }
 
