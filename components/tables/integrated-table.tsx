@@ -377,20 +377,28 @@ const IntegratedTable = ({ data, headers }: Props) => {
                                                         href={`/layers/${item.slug}`}
                                                         className="hover:underline cursor-pointer"
                                                     >
-                                                                                                <div>
-                                            ₿{" "}
-                                            {(() => {
-                                                const amount = totaledBalances[item.slug]?.totalAmount ?? item.btcLocked;
-                                                if (isNaN(amount)) return "Unavailable";
-                                                return Number(amount).toLocaleString(
-                                                    "en-US",
-                                                    {
-                                                        minimumFractionDigits: 0,
-                                                        maximumFractionDigits: 0,
-                                                    },
+                                                                                                {(() => {
+                                            const amount = totaledBalances[item.slug]?.totalAmount ?? item.btcLocked;
+                                            if (isNaN(amount)) {
+                                                return (
+                                                    <div className="font-light">
+                                                        Unavailable
+                                                    </div>
                                                 );
-                                            })()}
-                                        </div>
+                                            }
+                                            return (
+                                                <div>
+                                                    ₿{" "}
+                                                    {Number(amount).toLocaleString(
+                                                        "en-US",
+                                                        {
+                                                            minimumFractionDigits: 0,
+                                                            maximumFractionDigits: 0,
+                                                        },
+                                                    )}
+                                                </div>
+                                            );
+                                        })()}
                                                     </Link>
                                                 </SupplyDistributionHoverCard>
                                             )}
