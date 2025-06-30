@@ -17,6 +17,7 @@ import {
     UseCaseSnippet,
     Notice,
     RiskSummarySnippet,
+    Categorization,
 } from "../props";
 
 const starknet: LayerProject = {
@@ -86,6 +87,12 @@ const starknet: LayerProject = {
                 title: RiskSummarySnippet.TitleCentralizedSequencer,
                 content: RiskSummarySnippet.RiskSummaryCentralizedSequencer,
             }
+        ],
+        categorization: [
+            {
+                title: Categorization.NoBridgeTitle,
+                content: Categorization.NoBridgeSnippet,
+            },
         ],
         riskAnalysis: [
         {

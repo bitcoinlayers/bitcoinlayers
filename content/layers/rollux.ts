@@ -15,6 +15,7 @@ import {
     BitcoinSecuritySnippet,
     RiskSummarySnippet,
     OtherIcons,
+    Categorization,
 } from "../props";
 
 const rollux: LayerProject = {
@@ -80,6 +81,12 @@ const rollux: LayerProject = {
                 title: RiskSummarySnippet.TitleCentralizedSequencer,
                 content: RiskSummarySnippet.RiskSummaryCentralizedSequencer,
             }
+        ],
+        categorization: [
+            {
+                title: Categorization.NoBridgeTitle,
+                content: Categorization.NoBridgeSnippet,
+            },
         ],
         riskAnalysis: [
         {

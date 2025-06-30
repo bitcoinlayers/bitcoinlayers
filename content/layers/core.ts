@@ -18,6 +18,7 @@ import {
     UseCaseSnippet,
     RiskSummarySnippet,
     OtherIcons,
+    Categorization,
 } from "../props";
 
 const core: LayerProject = {
@@ -76,6 +77,12 @@ const core: LayerProject = {
                 title: RiskSummarySnippet.TitleAlternativeL1,
                 content: RiskSummarySnippet.RiskSummaryAlternativeL1,
             }
+        ],
+        categorization: [
+            {
+                title: Categorization.NoBridgeTitle,
+                content: Categorization.NoBridgeSnippet,
+            },
         ],
         riskAnalysis: [
         {

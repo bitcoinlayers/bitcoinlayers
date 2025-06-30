@@ -12,6 +12,7 @@ import {
     RiskCategory,
     TokenSnippet,
     RiskSummarySnippet,
+    Categorization,
 } from "../props";
 
 const bitlayer: LayerProject = {
@@ -69,6 +70,12 @@ const bitlayer: LayerProject = {
                 title: RiskSummarySnippet.TitleFederation,
                 content: RiskSummarySnippet.RiskSummaryFederation,
             }
+        ],
+        categorization: [
+            {
+                title: Categorization.NoBridgeTitle,
+                content: Categorization.NoBridgeSnippet,
+            },
         ],
         riskAnalysis: [
         {

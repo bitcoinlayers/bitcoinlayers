@@ -17,6 +17,7 @@ import {
     BitcoinSecuritySnippet,
     ReviewSnippet,
     RiskSummarySnippet,
+    Categorization,
 } from "../props";
 
 const corn: LayerProject = {
@@ -81,6 +82,12 @@ const corn: LayerProject = {
             {
                 title: RiskSummarySnippet.TitleCentralizedSequencer,
                 content: RiskSummarySnippet.RiskSummaryCentralizedSequencer,
+            },
+        ],
+        categorization: [
+            {
+                title: Categorization.NoBridgeTitle,
+                content: Categorization.NoBridgeSnippet,
             },
         ],
         riskAnalysis: [

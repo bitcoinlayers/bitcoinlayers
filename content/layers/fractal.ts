@@ -17,6 +17,7 @@ import {
     TechnologySnippet,
     UseCaseSnippet,
     RiskSummarySnippet,
+    Categorization,
 } from "../props";
 
 const fractal: LayerProject = {
@@ -74,6 +75,12 @@ const fractal: LayerProject = {
                 title: RiskSummarySnippet.TitleAlternativeL1,
                 content: RiskSummarySnippet.RiskSummaryAlternativeL1,
             }
+        ],
+        categorization: [
+            {
+                title: Categorization.NoBridgeTitle,
+                content: Categorization.NoBridgeSnippet,
+            },
         ],
         riskAnalysis: [
         {

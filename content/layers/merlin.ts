@@ -16,6 +16,7 @@ import {
     TechnologySnippet,
     UseCaseSnippet,
     RiskSummarySnippet,
+    Categorization,
 } from "../props";
 
 const merlin: LayerProject = {
@@ -81,6 +82,12 @@ const merlin: LayerProject = {
                 title: RiskSummarySnippet.TitleCentralizedSequencer,
                 content: RiskSummarySnippet.RiskSummaryCentralizedSequencer,
             }
+        ],
+        categorization: [
+            {
+                title: Categorization.NoBridgeTitle,
+                content: Categorization.NoBridgeSnippet,
+            },
         ],
         riskAnalysis: [
         {

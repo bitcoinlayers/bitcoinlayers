@@ -19,6 +19,7 @@ import {
     AdditionalSnippet,
     KnowledgeBitSnippet,
     RiskSummarySnippet,
+    Categorization,
 } from "../props";
 import { tokenToString } from "typescript";
 import { Rubik_Vinyl } from "next/font/google";
@@ -81,6 +82,12 @@ const hemi: LayerProject = {
             {
                 title: RiskSummarySnippet.TitleCentralizedSequencer,
                 content: RiskSummarySnippet.RiskSummaryCentralizedSequencer,
+            },
+        ],
+        categorization: [
+            {
+                title: Categorization.NoBridgeTitle,
+                content: Categorization.NoBridgeSnippet,
             },
         ],
         riskAnalysis: [

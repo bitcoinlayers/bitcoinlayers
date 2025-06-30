@@ -18,6 +18,7 @@ import {
     UseCaseSnippet,
     DefinitionSnippet,
     RiskSummarySnippet,
+    Categorization,
 } from "../props";
 
 const bob: LayerProject = {
@@ -77,6 +78,12 @@ const bob: LayerProject = {
         {
             title: RiskSummarySnippet.TitleCentralizedSequencer,
             content: RiskSummarySnippet.RiskSummaryCentralizedSequencer,
+        },
+    ],
+    categorization: [
+        {
+            title: Categorization.NoBridgeTitle,
+            content: Categorization.NoBridgeSnippet,
         },
     ],
     riskAnalysis: [

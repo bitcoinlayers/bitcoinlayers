@@ -12,6 +12,7 @@ import {
     RiskCategory,
     TokenSnippet,
     RiskSummarySnippet,
+    Categorization,
 } from "../props";
 
 const bsquared: LayerProject = {
@@ -77,6 +78,12 @@ const bsquared: LayerProject = {
                 title: RiskSummarySnippet.TitleCentralizedSequencer,
                 content: RiskSummarySnippet.RiskSummaryCentralizedSequencer,
             }
+        ],
+        categorization: [
+            {
+                title: Categorization.NoBridgeTitle,
+                content: Categorization.NoBridgeSnippet,
+            },
         ],
         riskAnalysis: [
         {
