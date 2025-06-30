@@ -17,6 +17,7 @@ import {
     BitcoinSecuritySnippet,
     RiskSummarySnippet,
     Notice,
+    Categorization,
 } from "../props";
 import { tokenToString } from "typescript";
 import { Rubik_Vinyl } from "next/font/google";
@@ -77,6 +78,12 @@ const babylon: LayerProject = {
                 title: RiskSummarySnippet.TitleAlternativeL1,
                 content: RiskSummarySnippet.RiskSummaryAlternativeL1,
             }
+        ],
+        categorization: [
+            {
+                title: Categorization.NoBridgeTitle,
+                content: Categorization.NoBridgeSnippet,
+            },
         ],
         riskAnalysis: [
         {
@@ -166,16 +173,6 @@ const babylon: LayerProject = {
                 {
                     title: "Onchain applications",
                     content: `${UseCaseSnippet.OnchainApps}\n\nDeploying an application on Babylon is currently permissioned. Developers must apply and be approved through Babylon governance to currently deploy on Babylon Genesis.`,
-                },
-            ],
-        },
-        {
-            id: "disclaimers",
-            title: "Disclaimers",
-            content: [
-                {
-                    title: "Bitcoin Layers runs a Babylon Genesis validator",
-                    content: "A company that supports the Bitcoin Layers project runs a validator for Babylon Genesis on behalf of Bitcoin Layers. Some rewards earned from this validator are used to fund Bitcoin Layers research and infrastructure. Other rewards are staked or used for other purposes (e.g. governance)."
                 },
             ],
         },

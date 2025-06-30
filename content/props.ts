@@ -110,6 +110,11 @@ export enum Notice {
     ClaimBitcoinLayer = "This network is denominated in BTC.",
 }
 
+export enum Categorization {
+    NoBridgeTitle = "The project does not have an enshrined bitcoin bridge",
+    NoBridgeSnippet = "The project does not have an enshrined bitcoin bridge that meets our sidesystem standards. Our standards require sidesystem's enshinred bridge programs to have at least 5 signers with 4 of those signers being external to the project's primary development organization.",
+}
+
 export enum BitcoinLayer {
     Yes = "The project meets our technical standards to be considered a bitcoin layer",
 }
@@ -511,6 +516,7 @@ export interface LayerProject extends BaseProject {
     feeToken: string;
     riskAnalysis: RiskSection[];
     riskSummary?: { title?: string; content: string }[];
+    categorization?: { title?: string; content: string }[];
 }
 
 export type Project = InfrastructureProject | LayerProject;

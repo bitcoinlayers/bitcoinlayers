@@ -9,6 +9,7 @@ import LayerTVLChart from "@/components/charts/layer-tvl-chart";
 import ProjectContractAddresses from "@/components/project-contract-addresses";
 import ManualContractAddresses from "@/components/manual-contract-addresses";
 import RiskSummary from "@/components/shared/risk-summary";
+import Categorization from "@/components/shared/categorization";
 import AlternativeBanner from "@/components/alternative-banner";
 import { EntityCategory } from "@/content/props";
 
@@ -61,6 +62,7 @@ export default async function LayerPage(props: {
                     <LayerOverviewAlt layer={layer} />
                     <LayerTVLChart />
                     <RiskSummary content={layer.riskSummary || []} />
+                    <Categorization content={layer.categorization || []} layer={layer} />
                     {!layer.underReview && (
                         <RiskAnalysis
                             riskAnalysis={layer.riskAnalysis}
