@@ -7,7 +7,6 @@ import liquidProject from "../content/layers/liquid";
 import mercurylayerProject from "../content/layers/mercurylayer";
 import rootstockProject from "../content/layers/rootstock";
 import stacksProject from "../content/layers/stacks";
-import babylonProject from "../content/layers/babylon";
 import bobProject from "../content/layers/bob";
 import bsquaredProject from "../content/layers/bsquared";
 import merlinProject from "../content/layers/merlin";
@@ -44,6 +43,7 @@ import berachainProject from "../content/layers/berachain";
 import sonicProject from "../content/layers/sonic";
 import hyperliquidProject from "@/content/layers/hyperliquid";
 import mezoProject from "@/content/layers/mezo";
+import babylongenesisProject from "@/content/layers/babylongenesis";
 
 const core: LayerProject = coreProject;
 const internetcomputer: LayerProject = internetcomputerProject;
@@ -52,7 +52,7 @@ const liquid: LayerProject = liquidProject;
 const mercurylayer: LayerProject = mercurylayerProject;
 const rootstock: LayerProject = rootstockProject;
 const stacks: LayerProject = stacksProject;
-const babylon: LayerProject = babylonProject;
+const babylongenesis: LayerProject = babylongenesisProject;
 const bob: LayerProject = bobProject;
 const bsquared: LayerProject = bsquaredProject;
 const merlin: LayerProject = merlinProject;
@@ -98,7 +98,7 @@ export const allLayers: LayerProject[] = [
     mercurylayer,
     rootstock,
     stacks,
-    babylon,
+    babylongenesis,
     bob,
     bsquared,
     merlin,

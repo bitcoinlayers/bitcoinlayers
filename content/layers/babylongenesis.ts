@@ -1,4 +1,3 @@
-import Risk from "@/components/layer/layerTableItemRisk";
 import {
     LayerProject,
     Type,
@@ -19,13 +18,10 @@ import {
     Notice,
     Categorization,
 } from "../props";
-import { tokenToString } from "typescript";
-import { Rubik_Vinyl } from "next/font/google";
-import RiskSummary from "@/components/shared/risk-summary";
 
 const babylon: LayerProject = {
     type: Type.Layer,
-    slug: "babylon",
+    slug: "babylongenesis",
     title: "Babylon",
     entityType: EntityType.Anchor,
     entityCategory: EntityCategory.Integrated,
