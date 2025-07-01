@@ -161,6 +161,75 @@ const NetworkCard = ({ networkSlug }: { networkSlug: string }) => {
 };
 
 // Toggle buttons component for custody mechanisms
+const colorMap = {
+  blue: {
+    from: "from-blue-50",
+    to: "to-blue-100", 
+    darkFrom: "dark:from-blue-900/20",
+    darkTo: "dark:to-blue-800/20",
+    border: "border-blue-200",
+    darkBorder: "dark:border-blue-800",
+    ring: "ring-blue-500",
+    text: "text-blue-600",
+    darkText: "dark:text-blue-400",
+    bold: "text-blue-900",
+    darkBold: "dark:text-blue-100",
+    icon: "text-blue-500",
+    panelBorder: "border-blue-200",
+    panelDarkBorder: "dark:border-blue-800",
+    panelText: "text-blue-900",
+    panelDarkText: "dark:text-blue-100",
+    closeText: "text-blue-600",
+    closeDarkText: "dark:text-blue-400",
+    closeHover: "hover:text-blue-800",
+    closeDarkHover: "dark:hover:text-blue-200",
+  },
+  green: {
+    from: "from-green-50",
+    to: "to-green-100",
+    darkFrom: "dark:from-green-900/20", 
+    darkTo: "dark:to-green-800/20",
+    border: "border-green-200",
+    darkBorder: "dark:border-green-800",
+    ring: "ring-green-500",
+    text: "text-green-600",
+    darkText: "dark:text-green-400",
+    bold: "text-green-900",
+    darkBold: "dark:text-green-100",
+    icon: "text-green-500",
+    panelBorder: "border-green-200",
+    panelDarkBorder: "dark:border-green-800",
+    panelText: "text-green-900",
+    panelDarkText: "dark:text-green-100",
+    closeText: "text-green-600",
+    closeDarkText: "dark:text-green-400",
+    closeHover: "hover:text-green-800",
+    closeDarkHover: "dark:hover:text-green-200",
+  },
+  purple: {
+    from: "from-purple-50",
+    to: "to-purple-100",
+    darkFrom: "dark:from-purple-900/20",
+    darkTo: "dark:to-purple-800/20", 
+    border: "border-purple-200",
+    darkBorder: "dark:border-purple-800",
+    ring: "ring-purple-500",
+    text: "text-purple-600",
+    darkText: "dark:text-purple-400",
+    bold: "text-purple-900",
+    darkBold: "dark:text-purple-100",
+    icon: "text-purple-500",
+    panelBorder: "border-purple-200",
+    panelDarkBorder: "dark:border-purple-800",
+    panelText: "text-purple-900",
+    panelDarkText: "dark:text-purple-100",
+    closeText: "text-purple-600",
+    closeDarkText: "dark:text-purple-400",
+    closeHover: "hover:text-purple-800",
+    closeDarkHover: "dark:hover:text-purple-200",
+  },
+};
+
 const CustodyToggleButtons = ({ 
   selectedMechanism, 
   onMechanismClick 
@@ -169,9 +238,9 @@ const CustodyToggleButtons = ({
   onMechanismClick: (mechanism: string) => void;
 }) => {
   const mechanisms = [
-    { key: CustodyTitle.BitcoinNative, icon: BitcoinIcon, color: "blue" },
-    { key: CustodyTitle.Distributed, icon: NetworkIcon, color: "green" },
-    { key: CustodyTitle.Centralized, icon: PiggyBankIcon, color: "purple" }
+    { key: CustodyTitle.BitcoinNative, icon: BitcoinIcon, color: "blue" as const },
+    { key: CustodyTitle.Distributed, icon: NetworkIcon, color: "green" as const },
+    { key: CustodyTitle.Centralized, icon: PiggyBankIcon, color: "purple" as const }
   ];
 
   return (
@@ -180,29 +249,30 @@ const CustodyToggleButtons = ({
         const mechanism = custodyMechanisms[key];
         const networkCount = getNetworksByCustodyType(key).length;
         const isActive = selectedMechanism === key;
+        const buttonColorClasses = colorMap[color];
         
         return (
           <button
             key={key}
-            className={`bg-gradient-to-br from-${color}-50 to-${color}-100 dark:from-${color}-900/20 dark:to-${color}-800/20 rounded-lg p-4 border border-${color}-200 dark:border-${color}-800 cursor-pointer transition-all hover:shadow-md ${
-              isActive ? `ring-2 ring-${color}-500 shadow-lg` : ""
+            className={`bg-gradient-to-br ${buttonColorClasses.from} ${buttonColorClasses.to} ${buttonColorClasses.darkFrom} ${buttonColorClasses.darkTo} rounded-lg p-4 border ${buttonColorClasses.border} ${buttonColorClasses.darkBorder} cursor-pointer transition-all hover:shadow-md ${
+              isActive ? `ring-2 ${buttonColorClasses.ring} shadow-lg` : ""
             }`}
             onClick={() => onMechanismClick(key)}
           >
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">
-                <p className={`text-sm font-medium text-${color}-600 dark:text-${color}-400 flex items-center`}>
+                <p className={`text-sm font-medium ${buttonColorClasses.text} ${buttonColorClasses.darkText} flex items-center`}>
                   {mechanism.label}
-                  <ChevronDown className={`ml-1 h-4 w-4 text-${color}-500 transition-transform ${isActive ? 'rotate-180' : ''}`} />
+                  <ChevronDown className={`ml-1 h-4 w-4 ${buttonColorClasses.icon} transition-transform ${isActive ? 'rotate-180' : ''}`} />
                 </p>
               </div>
               <div className="text-left">
-                <p className={`text-2xl font-bold text-${color}-900 dark:text-${color}-100`}>
+                <p className={`text-2xl font-bold ${buttonColorClasses.bold} ${buttonColorClasses.darkBold}`}>
                   {networkCount}
                 </p>
               </div>
               <div className="flex flex-col items-center">
-                <Icon className={`h-8 w-8 text-${color}-500`} />
+                <Icon className={`h-8 w-8 ${buttonColorClasses.icon}`} />
               </div>
             </div>
           </button>
@@ -237,17 +307,18 @@ const MechanismContentPanel = ({
   };
   
   const color = getColorClass(selectedMechanism);
+  const colorClasses = colorMap[color as keyof typeof colorMap];
   
   return (
     <div className="mt-6 mb-6 animate-in slide-in-from-top-2 duration-300">
-      <div className={`bg-white dark:bg-gray-900/50 rounded-lg p-6 border border-${color}-200 dark:border-${color}-800 shadow-lg`}>
+      <div className={`bg-white dark:bg-gray-900/50 rounded-lg p-6 border ${colorClasses?.panelBorder || 'border-gray-200'} ${colorClasses?.panelDarkBorder || 'dark:border-gray-800'} shadow-lg`}>
         <div className="flex items-center justify-between mb-4">
-          <h3 className={`text-xl font-semibold text-${color}-900 dark:text-${color}-100`}>
+          <h3 className={`text-xl font-semibold ${colorClasses?.panelText || 'text-gray-900'} ${colorClasses?.panelDarkText || 'dark:text-gray-100'}`}>
             {mechanism.label} Custody
           </h3>
           <button
             onClick={onClose}
-            className={`text-${color}-600 dark:text-${color}-400 hover:text-${color}-800 dark:hover:text-${color}-200 transition-colors`}
+            className={`${colorClasses?.closeText || 'text-gray-600'} ${colorClasses?.closeDarkText || 'dark:text-gray-400'} ${colorClasses?.closeHover || 'hover:text-gray-800'} ${colorClasses?.closeDarkHover || 'dark:hover:text-gray-200'} transition-colors`}
           >
             <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
