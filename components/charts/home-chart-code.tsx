@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/card";
 
 import React, { useState } from "react";
-import { BitcoinIcon, NetworkIcon, PiggyBankIcon } from "lucide-react";
+import { BitcoinIcon, NetworkIcon, PiggyBankIcon, ChevronDown, ChevronRight } from "lucide-react";
 import { allLayers } from "@/util/layer_index";
 import { CustodyTitle } from "@/content/props";
 import { parseTextWithLinks } from "@/util/parseTextWithLinks";
@@ -190,10 +190,13 @@ const CustodyToggleButtons = ({
             onClick={() => onMechanismClick(key)}
           >
             <div className="flex items-center justify-between">
-              <div className="text-left">
-                <p className={`text-sm font-medium text-${color}-600 dark:text-${color}-400`}>
+              <div className="flex items-center gap-2">
+                <p className={`text-sm font-medium text-${color}-600 dark:text-${color}-400 flex items-center`}>
                   {mechanism.label}
+                  <ChevronDown className={`ml-1 h-4 w-4 text-${color}-500 transition-transform ${isActive ? 'rotate-180' : ''}`} />
                 </p>
+              </div>
+              <div className="text-left">
                 <p className={`text-2xl font-bold text-${color}-900 dark:text-${color}-100`}>
                   {networkCount}
                 </p>
