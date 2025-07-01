@@ -48,7 +48,7 @@ const RiskSummaryDialog: React.FC<RiskSummaryDialogProps> = ({ layer, riskSummar
                     }}
                 >
                     <DialogTitle className="sr-only">
-                        {layer.title} - Risk Summary
+                        {layer.title}
                     </DialogTitle>
                     <div className="space-y-6">
                         {/* Network Header */}
@@ -65,7 +65,7 @@ const RiskSummaryDialog: React.FC<RiskSummaryDialogProps> = ({ layer, riskSummar
                             />
                             <div>
                                 <h3 className="text-xl font-medium text-foreground" style={{ lineHeight: "28px" }}>
-                                    {layer.title} - Risk Summary
+                                    {layer.title}
                                 </h3>
                             </div>
                         </div>

@@ -125,7 +125,7 @@ const CustodyTypeDialog: React.FC<CustodyTypeDialogProps> = ({ layer }) => {
                         {/* Peg Selection */}
                         {pegs.length > 1 && (
                             <div className="space-y-3">
-                                <h3 className="text-md font-semibold text-foreground">Select Bitcoin Asset:</h3>
+                                <h3 className="text-md font-semibold text-foreground">Select Wrapped Bitcoin Asset:</h3>
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                                     {pegs.map((peg) => (
                                         <button
