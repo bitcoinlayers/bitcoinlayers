@@ -41,8 +41,7 @@ type TableTabKey =
     | "Type"
     | "Risk Summary"
     | "BTC Pegs"
-    | "Custody Type"
-    | "BTC Supply";
+    | "Custody Type";
 
 interface Props {
     data: LayerProject[];
@@ -85,7 +84,7 @@ const LayerTable = ({ data, headers }: Props) => {
     });
 
     const [sortBy, setSortBy] = useQueryState("sortBy", {
-        defaultValue: "BTC Supply",
+        defaultValue: "Name",
     });
     const [sortOrder, setSortOrder] = useQueryState("sortOrder", {
         defaultValue: "desc",
@@ -148,10 +147,6 @@ const LayerTable = ({ data, headers }: Props) => {
                 case "Risk Summary":
                     valueA = a.riskSummary?.join(",") || "";
                     valueB = b.riskSummary?.join(",") || "";
-                    break;
-                case "BTC Supply":
-                    valueA = totaledBalances[a.slug]?.totalAmount ?? -Infinity;
-                    valueB = totaledBalances[b.slug]?.totalAmount ?? -Infinity;
                     break;
                 default:
                     return 0;
@@ -355,61 +350,6 @@ const LayerTable = ({ data, headers }: Props) => {
                                                     tokens={tokensMap[item.slug.toLowerCase()] || []}
                                                     networkSlug={item.slug}
                                                 />
-                                            )}
-                                        </td>
-                                    )}
-                                    {(!isMobile ||
-                                        mobileActiveTab === "BTC Supply") && (
-                                        <td className="lg:px-6 px-4 py-3 lg:py-4">
-                                            {item.underReview ||
-                                            (Object.keys(
-                                                totaledBalances,
-                                            ).find(
-                                                (key) =>
-                                                    key.toLowerCase() ===
-                                                    item.title.toLowerCase(),
-                                            ) === undefined &&
-                                                (item.btcLocked === null ||
-                                                    isNaN(
-                                                        item.btcLocked,
-                                                    ))) ? (
-                                                <Link href={`/layers/${item.slug}`}>
-                                                    <div className="font-light">
-                                                        Unavailable
-                                                    </div>
-                                                </Link>
-                                            ) : (
-                                                <SupplyDistributionHoverCard
-                                                    tokens={tokensMap[item.slug.toLowerCase()] || []}
-                                                    totalAmount={Number(
-                                                        totaledBalances[
-                                                            item.slug
-                                                        ]?.totalAmount ??
-                                                            item.btcLocked,
-                                                    )}
-                                                    networkName={item.title}
-                                                >
-                                                    <Link 
-                                                        href={`/layers/${item.slug}`}
-                                                        className="hover:underline cursor-pointer"
-                                                    >
-                                                        <div>
-                                                            ₿{" "}
-                                                            {Number(
-                                                                totaledBalances[
-                                                                    item.slug
-                                                                ]?.totalAmount ??
-                                                                    item.btcLocked,
-                                                            ).toLocaleString(
-                                                                "en-US",
-                                                                {
-                                                                    minimumFractionDigits: 0,
-                                                                    maximumFractionDigits: 0,
-                                                                },
-                                                            )}
-                                                        </div>
-                                                    </Link>
-                                                </SupplyDistributionHoverCard>
                                             )}
                                         </td>
                                     )}
