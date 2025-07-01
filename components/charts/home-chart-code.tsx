@@ -468,13 +468,13 @@ export default function CustodyChart({
           <div className="text-sm text-gray-500 dark:text-gray-400">
             Analyze custody mechanisms across {totalNetworksWithCustody} Bitcoin L2 networks
           </div>
-          <a
+          <Link
             href="/layers"
             className="inline-flex items-center text-sm font-medium text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors"
           >
             View all layers
             <span className="ml-1">→</span>
-          </a>
+          </Link>
         </div>
       </CardContent>
     </Card>
