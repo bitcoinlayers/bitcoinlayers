@@ -29,8 +29,20 @@ export default function Home() {
                     imageClassName="bottom-[6px] right-3 w-4 h-4"
                 />
             </div>
-            {showChart && <ChartSwitch />}
-            <TableSwitch />
+            {/* For Bitcoin Native view: show table first, then chart */}
+            {view === "networks" && (
+                <>
+                    <TableSwitch />
+                    {showChart && <ChartSwitch />}
+                </>
+            )}
+            {/* For all other views: show chart first, then table */}
+            {view !== "networks" && (
+                <>
+                    {showChart && <ChartSwitch />}
+                    <TableSwitch />
+                </>
+            )}
             <CtaCard />
             <InfoCardGrid />
         </div>
