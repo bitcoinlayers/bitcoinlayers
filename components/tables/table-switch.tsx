@@ -109,11 +109,15 @@ function getSortedDataAndHeaders(view: string, subView: string) {
                         mobileLabel: "Risk",
                     },
                     {
+                        name: "Custody Type",
+                        showSorting: false,
+                        mobileLabel: "Custody",
+                    },
+                    {
                         name: "BTC Pegs",
                         showSorting: false,
                         mobileLabel: "Pegs",
                     },
-                    { name: "BTC Supply", showSorting: true, mobileLabel: "BTC" },
                 ];
 
                 return { sortedData: alternativeLayers, headers: alternativeHeaders };
@@ -164,31 +168,35 @@ function getSortedDataAndHeaders(view: string, subView: string) {
                     ...new Set(integratedLayers.map((layer) => layer.entityType)),
                 ];
 
-                const integratedHeaders = [
-                    { name: "Name", showSorting: true, mobileLabel: "Name" },
-                    {
-                        name: "Type",
-                        showSorting: true,
-                        mobileLabel: "Type",
-                        filterOptions: integratedTypeFilters,
-                    },
-                    {
-                        name: "Trust Assumptions",
-                        showSorting: false,
-                        mobileLabel: "Trust",
-                    },
-                    {
-                        name: "Risk Summary",
-                        showSorting: false,
-                        mobileLabel: "Risk",
-                    },
-                    {
-                        name: "BTC Pegs",
-                        showSorting: false,
-                        mobileLabel: "Pegs",
-                    },
-                    { name: "BTC Supply", showSorting: true, mobileLabel: "BTC" },
-                ];
+                            const integratedHeaders = [
+                { name: "Name", showSorting: true, mobileLabel: "Name" },
+                {
+                    name: "Type",
+                    showSorting: true,
+                    mobileLabel: "Type",
+                    filterOptions: integratedTypeFilters,
+                },
+                {
+                    name: "Trust Assumptions",
+                    showSorting: false,
+                    mobileLabel: "Trust",
+                },
+                {
+                    name: "Risk Summary",
+                    showSorting: false,
+                    mobileLabel: "Risk",
+                },
+                {
+                    name: "Custody Type",
+                    showSorting: false,
+                    mobileLabel: "Custody",
+                },
+                {
+                    name: "BTC Pegs",
+                    showSorting: false,
+                    mobileLabel: "Pegs",
+                },
+            ];
 
                 return { sortedData: integratedLayers, headers: integratedHeaders };
             } else {
@@ -260,11 +268,15 @@ function getSortedDataAndHeaders(view: string, subView: string) {
                     mobileLabel: "Risk",
                 },
                 {
+                    name: "Custody Type",
+                    showSorting: false,
+                    mobileLabel: "Custody",
+                },
+                {
                     name: "BTC Pegs",
                     showSorting: false,
                     mobileLabel: "Pegs",
                 },
-                { name: "BTC Supply", showSorting: true, mobileLabel: "BTC" },
             ];
 
             return { sortedData: sortedSidesystems, headers: sidesystemHeaders };
@@ -304,7 +316,6 @@ function getSortedDataAndHeaders(view: string, subView: string) {
                     showSorting: false,
                     mobileLabel: "Pegs",
                 },
-                { name: "BTC Supply", showSorting: true, mobileLabel: "BTC" },
             ];
 
             return { sortedData: sortedBitcoinNativeLayers, headers: bitcoinNativeHeaders };

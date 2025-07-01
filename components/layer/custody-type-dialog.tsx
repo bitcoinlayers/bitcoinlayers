@@ -87,6 +87,41 @@ const CustodyTypeDialog: React.FC<CustodyTypeDialogProps> = ({ layer }) => {
                         {layer.title} - Custody Type
                     </DialogTitle>
                     <div className="space-y-6">
+                        {/* Combined Network and Custody Info */}
+                        {selectedPegData && (
+                            <div className="space-y-4">
+                                {/* Network Header */}
+                                <div className="flex items-center gap-3">
+                                    <Image
+                                        src={`/logos/${layer.slug}.png`}
+                                        alt={layer.title}
+                                        width={32}
+                                        height={32}
+                                        className="rounded-full object-cover bg-muted"
+                                        onError={(e) => {
+                                            (e.target as HTMLImageElement).src = '/logos/default.png';
+                                        }}
+                                    />
+                                    <div>
+                                        <h3 className="text-xl font-medium text-foreground" style={{ lineHeight: "28px" }}>
+                                            {layer.title} - Custody Model{pegs.length > 1 ? 's' : ''}
+                                        </h3>
+                                    </div>
+                                </div>
+                                
+                                {/* Underline separator */}
+                                <hr className="border-border" />
+                                
+                                {/* Custody Details */}
+                                <div>
+                                    <p className="body_subsection text-muted-foreground mt-6">{selectedPegData.title}</p>
+                                    <div className="body_paragraph !text-foreground mt-3">
+                                        {parseTextWithLinks(selectedPegData.content)}
+                                    </div>
+                                </div>
+                            </div>
+                        )}
+
                         {/* Peg Selection */}
                         {pegs.length > 1 && (
                             <div className="space-y-3">
@@ -115,41 +150,6 @@ const CustodyTypeDialog: React.FC<CustodyTypeDialogProps> = ({ layer }) => {
                                             </div>
                                         </button>
                                     ))}
-                                </div>
-                            </div>
-                        )}
-
-                        {/* Combined Network and Custody Info */}
-                        {selectedPegData && (
-                            <div className="space-y-4">
-                                {/* Network Header */}
-                                <div className="flex items-center gap-3">
-                                    <Image
-                                        src={`/logos/${layer.slug}.png`}
-                                        alt={layer.title}
-                                        width={32}
-                                        height={32}
-                                        className="rounded-full object-cover bg-muted"
-                                        onError={(e) => {
-                                            (e.target as HTMLImageElement).src = '/logos/default.png';
-                                        }}
-                                    />
-                                    <div>
-                                        <h3 className="text-xl font-medium text-foreground" style={{ lineHeight: "28px" }}>
-                                            {layer.title} - Custody Model
-                                        </h3>
-                                    </div>
-                                </div>
-                                
-                                {/* Underline separator */}
-                                <hr className="border-border" />
-                                
-                                {/* Custody Details */}
-                                <div>
-                                    <p className="body_subsection text-muted-foreground mt-6">{selectedPegData.title}</p>
-                                    <div className="body_paragraph !text-foreground mt-3">
-                                        {parseTextWithLinks(selectedPegData.content)}
-                                    </div>
                                 </div>
                             </div>
                         )}
