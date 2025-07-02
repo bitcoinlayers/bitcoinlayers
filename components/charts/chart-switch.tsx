@@ -2,6 +2,7 @@
 
 import { useQueryState } from "nuqs";
 import AggregatedTVLChart from "@/components/charts/aggregated-tvl-chart";
+import HomeChart from "@/components/charts/home-chart";
 // import getHistoricalSuppliesByTokenImpl from "@/hooks/get-historical-supplies-by-tokenimpl";
 import getHistoricalSuppliesByTokenProject from "@/hooks/get-historical-supplies-by-tokenproject";
 import getHistoricalSuppliesByNetwork from "@/hooks/get-historical-supplies-by-network";
@@ -83,8 +84,19 @@ export default function ChartSwitch() {
         // },
     };
 
+    // Always call the hook to maintain consistent hook order
     const config = chartConfig[effectiveView as keyof typeof chartConfig];
-    const { data, isLoading, error } = config.useDataHook();
+    const { data, isLoading, error } = config?.useDataHook() || { data: null, isLoading: false, error: null };
+
+    // Show the new home chart for Bitcoin Native (networks) view
+    if (effectiveView === "networks") {
+        return <HomeChart />;
+    }
+
+    // Return null if no config found for this view
+    if (!config) {
+        return null;
+    }
 
     return (
         <AggregatedTVLChart

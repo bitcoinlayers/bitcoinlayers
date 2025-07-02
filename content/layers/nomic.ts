@@ -17,6 +17,7 @@ import {
     TechnologySnippet,
     UseCaseSnippet,
     RiskSummarySnippet,
+    CustodyTitle,
 } from "../props";
 
 const nomic: LayerProject = {
@@ -25,6 +26,7 @@ const nomic: LayerProject = {
     title: "Nomic",
     entityType: EntityType.PoSNetwork,
     entityCategory: EntityCategory.Sidesystem,
+    custodyTitle: CustodyTitle.Distributed,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,

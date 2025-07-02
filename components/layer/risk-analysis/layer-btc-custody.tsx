@@ -7,6 +7,7 @@ import {
     getRiskColorText,
     getRiskEmoji,
 } from "@/util/riskColors";
+import Image from "next/image";
 
 interface Peg {
     name: string;
@@ -142,9 +143,11 @@ const BtcCustody: React.FC<BtcCustodyProps> = ({ category, pegs = [] }) => {
                                         >
                                             <div className="flex items-center gap-3">
                                                 {/* Actual peg logo from logos directory */}
-                                                <img
+                                                <Image
                                                     src={`/logos/${peg.infrastructureSlug}.png`}
                                                     alt={peg.name}
+                                                    width={24}
+                                                    height={24}
                                                     className="w-6 h-6 rounded-full object-cover bg-muted"
                                                     onError={(e) => {
                                                         (e.target as HTMLImageElement).src = '/logos/default.png';

@@ -131,6 +131,12 @@ export enum OtherIcons {
     Hybrid = "This protocol's VM can interact with L1 bitcoin transactions.",
 }
 
+export enum CustodyTitle {
+    BitcoinNative = "Bitcoin Native",
+    Distributed = "Distributed Third-Party",
+    Centralized = "Centralized Third-Party",
+}
+
 export enum Site {
     Website = "Website",
     Docs = "Docs",
@@ -499,6 +505,7 @@ export interface BaseProject {
     bitcoinLayer?: BitcoinLayer;
     unilateralExit?: UnilateralExit;
     otherIcons?: OtherIcons;
+    custodyTitle?: CustodyTitle;
     bitcoinOnly: boolean;
     links: { text: Site | string; url: string | URL }[];
     description: string;

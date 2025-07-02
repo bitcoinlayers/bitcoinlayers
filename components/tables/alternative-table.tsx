@@ -88,6 +88,8 @@ const AlternativeTable = ({ data, headers }: Props) => {
         defaultValue: "desc",
     });
 
+    const [pegSupplyView, setPegSupplyView] = useState<"pegs" | "supply">("pegs");
+
     const { data: currentSupplies, isLoading } =
         getCurrentSuppliesByTokenimpl();
 
@@ -209,6 +211,8 @@ const AlternativeTable = ({ data, headers }: Props) => {
                             onSort={handleSort}
                             sortBy={sortBy}
                             sortOrder={sortOrder}
+                            pegSupplyView={pegSupplyView}
+                            onPegSupplyViewChange={setPegSupplyView}
                         />
                         <tbody className="gap-x-8">
                             {filteredData.map((item, index) => (
@@ -330,13 +334,67 @@ const AlternativeTable = ({ data, headers }: Props) => {
                                     {(!isMobile ||
                                         mobileActiveTab === "BTC Pegs") && (
                                         <td className="lg:px-4 px-4 py-3 lg:py-4 border-border">
-                                            {isLoading ? (
-                                                <div>Loading...</div>
+                                            {pegSupplyView === "pegs" ? (
+                                                isLoading ? (
+                                                    <div>Loading...</div>
+                                                ) : (
+                                                    <TokenList
+                                                        tokens={tokensMap[item.slug.toLowerCase()] || []}
+                                                        networkSlug={item.slug}
+                                                    />
+                                                )
                                             ) : (
-                                                <TokenList
-                                                    tokens={tokensMap[item.slug.toLowerCase()] || []}
-                                                    networkSlug={item.slug}
-                                                />
+                                                // Supply view
+                                                item.underReview ||
+                                                (Object.keys(
+                                                    totaledBalances,
+                                                ).find(
+                                                    (key) =>
+                                                        key.toLowerCase() ===
+                                                        item.title.toLowerCase(),
+                                                ) === undefined &&
+                                                    (item.btcLocked === null ||
+                                                        isNaN(
+                                                            item.btcLocked,
+                                                        ))) ? (
+                                                    <Link href={`/layers/${item.slug}`}>
+                                                        <div className="font-light">
+                                                            Unavailable
+                                                        </div>
+                                                    </Link>
+                                                ) : (
+                                                    <SupplyDistributionHoverCard
+                                                        tokens={tokensMap[item.slug.toLowerCase()] || []}
+                                                        totalAmount={Number(
+                                                            totaledBalances[
+                                                                item.slug
+                                                            ]?.totalAmount ??
+                                                                item.btcLocked,
+                                                        )}
+                                                        networkName={item.title}
+                                                    >
+                                                        <Link 
+                                                            href={`/layers/${item.slug}`}
+                                                            className="hover:underline cursor-pointer"
+                                                        >
+                                                            <div>
+                                                                ₿{" "}
+                                                                {Number(
+                                                                    totaledBalances[
+                                                                        item.slug
+                                                                    ]?.totalAmount ??
+                                                                        item.btcLocked,
+                                                                ).toLocaleString(
+                                                                    "en-US",
+                                                                    {
+                                                                        minimumFractionDigits: 0,
+                                                                        maximumFractionDigits: 0,
+                                                                    },
+                                                                )}
+                                                            </div>
+                                                        </Link>
+                                                    </SupplyDistributionHoverCard>
+                                                )
                                             )}
                                         </td>
                                     )}
