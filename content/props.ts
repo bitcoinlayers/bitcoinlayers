@@ -307,6 +307,7 @@ export enum UseCaseSnippet { //TODO: Janusz to add more here
     TokenizedAssets = "The network enables developers and users alike to issue tokenized securities, stablecoins, and synthetic forms of cryptocurrencies.",
     IBCTransfers = "Using IBC, users can transfer tokens (including BTC-denominated tokens) to connected blockchains and engage in use-cases such as: 1) Get a USK loan on Kujira 2) Trade and provide liquidity on Osmosis 3) Trade perpetual swaps using Levana",
     OffchainTransfers = "The network itself can also be used for p2p payments denominated in BTC.",
+    AIAgents = "Template for a protocol that uses AI agents to interact with the network.",
     Template = "Template used for the template prop file.",
 }
 export enum KnowledgeBitSnippet { //TODO: Janusz to add more here

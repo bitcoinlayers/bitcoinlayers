@@ -22,10 +22,10 @@ import {
 
 const template: LayerProject = {
     type: Type.Layer,
-    slug: "slug",
-    title: "Title",
-    entityType: EntityType.Rollup,
-    entityCategory: EntityCategory.Sidesystem,
+    slug: "mode",
+    title: "Mode",
+    entityType: EntityType.AltRollup,
+    entityCategory: EntityCategory.Alt,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -38,8 +38,8 @@ const template: LayerProject = {
         RiskFactor.UnderReview,
     ],
     btcLocked: 0,
-    nativeToken: "TKN",
-    feeToken: "BTC",
+    nativeToken: "-",
+    feeToken: "-",
     notice: undefined,
     bitcoinOnly: false,
     links: [
@@ -84,12 +84,12 @@ const template: LayerProject = {
             content: "",
             pegs: [
                 {
-                    name: "Template BTC",
-                    infrastructureSlug: "templace-btc",
+                    name: "BitGo wBTC",
+                    infrastructureSlug: "bitgo-wbtc",
                     score: 0,
-                    tier: RiskFactor.High,
-                    title: "For an official two-way peg, you can write a customized title here.",
-                    content: `${TokenSnippet.TemplateBTC}\n\n`,
+                    tier: RiskFactor.VeryHigh,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.BitGowBTC}\n\n${TokenSnippet.smartcontractreview}\n\n`,
                 },
                 {
                     name: "Threshold tBTC",
@@ -120,16 +120,16 @@ const template: LayerProject = {
         {
             category: RiskCategory.DataAvailability,
             score: 0,
-            tier: RiskFactor.UnderReview,
-            title: "Add a custom title here",
-            content: ReviewSnippet.TemplateReview,
+            tier: RiskFactor.Medium,
+            title: "Ethereum satisifes the data availability requirement",
+            content: ReviewSnippet.EthereumRollupDA,
         },
         {
             category: RiskCategory.NetworkOperators,
             score: 0,
-            tier: RiskFactor.UnderReview,
-            title: "Add a custom title here",
-            content: `${ReviewSnippet.TemplateReview}\n\nAdd additional context with text if needed.`
+            tier: RiskFactor.VeryHigh,
+            title: "Users cannot propose their own blocks in event of liveness failures",
+            content: `${ReviewSnippet.FinalityAltRollupCentralizedProposer}\n\nAdd additional context with text if needed.`
         },
         {
             category: RiskCategory.FinalityGuarantees,
@@ -182,19 +182,19 @@ const template: LayerProject = {
                     content: [
                         {
                             title: "Add a prop saying if the network inherits security from bitcoin",
-                            content: BitcoinSecuritySnippet.Template,
+                            content: BitcoinSecuritySnippet.NoSecurity,
                         },
                         {
                             title: "Add a prop clarifying if the network uses an altcoin or is bitcoin denominated",
-                            content: BitcoinSecuritySnippet.Template,
+                            content: BitcoinSecuritySnippet.AltTokenFees,
                         },
                         {
                             title: "Add a prop clarifying if the network introduces MEV to bitcoin (if at all)",
-                            content: BitcoinSecuritySnippet.Template,
+                            content: BitcoinSecuritySnippet.CentralizedSequencerMEV,
                         },
                         {
                             title: "Add a prop clarifying if the network contributes to the security budget",
-                            content: BitcoinSecuritySnippet.Template,
+                            content: BitcoinSecuritySnippet.NoSecurityBudget,
                         },
                     ],
                 },
@@ -204,7 +204,7 @@ const template: LayerProject = {
                     content: [
                         {
                             title: "Add a prop on significant tech components. If there is no prop, consider adding one to the prop.ts file. If the tech component is highly customizeable, add text for the content.",
-                            content: TechnologySnippet.Template,
+                            content: TechnologySnippet.EVM,
                         },
                         {
                             title: "Add a prop on significant tech components. If there is no prop, consider adding one to the prop.ts file. If the tech component is highly customizeable, add text for the content.",
@@ -218,7 +218,11 @@ const template: LayerProject = {
                     content: [
                         {
                             title: "Add a prop on significant use cases.",
-                            content: UseCaseSnippet.Template,
+                            content: UseCaseSnippet.OnchainApps,
+                        },
+                        {
+                            title: "Add a prop on significant use cases.",
+                            content: UseCaseSnippet.AIAgents,
                         },
                     ],
                 },

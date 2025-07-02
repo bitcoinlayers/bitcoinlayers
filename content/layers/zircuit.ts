@@ -32,7 +32,7 @@ const template: LayerProject = {
     bridge: false,
     underReview: false,
     riskFactors: [
-        RiskFactor.UnderReview,
+        RiskFactor.VeryHigh,
         RiskFactor.UnderReview,
         RiskFactor.UnderReview,
         RiskFactor.UnderReview,
