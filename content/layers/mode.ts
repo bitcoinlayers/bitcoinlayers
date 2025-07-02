@@ -22,7 +22,7 @@ import {
 
 const template: LayerProject = {
     type: Type.Layer,
-    slug: "mode",
+    slug: "Mode",
     title: "Mode",
     entityType: EntityType.AltRollup,
     entityCategory: EntityCategory.Alt,
