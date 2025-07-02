@@ -15,6 +15,9 @@ import { CustodyTitle } from "@/content/props";
 import { parseTextWithLinks } from "@/util/parseTextWithLinks";
 import Link from "next/link";
 import Image from "next/image";
+import custodyTradeoffs from "./chart-content/custody-tradeoffs";
+import custodyTradeoffsDistributed from "./chart-content/custody-tradeoffs-distributed";
+import custodyTradeoffsCentralized from "./chart-content/custody-tradeoffs-centralized";
 
 type CustodyChartProps = {
   title?: string;
@@ -28,70 +31,13 @@ const custodyMechanisms = {
     description: "These protocols enable unilateral exits. Bitcoin native protocols can leverage payment channels, Arks, or Statechains to ensure users have a unilateral exit path. Trust assumptions differ between each design. Learn more below.",
   },
   [CustodyTitle.Distributed]: {
-    label: "Distributed",
-    description: "These protocols distribute trust across multiple parties through federations, multi-signature wallets, or Multi-Party Computation (MPC) schemes. While not fully self-custodial, they reduce single points of failure by requiring multiple entities to collude to steal funds. This includes federated bridges, threshold signatures, and validator-managed custody.",
+    label: "Distributed Third-Party",
+    description: "These protocols distribute third-party custody across multiple parties through federations, multi-sigs, or threshold signature schemes. While custodial, they reduce single points of failure by requiring multiple entities to collude to steal funds.",
   },
   [CustodyTitle.Centralized]: {
-    label: "Centralized",
-    description: "These protocols rely on centralized custodians or trusted third parties to hold Bitcoin reserves backing tokens on their networks. Users must trust these entities not to steal funds and to maintain proper reserves. This includes major centralized exchanges and institutional custody providers.",
+    label: "Centralized Third-Party",
+    description: "These protocols rely on a centralized third party to hold Bitcoin reserves backing tokens on their networks. Users must trust these entities not to steal funds and to maintain proper reserves.",
   },
-};
-
-// Detailed tradeoffs for each custody mechanism
-const custodyTradeoffs = {
-  [CustodyTitle.BitcoinNative]: {
-    title: "Bitcoin Native Custody Mechanisms",
-    subtitle: "Deep dive into different approaches to maintaining Bitcoin's security guarantees",
-    mechanisms: [
-      {
-        name: "Payment Channels",
-        description: "Payment channels using 2-of-2 multisigs",
-        pros: [
-          "Unilateral exit paths maintained",
-          "Mechanism to prevent fraud",
-          "Can be leveraged peer-to-peer",
-        ],
-        cons: [
-          "Requires active liquidity management",
-          "Channel capacity limitations",
-          "Need to monitor for force closures",
-          "Inbound liquidity bootstrapping challenges"
-        ],
-        riskLevel: "Low",
-        networks: ["lightning"]
-      },
-      {
-        name: "Statechains",
-        description: "Statechains using 2-of-2 multisigs (or MPC schemes)",
-        pros: [
-          "Unilateral exit paths maintained",
-          "No channel management overhead"
-        ],
-        cons: [
-          "Trust operators to delete keyshares held with previous owners",
-          "Key deletion not cryptographically verifiable",
-          "Previous owners can force current owners onchain"
-        ],
-        riskLevel: "Medium",
-        networks: ["spark"]
-      },
-      {
-        name: "Ark",
-        description: "Shared UTXO pools with virtual transaction trees",
-        pros: [
-          "Unilateral exit paths maintained",
-          "No channel management overhead"
-        ],
-        cons: [
-          "Interactivity: users must coordinate with ASP",
-          "ASP liquidity requirements",
-          "Operator can double-spend out-of-round transactions"
-        ],
-        riskLevel: "Medium",
-        networks: ["mercurylayer"]
-      }
-    ]
-  }
 };
 
 // Helper function to get networks by custody type
@@ -297,6 +243,22 @@ const MechanismContentPanel = ({
   const mechanism = custodyMechanisms[selectedMechanism as CustodyTitle];
   const networks = getNetworksByCustodyType(selectedMechanism as CustodyTitle);
   
+  // Get the correct tradeoffs object based on custody type
+  const getTradeoffsForCustodyType = (custodyType: string) => {
+    switch (custodyType) {
+      case CustodyTitle.BitcoinNative:
+        return custodyTradeoffs[CustodyTitle.BitcoinNative];
+      case CustodyTitle.Distributed:
+        return custodyTradeoffsDistributed[CustodyTitle.Distributed];
+      case CustodyTitle.Centralized:
+        return custodyTradeoffsCentralized[CustodyTitle.Centralized];
+      default:
+        return null;
+    }
+  };
+
+  const currentTradeoffs = getTradeoffsForCustodyType(selectedMechanism);
+  
   const getColorClass = (mechanismKey: string) => {
     switch (mechanismKey) {
       case CustodyTitle.BitcoinNative: return "blue";
@@ -336,14 +298,14 @@ const MechanismContentPanel = ({
               {parseTextWithLinks(mechanism.description)}
             </div>
             
-            {/* Learn More Button - only show for Bitcoin Native */}
-            {selectedMechanism === CustodyTitle.BitcoinNative && custodyTradeoffs[CustodyTitle.BitcoinNative] && (
+            {/* Learn More Button - show for all custody types that have tradeoffs */}
+            {currentTradeoffs && (
               <div className="mt-4">
                 <button
                   onClick={() => setShowTradeoffs(!showTradeoffs)}
-                  className="inline-flex items-center text-sm font-medium text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors"
+                  className={`inline-flex items-center text-sm font-medium ${colorClasses?.text || 'text-blue-600'} ${colorClasses?.darkText || 'dark:text-blue-400'} hover:${colorClasses?.closeHover || 'text-blue-700'} ${colorClasses?.closeDarkHover || 'dark:hover:text-blue-300'} transition-colors`}
                 >
-                  {showTradeoffs ? "Show less" : "Learn more about mechanisms"}
+                  {showTradeoffs ? "Show less" : "Learn more about different designs"}
                   <svg 
                     className={`ml-1 h-4 w-4 transition-transform ${showTradeoffs ? "rotate-180" : ""}`}
                     fill="none" 
@@ -358,19 +320,19 @@ const MechanismContentPanel = ({
           </div>
 
           {/* Expandable Tradeoffs Section */}
-          {showTradeoffs && selectedMechanism === CustodyTitle.BitcoinNative && custodyTradeoffs[CustodyTitle.BitcoinNative] && (
+          {showTradeoffs && currentTradeoffs && (
             <div className="animate-in slide-in-from-top-2 duration-300 border-t border-gray-200 dark:border-gray-700 pt-6">
               <div className="mb-4">
                 <h5 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2">
-                  {custodyTradeoffs[CustodyTitle.BitcoinNative].title}
+                  {currentTradeoffs.title}
                 </h5>
                 <p className="text-sm text-gray-600 dark:text-gray-400">
-                  {custodyTradeoffs[CustodyTitle.BitcoinNative].subtitle}
+                  {currentTradeoffs.subtitle}
                 </p>
               </div>
               
               <div className="space-y-6">
-                {custodyTradeoffs[CustodyTitle.BitcoinNative].mechanisms.map((mech, index) => (
+                {currentTradeoffs.mechanisms.map((mech, index) => (
                   <div key={index} className="bg-gray-50 dark:bg-gray-800/50 rounded-lg p-4 border border-gray-200 dark:border-gray-700">
                     <div className="flex items-start justify-between mb-3">
                       <div>
@@ -470,10 +432,10 @@ const MechanismContentPanel = ({
            )}
           
           {/* Networks Section - only show when tradeoffs are NOT expanded */}
-          {(!showTradeoffs || selectedMechanism !== CustodyTitle.BitcoinNative) && (
+          {!showTradeoffs && (
             <div>
               <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-3">
-                Networks using this mechanism ({networks.length})
+                Some networks using this mechanism
               </h4>
               {networks.length > 0 ? (
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
@@ -495,7 +457,7 @@ const MechanismContentPanel = ({
 };
 
 export default function CustodyChart({
-  title = "Bitcoin Layer 2 Custody Mechanisms",
+  title = "Custody mechanisms for Bitcoin Layers",
   description = "Explore how different L2 protocols secure user Bitcoin deposits"
 }: CustodyChartProps) {
   const [selectedMechanism, setSelectedMechanism] = useState<string | null>(null);
@@ -537,13 +499,13 @@ export default function CustodyChart({
         
         <div className="mt-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pt-4 border-t border-gray-200 dark:border-gray-700">
           <div className="text-sm text-gray-500 dark:text-gray-400">
-            Analyze custody mechanisms across {totalNetworksWithCustody} Bitcoin L2 networks
+            Learn more about different custody mechanisms for bitcoin layers
           </div>
           <Link
             href="/layers"
             className="inline-flex items-center text-sm font-medium text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors"
           >
-            View all layers
+            Head to bitcoinlayers.research
             <span className="ml-1">→</span>
           </Link>
         </div>

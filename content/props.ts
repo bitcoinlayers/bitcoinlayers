@@ -132,9 +132,9 @@ export enum OtherIcons {
 }
 
 export enum CustodyTitle {
-    BitcoinNative = "bitcoinnative",
-    Distributed = "distributed",
-    Centralized = "centralized",
+    BitcoinNative = "Bitcoin Native",
+    Distributed = "Distributed Third-Party",
+    Centralized = "Centralized Third-Party",
 }
 
 export enum Site {
