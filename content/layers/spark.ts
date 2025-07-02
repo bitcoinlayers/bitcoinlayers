@@ -69,6 +69,10 @@ const spark: LayerProject = {
             title: "Unilateral exits not live during beta release",
             content: RiskSummarySnippet.RiskStatechainNoExit,
         },
+        {
+            title: "Previous owner can broadcast their unilateral exit transaction",
+            content: RiskSummarySnippet.RiskStatechainPreviousOwner,
+        },
     ],
     riskAnalysis: [
         {
