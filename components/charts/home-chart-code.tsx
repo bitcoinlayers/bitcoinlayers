@@ -337,7 +337,7 @@ const MechanismContentPanel = ({
               <div className="space-y-6">
                 {currentTradeoffs.mechanisms.map((mech, index) => (
                   <div key={index} className="bg-gray-50 dark:bg-gray-800/50 rounded-lg p-4 border border-gray-200 dark:border-gray-700">
-                    <div className="flex items-start justify-between mb-3">
+                    <div className="mb-3">
                       <div>
                         <h6 className="font-semibold text-gray-900 dark:text-gray-100 mb-1">
                           {mech.name}
@@ -345,14 +345,6 @@ const MechanismContentPanel = ({
                         <p className="text-sm text-gray-600 dark:text-gray-400">
                           {mech.description}
                         </p>
-                      </div>
-                      <div className={`px-2 py-1 rounded-full text-xs font-medium ${
-                        mech.riskLevel === "Low" ? "bg-green-100 text-green-800 dark:bg-green-900/20 dark:text-green-400" :
-                        mech.riskLevel === "Medium-Low" ? "bg-yellow-100 text-yellow-800 dark:bg-yellow-900/20 dark:text-yellow-400" :
-                        mech.riskLevel === "Medium" ? "bg-orange-100 text-orange-800 dark:bg-orange-900/20 dark:text-orange-400" :
-                        "bg-gray-100 text-gray-800 dark:bg-gray-900/20 dark:text-gray-400"
-                      }`}>
-                        {mech.riskLevel} Risk
                       </div>
                     </div>
                     

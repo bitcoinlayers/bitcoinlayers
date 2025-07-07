@@ -46,9 +46,9 @@ const custodyTradeoffs = {
             "No channel management overhead"
           ],
           cons: [
-            "Interactivity: users must coordinate with ASP",
-            "ASP liquidity requirements",
-            "Operator can double-spend out-of-round transactions"
+            "Interactivity: users must coordinate with ASP periodically",
+            "ASPs have liquidity requirements",
+            "Operator, and previous owner, can double-spend out-of-round transactions"
           ],
           riskLevel: "Medium",
         }
