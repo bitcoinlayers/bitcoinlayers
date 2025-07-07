@@ -37,7 +37,7 @@ const template: LayerProject = {
         RiskFactor.UnderReview,
         RiskFactor.UnderReview,
     ],
-    btcLocked: 0,
+    btcLocked: NaN,
     nativeToken: "-",
     feeToken: "-",
     notice: undefined,
