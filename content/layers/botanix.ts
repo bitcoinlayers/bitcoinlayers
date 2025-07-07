@@ -134,7 +134,18 @@ const template: LayerProject = {
         },
     ],
     sections: [
+        {
+            id: "additionalconsiderations",
+            title: "Additional Considerations",
+            content: [
                 {
+                    title: "Node implementation is not open-source",
+                    content:
+                        "Botanix's consensus node implementation, based on CometBFT, is not open-source. There is also no public consensus explorer showing validator performance and uptime.",
+                },
+            ],
+        },        
+        {
                     id: "bitcoinsecurity",
                     title: "Bitcoin Security",
                     content: [
