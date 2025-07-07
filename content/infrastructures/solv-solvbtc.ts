@@ -9,6 +9,7 @@ import {
     AssessmentCategory,
     BTCWrapperTransparency,
     PegRiskSummarySnippet,
+    CustodyTitle,
 } from "../props";
 
 const solv: InfrastructureProject = {
@@ -16,11 +17,12 @@ const solv: InfrastructureProject = {
     slug: "solv-solvbtc",
     title: "Solv SolvBTC",
     entityType: EntityType.ReserveAsset,
+    custodyTitle: CustodyTitle.Centralized,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
     bridge: true,
-    underReview: true,
+    underReview: false,
     riskFactors: ["", ""],
     nativeToken: "",
     purpose: Purpose.General,

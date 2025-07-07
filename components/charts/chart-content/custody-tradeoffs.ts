@@ -36,10 +36,10 @@ const custodyTradeoffs = {
             "Previous owners can force current owners onchain"
           ],
           riskLevel: "Medium",
-          networks: ["spark"]
+          networks: ["spark", "mercurylayer"]
         },
         {
-          name: "Ark",
+          name: "Ark (coming soon)",
           description: "Shared UTXO pools with virtual transaction trees",
           pros: [
             "Unilateral exit paths maintained",
@@ -51,7 +51,6 @@ const custodyTradeoffs = {
             "Operator can double-spend out-of-round transactions"
           ],
           riskLevel: "Medium",
-          networks: ["mercurylayer"]
         }
       ]
     }

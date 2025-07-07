@@ -8,32 +8,30 @@ const custodyTradeoffs = {
       mechanisms: [
         {
           name: "Centralized Institutional Custody",
-          description: "Payment channels using 2-of-2 multisigs",
+          description: "Bitcoin backing wrapped tokens are secured by a single, institutional custodian",
           pros: [
-            "Unilateral exit paths maintained",
-            "Mechanism to prevent fraud",
-            "Can be leveraged peer-to-peer",
+            "Reputation damage incurred in case of fraud",
+            "Institutional custodians have refined key management processes",
           ],
           cons: [
-            "Requires active liquidity management",
-            "Channel capacity limitations",
-            "Need to monitor for force closures",
-            "Inbound liquidity bootstrapping challenges"
+            "A centralized party can steal the funds backing wrapped tokens",
+            "Tokens typically come with censorship controls, meaning users can be barred from using them",
+            "No recourse mechanism for users if funds are stolen or censored",
           ],
           riskLevel: "Low",
-          networks: ["lightning"]
+          networks: ["corn-btcn", "bitgo-wbtc", "coinbase-cbbtc", "kraken-kbtc", "binance-btcb", "solv-solvbtc",]
         },
         {
           name: "Chaumian Ecash",
-          description: "Statechains using 2-of-2 multisigs (or MPC schemes)",
+          description: "Chaumian ecash mints where bearer tokens are backed by BTC secured by a centralized custodian",
           pros: [
-            "Unilateral exit paths maintained",
-            "No channel management overhead"
+            "Multi-mint payments enable users to split their funds across multiple mints",
+            "Blinded signatures enable intra-mint user privacy"
           ],
           cons: [
-            "Trust operators to delete keyshares held with previous owners",
-            "Key deletion not cryptographically verifiable",
-            "Previous owners can force current owners onchain"
+            "Trust centralized custodian(s) to be honest",
+            "Users must select their own mint. Individual mints all come with their own trust assumptions",
+            "No penalty enforced in case of mint operator's being dishonest"
           ],
           riskLevel: "Medium",
           networks: ["cashu"]

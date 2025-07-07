@@ -19,7 +19,7 @@ const cornbtcn: InfrastructureProject = {
     staking: false,
     liquidStaking: false,
     bridge: false,
-    underReview: true,
+    underReview: false,
     riskFactors: ["", ""],
     nativeToken: "-",
     purpose: Purpose.General,

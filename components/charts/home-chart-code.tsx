@@ -11,6 +11,8 @@ import {
 import React, { useState } from "react";
 import { BitcoinIcon, NetworkIcon, PiggyBankIcon, ChevronDown, ChevronRight } from "lucide-react";
 import { allLayers } from "@/util/layer_index";
+import { allInfrastructures } from "@/util/infrastructure_index";
+import { allMore } from "@/util/more_index";
 import { CustodyTitle } from "@/content/props";
 import { parseTextWithLinks } from "@/util/parseTextWithLinks";
 import Link from "next/link";
@@ -40,24 +42,30 @@ const custodyMechanisms = {
   },
 };
 
-// Helper function to get networks by custody type
-const getNetworksByCustodyType = (custodyType: CustodyTitle): string[] => {
-  return allLayers
-    .filter(layer => layer.custodyTitle === custodyType)
-    .map(layer => layer.slug);
+// Helper function to get projects by custody type (layers + infrastructures + more)
+const getProjectsByCustodyType = (custodyType: CustodyTitle): { slug: string; type: string }[] => {
+  const layers = allLayers.filter(layer => layer.custodyTitle === custodyType).map(layer => ({ slug: layer.slug, type: 'layer' }));
+  const infrastructures = allInfrastructures.filter(infra => infra.custodyTitle === custodyType).map(infra => ({ slug: infra.slug, type: 'infrastructure' }));
+  const more = allMore.filter(more => more.custodyTitle === custodyType).map(more => ({ slug: more.slug, type: 'more' }));
+  return [...layers, ...infrastructures, ...more];
 };
 
-// Network mapping utility to get full project data from slug
-const getNetworkBySlug = (slug: string) => {
-  return allLayers.find(layer => layer.slug === slug.trim().toLowerCase());
+// Updated network lookup to search layers, infrastructures, and more
+const getProjectBySlug = (slug: string): { project: any; type: string } | null => {
+  const layer = allLayers.find(layer => layer.slug === slug.trim().toLowerCase());
+  if (layer) return { project: layer, type: 'layer' };
+  const infra = allInfrastructures.find(infra => infra.slug === slug.trim().toLowerCase());
+  if (infra) return { project: infra, type: 'infrastructure' };
+  const more = allMore.find(more => more.slug === slug.trim().toLowerCase());
+  if (more) return { project: more, type: 'more' };
+  return null;
 };
 
 // Enhanced Network Card Component
-const NetworkCard = ({ networkSlug }: { networkSlug: string }) => {
-  const network = getNetworkBySlug(networkSlug);
-  
-  if (!network) {
-    // Fallback for networks not found in layer index
+const NetworkCard = ({ networkSlug, type }: { networkSlug: string, type: string }) => {
+  const result = getProjectBySlug(networkSlug);
+  if (!result) {
+    // Fallback for projects not found
     return (
       <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-3 text-center border border-gray-200 dark:border-gray-700">
         <span className="text-sm font-medium text-gray-900 dark:text-gray-100 capitalize">
@@ -66,17 +74,18 @@ const NetworkCard = ({ networkSlug }: { networkSlug: string }) => {
       </div>
     );
   }
-
+  const { project, type: projectType } = result;
+  let href = projectType === 'layer' ? `/layers/${project.slug}` : projectType === 'infrastructure' ? `/infrastructure/${project.slug}` : `/infrastructure/${project.slug}`;
   return (
     <Link 
-      href={`/layers/${network.slug}`}
+      href={href}
       className="group bg-white dark:bg-gray-800 rounded-lg p-3 border border-gray-200 dark:border-gray-700 hover:border-blue-300 dark:hover:border-blue-600 hover:shadow-md transition-all duration-200 cursor-pointer"
     >
       <div className="flex items-center space-x-3">
         <div className="flex-shrink-0">
           <Image
-            src={`/logos/${network.slug}.png`}
-            alt={`${network.title} logo`}
+            src={`/logos/${project.slug}.png`}
+            alt={`${project.title} logo`}
             width={24}
             height={24}
             className="rounded-sm"
@@ -88,7 +97,7 @@ const NetworkCard = ({ networkSlug }: { networkSlug: string }) => {
         </div>
         <div className="flex-1 min-w-0">
           <span className="text-sm font-medium text-gray-900 dark:text-gray-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 truncate block">
-            {network.title}
+            {project.title}
           </span>
         </div>
         <div className="flex-shrink-0">
@@ -193,7 +202,6 @@ const CustodyToggleButtons = ({
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
       {mechanisms.map(({ key, icon: Icon, color }) => {
         const mechanism = custodyMechanisms[key];
-        const networkCount = getNetworksByCustodyType(key).length;
         const isActive = selectedMechanism === key;
         const buttonColorClasses = colorMap[color];
         
@@ -210,11 +218,6 @@ const CustodyToggleButtons = ({
                 <p className={`text-sm font-medium ${buttonColorClasses.text} ${buttonColorClasses.darkText} flex items-center`}>
                   {mechanism.label}
                   <ChevronDown className={`ml-1 h-4 w-4 ${buttonColorClasses.icon} transition-transform ${isActive ? 'rotate-180' : ''}`} />
-                </p>
-              </div>
-              <div className="text-left">
-                <p className={`text-2xl font-bold ${buttonColorClasses.bold} ${buttonColorClasses.darkBold}`}>
-                  {networkCount}
                 </p>
               </div>
               <div className="flex flex-col items-center">
@@ -241,7 +244,7 @@ const MechanismContentPanel = ({
   if (!selectedMechanism || !custodyMechanisms[selectedMechanism as CustodyTitle]) return null;
 
   const mechanism = custodyMechanisms[selectedMechanism as CustodyTitle];
-  const networks = getNetworksByCustodyType(selectedMechanism as CustodyTitle);
+  const projects = getProjectsByCustodyType(selectedMechanism as CustodyTitle);
   
   // Get the correct tradeoffs object based on custody type
   const getTradeoffsForCustodyType = (custodyType: string) => {
@@ -387,40 +390,44 @@ const MechanismContentPanel = ({
                      {mech.networks && mech.networks.length > 0 && (
                        <div className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-600">
                          <div className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-3">
-                           Networks using {mech.name}:
+                           Some networks using {mech.name}:
                          </div>
                          <div className="flex flex-wrap gap-3">
                            {mech.networks.map((networkSlug, i) => {
-                             const network = getNetworkBySlug(networkSlug);
-                             return (
-                               <Link 
-                                 key={i}
-                                 href={`/layers/${networkSlug}`}
-                                 className="group flex items-center space-x-2 bg-white dark:bg-gray-700 rounded-lg p-3 border border-gray-200 dark:border-gray-600 hover:border-blue-300 dark:hover:border-blue-500 hover:shadow-md transition-all duration-200"
-                               >
-                                 <Image
-                                   src={`/logos/${networkSlug}.png`}
-                                   alt={`${network?.title || networkSlug} logo`}
-                                   width={24}
-                                   height={24}
-                                   className="rounded-sm"
-                                   onError={(e) => {
-                                     e.currentTarget.style.display = 'none';
-                                   }}
-                                 />
-                                 <span className="text-sm font-medium text-gray-900 dark:text-gray-100 group-hover:text-blue-600 dark:group-hover:text-blue-400">
-                                   {network?.title || networkSlug.charAt(0).toUpperCase() + networkSlug.slice(1)}
-                                 </span>
-                                 <svg 
-                                   className="w-3 h-3 text-gray-400 group-hover:text-blue-500 transition-colors opacity-0 group-hover:opacity-100" 
-                                   fill="none" 
-                                   stroke="currentColor" 
-                                   viewBox="0 0 24 24"
+                             const network = getProjectBySlug(networkSlug);
+                             if (network) {
+                               const { project, type: projectType } = network;
+                               return (
+                                 <Link 
+                                   key={i}
+                                   href={projectType === 'layer' ? `/layers/${project.slug}` : `/infrastructure/${project.slug}`}
+                                   className="group flex items-center space-x-2 bg-white dark:bg-gray-700 rounded-lg p-3 border border-gray-200 dark:border-gray-600 hover:border-blue-300 dark:hover:border-blue-500 hover:shadow-md transition-all duration-200"
                                  >
-                                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                                 </svg>
-                               </Link>
-                             );
+                                   <Image
+                                     src={`/logos/${project.slug}.png`}
+                                     alt={`${project.title} logo`}
+                                     width={24}
+                                     height={24}
+                                     className="rounded-sm"
+                                     onError={(e) => {
+                                       e.currentTarget.style.display = 'none';
+                                     }}
+                                   />
+                                   <span className="text-sm font-medium text-gray-900 dark:text-gray-100 group-hover:text-blue-600 dark:group-hover:text-blue-400">
+                                     {project.title}
+                                   </span>
+                                   <svg 
+                                     className="w-3 h-3 text-gray-400 group-hover:text-blue-500 transition-colors opacity-0 group-hover:opacity-100" 
+                                     fill="none" 
+                                     stroke="currentColor" 
+                                     viewBox="0 0 24 24"
+                                   >
+                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                   </svg>
+                                 </Link>
+                               );
+                             }
+                             return null;
                            })}
                          </div>
                        </div>
@@ -437,10 +444,10 @@ const MechanismContentPanel = ({
               <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-3">
                 Some networks using this mechanism
               </h4>
-              {networks.length > 0 ? (
+              {projects.length > 0 ? (
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-                  {networks.map((networkSlug, index) => (
-                    <NetworkCard key={index} networkSlug={networkSlug} />
+                  {projects.map(({ slug, type }, index) => (
+                    <NetworkCard key={index} networkSlug={slug} type={type} />
                   ))}
                 </div>
               ) : (

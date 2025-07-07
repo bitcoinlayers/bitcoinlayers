@@ -8,6 +8,7 @@ import {
     Site,
     AssessmentCategory,
     PegRiskSummarySnippet,
+    CustodyTitle,
 } from "../props";
 
 const wbtc: InfrastructureProject = {
@@ -15,6 +16,7 @@ const wbtc: InfrastructureProject = {
     slug: "bitgo-wbtc",
     title: "BitGo wBTC",
     entityType: EntityType.ReserveAsset,
+    custodyTitle: CustodyTitle.Centralized,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,

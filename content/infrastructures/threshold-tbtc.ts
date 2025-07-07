@@ -8,6 +8,7 @@ import {
     Site,
     AssessmentCategory,
     PegRiskSummarySnippet,
+    CustodyTitle,
 } from "../props";
 
 const tbtc: InfrastructureProject = {
@@ -15,6 +16,7 @@ const tbtc: InfrastructureProject = {
     slug: "threshold-tbtc",
     title: "Threshold tBTC",
     entityType: EntityType.ReserveAsset,
+    custodyTitle: CustodyTitle.Distributed,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,

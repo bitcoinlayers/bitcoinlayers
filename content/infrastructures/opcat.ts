@@ -18,7 +18,7 @@ const opcat: InfrastructureProject = {
     staking: false,
     liquidStaking: false,
     bridge: false,
-    underReview: true,
+    underReview: false,
     riskFactors: ["", ""],
     nativeToken: "BTC",
     purpose: Purpose.EcashMint,

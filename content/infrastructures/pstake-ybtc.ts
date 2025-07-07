@@ -19,7 +19,7 @@ const pstake: InfrastructureProject = {
     staking: false,
     liquidStaking: true,
     bridge: false,
-    underReview: true,
+    underReview: false,
     riskFactors: ["", ""],
     nativeToken: "-",
     purpose: Purpose.General,

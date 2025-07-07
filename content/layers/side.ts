@@ -16,6 +16,7 @@ import {
     TechnologySnippet,
     UseCaseSnippet,
     RiskSummarySnippet,
+    CustodyTitle,
 } from "../props";
 
 const side: LayerProject = {
@@ -24,6 +25,7 @@ const side: LayerProject = {
     title: "Side Protocol",
     entityType: EntityType.PoSNetwork,
     entityCategory: EntityCategory.Sidesystem,
+    custodyTitle: CustodyTitle.Distributed,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,

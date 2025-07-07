@@ -16,6 +16,7 @@ import {
     BitcoinSecuritySnippet,
     RiskSummarySnippet,
     BitcoinLayer,
+    CustodyTitle,
 } from "../props";
 
 const rootstock: LayerProject = {
@@ -24,6 +25,7 @@ const rootstock: LayerProject = {
     title: "Rootstock",
     entityType: EntityType.MergeMined,
     entityCategory: EntityCategory.Sidesystem,
+    custodyTitle: CustodyTitle.Distributed,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
