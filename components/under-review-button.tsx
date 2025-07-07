@@ -21,7 +21,7 @@ const UnderReviewButton: React.FC<UnderReviewButtonProps> = ({ project }) => {
                 <Button 
                     variant="outline" 
                     size="sm" 
-                    className="h-8 px-3 bg-[#FFF3CD] dark:bg-[#664D03] border-[#FFF3CD] dark:border-[#664D03] hover:bg-[#FFE69C] dark:hover:bg-[#997404] text-[#664D03] dark:text-[#FFF3CD]"
+                    className="h-8 px-3 bg-[#FFDFDF] dark:bg-[#7A2E0D] border-[#FFDFDF] dark:border-[#7A2E0D] hover:bg-[#FFD0D0] dark:hover:bg-[#991617] text-[#881415] dark:text-[#FFDFDF]"
                 >
                     <ClockIcon className="w-4 h-4 mr-1" />
                     Under Review
