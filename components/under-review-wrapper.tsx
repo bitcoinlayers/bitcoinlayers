@@ -27,7 +27,7 @@ export default function UnderReviewWrapper({
                         This project is under review
                     </h3>
                     <p className="text-sm text-muted-foreground">
-                        We are currently evaluating this project's technical implementation and categorization.
+                        We are currently evaluating this project&apos;s technical implementation and categorization.
                     </p>
                 </div>
             </div>

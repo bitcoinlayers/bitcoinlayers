@@ -70,7 +70,7 @@ const UnderReviewButton: React.FC<UnderReviewButtonProps> = ({ project }) => {
                                 </h4>
                                 <div className="space-y-3">
                                     <p className="text-foreground">
-                                        This project's categorization and technical implementation are currently under review by our team.
+                                        This project&apos;s categorization and technical implementation are currently under review by our team.
                                     </p>
                                     <p className="text-foreground">
                                         We are evaluating whether it meets our technical standards to be considered a bitcoin sidesystem or integrated chain.
