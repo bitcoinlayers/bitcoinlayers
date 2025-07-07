@@ -171,7 +171,7 @@ const LayerTable = ({ data, headers }: Props) => {
         }
 
         return filtered;
-    }, [data, sortBy, sortOrder, types, totaledBalances]);
+    }, [data, sortBy, sortOrder, types]);
 
     const handleSort = (header: string) => {
         if (sortBy === header) {

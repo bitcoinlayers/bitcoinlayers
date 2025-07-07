@@ -512,7 +512,7 @@ export default function CustodyChart({
             href="https://lxresearch.co"
             className="inline-flex items-center text-sm font-medium text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors"
           >
-            Check out Bitcoin Layers' Research
+            Check out Bitcoin Layers&apos; Research
             <span className="ml-1">→</span>
           </Link>
         </div>
