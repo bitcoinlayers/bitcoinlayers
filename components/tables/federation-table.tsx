@@ -29,6 +29,7 @@ import getCurrentSuppliesByTokenimpl, {
 import NetworkList from "@/components/tables/mapping-network-img";
 import WrapperNetworkDistributionHoverCard from "../infrastructure/wrapper-network-distribution-hover-card";
 import RiskSummaryDialog from "../layer/risk-summary-dialog";
+import UnderReviewButton from "@/components/under-review-button";
 
 type TableTabKey = "Snapshot" | "Type" | "Risk Summary" | "Networks" | "Supply";
 
@@ -337,9 +338,7 @@ const FederationTable = ({ data, headers }: Props) => {
                                                             : `infrastructure/${item.slug}`
                                                     }`}
                                                 >
-                                                    <div className="font-light">
-                                                        Under review
-                                                    </div>
+                                                    <UnderReviewButton project={item} />
                                                 </Link>
                                             ) : (
                                                 <WrapperNetworkDistributionHoverCard

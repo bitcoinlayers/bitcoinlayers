@@ -5,6 +5,7 @@ import { Bitcoin } from "lucide-react";
 import { LayerProject, InfrastructureProject, RiskCategory } from "@/content/props";
 import { getRiskColorBackground, getRiskColorText, getRiskEmoji } from "@/util/riskColors";
 import { parseTextWithLinks } from "@/util/parseTextWithLinks";
+import UnderReviewModalContent from "@/components/under-review-modal-content";
 import Image from "next/image";
 
 interface Peg {
@@ -33,7 +34,7 @@ const CustodyTypeDialog: React.FC<CustodyTypeDialogProps> = ({ layer }) => {
 
     const selectedPegData = pegs.find(peg => peg.name === selectedPeg);
 
-    if (!btcCustodyData || pegs.length === 0) {
+    if ((!btcCustodyData || pegs.length === 0) && !layer.underReview) {
         return (
             <Dialog>
                 <DialogTrigger asChild>
@@ -84,78 +85,82 @@ const CustodyTypeDialog: React.FC<CustodyTypeDialogProps> = ({ layer }) => {
                     }}
                 >
                     <DialogTitle className="sr-only">
-                        {layer.title} - Custody Type
+                        {layer.title} - {layer.underReview ? "Under Review" : "Custody Type"}
                     </DialogTitle>
-                    <div className="space-y-6">
-                        {/* Combined Network and Custody Info */}
-                        {selectedPegData && (
-                            <div className="space-y-4">
-                                {/* Network Header */}
-                                <div className="flex items-center gap-3">
-                                    <Image
-                                        src={`/logos/${layer.slug}.png`}
-                                        alt={layer.title}
-                                        width={32}
-                                        height={32}
-                                        className="rounded-full object-cover bg-muted"
-                                        onError={(e) => {
-                                            (e.target as HTMLImageElement).src = '/logos/default.png';
-                                        }}
-                                    />
+                    {layer.underReview ? (
+                        <UnderReviewModalContent project={layer} title="Custody Type" />
+                    ) : (
+                        <div className="space-y-6">
+                            {/* Combined Network and Custody Info */}
+                            {selectedPegData && (
+                                <div className="space-y-4">
+                                    {/* Network Header */}
+                                    <div className="flex items-center gap-3">
+                                        <Image
+                                            src={`/logos/${layer.slug}.png`}
+                                            alt={layer.title}
+                                            width={32}
+                                            height={32}
+                                            className="rounded-full object-cover bg-muted"
+                                            onError={(e) => {
+                                                (e.target as HTMLImageElement).src = '/logos/default.png';
+                                            }}
+                                        />
+                                        <div>
+                                            <h3 className="text-xl font-medium text-foreground" style={{ lineHeight: "28px" }}>
+                                                {layer.title} - Custody Model{pegs.length > 1 ? 's' : ''}
+                                            </h3>
+                                        </div>
+                                    </div>
+                                    
+                                    {/* Underline separator */}
+                                    <hr className="border-border" />
+                                    
+                                    {/* Custody Details */}
                                     <div>
-                                        <h3 className="text-xl font-medium text-foreground" style={{ lineHeight: "28px" }}>
-                                            {layer.title} - Custody Model{pegs.length > 1 ? 's' : ''}
-                                        </h3>
+                                        <p className="body_subsection text-muted-foreground mt-6">{selectedPegData.title}</p>
+                                        <div className="body_paragraph !text-foreground mt-3">
+                                            {parseTextWithLinks(selectedPegData.content)}
+                                        </div>
                                     </div>
                                 </div>
-                                
-                                {/* Underline separator */}
-                                <hr className="border-border" />
-                                
-                                {/* Custody Details */}
-                                <div>
-                                    <p className="body_subsection text-muted-foreground mt-6">{selectedPegData.title}</p>
-                                    <div className="body_paragraph !text-foreground mt-3">
-                                        {parseTextWithLinks(selectedPegData.content)}
-                                    </div>
-                                </div>
-                            </div>
-                        )}
+                            )}
 
-                        {/* Peg Selection */}
-                        {pegs.length > 1 && (
-                            <div className="space-y-3">
-                                <h3 className="text-md font-semibold text-foreground">Select Bitcoin Asset:</h3>
-                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                                    {pegs.map((peg) => (
-                                        <button
-                                            key={peg.name}
-                                            onClick={() => setSelectedPeg(peg.name)}
-                                            className={`p-3 rounded-lg border text-left transition-colors ${
-                                                selectedPeg === peg.name
-                                                    ? 'border-brand bg-brand/10 text-foreground'
-                                                    : 'border-border text-muted-foreground hover:bg-muted/50'
-                                            }`}
-                                        >
-                                            <div className="flex items-center gap-3">
-                                                <Image
-                                                    src={`/logos/${peg.infrastructureSlug}.png`}
-                                                    alt={peg.name}
-                                                    width={24}
-                                                    height={24}
-                                                    className="w-6 h-6 rounded-full object-cover bg-muted"
-                                                    onError={(e) => {
-                                                        (e.target as HTMLImageElement).src = '/logos/default.png';
-                                                    }}
-                                                />
-                                                <span className="font-medium">{peg.name}</span>
-                                            </div>
-                                        </button>
-                                    ))}
+                            {/* Peg Selection */}
+                            {pegs.length > 1 && (
+                                <div className="space-y-3">
+                                    <h3 className="text-md font-semibold text-foreground">Select Bitcoin Asset:</h3>
+                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                                        {pegs.map((peg) => (
+                                            <button
+                                                key={peg.name}
+                                                onClick={() => setSelectedPeg(peg.name)}
+                                                className={`p-3 rounded-lg border text-left transition-colors ${
+                                                    selectedPeg === peg.name
+                                                        ? 'border-brand bg-brand/10 text-foreground'
+                                                        : 'border-border text-muted-foreground hover:bg-muted/50'
+                                                }`}
+                                            >
+                                                <div className="flex items-center gap-3">
+                                                    <Image
+                                                        src={`/logos/${peg.infrastructureSlug}.png`}
+                                                        alt={peg.name}
+                                                        width={24}
+                                                        height={24}
+                                                        className="w-6 h-6 rounded-full object-cover bg-muted"
+                                                        onError={(e) => {
+                                                            (e.target as HTMLImageElement).src = '/logos/default.png';
+                                                        }}
+                                                    />
+                                                    <span className="font-medium">{peg.name}</span>
+                                                </div>
+                                            </button>
+                                        ))}
+                                    </div>
                                 </div>
-                            </div>
-                        )}
-                    </div>
+                            )}
+                        </div>
+                    )}
                 </div>
             </DialogContent>
         </Dialog>

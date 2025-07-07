@@ -11,6 +11,7 @@ import ManualContractAddresses from "@/components/manual-contract-addresses";
 import RiskSummary from "@/components/shared/risk-summary";
 import Categorization from "@/components/shared/categorization";
 import AlternativeBanner from "@/components/alternative-banner";
+import UnderReviewWrapper from "@/components/under-review-wrapper";
 import { EntityCategory } from "@/content/props";
 
 function getLayerFromSlug(slug: string) {
@@ -54,31 +55,33 @@ export default async function LayerPage(props: {
                     </h1>
                 </div>
             </div>
-            <div className="lg:container mx-4 lg:px-4 flex lg:flex-row flex-col">
-                <div className="lg:w-1/5 z-40 lg:sticky lg:top-[60px] max-h-[calc(100vh-60px)] w-full overflow-y-auto overflow-x-hidden whitespace-nowrap lg:whitespace-normal top-[68px] fixed h-auto lg:h-fit lg:pt-6 lg:px-2 no-scrollbar py-0 bg-background">
-                    <LayerMenu layer={layer} />
-                </div>
-                <div className="lg:w-4/5 flex flex-col">
-                    <LayerOverviewAlt layer={layer} />
-                    <LayerTVLChart />
-                    <RiskSummary content={layer.riskSummary || []} />
-                    <Categorization content={layer.categorization || []} layer={layer} />
-                    {!layer.underReview && (
-                        <RiskAnalysis
-                            riskAnalysis={layer.riskAnalysis}
-                            riskFactors={layer.riskFactors}
-                            layer={layer}
+            <UnderReviewWrapper isUnderReview={layer.underReview}>
+                <div className="lg:container mx-4 lg:px-4 flex lg:flex-row flex-col">
+                    <div className="lg:w-1/5 z-40 lg:sticky lg:top-[60px] max-h-[calc(100vh-60px)] w-full overflow-y-auto overflow-x-hidden whitespace-nowrap lg:whitespace-normal top-[68px] fixed h-auto lg:h-fit lg:pt-6 lg:px-2 no-scrollbar py-0 bg-background">
+                        <LayerMenu layer={layer} />
+                    </div>
+                    <div className="lg:w-4/5 flex flex-col">
+                        <LayerOverviewAlt layer={layer} />
+                        <LayerTVLChart />
+                        <RiskSummary content={layer.riskSummary || []} />
+                        <Categorization content={layer.categorization || []} layer={layer} />
+                        {!layer.underReview && (
+                            <RiskAnalysis
+                                riskAnalysis={layer.riskAnalysis}
+                                riskFactors={layer.riskFactors}
+                                layer={layer}
+                            />
+                        )}
+                        <ManualContractAddresses 
+                            contracts={layer.manualContracts || []} 
+                            sectionTitle="Additional Contracts"
+                            sectionId="manualcontracts"
                         />
-                    )}
-                    <ManualContractAddresses 
-                        contracts={layer.manualContracts || []} 
-                        sectionTitle="Additional Contracts"
-                        sectionId="manualcontracts"
-                    />
-                    <LayerBody layer={layer} />
-                    <ProjectContractAddresses slug={slug} isLayer={true} />
+                        <LayerBody layer={layer} />
+                        <ProjectContractAddresses slug={slug} isLayer={true} />
+                    </div>
                 </div>
-            </div>
+            </UnderReviewWrapper>
         </article>
     );
 }

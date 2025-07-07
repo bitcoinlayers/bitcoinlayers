@@ -45,6 +45,23 @@ import hyperliquidProject from "@/content/layers/hyperliquid";
 import mezoProject from "@/content/layers/mezo";
 import babylongenesisProject from "@/content/layers/babylongenesis";
 import modeProject from "@/content/layers/mode";
+import ailayerProject from "@/content/layers/ailayer";
+import algorandProject from "@/content/layers/algorand";
+import fuelProject from "@/content/layers/fuel";
+import iotexProject from "@/content/layers/iotex";
+import kavaProject from "@/content/layers/kava";
+import mantaProject from "@/content/layers/manta";
+import telosProject from "@/content/layers/telos";
+import xlayerProject from "@/content/layers/xlayer";
+import zircuitProject from "@/content/layers/zircuit";
+import zklinkProject from "@/content/layers/zklink";
+import auroraProject from "@/content/layers/aurora";
+import inkProject from "@/content/layers/ink";
+import lineaProject from "@/content/layers/linea";
+import mantleProject from "@/content/layers/mantle";
+import movementProject from "@/content/layers/movement";
+import soneiumProject from "@/content/layers/soneium";
+import suiProject from "@/content/layers/sui";
 
 const core: LayerProject = coreProject;
 const internetcomputer: LayerProject = internetcomputerProject;
@@ -91,6 +108,23 @@ const berachain: LayerProject = berachainProject;
 const sonic: LayerProject = sonicProject;
 const hyperliquid: LayerProject = hyperliquidProject;
 const mode: LayerProject = modeProject;
+const ailayer: LayerProject = ailayerProject;
+const algorand: LayerProject = algorandProject;
+const fuel: LayerProject = fuelProject;
+const iotex: LayerProject = iotexProject;
+const kava: LayerProject = kavaProject;
+const manta: LayerProject = mantaProject;
+const telos: LayerProject = telosProject;
+const xlayer: LayerProject = xlayerProject;
+const zircuit: LayerProject = zircuitProject;
+const zklink: LayerProject = zklinkProject;
+const aurora: LayerProject = auroraProject;
+const ink: LayerProject = inkProject;
+const linea: LayerProject = lineaProject;
+const mantle: LayerProject = mantleProject;
+const movement: LayerProject = movementProject;
+const soneium: LayerProject = soneiumProject;
+const sui: LayerProject = suiProject;
 
 export const allLayers: LayerProject[] = [
     core,
@@ -137,6 +171,24 @@ export const allLayers: LayerProject[] = [
     sonic,
     hyperliquid,
     mode,
+    ailayer,
+    algorand,
+    fuel,
+    iotex,
+    kava,
+    manta,
+    telos,
+    xlayer,
+    zircuit,
+    zklink,
+    aurora,
+    ink,
+    linea,
+    mantle,
+    movement,
+    soneium,
+    sui,
+    bouncebit,
 ];
 
 export const allLayerSlugs: string[] = allLayers.map((layer) => layer.slug);

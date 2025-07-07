@@ -30,7 +30,7 @@ const template: LayerProject = {
     staking: false,
     liquidStaking: false,
     bridge: false,
-    underReview: false,
+    underReview: true,
     riskFactors: [
         RiskFactor.UnderReview,
         RiskFactor.UnderReview,

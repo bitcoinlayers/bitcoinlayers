@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import { InfrastructureProject } from "@/content/props";
 import getCurrentSuppliesByTokenproject from "@/hooks/get-current-supplies-by-tokenproject";
+import UnderReviewButton from "@/components/under-review-button";
 
 const Categories: React.FC<{ infrastructure: InfrastructureProject }> = ({
     infrastructure,
@@ -63,13 +64,22 @@ const Categories: React.FC<{ infrastructure: InfrastructureProject }> = ({
     };
 
     return (
-        <div className="flex flex-wrap gap-6 lg:gap-12 w-full items-start">
-            <div className="flex-col justify-center items-start sm:w-1/2 lg:w-[110px]">
-                <div className="text-sm leading-tight">Status</div>
-                <div className="text-muted-foreground">
-                    {infrastructure.live}
+        <div className="space-y-4">
+            {/* Under Review Button */}
+            {infrastructure.underReview && (
+                <div className="flex justify-start">
+                    <UnderReviewButton project={infrastructure} />
                 </div>
-            </div>
+            )}
+            
+            {/* Categories Grid */}
+            <div className="flex flex-wrap gap-6 lg:gap-12 w-full items-start">
+                <div className="flex-col justify-center items-start sm:w-1/2 lg:w-[110px]">
+                    <div className="text-sm leading-tight">Status</div>
+                    <div className="text-muted-foreground">
+                        {infrastructure.live}
+                    </div>
+                </div>
             <div className="flex-col justify-center items-start sm:w-1/2 lg:w-[110px]">
                 <div className="text-sm leading-tight">Type</div>
                 <div className="text-muted-foreground">
@@ -85,6 +95,7 @@ const Categories: React.FC<{ infrastructure: InfrastructureProject }> = ({
                         maximumFractionDigits: 0,
                     })}
                 </div>
+            </div>
             </div>
         </div>
     );

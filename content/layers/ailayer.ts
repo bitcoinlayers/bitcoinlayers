@@ -22,15 +22,15 @@ import {
 
 const template: LayerProject = {
     type: Type.Layer,
-    slug: "slug",
-    title: "Title",
-    entityType: EntityType.Rollup,
-    entityCategory: EntityCategory.Sidesystem,
+    slug: "ailayer",
+    title: "AILayer",
+    entityType: EntityType.AltL1,
+    entityCategory: EntityCategory.Alt,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
     bridge: false,
-    underReview: false,
+    underReview: true,
     riskFactors: [
         RiskFactor.UnderReview,
         RiskFactor.UnderReview,
@@ -140,30 +140,6 @@ const template: LayerProject = {
         },
     ],
     manualContracts: [
-        {
-            title: "Bridge Escrow Contract",
-            address: "0x46abfe1c972fca43766d6ad70e1c1df72f4bb4d1",
-            subtitle: "Main bridge contract that holds and manages cross-chain BTC assets",
-            explorerUrl: "https://etherscan.io/address/0x46abfe1c972fca43766d6ad70e1c1df72f4bb4d1"
-        },
-        {
-            title: "Governance Multisig",
-            address: "0x9f8f72aa9304c8b593d555f12ef6589cc3a579a2", 
-            subtitle: "5-of-9 multisig responsible for bridge upgrades and parameter changes",
-            explorerUrl: "https://etherscan.io/address/0x9f8f72aa9304c8b593d555f12ef6589cc3a579a2"
-        },
-        {
-            title: "tBTC Vault Contract",
-            address: "0x18084fba666a33d37592fa2633fd49a74dd93a88",
-            subtitle: "Vault contract managing Threshold tBTC deposits and withdrawals",
-            explorerUrl: "https://etherscan.io/address/0x18084fba666a33d37592fa2633fd49a74dd93a88"
-        },
-        {
-            title: "Fee Distribution Contract",
-            address: "0x514910771af9ca656af840dff83e8264ecf986ca",
-            subtitle: "Contract handling transaction fee distribution to validators",
-            explorerUrl: "https://etherscan.io/address/0x514910771af9ca656af840dff83e8264ecf986ca"
-        }
     ],
     sections: [
         {

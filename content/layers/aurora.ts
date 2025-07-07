@@ -22,15 +22,15 @@ import {
 
 const template: LayerProject = {
     type: Type.Layer,
-    slug: "slug",
-    title: "Title",
-    entityType: EntityType.Rollup,
-    entityCategory: EntityCategory.Sidesystem,
+    slug: "aurora",
+    title: "Aurora",
+    entityType: EntityType.AltL1,
+    entityCategory: EntityCategory.Alt,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
     bridge: false,
-    underReview: false,
+    underReview: true,
     riskFactors: [
         RiskFactor.UnderReview,
         RiskFactor.UnderReview,
