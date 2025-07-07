@@ -509,10 +509,10 @@ export default function CustodyChart({
             Learn more about different custody mechanisms for bitcoin layers
           </div>
           <Link
-            href="/layers"
+            href="https://lxresearch.co"
             className="inline-flex items-center text-sm font-medium text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors"
           >
-            Head to bitcoinlayers.research
+            Check out Bitcoin Layers' Research
             <span className="ml-1">→</span>
           </Link>
         </div>

@@ -15,7 +15,7 @@ export default function WelcomeBanner() {
           Bitcoin Layers is an open-source platform for analyzing bitcoin l2s, wrapped bitcoin tokens, and other bitcoin-adjacent protocols. Learn more about the tradeoffs below.
         </p>
         <Link 
-          href="https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch10.asciidoc#soft-forks"
+          href="https://lxresearch.co"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-medium transition-colors"

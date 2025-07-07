@@ -17,8 +17,8 @@ const custodyTradeoffs = {
           cons: [
             "Requires active liquidity management",
             "Channel capacity limitations",
-            "Need to monitor for force closures",
-            "Inbound liquidity bootstrapping challenges"
+            "Need to monitor for channel closures",
+            "Requires an L1 transaction to receive funds"
           ],
           riskLevel: "Low",
           networks: ["lightning"]
