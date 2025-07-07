@@ -30,6 +30,7 @@ import NetworkList from "@/components/tables/mapping-network-img";
 import WrapperNetworkDistributionHoverCard from "../infrastructure/wrapper-network-distribution-hover-card";
 import RiskSummaryDialog from "../layer/risk-summary-dialog";
 import UnderReviewButton from "@/components/under-review-button";
+import ComingSoon from "@/components/tables/coming-soon";
 
 type TableTabKey = "Snapshot" | "Type" | "Risk Summary" | "Networks" | "Supply";
 
@@ -277,6 +278,7 @@ const FederationTable = ({ data, headers }: Props) => {
                                                         ? `layers/${item.slug}/#usecases`
                                                         : `infrastructure/${item.slug}`
                                                 }`}
+                                                className="font-medium"
                                             >
                                                 {isLayer(item)
                                                     ? item.entityType
@@ -314,6 +316,8 @@ const FederationTable = ({ data, headers }: Props) => {
                                         <td className="lg:px-6 px-4 py-3 lg:py-4 border-border">
                                             {isLoading ? (
                                                 <div>Loading...</div>
+                                            ) : (tokensMap[item.slug.toLowerCase()] || []).length === 0 ? (
+                                                <ComingSoon />
                                             ) : (
                                                 <NetworkList
                                                     networks={
@@ -331,15 +335,7 @@ const FederationTable = ({ data, headers }: Props) => {
                                         <td className="lg:px-6 px-4 py-3 lg:py-4">
                                             {totaledBalances[item.slug]
                                                 ?.totalAmount == null ? (
-                                                <Link
-                                                    href={`/${
-                                                        isLayer(item)
-                                                            ? `layers/${item.slug}/#usecases`
-                                                            : `infrastructure/${item.slug}`
-                                                    }`}
-                                                >
-                                                    <UnderReviewButton project={item} />
-                                                </Link>
+                                                <ComingSoon />
                                             ) : (
                                                 <WrapperNetworkDistributionHoverCard
                                                     networks={tokensMap[item.slug.toLowerCase()] || []}
@@ -358,7 +354,7 @@ const FederationTable = ({ data, headers }: Props) => {
                                                         }`}
                                                         className="hover:underline cursor-pointer"
                                                     >
-                                                        <div>
+                                                        <div className="font-medium">
                                                             ₿{" "}
                                                             {Number(
                                                                 totaledBalances[

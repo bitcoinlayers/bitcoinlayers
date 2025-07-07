@@ -68,6 +68,13 @@ const TableHeader: React.FC<TableHeaderProps> = ({
                                     <PegSupplyToggle
                                         currentView={pegSupplyView}
                                         onViewChange={onPegSupplyViewChange}
+                                        label="Pegs"
+                                    />
+                                ) : header.name === "Networks" && onPegSupplyViewChange && pegSupplyView ? (
+                                    <PegSupplyToggle
+                                        currentView={pegSupplyView}
+                                        onViewChange={onPegSupplyViewChange}
+                                        label="Networks"
                                     />
                                 ) : (
                                     <div className="text-sm font-medium leading-tight">

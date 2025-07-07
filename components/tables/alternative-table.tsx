@@ -34,6 +34,7 @@ import NetworkTypeHoverCard from "../layer/network-type-hover-card";
 import SupplyDistributionHoverCard from "../layer/supply-distribution-hover-card";
 import CustodyTypeDialog from "../layer/custody-type-dialog";
 import UnderReviewButton from "@/components/under-review-button";
+import ComingSoon from "@/components/tables/coming-soon";
 
 type TableTabKey =
     | "Trust Assumptions"
@@ -297,7 +298,7 @@ const AlternativeTable = ({ data, headers }: Props) => {
                                             <NetworkTypeHoverCard entityType={item.entityType}>
                                                 <Link 
                                                     href={`/layers/${item.slug}`}
-                                                    className="hover:underline cursor-pointer"
+                                                    className="hover:underline cursor-pointer font-medium"
                                                 >
                                                     {item.entityType}
                                                 </Link>
@@ -338,6 +339,8 @@ const AlternativeTable = ({ data, headers }: Props) => {
                                             {pegSupplyView === "pegs" ? (
                                                 isLoading ? (
                                                     <div>Loading...</div>
+                                                ) : (tokensMap[item.slug.toLowerCase()] || []).length === 0 ? (
+                                                    <ComingSoon />
                                                 ) : (
                                                     <TokenList
                                                         tokens={tokensMap[item.slug.toLowerCase()] || []}
@@ -358,11 +361,7 @@ const AlternativeTable = ({ data, headers }: Props) => {
                                                         isNaN(
                                                             item.btcLocked,
                                                         ))) ? (
-                                                    <Link href={`/layers/${item.slug}`}>
-                                                        <div className="font-light">
-                                                            Unavailable
-                                                        </div>
-                                                    </Link>
+                                                    <ComingSoon />
                                                 ) : (
                                                     <SupplyDistributionHoverCard
                                                         tokens={tokensMap[item.slug.toLowerCase()] || []}
@@ -378,7 +377,7 @@ const AlternativeTable = ({ data, headers }: Props) => {
                                                             href={`/layers/${item.slug}`}
                                                             className="hover:underline cursor-pointer"
                                                         >
-                                                            <div>
+                                                            <div className="font-medium">
                                                                 ₿{" "}
                                                                 {Number(
                                                                     totaledBalances[

@@ -4,16 +4,18 @@ import { ChevronDown } from "lucide-react";
 interface PegSupplyToggleProps {
     currentView: "pegs" | "supply";
     onViewChange: (view: "pegs" | "supply") => void;
+    label?: string;
 }
 
 const PegSupplyToggle: React.FC<PegSupplyToggleProps> = ({ 
     currentView, 
-    onViewChange 
+    onViewChange, 
+    label = "BTC Pegs"
 }) => {
     const [isOpen, setIsOpen] = React.useState(false);
 
     const viewOptions = [
-        { value: "pegs" as const, label: "Pegs" },
+        { value: "pegs" as const, label: label },
         { value: "supply" as const, label: "Supply" }
     ];
 
