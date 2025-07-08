@@ -38,7 +38,7 @@ const hemi: LayerProject = {
     riskFactors: [
         RiskFactor.VeryHigh,
         RiskFactor.Medium,
-        RiskFactor.UnderReview,
+        RiskFactor.VeryHigh,
         RiskFactor.UnderReview,
     ],
     btcLocked: 0,
@@ -69,7 +69,7 @@ const hemi: LayerProject = {
         },
     ],
     description:
-        "Hemi is a blockchain that is building compatibility with bitcoin and Ethereum.",
+        "Hemi is a blockchain that is building compatibility with bitcoin and Ethereum. It is built on the OP Stack and has an official bridge program hosted on Ethereum. It additionally has an official bridge program on bitcoin securing BTC backing HemiBTC.",
         riskSummary: [
             {
                 title: RiskSummarySnippet.TitleCustodianPegs,
@@ -98,6 +98,14 @@ const hemi: LayerProject = {
             title: "",
             content: "",
             pegs: [
+                {
+                    name: "Hemi hemiBTC",
+                    infrastructureSlug: "hemi-hemibtc",
+                    score: 0,
+                    tier: RiskFactor.VeryHigh,
+                    title: "The signers securing BTC backing HemiBTC have not been officially disclosed",
+                    content: TokenSnippet.HemiBTC,
+                },
                 {
                     name: "BitGo wBTC",
                     infrastructureSlug: "bitgo-wbtc",
@@ -129,14 +137,6 @@ const hemi: LayerProject = {
                     tier: RiskFactor.VeryHigh,
                     title: TokenSnippet.CustodianPeg,
                     content: `${TokenSnippet.BedrockUniBTC}\n\n${TokenSnippet.smartcontractreview}`,
-                },
-                {
-                    name: "Hemi hemiBTC",
-                    infrastructureSlug: "hemi-hemibtc",
-                    score: 0,
-                    tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet.FederationPeg,
-                    content: TokenSnippet.HemiBTC,
                 },
                 {
                     name: "Babypie mBTC",
@@ -198,16 +198,24 @@ const hemi: LayerProject = {
         {
             category: RiskCategory.NetworkOperators,
             score: 0,
-            tier: RiskFactor.UnderReview,
-            title: "We are reviewing Hemi's sequencing mechanism",
-            content: "This section of the assessment is under review.",
+            tier: RiskFactor.VeryHigh,
+            title: "Hemi blocks are produced by a centralized sequencer",
+            content: ReviewSnippet.SelfSequenceNone
         },
         {
             category: RiskCategory.FinalityGuarantees,
             score: 0,
             tier: RiskFactor.UnderReview,
-            title: "We are reviewing Hemi's finality mechanism",
-            content: "This section of the assessment is under review.",
+            title: "Hemi state updates are submitted by a centralized proposer",
+            content: `${ReviewSnippet.NoFraudProofsBridge}\n\nHemi's official bridge program is a smart contract hosted on Ethereum. We are reviewing its finality guarantees related to its Proof-of-Proof consensus mechanism.`,
+        },
+    ],
+    manualContracts: [
+        {
+            title: "Address securing BTC backing HemiBTC",
+            address: "16NuSCxDVCAXbKs9GRbjbHXbwGXu3tnPSo",
+            subtitle: "Specific address securing BTC backing HemiBTC. It is unknown if this address is managed by a single entity or multiple entities via a threshold signature scheme.",
+            explorerUrl: "https://mempool.space/address/16NuSCxDVCAXbKs9GRbjbHXbwGXu3tnPSo"
         },
     ],
     sections: [
@@ -227,7 +235,7 @@ const hemi: LayerProject = {
             content: [
                 {
                     title: "Hemi does not inherit any security from Bitcoin",
-                    content: BitcoinSecuritySnippet.NoSecurity,
+                    content: "We are reviewing if the network inherits any security from Bitcoin."
                 },
                 {
                     title: "ETH token used to pay fees",

@@ -8,6 +8,7 @@ import {
     Site,
     AssessmentCategory,
     PegRiskSummarySnippet,
+    TokenSnippet,
 } from "../props";
 
 const hemihemibtc: InfrastructureProject = {
@@ -76,9 +77,8 @@ const hemihemibtc: InfrastructureProject = {
                 category: AssessmentCategory.AssetCustody,
                 score: 0,
                 tier: "",
-                title: "BTC backing HemiBTC is secured by a federated multisig",
-                content:
-                    "Hemi leverages a federated multisig to secure BTC backing HemiBTC. The signers participating in this federation have not been officially disclosed.",
+                title: "The signers securing BTC backing HemiBTC have not been officially disclosed",
+                content: TokenSnippet.HemiBTC,
             },
         ],
 };
