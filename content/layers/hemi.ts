@@ -206,7 +206,7 @@ const hemi: LayerProject = {
             category: RiskCategory.FinalityGuarantees,
             score: 0,
             tier: RiskFactor.Medium,
-            title: "Hemi state updates are submitted by a centralized proposer",
+            title: "Hemi state updates are finalized offchain",
             content: `Hemi's state is updated offchain by Hemi full nodes. After this state is finalized offchain, any conflicting state update proposed by a sequencer would be rejected by Hemi's full nodes.\n\nHemi's official bridge program is a smart contract hosted on Ethereum. It is not secured by any proving system. ${ReviewSnippet.NoFraudProofsBridge}\n\nHemi additionally posts its state root to bitcoin periodically through its Proof-of-Proof consensus mechanism. But, because no bridge program on bitcoin is finalized by this state root and the system is managed by a centralized operator, the bitcoin anchoring provides little finality assurances.`,
         },
     ],
