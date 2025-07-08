@@ -9,6 +9,7 @@ import {
     AssessmentCategory,
     BTCWrapperTransparency,
     PegRiskSummarySnippet,
+    CustodyTitle,
 } from "../props";
 
 const solv: InfrastructureProject = {
@@ -20,7 +21,7 @@ const solv: InfrastructureProject = {
     staking: false,
     liquidStaking: false,
     bridge: true,
-    underReview: true,
+    underReview: false,
     riskFactors: ["", ""],
     nativeToken: "",
     purpose: Purpose.General,

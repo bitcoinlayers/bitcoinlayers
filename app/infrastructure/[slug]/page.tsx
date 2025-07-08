@@ -11,6 +11,7 @@ import InfraTVLChart from "@/components/charts/infra-tvl-chart";
 import RiskAnalysis from "@/components/layer/risk-analysis/infra-container";
 import RiskSummary from "@/components/shared/risk-summary";
 import UnderDevelopmentBanner from "@/components/under-development-banner";
+import UnderReviewWrapper from "@/components/under-review-wrapper";
 import ProjectContractAddresses from "@/components/project-contract-addresses";
 import ManualContractAddresses from "@/components/manual-contract-addresses";
 
@@ -54,32 +55,34 @@ export default async function InfrastructurePage(props: {
                         </h1>
                     </div>
                 </div>
-                <div className="lg:container mx-4 lg:px-4 flex lg:flex-row flex-col">
-                    <div className="lg:w-1/5 z-40 lg:sticky lg:top-[60px] max-h-[calc(100vh-60px)] w-full overflow-y-auto overflow-x-hidden whitespace-nowrap lg:whitespace-normal top-[68px] fixed h-auto lg:h-fit lg:pt-6 lg:px-2 no-scrollbar py-0 bg-background">
-                        <InfrastructureMenu infrastructure={infrastructure} />
-                    </div>
-                    <div className="lg:w-4/5 flex flex-col px-4 lg:px-0">
-                        <InfrastructureOverviewAlt
-                            infrastructure={infrastructure}
-                        />
-                        <InfraTVLChart />
-                        <RiskSummary content={infrastructure.riskSummary || []} />
-                        {infrastructure.assessment && (
-                            <RiskAnalysis
-                                riskAnalysis={infrastructure.assessment}
-                                riskFactors={infrastructure.riskFactors}
+                <UnderReviewWrapper isUnderReview={infrastructure.underReview}>
+                    <div className="lg:container mx-4 lg:px-4 flex lg:flex-row flex-col">
+                        <div className="lg:w-1/5 z-40 lg:sticky lg:top-[60px] max-h-[calc(100vh-60px)] w-full overflow-y-auto overflow-x-hidden whitespace-nowrap lg:whitespace-normal top-[68px] fixed h-auto lg:h-fit lg:pt-6 lg:px-2 no-scrollbar py-0 bg-background">
+                            <InfrastructureMenu infrastructure={infrastructure} />
+                        </div>
+                        <div className="lg:w-4/5 flex flex-col px-4 lg:px-0">
+                            <InfrastructureOverviewAlt
                                 infrastructure={infrastructure}
                             />
-                        )}
-                        <ProjectContractAddresses slug={slug} isLayer={false} />
-                        <ManualContractAddresses 
-                            contracts={infrastructure.manualContracts || []} 
-                            sectionTitle="Additional Contracts"
-                            sectionId="manualcontracts"
-                        />
-                        <InfrastructureBody infrastructure={infrastructure} />
+                            <InfraTVLChart />
+                            <RiskSummary content={infrastructure.riskSummary || []} />
+                            {infrastructure.assessment && (
+                                <RiskAnalysis
+                                    riskAnalysis={infrastructure.assessment}
+                                    riskFactors={infrastructure.riskFactors}
+                                    infrastructure={infrastructure}
+                                />
+                            )}
+                            <ProjectContractAddresses slug={slug} isLayer={false} />
+                            <ManualContractAddresses 
+                                contracts={infrastructure.manualContracts || []} 
+                                sectionTitle="Additional Contracts"
+                                sectionId="manualcontracts"
+                            />
+                            <InfrastructureBody infrastructure={infrastructure} />
+                        </div>
                     </div>
-                </div>
+                </UnderReviewWrapper>
             </article>
         </>
     );

@@ -20,6 +20,7 @@ import {
     DefinitionSnippet,
     RiskSummarySnippet,
     BitcoinSecuritySnippet,
+    CustodyTitle,
 } from "../props";
 
 const template: LayerProject = {
@@ -39,7 +40,7 @@ const template: LayerProject = {
         RiskFactor.High,
         RiskFactor.High,
     ],
-    btcLocked: 0,
+    btcLocked: NaN,
     nativeToken: "bBTC",
     feeToken: "BTC",
     notice: undefined,

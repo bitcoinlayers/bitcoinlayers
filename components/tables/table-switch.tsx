@@ -149,9 +149,9 @@ function getSortedDataAndHeaders(view: string, subView: string) {
                         mobileLabel: "Risk",
                     },
                     {
-                        name: "BTC Pegs",
+                        name: "Networks",
                         showSorting: false,
-                        mobileLabel: "Pegs",
+                        mobileLabel: "Networks",
                     },
                     { name: "BTC Supply", showSorting: true, mobileLabel: "BTC" },
                 ];

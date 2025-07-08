@@ -8,6 +8,7 @@ import {
     Site,
     AssessmentCategory,
     PegRiskSummarySnippet,
+    CustodyTitle,
 } from "../props";
 
 const tbtc: InfrastructureProject = {

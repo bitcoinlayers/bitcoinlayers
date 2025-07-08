@@ -35,6 +35,7 @@ import RiskSummaryDialog from "../layer/risk-summary-dialog";
 import NetworkTypeHoverCard from "../layer/network-type-hover-card";
 import SupplyDistributionHoverCard from "../layer/supply-distribution-hover-card";
 import CustodyTypeDialog from "../layer/custody-type-dialog";
+import UnderReviewButton from "@/components/under-review-button";
 
 type TableTabKey =
     | "Trust Assumptions"
@@ -170,7 +171,7 @@ const LayerTable = ({ data, headers }: Props) => {
         }
 
         return filtered;
-    }, [data, sortBy, sortOrder, types, totaledBalances]);
+    }, [data, sortBy, sortOrder, types]);
 
     const handleSort = (header: string) => {
         if (sortBy === header) {
@@ -322,8 +323,8 @@ const LayerTable = ({ data, headers }: Props) => {
                                             {!item.underReview ? (
                                                 <Risk layer={item} />
                                             ) : (
-                                                <div className="lg:px-5 px-1 font-light">
-                                                    Under review
+                                                <div className="lg:px-5 px-1">
+                                                    <UnderReviewButton project={item} />
                                                 </div>
                                             )}
                                         </td>

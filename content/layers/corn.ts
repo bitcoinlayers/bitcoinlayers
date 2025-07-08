@@ -18,6 +18,7 @@ import {
     ReviewSnippet,
     RiskSummarySnippet,
     Categorization,
+    CustodyTitle,
 } from "../props";
 
 const corn: LayerProject = {
@@ -26,6 +27,7 @@ const corn: LayerProject = {
     title: "Corn",
     entityType: EntityType.AltRollup,
     entityCategory: EntityCategory.Alt,
+    custodyTitle: CustodyTitle.Centralized,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,

@@ -14,6 +14,7 @@ import {
     ReviewSnippet,
     BitcoinSecuritySnippet,
     RiskSummarySnippet,
+    CustodyTitle,
 } from "../props";
 
 const stacks: LayerProject = {
@@ -22,6 +23,7 @@ const stacks: LayerProject = {
     title: "Stacks",
     entityType: EntityType.Anchor,
     entityCategory: EntityCategory.Sidesystem,
+    custodyTitle: CustodyTitle.Distributed,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,

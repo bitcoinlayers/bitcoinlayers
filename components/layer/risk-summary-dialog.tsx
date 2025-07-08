@@ -3,6 +3,7 @@ import { Dialog, DialogContent, DialogTrigger, DialogHeader, DialogTitle } from 
 import { Button } from "@/components/ui/button";
 import { AlertTriangleIcon } from "lucide-react";
 import RiskSummary from "@/components/shared/risk-summary";
+import UnderReviewModalContent from "@/components/under-review-modal-content";
 import { LayerProject, InfrastructureProject } from "@/content/props";
 import Image from "next/image";
 
@@ -17,8 +18,8 @@ interface RiskSummaryDialogProps {
 }
 
 const RiskSummaryDialog: React.FC<RiskSummaryDialogProps> = ({ layer, riskSummary }) => {
-    // Don't show button if no risk summary content
-    if (!riskSummary || riskSummary.length === 0) {
+    // Don't show button if no risk summary content and not under review
+    if ((!riskSummary || riskSummary.length === 0) && !layer.underReview) {
         return (
             <div className="text-muted-foreground text-sm">
                 No summary
@@ -48,36 +49,40 @@ const RiskSummaryDialog: React.FC<RiskSummaryDialogProps> = ({ layer, riskSummar
                     }}
                 >
                     <DialogTitle className="sr-only">
-                        {layer.title}
+                        {layer.title} - {layer.underReview ? "Under Review" : "Risk Summary"}
                     </DialogTitle>
-                    <div className="space-y-6">
-                        {/* Network Header */}
-                        <div className="flex items-center gap-3">
-                            <Image
-                                src={`/logos/${layer.slug}.png`}
-                                alt={layer.title}
-                                width={32}
-                                height={32}
-                                className="rounded-full object-cover bg-muted"
-                                onError={(e) => {
-                                    (e.target as HTMLImageElement).src = '/logos/default.png';
-                                }}
-                            />
+                    {layer.underReview ? (
+                        <UnderReviewModalContent project={layer} title="Risk Summary" />
+                    ) : (
+                        <div className="space-y-6">
+                            {/* Network Header */}
+                            <div className="flex items-center gap-3">
+                                <Image
+                                    src={`/logos/${layer.slug}.png`}
+                                    alt={layer.title}
+                                    width={32}
+                                    height={32}
+                                    className="rounded-full object-cover bg-muted"
+                                    onError={(e) => {
+                                        (e.target as HTMLImageElement).src = '/logos/default.png';
+                                    }}
+                                />
+                                <div>
+                                    <h3 className="text-xl font-medium text-foreground" style={{ lineHeight: "28px" }}>
+                                        {layer.title} - Risk Summary
+                                    </h3>
+                                </div>
+                            </div>
+                            
+                            {/* Underline separator */}
+                            <hr className="border-border" />
+                            
+                            {/* Risk Summary Content */}
                             <div>
-                                <h3 className="text-xl font-medium text-foreground" style={{ lineHeight: "28px" }}>
-                                    {layer.title}
-                                </h3>
+                                <RiskSummary content={riskSummary} showBackground={false} />
                             </div>
                         </div>
-                        
-                        {/* Underline separator */}
-                        <hr className="border-border" />
-                        
-                        {/* Risk Summary Content */}
-                        <div>
-                            <RiskSummary content={riskSummary} showBackground={false} />
-                        </div>
-                    </div>
+                    )}
                 </div>
             </DialogContent>
         </Dialog>

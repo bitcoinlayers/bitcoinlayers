@@ -14,6 +14,7 @@ import {
     BitcoinSecuritySnippet,
     RiskSummarySnippet,
     BitcoinLayer,
+    CustodyTitle,
 } from "../props";
 
 const mercurylayer: LayerProject = {
@@ -22,6 +23,7 @@ const mercurylayer: LayerProject = {
     title: "Mercury Layer",
     entityType: EntityType.Statechain,
     entityCategory: EntityCategory.BitcoinNative,
+    custodyTitle: CustodyTitle.BitcoinNative,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,

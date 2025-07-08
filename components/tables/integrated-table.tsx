@@ -33,6 +33,8 @@ import RiskSummaryDialog from "../layer/risk-summary-dialog";
 import NetworkTypeHoverCard from "../layer/network-type-hover-card";
 import SupplyDistributionHoverCard from "../layer/supply-distribution-hover-card";
 import CustodyTypeDialog from "../layer/custody-type-dialog";
+import UnderReviewButton from "@/components/under-review-button";
+import ComingSoon from "@/components/tables/coming-soon";
 
 type TableTabKey =
     | "Trust Assumptions"
@@ -82,11 +84,13 @@ const IntegratedTable = ({ data, headers }: Props) => {
     });
 
     const [sortBy, setSortBy] = useQueryState("sortBy", {
-        defaultValue: "Name",
+        defaultValue: "BTC Pegs",
     });
     const [sortOrder, setSortOrder] = useQueryState("sortOrder", {
         defaultValue: "desc",
     });
+
+    const [pegSupplyView, setPegSupplyView] = useState<"pegs" | "supply">("pegs");
 
     const { data: currentSupplies, isLoading } =
         getCurrentSuppliesByTokenimpl();
@@ -145,6 +149,11 @@ const IntegratedTable = ({ data, headers }: Props) => {
                 case "Risk Summary":
                     valueA = a.riskSummary?.join(",") || "";
                     valueB = b.riskSummary?.join(",") || "";
+                    break;
+                case "BTC Pegs":
+                    // Sort by BTC Supply - use totaledBalances if available, fallback to btcLocked
+                    valueA = Number(totaledBalances[a.slug]?.totalAmount ?? a.btcLocked) || 0;
+                    valueB = Number(totaledBalances[b.slug]?.totalAmount ?? b.btcLocked) || 0;
                     break;
                 default:
                     return 0;
@@ -209,6 +218,8 @@ const IntegratedTable = ({ data, headers }: Props) => {
                             onSort={handleSort}
                             sortBy={sortBy}
                             sortOrder={sortOrder}
+                            pegSupplyView={pegSupplyView}
+                            onPegSupplyViewChange={setPegSupplyView}
                         />
                         <tbody className="gap-x-8">
                             {filteredData.map((item, index) => (
@@ -292,7 +303,7 @@ const IntegratedTable = ({ data, headers }: Props) => {
                                             <NetworkTypeHoverCard entityType={item.entityType}>
                                                 <Link 
                                                     href={`/layers/${item.slug}`}
-                                                    className="hover:underline cursor-pointer"
+                                                    className="hover:underline cursor-pointer font-medium"
                                                 >
                                                     {item.entityType}
                                                 </Link>
@@ -306,8 +317,8 @@ const IntegratedTable = ({ data, headers }: Props) => {
                                             {!item.underReview ? (
                                                 <Risk layer={item} />
                                             ) : (
-                                                <div className="lg:px-5 px-1 font-light">
-                                                    Under review
+                                                <div className="lg:px-5 px-1">
+                                                    <UnderReviewButton project={item} />
                                                 </div>
                                             )}
                                         </td>
@@ -330,13 +341,65 @@ const IntegratedTable = ({ data, headers }: Props) => {
                                     {(!isMobile ||
                                         mobileActiveTab === "BTC Pegs") && (
                                         <td className="lg:px-4 px-4 py-3 lg:py-4 border-border">
-                                            {isLoading ? (
-                                                <div>Loading...</div>
+                                            {pegSupplyView === "pegs" ? (
+                                                isLoading ? (
+                                                    <div>Loading...</div>
+                                                ) : (tokensMap[item.slug.toLowerCase()] || []).length === 0 ? (
+                                                    <ComingSoon />
+                                                ) : (
+                                                    <TokenList
+                                                        tokens={tokensMap[item.slug.toLowerCase()] || []}
+                                                        networkSlug={item.slug}
+                                                    />
+                                                )
                                             ) : (
-                                                <TokenList
-                                                    tokens={tokensMap[item.slug.toLowerCase()] || []}
-                                                    networkSlug={item.slug}
-                                                />
+                                                // Supply view
+                                                item.underReview ||
+                                                (Object.keys(
+                                                    totaledBalances,
+                                                ).find(
+                                                    (key) =>
+                                                        key.toLowerCase() ===
+                                                        item.title.toLowerCase(),
+                                                ) === undefined &&
+                                                    (item.btcLocked === null ||
+                                                        isNaN(
+                                                            item.btcLocked,
+                                                        ))) ? (
+                                                    <ComingSoon />
+                                                ) : (
+                                                    <SupplyDistributionHoverCard
+                                                        tokens={tokensMap[item.slug.toLowerCase()] || []}
+                                                        totalAmount={Number(
+                                                            totaledBalances[
+                                                                item.slug
+                                                            ]?.totalAmount ??
+                                                                item.btcLocked,
+                                                        )}
+                                                        networkName={item.title}
+                                                    >
+                                                        <Link 
+                                                            href={`/layers/${item.slug}`}
+                                                            className="hover:underline cursor-pointer"
+                                                        >
+                                                            <div className="font-medium">
+                                                                ₿{" "}
+                                                                {Number(
+                                                                    totaledBalances[
+                                                                        item.slug
+                                                                    ]?.totalAmount ??
+                                                                        item.btcLocked,
+                                                                ).toLocaleString(
+                                                                    "en-US",
+                                                                    {
+                                                                        minimumFractionDigits: 0,
+                                                                        maximumFractionDigits: 0,
+                                                                    },
+                                                                )}
+                                                            </div>
+                                                        </Link>
+                                                    </SupplyDistributionHoverCard>
+                                                )
                                             )}
                                         </td>
                                     )}

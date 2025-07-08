@@ -7,6 +7,7 @@ import InfoCardGrid from "@/components/info-card-grid";
 import ChartSwitch from "@/components/charts/chart-switch";
 import TableSwitch from "@/components/tables/table-switch";
 import SearchBlock from "@/components/filter/SearchBlock";
+import WelcomeBanner from "@/components/welcome-banner";
 
 export default function Home() {
     const [view] = useQueryState("view", {
@@ -29,8 +30,21 @@ export default function Home() {
                     imageClassName="bottom-[6px] right-3 w-4 h-4"
                 />
             </div>
-            {showChart && <ChartSwitch />}
-            <TableSwitch />
+            {/* For Bitcoin Native view: show table first, then chart */}
+            {view === "networks" && (
+                <>
+                    <WelcomeBanner />
+                    <TableSwitch />
+                    {showChart && <ChartSwitch />}
+                </>
+            )}
+            {/* For all other views: show chart first, then table */}
+            {view !== "networks" && (
+                <>
+                    {showChart && <ChartSwitch />}
+                    <TableSwitch />
+                </>
+            )}
             <CtaCard />
             <InfoCardGrid />
         </div>

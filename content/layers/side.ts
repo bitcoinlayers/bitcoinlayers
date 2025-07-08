@@ -16,6 +16,7 @@ import {
     TechnologySnippet,
     UseCaseSnippet,
     RiskSummarySnippet,
+    CustodyTitle,
 } from "../props";
 
 const side: LayerProject = {

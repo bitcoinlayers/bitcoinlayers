@@ -21,7 +21,7 @@ const merlinmbtc: InfrastructureProject = {
     staking: false,
     liquidStaking: false,
     bridge: true,
-    underReview: true,
+    underReview: false,
     riskFactors: ["", ""],
     nativeToken: "-",
     purpose: Purpose.General,

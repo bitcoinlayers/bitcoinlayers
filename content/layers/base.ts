@@ -18,6 +18,7 @@ import {
     BitcoinSecuritySnippet,
     AdditionalSnippet,
     RiskSummarySnippet,
+    CustodyTitle,
 } from "../props";
 
 const base: LayerProject = {
@@ -26,6 +27,7 @@ const base: LayerProject = {
     title: "Base",
     entityType: EntityType.AltRollup,
     entityCategory: EntityCategory.Alt,
+    custodyTitle: CustodyTitle.Centralized,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,

@@ -16,7 +16,8 @@ import {
     BitcoinSecuritySnippet,
     TechnologySnippet,
     RiskSummarySnippet,
-    BitcoinLayer
+    BitcoinLayer,
+    CustodyTitle,
 } from "../props";
 
 const spark: LayerProject = {
@@ -25,6 +26,7 @@ const spark: LayerProject = {
     title: "Spark",
     entityType: EntityType.Statechain,
     entityCategory: EntityCategory.BitcoinNative,
+    custodyTitle: CustodyTitle.BitcoinNative,
     live: LiveStatus.Beta,
     staking: false,
     liquidStaking: false,
