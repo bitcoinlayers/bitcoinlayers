@@ -39,7 +39,7 @@ const hemi: LayerProject = {
         RiskFactor.VeryHigh,
         RiskFactor.Medium,
         RiskFactor.VeryHigh,
-        RiskFactor.UnderReview,
+        RiskFactor.Medium,
     ],
     btcLocked: 0,
     nativeToken: "ETH",
@@ -86,7 +86,7 @@ const hemi: LayerProject = {
         ],
         categorization: [
             {
-                title: Categorization.NoBridgeTitle,
+                title: "The project anchors its state to bitcoin, but does not meet our criteria to be a sidesystem",
                 content: Categorization.NoBridgeSnippet,
             },
         ],
@@ -205,9 +205,9 @@ const hemi: LayerProject = {
         {
             category: RiskCategory.FinalityGuarantees,
             score: 0,
-            tier: RiskFactor.UnderReview,
+            tier: RiskFactor.Medium,
             title: "Hemi state updates are submitted by a centralized proposer",
-            content: `${ReviewSnippet.NoFraudProofsBridge}\n\nHemi's official bridge program is a smart contract hosted on Ethereum. We are reviewing its finality guarantees related to its Proof-of-Proof consensus mechanism.`,
+            content: `Hemi's state is updated offchain by Hemi full nodes. After this state is finalized offchain, any conflicting state update proposed by a sequencer would be rejected by Hemi's full nodes.\n\nHemi's official bridge program is a smart contract hosted on Ethereum. It is not secured by any proving system. ${ReviewSnippet.NoFraudProofsBridge}\n\nHemi additionally posts its state root to bitcoin periodically through its Proof-of-Proof consensus mechanism. But, because no bridge program on bitcoin is finalized by this state root and the system is managed by a centralized operator, the bitcoin anchoring provides little finality assurances.`,
         },
     ],
     manualContracts: [
@@ -235,7 +235,7 @@ const hemi: LayerProject = {
             content: [
                 {
                     title: "Hemi does not inherit any security from Bitcoin",
-                    content: "We are reviewing if the network inherits any security from Bitcoin."
+                    content: BitcoinSecuritySnippet.Checkpoint,
                 },
                 {
                     title: "ETH token used to pay fees",
@@ -247,7 +247,7 @@ const hemi: LayerProject = {
                 },
                 {
                     title: "Hemi does not contribute to the security budget",
-                    content: BitcoinSecuritySnippet.NoSecurity,
+                    content: BitcoinSecuritySnippet.NoSecurityBudget,
                 },
             ],
         },

@@ -19,9 +19,9 @@ const Categorization: React.FC<CategorizationProps> = ({ content, layer, showBac
     const getSubtitle = (entityCategory?: EntityCategory): string | null => {
         switch (entityCategory) {
             case EntityCategory.Integrated:
-                return "The project inherits security from bitcoin protocol participants, or BTC the asset, but does not qualify as a sidesytem per our categorization";
+                return null;
             case EntityCategory.Alt:
-                return "The project claims to be a bitcoin layer, but does not currently inherit security from bitcoin. It does not qualify as a sidesystem per our categorization";
+                return null;
             default:
                 return null;
         }

@@ -275,6 +275,7 @@ export enum BitcoinSecuritySnippet { //TODO: Janusz to add more here
     StatechainSecurityBudget = "Statechains do not interact with the base layer outside of uses unilaterally exiting with their funds. Unilateral exit transactions pay L1 transaction fees.",
     FinalityAssurance = "The network cannot be reorged without reorging bitcoin. This is due to the fact that the network builds upon a checkpoint posted to bitcoin.",
     CheckpointCometBFT = "The network's security is independent of bitcoin and reliant on its own proof-of-stake mechanism.\n\nIts checkpoint mechanism does provide security against long-range attacks, enabling more secure light clients and shorter unbonding periods for validators.",
+    Checkpoint = "The network's security is independent of bitcoin and reliant on its own consensus mechanism. Its checkpoint mechanism, however, ensures that after a transaction including a checkpoint reference is included on bitcoin, the network's state cannot be reverted without reorging bitcoin.",
     FeesPOSCheckpoint = "Periodic checkpoint transactions are made that pay fees to bitcoin miners.",
     MergeMineDA = "The network's data availability layer is merge-mined by bitcoin miners.",
     MergeMine = "The network is merge-mined by bitcoin miners.",
