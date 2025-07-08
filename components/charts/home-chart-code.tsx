@@ -326,7 +326,7 @@ const MechanismContentPanel = ({
     <div className="mt-6 mb-6 animate-in slide-in-from-top-2 duration-300">
       <div className={`bg-white dark:bg-gray-900/50 rounded-lg p-6 border ${colorClasses?.panelBorder || 'border-gray-200'} ${colorClasses?.panelDarkBorder || 'dark:border-gray-800'} shadow-lg`}>
         <div className="flex items-center justify-between mb-4">
-          <h3 className={`text-xl font-semibold ${colorClasses?.panelText || 'text-gray-900'} ${colorClasses?.panelDarkText || 'dark:text-gray-100'}`}>
+          <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100">
             {mechanism.label} Custody
           </h3>
           <button
