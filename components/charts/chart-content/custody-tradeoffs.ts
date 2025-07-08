@@ -4,7 +4,7 @@ import { CustodyTitle } from "@/content/props";
 const custodyTradeoffs = {
     [CustodyTitle.BitcoinNative]: {
       title: "Bitcoin Native Custody Mechanisms",
-      subtitle: "Learn more about how these designs ensure users retain unilateral exit paths",
+      subtitle: "Learn more about how these designs ensure users retain unilateral exit paths:",
       mechanisms: [
         {
           name: "Payment Channels",
@@ -18,9 +18,8 @@ const custodyTradeoffs = {
             "Requires active liquidity management",
             "Channel capacity limitations",
             "Need to monitor for channel closures",
-            "Requires an L1 transaction to receive funds"
+            "Requires an L1 transaction to open a channel and receive funds"
           ],
-          riskLevel: "Low",
           networks: ["lightning"]
         },
         {
@@ -35,12 +34,11 @@ const custodyTradeoffs = {
             "Key deletion not cryptographically verifiable",
             "Previous owners can force current owners onchain"
           ],
-          riskLevel: "Medium",
           networks: ["spark", "mercurylayer"]
         },
         {
           name: "Ark (coming soon)",
-          description: "Shared UTXO pools with virtual transaction trees",
+          description: "UTXO sharing through VTXO trees",
           pros: [
             "Unilateral exit paths maintained",
             "No channel management overhead"
@@ -50,7 +48,6 @@ const custodyTradeoffs = {
             "ASPs have liquidity requirements",
             "Operator, and previous owner, can double-spend out-of-round transactions"
           ],
-          riskLevel: "Medium",
         }
       ]
     }

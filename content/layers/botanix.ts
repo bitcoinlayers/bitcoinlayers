@@ -29,7 +29,6 @@ const template: LayerProject = {
     title: "Botanix",
     entityType: EntityType.Federation,
     entityCategory: EntityCategory.Sidesystem,
-    custodyTitle: CustodyTitle.Distributed,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,

@@ -4,7 +4,7 @@ import { CustodyTitle } from "@/content/props";
 const custodyTradeoffs = {
     [CustodyTitle.Distributed]: {
       title: "Distributed Third-Party Custody Mechanisms",
-      subtitle: "Learn how different protocols secure bitcoin backing wrapped tokens on corresponding networks",
+      subtitle: "Learn how different protocols secure bitcoin backing wrapped tokens on corresponding networks:",
       mechanisms: [
         {
             name: "PoS Validator Custody",
@@ -23,7 +23,7 @@ const custodyTradeoffs = {
         },
         {
           name: "Federations",
-          description: "Official bridge progreams where wrapped tokens are backed by BTC secured in a multisig (or MPC scheme)",
+          description: "Official bridge programs where wrapped tokens are backed by BTC secured in a multisig (or MPC scheme)",
           pros: [
             "Trust distributed across multiple parties",
             "If public federation, reputation damange incurred in case of fraud"
@@ -34,7 +34,7 @@ const custodyTradeoffs = {
             "If federation is not public, reputation damage cannot be incurred in case of fraud"
           ],
           riskLevel: "Medium",
-          networks: ["botanix", "liquid", "stacks", "rootstock", "lombard-lbtc", "threshold-tbtc",]
+          networks: ["botanix", "liquid", "stacks", "rootstock",]
         },
         {
             name: "Federated Chaumian Ecash",

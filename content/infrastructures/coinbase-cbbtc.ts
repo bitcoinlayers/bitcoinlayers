@@ -16,7 +16,6 @@ const cbbtc: InfrastructureProject = {
     slug: "coinbase-cbbtc",
     title: "Coinbase cbBTC",
     entityType: EntityType.ReserveAsset,
-    custodyTitle: CustodyTitle.Centralized,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,

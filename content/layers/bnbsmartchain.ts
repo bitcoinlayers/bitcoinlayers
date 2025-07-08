@@ -18,6 +18,7 @@ import {
     TechnologySnippet,
     ReviewSnippet,
     RiskSummarySnippet,
+    CustodyTitle,
 } from "../props";
 import { Bitcoin } from "lucide-react";
 import RiskSummary from "@/components/shared/risk-summary";
@@ -28,6 +29,7 @@ const bnbsmartchain: LayerProject = {
     title: "BNB Smart Chain",
     entityType: EntityType.AltL1,
     entityCategory: EntityCategory.Alt,
+    custodyTitle: CustodyTitle.Centralized,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,

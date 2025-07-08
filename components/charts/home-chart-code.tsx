@@ -30,11 +30,11 @@ type CustodyChartProps = {
 const custodyMechanisms = {
   [CustodyTitle.BitcoinNative]: {
     label: "Bitcoin Native",
-    description: "These protocols enable unilateral exits. Bitcoin native protocols can leverage payment channels, Arks, or Statechains to ensure users have a unilateral exit path. Trust assumptions differ between each design. Learn more below.",
+    description: "These protocols enable unilateral exits. Bitcoin native protocols can leverage payment channels, Arks, or Statechains to ensure users have a unilateral exit path. Trust assumptions differ between each design.",
   },
   [CustodyTitle.Distributed]: {
     label: "Distributed Third-Party",
-    description: "These protocols distribute third-party custody across multiple parties through federations, multi-sigs, or threshold signature schemes. While custodial, they reduce single points of failure by requiring multiple entities to collude to steal funds.",
+    description: "These protocols distribute third-party custody across multiple parties through federations, multi-sigs, or threshold signature schemes. While not self-custodial, they reduce single points of failure by requiring multiple entities to collude to steal funds.",
   },
   [CustodyTitle.Centralized]: {
     label: "Centralized Third-Party",
@@ -61,11 +61,58 @@ const getProjectBySlug = (slug: string): { project: any; type: string } | null =
   return null;
 };
 
-// Enhanced Network Card Component
+// Enhanced Network Card Component that handles "wrapper on network" entries
 const NetworkCard = ({ networkSlug, type }: { networkSlug: string, type: string }) => {
+  // Check if this is a compound entry like "coinbase-cbbtc on base"
+  if (networkSlug.includes(' on ')) {
+    const [wrapperSlug, networkSlugPart] = networkSlug.split(' on ').map(s => s.trim());
+    
+    const wrapperResult = getProjectBySlug(wrapperSlug);
+    const networkResult = getProjectBySlug(networkSlugPart);
+    
+    if (wrapperResult && networkResult) {
+      return (
+        <Link 
+          href={`/infrastructure/${wrapperResult.project.slug}`}
+          className="group bg-white dark:bg-gray-800 rounded-lg p-3 border border-gray-200 dark:border-gray-700 hover:border-blue-300 dark:hover:border-blue-600 hover:shadow-md transition-all duration-200 cursor-pointer"
+        >
+          <div className="flex items-center space-x-3">
+            <div className="flex-shrink-0">
+              <Image
+                src={`/logos/${wrapperResult.project.slug}.png`}
+                alt={`${wrapperResult.project.title} logo`}
+                width={24}
+                height={24}
+                className="rounded-sm"
+                onError={(e) => {
+                  e.currentTarget.style.display = 'none';
+                }}
+              />
+            </div>
+            <div className="flex-1 min-w-0">
+              <span className="text-sm font-medium text-gray-900 dark:text-gray-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 truncate block">
+                {wrapperResult.project.title} on {networkResult.project.title}
+              </span>
+            </div>
+            <div className="flex-shrink-0">
+              <svg 
+                className="w-4 h-4 text-gray-400 group-hover:text-blue-500 transition-colors" 
+                fill="none" 
+                stroke="currentColor" 
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </div>
+          </div>
+        </Link>
+      );
+    }
+  }
+
+  // Handle regular single slug entries (existing logic)
   const result = getProjectBySlug(networkSlug);
   if (!result) {
-    // Fallback for projects not found
     return (
       <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-3 text-center border border-gray-200 dark:border-gray-700">
         <span className="text-sm font-medium text-gray-900 dark:text-gray-100 capitalize">
@@ -74,8 +121,10 @@ const NetworkCard = ({ networkSlug, type }: { networkSlug: string, type: string 
       </div>
     );
   }
+  
   const { project, type: projectType } = result;
-  let href = projectType === 'layer' ? `/layers/${project.slug}` : projectType === 'infrastructure' ? `/infrastructure/${project.slug}` : `/infrastructure/${project.slug}`;
+  let href = projectType === 'layer' ? `/layers/${project.slug}` : `/infrastructure/${project.slug}`;
+  
   return (
     <Link 
       href={href}
@@ -90,7 +139,6 @@ const NetworkCard = ({ networkSlug, type }: { networkSlug: string, type: string 
             height={24}
             className="rounded-sm"
             onError={(e) => {
-              // Hide image on error and show fallback
               e.currentTarget.style.display = 'none';
             }}
           />
@@ -382,10 +430,50 @@ const MechanismContentPanel = ({
                      {mech.networks && mech.networks.length > 0 && (
                        <div className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-600">
                          <div className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-3">
-                           Some networks using {mech.name}:
+                           Some protocols using {mech.name}:
                          </div>
                          <div className="flex flex-wrap gap-3">
                            {mech.networks.map((networkSlug, i) => {
+                             // Handle compound entries like "coinbase-cbbtc on base"
+                             if (networkSlug.includes(' on ')) {
+                               const [wrapperSlug, networkSlugPart] = networkSlug.split(' on ').map(s => s.trim());
+                               const wrapperResult = getProjectBySlug(wrapperSlug);
+                               const networkResult = getProjectBySlug(networkSlugPart);
+                               
+                               if (wrapperResult && networkResult) {
+                                 return (
+                                   <Link 
+                                     key={i}
+                                     href={`/infrastructure/${wrapperResult.project.slug}`}
+                                     className="group flex items-center space-x-2 bg-white dark:bg-gray-700 rounded-lg p-3 border border-gray-200 dark:border-gray-600 hover:border-blue-300 dark:hover:border-blue-500 hover:shadow-md transition-all duration-200"
+                                   >
+                                     <Image
+                                       src={`/logos/${wrapperResult.project.slug}.png`}
+                                       alt={`${wrapperResult.project.title} logo`}
+                                       width={24}
+                                       height={24}
+                                       className="rounded-sm"
+                                       onError={(e) => {
+                                         e.currentTarget.style.display = 'none';
+                                       }}
+                                     />
+                                     <span className="text-sm font-medium text-gray-900 dark:text-gray-100 group-hover:text-blue-600 dark:group-hover:text-blue-400">
+                                       {wrapperResult.project.title} on {networkResult.project.title}
+                                     </span>
+                                     <svg 
+                                       className="w-3 h-3 text-gray-400 group-hover:text-blue-500 transition-colors opacity-0 group-hover:opacity-100" 
+                                       fill="none" 
+                                       stroke="currentColor" 
+                                       viewBox="0 0 24 24"
+                                     >
+                                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                     </svg>
+                                   </Link>
+                                 );
+                               }
+                             }
+
+                             // Handle regular single slug entries (existing logic)
                              const network = getProjectBySlug(networkSlug);
                              if (network) {
                                const { project, type: projectType } = network;
@@ -434,7 +522,7 @@ const MechanismContentPanel = ({
           {!showTradeoffs && (
             <div>
               <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-3">
-                Some networks using this mechanism
+                Some protocols using this mechanism
               </h4>
               {projects.length > 0 ? (
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">

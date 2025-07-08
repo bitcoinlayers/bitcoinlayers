@@ -84,7 +84,7 @@ const IntegratedTable = ({ data, headers }: Props) => {
     });
 
     const [sortBy, setSortBy] = useQueryState("sortBy", {
-        defaultValue: "Name",
+        defaultValue: "BTC Pegs",
     });
     const [sortOrder, setSortOrder] = useQueryState("sortOrder", {
         defaultValue: "desc",
@@ -150,6 +150,11 @@ const IntegratedTable = ({ data, headers }: Props) => {
                     valueA = a.riskSummary?.join(",") || "";
                     valueB = b.riskSummary?.join(",") || "";
                     break;
+                case "BTC Pegs":
+                    // Sort by BTC Supply - use totaledBalances if available, fallback to btcLocked
+                    valueA = Number(totaledBalances[a.slug]?.totalAmount ?? a.btcLocked) || 0;
+                    valueB = Number(totaledBalances[b.slug]?.totalAmount ?? b.btcLocked) || 0;
+                    break;
                 default:
                     return 0;
             }
@@ -172,7 +177,7 @@ const IntegratedTable = ({ data, headers }: Props) => {
         }
 
         return filtered;
-    }, [data, sortBy, sortOrder, types]);
+    }, [data, sortBy, sortOrder, types, totaledBalances]);
 
     const handleSort = (header: string) => {
         if (sortBy === header) {

@@ -4,7 +4,7 @@ import { CustodyTitle } from "@/content/props";
 const custodyTradeoffs = {
     [CustodyTitle.Centralized]: {
       title: "Centralized Third-Party Custody Mechanisms",
-      subtitle: "Learn more about how these designs work with centralized custodians",
+      subtitle: "Learn more about how these designs work with centralized custodians:",
       mechanisms: [
         {
           name: "Centralized Institutional Custody",
@@ -19,7 +19,7 @@ const custodyTradeoffs = {
             "No recourse mechanism for users if funds are stolen or censored",
           ],
           riskLevel: "Low",
-          networks: ["corn-btcn", "bitgo-wbtc", "coinbase-cbbtc", "kraken-kbtc", "binance-btcb", "solv-solvbtc",]
+          networks: ["corn-btcn on corn", "bitgo-wbtc on ethereum", "coinbase-cbbtc on base", "binance-btcb on bnbsmartchain",]
         },
         {
           name: "Chaumian Ecash",

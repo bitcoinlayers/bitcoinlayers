@@ -17,7 +17,6 @@ const solv: InfrastructureProject = {
     slug: "solv-solvbtc",
     title: "Solv SolvBTC",
     entityType: EntityType.ReserveAsset,
-    custodyTitle: CustodyTitle.Centralized,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
