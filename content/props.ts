@@ -435,6 +435,43 @@ export enum DefinitionSnippet { //TODO: Janusz to add more here
     DefinitionAltRollup = "The network is an alternative rollup. It uses an alternative network for data availability and consensus. It supports a variety of BTC-backed assets.",
 }
 
+export const AlertSnippet = { //TODO: Janusz to add more here
+    ProofOfProofConsensus: {
+        type: "warning" as const,
+        title: "Note on Hemi's Proof-of-Proof consensus",
+        content: "While Hemi's anchors its state to bitcoin, the network is currently managed by a centralized operator. The operator is unable to revert Hemi's state after Hemi full nodes compute a new state root. This is independent of any additional finality guarantees potentially provided by bitcoin.",
+        linkText: "Learn more about bitcoin anchoring for alternative blockchains",
+        linkUrl: "https://lxresearch.co"
+    },
+    SecurityModelDifference: {
+        type: "warning" as const,
+        title: "Important Security Consideration",
+        content: "Hemi's security model is fundamentally different from Bitcoin's. Users should understand that they are not protected by Bitcoin's hash rate when using Hemi.",
+        linkText: "Learn more about Bitcoin security",
+        linkUrl: "https://docs.hemi.xyz/security"
+    },
+    CentralizedSequencerRisk: {
+        type: "warning" as const,
+        title: "Centralized Sequencer Risk",
+        content: "The network is operated by a centralized sequencer. If this sequencer goes offline or becomes malicious, it could affect network operations and user fund accessibility.",
+    },
+    AltDALayerRisk: {
+        type: "warning" as const,
+        title: "Alternative Data Availability Risk",
+        content: "This network relies on an alternative data availability layer. If the DA layer becomes unavailable, the network cannot progress and user funds may be frozen.",
+    },
+    BridgeUpgradeRisk: {
+        type: "error" as const,
+        title: "Bridge Upgrade Risk",
+        content: "Bridge contracts can be upgraded by a centralized party or federation. In case of a malicious upgrade, user funds could be at risk.",
+    },
+    UnderReviewNotice: {
+        type: "info" as const,
+        title: "Section Under Review",
+        content: "This section is currently under review. Some information may be incomplete or subject to change as our analysis progresses.",
+    },
+} as const;
+
 export interface ContractItem {
     title: string;
     address: string;
@@ -457,6 +494,7 @@ export interface Peg {
     tier: RiskFactor | "";
     title: TokenSnippet | string;
     content: string;
+    alert?: SectionAlert;
 }
 
 export interface RiskSection {

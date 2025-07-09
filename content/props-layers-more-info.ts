@@ -63,6 +63,7 @@ export enum KnowledgeBitSnippet { //TODO: Janusz to add more here
 export enum AdditionalSnippet { //TODO: Janusz to add more here
     UpgradeableContractsCentralizedAndNoExit = "The contracts related to this project are immediately upgradeable by a centralized party. These contracts affect the project's chain and may affect specific two-way peg implementations.\n\nIn case of an malicious upgrade, there is no exit delay and users are unable to leave the chain.",
     UpgradeableContractsFederatedAndExit = "The contracts related to this project are immediately upgradeable by a federation. These contracts affect the project's chain and may affect specific two-way peg implementations.\n\nIn case of an malicious upgrade by this federation, there is no exit delay and users are unable to leave the chain.",
+    InitialReview = "This is the initial review of the network. We will conduct a full review of the network shortly in the future. The contents in this review are subject to change.",
 }
 export enum OtherSnippet { //TODO: Janusz to add more here
     WithdrawalsAltRollup = "Withdrawing BTC-backed assets from the network depends on a variety of factors. First, users must trust the network operators to include their withdrawal request in a block. If the user's assets are locked in the network's official bridge program, they rely on a proposer to include their request in proposed state transition. After the state transition is finalized, the user can redeem their funds.\n\nIf a user's BTC-backed asset is minted directly onto the network, then the user's withdrawal request must be processed by the asset issuer.",
@@ -77,3 +78,60 @@ export enum AtlSnippet { //TODO: Janusz to add more here
     OperatorsPoSNetwork = "Blocks are produced and proposed by an alternative proof-of-stake network.",
     PrioritizeLayers = "The Bitcoin Layers project prioritizes reviews on protocols that claim to be bitcoin layers. It also reviews bridges, token wrappers, and other mechanisms that support synthetic versions of bitcoin on other chains. If you'd ike to contribute to this review, feel free to submit a PR in our [GitHub](https://github.com/bitcoinlayers/bitcoinlayers) or join our [telegram group](https://t.me/+8rv-1I2gkmQ4ZmJh) to discuss.",
 }
+
+export const Alertsnippet = { //TODO: Janusz to add more here
+    ProofOfProofConsensus: {
+        type: "warning" as const,
+        title: "Note on Hemi's Proof-of-Proof consensus",
+        content: "While Hemi's anchors its state to bitcoin, the network is currently managed by a centralized operator. The operator is unable to revert Hemi's state after Hemi full nodes compute a new state root. This is independent of any additional finality guarantees potentially provided by bitcoin.",
+        linkText: "Learn more about bitcoin anchoring for alternative blockchains",
+        linkUrl: "https://lxresearch.co"
+    },
+    AltRollupAltTokenNoFraudProofs: {
+        type: "warning" as const,
+        title: "This token is not bridged to the network from bitcoin",
+        content: "The token is bridged to the network's from a bridge contract hosted on its parent chain. The bridge does not have a functioning proof system. The proposer can submit a malicious state transition and steal funds from the bridge.",
+    },
+    WrapperCentralized: {
+        type: "warning" as const,
+        title: "Bitcoin backing this token is secured by a centralized party",
+        content: "The bitcoin backing this token is secured by a centralized party. This party can unilaterally steal users funds with no recourse.",
+    },
+    AltRollupAltTokenProofsUpgrade: {
+        type: "warning" as const,
+        title: "This token is not bridged to the network from bitcoin",
+        content: "The token is bridged to the network's from a bridge contract hosted on its parent chain. Users must consider how the native bitcoin is secured. Additionally, while there is a proving system in place, the bridge contract can instantly upgraded by a centralized party or federation. In the event of a malicious upgrade, user funds could be stolen.",
+    },
+    AltRollupAltTokenUnderReview: {
+        type: "warning" as const,
+        title: "This token is not bridged to the network from bitcoin",
+        content: "The token is bridged to the network's from a bridge contract hosted on its parent chain. The bridge does not have a functioning proof system. The proposer can submit a malicious state transition and steal funds from the bridge.",
+    },
+    SecurityModelDifference: {
+        type: "warning" as const,
+        title: "Important Security Consideration",
+        content: "Hemi's security model is fundamentally different from Bitcoin's. Users should understand that they are not protected by Bitcoin's hash rate when using Hemi.",
+        linkText: "Learn more about Bitcoin security",
+        linkUrl: "https://docs.hemi.xyz/security"
+    },
+    CentralizedSequencerRisk: {
+        type: "warning" as const,
+        title: "Centralized Sequencer Risk",
+        content: "The network is operated by a centralized sequencer. If this sequencer goes offline or becomes malicious, it could affect network operations and user fund accessibility.",
+    },
+    AltDALayerRisk: {
+        type: "warning" as const,
+        title: "Alternative Data Availability Risk",
+        content: "This network relies on an alternative data availability layer. If the DA layer becomes unavailable, the network cannot progress and user funds may be frozen.",
+    },
+    BridgeUpgradeRisk: {
+        type: "warning" as const,
+        title: "Bridge Upgrade Risk",
+        content: "Bridge contracts can be upgraded by a centralized party or federation. In case of a malicious upgrade, user funds could be at risk.",
+    },
+    UnderReviewNotice: {
+        type: "info" as const,
+        title: "Section Under Review",
+        content: "This section is currently under review. Some information may be incomplete or subject to change as our analysis progresses.",
+    },
+} as const;

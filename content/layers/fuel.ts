@@ -11,14 +11,17 @@ import {
     RiskSection,
     ContentSection,
     RiskCategory,
-    TokenSnippet,
-    ReviewSnippet,
+} from "../props";
+import { Reviewsnippet} from "../props-layers-reviews";
+import {
+    BitcoinSecuritySnippet,
     UseCaseSnippet,
     TechnologySnippet,
     KnowledgeBitSnippet,
     AdditionalSnippet,
-    BitcoinSecuritySnippet,
-} from "../props";
+    Alertsnippet,
+} from "../props-layers-more-info";
+import { RiskSummarySnippet } from "../props-layers-intro";
 
 const template: LayerProject = {
     type: Type.Layer,
@@ -30,49 +33,53 @@ const template: LayerProject = {
     staking: false,
     liquidStaking: false,
     bridge: false,
-    underReview: true,
+    underReview: false,
     riskFactors: [
-        RiskFactor.UnderReview,
-        RiskFactor.UnderReview,
-        RiskFactor.UnderReview,
-        RiskFactor.UnderReview,
+        RiskFactor.VeryHigh,
+        RiskFactor.High,
+        RiskFactor.High,
+        RiskFactor.High,
     ],
     btcLocked: 0,
     nativeToken: "TKN",
-    feeToken: "BTC",
+    feeToken: "ETH",
     notice: undefined,
     bitcoinOnly: false,
     links: [
         {
             text: Site.Website,
-            url: "website",
+            url: "https://fuel.network/",
         },
         {
             text: Site.Docs,
-            url: "docs",
+            url: "https://docs.fuel.network/docs/intro/what-is-fuel/",
         },
         {
             text: Site.Explorer,
-            url: "explorer",
+            url: "https://app.fuel.network/",
         },
         {
             text: Site.GitHub,
-            url: "github",
+            url: "https://github.com/FuelLabs/",
         },
         {
             text: Site.Twitter,
-            url: "socials",
+            url: "https://x.com/fuel_network",
         },
     ],
-    description: "",
+    description: "Fuel is an Ethereum rollup that supports a variety of wrapped bitcoin assets on its chain. ",
     riskSummary: [
         {
-            title: "Specific Risk",
-            content: "risk text explanation"
+            title: RiskSummarySnippet.TitleCustodianPegs,
+            content: RiskSummarySnippet.RiskSummaryCustodianPegs,
         },
         {
-            title: "Specific Risk",
-            content: "risk text explanation"
+            title: RiskSummarySnippet.TitleCentralizedSequencer,
+            content: RiskSummarySnippet.RiskSummaryCentralizedSequencer,
+        },
+        {
+            title: RiskSummarySnippet.TitleAltDA,
+            content: RiskSummarySnippet.RiskSummaryAltDANetwork,
         }
     ],
     riskAnalysis: [
@@ -84,86 +91,72 @@ const template: LayerProject = {
             content: "",
             pegs: [
                 {
-                    name: "Template BTC",
-                    infrastructureSlug: "templace-btc",
+                    name: "Fire FBTC",
+                    infrastructureSlug: "firebitcoin-fbtc",
                     score: 0,
-                    tier: RiskFactor.High,
-                    title: "For an official two-way peg, you can write a customized title here.",
-                    content: `${TokenSnippet.TemplateBTC}\n\n`,
+                    tier: RiskFactor.VeryHigh,
+                    title: Reviewsnippet.CustodianPeg,
+                    content: `${Reviewsnippet.FireBTC}`,
+                    alert: Alertsnippet.AltRollupAltTokenNoFraudProofs,
                 },
                 {
-                    name: "Threshold tBTC",
-                    infrastructureSlug: "threshold-tbtc",
+                    name: "Solv solvBTC",
+                    infrastructureSlug: "solv-solvbtc",
                     score: 0,
-                    tier: RiskFactor.High,
-                    title: "For other titles, just use TokenSnippet.PegType as shown in the example below.",
-                    content: `${TokenSnippet.ThresholdtBTC}\n\n${TokenSnippet.smartcontractreview}\n\n`,
+                    tier: RiskFactor.VeryHigh,
+                    title: Reviewsnippet.CustodianPeg,
+                    content: `${Reviewsnippet.SolvBTC}`,
+                    alert: Alertsnippet.AltRollupAltTokenNoFraudProofs,
                 },
                 {
-                    name: "Threshold tBTC",
-                    infrastructureSlug: "threshold-tbtc",
+                    name: "xSolvBTC",
+                    infrastructureSlug: "solv-xsolvbtc",
                     score: 0,
-                    tier: RiskFactor.High,
-                    title: "For other titles, just use TokenSnippet.PegType as shown in the example below.",
-                    content: `${TokenSnippet.ThresholdtBTC}\n\n${TokenSnippet.smartcontractreview}\n\nUse the smart contract review field to highlight that the asset may have additional trust assumptions if it's bridged across chains. You can also use text to describe additional trust assumptions.`,
+                    tier: RiskFactor.VeryHigh,
+                    title: Reviewsnippet.CustodianPeg,
+                    content: `${Reviewsnippet.xSolvBTC}`,
+                    alert: Alertsnippet.AltRollupAltTokenNoFraudProofs,
                 },
                 {
-                    name: "Template BTC",
-                    infrastructureSlug: "templace-btc",
+                    name: "Pump BTC",
+                    infrastructureSlug: "pump-pumpbtc",
                     score: 0,
-                    tier: RiskFactor.High,
-                    title: TokenSnippet.CustodianPeg,
-                    content: `${TokenSnippet.TemplateBTC}`,
+                    tier: RiskFactor.VeryHigh,
+                    title: Reviewsnippet.CustodianPeg,
+                    content: `${Reviewsnippet.PumpBTC} ${Reviewsnippet.smartcontractreview}`,
+                },
+                {
+                    name: "Manta mBTC",
+                    infrastructureSlug: "manta-mbtc",
+                    score: 0,
+                    tier: RiskFactor.VeryHigh,
+                    title: Reviewsnippet.CustodianPeg,
+                    content: `${Reviewsnippet.MantamBTC}`,
+                    alert: Alertsnippet.AltRollupAltTokenNoFraudProofs,
                 },
             ],
         },
         {
             category: RiskCategory.DataAvailability,
             score: 0,
-            tier: RiskFactor.Medium,
-            title: "Ethereum satisfies the network's data availability requirements",
-            content: ReviewSnippet.EthereumRollupDA,
+            tier: RiskFactor.High,
+            title: "EigenDA satisfies the network's data availability requirements",
+            content: Reviewsnippet.AltRollupAltDA,
         },
         {
             category: RiskCategory.NetworkOperators,
             score: 0,
-            tier: RiskFactor.UnderReview,
-            title: "Add a custom title here",
-            content: `${ReviewSnippet.TemplateReview}\n\nAdd additional context with text if needed.`
+            tier: RiskFactor.High,
+            title: "Users can propose their own transaction to be included in a sequencer, but cannot indepdendently submit withdrawal requests to the official bridge contract",
+            content: `${Reviewsnippet.AltRollupSelfSequenceMain}`,
         },
         {
             category: RiskCategory.FinalityGuarantees,
             score: 0,
-            tier: RiskFactor.UnderReview,
-            title: "Add a custom title here",
-            content: `${ReviewSnippet.TemplateReview}\n\nAdd additional context with text if needed.`
+            tier: RiskFactor.High,
+            title: "The network's state is updated offchain",
+            content: `${Reviewsnippet.AltRollupFinality}`
         },
-    ],
-    manualContracts: [
-        {
-            title: "Bridge Escrow Contract",
-            address: "0x46abfe1c972fca43766d6ad70e1c1df72f4bb4d1",
-            subtitle: "Main bridge contract that holds and manages cross-chain BTC assets",
-            explorerUrl: "https://etherscan.io/address/0x46abfe1c972fca43766d6ad70e1c1df72f4bb4d1"
-        },
-        {
-            title: "Governance Multisig",
-            address: "0x9f8f72aa9304c8b593d555f12ef6589cc3a579a2", 
-            subtitle: "5-of-9 multisig responsible for bridge upgrades and parameter changes",
-            explorerUrl: "https://etherscan.io/address/0x9f8f72aa9304c8b593d555f12ef6589cc3a579a2"
-        },
-        {
-            title: "tBTC Vault Contract",
-            address: "0x18084fba666a33d37592fa2633fd49a74dd93a88",
-            subtitle: "Vault contract managing Threshold tBTC deposits and withdrawals",
-            explorerUrl: "https://etherscan.io/address/0x18084fba666a33d37592fa2633fd49a74dd93a88"
-        },
-        {
-            title: "Fee Distribution Contract",
-            address: "0x514910771af9ca656af840dff83e8264ecf986ca",
-            subtitle: "Contract handling transaction fee distribution to validators",
-            explorerUrl: "https://etherscan.io/address/0x514910771af9ca656af840dff83e8264ecf986ca"
-        }
     ],
     sections: [
         {
@@ -171,54 +164,8 @@ const template: LayerProject = {
                     title: "Additional Considerations",
                     content: [
                         {
-                            title: "If there are any additional considerations, you can add them below using AdditionalSnippet.Snippet or simply typing the consideration",
-                            content: "AdditionalSnippet.Snippet or text content"
-                        },
-                    ],
-                },
-                {
-                    id: "bitcoinsecurity",
-                    title: "Bitcoin Security",
-                    content: [
-                        {
-                            title: "Add a prop saying if the network inherits security from bitcoin",
-                            content: BitcoinSecuritySnippet.Template,
-                        },
-                        {
-                            title: "Add a prop clarifying if the network uses an altcoin or is bitcoin denominated",
-                            content: BitcoinSecuritySnippet.Template,
-                        },
-                        {
-                            title: "Add a prop clarifying if the network introduces MEV to bitcoin (if at all)",
-                            content: BitcoinSecuritySnippet.Template,
-                        },
-                        {
-                            title: "Add a prop clarifying if the network contributes to the security budget",
-                            content: BitcoinSecuritySnippet.Template,
-                        },
-                    ],
-                },
-                {
-                    id: "technology",
-                    title: "Technology",
-                    content: [
-                        {
-                            title: "Add a prop on significant tech components. If there is no prop, consider adding one to the prop.ts file. If the tech component is highly customizeable, add text for the content.",
-                            content: TechnologySnippet.Template,
-                        },
-                        {
-                            title: "Add a prop on significant tech components. If there is no prop, consider adding one to the prop.ts file. If the tech component is highly customizeable, add text for the content.",
-                            content: "The tech is highly customizeable so I'm adding text to describe it."
-                        },
-                    ],
-                },
-                {
-                    id: "usecases",
-                    title: "Use Cases",
-                    content: [
-                        {
-                            title: "Add a prop on significant use cases.",
-                            content: UseCaseSnippet.Template,
+                            title: "This project has undergone a partial review",
+                            content: AdditionalSnippet.InitialReview,
                         },
                     ],
                 },
@@ -227,7 +174,8 @@ const template: LayerProject = {
                     title: "Knowledge Bits",
                     content: [
                         {
-                            content: "Leave this as is. We'll add files when you submit the PR.",
+                            title: "The network has been reviewed by L2Beat",
+                            content: KnowledgeBitSnippet.EthereumL2,
                         },
                     ],
                 },

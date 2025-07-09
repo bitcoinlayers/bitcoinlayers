@@ -16,6 +16,13 @@ interface Peg {
     tier: string;
     title: string;
     content: string;
+    alert?: {
+        type: "info" | "warning" | "error";
+        title: string;
+        content: string;
+        linkText?: string;
+        linkUrl?: string;
+    };
 }
 
 interface BtcCustodyProps {
@@ -207,6 +214,7 @@ const BtcCustody: React.FC<BtcCustodyProps> = ({ category, pegs = [] }) => {
                         <RiskContent
                             title={selectedPegData.title}
                             content={selectedPegData.content}
+                            alert={selectedPegData.alert}
                         />
                         <div className="mt-2 text-right">
                             <a

@@ -20,7 +20,11 @@ import {
     KnowledgeBitSnippet,
     RiskSummarySnippet,
     Categorization,
+    AlertSnippet,
 } from "../props";
+import {
+    Reviewsnippet,
+} from "../props-layers-reviews";
 import { tokenToString } from "typescript";
 import { Rubik_Vinyl } from "next/font/google";
 
@@ -207,14 +211,8 @@ const hemi: LayerProject = {
             score: 0,
             tier: RiskFactor.Medium,
             title: "Hemi state updates are finalized offchain. The network anchors its state to bitcoin",
-            content: `Hemi's state is updated offchain by Hemi full nodes. After this state is finalized offchain, any conflicting state update proposed by a sequencer would be rejected by Hemi's full nodes. After this state root is generated, a centralized proposer submits it to Ethereum. Nodes participating in Hemi's Proof-of-Proof consensus submit it to bitcoin.`,
-            alert: {
-                type: "warning",
-                title: "Notice on Hemi's Proof-of-Proof consensus",
-                content: "While Hemi's anchors its state to bitcoin, the network is currently managed by a centralized operator. The operator is unable to revert Hemi's state after Hemi full nodes compute a new state root. This is indepdent of any additional finality guarnatees potentially provided by bitcoin.",
-                linkText: "Learn more about bitcoin anchoring for alternative blockchains",
-                linkUrl: "lxresearch.co"
-            },
+            content: `${Reviewsnippet.AltRollupFinality}\n\nAfter this state is generated, nodes participating in Hemi's Proof-of-Proof consensus submit it to bitcoin.`,
+            alert: AlertSnippet.ProofOfProofConsensus,
         },
     ],
     manualContracts: [
@@ -243,6 +241,7 @@ const hemi: LayerProject = {
                 {
                     title: "Hemi does not inherit any security from Bitcoin",
                     content: BitcoinSecuritySnippet.Checkpoint,
+                    alert: AlertSnippet.SecurityModelDifference,
                 },
                 {
                     title: "ETH token used to pay fees",
