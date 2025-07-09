@@ -6,6 +6,7 @@ import { LayerProject, InfrastructureProject, RiskCategory } from "@/content/pro
 import { getRiskColorBackground, getRiskColorText, getRiskEmoji } from "@/util/riskColors";
 import { parseTextWithLinks } from "@/util/parseTextWithLinks";
 import UnderReviewModalContent from "@/components/under-review-modal-content";
+import SectionAlertComponent from "@/components/section-alert";
 import Image from "next/image";
 
 interface Peg {
@@ -15,6 +16,13 @@ interface Peg {
     tier: string;
     title: string;
     content: string;
+    alert?: {
+        type: "info" | "warning" | "error";
+        title: string;
+        content: string;
+        linkText?: string;
+        linkUrl?: string;
+    };
 }
 
 interface CustodyTypeDialogProps {
@@ -122,6 +130,11 @@ const CustodyTypeDialog: React.FC<CustodyTypeDialogProps> = ({ layer }) => {
                                         <div className="body_paragraph !text-foreground mt-3">
                                             {parseTextWithLinks(selectedPegData.content)}
                                         </div>
+                                        {selectedPegData.alert && (
+                                            <div className="mt-4">
+                                                <SectionAlertComponent alert={selectedPegData.alert} />
+                                            </div>
+                                        )}
                                     </div>
                                 </div>
                             )}
