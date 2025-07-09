@@ -7,6 +7,10 @@ import { getRiskColorBackground, getRiskColorText, getRiskEmoji } from "@/util/r
 import { parseTextWithLinks } from "@/util/parseTextWithLinks";
 import UnderReviewModalContent from "@/components/under-review-modal-content";
 import SectionAlertComponent from "@/components/section-alert";
+import InfrastructureReviewModal from "@/components/infrastructure-review-modal";
+import { allInfrastructures } from "@/util/infrastructure_index";
+import { allMore } from "@/util/more_index";
+import { allOpcodes } from "@/util/opcode_index";
 import Image from "next/image";
 
 interface Peg {
@@ -135,6 +139,18 @@ const CustodyTypeDialog: React.FC<CustodyTypeDialogProps> = ({ layer }) => {
                                                 <SectionAlertComponent alert={selectedPegData.alert} />
                                             </div>
                                         )}
+                                        <div className="mt-2 text-right">
+                                            <a
+                                                href={`/layers/${layer.slug}#trust`}
+                                                className="font-semibold hover:underline flex items-center justify-end text-foreground"
+                                            >
+                                                Learn more about {selectedPegData.name}
+                                                <span className="ml-2">→</span>
+                                            </a>
+                                        </div>
+                                        
+                                        {/* Divider line */}
+                                        <hr className="border-border mt-4" />
                                     </div>
                                 </div>
                             )}

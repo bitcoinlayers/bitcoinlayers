@@ -62,11 +62,20 @@ const Risk: React.FC<RiskProps> = ({ layer }) => {
                     />
                 </div>
             </DialogTrigger>
-            <DialogContent className="w-[calc(100vw-16px)] mx-auto max-w-[500px] rounded-lg">
-                <RiskSnapshot
-                    layer={layer}
-                    title={`${layer.title} Trust Assumptions`}
-                />
+            <DialogContent className="p-0 border-0 bg-transparent shadow-none max-w-fit [&>button]:hidden" style={{ width: "auto", maxWidth: "90vw" }}>
+                <div 
+                    className="bg-popover border border-border rounded-lg shadow-lg p-6"
+                    style={{
+                        width: "var(--breakpoint-sm, 640px)",
+                        maxHeight: "80vh",
+                        overflowY: "auto"
+                    }}
+                >
+                    <RiskSnapshot
+                        layer={layer}
+                        title={`${layer.title} Trust Assumptions`}
+                    />
+                </div>
             </DialogContent>
         </Dialog>
     );
