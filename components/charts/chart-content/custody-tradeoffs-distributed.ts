@@ -60,7 +60,7 @@ const custodyTradeoffs = {
             cons: [
               "Fixed deposit amounts",
               "Watchtower set may be permissioned",
-              "Bridges can be instantly upgradeaded by a security council",
+              "Bridges can be instantly upgradaded by a security council",
             ],
           },
       ]

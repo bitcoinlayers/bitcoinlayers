@@ -442,6 +442,14 @@ export interface ContractItem {
     explorerUrl: string;
 }
 
+export interface SectionAlert {
+    type: "info" | "warning" | "error";
+    title: string;
+    content: string;
+    linkText?: string;
+    linkUrl?: string;
+}
+
 export interface Peg {
     name: string;
     infrastructureSlug: string;
@@ -458,12 +466,13 @@ export interface RiskSection {
     title: string;
     content: string;
     pegs?: Peg[];
+    alert?: SectionAlert;
 }
 
 export interface ContentSection {
     id: string;
     title: string;
-    content: { title?: string; content: string }[];
+    content: { title?: string; content: string; alert?: SectionAlert }[];
 }
 
 export enum AssessmentCategory {

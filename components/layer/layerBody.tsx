@@ -5,6 +5,7 @@ import LayerDiamond from "./layerDiamond";
 import Categories from "./categories";
 import { LayerProject } from "@/content/props";
 import ProjectLinks from "../project-links";
+import SectionAlertComponent from "../section-alert";
 
 const Description: React.FC<{ layer: LayerProject }> = ({ layer }) => {
     return (
@@ -65,6 +66,11 @@ const LayerBody: React.FC<{ layer: Project }> = ({ layer }) => {
                                 <div className="body_paragraph !text-foreground mt-3">
                                     {parseTextWithLinks(content.content)}
                                 </div>
+                                {content.alert && (
+                                    <div className="mt-4">
+                                        <SectionAlertComponent alert={content.alert} />
+                                    </div>
+                                )}
                             </Fragment>
                         ))
                     )}

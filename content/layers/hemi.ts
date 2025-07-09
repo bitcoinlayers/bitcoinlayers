@@ -206,8 +206,15 @@ const hemi: LayerProject = {
             category: RiskCategory.FinalityGuarantees,
             score: 0,
             tier: RiskFactor.Medium,
-            title: "Hemi state updates are finalized offchain",
-            content: `Hemi's state is updated offchain by Hemi full nodes. After this state is finalized offchain, any conflicting state update proposed by a sequencer would be rejected by Hemi's full nodes.\n\nHemi's official bridge program is a smart contract hosted on Ethereum. It is not secured by any proving system. ${ReviewSnippet.NoFraudProofsBridge}\n\nHemi additionally posts its state root to bitcoin periodically through its Proof-of-Proof consensus mechanism. But, because no bridge program on bitcoin is finalized by this state root and the system is managed by a centralized operator, the bitcoin anchoring provides little finality assurances.`,
+            title: "Hemi state updates are finalized offchain. The network anchors its state to bitcoin",
+            content: `Hemi's state is updated offchain by Hemi full nodes. After this state is finalized offchain, any conflicting state update proposed by a sequencer would be rejected by Hemi's full nodes. After this state root is generated, a centralized proposer submits it to Ethereum. Nodes participating in Hemi's Proof-of-Proof consensus submit it to bitcoin.`,
+            alert: {
+                type: "warning",
+                title: "Notice on Hemi's Proof-of-Proof consensus",
+                content: "While Hemi's anchors its state to bitcoin, the network is currently managed by a centralized operator. The operator is unable to revert Hemi's state after Hemi full nodes compute a new state root. This is indepdent of any additional finality guarnatees potentially provided by bitcoin.",
+                linkText: "Learn more about bitcoin anchoring for alternative blockchains",
+                linkUrl: "lxresearch.co"
+            },
         },
     ],
     manualContracts: [
@@ -258,6 +265,16 @@ const hemi: LayerProject = {
                 {
                     title: "Onchain applications",
                     content: UseCaseSnippet.OnchainApps,
+                },
+            ],
+        },
+        {
+            id: "technology",
+            title: "Technology",
+            content: [
+                {
+                    title: "Proof-of-Proof consensus",
+                    content: "Hemi's Proof-of-Proof (PoP) consensus is a bitcoin anchoring mechanism. After Hemi full nodes compute a new state root, PoP nodes publish this state root to bitcoin. After this state root is published, a Bitcoin Finality Governor queries bitcoin, finds the appended state root, and considers Hemi's blocks final."
                 },
             ],
         },

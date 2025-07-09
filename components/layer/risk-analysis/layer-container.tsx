@@ -4,26 +4,10 @@ import React, { useState } from "react";
 import RiskContent from "./layer-section-content";
 import BtcCustody from "./layer-btc-custody";
 import RiskHeader from "./layer-section-header";
-import { Project } from "@/content/props";
-
-interface Risksection {
-    category: string;
-    score: number;
-    tier: string;
-    title: string;
-    content: string;
-    pegs?: {
-        name: string;
-        infrastructureSlug: string;
-        score: number;
-        tier: string;
-        title: string;
-        content: string;
-    }[];
-}
+import { Project, RiskSection } from "@/content/props";
 
 interface RiskAnalysisProps {
-    riskAnalysis: Risksection[];
+    riskAnalysis: RiskSection[];
     riskFactors: string[];
     layer: Project;
 }
@@ -67,6 +51,7 @@ const RiskAnalysis: React.FC<RiskAnalysisProps> = ({
                             <RiskContent
                                 title={content.title}
                                 content={content.content}
+                                alert={content.alert}
                             />
                         </div>
 
