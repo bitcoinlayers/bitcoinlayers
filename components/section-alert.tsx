@@ -1,6 +1,6 @@
 import React from "react";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import { InfoIcon, AlertTriangleIcon, AlertCircleIcon, ExternalLinkIcon } from "lucide-react";
+import { InfoIcon, AlertTriangleIcon, ExternalLinkIcon } from "lucide-react";
 import Link from "next/link";
 import { SectionAlert } from "@/content/props";
 
@@ -36,7 +36,7 @@ export default function SectionAlertComponent({ alert }: SectionAlertProps) {
                     titleColor: "text-red-900 dark:text-red-100",
                     contentColor: "text-red-800 dark:text-red-200",
                     linkColor: "text-red-600 dark:text-red-400 hover:text-red-700 dark:hover:text-red-300",
-                    icon: AlertCircleIcon,
+                    icon: AlertTriangleIcon,
                 };
         }
     };

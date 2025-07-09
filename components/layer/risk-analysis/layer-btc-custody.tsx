@@ -8,6 +8,10 @@ import {
     getRiskEmoji,
 } from "@/util/riskColors";
 import Image from "next/image";
+import InfrastructureReviewModal from "@/components/infrastructure-review-modal";
+import { allInfrastructures } from "@/util/infrastructure_index";
+import { allMore } from "@/util/more_index";
+import { allOpcodes } from "@/util/opcode_index";
 
 interface Peg {
     name: string;
@@ -216,15 +220,13 @@ const BtcCustody: React.FC<BtcCustodyProps> = ({ category, pegs = [] }) => {
                             content={selectedPegData.content}
                             alert={selectedPegData.alert}
                         />
-                        <div className="mt-2 text-right">
-                            <a
-                                href={`/infrastructure/${selectedPegData.infrastructureSlug}`}
-                                className="font-semibold hover:underline flex items-center justify-end text-foreground"
-                            >
-                                Learn more about {selectedPegData.name}
-                                <span className="ml-2">→</span>
-                            </a>
-                        </div>
+                        <InfrastructureReviewModal
+                            infrastructureSlug={selectedPegData.infrastructureSlug}
+                            triggerText={`Learn more about ${selectedPegData.name}`}
+                            infrastructure={[...allInfrastructures, ...allMore, ...allOpcodes].find(
+                                infra => infra.slug === selectedPegData.infrastructureSlug
+                            )}
+                        />
                     </div>
                 ) : (
                     <p className="text-sm text-muted-foreground">
