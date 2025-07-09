@@ -222,7 +222,7 @@ const BtcCustody: React.FC<BtcCustodyProps> = ({ category, pegs = [] }) => {
                         />
                         <InfrastructureReviewModal
                             infrastructureSlug={selectedPegData.infrastructureSlug}
-                            triggerText={`Learn more about ${selectedPegData.name}`}
+                            triggerText={`Learn more about ${selectedPegData.name}'s custody model`}
                             infrastructure={[...allInfrastructures, ...allMore, ...allOpcodes].find(
                                 infra => infra.slug === selectedPegData.infrastructureSlug
                             )}
