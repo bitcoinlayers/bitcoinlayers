@@ -31,7 +31,7 @@ const hyperliquid: LayerProject = {
     staking: false,
     liquidStaking: false,
     bridge: false,
-    underReview: false,
+    underReview: true,
     riskFactors: [
         RiskFactor.VeryHigh,
         RiskFactor.UnderReview,

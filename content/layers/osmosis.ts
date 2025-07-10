@@ -28,7 +28,7 @@ const osmosis: LayerProject = {
     bridge: false,
     underReview: false,
     riskFactors: [
-        RiskFactor.UnderReview,
+        RiskFactor.VeryHigh,
         RiskFactor.AlternativePoS,
         RiskFactor.AlternativePoS,
         RiskFactor.AlternativePoS,
@@ -83,7 +83,7 @@ const osmosis: LayerProject = {
                     name: "Osmosis BTC",
                     infrastructureSlug: "osmosis-btc",
                     score: 0,
-                    tier: RiskFactor.UnderReview,
+                    tier: RiskFactor.VeryHigh,
                     title: "BTC on Osmosis is backed by several reserve assets",
                     content: TokenSnippet.OsmosisBTC,
                 },
