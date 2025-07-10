@@ -101,7 +101,7 @@ function getSortedDataAndHeaders(view: string, subView: string) {
                     {
                         name: "Trust Assumptions",
                         showSorting: false,
-                        mobileLabel: "Trust",
+                        mobileLabel: "Trust assump...",
                     },
                     {
                         name: "Risk Summary",
@@ -139,9 +139,14 @@ function getSortedDataAndHeaders(view: string, subView: string) {
                         filterOptions: federationTypeFilters,
                     },
                     {
+                        name: "Snapshot",
+                        showSorting: false,
+                        mobileLabel: "Snapshot",
+                    },
+                    {
                         name: "Trust Assumptions",
                         showSorting: false,
-                        mobileLabel: "Trust",
+                        mobileLabel: "Trust assump...",
                     },
                     {
                         name: "Risk Summary",
@@ -179,7 +184,7 @@ function getSortedDataAndHeaders(view: string, subView: string) {
                 {
                     name: "Trust Assumptions",
                     showSorting: false,
-                    mobileLabel: "Trust",
+                    mobileLabel: "Trust assump...",
                 },
                 {
                     name: "Risk Summary",
@@ -260,7 +265,7 @@ function getSortedDataAndHeaders(view: string, subView: string) {
                 {
                     name: "Trust Assumptions",
                     showSorting: false,
-                    mobileLabel: "Trust",
+                    mobileLabel: "Trust assump...",
                 },
                 {
                     name: "Risk Summary",
@@ -304,7 +309,7 @@ function getSortedDataAndHeaders(view: string, subView: string) {
                 {
                     name: "Trust Assumptions",
                     showSorting: false,
-                    mobileLabel: "Trust",
+                    mobileLabel: "Trust assump...",
                 },
                 {
                     name: "Risk Summary",

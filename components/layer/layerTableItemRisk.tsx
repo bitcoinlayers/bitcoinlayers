@@ -5,8 +5,10 @@ import RiskIconDA from "@/components/icons/RiskIconDA";
 import RiskIconOperators from "@/components/icons/RiskIconOperators";
 import RiskIconSettlement from "@/components/icons/RiskIconSettlement";
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "../ui/hover-card";
+import { Dialog, DialogContent, DialogTrigger } from "../ui/dialog";
 import { LayerProject, Project } from "@/content/props";
 import Image from "next/image";
+import { isMobile } from "react-device-detect";
 
 interface RiskProps {
     layer: Project;
@@ -56,79 +58,101 @@ const Risk: React.FC<RiskProps> = ({ layer }) => {
         { title: "Settlement", IconComponent: RiskIconSettlement },
     ];
 
+    const TriggerComponent = (
+        <div className="lg:w-44 w-34 lg:p-4 p-2 justify-start items-center gap-4 inline-flex lg:gap-4 gap-1 cursor-pointer">
+            <RiskIcon
+                riskFactor={getRiskFactor(riskLevels[0], 0)}
+                IconComponent={RiskIconBridge}
+            />
+            <RiskIcon
+                riskFactor={getRiskFactor(riskLevels[1], 1)}
+                IconComponent={RiskIconDA}
+            />
+            <RiskIcon
+                riskFactor={getRiskFactor(riskLevels[2], 2)}
+                IconComponent={RiskIconOperators}
+            />
+            <RiskIcon
+                riskFactor={getRiskFactor(riskLevels[3], 3)}
+                IconComponent={RiskIconSettlement}
+            />
+        </div>
+    );
+
+    const ContentComponent = (
+        <div className="space-y-4">
+            {/* Network Header */}
+            <div className="flex items-center gap-3">
+                <Image
+                    src={`/logos/${layer.slug}.png`}
+                    alt={layer.title}
+                    width={24}
+                    height={24}
+                    className="rounded-full object-cover bg-muted"
+                    onError={(e) => {
+                        (e.target as HTMLImageElement).src = '/logos/default.png';
+                    }}
+                />
+                <div>
+                    <h4 className="text-sm font-semibold text-foreground">
+                        {layer.title} - Trust Assumptions
+                    </h4>
+                </div>
+            </div>
+            
+            {/* Risk Factors */}
+            <div className="space-y-3">
+                {riskCategories.map((category, index) => (
+                    <div key={index} className="flex items-start gap-3">
+                        <RiskIcon
+                            riskFactor={getRiskFactor(riskLevels[index], index)}
+                            IconComponent={category.IconComponent}
+                        />
+                        <div className="flex-1 min-w-0">
+                            <div className="flex items-center gap-2 mb-1">
+                                <span className="text-sm font-medium">
+                                    {category.title}:
+                                </span>
+                                <span
+                                    className="text-sm font-medium"
+                                    style={{
+                                        color: getRiskColorText(getRiskFactor(riskLevels[index], index)),
+                                    }}
+                                >
+                                    {getRiskFactor(riskLevels[index], index)}
+                                </span>
+                            </div>
+                            <p className="text-xs text-muted-foreground">
+                                {getRiskTitle(riskLevels[index], index)}
+                            </p>
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </div>
+    );
+
+    // Use Dialog for mobile, HoverCard for desktop
+    if (isMobile) {
+        return (
+            <Dialog>
+                <DialogTrigger asChild>
+                    {TriggerComponent}
+                </DialogTrigger>
+                <DialogContent className="w-[calc(100vw-16px)] mx-auto max-w-[400px] rounded-lg">
+                    {ContentComponent}
+                </DialogContent>
+            </Dialog>
+        );
+    }
+
     return (
         <HoverCard>
             <HoverCardTrigger asChild>
-                <div className="lg:w-44 w-34 lg:p-4 p-2 justify-start items-center gap-4 inline-flex lg:gap-4 gap-1 cursor-pointer">
-                    <RiskIcon
-                        riskFactor={getRiskFactor(riskLevels[0], 0)}
-                        IconComponent={RiskIconBridge}
-                    />
-                    <RiskIcon
-                        riskFactor={getRiskFactor(riskLevels[1], 1)}
-                        IconComponent={RiskIconDA}
-                    />
-                    <RiskIcon
-                        riskFactor={getRiskFactor(riskLevels[2], 2)}
-                        IconComponent={RiskIconOperators}
-                    />
-                    <RiskIcon
-                        riskFactor={getRiskFactor(riskLevels[3], 3)}
-                        IconComponent={RiskIconSettlement}
-                    />
-                </div>
+                {TriggerComponent}
             </HoverCardTrigger>
             <HoverCardContent className="w-96">
-                <div className="space-y-4">
-                    {/* Network Header */}
-                    <div className="flex items-center gap-3">
-                        <Image
-                            src={`/logos/${layer.slug}.png`}
-                            alt={layer.title}
-                            width={24}
-                            height={24}
-                            className="rounded-full object-cover bg-muted"
-                            onError={(e) => {
-                                (e.target as HTMLImageElement).src = '/logos/default.png';
-                            }}
-                        />
-                        <div>
-                            <h4 className="text-sm font-semibold text-foreground">
-                                {layer.title} - Trust Assumptions
-                            </h4>
-                        </div>
-                    </div>
-                    
-                    {/* Risk Factors */}
-                    <div className="space-y-3">
-                        {riskCategories.map((category, index) => (
-                            <div key={index} className="flex items-start gap-3">
-                                <RiskIcon
-                                    riskFactor={getRiskFactor(riskLevels[index], index)}
-                                    IconComponent={category.IconComponent}
-                                />
-                                <div className="flex-1 min-w-0">
-                                    <div className="flex items-center gap-2 mb-1">
-                                        <span className="text-sm font-medium">
-                                            {category.title}:
-                                        </span>
-                                        <span
-                                            className="text-sm font-medium"
-                                            style={{
-                                                color: getRiskColorText(getRiskFactor(riskLevels[index], index)),
-                                            }}
-                                        >
-                                            {getRiskFactor(riskLevels[index], index)}
-                                        </span>
-                                    </div>
-                                    <p className="text-xs text-muted-foreground">
-                                        {getRiskTitle(riskLevels[index], index)}
-                                    </p>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
+                {ContentComponent}
             </HoverCardContent>
         </HoverCard>
     );
