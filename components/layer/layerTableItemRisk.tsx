@@ -9,6 +9,7 @@ import { Dialog, DialogContent, DialogTrigger } from "../ui/dialog";
 import { LayerProject, Project } from "@/content/props";
 import Image from "next/image";
 import { isMobile } from "react-device-detect";
+import { useState, useEffect, useRef } from "react";
 
 interface RiskProps {
     layer: Project;
@@ -17,17 +18,53 @@ interface RiskProps {
 const Risk: React.FC<RiskProps> = ({ layer }) => {
     const riskLevels = (layer as LayerProject).riskAnalysis;
     const riskFactors = (layer as LayerProject).riskFactors;
+    
+    // State for BTC custody peg selection
+    const btcCustodyPegs = riskLevels?.[0]?.pegs || [];
+    const [selectedPeg, setSelectedPeg] = useState<string>(
+        btcCustodyPegs.length > 0 ? btcCustodyPegs[0].name : ""
+    );
+    const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(false);
+    const dropdownRef = useRef<HTMLDivElement>(null);
+
+    const selectedPegData = btcCustodyPegs.find(peg => peg.name === selectedPeg);
+
+    const toggleDropdown = () => {
+        setIsDropdownOpen((prev) => !prev);
+    };
+
+    const handleSelectPeg = (pegName: string) => {
+        setSelectedPeg(pegName);
+        setIsDropdownOpen(false);
+    };
+
+    // Click outside handler
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+            if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+                setIsDropdownOpen(false);
+            }
+        };
+
+        if (isDropdownOpen) {
+            document.addEventListener('mousedown', handleClickOutside);
+        }
+
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, [isDropdownOpen]);
 
     const getRiskFactor = (riskLevel: any, index: number): string => {
-        if (index === 0 && riskLevel?.pegs?.length > 0) {
-            return riskLevel.pegs[0].tier;
+        if (index === 0 && selectedPegData) {
+            return selectedPegData.tier;
         }
         return riskFactors?.[index] || "Under Review";
     };
 
     const getRiskTitle = (riskLevel: any, index: number): string => {
-        if (index === 0 && riskLevel?.pegs?.length > 0) {
-            return riskLevel.pegs[0].title;
+        if (index === 0 && selectedPegData) {
+            return selectedPegData.title;
         }
         return riskLevel?.title || "Under Review";
     };
@@ -57,6 +94,28 @@ const Risk: React.FC<RiskProps> = ({ layer }) => {
         { title: "Operators", IconComponent: RiskIconOperators },
         { title: "Settlement", IconComponent: RiskIconSettlement },
     ];
+
+    // Chevron down icon component
+    const ChevronDownIcon = () => (
+        <svg 
+            xmlns="http://www.w3.org/2000/svg" 
+            width="17" 
+            height="17" 
+            viewBox="0 0 17 17" 
+            fill="none"
+            className="w-4 h-4 opacity-50"
+        >
+            <g opacity="0.5">
+                <path 
+                    d="M4.31226 6.6875L8.31226 10.6875L12.3123 6.6875" 
+                    stroke="currentColor" 
+                    strokeWidth="1.33" 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round"
+                />
+            </g>
+        </svg>
+    );
 
     const TriggerComponent = (
         <div className="lg:w-44 w-34 lg:p-4 p-2 justify-start items-center gap-4 inline-flex lg:gap-4 gap-1 cursor-pointer">
@@ -99,6 +158,53 @@ const Risk: React.FC<RiskProps> = ({ layer }) => {
                     </h4>
                 </div>
             </div>
+            
+            {/* BTC Custody Dropdown - if multiple pegs available */}
+            {btcCustodyPegs.length > 1 && (
+                <div className="relative" ref={dropdownRef}>
+                    <button
+                        onClick={toggleDropdown}
+                        className="flex items-center gap-2 text-foreground hover:text-foreground cursor-pointer bg-transparent py-1"
+                    >
+                        <Image
+                            src={`/logos/${selectedPegData?.infrastructureSlug}.png`}
+                            alt={selectedPegData?.name || ""}
+                            width={16}
+                            height={16}
+                            className="rounded-full object-cover bg-muted"
+                            onError={(e) => {
+                                (e.target as HTMLImageElement).src = '/logos/default.png';
+                            }}
+                        />
+                        <span className="text-sm font-medium">{selectedPegData?.name}</span>
+                        <ChevronDownIcon />
+                    </button>
+                    {/* Dropdown menu */}
+                    {isDropdownOpen && (
+                        <div className="absolute z-50 bg-popover border border-border rounded-lg shadow-md mt-1 min-w-[180px]">
+                            {btcCustodyPegs.map((peg) => (
+                                <button
+                                    key={peg.name}
+                                    onClick={() => handleSelectPeg(peg.name)}
+                                    className="w-full text-left transition-colors duration-200 hover:bg-brand hover:text-white text-popover-foreground p-2 flex items-center gap-2"
+                                >
+                                    <Image
+                                        src={`/logos/${peg.infrastructureSlug}.png`}
+                                        alt={peg.name}
+                                        width={14}
+                                        height={14}
+                                        className="rounded-full object-cover bg-muted"
+                                        onError={(e) => {
+                                            (e.target as HTMLImageElement).src = '/logos/default.png';
+                                        }}
+                                    />
+                                    <span className="text-xs">{peg.name}</span>
+                                </button>
+                            ))}
+                        </div>
+                    )}
+                </div>
+            )}
             
             {/* Risk Factors */}
             <div className="space-y-3">
