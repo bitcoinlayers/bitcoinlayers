@@ -23,6 +23,19 @@ const TokenList: React.FC<TokenListProps> = ({ tokens, networkSlug }) => {
     const topTokens = tokens.slice(0, 3);
     const remainingCount = tokens.length - 3;
 
+    // Truncate address to 8 characters + "..."
+    const truncateAddress = (address: string) => {
+        if (!address) return "";
+        return address.length > 8 ? `${address.substring(0, 8)}...` : address;
+    };
+
+    // Handle address click - copy to clipboard
+    const handleAddressClick = (address: string) => {
+        if (address) {
+            navigator.clipboard.writeText(address);
+        }
+    };
+
     return (
         <HoverCard>
             <HoverCardTrigger asChild>
@@ -62,27 +75,36 @@ const TokenList: React.FC<TokenListProps> = ({ tokens, networkSlug }) => {
                         </div>
                     </div>
 
-                    {/* Tokens List */}
-                    <div className="space-y-3">
-                        {tokens.map((token) => (
-                            <div key={token.token_slug} className="flex items-center gap-3">
-                                <ImageWithFallback
-                                    slug={token.token_slug}
-                                    folder="logos"
-                                    altText=""
-                                />
-                                <div className="flex-1">
-                                    <div className="text-sm font-medium text-foreground">
-                                        {token.token_slug}
-                                    </div>
-                                    {contractData?.find(c => c.token_slug === token.token_slug)?.token_address && (
-                                        <div className="text-xs text-muted-foreground font-mono">
-                                            {contractData.find(c => c.token_slug === token.token_slug)?.token_address}
+                    {/* Tokens List - Max 5 visible with scrolling */}
+                    <div className="space-y-3 max-h-60 overflow-y-auto">
+                        {tokens.map((token) => {
+                            const contract = contractData?.find(c => c.token_slug === token.token_slug);
+                            const contractAddress = contract?.token_address;
+                            
+                            return (
+                                <div key={token.token_slug} className="flex items-center gap-3">
+                                    <ImageWithFallback
+                                        slug={token.token_slug}
+                                        folder="logos"
+                                        altText=""
+                                    />
+                                    <div className="flex-1">
+                                        <div className="text-sm font-medium text-foreground">
+                                            {token.token_slug}
                                         </div>
-                                    )}
+                                        {contractAddress && (
+                                            <div 
+                                                className="text-xs text-muted-foreground font-mono cursor-pointer hover:text-foreground transition-colors"
+                                                onClick={() => handleAddressClick(contractAddress)}
+                                                title={`Click to copy: ${contractAddress}`}
+                                            >
+                                                {truncateAddress(contractAddress)}
+                                            </div>
+                                        )}
+                                    </div>
                                 </div>
-                            </div>
-                        ))}
+                            );
+                        })}
                     </div>
                 </div>
             </HoverCardContent>
