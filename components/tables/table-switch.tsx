@@ -101,7 +101,7 @@ function getSortedDataAndHeaders(view: string, subView: string) {
                     {
                         name: "Trust Assumptions",
                         showSorting: false,
-                        mobileLabel: "Trust",
+                        mobileLabel: "Trust assump...",
                     },
                     {
                         name: "Risk Summary",
@@ -139,9 +139,9 @@ function getSortedDataAndHeaders(view: string, subView: string) {
                         filterOptions: federationTypeFilters,
                     },
                     {
-                        name: "Trust Assumptions",
+                        name: "Snapshot",
                         showSorting: false,
-                        mobileLabel: "Trust",
+                        mobileLabel: "Snapshot",
                     },
                     {
                         name: "Risk Summary",
@@ -179,7 +179,7 @@ function getSortedDataAndHeaders(view: string, subView: string) {
                 {
                     name: "Trust Assumptions",
                     showSorting: false,
-                    mobileLabel: "Trust",
+                    mobileLabel: "Trust assump...",
                 },
                 {
                     name: "Risk Summary",
@@ -260,7 +260,7 @@ function getSortedDataAndHeaders(view: string, subView: string) {
                 {
                     name: "Trust Assumptions",
                     showSorting: false,
-                    mobileLabel: "Trust",
+                    mobileLabel: "Trust assump...",
                 },
                 {
                     name: "Risk Summary",
@@ -304,7 +304,7 @@ function getSortedDataAndHeaders(view: string, subView: string) {
                 {
                     name: "Trust Assumptions",
                     showSorting: false,
-                    mobileLabel: "Trust",
+                    mobileLabel: "Trust assump...",
                 },
                 {
                     name: "Risk Summary",

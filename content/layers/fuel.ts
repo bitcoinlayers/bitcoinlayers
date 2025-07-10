@@ -23,7 +23,7 @@ import {
 } from "../props-layers-more-info";
 import { RiskSummarySnippet } from "../props-layers-intro";
 
-const template: LayerProject = {
+const fuel: LayerProject = {
     type: Type.Layer,
     slug: "fuel",
     title: "Fuel",
@@ -182,4 +182,4 @@ const template: LayerProject = {
             ],
 };
 
-export default template;
+export default fuel;

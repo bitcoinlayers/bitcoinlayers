@@ -98,7 +98,7 @@ export const Alertsnippet = { //TODO: Janusz to add more here
         content: "The bitcoin backing this token is secured by a centralized party. This party can unilaterally steal users funds with no recourse.",
     },
     AltRollupAltTokenProofsUpgrade: {
-        type: "warning" as const,
+        type: "error" as const,
         title: "This token is not bridged to the network from bitcoin",
         content: "The token is bridged to the network's from a bridge contract hosted on its parent chain. Users must consider how the native bitcoin is secured. Additionally, while there is a proving system in place, the bridge contract can instantly upgraded by a centralized party or federation. In the event of a malicious upgrade, user funds could be stolen.",
     },

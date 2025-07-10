@@ -1,21 +1,19 @@
 import React, { useState } from "react";
-import { Snapshot } from "@/hooks/get-current-supplies-by-tokenimpl";
+import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
 import ImageWithFallback from "./image-with-fallback";
-import TokenContractsModal from "./token-contracts-modal";
 import getContractAddresses from "@/hooks/get-contract-addresses";
+import Image from "next/image";
 
 interface TokenListProps {
-    tokens: Snapshot[];
+    tokens: any[];
     networkSlug: string;
 }
 
 const TokenList: React.FC<TokenListProps> = ({ tokens, networkSlug }) => {
-    const [modalOpen, setModalOpen] = useState(false);
-
     const { data: contractData, isLoading } = getContractAddresses({
         slug: networkSlug,
         isLayer: true,
-        enabled: modalOpen,
+        enabled: true,
     });
 
     if (!tokens || tokens.length === 0) {
@@ -25,48 +23,92 @@ const TokenList: React.FC<TokenListProps> = ({ tokens, networkSlug }) => {
     const topTokens = tokens.slice(0, 3);
     const remainingCount = tokens.length - 3;
 
-    const handleClick = () => {
-        setModalOpen(true);
+    // Truncate address to 18 characters + "..."
+    const truncateAddress = (address: string) => {
+        if (!address) return "";
+        return address.length > 18 ? `${address.substring(0, 18)}...` : address;
+    };
+
+    // Handle address click - copy to clipboard
+    const handleAddressClick = (address: string) => {
+        if (address) {
+            navigator.clipboard.writeText(address);
+        }
     };
 
     return (
-        <TokenContractsModal
-            contracts={contractData || []}
-            title="BTC Pegs Contracts"
-            type="tokens"
-        >
-            <div 
-                className="flex flex-nowrap gap-2 items-center cursor-pointer hover:opacity-80 transition-opacity"
-                onClick={handleClick}
-            >
-                {topTokens.map((token) => (
-                    <div key={token.token_slug} className="flex items-center gap-2">
-                        <ImageWithFallback
-                            slug={token.token_slug}
-                            folder="logos"
-                            altText="" // {token.token_slug}
-                        />
-                        {/* <span>{token.token_slug}</span> */}
-                    </div>
-                ))}
-                {remainingCount > 0 && (
-                    <div className="flex items-center">
-                        <span
-                            style={{
-                                color: "var(--text-primary-link-water-900, #434D65)",
-                                fontFamily: "Public Sans",
-                                fontSize: "12px",
-                                fontStyle: "normal",
-                                fontWeight: 400,
-                                lineHeight: "20px",
+        <HoverCard>
+            <HoverCardTrigger asChild>
+                <div className="flex flex-nowrap gap-2 items-center cursor-pointer hover:opacity-80 transition-opacity">
+                    {topTokens.map((token) => (
+                        <div key={token.token_slug} className="flex items-center gap-2">
+                            <ImageWithFallback
+                                slug={token.token_slug}
+                                folder="logos"
+                                altText=""
+                            />
+                        </div>
+                    ))}
+                    {remainingCount > 0 && (
+                        <span className="text-xs text-muted-foreground">+{remainingCount}</span>
+                    )}
+                </div>
+            </HoverCardTrigger>
+            <HoverCardContent className="w-96">
+                <div className="space-y-4">
+                    {/* Header */}
+                    <div className="flex items-center gap-3">
+                        <Image
+                            src={`/logos/${networkSlug}.png`}
+                            alt={networkSlug}
+                            width={24}
+                            height={24}
+                            className="rounded-full object-cover bg-muted"
+                            onError={(e) => {
+                                (e.target as HTMLImageElement).src = '/logos/default.png';
                             }}
-                        >
-                            +{remainingCount}
-                        </span>
+                        />
+                        <div>
+                            <h4 className="text-base font-semibold text-foreground">
+                                BTC Pegs Contracts
+                            </h4>
+                        </div>
                     </div>
-                )}
-            </div>
-        </TokenContractsModal>
+
+                    {/* Tokens List - Max 5 visible with scrolling */}
+                    <div className="space-y-3 max-h-60 overflow-y-auto">
+                        {tokens.map((token) => {
+                            const contract = contractData?.find(c => c.token_slug === token.token_slug);
+                            const contractAddress = contract?.token_address;
+                            
+                            return (
+                                <div key={token.token_slug} className="flex items-center gap-3">
+                                    <ImageWithFallback
+                                        slug={token.token_slug}
+                                        folder="logos"
+                                        altText=""
+                                    />
+                                    <div className="flex-1">
+                                        <div className="text-base font-medium text-foreground">
+                                            {token.token_slug}
+                                        </div>
+                                        {contractAddress && (
+                                            <div 
+                                                className="text-sm text-muted-foreground font-mono cursor-pointer hover:text-foreground transition-colors"
+                                                onClick={() => handleAddressClick(contractAddress)}
+                                                title={`Click to copy: ${contractAddress}`}
+                                            >
+                                                {truncateAddress(contractAddress)}
+                                            </div>
+                                        )}
+                                    </div>
+                                </div>
+                            );
+                        })}
+                    </div>
+                </div>
+            </HoverCardContent>
+        </HoverCard>
     );
 };
 

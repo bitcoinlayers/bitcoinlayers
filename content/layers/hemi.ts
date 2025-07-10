@@ -239,9 +239,8 @@ const hemi: LayerProject = {
             title: "Bitcoin Security",
             content: [
                 {
-                    title: "Hemi does not inherit any security from Bitcoin",
+                    title: "Hemi checkpoints its state to bitcoin",
                     content: BitcoinSecuritySnippet.Checkpoint,
-                    alert: AlertSnippet.SecurityModelDifference,
                 },
                 {
                     title: "ETH token used to pay fees",
