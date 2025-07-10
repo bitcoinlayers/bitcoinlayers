@@ -23,10 +23,8 @@ export enum RiskSummarySnippet { //TODO: Janusz to add more here
     RiskStatechainTimelock = "If a previous owner of the UTXO broadcasts their unilateral exit transaction, and the current owner does not broadcast their own, the previous owner can steal funds.",
     RiskStatechainNoExit = "This implementation does not support unilateral exits. If the statechain entity becomes unresponsive, users funds are frozen.",
     RiskLightningChannel = "If a counterparty maliciously broadcasts a previous state, and it is not contested, they can close the channel with previous balances that favor the malicious actor.",
-    RiskSummary = "",
-}
-
-export enum PegRiskSummarySnippet { //TODO: Janusz to add more here
+    NoDALayer = "The network's state is not made available by a data availability layer. Users trust the network operator(s) to maintain a record of the network's state.",
+    TitleCentralizedDA = "The network's state is made available by a centralized entity",
     CustodianTitle = "Users do not have unilateral claims on native BTC.",
     OneCustodian = "BTC backing this asset is secured by a centralized custodian. Users trust this single entity with maintaining the peg with BTC.",
     Guardian = "BTC backing this asset is secured by multiple custodians. Users trust this group with maintaining the peg with BTC.",
@@ -37,6 +35,10 @@ export enum PegRiskSummarySnippet { //TODO: Janusz to add more here
     Collateralized = "Users are exposed to smart contract risks and potential liquidations when using this asset.",
     MultipleAssets = "This asset is backed by other BTC wrapped assets. If a reserve asset became unbacked, the two-way peg with BTC would break.",
     SlashingRisk = "This asset represents BTC staked in a staking protocol. If the corresponding BTC is slashed, users' balances could be affected.",
+    RiskSummary = "",
+}
+
+export enum PegRiskSummarySnippet { //TODO: Janusz to add more here
     RiskSummary = "",
 }
 

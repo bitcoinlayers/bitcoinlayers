@@ -92,6 +92,16 @@ export const Alertsnippet = { //TODO: Janusz to add more here
         title: "This token is not bridged to the network from bitcoin",
         content: "The token is bridged to the network's from a bridge contract hosted on its parent chain. The bridge does not have a functioning proof system. The proposer can submit a malicious state transition and steal funds from the bridge.",
     },
+    AltRollupAltTokenNoFraudProofsPlusUpgrade: {
+        type: "error" as const,
+        title: "This token is not bridged to the network from bitcoin",
+        content: "The token is bridged to the network's from a bridge contract hosted on its parent chain. The bridge does not have a functioning proof system. The proposer can submit a malicious state transition and steal funds from the bridge. Additionally, the bridge contract can be upgraded by a centralized party or federation. In the event of a malicious upgrade, user funds could be stolen.",
+    },
+    AltRollupAltTokenNoFraudProofsPlusUpgradeDelayed: {
+        type: "error" as const,
+        title: "This token is not bridged to the network from bitcoin",
+        content: "The token is bridged to the network's from a bridge contract hosted on its parent chain. The bridge does not have a functioning proof system. The proposer can submit a malicious state transition and steal funds from the bridge. Additionally, the bridge contract can be upgraded by a centralized party or federation. In the event of a malicious upgrade, user funds could be stolen. There is a delay to upgrades.",
+    },
     WrapperCentralized: {
         type: "warning" as const,
         title: "Bitcoin backing this token is secured by a centralized party",
