@@ -48,13 +48,13 @@ const InfrastructureReviewModal: React.FC<InfrastructureReviewModalProps> = ({
                     className="max-w-4xl max-h-[85vh] overflow-y-auto p-0 border-0 bg-transparent shadow-none [&>button]:hidden"
                     style={{ width: "auto", maxWidth: "90vw" }}
                 >
-                    <div className="bg-popover border border-border rounded-lg shadow-lg">
+                    <div className="bg-popover rounded-lg shadow-lg">
                         <DialogTitle className="sr-only">
                             {infrastructure.title} - Infrastructure Review
                         </DialogTitle>
                         
                         {/* Header */}
-                        <div className="sticky top-0 bg-popover border-b border-border p-6 rounded-t-lg">
+                        <div className="sticky top-0 bg-popover border-b border-border p-6">
                             <div className="flex items-center justify-between">
                                 <div className="flex items-center gap-4">
                                     <Image
@@ -135,15 +135,17 @@ const InfrastructureReviewModal: React.FC<InfrastructureReviewModalProps> = ({
                                 </div>
 
                                 {/* Project Links */}
-                                <div className="pt-4 border-t border-border">
+                                <div className="pt-4">
                                     <ProjectLinks links={infrastructure.links} />
                                 </div>
                             </div>
 
+                            {/* Full width separator */}
+                            <div className="border-t border-border -mx-6"></div>
+
                             {/* Risk Summary */}
                             {infrastructure.riskSummary && infrastructure.riskSummary.length > 0 && (
                                 <div className="space-y-4">
-                                    <h3 className="text-lg font-semibold text-foreground">Risk Summary</h3>
                                     <RiskSummary content={infrastructure.riskSummary} />
                                 </div>
                             )}
@@ -151,7 +153,6 @@ const InfrastructureReviewModal: React.FC<InfrastructureReviewModalProps> = ({
                             {/* Assessment */}
                             {infrastructure.assessment && infrastructure.assessment.length > 0 && !infrastructure.underReview && (
                                 <div className="space-y-4">
-                                    <h3 className="text-lg font-semibold text-foreground">Assessment</h3>
                                     <RiskAnalysis
                                         riskAnalysis={infrastructure.assessment}
                                         riskFactors={infrastructure.riskFactors}
