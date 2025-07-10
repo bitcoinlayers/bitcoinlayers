@@ -144,11 +144,6 @@ function getSortedDataAndHeaders(view: string, subView: string) {
                         mobileLabel: "Snapshot",
                     },
                     {
-                        name: "Trust Assumptions",
-                        showSorting: false,
-                        mobileLabel: "Trust assump...",
-                    },
-                    {
                         name: "Risk Summary",
                         showSorting: false,
                         mobileLabel: "Risk",
