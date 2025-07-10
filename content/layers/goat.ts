@@ -94,7 +94,7 @@ const goat: LayerProject = {
                     infrastructureSlug: "goat-zbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: Reviewsnippet.CustodianPeg,
+                    title: "The bitcoin backing this asset is secured by a federation of signers",
                     content: `${Reviewsnippet.GoatzBTC}`,
                     alert: Alertsnippet.WrapperCentralized,
                 },
@@ -129,7 +129,7 @@ const goat: LayerProject = {
                     content: [
                         {
                             title: "This project has undergone a partial review",
-                            content: AdditionalSnippet.InitialReview,
+                            content: `${AdditionalSnippet.InitialReview}`,
                         },
                     ],
                 },
