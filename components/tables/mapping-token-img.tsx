@@ -23,10 +23,10 @@ const TokenList: React.FC<TokenListProps> = ({ tokens, networkSlug }) => {
     const topTokens = tokens.slice(0, 3);
     const remainingCount = tokens.length - 3;
 
-    // Truncate address to 8 characters + "..."
+    // Truncate address to 18 characters + "..."
     const truncateAddress = (address: string) => {
         if (!address) return "";
-        return address.length > 8 ? `${address.substring(0, 8)}...` : address;
+        return address.length > 18 ? `${address.substring(0, 18)}...` : address;
     };
 
     // Handle address click - copy to clipboard
@@ -69,7 +69,7 @@ const TokenList: React.FC<TokenListProps> = ({ tokens, networkSlug }) => {
                             }}
                         />
                         <div>
-                            <h4 className="text-sm font-semibold text-foreground">
+                            <h4 className="text-base font-semibold text-foreground">
                                 BTC Pegs Contracts
                             </h4>
                         </div>
@@ -89,12 +89,12 @@ const TokenList: React.FC<TokenListProps> = ({ tokens, networkSlug }) => {
                                         altText=""
                                     />
                                     <div className="flex-1">
-                                        <div className="text-sm font-medium text-foreground">
+                                        <div className="text-base font-medium text-foreground">
                                             {token.token_slug}
                                         </div>
                                         {contractAddress && (
                                             <div 
-                                                className="text-xs text-muted-foreground font-mono cursor-pointer hover:text-foreground transition-colors"
+                                                className="text-sm text-muted-foreground font-mono cursor-pointer hover:text-foreground transition-colors"
                                                 onClick={() => handleAddressClick(contractAddress)}
                                                 title={`Click to copy: ${contractAddress}`}
                                             >
