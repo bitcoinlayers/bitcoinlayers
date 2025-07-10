@@ -63,6 +63,7 @@ import movementProject from "@/content/layers/movement";
 import soneiumProject from "@/content/layers/soneium";
 import suiProject from "@/content/layers/sui";
 import botanixProject from "@/content/layers/botanix";
+import goatProject from "@/content/layers/goat";
 
 const core: LayerProject = coreProject;
 const internetcomputer: LayerProject = internetcomputerProject;
@@ -127,6 +128,7 @@ const movement: LayerProject = movementProject;
 const soneium: LayerProject = soneiumProject;
 const sui: LayerProject = suiProject;
 const botanix: LayerProject = botanixProject;
+const goat: LayerProject = goatProject;
 
 export const allLayers: LayerProject[] = [
     core,
@@ -192,6 +194,7 @@ export const allLayers: LayerProject[] = [
     sui,
     bouncebit,
     botanix,
+    goat,
 ];
 
 export const allLayerSlugs: string[] = allLayers.map((layer) => layer.slug);

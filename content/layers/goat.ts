@@ -1,4 +1,3 @@
-import { tokenToString } from "typescript";
 import {
     LayerProject,
     Type,
@@ -23,11 +22,11 @@ import {
 } from "../props-layers-more-info";
 import { RiskSummarySnippet } from "../props-layers-intro";
 
-const fuel: LayerProject = {
+const goat: LayerProject = {
     type: Type.Layer,
-    slug: "fuel",
-    title: "Fuel",
-    entityType: EntityType.AltRollup,
+    slug: "goat",
+    title: "GOAT",
+    entityType: EntityType.AltL1,
     entityCategory: EntityCategory.Alt,
     live: LiveStatus.Mainnet,
     staking: false,
@@ -41,41 +40,41 @@ const fuel: LayerProject = {
         RiskFactor.High,
     ],
     btcLocked: 0,
-    nativeToken: "TKN",
-    feeToken: "ETH",
-    notice: undefined,
+    nativeToken: "GOAT",
+    feeToken: "BTC",
+    notice: Notice.OtherReasonBridge,
     bitcoinOnly: false,
     links: [
         {
             text: Site.Website,
-            url: "https://fuel.network/",
+            url: "https://www.goat.network/",
         },
         {
             text: Site.Docs,
-            url: "https://docs.fuel.network/docs/intro/what-is-fuel/",
+            url: "https://docs.goat.network/",
         },
         {
             text: Site.Explorer,
-            url: "https://app.fuel.network/",
+            url: "https://explorer.goat.network/",
         },
         {
             text: Site.GitHub,
-            url: "https://github.com/FuelLabs/",
+            url: "https://github.com/GOATNetwork",
         },
         {
             text: Site.Twitter,
-            url: "https://x.com/fuel_network",
+            url: "https://x.com/GOATRollup",
         },
     ],
-    description: "Fuel is an Ethereum rollup that supports a variety of wrapped bitcoin assets on its chain. ",
+    description: "The GOAT network is a sidechain protocol that supporting an EVM execution environment. The network runs on CometBFT consensus and has an official bridge program with bitcoin.",
     riskSummary: [
         {
             title: RiskSummarySnippet.TitleCustodianPegs,
-            content: RiskSummarySnippet.RiskSummaryCustodianPegs,
+            content: RiskSummarySnippet.RiskFederationPeg,
         },
         {
-            title: RiskSummarySnippet.TitleCentralizedSequencer,
-            content: RiskSummarySnippet.RiskSummaryCentralizedSequencer,
+            title: RiskSummarySnippet.TitleFederation,
+            content: RiskSummarySnippet.RiskSummaryFederation,
         },
         {
             title: RiskSummarySnippet.TitleAltDA,
@@ -96,8 +95,8 @@ const fuel: LayerProject = {
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: Reviewsnippet.CustodianPeg,
-                    content: `${Reviewsnippet.FireBTC}`,
-                    alert: Alertsnippet.AltRollupAltTokenNoFraudProofs,
+                    content: `${Reviewsnippet.GoatzBTC}`,
+                    alert: Alertsnippet.WrapperCentralized,
                 },
             ],
         },
@@ -105,22 +104,22 @@ const fuel: LayerProject = {
             category: RiskCategory.DataAvailability,
             score: 0,
             tier: RiskFactor.High,
-            title: "EigenDA satisfies the network's data availability requirements",
-            content: Reviewsnippet.AltRollupAltDA,
+            title: "The network's validators are responsible for keeping a record of the network's state",
+            content: Reviewsnippet.AltL1DA,
         },
         {
             category: RiskCategory.NetworkOperators,
             score: 0,
             tier: RiskFactor.High,
-            title: "Users can propose their own transaction to be included in a sequencer, but cannot indepdendently submit withdrawal requests to the official bridge contract",
-            content: `${Reviewsnippet.AltRollupSelfSequenceMain}`,
+            title: "The network is operated by a closed set of node operators",
+            content: `${Reviewsnippet.OperatorFederated}`,
         },
         {
             category: RiskCategory.FinalityGuarantees,
             score: 0,
             tier: RiskFactor.High,
-            title: "The network's state is updated offchain",
-            content: `${Reviewsnippet.AltRollupFinality}`
+            title: "After a transaction has been included in the chain, it cannot reorg",
+            content: `${Reviewsnippet.CometBFTFinality}`
         },
     ],
     sections: [
@@ -134,17 +133,7 @@ const fuel: LayerProject = {
                         },
                     ],
                 },
-                {
-                    id: "knowledgebits",
-                    title: "Knowledge Bits",
-                    content: [
-                        {
-                            title: "The network has been reviewed by L2Beat",
-                            content: KnowledgeBitSnippet.EthereumL2,
-                        },
-                    ],
-                },
-            ],
+            ]
 };
 
-export default fuel;
+export default goat;
