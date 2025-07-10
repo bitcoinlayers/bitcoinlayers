@@ -44,7 +44,7 @@ const RiskSummaryDialog: React.FC<RiskSummaryDialogProps> = ({ layer, riskSummar
                     <div className="space-y-3">
                         <div className="text-sm font-medium">Risk Summary - Under Review</div>
                         <p className="text-sm text-muted-foreground">
-                            This project's risk assessment is currently under review.
+                            This project&apos;s risk assessment is currently under review.
                         </p>
                     </div>
                 ) : (

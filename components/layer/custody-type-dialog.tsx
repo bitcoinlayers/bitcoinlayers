@@ -115,7 +115,7 @@ const CustodyTypeDialog: React.FC<CustodyTypeDialogProps> = ({ layer }) => {
                     <div className="space-y-3">
                         <div className="text-sm font-medium">Custody Type - Under Review</div>
                         <p className="text-sm text-muted-foreground">
-                            This project's custody model is currently under review.
+                            This project&apos;s custody model is currently under review.
                         </p>
                     </div>
                 ) : (
