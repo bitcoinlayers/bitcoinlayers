@@ -1,5 +1,5 @@
 import React from "react";
-import { Dialog, DialogContent, DialogTrigger, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
 import { Button } from "@/components/ui/button";
 import { AlertTriangleIcon } from "lucide-react";
 import RiskSummary from "@/components/shared/risk-summary";
@@ -28,8 +28,8 @@ const RiskSummaryDialog: React.FC<RiskSummaryDialogProps> = ({ layer, riskSummar
     }
 
     return (
-        <Dialog>
-            <DialogTrigger asChild>
+        <HoverCard>
+            <HoverCardTrigger asChild>
                 <Button 
                     variant="outline" 
                     size="sm" 
@@ -38,54 +38,44 @@ const RiskSummaryDialog: React.FC<RiskSummaryDialogProps> = ({ layer, riskSummar
                     <AlertTriangleIcon className="w-4 h-4 mr-1" />
                     Review
                 </Button>
-            </DialogTrigger>
-            <DialogContent className="p-0 border-0 bg-transparent shadow-none max-w-fit [&>button]:hidden" style={{ width: "auto", maxWidth: "90vw" }}>
-                <div 
-                    className="bg-popover border border-border rounded-lg shadow-lg p-6"
-                    style={{
-                        width: "var(--breakpoint-sm, 640px)",
-                        maxHeight: "80vh",
-                        overflowY: "auto"
-                    }}
-                >
-                    <DialogTitle className="sr-only">
-                        {layer.title} - {layer.underReview ? "Under Review" : "Risk Summary"}
-                    </DialogTitle>
-                    {layer.underReview ? (
-                        <UnderReviewModalContent project={layer} title="Risk Summary" />
-                    ) : (
-                        <div className="space-y-6">
-                            {/* Network Header */}
-                            <div className="flex items-center gap-3">
-                                <Image
-                                    src={`/logos/${layer.slug}.png`}
-                                    alt={layer.title}
-                                    width={32}
-                                    height={32}
-                                    className="rounded-full object-cover bg-muted"
-                                    onError={(e) => {
-                                        (e.target as HTMLImageElement).src = '/logos/default.png';
-                                    }}
-                                />
-                                <div>
-                                    <h3 className="text-xl font-medium text-foreground" style={{ lineHeight: "28px" }}>
-                                        {layer.title} - Risk Summary
-                                    </h3>
-                                </div>
-                            </div>
-                            
-                            {/* Underline separator */}
-                            <hr className="border-border" />
-                            
-                            {/* Risk Summary Content */}
+            </HoverCardTrigger>
+            <HoverCardContent className="w-96">
+                {layer.underReview ? (
+                    <div className="space-y-3">
+                        <div className="text-sm font-medium">Risk Summary - Under Review</div>
+                        <p className="text-sm text-muted-foreground">
+                            This project's risk assessment is currently under review.
+                        </p>
+                    </div>
+                ) : (
+                    <div className="space-y-4">
+                        {/* Network Header */}
+                        <div className="flex items-center gap-3">
+                            <Image
+                                src={`/logos/${layer.slug}.png`}
+                                alt={layer.title}
+                                width={24}
+                                height={24}
+                                className="rounded-full object-cover bg-muted"
+                                onError={(e) => {
+                                    (e.target as HTMLImageElement).src = '/logos/default.png';
+                                }}
+                            />
                             <div>
-                                <RiskSummary content={riskSummary} showBackground={false} />
+                                <h4 className="text-sm font-semibold text-foreground">
+                                    {layer.title} - Risk Summary
+                                </h4>
                             </div>
                         </div>
-                    )}
-                </div>
-            </DialogContent>
-        </Dialog>
+                        
+                        {/* Risk Summary Content */}
+                        <div className="space-y-2">
+                            <RiskSummary content={riskSummary} showBackground={false} showTitle={false} />
+                        </div>
+                    </div>
+                )}
+            </HoverCardContent>
+        </HoverCard>
     );
 };
 

@@ -9,9 +9,10 @@ interface RiskSummaryContent {
 interface RiskSummaryProps {
     content: RiskSummaryContent[];
     showBackground?: boolean;
+    showTitle?: boolean;
 }
 
-const RiskSummary: React.FC<RiskSummaryProps> = ({ content, showBackground = true }) => {
+const RiskSummary: React.FC<RiskSummaryProps> = ({ content, showBackground = true, showTitle = true }) => {
     if (!content || content.length === 0) return null;
 
     return (
@@ -24,11 +25,13 @@ const RiskSummary: React.FC<RiskSummaryProps> = ({ content, showBackground = tru
                 }`}
                 id="risksummary"
             >
-                <div className="self-stretch justify-start items-start gap-4 inline-flex">
-                    <div className="body_section !text-foreground">
-                        Risk Summary
+                {showTitle && (
+                    <div className="self-stretch justify-start items-start gap-4 inline-flex">
+                        <div className="body_section !text-foreground">
+                            Risk Summary
+                        </div>
                     </div>
-                </div>
+                )}
                 
                 {content.map((item, index) => (
                     <div key={index} className="self-stretch">

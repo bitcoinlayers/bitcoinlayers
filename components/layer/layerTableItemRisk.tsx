@@ -1,11 +1,12 @@
-import { getRiskColorBackground, getRiskColorIcon } from "@/util/riskColors";
+import { getRiskColorBackground, getRiskColorIcon, getRiskColorText } from "@/util/riskColors";
 import RiskSnapshot from "./riskSnapshot";
 import RiskIconBridge from "@/components/icons/RiskIconBridge";
 import RiskIconDA from "@/components/icons/RiskIconDA";
 import RiskIconOperators from "@/components/icons/RiskIconOperators";
 import RiskIconSettlement from "@/components/icons/RiskIconSettlement";
-import { Dialog, DialogContent, DialogTrigger } from "../ui/dialog";
+import { HoverCard, HoverCardContent, HoverCardTrigger } from "../ui/hover-card";
 import { LayerProject, Project } from "@/content/props";
+import Image from "next/image";
 
 interface RiskProps {
     layer: Project;
@@ -13,12 +14,20 @@ interface RiskProps {
 
 const Risk: React.FC<RiskProps> = ({ layer }) => {
     const riskLevels = (layer as LayerProject).riskAnalysis;
+    const riskFactors = (layer as LayerProject).riskFactors;
 
     const getRiskFactor = (riskLevel: any, index: number): string => {
         if (index === 0 && riskLevel?.pegs?.length > 0) {
             return riskLevel.pegs[0].tier;
         }
-        return riskLevel?.tier || "Under Review";
+        return riskFactors?.[index] || "Under Review";
+    };
+
+    const getRiskTitle = (riskLevel: any, index: number): string => {
+        if (index === 0 && riskLevel?.pegs?.length > 0) {
+            return riskLevel.pegs[0].title;
+        }
+        return riskLevel?.title || "Under Review";
     };
 
     const RiskIcon = ({
@@ -40,10 +49,17 @@ const Risk: React.FC<RiskProps> = ({ layer }) => {
         );
     };
 
+    const riskCategories = [
+        { title: "BTC Custody", IconComponent: RiskIconBridge },
+        { title: "Data Availability", IconComponent: RiskIconDA },
+        { title: "Operators", IconComponent: RiskIconOperators },
+        { title: "Settlement", IconComponent: RiskIconSettlement },
+    ];
+
     return (
-        <Dialog>
-            <DialogTrigger>
-                <div className="lg:w-44 w-34 lg:p-4 p-2 justify-start items-center gap-4 inline-flex lg:gap-4 gap-1">
+        <HoverCard>
+            <HoverCardTrigger asChild>
+                <div className="lg:w-44 w-34 lg:p-4 p-2 justify-start items-center gap-4 inline-flex lg:gap-4 gap-1 cursor-pointer">
                     <RiskIcon
                         riskFactor={getRiskFactor(riskLevels[0], 0)}
                         IconComponent={RiskIconBridge}
@@ -61,23 +77,60 @@ const Risk: React.FC<RiskProps> = ({ layer }) => {
                         IconComponent={RiskIconSettlement}
                     />
                 </div>
-            </DialogTrigger>
-            <DialogContent className="p-0 border-0 bg-transparent shadow-none max-w-fit [&>button]:hidden" style={{ width: "auto", maxWidth: "90vw" }}>
-                <div 
-                    className="bg-popover border border-border rounded-lg shadow-lg p-6"
-                    style={{
-                        width: "var(--breakpoint-sm, 640px)",
-                        maxHeight: "80vh",
-                        overflowY: "auto"
-                    }}
-                >
-                    <RiskSnapshot
-                        layer={layer}
-                        title={`${layer.title} Trust Assumptions`}
-                    />
+            </HoverCardTrigger>
+            <HoverCardContent className="w-96">
+                <div className="space-y-4">
+                    {/* Network Header */}
+                    <div className="flex items-center gap-3">
+                        <Image
+                            src={`/logos/${layer.slug}.png`}
+                            alt={layer.title}
+                            width={24}
+                            height={24}
+                            className="rounded-full object-cover bg-muted"
+                            onError={(e) => {
+                                (e.target as HTMLImageElement).src = '/logos/default.png';
+                            }}
+                        />
+                        <div>
+                            <h4 className="text-sm font-semibold text-foreground">
+                                {layer.title} - Trust Assumptions
+                            </h4>
+                        </div>
+                    </div>
+                    
+                    {/* Risk Factors */}
+                    <div className="space-y-3">
+                        {riskCategories.map((category, index) => (
+                            <div key={index} className="flex items-start gap-3">
+                                <RiskIcon
+                                    riskFactor={getRiskFactor(riskLevels[index], index)}
+                                    IconComponent={category.IconComponent}
+                                />
+                                <div className="flex-1 min-w-0">
+                                    <div className="flex items-center gap-2 mb-1">
+                                        <span className="text-sm font-medium">
+                                            {category.title}:
+                                        </span>
+                                        <span
+                                            className="text-sm font-medium"
+                                            style={{
+                                                color: getRiskColorText(getRiskFactor(riskLevels[index], index)),
+                                            }}
+                                        >
+                                            {getRiskFactor(riskLevels[index], index)}
+                                        </span>
+                                    </div>
+                                    <p className="text-xs text-muted-foreground">
+                                        {getRiskTitle(riskLevels[index], index)}
+                                    </p>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
                 </div>
-            </DialogContent>
-        </Dialog>
+            </HoverCardContent>
+        </HoverCard>
     );
 };
 
