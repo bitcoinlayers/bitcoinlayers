@@ -226,7 +226,7 @@ const arbitrum: LayerProject = {
             score: 0,
             tier: RiskFactor.High,
             title: "Arbitrum state transitions finalize on Ethereum. Rollup nodes finalize after applying the STF over data blogs. Light clients finalize after a fraud proof window passes",
-            content: `${ReviewSnippet.FinalityAltRollupPermissionlessFraudProofs}\n\n,The stake required to become a validator is 3600 ETH.`,
+            content: `${ReviewSnippet.FinalityAltRollupPermissionlessFraudProofs}\n\nThe stake required to become a validator is 3600 ETH.`,
         },
     ],
     sections: [
