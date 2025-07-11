@@ -20,6 +20,9 @@ import {
     Categorization,
 } from "../props";
 
+import { Alertsnippet } from "../props-layers-more-info";
+import { Reviewsnippet } from "../props-layers-reviews";
+
 const starknet: LayerProject = {
     type: Type.Layer,
     slug: "starknet",
@@ -137,10 +140,12 @@ const starknet: LayerProject = {
         {
             category: RiskCategory.FinalityGuarantees,
             score: 0,
-            tier: RiskFactor.High,
-            title: "Validity proofs are used to finalize bridges and light clients",
-            content: `${ReviewSnippet.FinalityAltRollupValidityProofs}\n\nStarknet's bridge programs escrowing BTC-backed assets are finalized with validity proofs. Users cannot run their own provers in the event of censorship or liveness failures. A 3/12 federation is responsible for posting state updates on behalf of users if they are censored.`
+            tier: RiskFactor.Medium,
+            title: "Starknet state transitions finalize by updating its state based on data posted to Ethereum",
+            content: `${Reviewsnippet.AltRollupFinality}`,
+            alert: Alertsnippet.AltRollupNotice,
         },
+ 
     ],
     manualContracts: [
         {

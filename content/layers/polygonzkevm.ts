@@ -19,6 +19,9 @@ import {
     RiskSummarySnippet,
 } from "../props";
 
+import { Alertsnippet } from "../props-layers-more-info";
+import { Reviewsnippet } from "../props-layers-reviews";
+
 const polygonzkevm: LayerProject = {
     type: Type.Layer,
     slug: "polygonzkevm",
@@ -34,7 +37,7 @@ const polygonzkevm: LayerProject = {
         RiskFactor.VeryHigh,
         RiskFactor.Medium,
         RiskFactor.VeryHigh,
-        RiskFactor.UnderReview,
+        RiskFactor.Medium,
     ],
     btcLocked: 0,
     nativeToken: "-",
@@ -117,10 +120,11 @@ const polygonzkevm: LayerProject = {
         {
             category: RiskCategory.FinalityGuarantees,
             score: 0,
-            tier: RiskFactor.VeryHigh,
-            title: "State updates are finalized by rollup nodes. We are reviewing finality assurance scores for alternative rollups with no official BTC bridge",
-            content: `${ReviewSnippet.FinalityAltRollupValidityProofs}\n\nTwo entties are permissioned to submit state updates.`
-        },
+            tier: RiskFactor.Medium,
+            title: "Network state transitions finalize by updating its state based on data posted to Ethereum",
+            content: `${Reviewsnippet.AltRollupFinality}`,
+            alert: Alertsnippet.AltRollupNotice,
+        }, 
     ],
     sections: [
         {

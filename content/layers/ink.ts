@@ -37,7 +37,7 @@ const template: LayerProject = {
         RiskFactor.VeryHigh,
         RiskFactor.Medium,
         RiskFactor.Medium,
-        RiskFactor.High,
+        RiskFactor.Medium,
     ],
     btcLocked: 0,
     nativeToken: "TKN",
@@ -135,10 +135,11 @@ const template: LayerProject = {
         {
             category: RiskCategory.FinalityGuarantees,
             score: 0,
-            tier: RiskFactor.High,
-            title: "The network's state is finalized offchain",
-            content: `${Reviewsnippet.AltRollupFinality}`
-        },
+            tier: RiskFactor.Medium,
+            title: "Network state transitions finalize by updating its state based on data posted to Ethereum",
+            content: `${Reviewsnippet.AltRollupFinality}`,
+            alert: Alertsnippet.AltRollupNotice,
+        }, 
     ],
     manualContracts: [
         {

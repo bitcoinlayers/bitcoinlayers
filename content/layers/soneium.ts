@@ -155,7 +155,7 @@ const soneium: LayerProject = {
         {
             category: RiskCategory.FinalityGuarantees,
             score: 0,
-            tier: RiskFactor.High,
+            tier: RiskFactor.Medium,
             title: "The network's state is finalized offchain",
             content: `${Reviewsnippet.AltRollupFinality}`
         },

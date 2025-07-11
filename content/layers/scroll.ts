@@ -19,6 +19,9 @@ import {
     RiskSummarySnippet,
 } from "../props";
 
+import { Alertsnippet } from "../props-layers-more-info";
+import { Reviewsnippet } from "../props-layers-reviews";
+
 const scroll: LayerProject = {
     type: Type.Layer,
     slug: "scroll",
@@ -34,7 +37,7 @@ const scroll: LayerProject = {
         RiskFactor.VeryHigh,
         RiskFactor.Medium,
         RiskFactor.VeryHigh,
-        RiskFactor.UnderReview,
+        RiskFactor.Medium,
     ],
     btcLocked: 0,
     nativeToken: "-",
@@ -133,10 +136,11 @@ const scroll: LayerProject = {
         {
             category: RiskCategory.FinalityGuarantees,
             score: 0,
-            tier: RiskFactor.UnderReview,
-            title: "State updates are finalized by rollup nodes. We are reviewing finality assurance scores for alternative rollups with no official BTC bridge",
-            content: `${ReviewSnippet.FinalityAltRollupValidityProofs}\n\n\n\nWe are reviewing how to score finality guarantees for alternative rollups. Learn more on our thoughts [here](https://www.lxresearch.co/some-thoughts-on-proof-systems-for-bridges-on-other-chains/).`
-        },
+            tier: RiskFactor.Medium,
+            title: "Network state transitions finalize by updating its state based on data posted to Ethereum",
+            content: `${Reviewsnippet.AltRollupFinality}`,
+            alert: Alertsnippet.AltRollupNotice,
+        }, 
     ],
     sections: [
         {
