@@ -42,11 +42,11 @@ export default function ComingSoonChart({
                     </div>
                     <div className="space-y-2">
                         <h3 className="text-lg font-semibold text-foreground">
-                            Chart Data Coming Soon
+                            TVL Data Coming Soon
                         </h3>
                         <p className="text-sm text-muted-foreground max-w-md">
-                            We&apos;re currently gathering and processing data for this network. 
-                            Chart analytics will be available once sufficient data is collected.
+                            We&apos;re currently gathering and building data infrastructure for this network. 
+                            TVL analytics will be available soon.
                         </p>
                     </div>
                 </div>
