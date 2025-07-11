@@ -24,7 +24,7 @@ export default function ComingSoonTokenContracts() {
                         Token Contracts Coming Soon
                     </h3>
                     <p className="text-sm text-muted-foreground max-w-md">
-                        We're working to integrate token contract data for this network. 
+                        We&apos;re working to integrate token contract data for this network. 
                         Contract addresses and details will be available once the integration is complete.
                     </p>
                 </div>

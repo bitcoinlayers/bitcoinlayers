@@ -45,7 +45,7 @@ export default function ComingSoonChart({
                             Chart Data Coming Soon
                         </h3>
                         <p className="text-sm text-muted-foreground max-w-md">
-                            We're currently gathering and processing data for this network. 
+                            We&apos;re currently gathering and processing data for this network. 
                             Chart analytics will be available once sufficient data is collected.
                         </p>
                     </div>
