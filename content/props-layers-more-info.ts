@@ -96,11 +96,13 @@ export const Alertsnippet = { //TODO: Janusz to add more here
         type: "error" as const,
         title: "This token is not bridged to the network from bitcoin",
         content: "The token is bridged to the network's from a bridge contract hosted on its parent chain. The bridge does not have a functioning proof system. The proposer can submit a malicious state transition and steal funds from the bridge. Additionally, the bridge contract can be upgraded by a centralized party or federation. In the event of a malicious upgrade, user funds could be stolen.",
+        expandable: true,
     },
     AltRollupAltTokenNoFraudProofsPlusUpgradeDelayed: {
         type: "error" as const,
         title: "This token is not bridged to the network from bitcoin",
         content: "The token is bridged to the network's from a bridge contract hosted on its parent chain. The bridge does not have a functioning proof system. The proposer can submit a malicious state transition and steal funds from the bridge. Additionally, the bridge contract can be upgraded by a centralized party or federation. In the event of a malicious upgrade, user funds could be stolen. There is a delay to upgrades.",
+        expandable: true,
     },
     WrapperCentralized: {
         type: "warning" as const,
@@ -111,6 +113,7 @@ export const Alertsnippet = { //TODO: Janusz to add more here
         type: "error" as const,
         title: "This token is not bridged to the network from bitcoin",
         content: "The token is bridged to the network's from a bridge contract hosted on its parent chain. Users must consider how the native bitcoin is secured. Additionally, while there is a proving system in place, the bridge contract can instantly upgraded by a centralized party or federation. In the event of a malicious upgrade, user funds could be stolen.",
+        expandable: true,
     },
     AltRollupAltTokenUnderReview: {
         type: "warning" as const,
@@ -143,5 +146,11 @@ export const Alertsnippet = { //TODO: Janusz to add more here
         type: "info" as const,
         title: "Section Under Review",
         content: "This section is currently under review. Some information may be incomplete or subject to change as our analysis progresses.",
+    },
+    AltRollupNotice: {
+        type: "info" as const,
+        title: "Finality is not necessarily through the lens of a validating bridge",
+        content: "The network is an alternative rollup. This means it uses another blockchain for data availability. From the view of its full nodes, the rollup's state is finalized after it it validates state updates published to the data availability layer. Therefore, the network's finality assurances are that of its data availability layer (assuming the node operation is permissionless). A state root may be additionally posted to the data availability layer to finalize bridge programs, but this is not a guarantee of finality. This guarantee ensures the network's bridge programs are secure and can permit withdrawals based on the network's state. This only applies to tokens that are locked in these specific's bridge programs. See the BTC custody section for more information.",
+        expandable: true,
     },
 } as const;

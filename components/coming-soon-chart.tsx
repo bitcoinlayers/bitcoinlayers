@@ -14,7 +14,7 @@ export default function ComingSoonChart({
 }: ComingSoonChartProps) {
     return (
         <Card className="bg-background mb-6" id={title}>
-            <div className="w-full flex flex-col sm:flex-row border-y">
+            <div className="w-full flex flex-col sm:flex-row border-b">
                 <div className="flex flex-col justify-center items-start py-4 sm:py-7 border-b sm:border-b-0 px-6 sm:w-3/4">
                     <div className="text-lg sm:text-xl">{title}</div>
                     <div className="text-xs sm:text-sm text-muted-foreground">

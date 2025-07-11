@@ -42,25 +42,23 @@ export default async function LayerPage(props: {
             :
             <>
             </>}
-            <div className="flex justify-start items-center lg:gap-8 gap-2 lg:my-12 my-6 px-4 lg:px-0">
-                <div className="flex justify-center items-center">
-                    <LayerImage
-                        title={layer.title}
-                        src={`/logos/${layer.slug}.png`}
-                    />{" "}
-                </div>
-                <div className="flex-grow flex items-center">
-                    <h1 className="layer_header !text-foreground flex-grow">
-                        {layer.title}
-                    </h1>
-                </div>
+            <div className="flex items-center lg:gap-8 gap-4 lg:my-12 my-6 px-4 lg:px-0">
+                <LayerImage
+                    title={layer.title}
+                    src={`/logos/${layer.slug}.png`}
+                />
+                <h1 className="layer_header !text-foreground">
+                    {layer.title}
+                </h1>
             </div>
             <UnderReviewWrapper isUnderReview={layer.underReview}>
-                <div className="lg:container mx-4 lg:px-4 flex lg:flex-row flex-col">
-                    <div className="lg:w-1/5 z-40 lg:sticky lg:top-[60px] max-h-[calc(100vh-60px)] w-full overflow-y-auto overflow-x-hidden whitespace-nowrap lg:whitespace-normal top-[68px] fixed h-auto lg:h-fit lg:pt-6 lg:px-2 no-scrollbar py-0 bg-background">
-                        <LayerMenu layer={layer} />
+                <div className="flex lg:flex-row flex-col">
+                    <div className="lg:w-1/5 z-40 lg:sticky lg:top-[60px] max-h-[calc(100vh-60px)] w-full overflow-y-auto overflow-x-hidden whitespace-nowrap lg:whitespace-normal top-[68px] fixed h-auto lg:h-fit no-scrollbar py-0 lg:py-0 lg:mr-6">
+                        <div className="bg-muted/50 rounded-xl border border-border shadow-none p-0">
+                            <LayerMenu layer={layer} />
+                        </div>
                     </div>
-                    <div className="lg:w-4/5 flex flex-col">
+                    <div className="lg:w-4/5 flex flex-col px-4 lg:pl-6">
                         <LayerOverviewAlt layer={layer} />
                         <LayerTVLChart />
                         

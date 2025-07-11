@@ -1,6 +1,8 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import { InfoIcon, AlertTriangleIcon, ExternalLinkIcon } from "lucide-react";
+import { InfoIcon, AlertTriangleIcon, ExternalLinkIcon, ChevronDownIcon, ChevronUpIcon } from "lucide-react";
 import Link from "next/link";
 import { SectionAlert } from "@/content/props";
 
@@ -9,6 +11,12 @@ interface SectionAlertProps {
 }
 
 export default function SectionAlertComponent({ alert }: SectionAlertProps) {
+    const [isExpanded, setIsExpanded] = useState(false);
+    
+    // Split content by lines or sentences to determine if we should show "See more"
+    const lines = alert.content.split(/\n|\. /).filter(line => line.trim().length > 0);
+    const shouldTruncate = alert.expandable && lines.length > 2;
+
     const getAlertStyles = () => {
         switch (alert.type) {
             case "info":
@@ -18,6 +26,7 @@ export default function SectionAlertComponent({ alert }: SectionAlertProps) {
                     titleColor: "text-blue-900 dark:text-blue-100",
                     contentColor: "text-blue-800 dark:text-blue-200",
                     linkColor: "text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300",
+                    buttonColor: "text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300",
                     icon: InfoIcon,
                 };
             case "warning":
@@ -27,6 +36,7 @@ export default function SectionAlertComponent({ alert }: SectionAlertProps) {
                     titleColor: "text-orange-900 dark:text-orange-100",
                     contentColor: "text-orange-800 dark:text-orange-200",
                     linkColor: "text-orange-600 dark:text-orange-400 hover:text-orange-700 dark:hover:text-orange-300",
+                    buttonColor: "text-orange-600 dark:text-orange-400 hover:text-orange-700 dark:hover:text-orange-300",
                     icon: AlertTriangleIcon,
                 };
             case "error":
@@ -36,6 +46,7 @@ export default function SectionAlertComponent({ alert }: SectionAlertProps) {
                     titleColor: "text-red-900 dark:text-red-100",
                     contentColor: "text-red-800 dark:text-red-200",
                     linkColor: "text-red-600 dark:text-red-400 hover:text-red-700 dark:hover:text-red-300",
+                    buttonColor: "text-red-600 dark:text-red-400 hover:text-red-700 dark:hover:text-red-300",
                     icon: AlertTriangleIcon,
                 };
         }
@@ -51,17 +62,47 @@ export default function SectionAlertComponent({ alert }: SectionAlertProps) {
                 {alert.title}
             </AlertTitle>
             <AlertDescription className={`${styles.contentColor} mt-2`}>
-                <p className="mb-2">{alert.content}</p>
-                {alert.linkText && alert.linkUrl && (
-                    <Link 
-                        href={alert.linkUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={`inline-flex items-center ${styles.linkColor} font-medium transition-colors`}
+                <p 
+                    className={`mb-2 ${
+                        shouldTruncate && !isExpanded 
+                            ? "line-clamp-2 overflow-hidden" 
+                            : ""
+                    }`}
+                >
+                    {alert.content}
+                </p>
+                
+                {shouldTruncate && (
+                    <button
+                        onClick={() => setIsExpanded(!isExpanded)}
+                        className={`inline-flex items-center ${styles.buttonColor} font-medium transition-colors text-sm hover:underline`}
                     >
-                        {alert.linkText}
-                        <ExternalLinkIcon className="ml-1 h-4 w-4" />
-                    </Link>
+                        {isExpanded ? (
+                            <>
+                                See less
+                                <ChevronUpIcon className="ml-1 h-4 w-4" />
+                            </>
+                        ) : (
+                            <>
+                                See more
+                                <ChevronDownIcon className="ml-1 h-4 w-4" />
+                            </>
+                        )}
+                    </button>
+                )}
+
+                {alert.linkText && alert.linkUrl && (
+                    <div className={shouldTruncate ? "mt-2" : ""}>
+                        <Link 
+                            href={alert.linkUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={`inline-flex items-center ${styles.linkColor} font-medium transition-colors`}
+                        >
+                            {alert.linkText}
+                            <ExternalLinkIcon className="ml-1 h-4 w-4" />
+                        </Link>
+                    </div>
                 )}
             </AlertDescription>
         </Alert>

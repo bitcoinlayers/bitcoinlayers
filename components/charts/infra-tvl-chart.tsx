@@ -188,8 +188,8 @@ export default function InfraTVLChart() {
     if (!data || data.length === 0) return <ComingSoonChart />;
 
     return (
-        <Card className="bg-background mb-6" id="BTC Supply">
-            <div className="w-full flex flex-col sm:flex-row border-y">
+        <Card className="bg-background mb-6" id="data">
+            <div className="w-full flex flex-col sm:flex-row border-b">
                 <div className="flex flex-col justify-center items-start py-4 sm:py-7 border-b sm:border-b-0 px-6 sm:w-3/4">
                     <div className="text-lg sm:text-xl">BTC Supply</div>
                     <div className="text-xs sm:text-sm text-muted-foreground">
@@ -247,7 +247,7 @@ export default function InfraTVLChart() {
                         data={filterDataByDateRange(processedData)}
                         margin={{ left: 0, right: 0, top: 30, bottom: 0 }}
                     >
-                        <CartesianGrid vertical={false} />
+                        <CartesianGrid vertical={false} horizontal={false} />
                         <XAxis
                             dataKey="date"
                             tickLine={false}
