@@ -63,27 +63,10 @@ export default async function LayerPage(props: {
                     <div className="lg:w-4/5 flex flex-col">
                         <LayerOverviewAlt layer={layer} />
                         <LayerTVLChart />
+                        
+                        {/* Token Contracts */}
                         <ProjectContractAddresses slug={slug} isLayer={true} />
-                        {!layer.partialReview && (
-                            <>
-                                <RiskSummary content={layer.riskSummary || []} />
-                                <Categorization content={layer.categorization || []} layer={layer} />
-                                {!layer.underReview && (
-                                    <RiskAnalysis
-                                        riskAnalysis={layer.riskAnalysis}
-                                        riskFactors={layer.riskFactors}
-                                        layer={layer}
-                                    />
-                                )}
-                                <ManualContractAddresses 
-                                    contracts={layer.manualContracts || []} 
-                                    sectionTitle="Additional Contracts"
-                                    sectionId="manualcontracts"
-                                />
-                                <LayerBody layer={layer} />
-                            </>
-                        )}
-                        {layer.partialReview && (
+                        {layer.partialReview && layer.partialReviewAfter === "tokencontracts" && (
                             <div className="self-stretch lg:px-8 px-4 pt-6 pb-8 mb-6 bg-muted/50 rounded-xl border border-border flex-col justify-center items-start gap-4">
                                 <div className="text-lg font-semibold text-foreground mb-3">
                                     Partial Review Available
@@ -95,6 +78,91 @@ export default async function LayerPage(props: {
                                     Complete technical analysis including risk assessments, trust assumptions, and detailed categorization will be added once our review is complete.
                                 </p>
                             </div>
+                        )}
+                        
+                        {/* Risk Summary */}
+                        {(!layer.partialReview || (layer.partialReviewAfter && ["risksummary", "categorization", "trust", "manualcontracts"].includes(layer.partialReviewAfter))) && (
+                            <RiskSummary content={layer.riskSummary || []} />
+                        )}
+                        {layer.partialReview && layer.partialReviewAfter === "risksummary" && (
+                            <div className="self-stretch lg:px-8 px-4 pt-6 pb-8 mb-6 bg-muted/50 rounded-xl border border-border flex-col justify-center items-start gap-4">
+                                <div className="text-lg font-semibold text-foreground mb-3">
+                                    Partial Review Available
+                                </div>
+                                <p className="text-muted-foreground">
+                                    This project is currently undergoing a partial review. The sections above are available, but the full technical review including trust assumptions and detailed analysis are still in progress.
+                                </p>
+                                <p className="text-sm text-muted-foreground mt-2">
+                                    Complete technical analysis will be added once our review is complete.
+                                </p>
+                            </div>
+                        )}
+                        
+                                {/* Categorization */}
+        {(!layer.partialReview || (layer.partialReviewAfter && ["categorization", "trust", "manualcontracts"].includes(layer.partialReviewAfter))) && layer.categorization && layer.categorization.length > 0 && (
+            <Categorization content={layer.categorization} layer={layer} />
+        )}
+                        {layer.partialReview && layer.partialReviewAfter === "categorization" && (
+                            <div className="self-stretch lg:px-8 px-4 pt-6 pb-8 mb-6 bg-muted/50 rounded-xl border border-border flex-col justify-center items-start gap-4">
+                                <div className="text-lg font-semibold text-foreground mb-3">
+                                    Partial Review Available
+                                </div>
+                                <p className="text-muted-foreground">
+                                    This project is currently undergoing a partial review. The sections above are available, but the detailed trust assumptions and additional analysis are still in progress.
+                                </p>
+                                <p className="text-sm text-muted-foreground mt-2">
+                                    Complete technical analysis will be added once our review is complete.
+                                </p>
+                            </div>
+                        )}
+                        
+                        {/* Risk Analysis */}
+                        {(!layer.partialReview || (layer.partialReviewAfter && ["trust", "manualcontracts"].includes(layer.partialReviewAfter))) && !layer.underReview && (
+                            <RiskAnalysis
+                                riskAnalysis={layer.riskAnalysis}
+                                riskFactors={layer.riskFactors}
+                                layer={layer}
+                            />
+                        )}
+                        {layer.partialReview && layer.partialReviewAfter === "trust" && (
+                            <div className="self-stretch lg:px-8 px-4 pt-6 pb-8 mb-6 bg-muted/50 rounded-xl border border-border flex-col justify-center items-start gap-4">
+                                <div className="text-lg font-semibold text-foreground mb-3">
+                                    Partial Review Available
+                                </div>
+                                <p className="text-muted-foreground">
+                                    This project is currently undergoing a partial review. The trust assumptions and risk analysis above are available, but additional sections are still in progress.
+                                </p>
+                                <p className="text-sm text-muted-foreground mt-2">
+                                    Additional analysis and documentation will be added once our review is complete.
+                                </p>
+                            </div>
+                        )}
+                        
+                        {/* Manual Contract Addresses */}
+                        {(!layer.partialReview || (layer.partialReviewAfter && layer.partialReviewAfter === "manualcontracts")) && (
+                            <ManualContractAddresses 
+                                contracts={layer.manualContracts || []} 
+                                sectionTitle="Additional Contracts"
+                                sectionId="manualcontracts"
+                            />
+                        )}
+                        {layer.partialReview && layer.partialReviewAfter === "manualcontracts" && (
+                            <div className="self-stretch lg:px-8 px-4 pt-6 pb-8 mb-6 bg-muted/50 rounded-xl border border-border flex-col justify-center items-start gap-4">
+                                <div className="text-lg font-semibold text-foreground mb-3">
+                                    Partial Review Available
+                                </div>
+                                <p className="text-muted-foreground">
+                                    This project is currently undergoing a partial review. The sections above are available, but additional documentation and analysis are still in progress.
+                                </p>
+                                <p className="text-sm text-muted-foreground mt-2">
+                                    Additional sections will be added once our review is complete.
+                                </p>
+                            </div>
+                        )}
+                        
+                        {/* Layer Body - only show if not partial review */}
+                        {!layer.partialReview && (
+                            <LayerBody layer={layer} />
                         )}
                     </div>
                 </div>

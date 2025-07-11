@@ -65,26 +65,10 @@ export default async function InfrastructurePage(props: {
                                 infrastructure={infrastructure}
                             />
                             <InfraTVLChart />
+                            
+                            {/* Token Contracts */}
                             <ProjectContractAddresses slug={slug} isLayer={false} />
-                            {!infrastructure.partialReview && (
-                                <>
-                                    <RiskSummary content={infrastructure.riskSummary || []} />
-                                    {infrastructure.assessment && (
-                                        <RiskAnalysis
-                                            riskAnalysis={infrastructure.assessment}
-                                            riskFactors={infrastructure.riskFactors}
-                                            infrastructure={infrastructure}
-                                        />
-                                    )}
-                                    <ManualContractAddresses 
-                                        contracts={infrastructure.manualContracts || []} 
-                                        sectionTitle="Additional Contracts"
-                                        sectionId="manualcontracts"
-                                    />
-                                    <InfrastructureBody infrastructure={infrastructure} />
-                                </>
-                            )}
-                            {infrastructure.partialReview && (
+                            {infrastructure.partialReview && infrastructure.partialReviewAfter === "tokencontracts" && (
                                 <div className="self-stretch lg:px-8 px-4 pt-6 pb-8 mb-6 bg-muted/50 rounded-xl border border-border flex-col justify-center items-start gap-4">
                                     <div className="text-lg font-semibold text-foreground mb-3">
                                         Partial Review Available
@@ -93,9 +77,76 @@ export default async function InfrastructurePage(props: {
                                         This infrastructure project is currently undergoing a partial review. Basic information, chart data, and token contracts are available above, but the full assessment and technical review are still in progress.
                                     </p>
                                     <p className="text-sm text-muted-foreground mt-2">
-                                        Complete technical analysis including risk assessments and detailed categorization will be added once our review is complete.
+                                        Complete technical analysis will be added once our review is complete.
                                     </p>
                                 </div>
+                            )}
+                            
+                            {/* Risk Summary */}
+                            {(!infrastructure.partialReview || (infrastructure.partialReviewAfter && ["risksummary", "assessment", "manualcontracts"].includes(infrastructure.partialReviewAfter))) && (
+                                <RiskSummary content={infrastructure.riskSummary || []} />
+                            )}
+                            {infrastructure.partialReview && infrastructure.partialReviewAfter === "risksummary" && (
+                                <div className="self-stretch lg:px-8 px-4 pt-6 pb-8 mb-6 bg-muted/50 rounded-xl border border-border flex-col justify-center items-start gap-4">
+                                    <div className="text-lg font-semibold text-foreground mb-3">
+                                        Partial Review Available
+                                    </div>
+                                    <p className="text-muted-foreground">
+                                        This infrastructure project is currently undergoing a partial review. The sections above are available, but the detailed assessment and additional analysis are still in progress.
+                                    </p>
+                                    <p className="text-sm text-muted-foreground mt-2">
+                                        Complete technical assessment will be added once our review is complete.
+                                    </p>
+                                </div>
+                            )}
+                            
+                            {/* Assessment */}
+                            {(!infrastructure.partialReview || (infrastructure.partialReviewAfter && ["assessment", "manualcontracts"].includes(infrastructure.partialReviewAfter))) && infrastructure.assessment && (
+                                <RiskAnalysis
+                                    riskAnalysis={infrastructure.assessment}
+                                    riskFactors={infrastructure.riskFactors}
+                                    infrastructure={infrastructure}
+                                />
+                            )}
+                            {infrastructure.partialReview && infrastructure.partialReviewAfter === "assessment" && (
+                                <div className="self-stretch lg:px-8 px-4 pt-6 pb-8 mb-6 bg-muted/50 rounded-xl border border-border flex-col justify-center items-start gap-4">
+                                    <div className="text-lg font-semibold text-foreground mb-3">
+                                        Partial Review Available
+                                    </div>
+                                    <p className="text-muted-foreground">
+                                        This infrastructure project is currently undergoing a partial review. The assessment above is available, but additional sections are still in progress.
+                                    </p>
+                                    <p className="text-sm text-muted-foreground mt-2">
+                                        Additional analysis and documentation will be added once our review is complete.
+                                    </p>
+                                </div>
+                            )}
+                            
+                            {/* Manual Contract Addresses */}
+                            {(!infrastructure.partialReview || (infrastructure.partialReviewAfter && infrastructure.partialReviewAfter === "manualcontracts")) && (
+                                <ManualContractAddresses 
+                                    contracts={infrastructure.manualContracts || []} 
+                                    sectionTitle="Additional Contracts"
+                                    sectionId="manualcontracts"
+                                />
+                            )}
+                            {infrastructure.partialReview && infrastructure.partialReviewAfter === "manualcontracts" && (
+                                <div className="self-stretch lg:px-8 px-4 pt-6 pb-8 mb-6 bg-muted/50 rounded-xl border border-border flex-col justify-center items-start gap-4">
+                                    <div className="text-lg font-semibold text-foreground mb-3">
+                                        Partial Review Available
+                                    </div>
+                                    <p className="text-muted-foreground">
+                                        This infrastructure project is currently undergoing a partial review. The sections above are available, but additional documentation and analysis are still in progress.
+                                    </p>
+                                    <p className="text-sm text-muted-foreground mt-2">
+                                        Additional sections will be added once our review is complete.
+                                    </p>
+                                </div>
+                            )}
+                            
+                            {/* Infrastructure Body - only show if not partial review */}
+                            {!infrastructure.partialReview && (
+                                <InfrastructureBody infrastructure={infrastructure} />
                             )}
                         </div>
                     </div>

@@ -51,8 +51,26 @@ const InfrastructureMenu: React.FC<{
                     ...(infrastructure.entityCategory === EntityCategory.More
                         ? []
                         : [{ id: "tokencontracts", title: "Token Contracts" }]),
-                    ...(infrastructure.partialReview
-                        ? []
+                    ...(infrastructure.partialReview && infrastructure.partialReviewAfter
+                        ? (() => {
+                            const sections = [];
+                            const after = infrastructure.partialReviewAfter;
+                            
+                            // Add sections based on partialReviewAfter setting
+                            if (["risksummary", "assessment", "manualcontracts"].includes(after!) && infrastructure.riskSummary && infrastructure.riskSummary.length > 0) {
+                                sections.push({ id: "risksummary", title: "Risk Summary" });
+                            }
+                            if (["assessment", "manualcontracts"].includes(after!) && infrastructure.assessment) {
+                                sections.push({ id: "assessment", title: "Assessment" });
+                            }
+                            if (after === "manualcontracts" && infrastructure.manualContracts && infrastructure.manualContracts.length > 0) {
+                                sections.push({ id: "manualcontracts", title: "Additional Contracts" });
+                            }
+                            
+                            return sections;
+                        })()
+                        : infrastructure.partialReview
+                        ? [] // If partialReview is true but no partialReviewAfter, show only basic sections
                         : [
                             ...(infrastructure.riskSummary && infrastructure.riskSummary.length > 0
                                 ? [{ id: "risksummary", title: "Risk Summary" }]

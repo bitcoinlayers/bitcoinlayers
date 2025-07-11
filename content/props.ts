@@ -550,6 +550,7 @@ export interface BaseProject {
     bridge: boolean;
     underReview: boolean;
     partialReview?: boolean;
+    partialReviewAfter?: string; // Section ID after which to show partial review card
     riskFactors: (RiskFactor | "")[];
     nativeToken: string;
     notice?: Notice;

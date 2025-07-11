@@ -16,6 +16,7 @@ import getHistoricalSuppliesByTokenimpl from "@/hooks/get-historical-supplies-by
 import getCurrentPrices from "@/hooks/get-current-prices";
 import { formatCurrency } from "@/util/formatCurrency";
 import ChartFilters from "@/components/charts/chart-filters";
+import ComingSoonChart from "@/components/coming-soon-chart";
 
 interface ProcessedData {
     date: string;
@@ -184,7 +185,7 @@ export default function LayerTVLChart() {
         };
     }, [data, dateRange]);
 
-    if (!data || data.length === 0) return null;
+    if (!data || data.length === 0) return <ComingSoonChart />;
 
     return (
         <Card className="bg-background mb-6" id="BTC Supply">

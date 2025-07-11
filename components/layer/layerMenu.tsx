@@ -50,11 +50,35 @@ const LayerMenu: React.FC<{ layer: LayerProject }> = ({ layer }) => {
     ...(layer.entityCategory === EntityCategory.BitcoinNative
         ? []
         : [{ id: "tokencontracts", title: "Token Contracts" }]),
-    ...(layer.partialReview
-        ? []
+    ...(layer.partialReview && layer.partialReviewAfter
+        ? (() => {
+            const sections = [];
+            const after = layer.partialReviewAfter;
+            
+            // Add sections based on partialReviewAfter setting
+            if (["risksummary", "categorization", "trust", "manualcontracts"].includes(after!) && layer.riskSummary && layer.riskSummary.length > 0) {
+                sections.push({ id: "risksummary", title: "Risk Summary" });
+            }
+            if (["categorization", "trust", "manualcontracts"].includes(after!) && layer.categorization && layer.categorization.length > 0) {
+                sections.push({ id: "categorization", title: "Categorization" });
+            }
+            if (["trust", "manualcontracts"].includes(after!) && !layer.underReview) {
+                sections.push({ id: "trust", title: "Trust Assumptions" });
+            }
+            if (after === "manualcontracts" && layer.manualContracts && layer.manualContracts.length > 0) {
+                sections.push({ id: "manualcontracts", title: "Additional Contracts" });
+            }
+            
+            return sections;
+        })()
+        : layer.partialReview
+        ? [] // If partialReview is true but no partialReviewAfter, show only basic sections
         : [
             ...(layer.riskSummary && layer.riskSummary.length > 0
                 ? [{ id: "risksummary", title: "Risk Summary" }]
+                : []),
+            ...(layer.categorization && layer.categorization.length > 0
+                ? [{ id: "categorization", title: "Categorization" }]
                 : []),
             ...(!layer.underReview
                 ? [{ id: "trust", title: "Trust Assumptions" }]
