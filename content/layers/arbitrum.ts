@@ -227,7 +227,7 @@ const arbitrum: LayerProject = {
         {
             category: RiskCategory.FinalityGuarantees,
             score: 0,
-            tier: RiskFactor.High,
+            tier: RiskFactor.Medium,
             title: "Arbitrum state transitions finalize by updating its state based on data posted to Ethereum",
             content: `${Reviewsnippet.AltRollupFinality}`,
             alert: Alertsnippet.AltRollupNotice,

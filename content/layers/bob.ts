@@ -21,6 +21,9 @@ import {
     Categorization,
 } from "../props";
 
+import { Alertsnippet } from "../props-layers-more-info";
+import { Reviewsnippet } from "../props-layers-reviews";
+
 const bob: LayerProject = {
     type: Type.Layer,
     slug: "bob",
@@ -210,16 +213,6 @@ const bob: LayerProject = {
                 {
                     title: "BOB does not contribute to the security budget",
                     content: BitcoinSecuritySnippet.NoSecurityBudget,
-                },
-            ],
-        },
-        {
-            id: "notice",
-            title: "🚨 Project is not a sidesystem",
-            content: [
-                {
-                    title: "This project will be moved to the Alternative category",
-                    content: OtherSnippet.NotASideSystem,
                 },
             ],
         },

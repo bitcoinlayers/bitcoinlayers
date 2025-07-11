@@ -20,6 +20,9 @@ import {
 } from "../props";
 import { tokenToString } from "typescript";
 
+import { Alertsnippet } from "../props-layers-more-info";
+import { Reviewsnippet } from "../props-layers-reviews";
+
 const taiko: LayerProject = {
     type: Type.Layer,
     slug: "taiko",
@@ -35,7 +38,7 @@ const taiko: LayerProject = {
         RiskFactor.VeryHigh,
         RiskFactor.Medium,
         RiskFactor.Medium,
-        RiskFactor.High,
+        RiskFactor.Medium,
     ],
     btcLocked: 0,
     nativeToken: "-",
@@ -165,13 +168,13 @@ const taiko: LayerProject = {
             content: `${ReviewSnippet.BasedSequencedAlt}\n\nEthereum validators are responsible for sequencing Taiko transactions. If users are censored by Ethereum validators, they can propose blocks to Taiko's L1 contract.`,
         },
         {
-            category: RiskCategory.FinalityGuarantees,
-            score: 0,
-            tier: RiskFactor.High,
-            title: "State updates are ulimately finalized by a federation",
-            content:
-                "Taiko's state validation mechanism has a [multi-tiered proof system](https://l2beat.com/scaling/projects/taiko#technology). Invalid state roots can be submitted to the L1 if the highest tier of the system is compromised.",
-        },
+           category: RiskCategory.FinalityGuarantees,
+           score: 0,
+           tier: RiskFactor.Medium,
+           title: "Taiko state transitions finalize by updating its state based on data posted to Ethereum",
+           content: `${Reviewsnippet.AltRollupFinality}`,
+           alert: Alertsnippet.AltRollupNotice,
+       },
     ],
     sections: [
         {
