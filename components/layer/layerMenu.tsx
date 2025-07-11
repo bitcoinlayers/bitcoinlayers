@@ -47,19 +47,23 @@ const LayerMenu: React.FC<{ layer: LayerProject }> = ({ layer }) => {
             <div className="flex lg:flex-col justify-start items-start lg:gap-4 gap-2 z-40">
                 {[
     { id: "overview", title: "Overview" },
-    ...(layer.riskSummary && layer.riskSummary.length > 0
-        ? [{ id: "risksummary", title: "Risk Summary" }]
-        : []),
-    ...(!layer.underReview
-        ? [{ id: "trust", title: "Trust Assumptions" }]
-        : []),
-    ...(layer.manualContracts && layer.manualContracts.length > 0
-        ? [{ id: "manualcontracts", title: "Additional Contracts" }]
-        : []),
-    ...layer.sections,
     ...(layer.entityCategory === EntityCategory.BitcoinNative
         ? []
         : [{ id: "tokencontracts", title: "Token Contracts" }]),
+    ...(layer.partialReview
+        ? []
+        : [
+            ...(layer.riskSummary && layer.riskSummary.length > 0
+                ? [{ id: "risksummary", title: "Risk Summary" }]
+                : []),
+            ...(!layer.underReview
+                ? [{ id: "trust", title: "Trust Assumptions" }]
+                : []),
+            ...(layer.manualContracts && layer.manualContracts.length > 0
+                ? [{ id: "manualcontracts", title: "Additional Contracts" }]
+                : []),
+            ...layer.sections,
+        ]),
                 ].map((section, index) => (
                     <div
                         key={index}

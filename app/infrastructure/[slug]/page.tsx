@@ -65,21 +65,38 @@ export default async function InfrastructurePage(props: {
                                 infrastructure={infrastructure}
                             />
                             <InfraTVLChart />
-                            <RiskSummary content={infrastructure.riskSummary || []} />
-                            {infrastructure.assessment && (
-                                <RiskAnalysis
-                                    riskAnalysis={infrastructure.assessment}
-                                    riskFactors={infrastructure.riskFactors}
-                                    infrastructure={infrastructure}
-                                />
-                            )}
                             <ProjectContractAddresses slug={slug} isLayer={false} />
-                            <ManualContractAddresses 
-                                contracts={infrastructure.manualContracts || []} 
-                                sectionTitle="Additional Contracts"
-                                sectionId="manualcontracts"
-                            />
-                            <InfrastructureBody infrastructure={infrastructure} />
+                            {!infrastructure.partialReview && (
+                                <>
+                                    <RiskSummary content={infrastructure.riskSummary || []} />
+                                    {infrastructure.assessment && (
+                                        <RiskAnalysis
+                                            riskAnalysis={infrastructure.assessment}
+                                            riskFactors={infrastructure.riskFactors}
+                                            infrastructure={infrastructure}
+                                        />
+                                    )}
+                                    <ManualContractAddresses 
+                                        contracts={infrastructure.manualContracts || []} 
+                                        sectionTitle="Additional Contracts"
+                                        sectionId="manualcontracts"
+                                    />
+                                    <InfrastructureBody infrastructure={infrastructure} />
+                                </>
+                            )}
+                            {infrastructure.partialReview && (
+                                <div className="self-stretch lg:px-8 px-4 pt-6 pb-8 mb-6 bg-muted/50 rounded-xl border border-border flex-col justify-center items-start gap-4">
+                                    <div className="text-lg font-semibold text-foreground mb-3">
+                                        Partial Review Available
+                                    </div>
+                                    <p className="text-muted-foreground">
+                                        This infrastructure project is currently undergoing a partial review. Basic information, chart data, and token contracts are available above, but the full assessment and technical review are still in progress.
+                                    </p>
+                                    <p className="text-sm text-muted-foreground mt-2">
+                                        Complete technical analysis including risk assessments and detailed categorization will be added once our review is complete.
+                                    </p>
+                                </div>
+                            )}
                         </div>
                     </div>
                 </UnderReviewWrapper>

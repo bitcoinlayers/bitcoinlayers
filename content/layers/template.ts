@@ -31,6 +31,7 @@ const template: LayerProject = {
     liquidStaking: false,
     bridge: false,
     underReview: false,
+    partialReview: false, // Set to true for partial review mode
     riskFactors: [
         RiskFactor.UnderReview,
         RiskFactor.UnderReview,

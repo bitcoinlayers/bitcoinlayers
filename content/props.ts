@@ -549,6 +549,7 @@ export interface BaseProject {
     liquidStaking: boolean;
     bridge: boolean;
     underReview: boolean;
+    partialReview?: boolean;
     riskFactors: (RiskFactor | "")[];
     nativeToken: string;
     notice?: Notice;

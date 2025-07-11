@@ -63,22 +63,39 @@ export default async function LayerPage(props: {
                     <div className="lg:w-4/5 flex flex-col">
                         <LayerOverviewAlt layer={layer} />
                         <LayerTVLChart />
-                        <RiskSummary content={layer.riskSummary || []} />
-                        <Categorization content={layer.categorization || []} layer={layer} />
-                        {!layer.underReview && (
-                            <RiskAnalysis
-                                riskAnalysis={layer.riskAnalysis}
-                                riskFactors={layer.riskFactors}
-                                layer={layer}
-                            />
-                        )}
-                        <ManualContractAddresses 
-                            contracts={layer.manualContracts || []} 
-                            sectionTitle="Additional Contracts"
-                            sectionId="manualcontracts"
-                        />
-                        <LayerBody layer={layer} />
                         <ProjectContractAddresses slug={slug} isLayer={true} />
+                        {!layer.partialReview && (
+                            <>
+                                <RiskSummary content={layer.riskSummary || []} />
+                                <Categorization content={layer.categorization || []} layer={layer} />
+                                {!layer.underReview && (
+                                    <RiskAnalysis
+                                        riskAnalysis={layer.riskAnalysis}
+                                        riskFactors={layer.riskFactors}
+                                        layer={layer}
+                                    />
+                                )}
+                                <ManualContractAddresses 
+                                    contracts={layer.manualContracts || []} 
+                                    sectionTitle="Additional Contracts"
+                                    sectionId="manualcontracts"
+                                />
+                                <LayerBody layer={layer} />
+                            </>
+                        )}
+                        {layer.partialReview && (
+                            <div className="self-stretch lg:px-8 px-4 pt-6 pb-8 mb-6 bg-muted/50 rounded-xl border border-border flex-col justify-center items-start gap-4">
+                                <div className="text-lg font-semibold text-foreground mb-3">
+                                    Partial Review Available
+                                </div>
+                                <p className="text-muted-foreground">
+                                    This project is currently undergoing a partial review. Basic information, chart data, and token contracts are available above, but the full risk analysis and technical review are still in progress.
+                                </p>
+                                <p className="text-sm text-muted-foreground mt-2">
+                                    Complete technical analysis including risk assessments, trust assumptions, and detailed categorization will be added once our review is complete.
+                                </p>
+                            </div>
+                        )}
                     </div>
                 </div>
             </UnderReviewWrapper>

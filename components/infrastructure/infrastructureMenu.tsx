@@ -48,19 +48,23 @@ const InfrastructureMenu: React.FC<{
             <div className="flex lg:flex-col justify-start items-start lg:gap-4 gap-2 z-40">
                 {[
                     { id: "overview", title: "Overview" },
-                    ...(infrastructure.riskSummary && infrastructure.riskSummary.length > 0
-                        ? [{ id: "risksummary", title: "Risk Summary" }]
-                        : []),
-                    ...(infrastructure.assessment
-                        ? [{ id: "assessment", title: "Assessment" }]
-                        : []),
                     ...(infrastructure.entityCategory === EntityCategory.More
                         ? []
                         : [{ id: "tokencontracts", title: "Token Contracts" }]),
-                    ...(infrastructure.manualContracts && infrastructure.manualContracts.length > 0
-                        ? [{ id: "manualcontracts", title: "Additional Contracts" }]
-                        : []),
-                    ...infrastructure.sections,
+                    ...(infrastructure.partialReview
+                        ? []
+                        : [
+                            ...(infrastructure.riskSummary && infrastructure.riskSummary.length > 0
+                                ? [{ id: "risksummary", title: "Risk Summary" }]
+                                : []),
+                            ...(infrastructure.assessment
+                                ? [{ id: "assessment", title: "Assessment" }]
+                                : []),
+                            ...(infrastructure.manualContracts && infrastructure.manualContracts.length > 0
+                                ? [{ id: "manualcontracts", title: "Additional Contracts" }]
+                                : []),
+                            ...infrastructure.sections,
+                        ]),
                 ].map((section, index) => (
                     <div
                         key={index}
