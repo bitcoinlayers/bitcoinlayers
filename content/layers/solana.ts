@@ -30,9 +30,9 @@ const solana: LayerProject = {
     underReview: false,
     riskFactors: [
         RiskFactor.VeryHigh,
-        RiskFactor.UnderReview,
-        RiskFactor.UnderReview,
-        RiskFactor.UnderReview,
+        RiskFactor.AlternativePoS,
+        RiskFactor.AlternativePoS,
+        RiskFactor.AlternativePoS,
     ],
     btcLocked: 0,
     nativeToken: "-",
@@ -148,8 +148,8 @@ const solana: LayerProject = {
         {
             category: RiskCategory.FinalityGuarantees,
             score: 0,
-            tier: RiskFactor.UnderReview,
-            title: "We are currently reviewing Solana's finality guarantees",
+            tier: RiskFactor.AlternativePoS,
+            title: "We are currently reviewing Solana's specific finality guarantees",
             content: "Solana's finality guarantees are achieved through a distributed consensus mechanism. We are reviewing relevant trust assumptions.",
         },
     ],

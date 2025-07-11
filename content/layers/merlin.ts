@@ -32,9 +32,9 @@ const merlin: LayerProject = {
     underReview: false,
     riskFactors: [
         RiskFactor.VeryHigh,
-        RiskFactor.Critical,
-        RiskFactor.Critical,
-        RiskFactor.Critical,
+        RiskFactor.VeryHigh,
+        RiskFactor.VeryHigh,
+        RiskFactor.VeryHigh,
     ],
     btcLocked: 9303,
     nativeToken: "MERL",
