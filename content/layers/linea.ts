@@ -37,7 +37,7 @@ const template: LayerProject = {
         RiskFactor.VeryHigh,
         RiskFactor.Medium,
         RiskFactor.VeryHigh,
-        RiskFactor.High,
+        RiskFactor.Medium,
     ],
     btcLocked: 0,
     nativeToken: "TKN",
@@ -175,7 +175,7 @@ const template: LayerProject = {
         {
             category: RiskCategory.FinalityGuarantees,
             score: 0,
-            tier: RiskFactor.High,
+            tier: RiskFactor.Medium,
             title: "Linea's state transitions finalize by updating its state based on data posted to Ethereum",
             content: `${Reviewsnippet.AltRollupFinality}`,
             alert: Alertsnippet.AltRollupNotice,

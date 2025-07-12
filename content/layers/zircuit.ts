@@ -153,7 +153,7 @@ const zircuit: LayerProject = {
             category: RiskCategory.FinalityGuarantees,
             score: 0,
             tier: RiskFactor.Medium,
-            title: "The network's state is finalized offchain",
+            title: "Zircuit's state transitions finalize by updating its state based on data posted to Ethereum",
             content: `${Reviewsnippet.AltRollupFinality}`,
             alert: Alertsnippet.AltRollupNotice,
         },
