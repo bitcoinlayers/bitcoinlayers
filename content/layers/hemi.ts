@@ -230,7 +230,11 @@ const hemi: LayerProject = {
             content: [
                 {
                     title: "This review is in progress",
-                    content: "Some aspects of this review have not been completed. We are currently reviewing the project.",
+                    content: "While we have reviewed the project's source code, there are aspects related to certain two-way pegs that need to be completed.",
+                },
+                {
+                    title: "No public dashboards on PoP miners available",
+                    content: "The project has not published mainnet dashboards related to active PoP miners. It is unknown how many miners are posting state roots to bitcoin.",
                 },
             ],
         },
