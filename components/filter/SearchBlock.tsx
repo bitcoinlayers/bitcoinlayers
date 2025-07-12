@@ -32,13 +32,12 @@ const SearchBlock = ({
         const input = evt.target.value;
         const sanitizedValue = input.replace(/"/g, "");
         setInputValue(sanitizedValue);
-        if (!input) return [];
-        // const filteredLayers = allLayers.filter((layer) =>
+        if (!input) {
+            setFilteredItems([]);
+            return;
+        }
         const filtered = [...allLayers, ...allInfrastructures].filter((item) =>
-            item.title
-                .toLowerCase()
-                .slice(0, input.length)
-                .includes(input.toLowerCase()),
+            item.title.toLowerCase().includes(input.toLowerCase()),
         );
         setFilteredItems(filtered || []);
     };

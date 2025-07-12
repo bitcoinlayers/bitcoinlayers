@@ -1,6 +1,5 @@
 import React from "react";
 import Image from "next/image";
-import SearchBlock from "./filter/SearchBlock";
 
 interface Props {
     title: string;
