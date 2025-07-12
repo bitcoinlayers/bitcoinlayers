@@ -211,7 +211,7 @@ const hemi: LayerProject = {
             score: 0,
             tier: RiskFactor.Medium,
             title: "Hemi state updates are finalized offchain. The network anchors its state to bitcoin",
-            content: `${Reviewsnippet.AltRollupFinality}\n\nAfter this state is generated, nodes participating in Hemi's Proof-of-Proof consensus submit it to bitcoin.`,
+            content: `${Reviewsnippet.AltRollupFinality}\n\nAfter this state is generated, nodes participating in Hemi's Proof-of-Proof consensus submit the latest state root to bitcoin.`,
             alert: AlertSnippet.ProofOfProofConsensus,
         },
     ],
