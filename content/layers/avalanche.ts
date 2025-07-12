@@ -30,6 +30,7 @@ const avalanche: LayerProject = {
     liquidStaking: false,
     bridge: false,
     underReview: false,
+    partialReview: true, partialReviewAfter: "risksummary",// Set to true for partial review mode
     riskFactors: [
         RiskFactor.High,
         RiskFactor.AlternativePoS,

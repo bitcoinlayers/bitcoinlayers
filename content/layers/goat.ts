@@ -33,6 +33,7 @@ const goat: LayerProject = {
     liquidStaking: false,
     bridge: false,
     underReview: false,
+    partialReview: true, partialReviewAfter: "trust",// Set to true for partial review mode
     riskFactors: [
         RiskFactor.VeryHigh,
         RiskFactor.High,
@@ -123,17 +124,7 @@ const goat: LayerProject = {
         },
     ],
     sections: [
-        {
-                    id: "additionalconsiderations",
-                    title: "Additional Considerations",
-                    content: [
-                        {
-                            title: "This project has undergone a partial review",
-                            content: `${AdditionalSnippet.InitialReview}`,
-                        },
-                    ],
-                },
-            ]
+    ]
 };
 
 export default goat;
