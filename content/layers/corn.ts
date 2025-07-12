@@ -20,6 +20,9 @@ import {
     Categorization,
     CustodyTitle,
 } from "../props";
+import { Alertsnippet } from "../props-layers-more-info";
+import { Reviewsnippet } from "../props-layers-reviews";
+
 
 const corn: LayerProject = {
     type: Type.Layer,
@@ -160,8 +163,9 @@ const corn: LayerProject = {
             category: RiskCategory.FinalityGuarantees,
             score: 0,
             tier: RiskFactor.VeryHigh,
-            title: "Corn state transitions are submitted and validated by a centralized proposer",
-            content: ReviewSnippet.FinalityAltRollupCentralizedProposer,
+            title: "Corn's state transitions finalize by updating its state based on data posted to a federated committee",
+            content: Reviewsnippet.AltRollupFinality,
+            alert: Alertsnippet.AltRollupNotice,
         },
     ],
     sections: [

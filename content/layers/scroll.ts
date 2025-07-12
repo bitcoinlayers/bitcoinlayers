@@ -137,7 +137,7 @@ const scroll: LayerProject = {
             category: RiskCategory.FinalityGuarantees,
             score: 0,
             tier: RiskFactor.Medium,
-            title: "Network state transitions finalize by updating its state based on data posted to Ethereum",
+            title: "Scroll state transitions finalize by updating its state based on data posted to Ethereum",
             content: `${Reviewsnippet.AltRollupFinality}`,
             alert: Alertsnippet.AltRollupNotice,
         }, 

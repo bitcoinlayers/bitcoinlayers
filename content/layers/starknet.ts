@@ -112,6 +112,7 @@ const starknet: LayerProject = {
                     tier: RiskFactor.VeryHigh,
                     title: TokenSnippet.CustodianPeg,
                     content: `${TokenSnippet.BitGowBTC}. The wBTC implementation of the Starknet bridge contract is upgradeable by a 2/4 multisig. There is a 3 day delay before the upgrade is implemented.`,
+                    alert: Alertsnippet.AltRollupAltTokenProofsUpgrade,
                 },
                 {
                     name: "Threshold tBTC",
@@ -119,7 +120,8 @@ const starknet: LayerProject = {
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: `${TokenSnippet.FederationPeg}. To mint on starknet, tBTC on Ethereum is locked in an upgreadeable escrow contract`,
-                    content: `${TokenSnippet.ThresholdtBTC} The tBTC implementation of the Starknet bridge contract is upgradeable by a single signer. There is a there a 3 day delay before the upgrade is implemented.`,
+                    content: `${TokenSnippet.ThresholdtBTC}\n\n${Reviewsnippet.AltRollupAltTokenValidityProofs} The tBTC implementation of the Starknet bridge contract is upgradeable by a single signer. There is a there a 3 day delay before the upgrade is implemented.`,
+                    alert: Alertsnippet.AltRollupAltTokenProofsUpgrade,
                 },
             ],
         },
@@ -181,16 +183,6 @@ const starknet: LayerProject = {
                 {
                     title: "Starknet does not contribute to the security budget",
                     content: BitcoinSecuritySnippet.NoSecurityBudget,
-                },
-            ],
-        },
-        {
-            id: "additionalconsiderations",
-            title: "Additional Considerations",
-            content: [
-                {
-                    title: "Validity proofs on Starknet don't ultimately provide security for two-way pegs securing BTC",
-                    content: "Validity proofs are used to finalize a bridge contract on Ethereum and permit withdrawals. Whilst this provides security from an Ethereum user perspective, BTC users ultimately receive security from the custodian (or network) securing BTC backing wrapped BTC assets.\n\nIf the network were to add a SNARK verifier on bitcoin (via a BitVM-style mechanism or soft fork), then the finality assurances for the protocol would change.\n\nWe gave the project a custom score for this section.",
                 },
             ],
         },

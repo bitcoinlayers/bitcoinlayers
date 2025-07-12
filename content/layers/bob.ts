@@ -39,7 +39,7 @@ const bob: LayerProject = {
         RiskFactor.VeryHigh,
         RiskFactor.Medium,
         RiskFactor.High,
-        RiskFactor.VeryHigh,
+        RiskFactor.Medium,
     ],
     btcLocked: 974,
     nativeToken: "ETH",
@@ -188,9 +188,10 @@ const bob: LayerProject = {
         {
             category: RiskCategory.FinalityGuarantees,
             score: 0,
-            tier: RiskFactor.VeryHigh,
-            title: "BOB state transitions finalize on Ethereum, but proposer role is whitelisted",
-            content: ReviewSnippet.FinalityAltRollupCentralizedProposer,
+            tier: RiskFactor.Medium,
+            title: "Bob's state transitions finalize by updating its state based on data posted to Ethereum",
+            content: Reviewsnippet.AltRollupFinality,
+            alert: Alertsnippet.AltRollupNotice,
         },
     ],
     sections: [

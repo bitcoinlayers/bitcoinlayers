@@ -176,8 +176,9 @@ const template: LayerProject = {
             category: RiskCategory.FinalityGuarantees,
             score: 0,
             tier: RiskFactor.High,
-            title: "The network's state is finalized offchain",
-            content: `${Reviewsnippet.AltRollupFinality}`
+            title: "Linea's state transitions finalize by updating its state based on data posted to Ethereum",
+            content: `${Reviewsnippet.AltRollupFinality}`,
+            alert: Alertsnippet.AltRollupNotice,
         },
     ],
     manualContracts: [

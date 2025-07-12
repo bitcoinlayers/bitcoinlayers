@@ -143,7 +143,8 @@ const xlayer: LayerProject = {
             score: 0,
             tier: RiskFactor.VeryHigh,
             title: "The network's state is finalized offchain",
-            content: `${Reviewsnippet.AltRollupFinality}`
+            content: `${Reviewsnippet.AltRollupFinality}`,
+            alert: Alertsnippet.AltRollupNotice,
         },
     ],
         sections: [

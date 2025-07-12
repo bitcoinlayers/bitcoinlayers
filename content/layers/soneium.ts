@@ -39,7 +39,7 @@ const soneium: LayerProject = {
         RiskFactor.VeryHigh,
         RiskFactor.Medium,
         RiskFactor.Medium,
-        RiskFactor.High,
+        RiskFactor.Medium,
     ],
     btcLocked: 0,
     nativeToken: "ETH",
@@ -156,7 +156,7 @@ const soneium: LayerProject = {
             category: RiskCategory.FinalityGuarantees,
             score: 0,
             tier: RiskFactor.Medium,
-            title: "The network's state is finalized offchain",
+            title: "Soneium state transitions finalize by updating its state based on data posted to Ethereum",
             content: `${Reviewsnippet.AltRollupFinality}`
         },
     ],

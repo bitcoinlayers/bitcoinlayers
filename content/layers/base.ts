@@ -205,7 +205,7 @@ const base: LayerProject = {
             category: RiskCategory.FinalityGuarantees,
             score: 0,
             tier: RiskFactor.High,
-            title: "Base state transitions finalize on Ethereum. Rollup nodes finalize after applying the STF over data blogs. Light clients finalize after a fraud proof window passes",
+            title: "Base's state transitions finalize by updating its state based on data posted to Ethereum",
             content: `${Reviewsnippet.AltRollupFinality}`,
         },
     ],
