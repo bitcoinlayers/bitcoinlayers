@@ -110,7 +110,7 @@ const xlayer: LayerProject = {
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: Reviewsnippet.CustodianPeg,
-                    content: `${Reviewsnippet.LorenzostBTC} Lombard is bridged to Zircuit through Zircuit's offcial, Ethereum bridge.`,
+                    content: `${Reviewsnippet.LorenzostBTC}`,
                     alert: Alertsnippet.WrapperCentralized,
                 },
                 {
@@ -143,7 +143,8 @@ const xlayer: LayerProject = {
             score: 0,
             tier: RiskFactor.VeryHigh,
             title: "The network's state is finalized offchain",
-            content: `${Reviewsnippet.AltRollupFinality}`
+            content: `${Reviewsnippet.AltRollupFinality}`,
+            alert: Alertsnippet.AltRollupNotice,
         },
     ],
         sections: [

@@ -18,6 +18,8 @@ import {
     RiskSummarySnippet,
     Categorization,
 } from "../props";
+import { Alertsnippet } from "../props-layers-more-info";
+
 
 const merlin: LayerProject = {
     type: Type.Layer,
@@ -176,15 +178,16 @@ const merlin: LayerProject = {
             tier: RiskFactor.VeryHigh,
             title: "Blocks are produced by a centralized sequencer and forced inclusion mechanism is unverified",
             content:
-                "Merlin chain blocks are currently produced by a centralized sequencer. It posts state updates to its parent chain which is a private network. We cannot review its trust assumptions. Users should remain cautious when interacting with this chain.",
+                "Merlin chain blocks are currently produced by a centralized sequencer. It posts state updates to its parent chain which is a private network. We cannot review its trust assumptions.",
         },
         {
             category: RiskCategory.FinalityGuarantees,
             score: 0,
             tier: RiskFactor.VeryHigh,
-            title: "Sequencer batches and validity proofs posted to a permissioned network",
+            title: "Transaction finalization occurs offchain through sequencer batches posted to a permissioned network",
             content:
-                "Merlin's parent chain is a private network. We cannot verify smart contracts related to Merlin. Users should remain cautious when interacting with this chain.",
+                "Merlin's parent chain is a private network. We cannot verify smart contracts related to Merlin.",
+                alert: Alertsnippet.AltRollupNotice,
         },
     ],
     sections: [
@@ -207,17 +210,6 @@ const merlin: LayerProject = {
                 {
                     title: "Merlin does not contribute to the security budget",
                     content: BitcoinSecuritySnippet.NoSecurityBudget,
-                },
-            ],
-        },
-        {
-            id: "notice",
-            title: "🚨 Project is not a sidesystem",
-            content: [
-                {
-                    title: "This project will be moved to the Alternative category",
-                    content:
-                        "Projects that do not meet our requirements to be considered a sidesystem will be moved to the Alternative category. They have until June 30th to implement the technical requirements to be considered a sidesystem.",
                 },
             ],
         },

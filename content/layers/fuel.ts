@@ -154,8 +154,9 @@ const fuel: LayerProject = {
             category: RiskCategory.FinalityGuarantees,
             score: 0,
             tier: RiskFactor.High,
-            title: "The network's state is updated offchain",
-            content: `${Reviewsnippet.AltRollupFinality}`
+            title: "Fuel's state transitions finalize by updating its state based on data posted to EigenDA",
+            content: `${Reviewsnippet.AltRollupFinality}`,
+            alert: Alertsnippet.AltRollupNotice,
         },
     ],
     sections: [

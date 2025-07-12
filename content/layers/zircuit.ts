@@ -38,7 +38,7 @@ const zircuit: LayerProject = {
         RiskFactor.VeryHigh,
         RiskFactor.Medium,
         RiskFactor.VeryHigh,
-        RiskFactor.High,
+        RiskFactor.Medium,
     ],
     btcLocked: 0,
     nativeToken: "TKN",
@@ -152,9 +152,10 @@ const zircuit: LayerProject = {
         {
             category: RiskCategory.FinalityGuarantees,
             score: 0,
-            tier: RiskFactor.High,
-            title: "The network's state is finalized offchain",
-            content: `${Reviewsnippet.AltRollupFinality}`
+            tier: RiskFactor.Medium,
+            title: "Zircuit's state transitions finalize by updating its state based on data posted to Ethereum",
+            content: `${Reviewsnippet.AltRollupFinality}`,
+            alert: Alertsnippet.AltRollupNotice,
         },
     ],
         sections: [

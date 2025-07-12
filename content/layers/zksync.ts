@@ -19,6 +19,9 @@ import {
     RiskSummarySnippet,
 } from "../props";
 
+import { Alertsnippet } from "../props-layers-more-info";
+import { Reviewsnippet } from "../props-layers-reviews";
+
 const zksync: LayerProject = {
     type: Type.Layer,
     slug: "zksync",
@@ -34,7 +37,7 @@ const zksync: LayerProject = {
         RiskFactor.VeryHigh,
         RiskFactor.Medium,
         RiskFactor.High,
-        RiskFactor.UnderReview,
+        RiskFactor.Medium,
     ],
     btcLocked: 0,
     nativeToken: "ZK",
@@ -141,10 +144,11 @@ const zksync: LayerProject = {
         {
             category: RiskCategory.FinalityGuarantees,
             score: 0,
-            tier: RiskFactor.VeryHigh,
-            title: "Validity proofs are used to finalize bridges and light clients",
-            content: `${ReviewSnippet.FinalityAltRollupValidityProofs}\n\nA federated set of validators are responsible for posting state updates.`
-        },
+            tier: RiskFactor.Medium,
+            title: "zkSync's state transitions finalize by updating its state based on data posted to Ethereum",
+            content: `${Reviewsnippet.AltRollupFinality}`,
+            alert: Alertsnippet.AltRollupNotice,
+        }, 
     ],
     sections: [
         {

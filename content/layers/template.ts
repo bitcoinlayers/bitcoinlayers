@@ -31,6 +31,16 @@ const template: LayerProject = {
     liquidStaking: false,
     bridge: false,
     underReview: false,
+    partialReview: false, // Set to true for partial review mode
+    partialReviewAfter: undefined, // Options: "tokencontracts", "risksummary", "categorization", "trust", "manualcontracts"
+    
+    // EXAMPLES:
+    // partialReview: true, partialReviewAfter: "tokencontracts" -> Show only Overview, Chart, Token Contracts
+    // partialReview: true, partialReviewAfter: "risksummary" -> Show Overview through Risk Summary
+    // partialReview: true, partialReviewAfter: "trust" -> Show Overview through Trust Assumptions
+    
+    // NOTE: If chart or token contract data is not available from the API, 
+    // "Coming Soon" placeholders will automatically be shown instead of empty sections
     riskFactors: [
         RiskFactor.UnderReview,
         RiskFactor.UnderReview,

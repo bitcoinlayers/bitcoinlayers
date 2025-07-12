@@ -21,6 +21,9 @@ import {
     Categorization,
 } from "../props";
 
+import { Alertsnippet } from "../props-layers-more-info";
+import { Reviewsnippet } from "../props-layers-reviews";
+
 const bob: LayerProject = {
     type: Type.Layer,
     slug: "bob",
@@ -36,7 +39,7 @@ const bob: LayerProject = {
         RiskFactor.VeryHigh,
         RiskFactor.Medium,
         RiskFactor.High,
-        RiskFactor.VeryHigh,
+        RiskFactor.Medium,
     ],
     btcLocked: 974,
     nativeToken: "ETH",
@@ -185,9 +188,10 @@ const bob: LayerProject = {
         {
             category: RiskCategory.FinalityGuarantees,
             score: 0,
-            tier: RiskFactor.VeryHigh,
-            title: "BOB state transitions finalize on Ethereum, but proposer role is whitelisted",
-            content: ReviewSnippet.FinalityAltRollupCentralizedProposer,
+            tier: RiskFactor.Medium,
+            title: "Bob's state transitions finalize by updating its state based on data posted to Ethereum",
+            content: Reviewsnippet.AltRollupFinality,
+            alert: Alertsnippet.AltRollupNotice,
         },
     ],
     sections: [
@@ -210,16 +214,6 @@ const bob: LayerProject = {
                 {
                     title: "BOB does not contribute to the security budget",
                     content: BitcoinSecuritySnippet.NoSecurityBudget,
-                },
-            ],
-        },
-        {
-            id: "notice",
-            title: "🚨 Project is not a sidesystem",
-            content: [
-                {
-                    title: "This project will be moved to the Alternative category",
-                    content: OtherSnippet.NotASideSystem,
                 },
             ],
         },

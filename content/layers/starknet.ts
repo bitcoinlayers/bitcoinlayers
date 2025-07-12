@@ -20,6 +20,9 @@ import {
     Categorization,
 } from "../props";
 
+import { Alertsnippet } from "../props-layers-more-info";
+import { Reviewsnippet } from "../props-layers-reviews";
+
 const starknet: LayerProject = {
     type: Type.Layer,
     slug: "starknet",
@@ -35,7 +38,7 @@ const starknet: LayerProject = {
         RiskFactor.VeryHigh,
         RiskFactor.Medium,
         RiskFactor.VeryHigh,
-        RiskFactor.High,
+        RiskFactor.Medium,
     ],
     btcLocked: 0,
     nativeToken: "ETH",
@@ -109,6 +112,7 @@ const starknet: LayerProject = {
                     tier: RiskFactor.VeryHigh,
                     title: TokenSnippet.CustodianPeg,
                     content: `${TokenSnippet.BitGowBTC}. The wBTC implementation of the Starknet bridge contract is upgradeable by a 2/4 multisig. There is a 3 day delay before the upgrade is implemented.`,
+                    alert: Alertsnippet.AltRollupAltTokenProofsUpgrade,
                 },
                 {
                     name: "Threshold tBTC",
@@ -116,7 +120,8 @@ const starknet: LayerProject = {
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: `${TokenSnippet.FederationPeg}. To mint on starknet, tBTC on Ethereum is locked in an upgreadeable escrow contract`,
-                    content: `${TokenSnippet.ThresholdtBTC} The tBTC implementation of the Starknet bridge contract is upgradeable by a single signer. There is a there a 3 day delay before the upgrade is implemented.`,
+                    content: `${TokenSnippet.ThresholdtBTC}\n\n${Reviewsnippet.AltRollupAltTokenValidityProofs} The tBTC implementation of the Starknet bridge contract is upgradeable by a single signer. There is a there a 3 day delay before the upgrade is implemented.`,
+                    alert: Alertsnippet.AltRollupAltTokenProofsUpgrade,
                 },
             ],
         },
@@ -137,10 +142,12 @@ const starknet: LayerProject = {
         {
             category: RiskCategory.FinalityGuarantees,
             score: 0,
-            tier: RiskFactor.High,
-            title: "Validity proofs are used to finalize bridges and light clients",
-            content: `${ReviewSnippet.FinalityAltRollupValidityProofs}\n\nStarknet's bridge programs escrowing BTC-backed assets are finalized with validity proofs. Users cannot run their own provers in the event of censorship or liveness failures. A 3/12 federation is responsible for posting state updates on behalf of users if they are censored.`
+            tier: RiskFactor.Medium,
+            title: "Starknet state transitions finalize by updating its state based on data posted to Ethereum",
+            content: `${Reviewsnippet.AltRollupFinality}`,
+            alert: Alertsnippet.AltRollupNotice,
         },
+ 
     ],
     manualContracts: [
         {

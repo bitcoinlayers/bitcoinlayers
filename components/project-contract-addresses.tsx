@@ -12,6 +12,7 @@ import { fetcher } from "@/util/fetcher";
 import { useQuery } from "@tanstack/react-query";
 import Link from "next/link";
 import ImageWithFallback from "./tables/image-with-fallback";
+import ComingSoonTokenContracts from "./coming-soon-token-contracts";
 
 const truncateAddress = (address: string) => {
     return `${address.slice(0, 6)}...${address.slice(-4)}`;
@@ -104,7 +105,7 @@ export default function ProjectContractAddresses({ slug, isLayer }: Props) {
             ),
     });
 
-    if (!data?.length || isLoading || error) return null;
+    if (!data?.length || isLoading || error) return <ComingSoonTokenContracts />;
 
     const initialItems = data.slice(0, 3);
     const collapsibleItems = data.slice(3);

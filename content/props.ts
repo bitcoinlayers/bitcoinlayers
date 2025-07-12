@@ -154,7 +154,7 @@ export enum TokenSnippet { //TODO: Janusz to add more here
     FederationPeg = "BTC backing this asset is secured by a federation",
     VariousCustodianPeg = "BTC backing this asset is secured by a number of individual custodians",
     BitGowBTC = "wBTC is backed by a centralized consortium of three companies. These entities are responsible for custodying BTC that backs wBTC on its various networks. Users trust these entities to not collude and steal the funds backing wBTC.",
-    ThresholdtBTC = "tBTC's peg with bitcoin is managed by the Threshold Network, a distributed but permissioned two-way peg. tBTC is minted on Ethereum and then bridged to the network via a custom bridge implementation.",
+    ThresholdtBTC = "tBTC's peg with bitcoin is managed by the Threshold Network, a distributed but permissioned two-way peg. This group of signers participate in a threshold signature scheme to secure the BTC that backs tBTC.",
     CoinbasecbBTC = "Coinbase is responsible for securing the BTC that backs cbBTC. Users trust Coinbase to ensure the funds backing cbBTC are not stolen or lost.\n\nIn addition to securing the funds funds backing cbBTC, Coinbase can censor users from using cbBTC and maintains unilateral control of cbBTC's smart contracts.",
     BinanceBTCB = "When interacting with BTCB, users trust that Binance, a centralized custodian, will safely custody the BTC backing BTCB. When interacting with a centralized custodian, users trust that the custodian will not steal the funds backing their BTCB tokens. They also trust that Binance will effectively manage the BTC and not lose access to it. If the BTC backing BTCB, BTCB tokens could become effectively worthless.",
     LombardLBTC = "BTC backing Lombard LBTC is secured by a network of validators participating in Lombard’s security consortium. The security consortium participates in a CometBFT consensus protocol. Adding and removing validators from this consortium is handled by the current validator set within a given epoch.\n\nThere are currently [nine (9) validators](https://etherscan.io/address/0xdad58DfA5c1a7a34419AFdBE1f0d610efeea95E4#readProxyContract) participating in securing the BTC that backs LBTC.",
@@ -205,7 +205,7 @@ export enum TokenSnippet { //TODO: Janusz to add more here
     SolvsolvbtcCORE = `${TokenSnippet.SolvBTC} We are reviewing if SolvBTC.CORE is natively minted or bridged from another chain.`,
     BitLayerwBTC = "Bitlayer's current BTC bridge is a federated two-way peg with institutional signers. Bitlayer is working with multiple MPC custody platforms.\n\nUsers do not custody bitcoin assets backing tokens on Bitlayer.\n\nNote that we are unable to verify the participants in this model.",
     OsmosisBTC = "BTC on Osmosis is backed by a number of collateral assets; WBTC.eth.axl, wBTC, nBTC, ckBTC, and cbBTC.axl.",
-    smartcontractreview = "This token's trust asssumptions change across chains. We are reviewing the specific smart contracts related to this two-way peg. The relevant token contract is listed in the bottom of the review.",
+    smartcontractreview = "This token has trust assumptions past the initial two-way peg. We are reviewing specific smart contracts related to this implementation to learn more about these assumptions.",
     BotanixBTC = "BTC backing Botanix pBTC is secured by a federation of signers. The identities of entities participating in the federation are [publicly known](https://docs.botanixlabs.com/botanix/get-to-know-botanix/roadmap-to-spiderchain/founding-federation/federation-overview). Users trust the operators of the federation to custody their funds, process deposits, and honor withdrawals.",
     BotanixStakedBTC = "Botanix stBTC is a derivative asset backed by wrapped BTC locked in a staking vault. When users deposit funds into Botanix stBTC, they are depositing funds into a staking contract. The contract is [upgradeable](https://botanixscan.io/address/0x09C5874F1425697C81c34F58957f2BE584306312).",
     TemplateBTC = "This is a fake prop used for the template file.",
@@ -441,29 +441,34 @@ export const AlertSnippet = { //TODO: Janusz to add more here
         title: "Note on Hemi's Proof-of-Proof consensus",
         content: "While Hemi's anchors its state to bitcoin, the network is currently managed by a centralized operator. The operator is unable to revert Hemi's state after Hemi full nodes compute a new state root. This is independent of any additional finality guarantees potentially provided by bitcoin.",
         linkText: "Learn more about bitcoin anchoring for alternative blockchains",
-        linkUrl: "https://lxresearch.co"
+        linkUrl: "https://lxresearch.co",
+        expandable: true,
     },
     SecurityModelDifference: {
         type: "warning" as const,
         title: "Important Security Consideration",
         content: "Hemi's security model is fundamentally different from Bitcoin's. Users should understand that they are not protected by Bitcoin's hash rate when using Hemi.",
         linkText: "Learn more about Bitcoin security",
-        linkUrl: "https://docs.hemi.xyz/security"
+        linkUrl: "https://docs.hemi.xyz/security",
+        expandable: true,
     },
     CentralizedSequencerRisk: {
         type: "warning" as const,
         title: "Centralized Sequencer Risk",
         content: "The network is operated by a centralized sequencer. If this sequencer goes offline or becomes malicious, it could affect network operations and user fund accessibility.",
+        expandable: true,
     },
     AltDALayerRisk: {
         type: "warning" as const,
         title: "Alternative Data Availability Risk",
         content: "This network relies on an alternative data availability layer. If the DA layer becomes unavailable, the network cannot progress and user funds may be frozen.",
+        expandable: true,
     },
     BridgeUpgradeRisk: {
         type: "error" as const,
         title: "Bridge Upgrade Risk",
         content: "Bridge contracts can be upgraded by a centralized party or federation. In case of a malicious upgrade, user funds could be at risk.",
+        expandable: true,
     },
     UnderReviewNotice: {
         type: "info" as const,
@@ -485,6 +490,7 @@ export interface SectionAlert {
     content: string;
     linkText?: string;
     linkUrl?: string;
+    expandable?: boolean;
 }
 
 export interface Peg {
@@ -549,6 +555,8 @@ export interface BaseProject {
     liquidStaking: boolean;
     bridge: boolean;
     underReview: boolean;
+    partialReview?: boolean;
+    partialReviewAfter?: string; // Section ID after which to show partial review card
     riskFactors: (RiskFactor | "")[];
     nativeToken: string;
     notice?: Notice;

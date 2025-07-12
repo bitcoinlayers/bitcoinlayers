@@ -21,6 +21,9 @@ import {
     CustodyTitle,
 } from "../props";
 
+import { Alertsnippet } from "../props-layers-more-info";
+import { Reviewsnippet } from "../props-layers-reviews";
+
 const base: LayerProject = {
     type: Type.Layer,
     slug: "base",
@@ -202,22 +205,12 @@ const base: LayerProject = {
             category: RiskCategory.FinalityGuarantees,
             score: 0,
             tier: RiskFactor.High,
-            title: "Base state transitions finalize on Ethereum. Rollup nodes finalize after applying the STF over data blobs. Light clients finalize after a fraud proof window passes",
-            content: `${ReviewSnippet.FinalityAltRollupPermissionlessFraudProofs}`,
+            title: "Base's state transitions finalize by updating its state based on data posted to Ethereum",
+            content: `${Reviewsnippet.AltRollupFinality}`,
+            alert: Alertsnippet.AltRollupNotice,
         },
     ],
     sections: [
-        {
-            id: "additionalconsiderations",
-            title: "Additional Considerations",
-            content: [
-                {
-                    title: "🚨 A centralized party can immediately upgrade relevant contracts. This affects some two-way peg implementations",
-                    content:
-                        AdditionalSnippet.UpgradeableContractsCentralizedAndNoExit,
-                },
-            ],
-        },
         {
             id: "bitcoinsecurity",
             title: "Bitcoin Security",

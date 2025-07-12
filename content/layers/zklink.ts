@@ -151,8 +151,9 @@ const zklink: LayerProject = {
             category: RiskCategory.FinalityGuarantees,
             score: 0,
             tier: RiskFactor.VeryHigh,
-            title: "The network's state is finalized offchain",
-            content: `${Reviewsnippet.AltRollupFinality}\n\nThe network relies on the network operators to make the state available to full nodes to progress the network's state.`
+            title: "zkLink's state transitions finalize by updating its state based on data posted to Ethereum",
+            content: `${Reviewsnippet.AltRollupFinality}\n\nThe network relies on the network operators to make the state available to full nodes to progress the network's state.`,
+            alert: Alertsnippet.AltRollupNotice,
         },
     ],
     sections: [

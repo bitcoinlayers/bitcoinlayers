@@ -21,6 +21,9 @@ import {
     RiskSummarySnippet,
 } from "../props";
 
+import { Alertsnippet } from "../props-layers-more-info";
+import { Reviewsnippet } from "../props-layers-reviews";
+
 const arbitrum: LayerProject = {
     type: Type.Layer,
     slug: "arbitrum",
@@ -224,23 +227,13 @@ const arbitrum: LayerProject = {
         {
             category: RiskCategory.FinalityGuarantees,
             score: 0,
-            tier: RiskFactor.High,
-            title: "Arbitrum state transitions finalize on Ethereum. Rollup nodes finalize after applying the STF over data blogs. Light clients finalize after a fraud proof window passes",
-            content: `${ReviewSnippet.FinalityAltRollupPermissionlessFraudProofs}\n\nThe stake required to become a validator is 3600 ETH.`,
+            tier: RiskFactor.Medium,
+            title: "Arbitrum state transitions finalize by updating its state based on data posted to Ethereum",
+            content: `${Reviewsnippet.AltRollupFinality}`,
+            alert: Alertsnippet.AltRollupNotice,
         },
     ],
     sections: [
-        {
-            id: "additionalconsiderations",
-            title: "Additional Considerations",
-            content: [
-                {
-                    title: "⚠️ A federation can immediately upgrade relevant contracts. This affects some two-way peg implementations",
-                    content:
-                        AdditionalSnippet.UpgradeableContractsCentralizedAndNoExit,
-                },
-            ],
-        },
         {
             id: "bitcoinsecurity",
             title: "Bitcoin Security",

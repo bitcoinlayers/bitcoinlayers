@@ -16,6 +16,9 @@ import {
     RiskSummarySnippet,
 } from "../props";
 
+import { Alertsnippet } from "../props-layers-more-info";
+import { Reviewsnippet } from "../props-layers-reviews";
+
 const optimism: LayerProject = {
     type: Type.Layer,
     slug: "optimism",
@@ -31,7 +34,7 @@ const optimism: LayerProject = {
         RiskFactor.VeryHigh,
         RiskFactor.Medium,
         RiskFactor.Medium,
-        RiskFactor.High,
+        RiskFactor.Medium,
     ],
     btcLocked: 0,
     nativeToken: "-",
@@ -163,10 +166,12 @@ const optimism: LayerProject = {
         {
             category: RiskCategory.FinalityGuarantees,
             score: 0,
-            tier: RiskFactor.UnderReview,
-            title: "Optimism state transitions finalize on Ethereum. Rollup nodes finalize after applying the STF over data blogs. Light clients finalize after a fraud proof window passes",
-            content: `${ReviewSnippet.FinalityAltRollupPermissionlessFraudProofs}`
+            tier: RiskFactor.Medium,
+            title: "Optimism state transitions finalize by updating its state based on data posted to Ethereum",
+            content: `${Reviewsnippet.AltRollupFinality}`,
+            alert: Alertsnippet.AltRollupNotice,
         },
+ 
     ],
     sections: [
         {

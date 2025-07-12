@@ -14,6 +14,8 @@ import {
     RiskSummarySnippet,
     Categorization,
 } from "../props";
+import { Reviewsnippet } from "../props-layers-reviews";
+import { Alertsnippet, BitcoinSecuritySnippet } from "../props-layers-more-info";
 
 const bsquared: LayerProject = {
     type: Type.Layer,
@@ -188,8 +190,8 @@ const bsquared: LayerProject = {
             score: 0,
             tier: RiskFactor.VeryHigh,
             title: "Finality is guaranteed by a permissioned validator set",
-            content:
-                "Bsquared receives no settlement assurances from Bitcoin. Bsquared transaction finality is determined by a centralized entity who proposes state updates to the permissioned L1 chain.",
+            content: Reviewsnippet.AltRollupFinality,
+            alert: Alertsnippet.AltRollupNotice,
         },
     ],
     sections: [
@@ -198,46 +200,20 @@ const bsquared: LayerProject = {
             title: "Bitcoin Security",
             content: [
                 {
-                    title: "Unilateral exits not possible",
-                    content:
-                        "Users cannot unilaterally exit from Bsquared Network. Users trust a centralized bridge program with the custody of their Bitcoin.",
+                    title: "Bsquared Network does not inherit any security from Bitcoin",
+                    content: BitcoinSecuritySnippet.NoSecurity,
                 },
                 {
                     title: "The protocol does not enable MEV on Bitcoin. Users trust a centralized operator to not reorder their transactions.",
-                    content:
-                        "Since Bsquared has no relationship with Bitcoin miners, it does not introduce MEV on the Bitcoin base layer. Users trust that the Bsquared Network zkEVM sequencer will not reorder transactions to extract MEV.",
+                    content: BitcoinSecuritySnippet.CentralizedSequencerMEV,
                 },
                 {
                     title: "An alternative token exists, but is not being used for network security",
-                    content:
-                        "Bsquared Network has issued a token with the ticker BSQ on its L1 protocol. It has a supply of 210,000,000. One address owns the majority of this supply. Bsquared Network L1 validators do not currently stake this token.",
+                    content: BitcoinSecuritySnippet.WrappedTokenFees,
                 },
                 {
                     title: "Bsquared Network does not contribute to the security budget",
-                    content:
-                        "Bsquared Network’s current mainnet does not pay any fees to Bitcoin miners.",
-                },
-            ],
-        },
-        {
-            id: "notice",
-            title: "🚨 Project is not a sidesystem",
-            content: [
-                {
-                    title: "This project will be moved to the Alternative category",
-                    content:
-                        "Projects that do not meet our requirements to be considered a sidesystem will be moved to the Alternative category. They have until June 30th to implement the technical requirements to be considered a sidesystem.",
-                },
-            ],
-        },
-        {
-            id: "withdrawals",
-            title: "Withdrawals",
-            content: [
-                {
-                    title: "Users can withdraw funds if permitted by centralized operators",
-                    content:
-                        "Users can withdraw their funds from Bsquared Network back to Bitcoin via two, centralized bridge providers. Information on the signers of these bridges is unavailable.",
+                    content: BitcoinSecuritySnippet.NoSecurityBudget,
                 },
             ],
         },
