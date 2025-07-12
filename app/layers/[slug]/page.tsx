@@ -12,7 +12,7 @@ import RiskSummary from "@/components/shared/risk-summary";
 import Categorization from "@/components/shared/categorization";
 import AlternativeBanner from "@/components/alternative-banner";
 import UnderReviewWrapper from "@/components/under-review-wrapper";
-import { EntityCategory } from "@/content/props";
+import { EntityCategory, EntityType } from "@/content/props";
 
 function getLayerFromSlug(slug: string) {
     const layer = allLayers.find((layer) => layer.slug === slug);
@@ -60,17 +60,53 @@ export default async function LayerPage(props: {
                     </div>
                     <div className="lg:w-4/5 flex flex-col px-4 lg:pl-6">
                         <LayerOverviewAlt layer={layer} />
-                        <LayerTVLChart />
                         
-                        {/* Token Contracts */}
-                        <ProjectContractAddresses slug={slug} isLayer={true} />
-                        {layer.partialReview && layer.partialReviewAfter === "tokencontracts" && (
+                        {/* Only show supply chart and token contracts for non-bitcoin native protocols and non-ChaumianEcashProtocol */}
+                        {layer.entityCategory !== EntityCategory.BitcoinNative && layer.entityType !== EntityType.ChaumianEcashProtocol && (
+                            <>
+                                <LayerTVLChart />
+                                
+                                {/* Token Contracts */}
+                                <ProjectContractAddresses slug={slug} isLayer={true} />
+                            </>
+                        )}
+                        {layer.partialReview && layer.partialReviewAfter === "tokencontracts" && layer.entityCategory !== EntityCategory.BitcoinNative && layer.entityType !== EntityType.ChaumianEcashProtocol && (
                             <div className="self-stretch lg:px-8 px-4 pt-6 pb-8 mb-6 bg-muted/50 rounded-xl border border-border flex-col justify-center items-start gap-4">
                                 <div className="text-lg font-semibold text-foreground mb-3">
                                     Partial Review Available
                                 </div>
                                 <p className="text-muted-foreground">
                                     This project is currently undergoing a partial review. Basic information, chart data, and token contracts are available above, but the full risk analysis and technical review are still in progress.
+                                </p>
+                                <p className="text-sm text-muted-foreground mt-2">
+                                    Complete technical analysis including risk assessments, trust assumptions, and detailed categorization will be added once our review is complete.
+                                </p>
+                            </div>
+                        )}
+                        
+                        {/* Special partial review message for bitcoin native protocols */}
+                        {layer.partialReview && layer.partialReviewAfter === "tokencontracts" && layer.entityCategory === EntityCategory.BitcoinNative && (
+                            <div className="self-stretch lg:px-8 px-4 pt-6 pb-8 mb-6 bg-muted/50 rounded-xl border border-border flex-col justify-center items-start gap-4">
+                                <div className="text-lg font-semibold text-foreground mb-3">
+                                    Partial Review Available
+                                </div>
+                                <p className="text-muted-foreground">
+                                    This bitcoin native protocol is currently undergoing a partial review. Basic information is available above, but the full risk analysis and technical review are still in progress.
+                                </p>
+                                <p className="text-sm text-muted-foreground mt-2">
+                                    Complete technical analysis including risk assessments, trust assumptions, and detailed categorization will be added once our review is complete.
+                                </p>
+                            </div>
+                        )}
+                        
+                        {/* Special partial review message for ChaumianEcashProtocol */}
+                        {layer.partialReview && layer.partialReviewAfter === "tokencontracts" && layer.entityType === EntityType.ChaumianEcashProtocol && (
+                            <div className="self-stretch lg:px-8 px-4 pt-6 pb-8 mb-6 bg-muted/50 rounded-xl border border-border flex-col justify-center items-start gap-4">
+                                <div className="text-lg font-semibold text-foreground mb-3">
+                                    Partial Review Available
+                                </div>
+                                <p className="text-muted-foreground">
+                                    This Chaumian Ecash protocol is currently undergoing a partial review. Basic information is available above, but the full risk analysis and technical review are still in progress.
                                 </p>
                                 <p className="text-sm text-muted-foreground mt-2">
                                     Complete technical analysis including risk assessments, trust assumptions, and detailed categorization will be added once our review is complete.

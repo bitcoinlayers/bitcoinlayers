@@ -3,6 +3,7 @@ import {
     allInfrastructures,
     allInfrastructureSlugs,
 } from "@/util/infrastructure_index";
+import { EntityType } from "@/content/props";
 import InfrastructureMenu from "@/components/infrastructure/infrastructureMenu";
 import InfrastructureBody from "@/components/infrastructure/infrastructureBody";
 import InfrastructureOverviewAlt from "@/components/infrastructure/infrastructureOverviewAlt";
@@ -62,17 +63,38 @@ export default async function InfrastructurePage(props: {
                             <InfrastructureOverviewAlt
                                 infrastructure={infrastructure}
                             />
-                            <InfraTVLChart />
                             
-                            {/* Token Contracts */}
-                            <ProjectContractAddresses slug={slug} isLayer={false} />
-                            {infrastructure.partialReview && infrastructure.partialReviewAfter === "tokencontracts" && (
+                            {/* Only show supply chart and token contracts for non-ChaumianEcashProtocol infrastructures */}
+                            {infrastructure.entityType !== EntityType.ChaumianEcashProtocol && (
+                                <>
+                                    <InfraTVLChart />
+                                    
+                                    {/* Token Contracts */}
+                                    <ProjectContractAddresses slug={slug} isLayer={false} />
+                                </>
+                            )}
+                            {infrastructure.partialReview && infrastructure.partialReviewAfter === "tokencontracts" && infrastructure.entityType !== EntityType.ChaumianEcashProtocol && (
                                 <div className="self-stretch lg:px-8 px-4 pt-6 pb-8 mb-6 bg-muted/50 rounded-xl border border-border flex-col justify-center items-start gap-4">
                                     <div className="text-lg font-semibold text-foreground mb-3">
                                         Partial Review Available
                                     </div>
                                     <p className="text-muted-foreground">
                                         This infrastructure project is currently undergoing a partial review. Basic information, chart data, and token contracts are available above, but the full assessment and technical review are still in progress.
+                                    </p>
+                                    <p className="text-sm text-muted-foreground mt-2">
+                                        Complete technical analysis will be added once our review is complete.
+                                    </p>
+                                </div>
+                            )}
+                            
+                            {/* Special partial review message for ChaumianEcashProtocol infrastructures */}
+                            {infrastructure.partialReview && infrastructure.partialReviewAfter === "tokencontracts" && infrastructure.entityType === EntityType.ChaumianEcashProtocol && (
+                                <div className="self-stretch lg:px-8 px-4 pt-6 pb-8 mb-6 bg-muted/50 rounded-xl border border-border flex-col justify-center items-start gap-4">
+                                    <div className="text-lg font-semibold text-foreground mb-3">
+                                        Partial Review Available
+                                    </div>
+                                    <p className="text-muted-foreground">
+                                        This Chaumian Ecash protocol is currently undergoing a partial review. Basic information is available above, but the full assessment and technical review are still in progress.
                                     </p>
                                     <p className="text-sm text-muted-foreground mt-2">
                                         Complete technical analysis will be added once our review is complete.

@@ -1,6 +1,6 @@
 "use client";
 
-import { InfrastructureProject, EntityCategory } from "@/content/props";
+import { InfrastructureProject, EntityCategory, EntityType } from "@/content/props";
 import React, { useState, useEffect } from "react";
 
 const InfrastructureMenu: React.FC<{
@@ -111,7 +111,9 @@ const InfrastructureMenu: React.FC<{
             <div className="flex lg:flex-col justify-start items-start lg:gap-2 gap-1 z-40">
                 {[
                     { id: "overview", title: "Overview" },
-                    { id: "data", title: "Data" },
+                    ...(infrastructure.entityType === EntityType.ChaumianEcashProtocol
+                        ? []
+                        : [{ id: "data", title: "Data" }]),
                     ...(infrastructure.entityCategory === EntityCategory.More
                         ? []
                         : [{ id: "tokencontracts", title: "Token Contracts" }]),

@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { LayerProject } from "@/content/props";
-import { EntityCategory } from "@/content/props";
+import { EntityCategory, EntityType } from "@/content/props";
 
 const LayerMenu: React.FC<{ layer: LayerProject }> = ({ layer }) => {
     const [activeSection, setActiveSection] = useState("overview");
@@ -116,8 +116,10 @@ const LayerMenu: React.FC<{ layer: LayerProject }> = ({ layer }) => {
             <div className="flex lg:flex-col justify-start items-start lg:gap-2 gap-1 z-40">
                 {[
     { id: "overview", title: "Overview" },
-    { id: "data", title: "Data" },
-    ...(layer.entityCategory === EntityCategory.BitcoinNative
+    ...(layer.entityCategory === EntityCategory.BitcoinNative || layer.entityType === EntityType.ChaumianEcashProtocol
+        ? []
+        : [{ id: "data", title: "Data" }]),
+    ...(layer.entityCategory === EntityCategory.BitcoinNative || layer.entityType === EntityType.ChaumianEcashProtocol
         ? []
         : [{ id: "tokencontracts", title: "Token Contracts" }]),
     ...(layer.partialReview && layer.partialReviewAfter
