@@ -204,7 +204,7 @@ const hemi: LayerProject = {
             score: 0,
             tier: RiskFactor.VeryHigh,
             title: "Hemi blocks are produced by a centralized sequencer",
-            content: ReviewSnippet.SelfSequenceNone
+            content: Reviewsnippet.AltRollupSelfSequenceNone,
         },
         {
             category: RiskCategory.FinalityGuarantees,
