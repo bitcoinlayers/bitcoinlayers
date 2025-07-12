@@ -207,7 +207,6 @@ const base: LayerProject = {
             tier: RiskFactor.High,
             title: "Base's state transitions finalize by updating its state based on data posted to Ethereum",
             content: `${Reviewsnippet.AltRollupFinality}`,
-        },
     ],
     sections: [
         {
