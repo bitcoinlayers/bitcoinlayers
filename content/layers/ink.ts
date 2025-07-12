@@ -33,6 +33,7 @@ const template: LayerProject = {
     liquidStaking: false,
     bridge: false,
     underReview: false,
+    partialReview: true, partialReviewAfter: "manualcontracts",// Set to true for partial review mode
     riskFactors: [
         RiskFactor.VeryHigh,
         RiskFactor.Medium,
@@ -150,16 +151,6 @@ const template: LayerProject = {
         },
     ],
     sections: [
-        {
-            id: "additionalconsiderations",
-            title: "Additional Considerations",
-            content: [
-                {
-                    title: "This project has undergone a partial review",
-                    content: AdditionalSnippet.InitialReview,
-                },
-            ],
-        },
         {
             id: "knowledgebits",
             title: "Knowledge Bits",

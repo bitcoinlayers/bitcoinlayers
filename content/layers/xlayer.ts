@@ -35,6 +35,7 @@ const xlayer: LayerProject = {
     liquidStaking: false,
     bridge: false,
     underReview: false,
+    partialReview: true, partialReviewAfter: "trust",// Set to true for partial review mode
     riskFactors: [
         RiskFactor.VeryHigh,
         RiskFactor.VeryHigh,

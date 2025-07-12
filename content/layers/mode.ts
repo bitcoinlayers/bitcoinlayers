@@ -36,6 +36,7 @@ const template: LayerProject = {
     liquidStaking: false,
     bridge: false,
     underReview: false,
+    partialReview: true, partialReviewAfter: "manualcontracts",// Set to true for partial review mode
     riskFactors: [
         RiskFactor.VeryHigh,
         RiskFactor.Medium,
@@ -44,32 +45,12 @@ const template: LayerProject = {
     ],
     btcLocked: NaN,
     nativeToken: "-",
-    feeToken: "-",
+    feeToken: "ETH",
     notice: undefined,
     bitcoinOnly: false,
     links: [
-        {
-            text: Site.Website,
-            url: "website",
-        },
-        {
-            text: Site.Docs,
-            url: "docs",
-        },
-        {
-            text: Site.Explorer,
-            url: "explorer",
-        },
-        {
-            text: Site.GitHub,
-            url: "github",
-        },
-        {
-            text: Site.Twitter,
-            url: "socials",
-        },
     ],
-    description: "",
+    description: "Mode is an Ethereum rollup that supports a number of wrapped BTC tokens.",
     riskSummary: [
         {
             title: RiskSummarySnippet.TitleCustodianPegs,

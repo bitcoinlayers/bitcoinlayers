@@ -27,6 +27,7 @@ const fantom: LayerProject = {
     liquidStaking: false,
     bridge: false,
     underReview: false,
+    partialReview: true, partialReviewAfter: "trust",// Set to true for partial review mode
     riskFactors: [
         RiskFactor.VeryHigh,
         RiskFactor.VeryHigh,
@@ -60,7 +61,7 @@ const fantom: LayerProject = {
             url: "https://x.com/FantomFDN",
         },
     ],
-    description: "",
+    description: "Fantom is an alternative proof-of-stake blockchain that supports a number of wrapped BTC tokens.",
     riskSummary: [
         {
             title: RiskSummarySnippet.TitleCustodianPegs,
