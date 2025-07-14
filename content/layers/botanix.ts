@@ -22,6 +22,7 @@ import {
     BitcoinSecuritySnippet,
     CustodyTitle,
 } from "../props";
+import { Reviewsnippet } from "../props-layers-reviews";
 
 const template: LayerProject = {
     type: Type.Layer,
@@ -94,14 +95,22 @@ const template: LayerProject = {
                     title: "BTC backing this asset is secured by a federation",
                     content: TokenSnippet.BotanixBTC,
                 },
-                {
-                    name: "Botanix Staked BTC",
-                    infrastructureSlug: "botanix-stbtc",
-                    score: 0,
-                    tier: RiskFactor.High,
-                    title: "This asset is backed by wrapped BTC locked in a staking vault",
-                    content: TokenSnippet.BotanixStakedBTC,
-                },
+                    {
+                        name: "Botanix Staked BTC",
+                        infrastructureSlug: "botanix-stbtc",
+                        score: 0,
+                        tier: RiskFactor.High,
+                        title: "This asset is backed by wrapped BTC locked in a staking vault",
+                        content: Reviewsnippet.BotanixStakedBTC,
+                    },
+                    {
+                        name: "Rover rovBTC",
+                        infrastructureSlug: "rover-rovbtc",
+                        score: 0,
+                        tier: RiskFactor.VeryHigh,
+                        title: "This asset is backed by Botanix stBTC locked in a staking vault",
+                        content: Reviewsnippet.RoverrovBTC,
+                    },
             ],
         },
         {
@@ -128,10 +137,16 @@ const template: LayerProject = {
     ],
     manualContracts: [
         {
-            title: "stBTC Contract",
+            title: "stBTC VaultContract",
             address: "0xF4586028FFdA7Eca636864F80f8a3f2589E33795", 
             subtitle: "",
             explorerUrl: "https://botanixscan.io/address/0xF4586028FFdA7Eca636864F80f8a3f2589E33795/contract/3637/readContract"
+        },
+        {
+            title: "rovBTC Vault Contract",
+            address: "0xDe46F9bF2d99F2db88440C74DC4c2A373fc9F69e", 
+            subtitle: "",
+            explorerUrl: "https://botanixscan.io/address/0x9BC574a6f1170e90D80826D86a6126d59198A3Ef/contract/3637/code"
         },
     ],
     sections: [
