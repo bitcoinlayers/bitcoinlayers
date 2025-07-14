@@ -118,6 +118,7 @@ export enum Reviewsnippet {
     BotanixStakedBTC = "Botanix stBTC is a derivative asset backed by wrapped BTC locked in a staking vault. When users deposit funds into Botanix stBTC, they are depositing funds into a staking contract. The contract is [upgradeable](https://botanixscan.io/address/0x09C5874F1425697C81c34F58957f2BE584306312).",
     WrappedRootstockRBTC = "wrBTC is a derivative of Rootstock rBTC. To mint wrBTC, users deposit rBTC into the Wrapped Rootstock rBTC smart contract. The smart contract is not upgradeable. Users trust the code behind the smart contract and the [RBTC federation](https://www.bitcoinlayers.org/infrastructure/rootstock-rbtc) to keep RBTC pegged 1:1 with BTC.",
     MidasMBTC = "Midas mBTC is a derivative asset ulimtately backed by bitcoin held in FalxonX exchange wallets.",
+    SwellswBTC = "swBTC is a derivative of BitGo wBTC that is locked in a smart contract. Users trust the code behind the smart contract and wBTC to remain pegged 1:1 with BTC.",
     TemplateBTC = "This is a fake prop used for the template file.",
 
 }

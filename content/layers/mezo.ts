@@ -17,6 +17,7 @@ import {
     UseCaseSnippet,
     RiskSummarySnippet,
 } from "../props";
+import { Reviewsnippet } from "../props-layers-reviews";
 
 const mezo: LayerProject = {
     type: Type.Layer,
@@ -117,6 +118,14 @@ const mezo: LayerProject = {
                     tier: RiskFactor.VeryHigh,
                     title: TokenSnippet.CustodianPeg,
                     content: `${TokenSnippet.FireBTC}`,
+                },
+                {
+                    name: "Swell swBTC",
+                    infrastructureSlug: "swell-wbbtc",
+                    score: 0,
+                    tier: RiskFactor.VeryHigh,
+                    title: TokenSnippet.CustodianDerivative,
+                    content: `${Reviewsnippet.SwellswBTC}`,
                 },
             ],
         },
