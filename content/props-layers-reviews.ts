@@ -116,6 +116,8 @@ export enum Reviewsnippet {
     BotanixBTC = "BTC backing Botanix pBTC is secured by a federation of signers. The identities of entities participating in the federation are [publicly known](https://docs.botanixlabs.com/botanix/get-to-know-botanix/roadmap-to-spiderchain/founding-federation/federation-overview). Users trust the operators of the federation to custody their funds, process deposits, and honor withdrawals.",
     GoatzBTC = "BTC backing Goat zBTC is secured by a federation of signers participating in a threshold signature scheme. The identities of entities participating in the federation have not been publicly disclosed. Users trust the operators of the federation to custody their funds, process deposits, and honor withdrawals.",
     BotanixStakedBTC = "Botanix stBTC is a derivative asset backed by wrapped BTC locked in a staking vault. When users deposit funds into Botanix stBTC, they are depositing funds into a staking contract. The contract is [upgradeable](https://botanixscan.io/address/0x09C5874F1425697C81c34F58957f2BE584306312).",
+    WrappedRootstockRBTC = "wrBTC is a derivative of Rootstock rBTC. To mint wrBTC, users deposit rBTC into the Wrapped Rootstock rBTC smart contract. The smart contract is not upgradeable. Users trust the code behind the smart contract and the [RBTC federation](https://www.bitcoinlayers.org/infrastructure/rootstock-rbtc) to keep RBTC pegged 1:1 with BTC.",
+    MidasMBTC = "Midas mBTC is a derivative asset ulimtately backed by bitcoin held in FalxonX exchange wallets.",
     TemplateBTC = "This is a fake prop used for the template file.",
 
 }

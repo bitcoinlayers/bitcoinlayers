@@ -18,6 +18,7 @@ import {
     BitcoinLayer,
     CustodyTitle,
 } from "../props";
+import { Reviewsnippet } from "../props-layers-reviews";
 
 const rootstock: LayerProject = {
     type: Type.Layer,
@@ -65,7 +66,7 @@ const rootstock: LayerProject = {
         },
     ],
     description:
-        "Rootstock is a merge-mined, EVM-compatible bitcoin sidechain. As a merge-mined network, bitcoin miners can concurrently mine for Rootstock's consensus. The network is not secured by another token. As an EVM-compatible network, developers can deploy Solidity and other EVM-compatible smart contracts with arbitrary logic, creating a host of new applications for BTC. Rootstock has an enshrined cross-chain BTC asset called ''Smart Bitcoin'' (RBTC), which is pegged 1:1 to BTC and secured by a permissioned multisig federation.",
+        "Rootstock is a merge-mined, EVM-compatible bitcoin sidechain. As a merge-mined network, bitcoin miners can concurrently mine for Rootstock's consensus. Rootstock has an enshrined cross-chain BTC asset called ''Smart Bitcoin'' (RBTC), which is pegged 1:1 to BTC and secured by a permissioned multisig federation.",
         riskSummary: [
             {
                 title: RiskSummarySnippet.TitleCustodianPegs,
@@ -90,15 +91,31 @@ const rootstock: LayerProject = {
                     score: 0,
                     tier: RiskFactor.High,
                     title: "A federated multi-sig known as the Powpeg is used to custody users' BTC. More than 5, publicly-known signers participate in the Powpeg.",
-                    content: TokenSnippet.RootstockRBTC,
+                    content: Reviewsnippet.RootstockRBTC,
                 },
                 {
-                    name: "BitGo wBTC",
-                    infrastructureSlug: "bitgo-wbtc",
+                    name: "Wrapped Rootstock rBTC",
+                    infrastructureSlug: "rootstock-wrbtc",
+                    score: 0,
+                    tier: RiskFactor.High,
+                    title: "Users deposit rBTC into the Wrapped Rootstock rBTC smart contract to mint wrBTC",
+                    content: Reviewsnippet.WrappedRootstockRBTC,
+                },
+                {
+                    name: "Solv SolvBTC",
+                    infrastructureSlug: "solv-solvbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet.CustodianPeg,
-                    content: TokenSnippet.BitGowBTC,
+                    title: Reviewsnippet.CustodianPeg,
+                    content: Reviewsnippet.SolvBTC,
+                },
+                {
+                    name: "Midas mBTC",
+                    infrastructureSlug: "midas-mbtc",
+                    score: 0,
+                    tier: RiskFactor.VeryHigh,
+                    title: Reviewsnippet.CustodianPeg,
+                    content: `${Reviewsnippet.MidasMBTC} Users deposit rBTC, or wrBTC, into the mBTC smart contract on Rootstock to mint mBTC.`,
                 },
             ],
         },
