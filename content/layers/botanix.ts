@@ -37,7 +37,7 @@ const template: LayerProject = {
     underReview: false,
     riskFactors: [
         RiskFactor.High,
-        RiskFactor.High,
+        RiskFactor.UnderReview,
         RiskFactor.High,
         RiskFactor.High,
     ],
@@ -116,9 +116,9 @@ const template: LayerProject = {
         {
             category: RiskCategory.DataAvailability,
             score: 0,
-            tier: RiskFactor.High,
-            title: "Botanix's federation is responsible for making data available",
-            content: ReviewSnippet.DAFederation,
+            tier: RiskFactor.UnderReview,
+            title: "We are reviewing whether solely federated, validator nodes are responsible for the data availability requriement",
+            content: `${ReviewSnippet.DAFederation}\n\nWe are reviewing if the network is able to reconstruct its state solely based on data made available by RPC nodes. Running an RPC node is permissionless.`,
         },
         {
             category: RiskCategory.NetworkOperators,
