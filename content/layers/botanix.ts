@@ -88,7 +88,7 @@ const template: LayerProject = {
             content: "",
             pegs: [
                 {
-                    name: "Botanix Pegged BTC",
+                    name: "Botanix BTC",
                     infrastructureSlug: "botanix-btc",
                     score: 0,
                     tier: RiskFactor.High,
