@@ -88,26 +88,26 @@ export const Alertsnippet = { //TODO: Janusz to add more here
         linkUrl: "https://lxresearch.co"
     },
     AltRollupAltTokenNoFraudProofs: {
-        type: "warning" as const,
+        type: "error" as const,
         title: "This token is not bridged to the network from bitcoin",
         content: "The token is bridged to the network's from a bridge contract hosted on its parent chain. The bridge does not have a functioning proof system. The proposer can submit a malicious state transition and steal funds from the bridge.",
     },
     AltRollupAltTokenNoFraudProofsPlusUpgrade: {
         type: "error" as const,
         title: "This token is not bridged to the network from bitcoin",
-        content: "The token is bridged to the network's from a bridge contract hosted on its parent chain. The bridge does not have a functioning proof system. The proposer can submit a malicious state transition and steal funds from the bridge. Additionally, the bridge contract can be upgraded by a centralized party or federation. In the event of a malicious upgrade, user funds could be stolen.",
+        content: "The token is bridged to the network's from a bridge contract hosted on its parent chain. The bridge escrowing funds does not have a functioning proof system. The proposer can submit a malicious state transition and steal funds from the bridge. Additionally, the bridge contract can be upgraded by a centralized party or federation. A malicious upgrade could result in loss of user funds.",
         expandable: true,
     },
     AltRollupAltTokenNoFraudProofsPlusUpgradeDelayed: {
         type: "error" as const,
         title: "This token is not bridged to the network from bitcoin",
-        content: "The token is bridged to the network's from a bridge contract hosted on its parent chain. The bridge does not have a functioning proof system. The proposer can submit a malicious state transition and steal funds from the bridge. Additionally, the bridge contract can be upgraded by a centralized party or federation. In the event of a malicious upgrade, user funds could be stolen. There is a delay to upgrades.",
+        content: "The token is bridged to the network's from a bridge contract hosted on its parent chain. The bridge escrowing funds does not have a functioning proof system. The proposer can submit a malicious state transition and steal funds from the bridge. Additionally, the bridge contract can be upgraded by a centralized party or federation. A malicious upgrade could result in loss of user funds. There is a delay to upgrades.",
         expandable: true,
     },
     WrapperCentralized: {
         type: "warning" as const,
         title: "Bitcoin backing this token is secured by a centralized party",
-        content: "The bitcoin backing this token is secured by a centralized party. This party can unilaterally steal users funds with no recourse.",
+        content: "The bitcoin backing this token is secured by a centralized party. This party can unilaterally spend the funds backing this wrapped asset. Malicious operators can result in loss of user funds.",
     },
     AltRollupAltTokenProofsUpgrade: {
         type: "error" as const,
@@ -119,6 +119,12 @@ export const Alertsnippet = { //TODO: Janusz to add more here
         type: "warning" as const,
         title: "This token is not bridged to the network from bitcoin",
         content: "The token is bridged to the network's from a bridge contract hosted on its parent chain. The bridge does not have a functioning proof system. The proposer can submit a malicious state transition and steal funds from the bridge.",
+    },
+    BitcoinBridgeNoSigners: {
+        type: "warning" as const,
+        title: "The signers for this bridge have not been disclosed",
+        content: "The signers for this bitcoin two-way peg have not been disclosed. The signers have unilateral control of funds backing this wrapped asset. Collusion can result in loss of user funds. There is no reputational damange for these signers if they act maliciously.",
+        expandable: true,
     },
     SecurityModelDifference: {
         type: "warning" as const,
