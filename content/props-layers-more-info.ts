@@ -105,7 +105,7 @@ export const Alertsnippet = { //TODO: Janusz to add more here
         expandable: true,
     },
     WrapperCentralized: {
-        type: "warning" as const,
+        type: "error" as const,
         title: "Bitcoin backing this token is secured by a centralized party",
         content: "The bitcoin backing this token is secured by a centralized party. This party can unilaterally spend the funds backing this wrapped asset. Malicious operators can result in loss of user funds.",
     },
@@ -121,7 +121,7 @@ export const Alertsnippet = { //TODO: Janusz to add more here
         content: "The token is bridged to the network's from a bridge contract hosted on its parent chain. The bridge does not have a functioning proof system. The proposer can submit a malicious state transition and steal funds from the bridge.",
     },
     BitcoinBridgeNoSigners: {
-        type: "warning" as const,
+        type: "error" as const,
         title: "The signers for this bridge have not been disclosed",
         content: "The signers for this bitcoin two-way peg have not been disclosed. The signers have unilateral control of funds backing this wrapped asset. Collusion can result in loss of user funds. There is no reputational damange for these signers if they act maliciously.",
         expandable: true,
