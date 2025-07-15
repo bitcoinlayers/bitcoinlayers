@@ -18,15 +18,17 @@ import {
     BitcoinSecuritySnippet,
     AdditionalSnippet,
     KnowledgeBitSnippet,
-    RiskSummarySnippet,
     Categorization,
     AlertSnippet,
 } from "../props";
 import {
     Reviewsnippet,
 } from "../props-layers-reviews";
+import { RiskSummarySnippet } from "../props-layers-intro";
+import { Alertsnippet } from "../props-layers-more-info";
 import { tokenToString } from "typescript";
 import { Rubik_Vinyl } from "next/font/google";
+import InfrastructureReviewModal from "@/components/infrastructure-review-modal";
 
 const hemi: LayerProject = {
     type: Type.Layer,
@@ -87,6 +89,14 @@ const hemi: LayerProject = {
                 title: RiskSummarySnippet.TitleCentralizedSequencer,
                 content: RiskSummarySnippet.RiskSummaryCentralizedSequencer,
             },
+            {
+                title: RiskSummarySnippet.TitleBridgeUpgrade,
+                content: RiskSummarySnippet.RiskSummaryImmediateUpgrade,
+            },
+            {
+                title: RiskSummarySnippet.TitleNoProofs,
+                content: RiskSummarySnippet.RiskSummaryNoProofs,
+            },
         ],
         categorization: [
             {
@@ -109,6 +119,7 @@ const hemi: LayerProject = {
                     tier: RiskFactor.VeryHigh,
                     title: "The signers securing BTC backing HemiBTC have not been officially disclosed",
                     content: TokenSnippet.HemiBTC,
+                    alert: Alertsnippet.BitcoinBridgeNoSigners,
                 },
                 {
                     name: "BitGo wBTC",
@@ -116,15 +127,17 @@ const hemi: LayerProject = {
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: TokenSnippet.CustodianPeg,
-                    content: `${TokenSnippet.BitGowBTC}\n\n${TokenSnippet.smartcontractreview}`,
+                    content: `${TokenSnippet.BitGowBTC}\n\nBitGo wBTC is minted on Hemi through its official bridge program on Ethereum. This bridge program does not have a functional proof system. The bridge is also instantly upgadable by a 3/8 multisig.`,
+                    alert: Alertsnippet.AltRollupAltTokenNoFraudProofsPlusUpgrade,
                 },
                 {
                     name: "Lorenzo enzoBTC",
                     infrastructureSlug: "lorenzo-enzobtc",
                     score: 0,
-                    tier: RiskFactor.UnderReview,
-                    title: TokenSnippet.UnderReview,
-                    content: TokenSnippet.UnderReview,
+                    tier: RiskFactor.VeryHigh,
+                    title: Reviewsnippet.CustodianPeg,
+                    content: `${Reviewsnippet.enzoBTC} enzoBTC is minted directly on Hemi through a centralized admin.`,
+                    alert: Alertsnippet.WrapperCentralized,
                 },
                 {
                     name: "UniRouter uBTC",
@@ -132,7 +145,8 @@ const hemi: LayerProject = {
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: TokenSnippet.CustodianPeg,
-                    content: `${TokenSnippet.UniRouterBTC}\n\n${TokenSnippet.smartcontractreview}`,
+                    content: `${TokenSnippet.UniRouterBTC} UniRouter uBTC is minted on Hemi through a third-party provider, [Free Tech](https://tunnel.free.tech/).`,
+                    alert: Alertsnippet.WrapperCentralized,
                 },
                 {
                     name: "Bedrock uniBTC",
@@ -140,7 +154,8 @@ const hemi: LayerProject = {
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: TokenSnippet.CustodianPeg,
-                    content: `${TokenSnippet.BedrockUniBTC}\n\n${TokenSnippet.smartcontractreview}`,
+                    content: `${TokenSnippet.BedrockUniBTC} Bedrock uniBTC is minted on Hemi through a third-party provider, [Free Tech](https://tunnel.free.tech/).`,
+                    alert: Alertsnippet.WrapperCentralized,
                 },
                 {
                     name: "Babypie mBTC",
@@ -148,7 +163,17 @@ const hemi: LayerProject = {
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: TokenSnippet.CustodianPeg,
-                    content: `${TokenSnippet.babypie}\n\n${TokenSnippet.smartcontractreview}`,
+                    content: `${TokenSnippet.babypie} Babypie mBTC is minted on Hemi via an implementation of LayerZero with an escrow contract on Ethereum. The implementation's admin is a 3/7 multisig.`,
+                    alert: Alertsnippet.WrapperCentralized,
+                },
+                {
+                    name: "Lorenzo stBTC",
+                    infrastructureSlug: "lorenzo-stbtc",
+                    score: 0,
+                    tier: RiskFactor.VeryHigh,
+                    title: Reviewsnippet.CustodianPeg,
+                    content: `${Reviewsnippet.LorenzostBTC} Lorenzo stBTC is minted on Hemi through LayerZero's OFT token standard implementation.`,
+                    alert: Alertsnippet.WrapperCentralized,
                 },
                 {
                     name: "Pump pumpBTC",
@@ -156,7 +181,8 @@ const hemi: LayerProject = {
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: TokenSnippet.CustodianPeg,
-                    content: `${TokenSnippet.babypie}\n\n${TokenSnippet.smartcontractreview}`,
+                    content: `${TokenSnippet.PumpBTC} Pump pumpBTC is minted on Hemi through a third-party provider, [Free Tech](https://tunnel.free.tech/).`,
+                    alert: Alertsnippet.WrapperCentralized,
                 },
                 {
                     name: "Merlin MBTC",
@@ -164,15 +190,17 @@ const hemi: LayerProject = {
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: TokenSnippet.CustodianPeg,
-                    content: `${TokenSnippet.MerlinMBTC}\n\n${TokenSnippet.smartcontractreview}`,
+                    content: `${TokenSnippet.MerlinMBTC} Pump pumpBTC is minted on Hemi through a third-party provider, [Free Tech](https://app.free.tech/?token=M-BTC).`,
+                    alert: Alertsnippet.WrapperCentralized,
                 },
                 {
                     name: "Threshold tBTC",
                     infrastructureSlug: "threshold-tbtc",
                     score: 0,
-                    tier: RiskFactor.UnderReview,
-                    title: TokenSnippet.UnderReview,
-                    content: `${TokenSnippet.ThresholdtBTC}\n\n${TokenSnippet.smartcontractreview}`,
+                    tier: RiskFactor.VeryHigh,
+                    title: TokenSnippet.FederationPeg,
+                    content: `${TokenSnippet.ThresholdtBTC}\n\nThreshold tBTC is minted on Hemi through its official bridge program on Ethereum. This bridge program does not have a functional proof system. The bridge is also instantly upgadable by a 3/8 multisig.`,
+                    alert: Alertsnippet.AltRollupAltTokenNoFraudProofsPlusUpgrade,
                 },
                 {
                     name: "Obelisk oBTC",
@@ -180,15 +208,26 @@ const hemi: LayerProject = {
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: TokenSnippet.CustodianPeg,
-                    content: `${TokenSnippet.ObeliskoBTC}\n\n${TokenSnippet.smartcontractreview}`,
+                    content: `${TokenSnippet.ObeliskoBTC} enzoBTC is minted directly on Hemi through a centralized admin.`,
+                    alert: Alertsnippet.WrapperCentralized,
                 },
                 {
                     name: "Bedrock brBTC",
                     infrastructureSlug: "bedrock-brbtc",
                     score: 0,
-                    tier: RiskFactor.UnderReview,
-                    title: TokenSnippet.UnderReview,
-                    content: `${TokenSnippet.BedrockbrBTC}\n\n${TokenSnippet.smartcontractreview}\n\n`,
+                    tier: RiskFactor.VeryHigh,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.BedrockbrBTC} Bedrock brBTC is minted on Hemi through a third-party provider, [Free Tech](https://tunnel.free.tech/).`,
+                    alert: Alertsnippet.WrapperCentralized,
+                },
+                {
+                    name: "Kiki iBTC",
+                    infrastructureSlug: "kiki-ibtc",
+                    score: 0,
+                    tier: RiskFactor.VeryHigh,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${Reviewsnippet.KikiIBTC} Kiki iBTC is minted on Hemi through a third-party provider, [Free Tech](https://tunnel.free.tech/).`,
+                    alert: Alertsnippet.WrapperCentralized,
                 },
             ],
         },
@@ -222,16 +261,24 @@ const hemi: LayerProject = {
             subtitle: "Specific address securing BTC backing HemiBTC. It is unknown if this address is managed by a single entity or multiple entities via a threshold signature scheme.",
             explorerUrl: "https://mempool.space/address/16NuSCxDVCAXbKs9GRbjbHXbwGXu3tnPSo"
         },
+        {
+            title: "Bridge contract escrowing wBTC & tBTC",
+            address: "0x5eaa10F99e7e6D177eF9F74E519E319aa49f191e",
+            subtitle: "This bridge contract does not have a functional proof system and can be upgraded by a 3/8 multisig.",
+            explorerUrl: "https://etherscan.io/address/0x5eaa10F99e7e6D177eF9F74E519E319aa49f191e"
+        },
+        {
+            title: "Bridge contract escrowing mBTC",
+            address: "0xc4995816B5421b88f85b5AbfBe24fd218D56c676",
+            subtitle: "This bridge contract can be upgraded by a 3/7 multisig.",
+            explorerUrl: "https://etherscan.io/address/0xc4995816B5421b88f85b5AbfBe24fd218D56c676#code"
+        },
     ],
     sections: [
         {
             id: "additionalconsiderations",
             title: "Additional Considerations",
             content: [
-                {
-                    title: "This review is in progress",
-                    content: "While we have reviewed the project's source code, there are aspects related to certain two-way pegs that need to be completed.",
-                },
                 {
                     title: "No public dashboards on PoP miners available",
                     content: "The project has not published mainnet dashboards related to active PoP miners. It is unknown how many miners are posting state roots to bitcoin.",
@@ -277,6 +324,10 @@ const hemi: LayerProject = {
                 {
                     title: "Proof-of-Proof consensus",
                     content: "Hemi's Proof-of-Proof (PoP) consensus is a bitcoin anchoring mechanism. After Hemi full nodes compute a new state root, PoP nodes publish this state root to bitcoin. After this state root is published, a Bitcoin Finality Governor queries bitcoin, finds the appended state root, and considers Hemi's blocks final."
+                },
+                {
+                    title: "The network is EVM-compatible",
+                    content: `${TechnologySnippet.EVM} The network's specific node implementation additionally executes a bitcoin light client.`,
                 },
             ],
         },
