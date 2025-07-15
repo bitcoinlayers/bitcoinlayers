@@ -163,7 +163,16 @@ const hemi: LayerProject = {
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: TokenSnippet.CustodianPeg,
-                    content: `${TokenSnippet.babypie} Babypie mBTC is minted on Hemi via an implementation of the LayerZero bridge on Ethereum. The implementation's admin is a 3/7 multisig.`,
+                    content: `${TokenSnippet.babypie} Babypie mBTC is minted on Hemi via an implementation of LayerZero with an escrow contract on Ethereum. The implementation's admin is a 3/7 multisig.`,
+                    alert: Alertsnippet.WrapperCentralized,
+                },
+                {
+                    name: "Lorenzo stBTC",
+                    infrastructureSlug: "lorenzo-stbtc",
+                    score: 0,
+                    tier: RiskFactor.VeryHigh,
+                    title: Reviewsnippet.CustodianPeg,
+                    content: `${Reviewsnippet.LorenzostBTC} Lorenzo stBTC is minted on Hemi through LayerZero's OFT token standard implementation.`,
                     alert: Alertsnippet.WrapperCentralized,
                 },
                 {
@@ -254,9 +263,9 @@ const hemi: LayerProject = {
         },
         {
             title: "Bridge contract escrowing wBTC & tBTC",
-            address: "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
+            address: "0x5eaa10F99e7e6D177eF9F74E519E319aa49f191e",
             subtitle: "This bridge contract does not have a functional proof system and can be upgraded by a 3/8 multisig.",
-            explorerUrl: "https://etherscan.io/address/0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599"
+            explorerUrl: "https://etherscan.io/address/0x5eaa10F99e7e6D177eF9F74E519E319aa49f191e"
         },
         {
             title: "Bridge contract escrowing mBTC",
