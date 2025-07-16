@@ -119,7 +119,7 @@ export enum Reviewsnippet {
     WrappedRootstockRBTC = "wrBTC is a derivative of Rootstock rBTC. To mint wrBTC, users deposit rBTC into the Wrapped Rootstock rBTC smart contract. The smart contract is not upgradeable. Users trust the code behind the smart contract and the [RBTC federation](https://www.bitcoinlayers.org/infrastructure/rootstock-rbtc) to keep RBTC pegged 1:1 with BTC.",
     MidasMBTC = "Midas mBTC is backed by assets held in Fireblocks and Fordefi institutional wallets.",
     SwellswBTC = "swBTC is a derivative of [BitGo wBTC](https://www.bitcoinlayers.org/infrastructure/bitgo-wbtc) that is minted when wBTC is locked into a Swell smart contract. Users trust the code behind the smart contract and wBTC to remain pegged 1:1 with BTC.",
-    RoverrovBTC = "Rover rovBTC is a liquid version of Botanix's stBTC. The rovBTC vault contract is instantly upgradable by a [3/4 multisig](https://botanixscan.io/address/0xDe46F9bF2d99F2db88440C74DC4c2A373fc9F69e). Users trust the contract owners to not implement malicious upgrades and underling assets to remain pegged 1:1 with BTC.",
+    RoverrovBTC = "Rover rovBTC is a liquid version of Botanix's stBTC. The rovBTC vault contract is instantly upgradable by a [3/4 multisig](https://botanixscan.io/address/0xDe46F9bF2d99F2db88440C74DC4c2A373fc9F69e). Users trust the contract owners to not implement malicious upgrades and the underlying assets to remain pegged 1:1 with BTC.",
     KikiIBTC = "Kiki iBTC is a liquid token representing bitcoin locked in the exSat Network. The custodian providers behind this token have not been publicly disclosed.",
     TemplateBTC = "This is a fake prop used for the template file.",
 
