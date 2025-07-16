@@ -41,7 +41,7 @@ const template: LayerProject = {
         RiskFactor.High,
         RiskFactor.High,
     ],
-    btcLocked: NaN,
+    btcLocked: 0,
     nativeToken: "bBTC",
     feeToken: "BTC",
     notice: undefined,
