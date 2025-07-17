@@ -22,7 +22,8 @@ import { generateLineViewData } from "@/util/chartUtils";
 
 interface ProcessedData {
     date: string;
-    [key: string]: string | number;
+    isRealData?: boolean;
+    [key: string]: string | number | boolean | undefined;
 }
 
 export default function LayerTVLChart() {
@@ -69,8 +70,13 @@ export default function LayerTVLChart() {
             if (existingEntry) {
                 existingEntry[tokenKey] =
                     ((existingEntry[tokenKey] as number) || 0) + item.amount;
+                existingEntry.isRealData = true; // Mark as real data
             } else {
-                acc.push({ date: itemDateUTC, [tokenKey]: item.amount });
+                acc.push({ 
+                    date: itemDateUTC, 
+                    [tokenKey]: item.amount,
+                    isRealData: true // Mark all regular data as real
+                });
             }
             return acc;
         }, []);
@@ -289,30 +295,43 @@ export default function LayerTVLChart() {
                         />
                         <ChartTooltip
                             cursor={false}
-                            content={
-                                <ChartTooltipContent
-                                    labelFormatter={(value, payload) => (
-                                        <div className="flex flex-row justify-between">
-                                            <div>
-                                                {new Date(
-                                                    value,
-                                                ).toLocaleDateString("en-US", {
-                                                    month: "short",
-                                                    day: "numeric",
-                                                    year: "numeric",
-                                                    timeZone: "UTC",
-                                                })}
+                            content={({ active, payload, label }) => {
+                                // For limited data charts, only show tooltip for real data points
+                                if (layer?.limitedData && active && payload && payload.length > 0) {
+                                    const dataPoint = payload[0].payload;
+                                    if (!dataPoint?.isRealData) {
+                                        return null; // Don't show tooltip for synthetic data
+                                    }
+                                }
+                                
+                                return (
+                                    <ChartTooltipContent
+                                        labelFormatter={(value, payload) => (
+                                            <div className="flex flex-row justify-between">
+                                                <div>
+                                                    {new Date(
+                                                        value,
+                                                    ).toLocaleDateString("en-US", {
+                                                        month: "short",
+                                                        day: "numeric",
+                                                        year: "numeric",
+                                                        timeZone: "UTC",
+                                                    })}
+                                                </div>
+                                                {payload.length > 10 && (
+                                                    <div>Top 10</div>
+                                                )}
                                             </div>
-                                            {payload.length > 10 && (
-                                                <div>Top 10</div>
-                                            )}
-                                        </div>
-                                    )}
-                                    className="w-60 max-h-60 overflow-y-hidden"
-                                    sort="desc"
-                                    limit={10}
-                                />
-                            }
+                                        )}
+                                        className="w-60 max-h-60 overflow-y-hidden"
+                                        sort="desc"
+                                        limit={10}
+                                        active={active}
+                                        payload={payload}
+                                        label={label}
+                                    />
+                                );
+                            }}
                         />
                         {sortedTokens?.map((token) => (
                             <Area

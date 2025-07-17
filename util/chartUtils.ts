@@ -1,6 +1,7 @@
 interface ProcessedData {
     date: string;
-    [key: string]: string | number;
+    isRealData?: boolean; // Mark whether this is real or synthetic data
+    [key: string]: string | number | boolean | undefined;
 }
 
 /**
@@ -13,12 +14,15 @@ export function generateLineViewData(
 ): ProcessedData[] {
     if (!originalData || originalData.length === 0) return [];
     
-    // Get the most recent data point values
-    const latestDate = originalData.reduce(
+    // Get the most recent data point values and date
+    const latestDataPoint = originalData.reduce(
         (latest, current) =>
             new Date(current.date) > new Date(latest.date) ? current : latest,
         originalData[0]
     );
+    
+    // Get all real data dates for comparison
+    const realDataDates = new Set(originalData.map(item => item.date));
     
     // Generate date range
     const now = new Date();
@@ -34,11 +38,16 @@ export function generateLineViewData(
     // Generate daily data points
     while (currentDate <= now) {
         const dateStr = currentDate.toISOString().split('T')[0];
-        const dataPoint: ProcessedData = { date: dateStr };
+        const isRealData = realDataDates.has(dateStr);
+        
+        const dataPoint: ProcessedData = { 
+            date: dateStr,
+            isRealData: isRealData
+        };
         
         // Use the latest values for each token to create a flat line
         tokens.forEach(token => {
-            dataPoint[token] = latestDate[token] || 0;
+            dataPoint[token] = latestDataPoint[token] || 0;
         });
         
         syntheticData.push(dataPoint);
