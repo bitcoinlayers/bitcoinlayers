@@ -114,6 +114,8 @@ export enum Notice {
 export enum Categorization {
     NoBridgeTitle = "The project does not have an enshrined bitcoin bridge",
     NoBridgeSnippet = "The project does not have an enshrined bitcoin bridge that meets our sidesystem standards. Our standards require sidesystem's enshinred bridge programs to have at least 5 signers with 4 of those signers being external to the project's primary development organization.",
+    MeetsStandardsTitle = "The project meets our technical standards to be considered a bitcoin sidesystem",
+    MeetsStandardsSnippet = "This project has implemented the necessary infrastructure to meet our standards for bitcoin sidesystems. It implements an official bridge program that is managed by a distributed, publicly known federation.",
 }
 
 export enum BitcoinLayer {

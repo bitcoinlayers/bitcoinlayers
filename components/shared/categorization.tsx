@@ -52,20 +52,26 @@ const Categorization: React.FC<CategorizationProps> = ({ content, layer, showBac
                     </div>
                 </div>
                 
-                {content.map((item, index) => (
-                    <div key={index} className="self-stretch">
-                        {item.title && (
-                            <div 
-                                className="body_subsection mt-3 !text-[#FF4D4F]"
-                            >
-                                {parseTextWithLinks(item.title)}
+                {content.map((item, index) => {
+                    // Determine if this is a positive or negative categorization
+                    const isPositive = item.title?.includes("meets our technical standards") || item.title?.includes("meets our standards");
+                    const titleColorClass = isPositive 
+                        ? "body_subsection mt-3 !text-[#22C55E]" // Green for positive
+                        : "body_subsection mt-3 !text-[#FF4D4F]"; // Red for negative
+                    
+                    return (
+                        <div key={index} className="self-stretch">
+                            {item.title && (
+                                <div className={titleColorClass}>
+                                    {parseTextWithLinks(item.title)}
+                                </div>
+                            )}
+                            <div className="body_paragraph !text-foreground mt-3">
+                                {parseTextWithLinks(item.content)}
                             </div>
-                        )}
-                        <div className="body_paragraph !text-foreground mt-3">
-                            {parseTextWithLinks(item.content)}
                         </div>
-                    </div>
-                ))}
+                    );
+                })}
             </section>
         </div>
     );

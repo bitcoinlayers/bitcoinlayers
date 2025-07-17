@@ -21,8 +21,10 @@ import {
     RiskSummarySnippet,
     BitcoinSecuritySnippet,
     CustodyTitle,
+    Categorization,
 } from "../props";
 import { Reviewsnippet } from "../props-layers-reviews";
+import { Alertsnippet } from "../props-layers-more-info";
 
 const template: LayerProject = {
     type: Type.Layer,
@@ -95,6 +97,7 @@ const template: LayerProject = {
                     tier: RiskFactor.High,
                     title: "BTC backing this asset is secured by a federation",
                     content: TokenSnippet.BotanixBTC,
+                    alert: Alertsnippet.BridgeStandardMet,
                 },
                     {
                         name: "Botanix Staked BTC",
