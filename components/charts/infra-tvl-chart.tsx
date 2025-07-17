@@ -17,6 +17,8 @@ import getCurrentPrices from "@/hooks/get-current-prices";
 import { formatCurrency } from "@/util/formatCurrency";
 import ChartFilters from "./chart-filters";
 import ComingSoonChart from "@/components/coming-soon-chart";
+import { allInfrastructures } from "@/util/infrastructure_index";
+import { generateLineViewData } from "@/util/chartUtils";
 
 interface ProcessedData {
     date: string;
@@ -33,6 +35,9 @@ export default function InfraTVLChart() {
     const [dateRange, setDateRange] = useQueryState("range", {
         defaultValue: "1y",
     });
+
+    // Get the infrastructure configuration
+    const infrastructure = allInfrastructures.find((infra) => infra.slug === slug);
 
     const { data } = getHistoricalSuppliesByTokenimpl({
         queryString: `?infra_slug=ilike.${slug}`,
@@ -115,6 +120,15 @@ export default function InfraTVLChart() {
         },
         [dateRange],
     );
+
+    // Determine final chart data - use line view for limited data
+    const finalChartData = useMemo(() => {
+        if (infrastructure?.limitedData && processedData.length > 0) {
+            // Generate synthetic line data for sparse data
+            return generateLineViewData(processedData, dateRange, tokens);
+        }
+        return filterDataByDateRange(processedData);
+    }, [infrastructure?.limitedData, processedData, dateRange, tokens, filterDataByDateRange]);
 
     const latestDate = processedData?.reduce(
         (latest, current) =>
@@ -244,7 +258,7 @@ export default function InfraTVLChart() {
                     className="lg:h-80 h-64 w-full watermark"
                 >
                     <AreaChart
-                        data={filterDataByDateRange(processedData)}
+                        data={finalChartData}
                         margin={{ left: 0, right: 0, top: 30, bottom: 0 }}
                     >
                         <CartesianGrid vertical={false} horizontal={false} />

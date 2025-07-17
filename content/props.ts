@@ -565,6 +565,7 @@ export interface BaseProject {
     otherIcons?: OtherIcons;
     custodyTitle?: CustodyTitle;
     bitcoinOnly: boolean;
+    limitedData?: boolean; // Show chart data as continuous line for sparse datasets
     links: { text: Site | string; url: string | URL }[];
     description: string;
     sections: ContentSection[];

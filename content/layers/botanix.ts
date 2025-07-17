@@ -46,6 +46,7 @@ const template: LayerProject = {
     feeToken: "BTC",
     notice: undefined,
     bitcoinOnly: false,
+    limitedData: true,
     links: [
         {
             text: Site.Website,
