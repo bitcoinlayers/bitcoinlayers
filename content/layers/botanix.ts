@@ -37,7 +37,7 @@ const template: LayerProject = {
     underReview: false,
     riskFactors: [
         RiskFactor.High,
-        RiskFactor.UnderReview,
+        RiskFactor.Medium,
         RiskFactor.High,
         RiskFactor.High,
     ],
@@ -68,7 +68,7 @@ const template: LayerProject = {
             url: "https://x.com/BotanixLabs",
         },
     ],
-    description: "Botanix is an EVM-compatible sidechain that is operated by a federation of node operators. The network supports an enshrined bridge program managed by the federation. Botanix is built on CometBFT consensus and has plans to add bitcoin staking in the future.",
+    description: "Botanix is an EVM-compatible sidechain that is operated by a federation. The network supports an enshrined bridge program managed by the federation. Botanix is built on CometBFT consensus and has plans to add bitcoin staking in the future.",
     riskSummary: [
         {
             title: RiskSummarySnippet.TitleFederation,
@@ -116,9 +116,9 @@ const template: LayerProject = {
         {
             category: RiskCategory.DataAvailability,
             score: 0,
-            tier: RiskFactor.UnderReview,
-            title: "We are reviewing whether solely federated, validator nodes are responsible for the data availability requriement",
-            content: `${ReviewSnippet.DAFederation}\n\nWe are reviewing if the network is able to reconstruct its state solely based on data made available by RPC nodes. Running an RPC node is permissionless.`,
+            tier: RiskFactor.Medium,
+            title: "Botanix node operators are responsible for making data available",
+            content: `${Reviewsnippet.AltL1DA}`
         },
         {
             category: RiskCategory.NetworkOperators,
@@ -131,7 +131,7 @@ const template: LayerProject = {
             category: RiskCategory.FinalityGuarantees,
             score: 0,
             tier: RiskFactor.High,
-            title: "Botanix's federation is responsible for finalizing transactions.",
+            title: "Botanix's federation is responsible for finalizing transactions",
             content: ReviewSnippet.CometBFTFinality,
         },
     ],

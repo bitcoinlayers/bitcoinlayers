@@ -14,7 +14,7 @@ export enum Reviewsnippet {
 
     EthereumRollupDA = "The data for network's state is made available by Ethereum full nodes. Anyone can run an Ethereum node and verify the state of the network.",
     AltRollupAltDA = "The data for network's state is made available by an alternative data availability layer. Users trust that this data availability layer will make the data available so the network can make progress.",
-    AltL1DA = "Data relative to the network's state is stored and made available by its full node set. Anyone can run a full node and verify the state of the network.",
+    AltL1DA = "Data relative to the network's state is stored and made available by its node operators. Anyone can run a node, keep a historical record of the network's state, and make that data available to other network participants as needed.",
     AltRollupNoDA = "The network's state is not made available by a data availability layer. Users trust the network operator(s) to maintain a record of the network's state.",
     AltL1DAPOW = "The data availability requirement is satisfied by sidechain full nodes. The network's node software is open-source, and anyone can run a full node to verify the current state of the chain.\n\nLike any sidechain, blocks can be orphaned, so miners are disincentivized to withhold data and not broadcast their blocks as they would not receive mining rewards.",
     DAConsensusNetwork = "Data is published to, and made available by, full nodes participating in an alternative consensus network. Anyone can run a node and verify the current state of the network.",
