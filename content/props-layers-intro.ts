@@ -35,6 +35,8 @@ export enum RiskSummarySnippet { //TODO: Janusz to add more here
     Collateralized = "Users are exposed to smart contract risks and potential liquidations when using this asset.",
     MultipleAssets = "This asset is backed by other BTC wrapped assets. If a reserve asset became unbacked, the two-way peg with BTC would break.",
     SlashingRisk = "This asset represents BTC staked in a staking protocol. If the corresponding BTC is slashed, users' balances could be affected.",
+    TitleNoProofs = "Bridge program(s) do not have a functional proof system",
+    RiskSummaryNoProofs = "The bridge program(s) do not have a functional proof system. A centralized proposer can submit a malicious state transition and steal funds from the bridge.",
     RiskSummary = "",
 }
 

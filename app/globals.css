@@ -173,6 +173,7 @@
         --chart-hemi: 54 82% 53%;
         --chart-fractal: 40 78% 47%;
         --chart-mezo: 342 100% 50%;
+        --chart-botanix: 42 95% 45%;
         /* Wrappers */
         /* LSTs */
         --chart-lombard-lbtc: 172 62% 51%;
@@ -236,6 +237,10 @@
         --chart-fragmetric-fragbtc: 49 100% 73%;
         --chart-21-shares-21btc: 21 100% 72%;
         --chart-zenrock-zenbtc: 234 60% 48%;
+        --chart-rover-rovbtc: 45 90% 55%;
+        --chart-botanix-stbtc: 140 60% 35%;
+        --chart-botanix-btc: 50 85% 65%;
+
         /* Staking */
         --chart-babylon-staked-btc: 27 100% 24%;
         --chart-core-staked-btc: 20 100% 67%;

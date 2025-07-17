@@ -41,7 +41,7 @@ const template: LayerProject = {
         RiskFactor.High,
         RiskFactor.High,
     ],
-    btcLocked: NaN,
+    btcLocked: 0,
     nativeToken: "bBTC",
     feeToken: "BTC",
     notice: undefined,
@@ -117,8 +117,8 @@ const template: LayerProject = {
             category: RiskCategory.DataAvailability,
             score: 0,
             tier: RiskFactor.Medium,
-            title: "Botanix's node operator set is responsible for making data available",
-            content: Reviewsnippet.AltL1DA,
+            title: "Botanix node operators are responsible for making data available",
+            content: `$Reviewsnippet.AltL1DA,`
         },
         {
             category: RiskCategory.NetworkOperators,
