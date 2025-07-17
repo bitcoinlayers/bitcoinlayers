@@ -17,6 +17,7 @@ import {
     UseCaseSnippet,
     RiskSummarySnippet,
 } from "../props";
+import { Alertsnippet } from "../props-layers-more-info";
 
 const liquid: LayerProject = {
     type: Type.Layer,
@@ -31,9 +32,9 @@ const liquid: LayerProject = {
     underReview: false,
     riskFactors: [
         RiskFactor.VeryHigh,
-        RiskFactor.Medium,
+        RiskFactor.UnderReview,
         RiskFactor.VeryHigh,
-        RiskFactor.Medium,
+        RiskFactor.UnderReview,
     ],
     btcLocked: 3834,
     nativeToken: "LBTC",
@@ -95,9 +96,10 @@ const liquid: LayerProject = {
         {
             category: RiskCategory.DataAvailability,
             score: 0,
-            tier: RiskFactor.High,
+            tier: RiskFactor.UnderReview,
             title: "Data is stored and made available by Liquid full nodes. Full nodes must connect to the network via permissioned entities",
-            content: `${ReviewSnippet.DAConsensusNetwork}\n\nLiquid full nodes must connect to bridge nodes to be able to participate in the network. [Bridge nodes](https://docs.liquid.net/docs/technical-overview#general-public) are run by Liquid federation members`
+            content: `${ReviewSnippet.DAConsensusNetwork}\n\nLiquid full nodes must connect to bridge nodes to be able to participate in the network. [Bridge nodes](https://docs.liquid.net/docs/technical-overview#general-public) are run by Liquid federation members`,
+            alert:Alertsnippet.UnderReview,
         },
         {
             category: RiskCategory.NetworkOperators,
@@ -109,9 +111,10 @@ const liquid: LayerProject = {
         {
             category: RiskCategory.FinalityGuarantees,
             score: 0,
-            tier: RiskFactor.High,
+            tier: RiskFactor.UnderReview,
             title: "Liquid blocks are finalized via Liquid full nodes. Full nodes must connect to the network via permissioned entities",
             content: `${ReviewSnippet.AltL1FinalityFederatedFullNode}\n\nLiquid full nodes must connect to bridge nodes to be able to participate in the network. [Bridge nodes](https://docs.liquid.net/docs/technical-overview#general-public) are run by Liquid federation members.`,
+            alert:Alertsnippet.UnderReview,
         },
     ],
     sections: [

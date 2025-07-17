@@ -159,4 +159,10 @@ export const Alertsnippet = { //TODO: Janusz to add more here
         content: "The network is an alternative rollup. This means it uses another blockchain for data availability. From the view of its full nodes, the rollup's state is finalized after it it validates state updates published to the data availability layer. Therefore, the network's finality assurances are that of its data availability layer (assuming the node operation is permissionless). A state root may be additionally posted to the data availability layer to finalize bridge programs, but this is not a guarantee of finality. This guarantee ensures the network's bridge programs are secure and can permit withdrawals based on the network's state. This only applies to tokens that are locked in these specific's bridge programs. See the BTC custody section for more information.",
         expandable: true,
     },
+    UnderReview: {
+        type: "info" as const,
+        title: "This section is under review",
+        content: "Due to some nuance related to this specific implementation, we are reviewing a score for this section of the review.",
+        expandable: false,
+    },
 } as const;

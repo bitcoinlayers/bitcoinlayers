@@ -118,7 +118,7 @@ const template: LayerProject = {
             score: 0,
             tier: RiskFactor.Medium,
             title: "Botanix node operators are responsible for making data available",
-            content: `$Reviewsnippet.AltL1DA,`
+            content: `${Reviewsnippet.AltL1DA}`
         },
         {
             category: RiskCategory.NetworkOperators,
