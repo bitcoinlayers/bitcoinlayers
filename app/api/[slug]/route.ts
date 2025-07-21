@@ -1,5 +1,5 @@
 import { allLayers } from "../../../util/layer_index";
-import { allInfrastructures } from "../../../util/infrastructure_index";
+import { allInfrastructures, popupOnlyInfrastructures } from "../../../util/infrastructure_index";
 
 export async function GET(
     request: Request,
@@ -14,7 +14,7 @@ export async function GET(
         );
     }
 
-    const allProjects = [...allLayers, ...allInfrastructures];
+    const allProjects = [...allLayers, ...allInfrastructures, ...popupOnlyInfrastructures];
 
     const project = allProjects.find((project) => project.slug === slug);
 

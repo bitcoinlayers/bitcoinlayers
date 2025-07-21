@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import {
     allInfrastructures,
     allInfrastructureSlugs,
+    popupOnlyInfrastructures,
 } from "@/util/infrastructure_index";
 import { EntityType } from "@/content/props";
 import InfrastructureMenu from "@/components/infrastructure/infrastructureMenu";
@@ -17,7 +18,7 @@ import ProjectContractAddresses from "@/components/project-contract-addresses";
 import ManualContractAddresses from "@/components/manual-contract-addresses";
 
 async function getInfrastructureFromSlug(slug: string) {
-    const infrastructure = allInfrastructures.find(
+    const infrastructure = [...allInfrastructures, ...popupOnlyInfrastructures].find(
         (infrastructure) => infrastructure.slug === slug,
     );
     if (!infrastructure) {

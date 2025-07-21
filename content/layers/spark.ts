@@ -12,13 +12,12 @@ import {
     RiskCategory,
     TokenSnippet,
     ReviewSnippet,
-    UseCaseSnippet,
     BitcoinSecuritySnippet,
-    TechnologySnippet,
     RiskSummarySnippet,
     BitcoinLayer,
     CustodyTitle,
 } from "../props";
+import {TechnologySnippet, Alertsnippet, UseCaseSnippet} from "../props-layers-more-info";
 
 const spark: LayerProject = {
     type: Type.Layer,
@@ -68,10 +67,6 @@ const spark: LayerProject = {
             content: RiskSummarySnippet.RiskStatechainFinality,
         },
         {
-            title: "Unilateral exits not live during beta release",
-            content: RiskSummarySnippet.RiskStatechainNoExit,
-        },
-        {
             title: "Previous owner can broadcast their unilateral exit transaction",
             content: RiskSummarySnippet.RiskStatechainPreviousOwner,
         },
@@ -85,8 +80,8 @@ const spark: LayerProject = {
             content: "",
             pegs: [
                 {
-                    name: "Spark Statechain",
-                    infrastructureSlug: "spark-btc",
+                    name: "Statechain",
+                    infrastructureSlug: "statechain",
                     score: 0,
                     tier: RiskFactor.Low,
                     title: "Users collaboratively custody funds with the statechain entity",
@@ -106,7 +101,15 @@ const spark: LayerProject = {
             score: 0,
             tier: RiskFactor.VeryHigh,
             title: "Offchain transfers are co-signed by a federation",
-            content: `${ReviewSnippet.OperatorFederatedStatechain}\n\nSpark currently has two members in its statechain entity; [Lightspark](https://www.lightspark.com/) and [Flashnet](https://www.flashnet.xyz/).`
+            content: `${ReviewSnippet.OperatorFederatedStatechain}`,
+            alert: {
+                type: "warning" as const,
+                title: "Federation is below five, publicly known entities",
+                content: "Spark currently operates with two members in its statechain entity federation: Lightspark and Flashnet. Both are publicly known companies that risk damaging their reputation if they act maliciously.",
+                linkText: "Source",
+                linkUrl: "https://docs.spark.money/home/faq#how-many-spark-operators-sos-are-there%2C-and-who-are-they%3F",
+                expandable: true,
+            },
         },
         {
             category: RiskCategory.FinalityGuarantees,
@@ -114,6 +117,7 @@ const spark: LayerProject = {
             tier: RiskFactor.VeryHigh,
             title: "Users trust a federation to delete keyshares held with previous owners",
             content: ReviewSnippet.FinalityStatechainFederation,
+            alert: Alertsnippet.StatechainKeyDeletion,
         },
     ],
     sections: [
@@ -149,7 +153,33 @@ const spark: LayerProject = {
                 },
                 {
                     title: "FROST",
-                    content: `${TechnologySnippet.FROST}\n\nSpark leverages FROST for its statechain entity. A threshold of statechain operators are needed to create a valid signature for signing events.`,
+                    content: `${TechnologySnippet.FROST}`,
+                    alert: {
+                        type: "info" as const,
+                        title: "Spark leverages FROST for its statechain entity",
+                        content: "In Spark, a threshold of statechain operators are needed to create a valid signature for signing events.",
+                        collapsible: true,
+                        buttonText: "Learn how Spark leverages FROST",
+                        expandable: false,
+                    },
+                },
+                {
+                    title: "vUTXO Splitting",
+                    content: `${TechnologySnippet.vUTXO}`,
+                                         alert: {
+                         type: "info" as const,
+                         title: "Spark calls vUTXOs 'leaves'",
+                         content: "In Spark, vUTXOs are called 'leaves'. Leaves are connected to the onchain UTXO through branches, with each leaf in the branch having their own unilateral spending path. This enables users to split their leaves into multiple denominations. To create leaves, users split their private key into multiple keyshares, that when added together, equal the value of the original private keyshare. Each of these keyshares are the user's private keyshare for an individual leaf. When a user spends (or receives) a leaf, they create a new presigned exit transaction that assigns unilateral spending paths to the unspent leaves they hold. Users should note that UTXOs split across smaller denominated Spark leaves will have increased unilateral exit costs compared to a UTXO associated with a single leaf.",
+                         collapsible: true,
+                         buttonText: "Learn how Spark leverages vUTXO splitting",
+                         expandable: false,
+                         linkText: "Learn more about leaf splitting in the Spark docs",
+                         linkUrl: "https://docs.spark.money/spark/technical-definitions",
+                     },
+                },
+                {
+                    title: "Relative timelocks",
+                    content: `Spark leverages relative timelocks to ensure that the current owner can spend their unilateral exit transaction before the previous owner.`,
                 },
             ]
         },
@@ -164,6 +194,10 @@ const spark: LayerProject = {
                 {
                     title: "Tokenized applications",
                     content: UseCaseSnippet.UTXOTokenizedApplications,
+                },
+                {
+                    title: "Lightning compatible",
+                    content: UseCaseSnippet.LightningCompatible,
                 },
             ],
         },
