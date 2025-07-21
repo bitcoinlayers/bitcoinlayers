@@ -164,14 +164,14 @@ const spark: LayerProject = {
                     },
                 },
                 {
-                    title: "vUTXO Splitting",
+                    title: "Virtual UTXOs (vUTXOs)",
                     content: `${TechnologySnippet.vUTXO}`,
                                          alert: {
                          type: "info" as const,
                          title: "Spark calls vUTXOs 'leaves'",
-                         content: "In Spark, vUTXOs are called 'leaves'. Leaves are connected to the onchain UTXO through branches, with each leaf in the branch having their own unilateral spending path. This enables users to split their leaves into multiple denominations. To create leaves, users split their private key into multiple keyshares, that when added together, equal the value of the original private keyshare. Each of these keyshares are the user's private keyshare for an individual leaf. When a user spends (or receives) a leaf, they create a new presigned exit transaction that assigns unilateral spending paths to the unspent leaves they hold. Users should note that UTXOs split across smaller denominated Spark leaves will have increased unilateral exit costs compared to a UTXO associated with a single leaf.",
+                         content: "In Spark, vUTXOs are called 'leaves'. Leaves are connected to the onchain UTXO through branches, with each leaf having their own unilateral spending path. This enables users to split their leaves into multiple denominations. To create leaves, users work with the statechain entity to create a bitcoin transaction that takes the parent UTXO as the input, and produces multiple outputs each controlled by a new key. When added together, these new keyshares equal the value of the original private keyshare. Each of these keyshares are the user's private keyshare for an individual leaf. Users can spend these leaves to new recipients or further split them into smaller denominations as needed. Users should note that leaves, which are split futher from the parent UTXO, will have increased unilateral exit costs compared to a leaf that is one branch away from the parent UTXO.",
                          collapsible: true,
-                         buttonText: "Learn how Spark leverages vUTXO splitting",
+                         buttonText: "Learn how Spark leverages vUTXOs and splits them",
                          expandable: false,
                          linkText: "Learn more about leaf splitting in the Spark docs",
                          linkUrl: "https://docs.spark.money/spark/technical-definitions",
