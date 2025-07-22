@@ -94,7 +94,7 @@ const spark: LayerProject = {
             score: 0,
             tier: RiskFactor.Low,
             title: "Data related to current UTXO ownership is held client-side",
-            content: "Transaction data is self-hosted. The statechain entity signs individual transactions and users store data for their keyshare and unilateral exit path client-side.\n\nThe statechain entity also keeps a record of transfer history.",
+            content: "Transaction data is self-hosted. The statechain entity signs individual transactions and users store data for their keyshare and unilateral exit path client-side. The statechain entity also keeps a record of transfer history.",
         },
         {
             category: RiskCategory.NetworkOperators,
@@ -169,7 +169,7 @@ const spark: LayerProject = {
                                          alert: {
                          type: "info" as const,
                          title: "Spark calls vUTXOs 'leaves'",
-                         content: "In Spark, vUTXOs are called 'leaves'. Leaves are connected to the onchain UTXO through branches, with each leaf having their own unilateral spending path. This enables users to split their leaves into multiple denominations. To create leaves, users work with the statechain entity to create a pre-signed, bitcoin transaction that takes the parent UTXO as the input, and produces multiple outputs each controlled by a new key. These keyshares are split from the previous private key.Users can spend these leaves to new recipients or further split them into smaller denominations as needed. Users should note that leaves, which are split futher from the parent UTXO, will have increased unilateral exit costs compared to a leaf that is one branch away from the parent UTXO.",
+                         content: "In Spark, vUTXOs are called 'leaves'. Leaves are connected to the onchain UTXO through branches, with each leaf having their own unilateral spending path. This enables users to split their leaves into multiple denominations. To create leaves, users work with the statechain entity to create a pre-signed, bitcoin transaction that takes the parent UTXO as the input, and produces multiple outputs each controlled by a new key. These keyshares are split from the previous private key. Users can spend these leaves to new recipients or further split them into smaller denominations as needed. Users should note that leaves, which are split futher from the parent UTXO, will have increased unilateral exit costs compared to a leaf that is one branch away from the parent UTXO.",
                          collapsible: true,
                          buttonText: "Learn how Spark leverages vUTXOs and splits them",
                          expandable: false,
