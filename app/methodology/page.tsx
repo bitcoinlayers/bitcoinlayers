@@ -26,8 +26,7 @@ const Methodology: React.FC = () => {
     <ul>
         <li>🟢 Green must match one of the following conditions:</li>
         <ul>
-                <li>Users can contest a dispute in the final state with a counterparty and claim their assets on the L1</li>
-                <li>Bitcoin can verify changes to the offchain systems directly when users’ offchain balances are updated, permitting withdrawals when users want to leave the system</li>
+                <li>Users can unilaterally exit the protocol with a Bitcoin L1 transaction</li>
             </ul>
             </li>
         <br />
@@ -52,10 +51,8 @@ const Methodology: React.FC = () => {
         <br />
         <li>Additional considerations:</li>
         <ul>
-                <li>Layers that finalize to a parent blockchain must consider their exit window. For rollups, we follow <a href="https://forum.l2beat.com/t/the-risk-rosette-framework/292" target="_blank" rel="noopener noreferrer">L2Beat’s suggestions on exit windows</a>. These exit window scores overrule any other score related to the two-way peg. For example: If a rollup-style layer leverages tBTC (a yellow or red score) to natively mint bitcoin-backed tokens, but has an immediately upgradeable contract, then the layer will receive a “Very High” score in the assessment.</li>
-                <li>Due to complexities related to federated set ups, we will additionally highlight more granular trust assumptions for federated two-way pegs in a subsection of the review. In this upcoming framework, we will outline how a federated peg can be upgraded to yellow if it meets a certain threshold of requirements.</li>
-                <li>We can assign custom scores for edge cases. For example, users of Statechains can unilaterally exit with a Bitcoin L1 transaction, but an operator can steal funds by colluding with the past owner, and users cannot submit a challenge transaction.</li>
-                <li>We refer to two-way pegs, lightning channels, and other mechanisms to lock bitcoin into an offchain system as "two-way pegs". We may refer to them as bridges if related to a sidesystem or alternative layer 1. We also review all two-way pegs backing tokenized forms of BTC on the respective protocol.</li>
+                <li>If the custody mechanism is upgradeable, the score is analyzed based on the signers who can upgrade. We will assess timelocks when applicable.</li>
+                <li>If the protocol sees a user maintain custody, but does not support unilateral exits, the score is degraded to yellow.</li>
             </ul>
         </li>
         </ul>
@@ -66,14 +63,13 @@ const Methodology: React.FC = () => {
         <li>🟢 Green must match one of the following conditions:</li>
         <ul>
                 <li>All data needed to reconstruct the layer’s state lives on the bitcoin L1 and is accessible via full nodes</li>
-                <li>Data is self hosted by default and users are required to store data relative to their own state</li>
+                <li>Data is self hosted by default and users are required to store data relative to their own state and/or unilateral exit transactions</li>
             </ul>
             </li>
         <br />
         <li>🟡 Yellow must match one of the following conditions:</li>
         <ul>
                 <li>Data is made available by an alternative consensus protocol (that is not bitcoin) and the full node software is open-source</li>
-                <li>Data is stored via an offchain committee or consensus protocol, where validators stake slashable collateral greater than value locked in the layer and DA attestations are backed by this economic security</li>
             </ul>
             </li>
         <br />
@@ -96,20 +92,20 @@ const Methodology: React.FC = () => {
 <ul>
         <li>🟢 Green must match one of the following conditions:</li>
         <ul>
-                <li>Users can self-sequence their own transactions</li>
+                <li>Users can transact in a peer-to-peer manner.</li>
             </ul>
             </li>
         <br />
         <li>🟡 Yellow must match one of the following conditions:</li>
         <ul>
-                <li>The validator (aka network operator) node software is open-source, anyone can become a validator in a (at least) minimally permissioned (e.g. proof of stake) way</li>
+                <li>The network operator node software is open-source, anyone can become a validator in a (at least) minimally permissioned (e.g. proof of stake) way</li>
                 <li>The layer is merge-mined with bitcoin and secured by greater than 50% of hashrate</li>
             </ul>
             </li>
         <br />
         <li>🔴 Red:</li>
         <ul>
-                <li>The layer is operated by a validator set of at least 5 externally, publicly known operators</li>
+                <li>The layer is operated by an operator set of at least 5 externally, publicly known operators</li>
             </ul>
             </li>
         <br />
@@ -118,6 +114,11 @@ const Methodology: React.FC = () => {
                 <li>Doesn’t meet the criteria for any other rating in this section</li>
             </ul>
             </li>
+             <li>Additional considerations:</li>
+        <ul>
+                <li>We will assess sidesystem network's that enable self-sequencing, in the context of bitcoin, when applicable.</li>
+            </ul>
+        </li>
         <br />
         </ul>
 `;
@@ -126,20 +127,20 @@ const Methodology: React.FC = () => {
     <ul>
         <li>🟢 Green must match one of the following conditions:</li>
         <ul>
-                <li>Layer's consensus is constructed in a way that operators (including users in P2P network) must build on a state root, or state commitment, posted to bitcoin</li>
-                <li>Layer transactions happen atomically and cannot reorg</li>
+                <li>The network finalizes its state based on data posted to bitcoin</li>
+                <li>Users maintain, a periodic, provable assurance that they are the only party that can spend their funds</li>
             </ul>
             </li>
         <br />
         <li>🟡 Yellow must match one of the following conditions:</li>
         <ul>
-                <li>Settlement guarantees come from a permissionless, alternative consensus network operated by at least 5 externally, publicly known operators</li>
+                <li>Transaction finality is provided by an alternative consensus network</li>
             </ul>
             </li>
         <br />
         <li>🔴 Red:</li>
         <ul>
-                <li>Layer finality guarantees come from a federated system</li>
+                <li>Finality guarantees come from a federated system</li>
             </ul>
             </li>
         <br />
@@ -151,39 +152,18 @@ const Methodology: React.FC = () => {
         <br />
         <li>Additional considerations:</li>
         <ul>
-                <li>If all transactions are finalized offchain, and the sidesystem’s initiation and closure transactions are finalized by the bitcoin L1, but there is no challenge mechanism to dispute an operator, then it is likely a yellow score.</li>
+                <li>Single-sequenced networks that post state roots to bitcoin, but who's bridge programs do not finalized based on this state, are degraded to yellow.</li>
                 </ul>
         </li>
         </ul>
 `;
 
-    const additionalQuestionsBody = `
-        <p>In addition to performing this assessment, we additionally have a “bitcoin security” section where we cover:</p>
-        <ul>
-                <li>If the protocol inherits security from bitcoin</li>
-                <li>If the protocol needs an alternative token to function</li>
-                <li>If the protocol introduces MEV to bitcoin</li>
-                <li>If the protocol contributes to bitcoin’s security budget</li>
-            </ul>
-        <p>We also cover areas related to various technologies used, and potential use cases.</p>
-`;
-
-    const additionalContextBody = `
-    <p>Some context related to risks with certain protocols may not be covered directly in our risk assessment. This can be covered in an 'additional considerations' section that outlines relevant information. An example of this could be acknowledging that the majority of Lightning Network adoption is by way of custodial providers.</p>
-`;
-
-    const criticalRiskAcknowledgementBody = `
-    <p>If we cannot verify a specific category in this assessment (e.g. some aspect of the code is not source-viewable), then we automatically assign it a "Stop" score. If the mainnet node implementation is not source-viewable, we do not include the project on the site.</p>
-`;
-
     const summaryBody = `
-    <p>This framework can be easier to customize and provide more nuance given the number of scaling solutions that are present in bitcoin today. For example, related to block production/network operators, we can add even more scoring mechanisms based on how decentralized the network is. E.g. A network with 200 validators is better than a network with 10, and we can customize the assessment to highlight this.</p>
+    <p>Individual categories are analyzed in isolation of each other. A poor score in one category does not affect a score in another category.</p>
     <br />
-    <p>This risk assessment is an initial starting point to analyze bitcoin scaling protocols. It is a living document and is subject to change.</p>
+    <p>This risk assessment is a living document and is subject to change.</p>
     <br />
-    <p>Bitcoin does not have a unified scaling roadmap. There are tradeoffs with every protocol being implemented to support bitcoin scaling. This framework hopes to capture some of the nuance related to the various designs being proposed.</p>
-    <br />
-    <p>If you have comments on this framework, please consider joining our <a href="https://t.me/+8rv-1I2gkmQ4ZmJh" target="_blank" rel="noopener noreferrer">community chat</a> to discuss. You can also add comments or feedback <a href="https://bitcoinlayers.discourse.group/t/updating-the-bitcoin-layers-framework/11" target="_blank" rel="noopener noreferrer">here</a>.</p>
+    <p>If you have comments on this framework, please consider joining our <a href="https://t.me/+8rv-1I2gkmQ4ZmJh" target="_blank" rel="noopener noreferrer">community chat</a> to discuss.</p>
 `;
 
     return (
@@ -191,7 +171,7 @@ const Methodology: React.FC = () => {
             <div className="flex flex-col justify-start items-start gap-8">
                 <div className="w-full pt-8">
                     <div className="special_header sm:leading-[80px] text-8xl lg:text-10xl font-light">
-                        Approach to analyzing layers
+                        Framework
                     </div>
                 </div>
                 <div className="flex flex-col gap-8 w-full">
@@ -200,38 +180,26 @@ const Methodology: React.FC = () => {
                             <div className="rounded-xl border border-border flex flex-col justify-center items-start gap-4 p-8">
                                 <div className="flex flex-col gap-3 cursor-pointer">
                                     <div className="text-xl font-light leading-9">
-                                        This is the framework we use to analyze
-                                        sidechains, L2s and other scaling
-                                        protocols
+                                        Bitcoin Layers Framework
                                     </div>
                                     <div className="text-base font-normal leading-normal">
                                         The Bitcoin Layers risk assessment is
                                         broken down into four sections. They
                                         cover BTC Custody, Data Availability,
-                                        Network Operators, and Settlement
-                                        Assurance (Finality Guarantees). The
-                                        assessments also include more granular
-                                        reviews of specific areas. For example,
-                                        if the chain uses a federated two-way
-                                        peg, an additional assessment on the
-                                        security related to that peg can be
-                                        performed.
+                                        Network Operators, and Finality Guarantees.
                                         <br />
                                         <br /> This assessment is not reflective
                                         of L2 or sidesystem security. It is not
-                                        a security audit. It is an assessment
-                                        that outlines the varying degree of
-                                        trust assumptions that users have to
-                                        take on when interacting with a bitcoin
-                                        sidesystem.
+                                        a security audit. It is an opinionated assessment
+                                        covering the trust assumptions related to specific
+                                        system.
                                         <br />
                                         <br />
                                         Protocols are divided into three
                                         categories; bitcoin native, sidesystems,
-                                        and alternative chains. Bitcoin native
-                                        protocols and sidesystems are bitcoin
-                                        layers. For a project to be considered a
-                                        bitcoin layer, they must meet our
+                                        and alternative chains. For a project to be 
+                                        considered a
+                                        bitcoin layer or sidesystem, they must meet our
                                         technical requirements listed&nbsp;
                                         <a
                                             href="https://www.lxresearch.co/starting-to-define-layers-a-year-later/"
@@ -261,18 +229,6 @@ const Methodology: React.FC = () => {
                             <InfoBox
                                 title="Finality Guarantees"
                                 body={settlementAssuranceBody}
-                            />
-                            <InfoBox
-                                title="Additional Questions"
-                                body={additionalQuestionsBody}
-                            />
-                            <InfoBox
-                                title="Additional Context"
-                                body={additionalContextBody}
-                            />
-                            <InfoBox
-                                title="Critical Risk Acknowledgement"
-                                body={criticalRiskAcknowledgementBody}
                             />
                             <InfoBox title="Summary" body={summaryBody} />
                         </div>
