@@ -138,7 +138,7 @@ const DonationsPage: React.FC = () => {
                     <div className="flex flex-col gap-12 w-full rounded-md">
                         <div className="flex flex-col gap-8 w-full">
                             <InfoBox
-                                question="Further Disclaimers and Acknowledgements"
+                                question="Further Disclaimers"
                                 answer={`Bitcoin Layers was previously funded through venture capital investments. The company who received those investments no longer contributes to Bitcoin Layers in an official capacity, and none of its funding is used to support Bitcoin Layers.`}
                             />
                         </div>
