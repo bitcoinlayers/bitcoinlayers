@@ -119,11 +119,11 @@ const DonationsPage: React.FC = () => {
                                                 <tbody>
                                                     <tr className="border-b border-border/50">
                                                         <td className="py-2 pr-4 font-medium">Babylon Foundation</td>
-                                                        <td className="py-2">Bitcoin Layers&apo; validator delegation (discontinued)</td>
+                                                        <td className="py-2">Bitcoin Layers' validator delegation (discontinued)</td>
                                                     </tr>
                                                     <tr>
                                                         <td className="py-2 pr-4 font-medium">Build on BOB</td>
-                                                        <td className="py-2">Bitcoin Layers&apo; staking dashboard (discontinued)</td>
+                                                        <td className="py-2">Bitcoin Layers' staking dashboard (discontinued)</td>
                                                     </tr>
                                                 </tbody>
                                             </table>
