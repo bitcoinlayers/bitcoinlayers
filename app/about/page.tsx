@@ -89,7 +89,7 @@ const DonationsPage: React.FC = () => {
                         <div className="flex flex-col gap-8 w-full">
                             <InfoBox
                                 question="About Bitcoin Layers"
-                                answer={`Thank you for supporting Bitcoin Layers' mission to ensure that users and developers alike understand the tradeoffs for the growing bitcoin scaling ecosystem.\n\nBitcoin Layers is an open-source, public goods dashboard that covers trust assumptions related to bitcoin L2s, other scaling protocols, and wrapped versions of bitcoin on alternative blockchains. The project is funded through grants and donations. We will be accepting more donations and grants in the future.\n\nThe project is actively maintained by a lone contributor, Janusz. If you'd like to donate to Janusz individually, please see his [personal website](https://janusz.cash).`}
+                                answer={`Thank you for supporting Bitcoin Layers&apos; mission to ensure that users and developers alike understand the tradeoffs for the growing bitcoin scaling ecosystem.\n\nBitcoin Layers is an open-source, public goods dashboard that covers trust assumptions related to bitcoin L2s, other scaling protocols, and wrapped versions of bitcoin on alternative blockchains. The project is funded through grants and donations. We will be accepting more donations and grants in the future.\n\nThe project is actively maintained by a lone contributor, Janusz. If you&apos;d like to donate to Janusz individually, please see his [personal website](https://janusz.cash).`}
                             />
                         </div>
                     </div>
@@ -119,11 +119,11 @@ const DonationsPage: React.FC = () => {
                                                 <tbody>
                                                     <tr className="border-b border-border/50">
                                                         <td className="py-2 pr-4 font-medium">Babylon Foundation</td>
-                                                        <td className="py-2">Bitcoin Layers' validator delegation (discontinued)</td>
+                                                        <td className="py-2">Bitcoin Layers&apos; validator delegation (discontinued)</td>
                                                     </tr>
                                                     <tr>
                                                         <td className="py-2 pr-4 font-medium">Build on BOB</td>
-                                                        <td className="py-2">Bitcoin Layers' staking dashboard (discontinued)</td>
+                                                        <td className="py-2">Bitcoin Layers&apos; staking dashboard (discontinued)</td>
                                                     </tr>
                                                 </tbody>
                                             </table>
@@ -149,7 +149,7 @@ const DonationsPage: React.FC = () => {
                         <div className="flex flex-col gap-8 w-full">
                             <InfoBox
                                 question="Additional Acknowledgements"
-                                answer={`Current Bitcoin Layers' contributors would like to individually thank Red Sheehan (Lemondrop), Michael Boland (Lemondrop), Orkun Kilic (Citrea), Alexei Zamayatin (B.O.B), Tyler Evans (UTXO Management), and John Light (Alpen Labs) for their roles in bootstrapping Bitcoin Layers and supporting its initial development.\n\nWe'd also like to thank all previous contributors who have supported the project. You can find the full list [here](https://github.com/bitcoinlayers/bitcoinlayers/graphs/contributors).`}
+                                answer={`Current Bitcoin Layers&apos; contributors would like to individually thank Red Sheehan (Lemondrop), Michael Boland (Lemondrop), Orkun Kilic (Citrea), Alexei Zamayatin (B.O.B), Tyler Evans (UTXO Management), and John Light (Alpen Labs) for their roles in bootstrapping Bitcoin Layers and supporting its initial development.\n\nWe&apos;d also like to thank all previous contributors who have supported the project. You can find the full list [here](https://github.com/bitcoinlayers/bitcoinlayers/graphs/contributors).`}
                             />
                         </div>
                     </div>
