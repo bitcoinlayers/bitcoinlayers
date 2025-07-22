@@ -27,18 +27,14 @@ const statechain: InfrastructureProject = {
     underReview: false,
     riskFactors: ["", ""],
     nativeToken: "BTC",
-    purpose: Purpose.General,
+    purpose: Purpose.BitcoinNative,
     associatedLayers: "spark, mercurylayer",
     notice: undefined,
     bitcoinOnly: true,
     links: [
         {
-            text: Site.Website,
-            url: "https://github.com/RubenSomsen/rubensomsen.github.io/blob/master/img/statechains.pdf",
-        },
-        {
             text: Site.Docs,
-            url: "https://medium.com/@RubenSomsen/statechains-non-custodial-off-chain-bitcoin-transfer-1ae4845a4a39",
+            url: "https://docs.spark.money/spark/technical-definitions",
         },
     ],
     description:
@@ -74,7 +70,7 @@ const statechain: InfrastructureProject = {
             tier: "",
             title: "Users collaboratively custody funds with the statechain entity",
             content:
-                "UTXOs are collaboratively held in a 2-2 multisig (or 2-2 MPC scheme) between the user and the statechain entity. To immediately spend the UTXO, both parties are needed to sign a transaction. However, during the deposit process, both parties co-sign a pre-signed exit transaction that can be used by the user to spend the UTXO if the statechain entity were to become unresponsive.",
+                "UTXOs are collaboratively held in a 2-2 multisig (or 2-2 MPC scheme) between the user and the statechain entity. To immediately spend the UTXO, both parties are needed to sign a transaction. However, during the deposit process, both parties co-sign a pre-signed exit transaction that can be used by the user to spend the UTXO if the statechain entity were to become unresponsive. Please see specific implementation reviews to learn if unilateral exit is possible.",
         },
         {
             category: AssessmentCategory.ProofofOwnership,

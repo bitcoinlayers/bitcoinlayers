@@ -21,6 +21,7 @@ export enum Purpose {
     EcashMint = "Ecash Mint",
     FederatedEcashMint = "Federated Ecash Mint",
     Staking = "Staking",
+    BitcoinNative = "Offchain UTXO transfers",
 }
 
 export enum RiskFactor {
