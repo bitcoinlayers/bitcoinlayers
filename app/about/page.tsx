@@ -106,7 +106,7 @@ const DonationsPage: React.FC = () => {
                                 <div className="flex flex-col justify-center items-start gap-8 w-full">
                                     <div className="flex flex-col justify-start items-start gap-2 w-full">
                                         <div className="text-base font-normal leading-normal mb-4">
-                                            Bitcoin Layers is a public goods platform that is funded by bitcoin ecosystem participants. For transparency, we are providing the project's funding sources below:
+                                            Bitcoin Layers is a public goods platform that is funded by bitcoin ecosystem participants. For transparency, we are providing the project&apos;s funding sources below:
                                         </div>
                                         <div className="w-full overflow-x-auto">
                                             <table className="w-full border-collapse">

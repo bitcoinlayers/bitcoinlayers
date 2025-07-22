@@ -62,7 +62,7 @@ const Methodology: React.FC = () => {
 <ul>
         <li>🟢 Green must match one of the following conditions:</li>
         <ul>
-                <li>All data needed to reconstruct the layer’s state lives on the bitcoin L1 and is accessible via full nodes</li>
+                <li>All data needed to reconstruct the layer&apos;s state lives on the bitcoin L1 and is accessible via full nodes</li>
                 <li>Data is self hosted by default and users are required to store data relative to their own state and/or unilateral exit transactions</li>
             </ul>
             </li>
@@ -116,7 +116,7 @@ const Methodology: React.FC = () => {
             </li>
              <li>Additional considerations:</li>
         <ul>
-                <li>We will assess sidesystem network's that enable self-sequencing, in the context of bitcoin, when applicable.</li>
+                <li>We will assess sidesystem network&apos;s that enable self-sequencing, in the context of bitcoin, when applicable.</li>
             </ul>
         </li>
         <br />
@@ -152,7 +152,7 @@ const Methodology: React.FC = () => {
         <br />
         <li>Additional considerations:</li>
         <ul>
-                <li>Single-sequenced networks that post state roots to bitcoin, but who's bridge programs do not finalized based on this state, are degraded to yellow.</li>
+                <li>Single-sequenced networks that post state roots to bitcoin, but who&apos;s bridge programs do not finalized based on this state, are degraded to yellow.</li>
                 </ul>
         </li>
         </ul>
