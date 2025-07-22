@@ -32,14 +32,14 @@ const Methodology: React.FC = () => {
         <br />
         <li>🟡 Yellow must match one of the following conditions:</li>
         <ul>
-                <li>The bridge is managed by an alternative consensus mechanism that is financially incentivized not to steal</li>
-                <li>The bridge is managed by an alternative consensus mechanism where anyone can challenge malicious withdrawal requests</li>
+                <li>The two-way peg is managed by an alternative consensus mechanism that is financially incentivized not to steal</li>
+                <li>The two-way peg is managed by a mechanism where anyone can become a watchtower to challenge malicious withdrawal requests</li>
             </ul>
             </li>
         <br />
         <li>🔴 Red:</li>
             <ul>
-                <li>The bridge is managed by at least 5 publicly known signers, who are external to the organization building the layer.</li>
+                <li>The the two-way peg is managed by at least 5 publicly known signers, who are external to the organization building the network.</li>
             </ul>
             </li>
         <br />
