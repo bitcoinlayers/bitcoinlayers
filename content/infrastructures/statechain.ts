@@ -76,7 +76,7 @@ const statechain: InfrastructureProject = {
             category: AssessmentCategory.ProofofOwnership,
             score: 0,
             tier: "",
-            title: "Users trust statechain entity to delete keyshares it held with a previous owner",
+            title: "There is no proof of outright ownership. Users trust statechain entity to delete keyshares it held with a previous owner",
             content:
                 "Users have no provable assurance that they are the only party immediately able to spend a Bitcoin UTXO with the statechain entity. Because statechain transfers see a user send their private keyshare for a UTXO to a recipient, the statechain entity must delete their keyshare held with previous owners. This is to ensure that the only parties able to immediately spend the UTXO are the recipient and the statechain entity. There is no way to prove key deletion, so users explicitly trust the statechain entity to act honestly and delete all keyshares it held with previous owners.",
         },

@@ -97,7 +97,7 @@ export const Alertsnippet = { //TODO: Janusz to add more here
     StatechainKeyDeletion: {
         type: "warning" as const,
         title: "Statechain entity cannot prove key deletion",
-        content: "In statechains, there is no way to cryptographically prove that a statechain entity has deleted a keyshare it held with a previous owner. Users must trust the statechain entity to act honestly. If the statechain does not delete previously held keyshares, it can double spend the current owner. This effectively means that users do not have provable assurances that they are the only party that can immediatetly spend the onchain UTXO with the statechain entity.",
+        content: "In statechains, there is no way to cryptographically prove that a statechain entity has deleted a keyshare it held with a previous owner. Users must trust the statechain entity to act honestly. If the statechain does not delete previously held keyshares, then the current owner is not the unilateral owner of the funds, and the statechain entity and a previous owner can double spend them. This effectively means that users do not have provable assurances that they are the only party that can immediatetly spend the UTXO with the statechain entity.",
         expandable: true,
     },
     AltRollupAltTokenNoFraudProofsPlusUpgrade: {
