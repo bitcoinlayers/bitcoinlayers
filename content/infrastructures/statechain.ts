@@ -90,7 +90,7 @@ const statechain: InfrastructureProject = {
             tier: "",
             title: "Users can unilaterally exit from the Statechain if the service provider becomes unresponsive",
             content:
-                "Because all Statechain UTXOs have pre-signed unilateral exit transactions, users can exit the protocol if the statechain entity becomes unresponsive.",
+                "Because all Statechain UTXOs have pre-signed unilateral exit transactions, users can exit the protocol if the statechain entity becomes unresponsive. Users must note that all previous owners can unilaterally exit, so they must publish their exit path on chain to ensure they retain access to their funds. Statechain implementations should implement timelocks to ensure that the current owner can spend their unilateral exit transaction before any previous owner.",
         },
     ],
 };

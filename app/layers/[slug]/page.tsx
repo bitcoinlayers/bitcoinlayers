@@ -12,6 +12,7 @@ import RiskSummary from "@/components/shared/risk-summary";
 import Categorization from "@/components/shared/categorization";
 import AlternativeBanner from "@/components/alternative-banner";
 import UnderReviewWrapper from "@/components/under-review-wrapper";
+import KnowledgeBitsFooter from "@/components/layer/knowledge-bits-footer";
 import { EntityCategory, EntityType } from "@/content/props";
 
 function getLayerFromSlug(slug: string) {
@@ -32,6 +33,16 @@ export default async function LayerPage(props: {
     if (!layer) {
         return notFound();
     }
+
+    // Extract knowledge bits from sections for the footer
+    const knowledgeBitsSection = layer.sections.find(section => section.id === "knowledgebits" || section.id === "knowledgeBits");
+    const knowledgeBits = knowledgeBitsSection?.content || [];
+
+    // Create a modified layer without knowledge bits for LayerBody
+    const layerWithoutKnowledgeBits = {
+        ...layer,
+        sections: layer.sections.filter(section => section.id !== "knowledgebits" && section.id !== "knowledgeBits")
+    };
 
     return (
         <article className="flex flex-col lg:min-h-screen max-w-5xl mx-auto lg:pt-0 pt-12">
@@ -196,8 +207,11 @@ export default async function LayerPage(props: {
                         
                         {/* Layer Body - only show if not partial review */}
                         {!layer.partialReview && (
-                            <LayerBody layer={layer} />
+                            <LayerBody layer={layerWithoutKnowledgeBits} />
                         )}
+                        
+                        {/* Knowledge Bits Footer - always show if knowledge bits exist */}
+                        <KnowledgeBitsFooter knowledgeBits={knowledgeBits} />
                     </div>
                 </div>
             </UnderReviewWrapper>
