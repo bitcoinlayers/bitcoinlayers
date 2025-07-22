@@ -13,11 +13,11 @@ import {
     TokenSnippet,
     ReviewSnippet,
     BitcoinSecuritySnippet,
-    RiskSummarySnippet,
     BitcoinLayer,
     CustodyTitle,
 } from "../props";
 import {TechnologySnippet, Alertsnippet, UseCaseSnippet} from "../props-layers-more-info";
+import { RiskSummarySnippet } from "../props-layers-intro";
 
 const spark: LayerProject = {
     type: Type.Layer,
