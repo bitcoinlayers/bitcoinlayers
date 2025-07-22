@@ -89,7 +89,7 @@ const DonationsPage: React.FC = () => {
                         <div className="flex flex-col gap-8 w-full">
                             <InfoBox
                                 question="About Bitcoin Layers"
-                                answer={`Thank you for supporting Bitcoin Layers'; mission to ensure that users and developers alike understand the tradeoffs for the growing bitcoin scaling ecosystem.\n\nBitcoin Layers is an open-source, public goods dashboard that covers trust assumptions related to bitcoin L2s, other scaling protocols, and wrapped versions of bitcoin on alternative blockchains. The project is funded through grants and donations. We will be accepting more donations and grants in the future.\n\nThe project is actively maintained by a lone contributor, Janusz. If you'd like to donate to Janusz individually, please see his [personal website](https://janusz.cash).`}
+                                answer={`Thank you for supporting Bitcoin Layers' mission to ensure that users and developers alike understand the tradeoffs for the growing bitcoin scaling ecosystem.\n\nBitcoin Layers is an open-source, public goods dashboard that covers trust assumptions related to bitcoin L2s, other scaling protocols, and wrapped versions of bitcoin on alternative blockchains. The project is funded through grants and donations. We will be accepting more donations and grants in the future.\n\nThe project is actively maintained by a lone contributor, Janusz. If you'd like to donate to Janusz individually, please see his [personal website](https://janusz.cash).`}
                             />
                         </div>
                     </div>
