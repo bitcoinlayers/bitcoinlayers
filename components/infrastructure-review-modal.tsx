@@ -9,6 +9,8 @@ import ProjectLinks from "@/components/project-links";
 import RiskSummary from "@/components/shared/risk-summary";
 import RiskAnalysis from "@/components/layer/risk-analysis/infra-container";
 import UnderReviewModalContent from "@/components/under-review-modal-content";
+import SectionAlertComponent from "@/components/section-alert";
+import { popupOnlyInfrastructures } from "@/util/infrastructure_index";
 
 interface InfrastructureReviewModalProps {
     infrastructureSlug: string;
@@ -21,7 +23,22 @@ const InfrastructureReviewModal: React.FC<InfrastructureReviewModalProps> = ({
     triggerText,
     infrastructure,
 }) => {
+    // Check if this is a popup-only infrastructure (no full review page)
+    const isPopupOnly = infrastructure ? 
+        popupOnlyInfrastructures.some(popupInfra => popupInfra.slug === infrastructure.slug) : 
+        popupOnlyInfrastructures.some(popupInfra => popupInfra.slug === infrastructureSlug);
     if (!infrastructure) {
+        // For popup-only infrastructures, don't show any link since there's no full review page
+        if (isPopupOnly) {
+            return (
+                <div className="mt-2 text-right">
+                    <span className="font-semibold text-muted-foreground">
+                        {triggerText} (No full review available)
+                    </span>
+                </div>
+            );
+        }
+        
         return (
             <div className="mt-2 text-right">
                 <a
@@ -77,15 +94,17 @@ const InfrastructureReviewModal: React.FC<InfrastructureReviewModalProps> = ({
                                     </div>
                                 </div>
                                 <div className="flex items-center gap-3">
-                                    <a
-                                        href={`/infrastructure/${infrastructure.slug}`}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
-                                    >
-                                        View full review & data
-                                        <ExternalLinkIcon className="w-4 h-4" />
-                                    </a>
+                                    {!isPopupOnly && (
+                                        <a
+                                            href={`/infrastructure/${infrastructure.slug}`}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+                                        >
+                                            View full review & data
+                                            <ExternalLinkIcon className="w-4 h-4" />
+                                        </a>
+                                    )}
                                     <DialogClose asChild>
                                         <Button
                                             variant="ghost"
@@ -182,6 +201,11 @@ const InfrastructureReviewModal: React.FC<InfrastructureReviewModalProps> = ({
                                                         <div className="body_paragraph !text-foreground">
                                                             {parseTextWithLinks(content.content)}
                                                         </div>
+                                                        {content.alert && (
+                                                            <div className="mt-4">
+                                                                <SectionAlertComponent alert={content.alert} />
+                                                            </div>
+                                                        )}
                                                     </div>
                                                 ))}
                                             </div>

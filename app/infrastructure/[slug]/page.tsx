@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import {
     allInfrastructures,
     allInfrastructureSlugs,
+    popupOnlyInfrastructures,
 } from "@/util/infrastructure_index";
 import { EntityType } from "@/content/props";
 import InfrastructureMenu from "@/components/infrastructure/infrastructureMenu";
@@ -15,9 +16,10 @@ import UnderDevelopmentBanner from "@/components/under-development-banner";
 import UnderReviewWrapper from "@/components/under-review-wrapper";
 import ProjectContractAddresses from "@/components/project-contract-addresses";
 import ManualContractAddresses from "@/components/manual-contract-addresses";
+import KnowledgeBitsFooter from "@/components/layer/knowledge-bits-footer";
 
 async function getInfrastructureFromSlug(slug: string) {
-    const infrastructure = allInfrastructures.find(
+    const infrastructure = [...allInfrastructures, ...popupOnlyInfrastructures].find(
         (infrastructure) => infrastructure.slug === slug,
     );
     if (!infrastructure) {
@@ -36,6 +38,16 @@ export default async function InfrastructurePage(props: {
     if (!infrastructure) {
         return notFound();
     }
+
+    // Extract knowledge bits from sections for the footer
+    const knowledgeBitsSection = infrastructure.sections.find(section => section.id === "knowledgebits" || section.id === "knowledgeBits");
+    const knowledgeBits = knowledgeBitsSection?.content || [];
+
+    // Create a modified infrastructure without knowledge bits for InfrastructureBody
+    const infrastructureWithoutKnowledgeBits = {
+        ...infrastructure,
+        sections: infrastructure.sections.filter(section => section.id !== "knowledgebits" && section.id !== "knowledgeBits")
+    };
 
     return (
         <>
@@ -166,8 +178,11 @@ export default async function InfrastructurePage(props: {
                             
                             {/* Infrastructure Body - only show if not partial review */}
                             {!infrastructure.partialReview && (
-                                <InfrastructureBody infrastructure={infrastructure} />
+                                <InfrastructureBody infrastructure={infrastructureWithoutKnowledgeBits} />
                             )}
+                            
+                            {/* Knowledge Bits Footer - always show if knowledge bits exist */}
+                            <KnowledgeBitsFooter knowledgeBits={knowledgeBits} />
                         </div>
                     </div>
                 </UnderReviewWrapper>

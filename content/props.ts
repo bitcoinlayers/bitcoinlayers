@@ -21,6 +21,7 @@ export enum Purpose {
     EcashMint = "Ecash Mint",
     FederatedEcashMint = "Federated Ecash Mint",
     Staking = "Staking",
+    BitcoinNative = "Offchain UTXO transfers",
 }
 
 export enum RiskFactor {
@@ -491,6 +492,8 @@ export interface SectionAlert {
     linkText?: string;
     linkUrl?: string;
     expandable?: boolean;
+    collapsible?: boolean;
+    buttonText?: string;
 }
 
 export interface Peg {
@@ -528,6 +531,10 @@ export enum AssessmentCategory {
     Signing = "Signing Mechanism",
     KeyStorage = "Key Storage",
     CensorshipResistance = "Censorship Resistance",
+    FinalityAssurances = "Finality Assurances",
+    ProofofOwnership = "Proof of Ownership",
+    NativeBitcoinCustody = "Native Bitcoin Custody",
+    UnilateralExit = "Unilateral Exit Guarantees",
     UserRisk = "User Risk",
     ThirdPartyStaking = "Third Party Staking",
     SelfCustodialStaking = "Self-custodial Staking",
@@ -542,6 +549,7 @@ export interface AssessmentSection {
     tier: RiskFactor | "";
     title: string;
     content: string;
+    alert?: SectionAlert;
 }
 
 export interface BaseProject {

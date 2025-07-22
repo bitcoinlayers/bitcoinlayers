@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import { InfoIcon, AlertTriangleIcon, ExternalLinkIcon, ChevronDownIcon, ChevronUpIcon } from "lucide-react";
+import { InfoIcon, AlertTriangleIcon, ExternalLinkIcon, ChevronDownIcon, ChevronUpIcon, XIcon } from "lucide-react";
 import Link from "next/link";
 import { SectionAlert } from "@/content/props";
 
@@ -12,6 +12,7 @@ interface SectionAlertProps {
 
 export default function SectionAlertComponent({ alert }: SectionAlertProps) {
     const [isExpanded, setIsExpanded] = useState(false);
+    const [isCollapsed, setIsCollapsed] = useState(alert.collapsible || false);
     
     // Split content by lines or sentences to determine if we should show "See more"
     const lines = alert.content.split(/\n|\. /).filter(line => line.trim().length > 0);
@@ -55,12 +56,38 @@ export default function SectionAlertComponent({ alert }: SectionAlertProps) {
     const styles = getAlertStyles();
     const IconComponent = styles.icon;
 
+    // If collapsible and collapsed, show just the button
+    if (alert.collapsible && isCollapsed) {
+        return (
+            <div className="w-full max-w-2xl mb-4">
+                <button
+                    onClick={() => setIsCollapsed(false)}
+                    className={`inline-flex items-center ${styles.buttonColor} font-medium transition-colors text-sm hover:underline`}
+                >
+                    {alert.buttonText || `Learn more about ${alert.title}`}
+                    <ChevronDownIcon className="ml-1 h-4 w-4" />
+                </button>
+            </div>
+        );
+    }
+
     return (
-        <Alert className={styles.className}>
-            <IconComponent className={`h-5 w-5 ${styles.iconColor}`} />
-            <AlertTitle className={`${styles.titleColor} font-semibold`}>
-                {alert.title}
-            </AlertTitle>
+        <div className="w-full max-w-2xl">
+            <div className="relative">
+                <Alert className={styles.className}>
+                    <IconComponent className={`h-5 w-5 ${styles.iconColor}`} />
+                    <AlertTitle className={`${styles.titleColor} font-semibold pr-8`}>
+                        {alert.title}
+                    </AlertTitle>
+                    {alert.collapsible && (
+                        <button
+                            onClick={() => setIsCollapsed(true)}
+                            className={`absolute top-3 right-3 ${styles.iconColor} hover:opacity-70 transition-opacity`}
+                            aria-label="Close alert"
+                        >
+                            <XIcon className="h-4 w-4" />
+                        </button>
+                    )}
             <AlertDescription className={`${styles.contentColor} mt-2`}>
                 <p 
                     className={`mb-2 ${
@@ -105,6 +132,8 @@ export default function SectionAlertComponent({ alert }: SectionAlertProps) {
                     </div>
                 )}
             </AlertDescription>
-        </Alert>
+                </Alert>
+            </div>
+        </div>
     );
 } 

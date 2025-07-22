@@ -18,6 +18,10 @@ import {
     CoinsIcon,
     WaypointsIcon,
     CircleUserIcon,
+    CheckCircleIcon,
+    FileTextIcon,
+    BitcoinIcon,
+    LogOutIcon,
 } from "lucide-react";
 
 const CATEGORY_ICON_MAP: Record<
@@ -34,6 +38,10 @@ const CATEGORY_ICON_MAP: Record<
     [AssessmentCategory.Signing]: KeyIcon,
     [AssessmentCategory.KeyStorage]: LayersIcon,
     [AssessmentCategory.CensorshipResistance]: BanIcon,
+    [AssessmentCategory.FinalityAssurances]: CheckCircleIcon,
+    [AssessmentCategory.ProofofOwnership]: FileTextIcon,
+    [AssessmentCategory.NativeBitcoinCustody]: BitcoinIcon,
+    [AssessmentCategory.UnilateralExit]: LogOutIcon,
     [AssessmentCategory.UserRisk]: UserIcon,
     [AssessmentCategory.ThirdPartyStaking]: WaypointsIcon,
     [AssessmentCategory.Governance]: WaypointsIcon,

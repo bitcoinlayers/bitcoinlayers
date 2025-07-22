@@ -9,7 +9,7 @@ import {
 } from "@/util/riskColors";
 import Image from "next/image";
 import InfrastructureReviewModal from "@/components/infrastructure-review-modal";
-import { allInfrastructures } from "@/util/infrastructure_index";
+import { allInfrastructures, popupOnlyInfrastructures } from "@/util/infrastructure_index";
 import { allMore } from "@/util/more_index";
 import { allOpcodes } from "@/util/opcode_index";
 
@@ -223,7 +223,7 @@ const BtcCustody: React.FC<BtcCustodyProps> = ({ category, pegs = [] }) => {
                         <InfrastructureReviewModal
                             infrastructureSlug={selectedPegData.infrastructureSlug}
                             triggerText={`Learn more about ${selectedPegData.name}'s custody model`}
-                            infrastructure={[...allInfrastructures, ...allMore, ...allOpcodes].find(
+                            infrastructure={[...allInfrastructures, ...allMore, ...allOpcodes, ...popupOnlyInfrastructures].find(
                                 infra => infra.slug === selectedPegData.infrastructureSlug
                             )}
                         />

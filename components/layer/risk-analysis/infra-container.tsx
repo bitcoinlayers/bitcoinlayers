@@ -4,7 +4,7 @@ import React from "react";
 import { useQueryState } from "nuqs";
 import InfraRiskHeader from "./infra-section-header";
 import RiskContent from "./layer-section-content";
-import { Project } from "@/content/props";
+import { Project, SectionAlert } from "@/content/props";
 
 interface Risksection {
     category: string;
@@ -12,6 +12,7 @@ interface Risksection {
     tier: string;
     title: string;
     content: string;
+    alert?: SectionAlert;
 }
 
 interface RiskAnalysisProps {
@@ -63,6 +64,7 @@ const RiskAnalysis: React.FC<RiskAnalysisProps> = ({
                                 <RiskContent
                                     title={content.title}
                                     content={content.content}
+                                    alert={content.alert}
                                 />
                             </div>
                         </div>

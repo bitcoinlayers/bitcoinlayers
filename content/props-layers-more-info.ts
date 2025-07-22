@@ -43,16 +43,18 @@ export enum TechnologySnippet { //TODO: Janusz to add more here
     ConfidentialTransactions = "The network enables Confidential Transactions which can provide users a higher level of privacy. This feature ensures that anyone, other than the participants in a transaction, cannot see the tokens, and the amount of, transferred between them.",
     OrgaMerk = "Orga is a custom-built stack designed for creating Proof-of-Stake (PoS) blockchains in Rust, offering an alternative to the Cosmos SDK. At its core, Orga integrates with CometBFT as its consensus engine.\n\nMerk complements Orga as a high-performance Merkle key/value store, serving as the state database for blockchains. It supports the proof generation necessary for the networks's IBC interactions with other networks and for enabling lightweight client functionalities for end users.",
     Template = "Template used for the template prop file.",
+    vUTXO = "vUTXOs are offchain representations of UTXOs. They are similar to Bitcon's UTXOs, but entirely held offchain. vUTXOs have unilateral spending paths and can be used to create an onchain UTXO at a later time. As vUTXOs are transferred offchain, users work with a service provider to create updated, pre-signed unilateral spending paths onchain to ensure users can create a new onchain UTXO and claim their funds.",
 }
 export enum UseCaseSnippet { //TODO: Janusz to add more here
     OnchainApps = "Onchain applications are supported. Onchain applications including borrowing and lending protocols, onchain exchanges (commonly referred to as decentralized exchanges), and more. These applications are supported with more expressive smart contract environments.",
     OffchainUTXOTransfers = "Users can transfer virtual representations of UTXOs offchain with the assistance of an operator. These transfers have fast, soft confirmation times and are lower in fees than L1 Bitcoin transactions.",
-    UTXOTokenizedApplications = "The protocol can be used to improve the efficiency of UTXO-based token protocols. Users are able to transfer and trade tokenized UTXOs with faster confirmation times than Bitcoin L1 with trust tradeoffs.\n\nTokenized applications may include stablecoin transfers or token exchange protocols.",
+    UTXOTokenizedApplications = "The protocol can be used to improve the efficiency of UTXO-based token protocols. Users are able to transfer and trade tokenized UTXOs with faster confirmation times than Bitcoin L1 with trust tradeoffs. Tokenized applications may include stablecoin transfers or token exchange protocols.",
     BitcoinStaking = "Users can lock L1 BTC into staking script to support the network's security. The BTC is directed to validators within the Proof-of-Stake network. These scripts see users retain custody of their funds, but sees them take on slashing risks.\n\nIn return for locking their funds into a staking script, users are paid rewards in the form of fees or altcoin issuance.",
     TestingGround = "Since the network has enabled opcodes that are not yet live on Bitcoin, developers can deploy applications there to preview what it would be like on Bitcoin. This includes analyzing the builder experience, potential security vulnerabilities, and presenting how these changes might permanently affect the Bitcoin network.",
     TokenizedAssets = "The network enables developers and users alike to issue tokenized securities, stablecoins, and synthetic forms of cryptocurrencies.",
     IBCTransfers = "Using IBC, users can transfer tokens (including BTC-denominated tokens) to connected blockchains and engage in use-cases such as: 1) Get a USK loan on Kujira 2) Trade and provide liquidity on Osmosis 3) Trade perpetual swaps using Levana",
     OffchainTransfers = "The network itself can also be used for p2p payments denominated in BTC.",
+    LightningCompatible = "The network is compatible with the Lightning Network. This means that users can pay lightning invoices from the network with the help of a service provider.",
     AIAgents = "Template for a protocol that uses AI agents to interact with the network.",
     Template = "Template used for the template prop file.",
 }
@@ -91,6 +93,12 @@ export const Alertsnippet = { //TODO: Janusz to add more here
         type: "error" as const,
         title: "This token is not bridged to the network from bitcoin",
         content: "The token is bridged to the network's from a bridge contract hosted on its parent chain. The bridge does not have a functioning proof system. The proposer can submit a malicious state transition and steal funds from the bridge.",
+    },
+    StatechainKeyDeletion: {
+        type: "warning" as const,
+        title: "Statechain entity cannot prove key deletion",
+        content: "In statechains, there is no way to cryptographically prove that a statechain entity has deleted a keyshare it held with a previous owner. Users must trust the statechain entity to act honestly. If the statechain does not delete previously held keyshares, it can double spend the current owner. This effectively means that users do not have provable assurances that they are the only party that can immediatetly spend the onchain UTXO with the statechain entity.",
+        expandable: true,
     },
     AltRollupAltTokenNoFraudProofsPlusUpgrade: {
         type: "error" as const,

@@ -65,6 +65,7 @@ import zueszbtc from "@/content/infrastructures/zeus-zbtc";
 import lorenzoenzobtc from "@/content/infrastructures/lorenzo-enzobtc";
 import OsmosisBTC from "@/content/infrastructures/osmosis-osmobtc";
 import osmosis from "@/content/layers/osmosis";
+import statechain from "@/content/infrastructures/statechain";
 
 const bvm: InfrastructureProject = bvmProject;
 const celestia: InfrastructureProject = celestiaProject;
@@ -117,6 +118,12 @@ const tronbtc: InfrastructureProject = tronbtcProject;
 const merlinmbtc: InfrastructureProject = merlinmbtcProject;
 const alloallobtc: InfrastructureProject = alloallobtcProject;
 const sidesbtc: InfrastructureProject = sidesbtcProject;
+const statechainModel: InfrastructureProject = statechain;
+
+// Infrastructure projects available for popups but not displayed in main tables
+export const popupOnlyInfrastructures: InfrastructureProject[] = [
+    statechainModel,
+];
 
 export const allInfrastructures: InfrastructureProject[] = [
     lombard,
@@ -178,6 +185,6 @@ export const allInfrastructures: InfrastructureProject[] = [
     OsmosisBTC,
 ];
 
-export const allInfrastructureSlugs: string[] = allInfrastructures.map(
+export const allInfrastructureSlugs: string[] = [...allInfrastructures, ...popupOnlyInfrastructures].map(
     (infrastructure) => infrastructure.slug,
 );
