@@ -231,6 +231,34 @@ export default function PegChainSummary({ implementation }: PegChainSummaryProps
                         <Badge variant={getRiskColor(implementation.riskTier)} className="text-xs">
                             {implementation.riskTier} Risk
                         </Badge>
+                        {/* Debug: Show contract data state */}
+                        {contractLoading ? (
+                            <div className="text-xs text-muted-foreground">Loading contracts...</div>
+                        ) : pegContracts.length > 0 ? (
+                            pegContracts[0]?.token_address && pegContracts[0]?.explorer ? (
+                                <a
+                                    href={`${pegContracts[0].explorer}${pegContracts[0].token_address}`}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-flex items-center text-xs px-2 py-1 bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 rounded-md hover:bg-blue-100 dark:hover:bg-blue-900/30 transition-colors"
+                                >
+                                    Contract address ↗
+                                </a>
+                            ) : (
+                                <div className="text-xs text-muted-foreground">
+                                    Debug: Contracts found but missing data - {JSON.stringify({
+                                        count: pegContracts.length,
+                                        hasAddress: !!pegContracts[0]?.token_address,
+                                        hasExplorer: !!pegContracts[0]?.explorer,
+                                        slug: pegContracts[0]?.token_slug
+                                    })}
+                                </div>
+                            )
+                        ) : (
+                            <div className="text-xs text-muted-foreground">
+                                Debug: No contracts found for {implementation.pegSlug} on {implementation.chainSlug}
+                            </div>
+                        )}
                     </div>
                 </div>
             </CardHeader>
