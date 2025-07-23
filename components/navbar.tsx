@@ -132,6 +132,15 @@ export default function Navbar() {
                     </li>
                     <li className="hidden lg:block">
                         <Link
+                            href="/peg"
+                            onClick={closeMenu}
+                            className="hover:underline"
+                        >
+                            Asset Reviews
+                        </Link>
+                    </li>
+                    <li className="hidden lg:block">
+                        <Link
                             href="/analytics"
                             onClick={closeMenu}
                             className="hover:underline"
@@ -187,6 +196,15 @@ export default function Navbar() {
                                                 onClick={closeSheet}
                                             >
                                                 Reviews
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <Link
+                                                href="/peg"
+                                                className="hover:underline"
+                                                onClick={closeSheet}
+                                            >
+                                                Asset Reviews
                                             </Link>
                                         </li>
                                         <li>
