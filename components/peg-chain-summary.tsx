@@ -8,10 +8,15 @@ import { RiskFactor } from "@/content/props";
 import getContractAddresses from "@/hooks/get-contract-addresses";
 import getHistoricalSuppliesByTokenimpl from "@/hooks/get-historical-supplies-by-tokenimpl";
 import { useMemo, useState } from "react";
-import TVLDisplay from "@/components/charts/tvl-display";
 import { formatCurrency } from "@/util/formatCurrency";
 import { parseTextWithLinks } from "@/util/parseTextWithLinks";
 import { ChevronDown } from "lucide-react";
+import { CartesianGrid, XAxis, YAxis, AreaChart, Area } from "recharts";
+import {
+    ChartContainer,
+    ChartTooltip,
+    ChartTooltipContent,
+} from "@/components/ui/chart";
 
 type ViewMode = "summary" | "contract" | "supply";
 
@@ -35,6 +40,11 @@ export default function PegChainSummary({ implementation }: PegChainSummaryProps
         contract.token_slug === implementation.pegSlug
     );
 
+    // Debug contract data
+    console.log("Contract data:", contractData);
+    console.log("Looking for peg slug:", implementation.pegSlug);
+    console.log("Specific contract:", specificContract);
+
     // Fetch historical supply data for this specific token on this specific network
     const { data: supplyData, isLoading: supplyLoading } = getHistoricalSuppliesByTokenimpl({
         queryString: `?network_slug=ilike.${implementation.chainSlug}&infra_slug=ilike.${implementation.pegSlug}`,
@@ -52,10 +62,17 @@ export default function PegChainSummary({ implementation }: PegChainSummaryProps
             .filter(item => new Date(item.date) >= ninetyDaysAgo)
             .map(item => ({
                 date: item.date,
-                total_balance: item.amount,
+                amount: item.amount,
             }))
             .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
     }, [supplyData]);
+
+    const chartConfig = {
+        amount: {
+            label: "Supply",
+            color: "hsl(var(--chart-btc))",
+        },
+    };
 
     const getRiskColor = (riskTier: RiskFactor) => {
         switch (riskTier) {
@@ -126,19 +143,24 @@ export default function PegChainSummary({ implementation }: PegChainSummaryProps
                                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                                 <div>
                                                     <div className="text-xs font-medium text-muted-foreground uppercase tracking-wide">Contract Address</div>
-                                                    <div className="font-mono text-sm break-all">{specificContract.token_address}</div>
+                                                    <div className="font-mono text-sm break-all">{specificContract.token_address || "Address not available"}</div>
                                                 </div>
                                                 <div>
                                                     <div className="text-xs font-medium text-muted-foreground uppercase tracking-wide">Token Name</div>
-                                                    <div className="text-sm">{specificContract.token_name}</div>
+                                                    <div className="text-sm">{specificContract.token_name || "N/A"}</div>
                                                 </div>
                                             </div>
                                             
                                             <div className="pt-2 border-t border-border">
                                                 <div className="text-xs font-medium text-muted-foreground uppercase tracking-wide mb-1">Network</div>
                                                 <div className="text-sm font-semibold">
-                                                    {specificContract.network_name}
+                                                    {specificContract.network_name || implementation.chainName}
                                                 </div>
+                                            </div>
+                                            
+                                            {/* Debug info */}
+                                            <div className="pt-2 border-t border-border">
+                                                <div className="text-xs text-muted-foreground">Debug: {JSON.stringify(specificContract)}</div>
                                             </div>
                                         </div>
                                     ) : contractLoading && (
@@ -152,12 +174,55 @@ export default function PegChainSummary({ implementation }: PegChainSummaryProps
                             {/* Supply History */}
                             {((chartData && chartData.length > 0) || supplyLoading) && (
                                 <div>
-                                    <h4 className="text-sm font-semibold text-foreground mb-2">Supply History</h4>
+                                    <h4 className="text-sm font-semibold text-foreground mb-2">Supply History (90 days)</h4>
                                     {chartData && chartData.length > 0 ? (
                                         <div className="bg-muted/30 rounded-lg p-4">
-                                            <TVLDisplay 
-                                                data={chartData}
-                                            />
+                                            <div className="h-64 w-full">
+                                                <ChartContainer
+                                                    config={chartConfig}
+                                                    className="h-full w-full"
+                                                >
+                                                    <AreaChart
+                                                        data={chartData}
+                                                        margin={{ left: 0, right: 0, top: 20, bottom: 0 }}
+                                                    >
+                                                        <CartesianGrid strokeDasharray="3 3" />
+                                                        <XAxis 
+                                                            dataKey="date"
+                                                            tickFormatter={(value) => new Date(value).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
+                                                            stroke="hsl(var(--muted-foreground))"
+                                                            fontSize={12}
+                                                        />
+                                                        <YAxis 
+                                                            tickFormatter={(value) => `${(value / 1000).toFixed(1)}k`}
+                                                            stroke="hsl(var(--muted-foreground))"
+                                                            fontSize={12}
+                                                        />
+                                                        <ChartTooltip
+                                                            content={
+                                                                <ChartTooltipContent 
+                                                                    labelFormatter={(value) => new Date(value).toLocaleDateString()}
+                                                                    formatter={(value: any) => [
+                                                                        `${new Intl.NumberFormat("en-US", {
+                                                                            minimumFractionDigits: 2,
+                                                                            maximumFractionDigits: 2,
+                                                                        }).format(value)} BTC`,
+                                                                        "Supply"
+                                                                    ]}
+                                                                />
+                                                            }
+                                                        />
+                                                        <Area
+                                                            type="monotone"
+                                                            dataKey="amount"
+                                                            stroke="hsl(var(--chart-btc))"
+                                                            fill="hsl(var(--chart-btc))"
+                                                            fillOpacity={0.3}
+                                                            strokeWidth={2}
+                                                        />
+                                                    </AreaChart>
+                                                </ChartContainer>
+                                            </div>
                                         </div>
                                     ) : supplyLoading && (
                                         <div className="bg-muted/30 rounded-lg p-4">
