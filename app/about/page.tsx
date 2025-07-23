@@ -106,7 +106,7 @@ const DonationsPage: React.FC = () => {
                                 <div className="flex flex-col justify-center items-start gap-8 w-full">
                                     <div className="flex flex-col justify-start items-start gap-2 w-full">
                                         <div className="text-base font-normal leading-normal mb-4">
-                                            Bitcoin Layers is a public goods platform that is funded by bitcoin ecosystem participants. For transparency, we are providing the project&apo;s funding sources below:
+                                            Bitcoin Layers is a public goods platform that is funded by bitcoin ecosystem participants. For transparency, we are providing our funding sources below:
                                         </div>
                                         <div className="w-full overflow-x-auto">
                                             <table className="w-full border-collapse">
@@ -139,17 +139,7 @@ const DonationsPage: React.FC = () => {
                         <div className="flex flex-col gap-8 w-full">
                             <InfoBox
                                 question="Further Disclaimers"
-                                answer={`Bitcoin Layers was previously funded through venture capital investments. The company who received those investments no longer contributes to Bitcoin Layers in an official capacity, and none of its funding is used to support Bitcoin Layers.`}
-                            />
-                        </div>
-                    </div>
-                </div>
-                <div className="flex flex-col gap-8 w-full">
-                    <div className="flex flex-col gap-12 w-full rounded-md">
-                        <div className="flex flex-col gap-8 w-full">
-                            <InfoBox
-                                question="Additional Acknowledgements"
-                                answer={`Current Bitcoin Layers' contributors would like to individually thank Red Sheehan (Lemondrop), Michael Boland (Lemondrop), Orkun Kilic (Citrea), Alexei Zamayatin (B.O.B), Tyler Evans (UTXO Management), and John Light (Alpen Labs) for their roles in bootstrapping Bitcoin Layers and supporting its initial development.\n\nWe'd also like to thank all previous contributors who have supported the project. You can find the full list [here](https://github.com/bitcoinlayers/bitcoinlayers/graphs/contributors).`}
+                                answer={`Bitcoin Layers was previously funded through venture capital investments. The company who received those investments no longer contributes to Bitcoin Layers in an official capacity and uses this funding to build different products.`}
                             />
                         </div>
                     </div>
