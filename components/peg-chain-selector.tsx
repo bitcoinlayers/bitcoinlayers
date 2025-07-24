@@ -28,6 +28,10 @@ const PegImage = ({
 }) => {
     const [imageSrc, setImageSrc] = useState(`/logos/${pegSlug}.png`);
 
+    useEffect(() => {
+        setImageSrc(`/logos/${pegSlug}.png`);
+    }, [pegSlug]);
+
     const handleError = () => {
         setImageSrc("/btc-inverse.svg");
     };
@@ -187,10 +191,12 @@ export default function PegChainSelector() {
 
     return (
         <div className="max-w-4xl mx-auto space-y-8">
-            <div className="text-center space-y-4">
-                <h1 className="text-3xl font-bold">Asset-Specific Reviews</h1>
-                <p className="text-lg text-muted-foreground">
-                    Learn more about who custodies bitcoin on various networks and apps
+            <div className="text-center space-y-6 pt-8">
+                <h1 className="special_header text-6xl lg:text-8xl font-light">
+                    Explore Custody
+                </h1>
+                <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+                    Compare the trust assumptions for using bitcoin on a variety of layer 2 networks, sidechains, and other applications
                 </p>
             </div>
 
@@ -397,6 +403,10 @@ export default function PegChainSelector() {
                 </CardContent>
             </Card>
 
+            {/* Spacer for consistent footer positioning when no selection is made */}
+            {!(selectedPeg && selectedChain && selectedImplementation) && (
+                <div className="h-96"></div>
+            )}
 
         </div>
     );
