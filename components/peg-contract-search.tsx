@@ -177,15 +177,7 @@ const PegContractSearch = ({
         if (result.type === 'contract') {
             return `${result.tokenName} on ${result.networkName}`;
         } else if (result.type === 'app-mapping') {
-            const layer = allLayers.find(l => l.slug === result.chainSlug);
-            const chainName = layer ? layer.title : result.chainSlug;
-            
-            // Special formatting for Bitcoin native networks
-            if (layer?.entityCategory === EntityCategory.BitcoinNative) {
-                return `${chainName} through ${result.applicationName}`;
-            } else {
-                return `${result.applicationName} on ${chainName}`;
-            }
+            return result.applicationName || '';
         } else {
             const layer = allLayers.find(l => l.slug === result.chainSlug);
             const chainName = layer ? layer.title : result.chainSlug;
