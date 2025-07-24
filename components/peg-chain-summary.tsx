@@ -5,11 +5,9 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { PegChainImplementation } from "@/util/peg_chain_combinations";
 import { RiskFactor } from "@/content/props";
-import getContractAddresses from "@/hooks/get-contract-addresses";
 import { useMemo, useState } from "react";
 import { parseTextWithLinks } from "@/util/parseTextWithLinks";
 import { ChevronDown } from "lucide-react";
-import TokenContractsModal from "@/components/tables/token-contracts-modal";
 import { CartesianGrid, XAxis, YAxis, AreaChart, Area } from "recharts";
 import {
     ChartContainer,
@@ -25,6 +23,7 @@ import getCurrentPrices from "@/hooks/get-current-prices";
 import { formatCurrency } from "@/util/formatCurrency";
 import ChartFilters from "@/components/charts/chart-filters";
 import ComingSoonChart from "@/components/coming-soon-chart";
+import SectionAlertComponent from "@/components/section-alert";
 
 interface ProcessedData {
     date: string;
@@ -48,18 +47,6 @@ export default function PegChainSummary({ implementation }: PegChainSummaryProps
         defaultValue: "1y",
     });
     
-    // Fetch contract addresses for this specific peg-chain combination
-    const { data: contractData, isLoading: contractLoading } = getContractAddresses({
-        slug: implementation.chainSlug,
-        isLayer: true,
-        enabled: true,
-    });
-
-    // Find contracts for this specific peg
-    const pegContracts = contractData?.filter(contract => 
-        contract.token_slug === implementation.pegSlug
-    ) || [];
-
     // Fetch historical supply data for this specific token on this specific network
     const { data: supplyData, isLoading: supplyLoading } = getHistoricalSuppliesByTokenimpl({
         queryString: `?network_slug=ilike.${implementation.chainSlug}&infra_slug=ilike.${implementation.pegSlug}`,
@@ -207,58 +194,30 @@ export default function PegChainSummary({ implementation }: PegChainSummaryProps
         };
     }, [supplyData, dateRange]);
 
-    const getRiskColor = (riskTier: RiskFactor) => {
+    const getRiskColor = (riskTier: RiskFactor): "outline" | "default" | "secondary" | "destructive" => {
         switch (riskTier) {
-            case RiskFactor.VeryHigh: return "destructive";
-            case RiskFactor.High: return "secondary";
+            case RiskFactor.VeryHigh: return "outline";
+            case RiskFactor.High: return "outline";
             case RiskFactor.Medium: return "outline";
-            case RiskFactor.Low: return "default";
+            case RiskFactor.Low: return "outline";
             default: return "outline";
         }
     };
 
-    const hasData = (pegContracts.length > 0 || contractLoading) || ((processedData && processedData.length > 0) || supplyLoading);
+    const hasData = (processedData && processedData.length > 0) || supplyLoading;
 
     return (
         <Card className="w-full bg-card">
             <CardHeader className="pb-4">
                 <div className="space-y-3">
-                    <h2 className="text-2xl font-bold tracking-tight">Two-Way Peg Review</h2>
+                    <h2 className="text-2xl font-bold tracking-tight">Custody Mechanism</h2>
                     <div className="flex items-center gap-3">
-                        <h3 className="text-lg font-semibold text-foreground">
+                        <h3 className="text-lg font-semibold text-foreground leading-tight">
                             {implementation.pegName} on {implementation.chainName}
                         </h3>
-                        <Badge variant={getRiskColor(implementation.riskTier)} className="text-xs">
-                            {implementation.riskTier} Risk
+                        <Badge variant={getRiskColor(implementation.riskTier)} className="text-xs px-2 py-1">
+                            {implementation.riskTier} Trust
                         </Badge>
-                        {/* Debug: Show contract data state */}
-                        {contractLoading ? (
-                            <div className="text-xs text-muted-foreground">Loading contracts...</div>
-                        ) : pegContracts.length > 0 ? (
-                            pegContracts[0]?.token_address && pegContracts[0]?.explorer ? (
-                                <a
-                                    href={`${pegContracts[0].explorer}${pegContracts[0].token_address}`}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="inline-flex items-center text-xs px-2 py-1 bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 rounded-md hover:bg-blue-100 dark:hover:bg-blue-900/30 transition-colors"
-                                >
-                                    Contract address ↗
-                                </a>
-                            ) : (
-                                <div className="text-xs text-muted-foreground">
-                                    Debug: Contracts found but missing data - {JSON.stringify({
-                                        count: pegContracts.length,
-                                        hasAddress: !!pegContracts[0]?.token_address,
-                                        hasExplorer: !!pegContracts[0]?.explorer,
-                                        slug: pegContracts[0]?.token_slug
-                                    })}
-                                </div>
-                            )
-                        ) : (
-                            <div className="text-xs text-muted-foreground">
-                                Debug: No contracts found for {implementation.pegSlug} on {implementation.chainSlug}
-                            </div>
-                        )}
                     </div>
                 </div>
             </CardHeader>
@@ -274,192 +233,177 @@ export default function PegChainSummary({ implementation }: PegChainSummaryProps
                     </div>
                 </div>
 
-                {/* Data Section Collapsible */}
-                <div className="space-y-2">
-                    <button
-                        onClick={() => setDataExpanded(!dataExpanded)}
-                        disabled={!hasData}
-                        className={`inline-flex items-center text-sm font-medium transition-colors ${
-                            !hasData
-                                ? "text-muted-foreground cursor-not-allowed opacity-50"
-                                : "text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 hover:underline"
-                        }`}
-                    >
-                        View contract addresses and supply data
-                        <ChevronDown 
-                            className={`ml-1 h-4 w-4 transition-transform ${
-                                dataExpanded ? "rotate-180" : ""
-                            }`}
-                        />
-                    </button>
-                    
-                    {dataExpanded && (
-                        <div className="space-y-6">
-                            {/* Token Contracts Modal */}
-                            {pegContracts.length > 0 && (
-                                <div>
-                                    <h4 className="text-sm font-semibold text-foreground mb-2">Token Contracts</h4>
-                                    <div className="bg-muted/30 rounded-lg p-4">
-                                        <TokenContractsModal
-                                            contracts={pegContracts}
-                                            title={`${implementation.pegName} on ${implementation.chainName}`}
-                                            type="tokens"
-                                        >
-                                            <button className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 hover:underline text-sm">
-                                                View {pegContracts.length} contract{pegContracts.length > 1 ? 's' : ''}
-                                            </button>
-                                        </TokenContractsModal>
-                                    </div>
-                                </div>
-                            )}
+                {/* Alert Display */}
+                {implementation.alert && (
+                    <div className="w-full">
+                        <SectionAlertComponent alert={implementation.alert} />
+                    </div>
+                )}
 
-                            {/* Supply Chart - Same as Layer Reviews */}
-                            {(processedData && processedData.length > 0) && (
-                                <div>
-                                    <Card className="bg-background" id="data">
-                                        <div className="w-full flex flex-col sm:flex-row border-b">
-                                            <div className="flex flex-col justify-center items-start py-4 sm:py-7 border-b sm:border-b-0 px-6 sm:w-3/4">
-                                                <div className="text-lg sm:text-xl">BTC Supply</div>
-                                                <div className="text-xs sm:text-sm text-muted-foreground">
-                                                    {implementation.pegName} on {implementation.chainName}
+                {/* Data Section Collapsible - Only show for non-Bitcoin native protocols */}
+                {implementation.chainCategory !== "BitcoinNative" && (
+                    <div className="space-y-2">
+                        <button
+                            onClick={() => setDataExpanded(!dataExpanded)}
+                            disabled={!hasData}
+                            className={`inline-flex items-center text-sm font-medium transition-colors ${
+                                !hasData
+                                    ? "text-muted-foreground cursor-not-allowed opacity-50"
+                                    : "text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 hover:underline"
+                            }`}
+                        >
+                            View supply data
+                            <ChevronDown 
+                                className={`ml-1 h-4 w-4 transition-transform ${
+                                    dataExpanded ? "rotate-180" : ""
+                                }`}
+                            />
+                        </button>
+                        
+                        {dataExpanded && (
+                            <div className="space-y-6">
+                                {/* Supply Chart - Same as Layer Reviews */}
+                                {(processedData && processedData.length > 0) && (
+                                    <div>
+                                        <Card className="bg-background" id="data">
+                                            <div className="w-full flex flex-col sm:flex-row border-b">
+                                                <div className="flex flex-col justify-center items-start py-4 sm:py-7 border-b sm:border-b-0 px-6 sm:w-3/4">
+                                                    <div className="text-lg sm:text-xl">BTC Supply</div>
+                                                    <div className="text-xs sm:text-sm text-muted-foreground">
+                                                        {implementation.pegName} on {implementation.chainName}
+                                                    </div>
+                                                </div>
+                                                <div className="flex flex-row sm:w-1/4">
+                                                    <button
+                                                        data-active={activeChart === "TVL"}
+                                                        className="flex flex-1 flex-col justify-center gap-1 pl-6 py-2 sm:px-6 sm:py-4 text-left even:border-x sm:even:border-x-0 sm:odd:border-l sm:first:border-r data-[active=true]:bg-muted/50"
+                                                        onClick={() => setActiveChart("TVL")}
+                                                    >
+                                                        <span className="text-xs text-muted-foreground md:w-20">
+                                                            Supply
+                                                        </span>
+                                                        <span className="text-xs sm:text-base leading-none">
+                                                            {new Intl.NumberFormat("en-US", {
+                                                                minimumFractionDigits: 2,
+                                                                maximumFractionDigits: 2,
+                                                            }).format(total.TVL)}{" "}
+                                                            BTC
+                                                        </span>
+                                                        <div className="text-xs sm:text-sm text-muted-foreground">
+                                                            {formatCurrency(total.TVL * currentBTCPrice)}
+                                                        </div>
+                                                    </button>
                                                 </div>
                                             </div>
-                                            <div className="flex flex-row sm:w-1/4">
-                                                <button
-                                                    data-active={activeChart === "TVL"}
-                                                    className="flex flex-1 flex-col justify-center gap-1 pl-6 py-2 sm:px-6 sm:py-4 text-left even:border-x sm:even:border-x-0 sm:odd:border-l sm:first:border-r data-[active=true]:bg-muted/50"
-                                                    onClick={() => setActiveChart("TVL")}
+                                            <CardContent>
+                                                <ChartContainer
+                                                    config={chartConfig}
+                                                    className="lg:h-80 h-64 w-full watermark"
                                                 >
-                                                    <span className="text-xs text-muted-foreground md:w-20">
-                                                        Supply
-                                                    </span>
-                                                    <span className="text-xs sm:text-base leading-none">
-                                                        {new Intl.NumberFormat("en-US", {
-                                                            minimumFractionDigits: 2,
-                                                            maximumFractionDigits: 2,
-                                                        }).format(total.TVL)}{" "}
-                                                        BTC
-                                                    </span>
-                                                    <div className="text-xs sm:text-sm text-muted-foreground">
-                                                        {formatCurrency(total.TVL * currentBTCPrice)}
-                                                    </div>
-                                                </button>
-                                            </div>
-                                        </div>
-                                        <CardContent>
-                                            <ChartContainer
-                                                config={chartConfig}
-                                                className="lg:h-80 h-64 w-full watermark"
-                                            >
-                                                <AreaChart
-                                                    data={filterDataByDateRange(processedData)}
-                                                    margin={{ left: 0, right: 0, top: 30, bottom: 0 }}
-                                                >
-                                                    <CartesianGrid vertical={false} horizontal={false} />
-                                                    <XAxis
-                                                        dataKey="date"
-                                                        tickLine={false}
-                                                        axisLine={false}
-                                                        tickMargin={8}
-                                                        tickFormatter={(value) =>
-                                                            new Date(value).toLocaleDateString("en-US", {
-                                                                month: "short",
-                                                                day: "numeric",
-                                                                timeZone: "UTC",
-                                                            })
-                                                        }
-                                                    />
-                                                    <YAxis
-                                                        tickLine={false}
-                                                        axisLine={false}
-                                                        tickMargin={8}
-                                                        width={60}
-                                                        tickFormatter={(value) =>
-                                                            new Intl.NumberFormat("en-US", {
-                                                                notation: "compact",
-                                                                compactDisplay: "short",
-                                                            }).format(value as number)
-                                                        }
-                                                    />
-                                                    <ChartTooltip
-                                                        cursor={false}
-                                                        content={
-                                                            <ChartTooltipContent
-                                                                labelFormatter={(value, payload) => (
-                                                                    <div className="flex flex-row justify-between">
-                                                                        <div>
-                                                                            {new Date(
-                                                                                value,
-                                                                            ).toLocaleDateString("en-US", {
-                                                                                month: "short",
-                                                                                day: "numeric",
-                                                                                year: "numeric",
-                                                                                timeZone: "UTC",
-                                                                            })}
-                                                                        </div>
-                                                                    </div>
-                                                                )}
-                                                                className="w-60 max-h-60 overflow-y-hidden"
-                                                                sort="desc"
-                                                                limit={10}
-                                                            />
-                                                        }
-                                                    />
-                                                    {sortedTokens?.map((token) => (
-                                                        <Area
-                                                            key={token}
-                                                            name={token}
-                                                            dataKey={token}
-                                                            type="linear"
-                                                            stroke={chartConfig[token]?.color}
-                                                            fill={chartConfig[token]?.color}
-                                                            strokeWidth={1}
-                                                            dot={false}
-                                                            fillOpacity={0.5}
-                                                            stackId="1"
-                                                            isAnimationActive={true}
+                                                    <AreaChart
+                                                        data={filterDataByDateRange(processedData)}
+                                                        margin={{ left: 0, right: 0, top: 30, bottom: 0 }}
+                                                    >
+                                                        <CartesianGrid vertical={false} horizontal={false} />
+                                                        <XAxis
+                                                            dataKey="date"
+                                                            tickLine={false}
+                                                            axisLine={false}
+                                                            tickMargin={8}
+                                                            tickFormatter={(value) =>
+                                                                new Date(value).toLocaleDateString("en-US", {
+                                                                    month: "short",
+                                                                    day: "numeric",
+                                                                    timeZone: "UTC",
+                                                                })
+                                                            }
                                                         />
-                                                    ))}
-                                                    <ChartLegend
-                                                        content={
-                                                            <ChartLegendContent className="flex lg:justify-center lg:max-h-[4.5rem] lg:overflow-y-auto lg:flex-wrap sm:flex-nowrap overflow-x-auto whitespace-nowrap max-w-full scroll-smooth snap-x snap-start justify-start legend-scrollbar" />
-                                                        }
+                                                        <YAxis
+                                                            tickLine={false}
+                                                            axisLine={false}
+                                                            tickMargin={8}
+                                                            width={60}
+                                                            tickFormatter={(value) =>
+                                                                new Intl.NumberFormat("en-US", {
+                                                                    notation: "compact",
+                                                                    compactDisplay: "short",
+                                                                }).format(value as number)
+                                                            }
+                                                        />
+                                                        <ChartTooltip
+                                                            cursor={false}
+                                                            content={
+                                                                <ChartTooltipContent
+                                                                    labelFormatter={(value, payload) => (
+                                                                        <div className="flex flex-row justify-between">
+                                                                            <div>
+                                                                                {new Date(
+                                                                                    value,
+                                                                                ).toLocaleDateString("en-US", {
+                                                                                    month: "short",
+                                                                                    day: "numeric",
+                                                                                    year: "numeric",
+                                                                                    timeZone: "UTC",
+                                                                                })}
+                                                                            </div>
+                                                                        </div>
+                                                                    )}
+                                                                    className="w-60 max-h-60 overflow-y-hidden"
+                                                                    sort="desc"
+                                                                    limit={10}
+                                                                />
+                                                            }
+                                                        />
+                                                        {sortedTokens?.map((token) => (
+                                                            <Area
+                                                                key={token}
+                                                                name={token}
+                                                                dataKey={token}
+                                                                type="linear"
+                                                                stroke={chartConfig[token]?.color}
+                                                                fill={chartConfig[token]?.color}
+                                                                strokeWidth={1}
+                                                                dot={false}
+                                                                fillOpacity={0.5}
+                                                                stackId="1"
+                                                                isAnimationActive={true}
+                                                            />
+                                                        ))}
+                                                        <ChartLegend
+                                                            content={
+                                                                <ChartLegendContent className="flex lg:justify-center lg:max-h-[4.5rem] lg:overflow-y-auto lg:flex-wrap sm:flex-nowrap overflow-x-auto whitespace-nowrap max-w-full scroll-smooth snap-x snap-start justify-start legend-scrollbar" />
+                                                            }
+                                                        />
+                                                    </AreaChart>
+                                                </ChartContainer>
+                                                <div className="flex mt-6">
+                                                    <ChartFilters
+                                                        chartType={chartType}
+                                                        setChartType={setChartType}
+                                                        dateRange={dateRange}
+                                                        setDateRange={setDateRange}
+                                                        title="BTC Supply"
                                                     />
-                                                </AreaChart>
-                                            </ChartContainer>
-                                            <div className="flex mt-6">
-                                                <ChartFilters
-                                                    chartType={chartType}
-                                                    setChartType={setChartType}
-                                                    dateRange={dateRange}
-                                                    setDateRange={setDateRange}
-                                                    title="BTC Supply"
-                                                />
-                                            </div>
-                                        </CardContent>
-                                    </Card>
-                                </div>
-                            )}
+                                                </div>
+                                            </CardContent>
+                                        </Card>
+                                    </div>
+                                )}
 
-                            {/* Loading states */}
-                            {contractLoading && (
-                                <div className="bg-muted/30 rounded-lg p-4">
-                                    <div className="text-sm text-muted-foreground">Loading contract information...</div>
-                                </div>
-                            )}
+                                {/* Loading states */}
+                                {supplyLoading && (
+                                    <div className="bg-muted/30 rounded-lg p-4">
+                                        <div className="text-sm text-muted-foreground">Loading supply data...</div>
+                                    </div>
+                                )}
 
-                            {supplyLoading && (
-                                <div className="bg-muted/30 rounded-lg p-4">
-                                    <div className="text-sm text-muted-foreground">Loading supply data...</div>
-                                </div>
-                            )}
-
-                            {!supplyLoading && (!processedData || processedData.length === 0) && (
-                                <ComingSoonChart />
-                            )}
-                        </div>
-                    )}
-                </div>
+                                {!supplyLoading && (!processedData || processedData.length === 0) && (
+                                    <ComingSoonChart />
+                                )}
+                            </div>
+                        )}
+                    </div>
+                )}
             </CardContent>
         </Card>
     );

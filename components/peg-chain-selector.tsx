@@ -4,18 +4,50 @@ import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
-import { ChevronDown, Search, Check } from "lucide-react";
+import { ChevronDown, Search, Check, Bitcoin, RotateCcw } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { getPegImplementations, getAvailablePegs, PegChainImplementation } from "@/util/peg_chain_combinations";
 import { allLayers } from "@/util/layer_index";
+import { LiveStatus, Type, EntityCategory } from "@/content/props";
 import PegChainSummary from "@/components/peg-chain-summary";
 import Image from "next/image";
+
+// Peg Image component with fallback to btc-inverse.svg
+const PegImage = ({ 
+    pegSlug, 
+    alt, 
+    width = 20, 
+    height = 20, 
+    className = "rounded-sm" 
+}: { 
+    pegSlug: string; 
+    alt: string; 
+    width?: number; 
+    height?: number; 
+    className?: string; 
+}) => {
+    const [imageSrc, setImageSrc] = useState(`/logos/${pegSlug}.png`);
+
+    const handleError = () => {
+        setImageSrc("/btc-inverse.svg");
+    };
+
+    return (
+        <Image 
+            src={imageSrc}
+            alt={alt}
+            width={width} 
+            height={height} 
+            className={className}
+            onError={handleError}
+        />
+    );
+};
 
 export default function PegChainSelector() {
     const [selectedPeg, setSelectedPeg] = useState<string>("");
     const [selectedChain, setSelectedChain] = useState<string>("");
     const [availableChains, setAvailableChains] = useState<PegChainImplementation[]>([]);
-    const [availablePegs, setAvailablePegs] = useState<{ slug: string; name: string; description: string }[]>([]);
     const [allChainSlugs, setAllChainSlugs] = useState<string[]>([]);
     const [chainSearchOpen, setChainSearchOpen] = useState<boolean>(false);
     const [pegSearchOpen, setPegSearchOpen] = useState<boolean>(false);
@@ -24,96 +56,13 @@ export default function PegChainSelector() {
 
     // Logo mapping functions
     const getPegLogo = (pegSlug: string): string => {
-        const logoMap: Record<string, string> = {
-            // Threshold tBTC
-            "threshold-tbtc": "/logos/threshold-tbtc-v2.png",
-            // BitGo wBTC
-            "bitgo-wbtc": "/logos/wormhole-wbtc.png",
-            // Coinbase cbBTC
-            "coinbase-cbbtc": "/logos/bitcoin-btc.png",
-            // Lombard LBTC
-            "lombard-lbtc": "/logos/lombard-lbtcv.png",
-            // Solv pegs
-            "solv-solvbtc": "/logos/solv-solvbtccore.png",
-            "solv-solvbtccore": "/logos/solv-solvbtccore.png",
-            "solv-solvbtcm": "/logos/solv-solvbtcm.png",
-            "solv-xsolvbtc": "/logos/solv-xsolvbtc.png",
-            "solv-solvbtcena": "/logos/solv-solvbtcena.png",
-            "solv-solvbtcb": "/logos/solv-solvbtcb.png",
-            // Binance BTCB
-            "binance-btcb": "/logos/bnbsmartchain.png",
-            // Avalanche BTC.b
-            "avalanche-btcb": "/logos/avalanche-btcb.png",
-            // Obelisk oBTC
-            "obelisk-obtc": "/logos/obelisk-obtc.png",
-            // Unirouter uBTC
-            "unirouter-ubtc": "/logos/unirouter-ubtc.png",
-            // Xlink aBTC
-            "xlink-abtc": "/logos/xlink-abtc.png",
-            // Core coreBTC
-            "core-corebtc": "/logos/core-stakedbtc.png",
-            // Internet Computer ckBTC
-            "internetcomputer-ckbtc": "/logos/internetcomputer-ckbtc.png",
-            // Lightning BTC
-            "lightning-btc": "/logos/lightning-btc.png",
-            // Liquid L-BTC
-            "liquid-lbtc": "/logos/side-sbtc.png",
-            // Side sBTC
-            "side-sbtc": "/logos/side-sbtc.png",
-            // Stacks sBTC
-            "stacks-sbtc": "/logos/stacks-sbtc.png",
-            // Merlin pegs
-            "merlin-mbtc": "/logos/merlin-mbtc.png",
-            "merlin-wbtc": "/logos/merlin-wbtc.png",
-            // Tron BTC
-            "tron-btc": "/logos/tron-btc.png",
-            // Zeus zBTC
-            "zeus-zbtc": "/logos/zeus-zbtc.png",
-            // Unit uBTC
-            "unit-ubtc": "/logos/unit-ubtc.png",
-            // Osmosis osmoBTC
-            "osmosis-osmobtc": "/logos/osmosis-osmobtc.png",
-            // Hemi hemiBTC
-            "hemi-hemibtc": "/logos/hemi-hemibtc.png",
-            // Lorenzo enzoBTC
-            "lorenzo-enzobtc": "/logos/lorenzo-enzobtc.png",
-            // 21shares BTC
-            "21shares-btc": "/logos/21shares-21btc.png",
-            // Badger eBTC
-            "badger-ebtc": "/logos/badger-ebtc.png",
-            // Manta mBTC
-            "manta-mbtc": "/logos/manta-mbtc.png",
-            // Nexus nBTC
-            "nexus-nbtc": "/logos/nexus-nbtc.png",
-            // Bedrock brBTC
-            "bedrock-brbtc": "/logos/bedrock-brbtc.png",
-            // Corn BTCN
-            "corn-btcn": "/logos/corn-btcn.png"
-        };
-        return logoMap[pegSlug] || "/logos/bitcoin-btc.png";
+        // Use the simplified approach that directly maps to the public/logos files
+        return `/logos/${pegSlug}.png`;
     };
 
     const getChainLogo = (chainSlug: string): string => {
-        const logoMap: Record<string, string> = {
-            "ethereum": "/logos/ethereum.png",
-            "arbitrum": "/logos/arbitrum.png",
-            "base": "/logos/base.png",
-            "optimism": "/logos/optimism.png",
-            "polygon": "/logos/polygonpos.png",
-            "avalanche": "/logos/avalanche.png",
-            "bnbsmartchain": "/logos/bnbsmartchain.png",
-            "mantle": "/logos/mantle.png",
-            "scroll": "/logos/scroll.png",
-            "linea": "/logos/linea.png",
-            "mode": "/logos/mode.png",
-            "starknet": "/logos/starknet.png",
-            "solana": "/logos/solana.png",
-            "core": "/logos/core-stakedbtc.png",
-            "rootstock": "/logos/rootstock-wrbtc.png",
-            "liquid": "/logos/side-sbtc.png",
-            "stacks": "/logos/stacks-sbtc.png"
-        };
-        return logoMap[chainSlug] || "/logos/bitcoin-btc.png";
+        // Use the simplified approach that directly maps to the public/logos files
+        return `/logos/${chainSlug}.png`;
     };
 
     // Get chain name from slug
@@ -122,24 +71,98 @@ export default function PegChainSelector() {
         return layer ? layer.title : chainSlug.charAt(0).toUpperCase() + chainSlug.slice(1);
     };
 
-    // Load all layers on component mount
+    // Get peg name from slug
+    const getPegName = (pegSlug: string): string => {
+        // Look for the peg in availableChains first, then fallback
+        const peg = availableChains.find(impl => impl.pegSlug === pegSlug);
+        return peg ? peg.pegName : pegSlug;
+    };
+
+    // Load filtered layers on component mount
     useEffect(() => {
-        const chains = allLayers.map(layer => layer.slug);
+        // Filter to only include layers that are:
+        // 1. Actually layers (Type.Layer)
+        // 2. On mainnet or beta (LiveStatus.Mainnet || LiveStatus.Beta)
+        // 3. Not under review (underReview: false)
+        const filteredLayers = allLayers.filter(layer => 
+            layer.type === Type.Layer && 
+            (layer.live === LiveStatus.Mainnet || layer.live === LiveStatus.Beta) && 
+            !layer.underReview
+        );
+        
+        const chains = filteredLayers.map(layer => layer.slug);
         setAllChainSlugs(chains);
     }, []);
 
-    // Filter functions for search
-    const filteredChains = allChainSlugs.filter(chainSlug =>
-        getChainName(chainSlug).toLowerCase().includes(chainSearchQuery.toLowerCase())
-    );
+    // Filter and group chains by category
+    const getGroupedChains = () => {
+        const searchTerm = chainSearchQuery.toLowerCase();
+        const filteredSlugs = allChainSlugs.filter(chainSlug =>
+            getChainName(chainSlug).toLowerCase().includes(searchTerm)
+        );
 
+        // Get layer objects for categorization
+        const layersWithCategories = filteredSlugs.map(slug => {
+            const layer = allLayers.find(l => l.slug === slug);
+            return { slug, layer };
+        }).filter(item => item.layer); // Only include items where we found the layer
+
+        // Group by entity category
+        const bitcoinNative = layersWithCategories.filter(item => 
+            item.layer!.entityCategory === EntityCategory.BitcoinNative
+        );
+        const sidesystems = layersWithCategories.filter(item => 
+            item.layer!.entityCategory === EntityCategory.Sidesystem
+        );
+        const otherNetworks = layersWithCategories.filter(item => 
+            item.layer!.entityCategory === EntityCategory.Integrated || item.layer!.entityCategory === EntityCategory.Alt
+        );
+
+        const groups = [];
+        
+        if (bitcoinNative.length > 0) {
+            groups.push({
+                name: "Bitcoin Native",
+                chains: bitcoinNative.map(item => item.slug)
+            });
+        }
+        
+        if (sidesystems.length > 0) {
+            groups.push({
+                name: "Sidesystems", 
+                chains: sidesystems.map(item => item.slug)
+            });
+        }
+        
+        if (otherNetworks.length > 0) {
+            groups.push({
+                name: "Other Networks",
+                chains: otherNetworks.map(item => item.slug)
+            });
+        }
+
+        return groups;
+    };
+
+    const groupedChains = getGroupedChains();
+
+    // Only show pegs available on the selected chain
     const filteredPegs = availableChains.filter(impl =>
         impl.pegName.toLowerCase().includes(pegSearchQuery.toLowerCase())
     );
 
+    // Helper functions to safely extract peg properties - now simplified since we only use PegChainImplementation
+    const getPegSlugFromItem = (item: PegChainImplementation): string => {
+        return item.pegSlug;
+    };
+
+    const getPegNameFromItem = (item: PegChainImplementation): string => {
+        return item.pegName;
+    };
+
     const handleChainSelection = (chainSlug: string) => {
         setSelectedChain(chainSlug);
-        setSelectedPeg("");
+        setSelectedPeg(""); // Always clear peg selection when chain changes
         
         // Load pegs available on the selected chain
         const allPegs = getAvailablePegs();
@@ -163,30 +186,50 @@ export default function PegChainSelector() {
     const selectedImplementation = availableChains.find(impl => impl.chainSlug === selectedChain && impl.pegSlug === selectedPeg);
 
     return (
-        <div className="max-w-4xl mx-auto space-y-6">
+        <div className="max-w-4xl mx-auto space-y-8">
             <div className="text-center space-y-4">
                 <h1 className="text-3xl font-bold">Asset-Specific Reviews</h1>
                 <p className="text-lg text-muted-foreground">
-                    Select a two-way peg and blockchain to see how that specific asset works on that chain
+                    Learn more about who custodies bitcoin on various networks and apps
                 </p>
             </div>
 
             <Card>
                 <CardHeader>
-                    <CardTitle className="flex items-center gap-2">
-                        <Search className="h-5 w-5" />
-                        Select Asset & Chain
-                    </CardTitle>
-                    <CardDescription>
-                        Choose a two-way peg and the blockchain where you want to use it
-                    </CardDescription>
+                    <div className="flex justify-between items-start">
+                        <div className="flex-1">
+                            <CardTitle className="flex items-center gap-2 mb-1.5">
+                                Select Network & Custody Mechanism
+                            </CardTitle>
+                            <CardDescription>
+                                Select a network and choose the custody mechanism to moves BTC onto the network
+                            </CardDescription>
+                        </div>
+                        <Button
+                            variant="ghost"
+                            size="icon"
+                            onClick={() => {
+                                setSelectedPeg("");
+                                setSelectedChain("");
+                                setAvailableChains([]);
+                                setChainSearchQuery("");
+                                setPegSearchQuery("");
+                                setChainSearchOpen(false);
+                                setPegSearchOpen(false);
+                            }}
+                            title="Reset selections"
+                            className="flex-shrink-0"
+                        >
+                            <RotateCcw className="h-4 w-4" />
+                        </Button>
+                    </div>
                 </CardHeader>
                 <CardContent className="space-y-6">
                     {/* Dropdowns Side by Side */}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         {/* Chain Selection */}
                         <div className="space-y-2">
-                            <label className="text-sm font-medium">Blockchain</label>
+                            <label className="text-sm font-medium">What network are you using?</label>
                             <Popover open={chainSearchOpen} onOpenChange={setChainSearchOpen}>
                                 <PopoverTrigger asChild>
                                     <Button
@@ -207,7 +250,7 @@ export default function PegChainSelector() {
                                                 <span>{getChainName(selectedChain)}</span>
                                             </div>
                                         ) : (
-                                            "Select a blockchain..."
+                                            "Select a network..."
                                         )}
                                         <ChevronDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
                                     </Button>
@@ -225,32 +268,41 @@ export default function PegChainSelector() {
                                         </div>
                                     </div>
                                     <div className="max-h-60 overflow-y-auto">
-                                        {filteredChains.length === 0 ? (
+                                        {groupedChains.length === 0 ? (
                                             <div className="p-4 text-sm text-muted-foreground">No blockchains found.</div>
                                         ) : (
-                                            filteredChains.map((chainSlug) => (
-                                                <div
-                                                    key={chainSlug}
-                                                    className={cn(
-                                                        "flex items-center gap-2 px-3 py-2 text-sm cursor-pointer hover:bg-accent",
-                                                        selectedChain === chainSlug && "bg-accent"
-                                                    )}
-                                                    onClick={() => {
-                                                        handleChainSelection(chainSlug);
-                                                        setChainSearchOpen(false);
-                                                        setChainSearchQuery("");
-                                                    }}
-                                                >
-                                                    <Image 
-                                                        src={getChainLogo(chainSlug)} 
-                                                        alt={getChainName(chainSlug)}
-                                                        width={20} 
-                                                        height={20} 
-                                                        className="rounded-sm"
-                                                    />
-                                                    <span className="flex-1">{getChainName(chainSlug)}</span>
-                                                    {selectedChain === chainSlug && (
-                                                        <Check className="h-4 w-4" />
+                                            groupedChains.map((group) => (
+                                                <div key={group.name} className="space-y-2">
+                                                    <h3 className="text-sm font-semibold px-3 py-2">{group.name}</h3>
+                                                    {group.chains.length === 0 ? (
+                                                        <div className="p-4 text-sm text-muted-foreground">No blockchains found.</div>
+                                                    ) : (
+                                                        group.chains.map((chainSlug) => (
+                                                            <div
+                                                                key={chainSlug}
+                                                                className={cn(
+                                                                    "flex items-center gap-2 px-3 py-2 text-sm cursor-pointer hover:bg-accent",
+                                                                    selectedChain === chainSlug && "bg-accent"
+                                                                )}
+                                                                onClick={() => {
+                                                                    handleChainSelection(chainSlug);
+                                                                    setChainSearchOpen(false);
+                                                                    setChainSearchQuery("");
+                                                                }}
+                                                            >
+                                                                <Image 
+                                                                    src={getChainLogo(chainSlug)} 
+                                                                    alt={getChainName(chainSlug)}
+                                                                    width={20} 
+                                                                    height={20} 
+                                                                    className="rounded-sm"
+                                                                />
+                                                                <span className="flex-1">{getChainName(chainSlug)}</span>
+                                                                {selectedChain === chainSlug && (
+                                                                    <Check className="h-4 w-4" />
+                                                                )}
+                                                            </div>
+                                                        ))
                                                     )}
                                                 </div>
                                             ))
@@ -262,7 +314,7 @@ export default function PegChainSelector() {
 
                         {/* Peg Selection */}
                         <div className="space-y-2">
-                            <label className="text-sm font-medium">Two-Way Peg</label>
+                            <label className="text-sm font-medium">What is the custody mechanism?</label>
                             <Popover open={pegSearchOpen} onOpenChange={setPegSearchOpen}>
                                 <PopoverTrigger asChild>
                                     <Button
@@ -272,19 +324,16 @@ export default function PegChainSelector() {
                                         className="w-full justify-between"
                                         disabled={!selectedChain}
                                     >
-                                        {selectedPeg && selectedChain ? (
+                                        {selectedPeg ? (
                                             <div className="flex items-center gap-2">
-                                                <Image 
-                                                    src={getPegLogo(selectedPeg)} 
-                                                    alt={availableChains.find(impl => impl.pegSlug === selectedPeg)?.pegName || ""}
-                                                    width={20} 
-                                                    height={20} 
-                                                    className="rounded-sm"
+                                                <PegImage 
+                                                    pegSlug={selectedPeg} 
+                                                    alt={getPegName(selectedPeg)}
                                                 />
-                                                <span>{availableChains.find(impl => impl.pegSlug === selectedPeg)?.pegName}</span>
+                                                <span>{getPegName(selectedPeg)}</span>
                                             </div>
                                         ) : (
-                                            selectedChain ? "Select a Bitcoin peg..." : "Select a blockchain first"
+                                            selectedChain ? "Select a custody mechanism..." : "Select a network first"
                                         )}
                                         <ChevronDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
                                     </Button>
@@ -309,26 +358,23 @@ export default function PegChainSelector() {
                                         ) : (
                                             filteredPegs.map((impl) => (
                                                 <div
-                                                    key={impl.pegSlug}
+                                                    key={getPegSlugFromItem(impl)}
                                                     className={cn(
                                                         "flex items-center gap-2 px-3 py-2 text-sm cursor-pointer hover:bg-accent",
-                                                        selectedPeg === impl.pegSlug && "bg-accent"
+                                                        selectedPeg === getPegSlugFromItem(impl) && "bg-accent"
                                                     )}
                                                     onClick={() => {
-                                                        handlePegSelection(impl.pegSlug);
+                                                        handlePegSelection(getPegSlugFromItem(impl));
                                                         setPegSearchOpen(false);
                                                         setPegSearchQuery("");
                                                     }}
                                                 >
-                                                    <Image 
-                                                        src={getPegLogo(impl.pegSlug)} 
-                                                        alt={impl.pegName}
-                                                        width={20} 
-                                                        height={20} 
-                                                        className="rounded-sm"
+                                                    <PegImage 
+                                                        pegSlug={getPegSlugFromItem(impl)} 
+                                                        alt={getPegNameFromItem(impl)}
                                                     />
-                                                    <span className="flex-1">{impl.pegName}</span>
-                                                    {selectedPeg === impl.pegSlug && (
+                                                    <span className="flex-1">{getPegNameFromItem(impl)}</span>
+                                                    {selectedPeg === getPegSlugFromItem(impl) && (
                                                         <Check className="h-4 w-4" />
                                                     )}
                                                 </div>

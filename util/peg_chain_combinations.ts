@@ -17,6 +17,15 @@ export interface PegChainImplementation {
         timeDelay?: string;
         additionalRisks?: string[];
     };
+    alert?: {
+        type: "info" | "warning" | "error";
+        title: string;
+        content: string;
+        linkText?: string;
+        linkUrl?: string;
+        collapsible?: boolean;
+        expandable?: boolean;
+    };
 }
 
 // Type guard to check if a value is a valid RiskFactor
@@ -62,7 +71,8 @@ function extractPegImplementations(): PegChainImplementation[] {
                         upgradeability,
                         timeDelay,
                         additionalRisks
-                    }
+                    },
+                    alert: peg.alert // Include alert data from the peg
                 });
             });
         }
@@ -152,8 +162,8 @@ function determineBridgeType(content: string, chainSlug: string): PegChainImplem
 
 function mapEntityCategory(category?: string): PegChainImplementation["chainCategory"] {
     switch (category) {
-        case "BitcoinNative": return "BitcoinNative";
-        case "Sidesystem": return "Sidesystem";
+        case "Bitcoin Native": return "BitcoinNative";
+        case "Sidesystems": return "Sidesystem";
         case "Integrated": return "Integrated";
         default: return "Alt";
     }
