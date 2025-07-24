@@ -6,11 +6,13 @@ import getContractAddresses, { ContractAddress } from "@/hooks/get-contract-addr
 import { getAvailablePegs, getPegImplementations, PegChainImplementation } from "@/util/peg_chain_combinations";
 import { allLayers } from "@/util/layer_index";
 import { allInfrastructures } from "@/util/infrastructure_index";
+import { searchApplications, ApplicationMapping } from "@/util/application_mappings";
+import { EntityCategory } from "@/content/props";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 interface ContractSearchResult {
-    type: 'contract' | 'application';
+    type: 'contract' | 'application' | 'app-mapping';
     contractAddress?: string;
     tokenSlug?: string;
     tokenName?: string;
@@ -18,6 +20,8 @@ interface ContractSearchResult {
     networkName?: string;
     applicationName?: string;
     applicationSlug?: string;
+    applicationCategory?: string;
+    applicationDescription?: string;
     pegSlug?: string;
     chainSlug?: string;
 }
@@ -144,6 +148,19 @@ const PegContractSearch = ({
             }
         });
 
+        // Search application mappings (popular Bitcoin apps)
+        const applicationMatches = searchApplications(searchTerm);
+        applicationMatches.forEach(app => {
+            results.push({
+                type: 'app-mapping',
+                applicationName: app.name,
+                applicationCategory: app.category,
+                applicationDescription: app.description,
+                pegSlug: app.pegSlug,
+                chainSlug: app.chainSlug
+            });
+        });
+
         setSearchResults(results.slice(0, 8)); // Limit to 8 results
     };
 
@@ -159,6 +176,16 @@ const PegContractSearch = ({
     const getDisplayText = (result: ContractSearchResult): string => {
         if (result.type === 'contract') {
             return `${result.tokenName} on ${result.networkName}`;
+        } else if (result.type === 'app-mapping') {
+            const layer = allLayers.find(l => l.slug === result.chainSlug);
+            const chainName = layer ? layer.title : result.chainSlug;
+            
+            // Special formatting for Bitcoin native networks
+            if (layer?.entityCategory === EntityCategory.BitcoinNative) {
+                return `${chainName} through ${result.applicationName}`;
+            } else {
+                return `${result.applicationName} on ${chainName}`;
+            }
         } else {
             const layer = allLayers.find(l => l.slug === result.chainSlug);
             const chainName = layer ? layer.title : result.chainSlug;
@@ -169,6 +196,8 @@ const PegContractSearch = ({
     const getSecondaryText = (result: ContractSearchResult): string => {
         if (result.type === 'contract') {
             return result.contractAddress || '';
+        } else if (result.type === 'app-mapping') {
+            return `${result.applicationCategory?.charAt(0).toUpperCase()}${result.applicationCategory?.slice(1)} • ${result.applicationDescription}`;
         } else {
             return 'Application';
         }
@@ -305,4 +334,4 @@ const ContractSearchItemImage = ({ src, title }: { src: string; title: string })
     );
 };
 
-export default PegContractSearch; 
+export default PegContractSearch;
