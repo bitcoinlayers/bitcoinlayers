@@ -10,7 +10,7 @@ import { getPegImplementations, getAvailablePegs, PegChainImplementation } from 
 import { allLayers } from "@/util/layer_index";
 import { LiveStatus, Type, EntityCategory } from "@/content/props";
 import PegChainSummary from "@/components/peg-chain-summary";
-import PegSearchBlock from "@/components/peg-search-block";
+import PegContractSearch from "@/components/peg-contract-search";
 import Image from "next/image";
 
 // Peg Image component with fallback to btc-inverse.svg
@@ -208,9 +208,9 @@ export default function PegChainSelector() {
                 </p>
             </div>
 
-            {/* Search Bar */}
+            {/* Contract & Application Search */}
             <div className="flex justify-center">
-                <PegSearchBlock 
+                <PegContractSearch 
                     inputClassName="h-[30px] text-sm p-2 pl-4 pr-10 bg-transparent border-2 border-muted-foreground rounded-full text-foreground placeholder:text-muted-foreground hover:border-brand focus:border-brand font-sans not-italic"
                     imageClassName="bottom-[6px] right-3 w-4 h-4"
                     onSelect={handleSearchSelect}
