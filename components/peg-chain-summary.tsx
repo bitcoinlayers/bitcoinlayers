@@ -213,7 +213,10 @@ export default function PegChainSummary({ implementation }: PegChainSummaryProps
                     <h2 className="text-2xl font-bold tracking-tight">Custody Mechanism</h2>
                     <div className="flex items-center gap-3">
                         <h3 className="text-lg font-semibold text-foreground leading-tight">
-                            {implementation.pegName} on {implementation.chainName}
+                            {implementation.chainCategory === "BitcoinNative" 
+                                ? `${implementation.chainName} through ${implementation.pegName}`
+                                : `${implementation.pegName} on ${implementation.chainName}`
+                            }
                         </h3>
                         <Badge variant={getRiskColor(implementation.riskTier)} className="text-xs px-2 py-1">
                             {implementation.riskTier} Trust

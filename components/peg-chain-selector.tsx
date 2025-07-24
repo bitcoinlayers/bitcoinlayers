@@ -10,6 +10,7 @@ import { getPegImplementations, getAvailablePegs, PegChainImplementation } from 
 import { allLayers } from "@/util/layer_index";
 import { LiveStatus, Type, EntityCategory } from "@/content/props";
 import PegChainSummary from "@/components/peg-chain-summary";
+import PegSearchBlock from "@/components/peg-search-block";
 import Image from "next/image";
 
 // Peg Image component with fallback to btc-inverse.svg
@@ -189,6 +190,13 @@ export default function PegChainSelector() {
 
     const selectedImplementation = availableChains.find(impl => impl.chainSlug === selectedChain && impl.pegSlug === selectedPeg);
 
+    const handleSearchSelect = (chainSlug: string, pegSlug: string) => {
+        // First select the chain (this will load available pegs)
+        handleChainSelection(chainSlug);
+        // Then select the peg
+        setSelectedPeg(pegSlug);
+    };
+
     return (
         <div className="max-w-4xl mx-auto space-y-8">
             <div className="text-center space-y-6 pt-8">
@@ -198,6 +206,15 @@ export default function PegChainSelector() {
                 <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
                     Compare the trust assumptions for using bitcoin on a variety of layer 2 networks, sidechains, and other applications
                 </p>
+            </div>
+
+            {/* Search Bar */}
+            <div className="flex justify-center">
+                <PegSearchBlock 
+                    inputClassName="h-[30px] text-sm p-2 pl-4 pr-10 bg-transparent border-2 border-muted-foreground rounded-full text-foreground placeholder:text-muted-foreground hover:border-brand focus:border-brand font-sans not-italic"
+                    imageClassName="bottom-[6px] right-3 w-4 h-4"
+                    onSelect={handleSearchSelect}
+                />
             </div>
 
             <Card>
