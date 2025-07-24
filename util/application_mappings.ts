@@ -22,51 +22,6 @@ export const applicationMappings: ApplicationMapping[] = [
         chainSlug: "lightning",
         keywords: ["wos", "wallet satoshi", "lightning wallet", "custodial lightning"]
     },
-    {
-        name: "Strike",
-        slug: "strike",
-        category: "wallet",
-        description: "Lightning wallet",
-        pegSlug: "spark",
-        chainSlug: "lightning",
-        keywords: ["strike app", "lightning payments", "jack mallers"]
-    },
-    {
-        name: "Cash App",
-        slug: "cash-app",
-        category: "wallet",
-        description: "Lightning wallet",
-        pegSlug: "spark",
-        chainSlug: "lightning",
-        keywords: ["cash app bitcoin", "square", "lightning"]
-    },
-    {
-        name: "Muun Wallet",
-        slug: "muun-wallet",
-        category: "wallet",
-        description: "Lightning wallet",
-        pegSlug: "spark",
-        chainSlug: "lightning",
-        keywords: ["muun", "lightning wallet", "self custody lightning"]
-    },
-    {
-        name: "Phoenix Wallet",
-        slug: "phoenix-wallet",
-        category: "wallet",
-        description: "Lightning wallet",
-        pegSlug: "spark",
-        chainSlug: "lightning",
-        keywords: ["phoenix", "acinq", "lightning wallet"]
-    },
-    {
-        name: "Breez Wallet",
-        slug: "breez-wallet",
-        category: "wallet",
-        description: "Lightning wallet",
-        pegSlug: "spark",
-        chainSlug: "lightning",
-        keywords: ["breez", "lightning wallet", "lsp"]
-    },
 ];
 
 // Search function for applications

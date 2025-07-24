@@ -192,7 +192,7 @@ const PegContractSearch = ({
         } else if (result.type === 'app-mapping') {
             return `${result.applicationCategory?.charAt(0).toUpperCase()}${result.applicationCategory?.slice(1)} • ${result.applicationDescription}`;
         } else {
-            return 'Application';
+            return 'Two-way peg';
         }
     };
 
@@ -208,7 +208,7 @@ const PegContractSearch = ({
         >
             <input
                 type="text"
-                placeholder="Insert token contract or application"
+                placeholder="Search for apps or two-way pegs..."
                 value={inputValue}
                 onChange={handleInputSearch}
                 onFocus={() => setInputFocused(true)}
