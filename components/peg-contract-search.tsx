@@ -154,6 +154,7 @@ const PegContractSearch = ({
             results.push({
                 type: 'app-mapping',
                 applicationName: app.name,
+                applicationSlug: app.slug,
                 applicationCategory: app.category,
                 applicationDescription: app.description,
                 pegSlug: app.pegSlug,
@@ -279,6 +280,11 @@ const ContractSearchResult = ({
                                                 title={item.networkName || ''}
                                             />
                                         </>
+                                    ) : item.type === 'app-mapping' ? (
+                                        <ContractSearchItemImage
+                                            src={`/logos/${item.applicationSlug}.png`}
+                                            title={item.applicationName || ''}
+                                        />
                                     ) : (
                                         <>
                                             <ContractSearchItemImage

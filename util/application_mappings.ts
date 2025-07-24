@@ -3,6 +3,7 @@
 
 export interface ApplicationMapping {
     name: string;
+    slug: string; // For logo mapping
     category: 'wallet' | 'exchange' | 'defi' | 'service' | 'bridge' | 'staking';
     description: string;
     pegSlug: string;
@@ -14,6 +15,7 @@ export const applicationMappings: ApplicationMapping[] = [
     // Lightning Wallets
     {
         name: "Wallet of Satoshi",
+        slug: "wallet-of-satoshi",
         category: "wallet",
         description: "Lightning wallet",
         pegSlug: "spark",
@@ -22,6 +24,7 @@ export const applicationMappings: ApplicationMapping[] = [
     },
     {
         name: "Strike",
+        slug: "strike",
         category: "wallet",
         description: "Lightning wallet",
         pegSlug: "spark",
@@ -30,6 +33,7 @@ export const applicationMappings: ApplicationMapping[] = [
     },
     {
         name: "Cash App",
+        slug: "cash-app",
         category: "wallet",
         description: "Lightning wallet",
         pegSlug: "spark",
@@ -38,6 +42,7 @@ export const applicationMappings: ApplicationMapping[] = [
     },
     {
         name: "Muun Wallet",
+        slug: "muun-wallet",
         category: "wallet",
         description: "Lightning wallet",
         pegSlug: "spark",
@@ -46,6 +51,7 @@ export const applicationMappings: ApplicationMapping[] = [
     },
     {
         name: "Phoenix Wallet",
+        slug: "phoenix-wallet",
         category: "wallet",
         description: "Lightning wallet",
         pegSlug: "spark",
@@ -54,6 +60,7 @@ export const applicationMappings: ApplicationMapping[] = [
     },
     {
         name: "Breez Wallet",
+        slug: "breez-wallet",
         category: "wallet",
         description: "Lightning wallet",
         pegSlug: "spark",
