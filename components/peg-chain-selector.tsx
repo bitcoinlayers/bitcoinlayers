@@ -193,8 +193,11 @@ export default function PegChainSelector() {
     const handleSearchSelect = (chainSlug: string, pegSlug: string) => {
         // First select the chain (this will load available pegs)
         handleChainSelection(chainSlug);
-        // Then select the peg
-        setSelectedPeg(pegSlug);
+        
+        // Use setTimeout to ensure the chain selection completes before setting the peg
+        setTimeout(() => {
+            setSelectedPeg(pegSlug);
+        }, 100);
     };
 
     return (

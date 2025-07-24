@@ -86,16 +86,36 @@ const PegContractSearch = ({
         allContracts.forEach(contract => {
             if (contract.token_address && 
                 contract.token_address.toLowerCase().includes(searchTerm)) {
-                results.push({
-                    type: 'contract',
-                    contractAddress: contract.token_address,
-                    tokenSlug: contract.token_slug,
-                    tokenName: contract.token_name,
-                    networkSlug: contract.network_slug,
-                    networkName: contract.network_name,
-                    pegSlug: contract.token_slug,
-                    chainSlug: contract.network_slug
-                });
+                
+                // Find the correct peg-chain combination for this contract
+                const allPegs = getAvailablePegs();
+                
+                // Try to find matching peg by token slug
+                const matchingPeg = allPegs.find(peg => 
+                    peg.slug.toLowerCase() === contract.token_slug.toLowerCase() ||
+                    peg.name.toLowerCase().includes(contract.token_name?.toLowerCase() || '')
+                );
+                
+                if (matchingPeg) {
+                    // Find the implementation for this specific network
+                    const pegImplementations = getPegImplementations(matchingPeg.slug);
+                    const chainImplementation = pegImplementations.find(impl => 
+                        impl.chainSlug.toLowerCase() === contract.network_slug.toLowerCase()
+                    );
+                    
+                    if (chainImplementation) {
+                        results.push({
+                            type: 'contract',
+                            contractAddress: contract.token_address,
+                            tokenSlug: contract.token_slug,
+                            tokenName: contract.token_name,
+                            networkSlug: contract.network_slug,
+                            networkName: contract.network_name,
+                            pegSlug: chainImplementation.pegSlug,
+                            chainSlug: chainImplementation.chainSlug
+                        });
+                    }
+                }
             }
         });
 
