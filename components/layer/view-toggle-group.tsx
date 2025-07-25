@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { useQueryState } from "nuqs";
+import { useRouter } from "next/navigation";
 import { ChevronDown } from "lucide-react";
 
 const viewOptions = [
@@ -11,10 +12,12 @@ const viewOptions = [
 ];
 
 const moreOptions = [
+    
     { value: "integrated", label: "Integrated Chains" },
     { value: "alternative networks", label: "Alternative Networks" },
     { value: "wrappers", label: "Wrappers" },
     { value: "other layers", label: "Other Layers" },
+    { value: "compare", label: "Compare Layers" },
     { value: "opcodes", label: "Opcodes (Coming Soon)", disabled: true },
 ];
 
@@ -26,6 +29,7 @@ const ViewToggleGroup = ({ showAll }: { showAll: boolean }) => {
         defaultValue: "other",
     });
     const [dropdownOpen, setDropdownOpen] = useState(false);
+    const router = useRouter();
 
     const displayOptions = showAll
         ? [{ value: "all", label: "All" }, ...viewOptions]
@@ -35,6 +39,12 @@ const ViewToggleGroup = ({ showAll }: { showAll: boolean }) => {
     const activeMoreOption = moreOptions.find(option => option.value === subView) || moreOptions[0];
 
     const handleMoreClick = (optionValue: string) => {
+        if (optionValue === "compare") {
+            router.push("/peg");
+            setDropdownOpen(false);
+            return;
+        }
+        
         setView("more");
         setSubView(optionValue);
         setDropdownOpen(false);
