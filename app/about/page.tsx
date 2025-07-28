@@ -80,7 +80,7 @@ const DonationsPage: React.FC = () => {
                 <div className="flex justify-start items-center gap-8 w-full">
                     <div className="flex-grow flex items-center gap-[30px] h-[156px]">
                         <div className="special_header flex-grow h-20">
-                            Support
+                            About
                         </div>
                     </div>
                 </div>
@@ -117,6 +117,18 @@ const DonationsPage: React.FC = () => {
                                                     </tr>
                                                 </thead>
                                                 <tbody>
+                                                <tr className="border-b border-border/50">
+                                                        <td className="py-2 pr-4 font-medium">StarkWare</td>
+                                                        <td className="py-2">Janusz&apos;s maintenance grant</td>
+                                                    </tr>
+                                                    <tr className="border-b border-border/50">
+                                                        <td className="py-2 pr-4 font-medium">Alpen Labs</td>
+                                                        <td className="py-2">Janusz&apos;s maintenance grant</td>
+                                                    </tr>
+                                                    <tr className="border-b border-border/50">
+                                                        <td className="py-2 pr-4 font-medium">Lightspark</td>
+                                                        <td className="py-2">Janusz&apos;s maintenance grant</td>
+                                                    </tr>
                                                     <tr className="border-b border-border/50">
                                                         <td className="py-2 pr-4 font-medium">Babylon Foundation</td>
                                                         <td className="py-2">Bitcoin Layers&apos; validator delegation (discontinued)</td>
