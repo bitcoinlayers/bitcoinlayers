@@ -163,7 +163,7 @@ const DonationsPage: React.FC = () => {
                         <div className="flex flex-col gap-8 w-full">
                             <InfoBox
                                 question="Further Disclaimers"
-                                answer={`Bitcoin Layers was previously funded through venture capital investments. The company who received those investments no longer contributes to Bitcoin Layers in an official capacity and uses this funding to build different products. We have included investments that may create a conflict of interest above. We have also included the UTXO Management investment as all funds from UTXO Managementwere used to fund Bitcoin Layers first year of development.`}
+                                answer={`Bitcoin Layers was previously funded through venture capital investments. The company who received those investments no longer contributes to Bitcoin Layers in an official capacity and uses this funding to build different products. We have included investments that may create a conflict of interest above. We have also included the UTXO Management investment as all funds from UTXO Management were used to fund Bitcoin Layers first year of development.`}
                             />
                         </div>
                     </div>
