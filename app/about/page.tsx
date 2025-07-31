@@ -133,9 +133,21 @@ const DonationsPage: React.FC = () => {
                                                         <td className="py-2 pr-4 font-medium">Babylon Foundation</td>
                                                         <td className="py-2">Bitcoin Layers&apos; validator delegation (discontinued)</td>
                                                     </tr>
-                                                    <tr>
+                                                    <tr className="border-b border-border/50">
                                                         <td className="py-2 pr-4 font-medium">Build on BOB</td>
                                                         <td className="py-2">Bitcoin Layers&apos; staking dashboard (discontinued)</td>
+                                                    </tr>
+                                                    <tr className="border-b border-border/50">
+                                                        <td className="py-2 pr-4 font-medium">CORE Ventures</td>
+                                                        <td className="py-2">Investment (funds no longer allocated to Bitcoin Layers)</td>
+                                                    </tr>
+                                                    <tr className="border-b border-border/50">
+                                                        <td className="py-2 pr-4 font-medium">Rootstock Labs</td>
+                                                        <td className="py-2">Investment (funds no longer allocated to Bitcoin Layers)</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td className="py-2 pr-4 font-medium">UTXO Management</td>
+                                                        <td className="py-2">Investment</td>
                                                     </tr>
                                                 </tbody>
                                             </table>
@@ -151,7 +163,7 @@ const DonationsPage: React.FC = () => {
                         <div className="flex flex-col gap-8 w-full">
                             <InfoBox
                                 question="Further Disclaimers"
-                                answer={`Bitcoin Layers was previously funded through venture capital investments. The company who received those investments no longer contributes to Bitcoin Layers in an official capacity and uses this funding to build different products.`}
+                                answer={`Bitcoin Layers was previously funded through venture capital investments. The company who received those investments no longer contributes to Bitcoin Layers in an official capacity and uses this funding to build different products. We have included investments that may create a conflict of interest above. We have also included the UTXO Management investment as all funds from UTXO Managementwere used to fund Bitcoin Layers first year of development.`}
                             />
                         </div>
                     </div>
