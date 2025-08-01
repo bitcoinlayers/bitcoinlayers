@@ -361,6 +361,18 @@ exports.Reviewsnippet = void 0;
     Reviewsnippet["TemplateBTC"] = "This is a fake prop used for the template file.";
 })(exports.Reviewsnippet || (exports.Reviewsnippet = {}));
 
+// Placeholder for wrapper intro props
+// This file is currently empty but may be populated in future updates
+const wrappersIntro = {};
+
+// Placeholder for wrapper more info props
+// This file is currently empty but may be populated in future updates
+const wrappersMoreInfo = {};
+
+// Placeholder for wrapper reviews props
+// This file is currently empty but may be populated in future updates
+const wrappersReviews = {};
+
 exports.CustodyTitle = void 0;
 (function (CustodyTitle) {
     CustodyTitle["BitcoinNative"] = "Bitcoin Native";
@@ -445,4 +457,7 @@ const custodyProps = {
 
 exports.Alertsnippet = Alertsnippet;
 exports.custodyProps = custodyProps;
+exports.wrappersIntro = wrappersIntro;
+exports.wrappersMoreInfo = wrappersMoreInfo;
+exports.wrappersReviews = wrappersReviews;
 //# sourceMappingURL=index.js.map

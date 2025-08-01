@@ -339,6 +339,12 @@ declare enum Reviewsnippet {
     TemplateBTC = "This is a fake prop used for the template file."
 }
 
+declare const wrappersIntro: {};
+
+declare const wrappersMoreInfo: {};
+
+declare const wrappersReviews: {};
+
 declare enum CustodyTitle {
     BitcoinNative = "Bitcoin Native",
     Federated = "Federated",
@@ -359,5 +365,5 @@ interface CustodyProps {
 }
 declare const custodyProps: CustodyProps;
 
-export { AdditionalSnippet, Alertsnippet, AtlSnippet, BitcoinSecuritySnippet, CustodyText, CustodyTitle, DefinitionSnippet, KnowledgeBitSnippet, OtherRiskSummarySnippet, OtherSnippet, PegRiskSummarySnippet, Reviewsnippet, RiskSummarySnippet, TechnologySnippet, UseCaseSnippet, custodyProps };
+export { AdditionalSnippet, Alertsnippet, AtlSnippet, BitcoinSecuritySnippet, CustodyText, CustodyTitle, DefinitionSnippet, KnowledgeBitSnippet, OtherRiskSummarySnippet, OtherSnippet, PegRiskSummarySnippet, Reviewsnippet, RiskSummarySnippet, TechnologySnippet, UseCaseSnippet, custodyProps, wrappersIntro, wrappersMoreInfo, wrappersReviews };
 export type { CustodyMechanism, CustodyProps };

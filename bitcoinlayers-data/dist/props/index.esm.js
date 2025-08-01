@@ -359,6 +359,18 @@ var Reviewsnippet;
     Reviewsnippet["TemplateBTC"] = "This is a fake prop used for the template file.";
 })(Reviewsnippet || (Reviewsnippet = {}));
 
+// Placeholder for wrapper intro props
+// This file is currently empty but may be populated in future updates
+const wrappersIntro = {};
+
+// Placeholder for wrapper more info props
+// This file is currently empty but may be populated in future updates
+const wrappersMoreInfo = {};
+
+// Placeholder for wrapper reviews props
+// This file is currently empty but may be populated in future updates
+const wrappersReviews = {};
+
 var CustodyTitle;
 (function (CustodyTitle) {
     CustodyTitle["BitcoinNative"] = "Bitcoin Native";
@@ -441,5 +453,5 @@ const custodyProps = {
     }
 };
 
-export { AdditionalSnippet, Alertsnippet, AtlSnippet, BitcoinSecuritySnippet, CustodyText, CustodyTitle, DefinitionSnippet, KnowledgeBitSnippet, OtherRiskSummarySnippet, OtherSnippet, PegRiskSummarySnippet, Reviewsnippet, RiskSummarySnippet, TechnologySnippet, UseCaseSnippet, custodyProps };
+export { AdditionalSnippet, Alertsnippet, AtlSnippet, BitcoinSecuritySnippet, CustodyText, CustodyTitle, DefinitionSnippet, KnowledgeBitSnippet, OtherRiskSummarySnippet, OtherSnippet, PegRiskSummarySnippet, Reviewsnippet, RiskSummarySnippet, TechnologySnippet, UseCaseSnippet, custodyProps, wrappersIntro, wrappersMoreInfo, wrappersReviews };
 //# sourceMappingURL=index.esm.js.map
