@@ -38,426 +38,6 @@ exports.RiskFactor = void 0;
     RiskFactor["NotApplicable"] = "Not Applicable";
     RiskFactor["AlternativePoS"] = "Alternative PoS Network";
 })(exports.RiskFactor || (exports.RiskFactor = {}));
-var RiskCategory;
-(function (RiskCategory) {
-    RiskCategory["BtcCustody"] = "BTC Custody";
-    RiskCategory["DataAvailability"] = "Data Availability";
-    RiskCategory["NetworkOperators"] = "Network Operators";
-    RiskCategory["SettlementAssurance"] = "Settlement Assurance";
-    RiskCategory["UnilateralExits"] = "Unilateral Exits";
-    RiskCategory["BlockProduction"] = "Block Production";
-    RiskCategory["StateValidation"] = "State Validation";
-    RiskCategory["FinalityGuarantees"] = "Finality Guarantees";
-    RiskCategory["LivenessReorgResistance"] = "Liveness & Reorg Resistance";
-})(RiskCategory || (RiskCategory = {}));
-var EntityType;
-(function (EntityType) {
-    EntityType["CSV"] = "CSV";
-    EntityType["EthereumRollup"] = "Ethereum Rollup";
-    EntityType["Rollup"] = "Rollup";
-    EntityType["Federation"] = "Federation";
-    EntityType["Sidechain"] = "Sidechain";
-    EntityType["MergeMined"] = "Merge-mined";
-    EntityType["SidechainRollup"] = "Sidechain Rollup";
-    EntityType["SovereignRollup"] = "Sovereign Rollup";
-    EntityType["StateChannel"] = "State Channel";
-    EntityType["Statechain"] = "Statechain";
-    EntityType["VirtualUTXOs"] = "Virtual UTXOs";
-    EntityType["zkCSV"] = "zkCSV";
-    EntityType["Hybrid"] = "Hybrid";
-    EntityType["Anchor"] = "Anchor";
-    EntityType["ChaumianEcashProtocol"] = "Chaumian Ecash";
-    EntityType["FederationSDK"] = "Federation SDK";
-    EntityType["LiquidStaking"] = "Liquid Staking";
-    EntityType["Restaking"] = "Restaking";
-    EntityType["RollupSDK"] = "Rollup SDK";
-    EntityType["Staking"] = "Staking";
-    EntityType["PermissionedChain"] = "Permissioned Chain";
-    EntityType["ArkSidechain"] = "Ark on Sidechain";
-    EntityType["Sequencing"] = "Sequencing";
-    EntityType["DataAvailability"] = "Data Availability";
-    EntityType["Bridge"] = "Bridge";
-    EntityType["RaaS"] = "RaaS";
-    EntityType["BTCWrapper"] = "BTC Wrapper";
-    EntityType["ReserveAsset"] = "Reserve";
-    EntityType["Lending"] = "Lending";
-    EntityType["Yield"] = "Yield";
-    EntityType["SequencingDA"] = "Sequencing & DA";
-    EntityType["BitcoinBridge"] = "Bitcoin Bridge";
-    EntityType["MPCProtocol"] = "MPC Protocol";
-    EntityType["TBD"] = "To Be Determined";
-    EntityType["Ark"] = "Ark";
-    EntityType["AltL1"] = "Alt. Layer 1";
-    EntityType["AltRollup"] = "Alt. Rollup";
-    EntityType["Alt"] = "Alt. Chain";
-    EntityType["SingleOp"] = "Single Opcode";
-    EntityType["GroupOp"] = "Group of Opcodes";
-    EntityType["StakedBTC"] = "Natively Staked BTC";
-    EntityType["PoSNetwork"] = "PoS Network";
-    EntityType["BPoSNetwork"] = "BPoS Network";
-    EntityType["-"] = "-";
-})(EntityType || (EntityType = {}));
-var EntityCategory;
-(function (EntityCategory) {
-    EntityCategory["BitcoinNative"] = "Bitcoin Native";
-    EntityCategory["Sidesystem"] = "Sidesystems";
-    EntityCategory["Integrated"] = "Integrated";
-    EntityCategory["Alt"] = "Alt. L1s & More";
-    EntityCategory["More"] = "More";
-})(EntityCategory || (EntityCategory = {}));
-var Notice;
-(function (Notice) {
-    Notice["NoBridge"] = "No native bitcoin bridge";
-    Notice["Sidesystem"] = "Sidesystems";
-    Notice["Reorg"] = "\uD83D\uDEA8 This project will be moved to the Alternative category after June 30th.";
-    Notice["UnderReview"] = "\uD83D\uDEA8 This project's categorization is under review.";
-    Notice["OtherReasonBridge"] = "This project does not have an enshrined bitcoin bridge that meets our sidesystem standards.";
-    Notice["ClaimBitcoinLayer"] = "This network is denominated in BTC.";
-})(Notice || (Notice = {}));
-var Categorization;
-(function (Categorization) {
-    Categorization["NoBridgeTitle"] = "The project does not have an enshrined bitcoin bridge";
-    Categorization["NoBridgeSnippet"] = "The project does not have an enshrined bitcoin bridge that meets our sidesystem standards. Our standards require sidesystem's enshinred bridge programs to have at least 5 signers with 4 of those signers being external to the project's primary development organization.";
-})(Categorization || (Categorization = {}));
-var BitcoinLayer;
-(function (BitcoinLayer) {
-    BitcoinLayer["Yes"] = "The project meets our technical standards to be considered a bitcoin layer";
-})(BitcoinLayer || (BitcoinLayer = {}));
-var UnilateralExit;
-(function (UnilateralExit) {
-    UnilateralExit["Yes"] = "This protocol supports unilateral exit, allowing users to withdraw funds without counterparty cooperation";
-})(UnilateralExit || (UnilateralExit = {}));
-var OtherIcons;
-(function (OtherIcons) {
-    OtherIcons["MergeMine"] = "This protocol is merge-mined by bitcoin miners.";
-    OtherIcons["NotALayer"] = "This protocol is not a bitcoin layer";
-    OtherIcons["Staking"] = "This protocol leverages bitcoin staking for aspects of its protocol.";
-    OtherIcons["Hybrid"] = "This protocol's VM can interact with L1 bitcoin transactions.";
-})(OtherIcons || (OtherIcons = {}));
-var CustodyTitle;
-(function (CustodyTitle) {
-    CustodyTitle["BitcoinNative"] = "Bitcoin Native";
-    CustodyTitle["Distributed"] = "Distributed Third-Party";
-    CustodyTitle["Centralized"] = "Centralized Third-Party";
-})(CustodyTitle || (CustodyTitle = {}));
-var Site;
-(function (Site) {
-    Site["Website"] = "Website";
-    Site["Docs"] = "Docs";
-    Site["Explorer"] = "Explorer";
-    Site["GitHub"] = "GitHub";
-    Site["Twitter"] = "Twitter";
-})(Site || (Site = {}));
-//Below is snippets for bitcoin tokens. This is where we write the custody score for the token so we don't have to write it on dozens of pages.
-var TokenSnippet;
-(function (TokenSnippet) {
-    TokenSnippet["UnderReview"] = "This two-way peg is under review";
-    TokenSnippet["CustodianPeg"] = "BTC backing this asset is managed by centralized parties";
-    TokenSnippet["CustodianDerivative"] = "This asset is backed by an alternative derivative of BTC";
-    TokenSnippet["FederationPeg"] = "BTC backing this asset is secured by a federation";
-    TokenSnippet["VariousCustodianPeg"] = "BTC backing this asset is secured by a number of individual custodians";
-    TokenSnippet["BitGowBTC"] = "wBTC is backed by a centralized consortium of three companies. These entities are responsible for custodying BTC that backs wBTC on its various networks. Users trust these entities to not collude and steal the funds backing wBTC.";
-    TokenSnippet["ThresholdtBTC"] = "tBTC's peg with bitcoin is managed by the Threshold Network, a distributed but permissioned two-way peg. This group of signers participate in a threshold signature scheme to secure the BTC that backs tBTC.";
-    TokenSnippet["CoinbasecbBTC"] = "Coinbase is responsible for securing the BTC that backs cbBTC. Users trust Coinbase to ensure the funds backing cbBTC are not stolen or lost.\n\nIn addition to securing the funds funds backing cbBTC, Coinbase can censor users from using cbBTC and maintains unilateral control of cbBTC's smart contracts.";
-    TokenSnippet["BinanceBTCB"] = "When interacting with BTCB, users trust that Binance, a centralized custodian, will safely custody the BTC backing BTCB. When interacting with a centralized custodian, users trust that the custodian will not steal the funds backing their BTCB tokens. They also trust that Binance will effectively manage the BTC and not lose access to it. If the BTC backing BTCB, BTCB tokens could become effectively worthless.";
-    TokenSnippet["LombardLBTC"] = "BTC backing Lombard LBTC is secured by a network of validators participating in Lombard\u2019s security consortium. The security consortium participates in a CometBFT consensus protocol. Adding and removing validators from this consortium is handled by the current validator set within a given epoch.\n\nThere are currently [nine (9) validators](https://etherscan.io/address/0xdad58DfA5c1a7a34419AFdBE1f0d610efeea95E4#readProxyContract) participating in securing the BTC that backs LBTC.";
-    TokenSnippet["SolvBTC"] = "SolvBTC claims to be partially backed by native BTC managed by custodian providers. It\u2019s been stated that Copper, Ceffu, Fireblocks, and Cobo are custodial providers securing BTC that partially backs SolvBTC. It's additionally backed by various BTC-derivative assets; [BTCB](https://www.bitcoinlayers.org/infrastructure/binance-btcb), [wBTC](https://www.bitcoinlayers.org/infrastructure/bitgo-wbtc), [FBTC](https://www.bitcoinlayers.org/infrastructure/firebitcoin-fbtc), [cbBTC](https://www.bitcoinlayers.org/infrastructure/coinbase-cbbtc), [BTC.b](https://www.bitcoinlayers.org/infrastructure/avalanche-btcb), and [tBTC](https://www.bitcoinlayers.org/infrastructure/threshold-tbtc).";
-    TokenSnippet["xSolvBTC"] = "Four entities custody the bitcoin assets backing xSolvBTC tokens. These entities are Cobo, Ceffu, Fireblocks and the Solv Guard. These entities are known as Guardians in the [Solv application](https://app.solv.finance/staking). Ceffu and Cobo are the custodians for funds that are staked with Babylon.";
-    TokenSnippet["PumpBTC"] = "PumpBTC works with custodial providers to swap PumpBTC deposits into native BTC for BTC staking. When a user deposits a BTC derivative token (e.g. wBTC) into the PumpBTC contract, they are given PumpBTC in return. Cobo and Coinover have been mentioned as operators participating in Pump.";
-    TokenSnippet["UniRouterBTC"] = "Users trust that the UniRouter team has set up secure custody practices and has BTC reserves backing uniBTC. UniRouter has not disclosed who secures the BTC backing uBTC.";
-    TokenSnippet["AvalancheBTCb"] = "Ava Labs has disclosed that users trust a network of entities who participate in securing the BTC that backs BTCb. These eight entities are also reported to run special HSM hardware.\n\nThe eight entities securing the bridge are: Halborn, Avascan, Bware Labs, Ankr, Chainstack, Protofire, Blockdaemon, and Ava Labs.";
-    TokenSnippet["BedrockUniBTC"] = "When a user deposits funds into the Bedrock protocol, they deposit a wrapped BTC token into the uniBTC smart contract. The uniBTC smart contract on Ethereum (and other chains) is responsible for minting uniBTC in exchange for wrapped BTC tokens. To deposit these tokens on Babylon, the protocol relies on a custodial provider to exchange the wrapped BTC tokens for native BTC tokens that they would stake on Babylon. Bedrock has not disclosed who is responsible for securing and staking native BTC on users' behalf.";
-    TokenSnippet["LorenzostBTC"] = "Users trust Lorenzo, the operators of Lorenzo stBTC, to secure and stake native BTC that backs stBTC. It has also been stated in Lorenzo's [marketing materials](https://medium.com/@lorenzoprotocol/lorenzo-allies-with-cobo-ceffu-and-chainup-e0d824c4744d) that custodian providers Cobo, Ceffu, and Chainup are participating in Lorenzo's protocol as custody providers, but their documentation does not claim this.";
-    TokenSnippet["AcornaBTC"] = "Users of aBTC reportedly trust a multi-signature wallet to secure the funds backing aBTC. Acorn's documentation mentions that a multi-signature wallet, supported by HSMs, is responsible for securing funds that back aBTC. Acorn has not disclosed the operators of this wallet.";
-    TokenSnippet["ibtcnetworkibtc"] = "iBTC is a two-way peg that leverages DLC contracts between various institutions and a federated attestor network. We are reviewing its trust assumptions.";
-    TokenSnippet["babypie"] = "An MPC set up between Babypie and Cobo secures the BTC backing mBTC. Cobo is an institutional custodian provider. Users trust Babypie's claims in their documentation are being executed in practice.";
-    TokenSnippet["xlink"] = "There is limited information available on Xlink aBTC's custody mechanism for BTC backing aBTC. Users trust Alex, the project behind Xlink, to set up secure custody practices. Xlink's [website](https://www.xlink.network/) mentions that institutional grade MPC solutions are used.";
-    TokenSnippet["FireBTC"] = "An MPC set up between Ignition and Cobo secures the BTC backing mBTC. Cobo is an institutional custodian provider. Users trust Ignition's claims in their documentation are being executed in practice.";
-    TokenSnippet["SolvBTCENA"] = "SolvBTC.ENA is a derivative asset that represents SolvBTC locked in a vault executing a trading strategy.\n\nSolvBTC claims to be partially backed by native BTC managed by custodian providers. It\u2019s been stated that Copper, Ceffu, Fireblocks, and Cobo are custodial providers securing BTC that partially backs SolvBTC. It's additionally backed by various BTC-derivative assets; [BTCB](https://www.bitcoinlayers.org/infrastructure/binance-btcb), [wBTC](https://www.bitcoinlayers.org/infrastructure/bitgo-wbtc), [FBTC](https://www.bitcoinlayers.org/infrastructure/firebitcoin-fbtc), [cbBTC](https://www.bitcoinlayers.org/infrastructure/coinbase-cbbtc), [BTC.b](https://www.bitcoinlayers.org/infrastructure/avalanche-btcb), and [tBTC](https://www.bitcoinlayers.org/infrastructure/threshold-tbtc).The token is backed by [SolvBTC](https://www.bitcoinlayers.org/infrastructure/solv-solvbtc).\n\nUsers expose themselves to smart contract and application risks when depositing funds into SolvBTC.ENA.";
-    TokenSnippet["KrakenKBTC"] = "Kraken, a centralized custodian, secures the BTC backing kBTC. The funds backing kBTC are held at Kraken Financial, a Wyoming-chartered SPDI (Special Purpose Depository Institution)";
-    TokenSnippet["MerlinMBTC"] = "BTC backing Merlin M-BTC is secured via an MPC wallet managed by Cobo, a institutional custodian. Information on how many signers participate in this MPC scheme is not available. Merlin has stated that more players are being added into this custody scheme.";
-    TokenSnippet["ObeliskoBTC"] = "Obelisk's documentation claims that users deposit BTC into an MPC scheme to mint oBTC on a respective destination chain.";
-    TokenSnippet["BTCTRON"] = "When users swap BTC for BTCTRON, they send their BTC to Poloniex, a centralized custodian. Information on how the BTC is secured is not available.";
-    TokenSnippet["BabylonStakedBTC"] = "Babylon Staked BTC is native BTC locked in a L1 staking script. Users lock their funds in the script with the help of a covenant emulator committee. Users can withdrawal their funds from the script at any time with the help of the covenant emulator committee. If the committee is offline, users can spend their funds after a timelock expires.\n\nStaked BTC comes with additional trust assumptions such as slashing conditions. We are reviewing these trust assumptions related to Babylon.";
-    TokenSnippet["SparkBTC"] = "Users custody funds collectively with the statechain entity in a 2-2 multisig. Every Spark vUTXO has a pre-signed unilateral exit path. When funds are transferred, users trust the statechain entity to delete the keyshare it held with the previous owner so it cannot collectively spend funds with past owners.";
-    TokenSnippet["MercuryLayerBTC"] = "The statechain setup involves locking a UTXO onchain with the private key shared between the operator and the current statecoin owner. Although the Mercury Layer server acts as a trusted entity, users are safeguarded against potential unresponsiveness by having the ability to unilaterally exit and enforce their UTXO ownership onchain as each transfer is secured by a decrementing timelock mechanism and a series of backup transactions.";
-    TokenSnippet["HyperliquidBTC"] = "The Unit Protocol consists of a network of 3 guardians participating in an MPC scheme. These guardians are responsible for securing the BTC backing a BTC-denominated asset on Hyperliquid. They are also responsible for executing signing events related to the asset.";
-    TokenSnippet["SimpleSBTC"] = "BTC backing Simple sBTC is secured by a [3/5 multisig](https://mempool.space/address/bc1ps0qa22q30rrp4584gz4teqkchn76wakzaq6mlhsv6sg36e0fl83sss2vxa). Information on who the signers are for this multisig and their signing mechanisms is unavailable.";
-    TokenSnippet["BoolBTC"] = "The Bool Network has not disclosed its custody mechanism for BTC backing bBTC across the various networks its deployed on. In its documentation, it references a custody mechanism that would see an approved entity be able to set up a 2-2 multisig between Bool and the entity.\n\nIt is possible this is the set up for bBTC custody across the chains its deployed on. In any case, users trust that Bool Network and the development teams behind specific networks have set up secure custody practices.\n\n\u26A0\uFE0F Bool Network has [pivoted](https://x.com/DeepSafe_AI/status/1881704352768999641) and may no longer be maintaining its bridge infrastructure.\n\n[Source](https://docs.bool.network/interoperability-protocol/self-custody/channels)";
-    TokenSnippet["NomicNBTC"] = "Users deposit BTC into a Reserve Wallet to receive nBTC on Nomic. The Reserve Wallet is a Bitcoin L1 multisig wallet managed by the Nomic signatory set. The Nomic signatory is made up of the top 20 Nomic validators measured by weighted stake.\n\nBecoming a signatory requires staking NOM tokens. Disbursing funds from the reserve wallet requires a 2/3s threshold, weighted by voting power through NOM tokens.";
-    TokenSnippet["StacksSBTC"] = "sBTC is a bridge between bitcoin and stacks managed by 14 institutional signers. sBTC on Stacks is backed by BTC held in a wallet managed by these signers. The identities of entities participating in the sBTC bridge are publicly known.\n\nIf 10 of the signers colluded, they could steal all of the BTC backing sBTC. You can find the signers [here](https://bitcoinl2labs.com/sbtc-rollout#sbtc-signers).";
-    TokenSnippet["AlexBTC"] = "Users trust Wrapped, a custodian provider, with the custody of BTC backing xBTC. Alex, a DeFi project largely associated with the Stacks ecosystem, acquired Wrapped and has initiated a transition to move xBTC into sBTC.\n\nFunds that are not moved into sBTC are still secured by [Wrapped](https://wrapped.com/).";
-    TokenSnippet["BsquaredBTC"] = "Previous blog posts have stated that when users deposit funds into Bsquared, they deposit funds into a MPC wallet managed by the Bsquared Network team and Cobo, a institutional custodian. Information on how many signers participate in this MPC scheme is not available. Bsquared has stated that more players are being added into this custody scheme.";
-    TokenSnippet["SolvBTCdotSolv"] = "SolvBTC claims to be partially backed by native BTC managed by custodian providers. It\u2019s been stated that Copper, Ceffu, Fireblocks, and Cobo are custodial providers securing BTC that partially backs SolvBTC. It's additionally backed by various BTC-derivative assets; [BTCB](https://www.bitcoinlayers.org/infrastructure/binance-btcb), [wBTC](https://www.bitcoinlayers.org/infrastructure/bitgo-wbtc), [FBTC](https://www.bitcoinlayers.org/infrastructure/firebitcoin-fbtc), [cbBTC](https://www.bitcoinlayers.org/infrastructure/coinbase-cbbtc), [BTC.b](https://www.bitcoinlayers.org/infrastructure/avalanche-btcb), and [tBTC](https://www.bitcoinlayers.org/infrastructure/threshold-tbtc). Multisigs securing derivative assets backing by SolvBTC are secured by GnosisSafes with 5 signers.";
-    TokenSnippet["BTCN"] = "BTCN is an Ethereum-based ERC-20 token. It is a BTC-derivative asset that is backed by cbBTC and wBTC. All of the BTCN supply is locked into Corn\u2019s ERC-20 Bridge contract on Ethereum and is in escrow. On Corn, BTCN is primarily stored in the Bitcorn OFT contract.\n\nThe BTCN contract is managed by the [0xCff...2C7D](https://etherscan.io/address/0xcff1ad9f09b32252171207e8525c90b18d4e2c7d#code) multisig address on Ethereum. The multi-sig has a 2/4 signing threshold.";
-    TokenSnippet["LiquidLBTC"] = "BTC withdrawals are currently permissioned by the Liquid federation. Users must trust that when they deposit BTC into the Liquid blockchain, the signers will not collude and steal their BTC. Most users typically acquire L-BTC on secondary marketplaces, not through bridge deposits. Supported marketplaces for L-BTC are also members of the Liquid federation. Users trust that the federation will not steal the BTC, which would leave their newly acquired L-BTC worthless. The BTC that backs L-BTC is held in a 11-15 multi-sig wallet where 11 (\u2154 + 1) of the signers would need to be compromised in order to steal the BTC.\n\nNot all signers for the Liquid two-way peg are publicly disclosed.";
-    TokenSnippet["SideBTC"] = "Side sBTC is managed by 21 signers who additionally participate as validators in Side's proof-of-stake consensus.\n\nThese signers participate in a TSS network that where trusted validators perform signing duties for sBTC abd Side Chain.";
-    TokenSnippet["RootstockRBTC"] = "The BTC that backs RBTC is secured by a 5-of-9 federated multisig, referred to as the Powpeg (Proof of Work Peg). The signers of the Powpeg run specialized HSM hardware to secure the private keys used for signing Powpeg transactions.\n\nThe identities of entities participating in the Powpeg are publicly known. Users trust the operators of the Powpeg to custody their funds.\n\nPowpeg signer identities and attestations can be found [here](https://rootstock.io/powpeg/).";
-    TokenSnippet["AlloBTC"] = "BTC backing AlloBTC is custodied by Cobo, a centralized exchange. Cobo offers a 2/2 MPC custody solution where they co-custody funds along with protocols leveraging their servives. AlloBTC has not disclosed if this is the case in their documentation or marketing materials.";
-    TokenSnippet["KinzaBTC"] = "Kinza's kBTC is backed by BTC held in custodian wallets. These wallets are secured by an MPC scheme where Kinza, Cobo, and Coinover participate as signers. Cobo and Coinover are institutional custody providers.";
-    TokenSnippet["pStakeyBTC"] = "pStake's yBTC is backed by BTC held in custodian wallets. These wallets are secured by signers participating in an MPC scheme. pStake has a dedicated Cobo account where users' funds are held.";
-    TokenSnippet["enzoBTC"] = "enzoBTC can be acquired through depositing native BTC, [wBTC](https://www.bitcoinlayers.org/infrastructure/bitgo-wbtc), or [BTCB](https://www.bitcoinlayers.org/infrastructure/binance-btcb).\n\nFunds backing enzoBTC are secured by various custodians including Cobo, Ceffu, and Chainup.";
-    TokenSnippet["TwentyOnecoBTC"] = "BTC backing 21.co BTC is held by third party custodians. 21.co has not officially disclosed the identities of these custodian providers.";
-    TokenSnippet["BedrockbrBTC"] = "Bedrock brBTC is a derivative asset backed by other wrapped BTC assets. When depositing funds for brBTC, users take on smart contract risks in addition to the custodian risk related to the backing asset.\b\bBedrock brBTC may be backed by [uniBTC](https://www.bitcoinlayers.org/infrastructure/bedrock-unibtc), [FBTS](https://www.bitcoinlayers.org/infrastructure/firebitcoin-fbtc), [cbBTC](https://www.bitcoinlayers.org/infrastructure/coinbase-cbbtc), [wBTC](https://www.bitcoinlayers.org/infrastructure/bitgo-wbtc), [M-BTC](https://www.bitcoinlayers.org/infrastructure/merlin-mbtc), or [BTCB](https://www.bitcoinlayers.org/infrastructure/binance-btcb).";
-    TokenSnippet["BadgereBTC"] = "To obtain eBTC, users must deposit Lido stETH, an ETH-denominated asset, as collateral to borrow eBTC. If a users's collateralization ratio falls below a certain threshold, they can be liquidated. Collateralization ratios are based on the ETH/BTC price pair";
-    TokenSnippet["HemiBTC"] = "BTC backing HemiBTC is secured in a single-signature bitcoin address. Hemi claims that they use a threshold signature scheme to move funds from this address, but the specific siganture scheme, and participating signers, have not been officially disclosed.";
-    TokenSnippet["iBTC"] = "BTC backing iBTC is secured by numerous 2-2 multisigs between institutions and iBTC's attestor network. iBTC network's attestor network has a 2/3s majority signing threshold and uses FROST to produce valid signatures to co-sign movement of funds related to iBTC BTC multisigs.\n\nUsers who acquire iBTC in onchains market trust that their tokens will remain backed by institutions supplying liquidity.";
-    TokenSnippet["MerlinwBTC"] = "BTC backing Merlin wBTC is likely secured by Cobo, a centralized institution. When users deposit BTC into the Merlin Chain bridge, they are depositing funds into custodian addresses managed by Cobo.";
-    TokenSnippet["ZueszBTC"] = "zBTC has a group of guardians securing the BTC that backs zBTC. This BTC is dispersed across a number of individual addresses, meaning that each custodian custodies a subset of funds in isolation of other custodians. Users should be aware of which custodian custodies the funds backing zBTC when using the network.";
-    TokenSnippet["MantamBTC"] = "mBTC is backed by [BitGo wBTC](https://www.bitcoinlayers.org/infrastructure/bitgo-wbtc) and [Binance BTCB](https://www.bitcoinlayers.org/infrastructure/binance-btcb). When users exchange these funds for mBTC, reserve assets are secured by vaults managed by Ceffu, an centralized institution.";
-    TokenSnippet["SolvsolvbtcCORE"] = "SolvBTC claims to be partially backed by native BTC managed by custodian providers. It\u2019s been stated that Copper, Ceffu, Fireblocks, and Cobo are custodial providers securing BTC that partially backs SolvBTC. It's additionally backed by various BTC-derivative assets; [BTCB](https://www.bitcoinlayers.org/infrastructure/binance-btcb), [wBTC](https://www.bitcoinlayers.org/infrastructure/bitgo-wbtc), [FBTC](https://www.bitcoinlayers.org/infrastructure/firebitcoin-fbtc), [cbBTC](https://www.bitcoinlayers.org/infrastructure/coinbase-cbbtc), [BTC.b](https://www.bitcoinlayers.org/infrastructure/avalanche-btcb), and [tBTC](https://www.bitcoinlayers.org/infrastructure/threshold-tbtc). We are reviewing if SolvBTC.CORE is natively minted or bridged from another chain.";
-    TokenSnippet["BitLayerwBTC"] = "Bitlayer's current BTC bridge is a federated two-way peg with institutional signers. Bitlayer is working with multiple MPC custody platforms.\n\nUsers do not custody bitcoin assets backing tokens on Bitlayer.\n\nNote that we are unable to verify the participants in this model.";
-    TokenSnippet["OsmosisBTC"] = "BTC on Osmosis is backed by a number of collateral assets; WBTC.eth.axl, wBTC, nBTC, ckBTC, and cbBTC.axl.";
-    TokenSnippet["smartcontractreview"] = "This token has trust assumptions past the initial two-way peg. We are reviewing specific smart contracts related to this implementation to learn more about these assumptions.";
-    TokenSnippet["BotanixBTC"] = "BTC backing Botanix pBTC is secured by a federation of signers. The identities of entities participating in the federation are [publicly known](https://docs.botanixlabs.com/botanix/get-to-know-botanix/roadmap-to-spiderchain/founding-federation/federation-overview). Users trust the operators of the federation to custody their funds, process deposits, and honor withdrawals.";
-    TokenSnippet["BotanixStakedBTC"] = "Botanix stBTC is a derivative asset backed by wrapped BTC locked in a staking vault. When users deposit funds into Botanix stBTC, they are depositing funds into a staking contract. The contract is [upgradeable](https://botanixscan.io/address/0x09C5874F1425697C81c34F58957f2BE584306312).";
-    TokenSnippet["TemplateBTC"] = "This is a fake prop used for the template file.";
-})(TokenSnippet || (TokenSnippet = {}));
-//Below is snippets for layer assessments.
-var ReviewSnippet;
-(function (ReviewSnippet) {
-    ReviewSnippet["EthereumRollupDA"] = "The data for network's state is made available by Ethereum full nodes. Anyone can run an Ethereum node and verify the state of the network.";
-    ReviewSnippet["BasedSequencedAlt"] = "The network is a based sequenced rollup. L1 block producers are responsible for sequencing the network's transactions.";
-    ReviewSnippet["SelfProposeMainAlt"] = "The network's sequencer is managed by one entity. The sequencer can censor transactions and can also cause liveness failures if it goes down. Users can bypass the sequencer and send their transactions directly to its parent chain. Users can also self-propose their own state transition, and exit the network to its parent chain.";
-    ReviewSnippet["SelfProposeNone"] = "The network's proposer role is managed by one entity. The proposer can refuse to post state updates and also have liveness failures. If the proposer goes down, users cannot update state relative to its official bridge program and permit exits.";
-    ReviewSnippet["SelfSequenceMainAlt"] = "The network's sequencer is managed by one entity. The sequencer can censor transactions and can also cause liveness failures if it goes down. Users can bypass the sequencer and force include their transaction to be included in an upcoming sequence.";
-    ReviewSnippet["SelfSequenceNone"] = "The network's sequencer is managed by one entity. The sequencer can censor transactions and can also cause liveness failures if it goes down. Users cannot sequencer their own transactions if the sequencer goes down or censors them.";
-    ReviewSnippet["FinalityAltRollupCentralizedProposer"] = "The network's state is updated offchain by nodes who apply state transition logic over the data made available by its data availability layer. After a new state is generated, a state root is posted to bridge programs. Only a single, whitelisted validator is able to publish state updates to the parent chain. If this validator goes offline, then users of the network would be unable to update state relative to its official bridge and permit exits.\n\nA malicious validator could publish a malicious state transition and steal funds from the bridge on the parent chain.";
-    ReviewSnippet["FinalityAltRollupCentralizedProposers"] = "The network's state is updated offchain by nodes who apply state transition logic over the data made available by its data availability layer. After a new state is generated, a state root is posted to bridge programs. Only whitelisted validators are able to publish state updates to the parent chain. If these validators go offline, then users of the network would be unable to update state relative to its official bridge and permit exits.";
-    ReviewSnippet["FinalityAltRollupFederationFraudProofs"] = "The network's state is updated offchain by nodes who apply state transition logic over the data made available by its data availability layer. After a new state is generated, a state root is posted to bridge programs. A network of validators are able to publish state updates.\n\nIf they were to publish malicious state updates, they could be challenged via fault proofs. A federated group of validators are able to submit fault proofs.";
-    ReviewSnippet["FinalityAltRollupPermissionlessFraudProofs"] = "The network's state is updated offchain by nodes who apply state transition logic over the data made available by its data availability layer. After a new state is generated, a state root is posted to bridge programs.\n\nIf a proposer were to publish a malicious state update, they could be challenged via fault proofs. Anyone with sufficient capital resources can submit a fault proof.";
-    ReviewSnippet["FinalityAltRollupValidityProofs"] = "The network's state is updated offchain by nodes who apply state transition logic over the data made available by its data availability layer. After a new state is generated, a state root is posted to bridge programs. An entity known as a prover periodically submits a validity proof to prove the correctness of a batch of transactions to the parent chain hosting the network's bridge program.";
-    ReviewSnippet["FinalityAnchorChain"] = "The network's consensus mechanism sees its validator set build upon a checkpoint it posts to bitcoin. Since a validator cannot build a valid block without referencing a block hash posted to bitcoin, the network cannot be reorged without reorging bitcoin.";
-    ReviewSnippet["AltL1DA"] = "Data relative to the network's state is stored and made available by its full node set. Anyone can run a full node and verify the state of the network.";
-    ReviewSnippet["AltL1DAPOW"] = "The data availability requirement is satisfied by sidechain full nodes. The network's node software is open-source, and anyone can run a full node to verify the current state of the chain.\n\nLike any sidechain, blocks can be orphaned, so miners are disincentivized to withhold data and not broadcast their blocks as they would not receive mining rewards.";
-    ReviewSnippet["DAConsensusNetwork"] = "Data is published to, and made available by, full nodes participating in an alternative consensus network. Anyone can run a node and verify the current state of the network.";
-    ReviewSnippet["DAFederation"] = "Data is published to, and made available by, full nodes participating in a federated validator set. Running a validator and full node in this set up is permissioned.";
-    ReviewSnippet["AltL1DaBTCStake"] = "Data relative to the network's state is stored and made available by its full node set. Anyone can run a full node and verify the state of the network. The network's data availability layer is secured via bitcoin staking.";
-    ReviewSnippet["AltL1DaMergeMine"] = "Data relative to the network's state is stored and made available by its full node set. Anyone can run a full node and verify the state of the network. The network's data availability layer is indirectly secured via bitcoin miners who merge-mine the network.";
-    ReviewSnippet["AltDADAC"] = "Data relative to the network's state is stored and made available by a permissioned set of nodes. Users trust this committee to make the data available to them so they can verify the state of the network.";
-    ReviewSnippet["AltL1Finality"] = "State transitions are finalized by an alternative consensus mechanism with a distributed validator set.";
-    ReviewSnippet["AltL1FinalityPOW"] = "The network's state transitions are validated by its full node set. After a block is mined by a miner, it is broadcast to its full node set who validates the block and includes it in the chain.";
-    ReviewSnippet["AltL1FinalityFederatedFullNode"] = "After blocks are proposed by a block producer, a majority of the network operators are needed to sign off on the block to propagate it to the network. After this is done, full nodes accept the block and include it in the chain.";
-    ReviewSnippet["CometBFTFinality"] = "The network uses CometBFT for consensus. Like Tendermint, the protocol on which CometBFT is based, CometBFT has single-slot finality, meaning that blocks cannot be re-organized once they are part of the canonical blockchain. More than \u2154 of validator voting power must sign commit votes to finalize a block. If validators attempt to commit multiple blocks at the same block height, their stake will be slashed.";
-    ReviewSnippet["UnderReview"] = "This two-way peg is under review";
-    ReviewSnippet["NoFraudProofsBridge"] = "Users trust the proposer to not publish a malicious, unchallenged state transition. If a centralized party does not contest this state transition within a given time frame, all funds from the bridge can be stolen.";
-    ReviewSnippet["CentralizedUpgradeableBridge"] = "A centralized admin can create a malicious smart contract upgrade. In the event of a malicious smart contract upgrade, there is no exit window for users. This means that the admin behind the bridge can steal all funds in the official bridge.";
-    ReviewSnippet["OperatorsPoSNetwork"] = "Blocks are produced and proposed by an alternative proof-of-stake network.";
-    ReviewSnippet["OperatorSidechainPOS"] = "The network's blocks are constructed by a distributed validator set. Validators participate in a proof-of-stake consensus network. Anyone with sufficient resources and token stake can become a validator and participate in block production.";
-    ReviewSnippet["OperatorSidechainPOSBTCStake"] = "The network's blocks are constructed by a distributed validator set. Validators participate in a proof-of-stake consensus network. Anyone with sufficient resources and token stake can become a validator and participate in block production.\n\nPart of stake weight is derived from BTC stake that is assigned to a given validator.";
-    ReviewSnippet["OperatorSidechainMergeMine"] = "Bitcoin miners who are willing are able to merge-mine the network and produce blocks. If interested parties do not possess enough hashpower to competitively solo mine, they can join a mining pool that support the network.";
-    ReviewSnippet["OperatorFederated"] = "Blocks are proposed and finalized by a permissioned federation. Only a limited number of operators are able to participate in block production.";
-    ReviewSnippet["OperatorCentralizedStatechain"] = "Offchain UTXO transfers are co-signed by the user and a single operator. Users trust this operator for liveness and ensuring the system remains operational.";
-    ReviewSnippet["OperatorFederatedStatechain"] = "Offchain UTXO transfers are co-signed by the user and a federation of operators. Users trust this federation for liveness and ensuring the system remains operational.";
-    ReviewSnippet["FinalityStatechainSingleOperator"] = "Finality is provided by the statechain entity deleting the keyshare that it held with the previous owner. This implementation's statechain entity is a single signer.\n\nIf the entity does not delete the keyshare, then it can collude with a previous owner and double spend the new owner.\n\nThere is no way to prove that the entity deleted its previous keyshare. Users are unable to have any finality assurances in this set up.";
-    ReviewSnippet["FinalityStatechainFederation"] = "Finality is provided by the statechain entity deleting the keyshare that it held with the previous owner. This implementation's statechain entity is comprised of a federation of signers where a certain threshold is needed to co-sign transfers.\n\nIf the entity does not delete the keyshare, then it can collude with a previous owner and double spend the new owner. There is no way to prove that the entity deleted its previous keyshare. Users are unable to have any finality assurances in this set up.";
-    ReviewSnippet["StatechainDABlindedServer"] = "Transaction data is self-hosted. The operator blindly signs and timestamps the individual statechain states and the transfer history gets passed on between clients. Due to the use of blind signing, the operator remains unaware of the transfer history.";
-    ReviewSnippet["OperatorStatechainBlindedServerSingleServer"] = "The system employs a statechain entity that generates and updates key shares in addition to offering a blind signing service. The statechain entity is a centralized server.";
-    ReviewSnippet["FinalityAltNetworkUnderReview"] = "Finality assurances are provided by an alternative consensus network. We are reviewing this section.";
-    ReviewSnippet["TemplateReview"] = "This is a fake prop used for the template file.";
-})(ReviewSnippet || (ReviewSnippet = {}));
-//Below is snippets for additional information in layers reviews.
-var BitcoinSecuritySnippet;
-(function (BitcoinSecuritySnippet) {
-    BitcoinSecuritySnippet["NoSecurity"] = "In its current state, the network does not inherit security from Bitcoin.";
-    BitcoinSecuritySnippet["AltTokenFees"] = "Fees to network operators are paid in an alternative token.";
-    BitcoinSecuritySnippet["WrappedTokenFees"] = "Network fees are paid in a BTC-backed asset on the network.";
-    BitcoinSecuritySnippet["CentralizedSequencerMEV"] = "The network does not introduce any MEV on the Bitcoin L1. Users trust the sequencer to not reorder their transactions to extract MEV.";
-    BitcoinSecuritySnippet["AltNetworkMEV"] = "The network does not introduce any MEV on the Bitcoin L1. Users trust the validators of the network to not reorder their transactions to extract MEV.";
-    BitcoinSecuritySnippet["NoSecurityBudget"] = "The network does not currently contribute to the Bitcoin security budget.";
-    BitcoinSecuritySnippet["UnderReview"] = "This two-way peg is under review";
-    BitcoinSecuritySnippet["YesSecurityCheckpointPOS"] = "The network's checkpoint mechanism provides security against long-range attacks, enabling more secure light clients and shorter unbonding periods for validators.";
-    BitcoinSecuritySnippet["YesSecurityDualStaking"] = "The network's economic security is partially derived from staked BTC locked in bitcoin L1 staking scripts.";
-    BitcoinSecuritySnippet["MEVUnderReview"] = "We are currently reviewing the network's potential creating more opportunities for MEV on bitcoin.";
-    BitcoinSecuritySnippet["BitcoinSecurityOffchainUTXO"] = "The protocol enables users to unilaterally exit. Users only need to interact with the bitcoin network to exit the protocol.";
-    BitcoinSecuritySnippet["OffchainUTXOMEV"] = "Due to transaction sequencing being offchain, the protocol does not enable MEV on the Layer 1.";
-    BitcoinSecuritySnippet["OffchainUTXONoToken"] = "The protocol does not need another token for transaction fees or other use cases.";
-    BitcoinSecuritySnippet["StatechainSecurityBudget"] = "Statechains do not interact with the base layer outside of uses unilaterally exiting with their funds. Unilateral exit transactions pay L1 transaction fees.";
-    BitcoinSecuritySnippet["FinalityAssurance"] = "The network cannot be reorged without reorging bitcoin. This is due to the fact that the network builds upon a checkpoint posted to bitcoin.";
-    BitcoinSecuritySnippet["CheckpointCometBFT"] = "The network's security is independent of bitcoin and reliant on its own proof-of-stake mechanism.\n\nIts checkpoint mechanism does provide security against long-range attacks, enabling more secure light clients and shorter unbonding periods for validators.";
-    BitcoinSecuritySnippet["Checkpoint"] = "The network's security is independent of bitcoin and reliant on its own consensus mechanism. Its checkpoint mechanism, however, ensures that after a transaction including a checkpoint reference is included on bitcoin, the network's state cannot be reverted without reorging bitcoin.";
-    BitcoinSecuritySnippet["FeesPOSCheckpoint"] = "Periodic checkpoint transactions are made that pay fees to bitcoin miners.";
-    BitcoinSecuritySnippet["MergeMineDA"] = "The network's data availability layer is merge-mined by bitcoin miners.";
-    BitcoinSecuritySnippet["MergeMine"] = "The network is merge-mined by bitcoin miners.";
-    BitcoinSecuritySnippet["MergeMineDAFees"] = "Fees from securing the network's data availability are paid to Bitcoin miners who optionally merge-mine the network.";
-    BitcoinSecuritySnippet["MergeMineFees"] = "Fees from securing the network's are paid to Bitcoin miners who optionally merge-mine the network.";
-    BitcoinSecuritySnippet["MergeMineMEV"] = "The network does not leak MEV to bitcoin. Bitcoin miners may take advantage of opportunities to extract MEV if the network is experiencing high activity.";
-    BitcoinSecuritySnippet["Template"] = "Template used for the template prop file.";
-})(BitcoinSecuritySnippet || (BitcoinSecuritySnippet = {}));
-var TechnologySnippet;
-(function (TechnologySnippet) {
-    TechnologySnippet["EVM"] = "The network uses an EVM-compatible virtual machine. The Ethereum Virtual Machine is software responsible for smart contract execution for a number of blockchains, namely the Ethereum Network. It uses Solidity/Vyper as its code and is the dominant environment for smart contract execution in the cryptocurrency ecosystem.";
-    TechnologySnippet["FaultProofs"] = "The network leverages cryptographic proofs that enables challengers to contest a proposed state transition that contains invalid or fraudulent transactions. Networks that use fault proofs (e.g., optimistic rollups) initially assume that new blocks are valid, then rely on users or watchtowers to challenge blocks if they include invalid state transitions, which are then resolved onchain or a parent blockchain. Fault proofs are largely used to secure bridge programs securing user funds.";
-    TechnologySnippet["IBC"] = "This protocol has implemented support for IBC, enabling users to transfer their tokens to other supported IBC-enabled blockchains. IBC, or the Inter-Blockchain Communication protocol, is a blockchain interoperability standard that enables connected chains to transfer assets and messages between each other.";
-    TechnologySnippet["BitcoinStakingUnderReview"] = "Bitcoin staking is a mechanism by which BTC on the L1 is locked in a staking script. The BTC is then directed to validators on a Proof-of-Stake network which adds to the network's economic security. These scripts see users retain custody of their funds.\n\nAll bitcoin staking mechanisms vary in implementation. We are currently reviewing the network's exact staking mechanism.";
-    TechnologySnippet["Statechain"] = "Statechains are offchain protocols where users custody an L1 UTXO collaboratively with a statechain entity. Users transfer funds by sending their private key to a new recipient with a decrementing timelock. Statechain entities are expected delete its previous keyshare with previous owners and only interact with the current holder of the keyshare.\n\nIf the statechain entity interacts with a previous owner, then they can double spend the current owner. And if a previous owner broadcasts its unilateral exit transaction, then the current owner must broadcast their own to ensure ownership of funds (due to the current owner's timelocks expiring before previous owners).";
-    TechnologySnippet["FROST"] = "FROST (Flexible Round-Optimized Schnorr Threshold Signatures) is a protocol that minimizes the number of rounds of communication between participants in Schnorr signature schemes, reducing network bandwidth, time, and probability of errors. It can be used to implement 'n-of-m' threshold signatures represented by a single signature on the blockchain. This saves block space and increases privacy by making them indistinguishable from other, more common spend types.";
-    TechnologySnippet["ArbitrumStylus"] = "In addition to being EVM-compatible, the network leverages Stylus to support developers building WASM-based smart contracts. Developers can decide between building EVM-based applications or writing smart contracts in more common programming languages, such as Rust, and compiling these contracts to WASM.";
-    TechnologySnippet["AnyTrustDA"] = "The data needed to reconstruct the state and construct fraud proofs is made available by a permissioned committee. The committee is based on the AnyTrust data availability protocol. This sees a committee of signers produce a data availability certificate that the data needed for proof construction is available for a certain amount of time.\n\nIn this design, a sequencer posts batches of transactions to the committee. After the signers receive this batches and produce a data availability certificate, the sequencer submits the latest hash of these batches, and a corresponding Data Availability Certificate, to corresponding light clients (i.e. bridges).";
-    TechnologySnippet["BitcoinScript"] = "Bitcoin Script is bitcoin\u2019s scripting language that enables users to define the conditions under which a Bitcoin UTXO can be spent. It is a low-level Assembly-based programming language.";
-    TechnologySnippet["OP_CAT"] = "OP_CAT is a Bitcoin opcode, short for Operation Concatenate. It allows the combination of two data elements on the Bitcoin stack. The opcode was originally introduced by Satoshi Nakamoto, but was removed due to potential denial of service attack vectors.\n\nOP_CAT would enable more expressive smart contracts on bitcoin, including \u201Ccovenants\u201D, a way to set spending conditions on individual UTXOs. Teams are also reviewing how it can support SNARK verification in Script, which would further improve bridging L1 assets to second layer protocols.";
-    TechnologySnippet["MergeMining"] = "Merged mining is a feature of the network's consensus mechanism that allows coupling between bitcoin and the alternative network. Essentially, BTC mining pools add references to the network's blocks in mining jobs sent to mining participants. Additionally, because the network's mining algorithm is the same as bitcoin\u2019s, there is little added energy expenditure. This sees bitcoin miners have an ability to additionally mine a percentage of the network's blocks. Miners are incentivized through earning a portion of transaction fees or newly issued tokens.";
-    TechnologySnippet["Elements"] = "The network is built with the Elements technology stack. Elements is an open-source technology stack built on top of the Bitcoin code base. Since it is built on the Bitcoin code base, Elements enables the network to be a testing ground for potential changes to the Bitcoin protocol.";
-    TechnologySnippet["ConfidentialTransactions"] = "The network enables Confidential Transactions which can provide users a higher level of privacy. This feature ensures that anyone, other than the participants in a transaction, cannot see the tokens, and the amount of, transferred between them.";
-    TechnologySnippet["OrgaMerk"] = "Orga is a custom-built stack designed for creating Proof-of-Stake (PoS) blockchains in Rust, offering an alternative to the Cosmos SDK. At its core, Orga integrates with CometBFT as its consensus engine.\n\nMerk complements Orga as a high-performance Merkle key/value store, serving as the state database for blockchains. It supports the proof generation necessary for the networks's IBC interactions with other networks and for enabling lightweight client functionalities for end users.";
-    TechnologySnippet["Template"] = "Template used for the template prop file.";
-})(TechnologySnippet || (TechnologySnippet = {}));
-var UseCaseSnippet;
-(function (UseCaseSnippet) {
-    UseCaseSnippet["OnchainApps"] = "Onchain applications are supported. Onchain applications include borrowing and lending protocols, onchain exchanges (commonly referred to as decentralized exchanges), and more. These applications are supported with more expressive smart contract environments.";
-    UseCaseSnippet["OffchainUTXOTransfers"] = "Users can transfer virtual representations of UTXOs offchain with the assistance of an operator. These transfers have fast, soft confirmation times and are lower in fees than L1 Bitcoin transactions.";
-    UseCaseSnippet["UTXOTokenizedApplications"] = "The protocol can be used to improve the efficiency of UTXO-based token protocols. Users are able to transfer and trade tokenized UTXOs with faster confirmation times than Bitcoin L1 with trust tradeoffs.\n\nTokenized applications may include stablecoin transfers or token exchange protocols.";
-    UseCaseSnippet["BitcoinStaking"] = "Users can lock L1 BTC into staking script to support the network's security. The BTC is directed to validators within the Proof-of-Stake network. These scripts see users retain custody of their funds, but sees them take on slashing risks.\n\nIn return for locking their funds into a staking script, users are paid rewards in the form of fees or altcoin issuance.";
-    UseCaseSnippet["TestingGround"] = "Since the network has enabled opcodes that are not yet live on Bitcoin, developers can deploy applications there to preview what it would be like on Bitcoin. This includes analyzing the builder experience, potential security vulnerabilities, and presenting how these changes might permanently affect the Bitcoin network.";
-    UseCaseSnippet["TokenizedAssets"] = "The network enables developers and users alike to issue tokenized securities, stablecoins, and synthetic forms of cryptocurrencies.";
-    UseCaseSnippet["IBCTransfers"] = "Using IBC, users can transfer tokens (including BTC-denominated tokens) to connected blockchains and engage in use-cases such as: 1) Get a USK loan on Kujira 2) Trade and provide liquidity on Osmosis 3) Trade perpetual swaps using Levana";
-    UseCaseSnippet["OffchainTransfers"] = "The network itself can also be used for p2p payments denominated in BTC.";
-    UseCaseSnippet["AIAgents"] = "Template for a protocol that uses AI agents to interact with the network.";
-    UseCaseSnippet["Template"] = "Template used for the template prop file.";
-})(UseCaseSnippet || (UseCaseSnippet = {}));
-var KnowledgeBitSnippet;
-(function (KnowledgeBitSnippet) {
-    KnowledgeBitSnippet["EthereumL2"] = "This network is a layer 2 for Ethereum. For a view into the technology from an Ethereum perspective, head to [L2Beat](https://www.L2Beat.com) for their review.";
-    KnowledgeBitSnippet["Template"] = "Template used for the template prop file.";
-})(KnowledgeBitSnippet || (KnowledgeBitSnippet = {}));
-var AdditionalSnippet;
-(function (AdditionalSnippet) {
-    AdditionalSnippet["UpgradeableContractsCentralizedAndNoExit"] = "The contracts related to this project are immediately upgradeable by a centralized party. These contracts affect the project's chain and may affect specific two-way peg implementations.\n\nIn case of an malicious upgrade, there is no exit delay and users are unable to leave the chain.";
-    AdditionalSnippet["UpgradeableContractsFederatedAndExit"] = "The contracts related to this project are immediately upgradeable by a federation. These contracts affect the project's chain and may affect specific two-way peg implementations.\n\nIn case of an malicious upgrade by this federation, there is no exit delay and users are unable to leave the chain.";
-})(AdditionalSnippet || (AdditionalSnippet = {}));
-var OtherSnippet;
-(function (OtherSnippet) {
-    OtherSnippet["WithdrawalsAltRollup"] = "Withdrawing BTC-backed assets from the network depends on a variety of factors. First, users must trust the network operators to include their withdrawal request in a block. If the user's assets are locked in the network's official bridge program, they rely on a proposer to include their request in proposed state transition. After the state transition is finalized, the user can redeem their funds.\n\nIf a user's BTC-backed asset is minted directly onto the network, then the user's withdrawal request must be processed by the asset issuer.";
-    OtherSnippet["NotASideSystem"] = "Projects that do not meet our requirements to be considered a sidesystem will be moved to the Alternative category. They have until June 30th to implement the technical requirements to be considered a sidesystem.";
-})(OtherSnippet || (OtherSnippet = {}));
-//Below is snippets for alternative chains that we haven't been able to review yet due to volume.
-var AtlSnippet;
-(function (AtlSnippet) {
-    AtlSnippet["FinalityConsensusNetwork"] = "Finality assurances are provided by an alternative consensus network. Users trust that once a transaction has been added to the chain it won't be reverted.";
-    AtlSnippet["DAConsensusNetwork"] = "Data is published to, and made available by, full nodes participating in an alternative consensus network. Anyone can run a node and verify the current state of the network";
-    AtlSnippet["OperatorsPoSNetwork"] = "Blocks are produced and proposed by an alternative proof-of-stake network.";
-    AtlSnippet["PrioritizeLayers"] = "The Bitcoin Layers project prioritizes reviews on protocols that claim to be bitcoin layers. It also reviews bridges, token wrappers, and other mechanisms that support synthetic versions of bitcoin on other chains. If you'd ike to contribute to this review, feel free to submit a PR in our [GitHub](https://github.com/bitcoinlayers/bitcoinlayers) or join our [telegram group](https://t.me/+8rv-1I2gkmQ4ZmJh) to discuss.";
-})(AtlSnippet || (AtlSnippet = {}));
-//Below is snippets for wrapper assessments.
-var WrapperReviews;
-(function (WrapperReviews) {
-    WrapperReviews["GovernanceLow"] = "Users have at least 48 hours to submit a withdrawal request to the bridge operators if a malicious contract upgrade is pushed to the token contract.";
-    WrapperReviews["GovernanceMediumLessThan48"] = "Users have less than 48 hours to submit a withdrawal request to the bridge operators if a malicious contract upgrade is pushed to the token contract. A publicly disclosed federation with at least 5 operators can implement contract upgrades";
-    WrapperReviews["GovernanceMedium"] = "There is no delay on contract upgrades. A publicly disclosed federation with at least 5 operators can implement contract upgrades.";
-    WrapperReviews["GovernanceHigh"] = "There is no delay on contract upgrades. A known, centralized party or federation with less than 5 operators can implement contract upgrades";
-    WrapperReviews["GovernanceVeryHigh"] = "There is no delay on contract upgrades. The identities of the signers who can implement contract upgrades is not disclosed";
-    WrapperReviews["crLow"] = "The token has no pause or blacklist function. Users can transact the BTC-backed token freely on a given network.";
-    WrapperReviews["CrBlacklistFederation"] = "The token has a blacklist function. A publicly known federation is able to blacklist users and stop them from being able to transact with the token.";
-    WrapperReviews["CrBlacklistSingleSigner"] = "The token has a blacklist function. A single entity is able to blacklist users and stop them from being able to transact with the token.";
-    WrapperReviews["CrBlacklistUnknown"] = "The token has a blacklist function. The identity of the entity who can blacklist users is unknown.";
-    WrapperReviews["CrPauseFederation"] = "The token has a pause function. A publicly known federation is able to blacklist users and stop them from being able to transact with the token.";
-    WrapperReviews["CrPauseSingleSigner"] = "The token has a pause function. A single entity is able to blacklist users and stop them from being able to transact with the token.";
-    WrapperReviews["CrPauseUnknown"] = "The token has a pause function. The identity of the entity who can blacklist users is unknown.";
-    WrapperReviews["crHigh"] = "The token has a pause and a blacklist function.";
-    WrapperReviews["SupplyIssuanceLow"] = "Newly tokens are minted via an onchain smart contract. The smart contract executes a bitcoin light client and mints tokens when a deposit transaction occurs on bitcoin. Users can notify the smart contract of a deposit if necessary.";
-    WrapperReviews["SupplyIssuanceMed"] = "A federation is responsible for passing messages that result in tokens being minted on a given layer.";
-    WrapperReviews["SupplyIssuanceHigh"] = "A single entity is responsible for passing messages that result in tokens being minted on a given layer.";
-    WrapperReviews["SupplyIssuanceVeryHigh"] = "The process of passing messages between bitcoin and a given layer to mint this token is not disclosed.";
-})(WrapperReviews || (WrapperReviews = {}));
-//Below is snippets for additional information in wrapper reviews.
-var WrapperSnippet;
-(function (WrapperSnippet) {
-    WrapperSnippet["BlacklistYes"] = "The token implementation has a blacklist function.";
-})(WrapperSnippet || (WrapperSnippet = {}));
-var BTCWrapperTransparency;
-(function (BTCWrapperTransparency) {
-    BTCWrapperTransparency["ProofofReservesYes"] = "The project provides active proof-of-reserves. The proof-of-reserves can be seen";
-    BTCWrapperTransparency["ProofofReservesNo"] = "The project has not published a Proof-of-Reserves. Users trust that the custodians holding native BTC backing the derivative asset to have ample reserves.";
-    BTCWrapperTransparency["ProofofReservesStakingNo"] = "The project has not published a Proof-of-Reserves. Users trust that the custodians holding native BTC backing the derivative asset to have ample reserves and that operators are staking BTC onto Babylon on users\u2019 behalf.";
-    BTCWrapperTransparency["OperatorsDisclosedYes"] = "Operators of the protocol have been disclosed.";
-    BTCWrapperTransparency["OperatorsDisclosedNo"] = "Operators of the protocol are not publicly disclosed.";
-    BTCWrapperTransparency["WithdrawalsYes"] = "The network does not introduce any MEV on the Bitcoin L1. Users trust the sequencer to not reorder their transactions to extract MEV.";
-    BTCWrapperTransparency["ContractsYes"] = "Contracts related to the project are source viewable and verified.";
-    BTCWrapperTransparency["ContractsNo"] = "Contracts related to the project are not source viewable and verified.";
-    BTCWrapperTransparency["ContractsSome"] = "Not all contracts related to the project are source viewable and verified.";
-    BTCWrapperTransparency["RedemptionsYes"] = "Redemptions are enabled. The project has documented how redemptions are processed in their documentation.";
-    BTCWrapperTransparency["RedemptionsYesNoDocs"] = "Redemptions are enabled. The project has not disclosed how redemptions are processed in their documentation.";
-    BTCWrapperTransparency["StakeAttestationsNo"] = "The project does not provide any attestations that its BTC is in-fact staked onto Babylon.";
-    BTCWrapperTransparency["StakeAttestationsYes"] = "The project does not provide any attestations that its BTC is in-fact staked onto Babylon.";
-})(BTCWrapperTransparency || (BTCWrapperTransparency = {}));
-var RiskSummarySnippet;
-(function (RiskSummarySnippet) {
-    RiskSummarySnippet["RiskSummarySecurityCouncil"] = "If the security council is compromised, they can immediately upgrade specific contracts and potentially steal user funds. This risk may be relevant to BTC-backed tokens locked in the layer's official bridge contract.";
-    RiskSummarySnippet["RiskSummaryImmediateUpgrade"] = "A centralized party can immediately upgrade specific system contracts. This risk may be relevant to BTC-backed tokens locked in the layer's official bridge contract.";
-    RiskSummarySnippet["RiskSummaryCentralNotImmediateUpgrade"] = "A centralized party can upgrade bridge contracts and steal user funds.";
-    RiskSummarySnippet["TitleBridgeUpgrade"] = "Bridge contracts are upgradeable";
-    RiskSummarySnippet["TitleSystemUpgrade"] = "Some system contracts are upgradeable";
-    RiskSummarySnippet["TitleUpgrade"] = "Some contracts are upgradeable. These contracts may be related to BTC-backed tokens locked in the layer's official bridge contract.";
-    RiskSummarySnippet["RiskSummaryCustodianPegs"] = "All BTC backing wrapped tokens on this network are ultimately secured by custodians. Users trust that these custodians will not misappropriate funds and keep their assets pegged 1:1. Each custodian has their own risks. Learn more in the trust assumptions review section.";
-    RiskSummarySnippet["TitleCustodianPegs"] = "All BTC pegs have custodian trust assumptions";
-    RiskSummarySnippet["RiskSummaryAltDANetwork"] = "Data related to the network's state is made available by another consensus network. The network's state cannot make progress if the data availability layer withholds the data. If the network cannot make progress, user funds can be frozen.";
-    RiskSummarySnippet["RiskSummaryAltDACommittee"] = "Data related to the network's state is made available by an offchain committee. The network's state cannot make progress if this committee withholds the data. If the network cannot make progress, user funds can be frozen.";
-    RiskSummarySnippet["TitleAltDA"] = "Another data availability layer is used";
-    RiskSummarySnippet["RiskSummaryCentralizedSequencer"] = "The network is operated by a centralized operator. If this operator goes offline, the network can be halted which can freeze user funds. Please see the trust assumptions to learn if their is a fallback mechanism for liveness failures.";
-    RiskSummarySnippet["TitleCentralizedSequencer"] = "A centralized entity is the network operator";
-    RiskSummarySnippet["RiskSummaryAlternativeL1"] = "The network is an alternative blockchain. Users trust the economic security of the network to deter validators from censorship and creating malicious peg outs.";
-    RiskSummarySnippet["TitleAlternativeL1"] = "The network is an alternative blockchain";
-    RiskSummarySnippet["TitleFederation"] = "The network is managed by a federation.";
-    RiskSummarySnippet["RiskSummaryFederation"] = "The network is managed by a federation. Users trust the federation to not censor them, halt the network, and freeze user funds.";
-    RiskSummarySnippet["RiskFederationPeg"] = "The BTC backing the official wrapped bitcoin asset is managed by a federation. Users trust that this federation of custodians will not misappropriate funds and keep their assets pegged 1:1. If the federation becomes compromised, it can unilaterally steal users' funds. The network may support other wrapped BTC assets with different trust assumptions.";
-    RiskSummarySnippet["RiskPOSPeg"] = "The BTC backing the official wrapped bitcoin asset is managed by a validators participating in the network's proof-of-stake protocol. Users trust that these signers will not misappropriate funds and keep their assets pegged 1:1. If signers with the majority of stake becomes malicious, they can unilaterally steal users' funds. The network may support other wrapped BTC assets with different trust assumptions.";
-    RiskSummarySnippet["RiskStatechainFinality"] = "If the statechain entity does not delete the keyshare it held with the previous owner, they can collude and immediately spend funds. This effectively results in the current owner's funds being stolen.";
-    RiskSummarySnippet["RiskStatechainPreviousOwner"] = "If the previous owner broadcasts their unilateral exit transaction, the current owner must respond by broadcasting theirs with a sooner expiring timelock. If the current owner does not respond, the previous owner can steal funds.";
-    RiskSummarySnippet["RiskStatechainTimelock"] = "If a previous owner of the UTXO broadcasts their unilateral exit transaction, and the current owner does not broadcast their own, the previous owner can steal funds.";
-    RiskSummarySnippet["RiskStatechainNoExit"] = "This implementation does not support unilateral exits. If the statechain entity becomes unresponsive, users funds are frozen.";
-    RiskSummarySnippet["RiskLightningChannel"] = "If a counterparty maliciously broadcasts a previous state, and it is not contested, they can close the channel with previous balances that favor the malicious actor.";
-    RiskSummarySnippet["RiskSummary"] = "";
-})(RiskSummarySnippet || (RiskSummarySnippet = {}));
-var PegRiskSummarySnippet;
-(function (PegRiskSummarySnippet) {
-    PegRiskSummarySnippet["CustodianTitle"] = "Users do not have unilateral claims on native BTC.";
-    PegRiskSummarySnippet["OneCustodian"] = "BTC backing this asset is secured by a centralized custodian. Users trust this single entity with maintaining the peg with BTC.";
-    PegRiskSummarySnippet["Guardian"] = "BTC backing this asset is secured by multiple custodians. Users trust this group with maintaining the peg with BTC.";
-    PegRiskSummarySnippet["Federation"] = "BTC backing this asset is secured by a federation of signers. Users trust this federation with maintaining the peg with BTC.";
-    PegRiskSummarySnippet["PoS"] = "BTC backing this asset is secured by a signers participating in a proof-of-stake network. Users trust these signers with maintaining the peg with BTC.";
-    PegRiskSummarySnippet["UnkownSignersTitle"] = "The signers for this two-way peg have not been disclosed";
-    PegRiskSummarySnippet["UnkownSigners"] = "The parties responsible for securing the assets backing this wrapper have not been disclosed. There is little-to-no reputational risk for signers securing these funds.";
-    PegRiskSummarySnippet["Collateralized"] = "Users are exposed to smart contract risks and potential liquidations when using this asset.";
-    PegRiskSummarySnippet["MultipleAssets"] = "This asset is backed by other BTC wrapped assets. If a reserve asset became unbacked, the two-way peg with BTC would break.";
-    PegRiskSummarySnippet["SlashingRisk"] = "This asset represents BTC staked in a staking protocol. If the corresponding BTC is slashed, users' balances could be affected.";
-    PegRiskSummarySnippet["RiskSummary"] = "";
-})(PegRiskSummarySnippet || (PegRiskSummarySnippet = {}));
-var OtherRiskSummarySnippet;
-(function (OtherRiskSummarySnippet) {
-    OtherRiskSummarySnippet["EcashCustodyTitle"] = "Users funds are managed by the mint operator";
-    OtherRiskSummarySnippet["CashuCustody"] = "A Cashu mint is operated by a single entity that custodies users\u2019 funds in return for issuing bearer Ecash tokens. If the mint gets hacked, becomes unresponsive or turns malicious, user funds can be stolen.";
-    OtherRiskSummarySnippet["FedimintCustody"] = "Users deposit BTC into a multisig to interact with a Fedimint. Users explicitly trust the signers, known as guardians, of the federations\u2019 multisig to not steal their funds. If the mint gets hacked, becomes unresponsive or turns malicious, user funds can be stolen.";
-    OtherRiskSummarySnippet["VariousMints"] = "Users can choose between different mints to interact with. It is avised that users choose a mint that they trust and personally know the identities of the operators.";
-    OtherRiskSummarySnippet["EcashDebasementRisk"] = "Ecash notes represent a claim on BTC held by the mint operators. As such, there is the risk that the operators issues more Ecash tokens than bitcoin it actually holds. This can lead to Ecash tokens being unbacked.";
-    OtherRiskSummarySnippet["RiskSummary"] = "";
-})(OtherRiskSummarySnippet || (OtherRiskSummarySnippet = {}));
-var DefinitionSnippet;
-(function (DefinitionSnippet) {
-    DefinitionSnippet["DefinitionAltRollup"] = "The network is an alternative rollup. It uses an alternative network for data availability and consensus. It supports a variety of BTC-backed assets.";
-})(DefinitionSnippet || (DefinitionSnippet = {}));
-var AssessmentCategory;
-(function (AssessmentCategory) {
-    AssessmentCategory["AssetCustody"] = "Asset Custody";
-    AssessmentCategory["StakingType"] = "Staking Type";
-    AssessmentCategory["SlashingRisk"] = "Slashing Risk";
-    AssessmentCategory["IncentiveModel"] = "Incentive Model";
-    AssessmentCategory["Reputation"] = "Reputation & Participation";
-    AssessmentCategory["Signing"] = "Signing Mechanism";
-    AssessmentCategory["KeyStorage"] = "Key Storage";
-    AssessmentCategory["CensorshipResistance"] = "Censorship Resistance";
-    AssessmentCategory["FinalityAssurances"] = "Finality Assurances";
-    AssessmentCategory["ProofofOwnership"] = "Proof of Ownership";
-    AssessmentCategory["NativeBitcoinCustody"] = "Native Bitcoin Custody";
-    AssessmentCategory["UnilateralExit"] = "Unilateral Exit Guarantees";
-    AssessmentCategory["UserRisk"] = "User Risk";
-    AssessmentCategory["ThirdPartyStaking"] = "Third Party Staking";
-    AssessmentCategory["SelfCustodialStaking"] = "Self-custodial Staking";
-    AssessmentCategory["SupplyIssuance"] = "Supply Issuance";
-    AssessmentCategory["StakeAttestations"] = "Stake Attestations";
-    AssessmentCategory["Governance"] = "Governance";
-})(AssessmentCategory || (AssessmentCategory = {}));
-
-// Re-export everything from the main props file
 exports.RiskCategory = void 0;
 (function (RiskCategory) {
     RiskCategory["BtcCustody"] = "BTC Custody";
@@ -922,7 +502,7 @@ const acorn = {
     type: exports.Type.Infrastructure,
     slug: "acorn-abtc",
     title: "Acorn aBTC",
-    entityType: EntityType.LiquidStaking,
+    entityType: exports.EntityType.LiquidStaking,
     live: exports.LiveStatus.Deposits,
     staking: false,
     liquidStaking: false,
@@ -938,12 +518,12 @@ const acorn = {
     description: "Acorn aBTC is a BTC-backed reserve asset that looks to live across various EVM chains.",
     riskSummary: [
         {
-            title: PegRiskSummarySnippet.CustodianTitle,
-            content: PegRiskSummarySnippet.Guardian,
+            title: exports.PegRiskSummarySnippet.CustodianTitle,
+            content: exports.PegRiskSummarySnippet.Guardian,
         },
         {
-            title: PegRiskSummarySnippet.UnkownSignersTitle,
-            content: PegRiskSummarySnippet.UnkownSigners,
+            title: exports.PegRiskSummarySnippet.UnkownSignersTitle,
+            content: exports.PegRiskSummarySnippet.UnkownSigners,
         },
     ],
     sections: [
@@ -959,7 +539,7 @@ const acorn = {
     ],
     assessment: [
         {
-            category: AssessmentCategory.AssetCustody,
+            category: exports.AssessmentCategory.AssetCustody,
             score: 0,
             tier: "",
             title: "Users trust operators of a multi-signature wallet with the custody of BTC backing aBTC",
@@ -972,7 +552,7 @@ const alexxbtc = {
     type: exports.Type.Infrastructure,
     slug: "alex-xbtc",
     title: "Alex xBTC",
-    entityType: EntityType.ReserveAsset,
+    entityType: exports.EntityType.ReserveAsset,
     live: exports.LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -988,8 +568,8 @@ const alexxbtc = {
     description: "xBTC is a BTC-derivative used primarily within Stacks DeFi applications. xBTC is backed by BTC held in Wrapped's custody.",
     riskSummary: [
         {
-            title: PegRiskSummarySnippet.CustodianTitle,
-            content: PegRiskSummarySnippet.OneCustodian,
+            title: exports.PegRiskSummarySnippet.CustodianTitle,
+            content: exports.PegRiskSummarySnippet.OneCustodian,
         },
     ],
     sections: [
@@ -1005,7 +585,7 @@ const alexxbtc = {
     ],
     assessment: [
         {
-            category: AssessmentCategory.AssetCustody,
+            category: exports.AssessmentCategory.AssetCustody,
             score: 0,
             tier: "",
             title: "Users trust Wrapped with the custody of BTC backing xBTC",
@@ -1018,7 +598,7 @@ const alloallobtc = {
     type: exports.Type.Infrastructure,
     slug: "allo-allobtc",
     title: "Allo alloBTC",
-    entityType: EntityType.LiquidStaking,
+    entityType: exports.EntityType.LiquidStaking,
     live: exports.LiveStatus.Mainnet,
     staking: false,
     liquidStaking: true,
@@ -1034,8 +614,8 @@ const alloallobtc = {
     description: "AlloBTC is a BTC wrapped asset. It is under review.",
     riskSummary: [
         {
-            title: PegRiskSummarySnippet.CustodianTitle,
-            content: PegRiskSummarySnippet.OneCustodian,
+            title: exports.PegRiskSummarySnippet.CustodianTitle,
+            content: exports.PegRiskSummarySnippet.OneCustodian,
         },
     ],
     sections: [
@@ -1051,7 +631,7 @@ const alloallobtc = {
     ],
     assessment: [
         {
-            category: AssessmentCategory.AssetCustody,
+            category: exports.AssessmentCategory.AssetCustody,
             score: 0,
             tier: "",
             title: "BTC backing AlloBTC is held in custody by Cobo, a centralized exchange.",
@@ -1064,7 +644,7 @@ const astria = {
     type: exports.Type.Infrastructure,
     slug: "astria",
     title: "Astria",
-    entityType: EntityType.Sequencing,
+    entityType: exports.EntityType.Sequencing,
     live: exports.LiveStatus.Proposed,
     staking: false,
     liquidStaking: false,
@@ -1078,23 +658,23 @@ const astria = {
     bitcoinOnly: false,
     links: [
         {
-            text: Site.Website,
+            text: exports.Site.Website,
             url: "https://astria.org",
         },
         {
-            text: Site.Docs,
+            text: exports.Site.Docs,
             url: "https://docs.astria.org",
         },
         {
-            text: Site.Explorer,
+            text: exports.Site.Explorer,
             url: "https://astrotrek.io",
         },
         {
-            text: Site.GitHub,
+            text: exports.Site.GitHub,
             url: "https://github.com/astriaorg",
         },
         {
-            text: Site.Twitter,
+            text: exports.Site.Twitter,
             url: "https://x.com/AstriaOrg",
         },
     ],
@@ -1116,7 +696,7 @@ const avail = {
     type: exports.Type.Infrastructure,
     slug: "avail",
     title: "Avail",
-    entityType: EntityType.DataAvailability,
+    entityType: exports.EntityType.DataAvailability,
     live: exports.LiveStatus.Testnet,
     staking: false,
     liquidStaking: false,
@@ -1130,23 +710,23 @@ const avail = {
     bitcoinOnly: false,
     links: [
         {
-            text: Site.Website,
+            text: exports.Site.Website,
             url: "https://availproject.org",
         },
         {
-            text: Site.Docs,
+            text: exports.Site.Docs,
             url: "https://www.availproject.org/developer",
         },
         {
-            text: Site.Explorer,
+            text: exports.Site.Explorer,
             url: "https://explorer.avail.so/#/explorer",
         },
         {
-            text: Site.GitHub,
+            text: exports.Site.GitHub,
             url: "https://github.com/availproject",
         },
         {
-            text: Site.Twitter,
+            text: exports.Site.Twitter,
             url: "https://x.com/availproject",
         },
     ],
@@ -1168,7 +748,7 @@ const avalanchebtcb = {
     type: exports.Type.Infrastructure,
     slug: "avalanche-btcb",
     title: "Avalanche BTC.b",
-    entityType: EntityType.ReserveAsset,
+    entityType: exports.EntityType.ReserveAsset,
     live: exports.LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -1182,27 +762,27 @@ const avalanchebtcb = {
     bitcoinOnly: false,
     links: [
         {
-            text: Site.Website,
+            text: exports.Site.Website,
             url: "https://core.app/",
         },
         {
-            text: Site.Explorer,
+            text: exports.Site.Explorer,
             url: "https://subnets.avax.network/c-chain/token/0x152b9d0FdC40C096757F570A51E494bd4b943E50",
         },
         {
-            text: Site.GitHub,
+            text: exports.Site.GitHub,
             url: "https://github.com/ava-labs",
         },
         {
-            text: Site.Twitter,
+            text: exports.Site.Twitter,
             url: "https://x.com/avax",
         },
     ],
     description: "Avalanche BTCb is a BTC-backed reserve asset that primarily supports the Avalanche ecosystem.",
     riskSummary: [
         {
-            title: PegRiskSummarySnippet.CustodianTitle,
-            content: PegRiskSummarySnippet.Federation,
+            title: exports.PegRiskSummarySnippet.CustodianTitle,
+            content: exports.PegRiskSummarySnippet.Federation,
         },
     ],
     sections: [
@@ -1218,7 +798,7 @@ const avalanchebtcb = {
     ],
     assessment: [
         {
-            category: AssessmentCategory.AssetCustody,
+            category: exports.AssessmentCategory.AssetCustody,
             score: 0,
             tier: "",
             title: "Users trust a network of 8 entities to secure the funds backing BTCb",
@@ -1231,7 +811,7 @@ const axelaraxlbtc = {
     type: exports.Type.Infrastructure,
     slug: "axelar",
     title: "Axelar axlBTC",
-    entityType: EntityType.ReserveAsset,
+    entityType: exports.EntityType.ReserveAsset,
     live: exports.LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -1245,23 +825,23 @@ const axelaraxlbtc = {
     bitcoinOnly: false,
     links: [
         {
-            text: Site.Website,
+            text: exports.Site.Website,
             url: "",
         },
         {
-            text: Site.Docs,
+            text: exports.Site.Docs,
             url: "",
         },
         {
-            text: Site.Explorer,
+            text: exports.Site.Explorer,
             url: "",
         },
         {
-            text: Site.GitHub,
+            text: exports.Site.GitHub,
             url: "",
         },
         {
-            text: Site.Twitter,
+            text: exports.Site.Twitter,
             url: "",
         },
     ],
@@ -1285,7 +865,7 @@ const axelaraxlbtc = {
     ],
     assessment: [
         {
-            category: AssessmentCategory.AssetCustody,
+            category: exports.AssessmentCategory.AssetCustody,
             score: 0,
             tier: "",
             title: "This peg is under review.",
@@ -1298,7 +878,7 @@ const babylonbtc = {
     type: exports.Type.Infrastructure,
     slug: "babylonstaked-btc",
     title: "Babylon Staked BTC",
-    entityType: EntityType.StakedBTC,
+    entityType: exports.EntityType.StakedBTC,
     live: exports.LiveStatus.Mainnet,
     staking: true,
     liquidStaking: false,
@@ -1312,23 +892,23 @@ const babylonbtc = {
     bitcoinOnly: true,
     links: [
         {
-            text: Site.Website,
+            text: exports.Site.Website,
             url: "https://babylonchain.io",
         },
         {
-            text: Site.Docs,
+            text: exports.Site.Docs,
             url: "https://docs.babylonchain.io",
         },
         {
-            text: Site.Explorer,
+            text: exports.Site.Explorer,
             url: "https://babylon.explorers.guru/",
         },
         {
-            text: Site.GitHub,
+            text: exports.Site.GitHub,
             url: "https://github.com/babylonchain",
         },
         {
-            text: Site.Twitter,
+            text: exports.Site.Twitter,
             url: "https://x.com/babylonlabs_io",
         },
     ],
@@ -1346,7 +926,7 @@ const babylonbtc = {
     ],
     assessment: [
         {
-            category: AssessmentCategory.AssetCustody,
+            category: exports.AssessmentCategory.AssetCustody,
             score: 0,
             tier: "",
             title: "Babylon Staked BTC is native BTC locked in L1 staking scripts",
@@ -1359,7 +939,7 @@ const babypie = {
     type: exports.Type.Infrastructure,
     slug: "babypie-mbtc",
     title: "Babypie mBTC",
-    entityType: EntityType.ReserveAsset,
+    entityType: exports.EntityType.ReserveAsset,
     live: exports.LiveStatus.Deposits,
     staking: false,
     liquidStaking: false,
@@ -1375,8 +955,8 @@ const babypie = {
     description: "Babypie mBTC is a BTC reserve asset that can be used across various EVM chains.",
     riskSummary: [
         {
-            title: PegRiskSummarySnippet.CustodianTitle,
-            content: PegRiskSummarySnippet.Guardian,
+            title: exports.PegRiskSummarySnippet.CustodianTitle,
+            content: exports.PegRiskSummarySnippet.Guardian,
         },
     ],
     sections: [
@@ -1392,7 +972,7 @@ const babypie = {
     ],
     assessment: [
         {
-            category: AssessmentCategory.AssetCustody,
+            category: exports.AssessmentCategory.AssetCustody,
             score: 0,
             tier: "",
             title: "Users trust an MPC set between Babypie and Cobo to secure funds backing mBTC.",
@@ -1405,7 +985,7 @@ const badgerebtc = {
     type: exports.Type.Infrastructure,
     slug: "badger-ebtc",
     title: "Badger eBTC",
-    entityType: EntityType.ReserveAsset,
+    entityType: exports.EntityType.ReserveAsset,
     live: exports.LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -1419,31 +999,31 @@ const badgerebtc = {
     bitcoinOnly: false,
     links: [
         {
-            text: Site.Website,
+            text: exports.Site.Website,
             url: "",
         },
         {
-            text: Site.Docs,
+            text: exports.Site.Docs,
             url: "",
         },
         {
-            text: Site.Explorer,
+            text: exports.Site.Explorer,
             url: "",
         },
         {
-            text: Site.GitHub,
+            text: exports.Site.GitHub,
             url: "",
         },
         {
-            text: Site.Twitter,
+            text: exports.Site.Twitter,
             url: "",
         },
     ],
     description: "Badger eBTC is a BTC-denominated asset that enables users to borrow BTC against Lido stETH. Lido stETH is a derivative of ETH, Ethereum's native currency.",
     riskSummary: [
         {
-            title: PegRiskSummarySnippet.CustodianTitle,
-            content: PegRiskSummarySnippet.Collateralized,
+            title: exports.PegRiskSummarySnippet.CustodianTitle,
+            content: exports.PegRiskSummarySnippet.Collateralized,
         },
     ],
     sections: [
@@ -1459,7 +1039,7 @@ const badgerebtc = {
     ],
     assessment: [
         {
-            category: AssessmentCategory.AssetCustody,
+            category: exports.AssessmentCategory.AssetCustody,
             score: 0,
             tier: "",
             title: "Users deposit stETH into a smart contract to receive eBTC",
@@ -1472,7 +1052,7 @@ const bedrockbrbtc = {
     type: exports.Type.Infrastructure,
     slug: "bedrock-brbtc",
     title: "Bedrock brBTC",
-    entityType: EntityType.ReserveAsset,
+    entityType: exports.EntityType.ReserveAsset,
     live: exports.LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -1486,31 +1066,31 @@ const bedrockbrbtc = {
     bitcoinOnly: false,
     links: [
         {
-            text: Site.Website,
+            text: exports.Site.Website,
             url: "",
         },
         {
-            text: Site.Docs,
+            text: exports.Site.Docs,
             url: "",
         },
         {
-            text: Site.Explorer,
+            text: exports.Site.Explorer,
             url: "",
         },
         {
-            text: Site.GitHub,
+            text: exports.Site.GitHub,
             url: "",
         },
         {
-            text: Site.Twitter,
+            text: exports.Site.Twitter,
             url: "",
         },
     ],
     description: "Bedrock brBTC is BTC-denominated asset backed by other derivative assets.",
     riskSummary: [
         {
-            title: PegRiskSummarySnippet.CustodianTitle,
-            content: PegRiskSummarySnippet.Guardian,
+            title: exports.PegRiskSummarySnippet.CustodianTitle,
+            content: exports.PegRiskSummarySnippet.Guardian,
         },
     ],
     sections: [
@@ -1526,7 +1106,7 @@ const bedrockbrbtc = {
     ],
     assessment: [
         {
-            category: AssessmentCategory.AssetCustody,
+            category: exports.AssessmentCategory.AssetCustody,
             score: 0,
             tier: "",
             title: "Bedrock brBTC is backed by various wrapped BTC assets",
@@ -1539,7 +1119,7 @@ const bedrock = {
     type: exports.Type.Infrastructure,
     slug: "bedrock-unibtc",
     title: "Bedrock uniBTC",
-    entityType: EntityType.LiquidStaking,
+    entityType: exports.EntityType.LiquidStaking,
     live: exports.LiveStatus.Deposits,
     staking: false,
     liquidStaking: true,
@@ -1553,31 +1133,31 @@ const bedrock = {
     bitcoinOnly: false,
     links: [
         {
-            text: Site.Website,
+            text: exports.Site.Website,
             url: "https://www.bedrock.technology",
         },
         {
-            text: Site.Docs,
+            text: exports.Site.Docs,
             url: "https://docs.bedrock.technology",
         },
         {
-            text: Site.Explorer,
+            text: exports.Site.Explorer,
             url: "https://app.bedrock.technology/statistics",
         },
         {
-            text: Site.GitHub,
+            text: exports.Site.GitHub,
             url: "https://github.com/Bedrock-Technology",
         },
         {
-            text: Site.Twitter,
+            text: exports.Site.Twitter,
             url: "https://x.com/Bedrock_DeFi",
         },
     ],
     description: "Bedrock is a liquid staking protocol featuring the uniBTC token.",
     riskSummary: [
         {
-            title: PegRiskSummarySnippet.CustodianTitle,
-            content: PegRiskSummarySnippet.Guardian,
+            title: exports.PegRiskSummarySnippet.CustodianTitle,
+            content: exports.PegRiskSummarySnippet.Guardian,
         },
     ], sections: [
         {
@@ -1613,7 +1193,7 @@ const bedrock = {
     ],
     assessment: [
         {
-            category: AssessmentCategory.AssetCustody,
+            category: exports.AssessmentCategory.AssetCustody,
             score: 0,
             tier: "",
             title: "Wrapped BTC tokens are swapped for BTC. A custodian is responsible for depositing funds into Babylon",
@@ -1626,7 +1206,7 @@ const bevmwbtc = {
     type: exports.Type.Infrastructure,
     slug: "bevm-wbtc",
     title: "BEVM WBTC",
-    entityType: EntityType.ReserveAsset,
+    entityType: exports.EntityType.ReserveAsset,
     live: exports.LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -1642,8 +1222,8 @@ const bevmwbtc = {
     description: "Under review.",
     riskSummary: [
         {
-            title: PegRiskSummarySnippet.CustodianTitle,
-            content: PegRiskSummarySnippet.Federation,
+            title: exports.PegRiskSummarySnippet.CustodianTitle,
+            content: exports.PegRiskSummarySnippet.Federation,
         },
     ],
     sections: [
@@ -1659,7 +1239,7 @@ const bevmwbtc = {
     ],
     assessment: [
         {
-            category: AssessmentCategory.AssetCustody,
+            category: exports.AssessmentCategory.AssetCustody,
             score: 0,
             tier: "",
             title: "Users trust a federation to secure BTC backing BEVM wBTC",
@@ -1672,7 +1252,7 @@ const binancebtcb = {
     type: exports.Type.Infrastructure,
     slug: "binance-btcb",
     title: "Binance BTCB",
-    entityType: EntityType.ReserveAsset,
+    entityType: exports.EntityType.ReserveAsset,
     live: exports.LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -1686,27 +1266,27 @@ const binancebtcb = {
     bitcoinOnly: false,
     links: [
         {
-            text: Site.Website,
+            text: exports.Site.Website,
             url: "https://www.binance.com",
         },
         {
-            text: Site.Explorer,
+            text: exports.Site.Explorer,
             url: "https://bscscan.com/token/0x7130d2a12b9bcbfae4f2634d864a1ee1ce3ead9c",
         },
         {
-            text: Site.GitHub,
+            text: exports.Site.GitHub,
             url: "https://github.com/bnb-chain",
         },
         {
-            text: Site.Twitter,
+            text: exports.Site.Twitter,
             url: "https://x.com/binance",
         },
     ],
     description: "Binance BTCB is a derivative asset native to BNB Smart Chain. BTC backing BTCB is secured by Binance, a centralized exchange.",
     riskSummary: [
         {
-            title: PegRiskSummarySnippet.CustodianTitle,
-            content: PegRiskSummarySnippet.OneCustodian,
+            title: exports.PegRiskSummarySnippet.CustodianTitle,
+            content: exports.PegRiskSummarySnippet.OneCustodian,
         },
     ],
     sections: [
@@ -1722,7 +1302,7 @@ const binancebtcb = {
     ],
     assessment: [
         {
-            category: AssessmentCategory.AssetCustody,
+            category: exports.AssessmentCategory.AssetCustody,
             score: 0,
             tier: "",
             title: "Users trust Binance with managing the BTC backing BTCB",
@@ -1735,7 +1315,7 @@ const bitcoinos = {
     type: exports.Type.Infrastructure,
     slug: "bitcoinos",
     title: "BitcoinOS",
-    entityType: EntityType.ReserveAsset,
+    entityType: exports.EntityType.ReserveAsset,
     live: exports.LiveStatus.Announced,
     staking: false,
     liquidStaking: false,
@@ -1749,11 +1329,11 @@ const bitcoinos = {
     bitcoinOnly: false,
     links: [
         {
-            text: Site.Website,
+            text: exports.Site.Website,
             url: "https://www.bitcoinos.build/",
         },
         {
-            text: Site.Docs,
+            text: exports.Site.Docs,
             url: "https://bitcoinos-technical-documentatio.gitbook.io/bitcoinos",
         },
         // {
@@ -1761,11 +1341,11 @@ const bitcoinos = {
         //     url: "https://cdn.prod.website-files.com/661e3b1622f7c56970b07a4c/662a7a89ce097389c876db57_BitSNARK__Grail.pdf",
         // },
         {
-            text: Site.GitHub,
+            text: exports.Site.GitHub,
             url: "https://github.com/bitsnark/bitsnark-lib",
         },
         {
-            text: Site.Twitter,
+            text: exports.Site.Twitter,
             url: "https://x.com/BTC_OS",
         },
     ],
@@ -1787,7 +1367,7 @@ const wbtc = {
     type: exports.Type.Infrastructure,
     slug: "bitgo-wbtc",
     title: "BitGo wBTC",
-    entityType: EntityType.ReserveAsset,
+    entityType: exports.EntityType.ReserveAsset,
     live: exports.LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -1801,27 +1381,27 @@ const wbtc = {
     bitcoinOnly: false,
     links: [
         {
-            text: Site.Website,
+            text: exports.Site.Website,
             url: "https://wbtc.network",
         },
         {
-            text: Site.Explorer,
+            text: exports.Site.Explorer,
             url: "https://wbtc.network/dashboard/order-book",
         },
         {
-            text: Site.GitHub,
+            text: exports.Site.GitHub,
             url: "https://github.com/WrappedBTC",
         },
         {
-            text: Site.Twitter,
+            text: exports.Site.Twitter,
             url: "https://x.com/WrappedBTC",
         },
     ],
     description: "wBTC is a wrapped version of bitcoin that lives on EVM-compatible networks. wBTC is backed 1:1 with bitcoin, with the bitcoin backing wBTC custodied by three custodial providers dispersed across different geographic locations.",
     riskSummary: [
         {
-            title: PegRiskSummarySnippet.CustodianTitle,
-            content: PegRiskSummarySnippet.Guardian,
+            title: exports.PegRiskSummarySnippet.CustodianTitle,
+            content: exports.PegRiskSummarySnippet.Guardian,
         },
     ],
     sections: [
@@ -1848,35 +1428,35 @@ const wbtc = {
     ],
     assessment: [
         {
-            category: AssessmentCategory.Reputation,
+            category: exports.AssessmentCategory.Reputation,
             score: 0,
             tier: "",
             title: "Users trust permissioned entities with the custody of their BTC.",
             content: "The Bitcoin backing wBTC is custodied by permissioned entities. BitGo and BiT Global are the participants responsible with custodying the funds backing wBTC across the various networks it's deployed on.\n\nThe wallets holding the bitcoin backing wBTC are dispersed between Hong Kong, Singapore, and the United States.",
         },
         {
-            category: AssessmentCategory.Signing,
+            category: exports.AssessmentCategory.Signing,
             score: 0,
             tier: "",
             title: "Transactions signed via multi-signature wallets",
             content: "wBTC signing is done via multi-signature wallets. The signing privileges for these wallets are distributed between BitGo and BiT Global.",
         },
         {
-            category: AssessmentCategory.KeyStorage,
+            category: exports.AssessmentCategory.KeyStorage,
             score: 0,
             tier: "",
             title: "Keys reportedly stored in air-gapped HSMs",
             content: "[Per BitGo's docs](https://developers.bitgo.com/guides/get-started/concepts/key-storage), the keys for wallets (storing BTC backing wBTC) are stored via air-gapped HSMs. Users trust that the operators of these HSMs will not attempt to extract the relevant private keys, and prevent external malicious actors from doing so.",
         },
         {
-            category: AssessmentCategory.CensorshipResistance,
+            category: exports.AssessmentCategory.CensorshipResistance,
             score: 0,
             tier: "",
             title: "Smart contracts upgradeable by wBTC DAO",
             content: "wBTC's Ethereum ERC-20 contract has no blacklist functionality, meaning that the contract cannot censor individual users from transferring wBTC. The contract is upgradeable by the wBTC DAO. The DAO can also freeze the contract entirely.\n\nThe wBTC DAO is made up of 13 organizations. It takes 8 of them to upgrade or freeze the contract.",
         },
         {
-            category: AssessmentCategory.UserRisk,
+            category: exports.AssessmentCategory.UserRisk,
             score: 0,
             tier: "",
             title: "wBTC is a custodial system. Users trust the custodians to ensure wBTC remains backed 1:1",
@@ -1889,7 +1469,7 @@ const bitlayerwbtc = {
     type: exports.Type.Infrastructure,
     slug: "bitlayer-wbtc",
     title: "Bitlayer WBTC",
-    entityType: EntityType.ReserveAsset,
+    entityType: exports.EntityType.ReserveAsset,
     live: exports.LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -1905,8 +1485,8 @@ const bitlayerwbtc = {
     description: "Bitlayer wBTC is the gas token for the Bitlayer sidechain. It is backed by BTC stored in a MPC protocol.",
     riskSummary: [
         {
-            title: PegRiskSummarySnippet.CustodianTitle,
-            content: PegRiskSummarySnippet.Guardian,
+            title: exports.PegRiskSummarySnippet.CustodianTitle,
+            content: exports.PegRiskSummarySnippet.Guardian,
         },
     ],
     sections: [
@@ -1922,7 +1502,7 @@ const bitlayerwbtc = {
     ],
     assessment: [
         {
-            category: AssessmentCategory.AssetCustody,
+            category: exports.AssessmentCategory.AssetCustody,
             score: 0,
             tier: "",
             title: "Users trust a federation of signers with the custody of BTC backing wBTC",
@@ -1935,7 +1515,7 @@ const boolbbtc = {
     type: exports.Type.Infrastructure,
     slug: "bool-bbtc",
     title: "Bool bBTC",
-    entityType: EntityType.ReserveAsset,
+    entityType: exports.EntityType.ReserveAsset,
     live: exports.LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -1949,31 +1529,31 @@ const boolbbtc = {
     bitcoinOnly: false,
     links: [
         {
-            text: Site.Website,
+            text: exports.Site.Website,
             url: "https://bool.network",
         },
         {
-            text: Site.Docs,
+            text: exports.Site.Docs,
             url: "https://docs.bool.network",
         },
         {
-            text: Site.Explorer,
+            text: exports.Site.Explorer,
             url: "https://beta-testnet.boolscan.com",
         },
         {
-            text: Site.GitHub,
+            text: exports.Site.GitHub,
             url: "https://github.com/boolnetwork",
         },
         {
-            text: Site.Twitter,
+            text: exports.Site.Twitter,
             url: "https://x.com/bool_official",
         },
     ],
     description: "Bool Network is an infrastructure provider currently managing a wrapped BTC reserve asset, bBTC, for a number of Bitcoin scaling protocols. The Bitcoin wallets it manages are secured by an MPC Protocol.",
     riskSummary: [
         {
-            title: PegRiskSummarySnippet.CustodianTitle,
-            content: PegRiskSummarySnippet.Guardian,
+            title: exports.PegRiskSummarySnippet.CustodianTitle,
+            content: exports.PegRiskSummarySnippet.Guardian,
         },
     ],
     sections: [
@@ -1989,7 +1569,7 @@ const boolbbtc = {
     ],
     assessment: [
         {
-            category: AssessmentCategory.AssetCustody,
+            category: exports.AssessmentCategory.AssetCustody,
             score: 0,
             tier: "",
             title: "Users trust the Bool Network and various layers to implement secure custody practices for BTC backing bBTC",
@@ -2002,7 +1582,7 @@ const bvm = {
     type: exports.Type.Infrastructure,
     slug: "bvm",
     title: "BVM",
-    entityType: EntityType.RaaS,
+    entityType: exports.EntityType.RaaS,
     live: exports.LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -2016,11 +1596,11 @@ const bvm = {
     bitcoinOnly: false,
     links: [
         {
-            text: Site.Website,
+            text: exports.Site.Website,
             url: "https://bvm.network",
         },
         {
-            text: Site.Docs,
+            text: exports.Site.Docs,
             url: "https://docs.bvm.network",
         },
         // {
@@ -2028,11 +1608,11 @@ const bvm = {
         //     url: "https://docs.bvm.network",
         // },
         {
-            text: Site.GitHub,
+            text: exports.Site.GitHub,
             url: "https://github.com/trustlesscomputer",
         },
         {
-            text: Site.Twitter,
+            text: exports.Site.Twitter,
             url: "https://x.com/BVMnetwork",
         },
     ],
@@ -2054,8 +1634,8 @@ const cashu = {
     type: exports.Type.Infrastructure,
     slug: "cashu",
     title: "Cashu",
-    entityType: EntityType.ChaumianEcashProtocol,
-    entityCategory: EntityCategory.More,
+    entityType: exports.EntityType.ChaumianEcashProtocol,
+    entityCategory: exports.EntityCategory.More,
     live: exports.LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -2069,11 +1649,11 @@ const cashu = {
     bitcoinOnly: true,
     links: [
         {
-            text: Site.Website,
+            text: exports.Site.Website,
             url: "https://cashu.space",
         },
         {
-            text: Site.Docs,
+            text: exports.Site.Docs,
             url: "https://docs.cashu.space",
         },
         // {
@@ -2081,27 +1661,27 @@ const cashu = {
         //     url: "https://github.com/cashubtc",
         // },
         {
-            text: Site.GitHub,
+            text: exports.Site.GitHub,
             url: "https://github.com/cashubtc",
         },
         {
-            text: Site.Twitter,
+            text: exports.Site.Twitter,
             url: "https://x.com/CashuBTC",
         },
     ],
     description: "An Ecash system consists of two parts, the mint and the Ecash wallet that stores digital bearer tokens. There are [several libraries](https://docs.cashu.space/libraries) that allow developers to build their respective services. Using blind signatures assures users’ privacy towards the mint when transacting with Ecash tokens.",
     riskSummary: [
         {
-            title: OtherRiskSummarySnippet.EcashCustodyTitle,
-            content: OtherRiskSummarySnippet.CashuCustody,
+            title: exports.OtherRiskSummarySnippet.EcashCustodyTitle,
+            content: exports.OtherRiskSummarySnippet.CashuCustody,
         },
         {
             title: "Users must select which mint custodies their funds",
-            content: OtherRiskSummarySnippet.VariousMints,
+            content: exports.OtherRiskSummarySnippet.VariousMints,
         },
         {
             title: "Tokens can be debased",
-            content: OtherRiskSummarySnippet.EcashDebasementRisk,
+            content: exports.OtherRiskSummarySnippet.EcashDebasementRisk,
         },
     ],
     sections: [
@@ -2188,7 +1768,7 @@ const cashu = {
     ],
     assessment: [
         {
-            category: AssessmentCategory.AssetCustody,
+            category: exports.AssessmentCategory.AssetCustody,
             score: 0,
             tier: "",
             title: "Users funds are managed by a single entity",
@@ -2201,7 +1781,7 @@ const celestia = {
     type: exports.Type.Infrastructure,
     slug: "celestia",
     title: "Celestia",
-    entityType: EntityType.DataAvailability,
+    entityType: exports.EntityType.DataAvailability,
     live: exports.LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -2215,11 +1795,11 @@ const celestia = {
     bitcoinOnly: false,
     links: [
         {
-            text: Site.Website,
+            text: exports.Site.Website,
             url: "https://celestia.org",
         },
         {
-            text: Site.Docs,
+            text: exports.Site.Docs,
             url: "https://docs.celestia.org",
         },
         // {
@@ -2227,11 +1807,11 @@ const celestia = {
         //     url: "https://github.com/celestiaorg",
         // },
         {
-            text: Site.GitHub,
+            text: exports.Site.GitHub,
             url: "https://github.com/celestiaorg",
         },
         {
-            text: Site.GitHub,
+            text: exports.Site.GitHub,
             url: "https://x.com/CelestiaOrg/",
         },
     ],
@@ -2253,7 +1833,7 @@ const chakra = {
     type: exports.Type.Infrastructure,
     slug: "chakra-stbtc",
     title: "Chakra stBTC",
-    entityType: EntityType.LiquidStaking,
+    entityType: exports.EntityType.LiquidStaking,
     live: exports.LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -2286,7 +1866,7 @@ const chakra = {
     ],
     assessment: [
         {
-            category: AssessmentCategory.AssetCustody,
+            category: exports.AssessmentCategory.AssetCustody,
             score: 0,
             tier: "",
             title: "This peg is under review.",
@@ -2299,7 +1879,7 @@ const cbbtc = {
     type: exports.Type.Infrastructure,
     slug: "coinbase-cbbtc",
     title: "Coinbase cbBTC",
-    entityType: EntityType.ReserveAsset,
+    entityType: exports.EntityType.ReserveAsset,
     live: exports.LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -2313,31 +1893,31 @@ const cbbtc = {
     bitcoinOnly: false,
     links: [
         {
-            text: Site.Website,
+            text: exports.Site.Website,
             url: "https://www.coinbase.com/cbbtc",
         },
         {
-            text: Site.Docs,
+            text: exports.Site.Docs,
             url: "https://docs.base.org",
         },
         {
-            text: Site.Explorer,
+            text: exports.Site.Explorer,
             url: "https://basescan.org/token/0xcbB7C0000aB88B473b1f5aFd9ef808440eed33Bf",
         },
         {
-            text: Site.GitHub,
+            text: exports.Site.GitHub,
             url: "https://github.com/base-org",
         },
         {
-            text: Site.Twitter,
+            text: exports.Site.Twitter,
             url: "https://x.com/base",
         },
     ],
     description: "cbBTC is a tokenized form of BTC. It is an ERC-20 token that is available on Ethereum and Base. It is backed 1:1 by BTC. The BTC backing cbBTC is custodied by Coinbase, a centralized custodian. Coinbase also has unilateral control of the token contracts related to cbBTC.",
     riskSummary: [
         {
-            title: PegRiskSummarySnippet.CustodianTitle,
-            content: PegRiskSummarySnippet.OneCustodian,
+            title: exports.PegRiskSummarySnippet.CustodianTitle,
+            content: exports.PegRiskSummarySnippet.OneCustodian,
         },
     ],
     sections: [
@@ -2354,35 +1934,35 @@ const cbbtc = {
     ],
     assessment: [
         {
-            category: AssessmentCategory.AssetCustody,
+            category: exports.AssessmentCategory.AssetCustody,
             score: 0,
             tier: "",
             title: "Users trust Coinbase with managing the BTC backing cbBTC",
             content: "When interacting with cbBTC, users trust that Coinbase, a centralized custodian, will safely custody the BTC backing cbBTC. When interacting with a centralized custodian, users trust that the custodian will not steal the funds backing their cbBTC tokens. They also trust that Coinbase will effectively manage the BTC and not lose access to it. If the BTC backing cbBTC was stolen or inaccessible, cbBTC tokens could become effectively worthless.\n\nUsers trust Coinbase's reputation as an institutional provider when interacting with cbBTC.",
         },
         {
-            category: AssessmentCategory.Signing,
+            category: exports.AssessmentCategory.Signing,
             score: 0,
             tier: "",
             title: "Exact signing mechanism unverifiable",
             content: "Coinbase has not disclosed the exact signing mechanism for bitcoin wallets holding and storing BTC backing cbBTC. In the [cbBTC whitepaper](https://coinbase.bynder.com/m/1303c2f4d78fc966/original/cbBTC-White-Paper.pdf), they share that a single person is unable to access any wallet's private key in plain text, meaning that a group of Coinbase employees must work together to decrypt relevant private keys for wallets associated with cbBTC.\n\nWhile unlikely, a group of Coinbase employees could collude to sign malicious transactions related to bitcoin wallets storing cbBTC.",
         },
         {
-            category: AssessmentCategory.KeyStorage,
+            category: exports.AssessmentCategory.KeyStorage,
             score: 0,
             tier: "",
             title: "Follows Coinbase's key management practices",
             content: "In Coinbase's [user agreement](https://www.coinbase.com/legal/user_agreement/united_states) mentions that they securely store private keys associated to users' assets on their behalf. In the [cbBTC whitepaper](https://coinbase.bynder.com/m/1303c2f4d78fc966/original/cbBTC-White-Paper.pdf), they state that these same custodial practices are used to secure BTC backing cbBTC.\n\nIn the whitepaper, they also mention that private keys are stored across facilities in the United States and Europe.\n\nWhile Coinbase is a reputable custodian, users do not hold the keys associated to BTC backing cbBTC, and trust Coinbase to follow sound custody practices.",
         },
         {
-            category: AssessmentCategory.CensorshipResistance,
+            category: exports.AssessmentCategory.CensorshipResistance,
             score: 0,
             tier: "",
             title: "The system is completely centralized and not resistant to censorship",
             content: "Both cbBTC smart contracts (on Base and Ethereum) are instantly upgradeable by Coinbase. Coinbase is a US public company. Coinbase has the authority to can censor specific users from transacting with cbBTC. They can also pause the token entirely, effectively shutting down any user who wishes to transact with cbBTC.\n\nUsers trust that Coinbase will not censor their use of cbBTC. You can find the relevant token contracts",
         },
         {
-            category: AssessmentCategory.UserRisk,
+            category: exports.AssessmentCategory.UserRisk,
             score: 0,
             tier: "",
             title: "cbBTC is a custodial solution. Users trust the custodian to not misappropriate funds backing the cbBTC token",
@@ -2395,7 +1975,7 @@ const corecorebtc = {
     type: exports.Type.Infrastructure,
     slug: "core-corebtc",
     title: "Core coreBTC",
-    entityType: EntityType.ReserveAsset,
+    entityType: exports.EntityType.ReserveAsset,
     live: exports.LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -2411,8 +1991,8 @@ const corecorebtc = {
     description: "Under review.",
     riskSummary: [
         {
-            title: PegRiskSummarySnippet.CustodianTitle,
-            content: PegRiskSummarySnippet.Federation,
+            title: exports.PegRiskSummarySnippet.CustodianTitle,
+            content: exports.PegRiskSummarySnippet.Federation,
         },
     ],
     sections: [
@@ -2428,7 +2008,7 @@ const corecorebtc = {
     ],
     assessment: [
         {
-            category: AssessmentCategory.AssetCustody,
+            category: exports.AssessmentCategory.AssetCustody,
             score: 0,
             tier: "",
             title: "Funds are custodied by a federated signer set, with a number of parties ensuring the honesty of the bridge",
@@ -2441,7 +2021,7 @@ const cornbtcn = {
     type: exports.Type.Infrastructure,
     slug: "corn-btcn",
     title: "Bitcorn BTCN",
-    entityType: EntityType.ReserveAsset,
+    entityType: exports.EntityType.ReserveAsset,
     live: exports.LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -2457,12 +2037,12 @@ const cornbtcn = {
     description: "BTCN is a derivative of BTC. It is backed by other BTC derivative assets. It is also the gas token for the Corn network.",
     riskSummary: [
         {
-            title: PegRiskSummarySnippet.CustodianTitle,
-            content: PegRiskSummarySnippet.Guardian,
+            title: exports.PegRiskSummarySnippet.CustodianTitle,
+            content: exports.PegRiskSummarySnippet.Guardian,
         },
         {
             title: "Various reserve assets used",
-            content: PegRiskSummarySnippet.MultipleAssets,
+            content: exports.PegRiskSummarySnippet.MultipleAssets,
         },
     ],
     sections: [
@@ -2502,7 +2082,7 @@ const cornbtcn = {
     ],
     assessment: [
         {
-            category: AssessmentCategory.UserRisk,
+            category: exports.AssessmentCategory.UserRisk,
             score: 0,
             tier: "",
             title: "Users trust BTCN contract owners & the various derivative assets supporting its 1:1 peg with BTC",
@@ -2515,7 +2095,7 @@ const cygnus = {
     type: exports.Type.Infrastructure,
     slug: "cygnus",
     title: "Cygnus",
-    entityType: EntityType.Restaking,
+    entityType: exports.EntityType.Restaking,
     live: exports.LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -2529,7 +2109,7 @@ const cygnus = {
     bitcoinOnly: false,
     links: [
         {
-            text: Site.Website,
+            text: exports.Site.Website,
             url: "https://cygnus.finance/",
         },
         // {
@@ -2537,11 +2117,11 @@ const cygnus = {
         //     url: "https://explorer.bsquared.network",
         // },
         {
-            text: Site.Docs,
+            text: exports.Site.Docs,
             url: "https://wiki.cygnus.finance/",
         },
         {
-            text: Site.Twitter,
+            text: exports.Site.Twitter,
             url: "https://x.com/CygnusFi",
         },
     ],
@@ -2563,7 +2143,7 @@ const espresso = {
     type: exports.Type.Infrastructure,
     slug: "espresso",
     title: "Espresso",
-    entityType: EntityType.SequencingDA,
+    entityType: exports.EntityType.SequencingDA,
     live: exports.LiveStatus.Proposed,
     staking: false,
     liquidStaking: false,
@@ -2577,11 +2157,11 @@ const espresso = {
     bitcoinOnly: false,
     links: [
         {
-            text: Site.Website,
+            text: exports.Site.Website,
             url: "https://espressosys.com",
         },
         {
-            text: Site.Docs,
+            text: exports.Site.Docs,
             url: "https://docs.espressosys.com",
         },
         // {
@@ -2589,11 +2169,11 @@ const espresso = {
         //     url: "https://github.com/EspressoSystems",
         // },
         {
-            text: Site.GitHub,
+            text: exports.Site.GitHub,
             url: "https://github.com/espressosystems",
         },
         {
-            text: Site.Twitter,
+            text: exports.Site.Twitter,
             url: "https://x.com/espressosys",
         },
     ],
@@ -2615,8 +2195,8 @@ const fedimint = {
     type: exports.Type.Infrastructure,
     slug: "fedimint",
     title: "Fedimint",
-    entityType: EntityType.ChaumianEcashProtocol,
-    entityCategory: EntityCategory.More,
+    entityType: exports.EntityType.ChaumianEcashProtocol,
+    entityCategory: exports.EntityCategory.More,
     live: exports.LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -2630,11 +2210,11 @@ const fedimint = {
     bitcoinOnly: true,
     links: [
         {
-            text: Site.Website,
+            text: exports.Site.Website,
             url: "https://fedimint.org",
         },
         {
-            text: Site.Docs,
+            text: exports.Site.Docs,
             url: "https://fedimint.org/docs/intro",
         },
         // {
@@ -2642,27 +2222,27 @@ const fedimint = {
         //     url: "https://github.com/fedimint",
         // },
         {
-            text: Site.GitHub,
+            text: exports.Site.GitHub,
             url: "https://github.com/fedimint",
         },
         {
-            text: Site.Twitter,
+            text: exports.Site.Twitter,
             url: "https://x.com/fedimint",
         },
     ],
     description: "Fedimint is a module-based open source framework for building federated applications, which can be collaboratively managed by a group of trusted entities. The main application that is in production today is an open source federated Ecash mint. The construction of a Fedimint sees users lock their BTC into a federation's multi-sig, and receive a bearer Ecash IOU in return. The concept improves on the currently predominant form of third party custody, as the user has a socially known and trusted entity guarding their BTC; a concept that is termed “second party custody”.",
     riskSummary: [
         {
-            title: OtherRiskSummarySnippet.EcashCustodyTitle,
-            content: OtherRiskSummarySnippet.FedimintCustody,
+            title: exports.OtherRiskSummarySnippet.EcashCustodyTitle,
+            content: exports.OtherRiskSummarySnippet.FedimintCustody,
         },
         {
             title: "Users must select which mint custodies their funds",
-            content: OtherRiskSummarySnippet.VariousMints,
+            content: exports.OtherRiskSummarySnippet.VariousMints,
         },
         {
             title: "Tokens can be debased",
-            content: OtherRiskSummarySnippet.EcashDebasementRisk,
+            content: exports.OtherRiskSummarySnippet.EcashDebasementRisk,
         }
     ],
     sections: [
@@ -2719,7 +2299,7 @@ const fedimint = {
     ],
     assessment: [
         {
-            category: AssessmentCategory.AssetCustody,
+            category: exports.AssessmentCategory.AssetCustody,
             score: 0,
             tier: "",
             title: "Users funds are managed by a set of guardians",
@@ -2732,7 +2312,7 @@ const fire = {
     type: exports.Type.Infrastructure,
     slug: "firebitcoin-fbtc",
     title: "Fire Bitcoin FBTC",
-    entityType: EntityType.ReserveAsset,
+    entityType: exports.EntityType.ReserveAsset,
     live: exports.LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -2746,11 +2326,11 @@ const fire = {
     bitcoinOnly: false,
     links: [
         {
-            text: Site.Website,
+            text: exports.Site.Website,
             url: "https://fbtc.com/",
         },
         {
-            text: Site.Docs,
+            text: exports.Site.Docs,
             url: "https://docs.fbtc.com",
         },
         // {
@@ -2758,19 +2338,19 @@ const fire = {
         //     url: "https://docs.fbtc.com/",
         // },
         {
-            text: Site.GitHub,
+            text: exports.Site.GitHub,
             url: "https://github.com/fbtc-xyz",
         },
         {
-            text: Site.Twitter,
+            text: exports.Site.Twitter,
             url: "https://x.com/IgnitionFBTC",
         },
     ],
     description: "Ignitions's FBTC is a BTC-backed reserve asset that can be used across various EVM chains.",
     riskSummary: [
         {
-            title: PegRiskSummarySnippet.CustodianTitle,
-            content: PegRiskSummarySnippet.Guardian,
+            title: exports.PegRiskSummarySnippet.CustodianTitle,
+            content: exports.PegRiskSummarySnippet.Guardian,
         },
     ],
     sections: [
@@ -2786,7 +2366,7 @@ const fire = {
     ],
     assessment: [
         {
-            category: AssessmentCategory.AssetCustody,
+            category: exports.AssessmentCategory.AssetCustody,
             score: 0,
             tier: "",
             title: "Users trust an MPC set between Ignition and Cobo to secure funds backing mBTC.",
@@ -2799,7 +2379,7 @@ const hemihemibtc = {
     type: exports.Type.Infrastructure,
     slug: "hemi-hemibtc",
     title: "Hemi BTC",
-    entityType: EntityType.ReserveAsset,
+    entityType: exports.EntityType.ReserveAsset,
     live: exports.LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -2813,35 +2393,35 @@ const hemihemibtc = {
     bitcoinOnly: false,
     links: [
         {
-            text: Site.Website,
+            text: exports.Site.Website,
             url: "",
         },
         {
-            text: Site.Docs,
+            text: exports.Site.Docs,
             url: "",
         },
         {
-            text: Site.Explorer,
+            text: exports.Site.Explorer,
             url: "",
         },
         {
-            text: Site.GitHub,
+            text: exports.Site.GitHub,
             url: "",
         },
         {
-            text: Site.Twitter,
+            text: exports.Site.Twitter,
             url: "",
         },
     ],
     description: "HemiBTC is a wrapped BTC asset native to the Hemi blockchain, an Ethereum rollup.",
     riskSummary: [
         {
-            title: PegRiskSummarySnippet.CustodianTitle,
-            content: PegRiskSummarySnippet.Federation,
+            title: exports.PegRiskSummarySnippet.CustodianTitle,
+            content: exports.PegRiskSummarySnippet.Federation,
         },
         {
-            title: PegRiskSummarySnippet.UnkownSignersTitle,
-            content: PegRiskSummarySnippet.UnkownSigners,
+            title: exports.PegRiskSummarySnippet.UnkownSignersTitle,
+            content: exports.PegRiskSummarySnippet.UnkownSigners,
         },
     ],
     sections: [
@@ -2857,11 +2437,11 @@ const hemihemibtc = {
     ],
     assessment: [
         {
-            category: AssessmentCategory.AssetCustody,
+            category: exports.AssessmentCategory.AssetCustody,
             score: 0,
             tier: "",
             title: "The signers securing BTC backing HemiBTC have not been officially disclosed",
-            content: TokenSnippet.HemiBTC,
+            content: exports.TokenSnippet.HemiBTC,
         },
     ],
 };
@@ -2870,7 +2450,7 @@ const ibtcnetworkibtc = {
     type: exports.Type.Infrastructure,
     slug: "ibtcnetwork-ibtc",
     title: "iBTC Network iBTC", //formerly DLC Link dlcBTC
-    entityType: EntityType.ReserveAsset,
+    entityType: exports.EntityType.ReserveAsset,
     live: exports.LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -2884,11 +2464,11 @@ const ibtcnetworkibtc = {
     bitcoinOnly: false,
     links: [
         {
-            text: Site.Website,
+            text: exports.Site.Website,
             url: "https://www.ibtc.network/",
         },
         {
-            text: Site.Docs,
+            text: exports.Site.Docs,
             url: "https://docs.ibtc.network/ibtc-documentation",
         },
         // {
@@ -2896,11 +2476,11 @@ const ibtcnetworkibtc = {
         //     url: "https://github.com/dlc-link",
         // },
         {
-            text: Site.GitHub,
+            text: exports.Site.GitHub,
             url: "https://github.com/dlc-link",
         },
         {
-            text: Site.Twitter,
+            text: exports.Site.Twitter,
             url: "https://x.com/ibtcnetwork",
         },
     ],
@@ -2918,7 +2498,7 @@ const ibtcnetworkibtc = {
     ],
     assessment: [
         {
-            category: AssessmentCategory.AssetCustody,
+            category: exports.AssessmentCategory.AssetCustody,
             score: 0,
             tier: "",
             title: "Institutions lock their funds into a 2-2 multisig with iBTC's attestor network",
@@ -2931,7 +2511,7 @@ const icpckbtc = {
     type: exports.Type.Infrastructure,
     slug: "internetcomputer-ckbtc",
     title: "ICP ckBTC",
-    entityType: EntityType.ReserveAsset,
+    entityType: exports.EntityType.ReserveAsset,
     live: exports.LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -2947,8 +2527,8 @@ const icpckbtc = {
     description: "ckBTC is a BTC-backed reserve asset that can be leveraged on the ICP network.",
     riskSummary: [
         {
-            title: PegRiskSummarySnippet.CustodianTitle,
-            content: `${PegRiskSummarySnippet.Federation} ICP governance elects the validators of the subnet repsonsible for managing the ckBTC two-way peg.`
+            title: exports.PegRiskSummarySnippet.CustodianTitle,
+            content: `${exports.PegRiskSummarySnippet.Federation} ICP governance elects the validators of the subnet repsonsible for managing the ckBTC two-way peg.`
         },
     ],
     sections: [
@@ -2964,7 +2544,7 @@ const icpckbtc = {
     ],
     assessment: [
         {
-            category: AssessmentCategory.AssetCustody,
+            category: exports.AssessmentCategory.AssetCustody,
             score: 0,
             tier: "",
             title: "Funds are secured by signer set selected by ICP consensus",
@@ -2977,7 +2557,7 @@ const kinza = {
     type: exports.Type.Infrastructure,
     slug: "kinza-kbtc",
     title: "Kinza kBTC",
-    entityType: EntityType.LiquidStaking,
+    entityType: exports.EntityType.LiquidStaking,
     live: exports.LiveStatus.Deposits,
     staking: false,
     liquidStaking: true,
@@ -2993,8 +2573,8 @@ const kinza = {
     description: "Kinza kBTC is a BTC wrapped asset. It is under review.",
     riskSummary: [
         {
-            title: PegRiskSummarySnippet.CustodianTitle,
-            content: PegRiskSummarySnippet.Guardian,
+            title: exports.PegRiskSummarySnippet.CustodianTitle,
+            content: exports.PegRiskSummarySnippet.Guardian,
         },
     ],
     sections: [
@@ -3010,7 +2590,7 @@ const kinza = {
     ],
     assessment: [
         {
-            category: AssessmentCategory.AssetCustody,
+            category: exports.AssessmentCategory.AssetCustody,
             score: 0,
             tier: "",
             title: "BTC backing kBTC is collaboratively secured by Cobo, Kinza, and Coinover",
@@ -3023,7 +2603,7 @@ const kbtc = {
     type: exports.Type.Infrastructure,
     slug: "kraken-kbtc",
     title: "Kraken kBTC",
-    entityType: EntityType.ReserveAsset,
+    entityType: exports.EntityType.ReserveAsset,
     live: exports.LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -3037,15 +2617,15 @@ const kbtc = {
     bitcoinOnly: false,
     links: [
         {
-            text: Site.Website,
+            text: exports.Site.Website,
             url: "https://www.kraken.com",
         },
         {
-            text: Site.Docs,
+            text: exports.Site.Docs,
             url: "https://www.kraken.com/kbtc",
         },
         {
-            text: Site.Explorer,
+            text: exports.Site.Explorer,
             url: "https://etherscan.io/token/0x73e0c0d45e048d25fc26fa3159b0aa04bfa4db98",
         },
         // {
@@ -3053,15 +2633,15 @@ const kbtc = {
         //     url: "https://www.kraken.com",
         // },
         {
-            text: Site.Twitter,
+            text: exports.Site.Twitter,
             url: "https://x.com/krakenfx",
         },
     ],
     description: "Kraken kBTC is a BTC-backed reserve asset that can be used on Ethereum or Optimism",
     riskSummary: [
         {
-            title: PegRiskSummarySnippet.CustodianTitle,
-            content: PegRiskSummarySnippet.OneCustodian,
+            title: exports.PegRiskSummarySnippet.CustodianTitle,
+            content: exports.PegRiskSummarySnippet.OneCustodian,
         },
     ],
     sections: [
@@ -3077,7 +2657,7 @@ const kbtc = {
     ],
     assessment: [
         {
-            category: AssessmentCategory.AssetCustody,
+            category: exports.AssessmentCategory.AssetCustody,
             score: 0,
             tier: "",
             title: "Users trust Kraken to secure funds backing kBTC",
@@ -3090,7 +2670,7 @@ const layerbankbtc = {
     type: exports.Type.Infrastructure,
     slug: "layerbank-btc",
     title: "Layerbank BTC",
-    entityType: EntityType.ReserveAsset,
+    entityType: exports.EntityType.ReserveAsset,
     live: exports.LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -3117,7 +2697,7 @@ const layerbankbtc = {
     ],
     assessment: [
         {
-            category: AssessmentCategory.AssetCustody,
+            category: exports.AssessmentCategory.AssetCustody,
             score: 0,
             tier: "",
             title: "This peg is under review.",
@@ -3130,7 +2710,7 @@ const layerbankubtc = {
     type: exports.Type.Infrastructure,
     slug: "layerbank-ubtc",
     title: "Layerbank uBTC",
-    entityType: EntityType.ReserveAsset,
+    entityType: exports.EntityType.ReserveAsset,
     live: exports.LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -3161,7 +2741,7 @@ const librepbtc = {
     type: exports.Type.Infrastructure,
     slug: "libre-pbtc",
     title: "Libre pBTC",
-    entityType: EntityType.ReserveAsset,
+    entityType: exports.EntityType.ReserveAsset,
     live: exports.LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -3188,7 +2768,7 @@ const librepbtc = {
     ],
     assessment: [
         {
-            category: AssessmentCategory.AssetCustody,
+            category: exports.AssessmentCategory.AssetCustody,
             score: 0,
             tier: "",
             title: "Libre's bridge relies on a third party provider. Signers are permissioned nodes from the pNetwork",
@@ -3201,7 +2781,7 @@ const liquidlbtc = {
     type: exports.Type.Infrastructure,
     slug: "liquid-lbtc",
     title: "Liquid L-BTC",
-    entityType: EntityType.ReserveAsset,
+    entityType: exports.EntityType.ReserveAsset,
     live: exports.LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -3217,8 +2797,8 @@ const liquidlbtc = {
     description: "Liquid LBTC is the native token for the Liquid sidechain. The BTC backing LBTC is secured by an 11/15 federation.",
     riskSummary: [
         {
-            title: PegRiskSummarySnippet.CustodianTitle,
-            content: PegRiskSummarySnippet.Federation,
+            title: exports.PegRiskSummarySnippet.CustodianTitle,
+            content: exports.PegRiskSummarySnippet.Federation,
         },
     ],
     sections: [
@@ -3234,7 +2814,7 @@ const liquidlbtc = {
     ],
     assessment: [
         {
-            category: AssessmentCategory.AssetCustody,
+            category: exports.AssessmentCategory.AssetCustody,
             score: 0,
             tier: "",
             title: "Users trust a federation with custody of their BTC",
@@ -3247,7 +2827,7 @@ const lombard = {
     type: exports.Type.Infrastructure,
     slug: "lombard-lbtc",
     title: "Lombard LBTC",
-    entityType: EntityType.LiquidStaking,
+    entityType: exports.EntityType.LiquidStaking,
     live: exports.LiveStatus.Mainnet,
     staking: false,
     liquidStaking: true,
@@ -3261,31 +2841,31 @@ const lombard = {
     bitcoinOnly: false,
     links: [
         {
-            text: Site.Website,
+            text: exports.Site.Website,
             url: "https://www.lombard.finance",
         },
         {
-            text: Site.Docs,
+            text: exports.Site.Docs,
             url: "https://docs.lombard.finance",
         },
         {
-            text: Site.Explorer,
+            text: exports.Site.Explorer,
             url: "https://etherscan.io/token/0x8236a87084f8b84306f72007f36f2618a5634494",
         },
         {
-            text: Site.GitHub,
+            text: exports.Site.GitHub,
             url: "https://github.com/lombard-finance",
         },
         {
-            text: Site.Twitter,
+            text: exports.Site.Twitter,
             url: "https://x.com/Lombard_Finance",
         },
     ],
     description: "Lombard offer a mechanism that enables users to deposit BTC and receive a wrapped version of BTC that represents BTC staked into the Babylon protocol.",
     riskSummary: [
         {
-            title: PegRiskSummarySnippet.CustodianTitle,
-            content: PegRiskSummarySnippet.Federation,
+            title: exports.PegRiskSummarySnippet.CustodianTitle,
+            content: exports.PegRiskSummarySnippet.Federation,
         },
     ],
     sections: [
@@ -3299,15 +2879,15 @@ const lombard = {
                 },
                 {
                     title: "External operators are disclosed",
-                    content: `${BTCWrapperTransparency.OperatorsDisclosedYes}\n\nOperators undergo KYB checks and must be approved by members of the consortium network before entering the protocol.`,
+                    content: `${exports.BTCWrapperTransparency.OperatorsDisclosedYes}\n\nOperators undergo KYB checks and must be approved by members of the consortium network before entering the protocol.`,
                 },
                 {
                     title: "Redemptions enabled and documented",
-                    content: BTCWrapperTransparency.RedemptionsYes,
+                    content: exports.BTCWrapperTransparency.RedemptionsYes,
                 },
                 {
                     title: "Contracts are open-source and verified",
-                    content: BTCWrapperTransparency.ContractsYes,
+                    content: exports.BTCWrapperTransparency.ContractsYes,
                 },
             ],
         },
@@ -3348,28 +2928,28 @@ const lombard = {
     ],
     assessment: [
         {
-            category: AssessmentCategory.AssetCustody,
+            category: exports.AssessmentCategory.AssetCustody,
             score: 0,
             tier: "",
             title: "Users trust a network of custodians in the Lombard protocol. Signers under review",
             content: "BTC backing Lombard LBTC is secured by a network of [custodians](https://etherscan.io/address/0xdad58DfA5c1a7a34419AFdBE1f0d610efeea95E4#readProxyContract) participating in Lombard’s security consortium. The security consortium participates in a CometBFT consensus protocol.\n\nAdding and removing validators from this consortium is handled by the current validator set within a given epoch. When a user deposits funds into the Lombard protocol, they are given a specific CubeSigner address to manage their deposits and staking transactions.\n\nWe are reviewing the signer set for the Lombard Security Consortium.",
         },
         {
-            category: AssessmentCategory.SupplyIssuance,
+            category: exports.AssessmentCategory.SupplyIssuance,
             score: 0,
             tier: "",
             title: "Issuing LBTC tokens requires consortium & bascule approval",
             content: "Issuing new LBTC tokens requires approval from the consortium validator set and Bascule bridge. If both of these parties approve a specific batch of mint requests, new LBTC tokens will be created.\n\nThe LBTC token contract owner can grant and revoke minting & burning permissions for actors who facilitate cross-chain transfers (e.g. Chainlink CCIP).",
         },
         {
-            category: AssessmentCategory.CensorshipResistance,
+            category: exports.AssessmentCategory.CensorshipResistance,
             score: 0,
             tier: "",
             title: "Pause function on respective contracts",
             content: "Token contracts have a pause function implemented. The pauser role can pause transfers of LBTC unilaterally. The pauser role is held by a 2/8 [GnosisSafe](https://etherscan.io/address/0x32B8AE4eE1401E726aF0BC154D2165D0592584c4#readProxyContract).",
         },
         {
-            category: AssessmentCategory.Governance,
+            category: exports.AssessmentCategory.Governance,
             score: 0,
             tier: "",
             title: "Contracts are upgradeable after 1 hour delay. A centralized party can upgrade contracts",
@@ -3382,7 +2962,7 @@ const lorenzo = {
     type: exports.Type.Infrastructure,
     slug: "lorenzo-stbtc",
     title: "Lorenzo stBTC",
-    entityType: EntityType.LiquidStaking,
+    entityType: exports.EntityType.LiquidStaking,
     live: exports.LiveStatus.Deposits,
     staking: false,
     liquidStaking: true,
@@ -3396,31 +2976,31 @@ const lorenzo = {
     bitcoinOnly: false,
     links: [
         {
-            text: Site.Website,
+            text: exports.Site.Website,
             url: "https://lorenzo-protocol.xyz",
         },
         {
-            text: Site.Docs,
+            text: exports.Site.Docs,
             url: "https://docs.lorenzo-protocol.xyz",
         },
         {
-            text: Site.Explorer,
+            text: exports.Site.Explorer,
             url: "https://scan.lorenzo-protocol.xyz",
         },
         {
-            text: Site.GitHub,
+            text: exports.Site.GitHub,
             url: "https://github.com/Lorenzo-Protocol",
         },
         {
-            text: Site.Twitter,
+            text: exports.Site.Twitter,
             url: "https://x.com/LorenzoProtocol",
         },
     ],
     description: "Lorenzo stBTC is a liquid staking token.",
     riskSummary: [
         {
-            title: PegRiskSummarySnippet.CustodianTitle,
-            content: PegRiskSummarySnippet.Guardian,
+            title: exports.PegRiskSummarySnippet.CustodianTitle,
+            content: exports.PegRiskSummarySnippet.Guardian,
         },
     ],
     sections: [
@@ -3436,7 +3016,7 @@ const lorenzo = {
     ],
     assessment: [
         {
-            category: AssessmentCategory.AssetCustody,
+            category: exports.AssessmentCategory.AssetCustody,
             score: 0,
             tier: "",
             title: "Users trust Lorenzo as the staking agent who secures, and stakes, native BTC backing stBTC. Cobo, Ceffu, and ChainUp have also been mentioned to support the protocol",
@@ -3449,7 +3029,7 @@ const lorenzoenzobtc = {
     type: exports.Type.Infrastructure,
     slug: "lorenzo-enzobtc",
     title: "Lorenzo enzoBTC",
-    entityType: EntityType.ReserveAsset,
+    entityType: exports.EntityType.ReserveAsset,
     live: exports.LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -3463,31 +3043,31 @@ const lorenzoenzobtc = {
     bitcoinOnly: false,
     links: [
         {
-            text: Site.Website,
+            text: exports.Site.Website,
             url: "",
         },
         {
-            text: Site.Docs,
+            text: exports.Site.Docs,
             url: "",
         },
         {
-            text: Site.Explorer,
+            text: exports.Site.Explorer,
             url: "",
         },
         {
-            text: Site.GitHub,
+            text: exports.Site.GitHub,
             url: "",
         },
         {
-            text: Site.Twitter,
+            text: exports.Site.Twitter,
             url: "",
         },
     ],
     description: "Lorenzo enzoBTC is a wrapped BTC asset offered through the Lorenzo protocol.",
     riskSummary: [
         {
-            title: PegRiskSummarySnippet.CustodianTitle,
-            content: PegRiskSummarySnippet.Guardian,
+            title: exports.PegRiskSummarySnippet.CustodianTitle,
+            content: exports.PegRiskSummarySnippet.Guardian,
         },
     ],
     sections: [
@@ -3503,7 +3083,7 @@ const lorenzoenzobtc = {
     ],
     assessment: [
         {
-            category: AssessmentCategory.AssetCustody,
+            category: exports.AssessmentCategory.AssetCustody,
             score: 0,
             tier: "",
             title: "enzoBTC is backed by native BTC and other derivative assets",
@@ -3516,7 +3096,7 @@ const mantambtc = {
     type: exports.Type.Infrastructure,
     slug: "manta-mbtc",
     title: "Manta mBTC",
-    entityType: EntityType.ReserveAsset,
+    entityType: exports.EntityType.ReserveAsset,
     live: exports.LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -3530,31 +3110,31 @@ const mantambtc = {
     bitcoinOnly: false,
     links: [
         {
-            text: Site.Website,
+            text: exports.Site.Website,
             url: "",
         },
         {
-            text: Site.Docs,
+            text: exports.Site.Docs,
             url: "",
         },
         {
-            text: Site.Explorer,
+            text: exports.Site.Explorer,
             url: "",
         },
         {
-            text: Site.GitHub,
+            text: exports.Site.GitHub,
             url: "",
         },
         {
-            text: Site.Twitter,
+            text: exports.Site.Twitter,
             url: "",
         },
     ],
     description: "Manta mBTC is a wrapped BTC asset available on various networks. It is backed by other wrapped BTC assets.",
     riskSummary: [
         {
-            title: PegRiskSummarySnippet.CustodianTitle,
-            content: PegRiskSummarySnippet.Guardian,
+            title: exports.PegRiskSummarySnippet.CustodianTitle,
+            content: exports.PegRiskSummarySnippet.Guardian,
         },
     ],
     sections: [
@@ -3570,7 +3150,7 @@ const mantambtc = {
     ],
     assessment: [
         {
-            category: AssessmentCategory.AssetCustody,
+            category: exports.AssessmentCategory.AssetCustody,
             score: 0,
             tier: "",
             title: "mBTC is backed by other wrapped assets. Funds backing mBTC are secured by Ceffu, a centralized institution",
@@ -3583,7 +3163,7 @@ const merlinmbtc = {
     type: exports.Type.Infrastructure,
     slug: "merlin-mbtc",
     title: "Merlin M-BTC",
-    entityType: EntityType.ReserveAsset,
+    entityType: exports.EntityType.ReserveAsset,
     live: exports.LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -3599,8 +3179,8 @@ const merlinmbtc = {
     description: "Merlin MBTC is a BTC-backed asset that primarily lives on Merlin Chain.",
     riskSummary: [
         {
-            title: PegRiskSummarySnippet.CustodianTitle,
-            content: PegRiskSummarySnippet.Guardian,
+            title: exports.PegRiskSummarySnippet.CustodianTitle,
+            content: exports.PegRiskSummarySnippet.Guardian,
         },
     ],
     sections: [
@@ -3610,47 +3190,47 @@ const merlinmbtc = {
             content: [
                 {
                     title: "The protocol does not provide a public proof-of-reserve",
-                    content: BTCWrapperTransparency.ProofofReservesNo,
+                    content: exports.BTCWrapperTransparency.ProofofReservesNo,
                 },
                 {
                     title: "External operators are not disclosed",
-                    content: BTCWrapperTransparency.OperatorsDisclosedNo,
+                    content: exports.BTCWrapperTransparency.OperatorsDisclosedNo,
                 },
                 {
                     title: "Redemptions enabled",
-                    content: BTCWrapperTransparency.RedemptionsYesNoDocs,
+                    content: exports.BTCWrapperTransparency.RedemptionsYesNoDocs,
                 },
                 {
                     title: "Contracts are not open-source and verified",
-                    content: BTCWrapperTransparency.ContractsSome,
+                    content: exports.BTCWrapperTransparency.ContractsSome,
                 },
             ],
         },
     ],
     assessment: [
         {
-            category: AssessmentCategory.AssetCustody,
+            category: exports.AssessmentCategory.AssetCustody,
             score: 0,
             tier: "",
             title: "Users trust centralized parties with the custody of BTC backing M-BTC",
             content: "BTC backing Merlin M-BTC is secured via an MPC wallet managed by Cobo, a institutional custodian. Information on how many signers participate in this MPC scheme is not available. Merlin has stated that more players are being added into this custody scheme.\n\n[Source](https://www.cobo.com/post/cobo-bitmap-tech-establish-merlin-chain-bitcoin-layer-2-network-with-mpc-custody-technology)",
         },
         {
-            category: AssessmentCategory.SupplyIssuance,
+            category: exports.AssessmentCategory.SupplyIssuance,
             score: 0,
             tier: "",
             title: "We cannot verify information on M-BTC's minting mechanism",
             content: "MBTC is minted to Merlin via a bridge contract between Merlin and its parent chain. Because we cannot verify its parent chain's contracts, we are unable to verify MBTC's minting and burning permissions.",
         },
         {
-            category: AssessmentCategory.CensorshipResistance,
+            category: exports.AssessmentCategory.CensorshipResistance,
             score: 0,
             tier: "",
             title: "M-BTC has a blacklist function",
-            content: WrapperSnippet.BlacklistYes
+            content: exports.WrapperSnippet.BlacklistYes
         },
         {
-            category: AssessmentCategory.Governance,
+            category: exports.AssessmentCategory.Governance,
             score: 0,
             tier: "",
             title: "We cannot verify information on M-BTC's governance mechanism",
@@ -3663,7 +3243,7 @@ const merlinwbtc = {
     type: exports.Type.Infrastructure,
     slug: "merlin-wbtc",
     title: "Merlin wBTC",
-    entityType: EntityType.ReserveAsset,
+    entityType: exports.EntityType.ReserveAsset,
     live: exports.LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -3677,31 +3257,31 @@ const merlinwbtc = {
     bitcoinOnly: false,
     links: [
         {
-            text: Site.Website,
+            text: exports.Site.Website,
             url: "",
         },
         {
-            text: Site.Docs,
+            text: exports.Site.Docs,
             url: "",
         },
         {
-            text: Site.Explorer,
+            text: exports.Site.Explorer,
             url: "",
         },
         {
-            text: Site.GitHub,
+            text: exports.Site.GitHub,
             url: "",
         },
         {
-            text: Site.Twitter,
+            text: exports.Site.Twitter,
             url: "",
         },
     ],
     description: "Merlin wBTC is a BTC wrapped asset. It is under review.",
     riskSummary: [
         {
-            title: PegRiskSummarySnippet.CustodianTitle,
-            content: PegRiskSummarySnippet.Guardian,
+            title: exports.PegRiskSummarySnippet.CustodianTitle,
+            content: exports.PegRiskSummarySnippet.Guardian,
         },
     ],
     sections: [
@@ -3717,7 +3297,7 @@ const merlinwbtc = {
     ],
     assessment: [
         {
-            category: AssessmentCategory.AssetCustody,
+            category: exports.AssessmentCategory.AssetCustody,
             score: 0,
             tier: "",
             title: "Merlin works with Cobo, a centralized institution, on securing funds backing Merlin wBTC",
@@ -3730,7 +3310,7 @@ const nexusnbtc = {
     type: exports.Type.Infrastructure,
     slug: "nexus-nbtc",
     title: "Nexus nBTC",
-    entityType: EntityType.ReserveAsset,
+    entityType: exports.EntityType.ReserveAsset,
     live: exports.LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -3744,23 +3324,23 @@ const nexusnbtc = {
     bitcoinOnly: false,
     links: [
         {
-            text: Site.Website,
+            text: exports.Site.Website,
             url: "",
         },
         {
-            text: Site.Docs,
+            text: exports.Site.Docs,
             url: "",
         },
         {
-            text: Site.Explorer,
+            text: exports.Site.Explorer,
             url: "",
         },
         {
-            text: Site.GitHub,
+            text: exports.Site.GitHub,
             url: "",
         },
         {
-            text: Site.Twitter,
+            text: exports.Site.Twitter,
             url: "",
         },
     ],
@@ -3784,7 +3364,7 @@ const nexusnbtc = {
     ],
     assessment: [
         {
-            category: AssessmentCategory.AssetCustody,
+            category: exports.AssessmentCategory.AssetCustody,
             score: 0,
             tier: "",
             title: "This peg is under review.",
@@ -3797,7 +3377,7 @@ const nomicnbtc = {
     type: exports.Type.Infrastructure,
     slug: "nomic-nbtc",
     title: "Nomic nBTC",
-    entityType: EntityType.ReserveAsset,
+    entityType: exports.EntityType.ReserveAsset,
     live: exports.LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -3813,8 +3393,8 @@ const nomicnbtc = {
     description: "nBTC is the native token for the Nomic network. Nomic is a proof-of-stake blockchain prioritizing distributed BTC custody",
     riskSummary: [
         {
-            title: PegRiskSummarySnippet.CustodianTitle,
-            content: PegRiskSummarySnippet.PoS,
+            title: exports.PegRiskSummarySnippet.CustodianTitle,
+            content: exports.PegRiskSummarySnippet.PoS,
         },
     ],
     sections: [
@@ -3830,7 +3410,7 @@ const nomicnbtc = {
     ],
     assessment: [
         {
-            category: AssessmentCategory.AssetCustody,
+            category: exports.AssessmentCategory.AssetCustody,
             score: 0,
             tier: "",
             title: "BTC backing nBTC managed by a group of 20 publicly known signers who participate as validators in the Nomic blockchain",
@@ -3843,7 +3423,7 @@ const nubit = {
     type: exports.Type.Infrastructure,
     slug: "nubit",
     title: "Nubit",
-    entityType: EntityType.DataAvailability,
+    entityType: exports.EntityType.DataAvailability,
     live: exports.LiveStatus.Announced,
     staking: false,
     liquidStaking: false,
@@ -3857,23 +3437,23 @@ const nubit = {
     bitcoinOnly: false,
     links: [
         {
-            text: Site.Website,
+            text: exports.Site.Website,
             url: "https://nubit.org",
         },
         {
-            text: Site.Docs,
+            text: exports.Site.Docs,
             url: "https://docs.nubit.org",
         },
         {
-            text: Site.Explorer,
+            text: exports.Site.Explorer,
             url: "https://www.explorer.nubit.org",
         },
         {
-            text: Site.GitHub,
+            text: exports.Site.GitHub,
             url: "https://github.com/RiemaLabs",
         },
         {
-            text: Site.GitHub,
+            text: exports.Site.GitHub,
             url: "https://x.com/Nubit_org",
         },
     ],
@@ -3895,7 +3475,7 @@ const obeliskobtc = {
     type: exports.Type.Infrastructure,
     slug: "obelisk-obtc",
     title: "Obelisk oBTC",
-    entityType: EntityType.ReserveAsset,
+    entityType: exports.EntityType.ReserveAsset,
     live: exports.LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -3911,8 +3491,8 @@ const obeliskobtc = {
     description: "Obelisk oBTC is a reserve asset that is live on various EVM-compatible networks.",
     riskSummary: [
         {
-            title: PegRiskSummarySnippet.CustodianTitle,
-            content: PegRiskSummarySnippet.Guardian,
+            title: exports.PegRiskSummarySnippet.CustodianTitle,
+            content: exports.PegRiskSummarySnippet.Guardian,
         },
     ],
     sections: [
@@ -3928,7 +3508,7 @@ const obeliskobtc = {
     ],
     assessment: [
         {
-            category: AssessmentCategory.AssetCustody,
+            category: exports.AssessmentCategory.AssetCustody,
             score: 0,
             tier: "",
             title: "Users trust centralized signers to secure BTC backing oBTC",
@@ -3941,7 +3521,7 @@ const opcat = {
     type: exports.Type.Infrastructure,
     slug: "opcat",
     title: "OP_CAT",
-    entityType: EntityType.SingleOp,
+    entityType: exports.EntityType.SingleOp,
     live: exports.LiveStatus.BIP,
     staking: false,
     liquidStaking: false,
@@ -3955,11 +3535,11 @@ const opcat = {
     bitcoinOnly: true,
     links: [
         {
-            text: Site.Website,
+            text: exports.Site.Website,
             url: "https://github.com/sCrypt-Inc/awesome-op-cat",
         },
         {
-            text: Site.Docs,
+            text: exports.Site.Docs,
             url: "https://github.com/sCrypt-Inc/awesome-op-cat",
         },
         // {
@@ -3967,11 +3547,11 @@ const opcat = {
         //     url: "https://github.com/fedimint",
         // },
         {
-            text: Site.GitHub,
+            text: exports.Site.GitHub,
             url: "https://github.com/sCrypt-Inc/awesome-op-cat",
         },
         {
-            text: Site.GitHub,
+            text: exports.Site.GitHub,
             url: "https://github.com/sCrypt-Inc/awesome-op-cat",
         },
     ],
@@ -4053,7 +3633,7 @@ const OsmosisBTC = {
     type: exports.Type.Infrastructure,
     slug: "osmosis-osmobtc",
     title: "Osmosis OsmoBTC",
-    entityType: EntityType.ReserveAsset,
+    entityType: exports.EntityType.ReserveAsset,
     live: exports.LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -4067,35 +3647,35 @@ const OsmosisBTC = {
     bitcoinOnly: false,
     links: [
         {
-            text: Site.Website,
+            text: exports.Site.Website,
             url: "",
         },
         {
-            text: Site.Docs,
+            text: exports.Site.Docs,
             url: "",
         },
         {
-            text: Site.Explorer,
+            text: exports.Site.Explorer,
             url: "",
         },
         {
-            text: Site.GitHub,
+            text: exports.Site.GitHub,
             url: "",
         },
         {
-            text: Site.Twitter,
+            text: exports.Site.Twitter,
             url: "",
         },
     ],
     description: "OsmoBTC is a wrapped BTC asset home to the Osmosis blockchain. It is backed by a number of different wrapped assets.",
     riskSummary: [
         {
-            title: PegRiskSummarySnippet.CustodianTitle,
-            content: PegRiskSummarySnippet.Guardian,
+            title: exports.PegRiskSummarySnippet.CustodianTitle,
+            content: exports.PegRiskSummarySnippet.Guardian,
         },
         {
             title: "Various reserve assets used",
-            content: PegRiskSummarySnippet.MultipleAssets,
+            content: exports.PegRiskSummarySnippet.MultipleAssets,
         },
     ],
     sections: [
@@ -4111,7 +3691,7 @@ const OsmosisBTC = {
     ],
     assessment: [
         {
-            category: AssessmentCategory.AssetCustody,
+            category: exports.AssessmentCategory.AssetCustody,
             score: 0,
             tier: "",
             title: "This peg is backed by a variety of wrapped BTC assets",
@@ -4124,7 +3704,7 @@ const pstake = {
     type: exports.Type.Infrastructure,
     slug: "pstake-ybtc",
     title: "Pstake yBTC",
-    entityType: EntityType.LiquidStaking,
+    entityType: exports.EntityType.LiquidStaking,
     live: exports.LiveStatus.Deposits,
     staking: false,
     liquidStaking: true,
@@ -4140,8 +3720,8 @@ const pstake = {
     description: "pStake yBTC is a BTC wrapped asset. It is under review.",
     riskSummary: [
         {
-            title: PegRiskSummarySnippet.CustodianTitle,
-            content: PegRiskSummarySnippet.Guardian,
+            title: exports.PegRiskSummarySnippet.CustodianTitle,
+            content: exports.PegRiskSummarySnippet.Guardian,
         },
     ],
     sections: [
@@ -4157,7 +3737,7 @@ const pstake = {
     ],
     assessment: [
         {
-            category: AssessmentCategory.AssetCustody,
+            category: exports.AssessmentCategory.AssetCustody,
             score: 0,
             tier: "",
             title: "BTC backing yBTC is secured by Cobo, an institutional provider",
@@ -4170,7 +3750,7 @@ const pump = {
     type: exports.Type.Infrastructure,
     slug: "pump-pumpbtc",
     title: "Pump pumpBTC",
-    entityType: EntityType.LiquidStaking,
+    entityType: exports.EntityType.LiquidStaking,
     live: exports.LiveStatus.Deposits,
     staking: false,
     liquidStaking: true,
@@ -4184,35 +3764,35 @@ const pump = {
     bitcoinOnly: false,
     links: [
         {
-            text: Site.Website,
+            text: exports.Site.Website,
             url: "https://pumpbtc.xyz",
         },
         {
-            text: Site.Docs,
+            text: exports.Site.Docs,
             url: "https://pumpbtc.gitbook.io/pumpbtc",
         },
         {
-            text: Site.Explorer,
+            text: exports.Site.Explorer,
             url: "https://www.blockchain.com/explorer/assets/pumpbtc",
         },
         {
-            text: Site.GitHub,
+            text: exports.Site.GitHub,
             url: "https://github.com/pumpbtc",
         },
         {
-            text: Site.Twitter,
+            text: exports.Site.Twitter,
             url: "https://x.com/Pumpbtcxyz",
         },
     ],
     description: "Pump offers a mechanism that enables users to deposit wrapped BTC into smart contracts on EVM-based chains. Users receive PumpBTC, a token representing staked BTC, on Babylon in exchange for depositing a wrapped BTC token",
     riskSummary: [
         {
-            title: PegRiskSummarySnippet.CustodianTitle,
-            content: PegRiskSummarySnippet.Guardian,
+            title: exports.PegRiskSummarySnippet.CustodianTitle,
+            content: exports.PegRiskSummarySnippet.Guardian,
         },
         {
             title: "Various reserve assets used",
-            content: PegRiskSummarySnippet.MultipleAssets,
+            content: exports.PegRiskSummarySnippet.MultipleAssets,
         },
     ],
     sections: [
@@ -4226,15 +3806,15 @@ const pump = {
                 },
                 {
                     title: "External operators disclosed",
-                    content: BTCWrapperTransparency.OperatorsDisclosedYes,
+                    content: exports.BTCWrapperTransparency.OperatorsDisclosedYes,
                 },
                 {
                     title: "Redemptions enabled and documented",
-                    content: BTCWrapperTransparency.RedemptionsYes,
+                    content: exports.BTCWrapperTransparency.RedemptionsYes,
                 },
                 {
                     title: "Contracts are open-source and verified",
-                    content: BTCWrapperTransparency.ContractsYes,
+                    content: exports.BTCWrapperTransparency.ContractsYes,
                 },
             ],
         },
@@ -4265,28 +3845,28 @@ const pump = {
     ],
     assessment: [
         {
-            category: AssessmentCategory.AssetCustody,
+            category: exports.AssessmentCategory.AssetCustody,
             score: 0,
             tier: "",
             title: "PumpBTC works with custodians to store bitcoin assets",
             content: "PumpBTC works with custodial providers to swap PumpBTC deposits into native BTC for BTC staking. When a user deposits a BTC derivative token (e.g., wBTC) into the PumpBTC contract, they are given PumpBTC in return. The staking contract is operated by a [⅔ GnosisSafe](https://etherscan.io/address/0xAC364d14020f1da0044699691a91f06ca6131Fe3).\n\nCobo and Coinover have been mentioned as operators participating in Pump.\n\n[Source](https://pumpbtc.gitbook.io/pumpbtc/custody-and-security/how-does-pumpbtc-ensure-safety)",
         },
         {
-            category: AssessmentCategory.SupplyIssuance,
+            category: exports.AssessmentCategory.SupplyIssuance,
             score: 0,
             tier: "",
             title: "Minting of PumpBTC is managed by a smart contract",
             content: "PumpBTC is minted through a smart contract. Users deposit a wrapped version of BTC on an EVM chain into the contract and then receive PumpBTC.",
         },
         {
-            category: AssessmentCategory.CensorshipResistance,
+            category: exports.AssessmentCategory.CensorshipResistance,
             score: 0,
             tier: "",
             title: "No blacklist function currently implemented",
             content: "Implementations of the token do not have a blacklist or pause function.",
         },
         {
-            category: AssessmentCategory.Governance,
+            category: exports.AssessmentCategory.Governance,
             score: 0,
             tier: "",
             title: "A centralized party can assign roles",
@@ -4299,7 +3879,7 @@ const rootstockrbtc = {
     type: exports.Type.Infrastructure,
     slug: "rootstock-rbtc",
     title: "Rootstock RBTC",
-    entityType: EntityType.ReserveAsset,
+    entityType: exports.EntityType.ReserveAsset,
     live: exports.LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -4315,8 +3895,8 @@ const rootstockrbtc = {
     description: "RBTC is the gas token for the Rootstock sidechain. It is secured by a federation of nine signers who run specialized HSM hardware environments.",
     riskSummary: [
         {
-            title: PegRiskSummarySnippet.CustodianTitle,
-            content: PegRiskSummarySnippet.Federation,
+            title: exports.PegRiskSummarySnippet.CustodianTitle,
+            content: exports.PegRiskSummarySnippet.Federation,
         },
     ],
     sections: [
@@ -4332,7 +3912,7 @@ const rootstockrbtc = {
     ],
     assessment: [
         {
-            category: AssessmentCategory.AssetCustody,
+            category: exports.AssessmentCategory.AssetCustody,
             score: 0,
             tier: "",
             title: "Users trust 9, publicly disclosed entities with securing BTC that backs RBTC",
@@ -4345,7 +3925,7 @@ const sidesbtc = {
     type: exports.Type.Infrastructure,
     slug: "side-sbtc",
     title: "Side sBTC",
-    entityType: EntityType.ReserveAsset,
+    entityType: exports.EntityType.ReserveAsset,
     live: exports.LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -4361,8 +3941,8 @@ const sidesbtc = {
     description: "Side sBTC is a BTC-backed asset that lives on the Side protocol. It can be used across various applications and is also one of the network's gas tokens.",
     riskSummary: [
         {
-            title: PegRiskSummarySnippet.CustodianTitle,
-            content: PegRiskSummarySnippet.PoS,
+            title: exports.PegRiskSummarySnippet.CustodianTitle,
+            content: exports.PegRiskSummarySnippet.PoS,
         },
     ],
     sections: [
@@ -4378,7 +3958,7 @@ const sidesbtc = {
     ],
     assessment: [
         {
-            category: AssessmentCategory.AssetCustody,
+            category: exports.AssessmentCategory.AssetCustody,
             score: 0,
             tier: "",
             title: "21 Side Chain validators are signers securing BTC backing sBTC",
@@ -4391,7 +3971,7 @@ const simplesbtc = {
     type: exports.Type.Infrastructure,
     slug: "simple-sbtc",
     title: "Simple sBTC",
-    entityType: EntityType.ReserveAsset,
+    entityType: exports.EntityType.ReserveAsset,
     live: exports.LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -4407,8 +3987,8 @@ const simplesbtc = {
     description: "Simple sBTC is a two-way peg managed by the Unisat team. It is used to secure BTC backing sBTC on the Fractal network.",
     riskSummary: [
         {
-            title: PegRiskSummarySnippet.CustodianTitle,
-            content: PegRiskSummarySnippet.OneCustodian,
+            title: exports.PegRiskSummarySnippet.CustodianTitle,
+            content: exports.PegRiskSummarySnippet.OneCustodian,
         },
     ],
     sections: [
@@ -4424,7 +4004,7 @@ const simplesbtc = {
     ],
     assessment: [
         {
-            category: AssessmentCategory.AssetCustody,
+            category: exports.AssessmentCategory.AssetCustody,
             score: 0,
             tier: "",
             title: "A 3/5 multisig secures the BTC backing Simple sBTC",
@@ -4437,7 +4017,7 @@ const solv = {
     type: exports.Type.Infrastructure,
     slug: "solv-solvbtc",
     title: "Solv SolvBTC",
-    entityType: EntityType.ReserveAsset,
+    entityType: exports.EntityType.ReserveAsset,
     live: exports.LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -4451,35 +4031,35 @@ const solv = {
     bitcoinOnly: false,
     links: [
         {
-            text: Site.Website,
+            text: exports.Site.Website,
             url: "https://solv.finance",
         },
         {
-            text: Site.Docs,
+            text: exports.Site.Docs,
             url: "https://docs.solv.finance",
         },
         {
-            text: Site.Explorer,
+            text: exports.Site.Explorer,
             url: "https://etherscan.io/token/0x7a56e1c57c7475ccf742a1832b028f0456652f97",
         },
         {
-            text: Site.GitHub,
+            text: exports.Site.GitHub,
             url: "https://github.com/solv-finance",
         },
         {
-            text: Site.Twitter,
+            text: exports.Site.Twitter,
             url: "https://x.com/SolvProtocol",
         },
     ],
     description: "SolvBTC is a BTC-backed reserve asset that is backed by native BTC and various BTC-derivatives. It is deployed across various blockchains.",
     riskSummary: [
         {
-            title: PegRiskSummarySnippet.CustodianTitle,
-            content: PegRiskSummarySnippet.Guardian,
+            title: exports.PegRiskSummarySnippet.CustodianTitle,
+            content: exports.PegRiskSummarySnippet.Guardian,
         },
         {
             title: "Various reserve assets used",
-            content: PegRiskSummarySnippet.MultipleAssets,
+            content: exports.PegRiskSummarySnippet.MultipleAssets,
         },
     ],
     sections: [
@@ -4489,19 +4069,19 @@ const solv = {
             content: [
                 {
                     title: "The protocol does not provide a public proof-of-reserve",
-                    content: BTCWrapperTransparency.ProofofReservesNo,
+                    content: exports.BTCWrapperTransparency.ProofofReservesNo,
                 },
                 {
                     title: "External operators are not disclosed",
-                    content: BTCWrapperTransparency.OperatorsDisclosedNo,
+                    content: exports.BTCWrapperTransparency.OperatorsDisclosedNo,
                 },
                 {
                     title: "Redemptions enabled",
-                    content: BTCWrapperTransparency.RedemptionsYesNoDocs,
+                    content: exports.BTCWrapperTransparency.RedemptionsYesNoDocs,
                 },
                 {
                     title: "Contracts are open-source and verified",
-                    content: BTCWrapperTransparency.ContractsYes,
+                    content: exports.BTCWrapperTransparency.ContractsYes,
                 },
             ],
         },
@@ -4518,28 +4098,28 @@ const solv = {
     ],
     assessment: [
         {
-            category: AssessmentCategory.AssetCustody,
+            category: exports.AssessmentCategory.AssetCustody,
             score: 0,
             tier: "",
             title: "Users trust custodians managing BTC backing SolvBTC and the operators of various BTC-derivative assets.",
             content: "SolvBTC claims to be partially backed by native BTC managed by custodian providers. It’s been stated that Copper, Ceffu, Fireblocks, and Cobo are custodial providers securing BTC that partially backs SolvBTC. It's additionally backed by various BTC-derivative assets; [BTCB](https://www.bitcoinlayers.org/infrastructure/binance-btcb), [wBTC](https://www.bitcoinlayers.org/infrastructure/bitgo-wbtc), [FBTC](https://www.bitcoinlayers.org/infrastructure/firebitcoin-fbtc), [cbBTC](https://www.bitcoinlayers.org/infrastructure/coinbase-cbbtc), [BTC.b](https://www.bitcoinlayers.org/infrastructure/avalanche-btcb), and [tBTC](https://www.bitcoinlayers.org/infrastructure/threshold-tbtc).\n\nMultisigs securing derivative assets backed by SolvBTC are largely secured by GnosisSafes with 5 signers. The signing threshold varies across implementation. The M-BTC safe has a ⅕ threshold where the wBTC safe on Ethereum has a ⅗.\n\n[Source](https://solvprotocol.medium.com/introducing-solvbtc-the-first-ever-yield-bearing-bitcoin-871179c73ca6)",
         },
         {
-            category: AssessmentCategory.SupplyIssuance,
+            category: exports.AssessmentCategory.SupplyIssuance,
             score: 0,
             tier: "",
             title: "Minting of SolvBTC is managed by a permissioned group of entities",
             content: "Minting permissions are handled by three distinct entities in SolvBTC. In each implementation, the SolvBTCMultiAsset pool has minting capabilities and is the only entity with burning capabilities. An implementation of Chainlink CCIP on each chain enables cross-chain minting of SolvBTC tokens. Additionally, an AtomicMintContract on each chain has minting permissions.\n\nSolvBTC discloses all contract owner addresses in its documentation. The 0x0c2…5b7D address can grant, and revoke, minting authority for all implementations of SolvBTC tokens.\n\nSolvBTC does not disclose a specific protocol that monitors BTC deposits to initiate token minting on its respective chains.",
         },
         {
-            category: AssessmentCategory.CensorshipResistance,
+            category: exports.AssessmentCategory.CensorshipResistance,
             score: 0,
             tier: "",
             title: "No blacklist or pause function on respective contracts",
             content: "Implementations of the token do not have a blacklist or pause function.",
         },
         {
-            category: AssessmentCategory.Governance,
+            category: exports.AssessmentCategory.Governance,
             score: 0,
             tier: "",
             title: "A centralized party can upgrade contracts",
@@ -4552,7 +4132,7 @@ const solvsolvbtccore = {
     type: exports.Type.Infrastructure,
     slug: "solv-solvbtccore",
     title: "Solv SOLV.BTC CORE",
-    entityType: EntityType.ReserveAsset,
+    entityType: exports.EntityType.ReserveAsset,
     live: exports.LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -4566,35 +4146,35 @@ const solvsolvbtccore = {
     bitcoinOnly: false,
     links: [
         {
-            text: Site.Website,
+            text: exports.Site.Website,
             url: "",
         },
         {
-            text: Site.Docs,
+            text: exports.Site.Docs,
             url: "",
         },
         {
-            text: Site.Explorer,
+            text: exports.Site.Explorer,
             url: "",
         },
         {
-            text: Site.GitHub,
+            text: exports.Site.GitHub,
             url: "",
         },
         {
-            text: Site.Twitter,
+            text: exports.Site.Twitter,
             url: "",
         },
     ],
     description: "BTC is a BTC wrapped asset. It is under review.",
     riskSummary: [
         {
-            title: PegRiskSummarySnippet.CustodianTitle,
-            content: PegRiskSummarySnippet.Guardian,
+            title: exports.PegRiskSummarySnippet.CustodianTitle,
+            content: exports.PegRiskSummarySnippet.Guardian,
         },
         {
             title: "Various reserve assets used",
-            content: PegRiskSummarySnippet.MultipleAssets,
+            content: exports.PegRiskSummarySnippet.MultipleAssets,
         },
     ],
     sections: [
@@ -4610,11 +4190,11 @@ const solvsolvbtccore = {
     ],
     assessment: [
         {
-            category: AssessmentCategory.AssetCustody,
+            category: exports.AssessmentCategory.AssetCustody,
             score: 0,
             tier: "",
             title: "Users trust custodians managing BTC backing SolvBTC and the operators of various BTC-derivative assets.",
-            content: `${TokenSnippet.SolvBTC}.\n\nWe are reviewing if SolvBTC.CORE is natively minted or bridged from another chain.`,
+            content: `${exports.TokenSnippet.SolvBTC}.\n\nWe are reviewing if SolvBTC.CORE is natively minted or bridged from another chain.`,
         },
     ],
 };
@@ -4623,7 +4203,7 @@ const solvena = {
     type: exports.Type.Infrastructure,
     slug: "solv-solvbtcena",
     title: "Solv SolvBTC.ENA",
-    entityType: EntityType.Yield,
+    entityType: exports.EntityType.Yield,
     live: exports.LiveStatus.Mainnet,
     staking: false,
     liquidStaking: true,
@@ -4637,19 +4217,19 @@ const solvena = {
     bitcoinOnly: false,
     links: [
         {
-            text: Site.Website,
+            text: exports.Site.Website,
             url: "https://solv.finance",
         },
         {
-            text: Site.Docs,
+            text: exports.Site.Docs,
             url: "https://docs.solv.finance",
         },
         {
-            text: Site.GitHub,
+            text: exports.Site.GitHub,
             url: "https://github.com/solv-finance",
         },
         {
-            text: Site.Twitter,
+            text: exports.Site.Twitter,
             url: "https://x.com/SolvProtocol",
         },
     ],
@@ -4667,11 +4247,11 @@ const solvena = {
     ],
     assessment: [
         {
-            category: AssessmentCategory.AssetCustody,
+            category: exports.AssessmentCategory.AssetCustody,
             score: 0,
             tier: "",
             title: "This peg is under review.",
-            content: `SolvBTC.ENA is a derivative asset that represents SolvBTC locked in a vault executing a trading strategy.\n\n${TokenSnippet.SolvBTC}The token is backed by [SolvBTC](https://www.bitcoinlayers.org/infrastructure/solv-solvbtc).\n\nUsers expose themselves to smart contract and application risks when depositing funds into SolvBTC.ENA.`
+            content: `SolvBTC.ENA is a derivative asset that represents SolvBTC locked in a vault executing a trading strategy.\n\n${exports.TokenSnippet.SolvBTC}The token is backed by [SolvBTC](https://www.bitcoinlayers.org/infrastructure/solv-solvbtc).\n\nUsers expose themselves to smart contract and application risks when depositing funds into SolvBTC.ENA.`
         },
     ],
 };
@@ -4680,7 +4260,7 @@ const xsolvbtc = {
     type: exports.Type.Infrastructure,
     slug: "solv-xsolvbtc",
     title: "Solv xSolvBTC",
-    entityType: EntityType.LiquidStaking,
+    entityType: exports.EntityType.LiquidStaking,
     live: exports.LiveStatus.Deposits,
     staking: false,
     liquidStaking: true,
@@ -4694,31 +4274,31 @@ const xsolvbtc = {
     bitcoinOnly: false,
     links: [
         {
-            text: Site.Website,
+            text: exports.Site.Website,
             url: "https://solv.finance",
         },
         {
-            text: Site.Docs,
+            text: exports.Site.Docs,
             url: "https://docs.solv.finance",
         },
         {
-            text: Site.GitHub,
+            text: exports.Site.GitHub,
             url: "https://github.com/solv-finance",
         },
         {
-            text: Site.Twitter,
+            text: exports.Site.Twitter,
             url: "https://x.com/SolvProtocol",
         },
     ],
     description: "xSolvBTC offer a mechanism that enables users to deposit SolvBTC into smart contracts on EVM-based chains. Users receive a token representing BTC deposited on Babylon in exchange for their wrapped BTC token.",
     riskSummary: [
         {
-            title: PegRiskSummarySnippet.CustodianTitle,
-            content: PegRiskSummarySnippet.Guardian,
+            title: exports.PegRiskSummarySnippet.CustodianTitle,
+            content: exports.PegRiskSummarySnippet.Guardian,
         },
         {
             title: "Asset represents staked BTC",
-            content: PegRiskSummarySnippet.SlashingRisk,
+            content: exports.PegRiskSummarySnippet.SlashingRisk,
         },
     ],
     sections: [
@@ -4728,23 +4308,23 @@ const xsolvbtc = {
             content: [
                 {
                     title: "The protocol does not provide a public proof-of-reserve",
-                    content: BTCWrapperTransparency.ProofofReservesNo,
+                    content: exports.BTCWrapperTransparency.ProofofReservesNo,
                 },
                 {
                     title: "External operators are not disclosed",
-                    content: BTCWrapperTransparency.OperatorsDisclosedYes,
+                    content: exports.BTCWrapperTransparency.OperatorsDisclosedYes,
                 },
                 {
                     title: "Redemptions enabled",
-                    content: BTCWrapperTransparency.RedemptionsYesNoDocs,
+                    content: exports.BTCWrapperTransparency.RedemptionsYesNoDocs,
                 },
                 {
                     title: "Contracts are open-source and verified",
-                    content: BTCWrapperTransparency.ContractsYes,
+                    content: exports.BTCWrapperTransparency.ContractsYes,
                 },
                 {
                     title: "The project does not provide stake attestations",
-                    content: BTCWrapperTransparency.StakeAttestationsNo,
+                    content: exports.BTCWrapperTransparency.StakeAttestationsNo,
                 },
             ],
         },
@@ -4771,28 +4351,28 @@ const xsolvbtc = {
     ],
     assessment: [
         {
-            category: AssessmentCategory.AssetCustody,
+            category: exports.AssessmentCategory.AssetCustody,
             score: 0,
             tier: "",
             title: "Bitcoin assets used to back xSolvBTC are custodied by institutional providers",
-            content: TokenSnippet.xSolvBTC,
+            content: exports.TokenSnippet.xSolvBTC,
         },
         {
-            category: AssessmentCategory.SupplyIssuance,
+            category: exports.AssessmentCategory.SupplyIssuance,
             score: 0,
             tier: "",
             title: "Minting of SolvBTC is managed by a permissioned group of entities",
             content: "Minting permissions are handled by three distinct entities in xSolvBTC. In each implementation, the SolvBTCMultiAsset pool has minting capabilities and is the only entity with burning capabilities. An implementation of Chainlink CCIP on each chain enables cross-chain minting of xSolvBTC tokens. Additionally, an AtomicMintContract on each chain has minting permissions.\n\nxSolvBTC discloses all contract owner addresses in its documentation. The 0x0c2…5b7D address can grant, and revoke, minting authority for all implementations of xSolvBTC tokens.",
         },
         {
-            category: AssessmentCategory.CensorshipResistance,
+            category: exports.AssessmentCategory.CensorshipResistance,
             score: 0,
             tier: "",
             title: "No blacklist function currently implemented",
             content: "Implementations of the token do not have a blacklist or pause function.",
         },
         {
-            category: AssessmentCategory.Governance,
+            category: exports.AssessmentCategory.Governance,
             score: 0,
             tier: "",
             title: "A centralized party can upgrade contracts",
@@ -4805,7 +4385,7 @@ const sovereign = {
     type: exports.Type.Infrastructure,
     slug: "sovereign",
     title: "Sovereign",
-    entityType: EntityType.RollupSDK,
+    entityType: exports.EntityType.RollupSDK,
     live: exports.LiveStatus.Testnet,
     staking: false,
     liquidStaking: false,
@@ -4819,11 +4399,11 @@ const sovereign = {
     bitcoinOnly: true,
     links: [
         {
-            text: Site.Website,
+            text: exports.Site.Website,
             url: "https://www.sovereign.xyz",
         },
         {
-            text: Site.Docs,
+            text: exports.Site.Docs,
             url: "https://github.com/Sovereign-Labs/sovereign-sdk",
         },
         // {
@@ -4831,11 +4411,11 @@ const sovereign = {
         //     url: "https://github.com/Sovereign-Labs/sovereign-sdk",
         // },
         {
-            text: Site.GitHub,
+            text: exports.Site.GitHub,
             url: "https://x.com/sovereign_labs",
         },
         {
-            text: Site.Twitter,
+            text: exports.Site.Twitter,
             url: "https://x.com/sovereign_labs",
         },
     ],
@@ -4857,7 +4437,7 @@ const stackssbtc = {
     type: exports.Type.Infrastructure,
     slug: "stacks-sbtc",
     title: "Stacks sBTC",
-    entityType: EntityType.ReserveAsset,
+    entityType: exports.EntityType.ReserveAsset,
     live: exports.LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -4873,8 +4453,8 @@ const stackssbtc = {
     description: "Stacks sBTC is a BTC-backed reserve asset that is native to the Stacks blockchain. BTC backing sBTC is secured by an 10/14 federation.",
     riskSummary: [
         {
-            title: PegRiskSummarySnippet.CustodianTitle,
-            content: PegRiskSummarySnippet.Federation,
+            title: exports.PegRiskSummarySnippet.CustodianTitle,
+            content: exports.PegRiskSummarySnippet.Federation,
         },
     ],
     sections: [
@@ -4890,7 +4470,7 @@ const stackssbtc = {
     ],
     assessment: [
         {
-            category: AssessmentCategory.AssetCustody,
+            category: exports.AssessmentCategory.AssetCustody,
             score: 0,
             tier: "",
             title: "Users trust a federation of 14 signers with securing BTC that backs sBTC",
@@ -4903,8 +4483,8 @@ const statechain = {
     type: exports.Type.Infrastructure,
     slug: "statechain",
     title: "Statechain Custody Model",
-    entityType: EntityType.Statechain,
-    entityCategory: EntityCategory.BitcoinNative,
+    entityType: exports.EntityType.Statechain,
+    entityCategory: exports.EntityCategory.BitcoinNative,
     live: exports.LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -4918,7 +4498,7 @@ const statechain = {
     bitcoinOnly: true,
     links: [
         {
-            text: Site.Docs,
+            text: exports.Site.Docs,
             url: "https://docs.spark.money/spark/technical-definitions",
         },
     ],
@@ -4947,21 +4527,21 @@ const statechain = {
     ],
     assessment: [
         {
-            category: AssessmentCategory.NativeBitcoinCustody,
+            category: exports.AssessmentCategory.NativeBitcoinCustody,
             score: 0,
             tier: "",
             title: "Users collaboratively custody funds with the statechain entity",
             content: "UTXOs are collaboratively held in a 2-2 multisig (or 2-2 MPC scheme) between the user and the statechain entity. To immediately spend the UTXO, both parties are needed to sign a transaction. However, during the deposit process, both parties co-sign a pre-signed exit transaction that can be used by the user to spend the UTXO if the statechain entity were to become unresponsive. Please see specific implementation reviews to learn if unilateral exit is possible.",
         },
         {
-            category: AssessmentCategory.ProofofOwnership,
+            category: exports.AssessmentCategory.ProofofOwnership,
             score: 0,
             tier: "",
             title: "There is no proof of outright ownership. Users trust statechain entity to delete keyshares it held with a previous owner",
             content: "Users have no provable assurance that they are the only party immediately able to spend a Bitcoin UTXO with the statechain entity. Because statechain transfers see a user send their private keyshare for a UTXO to a recipient, the statechain entity must delete their keyshare held with previous owners. This is to ensure that the only parties able to immediately spend the UTXO are the recipient and the statechain entity. There is no way to prove key deletion, so users explicitly trust the statechain entity to act honestly and delete all keyshares it held with previous owners.",
         },
         {
-            category: AssessmentCategory.UnilateralExit,
+            category: exports.AssessmentCategory.UnilateralExit,
             score: 0,
             tier: "",
             title: "Users can unilaterally exit from the Statechain if the service provider becomes unresponsive",
@@ -4974,7 +4554,7 @@ const tbtc = {
     type: exports.Type.Infrastructure,
     slug: "threshold-tbtc",
     title: "Threshold tBTC",
-    entityType: EntityType.ReserveAsset,
+    entityType: exports.EntityType.ReserveAsset,
     live: exports.LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -4988,31 +4568,31 @@ const tbtc = {
     bitcoinOnly: false,
     links: [
         {
-            text: Site.Website,
+            text: exports.Site.Website,
             url: "https://threshold.network",
         },
         {
-            text: Site.Docs,
+            text: exports.Site.Docs,
             url: "https://docs.threshold.network",
         },
         {
-            text: Site.Explorer,
+            text: exports.Site.Explorer,
             url: "https://etherscan.io/token/0xcdf7028ceab81fa0c6971208e83fa7872994bee5",
         },
         {
-            text: Site.GitHub,
+            text: exports.Site.GitHub,
             url: "https://github.com/threshold-network",
         },
         {
-            text: Site.Twitter,
+            text: exports.Site.Twitter,
             url: "https://x.com/thetnetwork",
         },
     ],
     description: "tBTC is a BTC-backed reserve asset that lives as an ERC-20 token on EVM-based blockchains. Its accounting ledger is Ethereum. The BTC backing tBTC is secured by a distributed signer set and staking mechanism.",
     riskSummary: [
         {
-            title: PegRiskSummarySnippet.CustodianTitle,
-            content: `${PegRiskSummarySnippet.Federation} Signers must stake T tokens before being approved by the Threshold DAO to become a signer.`
+            title: exports.PegRiskSummarySnippet.CustodianTitle,
+            content: `${exports.PegRiskSummarySnippet.Federation} Signers must stake T tokens before being approved by the Threshold DAO to become a signer.`
         },
     ],
     sections: [
@@ -5067,35 +4647,35 @@ const tbtc = {
     ],
     assessment: [
         {
-            category: AssessmentCategory.AssetCustody,
+            category: exports.AssessmentCategory.AssetCustody,
             score: 0,
             tier: "",
             title: "Users trust permissioned entities with the custody of their BTC. tBTC Beta Stakers must apply to Threshold DAO for signing privileges",
             content: "The bitcoin wallets that store the bitcoin backing tBTC are managed by a permissioned signer set. The signers of the wallets participate as stakers in an Ethereum staking contract to become eligible for signing privileges. When a new wallet is created, a randomized process, known as the sortition pool, will select signers who will be responsible for custodying funds and signing transactions for respective bitcoin wallets.\n\nIf signers colluded, and had sufficient amount of signing power for a bitcoin wallet, they could steal funds from a wallet they managed.",
         },
         {
-            category: AssessmentCategory.Signing,
+            category: exports.AssessmentCategory.Signing,
             score: 0,
             tier: "",
             title: "Threshold ECDSA scheme used for signing transactions",
             content: "Each bitcoin wallet that manages BTC backing tBTC is controlled by participants in a tECDSA scheme. The tECDSA scheme sees a specific bitcoin wallet's private key sharded into a 100 key shares which are distributed to a randomly selected group of signers. In tBTC, there is a 51% signing threshold meaning that 51% of the signers are needed to create a valid signature to authorize bitcoin transactions.",
         },
         {
-            category: AssessmentCategory.KeyStorage,
+            category: exports.AssessmentCategory.KeyStorage,
             score: 0,
             tier: "",
             title: "No specific key storage requirements",
             content: "There is no specific hardware requirement associated with running a tBTC v2 signing node. Nodes can also be run via a number of VPS providers.",
         },
         {
-            category: AssessmentCategory.CensorshipResistance,
+            category: exports.AssessmentCategory.CensorshipResistance,
             score: 0,
             tier: "",
             title: "No blacklist or pause function on tBTC smart contracts",
             content: "tBTC's [token contract](https://etherscan.io/address/0x9C070027cdC9dc8F82416B2e5314E11DFb4FE3CD#code) does not have functions that can censor individual users. It is upgradeable via the Threshold DAO and a controller elected by the DAO. If an upgrade to the tBTC token contract was malicious, then users would have 1 day to exit.\n\nA malicious upgrade could result in the loss of user funds.",
         },
         {
-            category: AssessmentCategory.UserRisk,
+            category: exports.AssessmentCategory.UserRisk,
             score: 0,
             tier: "",
             title: "tBTC is a distributed, but permissioned system",
@@ -5108,7 +4688,7 @@ const tronbtc = {
     type: exports.Type.Infrastructure,
     slug: "tron-btc",
     title: "BTCTRON",
-    entityType: EntityType.ReserveAsset,
+    entityType: exports.EntityType.ReserveAsset,
     live: exports.LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -5124,8 +4704,8 @@ const tronbtc = {
     description: "BTCTRON is a BTC-synthetic asset home to the Tron blockchain.",
     riskSummary: [
         {
-            title: PegRiskSummarySnippet.CustodianTitle,
-            content: PegRiskSummarySnippet.OneCustodian,
+            title: exports.PegRiskSummarySnippet.CustodianTitle,
+            content: exports.PegRiskSummarySnippet.OneCustodian,
         },
     ],
     sections: [
@@ -5141,7 +4721,7 @@ const tronbtc = {
     ],
     assessment: [
         {
-            category: AssessmentCategory.AssetCustody,
+            category: exports.AssessmentCategory.AssetCustody,
             score: 0,
             tier: "",
             title: "Users trust a centralized exchange with the custody of BTC backing BTCTRON",
@@ -5154,7 +4734,7 @@ const unirouter = {
     type: exports.Type.Infrastructure,
     slug: "unirouter-ubtc",
     title: "UniRouter uBTC",
-    entityType: EntityType.LiquidStaking,
+    entityType: exports.EntityType.LiquidStaking,
     live: exports.LiveStatus.Deposits,
     staking: false,
     liquidStaking: true,
@@ -5168,30 +4748,30 @@ const unirouter = {
     bitcoinOnly: false,
     links: [
         {
-            text: Site.Website,
+            text: exports.Site.Website,
             url: "https://unirouter.io",
         },
         {
-            text: Site.Docs,
+            text: exports.Site.Docs,
             url: "https://docs.unirouter.io",
         },
         {
-            text: Site.GitHub,
+            text: exports.Site.GitHub,
             url: "https://github.com/unirouter",
         },
         {
-            text: Site.Explorer,
+            text: exports.Site.Explorer,
             url: "https://explorer.bsquared.network/address/0x796e4D53067FF374B89b2Ac101ce0c1f72ccaAc2",
         },
         {
-            text: Site.Twitter,
+            text: exports.Site.Twitter,
             url: "https://x.com/UniRouterBTC",
         },
     ],
     riskSummary: [
         {
-            title: PegRiskSummarySnippet.UnkownSignersTitle,
-            content: PegRiskSummarySnippet.UnkownSigners,
+            title: exports.PegRiskSummarySnippet.UnkownSignersTitle,
+            content: exports.PegRiskSummarySnippet.UnkownSigners,
         },
     ],
     description: "uBTC is a liquid staking token that is operated by the UniRouter team. It is live on Bsquared Network.",
@@ -5206,43 +4786,43 @@ const unirouter = {
                 },
                 {
                     title: "External operators disclosed",
-                    content: BTCWrapperTransparency.OperatorsDisclosedNo,
+                    content: exports.BTCWrapperTransparency.OperatorsDisclosedNo,
                 },
                 {
                     title: "Redemptions enabled and documented",
-                    content: BTCWrapperTransparency.RedemptionsYesNoDocs,
+                    content: exports.BTCWrapperTransparency.RedemptionsYesNoDocs,
                 },
                 {
                     title: "Contracts are open-source and verified",
-                    content: BTCWrapperTransparency.ContractsNo,
+                    content: exports.BTCWrapperTransparency.ContractsNo,
                 },
             ],
         },
     ],
     assessment: [
         {
-            category: AssessmentCategory.AssetCustody,
+            category: exports.AssessmentCategory.AssetCustody,
             score: 0,
             tier: "",
             title: "Users trust UniRouter with their custody practices. UniRouter has not disclosed who manages the BTC backing uBTC.",
             content: "Users trust that the UniRouter team has set up secure custody practices and has BTC reserves backing uBTC. UniRouter has not disclosed who secures the BTC backing uBTC.",
         },
         {
-            category: AssessmentCategory.SupplyIssuance,
+            category: exports.AssessmentCategory.SupplyIssuance,
             score: 0,
             tier: "",
             title: "Contracts are not verified",
             content: "There’s no documentation on how the project manages supply issuance.",
         },
         {
-            category: AssessmentCategory.CensorshipResistance,
+            category: exports.AssessmentCategory.CensorshipResistance,
             score: 0,
             tier: "",
             title: "Contracts are not verified",
             content: "We cannot currently verify if the token has a blacklist or pause function.",
         },
         {
-            category: AssessmentCategory.Governance,
+            category: exports.AssessmentCategory.Governance,
             score: 0,
             tier: "",
             title: "Contracts are not verified",
@@ -5255,7 +4835,7 @@ const hyperliquidbtc = {
     type: exports.Type.Infrastructure,
     slug: "unit-ubtc",
     title: "Hyperliquid BTC",
-    entityType: EntityType.ReserveAsset,
+    entityType: exports.EntityType.ReserveAsset,
     live: exports.LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -5271,8 +4851,8 @@ const hyperliquidbtc = {
     description: "Hyperliquid BTC is a BTC-denominated asset available to Hyperliquid users. BTC backing this asset is secured by a 2/3 MPC scheme.",
     riskSummary: [
         {
-            title: PegRiskSummarySnippet.CustodianTitle,
-            content: PegRiskSummarySnippet.Guardian,
+            title: exports.PegRiskSummarySnippet.CustodianTitle,
+            content: exports.PegRiskSummarySnippet.Guardian,
         },
     ],
     sections: [
@@ -5288,7 +4868,7 @@ const hyperliquidbtc = {
     ],
     assessment: [
         {
-            category: AssessmentCategory.AssetCustody,
+            category: exports.AssessmentCategory.AssetCustody,
             score: 0,
             tier: "",
             title: "Users trust 2/3 signers participating in the Unit Protocol",
@@ -5301,7 +4881,7 @@ const xlinkabtc = {
     type: exports.Type.Infrastructure,
     slug: "xlink-abtc",
     title: "XLink aBTC",
-    entityType: EntityType.ReserveAsset,
+    entityType: exports.EntityType.ReserveAsset,
     live: exports.LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -5315,31 +4895,31 @@ const xlinkabtc = {
     bitcoinOnly: false,
     links: [
         {
-            text: Site.Website,
+            text: exports.Site.Website,
             url: "https://xlink.network",
         },
         {
-            text: Site.Docs,
+            text: exports.Site.Docs,
             url: "https://docs.xlink.network",
         },
         {
-            text: Site.Explorer,
+            text: exports.Site.Explorer,
             url: "https://docs.xlink.network/xlink-network/readme/ethereum-contract-addresses",
         },
         {
-            text: Site.GitHub,
+            text: exports.Site.GitHub,
             url: "https://github.com/xlink-network",
         },
         {
-            text: Site.Twitter,
+            text: exports.Site.Twitter,
             url: "https://x.com/XLinkbtc",
         },
     ],
     description: "XLink aBTC is a BTC-backed reserve asset that can be used across a number of blockchain environments.",
     riskSummary: [
         {
-            title: PegRiskSummarySnippet.UnkownSignersTitle,
-            content: PegRiskSummarySnippet.UnkownSigners,
+            title: exports.PegRiskSummarySnippet.UnkownSignersTitle,
+            content: exports.PegRiskSummarySnippet.UnkownSigners,
         },
     ],
     sections: [
@@ -5355,7 +4935,7 @@ const xlinkabtc = {
     ],
     assessment: [
         {
-            category: AssessmentCategory.AssetCustody,
+            category: exports.AssessmentCategory.AssetCustody,
             score: 0,
             tier: "",
             title: "There is limited information available on Xlink aBTC's custody mechanism",
@@ -5368,7 +4948,7 @@ const zueszbtc = {
     type: exports.Type.Infrastructure,
     slug: "zeus-zbtc",
     title: "Zeus zBTC",
-    entityType: EntityType.ReserveAsset,
+    entityType: exports.EntityType.ReserveAsset,
     live: exports.LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -5382,31 +4962,31 @@ const zueszbtc = {
     bitcoinOnly: false,
     links: [
         {
-            text: Site.Website,
+            text: exports.Site.Website,
             url: "",
         },
         {
-            text: Site.Docs,
+            text: exports.Site.Docs,
             url: "",
         },
         {
-            text: Site.Explorer,
+            text: exports.Site.Explorer,
             url: "",
         },
         {
-            text: Site.GitHub,
+            text: exports.Site.GitHub,
             url: "",
         },
         {
-            text: Site.Twitter,
+            text: exports.Site.Twitter,
             url: "",
         },
     ],
     description: "Zeus zBTC is a wrapped BTC asset on Solana. Funds backing zBTC are secured in individual instances by custodian partners.",
     riskSummary: [
         {
-            title: PegRiskSummarySnippet.CustodianTitle,
-            content: `${PegRiskSummarySnippet.Guardian} Zeus zBTC guardians secure native BTC indepedent of each other. They do not collectively manage an MPC protocol. Users trust the specific guardian securing BTC backing their zBTC tokens.`,
+            title: exports.PegRiskSummarySnippet.CustodianTitle,
+            content: `${exports.PegRiskSummarySnippet.Guardian} Zeus zBTC guardians secure native BTC indepedent of each other. They do not collectively manage an MPC protocol. Users trust the specific guardian securing BTC backing their zBTC tokens.`,
         },
     ],
     sections: [
@@ -5422,7 +5002,7 @@ const zueszbtc = {
     ],
     assessment: [
         {
-            category: AssessmentCategory.AssetCustody,
+            category: exports.AssessmentCategory.AssetCustody,
             score: 0,
             tier: "",
             title: "Funds backing zBTC are secured by a number custodians individually",
@@ -5435,7 +5015,7 @@ const twentyonesharesbtc = {
     type: exports.Type.Infrastructure,
     slug: "21shares-21btc",
     title: "21.co BTC",
-    entityType: EntityType.ReserveAsset,
+    entityType: exports.EntityType.ReserveAsset,
     live: exports.LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -5449,35 +5029,35 @@ const twentyonesharesbtc = {
     bitcoinOnly: false,
     links: [
         {
-            text: Site.Website,
+            text: exports.Site.Website,
             url: "",
         },
         {
-            text: Site.Docs,
+            text: exports.Site.Docs,
             url: "",
         },
         {
-            text: Site.Explorer,
+            text: exports.Site.Explorer,
             url: "",
         },
         {
-            text: Site.GitHub,
+            text: exports.Site.GitHub,
             url: "",
         },
         {
-            text: Site.Twitter,
+            text: exports.Site.Twitter,
             url: "",
         },
     ],
     description: "21 Shares BTC is a BTC wrapped asset. It is under review.",
     riskSummary: [
         {
-            title: PegRiskSummarySnippet.CustodianTitle,
-            content: PegRiskSummarySnippet.Guardian,
+            title: exports.PegRiskSummarySnippet.CustodianTitle,
+            content: exports.PegRiskSummarySnippet.Guardian,
         },
         {
-            title: PegRiskSummarySnippet.UnkownSignersTitle,
-            content: PegRiskSummarySnippet.UnkownSigners,
+            title: exports.PegRiskSummarySnippet.UnkownSignersTitle,
+            content: exports.PegRiskSummarySnippet.UnkownSigners,
         },
     ],
     sections: [
@@ -5493,7 +5073,7 @@ const twentyonesharesbtc = {
     ],
     assessment: [
         {
-            category: AssessmentCategory.AssetCustody,
+            category: exports.AssessmentCategory.AssetCustody,
             score: 0,
             tier: "",
             title: "BTC backing 21.co BTC is held by third party custodians",

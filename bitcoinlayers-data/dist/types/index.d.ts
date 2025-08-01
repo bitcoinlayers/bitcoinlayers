@@ -1,8 +1,8 @@
-declare enum Type$1 {
+declare enum Type {
     Infrastructure = "Infrastructure",
     Layer = "Layer"
 }
-declare enum LiveStatus$1 {
+declare enum LiveStatus {
     Mainnet = "Mainnet",
     Testnet = "Testnet",
     Announced = "Announced",
@@ -12,7 +12,7 @@ declare enum LiveStatus$1 {
     BIP = "Bip Drafted",
     Activation = "Activation Client"
 }
-declare enum Purpose$1 {
+declare enum Purpose {
     General = "General",
     Payments = "Payments",
     LiquidStaking = "Liquid Staking",
@@ -21,7 +21,7 @@ declare enum Purpose$1 {
     Staking = "Staking",
     BitcoinNative = "Offchain UTXO transfers"
 }
-declare enum RiskFactor$1 {
+declare enum RiskFactor {
     Low = "Low",
     Medium = "Medium",
     High = "High",
@@ -32,7 +32,6 @@ declare enum RiskFactor$1 {
     NotApplicable = "Not Applicable",
     AlternativePoS = "Alternative PoS Network"
 }
-
 declare enum RiskCategory {
     BtcCustody = "BTC Custody",
     DataAvailability = "Data Availability",
@@ -565,5 +564,5 @@ interface LayerProject extends BaseProject {
 }
 type Project = InfrastructureProject | LayerProject;
 
-export { AdditionalSnippet, AlertSnippet, AssessmentCategory, AtlSnippet, BTCWrapperTransparency, BitcoinLayer, BitcoinSecuritySnippet, Categorization, CustodyTitle, DefinitionSnippet, EntityCategory, EntityType, KnowledgeBitSnippet, LiveStatus$1 as LiveStatus, Notice, OtherIcons, OtherRiskSummarySnippet, OtherSnippet, PegRiskSummarySnippet, Purpose$1 as Purpose, ReviewSnippet, RiskCategory, RiskFactor$1 as RiskFactor, RiskSummarySnippet, Site, TechnologySnippet, TokenSnippet, Type$1 as Type, UnilateralExit, UseCaseSnippet, WrapperReviews, WrapperSnippet };
+export { AdditionalSnippet, AlertSnippet, AssessmentCategory, AtlSnippet, BTCWrapperTransparency, BitcoinLayer, BitcoinSecuritySnippet, Categorization, CustodyTitle, DefinitionSnippet, EntityCategory, EntityType, KnowledgeBitSnippet, LiveStatus, Notice, OtherIcons, OtherRiskSummarySnippet, OtherSnippet, PegRiskSummarySnippet, Purpose, ReviewSnippet, RiskCategory, RiskFactor, RiskSummarySnippet, Site, TechnologySnippet, TokenSnippet, Type, UnilateralExit, UseCaseSnippet, WrapperReviews, WrapperSnippet };
 export type { AssessmentSection, BaseProject, ContentSection, ContractItem, InfrastructureProject, LayerProject, Peg, Project, RiskSection, SectionAlert };

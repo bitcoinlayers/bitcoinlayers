@@ -1,8 +1,8 @@
-declare enum Type$1 {
+declare enum Type {
     Infrastructure = "Infrastructure",
     Layer = "Layer"
 }
-declare enum LiveStatus$1 {
+declare enum LiveStatus {
     Mainnet = "Mainnet",
     Testnet = "Testnet",
     Announced = "Announced",
@@ -12,7 +12,7 @@ declare enum LiveStatus$1 {
     BIP = "Bip Drafted",
     Activation = "Activation Client"
 }
-declare enum Purpose$1 {
+declare enum Purpose {
     General = "General",
     Payments = "Payments",
     LiquidStaking = "Liquid Staking",
@@ -21,7 +21,7 @@ declare enum Purpose$1 {
     Staking = "Staking",
     BitcoinNative = "Offchain UTXO transfers"
 }
-declare enum RiskFactor$1 {
+declare enum RiskFactor {
     Low = "Low",
     Medium = "Medium",
     High = "High",
@@ -32,184 +32,6 @@ declare enum RiskFactor$1 {
     NotApplicable = "Not Applicable",
     AlternativePoS = "Alternative PoS Network"
 }
-declare enum EntityType$1 {
-    CSV = "CSV",
-    EthereumRollup = "Ethereum Rollup",
-    Rollup = "Rollup",
-    Federation = "Federation",
-    Sidechain = "Sidechain",
-    MergeMined = "Merge-mined",
-    SidechainRollup = "Sidechain Rollup",
-    SovereignRollup = "Sovereign Rollup",
-    StateChannel = "State Channel",
-    Statechain = "Statechain",
-    VirtualUTXOs = "Virtual UTXOs",
-    zkCSV = "zkCSV",
-    Hybrid = "Hybrid",
-    Anchor = "Anchor",
-    ChaumianEcashProtocol = "Chaumian Ecash",
-    FederationSDK = "Federation SDK",
-    LiquidStaking = "Liquid Staking",
-    Restaking = "Restaking",
-    RollupSDK = "Rollup SDK",
-    Staking = "Staking",
-    PermissionedChain = "Permissioned Chain",
-    ArkSidechain = "Ark on Sidechain",
-    Sequencing = "Sequencing",
-    DataAvailability = "Data Availability",
-    Bridge = "Bridge",
-    RaaS = "RaaS",
-    BTCWrapper = "BTC Wrapper",
-    ReserveAsset = "Reserve",
-    Lending = "Lending",
-    Yield = "Yield",
-    SequencingDA = "Sequencing & DA",
-    BitcoinBridge = "Bitcoin Bridge",
-    MPCProtocol = "MPC Protocol",
-    TBD = "To Be Determined",
-    Ark = "Ark",
-    AltL1 = "Alt. Layer 1",
-    AltRollup = "Alt. Rollup",
-    Alt = "Alt. Chain",
-    SingleOp = "Single Opcode",
-    GroupOp = "Group of Opcodes",
-    StakedBTC = "Natively Staked BTC",
-    PoSNetwork = "PoS Network",
-    BPoSNetwork = "BPoS Network",
-    "-" = "-"
-}
-declare enum EntityCategory$1 {
-    BitcoinNative = "Bitcoin Native",
-    Sidesystem = "Sidesystems",
-    Integrated = "Integrated",
-    Alt = "Alt. L1s & More",
-    More = "More"
-}
-declare enum Notice$1 {
-    NoBridge = "No native bitcoin bridge",
-    Sidesystem = "Sidesystems",
-    Reorg = "\uD83D\uDEA8 This project will be moved to the Alternative category after June 30th.",
-    UnderReview = "\uD83D\uDEA8 This project's categorization is under review.",
-    OtherReasonBridge = "This project does not have an enshrined bitcoin bridge that meets our sidesystem standards.",
-    ClaimBitcoinLayer = "This network is denominated in BTC."
-}
-declare enum BitcoinLayer$1 {
-    Yes = "The project meets our technical standards to be considered a bitcoin layer"
-}
-declare enum UnilateralExit$1 {
-    Yes = "This protocol supports unilateral exit, allowing users to withdraw funds without counterparty cooperation"
-}
-declare enum OtherIcons$1 {
-    MergeMine = "This protocol is merge-mined by bitcoin miners.",
-    NotALayer = "This protocol is not a bitcoin layer",
-    Staking = "This protocol leverages bitcoin staking for aspects of its protocol.",
-    Hybrid = "This protocol's VM can interact with L1 bitcoin transactions."
-}
-declare enum CustodyTitle$1 {
-    BitcoinNative = "Bitcoin Native",
-    Distributed = "Distributed Third-Party",
-    Centralized = "Centralized Third-Party"
-}
-declare enum Site$1 {
-    Website = "Website",
-    Docs = "Docs",
-    Explorer = "Explorer",
-    GitHub = "GitHub",
-    Twitter = "Twitter"
-}
-interface ContractItem$1 {
-    title: string;
-    address: string;
-    subtitle: string;
-    explorerUrl: string;
-}
-interface SectionAlert$1 {
-    type: "info" | "warning" | "error";
-    title: string;
-    content: string;
-    linkText?: string;
-    linkUrl?: string;
-    expandable?: boolean;
-    collapsible?: boolean;
-    buttonText?: string;
-}
-interface ContentSection$1 {
-    id: string;
-    title: string;
-    content: {
-        title?: string;
-        content: string;
-        alert?: SectionAlert$1;
-    }[];
-}
-declare enum AssessmentCategory$1 {
-    AssetCustody = "Asset Custody",
-    StakingType = "Staking Type",
-    SlashingRisk = "Slashing Risk",
-    IncentiveModel = "Incentive Model",
-    Reputation = "Reputation & Participation",
-    Signing = "Signing Mechanism",
-    KeyStorage = "Key Storage",
-    CensorshipResistance = "Censorship Resistance",
-    FinalityAssurances = "Finality Assurances",
-    ProofofOwnership = "Proof of Ownership",
-    NativeBitcoinCustody = "Native Bitcoin Custody",
-    UnilateralExit = "Unilateral Exit Guarantees",
-    UserRisk = "User Risk",
-    ThirdPartyStaking = "Third Party Staking",
-    SelfCustodialStaking = "Self-custodial Staking",
-    SupplyIssuance = "Supply Issuance",
-    StakeAttestations = "Stake Attestations",
-    Governance = "Governance"
-}
-interface AssessmentSection$1 {
-    category: AssessmentCategory$1;
-    score: number;
-    tier: RiskFactor$1 | "";
-    title: string;
-    content: string;
-    alert?: SectionAlert$1;
-}
-interface BaseProject$1 {
-    type: Type$1;
-    slug: string;
-    title: string;
-    entityType: EntityType$1;
-    entityCategory?: EntityCategory$1;
-    live: LiveStatus$1;
-    staking: boolean;
-    liquidStaking: boolean;
-    bridge: boolean;
-    underReview: boolean;
-    partialReview?: boolean;
-    partialReviewAfter?: string;
-    riskFactors: (RiskFactor$1 | "")[];
-    nativeToken: string;
-    notice?: Notice$1;
-    bitcoinLayer?: BitcoinLayer$1;
-    unilateralExit?: UnilateralExit$1;
-    otherIcons?: OtherIcons$1;
-    custodyTitle?: CustodyTitle$1;
-    bitcoinOnly: boolean;
-    links: {
-        text: Site$1 | string;
-        url: string | URL;
-    }[];
-    description: string;
-    sections: ContentSection$1[];
-    associatedLayers?: string;
-    manualContracts?: ContractItem$1[];
-}
-interface InfrastructureProject$1 extends BaseProject$1 {
-    type: Type$1.Infrastructure;
-    purpose: Purpose$1;
-    assessment?: AssessmentSection$1[];
-    riskSummary?: {
-        title?: string;
-        content: string;
-    }[];
-}
-
 declare enum RiskCategory {
     BtcCustody = "BTC Custody",
     DataAvailability = "Data Availability",
@@ -742,146 +564,146 @@ interface LayerProject extends BaseProject {
 }
 type Project = InfrastructureProject | LayerProject;
 
-declare const acorn: InfrastructureProject$1;
+declare const acorn: InfrastructureProject;
 
-declare const alexxbtc: InfrastructureProject$1;
+declare const alexxbtc: InfrastructureProject;
 
-declare const alloallobtc: InfrastructureProject$1;
+declare const alloallobtc: InfrastructureProject;
 
-declare const astria: InfrastructureProject$1;
+declare const astria: InfrastructureProject;
 
-declare const avail: InfrastructureProject$1;
+declare const avail: InfrastructureProject;
 
-declare const avalanchebtcb: InfrastructureProject$1;
+declare const avalanchebtcb: InfrastructureProject;
 
-declare const axelaraxlbtc: InfrastructureProject$1;
+declare const axelaraxlbtc: InfrastructureProject;
 
-declare const babylonbtc: InfrastructureProject$1;
+declare const babylonbtc: InfrastructureProject;
 
-declare const babypie: InfrastructureProject$1;
+declare const babypie: InfrastructureProject;
 
-declare const badgerebtc: InfrastructureProject$1;
+declare const badgerebtc: InfrastructureProject;
 
-declare const bedrockbrbtc: InfrastructureProject$1;
+declare const bedrockbrbtc: InfrastructureProject;
 
-declare const bedrock: InfrastructureProject$1;
+declare const bedrock: InfrastructureProject;
 
-declare const bevmwbtc: InfrastructureProject$1;
+declare const bevmwbtc: InfrastructureProject;
 
-declare const binancebtcb: InfrastructureProject$1;
+declare const binancebtcb: InfrastructureProject;
 
-declare const bitcoinos: InfrastructureProject$1;
+declare const bitcoinos: InfrastructureProject;
 
-declare const wbtc: InfrastructureProject$1;
+declare const wbtc: InfrastructureProject;
 
-declare const bitlayerwbtc: InfrastructureProject$1;
+declare const bitlayerwbtc: InfrastructureProject;
 
-declare const boolbbtc: InfrastructureProject$1;
+declare const boolbbtc: InfrastructureProject;
 
-declare const bvm: InfrastructureProject$1;
+declare const bvm: InfrastructureProject;
 
-declare const cashu: InfrastructureProject$1;
+declare const cashu: InfrastructureProject;
 
-declare const celestia: InfrastructureProject$1;
+declare const celestia: InfrastructureProject;
 
-declare const chakra: InfrastructureProject$1;
+declare const chakra: InfrastructureProject;
 
-declare const cbbtc: InfrastructureProject$1;
+declare const cbbtc: InfrastructureProject;
 
-declare const corecorebtc: InfrastructureProject$1;
+declare const corecorebtc: InfrastructureProject;
 
-declare const cornbtcn: InfrastructureProject$1;
+declare const cornbtcn: InfrastructureProject;
 
-declare const cygnus: InfrastructureProject$1;
+declare const cygnus: InfrastructureProject;
 
-declare const espresso: InfrastructureProject$1;
+declare const espresso: InfrastructureProject;
 
-declare const fedimint: InfrastructureProject$1;
+declare const fedimint: InfrastructureProject;
 
-declare const fire: InfrastructureProject$1;
+declare const fire: InfrastructureProject;
 
-declare const hemihemibtc: InfrastructureProject$1;
+declare const hemihemibtc: InfrastructureProject;
 
-declare const ibtcnetworkibtc: InfrastructureProject$1;
+declare const ibtcnetworkibtc: InfrastructureProject;
 
-declare const icpckbtc: InfrastructureProject$1;
+declare const icpckbtc: InfrastructureProject;
 
-declare const kinza: InfrastructureProject$1;
+declare const kinza: InfrastructureProject;
 
-declare const kbtc: InfrastructureProject$1;
+declare const kbtc: InfrastructureProject;
 
-declare const layerbankbtc: InfrastructureProject$1;
+declare const layerbankbtc: InfrastructureProject;
 
-declare const layerbankubtc: InfrastructureProject$1;
+declare const layerbankubtc: InfrastructureProject;
 
-declare const librepbtc: InfrastructureProject$1;
+declare const librepbtc: InfrastructureProject;
 
-declare const liquidlbtc: InfrastructureProject$1;
+declare const liquidlbtc: InfrastructureProject;
 
-declare const lombard: InfrastructureProject$1;
+declare const lombard: InfrastructureProject;
 
-declare const lorenzo: InfrastructureProject$1;
+declare const lorenzo: InfrastructureProject;
 
-declare const lorenzoenzobtc: InfrastructureProject$1;
+declare const lorenzoenzobtc: InfrastructureProject;
 
-declare const mantambtc: InfrastructureProject$1;
+declare const mantambtc: InfrastructureProject;
 
-declare const merlinmbtc: InfrastructureProject$1;
+declare const merlinmbtc: InfrastructureProject;
 
-declare const merlinwbtc: InfrastructureProject$1;
+declare const merlinwbtc: InfrastructureProject;
 
-declare const nexusnbtc: InfrastructureProject$1;
+declare const nexusnbtc: InfrastructureProject;
 
-declare const nomicnbtc: InfrastructureProject$1;
+declare const nomicnbtc: InfrastructureProject;
 
-declare const nubit: InfrastructureProject$1;
+declare const nubit: InfrastructureProject;
 
-declare const obeliskobtc: InfrastructureProject$1;
+declare const obeliskobtc: InfrastructureProject;
 
-declare const opcat: InfrastructureProject$1;
+declare const opcat: InfrastructureProject;
 
-declare const OsmosisBTC: InfrastructureProject$1;
+declare const OsmosisBTC: InfrastructureProject;
 
-declare const pstake: InfrastructureProject$1;
+declare const pstake: InfrastructureProject;
 
-declare const pump: InfrastructureProject$1;
+declare const pump: InfrastructureProject;
 
-declare const rootstockrbtc: InfrastructureProject$1;
+declare const rootstockrbtc: InfrastructureProject;
 
-declare const sidesbtc: InfrastructureProject$1;
+declare const sidesbtc: InfrastructureProject;
 
-declare const simplesbtc: InfrastructureProject$1;
+declare const simplesbtc: InfrastructureProject;
 
-declare const solv: InfrastructureProject$1;
+declare const solv: InfrastructureProject;
 
-declare const solvsolvbtccore: InfrastructureProject$1;
+declare const solvsolvbtccore: InfrastructureProject;
 
-declare const solvena: InfrastructureProject$1;
+declare const solvena: InfrastructureProject;
 
-declare const xsolvbtc: InfrastructureProject$1;
+declare const xsolvbtc: InfrastructureProject;
 
-declare const sovereign: InfrastructureProject$1;
+declare const sovereign: InfrastructureProject;
 
-declare const stackssbtc: InfrastructureProject$1;
+declare const stackssbtc: InfrastructureProject;
 
-declare const statechain: InfrastructureProject$1;
+declare const statechain: InfrastructureProject;
 
-declare const tbtc: InfrastructureProject$1;
+declare const tbtc: InfrastructureProject;
 
-declare const tronbtc: InfrastructureProject$1;
+declare const tronbtc: InfrastructureProject;
 
-declare const unirouter: InfrastructureProject$1;
+declare const unirouter: InfrastructureProject;
 
-declare const hyperliquidbtc: InfrastructureProject$1;
+declare const hyperliquidbtc: InfrastructureProject;
 
-declare const xlinkabtc: InfrastructureProject$1;
+declare const xlinkabtc: InfrastructureProject;
 
-declare const zueszbtc: InfrastructureProject$1;
+declare const zueszbtc: InfrastructureProject;
 
-declare const twentyonesharesbtc: InfrastructureProject$1;
+declare const twentyonesharesbtc: InfrastructureProject;
 
-declare const allInfrastructures: InfrastructureProject$1[];
+declare const allInfrastructures: InfrastructureProject[];
 declare const allInfrastructureSlugs: string[];
 
-export { AdditionalSnippet, AlertSnippet, AssessmentCategory, AtlSnippet, BTCWrapperTransparency, BitcoinLayer, BitcoinSecuritySnippet, Categorization, CustodyTitle, DefinitionSnippet, EntityCategory, EntityType, KnowledgeBitSnippet, LiveStatus$1 as LiveStatus, Notice, OtherIcons, OtherRiskSummarySnippet, OtherSnippet, PegRiskSummarySnippet, Purpose$1 as Purpose, ReviewSnippet, RiskCategory, RiskFactor$1 as RiskFactor, RiskSummarySnippet, Site, TechnologySnippet, TokenSnippet, Type$1 as Type, UnilateralExit, UseCaseSnippet, WrapperReviews, WrapperSnippet, acorn, alexxbtc as alex, allInfrastructureSlugs, allInfrastructures, alloallobtc as allo, astria, avail, avalanchebtcb, axelaraxlbtc as axelar, babylonbtc as babylonstaked, babypie, badgerebtc as badger, bedrockbrbtc as bedrock, bedrock as bedrockuni, bevmwbtc, binancebtcb, bitcoinos, wbtc as bitgowbtc, bitlayerwbtc, boolbbtc, bvm, cashu, celestia, chakra, cbbtc as coinbasecbbtc, corecorebtc, cornbtcn, cygnus, espresso, fedimint, fire as firebitcoin, hemihemibtc as hemibtc, ibtcnetworkibtc as ibtcnetwork, icpckbtc as internetcomputerck, kinza, kbtc as kraken, layerbankbtc, layerbankubtc, librepbtc as libre, liquidlbtc, lombard, lorenzoenzobtc, lorenzo as lorenzostbtc, mantambtc, merlinmbtc, merlinwbtc, nexusnbtc as nexus, nomicnbtc, nubit, obeliskobtc as obelisk, opcat, OsmosisBTC as osmosisbtc, pstake, pump, rootstockrbtc, sidesbtc, simplesbtc, solvsolvbtccore as solvcore, solvena, solv as solvsolvbtc, xsolvbtc as solvx, sovereign, stackssbtc, statechain, tbtc as thresholdtbtc, tronbtc, twentyonesharesbtc as twentyoneshares, unirouter, hyperliquidbtc as unit, xlinkabtc as xlink, zueszbtc as zeus };
+export { AdditionalSnippet, AlertSnippet, AssessmentCategory, AtlSnippet, BTCWrapperTransparency, BitcoinLayer, BitcoinSecuritySnippet, Categorization, CustodyTitle, DefinitionSnippet, EntityCategory, EntityType, KnowledgeBitSnippet, LiveStatus, Notice, OtherIcons, OtherRiskSummarySnippet, OtherSnippet, PegRiskSummarySnippet, Purpose, ReviewSnippet, RiskCategory, RiskFactor, RiskSummarySnippet, Site, TechnologySnippet, TokenSnippet, Type, UnilateralExit, UseCaseSnippet, WrapperReviews, WrapperSnippet, acorn, alexxbtc as alex, allInfrastructureSlugs, allInfrastructures, alloallobtc as allo, astria, avail, avalanchebtcb, axelaraxlbtc as axelar, babylonbtc as babylonstaked, babypie, badgerebtc as badger, bedrockbrbtc as bedrock, bedrock as bedrockuni, bevmwbtc, binancebtcb, bitcoinos, wbtc as bitgowbtc, bitlayerwbtc, boolbbtc, bvm, cashu, celestia, chakra, cbbtc as coinbasecbbtc, corecorebtc, cornbtcn, cygnus, espresso, fedimint, fire as firebitcoin, hemihemibtc as hemibtc, ibtcnetworkibtc as ibtcnetwork, icpckbtc as internetcomputerck, kinza, kbtc as kraken, layerbankbtc, layerbankubtc, librepbtc as libre, liquidlbtc, lombard, lorenzoenzobtc, lorenzo as lorenzostbtc, mantambtc, merlinmbtc, merlinwbtc, nexusnbtc as nexus, nomicnbtc, nubit, obeliskobtc as obelisk, opcat, OsmosisBTC as osmosisbtc, pstake, pump, rootstockrbtc, sidesbtc, simplesbtc, solvsolvbtccore as solvcore, solvena, solv as solvsolvbtc, xsolvbtc as solvx, sovereign, stackssbtc, statechain, tbtc as thresholdtbtc, tronbtc, twentyonesharesbtc as twentyoneshares, unirouter, hyperliquidbtc as unit, xlinkabtc as xlink, zueszbtc as zeus };
 export type { AssessmentSection, BaseProject, ContentSection, ContractItem, InfrastructureProject, LayerProject, Peg, Project, RiskSection, SectionAlert };

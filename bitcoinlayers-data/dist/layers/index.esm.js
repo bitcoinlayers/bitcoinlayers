@@ -36,435 +36,6 @@ var RiskFactor;
     RiskFactor["NotApplicable"] = "Not Applicable";
     RiskFactor["AlternativePoS"] = "Alternative PoS Network";
 })(RiskFactor || (RiskFactor = {}));
-var RiskCategory$1;
-(function (RiskCategory) {
-    RiskCategory["BtcCustody"] = "BTC Custody";
-    RiskCategory["DataAvailability"] = "Data Availability";
-    RiskCategory["NetworkOperators"] = "Network Operators";
-    RiskCategory["SettlementAssurance"] = "Settlement Assurance";
-    RiskCategory["UnilateralExits"] = "Unilateral Exits";
-    RiskCategory["BlockProduction"] = "Block Production";
-    RiskCategory["StateValidation"] = "State Validation";
-    RiskCategory["FinalityGuarantees"] = "Finality Guarantees";
-    RiskCategory["LivenessReorgResistance"] = "Liveness & Reorg Resistance";
-})(RiskCategory$1 || (RiskCategory$1 = {}));
-var EntityType$1;
-(function (EntityType) {
-    EntityType["CSV"] = "CSV";
-    EntityType["EthereumRollup"] = "Ethereum Rollup";
-    EntityType["Rollup"] = "Rollup";
-    EntityType["Federation"] = "Federation";
-    EntityType["Sidechain"] = "Sidechain";
-    EntityType["MergeMined"] = "Merge-mined";
-    EntityType["SidechainRollup"] = "Sidechain Rollup";
-    EntityType["SovereignRollup"] = "Sovereign Rollup";
-    EntityType["StateChannel"] = "State Channel";
-    EntityType["Statechain"] = "Statechain";
-    EntityType["VirtualUTXOs"] = "Virtual UTXOs";
-    EntityType["zkCSV"] = "zkCSV";
-    EntityType["Hybrid"] = "Hybrid";
-    EntityType["Anchor"] = "Anchor";
-    EntityType["ChaumianEcashProtocol"] = "Chaumian Ecash";
-    EntityType["FederationSDK"] = "Federation SDK";
-    EntityType["LiquidStaking"] = "Liquid Staking";
-    EntityType["Restaking"] = "Restaking";
-    EntityType["RollupSDK"] = "Rollup SDK";
-    EntityType["Staking"] = "Staking";
-    EntityType["PermissionedChain"] = "Permissioned Chain";
-    EntityType["ArkSidechain"] = "Ark on Sidechain";
-    EntityType["Sequencing"] = "Sequencing";
-    EntityType["DataAvailability"] = "Data Availability";
-    EntityType["Bridge"] = "Bridge";
-    EntityType["RaaS"] = "RaaS";
-    EntityType["BTCWrapper"] = "BTC Wrapper";
-    EntityType["ReserveAsset"] = "Reserve";
-    EntityType["Lending"] = "Lending";
-    EntityType["Yield"] = "Yield";
-    EntityType["SequencingDA"] = "Sequencing & DA";
-    EntityType["BitcoinBridge"] = "Bitcoin Bridge";
-    EntityType["MPCProtocol"] = "MPC Protocol";
-    EntityType["TBD"] = "To Be Determined";
-    EntityType["Ark"] = "Ark";
-    EntityType["AltL1"] = "Alt. Layer 1";
-    EntityType["AltRollup"] = "Alt. Rollup";
-    EntityType["Alt"] = "Alt. Chain";
-    EntityType["SingleOp"] = "Single Opcode";
-    EntityType["GroupOp"] = "Group of Opcodes";
-    EntityType["StakedBTC"] = "Natively Staked BTC";
-    EntityType["PoSNetwork"] = "PoS Network";
-    EntityType["BPoSNetwork"] = "BPoS Network";
-    EntityType["-"] = "-";
-})(EntityType$1 || (EntityType$1 = {}));
-var EntityCategory$1;
-(function (EntityCategory) {
-    EntityCategory["BitcoinNative"] = "Bitcoin Native";
-    EntityCategory["Sidesystem"] = "Sidesystems";
-    EntityCategory["Integrated"] = "Integrated";
-    EntityCategory["Alt"] = "Alt. L1s & More";
-    EntityCategory["More"] = "More";
-})(EntityCategory$1 || (EntityCategory$1 = {}));
-var Notice$1;
-(function (Notice) {
-    Notice["NoBridge"] = "No native bitcoin bridge";
-    Notice["Sidesystem"] = "Sidesystems";
-    Notice["Reorg"] = "\uD83D\uDEA8 This project will be moved to the Alternative category after June 30th.";
-    Notice["UnderReview"] = "\uD83D\uDEA8 This project's categorization is under review.";
-    Notice["OtherReasonBridge"] = "This project does not have an enshrined bitcoin bridge that meets our sidesystem standards.";
-    Notice["ClaimBitcoinLayer"] = "This network is denominated in BTC.";
-})(Notice$1 || (Notice$1 = {}));
-var Categorization$1;
-(function (Categorization) {
-    Categorization["NoBridgeTitle"] = "The project does not have an enshrined bitcoin bridge";
-    Categorization["NoBridgeSnippet"] = "The project does not have an enshrined bitcoin bridge that meets our sidesystem standards. Our standards require sidesystem's enshinred bridge programs to have at least 5 signers with 4 of those signers being external to the project's primary development organization.";
-})(Categorization$1 || (Categorization$1 = {}));
-var BitcoinLayer$1;
-(function (BitcoinLayer) {
-    BitcoinLayer["Yes"] = "The project meets our technical standards to be considered a bitcoin layer";
-})(BitcoinLayer$1 || (BitcoinLayer$1 = {}));
-var UnilateralExit$1;
-(function (UnilateralExit) {
-    UnilateralExit["Yes"] = "This protocol supports unilateral exit, allowing users to withdraw funds without counterparty cooperation";
-})(UnilateralExit$1 || (UnilateralExit$1 = {}));
-var OtherIcons$1;
-(function (OtherIcons) {
-    OtherIcons["MergeMine"] = "This protocol is merge-mined by bitcoin miners.";
-    OtherIcons["NotALayer"] = "This protocol is not a bitcoin layer";
-    OtherIcons["Staking"] = "This protocol leverages bitcoin staking for aspects of its protocol.";
-    OtherIcons["Hybrid"] = "This protocol's VM can interact with L1 bitcoin transactions.";
-})(OtherIcons$1 || (OtherIcons$1 = {}));
-var CustodyTitle$1;
-(function (CustodyTitle) {
-    CustodyTitle["BitcoinNative"] = "Bitcoin Native";
-    CustodyTitle["Distributed"] = "Distributed Third-Party";
-    CustodyTitle["Centralized"] = "Centralized Third-Party";
-})(CustodyTitle$1 || (CustodyTitle$1 = {}));
-var Site$1;
-(function (Site) {
-    Site["Website"] = "Website";
-    Site["Docs"] = "Docs";
-    Site["Explorer"] = "Explorer";
-    Site["GitHub"] = "GitHub";
-    Site["Twitter"] = "Twitter";
-})(Site$1 || (Site$1 = {}));
-//Below is snippets for bitcoin tokens. This is where we write the custody score for the token so we don't have to write it on dozens of pages.
-var TokenSnippet$1;
-(function (TokenSnippet) {
-    TokenSnippet["UnderReview"] = "This two-way peg is under review";
-    TokenSnippet["CustodianPeg"] = "BTC backing this asset is managed by centralized parties";
-    TokenSnippet["CustodianDerivative"] = "This asset is backed by an alternative derivative of BTC";
-    TokenSnippet["FederationPeg"] = "BTC backing this asset is secured by a federation";
-    TokenSnippet["VariousCustodianPeg"] = "BTC backing this asset is secured by a number of individual custodians";
-    TokenSnippet["BitGowBTC"] = "wBTC is backed by a centralized consortium of three companies. These entities are responsible for custodying BTC that backs wBTC on its various networks. Users trust these entities to not collude and steal the funds backing wBTC.";
-    TokenSnippet["ThresholdtBTC"] = "tBTC's peg with bitcoin is managed by the Threshold Network, a distributed but permissioned two-way peg. This group of signers participate in a threshold signature scheme to secure the BTC that backs tBTC.";
-    TokenSnippet["CoinbasecbBTC"] = "Coinbase is responsible for securing the BTC that backs cbBTC. Users trust Coinbase to ensure the funds backing cbBTC are not stolen or lost.\n\nIn addition to securing the funds funds backing cbBTC, Coinbase can censor users from using cbBTC and maintains unilateral control of cbBTC's smart contracts.";
-    TokenSnippet["BinanceBTCB"] = "When interacting with BTCB, users trust that Binance, a centralized custodian, will safely custody the BTC backing BTCB. When interacting with a centralized custodian, users trust that the custodian will not steal the funds backing their BTCB tokens. They also trust that Binance will effectively manage the BTC and not lose access to it. If the BTC backing BTCB, BTCB tokens could become effectively worthless.";
-    TokenSnippet["LombardLBTC"] = "BTC backing Lombard LBTC is secured by a network of validators participating in Lombard\u2019s security consortium. The security consortium participates in a CometBFT consensus protocol. Adding and removing validators from this consortium is handled by the current validator set within a given epoch.\n\nThere are currently [nine (9) validators](https://etherscan.io/address/0xdad58DfA5c1a7a34419AFdBE1f0d610efeea95E4#readProxyContract) participating in securing the BTC that backs LBTC.";
-    TokenSnippet["SolvBTC"] = "SolvBTC claims to be partially backed by native BTC managed by custodian providers. It\u2019s been stated that Copper, Ceffu, Fireblocks, and Cobo are custodial providers securing BTC that partially backs SolvBTC. It's additionally backed by various BTC-derivative assets; [BTCB](https://www.bitcoinlayers.org/infrastructure/binance-btcb), [wBTC](https://www.bitcoinlayers.org/infrastructure/bitgo-wbtc), [FBTC](https://www.bitcoinlayers.org/infrastructure/firebitcoin-fbtc), [cbBTC](https://www.bitcoinlayers.org/infrastructure/coinbase-cbbtc), [BTC.b](https://www.bitcoinlayers.org/infrastructure/avalanche-btcb), and [tBTC](https://www.bitcoinlayers.org/infrastructure/threshold-tbtc).";
-    TokenSnippet["xSolvBTC"] = "Four entities custody the bitcoin assets backing xSolvBTC tokens. These entities are Cobo, Ceffu, Fireblocks and the Solv Guard. These entities are known as Guardians in the [Solv application](https://app.solv.finance/staking). Ceffu and Cobo are the custodians for funds that are staked with Babylon.";
-    TokenSnippet["PumpBTC"] = "PumpBTC works with custodial providers to swap PumpBTC deposits into native BTC for BTC staking. When a user deposits a BTC derivative token (e.g. wBTC) into the PumpBTC contract, they are given PumpBTC in return. Cobo and Coinover have been mentioned as operators participating in Pump.";
-    TokenSnippet["UniRouterBTC"] = "Users trust that the UniRouter team has set up secure custody practices and has BTC reserves backing uniBTC. UniRouter has not disclosed who secures the BTC backing uBTC.";
-    TokenSnippet["AvalancheBTCb"] = "Ava Labs has disclosed that users trust a network of entities who participate in securing the BTC that backs BTCb. These eight entities are also reported to run special HSM hardware.\n\nThe eight entities securing the bridge are: Halborn, Avascan, Bware Labs, Ankr, Chainstack, Protofire, Blockdaemon, and Ava Labs.";
-    TokenSnippet["BedrockUniBTC"] = "When a user deposits funds into the Bedrock protocol, they deposit a wrapped BTC token into the uniBTC smart contract. The uniBTC smart contract on Ethereum (and other chains) is responsible for minting uniBTC in exchange for wrapped BTC tokens. To deposit these tokens on Babylon, the protocol relies on a custodial provider to exchange the wrapped BTC tokens for native BTC tokens that they would stake on Babylon. Bedrock has not disclosed who is responsible for securing and staking native BTC on users' behalf.";
-    TokenSnippet["LorenzostBTC"] = "Users trust Lorenzo, the operators of Lorenzo stBTC, to secure and stake native BTC that backs stBTC. It has also been stated in Lorenzo's [marketing materials](https://medium.com/@lorenzoprotocol/lorenzo-allies-with-cobo-ceffu-and-chainup-e0d824c4744d) that custodian providers Cobo, Ceffu, and Chainup are participating in Lorenzo's protocol as custody providers, but their documentation does not claim this.";
-    TokenSnippet["AcornaBTC"] = "Users of aBTC reportedly trust a multi-signature wallet to secure the funds backing aBTC. Acorn's documentation mentions that a multi-signature wallet, supported by HSMs, is responsible for securing funds that back aBTC. Acorn has not disclosed the operators of this wallet.";
-    TokenSnippet["ibtcnetworkibtc"] = "iBTC is a two-way peg that leverages DLC contracts between various institutions and a federated attestor network. We are reviewing its trust assumptions.";
-    TokenSnippet["babypie"] = "An MPC set up between Babypie and Cobo secures the BTC backing mBTC. Cobo is an institutional custodian provider. Users trust Babypie's claims in their documentation are being executed in practice.";
-    TokenSnippet["xlink"] = "There is limited information available on Xlink aBTC's custody mechanism for BTC backing aBTC. Users trust Alex, the project behind Xlink, to set up secure custody practices. Xlink's [website](https://www.xlink.network/) mentions that institutional grade MPC solutions are used.";
-    TokenSnippet["FireBTC"] = "An MPC set up between Ignition and Cobo secures the BTC backing mBTC. Cobo is an institutional custodian provider. Users trust Ignition's claims in their documentation are being executed in practice.";
-    TokenSnippet["SolvBTCENA"] = "SolvBTC.ENA is a derivative asset that represents SolvBTC locked in a vault executing a trading strategy.\n\nSolvBTC claims to be partially backed by native BTC managed by custodian providers. It\u2019s been stated that Copper, Ceffu, Fireblocks, and Cobo are custodial providers securing BTC that partially backs SolvBTC. It's additionally backed by various BTC-derivative assets; [BTCB](https://www.bitcoinlayers.org/infrastructure/binance-btcb), [wBTC](https://www.bitcoinlayers.org/infrastructure/bitgo-wbtc), [FBTC](https://www.bitcoinlayers.org/infrastructure/firebitcoin-fbtc), [cbBTC](https://www.bitcoinlayers.org/infrastructure/coinbase-cbbtc), [BTC.b](https://www.bitcoinlayers.org/infrastructure/avalanche-btcb), and [tBTC](https://www.bitcoinlayers.org/infrastructure/threshold-tbtc).The token is backed by [SolvBTC](https://www.bitcoinlayers.org/infrastructure/solv-solvbtc).\n\nUsers expose themselves to smart contract and application risks when depositing funds into SolvBTC.ENA.";
-    TokenSnippet["KrakenKBTC"] = "Kraken, a centralized custodian, secures the BTC backing kBTC. The funds backing kBTC are held at Kraken Financial, a Wyoming-chartered SPDI (Special Purpose Depository Institution)";
-    TokenSnippet["MerlinMBTC"] = "BTC backing Merlin M-BTC is secured via an MPC wallet managed by Cobo, a institutional custodian. Information on how many signers participate in this MPC scheme is not available. Merlin has stated that more players are being added into this custody scheme.";
-    TokenSnippet["ObeliskoBTC"] = "Obelisk's documentation claims that users deposit BTC into an MPC scheme to mint oBTC on a respective destination chain.";
-    TokenSnippet["BTCTRON"] = "When users swap BTC for BTCTRON, they send their BTC to Poloniex, a centralized custodian. Information on how the BTC is secured is not available.";
-    TokenSnippet["BabylonStakedBTC"] = "Babylon Staked BTC is native BTC locked in a L1 staking script. Users lock their funds in the script with the help of a covenant emulator committee. Users can withdrawal their funds from the script at any time with the help of the covenant emulator committee. If the committee is offline, users can spend their funds after a timelock expires.\n\nStaked BTC comes with additional trust assumptions such as slashing conditions. We are reviewing these trust assumptions related to Babylon.";
-    TokenSnippet["SparkBTC"] = "Users custody funds collectively with the statechain entity in a 2-2 multisig. Every Spark vUTXO has a pre-signed unilateral exit path. When funds are transferred, users trust the statechain entity to delete the keyshare it held with the previous owner so it cannot collectively spend funds with past owners.";
-    TokenSnippet["MercuryLayerBTC"] = "The statechain setup involves locking a UTXO onchain with the private key shared between the operator and the current statecoin owner. Although the Mercury Layer server acts as a trusted entity, users are safeguarded against potential unresponsiveness by having the ability to unilaterally exit and enforce their UTXO ownership onchain as each transfer is secured by a decrementing timelock mechanism and a series of backup transactions.";
-    TokenSnippet["HyperliquidBTC"] = "The Unit Protocol consists of a network of 3 guardians participating in an MPC scheme. These guardians are responsible for securing the BTC backing a BTC-denominated asset on Hyperliquid. They are also responsible for executing signing events related to the asset.";
-    TokenSnippet["SimpleSBTC"] = "BTC backing Simple sBTC is secured by a [3/5 multisig](https://mempool.space/address/bc1ps0qa22q30rrp4584gz4teqkchn76wakzaq6mlhsv6sg36e0fl83sss2vxa). Information on who the signers are for this multisig and their signing mechanisms is unavailable.";
-    TokenSnippet["BoolBTC"] = "The Bool Network has not disclosed its custody mechanism for BTC backing bBTC across the various networks its deployed on. In its documentation, it references a custody mechanism that would see an approved entity be able to set up a 2-2 multisig between Bool and the entity.\n\nIt is possible this is the set up for bBTC custody across the chains its deployed on. In any case, users trust that Bool Network and the development teams behind specific networks have set up secure custody practices.\n\n\u26A0\uFE0F Bool Network has [pivoted](https://x.com/DeepSafe_AI/status/1881704352768999641) and may no longer be maintaining its bridge infrastructure.\n\n[Source](https://docs.bool.network/interoperability-protocol/self-custody/channels)";
-    TokenSnippet["NomicNBTC"] = "Users deposit BTC into a Reserve Wallet to receive nBTC on Nomic. The Reserve Wallet is a Bitcoin L1 multisig wallet managed by the Nomic signatory set. The Nomic signatory is made up of the top 20 Nomic validators measured by weighted stake.\n\nBecoming a signatory requires staking NOM tokens. Disbursing funds from the reserve wallet requires a 2/3s threshold, weighted by voting power through NOM tokens.";
-    TokenSnippet["StacksSBTC"] = "sBTC is a bridge between bitcoin and stacks managed by 14 institutional signers. sBTC on Stacks is backed by BTC held in a wallet managed by these signers. The identities of entities participating in the sBTC bridge are publicly known.\n\nIf 10 of the signers colluded, they could steal all of the BTC backing sBTC. You can find the signers [here](https://bitcoinl2labs.com/sbtc-rollout#sbtc-signers).";
-    TokenSnippet["AlexBTC"] = "Users trust Wrapped, a custodian provider, with the custody of BTC backing xBTC. Alex, a DeFi project largely associated with the Stacks ecosystem, acquired Wrapped and has initiated a transition to move xBTC into sBTC.\n\nFunds that are not moved into sBTC are still secured by [Wrapped](https://wrapped.com/).";
-    TokenSnippet["BsquaredBTC"] = "Previous blog posts have stated that when users deposit funds into Bsquared, they deposit funds into a MPC wallet managed by the Bsquared Network team and Cobo, a institutional custodian. Information on how many signers participate in this MPC scheme is not available. Bsquared has stated that more players are being added into this custody scheme.";
-    TokenSnippet["SolvBTCdotSolv"] = "SolvBTC claims to be partially backed by native BTC managed by custodian providers. It\u2019s been stated that Copper, Ceffu, Fireblocks, and Cobo are custodial providers securing BTC that partially backs SolvBTC. It's additionally backed by various BTC-derivative assets; [BTCB](https://www.bitcoinlayers.org/infrastructure/binance-btcb), [wBTC](https://www.bitcoinlayers.org/infrastructure/bitgo-wbtc), [FBTC](https://www.bitcoinlayers.org/infrastructure/firebitcoin-fbtc), [cbBTC](https://www.bitcoinlayers.org/infrastructure/coinbase-cbbtc), [BTC.b](https://www.bitcoinlayers.org/infrastructure/avalanche-btcb), and [tBTC](https://www.bitcoinlayers.org/infrastructure/threshold-tbtc). Multisigs securing derivative assets backing by SolvBTC are secured by GnosisSafes with 5 signers.";
-    TokenSnippet["BTCN"] = "BTCN is an Ethereum-based ERC-20 token. It is a BTC-derivative asset that is backed by cbBTC and wBTC. All of the BTCN supply is locked into Corn\u2019s ERC-20 Bridge contract on Ethereum and is in escrow. On Corn, BTCN is primarily stored in the Bitcorn OFT contract.\n\nThe BTCN contract is managed by the [0xCff...2C7D](https://etherscan.io/address/0xcff1ad9f09b32252171207e8525c90b18d4e2c7d#code) multisig address on Ethereum. The multi-sig has a 2/4 signing threshold.";
-    TokenSnippet["LiquidLBTC"] = "BTC withdrawals are currently permissioned by the Liquid federation. Users must trust that when they deposit BTC into the Liquid blockchain, the signers will not collude and steal their BTC. Most users typically acquire L-BTC on secondary marketplaces, not through bridge deposits. Supported marketplaces for L-BTC are also members of the Liquid federation. Users trust that the federation will not steal the BTC, which would leave their newly acquired L-BTC worthless. The BTC that backs L-BTC is held in a 11-15 multi-sig wallet where 11 (\u2154 + 1) of the signers would need to be compromised in order to steal the BTC.\n\nNot all signers for the Liquid two-way peg are publicly disclosed.";
-    TokenSnippet["SideBTC"] = "Side sBTC is managed by 21 signers who additionally participate as validators in Side's proof-of-stake consensus.\n\nThese signers participate in a TSS network that where trusted validators perform signing duties for sBTC abd Side Chain.";
-    TokenSnippet["RootstockRBTC"] = "The BTC that backs RBTC is secured by a 5-of-9 federated multisig, referred to as the Powpeg (Proof of Work Peg). The signers of the Powpeg run specialized HSM hardware to secure the private keys used for signing Powpeg transactions.\n\nThe identities of entities participating in the Powpeg are publicly known. Users trust the operators of the Powpeg to custody their funds.\n\nPowpeg signer identities and attestations can be found [here](https://rootstock.io/powpeg/).";
-    TokenSnippet["AlloBTC"] = "BTC backing AlloBTC is custodied by Cobo, a centralized exchange. Cobo offers a 2/2 MPC custody solution where they co-custody funds along with protocols leveraging their servives. AlloBTC has not disclosed if this is the case in their documentation or marketing materials.";
-    TokenSnippet["KinzaBTC"] = "Kinza's kBTC is backed by BTC held in custodian wallets. These wallets are secured by an MPC scheme where Kinza, Cobo, and Coinover participate as signers. Cobo and Coinover are institutional custody providers.";
-    TokenSnippet["pStakeyBTC"] = "pStake's yBTC is backed by BTC held in custodian wallets. These wallets are secured by signers participating in an MPC scheme. pStake has a dedicated Cobo account where users' funds are held.";
-    TokenSnippet["enzoBTC"] = "enzoBTC can be acquired through depositing native BTC, [wBTC](https://www.bitcoinlayers.org/infrastructure/bitgo-wbtc), or [BTCB](https://www.bitcoinlayers.org/infrastructure/binance-btcb).\n\nFunds backing enzoBTC are secured by various custodians including Cobo, Ceffu, and Chainup.";
-    TokenSnippet["TwentyOnecoBTC"] = "BTC backing 21.co BTC is held by third party custodians. 21.co has not officially disclosed the identities of these custodian providers.";
-    TokenSnippet["BedrockbrBTC"] = "Bedrock brBTC is a derivative asset backed by other wrapped BTC assets. When depositing funds for brBTC, users take on smart contract risks in addition to the custodian risk related to the backing asset.\b\bBedrock brBTC may be backed by [uniBTC](https://www.bitcoinlayers.org/infrastructure/bedrock-unibtc), [FBTS](https://www.bitcoinlayers.org/infrastructure/firebitcoin-fbtc), [cbBTC](https://www.bitcoinlayers.org/infrastructure/coinbase-cbbtc), [wBTC](https://www.bitcoinlayers.org/infrastructure/bitgo-wbtc), [M-BTC](https://www.bitcoinlayers.org/infrastructure/merlin-mbtc), or [BTCB](https://www.bitcoinlayers.org/infrastructure/binance-btcb).";
-    TokenSnippet["BadgereBTC"] = "To obtain eBTC, users must deposit Lido stETH, an ETH-denominated asset, as collateral to borrow eBTC. If a users's collateralization ratio falls below a certain threshold, they can be liquidated. Collateralization ratios are based on the ETH/BTC price pair";
-    TokenSnippet["HemiBTC"] = "BTC backing HemiBTC is secured in a single-signature bitcoin address. Hemi claims that they use a threshold signature scheme to move funds from this address, but the specific siganture scheme, and participating signers, have not been officially disclosed.";
-    TokenSnippet["iBTC"] = "BTC backing iBTC is secured by numerous 2-2 multisigs between institutions and iBTC's attestor network. iBTC network's attestor network has a 2/3s majority signing threshold and uses FROST to produce valid signatures to co-sign movement of funds related to iBTC BTC multisigs.\n\nUsers who acquire iBTC in onchains market trust that their tokens will remain backed by institutions supplying liquidity.";
-    TokenSnippet["MerlinwBTC"] = "BTC backing Merlin wBTC is likely secured by Cobo, a centralized institution. When users deposit BTC into the Merlin Chain bridge, they are depositing funds into custodian addresses managed by Cobo.";
-    TokenSnippet["ZueszBTC"] = "zBTC has a group of guardians securing the BTC that backs zBTC. This BTC is dispersed across a number of individual addresses, meaning that each custodian custodies a subset of funds in isolation of other custodians. Users should be aware of which custodian custodies the funds backing zBTC when using the network.";
-    TokenSnippet["MantamBTC"] = "mBTC is backed by [BitGo wBTC](https://www.bitcoinlayers.org/infrastructure/bitgo-wbtc) and [Binance BTCB](https://www.bitcoinlayers.org/infrastructure/binance-btcb). When users exchange these funds for mBTC, reserve assets are secured by vaults managed by Ceffu, an centralized institution.";
-    TokenSnippet["SolvsolvbtcCORE"] = "SolvBTC claims to be partially backed by native BTC managed by custodian providers. It\u2019s been stated that Copper, Ceffu, Fireblocks, and Cobo are custodial providers securing BTC that partially backs SolvBTC. It's additionally backed by various BTC-derivative assets; [BTCB](https://www.bitcoinlayers.org/infrastructure/binance-btcb), [wBTC](https://www.bitcoinlayers.org/infrastructure/bitgo-wbtc), [FBTC](https://www.bitcoinlayers.org/infrastructure/firebitcoin-fbtc), [cbBTC](https://www.bitcoinlayers.org/infrastructure/coinbase-cbbtc), [BTC.b](https://www.bitcoinlayers.org/infrastructure/avalanche-btcb), and [tBTC](https://www.bitcoinlayers.org/infrastructure/threshold-tbtc). We are reviewing if SolvBTC.CORE is natively minted or bridged from another chain.";
-    TokenSnippet["BitLayerwBTC"] = "Bitlayer's current BTC bridge is a federated two-way peg with institutional signers. Bitlayer is working with multiple MPC custody platforms.\n\nUsers do not custody bitcoin assets backing tokens on Bitlayer.\n\nNote that we are unable to verify the participants in this model.";
-    TokenSnippet["OsmosisBTC"] = "BTC on Osmosis is backed by a number of collateral assets; WBTC.eth.axl, wBTC, nBTC, ckBTC, and cbBTC.axl.";
-    TokenSnippet["smartcontractreview"] = "This token has trust assumptions past the initial two-way peg. We are reviewing specific smart contracts related to this implementation to learn more about these assumptions.";
-    TokenSnippet["BotanixBTC"] = "BTC backing Botanix pBTC is secured by a federation of signers. The identities of entities participating in the federation are [publicly known](https://docs.botanixlabs.com/botanix/get-to-know-botanix/roadmap-to-spiderchain/founding-federation/federation-overview). Users trust the operators of the federation to custody their funds, process deposits, and honor withdrawals.";
-    TokenSnippet["BotanixStakedBTC"] = "Botanix stBTC is a derivative asset backed by wrapped BTC locked in a staking vault. When users deposit funds into Botanix stBTC, they are depositing funds into a staking contract. The contract is [upgradeable](https://botanixscan.io/address/0x09C5874F1425697C81c34F58957f2BE584306312).";
-    TokenSnippet["TemplateBTC"] = "This is a fake prop used for the template file.";
-})(TokenSnippet$1 || (TokenSnippet$1 = {}));
-//Below is snippets for layer assessments.
-var ReviewSnippet$1;
-(function (ReviewSnippet) {
-    ReviewSnippet["EthereumRollupDA"] = "The data for network's state is made available by Ethereum full nodes. Anyone can run an Ethereum node and verify the state of the network.";
-    ReviewSnippet["BasedSequencedAlt"] = "The network is a based sequenced rollup. L1 block producers are responsible for sequencing the network's transactions.";
-    ReviewSnippet["SelfProposeMainAlt"] = "The network's sequencer is managed by one entity. The sequencer can censor transactions and can also cause liveness failures if it goes down. Users can bypass the sequencer and send their transactions directly to its parent chain. Users can also self-propose their own state transition, and exit the network to its parent chain.";
-    ReviewSnippet["SelfProposeNone"] = "The network's proposer role is managed by one entity. The proposer can refuse to post state updates and also have liveness failures. If the proposer goes down, users cannot update state relative to its official bridge program and permit exits.";
-    ReviewSnippet["SelfSequenceMainAlt"] = "The network's sequencer is managed by one entity. The sequencer can censor transactions and can also cause liveness failures if it goes down. Users can bypass the sequencer and force include their transaction to be included in an upcoming sequence.";
-    ReviewSnippet["SelfSequenceNone"] = "The network's sequencer is managed by one entity. The sequencer can censor transactions and can also cause liveness failures if it goes down. Users cannot sequencer their own transactions if the sequencer goes down or censors them.";
-    ReviewSnippet["FinalityAltRollupCentralizedProposer"] = "The network's state is updated offchain by nodes who apply state transition logic over the data made available by its data availability layer. After a new state is generated, a state root is posted to bridge programs. Only a single, whitelisted validator is able to publish state updates to the parent chain. If this validator goes offline, then users of the network would be unable to update state relative to its official bridge and permit exits.\n\nA malicious validator could publish a malicious state transition and steal funds from the bridge on the parent chain.";
-    ReviewSnippet["FinalityAltRollupCentralizedProposers"] = "The network's state is updated offchain by nodes who apply state transition logic over the data made available by its data availability layer. After a new state is generated, a state root is posted to bridge programs. Only whitelisted validators are able to publish state updates to the parent chain. If these validators go offline, then users of the network would be unable to update state relative to its official bridge and permit exits.";
-    ReviewSnippet["FinalityAltRollupFederationFraudProofs"] = "The network's state is updated offchain by nodes who apply state transition logic over the data made available by its data availability layer. After a new state is generated, a state root is posted to bridge programs. A network of validators are able to publish state updates.\n\nIf they were to publish malicious state updates, they could be challenged via fault proofs. A federated group of validators are able to submit fault proofs.";
-    ReviewSnippet["FinalityAltRollupPermissionlessFraudProofs"] = "The network's state is updated offchain by nodes who apply state transition logic over the data made available by its data availability layer. After a new state is generated, a state root is posted to bridge programs.\n\nIf a proposer were to publish a malicious state update, they could be challenged via fault proofs. Anyone with sufficient capital resources can submit a fault proof.";
-    ReviewSnippet["FinalityAltRollupValidityProofs"] = "The network's state is updated offchain by nodes who apply state transition logic over the data made available by its data availability layer. After a new state is generated, a state root is posted to bridge programs. An entity known as a prover periodically submits a validity proof to prove the correctness of a batch of transactions to the parent chain hosting the network's bridge program.";
-    ReviewSnippet["FinalityAnchorChain"] = "The network's consensus mechanism sees its validator set build upon a checkpoint it posts to bitcoin. Since a validator cannot build a valid block without referencing a block hash posted to bitcoin, the network cannot be reorged without reorging bitcoin.";
-    ReviewSnippet["AltL1DA"] = "Data relative to the network's state is stored and made available by its full node set. Anyone can run a full node and verify the state of the network.";
-    ReviewSnippet["AltL1DAPOW"] = "The data availability requirement is satisfied by sidechain full nodes. The network's node software is open-source, and anyone can run a full node to verify the current state of the chain.\n\nLike any sidechain, blocks can be orphaned, so miners are disincentivized to withhold data and not broadcast their blocks as they would not receive mining rewards.";
-    ReviewSnippet["DAConsensusNetwork"] = "Data is published to, and made available by, full nodes participating in an alternative consensus network. Anyone can run a node and verify the current state of the network.";
-    ReviewSnippet["DAFederation"] = "Data is published to, and made available by, full nodes participating in a federated validator set. Running a validator and full node in this set up is permissioned.";
-    ReviewSnippet["AltL1DaBTCStake"] = "Data relative to the network's state is stored and made available by its full node set. Anyone can run a full node and verify the state of the network. The network's data availability layer is secured via bitcoin staking.";
-    ReviewSnippet["AltL1DaMergeMine"] = "Data relative to the network's state is stored and made available by its full node set. Anyone can run a full node and verify the state of the network. The network's data availability layer is indirectly secured via bitcoin miners who merge-mine the network.";
-    ReviewSnippet["AltDADAC"] = "Data relative to the network's state is stored and made available by a permissioned set of nodes. Users trust this committee to make the data available to them so they can verify the state of the network.";
-    ReviewSnippet["AltL1Finality"] = "State transitions are finalized by an alternative consensus mechanism with a distributed validator set.";
-    ReviewSnippet["AltL1FinalityPOW"] = "The network's state transitions are validated by its full node set. After a block is mined by a miner, it is broadcast to its full node set who validates the block and includes it in the chain.";
-    ReviewSnippet["AltL1FinalityFederatedFullNode"] = "After blocks are proposed by a block producer, a majority of the network operators are needed to sign off on the block to propagate it to the network. After this is done, full nodes accept the block and include it in the chain.";
-    ReviewSnippet["CometBFTFinality"] = "The network uses CometBFT for consensus. Like Tendermint, the protocol on which CometBFT is based, CometBFT has single-slot finality, meaning that blocks cannot be re-organized once they are part of the canonical blockchain. More than \u2154 of validator voting power must sign commit votes to finalize a block. If validators attempt to commit multiple blocks at the same block height, their stake will be slashed.";
-    ReviewSnippet["UnderReview"] = "This two-way peg is under review";
-    ReviewSnippet["NoFraudProofsBridge"] = "Users trust the proposer to not publish a malicious, unchallenged state transition. If a centralized party does not contest this state transition within a given time frame, all funds from the bridge can be stolen.";
-    ReviewSnippet["CentralizedUpgradeableBridge"] = "A centralized admin can create a malicious smart contract upgrade. In the event of a malicious smart contract upgrade, there is no exit window for users. This means that the admin behind the bridge can steal all funds in the official bridge.";
-    ReviewSnippet["OperatorsPoSNetwork"] = "Blocks are produced and proposed by an alternative proof-of-stake network.";
-    ReviewSnippet["OperatorSidechainPOS"] = "The network's blocks are constructed by a distributed validator set. Validators participate in a proof-of-stake consensus network. Anyone with sufficient resources and token stake can become a validator and participate in block production.";
-    ReviewSnippet["OperatorSidechainPOSBTCStake"] = "The network's blocks are constructed by a distributed validator set. Validators participate in a proof-of-stake consensus network. Anyone with sufficient resources and token stake can become a validator and participate in block production.\n\nPart of stake weight is derived from BTC stake that is assigned to a given validator.";
-    ReviewSnippet["OperatorSidechainMergeMine"] = "Bitcoin miners who are willing are able to merge-mine the network and produce blocks. If interested parties do not possess enough hashpower to competitively solo mine, they can join a mining pool that support the network.";
-    ReviewSnippet["OperatorFederated"] = "Blocks are proposed and finalized by a permissioned federation. Only a limited number of operators are able to participate in block production.";
-    ReviewSnippet["OperatorCentralizedStatechain"] = "Offchain UTXO transfers are co-signed by the user and a single operator. Users trust this operator for liveness and ensuring the system remains operational.";
-    ReviewSnippet["OperatorFederatedStatechain"] = "Offchain UTXO transfers are co-signed by the user and a federation of operators. Users trust this federation for liveness and ensuring the system remains operational.";
-    ReviewSnippet["FinalityStatechainSingleOperator"] = "Finality is provided by the statechain entity deleting the keyshare that it held with the previous owner. This implementation's statechain entity is a single signer.\n\nIf the entity does not delete the keyshare, then it can collude with a previous owner and double spend the new owner.\n\nThere is no way to prove that the entity deleted its previous keyshare. Users are unable to have any finality assurances in this set up.";
-    ReviewSnippet["FinalityStatechainFederation"] = "Finality is provided by the statechain entity deleting the keyshare that it held with the previous owner. This implementation's statechain entity is comprised of a federation of signers where a certain threshold is needed to co-sign transfers.\n\nIf the entity does not delete the keyshare, then it can collude with a previous owner and double spend the new owner. There is no way to prove that the entity deleted its previous keyshare. Users are unable to have any finality assurances in this set up.";
-    ReviewSnippet["StatechainDABlindedServer"] = "Transaction data is self-hosted. The operator blindly signs and timestamps the individual statechain states and the transfer history gets passed on between clients. Due to the use of blind signing, the operator remains unaware of the transfer history.";
-    ReviewSnippet["OperatorStatechainBlindedServerSingleServer"] = "The system employs a statechain entity that generates and updates key shares in addition to offering a blind signing service. The statechain entity is a centralized server.";
-    ReviewSnippet["FinalityAltNetworkUnderReview"] = "Finality assurances are provided by an alternative consensus network. We are reviewing this section.";
-    ReviewSnippet["TemplateReview"] = "This is a fake prop used for the template file.";
-})(ReviewSnippet$1 || (ReviewSnippet$1 = {}));
-//Below is snippets for additional information in layers reviews.
-var BitcoinSecuritySnippet$2;
-(function (BitcoinSecuritySnippet) {
-    BitcoinSecuritySnippet["NoSecurity"] = "In its current state, the network does not inherit security from Bitcoin.";
-    BitcoinSecuritySnippet["AltTokenFees"] = "Fees to network operators are paid in an alternative token.";
-    BitcoinSecuritySnippet["WrappedTokenFees"] = "Network fees are paid in a BTC-backed asset on the network.";
-    BitcoinSecuritySnippet["CentralizedSequencerMEV"] = "The network does not introduce any MEV on the Bitcoin L1. Users trust the sequencer to not reorder their transactions to extract MEV.";
-    BitcoinSecuritySnippet["AltNetworkMEV"] = "The network does not introduce any MEV on the Bitcoin L1. Users trust the validators of the network to not reorder their transactions to extract MEV.";
-    BitcoinSecuritySnippet["NoSecurityBudget"] = "The network does not currently contribute to the Bitcoin security budget.";
-    BitcoinSecuritySnippet["UnderReview"] = "This two-way peg is under review";
-    BitcoinSecuritySnippet["YesSecurityCheckpointPOS"] = "The network's checkpoint mechanism provides security against long-range attacks, enabling more secure light clients and shorter unbonding periods for validators.";
-    BitcoinSecuritySnippet["YesSecurityDualStaking"] = "The network's economic security is partially derived from staked BTC locked in bitcoin L1 staking scripts.";
-    BitcoinSecuritySnippet["MEVUnderReview"] = "We are currently reviewing the network's potential creating more opportunities for MEV on bitcoin.";
-    BitcoinSecuritySnippet["BitcoinSecurityOffchainUTXO"] = "The protocol enables users to unilaterally exit. Users only need to interact with the bitcoin network to exit the protocol.";
-    BitcoinSecuritySnippet["OffchainUTXOMEV"] = "Due to transaction sequencing being offchain, the protocol does not enable MEV on the Layer 1.";
-    BitcoinSecuritySnippet["OffchainUTXONoToken"] = "The protocol does not need another token for transaction fees or other use cases.";
-    BitcoinSecuritySnippet["StatechainSecurityBudget"] = "Statechains do not interact with the base layer outside of uses unilaterally exiting with their funds. Unilateral exit transactions pay L1 transaction fees.";
-    BitcoinSecuritySnippet["FinalityAssurance"] = "The network cannot be reorged without reorging bitcoin. This is due to the fact that the network builds upon a checkpoint posted to bitcoin.";
-    BitcoinSecuritySnippet["CheckpointCometBFT"] = "The network's security is independent of bitcoin and reliant on its own proof-of-stake mechanism.\n\nIts checkpoint mechanism does provide security against long-range attacks, enabling more secure light clients and shorter unbonding periods for validators.";
-    BitcoinSecuritySnippet["Checkpoint"] = "The network's security is independent of bitcoin and reliant on its own consensus mechanism. Its checkpoint mechanism, however, ensures that after a transaction including a checkpoint reference is included on bitcoin, the network's state cannot be reverted without reorging bitcoin.";
-    BitcoinSecuritySnippet["FeesPOSCheckpoint"] = "Periodic checkpoint transactions are made that pay fees to bitcoin miners.";
-    BitcoinSecuritySnippet["MergeMineDA"] = "The network's data availability layer is merge-mined by bitcoin miners.";
-    BitcoinSecuritySnippet["MergeMine"] = "The network is merge-mined by bitcoin miners.";
-    BitcoinSecuritySnippet["MergeMineDAFees"] = "Fees from securing the network's data availability are paid to Bitcoin miners who optionally merge-mine the network.";
-    BitcoinSecuritySnippet["MergeMineFees"] = "Fees from securing the network's are paid to Bitcoin miners who optionally merge-mine the network.";
-    BitcoinSecuritySnippet["MergeMineMEV"] = "The network does not leak MEV to bitcoin. Bitcoin miners may take advantage of opportunities to extract MEV if the network is experiencing high activity.";
-    BitcoinSecuritySnippet["Template"] = "Template used for the template prop file.";
-})(BitcoinSecuritySnippet$2 || (BitcoinSecuritySnippet$2 = {}));
-var TechnologySnippet$2;
-(function (TechnologySnippet) {
-    TechnologySnippet["EVM"] = "The network uses an EVM-compatible virtual machine. The Ethereum Virtual Machine is software responsible for smart contract execution for a number of blockchains, namely the Ethereum Network. It uses Solidity/Vyper as its code and is the dominant environment for smart contract execution in the cryptocurrency ecosystem.";
-    TechnologySnippet["FaultProofs"] = "The network leverages cryptographic proofs that enables challengers to contest a proposed state transition that contains invalid or fraudulent transactions. Networks that use fault proofs (e.g., optimistic rollups) initially assume that new blocks are valid, then rely on users or watchtowers to challenge blocks if they include invalid state transitions, which are then resolved onchain or a parent blockchain. Fault proofs are largely used to secure bridge programs securing user funds.";
-    TechnologySnippet["IBC"] = "This protocol has implemented support for IBC, enabling users to transfer their tokens to other supported IBC-enabled blockchains. IBC, or the Inter-Blockchain Communication protocol, is a blockchain interoperability standard that enables connected chains to transfer assets and messages between each other.";
-    TechnologySnippet["BitcoinStakingUnderReview"] = "Bitcoin staking is a mechanism by which BTC on the L1 is locked in a staking script. The BTC is then directed to validators on a Proof-of-Stake network which adds to the network's economic security. These scripts see users retain custody of their funds.\n\nAll bitcoin staking mechanisms vary in implementation. We are currently reviewing the network's exact staking mechanism.";
-    TechnologySnippet["Statechain"] = "Statechains are offchain protocols where users custody an L1 UTXO collaboratively with a statechain entity. Users transfer funds by sending their private key to a new recipient with a decrementing timelock. Statechain entities are expected delete its previous keyshare with previous owners and only interact with the current holder of the keyshare.\n\nIf the statechain entity interacts with a previous owner, then they can double spend the current owner. And if a previous owner broadcasts its unilateral exit transaction, then the current owner must broadcast their own to ensure ownership of funds (due to the current owner's timelocks expiring before previous owners).";
-    TechnologySnippet["FROST"] = "FROST (Flexible Round-Optimized Schnorr Threshold Signatures) is a protocol that minimizes the number of rounds of communication between participants in Schnorr signature schemes, reducing network bandwidth, time, and probability of errors. It can be used to implement 'n-of-m' threshold signatures represented by a single signature on the blockchain. This saves block space and increases privacy by making them indistinguishable from other, more common spend types.";
-    TechnologySnippet["ArbitrumStylus"] = "In addition to being EVM-compatible, the network leverages Stylus to support developers building WASM-based smart contracts. Developers can decide between building EVM-based applications or writing smart contracts in more common programming languages, such as Rust, and compiling these contracts to WASM.";
-    TechnologySnippet["AnyTrustDA"] = "The data needed to reconstruct the state and construct fraud proofs is made available by a permissioned committee. The committee is based on the AnyTrust data availability protocol. This sees a committee of signers produce a data availability certificate that the data needed for proof construction is available for a certain amount of time.\n\nIn this design, a sequencer posts batches of transactions to the committee. After the signers receive this batches and produce a data availability certificate, the sequencer submits the latest hash of these batches, and a corresponding Data Availability Certificate, to corresponding light clients (i.e. bridges).";
-    TechnologySnippet["BitcoinScript"] = "Bitcoin Script is bitcoin\u2019s scripting language that enables users to define the conditions under which a Bitcoin UTXO can be spent. It is a low-level Assembly-based programming language.";
-    TechnologySnippet["OP_CAT"] = "OP_CAT is a Bitcoin opcode, short for Operation Concatenate. It allows the combination of two data elements on the Bitcoin stack. The opcode was originally introduced by Satoshi Nakamoto, but was removed due to potential denial of service attack vectors.\n\nOP_CAT would enable more expressive smart contracts on bitcoin, including \u201Ccovenants\u201D, a way to set spending conditions on individual UTXOs. Teams are also reviewing how it can support SNARK verification in Script, which would further improve bridging L1 assets to second layer protocols.";
-    TechnologySnippet["MergeMining"] = "Merged mining is a feature of the network's consensus mechanism that allows coupling between bitcoin and the alternative network. Essentially, BTC mining pools add references to the network's blocks in mining jobs sent to mining participants. Additionally, because the network's mining algorithm is the same as bitcoin\u2019s, there is little added energy expenditure. This sees bitcoin miners have an ability to additionally mine a percentage of the network's blocks. Miners are incentivized through earning a portion of transaction fees or newly issued tokens.";
-    TechnologySnippet["Elements"] = "The network is built with the Elements technology stack. Elements is an open-source technology stack built on top of the Bitcoin code base. Since it is built on the Bitcoin code base, Elements enables the network to be a testing ground for potential changes to the Bitcoin protocol.";
-    TechnologySnippet["ConfidentialTransactions"] = "The network enables Confidential Transactions which can provide users a higher level of privacy. This feature ensures that anyone, other than the participants in a transaction, cannot see the tokens, and the amount of, transferred between them.";
-    TechnologySnippet["OrgaMerk"] = "Orga is a custom-built stack designed for creating Proof-of-Stake (PoS) blockchains in Rust, offering an alternative to the Cosmos SDK. At its core, Orga integrates with CometBFT as its consensus engine.\n\nMerk complements Orga as a high-performance Merkle key/value store, serving as the state database for blockchains. It supports the proof generation necessary for the networks's IBC interactions with other networks and for enabling lightweight client functionalities for end users.";
-    TechnologySnippet["Template"] = "Template used for the template prop file.";
-})(TechnologySnippet$2 || (TechnologySnippet$2 = {}));
-var UseCaseSnippet$2;
-(function (UseCaseSnippet) {
-    UseCaseSnippet["OnchainApps"] = "Onchain applications are supported. Onchain applications include borrowing and lending protocols, onchain exchanges (commonly referred to as decentralized exchanges), and more. These applications are supported with more expressive smart contract environments.";
-    UseCaseSnippet["OffchainUTXOTransfers"] = "Users can transfer virtual representations of UTXOs offchain with the assistance of an operator. These transfers have fast, soft confirmation times and are lower in fees than L1 Bitcoin transactions.";
-    UseCaseSnippet["UTXOTokenizedApplications"] = "The protocol can be used to improve the efficiency of UTXO-based token protocols. Users are able to transfer and trade tokenized UTXOs with faster confirmation times than Bitcoin L1 with trust tradeoffs.\n\nTokenized applications may include stablecoin transfers or token exchange protocols.";
-    UseCaseSnippet["BitcoinStaking"] = "Users can lock L1 BTC into staking script to support the network's security. The BTC is directed to validators within the Proof-of-Stake network. These scripts see users retain custody of their funds, but sees them take on slashing risks.\n\nIn return for locking their funds into a staking script, users are paid rewards in the form of fees or altcoin issuance.";
-    UseCaseSnippet["TestingGround"] = "Since the network has enabled opcodes that are not yet live on Bitcoin, developers can deploy applications there to preview what it would be like on Bitcoin. This includes analyzing the builder experience, potential security vulnerabilities, and presenting how these changes might permanently affect the Bitcoin network.";
-    UseCaseSnippet["TokenizedAssets"] = "The network enables developers and users alike to issue tokenized securities, stablecoins, and synthetic forms of cryptocurrencies.";
-    UseCaseSnippet["IBCTransfers"] = "Using IBC, users can transfer tokens (including BTC-denominated tokens) to connected blockchains and engage in use-cases such as: 1) Get a USK loan on Kujira 2) Trade and provide liquidity on Osmosis 3) Trade perpetual swaps using Levana";
-    UseCaseSnippet["OffchainTransfers"] = "The network itself can also be used for p2p payments denominated in BTC.";
-    UseCaseSnippet["AIAgents"] = "Template for a protocol that uses AI agents to interact with the network.";
-    UseCaseSnippet["Template"] = "Template used for the template prop file.";
-})(UseCaseSnippet$2 || (UseCaseSnippet$2 = {}));
-var KnowledgeBitSnippet$2;
-(function (KnowledgeBitSnippet) {
-    KnowledgeBitSnippet["EthereumL2"] = "This network is a layer 2 for Ethereum. For a view into the technology from an Ethereum perspective, head to [L2Beat](https://www.L2Beat.com) for their review.";
-    KnowledgeBitSnippet["Template"] = "Template used for the template prop file.";
-})(KnowledgeBitSnippet$2 || (KnowledgeBitSnippet$2 = {}));
-var AdditionalSnippet$2;
-(function (AdditionalSnippet) {
-    AdditionalSnippet["UpgradeableContractsCentralizedAndNoExit"] = "The contracts related to this project are immediately upgradeable by a centralized party. These contracts affect the project's chain and may affect specific two-way peg implementations.\n\nIn case of an malicious upgrade, there is no exit delay and users are unable to leave the chain.";
-    AdditionalSnippet["UpgradeableContractsFederatedAndExit"] = "The contracts related to this project are immediately upgradeable by a federation. These contracts affect the project's chain and may affect specific two-way peg implementations.\n\nIn case of an malicious upgrade by this federation, there is no exit delay and users are unable to leave the chain.";
-})(AdditionalSnippet$2 || (AdditionalSnippet$2 = {}));
-var OtherSnippet$2;
-(function (OtherSnippet) {
-    OtherSnippet["WithdrawalsAltRollup"] = "Withdrawing BTC-backed assets from the network depends on a variety of factors. First, users must trust the network operators to include their withdrawal request in a block. If the user's assets are locked in the network's official bridge program, they rely on a proposer to include their request in proposed state transition. After the state transition is finalized, the user can redeem their funds.\n\nIf a user's BTC-backed asset is minted directly onto the network, then the user's withdrawal request must be processed by the asset issuer.";
-    OtherSnippet["NotASideSystem"] = "Projects that do not meet our requirements to be considered a sidesystem will be moved to the Alternative category. They have until June 30th to implement the technical requirements to be considered a sidesystem.";
-})(OtherSnippet$2 || (OtherSnippet$2 = {}));
-//Below is snippets for alternative chains that we haven't been able to review yet due to volume.
-var AtlSnippet$2;
-(function (AtlSnippet) {
-    AtlSnippet["FinalityConsensusNetwork"] = "Finality assurances are provided by an alternative consensus network. Users trust that once a transaction has been added to the chain it won't be reverted.";
-    AtlSnippet["DAConsensusNetwork"] = "Data is published to, and made available by, full nodes participating in an alternative consensus network. Anyone can run a node and verify the current state of the network";
-    AtlSnippet["OperatorsPoSNetwork"] = "Blocks are produced and proposed by an alternative proof-of-stake network.";
-    AtlSnippet["PrioritizeLayers"] = "The Bitcoin Layers project prioritizes reviews on protocols that claim to be bitcoin layers. It also reviews bridges, token wrappers, and other mechanisms that support synthetic versions of bitcoin on other chains. If you'd ike to contribute to this review, feel free to submit a PR in our [GitHub](https://github.com/bitcoinlayers/bitcoinlayers) or join our [telegram group](https://t.me/+8rv-1I2gkmQ4ZmJh) to discuss.";
-})(AtlSnippet$2 || (AtlSnippet$2 = {}));
-//Below is snippets for wrapper assessments.
-var WrapperReviews$1;
-(function (WrapperReviews) {
-    WrapperReviews["GovernanceLow"] = "Users have at least 48 hours to submit a withdrawal request to the bridge operators if a malicious contract upgrade is pushed to the token contract.";
-    WrapperReviews["GovernanceMediumLessThan48"] = "Users have less than 48 hours to submit a withdrawal request to the bridge operators if a malicious contract upgrade is pushed to the token contract. A publicly disclosed federation with at least 5 operators can implement contract upgrades";
-    WrapperReviews["GovernanceMedium"] = "There is no delay on contract upgrades. A publicly disclosed federation with at least 5 operators can implement contract upgrades.";
-    WrapperReviews["GovernanceHigh"] = "There is no delay on contract upgrades. A known, centralized party or federation with less than 5 operators can implement contract upgrades";
-    WrapperReviews["GovernanceVeryHigh"] = "There is no delay on contract upgrades. The identities of the signers who can implement contract upgrades is not disclosed";
-    WrapperReviews["crLow"] = "The token has no pause or blacklist function. Users can transact the BTC-backed token freely on a given network.";
-    WrapperReviews["CrBlacklistFederation"] = "The token has a blacklist function. A publicly known federation is able to blacklist users and stop them from being able to transact with the token.";
-    WrapperReviews["CrBlacklistSingleSigner"] = "The token has a blacklist function. A single entity is able to blacklist users and stop them from being able to transact with the token.";
-    WrapperReviews["CrBlacklistUnknown"] = "The token has a blacklist function. The identity of the entity who can blacklist users is unknown.";
-    WrapperReviews["CrPauseFederation"] = "The token has a pause function. A publicly known federation is able to blacklist users and stop them from being able to transact with the token.";
-    WrapperReviews["CrPauseSingleSigner"] = "The token has a pause function. A single entity is able to blacklist users and stop them from being able to transact with the token.";
-    WrapperReviews["CrPauseUnknown"] = "The token has a pause function. The identity of the entity who can blacklist users is unknown.";
-    WrapperReviews["crHigh"] = "The token has a pause and a blacklist function.";
-    WrapperReviews["SupplyIssuanceLow"] = "Newly tokens are minted via an onchain smart contract. The smart contract executes a bitcoin light client and mints tokens when a deposit transaction occurs on bitcoin. Users can notify the smart contract of a deposit if necessary.";
-    WrapperReviews["SupplyIssuanceMed"] = "A federation is responsible for passing messages that result in tokens being minted on a given layer.";
-    WrapperReviews["SupplyIssuanceHigh"] = "A single entity is responsible for passing messages that result in tokens being minted on a given layer.";
-    WrapperReviews["SupplyIssuanceVeryHigh"] = "The process of passing messages between bitcoin and a given layer to mint this token is not disclosed.";
-})(WrapperReviews$1 || (WrapperReviews$1 = {}));
-//Below is snippets for additional information in wrapper reviews.
-var WrapperSnippet$1;
-(function (WrapperSnippet) {
-    WrapperSnippet["BlacklistYes"] = "The token implementation has a blacklist function.";
-})(WrapperSnippet$1 || (WrapperSnippet$1 = {}));
-var BTCWrapperTransparency$1;
-(function (BTCWrapperTransparency) {
-    BTCWrapperTransparency["ProofofReservesYes"] = "The project provides active proof-of-reserves. The proof-of-reserves can be seen";
-    BTCWrapperTransparency["ProofofReservesNo"] = "The project has not published a Proof-of-Reserves. Users trust that the custodians holding native BTC backing the derivative asset to have ample reserves.";
-    BTCWrapperTransparency["ProofofReservesStakingNo"] = "The project has not published a Proof-of-Reserves. Users trust that the custodians holding native BTC backing the derivative asset to have ample reserves and that operators are staking BTC onto Babylon on users\u2019 behalf.";
-    BTCWrapperTransparency["OperatorsDisclosedYes"] = "Operators of the protocol have been disclosed.";
-    BTCWrapperTransparency["OperatorsDisclosedNo"] = "Operators of the protocol are not publicly disclosed.";
-    BTCWrapperTransparency["WithdrawalsYes"] = "The network does not introduce any MEV on the Bitcoin L1. Users trust the sequencer to not reorder their transactions to extract MEV.";
-    BTCWrapperTransparency["ContractsYes"] = "Contracts related to the project are source viewable and verified.";
-    BTCWrapperTransparency["ContractsNo"] = "Contracts related to the project are not source viewable and verified.";
-    BTCWrapperTransparency["ContractsSome"] = "Not all contracts related to the project are source viewable and verified.";
-    BTCWrapperTransparency["RedemptionsYes"] = "Redemptions are enabled. The project has documented how redemptions are processed in their documentation.";
-    BTCWrapperTransparency["RedemptionsYesNoDocs"] = "Redemptions are enabled. The project has not disclosed how redemptions are processed in their documentation.";
-    BTCWrapperTransparency["StakeAttestationsNo"] = "The project does not provide any attestations that its BTC is in-fact staked onto Babylon.";
-    BTCWrapperTransparency["StakeAttestationsYes"] = "The project does not provide any attestations that its BTC is in-fact staked onto Babylon.";
-})(BTCWrapperTransparency$1 || (BTCWrapperTransparency$1 = {}));
-var RiskSummarySnippet$2;
-(function (RiskSummarySnippet) {
-    RiskSummarySnippet["RiskSummarySecurityCouncil"] = "If the security council is compromised, they can immediately upgrade specific contracts and potentially steal user funds. This risk may be relevant to BTC-backed tokens locked in the layer's official bridge contract.";
-    RiskSummarySnippet["RiskSummaryImmediateUpgrade"] = "A centralized party can immediately upgrade specific system contracts. This risk may be relevant to BTC-backed tokens locked in the layer's official bridge contract.";
-    RiskSummarySnippet["RiskSummaryCentralNotImmediateUpgrade"] = "A centralized party can upgrade bridge contracts and steal user funds.";
-    RiskSummarySnippet["TitleBridgeUpgrade"] = "Bridge contracts are upgradeable";
-    RiskSummarySnippet["TitleSystemUpgrade"] = "Some system contracts are upgradeable";
-    RiskSummarySnippet["TitleUpgrade"] = "Some contracts are upgradeable. These contracts may be related to BTC-backed tokens locked in the layer's official bridge contract.";
-    RiskSummarySnippet["RiskSummaryCustodianPegs"] = "All BTC backing wrapped tokens on this network are ultimately secured by custodians. Users trust that these custodians will not misappropriate funds and keep their assets pegged 1:1. Each custodian has their own risks. Learn more in the trust assumptions review section.";
-    RiskSummarySnippet["TitleCustodianPegs"] = "All BTC pegs have custodian trust assumptions";
-    RiskSummarySnippet["RiskSummaryAltDANetwork"] = "Data related to the network's state is made available by another consensus network. The network's state cannot make progress if the data availability layer withholds the data. If the network cannot make progress, user funds can be frozen.";
-    RiskSummarySnippet["RiskSummaryAltDACommittee"] = "Data related to the network's state is made available by an offchain committee. The network's state cannot make progress if this committee withholds the data. If the network cannot make progress, user funds can be frozen.";
-    RiskSummarySnippet["TitleAltDA"] = "Another data availability layer is used";
-    RiskSummarySnippet["RiskSummaryCentralizedSequencer"] = "The network is operated by a centralized operator. If this operator goes offline, the network can be halted which can freeze user funds. Please see the trust assumptions to learn if their is a fallback mechanism for liveness failures.";
-    RiskSummarySnippet["TitleCentralizedSequencer"] = "A centralized entity is the network operator";
-    RiskSummarySnippet["RiskSummaryAlternativeL1"] = "The network is an alternative blockchain. Users trust the economic security of the network to deter validators from censorship and creating malicious peg outs.";
-    RiskSummarySnippet["TitleAlternativeL1"] = "The network is an alternative blockchain";
-    RiskSummarySnippet["TitleFederation"] = "The network is managed by a federation.";
-    RiskSummarySnippet["RiskSummaryFederation"] = "The network is managed by a federation. Users trust the federation to not censor them, halt the network, and freeze user funds.";
-    RiskSummarySnippet["RiskFederationPeg"] = "The BTC backing the official wrapped bitcoin asset is managed by a federation. Users trust that this federation of custodians will not misappropriate funds and keep their assets pegged 1:1. If the federation becomes compromised, it can unilaterally steal users' funds. The network may support other wrapped BTC assets with different trust assumptions.";
-    RiskSummarySnippet["RiskPOSPeg"] = "The BTC backing the official wrapped bitcoin asset is managed by a validators participating in the network's proof-of-stake protocol. Users trust that these signers will not misappropriate funds and keep their assets pegged 1:1. If signers with the majority of stake becomes malicious, they can unilaterally steal users' funds. The network may support other wrapped BTC assets with different trust assumptions.";
-    RiskSummarySnippet["RiskStatechainFinality"] = "If the statechain entity does not delete the keyshare it held with the previous owner, they can collude and immediately spend funds. This effectively results in the current owner's funds being stolen.";
-    RiskSummarySnippet["RiskStatechainPreviousOwner"] = "If the previous owner broadcasts their unilateral exit transaction, the current owner must respond by broadcasting theirs with a sooner expiring timelock. If the current owner does not respond, the previous owner can steal funds.";
-    RiskSummarySnippet["RiskStatechainTimelock"] = "If a previous owner of the UTXO broadcasts their unilateral exit transaction, and the current owner does not broadcast their own, the previous owner can steal funds.";
-    RiskSummarySnippet["RiskStatechainNoExit"] = "This implementation does not support unilateral exits. If the statechain entity becomes unresponsive, users funds are frozen.";
-    RiskSummarySnippet["RiskLightningChannel"] = "If a counterparty maliciously broadcasts a previous state, and it is not contested, they can close the channel with previous balances that favor the malicious actor.";
-    RiskSummarySnippet["RiskSummary"] = "";
-})(RiskSummarySnippet$2 || (RiskSummarySnippet$2 = {}));
-var PegRiskSummarySnippet$2;
-(function (PegRiskSummarySnippet) {
-    PegRiskSummarySnippet["CustodianTitle"] = "Users do not have unilateral claims on native BTC.";
-    PegRiskSummarySnippet["OneCustodian"] = "BTC backing this asset is secured by a centralized custodian. Users trust this single entity with maintaining the peg with BTC.";
-    PegRiskSummarySnippet["Guardian"] = "BTC backing this asset is secured by multiple custodians. Users trust this group with maintaining the peg with BTC.";
-    PegRiskSummarySnippet["Federation"] = "BTC backing this asset is secured by a federation of signers. Users trust this federation with maintaining the peg with BTC.";
-    PegRiskSummarySnippet["PoS"] = "BTC backing this asset is secured by a signers participating in a proof-of-stake network. Users trust these signers with maintaining the peg with BTC.";
-    PegRiskSummarySnippet["UnkownSignersTitle"] = "The signers for this two-way peg have not been disclosed";
-    PegRiskSummarySnippet["UnkownSigners"] = "The parties responsible for securing the assets backing this wrapper have not been disclosed. There is little-to-no reputational risk for signers securing these funds.";
-    PegRiskSummarySnippet["Collateralized"] = "Users are exposed to smart contract risks and potential liquidations when using this asset.";
-    PegRiskSummarySnippet["MultipleAssets"] = "This asset is backed by other BTC wrapped assets. If a reserve asset became unbacked, the two-way peg with BTC would break.";
-    PegRiskSummarySnippet["SlashingRisk"] = "This asset represents BTC staked in a staking protocol. If the corresponding BTC is slashed, users' balances could be affected.";
-    PegRiskSummarySnippet["RiskSummary"] = "";
-})(PegRiskSummarySnippet$2 || (PegRiskSummarySnippet$2 = {}));
-var OtherRiskSummarySnippet$2;
-(function (OtherRiskSummarySnippet) {
-    OtherRiskSummarySnippet["EcashCustodyTitle"] = "Users funds are managed by the mint operator";
-    OtherRiskSummarySnippet["CashuCustody"] = "A Cashu mint is operated by a single entity that custodies users\u2019 funds in return for issuing bearer Ecash tokens. If the mint gets hacked, becomes unresponsive or turns malicious, user funds can be stolen.";
-    OtherRiskSummarySnippet["FedimintCustody"] = "Users deposit BTC into a multisig to interact with a Fedimint. Users explicitly trust the signers, known as guardians, of the federations\u2019 multisig to not steal their funds. If the mint gets hacked, becomes unresponsive or turns malicious, user funds can be stolen.";
-    OtherRiskSummarySnippet["VariousMints"] = "Users can choose between different mints to interact with. It is avised that users choose a mint that they trust and personally know the identities of the operators.";
-    OtherRiskSummarySnippet["EcashDebasementRisk"] = "Ecash notes represent a claim on BTC held by the mint operators. As such, there is the risk that the operators issues more Ecash tokens than bitcoin it actually holds. This can lead to Ecash tokens being unbacked.";
-    OtherRiskSummarySnippet["RiskSummary"] = "";
-})(OtherRiskSummarySnippet$2 || (OtherRiskSummarySnippet$2 = {}));
-var DefinitionSnippet$2;
-(function (DefinitionSnippet) {
-    DefinitionSnippet["DefinitionAltRollup"] = "The network is an alternative rollup. It uses an alternative network for data availability and consensus. It supports a variety of BTC-backed assets.";
-})(DefinitionSnippet$2 || (DefinitionSnippet$2 = {}));
-const AlertSnippet$1 = {
-    ProofOfProofConsensus: {
-        type: "warning",
-        title: "Note on Hemi's Proof-of-Proof consensus",
-        content: "While Hemi's anchors its state to bitcoin, the network is currently managed by a centralized operator. The operator is unable to revert Hemi's state after Hemi full nodes compute a new state root. This is independent of any additional finality guarantees potentially provided by bitcoin.",
-        linkText: "Learn more about bitcoin anchoring for alternative blockchains",
-        linkUrl: "https://lxresearch.co",
-        expandable: true,
-    }};
-var AssessmentCategory$1;
-(function (AssessmentCategory) {
-    AssessmentCategory["AssetCustody"] = "Asset Custody";
-    AssessmentCategory["StakingType"] = "Staking Type";
-    AssessmentCategory["SlashingRisk"] = "Slashing Risk";
-    AssessmentCategory["IncentiveModel"] = "Incentive Model";
-    AssessmentCategory["Reputation"] = "Reputation & Participation";
-    AssessmentCategory["Signing"] = "Signing Mechanism";
-    AssessmentCategory["KeyStorage"] = "Key Storage";
-    AssessmentCategory["CensorshipResistance"] = "Censorship Resistance";
-    AssessmentCategory["FinalityAssurances"] = "Finality Assurances";
-    AssessmentCategory["ProofofOwnership"] = "Proof of Ownership";
-    AssessmentCategory["NativeBitcoinCustody"] = "Native Bitcoin Custody";
-    AssessmentCategory["UnilateralExit"] = "Unilateral Exit Guarantees";
-    AssessmentCategory["UserRisk"] = "User Risk";
-    AssessmentCategory["ThirdPartyStaking"] = "Third Party Staking";
-    AssessmentCategory["SelfCustodialStaking"] = "Self-custodial Staking";
-    AssessmentCategory["SupplyIssuance"] = "Supply Issuance";
-    AssessmentCategory["StakeAttestations"] = "Stake Attestations";
-    AssessmentCategory["Governance"] = "Governance";
-})(AssessmentCategory$1 || (AssessmentCategory$1 = {}));
-
-// Re-export everything from the main props file
 var RiskCategory;
 (function (RiskCategory) {
     RiskCategory["BtcCustody"] = "BTC Custody";
@@ -929,8 +500,8 @@ const template$c = {
     type: Type.Layer,
     slug: "ailayer",
     title: "AILayer",
-    entityType: EntityType$1.AltL1,
-    entityCategory: EntityCategory$1.Alt,
+    entityType: EntityType.AltL1,
+    entityCategory: EntityCategory.Alt,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -949,23 +520,23 @@ const template$c = {
     bitcoinOnly: false,
     links: [
         {
-            text: Site$1.Website,
+            text: Site.Website,
             url: "website",
         },
         {
-            text: Site$1.Docs,
+            text: Site.Docs,
             url: "docs",
         },
         {
-            text: Site$1.Explorer,
+            text: Site.Explorer,
             url: "explorer",
         },
         {
-            text: Site$1.GitHub,
+            text: Site.GitHub,
             url: "github",
         },
         {
-            text: Site$1.Twitter,
+            text: Site.Twitter,
             url: "socials",
         },
     ],
@@ -982,7 +553,7 @@ const template$c = {
     ],
     riskAnalysis: [
         {
-            category: RiskCategory$1.BtcCustody,
+            category: RiskCategory.BtcCustody,
             score: 0,
             tier: "",
             title: "",
@@ -994,7 +565,7 @@ const template$c = {
                     score: 0,
                     tier: RiskFactor.High,
                     title: "For an official two-way peg, you can write a customized title here.",
-                    content: `${TokenSnippet$1.TemplateBTC}\n\n`,
+                    content: `${TokenSnippet.TemplateBTC}\n\n`,
                 },
                 {
                     name: "Threshold tBTC",
@@ -1002,7 +573,7 @@ const template$c = {
                     score: 0,
                     tier: RiskFactor.High,
                     title: "For other titles, just use TokenSnippet.PegType as shown in the example below.",
-                    content: `${TokenSnippet$1.ThresholdtBTC}\n\n${TokenSnippet$1.smartcontractreview}\n\n`,
+                    content: `${TokenSnippet.ThresholdtBTC}\n\n${TokenSnippet.smartcontractreview}\n\n`,
                 },
                 {
                     name: "Threshold tBTC",
@@ -1010,38 +581,38 @@ const template$c = {
                     score: 0,
                     tier: RiskFactor.High,
                     title: "For other titles, just use TokenSnippet.PegType as shown in the example below.",
-                    content: `${TokenSnippet$1.ThresholdtBTC}\n\n${TokenSnippet$1.smartcontractreview}\n\nUse the smart contract review field to highlight that the asset may have additional trust assumptions if it's bridged across chains. You can also use text to describe additional trust assumptions.`,
+                    content: `${TokenSnippet.ThresholdtBTC}\n\n${TokenSnippet.smartcontractreview}\n\nUse the smart contract review field to highlight that the asset may have additional trust assumptions if it's bridged across chains. You can also use text to describe additional trust assumptions.`,
                 },
                 {
                     name: "Template BTC",
                     infrastructureSlug: "templace-btc",
                     score: 0,
                     tier: RiskFactor.High,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: `${TokenSnippet$1.TemplateBTC}`,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.TemplateBTC}`,
                 },
             ],
         },
         {
-            category: RiskCategory$1.DataAvailability,
+            category: RiskCategory.DataAvailability,
             score: 0,
             tier: RiskFactor.UnderReview,
             title: "Add a custom title here",
-            content: ReviewSnippet$1.TemplateReview,
+            content: ReviewSnippet.TemplateReview,
         },
         {
-            category: RiskCategory$1.NetworkOperators,
+            category: RiskCategory.NetworkOperators,
             score: 0,
             tier: RiskFactor.UnderReview,
             title: "Add a custom title here",
-            content: `${ReviewSnippet$1.TemplateReview}\n\nAdd additional context with text if needed.`
+            content: `${ReviewSnippet.TemplateReview}\n\nAdd additional context with text if needed.`
         },
         {
-            category: RiskCategory$1.FinalityGuarantees,
+            category: RiskCategory.FinalityGuarantees,
             score: 0,
             tier: RiskFactor.UnderReview,
             title: "Add a custom title here",
-            content: `${ReviewSnippet$1.TemplateReview}\n\nAdd additional context with text if needed.`
+            content: `${ReviewSnippet.TemplateReview}\n\nAdd additional context with text if needed.`
         },
     ],
     manualContracts: [],
@@ -1062,19 +633,19 @@ const template$c = {
             content: [
                 {
                     title: "Add a prop saying if the network inherits security from bitcoin",
-                    content: BitcoinSecuritySnippet$2.Template,
+                    content: BitcoinSecuritySnippet$1.Template,
                 },
                 {
                     title: "Add a prop clarifying if the network uses an altcoin or is bitcoin denominated",
-                    content: BitcoinSecuritySnippet$2.Template,
+                    content: BitcoinSecuritySnippet$1.Template,
                 },
                 {
                     title: "Add a prop clarifying if the network introduces MEV to bitcoin (if at all)",
-                    content: BitcoinSecuritySnippet$2.Template,
+                    content: BitcoinSecuritySnippet$1.Template,
                 },
                 {
                     title: "Add a prop clarifying if the network contributes to the security budget",
-                    content: BitcoinSecuritySnippet$2.Template,
+                    content: BitcoinSecuritySnippet$1.Template,
                 },
             ],
         },
@@ -1084,7 +655,7 @@ const template$c = {
             content: [
                 {
                     title: "Add a prop on significant tech components. If there is no prop, consider adding one to the prop.ts file. If the tech component is highly customizeable, add text for the content.",
-                    content: TechnologySnippet$2.Template,
+                    content: TechnologySnippet$1.Template,
                 },
                 {
                     title: "Add a prop on significant tech components. If there is no prop, consider adding one to the prop.ts file. If the tech component is highly customizeable, add text for the content.",
@@ -1098,7 +669,7 @@ const template$c = {
             content: [
                 {
                     title: "Add a prop on significant use cases.",
-                    content: UseCaseSnippet$2.Template,
+                    content: UseCaseSnippet$1.Template,
                 },
             ],
         },
@@ -1118,8 +689,8 @@ const template$b = {
     type: Type.Layer,
     slug: "algorand",
     title: "Algorand",
-    entityType: EntityType$1.AltL1,
-    entityCategory: EntityCategory$1.Alt,
+    entityType: EntityType.AltL1,
+    entityCategory: EntityCategory.Alt,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -1138,23 +709,23 @@ const template$b = {
     bitcoinOnly: false,
     links: [
         {
-            text: Site$1.Website,
+            text: Site.Website,
             url: "website",
         },
         {
-            text: Site$1.Docs,
+            text: Site.Docs,
             url: "docs",
         },
         {
-            text: Site$1.Explorer,
+            text: Site.Explorer,
             url: "explorer",
         },
         {
-            text: Site$1.GitHub,
+            text: Site.GitHub,
             url: "github",
         },
         {
-            text: Site$1.Twitter,
+            text: Site.Twitter,
             url: "socials",
         },
     ],
@@ -1171,7 +742,7 @@ const template$b = {
     ],
     riskAnalysis: [
         {
-            category: RiskCategory$1.BtcCustody,
+            category: RiskCategory.BtcCustody,
             score: 0,
             tier: "",
             title: "",
@@ -1183,7 +754,7 @@ const template$b = {
                     score: 0,
                     tier: RiskFactor.High,
                     title: "For an official two-way peg, you can write a customized title here.",
-                    content: `${TokenSnippet$1.TemplateBTC}\n\n`,
+                    content: `${TokenSnippet.TemplateBTC}\n\n`,
                 },
                 {
                     name: "Threshold tBTC",
@@ -1191,7 +762,7 @@ const template$b = {
                     score: 0,
                     tier: RiskFactor.High,
                     title: "For other titles, just use TokenSnippet.PegType as shown in the example below.",
-                    content: `${TokenSnippet$1.ThresholdtBTC}\n\n${TokenSnippet$1.smartcontractreview}\n\n`,
+                    content: `${TokenSnippet.ThresholdtBTC}\n\n${TokenSnippet.smartcontractreview}\n\n`,
                 },
                 {
                     name: "Threshold tBTC",
@@ -1199,38 +770,38 @@ const template$b = {
                     score: 0,
                     tier: RiskFactor.High,
                     title: "For other titles, just use TokenSnippet.PegType as shown in the example below.",
-                    content: `${TokenSnippet$1.ThresholdtBTC}\n\n${TokenSnippet$1.smartcontractreview}\n\nUse the smart contract review field to highlight that the asset may have additional trust assumptions if it's bridged across chains. You can also use text to describe additional trust assumptions.`,
+                    content: `${TokenSnippet.ThresholdtBTC}\n\n${TokenSnippet.smartcontractreview}\n\nUse the smart contract review field to highlight that the asset may have additional trust assumptions if it's bridged across chains. You can also use text to describe additional trust assumptions.`,
                 },
                 {
                     name: "Template BTC",
                     infrastructureSlug: "templace-btc",
                     score: 0,
                     tier: RiskFactor.High,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: `${TokenSnippet$1.TemplateBTC}`,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.TemplateBTC}`,
                 },
             ],
         },
         {
-            category: RiskCategory$1.DataAvailability,
+            category: RiskCategory.DataAvailability,
             score: 0,
             tier: RiskFactor.UnderReview,
             title: "Add a custom title here",
-            content: ReviewSnippet$1.TemplateReview,
+            content: ReviewSnippet.TemplateReview,
         },
         {
-            category: RiskCategory$1.NetworkOperators,
+            category: RiskCategory.NetworkOperators,
             score: 0,
             tier: RiskFactor.UnderReview,
             title: "Add a custom title here",
-            content: `${ReviewSnippet$1.TemplateReview}\n\nAdd additional context with text if needed.`
+            content: `${ReviewSnippet.TemplateReview}\n\nAdd additional context with text if needed.`
         },
         {
-            category: RiskCategory$1.FinalityGuarantees,
+            category: RiskCategory.FinalityGuarantees,
             score: 0,
             tier: RiskFactor.UnderReview,
             title: "Add a custom title here",
-            content: `${ReviewSnippet$1.TemplateReview}\n\nAdd additional context with text if needed.`
+            content: `${ReviewSnippet.TemplateReview}\n\nAdd additional context with text if needed.`
         },
     ],
     manualContracts: [
@@ -1276,19 +847,19 @@ const template$b = {
             content: [
                 {
                     title: "Add a prop saying if the network inherits security from bitcoin",
-                    content: BitcoinSecuritySnippet$2.Template,
+                    content: BitcoinSecuritySnippet$1.Template,
                 },
                 {
                     title: "Add a prop clarifying if the network uses an altcoin or is bitcoin denominated",
-                    content: BitcoinSecuritySnippet$2.Template,
+                    content: BitcoinSecuritySnippet$1.Template,
                 },
                 {
                     title: "Add a prop clarifying if the network introduces MEV to bitcoin (if at all)",
-                    content: BitcoinSecuritySnippet$2.Template,
+                    content: BitcoinSecuritySnippet$1.Template,
                 },
                 {
                     title: "Add a prop clarifying if the network contributes to the security budget",
-                    content: BitcoinSecuritySnippet$2.Template,
+                    content: BitcoinSecuritySnippet$1.Template,
                 },
             ],
         },
@@ -1298,7 +869,7 @@ const template$b = {
             content: [
                 {
                     title: "Add a prop on significant tech components. If there is no prop, consider adding one to the prop.ts file. If the tech component is highly customizeable, add text for the content.",
-                    content: TechnologySnippet$2.Template,
+                    content: TechnologySnippet$1.Template,
                 },
                 {
                     title: "Add a prop on significant tech components. If there is no prop, consider adding one to the prop.ts file. If the tech component is highly customizeable, add text for the content.",
@@ -1312,7 +883,7 @@ const template$b = {
             content: [
                 {
                     title: "Add a prop on significant use cases.",
-                    content: UseCaseSnippet$2.Template,
+                    content: UseCaseSnippet$1.Template,
                 },
             ],
         },
@@ -1588,8 +1159,8 @@ const arbitrum = {
     type: Type.Layer,
     slug: "arbitrum",
     title: "Arbitrum",
-    entityType: EntityType$1.AltRollup,
-    entityCategory: EntityCategory$1.Alt,
+    entityType: EntityType.AltRollup,
+    entityCategory: EntityCategory.Alt,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -1608,23 +1179,23 @@ const arbitrum = {
     bitcoinOnly: false,
     links: [
         {
-            text: Site$1.Website,
+            text: Site.Website,
             url: "https://arbitrum.io/",
         },
         {
-            text: Site$1.Docs,
+            text: Site.Docs,
             url: "https://docs.arbitrum.io/",
         },
         {
-            text: Site$1.Explorer,
+            text: Site.Explorer,
             url: "https://arbiscan.io/",
         },
         {
-            text: Site$1.GitHub,
+            text: Site.GitHub,
             url: "https://github.com/OffchainLabs/arbitrum",
         },
         {
-            text: Site$1.Twitter,
+            text: Site.Twitter,
             url: "https://x.com/arbitrum",
         },
     ],
@@ -1632,24 +1203,24 @@ const arbitrum = {
     riskSummary: [
         {
             title: "All BTC pegs have custodian trust assumptions",
-            content: RiskSummarySnippet$2.RiskSummaryCustodianPegs
+            content: RiskSummarySnippet$1.RiskSummaryCustodianPegs
         },
         {
             title: "Some contracts immediately upgradeable by Arbitrum Security council",
-            content: `${RiskSummarySnippet$2.RiskSummarySecurityCouncil} The Arbitrum Security council is a 9/12 multisig.`,
+            content: `${RiskSummarySnippet$1.RiskSummarySecurityCouncil} The Arbitrum Security council is a 9/12 multisig.`,
         },
         {
             title: "Another network is used for data availability",
-            content: RiskSummarySnippet$2.RiskSummaryAltDANetwork,
+            content: RiskSummarySnippet$1.RiskSummaryAltDANetwork,
         },
         {
             title: "A centralized entity is the network operator",
-            content: RiskSummarySnippet$2.RiskSummaryCentralizedSequencer,
+            content: RiskSummarySnippet$1.RiskSummaryCentralizedSequencer,
         },
     ],
     riskAnalysis: [
         {
-            category: RiskCategory$1.BtcCustody,
+            category: RiskCategory.BtcCustody,
             score: 0,
             tier: RiskFactor.NotApplicable,
             title: "",
@@ -1660,131 +1231,131 @@ const arbitrum = {
                     infrastructureSlug: "threshold-tbtc",
                     score: 0,
                     tier: RiskFactor.High,
-                    title: TokenSnippet$1.FederationPeg,
-                    content: `${TokenSnippet$1.ThresholdtBTC}\n\nThis bridge is managed by a 9 member federation. Bitcoin users trust that 6 of the 9 members of this federation do not collude and steal user funds.`,
+                    title: TokenSnippet.FederationPeg,
+                    content: `${TokenSnippet.ThresholdtBTC}\n\nThis bridge is managed by a 9 member federation. Bitcoin users trust that 6 of the 9 members of this federation do not collude and steal user funds.`,
                 },
                 {
                     name: "BitGo wBTC",
                     infrastructureSlug: "bitgo-wbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: TokenSnippet$1.BitGowBTC,
+                    title: TokenSnippet.CustodianPeg,
+                    content: TokenSnippet.BitGowBTC,
                 },
                 {
                     name: "cbBTC",
                     infrastructureSlug: "coinbase-cbbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: `${TokenSnippet$1.CoinbasecbBTC}`,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.CoinbasecbBTC}`,
                 },
                 {
                     name: "Solv SolvBTC",
                     infrastructureSlug: "solv-solvbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: `${TokenSnippet$1.SolvBTC}\n\n${TokenSnippet$1.smartcontractreview}`,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.SolvBTC}\n\n${TokenSnippet.smartcontractreview}`,
                 },
                 {
                     name: "Bedrock uniBTC",
                     infrastructureSlug: "bedrock-unibtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: `${TokenSnippet$1.BedrockUniBTC}\n\n${TokenSnippet$1.smartcontractreview}`,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.BedrockUniBTC}\n\n${TokenSnippet.smartcontractreview}`,
                 },
                 {
                     name: "Solv xSolvBTC",
                     infrastructureSlug: "solv-xsolvbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: `${TokenSnippet$1.xSolvBTC}\n\n${TokenSnippet$1.smartcontractreview}`,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.xSolvBTC}\n\n${TokenSnippet.smartcontractreview}`,
                 },
                 {
                     name: "Solv SolvBTC.ENA",
                     infrastructureSlug: "solv-solvbtcena",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianDerivative,
-                    content: `${TokenSnippet$1.SolvBTCENA},\n\n${TokenSnippet$1.smartcontractreview}`,
+                    title: TokenSnippet.CustodianDerivative,
+                    content: `${TokenSnippet.SolvBTCENA},\n\n${TokenSnippet.smartcontractreview}`,
                 },
                 {
                     name: "Lorenzo stBTC",
                     infrastructureSlug: "lorenzo-stbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: `${TokenSnippet$1.LorenzostBTC}\n\n${TokenSnippet$1.smartcontractreview}`,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.LorenzostBTC}\n\n${TokenSnippet.smartcontractreview}`,
                 },
                 {
                     name: "iBTC",
                     infrastructureSlug: "ibtcnetwork-ibtc",
                     score: 0,
                     tier: RiskFactor.High,
-                    title: TokenSnippet$1.VariousCustodianPeg,
-                    content: `${TokenSnippet$1.iBTC}\n\n${TokenSnippet$1.smartcontractreview}`,
+                    title: TokenSnippet.VariousCustodianPeg,
+                    content: `${TokenSnippet.iBTC}\n\n${TokenSnippet.smartcontractreview}`,
                 },
                 {
                     name: "Avalanche BTCb",
                     infrastructureSlug: "avalanche-btcb",
                     score: 0,
                     tier: RiskFactor.UnderReview,
-                    title: TokenSnippet$1.FederationPeg,
-                    content: `${TokenSnippet$1.AvalancheBTCb}\n\n${TokenSnippet$1.smartcontractreview}`,
+                    title: TokenSnippet.FederationPeg,
+                    content: `${TokenSnippet.AvalancheBTCb}\n\n${TokenSnippet.smartcontractreview}`,
                 },
                 {
                     name: "Fire Bitcoin FBTC",
                     infrastructureSlug: "firebitcoin-fbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: `${TokenSnippet$1.FireBTC},\n\n${TokenSnippet$1.smartcontractreview}`,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.FireBTC},\n\n${TokenSnippet.smartcontractreview}`,
                 },
                 {
                     name: "Babypie mBTC",
                     infrastructureSlug: "babypie-mbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: `${TokenSnippet$1.babypie},\n\n${TokenSnippet$1.smartcontractreview}`,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.babypie},\n\n${TokenSnippet.smartcontractreview}`,
                 },
                 {
                     name: "xLink aBTC",
                     infrastructureSlug: "xlink-abtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: `${TokenSnippet$1.xlink},\n\n${TokenSnippet$1.smartcontractreview}`,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.xlink},\n\n${TokenSnippet.smartcontractreview}`,
                 },
                 {
                     name: "Rootstock RBTC",
                     infrastructureSlug: "rootstock-rbtc",
                     score: 0,
                     tier: RiskFactor.UnderReview,
-                    title: TokenSnippet$1.UnderReview,
-                    content: `${TokenSnippet$1.RootstockRBTC}${TokenSnippet$1.smartcontractreview}.`,
+                    title: TokenSnippet.UnderReview,
+                    content: `${TokenSnippet.RootstockRBTC}${TokenSnippet.smartcontractreview}.`,
                 },
             ],
         },
         {
-            category: RiskCategory$1.DataAvailability,
+            category: RiskCategory.DataAvailability,
             score: 0,
             tier: RiskFactor.Medium,
             title: "Data is stored and made available by Ethereum full nodes",
-            content: ReviewSnippet$1.EthereumRollupDA,
+            content: ReviewSnippet.EthereumRollupDA,
         },
         {
-            category: RiskCategory$1.NetworkOperators,
+            category: RiskCategory.NetworkOperators,
             score: 0,
             tier: RiskFactor.Medium,
             title: "Arbitrum blocks are produced and proposed by a centralized operator, but users can propose their own state updates in the event of censorship or liveness failures",
-            content: ReviewSnippet$1.SelfProposeMainAlt,
+            content: ReviewSnippet.SelfProposeMainAlt,
         },
         {
-            category: RiskCategory$1.FinalityGuarantees,
+            category: RiskCategory.FinalityGuarantees,
             score: 0,
             tier: RiskFactor.Medium,
             title: "Arbitrum state transitions finalize by updating its state based on data posted to Ethereum",
@@ -1799,19 +1370,19 @@ const arbitrum = {
             content: [
                 {
                     title: "Arbitrum does not inherit any security from Bitcoin",
-                    content: BitcoinSecuritySnippet$2.NoSecurity,
+                    content: BitcoinSecuritySnippet$1.NoSecurity,
                 },
                 {
                     title: "ETH token used to pay fees",
-                    content: BitcoinSecuritySnippet$2.AltTokenFees,
+                    content: BitcoinSecuritySnippet$1.AltTokenFees,
                 },
                 {
                     title: "No MEV introduced to Bitcoin",
-                    content: BitcoinSecuritySnippet$2.CentralizedSequencerMEV,
+                    content: BitcoinSecuritySnippet$1.CentralizedSequencerMEV,
                 },
                 {
                     title: "Arbitrum does not contribute to the security budget",
-                    content: BitcoinSecuritySnippet$2.NoSecurityBudget,
+                    content: BitcoinSecuritySnippet$1.NoSecurityBudget,
                 },
             ],
         },
@@ -1821,15 +1392,15 @@ const arbitrum = {
             content: [
                 {
                     title: "EVM-Compatible",
-                    content: TechnologySnippet$2.EVM,
+                    content: TechnologySnippet$1.EVM,
                 },
                 {
                     title: "Fault Proofs (a.k.a Fraud Proofs)",
-                    content: TechnologySnippet$2.FaultProofs,
+                    content: TechnologySnippet$1.FaultProofs,
                 },
                 {
                     title: "Arbitrum Stylus",
-                    content: TechnologySnippet$2.ArbitrumStylus,
+                    content: TechnologySnippet$1.ArbitrumStylus,
                 },
             ],
         },
@@ -1839,7 +1410,7 @@ const arbitrum = {
             content: [
                 {
                     title: "Onchain applications",
-                    content: UseCaseSnippet$2.OnchainApps,
+                    content: UseCaseSnippet$1.OnchainApps,
                 },
             ],
         },
@@ -1848,7 +1419,7 @@ const arbitrum = {
             title: "Knowledge Bits",
             content: [
                 {
-                    content: `${KnowledgeBitSnippet$2.EthereumL2}`,
+                    content: `${KnowledgeBitSnippet$1.EthereumL2}`,
                 },
             ],
         },
@@ -1859,8 +1430,8 @@ const template$a = {
     type: Type.Layer,
     slug: "aurora",
     title: "Aurora",
-    entityType: EntityType$1.AltL1,
-    entityCategory: EntityCategory$1.Alt,
+    entityType: EntityType.AltL1,
+    entityCategory: EntityCategory.Alt,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -1879,23 +1450,23 @@ const template$a = {
     bitcoinOnly: false,
     links: [
         {
-            text: Site$1.Website,
+            text: Site.Website,
             url: "website",
         },
         {
-            text: Site$1.Docs,
+            text: Site.Docs,
             url: "docs",
         },
         {
-            text: Site$1.Explorer,
+            text: Site.Explorer,
             url: "explorer",
         },
         {
-            text: Site$1.GitHub,
+            text: Site.GitHub,
             url: "github",
         },
         {
-            text: Site$1.Twitter,
+            text: Site.Twitter,
             url: "socials",
         },
     ],
@@ -1912,7 +1483,7 @@ const template$a = {
     ],
     riskAnalysis: [
         {
-            category: RiskCategory$1.BtcCustody,
+            category: RiskCategory.BtcCustody,
             score: 0,
             tier: "",
             title: "",
@@ -1924,7 +1495,7 @@ const template$a = {
                     score: 0,
                     tier: RiskFactor.High,
                     title: "For an official two-way peg, you can write a customized title here.",
-                    content: `${TokenSnippet$1.TemplateBTC}\n\n`,
+                    content: `${TokenSnippet.TemplateBTC}\n\n`,
                 },
                 {
                     name: "Threshold tBTC",
@@ -1932,7 +1503,7 @@ const template$a = {
                     score: 0,
                     tier: RiskFactor.High,
                     title: "For other titles, just use TokenSnippet.PegType as shown in the example below.",
-                    content: `${TokenSnippet$1.ThresholdtBTC}\n\n${TokenSnippet$1.smartcontractreview}\n\n`,
+                    content: `${TokenSnippet.ThresholdtBTC}\n\n${TokenSnippet.smartcontractreview}\n\n`,
                 },
                 {
                     name: "Threshold tBTC",
@@ -1940,38 +1511,38 @@ const template$a = {
                     score: 0,
                     tier: RiskFactor.High,
                     title: "For other titles, just use TokenSnippet.PegType as shown in the example below.",
-                    content: `${TokenSnippet$1.ThresholdtBTC}\n\n${TokenSnippet$1.smartcontractreview}\n\nUse the smart contract review field to highlight that the asset may have additional trust assumptions if it's bridged across chains. You can also use text to describe additional trust assumptions.`,
+                    content: `${TokenSnippet.ThresholdtBTC}\n\n${TokenSnippet.smartcontractreview}\n\nUse the smart contract review field to highlight that the asset may have additional trust assumptions if it's bridged across chains. You can also use text to describe additional trust assumptions.`,
                 },
                 {
                     name: "Template BTC",
                     infrastructureSlug: "templace-btc",
                     score: 0,
                     tier: RiskFactor.High,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: `${TokenSnippet$1.TemplateBTC}`,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.TemplateBTC}`,
                 },
             ],
         },
         {
-            category: RiskCategory$1.DataAvailability,
+            category: RiskCategory.DataAvailability,
             score: 0,
             tier: RiskFactor.UnderReview,
             title: "Add a custom title here",
-            content: ReviewSnippet$1.TemplateReview,
+            content: ReviewSnippet.TemplateReview,
         },
         {
-            category: RiskCategory$1.NetworkOperators,
+            category: RiskCategory.NetworkOperators,
             score: 0,
             tier: RiskFactor.UnderReview,
             title: "Add a custom title here",
-            content: `${ReviewSnippet$1.TemplateReview}\n\nAdd additional context with text if needed.`
+            content: `${ReviewSnippet.TemplateReview}\n\nAdd additional context with text if needed.`
         },
         {
-            category: RiskCategory$1.FinalityGuarantees,
+            category: RiskCategory.FinalityGuarantees,
             score: 0,
             tier: RiskFactor.UnderReview,
             title: "Add a custom title here",
-            content: `${ReviewSnippet$1.TemplateReview}\n\nAdd additional context with text if needed.`
+            content: `${ReviewSnippet.TemplateReview}\n\nAdd additional context with text if needed.`
         },
     ],
     manualContracts: [
@@ -2017,19 +1588,19 @@ const template$a = {
             content: [
                 {
                     title: "Add a prop saying if the network inherits security from bitcoin",
-                    content: BitcoinSecuritySnippet$2.Template,
+                    content: BitcoinSecuritySnippet$1.Template,
                 },
                 {
                     title: "Add a prop clarifying if the network uses an altcoin or is bitcoin denominated",
-                    content: BitcoinSecuritySnippet$2.Template,
+                    content: BitcoinSecuritySnippet$1.Template,
                 },
                 {
                     title: "Add a prop clarifying if the network introduces MEV to bitcoin (if at all)",
-                    content: BitcoinSecuritySnippet$2.Template,
+                    content: BitcoinSecuritySnippet$1.Template,
                 },
                 {
                     title: "Add a prop clarifying if the network contributes to the security budget",
-                    content: BitcoinSecuritySnippet$2.Template,
+                    content: BitcoinSecuritySnippet$1.Template,
                 },
             ],
         },
@@ -2039,7 +1610,7 @@ const template$a = {
             content: [
                 {
                     title: "Add a prop on significant tech components. If there is no prop, consider adding one to the prop.ts file. If the tech component is highly customizeable, add text for the content.",
-                    content: TechnologySnippet$2.Template,
+                    content: TechnologySnippet$1.Template,
                 },
                 {
                     title: "Add a prop on significant tech components. If there is no prop, consider adding one to the prop.ts file. If the tech component is highly customizeable, add text for the content.",
@@ -2053,7 +1624,7 @@ const template$a = {
             content: [
                 {
                     title: "Add a prop on significant use cases.",
-                    content: UseCaseSnippet$2.Template,
+                    content: UseCaseSnippet$1.Template,
                 },
             ],
         },
@@ -2073,8 +1644,8 @@ const avalanche = {
     type: Type.Layer,
     slug: "avalanche",
     title: "Avalanche",
-    entityType: EntityType$1.AltL1,
-    entityCategory: EntityCategory$1.Alt,
+    entityType: EntityType.AltL1,
+    entityCategory: EntityCategory.Alt,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -2094,23 +1665,23 @@ const avalanche = {
     bitcoinOnly: false,
     links: [
         {
-            text: Site$1.Website,
+            text: Site.Website,
             url: "https://www.avax.network/",
         },
         {
-            text: Site$1.Docs,
+            text: Site.Docs,
             url: "https://docs.avax.network/",
         },
         {
-            text: Site$1.Explorer,
+            text: Site.Explorer,
             url: "https://avascan.info/",
         },
         {
-            text: Site$1.GitHub,
+            text: Site.GitHub,
             url: "https://github.com/ava-labs",
         },
         {
-            text: Site$1.Twitter,
+            text: Site.Twitter,
             url: "https://x.com/avax",
         },
     ],
@@ -2118,16 +1689,16 @@ const avalanche = {
     riskSummary: [
         {
             title: "All BTC pegs have custodian trust assumptions",
-            content: RiskSummarySnippet$2.RiskSummaryCustodianPegs
+            content: RiskSummarySnippet$1.RiskSummaryCustodianPegs
         },
         {
             title: "The network is an alternative blockchain",
-            content: RiskSummarySnippet$2.RiskSummaryAlternativeL1,
+            content: RiskSummarySnippet$1.RiskSummaryAlternativeL1,
         }
     ],
     riskAnalysis: [
         {
-            category: RiskCategory$1.BtcCustody,
+            category: RiskCategory.BtcCustody,
             score: 0,
             tier: RiskFactor.NotApplicable,
             title: "",
@@ -2138,67 +1709,67 @@ const avalanche = {
                     infrastructureSlug: "avalance-btcb",
                     score: 0,
                     tier: RiskFactor.High,
-                    title: TokenSnippet$1.FederationPeg,
-                    content: TokenSnippet$1.AvalancheBTCb,
+                    title: TokenSnippet.FederationPeg,
+                    content: TokenSnippet.AvalancheBTCb,
                 },
                 {
                     name: "SolvBTC",
                     infrastructureSlug: "solv-solvbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: TokenSnippet$1.SolvBTC,
+                    title: TokenSnippet.CustodianPeg,
+                    content: TokenSnippet.SolvBTC,
                 },
                 {
                     name: "Kraken KBTC",
                     infrastructureSlug: "solv-xsolvbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianDerivative,
-                    content: TokenSnippet$1.xSolvBTC,
+                    title: TokenSnippet.CustodianDerivative,
+                    content: TokenSnippet.xSolvBTC,
                 },
                 {
                     name: "BitGo wBTC",
                     infrastructureSlug: "bitgo-wbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: TokenSnippet$1.BitGowBTC,
+                    title: TokenSnippet.CustodianPeg,
+                    content: TokenSnippet.BitGowBTC,
                 },
                 {
                     name: "Solv xSolvBTC",
                     infrastructureSlug: "solv-xsolvbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: TokenSnippet$1.xSolvBTC,
+                    title: TokenSnippet.CustodianPeg,
+                    content: TokenSnippet.xSolvBTC,
                 },
                 {
                     name: "iBTC",
                     infrastructureSlug: "ibtcnetwork-ibtc",
                     score: 0,
                     tier: RiskFactor.UnderReview,
-                    title: TokenSnippet$1.UnderReview,
-                    content: `${TokenSnippet$1.iBTC}\n\n${TokenSnippet$1.smartcontractreview}\n\n`,
+                    title: TokenSnippet.UnderReview,
+                    content: `${TokenSnippet.iBTC}\n\n${TokenSnippet.smartcontractreview}\n\n`,
                 },
             ],
         },
         {
-            category: RiskCategory$1.DataAvailability,
+            category: RiskCategory.DataAvailability,
             score: 0,
             tier: RiskFactor.AlternativePoS,
             title: "Data is stored and made available by Avalanche full nodes",
             content: "The data for Avalanche's state is made available by its full nodes. Anyone can run an Avalanche node and verify is state.\n\nWe are currently reviewing Avalanche's full node implementation",
         },
         {
-            category: RiskCategory$1.NetworkOperators,
+            category: RiskCategory.NetworkOperators,
             score: 0,
             tier: RiskFactor.AlternativePoS,
             title: "Avalanche is operated by a distributed validator set",
             content: "Blocks are built and proposed by a permissionless consensus network.\n\nWe are currently reviewing Avalanche's network operators",
         },
         {
-            category: RiskCategory$1.FinalityGuarantees,
+            category: RiskCategory.FinalityGuarantees,
             score: 0,
             tier: RiskFactor.AlternativePoS,
             title: "Finality on Avalanche is guaranteed by a permissionless consensus mechanism",
@@ -2212,19 +1783,19 @@ const avalanche = {
             content: [
                 {
                     title: "Avalanche does not inherit any security from Bitcoin",
-                    content: BitcoinSecuritySnippet$2.NoSecurity,
+                    content: BitcoinSecuritySnippet$1.NoSecurity,
                 },
                 {
                     title: "AVAX token used to pay fees",
-                    content: BitcoinSecuritySnippet$2.AltTokenFees,
+                    content: BitcoinSecuritySnippet$1.AltTokenFees,
                 },
                 {
                     title: "No MEV introduced to Bitcoin",
-                    content: BitcoinSecuritySnippet$2.AltNetworkMEV,
+                    content: BitcoinSecuritySnippet$1.AltNetworkMEV,
                 },
                 {
                     title: "Avalanche does not contribute to the security budget",
-                    content: BitcoinSecuritySnippet$2.NoSecurityBudget,
+                    content: BitcoinSecuritySnippet$1.NoSecurityBudget,
                 },
             ],
         },
@@ -2234,7 +1805,7 @@ const avalanche = {
             content: [
                 {
                     title: "EVM-Compatible",
-                    content: TechnologySnippet$2.EVM,
+                    content: TechnologySnippet$1.EVM,
                 },
             ],
         },
@@ -2244,7 +1815,7 @@ const avalanche = {
             content: [
                 {
                     title: "Onchain applications",
-                    content: UseCaseSnippet$2.OnchainApps,
+                    content: UseCaseSnippet$1.OnchainApps,
                 },
             ],
         },
@@ -2255,8 +1826,8 @@ const babylon = {
     type: Type.Layer,
     slug: "babylongenesis",
     title: "Babylon",
-    entityType: EntityType$1.BPoSNetwork,
-    entityCategory: EntityCategory$1.Integrated,
+    entityType: EntityType.BPoSNetwork,
+    entityCategory: EntityCategory.Integrated,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -2271,50 +1842,50 @@ const babylon = {
     btcLocked: NaN,
     nativeToken: "-",
     feeToken: "BABY",
-    notice: Notice$1.OtherReasonBridge,
+    notice: Notice.OtherReasonBridge,
     bitcoinOnly: false,
     links: [
         {
-            text: Site$1.Website,
+            text: Site.Website,
             url: "https://babylonlabs.io/",
         },
         {
-            text: Site$1.Docs,
+            text: Site.Docs,
             url: "https://docs.babylonlabs.io/",
         },
         {
-            text: Site$1.Explorer,
+            text: Site.Explorer,
             url: "https://babylon.explorers.guru/",
         },
         {
-            text: Site$1.GitHub,
+            text: Site.GitHub,
             url: "https://github.com/babylonlabs-io/",
         },
         {
-            text: Site$1.Twitter,
+            text: Site.Twitter,
             url: "https://x.com/babylonlabs_io",
         },
     ],
     description: "Babylon is a proof-of-stake blockchain that is partially secured by bitcoin staking. It is the first Babylon BSN network. It offers a CosmWasm execution environment that supports arbitrary smart contracts.",
     riskSummary: [
         {
-            title: RiskSummarySnippet$2.TitleCustodianPegs,
-            content: RiskSummarySnippet$2.RiskSummaryCustodianPegs,
+            title: RiskSummarySnippet$1.TitleCustodianPegs,
+            content: RiskSummarySnippet$1.RiskSummaryCustodianPegs,
         },
         {
-            title: RiskSummarySnippet$2.TitleAlternativeL1,
-            content: RiskSummarySnippet$2.RiskSummaryAlternativeL1,
+            title: RiskSummarySnippet$1.TitleAlternativeL1,
+            content: RiskSummarySnippet$1.RiskSummaryAlternativeL1,
         }
     ],
     categorization: [
         {
-            title: Categorization$1.NoBridgeTitle,
-            content: Categorization$1.NoBridgeSnippet,
+            title: Categorization.NoBridgeTitle,
+            content: Categorization.NoBridgeSnippet,
         },
     ],
     riskAnalysis: [
         {
-            category: RiskCategory$1.BtcCustody,
+            category: RiskCategory.BtcCustody,
             score: 0,
             tier: "",
             title: "",
@@ -2325,39 +1896,39 @@ const babylon = {
                     infrastructureSlug: "lombard-lbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.FederationPeg,
-                    content: `${TokenSnippet$1.LombardLBTC} LBTC on Babylon is bridged to the Cosmos Hub via Ethereum and then ported to Babylon through IBC.`,
+                    title: TokenSnippet.FederationPeg,
+                    content: `${TokenSnippet.LombardLBTC} LBTC on Babylon is bridged to the Cosmos Hub via Ethereum and then ported to Babylon through IBC.`,
                 },
                 {
                     name: "Solv BTC",
                     infrastructureSlug: "solv-solvbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: `${TokenSnippet$1.SolvBTC}\n\n${TokenSnippet$1.smartcontractreview}`,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.SolvBTC}\n\n${TokenSnippet.smartcontractreview}`,
                 },
             ],
         },
         {
-            category: RiskCategory$1.DataAvailability,
+            category: RiskCategory.DataAvailability,
             score: 0,
             tier: RiskFactor.AlternativePoS,
             title: "Data is stored and made available by an alternative PoS network",
-            content: ReviewSnippet$1.AltL1DA,
+            content: ReviewSnippet.AltL1DA,
         },
         {
-            category: RiskCategory$1.BlockProduction,
+            category: RiskCategory.BlockProduction,
             score: 0,
             tier: RiskFactor.AlternativePoS,
             title: "Network is operated by an alternative PoS network",
-            content: ReviewSnippet$1.OperatorSidechainPOS,
+            content: ReviewSnippet.OperatorSidechainPOS,
         },
         {
-            category: RiskCategory$1.FinalityGuarantees,
+            category: RiskCategory.FinalityGuarantees,
             score: 0,
             tier: RiskFactor.AlternativePoS,
             title: "Finality guarantees are provided by an alternative PoS Network",
-            content: ReviewSnippet$1.CometBFTFinality,
+            content: ReviewSnippet.CometBFTFinality,
         },
     ],
     sections: [
@@ -2367,19 +1938,19 @@ const babylon = {
             content: [
                 {
                     title: "Babylon inherits economic security from BTC the asset",
-                    content: BitcoinSecuritySnippet$2.YesSecurityDualStaking,
+                    content: BitcoinSecuritySnippet$1.YesSecurityDualStaking,
                 },
                 {
                     title: "BABY token used to pay fees",
-                    content: BitcoinSecuritySnippet$2.AltTokenFees,
+                    content: BitcoinSecuritySnippet$1.AltTokenFees,
                 },
                 {
                     title: "MEV implications under review",
-                    content: BitcoinSecuritySnippet$2.MEVUnderReview,
+                    content: BitcoinSecuritySnippet$1.MEVUnderReview,
                 },
                 {
                     title: "Babylon does not contribute to the security budget",
-                    content: BitcoinSecuritySnippet$2.NoSecurityBudget,
+                    content: BitcoinSecuritySnippet$1.NoSecurityBudget,
                 },
             ],
         },
@@ -2389,7 +1960,7 @@ const babylon = {
             content: [
                 {
                     title: "Bitcoin Staking",
-                    content: TechnologySnippet$2.BitcoinStakingUnderReview,
+                    content: TechnologySnippet$1.BitcoinStakingUnderReview,
                 },
             ],
         },
@@ -2399,7 +1970,7 @@ const babylon = {
             content: [
                 {
                     title: "Onchain applications",
-                    content: `${UseCaseSnippet$2.OnchainApps}\n\nDeploying an application on Babylon is currently permissioned. Developers must apply and be approved through Babylon governance to currently deploy on Babylon Genesis.`,
+                    content: `${UseCaseSnippet$1.OnchainApps}\n\nDeploying an application on Babylon is currently permissioned. Developers must apply and be approved through Babylon governance to currently deploy on Babylon Genesis.`,
                 },
             ],
         },
@@ -2410,9 +1981,9 @@ const base = {
     type: Type.Layer,
     slug: "base",
     title: "Base",
-    entityType: EntityType$1.AltRollup,
-    entityCategory: EntityCategory$1.Alt,
-    custodyTitle: CustodyTitle$1.Centralized,
+    entityType: EntityType.AltRollup,
+    entityCategory: EntityCategory.Alt,
+    custodyTitle: CustodyTitle.Centralized,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -2431,48 +2002,48 @@ const base = {
     bitcoinOnly: false,
     links: [
         {
-            text: Site$1.Website,
+            text: Site.Website,
             url: "https://www.base.org/",
         },
         {
-            text: Site$1.Docs,
+            text: Site.Docs,
             url: "https://www.docs.base.org/",
         },
         {
-            text: Site$1.Explorer,
+            text: Site.Explorer,
             url: "https://basescan.io/",
         },
         {
-            text: Site$1.GitHub,
+            text: Site.GitHub,
             url: "https://github.com/base-org",
         },
         {
-            text: Site$1.Twitter,
+            text: Site.Twitter,
             url: "https://x.com/base",
         },
     ],
     description: "Base is an Ethereum rollup that that supports a variety of wrapped BTC tokens.",
     riskSummary: [
         {
-            title: RiskSummarySnippet$2.TitleSystemUpgrade,
-            content: RiskSummarySnippet$2.RiskSummaryImmediateUpgrade
+            title: RiskSummarySnippet$1.TitleSystemUpgrade,
+            content: RiskSummarySnippet$1.RiskSummaryImmediateUpgrade
         },
         {
-            title: RiskSummarySnippet$2.TitleCustodianPegs,
-            content: RiskSummarySnippet$2.RiskSummaryCustodianPegs
+            title: RiskSummarySnippet$1.TitleCustodianPegs,
+            content: RiskSummarySnippet$1.RiskSummaryCustodianPegs
         },
         {
-            title: RiskSummarySnippet$2.TitleAltDA,
-            content: RiskSummarySnippet$2.RiskSummaryAltDANetwork,
+            title: RiskSummarySnippet$1.TitleAltDA,
+            content: RiskSummarySnippet$1.RiskSummaryAltDANetwork,
         },
         {
-            title: RiskSummarySnippet$2.TitleCentralizedSequencer,
-            content: RiskSummarySnippet$2.RiskSummaryCentralizedSequencer,
+            title: RiskSummarySnippet$1.TitleCentralizedSequencer,
+            content: RiskSummarySnippet$1.RiskSummaryCentralizedSequencer,
         }
     ],
     riskAnalysis: [
         {
-            category: RiskCategory$1.BtcCustody,
+            category: RiskCategory.BtcCustody,
             score: 0,
             tier: RiskFactor.NotApplicable,
             title: "",
@@ -2483,107 +2054,107 @@ const base = {
                     infrastructureSlug: "coinbase-cbbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: TokenSnippet$1.CoinbasecbBTC,
+                    title: TokenSnippet.CustodianPeg,
+                    content: TokenSnippet.CoinbasecbBTC,
                 },
                 {
                     name: "Threshold tBTC",
                     infrastructureSlug: "threshold-tbtc",
                     score: 0,
                     tier: RiskFactor.High,
-                    title: TokenSnippet$1.FederationPeg,
-                    content: `${TokenSnippet$1.ThresholdtBTC}\n\nThis bridge is managed by a 9 member federation. Bitcoin users trust that 6 of the 9 members of this federation do not collude and steal user funds.`,
+                    title: TokenSnippet.FederationPeg,
+                    content: `${TokenSnippet.ThresholdtBTC}\n\nThis bridge is managed by a 9 member federation. Bitcoin users trust that 6 of the 9 members of this federation do not collude and steal user funds.`,
                 },
                 {
                     name: "BitGo wBTC",
                     infrastructureSlug: "bitgo-wbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: TokenSnippet$1.BitGowBTC,
+                    title: TokenSnippet.CustodianPeg,
+                    content: TokenSnippet.BitGowBTC,
                 },
                 {
                     name: "Lombard LBTC",
                     infrastructureSlug: "lombard-lbtc",
                     score: 0,
                     tier: RiskFactor.UnderReview,
-                    title: TokenSnippet$1.FederationPeg,
-                    content: `${TokenSnippet$1.LombardLBTC}\n\n${TokenSnippet$1.smartcontractreview}`,
+                    title: TokenSnippet.FederationPeg,
+                    content: `${TokenSnippet.LombardLBTC}\n\n${TokenSnippet.smartcontractreview}`,
                 },
                 {
                     name: "iBTC",
                     infrastructureSlug: "ibtc",
                     score: 0,
                     tier: RiskFactor.UnderReview,
-                    title: TokenSnippet$1.VariousCustodianPeg,
-                    content: `${TokenSnippet$1.iBTC}\n\n${TokenSnippet$1.smartcontractreview}`,
+                    title: TokenSnippet.VariousCustodianPeg,
+                    content: `${TokenSnippet.iBTC}\n\n${TokenSnippet.smartcontractreview}`,
                 },
                 {
                     name: "Solv SolvBTC",
                     infrastructureSlug: "solv-solvbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: `${TokenSnippet$1.SolvBTC}\n\n${TokenSnippet$1.smartcontractreview}`,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.SolvBTC}\n\n${TokenSnippet.smartcontractreview}`,
                 },
                 {
                     name: "Pump BTC",
                     infrastructureSlug: "pump-btc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: `${TokenSnippet$1.PumpBTC}\n\n${TokenSnippet$1.smartcontractreview}`,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.PumpBTC}\n\n${TokenSnippet.smartcontractreview}`,
                 },
                 {
                     name: "Solv xSolvBTC",
                     infrastructureSlug: "solv-xsolvbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianDerivative,
-                    content: `${TokenSnippet$1.xSolvBTC}\n\n${TokenSnippet$1.smartcontractreview}`,
+                    title: TokenSnippet.CustodianDerivative,
+                    content: `${TokenSnippet.xSolvBTC}\n\n${TokenSnippet.smartcontractreview}`,
                 },
                 {
                     name: "Rootstock RBTC",
                     infrastructureSlug: "rootstock-rbtc",
                     score: 0,
                     tier: RiskFactor.UnderReview,
-                    title: TokenSnippet$1.FederationPeg,
-                    content: `${TokenSnippet$1.RootstockRBTC}${TokenSnippet$1.smartcontractreview}.`,
+                    title: TokenSnippet.FederationPeg,
+                    content: `${TokenSnippet.RootstockRBTC}${TokenSnippet.smartcontractreview}.`,
                 },
                 {
                     name: "Xlink aBTC",
                     infrastructureSlug: "xlink-abtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: `${TokenSnippet$1.xlink}${TokenSnippet$1.smartcontractreview}.`,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.xlink}${TokenSnippet.smartcontractreview}.`,
                 },
                 {
                     name: "AxlBTC",
                     infrastructureSlug: "axelar-axlbtc",
                     score: 0,
                     tier: RiskFactor.UnderReview,
-                    title: TokenSnippet$1.UnderReview,
+                    title: TokenSnippet.UnderReview,
                     content: "This two-way peg is under review",
                 },
             ],
         },
         {
-            category: RiskCategory$1.DataAvailability,
+            category: RiskCategory.DataAvailability,
             score: 0,
             tier: RiskFactor.Medium,
             title: "Data is stored and made available by Ethereum full nodes",
-            content: ReviewSnippet$1.EthereumRollupDA,
+            content: ReviewSnippet.EthereumRollupDA,
         },
         {
-            category: RiskCategory$1.NetworkOperators,
+            category: RiskCategory.NetworkOperators,
             score: 0,
             tier: RiskFactor.Medium,
             title: "Base blocks are produced and proposed by a centralized operator, but users can propose their own state updates in the event of censorship or liveness failures",
-            content: ReviewSnippet$1.SelfProposeMainAlt,
+            content: ReviewSnippet.SelfProposeMainAlt,
         },
         {
-            category: RiskCategory$1.FinalityGuarantees,
+            category: RiskCategory.FinalityGuarantees,
             score: 0,
             tier: RiskFactor.High,
             title: "Base's state transitions finalize by updating its state based on data posted to Ethereum",
@@ -2598,19 +2169,19 @@ const base = {
             content: [
                 {
                     title: "Base does not inherit any security from Bitcoin",
-                    content: BitcoinSecuritySnippet$2.NoSecurity,
+                    content: BitcoinSecuritySnippet$1.NoSecurity,
                 },
                 {
                     title: "ETH token used to pay fees",
-                    content: BitcoinSecuritySnippet$2.AltTokenFees,
+                    content: BitcoinSecuritySnippet$1.AltTokenFees,
                 },
                 {
                     title: "No MEV introduced to Bitcoin",
-                    content: BitcoinSecuritySnippet$2.CentralizedSequencerMEV,
+                    content: BitcoinSecuritySnippet$1.CentralizedSequencerMEV,
                 },
                 {
                     title: "Base does not contribute to the security budget",
-                    content: BitcoinSecuritySnippet$2.NoSecurity,
+                    content: BitcoinSecuritySnippet$1.NoSecurity,
                 },
             ],
         },
@@ -2620,11 +2191,11 @@ const base = {
             content: [
                 {
                     title: "Ethereum Virtual Machine",
-                    content: TechnologySnippet$2.EVM,
+                    content: TechnologySnippet$1.EVM,
                 },
                 {
                     title: "Fault Proofs (a.k.a Fraud Proofs)",
-                    content: TechnologySnippet$2.FaultProofs,
+                    content: TechnologySnippet$1.FaultProofs,
                 },
             ],
         },
@@ -2634,7 +2205,7 @@ const base = {
             content: [
                 {
                     title: "Onchain applications",
-                    content: UseCaseSnippet$2.OnchainApps,
+                    content: UseCaseSnippet$1.OnchainApps,
                 },
             ],
         },
@@ -2643,7 +2214,7 @@ const base = {
             title: "Knowledge Bits",
             content: [
                 {
-                    content: `${KnowledgeBitSnippet$2.EthereumL2}`,
+                    content: `${KnowledgeBitSnippet$1.EthereumL2}`,
                 },
             ],
         },
@@ -2654,8 +2225,8 @@ const berachain = {
     type: Type.Layer,
     slug: "berachain",
     title: "Berachain",
-    entityType: EntityType$1.AltL1,
-    entityCategory: EntityCategory$1.Alt,
+    entityType: EntityType.AltL1,
+    entityCategory: EntityCategory.Alt,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -2675,40 +2246,40 @@ const berachain = {
     bitcoinOnly: false,
     links: [
         {
-            text: Site$1.Website,
+            text: Site.Website,
             url: "https://www.berachain.com/",
         },
         {
-            text: Site$1.Docs,
+            text: Site.Docs,
             url: "https://docs.berachain.com/",
         },
         {
-            text: Site$1.Explorer,
+            text: Site.Explorer,
             url: "https://berascan.com/",
         },
         {
-            text: Site$1.GitHub,
+            text: Site.GitHub,
             url: "https://github.com/berachain",
         },
         {
-            text: Site$1.Twitter,
+            text: Site.Twitter,
             url: "https://x.com/berachain",
         },
     ],
     description: "Berachain is an EVM-compatible L1. It leverages a novel consensus mechanism and is home to various BTC-derivative assets.",
     riskSummary: [
         {
-            title: RiskSummarySnippet$2.TitleCustodianPegs,
-            content: RiskSummarySnippet$2.RiskSummaryCustodianPegs,
+            title: RiskSummarySnippet$1.TitleCustodianPegs,
+            content: RiskSummarySnippet$1.RiskSummaryCustodianPegs,
         },
         {
-            title: RiskSummarySnippet$2.TitleAlternativeL1,
-            content: RiskSummarySnippet$2.RiskSummaryAlternativeL1,
+            title: RiskSummarySnippet$1.TitleAlternativeL1,
+            content: RiskSummarySnippet$1.RiskSummaryAlternativeL1,
         }
     ],
     riskAnalysis: [
         {
-            category: RiskCategory$1.BtcCustody,
+            category: RiskCategory.BtcCustody,
             score: 0,
             tier: "",
             title: "",
@@ -2719,83 +2290,83 @@ const berachain = {
                     infrastructureSlug: "solv-solvbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: TokenSnippet$1.SolvBTC,
+                    title: TokenSnippet.CustodianPeg,
+                    content: TokenSnippet.SolvBTC,
                 },
                 {
                     name: "Lombard LBTC",
                     infrastructureSlug: "lombard-lbtc",
                     score: 0,
                     tier: RiskFactor.UnderReview,
-                    title: TokenSnippet$1.FederationPeg,
-                    content: `${TokenSnippet$1.LombardLBTC}\n\n${TokenSnippet$1.smartcontractreview}`,
+                    title: TokenSnippet.FederationPeg,
+                    content: `${TokenSnippet.LombardLBTC}\n\n${TokenSnippet.smartcontractreview}`,
                 },
                 {
                     name: "Bedrock uniBTC",
                     infrastructureSlug: "bedrock-unibtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: `${TokenSnippet$1.BedrockUniBTC}\n\n${TokenSnippet$1.smartcontractreview}`,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.BedrockUniBTC}\n\n${TokenSnippet.smartcontractreview}`,
                 },
                 {
                     name: "Solv xSolvBTC",
                     infrastructureSlug: "solv-xsolvbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianDerivative,
-                    content: TokenSnippet$1.xSolvBTC,
+                    title: TokenSnippet.CustodianDerivative,
+                    content: TokenSnippet.xSolvBTC,
                 },
                 {
                     name: "BitGo wBTC",
                     infrastructureSlug: "bitgo-wbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: TokenSnippet$1.BitGowBTC,
+                    title: TokenSnippet.CustodianPeg,
+                    content: TokenSnippet.BitGowBTC,
                 },
                 {
                     name: "Fire FBTC",
                     infrastructureSlug: "firebitcoin-fbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: `${TokenSnippet$1.FireBTC}\n\n${TokenSnippet$1.smartcontractreview}`,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.FireBTC}\n\n${TokenSnippet.smartcontractreview}`,
                 },
                 {
                     name: "Pump pumpBTC",
                     infrastructureSlug: "pump-pumpbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: `${TokenSnippet$1.PumpBTC}\n\n${TokenSnippet$1.smartcontractreview}`,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.PumpBTC}\n\n${TokenSnippet.smartcontractreview}`,
                 },
                 {
                     name: "Lorenzo stBTC",
                     infrastructureSlug: "lorenzo-stbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: `${TokenSnippet$1.LorenzostBTC}\n\n${TokenSnippet$1.smartcontractreview}`,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.LorenzostBTC}\n\n${TokenSnippet.smartcontractreview}`,
                 },
             ],
         },
         {
-            category: RiskCategory$1.DataAvailability,
+            category: RiskCategory.DataAvailability,
             score: 0,
             tier: RiskFactor.AlternativePoS,
             title: "Data is stored and made available by an alternative PoS network",
-            content: ReviewSnippet$1.AltL1DA,
+            content: ReviewSnippet.AltL1DA,
         },
         {
-            category: RiskCategory$1.BlockProduction,
+            category: RiskCategory.BlockProduction,
             score: 0,
             tier: RiskFactor.AlternativePoS,
             title: "Network is operated by an alternative PoS network",
-            content: ReviewSnippet$1.OperatorSidechainPOS,
+            content: ReviewSnippet.OperatorSidechainPOS,
         },
         {
-            category: RiskCategory$1.FinalityGuarantees,
+            category: RiskCategory.FinalityGuarantees,
             score: 0,
             tier: RiskFactor.AlternativePoS,
             title: "Finality guarantees are provided by an alternative PoS Network",
@@ -2809,19 +2380,19 @@ const berachain = {
             content: [
                 {
                     title: "Berachain does not inherit any security from bitcoin",
-                    content: BitcoinSecuritySnippet$2.NoSecurity,
+                    content: BitcoinSecuritySnippet$1.NoSecurity,
                 },
                 {
                     title: "BERA token used to pay fees",
-                    content: BitcoinSecuritySnippet$2.AltTokenFees,
+                    content: BitcoinSecuritySnippet$1.AltTokenFees,
                 },
                 {
                     title: "No MEV introduced to bitcoin",
-                    content: BitcoinSecuritySnippet$2.AltNetworkMEV,
+                    content: BitcoinSecuritySnippet$1.AltNetworkMEV,
                 },
                 {
                     title: "Berachain does not contribute to the security budget",
-                    content: BitcoinSecuritySnippet$2.NoSecurityBudget,
+                    content: BitcoinSecuritySnippet$1.NoSecurityBudget,
                 },
             ],
         },
@@ -2831,7 +2402,7 @@ const berachain = {
             content: [
                 {
                     title: "Ethereum Virtual Machine",
-                    content: TechnologySnippet$2.EVM,
+                    content: TechnologySnippet$1.EVM,
                 },
             ],
         },
@@ -2841,7 +2412,7 @@ const berachain = {
             content: [
                 {
                     title: "Onchain applications",
-                    content: UseCaseSnippet$2.OnchainApps,
+                    content: UseCaseSnippet$1.OnchainApps,
                 },
             ],
         },
@@ -2852,8 +2423,8 @@ const bevm = {
     type: Type.Layer,
     slug: "bevm",
     title: "BEVM",
-    entityType: EntityType$1.AltL1,
-    entityCategory: EntityCategory$1.Alt,
+    entityType: EntityType.AltL1,
+    entityCategory: EntityCategory.Alt,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -2868,44 +2439,44 @@ const bevm = {
     btcLocked: 80,
     nativeToken: "BEVM",
     feeToken: "WBTC",
-    notice: Notice$1.OtherReasonBridge,
+    notice: Notice.OtherReasonBridge,
     bitcoinOnly: false,
     links: [
         {
-            text: Site$1.Website,
+            text: Site.Website,
             url: "https://www.bevm.io",
         },
         {
-            text: Site$1.Docs,
+            text: Site.Docs,
             url: "https://documents.bevm.io",
         },
         {
-            text: Site$1.Explorer,
+            text: Site.Explorer,
             url: "https://scan.bevm.io",
         },
         {
-            text: Site$1.GitHub,
+            text: Site.GitHub,
             url: "https://github.com/btclayer2/BEVM",
         },
         {
-            text: Site$1.Twitter,
+            text: Site.Twitter,
             url: "https://twitter.com/BTCLayer2",
         },
     ],
     description: "BEVM is an EVM-compatible blockchain built on substrate. On the BEVM chain, the BTC is held in custody by a federated signer set.",
     riskSummary: [
         {
-            title: RiskSummarySnippet$2.TitleCustodianPegs,
-            content: RiskSummarySnippet$2.RiskSummaryCustodianPegs,
+            title: RiskSummarySnippet$1.TitleCustodianPegs,
+            content: RiskSummarySnippet$1.RiskSummaryCustodianPegs,
         },
         {
-            title: RiskSummarySnippet$2.TitleAlternativeL1,
-            content: RiskSummarySnippet$2.RiskSummaryAlternativeL1,
+            title: RiskSummarySnippet$1.TitleAlternativeL1,
+            content: RiskSummarySnippet$1.RiskSummaryAlternativeL1,
         }
     ],
     riskAnalysis: [
         {
-            category: RiskCategory$1.BtcCustody,
+            category: RiskCategory.BtcCustody,
             score: 0,
             tier: RiskFactor.NotApplicable,
             title: "",
@@ -2924,27 +2495,27 @@ const bevm = {
                     infrastructureSlug: "lorenzo-stbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: `${TokenSnippet$1.LorenzostBTC}\n\n${TokenSnippet$1.smartcontractreview}`,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.LorenzostBTC}\n\n${TokenSnippet.smartcontractreview}`,
                 },
             ],
         },
         {
-            category: RiskCategory$1.DataAvailability,
+            category: RiskCategory.DataAvailability,
             score: 0,
             tier: RiskFactor.Medium,
             title: "Data is made available via validator nodes and additionally stored on archive nodes. Anyone can run BEVM node",
             content: "BEVM full nodes are responsible for satisfying BEVM's data availability requirement. Archive nodes are additionally responsible for preserving the historical blockchain data. Users can run their own archive node and access the data at any time by utilizing the node as an RPC. Public endpoints deploy archival nodes to facilitate blockchain data to the users. As long as there is one archive node online, users can recover the full history of the BEVM blockchain.",
         },
         {
-            category: RiskCategory$1.NetworkOperators,
+            category: RiskCategory.NetworkOperators,
             score: 0,
             tier: RiskFactor.High,
             title: "BEVM network is operated by permissioned validators",
             content: "On a BEVM chain, a block is produced every 6s and is finalized by achieving consensus among permissioned validators. Only the permissioned validators have the rights to produce the block and include the transactions in the block. Consequently, users trust the permissioned validators that they will include their transactions in the block without censoring them.\n\nBEVM governance, which is done by delegating tokens to validators, is currently not live. This sees a permissioned validator set operate the network.",
         },
         {
-            category: RiskCategory$1.FinalityGuarantees,
+            category: RiskCategory.FinalityGuarantees,
             score: 0,
             tier: RiskFactor.High,
             title: "Transactions on BEVM chain are finalized offchain by its permissioned validators",
@@ -3041,8 +2612,8 @@ const bitfinity = {
     type: Type.Layer,
     slug: "bitfinity",
     title: "Bitfinity",
-    entityType: EntityType$1.Alt,
-    entityCategory: EntityCategory$1.Sidesystem,
+    entityType: EntityType.Alt,
+    entityCategory: EntityCategory.Sidesystem,
     live: LiveStatus.Testnet,
     staking: false,
     liquidStaking: false,
@@ -3061,23 +2632,23 @@ const bitfinity = {
     bitcoinOnly: false,
     links: [
         {
-            text: Site$1.Website,
+            text: Site.Website,
             url: "https://bitfinity.network",
         },
         {
-            text: Site$1.Docs,
+            text: Site.Docs,
             url: "https://docs.bitfinity.network",
         },
         {
-            text: Site$1.Explorer,
+            text: Site.Explorer,
             url: "https://explorer.mainnet.bitfinity.network/",
         },
         {
-            text: Site$1.GitHub,
+            text: Site.GitHub,
             url: "https://github.com/bitfinity-network",
         },
         {
-            text: Site$1.Twitter,
+            text: Site.Twitter,
             url: "https://x.com/bitfinitynet",
         },
     ],
@@ -3094,7 +2665,7 @@ const bitfinity = {
     ],
     riskAnalysis: [
         {
-            category: RiskCategory$1.BtcCustody,
+            category: RiskCategory.BtcCustody,
             score: 0,
             tier: RiskFactor.NotApplicable,
             title: "",
@@ -3111,21 +2682,21 @@ const bitfinity = {
             ],
         },
         {
-            category: RiskCategory$1.DataAvailability,
+            category: RiskCategory.DataAvailability,
             score: 0,
             tier: RiskFactor.UnderReview,
             title: "We are reviewing what satisfies Bitfinity's data availability requirement",
             content: "We are reviewing the operators responsible for data availability and storage for the Bitfinity sidechain.",
         },
         {
-            category: RiskCategory$1.NetworkOperators,
+            category: RiskCategory.NetworkOperators,
             score: 0,
             tier: RiskFactor.UnderReview,
             title: "We are reviewing Bitfinity's block production mechanism",
             content: "We are reviewing the operators of the Bitfinity sidechain.",
         },
         {
-            category: RiskCategory$1.FinalityGuarantees,
+            category: RiskCategory.FinalityGuarantees,
             score: 0,
             tier: RiskFactor.UnderReview,
             title: "We are reviewing Bitfinity's finality guarantees",
@@ -3149,8 +2720,8 @@ const bitlayer = {
     type: Type.Layer,
     slug: "bitlayer",
     title: "Bitlayer",
-    entityType: EntityType$1.Federation,
-    entityCategory: EntityCategory$1.Alt,
+    entityType: EntityType.Federation,
+    entityCategory: EntityCategory.Alt,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -3166,49 +2737,49 @@ const bitlayer = {
     nativeToken: "BTR",
     feeToken: "WBTC",
     bitcoinOnly: false,
-    notice: Notice$1.OtherReasonBridge,
+    notice: Notice.OtherReasonBridge,
     links: [
         {
-            text: Site$1.Website,
+            text: Site.Website,
             url: "https://www.bitlayer.org",
         },
         {
-            text: Site$1.Docs,
+            text: Site.Docs,
             url: "https://docs.bitlayer.org",
         },
         {
-            text: Site$1.Explorer,
+            text: Site.Explorer,
             url: "https://www.btrscan.com",
         },
         {
-            text: Site$1.GitHub,
+            text: Site.GitHub,
             url: "https://github.com/bitlayer-org",
         },
         {
-            text: Site$1.Twitter,
+            text: Site.Twitter,
             url: "https://twitter.com/BitlayerLabs",
         },
     ],
     description: "Bitlayer's mainnet v1 is a federated sidechain. It supports an EVM execution environment with plans to support other VMs.",
     riskSummary: [
         {
-            title: RiskSummarySnippet$2.TitleCustodianPegs,
-            content: RiskSummarySnippet$2.RiskSummaryCustodianPegs,
+            title: RiskSummarySnippet$1.TitleCustodianPegs,
+            content: RiskSummarySnippet$1.RiskSummaryCustodianPegs,
         },
         {
-            title: RiskSummarySnippet$2.TitleFederation,
-            content: RiskSummarySnippet$2.RiskSummaryFederation,
+            title: RiskSummarySnippet$1.TitleFederation,
+            content: RiskSummarySnippet$1.RiskSummaryFederation,
         }
     ],
     categorization: [
         {
-            title: Categorization$1.NoBridgeTitle,
-            content: Categorization$1.NoBridgeSnippet,
+            title: Categorization.NoBridgeTitle,
+            content: Categorization.NoBridgeSnippet,
         },
     ],
     riskAnalysis: [
         {
-            category: RiskCategory$1.BtcCustody,
+            category: RiskCategory.BtcCustody,
             score: 0,
             tier: RiskFactor.NotApplicable,
             title: "",
@@ -3219,51 +2790,51 @@ const bitlayer = {
                     infrastructureSlug: "bitlayer-wbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: TokenSnippet$1.BitLayerwBTC,
+                    title: TokenSnippet.CustodianPeg,
+                    content: TokenSnippet.BitLayerwBTC,
                 },
                 {
                     name: "Bedrock uniBTC",
                     infrastructureSlug: "bedrock-unibtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: `${TokenSnippet$1.BedrockUniBTC}\n\n${TokenSnippet$1.smartcontractreview}`,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.BedrockUniBTC}\n\n${TokenSnippet.smartcontractreview}`,
                 },
                 {
                     name: "Lorenzo stBTC",
                     infrastructureSlug: "lorenzo-stbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: `${TokenSnippet$1.LorenzostBTC}\n\n${TokenSnippet$1.smartcontractreview}`,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.LorenzostBTC}\n\n${TokenSnippet.smartcontractreview}`,
                 },
                 {
                     name: "Xlink aBTC",
                     infrastructureSlug: "xlink-abtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: `${TokenSnippet$1.xlink}${TokenSnippet$1.smartcontractreview}.`,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.xlink}${TokenSnippet.smartcontractreview}.`,
                 },
             ],
         },
         {
-            category: RiskCategory$1.DataAvailability,
+            category: RiskCategory.DataAvailability,
             score: 0,
             tier: RiskFactor.Medium,
             title: "Data is stored offchain with node software open-source",
             content: "Bitlayer does not currently use Bitcoin for data availability. The data availability requirement is currently fulfilled by Bitlayer full nodes. The Bitlayer node software is open source and anyone can run a node and validate the state of Bitlayer.",
         },
         {
-            category: RiskCategory$1.NetworkOperators,
+            category: RiskCategory.NetworkOperators,
             score: 0,
             tier: RiskFactor.VeryHigh,
             title: "Bitlayer is operated by a permissioned validator set",
             content: "Bitlayer blocks are currently produced by a permissioned validator set. There are currently 21 validators participating in Bitlayer consensus. Users cannot bypass this operator set if they are censored by the validator set.\n\nBitLayer has not disclosed the operators for this validator set.",
         },
         {
-            category: RiskCategory$1.FinalityGuarantees,
+            category: RiskCategory.FinalityGuarantees,
             score: 0,
             tier: RiskFactor.High,
             title: "Bitlayer validators finalize blocks",
@@ -3360,9 +2931,9 @@ const bnbsmartchain = {
     type: Type.Layer,
     slug: "bnbsmartchain",
     title: "BNB Smart Chain",
-    entityType: EntityType$1.AltL1,
-    entityCategory: EntityCategory$1.Alt,
-    custodyTitle: CustodyTitle$1.Centralized,
+    entityType: EntityType.AltL1,
+    entityCategory: EntityCategory.Alt,
+    custodyTitle: CustodyTitle.Centralized,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -3381,40 +2952,40 @@ const bnbsmartchain = {
     bitcoinOnly: false,
     links: [
         {
-            text: Site$1.Website,
+            text: Site.Website,
             url: "https://www.bnbchain.org/",
         },
         {
-            text: Site$1.Docs,
+            text: Site.Docs,
             url: "https://docs.bnbchain.org/",
         },
         {
-            text: Site$1.Explorer,
+            text: Site.Explorer,
             url: "https://bscscan.com/",
         },
         {
-            text: Site$1.GitHub,
+            text: Site.GitHub,
             url: "https://github.com/bnb-chain",
         },
         {
-            text: Site$1.Twitter,
+            text: Site.Twitter,
             url: "https://x.com/BNBChain",
         },
     ],
     description: "BNB Smart Chain is an alternative proof-of-stake blockchain that supports a number of wrapped BTC tokens. It offers an EVM-compatible execution environment which supports more expressive smart contracts.",
     riskSummary: [
         {
-            title: RiskSummarySnippet$2.TitleCustodianPegs,
-            content: RiskSummarySnippet$2.RiskSummaryCustodianPegs,
+            title: RiskSummarySnippet$1.TitleCustodianPegs,
+            content: RiskSummarySnippet$1.RiskSummaryCustodianPegs,
         },
         {
-            title: RiskSummarySnippet$2.TitleAlternativeL1,
-            content: RiskSummarySnippet$2.RiskSummaryAlternativeL1,
+            title: RiskSummarySnippet$1.TitleAlternativeL1,
+            content: RiskSummarySnippet$1.RiskSummaryAlternativeL1,
         },
     ],
     riskAnalysis: [
         {
-            category: RiskCategory$1.BtcCustody,
+            category: RiskCategory.BtcCustody,
             score: 0,
             tier: RiskFactor.NotApplicable,
             title: "",
@@ -3425,167 +2996,167 @@ const bnbsmartchain = {
                     infrastructureSlug: "binance-btcb",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: TokenSnippet$1.BinanceBTCB,
+                    title: TokenSnippet.CustodianPeg,
+                    content: TokenSnippet.BinanceBTCB,
                 },
                 {
                     name: "BitGo wBTC",
                     infrastructureSlug: "bitgo-wbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: TokenSnippet$1.BitGowBTC,
+                    title: TokenSnippet.CustodianPeg,
+                    content: TokenSnippet.BitGowBTC,
                 },
                 {
                     name: "Threshold tBTC",
                     infrastructureSlug: "threshold-tbtc",
                     score: 0,
                     tier: RiskFactor.UnderReview,
-                    title: TokenSnippet$1.ThresholdtBTC,
-                    content: `${TokenSnippet$1.ThresholdtBTC}\n\nWe are currently reviewing if tBTC is minted on BNB Smart Chain natively or minted on Ethereum and then bridged to BNB Smart Chain via a custom bridge contract.`,
+                    title: TokenSnippet.ThresholdtBTC,
+                    content: `${TokenSnippet.ThresholdtBTC}\n\nWe are currently reviewing if tBTC is minted on BNB Smart Chain natively or minted on Ethereum and then bridged to BNB Smart Chain via a custom bridge contract.`,
                 },
                 {
                     name: "Solv SolvBTC",
                     infrastructureSlug: "solv-solvbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: TokenSnippet$1.SolvBTC,
+                    title: TokenSnippet.CustodianPeg,
+                    content: TokenSnippet.SolvBTC,
                 },
                 {
                     name: "Solv xSolvBTC",
                     infrastructureSlug: "solv-xsolvbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianDerivative,
-                    content: TokenSnippet$1.xSolvBTC,
+                    title: TokenSnippet.CustodianDerivative,
+                    content: TokenSnippet.xSolvBTC,
                 },
                 {
                     name: "Solv SolvBTC.ENA",
                     infrastructureSlug: "solv-solvbtcena",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianDerivative,
-                    content: `${TokenSnippet$1.SolvBTCENA}\n\n${TokenSnippet$1.smartcontractreview}`,
+                    title: TokenSnippet.CustodianDerivative,
+                    content: `${TokenSnippet.SolvBTCENA}\n\n${TokenSnippet.smartcontractreview}`,
                 },
                 {
                     name: "Pump BTC",
                     infrastructureSlug: "pump-btc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: `${TokenSnippet$1.PumpBTC}\n\n${TokenSnippet$1.smartcontractreview}`,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.PumpBTC}\n\n${TokenSnippet.smartcontractreview}`,
                 },
                 {
                     name: "FBTC",
                     infrastructureSlug: "firebitcoin-fbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: `${TokenSnippet$1.FireBTC}\n\n${TokenSnippet$1.smartcontractreview}`,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.FireBTC}\n\n${TokenSnippet.smartcontractreview}`,
                 },
                 {
                     name: "Lorenzo stBTC",
                     infrastructureSlug: "lorenzo-stbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: `${TokenSnippet$1.LorenzostBTC}\n\n${TokenSnippet$1.smartcontractreview}`,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.LorenzostBTC}\n\n${TokenSnippet.smartcontractreview}`,
                 },
                 {
                     name: "Lombard LBTC",
                     infrastructureSlug: "lombard-lbtc",
                     score: 0,
                     tier: RiskFactor.UnderReview,
-                    title: TokenSnippet$1.FederationPeg,
-                    content: `${TokenSnippet$1.LombardLBTC}\n\n${TokenSnippet$1.smartcontractreview}`,
+                    title: TokenSnippet.FederationPeg,
+                    content: `${TokenSnippet.LombardLBTC}\n\n${TokenSnippet.smartcontractreview}`,
                 },
                 {
                     name: "Babypie mBTC",
                     infrastructureSlug: "babypie-mbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: `${TokenSnippet$1.babypie}\n\n${TokenSnippet$1.smartcontractreview}`,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.babypie}\n\n${TokenSnippet.smartcontractreview}`,
                 },
                 {
                     name: "Kinza kBTC",
                     infrastructureSlug: "kinza-kbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: `${TokenSnippet$1.KinzaBTC}\n\n${TokenSnippet$1.smartcontractreview}`,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.KinzaBTC}\n\n${TokenSnippet.smartcontractreview}`,
                 },
                 {
                     name: "Bedrock uniBTC",
                     infrastructureSlug: "bedrock-unibtc",
                     score: 0,
                     tier: RiskFactor.UnderReview,
-                    title: TokenSnippet$1.UnderReview,
-                    content: `${TokenSnippet$1.BedrockUniBTC}\n\n${TokenSnippet$1.smartcontractreview}`,
+                    title: TokenSnippet.UnderReview,
+                    content: `${TokenSnippet.BedrockUniBTC}\n\n${TokenSnippet.smartcontractreview}`,
                 },
                 {
                     name: "Avalanche BTC.b",
                     infrastructureSlug: "avalanche-btcb",
                     score: 0,
                     tier: RiskFactor.UnderReview,
-                    title: TokenSnippet$1.FederationPeg,
-                    content: `${TokenSnippet$1.AvalancheBTCb}\n\n${TokenSnippet$1.smartcontractreview}`,
+                    title: TokenSnippet.FederationPeg,
+                    content: `${TokenSnippet.AvalancheBTCb}\n\n${TokenSnippet.smartcontractreview}`,
                 },
                 {
                     name: "Xlink aBTC",
                     infrastructureSlug: "xlink-abtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: `${TokenSnippet$1.xlink}${TokenSnippet$1.smartcontractreview}.`,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.xlink}${TokenSnippet.smartcontractreview}.`,
                 },
                 {
                     name: "iBTC",
                     infrastructureSlug: "ibtcnetwork-ibtc",
                     score: 0,
                     tier: RiskFactor.UnderReview,
-                    title: TokenSnippet$1.UnderReview,
-                    content: `${TokenSnippet$1.iBTC}\n\n${TokenSnippet$1.smartcontractreview}\n\n`
+                    title: TokenSnippet.UnderReview,
+                    content: `${TokenSnippet.iBTC}\n\n${TokenSnippet.smartcontractreview}\n\n`
                 },
                 {
                     name: "Bedrock brBTC",
                     infrastructureSlug: "Bedrock-brbtc",
                     score: 0,
                     tier: RiskFactor.UnderReview,
-                    title: TokenSnippet$1.UnderReview,
-                    content: `${TokenSnippet$1.BedrockbrBTC}\n\n${TokenSnippet$1.smartcontractreview}\n\n`,
+                    title: TokenSnippet.UnderReview,
+                    content: `${TokenSnippet.BedrockbrBTC}\n\n${TokenSnippet.smartcontractreview}\n\n`,
                 },
                 {
                     name: "Allo alloBTC",
                     infrastructureSlug: "allo-allobtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: `${TokenSnippet$1.AlloBTC}\n\n${TokenSnippet$1.smartcontractreview}\n\n`,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.AlloBTC}\n\n${TokenSnippet.smartcontractreview}\n\n`,
                 },
             ],
         },
         {
-            category: RiskCategory$1.DataAvailability,
+            category: RiskCategory.DataAvailability,
             score: 0,
             tier: RiskFactor.AlternativePoS,
             title: "Data is made available by an alternative consensus network",
-            content: ReviewSnippet$1.DAConsensusNetwork,
+            content: ReviewSnippet.DAConsensusNetwork,
         },
         {
-            category: RiskCategory$1.NetworkOperators,
+            category: RiskCategory.NetworkOperators,
             score: 0,
             tier: RiskFactor.AlternativePoS,
             title: "BNB Smart Chain is operated by a distributed validator set",
-            content: `${ReviewSnippet$1.OperatorSidechainPOS}\n\nBNB Smart Chain leverages a hybrid proof-of-stake mechanism similar to delegated proof-of-stake. BNB token holders can delegate tokens to their preferred validator to support their chances at winning blocks.`,
+            content: `${ReviewSnippet.OperatorSidechainPOS}\n\nBNB Smart Chain leverages a hybrid proof-of-stake mechanism similar to delegated proof-of-stake. BNB token holders can delegate tokens to their preferred validator to support their chances at winning blocks.`,
         },
         {
-            category: RiskCategory$1.FinalityGuarantees,
+            category: RiskCategory.FinalityGuarantees,
             score: 0,
             tier: RiskFactor.AlternativePoS,
             title: "Finality guarantees are provided through BNB Smart Chain's validators",
-            content: AtlSnippet$2.FinalityConsensusNetwork,
+            content: AtlSnippet$1.FinalityConsensusNetwork,
         },
     ],
     sections: [
@@ -3595,19 +3166,19 @@ const bnbsmartchain = {
             content: [
                 {
                     title: "BNB Smart Chain does not inherit any security from bitcoin",
-                    content: BitcoinSecuritySnippet$2.NoSecurity,
+                    content: BitcoinSecuritySnippet$1.NoSecurity,
                 },
                 {
                     title: "ETH token used to pay fees",
-                    content: BitcoinSecuritySnippet$2.AltTokenFees,
+                    content: BitcoinSecuritySnippet$1.AltTokenFees,
                 },
                 {
                     title: "No MEV introduced to bitcoin",
-                    content: BitcoinSecuritySnippet$2.AltNetworkMEV,
+                    content: BitcoinSecuritySnippet$1.AltNetworkMEV,
                 },
                 {
                     title: "BNB Smart Chain does not contribute to the security budget",
-                    content: BitcoinSecuritySnippet$2.NoSecurity,
+                    content: BitcoinSecuritySnippet$1.NoSecurity,
                 },
             ],
         },
@@ -3617,7 +3188,7 @@ const bnbsmartchain = {
             content: [
                 {
                     title: "Ethereum Virtual Machine",
-                    content: TechnologySnippet$2.EVM,
+                    content: TechnologySnippet$1.EVM,
                 },
             ],
         },
@@ -3627,7 +3198,7 @@ const bnbsmartchain = {
             content: [
                 {
                     title: "Onchain applications",
-                    content: UseCaseSnippet$2.OnchainApps,
+                    content: UseCaseSnippet$1.OnchainApps,
                 },
             ],
         },
@@ -3638,8 +3209,8 @@ const bob = {
     type: Type.Layer,
     slug: "bob",
     title: "BOB",
-    entityType: EntityType$1.AltRollup,
-    entityCategory: EntityCategory$1.Alt,
+    entityType: EntityType.AltRollup,
+    entityCategory: EntityCategory.Alt,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -3655,53 +3226,53 @@ const bob = {
     nativeToken: "ETH",
     feeToken: "ETH",
     bitcoinOnly: false,
-    notice: Notice$1.OtherReasonBridge,
+    notice: Notice.OtherReasonBridge,
     links: [
         {
-            text: Site$1.Website,
+            text: Site.Website,
             url: "https://www.gobob.xyz",
         },
         {
-            text: Site$1.Docs,
+            text: Site.Docs,
             url: "https://docs.gobob.xyz",
         },
         {
-            text: Site$1.GitHub,
+            text: Site.GitHub,
             url: "https://github.com/bob-collective/bob",
         },
         {
-            text: Site$1.Twitter,
+            text: Site.Twitter,
             url: "https://twitter.com/build_on_bob",
         },
     ],
-    description: `BOB prioritizes use cases for BTC-backed assets and is looking to derive more security from bitcoin over time. ${DefinitionSnippet$2.DefinitionAltRollup}`,
+    description: `BOB prioritizes use cases for BTC-backed assets and is looking to derive more security from bitcoin over time. ${DefinitionSnippet$1.DefinitionAltRollup}`,
     riskSummary: [
         {
-            title: RiskSummarySnippet$2.TitleCustodianPegs,
-            content: RiskSummarySnippet$2.RiskSummaryCustodianPegs,
+            title: RiskSummarySnippet$1.TitleCustodianPegs,
+            content: RiskSummarySnippet$1.RiskSummaryCustodianPegs,
         },
         {
-            title: RiskSummarySnippet$2.TitleBridgeUpgrade,
-            content: RiskSummarySnippet$2.RiskSummaryImmediateUpgrade,
+            title: RiskSummarySnippet$1.TitleBridgeUpgrade,
+            content: RiskSummarySnippet$1.RiskSummaryImmediateUpgrade,
         },
         {
-            title: RiskSummarySnippet$2.TitleAltDA,
-            content: RiskSummarySnippet$2.RiskSummaryAltDANetwork,
+            title: RiskSummarySnippet$1.TitleAltDA,
+            content: RiskSummarySnippet$1.RiskSummaryAltDANetwork,
         },
         {
-            title: RiskSummarySnippet$2.TitleCentralizedSequencer,
-            content: RiskSummarySnippet$2.RiskSummaryCentralizedSequencer,
+            title: RiskSummarySnippet$1.TitleCentralizedSequencer,
+            content: RiskSummarySnippet$1.RiskSummaryCentralizedSequencer,
         },
     ],
     categorization: [
         {
-            title: Categorization$1.NoBridgeTitle,
-            content: Categorization$1.NoBridgeSnippet,
+            title: Categorization.NoBridgeTitle,
+            content: Categorization.NoBridgeSnippet,
         },
     ],
     riskAnalysis: [
         {
-            category: RiskCategory$1.BtcCustody,
+            category: RiskCategory.BtcCustody,
             score: 0,
             tier: RiskFactor.NotApplicable,
             title: "",
@@ -3713,7 +3284,7 @@ const bob = {
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: "BTC users trust that tBTC will remain backed on Ethereum, and that that the BOB bridge will not be maliciously upgraded",
-                    content: `${TokenSnippet$1.ThresholdtBTC} tBTC is minted via its official bridge between BOB and Ethereum. This bridge is finalized by a Hybrid proving system using validity proofs and fraud proofs.\n\n${ReviewSnippet$1.CentralizedUpgradeableBridge}`,
+                    content: `${TokenSnippet.ThresholdtBTC} tBTC is minted via its official bridge between BOB and Ethereum. This bridge is finalized by a Hybrid proving system using validity proofs and fraud proofs.\n\n${ReviewSnippet.CentralizedUpgradeableBridge}`,
                 },
                 {
                     name: "BitGo wBTC",
@@ -3721,7 +3292,7 @@ const bob = {
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: "BTC users trust that wBTC will remain backed on Ethereum, and that that the BOB bridge will not be maliciously upgraded",
-                    content: `${TokenSnippet$1.BitGowBTC} wBTC is minted via its official bridge between BOB and Ethereum. This bridge is finalized by a Hybrid proving system using validity proofs and fraud proofs.\n\n${ReviewSnippet$1.CentralizedUpgradeableBridge}`,
+                    content: `${TokenSnippet.BitGowBTC} wBTC is minted via its official bridge between BOB and Ethereum. This bridge is finalized by a Hybrid proving system using validity proofs and fraud proofs.\n\n${ReviewSnippet.CentralizedUpgradeableBridge}`,
                 },
                 {
                     name: "Lombard LBTC",
@@ -3729,78 +3300,78 @@ const bob = {
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: "BTC users trust that LBTC will remain backed on Ethereum, and that that the BOB bridge will not be maliciously upgraded",
-                    content: `${TokenSnippet$1.LombardLBTC} LBTC is minted via its official bridge between BOB and Ethereum. This bridge is finalized by a Hybrid proving system using validity proofs and fraud proofs.\n\n${ReviewSnippet$1.CentralizedUpgradeableBridge}`,
+                    content: `${TokenSnippet.LombardLBTC} LBTC is minted via its official bridge between BOB and Ethereum. This bridge is finalized by a Hybrid proving system using validity proofs and fraud proofs.\n\n${ReviewSnippet.CentralizedUpgradeableBridge}`,
                 },
                 {
                     name: "Fire FBTC",
                     infrastructureSlug: "firebitcoin-fbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: `${TokenSnippet$1.FireBTC}\n\n${TokenSnippet$1.smartcontractreview}`,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.FireBTC}\n\n${TokenSnippet.smartcontractreview}`,
                 },
                 {
                     name: "Pump pumpBTC",
                     infrastructureSlug: "pump-pumpbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: `${TokenSnippet$1.PumpBTC}\n\n${TokenSnippet$1.smartcontractreview}`,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.PumpBTC}\n\n${TokenSnippet.smartcontractreview}`,
                 },
                 {
                     name: "Bedrock uniBTC",
                     infrastructureSlug: "bedrock-unibtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: `${TokenSnippet$1.BedrockUniBTC} ${TokenSnippet$1.smartcontractreview}`,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.BedrockUniBTC} ${TokenSnippet.smartcontractreview}`,
                 },
                 {
                     name: "Solv SolvBTC",
                     infrastructureSlug: "solv-solvbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: `${TokenSnippet$1.SolvBTC} ${TokenSnippet$1.smartcontractreview}`,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.SolvBTC} ${TokenSnippet.smartcontractreview}`,
                 },
                 {
                     name: "Solv xSolvBTC",
                     infrastructureSlug: "solv-xsolvbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianDerivative,
-                    content: `${TokenSnippet$1.xSolvBTC} ${TokenSnippet$1.smartcontractreview}`,
+                    title: TokenSnippet.CustodianDerivative,
+                    content: `${TokenSnippet.xSolvBTC} ${TokenSnippet.smartcontractreview}`,
                 },
                 {
                     name: "Xlink aBTC",
                     infrastructureSlug: "xlink-abtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianDerivative,
-                    content: `${TokenSnippet$1.xlink} ${TokenSnippet$1.smartcontractreview}`,
+                    title: TokenSnippet.CustodianDerivative,
+                    content: `${TokenSnippet.xlink} ${TokenSnippet.smartcontractreview}`,
                 },
             ],
         },
         {
-            category: RiskCategory$1.DataAvailability,
+            category: RiskCategory.DataAvailability,
             score: 0,
             tier: RiskFactor.Medium,
             title: "Data is stored and made available by Ethereum full nodes",
-            content: ReviewSnippet$1.EthereumRollupDA,
+            content: ReviewSnippet.EthereumRollupDA,
         },
         {
-            category: RiskCategory$1.NetworkOperators,
+            category: RiskCategory.NetworkOperators,
             score: 0,
             tier: RiskFactor.High,
             title: "BOB blocks are produced and proposed by a centralized operator, but forced inclusion to Ethereum L1 possible",
-            content: ReviewSnippet$1.SelfSequenceMainAlt,
+            content: ReviewSnippet.SelfSequenceMainAlt,
         },
         {
-            category: RiskCategory$1.FinalityGuarantees,
+            category: RiskCategory.FinalityGuarantees,
             score: 0,
             tier: RiskFactor.Medium,
             title: "Bob's state transitions finalize by updating its state based on data posted to Ethereum",
-            content: ReviewSnippet$1.AltL1Finality,
+            content: ReviewSnippet.AltL1Finality,
             alert: Alertsnippet.AltRollupNotice,
         },
     ],
@@ -3811,19 +3382,19 @@ const bob = {
             content: [
                 {
                     title: "BOB does not inherit any security from Bitcoin",
-                    content: BitcoinSecuritySnippet$2.NoSecurity,
+                    content: BitcoinSecuritySnippet$1.NoSecurity,
                 },
                 {
                     title: "ETH token used to pay fees",
-                    content: BitcoinSecuritySnippet$2.AltTokenFees,
+                    content: BitcoinSecuritySnippet$1.AltTokenFees,
                 },
                 {
                     title: "No MEV introduced to Bitcoin",
-                    content: BitcoinSecuritySnippet$2.CentralizedSequencerMEV,
+                    content: BitcoinSecuritySnippet$1.CentralizedSequencerMEV,
                 },
                 {
                     title: "BOB does not contribute to the security budget",
-                    content: BitcoinSecuritySnippet$2.NoSecurityBudget,
+                    content: BitcoinSecuritySnippet$1.NoSecurityBudget,
                 },
             ],
         },
@@ -3833,7 +3404,7 @@ const bob = {
             content: [
                 {
                     title: "Proposer role centralized and permissioned. BTC users trust network operators to include their withdrawal requests in a block. Asset redemption varies dependent on the asset issuer",
-                    content: OtherSnippet$2.WithdrawalsAltRollup,
+                    content: OtherSnippet$1.WithdrawalsAltRollup,
                 },
             ],
         },
@@ -3843,7 +3414,7 @@ const bob = {
             content: [
                 {
                     title: "Ethereum Virtual Machine",
-                    content: TechnologySnippet$2.EVM,
+                    content: TechnologySnippet$1.EVM,
                 },
                 {
                     title: "OP Kailua",
@@ -3865,7 +3436,7 @@ const bob = {
             content: [
                 {
                     title: "Onchain applications",
-                    content: UseCaseSnippet$2.OnchainApps,
+                    content: UseCaseSnippet$1.OnchainApps,
                 },
             ],
         },
@@ -3896,8 +3467,8 @@ const template$9 = {
     type: Type.Layer,
     slug: "botanix",
     title: "Botanix",
-    entityType: EntityType$1.Federation,
-    entityCategory: EntityCategory$1.Sidesystem,
+    entityType: EntityType.Federation,
+    entityCategory: EntityCategory.Sidesystem,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -3916,40 +3487,40 @@ const template$9 = {
     bitcoinOnly: false,
     links: [
         {
-            text: Site$1.Website,
+            text: Site.Website,
             url: "https://botanixlabs.com/",
         },
         {
-            text: Site$1.Docs,
+            text: Site.Docs,
             url: "https://docs.botanixlabs.com/botanix/",
         },
         {
-            text: Site$1.Explorer,
+            text: Site.Explorer,
             url: "https://botanixscan.io/",
         },
         {
-            text: Site$1.GitHub,
+            text: Site.GitHub,
             url: "https://github.com/botanix-labs",
         },
         {
-            text: Site$1.Twitter,
+            text: Site.Twitter,
             url: "https://x.com/BotanixLabs",
         },
     ],
     description: "Botanix is an EVM-compatible sidechain that is operated by a federation. The network supports an enshrined bridge program managed by the federation. Botanix is built on CometBFT consensus and has plans to add bitcoin staking in the future.",
     riskSummary: [
         {
-            title: RiskSummarySnippet$2.TitleFederation,
-            content: RiskSummarySnippet$2.RiskSummaryFederation,
+            title: RiskSummarySnippet$1.TitleFederation,
+            content: RiskSummarySnippet$1.RiskSummaryFederation,
         },
         {
-            title: RiskSummarySnippet$2.TitleCustodianPegs,
-            content: RiskSummarySnippet$2.RiskFederationPeg,
+            title: RiskSummarySnippet$1.TitleCustodianPegs,
+            content: RiskSummarySnippet$1.RiskFederationPeg,
         }
     ],
     riskAnalysis: [
         {
-            category: RiskCategory$1.BtcCustody,
+            category: RiskCategory.BtcCustody,
             score: 0,
             tier: "",
             title: "",
@@ -3961,7 +3532,7 @@ const template$9 = {
                     score: 0,
                     tier: RiskFactor.High,
                     title: "BTC backing this asset is secured by a federation",
-                    content: TokenSnippet$1.BotanixBTC,
+                    content: TokenSnippet.BotanixBTC,
                     alert: Alertsnippet.BridgeStandardMet,
                 },
                 {
@@ -3983,25 +3554,25 @@ const template$9 = {
             ],
         },
         {
-            category: RiskCategory$1.DataAvailability,
+            category: RiskCategory.DataAvailability,
             score: 0,
             tier: RiskFactor.Medium,
             title: "Botanix node operators are responsible for making data available",
             content: `${Reviewsnippet.AltL1DA}`
         },
         {
-            category: RiskCategory$1.NetworkOperators,
+            category: RiskCategory.NetworkOperators,
             score: 0,
             tier: RiskFactor.High,
             title: "Botanix's federation is responsible for operating the network",
-            content: ReviewSnippet$1.OperatorFederated,
+            content: ReviewSnippet.OperatorFederated,
         },
         {
-            category: RiskCategory$1.FinalityGuarantees,
+            category: RiskCategory.FinalityGuarantees,
             score: 0,
             tier: RiskFactor.High,
             title: "Botanix's federation is responsible for finalizing transactions",
-            content: ReviewSnippet$1.CometBFTFinality,
+            content: ReviewSnippet.CometBFTFinality,
         },
     ],
     manualContracts: [
@@ -4035,19 +3606,19 @@ const template$9 = {
             content: [
                 {
                     title: "Botanix does not inherit security from bitcoin",
-                    content: BitcoinSecuritySnippet$2.NoSecurity,
+                    content: BitcoinSecuritySnippet$1.NoSecurity,
                 },
                 {
                     title: "Botanix is a bitcoin-denominated network",
-                    content: BitcoinSecuritySnippet$2.WrappedTokenFees,
+                    content: BitcoinSecuritySnippet$1.WrappedTokenFees,
                 },
                 {
                     title: "Users trust the Botanix federation to not exploit MEV",
-                    content: BitcoinSecuritySnippet$2.AltNetworkMEV,
+                    content: BitcoinSecuritySnippet$1.AltNetworkMEV,
                 },
                 {
                     title: "Botanix does not contribute to the security budget",
-                    content: BitcoinSecuritySnippet$2.NoSecurityBudget,
+                    content: BitcoinSecuritySnippet$1.NoSecurityBudget,
                 },
             ],
         },
@@ -4057,7 +3628,7 @@ const template$9 = {
             content: [
                 {
                     title: "Ethereum Virtual Machine",
-                    content: TechnologySnippet$2.EVM,
+                    content: TechnologySnippet$1.EVM,
                 },
             ],
         },
@@ -4067,7 +3638,7 @@ const template$9 = {
             content: [
                 {
                     title: "Onchain Applications",
-                    content: UseCaseSnippet$2.OnchainApps,
+                    content: UseCaseSnippet$1.OnchainApps,
                 },
             ],
         },
@@ -4078,8 +3649,8 @@ const bouncebit = {
     type: Type.Layer,
     slug: "bouncebit",
     title: "BounceBit",
-    entityType: EntityType$1.AltL1,
-    entityCategory: EntityCategory$1.Alt,
+    entityType: EntityType.AltL1,
+    entityCategory: EntityCategory.Alt,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -4098,23 +3669,23 @@ const bouncebit = {
     bitcoinOnly: false,
     links: [
         {
-            text: Site$1.Website,
+            text: Site.Website,
             url: "https://bouncebit.io",
         },
         {
-            text: Site$1.Docs,
+            text: Site.Docs,
             url: "https://docs.bouncebit.io",
         },
         {
-            text: Site$1.Explorer,
+            text: Site.Explorer,
             url: "https://bbscan.io",
         },
         {
-            text: Site$1.GitHub,
+            text: Site.GitHub,
             url: "https://github.com/BounceBit-Labs",
         },
         {
-            text: Site$1.Twitter,
+            text: Site.Twitter,
             url: "https://x.com/bounce_bit",
         },
     ],
@@ -4131,7 +3702,7 @@ const bouncebit = {
     ],
     riskAnalysis: [
         {
-            category: RiskCategory$1.BtcCustody,
+            category: RiskCategory.BtcCustody,
             score: 0,
             tier: RiskFactor.NotApplicable,
             title: "",
@@ -4148,21 +3719,21 @@ const bouncebit = {
             ],
         },
         {
-            category: RiskCategory$1.DataAvailability,
+            category: RiskCategory.DataAvailability,
             score: 0,
             tier: RiskFactor.Unverified,
             title: "A permissioned validator set, participating in a delegated proof-of-stake mechanism, satisfies the data availability requirement",
             content: "Currently, BounceBit’s validator set is responsible for keeping a record of the chain’s latest state. There are currently 25 active validators.\n\nThe mainnet node implementation is not open-source, so users are unable to run BounceBit nodes and maintain a record of BounceBit’s state.",
         },
         {
-            category: RiskCategory$1.LivenessReorgResistance,
+            category: RiskCategory.LivenessReorgResistance,
             score: 0,
             tier: RiskFactor.Unverified,
             title: "Network managed by a permissioned set of operators participating in a delegated proof-of-stake mechanism",
             content: "BounceBit blocks are currently signed and proposed by 25 validators participating in its proof-of-stake network. These operators are currently permissioned.\n\nOperators stake the BB token to participate in the network. Users can delegate BBTC (wrapped bitcoin) and BB tokens to validators to increase their voting power, which improves their chances of winning blocks.",
         },
         {
-            category: RiskCategory$1.StateValidation,
+            category: RiskCategory.StateValidation,
             score: 0,
             tier: RiskFactor.Unverified,
             title: "Settlement assurances are provided by BounceBit consensus",
@@ -4275,8 +3846,8 @@ const bsquared = {
     type: Type.Layer,
     slug: "bsquared",
     title: "Bsquared",
-    entityType: EntityType$1.AltRollup,
-    entityCategory: EntityCategory$1.Alt,
+    entityType: EntityType.AltRollup,
+    entityCategory: EntityCategory.Alt,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -4292,57 +3863,57 @@ const bsquared = {
     nativeToken: "BSQ",
     feeToken: "WBTC",
     bitcoinOnly: false,
-    notice: Notice$1.OtherReasonBridge,
+    notice: Notice.OtherReasonBridge,
     links: [
         {
-            text: Site$1.Website,
+            text: Site.Website,
             url: "https://www.bsquared.network",
         },
         {
-            text: Site$1.Docs,
+            text: Site.Docs,
             url: "https://docs.bsquared.network",
         },
         {
-            text: Site$1.Explorer,
+            text: Site.Explorer,
             url: "https://explorer.bsquared.network",
         },
         {
-            text: Site$1.GitHub,
+            text: Site.GitHub,
             url: "https://github.com/b2network",
         },
         {
-            text: Site$1.Twitter,
+            text: Site.Twitter,
             url: "https://x.com/BSquaredNetwork",
         },
     ],
     description: "The current Bsquared Network mainnet consists of two different chains. The parent chain is a fork of Ethermint. The rollup chain is a fork of of an Ethereum rollup stack.",
     riskSummary: [
         {
-            title: RiskSummarySnippet$2.TitleUpgrade,
-            content: RiskSummarySnippet$2.RiskSummaryImmediateUpgrade
+            title: RiskSummarySnippet$1.TitleUpgrade,
+            content: RiskSummarySnippet$1.RiskSummaryImmediateUpgrade
         },
         {
-            title: RiskSummarySnippet$2.TitleCustodianPegs,
-            content: RiskSummarySnippet$2.RiskSummaryCustodianPegs
+            title: RiskSummarySnippet$1.TitleCustodianPegs,
+            content: RiskSummarySnippet$1.RiskSummaryCustodianPegs
         },
         {
-            title: RiskSummarySnippet$2.TitleAltDA,
-            content: RiskSummarySnippet$2.RiskSummaryAltDACommittee,
+            title: RiskSummarySnippet$1.TitleAltDA,
+            content: RiskSummarySnippet$1.RiskSummaryAltDACommittee,
         },
         {
-            title: RiskSummarySnippet$2.TitleCentralizedSequencer,
-            content: RiskSummarySnippet$2.RiskSummaryCentralizedSequencer,
+            title: RiskSummarySnippet$1.TitleCentralizedSequencer,
+            content: RiskSummarySnippet$1.RiskSummaryCentralizedSequencer,
         }
     ],
     categorization: [
         {
-            title: Categorization$1.NoBridgeTitle,
-            content: Categorization$1.NoBridgeSnippet,
+            title: Categorization.NoBridgeTitle,
+            content: Categorization.NoBridgeSnippet,
         },
     ],
     riskAnalysis: [
         {
-            category: RiskCategory$1.BtcCustody,
+            category: RiskCategory.BtcCustody,
             score: 0,
             tier: RiskFactor.NotApplicable,
             title: "",
@@ -4354,7 +3925,7 @@ const bsquared = {
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: "Users deposit funds into a MPC protocol managed by Bsquared Network and a custodian. Less than 5, individual signers have been publicly announced",
-                    content: TokenSnippet$1.BsquaredBTC,
+                    content: TokenSnippet.BsquaredBTC,
                 },
                 {
                     name: "Bedrock uniBTC",
@@ -4362,7 +3933,7 @@ const bsquared = {
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: "Users trust custodians and various onchain contracts. We have not reviewed the contract implementations for this chain",
-                    content: TokenSnippet$1.BedrockUniBTC,
+                    content: TokenSnippet.BedrockUniBTC,
                 },
                 {
                     name: "Lorenzo stBTC",
@@ -4370,7 +3941,7 @@ const bsquared = {
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: "Users trust custodians and various onchain contracts. We have not reviewed the contract implementations for this chain",
-                    content: TokenSnippet$1.LorenzostBTC,
+                    content: TokenSnippet.LorenzostBTC,
                 },
                 {
                     name: "UniRouter uBTC",
@@ -4378,7 +3949,7 @@ const bsquared = {
                     score: 0,
                     tier: RiskFactor.Critical,
                     title: "Smart contracts have not been reviewed. UniRouter has not disclosed its custodian operators",
-                    content: TokenSnippet$1.UniRouterBTC,
+                    content: TokenSnippet.UniRouterBTC,
                 },
                 {
                     name: "BitGo wBTC",
@@ -4386,7 +3957,7 @@ const bsquared = {
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: "Users trust custodians and various onchain contracts. We have not reviewed the contract implementations for this chain",
-                    content: TokenSnippet$1.BitGowBTC,
+                    content: TokenSnippet.BitGowBTC,
                 },
                 {
                     name: "Obelisk oBTC",
@@ -4394,22 +3965,22 @@ const bsquared = {
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: "Users trust centralized signers to secure BTC backing oBTC",
-                    content: TokenSnippet$1.ObeliskoBTC,
+                    content: TokenSnippet.ObeliskoBTC,
                 },
                 {
                     name: "Xlink aBTC",
                     infrastructureSlug: "xlink-abtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: `${TokenSnippet$1.xlink}${TokenSnippet$1.smartcontractreview}.`,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.xlink}${TokenSnippet.smartcontractreview}.`,
                 },
                 {
                     name: "LayerBank BTC",
                     infrastructureSlug: "layerbank-btc",
                     score: 0,
                     tier: RiskFactor.UnderReview,
-                    title: TokenSnippet$1.UnderReview,
+                    title: TokenSnippet.UnderReview,
                     content: "This two-way peg is under review",
                 },
                 {
@@ -4417,27 +3988,27 @@ const bsquared = {
                     infrastructureSlug: "layerbank-ubtc",
                     score: 0,
                     tier: RiskFactor.UnderReview,
-                    title: TokenSnippet$1.UnderReview,
+                    title: TokenSnippet.UnderReview,
                     content: "This two-way peg is under review",
                 },
             ],
         },
         {
-            category: RiskCategory$1.DataAvailability,
+            category: RiskCategory.DataAvailability,
             score: 0,
             tier: RiskFactor.VeryHigh,
             title: "DA requirement is fulfilled by permissioned validators",
             content: "Sequencer batches are posted to the Bsquared Network L1. This network consists of a permissioned validator set who is responsible for making the data readily available. The identities of these operators has not been disclosed.",
         },
         {
-            category: RiskCategory$1.NetworkOperators,
+            category: RiskCategory.NetworkOperators,
             score: 0,
             tier: RiskFactor.VeryHigh,
             title: "Both the rollup chain and parent chain are run by federated, centralized parties",
             content: "Bsquared Network’s implementation has a single sequencer that posts sequencer batches to its network of three L1 validators.",
         },
         {
-            category: RiskCategory$1.FinalityGuarantees,
+            category: RiskCategory.FinalityGuarantees,
             score: 0,
             tier: RiskFactor.VeryHigh,
             title: "Finality is guaranteed by a permissioned validator set",
@@ -4515,8 +4086,8 @@ const core = {
     type: Type.Layer,
     slug: "core",
     title: "Core",
-    entityType: EntityType$1.BPoSNetwork,
-    entityCategory: EntityCategory$1.Integrated,
+    entityType: EntityType.BPoSNetwork,
+    entityCategory: EntityCategory.Integrated,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -4531,51 +4102,51 @@ const core = {
     btcLocked: 6705,
     nativeToken: "CORE",
     feeToken: "CORE",
-    otherIcons: OtherIcons$1.Staking,
-    notice: Notice$1.OtherReasonBridge,
+    otherIcons: OtherIcons.Staking,
+    notice: Notice.OtherReasonBridge,
     bitcoinOnly: false,
     links: [
         {
-            text: Site$1.Website,
+            text: Site.Website,
             url: "https://coredao.org",
         },
         {
-            text: Site$1.Docs,
+            text: Site.Docs,
             url: "https://docs.coredao.org",
         },
         {
-            text: Site$1.Explorer,
+            text: Site.Explorer,
             url: "https://scan.coredao.org",
         },
         {
-            text: Site$1.GitHub,
+            text: Site.GitHub,
             url: "https://github.com/coredao-org",
         },
         {
-            text: Site$1.Twitter,
+            text: Site.Twitter,
             url: "https://twitter.com/Coredao_Org",
         },
     ],
     description: "Core (in relation to Bitcoin) is an EVM sidechain with a hybrid consensus mechanism, Satoshi Plus, that leverages both DPoW and DPoS. It uses a federated multisig to bridge BTC with multiple parties ensuring the honesty of the two-way peg. The native token of the network is CORE, which is used for transaction fees, staking, and governance in Core DAO.",
     riskSummary: [
         {
-            title: RiskSummarySnippet$2.TitleCustodianPegs,
-            content: RiskSummarySnippet$2.RiskSummaryCustodianPegs,
+            title: RiskSummarySnippet$1.TitleCustodianPegs,
+            content: RiskSummarySnippet$1.RiskSummaryCustodianPegs,
         },
         {
-            title: RiskSummarySnippet$2.TitleAlternativeL1,
-            content: RiskSummarySnippet$2.RiskSummaryAlternativeL1,
+            title: RiskSummarySnippet$1.TitleAlternativeL1,
+            content: RiskSummarySnippet$1.RiskSummaryAlternativeL1,
         }
     ],
     categorization: [
         {
-            title: Categorization$1.NoBridgeTitle,
-            content: Categorization$1.NoBridgeSnippet,
+            title: Categorization.NoBridgeTitle,
+            content: Categorization.NoBridgeSnippet,
         },
     ],
     riskAnalysis: [
         {
-            category: RiskCategory$1.BtcCustody,
+            category: RiskCategory.BtcCustody,
             score: 0,
             tier: RiskFactor.NotApplicable,
             title: "",
@@ -4587,7 +4158,7 @@ const core = {
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: "Users trust custodians and various onchain contracts. We have not reviewed the contract implementations for this chain",
-                    content: TokenSnippet$1.SolvBTCdotSolv,
+                    content: TokenSnippet.SolvBTCdotSolv,
                 },
                 {
                     name: "Solv SolvBTC.b",
@@ -4595,7 +4166,7 @@ const core = {
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: "Users trust custodians and various onchain contracts. We have not reviewed the contract implementations for this chain",
-                    content: TokenSnippet$1.SolvBTCdotSolv,
+                    content: TokenSnippet.SolvBTCdotSolv,
                 },
                 {
                     name: "Solv SolvBTC",
@@ -4603,15 +4174,15 @@ const core = {
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: "Users trust custodians and various onchain contracts. We have not reviewed the contract implementations for this chain",
-                    content: TokenSnippet$1.SolvBTC,
+                    content: TokenSnippet.SolvBTC,
                 },
                 {
                     name: "SolvBTC.CORE",
                     infrastructureSlug: "solv-solvbtccore",
                     score: 0,
                     tier: RiskFactor.High,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: `${TokenSnippet$1.SolvsolvbtcCORE}\n\n${TokenSnippet$1.smartcontractreview}`,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.SolvsolvbtcCORE}\n\n${TokenSnippet.smartcontractreview}`,
                 },
                 {
                     name: "Binance BTCB",
@@ -4619,39 +4190,39 @@ const core = {
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: "Users trust custodians and various onchain contracts. We have not reviewed the contract implementations for this chain",
-                    content: TokenSnippet$1.BinanceBTCB,
+                    content: TokenSnippet.BinanceBTCB,
                 },
                 {
                     name: "Avalanche BTC.b",
                     infrastructureSlug: "avalanche-btcb",
                     score: 0,
                     tier: RiskFactor.UnderReview,
-                    title: TokenSnippet$1.FederationPeg,
-                    content: TokenSnippet$1.AvalancheBTCb,
+                    title: TokenSnippet.FederationPeg,
+                    content: TokenSnippet.AvalancheBTCb,
                 },
                 {
                     name: "Obelisk oBTC",
                     infrastructureSlug: "obelisk-obtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: `${TokenSnippet$1.ObeliskoBTC}\n\n${TokenSnippet$1.smartcontractreview}`,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.ObeliskoBTC}\n\n${TokenSnippet.smartcontractreview}`,
                 },
                 {
                     name: "Unirouter uBTC",
                     infrastructureSlug: "unirouter-ubtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: `${TokenSnippet$1.UniRouterBTC}\n\n${TokenSnippet$1.smartcontractreview}`,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.UniRouterBTC}\n\n${TokenSnippet.smartcontractreview}`,
                 },
                 {
                     name: "Xlink aBTC",
                     infrastructureSlug: "xlink-abtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: `${TokenSnippet$1.xlink}${TokenSnippet$1.smartcontractreview}.`,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.xlink}${TokenSnippet.smartcontractreview}.`,
                 },
                 {
                     name: "Core coreBTC",
@@ -4664,25 +4235,25 @@ const core = {
             ],
         },
         {
-            category: RiskCategory$1.DataAvailability,
+            category: RiskCategory.DataAvailability,
             score: 0,
             tier: RiskFactor.Medium,
             title: "Data availability requirement fulfilled by Core chain full nodes",
-            content: ReviewSnippet$1.AltL1DA,
+            content: ReviewSnippet.AltL1DA,
         },
         {
-            category: RiskCategory$1.NetworkOperators,
+            category: RiskCategory.NetworkOperators,
             score: 0,
             tier: RiskFactor.Medium,
             title: "Core's hybrid consensus mechanism operates the network",
-            content: ReviewSnippet$1.OperatorSidechainPOSBTCStake,
+            content: ReviewSnippet.OperatorSidechainPOSBTCStake,
         },
         {
-            category: RiskCategory$1.FinalityGuarantees,
+            category: RiskCategory.FinalityGuarantees,
             score: 0,
             tier: RiskFactor.Medium,
             title: "Transaction finality is provided by Core Chain consensus and has no assurances inherited from Bitcoin",
-            content: ReviewSnippet$1.AltL1Finality,
+            content: ReviewSnippet.AltL1Finality,
         },
     ],
     sections: [
@@ -4692,19 +4263,19 @@ const core = {
             content: [
                 {
                     title: "Core indirectly inherits security from Bitcoin consensus participants",
-                    content: `${BitcoinSecuritySnippet$2.YesSecurityDualStaking}\n\nThe network additionally can be merge-mined by bitcoin miners.,`
+                    content: `${BitcoinSecuritySnippet$1.YesSecurityDualStaking}\n\nThe network additionally can be merge-mined by bitcoin miners.,`
                 },
                 {
                     title: "Core Chain requires another token to function",
-                    content: BitcoinSecuritySnippet$2.AltTokenFees,
+                    content: BitcoinSecuritySnippet$1.AltTokenFees,
                 },
                 {
                     title: "No MEV introduced on Bitcoin",
-                    content: BitcoinSecuritySnippet$2.AltNetworkMEV,
+                    content: BitcoinSecuritySnippet$1.AltNetworkMEV,
                 },
                 {
                     title: "Core Chain indirectly contributes to the security budget.",
-                    content: BitcoinSecuritySnippet$2.MergeMineFees,
+                    content: BitcoinSecuritySnippet$1.MergeMineFees,
                 },
             ],
         },
@@ -4724,11 +4295,11 @@ const core = {
             content: [
                 {
                     title: "Ethereum Virtual Machine",
-                    content: TechnologySnippet$2.EVM,
+                    content: TechnologySnippet$1.EVM,
                 },
                 {
                     title: "Bitcoin Staking",
-                    content: TechnologySnippet$2.BitcoinStakingUnderReview,
+                    content: TechnologySnippet$1.BitcoinStakingUnderReview,
                 },
             ],
         },
@@ -4738,11 +4309,11 @@ const core = {
             content: [
                 {
                     title: "Onchain applications",
-                    content: UseCaseSnippet$2.OnchainApps,
+                    content: UseCaseSnippet$1.OnchainApps,
                 },
                 {
                     title: "Onchain applications",
-                    content: UseCaseSnippet$2.BitcoinStaking,
+                    content: UseCaseSnippet$1.BitcoinStaking,
                 },
             ],
         },
@@ -4773,9 +4344,9 @@ const corn = {
     type: Type.Layer,
     slug: "corn",
     title: "Corn",
-    entityType: EntityType$1.AltRollup,
-    entityCategory: EntityCategory$1.Alt,
-    custodyTitle: CustodyTitle$1.Centralized,
+    entityType: EntityType.AltRollup,
+    entityCategory: EntityCategory.Alt,
+    custodyTitle: CustodyTitle.Centralized,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -4791,57 +4362,57 @@ const corn = {
     nativeToken: "-",
     feeToken: "BTCN",
     bitcoinOnly: false,
-    notice: Notice$1.OtherReasonBridge,
+    notice: Notice.OtherReasonBridge,
     links: [
         {
-            text: Site$1.Website,
+            text: Site.Website,
             url: "https://usecorn.com/",
         },
         {
-            text: Site$1.Docs,
+            text: Site.Docs,
             url: "https://docs.usecorn.com/docs/developers/introduction",
         },
         {
-            text: Site$1.Explorer,
+            text: Site.Explorer,
             url: "https://cornscan.io/",
         },
         {
-            text: Site$1.GitHub,
+            text: Site.GitHub,
             url: "https://github.com/usecorn",
         },
         {
-            text: Site$1.Twitter,
+            text: Site.Twitter,
             url: "https://x.com/use_corn",
         },
     ],
     description: "Corn is a permissioned rollup that leverages a derivative of BTC as its gas token. It is built on the Arbitrum Orbit stack and uses the AnyTrust protocol for data availability. Its native token, BTCN, is an ERC-20 that lives on Ethereum.",
     riskSummary: [
         {
-            title: RiskSummarySnippet$2.TitleCustodianPegs,
-            content: RiskSummarySnippet$2.RiskSummaryCustodianPegs,
+            title: RiskSummarySnippet$1.TitleCustodianPegs,
+            content: RiskSummarySnippet$1.RiskSummaryCustodianPegs,
         },
         {
-            title: RiskSummarySnippet$2.TitleUpgrade,
-            content: RiskSummarySnippet$2.RiskSummaryImmediateUpgrade,
+            title: RiskSummarySnippet$1.TitleUpgrade,
+            content: RiskSummarySnippet$1.RiskSummaryImmediateUpgrade,
         },
         {
-            title: RiskSummarySnippet$2.TitleAltDA,
-            content: RiskSummarySnippet$2.RiskSummaryAltDACommittee,
+            title: RiskSummarySnippet$1.TitleAltDA,
+            content: RiskSummarySnippet$1.RiskSummaryAltDACommittee,
         },
         {
-            title: RiskSummarySnippet$2.TitleCentralizedSequencer,
-            content: RiskSummarySnippet$2.RiskSummaryCentralizedSequencer,
+            title: RiskSummarySnippet$1.TitleCentralizedSequencer,
+            content: RiskSummarySnippet$1.RiskSummaryCentralizedSequencer,
         },
     ],
     categorization: [
         {
-            title: Categorization$1.NoBridgeTitle,
-            content: Categorization$1.NoBridgeSnippet,
+            title: Categorization.NoBridgeTitle,
+            content: Categorization.NoBridgeSnippet,
         },
     ],
     riskAnalysis: [
         {
-            category: RiskCategory$1.BtcCustody,
+            category: RiskCategory.BtcCustody,
             score: 0,
             tier: RiskFactor.NotApplicable,
             title: "",
@@ -4853,15 +4424,15 @@ const corn = {
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: "BTCN is backed by BTC-derivative assets and is managed by a 2/4 multisig",
-                    content: TokenSnippet$1.BTCN,
+                    content: TokenSnippet.BTCN,
                 },
                 {
                     name: "Lombard LBTC",
                     infrastructureSlug: "lombard-lbtc",
                     score: 0,
                     tier: RiskFactor.UnderReview,
-                    title: TokenSnippet$1.FederationPeg,
-                    content: `${TokenSnippet$1.LombardLBTC}\n\n${TokenSnippet$1.smartcontractreview}`,
+                    title: TokenSnippet.FederationPeg,
+                    content: `${TokenSnippet.LombardLBTC}\n\n${TokenSnippet.smartcontractreview}`,
                 },
                 {
                     name: "Solv SolvBTC",
@@ -4869,7 +4440,7 @@ const corn = {
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: "Users trust custodians and various onchain contracts. We have not reviewed the contract implementations for this chain",
-                    content: TokenSnippet$1.SolvBTCdotSolv,
+                    content: TokenSnippet.SolvBTCdotSolv,
                 },
                 {
                     name: "Solv xSolvBTC",
@@ -4877,34 +4448,34 @@ const corn = {
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: "Users trust custodians and various onchain contracts. We have not reviewed the contract implementations for this chain",
-                    content: TokenSnippet$1.xSolvBTC,
+                    content: TokenSnippet.xSolvBTC,
                 },
                 {
                     name: "Bedrock uniBTC",
                     infrastructureSlug: "bedrock-unibtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: TokenSnippet$1.BedrockUniBTC,
+                    title: TokenSnippet.CustodianPeg,
+                    content: TokenSnippet.BedrockUniBTC,
                 },
             ],
         },
         {
-            category: RiskCategory$1.DataAvailability,
+            category: RiskCategory.DataAvailability,
             score: 0,
             tier: RiskFactor.VeryHigh,
             title: "Data is stored and made available by a permissioned federation",
-            content: `${ReviewSnippet$1.AltDADAC}\n\nThere is one member of the data availability committee with a signing threshold of 1-1.`
+            content: `${ReviewSnippet.AltDADAC}\n\nThere is one member of the data availability committee with a signing threshold of 1-1.`
         },
         {
-            category: RiskCategory$1.NetworkOperators,
+            category: RiskCategory.NetworkOperators,
             score: 0,
             tier: RiskFactor.Medium,
             title: "The Corn network is operated and validated by permissioned entities. Users can self-propose their own state transitions if the operators go offline",
-            content: `${ReviewSnippet$1.SelfProposeMainAlt}\n\nCurrently, producing blocks and state root proposals are done by two centralized entities. The proposer must stake 0.1 ETH to post a state root.`
+            content: `${ReviewSnippet.SelfProposeMainAlt}\n\nCurrently, producing blocks and state root proposals are done by two centralized entities. The proposer must stake 0.1 ETH to post a state root.`
         },
         {
-            category: RiskCategory$1.FinalityGuarantees,
+            category: RiskCategory.FinalityGuarantees,
             score: 0,
             tier: RiskFactor.VeryHigh,
             title: "Corn's state transitions finalize by updating its state based on data posted to a federated committee",
@@ -4919,19 +4490,19 @@ const corn = {
             content: [
                 {
                     title: "Corn does not inherit any security from Bitcoin",
-                    content: BitcoinSecuritySnippet$2.NoSecurity,
+                    content: BitcoinSecuritySnippet$1.NoSecurity,
                 },
                 {
                     title: "BTCN token used to pay fees",
-                    content: BitcoinSecuritySnippet$2.WrappedTokenFees,
+                    content: BitcoinSecuritySnippet$1.WrappedTokenFees,
                 },
                 {
                     title: "No MEV introduced to Bitcoin",
-                    content: BitcoinSecuritySnippet$2.CentralizedSequencerMEV,
+                    content: BitcoinSecuritySnippet$1.CentralizedSequencerMEV,
                 },
                 {
                     title: "Corn does not contribute to the security budget",
-                    content: BitcoinSecuritySnippet$2.NoSecurityBudget,
+                    content: BitcoinSecuritySnippet$1.NoSecurityBudget,
                 },
             ],
         },
@@ -4951,15 +4522,15 @@ const corn = {
             content: [
                 {
                     title: "Ethereum Virtual Machine",
-                    content: TechnologySnippet$2.EVM,
+                    content: TechnologySnippet$1.EVM,
                 },
                 {
                     title: "Arbitrum Stylus",
-                    content: TechnologySnippet$2.ArbitrumStylus,
+                    content: TechnologySnippet$1.ArbitrumStylus,
                 },
                 {
                     title: "Fault Proofs",
-                    content: `${TechnologySnippet$2.FaultProofs}\n\nOn Corn, there is only one validator who is able to submit state root proposals and contest said proposals. This means the network gains no security benefits from having fault proofs enabled.`
+                    content: `${TechnologySnippet$1.FaultProofs}\n\nOn Corn, there is only one validator who is able to submit state root proposals and contest said proposals. This means the network gains no security benefits from having fault proofs enabled.`
                 },
             ],
         },
@@ -4969,7 +4540,7 @@ const corn = {
             content: [
                 {
                     title: "Onchain applications",
-                    content: UseCaseSnippet$2.OnchainApps,
+                    content: UseCaseSnippet$1.OnchainApps,
                 },
             ],
         },
@@ -5000,8 +4571,8 @@ const ethereum = {
     type: Type.Layer,
     slug: "ethereum",
     title: "Ethereum",
-    entityType: EntityType$1.AltL1,
-    entityCategory: EntityCategory$1.Alt,
+    entityType: EntityType.AltL1,
+    entityCategory: EntityCategory.Alt,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -5020,40 +4591,40 @@ const ethereum = {
     bitcoinOnly: false,
     links: [
         {
-            text: Site$1.Website,
+            text: Site.Website,
             url: "https://ethereum.org/",
         },
         {
-            text: Site$1.Docs,
+            text: Site.Docs,
             url: "https://ethereum.org/en/developers/docs/",
         },
         {
-            text: Site$1.Explorer,
+            text: Site.Explorer,
             url: "https://etherscan.io/",
         },
         {
-            text: Site$1.GitHub,
+            text: Site.GitHub,
             url: "https://github.com/ethereum",
         },
         {
-            text: Site$1.Twitter,
+            text: Site.Twitter,
             url: "https://x.com/ethereum",
         },
     ],
     description: "Ethereum is an alternative blockchain that supports a number of wrapped BTC tokens. Ethereum is home to the EVM execution environment which supports more expressive smart contracts.",
     riskSummary: [
         {
-            title: RiskSummarySnippet$2.TitleCustodianPegs,
-            content: RiskSummarySnippet$2.RiskSummaryCustodianPegs,
+            title: RiskSummarySnippet$1.TitleCustodianPegs,
+            content: RiskSummarySnippet$1.RiskSummaryCustodianPegs,
         },
         {
-            title: RiskSummarySnippet$2.TitleAlternativeL1,
-            content: RiskSummarySnippet$2.RiskSummaryAlternativeL1,
+            title: RiskSummarySnippet$1.TitleAlternativeL1,
+            content: RiskSummarySnippet$1.RiskSummaryAlternativeL1,
         },
     ],
     riskAnalysis: [
         {
-            category: RiskCategory$1.BtcCustody,
+            category: RiskCategory.BtcCustody,
             score: 0,
             tier: RiskFactor.NotApplicable,
             title: "",
@@ -5064,8 +4635,8 @@ const ethereum = {
                     infrastructureSlug: "bitgo-wbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: TokenSnippet$1.BitGowBTC,
+                    title: TokenSnippet.CustodianPeg,
+                    content: TokenSnippet.BitGowBTC,
                 },
                 {
                     name: "Threshold tBTC",
@@ -5073,150 +4644,150 @@ const ethereum = {
                     score: 0,
                     tier: RiskFactor.High,
                     title: "BTC users trust that tBTC will remain backed on Ethereum",
-                    content: TokenSnippet$1.ThresholdtBTC,
+                    content: TokenSnippet.ThresholdtBTC,
                 },
                 {
                     name: "Lombard LBTC",
                     infrastructureSlug: "lombard-lbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.FederationPeg,
-                    content: TokenSnippet$1.LombardLBTC,
+                    title: TokenSnippet.FederationPeg,
+                    content: TokenSnippet.LombardLBTC,
                 },
                 {
                     name: "Coinbase cbBTC",
                     infrastructureSlug: "coinbase-cbbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: TokenSnippet$1.CoinbasecbBTC,
+                    title: TokenSnippet.CustodianPeg,
+                    content: TokenSnippet.CoinbasecbBTC,
                 },
                 {
                     name: "Kraken KBTC",
                     infrastructureSlug: "kraken-kbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: TokenSnippet$1.KrakenKBTC,
+                    title: TokenSnippet.CustodianPeg,
+                    content: TokenSnippet.KrakenKBTC,
                 },
                 {
                     name: "Bedrock uniBTC",
                     infrastructureSlug: "bedrock-unibtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: TokenSnippet$1.BedrockUniBTC,
+                    title: TokenSnippet.CustodianPeg,
+                    content: TokenSnippet.BedrockUniBTC,
                 },
                 {
                     name: "PumpBTC",
                     infrastructureSlug: "pump-pumpbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: TokenSnippet$1.PumpBTC,
+                    title: TokenSnippet.CustodianPeg,
+                    content: TokenSnippet.PumpBTC,
                 },
                 {
                     name: "FBTC",
                     infrastructureSlug: "firebitcoin-fbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: TokenSnippet$1.FireBTC,
+                    title: TokenSnippet.CustodianPeg,
+                    content: TokenSnippet.FireBTC,
                 },
                 {
                     name: "Solv SolvBTC",
                     infrastructureSlug: "solv-solvbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: TokenSnippet$1.SolvBTC,
+                    title: TokenSnippet.CustodianPeg,
+                    content: TokenSnippet.SolvBTC,
                 },
                 {
                     name: "Solv xSolvBTC",
                     infrastructureSlug: "solv-xsolvbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianDerivative,
-                    content: TokenSnippet$1.xSolvBTC,
+                    title: TokenSnippet.CustodianDerivative,
+                    content: TokenSnippet.xSolvBTC,
                 },
                 {
                     name: "Solv SolvBTC.ENA",
                     infrastructureSlug: "solv-solvbtcena",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianDerivative,
-                    content: TokenSnippet$1.SolvBTCENA,
+                    title: TokenSnippet.CustodianDerivative,
+                    content: TokenSnippet.SolvBTCENA,
                 },
                 {
                     name: "Lorenzo stBTC",
                     infrastructureSlug: "lorenzo-stbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: TokenSnippet$1.LorenzostBTC,
+                    title: TokenSnippet.CustodianPeg,
+                    content: TokenSnippet.LorenzostBTC,
                 },
                 {
                     name: "Acorn aBTC",
                     infrastructureSlug: "acorn-abtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: TokenSnippet$1.AcornaBTC,
+                    title: TokenSnippet.CustodianPeg,
+                    content: TokenSnippet.AcornaBTC,
                 },
                 {
                     name: "Babypie mBTC",
                     infrastructureSlug: "babypie-mbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: TokenSnippet$1.babypie,
+                    title: TokenSnippet.CustodianPeg,
+                    content: TokenSnippet.babypie,
                 },
                 {
                     name: "Binance BTCB",
                     infrastructureSlug: "binance-btcb",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: `${TokenSnippet$1.BinanceBTCB}${TokenSnippet$1.smartcontractreview},`
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.BinanceBTCB}${TokenSnippet.smartcontractreview},`
                 },
                 {
                     name: "Obelisk oTCB",
                     infrastructureSlug: "obelisk-obtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: `${TokenSnippet$1.ObeliskoBTC}${TokenSnippet$1.smartcontractreview},`
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.ObeliskoBTC}${TokenSnippet.smartcontractreview},`
                 },
                 {
                     name: "IBTC Network iBTC",
                     infrastructureSlug: "ibtcnetwork-ibtc",
                     score: 0,
                     tier: RiskFactor.UnderReview,
-                    title: TokenSnippet$1.UnderReview,
-                    content: `${TokenSnippet$1.ibtcnetworkibtc}`
+                    title: TokenSnippet.UnderReview,
+                    content: `${TokenSnippet.ibtcnetworkibtc}`
                 },
                 {
                     name: "Xlink aBTC",
                     infrastructureSlug: "xlink-abtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: `${TokenSnippet$1.xlink}${TokenSnippet$1.smartcontractreview},`
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.xlink}${TokenSnippet.smartcontractreview},`
                 },
                 {
                     name: "Avalanche BTC.b",
                     infrastructureSlug: "avalanche-btcb",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.FederationPeg,
-                    content: `${TokenSnippet$1.AvalancheBTCb}${TokenSnippet$1.smartcontractreview},`
+                    title: TokenSnippet.FederationPeg,
+                    content: `${TokenSnippet.AvalancheBTCb}${TokenSnippet.smartcontractreview},`
                 },
                 {
                     name: "Bedrock brBTC",
                     infrastructureSlug: "bedrock-brbtc",
                     score: 0,
                     tier: RiskFactor.UnderReview,
-                    title: TokenSnippet$1.UnderReview,
+                    title: TokenSnippet.UnderReview,
                     content: `This two-way peg is under review.`,
                 },
                 {
@@ -5224,7 +4795,7 @@ const ethereum = {
                     infrastructureSlug: "badger-ebtc",
                     score: 0,
                     tier: RiskFactor.UnderReview,
-                    title: TokenSnippet$1.UnderReview,
+                    title: TokenSnippet.UnderReview,
                     content: `This two-way peg is under review.`,
                 },
                 {
@@ -5232,7 +4803,7 @@ const ethereum = {
                     infrastructureSlug: "21shares-btc",
                     score: 0,
                     tier: RiskFactor.UnderReview,
-                    title: TokenSnippet$1.UnderReview,
+                    title: TokenSnippet.UnderReview,
                     content: `This two-way peg is under review.`,
                 },
                 {
@@ -5240,7 +4811,7 @@ const ethereum = {
                     infrastructureSlug: "pstake-ybtc",
                     score: 0,
                     tier: RiskFactor.UnderReview,
-                    title: TokenSnippet$1.UnderReview,
+                    title: TokenSnippet.UnderReview,
                     content: `This two-way peg is under review.`,
                 },
                 {
@@ -5248,7 +4819,7 @@ const ethereum = {
                     infrastructureSlug: "lorenzo-enzobtc",
                     score: 0,
                     tier: RiskFactor.UnderReview,
-                    title: TokenSnippet$1.UnderReview,
+                    title: TokenSnippet.UnderReview,
                     content: `This two-way peg is under review.`,
                 },
                 {
@@ -5256,31 +4827,31 @@ const ethereum = {
                     infrastructureSlug: "manta-mbtc",
                     score: 0,
                     tier: RiskFactor.UnderReview,
-                    title: TokenSnippet$1.UnderReview,
+                    title: TokenSnippet.UnderReview,
                     content: `This two-way peg is under review.`,
                 },
             ],
         },
         {
-            category: RiskCategory$1.DataAvailability,
+            category: RiskCategory.DataAvailability,
             score: 0,
             tier: RiskFactor.AlternativePoS,
             title: "Data is stored and made available by Ethereum full nodes",
-            content: AtlSnippet$2.DAConsensusNetwork,
+            content: AtlSnippet$1.DAConsensusNetwork,
         },
         {
-            category: RiskCategory$1.NetworkOperators,
+            category: RiskCategory.NetworkOperators,
             score: 0,
             tier: RiskFactor.AlternativePoS,
             title: "Ethereum is operated by an alternative validator set",
-            content: AtlSnippet$2.OperatorsPoSNetwork,
+            content: AtlSnippet$1.OperatorsPoSNetwork,
         },
         {
-            category: RiskCategory$1.FinalityGuarantees,
+            category: RiskCategory.FinalityGuarantees,
             score: 0,
             tier: RiskFactor.AlternativePoS,
             title: "Finality on Ethereum is guaranteed by an alternative consensus mechanism",
-            content: AtlSnippet$2.FinalityConsensusNetwork,
+            content: AtlSnippet$1.FinalityConsensusNetwork,
         },
     ],
     sections: [
@@ -5290,11 +4861,11 @@ const ethereum = {
             content: [
                 {
                     title: "Ethereum does not inherit any security from bitcoin",
-                    content: BitcoinSecuritySnippet$2.NoSecurity,
+                    content: BitcoinSecuritySnippet$1.NoSecurity,
                 },
                 {
                     title: "ETH token used to pay fees",
-                    content: BitcoinSecuritySnippet$2.AltTokenFees,
+                    content: BitcoinSecuritySnippet$1.AltTokenFees,
                 },
                 {
                     title: "No MEV introduced to bitcoin",
@@ -5302,7 +4873,7 @@ const ethereum = {
                 },
                 {
                     title: "Ethereum does not contribute to the security budget",
-                    content: BitcoinSecuritySnippet$2.NoSecurity,
+                    content: BitcoinSecuritySnippet$1.NoSecurity,
                 },
             ],
         },
@@ -5312,7 +4883,7 @@ const ethereum = {
             content: [
                 {
                     title: "Ethereum Virtual Machine",
-                    content: TechnologySnippet$2.EVM,
+                    content: TechnologySnippet$1.EVM,
                 },
             ],
         },
@@ -5322,7 +4893,7 @@ const ethereum = {
             content: [
                 {
                     title: "Onchain applications",
-                    content: UseCaseSnippet$2.OnchainApps,
+                    content: UseCaseSnippet$1.OnchainApps,
                 },
             ],
         },
@@ -5333,8 +4904,8 @@ const fantom = {
     type: Type.Layer,
     slug: "fantom",
     title: "Fantom",
-    entityType: EntityType$1.AltL1,
-    entityCategory: EntityCategory$1.Alt,
+    entityType: EntityType.AltL1,
+    entityCategory: EntityCategory.Alt,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -5354,40 +4925,40 @@ const fantom = {
     bitcoinOnly: false,
     links: [
         {
-            text: Site$1.Website,
+            text: Site.Website,
             url: "https://www.soniclabs.com/",
         },
         {
-            text: Site$1.Docs,
+            text: Site.Docs,
             url: "https://docs.soniclabs.com/",
         },
         {
-            text: Site$1.Explorer,
+            text: Site.Explorer,
             url: "https://explorer.fantom.network/",
         },
         {
-            text: Site$1.GitHub,
+            text: Site.GitHub,
             url: "https://github.com/Fantom-foundation",
         },
         {
-            text: Site$1.Twitter,
+            text: Site.Twitter,
             url: "https://x.com/FantomFDN",
         },
     ],
     description: "Fantom is an alternative proof-of-stake blockchain that supports a number of wrapped BTC tokens.",
     riskSummary: [
         {
-            title: RiskSummarySnippet$2.TitleCustodianPegs,
-            content: RiskSummarySnippet$2.RiskSummaryCustodianPegs,
+            title: RiskSummarySnippet$1.TitleCustodianPegs,
+            content: RiskSummarySnippet$1.RiskSummaryCustodianPegs,
         },
         {
-            title: RiskSummarySnippet$2.TitleAlternativeL1,
-            content: RiskSummarySnippet$2.RiskSummaryAlternativeL1,
+            title: RiskSummarySnippet$1.TitleAlternativeL1,
+            content: RiskSummarySnippet$1.RiskSummaryAlternativeL1,
         },
     ],
     riskAnalysis: [
         {
-            category: RiskCategory$1.BtcCustody,
+            category: RiskCategory.BtcCustody,
             score: 0,
             tier: "",
             title: "",
@@ -5398,27 +4969,27 @@ const fantom = {
                     infrastructureSlug: "bitgo-wbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: `${TokenSnippet$1.BitGowBTC}\n\n${TokenSnippet$1.smartcontractreview},`
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.BitGowBTC}\n\n${TokenSnippet.smartcontractreview},`
                 },
             ],
         },
         {
-            category: RiskCategory$1.DataAvailability,
+            category: RiskCategory.DataAvailability,
             score: 0,
             tier: RiskFactor.VeryHigh,
             title: "Data is stored and made available by Fantom full nodes. ",
             content: "The data for Fantom's state is made available by its full nodes. We are reviewing if operating a node is permissionless.",
         },
         {
-            category: RiskCategory$1.NetworkOperators,
+            category: RiskCategory.NetworkOperators,
             score: 0,
             tier: RiskFactor.VeryHigh,
             title: "Fantom is operated by a federated validator set",
-            content: ReviewSnippet$1.OperatorSidechainPOS
+            content: ReviewSnippet.OperatorSidechainPOS
         },
         {
-            category: RiskCategory$1.FinalityGuarantees,
+            category: RiskCategory.FinalityGuarantees,
             score: 0,
             tier: RiskFactor.VeryHigh,
             title: "We are currently reviewing Fantom's finality guarantees",
@@ -5432,19 +5003,19 @@ const fantom = {
             content: [
                 {
                     title: "Fantom does not inherit any security from Bitcoin",
-                    content: BitcoinSecuritySnippet$2.NoSecurity,
+                    content: BitcoinSecuritySnippet$1.NoSecurity,
                 },
                 {
                     title: "FTM token used to pay fees",
-                    content: BitcoinSecuritySnippet$2.AltTokenFees,
+                    content: BitcoinSecuritySnippet$1.AltTokenFees,
                 },
                 {
                     title: "No MEV introduced to Bitcoin",
-                    content: BitcoinSecuritySnippet$2.AltNetworkMEV,
+                    content: BitcoinSecuritySnippet$1.AltNetworkMEV,
                 },
                 {
                     title: "Fantom does not contribute to the security budget",
-                    content: BitcoinSecuritySnippet$2.NoSecurityBudget,
+                    content: BitcoinSecuritySnippet$1.NoSecurityBudget,
                 },
             ],
         },
@@ -5464,8 +5035,8 @@ const fractal = {
     type: Type.Layer,
     slug: "fractal",
     title: "Fractal",
-    entityType: EntityType$1.MergeMined,
-    entityCategory: EntityCategory$1.Integrated,
+    entityType: EntityType.MergeMined,
+    entityCategory: EntityCategory.Integrated,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -5480,50 +5051,50 @@ const fractal = {
     btcLocked: NaN,
     nativeToken: "FB",
     feeToken: "FB",
-    notice: Notice$1.OtherReasonBridge,
+    notice: Notice.OtherReasonBridge,
     bitcoinOnly: false,
     links: [
         {
-            text: Site$1.Website,
+            text: Site.Website,
             url: "https://www.fractalbitcoin.io",
         },
         {
-            text: Site$1.Docs,
+            text: Site.Docs,
             url: "https://docs.fractalbitcoin.io",
         },
         {
-            text: Site$1.Explorer,
+            text: Site.Explorer,
             url: "https://www.okx.com/web3/explorer/fractal-bitcoin",
         },
         {
-            text: Site$1.GitHub,
+            text: Site.GitHub,
             url: "https://github.com/fractal-bitcoin/fractald-release",
         },
         {
-            text: Site$1.Twitter,
+            text: Site.Twitter,
             url: "https://x.com/fractal_bitcoin",
         },
     ],
     description: "Fractal is a Bitcoin sidechain purpose built to scale bitcoin-native applications like Runes and BRC-20s. It leverages a novel consensus mechanism similar to merge-mining.",
     riskSummary: [
         {
-            title: RiskSummarySnippet$2.TitleCustodianPegs,
-            content: RiskSummarySnippet$2.RiskSummaryCustodianPegs,
+            title: RiskSummarySnippet$1.TitleCustodianPegs,
+            content: RiskSummarySnippet$1.RiskSummaryCustodianPegs,
         },
         {
-            title: RiskSummarySnippet$2.TitleAlternativeL1,
-            content: RiskSummarySnippet$2.RiskSummaryAlternativeL1,
+            title: RiskSummarySnippet$1.TitleAlternativeL1,
+            content: RiskSummarySnippet$1.RiskSummaryAlternativeL1,
         }
     ],
     categorization: [
         {
-            title: Categorization$1.NoBridgeTitle,
-            content: Categorization$1.NoBridgeSnippet,
+            title: Categorization.NoBridgeTitle,
+            content: Categorization.NoBridgeSnippet,
         },
     ],
     riskAnalysis: [
         {
-            category: RiskCategory$1.BtcCustody,
+            category: RiskCategory.BtcCustody,
             score: 0,
             tier: RiskFactor.NotApplicable,
             title: "",
@@ -5535,7 +5106,7 @@ const fractal = {
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: "BTC backing the asset is held in a 3/5 multisig",
-                    content: TokenSnippet$1.SimpleSBTC,
+                    content: TokenSnippet.SimpleSBTC,
                 },
                 {
                     name: "Bool bBTC",
@@ -5543,30 +5114,30 @@ const fractal = {
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: "Fractal relies on a third party for bridge infrastructure",
-                    content: TokenSnippet$1.BoolBTC,
+                    content: TokenSnippet.BoolBTC,
                 },
             ],
         },
         {
-            category: RiskCategory$1.DataAvailability,
+            category: RiskCategory.DataAvailability,
             score: 0,
             tier: RiskFactor.Medium,
             title: "DA requirement satisfied by Fractal full nodes",
-            content: ReviewSnippet$1.AltL1DAPOW,
+            content: ReviewSnippet.AltL1DAPOW,
         },
         {
-            category: RiskCategory$1.BlockProduction,
+            category: RiskCategory.BlockProduction,
             score: 0,
             tier: RiskFactor.Medium,
             title: "Blocks are produced by two distinct miner sets",
             content: "Fractal inherits probabilistic finality from its operator set. It implements a mining mechanism called “cadence mining” that sees every ⅓ blocks merge-mined by bitcoin miners, and ⅔ blocks mined by miners running Fractal’s mining software. This sees Fractal run two different mining algorithms catered to two different operator sets.\n\nFractal blocks are considered finalized after a sufficient amount of hashrate has built on top of the longest chain.",
         },
         {
-            category: RiskCategory$1.FinalityGuarantees,
+            category: RiskCategory.FinalityGuarantees,
             score: 0,
             tier: RiskFactor.Medium,
             title: "Fractal full nodes validate proposed blocks",
-            content: ReviewSnippet$1.AltL1FinalityPOW,
+            content: ReviewSnippet.AltL1FinalityPOW,
         },
     ],
     sections: [
@@ -5580,15 +5151,15 @@ const fractal = {
                 },
                 {
                     title: "MEV not directly on bitcoin",
-                    content: BitcoinSecuritySnippet$2.MergeMineMEV,
+                    content: BitcoinSecuritySnippet$1.MergeMineMEV,
                 },
                 {
                     title: "FB token used for fees and to incentivize miners",
-                    content: BitcoinSecuritySnippet$2.AltTokenFees,
+                    content: BitcoinSecuritySnippet$1.AltTokenFees,
                 },
                 {
                     title: "Merge-mining enables Bitcoin miners to earn more fees",
-                    content: BitcoinSecuritySnippet$2.MergeMineFees,
+                    content: BitcoinSecuritySnippet$1.MergeMineFees,
                 },
             ],
         },
@@ -5628,15 +5199,15 @@ const fractal = {
             content: [
                 {
                     title: "Bitcoin Script",
-                    content: `${TechnologySnippet$2.BitcoinScript}\n\nFractal is based on Bitcoin Script.`
+                    content: `${TechnologySnippet$1.BitcoinScript}\n\nFractal is based on Bitcoin Script.`
                 },
                 {
                     title: "OP_CAT",
-                    content: TechnologySnippet$2.OP_CAT,
+                    content: TechnologySnippet$1.OP_CAT,
                 },
                 {
                     title: "Merge-mining",
-                    content: TechnologySnippet$2.MergeMining,
+                    content: TechnologySnippet$1.MergeMining,
                 },
                 {
                     title: "Cadence mining",
@@ -5650,11 +5221,11 @@ const fractal = {
             content: [
                 {
                     title: "Tokenized UTXO applications",
-                    content: UseCaseSnippet$2.UTXOTokenizedApplications,
+                    content: UseCaseSnippet$1.UTXOTokenizedApplications,
                 },
                 {
                     title: "Testing ground for new opcodes",
-                    content: UseCaseSnippet$2.TestingGround,
+                    content: UseCaseSnippet$1.TestingGround,
                 },
             ],
         },
@@ -5745,8 +5316,8 @@ const fuel = {
     type: Type.Layer,
     slug: "fuel",
     title: "Fuel",
-    entityType: EntityType$1.AltRollup,
-    entityCategory: EntityCategory$1.Alt,
+    entityType: EntityType.AltRollup,
+    entityCategory: EntityCategory.Alt,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -5766,23 +5337,23 @@ const fuel = {
     bitcoinOnly: false,
     links: [
         {
-            text: Site$1.Website,
+            text: Site.Website,
             url: "https://fuel.network/",
         },
         {
-            text: Site$1.Docs,
+            text: Site.Docs,
             url: "https://docs.fuel.network/docs/intro/what-is-fuel/",
         },
         {
-            text: Site$1.Explorer,
+            text: Site.Explorer,
             url: "https://app.fuel.network/",
         },
         {
-            text: Site$1.GitHub,
+            text: Site.GitHub,
             url: "https://github.com/FuelLabs/",
         },
         {
-            text: Site$1.Twitter,
+            text: Site.Twitter,
             url: "https://x.com/fuel_network",
         },
     ],
@@ -5803,7 +5374,7 @@ const fuel = {
     ],
     riskAnalysis: [
         {
-            category: RiskCategory$1.BtcCustody,
+            category: RiskCategory.BtcCustody,
             score: 0,
             tier: "",
             title: "",
@@ -5856,21 +5427,21 @@ const fuel = {
             ],
         },
         {
-            category: RiskCategory$1.DataAvailability,
+            category: RiskCategory.DataAvailability,
             score: 0,
             tier: RiskFactor.High,
             title: "EigenDA satisfies the network's data availability requirements",
             content: Reviewsnippet.AltRollupAltDA,
         },
         {
-            category: RiskCategory$1.NetworkOperators,
+            category: RiskCategory.NetworkOperators,
             score: 0,
             tier: RiskFactor.High,
             title: "Users can propose their own transaction to be included in a sequencer, but cannot indepdendently submit withdrawal requests to the official bridge contract",
             content: `${Reviewsnippet.AltRollupSelfSequenceMain}`,
         },
         {
-            category: RiskCategory$1.FinalityGuarantees,
+            category: RiskCategory.FinalityGuarantees,
             score: 0,
             tier: RiskFactor.High,
             title: "Fuel's state transitions finalize by updating its state based on data posted to EigenDA",
@@ -5906,8 +5477,8 @@ const gnosis = {
     type: Type.Layer,
     slug: "gnosis",
     title: "Gnosis",
-    entityType: EntityType$1.AltL1,
-    entityCategory: EntityCategory$1.Alt,
+    entityType: EntityType.AltL1,
+    entityCategory: EntityCategory.Alt,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -5927,40 +5498,40 @@ const gnosis = {
     bitcoinOnly: false,
     links: [
         {
-            text: Site$1.Website,
+            text: Site.Website,
             url: "https://www.gnosischain.com/",
         },
         {
-            text: Site$1.Docs,
+            text: Site.Docs,
             url: "https://docs.gnosischain.com/",
         },
         {
-            text: Site$1.Explorer,
+            text: Site.Explorer,
             url: "https://gnosisscan.io/",
         },
         {
-            text: Site$1.GitHub,
+            text: Site.GitHub,
             url: "https://github.com/gnosischain",
         },
         {
-            text: Site$1.Twitter,
+            text: Site.Twitter,
             url: "https://x.com/gnosischain",
         },
     ],
     description: "Gnosis is an alternative blockchain that supports a number of wrapped BTC tokens. It is EVM-compatible and leverages the same network architecture as Ethereum.",
     riskSummary: [
         {
-            title: RiskSummarySnippet$2.TitleCustodianPegs,
-            content: RiskSummarySnippet$2.RiskSummaryCustodianPegs,
+            title: RiskSummarySnippet$1.TitleCustodianPegs,
+            content: RiskSummarySnippet$1.RiskSummaryCustodianPegs,
         },
         {
-            title: RiskSummarySnippet$2.TitleAlternativeL1,
-            content: RiskSummarySnippet$2.RiskSummaryAlternativeL1,
+            title: RiskSummarySnippet$1.TitleAlternativeL1,
+            content: RiskSummarySnippet$1.RiskSummaryAlternativeL1,
         },
     ],
     riskAnalysis: [
         {
-            category: RiskCategory$1.BtcCustody,
+            category: RiskCategory.BtcCustody,
             score: 0,
             tier: "",
             title: "",
@@ -5971,27 +5542,27 @@ const gnosis = {
                     infrastructureSlug: "bitgo-wbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: `${TokenSnippet$1.BitGowBTC}\n\n${TokenSnippet$1.smartcontractreview}`
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.BitGowBTC}\n\n${TokenSnippet.smartcontractreview}`
                 },
             ],
         },
         {
-            category: RiskCategory$1.DataAvailability,
+            category: RiskCategory.DataAvailability,
             score: 0,
             tier: RiskFactor.AlternativePoS,
             title: "",
-            content: ReviewSnippet$1.AltL1DA,
+            content: ReviewSnippet.AltL1DA,
         },
         {
-            category: RiskCategory$1.BlockProduction,
+            category: RiskCategory.BlockProduction,
             score: 0,
             tier: RiskFactor.AlternativePoS,
             title: "Gnosis chain is operated by a distributed validator set",
-            content: ReviewSnippet$1.OperatorSidechainPOS,
+            content: ReviewSnippet.OperatorSidechainPOS,
         },
         {
-            category: RiskCategory$1.FinalityGuarantees,
+            category: RiskCategory.FinalityGuarantees,
             score: 0,
             tier: RiskFactor.AlternativePoS,
             title: "Finality guarantees are provided by the network's operator set",
@@ -6015,19 +5586,19 @@ const gnosis = {
             content: [
                 {
                     title: "Gnosis does not inherit any security from Bitcoin",
-                    content: BitcoinSecuritySnippet$2.NoSecurity,
+                    content: BitcoinSecuritySnippet$1.NoSecurity,
                 },
                 {
                     title: "GNO token used to pay fees",
-                    content: BitcoinSecuritySnippet$2.AltTokenFees,
+                    content: BitcoinSecuritySnippet$1.AltTokenFees,
                 },
                 {
                     title: "No MEV introduced to Bitcoin",
-                    content: BitcoinSecuritySnippet$2.AltNetworkMEV,
+                    content: BitcoinSecuritySnippet$1.AltNetworkMEV,
                 },
                 {
                     title: "Gnosis does not contribute to the security budget",
-                    content: BitcoinSecuritySnippet$2.NoSecurityBudget,
+                    content: BitcoinSecuritySnippet$1.NoSecurityBudget,
                 },
             ],
         },
@@ -6037,7 +5608,7 @@ const gnosis = {
             content: [
                 {
                     title: "EVM-compatible",
-                    content: TechnologySnippet$2.EVM,
+                    content: TechnologySnippet$1.EVM,
                 },
             ],
         },
@@ -6047,7 +5618,7 @@ const gnosis = {
             content: [
                 {
                     title: "Onchain applications",
-                    content: UseCaseSnippet$2.OnchainApps,
+                    content: UseCaseSnippet$1.OnchainApps,
                 },
             ],
         },
@@ -6058,8 +5629,8 @@ const goat = {
     type: Type.Layer,
     slug: "goat",
     title: "GOAT",
-    entityType: EntityType$1.AltL1,
-    entityCategory: EntityCategory$1.Alt,
+    entityType: EntityType.AltL1,
+    entityCategory: EntityCategory.Alt,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -6075,27 +5646,27 @@ const goat = {
     btcLocked: 0,
     nativeToken: "GOAT",
     feeToken: "BTC",
-    notice: Notice$1.OtherReasonBridge,
+    notice: Notice.OtherReasonBridge,
     bitcoinOnly: false,
     links: [
         {
-            text: Site$1.Website,
+            text: Site.Website,
             url: "https://www.goat.network/",
         },
         {
-            text: Site$1.Docs,
+            text: Site.Docs,
             url: "https://docs.goat.network/",
         },
         {
-            text: Site$1.Explorer,
+            text: Site.Explorer,
             url: "https://explorer.goat.network/",
         },
         {
-            text: Site$1.GitHub,
+            text: Site.GitHub,
             url: "https://github.com/GOATNetwork",
         },
         {
-            text: Site$1.Twitter,
+            text: Site.Twitter,
             url: "https://x.com/GOATRollup",
         },
     ],
@@ -6116,7 +5687,7 @@ const goat = {
     ],
     riskAnalysis: [
         {
-            category: RiskCategory$1.BtcCustody,
+            category: RiskCategory.BtcCustody,
             score: 0,
             tier: "",
             title: "",
@@ -6134,21 +5705,21 @@ const goat = {
             ],
         },
         {
-            category: RiskCategory$1.DataAvailability,
+            category: RiskCategory.DataAvailability,
             score: 0,
             tier: RiskFactor.High,
             title: "The network's validators are responsible for keeping a record of the network's state",
             content: Reviewsnippet.AltL1DA,
         },
         {
-            category: RiskCategory$1.NetworkOperators,
+            category: RiskCategory.NetworkOperators,
             score: 0,
             tier: RiskFactor.High,
             title: "The network is operated by a closed set of node operators",
             content: `${Reviewsnippet.OperatorFederated}`,
         },
         {
-            category: RiskCategory$1.FinalityGuarantees,
+            category: RiskCategory.FinalityGuarantees,
             score: 0,
             tier: RiskFactor.High,
             title: "After a transaction has been included in the chain, it cannot reorg",
@@ -6162,8 +5733,8 @@ const hemi = {
     type: Type.Layer,
     slug: "hemi",
     title: "Hemi",
-    entityType: EntityType$1.AltRollup,
-    entityCategory: EntityCategory$1.Integrated,
+    entityType: EntityType.AltRollup,
+    entityCategory: EntityCategory.Integrated,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -6179,26 +5750,26 @@ const hemi = {
     nativeToken: "ETH",
     feeToken: "ETH",
     bitcoinOnly: false,
-    notice: Notice$1.UnderReview,
+    notice: Notice.UnderReview,
     links: [
         {
-            text: Site$1.Website,
+            text: Site.Website,
             url: "https://hemi.xyz",
         },
         {
-            text: Site$1.Docs,
+            text: Site.Docs,
             url: "https://docs.hemi.xyz",
         },
         {
-            text: Site$1.Explorer,
+            text: Site.Explorer,
             url: "https://testnet.explorer.hemi.xyz",
         },
         {
-            text: Site$1.GitHub,
+            text: Site.GitHub,
             url: "https://github.com/hemilabs",
         },
         {
-            text: Site$1.Twitter,
+            text: Site.Twitter,
             url: "https://x.com/hemi_xyz",
         },
     ],
@@ -6228,12 +5799,12 @@ const hemi = {
     categorization: [
         {
             title: "The project anchors its state to bitcoin, but does not meet our criteria to be a sidesystem",
-            content: Categorization$1.NoBridgeSnippet,
+            content: Categorization.NoBridgeSnippet,
         },
     ],
     riskAnalysis: [
         {
-            category: RiskCategory$1.BtcCustody,
+            category: RiskCategory.BtcCustody,
             score: 0,
             tier: RiskFactor.NotApplicable,
             title: "",
@@ -6245,7 +5816,7 @@ const hemi = {
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: "The signers securing BTC backing HemiBTC have not been officially disclosed",
-                    content: TokenSnippet$1.HemiBTC,
+                    content: TokenSnippet.HemiBTC,
                     alert: Alertsnippet.BitcoinBridgeNoSigners,
                 },
                 {
@@ -6253,8 +5824,8 @@ const hemi = {
                     infrastructureSlug: "bitgo-wbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: `${TokenSnippet$1.BitGowBTC}\n\nBitGo wBTC is minted on Hemi through its official bridge program on Ethereum. This bridge program does not have a functional proof system. The bridge is also instantly upgadable by a 3/8 multisig.`,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.BitGowBTC}\n\nBitGo wBTC is minted on Hemi through its official bridge program on Ethereum. This bridge program does not have a functional proof system. The bridge is also instantly upgadable by a 3/8 multisig.`,
                     alert: Alertsnippet.AltRollupAltTokenNoFraudProofsPlusUpgrade,
                 },
                 {
@@ -6271,8 +5842,8 @@ const hemi = {
                     infrastructureSlug: "unirouter-ubtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: `${TokenSnippet$1.UniRouterBTC} UniRouter uBTC is minted on Hemi through a third-party provider, [Free Tech](https://tunnel.free.tech/).`,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.UniRouterBTC} UniRouter uBTC is minted on Hemi through a third-party provider, [Free Tech](https://tunnel.free.tech/).`,
                     alert: Alertsnippet.WrapperCentralized,
                 },
                 {
@@ -6280,8 +5851,8 @@ const hemi = {
                     infrastructureSlug: "bedrock-unibtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: `${TokenSnippet$1.BedrockUniBTC} Bedrock uniBTC is minted on Hemi through a third-party provider, [Free Tech](https://tunnel.free.tech/).`,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.BedrockUniBTC} Bedrock uniBTC is minted on Hemi through a third-party provider, [Free Tech](https://tunnel.free.tech/).`,
                     alert: Alertsnippet.WrapperCentralized,
                 },
                 {
@@ -6289,8 +5860,8 @@ const hemi = {
                     infrastructureSlug: "babypie-mbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: `${TokenSnippet$1.babypie} Babypie mBTC is minted on Hemi via an implementation of LayerZero with an escrow contract on Ethereum. The implementation's admin is a 3/7 multisig.`,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.babypie} Babypie mBTC is minted on Hemi via an implementation of LayerZero with an escrow contract on Ethereum. The implementation's admin is a 3/7 multisig.`,
                     alert: Alertsnippet.WrapperCentralized,
                 },
                 {
@@ -6307,8 +5878,8 @@ const hemi = {
                     infrastructureSlug: "pump-pumpbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: `${TokenSnippet$1.PumpBTC} Pump pumpBTC is minted on Hemi through a third-party provider, [Free Tech](https://tunnel.free.tech/).`,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.PumpBTC} Pump pumpBTC is minted on Hemi through a third-party provider, [Free Tech](https://tunnel.free.tech/).`,
                     alert: Alertsnippet.WrapperCentralized,
                 },
                 {
@@ -6316,8 +5887,8 @@ const hemi = {
                     infrastructureSlug: "merlin-mbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: `${TokenSnippet$1.MerlinMBTC} Pump pumpBTC is minted on Hemi through a third-party provider, [Free Tech](https://app.free.tech/?token=M-BTC).`,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.MerlinMBTC} Pump pumpBTC is minted on Hemi through a third-party provider, [Free Tech](https://app.free.tech/?token=M-BTC).`,
                     alert: Alertsnippet.WrapperCentralized,
                 },
                 {
@@ -6325,8 +5896,8 @@ const hemi = {
                     infrastructureSlug: "threshold-tbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.FederationPeg,
-                    content: `${TokenSnippet$1.ThresholdtBTC}\n\nThreshold tBTC is minted on Hemi through its official bridge program on Ethereum. This bridge program does not have a functional proof system. The bridge is also instantly upgadable by a 3/8 multisig.`,
+                    title: TokenSnippet.FederationPeg,
+                    content: `${TokenSnippet.ThresholdtBTC}\n\nThreshold tBTC is minted on Hemi through its official bridge program on Ethereum. This bridge program does not have a functional proof system. The bridge is also instantly upgadable by a 3/8 multisig.`,
                     alert: Alertsnippet.AltRollupAltTokenNoFraudProofsPlusUpgrade,
                 },
                 {
@@ -6334,8 +5905,8 @@ const hemi = {
                     infrastructureSlug: "obelisk-obtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: `${TokenSnippet$1.ObeliskoBTC} enzoBTC is minted directly on Hemi through a centralized admin.`,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.ObeliskoBTC} enzoBTC is minted directly on Hemi through a centralized admin.`,
                     alert: Alertsnippet.WrapperCentralized,
                 },
                 {
@@ -6343,8 +5914,8 @@ const hemi = {
                     infrastructureSlug: "bedrock-brbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: `${TokenSnippet$1.BedrockbrBTC} Bedrock brBTC is minted on Hemi through a third-party provider, [Free Tech](https://tunnel.free.tech/).`,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.BedrockbrBTC} Bedrock brBTC is minted on Hemi through a third-party provider, [Free Tech](https://tunnel.free.tech/).`,
                     alert: Alertsnippet.WrapperCentralized,
                 },
                 {
@@ -6352,33 +5923,33 @@ const hemi = {
                     infrastructureSlug: "kiki-ibtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
+                    title: TokenSnippet.CustodianPeg,
                     content: `${Reviewsnippet.KikiIBTC} Kiki iBTC is minted on Hemi through a third-party provider, [Free Tech](https://tunnel.free.tech/).`,
                     alert: Alertsnippet.WrapperCentralized,
                 },
             ],
         },
         {
-            category: RiskCategory$1.DataAvailability,
+            category: RiskCategory.DataAvailability,
             score: 0,
             tier: RiskFactor.Medium,
             title: "Data is stored and made available by Ethereum full nodes",
-            content: ReviewSnippet$1.EthereumRollupDA,
+            content: ReviewSnippet.EthereumRollupDA,
         },
         {
-            category: RiskCategory$1.NetworkOperators,
+            category: RiskCategory.NetworkOperators,
             score: 0,
             tier: RiskFactor.VeryHigh,
             title: "Hemi blocks are produced by a centralized sequencer",
             content: Reviewsnippet.AltRollupSelfSequenceNone,
         },
         {
-            category: RiskCategory$1.FinalityGuarantees,
+            category: RiskCategory.FinalityGuarantees,
             score: 0,
             tier: RiskFactor.Medium,
             title: "Hemi state updates are finalized offchain. The network anchors its state to bitcoin",
             content: `${Reviewsnippet.AltRollupFinality}\n\nAfter this state is generated, nodes participating in Hemi's Proof-of-Proof consensus submit the latest state root to bitcoin.`,
-            alert: AlertSnippet$1.ProofOfProofConsensus,
+            alert: AlertSnippet.ProofOfProofConsensus,
         },
     ],
     manualContracts: [
@@ -6418,19 +5989,19 @@ const hemi = {
             content: [
                 {
                     title: "Hemi checkpoints its state to bitcoin",
-                    content: BitcoinSecuritySnippet$2.Checkpoint,
+                    content: BitcoinSecuritySnippet$1.Checkpoint,
                 },
                 {
                     title: "ETH token used to pay fees",
-                    content: BitcoinSecuritySnippet$2.AltTokenFees,
+                    content: BitcoinSecuritySnippet$1.AltTokenFees,
                 },
                 {
                     title: "No MEV introduced to Bitcoin",
-                    content: BitcoinSecuritySnippet$2.CentralizedSequencerMEV,
+                    content: BitcoinSecuritySnippet$1.CentralizedSequencerMEV,
                 },
                 {
                     title: "Hemi does not contribute to the security budget",
-                    content: BitcoinSecuritySnippet$2.NoSecurityBudget,
+                    content: BitcoinSecuritySnippet$1.NoSecurityBudget,
                 },
             ],
         },
@@ -6440,7 +6011,7 @@ const hemi = {
             content: [
                 {
                     title: "Onchain applications",
-                    content: UseCaseSnippet$2.OnchainApps,
+                    content: UseCaseSnippet$1.OnchainApps,
                 },
             ],
         },
@@ -6454,7 +6025,7 @@ const hemi = {
                 },
                 {
                     title: "The network is EVM-compatible",
-                    content: `${TechnologySnippet$2.EVM} The network's specific node implementation additionally executes a bitcoin light client.`,
+                    content: `${TechnologySnippet$1.EVM} The network's specific node implementation additionally executes a bitcoin light client.`,
                 },
             ],
         },
@@ -6463,7 +6034,7 @@ const hemi = {
             title: "Knowledge Bits",
             content: [
                 {
-                    content: `${KnowledgeBitSnippet$2.EthereumL2}`,
+                    content: `${KnowledgeBitSnippet$1.EthereumL2}`,
                 },
             ],
         },
@@ -6474,8 +6045,8 @@ const hyperliquid = {
     type: Type.Layer,
     slug: "hyperliquid",
     title: "Hyperliquid",
-    entityType: EntityType$1.AltL1,
-    entityCategory: EntityCategory$1.Alt,
+    entityType: EntityType.AltL1,
+    entityCategory: EntityCategory.Alt,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -6494,36 +6065,36 @@ const hyperliquid = {
     bitcoinOnly: false,
     links: [
         {
-            text: Site$1.Website,
+            text: Site.Website,
             url: "https://hyperfoundation.org/",
         },
         {
-            text: Site$1.Docs,
+            text: Site.Docs,
             url: "https://hyperliquid.gitbook.io/hyperliquid-docs",
         },
         {
-            text: Site$1.Explorer,
+            text: Site.Explorer,
             url: "https://app.hyperliquid.xyz/explorer",
         },
         {
-            text: Site$1.GitHub,
+            text: Site.GitHub,
             url: "https://github.com/hyperliquid-dex",
         },
         {
-            text: Site$1.Twitter,
+            text: Site.Twitter,
             url: "https://x.com/HyperliquidX",
         },
     ],
     description: "Hyperliquid is a purpose built layer 1 blockchain focused on high performance applications. It supports a BTC derivative asset where BTC backing the asset is secured by a federation of guardians.",
     riskSummary: [
         {
-            title: RiskSummarySnippet$2.TitleCustodianPegs,
-            content: RiskSummarySnippet$2.RiskSummaryCustodianPegs,
+            title: RiskSummarySnippet$1.TitleCustodianPegs,
+            content: RiskSummarySnippet$1.RiskSummaryCustodianPegs,
         },
     ],
     riskAnalysis: [
         {
-            category: RiskCategory$1.BtcCustody,
+            category: RiskCategory.BtcCustody,
             score: 0,
             tier: RiskFactor.NotApplicable,
             title: "",
@@ -6534,31 +6105,31 @@ const hyperliquid = {
                     infrastructureSlug: "unit-ubtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.FederationPeg,
-                    content: TokenSnippet$1.HyperliquidBTC,
+                    title: TokenSnippet.FederationPeg,
+                    content: TokenSnippet.HyperliquidBTC,
                 },
             ],
         },
         {
-            category: RiskCategory$1.DataAvailability,
+            category: RiskCategory.DataAvailability,
             score: 0,
             tier: RiskFactor.UnderReview,
             title: "Data is stored and made available by an alternative consensus network",
-            content: `${ReviewSnippet$1.DAConsensusNetwork}\n\nWe are reviewing if node operation is permissionless.`,
+            content: `${ReviewSnippet.DAConsensusNetwork}\n\nWe are reviewing if node operation is permissionless.`,
         },
         {
-            category: RiskCategory$1.NetworkOperators,
+            category: RiskCategory.NetworkOperators,
             score: 0,
             tier: RiskFactor.UnderReview,
             title: "Blocks are built by validators participating in a POS network",
-            content: `${ReviewSnippet$1.OperatorSidechainPOS}\n\nWe are reviewing the process for joining the validator set.`,
+            content: `${ReviewSnippet.OperatorSidechainPOS}\n\nWe are reviewing the process for joining the validator set.`,
         },
         {
-            category: RiskCategory$1.FinalityGuarantees,
+            category: RiskCategory.FinalityGuarantees,
             score: 0,
             tier: RiskFactor.UnderReview,
             title: "This section is currently under review.",
-            content: ReviewSnippet$1.FinalityAltNetworkUnderReview
+            content: ReviewSnippet.FinalityAltNetworkUnderReview
         },
     ],
     sections: [
@@ -6568,19 +6139,19 @@ const hyperliquid = {
             content: [
                 {
                     title: "Hyperliquid does not inherit any security from Bitcoin",
-                    content: BitcoinSecuritySnippet$2.NoSecurity,
+                    content: BitcoinSecuritySnippet$1.NoSecurity,
                 },
                 {
                     title: "HYPE token used to pay fees",
-                    content: BitcoinSecuritySnippet$2.AltTokenFees,
+                    content: BitcoinSecuritySnippet$1.AltTokenFees,
                 },
                 {
                     title: "No MEV introduced to Bitcoin",
-                    content: BitcoinSecuritySnippet$2.AltNetworkMEV,
+                    content: BitcoinSecuritySnippet$1.AltNetworkMEV,
                 },
                 {
                     title: "Hyperliquid does not contribute to the security budget",
-                    content: BitcoinSecuritySnippet$2.NoSecurityBudget,
+                    content: BitcoinSecuritySnippet$1.NoSecurityBudget,
                 },
             ],
         },
@@ -6590,7 +6161,7 @@ const hyperliquid = {
             content: [
                 {
                     title: "Onchain applications",
-                    content: UseCaseSnippet$2.OnchainApps,
+                    content: UseCaseSnippet$1.OnchainApps,
                 },
             ],
         },
@@ -6601,8 +6172,8 @@ const template$8 = {
     type: Type.Layer,
     slug: "ink",
     title: "Ink",
-    entityType: EntityType$1.AltRollup,
-    entityCategory: EntityCategory$1.Alt,
+    entityType: EntityType.AltRollup,
+    entityCategory: EntityCategory.Alt,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -6622,19 +6193,19 @@ const template$8 = {
     bitcoinOnly: false,
     links: [
         {
-            text: Site$1.Website,
+            text: Site.Website,
             url: "https://inkonchain.com/",
         },
         {
-            text: Site$1.Explorer,
+            text: Site.Explorer,
             url: "https://explorer.inkonchain.com/",
         },
         {
-            text: Site$1.GitHub,
+            text: Site.GitHub,
             url: "https://github.com/inkonchain",
         },
         {
-            text: Site$1.Twitter,
+            text: Site.Twitter,
             url: "https://x.com/inkonchain",
         },
     ],
@@ -6659,7 +6230,7 @@ const template$8 = {
     ],
     riskAnalysis: [
         {
-            category: RiskCategory$1.BtcCustody,
+            category: RiskCategory.BtcCustody,
             score: 0,
             tier: "",
             title: "",
@@ -6695,21 +6266,21 @@ const template$8 = {
             ],
         },
         {
-            category: RiskCategory$1.DataAvailability,
+            category: RiskCategory.DataAvailability,
             score: 0,
             tier: RiskFactor.Medium,
             title: "Ethereum satisifes the data availability requirement",
             content: Reviewsnippet.EthereumRollupDA,
         },
         {
-            category: RiskCategory$1.NetworkOperators,
+            category: RiskCategory.NetworkOperators,
             score: 0,
             tier: RiskFactor.Medium,
             title: "In the event of censorship or liveness failures, users can propose their own exit",
             content: `${Reviewsnippet.AltRollupSelfSequenceMain}\n\n${Reviewsnippet.AltRollupSelfProposeMain}`
         },
         {
-            category: RiskCategory$1.FinalityGuarantees,
+            category: RiskCategory.FinalityGuarantees,
             score: 0,
             tier: RiskFactor.Medium,
             title: "Ink's state transitions finalize by updating its state based on data posted to Ethereum",
@@ -6743,8 +6314,8 @@ const internetcomputer = {
     type: Type.Layer,
     slug: "internetcomputer",
     title: "Internet Computer",
-    entityType: EntityType$1.Hybrid,
-    entityCategory: EntityCategory$1.Sidesystem,
+    entityType: EntityType.Hybrid,
+    entityCategory: EntityCategory.Sidesystem,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -6762,40 +6333,40 @@ const internetcomputer = {
     bitcoinOnly: false,
     links: [
         {
-            text: Site$1.Website,
+            text: Site.Website,
             url: "https://internetcomputer.org/bitcoin-integration",
         },
         {
-            text: Site$1.Docs,
+            text: Site.Docs,
             url: "https://internetcomputer.org/docs/current/references/bitcoin-how-it-works",
         },
         {
-            text: Site$1.Explorer,
+            text: Site.Explorer,
             url: "https://dashboard.internetcomputer.org/bitcoin",
         },
         {
-            text: Site$1.GitHub,
+            text: Site.GitHub,
             url: "https://github.com/dfinity/bitcoin-canisteri",
         },
         {
-            text: Site$1.Twitter,
+            text: Site.Twitter,
             url: "https://x.com/dfinity",
         },
     ],
     description: "The Internet Computer Protocol (ICP) is a network of connected subnet blockchains. It has a smart contract module, known as the Bitcoin Canister, that enables ICP smart contracts to have a view into Bitcoin state and conduct Bitcoin transactions. It additionally has a bitcoin-backed synthetic, known as ckBTC, which sees signers of a threshold signature scheme custody BTC and mint and burn synthetic ckBTC tokens on ICP. Developers can deploy a variety of applications leveraging the Bitcoin canister and ckBTC.",
     riskSummary: [
         {
-            title: RiskSummarySnippet$2.TitleCustodianPegs,
-            content: `${RiskSummarySnippet$2.RiskSummaryCustodianPegs}ICP's ckBTC custody mechanism is secured by signers participating in ICP's consensus protocol.`
+            title: RiskSummarySnippet$1.TitleCustodianPegs,
+            content: `${RiskSummarySnippet$1.RiskSummaryCustodianPegs}ICP's ckBTC custody mechanism is secured by signers participating in ICP's consensus protocol.`
         },
         {
-            title: RiskSummarySnippet$2.TitleAlternativeL1,
-            content: `${RiskSummarySnippet$2.RiskSummaryAlternativeL1}`
+            title: RiskSummarySnippet$1.TitleAlternativeL1,
+            content: `${RiskSummarySnippet$1.RiskSummaryAlternativeL1}`
         },
     ],
     riskAnalysis: [
         {
-            category: RiskCategory$1.BtcCustody,
+            category: RiskCategory.BtcCustody,
             score: 0,
             tier: RiskFactor.NotApplicable,
             title: "",
@@ -6812,21 +6383,21 @@ const internetcomputer = {
             ],
         },
         {
-            category: RiskCategory$1.DataAvailability,
+            category: RiskCategory.DataAvailability,
             score: 0,
             tier: RiskFactor.High,
             title: "DA requirement is fulfilled by an alternative consensus mechanism, but node operation is not permissionless",
             content: "Data regarding the state of the ‘pzp6e…’ is made available, and stored, by the 34 individual node operators running the subnet. Should nodes for this subnet go offline, and a backup of the state is not regularly made, then users would lose access to their ckBTC balance and would be unable to burn ckBTC tokens for Bitcoin locked in the respective multi-sig on the mainchain.",
         },
         {
-            category: RiskCategory$1.NetworkOperators,
+            category: RiskCategory.NetworkOperators,
             score: 0,
             tier: RiskFactor.Medium,
             title: "Numerous roles involved in block building and ckBTC transaction settlement",
             content: "Settlement for ckBTC transfers is a result of consensus for the ‘pzp6e…’ subnet operators. Once a transaction is finalized, it cannot be reorged. Users can leverage their ckBTC on any ICP subnet per the applications they interact with. Users would initiate a “call” to a specific application on any given subnet and a boundary node would route that call accordingly. The contract would then receive the call, initiate the transaction, and see the transaction confirmed should 2 ⁄ 3 of node operators on the given subnet accept it. This sees liveness trust assumptions vary from subnet to subnet. Bitcoin-specific applications would additionally be dependent on the Bitcoin Canister which is on the ‘w4rem…’ subnet, operated by 13 nodes. The 22 Boundary Nodes are managed by a centralized development organization, the DFINITY Foundation.",
         },
         {
-            category: RiskCategory$1.FinalityGuarantees,
+            category: RiskCategory.FinalityGuarantees,
             score: 0,
             tier: RiskFactor.Medium,
             title: "Finality assurances are provided by an alternative consensus mechanism",
@@ -6917,8 +6488,8 @@ const template$7 = {
     type: Type.Layer,
     slug: "iotex",
     title: "Iotex",
-    entityType: EntityType$1.AltL1,
-    entityCategory: EntityCategory$1.Alt,
+    entityType: EntityType.AltL1,
+    entityCategory: EntityCategory.Alt,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -6937,23 +6508,23 @@ const template$7 = {
     bitcoinOnly: false,
     links: [
         {
-            text: Site$1.Website,
+            text: Site.Website,
             url: "website",
         },
         {
-            text: Site$1.Docs,
+            text: Site.Docs,
             url: "docs",
         },
         {
-            text: Site$1.Explorer,
+            text: Site.Explorer,
             url: "explorer",
         },
         {
-            text: Site$1.GitHub,
+            text: Site.GitHub,
             url: "github",
         },
         {
-            text: Site$1.Twitter,
+            text: Site.Twitter,
             url: "socials",
         },
     ],
@@ -6970,7 +6541,7 @@ const template$7 = {
     ],
     riskAnalysis: [
         {
-            category: RiskCategory$1.BtcCustody,
+            category: RiskCategory.BtcCustody,
             score: 0,
             tier: "",
             title: "",
@@ -6982,7 +6553,7 @@ const template$7 = {
                     score: 0,
                     tier: RiskFactor.High,
                     title: "For an official two-way peg, you can write a customized title here.",
-                    content: `${TokenSnippet$1.TemplateBTC}\n\n`,
+                    content: `${TokenSnippet.TemplateBTC}\n\n`,
                 },
                 {
                     name: "Threshold tBTC",
@@ -6990,7 +6561,7 @@ const template$7 = {
                     score: 0,
                     tier: RiskFactor.High,
                     title: "For other titles, just use TokenSnippet.PegType as shown in the example below.",
-                    content: `${TokenSnippet$1.ThresholdtBTC}\n\n${TokenSnippet$1.smartcontractreview}\n\n`,
+                    content: `${TokenSnippet.ThresholdtBTC}\n\n${TokenSnippet.smartcontractreview}\n\n`,
                 },
                 {
                     name: "Threshold tBTC",
@@ -6998,38 +6569,38 @@ const template$7 = {
                     score: 0,
                     tier: RiskFactor.High,
                     title: "For other titles, just use TokenSnippet.PegType as shown in the example below.",
-                    content: `${TokenSnippet$1.ThresholdtBTC}\n\n${TokenSnippet$1.smartcontractreview}\n\nUse the smart contract review field to highlight that the asset may have additional trust assumptions if it's bridged across chains. You can also use text to describe additional trust assumptions.`,
+                    content: `${TokenSnippet.ThresholdtBTC}\n\n${TokenSnippet.smartcontractreview}\n\nUse the smart contract review field to highlight that the asset may have additional trust assumptions if it's bridged across chains. You can also use text to describe additional trust assumptions.`,
                 },
                 {
                     name: "Template BTC",
                     infrastructureSlug: "templace-btc",
                     score: 0,
                     tier: RiskFactor.High,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: `${TokenSnippet$1.TemplateBTC}`,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.TemplateBTC}`,
                 },
             ],
         },
         {
-            category: RiskCategory$1.DataAvailability,
+            category: RiskCategory.DataAvailability,
             score: 0,
             tier: RiskFactor.UnderReview,
             title: "Add a custom title here",
-            content: ReviewSnippet$1.TemplateReview,
+            content: ReviewSnippet.TemplateReview,
         },
         {
-            category: RiskCategory$1.NetworkOperators,
+            category: RiskCategory.NetworkOperators,
             score: 0,
             tier: RiskFactor.UnderReview,
             title: "Add a custom title here",
-            content: `${ReviewSnippet$1.TemplateReview}\n\nAdd additional context with text if needed.`
+            content: `${ReviewSnippet.TemplateReview}\n\nAdd additional context with text if needed.`
         },
         {
-            category: RiskCategory$1.FinalityGuarantees,
+            category: RiskCategory.FinalityGuarantees,
             score: 0,
             tier: RiskFactor.UnderReview,
             title: "Add a custom title here",
-            content: `${ReviewSnippet$1.TemplateReview}\n\nAdd additional context with text if needed.`
+            content: `${ReviewSnippet.TemplateReview}\n\nAdd additional context with text if needed.`
         },
     ],
     manualContracts: [
@@ -7075,19 +6646,19 @@ const template$7 = {
             content: [
                 {
                     title: "Add a prop saying if the network inherits security from bitcoin",
-                    content: BitcoinSecuritySnippet$2.Template,
+                    content: BitcoinSecuritySnippet$1.Template,
                 },
                 {
                     title: "Add a prop clarifying if the network uses an altcoin or is bitcoin denominated",
-                    content: BitcoinSecuritySnippet$2.Template,
+                    content: BitcoinSecuritySnippet$1.Template,
                 },
                 {
                     title: "Add a prop clarifying if the network introduces MEV to bitcoin (if at all)",
-                    content: BitcoinSecuritySnippet$2.Template,
+                    content: BitcoinSecuritySnippet$1.Template,
                 },
                 {
                     title: "Add a prop clarifying if the network contributes to the security budget",
-                    content: BitcoinSecuritySnippet$2.Template,
+                    content: BitcoinSecuritySnippet$1.Template,
                 },
             ],
         },
@@ -7097,7 +6668,7 @@ const template$7 = {
             content: [
                 {
                     title: "Add a prop on significant tech components. If there is no prop, consider adding one to the prop.ts file. If the tech component is highly customizeable, add text for the content.",
-                    content: TechnologySnippet$2.Template,
+                    content: TechnologySnippet$1.Template,
                 },
                 {
                     title: "Add a prop on significant tech components. If there is no prop, consider adding one to the prop.ts file. If the tech component is highly customizeable, add text for the content.",
@@ -7111,7 +6682,7 @@ const template$7 = {
             content: [
                 {
                     title: "Add a prop on significant use cases.",
-                    content: UseCaseSnippet$2.Template,
+                    content: UseCaseSnippet$1.Template,
                 },
             ],
         },
@@ -7131,8 +6702,8 @@ const template$6 = {
     type: Type.Layer,
     slug: "kava",
     title: "Kava",
-    entityType: EntityType$1.AltL1,
-    entityCategory: EntityCategory$1.Alt,
+    entityType: EntityType.AltL1,
+    entityCategory: EntityCategory.Alt,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -7151,23 +6722,23 @@ const template$6 = {
     bitcoinOnly: false,
     links: [
         {
-            text: Site$1.Website,
+            text: Site.Website,
             url: "website",
         },
         {
-            text: Site$1.Docs,
+            text: Site.Docs,
             url: "docs",
         },
         {
-            text: Site$1.Explorer,
+            text: Site.Explorer,
             url: "explorer",
         },
         {
-            text: Site$1.GitHub,
+            text: Site.GitHub,
             url: "github",
         },
         {
-            text: Site$1.Twitter,
+            text: Site.Twitter,
             url: "socials",
         },
     ],
@@ -7184,7 +6755,7 @@ const template$6 = {
     ],
     riskAnalysis: [
         {
-            category: RiskCategory$1.BtcCustody,
+            category: RiskCategory.BtcCustody,
             score: 0,
             tier: "",
             title: "",
@@ -7196,7 +6767,7 @@ const template$6 = {
                     score: 0,
                     tier: RiskFactor.High,
                     title: "For an official two-way peg, you can write a customized title here.",
-                    content: `${TokenSnippet$1.TemplateBTC}\n\n`,
+                    content: `${TokenSnippet.TemplateBTC}\n\n`,
                 },
                 {
                     name: "Threshold tBTC",
@@ -7204,7 +6775,7 @@ const template$6 = {
                     score: 0,
                     tier: RiskFactor.High,
                     title: "For other titles, just use TokenSnippet.PegType as shown in the example below.",
-                    content: `${TokenSnippet$1.ThresholdtBTC}\n\n${TokenSnippet$1.smartcontractreview}\n\n`,
+                    content: `${TokenSnippet.ThresholdtBTC}\n\n${TokenSnippet.smartcontractreview}\n\n`,
                 },
                 {
                     name: "Threshold tBTC",
@@ -7212,38 +6783,38 @@ const template$6 = {
                     score: 0,
                     tier: RiskFactor.High,
                     title: "For other titles, just use TokenSnippet.PegType as shown in the example below.",
-                    content: `${TokenSnippet$1.ThresholdtBTC}\n\n${TokenSnippet$1.smartcontractreview}\n\nUse the smart contract review field to highlight that the asset may have additional trust assumptions if it's bridged across chains. You can also use text to describe additional trust assumptions.`,
+                    content: `${TokenSnippet.ThresholdtBTC}\n\n${TokenSnippet.smartcontractreview}\n\nUse the smart contract review field to highlight that the asset may have additional trust assumptions if it's bridged across chains. You can also use text to describe additional trust assumptions.`,
                 },
                 {
                     name: "Template BTC",
                     infrastructureSlug: "templace-btc",
                     score: 0,
                     tier: RiskFactor.High,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: `${TokenSnippet$1.TemplateBTC}`,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.TemplateBTC}`,
                 },
             ],
         },
         {
-            category: RiskCategory$1.DataAvailability,
+            category: RiskCategory.DataAvailability,
             score: 0,
             tier: RiskFactor.UnderReview,
             title: "Add a custom title here",
-            content: ReviewSnippet$1.TemplateReview,
+            content: ReviewSnippet.TemplateReview,
         },
         {
-            category: RiskCategory$1.NetworkOperators,
+            category: RiskCategory.NetworkOperators,
             score: 0,
             tier: RiskFactor.UnderReview,
             title: "Add a custom title here",
-            content: `${ReviewSnippet$1.TemplateReview}\n\nAdd additional context with text if needed.`
+            content: `${ReviewSnippet.TemplateReview}\n\nAdd additional context with text if needed.`
         },
         {
-            category: RiskCategory$1.FinalityGuarantees,
+            category: RiskCategory.FinalityGuarantees,
             score: 0,
             tier: RiskFactor.UnderReview,
             title: "Add a custom title here",
-            content: `${ReviewSnippet$1.TemplateReview}\n\nAdd additional context with text if needed.`
+            content: `${ReviewSnippet.TemplateReview}\n\nAdd additional context with text if needed.`
         },
     ],
     manualContracts: [
@@ -7289,19 +6860,19 @@ const template$6 = {
             content: [
                 {
                     title: "Add a prop saying if the network inherits security from bitcoin",
-                    content: BitcoinSecuritySnippet$2.Template,
+                    content: BitcoinSecuritySnippet$1.Template,
                 },
                 {
                     title: "Add a prop clarifying if the network uses an altcoin or is bitcoin denominated",
-                    content: BitcoinSecuritySnippet$2.Template,
+                    content: BitcoinSecuritySnippet$1.Template,
                 },
                 {
                     title: "Add a prop clarifying if the network introduces MEV to bitcoin (if at all)",
-                    content: BitcoinSecuritySnippet$2.Template,
+                    content: BitcoinSecuritySnippet$1.Template,
                 },
                 {
                     title: "Add a prop clarifying if the network contributes to the security budget",
-                    content: BitcoinSecuritySnippet$2.Template,
+                    content: BitcoinSecuritySnippet$1.Template,
                 },
             ],
         },
@@ -7311,7 +6882,7 @@ const template$6 = {
             content: [
                 {
                     title: "Add a prop on significant tech components. If there is no prop, consider adding one to the prop.ts file. If the tech component is highly customizeable, add text for the content.",
-                    content: TechnologySnippet$2.Template,
+                    content: TechnologySnippet$1.Template,
                 },
                 {
                     title: "Add a prop on significant tech components. If there is no prop, consider adding one to the prop.ts file. If the tech component is highly customizeable, add text for the content.",
@@ -7325,7 +6896,7 @@ const template$6 = {
             content: [
                 {
                     title: "Add a prop on significant use cases.",
-                    content: UseCaseSnippet$2.Template,
+                    content: UseCaseSnippet$1.Template,
                 },
             ],
         },
@@ -7345,8 +6916,8 @@ const lightning = {
     type: Type.Layer,
     slug: "lightning",
     title: "Lightning Network",
-    entityType: EntityType$1.StateChannel,
-    entityCategory: EntityCategory$1.BitcoinNative,
+    entityType: EntityType.StateChannel,
+    entityCategory: EntityCategory.BitcoinNative,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -7362,15 +6933,15 @@ const lightning = {
     nativeToken: "BTC",
     feeToken: "BTC",
     notice: undefined,
-    custodyTitle: CustodyTitle$1.BitcoinNative,
+    custodyTitle: CustodyTitle.BitcoinNative,
     bitcoinOnly: true,
     links: [
         {
-            text: Site$1.Website,
+            text: Site.Website,
             url: "https://lightning.network",
         },
         {
-            text: Site$1.Docs,
+            text: Site.Docs,
             url: "https://lightning.network/docs",
         },
     ],
@@ -7378,12 +6949,12 @@ const lightning = {
     riskSummary: [
         {
             title: "Users must watch for malicious channel closures",
-            content: RiskSummarySnippet$2.RiskLightningChannel,
+            content: RiskSummarySnippet$1.RiskLightningChannel,
         },
     ],
     riskAnalysis: [
         {
-            category: RiskCategory$1.BtcCustody,
+            category: RiskCategory.BtcCustody,
             score: 0,
             tier: RiskFactor.NotApplicable,
             title: "",
@@ -7400,21 +6971,21 @@ const lightning = {
             ],
         },
         {
-            category: RiskCategory$1.DataAvailability,
+            category: RiskCategory.DataAvailability,
             score: 0,
             tier: RiskFactor.Low,
             title: "Channel state data is self-hosted by users",
             content: "Lightning Network users are solely responsible for preserving their channel state data, as the network does not provide data redundancy. Failure to maintain this data could result in a complete loss of funds stored in the channel.",
         },
         {
-            category: RiskCategory$1.NetworkOperators,
+            category: RiskCategory.NetworkOperators,
             score: 0,
             tier: RiskFactor.Low,
             title: "Network operators run nodes to route Lightning payments, with node operation being permissionless. Single-node failures do not compromise payment reliability",
             content: "Users in the Lightning Network interact directly with their channel counterparties, bypassing the need for block builders or sequencers. Payments to other recipients are routed through a decentralized network of nodes.\n\nIf a route fails due to a node operator being offline, users can route via an alternative channel.",
         },
         {
-            category: RiskCategory$1.FinalityGuarantees,
+            category: RiskCategory.FinalityGuarantees,
             score: 0,
             tier: RiskFactor.Low,
             title: "Lightning transactions are atomic and settle instantly. Finality occurs with channel closure",
@@ -7523,8 +7094,8 @@ const template$5 = {
     type: Type.Layer,
     slug: "linea",
     title: "Linea",
-    entityType: EntityType$1.AltRollup,
-    entityCategory: EntityCategory$1.Alt,
+    entityType: EntityType.AltRollup,
+    entityCategory: EntityCategory.Alt,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -7544,23 +7115,23 @@ const template$5 = {
     bitcoinOnly: false,
     links: [
         {
-            text: Site$1.Website,
+            text: Site.Website,
             url: "https://linea.build/",
         },
         {
-            text: Site$1.Docs,
+            text: Site.Docs,
             url: "https://docs.linea.build/",
         },
         {
-            text: Site$1.Explorer,
+            text: Site.Explorer,
             url: "https://lineascan.build/",
         },
         {
-            text: Site$1.GitHub,
+            text: Site.GitHub,
             url: "https://github.com/Consensys?q=linea&type=all&language=&sort=stargazers",
         },
         {
-            text: Site$1.Twitter,
+            text: Site.Twitter,
             url: "https://x.com/LineaBuild",
         },
     ],
@@ -7585,7 +7156,7 @@ const template$5 = {
     ],
     riskAnalysis: [
         {
-            category: RiskCategory$1.BtcCustody,
+            category: RiskCategory.BtcCustody,
             score: 0,
             tier: "",
             title: "",
@@ -7657,21 +7228,21 @@ const template$5 = {
             ],
         },
         {
-            category: RiskCategory$1.DataAvailability,
+            category: RiskCategory.DataAvailability,
             score: 0,
             tier: RiskFactor.Medium,
             title: "Ethereum satisifes the data availability requirement",
             content: Reviewsnippet.EthereumRollupDA,
         },
         {
-            category: RiskCategory$1.NetworkOperators,
+            category: RiskCategory.NetworkOperators,
             score: 0,
             tier: RiskFactor.VeryHigh,
             title: "In the event of censorship or liveness failures, users cannot exit the system",
             content: `${Reviewsnippet.AltRollupSelfSequenceNone}\n\n${Reviewsnippet.AltRollupSelfProposeNone}`
         },
         {
-            category: RiskCategory$1.FinalityGuarantees,
+            category: RiskCategory.FinalityGuarantees,
             score: 0,
             tier: RiskFactor.Medium,
             title: "Linea's state transitions finalize by updating its state based on data posted to Ethereum",
@@ -7705,8 +7276,8 @@ const liquid = {
     type: Type.Layer,
     slug: "liquid",
     title: "Liquid",
-    entityType: EntityType$1.Federation,
-    entityCategory: EntityCategory$1.Sidesystem,
+    entityType: EntityType.Federation,
+    entityCategory: EntityCategory.Sidesystem,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -7721,44 +7292,44 @@ const liquid = {
     btcLocked: 3834,
     nativeToken: "LBTC",
     feeToken: "LBTC",
-    notice: Notice$1.UnderReview,
+    notice: Notice.UnderReview,
     bitcoinOnly: true,
     links: [
         {
-            text: Site$1.Website,
+            text: Site.Website,
             url: "https://liquid.net",
         },
         {
-            text: Site$1.Docs,
+            text: Site.Docs,
             url: "https://docs.liquid.net/docs/technical-overview",
         },
         {
-            text: Site$1.Explorer,
+            text: Site.Explorer,
             url: "https://blockstream.info/liquid",
         },
         {
-            text: Site$1.GitHub,
+            text: Site.GitHub,
             url: "https://github.com/ElementsProject/elements",
         },
         {
-            text: Site$1.Twitter,
+            text: Site.Twitter,
             url: "https://twitter.com/bitcoinlayers",
         },
     ],
     description: "The Liquid Network is a sidechain that enables users to perform confidential transactions, swaps, issue tokenized assets, and more, on the sidechain. It is managed by a permissioned federation, and does not use the Bitcoin Layer 1 for security. It uses a federated multi-sig to custody the BTC that is used to issue BTC IOUs (L-BTC) on the sidechain.",
     riskSummary: [
         {
-            title: RiskSummarySnippet$2.TitleCustodianPegs,
-            content: RiskSummarySnippet$2.RiskSummaryCustodianPegs,
+            title: RiskSummarySnippet$1.TitleCustodianPegs,
+            content: RiskSummarySnippet$1.RiskSummaryCustodianPegs,
         },
         {
-            title: RiskSummarySnippet$2.TitleFederation,
-            content: RiskSummarySnippet$2.RiskSummaryFederation,
+            title: RiskSummarySnippet$1.TitleFederation,
+            content: RiskSummarySnippet$1.RiskSummaryFederation,
         }
     ],
     riskAnalysis: [
         {
-            category: RiskCategory$1.BtcCustody,
+            category: RiskCategory.BtcCustody,
             score: 0,
             tier: RiskFactor.NotApplicable,
             title: "",
@@ -7770,31 +7341,31 @@ const liquid = {
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: "Users trust a federation with custody of their BTC. The members of the federation have not been disclosed.",
-                    content: TokenSnippet$1.LiquidLBTC,
+                    content: TokenSnippet.LiquidLBTC,
                 },
             ],
         },
         {
-            category: RiskCategory$1.DataAvailability,
+            category: RiskCategory.DataAvailability,
             score: 0,
             tier: RiskFactor.UnderReview,
             title: "Data is stored and made available by Liquid full nodes. Full nodes must connect to the network via permissioned entities",
-            content: `${ReviewSnippet$1.DAConsensusNetwork}\n\nLiquid full nodes must connect to bridge nodes to be able to participate in the network. [Bridge nodes](https://docs.liquid.net/docs/technical-overview#general-public) are run by Liquid federation members`,
+            content: `${ReviewSnippet.DAConsensusNetwork}\n\nLiquid full nodes must connect to bridge nodes to be able to participate in the network. [Bridge nodes](https://docs.liquid.net/docs/technical-overview#general-public) are run by Liquid federation members`,
             alert: Alertsnippet.UnderReview,
         },
         {
-            category: RiskCategory$1.NetworkOperators,
+            category: RiskCategory.NetworkOperators,
             score: 0,
             tier: RiskFactor.VeryHigh,
             title: "Blocks are produced by Liquid functionaries. The identities of the functionary set has not been revealed.",
-            content: ReviewSnippet$1.OperatorFederated,
+            content: ReviewSnippet.OperatorFederated,
         },
         {
-            category: RiskCategory$1.FinalityGuarantees,
+            category: RiskCategory.FinalityGuarantees,
             score: 0,
             tier: RiskFactor.UnderReview,
             title: "Liquid blocks are finalized via Liquid full nodes. Full nodes must connect to the network via permissioned entities",
-            content: `${ReviewSnippet$1.AltL1FinalityFederatedFullNode}\n\nLiquid full nodes must connect to bridge nodes to be able to participate in the network. [Bridge nodes](https://docs.liquid.net/docs/technical-overview#general-public) are run by Liquid federation members.`,
+            content: `${ReviewSnippet.AltL1FinalityFederatedFullNode}\n\nLiquid full nodes must connect to bridge nodes to be able to participate in the network. [Bridge nodes](https://docs.liquid.net/docs/technical-overview#general-public) are run by Liquid federation members.`,
             alert: Alertsnippet.UnderReview,
         },
     ],
@@ -7805,19 +7376,19 @@ const liquid = {
             content: [
                 {
                     title: "Liquid does not inherit any security from Bitcoin consensus participants",
-                    content: BitcoinSecuritySnippet$2.NoSecurity,
+                    content: BitcoinSecuritySnippet$1.NoSecurity,
                 },
                 {
                     title: "No other token required",
-                    content: BitcoinSecuritySnippet$2.WrappedTokenFees,
+                    content: BitcoinSecuritySnippet$1.WrappedTokenFees,
                 },
                 {
                     title: "No MEV introduced on Bitcoin",
-                    content: BitcoinSecuritySnippet$2.AltNetworkMEV,
+                    content: BitcoinSecuritySnippet$1.AltNetworkMEV,
                 },
                 {
                     title: "Does not directly contribute to the security budget",
-                    content: BitcoinSecuritySnippet$2.NoSecurityBudget,
+                    content: BitcoinSecuritySnippet$1.NoSecurityBudget,
                 },
             ],
         },
@@ -7837,11 +7408,11 @@ const liquid = {
             content: [
                 {
                     title: "Elements",
-                    content: TechnologySnippet$2.Elements,
+                    content: TechnologySnippet$1.Elements,
                 },
                 {
                     title: "Confidential Transactions",
-                    content: TechnologySnippet$2.ConfidentialTransactions,
+                    content: TechnologySnippet$1.ConfidentialTransactions,
                 },
             ],
         },
@@ -7851,11 +7422,11 @@ const liquid = {
             content: [
                 {
                     title: "Tokenized assets",
-                    content: UseCaseSnippet$2.TokenizedAssets,
+                    content: UseCaseSnippet$1.TokenizedAssets,
                 },
                 {
                     title: "Testing ground for new opcodes",
-                    content: UseCaseSnippet$2.TestingGround,
+                    content: UseCaseSnippet$1.TestingGround,
                 },
             ],
         },
@@ -7886,8 +7457,8 @@ const template$4 = {
     type: Type.Layer,
     slug: "manta",
     title: "Manta",
-    entityType: EntityType$1.AltRollup,
-    entityCategory: EntityCategory$1.Alt,
+    entityType: EntityType.AltRollup,
+    entityCategory: EntityCategory.Alt,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -7906,23 +7477,23 @@ const template$4 = {
     bitcoinOnly: false,
     links: [
         {
-            text: Site$1.Website,
+            text: Site.Website,
             url: "website",
         },
         {
-            text: Site$1.Docs,
+            text: Site.Docs,
             url: "docs",
         },
         {
-            text: Site$1.Explorer,
+            text: Site.Explorer,
             url: "explorer",
         },
         {
-            text: Site$1.GitHub,
+            text: Site.GitHub,
             url: "github",
         },
         {
-            text: Site$1.Twitter,
+            text: Site.Twitter,
             url: "socials",
         },
     ],
@@ -7939,7 +7510,7 @@ const template$4 = {
     ],
     riskAnalysis: [
         {
-            category: RiskCategory$1.BtcCustody,
+            category: RiskCategory.BtcCustody,
             score: 0,
             tier: "",
             title: "",
@@ -7951,7 +7522,7 @@ const template$4 = {
                     score: 0,
                     tier: RiskFactor.High,
                     title: "For an official two-way peg, you can write a customized title here.",
-                    content: `${TokenSnippet$1.TemplateBTC}\n\n`,
+                    content: `${TokenSnippet.TemplateBTC}\n\n`,
                 },
                 {
                     name: "Threshold tBTC",
@@ -7959,7 +7530,7 @@ const template$4 = {
                     score: 0,
                     tier: RiskFactor.High,
                     title: "For other titles, just use TokenSnippet.PegType as shown in the example below.",
-                    content: `${TokenSnippet$1.ThresholdtBTC}\n\n${TokenSnippet$1.smartcontractreview}\n\n`,
+                    content: `${TokenSnippet.ThresholdtBTC}\n\n${TokenSnippet.smartcontractreview}\n\n`,
                 },
                 {
                     name: "Threshold tBTC",
@@ -7967,38 +7538,38 @@ const template$4 = {
                     score: 0,
                     tier: RiskFactor.High,
                     title: "For other titles, just use TokenSnippet.PegType as shown in the example below.",
-                    content: `${TokenSnippet$1.ThresholdtBTC}\n\n${TokenSnippet$1.smartcontractreview}\n\nUse the smart contract review field to highlight that the asset may have additional trust assumptions if it's bridged across chains. You can also use text to describe additional trust assumptions.`,
+                    content: `${TokenSnippet.ThresholdtBTC}\n\n${TokenSnippet.smartcontractreview}\n\nUse the smart contract review field to highlight that the asset may have additional trust assumptions if it's bridged across chains. You can also use text to describe additional trust assumptions.`,
                 },
                 {
                     name: "Template BTC",
                     infrastructureSlug: "templace-btc",
                     score: 0,
                     tier: RiskFactor.High,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: `${TokenSnippet$1.TemplateBTC}`,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.TemplateBTC}`,
                 },
             ],
         },
         {
-            category: RiskCategory$1.DataAvailability,
+            category: RiskCategory.DataAvailability,
             score: 0,
             tier: RiskFactor.UnderReview,
             title: "Add a custom title here",
-            content: ReviewSnippet$1.TemplateReview,
+            content: ReviewSnippet.TemplateReview,
         },
         {
-            category: RiskCategory$1.NetworkOperators,
+            category: RiskCategory.NetworkOperators,
             score: 0,
             tier: RiskFactor.UnderReview,
             title: "Add a custom title here",
-            content: `${ReviewSnippet$1.TemplateReview}\n\nAdd additional context with text if needed.`
+            content: `${ReviewSnippet.TemplateReview}\n\nAdd additional context with text if needed.`
         },
         {
-            category: RiskCategory$1.FinalityGuarantees,
+            category: RiskCategory.FinalityGuarantees,
             score: 0,
             tier: RiskFactor.UnderReview,
             title: "Add a custom title here",
-            content: `${ReviewSnippet$1.TemplateReview}\n\nAdd additional context with text if needed.`
+            content: `${ReviewSnippet.TemplateReview}\n\nAdd additional context with text if needed.`
         },
     ],
     manualContracts: [
@@ -8044,19 +7615,19 @@ const template$4 = {
             content: [
                 {
                     title: "Add a prop saying if the network inherits security from bitcoin",
-                    content: BitcoinSecuritySnippet$2.Template,
+                    content: BitcoinSecuritySnippet$1.Template,
                 },
                 {
                     title: "Add a prop clarifying if the network uses an altcoin or is bitcoin denominated",
-                    content: BitcoinSecuritySnippet$2.Template,
+                    content: BitcoinSecuritySnippet$1.Template,
                 },
                 {
                     title: "Add a prop clarifying if the network introduces MEV to bitcoin (if at all)",
-                    content: BitcoinSecuritySnippet$2.Template,
+                    content: BitcoinSecuritySnippet$1.Template,
                 },
                 {
                     title: "Add a prop clarifying if the network contributes to the security budget",
-                    content: BitcoinSecuritySnippet$2.Template,
+                    content: BitcoinSecuritySnippet$1.Template,
                 },
             ],
         },
@@ -8066,7 +7637,7 @@ const template$4 = {
             content: [
                 {
                     title: "Add a prop on significant tech components. If there is no prop, consider adding one to the prop.ts file. If the tech component is highly customizeable, add text for the content.",
-                    content: TechnologySnippet$2.Template,
+                    content: TechnologySnippet$1.Template,
                 },
                 {
                     title: "Add a prop on significant tech components. If there is no prop, consider adding one to the prop.ts file. If the tech component is highly customizeable, add text for the content.",
@@ -8080,7 +7651,7 @@ const template$4 = {
             content: [
                 {
                     title: "Add a prop on significant use cases.",
-                    content: UseCaseSnippet$2.Template,
+                    content: UseCaseSnippet$1.Template,
                 },
             ],
         },
@@ -8100,8 +7671,8 @@ const template$3 = {
     type: Type.Layer,
     slug: "mantle",
     title: "Mantle",
-    entityType: EntityType$1.AltRollup,
-    entityCategory: EntityCategory$1.Alt,
+    entityType: EntityType.AltRollup,
+    entityCategory: EntityCategory.Alt,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -8120,23 +7691,23 @@ const template$3 = {
     bitcoinOnly: false,
     links: [
         {
-            text: Site$1.Website,
+            text: Site.Website,
             url: "website",
         },
         {
-            text: Site$1.Docs,
+            text: Site.Docs,
             url: "docs",
         },
         {
-            text: Site$1.Explorer,
+            text: Site.Explorer,
             url: "explorer",
         },
         {
-            text: Site$1.GitHub,
+            text: Site.GitHub,
             url: "github",
         },
         {
-            text: Site$1.Twitter,
+            text: Site.Twitter,
             url: "socials",
         },
     ],
@@ -8153,7 +7724,7 @@ const template$3 = {
     ],
     riskAnalysis: [
         {
-            category: RiskCategory$1.BtcCustody,
+            category: RiskCategory.BtcCustody,
             score: 0,
             tier: "",
             title: "",
@@ -8165,7 +7736,7 @@ const template$3 = {
                     score: 0,
                     tier: RiskFactor.High,
                     title: "For an official two-way peg, you can write a customized title here.",
-                    content: `${TokenSnippet$1.TemplateBTC}\n\n`,
+                    content: `${TokenSnippet.TemplateBTC}\n\n`,
                 },
                 {
                     name: "Threshold tBTC",
@@ -8173,7 +7744,7 @@ const template$3 = {
                     score: 0,
                     tier: RiskFactor.High,
                     title: "For other titles, just use TokenSnippet.PegType as shown in the example below.",
-                    content: `${TokenSnippet$1.ThresholdtBTC}\n\n${TokenSnippet$1.smartcontractreview}\n\n`,
+                    content: `${TokenSnippet.ThresholdtBTC}\n\n${TokenSnippet.smartcontractreview}\n\n`,
                 },
                 {
                     name: "Threshold tBTC",
@@ -8181,38 +7752,38 @@ const template$3 = {
                     score: 0,
                     tier: RiskFactor.High,
                     title: "For other titles, just use TokenSnippet.PegType as shown in the example below.",
-                    content: `${TokenSnippet$1.ThresholdtBTC}\n\n${TokenSnippet$1.smartcontractreview}\n\nUse the smart contract review field to highlight that the asset may have additional trust assumptions if it's bridged across chains. You can also use text to describe additional trust assumptions.`,
+                    content: `${TokenSnippet.ThresholdtBTC}\n\n${TokenSnippet.smartcontractreview}\n\nUse the smart contract review field to highlight that the asset may have additional trust assumptions if it's bridged across chains. You can also use text to describe additional trust assumptions.`,
                 },
                 {
                     name: "Template BTC",
                     infrastructureSlug: "templace-btc",
                     score: 0,
                     tier: RiskFactor.High,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: `${TokenSnippet$1.TemplateBTC}`,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.TemplateBTC}`,
                 },
             ],
         },
         {
-            category: RiskCategory$1.DataAvailability,
+            category: RiskCategory.DataAvailability,
             score: 0,
             tier: RiskFactor.UnderReview,
             title: "Add a custom title here",
-            content: ReviewSnippet$1.TemplateReview,
+            content: ReviewSnippet.TemplateReview,
         },
         {
-            category: RiskCategory$1.NetworkOperators,
+            category: RiskCategory.NetworkOperators,
             score: 0,
             tier: RiskFactor.UnderReview,
             title: "Add a custom title here",
-            content: `${ReviewSnippet$1.TemplateReview}\n\nAdd additional context with text if needed.`
+            content: `${ReviewSnippet.TemplateReview}\n\nAdd additional context with text if needed.`
         },
         {
-            category: RiskCategory$1.FinalityGuarantees,
+            category: RiskCategory.FinalityGuarantees,
             score: 0,
             tier: RiskFactor.UnderReview,
             title: "Add a custom title here",
-            content: `${ReviewSnippet$1.TemplateReview}\n\nAdd additional context with text if needed.`
+            content: `${ReviewSnippet.TemplateReview}\n\nAdd additional context with text if needed.`
         },
     ],
     manualContracts: [
@@ -8258,19 +7829,19 @@ const template$3 = {
             content: [
                 {
                     title: "Add a prop saying if the network inherits security from bitcoin",
-                    content: BitcoinSecuritySnippet$2.Template,
+                    content: BitcoinSecuritySnippet$1.Template,
                 },
                 {
                     title: "Add a prop clarifying if the network uses an altcoin or is bitcoin denominated",
-                    content: BitcoinSecuritySnippet$2.Template,
+                    content: BitcoinSecuritySnippet$1.Template,
                 },
                 {
                     title: "Add a prop clarifying if the network introduces MEV to bitcoin (if at all)",
-                    content: BitcoinSecuritySnippet$2.Template,
+                    content: BitcoinSecuritySnippet$1.Template,
                 },
                 {
                     title: "Add a prop clarifying if the network contributes to the security budget",
-                    content: BitcoinSecuritySnippet$2.Template,
+                    content: BitcoinSecuritySnippet$1.Template,
                 },
             ],
         },
@@ -8280,7 +7851,7 @@ const template$3 = {
             content: [
                 {
                     title: "Add a prop on significant tech components. If there is no prop, consider adding one to the prop.ts file. If the tech component is highly customizeable, add text for the content.",
-                    content: TechnologySnippet$2.Template,
+                    content: TechnologySnippet$1.Template,
                 },
                 {
                     title: "Add a prop on significant tech components. If there is no prop, consider adding one to the prop.ts file. If the tech component is highly customizeable, add text for the content.",
@@ -8294,7 +7865,7 @@ const template$3 = {
             content: [
                 {
                     title: "Add a prop on significant use cases.",
-                    content: UseCaseSnippet$2.Template,
+                    content: UseCaseSnippet$1.Template,
                 },
             ],
         },
@@ -8314,9 +7885,9 @@ const mercurylayer = {
     type: Type.Layer,
     slug: "mercurylayer",
     title: "Mercury Layer",
-    entityType: EntityType$1.Statechain,
-    entityCategory: EntityCategory$1.BitcoinNative,
-    custodyTitle: CustodyTitle$1.BitcoinNative,
+    entityType: EntityType.Statechain,
+    entityCategory: EntityCategory.BitcoinNative,
+    custodyTitle: CustodyTitle.BitcoinNative,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -8334,19 +7905,19 @@ const mercurylayer = {
     bitcoinOnly: true,
     links: [
         {
-            text: Site$1.Website,
+            text: Site.Website,
             url: "https://mercurylayer.com/",
         },
         {
-            text: Site$1.Docs,
+            text: Site.Docs,
             url: "https://docs.mercurylayer.com",
         },
         {
-            text: Site$1.GitHub,
+            text: Site.GitHub,
             url: "https://github.com/commerceblock/mercurylayer",
         },
         {
-            text: Site$1.Twitter,
+            text: Site.Twitter,
             url: "https://twitter.com/mercurylayer",
         },
     ],
@@ -8354,16 +7925,16 @@ const mercurylayer = {
     riskSummary: [
         {
             title: "Users trust the statechain entity with key deletion",
-            content: RiskSummarySnippet$2.RiskStatechainFinality,
+            content: RiskSummarySnippet$1.RiskStatechainFinality,
         },
         {
             title: "Users must watch for previous owners' unilateral exit transactions",
-            content: RiskSummarySnippet$2.RiskStatechainTimelock,
+            content: RiskSummarySnippet$1.RiskStatechainTimelock,
         },
     ],
     riskAnalysis: [
         {
-            category: RiskCategory$1.BtcCustody,
+            category: RiskCategory.BtcCustody,
             score: 0,
             tier: RiskFactor.NotApplicable,
             title: "",
@@ -8375,30 +7946,30 @@ const mercurylayer = {
                     score: 0,
                     tier: RiskFactor.Low,
                     title: "A locked UTXO is collaboratively managed between a trusted server and the statecoin owner, with full L1 UTXO ownership enforceable after a timelock expiry",
-                    content: TokenSnippet$1.MercuryLayerBTC,
+                    content: TokenSnippet.MercuryLayerBTC,
                 },
             ],
         },
         {
-            category: RiskCategory$1.DataAvailability,
+            category: RiskCategory.DataAvailability,
             score: 0,
             tier: RiskFactor.Low,
             title: "Transaction verification and data transmission happens via a client-side validation model",
-            content: ReviewSnippet$1.StatechainDABlindedServer,
+            content: ReviewSnippet.StatechainDABlindedServer,
         },
         {
-            category: RiskCategory$1.NetworkOperators,
+            category: RiskCategory.NetworkOperators,
             score: 0,
             tier: RiskFactor.VeryHigh,
             title: "The network operator is a single server",
-            content: ReviewSnippet$1.OperatorStatechainBlindedServerSingleServer,
+            content: ReviewSnippet.OperatorStatechainBlindedServerSingleServer,
         },
         {
-            category: RiskCategory$1.FinalityGuarantees,
+            category: RiskCategory.FinalityGuarantees,
             score: 0,
             tier: RiskFactor.VeryHigh,
             title: "There is no way to prove key deletion from the statechain entity",
-            content: ReviewSnippet$1.FinalityStatechainSingleOperator,
+            content: ReviewSnippet.FinalityStatechainSingleOperator,
         },
     ],
     sections: [
@@ -8408,19 +7979,19 @@ const mercurylayer = {
             content: [
                 {
                     title: "Bitcoin finalizes statechain initiation and closures",
-                    content: BitcoinSecuritySnippet$2.BitcoinSecurityOffchainUTXO,
+                    content: BitcoinSecuritySnippet$1.BitcoinSecurityOffchainUTXO,
                 },
                 {
                     title: "The protocol does not enable MEV on bitcoin. Transaction verification happens via a client-side validation mechanism",
-                    content: BitcoinSecuritySnippet$2.OffchainUTXOMEV,
+                    content: BitcoinSecuritySnippet$1.OffchainUTXOMEV,
                 },
                 {
                     title: "No alternative token is being introduced",
-                    content: BitcoinSecuritySnippet$2.OffchainUTXONoToken,
+                    content: BitcoinSecuritySnippet$1.OffchainUTXONoToken,
                 },
                 {
                     title: "Mercury Layer does not contribute to the security budget",
-                    content: BitcoinSecuritySnippet$2.StatechainSecurityBudget,
+                    content: BitcoinSecuritySnippet$1.StatechainSecurityBudget,
                 },
             ],
         },
@@ -8495,8 +8066,8 @@ const merlin = {
     type: Type.Layer,
     slug: "merlin",
     title: "Merlin",
-    entityType: EntityType$1.AltRollup,
-    entityCategory: EntityCategory$1.Alt,
+    entityType: EntityType.AltRollup,
+    entityCategory: EntityCategory.Alt,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -8512,57 +8083,57 @@ const merlin = {
     nativeToken: "MERL",
     feeToken: "WBTC",
     bitcoinOnly: false,
-    notice: Notice$1.OtherReasonBridge,
+    notice: Notice.OtherReasonBridge,
     links: [
         {
-            text: Site$1.Website,
+            text: Site.Website,
             url: "https://merlinchain.io",
         },
         {
-            text: Site$1.Docs,
+            text: Site.Docs,
             url: "https://docs.merlinchain.io",
         },
         {
-            text: Site$1.Explorer,
+            text: Site.Explorer,
             url: "https://scan.merlinchain.io",
         },
         {
-            text: Site$1.GitHub,
+            text: Site.GitHub,
             url: "https://github.com/MerlinLayer2",
         },
         {
-            text: Site$1.Twitter,
+            text: Site.Twitter,
             url: "https://x.com/MerlinLayer2",
         },
     ],
     description: "Merlin is an implementation of Polygon CDK chain. It likely is running its rollup chain on top of a permissioned fork of the EVM.",
     riskSummary: [
         {
-            title: RiskSummarySnippet$2.TitleUpgrade,
-            content: RiskSummarySnippet$2.RiskSummaryImmediateUpgrade
+            title: RiskSummarySnippet$1.TitleUpgrade,
+            content: RiskSummarySnippet$1.RiskSummaryImmediateUpgrade
         },
         {
-            title: RiskSummarySnippet$2.TitleCustodianPegs,
-            content: RiskSummarySnippet$2.RiskSummaryCustodianPegs
+            title: RiskSummarySnippet$1.TitleCustodianPegs,
+            content: RiskSummarySnippet$1.RiskSummaryCustodianPegs
         },
         {
-            title: RiskSummarySnippet$2.TitleAltDA,
-            content: RiskSummarySnippet$2.RiskSummaryAltDACommittee,
+            title: RiskSummarySnippet$1.TitleAltDA,
+            content: RiskSummarySnippet$1.RiskSummaryAltDACommittee,
         },
         {
-            title: RiskSummarySnippet$2.TitleCentralizedSequencer,
-            content: RiskSummarySnippet$2.RiskSummaryCentralizedSequencer,
+            title: RiskSummarySnippet$1.TitleCentralizedSequencer,
+            content: RiskSummarySnippet$1.RiskSummaryCentralizedSequencer,
         }
     ],
     categorization: [
         {
-            title: Categorization$1.NoBridgeTitle,
-            content: Categorization$1.NoBridgeSnippet,
+            title: Categorization.NoBridgeTitle,
+            content: Categorization.NoBridgeSnippet,
         },
     ],
     riskAnalysis: [
         {
-            category: RiskCategory$1.BtcCustody,
+            category: RiskCategory.BtcCustody,
             score: 0,
             tier: RiskFactor.NotApplicable,
             title: "",
@@ -8574,23 +8145,23 @@ const merlin = {
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: "Users deposit funds into a MPC wallet managed by a custodian",
-                    content: TokenSnippet$1.MerlinMBTC,
+                    content: TokenSnippet.MerlinMBTC,
                 },
                 {
                     name: "Bedrock uniBTC",
                     infrastructureSlug: "bedrock-unibtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: TokenSnippet$1.BedrockUniBTC,
+                    title: TokenSnippet.CustodianPeg,
+                    content: TokenSnippet.BedrockUniBTC,
                 },
                 {
                     name: "Lorenzo stBTC",
                     infrastructureSlug: "lorenzo-stbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: TokenSnippet$1.LorenzostBTC,
+                    title: TokenSnippet.CustodianPeg,
+                    content: TokenSnippet.LorenzostBTC,
                 },
                 {
                     name: "Solv SolvBTC",
@@ -8598,58 +8169,58 @@ const merlin = {
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: "MBTC on Merlin backs SolvBTC on Merlin",
-                    content: TokenSnippet$1.SolvBTC,
+                    content: TokenSnippet.SolvBTC,
                 },
                 {
                     name: "Solv xSolvBTC",
                     infrastructureSlug: "solv-xsolvbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianDerivative,
-                    content: TokenSnippet$1.xSolvBTC,
+                    title: TokenSnippet.CustodianDerivative,
+                    content: TokenSnippet.xSolvBTC,
                 },
                 {
                     name: "Solv SolvBTC.ENA",
                     infrastructureSlug: "solv-solvbtcena",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.UnderReview,
-                    content: TokenSnippet$1.SolvBTCENA,
+                    title: TokenSnippet.UnderReview,
+                    content: TokenSnippet.SolvBTCENA,
                 },
                 {
                     name: "Merlin wBTC",
                     infrastructureSlug: "merlin-wbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: `${TokenSnippet$1.MerlinwBTC}`,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.MerlinwBTC}`,
                 },
                 {
                     name: "Xlink aBTC",
                     infrastructureSlug: "xlink-abtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: `${TokenSnippet$1.xlink}${TokenSnippet$1.smartcontractreview}.`,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.xlink}${TokenSnippet.smartcontractreview}.`,
                 },
             ],
         },
         {
-            category: RiskCategory$1.DataAvailability,
+            category: RiskCategory.DataAvailability,
             score: 0,
             tier: RiskFactor.VeryHigh,
             title: "State data is stored and made available by a permissioned network. The identities of its members are under review",
-            content: ReviewSnippet$1.DAFederation,
+            content: ReviewSnippet.DAFederation,
         },
         {
-            category: RiskCategory$1.NetworkOperators,
+            category: RiskCategory.NetworkOperators,
             score: 0,
             tier: RiskFactor.VeryHigh,
             title: "Blocks are produced by a centralized sequencer and forced inclusion mechanism is unverified",
             content: "Merlin chain blocks are currently produced by a centralized sequencer. It posts state updates to its parent chain which is a private network. We cannot review its trust assumptions.",
         },
         {
-            category: RiskCategory$1.FinalityGuarantees,
+            category: RiskCategory.FinalityGuarantees,
             score: 0,
             tier: RiskFactor.VeryHigh,
             title: "Transaction finalization occurs offchain through sequencer batches posted to a permissioned network",
@@ -8664,19 +8235,19 @@ const merlin = {
             content: [
                 {
                     title: "Merlin currently inherits no security from Bitcoin",
-                    content: BitcoinSecuritySnippet$2.NoSecurity,
+                    content: BitcoinSecuritySnippet$1.NoSecurity,
                 },
                 {
                     title: "MERL token is live, but not currently used to pay transaction fees",
-                    content: BitcoinSecuritySnippet$2.WrappedTokenFees,
+                    content: BitcoinSecuritySnippet$1.WrappedTokenFees,
                 },
                 {
                     title: "No MEV introduced to Bitcoin, but a centralized sequencer can reorder transactions",
-                    content: BitcoinSecuritySnippet$2.CentralizedSequencerMEV,
+                    content: BitcoinSecuritySnippet$1.CentralizedSequencerMEV,
                 },
                 {
                     title: "Merlin does not contribute to the security budget",
-                    content: BitcoinSecuritySnippet$2.NoSecurityBudget,
+                    content: BitcoinSecuritySnippet$1.NoSecurityBudget,
                 },
             ],
         },
@@ -8696,7 +8267,7 @@ const merlin = {
             content: [
                 {
                     title: "EVM-compatible",
-                    content: TechnologySnippet$2.EVM,
+                    content: TechnologySnippet$1.EVM,
                 },
             ],
         },
@@ -8706,7 +8277,7 @@ const merlin = {
             content: [
                 {
                     title: "Onchain applications",
-                    content: UseCaseSnippet$2.OnchainApps,
+                    content: UseCaseSnippet$1.OnchainApps,
                 },
             ],
         },
@@ -8727,8 +8298,8 @@ const mezo = {
     type: Type.Layer,
     slug: "mezo",
     title: "Mezo",
-    entityType: EntityType$1.Federation,
-    entityCategory: EntityCategory$1.Sidesystem,
+    entityType: EntityType.Federation,
+    entityCategory: EntityCategory.Sidesystem,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -8743,40 +8314,40 @@ const mezo = {
     btcLocked: 0,
     nativeToken: "tBTC",
     feeToken: "tBTC",
-    notice: Notice$1.UnderReview,
+    notice: Notice.UnderReview,
     bitcoinOnly: false,
     links: [
         {
-            text: Site$1.Website,
+            text: Site.Website,
             url: "https://mezo.org",
         },
         {
-            text: Site$1.Docs,
+            text: Site.Docs,
             url: "https://mezo.org/docs/users/",
         },
         {
-            text: Site$1.Explorer,
+            text: Site.Explorer,
             url: "https://explorer.mezo.org",
         },
         {
-            text: Site$1.Twitter,
+            text: Site.Twitter,
             url: "https://x.com/mezonetwork",
         },
     ],
     description: "Mezo is an EVM-compatible blockchain that supports general purpose onchain applications. It runs on CometBFT consensus protocol and is operated by a federated validator set. Its official bridge is supports bridging tBTC from Ethereum to Mezo.",
     riskSummary: [
         {
-            title: RiskSummarySnippet$2.TitleCustodianPegs,
-            content: `${RiskSummarySnippet$2.RiskSummaryCustodianPegs}The majority of Mezo's BTC-backed assets are secured by a bridge contract on Ethereum. This bridge contract can be upgraded by a 5/9 federation.`
+            title: RiskSummarySnippet$1.TitleCustodianPegs,
+            content: `${RiskSummarySnippet$1.RiskSummaryCustodianPegs}The majority of Mezo's BTC-backed assets are secured by a bridge contract on Ethereum. This bridge contract can be upgraded by a 5/9 federation.`
         },
         {
-            title: RiskSummarySnippet$2.TitleFederation,
-            content: RiskSummarySnippet$2.RiskSummaryFederation,
+            title: RiskSummarySnippet$1.TitleFederation,
+            content: RiskSummarySnippet$1.RiskSummaryFederation,
         },
     ],
     riskAnalysis: [
         {
-            category: RiskCategory$1.BtcCustody,
+            category: RiskCategory.BtcCustody,
             score: 0,
             tier: "",
             title: "",
@@ -8787,79 +8358,79 @@ const mezo = {
                     infrastructureSlug: "threshold-tbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.FederationPeg,
-                    content: `${TokenSnippet$1.ThresholdtBTC}\n\nThis token is bridge to Mezo through an escrow contract on Ethereum. The bridge is upgradable by a 9 member federation. 5 signers are needed to initiate upgrades. The identity of these signers is unknown.`,
+                    title: TokenSnippet.FederationPeg,
+                    content: `${TokenSnippet.ThresholdtBTC}\n\nThis token is bridge to Mezo through an escrow contract on Ethereum. The bridge is upgradable by a 9 member federation. 5 signers are needed to initiate upgrades. The identity of these signers is unknown.`,
                 },
                 {
                     name: "Solv SolvBTC",
                     infrastructureSlug: "solv-solvbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: `${TokenSnippet$1.SolvBTC}\n\nThis token is bridge to Mezo through an escrow contract on Ethereum. The bridge is upgradable by a 9 member federation. 5 signers are needed to initiate upgrades. The identity of these signers is unknown.`,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.SolvBTC}\n\nThis token is bridge to Mezo through an escrow contract on Ethereum. The bridge is upgradable by a 9 member federation. 5 signers are needed to initiate upgrades. The identity of these signers is unknown.`,
                 },
                 {
                     name: "Solv xSolvBTC",
                     infrastructureSlug: "solv-xsolvbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianDerivative,
-                    content: `${TokenSnippet$1.xSolvBTC}\n\nThis token is bridge to Mezo through an escrow contract on Ethereum. The bridge is upgradable by a 9 member federation. 5 signers are needed to initiate upgrades. The identity of these signers is unknown.`,
+                    title: TokenSnippet.CustodianDerivative,
+                    content: `${TokenSnippet.xSolvBTC}\n\nThis token is bridge to Mezo through an escrow contract on Ethereum. The bridge is upgradable by a 9 member federation. 5 signers are needed to initiate upgrades. The identity of these signers is unknown.`,
                 },
                 {
                     name: "BitGo wBTC",
                     infrastructureSlug: "bitgo-wbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: `${TokenSnippet$1.BitGowBTC}\n\nThis token is bridge to Mezo through an escrow contract on Ethereum. The bridge is upgradable by a 9 member federation. 5 signers are needed to initiate upgrades. The identity of these signers is unknown.`,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.BitGowBTC}\n\nThis token is bridge to Mezo through an escrow contract on Ethereum. The bridge is upgradable by a 9 member federation. 5 signers are needed to initiate upgrades. The identity of these signers is unknown.`,
                 },
                 {
                     name: "Coinbase cbBTC",
                     infrastructureSlug: "coinbase-cbbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: `${TokenSnippet$1.CoinbasecbBTC}\n\nThis token is bridge to Mezo through an escrow contract on Ethereum. The bridge is upgradable by a 9 member federation. 5 signers are needed to initiate upgrades. The identity of these signers is unknown.`,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.CoinbasecbBTC}\n\nThis token is bridge to Mezo through an escrow contract on Ethereum. The bridge is upgradable by a 9 member federation. 5 signers are needed to initiate upgrades. The identity of these signers is unknown.`,
                 },
                 {
                     name: "Fire Bitcoin FBTC",
                     infrastructureSlug: "firebitcoin-fbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: `${TokenSnippet$1.FireBTC}\n\nThis token is bridge to Mezo through an escrow contract on Ethereum. The bridge is upgradable by a 9 member federation. 5 signers are needed to initiate upgrades. The identity of these signers is unknown.`,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.FireBTC}\n\nThis token is bridge to Mezo through an escrow contract on Ethereum. The bridge is upgradable by a 9 member federation. 5 signers are needed to initiate upgrades. The identity of these signers is unknown.`,
                 },
                 {
                     name: "Swell swBTC",
                     infrastructureSlug: "swell-swbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianDerivative,
+                    title: TokenSnippet.CustodianDerivative,
                     content: `${Reviewsnippet.SwellswBTC}\n\nThis token is bridge to Mezo through an escrow contract on Ethereum. The bridge is upgradable by a 9 member federation. 5 signers are needed to initiate upgrades. The identity of these signers is unknown.`,
                 },
             ],
         },
         {
-            category: RiskCategory$1.DataAvailability,
+            category: RiskCategory.DataAvailability,
             score: 0,
             tier: RiskFactor.High,
             title: "Data related to the Mezo network is made available by its validator set",
-            content: ReviewSnippet$1.DAFederation,
+            content: ReviewSnippet.DAFederation,
         },
         {
-            category: RiskCategory$1.NetworkOperators,
+            category: RiskCategory.NetworkOperators,
             score: 0,
             tier: RiskFactor.High,
             title: "The Mezo network is operated by a federated validator set",
-            content: ReviewSnippet$1.OperatorFederated,
+            content: ReviewSnippet.OperatorFederated,
         },
         {
-            category: RiskCategory$1.FinalityGuarantees,
+            category: RiskCategory.FinalityGuarantees,
             score: 0,
             tier: RiskFactor.High,
             title: "Finality guarantees are provided through a federation. Mezo blocks cannot be reorged after being added to the chain",
-            content: `${ReviewSnippet$1.CometBFTFinality}\n\nThe Mezo network is currently operated by a federated validator set. Finality assurances are provided by this federated group of operators.`,
+            content: `${ReviewSnippet.CometBFTFinality}\n\nThe Mezo network is currently operated by a federated validator set. Finality assurances are provided by this federated group of operators.`,
         },
     ],
     manualContracts: [
@@ -8883,19 +8454,19 @@ const mezo = {
             content: [
                 {
                     title: "Mezo does not inherit any security from Bitcoin",
-                    content: BitcoinSecuritySnippet$2.NoSecurity,
+                    content: BitcoinSecuritySnippet$1.NoSecurity,
                 },
                 {
                     title: "A wrapped BTC token used to pay fees",
-                    content: BitcoinSecuritySnippet$2.WrappedTokenFees,
+                    content: BitcoinSecuritySnippet$1.WrappedTokenFees,
                 },
                 {
                     title: "No MEV introduced to Bitcoin",
-                    content: BitcoinSecuritySnippet$2.AltNetworkMEV,
+                    content: BitcoinSecuritySnippet$1.AltNetworkMEV,
                 },
                 {
                     title: "Mezo does not contribute to the security budget",
-                    content: BitcoinSecuritySnippet$2.NoSecurityBudget,
+                    content: BitcoinSecuritySnippet$1.NoSecurityBudget,
                 },
             ],
         },
@@ -8905,7 +8476,7 @@ const mezo = {
             content: [
                 {
                     title: "EVM-Compatible",
-                    content: TechnologySnippet$2.EVM,
+                    content: TechnologySnippet$1.EVM,
                 },
             ],
         },
@@ -8915,7 +8486,7 @@ const mezo = {
             content: [
                 {
                     title: "Onchain applications",
-                    content: UseCaseSnippet$2.OnchainApps,
+                    content: UseCaseSnippet$1.OnchainApps,
                 },
             ],
         },
@@ -8940,8 +8511,8 @@ const template$2 = {
     type: Type.Layer,
     slug: "Mode",
     title: "Mode",
-    entityType: EntityType$1.AltRollup,
-    entityCategory: EntityCategory$1.Alt,
+    entityType: EntityType.AltRollup,
+    entityCategory: EntityCategory.Alt,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -8963,17 +8534,17 @@ const template$2 = {
     description: "Mode is an Ethereum rollup that supports a number of wrapped BTC tokens.",
     riskSummary: [
         {
-            title: RiskSummarySnippet$2.TitleCustodianPegs,
-            content: RiskSummarySnippet$2.RiskSummaryCustodianPegs,
+            title: RiskSummarySnippet$1.TitleCustodianPegs,
+            content: RiskSummarySnippet$1.RiskSummaryCustodianPegs,
         },
         {
-            title: RiskSummarySnippet$2.TitleCentralizedSequencer,
-            content: RiskSummarySnippet$2.RiskSummaryCentralizedSequencer,
+            title: RiskSummarySnippet$1.TitleCentralizedSequencer,
+            content: RiskSummarySnippet$1.RiskSummaryCentralizedSequencer,
         },
     ],
     riskAnalysis: [
         {
-            category: RiskCategory$1.BtcCustody,
+            category: RiskCategory.BtcCustody,
             score: 0,
             tier: "",
             title: "",
@@ -8984,27 +8555,27 @@ const template$2 = {
                     infrastructureSlug: "bitgo-wbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: `${TokenSnippet$1.BitGowBTC}\n\n${TokenSnippet$1.smartcontractreview}`,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.BitGowBTC}\n\n${TokenSnippet.smartcontractreview}`,
                 },
             ],
         },
         {
-            category: RiskCategory$1.DataAvailability,
+            category: RiskCategory.DataAvailability,
             score: 0,
             tier: RiskFactor.Medium,
             title: "Ethereum satisifes the data availability requirement",
-            content: ReviewSnippet$1.EthereumRollupDA,
+            content: ReviewSnippet.EthereumRollupDA,
         },
         {
-            category: RiskCategory$1.NetworkOperators,
+            category: RiskCategory.NetworkOperators,
             score: 0,
             tier: RiskFactor.VeryHigh,
             title: "Users cannot propose their own blocks in event of liveness failures",
-            content: `${ReviewSnippet$1.FinalityAltRollupCentralizedProposer}`
+            content: `${ReviewSnippet.FinalityAltRollupCentralizedProposer}`
         },
         {
-            category: RiskCategory$1.FinalityGuarantees,
+            category: RiskCategory.FinalityGuarantees,
             score: 0,
             tier: RiskFactor.Medium,
             title: "Mode's state transitions finalize by updating its state based on data posted to Ethereum",
@@ -9030,8 +8601,8 @@ const template$1 = {
     type: Type.Layer,
     slug: "movement",
     title: "Movement",
-    entityType: EntityType$1.AltL1,
-    entityCategory: EntityCategory$1.Alt,
+    entityType: EntityType.AltL1,
+    entityCategory: EntityCategory.Alt,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -9050,23 +8621,23 @@ const template$1 = {
     bitcoinOnly: false,
     links: [
         {
-            text: Site$1.Website,
+            text: Site.Website,
             url: "website",
         },
         {
-            text: Site$1.Docs,
+            text: Site.Docs,
             url: "docs",
         },
         {
-            text: Site$1.Explorer,
+            text: Site.Explorer,
             url: "explorer",
         },
         {
-            text: Site$1.GitHub,
+            text: Site.GitHub,
             url: "github",
         },
         {
-            text: Site$1.Twitter,
+            text: Site.Twitter,
             url: "socials",
         },
     ],
@@ -9083,7 +8654,7 @@ const template$1 = {
     ],
     riskAnalysis: [
         {
-            category: RiskCategory$1.BtcCustody,
+            category: RiskCategory.BtcCustody,
             score: 0,
             tier: "",
             title: "",
@@ -9095,7 +8666,7 @@ const template$1 = {
                     score: 0,
                     tier: RiskFactor.High,
                     title: "For an official two-way peg, you can write a customized title here.",
-                    content: `${TokenSnippet$1.TemplateBTC}\n\n`,
+                    content: `${TokenSnippet.TemplateBTC}\n\n`,
                 },
                 {
                     name: "Threshold tBTC",
@@ -9103,7 +8674,7 @@ const template$1 = {
                     score: 0,
                     tier: RiskFactor.High,
                     title: "For other titles, just use TokenSnippet.PegType as shown in the example below.",
-                    content: `${TokenSnippet$1.ThresholdtBTC}\n\n${TokenSnippet$1.smartcontractreview}\n\n`,
+                    content: `${TokenSnippet.ThresholdtBTC}\n\n${TokenSnippet.smartcontractreview}\n\n`,
                 },
                 {
                     name: "Threshold tBTC",
@@ -9111,38 +8682,38 @@ const template$1 = {
                     score: 0,
                     tier: RiskFactor.High,
                     title: "For other titles, just use TokenSnippet.PegType as shown in the example below.",
-                    content: `${TokenSnippet$1.ThresholdtBTC}\n\n${TokenSnippet$1.smartcontractreview}\n\nUse the smart contract review field to highlight that the asset may have additional trust assumptions if it's bridged across chains. You can also use text to describe additional trust assumptions.`,
+                    content: `${TokenSnippet.ThresholdtBTC}\n\n${TokenSnippet.smartcontractreview}\n\nUse the smart contract review field to highlight that the asset may have additional trust assumptions if it's bridged across chains. You can also use text to describe additional trust assumptions.`,
                 },
                 {
                     name: "Template BTC",
                     infrastructureSlug: "templace-btc",
                     score: 0,
                     tier: RiskFactor.High,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: `${TokenSnippet$1.TemplateBTC}`,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.TemplateBTC}`,
                 },
             ],
         },
         {
-            category: RiskCategory$1.DataAvailability,
+            category: RiskCategory.DataAvailability,
             score: 0,
             tier: RiskFactor.UnderReview,
             title: "Add a custom title here",
-            content: ReviewSnippet$1.TemplateReview,
+            content: ReviewSnippet.TemplateReview,
         },
         {
-            category: RiskCategory$1.NetworkOperators,
+            category: RiskCategory.NetworkOperators,
             score: 0,
             tier: RiskFactor.UnderReview,
             title: "Add a custom title here",
-            content: `${ReviewSnippet$1.TemplateReview}\n\nAdd additional context with text if needed.`
+            content: `${ReviewSnippet.TemplateReview}\n\nAdd additional context with text if needed.`
         },
         {
-            category: RiskCategory$1.FinalityGuarantees,
+            category: RiskCategory.FinalityGuarantees,
             score: 0,
             tier: RiskFactor.UnderReview,
             title: "Add a custom title here",
-            content: `${ReviewSnippet$1.TemplateReview}\n\nAdd additional context with text if needed.`
+            content: `${ReviewSnippet.TemplateReview}\n\nAdd additional context with text if needed.`
         },
     ],
     manualContracts: [
@@ -9188,19 +8759,19 @@ const template$1 = {
             content: [
                 {
                     title: "Add a prop saying if the network inherits security from bitcoin",
-                    content: BitcoinSecuritySnippet$2.Template,
+                    content: BitcoinSecuritySnippet$1.Template,
                 },
                 {
                     title: "Add a prop clarifying if the network uses an altcoin or is bitcoin denominated",
-                    content: BitcoinSecuritySnippet$2.Template,
+                    content: BitcoinSecuritySnippet$1.Template,
                 },
                 {
                     title: "Add a prop clarifying if the network introduces MEV to bitcoin (if at all)",
-                    content: BitcoinSecuritySnippet$2.Template,
+                    content: BitcoinSecuritySnippet$1.Template,
                 },
                 {
                     title: "Add a prop clarifying if the network contributes to the security budget",
-                    content: BitcoinSecuritySnippet$2.Template,
+                    content: BitcoinSecuritySnippet$1.Template,
                 },
             ],
         },
@@ -9210,7 +8781,7 @@ const template$1 = {
             content: [
                 {
                     title: "Add a prop on significant tech components. If there is no prop, consider adding one to the prop.ts file. If the tech component is highly customizeable, add text for the content.",
-                    content: TechnologySnippet$2.Template,
+                    content: TechnologySnippet$1.Template,
                 },
                 {
                     title: "Add a prop on significant tech components. If there is no prop, consider adding one to the prop.ts file. If the tech component is highly customizeable, add text for the content.",
@@ -9224,7 +8795,7 @@ const template$1 = {
             content: [
                 {
                     title: "Add a prop on significant use cases.",
-                    content: UseCaseSnippet$2.Template,
+                    content: UseCaseSnippet$1.Template,
                 },
             ],
         },
@@ -9244,9 +8815,9 @@ const nomic = {
     type: Type.Layer,
     slug: "nomic",
     title: "Nomic",
-    entityType: EntityType$1.PoSNetwork,
-    entityCategory: EntityCategory$1.Sidesystem,
-    custodyTitle: CustodyTitle$1.Distributed,
+    entityType: EntityType.PoSNetwork,
+    entityCategory: EntityCategory.Sidesystem,
+    custodyTitle: CustodyTitle.Distributed,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -9264,40 +8835,40 @@ const nomic = {
     bitcoinOnly: false,
     links: [
         {
-            text: Site$1.Website,
+            text: Site.Website,
             url: "https://www.nomic.io",
         },
         {
-            text: Site$1.Docs,
+            text: Site.Docs,
             url: "https://docs.nomic.io",
         },
         {
-            text: Site$1.Explorer,
+            text: Site.Explorer,
             url: "https://bigdipper.live/nomic",
         },
         {
-            text: Site$1.GitHub,
+            text: Site.GitHub,
             url: "https://github.com/nomic-io",
         },
         {
-            text: Site$1.Twitter,
+            text: Site.Twitter,
             url: "https://x.com/nomicbtc",
         },
     ],
     description: "Nomic is a proof-of-stake blockchain focused on distributed BTC custody. Nomic validators collectively control a bitcoin wallet known as the Reserve Wallet, which users can deposit BTC to in order to receive nBTC, an asset issued on the Nomic blockchain that is backed 1:1 by the BTC deposits held in the Reserve Wallet.",
     riskSummary: [
         {
-            title: RiskSummarySnippet$2.TitleCustodianPegs,
-            content: `${RiskSummarySnippet$2.RiskPOSPeg}`,
+            title: RiskSummarySnippet$1.TitleCustodianPegs,
+            content: `${RiskSummarySnippet$1.RiskPOSPeg}`,
         },
         {
-            title: RiskSummarySnippet$2.TitleAlternativeL1,
-            content: RiskSummarySnippet$2.RiskSummaryAlternativeL1,
+            title: RiskSummarySnippet$1.TitleAlternativeL1,
+            content: RiskSummarySnippet$1.RiskSummaryAlternativeL1,
         },
     ],
     riskAnalysis: [
         {
-            category: RiskCategory$1.BtcCustody,
+            category: RiskCategory.BtcCustody,
             score: 0,
             tier: RiskFactor.NotApplicable,
             title: "",
@@ -9309,30 +8880,30 @@ const nomic = {
                     score: 0,
                     tier: RiskFactor.High,
                     title: "BTC backing nBTC is managed by a group of 20 publicly known signers who participate as validators in the Nomic blockchain",
-                    content: TokenSnippet$1.NomicNBTC,
+                    content: TokenSnippet.NomicNBTC,
                 },
             ],
         },
         {
-            category: RiskCategory$1.DataAvailability,
+            category: RiskCategory.DataAvailability,
             score: 0,
             tier: RiskFactor.Medium,
             title: "Data is made available via Nomic full nodes",
-            content: ReviewSnippet$1.AltL1DA,
+            content: ReviewSnippet.AltL1DA,
         },
         {
-            category: RiskCategory$1.BlockProduction,
+            category: RiskCategory.BlockProduction,
             score: 0,
             tier: RiskFactor.Medium,
             title: "Network is operated by validators in a proof-of-stake consensus protocol",
-            content: ReviewSnippet$1.OperatorSidechainPOS,
+            content: ReviewSnippet.OperatorSidechainPOS,
         },
         {
-            category: RiskCategory$1.FinalityGuarantees,
+            category: RiskCategory.FinalityGuarantees,
             score: 0,
             tier: RiskFactor.Medium,
             title: "Finality is provided through an offchain consensus mechnaism",
-            content: ReviewSnippet$1.CometBFTFinality,
+            content: ReviewSnippet.CometBFTFinality,
         },
     ],
     sections: [
@@ -9342,19 +8913,19 @@ const nomic = {
             content: [
                 {
                     title: "Nomic does not inherit security from bitcoin consensus participants",
-                    content: BitcoinSecuritySnippet$2.CheckpointCometBFT,
+                    content: BitcoinSecuritySnippet$1.CheckpointCometBFT,
                 },
                 {
                     title: "NOM token is used for network security",
-                    content: BitcoinSecuritySnippet$2.AltTokenFees,
+                    content: BitcoinSecuritySnippet$1.AltTokenFees,
                 },
                 {
                     title: "No MEV introduced to Bitcoin",
-                    content: BitcoinSecuritySnippet$2.AltNetworkMEV,
+                    content: BitcoinSecuritySnippet$1.AltNetworkMEV,
                 },
                 {
                     title: "Nomic pays fees for checkpoint transactions",
-                    content: BitcoinSecuritySnippet$2.FeesPOSCheckpoint,
+                    content: BitcoinSecuritySnippet$1.FeesPOSCheckpoint,
                 },
             ],
         },
@@ -9388,11 +8959,11 @@ const nomic = {
                 },
                 {
                     title: "IBC-enabled transfers",
-                    content: TechnologySnippet$2.IBC,
+                    content: TechnologySnippet$1.IBC,
                 },
                 {
                     title: "Orga & Merk",
-                    content: TechnologySnippet$2.OrgaMerk,
+                    content: TechnologySnippet$1.OrgaMerk,
                 },
                 {
                     title: "Checkpointing mechanism",
@@ -9406,11 +8977,11 @@ const nomic = {
             content: [
                 {
                     title: "Connection to IBC-enabled blockchains",
-                    content: UseCaseSnippet$2.IBCTransfers,
+                    content: UseCaseSnippet$1.IBCTransfers,
                 },
                 {
                     title: "Offchain nBTC transfers",
-                    content: UseCaseSnippet$2.OffchainTransfers,
+                    content: UseCaseSnippet$1.OffchainTransfers,
                 },
             ],
         },
@@ -9441,8 +9012,8 @@ const optimism = {
     type: Type.Layer,
     slug: "optimism",
     title: "Optimism",
-    entityType: EntityType$1.AltRollup,
-    entityCategory: EntityCategory$1.Alt,
+    entityType: EntityType.AltRollup,
+    entityCategory: EntityCategory.Alt,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -9462,48 +9033,48 @@ const optimism = {
     bitcoinOnly: false,
     links: [
         {
-            text: Site$1.Website,
+            text: Site.Website,
             url: "https://optimism.io/",
         },
         {
-            text: Site$1.Docs,
+            text: Site.Docs,
             url: "https://www.docs.optimism.io/",
         },
         {
-            text: Site$1.Explorer,
+            text: Site.Explorer,
             url: "https://optimistic.etherscan.io/",
         },
         {
-            text: Site$1.GitHub,
+            text: Site.GitHub,
             url: "https://github.com/optimism",
         },
         {
-            text: Site$1.Twitter,
+            text: Site.Twitter,
             url: "https://x.com/optimism",
         },
     ],
     description: "Optimism is an Ethereum rollup that that supports a variety of wrapped BTC tokens.",
     riskSummary: [
         {
-            title: RiskSummarySnippet$2.TitleBridgeUpgrade,
-            content: RiskSummarySnippet$2.RiskSummaryImmediateUpgrade
+            title: RiskSummarySnippet$1.TitleBridgeUpgrade,
+            content: RiskSummarySnippet$1.RiskSummaryImmediateUpgrade
         },
         {
-            title: RiskSummarySnippet$2.TitleCustodianPegs,
-            content: RiskSummarySnippet$2.RiskSummaryCustodianPegs
+            title: RiskSummarySnippet$1.TitleCustodianPegs,
+            content: RiskSummarySnippet$1.RiskSummaryCustodianPegs
         },
         {
-            title: RiskSummarySnippet$2.TitleAltDA,
-            content: RiskSummarySnippet$2.RiskSummaryAltDANetwork,
+            title: RiskSummarySnippet$1.TitleAltDA,
+            content: RiskSummarySnippet$1.RiskSummaryAltDANetwork,
         },
         {
-            title: RiskSummarySnippet$2.TitleCentralizedSequencer,
-            content: RiskSummarySnippet$2.RiskSummaryCentralizedSequencer,
+            title: RiskSummarySnippet$1.TitleCentralizedSequencer,
+            content: RiskSummarySnippet$1.RiskSummaryCentralizedSequencer,
         }
     ],
     riskAnalysis: [
         {
-            category: RiskCategory$1.BtcCustody,
+            category: RiskCategory.BtcCustody,
             score: 0,
             tier: RiskFactor.NotApplicable,
             title: "",
@@ -9515,7 +9086,7 @@ const optimism = {
                     score: 0,
                     tier: RiskFactor.High,
                     title: "Users trust the Threshold Network to keep tBTC backed and a 9 member federation to manage tBTC's bridge between Base and Ethereum",
-                    content: `${TokenSnippet$1.ThresholdtBTC}\n\nThis bridge is managed by a 6/9 federation. Bitcoin users trust that 6 of the 9 members of this federation do not collude and steal user funds.`
+                    content: `${TokenSnippet.ThresholdtBTC}\n\nThis bridge is managed by a 6/9 federation. Bitcoin users trust that 6 of the 9 members of this federation do not collude and steal user funds.`
                 },
                 {
                     name: "BitGo wBTC",
@@ -9523,66 +9094,66 @@ const optimism = {
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: "wBTC is managed by a centralized consortium of companies. We are analyzing if wBTC is natively minted on Optimism or if is bridged from Ethereum",
-                    content: `${TokenSnippet$1.BitGowBTC}\n\n${TokenSnippet$1.smartcontractreview}`,
+                    content: `${TokenSnippet.BitGowBTC}\n\n${TokenSnippet.smartcontractreview}`,
                 },
                 {
                     name: "Kraken kBTC",
                     infrastructureSlug: "kraken-kbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: `${TokenSnippet$1.KrakenKBTC}\n\n${TokenSnippet$1.smartcontractreview}`,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.KrakenKBTC}\n\n${TokenSnippet.smartcontractreview}`,
                 },
                 {
                     name: "Bedrock uniBTC",
                     infrastructureSlug: "bedrock-unibtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: `${TokenSnippet$1.BedrockUniBTC}\n\n${TokenSnippet$1.smartcontractreview}`,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.BedrockUniBTC}\n\n${TokenSnippet.smartcontractreview}`,
                 },
                 {
                     name: "Avalanche BTC.b",
                     infrastructureSlug: "avalanche-btcb",
                     score: 0,
                     tier: RiskFactor.UnderReview,
-                    title: TokenSnippet$1.FederationPeg,
-                    content: `${TokenSnippet$1.AvalancheBTCb}\n\n${TokenSnippet$1.smartcontractreview}`,
+                    title: TokenSnippet.FederationPeg,
+                    content: `${TokenSnippet.AvalancheBTCb}\n\n${TokenSnippet.smartcontractreview}`,
                 },
                 {
                     name: "iBTC",
                     infrastructureSlug: "ibtcnetwork-ibtc",
                     score: 0,
                     tier: RiskFactor.UnderReview,
-                    title: TokenSnippet$1.VariousCustodianPeg,
-                    content: `${TokenSnippet$1.iBTC}\n\n${TokenSnippet$1.smartcontractreview}\n\n`
+                    title: TokenSnippet.VariousCustodianPeg,
+                    content: `${TokenSnippet.iBTC}\n\n${TokenSnippet.smartcontractreview}\n\n`
                 },
                 {
                     name: "Synths sBTC",
                     infrastructureSlug: "synths-sbtc",
                     score: 0,
                     tier: RiskFactor.UnderReview,
-                    title: TokenSnippet$1.UnderReview,
-                    content: `${TokenSnippet$1.UnderReview}\n\n${TokenSnippet$1.smartcontractreview}`,
+                    title: TokenSnippet.UnderReview,
+                    content: `${TokenSnippet.UnderReview}\n\n${TokenSnippet.smartcontractreview}`,
                 },
             ],
         },
         {
-            category: RiskCategory$1.DataAvailability,
+            category: RiskCategory.DataAvailability,
             score: 0,
             tier: RiskFactor.Medium,
             title: "Data is stored and made available by Ethereum full nodes",
-            content: ReviewSnippet$1.EthereumRollupDA,
+            content: ReviewSnippet.EthereumRollupDA,
         },
         {
-            category: RiskCategory$1.NetworkOperators,
+            category: RiskCategory.NetworkOperators,
             score: 0,
             tier: RiskFactor.Medium,
             title: "Optimism blocks are produced and proposed by a centralized operator, but users can propose their own state updates in the event of censorship or liveness failures",
-            content: ReviewSnippet$1.SelfProposeMainAlt,
+            content: ReviewSnippet.SelfProposeMainAlt,
         },
         {
-            category: RiskCategory$1.FinalityGuarantees,
+            category: RiskCategory.FinalityGuarantees,
             score: 0,
             tier: RiskFactor.Medium,
             title: "Optimism state transitions finalize by updating its state based on data posted to Ethereum",
@@ -9607,8 +9178,8 @@ const osmosis = {
     type: Type.Layer,
     slug: "osmosis",
     title: "Osmosis",
-    entityType: EntityType$1.AltL1,
-    entityCategory: EntityCategory$1.Alt,
+    entityType: EntityType.AltL1,
+    entityCategory: EntityCategory.Alt,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -9627,40 +9198,40 @@ const osmosis = {
     bitcoinOnly: false,
     links: [
         {
-            text: Site$1.Website,
+            text: Site.Website,
             url: "https://osmosis.zone/",
         },
         {
-            text: Site$1.Docs,
+            text: Site.Docs,
             url: "https://docs.osmosis.zone/",
         },
         {
-            text: Site$1.Explorer,
+            text: Site.Explorer,
             url: "https://www.mintscan.io/osmosis",
         },
         {
-            text: Site$1.GitHub,
+            text: Site.GitHub,
             url: "https://github.com/osmosis-labs",
         },
         {
-            text: Site$1.Twitter,
+            text: Site.Twitter,
             url: "https://x.com/osmosiszone",
         },
     ],
     description: "Osmosis is a proof-of-stake blockchain that supports a number of wrapped BTC tokens. It is IBC-compatible and a part of the Cosmos ecosystem.",
     riskSummary: [
         {
-            title: RiskSummarySnippet$2.TitleCustodianPegs,
-            content: `${RiskSummarySnippet$2.RiskSummaryCustodianPegs}`,
+            title: RiskSummarySnippet$1.TitleCustodianPegs,
+            content: `${RiskSummarySnippet$1.RiskSummaryCustodianPegs}`,
         },
         {
-            title: RiskSummarySnippet$2.TitleAlternativeL1,
-            content: RiskSummarySnippet$2.RiskSummaryAlternativeL1,
+            title: RiskSummarySnippet$1.TitleAlternativeL1,
+            content: RiskSummarySnippet$1.RiskSummaryAlternativeL1,
         },
     ],
     riskAnalysis: [
         {
-            category: RiskCategory$1.BtcCustody,
+            category: RiskCategory.BtcCustody,
             score: 0,
             tier: RiskFactor.NotApplicable,
             title: "",
@@ -9672,30 +9243,30 @@ const osmosis = {
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: "BTC on Osmosis is backed by several reserve assets",
-                    content: TokenSnippet$1.OsmosisBTC,
+                    content: TokenSnippet.OsmosisBTC,
                 },
             ],
         },
         {
-            category: RiskCategory$1.DataAvailability,
+            category: RiskCategory.DataAvailability,
             score: 0,
             tier: RiskFactor.AlternativePoS,
             title: "Osmosis' full node set satisfies the data availability requirement",
-            content: ReviewSnippet$1.AltL1DA,
+            content: ReviewSnippet.AltL1DA,
         },
         {
-            category: RiskCategory$1.NetworkOperators,
+            category: RiskCategory.NetworkOperators,
             score: 0,
             tier: RiskFactor.AlternativePoS,
             title: "Osmosis is operated by a distributed validator set",
-            content: ReviewSnippet$1.OperatorSidechainPOS,
+            content: ReviewSnippet.OperatorSidechainPOS,
         },
         {
-            category: RiskCategory$1.FinalityGuarantees,
+            category: RiskCategory.FinalityGuarantees,
             score: 0,
             tier: RiskFactor.AlternativePoS,
             title: "Osmosis' finality guarantees are provided by its validator set",
-            content: ReviewSnippet$1.CometBFTFinality,
+            content: ReviewSnippet.CometBFTFinality,
         },
     ],
     sections: [
@@ -9705,19 +9276,19 @@ const osmosis = {
             content: [
                 {
                     title: "Osmosis does not inherit any security from Bitcoin",
-                    content: BitcoinSecuritySnippet$2.NoSecurity,
+                    content: BitcoinSecuritySnippet$1.NoSecurity,
                 },
                 {
                     title: "OSMO token used to pay fees",
-                    content: BitcoinSecuritySnippet$2.AltTokenFees,
+                    content: BitcoinSecuritySnippet$1.AltTokenFees,
                 },
                 {
                     title: "No MEV introduced to Bitcoin",
-                    content: BitcoinSecuritySnippet$2.AltNetworkMEV,
+                    content: BitcoinSecuritySnippet$1.AltNetworkMEV,
                 },
                 {
                     title: "Osmosis does not contribute to the security budget",
-                    content: BitcoinSecuritySnippet$2.NoSecurityBudget,
+                    content: BitcoinSecuritySnippet$1.NoSecurityBudget,
                 },
             ],
         },
@@ -9737,8 +9308,8 @@ const polygon = {
     type: Type.Layer,
     slug: "polygonpos",
     title: "Polygon PoS",
-    entityType: EntityType$1.AltL1,
-    entityCategory: EntityCategory$1.Alt,
+    entityType: EntityType.AltL1,
+    entityCategory: EntityCategory.Alt,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -9758,40 +9329,40 @@ const polygon = {
     bitcoinOnly: false,
     links: [
         {
-            text: Site$1.Website,
+            text: Site.Website,
             url: "https://polygon.technology/",
         },
         {
-            text: Site$1.Docs,
+            text: Site.Docs,
             url: "https://docs.polygon.technology/",
         },
         {
-            text: Site$1.Explorer,
+            text: Site.Explorer,
             url: "https://polygonscan.com/",
         },
         {
-            text: Site$1.GitHub,
+            text: Site.GitHub,
             url: "https://github.com/0xpolygon",
         },
         {
-            text: Site$1.Twitter,
+            text: Site.Twitter,
             url: "https://x.com/0xPolygon",
         },
     ],
     description: "Polygon is an alternative proof-of-stake blockchain that supports a number of wrapped BTC tokens. It offers an EVM-compatible execution environment which supports more expressive smart contracts.",
     riskSummary: [
         {
-            title: RiskSummarySnippet$2.TitleCustodianPegs,
-            content: `${RiskSummarySnippet$2.RiskSummaryCustodianPegs}`,
+            title: RiskSummarySnippet$1.TitleCustodianPegs,
+            content: `${RiskSummarySnippet$1.RiskSummaryCustodianPegs}`,
         },
         {
-            title: RiskSummarySnippet$2.TitleAlternativeL1,
-            content: RiskSummarySnippet$2.RiskSummaryAlternativeL1,
+            title: RiskSummarySnippet$1.TitleAlternativeL1,
+            content: RiskSummarySnippet$1.RiskSummaryAlternativeL1,
         },
     ],
     riskAnalysis: [
         {
-            category: RiskCategory$1.BtcCustody,
+            category: RiskCategory.BtcCustody,
             score: 0,
             tier: RiskFactor.NotApplicable,
             title: "",
@@ -9802,43 +9373,43 @@ const polygon = {
                     infrastructureSlug: "bitgo-wbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: TokenSnippet$1.BitGowBTC,
+                    title: TokenSnippet.CustodianPeg,
+                    content: TokenSnippet.BitGowBTC,
                 },
                 {
                     name: "Threshold tBTC",
                     infrastructureSlug: "threshold-tbtc",
                     score: 0,
                     tier: RiskFactor.UnderReview,
-                    title: TokenSnippet$1.FederationPeg,
-                    content: `${TokenSnippet$1.ThresholdtBTC}\n\n${TokenSnippet$1.smartcontractreview},`
+                    title: TokenSnippet.FederationPeg,
+                    content: `${TokenSnippet.ThresholdtBTC}\n\n${TokenSnippet.smartcontractreview},`
                 },
                 {
                     name: "Avalanche BTCb-Polygon",
                     infrastructureSlug: "avalanche-btcb",
                     score: 0,
                     tier: RiskFactor.UnderReview,
-                    title: TokenSnippet$1.FederationPeg,
-                    content: `${TokenSnippet$1.AvalancheBTCb}\n\n${TokenSnippet$1.smartcontractreview},`
+                    title: TokenSnippet.FederationPeg,
+                    content: `${TokenSnippet.AvalancheBTCb}\n\n${TokenSnippet.smartcontractreview},`
                 },
             ],
         },
         {
-            category: RiskCategory$1.DataAvailability,
+            category: RiskCategory.DataAvailability,
             score: 0,
             tier: RiskFactor.AlternativePoS,
             title: "Data is stored and made available by Polygon full nodes",
             content: "The data for Polygon's state is made available by its full nodes. Anyone can run an Polygon node and verify is state.",
         },
         {
-            category: RiskCategory$1.NetworkOperators,
+            category: RiskCategory.NetworkOperators,
             score: 0,
             tier: RiskFactor.AlternativePoS,
             title: "Polygon is operated by a distributed validator set",
             content: "Blocks are built and proposed by a distributed consensus network. Block producers in Polygon PoS are committee based and selected by its validator set.\n\nThe set of block producers is rotated periodically.",
         },
         {
-            category: RiskCategory$1.FinalityGuarantees,
+            category: RiskCategory.FinalityGuarantees,
             score: 0,
             tier: RiskFactor.AlternativePoS,
             title: "We are currently reviewing Polygon's finality guarantees",
@@ -9852,19 +9423,19 @@ const polygon = {
             content: [
                 {
                     title: "Polygon PoS does not inherit any security from Bitcoin",
-                    content: BitcoinSecuritySnippet$2.NoSecurity,
+                    content: BitcoinSecuritySnippet$1.NoSecurity,
                 },
                 {
                     title: "POL token used to pay fees",
-                    content: BitcoinSecuritySnippet$2.AltTokenFees,
+                    content: BitcoinSecuritySnippet$1.AltTokenFees,
                 },
                 {
                     title: "No MEV introduced to Bitcoin",
-                    content: BitcoinSecuritySnippet$2.CentralizedSequencerMEV,
+                    content: BitcoinSecuritySnippet$1.CentralizedSequencerMEV,
                 },
                 {
                     title: "Polygon PoS does not contribute to the security budget",
-                    content: BitcoinSecuritySnippet$2.NoSecurityBudget,
+                    content: BitcoinSecuritySnippet$1.NoSecurityBudget,
                 },
             ],
         },
@@ -9884,8 +9455,8 @@ const polygonzkevm = {
     type: Type.Layer,
     slug: "polygonzkevm",
     title: "Polygon zkEVM",
-    entityType: EntityType$1.AltRollup,
-    entityCategory: EntityCategory$1.Alt,
+    entityType: EntityType.AltRollup,
+    entityCategory: EntityCategory.Alt,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -9904,48 +9475,48 @@ const polygonzkevm = {
     bitcoinOnly: false,
     links: [
         {
-            text: Site$1.Website,
+            text: Site.Website,
             url: "https://polygon.technology/",
         },
         {
-            text: Site$1.Docs,
+            text: Site.Docs,
             url: "https://docs.polygon.technology/zkEVM/",
         },
         {
-            text: Site$1.Explorer,
+            text: Site.Explorer,
             url: "https://zkevm.polygonscan.com/",
         },
         {
-            text: Site$1.GitHub,
+            text: Site.GitHub,
             url: "https://github.com/0xpolygonhermez",
         },
         {
-            text: Site$1.Twitter,
+            text: Site.Twitter,
             url: "https://x.com/0xPolygon",
         },
     ],
     description: "Polygon zkEVM is a rollup that posts data to Ethereum.",
     riskSummary: [
         {
-            title: RiskSummarySnippet$2.TitleUpgrade,
-            content: RiskSummarySnippet$2.RiskSummaryImmediateUpgrade
+            title: RiskSummarySnippet$1.TitleUpgrade,
+            content: RiskSummarySnippet$1.RiskSummaryImmediateUpgrade
         },
         {
-            title: RiskSummarySnippet$2.TitleCustodianPegs,
-            content: RiskSummarySnippet$2.RiskSummaryCustodianPegs
+            title: RiskSummarySnippet$1.TitleCustodianPegs,
+            content: RiskSummarySnippet$1.RiskSummaryCustodianPegs
         },
         {
-            title: RiskSummarySnippet$2.TitleAltDA,
-            content: RiskSummarySnippet$2.RiskSummaryAltDANetwork,
+            title: RiskSummarySnippet$1.TitleAltDA,
+            content: RiskSummarySnippet$1.RiskSummaryAltDANetwork,
         },
         {
-            title: RiskSummarySnippet$2.TitleCentralizedSequencer,
-            content: RiskSummarySnippet$2.RiskSummaryCentralizedSequencer,
+            title: RiskSummarySnippet$1.TitleCentralizedSequencer,
+            content: RiskSummarySnippet$1.RiskSummaryCentralizedSequencer,
         }
     ],
     riskAnalysis: [
         {
-            category: RiskCategory$1.BtcCustody,
+            category: RiskCategory.BtcCustody,
             score: 0,
             tier: "",
             title: "",
@@ -9956,27 +9527,27 @@ const polygonzkevm = {
                     infrastructureSlug: "bitgo-wbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: TokenSnippet$1.BitGowBTC,
+                    title: TokenSnippet.CustodianPeg,
+                    content: TokenSnippet.BitGowBTC,
                 },
             ],
         },
         {
-            category: RiskCategory$1.DataAvailability,
+            category: RiskCategory.DataAvailability,
             score: 0,
             tier: RiskFactor.Medium,
             title: "A distributed consensus network satisfies the data availability requirement",
-            content: ReviewSnippet$1.EthereumRollupDA,
+            content: ReviewSnippet.EthereumRollupDA,
         },
         {
-            category: RiskCategory$1.NetworkOperators,
+            category: RiskCategory.NetworkOperators,
             score: 0,
             tier: RiskFactor.VeryHigh,
             title: "The network is operated by a centralized block producer",
-            content: ReviewSnippet$1.SelfSequenceNone,
+            content: ReviewSnippet.SelfSequenceNone,
         },
         {
-            category: RiskCategory$1.FinalityGuarantees,
+            category: RiskCategory.FinalityGuarantees,
             score: 0,
             tier: RiskFactor.Medium,
             title: "Polygon zkEVM state transitions finalize by updating its state based on data posted to Ethereum",
@@ -9991,19 +9562,19 @@ const polygonzkevm = {
             content: [
                 {
                     title: "Polygon zkEVM does not inherit any security from Bitcoin",
-                    content: BitcoinSecuritySnippet$2.NoSecurity,
+                    content: BitcoinSecuritySnippet$1.NoSecurity,
                 },
                 {
                     title: "ETH token used to pay fees",
-                    content: BitcoinSecuritySnippet$2.AltTokenFees,
+                    content: BitcoinSecuritySnippet$1.AltTokenFees,
                 },
                 {
                     title: "No MEV introduced to Bitcoin",
-                    content: BitcoinSecuritySnippet$2.CentralizedSequencerMEV,
+                    content: BitcoinSecuritySnippet$1.CentralizedSequencerMEV,
                 },
                 {
                     title: "Polygon zkEVM does not contribute to the security budget",
-                    content: BitcoinSecuritySnippet$2.NoSecurity,
+                    content: BitcoinSecuritySnippet$1.NoSecurity,
                 },
             ],
         },
@@ -10013,7 +9584,7 @@ const polygonzkevm = {
             content: [
                 {
                     title: "Ethereum Virtual Machine",
-                    content: TechnologySnippet$2.EVM,
+                    content: TechnologySnippet$1.EVM,
                 },
             ],
         },
@@ -10023,7 +9594,7 @@ const polygonzkevm = {
             content: [
                 {
                     title: "Onchain applications",
-                    content: UseCaseSnippet$2.OnchainApps,
+                    content: UseCaseSnippet$1.OnchainApps,
                 },
             ],
         },
@@ -10032,7 +9603,7 @@ const polygonzkevm = {
             title: "Knowledge Bits",
             content: [
                 {
-                    content: `${KnowledgeBitSnippet$2.EthereumL2}`,
+                    content: `${KnowledgeBitSnippet$1.EthereumL2}`,
                 },
             ],
         },
@@ -10043,8 +9614,8 @@ const rollux = {
     type: Type.Layer,
     slug: "rollux",
     title: "Rollux",
-    entityType: EntityType$1.AltRollup,
-    entityCategory: EntityCategory$1.Integrated,
+    entityType: EntityType.AltRollup,
+    entityCategory: EntityCategory.Integrated,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -10059,58 +9630,58 @@ const rollux = {
     btcLocked: 10,
     nativeToken: "SYS",
     feeToken: "SYS",
-    notice: Notice$1.OtherReasonBridge,
+    notice: Notice.OtherReasonBridge,
     bitcoinOnly: false,
     links: [
         {
-            text: Site$1.Website,
+            text: Site.Website,
             url: "https://rollux.com",
         },
         {
-            text: Site$1.Docs,
+            text: Site.Docs,
             url: "https://docs.rollux.com/docs/developers",
         },
         {
-            text: Site$1.Explorer,
+            text: Site.Explorer,
             url: "https://explorer.rollux.com",
         },
         {
-            text: Site$1.GitHub,
+            text: Site.GitHub,
             url: "https://github.com/SYS-Labs/rollux",
         },
         {
-            text: Site$1.Twitter,
+            text: Site.Twitter,
             url: "https://twitter.com/RolluxL2",
         },
     ],
     description: "Rollux is an optimistic rollup that uses Syscoin, two blockchains that are simultaneously merge-mined by bitcoin miners, as its base layer for data availability and state validation respectively. It has an EVM-compatible execution environment.",
     riskSummary: [
         {
-            title: RiskSummarySnippet$2.TitleUpgrade,
-            content: RiskSummarySnippet$2.RiskSummaryImmediateUpgrade
+            title: RiskSummarySnippet$1.TitleUpgrade,
+            content: RiskSummarySnippet$1.RiskSummaryImmediateUpgrade
         },
         {
-            title: RiskSummarySnippet$2.TitleCustodianPegs,
-            content: RiskSummarySnippet$2.RiskSummaryCustodianPegs
+            title: RiskSummarySnippet$1.TitleCustodianPegs,
+            content: RiskSummarySnippet$1.RiskSummaryCustodianPegs
         },
         {
-            title: RiskSummarySnippet$2.TitleAltDA,
-            content: RiskSummarySnippet$2.RiskSummaryAltDANetwork,
+            title: RiskSummarySnippet$1.TitleAltDA,
+            content: RiskSummarySnippet$1.RiskSummaryAltDANetwork,
         },
         {
-            title: RiskSummarySnippet$2.TitleCentralizedSequencer,
-            content: RiskSummarySnippet$2.RiskSummaryCentralizedSequencer,
+            title: RiskSummarySnippet$1.TitleCentralizedSequencer,
+            content: RiskSummarySnippet$1.RiskSummaryCentralizedSequencer,
         }
     ],
     categorization: [
         {
-            title: Categorization$1.NoBridgeTitle,
-            content: Categorization$1.NoBridgeSnippet,
+            title: Categorization.NoBridgeTitle,
+            content: Categorization.NoBridgeSnippet,
         },
     ],
     riskAnalysis: [
         {
-            category: RiskCategory$1.BtcCustody,
+            category: RiskCategory.BtcCustody,
             score: 0,
             tier: RiskFactor.NotApplicable,
             title: "",
@@ -10122,30 +9693,30 @@ const rollux = {
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: "wBTC on Rollux has a number of trust assumptions",
-                    content: `${TokenSnippet$1.BitGowBTC}\n\nRollux’s L1 bridge contract, which facilitates the transfer of wBTC from Syscoin to Rollux, is immediately upgradeable by a multi-sig wallet with anonymous signers. The Rollux L1 contract lives on the Syscoin NEVM chain.`,
+                    content: `${TokenSnippet.BitGowBTC}\n\nRollux’s L1 bridge contract, which facilitates the transfer of wBTC from Syscoin to Rollux, is immediately upgradeable by a multi-sig wallet with anonymous signers. The Rollux L1 contract lives on the Syscoin NEVM chain.`,
                 },
             ],
         },
         {
-            category: RiskCategory$1.DataAvailability,
+            category: RiskCategory.DataAvailability,
             score: 0,
             tier: RiskFactor.Medium,
             title: "The Syscoin blockchain satisfies Rollux's data availability requirement",
             content: "The Rollux chain posts transaction data to Syscoin’s UTXO chain’s data availability solution, [PoDA](https://docs.syscoin.org/docs/tech/poda/). The Syscoin L1 is a merge-mined chain with Bitcoin.\n\nData availability is satisfied by blobs, meaning that Syscoin nodes only store data related to Rollux for at least six hours after finality is reached. After this period, it is deleted. PoDA does not shard data and requires full nodes to store the entire contents of a blob for a given time period. At least one archive node needs to archive the full contents of the blob to ensure Rollux’s historical state is intact.\n\nAfter receiving a blob from Rollux, the UTXO chain attests to the availability of data to the NEVM chain.\n\nOnly one non-pruned online node is needed to reconstruct the entire state of Syscoin and Rollux.",
         },
         {
-            category: RiskCategory$1.NetworkOperators,
+            category: RiskCategory.NetworkOperators,
             score: 0,
             tier: RiskFactor.High,
             title: "Rollux is operated by a centralized sequencer with forced inclusion to the Syscoin L1 possible",
-            content: ReviewSnippet$1.SelfSequenceMainAlt,
+            content: ReviewSnippet.SelfSequenceMainAlt,
         },
         {
-            category: RiskCategory$1.FinalityGuarantees,
+            category: RiskCategory.FinalityGuarantees,
             score: 0,
             tier: RiskFactor.High,
             title: "Rollux inherits finality guarantees from Syscoin",
-            content: ReviewSnippet$1.FinalityAltRollupCentralizedProposer,
+            content: ReviewSnippet.FinalityAltRollupCentralizedProposer,
         },
     ],
     sections: [
@@ -10155,19 +9726,19 @@ const rollux = {
             content: [
                 {
                     title: "Rollux's data availability layer is merge-mined",
-                    content: BitcoinSecuritySnippet$2.MergeMineDA,
+                    content: BitcoinSecuritySnippet$1.MergeMineDA,
                 },
                 {
                     title: "The protocol does not enable MEV on Bitcoin",
-                    content: BitcoinSecuritySnippet$2.CentralizedSequencerMEV,
+                    content: BitcoinSecuritySnippet$1.CentralizedSequencerMEV,
                 },
                 {
                     title: "An alternative token plays a role in network security",
-                    content: BitcoinSecuritySnippet$2.AltTokenFees,
+                    content: BitcoinSecuritySnippet$1.AltTokenFees,
                 },
                 {
                     title: "Fees and issuance are paid to miners who merge-mine Syscoin",
-                    content: BitcoinSecuritySnippet$2.MergeMineDAFees,
+                    content: BitcoinSecuritySnippet$1.MergeMineDAFees,
                 },
             ],
         },
@@ -10232,9 +9803,9 @@ const rootstock = {
     type: Type.Layer,
     slug: "rootstock",
     title: "Rootstock",
-    entityType: EntityType$1.MergeMined,
-    entityCategory: EntityCategory$1.Sidesystem,
-    custodyTitle: CustodyTitle$1.Distributed,
+    entityType: EntityType.MergeMined,
+    entityCategory: EntityCategory.Sidesystem,
+    custodyTitle: CustodyTitle.Distributed,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -10253,40 +9824,40 @@ const rootstock = {
     bitcoinOnly: true,
     links: [
         {
-            text: Site$1.Website,
+            text: Site.Website,
             url: "https://rootstock.io",
         },
         {
-            text: Site$1.Docs,
+            text: Site.Docs,
             url: "https://dev.rootstock.io",
         },
         {
-            text: Site$1.Explorer,
+            text: Site.Explorer,
             url: "https://explorer.rootstock.io",
         },
         {
-            text: Site$1.GitHub,
+            text: Site.GitHub,
             url: "https://github.com/rsksmart",
         },
         {
-            text: Site$1.Twitter,
+            text: Site.Twitter,
             url: "https://twitter.com/rootstock_io",
         },
     ],
     description: "Rootstock is a merge-mined, EVM-compatible bitcoin sidechain. As a merge-mined network, bitcoin miners can concurrently mine for Rootstock's consensus. Rootstock has an enshrined cross-chain BTC asset called ''Smart Bitcoin'' (RBTC), which is pegged 1:1 to BTC and secured by a permissioned multisig federation.",
     riskSummary: [
         {
-            title: RiskSummarySnippet$2.TitleCustodianPegs,
-            content: `${RiskSummarySnippet$2.RiskFederationPeg}`,
+            title: RiskSummarySnippet$1.TitleCustodianPegs,
+            content: `${RiskSummarySnippet$1.RiskFederationPeg}`,
         },
         {
-            title: RiskSummarySnippet$2.TitleAlternativeL1,
-            content: RiskSummarySnippet$2.RiskSummaryAlternativeL1,
+            title: RiskSummarySnippet$1.TitleAlternativeL1,
+            content: RiskSummarySnippet$1.RiskSummaryAlternativeL1,
         },
     ],
     riskAnalysis: [
         {
-            category: RiskCategory$1.BtcCustody,
+            category: RiskCategory.BtcCustody,
             score: 0,
             tier: RiskFactor.NotApplicable,
             title: "",
@@ -10327,25 +9898,25 @@ const rootstock = {
             ],
         },
         {
-            category: RiskCategory$1.DataAvailability,
+            category: RiskCategory.DataAvailability,
             score: 0,
             tier: RiskFactor.Medium,
             title: "Data is stored and made available via Rootstock nodes. Running a node is permissionless",
-            content: `${ReviewSnippet$1.AltL1DAPOW}\n\nSo long as there is at least one non-pruned Rootstock full node online, users will be able to recover the full history and state of the Rootstock blockchain.`,
+            content: `${ReviewSnippet.AltL1DAPOW}\n\nSo long as there is at least one non-pruned Rootstock full node online, users will be able to recover the full history and state of the Rootstock blockchain.`,
         },
         {
-            category: RiskCategory$1.NetworkOperators,
+            category: RiskCategory.NetworkOperators,
             score: 0,
             tier: RiskFactor.Medium,
             title: "Any Bitcoin miner can participate in merge-mining Rootstock",
-            content: ReviewSnippet$1.OperatorSidechainMergeMine,
+            content: ReviewSnippet.OperatorSidechainMergeMine,
         },
         {
-            category: RiskCategory$1.FinalityGuarantees,
+            category: RiskCategory.FinalityGuarantees,
             score: 0,
             tier: RiskFactor.Medium,
             title: "Finality assurances are provided by Rootstock's consensus mechanism",
-            content: ReviewSnippet$1.AltL1FinalityPOW,
+            content: ReviewSnippet.AltL1FinalityPOW,
         },
     ],
     sections: [
@@ -10355,7 +9926,7 @@ const rootstock = {
             content: [
                 {
                     title: "Rootstock enables Bitcoin miners to merge-mine Rootstock",
-                    content: BitcoinSecuritySnippet$2.MergeMine,
+                    content: BitcoinSecuritySnippet$1.MergeMine,
                 },
                 {
                     title: "Another token is not used for network security",
@@ -10363,11 +9934,11 @@ const rootstock = {
                 },
                 {
                     title: "No MEV introduced to Bitcoin, but Bitcoin miners can extract sidechain MEV",
-                    content: BitcoinSecuritySnippet$2.MergeMineMEV,
+                    content: BitcoinSecuritySnippet$1.MergeMineMEV,
                 },
                 {
                     title: "Merge-mining enables Bitcoin miners to earn more fees",
-                    content: BitcoinSecuritySnippet$2.MergeMineFees,
+                    content: BitcoinSecuritySnippet$1.MergeMineFees,
                 },
             ],
         },
@@ -10440,8 +10011,8 @@ const scroll = {
     type: Type.Layer,
     slug: "scroll",
     title: "Scroll",
-    entityType: EntityType$1.AltRollup,
-    entityCategory: EntityCategory$1.Alt,
+    entityType: EntityType.AltRollup,
+    entityCategory: EntityCategory.Alt,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -10460,48 +10031,48 @@ const scroll = {
     bitcoinOnly: false,
     links: [
         {
-            text: Site$1.Website,
+            text: Site.Website,
             url: "https://scroll.io/",
         },
         {
-            text: Site$1.Docs,
+            text: Site.Docs,
             url: "https://docs.scroll.io/en/home/",
         },
         {
-            text: Site$1.Explorer,
+            text: Site.Explorer,
             url: "https://scrollscan.com/",
         },
         {
-            text: Site$1.GitHub,
+            text: Site.GitHub,
             url: "https://github.com/scroll-tech",
         },
         {
-            text: Site$1.Twitter,
+            text: Site.Twitter,
             url: "https://x.com/Scroll_ZKP",
         },
     ],
     description: "Scroll is a rollup that posts data to Ethereum.",
     riskSummary: [
         {
-            title: RiskSummarySnippet$2.TitleUpgrade,
-            content: RiskSummarySnippet$2.RiskSummaryImmediateUpgrade
+            title: RiskSummarySnippet$1.TitleUpgrade,
+            content: RiskSummarySnippet$1.RiskSummaryImmediateUpgrade
         },
         {
-            title: RiskSummarySnippet$2.TitleCustodianPegs,
-            content: RiskSummarySnippet$2.RiskSummaryCustodianPegs
+            title: RiskSummarySnippet$1.TitleCustodianPegs,
+            content: RiskSummarySnippet$1.RiskSummaryCustodianPegs
         },
         {
-            title: RiskSummarySnippet$2.TitleAltDA,
-            content: RiskSummarySnippet$2.RiskSummaryAltDANetwork,
+            title: RiskSummarySnippet$1.TitleAltDA,
+            content: RiskSummarySnippet$1.RiskSummaryAltDANetwork,
         },
         {
-            title: RiskSummarySnippet$2.TitleCentralizedSequencer,
-            content: RiskSummarySnippet$2.RiskSummaryCentralizedSequencer,
+            title: RiskSummarySnippet$1.TitleCentralizedSequencer,
+            content: RiskSummarySnippet$1.RiskSummaryCentralizedSequencer,
         }
     ],
     riskAnalysis: [
         {
-            category: RiskCategory$1.BtcCustody,
+            category: RiskCategory.BtcCustody,
             score: 0,
             tier: "",
             title: "",
@@ -10512,43 +10083,43 @@ const scroll = {
                     infrastructureSlug: "bitgo-wbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: TokenSnippet$1.BitGowBTC,
+                    title: TokenSnippet.CustodianPeg,
+                    content: TokenSnippet.BitGowBTC,
                 },
                 {
                     name: "Solv SolvBTC",
                     infrastructureSlug: "solv-solvbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: `${TokenSnippet$1.SolvBTC}\n\n${TokenSnippet$1.smartcontractreview}.`,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.SolvBTC}\n\n${TokenSnippet.smartcontractreview}.`,
                 },
                 {
                     name: "Lorenzo stBTC",
                     infrastructureSlug: "lorenzo-stbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: `${TokenSnippet$1.LorenzostBTC}\n\n${TokenSnippet$1.smartcontractreview}.`,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.LorenzostBTC}\n\n${TokenSnippet.smartcontractreview}.`,
                 },
             ],
         },
         {
-            category: RiskCategory$1.DataAvailability,
+            category: RiskCategory.DataAvailability,
             score: 0,
             tier: RiskFactor.Medium,
             title: "A distributed consensus network satisfies the data availability requirement",
-            content: ReviewSnippet$1.EthereumRollupDA,
+            content: ReviewSnippet.EthereumRollupDA,
         },
         {
-            category: RiskCategory$1.NetworkOperators,
+            category: RiskCategory.NetworkOperators,
             score: 0,
             tier: RiskFactor.VeryHigh,
             title: "The network is operated by a centralized block producer",
-            content: ReviewSnippet$1.SelfSequenceNone,
+            content: ReviewSnippet.SelfSequenceNone,
         },
         {
-            category: RiskCategory$1.FinalityGuarantees,
+            category: RiskCategory.FinalityGuarantees,
             score: 0,
             tier: RiskFactor.Medium,
             title: "Scroll state transitions finalize by updating its state based on data posted to Ethereum",
@@ -10563,19 +10134,19 @@ const scroll = {
             content: [
                 {
                     title: "Scroll does not inherit any security from Bitcoin",
-                    content: BitcoinSecuritySnippet$2.NoSecurity,
+                    content: BitcoinSecuritySnippet$1.NoSecurity,
                 },
                 {
                     title: "ETH token used to pay fees",
-                    content: BitcoinSecuritySnippet$2.AltTokenFees,
+                    content: BitcoinSecuritySnippet$1.AltTokenFees,
                 },
                 {
                     title: "No MEV introduced to Bitcoin",
-                    content: BitcoinSecuritySnippet$2.CentralizedSequencerMEV,
+                    content: BitcoinSecuritySnippet$1.CentralizedSequencerMEV,
                 },
                 {
                     title: "Scroll does not contribute to the security budget",
-                    content: BitcoinSecuritySnippet$2.NoSecurity,
+                    content: BitcoinSecuritySnippet$1.NoSecurity,
                 },
             ],
         },
@@ -10585,7 +10156,7 @@ const scroll = {
             content: [
                 {
                     title: "Ethereum Virtual Machine",
-                    content: TechnologySnippet$2.EVM,
+                    content: TechnologySnippet$1.EVM,
                 },
             ],
         },
@@ -10595,7 +10166,7 @@ const scroll = {
             content: [
                 {
                     title: "Onchain applications",
-                    content: UseCaseSnippet$2.OnchainApps,
+                    content: UseCaseSnippet$1.OnchainApps,
                 },
             ],
         },
@@ -10604,7 +10175,7 @@ const scroll = {
             title: "Knowledge Bits",
             content: [
                 {
-                    content: `${KnowledgeBitSnippet$2.EthereumL2}`,
+                    content: `${KnowledgeBitSnippet$1.EthereumL2}`,
                 },
             ],
         },
@@ -10615,8 +10186,8 @@ const side = {
     type: Type.Layer,
     slug: "side",
     title: "Side Protocol",
-    entityType: EntityType$1.PoSNetwork,
-    entityCategory: EntityCategory$1.Sidesystem,
+    entityType: EntityType.PoSNetwork,
+    entityCategory: EntityCategory.Sidesystem,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -10634,40 +10205,40 @@ const side = {
     bitcoinOnly: false,
     links: [
         {
-            text: Site$1.Website,
+            text: Site.Website,
             url: "https://side.one",
         },
         {
-            text: Site$1.Docs,
+            text: Site.Docs,
             url: "https://docs.side.one",
         },
         {
-            text: Site$1.Explorer,
+            text: Site.Explorer,
             url: "https://explorer.side.exchange",
         },
         {
-            text: Site$1.GitHub,
+            text: Site.GitHub,
             url: "https://github.com/sideprotocol",
         },
         {
-            text: Site$1.Twitter,
+            text: Site.Twitter,
             url: "https://x.com/SideProtocol",
         },
     ],
     description: "Side Protocol is a Proof-of-Stake blockchain for BTC-denominated applications. It runs on CometBFT consensus.",
     riskSummary: [
         {
-            title: RiskSummarySnippet$2.TitleCustodianPegs,
-            content: `${RiskSummarySnippet$2.RiskFederationPeg}`,
+            title: RiskSummarySnippet$1.TitleCustodianPegs,
+            content: `${RiskSummarySnippet$1.RiskFederationPeg}`,
         },
         {
-            title: RiskSummarySnippet$2.TitleAlternativeL1,
-            content: RiskSummarySnippet$2.RiskSummaryAlternativeL1,
+            title: RiskSummarySnippet$1.TitleAlternativeL1,
+            content: RiskSummarySnippet$1.RiskSummaryAlternativeL1,
         },
     ],
     riskAnalysis: [
         {
-            category: RiskCategory$1.BtcCustody,
+            category: RiskCategory.BtcCustody,
             score: 0,
             tier: "",
             title: "",
@@ -10679,30 +10250,30 @@ const side = {
                     score: 0,
                     tier: RiskFactor.High,
                     title: "Side sBTC is managed by a federation made up of a portion of its validator set",
-                    content: TokenSnippet$1.SideBTC,
+                    content: TokenSnippet.SideBTC,
                 },
             ],
         },
         {
-            category: RiskCategory$1.DataAvailability,
+            category: RiskCategory.DataAvailability,
             score: 0,
             tier: RiskFactor.AlternativePoS,
             title: "Data availability is satisfied by Side's full node set",
-            content: ReviewSnippet$1.AltL1DA,
+            content: ReviewSnippet.AltL1DA,
         },
         {
-            category: RiskCategory$1.BlockProduction,
+            category: RiskCategory.BlockProduction,
             score: 0,
             tier: RiskFactor.AlternativePoS,
             title: "Side protocol is operated by an alternative PoS network",
-            content: ReviewSnippet$1.OperatorSidechainPOS,
+            content: ReviewSnippet.OperatorSidechainPOS,
         },
         {
-            category: RiskCategory$1.StateValidation,
+            category: RiskCategory.StateValidation,
             score: 0,
             tier: RiskFactor.AlternativePoS,
             title: "Side protocol users CometBFT for consensus",
-            content: ReviewSnippet$1.CometBFTFinality,
+            content: ReviewSnippet.CometBFTFinality,
         },
     ],
     sections: [
@@ -10712,7 +10283,7 @@ const side = {
             content: [
                 {
                     title: "Side does not inherit any security from bitcoin",
-                    content: BitcoinSecuritySnippet$2.NoSecurity,
+                    content: BitcoinSecuritySnippet$1.NoSecurity,
                 },
                 {
                     title: "sBTC or SIDE token used to pay fees",
@@ -10720,11 +10291,11 @@ const side = {
                 },
                 {
                     title: "No MEV introduced to bitcoin",
-                    content: BitcoinSecuritySnippet$2.AltNetworkMEV,
+                    content: BitcoinSecuritySnippet$1.AltNetworkMEV,
                 },
                 {
                     title: "Side does not contribute to the security budget",
-                    content: BitcoinSecuritySnippet$2.NoSecurity,
+                    content: BitcoinSecuritySnippet$1.NoSecurity,
                 },
             ],
         },
@@ -10734,7 +10305,7 @@ const side = {
             content: [
                 {
                     title: "Side Chain is IBC=compatible",
-                    content: TechnologySnippet$2.IBC,
+                    content: TechnologySnippet$1.IBC,
                 }
             ],
         },
@@ -10744,7 +10315,7 @@ const side = {
             content: [
                 {
                     title: "Side Chain offers a variety of financial applications",
-                    content: UseCaseSnippet$2.OnchainApps,
+                    content: UseCaseSnippet$1.OnchainApps,
                 }
             ],
         },
@@ -10755,8 +10326,8 @@ const solana = {
     type: Type.Layer,
     slug: "solana",
     title: "Solana",
-    entityType: EntityType$1.AltL1,
-    entityCategory: EntityCategory$1.Alt,
+    entityType: EntityType.AltL1,
+    entityCategory: EntityCategory.Alt,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -10776,40 +10347,40 @@ const solana = {
     bitcoinOnly: false,
     links: [
         {
-            text: Site$1.Website,
+            text: Site.Website,
             url: "https://solana.com/",
         },
         {
-            text: Site$1.Docs,
+            text: Site.Docs,
             url: "https://solana.com/docs",
         },
         {
-            text: Site$1.Explorer,
+            text: Site.Explorer,
             url: "https://explorer.solana.com/",
         },
         {
-            text: Site$1.GitHub,
+            text: Site.GitHub,
             url: "https://github.com/solana-foundation/solana-com",
         },
         {
-            text: Site$1.Twitter,
+            text: Site.Twitter,
             url: "https://x.com/solana",
         },
     ],
     description: "Solana is an alternative proof-of-stake blockchain that supports a number of wrapped BTC tokens. It is home to the SVM execution environment which supports more expressive smart contracts.",
     riskSummary: [
         {
-            title: RiskSummarySnippet$2.TitleCustodianPegs,
-            content: `${RiskSummarySnippet$2.RiskSummaryCustodianPegs}`,
+            title: RiskSummarySnippet$1.TitleCustodianPegs,
+            content: `${RiskSummarySnippet$1.RiskSummaryCustodianPegs}`,
         },
         {
-            title: RiskSummarySnippet$2.TitleAlternativeL1,
-            content: RiskSummarySnippet$2.RiskSummaryAlternativeL1,
+            title: RiskSummarySnippet$1.TitleAlternativeL1,
+            content: RiskSummarySnippet$1.RiskSummaryAlternativeL1,
         },
     ],
     riskAnalysis: [
         {
-            category: RiskCategory$1.BtcCustody,
+            category: RiskCategory.BtcCustody,
             score: 0,
             tier: RiskFactor.NotApplicable,
             title: "",
@@ -10821,7 +10392,7 @@ const solana = {
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: "cbBTC is managed by a centralized custodian.",
-                    content: TokenSnippet$1.CoinbasecbBTC,
+                    content: TokenSnippet.CoinbasecbBTC,
                 },
                 {
                     name: "Threshold tBTC",
@@ -10829,58 +10400,58 @@ const solana = {
                     score: 0,
                     tier: RiskFactor.High,
                     title: "Users trust the Threshold Network to keep tBTC backed",
-                    content: `${TokenSnippet$1.ThresholdtBTC}\n\nThis bridge is managed by an [8 member](https://explorer.solana.com/address/Gj93RRt6QB7FjmyokAD5rcMAku7pq3Fk2Aa8y6nNbwsV/program-multisig) federation.`,
+                    content: `${TokenSnippet.ThresholdtBTC}\n\nThis bridge is managed by an [8 member](https://explorer.solana.com/address/Gj93RRt6QB7FjmyokAD5rcMAku7pq3Fk2Aa8y6nNbwsV/program-multisig) federation.`,
                 },
                 {
                     name: "Wormhole wBTC",
                     infrastructureSlug: "bitgo-wbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.UnderReview,
-                    content: `${TokenSnippet$1.BitGowBTC}\n\nwBTC on Solana is minted via the Portal bridge from Ethereum. We are reviewing the Portal bridge's smart contracts and trust assumptions.`,
+                    title: TokenSnippet.UnderReview,
+                    content: `${TokenSnippet.BitGowBTC}\n\nwBTC on Solana is minted via the Portal bridge from Ethereum. We are reviewing the Portal bridge's smart contracts and trust assumptions.`,
                 },
                 {
                     name: "21 Shares BTC",
                     infrastructureSlug: "21shares-21btc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: `${TokenSnippet$1.TwentyOnecoBTC}`,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.TwentyOnecoBTC}`,
                 },
                 {
                     name: "Zeus zBTC",
                     infrastructureSlug: "zeus-zbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.VariousCustodianPeg,
-                    content: `${TokenSnippet$1.ZueszBTC}`,
+                    title: TokenSnippet.VariousCustodianPeg,
+                    content: `${TokenSnippet.ZueszBTC}`,
                 },
                 {
                     name: "Rootstock RBTC",
                     infrastructureSlug: "rootstock-rbtc",
                     score: 0,
                     tier: RiskFactor.UnderReview,
-                    title: TokenSnippet$1.UnderReview,
-                    content: `${TokenSnippet$1.RootstockRBTC} Rootstock is bridged to Solana via a LayerZero implementation.`,
+                    title: TokenSnippet.UnderReview,
+                    content: `${TokenSnippet.RootstockRBTC} Rootstock is bridged to Solana via a LayerZero implementation.`,
                 },
             ],
         },
         {
-            category: RiskCategory$1.DataAvailability,
+            category: RiskCategory.DataAvailability,
             score: 0,
             tier: RiskFactor.AlternativePoS,
             title: "Data is stored and made available by an alternative PoS network",
-            content: ReviewSnippet$1.AltL1DA,
+            content: ReviewSnippet.AltL1DA,
         },
         {
-            category: RiskCategory$1.NetworkOperators,
+            category: RiskCategory.NetworkOperators,
             score: 0,
             tier: RiskFactor.AlternativePoS,
             title: "Solana is operated by a distributed validator set",
-            content: ReviewSnippet$1.OperatorSidechainPOS
+            content: ReviewSnippet.OperatorSidechainPOS
         },
         {
-            category: RiskCategory$1.FinalityGuarantees,
+            category: RiskCategory.FinalityGuarantees,
             score: 0,
             tier: RiskFactor.AlternativePoS,
             title: "We are currently reviewing Solana's specific finality guarantees",
@@ -10894,19 +10465,19 @@ const solana = {
             content: [
                 {
                     title: "Solana does not inherit any security from bitcoin",
-                    content: BitcoinSecuritySnippet$2.NoSecurity,
+                    content: BitcoinSecuritySnippet$1.NoSecurity,
                 },
                 {
                     title: "SOL token used to pay fees",
-                    content: BitcoinSecuritySnippet$2.AltTokenFees,
+                    content: BitcoinSecuritySnippet$1.AltTokenFees,
                 },
                 {
                     title: "No MEV introduced to bitcoin",
-                    content: BitcoinSecuritySnippet$2.AltNetworkMEV,
+                    content: BitcoinSecuritySnippet$1.AltNetworkMEV,
                 },
                 {
                     title: "Solana does not contribute to the security budget",
-                    content: BitcoinSecuritySnippet$2.NoSecurityBudget,
+                    content: BitcoinSecuritySnippet$1.NoSecurityBudget,
                 },
             ],
         },
@@ -10916,7 +10487,7 @@ const solana = {
             content: [
                 {
                     title: "Onchain applications",
-                    content: UseCaseSnippet$2.OnchainApps,
+                    content: UseCaseSnippet$1.OnchainApps,
                 },
             ],
         },
@@ -10927,8 +10498,8 @@ const soneium = {
     type: Type.Layer,
     slug: "soneium",
     title: "Soneium",
-    entityType: EntityType$1.AltRollup,
-    entityCategory: EntityCategory$1.Alt,
+    entityType: EntityType.AltRollup,
+    entityCategory: EntityCategory.Alt,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -10948,19 +10519,19 @@ const soneium = {
     bitcoinOnly: false,
     links: [
         {
-            text: Site$1.Website,
+            text: Site.Website,
             url: "https://soneium.org/en/",
         },
         {
-            text: Site$1.Docs,
+            text: Site.Docs,
             url: "https://docs.soneium.org/docs/builders/overview",
         },
         {
-            text: Site$1.Explorer,
+            text: Site.Explorer,
             url: "https://soneium.blockscout.com/",
         },
         {
-            text: Site$1.Twitter,
+            text: Site.Twitter,
             url: "https://x.com/soneium",
         },
     ],
@@ -10985,7 +10556,7 @@ const soneium = {
     ],
     riskAnalysis: [
         {
-            category: RiskCategory$1.BtcCustody,
+            category: RiskCategory.BtcCustody,
             score: 0,
             tier: "",
             title: "",
@@ -11039,21 +10610,21 @@ const soneium = {
             ],
         },
         {
-            category: RiskCategory$1.DataAvailability,
+            category: RiskCategory.DataAvailability,
             score: 0,
             tier: RiskFactor.Medium,
             title: "Ethereum satisfies the network's data availability requirement",
             content: Reviewsnippet.EthereumRollupDA,
         },
         {
-            category: RiskCategory$1.NetworkOperators,
+            category: RiskCategory.NetworkOperators,
             score: 0,
             tier: RiskFactor.Medium,
             title: "The network is operated by a centralized entity. Users can bypass the sequencer if needed",
             content: `${Reviewsnippet.AltRollupSelfSequenceMain}`
         },
         {
-            category: RiskCategory$1.FinalityGuarantees,
+            category: RiskCategory.FinalityGuarantees,
             score: 0,
             tier: RiskFactor.Medium,
             title: "Soneium state transitions finalize by updating its state based on data posted to Ethereum",
@@ -11078,8 +10649,8 @@ const sonic = {
     type: Type.Layer,
     slug: "sonic",
     title: "Sonic",
-    entityType: EntityType$1.AltL1,
-    entityCategory: EntityCategory$1.Alt,
+    entityType: EntityType.AltL1,
+    entityCategory: EntityCategory.Alt,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -11099,40 +10670,40 @@ const sonic = {
     bitcoinOnly: false,
     links: [
         {
-            text: Site$1.Website,
+            text: Site.Website,
             url: "https://www.soniclabs.com/",
         },
         {
-            text: Site$1.Docs,
+            text: Site.Docs,
             url: "https://docs.soniclabs.com/",
         },
         {
-            text: Site$1.Explorer,
+            text: Site.Explorer,
             url: "https://sonicscan.org/",
         },
         {
-            text: Site$1.GitHub,
+            text: Site.GitHub,
             url: "https://github.com/0xsoniclabs",
         },
         {
-            text: Site$1.Twitter,
+            text: Site.Twitter,
             url: "https://x.com/SonicLabs",
         },
     ],
     description: "Sonic is an alternative proof-of-stake blockchain that supports a number of wrapped BTC tokens. It offers an EVM-compatible execution environment which supports more expressive smart contracts.",
     riskSummary: [
         {
-            title: RiskSummarySnippet$2.TitleCustodianPegs,
-            content: `${RiskSummarySnippet$2.RiskSummaryCustodianPegs}`,
+            title: RiskSummarySnippet$1.TitleCustodianPegs,
+            content: `${RiskSummarySnippet$1.RiskSummaryCustodianPegs}`,
         },
         {
-            title: RiskSummarySnippet$2.TitleAlternativeL1,
-            content: RiskSummarySnippet$2.RiskSummaryAlternativeL1,
+            title: RiskSummarySnippet$1.TitleAlternativeL1,
+            content: RiskSummarySnippet$1.RiskSummaryAlternativeL1,
         },
     ],
     riskAnalysis: [
         {
-            category: RiskCategory$1.BtcCustody,
+            category: RiskCategory.BtcCustody,
             score: 0,
             tier: RiskFactor.NotApplicable,
             title: "",
@@ -11143,51 +10714,51 @@ const sonic = {
                     infrastructureSlug: "solv-solvbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: `${TokenSnippet$1.SolvBTC}\n\n${TokenSnippet$1.smartcontractreview},`,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.SolvBTC}\n\n${TokenSnippet.smartcontractreview},`,
                 },
                 {
                     name: "Solv xSolvBTC",
                     infrastructureSlug: "solv-xsolvbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianDerivative,
-                    content: `${TokenSnippet$1.xSolvBTC}\n\n${TokenSnippet$1.smartcontractreview},`,
+                    title: TokenSnippet.CustodianDerivative,
+                    content: `${TokenSnippet.xSolvBTC}\n\n${TokenSnippet.smartcontractreview},`,
                 },
                 {
                     name: "BitGo wBTC",
                     infrastructureSlug: "bitgo-wbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: `${TokenSnippet$1.BitGowBTC}\n\n${TokenSnippet$1.smartcontractreview},`,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.BitGowBTC}\n\n${TokenSnippet.smartcontractreview},`,
                 },
                 {
                     name: "Lombard LBTC",
                     infrastructureSlug: "lombard-lbtc",
                     score: 0,
                     tier: RiskFactor.UnderReview,
-                    title: TokenSnippet$1.FederationPeg,
-                    content: `${TokenSnippet$1.LombardLBTC}\n\n${TokenSnippet$1.smartcontractreview},`,
+                    title: TokenSnippet.FederationPeg,
+                    content: `${TokenSnippet.LombardLBTC}\n\n${TokenSnippet.smartcontractreview},`,
                 },
             ],
         },
         {
-            category: RiskCategory$1.DataAvailability,
+            category: RiskCategory.DataAvailability,
             score: 0,
             tier: RiskFactor.AlternativePoS,
             title: "Data is stored and made available by Sonic full nodes",
             content: "The data for Sonic's state is made available by its full nodes. We are reviewing if operating a node is permissionless.",
         },
         {
-            category: RiskCategory$1.NetworkOperators,
+            category: RiskCategory.NetworkOperators,
             score: 0,
             tier: RiskFactor.AlternativePoS,
             title: "Sonic is operated by a distributed validator set",
             content: "Blocks are built and proposed by a distributed consensus network. We are reviewing Sonic's consensus mechanism.",
         },
         {
-            category: RiskCategory$1.FinalityGuarantees,
+            category: RiskCategory.FinalityGuarantees,
             score: 0,
             tier: RiskFactor.UnderReview,
             title: "We are currently reviewing Sonic's finality guarantees",
@@ -11201,19 +10772,19 @@ const sonic = {
             content: [
                 {
                     title: "Sonic does not inherit any security from Bitcoin",
-                    content: BitcoinSecuritySnippet$2.NoSecurity,
+                    content: BitcoinSecuritySnippet$1.NoSecurity,
                 },
                 {
                     title: "S token used to pay fees",
-                    content: BitcoinSecuritySnippet$2.AltTokenFees,
+                    content: BitcoinSecuritySnippet$1.AltTokenFees,
                 },
                 {
                     title: "No MEV introduced to Bitcoin",
-                    content: BitcoinSecuritySnippet$2.AltNetworkMEV,
+                    content: BitcoinSecuritySnippet$1.AltNetworkMEV,
                 },
                 {
                     title: "Sonic does not contribute to the security budget",
-                    content: BitcoinSecuritySnippet$2.NoSecurityBudget,
+                    content: BitcoinSecuritySnippet$1.NoSecurityBudget,
                 },
             ],
         },
@@ -11233,9 +10804,9 @@ const spark = {
     type: Type.Layer,
     slug: "spark",
     title: "Spark",
-    entityType: EntityType$1.Statechain,
-    entityCategory: EntityCategory$1.BitcoinNative,
-    custodyTitle: CustodyTitle$1.BitcoinNative,
+    entityType: EntityType.Statechain,
+    entityCategory: EntityCategory.BitcoinNative,
+    custodyTitle: CustodyTitle.BitcoinNative,
     live: LiveStatus.Beta,
     staking: false,
     liquidStaking: false,
@@ -11254,19 +10825,19 @@ const spark = {
     bitcoinOnly: true,
     links: [
         {
-            text: Site$1.Website,
+            text: Site.Website,
             url: "https://www.spark.money/",
         },
         {
-            text: Site$1.Twitter,
+            text: Site.Twitter,
             url: "https://x.com/buildonspark",
         },
         {
-            text: Site$1.GitHub,
+            text: Site.GitHub,
             url: "https://github.com/buildonspark",
         },
         {
-            text: Site$1.Docs,
+            text: Site.Docs,
             url: "https://docs.spark.money/home/welcome",
         },
     ],
@@ -11283,7 +10854,7 @@ const spark = {
     ],
     riskAnalysis: [
         {
-            category: RiskCategory$1.BtcCustody,
+            category: RiskCategory.BtcCustody,
             score: 0,
             tier: "",
             title: "",
@@ -11295,23 +10866,23 @@ const spark = {
                     score: 0,
                     tier: RiskFactor.Low,
                     title: "Users collaboratively custody funds with the statechain entity",
-                    content: TokenSnippet$1.SparkBTC,
+                    content: TokenSnippet.SparkBTC,
                 },
             ],
         },
         {
-            category: RiskCategory$1.DataAvailability,
+            category: RiskCategory.DataAvailability,
             score: 0,
             tier: RiskFactor.Low,
             title: "Data related to current UTXO ownership is held client-side",
             content: "Transaction data is self-hosted. The statechain entity signs individual transactions and users store data for their keyshare and unilateral exit path client-side. The statechain entity also keeps a record of transfer history.",
         },
         {
-            category: RiskCategory$1.NetworkOperators,
+            category: RiskCategory.NetworkOperators,
             score: 0,
             tier: RiskFactor.VeryHigh,
             title: "Offchain transfers are co-signed by a federation",
-            content: `${ReviewSnippet$1.OperatorFederatedStatechain}`,
+            content: `${ReviewSnippet.OperatorFederatedStatechain}`,
             alert: {
                 type: "warning",
                 title: "Federation is below five, publicly known entities",
@@ -11322,11 +10893,11 @@ const spark = {
             },
         },
         {
-            category: RiskCategory$1.FinalityGuarantees,
+            category: RiskCategory.FinalityGuarantees,
             score: 0,
             tier: RiskFactor.VeryHigh,
             title: "Users trust a federation to delete keyshares held with previous owners",
-            content: ReviewSnippet$1.FinalityStatechainFederation,
+            content: ReviewSnippet.FinalityStatechainFederation,
             alert: Alertsnippet.StatechainKeyDeletion,
         },
     ],
@@ -11337,19 +10908,19 @@ const spark = {
             content: [
                 {
                     title: "Users rely on Bitcoin network participants for exit transactions",
-                    content: BitcoinSecuritySnippet$2.BitcoinSecurityOffchainUTXO,
+                    content: BitcoinSecuritySnippet$1.BitcoinSecurityOffchainUTXO,
                 },
                 {
                     title: "The protocol does not enable MEV on Bitcoin",
-                    content: BitcoinSecuritySnippet$2.OffchainUTXOMEV,
+                    content: BitcoinSecuritySnippet$1.OffchainUTXOMEV,
                 },
                 {
                     title: "No alternative token needed for network security",
-                    content: BitcoinSecuritySnippet$2.OffchainUTXONoToken,
+                    content: BitcoinSecuritySnippet$1.OffchainUTXONoToken,
                 },
                 {
                     title: "Unilateral exits contribute to the security budget",
-                    content: BitcoinSecuritySnippet$2.StatechainSecurityBudget,
+                    content: BitcoinSecuritySnippet$1.StatechainSecurityBudget,
                 },
             ],
         },
@@ -11428,9 +10999,9 @@ const stacks = {
     type: Type.Layer,
     slug: "stacks",
     title: "Stacks",
-    entityType: EntityType$1.Anchor,
-    entityCategory: EntityCategory$1.Sidesystem,
-    custodyTitle: CustodyTitle$1.Distributed,
+    entityType: EntityType.Anchor,
+    entityCategory: EntityCategory.Sidesystem,
+    custodyTitle: CustodyTitle.Distributed,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -11449,40 +11020,40 @@ const stacks = {
     bitcoinOnly: false,
     links: [
         {
-            text: Site$1.Website,
+            text: Site.Website,
             url: "https://www.stacks.co",
         },
         {
-            text: Site$1.Docs,
+            text: Site.Docs,
             url: "https://docs.stacks.co/docs/intro",
         },
         {
-            text: Site$1.Explorer,
+            text: Site.Explorer,
             url: "https://explorer.hiro.so/transactions?chain=mainnet",
         },
         {
-            text: Site$1.GitHub,
+            text: Site.GitHub,
             url: "https://github.com/stacks-network",
         },
         {
-            text: Site$1.Twitter,
+            text: Site.Twitter,
             url: "https://x.com/Stacks",
         },
     ],
     description: "Stacks is a sidechain that aims to be programmability layer for Bitcoin. It uses a novel execution environment, Clarity. Stacks uses a hybrid PoS mechanism (PoX) and derives economic security from its native token (STX).",
     riskSummary: [
         {
-            title: RiskSummarySnippet$2.TitleCustodianPegs,
-            content: `${RiskSummarySnippet$2.RiskFederationPeg}`
+            title: RiskSummarySnippet$1.TitleCustodianPegs,
+            content: `${RiskSummarySnippet$1.RiskFederationPeg}`
         },
         {
-            title: RiskSummarySnippet$2.TitleAlternativeL1,
-            content: RiskSummarySnippet$2.RiskSummaryAlternativeL1,
+            title: RiskSummarySnippet$1.TitleAlternativeL1,
+            content: RiskSummarySnippet$1.RiskSummaryAlternativeL1,
         },
     ],
     riskAnalysis: [
         {
-            category: RiskCategory$1.BtcCustody,
+            category: RiskCategory.BtcCustody,
             score: 0,
             tier: RiskFactor.NotApplicable,
             title: "",
@@ -11493,47 +11064,47 @@ const stacks = {
                     infrastructureSlug: "stacks-sbtc",
                     score: 0,
                     tier: RiskFactor.High,
-                    title: TokenSnippet$1.FederationPeg,
-                    content: TokenSnippet$1.StacksSBTC,
+                    title: TokenSnippet.FederationPeg,
+                    content: TokenSnippet.StacksSBTC,
                 },
                 {
                     name: "Alex xBTC",
                     infrastructureSlug: "alex-xbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: TokenSnippet$1.AlexBTC,
+                    title: TokenSnippet.CustodianPeg,
+                    content: TokenSnippet.AlexBTC,
                 },
                 {
                     name: "XLink aBTC",
                     infrastructureSlug: "xlink-abtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: TokenSnippet$1.xlink,
+                    title: TokenSnippet.CustodianPeg,
+                    content: TokenSnippet.xlink,
                 },
             ],
         },
         {
-            category: RiskCategory$1.DataAvailability,
+            category: RiskCategory.DataAvailability,
             score: 0,
             tier: RiskFactor.Medium,
             title: "Data availability requirement is fulfilled through Stacks' full nodes",
-            content: ReviewSnippet$1.AltL1DA,
+            content: ReviewSnippet.AltL1DA,
         },
         {
-            category: RiskCategory$1.NetworkOperators,
+            category: RiskCategory.NetworkOperators,
             score: 0,
             tier: RiskFactor.Medium,
             title: "Stacks blocks are built by miners and validated by stakers",
             content: "Blocks are built by miners during a given mining tenure. After their tenure, stakers validate the blocks built during this tenure. Anyone with sufficient capital resources can become a miner or staker.",
         },
         {
-            category: RiskCategory$1.FinalityGuarantees,
+            category: RiskCategory.FinalityGuarantees,
             score: 0,
             tier: RiskFactor.Low,
             title: "State transitions validated and finalized by Stackers. Block leaders must build on the latest checkpoint included in the latest block tenure that was validated by stackers",
-            content: ReviewSnippet$1.FinalityAnchorChain,
+            content: ReviewSnippet.FinalityAnchorChain,
         },
     ],
     sections: [
@@ -11543,19 +11114,19 @@ const stacks = {
             content: [
                 {
                     title: "Stacks inherits additional reorg resistance from bitcoin",
-                    content: BitcoinSecuritySnippet$2.FinalityAssurance,
+                    content: BitcoinSecuritySnippet$1.FinalityAssurance,
                 },
                 {
                     title: "The protocol does not enable MEV on Bitcoin, but Bitcoin miners can extract MEV from Stacks",
-                    content: BitcoinSecuritySnippet$2.AltNetworkMEV,
+                    content: BitcoinSecuritySnippet$1.AltNetworkMEV,
                 },
                 {
                     title: "An alternative token plays a role in network security",
-                    content: BitcoinSecuritySnippet$2.AltTokenFees,
+                    content: BitcoinSecuritySnippet$1.AltTokenFees,
                 },
                 {
                     title: "Stacks does not contribute to the security budget",
-                    content: BitcoinSecuritySnippet$2.NoSecurityBudget,
+                    content: BitcoinSecuritySnippet$1.NoSecurityBudget,
                 },
             ],
         },
@@ -11624,8 +11195,8 @@ const starknet = {
     type: Type.Layer,
     slug: "starknet",
     title: "Starknet",
-    entityType: EntityType$1.AltRollup,
-    entityCategory: EntityCategory$1.Alt,
+    entityType: EntityType.AltRollup,
+    entityCategory: EntityCategory.Alt,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -11641,61 +11212,61 @@ const starknet = {
     nativeToken: "ETH",
     feeToken: "ETH",
     bitcoinOnly: false,
-    notice: Notice$1.OtherReasonBridge,
+    notice: Notice.OtherReasonBridge,
     links: [
         {
-            text: Site$1.Website,
+            text: Site.Website,
             url: "https://www.starknet.io",
         },
         {
-            text: Site$1.Docs,
+            text: Site.Docs,
             url: "https://docs.starknet.io",
         },
         {
-            text: Site$1.Explorer,
+            text: Site.Explorer,
             url: "https://starkscan.co",
         },
         {
-            text: Site$1.GitHub,
+            text: Site.GitHub,
             url: "https://github.com/keep-starknet-strange/awesome-starknet",
         },
         {
-            text: Site$1.Twitter,
+            text: Site.Twitter,
             url: "https://x.com/Starknet",
         },
     ],
     description: "Starknet is a rollup that posts data to Ethereum. Its official bridge programs on Ethereum are finalized with validity proofs. It is currently researching bridge programs on bitcoin using BitVM, ColliderVM, or native proof verification (in the event more expressive opcodes are added to bitcoin Script).",
     riskSummary: [
         {
-            title: RiskSummarySnippet$2.TitleSystemUpgrade,
-            content: `${RiskSummarySnippet$2.RiskSummarySecurityCouncil} Starknet's security council is a 9/12 multisig.`,
+            title: RiskSummarySnippet$1.TitleSystemUpgrade,
+            content: `${RiskSummarySnippet$1.RiskSummarySecurityCouncil} Starknet's security council is a 9/12 multisig.`,
         },
         {
-            title: RiskSummarySnippet$2.TitleBridgeUpgrade,
-            content: `${RiskSummarySnippet$2.RiskSummaryCentralNotImmediateUpgrade} A 2/4 multisig can upgrade the wBTC bridge contract after a three day delay. A single signer can upgrade the tBTC bridge contract after a three day delay.`,
+            title: RiskSummarySnippet$1.TitleBridgeUpgrade,
+            content: `${RiskSummarySnippet$1.RiskSummaryCentralNotImmediateUpgrade} A 2/4 multisig can upgrade the wBTC bridge contract after a three day delay. A single signer can upgrade the tBTC bridge contract after a three day delay.`,
         },
         {
-            title: RiskSummarySnippet$2.TitleCustodianPegs,
-            content: RiskSummarySnippet$2.RiskSummaryCustodianPegs,
+            title: RiskSummarySnippet$1.TitleCustodianPegs,
+            content: RiskSummarySnippet$1.RiskSummaryCustodianPegs,
         },
         {
-            title: RiskSummarySnippet$2.TitleAltDA,
-            content: RiskSummarySnippet$2.RiskSummaryAltDANetwork,
+            title: RiskSummarySnippet$1.TitleAltDA,
+            content: RiskSummarySnippet$1.RiskSummaryAltDANetwork,
         },
         {
-            title: RiskSummarySnippet$2.TitleCentralizedSequencer,
-            content: RiskSummarySnippet$2.RiskSummaryCentralizedSequencer,
+            title: RiskSummarySnippet$1.TitleCentralizedSequencer,
+            content: RiskSummarySnippet$1.RiskSummaryCentralizedSequencer,
         }
     ],
     categorization: [
         {
-            title: Categorization$1.NoBridgeTitle,
-            content: Categorization$1.NoBridgeSnippet,
+            title: Categorization.NoBridgeTitle,
+            content: Categorization.NoBridgeSnippet,
         },
     ],
     riskAnalysis: [
         {
-            category: RiskCategory$1.BtcCustody,
+            category: RiskCategory.BtcCustody,
             score: 0,
             tier: RiskFactor.NotApplicable,
             title: "",
@@ -11706,8 +11277,8 @@ const starknet = {
                     infrastructureSlug: "bitgo-wbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: `${TokenSnippet$1.BitGowBTC}. The wBTC implementation of the Starknet bridge contract is upgradeable by a 2/4 multisig. There is a 3 day delay before the upgrade is implemented.`,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.BitGowBTC}. The wBTC implementation of the Starknet bridge contract is upgradeable by a 2/4 multisig. There is a 3 day delay before the upgrade is implemented.`,
                     alert: Alertsnippet.AltRollupAltTokenProofsUpgrade,
                 },
                 {
@@ -11715,28 +11286,28 @@ const starknet = {
                     infrastructureSlug: "threshold-tbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: `${TokenSnippet$1.FederationPeg}. To mint on starknet, tBTC on Ethereum is locked in an upgreadeable escrow contract`,
-                    content: `${TokenSnippet$1.ThresholdtBTC}\n\n${Reviewsnippet.AltRollupAltTokenValidityProofs} The tBTC implementation of the Starknet bridge contract is upgradeable by a single signer. There is a there a 3 day delay before the upgrade is implemented.`,
+                    title: `${TokenSnippet.FederationPeg}. To mint on starknet, tBTC on Ethereum is locked in an upgreadeable escrow contract`,
+                    content: `${TokenSnippet.ThresholdtBTC}\n\n${Reviewsnippet.AltRollupAltTokenValidityProofs} The tBTC implementation of the Starknet bridge contract is upgradeable by a single signer. There is a there a 3 day delay before the upgrade is implemented.`,
                     alert: Alertsnippet.AltRollupAltTokenProofsUpgrade,
                 },
             ],
         },
         {
-            category: RiskCategory$1.DataAvailability,
+            category: RiskCategory.DataAvailability,
             score: 0,
             tier: RiskFactor.Medium,
             title: "Ethereum satisfies Starknet's data availability requirement",
-            content: ReviewSnippet$1.EthereumRollupDA,
+            content: ReviewSnippet.EthereumRollupDA,
         },
         {
-            category: RiskCategory$1.NetworkOperators,
+            category: RiskCategory.NetworkOperators,
             score: 0,
             tier: RiskFactor.VeryHigh,
             title: "Blocks are currently produced by a centralized sequencer",
             content: "The network's blocks are constructed by a centralized block producer.\n\nUsers cannot build their own blocks in the event of censorship or liveness failures.",
         },
         {
-            category: RiskCategory$1.FinalityGuarantees,
+            category: RiskCategory.FinalityGuarantees,
             score: 0,
             tier: RiskFactor.Medium,
             title: "Starknet state transitions finalize by updating its state based on data posted to Ethereum",
@@ -11765,19 +11336,19 @@ const starknet = {
             content: [
                 {
                     title: "Starknet does not inherit any security from Bitcoin",
-                    content: BitcoinSecuritySnippet$2.NoSecurity,
+                    content: BitcoinSecuritySnippet$1.NoSecurity,
                 },
                 {
                     title: "ETH token used to pay fees",
-                    content: BitcoinSecuritySnippet$2.AltTokenFees,
+                    content: BitcoinSecuritySnippet$1.AltTokenFees,
                 },
                 {
                     title: "No MEV introduced to Bitcoin",
-                    content: BitcoinSecuritySnippet$2.CentralizedSequencerMEV,
+                    content: BitcoinSecuritySnippet$1.CentralizedSequencerMEV,
                 },
                 {
                     title: "Starknet does not contribute to the security budget",
-                    content: BitcoinSecuritySnippet$2.NoSecurityBudget,
+                    content: BitcoinSecuritySnippet$1.NoSecurityBudget,
                 },
             ],
         },
@@ -11805,7 +11376,7 @@ const starknet = {
             content: [
                 {
                     title: "Onchain applications",
-                    content: UseCaseSnippet$2.OnchainApps,
+                    content: UseCaseSnippet$1.OnchainApps,
                 },
             ],
         },
@@ -11854,8 +11425,8 @@ const template = {
     type: Type.Layer,
     slug: "sui",
     title: "Sui",
-    entityType: EntityType$1.AltL1,
-    entityCategory: EntityCategory$1.Alt,
+    entityType: EntityType.AltL1,
+    entityCategory: EntityCategory.Alt,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -11874,23 +11445,23 @@ const template = {
     bitcoinOnly: false,
     links: [
         {
-            text: Site$1.Website,
+            text: Site.Website,
             url: "website",
         },
         {
-            text: Site$1.Docs,
+            text: Site.Docs,
             url: "docs",
         },
         {
-            text: Site$1.Explorer,
+            text: Site.Explorer,
             url: "explorer",
         },
         {
-            text: Site$1.GitHub,
+            text: Site.GitHub,
             url: "github",
         },
         {
-            text: Site$1.Twitter,
+            text: Site.Twitter,
             url: "socials",
         },
     ],
@@ -11907,7 +11478,7 @@ const template = {
     ],
     riskAnalysis: [
         {
-            category: RiskCategory$1.BtcCustody,
+            category: RiskCategory.BtcCustody,
             score: 0,
             tier: "",
             title: "",
@@ -11919,7 +11490,7 @@ const template = {
                     score: 0,
                     tier: RiskFactor.High,
                     title: "For an official two-way peg, you can write a customized title here.",
-                    content: `${TokenSnippet$1.TemplateBTC}\n\n`,
+                    content: `${TokenSnippet.TemplateBTC}\n\n`,
                 },
                 {
                     name: "Threshold tBTC",
@@ -11927,7 +11498,7 @@ const template = {
                     score: 0,
                     tier: RiskFactor.High,
                     title: "For other titles, just use TokenSnippet.PegType as shown in the example below.",
-                    content: `${TokenSnippet$1.ThresholdtBTC}\n\n${TokenSnippet$1.smartcontractreview}\n\n`,
+                    content: `${TokenSnippet.ThresholdtBTC}\n\n${TokenSnippet.smartcontractreview}\n\n`,
                 },
                 {
                     name: "Threshold tBTC",
@@ -11935,38 +11506,38 @@ const template = {
                     score: 0,
                     tier: RiskFactor.High,
                     title: "For other titles, just use TokenSnippet.PegType as shown in the example below.",
-                    content: `${TokenSnippet$1.ThresholdtBTC}\n\n${TokenSnippet$1.smartcontractreview}\n\nUse the smart contract review field to highlight that the asset may have additional trust assumptions if it's bridged across chains. You can also use text to describe additional trust assumptions.`,
+                    content: `${TokenSnippet.ThresholdtBTC}\n\n${TokenSnippet.smartcontractreview}\n\nUse the smart contract review field to highlight that the asset may have additional trust assumptions if it's bridged across chains. You can also use text to describe additional trust assumptions.`,
                 },
                 {
                     name: "Template BTC",
                     infrastructureSlug: "templace-btc",
                     score: 0,
                     tier: RiskFactor.High,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: `${TokenSnippet$1.TemplateBTC}`,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.TemplateBTC}`,
                 },
             ],
         },
         {
-            category: RiskCategory$1.DataAvailability,
+            category: RiskCategory.DataAvailability,
             score: 0,
             tier: RiskFactor.UnderReview,
             title: "Add a custom title here",
-            content: ReviewSnippet$1.TemplateReview,
+            content: ReviewSnippet.TemplateReview,
         },
         {
-            category: RiskCategory$1.NetworkOperators,
+            category: RiskCategory.NetworkOperators,
             score: 0,
             tier: RiskFactor.UnderReview,
             title: "Add a custom title here",
-            content: `${ReviewSnippet$1.TemplateReview}\n\nAdd additional context with text if needed.`
+            content: `${ReviewSnippet.TemplateReview}\n\nAdd additional context with text if needed.`
         },
         {
-            category: RiskCategory$1.FinalityGuarantees,
+            category: RiskCategory.FinalityGuarantees,
             score: 0,
             tier: RiskFactor.UnderReview,
             title: "Add a custom title here",
-            content: `${ReviewSnippet$1.TemplateReview}\n\nAdd additional context with text if needed.`
+            content: `${ReviewSnippet.TemplateReview}\n\nAdd additional context with text if needed.`
         },
     ],
     manualContracts: [
@@ -12012,19 +11583,19 @@ const template = {
             content: [
                 {
                     title: "Add a prop saying if the network inherits security from bitcoin",
-                    content: BitcoinSecuritySnippet$2.Template,
+                    content: BitcoinSecuritySnippet$1.Template,
                 },
                 {
                     title: "Add a prop clarifying if the network uses an altcoin or is bitcoin denominated",
-                    content: BitcoinSecuritySnippet$2.Template,
+                    content: BitcoinSecuritySnippet$1.Template,
                 },
                 {
                     title: "Add a prop clarifying if the network introduces MEV to bitcoin (if at all)",
-                    content: BitcoinSecuritySnippet$2.Template,
+                    content: BitcoinSecuritySnippet$1.Template,
                 },
                 {
                     title: "Add a prop clarifying if the network contributes to the security budget",
-                    content: BitcoinSecuritySnippet$2.Template,
+                    content: BitcoinSecuritySnippet$1.Template,
                 },
             ],
         },
@@ -12034,7 +11605,7 @@ const template = {
             content: [
                 {
                     title: "Add a prop on significant tech components. If there is no prop, consider adding one to the prop.ts file. If the tech component is highly customizeable, add text for the content.",
-                    content: TechnologySnippet$2.Template,
+                    content: TechnologySnippet$1.Template,
                 },
                 {
                     title: "Add a prop on significant tech components. If there is no prop, consider adding one to the prop.ts file. If the tech component is highly customizeable, add text for the content.",
@@ -12048,7 +11619,7 @@ const template = {
             content: [
                 {
                     title: "Add a prop on significant use cases.",
-                    content: UseCaseSnippet$2.Template,
+                    content: UseCaseSnippet$1.Template,
                 },
             ],
         },
@@ -12068,8 +11639,8 @@ const taiko = {
     type: Type.Layer,
     slug: "taiko",
     title: "Taiko",
-    entityType: EntityType$1.AltRollup,
-    entityCategory: EntityCategory$1.Alt,
+    entityType: EntityType.AltRollup,
+    entityCategory: EntityCategory.Alt,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -12088,48 +11659,48 @@ const taiko = {
     bitcoinOnly: false,
     links: [
         {
-            text: Site$1.Website,
+            text: Site.Website,
             url: "https://taiko.xyz/",
         },
         {
-            text: Site$1.Docs,
+            text: Site.Docs,
             url: "https://docs.taiko.xyz/start-here/getting-started",
         },
         {
-            text: Site$1.Explorer,
+            text: Site.Explorer,
             url: "https://taikoscan.io/",
         },
         {
-            text: Site$1.GitHub,
+            text: Site.GitHub,
             url: "https://github.com/taikoxyz",
         },
         {
-            text: Site$1.Twitter,
+            text: Site.Twitter,
             url: "https://x.com/taikoxyz",
         },
     ],
     description: "Taiko is an Ethereum rollup that leverages based sequencing. It is home to various BTC-derivative assets.",
     riskSummary: [
         {
-            title: RiskSummarySnippet$2.TitleUpgrade,
-            content: RiskSummarySnippet$2.RiskSummaryImmediateUpgrade
+            title: RiskSummarySnippet$1.TitleUpgrade,
+            content: RiskSummarySnippet$1.RiskSummaryImmediateUpgrade
         },
         {
-            title: RiskSummarySnippet$2.TitleCustodianPegs,
-            content: RiskSummarySnippet$2.RiskSummaryCustodianPegs
+            title: RiskSummarySnippet$1.TitleCustodianPegs,
+            content: RiskSummarySnippet$1.RiskSummaryCustodianPegs
         },
         {
-            title: RiskSummarySnippet$2.TitleAltDA,
-            content: RiskSummarySnippet$2.RiskSummaryAltDANetwork,
+            title: RiskSummarySnippet$1.TitleAltDA,
+            content: RiskSummarySnippet$1.RiskSummaryAltDANetwork,
         },
         {
-            title: RiskSummarySnippet$2.TitleCentralizedSequencer,
-            content: RiskSummarySnippet$2.RiskSummaryCentralizedSequencer,
+            title: RiskSummarySnippet$1.TitleCentralizedSequencer,
+            content: RiskSummarySnippet$1.RiskSummaryCentralizedSequencer,
         }
     ],
     riskAnalysis: [
         {
-            category: RiskCategory$1.BtcCustody,
+            category: RiskCategory.BtcCustody,
             score: 0,
             tier: "",
             title: "",
@@ -12140,75 +11711,75 @@ const taiko = {
                     infrastructureSlug: "solv-solvbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: TokenSnippet$1.SolvBTC,
+                    title: TokenSnippet.CustodianPeg,
+                    content: TokenSnippet.SolvBTC,
                 },
                 {
                     name: "Merlin M-BTC",
                     infrastructureSlug: "merlin-mbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: TokenSnippet$1.MerlinMBTC,
+                    title: TokenSnippet.CustodianPeg,
+                    content: TokenSnippet.MerlinMBTC,
                 },
                 {
                     name: "Bedrock uniBTC",
                     infrastructureSlug: "bedrock-unibtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: `${TokenSnippet$1.BedrockUniBTC}\n\n${TokenSnippet$1.smartcontractreview}`,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.BedrockUniBTC}\n\n${TokenSnippet.smartcontractreview}`,
                 },
                 {
                     name: "Solv xSolvBTC",
                     infrastructureSlug: "solv-xsolvbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianDerivative,
-                    content: TokenSnippet$1.xSolvBTC,
+                    title: TokenSnippet.CustodianDerivative,
+                    content: TokenSnippet.xSolvBTC,
                 },
                 {
                     name: "BitGo wBTC",
                     infrastructureSlug: "bitgo-wbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: TokenSnippet$1.BitGowBTC,
+                    title: TokenSnippet.CustodianPeg,
+                    content: TokenSnippet.BitGowBTC,
                 },
                 {
                     name: "Coinbase cbBTC",
                     infrastructureSlug: "coinbase-cbbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: TokenSnippet$1.CoinbasecbBTC,
+                    title: TokenSnippet.CustodianPeg,
+                    content: TokenSnippet.CoinbasecbBTC,
                 },
                 {
                     name: "Obelisk oBTC",
                     infrastructureSlug: "obelisk-obtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: TokenSnippet$1.ObeliskoBTC,
+                    title: TokenSnippet.CustodianPeg,
+                    content: TokenSnippet.ObeliskoBTC,
                 },
             ],
         },
         {
-            category: RiskCategory$1.DataAvailability,
+            category: RiskCategory.DataAvailability,
             score: 0,
             tier: RiskFactor.Medium,
             title: "Taiko uses Ethereum for data availability",
-            content: ReviewSnippet$1.EthereumRollupDA,
+            content: ReviewSnippet.EthereumRollupDA,
         },
         {
-            category: RiskCategory$1.NetworkOperators,
+            category: RiskCategory.NetworkOperators,
             score: 0,
             tier: RiskFactor.Medium,
             title: "Ethereum validators are responsible for sequencing Taiko transactions",
-            content: `${ReviewSnippet$1.BasedSequencedAlt}\n\nEthereum validators are responsible for sequencing Taiko transactions. If users are censored by Ethereum validators, they can propose blocks to Taiko's L1 contract.`,
+            content: `${ReviewSnippet.BasedSequencedAlt}\n\nEthereum validators are responsible for sequencing Taiko transactions. If users are censored by Ethereum validators, they can propose blocks to Taiko's L1 contract.`,
         },
         {
-            category: RiskCategory$1.FinalityGuarantees,
+            category: RiskCategory.FinalityGuarantees,
             score: 0,
             tier: RiskFactor.Medium,
             title: "Taiko state transitions finalize by updating its state based on data posted to Ethereum",
@@ -12223,11 +11794,11 @@ const taiko = {
             content: [
                 {
                     title: "Taiko does not inherit any security from bitcoin",
-                    content: BitcoinSecuritySnippet$2.NoSecurity,
+                    content: BitcoinSecuritySnippet$1.NoSecurity,
                 },
                 {
                     title: "ETH token used to pay fees",
-                    content: BitcoinSecuritySnippet$2.AltTokenFees,
+                    content: BitcoinSecuritySnippet$1.AltTokenFees,
                 },
                 {
                     title: "No MEV introduced to bitcoin",
@@ -12235,7 +11806,7 @@ const taiko = {
                 },
                 {
                     title: "Ethereum does not contribute to the security budget",
-                    content: BitcoinSecuritySnippet$2.NoSecurity,
+                    content: BitcoinSecuritySnippet$1.NoSecurity,
                 },
             ],
         },
@@ -12245,7 +11816,7 @@ const taiko = {
             content: [
                 {
                     title: "Ethereum Virtual Machine",
-                    content: TechnologySnippet$2.EVM,
+                    content: TechnologySnippet$1.EVM,
                 },
             ],
         },
@@ -12255,7 +11826,7 @@ const taiko = {
             content: [
                 {
                     title: "Onchain applications",
-                    content: UseCaseSnippet$2.OnchainApps,
+                    content: UseCaseSnippet$1.OnchainApps,
                 },
             ],
         },
@@ -12266,8 +11837,8 @@ const tron = {
     type: Type.Layer,
     slug: "tron",
     title: "Tron",
-    entityType: EntityType$1.AltL1,
-    entityCategory: EntityCategory$1.Alt,
+    entityType: EntityType.AltL1,
+    entityCategory: EntityCategory.Alt,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -12286,40 +11857,40 @@ const tron = {
     bitcoinOnly: false,
     links: [
         {
-            text: Site$1.Website,
+            text: Site.Website,
             url: "https://trondao.org/",
         },
         {
-            text: Site$1.Docs,
+            text: Site.Docs,
             url: "https://developers.tron.network/",
         },
         {
-            text: Site$1.Explorer,
+            text: Site.Explorer,
             url: "https://tronscan.org/#/",
         },
         {
-            text: Site$1.GitHub,
+            text: Site.GitHub,
             url: "https://github.com/tronprotocol",
         },
         {
-            text: Site$1.Twitter,
+            text: Site.Twitter,
             url: "https://x.com/trondao",
         },
     ],
     description: "Tron is a proof-of-stake blockchain. It is EVM-compatible and home to BTCTRON.",
     riskSummary: [
         {
-            title: RiskSummarySnippet$2.TitleCustodianPegs,
-            content: `${RiskSummarySnippet$2.RiskSummaryCustodianPegs}`,
+            title: RiskSummarySnippet$1.TitleCustodianPegs,
+            content: `${RiskSummarySnippet$1.RiskSummaryCustodianPegs}`,
         },
         {
-            title: RiskSummarySnippet$2.TitleAlternativeL1,
-            content: RiskSummarySnippet$2.RiskSummaryAlternativeL1,
+            title: RiskSummarySnippet$1.TitleAlternativeL1,
+            content: RiskSummarySnippet$1.RiskSummaryAlternativeL1,
         },
     ],
     riskAnalysis: [
         {
-            category: RiskCategory$1.BtcCustody,
+            category: RiskCategory.BtcCustody,
             score: 0,
             tier: "",
             title: "",
@@ -12330,35 +11901,35 @@ const tron = {
                     infrastructureSlug: "tron-btc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: `${TokenSnippet$1.BTCTRON}\n\n${TokenSnippet$1.smartcontractreview},`
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.BTCTRON}\n\n${TokenSnippet.smartcontractreview},`
                 },
                 {
                     name: "BitGo wBTC",
                     infrastructureSlug: "bitgo-wbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: `${TokenSnippet$1.BitGowBTC}\n\n${TokenSnippet$1.smartcontractreview},`
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.BitGowBTC}\n\n${TokenSnippet.smartcontractreview},`
                 },
             ],
         },
         {
-            category: RiskCategory$1.DataAvailability,
+            category: RiskCategory.DataAvailability,
             score: 0,
             tier: RiskFactor.AlternativePoS,
             title: "Data availability guarantees are provided by Tron's full node set",
-            content: ReviewSnippet$1.AltL1DA,
+            content: ReviewSnippet.AltL1DA,
         },
         {
-            category: RiskCategory$1.BlockProduction,
+            category: RiskCategory.BlockProduction,
             score: 0,
             tier: RiskFactor.AlternativePoS,
             title: "Blocks are produced by an elected group of validators known as super representatives",
             content: "Anyone can apply to participate as a block producer in Tron. Prospective validators, known as super representatives, can purchase TRX tokens and apply to become a super representative. After a voting process, the top 27 super representatives per voting power are selected to become block producers.",
         },
         {
-            category: RiskCategory$1.FinalityGuarantees,
+            category: RiskCategory.FinalityGuarantees,
             score: 0,
             tier: RiskFactor.AlternativePoS,
             title: "Finality guarantees are provided by Tron's network operators",
@@ -12372,19 +11943,19 @@ const tron = {
             content: [
                 {
                     title: "Tron does not inherit any security from Bitcoin",
-                    content: BitcoinSecuritySnippet$2.NoSecurity,
+                    content: BitcoinSecuritySnippet$1.NoSecurity,
                 },
                 {
                     title: "TRX token used to pay fees",
-                    content: BitcoinSecuritySnippet$2.AltTokenFees,
+                    content: BitcoinSecuritySnippet$1.AltTokenFees,
                 },
                 {
                     title: "No MEV introduced to Bitcoin",
-                    content: BitcoinSecuritySnippet$2.AltNetworkMEV,
+                    content: BitcoinSecuritySnippet$1.AltNetworkMEV,
                 },
                 {
                     title: "Tron does not contribute to the security budget",
-                    content: BitcoinSecuritySnippet$2.NoSecurityBudget,
+                    content: BitcoinSecuritySnippet$1.NoSecurityBudget,
                 },
             ],
         },
@@ -12394,7 +11965,7 @@ const tron = {
             content: [
                 {
                     title: "EVM-compatible",
-                    content: TechnologySnippet$2.EVM,
+                    content: TechnologySnippet$1.EVM,
                 },
             ],
         },
@@ -12404,11 +11975,11 @@ const tron = {
             content: [
                 {
                     title: "Onchain applications",
-                    content: UseCaseSnippet$2.OnchainApps,
+                    content: UseCaseSnippet$1.OnchainApps,
                 },
                 {
                     title: "Asset transfers",
-                    content: `${UseCaseSnippet$2.OffchainTransfers}`
+                    content: `${UseCaseSnippet$1.OffchainTransfers}`
                 },
             ],
         },
@@ -12419,8 +11990,8 @@ const zeta = {
     type: Type.Layer,
     slug: "zeta",
     title: "Zeta",
-    entityType: EntityType$1.AltL1,
-    entityCategory: EntityCategory$1.Alt,
+    entityType: EntityType.AltL1,
+    entityCategory: EntityCategory.Alt,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -12439,40 +12010,40 @@ const zeta = {
     bitcoinOnly: false,
     links: [
         {
-            text: Site$1.Website,
+            text: Site.Website,
             url: "https://www.zetachain.com/",
         },
         {
-            text: Site$1.Docs,
+            text: Site.Docs,
             url: "https://www.zetachain.com/docs/",
         },
         {
-            text: Site$1.Explorer,
+            text: Site.Explorer,
             url: "https://explorer.zetachain.com/",
         },
         {
-            text: Site$1.GitHub,
+            text: Site.GitHub,
             url: "https://github.com/zeta-chain",
         },
         {
-            text: Site$1.Twitter,
+            text: Site.Twitter,
             url: "https://x.com/zetablockchain",
         },
     ],
     description: "Zeta is a proof-of-stake blockchain that supports a number of wrapped BTC tokens. It is home to the ZetaBTC token.",
     riskSummary: [
         {
-            title: RiskSummarySnippet$2.TitleCustodianPegs,
-            content: `${RiskSummarySnippet$2.RiskSummaryCustodianPegs}`,
+            title: RiskSummarySnippet$1.TitleCustodianPegs,
+            content: `${RiskSummarySnippet$1.RiskSummaryCustodianPegs}`,
         },
         {
-            title: RiskSummarySnippet$2.TitleAlternativeL1,
-            content: RiskSummarySnippet$2.RiskSummaryAlternativeL1,
+            title: RiskSummarySnippet$1.TitleAlternativeL1,
+            content: RiskSummarySnippet$1.RiskSummaryAlternativeL1,
         },
     ],
     riskAnalysis: [
         {
-            category: RiskCategory$1.BtcCustody,
+            category: RiskCategory.BtcCustody,
             score: 0,
             tier: "",
             title: "",
@@ -12483,47 +12054,47 @@ const zeta = {
                     infrastructureSlug: "zeta-btc",
                     score: 0,
                     tier: RiskFactor.UnderReview,
-                    title: TokenSnippet$1.FederationPeg,
-                    content: `${TokenSnippet$1.UnderReview}${TokenSnippet$1.smartcontractreview},`
+                    title: TokenSnippet.FederationPeg,
+                    content: `${TokenSnippet.UnderReview}${TokenSnippet.smartcontractreview},`
                 },
                 {
                     name: "PumpBTC",
                     infrastructureSlug: "pump-pumpbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: `${TokenSnippet$1.PumpBTC}\n\n${TokenSnippet$1.smartcontractreview},`
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.PumpBTC}\n\n${TokenSnippet.smartcontractreview},`
                 },
                 {
                     name: "Bedrock uniBTC",
                     infrastructureSlug: "bedrock-unibtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: `${TokenSnippet$1.BedrockUniBTC}\n\n${TokenSnippet$1.smartcontractreview},`
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.BedrockUniBTC}\n\n${TokenSnippet.smartcontractreview},`
                 },
             ],
         },
         {
-            category: RiskCategory$1.DataAvailability,
+            category: RiskCategory.DataAvailability,
             score: 0,
             tier: RiskFactor.AlternativePoS,
             title: "",
-            content: ReviewSnippet$1.AltL1DA,
+            content: ReviewSnippet.AltL1DA,
         },
         {
-            category: RiskCategory$1.BlockProduction,
+            category: RiskCategory.BlockProduction,
             score: 0,
             tier: RiskFactor.AlternativePoS,
             title: "",
-            content: ReviewSnippet$1.OperatorSidechainPOS,
+            content: ReviewSnippet.OperatorSidechainPOS,
         },
         {
-            category: RiskCategory$1.StateValidation,
+            category: RiskCategory.StateValidation,
             score: 0,
             tier: RiskFactor.AlternativePoS,
             title: "",
-            content: ReviewSnippet$1.CometBFTFinality,
+            content: ReviewSnippet.CometBFTFinality,
         },
     ],
     sections: [
@@ -12533,19 +12104,19 @@ const zeta = {
             content: [
                 {
                     title: "Zeta does not inherit any security from Bitcoin",
-                    content: BitcoinSecuritySnippet$2.NoSecurity,
+                    content: BitcoinSecuritySnippet$1.NoSecurity,
                 },
                 {
                     title: "Zeta token used to pay fees",
-                    content: BitcoinSecuritySnippet$2.AltTokenFees,
+                    content: BitcoinSecuritySnippet$1.AltTokenFees,
                 },
                 {
                     title: "No MEV introduced to Bitcoin",
-                    content: BitcoinSecuritySnippet$2.AltNetworkMEV,
+                    content: BitcoinSecuritySnippet$1.AltNetworkMEV,
                 },
                 {
                     title: "Zeta does not contribute to the security budget",
-                    content: BitcoinSecuritySnippet$2.NoSecurityBudget,
+                    content: BitcoinSecuritySnippet$1.NoSecurityBudget,
                 },
             ],
         },
@@ -12555,7 +12126,7 @@ const zeta = {
             content: [
                 {
                     title: "EVM-compatible",
-                    content: TechnologySnippet$2.EVM,
+                    content: TechnologySnippet$1.EVM,
                 },
             ],
         },
@@ -12565,7 +12136,7 @@ const zeta = {
             content: [
                 {
                     title: "Onchain applications",
-                    content: UseCaseSnippet$2.OnchainApps,
+                    content: UseCaseSnippet$1.OnchainApps,
                 },
             ],
         },
@@ -12576,8 +12147,8 @@ const zksync = {
     type: Type.Layer,
     slug: "zksync",
     title: "zkSync",
-    entityType: EntityType$1.AltRollup,
-    entityCategory: EntityCategory$1.Alt,
+    entityType: EntityType.AltRollup,
+    entityCategory: EntityCategory.Alt,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -12596,48 +12167,48 @@ const zksync = {
     bitcoinOnly: false,
     links: [
         {
-            text: Site$1.Website,
+            text: Site.Website,
             url: "https://zksync.io/",
         },
         {
-            text: Site$1.Docs,
+            text: Site.Docs,
             url: "https://docs.zksync.io/",
         },
         {
-            text: Site$1.Explorer,
+            text: Site.Explorer,
             url: "https://explorer.zksync.io/",
         },
         {
-            text: Site$1.GitHub,
+            text: Site.GitHub,
             url: "https://github.com/matter-labs",
         },
         {
-            text: Site$1.Twitter,
+            text: Site.Twitter,
             url: "https://x.com/zksync",
         },
     ],
     description: "zkSync is a rollup that posts data to Ethereum.",
     riskSummary: [
         {
-            title: RiskSummarySnippet$2.TitleUpgrade,
-            content: RiskSummarySnippet$2.RiskSummaryImmediateUpgrade
+            title: RiskSummarySnippet$1.TitleUpgrade,
+            content: RiskSummarySnippet$1.RiskSummaryImmediateUpgrade
         },
         {
-            title: RiskSummarySnippet$2.TitleCustodianPegs,
-            content: RiskSummarySnippet$2.RiskSummaryCustodianPegs
+            title: RiskSummarySnippet$1.TitleCustodianPegs,
+            content: RiskSummarySnippet$1.RiskSummaryCustodianPegs
         },
         {
-            title: RiskSummarySnippet$2.TitleAltDA,
-            content: RiskSummarySnippet$2.RiskSummaryAltDANetwork,
+            title: RiskSummarySnippet$1.TitleAltDA,
+            content: RiskSummarySnippet$1.RiskSummaryAltDANetwork,
         },
         {
-            title: RiskSummarySnippet$2.TitleCentralizedSequencer,
-            content: RiskSummarySnippet$2.RiskSummaryCentralizedSequencer,
+            title: RiskSummarySnippet$1.TitleCentralizedSequencer,
+            content: RiskSummarySnippet$1.RiskSummaryCentralizedSequencer,
         }
     ],
     riskAnalysis: [
         {
-            category: RiskCategory$1.BtcCustody,
+            category: RiskCategory.BtcCustody,
             score: 0,
             tier: "",
             title: "",
@@ -12648,51 +12219,51 @@ const zksync = {
                     infrastructureSlug: "bitgo-wbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: TokenSnippet$1.BitGowBTC,
+                    title: TokenSnippet.CustodianPeg,
+                    content: TokenSnippet.BitGowBTC,
                 },
                 {
                     name: "Threshold tBTC",
                     infrastructureSlug: "threshold-tbtc",
                     score: 0,
                     tier: RiskFactor.UnderReview,
-                    title: TokenSnippet$1.FederationPeg,
-                    content: `${TokenSnippet$1.ThresholdtBTC}\n\n${TokenSnippet$1.smartcontractreview}.`,
+                    title: TokenSnippet.FederationPeg,
+                    content: `${TokenSnippet.ThresholdtBTC}\n\n${TokenSnippet.smartcontractreview}.`,
                 },
                 {
                     name: "Binance BTCB",
                     infrastructureSlug: "binance-btcb",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: `${TokenSnippet$1.BinanceBTCB},\n\n${TokenSnippet$1.smartcontractreview}`,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.BinanceBTCB},\n\n${TokenSnippet.smartcontractreview}`,
                 },
                 {
                     name: "Merlin M-BTC",
                     infrastructureSlug: "merlin-mbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet$1.CustodianPeg,
-                    content: `${TokenSnippet$1.MerlinMBTC},\n\n${TokenSnippet$1.smartcontractreview}`,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.MerlinMBTC},\n\n${TokenSnippet.smartcontractreview}`,
                 },
             ],
         },
         {
-            category: RiskCategory$1.DataAvailability,
+            category: RiskCategory.DataAvailability,
             score: 0,
             tier: RiskFactor.Medium,
             title: "A distributed consensus network satisfies the data availability requirement",
-            content: ReviewSnippet$1.EthereumRollupDA,
+            content: ReviewSnippet.EthereumRollupDA,
         },
         {
-            category: RiskCategory$1.NetworkOperators,
+            category: RiskCategory.NetworkOperators,
             score: 0,
             tier: RiskFactor.VeryHigh,
             title: "The network is operated by a centralized operator",
-            content: ReviewSnippet$1.SelfSequenceNone,
+            content: ReviewSnippet.SelfSequenceNone,
         },
         {
-            category: RiskCategory$1.FinalityGuarantees,
+            category: RiskCategory.FinalityGuarantees,
             score: 0,
             tier: RiskFactor.Medium,
             title: "zkSync's state transitions finalize by updating its state based on data posted to Ethereum",
@@ -12707,19 +12278,19 @@ const zksync = {
             content: [
                 {
                     title: "zkSync does not inherit any security from Bitcoin",
-                    content: BitcoinSecuritySnippet$2.NoSecurity,
+                    content: BitcoinSecuritySnippet$1.NoSecurity,
                 },
                 {
                     title: "ETH token used to pay fees",
-                    content: BitcoinSecuritySnippet$2.AltTokenFees,
+                    content: BitcoinSecuritySnippet$1.AltTokenFees,
                 },
                 {
                     title: "No MEV introduced to Bitcoin",
-                    content: BitcoinSecuritySnippet$2.CentralizedSequencerMEV,
+                    content: BitcoinSecuritySnippet$1.CentralizedSequencerMEV,
                 },
                 {
                     title: "zkSync does not contribute to the security budget",
-                    content: BitcoinSecuritySnippet$2.NoSecurity,
+                    content: BitcoinSecuritySnippet$1.NoSecurity,
                 },
             ],
         },
@@ -12729,7 +12300,7 @@ const zksync = {
             content: [
                 {
                     title: "Ethereum Virtual Machine",
-                    content: TechnologySnippet$2.EVM,
+                    content: TechnologySnippet$1.EVM,
                 },
             ],
         },
@@ -12739,7 +12310,7 @@ const zksync = {
             content: [
                 {
                     title: "Onchain applications",
-                    content: UseCaseSnippet$2.OnchainApps,
+                    content: UseCaseSnippet$1.OnchainApps,
                 },
             ],
         },
@@ -12748,7 +12319,7 @@ const zksync = {
             title: "Knowledge Bits",
             content: [
                 {
-                    content: `${KnowledgeBitSnippet$2.EthereumL2}`,
+                    content: `${KnowledgeBitSnippet$1.EthereumL2}`,
                 },
             ],
         },

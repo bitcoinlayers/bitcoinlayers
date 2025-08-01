@@ -1,8 +1,8 @@
-declare enum Type$1 {
+declare enum Type {
     Infrastructure = "Infrastructure",
     Layer = "Layer"
 }
-declare enum LiveStatus$1 {
+declare enum LiveStatus {
     Mainnet = "Mainnet",
     Testnet = "Testnet",
     Announced = "Announced",
@@ -12,7 +12,7 @@ declare enum LiveStatus$1 {
     BIP = "Bip Drafted",
     Activation = "Activation Client"
 }
-declare enum Purpose$1 {
+declare enum Purpose {
     General = "General",
     Payments = "Payments",
     LiquidStaking = "Liquid Staking",
@@ -21,7 +21,7 @@ declare enum Purpose$1 {
     Staking = "Staking",
     BitcoinNative = "Offchain UTXO transfers"
 }
-declare enum RiskFactor$1 {
+declare enum RiskFactor {
     Low = "Low",
     Medium = "Medium",
     High = "High",
@@ -32,253 +32,6 @@ declare enum RiskFactor$1 {
     NotApplicable = "Not Applicable",
     AlternativePoS = "Alternative PoS Network"
 }
-declare enum RiskCategory$1 {
-    BtcCustody = "BTC Custody",
-    DataAvailability = "Data Availability",
-    NetworkOperators = "Network Operators",
-    SettlementAssurance = "Settlement Assurance",
-    UnilateralExits = "Unilateral Exits",
-    BlockProduction = "Block Production",
-    StateValidation = "State Validation",
-    FinalityGuarantees = "Finality Guarantees",
-    LivenessReorgResistance = "Liveness & Reorg Resistance"
-}
-declare enum EntityType$1 {
-    CSV = "CSV",
-    EthereumRollup = "Ethereum Rollup",
-    Rollup = "Rollup",
-    Federation = "Federation",
-    Sidechain = "Sidechain",
-    MergeMined = "Merge-mined",
-    SidechainRollup = "Sidechain Rollup",
-    SovereignRollup = "Sovereign Rollup",
-    StateChannel = "State Channel",
-    Statechain = "Statechain",
-    VirtualUTXOs = "Virtual UTXOs",
-    zkCSV = "zkCSV",
-    Hybrid = "Hybrid",
-    Anchor = "Anchor",
-    ChaumianEcashProtocol = "Chaumian Ecash",
-    FederationSDK = "Federation SDK",
-    LiquidStaking = "Liquid Staking",
-    Restaking = "Restaking",
-    RollupSDK = "Rollup SDK",
-    Staking = "Staking",
-    PermissionedChain = "Permissioned Chain",
-    ArkSidechain = "Ark on Sidechain",
-    Sequencing = "Sequencing",
-    DataAvailability = "Data Availability",
-    Bridge = "Bridge",
-    RaaS = "RaaS",
-    BTCWrapper = "BTC Wrapper",
-    ReserveAsset = "Reserve",
-    Lending = "Lending",
-    Yield = "Yield",
-    SequencingDA = "Sequencing & DA",
-    BitcoinBridge = "Bitcoin Bridge",
-    MPCProtocol = "MPC Protocol",
-    TBD = "To Be Determined",
-    Ark = "Ark",
-    AltL1 = "Alt. Layer 1",
-    AltRollup = "Alt. Rollup",
-    Alt = "Alt. Chain",
-    SingleOp = "Single Opcode",
-    GroupOp = "Group of Opcodes",
-    StakedBTC = "Natively Staked BTC",
-    PoSNetwork = "PoS Network",
-    BPoSNetwork = "BPoS Network",
-    "-" = "-"
-}
-declare enum EntityCategory$1 {
-    BitcoinNative = "Bitcoin Native",
-    Sidesystem = "Sidesystems",
-    Integrated = "Integrated",
-    Alt = "Alt. L1s & More",
-    More = "More"
-}
-declare enum Notice$1 {
-    NoBridge = "No native bitcoin bridge",
-    Sidesystem = "Sidesystems",
-    Reorg = "\uD83D\uDEA8 This project will be moved to the Alternative category after June 30th.",
-    UnderReview = "\uD83D\uDEA8 This project's categorization is under review.",
-    OtherReasonBridge = "This project does not have an enshrined bitcoin bridge that meets our sidesystem standards.",
-    ClaimBitcoinLayer = "This network is denominated in BTC."
-}
-declare enum BitcoinLayer$1 {
-    Yes = "The project meets our technical standards to be considered a bitcoin layer"
-}
-declare enum UnilateralExit$1 {
-    Yes = "This protocol supports unilateral exit, allowing users to withdraw funds without counterparty cooperation"
-}
-declare enum OtherIcons$1 {
-    MergeMine = "This protocol is merge-mined by bitcoin miners.",
-    NotALayer = "This protocol is not a bitcoin layer",
-    Staking = "This protocol leverages bitcoin staking for aspects of its protocol.",
-    Hybrid = "This protocol's VM can interact with L1 bitcoin transactions."
-}
-declare enum CustodyTitle$1 {
-    BitcoinNative = "Bitcoin Native",
-    Distributed = "Distributed Third-Party",
-    Centralized = "Centralized Third-Party"
-}
-declare enum Site$1 {
-    Website = "Website",
-    Docs = "Docs",
-    Explorer = "Explorer",
-    GitHub = "GitHub",
-    Twitter = "Twitter"
-}
-declare enum TokenSnippet$1 {
-    UnderReview = "This two-way peg is under review",
-    CustodianPeg = "BTC backing this asset is managed by centralized parties",
-    CustodianDerivative = "This asset is backed by an alternative derivative of BTC",
-    FederationPeg = "BTC backing this asset is secured by a federation",
-    VariousCustodianPeg = "BTC backing this asset is secured by a number of individual custodians",
-    BitGowBTC = "wBTC is backed by a centralized consortium of three companies. These entities are responsible for custodying BTC that backs wBTC on its various networks. Users trust these entities to not collude and steal the funds backing wBTC.",
-    ThresholdtBTC = "tBTC's peg with bitcoin is managed by the Threshold Network, a distributed but permissioned two-way peg. This group of signers participate in a threshold signature scheme to secure the BTC that backs tBTC.",
-    CoinbasecbBTC = "Coinbase is responsible for securing the BTC that backs cbBTC. Users trust Coinbase to ensure the funds backing cbBTC are not stolen or lost.\n\nIn addition to securing the funds funds backing cbBTC, Coinbase can censor users from using cbBTC and maintains unilateral control of cbBTC's smart contracts.",
-    BinanceBTCB = "When interacting with BTCB, users trust that Binance, a centralized custodian, will safely custody the BTC backing BTCB. When interacting with a centralized custodian, users trust that the custodian will not steal the funds backing their BTCB tokens. They also trust that Binance will effectively manage the BTC and not lose access to it. If the BTC backing BTCB, BTCB tokens could become effectively worthless.",
-    LombardLBTC = "BTC backing Lombard LBTC is secured by a network of validators participating in Lombard\u2019s security consortium. The security consortium participates in a CometBFT consensus protocol. Adding and removing validators from this consortium is handled by the current validator set within a given epoch.\n\nThere are currently [nine (9) validators](https://etherscan.io/address/0xdad58DfA5c1a7a34419AFdBE1f0d610efeea95E4#readProxyContract) participating in securing the BTC that backs LBTC.",
-    SolvBTC = "SolvBTC claims to be partially backed by native BTC managed by custodian providers. It\u2019s been stated that Copper, Ceffu, Fireblocks, and Cobo are custodial providers securing BTC that partially backs SolvBTC. It's additionally backed by various BTC-derivative assets; [BTCB](https://www.bitcoinlayers.org/infrastructure/binance-btcb), [wBTC](https://www.bitcoinlayers.org/infrastructure/bitgo-wbtc), [FBTC](https://www.bitcoinlayers.org/infrastructure/firebitcoin-fbtc), [cbBTC](https://www.bitcoinlayers.org/infrastructure/coinbase-cbbtc), [BTC.b](https://www.bitcoinlayers.org/infrastructure/avalanche-btcb), and [tBTC](https://www.bitcoinlayers.org/infrastructure/threshold-tbtc).",
-    xSolvBTC = "Four entities custody the bitcoin assets backing xSolvBTC tokens. These entities are Cobo, Ceffu, Fireblocks and the Solv Guard. These entities are known as Guardians in the [Solv application](https://app.solv.finance/staking). Ceffu and Cobo are the custodians for funds that are staked with Babylon.",
-    PumpBTC = "PumpBTC works with custodial providers to swap PumpBTC deposits into native BTC for BTC staking. When a user deposits a BTC derivative token (e.g. wBTC) into the PumpBTC contract, they are given PumpBTC in return. Cobo and Coinover have been mentioned as operators participating in Pump.",
-    UniRouterBTC = "Users trust that the UniRouter team has set up secure custody practices and has BTC reserves backing uniBTC. UniRouter has not disclosed who secures the BTC backing uBTC.",
-    AvalancheBTCb = "Ava Labs has disclosed that users trust a network of entities who participate in securing the BTC that backs BTCb. These eight entities are also reported to run special HSM hardware.\n\nThe eight entities securing the bridge are: Halborn, Avascan, Bware Labs, Ankr, Chainstack, Protofire, Blockdaemon, and Ava Labs.",
-    BedrockUniBTC = "When a user deposits funds into the Bedrock protocol, they deposit a wrapped BTC token into the uniBTC smart contract. The uniBTC smart contract on Ethereum (and other chains) is responsible for minting uniBTC in exchange for wrapped BTC tokens. To deposit these tokens on Babylon, the protocol relies on a custodial provider to exchange the wrapped BTC tokens for native BTC tokens that they would stake on Babylon. Bedrock has not disclosed who is responsible for securing and staking native BTC on users' behalf.",
-    LorenzostBTC = "Users trust Lorenzo, the operators of Lorenzo stBTC, to secure and stake native BTC that backs stBTC. It has also been stated in Lorenzo's [marketing materials](https://medium.com/@lorenzoprotocol/lorenzo-allies-with-cobo-ceffu-and-chainup-e0d824c4744d) that custodian providers Cobo, Ceffu, and Chainup are participating in Lorenzo's protocol as custody providers, but their documentation does not claim this.",
-    AcornaBTC = "Users of aBTC reportedly trust a multi-signature wallet to secure the funds backing aBTC. Acorn's documentation mentions that a multi-signature wallet, supported by HSMs, is responsible for securing funds that back aBTC. Acorn has not disclosed the operators of this wallet.",
-    ibtcnetworkibtc = "iBTC is a two-way peg that leverages DLC contracts between various institutions and a federated attestor network. We are reviewing its trust assumptions.",
-    babypie = "An MPC set up between Babypie and Cobo secures the BTC backing mBTC. Cobo is an institutional custodian provider. Users trust Babypie's claims in their documentation are being executed in practice.",
-    xlink = "There is limited information available on Xlink aBTC's custody mechanism for BTC backing aBTC. Users trust Alex, the project behind Xlink, to set up secure custody practices. Xlink's [website](https://www.xlink.network/) mentions that institutional grade MPC solutions are used.",
-    FireBTC = "An MPC set up between Ignition and Cobo secures the BTC backing mBTC. Cobo is an institutional custodian provider. Users trust Ignition's claims in their documentation are being executed in practice.",
-    SolvBTCENA = "SolvBTC.ENA is a derivative asset that represents SolvBTC locked in a vault executing a trading strategy.\n\nSolvBTC claims to be partially backed by native BTC managed by custodian providers. It\u2019s been stated that Copper, Ceffu, Fireblocks, and Cobo are custodial providers securing BTC that partially backs SolvBTC. It's additionally backed by various BTC-derivative assets; [BTCB](https://www.bitcoinlayers.org/infrastructure/binance-btcb), [wBTC](https://www.bitcoinlayers.org/infrastructure/bitgo-wbtc), [FBTC](https://www.bitcoinlayers.org/infrastructure/firebitcoin-fbtc), [cbBTC](https://www.bitcoinlayers.org/infrastructure/coinbase-cbbtc), [BTC.b](https://www.bitcoinlayers.org/infrastructure/avalanche-btcb), and [tBTC](https://www.bitcoinlayers.org/infrastructure/threshold-tbtc).The token is backed by [SolvBTC](https://www.bitcoinlayers.org/infrastructure/solv-solvbtc).\n\nUsers expose themselves to smart contract and application risks when depositing funds into SolvBTC.ENA.",
-    KrakenKBTC = "Kraken, a centralized custodian, secures the BTC backing kBTC. The funds backing kBTC are held at Kraken Financial, a Wyoming-chartered SPDI (Special Purpose Depository Institution)",
-    MerlinMBTC = "BTC backing Merlin M-BTC is secured via an MPC wallet managed by Cobo, a institutional custodian. Information on how many signers participate in this MPC scheme is not available. Merlin has stated that more players are being added into this custody scheme.",
-    ObeliskoBTC = "Obelisk's documentation claims that users deposit BTC into an MPC scheme to mint oBTC on a respective destination chain.",
-    BTCTRON = "When users swap BTC for BTCTRON, they send their BTC to Poloniex, a centralized custodian. Information on how the BTC is secured is not available.",
-    BabylonStakedBTC = "Babylon Staked BTC is native BTC locked in a L1 staking script. Users lock their funds in the script with the help of a covenant emulator committee. Users can withdrawal their funds from the script at any time with the help of the covenant emulator committee. If the committee is offline, users can spend their funds after a timelock expires.\n\nStaked BTC comes with additional trust assumptions such as slashing conditions. We are reviewing these trust assumptions related to Babylon.",
-    SparkBTC = "Users custody funds collectively with the statechain entity in a 2-2 multisig. Every Spark vUTXO has a pre-signed unilateral exit path. When funds are transferred, users trust the statechain entity to delete the keyshare it held with the previous owner so it cannot collectively spend funds with past owners.",
-    MercuryLayerBTC = "The statechain setup involves locking a UTXO onchain with the private key shared between the operator and the current statecoin owner. Although the Mercury Layer server acts as a trusted entity, users are safeguarded against potential unresponsiveness by having the ability to unilaterally exit and enforce their UTXO ownership onchain as each transfer is secured by a decrementing timelock mechanism and a series of backup transactions.",
-    HyperliquidBTC = "The Unit Protocol consists of a network of 3 guardians participating in an MPC scheme. These guardians are responsible for securing the BTC backing a BTC-denominated asset on Hyperliquid. They are also responsible for executing signing events related to the asset.",
-    SimpleSBTC = "BTC backing Simple sBTC is secured by a [3/5 multisig](https://mempool.space/address/bc1ps0qa22q30rrp4584gz4teqkchn76wakzaq6mlhsv6sg36e0fl83sss2vxa). Information on who the signers are for this multisig and their signing mechanisms is unavailable.",
-    BoolBTC = "The Bool Network has not disclosed its custody mechanism for BTC backing bBTC across the various networks its deployed on. In its documentation, it references a custody mechanism that would see an approved entity be able to set up a 2-2 multisig between Bool and the entity.\n\nIt is possible this is the set up for bBTC custody across the chains its deployed on. In any case, users trust that Bool Network and the development teams behind specific networks have set up secure custody practices.\n\n\u26A0\uFE0F Bool Network has [pivoted](https://x.com/DeepSafe_AI/status/1881704352768999641) and may no longer be maintaining its bridge infrastructure.\n\n[Source](https://docs.bool.network/interoperability-protocol/self-custody/channels)",
-    NomicNBTC = "Users deposit BTC into a Reserve Wallet to receive nBTC on Nomic. The Reserve Wallet is a Bitcoin L1 multisig wallet managed by the Nomic signatory set. The Nomic signatory is made up of the top 20 Nomic validators measured by weighted stake.\n\nBecoming a signatory requires staking NOM tokens. Disbursing funds from the reserve wallet requires a 2/3s threshold, weighted by voting power through NOM tokens.",
-    StacksSBTC = "sBTC is a bridge between bitcoin and stacks managed by 14 institutional signers. sBTC on Stacks is backed by BTC held in a wallet managed by these signers. The identities of entities participating in the sBTC bridge are publicly known.\n\nIf 10 of the signers colluded, they could steal all of the BTC backing sBTC. You can find the signers [here](https://bitcoinl2labs.com/sbtc-rollout#sbtc-signers).",
-    AlexBTC = "Users trust Wrapped, a custodian provider, with the custody of BTC backing xBTC. Alex, a DeFi project largely associated with the Stacks ecosystem, acquired Wrapped and has initiated a transition to move xBTC into sBTC.\n\nFunds that are not moved into sBTC are still secured by [Wrapped](https://wrapped.com/).",
-    BsquaredBTC = "Previous blog posts have stated that when users deposit funds into Bsquared, they deposit funds into a MPC wallet managed by the Bsquared Network team and Cobo, a institutional custodian. Information on how many signers participate in this MPC scheme is not available. Bsquared has stated that more players are being added into this custody scheme.",
-    SolvBTCdotSolv = "SolvBTC claims to be partially backed by native BTC managed by custodian providers. It\u2019s been stated that Copper, Ceffu, Fireblocks, and Cobo are custodial providers securing BTC that partially backs SolvBTC. It's additionally backed by various BTC-derivative assets; [BTCB](https://www.bitcoinlayers.org/infrastructure/binance-btcb), [wBTC](https://www.bitcoinlayers.org/infrastructure/bitgo-wbtc), [FBTC](https://www.bitcoinlayers.org/infrastructure/firebitcoin-fbtc), [cbBTC](https://www.bitcoinlayers.org/infrastructure/coinbase-cbbtc), [BTC.b](https://www.bitcoinlayers.org/infrastructure/avalanche-btcb), and [tBTC](https://www.bitcoinlayers.org/infrastructure/threshold-tbtc). Multisigs securing derivative assets backing by SolvBTC are secured by GnosisSafes with 5 signers.",
-    BTCN = "BTCN is an Ethereum-based ERC-20 token. It is a BTC-derivative asset that is backed by cbBTC and wBTC. All of the BTCN supply is locked into Corn\u2019s ERC-20 Bridge contract on Ethereum and is in escrow. On Corn, BTCN is primarily stored in the Bitcorn OFT contract.\n\nThe BTCN contract is managed by the [0xCff...2C7D](https://etherscan.io/address/0xcff1ad9f09b32252171207e8525c90b18d4e2c7d#code) multisig address on Ethereum. The multi-sig has a 2/4 signing threshold.",
-    LiquidLBTC = "BTC withdrawals are currently permissioned by the Liquid federation. Users must trust that when they deposit BTC into the Liquid blockchain, the signers will not collude and steal their BTC. Most users typically acquire L-BTC on secondary marketplaces, not through bridge deposits. Supported marketplaces for L-BTC are also members of the Liquid federation. Users trust that the federation will not steal the BTC, which would leave their newly acquired L-BTC worthless. The BTC that backs L-BTC is held in a 11-15 multi-sig wallet where 11 (\u2154 + 1) of the signers would need to be compromised in order to steal the BTC.\n\nNot all signers for the Liquid two-way peg are publicly disclosed.",
-    SideBTC = "Side sBTC is managed by 21 signers who additionally participate as validators in Side's proof-of-stake consensus.\n\nThese signers participate in a TSS network that where trusted validators perform signing duties for sBTC abd Side Chain.",
-    RootstockRBTC = "The BTC that backs RBTC is secured by a 5-of-9 federated multisig, referred to as the Powpeg (Proof of Work Peg). The signers of the Powpeg run specialized HSM hardware to secure the private keys used for signing Powpeg transactions.\n\nThe identities of entities participating in the Powpeg are publicly known. Users trust the operators of the Powpeg to custody their funds.\n\nPowpeg signer identities and attestations can be found [here](https://rootstock.io/powpeg/).",
-    AlloBTC = "BTC backing AlloBTC is custodied by Cobo, a centralized exchange. Cobo offers a 2/2 MPC custody solution where they co-custody funds along with protocols leveraging their servives. AlloBTC has not disclosed if this is the case in their documentation or marketing materials.",
-    KinzaBTC = "Kinza's kBTC is backed by BTC held in custodian wallets. These wallets are secured by an MPC scheme where Kinza, Cobo, and Coinover participate as signers. Cobo and Coinover are institutional custody providers.",
-    pStakeyBTC = "pStake's yBTC is backed by BTC held in custodian wallets. These wallets are secured by signers participating in an MPC scheme. pStake has a dedicated Cobo account where users' funds are held.",
-    enzoBTC = "enzoBTC can be acquired through depositing native BTC, [wBTC](https://www.bitcoinlayers.org/infrastructure/bitgo-wbtc), or [BTCB](https://www.bitcoinlayers.org/infrastructure/binance-btcb).\n\nFunds backing enzoBTC are secured by various custodians including Cobo, Ceffu, and Chainup.",
-    TwentyOnecoBTC = "BTC backing 21.co BTC is held by third party custodians. 21.co has not officially disclosed the identities of these custodian providers.",
-    BedrockbrBTC = "Bedrock brBTC is a derivative asset backed by other wrapped BTC assets. When depositing funds for brBTC, users take on smart contract risks in addition to the custodian risk related to the backing asset.\b\bBedrock brBTC may be backed by [uniBTC](https://www.bitcoinlayers.org/infrastructure/bedrock-unibtc), [FBTS](https://www.bitcoinlayers.org/infrastructure/firebitcoin-fbtc), [cbBTC](https://www.bitcoinlayers.org/infrastructure/coinbase-cbbtc), [wBTC](https://www.bitcoinlayers.org/infrastructure/bitgo-wbtc), [M-BTC](https://www.bitcoinlayers.org/infrastructure/merlin-mbtc), or [BTCB](https://www.bitcoinlayers.org/infrastructure/binance-btcb).",
-    BadgereBTC = "To obtain eBTC, users must deposit Lido stETH, an ETH-denominated asset, as collateral to borrow eBTC. If a users's collateralization ratio falls below a certain threshold, they can be liquidated. Collateralization ratios are based on the ETH/BTC price pair",
-    HemiBTC = "BTC backing HemiBTC is secured in a single-signature bitcoin address. Hemi claims that they use a threshold signature scheme to move funds from this address, but the specific siganture scheme, and participating signers, have not been officially disclosed.",
-    iBTC = "BTC backing iBTC is secured by numerous 2-2 multisigs between institutions and iBTC's attestor network. iBTC network's attestor network has a 2/3s majority signing threshold and uses FROST to produce valid signatures to co-sign movement of funds related to iBTC BTC multisigs.\n\nUsers who acquire iBTC in onchains market trust that their tokens will remain backed by institutions supplying liquidity.",
-    MerlinwBTC = "BTC backing Merlin wBTC is likely secured by Cobo, a centralized institution. When users deposit BTC into the Merlin Chain bridge, they are depositing funds into custodian addresses managed by Cobo.",
-    ZueszBTC = "zBTC has a group of guardians securing the BTC that backs zBTC. This BTC is dispersed across a number of individual addresses, meaning that each custodian custodies a subset of funds in isolation of other custodians. Users should be aware of which custodian custodies the funds backing zBTC when using the network.",
-    MantamBTC = "mBTC is backed by [BitGo wBTC](https://www.bitcoinlayers.org/infrastructure/bitgo-wbtc) and [Binance BTCB](https://www.bitcoinlayers.org/infrastructure/binance-btcb). When users exchange these funds for mBTC, reserve assets are secured by vaults managed by Ceffu, an centralized institution.",
-    SolvsolvbtcCORE = "SolvBTC claims to be partially backed by native BTC managed by custodian providers. It\u2019s been stated that Copper, Ceffu, Fireblocks, and Cobo are custodial providers securing BTC that partially backs SolvBTC. It's additionally backed by various BTC-derivative assets; [BTCB](https://www.bitcoinlayers.org/infrastructure/binance-btcb), [wBTC](https://www.bitcoinlayers.org/infrastructure/bitgo-wbtc), [FBTC](https://www.bitcoinlayers.org/infrastructure/firebitcoin-fbtc), [cbBTC](https://www.bitcoinlayers.org/infrastructure/coinbase-cbbtc), [BTC.b](https://www.bitcoinlayers.org/infrastructure/avalanche-btcb), and [tBTC](https://www.bitcoinlayers.org/infrastructure/threshold-tbtc). We are reviewing if SolvBTC.CORE is natively minted or bridged from another chain.",
-    BitLayerwBTC = "Bitlayer's current BTC bridge is a federated two-way peg with institutional signers. Bitlayer is working with multiple MPC custody platforms.\n\nUsers do not custody bitcoin assets backing tokens on Bitlayer.\n\nNote that we are unable to verify the participants in this model.",
-    OsmosisBTC = "BTC on Osmosis is backed by a number of collateral assets; WBTC.eth.axl, wBTC, nBTC, ckBTC, and cbBTC.axl.",
-    smartcontractreview = "This token has trust assumptions past the initial two-way peg. We are reviewing specific smart contracts related to this implementation to learn more about these assumptions.",
-    BotanixBTC = "BTC backing Botanix pBTC is secured by a federation of signers. The identities of entities participating in the federation are [publicly known](https://docs.botanixlabs.com/botanix/get-to-know-botanix/roadmap-to-spiderchain/founding-federation/federation-overview). Users trust the operators of the federation to custody their funds, process deposits, and honor withdrawals.",
-    BotanixStakedBTC = "Botanix stBTC is a derivative asset backed by wrapped BTC locked in a staking vault. When users deposit funds into Botanix stBTC, they are depositing funds into a staking contract. The contract is [upgradeable](https://botanixscan.io/address/0x09C5874F1425697C81c34F58957f2BE584306312).",
-    TemplateBTC = "This is a fake prop used for the template file."
-}
-interface ContractItem$1 {
-    title: string;
-    address: string;
-    subtitle: string;
-    explorerUrl: string;
-}
-interface SectionAlert$1 {
-    type: "info" | "warning" | "error";
-    title: string;
-    content: string;
-    linkText?: string;
-    linkUrl?: string;
-    expandable?: boolean;
-    collapsible?: boolean;
-    buttonText?: string;
-}
-interface Peg$1 {
-    name: string;
-    infrastructureSlug: string;
-    score: number;
-    tier: RiskFactor$1 | "";
-    title: TokenSnippet$1 | string;
-    content: string;
-    alert?: SectionAlert$1;
-}
-interface RiskSection$1 {
-    category: RiskCategory$1;
-    score: number;
-    tier: RiskFactor$1 | "";
-    title: string;
-    content: string;
-    pegs?: Peg$1[];
-    alert?: SectionAlert$1;
-}
-interface ContentSection$1 {
-    id: string;
-    title: string;
-    content: {
-        title?: string;
-        content: string;
-        alert?: SectionAlert$1;
-    }[];
-}
-interface BaseProject$1 {
-    type: Type$1;
-    slug: string;
-    title: string;
-    entityType: EntityType$1;
-    entityCategory?: EntityCategory$1;
-    live: LiveStatus$1;
-    staking: boolean;
-    liquidStaking: boolean;
-    bridge: boolean;
-    underReview: boolean;
-    partialReview?: boolean;
-    partialReviewAfter?: string;
-    riskFactors: (RiskFactor$1 | "")[];
-    nativeToken: string;
-    notice?: Notice$1;
-    bitcoinLayer?: BitcoinLayer$1;
-    unilateralExit?: UnilateralExit$1;
-    otherIcons?: OtherIcons$1;
-    custodyTitle?: CustodyTitle$1;
-    bitcoinOnly: boolean;
-    links: {
-        text: Site$1 | string;
-        url: string | URL;
-    }[];
-    description: string;
-    sections: ContentSection$1[];
-    associatedLayers?: string;
-    manualContracts?: ContractItem$1[];
-}
-interface LayerProject$1 extends BaseProject$1 {
-    type: Type$1.Layer;
-    btcLocked: number;
-    feeToken: string;
-    riskAnalysis: RiskSection$1[];
-    riskSummary?: {
-        title?: string;
-        content: string;
-    }[];
-    categorization?: {
-        title?: string;
-        content: string;
-    }[];
-}
-
 declare enum RiskCategory {
     BtcCustody = "BTC Custody",
     DataAvailability = "Data Availability",
@@ -811,128 +564,128 @@ interface LayerProject extends BaseProject {
 }
 type Project = InfrastructureProject | LayerProject;
 
-declare const template$c: LayerProject$1;
+declare const template$c: LayerProject;
 
-declare const template$b: LayerProject$1;
+declare const template$b: LayerProject;
 
-declare const arbitrum: LayerProject$1;
+declare const arbitrum: LayerProject;
 
-declare const template$a: LayerProject$1;
+declare const template$a: LayerProject;
 
-declare const avalanche: LayerProject$1;
+declare const avalanche: LayerProject;
 
-declare const babylon: LayerProject$1;
+declare const babylon: LayerProject;
 
-declare const base: LayerProject$1;
+declare const base: LayerProject;
 
-declare const berachain: LayerProject$1;
+declare const berachain: LayerProject;
 
-declare const bevm: LayerProject$1;
+declare const bevm: LayerProject;
 
-declare const bitfinity: LayerProject$1;
+declare const bitfinity: LayerProject;
 
-declare const bitlayer: LayerProject$1;
+declare const bitlayer: LayerProject;
 
-declare const bnbsmartchain: LayerProject$1;
+declare const bnbsmartchain: LayerProject;
 
-declare const bob: LayerProject$1;
+declare const bob: LayerProject;
 
-declare const template$9: LayerProject$1;
+declare const template$9: LayerProject;
 
-declare const bouncebit: LayerProject$1;
+declare const bouncebit: LayerProject;
 
-declare const bsquared: LayerProject$1;
+declare const bsquared: LayerProject;
 
-declare const core: LayerProject$1;
+declare const core: LayerProject;
 
-declare const corn: LayerProject$1;
+declare const corn: LayerProject;
 
-declare const ethereum: LayerProject$1;
+declare const ethereum: LayerProject;
 
-declare const fantom: LayerProject$1;
+declare const fantom: LayerProject;
 
-declare const fractal: LayerProject$1;
+declare const fractal: LayerProject;
 
-declare const fuel: LayerProject$1;
+declare const fuel: LayerProject;
 
-declare const gnosis: LayerProject$1;
+declare const gnosis: LayerProject;
 
-declare const goat: LayerProject$1;
+declare const goat: LayerProject;
 
-declare const hemi: LayerProject$1;
+declare const hemi: LayerProject;
 
-declare const hyperliquid: LayerProject$1;
+declare const hyperliquid: LayerProject;
 
-declare const template$8: LayerProject$1;
+declare const template$8: LayerProject;
 
-declare const internetcomputer: LayerProject$1;
+declare const internetcomputer: LayerProject;
 
-declare const template$7: LayerProject$1;
+declare const template$7: LayerProject;
 
-declare const template$6: LayerProject$1;
+declare const template$6: LayerProject;
 
-declare const lightning: LayerProject$1;
+declare const lightning: LayerProject;
 
-declare const template$5: LayerProject$1;
+declare const template$5: LayerProject;
 
-declare const liquid: LayerProject$1;
+declare const liquid: LayerProject;
 
-declare const template$4: LayerProject$1;
+declare const template$4: LayerProject;
 
-declare const template$3: LayerProject$1;
+declare const template$3: LayerProject;
 
-declare const mercurylayer: LayerProject$1;
+declare const mercurylayer: LayerProject;
 
-declare const merlin: LayerProject$1;
+declare const merlin: LayerProject;
 
-declare const mezo: LayerProject$1;
+declare const mezo: LayerProject;
 
-declare const template$2: LayerProject$1;
+declare const template$2: LayerProject;
 
-declare const template$1: LayerProject$1;
+declare const template$1: LayerProject;
 
-declare const nomic: LayerProject$1;
+declare const nomic: LayerProject;
 
-declare const optimism: LayerProject$1;
+declare const optimism: LayerProject;
 
-declare const osmosis: LayerProject$1;
+declare const osmosis: LayerProject;
 
-declare const polygon: LayerProject$1;
+declare const polygon: LayerProject;
 
-declare const polygonzkevm: LayerProject$1;
+declare const polygonzkevm: LayerProject;
 
-declare const rollux: LayerProject$1;
+declare const rollux: LayerProject;
 
-declare const rootstock: LayerProject$1;
+declare const rootstock: LayerProject;
 
-declare const scroll: LayerProject$1;
+declare const scroll: LayerProject;
 
-declare const side: LayerProject$1;
+declare const side: LayerProject;
 
-declare const solana: LayerProject$1;
+declare const solana: LayerProject;
 
-declare const soneium: LayerProject$1;
+declare const soneium: LayerProject;
 
-declare const sonic: LayerProject$1;
+declare const sonic: LayerProject;
 
-declare const spark: LayerProject$1;
+declare const spark: LayerProject;
 
-declare const stacks: LayerProject$1;
+declare const stacks: LayerProject;
 
-declare const starknet: LayerProject$1;
+declare const starknet: LayerProject;
 
-declare const template: LayerProject$1;
+declare const template: LayerProject;
 
-declare const taiko: LayerProject$1;
+declare const taiko: LayerProject;
 
-declare const tron: LayerProject$1;
+declare const tron: LayerProject;
 
-declare const zeta: LayerProject$1;
+declare const zeta: LayerProject;
 
-declare const zksync: LayerProject$1;
+declare const zksync: LayerProject;
 
-declare const allLayers: LayerProject$1[];
+declare const allLayers: LayerProject[];
 declare const allLayerSlugs: string[];
 
-export { AdditionalSnippet, AlertSnippet, AssessmentCategory, AtlSnippet, BTCWrapperTransparency, BitcoinLayer, BitcoinSecuritySnippet, Categorization, CustodyTitle, DefinitionSnippet, EntityCategory, EntityType, KnowledgeBitSnippet, LiveStatus$1 as LiveStatus, Notice, OtherIcons, OtherRiskSummarySnippet, OtherSnippet, PegRiskSummarySnippet, Purpose$1 as Purpose, ReviewSnippet, RiskCategory, RiskFactor$1 as RiskFactor, RiskSummarySnippet, Site, TechnologySnippet, TokenSnippet, Type$1 as Type, UnilateralExit, UseCaseSnippet, WrapperReviews, WrapperSnippet, template$c as ailayer, template$b as algorand, allLayerSlugs, allLayers, arbitrum, template$a as aurora, avalanche, babylon as babylongenesis, base, berachain, bevm, bitfinity, bitlayer, bnbsmartchain, bob, template$9 as botanix, bouncebit, bsquared, core, corn, ethereum, fantom, fractal, fuel, gnosis, goat, hemi, hyperliquid, template$8 as ink, internetcomputer, template$7 as iotex, template$6 as kava, lightning, template$5 as linea, liquid, template$4 as manta, template$3 as mantle, mercurylayer, merlin, mezo, template$2 as mode, template$1 as movement, nomic, optimism, osmosis, polygon as polygonpos, polygonzkevm, rollux, rootstock, scroll, side, solana, soneium, sonic, spark, stacks, starknet, template as sui, taiko, tron, zeta, zksync };
+export { AdditionalSnippet, AlertSnippet, AssessmentCategory, AtlSnippet, BTCWrapperTransparency, BitcoinLayer, BitcoinSecuritySnippet, Categorization, CustodyTitle, DefinitionSnippet, EntityCategory, EntityType, KnowledgeBitSnippet, LiveStatus, Notice, OtherIcons, OtherRiskSummarySnippet, OtherSnippet, PegRiskSummarySnippet, Purpose, ReviewSnippet, RiskCategory, RiskFactor, RiskSummarySnippet, Site, TechnologySnippet, TokenSnippet, Type, UnilateralExit, UseCaseSnippet, WrapperReviews, WrapperSnippet, template$c as ailayer, template$b as algorand, allLayerSlugs, allLayers, arbitrum, template$a as aurora, avalanche, babylon as babylongenesis, base, berachain, bevm, bitfinity, bitlayer, bnbsmartchain, bob, template$9 as botanix, bouncebit, bsquared, core, corn, ethereum, fantom, fractal, fuel, gnosis, goat, hemi, hyperliquid, template$8 as ink, internetcomputer, template$7 as iotex, template$6 as kava, lightning, template$5 as linea, liquid, template$4 as manta, template$3 as mantle, mercurylayer, merlin, mezo, template$2 as mode, template$1 as movement, nomic, optimism, osmosis, polygon as polygonpos, polygonzkevm, rollux, rootstock, scroll, side, solana, soneium, sonic, spark, stacks, starknet, template as sui, taiko, tron, zeta, zksync };
 export type { AssessmentSection, BaseProject, ContentSection, ContractItem, InfrastructureProject, LayerProject, Peg, Project, RiskSection, SectionAlert };
