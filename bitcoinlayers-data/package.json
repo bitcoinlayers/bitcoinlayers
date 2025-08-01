@@ -1,0 +1,76 @@
+{
+  "name": "@bitcoinlayers/data",
+  "version": "1.0.0",
+  "description": "Research data and risk analysis for Bitcoin scaling protocols and infrastructure",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/**/*",
+    "README.md",
+    "LICENSE"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.js"
+    },
+    "./layers": {
+      "types": "./dist/layers/index.d.ts",
+      "import": "./dist/layers/index.esm.js",
+      "require": "./dist/layers/index.js"
+    },
+    "./infrastructure": {
+      "types": "./dist/infrastructure/index.d.ts",
+      "import": "./dist/infrastructure/index.esm.js",
+      "require": "./dist/infrastructure/index.js"
+    },
+    "./types": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/types/index.esm.js",
+      "require": "./dist/types/index.js"
+    },
+    "./props": {
+      "types": "./dist/props/index.d.ts",
+      "import": "./dist/props/index.esm.js",
+      "require": "./dist/props/index.js"
+    }
+  },
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "prepublishOnly": "npm run build",
+    "test": "jest"
+  },
+  "keywords": [
+    "bitcoin",
+    "layer2",
+    "scaling",
+    "research",
+    "data",
+    "risk-analysis",
+    "blockchain",
+    "cryptocurrency"
+  ],
+  "author": "Bitcoin Layers",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bitcoinlayers/bitcoinlayers.git",
+    "directory": "bitcoinlayers-data"
+  },
+  "homepage": "https://bitcoinlayers.org",
+  "devDependencies": {
+    "@rollup/plugin-typescript": "^11.1.6",
+    "@types/jest": "^29.5.12",
+    "jest": "^29.7.0",
+    "rollup": "^4.9.6",
+    "rollup-plugin-dts": "^6.1.0",
+    "typescript": "^5.3.3"
+  },
+  "peerDependencies": {},
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}

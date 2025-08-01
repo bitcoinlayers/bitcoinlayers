@@ -1,0 +1,299 @@
+import { Bitcoin } from "lucide-react";
+import {
+    LayerProject,
+    Type,
+    LiveStatus,
+    RiskFactor,
+    EntityType,
+    EntityCategory,
+    Notice,
+    Site,
+    RiskSection,
+    ContentSection,
+    RiskCategory,
+    TokenSnippet,
+    ReviewSnippet,
+    BitcoinSecuritySnippet,
+    TechnologySnippet,
+    UseCaseSnippet,
+    KnowledgeBitSnippet,
+    AdditionalSnippet,
+    RiskSummarySnippet,
+} from "../props";
+
+import { Alertsnippet } from "../props-layers-more-info";
+import { Reviewsnippet } from "../props-layers-reviews";
+
+const arbitrum: LayerProject = {
+    type: Type.Layer,
+    slug: "arbitrum",
+    title: "Arbitrum",
+    entityType: EntityType.AltRollup,
+    entityCategory: EntityCategory.Alt,
+    live: LiveStatus.Mainnet,
+    staking: false,
+    liquidStaking: false,
+    bridge: false,
+    underReview: false,
+    riskFactors: [
+        RiskFactor.High,
+        RiskFactor.Medium,
+        RiskFactor.Medium,
+        RiskFactor.Medium,
+    ],
+    btcLocked: 0,
+    nativeToken: "-",
+    feeToken: "ETH",
+    notice: undefined,
+    bitcoinOnly: false,
+    links: [
+        {
+            text: Site.Website,
+            url: "https://arbitrum.io/",
+        },
+        {
+            text: Site.Docs,
+            url: "https://docs.arbitrum.io/",
+        },
+        {
+            text: Site.Explorer,
+            url: "https://arbiscan.io/",
+        },
+        {
+            text: Site.GitHub,
+            url: "https://github.com/OffchainLabs/arbitrum",
+        },
+        {
+            text: Site.Twitter,
+            url: "https://x.com/arbitrum",
+        },
+    ],
+    description:
+        "Arbitrum is an Ethereum rollup that supports a variety of wrapped BTC tokens.",
+    riskSummary: [
+        {
+            title: "All BTC pegs have custodian trust assumptions",
+            content: RiskSummarySnippet.RiskSummaryCustodianPegs
+        },
+        {
+            title: "Some contracts immediately upgradeable by Arbitrum Security council",
+            content: `${RiskSummarySnippet.RiskSummarySecurityCouncil} The Arbitrum Security council is a 9/12 multisig.`,
+        },
+        {
+            title: "Another network is used for data availability",
+            content: RiskSummarySnippet.RiskSummaryAltDANetwork,
+        },
+        {
+            title: "A centralized entity is the network operator",
+            content: RiskSummarySnippet.RiskSummaryCentralizedSequencer,
+        },
+    ],
+    riskAnalysis: [
+        {
+            category: RiskCategory.BtcCustody,
+            score: 0,
+            tier: RiskFactor.NotApplicable,
+            title: "",
+            content: "",
+            pegs: [
+                {
+                    name: "Threshold tBTC",
+                    infrastructureSlug: "threshold-tbtc",
+                    score: 0,
+                    tier: RiskFactor.High,
+                    title: TokenSnippet.FederationPeg,
+                    content: `${TokenSnippet.ThresholdtBTC}\n\nThis bridge is managed by a 9 member federation. Bitcoin users trust that 6 of the 9 members of this federation do not collude and steal user funds.`,
+                },
+                {
+                    name: "BitGo wBTC",
+                    infrastructureSlug: "bitgo-wbtc",
+                    score: 0,
+                    tier: RiskFactor.VeryHigh,
+                    title: TokenSnippet.CustodianPeg,
+                    content: TokenSnippet.BitGowBTC,
+                },
+                {
+                    name: "cbBTC",
+                    infrastructureSlug: "coinbase-cbbtc",
+                    score: 0,
+                    tier: RiskFactor.VeryHigh,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.CoinbasecbBTC}`,
+                },
+                {
+                    name: "Solv SolvBTC",
+                    infrastructureSlug: "solv-solvbtc",
+                    score: 0,
+                    tier: RiskFactor.VeryHigh,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.SolvBTC}\n\n${TokenSnippet.smartcontractreview}`,
+                },
+                {
+                    name: "Bedrock uniBTC",
+                    infrastructureSlug: "bedrock-unibtc",
+                    score: 0,
+                    tier: RiskFactor.VeryHigh,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.BedrockUniBTC}\n\n${TokenSnippet.smartcontractreview}`,
+                },
+                {
+                    name: "Solv xSolvBTC",
+                    infrastructureSlug: "solv-xsolvbtc",
+                    score: 0,
+                    tier: RiskFactor.VeryHigh,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.xSolvBTC}\n\n${TokenSnippet.smartcontractreview}`,
+                },
+                {
+                    name: "Solv SolvBTC.ENA",
+                    infrastructureSlug: "solv-solvbtcena",
+                    score: 0,
+                    tier: RiskFactor.VeryHigh,
+                    title: TokenSnippet.CustodianDerivative,
+                    content: `${TokenSnippet.SolvBTCENA},\n\n${TokenSnippet.smartcontractreview}`,
+                },
+                {
+                    name: "Lorenzo stBTC",
+                    infrastructureSlug: "lorenzo-stbtc",
+                    score: 0,
+                    tier: RiskFactor.VeryHigh,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.LorenzostBTC}\n\n${TokenSnippet.smartcontractreview}`,
+                },
+                {
+                    name: "iBTC",
+                    infrastructureSlug: "ibtcnetwork-ibtc",
+                    score: 0,
+                    tier: RiskFactor.High,
+                    title: TokenSnippet.VariousCustodianPeg,
+                    content: `${TokenSnippet.iBTC}\n\n${TokenSnippet.smartcontractreview}`,
+                },
+                {
+                    name: "Avalanche BTCb",
+                    infrastructureSlug: "avalanche-btcb",
+                    score: 0,
+                    tier: RiskFactor.UnderReview,
+                    title: TokenSnippet.FederationPeg,
+                    content: `${TokenSnippet.AvalancheBTCb}\n\n${TokenSnippet.smartcontractreview}`,
+                },
+                {
+                    name: "Fire Bitcoin FBTC",
+                    infrastructureSlug: "firebitcoin-fbtc",
+                    score: 0,
+                    tier: RiskFactor.VeryHigh,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.FireBTC},\n\n${TokenSnippet.smartcontractreview}`,
+                },
+                {
+                    name: "Babypie mBTC",
+                    infrastructureSlug: "babypie-mbtc",
+                    score: 0,
+                    tier: RiskFactor.VeryHigh,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.babypie},\n\n${TokenSnippet.smartcontractreview}`,
+                },
+                {
+                    name: "xLink aBTC",
+                    infrastructureSlug: "xlink-abtc",
+                    score: 0,
+                    tier: RiskFactor.VeryHigh,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.xlink},\n\n${TokenSnippet.smartcontractreview}`,
+                },
+                {
+                    name: "Rootstock RBTC",
+                    infrastructureSlug: "rootstock-rbtc",
+                    score: 0,
+                    tier: RiskFactor.UnderReview,
+                    title: TokenSnippet.UnderReview,
+                    content: `${TokenSnippet.RootstockRBTC}${TokenSnippet.smartcontractreview}.`,
+                },
+            ],
+        },
+        {
+            category: RiskCategory.DataAvailability,
+            score: 0,
+            tier: RiskFactor.Medium,
+            title: "Data is stored and made available by Ethereum full nodes",
+            content: ReviewSnippet.EthereumRollupDA,
+        },
+        {
+            category: RiskCategory.NetworkOperators,
+            score: 0,
+            tier: RiskFactor.Medium,
+            title: "Arbitrum blocks are produced and proposed by a centralized operator, but users can propose their own state updates in the event of censorship or liveness failures",
+            content: ReviewSnippet.SelfProposeMainAlt,
+        },
+        {
+            category: RiskCategory.FinalityGuarantees,
+            score: 0,
+            tier: RiskFactor.Medium,
+            title: "Arbitrum state transitions finalize by updating its state based on data posted to Ethereum",
+            content: `${Reviewsnippet.AltRollupFinality}`,
+            alert: Alertsnippet.AltRollupNotice,
+        },
+    ],
+    sections: [
+        {
+            id: "bitcoinsecurity",
+            title: "Bitcoin Security",
+            content: [
+                {
+                    title: "Arbitrum does not inherit any security from Bitcoin",
+                    content: BitcoinSecuritySnippet.NoSecurity,
+                },
+                {
+                    title: "ETH token used to pay fees",
+                    content: BitcoinSecuritySnippet.AltTokenFees,
+                },
+                {
+                    title: "No MEV introduced to Bitcoin",
+                    content: BitcoinSecuritySnippet.CentralizedSequencerMEV,
+                },
+                {
+                    title: "Arbitrum does not contribute to the security budget",
+                    content: BitcoinSecuritySnippet.NoSecurityBudget,
+                },
+            ],
+        },
+        {
+            id: "technology",
+            title: "Technology",
+            content: [
+                {
+                    title: "EVM-Compatible",
+                    content: TechnologySnippet.EVM,
+                },
+                {
+                    title: "Fault Proofs (a.k.a Fraud Proofs)",
+                    content: TechnologySnippet.FaultProofs,
+                },
+                {
+                    title: "Arbitrum Stylus",
+                    content: TechnologySnippet.ArbitrumStylus,
+                },
+            ],
+        },
+        {
+            id: "usecases",
+            title: "Use Cases",
+            content: [
+                {
+                    title: "Onchain applications",
+                    content: UseCaseSnippet.OnchainApps,
+                },
+            ],
+        },
+        {
+            id: "knowledgebits",
+            title: "Knowledge Bits",
+            content: [
+                {
+                    content: `${KnowledgeBitSnippet.EthereumL2}`,
+                },
+            ],
+        },
+    ],
+};
+
+export default arbitrum;
