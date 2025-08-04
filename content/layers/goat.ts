@@ -120,7 +120,7 @@ const goat: LayerProject = {
             score: 0,
             tier: RiskFactor.High,
             title: "After a transaction has been included in the chain, it cannot reorg",
-            content: `${Reviewsnippet.CometBFTFinality}`
+            content: `${Reviewsnippet.CometBFTFinalityPermissioned}`
         },
     ],
     sections: [

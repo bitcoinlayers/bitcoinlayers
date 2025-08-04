@@ -134,7 +134,7 @@ const template: LayerProject = {
             score: 0,
             tier: RiskFactor.High,
             title: "Botanix's federation is responsible for finalizing transactions",
-            content: ReviewSnippet.CometBFTFinality,
+            content: Reviewsnippet.CometBFTFinalityPermissioned,
         },
     ],
     manualContracts: [
