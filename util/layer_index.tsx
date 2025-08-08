@@ -64,6 +64,7 @@ import soneiumProject from "@/content/layers/soneium";
 import suiProject from "@/content/layers/sui";
 import botanixProject from "@/content/layers/botanix";
 import goatProject from "@/content/layers/goat";
+import arkadeProject from "@/content/layers/arkade";
 
 const core: LayerProject = coreProject;
 const internetcomputer: LayerProject = internetcomputerProject;
@@ -129,6 +130,7 @@ const soneium: LayerProject = soneiumProject;
 const sui: LayerProject = suiProject;
 const botanix: LayerProject = botanixProject;
 const goat: LayerProject = goatProject;
+const arkade: LayerProject = arkadeProject;
 
 export const allLayers: LayerProject[] = [
     core,

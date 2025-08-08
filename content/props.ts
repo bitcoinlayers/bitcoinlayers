@@ -9,6 +9,7 @@ export enum LiveStatus {
     Announced = "Announced",
     Proposed = "Proposed",
     Beta = "Beta",
+    Alpha = "Alpha",
     Deposits = "Deposits Live",
     BIP = "Bip Drafted",
     Activation = "Activation Client",

@@ -13,11 +13,12 @@ import {
     ReviewSnippet,
     UseCaseSnippet,
     TechnologySnippet,
-    BitcoinSecuritySnippet,
     RiskSummarySnippet,
     Notice,
     Categorization,
 } from "../props";
+import { Reviewsnippet } from "../props-layers-reviews";
+import { BitcoinSecuritySnippet } from "../props-layers-more-info";
 
 const babylon: LayerProject = {
     type: Type.Layer,
@@ -32,9 +33,9 @@ const babylon: LayerProject = {
     underReview: false,
     riskFactors: [
         RiskFactor.VeryHigh,
-        RiskFactor.AlternativePoS,
-        RiskFactor.AlternativePoS,
-        RiskFactor.AlternativePoS,
+        RiskFactor.Medium,
+        RiskFactor.Medium,
+        RiskFactor.UnderReview,
     ],
     btcLocked: NaN,
     nativeToken: "-",
@@ -124,9 +125,9 @@ const babylon: LayerProject = {
         {
             category: RiskCategory.FinalityGuarantees,
             score: 0,
-            tier: RiskFactor.AlternativePoS,
-            title: "Finality guarantees are provided by an alternative PoS Network",
-            content: ReviewSnippet.CometBFTFinality,
+            tier: RiskFactor.UnderReview,
+            title: "Finality guarantees are provided by an alternative PoS Network. Bitcoin stakers sign off on finality rounds to finalize blocks",
+            content: `${Reviewsnippet.BabylonCometBFTFinality}`,
         },
     ],
     sections: [
@@ -136,7 +137,7 @@ const babylon: LayerProject = {
             content: [
                 {
                     title: "Babylon inherits economic security from BTC the asset",
-                    content: BitcoinSecuritySnippet.YesSecurityDualStaking,
+                    content: `${BitcoinSecuritySnippet.CheckpointCometBFT} ${BitcoinSecuritySnippet.YesSecurityDualStaking}`,
                 },
                 {
                     title: "BABY token used to pay fees",
@@ -147,8 +148,8 @@ const babylon: LayerProject = {
                     content: BitcoinSecuritySnippet.MEVUnderReview,
                 },
                 {
-                    title: "Babylon does not contribute to the security budget",
-                    content: BitcoinSecuritySnippet.NoSecurityBudget,
+                    title: "Checkpoint transactions pay fees to bitcoin miners",
+                    content: BitcoinSecuritySnippet.FeesPOSCheckpoint,
                 },
             ],
         },
@@ -159,6 +160,11 @@ const babylon: LayerProject = {
                 {
                     title: "Bitcoin Staking",
                     content: TechnologySnippet.BitcoinStakingUnderReview,
+                },
+                {
+                    title: "Checkpointing mechanism",
+                    content:
+                        "The Babylon checkpointing mechanism manages Bitcoin reserves by consolidating deposits and disbursing pending withdrawals into periodic Bitcoin transactions. Each checkpoint updates the reserve script to reflect the latest signatory set, a group of validators dynamically chosen from the network. These transactions are collaboratively signed using a threshold multisignature scheme. Checkpoints also provide a way for light clients to verify the state of the Nomic chain and invalidate prior emergency disbursal mechanisms.",
                 },
             ],
         },

@@ -13,12 +13,13 @@ import {
     RiskCategory,
     TokenSnippet,
     ReviewSnippet,
-    BitcoinSecuritySnippet,
     TechnologySnippet,
     UseCaseSnippet,
     RiskSummarySnippet,
     CustodyTitle,
 } from "../props";
+import { Reviewsnippet } from "../props-layers-reviews";
+import { BitcoinSecuritySnippet } from "../props-layers-more-info";
 
 const nomic: LayerProject = {
     type: Type.Layer,
@@ -36,7 +37,7 @@ const nomic: LayerProject = {
         RiskFactor.High,
         RiskFactor.Medium,
         RiskFactor.Medium,
-        RiskFactor.Medium,
+        RiskFactor.UnderReview,
     ],
     btcLocked: NaN,
     nativeToken: "NOM",
@@ -111,9 +112,9 @@ const nomic: LayerProject = {
         {
             category: RiskCategory.FinalityGuarantees,
             score: 0,
-            tier: RiskFactor.Medium,
-            title: "Finality is provided through an offchain consensus mechnaism",
-            content: ReviewSnippet.CometBFTFinality,
+            tier: RiskFactor.Low,
+            title: "Finality guarantees are provided by an alternative PoS Network. It receieves additional security benefits from checkpointing bitcoin",
+            content: `${ReviewSnippet.CometBFTFinality}\n\n${Reviewsnippet.AnchorChainLongRange}`,
         },
     ],
     sections: [

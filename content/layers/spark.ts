@@ -26,7 +26,7 @@ const spark: LayerProject = {
     entityType: EntityType.Statechain,
     entityCategory: EntityCategory.BitcoinNative,
     custodyTitle: CustodyTitle.BitcoinNative,
-    live: LiveStatus.Beta,
+    live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
     bridge: false,

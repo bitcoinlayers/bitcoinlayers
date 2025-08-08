@@ -20,12 +20,12 @@ import {
     BitcoinSecuritySnippet,
 } from "../props";
 
-const template: LayerProject = {
+const arkade: LayerProject = {
     type: Type.Layer,
-    slug: "slug",
-    title: "Title",
-    entityType: EntityType.Rollup,
-    entityCategory: EntityCategory.Sidesystem,
+    slug: "arkade",
+    title: "Arkade",
+    entityType: EntityType.Ark,
+    entityCategory: EntityCategory.BitcoinNative,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -244,4 +244,4 @@ const template: LayerProject = {
             ],
 };
 
-export default template;
+export default arkade;
