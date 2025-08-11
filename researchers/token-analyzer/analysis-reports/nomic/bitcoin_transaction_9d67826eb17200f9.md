@@ -2,7 +2,7 @@
 
 **Transaction ID:** cc51e201dd336b4b026864e1686c890aa686d7c64c1c31e3e3d70fdb56bdd719
 **Network:** Mainnet
-**Analysis Date:** 2025-07-30 17:23:11 UTC
+**Analysis Date:** 2025-08-11 17:41:16 UTC
 **API Provider:** blockstream
 **Associated Layer:** Nomic
 **Analysis Type:** Custody
@@ -23,7 +23,7 @@
 
 - **Total Inputs:** 1
 - **Total Outputs:** 4
-- **Script Types:** Data (OP_RETURN), Pay to Witness Script Hash, Empty, Pay to Witness Public Key Hash
+- **Script Types:** Data (OP_RETURN), Pay to Witness Public Key Hash, Empty, Pay to Witness Script Hash
 - **SegWit Usage:** ✅ Yes
 - **Multisig Usage:** ❌ No
 - **Total Value:** 327135198 satoshis

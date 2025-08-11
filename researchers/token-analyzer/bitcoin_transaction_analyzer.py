@@ -27,9 +27,9 @@ load_dotenv(os.path.join(os.path.dirname(__file__), ".env"))
 
 # Configuration
 NETWORK = "mainnet"  # "mainnet", "testnet"
-TRANSACTION_ID = "cc51e201dd336b4b026864e1686c890aa686d7c64c1c31e3e3d70fdb56bdd719"  # Transaction to analyze
+TRANSACTION_ID = "6698cdf42d6260eae82741cb5639162bb74c36372c4aea0c63053088d24fe54a"  # Will be set when we find an sBTC transaction
 API_PROVIDER = "blockstream"  # "blockstream", "blockchair", "bitcoin_core"
-LAYER_NAME = "Nomic"  # Bitcoin layer/wrapper to associate this analysis with
+LAYER_NAME = "Stacks"  # Bitcoin layer/wrapper to associate this analysis with
 ANALYSIS_TYPE = "custody"  # "custody", "wrapper", "general"
 
 # API configurations
@@ -269,6 +269,16 @@ class BitcoinTransactionAnalyzer(BaseAnalyzer):
                 threshold_description="1-of-1"
             )
         
+        elif script_type == "Pay to Taproot":
+            return SignatureRequirement(
+                required_signatures=1,
+                total_possible_signers=1,
+                signature_type="single_taproot",
+                present_signatures=0,  # Not applicable for outputs
+                is_fully_signed=False,  # Not applicable for outputs
+                threshold_description="1-of-1"
+            )
+        
         elif "multisig" in script_type.lower():
             # Parse multisig requirements from opcodes
             opcodes = script_analysis.get("opcodes", [])
@@ -318,7 +328,7 @@ class BitcoinTransactionAnalyzer(BaseAnalyzer):
         
         if witness_analysis.get("has_witness"):
             witness_items = witness_analysis.get("witness_items", [])
-            witness_signatures = sum(1 for item in witness_items if item.get("type") == "signature")
+            witness_signatures = sum(1 for item in witness_items if item.get("type") in ["signature", "schnorr_signature", "schnorr_signature_with_data"])
             witness_pubkeys = sum(1 for item in witness_items if "pubkey" in item.get("type", ""))
             has_redeem_script = any(item.get("type") == "script_or_redeem" for item in witness_items)
         
@@ -326,6 +336,19 @@ class BitcoinTransactionAnalyzer(BaseAnalyzer):
         
         # Detect multisig patterns from witness data
         is_multisig, required_sigs, total_keys, weighted_info = self._detect_multisig_from_witness(context.get("witness", []))
+        
+        # Handle Empty script types with witness data (likely Taproot)
+        if script_type == "Empty" and witness_analysis.get("has_witness"):
+            # Empty scriptSig + witness data usually indicates Taproot key-path spend
+            present_sigs = 1 if witness_analysis.get("witness_stack_size", 0) > 0 else 0
+            return SignatureRequirement(
+                required_signatures=1,
+                total_possible_signers=1,
+                signature_type="single_taproot",
+                present_signatures=present_sigs,
+                is_fully_signed=present_sigs >= 1,
+                threshold_description="1-of-1"
+            )
         
         # Determine signature type and requirements based on script pattern and multisig detection
         if is_multisig:
@@ -376,6 +399,19 @@ class BitcoinTransactionAnalyzer(BaseAnalyzer):
                 signature_type="single",
                 present_signatures=total_present_signatures,
                 is_fully_signed=total_present_signatures >= 1,
+                threshold_description="1-of-1"
+            )
+        
+        elif script_type == "Pay to Taproot":
+            # Taproot inputs require 1 signature for key-path spend
+            # For script-path spend, it depends on the script, but we'll handle key-path as default
+            present_sigs = max(total_present_signatures, 1 if witness_analysis.get("has_witness") else 0)
+            return SignatureRequirement(
+                required_signatures=1,
+                total_possible_signers=1,
+                signature_type="single_taproot",
+                present_signatures=present_sigs,
+                is_fully_signed=present_sigs >= 1,
                 threshold_description="1-of-1"
             )
         
@@ -458,14 +494,24 @@ class BitcoinTransactionAnalyzer(BaseAnalyzer):
             
             for i, item in enumerate(witness_data):
                 item_type = self._classify_witness_item(item)
-                if item_type == "signature":
+                if item_type in ["signature", "schnorr_signature", "schnorr_signature_with_data"]:
                     signature_count += 1
+                
+                # Analyze witness scripts for opcodes
+                item_analysis = None
+                if item_type == "script_or_redeem" and item:
+                    try:
+                        # Analyze the witness script to get opcodes
+                        item_analysis = self.script_analyzer.analyze_script(item)
+                    except Exception as e:
+                        print(f"Warning: Could not analyze witness script: {e}")
                 
                 witness_items.append({
                     "index": i,
                     "size": len(item) if item else 0,
-                    "data": item[:40] + "..." if item and len(item) > 40 else item,
-                    "type": item_type
+                    "data": item,  # Store full data - no truncation
+                    "type": item_type,
+                    "script_analysis": item_analysis  # Include parsed opcodes if it's a script
                 })
             
             context_analysis["witness_analysis"] = {
@@ -497,10 +543,17 @@ class BitcoinTransactionAnalyzer(BaseAnalyzer):
         # Check for DER signatures (more comprehensive)
         if self._is_der_signature(item):
             return "signature"
+        elif len(item) == 128:  # 64 bytes = Schnorr signature
+            return "schnorr_signature"
+        elif len(item) == 130:  # 65 bytes = could be Schnorr signature + extra byte OR uncompressed pubkey
+            # For Taproot contexts, this is more likely a signature than a pubkey
+            # Check if it looks like signature data (high entropy, not starting with 02/03/04)
+            if not item.startswith(('02', '03', '04')):
+                return "schnorr_signature_with_data"
+            else:
+                return "uncompressed_pubkey"
         elif len(item) == 66:  # 33 bytes = compressed pubkey
             return "compressed_pubkey"
-        elif len(item) == 130:  # 65 bytes = uncompressed pubkey  
-            return "uncompressed_pubkey"
         elif len(item) == 64:  # 32 bytes
             return "hash_or_secret"
         elif len(item) > 100:  # Likely script/redeem script
@@ -647,7 +700,7 @@ class BitcoinTransactionAnalyzer(BaseAnalyzer):
                             if len(pubkey_search) >= 66:
                                 # Extract last 32 chars as pubkey hash
                                 pubkey_hash = pubkey_search[-66:-32] if len(pubkey_search) >= 66 else "unknown"
-                                weight_distribution.append((pubkey_hash[:16] + "...", weight_value))
+                                weight_distribution.append((pubkey_hash, weight_value))  # Store full pubkey hash
                             else:
                                 weight_distribution.append(("unknown", weight_value))
                                 
@@ -764,19 +817,19 @@ class BitcoinTransactionAnalyzer(BaseAnalyzer):
                     if data_len in [70, 71, 72, 73]:  # Typical signature lengths
                         signatures.append({
                             "length": data_len,
-                            "data": opcode.data.hex()[:20] + "...",
+                            "data": opcode.data.hex(),  # Store full signature data
                             "type": "signature"
                         })
                     elif data_len in [33, 65]:  # Public key lengths
                         pubkeys.append({
                             "length": data_len,
-                            "data": opcode.data.hex()[:20] + "...",
+                            "data": opcode.data.hex(),  # Store full pubkey data
                             "type": "compressed_pubkey" if data_len == 33 else "uncompressed_pubkey"
                         })
                     else:
                         other_data.append({
                             "length": data_len,
-                            "data": opcode.data.hex()[:20] + "...",
+                            "data": opcode.data.hex(),  # Store full data
                             "type": "data"
                         })
             
