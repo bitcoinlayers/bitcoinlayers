@@ -1,0 +1,97 @@
+{
+  "address": "0xA45d4121b3D47719FF57a947A9d961539Ba33204",
+  "verified": true,
+  "is_proxy": true,
+  "implementation_address": "0x11a924262FE3A506EF24E7CE4558F356eD4F2Ff0",
+  "admin_address": null,
+  "roles": {
+    "BRIDGE": {
+      "address": "0x4200000000000000000000000000000000000010",
+      "category": "Bridge",
+      "type": "Contract"
+    },
+    "REMOTE_TOKEN": {
+      "address": "0x8236a87084f8B84306f72007F36F2618A5634494",
+      "category": "Token",
+      "type": "EOA"
+    },
+    "bridge": {
+      "address": "0x4200000000000000000000000000000000000010",
+      "category": "Bridge",
+      "type": "Contract"
+    },
+    "l1Token": {
+      "address": "0x8236a87084f8B84306f72007F36F2618A5634494",
+      "category": "Token",
+      "type": "EOA"
+    },
+    "l2Bridge": {
+      "address": "0x4200000000000000000000000000000000000010",
+      "category": "Bridge",
+      "type": "Contract"
+    },
+    "remoteToken": {
+      "address": "0x8236a87084f8B84306f72007F36F2618A5634494",
+      "category": "Token",
+      "type": "EOA"
+    }
+  },
+  "governance_analysis": {
+    "Bridge": {
+      "address": "0x4200000000000000000000000000000000000010",
+      "type": "Contract",
+      "is_gnosis_safe": false,
+      "is_proxy": true,
+      "roles": {},
+      "governance_details": {},
+      "implementation": "0xC0d3c0d3c0D3c0d3C0D3c0D3C0d3C0D3C0D30010",
+      "admin": null
+    },
+    "bridge": {
+      "address": "0x4200000000000000000000000000000000000010",
+      "type": "Contract",
+      "is_gnosis_safe": false,
+      "is_proxy": true,
+      "roles": {},
+      "governance_details": {},
+      "implementation": "0xC0d3c0d3c0D3c0d3C0D3c0D3C0d3C0D3C0D30010",
+      "admin": null
+    },
+    "l2Bridge": {
+      "address": "0x4200000000000000000000000000000000000010",
+      "type": "Contract",
+      "is_gnosis_safe": false,
+      "is_proxy": true,
+      "roles": {},
+      "governance_details": {},
+      "implementation": "0xC0d3c0d3c0D3c0d3C0D3c0D3C0d3C0D3C0D30010",
+      "admin": null
+    },
+    "Associated Bridge (Bob)": {
+      "address": "0x4200000000000000000000000000000000000010",
+      "type": "Generic Contract",
+      "is_gnosis_safe": false,
+      "is_proxy": true,
+      "implementation": "0xC0d3c0d3c0D3c0d3C0D3c0D3C0d3C0D3C0D30010",
+      "admin": null,
+      "verified": true,
+      "network": "Bob",
+      "analysis_date": "2025-07-29 22:03:15 UTC",
+      "governance_details": {},
+      "roles": {},
+      "function_results": {
+        "MESSENGER": "0x4200000000000000000000000000000000000007",
+        "OTHER_BRIDGE": "0x3F6cE1b36e5120BBc59D0cFe8A5aC8b6464ac1f7",
+        "l1TokenBridge": "0x3F6cE1b36e5120BBc59D0cFe8A5aC8b6464ac1f7",
+        "messenger": "0x4200000000000000000000000000000000000007",
+        "otherBridge": "0x3F6cE1b36e5120BBc59D0cFe8A5aC8b6464ac1f7",
+        "paused": false,
+        "version": "1.8.0"
+      },
+      "discovered_addresses": [
+        "0x3F6cE1b36e5120BBc59D0cFe8A5aC8b6464ac1f7",
+        "0x4200000000000000000000000000000000000007"
+      ]
+    }
+  }
+}

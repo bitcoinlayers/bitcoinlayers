@@ -1,0 +1,659 @@
+{
+  "contracts": {
+    "ethereum_0xwbtc000000000000000000000000000000000000": {
+      "first_seen": "2025-07-31T16:42:26.325330",
+      "last_check": "2025-07-31T16:48:45.053087",
+      "last_tx_hash": null
+    },
+    "bnbsmartchain_0xbtcb000000000000000000000000000000000000": {
+      "first_seen": "2025-07-31T16:42:26.325358",
+      "last_check": "2025-07-31T16:48:45.053113",
+      "last_tx_hash": null
+    },
+    "ethereum_0xcbbtc00000000000000000000000000000000000": {
+      "first_seen": "2025-07-31T16:42:26.325368",
+      "last_check": "2025-07-31T16:48:45.053120",
+      "last_tx_hash": null
+    },
+    "tron_0xbtc0000000000000000000000000000000000000": {
+      "first_seen": "2025-07-31T16:42:26.325375",
+      "last_check": "2025-07-31T16:48:45.053128",
+      "last_tx_hash": null
+    },
+    "base_0xcbbtc00000000000000000000000000000000000": {
+      "first_seen": "2025-07-31T16:42:26.325382",
+      "last_check": "2025-07-31T16:48:45.053133",
+      "last_tx_hash": null
+    },
+    "merlin_0xmbtc000000000000000000000000000000000000": {
+      "first_seen": "2025-07-31T16:42:26.325388",
+      "last_check": "2025-07-31T16:48:45.053141",
+      "last_tx_hash": null
+    },
+    "ethereum_0xlbtc000000000000000000000000000000000000": {
+      "first_seen": "2025-07-31T16:42:26.325395",
+      "last_check": "2025-07-31T16:48:45.053146",
+      "last_tx_hash": null
+    },
+    "arbitrum_0xwbtc000000000000000000000000000000000000": {
+      "first_seen": "2025-07-31T16:42:26.325401",
+      "last_check": "2025-07-31T16:48:45.053149",
+      "last_tx_hash": null
+    },
+    "bnbsmartchain_0xsolvbtc000000000000000000000000000000000": {
+      "first_seen": "2025-07-31T16:42:26.325408",
+      "last_check": "2025-07-31T16:48:45.053154",
+      "last_tx_hash": null
+    },
+    "bsquared_0xubtc000000000000000000000000000000000000": {
+      "first_seen": "2025-07-31T16:42:26.325414",
+      "last_check": "2025-07-31T16:48:45.053554",
+      "last_tx_hash": null
+    },
+    "staking_0xstakedbtc0000000000000000000000000000000": {
+      "first_seen": "2025-07-31T16:42:26.325420",
+      "last_check": "2025-07-31T16:48:45.053161",
+      "last_tx_hash": null
+    },
+    "stacks_0xsbtc000000000000000000000000000000000000": {
+      "first_seen": "2025-07-31T16:42:26.325427",
+      "last_check": "2025-07-31T16:48:45.053166",
+      "last_tx_hash": null
+    },
+    "ethereum_0xtbtc000000000000000000000000000000000000": {
+      "first_seen": "2025-07-31T16:42:26.325433",
+      "last_check": "2025-07-31T16:48:45.053169",
+      "last_tx_hash": null
+    },
+    "avalanche_0xbtcb000000000000000000000000000000000000": {
+      "first_seen": "2025-07-31T16:42:26.325439",
+      "last_check": "2025-07-31T16:48:45.053173",
+      "last_tx_hash": null
+    },
+    "liquid_0xlbtc000000000000000000000000000000000000": {
+      "first_seen": "2025-07-31T16:42:26.325445",
+      "last_check": "2025-07-31T16:48:45.053177",
+      "last_tx_hash": null
+    },
+    "lightning_0xbtc0000000000000000000000000000000000000": {
+      "first_seen": "2025-07-31T16:42:26.325451",
+      "last_check": "2025-07-31T16:48:45.053188",
+      "last_tx_hash": null
+    },
+    "solana_0xcbbtc00000000000000000000000000000000000": {
+      "first_seen": "2025-07-31T16:42:26.325457",
+      "last_check": "2025-07-31T16:48:45.053193",
+      "last_tx_hash": null
+    },
+    "solana_0xwbtc000000000000000000000000000000000000": {
+      "first_seen": "2025-07-31T16:42:26.325463",
+      "last_check": "2025-07-31T16:48:45.053197",
+      "last_tx_hash": null
+    },
+    "polygonpos_0xwbtc000000000000000000000000000000000000": {
+      "first_seen": "2025-07-31T16:42:26.325469",
+      "last_check": "2025-07-31T16:48:45.053201",
+      "last_tx_hash": null
+    },
+    "ethereum_0xbtcb000000000000000000000000000000000000": {
+      "first_seen": "2025-07-31T16:42:26.325475",
+      "last_check": "2025-07-31T16:48:45.053204",
+      "last_tx_hash": null
+    },
+    "rootstock_0xrbtc000000000000000000000000000000000000": {
+      "first_seen": "2025-07-31T16:42:26.325519",
+      "last_check": "2025-07-31T16:48:45.053208",
+      "last_tx_hash": null
+    },
+    "berachain_0xpumpbtc000000000000000000000000000000000": {
+      "first_seen": "2025-07-31T16:42:26.325527",
+      "last_check": "2025-07-31T16:48:45.053212",
+      "last_tx_hash": null
+    },
+    "merlin_0xsolvbtc000000000000000000000000000000000": {
+      "first_seen": "2025-07-31T16:42:26.325534",
+      "last_check": "2025-07-31T16:48:45.053216",
+      "last_tx_hash": null
+    },
+    "ethereum_0xunibtc0000000000000000000000000000000000": {
+      "first_seen": "2025-07-31T16:42:26.325538",
+      "last_check": "2025-07-31T16:48:45.053220",
+      "last_tx_hash": null
+    },
+    "core_0xsolvbtcm00000000000000000000000000000000": {
+      "first_seen": "2025-07-31T16:42:26.325542",
+      "last_check": "2025-07-31T16:48:45.053224",
+      "last_tx_hash": null
+    },
+    "ethereum_0xxsolvbtc00000000000000000000000000000000": {
+      "first_seen": "2025-07-31T16:42:26.325546",
+      "last_check": "2025-07-31T16:48:45.053228",
+      "last_tx_hash": null
+    },
+    "sui_0xwbtc000000000000000000000000000000000000": {
+      "first_seen": "2025-07-31T16:42:26.325551",
+      "last_check": "2025-07-31T16:48:45.053232",
+      "last_tx_hash": null
+    },
+    "hyperliquid_0xubtc000000000000000000000000000000000000": {
+      "first_seen": "2025-07-31T16:42:26.325555",
+      "last_check": "2025-07-31T16:48:45.053236",
+      "last_tx_hash": null
+    },
+    "ethereum_0xsolvbtc000000000000000000000000000000000": {
+      "first_seen": "2025-07-31T16:42:26.325559",
+      "last_check": "2025-07-31T16:48:45.053240",
+      "last_tx_hash": null
+    },
+    "fantom_0xwbtc000000000000000000000000000000000000": {
+      "first_seen": "2025-07-31T16:42:26.325563",
+      "last_check": "2025-07-31T16:48:45.053244",
+      "last_tx_hash": null
+    },
+    "ethereum_0xfbtc000000000000000000000000000000000000": {
+      "first_seen": "2025-07-31T16:42:26.325567",
+      "last_check": "2025-07-31T16:48:45.053248",
+      "last_tx_hash": null
+    },
+    "sui_0xlbtc000000000000000000000000000000000000": {
+      "first_seen": "2025-07-31T16:42:26.325571",
+      "last_check": "2025-07-31T16:48:45.053289",
+      "last_tx_hash": null
+    },
+    "bnbsmartchain_0xenzobtc000000000000000000000000000000000": {
+      "first_seen": "2025-07-31T16:42:26.325575",
+      "last_check": "2025-07-31T16:48:45.053300",
+      "last_tx_hash": null
+    },
+    "bnbsmartchain_0xxsolvbtc00000000000000000000000000000000": {
+      "first_seen": "2025-07-31T16:42:26.325579",
+      "last_check": "2025-07-31T16:48:45.053317",
+      "last_tx_hash": null
+    },
+    "babylon_0xbtc0000000000000000000000000000000000000": {
+      "first_seen": "2025-07-31T16:42:26.325583",
+      "last_check": "2025-07-31T16:48:45.053325",
+      "last_tx_hash": null
+    },
+    "hemi_0xmbtc000000000000000000000000000000000000": {
+      "first_seen": "2025-07-31T16:42:26.325587",
+      "last_check": "2025-07-31T16:48:45.053421",
+      "last_tx_hash": null
+    },
+    "berachain_0xxsolvbtc00000000000000000000000000000000": {
+      "first_seen": "2025-07-31T16:42:26.325591",
+      "last_check": "2025-07-31T16:48:45.053333",
+      "last_tx_hash": null
+    },
+    "hemi_0xubtc000000000000000000000000000000000000": {
+      "first_seen": "2025-07-31T16:42:26.325595",
+      "last_check": "2025-07-31T16:48:45.053337",
+      "last_tx_hash": null
+    },
+    "ethereum_0xobtc000000000000000000000000000000000000": {
+      "first_seen": "2025-07-31T16:42:26.325599",
+      "last_check": "2025-07-31T16:48:45.053341",
+      "last_tx_hash": null
+    },
+    "optimism_0xwbtc000000000000000000000000000000000000": {
+      "first_seen": "2025-07-31T16:42:26.325603",
+      "last_check": "2025-07-31T16:48:45.053345",
+      "last_tx_hash": null
+    },
+    "bitlayer_0xwbtc000000000000000000000000000000000000": {
+      "first_seen": "2025-07-31T16:42:26.325607",
+      "last_check": "2025-07-31T16:48:45.053349",
+      "last_tx_hash": null
+    },
+    "berachain_0xunibtc0000000000000000000000000000000000": {
+      "first_seen": "2025-07-31T16:42:26.325611",
+      "last_check": "2025-07-31T16:48:45.053353",
+      "last_tx_hash": null
+    },
+    "bnbsmartchain_0xsolvbtcena000000000000000000000000000000": {
+      "first_seen": "2025-07-31T16:42:26.325615",
+      "last_check": "2025-07-31T16:48:45.053356",
+      "last_tx_hash": null
+    },
+    "taiko_0xsolvbtc000000000000000000000000000000000": {
+      "first_seen": "2025-07-31T16:42:26.325622",
+      "last_check": "2025-07-31T16:48:45.053360",
+      "last_tx_hash": null
+    },
+    "bob_0xsolvbtc000000000000000000000000000000000": {
+      "first_seen": "2025-07-31T16:42:26.325626",
+      "last_check": "2025-07-31T16:48:45.053364",
+      "last_tx_hash": null
+    },
+    "core_0xsolvbtccore00000000000000000000000000000": {
+      "first_seen": "2025-07-31T16:42:26.325630",
+      "last_check": "2025-07-31T16:48:45.053368",
+      "last_tx_hash": null
+    },
+    "ethereum_0xstbtc00000000000000000000000000000000000": {
+      "first_seen": "2025-07-31T16:42:26.325634",
+      "last_check": "2025-07-31T16:48:45.053372",
+      "last_tx_hash": null
+    },
+    "hemi_0xbrbtc00000000000000000000000000000000000": {
+      "first_seen": "2025-07-31T16:42:26.325638",
+      "last_check": "2025-07-31T16:48:45.053375",
+      "last_tx_hash": null
+    },
+    "bnbsmartchain_0xallobtc000000000000000000000000000000000": {
+      "first_seen": "2025-07-31T16:42:26.325642",
+      "last_check": "2025-07-31T16:48:45.053379",
+      "last_tx_hash": null
+    },
+    "bob_0xunibtc0000000000000000000000000000000000": {
+      "first_seen": "2025-07-31T16:42:26.325646",
+      "last_check": "2025-07-31T16:48:45.053383",
+      "last_tx_hash": null
+    },
+    "hemi_0xenzobtc000000000000000000000000000000000": {
+      "first_seen": "2025-07-31T16:42:26.325650",
+      "last_check": "2025-07-31T16:48:45.053387",
+      "last_tx_hash": null
+    },
+    "bnbsmartchain_0xunibtc0000000000000000000000000000000000": {
+      "first_seen": "2025-07-31T16:42:26.325654",
+      "last_check": "2025-07-31T16:48:45.053391",
+      "last_tx_hash": null
+    },
+    "taiko_0xmbtc000000000000000000000000000000000000": {
+      "first_seen": "2025-07-31T16:42:26.325658",
+      "last_check": "2025-07-31T16:48:45.053394",
+      "last_tx_hash": null
+    },
+    "core_0xubtc000000000000000000000000000000000000": {
+      "first_seen": "2025-07-31T16:42:26.325662",
+      "last_check": "2025-07-31T16:48:45.053398",
+      "last_tx_hash": null
+    },
+    "avalanche_0xwbtc000000000000000000000000000000000000": {
+      "first_seen": "2025-07-31T16:42:26.325666",
+      "last_check": "2025-07-31T16:48:45.053402",
+      "last_tx_hash": null
+    },
+    "internetcomputer_0xckbtc00000000000000000000000000000000000": {
+      "first_seen": "2025-07-31T16:42:26.325670",
+      "last_check": "2025-07-31T16:48:45.053406",
+      "last_tx_hash": null
+    },
+    "berachain_0xlbtc000000000000000000000000000000000000": {
+      "first_seen": "2025-07-31T16:42:26.325674",
+      "last_check": "2025-07-31T16:48:45.053410",
+      "last_tx_hash": null
+    },
+    "bnbsmartchain_0xstbtc00000000000000000000000000000000000": {
+      "first_seen": "2025-07-31T16:42:26.325678",
+      "last_check": "2025-07-31T16:48:45.053414",
+      "last_tx_hash": null
+    },
+    "taiko_0xunibtc0000000000000000000000000000000000": {
+      "first_seen": "2025-07-31T16:42:26.325682",
+      "last_check": "2025-07-31T16:48:45.053417",
+      "last_tx_hash": null
+    },
+    "berachain_0xsolvbtc000000000000000000000000000000000": {
+      "first_seen": "2025-07-31T16:42:26.325689",
+      "last_check": "2025-07-31T16:48:45.053425",
+      "last_tx_hash": null
+    },
+    "hemi_0xibtc000000000000000000000000000000000000": {
+      "first_seen": "2025-07-31T16:42:26.325693",
+      "last_check": "2025-07-31T16:48:45.053428",
+      "last_tx_hash": null
+    },
+    "sonic_0xlbtc000000000000000000000000000000000000": {
+      "first_seen": "2025-07-31T16:42:26.325697",
+      "last_check": "2025-07-31T16:48:45.053432",
+      "last_tx_hash": null
+    },
+    "mezo_0xtbtc000000000000000000000000000000000000": {
+      "first_seen": "2025-07-31T16:42:26.325701",
+      "last_check": "2025-07-31T16:48:45.053436",
+      "last_tx_hash": null
+    },
+    "solana_0xxbtc000000000000000000000000000000000000": {
+      "first_seen": "2025-07-31T16:42:26.325704",
+      "last_check": "2025-07-31T16:48:45.053440",
+      "last_tx_hash": null
+    },
+    "rootstock_0xsolvbtc000000000000000000000000000000000": {
+      "first_seen": "2025-07-31T16:42:26.325708",
+      "last_check": "2025-07-31T16:48:45.053444",
+      "last_tx_hash": null
+    },
+    "mantle_0xfbtc000000000000000000000000000000000000": {
+      "first_seen": "2025-07-31T16:42:26.325713",
+      "last_check": "2025-07-31T16:48:45.053447",
+      "last_tx_hash": null
+    },
+    "bob_0xxsolvbtc00000000000000000000000000000000": {
+      "first_seen": "2025-07-31T16:42:26.325717",
+      "last_check": "2025-07-31T16:48:45.053451",
+      "last_tx_hash": null
+    },
+    "base_0xlbtc000000000000000000000000000000000000": {
+      "first_seen": "2025-07-31T16:42:26.325720",
+      "last_check": "2025-07-31T16:48:45.053455",
+      "last_tx_hash": null
+    },
+    "berachain_0xstbtc00000000000000000000000000000000000": {
+      "first_seen": "2025-07-31T16:42:26.325724",
+      "last_check": "2025-07-31T16:48:45.053459",
+      "last_tx_hash": null
+    },
+    "solana_0xzbtc000000000000000000000000000000000000": {
+      "first_seen": "2025-07-31T16:42:26.325728",
+      "last_check": "2025-07-31T16:48:45.053462",
+      "last_tx_hash": null
+    },
+    "ethereum_0xpumpbtc000000000000000000000000000000000": {
+      "first_seen": "2025-07-31T16:42:26.325732",
+      "last_check": "2025-07-31T16:48:45.053466",
+      "last_tx_hash": null
+    },
+    "rootstock_0xwbtc000000000000000000000000000000000000": {
+      "first_seen": "2025-07-31T16:42:26.325736",
+      "last_check": "2025-07-31T16:48:45.053470",
+      "last_tx_hash": null
+    },
+    "mezo_0xsolvbtc000000000000000000000000000000000": {
+      "first_seen": "2025-07-31T16:42:26.325740",
+      "last_check": "2025-07-31T16:48:45.053474",
+      "last_tx_hash": null
+    },
+    "hemi_0xunibtc0000000000000000000000000000000000": {
+      "first_seen": "2025-07-31T16:42:26.325744",
+      "last_check": "2025-07-31T16:48:45.053477",
+      "last_tx_hash": null
+    },
+    "bob_0xwbtc000000000000000000000000000000000000": {
+      "first_seen": "2025-07-31T16:42:26.325748",
+      "last_check": "2025-07-31T16:48:45.053481",
+      "last_tx_hash": null
+    },
+    "base_0xtbtc000000000000000000000000000000000000": {
+      "first_seen": "2025-07-31T16:42:26.325752",
+      "last_check": "2025-07-31T16:48:45.053485",
+      "last_tx_hash": null
+    },
+    "stacks_0xabtc000000000000000000000000000000000000": {
+      "first_seen": "2025-07-31T16:42:26.325756",
+      "last_check": "2025-07-31T16:48:45.053489",
+      "last_tx_hash": null
+    },
+    "soneium_0xsolvbtc000000000000000000000000000000000": {
+      "first_seen": "2025-07-31T16:42:26.325759",
+      "last_check": "2025-07-31T16:48:45.053492",
+      "last_tx_hash": null
+    },
+    "base_0xpumpbtc000000000000000000000000000000000": {
+      "first_seen": "2025-07-31T16:42:26.325763",
+      "last_check": "2025-07-31T16:48:45.053496",
+      "last_tx_hash": null
+    },
+    "arbitrum_0xtbtc000000000000000000000000000000000000": {
+      "first_seen": "2025-07-31T16:42:26.325767",
+      "last_check": "2025-07-31T16:48:45.053500",
+      "last_tx_hash": null
+    },
+    "starknet_0xwbtc000000000000000000000000000000000000": {
+      "first_seen": "2025-07-31T16:42:26.325771",
+      "last_check": "2025-07-31T16:48:45.053504",
+      "last_tx_hash": null
+    },
+    "corn_0xbtcn000000000000000000000000000000000000": {
+      "first_seen": "2025-07-31T16:42:26.325775",
+      "last_check": "2025-07-31T16:48:45.053508",
+      "last_tx_hash": null
+    },
+    "mantle_0xwbtc000000000000000000000000000000000000": {
+      "first_seen": "2025-07-31T16:42:26.325780",
+      "last_check": "2025-07-31T16:48:45.053512",
+      "last_tx_hash": null
+    },
+    "bsquared_0xobtc000000000000000000000000000000000000": {
+      "first_seen": "2025-07-31T16:42:26.325784",
+      "last_check": "2025-07-31T16:48:45.053516",
+      "last_tx_hash": null
+    },
+    "ethereum_0xbrbtc00000000000000000000000000000000000": {
+      "first_seen": "2025-07-31T16:42:26.325788",
+      "last_check": "2025-07-31T16:48:45.053519",
+      "last_tx_hash": null
+    },
+    "avalanche_0xsolvbtc000000000000000000000000000000000": {
+      "first_seen": "2025-07-31T16:42:26.325792",
+      "last_check": "2025-07-31T16:48:45.053523",
+      "last_tx_hash": null
+    },
+    "zeta_0xpumpbtc000000000000000000000000000000000": {
+      "first_seen": "2025-07-31T16:42:26.325798",
+      "last_check": "2025-07-31T16:48:45.053527",
+      "last_tx_hash": null
+    },
+    "tron_0xwbtc000000000000000000000000000000000000": {
+      "first_seen": "2025-07-31T16:42:26.325802",
+      "last_check": "2025-07-31T16:48:45.053531",
+      "last_tx_hash": null
+    },
+    "soneium_0xxsolvbtc00000000000000000000000000000000": {
+      "first_seen": "2025-07-31T16:42:26.325806",
+      "last_check": "2025-07-31T16:48:45.053535",
+      "last_tx_hash": null
+    },
+    "solana_0xfragbtc000000000000000000000000000000000": {
+      "first_seen": "2025-07-31T16:42:26.325810",
+      "last_check": "2025-07-31T16:48:45.053539",
+      "last_tx_hash": null
+    },
+    "bnbsmartchain_0xpumpbtc000000000000000000000000000000000": {
+      "first_seen": "2025-07-31T16:42:26.325814",
+      "last_check": "2025-07-31T16:48:45.053542",
+      "last_tx_hash": null
+    },
+    "corn_0xlbtc000000000000000000000000000000000000": {
+      "first_seen": "2025-07-31T16:42:26.325818",
+      "last_check": "2025-07-31T16:48:45.053546",
+      "last_tx_hash": null
+    },
+    "bnbsmartchain_0xlbtc000000000000000000000000000000000000": {
+      "first_seen": "2025-07-31T16:42:26.325822",
+      "last_check": "2025-07-31T16:48:45.053550",
+      "last_tx_hash": null
+    },
+    "solana_0xtbtc000000000000000000000000000000000000": {
+      "first_seen": "2025-07-31T16:42:26.325828",
+      "last_check": "2025-07-31T16:48:45.053558",
+      "last_tx_hash": null
+    },
+    "mezo_0xxsolvbtc00000000000000000000000000000000": {
+      "first_seen": "2025-07-31T16:42:26.325832",
+      "last_check": "2025-07-31T16:48:45.053562",
+      "last_tx_hash": null
+    },
+    "rootstock_0xxsolvbtc00000000000000000000000000000000": {
+      "first_seen": "2025-07-31T16:42:26.325836",
+      "last_check": "2025-07-31T16:48:45.053565",
+      "last_tx_hash": null
+    },
+    "bnbsmartchain_0xbrbtc00000000000000000000000000000000000": {
+      "first_seen": "2025-07-31T16:42:26.325840",
+      "last_check": "2025-07-31T16:48:45.053569",
+      "last_tx_hash": null
+    },
+    "rollux_0xwbtc000000000000000000000000000000000000": {
+      "first_seen": "2025-07-31T16:42:26.325844",
+      "last_check": "2025-07-31T16:48:45.053573",
+      "last_tx_hash": null
+    }
+  },
+  "repos": {
+    "keep-starknet-strange/awesome-starknet": {
+      "first_seen": "2025-07-31T16:42:26.348867",
+      "last_check": "2025-07-31T16:48:48.609360",
+      "last_commit_sha": "ca5996a668e1ca6166642f4c7866de00b84ad5d3",
+      "last_release_tag": null
+    },
+    "btclayer2/BEVM": {
+      "first_seen": "2025-07-31T16:42:26.864293",
+      "last_check": "2025-07-31T16:48:48.912782",
+      "last_commit_sha": "8674d3ca273350310552148e4281704be33f696f",
+      "last_release_tag": "v0.3.0"
+    },
+    "bob-collective/bob": {
+      "first_seen": "2025-07-31T16:42:27.501584",
+      "last_check": "2025-07-31T16:48:49.044587",
+      "last_commit_sha": "dd26a9d34642cbed804248d7025df9b43bdff90b",
+      "last_release_tag": null
+    },
+    "SYS-Labs/rollux": {
+      "first_seen": "2025-07-31T16:42:27.814760",
+      "last_check": "2025-07-31T16:48:49.180398",
+      "last_commit_sha": "c130eda3e882ad5c7dd8016d9168b33597d305f4",
+      "last_release_tag": "rollux-1.2.6"
+    },
+    "sys-labs/rollux)": {
+      "first_seen": "2025-07-31T16:42:28.227067",
+      "last_check": "2025-07-31T16:48:49.320148",
+      "last_commit_sha": null,
+      "last_release_tag": null
+    },
+    "OffchainLabs/arbitrum": {
+      "first_seen": "2025-07-31T16:42:28.424056",
+      "last_check": "2025-07-31T16:48:49.447115",
+      "last_commit_sha": "ba665e9a1fa061058ca04997a6176f25a29bf7d9",
+      "last_release_tag": null
+    },
+    "MerlinLayer2/)": {
+      "first_seen": "2025-07-31T16:42:28.680372",
+      "last_check": "2025-07-31T16:48:49.580209",
+      "last_commit_sha": null,
+      "last_release_tag": null
+    },
+    "coredao-org/whitepaper": {
+      "first_seen": "2025-07-31T16:42:28.875798",
+      "last_check": "2025-07-31T16:48:49.713845",
+      "last_commit_sha": "21f6b611fb953f6c197544186d9818d78babe8f1",
+      "last_release_tag": null
+    },
+    "dfinity/bitcoin-canisteri": {
+      "first_seen": "2025-07-31T16:42:29.198745",
+      "last_check": "2025-07-31T16:48:49.853171",
+      "last_commit_sha": null,
+      "last_release_tag": null
+    },
+    "solana-foundation/solana-com": {
+      "first_seen": "2025-07-31T16:42:29.393674",
+      "last_check": "2025-07-31T16:48:49.983274",
+      "last_commit_sha": "52fb8f3085a3f77708be02d30e49ad131e263444",
+      "last_release_tag": null
+    },
+    "commerceblock/mercurylayer": {
+      "first_seen": "2025-07-31T16:42:29.730446",
+      "last_check": "2025-07-31T16:48:50.120731",
+      "last_commit_sha": "a40fdc05a10bfbd16d452b3b08a4a4d6d1f4f81b",
+      "last_release_tag": "0.2.1-1"
+    },
+    "bitcoin/bips": {
+      "first_seen": "2025-07-31T16:42:30.169206",
+      "last_check": "2025-07-31T16:48:50.257774",
+      "last_commit_sha": "b8a39dfba342b260f3f067db95cb54f12f90cab4",
+      "last_release_tag": null
+    },
+    "commerceblock/mercurylayer)": {
+      "first_seen": "2025-07-31T16:42:30.489954",
+      "last_check": "2025-07-31T16:48:50.399330",
+      "last_commit_sha": null,
+      "last_release_tag": null
+    },
+    "ElementsProject/elements": {
+      "first_seen": "2025-07-31T16:42:30.675402",
+      "last_check": "2025-07-31T16:48:50.529931",
+      "last_commit_sha": "6e2d87990ec75a8e14dae8b704bf909b04a86aa8",
+      "last_release_tag": "elements-23.3.0"
+    },
+    "fractal-bitcoin/fractald-release": {
+      "first_seen": "2025-07-31T16:42:31.177348",
+      "last_check": "2025-07-31T16:48:50.660565",
+      "last_commit_sha": "3cc29c10ccb183b8a6caef652bdd45eb9170c5bd",
+      "last_release_tag": "v0.2.3rc1"
+    },
+    "sCrypt-Inc/awesome-op-cat": {
+      "first_seen": "2025-07-31T16:42:31.644699",
+      "last_check": "2025-07-31T16:48:50.793741",
+      "last_commit_sha": "bfa0093e31c5c2efa01c4140f94bdaae6dee4268",
+      "last_release_tag": null
+    },
+    "bitcoinlayers/bitcoinlayers": {
+      "first_seen": "2025-07-31T16:42:32.030467",
+      "last_check": "2025-07-31T16:48:50.925642",
+      "last_commit_sha": "70f779759566f575a93bb19ea61b25b83398b3ad",
+      "last_release_tag": null
+    },
+    "Sovereign-Labs/sovereign-sdk": {
+      "first_seen": "2025-07-31T16:42:32.312621",
+      "last_check": "2025-07-31T16:48:51.057588",
+      "last_commit_sha": "89bda2488ac2a5b697582f0282cdbc46e53ef088",
+      "last_release_tag": "v0.3.0-alpha"
+    },
+    "solv-finance/SolvBTC": {
+      "first_seen": "2025-07-31T16:42:32.665715",
+      "last_check": "2025-07-31T16:48:51.190037",
+      "last_commit_sha": "e188bade37c3a2d8a3155289be5cadc6d1f78dda",
+      "last_release_tag": null
+    },
+    "cashubtc/nuts": {
+      "first_seen": "2025-07-31T16:42:32.956140",
+      "last_check": "2025-07-31T16:48:51.322756",
+      "last_commit_sha": "c07457a50c52fb0504182ee729b7645ca0c2534f",
+      "last_release_tag": null
+    },
+    "cashubtc/npubcash-server),": {
+      "first_seen": "2025-07-31T16:42:33.277618",
+      "last_check": "2025-07-31T16:48:51.453501",
+      "last_commit_sha": null,
+      "last_release_tag": null
+    },
+    "cashubtc/nuts)": {
+      "first_seen": "2025-07-31T16:42:33.472696",
+      "last_check": "2025-07-31T16:48:51.587645",
+      "last_commit_sha": null,
+      "last_release_tag": null
+    },
+    "cashubtc/cdk)": {
+      "first_seen": "2025-07-31T16:42:33.658049",
+      "last_check": "2025-07-31T16:48:51.726892",
+      "last_commit_sha": null,
+      "last_release_tag": null
+    },
+    "cashubtc/cashu-ts)": {
+      "first_seen": "2025-07-31T16:42:33.852654",
+      "last_check": "2025-07-31T16:48:51.860028",
+      "last_commit_sha": null,
+      "last_release_tag": null
+    },
+    "minibits-cash/minibits_wallet)": {
+      "first_seen": "2025-07-31T16:42:34.047252",
+      "last_check": "2025-07-31T16:48:51.994405",
+      "last_commit_sha": null,
+      "last_release_tag": null
+    },
+    "cashubtc/nuts)\\n[Video": {
+      "first_seen": "2025-07-31T16:42:34.246690",
+      "last_check": "2025-07-31T16:48:52.129374",
+      "last_commit_sha": null,
+      "last_release_tag": null
+    },
+    "bitsnark/bitsnark-lib": {
+      "first_seen": "2025-07-31T16:42:34.433216",
+      "last_check": "2025-07-31T16:48:52.265677",
+      "last_commit_sha": "752b35b4777b222c45e9f9acf8d37920f5700e14",
+      "last_release_tag": null
+    }
+  },
+  "last_run": "2025-07-31T16:48:53.149906"
+}

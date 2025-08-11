@@ -1,0 +1,340 @@
+{
+  "transaction_metadata": {
+    "txid": "f4184fc596403b9d638783cf57adfe4c75c605f6356fbc91338530e9831e9e16",
+    "network": "mainnet",
+    "block_height": 170,
+    "confirmations": true,
+    "fee": 0,
+    "size": 275,
+    "weight": 1100,
+    "analysis_date": "2025-07-30 16:19:02 UTC"
+  },
+  "input_scripts": [
+    {
+      "script_hex": "47304402204e45e16932b8af514961a1d3a1a25fdf3f4f7732e9d624c6c61548ab5fb8cd410220181522ec8eca07de4860a4acdd12909d831cc56cbbac4622082221a8768d1d0901",
+      "script_type": "Unknown/Non-standard",
+      "script_analysis": {
+        "raw_script": "47304402204e45e16932b8af514961a1d3a1a25fdf3f4f7732e9d624c6c61548ab5fb8cd410220181522ec8eca07de4860a4acdd12909d831cc56cbbac4622082221a8768d1d0901",
+        "script_type": "Unknown/Non-standard",
+        "opcodes": [
+          {
+            "opcode": 71,
+            "name": "PUSH_71",
+            "data": "304402204e45e16932b8af514961a1d3a1a25fdf3f4f7732e9d624c6c61548ab5fb8cd410220181522ec8eca07de4860a4acdd12909d831cc56cbbac4622082221a8768d1d0901",
+            "data_length": 71,
+            "description": "Push 71 bytes onto stack: 304402204e45e16932b8af514961a1d3a1a25fdf3f4f7732e9d624c6c61548ab5fb8cd410220181522ec8eca07de4860a4acdd12909d831cc56cbbac4622082221a8768d1d0901"
+          }
+        ],
+        "control_flow": {
+          "blocks": 1,
+          "complexity": "linear"
+        },
+        "stack_analysis": {
+          "final_stack": [],
+          "execution_log": [
+            {
+              "step": 1,
+              "opcode": "PUSH_71",
+              "stack_before": [],
+              "stack_after": []
+            }
+          ],
+          "warnings": []
+        },
+        "security_issues": [],
+        "template_match": {
+          "type": "Unknown/Non-standard",
+          "is_standard": false,
+          "confidence": 0.0
+        },
+        "metadata": {
+          "network": "mainnet",
+          "script_length": 72,
+          "opcode_count": 1,
+          "analysis_version": "1.0",
+          "analysis_date": "2025-07-30 16:19:02 UTC"
+        },
+        "execution_context": {},
+        "witness_analysis": {},
+        "signature_analysis": {
+          "has_script_sig": true,
+          "signature_count": 1,
+          "pubkey_count": 0,
+          "other_data_count": 0,
+          "signatures": [
+            {
+              "length": 71,
+              "data": "304402204e45e16932b8...",
+              "type": "signature"
+            }
+          ],
+          "pubkeys": [],
+          "other_data": []
+        }
+      },
+      "context": {
+        "index": 0,
+        "script_sig": "47304402204e45e16932b8af514961a1d3a1a25fdf3f4f7732e9d624c6c61548ab5fb8cd410220181522ec8eca07de4860a4acdd12909d831cc56cbbac4622082221a8768d1d0901",
+        "script_sig_hex": "47304402204e45e16932b8af514961a1d3a1a25fdf3f4f7732e9d624c6c61548ab5fb8cd410220181522ec8eca07de4860a4acdd12909d831cc56cbbac4622082221a8768d1d0901",
+        "witness": [],
+        "sequence": 4294967295,
+        "previous_output": {
+          "txid": "0437cd7f8525ceed2324359c2d0ba26006d92d856a9c20fa0241106ee5a597c9",
+          "vout": 0
+        }
+      },
+      "location": "input_0",
+      "signature_requirement": {
+        "required_signatures": 1,
+        "total_possible_signers": 1,
+        "signature_type": "single",
+        "present_signatures": 1,
+        "is_fully_signed": true,
+        "threshold_description": "1-of-1"
+      }
+    }
+  ],
+  "output_scripts": [
+    {
+      "script_hex": "4104ae1a62fe09c5f51b13905f07f06b99a2f7159b2225f374cd378d71302fa28414e7aab37397f554a7df5f142c21c1b7303b8a0626f1baded5c72a704f7e6cd84cac",
+      "script_type": "Pay to Public Key",
+      "script_analysis": {
+        "raw_script": "4104ae1a62fe09c5f51b13905f07f06b99a2f7159b2225f374cd378d71302fa28414e7aab37397f554a7df5f142c21c1b7303b8a0626f1baded5c72a704f7e6cd84cac",
+        "script_type": "Pay to Public Key",
+        "opcodes": [
+          {
+            "opcode": 65,
+            "name": "PUSH_65",
+            "data": "04ae1a62fe09c5f51b13905f07f06b99a2f7159b2225f374cd378d71302fa28414e7aab37397f554a7df5f142c21c1b7303b8a0626f1baded5c72a704f7e6cd84c",
+            "data_length": 65,
+            "description": "Push 65 bytes onto stack: 04ae1a62fe09c5f51b13905f07f06b99a2f7159b2225f374cd378d71302fa28414e7aab37397f554a7df5f142c21c1b7303b8a0626f1baded5c72a704f7e6cd84c"
+          },
+          {
+            "opcode": 172,
+            "name": "OP_CHECKSIG",
+            "data": null,
+            "data_length": null,
+            "description": "Check signature against public key"
+          }
+        ],
+        "control_flow": {
+          "blocks": 1,
+          "complexity": "linear"
+        },
+        "stack_analysis": {
+          "final_stack": [],
+          "execution_log": [
+            {
+              "step": 1,
+              "opcode": "PUSH_65",
+              "stack_before": [],
+              "stack_after": []
+            },
+            {
+              "step": 2,
+              "opcode": "OP_CHECKSIG",
+              "stack_before": [],
+              "stack_after": []
+            }
+          ],
+          "warnings": []
+        },
+        "security_issues": [],
+        "template_match": {
+          "type": "Pay to Public Key",
+          "is_standard": true,
+          "confidence": 1.0
+        },
+        "metadata": {
+          "network": "mainnet",
+          "script_length": 67,
+          "opcode_count": 2,
+          "analysis_version": "1.0",
+          "analysis_date": "2025-07-30 16:19:02 UTC"
+        },
+        "execution_context": {},
+        "witness_analysis": {},
+        "signature_analysis": {}
+      },
+      "context": {
+        "index": 0,
+        "value": 1000000000,
+        "script_pubkey": "4104ae1a62fe09c5f51b13905f07f06b99a2f7159b2225f374cd378d71302fa28414e7aab37397f554a7df5f142c21c1b7303b8a0626f1baded5c72a704f7e6cd84cac",
+        "script_pubkey_hex": "4104ae1a62fe09c5f51b13905f07f06b99a2f7159b2225f374cd378d71302fa28414e7aab37397f554a7df5f142c21c1b7303b8a0626f1baded5c72a704f7e6cd84cac",
+        "script_pubkey_type": "p2pk",
+        "script_pubkey_address": ""
+      },
+      "location": "output_0",
+      "signature_requirement": {
+        "required_signatures": 1,
+        "total_possible_signers": 1,
+        "signature_type": "single",
+        "present_signatures": 0,
+        "is_fully_signed": false,
+        "threshold_description": "1-of-1"
+      }
+    },
+    {
+      "script_hex": "410411db93e1dcdb8a016b49840f8c53bc1eb68a382e97b1482ecad7b148a6909a5cb2e0eaddfb84ccf9744464f82e160bfa9b8b64f9d4c03f999b8643f656b412a3ac",
+      "script_type": "Pay to Public Key",
+      "script_analysis": {
+        "raw_script": "410411db93e1dcdb8a016b49840f8c53bc1eb68a382e97b1482ecad7b148a6909a5cb2e0eaddfb84ccf9744464f82e160bfa9b8b64f9d4c03f999b8643f656b412a3ac",
+        "script_type": "Pay to Public Key",
+        "opcodes": [
+          {
+            "opcode": 65,
+            "name": "PUSH_65",
+            "data": "0411db93e1dcdb8a016b49840f8c53bc1eb68a382e97b1482ecad7b148a6909a5cb2e0eaddfb84ccf9744464f82e160bfa9b8b64f9d4c03f999b8643f656b412a3",
+            "data_length": 65,
+            "description": "Push 65 bytes onto stack: 0411db93e1dcdb8a016b49840f8c53bc1eb68a382e97b1482ecad7b148a6909a5cb2e0eaddfb84ccf9744464f82e160bfa9b8b64f9d4c03f999b8643f656b412a3"
+          },
+          {
+            "opcode": 172,
+            "name": "OP_CHECKSIG",
+            "data": null,
+            "data_length": null,
+            "description": "Check signature against public key"
+          }
+        ],
+        "control_flow": {
+          "blocks": 1,
+          "complexity": "linear"
+        },
+        "stack_analysis": {
+          "final_stack": [],
+          "execution_log": [
+            {
+              "step": 1,
+              "opcode": "PUSH_65",
+              "stack_before": [],
+              "stack_after": []
+            },
+            {
+              "step": 2,
+              "opcode": "OP_CHECKSIG",
+              "stack_before": [],
+              "stack_after": []
+            }
+          ],
+          "warnings": []
+        },
+        "security_issues": [],
+        "template_match": {
+          "type": "Pay to Public Key",
+          "is_standard": true,
+          "confidence": 1.0
+        },
+        "metadata": {
+          "network": "mainnet",
+          "script_length": 67,
+          "opcode_count": 2,
+          "analysis_version": "1.0",
+          "analysis_date": "2025-07-30 16:19:02 UTC"
+        },
+        "execution_context": {},
+        "witness_analysis": {},
+        "signature_analysis": {}
+      },
+      "context": {
+        "index": 1,
+        "value": 4000000000,
+        "script_pubkey": "410411db93e1dcdb8a016b49840f8c53bc1eb68a382e97b1482ecad7b148a6909a5cb2e0eaddfb84ccf9744464f82e160bfa9b8b64f9d4c03f999b8643f656b412a3ac",
+        "script_pubkey_hex": "410411db93e1dcdb8a016b49840f8c53bc1eb68a382e97b1482ecad7b148a6909a5cb2e0eaddfb84ccf9744464f82e160bfa9b8b64f9d4c03f999b8643f656b412a3ac",
+        "script_pubkey_type": "p2pk",
+        "script_pubkey_address": ""
+      },
+      "location": "output_1",
+      "signature_requirement": {
+        "required_signatures": 1,
+        "total_possible_signers": 1,
+        "signature_type": "single",
+        "present_signatures": 0,
+        "is_fully_signed": false,
+        "threshold_description": "1-of-1"
+      }
+    }
+  ],
+  "script_relationships": [],
+  "summary_stats": {
+    "total_inputs": 1,
+    "total_outputs": 2,
+    "script_types": [
+      "Pay to Public Key",
+      "Unknown/Non-standard"
+    ],
+    "has_segwit": false,
+    "has_multisig": false,
+    "total_value": 5000000000
+  },
+  "signature_analysis": {
+    "summary": {
+      "total_signatures_present": 1,
+      "total_signatures_required_to_spend_outputs": 2,
+      "signature_patterns": [
+        "single"
+      ],
+      "has_multisig": false,
+      "multisig_input_count": 0,
+      "multisig_output_count": 0
+    },
+    "input_analysis": {
+      "total_inputs": 1,
+      "signature_breakdown": [
+        {
+          "location": "input_0",
+          "signatures_present": 1,
+          "signature_type": "single",
+          "is_fully_signed": true
+        }
+      ]
+    },
+    "output_analysis": {
+      "total_outputs": 2,
+      "spending_requirements": [
+        {
+          "location": "output_0",
+          "required_signatures": 1,
+          "total_possible_signers": 1,
+          "signature_type": "single",
+          "threshold_description": "1-of-1"
+        },
+        {
+          "location": "output_1",
+          "required_signatures": 1,
+          "total_possible_signers": 1,
+          "signature_type": "single",
+          "threshold_description": "1-of-1"
+        }
+      ]
+    },
+    "threshold_analysis": [
+      {
+        "location": "input_0",
+        "threshold": "1-of-1",
+        "signature_type": "single"
+      },
+      {
+        "location": "output_0",
+        "threshold": "1-of-1",
+        "signature_type": "single"
+      },
+      {
+        "location": "output_1",
+        "threshold": "1-of-1",
+        "signature_type": "single"
+      }
+    ],
+    "signing_complexity": {
+      "simple_single_sig": 2,
+      "multisig_outputs": 0,
+      "script_hash_outputs": 0,
+      "unknown_outputs": 0
+    }
+  },
+  "metadata": {
+    "analyzer_type": "bitcoin_transaction",
+    "network": "mainnet",
+    "analysis_date": "2025-07-30 16:19:02 UTC",
+    "api_provider": "blockstream"
+  }
+}
