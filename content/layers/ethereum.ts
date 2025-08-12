@@ -284,73 +284,101 @@ const ethereum: LayerProject = {
                 },
             ],
         },
-        {
-            category: RiskCategory.DataAvailability,
-            score: 0,
-            tier: RiskFactor.AlternativePoS,
-            title: "Data is stored and made available by Ethereum full nodes",
-            content: AtlSnippet.DAConsensusNetwork,
-        },
-        {
-            category: RiskCategory.NetworkOperators,
-            score: 0,
-            tier: RiskFactor.AlternativePoS,
-            title: "Ethereum is operated by an alternative validator set",
-            content: AtlSnippet.OperatorsPoSNetwork,
-        },
-        {
-            category: RiskCategory.FinalityGuarantees,
-            score: 0,
-            tier: RiskFactor.AlternativePoS,
-            title: "Finality on Ethereum is guaranteed by an alternative consensus mechanism",
-            content: AtlSnippet.FinalityConsensusNetwork,
-        },
     ],
-    sections: [
-        {
-            id: "bitcoinsecurity",
-            title: "Bitcoin Security",
-            content: [
-                {
-                    title: "Ethereum does not inherit any security from bitcoin",
-                    content: BitcoinSecuritySnippet.NoSecurity,
+    sections: [],
+    architectureReview: {
+        title: "Ethereum Architecture",
+        description: "Understand how Ethereum handles key infrastructure components compared to Bitcoin",
+        mechanisms: [
+            {
+                key: "data-availability",
+                label: "Data Availability",
+                description: "Ethereum stores all transaction data on-chain, making it available to anyone who runs an Ethereum full node.",
+                icon: "BitcoinIcon",
+                color: "blue",
+                tradeoffs: {
+                    title: "Ethereum Data Availability",
+                    subtitle: "How Ethereum stores and makes transaction data available",
+                    mechanisms: [
+                        {
+                            name: "Full Node Storage",
+                            description: "All Ethereum transaction data is stored by full nodes and made available to the network",
+                            pros: [
+                                "Anyone can run an Ethereum node and access all data",
+                                "Data is distributed across thousands of nodes globally",
+                                "Integrated with Ethereum's proof-of-stake consensus"
+                            ],
+                            cons: [
+                                "Relies on Ethereum's proof-of-stake security, not Bitcoin",
+                                "Node storage requirements grow over time",
+                                "Data availability depends on Ethereum network health"
+                            ],
+                            networks: ["ethereum"]
+                        }
+                    ]
                 },
-                {
-                    title: "ETH token used to pay fees",
-                    content: BitcoinSecuritySnippet.AltTokenFees,
+                projects: ["ethereum"]
+            },
+            {
+                key: "network-operators",
+                label: "Network Operators",
+                description: "Ethereum is operated by a distributed set of validators who stake ETH and participate in consensus to produce blocks.",
+                icon: "NetworkIcon",
+                color: "green",
+                tradeoffs: {
+                    title: "Ethereum Network Operators",
+                    subtitle: "How Ethereum's proof-of-stake validators operate the network",
+                    mechanisms: [
+                        {
+                            name: "Proof-of-Stake Validators",
+                            description: "Ethereum validators stake 32 ETH and participate in block production and validation",
+                            pros: [
+                                "Over 900,000 validators securing the network",
+                                "Permissionless - anyone can become a validator",
+                                "Economic incentives align validators with network security"
+                            ],
+                            cons: [
+                                "Requires 32 ETH stake (~$100k+ at current prices)",
+                                "Validators can be slashed for malicious behavior",
+                                "Not secured by Bitcoin's energy-intensive mining"
+                            ],
+                            networks: ["ethereum"]
+                        }
+                    ]
                 },
-                {
-                    title: "No MEV introduced to bitcoin",
-                    content:
-                        "Ethereum does not introduce MEV to bitcoin. Blocks in Ethereum are primarily auctioned off to builders who construct blocks on behalf of a proposer in a given slot. The majority of blocks in Ethereum are built by 2-3 builders.",
+                projects: ["ethereum"]
+            },
+            {
+                key: "finality-guarantees",
+                label: "Finality Guarantees",
+                description: "Ethereum transactions achieve finality through its proof-of-stake consensus when 2/3 of validators confirm a block.",
+                icon: "ShieldIcon",
+                color: "purple",
+                tradeoffs: {
+                    title: "Ethereum Finality",
+                    subtitle: "How Ethereum achieves transaction finality",
+                    mechanisms: [
+                        {
+                            name: "Proof-of-Stake Finality",
+                            description: "Ethereum transactions finalize when 2/3 of validators attest to a block",
+                            pros: [
+                                "Fast finality (~12-15 minutes for full finality)",
+                                "Deterministic finality once 2/3 validators agree",
+                                "Economic security through validator slashing"
+                            ],
+                            cons: [
+                                "Finality depends on validator honesty, not proof-of-work",
+                                "Potential for long-range attacks if >1/3 validators are malicious",
+                                "Different security model than Bitcoin's probabilistic finality"
+                            ],
+                            networks: ["ethereum"]
+                        }
+                    ]
                 },
-                {
-                    title: "Ethereum does not contribute to the security budget",
-                    content: BitcoinSecuritySnippet.NoSecurity,
-                },
-            ],
-        },
-        {
-            id: "technology",
-            title: "Technology",
-            content: [
-                {
-                    title: "Ethereum Virtual Machine",
-                    content: TechnologySnippet.EVM,
-                },
-            ],
-        },
-        {
-            id: "usecases",
-            title: "Use Cases",
-            content: [
-                {
-                    title: "Onchain applications",
-                    content: UseCaseSnippet.OnchainApps,
-                },
-            ],
-        },
-    ],
+                projects: ["ethereum"]
+            }
+        ]
+    },
 };
 
 export default ethereum;

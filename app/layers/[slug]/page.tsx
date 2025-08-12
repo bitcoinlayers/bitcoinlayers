@@ -13,6 +13,9 @@ import Categorization from "@/components/shared/categorization";
 import AlternativeBanner from "@/components/alternative-banner";
 import UnderReviewWrapper from "@/components/under-review-wrapper";
 import KnowledgeBitsFooter from "@/components/layer/knowledge-bits-footer";
+import CustodyChart from "@/components/charts/home-chart-code";
+import LayerReviewCustodyChart from "@/components/charts/layer-review-custody-chart";
+
 import { EntityCategory, EntityType } from "@/content/props";
 
 function getLayerFromSlug(slug: string) {
@@ -168,6 +171,28 @@ export default async function LayerPage(props: {
                                 riskFactors={layer.riskFactors}
                                 layer={layer}
                             />
+                        )}
+
+                        {/* Custody Chart and Alternative Blockchain Info Card for Ethereum */}
+                        {slug === "ethereum" && (!layer.partialReview || (layer.partialReviewAfter && ["trust", "manualcontracts"].includes(layer.partialReviewAfter))) && !layer.underReview && (
+                            <>
+                                <div className="mb-6">
+                                    <LayerReviewCustodyChart 
+                                        title={layer.architectureReview?.title}
+                                        description={layer.architectureReview?.description}
+                                        mechanisms={layer.architectureReview?.mechanisms}
+                                    />
+                                </div>
+
+                                <div className="self-stretch lg:px-8 px-4 pt-6 pb-8 mb-6 bg-muted/50 rounded-xl border border-border flex-col justify-center items-start gap-4">
+                                    <div className="text-lg font-semibold text-foreground mb-3">
+                                        Alternative Blockchain
+                                    </div>
+                                    <p className="text-muted-foreground">
+                                        Ethereum is an alternative proof-of-stake blockchain that does not inherit security from Bitcoin. The interactive components above explain how alternative blockchains handle data availability and network operations differently from Bitcoin.
+                                    </p>
+                                </div>
+                            </>
                         )}
                         {layer.partialReview && layer.partialReviewAfter === "trust" && (
                             <div className="self-stretch lg:px-8 px-4 pt-6 pb-8 mb-6 bg-muted/50 rounded-xl border border-border flex-col justify-center items-start gap-4">

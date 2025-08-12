@@ -595,6 +595,19 @@ export interface LayerProject extends BaseProject {
     riskAnalysis: RiskSection[];
     riskSummary?: { title?: string; content: string }[];
     categorization?: { title?: string; content: string }[];
+    architectureReview?: {
+        title: string;
+        description: string;
+        mechanisms: {
+            key: string;
+            label: string;
+            description: string;
+            icon: string;
+            color: "blue" | "green" | "purple";
+            tradeoffs?: any;
+            projects?: string[];
+        }[];
+    };
 }
 
 export type Project = InfrastructureProject | LayerProject;
