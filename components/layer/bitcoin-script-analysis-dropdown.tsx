@@ -69,7 +69,8 @@ interface BitcoinAnalysisData {
         total_weight: number;
     };
     layer_association?: {
-        layer_name: string;
+        layer_name?: string;
+        wrapper_name?: string;
         analysis_type: string;
     };
 }
@@ -828,7 +829,7 @@ export default function BitcoinScriptAnalysisDropdown({ layerSlug }: BitcoinScri
                                         <div className="text-xs text-muted-foreground">
                                             Analysis Type: {analysisData.layer_association.analysis_type.charAt(0).toUpperCase() + 
                                                 analysisData.layer_association.analysis_type.slice(1)} • 
-                                            Layer: {analysisData.layer_association.layer_name}
+                                            {analysisData.layer_association.wrapper_name ? 'Wrapper' : 'Layer'}: {analysisData.layer_association.wrapper_name || analysisData.layer_association.layer_name}
                                         </div>
                                     </div>
                                 )}

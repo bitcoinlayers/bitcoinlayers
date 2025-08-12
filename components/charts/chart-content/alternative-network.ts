@@ -50,6 +50,27 @@ const custodyTradeoffs = {
           ],
         }
       ]
+    },
+    "EthereumNetworkOperators": {
+      title: "Ethereum Network Operators",
+      subtitle: "How Ethereum's proof-of-stake validators operate the network",
+      mechanisms: [
+        {
+          name: "Proof-of-Stake Validators",
+          description: "Ethereum validators stake 32 ETH and participate in block production and validation",
+          pros: [
+            "Over 900,000 validators securing the network",
+            "Permissionless - anyone can become a validator",
+            "Economic incentives align validators with network security"
+          ],
+          cons: [
+            "Requires 32 ETH stake (~$100k+ at current prices)",
+            "Validators can be slashed for malicious behavior",
+            "Not secured by Bitcoin's energy-intensive mining"
+          ],
+          networks: ["ethereum"]
+        }
+      ]
     }
   };
 

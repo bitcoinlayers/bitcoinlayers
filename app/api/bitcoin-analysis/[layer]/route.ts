@@ -21,12 +21,21 @@ export async function GET(
         
         let analysisData = null;
         
+        // Map wrapper slugs to their corresponding analysis directories
+        const wrapperToAnalysisDir: { [key: string]: string } = {
+            "nomic-nbtc": "nomic",
+            "stacks-sbtc": "stacks"
+        };
+        
         // Try to find and read the analysis file
         try {
             const fs = require("fs");
             
-            // First try the layer subdirectory
-            const layerDir = join(analysisDir, layer);
+            // Determine the correct subdirectory name
+            const analysisSubdir = wrapperToAnalysisDir[layer] || layer;
+            
+            // First try the layer/wrapper subdirectory
+            const layerDir = join(analysisDir, analysisSubdir);
             if (fs.existsSync(layerDir)) {
                 const files = fs.readdirSync(layerDir);
                 const bitcoinAnalysisFiles = files.filter((file: string) => 
@@ -62,7 +71,7 @@ export async function GET(
 
         if (!analysisData) {
             return NextResponse.json(
-                { error: "No Bitcoin analysis found for this layer" },
+                { error: "No Bitcoin analysis found for this wrapper/layer" },
                 { status: 404 }
             );
         }

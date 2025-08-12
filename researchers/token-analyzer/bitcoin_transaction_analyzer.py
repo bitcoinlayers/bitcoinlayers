@@ -29,7 +29,7 @@ load_dotenv(os.path.join(os.path.dirname(__file__), ".env"))
 NETWORK = "mainnet"  # "mainnet", "testnet"
 TRANSACTION_ID = "6698cdf42d6260eae82741cb5639162bb74c36372c4aea0c63053088d24fe54a"  # Will be set when we find an sBTC transaction
 API_PROVIDER = "blockstream"  # "blockstream", "blockchair", "bitcoin_core"
-LAYER_NAME = "Stacks"  # Bitcoin layer/wrapper to associate this analysis with
+WRAPPER_NAME = "Stacks"  # Bitcoin wrapper/peg to associate this analysis with
 ANALYSIS_TYPE = "custody"  # "custody", "wrapper", "general"
 
 # API configurations
@@ -1316,7 +1316,7 @@ def main():
     
     try:
         # Initialize analyzer with layer association
-        analyzer = BitcoinTransactionAnalyzer(NETWORK, API_PROVIDER, LAYER_NAME, ANALYSIS_TYPE)
+        analyzer = BitcoinTransactionAnalyzer(NETWORK, API_PROVIDER, WRAPPER_NAME, ANALYSIS_TYPE)
         
         # Validate input
         if not analyzer.validate_input(txid_to_analyze, "hex_string"):
@@ -1330,8 +1330,8 @@ def main():
         tx_hash = analyzer.calculate_hash(txid_to_analyze)[:16]
         
         # Create filename with layer association if provided
-        if LAYER_NAME:
-            layer_slug = LAYER_NAME.lower().replace(" ", "_").replace("-", "_")
+        if WRAPPER_NAME:
+            layer_slug = WRAPPER_NAME.lower().replace(" ", "_").replace("-", "_")
             filename_prefix = f"bitcoin_transaction_{tx_hash}"
         else:
             layer_slug = None

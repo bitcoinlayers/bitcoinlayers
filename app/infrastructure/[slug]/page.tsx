@@ -154,6 +154,8 @@ export default async function InfrastructurePage(props: {
                                 </div>
                             )}
                             
+
+                            
                             {/* Manual Contract Addresses */}
                             {(!infrastructure.partialReview || (infrastructure.partialReviewAfter && infrastructure.partialReviewAfter === "manualcontracts")) && (
                                 <ManualContractAddresses 

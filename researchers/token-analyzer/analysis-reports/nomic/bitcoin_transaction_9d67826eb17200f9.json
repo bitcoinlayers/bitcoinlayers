@@ -2693,7 +2693,7 @@
     }
   },
   "layer_association": {
-    "layer_name": "Nomic",
+    "wrapper_name": "nomic nbtc",
     "analysis_type": "custody",
     "integration_target": "btc_custody_section"
   },

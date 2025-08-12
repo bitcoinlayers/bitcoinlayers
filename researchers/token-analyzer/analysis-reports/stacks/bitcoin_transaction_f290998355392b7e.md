@@ -4,7 +4,7 @@
 **Network:** Mainnet
 **Analysis Date:** 2025-08-11 19:58:38 UTC
 **API Provider:** blockstream
-**Associated Layer:** Stacks
+**Associated Wrapper:** stacks sbtc
 **Analysis Type:** Custody
 **Integration Target:** Btc Custody Section
 

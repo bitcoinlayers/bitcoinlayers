@@ -4,7 +4,7 @@
 **Network:** Mainnet
 **Analysis Date:** 2025-08-11 17:41:16 UTC
 **API Provider:** blockstream
-**Associated Layer:** Nomic
+**Associated Wrapper:** nomic nbtc
 **Analysis Type:** Custody
 **Integration Target:** Btc Custody Section
 

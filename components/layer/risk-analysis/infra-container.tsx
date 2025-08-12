@@ -4,7 +4,8 @@ import React from "react";
 import { useQueryState } from "nuqs";
 import InfraRiskHeader from "./infra-section-header";
 import RiskContent from "./layer-section-content";
-import { Project, SectionAlert } from "@/content/props";
+import { Project, SectionAlert, AssessmentCategory } from "@/content/props";
+import BitcoinScriptAnalysisSection from "./bitcoin-script-analysis-section";
 
 interface Risksection {
     category: string;
@@ -68,6 +69,15 @@ const RiskAnalysis: React.FC<RiskAnalysisProps> = ({
                                 />
                             </div>
                         </div>
+
+                        {/* Add Bitcoin Script Analysis after Asset Custody */}
+                        {content.category === AssessmentCategory.AssetCustody && 
+                         (infrastructure.slug === "nomic-nbtc" || infrastructure.slug === "stacks-sbtc") && (
+                            <div className="mt-8">
+                                <BitcoinScriptAnalysisSection infrastructureSlug={infrastructure.slug} />
+                            </div>
+                        )}
+
                         {contentIndex < riskAnalysis.length - 1 && (
                             <div className="border-b border-border my-12"></div>
                         )}

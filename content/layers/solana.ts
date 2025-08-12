@@ -16,6 +16,7 @@ import {
     UseCaseSnippet,
     RiskSummarySnippet,
 } from "../props";
+import custodyTradeoffs from "../../components/charts/chart-content/alternative-network";
 
 const solana: LayerProject = {
     type: Type.Layer,
@@ -188,6 +189,99 @@ const solana: LayerProject = {
             ],
         },
     ],
+    architectureReview: {
+        title: "Alternative Blockchain Architecture",
+        description: "Understand how alternative blockchains handle key infrastructure components",
+        mechanisms: [
+            {
+                key: "data-availability",
+                label: "Data Availability",
+                description: "Solana stores all transaction data on-chain, making it available to anyone who runs a Solana validator node.",
+                icon: "BitcoinIcon",
+                color: "blue",
+                tradeoffs: {
+                    title: "Solana Data Availability",
+                    subtitle: "How Solana stores and makes transaction data available",
+                    mechanisms: [
+                        {
+                            name: "Validator Node Storage",
+                            description: "All Solana transaction data is stored by validator nodes and made available to the network",
+                            pros: [
+                                "Anyone can run a Solana validator and access all data",
+                                "Data is distributed across validator nodes globally",
+                                "Integrated with Solana's proof-of-stake consensus"
+                            ],
+                            cons: [
+                                "Relies on Solana's proof-of-stake security, not Bitcoin",
+                                "High hardware requirements for validators",
+                                "Data availability depends on Solana network health"
+                            ],
+                            networks: ["solana"]
+                        }
+                    ]
+                },
+                projects: ["solana"]
+            },
+            {
+                key: "network-operators",
+                label: "Network Operators",
+                description: "Solana is operated by a distributed set of validators who stake SOL and participate in consensus to produce blocks.",
+                icon: "NetworkIcon",
+                color: "green",
+                tradeoffs: {
+                    title: "Solana Network Operators",
+                    subtitle: "How Solana's proof-of-stake validators operate the network",
+                    mechanisms: [
+                        {
+                            name: "Proof-of-Stake Validators",
+                            description: "Solana validators stake SOL and participate in block production and validation using proof-of-history",
+                            pros: [
+                                "Over 1,000 validators securing the network",
+                                "Permissionless - anyone can become a validator",
+                                "High throughput with proof-of-history timestamps"
+                            ],
+                            cons: [
+                                "High hardware requirements for validators",
+                                "Validators can be slashed for malicious behavior",
+                                "Not secured by Bitcoin's energy-intensive mining"
+                            ],
+                            networks: ["solana"]
+                        }
+                    ]
+                },
+                projects: ["solana"]
+            },
+            {
+                key: "finality-guarantees",
+                label: "Finality Guarantees",
+                description: "Solana transactions achieve finality through its proof-of-stake consensus with proof-of-history timestamps.",
+                icon: "ShieldIcon",
+                color: "purple",
+                tradeoffs: {
+                    title: "Solana Finality",
+                    subtitle: "How Solana achieves transaction finality",
+                    mechanisms: [
+                        {
+                            name: "Proof-of-History Finality",
+                            description: "Solana uses proof-of-history timestamps with proof-of-stake to achieve fast finality",
+                            pros: [
+                                "Very fast finality (~400ms for confirmation)",
+                                "Proof-of-history provides verifiable passage of time",
+                                "Economic security through validator slashing"
+                            ],
+                            cons: [
+                                "Finality depends on validator honesty, not proof-of-work",
+                                "Potential for network halts if consensus fails",
+                                "Different security model than Bitcoin's probabilistic finality"
+                            ],
+                            networks: ["solana"]
+                        }
+                    ]
+                },
+                projects: ["solana"]
+            }
+        ]
+    },
 };
 
 export default solana;

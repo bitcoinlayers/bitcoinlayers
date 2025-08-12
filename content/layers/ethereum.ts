@@ -17,6 +17,7 @@ import {
     UseCaseSnippet,
     RiskSummarySnippet,
 } from "../props";
+import custodyTradeoffs from "../../components/charts/chart-content/alternative-network";
 
 const ethereum: LayerProject = {
     type: Type.Layer,
@@ -29,6 +30,7 @@ const ethereum: LayerProject = {
     liquidStaking: false,
     bridge: false,
     underReview: false,
+    partialReview: true, partialReviewAfter: "trust",// Set to true for partial review mode
     riskFactors: [
         RiskFactor.VeryHigh,
         RiskFactor.AlternativePoS,
@@ -286,99 +288,6 @@ const ethereum: LayerProject = {
         },
     ],
     sections: [],
-    architectureReview: {
-        title: "Ethereum Architecture",
-        description: "Understand how Ethereum handles key infrastructure components compared to Bitcoin",
-        mechanisms: [
-            {
-                key: "data-availability",
-                label: "Data Availability",
-                description: "Ethereum stores all transaction data on-chain, making it available to anyone who runs an Ethereum full node.",
-                icon: "BitcoinIcon",
-                color: "blue",
-                tradeoffs: {
-                    title: "Ethereum Data Availability",
-                    subtitle: "How Ethereum stores and makes transaction data available",
-                    mechanisms: [
-                        {
-                            name: "Full Node Storage",
-                            description: "All Ethereum transaction data is stored by full nodes and made available to the network",
-                            pros: [
-                                "Anyone can run an Ethereum node and access all data",
-                                "Data is distributed across thousands of nodes globally",
-                                "Integrated with Ethereum's proof-of-stake consensus"
-                            ],
-                            cons: [
-                                "Relies on Ethereum's proof-of-stake security, not Bitcoin",
-                                "Node storage requirements grow over time",
-                                "Data availability depends on Ethereum network health"
-                            ],
-                            networks: ["ethereum"]
-                        }
-                    ]
-                },
-                projects: ["ethereum"]
-            },
-            {
-                key: "network-operators",
-                label: "Network Operators",
-                description: "Ethereum is operated by a distributed set of validators who stake ETH and participate in consensus to produce blocks.",
-                icon: "NetworkIcon",
-                color: "green",
-                tradeoffs: {
-                    title: "Ethereum Network Operators",
-                    subtitle: "How Ethereum's proof-of-stake validators operate the network",
-                    mechanisms: [
-                        {
-                            name: "Proof-of-Stake Validators",
-                            description: "Ethereum validators stake 32 ETH and participate in block production and validation",
-                            pros: [
-                                "Over 900,000 validators securing the network",
-                                "Permissionless - anyone can become a validator",
-                                "Economic incentives align validators with network security"
-                            ],
-                            cons: [
-                                "Requires 32 ETH stake (~$100k+ at current prices)",
-                                "Validators can be slashed for malicious behavior",
-                                "Not secured by Bitcoin's energy-intensive mining"
-                            ],
-                            networks: ["ethereum"]
-                        }
-                    ]
-                },
-                projects: ["ethereum"]
-            },
-            {
-                key: "finality-guarantees",
-                label: "Finality Guarantees",
-                description: "Ethereum transactions achieve finality through its proof-of-stake consensus when 2/3 of validators confirm a block.",
-                icon: "ShieldIcon",
-                color: "purple",
-                tradeoffs: {
-                    title: "Ethereum Finality",
-                    subtitle: "How Ethereum achieves transaction finality",
-                    mechanisms: [
-                        {
-                            name: "Proof-of-Stake Finality",
-                            description: "Ethereum transactions finalize when 2/3 of validators attest to a block",
-                            pros: [
-                                "Fast finality (~12-15 minutes for full finality)",
-                                "Deterministic finality once 2/3 validators agree",
-                                "Economic security through validator slashing"
-                            ],
-                            cons: [
-                                "Finality depends on validator honesty, not proof-of-work",
-                                "Potential for long-range attacks if >1/3 validators are malicious",
-                                "Different security model than Bitcoin's probabilistic finality"
-                            ],
-                            networks: ["ethereum"]
-                        }
-                    ]
-                },
-                projects: ["ethereum"]
-            }
-        ]
-    },
 };
 
 export default ethereum;

@@ -427,7 +427,7 @@
     }
   },
   "layer_association": {
-    "layer_name": "Stacks",
+    "wrapper_name": "stacks sbtc",
     "analysis_type": "custody",
     "integration_target": "btc_custody_section"
   },
