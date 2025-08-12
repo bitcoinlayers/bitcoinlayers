@@ -1,0 +1,121 @@
+{
+  "address": "0x8236a87084f8B84306f72007F36F2618A5634494",
+  "verified": true,
+  "is_proxy": true,
+  "implementation_address": "0xA1Bc65eCf8BC7B2FAA22c53bcC49b0376Da3845A",
+  "admin_address": null,
+  "roles": {
+    "Bascule": {
+      "address": "0xc750eCAC7250E0D18ecE2C7a5F130E3A765dc260",
+      "category": "Other",
+      "type": "Contract"
+    },
+    "consortium": {
+      "address": "0xdad58DfA5c1a7a34419AFdBE1f0d610efeea95E4",
+      "category": "Other",
+      "type": "Contract"
+    },
+    "getTreasury": {
+      "address": "0x251a604E8E8f6906d60f8dedC5aAeb8CD38F4892",
+      "category": "Treasury",
+      "type": "Contract"
+    },
+    "operator": {
+      "address": "0xCd1b5b2E6C1ff8b606cF4B5731e2f3361474c01b",
+      "category": "Operator",
+      "type": "EOA"
+    },
+    "owner": {
+      "address": "0x055E84e7FE8955E2781010B866f10Ef6E1E77e59",
+      "category": "Owner",
+      "type": "Contract"
+    },
+    "pauser": {
+      "address": "0x32B8AE4eE1401E726aF0BC154D2165D0592584c4",
+      "category": "Pauser",
+      "type": "Contract"
+    }
+  },
+  "governance_analysis": {
+    "Bascule": {
+      "address": "0xc750eCAC7250E0D18ecE2C7a5F130E3A765dc260",
+      "type": "Contract",
+      "is_gnosis_safe": false,
+      "is_proxy": false,
+      "roles": {
+        "defaultAdmin": {
+          "address": "0xC8bd11c94B1924bE97b4d3215F38fCcd15320889",
+          "category": "Admin",
+          "type": "EOA"
+        },
+        "owner": {
+          "address": "0xC8bd11c94B1924bE97b4d3215F38fCcd15320889",
+          "category": "Owner",
+          "type": "EOA"
+        }
+      },
+      "governance_details": {}
+    },
+    "consortium": {
+      "address": "0xdad58DfA5c1a7a34419AFdBE1f0d610efeea95E4",
+      "type": "Contract",
+      "is_gnosis_safe": false,
+      "is_proxy": true,
+      "roles": {},
+      "governance_details": {},
+      "implementation": "0x9F8048C81d00DA5e757E20Ad5Fc89f8a32c5478e",
+      "admin": null
+    },
+    "getTreasury": {
+      "address": "0x251a604E8E8f6906d60f8dedC5aAeb8CD38F4892",
+      "type": "Contract",
+      "is_gnosis_safe": true,
+      "is_proxy": false,
+      "roles": {},
+      "governance_details": {
+        "threshold": 3,
+        "total_owners": 5,
+        "owners": [
+          "0xd7B78BF124eB327F23f75F5C49De0c3fa5d2265A",
+          "0x116744098070508c080B120A555B5453422b66eF",
+          "0x70B9b04b19D9015EfBe1db37BBe30Dd304737950",
+          "0xd775959eb15f6DfF24A267f988F6c2E2f769DeDa",
+          "0xDD48B7cfd0c2256E008B7C690Fbe47ca77CD6071"
+        ],
+        "multisig_type": "3/5 Gnosis Safe"
+      }
+    },
+    "owner": {
+      "address": "0x055E84e7FE8955E2781010B866f10Ef6E1E77e59",
+      "type": "Contract",
+      "is_gnosis_safe": false,
+      "is_proxy": false,
+      "roles": {},
+      "governance_details": {}
+    },
+    "pauser": {
+      "address": "0x32B8AE4eE1401E726aF0BC154D2165D0592584c4",
+      "type": "Contract",
+      "is_gnosis_safe": true,
+      "is_proxy": false,
+      "roles": {},
+      "governance_details": {
+        "threshold": 2,
+        "total_owners": 8,
+        "owners": [
+          "0xDD48B7cfd0c2256E008B7C690Fbe47ca77CD6071",
+          "0x70B9b04b19D9015EfBe1db37BBe30Dd304737950",
+          "0x7c2927e498D4752cf4c7eD2c87616ca14e8aDBdb",
+          "0x480d05eB7acd0D302C3b8a585519C2b41C5c102A",
+          "0x12096266d71C94A8C43cE82ADE3b1c3533CFC127",
+          "0x98E5B768474F3ADdEC9849F6fdAB86f58c15A548",
+          "0x116744098070508c080B120A555B5453422b66eF",
+          "0x564974801D2ffBE736Ed59C9bE39F6c0A4274aE6"
+        ],
+        "multisig_type": "2/8 Gnosis Safe"
+      }
+    }
+  },
+  "layer_name": "Ethereum",
+  "wrapper_name": "Lomboard LBTC"
+}

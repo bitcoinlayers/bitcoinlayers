@@ -19,10 +19,10 @@ from dotenv import load_dotenv
 load_dotenv(os.path.join(os.path.dirname(__file__), "..", "..", ".env.local"))
 
 # Configuration - Select network and contract to analyze
-NETWORK = "bob"  # Change this: "ethereum", "polygon", "arbitrum", "bsc", "bob"
-TOKEN_ADDRESS = "0xA45d4121b3D47719FF57a947A9d961539Ba33204"  # Update this address to analyze different contracts
-LAYER_NAME = "BOB"  # Layer name for directory organization
-WRAPPER_NAME = "BOB ERC-20 Wrapper"  # Wrapper name for this token
+NETWORK = "ethereum"  # Change this: "ethereum", "polygon", "arbitrum", "bsc", "bob"
+TOKEN_ADDRESS = "0x8236a87084f8B84306f72007F36F2618A5634494"  # Update this address to analyze different contracts
+LAYER_NAME = "Ethereum"  # Layer name for directory organization
+WRAPPER_NAME = "Lomboard LBTC"  # Wrapper name for this token
 
 # Network configurations
 NETWORK_CONFIGS = {
@@ -675,12 +675,12 @@ class TokenAnalyzer:
         import os
         from datetime import datetime
         
-        # Create layer-specific directory if LAYER_NAME is defined
-        if LAYER_NAME:
-            layer_slug = LAYER_NAME.lower().replace(" ", "_").replace("-", "_")
-            layer_dir = os.path.join(output_dir, layer_slug)
-            os.makedirs(layer_dir, exist_ok=True)
-            final_output_dir = layer_dir
+        # Create wrapper-specific directory if WRAPPER_NAME is defined
+        if WRAPPER_NAME:
+            wrapper_slug = WRAPPER_NAME.lower().replace(" ", "_").replace("-", "_")
+            wrapper_dir = os.path.join(output_dir, wrapper_slug)
+            os.makedirs(wrapper_dir, exist_ok=True)
+            final_output_dir = wrapper_dir
         else:
             os.makedirs(output_dir, exist_ok=True)
             final_output_dir = output_dir

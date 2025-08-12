@@ -13,6 +13,7 @@ import { useQuery } from "@tanstack/react-query";
 import Link from "next/link";
 import ImageWithFallback from "./tables/image-with-fallback";
 import ComingSoonTokenContracts from "./coming-soon-token-contracts";
+import TokenContractAnalysisDropdown from "./layer/token-contract-analysis-dropdown";
 
 const truncateAddress = (address: string) => {
     return `${address.slice(0, 6)}...${address.slice(-4)}`;
@@ -27,6 +28,7 @@ const AddressItem = ({
     item,
     showBorder,
     isLayer,
+    wrapperName,
 }: {
     item: {
         token_slug: string;
@@ -38,6 +40,7 @@ const AddressItem = ({
     };
     showBorder: boolean;
     isLayer: boolean;
+    wrapperName?: string;
 }) => {
     const customUrls: { [key: string]: string } = {
         "Rootstock-RBTC_Rootstock": "https://explorer.rootstock.io/",
@@ -90,6 +93,16 @@ const AddressItem = ({
                     <ExternalLinkIcon className="h-4 w-4 ml-2" />
                 </Link>
             </div>
+            
+            {/* Only show analysis dropdown for Ethereum contracts with valid addresses */}
+            {item.network_name === "Ethereum" && item.token_address.startsWith("0x") && (
+                <div className="mt-2 pl-7">
+                    <TokenContractAnalysisDropdown 
+                        contractAddress={item.token_address}
+                        wrapperName={wrapperName || item.token_name}
+                    />
+                </div>
+            )}
         </div>
     );
 };
@@ -110,7 +123,8 @@ export default function ProjectContractAddresses({ slug, isLayer }: Props) {
     const initialItems = data.slice(0, 3);
     const collapsibleItems = data.slice(3);
 
-    console.log(data);
+    // Get wrapper name from the first item in data
+    const wrapperName = data.length > 0 ? data[0].token_name : undefined;
 
     return (
         <section
@@ -132,6 +146,7 @@ export default function ProjectContractAddresses({ slug, isLayer }: Props) {
                         (collapsibleItems.length > 0 && isOpen)
                     }
                     isLayer={isLayer}
+                    wrapperName={wrapperName}
                 />
             ))}
 
@@ -170,6 +185,7 @@ export default function ProjectContractAddresses({ slug, isLayer }: Props) {
                                     index !== collapsibleItems.length - 1
                                 }
                                 isLayer={isLayer}
+                                wrapperName={wrapperName}
                             />
                         ))}
                     </CollapsibleContent>
