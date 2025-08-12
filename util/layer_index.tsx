@@ -65,6 +65,7 @@ import suiProject from "@/content/layers/sui";
 import botanixProject from "@/content/layers/botanix";
 import goatProject from "@/content/layers/goat";
 import arkadeProject from "@/content/layers/arkade";
+import etherlinkProject from "@/content/layers/etherlink";
 
 const core: LayerProject = coreProject;
 const internetcomputer: LayerProject = internetcomputerProject;
@@ -131,6 +132,7 @@ const sui: LayerProject = suiProject;
 const botanix: LayerProject = botanixProject;
 const goat: LayerProject = goatProject;
 const arkade: LayerProject = arkadeProject;
+const etherlink: LayerProject = etherlinkProject;
 
 export const allLayers: LayerProject[] = [
     core,
@@ -197,6 +199,7 @@ export const allLayers: LayerProject[] = [
     bouncebit,
     botanix,
     goat,
+    etherlink,
 ];
 
 export const allLayerSlugs: string[] = allLayers.map((layer) => layer.slug);
