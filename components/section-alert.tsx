@@ -72,7 +72,7 @@ export default function SectionAlertComponent({ alert }: SectionAlertProps) {
     }
 
     return (
-        <div className="w-full max-w-2xl">
+        <div className="w-full">
             <div className="relative">
                 <Alert className={styles.className}>
                     <IconComponent className={`h-5 w-5 ${styles.iconColor}`} />
