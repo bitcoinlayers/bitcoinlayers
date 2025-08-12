@@ -8,7 +8,7 @@ import {
     getRiskEmoji,
 } from "@/util/riskColors";
 import Image from "next/image";
-import InfrastructureReviewModal from "@/components/infrastructure-review-modal";
+import InfrastructureReviewDropdown from "@/components/infrastructure-review-dropdown";
 import { allInfrastructures, popupOnlyInfrastructures } from "@/util/infrastructure_index";
 import { allMore } from "@/util/more_index";
 import { allOpcodes } from "@/util/opcode_index";
@@ -222,7 +222,7 @@ const BtcCustody: React.FC<BtcCustodyProps> = ({ category, pegs = [], layerSlug 
                             content={selectedPegData.content}
                             alert={selectedPegData.alert}
                         />
-                        <InfrastructureReviewModal
+                        <InfrastructureReviewDropdown
                             infrastructureSlug={selectedPegData.infrastructureSlug}
                             triggerText={`Learn more about ${selectedPegData.name}'s custody model`}
                             infrastructure={[...allInfrastructures, ...allMore, ...allOpcodes, ...popupOnlyInfrastructures].find(
