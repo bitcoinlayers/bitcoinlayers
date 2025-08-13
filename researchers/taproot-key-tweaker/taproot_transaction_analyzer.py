@@ -15,7 +15,7 @@ This specialized tool provides deep analysis of Taproot transactions including:
 # =====================================================
 TRANSACTION_ID = "5d40ef9c1a7a9b26c043333ed08423d0a3fc72a7e1f77c0011aac3041b2f52d0"
 NETWORK = "mainnet"  # "mainnet" or "testnet"
-WRAPPER_NAME = "Lombard LBTC"  # Wrapper/protocol name for file organization
+WRAPPER_NAME = "Babylon Staked BTC"  # Wrapper/protocol name for file organization
 
 # Other example transactions you can analyze:
 # TRANSACTION_ID = "YOUR_TRANSACTION_HASH_HERE"

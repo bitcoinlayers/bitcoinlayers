@@ -10,7 +10,13 @@ export async function GET(
         const { infrastructureSlug } = await params;
         
         // Convert infrastructure slug to match folder name
-        const folderName = infrastructureSlug.replace('-', '_');
+        // Handle special cases for folder name mapping
+        let folderName;
+        if (infrastructureSlug === 'babylonstaked-btc') {
+            folderName = 'babylon_staked_btc';
+        } else {
+            folderName = infrastructureSlug.replace('-', '_');
+        }
         
         // Construct the path to the analysis folder
         const analysisDir = join(

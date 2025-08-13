@@ -132,6 +132,7 @@ export const allInfrastructures: InfrastructureProject[] = [
     cbbtc,
     kbtc,
     ibtcnetwork,
+    babylonbtc,
     // nubit,
     // sovereign,
     lorenzo,

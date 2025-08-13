@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { ChevronDown, ExternalLinkIcon, Shield, Users, Key, Building } from "lucide-react";
+import { ChevronDown, ExternalLinkIcon, Shield, Users, Key, Building, FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
     Collapsible,
@@ -49,6 +49,7 @@ interface TokenContractAnalysisProps {
     contractAddress: string;
     wrapperName?: string;
     networkName?: string;
+    autoExpand?: boolean; // Auto-expand the analysis when component loads
 }
 
 const RoleIcon = ({ category }: { category: string }) => {
@@ -67,6 +68,69 @@ const RoleIcon = ({ category }: { category: string }) => {
 
 const truncateAddress = (address: string) => {
     return `${address.slice(0, 6)}...${address.slice(-4)}`;
+};
+
+// Generate a summary from contract analysis data
+const generateContractSummary = (data: ContractAnalysis) => {
+    const findings: string[] = [];
+    
+    // Verification status
+    if (data.verified) {
+        findings.push("Contract is verified and source code is publicly available");
+    } else {
+        findings.push("⚠️ Contract is not verified - source code unavailable");
+    }
+    
+    // Proxy pattern analysis
+    if (data.is_proxy) {
+        findings.push(`Uses proxy pattern with upgradeable implementation`);
+        if (data.implementation_address) {
+            findings.push(`Implementation at ${truncateAddress(data.implementation_address)}`);
+        }
+    } else {
+        findings.push("Direct implementation (non-upgradeable)");
+    }
+    
+    // Role-based access control analysis
+    const roleCount = Object.keys(data.roles || {}).length;
+    if (roleCount > 0) {
+        const adminRoles = Object.values(data.roles).filter(role => 
+            role.category === 'Owner' || role.category === 'Admin'
+        ).length;
+        const operatorRoles = Object.values(data.roles).filter(role => 
+            role.category === 'Operator'
+        ).length;
+        
+        if (adminRoles > 0) {
+            findings.push(`${adminRoles} admin-level role(s) with elevated privileges`);
+        }
+        if (operatorRoles > 0) {
+            findings.push(`${operatorRoles} operational role(s) for day-to-day functions`);
+        }
+    }
+    
+    // Governance analysis
+    const governance = data.governance_analysis;
+    if (governance && Object.keys(governance).length > 0) {
+        const multisigRoles = Object.values(governance).filter(gov => 
+            gov.governance_details?.multisig_type
+        );
+        if (multisigRoles.length > 0) {
+            findings.push(`${multisigRoles.length} role(s) use multi-signature governance`);
+        }
+    }
+    
+    return {
+        title: `${data.wrapper_name} Smart Contract Analysis`,
+        description: `Analysis of the ${data.wrapper_name} token contract deployed on ${data.layer_name}. This contract ${data.is_proxy ? 'uses a proxy pattern for upgradeability' : 'is directly implemented'} and ${data.verified ? 'has verified source code' : 'lacks source code verification'}.`,
+        keyFindings: findings,
+        author: "Bitcoin Layers Research",
+        date: new Date().toLocaleDateString('en-US', { 
+            year: 'numeric', 
+            month: 'long', 
+            day: 'numeric' 
+        })
+    };
 };
 
 // Hardcoded mapping of contract addresses + network to their analysis paths
@@ -92,9 +156,10 @@ const getAnalysisMapping = (contractAddress: string, networkName?: string): stri
 export default function TokenContractAnalysisDropdown({ 
     contractAddress, 
     wrapperName,
-    networkName
+    networkName,
+    autoExpand = false
 }: TokenContractAnalysisProps) {
-    const [isOpen, setIsOpen] = useState(false);
+    const [isOpen, setIsOpen] = useState(autoExpand);
     const [analysisData, setAnalysisData] = useState<ContractAnalysis | null>(null);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
@@ -316,6 +381,44 @@ export default function TokenContractAnalysisDropdown({
                     
                     {analysisData && !loading && !error && (
                         <div className="space-y-4">
+                            {/* Contract Analysis Summary */}
+                            {(() => {
+                                const summary = generateContractSummary(analysisData);
+                                return (
+                                    <div className="bg-gradient-to-r from-blue-50 to-green-50 dark:from-blue-950/20 dark:to-green-950/20 rounded-lg p-4 border border-blue-200 dark:border-blue-800">
+                                        <h5 className="font-medium text-foreground mb-3 flex items-center gap-2">
+                                            <FileText className="h-4 w-4 text-blue-600" />
+                                            {summary.title}
+                                        </h5>
+                                        <div className="space-y-3 text-sm">
+                                            <div className="text-muted-foreground leading-relaxed">
+                                                {summary.description}
+                                            </div>
+                                            
+                                            {summary.keyFindings && summary.keyFindings.length > 0 && (
+                                                <div>
+                                                    <span className="font-medium text-foreground">Key Findings:</span>
+                                                    <ul className="mt-2 space-y-1 text-muted-foreground">
+                                                        {summary.keyFindings.map((finding, index) => (
+                                                            <li key={index} className="flex items-start gap-2">
+                                                                <span className="text-blue-600 mt-1">•</span>
+                                                                <span>{finding}</span>
+                                                            </li>
+                                                        ))}
+                                                    </ul>
+                                                </div>
+                                            )}
+                                            
+                                            <div className="text-xs text-muted-foreground pt-2 border-t border-border">
+                                                <span>Analysis by {summary.author}</span>
+                                                <span> • </span>
+                                                <span>{summary.date}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                );
+                            })()}
+                            
                             {/* Contract Overview */}
                             <div className="border-b pb-3">
                                 <div className="flex items-center gap-2 mb-2">

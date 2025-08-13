@@ -16,6 +16,8 @@ import {
     RiskSummarySnippet,
     CustodyTitle,
 } from "../props";
+import { Reviewsnippet } from "../props-layers-reviews";
+import { Alertsnippet } from "../props-layers-more-info";
 
 const lightning: LayerProject = {
     type: Type.Layer,
@@ -67,13 +69,44 @@ const lightning: LayerProject = {
             content: "",
             pegs: [
                 {
-                    name: "Lightning BTC",
-                    infrastructureSlug: "lightning-btc",
+                    name: "Lightning Channels",
+                    infrastructureSlug: "lightning-channels",
                     score: 0,
                     tier: RiskFactor.Low,
                     title: "Funds are secured in a 2-2 multisig with unilateral exit support for each counterparty",
                     content:
-                        "When users open a payment channel, funds are deposited onchain into a 2-of-2 multisig address shared between the respective channel counterparties. \n\nUsers can collaboratively close a channel by signing and broadcasting a closing transaction which distributes the funds on bitcoin L1 based on the latest channel state. \n\nIf a counterparty is unresponsive during a cooperative channel closure attempt, a user can unilaterally enforce the process by broadcasting the most recent commitment transaction representing the latest balance distribution. There is a challenge-response mechanism to settle potential disputes between channel counterparties over the final state of a channel closure transaction.",
+                        "When users open a payment channel, funds are deposited onchain into a 2-of-2 multisig address shared between the respective channel counterparties. Users can collaboratively close a channel by signing and broadcasting a closing transaction which distributes the funds on bitcoin L1 based on the latest channel state.\n\nIf a counterparty is unresponsive during a cooperative channel closure attempt, a user can unilaterally enforce the process by broadcasting the most recent commitment transaction representing the latest balance distribution. There is a challenge-response mechanism to settle potential disputes between channel counterparties over the final state of a channel closure transaction.",
+                },
+                {
+                    name: "Spark",
+                    infrastructureSlug: "spark",
+                    score: 0,
+                    tier: RiskFactor.Medium,
+                    title: "Users collaboratively custody funds with the statechain entity",
+                    content: `${Reviewsnippet.SparkBTC} Spark users pay lightning invoices through service providers.`,
+                    alert: Alertsnippet.StatechainKeyDeletion,
+                },
+                {
+                    name: "Fedimint",
+                    infrastructureSlug: "fedimint",
+                    score: 0,
+                    tier: RiskFactor.VeryHigh,
+                    title: "Fedimints are managed by a federation of guardians",
+                    content: `${Reviewsnippet.Fedimint} Users must consider guardians' reputation when selecting which Fedimint to use. Fedimint users pay lightning invoices through service providers.`,
+                },
+                {
+                    name: "Cashu",
+                    infrastructureSlug: "cashu",
+                    score: 0,
+                    tier: RiskFactor.VeryHigh,
+                    title: "Cashu mints are managed by a single entity",
+                    content: `${Reviewsnippet.Cashu}`,
+                    alert: {
+                         type: "info" as const,
+                         title: "Users can split their funds across multiple mints",
+                         content: "To migitate this risk, users can split their funds across multiple mints and pay Lightning invoices with funds from multiple mints.",
+                         collapsible: false,
+                     },
                 },
             ],
         },

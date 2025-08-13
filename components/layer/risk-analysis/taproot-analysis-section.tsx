@@ -78,13 +78,14 @@ interface TaprootAnalysisData {
 
 interface TaprootAnalysisSectionProps {
     infrastructureSlug: string;
+    autoExpand?: boolean; // Auto-expand the analysis when component loads
 }
 
-export default function TaprootAnalysisSection({ infrastructureSlug }: TaprootAnalysisSectionProps) {
+export default function TaprootAnalysisSection({ infrastructureSlug, autoExpand = false }: TaprootAnalysisSectionProps) {
     const [analysisData, setAnalysisData] = useState<TaprootAnalysisData | null>(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
-    const [showTaprootAnalysis, setShowTaprootAnalysis] = useState(false);
+    const [showTaprootAnalysis, setShowTaprootAnalysis] = useState(autoExpand);
     const [showScriptDetails, setShowScriptDetails] = useState(false);
     const [expandedInputs, setExpandedInputs] = useState<Set<number>>(new Set());
 
