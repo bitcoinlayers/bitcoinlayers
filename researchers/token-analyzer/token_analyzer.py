@@ -16,13 +16,13 @@ from typing import Optional, Dict, Any
 from dotenv import load_dotenv
 
 # Load environment variables from .env.local file (two directories up from this script)
-load_dotenv(os.path.join(os.path.dirname(__file__), "..", "..", ".env.local"))
+load_dotenv(os.path.join(os.path.dirname(__file__), ".env.local"))
 
 # Configuration - Select network and contract to analyze
-NETWORK = "bob"  # Change this: "ethereum", "polygon", "arbitrum", "bsc", "bob"
-TOKEN_ADDRESS = "0xA45d4121b3D47719FF57a947A9d961539Ba33204"  # Update this address to analyze different contracts
-LAYER_NAME = "BOB"  # Layer name for directory organization
-WRAPPER_NAME = "BOB ERC-20 Wrapper"  # Wrapper name for this token
+NETWORK = os.getenv("NETWORK")
+TOKEN_ADDRESS = os.getenv("TOKEN_ADDRESS")
+LAYER_NAME = os.getenv("LAYER_NAME")
+WRAPPER_NAME = os.getenv("WRAPPER_NAME")
 
 # Network configurations
 NETWORK_CONFIGS = {

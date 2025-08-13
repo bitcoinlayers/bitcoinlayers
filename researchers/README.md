@@ -74,6 +74,8 @@ The tools below are used to validate trust assumptions related to networks' bitc
 
 ## 🚀 Quick Start
 
+Please note project dependencies are tested against Python 3.12.8.
+
 ### Prerequisites
 ```bash
 # 1. Install Python dependencies
@@ -83,18 +85,13 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
 
 # 2. Set up environment variables
-cp .env.example .env.local
-# Edit .env.local with your API keys
+cp .env.local.example .env.local
+# Edit .env.local.local with your API keys
 ```
 
 ### 🔍 **Analyze a Token Contract**
-```bash
-# Edit configuration in token_analyzer.py
-NETWORK = "ethereum"  # or "bob", "arbitrum", etc.
-TOKEN_ADDRESS = "0x..." 
-LAYER_NAME = "Ethereum"
-WRAPPER_NAME = "Wrapped Bitcoin"
 
+```bash
 # Run analysis
 python3 token_analyzer.py
 ```
