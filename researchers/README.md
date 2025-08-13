@@ -74,7 +74,7 @@ The tools below are used to validate trust assumptions related to networks' bitc
 
 ## 🚀 Quick Start
 
-Please note project dependencies are tested against Python 3.12.8.
+Please note project dependencies are tested against Python 3.10.16 and unlikely to be working in Python 3.12.
 
 ### Prerequisites
 ```bash
