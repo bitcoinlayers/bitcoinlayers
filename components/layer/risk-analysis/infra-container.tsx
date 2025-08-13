@@ -6,6 +6,7 @@ import InfraRiskHeader from "./infra-section-header";
 import RiskContent from "./layer-section-content";
 import { Project, SectionAlert, AssessmentCategory } from "@/content/props";
 import BitcoinScriptAnalysisSection from "./bitcoin-script-analysis-section";
+import TaprootAnalysisSection from "./taproot-analysis-section";
 
 interface Risksection {
     category: string;
@@ -75,6 +76,14 @@ const RiskAnalysis: React.FC<RiskAnalysisProps> = ({
                          (infrastructure.slug === "nomic-nbtc" || infrastructure.slug === "stacks-sbtc") && (
                             <div className="mt-8">
                                 <BitcoinScriptAnalysisSection infrastructureSlug={infrastructure.slug} />
+                            </div>
+                        )}
+
+                        {/* Add Taproot Analysis after Asset Custody for Lombard */}
+                        {content.category === AssessmentCategory.AssetCustody && 
+                         infrastructure.slug === "lombard-lbtc" && (
+                            <div className="mt-8">
+                                <TaprootAnalysisSection infrastructureSlug={infrastructure.slug} />
                             </div>
                         )}
 

@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { ExternalLink, Bitcoin, Zap, Shield, FileText, Code2, Eye, EyeOff, Hash, ChevronDown, ChevronUp } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { parseTextWithLinks } from "@/util/parseTextWithLinks";
 
 interface ScriptData {
     script_hex: string;
@@ -73,6 +74,13 @@ interface BitcoinAnalysisData {
         wrapper_name?: string;
         analysis_type: string;
     };
+    custom_summary?: {
+        title?: string;
+        description: string;
+        author?: string;
+        date?: string;
+        key_findings?: string[];
+    };
 }
 
 interface BitcoinScriptAnalysisSectionProps {
@@ -83,6 +91,7 @@ export default function BitcoinScriptAnalysisSection({ infrastructureSlug }: Bit
     const [analysisData, setAnalysisData] = useState<BitcoinAnalysisData | null>(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
+    const [showBitcoinAnalysis, setShowBitcoinAnalysis] = useState(false);
     const [showFullScript, setShowFullScript] = useState(false);
     const [expandedWitnessStacks, setExpandedWitnessStacks] = useState<Set<string>>(new Set());
     const [expandedWitnessScripts, setExpandedWitnessScripts] = useState<Set<string>>(new Set());
@@ -244,39 +253,82 @@ export default function BitcoinScriptAnalysisSection({ infrastructureSlug }: Bit
         return operations;
     };
 
-    if (loading) {
-        return (
-            <div className="mt-6">
-                <div className="flex items-center gap-2 text-muted-foreground text-sm">
-                    <div className="animate-spin rounded-full h-4 w-4 border-2 border-muted-foreground border-t-transparent"></div>
-                    Loading Bitcoin Script Analysis...
-                </div>
-            </div>
-        );
-    }
-
-    if (error) {
-        return (
-            <div className="mt-6 text-muted-foreground text-sm">
-                {error}
-            </div>
-        );
-    }
-
-    if (!analysisData) {
-        return null;
-    }
-
     return (
         <div className="mt-6 overflow-hidden">
-            <div className="flex items-center gap-2 mb-4">
+            <button
+                onClick={() => setShowBitcoinAnalysis(!showBitcoinAnalysis)}
+                className="flex items-center gap-2 text-foreground hover:text-foreground/80 transition-colors mb-4 text-left"
+            >
                 <Bitcoin className="h-5 w-5 text-foreground" />
                 <h4 className="text-lg font-semibold text-foreground">
                     Bitcoin Script Analysis
                 </h4>
-            </div>
+                {loading ? (
+                    <div className="animate-spin rounded-full h-4 w-4 border-2 border-muted-foreground border-t-transparent"></div>
+                ) : showBitcoinAnalysis ? (
+                    <ChevronUp className="h-4 w-4" />
+                ) : (
+                    <ChevronDown className="h-4 w-4" />
+                )}
+            </button>
+
+            {loading && showBitcoinAnalysis && (
+                <div className="text-muted-foreground text-sm mb-4">
+                    Loading Bitcoin Script Analysis...
+                </div>
+            )}
+
+            {error && showBitcoinAnalysis && (
+                <div className="text-muted-foreground text-sm mb-4">
+                    {error}
+                </div>
+            )}
+
+            {showBitcoinAnalysis && analysisData && (
             
             <div className="space-y-6 overflow-hidden">
+                {/* Custom Analysis Summary */}
+                {analysisData.custom_summary && (
+                    <div className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-950/20 dark:to-purple-950/20 rounded-lg p-4 border border-blue-200 dark:border-blue-800">
+                        <h5 className="font-medium text-foreground mb-3 flex items-center gap-2">
+                            <FileText className="h-4 w-4 text-blue-600" />
+                            {analysisData.custom_summary.title || 'Analysis Summary'}
+                        </h5>
+                        <div className="space-y-3 text-sm">
+                            <div className="text-muted-foreground leading-relaxed">
+                                {parseTextWithLinks(analysisData.custom_summary.description)}
+                            </div>
+                            
+                            {analysisData.custom_summary.key_findings && analysisData.custom_summary.key_findings.length > 0 && (
+                                <div>
+                                    <span className="font-medium text-foreground">Key Findings:</span>
+                                    <ul className="mt-2 space-y-1 text-muted-foreground">
+                                        {analysisData.custom_summary.key_findings.map((finding, index) => (
+                                            <li key={index} className="flex items-start gap-2">
+                                                <span className="text-blue-600 mt-1">•</span>
+                                                <span>{parseTextWithLinks(finding)}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            )}
+                            
+                            {(analysisData.custom_summary.author || analysisData.custom_summary.date) && (
+                                <div className="text-xs text-muted-foreground pt-2 border-t border-border">
+                                    {analysisData.custom_summary.author && (
+                                        <span>Analysis by {analysisData.custom_summary.author}</span>
+                                    )}
+                                    {analysisData.custom_summary.author && analysisData.custom_summary.date && (
+                                        <span> • </span>
+                                    )}
+                                    {analysisData.custom_summary.date && (
+                                        <span>{analysisData.custom_summary.date}</span>
+                                    )}
+                                </div>
+                            )}
+                        </div>
+                    </div>
+                )}
                 {/* Transaction Overview */}
                 <div>
                     <h5 className="font-medium text-foreground mb-3 flex items-center gap-2">
@@ -551,6 +603,7 @@ export default function BitcoinScriptAnalysisSection({ infrastructureSlug }: Bit
                     </div>
                 )}
             </div>
+            )}
         </div>
     );
 }

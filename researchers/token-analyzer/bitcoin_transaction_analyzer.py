@@ -27,10 +27,10 @@ load_dotenv(os.path.join(os.path.dirname(__file__), ".env"))
 
 # Configuration
 NETWORK = "mainnet"  # "mainnet", "testnet"
-TRANSACTION_ID = "6698cdf42d6260eae82741cb5639162bb74c36372c4aea0c63053088d24fe54a"  # Will be set when we find an sBTC transaction
+TRANSACTION_ID = "5d40ef9c1a7a9b26c043333ed08423d0a3fc72a7e1f77c0011aac3041b2f52d0"  # Will be set when we find an sBTC transaction
 API_PROVIDER = "blockstream"  # "blockstream", "blockchair", "bitcoin_core"
-WRAPPER_NAME = "Stacks"  # Bitcoin wrapper/peg to associate this analysis with
-ANALYSIS_TYPE = "custody"  # "custody", "wrapper", "general"
+WRAPPER_NAME = "Lombard LBTC"  # Bitcoin wrapper/peg to associate this analysis with
+ANALYSIS_TYPE = "staking"  # "custody", "wrapper", "general"
 
 # API configurations
 API_CONFIGS = {
