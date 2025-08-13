@@ -19,17 +19,21 @@ from dotenv import load_dotenv
 load_dotenv(os.path.join(os.path.dirname(__file__), "..", "..", ".env.local"))
 
 # Configuration - Select network and contract to analyze
-NETWORK = "ethereum"  # Change this: "ethereum", "polygon", "arbitrum", "bsc", "bob"
-TOKEN_ADDRESS = "0x8236a87084f8B84306f72007F36F2618A5634494"  # Update this address to analyze different contracts
-LAYER_NAME = "Ethereum"  # Layer name for directory organization
-WRAPPER_NAME = "Lomboard LBTC"  # Wrapper name for this token
-
+NETWORK = "bob"  # Change this: "ethereum", "polygon", "arbitrum", "bsc", "bob", "base"
+TOKEN_ADDRESS = "0xA45d4121b3D47719FF57a947A9d961539Ba33204"  # Update this address to analyze different contracts
+LAYER_NAME = "BOB"  # Layer name for directory organization
+WRAPPER_NAME = "Lombard LBTC"  # Wrapper name for this token
 # Network configurations
 NETWORK_CONFIGS = {
     "ethereum": {
         "rpc_url": os.getenv("ETHEREUM_RPC_URL"),
         "api_key": os.getenv("ETHEREUM_API_KEY"),
         "api_base": "https://api.etherscan.io/api",
+    },
+    "base": {
+        "rpc_url": os.getenv("BASE_RPC_URL"),
+        "api_key": os.getenv("ETHEREUM_API_KEY"),
+        "api_base": "https://api.etherscan.io/v2/api?chainid=8453",
     },
     "bob": {
         "rpc_url": os.getenv("BOB_RPC_URL"),

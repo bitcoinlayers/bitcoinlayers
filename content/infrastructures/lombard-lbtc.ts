@@ -11,6 +11,7 @@ import {
     BTCWrapperTransparency,
     PegRiskSummarySnippet,
 } from "../props";
+import { Alertsnippet } from "../props-layers-more-info";
 
 const lombard: InfrastructureProject = {
     type: Type.Infrastructure,
@@ -113,6 +114,7 @@ const lombard: InfrastructureProject = {
             title: "Users trust a network of custodians in the Lombard protocol",
             content:
                 "Staked BTC that backs Lombard LBTC is staked by a federation of [custodians](https://etherscan.io/address/0xdad58DfA5c1a7a34419AFdBE1f0d610efeea95E4#readProxyContract) participating in the Lombard Ledger. Signers in the Lombard Ledger participate in a CometBFT consensus protocol.\n\nAdding and removing validators from this consortium is handled by the current validator set within a given epoch. When a user deposits funds into the Lombard protocol, they are given a specific CubeSigner address to manage their deposits and staking transactions.",
+            alert: Alertsnippet.NotOpenSource,
         },
         {
             category: AssessmentCategory.SupplyIssuance,

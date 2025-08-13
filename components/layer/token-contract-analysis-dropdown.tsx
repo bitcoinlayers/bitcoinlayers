@@ -48,6 +48,7 @@ interface ContractAnalysis {
 interface TokenContractAnalysisProps {
     contractAddress: string;
     wrapperName?: string;
+    networkName?: string;
 }
 
 const RoleIcon = ({ category }: { category: string }) => {
@@ -68,14 +69,75 @@ const truncateAddress = (address: string) => {
     return `${address.slice(0, 6)}...${address.slice(-4)}`;
 };
 
+// Hardcoded mapping of contract addresses + network to their analysis paths
+const getAnalysisMapping = (contractAddress: string, networkName?: string): string | null => {
+    // Create a key combining address and network
+    const addressKey = contractAddress.toLowerCase();
+    const networkKey = networkName?.toLowerCase() || '';
+    const combinedKey = `${addressKey}:${networkKey}`;
+    
+    const knownAnalyses: { [key: string]: string } = {
+        // Lombard LBTC - using combined address:network keys
+        '0x8236a87084f8b84306f72007f36f2618a5634494:ethereum': 'lombard_lbtc',
+        '0xecac9c5f704e954931349da37f60e39f515c11c1:base': 'lombard_lbtc',
+        '0xa45d4121b3d47719ff57a947a9d961539ba33204:bob': 'lombard_lbtc', // BOB network
+        // Add more contract addresses and their wrapper slugs here as needed
+        // Format: 'contractAddress:networkName': 'wrapperSlug'
+    };
+    
+    // Try combined key first, fallback to address-only for backward compatibility
+    return knownAnalyses[combinedKey] || knownAnalyses[addressKey] || null;
+};
+
 export default function TokenContractAnalysisDropdown({ 
     contractAddress, 
-    wrapperName 
+    wrapperName,
+    networkName
 }: TokenContractAnalysisProps) {
     const [isOpen, setIsOpen] = useState(false);
     const [analysisData, setAnalysisData] = useState<ContractAnalysis | null>(null);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
+    const [analysisExists, setAnalysisExists] = useState<boolean | null>(null);
+
+    // Check if analysis exists when component mounts
+    useEffect(() => {
+        const checkAnalysisExists = () => {
+            if (!contractAddress) {
+                setAnalysisExists(false);
+                return;
+            }
+            
+            // Debug logging
+            console.log('TokenContractAnalysisDropdown - checking analysis for:', {
+                contractAddress,
+                wrapperName,
+                networkName
+            });
+            
+            const wrapperSlug = getAnalysisMapping(contractAddress, networkName);
+            
+            console.log('Analysis lookup result:', {
+                contractAddress: contractAddress.toLowerCase(),
+                networkName: networkName?.toLowerCase(),
+                combinedKey: `${contractAddress.toLowerCase()}:${networkName?.toLowerCase() || ''}`,
+                wrapperSlug,
+                hasMapping: !!wrapperSlug
+            });
+            
+            if (!wrapperSlug) {
+                console.log('No analysis mapping found for address:', contractAddress.toLowerCase());
+                setAnalysisExists(false);
+                return;
+            }
+            
+            // If we have a mapping, the analysis should exist
+            console.log('Analysis mapping found - setting exists to true');
+            setAnalysisExists(true);
+        };
+
+        checkAnalysisExists();
+    }, [contractAddress, networkName || '']);
 
     useEffect(() => {
         const fetchAnalysis = async () => {
@@ -85,11 +147,16 @@ export default function TokenContractAnalysisDropdown({
             setError(null);
             
             try {
-                // Try to load analysis from the token analyzer reports
-                // We'll need to determine the folder structure based on wrapper name
-                const wrapperSlug = wrapperName?.toLowerCase().replace(/\s+/g, '_').replace(/-/g, '_') || 'unknown';
-                const analysisPath = `/api/token-analysis/${wrapperSlug}/${contractAddress.toLowerCase()}`;
+                const wrapperSlug = getAnalysisMapping(contractAddress, networkName);
                 
+                if (!wrapperSlug) {
+                    setError("No analysis available for this contract");
+                    return;
+                }
+                
+                const normalizedAddress = contractAddress.toLowerCase();
+                const analysisPath = `/api/token-analysis/${wrapperSlug}/${normalizedAddress}`;
+                console.log('Fetching analysis from:', analysisPath);
                 
                 const response = await fetch(analysisPath);
                 
@@ -112,7 +179,7 @@ export default function TokenContractAnalysisDropdown({
         };
 
         fetchAnalysis();
-    }, [isOpen, contractAddress, wrapperName]);
+    }, [isOpen, contractAddress, networkName || '']);
 
     const toggleDropdown = () => {
         setIsOpen(!isOpen);
@@ -213,6 +280,11 @@ export default function TokenContractAnalysisDropdown({
             );
         }).filter(Boolean);
     };
+
+    // Only render if analysis exists for this specific contract
+    if (analysisExists === false) {
+        return null;
+    }
 
     return (
         <Collapsible open={isOpen} onOpenChange={setIsOpen} className="w-full">

@@ -19,6 +19,9 @@ const truncateAddress = (address: string) => {
     return `${address.slice(0, 6)}...${address.slice(-4)}`;
 };
 
+// This will be handled by the TokenContractAnalysisDropdown component itself
+// It will only show content if the analysis file exists for the specific contract address
+
 interface Props {
     slug: string;
     isLayer: boolean;
@@ -94,12 +97,13 @@ const AddressItem = ({
                 </Link>
             </div>
             
-            {/* Only show analysis dropdown for Ethereum contracts with valid addresses */}
-            {item.network_name === "Ethereum" && item.token_address.startsWith("0x") && (
+            {/* Show analysis dropdown for EVM contracts - the component will handle whether to display content */}
+            {item.token_address.startsWith("0x") && (
                 <div className="mt-2 pl-7">
                     <TokenContractAnalysisDropdown 
                         contractAddress={item.token_address}
                         wrapperName={wrapperName || item.token_name}
+                        networkName={item.network_name}
                     />
                 </div>
             )}
