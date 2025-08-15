@@ -536,7 +536,7 @@ export default function BitcoinScriptAnalysisSection({ infrastructureSlug }: Bit
                                                                 }).join('\n');
                                                             } catch (error) {
                                                                 console.error('Script parsing error:', error);
-                                                                return `Error parsing script: ${error.message}`;
+                                                                return `Error parsing script: ${error instanceof Error ? error.message : 'Unknown error'}`;
                                                             }
                                                         })()}
                                                     </code>

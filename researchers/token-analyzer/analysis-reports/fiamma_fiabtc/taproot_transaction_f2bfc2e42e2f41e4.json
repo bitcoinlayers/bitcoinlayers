@@ -1,0 +1,108 @@
+{
+  "transaction_metadata": {
+    "txid": "f2bfc2e42e2f41e417bdb2ab1fa64835a770eea27d5e3f35e15210f58a711915",
+    "network": "mainnet",
+    "analysis_date": "2025-08-15 14:14:48 UTC",
+    "analyzer_type": "taproot_transaction",
+    "api_provider": "blockstream"
+  },
+  "taproot_inputs": [
+    {
+      "spend_type": "key_path",
+      "witness_stack": [
+        {
+          "type": "schnorr_signature",
+          "size": 65,
+          "data": "a3ea4857cb8a0063998003b0e5f63b17b3470eb4d5a49f1f00da4f1ad1860a541e7f3b12f92c10f471851486200f5cc68f06104ea9bacfea2164e0e3c9b77eee01",
+          "description": "Key-path Schnorr signature"
+        }
+      ],
+      "control_block": null,
+      "executed_script": null,
+      "signature_analysis": {
+        "type": "single_key",
+        "signatures": 1
+      },
+      "script_tree_info": {}
+    },
+    {
+      "spend_type": "key_path",
+      "witness_stack": [
+        {
+          "type": "schnorr_signature",
+          "size": 65,
+          "data": "623a7f8f15f166e689d0957b28bee7eca2e574aaf3da0f99ce56f2fadca34765ac058092a37295d0df5a91a5df34f97b4c2ba20180df7026251b0c37816ccd1f01",
+          "description": "Key-path Schnorr signature"
+        }
+      ],
+      "control_block": null,
+      "executed_script": null,
+      "signature_analysis": {
+        "type": "single_key",
+        "signatures": 1
+      },
+      "script_tree_info": {}
+    },
+    {
+      "spend_type": "key_path",
+      "witness_stack": [
+        {
+          "type": "schnorr_signature",
+          "size": 65,
+          "data": "3bc95c5741194d5cbda870300e858635f2c7484476997256b0f8947a7423494e5abe39edaf04365d7ad15859c2f6b59a97c3309b40ff41284cbae7997d33ffc701",
+          "description": "Key-path Schnorr signature"
+        }
+      ],
+      "control_block": null,
+      "executed_script": null,
+      "signature_analysis": {
+        "type": "single_key",
+        "signatures": 1
+      },
+      "script_tree_info": {}
+    }
+  ],
+  "taproot_outputs": [
+    {
+      "index": 0,
+      "value": 97880,
+      "script": "512073a46e51b6afa0359b3cbbc40e581ccc19d077af7b77393d3fc96e323eed645e",
+      "address": "bc1pwwjxu5dk47srtxeuh0zqukquesvaqaa00dmnj0fle9hry0hdv30qdw7khj",
+      "analysis": "Taproot output - can be spent via key-path or script-path"
+    },
+    {
+      "index": 1,
+      "value": 660,
+      "script": "512007a90ba265ae6ca3c05a77d79537ecd522a6dddfb4bdf042576dc987d0a908d9",
+      "address": "bc1pq75shgn94ek28sz6wlte2dlv6532dhwlkj7lqsjhdhyc059fprvsrckjkx",
+      "analysis": "Taproot output - can be spent via key-path or script-path"
+    },
+    {
+      "index": 2,
+      "value": 10000,
+      "script": "512062aeeb2621c73bbc8934d9614f6f7f3a1026e7820206b9812f42dd8466bd81c7",
+      "address": "bc1pv2hwkf3pcuamezf5m9s57mml8ggzdeuzqgrtnqf0gtwcge4as8rsg2ygly",
+      "analysis": "Taproot output - can be spent via key-path or script-path"
+    },
+    {
+      "index": 3,
+      "value": 7420,
+      "script": "5120a65820fa212b536bfc114a7677c848d4ecfd55b8010aa2c445663bd8505171fa",
+      "address": "bc1p5evzp73p9dfkhlq3ffm80jzg6nk064dcqy9293z9vcaas5z3w8aqt7lgz8",
+      "analysis": "Taproot output - can be spent via key-path or script-path"
+    }
+  ],
+  "script_tree_analysis": {},
+  "signature_analysis": {},
+  "layer_association": {
+    "wrapper_name": "fiamma_fiabtc",
+    "analysis_type": "custody",
+    "integration_target": "btc_custody_section"
+  },
+  "metadata": {
+    "analyzer_type": "taproot_transaction",
+    "network": "mainnet",
+    "analysis_date": "2025-08-15 14:14:48 UTC",
+    "api_provider": "blockstream"
+  }
+}
