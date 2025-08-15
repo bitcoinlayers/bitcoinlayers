@@ -33,6 +33,14 @@ interface GovernanceAnalysis {
     admin?: string;
 }
 
+interface CustomSummary {
+    title?: string;
+    description?: string;
+    key_findings?: string[];
+    author?: string;
+    date?: string;
+}
+
 interface ContractAnalysis {
     address: string;
     verified: boolean;
@@ -43,6 +51,7 @@ interface ContractAnalysis {
     governance_analysis: Record<string, GovernanceAnalysis>;
     layer_name: string;
     wrapper_name: string;
+    custom_summary?: CustomSummary;
 }
 
 interface TokenContractAnalysisProps {
@@ -72,6 +81,27 @@ const truncateAddress = (address: string) => {
 
 // Generate a summary from contract analysis data
 const generateContractSummary = (data: ContractAnalysis) => {
+    console.log('=== GENERATING CONTRACT SUMMARY ===');
+    console.log('Full contract data:', JSON.stringify(data, null, 2));
+    console.log('Custom summary exists:', !!data.custom_summary);
+    console.log('Custom summary data:', data.custom_summary);
+    
+    if (data.custom_summary) {
+        console.log('Using custom summary:', data.custom_summary);
+        return {
+            title: data.custom_summary.title || `${data.wrapper_name} Smart Contract Analysis`,
+            description: data.custom_summary.description || `Analysis of the ${data.wrapper_name} token contract deployed on ${data.layer_name}.`,
+            keyFindings: data.custom_summary.key_findings || [],
+            author: data.custom_summary.author || "Bitcoin Layers Research",
+            date: data.custom_summary.date || new Date().toLocaleDateString('en-US', { 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric' 
+            })
+        };
+    }
+
+    // Fallback to auto-generated summary if no custom summary exists
     const findings: string[] = [];
     
     // Verification status
@@ -383,7 +413,9 @@ export default function TokenContractAnalysisDropdown({
                         <div className="space-y-4">
                             {/* Contract Analysis Summary */}
                             {(() => {
+                                console.log('About to generate summary with analysisData:', analysisData);
                                 const summary = generateContractSummary(analysisData);
+                                console.log('Generated summary:', summary);
                                 return (
                                     <div className="bg-gradient-to-r from-blue-50 to-green-50 dark:from-blue-950/20 dark:to-green-950/20 rounded-lg p-4 border border-blue-200 dark:border-blue-800">
                                         <h5 className="font-medium text-foreground mb-3 flex items-center gap-2">

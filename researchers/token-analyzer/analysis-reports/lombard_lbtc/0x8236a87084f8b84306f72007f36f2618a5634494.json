@@ -117,5 +117,18 @@
     }
   },
   "layer_name": "Ethereum",
-  "wrapper_name": "Lomboard LBTC"
+  "wrapper_name": "Lomboard LBTC",
+  "custom_summary": {
+    "title": "Lombard LBTC Smart Contract Analysis",
+    "description": "Lombard LBTC has numerous permissioned roles. Namely, a 3/5 multisig can initiate contract upgrades, and a 2/8 multisig can pause the contract..",
+    "key_findings": [
+      "Contract is verified and source code is publicly available",
+      "Uses proxy pattern with upgradeable implementation",
+      "Implementation at 0xA1Bc...845A",
+      "3/5 multisig can initiate contract upgrades (including malicious ones)",
+      "2/8 multisig can pause the contract and token transfers (including withdrawals)"
+    ],
+    "author": "Janusz",
+    "date": "August, 2025"
+  }
 }

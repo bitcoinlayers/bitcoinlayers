@@ -3,12 +3,15 @@ import { readFile } from 'fs/promises';
 import { join } from 'path';
 
 async function getAnalysisPath(wrapperSlug: string, contractAddress: string) {
+    // Convert slug format to match folder names (kebab-case to snake_case)
+    const folderName = wrapperSlug.replace(/-/g, '_');
+    
     return join(
         process.cwd(),
         'researchers',
         'token-analyzer',
         'analysis-reports',
-        wrapperSlug,
+        folderName,
         `${contractAddress.toLowerCase()}.json`
     );
 }
