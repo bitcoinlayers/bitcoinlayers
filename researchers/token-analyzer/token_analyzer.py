@@ -15,63 +15,70 @@ from web3 import Web3
 from typing import Optional, Dict, Any
 from dotenv import load_dotenv
 
-# Load environment variables from .env.local file (two directories up from this script)
-load_dotenv(os.path.join(os.path.dirname(__file__), ".env.local"))
+# Load environment variables from .env file (two directories up from this script)
+load_dotenv(os.path.join(os.path.dirname(__file__), ".env"))
 
 # Configuration - Select network and contract to analyze
-NETWORK = os.getenv("NETWORK")
+CHAIN_ID = os.getenv("CHAIN_ID")
 TOKEN_ADDRESS = os.getenv("TOKEN_ADDRESS")
 LAYER_NAME = os.getenv("LAYER_NAME")
 WRAPPER_NAME = os.getenv("WRAPPER_NAME")
-
-# Network configurations
-NETWORK_CONFIGS = {
-    "ethereum": {
-        "rpc_url": os.getenv("ETHEREUM_RPC_URL"),
-        "api_key": os.getenv("ETHEREUM_API_KEY"),
-        "api_base": "https://api.etherscan.io/api",
-    },
-    "bob": {
-        "rpc_url": os.getenv("BOB_RPC_URL"),
-        "api_key": os.getenv("BOB_API_KEY"),
-        "api_base": "https://explorer.gobob.xyz/api"
-    },
-}
-
-# Get current network config
-current_config = NETWORK_CONFIGS.get(NETWORK)
-if not current_config:
-    raise ValueError(f"Network '{NETWORK}' not supported. Available networks: {list(NETWORK_CONFIGS.keys())}")
-
-# Extract current network configuration
-ALCHEMY_RPC_URL = current_config["rpc_url"]
-ETHERSCAN_API_KEY = current_config["api_key"] 
-API_BASE_URL = current_config["api_base"]
-
-# Validate required environment variables for current network
-if not ALCHEMY_RPC_URL:
-    raise ValueError(f"{NETWORK.upper()}_RPC_URL environment variable is required")
-if not ETHERSCAN_API_KEY:
-    raise ValueError(f"{NETWORK.upper()}_API_KEY environment variable is required")
+ETHERSCAN_V2_KEY = os.getenv("ETHERSCAN_V2_KEY")
+GETH_RPC_URL = os.getenv("GETH_RPC_URL")
 
 # EIP-1967 storage slots
 EIP1967_IMPLEMENTATION_SLOT = "0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc"
 EIP1967_ADMIN_SLOT = "0xb53127684a568b3173ae13b9f8a6016e243e63b6e8ee1178d6a717850b5d6103"
 
 class TokenAnalyzer:
-    def __init__(self, rpc_url: str, etherscan_api_key: str):
+    base_url = "https://api.etherscan.io/v2/api"
+
+    def __init__(self, chain_id: int, rpc_url: str, etherscan_api_key: str):
         self.w3 = Web3(Web3.HTTPProvider(rpc_url))
         self.etherscan_api_key = etherscan_api_key
-        
+        self.chain_id = chain_id
+
         if not self.w3.is_connected():
             raise ConnectionError("Failed to connect to Ethereum network")
-    
+
     def get_contract_abi(self, address: str) -> Optional[Dict[str, Any]]:
-        """
-        Fetch contract ABI from Etherscan API
-        """
-        url = API_BASE_URL
         params = {
+            "chainid": self.chain_id,
+            "module": "contract",
+            "action": "getabi",
+            "address": address,
+            "apikey": self.etherscan_api_key
+        }
+
+        try:
+            response = requests.get(self.base_url, params=params, timeout=10)
+            response.raise_for_status()
+            data = response.json()
+
+            if data["status"] != "1":
+                print(f"Etherscan API error: {data.get('message', 'Unknown error')}")
+                return None
+
+            abi_string = data["result"]
+
+            if abi_string == "Contract source code not verified":
+                return {"verified": False, "abi": None}
+
+            try:
+                abi = json.loads(abi_string)
+                return {"verified": True, "abi": abi}
+            except json.JSONDecodeError:
+                print("Failed to parse ABI JSON")
+                return {"verified": False, "abi": None}
+
+        except requests.RequestException as e:
+            print(f"Failed to fetch ABI from Etherscan: {e}")
+            return None
+
+
+    def get_contract_sources(self, address: str) -> Optional[Dict[str, Any]]:
+        params = {
+            "chainid": self.chain_id,
             "module": "contract",
             "action": "getsourcecode",
             "address": address,
@@ -79,7 +86,7 @@ class TokenAnalyzer:
         }
         
         try:
-            response = requests.get(url, params=params, timeout=10)
+            response = requests.get(self.base_url, params=params, timeout=10)
             response.raise_for_status()
             data = response.json()
             
@@ -905,7 +912,7 @@ def main():
     
     try:
         # Initialize analyzer
-        analyzer = TokenAnalyzer(ALCHEMY_RPC_URL, ETHERSCAN_API_KEY)
+        analyzer = TokenAnalyzer(CHAIN_ID, GETH_RPC_URL, ETHERSCAN_V2_KEY)
         
         # Analyze the contract
         analysis = analyzer.analyze_contract(TOKEN_ADDRESS)

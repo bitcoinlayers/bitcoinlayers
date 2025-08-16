@@ -34,11 +34,16 @@ source venv/bin/activate && pip install -r requirements.txt
 
 Before running the script, you need to set up your API credentials in the environment file:
 
-1. **Create/Update `.env.local`** in the project root (two directories up from this tool):
+1. **Create/Update `.env`** in the project root (two directories up from this tool):
+
 ```bash
-# Add these lines to your .env.local file
-ALCHEMY_RPC_URL=https://eth-mainnet.g.alchemy.com/v2/YOUR_ALCHEMY_API_KEY
-ETHERSCAN_API_KEY=YOUR_ETHERSCAN_API_KEY
+# Add these lines to your .env file
+CHAIN_ID = 1  # https://docs.etherscan.io/etherscan-v2/supported-chains
+TOKEN_ADDRESS = "0x18084fbA666a33d37592fA2633fD49a74DD93a88"
+LAYER_NAME = "Ethereum"
+WRAPPER_NAME = "Threshold Network tBTC"
+GETH_RPC_URL=https://sepolia.infura.io/v3/<INFURA_API_TOKEN>
+ETHERSCAN_V2_KEY=
 ```
 
 2. **Update the token address** in `token_analyzer.py`:
@@ -47,7 +52,7 @@ ETHERSCAN_API_KEY=YOUR_ETHERSCAN_API_KEY
 TOKEN_ADDRESS = "0xYOUR_TOKEN_CONTRACT_ADDRESS"
 ```
 
-**Note:** The API credentials are now securely stored in `.env.local` and automatically loaded by the script. This keeps sensitive information out of the codebase.
+**Note:** The API credentials are now securely stored in `.env` and automatically loaded by the script. This keeps sensitive information out of the codebase.
 
 ### 🔑 Getting API Keys
 

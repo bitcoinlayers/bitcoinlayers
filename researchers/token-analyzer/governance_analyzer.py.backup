@@ -17,8 +17,8 @@ from web3 import Web3
 from typing import Optional, Dict, Any
 from dotenv import load_dotenv
 
-# Load environment variables from .env.local file (two directories up from this script)
-load_dotenv(os.path.join(os.path.dirname(__file__), "..", "..", ".env.local"))
+# Load environment variables from .env file (two directories up from this script)
+load_dotenv(os.path.join(os.path.dirname(__file__), "..", "..", ".env"))
 
 # Configuration - Load sensitive values from environment variables
 ALCHEMY_RPC_URL = os.getenv("ALCHEMY_RPC_URL")

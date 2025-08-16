@@ -85,8 +85,8 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
 
 # 2. Set up environment variables
-cp .env.local.example .env.local
-# Edit .env.local.local with your API keys
+cp .env.example .env
+# Edit .env with your API keys
 ```
 
 ### 🔍 **Analyze a Token Contract**
