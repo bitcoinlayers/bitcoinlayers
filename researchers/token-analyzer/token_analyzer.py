@@ -41,75 +41,64 @@ class TokenAnalyzer:
         if not self.w3.is_connected():
             raise ConnectionError("Failed to connect to Ethereum network")
 
+    def request_etherscan(self, module: str, action: str, address: str, **kwargs) -> Optional[Dict[str, Any]]:
+        """Generic method to make Etherscan API requests"""
+        params = {
+            "chainid": self.chain_id,
+            "module": module,
+            "action": action,
+            "address": address,
+            "apikey": self.etherscan_api_key,
+            **kwargs
+        }
+
+        try:
+            response = requests.get(self.base_url, params=params, timeout=10)
+            response.raise_for_status()
+            data = response.json()
+
+            if data["status"] != "1":
+                print(f"Etherscan API error: {data.get('message', 'Unknown error')}")
+                return None
+
+            return data["result"]
+
+        except requests.RequestException as e:
+            print(f"Failed to fetch data from Etherscan: {e}")
+            return None
+
+    def _parse_abi_result(self, abi_string: Any) -> Optional[list]:
+        try:
+            abi = json.loads(abi_string)
+            return abi
+        except json.JSONDecodeError:
+            print("Failed to parse ABI JSON")
+            return None
+
+    def _parse_contract_result(self, result: Any) -> Optional[Dict[str, Any]]:
+        """Helper method to parse ABI data from API results"""
+        if result is None:
+            return None
+
+        abi_string = result if isinstance(result, str) else result.get("ABI")
+
+        if abi_string == "Contract source code not verified":
+            return {"verified": False, "abi": None}
+        else:
+            return {"verified": True, "abi": self._parse_abi_result(abi_string)}
+
     def get_contract_abi(self, address: str) -> Optional[Dict[str, Any]]:
-        params = {
-            "chainid": self.chain_id,
-            "module": "contract",
-            "action": "getabi",
-            "address": address,
-            "apikey": self.etherscan_api_key
-        }
+        """Get contract ABI from Etherscan"""
+        result = self.request_etherscan("contract", "getabi", address)
+        return self._parse_abi_result(result)
 
-        try:
-            response = requests.get(self.base_url, params=params, timeout=10)
-            response.raise_for_status()
-            data = response.json()
-
-            if data["status"] != "1":
-                print(f"Etherscan API error: {data.get('message', 'Unknown error')}")
-                return None
-
-            abi_string = data["result"]
-
-            if abi_string == "Contract source code not verified":
-                return {"verified": False, "abi": None}
-
-            try:
-                abi = json.loads(abi_string)
-                return {"verified": True, "abi": abi}
-            except json.JSONDecodeError:
-                print("Failed to parse ABI JSON")
-                return {"verified": False, "abi": None}
-
-        except requests.RequestException as e:
-            print(f"Failed to fetch ABI from Etherscan: {e}")
-            return None
-
-
-    def get_contract_sources(self, address: str) -> Optional[Dict[str, Any]]:
-        params = {
-            "chainid": self.chain_id,
-            "module": "contract",
-            "action": "getsourcecode",
-            "address": address,
-            "apikey": self.etherscan_api_key
-        }
-        
-        try:
-            response = requests.get(self.base_url, params=params, timeout=10)
-            response.raise_for_status()
-            data = response.json()
-            
-            if data["status"] != "1":
-                print(f"Etherscan API error: {data.get('message', 'Unknown error')}")
-                return None
-            
-            result = data["result"][0]
-            abi_string = result.get("ABI")
-            
-            if abi_string == "Contract source code not verified":
-                return {"verified": False, "abi": None}
-            
-            try:
-                abi = json.loads(abi_string)
-                return {"verified": True, "abi": abi}
-            except json.JSONDecodeError:
-                print("Failed to parse ABI JSON")
-                return {"verified": False, "abi": None}
-                
-        except requests.RequestException as e:
-            print(f"Failed to fetch ABI from Etherscan: {e}")
-            return None
+    def get_verification_and_abi(self, address: str) -> Optional[Dict[str, Any]]:
+        """Get contract source code from Etherscan"""
+        result = self.request_etherscan("contract", "getsourcecode", address)
+        if len(result) == 1:
+            return self._parse_contract_result(result.pop())
+        else:
+            raise ValueError("Too many contracts source items in response. Expecting 1")
     
     def check_proxy_pattern(self, address: str) -> Dict[str, Any]:
         """
@@ -298,7 +287,7 @@ class TokenAnalyzer:
             
             # Try to get ABI and analyze roles (only for important contracts)
             if not governance_info["is_gnosis_safe"]:  # Skip role analysis for Gnosis Safes
-                abi_data = self.get_contract_abi(address)
+                abi_data = self.get_verification_and_abi(address)
                 if abi_data and abi_data["verified"] and abi_data["abi"]:
                     roles = self.discover_contract_roles(address, abi_data["abi"])
                     governance_info["roles"] = roles
@@ -378,15 +367,15 @@ class TokenAnalyzer:
         
         # Step 1: Get ABI from Etherscan
         print("1. Fetching contract ABI from Etherscan...")
-        abi_data = self.get_contract_abi(address)
+        check_abi_data = self.get_verification_and_abi(address)
         
-        if abi_data is None:
+        if check_abi_data is None:
             print("   ❌ Failed to fetch contract data")
             return analysis
+
+        analysis["verified"] = check_abi_data["verified"]
         
-        analysis["verified"] = abi_data["verified"]
-        
-        if not abi_data["verified"]:
+        if not check_abi_data["verified"]:
             print("   ❌ Contract is not verified on Etherscan")
         else:
             print("   ✅ Contract is verified on Etherscan")
@@ -407,14 +396,14 @@ class TokenAnalyzer:
         
         # Step 3: Discover all roles and addresses (only if verified)
         print("\n3. Discovering contract roles and addresses...")
-        if abi_data["verified"] and abi_data["abi"]:
+        if check_abi_data["verified"] and check_abi_data["abi"]:
             # If this is a proxy, we need the implementation's ABI to see all functions
-            abi_to_use = abi_data["abi"]
+            abi_to_use = check_abi_data["abi"]
             address_to_call = address
             
             if analysis["is_proxy"] and analysis["implementation_address"]:
                 print("   🔄 Proxy detected - fetching implementation ABI for complete analysis...")
-                impl_abi_data = self.get_contract_abi(analysis["implementation_address"])
+                impl_abi_data = self.get_verification_and_abi(analysis["implementation_address"])
                 
                 if impl_abi_data and impl_abi_data["verified"] and impl_abi_data["abi"]:
                     print("   ✅ Implementation contract is verified - using implementation ABI")
@@ -553,7 +542,7 @@ class TokenAnalyzer:
                 # Quick analysis of the bridge contract
                 try:
                     # Check if bridge is verified
-                    bridge_abi_data = self.get_contract_abi(bridge_addr)
+                    bridge_abi_data = self.get_verification_and_abi(bridge_addr)
                     if bridge_abi_data and bridge_abi_data['verified']:
                         print(f"   ✅ Bridge contract is verified on Etherscan")
                         
