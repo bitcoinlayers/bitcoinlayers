@@ -40,7 +40,7 @@ export async function GET(
     console.log('API: Received request for:', { wrapperSlug, contractAddress, networkName });
     
     // Try new structure first, then fall back to old structure
-    let analysisPath = await getAnalysisPath(wrapperSlug, contractAddress, networkName);
+    let analysisPath = await getAnalysisPath(wrapperSlug, contractAddress, networkName || undefined);
     console.log('API: Attempting to read file at:', analysisPath);
     
     try {
