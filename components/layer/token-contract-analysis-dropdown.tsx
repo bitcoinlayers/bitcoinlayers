@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { ChevronDown, ExternalLinkIcon, Shield, Users, Key, Building, FileText } from "lucide-react";
+import { useState, useEffect, useRef } from "react";
+import { ChevronDown, ExternalLinkIcon, Shield, Users, Key, Building, FileText, Settings, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
     Collapsible,
@@ -13,6 +13,9 @@ interface Role {
     address: string;
     category: string;
     type: string;
+    summary?: string;
+    title?: string;
+    network?: string;
 }
 
 interface GovernanceDetails {
@@ -23,6 +26,7 @@ interface GovernanceDetails {
 }
 
 interface GovernanceAnalysis {
+    summary?: string;
     address: string;
     type: string;
     is_gnosis_safe: boolean;
@@ -31,6 +35,9 @@ interface GovernanceAnalysis {
     governance_details: GovernanceDetails;
     implementation?: string;
     admin?: string;
+    function_results?: Record<string, any>;
+    discovered_addresses?: string[];
+    network?: string;
 }
 
 interface CustomSummary {
@@ -43,6 +50,9 @@ interface CustomSummary {
 
 interface ContractAnalysis {
     address: string;
+    intro?: string;
+    key_findings?: string[];
+    summary?: string;
     verified: boolean;
     is_proxy: boolean;
     implementation_address?: string;
@@ -54,11 +64,24 @@ interface ContractAnalysis {
     custom_summary?: CustomSummary;
 }
 
-interface TokenContractAnalysisProps {
-    contractAddress: string;
+interface TokenContract {
+    address: string;
+    network: string;
     wrapperName?: string;
+    explorer?: string; // Database explorer URL
+    token_slug?: string;
+    network_slug?: string;
+    token_name?: string;
+}
+
+interface TokenContractAnalysisProps {
+    contracts?: TokenContract[]; // Array of all contracts
+    wrapperName?: string;
+    autoExpand?: boolean;
+    isLayer?: boolean; // Determines dropdown behavior: true = show wrappers, false = show networks
+    // Legacy props for backward compatibility
+    contractAddress?: string;
     networkName?: string;
-    autoExpand?: boolean; // Auto-expand the analysis when component loads
 }
 
 const RoleIcon = ({ category }: { category: string }) => {
@@ -79,91 +102,32 @@ const truncateAddress = (address: string) => {
     return `${address.slice(0, 6)}...${address.slice(-4)}`;
 };
 
-// Generate a summary from contract analysis data
-const generateContractSummary = (data: ContractAnalysis) => {
-    console.log('=== GENERATING CONTRACT SUMMARY ===');
-    console.log('Full contract data:', JSON.stringify(data, null, 2));
-    console.log('Custom summary exists:', !!data.custom_summary);
-    console.log('Custom summary data:', data.custom_summary);
-    
-    if (data.custom_summary) {
-        console.log('Using custom summary:', data.custom_summary);
-        return {
-            title: data.custom_summary.title || `${data.wrapper_name} Smart Contract Analysis`,
-            description: data.custom_summary.description || `Analysis of the ${data.wrapper_name} token contract deployed on ${data.layer_name}.`,
-            keyFindings: data.custom_summary.key_findings || [],
-            author: data.custom_summary.author || "Bitcoin Layers Research",
-            date: data.custom_summary.date || new Date().toLocaleDateString('en-US', { 
-                year: 'numeric', 
-                month: 'long', 
-                day: 'numeric' 
-            })
-        };
-    }
-
-    // Fallback to auto-generated summary if no custom summary exists
-    const findings: string[] = [];
-    
-    // Verification status
-    if (data.verified) {
-        findings.push("Contract is verified and source code is publicly available");
-    } else {
-        findings.push("⚠️ Contract is not verified - source code unavailable");
-    }
-    
-    // Proxy pattern analysis
-    if (data.is_proxy) {
-        findings.push(`Uses proxy pattern with upgradeable implementation`);
-        if (data.implementation_address) {
-            findings.push(`Implementation at ${truncateAddress(data.implementation_address)}`);
-        }
-    } else {
-        findings.push("Direct implementation (non-upgradeable)");
-    }
-    
-    // Role-based access control analysis
-    const roleCount = Object.keys(data.roles || {}).length;
-    if (roleCount > 0) {
-        const adminRoles = Object.values(data.roles).filter(role => 
-            role.category === 'Owner' || role.category === 'Admin'
-        ).length;
-        const operatorRoles = Object.values(data.roles).filter(role => 
-            role.category === 'Operator'
-        ).length;
-        
-        if (adminRoles > 0) {
-            findings.push(`${adminRoles} admin-level role(s) with elevated privileges`);
-        }
-        if (operatorRoles > 0) {
-            findings.push(`${operatorRoles} operational role(s) for day-to-day functions`);
-        }
-    }
-    
-    // Governance analysis
-    const governance = data.governance_analysis;
-    if (governance && Object.keys(governance).length > 0) {
-        const multisigRoles = Object.values(governance).filter(gov => 
-            gov.governance_details?.multisig_type
-        );
-        if (multisigRoles.length > 0) {
-            findings.push(`${multisigRoles.length} role(s) use multi-signature governance`);
-        }
-    }
-    
-    return {
-        title: `${data.wrapper_name} Smart Contract Analysis`,
-        description: `Analysis of the ${data.wrapper_name} token contract deployed on ${data.layer_name}. This contract ${data.is_proxy ? 'uses a proxy pattern for upgradeability' : 'is directly implemented'} and ${data.verified ? 'has verified source code' : 'lacks source code verification'}.`,
-        keyFindings: findings,
-        author: "Bitcoin Layers Research",
-        date: new Date().toLocaleDateString('en-US', { 
-            year: 'numeric', 
-            month: 'long', 
-            day: 'numeric' 
-        })
+// Function to get correct explorer URL using database data and custom mappings
+const getCorrectExplorerUrl = (contract: TokenContract): string => {
+    // Custom URLs mapping from original AddressItem component
+    const customUrls: { [key: string]: string } = {
+        "Rootstock-RBTC_Rootstock": "https://explorer.rootstock.io/",
+        "xLink-aBTC_Stacks":
+            "https://explorer.hiro.so/token/SP2XD7417HGPRTREMKF748VNEQPDRR0RMANB7X1NK.token-abtc?chain=mainnet",
+        "Alex-xBTC_Stacks":
+            "https://explorer.hiro.so/token/SP3DX3H4FEYZJZ586MFBS25ZW3HZDMEW92260R2PR.Wrapped-Bitcoin?chain=mainnet",
+        "Stacks-sBTC_Stacks":
+            "https://explorer.hiro.so/token/SM3VDXK3WZZSA84XXFKAFAF15NNZX32CTSG82JFQ4.sbtc-token?chain=mainnet",
     };
+
+    // Use custom URL if available, otherwise use database explorer + address
+    const customKey = `${contract.token_slug}_${contract.network_slug}`;
+    return customUrls[customKey] ?? `${contract.explorer}${contract.address}`;
 };
 
+
+
 // Hardcoded mapping of contract addresses + network to their analysis paths
+const formatContractAddress = (address: string): string => {
+    if (address.length < 6) return address;
+    return `${address.slice(0, 2)}...${address.slice(-3)}`;
+};
+
 const getAnalysisMapping = (contractAddress: string, networkName?: string): string | null => {
     // Create a key combining address and network
     const addressKey = contractAddress.toLowerCase();
@@ -184,74 +148,86 @@ const getAnalysisMapping = (contractAddress: string, networkName?: string): stri
 };
 
 export default function TokenContractAnalysisDropdown({ 
-    contractAddress, 
+    contracts = [],
     wrapperName,
-    networkName,
-    autoExpand = false
+    autoExpand = false,
+    isLayer = false,
+    // Legacy props
+    contractAddress,
+    networkName
 }: TokenContractAnalysisProps) {
-    const [isOpen, setIsOpen] = useState(autoExpand);
+    // Handle backward compatibility: if old props are used, convert to new format
+    const actualContracts = contracts.length > 0 
+        ? contracts 
+        : (contractAddress && networkName) 
+            ? [{ address: contractAddress, network: networkName, wrapperName }]
+            : [];
+    // Set first contract as default selection
+    const [selectedContract, setSelectedContract] = useState<TokenContract | null>(null);
+    const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(false);
     const [analysisData, setAnalysisData] = useState<ContractAnalysis | null>(null);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
-    const [analysisExists, setAnalysisExists] = useState<boolean | null>(null);
+    const dropdownRef = useRef<HTMLDivElement>(null);
 
-    // Check if analysis exists when component mounts
+    // Available contracts are just the passed contracts
+    const availableContracts = actualContracts;
+
+    // Set default selected contract when contracts change
     useEffect(() => {
-        const checkAnalysisExists = () => {
-            if (!contractAddress) {
-                setAnalysisExists(false);
-                return;
+        if (actualContracts.length > 0 && !selectedContract) {
+            setSelectedContract(actualContracts[0]);
+        }
+    }, [actualContracts, selectedContract]);
+
+    // Handle dropdown interactions
+    const toggleDropdown = () => {
+        setIsDropdownOpen((prev) => !prev);
+    };
+
+    const handleSelectContract = (contract: TokenContract) => {
+        setSelectedContract(contract);
+        setIsDropdownOpen(false);
+    };
+
+    // Click outside handler
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+            if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+                setIsDropdownOpen(false);
             }
-            
-            // Debug logging
-            console.log('TokenContractAnalysisDropdown - checking analysis for:', {
-                contractAddress,
-                wrapperName,
-                networkName
-            });
-            
-            const wrapperSlug = getAnalysisMapping(contractAddress, networkName);
-            
-            console.log('Analysis lookup result:', {
-                contractAddress: contractAddress.toLowerCase(),
-                networkName: networkName?.toLowerCase(),
-                combinedKey: `${contractAddress.toLowerCase()}:${networkName?.toLowerCase() || ''}`,
-                wrapperSlug,
-                hasMapping: !!wrapperSlug
-            });
-            
-            if (!wrapperSlug) {
-                console.log('No analysis mapping found for address:', contractAddress.toLowerCase());
-                setAnalysisExists(false);
-                return;
-            }
-            
-            // If we have a mapping, the analysis should exist
-            console.log('Analysis mapping found - setting exists to true');
-            setAnalysisExists(true);
         };
 
-        checkAnalysisExists();
-    }, [contractAddress, networkName || '']);
+        if (isDropdownOpen) {
+            document.addEventListener('mousedown', handleClickOutside);
+        }
+
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, [isDropdownOpen]);
+
+    // Component should render if we have any contracts
+    const shouldRender = actualContracts.length > 0;
 
     useEffect(() => {
         const fetchAnalysis = async () => {
-            if (!isOpen || !contractAddress) return;
+            if (!selectedContract) return;
             
             setLoading(true);
             setError(null);
             
             try {
-                const wrapperSlug = getAnalysisMapping(contractAddress, networkName);
+                const wrapperSlug = getAnalysisMapping(selectedContract.address, selectedContract.network);
                 
                 if (!wrapperSlug) {
                     setError("No analysis available for this contract");
                     return;
                 }
                 
-                const normalizedAddress = contractAddress.toLowerCase();
-                const analysisPath = `/api/token-analysis/${wrapperSlug}/${normalizedAddress}`;
-                console.log('Fetching analysis from:', analysisPath);
+                const normalizedAddress = selectedContract.address.toLowerCase();
+                const networkParam = selectedContract.network ? `?network=${encodeURIComponent(selectedContract.network)}` : '';
+                const analysisPath = `/api/token-analysis/${wrapperSlug}/${normalizedAddress}${networkParam}`;
                 
                 const response = await fetch(analysisPath);
                 
@@ -274,11 +250,28 @@ export default function TokenContractAnalysisDropdown({
         };
 
         fetchAnalysis();
-    }, [isOpen, contractAddress, networkName || '']);
+    }, [selectedContract]);
 
-    const toggleDropdown = () => {
-        setIsOpen(!isOpen);
-    };
+    // Chevron down icon component
+    const ChevronDownIcon = (
+        <svg 
+            xmlns="http://www.w3.org/2000/svg" 
+            width="17" 
+            height="17" 
+            viewBox="0 0 17 17" 
+            fill="none"
+            className="w-4 h-4 opacity-50"
+        >
+            <g opacity="0.5">
+                <path 
+                    d="M4.31226 6.6875L8.31226 10.6875L12.3123 6.6875" 
+                    stroke="currentColor" 
+                    strokeWidth="1.33" 
+                    strokeLinecap="round"
+                />
+            </g>
+        </svg>
+    );
 
     const renderRoles = (roles: Record<string, Role>) => {
         const rolesByCategory = Object.entries(roles).reduce((acc, [functionName, role]) => {
@@ -288,40 +281,84 @@ export default function TokenContractAnalysisDropdown({
             return acc;
         }, {} as Record<string, Array<{functionName: string} & Role>>);
 
-        return Object.entries(rolesByCategory).map(([category, categoryRoles]) => (
-            <div key={category} className="mb-4">
-                <div className="flex items-center gap-2 mb-2">
-                    <RoleIcon category={category} />
-                    <h4 className="font-medium text-sm">{category} Roles</h4>
-                </div>
-                <div className="space-y-2">
-                    {categoryRoles.map(({ functionName, address, type }) => (
-                        <div key={functionName} className="flex items-center justify-between text-xs bg-muted/30 rounded p-2">
-                            <div>
-                                <span className="font-mono text-muted-foreground">{functionName}</span>
-                                <span className="ml-2 text-xs bg-blue-100 text-blue-800 px-1 rounded">
-                                    {type}
-                                </span>
+        return Object.entries(rolesByCategory).map(([category, categoryRoles]) => {
+            // Check if any role in this category has a summary
+            const categorySummary = categoryRoles.find(role => role.summary)?.summary;
+            
+            return (
+                <div key={category} className="mb-6">
+                    {/* Summary Section for Role Category */}
+                    {categorySummary && (
+                        <div className="mb-4 p-3 bg-muted/30 rounded-lg border border-border">
+                            <div className="flex items-center gap-2 mb-2">
+                                <FileText className="h-4 w-4 text-muted-foreground" />
+                                <h5 className="font-medium text-sm text-foreground">Summary</h5>
                             </div>
-                            <a
-                                href={`https://etherscan.io/address/${address}`}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="flex items-center gap-1 text-blue-600 hover:underline"
-                            >
-                                {truncateAddress(address)}
-                                <ExternalLinkIcon className="h-3 w-3" />
-                            </a>
+                            <p className="text-sm text-muted-foreground leading-relaxed">
+                                {categorySummary}
+                            </p>
                         </div>
-                    ))}
+                    )}
+                    
+                    {/* Direct Role Display */}
+                    <div className="space-y-4">
+                        {categoryRoles.map(({ functionName, address, type, title, summary, network }) => (
+                            <div key={functionName} className="mb-4">
+                                <div className="flex items-center gap-2 mb-2">
+                                    <RoleIcon category={category} />
+                                    <h4 className="font-medium text-sm capitalize">{title || functionName}</h4>
+                                    {type === 'Contract' && (
+                                        <span className="text-xs bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-2 py-1 rounded">
+                                            {type}
+                                        </span>
+                                    )}
+                                    {type === 'EOA' && (
+                                        <span className="text-xs bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded">
+                                            {type}
+                                        </span>
+                                    )}
+                                </div>
+                                
+                                {/* Contract Address */}
+                                <div className="mb-3">
+                                    <a
+                                        href={`${network?.toLowerCase() === 'ethereum' ? 'https://etherscan.io' : 'https://explorer.bob.xyz'}/address/${address}`}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="flex items-center gap-1 text-blue-600 hover:underline font-mono text-xs"
+                                    >
+                                        {address}
+                                        <ExternalLinkIcon className="h-3 w-3" />
+                                    </a>
+                                </div>
+                                
+                                {/* Summary Section */}
+                                {summary && (
+                                    <div className="mb-4 p-3 bg-muted/30 rounded-lg border border-border">
+                                        <div className="flex items-center gap-2 mb-2">
+                                            <FileText className="h-4 w-4 text-muted-foreground" />
+                                            <h5 className="font-medium text-sm text-foreground">Summary</h5>
+                                        </div>
+                                        <p className="text-sm text-muted-foreground leading-relaxed">
+                                            {summary}
+                                        </p>
+                                    </div>
+                                )}
+                            </div>
+                        ))}
+                    </div>
                 </div>
-            </div>
-        ));
+            );
+        });
     };
 
     const renderGovernanceAnalysis = (governance: Record<string, GovernanceAnalysis>) => {
         return Object.entries(governance).map(([roleName, analysis]) => {
-            if (!analysis.governance_details || Object.keys(analysis.governance_details).length === 0) {
+            // Show governance analysis if we have governance_details or function_results
+            const hasGovernanceDetails = analysis.governance_details && Object.keys(analysis.governance_details).length > 0;
+            const hasFunctionResults = analysis.function_results && Object.keys(analysis.function_results).length > 0;
+            
+            if (!hasGovernanceDetails && !hasFunctionResults) {
                 return null;
             }
 
@@ -341,6 +378,32 @@ export default function TokenContractAnalysisDropdown({
                             </span>
                         )}
                     </div>
+                    
+                    {/* Contract Address */}
+                    <div className="mb-3">
+                        <a
+                            href={`${analysis.network?.toLowerCase() === 'ethereum' ? 'https://etherscan.io' : 'https://explorer.bob.xyz'}/address/${analysis.address}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-1 text-blue-600 hover:underline font-mono text-xs"
+                        >
+                            {analysis.address}
+                            <ExternalLinkIcon className="h-3 w-3" />
+                        </a>
+                    </div>
+                    
+                    {/* Summary Section */}
+                    {analysis.summary && (
+                        <div className="mb-4 p-3 bg-muted/30 rounded-lg border border-border">
+                            <div className="flex items-center gap-2 mb-2">
+                                <FileText className="h-4 w-4 text-muted-foreground" />
+                                <h5 className="font-medium text-sm text-foreground">Summary</h5>
+                            </div>
+                            <p className="text-sm text-muted-foreground leading-relaxed">
+                                {analysis.summary}
+                            </p>
+                        </div>
+                    )}
                     
                     {analysis.governance_details.multisig_type && (
                         <div className="text-sm mb-2">
@@ -371,32 +434,138 @@ export default function TokenContractAnalysisDropdown({
                             </div>
                         </div>
                     )}
+                    
+                    {/* Function Results */}
+                    {analysis.function_results && Object.keys(analysis.function_results).length > 0 && (
+                        <div className="mb-4">
+                            <Collapsible>
+                                <CollapsibleTrigger asChild>
+                                    <Button 
+                                        variant="ghost" 
+                                        size="sm" 
+                                        className="w-full justify-between p-2 h-auto hover:bg-muted/50"
+                                    >
+                                        <div className="flex items-center gap-2">
+                                            <Settings className="h-4 w-4" />
+                                            <span className="font-medium text-sm">Read As Proxy ({Object.keys(analysis.function_results).length})</span>
+                                        </div>
+                                        <ChevronDown className="h-4 w-4 transition-transform group-data-[state=open]:rotate-180" />
+                                    </Button>
+                                </CollapsibleTrigger>
+                                <CollapsibleContent className="pt-2">
+                                    <div className="space-y-2">
+                                        {Object.entries(analysis.function_results).map(([functionName, result]) => (
+                                            <div key={functionName} className="flex items-center justify-between text-xs bg-muted/30 rounded p-2">
+                                                <div>
+                                                    <span className="font-mono text-muted-foreground">{functionName}</span>
+                                                    <span className="ml-2 text-xs bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-1 rounded">
+                                                        Function
+                                                    </span>
+                                                </div>
+                                                {typeof result === 'string' && result.startsWith('0x') ? (
+                                                    <a
+                                                        href={`${analysis.network?.toLowerCase() === 'ethereum' ? 'https://etherscan.io' : 'https://explorer.bob.xyz'}/address/${result}`}
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        className="flex items-center gap-1 text-blue-600 hover:underline"
+                                                    >
+                                                        {truncateAddress(result)}
+                                                        <ExternalLinkIcon className="h-3 w-3" />
+                                                    </a>
+                                                ) : (
+                                                    <span className="font-mono text-muted-foreground">
+                                                        {String(result)}
+                                                    </span>
+                                                )}
+                                            </div>
+                                        ))}
+                                    </div>
+                                </CollapsibleContent>
+                            </Collapsible>
+                        </div>
+                    )}
+                    
+
                 </div>
             );
         }).filter(Boolean);
     };
 
-    // Only render if analysis exists for this specific contract
-    if (analysisExists === false) {
+    // Only render if we have contracts
+    if (!shouldRender) {
         return null;
     }
 
     return (
-        <Collapsible open={isOpen} onOpenChange={setIsOpen} className="w-full">
-            <CollapsibleTrigger asChild>
-                <Button 
-                    variant="ghost" 
-                    size="sm" 
-                    className="w-full justify-between mt-2 h-8 text-xs text-muted-foreground hover:text-foreground"
-                    onClick={toggleDropdown}
-                >
-                    <span>Contract Analysis</span>
-                    <ChevronDown className={`h-3 w-3 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
-                </Button>
-            </CollapsibleTrigger>
-            
-            <CollapsibleContent className="mt-2">
-                <div className="border rounded-lg p-3 bg-muted/10">
+        <div className="flex flex-col justify-start items-start gap-2">
+            {/* Implementation - sub header */}
+            <div className="body_subsection !text-muted-foreground">
+                Implementation
+            </div>
+
+            {/* Network dropdown - third header */}
+            {availableContracts.length > 0 && (
+                <div className="relative" ref={dropdownRef}>
+                    <button
+                        onClick={toggleDropdown}
+                        className="flex items-center gap-2 px-4 py-2 border border-border rounded-lg bg-background hover:bg-muted/50 transition-colors"
+                    >
+                        {selectedContract && (
+                            <>
+                                {/* Logo */}
+                                <div className="w-5 h-5 flex-shrink-0">
+                                    <img 
+                                        src={`/logos/${isLayer ? (selectedContract.token_slug || selectedContract.wrapperName?.toLowerCase()) : (selectedContract.network_slug || selectedContract.network.toLowerCase())}.png`}
+                                        alt={isLayer ? (selectedContract.token_name || selectedContract.wrapperName) : selectedContract.network} 
+                                        className="w-full h-full"
+                                    />
+                                </div>
+                                
+                                {/* Name */}
+                                <span className="font-medium">
+                                    {isLayer ? (selectedContract.token_name || selectedContract.wrapperName) : selectedContract.network}
+                                </span>
+                                
+                                {/* Contract Address */}
+                                <span className="font-mono text-sm text-muted-foreground">
+                                    {formatContractAddress(selectedContract.address)}
+                                </span>
+                            </>
+                        )}
+                        
+                        {!selectedContract && (
+                            <span>{isLayer ? "Select Wrapper" : "Select Network"}</span>
+                        )}
+                        
+                        {ChevronDownIcon}
+                    </button>
+
+                    {/* Dropdown Menu */}
+                    {isDropdownOpen && (
+                        <div className="absolute top-full left-0 mt-2 w-48 bg-background border border-border rounded-lg shadow-lg z-50">
+                            <div className="py-1">
+                                {availableContracts.map((contract, index) => (
+                                    <button
+                                        key={index}
+                                        onClick={() => handleSelectContract(contract)}
+                                        className="block w-full text-left px-4 py-2 text-sm text-foreground hover:bg-muted/50 transition-colors capitalize"
+                                    >
+                                        {isLayer ? (contract.token_name || contract.wrapperName) : contract.network}
+                                    </button>
+                                ))}
+                            </div>
+                        </div>
+                    )}
+                </div>
+            )}
+
+            {/* Content section */}
+            <div className="mt-4 w-full">
+                {selectedContract && (
+                    <div>
+
+                        {/* Analysis Content */}
+                        <div>
                     {loading && (
                         <div className="text-center text-sm text-muted-foreground py-4">
                             Loading analysis...
@@ -410,101 +579,60 @@ export default function TokenContractAnalysisDropdown({
                     )}
                     
                     {analysisData && !loading && !error && (
-                        <div className="space-y-4">
-                            {/* Contract Analysis Summary */}
-                            {(() => {
-                                console.log('About to generate summary with analysisData:', analysisData);
-                                const summary = generateContractSummary(analysisData);
-                                console.log('Generated summary:', summary);
-                                return (
-                                    <div className="bg-gradient-to-r from-blue-50 to-green-50 dark:from-blue-950/20 dark:to-green-950/20 rounded-lg p-4 border border-blue-200 dark:border-blue-800">
-                                        <h5 className="font-medium text-foreground mb-3 flex items-center gap-2">
-                                            <FileText className="h-4 w-4 text-blue-600" />
-                                            {summary.title}
-                                        </h5>
-                                        <div className="space-y-3 text-sm">
-                                            <div className="text-muted-foreground leading-relaxed">
-                                                {summary.description}
-                                            </div>
-                                            
-                                            {summary.keyFindings && summary.keyFindings.length > 0 && (
-                                                <div>
-                                                    <span className="font-medium text-foreground">Key Findings:</span>
-                                                    <ul className="mt-2 space-y-1 text-muted-foreground">
-                                                        {summary.keyFindings.map((finding, index) => (
-                                                            <li key={index} className="flex items-start gap-2">
-                                                                <span className="text-blue-600 mt-1">•</span>
-                                                                <span>{finding}</span>
-                                                            </li>
-                                                        ))}
-                                                    </ul>
-                                                </div>
-                                            )}
-                                            
-                                            <div className="text-xs text-muted-foreground pt-2 border-t border-border">
-                                                <span>Analysis by {summary.author}</span>
-                                                <span> • </span>
-                                                <span>{summary.date}</span>
-                                            </div>
+                        <div className="space-y-6">
+                            {/* Analysis Content - matching Taproot Script Analysis layout */}
+                            <div>
+                                <div className="space-y-3 text-foreground">
+                                    {analysisData.intro && (
+                                        <div className="leading-relaxed text-base">
+                                            {analysisData.intro}
                                         </div>
-                                    </div>
-                                );
-                            })()}
-                            
-                            {/* Contract Overview */}
-                            <div className="border-b pb-3">
-                                <div className="flex items-center gap-2 mb-2">
-                                    <Shield className="h-4 w-4" />
-                                    <h3 className="font-medium text-sm">Contract Overview</h3>
-                                </div>
-                                <div className="grid grid-cols-2 gap-2 text-xs">
-                                    <div>
-                                        <span className="text-muted-foreground">Verified:</span>{' '}
-                                        <span className={analysisData.verified ? 'text-green-600' : 'text-red-600'}>
-                                            {analysisData.verified ? 'Yes' : 'No'}
-                                        </span>
-                                    </div>
-                                    <div>
-                                        <span className="text-muted-foreground">Proxy:</span>{' '}
-                                        <span className={analysisData.is_proxy ? 'text-orange-600' : 'text-gray-600'}>
-                                            {analysisData.is_proxy ? 'Yes' : 'No'}
-                                        </span>
-                                    </div>
-                                    {analysisData.implementation_address && (
-                                        <div className="col-span-2">
-                                            <span className="text-muted-foreground">Implementation:</span>{' '}
-                                            <a
-                                                href={`https://etherscan.io/address/${analysisData.implementation_address}`}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className="text-blue-600 hover:underline font-mono"
-                                            >
-                                                {truncateAddress(analysisData.implementation_address)}
-                                            </a>
+                                    )}
+                                    
+                                    {analysisData.key_findings && analysisData.key_findings.length > 0 && (
+                                        <div className="bg-muted/50 rounded-xl border border-border p-4">
+                                            <h4 className="font-semibold text-foreground mb-3 flex items-center gap-2">
+                                                <Search className="h-4 w-4 text-muted-foreground" />
+                                                Key Findings
+                                            </h4>
+                                            <ul className="space-y-2.5 text-foreground">
+                                                {analysisData.key_findings.map((finding, index) => (
+                                                    <li key={index} className="flex items-start gap-2 leading-relaxed">
+                                                        <span className="text-foreground -mt-0.5">•</span>
+                                                        <span className="text-sm">{finding}</span>
+                                                    </li>
+                                                ))}
+                                            </ul>
                                         </div>
                                     )}
                                 </div>
                             </div>
-                            
-                            {/* Roles */}
-                            {Object.keys(analysisData.roles).length > 0 && (
-                                <div>
-                                    <h3 className="font-medium text-sm mb-3">Roles & Addresses</h3>
-                                    {renderRoles(analysisData.roles)}
-                                </div>
-                            )}
-                            
-                            {/* Governance Analysis */}
-                            {Object.keys(analysisData.governance_analysis).length > 0 && (
-                                <div>
-                                    <h3 className="font-medium text-sm mb-3">Governance Details</h3>
-                                    {renderGovernanceAnalysis(analysisData.governance_analysis)}
-                                </div>
+
+                            {/* Supporting Contracts */}
+                            {(Object.keys(analysisData.roles).length > 0 || Object.keys(analysisData.governance_analysis).length > 0) && (
+                                <Collapsible>
+                                    <CollapsibleTrigger asChild>
+                                        <button className="flex items-center gap-2 text-foreground hover:text-foreground/80 transition-colors mb-4">
+                                            <Shield className="h-4 w-4 text-muted-foreground" />
+                                            <h5 className="font-medium text-muted-foreground">Supporting Contracts</h5>
+                                            <ChevronDown className="h-4 w-4 transition-transform group-data-[state=open]:rotate-180" />
+                                        </button>
+                                    </CollapsibleTrigger>
+                                    <CollapsibleContent className="pt-2">
+                                        <div className="space-y-4 ml-6">
+                                            {Object.keys(analysisData.roles).length > 0 && renderRoles(analysisData.roles)}
+                                            {Object.keys(analysisData.governance_analysis).length > 0 && renderGovernanceAnalysis(analysisData.governance_analysis)}
+                                        </div>
+                                    </CollapsibleContent>
+                                </Collapsible>
                             )}
                         </div>
                     )}
-                </div>
-            </CollapsibleContent>
-        </Collapsible>
+                         </div>
+                    </div>
+                )}
+            </div>
+        </div>
     );
 }
+

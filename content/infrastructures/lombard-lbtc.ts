@@ -66,7 +66,7 @@ const lombard: InfrastructureProject = {
             content: [
                 {
                     title: "The protocol provides a public proof-of-reserve",
-                    content: "The project provides active proof-of-reserves. The proof-of-reserves can be seen [here](https://www.lombard.finance/por/). The proof-of-reserves is provided through an integration with [Redstone](https://docs.redstone.finance/docs/get-started/price-feeds/types-of-feeds/lombard/).\n\n⚠️ We have not reviewed the codebase behind this PoR integration.",
+                    content: "The project provides active proof-of-reserves. The proof-of-reserves can be seen [here](https://www.lombard.finance/por/). The proof-of-reserves is provided through an integration with [Redstone](https://docs.redstone.finance/docs/get-started/price-feeds/types-of-feeds/lombard/).",
                 },
             ],
         },
@@ -84,10 +84,6 @@ const lombard: InfrastructureProject = {
             id: "additionalconsiderations",
             title: "Additional Considerations",
             content: [
-                {
-                    title: "Reserve assets",
-                    content: "Lombard LBTC is primarily backed by native BTC.\n\nOn BNB Smart Chain, it is backed by BTCB.",
-                },
                 {
                     title: "Blacklist monitor on deposits",
                     content: "Lombard scans incoming deposit transactions against a sanctions database. If a user with a blacklisted address attempts to deposit funds into Lombard, their mint request will be declined.",
@@ -123,14 +119,6 @@ const lombard: InfrastructureProject = {
             title: "Issuing LBTC tokens requires consortium & bascule approval",
             content:
                 "Issuing new LBTC tokens requires approval from the consortium validator set and Bascule bridge. If both of these parties approve a specific batch of mint requests, new LBTC tokens will be created.\n\nThe LBTC token contract owner can grant and revoke minting & burning permissions for actors who facilitate cross-chain transfers (e.g. Chainlink CCIP).",
-        },
-        {
-            category: AssessmentCategory.CensorshipResistance,
-            score: 0,
-            tier: "",
-            title: "Pause function on respective contracts",
-            content:
-                "Token contracts have a pause function implemented. The pauser role can pause transfers of LBTC unilaterally. The pauser role is held by a 2/8 [GnosisSafe](https://etherscan.io/address/0x32B8AE4eE1401E726aF0BC154D2165D0592584c4#readProxyContract).",
         },
     ],
 };

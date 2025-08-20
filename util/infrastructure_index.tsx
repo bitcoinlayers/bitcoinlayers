@@ -120,7 +120,7 @@ const merlinmbtc: InfrastructureProject = merlinmbtcProject;
 const alloallobtc: InfrastructureProject = alloallobtcProject;
 const sidesbtc: InfrastructureProject = sidesbtcProject;
 const statechainModel: InfrastructureProject = statechain;
-const fiammafiabtc: InfrastructureProject = fiammafiabtcProject;
+const fiammafiabtcInfra: InfrastructureProject = fiammafiabtc;
 
 // Infrastructure projects available for popups but not displayed in main tables
 export const popupOnlyInfrastructures: InfrastructureProject[] = [
@@ -186,7 +186,7 @@ export const allInfrastructures: InfrastructureProject[] = [
     zueszbtc,
     lorenzoenzobtc,
     OsmosisBTC,
-    fiammafiabtc,
+    fiammafiabtcInfra,
 ];
 
 export const allInfrastructureSlugs: string[] = [...allInfrastructures, ...popupOnlyInfrastructures].map(

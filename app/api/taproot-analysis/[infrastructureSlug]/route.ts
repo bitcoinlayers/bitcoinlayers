@@ -22,16 +22,42 @@ export async function GET(
         const analysisDir = join(
             process.cwd(),
             'researchers',
-            'token-analyzer',
-            'analysis-reports',
+            'reports',
             folderName
         );
 
         // Look for taproot transaction analysis files
-        const files = await readdir(analysisDir);
-        const taprootFiles = files.filter(file => 
+        let files: string[] = [];
+        let finalAnalysisDir = analysisDir;
+        
+        try {
+            files = await readdir(analysisDir);
+        } catch (error) {
+            return NextResponse.json(
+                { error: 'No Taproot analysis found for this infrastructure' },
+                { status: 404 }
+            );
+        }
+        
+        let taprootFiles = files.filter(file => 
             file.startsWith('taproot_transaction_') && file.endsWith('.json')
         );
+        
+        // If no files found in main directory, check bitcoin subdirectory
+        if (taprootFiles.length === 0) {
+            const bitcoinDir = join(analysisDir, 'bitcoin');
+            try {
+                const bitcoinFiles = await readdir(bitcoinDir);
+                taprootFiles = bitcoinFiles.filter(file => 
+                    file.startsWith('taproot_transaction_') && file.endsWith('.json')
+                );
+                if (taprootFiles.length > 0) {
+                    finalAnalysisDir = bitcoinDir;
+                }
+            } catch (error) {
+                // Bitcoin subdirectory doesn't exist, continue with empty taprootFiles
+            }
+        }
 
         if (taprootFiles.length === 0) {
             return NextResponse.json(
@@ -42,7 +68,7 @@ export async function GET(
 
         // Use the most recent taproot analysis file (or first one found)
         const taprootFile = taprootFiles[0];
-        const analysisPath = join(analysisDir, taprootFile);
+        const analysisPath = join(finalAnalysisDir, taprootFile);
 
         // Read and parse the analysis file
         const analysisData = await readFile(analysisPath, 'utf-8');

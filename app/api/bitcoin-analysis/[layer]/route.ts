@@ -16,8 +16,8 @@ export async function GET(
             );
         }
 
-        // Look for Bitcoin analysis files in the researchers/token-analyzer/analysis-reports directory
-        const analysisDir = join(process.cwd(), "researchers", "token-analyzer", "analysis-reports");
+        // Look for Bitcoin analysis files in the researchers/reports directory
+        const analysisDir = join(process.cwd(), "researchers", "reports");
         
         let analysisData = null;
         

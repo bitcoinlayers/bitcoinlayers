@@ -97,16 +97,7 @@ const AddressItem = ({
                 </Link>
             </div>
             
-            {/* Show analysis dropdown for EVM contracts - the component will handle whether to display content */}
-            {item.token_address.startsWith("0x") && (
-                <div className="mt-2 pl-7">
-                    <TokenContractAnalysisDropdown 
-                        contractAddress={item.token_address}
-                        wrapperName={wrapperName || item.token_name}
-                        networkName={item.network_name}
-                    />
-                </div>
-            )}
+
         </div>
     );
 };
@@ -130,6 +121,20 @@ export default function ProjectContractAddresses({ slug, isLayer }: Props) {
     // Get wrapper name from the first item in data
     const wrapperName = data.length > 0 ? data[0].token_name : undefined;
 
+    // Transform data into contracts format for the unified analysis component
+    // Preserve all database information including explorer URLs
+    const contracts = data
+        .filter((item: any) => item.token_address.startsWith("0x")) // Only EVM contracts
+        .map((item: any) => ({
+            address: item.token_address,
+            network: item.network_name,
+            wrapperName: wrapperName || item.token_name,
+            explorer: item.explorer, // Preserve database explorer URL
+            token_slug: item.token_slug,
+            network_slug: item.network_slug,
+            token_name: item.token_name
+        }));
+
     return (
         <section
             id="tokencontracts"
@@ -141,59 +146,73 @@ export default function ProjectContractAddresses({ slug, isLayer }: Props) {
                 </div>
             </div>
 
-            {initialItems.map((item: any, index: number) => (
-                <AddressItem
-                    key={index}
-                    item={item}
-                    showBorder={
-                        index !== initialItems.length - 1 ||
-                        (collapsibleItems.length > 0 && isOpen)
-                    }
-                    isLayer={isLayer}
-                    wrapperName={wrapperName}
-                />
-            ))}
+            {/* Unified Token Contract Analysis - shows only if there are EVM contracts */}
+            {contracts.length > 0 ? (
+                <div className="w-full">
+                    <TokenContractAnalysisDropdown 
+                        contracts={contracts}
+                        wrapperName={wrapperName}
+                        isLayer={isLayer}
+                    />
+                </div>
+            ) : (
+                <>
+                    {/* Show individual address items only if no EVM contracts with analysis */}
+                    {initialItems.map((item: any, index: number) => (
+                        <AddressItem
+                            key={index}
+                            item={item}
+                            showBorder={
+                                index !== initialItems.length - 1 ||
+                                (collapsibleItems.length > 0 && isOpen)
+                            }
+                            isLayer={isLayer}
+                            wrapperName={wrapperName}
+                        />
+                    ))}
 
-            {collapsibleItems.length > 0 && (
-                <Collapsible
-                    open={isOpen}
-                    onOpenChange={setIsOpen}
-                    className="w-full space-y-2"
-                >
-                    {!isOpen && (
-                        <CollapsibleTrigger asChild>
-                            <div className="flex items-center justify-between space-x-4 mt-6 cursor-pointer">
-                                <h4 className="text-sm text-muted-foreground">
-                                    Show {collapsibleItems.length} more{" "}
-                                    {collapsibleItems.length === 1
-                                        ? "address"
-                                        : "addresses"}
-                                </h4>
-                                <Button
-                                    variant="ghost"
-                                    size="sm"
-                                    className="w-9 p-0"
-                                >
-                                    <ChevronsUpDown className="h-4 w-4" />
-                                    <span className="sr-only">Toggle</span>
-                                </Button>
-                            </div>
-                        </CollapsibleTrigger>
+                    {collapsibleItems.length > 0 && (
+                        <Collapsible
+                            open={isOpen}
+                            onOpenChange={setIsOpen}
+                            className="w-full space-y-2"
+                        >
+                            {!isOpen && (
+                                <CollapsibleTrigger asChild>
+                                    <div className="flex items-center justify-between space-x-4 mt-6 cursor-pointer">
+                                        <h4 className="text-sm text-muted-foreground">
+                                            Show {collapsibleItems.length} more{" "}
+                                            {collapsibleItems.length === 1
+                                                ? "address"
+                                                : "addresses"}
+                                        </h4>
+                                        <Button
+                                            variant="ghost"
+                                            size="sm"
+                                            className="w-9 p-0"
+                                        >
+                                            <ChevronsUpDown className="h-4 w-4" />
+                                            <span className="sr-only">Toggle</span>
+                                        </Button>
+                                    </div>
+                                </CollapsibleTrigger>
+                            )}
+                            <CollapsibleContent className="space-y-2">
+                                {collapsibleItems.map((item: any, index: number) => (
+                                    <AddressItem
+                                        key={index}
+                                        item={item}
+                                        showBorder={
+                                            index !== collapsibleItems.length - 1
+                                        }
+                                        isLayer={isLayer}
+                                        wrapperName={wrapperName}
+                                    />
+                                ))}
+                            </CollapsibleContent>
+                        </Collapsible>
                     )}
-                    <CollapsibleContent className="space-y-2">
-                        {collapsibleItems.map((item: any, index: number) => (
-                            <AddressItem
-                                key={index}
-                                item={item}
-                                showBorder={
-                                    index !== collapsibleItems.length - 1
-                                }
-                                isLayer={isLayer}
-                                wrapperName={wrapperName}
-                            />
-                        ))}
-                    </CollapsibleContent>
-                </Collapsible>
+                </>
             )}
         </section>
     );

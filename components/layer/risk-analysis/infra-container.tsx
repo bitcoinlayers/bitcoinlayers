@@ -79,13 +79,7 @@ const RiskAnalysis: React.FC<RiskAnalysisProps> = ({
                             </div>
                         )}
 
-                        {/* Add Taproot Analysis after Asset Custody for Lombard */}
-                        {content.category === AssessmentCategory.AssetCustody && 
-                         infrastructure.slug === "lombard-lbtc" && (
-                            <div className="mt-8">
-                                <TaprootAnalysisSection infrastructureSlug={infrastructure.slug} />
-                            </div>
-                        )}
+
 
                         {contentIndex < riskAnalysis.length - 1 && (
                             <div className="border-b border-border my-12"></div>

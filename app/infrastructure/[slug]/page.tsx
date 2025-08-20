@@ -13,6 +13,7 @@ import InfraTVLChart from "@/components/charts/infra-tvl-chart";
 import RiskAnalysis from "@/components/layer/risk-analysis/infra-container";
 import RiskSummary from "@/components/shared/risk-summary";
 import UnderDevelopmentBanner from "@/components/under-development-banner";
+import TaprootAnalysisSection from "@/components/layer/risk-analysis/taproot-analysis-section";
 import UnderReviewWrapper from "@/components/under-review-wrapper";
 import ProjectContractAddresses from "@/components/project-contract-addresses";
 import ManualContractAddresses from "@/components/manual-contract-addresses";
@@ -76,14 +77,9 @@ export default async function InfrastructurePage(props: {
                                 infrastructure={infrastructure}
                             />
                             
-                            {/* Only show supply chart and token contracts for non-ChaumianEcashProtocol infrastructures */}
+                            {/* Only show supply chart for non-ChaumianEcashProtocol infrastructures */}
                             {infrastructure.entityType !== EntityType.ChaumianEcashProtocol && (
-                                <>
-                                    <InfraTVLChart />
-                                    
-                                    {/* Token Contracts */}
-                                    <ProjectContractAddresses slug={slug} isLayer={false} />
-                                </>
+                                <InfraTVLChart />
                             )}
                             {infrastructure.partialReview && infrastructure.partialReviewAfter === "tokencontracts" && infrastructure.entityType !== EntityType.ChaumianEcashProtocol && (
                                 <div className="self-stretch lg:px-8 px-4 pt-6 pb-8 mb-6 bg-muted/50 rounded-xl border border-border flex-col justify-center items-start gap-4">
@@ -154,7 +150,34 @@ export default async function InfrastructurePage(props: {
                                 </div>
                             )}
                             
-
+                            {/* Taproot Script Analysis - for Lombard LBTC */}
+                            {infrastructure.slug === "lombard-lbtc" && (
+                                <section
+                                    className="self-stretch lg:px-8 px-4 pt-6 pb-8 mb-6 bg-background rounded-xl border border-border flex-col justify-center items-end gap-4"
+                                    id="taprootscriptanalysis"
+                                >
+                                    <div className="self-stretch justify-start items-start gap-4">
+                                        <div className="body_section !text-foreground">
+                                            Taproot Script Analysis
+                                        </div>
+                                    </div>
+                                    <div className="body_paragraph !text-foreground mt-3">
+                                        <div className="body_subsection !text-muted-foreground">
+                                            Bitcoin custody transaction analysis
+                                        </div>
+                                    </div>
+                                    <TaprootAnalysisSection 
+                                        infrastructureSlug={infrastructure.slug} 
+                                        autoExpand={true} 
+                                        hideHeader={true} 
+                                    />
+                                </section>
+                            )}
+                            
+                            {/* Token Contracts - moved to appear after Assessment section */}
+                            {infrastructure.entityType !== EntityType.ChaumianEcashProtocol && (
+                                <ProjectContractAddresses slug={slug} isLayer={false} />
+                            )}
                             
                             {/* Manual Contract Addresses */}
                             {(!infrastructure.partialReview || (infrastructure.partialReviewAfter && infrastructure.partialReviewAfter === "manualcontracts")) && (

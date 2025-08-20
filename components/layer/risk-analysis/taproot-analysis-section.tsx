@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { ExternalLink, Zap, Shield, FileText, Code2, ChevronDown, ChevronUp, Hash, Bitcoin, Lock } from "lucide-react";
+import { ExternalLink, Zap, Shield, FileText, Code2, ChevronDown, ChevronUp, Hash, Bitcoin, Lock, GitBranch, Search } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { parseTextWithLinks } from "@/util/parseTextWithLinks";
 
@@ -79,14 +79,16 @@ interface TaprootAnalysisData {
 interface TaprootAnalysisSectionProps {
     infrastructureSlug: string;
     autoExpand?: boolean; // Auto-expand the analysis when component loads
+    hideHeader?: boolean; // Hide the collapsible header and just show the analysis
 }
 
-export default function TaprootAnalysisSection({ infrastructureSlug, autoExpand = false }: TaprootAnalysisSectionProps) {
+export default function TaprootAnalysisSection({ infrastructureSlug, autoExpand = false, hideHeader = false }: TaprootAnalysisSectionProps) {
     const [analysisData, setAnalysisData] = useState<TaprootAnalysisData | null>(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
     const [showTaprootAnalysis, setShowTaprootAnalysis] = useState(autoExpand);
     const [showScriptDetails, setShowScriptDetails] = useState(false);
+    const [showTransactionDetails, setShowTransactionDetails] = useState(false);
     const [expandedInputs, setExpandedInputs] = useState<Set<number>>(new Set());
 
     useEffect(() => {
@@ -138,216 +140,203 @@ export default function TaprootAnalysisSection({ infrastructureSlug, autoExpand 
 
     return (
         <div className="mt-6 overflow-hidden">
-            <button
-                onClick={() => setShowTaprootAnalysis(!showTaprootAnalysis)}
-                className="flex items-center gap-2 text-foreground hover:text-foreground/80 transition-colors mb-4 text-left"
-            >
-                <Bitcoin className="h-5 w-5 text-foreground" />
-                <h4 className="text-lg font-semibold text-foreground">
-                    Taproot Script Analysis
-                </h4>
-                {loading ? (
-                    <div className="animate-spin rounded-full h-4 w-4 border-2 border-muted-foreground border-t-transparent"></div>
-                ) : showTaprootAnalysis ? (
-                    <ChevronUp className="h-4 w-4" />
-                ) : (
-                    <ChevronDown className="h-4 w-4" />
-                )}
-            </button>
+            {!hideHeader && (
+                <button
+                    onClick={() => setShowTaprootAnalysis(!showTaprootAnalysis)}
+                    className="flex items-center gap-2 text-foreground hover:text-foreground/80 transition-colors mb-4 text-left"
+                >
+                    <Bitcoin className="h-5 w-5 text-foreground" />
+                    <h4 className="text-lg font-semibold text-foreground">
+                        Taproot Script Analysis
+                    </h4>
+                    {loading ? (
+                        <div className="animate-spin rounded-full h-4 w-4 border-2 border-muted-foreground border-t-transparent"></div>
+                    ) : showTaprootAnalysis ? (
+                        <ChevronUp className="h-4 w-4" />
+                    ) : (
+                        <ChevronDown className="h-4 w-4" />
+                    )}
+                </button>
+            )}
 
-            {loading && showTaprootAnalysis && (
+            {loading && (hideHeader || showTaprootAnalysis) && (
                 <div className="text-muted-foreground text-sm mb-4">
                     Loading Taproot Analysis...
                 </div>
             )}
 
-            {error && showTaprootAnalysis && (
+            {error && (hideHeader || showTaprootAnalysis) && (
                 <div className="text-muted-foreground text-sm mb-4">
                     {error}
                 </div>
             )}
 
-            {showTaprootAnalysis && analysisData && (
+            {(hideHeader || showTaprootAnalysis) && analysisData && (
             
-            <div className="space-y-6 overflow-hidden">
+            <div className="space-y-6">
                 {/* Custom Analysis Summary */}
                 {analysisData.custom_summary && (
-                    <div className="bg-gradient-to-r from-purple-50 to-orange-50 dark:from-purple-950/20 dark:to-orange-950/20 rounded-lg p-4 border border-purple-200 dark:border-purple-800">
-                        <h5 className="font-medium text-foreground mb-3 flex items-center gap-2">
-                            <Bitcoin className="h-4 w-4 text-purple-600" />
-                            {analysisData.custom_summary.title || 'Taproot Analysis Summary'}
-                        </h5>
-                        <div className="space-y-3 text-sm">
-                            <div className="text-muted-foreground leading-relaxed">
+                    <div>
+                        <div className="space-y-3 text-foreground">
+                            <div className="leading-relaxed text-base">
                                 {parseTextWithLinks(analysisData.custom_summary.description)}
                             </div>
                             
                             {analysisData.custom_summary.key_findings && analysisData.custom_summary.key_findings.length > 0 && (
-                                <div>
-                                    <span className="font-medium text-foreground">Key Findings:</span>
-                                    <ul className="mt-2 space-y-1 text-muted-foreground">
+                                <div className="bg-muted/50 rounded-xl border border-border p-4">
+                                    <h4 className="font-semibold text-foreground mb-3 flex items-center gap-2">
+                                        <Search className="h-4 w-4 text-muted-foreground" />
+                                        Key Findings
+                                    </h4>
+                                    <ul className="space-y-2.5 text-foreground">
                                         {analysisData.custom_summary.key_findings.map((finding, index) => (
-                                            <li key={index} className="flex items-start gap-2">
-                                                <span className="text-purple-600 mt-1">•</span>
-                                                <span>{parseTextWithLinks(finding)}</span>
+                                            <li key={index} className="flex items-start gap-2 leading-relaxed">
+                                                <span className="text-foreground -mt-0.5">•</span>
+                                                <span className="text-sm">{parseTextWithLinks(finding)}</span>
                                             </li>
                                         ))}
                                     </ul>
                                 </div>
                             )}
                             
-                            {(analysisData.custom_summary.author || analysisData.custom_summary.date) && (
-                                <div className="text-xs text-muted-foreground pt-2 border-t border-border">
-                                    {analysisData.custom_summary.author && (
-                                        <span>Analysis by {analysisData.custom_summary.author}</span>
-                                    )}
-                                    {analysisData.custom_summary.author && analysisData.custom_summary.date && (
-                                        <span> • </span>
-                                    )}
-                                    {analysisData.custom_summary.date && (
-                                        <span>{analysisData.custom_summary.date}</span>
-                                    )}
-                                </div>
-                            )}
+
                         </div>
                     </div>
                 )}
-                {/* Transaction Overview */}
-                <div>
-                    <h5 className="font-medium text-foreground mb-3 flex items-center gap-2">
-                        <FileText className="h-4 w-4" />
-                        Transaction Overview
-                    </h5>
-                    <div className="bg-muted/50 rounded-lg p-4 space-y-3">
-                        {analysisData.transaction_metadata?.txid && (
-                            <div className="flex items-center gap-2">
-                                <span className="text-sm text-muted-foreground min-w-[120px]">Transaction ID:</span>
-                                <code className="text-xs bg-background px-2 py-1 rounded border">
-                                    {formatTxId(analysisData.transaction_metadata.txid)}
-                                </code>
-                                <a
-                                    href={`https://blockstream.info/tx/${analysisData.transaction_metadata.txid}`}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="text-blue-500 hover:text-blue-700"
-                                >
-                                    <ExternalLink className="h-3 w-3" />
-                                </a>
-                            </div>
+                {/* Analysis Buttons */}
+                <div className="flex justify-between items-center mb-4">
+                    <button
+                        onClick={() => setShowTransactionDetails(!showTransactionDetails)}
+                        className="flex items-center gap-2 text-foreground hover:text-foreground/80 transition-colors"
+                    >
+                        <FileText className="h-4 w-4 text-muted-foreground" />
+                        <h5 className="font-medium text-muted-foreground">Transaction Analysis</h5>
+                        {showTransactionDetails ? (
+                            <ChevronUp className="h-4 w-4" />
+                        ) : (
+                            <ChevronDown className="h-4 w-4" />
                         )}
-                        
-                        <div className="flex items-center gap-2">
-                            <span className="text-sm text-muted-foreground min-w-[120px]">Network:</span>
-                            <span className="text-sm font-mono capitalize">
-                                {analysisData.transaction_metadata?.network || 'Unknown'}
-                            </span>
-                        </div>
-                        
-                        <div className="flex items-center gap-2">
-                            <span className="text-sm text-muted-foreground min-w-[120px]">Analysis Type:</span>
-                            <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-purple-100 text-purple-700">
-                                Advanced Taproot
-                            </span>
-                        </div>
-                    </div>
-                </div>
+                    </button>
 
-                {/* Taproot Pattern */}
-                <div>
-                    <h5 className="font-medium text-foreground mb-3 flex items-center gap-2">
-                        <Shield className="h-4 w-4" />
-                        Taproot Spending Pattern
-                    </h5>
-                    <div className="bg-muted/50 rounded-lg p-4 space-y-3">
-                        <div className="flex items-center gap-2">
-                            <span className="text-sm text-muted-foreground min-w-[120px]">Taproot Inputs:</span>
-                            <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-secondary text-secondary-foreground">
-                                {analysisData.taproot_inputs?.length || 0}
-                            </span>
-                        </div>
-                        
-                        {analysisData.taproot_inputs?.length > 0 && (
-                            <>
-                                <div className="flex items-center gap-2">
-                                    <span className="text-sm text-muted-foreground min-w-[120px]">Spend Type:</span>
-                                    <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium border border-border text-emerald-600">
-                                        {analysisData.taproot_inputs[0].spend_type.replace('_', ' ').replace(/\b\w/g, l => l.toUpperCase())}
-                                    </span>
-                                </div>
-
-                                {analysisData.taproot_inputs[0].signature_analysis && (
-                                    <div className="flex items-center gap-2">
-                                        <span className="text-sm text-muted-foreground min-w-[120px]">Signatures:</span>
-                                        <span className="text-sm">
-                                            {analysisData.taproot_inputs[0].signature_analysis.total_signatures} Schnorr signatures
-                                        </span>
-                                    </div>
-                                )}
-
-                                {analysisData.taproot_inputs[0].executed_script && (
-                                    <div className="flex items-center gap-2">
-                                        <span className="text-sm text-muted-foreground min-w-[120px]">Script Type:</span>
-                                        <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-700">
-                                            {analysisData.taproot_inputs[0].executed_script.script_type}
-                                        </span>
-                                    </div>
-                                )}
-                            </>
-                        )}
-                    </div>
-                </div>
-
-                {/* Script Tree Analysis */}
-                {analysisData.taproot_inputs?.length > 0 && analysisData.taproot_inputs[0].control_block && (
-                    <div>
-                        <h5 className="font-medium text-foreground mb-3 flex items-center gap-2">
-                            <Bitcoin className="h-4 w-4" />
-                            Script Tree Structure
-                        </h5>
-                        <div className="bg-muted/50 rounded-lg p-4 space-y-3">
-                            <div className="flex items-center gap-2">
-                                <span className="text-sm text-muted-foreground min-w-[120px]">Merkle Depth:</span>
-                                <span className="text-sm font-mono">
-                                    {analysisData.taproot_inputs[0].script_tree_info?.merkle_depth || 0} levels
-                                </span>
-                            </div>
-                            
-                            <div className="flex items-center gap-2">
-                                <span className="text-sm text-muted-foreground min-w-[120px]">Total Scripts:</span>
-                                <span className="text-sm font-mono">
-                                    {analysisData.taproot_inputs[0].script_tree_info?.total_scripts || 0} possible
-                                </span>
-                            </div>
-
-                            <div className="flex items-center gap-2">
-                                <span className="text-sm text-muted-foreground min-w-[120px]">Control Block:</span>
-                                <span className="text-sm font-mono">
-                                    {formatControlBlockVersion(analysisData.taproot_inputs[0].control_block.version)} 
-                                    (parity: {analysisData.taproot_inputs[0].control_block.parity})
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                )}
-
-                {/* Detailed Script Analysis */}
-                {analysisData.taproot_inputs?.length > 0 && (
-                    <div>
+                    {/* Tapscript Details Button */}
+                    {analysisData.taproot_inputs?.length > 0 && (
                         <button
                             onClick={() => setShowScriptDetails(!showScriptDetails)}
-                            className="flex items-center gap-2 text-foreground hover:text-foreground/80 transition-colors mb-3"
+                            className="flex items-center gap-2 text-foreground hover:text-foreground/80 transition-colors"
                         >
-                            <Code2 className="h-4 w-4" />
-                            <h5 className="font-medium">Tapscript Details</h5>
+                            <Code2 className="h-4 w-4 text-muted-foreground" />
+                            <h5 className="font-medium text-muted-foreground">Tapscript Details</h5>
                             {showScriptDetails ? (
                                 <ChevronUp className="h-4 w-4" />
                             ) : (
                                 <ChevronDown className="h-4 w-4" />
                             )}
                         </button>
-                        
-                        {showScriptDetails && (
-                            <div className="space-y-4 overflow-hidden">
+                    )}
+                </div>
+
+                {showTransactionDetails && (
+                    <div className="space-y-4 text-sm text-foreground ml-6">
+                            {/* Transaction Details */}
+                            {analysisData.transaction_metadata?.txid && (
+                                <div className="flex items-center gap-2">
+                                    <span className="text-muted-foreground min-w-[120px]">Transaction ID:</span>
+                                    <code className="text-xs bg-muted px-2 py-1 rounded">
+                                        {formatTxId(analysisData.transaction_metadata.txid)}
+                                    </code>
+                                    <a
+                                        href={`https://blockstream.info/tx/${analysisData.transaction_metadata.txid}`}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-blue-500 hover:text-blue-700"
+                                    >
+                                        <ExternalLink className="h-3 w-3" />
+                                    </a>
+                                </div>
+                            )}
+                            
+                            <div className="flex items-center gap-2">
+                                <span className="text-muted-foreground min-w-[120px]">Network:</span>
+                                <span className="font-mono capitalize">
+                                    {analysisData.transaction_metadata?.network || 'Unknown'}
+                                </span>
+                            </div>
+                            
+                            <div className="flex items-center gap-2">
+                                <span className="text-muted-foreground min-w-[120px]">Analysis Type:</span>
+                                <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-purple-100 text-purple-700 dark:bg-purple-900 dark:text-purple-200">
+                                    Advanced Taproot
+                                </span>
+                            </div>
+
+                            {/* Taproot Details */}
+                            <div className="flex items-center gap-2">
+                                <span className="text-muted-foreground min-w-[120px]">Taproot Inputs:</span>
+                                <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-secondary text-secondary-foreground">
+                                    {analysisData.taproot_inputs?.length || 0}
+                                </span>
+                            </div>
+                            
+                            {analysisData.taproot_inputs?.length > 0 && (
+                                <>
+                                    <div className="flex items-center gap-2">
+                                        <span className="text-muted-foreground min-w-[120px]">Spend Type:</span>
+                                        <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">
+                                            {analysisData.taproot_inputs[0].spend_type.replace('_', ' ').replace(/\b\w/g, l => l.toUpperCase())}
+                                        </span>
+                                    </div>
+
+                                    {analysisData.taproot_inputs[0].signature_analysis && (
+                                        <div className="flex items-center gap-2">
+                                            <span className="text-muted-foreground min-w-[120px]">Signatures:</span>
+                                            <span>
+                                                {analysisData.taproot_inputs[0].signature_analysis.total_signatures} Schnorr signatures
+                                            </span>
+                                        </div>
+                                    )}
+
+                                    {analysisData.taproot_inputs[0].executed_script && (
+                                        <div className="flex items-center gap-2">
+                                            <span className="text-muted-foreground min-w-[120px]">Script Type:</span>
+                                            <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200">
+                                                {analysisData.taproot_inputs[0].executed_script.script_type}
+                                            </span>
+                                        </div>
+                                    )}
+
+                                    {/* Script Tree Details */}
+                                    {analysisData.taproot_inputs[0].control_block && (
+                                        <>
+                                            <div className="flex items-center gap-2">
+                                                <span className="text-muted-foreground min-w-[120px]">Merkle Depth:</span>
+                                                <span className="font-mono">
+                                                    {analysisData.taproot_inputs[0].script_tree_info?.merkle_depth || 0} levels
+                                                </span>
+                                            </div>
+                                            
+                                            <div className="flex items-center gap-2">
+                                                <span className="text-muted-foreground min-w-[120px]">Total Scripts:</span>
+                                                <span className="font-mono">
+                                                    {analysisData.taproot_inputs[0].script_tree_info?.total_scripts || 0} possible
+                                                </span>
+                                            </div>
+
+                                            <div className="flex items-center gap-2">
+                                                <span className="text-muted-foreground min-w-[120px]">Control Block:</span>
+                                                <span className="font-mono">
+                                                    {formatControlBlockVersion(analysisData.taproot_inputs[0].control_block.version)}
+                                                    (parity: {analysisData.taproot_inputs[0].control_block.parity})
+                                                </span>
+                                            </div>
+                                        </>
+                                    )}
+                                </>
+                            )}
+                        </div>
+                    )}
+
+                {showScriptDetails && (
+                    <div className="space-y-4 overflow-hidden ml-6">
                                 {analysisData.taproot_inputs.map((input, index) => (
                                     <div key={index} className="bg-muted/50 rounded-lg p-4 overflow-hidden">
                                         <div className="flex items-center gap-2 mb-3">
@@ -433,23 +422,11 @@ export default function TaprootAnalysisSection({ infrastructureSlug, autoExpand 
                                             )}
                                         </div>
                                     </div>
-                                ))}
-                            </div>
-                        )}
+                        ))}
                     </div>
                 )}
 
-                {/* Analysis Meta */}
-                {analysisData.layer_association && (
-                    <div className="border-t border-border pt-4">
-                        <div className="text-xs text-muted-foreground">
-                            Analysis Type: {analysisData.layer_association.analysis_type.charAt(0).toUpperCase() + 
-                                analysisData.layer_association.analysis_type.slice(1)} • 
-                            Wrapper: {analysisData.layer_association.wrapper_name?.replace('_', ' ').replace(/\b\w/g, l => l.toUpperCase())} •
-                            Target: {analysisData.layer_association.integration_target.replace('_', ' ')}
-                        </div>
-                    </div>
-                )}
+
             </div>
             )}
         </div>
