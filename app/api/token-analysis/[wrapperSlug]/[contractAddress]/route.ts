@@ -88,7 +88,7 @@ export async function HEAD(
         const networkName = searchParams.get('network');
         
         // Try new structure first
-        let analysisPath = await getAnalysisPath(wrapperSlug, contractAddress, networkName);
+        let analysisPath = await getAnalysisPath(wrapperSlug, contractAddress, networkName || undefined);
         
         try {
             // Try to read the analysis file (just to check if it exists)
