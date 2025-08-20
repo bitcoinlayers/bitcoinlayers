@@ -1,5 +1,11 @@
 {
   "address": "0x8236a87084f8B84306f72007F36F2618A5634494",
+  "intro": "Lombard LBTC is natively minted on Ethereum after a smart contract validates a minting request. The BTC backing LBTC is BTC locked into Babylon staking scripts. The BTC is staked into Babylon by the Lombard Ledger - a layer 1 blockchain who acts as a custodian of the BTC.",
+  "key_findings": [
+    "User funds are escrowed by the Lombard Ledger who is represented by the 0xd...5E4 contract.",
+    "Contracts are upgradable after a 1 hour delay passes.",
+    "Token transfers can be paused by a 2/8 multisig."  
+  ],
   "verified": true,
   "is_proxy": true,
   "implementation_address": "0xA1Bc65eCf8BC7B2FAA22c53bcC49b0376Da3845A",

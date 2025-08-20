@@ -498,12 +498,7 @@ export default function TokenContractAnalysisDropdown({
 
     return (
         <div className="flex flex-col justify-start items-start gap-2">
-            {/* Implementation - sub header */}
-            <div className="body_subsection !text-muted-foreground">
-                Implementation
-            </div>
-
-            {/* Network dropdown - third header */}
+            {/* Network dropdown */}
             {availableContracts.length > 0 && (
                 <div className="relative" ref={dropdownRef}>
                     <button

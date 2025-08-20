@@ -86,6 +86,17 @@ const InfrastructureMenu: React.FC<{
                         <path d="M12 6v6l4 2"/>
                     </svg>
                 );
+            case "taprootscriptanalysis":
+                return (
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M9 12l2 2 4-4"/>
+                        <path d="M21 12c.552 0 1-.448 1-1V5c0-.552-.448-1-1-1H3c-.552 0-1 .448-1 1v6c0 .552.448 1 1 1h9"/>
+                        <path d="M3 10h18"/>
+                        <path d="M8 21l-2-2"/>
+                        <path d="M16 21l2-2"/>
+                        <rect x="8" y="14" width="8" height="7" rx="1"/>
+                    </svg>
+                );
             case "manualcontracts":
                 return (
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -114,9 +125,6 @@ const InfrastructureMenu: React.FC<{
                     ...(infrastructure.entityType === EntityType.ChaumianEcashProtocol
                         ? []
                         : [{ id: "data", title: "Data" }]),
-                    ...(infrastructure.entityCategory === EntityCategory.More
-                        ? []
-                        : [{ id: "tokencontracts", title: "Token Contracts" }]),
                     ...(infrastructure.partialReview && infrastructure.partialReviewAfter
                         ? (() => {
                             const sections = [];
@@ -128,6 +136,14 @@ const InfrastructureMenu: React.FC<{
                             }
                             if (["assessment", "manualcontracts"].includes(after!) && infrastructure.assessment) {
                                 sections.push({ id: "assessment", title: "Assessment" });
+                            }
+                            // Add Script Analysis for Lombard LBTC
+                            if (["assessment", "manualcontracts"].includes(after!) && infrastructure.slug === "lombard-lbtc") {
+                                sections.push({ id: "taprootscriptanalysis", title: "Script Analysis" });
+                            }
+                            // Add Token Contracts after Script Analysis
+                            if (["assessment", "manualcontracts"].includes(after!) && infrastructure.entityCategory !== EntityCategory.More && infrastructure.entityType !== EntityType.ChaumianEcashProtocol) {
+                                sections.push({ id: "tokencontracts", title: "Token Contracts" });
                             }
                             if (after === "manualcontracts" && infrastructure.manualContracts && infrastructure.manualContracts.length > 0) {
                                 sections.push({ id: "manualcontracts", title: "Additional Contracts" });
@@ -144,6 +160,15 @@ const InfrastructureMenu: React.FC<{
                             ...(infrastructure.assessment
                                 ? [{ id: "assessment", title: "Assessment" }]
                                 : []),
+                            // Add Script Analysis for Lombard LBTC
+                            ...(infrastructure.slug === "lombard-lbtc"
+                                ? [{ id: "taprootscriptanalysis", title: "Script Analysis" }]
+                                : []),
+                            // Add Token Contracts after Script Analysis
+                            ...(infrastructure.entityCategory !== EntityCategory.More && infrastructure.entityType !== EntityType.ChaumianEcashProtocol
+                                ? [{ id: "tokencontracts", title: "Token Contracts" }]
+                                : []),
+                            // Add manual contracts section if conditions are met
                             ...(infrastructure.manualContracts && infrastructure.manualContracts.length > 0
                                 ? [{ id: "manualcontracts", title: "Additional Contracts" }]
                                 : []),

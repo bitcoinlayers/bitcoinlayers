@@ -145,6 +145,11 @@ export default function ProjectContractAddresses({ slug, isLayer }: Props) {
                     Token Contracts
                 </div>
             </div>
+            <div className="body_paragraph !text-foreground mt-3">
+                <div className="body_subsection !text-muted-foreground">
+                    Token contract analysis
+                </div>
+            </div>
 
             {/* Unified Token Contract Analysis - shows only if there are EVM contracts */}
             {contracts.length > 0 ? (

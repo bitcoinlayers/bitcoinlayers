@@ -150,7 +150,7 @@ export default async function InfrastructurePage(props: {
                                 </div>
                             )}
                             
-                            {/* Taproot Script Analysis - for Lombard LBTC */}
+                            {/* Bitcoin Script Analysis - for Lombard LBTC */}
                             {infrastructure.slug === "lombard-lbtc" && (
                                 <section
                                     className="self-stretch lg:px-8 px-4 pt-6 pb-8 mb-6 bg-background rounded-xl border border-border flex-col justify-center items-end gap-4"
@@ -158,7 +158,7 @@ export default async function InfrastructurePage(props: {
                                 >
                                     <div className="self-stretch justify-start items-start gap-4">
                                         <div className="body_section !text-foreground">
-                                            Taproot Script Analysis
+                                            Bitcoin Script Analysis
                                         </div>
                                     </div>
                                     <div className="body_paragraph !text-foreground mt-3">

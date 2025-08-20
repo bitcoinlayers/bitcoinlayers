@@ -1,10 +1,10 @@
 {
   "address": "0xA45d4121b3D47719FF57a947A9d961539Ba33204",
-  "intro": "This contract serves as...",
+  "intro": "Lombard LBTC is bridge to BOB from Ethereum. The security assumption of this bridge falls back to a permissioned multisig that can upgrade the bridge with no delay. If a malicious upgrade was initiated, users' funds can be stolen.",
   "key_findings": [
-    "First key finding about the contract",
-    "Second important discovery",
-    "Third critical observation"
+    "User funds are escrowed in the 0x3...1f7 contract. This contract is upgradable by a 4/6 multisig.",
+    "Contract is updated based on receiving messages from 0xE...EdA contract",
+    "Messages are passed based on the results of the dispute game from the 0x8...a3E contract"  
   ],
   "verified": true,
   "is_proxy": true,
@@ -84,7 +84,7 @@
         "analysis_purpose": "Bridge governance analysis for Lombard LBTC on Ethereum"
       }
     },
-    "Lombard LBTC L1 Messenger (Ethereum)": {
+    "BOB's L1 Messenger Contract (Ethereum)": {
       "address": "0xE3d981643b806FB8030CDB677D6E60892E547EdA",
       "type": "L2_Bridge Contract",
       "is_gnosis_safe": false,
@@ -118,7 +118,7 @@
         "analysis_purpose": "Bridge governance analysis for Lombard LBTC on Ethereum"
       }
     },
-    "Lombard LBTC Portal (Ethereum)": {
+    "BOB's Portal Contract (Ethereum)": {
       "address": "0x8AdeE124447435fE03e3CD24dF3f4cAE32E65a3E",
       "type": "Portal Contract",
       "is_gnosis_safe": false,

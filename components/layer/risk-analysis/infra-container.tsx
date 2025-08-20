@@ -82,7 +82,7 @@ const RiskAnalysis: React.FC<RiskAnalysisProps> = ({
 
 
                         {contentIndex < riskAnalysis.length - 1 && (
-                            <div className="border-b border-border my-12"></div>
+                            <div className="border-b border-border my-8"></div>
                         )}
                     </React.Fragment>
                 ))}
