@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { ExternalLinkIcon, Shield, Key, Search, Code } from "lucide-react";
+import { ExternalLinkIcon, Shield, Key, Search, Code, ChevronDown, Settings } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
     Collapsible,
@@ -295,99 +295,180 @@ export default function SVMTokenAnalysis({ contract }: SVMTokenAnalysisProps) {
                 </div>
             </div>
 
-            {/* Authorities */}
-            {(basic_info.mint_authority || basic_info.freeze_authority) && (
+            {/* Function List */}
+            <div className="mb-4">
                 <Collapsible>
                     <CollapsibleTrigger asChild>
-                        <button className="flex items-center gap-2 text-foreground hover:text-foreground/80 transition-colors mb-4">
-                            <Shield className="h-4 w-4 text-muted-foreground" />
-                            <h5 className="font-medium text-muted-foreground">Token Authorities</h5>
-                        </button>
+                        <Button 
+                            variant="ghost" 
+                            size="sm" 
+                            className="w-full justify-between p-2 h-auto hover:bg-muted/50"
+                        >
+                            <div className="flex items-center gap-2">
+                                <Settings className="h-4 w-4" />
+                                <span className="font-medium text-sm">Function List ({[
+                                    basic_info.mint_authority ? 'mint' : null,
+                                    basic_info.freeze_authority ? 'freeze' : null,
+                                    'standard'
+                                ].filter(Boolean).length + (basic_info.owner_program && basic_info.owner_program !== "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA" && basic_info.owner_program !== "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb" ? 1 : 0)})</span>
+                            </div>
+                            <ChevronDown className="h-4 w-4 transition-transform group-data-[state=open]:rotate-180" />
+                        </Button>
                     </CollapsibleTrigger>
                     <CollapsibleContent className="pt-2">
-                        <div className="space-y-4 ml-6">
+                        <div className="space-y-2">
+                            {/* Mint Functions */}
                             {basic_info.mint_authority && (
-                                <div className="mb-4">
-                                    <div className="flex items-center gap-2 mb-2">
-                                        <AuthorityIcon authorityType="mint" />
-                                        <h4 className="font-medium text-sm">Mint Authority</h4>
-                                    </div>
-                                    
-                                    <div className="mb-3">
+                                <>
+                                    <div className="flex items-center justify-between text-xs bg-muted/30 rounded p-2">
+                                        <div>
+                                            <span className="font-mono text-muted-foreground">mintTo</span>
+                                            <span className="ml-2 text-xs bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-1 rounded">
+                                                Function
+                                            </span>
+                                        </div>
                                         <a
                                             href={`https://explorer.solana.com/address/${basic_info.mint_authority}`}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="flex items-center gap-1 text-blue-600 hover:underline font-mono text-xs"
+                                            className="flex items-center gap-1 text-blue-600 hover:underline"
                                         >
-                                            {basic_info.mint_authority}
+                                            {truncateAddress(basic_info.mint_authority)}
                                             <ExternalLinkIcon className="h-3 w-3" />
                                         </a>
                                     </div>
-                                    
-                                    <div className="text-sm text-muted-foreground">
-                                        This authority can mint new tokens. If set to null, no new tokens can be created.
+                                    <div className="flex items-center justify-between text-xs bg-muted/30 rounded p-2">
+                                        <div>
+                                            <span className="font-mono text-muted-foreground">setAuthority</span>
+                                            <span className="ml-2 text-xs bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-1 rounded">
+                                                Function
+                                            </span>
+                                        </div>
+                                        <a
+                                            href={`https://explorer.solana.com/address/${basic_info.mint_authority}`}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="flex items-center gap-1 text-blue-600 hover:underline"
+                                        >
+                                            {truncateAddress(basic_info.mint_authority)}
+                                            <ExternalLinkIcon className="h-3 w-3" />
+                                        </a>
                                     </div>
-                                </div>
+                                </>
                             )}
                             
+                            {/* Freeze Functions */}
                             {basic_info.freeze_authority && (
-                                <div className="mb-4">
-                                    <div className="flex items-center gap-2 mb-2">
-                                        <AuthorityIcon authorityType="freeze" />
-                                        <h4 className="font-medium text-sm">Freeze Authority</h4>
-                                    </div>
-                                    
-                                    <div className="mb-3">
+                                <>
+                                    <div className="flex items-center justify-between text-xs bg-muted/30 rounded p-2">
+                                        <div>
+                                            <span className="font-mono text-muted-foreground">freezeAccount</span>
+                                            <span className="ml-2 text-xs bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-1 rounded">
+                                                Function
+                                            </span>
+                                        </div>
                                         <a
                                             href={`https://explorer.solana.com/address/${basic_info.freeze_authority}`}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="flex items-center gap-1 text-blue-600 hover:underline font-mono text-xs"
+                                            className="flex items-center gap-1 text-blue-600 hover:underline"
                                         >
-                                            {basic_info.freeze_authority}
+                                            {truncateAddress(basic_info.freeze_authority)}
                                             <ExternalLinkIcon className="h-3 w-3" />
                                         </a>
                                     </div>
-                                    
-                                    <div className="text-sm text-muted-foreground">
-                                        This authority can freeze token accounts, preventing transfers.
+                                    <div className="flex items-center justify-between text-xs bg-muted/30 rounded p-2">
+                                        <div>
+                                            <span className="font-mono text-muted-foreground">thawAccount</span>
+                                            <span className="ml-2 text-xs bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-1 rounded">
+                                                Function
+                                            </span>
+                                        </div>
+                                        <a
+                                            href={`https://explorer.solana.com/address/${basic_info.freeze_authority}`}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="flex items-center gap-1 text-blue-600 hover:underline"
+                                        >
+                                            {truncateAddress(basic_info.freeze_authority)}
+                                            <ExternalLinkIcon className="h-3 w-3" />
+                                        </a>
                                     </div>
+                                </>
+                            )}
+                            
+                            {/* Standard Token Functions - Always Available */}
+                            <div className="flex items-center justify-between text-xs bg-muted/30 rounded p-2">
+                                <div>
+                                    <span className="font-mono text-muted-foreground">transfer</span>
+                                    <span className="ml-2 text-xs bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-1 rounded">
+                                        Function
+                                    </span>
+                                </div>
+                                <span className="font-mono text-muted-foreground">
+                                    Public
+                                </span>
+                            </div>
+                            <div className="flex items-center justify-between text-xs bg-muted/30 rounded p-2">
+                                <div>
+                                    <span className="font-mono text-muted-foreground">approve</span>
+                                    <span className="ml-2 text-xs bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-1 rounded">
+                                        Function
+                                    </span>
+                                </div>
+                                <span className="font-mono text-muted-foreground">
+                                    Public
+                                </span>
+                            </div>
+                            <div className="flex items-center justify-between text-xs bg-muted/30 rounded p-2">
+                                <div>
+                                    <span className="font-mono text-muted-foreground">burn</span>
+                                    <span className="ml-2 text-xs bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-1 rounded">
+                                        Function
+                                    </span>
+                                </div>
+                                <span className="font-mono text-muted-foreground">
+                                    Public
+                                </span>
+                            </div>
+                            <div className="flex items-center justify-between text-xs bg-muted/30 rounded p-2">
+                                <div>
+                                    <span className="font-mono text-muted-foreground">closeAccount</span>
+                                    <span className="ml-2 text-xs bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-1 rounded">
+                                        Function
+                                    </span>
+                                </div>
+                                <span className="font-mono text-muted-foreground">
+                                    Public
+                                </span>
+                            </div>
+                            
+                            {/* Program Functions - if owner is a program */}
+                            {basic_info.owner_program && basic_info.owner_program !== "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA" && basic_info.owner_program !== "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb" && (
+                                <div className="flex items-center justify-between text-xs bg-muted/30 rounded p-2">
+                                    <div>
+                                        <span className="font-mono text-muted-foreground">programInstructions</span>
+                                        <span className="ml-2 text-xs bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-1 rounded">
+                                            Function
+                                        </span>
+                                    </div>
+                                    <a
+                                        href={`https://explorer.solana.com/address/${basic_info.owner_program}`}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="flex items-center gap-1 text-blue-600 hover:underline"
+                                    >
+                                        {truncateAddress(basic_info.owner_program)}
+                                        <ExternalLinkIcon className="h-3 w-3" />
+                                    </a>
                                 </div>
                             )}
                         </div>
                     </CollapsibleContent>
                 </Collapsible>
-            )}
+            </div>
 
-            {/* Governance Summary */}
-            {governance_info.governance_summary && (
-                <div className="bg-muted/50 rounded-xl border border-border p-4">
-                    <h4 className="font-semibold text-foreground mb-3">Governance Summary</h4>
-                    
-                    <div className="space-y-3 text-sm">
-                        <div>
-                            <span className="font-medium text-muted-foreground">Type:</span>
-                            <span className="ml-2">{governance_info.governance_type}</span>
-                        </div>
-                        <div>
-                            <span className="font-medium text-muted-foreground">Risk Score:</span>
-                            <span className="ml-2">{governance_info.overall_risk_score}/10</span>
-                        </div>
-                        
-                        {governance_info.governance_summary.recommendations.length > 0 && (
-                            <div>
-                                <span className="font-medium text-muted-foreground block mb-2">Recommendations:</span>
-                                <ul className="space-y-1 ml-4">
-                                    {governance_info.governance_summary.recommendations.map((rec, index) => (
-                                        <li key={index} className="text-xs text-muted-foreground">• {rec}</li>
-                                    ))}
-                                </ul>
-                            </div>
-                        )}
-                    </div>
-                </div>
-            )}
+
         </div>
     );
 }
