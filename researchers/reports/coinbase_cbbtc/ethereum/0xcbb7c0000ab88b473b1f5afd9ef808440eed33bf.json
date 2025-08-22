@@ -1,0 +1,80 @@
+{
+  "address": "0xcbb7c0000ab88b473b1f5afd9ef808440eed33bf",
+  "intro": "Lombard LBTC is bridge to BOB from Ethereum. The security assumption of this bridge falls back to a permissioned multisig that can upgrade the bridge with no delay. If a malicious upgrade was initiated, users' funds can be stolen.",
+  "key_findings": [
+    "User funds are escrowed in the 0x3...1f7 contract. This contract is upgradable by a 4/6 multisig.",
+    "Contract is updated based on receiving messages from 0xE...EdA contract",
+    "Messages are passed based on the results of the dispute game from the 0x8...a3E contract"
+  ],
+  "type": "Generic Contract",
+  "is_gnosis_safe": false,
+  "is_proxy": false,
+  "implementation": null,
+  "admin": null,
+  "verified": true,
+  "network": "Ethereum",
+  "analysis_date": "2025-08-22 00:31:28 UTC",
+  "governance_details": {},
+  "roles": {},
+  "function_results": {
+    "admin": "0x5e8114643966B7FD7d5CfdD8695FfC5c51fF32c0",
+    "implementation": "0x7458bfDC30034EB860B265E6068121D18Fa5Aa72"
+  },
+  "discovered_addresses": [
+    "0x7458bfDC30034EB860B265E6068121D18Fa5Aa72",
+    "0x5e8114643966B7FD7d5CfdD8695FfC5c51fF32c0"
+  ],
+  "wrapper_context": {
+    "token_name": "Coinbase cbBTC",
+    "network": "Ethereum",
+    "contract_role": "Token",
+    "analysis_purpose": "Bridge governance analysis for Coinbase cbBTC on Ethereum"
+  },
+  "governance_analysis": {
+    "Coinbase cbBTC Token (Ethereum)": {
+      "address": "0xcbb7c0000ab88b473b1f5afd9ef808440eed33bf",
+      "type": "Generic Contract",
+      "is_gnosis_safe": false,
+      "is_proxy": true,
+      "implementation": "0x7458bfDC30034EB860B265E6068121D18Fa5Aa72",
+      "admin": "0x5e8114643966B7FD7d5CfdD8695FfC5c51fF32c0",
+      "verified": true,
+      "network": "Ethereum",
+      "analysis_date": "2025-08-22 00:43:26 UTC",
+      "governance_details": {},
+      "roles": {},
+      "function_results": {
+        "CANCEL_AUTHORIZATION_TYPEHASH": "b'\\x15\\x8b\\n\\x9e\\xdfz\\x82\\x8a\\xad\\x02\\xf6<\\xd5\\x15\\xc6\\x8e\\xf2\\xf5\\x0b\\xa8\\x079om\\x12\\x84(3\\xa1Yt)'",
+        "DOMAIN_SEPARATOR": "b'\\xc4\\x94\\xd0\\xa2kAw\\x10\\xc9\\xda\\xdc\\x1c\\x9a`\\xd2\\xba\\xef@g\\n\\x17\\xdf\\xcab\\xc7D\\xabs:\\xd9\\xc5\\xd4'",
+        "PERMIT_TYPEHASH": "b'nq\\xed\\xae\\x12\\xb1\\xb9\\x7fM\\x1f`7\\x0f\\xef\\x10\\x10_\\xa2\\xfa\\xae\\x01&\\x11J\\x16\\x9cd\\x84]a&\\xc9'",
+        "RECEIVE_WITH_AUTHORIZATION_TYPEHASH": "b'\\xd0\\x99\\xcc\\x98\\xefq\\x10zalO\\x0f\\x94\\x1f\\x04\\xc3\"\\xd8\\xe2T\\xfe&\\xb3\\xc6f\\x8d\\xb8z\\xaeA=\\xe8'",
+        "TRANSFER_WITH_AUTHORIZATION_TYPEHASH": "b'||l\\xdbg\\xa1\\x87C\\xf4\\x9e\\xc6\\xfa\\x9b5\\xf5\\rR\\xed\\x05\\xcb\\xedL\\xc5\\x92\\xe1;DP\\x1c\\x1a\"g'",
+        "blacklister": "0xE34Fd8e02815125aB0947434e42978a8A4e70906",
+        "currency": "",
+        "decimals": 8,
+        "masterMinter": "0x1302dFb1F806398f48650c75ab0fDA9a0186f47B",
+        "name": "Coinbase Wrapped BTC",
+        "owner": "0xCe56D20689D836EC7A728CEb94A15746696c16e6",
+        "paused": false,
+        "pauser": "0x1ac78dfcAE082E9fe286D1ccb12C17a3e906B906",
+        "rescuer": "0x0000000000000000000000000000000000000000",
+        "symbol": "cbBTC",
+        "totalSupply": 2876148860023,
+        "version": "2"
+      },
+      "discovered_addresses": [
+        "0xCe56D20689D836EC7A728CEb94A15746696c16e6",
+        "0x1302dFb1F806398f48650c75ab0fDA9a0186f47B",
+        "0x0000000000000000000000000000000000000000",
+        "0x1ac78dfcAE082E9fe286D1ccb12C17a3e906B906",
+        "0xE34Fd8e02815125aB0947434e42978a8A4e70906"
+      ],
+      "wrapper_context": {
+        "token_name": "Coinbase cbBTC",
+        "network": "Ethereum",
+        "contract_role": "Token",
+        "analysis_purpose": "Bridge governance analysis for Coinbase cbBTC on Ethereum"
+      }
+    }
+  }
+}

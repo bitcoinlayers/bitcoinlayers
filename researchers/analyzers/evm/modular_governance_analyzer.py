@@ -20,13 +20,13 @@ from modules.function_analysis import FunctionAnalyzer
 
 # Configuration - Wrapper Token + Network Implementation Analysis
 # This analyzes the bridge/governance contracts for a specific wrapper token on a specific network
-WRAPPER_TOKEN_NAME = "Lombard LBTC"  # Wrapper token name (e.g., "LBTC", "WBTC", "tBTC")
+WRAPPER_TOKEN_NAME = "Coinbase cbBTC"  # Wrapper token name (e.g., "LBTC", "WBTC", "tBTC")
 NETWORK = "ethereum"  # Source network where contract is deployed: "ethereum", "polygon", "arbitrum", "bsc", "bob"
-TARGET_CONTRACT = "0x8AdeE124447435fE03e3CD24dF3f4cAE32E65a3E"  # Bridge/infrastructure contract to analyze
-ASSOCIATED_TOKEN_CONTRACT = "0xA45d4121b3D47719FF57a947A9d961539Ba33204"  # Token contract to associate this governance analysis with
-LAYER_NAME = "BOB"  # Layer name for directory organization
-CONTRACT_ROLE = "Portal"  # Role of the target contract (e.g., "Bridge", "Multisig", "Timelock", "Governance")
-TARGET_ANALYSIS_NETWORK = "bob"  # Target network folder for analysis results (for cross-chain analysis)
+TARGET_CONTRACT = "0xcbb7c0000ab88b473b1f5afd9ef808440eed33bf"  # Bridge/infrastructure contract to analyze
+ASSOCIATED_TOKEN_CONTRACT = "0xcbb7c0000ab88b473b1f5afd9ef808440eed33bf"  # Token contract to associate this governance analysis with
+LAYER_NAME = "Ethereum"  # Layer name for directory organization
+CONTRACT_ROLE = "Token"  # Role of the target contract (e.g., "Bridge", "Multisig", "Timelock", "Governance")
+TARGET_ANALYSIS_NETWORK = "ethereum"  # Target network folder for analysis results (for cross-chain analysis)
 
 # Validate required environment variables for current network (fail fast like original analyzer)
 try:
@@ -292,6 +292,49 @@ class ModularGovernanceAnalyzer:
             "validator_sets": function_analysis["validator_sets"],
             "current_epoch": function_analysis["current_epoch"]
         }
+        
+        # Secondary proxy detection based on function results
+        if not proxy_info["is_proxy"]:
+            func_results = function_analysis["function_results"]
+            if "admin" in func_results and "implementation" in func_results:
+                impl_addr = func_results["implementation"]
+                admin_addr = func_results["admin"]
+                
+                if isinstance(impl_addr, str) and impl_addr.startswith("0x") and len(impl_addr) == 42:
+                    print(f"\n🔄 SECONDARY PROXY DETECTION")
+                    print(f"🔗 Function-based proxy detected!")
+                    print(f"📍 Implementation: {impl_addr}")
+                    print(f"👤 Admin: {admin_addr}")
+                    
+                    # Update proxy info
+                    proxy_info.update({
+                        "is_proxy": True,
+                        "proxy_type": "Function-based Proxy",
+                        "implementation_address": impl_addr,
+                        "admin_address": admin_addr
+                    })
+                    
+                    # Get implementation ABI and re-analyze with it
+                    impl_info = self.contract_inspector.get_contract_abi(impl_addr)
+                    if impl_info.get("verified"):
+                        print("✅ Re-analyzing with implementation ABI...")
+                        impl_abi = impl_info["abi"]
+                        
+                        # Re-run function analysis with implementation ABI
+                        impl_function_analysis = self.function_analyzer.analyze_all_functions(address, impl_abi)
+                        
+                        # Update analysis results with implementation data
+                        analysis_results["function_analysis"] = {
+                            "function_results": dict(impl_function_analysis["function_results"]),
+                            "addresses": list(impl_function_analysis["addresses"]),
+                            "interesting_data": impl_function_analysis["interesting_data"],
+                            "validator_sets": impl_function_analysis["validator_sets"],
+                            "current_epoch": impl_function_analysis["current_epoch"]
+                        }
+                        analysis_results["contract_info"]["implementation_abi"] = impl_info
+                        print(f"📊 Found {len(impl_function_analysis['function_results'])} functions in implementation")
+                    else:
+                        print("❌ Implementation contract not verified")
         
         # Step 5: Specialized analysis based on contract type
         print("\n5️⃣ SPECIALIZED ANALYSIS")

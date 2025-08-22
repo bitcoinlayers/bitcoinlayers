@@ -1,32 +1,57 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { readFile } from 'fs/promises';
+import { readFile, readdir } from 'fs/promises';
 import { join } from 'path';
 
-async function getAnalysisPath(wrapperSlug: string, contractAddress: string, networkName?: string) {
+async function findAnalysisFileInsensitive(dirPath: string, contractAddress: string): Promise<string | null> {
+    try {
+        const files = await readdir(dirPath);
+        const targetFileName = `${contractAddress.toLowerCase()}.json`;
+        
+        // First try exact match (for performance)
+        if (files.includes(targetFileName)) {
+            return join(dirPath, targetFileName);
+        }
+        
+        // Then try case-insensitive search
+        const matchingFile = files.find(file => 
+            file.toLowerCase() === targetFileName
+        );
+        
+        if (matchingFile) {
+            return join(dirPath, matchingFile);
+        }
+        
+        return null;
+    } catch (error) {
+        return null;
+    }
+}
+
+async function getAnalysisPath(wrapperSlug: string, contractAddress: string, networkName?: string): Promise<string | null> {
     // Convert slug format to match folder names (kebab-case to snake_case)
     const folderName = wrapperSlug.replace(/-/g, '_');
     
     // If we have a network name, use the new wrapper/network structure
     if (networkName) {
         const networkSlug = networkName.toLowerCase().replace(/[^a-z0-9]/g, '_');
-        return join(
+        const dirPath = join(
             process.cwd(),
             'researchers',
             'reports',
             folderName,
-            networkSlug,
-            `${contractAddress.toLowerCase()}.json`
+            networkSlug
         );
+        return await findAnalysisFileInsensitive(dirPath, contractAddress);
     }
     
     // Fallback to old flat structure for backwards compatibility
-    return join(
+    const dirPath = join(
         process.cwd(),
         'researchers',
         'reports',
-        folderName,
-        `${contractAddress.toLowerCase()}.json`
+        folderName
     );
+    return await findAnalysisFileInsensitive(dirPath, contractAddress);
 }
 
 export async function GET(
@@ -41,23 +66,29 @@ export async function GET(
     
     // Try new structure first, then fall back to old structure
     let analysisPath = await getAnalysisPath(wrapperSlug, contractAddress, networkName || undefined);
-    console.log('API: Attempting to read file at:', analysisPath);
+    console.log('API: Found analysis file at:', analysisPath);
     
-    try {
-        // Try to read the analysis file
-        const analysisData = await readFile(analysisPath, 'utf-8');
-        const parsedData = JSON.parse(analysisData);
+    if (analysisPath) {
+        try {
+            // Try to read the analysis file
+            const analysisData = await readFile(analysisPath, 'utf-8');
+            const parsedData = JSON.parse(analysisData);
 
-        console.log('API: Successfully loaded analysis, data length:', analysisData.length);
-        return NextResponse.json(parsedData);
-    } catch (error) {
-        // If new structure failed and we had a network name, try the old flat structure
-        if (networkName) {
+            console.log('API: Successfully loaded analysis, data length:', analysisData.length);
+            return NextResponse.json(parsedData);
+        } catch (error) {
+            console.error('Error reading analysis file:', error);
+        }
+    }
+    
+    // If new structure failed and we had a network name, try the old flat structure
+    if (networkName && !analysisPath) {
+        console.log('API: New structure failed, trying old structure...');
+        const fallbackPath = await getAnalysisPath(wrapperSlug, contractAddress);
+        console.log('API: Found fallback file at:', fallbackPath);
+        
+        if (fallbackPath) {
             try {
-                console.log('API: New structure failed, trying old structure...');
-                const fallbackPath = await getAnalysisPath(wrapperSlug, contractAddress);
-                console.log('API: Attempting fallback path:', fallbackPath);
-                
                 const analysisData = await readFile(fallbackPath, 'utf-8');
                 const parsedData = JSON.parse(analysisData);
                 
@@ -67,15 +98,14 @@ export async function GET(
                 console.error('Error loading token analysis from fallback:', fallbackError);
             }
         }
-        
-        // If all attempts failed, return 404
-        console.error('Error loading token analysis:', error);
-        console.log('Attempted path:', analysisPath);
-        return NextResponse.json(
-            { error: 'Analysis not found' },
-            { status: 404 }
-        );
     }
+    
+    // If all attempts failed, return 404
+    console.log('API: No analysis file found for:', { wrapperSlug, contractAddress, networkName });
+    return NextResponse.json(
+        { error: 'Analysis not found' },
+        { status: 404 }
+    );
 }
 
 export async function HEAD(
@@ -90,25 +120,31 @@ export async function HEAD(
         // Try new structure first
         let analysisPath = await getAnalysisPath(wrapperSlug, contractAddress, networkName || undefined);
         
-        try {
-            // Try to read the analysis file (just to check if it exists)
-            await readFile(analysisPath, 'utf-8');
-            return new NextResponse(null, { status: 200 });
-        } catch (error) {
-            // If new structure failed and we had a network name, try the old flat structure
-            if (networkName) {
+        if (analysisPath) {
+            try {
+                // Try to read the analysis file (just to check if it exists)
+                await readFile(analysisPath, 'utf-8');
+                return new NextResponse(null, { status: 200 });
+            } catch (error) {
+                // File exists but can't be read
+            }
+        }
+        
+        // If new structure failed and we had a network name, try the old flat structure
+        if (networkName && !analysisPath) {
+            const fallbackPath = await getAnalysisPath(wrapperSlug, contractAddress);
+            if (fallbackPath) {
                 try {
-                    const fallbackPath = await getAnalysisPath(wrapperSlug, contractAddress);
                     await readFile(fallbackPath, 'utf-8');
                     return new NextResponse(null, { status: 200 });
                 } catch (fallbackError) {
-                    // Both failed
+                    // File exists but can't be read
                 }
             }
-            
-            // If all attempts failed, return 404
-            return new NextResponse(null, { status: 404 });
         }
+        
+        // If all attempts failed, return 404
+        return new NextResponse(null, { status: 404 });
     } catch (error) {
         // If there's an error, return 404
         return new NextResponse(null, { status: 404 });

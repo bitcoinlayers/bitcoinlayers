@@ -16,7 +16,17 @@ import ComingSoonTokenContracts from "./coming-soon-token-contracts";
 import TokenContractAnalysisDropdown from "./layer/token-contract-analysis-dropdown";
 
 const truncateAddress = (address: string) => {
-    return `${address.slice(0, 6)}...${address.slice(-4)}`;
+    // Handle different address formats
+    if (address.length < 12) return address; // Don't truncate very short addresses
+    
+    // For longer addresses, use a more dynamic approach
+    if (address.startsWith("0x")) {
+        // EVM style: 0x1234...5678
+        return `${address.slice(0, 6)}...${address.slice(-4)}`;
+    } else {
+        // Non-EVM style: show first 6 and last 4 characters
+        return `${address.slice(0, 6)}...${address.slice(-4)}`;
+    }
 };
 
 // This will be handled by the TokenContractAnalysisDropdown component itself
@@ -124,7 +134,7 @@ export default function ProjectContractAddresses({ slug, isLayer }: Props) {
     // Transform data into contracts format for the unified analysis component
     // Preserve all database information including explorer URLs
     const contracts = data
-        .filter((item: any) => item.token_address.startsWith("0x")) // Only EVM contracts
+        .filter((item: any) => item.token_address && item.token_address.trim().length > 0) // Include all valid addresses
         .map((item: any) => ({
             address: item.token_address,
             network: item.network_name,
@@ -151,7 +161,7 @@ export default function ProjectContractAddresses({ slug, isLayer }: Props) {
                 </div>
             </div>
 
-            {/* Unified Token Contract Analysis - shows only if there are EVM contracts */}
+            {/* Unified Token Contract Analysis - shows only if there are contracts with addresses */}
             {contracts.length > 0 ? (
                 <div className="w-full">
                     <TokenContractAnalysisDropdown 
@@ -162,7 +172,7 @@ export default function ProjectContractAddresses({ slug, isLayer }: Props) {
                 </div>
             ) : (
                 <>
-                    {/* Show individual address items only if no EVM contracts with analysis */}
+                    {/* Show individual address items only if no contracts with analysis */}
                     {initialItems.map((item: any, index: number) => (
                         <AddressItem
                             key={index}

@@ -19,10 +19,10 @@ from dotenv import load_dotenv
 load_dotenv(os.path.join(os.path.dirname(__file__), "..", "..", ".env.local"))
 
 # Configuration - Select network and contract to analyze
-NETWORK = "bob"  # Change this: "ethereum", "polygon", "arbitrum", "bsc", "bob", "base"
-TOKEN_ADDRESS = "0xA45d4121b3D47719FF57a947A9d961539Ba33204"  # Update this address to analyze different contracts
-LAYER_NAME = "BOB"  # Layer name for directory organization
-WRAPPER_NAME = "Lombard LBTC"  # Wrapper name for this token
+NETWORK = "ethereum"  # Change this: "ethereum", "polygon", "arbitrum", "bsc", "bob", "base"
+TOKEN_ADDRESS = "0xcbb7c0000ab88b473b1f5afd9ef808440eed33bf"  # Update this address to analyze different contracts
+LAYER_NAME = "Ethereum"  # Layer name for directory organization
+WRAPPER_NAME = "Coinbase cbBTC"  # Wrapper name for this token
 # Network configurations
 NETWORK_CONFIGS = {
     "ethereum": {

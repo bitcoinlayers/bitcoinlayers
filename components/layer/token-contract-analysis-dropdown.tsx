@@ -1,13 +1,14 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { ChevronDown, ExternalLinkIcon, Shield, Users, Key, Building, FileText, Settings, Search } from "lucide-react";
+import { ChevronDown, ExternalLinkIcon, Shield, Users, Key, Building, FileText, Settings, Search, Code } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
     Collapsible,
     CollapsibleContent,
     CollapsibleTrigger,
 } from "@/components/ui/collapsible";
+import SVMTokenAnalysis from "./svm-token-analysis";
 
 interface Role {
     address: string;
@@ -62,6 +63,9 @@ interface ContractAnalysis {
     layer_name: string;
     wrapper_name: string;
     custom_summary?: CustomSummary;
+    // EVM Analysis specific fields
+    function_results?: Record<string, any>;
+    discovered_addresses?: string[];
 }
 
 interface TokenContract {
@@ -122,29 +126,39 @@ const getCorrectExplorerUrl = (contract: TokenContract): string => {
 
 
 
+
+
 // Hardcoded mapping of contract addresses + network to their analysis paths
 const formatContractAddress = (address: string): string => {
-    if (address.length < 6) return address;
-    return `${address.slice(0, 2)}...${address.slice(-3)}`;
+    if (address.length < 12) return address; // Don't truncate very short addresses
+    
+    // For longer addresses, use a more dynamic approach
+    if (address.startsWith("0x")) {
+        // EVM style: 0x1234...5678
+        return `${address.slice(0, 6)}...${address.slice(-4)}`;
+    } else {
+        // Non-EVM style: show first 6 and last 4 characters
+        return `${address.slice(0, 6)}...${address.slice(-4)}`;
+    }
 };
 
-const getAnalysisMapping = (contractAddress: string, networkName?: string): string | null => {
-    // Create a key combining address and network
-    const addressKey = contractAddress.toLowerCase();
-    const networkKey = networkName?.toLowerCase() || '';
-    const combinedKey = `${addressKey}:${networkKey}`;
+// Dynamic analysis discovery - checks if analysis exists for the given contract
+const checkAnalysisExists = async (contractAddress: string, networkName?: string, wrapperSlug?: string): Promise<string | null> => {
+    if (!wrapperSlug) return null;
     
-    const knownAnalyses: { [key: string]: string } = {
-        // Lombard LBTC - using combined address:network keys
-        '0x8236a87084f8b84306f72007f36f2618a5634494:ethereum': 'lombard_lbtc',
-        '0xecac9c5f704e954931349da37f60e39f515c11c1:base': 'lombard_lbtc',
-        '0xa45d4121b3d47719ff57a947a9d961539ba33204:bob': 'lombard_lbtc', // BOB network
-        // Add more contract addresses and their wrapper slugs here as needed
-        // Format: 'contractAddress:networkName': 'wrapperSlug'
-    };
+    const normalizedAddress = contractAddress.toLowerCase();
+    const normalizedNetwork = networkName?.toLowerCase() || '';
     
-    // Try combined key first, fallback to address-only for backward compatibility
-    return knownAnalyses[combinedKey] || knownAnalyses[addressKey] || null;
+    // Try the API endpoint to see if analysis exists
+    const networkParam = normalizedNetwork ? `?network=${encodeURIComponent(normalizedNetwork)}` : '';
+    const analysisPath = `/api/token-analysis/${wrapperSlug}/${normalizedAddress}${networkParam}`;
+    
+    try {
+        const response = await fetch(analysisPath, { method: 'HEAD' });
+        return response.ok ? wrapperSlug : null;
+    } catch {
+        return null;
+    }
 };
 
 export default function TokenContractAnalysisDropdown({ 
@@ -218,16 +232,34 @@ export default function TokenContractAnalysisDropdown({
             setError(null);
             
             try {
-                const wrapperSlug = getAnalysisMapping(selectedContract.address, selectedContract.network);
+                // Dynamic discovery: try to find analysis using wrapper slug from contract data
+                let wrapperSlug = selectedContract.token_slug || selectedContract.wrapperName || selectedContract.token_name;
                 
-                if (!wrapperSlug) {
+                // Normalize slug format but keep kebab-case (API route handles conversion)
+                if (wrapperSlug) {
+                    wrapperSlug = wrapperSlug.toLowerCase().replace(/\s/g, '-');
+                }
+                
+                // If no wrapper slug found, try some common patterns
+                if (!wrapperSlug && selectedContract.token_name) {
+                    wrapperSlug = selectedContract.token_name.toLowerCase().replace(/\s/g, '-');
+                }
+                
+                // Check if analysis exists
+                const foundWrapperSlug = await checkAnalysisExists(
+                    selectedContract.address, 
+                    selectedContract.network, 
+                    wrapperSlug
+                );
+                
+                if (!foundWrapperSlug) {
                     setError("No analysis available for this contract");
                     return;
                 }
                 
                 const normalizedAddress = selectedContract.address.toLowerCase();
                 const networkParam = selectedContract.network ? `?network=${encodeURIComponent(selectedContract.network)}` : '';
-                const analysisPath = `/api/token-analysis/${wrapperSlug}/${normalizedAddress}${networkParam}`;
+                const analysisPath = `/api/token-analysis/${foundWrapperSlug}/${normalizedAddress}${networkParam}`;
                 
                 const response = await fetch(analysisPath);
                 
@@ -239,8 +271,9 @@ export default function TokenContractAnalysisDropdown({
                     throw new Error(`HTTP ${response.status}`);
                 }
                 
-                const data = await response.json();
-                setAnalysisData(data);
+                                                const data = await response.json();
+                                
+                                setAnalysisData(data);
             } catch (err) {
                 console.error("Error fetching contract analysis:", err);
                 setError("Analysis not available");
@@ -447,7 +480,7 @@ export default function TokenContractAnalysisDropdown({
                                     >
                                         <div className="flex items-center gap-2">
                                             <Settings className="h-4 w-4" />
-                                            <span className="font-medium text-sm">Read As Proxy ({Object.keys(analysis.function_results).length})</span>
+                                            <span className="font-medium text-sm">Read As Proxy ({analysis.function_results ? Object.keys(analysis.function_results).length : 0})</span>
                                         </div>
                                         <ChevronDown className="h-4 w-4 transition-transform group-data-[state=open]:rotate-180" />
                                     </Button>
@@ -561,69 +594,144 @@ export default function TokenContractAnalysisDropdown({
 
                         {/* Analysis Content */}
                         <div>
-                    {loading && (
-                        <div className="text-center text-sm text-muted-foreground py-4">
-                            Loading analysis...
-                        </div>
-                    )}
-                    
-                    {error && (
-                        <div className="text-center text-sm text-muted-foreground py-4">
-                            {error}
-                        </div>
-                    )}
-                    
-                    {analysisData && !loading && !error && (
-                        <div className="space-y-6">
-                            {/* Analysis Content - matching Taproot Script Analysis layout */}
-                            <div>
-                                <div className="space-y-3 text-foreground">
-                                    {analysisData.intro && (
-                                        <div className="leading-relaxed text-base">
-                                            {analysisData.intro}
+                            {/* Check if this is a Solana token and render SVM component */}
+                            {selectedContract?.network?.toLowerCase() === 'solana' ? (
+                                <SVMTokenAnalysis contract={selectedContract} />
+                            ) : (
+                                <>
+                                    {loading && (
+                                        <div className="text-center text-sm text-muted-foreground py-4">
+                                            Loading analysis...
                                         </div>
                                     )}
                                     
-                                    {analysisData.key_findings && analysisData.key_findings.length > 0 && (
-                                        <div className="bg-muted/50 rounded-xl border border-border p-4">
-                                            <h4 className="font-semibold text-foreground mb-3 flex items-center gap-2">
-                                                <Search className="h-4 w-4 text-muted-foreground" />
-                                                Key Findings
-                                            </h4>
-                                            <ul className="space-y-2.5 text-foreground">
-                                                {analysisData.key_findings.map((finding, index) => (
-                                                    <li key={index} className="flex items-start gap-2 leading-relaxed">
-                                                        <span className="text-foreground -mt-0.5">•</span>
-                                                        <span className="text-sm">{finding}</span>
-                                                    </li>
-                                                ))}
-                                            </ul>
+                                    {error && (
+                                        <div className="text-center text-sm text-muted-foreground py-4">
+                                            {error}
                                         </div>
                                     )}
-                                </div>
-                            </div>
+                                    
+                                    {analysisData && !loading && !error && (
+                                        <div className="space-y-6">
+                                            {/* Analysis Content - matching Taproot Script Analysis layout */}
+                                            <div>
+                                                <div className="space-y-3 text-foreground">
+                                                    {analysisData.intro && (
+                                                        <div className="leading-relaxed text-base">
+                                                            {analysisData.intro}
+                                                        </div>
+                                                    )}
+                                                    
+                                                    {analysisData.key_findings && analysisData.key_findings.length > 0 && (
+                                                        <div className="bg-muted/50 rounded-xl border border-border p-4">
+                                                            <h4 className="font-semibold text-foreground mb-3 flex items-center gap-2">
+                                                                <Search className="h-4 w-4 text-muted-foreground" />
+                                                                Key Findings
+                                                            </h4>
+                                                            <ul className="space-y-2.5 text-foreground">
+                                                                {analysisData.key_findings.map((finding, index) => (
+                                                                    <li key={index} className="flex items-start gap-2 leading-relaxed">
+                                                                        <span className="text-foreground -mt-0.5">•</span>
+                                                                        <span className="text-sm">{finding}</span>
+                                                                    </li>
+                                                                ))}
+                                                            </ul>
+                                                        </div>
+                                                    )}
+                                                </div>
+                                            </div>
 
-                            {/* Supporting Contracts */}
-                            {(Object.keys(analysisData.roles).length > 0 || Object.keys(analysisData.governance_analysis).length > 0) && (
-                                <Collapsible>
-                                    <CollapsibleTrigger asChild>
-                                        <button className="flex items-center gap-2 text-foreground hover:text-foreground/80 transition-colors mb-4">
-                                            <Shield className="h-4 w-4 text-muted-foreground" />
-                                            <h5 className="font-medium text-muted-foreground">Supporting Contracts</h5>
-                                            <ChevronDown className="h-4 w-4 transition-transform group-data-[state=open]:rotate-180" />
-                                        </button>
-                                    </CollapsibleTrigger>
-                                    <CollapsibleContent className="pt-2">
-                                        <div className="space-y-4 ml-6">
-                                            {Object.keys(analysisData.roles).length > 0 && renderRoles(analysisData.roles)}
-                                            {Object.keys(analysisData.governance_analysis).length > 0 && renderGovernanceAnalysis(analysisData.governance_analysis)}
+                                            {/* Contract Implementation Details */}
+                                            {(analysisData.function_results || analysisData.discovered_addresses) && (
+                                                <div className="bg-muted/50 rounded-xl border border-border p-4 mb-4">
+                                                    <h4 className="font-semibold text-foreground mb-3 flex items-center gap-2">
+                                                        <Code className="h-4 w-4 text-muted-foreground" />
+                                                        Contract Implementation
+                                                    </h4>
+                                                    
+                                                    {/* Function Results */}
+                                                    {analysisData.function_results && Object.keys(analysisData.function_results).length > 0 && (
+                                                        <div className="space-y-2 mb-4">
+                                                            <div className="text-sm font-medium text-muted-foreground mb-2">Contract Functions:</div>
+                                                            {Object.entries(analysisData.function_results).map(([funcName, result]) => (
+                                                                <div key={funcName} className="bg-background/50 rounded-lg p-3 border border-border/50">
+                                                                    <div className="flex items-start justify-between gap-2">
+                                                                        <div className="flex-1 min-w-0">
+                                                                            <div className="font-mono text-sm font-medium text-foreground mb-1">
+                                                                                {funcName}()
+                                                                            </div>
+                                                                            <div className="font-mono text-xs text-muted-foreground break-all">
+                                                                                {typeof result === 'string' && result.startsWith('0x') ? (
+                                                                                    <a 
+                                                                                        href={`https://etherscan.io/address/${result}`}
+                                                                                        target="_blank"
+                                                                                        rel="noopener noreferrer"
+                                                                                        className="hover:underline text-blue-600 dark:text-blue-400"
+                                                                                    >
+                                                                                        {result}
+                                                                                    </a>
+                                                                                ) : (
+                                                                                    String(result)
+                                                                                )}
+                                                                            </div>
+                                                                        </div>
+                                                                        <div className="text-xs px-2 py-1 bg-muted rounded text-muted-foreground">
+                                                                            {typeof result === 'string' && result.startsWith('0x') ? 'Address' : typeof result}
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            ))}
+                                                        </div>
+                                                    )}
+                                                    
+                                                    {/* Discovered Addresses */}
+                                                    {analysisData.discovered_addresses && analysisData.discovered_addresses.length > 0 && (
+                                                        <div className="space-y-2">
+                                                            <div className="text-sm font-medium text-muted-foreground mb-2">
+                                                                Discovered Addresses ({analysisData.discovered_addresses.length}):
+                                                            </div>
+                                                            <div className="grid gap-2">
+                                                                {analysisData.discovered_addresses.map((address, index) => (
+                                                                    <div key={index} className="bg-background/50 rounded-lg p-2 border border-border/50">
+                                                                        <a 
+                                                                            href={`https://etherscan.io/address/${address}`}
+                                                                            target="_blank"
+                                                                            rel="noopener noreferrer"
+                                                                            className="font-mono text-xs text-blue-600 dark:text-blue-400 hover:underline break-all"
+                                                                        >
+                                                                            {address}
+                                                                        </a>
+                                                                    </div>
+                                                                ))}
+                                                            </div>
+                                                        </div>
+                                                    )}
+                                                </div>
+                                            )}
+
+                                            {/* Supporting Contracts */}
+                                            {((analysisData.roles && Object.keys(analysisData.roles).length > 0) || (analysisData.governance_analysis && Object.keys(analysisData.governance_analysis).length > 0)) && (
+                                                <Collapsible>
+                                                    <CollapsibleTrigger asChild>
+                                                        <button className="flex items-center gap-2 text-foreground hover:text-foreground/80 transition-colors mb-4">
+                                                            <Shield className="h-4 w-4 text-muted-foreground" />
+                                                            <h5 className="font-medium text-muted-foreground">Supporting Contracts</h5>
+                                                            <ChevronDown className="h-4 w-4 transition-transform group-data-[state=open]:rotate-180" />
+                                                        </button>
+                                                    </CollapsibleTrigger>
+                                                    <CollapsibleContent className="pt-2">
+                                                        <div className="space-y-4 ml-6">
+                                                            {analysisData.roles && Object.keys(analysisData.roles).length > 0 && renderRoles(analysisData.roles)}
+                                                            {analysisData.governance_analysis && Object.keys(analysisData.governance_analysis).length > 0 && renderGovernanceAnalysis(analysisData.governance_analysis)}
+                                                        </div>
+                                                    </CollapsibleContent>
+                                                </Collapsible>
+                                            )}
                                         </div>
-                                    </CollapsibleContent>
-                                </Collapsible>
+                                    )}
+                                </>
                             )}
                         </div>
-                    )}
-                         </div>
                     </div>
                 )}
             </div>

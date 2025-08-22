@@ -1,0 +1,69 @@
+{
+  "mint_address": "cbbtcf3aa214zXHbiAZQwf4122FBYbraNdFqgw4iMij",
+  "basic_info": {
+    "mint_address": "cbbtcf3aa214zXHbiAZQwf4122FBYbraNdFqgw4iMij",
+    "supply": 330103205616,
+    "decimals": 8,
+    "mint_authority": "1118j9ciCdY5kHiY8qzPMWKps5G1trStSkZZtfD9N11",
+    "freeze_authority": "1119PVTQ6Q8HQQwsxjLyNncPWFfergEPE6ZtQqRAHo2",
+    "is_initialized": true,
+    "owner_program": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+    "is_token_2022": false
+  },
+  "metadata": {
+    "name": "Metaplex Token",
+    "symbol": "META",
+    "description": "Token with Metaplex metadata",
+    "image": null,
+    "external_url": null,
+    "attributes": null,
+    "properties": null
+  },
+  "supply_info": {
+    "total_supply": 330103205616,
+    "circulating_supply": "330103205616",
+    "max_supply": null,
+    "holders_count": null
+  },
+  "security_analysis": {
+    "mint_authority": "1118j9ciCdY5kHiY8qzPMWKps5G1trStSkZZtfD9N11",
+    "freeze_authority": "1119PVTQ6Q8HQQwsxjLyNncPWFfergEPE6ZtQqRAHo2",
+    "is_mutable": true,
+    "has_update_authority": true,
+    "is_verified": false,
+    "security_score": 50,
+    "risk_factors": [
+      "Has mint authority - tokens can be minted",
+      "Has freeze authority - accounts can be frozen"
+    ]
+  },
+  "governance_info": {
+    "governance_type": "Unknown Governance",
+    "authority_analyses": {
+      "mint_authority": "AuthorityAnalysis(address='1118j9ciCdY5kHiY8qzPMWKps5G1trStSkZZtfD9N11', authority_type='Non-existent', capabilities=['Address does not exist'], multisig_info=None, governance_info=None, risk_assessment={'risk_level': 'high', 'reason': 'Invalid authority address'})",
+      "freeze_authority": "AuthorityAnalysis(address='1119PVTQ6Q8HQQwsxjLyNncPWFfergEPE6ZtQqRAHo2', authority_type='Non-existent', capabilities=['Address does not exist'], multisig_info=None, governance_info=None, risk_assessment={'risk_level': 'high', 'reason': 'Invalid authority address'})"
+    },
+    "overall_risk_score": 5.0,
+    "governance_summary": {
+      "total_authorities": 2,
+      "governance_type": "Unknown Governance",
+      "key_findings": [
+        "mint_authority: Non-existent with 1 capabilities",
+        "freeze_authority: Non-existent with 1 capabilities"
+      ],
+      "recommendations": [
+        "Consider decentralizing mint_authority - current setup is high risk",
+        "Consider decentralizing freeze_authority - current setup is high risk"
+      ]
+    }
+  },
+  "errors": [],
+  "analysis_metadata": {
+    "analyzer_version": "1.0.0",
+    "network": "mainnet",
+    "analysis_date": "2025-08-22 00:17:39 UTC",
+    "wrapper_name": "Coinbase cbBTC",
+    "project_name": "Solana",
+    "explorer_url": "https://explorer.solana.com/address/cbbtcf3aa214zXHbiAZQwf4122FBYbraNdFqgw4iMij"
+  }
+}
