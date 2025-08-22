@@ -9,6 +9,7 @@ import {
     CollapsibleTrigger,
 } from "@/components/ui/collapsible";
 import SVMTokenAnalysis from "./svm-token-analysis";
+import MoveVMTokenAnalysis from "./movevm-token-analysis";
 
 interface Role {
     address: string;
@@ -594,9 +595,13 @@ export default function TokenContractAnalysisDropdown({
 
                         {/* Analysis Content */}
                         <div>
-                            {/* Check if this is a Solana token and render SVM component */}
+                            {/* Check network type and render appropriate component */}
                             {selectedContract?.network?.toLowerCase() === 'solana' ? (
                                 <SVMTokenAnalysis contract={selectedContract} />
+                            ) : ['aptos', 'sui', 'movement'].some(network => 
+                                selectedContract?.network?.toLowerCase().includes(network)
+                            ) ? (
+                                <MoveVMTokenAnalysis contract={selectedContract} />
                             ) : (
                                 <>
                                     {loading && (

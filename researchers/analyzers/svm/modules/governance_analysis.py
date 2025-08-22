@@ -406,3 +406,5 @@ class GovernanceAnalyzer:
             report["governance_configuration"] = asdict(analysis.governance_info)
         
         return report
+
+

@@ -124,3 +124,5 @@ ACCOUNT_LAYOUTS = {
     "SPL_TOKEN_2022_MINT": 82,  # Base size, extensions add more
     "SPL_TOKEN_2022_ACCOUNT": 165  # Base size, extensions add more
 }
+
+
