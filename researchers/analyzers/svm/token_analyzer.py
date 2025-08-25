@@ -23,23 +23,22 @@ from modules.config import get_network_config, validate_network_config, get_expl
 from modules.token_analysis import TokenAnalyzer
 
 # Configuration - Select network and token to analyze
-NETWORK = "mainnet"  # Change this: "mainnet", "devnet", "testnet"
-TOKEN_MINT = "cbbtcf3aa214zXHbiAZQwf4122FBYbraNdFqgw4iMij"  # Target token to analyze
-WRAPPER_NAME = "Coinbase cbBTC"  # Wrapper name for this token - will be updated from metadata
-PROJECT_NAME = "Solana"  # Project name for directory organization
+NETWORK_NAME = "solana"  # Network name for directory organization
+TOKEN_MINT = "8yev7nLen2PFN2uYGhzsUbu243wMa9z4ZrCwuXs6DEQw"  # Target token to analyze
+WRAPPER_NAME = "rootstock_rbtc"  # Wrapper name for this token - will be updated from metadata
 
-def analyze_spl_token(network: str, mint_address: str, wrapper_name: str, project_name: str) -> Dict[str, Any]:
+def analyze_spl_token(mint_address: str, wrapper_name: str, network_name: str) -> Dict[str, Any]:
     """Analyze an SPL token and return comprehensive results"""
     
     print(f"🔍 Analyzing SPL token: {mint_address}")
-    print(f"📡 Network: {network}")
+    print(f"📡 Network: {network_name}")
     print(f"🏷️  Wrapper: {wrapper_name}")
     print("=" * 60)
     
     try:
-        # Validate network configuration
-        validate_network_config(network)
-        config = get_network_config(network)
+        # Validate network configuration - use mainnet as default
+        validate_network_config("mainnet")
+        config = get_network_config("mainnet")
         
         # Initialize analyzer
         analyzer = TokenAnalyzer(config.rpc_url)
@@ -52,11 +51,11 @@ def analyze_spl_token(network: str, mint_address: str, wrapper_name: str, projec
         analysis_result.update({
             "analysis_metadata": {
                 "analyzer_version": "1.0.0",
-                "network": network,
+                "network": "mainnet",
                 "analysis_date": datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S UTC'),
                 "wrapper_name": wrapper_name,
-                "project_name": project_name,
-                "explorer_url": get_explorer_url(network, mint_address)
+                "network_name": network_name,
+                "explorer_url": get_explorer_url("mainnet", mint_address)
             }
         })
         
@@ -69,35 +68,34 @@ def analyze_spl_token(network: str, mint_address: str, wrapper_name: str, projec
             "mint_address": mint_address,
             "analysis_metadata": {
                 "analyzer_version": "1.0.0", 
-                "network": network,
+                "network": "mainnet",
                 "analysis_date": datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S UTC'),
                 "error": True
             }
         }
 
-def save_analysis_report(analysis: Dict[str, Any], project_name: str, wrapper_name: str, network: str, mint_address: str):
+def save_analysis_report(analysis: Dict[str, Any], wrapper_name: str, network_name: str, mint_address: str):
     """Save analysis report to file"""
     
-    # Create directory structure
-    safe_project_name = project_name.lower().replace(" ", "_")
+    # Create directory structure: reports/wrapper_name/network_name
     safe_wrapper_name = wrapper_name.lower().replace(" ", "_")
+    safe_network_name = network_name.lower().replace(" ", "_")
     
     base_dir = os.path.join(os.path.dirname(__file__), "..", "..", "reports")
-    project_dir = os.path.join(base_dir, safe_project_name)
-    network_dir = os.path.join(project_dir, network)
+    wrapper_dir = os.path.join(base_dir, safe_wrapper_name)
+    network_dir = os.path.join(wrapper_dir, safe_network_name)
     
     os.makedirs(network_dir, exist_ok=True)
     
-    # Generate filename
-    timestamp = datetime.now(timezone.utc).strftime('%Y%m%d_%H%M%S')
-    filename = f"{safe_wrapper_name}_{mint_address[:8]}_{timestamp}"
+    # Generate filename using contract address (for API compatibility)
+    filename = mint_address.lower()
     
-    # Save JSON report
+    # Save JSON report (using address as filename for API)
     json_file = os.path.join(network_dir, f"{filename}.json")
     with open(json_file, 'w') as f:
         json.dump(analysis, f, indent=2, default=str)
     
-    # Save markdown summary
+    # Save markdown summary (using address as filename for consistency)
     md_file = os.path.join(network_dir, f"{filename}.md")
     markdown_content = generate_markdown_report(analysis)
     with open(md_file, 'w') as f:
@@ -259,16 +257,16 @@ def main():
     try:
         print("🚀 SPL Token Analyzer Starting...")
         print(f"🎯 Target: {TOKEN_MINT}")
-        print(f"🌐 Network: {NETWORK}")
+        print(f"🌐 Network: {NETWORK_NAME}")
         
         # Perform analysis
-        analysis = analyze_spl_token(NETWORK, TOKEN_MINT, WRAPPER_NAME, PROJECT_NAME)
+        analysis = analyze_spl_token(TOKEN_MINT, WRAPPER_NAME, NETWORK_NAME)
         
         # Print summary
         print_summary(analysis)
         
         # Save report
-        save_analysis_report(analysis, PROJECT_NAME, WRAPPER_NAME, NETWORK, TOKEN_MINT)
+        save_analysis_report(analysis, WRAPPER_NAME, NETWORK_NAME, TOKEN_MINT)
         
         print("\n✅ Analysis completed successfully!")
         

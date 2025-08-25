@@ -1,14 +1,14 @@
 # SPL Token Analysis Report
 
 ## Token Information
-- **Mint Address**: `cbbtcf3aa214zXHbiAZQwf4122FBYbraNdFqgw4iMij`
+- **Mint Address**: `3NZ9JMVBmGAqocybic2c7LQCJScmgsAZ6vQqTDzcqmJh`
 - **Network**: mainnet
-- **Wrapper Name**: Coinbase cbBTC
-- **Analysis Date**: 2025-08-22 00:17:39 UTC
-- **Explorer**: [View on Solana Explorer](https://explorer.solana.com/address/cbbtcf3aa214zXHbiAZQwf4122FBYbraNdFqgw4iMij)
+- **Wrapper Name**: bitgo_wbtc
+- **Analysis Date**: 2025-08-25 21:44:45 UTC
+- **Explorer**: [View on Solana Explorer](https://explorer.solana.com/address/3NZ9JMVBmGAqocybic2c7LQCJScmgsAZ6vQqTDzcqmJh)
 
 ## Basic Properties
-- **Supply**: 330,103,205,616
+- **Supply**: 326,765,361,079
 - **Decimals**: 8
 - **Is Initialized**: True
 - **Token Program**: TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA
@@ -20,45 +20,44 @@
 - **Description**: Token with Metaplex metadata
 
 ## Supply Analysis
-- **Total Supply**: 330,103,205,616
-- **Circulating Supply**: 330103205616
+- **Total Supply**: 326,765,361,079
+- **Circulating Supply**: 326765361079
 - **Estimated Holders**: None
 
 ## Security Analysis
-- **Mint Authority**: 1118j9ciCdY5kHiY8qzPMWKps5G1trStSkZZtfD9N11
-- **Freeze Authority**: 1119PVTQ6Q8HQQwsxjLyNncPWFfergEPE6ZtQqRAHo2
+- **Mint Authority**: 1117snDTk2WpxZCoyziYT9BPvbfszk54DaZQx3i5Tfe
+- **Freeze Authority**: None
 - **Is Mutable**: True
-- **Security Score**: 50/100
+- **Security Score**: 70/100
 
 ### Risk Factors
 - Has mint authority - tokens can be minted
-- Has freeze authority - accounts can be frozen
 
 ## Governance Analysis
-- **Governance Type**: Unknown Governance
+- **Governance Type**: Centralized
 - **Overall Risk Score**: 5.0/10
 
 ### Authority Analysis
 
 #### Mint Authority
-- **Address**: `1118j9ciCdY5kHiY8qzPMWKps5G1trStSkZZtfD9N11`
+- **Address**: `1117snDTk2WpxZCoyziYT9BPvbfszk54DaZQx3i5Tfe`
 - **Type**: Non-existent
 - **Risk Level**: high
 - **Risk Score**: N/A/10
 - **Capabilities**:
   - Address does not exist
 
-#### Freeze Authority
-- **Address**: `1119PVTQ6Q8HQQwsxjLyNncPWFfergEPE6ZtQqRAHo2`
-- **Type**: Non-existent
+#### Update Authority
+- **Address**: `BCD75RNBHrJJpW4dXVagL5mPjzRLnVZq4YirJdjEYMV7`
+- **Type**: Wallet
 - **Risk Level**: high
 - **Risk Score**: N/A/10
 - **Capabilities**:
-  - Address does not exist
+  - Full unilateral control (no multi-party approval required)
 
 ### Recommendations
 - Consider decentralizing mint_authority - current setup is high risk
-- Consider decentralizing freeze_authority - current setup is high risk
+- Consider decentralizing update_authority - current setup is high risk
 
 ---
 *Analysis performed using SVM Token Analyzer v1.0.0*

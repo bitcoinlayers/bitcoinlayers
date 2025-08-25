@@ -248,6 +248,9 @@ class TokenAnalyzer:
             mint_authority = basic_info.get("mint_authority")
             freeze_authority = basic_info.get("freeze_authority")
             
+            # Get UpdateAuthority from metadata
+            update_authority = self._get_update_authority(mint_address)
+            
             total_risk_score = 0
             authority_count = 0
             
@@ -269,6 +272,16 @@ class TokenAnalyzer:
                 )
                 governance_info["authority_analyses"]["freeze_authority"] = freeze_analysis
                 total_risk_score += freeze_analysis.risk_assessment.get("risk_score", 5)
+                authority_count += 1
+            
+            # Deep analysis of update authority (metadata)
+            if update_authority:
+                print(f"🔍 Analyzing update authority: {update_authority}")
+                update_analysis = self.governance_analyzer.analyze_authority_deeply(
+                    update_authority, "update_authority"
+                )
+                governance_info["authority_analyses"]["update_authority"] = update_analysis
+                total_risk_score += update_analysis.risk_assessment.get("risk_score", 5)
                 authority_count += 1
             
             # Calculate overall risk score
@@ -378,6 +391,44 @@ class TokenAnalyzer:
                         )
         
         return summary
+    
+    def _get_update_authority(self, mint_address: str) -> Optional[str]:
+        """Get UpdateAuthority from Metaplex metadata"""
+        try:
+            # Derive metadata PDA
+            mint_pubkey = PublicKey.from_string(mint_address)
+            metadata_program = PublicKey.from_string(SOLANA_PROGRAMS["METAPLEX_TOKEN_METADATA"])
+            
+            seeds = [
+                b"metadata",
+                bytes(metadata_program),
+                bytes(mint_pubkey)
+            ]
+            
+            metadata_pda, _ = PublicKey.find_program_address(seeds, metadata_program)
+            
+            # Get metadata account
+            response = self.client.get_account_info(metadata_pda)
+            if not response.value:
+                return None
+            
+            data = response.value.data
+            if len(data) < 100:  # Minimum size check
+                return None
+            
+            # Parse Metaplex metadata structure to extract UpdateAuthority
+            # UpdateAuthority is at bytes 1-33 in the metadata account
+            try:
+                update_authority_bytes = data[1:33]
+                update_authority = base58.b58encode(update_authority_bytes).decode()
+                return update_authority
+            except Exception as parse_error:
+                print(f"Error parsing UpdateAuthority: {parse_error}")
+                return None
+            
+        except Exception as e:
+            print(f"Error getting UpdateAuthority for {mint_address}: {e}")
+            return None
     
     def _estimate_holders_count(self, mint_address: str) -> Optional[int]:
         """Estimate number of token holders (simplified implementation)"""

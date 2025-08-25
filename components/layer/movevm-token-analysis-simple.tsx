@@ -64,6 +64,17 @@ interface MoveVMAnalysisData {
             recommendations: string[];
         };
     };
+    authority_analysis?: {
+        authorities: Array<{
+            role: string;
+            holder_type: string;
+            description: string;
+            capabilities: string[];
+            restrictions: string[];
+            risk_level: string;
+            pattern: string;
+        }>;
+    };
     errors: string[];
     analysis_metadata: {
         analyzer_version: string;
@@ -304,7 +315,7 @@ export default function MoveVMTokenAnalysis({ contract }: MoveVMTokenAnalysisPro
                 </div>
             </div>
 
-            {/* Function List - EVM Style */}
+            {/* Governance Analysis - Authority Details */}
             <div className="mb-4">
                 <Collapsible>
                     <CollapsibleTrigger asChild>
@@ -315,146 +326,61 @@ export default function MoveVMTokenAnalysis({ contract }: MoveVMTokenAnalysisPro
                         >
                             <div className="flex items-center gap-2">
                                 <Settings className="h-4 w-4" />
-                                <span className="font-medium text-sm">Function List ({[
-                                    security_analysis.has_mint_capability ? 'mint' : null,
-                                    security_analysis.has_burn_capability ? 'burn' : null,
-                                    security_analysis.has_freeze_capability ? 'freeze' : null,
-                                    'standard',
-                                    governance_info.governance_type === 'multisig_treasury' ? 'treasury' : null
-                                ].filter(Boolean).length})</span>
+                                <span className="font-medium text-sm">Governance Analysis ({governance_info.governance_summary?.total_authorities || Object.keys(governance_info.authority_analyses || {}).length})</span>
                             </div>
                             <ChevronDown className="h-4 w-4 transition-transform group-data-[state=open]:rotate-180" />
                         </Button>
                     </CollapsibleTrigger>
                     <CollapsibleContent className="pt-2">
                         <div className="space-y-2">
-                            {/* Mint Functions */}
-                            {security_analysis.has_mint_capability && (
-                                <>
-                                    <div className="flex items-center justify-between text-xs bg-muted/30 rounded p-2">
-                                        <div>
-                                            <span className="font-mono text-muted-foreground">mint</span>
-                                            <span className="ml-2 text-xs bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-1 rounded">
-                                                Function
-                                            </span>
-                                        </div>
-                                        <span className="font-mono text-muted-foreground">
-                                            Authority
-                                        </span>
-                                    </div>
-                                    <div className="flex items-center justify-between text-xs bg-muted/30 rounded p-2">
-                                        <div>
-                                            <span className="font-mono text-muted-foreground">mint_and_transfer</span>
-                                            <span className="ml-2 text-xs bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-1 rounded">
-                                                Function
-                                            </span>
-                                        </div>
-                                        <span className="font-mono text-muted-foreground">
-                                            Authority
-                                        </span>
-                                    </div>
-                                </>
-                            )}
-                            
-                            {/* Burn Functions */}
-                            {security_analysis.has_burn_capability && (
-                                <div className="flex items-center justify-between text-xs bg-muted/30 rounded p-2">
+                            {/* Authority Analysis from authority_analysis.authorities */}
+                            {analysisData.authority_analysis?.authorities?.map((authority, index) => (
+                                <div key={index} className="flex items-center justify-between text-xs bg-muted/30 rounded p-2">
                                     <div>
-                                        <span className="font-mono text-muted-foreground">burn</span>
-                                        <span className="ml-2 text-xs bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-1 rounded">
-                                            Function
+                                        <span className="font-mono text-muted-foreground">{authority.role}</span>
+                                        <span className={`ml-2 text-xs px-1 rounded ${
+                                            authority.risk_level === 'High' 
+                                                ? 'bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200'
+                                                : authority.risk_level === 'Medium'
+                                                ? 'bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200'
+                                                : 'bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200'
+                                        }`}>
+                                            {authority.risk_level} Risk
                                         </span>
                                     </div>
-                                    <span className="font-mono text-muted-foreground">
-                                        Authority
+                                    <span className="font-mono text-muted-foreground text-right">
+                                        {authority.holder_type}
                                     </span>
                                 </div>
-                            )}
+                            ))}
                             
-                            {/* Freeze Functions */}
-                            {security_analysis.has_freeze_capability && (
-                                <div className="flex items-center justify-between text-xs bg-muted/30 rounded p-2">
+                            {/* Fallback to authority_analyses if authorities not available */}
+                            {(!analysisData.authority_analysis?.authorities || analysisData.authority_analysis.authorities.length === 0) && 
+                             governance_info.authority_analyses && Object.entries(governance_info.authority_analyses).map(([role, analysis]) => (
+                                <div key={role} className="flex items-center justify-between text-xs bg-muted/30 rounded p-2">
                                     <div>
-                                        <span className="font-mono text-muted-foreground">freeze</span>
-                                        <span className="ml-2 text-xs bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-1 rounded">
-                                            Function
+                                        <span className="font-mono text-muted-foreground">{role}</span>
+                                        <span className={`ml-2 text-xs px-1 rounded ${
+                                            analysis.risk_level === 'High' 
+                                                ? 'bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200'
+                                                : analysis.risk_level === 'Medium'
+                                                ? 'bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200'
+                                                : 'bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200'
+                                        }`}>
+                                            {analysis.risk_level} Risk
                                         </span>
                                     </div>
-                                    <span className="font-mono text-muted-foreground">
-                                        Authority
+                                    <span className="font-mono text-muted-foreground text-right">
+                                        {analysis.type}
                                     </span>
                                 </div>
-                            )}
+                            ))}
                             
-                            {/* Standard Token Functions - Always Available */}
-                            <div className="flex items-center justify-between text-xs bg-muted/30 rounded p-2">
-                                <div>
-                                    <span className="font-mono text-muted-foreground">transfer</span>
-                                    <span className="ml-2 text-xs bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-1 rounded">
-                                        Function
-                                    </span>
-                                </div>
-                                <span className="font-mono text-muted-foreground">
-                                    Public
-                                </span>
-                            </div>
-                            <div className="flex items-center justify-between text-xs bg-muted/30 rounded p-2">
-                                <div>
-                                    <span className="font-mono text-muted-foreground">balance</span>
-                                    <span className="ml-2 text-xs bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-1 rounded">
-                                        Function
-                                    </span>
-                                </div>
-                                <span className="font-mono text-muted-foreground">
-                                    Public
-                                </span>
-                            </div>
-                            <div className="flex items-center justify-between text-xs bg-muted/30 rounded p-2">
-                                <div>
-                                    <span className="font-mono text-muted-foreground">name</span>
-                                    <span className="ml-2 text-xs bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-1 rounded">
-                                        Function
-                                    </span>
-                                </div>
-                                <span className="font-mono text-muted-foreground">
-                                    {metadata.name || basic_info.name}
-                                </span>
-                            </div>
-                            <div className="flex items-center justify-between text-xs bg-muted/30 rounded p-2">
-                                <div>
-                                    <span className="font-mono text-muted-foreground">symbol</span>
-                                    <span className="ml-2 text-xs bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-1 rounded">
-                                        Function
-                                    </span>
-                                </div>
-                                <span className="font-mono text-muted-foreground">
-                                    {metadata.symbol || basic_info.symbol}
-                                </span>
-                            </div>
-                            <div className="flex items-center justify-between text-xs bg-muted/30 rounded p-2">
-                                <div>
-                                    <span className="font-mono text-muted-foreground">decimals</span>
-                                    <span className="ml-2 text-xs bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-1 rounded">
-                                        Function
-                                    </span>
-                                </div>
-                                <span className="font-mono text-muted-foreground">
-                                    {basic_info.decimals}
-                                </span>
-                            </div>
-                            
-                            {/* Treasury Functions - if treasury governance */}
-                            {governance_info.governance_type === 'multisig_treasury' && (
-                                <div className="flex items-center justify-between text-xs bg-muted/30 rounded p-2">
-                                    <div>
-                                        <span className="font-mono text-muted-foreground">treasury_operations</span>
-                                        <span className="ml-2 text-xs bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-1 rounded">
-                                            Function
-                                        </span>
-                                    </div>
-                                    <span className="font-mono text-muted-foreground">
-                                        Multisig
-                                    </span>
+                            {/* Show message if no authorities found */}
+                            {(!analysisData.authority_analysis?.authorities || analysisData.authority_analysis.authorities.length === 0) && 
+                             (!governance_info.authority_analyses || Object.keys(governance_info.authority_analyses).length === 0) && (
+                                <div className="text-xs text-muted-foreground text-center py-4">
+                                    No governance authorities detected
                                 </div>
                             )}
                         </div>
@@ -535,62 +461,6 @@ export default function MoveVMTokenAnalysis({ contract }: MoveVMTokenAnalysisPro
                 </div>
             </div>
 
-            {/* Governance Analysis */}
-            {governance_info && (
-                <Collapsible>
-                    <CollapsibleTrigger asChild>
-                        <button className="flex items-center gap-2 text-foreground hover:text-foreground/80 transition-colors mb-4">
-                            <Key className="h-4 w-4 text-muted-foreground" />
-                            <h5 className="font-medium text-muted-foreground">Governance Analysis</h5>
-                            <ExternalLinkIcon className="h-4 w-4 transition-transform group-data-[state=open]:rotate-180" />
-                        </button>
-                    </CollapsibleTrigger>
-                    <CollapsibleContent className="pt-2">
-                        <div className="space-y-4 ml-6">
-                            <div className="bg-background/50 rounded-lg p-3 border border-border/50">
-                                <div className="grid gap-2">
-                                    <div className="flex justify-between">
-                                        <span className="text-sm text-muted-foreground">Governance Type:</span>
-                                        <span className="text-sm font-medium capitalize">{governance_info.governance_type}</span>
-                                    </div>
-                                    <div className="flex justify-between">
-                                        <span className="text-sm text-muted-foreground">Risk Score:</span>
-                                        <span className={`text-sm font-medium px-2 py-1 rounded ${
-                                            governance_info.overall_risk_score <= 20
-                                                ? 'bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200'
-                                                : governance_info.overall_risk_score <= 50
-                                                ? 'bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200'
-                                                : 'bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200'
-                                        }`}>
-                                            {governance_info.overall_risk_score}/100
-                                        </span>
-                                    </div>
-                                    <div className="flex justify-between">
-                                        <span className="text-sm text-muted-foreground">Total Authorities:</span>
-                                        <span className="text-sm font-medium">{governance_info.governance_summary?.total_authorities || 0}</span>
-                                    </div>
-                                </div>
-                                
-                                {/* Key Findings */}
-                                {governance_info.governance_summary?.key_findings && governance_info.governance_summary.key_findings.length > 0 && (
-                                    <div className="mt-3">
-                                        <div className="text-sm font-medium text-muted-foreground mb-2">Key Findings:</div>
-                                        <ul className="space-y-1">
-                                            {governance_info.governance_summary.key_findings.map((finding, index) => (
-                                                <li key={index} className="text-xs text-muted-foreground flex items-start gap-2">
-                                                    <span className="text-foreground -mt-0.5">•</span>
-                                                    <span>{finding}</span>
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    </div>
-                                )}
-                            </div>
-                        </div>
-                    </CollapsibleContent>
-                </Collapsible>
-            )}
-            
             {/* Analysis Metadata */}
             <div className="text-xs text-muted-foreground pt-4 border-t border-border">
                 Analysis performed on {analysis_metadata.network} • 

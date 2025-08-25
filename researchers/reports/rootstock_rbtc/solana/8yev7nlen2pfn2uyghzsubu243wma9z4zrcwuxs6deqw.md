@@ -1,15 +1,15 @@
 # SPL Token Analysis Report
 
 ## Token Information
-- **Mint Address**: `cbbtcf3aa214zXHbiAZQwf4122FBYbraNdFqgw4iMij`
+- **Mint Address**: `8yev7nLen2PFN2uYGhzsUbu243wMa9z4ZrCwuXs6DEQw`
 - **Network**: mainnet
-- **Wrapper Name**: coinbase_cbbtc
-- **Analysis Date**: 2025-08-25 21:43:15 UTC
-- **Explorer**: [View on Solana Explorer](https://explorer.solana.com/address/cbbtcf3aa214zXHbiAZQwf4122FBYbraNdFqgw4iMij)
+- **Wrapper Name**: rootstock_rbtc
+- **Analysis Date**: 2025-08-25 21:45:25 UTC
+- **Explorer**: [View on Solana Explorer](https://explorer.solana.com/address/8yev7nLen2PFN2uYGhzsUbu243wMa9z4ZrCwuXs6DEQw)
 
 ## Basic Properties
-- **Supply**: 330,068,271,044
-- **Decimals**: 8
+- **Supply**: 1,344,000
+- **Decimals**: 9
 - **Is Initialized**: True
 - **Token Program**: TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA
 - **Is Token 2022**: False
@@ -20,13 +20,13 @@
 - **Description**: Token with Metaplex metadata
 
 ## Supply Analysis
-- **Total Supply**: 330,068,271,044
-- **Circulating Supply**: 330068271044
+- **Total Supply**: 1,344,000
+- **Circulating Supply**: 1344000
 - **Estimated Holders**: None
 
 ## Security Analysis
-- **Mint Authority**: 1118j9ciCdY5kHiY8qzPMWKps5G1trStSkZZtfD9N11
-- **Freeze Authority**: 1119PVTQ6Q8HQQwsxjLyNncPWFfergEPE6ZtQqRAHo2
+- **Mint Authority**: 111iLhnSR3VviYvV7xDDFEFQYfJNRCdwGaaqqauhkp
+- **Freeze Authority**: 111iLhnSR3VviYvV7xDDFEFQYfJNRCdwGaaqqauhkp
 - **Is Mutable**: True
 - **Security Score**: 50/100
 
@@ -41,7 +41,7 @@
 ### Authority Analysis
 
 #### Mint Authority
-- **Address**: `1118j9ciCdY5kHiY8qzPMWKps5G1trStSkZZtfD9N11`
+- **Address**: `111iLhnSR3VviYvV7xDDFEFQYfJNRCdwGaaqqauhkp`
 - **Type**: Non-existent
 - **Risk Level**: high
 - **Risk Score**: N/A/10
@@ -49,7 +49,7 @@
   - Address does not exist
 
 #### Freeze Authority
-- **Address**: `1119PVTQ6Q8HQQwsxjLyNncPWFfergEPE6ZtQqRAHo2`
+- **Address**: `111iLhnSR3VviYvV7xDDFEFQYfJNRCdwGaaqqauhkp`
 - **Type**: Non-existent
 - **Risk Level**: high
 - **Risk Score**: N/A/10
@@ -57,7 +57,7 @@
   - Address does not exist
 
 #### Update Authority
-- **Address**: `Aanfr1oYnkNNLTMcL9KHUPv6ZhSV8XwNxc9DJZhBj8u2`
+- **Address**: `DMbYvx7cxgXg2ZsZ7g2Vxw4Nj7ZLKvyHqogr8YpyFfFq`
 - **Type**: Wallet
 - **Risk Level**: high
 - **Risk Score**: N/A/10
