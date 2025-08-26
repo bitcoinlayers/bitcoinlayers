@@ -1,5 +1,10 @@
 {
   "mint_address": "21BTCo9hWHjGYYUQQLqjLgDBxjcn8vDt4Zic7TB3UbNE",
+  "intro": "21Shares 21BTC is an institutional Bitcoin-backed token on Solana. The token maintains mint authority and metadata update capabilities under centralized control, reflecting the institutional custody model.",
+  "key_findings": [
+    "mint_authority: Non-existent with 1 capabilities",
+    "update_authority: Wallet with 1 capabilities"
+  ],
   "basic_info": {
     "mint_address": "21BTCo9hWHjGYYUQQLqjLgDBxjcn8vDt4Zic7TB3UbNE",
     "supply": 546269456,

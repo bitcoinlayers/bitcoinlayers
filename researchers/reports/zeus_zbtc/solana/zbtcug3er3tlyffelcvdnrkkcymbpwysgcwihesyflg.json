@@ -1,5 +1,10 @@
 {
   "mint_address": "zBTCug3er3tLyffELcvDNrKkCymbPWysGcWihESYfLg",
+  "intro": "Zeus zBTC is a Bitcoin-backed token on Solana operating under centralized governance. The token retains mint authority for controlled issuance while maintaining metadata update capabilities through wallet-based authority.",
+  "key_findings": [
+    "mint_authority: Non-existent with 1 capabilities",
+    "update_authority: Wallet with 1 capabilities"
+  ],
   "basic_info": {
     "mint_address": "zBTCug3er3tLyffELcvDNrKkCymbPWysGcWihESYfLg",
     "supply": 33352861498,

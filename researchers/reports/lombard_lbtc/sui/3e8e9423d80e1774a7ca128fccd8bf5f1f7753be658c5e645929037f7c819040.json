@@ -1,5 +1,10 @@
 {
   "coin_type": "0x3e8e9423d80e1774a7ca128fccd8bf5f1f7753be658c5e645929037f7c819040::lbtc::LBTC",
+  "intro": "Lombard LBTC is a liquid staking Bitcoin token on Sui, representing Bitcoin deposits in Lombard's staking protocol. The token operates under centralized governance with treasury admin controls and multisig operations.",
+  "key_findings": [
+    "Centralized governance structure",
+    "Administrative capabilities present"
+  ],
   "basic_info": {
     "coin_type": "0x3e8e9423d80e1774a7ca128fccd8bf5f1f7753be658c5e645929037f7c819040::lbtc::LBTC",
     "name": "Lombard Staked BTC",

@@ -60,6 +60,7 @@ class TokenAnalyzer:
         """Comprehensive token analysis"""
         result = {
             "mint_address": mint_address,
+            "intro": "",
             "basic_info": {},
             "metadata": {},
             "supply_info": {},
@@ -93,6 +94,15 @@ class TokenAnalyzer:
             # Governance analysis
             governance = self.analyze_token_governance(mint_address, basic_info)
             result["governance_info"] = governance
+            
+            # Extract key_findings to top level for standardized format
+            if "governance_summary" in governance and "key_findings" in governance["governance_summary"]:
+                result["key_findings"] = governance["governance_summary"]["key_findings"]
+            else:
+                result["key_findings"] = []
+            
+            # Generate intro based on token analysis
+            result["intro"] = self._generate_intro(result)
             
         except Exception as e:
             result["errors"].append(f"Analysis error: {str(e)}")
@@ -541,3 +551,59 @@ class TokenAnalyzer:
         except Exception as e:
             print(f"Error getting largest holders: {e}")
             return []
+    
+    def _generate_intro(self, analysis_result: Dict[str, Any]) -> str:
+        """Generate an introductory description based on token analysis"""
+        try:
+            metadata = analysis_result.get("metadata", {})
+            basic_info = analysis_result.get("basic_info", {})
+            security_analysis = analysis_result.get("security_analysis", {})
+            governance_info = analysis_result.get("governance_info", {})
+            
+            # Extract token name and symbol
+            token_name = metadata.get("name", "Unknown Token")
+            if token_name == "Metaplex Token":
+                token_name = metadata.get("symbol", "Unknown Token")
+            
+            # Determine token type and platform
+            is_token_2022 = basic_info.get("is_token_2022", False)
+            platform_desc = "Token 2022 standard" if is_token_2022 else "SPL token standard"
+            
+            # Analyze authorities and governance
+            has_mint_authority = bool(security_analysis.get("mint_authority"))
+            has_freeze_authority = bool(security_analysis.get("freeze_authority"))
+            governance_type = governance_info.get("governance_type", "Unknown")
+            
+            # Build intro description
+            intro_parts = []
+            
+            # Basic description
+            intro_parts.append(f"{token_name} is a token on Solana using the {platform_desc}.")
+            
+            # Authority description
+            authority_desc = []
+            if has_mint_authority and has_freeze_authority:
+                authority_desc.append("maintains both mint and freeze authorities")
+            elif has_mint_authority:
+                authority_desc.append("retains mint authority")
+            elif has_freeze_authority:
+                authority_desc.append("has freeze authority")
+            else:
+                authority_desc.append("operates without mint or freeze authorities")
+            
+            if authority_desc:
+                intro_parts.append(f"The token {authority_desc[0]}")
+            
+            # Governance implications
+            if governance_type.lower() == "centralized":
+                intro_parts.append("indicating centralized control over token operations.")
+            elif "decentralized" in governance_type.lower():
+                intro_parts.append("suggesting decentralized governance mechanisms.")
+            else:
+                intro_parts.append("with governance structure requiring further analysis.")
+            
+            return " ".join(intro_parts)
+            
+        except Exception as e:
+            print(f"Error generating intro: {e}")
+            return "Token analysis available - intro generation failed."

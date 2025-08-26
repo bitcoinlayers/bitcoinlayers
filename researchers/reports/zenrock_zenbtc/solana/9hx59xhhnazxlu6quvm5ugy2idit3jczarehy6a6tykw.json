@@ -1,5 +1,10 @@
 {
   "mint_address": "9hX59xHHnaZXLU6quvm5uGY2iDiT3jczaReHy6A6TYKw",
+  "intro": "Zenrock zenBTC is a Bitcoin-backed token on Solana leveraging institutional custody infrastructure. The token operates with centralized mint and update authorities managed by Zenrock's custodial framework.",
+  "key_findings": [
+    "mint_authority: Non-existent with 1 capabilities",
+    "update_authority: Wallet with 1 capabilities"
+  ],
   "basic_info": {
     "mint_address": "9hX59xHHnaZXLU6quvm5uGY2iDiT3jczaReHy6A6TYKw",
     "supply": 5988818395,

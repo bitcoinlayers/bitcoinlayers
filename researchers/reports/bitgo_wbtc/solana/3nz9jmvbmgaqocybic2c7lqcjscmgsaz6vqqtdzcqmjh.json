@@ -1,5 +1,10 @@
 {
   "mint_address": "3NZ9JMVBmGAqocybic2c7LQCJScmgsAZ6vQqTDzcqmJh",
+  "intro": "BitGo WBTC is a wrapped Bitcoin token on Solana backed by BitGo's institutional custody. The token operates with mint authority and metadata update capabilities under BitGo's centralized control.",
+  "key_findings": [
+    "mint_authority: Non-existent with 1 capabilities",
+    "update_authority: Wallet with 1 capabilities"
+  ],
   "basic_info": {
     "mint_address": "3NZ9JMVBmGAqocybic2c7LQCJScmgsAZ6vQqTDzcqmJh",
     "supply": 326765361079,

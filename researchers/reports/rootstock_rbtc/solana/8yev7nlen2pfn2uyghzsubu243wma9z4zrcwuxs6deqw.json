@@ -1,5 +1,11 @@
 {
   "mint_address": "8yev7nLen2PFN2uYGhzsUbu243wMa9z4ZrCwuXs6DEQw",
+  "intro": "Rootstock rBTC is a representation of Bitcoin from the Rootstock sidechain brought to Solana. The token maintains both mint and freeze authorities, indicating centralized control over supply and user account management.",
+  "key_findings": [
+    "mint_authority: Non-existent with 1 capabilities",
+    "freeze_authority: Non-existent with 1 capabilities",
+    "update_authority: Wallet with 1 capabilities"
+  ],
   "basic_info": {
     "mint_address": "8yev7nLen2PFN2uYGhzsUbu243wMa9z4ZrCwuXs6DEQw",
     "supply": 1344000,

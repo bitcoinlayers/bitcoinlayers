@@ -174,50 +174,56 @@ export default function SVMTokenAnalysis({ contract }: SVMTokenAnalysisProps) {
         return null;
     }
 
-    const { basic_info, metadata, supply_info, security_analysis, governance_info, analysis_metadata } = analysisData;
+    const { basic_info, metadata, supply_info, security_analysis, governance_info, analysis_metadata, intro, key_findings } = analysisData;
 
-    // Generate intro text
-    const intro = `This is a Solana SPL token analysis for ${metadata.name || 'Unknown Token'}${metadata.symbol ? ` (${metadata.symbol})` : ''}. ${metadata.description || ''} This token has ${basic_info.decimals || 0} decimal places${basic_info.mint_authority ? ' and has a mint authority that can create new tokens' : ''}${basic_info.freeze_authority ? ' and a freeze authority that can freeze accounts' : ''}.`;
+    // Use intro from JSON data, fallback to generated text if not available
+    const introText = intro || `This is a Solana SPL token analysis for ${metadata.name || 'Unknown Token'}${metadata.symbol ? ` (${metadata.symbol})` : ''}. ${metadata.description || ''} This token has ${basic_info.decimals || 0} decimal places${basic_info.mint_authority ? ' and has a mint authority that can create new tokens' : ''}${basic_info.freeze_authority ? ' and a freeze authority that can freeze accounts' : ''}.`;
 
-    // Generate key findings
-    const keyFindings: string[] = [];
-    
-    if (basic_info.mint_authority) {
-        keyFindings.push(`Mint authority: ${basic_info.mint_authority} - can mint new tokens`);
-    } else {
-        keyFindings.push("No mint authority - token supply is fixed");
-    }
-    
-    if (basic_info.freeze_authority) {
-        keyFindings.push(`Freeze authority: ${basic_info.freeze_authority} - can freeze accounts`);
-    } else {
-        keyFindings.push("No freeze authority - accounts cannot be frozen");
-    }
-    
-    if (supply_info.total_supply) {
-        const decimals = basic_info.decimals || 0;
-        const formattedSupply = (supply_info.total_supply / Math.pow(10, decimals)).toLocaleString();
-        keyFindings.push(`Total supply: ${formattedSupply} tokens`);
-    }
-    
-    if (security_analysis.security_score !== undefined) {
-        keyFindings.push(`Security score: ${security_analysis.security_score}/100`);
-    }
-    
-    if (security_analysis.risk_factors && security_analysis.risk_factors.length > 0) {
-        keyFindings.push(...security_analysis.risk_factors);
-    }
-    
-    if (governance_info.governance_type) {
-        keyFindings.push(`Governance type: ${governance_info.governance_type}`);
-    }
-    
-    if (governance_info.overall_risk_score !== undefined) {
-        keyFindings.push(`Overall governance risk score: ${governance_info.overall_risk_score}/10`);
-    }
-    
+    // Program name for UI display
     const programName = basic_info.is_token_2022 ? 'Token-2022' : 'SPL Token';
-    keyFindings.push(`Token program: ${programName}`);
+
+    // Use key findings from JSON data, fallback to generated findings if not available
+    const keyFindings = key_findings || (() => {
+        const findings: string[] = [];
+        
+        if (basic_info.mint_authority) {
+            findings.push(`Mint authority: ${basic_info.mint_authority} - can mint new tokens`);
+        } else {
+            findings.push("No mint authority - token supply is fixed");
+        }
+        
+        if (basic_info.freeze_authority) {
+            findings.push(`Freeze authority: ${basic_info.freeze_authority} - can freeze accounts`);
+        } else {
+            findings.push("No freeze authority - accounts cannot be frozen");
+        }
+        
+        if (supply_info.total_supply) {
+            const decimals = basic_info.decimals || 0;
+            const formattedSupply = (supply_info.total_supply / Math.pow(10, decimals)).toLocaleString();
+            findings.push(`Total supply: ${formattedSupply} tokens`);
+        }
+        
+        if (security_analysis.security_score !== undefined) {
+            findings.push(`Security score: ${security_analysis.security_score}/100`);
+        }
+        
+        if (security_analysis.risk_factors && security_analysis.risk_factors.length > 0) {
+            findings.push(...security_analysis.risk_factors);
+        }
+        
+        if (governance_info.governance_type) {
+            findings.push(`Governance type: ${governance_info.governance_type}`);
+        }
+        
+        if (governance_info.overall_risk_score !== undefined) {
+            findings.push(`Overall governance risk score: ${governance_info.overall_risk_score}/10`);
+        }
+        
+        findings.push(`Token program: ${programName}`);
+        
+        return findings;
+    })();
 
     return (
         <div className="space-y-6">
@@ -225,7 +231,7 @@ export default function SVMTokenAnalysis({ contract }: SVMTokenAnalysisProps) {
             <div>
                 <div className="space-y-3 text-foreground">
                     <div className="leading-relaxed text-base">
-                        {intro}
+                        {introText}
                     </div>
                     
                     <div className="bg-muted/50 rounded-xl border border-border p-4">

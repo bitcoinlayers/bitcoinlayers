@@ -65,6 +65,7 @@ class MoveTokenAnalyzer:
         """Comprehensive token analysis with authority tracking"""
         result = {
             "coin_type": coin_type,
+            "intro": "",
             "basic_info": {},
             "metadata": {},
             "supply_info": {},
@@ -121,6 +122,15 @@ class MoveTokenAnalyzer:
             # Enhanced governance analysis
             governance = self.analyze_token_governance(coin_type, basic_info, authority_analysis)
             result["governance_info"] = governance
+            
+            # Extract key_findings to top level for standardized format
+            if "governance_summary" in governance and "key_findings" in governance["governance_summary"]:
+                result["key_findings"] = governance["governance_summary"]["key_findings"]
+            else:
+                result["key_findings"] = []
+            
+            # Generate intro based on token analysis
+            result["intro"] = self._generate_intro(result)
             
         except Exception as e:
             result["errors"].append(f"Analysis error: {str(e)}")
@@ -516,3 +526,66 @@ class MoveTokenAnalyzer:
                 "overall_risk_score": 50,
                 "errors": [f"Governance analysis error: {str(e)}"]
             }
+    
+    def _generate_intro(self, analysis_result: Dict[str, Any]) -> str:
+        """Generate an introductory description based on token analysis"""
+        try:
+            metadata = analysis_result.get("metadata", {})
+            basic_info = analysis_result.get("basic_info", {})
+            security_analysis = analysis_result.get("security_analysis", {})
+            governance_info = analysis_result.get("governance_info", {})
+            coin_type = analysis_result.get("coin_type", "")
+            
+            # Extract token name and symbol
+            token_name = metadata.get("name", basic_info.get("name", "Unknown Token"))
+            token_symbol = metadata.get("symbol", basic_info.get("symbol", ""))
+            
+            # Determine network from coin type or use generic
+            network = "Move-based blockchain"
+            if "sui" in self.network_type.lower():
+                network = "Sui"
+            elif "aptos" in self.network_type.lower():
+                network = "Aptos"
+            
+            # Analyze governance and security
+            governance_type = governance_info.get("governance_type", "unknown")
+            has_mint_capability = security_analysis.get("has_mint_capability", False)
+            has_freeze_capability = security_analysis.get("has_freeze_capability", False)
+            has_admin_authority = "admin" in str(governance_info.get("authority_analyses", {})).lower()
+            
+            # Build intro description
+            intro_parts = []
+            
+            # Basic description
+            if token_symbol and token_symbol != token_name:
+                intro_parts.append(f"{token_name} ({token_symbol}) is a token on {network}.")
+            else:
+                intro_parts.append(f"{token_name} is a token on {network}.")
+            
+            # Governance and authority description
+            if governance_type.lower() == "centralized":
+                intro_parts.append("The token operates under centralized governance")
+                
+                capabilities = []
+                if has_admin_authority:
+                    capabilities.append("administrative controls")
+                if has_mint_capability:
+                    capabilities.append("mint capabilities")
+                if has_freeze_capability:
+                    capabilities.append("freeze capabilities")
+                
+                if capabilities:
+                    intro_parts.append(f"with {', '.join(capabilities)}.")
+                else:
+                    intro_parts.append("with centralized authority structures.")
+                    
+            elif "decentralized" in governance_type.lower():
+                intro_parts.append("The token operates under decentralized governance mechanisms.")
+            else:
+                intro_parts.append("The token's governance structure requires further analysis.")
+            
+            return " ".join(intro_parts)
+            
+        except Exception as e:
+            print(f"Error generating intro: {e}")
+            return "Token analysis available - intro generation failed."

@@ -1,5 +1,11 @@
 {
   "mint_address": "CtzPWv73Sn1dMGVU3ZtLv9yWSyUAanBni19YWDaznnkn",
+  "intro": "OKX xBTC is a Bitcoin-backed token on Solana issued by the OKX exchange. The token maintains both mint and freeze authorities, allowing for centralized control over token supply and the ability to freeze user accounts.",
+  "key_findings": [
+    "mint_authority: Non-existent with 1 capabilities",
+    "freeze_authority: Non-existent with 1 capabilities",
+    "update_authority: Wallet with 1 capabilities"
+  ],
   "basic_info": {
     "mint_address": "CtzPWv73Sn1dMGVU3ZtLv9yWSyUAanBni19YWDaznnkn",
     "supply": 67554036853,

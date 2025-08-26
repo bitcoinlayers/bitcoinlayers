@@ -205,48 +205,52 @@ export default function MoveVMTokenAnalysis({ contract }: MoveVMTokenAnalysisPro
         return null;
     }
 
-    const { basic_info, metadata, supply_info, security_analysis, governance_info, analysis_metadata } = analysisData;
+    const { basic_info, metadata, supply_info, security_analysis, governance_info, analysis_metadata, intro, key_findings } = analysisData;
 
-    // Generate intro text
-    const intro = `This is a ${getMoveVMNetwork(contract.network)} token analysis for ${metadata.name || 'Unknown Token'}${metadata.symbol ? ` (${metadata.symbol})` : ''}. ${metadata.description || ''} This token has ${basic_info.decimals || 0} decimal places${security_analysis.has_mint_capability ? ' and has mint capability that can create new tokens' : ''}${security_analysis.has_burn_capability ? ' and burn capability that can destroy tokens' : ''}${security_analysis.has_freeze_capability ? ' and freeze capability that can freeze accounts' : ''}.`;
+    // Use intro from JSON data, fallback to generated text if not available
+    const introText = intro || `This is a ${getMoveVMNetwork(contract.network)} token analysis for ${metadata.name || 'Unknown Token'}${metadata.symbol ? ` (${metadata.symbol})` : ''}. ${metadata.description || ''} This token has ${basic_info.decimals || 0} decimal places${security_analysis.has_mint_capability ? ' and has mint capability that can create new tokens' : ''}${security_analysis.has_burn_capability ? ' and burn capability that can destroy tokens' : ''}${security_analysis.has_freeze_capability ? ' and freeze capability that can freeze accounts' : ''}.`;
 
-    // Generate key findings
-    const keyFindings: string[] = [];
-    
-    if (security_analysis.has_mint_capability) {
-        keyFindings.push(`Mint capability present - new tokens can be minted`);
-    } else {
-        keyFindings.push("No mint capability - token supply is controlled");
-    }
-    
-    if (security_analysis.has_burn_capability) {
-        keyFindings.push(`Burn capability present - tokens can be destroyed`);
-    } else {
-        keyFindings.push("No burn capability - tokens cannot be destroyed");
-    }
-    
-    if (security_analysis.has_freeze_capability) {
-        keyFindings.push(`Freeze capability present - accounts can be frozen`);
-    } else {
-        keyFindings.push("No freeze capability - accounts cannot be frozen");
-    }
-    
-    if (supply_info.total_supply) {
-        keyFindings.push(`Total supply: ${supply_info.total_supply.toLocaleString()} ${metadata.symbol || 'tokens'}`);
-    }
-    
-    if (security_analysis.security_score !== undefined) {
-        keyFindings.push(`Security score: ${security_analysis.security_score}/100`);
-    }
+    // Use key findings from JSON data, fallback to generated findings if not available
+    const keyFindings = key_findings || (() => {
+        const findings: string[] = [];
+        
+        if (security_analysis.has_mint_capability) {
+            findings.push(`Mint capability present - new tokens can be minted`);
+        } else {
+            findings.push("No mint capability - token supply is controlled");
+        }
+        
+        if (security_analysis.has_burn_capability) {
+            findings.push(`Burn capability present - tokens can be destroyed`);
+        } else {
+            findings.push("No burn capability - tokens cannot be destroyed");
+        }
+        
+        if (security_analysis.has_freeze_capability) {
+            findings.push(`Freeze capability present - accounts can be frozen`);
+        } else {
+            findings.push("No freeze capability - accounts cannot be frozen");
+        }
+        
+        if (supply_info.total_supply) {
+            findings.push(`Total supply: ${supply_info.total_supply.toLocaleString()} ${metadata.symbol || 'tokens'}`);
+        }
+        
+        if (security_analysis.security_score !== undefined) {
+            findings.push(`Security score: ${security_analysis.security_score}/100`);
+        }
+        
+        return findings;
+    })();
 
     return (
         <div className="space-y-6">
             {/* Analysis Content */}
             <div>
                 <div className="space-y-3 text-foreground">
-                    {intro && (
+                    {introText && (
                         <div className="leading-relaxed text-base">
-                            {intro}
+                            {introText}
                         </div>
                     )}
                     

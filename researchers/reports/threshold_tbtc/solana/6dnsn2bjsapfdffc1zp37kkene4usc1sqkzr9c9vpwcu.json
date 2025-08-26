@@ -1,5 +1,10 @@
 {
   "mint_address": "6DNSN2BJsaPFdFFc1zP37kkeNe4Usc1Sqkzr9C9vPWcU",
+  "intro": "Threshold tBTC is a decentralized wrapped Bitcoin token on Solana backed by a threshold signature scheme. Despite its decentralized backing mechanism, the Solana token representation maintains centralized mint and update authorities.",
+  "key_findings": [
+    "mint_authority: Non-existent with 1 capabilities",
+    "update_authority: Wallet with 1 capabilities"
+  ],
   "basic_info": {
     "mint_address": "6DNSN2BJsaPFdFFc1zP37kkeNe4Usc1Sqkzr9C9vPWcU",
     "supply": 6477403009,

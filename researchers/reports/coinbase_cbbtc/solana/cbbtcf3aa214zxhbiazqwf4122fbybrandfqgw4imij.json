@@ -1,5 +1,11 @@
 {
   "mint_address": "cbbtcf3aa214zXHbiAZQwf4122FBYbraNdFqgw4iMij",
+  "intro": "Coinbase cbBTC is a wrapped Bitcoin token on Solana. The token has centralized authorities that control minting and metadata updates, creating trust assumptions around Coinbase's custodial operations.",
+  "key_findings": [
+    "mint_authority: Non-existent with 1 capabilities",
+    "freeze_authority: Non-existent with 1 capabilities",
+    "update_authority: Wallet with 1 capabilities"
+  ],
   "basic_info": {
     "mint_address": "cbbtcf3aa214zXHbiAZQwf4122FBYbraNdFqgw4iMij",
     "supply": 330068271044,

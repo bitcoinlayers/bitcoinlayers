@@ -1,5 +1,9 @@
 {
   "mint_address": "FRAGB4KZGLMy3wH1nBajP3Q17MHnecEvTPT6wb4pX5MB",
+  "intro": "Fragmetric fragBTC is a Bitcoin-backed token on Solana using Token 2022 standard. The token retains mint authority but has no freeze authority, suggesting controlled issuance with user account freedom.",
+  "key_findings": [
+    "mint_authority: Non-existent with 1 capabilities"
+  ],
   "basic_info": {
     "mint_address": "FRAGB4KZGLMy3wH1nBajP3Q17MHnecEvTPT6wb4pX5MB",
     "supply": 9309323196,
