@@ -4,11 +4,11 @@
 - **Mint Address**: `cbbtcf3aa214zXHbiAZQwf4122FBYbraNdFqgw4iMij`
 - **Network**: mainnet
 - **Wrapper Name**: coinbase_cbbtc
-- **Analysis Date**: 2025-08-25 21:43:15 UTC
+- **Analysis Date**: 2025-08-26 14:33:04 UTC
 - **Explorer**: [View on Solana Explorer](https://explorer.solana.com/address/cbbtcf3aa214zXHbiAZQwf4122FBYbraNdFqgw4iMij)
 
 ## Basic Properties
-- **Supply**: 330,068,271,044
+- **Supply**: 328,089,577,669
 - **Decimals**: 8
 - **Is Initialized**: True
 - **Token Program**: TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA
@@ -20,13 +20,13 @@
 - **Description**: Token with Metaplex metadata
 
 ## Supply Analysis
-- **Total Supply**: 330,068,271,044
-- **Circulating Supply**: 330068271044
+- **Total Supply**: 328,089,577,669
+- **Circulating Supply**: 328089577669
 - **Estimated Holders**: None
 
 ## Security Analysis
-- **Mint Authority**: 1118j9ciCdY5kHiY8qzPMWKps5G1trStSkZZtfD9N11
-- **Freeze Authority**: 1119PVTQ6Q8HQQwsxjLyNncPWFfergEPE6ZtQqRAHo2
+- **Mint Authority**: CTQE6PMesbH4szKR9Nk5moj9WWUr9MVGP734wYX9wy3p
+- **Freeze Authority**: DSFAkPhfrSR95J9oq9Sh8rUetbj5vgFmwiSuHw6rAVnz
 - **Is Mutable**: True
 - **Security Score**: 50/100
 
@@ -41,20 +41,26 @@
 ### Authority Analysis
 
 #### Mint Authority
-- **Address**: `1118j9ciCdY5kHiY8qzPMWKps5G1trStSkZZtfD9N11`
-- **Type**: Non-existent
+- **Address**: `CTQE6PMesbH4szKR9Nk5moj9WWUr9MVGP734wYX9wy3p`
+- **Type**: Wallet
 - **Risk Level**: high
 - **Risk Score**: N/A/10
 - **Capabilities**:
-  - Address does not exist
+  - Mint unlimited tokens
+  - Change mint authority to any address
+  - Burn tokens from any account
+  - Full unilateral control (no multi-party approval required)
 
 #### Freeze Authority
-- **Address**: `1119PVTQ6Q8HQQwsxjLyNncPWFfergEPE6ZtQqRAHo2`
-- **Type**: Non-existent
+- **Address**: `DSFAkPhfrSR95J9oq9Sh8rUetbj5vgFmwiSuHw6rAVnz`
+- **Type**: Wallet
 - **Risk Level**: high
 - **Risk Score**: N/A/10
 - **Capabilities**:
-  - Address does not exist
+  - Freeze any token account instantly
+  - Unfreeze any token account instantly
+  - Change freeze authority to any address
+  - Full unilateral control (no multi-party approval required)
 
 #### Update Authority
 - **Address**: `Aanfr1oYnkNNLTMcL9KHUPv6ZhSV8XwNxc9DJZhBj8u2`

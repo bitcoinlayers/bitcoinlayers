@@ -186,41 +186,26 @@ export default function SVMTokenAnalysis({ contract }: SVMTokenAnalysisProps) {
     const keyFindings = key_findings || (() => {
         const findings: string[] = [];
         
+        // Mint Authority
         if (basic_info.mint_authority) {
-            findings.push(`Mint authority: ${basic_info.mint_authority} - can mint new tokens`);
+            findings.push(`mint_authority: ${basic_info.mint_authority === "11111111111111111111111111111111" ? "Non-existent" : basic_info.mint_authority} with 1 capabilities`);
         } else {
-            findings.push("No mint authority - token supply is fixed");
+            findings.push("mint_authority: Non-existent with 1 capabilities");
         }
         
+        // Freeze Authority
         if (basic_info.freeze_authority) {
-            findings.push(`Freeze authority: ${basic_info.freeze_authority} - can freeze accounts`);
+            findings.push(`freeze_authority: ${basic_info.freeze_authority === "11111111111111111111111111111111" ? "Non-existent" : basic_info.freeze_authority} with 1 capabilities`);
         } else {
-            findings.push("No freeze authority - accounts cannot be frozen");
+            findings.push("freeze_authority: Non-existent with 1 capabilities");
         }
         
-        if (supply_info.total_supply) {
-            const decimals = basic_info.decimals || 0;
-            const formattedSupply = (supply_info.total_supply / Math.pow(10, decimals)).toLocaleString();
-            findings.push(`Total supply: ${formattedSupply} tokens`);
+        // Update Authority (check if we have update authority info in security analysis)
+        if (security_analysis.has_update_authority) {
+            findings.push("update_authority: Wallet with 1 capabilities");
+        } else {
+            findings.push("update_authority: Non-existent with 1 capabilities");
         }
-        
-        if (security_analysis.security_score !== undefined) {
-            findings.push(`Security score: ${security_analysis.security_score}/100`);
-        }
-        
-        if (security_analysis.risk_factors && security_analysis.risk_factors.length > 0) {
-            findings.push(...security_analysis.risk_factors);
-        }
-        
-        if (governance_info.governance_type) {
-            findings.push(`Governance type: ${governance_info.governance_type}`);
-        }
-        
-        if (governance_info.overall_risk_score !== undefined) {
-            findings.push(`Overall governance risk score: ${governance_info.overall_risk_score}/10`);
-        }
-        
-        findings.push(`Token program: ${programName}`);
         
         return findings;
     })();
@@ -312,163 +297,99 @@ export default function SVMTokenAnalysis({ contract }: SVMTokenAnalysisProps) {
                         >
                             <div className="flex items-center gap-2">
                                 <Settings className="h-4 w-4" />
-                                <span className="font-medium text-sm">Function List ({[
-                                    basic_info.mint_authority ? 'mint' : null,
-                                    basic_info.freeze_authority ? 'freeze' : null,
-                                    'standard'
-                                ].filter(Boolean).length + (basic_info.owner_program && basic_info.owner_program !== "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA" && basic_info.owner_program !== "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb" ? 1 : 0)})</span>
+                                <span className="font-medium text-sm">Function List (3)</span>
                             </div>
                             <ChevronDown className="h-4 w-4 transition-transform group-data-[state=open]:rotate-180" />
                         </Button>
                     </CollapsibleTrigger>
                     <CollapsibleContent className="pt-2">
                         <div className="space-y-2">
-                            {/* Mint Functions */}
-                            {basic_info.mint_authority && (
-                                <>
-                                    <div className="flex items-center justify-between text-xs bg-muted/30 rounded p-2">
-                                        <div>
-                                            <span className="font-mono text-muted-foreground">mintTo</span>
-                                            <span className="ml-2 text-xs bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-1 rounded">
-                                                Function
-                                            </span>
-                                        </div>
-                                        <a
-                                            href={`https://explorer.solana.com/address/${basic_info.mint_authority}`}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="flex items-center gap-1 text-blue-600 hover:underline"
-                                        >
-                                            {truncateAddress(basic_info.mint_authority)}
-                                            <ExternalLinkIcon className="h-3 w-3" />
-                                        </a>
-                                    </div>
-                                    <div className="flex items-center justify-between text-xs bg-muted/30 rounded p-2">
-                                        <div>
-                                            <span className="font-mono text-muted-foreground">setAuthority</span>
-                                            <span className="ml-2 text-xs bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-1 rounded">
-                                                Function
-                                            </span>
-                                        </div>
-                                        <a
-                                            href={`https://explorer.solana.com/address/${basic_info.mint_authority}`}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="flex items-center gap-1 text-blue-600 hover:underline"
-                                        >
-                                            {truncateAddress(basic_info.mint_authority)}
-                                            <ExternalLinkIcon className="h-3 w-3" />
-                                        </a>
-                                    </div>
-                                </>
-                            )}
-                            
-                            {/* Freeze Functions */}
-                            {basic_info.freeze_authority && (
-                                <>
-                                    <div className="flex items-center justify-between text-xs bg-muted/30 rounded p-2">
-                                        <div>
-                                            <span className="font-mono text-muted-foreground">freezeAccount</span>
-                                            <span className="ml-2 text-xs bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-1 rounded">
-                                                Function
-                                            </span>
-                                        </div>
-                                        <a
-                                            href={`https://explorer.solana.com/address/${basic_info.freeze_authority}`}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="flex items-center gap-1 text-blue-600 hover:underline"
-                                        >
-                                            {truncateAddress(basic_info.freeze_authority)}
-                                            <ExternalLinkIcon className="h-3 w-3" />
-                                        </a>
-                                    </div>
-                                    <div className="flex items-center justify-between text-xs bg-muted/30 rounded p-2">
-                                        <div>
-                                            <span className="font-mono text-muted-foreground">thawAccount</span>
-                                            <span className="ml-2 text-xs bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-1 rounded">
-                                                Function
-                                            </span>
-                                        </div>
-                                        <a
-                                            href={`https://explorer.solana.com/address/${basic_info.freeze_authority}`}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="flex items-center gap-1 text-blue-600 hover:underline"
-                                        >
-                                            {truncateAddress(basic_info.freeze_authority)}
-                                            <ExternalLinkIcon className="h-3 w-3" />
-                                        </a>
-                                    </div>
-                                </>
-                            )}
-                            
-                            {/* Standard Token Functions - Always Available */}
+                            {/* Mint Authority */}
                             <div className="flex items-center justify-between text-xs bg-muted/30 rounded p-2">
                                 <div>
-                                    <span className="font-mono text-muted-foreground">transfer</span>
+                                    <span className="font-mono text-muted-foreground">Mint Authority</span>
                                     <span className="ml-2 text-xs bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-1 rounded">
                                         Function
                                     </span>
                                 </div>
-                                <span className="font-mono text-muted-foreground">
-                                    Public
-                                </span>
-                            </div>
-                            <div className="flex items-center justify-between text-xs bg-muted/30 rounded p-2">
-                                <div>
-                                    <span className="font-mono text-muted-foreground">approve</span>
-                                    <span className="ml-2 text-xs bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-1 rounded">
-                                        Function
-                                    </span>
-                                </div>
-                                <span className="font-mono text-muted-foreground">
-                                    Public
-                                </span>
-                            </div>
-                            <div className="flex items-center justify-between text-xs bg-muted/30 rounded p-2">
-                                <div>
-                                    <span className="font-mono text-muted-foreground">burn</span>
-                                    <span className="ml-2 text-xs bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-1 rounded">
-                                        Function
-                                    </span>
-                                </div>
-                                <span className="font-mono text-muted-foreground">
-                                    Public
-                                </span>
-                            </div>
-                            <div className="flex items-center justify-between text-xs bg-muted/30 rounded p-2">
-                                <div>
-                                    <span className="font-mono text-muted-foreground">closeAccount</span>
-                                    <span className="ml-2 text-xs bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-1 rounded">
-                                        Function
-                                    </span>
-                                </div>
-                                <span className="font-mono text-muted-foreground">
-                                    Public
-                                </span>
-                            </div>
-                            
-                            {/* Program Functions - if owner is a program */}
-                            {basic_info.owner_program && basic_info.owner_program !== "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA" && basic_info.owner_program !== "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb" && (
-                                <div className="flex items-center justify-between text-xs bg-muted/30 rounded p-2">
-                                    <div>
-                                        <span className="font-mono text-muted-foreground">programInstructions</span>
-                                        <span className="ml-2 text-xs bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-1 rounded">
-                                            Function
-                                        </span>
-                                    </div>
+                                {basic_info.mint_authority && basic_info.mint_authority !== "11111111111111111111111111111111" ? (
                                     <a
-                                        href={`https://explorer.solana.com/address/${basic_info.owner_program}`}
+                                        href={`https://explorer.solana.com/address/${basic_info.mint_authority}`}
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="flex items-center gap-1 text-blue-600 hover:underline"
                                     >
-                                        {truncateAddress(basic_info.owner_program)}
+                                        {basic_info.mint_authority}
                                         <ExternalLinkIcon className="h-3 w-3" />
                                     </a>
+                                ) : (
+                                    <span className="font-mono text-muted-foreground">
+                                        None
+                                    </span>
+                                )}
+                            </div>
+                            
+                            {/* Freeze Authority */}
+                            <div className="flex items-center justify-between text-xs bg-muted/30 rounded p-2">
+                                <div>
+                                    <span className="font-mono text-muted-foreground">Freeze Authority</span>
+                                    <span className="ml-2 text-xs bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-1 rounded">
+                                        Function
+                                    </span>
                                 </div>
-                            )}
+                                {basic_info.freeze_authority && basic_info.freeze_authority !== "11111111111111111111111111111111" ? (
+                                    <a
+                                        href={`https://explorer.solana.com/address/${basic_info.freeze_authority}`}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="flex items-center gap-1 text-blue-600 hover:underline"
+                                    >
+                                        {basic_info.freeze_authority}
+                                        <ExternalLinkIcon className="h-3 w-3" />
+                                    </a>
+                                ) : (
+                                    <span className="font-mono text-muted-foreground">
+                                        None
+                                    </span>
+                                )}
+                            </div>
+                            
+                            {/* Update Authority */}
+                            <div className="flex items-center justify-between text-xs bg-muted/30 rounded p-2">
+                                <div>
+                                    <span className="font-mono text-muted-foreground">Update Authority</span>
+                                    <span className="ml-2 text-xs bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-1 rounded">
+                                        Function
+                                    </span>
+                                </div>
+                                {(() => {
+                                    // Extract update authority from governance analysis
+                                    const updateAuthAnalysis = governance_info?.authority_analyses?.update_authority;
+                                    if (updateAuthAnalysis && typeof updateAuthAnalysis === 'string') {
+                                        // Parse the AuthorityAnalysis string to extract the address
+                                        const addressMatch = updateAuthAnalysis.match(/address='([^']+)'/);
+                                        if (addressMatch) {
+                                            const updateAuthority = addressMatch[1];
+                                            return (
+                                                <a
+                                                    href={`https://explorer.solana.com/address/${updateAuthority}`}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="flex items-center gap-1 text-blue-600 hover:underline"
+                                                >
+                                                    {updateAuthority}
+                                                    <ExternalLinkIcon className="h-3 w-3" />
+                                                </a>
+                                            );
+                                        }
+                                    }
+                                    return (
+                                        <span className="font-mono text-muted-foreground">
+                                            None
+                                        </span>
+                                    );
+                                })()}
+                            </div>
                         </div>
                     </CollapsibleContent>
                 </Collapsible>

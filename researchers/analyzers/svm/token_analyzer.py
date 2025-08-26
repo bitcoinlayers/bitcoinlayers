@@ -24,8 +24,8 @@ from modules.token_analysis import TokenAnalyzer
 
 # Configuration - Select network and token to analyze
 NETWORK_NAME = "solana"  # Network name for directory organization
-TOKEN_MINT = "FRAGB4KZGLMy3wH1nBajP3Q17MHnecEvTPT6wb4pX5MB"  # Target token to analyze
-WRAPPER_NAME = "fragmetric_fragbtc"  # Wrapper name for this token - will be updated from metadata
+TOKEN_MINT = "cbbtcf3aa214zXHbiAZQwf4122FBYbraNdFqgw4iMij"  # Target token to analyze
+WRAPPER_NAME = "coinbase_cbbtc"  # Wrapper name for this token - will be updated from metadata
 
 def analyze_spl_token(mint_address: str, wrapper_name: str, network_name: str) -> Dict[str, Any]:
     """Analyze an SPL token and return comprehensive results"""

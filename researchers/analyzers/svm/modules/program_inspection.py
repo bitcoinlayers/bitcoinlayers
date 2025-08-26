@@ -93,16 +93,61 @@ class ProgramInspector:
         ]
     
     def get_spl_token_info(self, mint_address: str) -> Optional[Dict[str, Any]]:
-        """Get SPL token mint information"""
+        """Get SPL token mint information using manual RPC call for accuracy"""
         try:
-            pubkey = PublicKey.from_string(mint_address)
-            response = self.client.get_account_info(pubkey)
+            # Use direct RPC call with jsonParsed format for most accurate data
+            import requests
             
-            if not response.value:
-                return None
+            payload = {
+                'jsonrpc': '2.0',
+                'id': 1,
+                'method': 'getAccountInfo',
+                'params': [mint_address, {'encoding': 'jsonParsed'}]
+            }
+            
+            response = requests.post(self.rpc_url, json=payload, timeout=30)
+            data = response.json()
+            
+            if 'result' in data and data['result']['value'] and data['result']['value']['data']:
+                parsed_info = data['result']['value']['data']['parsed']['info']
+                owner_program = data['result']['value']['owner']
                 
-            account = response.value
+                return {
+                    "mint_address": mint_address,
+                    "supply": int(parsed_info.get('supply', 0)),
+                    "decimals": int(parsed_info.get('decimals', 0)),
+                    "mint_authority": parsed_info.get('mintAuthority'),
+                    "freeze_authority": parsed_info.get('freezeAuthority'),
+                    "is_initialized": parsed_info.get('isInitialized', True),
+                    "owner_program": owner_program,
+                    "is_token_2022": owner_program == SOLANA_PROGRAMS["SPL_TOKEN_2022_PROGRAM"]
+                }
+            else:
+                # Fallback to standard client method
+                pubkey = PublicKey.from_string(mint_address)
+                response = self.client.get_account_info(pubkey)
+                
+                if not response.value:
+                    return None
+                    
+                return self._parse_raw_mint_data(mint_address, response.value)
             
+        except Exception as e:
+            print(f"Error parsing SPL token info for {mint_address}: {e}")
+            # Final fallback to raw parsing
+            try:
+                pubkey = PublicKey.from_string(mint_address)
+                response = self.client.get_account_info(pubkey)
+                
+                if response.value:
+                    return self._parse_raw_mint_data(mint_address, response.value)
+            except:
+                pass
+            return None
+    
+    def _parse_raw_mint_data(self, mint_address: str, account) -> Optional[Dict[str, Any]]:
+        """Fallback method to parse raw mint data manually"""
+        try:
             # Parse mint data (basic SPL token structure)
             if len(account.data) < 82:
                 return None
@@ -137,7 +182,7 @@ class ProgramInspector:
             }
             
         except Exception as e:
-            print(f"Error parsing SPL token info for {mint_address}: {e}")
+            print(f"Error parsing raw mint data for {mint_address}: {e}")
             return None
     
     def get_token_accounts_by_owner(self, owner_address: str, mint_address: Optional[str] = None) -> List[Dict[str, Any]]:
