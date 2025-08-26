@@ -1,13 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { ExternalLinkIcon, Shield, Key, Search, Code, ChevronDown, Settings } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import {
-    Collapsible,
-    CollapsibleContent,
-    CollapsibleTrigger,
-} from "@/components/ui/collapsible";
+import { ExternalLinkIcon, Shield, Key, Search, Code, Settings } from "lucide-react";
 
 interface SVMTokenContract {
     address: string;
@@ -286,113 +280,100 @@ export default function SVMTokenAnalysis({ contract }: SVMTokenAnalysisProps) {
                 </div>
             </div>
 
-            {/* Function List */}
+            {/* Authority addresses */}
             <div className="mb-4">
-                <Collapsible>
-                    <CollapsibleTrigger asChild>
-                        <Button 
-                            variant="ghost" 
-                            size="sm" 
-                            className="w-full justify-between p-2 h-auto hover:bg-muted/50"
-                        >
-                            <div className="flex items-center gap-2">
-                                <Settings className="h-4 w-4" />
-                                <span className="font-medium text-sm">Function List (3)</span>
-                            </div>
-                            <ChevronDown className="h-4 w-4 transition-transform group-data-[state=open]:rotate-180" />
-                        </Button>
-                    </CollapsibleTrigger>
-                    <CollapsibleContent className="pt-2">
-                        <div className="space-y-2">
-                            {/* Mint Authority */}
-                            <div className="flex items-center justify-between text-xs bg-muted/30 rounded p-2">
-                                <div>
-                                    <span className="font-mono text-muted-foreground">Mint Authority</span>
-                                    <span className="ml-2 text-xs bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-1 rounded">
-                                        Function
-                                    </span>
-                                </div>
-                                {basic_info.mint_authority && basic_info.mint_authority !== "11111111111111111111111111111111" ? (
-                                    <a
-                                        href={`https://explorer.solana.com/address/${basic_info.mint_authority}`}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="flex items-center gap-1 text-blue-600 hover:underline"
-                                    >
-                                        {basic_info.mint_authority}
-                                        <ExternalLinkIcon className="h-3 w-3" />
-                                    </a>
-                                ) : (
-                                    <span className="font-mono text-muted-foreground">
-                                        None
-                                    </span>
-                                )}
-                            </div>
-                            
-                            {/* Freeze Authority */}
-                            <div className="flex items-center justify-between text-xs bg-muted/30 rounded p-2">
-                                <div>
-                                    <span className="font-mono text-muted-foreground">Freeze Authority</span>
-                                    <span className="ml-2 text-xs bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-1 rounded">
-                                        Function
-                                    </span>
-                                </div>
-                                {basic_info.freeze_authority && basic_info.freeze_authority !== "11111111111111111111111111111111" ? (
-                                    <a
-                                        href={`https://explorer.solana.com/address/${basic_info.freeze_authority}`}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="flex items-center gap-1 text-blue-600 hover:underline"
-                                    >
-                                        {basic_info.freeze_authority}
-                                        <ExternalLinkIcon className="h-3 w-3" />
-                                    </a>
-                                ) : (
-                                    <span className="font-mono text-muted-foreground">
-                                        None
-                                    </span>
-                                )}
-                            </div>
-                            
-                            {/* Update Authority */}
-                            <div className="flex items-center justify-between text-xs bg-muted/30 rounded p-2">
-                                <div>
-                                    <span className="font-mono text-muted-foreground">Update Authority</span>
-                                    <span className="ml-2 text-xs bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-1 rounded">
-                                        Function
-                                    </span>
-                                </div>
-                                {(() => {
-                                    // Extract update authority from governance analysis
-                                    const updateAuthAnalysis = governance_info?.authority_analyses?.update_authority;
-                                    if (updateAuthAnalysis && typeof updateAuthAnalysis === 'string') {
-                                        // Parse the AuthorityAnalysis string to extract the address
-                                        const addressMatch = updateAuthAnalysis.match(/address='([^']+)'/);
-                                        if (addressMatch) {
-                                            const updateAuthority = addressMatch[1];
-                                            return (
-                                                <a
-                                                    href={`https://explorer.solana.com/address/${updateAuthority}`}
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                    className="flex items-center gap-1 text-blue-600 hover:underline"
-                                                >
-                                                    {updateAuthority}
-                                                    <ExternalLinkIcon className="h-3 w-3" />
-                                                </a>
-                                            );
-                                        }
-                                    }
-                                    return (
-                                        <span className="font-mono text-muted-foreground">
-                                            None
-                                        </span>
-                                    );
-                                })()}
-                            </div>
+                <div className="flex items-center gap-2 mb-3">
+                    <Settings className="h-4 w-4" />
+                    <span className="font-medium text-sm">Authority addresses</span>
+                </div>
+                <div className="space-y-2">
+                    {/* Mint Authority */}
+                    <div className="flex items-center justify-between text-xs bg-muted/30 rounded p-2">
+                        <div>
+                            <span className="font-mono text-muted-foreground">Mint Authority</span>
+                            <span className="ml-2 text-xs bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-1 rounded">
+                                Function
+                            </span>
                         </div>
-                    </CollapsibleContent>
-                </Collapsible>
+                        {basic_info.mint_authority && basic_info.mint_authority !== "11111111111111111111111111111111" ? (
+                            <a
+                                href={`https://explorer.solana.com/address/${basic_info.mint_authority}`}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center gap-1 text-blue-600 hover:underline"
+                            >
+                                {basic_info.mint_authority}
+                                <ExternalLinkIcon className="h-3 w-3" />
+                            </a>
+                        ) : (
+                            <span className="font-mono text-muted-foreground">
+                                None
+                            </span>
+                        )}
+                    </div>
+                    
+                    {/* Freeze Authority */}
+                    <div className="flex items-center justify-between text-xs bg-muted/30 rounded p-2">
+                        <div>
+                            <span className="font-mono text-muted-foreground">Freeze Authority</span>
+                            <span className="ml-2 text-xs bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-1 rounded">
+                                Function
+                            </span>
+                        </div>
+                        {basic_info.freeze_authority && basic_info.freeze_authority !== "11111111111111111111111111111111" ? (
+                            <a
+                                href={`https://explorer.solana.com/address/${basic_info.freeze_authority}`}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center gap-1 text-blue-600 hover:underline"
+                            >
+                                {basic_info.freeze_authority}
+                                <ExternalLinkIcon className="h-3 w-3" />
+                            </a>
+                        ) : (
+                            <span className="font-mono text-muted-foreground">
+                                None
+                            </span>
+                        )}
+                    </div>
+                    
+                    {/* Update Authority */}
+                    <div className="flex items-center justify-between text-xs bg-muted/30 rounded p-2">
+                        <div>
+                            <span className="font-mono text-muted-foreground">Update Authority</span>
+                            <span className="ml-2 text-xs bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-1 rounded">
+                                Function
+                            </span>
+                        </div>
+                        {(() => {
+                            // Extract update authority from governance analysis
+                            const updateAuthAnalysis = governance_info?.authority_analyses?.update_authority;
+                            if (updateAuthAnalysis && typeof updateAuthAnalysis === 'string') {
+                                // Parse the AuthorityAnalysis string to extract the address
+                                const addressMatch = updateAuthAnalysis.match(/address='([^']+)'/);
+                                if (addressMatch) {
+                                    const updateAuthority = addressMatch[1];
+                                    return (
+                                        <a
+                                            href={`https://explorer.solana.com/address/${updateAuthority}`}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="flex items-center gap-1 text-blue-600 hover:underline"
+                                        >
+                                            {updateAuthority}
+                                            <ExternalLinkIcon className="h-3 w-3" />
+                                        </a>
+                                    );
+                                }
+                            }
+                            return (
+                                <span className="font-mono text-muted-foreground">
+                                    None
+                                </span>
+                            );
+                        })()}
+                    </div>
+                </div>
             </div>
 
 

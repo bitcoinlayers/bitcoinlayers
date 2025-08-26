@@ -1,6 +1,11 @@
 {
   "mint_address": "cbbtcf3aa214zXHbiAZQwf4122FBYbraNdFqgw4iMij",
-  "intro": "META is a token on Solana using the SPL token standard. The token maintains both mint and freeze authorities indicating centralized control over token operations.",
+  "intro": "Coinbase cbBTC has centralized authorities that control minting and metadata updates. Users can be censored and have their accounts frozen. Additionally, a centralized admin can upgrade the contracts.",
+  "key_findings": [
+    "mint_authority: Mint authority is a single signer",
+    "freeze_authority: Freeze authority is a singler signer",
+    "update_authority: Update authority is a single signer"
+  ],
   "basic_info": {
     "mint_address": "cbbtcf3aa214zXHbiAZQwf4122FBYbraNdFqgw4iMij",
     "supply": 328089577669,
@@ -62,11 +67,6 @@
     }
   },
   "errors": [],
-  "key_findings": [
-    "mint_authority: Wallet with 4 capabilities",
-    "freeze_authority: Wallet with 4 capabilities",
-    "update_authority: Wallet with 1 capabilities"
-  ],
   "analysis_metadata": {
     "analyzer_version": "1.0.0",
     "network": "mainnet",
