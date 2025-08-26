@@ -24,8 +24,8 @@ from modules.token_analysis import TokenAnalyzer
 
 # Configuration - Select network and token to analyze
 NETWORK_NAME = "solana"  # Network name for directory organization
-TOKEN_MINT = "8yev7nLen2PFN2uYGhzsUbu243wMa9z4ZrCwuXs6DEQw"  # Target token to analyze
-WRAPPER_NAME = "rootstock_rbtc"  # Wrapper name for this token - will be updated from metadata
+TOKEN_MINT = "FRAGB4KZGLMy3wH1nBajP3Q17MHnecEvTPT6wb4pX5MB"  # Target token to analyze
+WRAPPER_NAME = "fragmetric_fragbtc"  # Wrapper name for this token - will be updated from metadata
 
 def analyze_spl_token(mint_address: str, wrapper_name: str, network_name: str) -> Dict[str, Any]:
     """Analyze an SPL token and return comprehensive results"""
@@ -116,14 +116,30 @@ def generate_markdown_report(analysis: Dict[str, Any]) -> str:
     governance = analysis.get("governance_info", {})
     errors = analysis.get("errors", [])
     
+    # Check if this is a Token 2022 token
+    is_token_2022 = basic_info.get('is_token_2022', False)
+    mint_address = analysis.get('mint_address', 'N/A')
+    
     md = f"""# SPL Token Analysis Report
 
 ## Token Information
-- **Mint Address**: `{analysis.get('mint_address', 'N/A')}`
+- **Mint Address**: `{mint_address}`
 - **Network**: {metadata.get('network', 'N/A')}
 - **Wrapper Name**: {metadata.get('wrapper_name', 'N/A')}
 - **Analysis Date**: {metadata.get('analysis_date', 'N/A')}
-- **Explorer**: [View on Solana Explorer]({metadata.get('explorer_url', '#')})
+- **Explorer**: [View on Solana Explorer]({metadata.get('explorer_url', '#')})"""
+    
+    # Add Token 2022 notice if detected
+    if is_token_2022:
+        solscan_url = f"https://solscan.io/token/{mint_address}"
+        md += f"""
+
+> **⚠️ Token 2022 Detected - Manual Authority Verification Required**  
+> This token uses SPL Token 2022 with advanced features and extensions. Authority detection for Token 2022 is disabled in this analyzer.  
+> **Please manually verify all authorities (Mint, Freeze, Update) on [Solscan]({solscan_url}) or other block explorers.**
+"""
+    
+    md += f"""
 
 ## Basic Properties
 - **Supply**: {basic_info.get('supply', 'N/A'):,}

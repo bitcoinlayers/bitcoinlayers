@@ -133,7 +133,7 @@ class ProgramInspector:
                 "freeze_authority": freeze_authority,
                 "is_initialized": is_initialized,
                 "owner_program": str(account.owner),
-                "is_token_2022": account.owner == SOLANA_PROGRAMS["SPL_TOKEN_2022_PROGRAM"]
+                "is_token_2022": str(account.owner) == SOLANA_PROGRAMS["SPL_TOKEN_2022_PROGRAM"]
             }
             
         except Exception as e:

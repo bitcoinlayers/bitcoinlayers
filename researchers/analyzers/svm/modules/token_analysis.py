@@ -393,6 +393,24 @@ class TokenAnalyzer:
         return summary
     
     def _get_update_authority(self, mint_address: str) -> Optional[str]:
+        """Get UpdateAuthority from Metaplex metadata (Token 2022 detection disabled)"""
+        try:
+            # Check if this is a Token 2022 token
+            basic_info = self.inspector.get_spl_token_info(mint_address)
+            if basic_info and basic_info.get("is_token_2022"):
+                # Token 2022 UpdateAuthority detection is disabled - requires manual verification
+                print(f"ℹ️  Token 2022 detected for {mint_address} - UpdateAuthority detection disabled")
+                print(f"   Please manually verify authorities on Solscan or other explorers")
+                return None
+            
+            # Use Metaplex metadata for traditional SPL tokens
+            return self._get_metaplex_update_authority(mint_address)
+            
+        except Exception as e:
+            print(f"Error getting UpdateAuthority for {mint_address}: {e}")
+            return None
+    
+    def _get_metaplex_update_authority(self, mint_address: str) -> Optional[str]:
         """Get UpdateAuthority from Metaplex metadata"""
         try:
             # Derive metadata PDA
@@ -423,11 +441,58 @@ class TokenAnalyzer:
                 update_authority = base58.b58encode(update_authority_bytes).decode()
                 return update_authority
             except Exception as parse_error:
-                print(f"Error parsing UpdateAuthority: {parse_error}")
+                print(f"Error parsing Metaplex UpdateAuthority: {parse_error}")
                 return None
             
         except Exception as e:
-            print(f"Error getting UpdateAuthority for {mint_address}: {e}")
+            print(f"Error getting Metaplex UpdateAuthority for {mint_address}: {e}")
+            return None
+    
+    def _get_token_2022_update_authority(self, mint_address: str) -> Optional[str]:
+        """Get UpdateAuthority from Token 2022 metadata extension"""
+        try:
+            account_info = self.inspector.get_account_info(mint_address)
+            if not account_info or account_info.owner != SOLANA_PROGRAMS["SPL_TOKEN_2022_PROGRAM"]:
+                return None
+            
+            data = account_info.data
+            
+            # Token 2022 uses TLV (Type-Length-Value) structure for extensions
+            # This is a simplified parser - full implementation would parse the entire TLV structure
+            
+            # Check if account has extensions (size > base mint size)
+            base_mint_size = 82  # Standard SPL token mint size
+            if len(data) <= base_mint_size:
+                return None  # No extensions
+            
+            # Look for metadata extension in the TLV structure
+            # This is a simplified search - in reality we'd need to properly parse TLV
+            extension_data = data[base_mint_size:]
+            
+            # Search for metadata extension type (simplified approach)
+            # In a full implementation, we'd properly parse the TLV structure
+            # For now, we'll look for patterns that might indicate an update authority
+            
+            # Token 2022 metadata extension typically has the update authority near the beginning
+            # This is a heuristic approach - would need proper TLV parsing for production
+            for offset in range(0, min(len(extension_data) - 32, 100), 4):
+                try:
+                    # Look for 32-byte sequences that might be a pubkey
+                    potential_authority = extension_data[offset:offset + 32]
+                    if len(potential_authority) == 32:
+                        # Basic validation: check if it could be a valid pubkey
+                        potential_authority_str = base58.b58encode(potential_authority).decode()
+                        
+                        # Simple validation: Solana pubkeys are typically 32-44 chars when base58 encoded
+                        if 32 <= len(potential_authority_str) <= 44:
+                            return potential_authority_str
+                except Exception:
+                    continue
+            
+            return None
+            
+        except Exception as e:
+            print(f"Error getting Token 2022 UpdateAuthority for {mint_address}: {e}")
             return None
     
     def _estimate_holders_count(self, mint_address: str) -> Optional[int]:
