@@ -30,12 +30,12 @@ export default function Home() {
                     imageClassName="bottom-[6px] right-3 w-4 h-4"
                 />
             </div>
-            {/* For Bitcoin Native view: show table first, then chart */}
+            {/* For Bitcoin Native view: show chart first, then table */}
             {view === "networks" && (
                 <>
                     <WelcomeBanner />
-                    <TableSwitch />
                     {showChart && <ChartSwitch />}
+                    <TableSwitch />
                 </>
             )}
             {/* For all other views: show chart first, then table */}

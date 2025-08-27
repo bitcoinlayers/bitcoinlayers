@@ -52,6 +52,9 @@ interface Props {
         mobileLabel: string;
     }[];
     showToggleGroup?: boolean;
+    hideHeader?: boolean;
+    pegSupplyView?: "pegs" | "supply";
+    onPegSupplyViewChange?: (view: "pegs" | "supply") => void;
 }
 
 const LayerImage = ({ src, title }: { src: string; title: string }) => {
@@ -76,7 +79,7 @@ const LayerImage = ({ src, title }: { src: string; title: string }) => {
     );
 };
 
-const IntegratedTable = ({ data, headers }: Props) => {
+const IntegratedTable = ({ data, headers, hideHeader = false, pegSupplyView = "pegs", onPegSupplyViewChange }: Props) => {
     const [types] = useQueryState<string[]>("type", {
         defaultValue: [],
         parse: (value) => value.split(",").filter(Boolean),
@@ -90,7 +93,7 @@ const IntegratedTable = ({ data, headers }: Props) => {
         defaultValue: "desc",
     });
 
-    const [pegSupplyView, setPegSupplyView] = useState<"pegs" | "supply">("pegs");
+
 
     const { data: currentSupplies, isLoading } =
         getCurrentSuppliesByTokenimpl();
@@ -200,16 +203,18 @@ const IntegratedTable = ({ data, headers }: Props) => {
 
     return (
         <Card className="w-full">
-            <CardHeader className="flex flex-col items-stretch space-y-0 border-b p-0 sm:flex-row border-none">
-                <div className="flex flex-1 flex-col justify-center gap-1 px-6 py-5 sm:py-6">
-                    <CardTitle className="flex">
-                        <LayersIcon className="mr-3" /> Integrated networks
-                    </CardTitle>
-                    <CardDescription>
-                        Integrated networks are alternative networks that inherit security from bitcoin protocol participants.
-                    </CardDescription>
-                </div>
-            </CardHeader>
+            {!hideHeader && (
+                <CardHeader className="flex flex-col items-stretch space-y-0 border-b p-0 sm:flex-row border-none">
+                    <div className="flex flex-1 flex-col justify-center gap-1 px-6 py-5 sm:py-6">
+                        <CardTitle className="flex">
+                            <LayersIcon className="mr-3" /> Integrated networks
+                        </CardTitle>
+                        <CardDescription>
+                            Integrated networks are alternative networks that inherit security from bitcoin protocol participants.
+                        </CardDescription>
+                    </div>
+                </CardHeader>
+            )}
             <CardContent className="p-0">
                 <div className="overflow-x-auto mx-auto border-none">
                     <table className="w-full text-sm text-left rtl:text-right">
@@ -219,7 +224,7 @@ const IntegratedTable = ({ data, headers }: Props) => {
                             sortBy={sortBy}
                             sortOrder={sortOrder}
                             pegSupplyView={pegSupplyView}
-                            onPegSupplyViewChange={setPegSupplyView}
+                            onPegSupplyViewChange={onPegSupplyViewChange}
                         />
                         <tbody className="gap-x-8">
                             {filteredData.map((item, index) => (

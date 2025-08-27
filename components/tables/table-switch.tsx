@@ -17,6 +17,7 @@ import { Code } from "lucide-react";
 import IntegratedTable from "@/components/tables/integrated-table";
 import SidesystemTable from "@/components/tables/sidesystem-table";
 import AlternativeTable from "@/components/tables/alternative-table";
+import AggregatedNetworksTable from "@/components/tables/aggregated-networks-table";
 
 function getSortedDataAndHeaders(view: string, subView: string) {
     switch (view) {
@@ -283,23 +284,29 @@ function getSortedDataAndHeaders(view: string, subView: string) {
         case "networks":
         case "layers":
         default:
-            const sortedBitcoinNativeLayers = allLayers.filter(
-                (layer) => layer.entityCategory === EntityCategory.BitcoinNative
-            ).sort((a, b) =>
-                a.title.toLowerCase().localeCompare(b.title.toLowerCase()),
-            );
+            // Return all layers for the aggregated networks table
+            const sortedAllLayers = allLayers
+                .filter((layer) => 
+                    layer.entityCategory === EntityCategory.BitcoinNative ||
+                    layer.entityCategory === EntityCategory.Sidesystem ||
+                    layer.entityCategory === EntityCategory.Alt ||
+                    layer.entityCategory === EntityCategory.Integrated
+                )
+                .sort((a, b) =>
+                    a.title.toLowerCase().localeCompare(b.title.toLowerCase()),
+                );
 
-            const bitcoinNativeTypeFilters = [
-                ...new Set(sortedBitcoinNativeLayers.map((layer) => layer.entityType)),
+            const allNetworksTypeFilters = [
+                ...new Set(sortedAllLayers.map((layer) => layer.entityType)),
             ];
 
-            const bitcoinNativeHeaders = [
+            const networksHeaders = [
                 { name: "Name", showSorting: true, mobileLabel: "Name" },
                 {
                     name: "Type",
                     showSorting: true,
                     mobileLabel: "Type",
-                    filterOptions: bitcoinNativeTypeFilters,
+                    filterOptions: allNetworksTypeFilters,
                 },
                 {
                     name: "Trust Assumptions",
@@ -318,7 +325,7 @@ function getSortedDataAndHeaders(view: string, subView: string) {
                 },
             ];
 
-            return { sortedData: sortedBitcoinNativeLayers, headers: bitcoinNativeHeaders };
+            return { sortedData: sortedAllLayers, headers: networksHeaders };
     }
 }
 
@@ -390,7 +397,7 @@ export default function TableSwitch() {
         case "layers":
         default:
             return (
-                <LayerTable
+                <AggregatedNetworksTable
                     data={sortedData as LayerProject[]}
                     headers={headers}
                 />

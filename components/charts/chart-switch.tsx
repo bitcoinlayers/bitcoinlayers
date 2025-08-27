@@ -2,7 +2,6 @@
 
 import { useQueryState } from "nuqs";
 import AggregatedTVLChart from "@/components/charts/aggregated-tvl-chart";
-import HomeChart from "@/components/charts/home-chart";
 // import getHistoricalSuppliesByTokenImpl from "@/hooks/get-historical-supplies-by-tokenimpl";
 import getHistoricalSuppliesByTokenProject from "@/hooks/get-historical-supplies-by-tokenproject";
 import getHistoricalSuppliesByNetwork from "@/hooks/get-historical-supplies-by-network";
@@ -88,9 +87,24 @@ export default function ChartSwitch() {
     const config = chartConfig[effectiveView as keyof typeof chartConfig];
     const { data, isLoading, error } = config?.useDataHook() || { data: null, isLoading: false, error: null };
 
-    // Show the new home chart for Bitcoin Native (networks) view
+    // Use sidesystem chart configuration for Bitcoin Native (networks) view
     if (effectiveView === "networks") {
-        return <HomeChart />;
+        const sidesystemConfig = chartConfig.sidesystems;
+        const { data: sidesystemData } = sidesystemConfig.useDataHook();
+        
+        return (
+            <AggregatedTVLChart
+                key={sidesystemData?.length}
+                title={sidesystemConfig.title}
+                description={sidesystemConfig.description}
+                itemNameKey="network_name"
+                chartQueryParam={sidesystemConfig.chartQueryParam}
+                rangeQueryParam={sidesystemConfig.rangeQueryParam}
+                showLegend={false}
+                chartHeight="h-64"
+                data={sidesystemData}
+            />
+        );
     }
 
     // Return null if no config found for this view
