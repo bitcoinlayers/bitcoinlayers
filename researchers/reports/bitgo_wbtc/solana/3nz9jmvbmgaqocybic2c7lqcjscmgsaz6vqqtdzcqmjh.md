@@ -4,11 +4,11 @@
 - **Mint Address**: `3NZ9JMVBmGAqocybic2c7LQCJScmgsAZ6vQqTDzcqmJh`
 - **Network**: mainnet
 - **Wrapper Name**: bitgo_wbtc
-- **Analysis Date**: 2025-08-25 21:44:45 UTC
+- **Analysis Date**: 2025-08-26 18:38:39 UTC
 - **Explorer**: [View on Solana Explorer](https://explorer.solana.com/address/3NZ9JMVBmGAqocybic2c7LQCJScmgsAZ6vQqTDzcqmJh)
 
 ## Basic Properties
-- **Supply**: 326,765,361,079
+- **Supply**: 326,261,573,005
 - **Decimals**: 8
 - **Is Initialized**: True
 - **Token Program**: TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA
@@ -20,12 +20,12 @@
 - **Description**: Token with Metaplex metadata
 
 ## Supply Analysis
-- **Total Supply**: 326,765,361,079
-- **Circulating Supply**: 326765361079
+- **Total Supply**: 326,261,573,005
+- **Circulating Supply**: 326261573005
 - **Estimated Holders**: None
 
 ## Security Analysis
-- **Mint Authority**: 1117snDTk2WpxZCoyziYT9BPvbfszk54DaZQx3i5Tfe
+- **Mint Authority**: BCD75RNBHrJJpW4dXVagL5mPjzRLnVZq4YirJdjEYMV7
 - **Freeze Authority**: None
 - **Is Mutable**: True
 - **Security Score**: 70/100
@@ -40,12 +40,15 @@
 ### Authority Analysis
 
 #### Mint Authority
-- **Address**: `1117snDTk2WpxZCoyziYT9BPvbfszk54DaZQx3i5Tfe`
-- **Type**: Non-existent
+- **Address**: `BCD75RNBHrJJpW4dXVagL5mPjzRLnVZq4YirJdjEYMV7`
+- **Type**: Wallet
 - **Risk Level**: high
 - **Risk Score**: N/A/10
 - **Capabilities**:
-  - Address does not exist
+  - Mint unlimited tokens
+  - Change mint authority to any address
+  - Burn tokens from any account
+  - Full unilateral control (no multi-party approval required)
 
 #### Update Authority
 - **Address**: `BCD75RNBHrJJpW4dXVagL5mPjzRLnVZq4YirJdjEYMV7`

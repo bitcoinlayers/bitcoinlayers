@@ -1,15 +1,15 @@
 {
   "mint_address": "3NZ9JMVBmGAqocybic2c7LQCJScmgsAZ6vQqTDzcqmJh",
-  "intro": "BitGo WBTC is a wrapped Bitcoin token on Solana backed by BitGo's institutional custody. The token operates with mint authority and metadata update capabilities under BitGo's centralized control.",
+  "intro": "BitGo wBTC is bridged to Solana from Ethereum using Wormhole. ",
   "key_findings": [
-    "mint_authority: Non-existent with 1 capabilities",
-    "update_authority: Wallet with 1 capabilities"
+    "There is no freeze capability on this token. Users cannot be censored.",
+    "The mint and update authority are managed by the Wormhole Mint Authority. "
   ],
   "basic_info": {
     "mint_address": "3NZ9JMVBmGAqocybic2c7LQCJScmgsAZ6vQqTDzcqmJh",
-    "supply": 326765361079,
+    "supply": 326261573005,
     "decimals": 8,
-    "mint_authority": "1117snDTk2WpxZCoyziYT9BPvbfszk54DaZQx3i5Tfe",
+    "mint_authority": "BCD75RNBHrJJpW4dXVagL5mPjzRLnVZq4YirJdjEYMV7",
     "freeze_authority": null,
     "is_initialized": true,
     "owner_program": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
@@ -25,13 +25,13 @@
     "properties": null
   },
   "supply_info": {
-    "total_supply": 326765361079,
-    "circulating_supply": "326765361079",
+    "total_supply": 326261573005,
+    "circulating_supply": "326261573005",
     "max_supply": null,
     "holders_count": null
   },
   "security_analysis": {
-    "mint_authority": "1117snDTk2WpxZCoyziYT9BPvbfszk54DaZQx3i5Tfe",
+    "mint_authority": "BCD75RNBHrJJpW4dXVagL5mPjzRLnVZq4YirJdjEYMV7",
     "freeze_authority": null,
     "is_mutable": true,
     "has_update_authority": true,
@@ -44,7 +44,7 @@
   "governance_info": {
     "governance_type": "Centralized",
     "authority_analyses": {
-      "mint_authority": "AuthorityAnalysis(address='1117snDTk2WpxZCoyziYT9BPvbfszk54DaZQx3i5Tfe', authority_type='Non-existent', capabilities=['Address does not exist'], multisig_info=None, governance_info=None, risk_assessment={'risk_level': 'high', 'reason': 'Invalid authority address'})",
+      "mint_authority": "AuthorityAnalysis(address='BCD75RNBHrJJpW4dXVagL5mPjzRLnVZq4YirJdjEYMV7', authority_type='Wallet', capabilities=['Mint unlimited tokens', 'Change mint authority to any address', 'Burn tokens from any account', 'Full unilateral control (no multi-party approval required)'], multisig_info=None, governance_info=None, risk_assessment={'risk_level': 'high', 'reason': 'Single wallet control - centralized authority', 'mitigations': ['Has significant SOL balance - actively maintained']})",
       "update_authority": "AuthorityAnalysis(address='BCD75RNBHrJJpW4dXVagL5mPjzRLnVZq4YirJdjEYMV7', authority_type='Wallet', capabilities=['Full unilateral control (no multi-party approval required)'], multisig_info=None, governance_info=None, risk_assessment={'risk_level': 'high', 'reason': 'Single wallet control - centralized authority', 'mitigations': ['Has significant SOL balance - actively maintained']})"
     },
     "overall_risk_score": 5.0,
@@ -52,7 +52,7 @@
       "total_authorities": 2,
       "governance_type": "Centralized",
       "key_findings": [
-        "mint_authority: Non-existent with 1 capabilities",
+        "mint_authority: Wallet with 4 capabilities",
         "update_authority: Wallet with 1 capabilities"
       ],
       "recommendations": [
@@ -65,7 +65,7 @@
   "analysis_metadata": {
     "analyzer_version": "1.0.0",
     "network": "mainnet",
-    "analysis_date": "2025-08-25 21:44:45 UTC",
+    "analysis_date": "2025-08-26 18:38:39 UTC",
     "wrapper_name": "bitgo_wbtc",
     "network_name": "solana",
     "explorer_url": "https://explorer.solana.com/address/3NZ9JMVBmGAqocybic2c7LQCJScmgsAZ6vQqTDzcqmJh"

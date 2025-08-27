@@ -3,7 +3,7 @@
   "intro": "Coinbase cbBTC has centralized authorities that control minting and metadata updates. Users can be censored and have their accounts frozen. Additionally, a centralized admin can upgrade the contracts.",
   "key_findings": [
     "Mint authority is a single signer and arbitrarily mint unlimited tokens",
-    "Freeze authority is a singler signer and can censor individual users",
+    "Freeze authority is a singler signer and can freeze token transfers altogether and/or censor individual users",
     "Update authority is a single signer and implement malicious upgrades"
   ],
   "basic_info": {
