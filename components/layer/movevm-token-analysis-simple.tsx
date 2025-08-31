@@ -84,6 +84,8 @@ interface MoveVMAnalysisData {
         project_name: string;
         explorer_url: string;
     };
+    intro?: string;
+    key_findings?: string[];
 }
 
 interface MoveVMTokenAnalysisProps {
