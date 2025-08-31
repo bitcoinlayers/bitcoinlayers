@@ -42,7 +42,9 @@ const AggregatedNetworksTable = ({ data, headers }: Props) => {
     });
     
     const [pegSupplyView, setPegSupplyView] = useQueryState("peg-supply", {
-        defaultValue: "pegs" as "pegs" | "supply",
+        defaultValue: "pegs",
+        parse: (value) => value === "supply" ? "supply" : "pegs",
+        serialize: (value) => value,
     });
 
     // Calculate counts and categorize data
@@ -82,7 +84,7 @@ const AggregatedNetworksTable = ({ data, headers }: Props) => {
         if (!activeTabData) return data;
 
         return data.filter(item => 
-            activeTabData.category.includes(item.entityCategory)
+            item.entityCategory && activeTabData.category.includes(item.entityCategory)
         );
     }, [data, activeTab, tabsData]);
 
@@ -145,7 +147,7 @@ const AggregatedNetworksTable = ({ data, headers }: Props) => {
                             data={filteredData} 
                             headers={tabHeaders} 
                             hideHeader={true}
-                            pegSupplyView={pegSupplyView}
+                            pegSupplyView={pegSupplyView as "pegs" | "supply"}
                             onPegSupplyViewChange={setPegSupplyView}
                         />
                     </div>
@@ -162,7 +164,7 @@ const AggregatedNetworksTable = ({ data, headers }: Props) => {
                                 data={altData} 
                                 headers={tabHeaders} 
                                 hideHeader={true}
-                                pegSupplyView={pegSupplyView}
+                                pegSupplyView={pegSupplyView as "pegs" | "supply"}
                                 onPegSupplyViewChange={setPegSupplyView}
                             />
                         )}
@@ -171,7 +173,7 @@ const AggregatedNetworksTable = ({ data, headers }: Props) => {
                                 data={integratedData} 
                                 headers={tabHeaders} 
                                 hideHeader={true}
-                                pegSupplyView={pegSupplyView}
+                                pegSupplyView={pegSupplyView as "pegs" | "supply"}
                                 onPegSupplyViewChange={setPegSupplyView}
                             />
                         )}
