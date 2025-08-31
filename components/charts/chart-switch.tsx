@@ -8,44 +8,25 @@ import getHistoricalSuppliesByNetwork from "@/hooks/get-historical-supplies-by-n
 
 export default function ChartSwitch() {
     const [view] = useQueryState("view", {
-        defaultValue: "networks",
-    });
-    const [subView] = useQueryState("subview", {
-        defaultValue: "applications",
+        defaultValue: "bitcoin-layers",
     });
 
-    // Use subView when view is "more", otherwise use view
-    const effectiveView = view === "more" ? subView : view;
+    // Use view directly since we simplified the structure
+    const effectiveView = view;
 
     const chartConfig = {
-        networks: {
+        "bitcoin-layers": {
             title: "BTC supply by network",
             description:
-                "Total BTC supply supporting bitcoin native protocols, bitcoin sidesystems, alternative L1s, and more",
+                "Total BTC supply supporting bitcoin native protocols and sidesystems",
             chartQueryParam: "layer-chart",
             rangeQueryParam: "layer-range",
             useDataHook: getHistoricalSuppliesByNetwork,
         },
-        sidesystems: {
+        "alternative-networks": {
             title: "BTC supply by network",
             description:
-                "Total BTC supply supporting bitcoin native protocols, bitcoin sidesystems, alternative L1s, and more",
-            chartQueryParam: "sidesystems-chart",
-            rangeQueryParam: "sidesystems-range",
-            useDataHook: getHistoricalSuppliesByNetwork,
-        },
-        integrated: {
-            title: "BTC supply by network",
-            description:
-                "Total BTC supply supporting bitcoin native protocols, bitcoin sidesystems, alternative L1s, and more",
-            chartQueryParam: "integrated-chart",
-            rangeQueryParam: "integrated-range",
-            useDataHook: getHistoricalSuppliesByNetwork,
-        },
-        "alternative networks": {
-            title: "BTC supply by network",
-            description:
-                "Total BTC supply supporting bitcoin native protocols, bitcoin sidesystems, alternative L1s, and more",
+                "Total BTC supply supporting alternative L1 networks",
             chartQueryParam: "alternative-chart",
             rangeQueryParam: "alternative-range",
             useDataHook: getHistoricalSuppliesByNetwork,
@@ -53,7 +34,7 @@ export default function ChartSwitch() {
         wrappers: {
             title: "BTC supply by wrapper",
             description:
-                "Total BTC supply supporting bitcoin native protocols, bitcoin sidesystems, alternative L1s, and more",
+                "Total BTC supply supporting wrapper protocols",
             chartQueryParam: "bridge-chart",
             rangeQueryParam: "bridge-range",
             useDataHook: getHistoricalSuppliesByTokenProject,
@@ -87,26 +68,6 @@ export default function ChartSwitch() {
     const config = chartConfig[effectiveView as keyof typeof chartConfig];
     const { data, isLoading, error } = config?.useDataHook() || { data: null, isLoading: false, error: null };
 
-    // Use sidesystem chart configuration for Bitcoin Native (networks) view
-    if (effectiveView === "networks") {
-        const sidesystemConfig = chartConfig.sidesystems;
-        const { data: sidesystemData } = sidesystemConfig.useDataHook();
-        
-        return (
-            <AggregatedTVLChart
-                key={sidesystemData?.length}
-                title={sidesystemConfig.title}
-                description={sidesystemConfig.description}
-                itemNameKey="network_name"
-                chartQueryParam={sidesystemConfig.chartQueryParam}
-                rangeQueryParam={sidesystemConfig.rangeQueryParam}
-                showLegend={false}
-                chartHeight="h-64"
-                data={sidesystemData}
-            />
-        );
-    }
-
     // Return null if no config found for this view
     if (!config) {
         return null;
@@ -117,8 +78,7 @@ export default function ChartSwitch() {
             key={data?.length}
             title={config.title}
             description={config.description}
-            // itemNameKey={view === "layers" ? "layer_name" : "infra_name"}
-            itemNameKey={effectiveView === "networks" || effectiveView === "integrated" || effectiveView === "sidesystems" || effectiveView === "alternative networks" ? "network_name" : "token_name"}
+            itemNameKey={effectiveView === "wrappers" ? "token_name" : "network_name"}
             chartQueryParam={config.chartQueryParam}
             rangeQueryParam={config.rangeQueryParam}
             showLegend={false}

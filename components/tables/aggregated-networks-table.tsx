@@ -13,9 +13,6 @@ import {
 import { LayersIcon } from "lucide-react";
 import LayerTable from "./layer-table";
 import SidesystemTable from "./sidesystem-table";
-import AlternativeTable from "./alternative-table";
-import IntegratedTable from "./integrated-table";
-import PegSupplyToggle from "./peg-supply-toggle";
 
 type NetworkCategory = "bitcoin-native" | "sidesystems" | "alt-networks";
 
@@ -51,10 +48,6 @@ const AggregatedNetworksTable = ({ data, headers }: Props) => {
     const tabsData = useMemo((): TabData[] => {
         const bitcoinNativeCount = data.filter(item => item.entityCategory === EntityCategory.BitcoinNative).length;
         const sidesystemsCount = data.filter(item => item.entityCategory === EntityCategory.Sidesystem).length;
-        const altNetworksCount = data.filter(item => 
-            item.entityCategory === EntityCategory.Alt || 
-            item.entityCategory === EntityCategory.Integrated
-        ).length;
 
         return [
             {
@@ -68,12 +61,6 @@ const AggregatedNetworksTable = ({ data, headers }: Props) => {
                 label: "Sidesystems",
                 count: sidesystemsCount,
                 category: [EntityCategory.Sidesystem]
-            },
-            {
-                id: "alt-networks",
-                label: "Alt. L1s & More",
-                count: altNetworksCount,
-                category: [EntityCategory.Alt, EntityCategory.Integrated]
             }
         ];
     }, [data]);
@@ -152,33 +139,6 @@ const AggregatedNetworksTable = ({ data, headers }: Props) => {
                         />
                     </div>
                 );
-            case "alt-networks":
-                // Check if we have both Alt and Integrated, if so render both
-                const altData = filteredData.filter(item => item.entityCategory === EntityCategory.Alt);
-                const integratedData = filteredData.filter(item => item.entityCategory === EntityCategory.Integrated);
-                
-                return (
-                    <div className="aggregated-table-content space-y-6">
-                        {altData.length > 0 && (
-                            <AlternativeTable 
-                                data={altData} 
-                                headers={tabHeaders} 
-                                hideHeader={true}
-                                pegSupplyView={pegSupplyView as "pegs" | "supply"}
-                                onPegSupplyViewChange={setPegSupplyView}
-                            />
-                        )}
-                        {integratedData.length > 0 && (
-                            <IntegratedTable 
-                                data={integratedData} 
-                                headers={tabHeaders} 
-                                hideHeader={true}
-                                pegSupplyView={pegSupplyView as "pegs" | "supply"}
-                                onPegSupplyViewChange={setPegSupplyView}
-                            />
-                        )}
-                    </div>
-                );
             default:
                 return null;
         }
@@ -196,24 +156,26 @@ const AggregatedNetworksTable = ({ data, headers }: Props) => {
                     </CardDescription>
                 </div>
                 
-                {/* Tab Navigation - positioned on the right like in photo */}
-                <div className="flex items-center gap-0 px-6 py-5 sm:py-6">
-                    {tabsData.map((tab) => (
+                <div className="flex">
+                    {/* Tab Navigation - styled like wrapper table buttons */}
+                    {tabsData.map((tab, index) => (
                         <button
                             key={tab.id}
                             onClick={() => setActiveTab(tab.id)}
-                            className={`flex flex-col items-center justify-center min-w-[80px] h-[60px] px-3 py-2 border-l border-border first:border-l-0 transition-colors ${
+                            className={`relative z-30 flex flex-1 flex-col justify-center gap-1 border-t px-6 py-4 text-left transition-colors sm:border-t-0 sm:px-8 sm:py-6 min-w-[100px] sm:min-w-[150px] ${
+                                index === 0 ? "sm:border-l" : "border-l"
+                            } ${
                                 activeTab === tab.id
-                                    ? "bg-background text-foreground"
+                                    ? "bg-muted/50 text-foreground"
                                     : "text-muted-foreground hover:text-foreground hover:bg-muted/20"
                             }`}
                         >
-                            <div className="text-xs font-medium text-muted-foreground mb-1">
+                            <span className="text-xs text-muted-foreground">
                                 {tab.label}
-                            </div>
-                            <div className="text-2xl font-bold">
+                            </span>
+                            <span className="text-lg font-bold leading-none sm:text-3xl">
                                 {tab.count}
-                            </div>
+                            </span>
                         </button>
                     ))}
                 </div>
