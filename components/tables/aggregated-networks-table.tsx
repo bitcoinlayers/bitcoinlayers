@@ -124,7 +124,7 @@ const AggregatedNetworksTable = ({ data, headers }: Props) => {
             case "bitcoin-native":
                 return (
                     <div className="aggregated-table-content">
-                        <LayerTable data={filteredData} headers={tabHeaders} hideHeader={true} />
+                        <LayerTable data={filteredData} headers={tabHeaders} hideHeader={true} hideCard={true} />
                     </div>
                 );
             case "sidesystems":
@@ -134,6 +134,7 @@ const AggregatedNetworksTable = ({ data, headers }: Props) => {
                             data={filteredData} 
                             headers={tabHeaders} 
                             hideHeader={true}
+                            hideCard={true}
                             pegSupplyView={pegSupplyView as "pegs" | "supply"}
                             onPegSupplyViewChange={setPegSupplyView}
                         />

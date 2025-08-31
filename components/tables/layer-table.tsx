@@ -54,6 +54,7 @@ interface Props {
     }[];
     showToggleGroup?: boolean;
     hideHeader?: boolean;
+    hideCard?: boolean;
 }
 
 const LayerImage = ({ src, title }: { src: string; title: string }) => {
@@ -78,7 +79,7 @@ const LayerImage = ({ src, title }: { src: string; title: string }) => {
     );
 };
 
-const LayerTable = ({ data, headers, hideHeader = false }: Props) => {
+const LayerTable = ({ data, headers, hideHeader = false, hideCard = false }: Props) => {
     const [types] = useQueryState<string[]>("type", {
         defaultValue: [],
         parse: (value) => value.split(",").filter(Boolean),
@@ -193,8 +194,8 @@ const LayerTable = ({ data, headers, hideHeader = false }: Props) => {
         (_item) => _item.name === mobileActiveTab || _item.name === "Name",
     );
 
-    return (
-        <Card className="w-full">
+    const tableContent = (
+        <>
             {!hideHeader && (
                 <CardHeader className="flex flex-col items-stretch space-y-0 border-b p-0 sm:flex-row border-none">
                     <div className="flex flex-1 flex-col justify-center gap-1 px-6 py-5 sm:py-6">
@@ -349,6 +350,12 @@ const LayerTable = ({ data, headers, hideHeader = false }: Props) => {
                     </table>
                 </div>
             </CardContent>
+        </>
+    );
+
+    return hideCard ? tableContent : (
+        <Card className="w-full">
+            {tableContent}
         </Card>
     );
 };
