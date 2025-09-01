@@ -13,8 +13,9 @@ import {
 import { LayersIcon } from "lucide-react";
 import LayerTable from "./layer-table";
 import SidesystemTable from "./sidesystem-table";
+import OtherTable from "./other-table";
 
-type NetworkCategory = "bitcoin-native" | "sidesystems" | "alt-networks";
+type NetworkCategory = "bitcoin-native" | "sidesystems" | "other";
 
 interface Props {
     data: LayerProject[];
@@ -48,6 +49,9 @@ const AggregatedNetworksTable = ({ data, headers }: Props) => {
     const tabsData = useMemo((): TabData[] => {
         const bitcoinNativeCount = data.filter(item => item.entityCategory === EntityCategory.BitcoinNative).length;
         const sidesystemsCount = data.filter(item => item.entityCategory === EntityCategory.Sidesystem).length;
+        const otherCount = data.filter(item => 
+            item.entityCategory === EntityCategory.Other
+        ).length;
 
         return [
             {
@@ -61,6 +65,12 @@ const AggregatedNetworksTable = ({ data, headers }: Props) => {
                 label: "Sidesystems",
                 count: sidesystemsCount,
                 category: [EntityCategory.Sidesystem]
+            },
+            {
+                id: "other",
+                label: "Other",
+                count: otherCount,
+                category: [EntityCategory.Other]
             }
         ];
     }, [data]);
@@ -90,7 +100,7 @@ const AggregatedNetworksTable = ({ data, headers }: Props) => {
                 return header;
             });
         } else {
-            // Sidesystems & Alt Networks: add Custody Type column and keep BTC Pegs/Supply (6 columns total)
+            // Sidesystems & Other: add Custody Type column and keep BTC Pegs/Supply (6 columns total)
             const transformedHeaders = headers.map(header => {
                 if (header.name === "BTC Pegs") {
                     return {
@@ -131,6 +141,19 @@ const AggregatedNetworksTable = ({ data, headers }: Props) => {
                 return (
                     <div className="aggregated-table-content">
                         <SidesystemTable 
+                            data={filteredData} 
+                            headers={tabHeaders} 
+                            hideHeader={true}
+                            hideCard={true}
+                            pegSupplyView={pegSupplyView as "pegs" | "supply"}
+                            onPegSupplyViewChange={setPegSupplyView}
+                        />
+                    </div>
+                );
+            case "other":
+                return (
+                    <div className="aggregated-table-content">
+                        <OtherTable 
                             data={filteredData} 
                             headers={tabHeaders} 
                             hideHeader={true}

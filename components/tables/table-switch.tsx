@@ -92,11 +92,12 @@ function getSortedDataAndHeaders(view: string, subView: string) {
 
         case "bitcoin-layers":
         default:
-            // Return Bitcoin Native and Sidesystem layers for the aggregated table
+            // Return Bitcoin Native, Sidesystem, and Other layers for the aggregated table
             const bitcoinLayers = allLayers
                 .filter((layer) => 
                     layer.entityCategory === EntityCategory.BitcoinNative ||
-                    layer.entityCategory === EntityCategory.Sidesystem
+                    layer.entityCategory === EntityCategory.Sidesystem ||
+                    layer.entityCategory === EntityCategory.Other
                 )
                 .sort((a, b) =>
                     a.title.toLowerCase().localeCompare(b.title.toLowerCase()),

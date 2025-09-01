@@ -102,6 +102,7 @@ export enum EntityCategory {
     Integrated = "Integrated",
     Alt = "Alt. L1s & More",
     More = "More",
+    Other = "Other",
 }
 
 export enum Notice {
