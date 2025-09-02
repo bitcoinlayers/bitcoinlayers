@@ -26,7 +26,7 @@ const ViewToggleGroup = ({ showAll }: { showAll: boolean }) => {
                     return (
                         <div
                             key={option.value}
-                            className={`h-[30px] px-4 py-[5px] rounded-full border-2 justify-center items-center gap-1.5 flex cursor-pointer ${
+                            className={`h-[40px] md:h-[30px] px-4 py-[8px] md:py-[5px] rounded-full border-2 justify-center items-center gap-1.5 flex cursor-pointer ${
                                 isActive
                                     ? "bg-background border-brand"
                                     : "border-muted-foreground"
