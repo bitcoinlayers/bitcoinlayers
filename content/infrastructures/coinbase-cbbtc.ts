@@ -24,7 +24,7 @@ const cbbtc: InfrastructureProject = {
     riskFactors: ["", ""],
     nativeToken: "-",
     purpose: Purpose.General,
-    associatedLayers: "Base, Ethereum",
+    associatedLayers: "Base, Ethereum, Solana",
     notice: undefined,
     bitcoinOnly: false,
     links: [

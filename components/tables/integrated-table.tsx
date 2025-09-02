@@ -32,7 +32,7 @@ import StakingDialog from "../layer/staking-dialog";
 import RiskSummaryDialog from "../layer/risk-summary-dialog";
 import NetworkTypeHoverCard from "../layer/network-type-hover-card";
 import SupplyDistributionHoverCard from "../layer/supply-distribution-hover-card";
-import CustodyTypeDialog from "../layer/custody-type-dialog";
+
 import UnderReviewButton from "@/components/under-review-button";
 import ComingSoon from "@/components/tables/coming-soon";
 
@@ -40,8 +40,8 @@ type TableTabKey =
     | "Trust Assumptions"
     | "Type"
     | "Risk Summary"
-    | "Custody Type"
-    | "BTC Pegs";
+    | "BTC Pegs"
+    | "BTC Supply";
 
 interface Props {
     data: LayerProject[];
@@ -52,6 +52,7 @@ interface Props {
         mobileLabel: string;
     }[];
     showToggleGroup?: boolean;
+    hideHeader?: boolean;
 }
 
 const LayerImage = ({ src, title }: { src: string; title: string }) => {
@@ -76,7 +77,7 @@ const LayerImage = ({ src, title }: { src: string; title: string }) => {
     );
 };
 
-const IntegratedTable = ({ data, headers }: Props) => {
+const IntegratedTable = ({ data, headers, hideHeader = false }: Props) => {
     const [types] = useQueryState<string[]>("type", {
         defaultValue: [],
         parse: (value) => value.split(",").filter(Boolean),
@@ -90,7 +91,7 @@ const IntegratedTable = ({ data, headers }: Props) => {
         defaultValue: "desc",
     });
 
-    const [pegSupplyView, setPegSupplyView] = useState<"pegs" | "supply">("pegs");
+
 
     const { data: currentSupplies, isLoading } =
         getCurrentSuppliesByTokenimpl();
@@ -151,6 +152,11 @@ const IntegratedTable = ({ data, headers }: Props) => {
                     valueB = b.riskSummary?.join(",") || "";
                     break;
                 case "BTC Pegs":
+                    // Sort by number of tokens
+                    valueA = (tokensMap[a.slug.toLowerCase()] || []).length;
+                    valueB = (tokensMap[b.slug.toLowerCase()] || []).length;
+                    break;
+                case "BTC Supply":
                     // Sort by BTC Supply - use totaledBalances if available, fallback to btcLocked
                     valueA = Number(totaledBalances[a.slug]?.totalAmount ?? a.btcLocked) || 0;
                     valueB = Number(totaledBalances[b.slug]?.totalAmount ?? b.btcLocked) || 0;
@@ -200,16 +206,18 @@ const IntegratedTable = ({ data, headers }: Props) => {
 
     return (
         <Card className="w-full">
-            <CardHeader className="flex flex-col items-stretch space-y-0 border-b p-0 sm:flex-row border-none">
-                <div className="flex flex-1 flex-col justify-center gap-1 px-6 py-5 sm:py-6">
-                    <CardTitle className="flex">
-                        <LayersIcon className="mr-3" /> Integrated networks
-                    </CardTitle>
-                    <CardDescription>
-                        Integrated networks are alternative networks that inherit security from bitcoin protocol participants.
-                    </CardDescription>
-                </div>
-            </CardHeader>
+            {!hideHeader && (
+                <CardHeader className="flex flex-col items-stretch space-y-0 border-b p-0 sm:flex-row border-none">
+                    <div className="flex flex-1 flex-col justify-center gap-1 px-6 py-5 sm:py-6">
+                        <CardTitle className="flex">
+                            <LayersIcon className="mr-3" /> Integrated networks
+                        </CardTitle>
+                        <CardDescription>
+                            Integrated networks are alternative networks that inherit security from bitcoin protocol participants.
+                        </CardDescription>
+                    </div>
+                </CardHeader>
+            )}
             <CardContent className="p-0">
                 <div className="overflow-x-auto mx-auto border-none">
                     <table className="w-full text-sm text-left rtl:text-right">
@@ -218,8 +226,6 @@ const IntegratedTable = ({ data, headers }: Props) => {
                             onSort={handleSort}
                             sortBy={sortBy}
                             sortOrder={sortOrder}
-                            pegSupplyView={pegSupplyView}
-                            onPegSupplyViewChange={setPegSupplyView}
                         />
                         <tbody className="gap-x-8">
                             {filteredData.map((item, index) => (
@@ -332,74 +338,70 @@ const IntegratedTable = ({ data, headers }: Props) => {
                                             />
                                         </td>
                                     )}
-                                    {(!isMobile ||
-                                        mobileActiveTab === "Custody Type") && (
-                                        <td className="lg:px-4 px-4 py-3 lg:py-4 border-border">
-                                            <CustodyTypeDialog layer={item} />
-                                        </td>
-                                    )}
+
                                     {(!isMobile ||
                                         mobileActiveTab === "BTC Pegs") && (
                                         <td className="lg:px-4 px-4 py-3 lg:py-4 border-border">
-                                            {pegSupplyView === "pegs" ? (
-                                                isLoading ? (
-                                                    <div>Loading...</div>
-                                                ) : (tokensMap[item.slug.toLowerCase()] || []).length === 0 ? (
-                                                    <ComingSoon />
-                                                ) : (
-                                                    <TokenList
-                                                        tokens={tokensMap[item.slug.toLowerCase()] || []}
-                                                        networkSlug={item.slug}
-                                                    />
-                                                )
+                                            {isLoading ? (
+                                                <div>Loading...</div>
+                                            ) : (tokensMap[item.slug.toLowerCase()] || []).length === 0 ? (
+                                                <ComingSoon />
                                             ) : (
-                                                // Supply view
-                                                item.underReview ||
-                                                (Object.keys(
-                                                    totaledBalances,
-                                                ).find(
-                                                    (key) =>
-                                                        key.toLowerCase() ===
-                                                        item.title.toLowerCase(),
-                                                ) === undefined &&
-                                                    (item.btcLocked === null ||
-                                                        isNaN(
+                                                <TokenList
+                                                    tokens={tokensMap[item.slug.toLowerCase()] || []}
+                                                    networkSlug={item.slug}
+                                                />
+                                            )}
+                                        </td>
+                                    )}
+                                    {(!isMobile ||
+                                        mobileActiveTab === "BTC Supply") && (
+                                        <td className="lg:px-4 px-4 py-3 lg:py-4 border-border">
+                                            {item.underReview ||
+                                            (Object.keys(
+                                                totaledBalances,
+                                            ).find(
+                                                (key) =>
+                                                    key.toLowerCase() ===
+                                                    item.title.toLowerCase(),
+                                            ) === undefined &&
+                                                (item.btcLocked === null ||
+                                                    isNaN(
+                                                        item.btcLocked,
+                                                    ))) ? (
+                                                <ComingSoon />
+                                            ) : (
+                                                <SupplyDistributionHoverCard
+                                                    tokens={tokensMap[item.slug.toLowerCase()] || []}
+                                                    totalAmount={Number(
+                                                        totaledBalances[
+                                                            item.slug
+                                                        ]?.totalAmount ??
                                                             item.btcLocked,
-                                                        ))) ? (
-                                                    <ComingSoon />
-                                                ) : (
-                                                    <SupplyDistributionHoverCard
-                                                        tokens={tokensMap[item.slug.toLowerCase()] || []}
-                                                        totalAmount={Number(
-                                                            totaledBalances[
-                                                                item.slug
-                                                            ]?.totalAmount ??
-                                                                item.btcLocked,
-                                                        )}
-                                                        networkName={item.title}
+                                                    )}
+                                                    networkName={item.title}
+                                                >
+                                                    <Link 
+                                                        href={`/layers/${item.slug}`}
+                                                        className="hover:underline cursor-pointer"
                                                     >
-                                                        <Link 
-                                                            href={`/layers/${item.slug}`}
-                                                            className="hover:underline cursor-pointer"
-                                                        >
-                                                            <div className="font-medium">
-                                                                ₿{" "}
-                                                                {Number(
-                                                                    totaledBalances[
-                                                                        item.slug
-                                                                    ]?.totalAmount ??
-                                                                        item.btcLocked,
-                                                                ).toLocaleString(
-                                                                    "en-US",
-                                                                    {
-                                                                        minimumFractionDigits: 0,
-                                                                        maximumFractionDigits: 0,
-                                                                    },
-                                                                )}
-                                                            </div>
-                                                        </Link>
-                                                    </SupplyDistributionHoverCard>
-                                                )
+                                                        <div className="font-medium">
+                                                            ₿{" "}
+                                                            {Number(
+                                                                totaledBalances[
+                                                                    item.slug
+                                                                ]?.totalAmount ??
+                                                                    item.btcLocked,
+                                                            ).toLocaleString(
+                                                                "en-US",
+                                                                {
+                                                                    minimumFractionDigits: 0,
+                                                                    maximumFractionDigits: 0,
+                                                                },
+                                                            )}
+                                                        </div>
+                                                    </Link>
+                                                </SupplyDistributionHoverCard>
                                             )}
                                         </td>
                                     )}

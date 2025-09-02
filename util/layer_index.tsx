@@ -65,6 +65,7 @@ import suiProject from "@/content/layers/sui";
 import botanixProject from "@/content/layers/botanix";
 import goatProject from "@/content/layers/goat";
 import arkadeProject from "@/content/layers/arkade";
+import bitcoinStakingProject from "@/content/layers/bitcoin-staking";
 
 const core: LayerProject = coreProject;
 const internetcomputer: LayerProject = internetcomputerProject;
@@ -131,6 +132,7 @@ const sui: LayerProject = suiProject;
 const botanix: LayerProject = botanixProject;
 const goat: LayerProject = goatProject;
 const arkade: LayerProject = arkadeProject;
+const bitcoinStaking: LayerProject = bitcoinStakingProject;
 
 export const allLayers: LayerProject[] = [
     core,

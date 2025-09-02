@@ -3,6 +3,7 @@ import { parseTextWithLinks } from "@/util/parseTextWithLinks";
 import { Project } from "@/content/props";
 import InfoCardGridOpcode from "../info-card-grid-opcode";
 
+
 const InfrastructureBody: React.FC<{ infrastructure: Project }> = ({
     infrastructure,
 }) => {
@@ -61,6 +62,8 @@ const InfrastructureBody: React.FC<{ infrastructure: Project }> = ({
                             <InfoCardGridOpcode />
                         </div>
                     )}
+
+
                 </section>
             ))}
         </main>

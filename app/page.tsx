@@ -11,14 +11,11 @@ import WelcomeBanner from "@/components/welcome-banner";
 
 export default function Home() {
     const [view] = useQueryState("view", {
-        defaultValue: "networks",
-    });
-    const [subView] = useQueryState("subview", {
-        defaultValue: "applications",
+        defaultValue: "bitcoin-layers",
     });
 
-    // Show chart for all views except "more", unless it's "alternative networks", "wrappers", or "integrated"
-    const showChart = view !== "more" || subView === "alternative networks" || subView === "wrappers" || subView === "integrated";
+    // Show chart for all views
+    const showChart = true;
 
     return (
         <div className="mx-auto space-y-8">
@@ -30,16 +27,16 @@ export default function Home() {
                     imageClassName="bottom-[6px] right-3 w-4 h-4"
                 />
             </div>
-            {/* For Bitcoin Native view: show table first, then chart */}
-            {view === "networks" && (
+            {/* For Bitcoin Layers view: show chart first, then table */}
+            {view === "bitcoin-layers" && (
                 <>
                     <WelcomeBanner />
-                    <TableSwitch />
                     {showChart && <ChartSwitch />}
+                    <TableSwitch />
                 </>
             )}
             {/* For all other views: show chart first, then table */}
-            {view !== "networks" && (
+            {view !== "bitcoin-layers" && (
                 <>
                     {showChart && <ChartSwitch />}
                     <TableSwitch />

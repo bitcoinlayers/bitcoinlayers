@@ -1,0 +1,73 @@
+{
+  "mint_address": "6DNSN2BJsaPFdFFc1zP37kkeNe4Usc1Sqkzr9C9vPWcU",
+  "intro": "Threshold tBTC is a decentralized wrapped Bitcoin token on Solana backed by a threshold signature scheme. Despite its decentralized backing mechanism, the Solana token representation maintains centralized mint and update authorities.",
+  "key_findings": [
+    "mint_authority: Non-existent with 1 capabilities",
+    "update_authority: Wallet with 1 capabilities"
+  ],
+  "basic_info": {
+    "mint_address": "6DNSN2BJsaPFdFFc1zP37kkeNe4Usc1Sqkzr9C9vPWcU",
+    "supply": 6477403009,
+    "decimals": 8,
+    "mint_authority": "111wQfXaC7e7paLGoKqp2KnfZPEd3nZV8Yrw2KQ1oZ",
+    "freeze_authority": null,
+    "is_initialized": true,
+    "owner_program": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+    "is_token_2022": false
+  },
+  "metadata": {
+    "name": "Metaplex Token",
+    "symbol": "META",
+    "description": "Token with Metaplex metadata",
+    "image": null,
+    "external_url": null,
+    "attributes": null,
+    "properties": null
+  },
+  "supply_info": {
+    "total_supply": 6477403009,
+    "circulating_supply": "6477403009",
+    "max_supply": null,
+    "holders_count": null
+  },
+  "security_analysis": {
+    "mint_authority": "111wQfXaC7e7paLGoKqp2KnfZPEd3nZV8Yrw2KQ1oZ",
+    "freeze_authority": null,
+    "is_mutable": true,
+    "has_update_authority": true,
+    "is_verified": false,
+    "security_score": 70,
+    "risk_factors": [
+      "Has mint authority - tokens can be minted"
+    ]
+  },
+  "governance_info": {
+    "governance_type": "Centralized",
+    "authority_analyses": {
+      "mint_authority": "AuthorityAnalysis(address='111wQfXaC7e7paLGoKqp2KnfZPEd3nZV8Yrw2KQ1oZ', authority_type='Non-existent', capabilities=['Address does not exist'], multisig_info=None, governance_info=None, risk_assessment={'risk_level': 'high', 'reason': 'Invalid authority address'})",
+      "update_authority": "AuthorityAnalysis(address='2PfR3xUdMS8xHUhE9H47dy2Ro3Ww9agP5GdnNoKj3Vtf', authority_type='Wallet', capabilities=['Full unilateral control (no multi-party approval required)'], multisig_info=None, governance_info=None, risk_assessment={'risk_level': 'high', 'reason': 'Single wallet control - centralized authority', 'mitigations': []})"
+    },
+    "overall_risk_score": 5.0,
+    "governance_summary": {
+      "total_authorities": 2,
+      "governance_type": "Centralized",
+      "key_findings": [
+        "mint_authority: Non-existent with 1 capabilities",
+        "update_authority: Wallet with 1 capabilities"
+      ],
+      "recommendations": [
+        "Consider decentralizing mint_authority - current setup is high risk",
+        "Consider decentralizing update_authority - current setup is high risk"
+      ]
+    }
+  },
+  "errors": [],
+  "analysis_metadata": {
+    "analyzer_version": "1.0.0",
+    "network": "mainnet",
+    "analysis_date": "2025-08-25 21:35:49 UTC",
+    "wrapper_name": "threshold_tbtc",
+    "network_name": "solana",
+    "explorer_url": "https://explorer.solana.com/address/6DNSN2BJsaPFdFFc1zP37kkeNe4Usc1Sqkzr9C9vPWcU"
+  }
+}

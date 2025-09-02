@@ -1,5 +1,5 @@
 import FilterPopover from "./filter-popover";
-import PegSupplyToggle from "./peg-supply-toggle";
+
 import { useQueryState } from "nuqs";
 
 const getFilterType = (headerName: string): "type" | "status" => {
@@ -26,8 +26,6 @@ interface TableHeaderProps {
     sortByQueryParam?: string;
     sortOrderQueryParam?: string;
     filterQueryParam?: string;
-    pegSupplyView?: "pegs" | "supply";
-    onPegSupplyViewChange?: (view: "pegs" | "supply") => void;
 }
 
 const TableHeader: React.FC<TableHeaderProps> = ({
@@ -37,8 +35,6 @@ const TableHeader: React.FC<TableHeaderProps> = ({
     sortOrder: propSortOrder,
     sortByQueryParam = "sortBy",
     sortOrderQueryParam = "sortOrder",
-    pegSupplyView = "pegs",
-    onPegSupplyViewChange,
 }) => {
     const [querySortBy] = useQueryState(sortByQueryParam, {
         defaultValue: "Name",
@@ -64,23 +60,9 @@ const TableHeader: React.FC<TableHeaderProps> = ({
                     >
                         <div className="flex items-center justify-between">
                             <div className="flex items-center grow">
-                                {header.name === "BTC Pegs" && onPegSupplyViewChange && pegSupplyView ? (
-                                    <PegSupplyToggle
-                                        currentView={pegSupplyView}
-                                        onViewChange={onPegSupplyViewChange}
-                                        label="Pegs"
-                                    />
-                                ) : header.name === "Networks" && onPegSupplyViewChange && pegSupplyView ? (
-                                    <PegSupplyToggle
-                                        currentView={pegSupplyView}
-                                        onViewChange={onPegSupplyViewChange}
-                                        label="Networks"
-                                    />
-                                ) : (
-                                    <div className="text-sm font-medium leading-tight">
-                                        {header.name}
-                                    </div>
-                                )}
+                                <div className="text-sm font-medium leading-tight">
+                                    {header.name}
+                                </div>
                             </div>
                             <div className="relative flex items-center">
                                 {header.filterOptions &&

@@ -11,6 +11,8 @@ import { allMore } from "@/util/more_index";
 import MoreBanner from "@/components/more-banner";
 import RiskSummary from "@/components/shared/risk-summary";
 import RiskAnalysis from "@/components/layer/risk-analysis/infra-container";
+import TokenContractsSection from "@/components/token-contracts-section";
+import ProjectContractAddresses from "@/components/project-contract-addresses";
 
 async function getInfrastructureFromSlug(slug: string) {
     const infrastructure = allMore.find(
@@ -58,6 +60,15 @@ export default async function InfrastructurePage(props: {
                         <InfrastructureOverviewAlt
                             infrastructure={infrastructure}
                         />
+                        
+                        {/* Token Contracts */}
+                        <TokenContractsSection 
+                            slug={infrastructure.slug} 
+                            isLayer={false}
+                        />
+                        
+                        {/* Contract Analysis */}
+                        <ProjectContractAddresses slug={infrastructure.slug} isLayer={false} />
                         
                         <RiskSummary content={infrastructure.riskSummary || []} />
                         {infrastructure.assessment && (

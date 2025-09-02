@@ -1,0 +1,166 @@
+{
+  "address": "0xA45d4121b3D47719FF57a947A9d961539Ba33204",
+  "intro": "Lombard LBTC is bridge to BOB from Ethereum. The security assumption of this bridge falls back to a permissioned multisig that can upgrade the bridge with no delay. If a malicious upgrade was initiated, users' funds can be stolen.",
+  "key_findings": [
+    "User funds are escrowed in the 0x3...1f7 contract. This contract is upgradable by a 4/6 multisig.",
+    "Contract is updated based on receiving messages from 0xE...EdA contract",
+    "Messages are passed based on the results of the dispute game from the 0x8...a3E contract"  
+  ],
+  "verified": true,
+  "is_proxy": true,
+  "implementation_address": "0x11a924262FE3A506EF24E7CE4558F356eD4F2Ff0",
+  "admin_address": null,
+  "roles": {
+    "l1Token": {
+      "address": "0x8236a87084f8B84306f72007F36F2618A5634494",
+      "category": "Token",
+      "type": "EOA"
+    }
+  },
+  "governance_analysis": {
+    "LBTC Bridge (Bob)": {
+      "address": "0x4200000000000000000000000000000000000010",
+      "type": "L2_Bridge Contract",
+      "is_gnosis_safe": false,
+      "is_proxy": true,
+      "implementation": "0xC0d3c0d3c0D3c0d3C0D3c0D3C0d3C0D3C0D30010",
+      "admin": null,
+      "verified": true,
+      "network": "Bob",
+      "analysis_date": "2025-08-19 14:41:28 UTC",
+      "governance_details": {},
+      "roles": {},
+      "function_results": {
+        "MESSENGER": "0x4200000000000000000000000000000000000007",
+        "OTHER_BRIDGE": "0x3F6cE1b36e5120BBc59D0cFe8A5aC8b6464ac1f7",
+        "l1TokenBridge": "0x3F6cE1b36e5120BBc59D0cFe8A5aC8b6464ac1f7",
+        "messenger": "0x4200000000000000000000000000000000000007",
+        "otherBridge": "0x3F6cE1b36e5120BBc59D0cFe8A5aC8b6464ac1f7",
+        "paused": false,
+        "version": "1.8.0"
+      },
+      "discovered_addresses": [
+        "0x4200000000000000000000000000000000000007",
+        "0x3F6cE1b36e5120BBc59D0cFe8A5aC8b6464ac1f7"
+      ],
+      "wrapper_context": {
+        "token_name": "LBTC",
+        "network": "Bob",
+        "contract_role": "Bridge",
+        "analysis_purpose": "Bridge governance analysis for LBTC on Bob"
+      }
+    },
+    "BOB's Ethereum Bridge Contract": {
+      "address": "0x3F6cE1b36e5120BBc59D0cFe8A5aC8b6464ac1f7",
+      "type": "L2_Bridge Contract",
+      "is_gnosis_safe": false,
+      "is_proxy": true,
+      "implementation": "0x0b09ba359A106C9ea3b181CBc5F394570c7d2a7A",
+      "admin": null,
+      "verified": true,
+      "network": "Ethereum",
+      "analysis_date": "2025-08-19 15:24:35 UTC",
+      "governance_details": {},
+      "roles": {},
+      "function_results": {
+        "MESSENGER": "0xE3d981643b806FB8030CDB677D6E60892E547EdA",
+        "OTHER_BRIDGE": "0x4200000000000000000000000000000000000010",
+        "l2TokenBridge": "0x4200000000000000000000000000000000000010",
+        "messenger": "0xE3d981643b806FB8030CDB677D6E60892E547EdA",
+        "otherBridge": "0x4200000000000000000000000000000000000010",
+        "paused": false,
+        "superchainConfig": "0xE925205ad05D8d612Ac205C4941CCd61Fc965C46",
+        "version": "2.3.0"
+      },
+      "discovered_addresses": [
+        "0x4200000000000000000000000000000000000010",
+        "0xE3d981643b806FB8030CDB677D6E60892E547EdA",
+        "0xE925205ad05D8d612Ac205C4941CCd61Fc965C46"
+      ],
+      "wrapper_context": {
+        "token_name": "Lombard LBTC",
+        "network": "Ethereum",
+        "contract_role": "L1 Bridge",
+        "analysis_purpose": "Bridge governance analysis for Lombard LBTC on Ethereum"
+      }
+    },
+    "BOB's L1 Messenger Contract (Ethereum)": {
+      "address": "0xE3d981643b806FB8030CDB677D6E60892E547EdA",
+      "type": "L2_Bridge Contract",
+      "is_gnosis_safe": false,
+      "is_proxy": true,
+      "implementation": "0xD26bB3aaAa4cB5638A8581A4c4b1d937D8E05c54",
+      "admin": null,
+      "verified": true,
+      "network": "Ethereum",
+      "analysis_date": "2025-08-19 19:21:14 UTC",
+      "governance_details": {},
+      "roles": {},
+      "function_results": {
+        "OTHER_MESSENGER": "0x4200000000000000000000000000000000000007",
+        "PORTAL": "0x8AdeE124447435fE03e3CD24dF3f4cAE32E65a3E",
+        "messageNonce": 1766847064778384329583297500742918515827483896875618958121606201292660557,
+        "otherMessenger": "0x4200000000000000000000000000000000000007",
+        "paused": false,
+        "portal": "0x8AdeE124447435fE03e3CD24dF3f4cAE32E65a3E",
+        "superchainConfig": "0xE925205ad05D8d612Ac205C4941CCd61Fc965C46",
+        "version": "2.6.0"
+      },
+      "discovered_addresses": [
+        "0xE925205ad05D8d612Ac205C4941CCd61Fc965C46",
+        "0x8AdeE124447435fE03e3CD24dF3f4cAE32E65a3E",
+        "0x4200000000000000000000000000000000000007"
+      ],
+      "wrapper_context": {
+        "token_name": "Lombard LBTC",
+        "network": "Ethereum",
+        "contract_role": "L1 Messenger",
+        "analysis_purpose": "Bridge governance analysis for Lombard LBTC on Ethereum"
+      }
+    },
+    "BOB's Portal Contract (Ethereum)": {
+      "address": "0x8AdeE124447435fE03e3CD24dF3f4cAE32E65a3E",
+      "type": "Portal Contract",
+      "is_gnosis_safe": false,
+      "is_proxy": true,
+      "implementation": "0xb250566074b3c0f1b109a531a83f3d9b1a579273",
+      "admin": "0x0d9f416260598313be6fdf6b010f2fbc34957cd0",
+      "verified": true,
+      "network": "Ethereum",
+      "analysis_date": "2025-08-19 20:10:26 UTC",
+      "governance_details": {},
+      "roles": {},
+      "function_results": {
+        "disputeGameFactory": "0x96123dbFC3253185B594c6a7472EE5A21E9B1079",
+        "disputeGameFinalityDelaySeconds": 86400,
+        "guardian": "0xC91482A96e9c2A104d9298D1980eCCf8C4dc764E",
+        "l2Sender": "0x000000000000000000000000000000000000dEaD",
+        "params": [
+          1000000000,
+          515958,
+          23176973
+        ],
+        "paused": false,
+        "proofMaturityDelaySeconds": 86400,
+        "respectedGameType": 1337,
+        "respectedGameTypeUpdatedAt": 1752761915,
+        "superchainConfig": "0xE925205ad05D8d612Ac205C4941CCd61Fc965C46",
+        "systemConfig": "0xACB886b75D76d1c8d9248cFdDfA09b70C71c5393",
+        "version": "3.14.0"
+      },
+      "discovered_addresses": [
+        "0x000000000000000000000000000000000000dEaD",
+        "0xE925205ad05D8d612Ac205C4941CCd61Fc965C46",
+        "0xC91482A96e9c2A104d9298D1980eCCf8C4dc764E",
+        "0xACB886b75D76d1c8d9248cFdDfA09b70C71c5393",
+        "0x96123dbFC3253185B594c6a7472EE5A21E9B1079"
+      ],
+      "wrapper_context": {
+        "token_name": "Lombard LBTC",
+        "network": "Ethereum",
+        "contract_role": "Portal",
+        "analysis_purpose": "Bridge governance analysis for Lombard LBTC on Ethereum"
+      }
+    }
+  }
+}

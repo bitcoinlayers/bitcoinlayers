@@ -124,6 +124,8 @@ export enum Reviewsnippet {
     SwellswBTC = "swBTC is a derivative of [BitGo wBTC](https://www.bitcoinlayers.org/infrastructure/bitgo-wbtc) that is minted when wBTC is locked into a Swell smart contract. Users trust the code behind the smart contract and wBTC to remain pegged 1:1 with BTC.",
     RoverrovBTC = "Rover rovBTC is a liquid version of Botanix's stBTC. The rovBTC vault contract is instantly upgradable by a [3/4 multisig](https://botanixscan.io/address/0xDe46F9bF2d99F2db88440C74DC4c2A373fc9F69e). Users trust the contract owners to not implement malicious upgrades and the underlying assets to remain pegged 1:1 with BTC.",
     KikiIBTC = "Kiki iBTC is a liquid token representing bitcoin locked in the exSat Network. The custodian providers behind this token have not been publicly disclosed.",
+    Fedimint = "A Fedimint is operated by a number of guardians that custody users’ funds in return for issuing bearer Ecash tokens. If the mint gets hacked, becomes unresponsive or turns malicious, token redemption is at risk.",
+    Cashu = "A Cashu mint is operated by a single entity that custodies users’ funds in return for issuing bearer Ecash tokens. If the mint gets hacked, becomes unresponsive or turns malicious, token redemption is at risk.",
     TemplateBTC = "This is a fake prop used for the template file.",
 
 }

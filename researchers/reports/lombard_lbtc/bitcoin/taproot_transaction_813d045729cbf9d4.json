@@ -1,0 +1,104 @@
+{
+  "transaction_metadata": {
+    "txid": "813d045729cbf9d40d80d45c6d7ad7318e3a684526cba32257cea95347975686",
+    "network": "mainnet",
+    "analysis_date": "2025-08-12 20:18:02 UTC",
+    "analyzer_type": "taproot_transaction",
+    "api_provider": "blockstream"
+  },
+  "taproot_inputs": [
+    {
+      "spend_type": "script_path",
+      "witness_stack": [
+        {
+          "type": "schnorr_signature",
+          "size": 64,
+          "data": "b7842e680bcd26f11fe31f014a2c65463ac49f144e575a381952824c08e68ff84eac836a5edcee41b3b18471cc8bd96ecc5a8ff88fe3fc5b0cf95042999c36d0",
+          "description": "Schnorr signature (64 bytes)"
+        },
+        {
+          "type": "tapscript",
+          "size": 38,
+          "data": "2005ff2bedd40edb6f1997b30e5561ab8f9d710f7216303a7b9e8426f1cef25411ad02f003b2",
+          "description": "Tapscript being executed"
+        },
+        {
+          "type": "control_block",
+          "size": 65,
+          "data": "c050929b74c1a04954b78b4b6035e97a5e078a5a0f28ec96d547bfee9ace803ac0ec3f229027fed74f9263a9894b07e8535ed745cacd2b8c9d82a05049e13098e1",
+          "description": "Taproot control block (version: 192)"
+        }
+      ],
+      "control_block": {
+        "version": 192,
+        "parity": 0,
+        "internal_key": "50929b74c1a04954b78b4b6035e97a5e078a5a0f28ec96d547bfee9ace803ac0",
+        "merkle_path": [
+          "ec3f229027fed74f9263a9894b07e8535ed745cacd2b8c9d82a05049e13098e1"
+        ],
+        "script_merkle_root": ""
+      },
+      "executed_script": {
+        "script_hex": "2005ff2bedd40edb6f1997b30e5561ab8f9d710f7216303a7b9e8426f1cef25411ad02f003b2",
+        "opcodes": [
+          {
+            "opcode": 32,
+            "name": "PUSH_32",
+            "data": "05ff2bedd40edb6f1997b30e5561ab8f9d710f7216303a7b9e8426f1cef25411"
+          },
+          {
+            "opcode": 173,
+            "name": "OP_CHECKSIGVERIFY",
+            "data": null
+          },
+          {
+            "opcode": 2,
+            "name": "PUSH_2",
+            "data": "f003"
+          },
+          {
+            "opcode": 178,
+            "name": "OP_CHECKSEQUENCEVERIFY",
+            "data": null
+          }
+        ],
+        "script_type": "Sequence-locked Script",
+        "spending_conditions": [
+          "Sequence lock requirement"
+        ],
+        "required_signatures": 0,
+        "timelock_conditions": [
+          "Relative timelock (CSV)"
+        ]
+      },
+      "signature_analysis": {
+        "total_signatures": 2,
+        "signature_types": [
+          "schnorr",
+          "schnorr_with_flag"
+        ],
+        "analysis": "Found 2 Schnorr signatures in witness stack"
+      },
+      "script_tree_info": {
+        "merkle_depth": 1,
+        "total_scripts": 2,
+        "script_path_length": 1,
+        "analysis": "Script tree with 1 levels"
+      }
+    }
+  ],
+  "taproot_outputs": [],
+  "script_tree_analysis": {},
+  "signature_analysis": {},
+  "layer_association": {
+    "wrapper_name": "lombard_lbtc",
+    "analysis_type": "custody",
+    "integration_target": "btc_custody_section"
+  },
+  "metadata": {
+    "analyzer_type": "taproot_transaction",
+    "network": "mainnet",
+    "analysis_date": "2025-08-12 20:18:02 UTC",
+    "api_provider": "blockstream"
+  }
+}

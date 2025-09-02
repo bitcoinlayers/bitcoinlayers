@@ -1,0 +1,440 @@
+{
+  "transaction_metadata": {
+    "txid": "6698cdf42d6260eae82741cb5639162bb74c36372c4aea0c63053088d24fe54a",
+    "network": "mainnet",
+    "block_height": 909575,
+    "confirmations": true,
+    "fee": 641,
+    "size": 211,
+    "weight": 637,
+    "analysis_date": "2025-08-11 19:58:38 UTC",
+    "custom_analysis": "P2TR, Possibly FROST Multisig"
+  },
+  "input_scripts": [
+    {
+      "script_hex": "",
+      "script_type": "Empty",
+      "script_analysis": {
+        "raw_script": "",
+        "script_type": "Empty",
+        "opcodes": [],
+        "control_flow": {
+          "blocks": 0,
+          "complexity": "none"
+        },
+        "stack_analysis": {
+          "final_stack": [],
+          "execution_log": [],
+          "warnings": []
+        },
+        "security_issues": [],
+        "template_match": {
+          "type": "Empty",
+          "is_standard": true,
+          "confidence": 1.0
+        },
+        "execution_context": {},
+        "witness_analysis": {
+          "has_witness": true,
+          "witness_stack_size": 1,
+          "witness_items": [
+            {
+              "index": 0,
+              "size": 130,
+              "data": "b44cf56f2b62ba87f22a5cebbf396289ca17315e694f2c4ec9001088c91919a42fbf42a349d4b0db787df4bc9b52bb67ceee9a671c28683575b137ce6084cfbe01",
+              "type": "schnorr_signature_with_data",
+              "script_analysis": null
+            }
+          ],
+          "signature_count": 1
+        },
+        "signature_analysis": {}
+      },
+      "context": {
+        "index": 0,
+        "script_sig": "",
+        "script_sig_hex": "",
+        "witness": [
+          "b44cf56f2b62ba87f22a5cebbf396289ca17315e694f2c4ec9001088c91919a42fbf42a349d4b0db787df4bc9b52bb67ceee9a671c28683575b137ce6084cfbe01"
+        ],
+        "sequence": 0,
+        "previous_output": {
+          "txid": "0acf46b912280c3e656c53ba5a55bd9efd366dc21855ad1f238b8f33b4386284",
+          "vout": 0
+        }
+      },
+      "location": "input_0",
+      "signature_requirement": {
+        "required_signatures": 1,
+        "total_possible_signers": 1,
+        "signature_type": "single_taproot",
+        "present_signatures": 1,
+        "is_fully_signed": true,
+        "threshold_description": "1-of-1",
+        "weighted_info": null
+      }
+    }
+  ],
+  "output_scripts": [
+    {
+      "script_hex": "51201e20752d83179f2b1f9e2f33673532bb5e0bc15b67759a2b5d1931cf278aa0a0",
+      "script_type": "Pay to Taproot",
+      "script_analysis": {
+        "raw_script": "51201e20752d83179f2b1f9e2f33673532bb5e0bc15b67759a2b5d1931cf278aa0a0",
+        "script_type": "Pay to Taproot",
+        "opcodes": [
+          {
+            "opcode": 81,
+            "name": "OP_1",
+            "data": null,
+            "data_length": null,
+            "description": "Push number 1 onto stack"
+          },
+          {
+            "opcode": 32,
+            "name": "PUSH_32",
+            "data": "1e20752d83179f2b1f9e2f33673532bb5e0bc15b67759a2b5d1931cf278aa0a0",
+            "data_length": 32,
+            "description": "Push 32 bytes onto stack: 1e20752d83179f2b1f9e2f33673532bb5e0bc15b67759a2b5d1931cf278aa0a0"
+          }
+        ],
+        "control_flow": {
+          "blocks": 1,
+          "complexity": "linear"
+        },
+        "stack_analysis": {
+          "final_stack": [],
+          "execution_log": [
+            {
+              "step": 1,
+              "opcode": "OP_1",
+              "stack_before": [],
+              "stack_after": []
+            },
+            {
+              "step": 2,
+              "opcode": "PUSH_32",
+              "stack_before": [],
+              "stack_after": []
+            }
+          ],
+          "warnings": []
+        },
+        "security_issues": [],
+        "template_match": {
+          "type": "Pay to Taproot",
+          "is_standard": true,
+          "confidence": 1.0,
+          "address_type": "Bech32m (bc1p...)",
+          "security_level": "Latest",
+          "description": "Taproot script enabling advanced smart contracts"
+        },
+        "metadata": {
+          "network": "mainnet",
+          "script_length": 34,
+          "opcode_count": 2,
+          "analysis_version": "1.0",
+          "analysis_date": "2025-08-11 19:58:38 UTC"
+        },
+        "execution_context": {},
+        "witness_analysis": {
+          "has_witness": false,
+          "witness_stack_size": 0,
+          "witness_items": [],
+          "signature_count": 0
+        },
+        "signature_analysis": {}
+      },
+      "context": {
+        "index": 0,
+        "value": 496002640727,
+        "script_pubkey": "51201e20752d83179f2b1f9e2f33673532bb5e0bc15b67759a2b5d1931cf278aa0a0",
+        "script_pubkey_hex": "51201e20752d83179f2b1f9e2f33673532bb5e0bc15b67759a2b5d1931cf278aa0a0",
+        "script_pubkey_type": "v1_p2tr",
+        "script_pubkey_address": "bc1prcs82tvrz70jk8u79uekwdfjhd0qhs2mva6e526arycu7fu25zsqhyztuy"
+      },
+      "location": "output_0",
+      "signature_requirement": {
+        "required_signatures": 1,
+        "total_possible_signers": 1,
+        "signature_type": "single_taproot",
+        "present_signatures": 0,
+        "is_fully_signed": false,
+        "threshold_description": "1-of-1",
+        "weighted_info": null
+      }
+    },
+    {
+      "script_hex": "6a06543301a80300",
+      "script_type": "Data (OP_RETURN)",
+      "script_analysis": {
+        "raw_script": "6a06543301a80300",
+        "script_type": "Data (OP_RETURN)",
+        "opcodes": [
+          {
+            "opcode": 106,
+            "name": "OP_RETURN",
+            "data": null,
+            "data_length": null,
+            "description": "Mark output as unspendable (data storage)"
+          },
+          {
+            "opcode": 6,
+            "name": "PUSH_6",
+            "data": "543301a80300",
+            "data_length": 6,
+            "description": "Push 6 bytes onto stack: 543301a80300"
+          }
+        ],
+        "control_flow": {
+          "blocks": 1,
+          "complexity": "linear"
+        },
+        "stack_analysis": {
+          "final_stack": [],
+          "execution_log": [
+            {
+              "step": 1,
+              "opcode": "OP_RETURN",
+              "stack_before": [],
+              "stack_after": []
+            },
+            {
+              "step": 2,
+              "opcode": "PUSH_6",
+              "stack_before": [],
+              "stack_after": []
+            }
+          ],
+          "warnings": []
+        },
+        "security_issues": [],
+        "template_match": {
+          "type": "Data (OP_RETURN)",
+          "is_standard": true,
+          "confidence": 1.0
+        },
+        "metadata": {
+          "network": "mainnet",
+          "script_length": 8,
+          "opcode_count": 2,
+          "analysis_version": "1.0",
+          "analysis_date": "2025-08-11 19:58:38 UTC"
+        },
+        "execution_context": {},
+        "witness_analysis": {
+          "has_witness": false,
+          "witness_stack_size": 0,
+          "witness_items": [],
+          "signature_count": 0
+        },
+        "signature_analysis": {}
+      },
+      "context": {
+        "index": 1,
+        "value": 0,
+        "script_pubkey": "6a06543301a80300",
+        "script_pubkey_hex": "6a06543301a80300",
+        "script_pubkey_type": "op_return",
+        "script_pubkey_address": ""
+      },
+      "location": "output_1",
+      "signature_requirement": {
+        "required_signatures": 1,
+        "total_possible_signers": 1,
+        "signature_type": "unknown",
+        "present_signatures": 0,
+        "is_fully_signed": false,
+        "threshold_description": "Unknown",
+        "weighted_info": null
+      }
+    },
+    {
+      "script_hex": "00146556574123dee518327ed532e9529af2f6334254",
+      "script_type": "Pay to Witness Public Key Hash",
+      "script_analysis": {
+        "raw_script": "00146556574123dee518327ed532e9529af2f6334254",
+        "script_type": "Pay to Witness Public Key Hash",
+        "opcodes": [
+          {
+            "opcode": 0,
+            "name": "OP_0",
+            "data": null,
+            "data_length": null,
+            "description": "Push empty byte array onto stack"
+          },
+          {
+            "opcode": 20,
+            "name": "PUSH_20",
+            "data": "6556574123dee518327ed532e9529af2f6334254",
+            "data_length": 20,
+            "description": "Push 20 bytes onto stack: 6556574123dee518327ed532e9529af2f6334254"
+          }
+        ],
+        "control_flow": {
+          "blocks": 1,
+          "complexity": "linear"
+        },
+        "stack_analysis": {
+          "final_stack": [],
+          "execution_log": [
+            {
+              "step": 1,
+              "opcode": "OP_0",
+              "stack_before": [],
+              "stack_after": []
+            },
+            {
+              "step": 2,
+              "opcode": "PUSH_20",
+              "stack_before": [],
+              "stack_after": []
+            }
+          ],
+          "warnings": []
+        },
+        "security_issues": [],
+        "template_match": {
+          "type": "Pay to Witness Public Key Hash",
+          "is_standard": true,
+          "confidence": 1.0,
+          "address_type": "Bech32 (bc1q...)",
+          "security_level": "Modern",
+          "description": "Segregated Witness Pay-to-Public-Key-Hash"
+        },
+        "metadata": {
+          "network": "mainnet",
+          "script_length": 22,
+          "opcode_count": 2,
+          "analysis_version": "1.0",
+          "analysis_date": "2025-08-11 19:58:38 UTC"
+        },
+        "execution_context": {},
+        "witness_analysis": {
+          "has_witness": false,
+          "witness_stack_size": 0,
+          "witness_items": [],
+          "signature_count": 0
+        },
+        "signature_analysis": {}
+      },
+      "context": {
+        "index": 2,
+        "value": 300000,
+        "script_pubkey": "00146556574123dee518327ed532e9529af2f6334254",
+        "script_pubkey_hex": "00146556574123dee518327ed532e9529af2f6334254",
+        "script_pubkey_type": "v0_p2wpkh",
+        "script_pubkey_address": "bc1qv4t9wsfrmmj3svn765ewj5567tmrxsj55phaux"
+      },
+      "location": "output_2",
+      "signature_requirement": {
+        "required_signatures": 1,
+        "total_possible_signers": 1,
+        "signature_type": "unknown",
+        "present_signatures": 0,
+        "is_fully_signed": false,
+        "threshold_description": "Unknown",
+        "weighted_info": null
+      }
+    }
+  ],
+  "script_relationships": [
+    {
+      "type": "segwit_usage",
+      "count": 1,
+      "description": "Used SegWit in 1 input(s)"
+    }
+  ],
+  "summary_stats": {
+    "total_inputs": 1,
+    "total_outputs": 3,
+    "script_types": [
+      "Empty",
+      "Pay to Witness Public Key Hash",
+      "Pay to Taproot",
+      "Data (OP_RETURN)"
+    ],
+    "has_segwit": true,
+    "has_multisig": false,
+    "total_value": 496002940727
+  },
+  "signature_analysis": {
+    "summary": {
+      "total_signatures_present": 1,
+      "total_signatures_required_to_spend_outputs": 3,
+      "signature_patterns": [
+        "single_taproot",
+        "unknown"
+      ],
+      "has_multisig": false,
+      "multisig_input_count": 0,
+      "multisig_output_count": 0
+    },
+    "input_analysis": {
+      "total_inputs": 1,
+      "signature_breakdown": [
+        {
+          "location": "input_0",
+          "signatures_present": 1,
+          "signature_type": "single_taproot",
+          "is_fully_signed": true
+        }
+      ]
+    },
+    "output_analysis": {
+      "total_outputs": 3,
+      "spending_requirements": [
+        {
+          "location": "output_0",
+          "required_signatures": 1,
+          "total_possible_signers": 1,
+          "signature_type": "single_taproot",
+          "threshold_description": "1-of-1"
+        },
+        {
+          "location": "output_1",
+          "required_signatures": 1,
+          "total_possible_signers": 1,
+          "signature_type": "unknown",
+          "threshold_description": "Unknown"
+        },
+        {
+          "location": "output_2",
+          "required_signatures": 1,
+          "total_possible_signers": 1,
+          "signature_type": "unknown",
+          "threshold_description": "Unknown"
+        }
+      ]
+    },
+    "threshold_analysis": [
+      {
+        "location": "input_0",
+        "threshold": "1-of-1",
+        "signature_type": "single_taproot"
+      },
+      {
+        "location": "output_0",
+        "threshold": "1-of-1",
+        "signature_type": "single_taproot"
+      }
+    ],
+    "signing_complexity": {
+      "simple_single_sig": 0,
+      "multisig_outputs": 0,
+      "script_hash_outputs": 0,
+      "unknown_outputs": 2
+    }
+  },
+  "layer_association": {
+    "wrapper_name": "stacks sbtc",
+    "analysis_type": "custody",
+    "integration_target": "btc_custody_section"
+  },
+  "metadata": {
+    "analyzer_type": "bitcoin_transaction",
+    "network": "mainnet",
+    "analysis_date": "2025-08-11 19:58:38 UTC",
+    "api_provider": "blockstream"
+  }
+}

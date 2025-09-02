@@ -66,6 +66,7 @@ import lorenzoenzobtc from "@/content/infrastructures/lorenzo-enzobtc";
 import OsmosisBTC from "@/content/infrastructures/osmosis-osmobtc";
 import osmosis from "@/content/layers/osmosis";
 import statechain from "@/content/infrastructures/statechain";
+import fiammafiabtc from "@/content/infrastructures/fiamma-fiabtc";
 
 const bvm: InfrastructureProject = bvmProject;
 const celestia: InfrastructureProject = celestiaProject;
@@ -119,6 +120,7 @@ const merlinmbtc: InfrastructureProject = merlinmbtcProject;
 const alloallobtc: InfrastructureProject = alloallobtcProject;
 const sidesbtc: InfrastructureProject = sidesbtcProject;
 const statechainModel: InfrastructureProject = statechain;
+const fiammafiabtcInfra: InfrastructureProject = fiammafiabtc;
 
 // Infrastructure projects available for popups but not displayed in main tables
 export const popupOnlyInfrastructures: InfrastructureProject[] = [
@@ -132,6 +134,7 @@ export const allInfrastructures: InfrastructureProject[] = [
     cbbtc,
     kbtc,
     ibtcnetwork,
+    babylonbtc,
     // nubit,
     // sovereign,
     lorenzo,
@@ -183,6 +186,7 @@ export const allInfrastructures: InfrastructureProject[] = [
     zueszbtc,
     lorenzoenzobtc,
     OsmosisBTC,
+    fiammafiabtcInfra,
 ];
 
 export const allInfrastructureSlugs: string[] = [...allInfrastructures, ...popupOnlyInfrastructures].map(

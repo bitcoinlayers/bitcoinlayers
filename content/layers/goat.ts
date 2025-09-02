@@ -27,7 +27,7 @@ const goat: LayerProject = {
     slug: "goat",
     title: "GOAT",
     entityType: EntityType.AltL1,
-    entityCategory: EntityCategory.Alt,
+    entityCategory: EntityCategory.Other,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,

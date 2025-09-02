@@ -53,6 +53,8 @@ interface Props {
         mobileLabel: string;
     }[];
     showToggleGroup?: boolean;
+    hideHeader?: boolean;
+    hideCard?: boolean;
 }
 
 const LayerImage = ({ src, title }: { src: string; title: string }) => {
@@ -77,7 +79,7 @@ const LayerImage = ({ src, title }: { src: string; title: string }) => {
     );
 };
 
-const LayerTable = ({ data, headers }: Props) => {
+const LayerTable = ({ data, headers, hideHeader = false, hideCard = false }: Props) => {
     const [types] = useQueryState<string[]>("type", {
         defaultValue: [],
         parse: (value) => value.split(",").filter(Boolean),
@@ -188,41 +190,29 @@ const LayerTable = ({ data, headers }: Props) => {
         setMobileActiveTab(tab);
     };
 
-    // For Bitcoin Native, change BTC Pegs header to Custody Type
-    const dynamicHeaders = useMemo(() => {
-        return headers.map(header => {
-            if (header.name === "BTC Pegs") {
-                return {
-                    ...header,
-                    name: "Custody Type",
-                    mobileLabel: "Custody"
-                };
-            }
-            return header;
-        });
-    }, [headers]);
-
-    const mobileTableHeaders = dynamicHeaders.filter(
+    const mobileTableHeaders = headers.filter(
         (_item) => _item.name === mobileActiveTab || _item.name === "Name",
     );
 
-    return (
-        <Card className="w-full">
-            <CardHeader className="flex flex-col items-stretch space-y-0 border-b p-0 sm:flex-row border-none">
-                <div className="flex flex-1 flex-col justify-center gap-1 px-6 py-5 sm:py-6">
-                    <CardTitle className="flex">
-                        <LayersIcon className="mr-3" /> Bitcoin native protocols
-                    </CardTitle>
-                    <CardDescription>
-                        Bitcoin native protocols are offchain systems where users have unilateral exit paths.
-                    </CardDescription>
-                </div>
-            </CardHeader>
+    const tableContent = (
+        <>
+            {!hideHeader && (
+                <CardHeader className="flex flex-col items-stretch space-y-0 border-b p-0 sm:flex-row border-none">
+                    <div className="flex flex-1 flex-col justify-center gap-1 px-6 py-5 sm:py-6">
+                        <CardTitle className="flex">
+                            <LayersIcon className="mr-3" /> Bitcoin native protocols
+                        </CardTitle>
+                        <CardDescription>
+                            Bitcoin native protocols are offchain systems where users have unilateral exit paths.
+                        </CardDescription>
+                    </div>
+                </CardHeader>
+            )}
             <CardContent className="p-0">
                 <div className="overflow-x-auto mx-auto border-none">
                     <table className="w-full text-sm text-left rtl:text-right">
                         <TableHeader
-                            headers={isMobile ? mobileTableHeaders : dynamicHeaders}
+                            headers={isMobile ? mobileTableHeaders : headers}
                             onSort={handleSort}
                             sortBy={sortBy}
                             sortOrder={sortOrder}
@@ -360,6 +350,12 @@ const LayerTable = ({ data, headers }: Props) => {
                     </table>
                 </div>
             </CardContent>
+        </>
+    );
+
+    return hideCard ? tableContent : (
+        <Card className="w-full">
+            {tableContent}
         </Card>
     );
 };

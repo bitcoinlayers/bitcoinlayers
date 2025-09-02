@@ -173,6 +173,12 @@ export const Alertsnippet = { //TODO: Janusz to add more here
         content: "The project has implemented the necessary infrastructure to meet our standards for bitcoin sidesystems. It implements an official bridge program that is managed by a distributed, publicly known federation. These operators risk damaging their public reputation if they act maliciously.",
         expandable: false,
     },
+    NotOpenSource: {
+        type: "warning" as const,
+        title: "The implementation is not open source",
+        content: "The implementation for this protocol it is not open source. We are unable to verify if the claims made in documentation sites are valid.",
+        expandable: false,
+    },
     UnderReview: {
         type: "info" as const,
         title: "This section is under review",

@@ -78,8 +78,8 @@ const mercurylayer: LayerProject = {
             content: "",
             pegs: [
                 {
-                    name: "Mercury BTC",
-                    infrastructureSlug: "mercury-btc",
+                    name: "Statechain",
+                    infrastructureSlug: "statechain",
                     score: 0,
                     tier: RiskFactor.Low,
                     title: "A locked UTXO is collaboratively managed between a trusted server and the statecoin owner, with full L1 UTXO ownership enforceable after a timelock expiry",
