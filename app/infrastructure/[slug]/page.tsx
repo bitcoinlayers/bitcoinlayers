@@ -17,6 +17,7 @@ import TaprootAnalysisSection from "@/components/layer/risk-analysis/taproot-ana
 import UnderReviewWrapper from "@/components/under-review-wrapper";
 import ProjectContractAddresses from "@/components/project-contract-addresses";
 import ManualContractAddresses from "@/components/manual-contract-addresses";
+import TokenContractsSection from "@/components/token-contracts-section";
 import KnowledgeBitsFooter from "@/components/layer/knowledge-bits-footer";
 
 async function getInfrastructureFromSlug(slug: string) {
@@ -109,6 +110,12 @@ export default async function InfrastructurePage(props: {
                                     </p>
                                 </div>
                             )}
+                            
+                            {/* Token Contracts */}
+                            <TokenContractsSection 
+                                slug={infrastructure.slug} 
+                                isLayer={false}
+                            />
                             
                             {/* Risk Summary */}
                             {(!infrastructure.partialReview || (infrastructure.partialReviewAfter && ["risksummary", "assessment", "manualcontracts"].includes(infrastructure.partialReviewAfter))) && (

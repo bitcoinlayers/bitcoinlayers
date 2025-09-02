@@ -17,7 +17,7 @@ const bevm: LayerProject = {
     slug: "bevm",
     title: "BEVM",
     entityType: EntityType.AltL1,
-    entityCategory: EntityCategory.Alt,
+    entityCategory: EntityCategory.Other,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,

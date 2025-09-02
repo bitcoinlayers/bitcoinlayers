@@ -34,7 +34,7 @@ const LayerOverviewAlt: React.FC<{ layer: Project }> = ({ layer }) => {
                 <Description layer={layer as LayerProject} />
             </div>
             {/* Footer: Project links */}
-            <div className="pt-6 mt-0 border-t border-border">
+            <div className="pt-6 mt-6 border-t border-border">
                 <ProjectLinks links={layer.links} />
             </div>
         </>

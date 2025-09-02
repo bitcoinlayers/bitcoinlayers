@@ -35,7 +35,7 @@ const hemi: LayerProject = {
     slug: "hemi",
     title: "Hemi",
     entityType: EntityType.AltRollup,
-    entityCategory: EntityCategory.Integrated,
+    entityCategory: EntityCategory.Other,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -51,7 +51,7 @@ const hemi: LayerProject = {
     nativeToken: "ETH",
     feeToken: "ETH",
     bitcoinOnly: false,
-    notice: Notice.UnderReview,
+    notice: Notice.OtherReasonBridge,
     links: [
         {
             text: Site.Website,

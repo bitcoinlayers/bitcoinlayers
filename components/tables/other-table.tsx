@@ -424,3 +424,4 @@ const OtherTable = ({ data, headers, hideHeader = false, hideCard = false, pegSu
 };
 
 export default OtherTable;
+

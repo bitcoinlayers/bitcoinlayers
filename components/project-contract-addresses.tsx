@@ -152,7 +152,7 @@ export default function ProjectContractAddresses({ slug, isLayer }: Props) {
         >
             <div className="self-stretch justify-start items-start gap-4">
                 <div className="body_section !text-foreground">
-                    Token Contracts
+                    Contract Analysis
                 </div>
             </div>
             <div className="body_paragraph !text-foreground mt-3">
