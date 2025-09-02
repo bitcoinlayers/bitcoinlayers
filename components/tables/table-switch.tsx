@@ -40,14 +40,14 @@ function getSortedDataAndHeaders(view: string, subView: string) {
                     mobileLabel: "Risk",
                 },
                 {
-                    name: "Custody Type",
-                    showSorting: false,
-                    mobileLabel: "Custody",
-                },
-                {
                     name: "BTC Pegs",
                     showSorting: false,
                     mobileLabel: "Pegs",
+                },
+                {
+                    name: "BTC Supply",
+                    showSorting: true,
+                    mobileLabel: "Supply",
                 },
             ];
 
@@ -130,6 +130,11 @@ function getSortedDataAndHeaders(view: string, subView: string) {
                     showSorting: false,
                     mobileLabel: "Pegs",
                 },
+                {
+                    name: "BTC Supply",
+                    showSorting: true,
+                    mobileLabel: "Supply",
+                },
             ];
 
             return { sortedData: bitcoinLayers, headers: bitcoinLayersHeaders };
@@ -138,11 +143,6 @@ function getSortedDataAndHeaders(view: string, subView: string) {
 
 export default function TableSwitch() {
     const [view] = useQueryState("view");
-    const [pegSupplyView, setPegSupplyView] = useQueryState("peg-supply", {
-        defaultValue: "pegs",
-        parse: (value) => value === "supply" ? "supply" : "pegs",
-        serialize: (value) => value,
-    });
 
     const { sortedData, headers } = getSortedDataAndHeaders(view || "bitcoin-layers", "");
 
@@ -152,8 +152,6 @@ export default function TableSwitch() {
                 <AlternativeTable
                     data={sortedData as LayerProject[]}
                     headers={headers}
-                    pegSupplyView={pegSupplyView as "pegs" | "supply"}
-                    onPegSupplyViewChange={setPegSupplyView}
                 />
             );
         case "wrappers":

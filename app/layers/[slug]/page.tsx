@@ -14,8 +14,8 @@ import AlternativeBanner from "@/components/alternative-banner";
 import UnderReviewWrapper from "@/components/under-review-wrapper";
 import KnowledgeBitsFooter from "@/components/layer/knowledge-bits-footer";
 import CustodyChart from "@/components/charts/home-chart-code";
-import LayerReviewCustodyChart from "@/components/charts/layer-review-custody-chart";
-import BitcoinScriptAnalysisDropdown from "@/components/layer/bitcoin-script-analysis-dropdown";
+
+
 
 import { EntityCategory, EntityType } from "@/content/props";
 
@@ -175,28 +175,9 @@ export default async function LayerPage(props: {
                             />
                         )}
 
-                        {/* Bitcoin Script Analysis - excluded for layers that have wrapper-specific analysis */}
-                        {(!layer.partialReview || (layer.partialReviewAfter && ["trust", "manualcontracts"].includes(layer.partialReviewAfter))) && !layer.underReview && layer.slug !== "nomic" && layer.slug !== "stacks" && (
-                            <section className="self-stretch lg:px-8 px-4 pt-6 pb-8 mb-6 bg-background rounded-xl border border-border flex-col justify-center items-end gap-4">
-                                <div className="self-stretch justify-start items-start gap-4 inline-flex">
-                                    <div className="body_section !text-foreground">
-                                        Bitcoin Script Analysis
-                                    </div>
-                                </div>
-                                <BitcoinScriptAnalysisDropdown layerSlug={layer.slug} />
-                            </section>
-                        )}
 
-                        {/* Architecture Review for partial review layers */}
-                        {layer.partialReview && layer.partialReviewAfter && ["trust", "manualcontracts"].includes(layer.partialReviewAfter) && !layer.underReview && (
-                            <div className="mb-6">
-                                <LayerReviewCustodyChart 
-                                    title={layer.architectureReview?.title}
-                                    description={layer.architectureReview?.description}
-                                    mechanisms={layer.architectureReview?.mechanisms}
-                                />
-                            </div>
-                        )}
+
+
                         {layer.partialReview && layer.partialReviewAfter === "trust" && (
                             <div className="self-stretch lg:px-8 px-4 pt-6 pb-8 mb-6 bg-muted/50 rounded-xl border border-border flex-col justify-center items-start gap-4">
                                 <div className="text-lg font-semibold text-foreground mb-3">

@@ -38,12 +38,6 @@ const AggregatedNetworksTable = ({ data, headers }: Props) => {
     const [activeTab, setActiveTab] = useQueryState("network-tab", {
         defaultValue: "bitcoin-native" as NetworkCategory,
     });
-    
-    const [pegSupplyView, setPegSupplyView] = useQueryState("peg-supply", {
-        defaultValue: "pegs",
-        parse: (value) => value === "supply" ? "supply" : "pegs",
-        serialize: (value) => value,
-    });
 
     // Calculate counts and categorize data
     const tabsData = useMemo((): TabData[] => {
@@ -88,41 +82,17 @@ const AggregatedNetworksTable = ({ data, headers }: Props) => {
     // Get the appropriate headers for the current tab
     const getTabHeaders = () => {
         if (activeTab === "bitcoin-native") {
-            // Bitcoin Native: transform BTC Pegs to Custody Type (5 columns total)
-            return headers.map(header => {
-                if (header.name === "BTC Pegs") {
-                    return {
-                        ...header,
-                        name: "Custody Type",
-                        mobileLabel: "Custody"
-                    };
-                }
-                return header;
-            });
-        } else {
-            // Sidesystems & Other: add Custody Type column and keep BTC Pegs/Supply (6 columns total)
-            const transformedHeaders = headers.map(header => {
-                if (header.name === "BTC Pegs") {
-                    return {
-                        ...header,
-                        name: pegSupplyView === "pegs" ? "BTC Pegs" : "BTC Supply",
-                        mobileLabel: pegSupplyView === "pegs" ? "Pegs" : "Supply"
-                    };
-                }
-                return header;
-            });
-            
-            // Add Custody Type column before BTC Pegs/Supply
-            const btcPegsIndex = transformedHeaders.findIndex(h => h.name === "BTC Pegs" || h.name === "BTC Supply");
-            if (btcPegsIndex > -1) {
-                transformedHeaders.splice(btcPegsIndex, 0, {
+            // Bitcoin Native: remove BTC Pegs and BTC Supply columns, add Custody Type (5 columns total)
+            return headers
+                .filter(header => header.name !== "BTC Pegs" && header.name !== "BTC Supply")
+                .concat([{
                     name: "Custody Type",
                     showSorting: false,
                     mobileLabel: "Custody"
-                });
-            }
-            
-            return transformedHeaders;
+                }]);
+        } else {
+            // Sidesystems & Other: use headers as-is (should have both BTC Pegs and BTC Supply)
+            return headers;
         }
     };
 
@@ -145,8 +115,6 @@ const AggregatedNetworksTable = ({ data, headers }: Props) => {
                             headers={tabHeaders} 
                             hideHeader={true}
                             hideCard={true}
-                            pegSupplyView={pegSupplyView as "pegs" | "supply"}
-                            onPegSupplyViewChange={setPegSupplyView}
                         />
                     </div>
                 );
@@ -158,8 +126,6 @@ const AggregatedNetworksTable = ({ data, headers }: Props) => {
                             headers={tabHeaders} 
                             hideHeader={true}
                             hideCard={true}
-                            pegSupplyView={pegSupplyView as "pegs" | "supply"}
-                            onPegSupplyViewChange={setPegSupplyView}
                         />
                     </div>
                 );
