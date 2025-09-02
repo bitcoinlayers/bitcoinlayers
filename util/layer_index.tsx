@@ -136,7 +136,6 @@ const bitcoinStaking: LayerProject = bitcoinStakingProject;
 
 export const allLayers: LayerProject[] = [
     core,
-    bitcoinStaking,
     internetcomputer,
     lightning,
     liquid,
