@@ -24,8 +24,8 @@ from modules.token_analysis import TokenAnalyzer
 
 # Configuration - Select network and token to analyze
 NETWORK_NAME = "solana"  # Network name for directory organization
-TOKEN_MINT = "3NZ9JMVBmGAqocybic2c7LQCJScmgsAZ6vQqTDzcqmJh"  # Target token to analyze
-WRAPPER_NAME = "bitgo_wbtc"  # Wrapper name for this token - will be updated from metadata
+TOKEN_MINT = "8yev7nLen2PFN2uYGhzsUbu243wMa9z4ZrCwuXs6DEQw"  # Target token to analyze
+WRAPPER_NAME = "rootstock_rbtc"  # Wrapper name for this token - will be updated from metadata
 
 def analyze_spl_token(mint_address: str, wrapper_name: str, network_name: str) -> Dict[str, Any]:
     """Analyze an SPL token and return comprehensive results"""

@@ -596,6 +596,7 @@ export interface LayerProject extends BaseProject {
     riskAnalysis: RiskSection[];
     riskSummary?: { title?: string; content: string }[];
     categorization?: { title?: string; content: string }[];
+    showContractAnalysis?: boolean; // Show contract analysis section in layer reviews
     architectureReview?: {
         title: string;
         description: string;

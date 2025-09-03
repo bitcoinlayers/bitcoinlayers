@@ -1,0 +1,74 @@
+{
+  "mint_address": "zBTCug3er3tLyffELcvDNrKkCymbPWysGcWihESYfLg",
+  "intro": "zBTC is a wrapped bitcoin token on Solana.",
+  "basic_info": {
+    "mint_address": "zBTCug3er3tLyffELcvDNrKkCymbPWysGcWihESYfLg",
+    "supply": 42001008583,
+    "decimals": 8,
+    "mint_authority": "C82azkvqxFNBx5x14Cm6bgQZbLnVV79THeMCYKWW2w1X",
+    "freeze_authority": null,
+    "is_initialized": true,
+    "owner_program": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+    "is_token_2022": false
+  },
+  "metadata": {
+    "name": "Metaplex Token",
+    "symbol": "META",
+    "description": "Token with Metaplex metadata",
+    "image": null,
+    "external_url": null,
+    "attributes": null,
+    "properties": null
+  },
+  "supply_info": {
+    "total_supply": 42001008583,
+    "circulating_supply": "42001008583",
+    "max_supply": null,
+    "holders_count": null
+  },
+  "security_analysis": {
+    "mint_authority": "C82azkvqxFNBx5x14Cm6bgQZbLnVV79THeMCYKWW2w1X",
+    "freeze_authority": null,
+    "is_mutable": true,
+    "has_update_authority": true,
+    "is_verified": false,
+    "security_score": 70,
+    "risk_factors": [
+      "Has mint authority - tokens can be minted"
+    ]
+  },
+  "governance_info": {
+    "governance_type": "Centralized",
+    "authority_analyses": {
+      "mint_authority": "AuthorityAnalysis(address='C82azkvqxFNBx5x14Cm6bgQZbLnVV79THeMCYKWW2w1X', authority_type='Non-existent', capabilities=['Address does not exist'], multisig_info=None, governance_info=None, risk_assessment={'risk_level': 'high', 'reason': 'Invalid authority address'})",
+      "update_authority": "AuthorityAnalysis(address='2k5eDEaFGXvVAfbDFHfQtP9PmGy2TRZ5eRppVGmnWvVc', authority_type='Wallet', capabilities=['Full unilateral control (no multi-party approval required)'], multisig_info=None, governance_info=None, risk_assessment={'risk_level': 'high', 'reason': 'Single wallet control - centralized authority', 'mitigations': ['Has significant SOL balance - actively maintained']})"
+    },
+    "overall_risk_score": 5.0,
+    "governance_summary": {
+      "total_authorities": 2,
+      "governance_type": "Centralized",
+      "key_findings": [
+        "No freeze authority associated with the token contract",
+        "Bridge contract is at address ZPLzxjNk1zUAgJmm3Jkmrhvb4UaLwzvY2MotpfovF5K and is an upgradeable contract."
+      ],
+      "recommendations": [
+        "No freeze authority associated with the token contract.",
+        "Consider decentralizing update_authority - current setup is high risk"
+      ]
+    }
+  },
+  "errors": [],
+  "key_findings": [
+      "No freeze authority associated with the token contract",
+      "Bridge contract is at address ZPLzxjNk1zUAgJmm3Jkmrhvb4UaLwzvY2MotpfovF5K and is an upgradeable contract.",
+      "2k5eDEaFGXvVAfbDFHfQtP9PmGy2TRZ5eRppVGmnWvVc is the address that can upgrade the bridge contract."
+     ],
+  "analysis_metadata": {
+    "analyzer_version": "1.0.0",
+    "network": "mainnet",
+    "analysis_date": "2025-09-03 16:11:21 UTC",
+    "wrapper_name": "zeus-zbtc",
+    "network_name": "solana",
+    "explorer_url": "https://explorer.solana.com/address/zBTCug3er3tLyffELcvDNrKkCymbPWysGcWihESYfLg"
+  }
+}

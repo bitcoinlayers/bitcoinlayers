@@ -132,6 +132,10 @@ const LayerMenu: React.FC<{ layer: LayerProject }> = ({ layer }) => {
     ...(layer.entityCategory === EntityCategory.BitcoinNative || layer.entityType === EntityType.ChaumianEcashProtocol
         ? []
         : [{ id: "tokencontractsaddresses", title: "Token Contracts" }]),
+    // Add Contract Analysis section when enabled
+    ...(layer.showContractAnalysis
+        ? [{ id: "tokencontracts", title: "Contract Analysis" }]
+        : []),
     ...(layer.partialReview && layer.partialReviewAfter
         ? (() => {
             const sections = [];

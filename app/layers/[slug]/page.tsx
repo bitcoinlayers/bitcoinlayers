@@ -10,6 +10,7 @@ import ManualContractAddresses from "@/components/manual-contract-addresses";
 import RiskSummary from "@/components/shared/risk-summary";
 import Categorization from "@/components/shared/categorization";
 import TokenContractsSection from "@/components/token-contracts-section";
+import ProjectContractAddresses from "@/components/project-contract-addresses";
 import AlternativeBanner from "@/components/alternative-banner";
 import UnderReviewWrapper from "@/components/under-review-wrapper";
 import KnowledgeBitsFooter from "@/components/layer/knowledge-bits-footer";
@@ -129,6 +130,14 @@ export default async function LayerPage(props: {
                             slug={layer.slug} 
                             isLayer={true}
                         />
+                        
+                        {/* Contract Analysis */}
+                        {layer.showContractAnalysis && (
+                            <ProjectContractAddresses 
+                                slug={layer.slug} 
+                                isLayer={true} 
+                            />
+                        )}
                         
                         {/* Risk Summary */}
                         {(!layer.partialReview || (layer.partialReviewAfter && ["risksummary", "categorization", "trust", "manualcontracts"].includes(layer.partialReviewAfter))) && (

@@ -30,6 +30,7 @@ const solana: LayerProject = {
     bridge: false,
     underReview: false,
     partialReview: true, partialReviewAfter: "trust",// Set to true for partial review mode
+    showContractAnalysis: true,
     riskFactors: [
         RiskFactor.VeryHigh,
         RiskFactor.AlternativePoS,
