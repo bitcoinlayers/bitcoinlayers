@@ -3,6 +3,8 @@ import { allLayers, allLayerSlugs } from "@/util/layer_index";
 import LayerMenu from "@/components/layer/layerMenu";
 import LayerBody from "@/components/layer/layerBody";
 import RiskAnalysis from "@/components/layer/risk-analysis/layer-container";
+import BitcoinCustodyReview from "@/components/layer/bitcoin-custody-review";
+import NetworkTrustAssumptionReview from "@/components/layer/network-trust-assumption-review";
 import LayerOverviewAlt from "@/components/layer/layerOverviewAlt";
 import LayerImage from "@/components/layer/layer-image";
 import LayerTVLChart from "@/components/charts/layer-tvl-chart";
@@ -131,8 +133,8 @@ export default async function LayerPage(props: {
                             isLayer={true}
                         />
                         
-                        {/* Contract Analysis */}
-                        {layer.showContractAnalysis && (
+                        {/* Contract Analysis - For non-Solana layers */}
+                        {layer.slug !== "solana" && layer.showContractAnalysis && (
                             <ProjectContractAddresses 
                                 slug={layer.slug} 
                                 isLayer={true} 
@@ -175,8 +177,34 @@ export default async function LayerPage(props: {
                             </div>
                         )}
                         
-                        {/* Risk Analysis */}
-                        {(!layer.partialReview || (layer.partialReviewAfter && ["trust", "manualcontracts"].includes(layer.partialReviewAfter))) && !layer.underReview && (
+                        {/* Bitcoin Custody Review - Special handling for Solana */}
+                        {layer.slug === "solana" && (!layer.partialReview || (layer.partialReviewAfter && ["trust", "manualcontracts"].includes(layer.partialReviewAfter))) && !layer.underReview && (
+                            <BitcoinCustodyReview
+                                riskAnalysis={layer.riskAnalysis}
+                                riskFactors={layer.riskFactors}
+                                layer={layer}
+                            />
+                        )}
+                        
+                        {/* Contract Analysis - moved here for Solana's new flow */}
+                        {layer.slug === "solana" && layer.showContractAnalysis && (
+                            <ProjectContractAddresses 
+                                slug={layer.slug} 
+                                isLayer={true} 
+                            />
+                        )}
+                        
+                        {/* Network Trust Assumption Review - Special handling for Solana */}
+                        {layer.slug === "solana" && (!layer.partialReview || (layer.partialReviewAfter && ["trust", "manualcontracts"].includes(layer.partialReviewAfter))) && !layer.underReview && (
+                            <NetworkTrustAssumptionReview
+                                riskAnalysis={layer.riskAnalysis}
+                                riskFactors={layer.riskFactors}
+                                layer={layer}
+                            />
+                        )}
+
+                        {/* Risk Analysis - Original flow for non-Solana layers */}
+                        {layer.slug !== "solana" && (!layer.partialReview || (layer.partialReviewAfter && ["trust", "manualcontracts"].includes(layer.partialReviewAfter))) && !layer.underReview && (
                             <RiskAnalysis
                                 riskAnalysis={layer.riskAnalysis}
                                 riskFactors={layer.riskFactors}

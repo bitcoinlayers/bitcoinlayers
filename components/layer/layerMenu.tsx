@@ -149,7 +149,15 @@ const LayerMenu: React.FC<{ layer: LayerProject }> = ({ layer }) => {
                 sections.push({ id: "categorization", title: "Categorization" });
             }
             if (["trust", "manualcontracts"].includes(after!) && !layer.underReview) {
-                sections.push({ id: "trust", title: "Trust Assumptions" });
+                if (layer.slug === "solana") {
+                    sections.push({ id: "btccustody", title: "Bitcoin Custody Review" });
+                    if (layer.showContractAnalysis) {
+                        sections.push({ id: "tokencontracts", title: "Contract Analysis" });
+                    }
+                    sections.push({ id: "networktrust", title: "Network Trust Assumptions" });
+                } else {
+                    sections.push({ id: "trust", title: "Trust Assumptions" });
+                }
             }
             if (after === "manualcontracts" && layer.manualContracts && layer.manualContracts.length > 0) {
                 sections.push({ id: "manualcontracts", title: "Additional Contracts" });
@@ -167,7 +175,13 @@ const LayerMenu: React.FC<{ layer: LayerProject }> = ({ layer }) => {
                 ? [{ id: "categorization", title: "Categorization" }]
                 : []),
             ...(!layer.underReview
-                ? [{ id: "trust", title: "Trust Assumptions" }]
+                ? layer.slug === "solana" 
+                    ? [
+                        { id: "btccustody", title: "Bitcoin Custody Review" },
+                        ...(layer.showContractAnalysis ? [{ id: "tokencontracts", title: "Contract Analysis" }] : []),
+                        { id: "networktrust", title: "Network Trust Assumptions" }
+                    ]
+                    : [{ id: "trust", title: "Trust Assumptions" }]
                 : []),
             ...(layer.manualContracts && layer.manualContracts.length > 0
                 ? [{ id: "manualcontracts", title: "Additional Contracts" }]
