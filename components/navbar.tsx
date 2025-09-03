@@ -141,6 +141,15 @@ export default function Navbar() {
                     </li>
                     <li className="hidden lg:block">
                         <Link
+                            href="/media"
+                            onClick={closeMenu}
+                            className="hover:underline"
+                        >
+                            Media
+                        </Link>
+                    </li>
+                    <li className="hidden lg:block">
+                        <Link
                             href="/glossary"
                             onClick={closeMenu}
                             className="hover:underline"
@@ -196,6 +205,15 @@ export default function Navbar() {
                                                 className="hover:underline"
                                             >
                                                 Analytics
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <Link
+                                                href="/media"
+                                                onClick={closeSheet}
+                                                className="hover:underline"
+                                            >
+                                                Media
                                             </Link>
                                         </li>
                                         <li>
