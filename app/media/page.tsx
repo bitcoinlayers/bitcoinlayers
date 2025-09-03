@@ -22,21 +22,23 @@ export default function MediaPage() {
                 </p>
             </div>
 
-            {/* Main Content Grid */}
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                {/* Video/Podcast Section - Takes 2 columns */}
-                <div className="lg:col-span-2">
-                    <div className="space-y-4">
-                        <MediaNav 
-                            activeContent={activeContent} 
-                            setActiveContent={setActiveContent} 
-                        />
-                        <VideoPlayer activeContent={activeContent} />
-                    </div>
+            {/* Navigation */}
+            <div className="mb-4">
+                <MediaNav 
+                    activeContent={activeContent} 
+                    setActiveContent={setActiveContent} 
+                />
+            </div>
+
+            {/* Main Content Grid - Video with inline data cards */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-start">
+                {/* Video/Podcast Section - Takes 2 columns on large screens, full width on medium */}
+                <div className="md:col-span-2 lg:col-span-2">
+                    <VideoPlayer activeContent={activeContent} />
                 </div>
 
-                {/* Data Metrics Sidebar - Takes 1 column */}
-                <div className="lg:col-span-1">
+                {/* Data Metrics Cards - Inline with video, stacked on medium and below */}
+                <div className="md:col-span-2 lg:col-span-1">
                     <DataMetrics />
                 </div>
             </div>
@@ -72,10 +74,7 @@ export default function MediaPage() {
                         
                         <div className="space-y-4">
                             <div className="border-l-4 border-brand pl-4 py-2">
-                                <div className="flex items-start gap-2 mb-2">
-                                    <svg className="w-4 h-4 text-brand mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
-                                    </svg>
+                                <div className="mb-2">
                                     <div className="flex-1">
                                         <p className="text-sm text-text_primary">
                                             "Lightning Network capacity hits new ATH 🚀 L2 adoption accelerating across the board"
@@ -90,10 +89,7 @@ export default function MediaPage() {
                             </div>
                             
                             <div className="border-l-4 border-brand pl-4 py-2">
-                                <div className="flex items-start gap-2 mb-2">
-                                    <svg className="w-4 h-4 text-brand mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
-                                    </svg>
+                                <div className="mb-2">
                                     <div className="flex-1">
                                         <p className="text-sm text-text_primary">
                                             "Liquid sidechain processes $2.1B in settlements this month. Institutional adoption growing 📈"
@@ -108,10 +104,7 @@ export default function MediaPage() {
                             </div>
                             
                             <div className="border-l-4 border-brand pl-4 py-2">
-                                <div className="flex items-start gap-2 mb-2">
-                                    <svg className="w-4 h-4 text-brand mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
-                                    </svg>
+                                <div className="mb-2">
                                     <div className="flex-1">
                                         <p className="text-sm text-text_primary">
                                             "New research: Bitcoin layer 2 protocols handling 45% more transactions than last quarter"

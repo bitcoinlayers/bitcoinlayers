@@ -103,10 +103,10 @@ export default function DataMetrics() {
 
     if (loading) {
         return (
-            <div className="space-y-6">
+            <div className="space-y-4">
                 {/* Bitcoin Price Card */}
                 <Card>
-                    <CardContent className="pt-6">
+                    <CardContent className="pt-6 pb-6">
                         <div className="flex justify-between items-center mb-4">
                             <div className="flex items-center gap-3">
                                 <div className="w-5 h-5 bg-bitcoin rounded-full animate-pulse"></div>
@@ -123,7 +123,7 @@ export default function DataMetrics() {
                 
                 {/* Layer 2 Metrics */}
                 <Card>
-                    <CardContent className="pt-6">
+                    <CardContent className="pt-6 pb-6">
                         <div className="bg-gray-300 dark:bg-gray-700 h-5 w-24 rounded animate-pulse mb-4"></div>
                         <div className="space-y-4">
                             {[...Array(2)].map((_, index) => (
@@ -143,10 +143,10 @@ export default function DataMetrics() {
     }
 
     return (
-        <div className="space-y-6">
+        <div className="space-y-4">
             {/* Bitcoin Price Card */}
             <Card>
-                <CardContent className="pt-6">
+                <CardContent className="pt-6 pb-6">
                     <div className="flex justify-between items-center mb-4">
                         <h3 className="text-lg font-semibold flex items-center gap-2">
                             <div className="w-5 h-5 bg-bitcoin rounded-full flex items-center justify-center">
@@ -187,7 +187,7 @@ export default function DataMetrics() {
 
             {/* Layer 2 Metrics */}
             <Card>
-                <CardContent className="pt-6">
+                <CardContent className="pt-6 pb-6">
                     <h3 className="text-lg font-semibold mb-4">Layer 2 Activity</h3>
                     
                     <div className="space-y-4">
@@ -200,7 +200,7 @@ export default function DataMetrics() {
                                         </span>
                                     </div>
                                     <div>
-                                        <div className="font-medium">{metric.name}</div>
+                                        <div className="font-medium text-base">{metric.name}</div>
                                         <div className="text-sm text-muted-foreground">
                                             {metric.subtext}
                                         </div>
@@ -209,7 +209,7 @@ export default function DataMetrics() {
                                 <div className="flex items-center gap-3">
                                     {generateMiniChart(metric.chart, metric.trend)}
                                     <div className="text-right">
-                                        <div className="font-medium">{metric.value}</div>
+                                        <div className="font-medium text-lg">{metric.value}</div>
                                         <div className={`text-sm ${
                                             metric.trend === "up" 
                                                 ? "text-emerald-500" 

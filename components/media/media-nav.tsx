@@ -26,10 +26,6 @@ export default function MediaNav({ activeContent, setActiveContent }: MediaNavPr
             >
                 🎙️ Podcasts
             </button>
-            <div className="ml-auto flex items-center gap-2 text-sm text-text_secondary">
-                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                <span>Live: 1,247 viewers</span>
-            </div>
         </div>
     );
 }

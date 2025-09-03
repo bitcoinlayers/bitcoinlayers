@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ExternalLink, Clock, TrendingUp } from "lucide-react";
+
 
 interface NewsItem {
     id: string;
@@ -25,16 +25,12 @@ const CATEGORY_COLORS = {
     technology: "bg-purple-500/10 text-purple-600 border-purple-500/20"
 };
 
-const SENTIMENT_COLORS = {
-    bullish: "text-green-500",
-    bearish: "text-red-500",
-    neutral: "text-gray-500"
-};
+
 
 export default function NewsSection() {
     const [news, setNews] = useState<NewsItem[]>([]);
     const [loading, setLoading] = useState(true);
-    const [selectedCategory, setSelectedCategory] = useState<string>("all");
+
 
     // Simulate news fetching - replace with actual news API
     useEffect(() => {
@@ -108,34 +104,17 @@ export default function NewsSection() {
         return () => clearInterval(interval);
     }, []);
 
-    const formatTimeAgo = (timestamp: string) => {
-        const now = new Date();
-        const published = new Date(timestamp);
-        const diffMs = now.getTime() - published.getTime();
-        const diffHours = Math.floor(diffMs / (1000 * 60 * 60));
-        const diffMinutes = Math.floor(diffMs / (1000 * 60));
-        
-        if (diffHours > 0) {
-            return `${diffHours}h ago`;
-        } else if (diffMinutes > 0) {
-            return `${diffMinutes}m ago`;
-        } else {
-            return "Just now";
-        }
-    };
 
-    const filteredNews = selectedCategory === "all" 
-        ? news 
-        : news.filter(item => item.category === selectedCategory);
+
+    const filteredNews = news;
 
     if (loading) {
         return (
             <Card>
                 <CardContent className="pt-6">
                     <div className="flex items-center justify-between mb-6">
-                        <h2 className="text-2xl font-bold flex items-center gap-2">
-                            <TrendingUp className="w-6 h-6 text-brand" />
-                            Latest Bitcoin News
+                        <h2 className="text-2xl font-bold">
+                            Bitcoin Layers News
                         </h2>
                         <div className="flex items-center gap-2">
                             <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
@@ -170,9 +149,8 @@ export default function NewsSection() {
         <Card>
             <CardContent className="pt-6">
                 <div className="flex items-center justify-between mb-6">
-                    <h2 className="text-2xl font-bold flex items-center gap-2">
-                        <TrendingUp className="w-6 h-6 text-brand" />
-                        Latest Bitcoin News
+                    <h2 className="text-2xl font-bold">
+                        Bitcoin Layers News
                     </h2>
                     <div className="flex items-center gap-2">
                         <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
@@ -180,32 +158,7 @@ export default function NewsSection() {
                     </div>
                 </div>
 
-                {/* Category Filters */}
-                <div className="flex flex-wrap gap-2 mb-6">
-                    <button
-                        onClick={() => setSelectedCategory("all")}
-                        className={`px-3 py-1 rounded-full text-sm font-medium transition-colors ${
-                            selectedCategory === "all"
-                                ? "bg-brand text-white"
-                                : "bg-secondary text-text_primary hover:bg-brand/10"
-                        }`}
-                    >
-                        All News
-                    </button>
-                    {Object.keys(CATEGORY_COLORS).map((category) => (
-                        <button
-                            key={category}
-                            onClick={() => setSelectedCategory(category)}
-                            className={`px-3 py-1 rounded-full text-sm font-medium transition-colors capitalize ${
-                                selectedCategory === category
-                                    ? "bg-brand text-white"
-                                    : "bg-secondary text-text_primary hover:bg-brand/10"
-                            }`}
-                        >
-                            {category === "layer2" ? "Layer 2" : category}
-                        </button>
-                    ))}
-                </div>
+
 
                 {/* News Feed */}
                 <div className="space-y-4">
@@ -215,25 +168,12 @@ export default function NewsSection() {
                             className="border border-border rounded-lg p-4 hover:shadow-md transition-shadow group"
                         >
                             <div className="flex gap-4">
-                                {/* News Icon/Image */}
-                                <div className="w-12 h-12 bg-secondary rounded-lg flex items-center justify-center flex-shrink-0">
-                                    <TrendingUp className="w-5 h-5 text-brand" />
-                                </div>
-                                
                                 {/* Content */}
                                 <div className="flex-1 min-w-0">
-                                    <div className="flex items-start justify-between gap-2 mb-2">
+                                    <div className="mb-2">
                                         <h3 className="font-semibold text-text_header group-hover:text-brand transition-colors line-clamp-2">
                                             {item.title}
                                         </h3>
-                                        <a
-                                            href={item.url}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="text-text_secondary hover:text-brand transition-colors flex-shrink-0"
-                                        >
-                                            <ExternalLink className="w-4 h-4" />
-                                        </a>
                                     </div>
                                     
                                     <p className="text-sm text-text_secondary mb-3 line-clamp-2">
@@ -248,17 +188,6 @@ export default function NewsSection() {
                                         <span className="text-xs text-text_secondary">
                                             {item.source}
                                         </span>
-                                        
-                                        <div className="flex items-center gap-1 text-xs text-text_secondary">
-                                            <Clock className="w-3 h-3" />
-                                            {formatTimeAgo(item.publishedAt)}
-                                        </div>
-                                        
-                                        <div className={`text-xs font-medium ${SENTIMENT_COLORS[item.sentiment]}`}>
-                                            {item.sentiment === "bullish" && "📈 Bullish"}
-                                            {item.sentiment === "bearish" && "📉 Bearish"}
-                                            {item.sentiment === "neutral" && "➖ Neutral"}
-                                        </div>
                                     </div>
                                 </div>
                             </div>
