@@ -1,6 +1,6 @@
 {
   "mint_address": "cbbtcf3aa214zXHbiAZQwf4122FBYbraNdFqgw4iMij",
-  "intro": "Coinbase cbBTC is a wrapped bitcoin token that is backed by bitcoin secured by a centralized custodian, Coinbase.",
+  "intro": "Coinbase cbBTC is natively minted on Solana.",
   "basic_info": {
     "mint_address": "cbbtcf3aa214zXHbiAZQwf4122FBYbraNdFqgw4iMij",
     "supply": 335743859787,

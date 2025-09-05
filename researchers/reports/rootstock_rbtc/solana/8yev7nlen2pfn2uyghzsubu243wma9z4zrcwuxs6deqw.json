@@ -1,6 +1,6 @@
 {
   "mint_address": "8yev7nLen2PFN2uYGhzsUbu243wMa9z4ZrCwuXs6DEQw",
-  "intro": "META is a token on Solana using the SPL token standard. The token maintains both mint and freeze authorities indicating centralized control over token operations.",
+  "intro": "Rootstock RBTC is bridged to Solana from Rootstock via a LayerZero implementation.",
   "basic_info": {
     "mint_address": "8yev7nLen2PFN2uYGhzsUbu243wMa9z4ZrCwuXs6DEQw",
     "supply": 1344000,

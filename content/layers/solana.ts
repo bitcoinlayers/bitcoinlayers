@@ -17,6 +17,7 @@ import {
     RiskSummarySnippet,
 } from "../props";
 import custodyTradeoffs from "../../components/charts/chart-content/alternative-network";
+import { Reviewsnippet } from "../props-layers-reviews";
 
 const solana: LayerProject = {
     type: Type.Layer,
@@ -98,15 +99,15 @@ const solana: LayerProject = {
                     score: 0,
                     tier: RiskFactor.High,
                     title: "Users trust the Threshold Network to keep tBTC backed",
-                    content: `${TokenSnippet.ThresholdtBTC}\n\nThis bridge is managed by an [8 member](https://explorer.solana.com/address/Gj93RRt6QB7FjmyokAD5rcMAku7pq3Fk2Aa8y6nNbwsV/program-multisig) federation.`,
+                    content: `${TokenSnippet.ThresholdtBTC}`,
                 },
                 {
                     name: "Wormhole wBTC",
                     infrastructureSlug: "bitgo-wbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet.UnderReview,
-                    content: `${TokenSnippet.BitGowBTC}\n\nwBTC on Solana is minted via the Portal bridge from Ethereum. We are reviewing the Portal bridge's smart contracts and trust assumptions.`,
+                    title: TokenSnippet.CustodianPeg,
+                    content: `${TokenSnippet.BitGowBTC}`,
                 },
                 {
                     name: "21 Shares BTC",
@@ -128,17 +129,17 @@ const solana: LayerProject = {
                     name: "Rootstock RBTC",
                     infrastructureSlug: "rootstock-rbtc",
                     score: 0,
-                    tier: RiskFactor.UnderReview,
-                    title: TokenSnippet.UnderReview,
-                    content: `${TokenSnippet.RootstockRBTC} Rootstock is bridged to Solana via a LayerZero implementation.`,
+                    tier: RiskFactor.VeryHigh,
+                    title: TokenSnippet.FederationPeg,
+                    content: `${TokenSnippet.RootstockRBTC}`,
                 },
                 {
                     name: "Lombard LBTC",
                     infrastructureSlug: "lombard-lbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet.VariousCustodianPeg,
-                    content: `${TokenSnippet.ZueszBTC}`,
+                    title: TokenSnippet.FederationPeg,
+                    content: `${TokenSnippet.LombardLBTC}`,
                 },
                 {
                     name: "Fragmetric fragBTC",
@@ -146,7 +147,7 @@ const solana: LayerProject = {
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: TokenSnippet.VariousCustodianPeg,
-                    content: `${TokenSnippet.ZueszBTC}`,
+                    content: `${Reviewsnippet.FragmetricfragBTC}`,
                 },
                 {
                     name: "OKX xBTC",
@@ -154,15 +155,15 @@ const solana: LayerProject = {
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: TokenSnippet.VariousCustodianPeg,
-                    content: `${TokenSnippet.ZueszBTC}`,
+                    content: `${Reviewsnippet.OkxXBTC}`,
                 },
                 {
                     name: "Zenrock zenBTC",
                     infrastructureSlug: "zenrock-zenbtc",
                     score: 0,
-                    tier: RiskFactor.VeryHigh,
-                    title: TokenSnippet.VariousCustodianPeg,
-                    content: `${TokenSnippet.ZueszBTC}`,
+                    tier: RiskFactor.High,
+                    title: "Validators in a proof-of-stake blockchain are responsible for custodying bitcoin backing zenBTC",
+                    content: `${Reviewsnippet.ZenrockZenBTC}`,
                 },
             ],
         },

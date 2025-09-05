@@ -1,6 +1,6 @@
 {
   "mint_address": "3NZ9JMVBmGAqocybic2c7LQCJScmgsAZ6vQqTDzcqmJh",
-  "intro": "BitGo wBTC is a wrapped bitcoin token. It is backed by bitcoin secured by a consortium of signers known as BitGlobal.",
+  "intro": "BitGo wBTC is bridged to Solana from Ethereumvia the Wormhole bridge.",
   "basic_info": {
     "mint_address": "3NZ9JMVBmGAqocybic2c7LQCJScmgsAZ6vQqTDzcqmJh",
     "supply": 326579611405,

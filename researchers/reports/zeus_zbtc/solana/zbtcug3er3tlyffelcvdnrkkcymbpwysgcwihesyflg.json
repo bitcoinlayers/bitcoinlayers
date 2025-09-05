@@ -1,6 +1,6 @@
 {
   "mint_address": "zBTCug3er3tLyffELcvDNrKkCymbPWysGcWihESYfLg",
-  "intro": "zBTC is a wrapped bitcoin token on Solana.",
+  "intro": "zBTC is natively minted on Solana.",
   "basic_info": {
     "mint_address": "zBTCug3er3tLyffELcvDNrKkCymbPWysGcWihESYfLg",
     "supply": 42001008583,

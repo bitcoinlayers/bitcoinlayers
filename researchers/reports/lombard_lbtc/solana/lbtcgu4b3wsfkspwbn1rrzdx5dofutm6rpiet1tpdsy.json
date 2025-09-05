@@ -1,6 +1,6 @@
 {
   "mint_address": "LBTCgU4b3wsFKsPwBn1rRZDx5DoFutM6RPiEt1TPDsY",
-  "intro": "Lombard LBTC is a wrapped bitcoin asset that represents bitcoin staked into the Babylon protocol.",
+  "intro": "Lombard LBTC is bridged to Solana from Ethereum via LayerZero.",
   "basic_info": {
     "mint_address": "LBTCgU4b3wsFKsPwBn1rRZDx5DoFutM6RPiEt1TPDsY",
     "supply": 38971767620,

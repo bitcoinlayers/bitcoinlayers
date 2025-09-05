@@ -1,6 +1,6 @@
 {
   "mint_address": "CtzPWv73Sn1dMGVU3ZtLv9yWSyUAanBni19YWDaznnkn",
-  "intro": "OKX xBTC is a wrapped bitcoin token that is backed by bitcoin secured by a centralized custodian, OKX.",
+  "intro": "OKX xBTC is natively minted on Solana.",
   "basic_info": {
     "mint_address": "CtzPWv73Sn1dMGVU3ZtLv9yWSyUAanBni19YWDaznnkn",
     "supply": 67654151587,

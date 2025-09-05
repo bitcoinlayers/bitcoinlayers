@@ -1,6 +1,6 @@
 {
   "mint_address": "9hX59xHHnaZXLU6quvm5uGY2iDiT3jczaReHy6A6TYKw",
-  "intro": "META is a token on Solana using the SPL token standard. The token retains mint authority indicating centralized control over token operations.",
+  "intro": "zenBTC is natively minted on Solana.",
   "basic_info": {
     "mint_address": "9hX59xHHnaZXLU6quvm5uGY2iDiT3jczaReHy6A6TYKw",
     "supply": 5988818395,
