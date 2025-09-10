@@ -1,0 +1,75 @@
+{
+  "mint_address": "6DNSN2BJsaPFdFFc1zP37kkeNe4Usc1Sqkzr9C9vPWcU",
+  "intro": "Threhold tBTC is a wrapped bitcoin token minted on Ethereum via the Threshold network. It is bridged to Solana via a custom Wormhole implementation.",
+  "basic_info": {
+    "mint_address": "6DNSN2BJsaPFdFFc1zP37kkeNe4Usc1Sqkzr9C9vPWcU",
+    "supply": 6436556809,
+    "decimals": 8,
+    "mint_authority": "2PfR3xUdMS8xHUhE9H47dy2Ro3Ww9agP5GdnNoKj3Vtf",
+    "freeze_authority": null,
+    "is_initialized": true,
+    "owner_program": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+    "is_token_2022": false
+  },
+  "metadata": {
+    "name": "Metaplex Token",
+    "symbol": "META",
+    "description": "Token with Metaplex metadata",
+    "image": null,
+    "external_url": null,
+    "attributes": null,
+    "properties": null
+  },
+  "supply_info": {
+    "total_supply": 6436556809,
+    "circulating_supply": "6436556809",
+    "max_supply": null,
+    "holders_count": null
+  },
+  "security_analysis": {
+    "mint_authority": "2PfR3xUdMS8xHUhE9H47dy2Ro3Ww9agP5GdnNoKj3Vtf",
+    "freeze_authority": null,
+    "is_mutable": true,
+    "has_update_authority": true,
+    "is_verified": false,
+    "security_score": 70,
+    "risk_factors": [
+      "Has mint authority - tokens can be minted"
+    ]
+  },
+  "governance_info": {
+    "governance_type": "Centralized",
+    "authority_analyses": {
+      "mint_authority": "AuthorityAnalysis(address='2PfR3xUdMS8xHUhE9H47dy2Ro3Ww9agP5GdnNoKj3Vtf', authority_type='Wallet', capabilities=['Mint unlimited tokens', 'Change mint authority to any address', 'Burn tokens from any account', 'Full unilateral control (no multi-party approval required)'], multisig_info=None, governance_info=None, risk_assessment={'risk_level': 'high', 'reason': 'Single wallet control - centralized authority', 'mitigations': []})",
+      "update_authority": "AuthorityAnalysis(address='2PfR3xUdMS8xHUhE9H47dy2Ro3Ww9agP5GdnNoKj3Vtf', authority_type='Wallet', capabilities=['Full unilateral control (no multi-party approval required)'], multisig_info=None, governance_info=None, risk_assessment={'risk_level': 'high', 'reason': 'Single wallet control - centralized authority', 'mitigations': []})"
+    },
+    "overall_risk_score": 5.0,
+    "governance_summary": {
+      "total_authorities": 2,
+      "governance_type": "Centralized",
+      "key_findings": [
+        "No freeze authority is associated with the token contract.",
+        "Bridge is an implementation of Wormhole. The implementation is governed by 87MEvHZCXE3ML5rrmh5uX1FbShHmRXXS32xJDGbQ7h5t, a 4/8 multisig.",
+        "Signers in the 87MEvHZCXE3ML5rrmh5uX1FbShHmRXXS32xJDGbQ7h5t multisig are delegates a part of the Threshold DAO."
+      ],
+      "recommendations": [
+        "Consider decentralizing mint_authority - current setup is high risk",
+        "Consider decentralizing update_authority - current setup is high risk"
+      ]
+    }
+  },
+  "errors": [],
+  "key_findings": [
+    "No freeze authority is associated with the token contract.",
+        "Bridge is an implementation of Wormhole. The implementation is governed by 87MEvHZCXE3ML5rrmh5uX1FbShHmRXXS32xJDGbQ7h5t, a 4/8 multisig.",
+        "Signers in the 87MEvHZCXE3ML5rrmh5uX1FbShHmRXXS32xJDGbQ7h5t multisig are delegates a part of the Threshold DAO."
+  ],
+  "analysis_metadata": {
+    "analyzer_version": "1.0.0",
+    "network": "mainnet",
+    "analysis_date": "2025-09-03 19:12:52 UTC",
+    "wrapper_name": "threshold_tbtc",
+    "network_name": "solana",
+    "explorer_url": "https://explorer.solana.com/address/6DNSN2BJsaPFdFFc1zP37kkeNe4Usc1Sqkzr9C9vPWcU"
+  }
+}

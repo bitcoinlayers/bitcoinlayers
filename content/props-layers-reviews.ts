@@ -126,6 +126,9 @@ export enum Reviewsnippet {
     KikiIBTC = "Kiki iBTC is a liquid token representing bitcoin locked in the exSat Network. The custodian providers behind this token have not been publicly disclosed.",
     Fedimint = "A Fedimint is operated by a number of guardians that custody users’ funds in return for issuing bearer Ecash tokens. If the mint gets hacked, becomes unresponsive or turns malicious, token redemption is at risk.",
     Cashu = "A Cashu mint is operated by a single entity that custodies users’ funds in return for issuing bearer Ecash tokens. If the mint gets hacked, becomes unresponsive or turns malicious, token redemption is at risk.",
+    FragmetricfragBTC = "Fragmetric fragBTC is received after uses deposit Zeus zBTC into a staking contract on Solana. Users trust the code behind the smart contract and Zeus zBTC to remain pegged 1:1 with BTC.",
+    OkxXBTC = "OKX xBTC is a wrapped version of bitcoin that is backed by BTC held by a centralized custodian, OKX.",
+    ZenrockZenBTC = "Zenrock zenBTC is a wrapped version of bitcoin that is backed by BTC held by a federation of signers. Validators in an implementation of a Cosmos consensus mechanism are participating in this federation and additionally facilitating peg-ins and peg-outs between bitcoin and alternative blockchains.",
     TemplateBTC = "This is a fake prop used for the template file.",
 
 }
