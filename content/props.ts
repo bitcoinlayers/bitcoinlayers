@@ -93,6 +93,7 @@ export enum EntityType {
     StakedBTC = "Natively Staked BTC",
     PoSNetwork = "PoS Network",
     BPoSNetwork = "BPoS Network",
+    Other = "Other",
     "-" = "-",
 }
 

@@ -123,7 +123,7 @@ export default function Navbar() {
                     )} */}
                     <li className="hidden lg:block">
                         <Link
-                            href="/layers"
+                            href="/"
                             onClick={closeMenu}
                             className="hover:underline"
                         >

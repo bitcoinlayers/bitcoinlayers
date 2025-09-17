@@ -127,12 +127,6 @@ export default function Footer() {
                                         <SectionItem href="/?view=wrappers">
                                             Wrappers
                                         </SectionItem>
-                                        <SectionItem href="/?view=more">
-                                            Apps & more
-                                        </SectionItem>
-                                        <SectionItem href="/?view=more&subview=opcodes">
-                                            Opcodes
-                                        </SectionItem>
                                         {/* <SectionItem href="/bitcoinonly">
                                             Bitcoin Only
                                         </SectionItem> */}
@@ -160,9 +154,6 @@ export default function Footer() {
                                     <div className="self-stretch h-[116px] flex flex-col justify-start items-start gap-3">
                                         <SectionItem href="/about">
                                             About
-                                        </SectionItem>
-                                        <SectionItem href="/contribute">
-                                            Contribute
                                         </SectionItem>
                                         <SectionItemExternal href="https://www.lxresearch.co/">
                                             Research

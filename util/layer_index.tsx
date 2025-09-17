@@ -66,6 +66,7 @@ import botanixProject from "@/content/layers/botanix";
 import goatProject from "@/content/layers/goat";
 import arkadeProject from "@/content/layers/arkade";
 import bitcoinStakingProject from "@/content/layers/bitcoin-staking";
+import flashnetProject from "@/content/layers/flashnet";
 
 const core: LayerProject = coreProject;
 const internetcomputer: LayerProject = internetcomputerProject;
@@ -133,6 +134,7 @@ const botanix: LayerProject = botanixProject;
 const goat: LayerProject = goatProject;
 const arkade: LayerProject = arkadeProject;
 const bitcoinStaking: LayerProject = bitcoinStakingProject;
+const flashnet: LayerProject = flashnetProject;
 
 export const allLayers: LayerProject[] = [
     core,
@@ -199,6 +201,8 @@ export const allLayers: LayerProject[] = [
     bouncebit,
     botanix,
     goat,
+    flashnet,
+    arkade,
 ];
 
 export const allLayerSlugs: string[] = allLayers.map((layer) => layer.slug);
