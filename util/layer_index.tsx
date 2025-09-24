@@ -67,6 +67,12 @@ import goatProject from "@/content/layers/goat";
 import arkadeProject from "@/content/layers/arkade";
 import bitcoinStakingProject from "@/content/layers/bitcoin-staking";
 import flashnetProject from "@/content/layers/flashnet";
+import alpenProject from "@/content/layers/alpen";
+import citreaProject from "@/content/layers/citrea";
+import archProject from "@/content/layers/arch";
+import midlProject from "@/content/layers/midl";
+import rgbProject from "@/content/layers/rgb";
+import secondProject from "@/content/layers/second";
 
 const core: LayerProject = coreProject;
 const internetcomputer: LayerProject = internetcomputerProject;
@@ -135,6 +141,12 @@ const goat: LayerProject = goatProject;
 const arkade: LayerProject = arkadeProject;
 const bitcoinStaking: LayerProject = bitcoinStakingProject;
 const flashnet: LayerProject = flashnetProject;
+const alpen: LayerProject = alpenProject;
+const citrea: LayerProject = citreaProject;
+const arch: LayerProject = archProject;
+const midl: LayerProject = midlProject;
+const rgb: LayerProject = rgbProject;
+const second: LayerProject = secondProject;
 
 export const allLayers: LayerProject[] = [
     core,
@@ -203,6 +215,12 @@ export const allLayers: LayerProject[] = [
     goat,
     flashnet,
     arkade,
+    alpen,
+    citrea,
+    arch,
+    midl,
+    rgb,
+    second,
 ];
 
 export const allLayerSlugs: string[] = allLayers.map((layer) => layer.slug);
