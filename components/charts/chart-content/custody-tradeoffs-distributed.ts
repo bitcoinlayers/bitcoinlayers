@@ -26,7 +26,7 @@ const custodyTradeoffs = {
           description: "Official bridge programs where wrapped tokens are backed by BTC secured in a multisig (or MPC scheme)",
           pros: [
             "Trust distributed across multiple parties",
-            "If public federation, reputation damange incurred in case of fraud"
+            "If public federation, reputation damage incurred in case of fraud"
           ],
           cons: [
             "Trust the signer set to be honest",
@@ -60,7 +60,7 @@ const custodyTradeoffs = {
             cons: [
               "Fixed deposit amounts",
               "Watchtower set may be permissioned",
-              "Bridges can be instantly upgradaded by a security council",
+              "Bridges can be instantly upgraded by a security council",
             ],
           },
       ]
