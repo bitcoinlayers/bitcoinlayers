@@ -258,7 +258,7 @@ export enum ReviewSnippet { //TODO: Janusz to add more here
     FinalityAltNetworkUnderReview = "Finality assurances are provided by an alternative consensus network. We are reviewing this section.",
     BitcoinDA = "Data related to the network's transactions is made available by bitcoin full nodes. This means an alternative software queries bitcoin transactions to find transactions containing data related to the protocol. After finding this data, the software can reconstruct the state of the network from genesis and come to consensus with other nodes.",
     BasedSequenced = "Transactions are ordered and included in bitcoin blocks by bitcoin miners. This means that transactions for the alternative network are bitcoin transactions with additional metadata that enables the network's nodes to find the transactions and verify their validity according to their own logic.",
-    BasedSequencedFinality = "Transactions related to the network's state are finalized by bitcoin miners. This means they additionally inherit bitcoin's probibalistic finality guarantees. However, the network is can additionally fork its view of the state at any time indepedent of bitcoin.",
+    BasedSequencedFinality = "Transactions related to the network's state are finalized by bitcoin miners. This means they additionally inherit bitcoin's probibalistic finality guarantees. However, the network can additionally fork its view of the state at any time indepedent of bitcoin.",
     TemplateReview = "This is a fake prop used for the template file.",
 
 }
