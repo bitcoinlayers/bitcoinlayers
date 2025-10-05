@@ -100,7 +100,7 @@ const alkanes: LayerProject = {
             score: 0,
             tier: RiskFactor.Low,
             title: "Transactions are sequenced by bitcoin miners",
-            content: `${ReviewSnippet.TemplateReview}\n\nAdd additional context with text if needed.`
+            content: `${ReviewSnippet.BasedSequenced}`,
         },
         {
             category: RiskCategory.FinalityGuarantees,
