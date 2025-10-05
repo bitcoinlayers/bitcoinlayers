@@ -353,6 +353,11 @@ const glossaryData: GlossaryData = {
             definition:
                 "A system that facilitates the minting and burning of BTC-backed tokens on a bitcoin layer or alternative L1. These systems are also known as bridges.",
         },
+        {
+            term: "Trusted Execution Environment (TEE)",
+            definition:
+                "A hardware-backed secure enclaves (like Intel SGX) that provide isolated execution environments with cryptographic attestation capabilities, used to protect Arkade Signer keys and ensure verifiable execution.",
+        },
     ],
     U: [
         {

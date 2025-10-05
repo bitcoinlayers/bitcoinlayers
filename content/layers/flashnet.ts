@@ -19,6 +19,7 @@ import {
     AdditionalSnippet,
     BitcoinSecuritySnippet,
 } from "../props";
+import {Alertsnippet} from "../props-layers-more-info";
 
 const flashnet: LayerProject = {
     type: Type.Layer,
@@ -26,11 +27,11 @@ const flashnet: LayerProject = {
     title: "Flashnet",
     entityType: EntityType.Other,
     entityCategory: EntityCategory.Other,
-    live: LiveStatus.Mainnet,
+    live: LiveStatus.Beta,
     staking: false,
     liquidStaking: false,
     bridge: false,
-    underReview: true,
+    underReview: false,
     partialReview: false, // Set to true for partial review mode
     partialReviewAfter: undefined, // Options: "tokencontracts", "risksummary", "categorization", "trust", "manualcontracts"
     showContractAnalysis: false, // Set to true to show contract analysis section after token contracts
@@ -49,42 +50,34 @@ const flashnet: LayerProject = {
         RiskFactor.UnderReview,
     ],
     btcLocked: NaN,
-    nativeToken: "TKN",
+    nativeToken: "BTC",
     feeToken: "BTC",
     notice: undefined,
     bitcoinOnly: false,
     links: [
         {
             text: Site.Website,
-            url: "website",
+            url: "https://flashnet.xyz",
         },
         {
             text: Site.Docs,
-            url: "docs",
+            url: "https://docs.flashnet.xyz/",
         },
         {
             text: Site.Explorer,
-            url: "explorer",
-        },
-        {
-            text: Site.GitHub,
-            url: "github",
+            url: "https://www.sparkscan.io/?network=mainnet",
         },
         {
             text: Site.Twitter,
-            url: "socials",
+            url: "https://x.com/flashnet",
         },
     ],
     description: "",
     riskSummary: [
         {
-            title: "Specific Risk",
+            title: "Users trust network validators during intent execution",
             content: "risk text explanation"
         },
-        {
-            title: "Specific Risk",
-            content: "risk text explanation"
-        }
     ],
     riskAnalysis: [
         {
@@ -95,59 +88,36 @@ const flashnet: LayerProject = {
             content: "",
             pegs: [
                 {
-                    name: "Template BTC",
-                    infrastructureSlug: "templace-btc",
+                    name: "Flashnet Intents on Spark",
+                    infrastructureSlug: "statechain",
                     score: 0,
                     tier: RiskFactor.High,
-                    title: "For an official two-way peg, you can write a customized title here.",
-                    content: `${TokenSnippet.TemplateBTC}\n\n`,
-                },
-                {
-                    name: "Threshold tBTC",
-                    infrastructureSlug: "threshold-tbtc",
-                    score: 0,
-                    tier: RiskFactor.High,
-                    title: "For other titles, just use TokenSnippet.PegType as shown in the example below.",
-                    content: `${TokenSnippet.ThresholdtBTC}\n\n${TokenSnippet.smartcontractreview}\n\n`,
-                },
-                {
-                    name: "Threshold tBTC",
-                    infrastructureSlug: "threshold-tbtc",
-                    score: 0,
-                    tier: RiskFactor.High,
-                    title: "For other titles, just use TokenSnippet.PegType as shown in the example below.",
-                    content: `${TokenSnippet.ThresholdtBTC}\n\n${TokenSnippet.smartcontractreview}\n\nUse the smart contract review field to highlight that the asset may have additional trust assumptions if it's bridged across chains. You can also use text to describe additional trust assumptions.`,
-                },
-                {
-                    name: "Template BTC",
-                    infrastructureSlug: "templace-btc",
-                    score: 0,
-                    tier: RiskFactor.High,
-                    title: TokenSnippet.CustodianPeg,
-                    content: `${TokenSnippet.TemplateBTC}`,
+                    title: "Flashnet holds user funds during intent execution",
+                    content: `The Flashnet network executes user intents and custodies the user's funds during the execution. User funds are held on Spark before and after the intent execution.\n\nFlashnet validators find user intents and a threshold of their signatures is needed to forward the intent to a Trusted Execution Environment (TEE) for execution. TEEs are bound by the rules of their execution, and cannot modify user intents. After execution, users fall to the custody assumptions of Spark.`,
                 },
             ],
         },
         {
             category: RiskCategory.DataAvailability,
             score: 0,
-            tier: RiskFactor.UnderReview,
-            title: "Add a custom title here",
-            content: ReviewSnippet.TemplateReview,
+            tier: RiskFactor.VeryHigh,
+            title: "Data related to intent execution is stored by Flashnet operators",
+            content: "Flashnet executes complex transactions that are not native to Spark. The data related to intent execution is stored by Flashnet operators.",
         },
         {
             category: RiskCategory.NetworkOperators,
             score: 0,
-            tier: RiskFactor.UnderReview,
-            title: "Add a custom title here",
-            content: `${ReviewSnippet.TemplateReview}\n\nAdd additional context with text if needed.`
+            tier: RiskFactor.VeryHigh,
+            title: "Flashnet is currently operated by a closed validator set",
+            content: `Flashnet is in its beta phase and is currently operated by a closed validator set.`
         },
         {
             category: RiskCategory.FinalityGuarantees,
             score: 0,
-            tier: RiskFactor.UnderReview,
-            title: "Add a custom title here",
-            content: `${ReviewSnippet.TemplateReview}\n\nAdd additional context with text if needed.`
+            tier: RiskFactor.VeryHigh,
+            title: "Post execution, users fall to the finality assumptions of Spark",
+            content: `While intent execution is near-instant, users' trust assumptions fall back to that of Spark. Spark is an implementation of the statechain protocol where Spark operators cannot prove key deletion for `,
+            alert: Alertsnippet.StatechainKeyDeletion,
         },
     ],
     manualContracts: [
@@ -157,24 +127,6 @@ const flashnet: LayerProject = {
             subtitle: "Main bridge contract that holds and manages cross-chain BTC assets",
             explorerUrl: "https://etherscan.io/address/0x46abfe1c972fca43766d6ad70e1c1df72f4bb4d1"
         },
-        {
-            title: "Governance Multisig",
-            address: "0x9f8f72aa9304c8b593d555f12ef6589cc3a579a2", 
-            subtitle: "5-of-9 multisig responsible for bridge upgrades and parameter changes",
-            explorerUrl: "https://etherscan.io/address/0x9f8f72aa9304c8b593d555f12ef6589cc3a579a2"
-        },
-        {
-            title: "tBTC Vault Contract",
-            address: "0x18084fba666a33d37592fa2633fd49a74dd93a88",
-            subtitle: "Vault contract managing Threshold tBTC deposits and withdrawals",
-            explorerUrl: "https://etherscan.io/address/0x18084fba666a33d37592fa2633fd49a74dd93a88"
-        },
-        {
-            title: "Fee Distribution Contract",
-            address: "0x514910771af9ca656af840dff83e8264ecf986ca",
-            subtitle: "Contract handling transaction fee distribution to validators",
-            explorerUrl: "https://etherscan.io/address/0x514910771af9ca656af840dff83e8264ecf986ca"
-        }
     ],
     sections: [
         {
@@ -182,30 +134,8 @@ const flashnet: LayerProject = {
                     title: "Additional Considerations",
                     content: [
                         {
-                            title: "If there are any additional considerations, you can add them below using AdditionalSnippet.Snippet or simply typing the consideration",
-                            content: "AdditionalSnippet.Snippet or text content"
-                        },
-                    ],
-                },
-                {
-                    id: "bitcoinsecurity",
-                    title: "Bitcoin Security",
-                    content: [
-                        {
-                            title: "Add a prop saying if the network inherits security from bitcoin",
-                            content: BitcoinSecuritySnippet.Template,
-                        },
-                        {
-                            title: "Add a prop clarifying if the network uses an altcoin or is bitcoin denominated",
-                            content: BitcoinSecuritySnippet.Template,
-                        },
-                        {
-                            title: "Add a prop clarifying if the network introduces MEV to bitcoin (if at all)",
-                            content: BitcoinSecuritySnippet.Template,
-                        },
-                        {
-                            title: "Add a prop clarifying if the network contributes to the security budget",
-                            content: BitcoinSecuritySnippet.Template,
+                            title: "Code is not open-source",
+                            content: "The code related to Flashnet is not open-source. This review is based on documentation and reviews of Flashnet transactions on Spark."
                         },
                     ],
                 },
@@ -214,12 +144,8 @@ const flashnet: LayerProject = {
                     title: "Technology",
                     content: [
                         {
-                            title: "Add a prop on significant tech components. If there is no prop, consider adding one to the prop.ts file. If the tech component is highly customizeable, add text for the content.",
-                            content: TechnologySnippet.Template,
-                        },
-                        {
-                            title: "Add a prop on significant tech components. If there is no prop, consider adding one to the prop.ts file. If the tech component is highly customizeable, add text for the content.",
-                            content: "The tech is highly customizeable so I'm adding text to describe it."
+                            title: "Truested Execution Environment (TEE)",
+                            content: "A TEE is a hardware-backed secure enclaves (like Intel SGX) that provide isolated execution environments with cryptographic attestation capabilities, used to protect Arkade Signer keys and ensure verifiable execution."
                         },
                     ],
                 },
@@ -228,17 +154,8 @@ const flashnet: LayerProject = {
                     title: "Use Cases",
                     content: [
                         {
-                            title: "Add a prop on significant use cases.",
-                            content: UseCaseSnippet.Template,
-                        },
-                    ],
-                },
-                {
-                    id: "knowledgebits",
-                    title: "Knowledge Bits",
-                    content: [
-                        {
-                            content: "Leave this as is. We'll add files when you submit the PR.",
+                            title: "Flashnet enables complex smart contracts on Spark.",
+                            content: UseCaseSnippet.OnchainApps,
                         },
                     ],
                 },
