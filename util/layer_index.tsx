@@ -73,6 +73,7 @@ import archProject from "@/content/layers/arch";
 import midlProject from "@/content/layers/midl";
 import rgbProject from "@/content/layers/rgb";
 import secondProject from "@/content/layers/second";
+import alkanesProject from "@/content/layers/alkanes";
 
 const core: LayerProject = coreProject;
 const internetcomputer: LayerProject = internetcomputerProject;
@@ -147,6 +148,7 @@ const arch: LayerProject = archProject;
 const midl: LayerProject = midlProject;
 const rgb: LayerProject = rgbProject;
 const second: LayerProject = secondProject;
+const alkanes: LayerProject = alkanesProject;
 
 export const allLayers: LayerProject[] = [
     core,
@@ -221,6 +223,7 @@ export const allLayers: LayerProject[] = [
     midl,
     rgb,
     second,
+    alkanes,
 ];
 
 export const allLayerSlugs: string[] = allLayers.map((layer) => layer.slug);
