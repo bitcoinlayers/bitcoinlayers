@@ -26,7 +26,7 @@ const alkanes: LayerProject = {
     slug: "alkanes",
     title: "Alkanes",
     entityType: EntityType.Rollup,
-    entityCategory: EntityCategory.Sidesystem,
+    entityCategory: EntityCategory.Other,
     live: LiveStatus.Mainnet,
     staking: false,
     liquidStaking: false,
@@ -84,6 +84,7 @@ const alkanes: LayerProject = {
                     tier: RiskFactor.VeryHigh,
                     title: "BTC backing frBTC is held in a 6/9 multisig",
                     content: `${Reviewsnippet.SubfrostfrBTC}`,
+                
                 },
             ],
         },
