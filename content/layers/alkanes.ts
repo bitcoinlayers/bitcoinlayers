@@ -116,11 +116,11 @@ const alkanes: LayerProject = {
                     title: "Bitcoin Security",
                     content: [
                         {
-                            title: "Add a prop saying if the network inherits security from bitcoin",
+                            title: "The system uses bitcoin for data availability",
                             content: BitcoinSecuritySnippet.BitcoinDASecurity,
                         },
                         {
-                            title: "Add a prop clarifying if the network uses an altcoin or is bitcoin denominated",
+                            title: "Users pay bitcoin transaction fees",
                             content: BitcoinSecuritySnippet.BasedSequencedFees,
                         },
                         {
@@ -128,7 +128,7 @@ const alkanes: LayerProject = {
                             content: "We are reviewing MEV implications related to the network."
                         },
                         {
-                            title: "Add a prop clarifying if the network contributes to the security budget",
+                            title: "The network directly contributes to the security budget",
                             content: BitcoinSecuritySnippet.BasedSequencedRollup,
                         },
                     ],
