@@ -39,7 +39,7 @@ const alkanes: LayerProject = {
         RiskFactor.VeryHigh,
         RiskFactor.Low,
         RiskFactor.Low,
-        RiskFactor.Low,
+        RiskFactor.UnderReview,
     ],
     btcLocked: NaN,
     nativeToken: "TKN",
@@ -105,7 +105,7 @@ const alkanes: LayerProject = {
         {
             category: RiskCategory.FinalityGuarantees,
             score: 0,
-            tier: RiskFactor.Low,
+            tier: RiskFactor.UnderReview,
             title: "System finality is provided by bitcoin miners, but node software can fork permissionlessly",
             content: `${ReviewSnippet.BasedSequencedFinality}`
         },
