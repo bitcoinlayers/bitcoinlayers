@@ -129,6 +129,7 @@ export enum Reviewsnippet {
     FragmetricfragBTC = "Fragmetric fragBTC is received after uses deposit Zeus zBTC into a staking contract on Solana. Users trust the code behind the smart contract and Zeus zBTC to remain pegged 1:1 with BTC.",
     OkxXBTC = "OKX xBTC is a wrapped version of bitcoin that is backed by BTC held by a centralized custodian, OKX.",
     ZenrockZenBTC = "Zenrock zenBTC is a wrapped version of bitcoin that is backed by BTC held by a federation of signers. Validators in an implementation of a Cosmos consensus mechanism are participating in this federation and additionally facilitating peg-ins and peg-outs between bitcoin and alternative blockchains.",
+    SubfrostfrBTC = "Subfrost frBTC is a wrapped version of bitcoin that is backed by BTC held by a federation of signers. Its documentation site does not disclose the identities of the signers in the 6/9 multisig.",
     TemplateBTC = "This is a fake prop used for the template file.",
 
 }

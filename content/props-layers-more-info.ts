@@ -24,6 +24,9 @@ export enum BitcoinSecuritySnippet { //TODO: Janusz to add more here
     MergeMineDAFees = "Fees from securing the network's data availability are paid to Bitcoin miners who optionally merge-mine the network.",
     MergeMineFees = "Fees from securing the network's are paid to Bitcoin miners who optionally merge-mine the network.",
     MergeMineMEV = "The network does not leak MEV to bitcoin. Bitcoin miners may take advantage of opportunities to extract MEV if the network is experiencing high activity.",
+    BasedSequencedRollup = "Transactions are ordered and included in bitcoin blocks by bitcoin miners. Users of the network pay bitcoin transaction fees which contributes to the security budget.",
+    BitcoinDASecurity = "The network's data availability layer is bitcoin. This means that it relies on bitcoin's security for the availability of data for its full node software (sometimes known as an indexer).",
+    BasedSequencedFees = "Users of the network pay bitcoin transaction fees to get their transactions included into bitcoin blocks.",
     Template = "Template used for the template prop file.",
 }
 
