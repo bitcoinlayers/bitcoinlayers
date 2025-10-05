@@ -125,7 +125,7 @@ const stacks: LayerProject = {
         {
             category: RiskCategory.FinalityGuarantees,
             score: 0,
-            tier: RiskFactor.Low,
+            tier: RiskFactor.UnderReview,
             title: "State transitions validated and finalized by Stackers. Block leaders must build on the latest checkpoint included in the latest block tenure that was validated by stackers",
             content: ReviewSnippet.FinalityAnchorChain,
         },
