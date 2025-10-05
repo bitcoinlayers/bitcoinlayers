@@ -44,10 +44,10 @@ const flashnet: LayerProject = {
     // NOTE: If chart or token contract data is not available from the API, 
     // "Coming Soon" placeholders will automatically be shown instead of empty sections
     riskFactors: [
-        RiskFactor.UnderReview,
-        RiskFactor.UnderReview,
-        RiskFactor.UnderReview,
-        RiskFactor.UnderReview,
+        RiskFactor.High,
+        RiskFactor.High,
+        RiskFactor.VeryHigh,
+        RiskFactor.VeryHigh,
     ],
     btcLocked: NaN,
     nativeToken: "BTC",
@@ -100,7 +100,7 @@ const flashnet: LayerProject = {
         {
             category: RiskCategory.DataAvailability,
             score: 0,
-            tier: RiskFactor.VeryHigh,
+            tier: RiskFactor.High,
             title: "Data related to intent execution is stored by Flashnet operators",
             content: "Flashnet executes complex transactions that are not native to Spark. The data related to intent execution is stored by Flashnet operators.",
         },
