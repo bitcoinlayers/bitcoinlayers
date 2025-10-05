@@ -120,14 +120,6 @@ const flashnet: LayerProject = {
             alert: Alertsnippet.StatechainKeyDeletion,
         },
     ],
-    manualContracts: [
-        {
-            title: "Bridge Escrow Contract",
-            address: "0x46abfe1c972fca43766d6ad70e1c1df72f4bb4d1",
-            subtitle: "Main bridge contract that holds and manages cross-chain BTC assets",
-            explorerUrl: "https://etherscan.io/address/0x46abfe1c972fca43766d6ad70e1c1df72f4bb4d1"
-        },
-    ],
     sections: [
         {
                     id: "additionalconsiderations",
