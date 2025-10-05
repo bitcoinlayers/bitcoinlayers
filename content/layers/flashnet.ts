@@ -72,11 +72,11 @@ const flashnet: LayerProject = {
             url: "https://x.com/flashnet",
         },
     ],
-    description: "",
+    description: "Flashnet is an intents matching protocol on Spark that enables users to interact with expressive smart contracts via Spark transactions.",
     riskSummary: [
         {
             title: "Users trust network validators during intent execution",
-            content: "risk text explanation"
+            content: "Since expressive smart contracts are not executable in bitcoin script, users leverage Flashnet's intent matching protocol to execute their intents. Users trust the Flashnet network operators for the duration of the intent execution.",
         },
     ],
     riskAnalysis: [
