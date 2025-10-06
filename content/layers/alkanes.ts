@@ -31,7 +31,7 @@ const alkanes: LayerProject = {
     staking: false,
     liquidStaking: false,
     bridge: false,
-    underReview: false,
+    underReview: true,
     partialReview: false, // Set to true for partial review mode
     partialReviewAfter: undefined, // Options: "tokencontracts", "risksummary", "categorization", "trust", "manualcontracts"
     showContractAnalysis: false, // Set to true to show contract analysis section after token contracts
