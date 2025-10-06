@@ -19,9 +19,8 @@ import {
     RiskSummarySnippet,
     Categorization,
 } from "../props";
-
-import { Alertsnippet } from "../props-layers-more-info";
 import { Reviewsnippet } from "../props-layers-reviews";
+import { Alertsnippet } from "../props-layers-more-info";
 
 const starknet: LayerProject = {
     type: Type.Layer,
@@ -76,7 +75,7 @@ const starknet: LayerProject = {
             },
             {
                 title: RiskSummarySnippet.TitleBridgeUpgrade,
-                content: `${RiskSummarySnippet.RiskSummaryCentralNotImmediateUpgrade} A 2/4 multisig can upgrade the wBTC bridge contract after a three day delay. A single signer can upgrade the tBTC bridge contract after a three day delay.`,
+                content: `${RiskSummarySnippet.RiskSummaryCentralNotImmediateUpgrade} All wrapped bitcoin tokens on Starknet have upgradeable L1 bridge contracts. See our review for more information.`,
             },
             {
                 title: RiskSummarySnippet.TitleCustodianPegs,
@@ -86,10 +85,6 @@ const starknet: LayerProject = {
                 title: RiskSummarySnippet.TitleAltDA,
                 content: RiskSummarySnippet.RiskSummaryAltDANetwork,
             },
-            {
-                title: RiskSummarySnippet.TitleCentralizedSequencer,
-                content: RiskSummarySnippet.RiskSummaryCentralizedSequencer,
-            }
         ],
         categorization: [
             {
@@ -119,8 +114,26 @@ const starknet: LayerProject = {
                     infrastructureSlug: "threshold-tbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
-                    title: `${TokenSnippet.FederationPeg}. To mint on starknet, tBTC on Ethereum is locked in an upgreadeable escrow contract`,
+                    title: `${TokenSnippet.FederationPeg}. To mint on Starknet, tBTC on Ethereum is locked in an upgreadeable escrow contract`,
                     content: `${TokenSnippet.ThresholdtBTC}\n\n${Reviewsnippet.AltRollupAltTokenValidityProofs} The tBTC implementation of the Starknet bridge contract is upgradeable by a single signer. There is a there a 3 day delay before the upgrade is implemented.`,
+                    alert: Alertsnippet.AltRollupAltTokenProofsUpgrade,
+                },
+                {
+                    name: "Lombard LBTC",
+                    infrastructureSlug: "lombard-lbtc",
+                    score: 0,
+                    tier: RiskFactor.UnderReview,
+                    title: `${TokenSnippet.FederationPeg}. To mint on Starknet, LBTC on Ethereum is locked in an upgreadeable escrow contract`,
+                    content: `${Reviewsnippet.LombardLBTC}\n\n${Reviewsnippet.AltRollupAltTokenValidityProofs} We are reviewing the admin with upgrade authorities for the LBTC bridge contract. The contract can be immediately upgraded by the admin.`,
+                    alert: Alertsnippet.AltRollupAltTokenProofsUpgrade,
+                },
+                {
+                    name: "Solv SolvBTC",
+                    infrastructureSlug: "solv-solvbtc",
+                    score: 0,
+                    tier: RiskFactor.UnderReview,
+                    title: `${TokenSnippet.CustodianPeg}. To mint on Starknet, SolvBTC on Ethereum is locked in an upgreadeable escrow contract`,
+                    content: `${TokenSnippet.SolvBTC}\n\n${Reviewsnippet.AltRollupAltTokenValidityProofs} We are reviewing the admin with upgrade authorities for the SolvBTC bridge contract. The contract can be immediately upgraded by the admin.`,
                     alert: Alertsnippet.AltRollupAltTokenProofsUpgrade,
                 },
             ],
@@ -136,8 +149,8 @@ const starknet: LayerProject = {
             category: RiskCategory.NetworkOperators,
             score: 0,
             tier: RiskFactor.VeryHigh,
-            title: "Blocks are currently produced by a centralized sequencer",
-            content: "The network's blocks are constructed by a centralized block producer.\n\nUsers cannot build their own blocks in the event of censorship or liveness failures.",
+            title: "Blocks are currently produced by a federated sequencer network operated by one entity",
+            content: "The network's blocks are built by a federated sequencer network running on an implementation of Tendermint. Currently, blocks are built by 3 sequencers all operated by StarkWare. After a block is sequenced, a validator network provide an attestation over the block. Attestors do not validate blocks.",
         },
         {
             category: RiskCategory.FinalityGuarantees,
@@ -161,6 +174,18 @@ const starknet: LayerProject = {
             address: "0x2111A49ebb717959059693a3698872a0aE9866b9", 
             subtitle: "Bridge contract that escrows Threshold tBTC that is minted on Starknet.",
             explorerUrl: "https://etherscan.io/address/0x2111A49ebb717959059693a3698872a0aE9866b9"
+        },
+        {
+            title: "Starknet SolvBTC Escrow Contract",
+            address: "0xA86b9b9c58d4f786F8ea89356c9c9Dde9432Ab10", 
+            subtitle: "Bridge contract that escrows Solv SolvBTC that is minted on Starknet.",
+            explorerUrl: "https://etherscan.io/address/0xA86b9b9c58d4f786F8ea89356c9c9Dde9432Ab10"
+        },
+        {
+            title: "Starknet LBTC Escrow Contract",
+            address: "0x96C8AE2AC9A5cd5fC354e375dB4d0ca75fc0685e", 
+            subtitle: "Bridge contract that escrows Lombard BTC that is minted on Starknet.",
+            explorerUrl: "https://etherscan.io/address/0x96C8AE2AC9A5cd5fC354e375dB4d0ca75fc0685e"
         },
     ],
     sections: [
@@ -214,6 +239,10 @@ const starknet: LayerProject = {
                 {
                     title: "Onchain applications",
                     content: UseCaseSnippet.OnchainApps,
+                },
+                {
+                    title: "Wrapped bitcoin staking",
+                    content: "Starknet leverages a decentralized attestor network that sees validators provide attestations over blocks proposed by the sequencer. Holders of wrapped bitcoin tokens on Starknet can delegate their assets to a specific validator in the attestor network and contribute to their stake weight in the proof-of-stake network. Users can earn rewards in exchange for delegating their assets.",
                 },
             ],
         },
