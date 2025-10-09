@@ -19,15 +19,16 @@ export default function LandingPage() {
                 </p>
                 
                 <p className="text-lg md:text-xl text-muted-foreground font-public-sans">
-                    If you'd like to fork the repo and maintain the project, head to our{" "}
+                    If you&apos;d like to fork the repo and maintain the project, head to our{" "}
                     <a 
                         href="https://github.com/bitcoinlayers/bitcoinlayers" 
                         target="_blank" 
                         rel="noopener noreferrer"
                         className="text-brand hover:underline font-medium"
                     >
-                        github. The code is available under an MIT license.
+                        github
                     </a>
+                    . All code is available under the MIT license.
                 </p>
             </div>
             
