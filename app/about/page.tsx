@@ -117,18 +117,6 @@ const DonationsPage: React.FC = () => {
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                <tr className="border-b border-border/50">
-                                                        <td className="py-2 pr-4 font-medium">StarkWare</td>
-                                                        <td className="py-2">Janusz&apos;s maintenance grant</td>
-                                                    </tr>
-                                                    <tr className="border-b border-border/50">
-                                                        <td className="py-2 pr-4 font-medium">Alpen Labs</td>
-                                                        <td className="py-2">Janusz&apos;s maintenance grant</td>
-                                                    </tr>
-                                                    <tr className="border-b border-border/50">
-                                                        <td className="py-2 pr-4 font-medium">Lightspark</td>
-                                                        <td className="py-2">Janusz&apos;s maintenance grant</td>
-                                                    </tr>
                                                     <tr className="border-b border-border/50">
                                                         <td className="py-2 pr-4 font-medium">Babylon Foundation</td>
                                                         <td className="py-2">Bitcoin Layers&apos; validator delegation (discontinued)</td>
