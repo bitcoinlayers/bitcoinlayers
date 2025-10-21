@@ -53,6 +53,7 @@ const Methodology: React.FC = () => {
         <ul>
                 <li>If the custody mechanism is upgradeable, the score is analyzed based on the signers who can upgrade. We will assess timelocks when applicable.</li>
                 <li>If the protocol sees a user maintain custody, but does not support unilateral exits, the score is degraded to yellow.</li>
+                <li>Alternative blockchains, including those that qualify as sidesystems, have various pegs with bitcoin. We analyze each individually.</li>
             </ul>
         </li>
         </ul>

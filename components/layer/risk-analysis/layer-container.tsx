@@ -36,6 +36,7 @@ const RiskAnalysis: React.FC<RiskAnalysisProps> = ({
                     <BtcCustody
                         category={btcCustody.category}
                         pegs={btcCustody.pegs}
+                        layerSlug={layer.slug}
                     />
                 )}
 

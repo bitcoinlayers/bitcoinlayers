@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import { parseTextWithLinks } from "@/util/parseTextWithLinks";
 import { Project } from "@/content/props";
-import LayerDiamond from "./layerDiamond";
+
 import Categories from "./categories";
 import { LayerProject } from "@/content/props";
 import ProjectLinks from "../project-links";
@@ -28,23 +28,13 @@ const LayerOverviewAlt: React.FC<{ layer: Project }> = ({ layer }) => {
         </div>
 
         <>
-            {/* Content row: left description + right diamond */}
-            <div className="flex flex-col lg:flex-row justify-between gap-6 w-full">
-                {/* LEFT: Categories + Description */}
-                <div className="flex flex-col space-y-6 w-full lg:w-3/5">
-                    <Categories layer={layer as LayerProject} />
-                    <Description layer={layer as LayerProject} />
-                </div>
-
-                {/* RIGHT: Diamond */}
-                <div className="flex justify-center items-center w-full lg:w-2/5 pt-4 lg:pt-2">
-                    <div className="scale-[0.85] origin-top">
-                            <LayerDiamond layer={layer as LayerProject} />
-                    </div>
-                    </div>
-                </div>
+            {/* Content: Categories + Description */}
+            <div className="flex flex-col space-y-6 w-full">
+                <Categories layer={layer as LayerProject} />
+                <Description layer={layer as LayerProject} />
+            </div>
             {/* Footer: Project links */}
-            <div className="pt-6 mt-0 border-t border-border">
+            <div className="pt-6 mt-6 border-t border-border">
                 <ProjectLinks links={layer.links} />
             </div>
         </>

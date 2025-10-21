@@ -3,16 +3,23 @@ import { allLayers, allLayerSlugs } from "@/util/layer_index";
 import LayerMenu from "@/components/layer/layerMenu";
 import LayerBody from "@/components/layer/layerBody";
 import RiskAnalysis from "@/components/layer/risk-analysis/layer-container";
+import BitcoinCustodyReview from "@/components/layer/bitcoin-custody-review";
+import NetworkTrustAssumptionReview from "@/components/layer/network-trust-assumption-review";
 import LayerOverviewAlt from "@/components/layer/layerOverviewAlt";
 import LayerImage from "@/components/layer/layer-image";
 import LayerTVLChart from "@/components/charts/layer-tvl-chart";
-import ProjectContractAddresses from "@/components/project-contract-addresses";
 import ManualContractAddresses from "@/components/manual-contract-addresses";
 import RiskSummary from "@/components/shared/risk-summary";
 import Categorization from "@/components/shared/categorization";
+import TokenContractsSection from "@/components/token-contracts-section";
+import ProjectContractAddresses from "@/components/project-contract-addresses";
 import AlternativeBanner from "@/components/alternative-banner";
 import UnderReviewWrapper from "@/components/under-review-wrapper";
 import KnowledgeBitsFooter from "@/components/layer/knowledge-bits-footer";
+import CustodyChart from "@/components/charts/home-chart-code";
+
+
+
 import { EntityCategory, EntityType } from "@/content/props";
 
 function getLayerFromSlug(slug: string) {
@@ -72,14 +79,9 @@ export default async function LayerPage(props: {
                     <div className="lg:w-4/5 flex flex-col px-4 lg:pl-6">
                         <LayerOverviewAlt layer={layer} />
                         
-                        {/* Only show supply chart and token contracts for non-bitcoin native protocols and non-ChaumianEcashProtocol */}
+                        {/* Only show supply chart for non-bitcoin native protocols and non-ChaumianEcashProtocol */}
                         {layer.entityCategory !== EntityCategory.BitcoinNative && layer.entityType !== EntityType.ChaumianEcashProtocol && (
-                            <>
-                                <LayerTVLChart />
-                                
-                                {/* Token Contracts */}
-                                <ProjectContractAddresses slug={slug} isLayer={true} />
-                            </>
+                            <LayerTVLChart />
                         )}
                         {layer.partialReview && layer.partialReviewAfter === "tokencontracts" && layer.entityCategory !== EntityCategory.BitcoinNative && layer.entityType !== EntityType.ChaumianEcashProtocol && (
                             <div className="self-stretch lg:px-8 px-4 pt-6 pb-8 mb-6 bg-muted/50 rounded-xl border border-border flex-col justify-center items-start gap-4">
@@ -125,6 +127,20 @@ export default async function LayerPage(props: {
                             </div>
                         )}
                         
+                        {/* Token Contracts */}
+                        <TokenContractsSection 
+                            slug={layer.slug} 
+                            isLayer={true}
+                        />
+                        
+                        {/* Contract Analysis - For non-Solana layers */}
+                        {layer.slug !== "solana" && layer.showContractAnalysis && (
+                            <ProjectContractAddresses 
+                                slug={layer.slug} 
+                                isLayer={true} 
+                            />
+                        )}
+                        
                         {/* Risk Summary */}
                         {(!layer.partialReview || (layer.partialReviewAfter && ["risksummary", "categorization", "trust", "manualcontracts"].includes(layer.partialReviewAfter))) && (
                             <RiskSummary content={layer.riskSummary || []} />
@@ -161,14 +177,44 @@ export default async function LayerPage(props: {
                             </div>
                         )}
                         
-                        {/* Risk Analysis */}
-                        {(!layer.partialReview || (layer.partialReviewAfter && ["trust", "manualcontracts"].includes(layer.partialReviewAfter))) && !layer.underReview && (
+                        {/* Bitcoin Custody Review - Special handling for Solana */}
+                        {layer.slug === "solana" && (!layer.partialReview || (layer.partialReviewAfter && ["trust", "manualcontracts"].includes(layer.partialReviewAfter))) && !layer.underReview && (
+                            <BitcoinCustodyReview
+                                riskAnalysis={layer.riskAnalysis}
+                                riskFactors={layer.riskFactors}
+                                layer={layer}
+                            />
+                        )}
+                        
+                        {/* Contract Analysis - moved here for Solana's new flow */}
+                        {layer.slug === "solana" && layer.showContractAnalysis && (
+                            <ProjectContractAddresses 
+                                slug={layer.slug} 
+                                isLayer={true} 
+                            />
+                        )}
+                        
+                        {/* Network Trust Assumption Review - Special handling for Solana */}
+                        {layer.slug === "solana" && (!layer.partialReview || (layer.partialReviewAfter && ["trust", "manualcontracts"].includes(layer.partialReviewAfter))) && !layer.underReview && (
+                            <NetworkTrustAssumptionReview
+                                riskAnalysis={layer.riskAnalysis}
+                                riskFactors={layer.riskFactors}
+                                layer={layer}
+                            />
+                        )}
+
+                        {/* Risk Analysis - Original flow for non-Solana layers */}
+                        {layer.slug !== "solana" && (!layer.partialReview || (layer.partialReviewAfter && ["trust", "manualcontracts"].includes(layer.partialReviewAfter))) && !layer.underReview && (
                             <RiskAnalysis
                                 riskAnalysis={layer.riskAnalysis}
                                 riskFactors={layer.riskFactors}
                                 layer={layer}
                             />
                         )}
+
+
+
+
                         {layer.partialReview && layer.partialReviewAfter === "trust" && (
                             <div className="self-stretch lg:px-8 px-4 pt-6 pb-8 mb-6 bg-muted/50 rounded-xl border border-border flex-col justify-center items-start gap-4">
                                 <div className="text-lg font-semibold text-foreground mb-3">

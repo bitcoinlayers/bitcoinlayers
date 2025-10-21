@@ -73,7 +73,7 @@ const UnderReviewButton: React.FC<UnderReviewButtonProps> = ({ project }) => {
                                         This project&apos;s categorization and technical implementation are currently under review by our team.
                                     </p>
                                     <p className="text-foreground">
-                                        We are evaluating whether it meets our technical standards to be considered a bitcoin sidesystem or integrated chain.
+                                        We are evaluating whether it meets our technical standards to be considered a bitcoin sidesystem or bitcoin native layer.
                                     </p>
                                     {project.notice && (
                                         <div className="bg-muted p-4 rounded-lg">
@@ -88,9 +88,9 @@ const UnderReviewButton: React.FC<UnderReviewButtonProps> = ({ project }) => {
                             <div className="border-t border-border pt-4">
                                 <h5 className="font-medium text-foreground mb-2">What does this mean?</h5>
                                 <ul className="space-y-2 text-sm text-muted-foreground">
-                                    <li>• Some information may be incomplete or subject to change</li>
-                                    <li>• Risk assessments and categorization are preliminary</li>
-                                    <li>• Final categorization will be published once review is complete</li>
+                                    <li>• If on mainnet, our team has not review the project</li>
+                                    <li>• If on testnet, it is in our radar to be reviewed in the future</li>
+                                    <li>• The review is not posted until we review the project&apos;s source code and/or documentation</li>
                                 </ul>
                             </div>
                             

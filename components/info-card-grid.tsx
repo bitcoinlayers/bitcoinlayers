@@ -10,11 +10,11 @@ export default function InfoCardGrid() {
                 href="/methodology"
             />
             <InfoCard
-                title="Community chats"
-                subtitle="Join the discussion"
-                description="with other layer enjoyers"
-                href="https://t.me/+8rv-1I2gkmQ4ZmJh"
-                isExternal
+                title="Compare layers"
+                subtitle="Analyze the tradeoffs"
+                description="for all systems"
+                href="/peg"
+
             />
             <InfoCard
                 title="Research & media"

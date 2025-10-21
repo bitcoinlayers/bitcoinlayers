@@ -1,0 +1,16 @@
+# Bitcoin Layers Telegram Monitoring Bot Requirements
+
+# Telegram Bot API
+python-telegram-bot==20.7
+
+# HTTP client for async requests
+aiohttp==3.9.1
+
+# Sync HTTP client for compatibility
+requests==2.31.0
+
+# Environment variable management
+python-dotenv==1.0.0
+
+# Additional utilities (optional)
+asyncio-mqtt==0.11.1  # For future MQTT integration if needed

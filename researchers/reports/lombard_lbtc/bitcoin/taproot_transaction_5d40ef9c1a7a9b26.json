@@ -1,0 +1,272 @@
+{
+  "custom_summary": {
+    "title": "Lombard LBTC Staking Transaction Analysis",
+    "description": "This transaction likely demonstrates an address in the Lombard LBTC reserves dashboard executing a withdrawal transaction from the Babylon staking protocol. The scripts below denomstrate an unbonding transaction and a withdrawal transaction.",
+    "author": "Janusz", 
+    "date": "August 2025",
+    "key_findings": [
+      "The <StakerPk> collaborates with the Babylon convenant emulation committee to unbond stake",
+      "The pattern of <StakerPK> OP_CHECKSIGVERIFY above <CovenantPk1> OP_CHECKSIGADD... <CovenantThreshold> OP_NUMEQUAL shows this is an unbonding transaction. ",
+      "The following spend script then shows <StakerPK> withdraw the funds after a timelock expires. This is a withdrawal transaction.",
+      "The pattern of these scripts match the [Babylon staking scripts](https://github.com/babylonlabs-io/babylon/blob/main/docs/staking-script.md)."
+    ]
+  },
+  "transaction_metadata": {
+    "txid": "5d40ef9c1a7a9b26c043333ed08423d0a3fc72a7e1f77c0011aac3041b2f52d0",
+    "network": "mainnet",
+    "analysis_date": "2025-08-12 20:18:42 UTC",
+    "analyzer_type": "taproot_transaction",
+    "api_provider": "blockstream"
+  },
+  "taproot_inputs": [
+    {
+      "spend_type": "script_path",
+      "witness_stack": [
+        {
+          "type": "schnorr_signature",
+          "size": 64,
+          "data": "c6f573ac65a4c079e7b22ede9ef56cb89270f2a1a31e44721d91390853b30b63bc50817d5d270c0ff3e8ce4f5c93e3b7528fcdb63610f94bd91f9df547584f23",
+          "description": "Schnorr signature (64 bytes)"
+        },
+        {
+          "type": "schnorr_signature",
+          "size": 64,
+          "data": "851c1803bc185fc80e49c3d590ece6e7616c1a52f88038e1abf0d75767bf1fa3321c8e8b0413345770c8cc7a4b41fa930bd44af6b922bc979875ef1b158d8336",
+          "description": "Schnorr signature (64 bytes)"
+        },
+        {
+          "type": "schnorr_signature",
+          "size": 64,
+          "data": "684973842f4ea8575bbe5afc6db7851cd7db2cea8ef595a471a0294bd0494828d1074bd1b6fa514da4056a910340a94a5b925908a66342bbdd4f4eef940fcd46",
+          "description": "Schnorr signature (64 bytes)"
+        },
+        {
+          "type": "schnorr_signature",
+          "size": 64,
+          "data": "dc781d062c7cd678921e03474e743ef3b117b4176b0e7963afd79d191b01ca440e0aaf37a1db149096f09bd9609bb0691bc6eac3e518b43f0cbc324f864a4de8",
+          "description": "Schnorr signature (64 bytes)"
+        },
+        {
+          "type": "schnorr_signature",
+          "size": 64,
+          "data": "e63dad6cc8101e43a2e5a9ea4f619281cdb860323f267107942f46440ff16a6a2d52aa5416242f7ad830f279b540dfcf2f20630df8f085601e44d5d6e452d747",
+          "description": "Schnorr signature (64 bytes)"
+        },
+        {
+          "type": "schnorr_signature",
+          "size": 64,
+          "data": "d614562ef60ee3603ec713a061385ff3a1c40ee2ad935bb408ca47bebbdb3695e4c15ef7c52f6850eca766e2d4079168f10547e2f170cf53221987a27bad5e1d",
+          "description": "Schnorr signature (64 bytes)"
+        },
+        {
+          "type": "empty",
+          "size": 0,
+          "data": "",
+          "description": "Empty stack item"
+        },
+        {
+          "type": "empty",
+          "size": 0,
+          "data": "",
+          "description": "Empty stack item"
+        },
+        {
+          "type": "empty",
+          "size": 0,
+          "data": "",
+          "description": "Empty stack item"
+        },
+        {
+          "type": "schnorr_signature",
+          "size": 64,
+          "data": "3c2abcb549dc0070a176b755f02b4a81f3eeb75a00eb544bc8d141f184b6aceb78ffbcab0cf0c150c17b598c8aefd50d1ef8f94b350e89fd9a948a34e10569a0",
+          "description": "Schnorr signature (64 bytes)"
+        },
+        {
+          "type": "tapscript",
+          "size": 342,
+          "data": "2005ff2bedd40edb6f1997b30e5561ab8f9d710f7216303a7b9e8426f1cef25411ad2023b29f89b45f4af41588dcaf0ca572ada32872a88224f311373917f1b37d08d1ac204b15848e495a3a62283daaadb3f458a00859fe48e321f0121ebabbdd6698f9faba208242640732773249312c47ca7bdb50ca79f15f2ecc32b9c83ceebba44fb74df7ba20cbdd028cfe32c1c1f2d84bfec71e19f92df509bba7b8ad31ca6c1a134fe09204ba20d3c79b99ac4d265c2f97ac11e3232c07a598b020cf56c6f055472c893c0967aeba20d45c70d28f169e1f0c7f4a78e2bc73497afe585b70aa897955989068f3350aaaba20de13fc96ea6899acbdc5db3afaa683f62fe35b60ff6eb723dad28a11d2b12f8cba20e36200aaa8dce9453567bba108bdc51f7f1174b97a65e4dc4402fc5de779d41cba20f178fcce82f95c524b53b077e6180bd2d779a9057fdff4255a0af95af918cee0ba569c",
+          "description": "Tapscript being executed"
+        },
+        {
+          "type": "control_block",
+          "size": 97,
+          "data": "c050929b74c1a04954b78b4b6035e97a5e078a5a0f28ec96d547bfee9ace803ac0856939466c65188f50bc0c73d5190693480f74ad25e0cf9acc93180e299fe473ec3f229027fed74f9263a9894b07e8535ed745cacd2b8c9d82a05049e13098e1",
+          "description": "Taproot control block (version: 192)"
+        }
+      ],
+      "control_block": {
+        "version": 192,
+        "parity": 0,
+        "internal_key": "50929b74c1a04954b78b4b6035e97a5e078a5a0f28ec96d547bfee9ace803ac0",
+        "merkle_path": [
+          "856939466c65188f50bc0c73d5190693480f74ad25e0cf9acc93180e299fe473",
+          "ec3f229027fed74f9263a9894b07e8535ed745cacd2b8c9d82a05049e13098e1"
+        ],
+        "script_merkle_root": ""
+      },
+      "executed_script": {
+        "script_hex": "2005ff2bedd40edb6f1997b30e5561ab8f9d710f7216303a7b9e8426f1cef25411ad2023b29f89b45f4af41588dcaf0ca572ada32872a88224f311373917f1b37d08d1ac204b15848e495a3a62283daaadb3f458a00859fe48e321f0121ebabbdd6698f9faba208242640732773249312c47ca7bdb50ca79f15f2ecc32b9c83ceebba44fb74df7ba20cbdd028cfe32c1c1f2d84bfec71e19f92df509bba7b8ad31ca6c1a134fe09204ba20d3c79b99ac4d265c2f97ac11e3232c07a598b020cf56c6f055472c893c0967aeba20d45c70d28f169e1f0c7f4a78e2bc73497afe585b70aa897955989068f3350aaaba20de13fc96ea6899acbdc5db3afaa683f62fe35b60ff6eb723dad28a11d2b12f8cba20e36200aaa8dce9453567bba108bdc51f7f1174b97a65e4dc4402fc5de779d41cba20f178fcce82f95c524b53b077e6180bd2d779a9057fdff4255a0af95af918cee0ba569c",
+        "opcodes": [
+          {
+            "opcode": 32,
+            "name": "PUSH_32",
+            "data": "05ff2bedd40edb6f1997b30e5561ab8f9d710f7216303a7b9e8426f1cef25411"
+          },
+          {
+            "opcode": 173,
+            "name": "OP_CHECKSIGVERIFY",
+            "data": null
+          },
+          {
+            "opcode": 32,
+            "name": "PUSH_32",
+            "data": "23b29f89b45f4af41588dcaf0ca572ada32872a88224f311373917f1b37d08d1"
+          },
+          {
+            "opcode": 172,
+            "name": "OP_CHECKSIG",
+            "data": null
+          },
+          {
+            "opcode": 32,
+            "name": "PUSH_32",
+            "data": "4b15848e495a3a62283daaadb3f458a00859fe48e321f0121ebabbdd6698f9fa"
+          },
+          {
+            "opcode": 186,
+            "name": "OP_CHECKSIGADD",
+            "data": null
+          },
+          {
+            "opcode": 32,
+            "name": "PUSH_32",
+            "data": "8242640732773249312c47ca7bdb50ca79f15f2ecc32b9c83ceebba44fb74df7"
+          },
+          {
+            "opcode": 186,
+            "name": "OP_CHECKSIGADD",
+            "data": null
+          },
+          {
+            "opcode": 32,
+            "name": "PUSH_32",
+            "data": "cbdd028cfe32c1c1f2d84bfec71e19f92df509bba7b8ad31ca6c1a134fe09204"
+          },
+          {
+            "opcode": 186,
+            "name": "OP_CHECKSIGADD",
+            "data": null
+          },
+          {
+            "opcode": 32,
+            "name": "PUSH_32",
+            "data": "d3c79b99ac4d265c2f97ac11e3232c07a598b020cf56c6f055472c893c0967ae"
+          },
+          {
+            "opcode": 186,
+            "name": "OP_CHECKSIGADD",
+            "data": null
+          },
+          {
+            "opcode": 32,
+            "name": "PUSH_32",
+            "data": "d45c70d28f169e1f0c7f4a78e2bc73497afe585b70aa897955989068f3350aaa"
+          },
+          {
+            "opcode": 186,
+            "name": "OP_CHECKSIGADD",
+            "data": null
+          },
+          {
+            "opcode": 32,
+            "name": "PUSH_32",
+            "data": "de13fc96ea6899acbdc5db3afaa683f62fe35b60ff6eb723dad28a11d2b12f8c"
+          },
+          {
+            "opcode": 186,
+            "name": "OP_CHECKSIGADD",
+            "data": null
+          },
+          {
+            "opcode": 32,
+            "name": "PUSH_32",
+            "data": "e36200aaa8dce9453567bba108bdc51f7f1174b97a65e4dc4402fc5de779d41c"
+          },
+          {
+            "opcode": 186,
+            "name": "OP_CHECKSIGADD",
+            "data": null
+          },
+          {
+            "opcode": 32,
+            "name": "PUSH_32",
+            "data": "f178fcce82f95c524b53b077e6180bd2d779a9057fdff4255a0af95af918cee0"
+          },
+          {
+            "opcode": 186,
+            "name": "OP_CHECKSIGADD",
+            "data": null
+          },
+          {
+            "opcode": 86,
+            "name": "OP_6",
+            "data": null
+          },
+          {
+            "opcode": 156,
+            "name": "OP_156",
+            "data": null
+          }
+        ],
+        "script_type": "Threshold Multisig (OP_CHECKSIGADD)",
+        "spending_conditions": [
+          "Threshold signature requirement"
+        ],
+        "required_signatures": 6,
+        "timelock_conditions": []
+      },
+      "signature_analysis": {
+        "total_signatures": 7,
+        "signature_types": [
+          "schnorr",
+          "schnorr",
+          "schnorr",
+          "schnorr",
+          "schnorr",
+          "schnorr",
+          "schnorr"
+        ],
+        "analysis": "Found 7 Schnorr signatures in witness stack"
+      },
+      "script_tree_info": {
+        "merkle_depth": 2,
+        "total_scripts": 4,
+        "script_path_length": 2,
+        "analysis": "Script tree with 2 levels"
+      }
+    }
+  ],
+  "taproot_outputs": [
+    {
+      "index": 0,
+      "value": 59999990400,
+      "script": "51209e22bf0b190e834f7f68b49053bab6df42d02f1258fea393bfeecd8588ab6fc6",
+      "address": "bc1pnc3t7zcep6p57lmgkjg98w4kmapdqtcjtrl28yalamxctz9tdlrq7u490y",
+      "analysis": "Taproot output - can be spent via key-path or script-path"
+    }
+  ],
+  "script_tree_analysis": {},
+  "signature_analysis": {},
+  "layer_association": {
+    "wrapper_name": "lombard_lbtc",
+    "analysis_type": "custody",
+    "integration_target": "btc_custody_section"
+  },
+  "metadata": {
+    "analyzer_type": "taproot_transaction",
+    "network": "mainnet",
+    "analysis_date": "2025-08-12 20:18:42 UTC",
+    "api_provider": "blockstream"
+  }
+}

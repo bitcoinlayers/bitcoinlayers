@@ -181,6 +181,10 @@ const entityTypeDefinitions: Record<EntityType, { name: string; description: str
         name: "PoS Network with Bitcoin staking",
         description: "The network is an alternative PoS network that is partially secured by bitcoin staking. The network also supports various bitcoin wrapped assets."
     },
+    [EntityType.Other]: {
+        name: "Other",
+        description: "A protocol or network that doesn't fit into the standard categories or is still being evaluated for proper classification."
+    },
     [EntityType["-"]]: {
         name: "Not Applicable",
         description: "This classification does not apply to the current context."

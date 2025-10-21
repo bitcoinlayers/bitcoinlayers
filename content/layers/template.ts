@@ -33,6 +33,7 @@ const template: LayerProject = {
     underReview: true,
     partialReview: false, // Set to true for partial review mode
     partialReviewAfter: undefined, // Options: "tokencontracts", "risksummary", "categorization", "trust", "manualcontracts"
+    showContractAnalysis: false, // Set to true to show contract analysis section after token contracts
     
     // EXAMPLES:
     // partialReview: true, partialReviewAfter: "tokencontracts" -> Show only Overview, Chart, Token Contracts

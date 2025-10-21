@@ -17,6 +17,7 @@ import {
     UseCaseSnippet,
     RiskSummarySnippet,
 } from "../props";
+import custodyTradeoffs from "../../components/charts/chart-content/alternative-network";
 
 const ethereum: LayerProject = {
     type: Type.Layer,
@@ -29,6 +30,7 @@ const ethereum: LayerProject = {
     liquidStaking: false,
     bridge: false,
     underReview: false,
+    partialReview: true, partialReviewAfter: "trust",// Set to true for partial review mode
     riskFactors: [
         RiskFactor.VeryHigh,
         RiskFactor.AlternativePoS,
@@ -284,73 +286,8 @@ const ethereum: LayerProject = {
                 },
             ],
         },
-        {
-            category: RiskCategory.DataAvailability,
-            score: 0,
-            tier: RiskFactor.AlternativePoS,
-            title: "Data is stored and made available by Ethereum full nodes",
-            content: AtlSnippet.DAConsensusNetwork,
-        },
-        {
-            category: RiskCategory.NetworkOperators,
-            score: 0,
-            tier: RiskFactor.AlternativePoS,
-            title: "Ethereum is operated by an alternative validator set",
-            content: AtlSnippet.OperatorsPoSNetwork,
-        },
-        {
-            category: RiskCategory.FinalityGuarantees,
-            score: 0,
-            tier: RiskFactor.AlternativePoS,
-            title: "Finality on Ethereum is guaranteed by an alternative consensus mechanism",
-            content: AtlSnippet.FinalityConsensusNetwork,
-        },
     ],
-    sections: [
-        {
-            id: "bitcoinsecurity",
-            title: "Bitcoin Security",
-            content: [
-                {
-                    title: "Ethereum does not inherit any security from bitcoin",
-                    content: BitcoinSecuritySnippet.NoSecurity,
-                },
-                {
-                    title: "ETH token used to pay fees",
-                    content: BitcoinSecuritySnippet.AltTokenFees,
-                },
-                {
-                    title: "No MEV introduced to bitcoin",
-                    content:
-                        "Ethereum does not introduce MEV to bitcoin. Blocks in Ethereum are primarily auctioned off to builders who construct blocks on behalf of a proposer in a given slot. The majority of blocks in Ethereum are built by 2-3 builders.",
-                },
-                {
-                    title: "Ethereum does not contribute to the security budget",
-                    content: BitcoinSecuritySnippet.NoSecurity,
-                },
-            ],
-        },
-        {
-            id: "technology",
-            title: "Technology",
-            content: [
-                {
-                    title: "Ethereum Virtual Machine",
-                    content: TechnologySnippet.EVM,
-                },
-            ],
-        },
-        {
-            id: "usecases",
-            title: "Use Cases",
-            content: [
-                {
-                    title: "Onchain applications",
-                    content: UseCaseSnippet.OnchainApps,
-                },
-            ],
-        },
-    ],
+    sections: [],
 };
 
 export default ethereum;

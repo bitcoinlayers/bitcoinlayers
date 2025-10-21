@@ -24,6 +24,9 @@ export enum BitcoinSecuritySnippet { //TODO: Janusz to add more here
     MergeMineDAFees = "Fees from securing the network's data availability are paid to Bitcoin miners who optionally merge-mine the network.",
     MergeMineFees = "Fees from securing the network's are paid to Bitcoin miners who optionally merge-mine the network.",
     MergeMineMEV = "The network does not leak MEV to bitcoin. Bitcoin miners may take advantage of opportunities to extract MEV if the network is experiencing high activity.",
+    BasedSequencedRollup = "Transactions are ordered and included in bitcoin blocks by bitcoin miners. Users of the network pay bitcoin transaction fees which contributes to the security budget.",
+    BitcoinDASecurity = "The network's data availability layer is bitcoin. This means that it relies on bitcoin's security for the availability of data for its full node software (sometimes known as an indexer).",
+    BasedSequencedFees = "Users of the network pay bitcoin transaction fees to get their transactions included into bitcoin blocks.",
     Template = "Template used for the template prop file.",
 }
 
@@ -171,6 +174,12 @@ export const Alertsnippet = { //TODO: Janusz to add more here
         type: "info" as const,
         title: "This project meets our technical standards for bitcoin sidesystems",
         content: "The project has implemented the necessary infrastructure to meet our standards for bitcoin sidesystems. It implements an official bridge program that is managed by a distributed, publicly known federation. These operators risk damaging their public reputation if they act maliciously.",
+        expandable: false,
+    },
+    NotOpenSource: {
+        type: "warning" as const,
+        title: "The implementation is not open source",
+        content: "The implementation for this protocol it is not open source. We are unable to verify if the claims made in documentation sites are valid.",
         expandable: false,
     },
     UnderReview: {

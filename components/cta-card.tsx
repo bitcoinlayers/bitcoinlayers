@@ -10,11 +10,11 @@ export default function CtaCard() {
 
     const content = (() => {
         const buildingContent = {
-            title: "Some projects in sidesystems are not bitcoin layers",
+            title: "Learn more about how we categorize projects",
             description:
-                "Projects will be moved to alternative category if they don't meet our requirements",
-            ctaText: "Read the blog",
-            url: "https://www.lxresearch.co/starting-to-define-layers-a-year-later/",
+                "Bitcoin layers are categorized based on their techncial implementation",
+            ctaText: "See our framework",
+            url: "https://www.bitcoinlayers.org/methodology",
             isExternal: true,
         };
 
