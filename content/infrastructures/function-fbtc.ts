@@ -49,7 +49,7 @@ const functionfbtc: InfrastructureProject = {
         },
     ],
     description:
-        "Ignitions's FBTC is a BTC-backed reserve asset that can be used across various EVM chains. Previously known as Fire FBTC.",
+        "Function's FBTC is a BTC-backed reserve asset that can be used across various EVM chains. Previously known as Fire FBTC.",
     riskSummary: [
         {
             title: PegRiskSummarySnippet.CustodianTitle,
