@@ -20,7 +20,7 @@ import xsolvbtcProject from "../content/infrastructures/solv-xsolvbtc";
 import solvenaProject from "../content/infrastructures/solv-solvbtcena";
 import bedrockProject from "../content/infrastructures/bedrock-unibtc";
 import pumpProject from "../content/infrastructures/pump-pumpbtc";
-import fireProject from "../content/infrastructures/firebitcoin-fbtc";
+import functionProject from "../content/infrastructures/function-fbtc";
 import bitcoinosProject from "../content/infrastructures/bitcoinos";
 import binancebtcbProject from "../content/infrastructures/binance-btcb";
 import unirouterProject from "../content/infrastructures/unirouter-ubtc";
@@ -88,7 +88,7 @@ const xsolvbtc: InfrastructureProject = xsolvbtcProject;
 const solvena: InfrastructureProject = solvenaProject;
 const bedrock: InfrastructureProject = bedrockProject;
 const pump: InfrastructureProject = pumpProject;
-const fire: InfrastructureProject = fireProject;
+const functionfbtc: InfrastructureProject = functionProject;
 const bitcoinos: InfrastructureProject = bitcoinosProject;
 const binancebtcb: InfrastructureProject = binancebtcbProject;
 const unirouter: InfrastructureProject = unirouterProject;
@@ -148,7 +148,7 @@ export const allInfrastructures: InfrastructureProject[] = [
     solvena,
     bedrock,
     pump,
-    fire,
+    functionfbtc,
     binancebtcb,
     unirouter,
     acorn,
@@ -189,6 +189,7 @@ export const allInfrastructures: InfrastructureProject[] = [
     fiammafiabtcInfra,
 ];
 
-export const allInfrastructureSlugs: string[] = [...allInfrastructures, ...popupOnlyInfrastructures].map(
-    (infrastructure) => infrastructure.slug,
-);
+export const allInfrastructureSlugs: string[] = [
+    ...allInfrastructures,
+    ...popupOnlyInfrastructures,
+].map((infrastructure) => infrastructure.slug);

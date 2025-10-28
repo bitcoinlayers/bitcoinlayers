@@ -10,10 +10,10 @@ import {
     PegRiskSummarySnippet,
 } from "../props";
 
-const fire: InfrastructureProject = {
+const functionfbtc: InfrastructureProject = {
     type: Type.Infrastructure,
-    slug: "firebitcoin-fbtc",
-    title: "Fire Bitcoin FBTC",
+    slug: "function-fbtc",
+    title: "Function FBTC",
     entityType: EntityType.ReserveAsset,
     live: LiveStatus.Mainnet,
     staking: false,
@@ -29,11 +29,11 @@ const fire: InfrastructureProject = {
     links: [
         {
             text: Site.Website,
-            url: "https://fbtc.com/",
+            url: "https://www.fxn.xyz/",
         },
         {
             text: Site.Docs,
-            url: "https://docs.fbtc.com",
+            url: "https://docs.fbtc.com/",
         },
         // {
         //     text: Site.Explorer,
@@ -45,11 +45,11 @@ const fire: InfrastructureProject = {
         },
         {
             text: Site.Twitter,
-            url: "https://x.com/IgnitionFBTC",
+            url: "https://x.com/FunctionBTC",
         },
     ],
     description:
-        "Ignitions's FBTC is a BTC-backed reserve asset that can be used across various EVM chains.",
+        "Ignitions's FBTC is a BTC-backed reserve asset that can be used across various EVM chains. Previously known as Fire FBTC.",
     riskSummary: [
         {
             title: PegRiskSummarySnippet.CustodianTitle,
@@ -80,4 +80,4 @@ const fire: InfrastructureProject = {
     ],
 };
 
-export default fire;
+export default functionfbtc;

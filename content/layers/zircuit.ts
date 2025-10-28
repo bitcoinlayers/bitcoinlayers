@@ -12,7 +12,7 @@ import {
     ContentSection,
     RiskCategory,
 } from "../props";
-import { Reviewsnippet} from "../props-layers-reviews";
+import { Reviewsnippet } from "../props-layers-reviews";
 import {
     BitcoinSecuritySnippet,
     UseCaseSnippet,
@@ -34,7 +34,8 @@ const zircuit: LayerProject = {
     liquidStaking: false,
     bridge: false,
     underReview: false,
-    partialReview: true, partialReviewAfter: "trust",// Set to true for partial review mode
+    partialReview: true,
+    partialReviewAfter: "trust", // Set to true for partial review mode
     riskFactors: [
         RiskFactor.VeryHigh,
         RiskFactor.Medium,
@@ -68,7 +69,8 @@ const zircuit: LayerProject = {
             url: "https://x.com/ZircuitL2",
         },
     ],
-    description: "Zircuit is an Ethereum rollup that supports a variety of BTC-backed assets.",
+    description:
+        "Zircuit is an Ethereum rollup that supports a variety of BTC-backed assets.",
     riskSummary: [
         {
             title: RiskSummarySnippet.TitleCustodianPegs,
@@ -118,8 +120,8 @@ const zircuit: LayerProject = {
                     alert: Alertsnippet.AltRollupAltTokenNoFraudProofsPlusUpgrade,
                 },
                 {
-                    name: "Fire FBTC",
-                    infrastructureSlug: "firebitcoin-fbtc",
+                    name: "Function FBTC",
+                    infrastructureSlug: "function-fbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: Reviewsnippet.CustodianPeg,
@@ -148,7 +150,7 @@ const zircuit: LayerProject = {
             score: 0,
             tier: RiskFactor.VeryHigh,
             title: "The network is operated by a centralized entity",
-            content: `${Reviewsnippet.AltRollupSelfSequenceNone}`
+            content: `${Reviewsnippet.AltRollupSelfSequenceNone}`,
         },
         {
             category: RiskCategory.FinalityGuarantees,
@@ -159,7 +161,7 @@ const zircuit: LayerProject = {
             alert: Alertsnippet.AltRollupNotice,
         },
     ],
-        sections: [
+    sections: [
         {
             id: "additionalconsiderations",
             title: "Additional Considerations",
@@ -170,7 +172,7 @@ const zircuit: LayerProject = {
                 },
             ],
         },
-    ]
+    ],
 };
 
 export default zircuit;

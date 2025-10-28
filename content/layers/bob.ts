@@ -122,8 +122,8 @@ const bob: LayerProject = {
                     content: `${TokenSnippet.LombardLBTC} LBTC is minted via its official bridge between BOB and Ethereum. This bridge is finalized by a Hybrid proving system using validity proofs and fraud proofs.\n\n${ReviewSnippet.CentralizedUpgradeableBridge}`,
                 },
                 {
-                    name: "Fire FBTC",
-                    infrastructureSlug: "firebitcoin-fbtc",
+                    name: "Function FBTC",
+                    infrastructureSlug: "function-fbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: TokenSnippet.CustodianPeg,
@@ -237,13 +237,16 @@ const bob: LayerProject = {
                 },
                 {
                     title: "OP Kailua",
-                    content: "BOB leverages a hybrid proving system that leverages validity proofs and fraud proofs to finalize bridge programs on Ethereum. The system leverages a priveleged proposer, known as the Vanguard, that has the first right to submit a state update to BOB smart contracts on Ethereum. It can either submit a validity proof to finalize the state update after a verifier contract verifies the proof, or it can submit a state root that is validated after a challenge window passes. If only a state root is submitted, it finalizes after three days. Anyone is able to challenge this proposal by submitting a conflicting state update proposal. In the event of a challenge proposal, the Vanguard or the challenger submit a validity proof that is verified by an Ethereum smart contract. Only a correct proposal can be validated by the verifier contract, so only the correct proposal is accepted to advance the state. The publisher of an incorrect state update is slashed the 0.5 ETH collateral they posted.",
+                    content:
+                        "BOB leverages a hybrid proving system that leverages validity proofs and fraud proofs to finalize bridge programs on Ethereum. The system leverages a priveleged proposer, known as the Vanguard, that has the first right to submit a state update to BOB smart contracts on Ethereum. It can either submit a validity proof to finalize the state update after a verifier contract verifies the proof, or it can submit a state root that is validated after a challenge window passes. If only a state root is submitted, it finalizes after three days. Anyone is able to challenge this proposal by submitting a conflicting state update proposal. In the event of a challenge proposal, the Vanguard or the challenger submit a validity proof that is verified by an Ethereum smart contract. Only a correct proposal can be validated by the verifier contract, so only the correct proposal is accepted to advance the state. The publisher of an incorrect state update is slashed the 0.5 ETH collateral they posted.",
                     alert: {
                         type: "info" as const,
                         title: "Learn more about OP Kailua",
-                        content: "L2Beat has a great overview of the hybrid proving system used by BOB.",
+                        content:
+                            "L2Beat has a great overview of the hybrid proving system used by BOB.",
                         linkText: "L2Beat",
-                        linkUrl: "https://l2beat.com/scaling/projects/bob#state-validation",
+                        linkUrl:
+                            "https://l2beat.com/scaling/projects/bob#state-validation",
                         expandable: true,
                     },
                 },

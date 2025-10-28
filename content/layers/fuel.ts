@@ -12,7 +12,7 @@ import {
     ContentSection,
     RiskCategory,
 } from "../props";
-import { Reviewsnippet} from "../props-layers-reviews";
+import { Reviewsnippet } from "../props-layers-reviews";
 import {
     BitcoinSecuritySnippet,
     UseCaseSnippet,
@@ -34,7 +34,8 @@ const fuel: LayerProject = {
     liquidStaking: false,
     bridge: false,
     underReview: false,
-    partialReview: true, partialReviewAfter: "trust",// Set to true for partial review mode
+    partialReview: true,
+    partialReviewAfter: "trust", // Set to true for partial review mode
     riskFactors: [
         RiskFactor.VeryHigh,
         RiskFactor.High,
@@ -68,7 +69,8 @@ const fuel: LayerProject = {
             url: "https://x.com/fuel_network",
         },
     ],
-    description: "Fuel is an Ethereum rollup that supports a variety of wrapped bitcoin assets on its chain. ",
+    description:
+        "Fuel is an Ethereum rollup that supports a variety of wrapped bitcoin assets on its chain. ",
     riskSummary: [
         {
             title: RiskSummarySnippet.TitleCustodianPegs,
@@ -81,7 +83,7 @@ const fuel: LayerProject = {
         {
             title: RiskSummarySnippet.TitleAltDA,
             content: RiskSummarySnippet.RiskSummaryAltDANetwork,
-        }
+        },
     ],
     riskAnalysis: [
         {
@@ -92,8 +94,8 @@ const fuel: LayerProject = {
             content: "",
             pegs: [
                 {
-                    name: "Fire FBTC",
-                    infrastructureSlug: "firebitcoin-fbtc",
+                    name: "Function FBTC",
+                    infrastructureSlug: "function-fbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: Reviewsnippet.CustodianPeg,
@@ -162,26 +164,26 @@ const fuel: LayerProject = {
     ],
     sections: [
         {
-                    id: "additionalconsiderations",
-                    title: "Additional Considerations",
-                    content: [
-                        {
-                            title: "This project has undergone a partial review",
-                            content: AdditionalSnippet.InitialReview,
-                        },
-                    ],
-                },
+            id: "additionalconsiderations",
+            title: "Additional Considerations",
+            content: [
                 {
-                    id: "knowledgebits",
-                    title: "Knowledge Bits",
-                    content: [
-                        {
-                            title: "The network has been reviewed by L2Beat",
-                            content: KnowledgeBitSnippet.EthereumL2,
-                        },
-                    ],
+                    title: "This project has undergone a partial review",
+                    content: AdditionalSnippet.InitialReview,
                 },
             ],
+        },
+        {
+            id: "knowledgebits",
+            title: "Knowledge Bits",
+            content: [
+                {
+                    title: "The network has been reviewed by L2Beat",
+                    content: KnowledgeBitSnippet.EthereumL2,
+                },
+            ],
+        },
+    ],
 };
 
 export default fuel;

@@ -61,16 +61,16 @@ const mezo: LayerProject = {
     ],
     description:
         "Mezo is an EVM-compatible blockchain that supports general purpose onchain applications. It runs on CometBFT consensus protocol and is operated by a federated validator set. Its official bridge is supports bridging tBTC from Ethereum to Mezo.",
-        riskSummary: [
-            {
-                title: RiskSummarySnippet.TitleCustodianPegs,
-                content: `${RiskSummarySnippet.RiskSummaryCustodianPegs}The majority of Mezo's BTC-backed assets are secured by a bridge contract on Ethereum. This bridge contract can be upgraded by a 5/9 federation.`
-            },
-            {
-                title: RiskSummarySnippet.TitleFederation,
-                content: RiskSummarySnippet.RiskSummaryFederation,
-            },
-        ],
+    riskSummary: [
+        {
+            title: RiskSummarySnippet.TitleCustodianPegs,
+            content: `${RiskSummarySnippet.RiskSummaryCustodianPegs}The majority of Mezo's BTC-backed assets are secured by a bridge contract on Ethereum. This bridge contract can be upgraded by a 5/9 federation.`,
+        },
+        {
+            title: RiskSummarySnippet.TitleFederation,
+            content: RiskSummarySnippet.RiskSummaryFederation,
+        },
+    ],
     riskAnalysis: [
         {
             category: RiskCategory.BtcCustody,
@@ -120,8 +120,8 @@ const mezo: LayerProject = {
                     content: `${TokenSnippet.CoinbasecbBTC}\n\nThis token is bridge to Mezo through an escrow contract on Ethereum. The bridge is upgradable by a 9 member federation. 5 signers are needed to initiate upgrades. The identity of these signers is unknown.`,
                 },
                 {
-                    name: "Fire Bitcoin FBTC",
-                    infrastructureSlug: "firebitcoin-fbtc",
+                    name: "Function FBTC",
+                    infrastructureSlug: "function-fbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: TokenSnippet.CustodianPeg,
@@ -163,14 +163,18 @@ const mezo: LayerProject = {
         {
             title: "Mezo Bridge Escrow Contract",
             address: "0xF6680EA3b480cA2b72D96ea13cCAF2cFd8e6908c",
-            subtitle: "Main bridge contract that escrows wrapped BTC assets on Ethereum to back corresponding assets on Mezo.",
-            explorerUrl: "https://etherscan.io/address/0xF6680EA3b480cA2b72D96ea13cCAF2cFd8e6908c"
+            subtitle:
+                "Main bridge contract that escrows wrapped BTC assets on Ethereum to back corresponding assets on Mezo.",
+            explorerUrl:
+                "https://etherscan.io/address/0xF6680EA3b480cA2b72D96ea13cCAF2cFd8e6908c",
         },
         {
             title: "Governance Multisig",
-            address: "0x98D8899c3030741925BE630C710A98B57F397C7a", 
-            subtitle: "5-of-9 multisig responsible for upgrades to the bridge escrow contract.",
-            explorerUrl: "https://etherscan.io/address/0x98D8899c3030741925BE630C710A98B57F397C7a"
+            address: "0x98D8899c3030741925BE630C710A98B57F397C7a",
+            subtitle:
+                "5-of-9 multisig responsible for upgrades to the bridge escrow contract.",
+            explorerUrl:
+                "https://etherscan.io/address/0x98D8899c3030741925BE630C710A98B57F397C7a",
         },
     ],
     sections: [
@@ -222,11 +226,13 @@ const mezo: LayerProject = {
             content: [
                 {
                     title: "Threshold Network's tBTC review",
-                    content: "Bitcoin Layers' review of [Threshold Network's tBTC](https://bitcoinlayers.org/layers/threshold-tbtc)",
+                    content:
+                        "Bitcoin Layers' review of [Threshold Network's tBTC](https://bitcoinlayers.org/layers/threshold-tbtc)",
                 },
                 {
                     title: "Proxy Upgrade Pattern",
-                    content: "Learn how smart contracts on [Ethereum are upgraded](https://docs.openzeppelin.com/upgrades-plugins/proxies)",
+                    content:
+                        "Learn how smart contracts on [Ethereum are upgraded](https://docs.openzeppelin.com/upgrades-plugins/proxies)",
                 },
             ],
         },

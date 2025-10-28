@@ -32,7 +32,8 @@ const berachain: LayerProject = {
     liquidStaking: false,
     bridge: false,
     underReview: false,
-    partialReview: true, partialReviewAfter: "trust",// Set to true for partial review mode
+    partialReview: true,
+    partialReviewAfter: "trust", // Set to true for partial review mode
     riskFactors: [
         RiskFactor.VeryHigh,
         RiskFactor.AlternativePoS,
@@ -68,17 +69,17 @@ const berachain: LayerProject = {
     ],
     description:
         "Berachain is an EVM-compatible L1. It leverages a novel consensus mechanism and is home to various BTC-derivative assets.",
-        riskSummary: [
-            {
-                title: RiskSummarySnippet.TitleCustodianPegs,
-                content: RiskSummarySnippet.RiskSummaryCustodianPegs,
-            },
-            {
-                title: RiskSummarySnippet.TitleAlternativeL1,
-                content: RiskSummarySnippet.RiskSummaryAlternativeL1,
-            }
-        ],
-        riskAnalysis: [
+    riskSummary: [
+        {
+            title: RiskSummarySnippet.TitleCustodianPegs,
+            content: RiskSummarySnippet.RiskSummaryCustodianPegs,
+        },
+        {
+            title: RiskSummarySnippet.TitleAlternativeL1,
+            content: RiskSummarySnippet.RiskSummaryAlternativeL1,
+        },
+    ],
+    riskAnalysis: [
         {
             category: RiskCategory.BtcCustody,
             score: 0,
@@ -127,8 +128,8 @@ const berachain: LayerProject = {
                     content: TokenSnippet.BitGowBTC,
                 },
                 {
-                    name: "Fire FBTC",
-                    infrastructureSlug: "firebitcoin-fbtc",
+                    name: "Function FBTC",
+                    infrastructureSlug: "function-fbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: TokenSnippet.CustodianPeg,

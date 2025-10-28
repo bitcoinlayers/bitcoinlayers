@@ -70,17 +70,17 @@ const bnbsmartchain: LayerProject = {
     ],
     description:
         "BNB Smart Chain is an alternative proof-of-stake blockchain that supports a number of wrapped BTC tokens. It offers an EVM-compatible execution environment which supports more expressive smart contracts.",
-        riskSummary: [
-            {
-                title: RiskSummarySnippet.TitleCustodianPegs,
-                content: RiskSummarySnippet.RiskSummaryCustodianPegs,
-            },
-            {
-                title: RiskSummarySnippet.TitleAlternativeL1,
-                content: RiskSummarySnippet.RiskSummaryAlternativeL1,
-            },
-        ],
-        riskAnalysis: [
+    riskSummary: [
+        {
+            title: RiskSummarySnippet.TitleCustodianPegs,
+            content: RiskSummarySnippet.RiskSummaryCustodianPegs,
+        },
+        {
+            title: RiskSummarySnippet.TitleAlternativeL1,
+            content: RiskSummarySnippet.RiskSummaryAlternativeL1,
+        },
+    ],
+    riskAnalysis: [
         {
             category: RiskCategory.BtcCustody,
             score: 0,
@@ -146,7 +146,7 @@ const bnbsmartchain: LayerProject = {
                 },
                 {
                     name: "FBTC",
-                    infrastructureSlug: "firebitcoin-fbtc",
+                    infrastructureSlug: "function-fbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: TokenSnippet.CustodianPeg,
@@ -214,7 +214,7 @@ const bnbsmartchain: LayerProject = {
                     score: 0,
                     tier: RiskFactor.UnderReview,
                     title: TokenSnippet.UnderReview,
-                    content: `${TokenSnippet.iBTC}\n\n${TokenSnippet.smartcontractreview}\n\n`
+                    content: `${TokenSnippet.iBTC}\n\n${TokenSnippet.smartcontractreview}\n\n`,
                 },
                 {
                     name: "Bedrock brBTC",

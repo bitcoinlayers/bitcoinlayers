@@ -73,7 +73,7 @@ const arbitrum: LayerProject = {
     riskSummary: [
         {
             title: "All BTC pegs have custodian trust assumptions",
-            content: RiskSummarySnippet.RiskSummaryCustodianPegs
+            content: RiskSummarySnippet.RiskSummaryCustodianPegs,
         },
         {
             title: "Some contracts immediately upgradeable by Arbitrum Security council",
@@ -177,8 +177,8 @@ const arbitrum: LayerProject = {
                     content: `${TokenSnippet.AvalancheBTCb}\n\n${TokenSnippet.smartcontractreview}`,
                 },
                 {
-                    name: "Fire Bitcoin FBTC",
-                    infrastructureSlug: "firebitcoin-fbtc",
+                    name: "Function FBTC",
+                    infrastructureSlug: "function-fbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: TokenSnippet.CustodianPeg,

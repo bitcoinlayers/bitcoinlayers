@@ -30,7 +30,8 @@ const ethereum: LayerProject = {
     liquidStaking: false,
     bridge: false,
     underReview: false,
-    partialReview: true, partialReviewAfter: "trust",// Set to true for partial review mode
+    partialReview: true,
+    partialReviewAfter: "trust", // Set to true for partial review mode
     riskFactors: [
         RiskFactor.VeryHigh,
         RiskFactor.AlternativePoS,
@@ -142,7 +143,7 @@ const ethereum: LayerProject = {
                 },
                 {
                     name: "FBTC",
-                    infrastructureSlug: "firebitcoin-fbtc",
+                    infrastructureSlug: "function-fbtc",
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: TokenSnippet.CustodianPeg,
@@ -202,7 +203,7 @@ const ethereum: LayerProject = {
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: TokenSnippet.CustodianPeg,
-                    content: `${TokenSnippet.BinanceBTCB}${TokenSnippet.smartcontractreview},`
+                    content: `${TokenSnippet.BinanceBTCB}${TokenSnippet.smartcontractreview},`,
                 },
                 {
                     name: "Obelisk oTCB",
@@ -210,7 +211,7 @@ const ethereum: LayerProject = {
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: TokenSnippet.CustodianPeg,
-                    content: `${TokenSnippet.ObeliskoBTC}${TokenSnippet.smartcontractreview},`
+                    content: `${TokenSnippet.ObeliskoBTC}${TokenSnippet.smartcontractreview},`,
                 },
                 {
                     name: "IBTC Network iBTC",
@@ -218,7 +219,7 @@ const ethereum: LayerProject = {
                     score: 0,
                     tier: RiskFactor.UnderReview,
                     title: TokenSnippet.UnderReview,
-                    content: `${TokenSnippet.ibtcnetworkibtc}`
+                    content: `${TokenSnippet.ibtcnetworkibtc}`,
                 },
                 {
                     name: "Xlink aBTC",
@@ -226,7 +227,7 @@ const ethereum: LayerProject = {
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: TokenSnippet.CustodianPeg,
-                    content: `${TokenSnippet.xlink}${TokenSnippet.smartcontractreview},`
+                    content: `${TokenSnippet.xlink}${TokenSnippet.smartcontractreview},`,
                 },
                 {
                     name: "Avalanche BTC.b",
@@ -234,7 +235,7 @@ const ethereum: LayerProject = {
                     score: 0,
                     tier: RiskFactor.VeryHigh,
                     title: TokenSnippet.FederationPeg,
-                    content: `${TokenSnippet.AvalancheBTCb}${TokenSnippet.smartcontractreview},`
+                    content: `${TokenSnippet.AvalancheBTCb}${TokenSnippet.smartcontractreview},`,
                 },
                 {
                     name: "Bedrock brBTC",

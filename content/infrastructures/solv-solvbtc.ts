@@ -52,17 +52,17 @@ const solv: InfrastructureProject = {
     ],
     description:
         "SolvBTC is a BTC-backed reserve asset that is backed by native BTC and various BTC-derivatives. It is deployed across various blockchains.",
-        riskSummary: [
-            {
-                title: PegRiskSummarySnippet.CustodianTitle,
-                content: PegRiskSummarySnippet.Guardian,
-            },
-            {
-                title: "Various reserve assets used",
-                content: PegRiskSummarySnippet.MultipleAssets,
-            },
-        ],
-        sections: [
+    riskSummary: [
+        {
+            title: PegRiskSummarySnippet.CustodianTitle,
+            content: PegRiskSummarySnippet.Guardian,
+        },
+        {
+            title: "Various reserve assets used",
+            content: PegRiskSummarySnippet.MultipleAssets,
+        },
+    ],
+    sections: [
         {
             id: "protocoltransparency",
             title: "Protocol Transparency",
@@ -91,7 +91,8 @@ const solv: InfrastructureProject = {
             content: [
                 {
                     title: "Blacklist function added to SolvV3 contracts",
-                    content: "The SolvBTCV3 [release](https://github.com/solv-finance/SolvBTC/commits/main/contracts/SolvBTCV3.sol) will see a blaskList function implemented. This function will enable the owner of the SolvBTC contract to blacklist individual users; refraining them from interacting with the token. Current implementations of SolvBTC do not have this function.",
+                    content:
+                        "The SolvBTCV3 [release](https://github.com/solv-finance/SolvBTC/commits/main/contracts/SolvBTCV3.sol) will see a blaskList function implemented. This function will enable the owner of the SolvBTC contract to blacklist individual users; refraining them from interacting with the token. Current implementations of SolvBTC do not have this function.",
                 },
             ],
         },
@@ -103,7 +104,7 @@ const solv: InfrastructureProject = {
             tier: "",
             title: "Users trust custodians managing BTC backing SolvBTC and the operators of various BTC-derivative assets.",
             content:
-                "SolvBTC claims to be partially backed by native BTC managed by custodian providers. It’s been stated that Copper, Ceffu, Fireblocks, and Cobo are custodial providers securing BTC that partially backs SolvBTC. It's additionally backed by various BTC-derivative assets; [BTCB](https://www.bitcoinlayers.org/infrastructure/binance-btcb), [wBTC](https://www.bitcoinlayers.org/infrastructure/bitgo-wbtc), [FBTC](https://www.bitcoinlayers.org/infrastructure/firebitcoin-fbtc), [cbBTC](https://www.bitcoinlayers.org/infrastructure/coinbase-cbbtc), [BTC.b](https://www.bitcoinlayers.org/infrastructure/avalanche-btcb), and [tBTC](https://www.bitcoinlayers.org/infrastructure/threshold-tbtc).\n\nMultisigs securing derivative assets backed by SolvBTC are largely secured by GnosisSafes with 5 signers. The signing threshold varies across implementation. The M-BTC safe has a ⅕ threshold where the wBTC safe on Ethereum has a ⅗.\n\n[Source](https://solvprotocol.medium.com/introducing-solvbtc-the-first-ever-yield-bearing-bitcoin-871179c73ca6)",
+                "SolvBTC claims to be partially backed by native BTC managed by custodian providers. It’s been stated that Copper, Ceffu, Fireblocks, and Cobo are custodial providers securing BTC that partially backs SolvBTC. It's additionally backed by various BTC-derivative assets; [BTCB](https://www.bitcoinlayers.org/infrastructure/binance-btcb), [wBTC](https://www.bitcoinlayers.org/infrastructure/bitgo-wbtc), [FBTC](https://www.bitcoinlayers.org/infrastructure/function-fbtc), [cbBTC](https://www.bitcoinlayers.org/infrastructure/coinbase-cbbtc), [BTC.b](https://www.bitcoinlayers.org/infrastructure/avalanche-btcb), and [tBTC](https://www.bitcoinlayers.org/infrastructure/threshold-tbtc).\n\nMultisigs securing derivative assets backed by SolvBTC are largely secured by GnosisSafes with 5 signers. The signing threshold varies across implementation. The M-BTC safe has a ⅕ threshold where the wBTC safe on Ethereum has a ⅗.\n\n[Source](https://solvprotocol.medium.com/introducing-solvbtc-the-first-ever-yield-bearing-bitcoin-871179c73ca6)",
         },
         {
             category: AssessmentCategory.SupplyIssuance,
