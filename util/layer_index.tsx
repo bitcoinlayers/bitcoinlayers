@@ -65,6 +65,7 @@ import suiProject from "@/content/layers/sui";
 import botanixProject from "@/content/layers/botanix";
 import goatProject from "@/content/layers/goat";
 import arkadeProject from "@/content/layers/arkade";
+import etherlinkProject from "@/content/layers/etherlink";
 import bitcoinStakingProject from "@/content/layers/bitcoin-staking";
 import flashnetProject from "@/content/layers/flashnet";
 import alpenProject from "@/content/layers/alpen";
@@ -140,6 +141,7 @@ const sui: LayerProject = suiProject;
 const botanix: LayerProject = botanixProject;
 const goat: LayerProject = goatProject;
 const arkade: LayerProject = arkadeProject;
+const etherlink: LayerProject = etherlinkProject;
 const bitcoinStaking: LayerProject = bitcoinStakingProject;
 const flashnet: LayerProject = flashnetProject;
 const alpen: LayerProject = alpenProject;
@@ -215,6 +217,7 @@ export const allLayers: LayerProject[] = [
     bouncebit,
     botanix,
     goat,
+    etherlink,
     flashnet,
     arkade,
     alpen,
