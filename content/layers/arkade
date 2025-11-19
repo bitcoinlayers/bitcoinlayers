@@ -1,0 +1,187 @@
+import {
+    LayerProject,
+    Type,
+    LiveStatus,
+    RiskFactor,
+    EntityType,
+    EntityCategory,
+    Notice,
+    Site,
+    RiskSection,
+    ContentSection,
+    RiskCategory,
+    TokenSnippet,
+    ReviewSnippet,
+    BitcoinSecuritySnippet,
+    BitcoinLayer,
+    CustodyTitle,
+} from "../props";
+import {TechnologySnippet, Alertsnippet, UseCaseSnippet} from "../props-layers-more-info";
+import { RiskSummarySnippet } from "../props-layers-intro";
+
+const spark: LayerProject = {
+    type: Type.Layer,
+    slug: "arkade",
+    title: "Arkade",
+    entityType: EntityType.Ark,
+    entityCategory: EntityCategory.BitcoinNative,
+    custodyTitle: CustodyTitle.BitcoinNative,
+    live: LiveStatus.Mainnet,
+    staking: false,
+    liquidStaking: false,
+    bridge: false,
+    underReview: false,
+    riskFactors: [
+        RiskFactor.Low,
+        RiskFactor.Low,
+        RiskFactor.High,
+        RiskFactor.Medium,
+    ],
+    btcLocked: NaN,
+    nativeToken: "BTC",
+    feeToken: "BTC",
+    notice: undefined,
+    bitcoinOnly: true,
+    links: [
+        {
+            text: Site.Website,
+            url: "https://arkadeos.com/",
+        },
+        {
+            text: Site.Twitter,
+            url: "https://x.com/arkade_os",
+        },
+        {
+            text: Site.GitHub,
+            url: "https://github.com/arkade-os/",
+        },
+        {
+            text: Site.Docs,
+            url: "https://docs.arkadeos.com/",
+        },
+    ],
+    description: "Arkade is an implementation of the Ark protocol where users interact with an operator to process batch settlements and execute transactions using offchain representations of UTXOs called virtual UTXOs (VTXOs). It enables users to transact Bitcoin through virtual outputs with unilateral exits and no channel management. Acting as an offchain execution layer and developer platform, Arkade provides the infrastructure for building apps, wallets, merchant tools, and cross-L2 bridges, while the operator supplies liquidity for the onchain commitment transactions that settle batches of user activity.",
+    riskSummary: [
+        {
+            title: "Users trust the coordinator to not collude with a previous VTXO owner",
+            content: "By colluding with a previous owner, or becoming one by inserting itself into an offchain transaction chain, the operator could produce a double-spend against the current holder. Users can mitigate that risk by settling their VTXO.",
+        },
+        {
+            title: "Liveness and transaction inclusion rely on the operator",
+            content: "Users depend on the Arkade operator to stay live and assemble rounds; if the operator goes offline or stops coordinating, no offchain transactions can be made and users must simply wait or exit onchain using their unilateral transaction.",
+        },
+    ],
+    riskAnalysis: [
+        {
+            category: RiskCategory.BtcCustody,
+            score: 0,
+            tier: "RiskFactor.Low",
+            title: "Arkade’s architecture enforces user-side custody",
+            content: "Users retain full control over their funds through Arkade’s VTXO structure: every VTXO comes with a fully presigned unilateral exit path that lets the user claim their funds onchain after a timelock. The Arkade operator never holds user keys and cannot spend user funds.",
+        },
+        {
+            category: RiskCategory.DataAvailability,
+            score: 0,
+            tier: RiskFactor.Low,
+            title: "Transaction data is held client-side and by the operator",
+            content: "Users store their own VTXO data and unilateral exit transactions locally, while the operator maintains an index of rounds and VTXOs for coordination. Because users retain the essential VTXO state, the operator’s data is not required for fund safety.",
+        },
+        {
+            category: RiskCategory.NetworkOperators,
+            score: 0,
+            tier: RiskFactor.High,
+            title: "Offchain transfers are coordinated and cosigned by a single operator entity",
+            content: "Offchain VTXO transfers are cosigned by the user and a single, non-federated operator. Users rely on this operator for liveness, fair inclusion of transfer requests, and for not colluding with a previous VTXO holder in a double-spend attempt.",
+            alert: {
+                type: "warning" as const,
+                title: "Federation is below five, publicly known entities",
+                content: "Arkade currently operates with a single operator. The operator entity is a publicly known company that risks damaging their reputation if they act maliciously.",
+            },
+        },
+        {
+            category: RiskCategory.FinalityGuarantees,
+            score: 0,
+            tier: RiskFactor.VeryHigh,
+            title: "Transaction finality is achieved once a VTXO is anchored onchain",
+            content: "Finality in Arkade is achieved once a VTXO is included in a new batch and anchored onchain via a commitment transaction. Once confirmed, its state is immutable and fully secured by Bitcoin. Until then, offchain transfers remain preconfirmed and can be double-spent if the operator colludes with a previous VTXO owner prior to onchain finalization. Users can dynamically settle at any time, provided the operator includes their settlement request in the new batch.",
+        },
+    ],
+    sections: [
+        {
+            id: "bitcoinsecurity",
+            title: "Bitcoin Security",
+            content: [
+                {
+                    title: "Users rely on the Bitcoin network for exit transactions",
+                    content: "The protocol allows users to unilaterally exit at any time by broadcasting their VTXO, a presigned and timelocked UTXO. Users only interact with the Bitcoin network to reclaim their funds.",
+                },
+                {
+                    title: "The protocol does not enable MEV on Bitcoin",
+                    content: "Because Arkade transaction trees are pre-constructed and signed offchain, Arkade does not create MEV or ordering-based extraction opportunities on Layer 1.",
+                },
+                {
+                    title: "No alternative token needed for network security",
+                    content: "Arkade requires no additional token for fees or incentives. VTXOs are presigned UTXOs.",
+                },
+                {
+                    title: "Commitment transactions contribute to the security budget",
+                    content: "Arkade touches the base layer only through commitment transactions that finalize batched offchain activity. These onchain transactions pay miners and contribute to Bitcoin’s security budget.",
+                },
+            ],
+        },
+        {
+            id: "Technology",
+            title: "Technology",
+            content: [
+                {
+                    title: "Arkade as an offchain execution layer",
+                    content: "Arkade transforms Bitcoin into a programmable execution environment through a client–server architecture that enables lending protocols, intelligent wallets, decentralized exchanges, and other advanced applications. Users retain control over their funds at all times, and Arkade runs on Bitcoin today without requiring any consensus changes.",
+                },
+                {
+                    title: "Client-Server model",
+                    content: "Arkade provides a virtualized Bitcoin environment in which clients create transactions and the operator handles execution and onchain settlement. This model virtualizes the Bitcoin transaction stack, enabling expressive offchain logic and fast multi-party operations while Bitcoin remains the settlement anchor. The operator manages batch outputs, co-signs offchain transfers, and provides liquidity for settlement without ever gaining custodial control.,
+                },
+                {
+                    title: "Virtual UTXOs (VTXOs)",
+                    content: "VTXOs are presigned offchain representations of UTXOs. Each VTXO includes a collaborative path that requires both user and operator signatures for spending and a unilateral, timelocked exit path that lets the user reclaim their funds onchain. With each offchain transfer, users receive updated presigned exit transactions reflecting the new state.",
+                },
+                {
+                    title: "Batch Settlements",
+                    content: "The operator coordinates batched settlements that aggregate multiple offchain transfers into a single onchain commitment transaction. This amortizes fees across many users. Batch settlements have configurable timing and participant limits.",
+                },
+                {
+                    title: "Virtual Mempool",
+                    content: "Arkade introduces a virtual transaction layer built around a Virtual Mempool, which organizes transactions in a directed acyclic graph. This allows instant transfers, explicit dependency tracking, and high parallelism without global state contention, preserving scalability while maintaining compatibility with Bitcoin’s settlement model.",
+                },
+                {
+                    title: "Dynamic Settlement Architecture",
+                    content: "Arkade gives clients control over when to finalize transactions. Preconfirmations enable instant offchain execution once the operator cosigns a transaction, making resulting VTXOs immediately spendable. These preconfirmed states rely on the operator not to sign conflicting transactions. Full Bitcoin finality is achieved when users settle through a batch swap that anchors their VTXOs onchain via a commitment transaction, after which the state becomes immutable and inherits Bitcoin’s security guarantees.",
+                },
+            ]
+        },
+        {
+            id: "usecases",
+            title: "Use Cases",
+            content: [
+                {
+                    title: "Fast Bitcoin Payments",
+                    content: "Users can transfer virtual UTXOs offchain with operator assistance, achieving fast preconfirmations and lower fees than with onchain Bitcoin transactions.",
+                },
+                {
+                    title: "Programmable Financial Logic",
+                    content: "Arkade will support programmability of VTXOs, executed directly in the Virtual Mempool. Developers can build applications with scheduled transfers, automated spending rules or multi-step flows. These capabilities enable developers to build non-custodial lending protocols using native Bitcoin collateral, as well as structured financial products with programmable terms and automated execution.",
+                },
+                {
+                    title: "Lightning Gateway",
+                    content: "The network is compatible with Lightning via optional service providers, allowing users to pay Lightning invoices or receive Lightning liquidity without opening channels. This makes Arkade a complementary protocol to the existing Lightning infrastructure.",
+                },
+                {
+                    title: "Cross-Wallet and Application Settlement",
+                    content: "Wallets and applications can use Arkade as a scalable settlement rail, with many offchain updates compressing into periodic onchain batches. This supports trading platforms, automated agents, and other high-throughput systems that benefit from instant execution while inheriting Bitcoin settlement finality. ",
+                },
+            ],
+        },
+    ],
+};
+
+export default arkade;
